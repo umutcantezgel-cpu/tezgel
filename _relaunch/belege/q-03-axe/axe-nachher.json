@@ -1,0 +1,98 @@
+[
+ {
+  "seite": "/standorte/wetzlar",
+  "ansicht": "m375",
+  "zustand": "ruhe",
+  "verstoesse": []
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "ansicht": "m375",
+  "zustand": "fehler-pruefung",
+  "verstoesse": []
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "ansicht": "m375",
+  "zustand": "fehler-server",
+  "verstoesse": []
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "ansicht": "m375",
+  "zustand": "erfolg",
+  "verstoesse": []
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "ansicht": "d1440",
+  "zustand": "ruhe",
+  "verstoesse": []
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "ansicht": "d1440",
+  "zustand": "fehler-pruefung",
+  "verstoesse": []
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "ansicht": "d1440",
+  "zustand": "fehler-server",
+  "verstoesse": []
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "ansicht": "d1440",
+  "zustand": "erfolg",
+  "verstoesse": []
+ },
+ {
+  "seite": "/leistungen/bad/wetzlar",
+  "ansicht": "m375",
+  "zustand": "ruhe",
+  "verstoesse": []
+ },
+ {
+  "seite": "/leistungen/bad/wetzlar",
+  "ansicht": "m375",
+  "zustand": "fehler-pruefung",
+  "verstoesse": []
+ },
+ {
+  "seite": "/leistungen/bad/wetzlar",
+  "ansicht": "m375",
+  "zustand": "fehler-server",
+  "verstoesse": []
+ },
+ {
+  "seite": "/leistungen/bad/wetzlar",
+  "ansicht": "m375",
+  "zustand": "erfolg",
+  "verstoesse": []
+ },
+ {
+  "seite": "/leistungen/bad/wetzlar",
+  "ansicht": "d1440",
+  "zustand": "ruhe",
+  "verstoesse": []
+ },
+ {
+  "seite": "/leistungen/bad/wetzlar",
+  "ansicht": "d1440",
+  "zustand": "fehler-pruefung",
+  "verstoesse": []
+ },
+ {
+  "seite": "/leistungen/bad/wetzlar",
+  "ansicht": "d1440",
+  "zustand": "fehler-server",
+  "verstoesse": []
+ },
+ {
+  "seite": "/leistungen/bad/wetzlar",
+  "ansicht": "d1440",
+  "zustand": "erfolg",
+  "verstoesse": []
+ }
+]

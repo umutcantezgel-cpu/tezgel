@@ -1,0 +1,218 @@
+[
+ {
+  "seite": "/standorte/wetzlar",
+  "ansicht": "m375",
+  "zustand": "ruhe",
+  "verstoesse": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "ziele": [
+     "div:nth-child(1) > .mb-1 > .font-normal.text-neutral-400.text-xs",
+     "div:nth-child(2) > .mb-1 > .font-normal.text-neutral-400.text-xs",
+     "div:nth-child(4) > .mb-1 > .font-normal.text-neutral-400.text-xs"
+    ]
+   }
+  ]
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "ansicht": "m375",
+  "zustand": "fehler-pruefung",
+  "verstoesse": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "ziele": [
+     "div:nth-child(1) > .mb-1 > .font-normal.text-neutral-400.text-xs",
+     "div:nth-child(2) > .mb-1 > .font-normal.text-neutral-400.text-xs",
+     "div:nth-child(4) > .mb-1 > .font-normal.text-neutral-400.text-xs"
+    ]
+   }
+  ]
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "ansicht": "m375",
+  "zustand": "fehler-server",
+  "verstoesse": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "ziele": [
+     "div:nth-child(1) > .mb-1 > .font-normal.text-neutral-400.text-xs",
+     "div:nth-child(2) > .mb-1 > .font-normal.text-neutral-400.text-xs",
+     "div:nth-child(4) > .mb-1 > .font-normal.text-neutral-400.text-xs"
+    ]
+   }
+  ]
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "ansicht": "m375",
+  "zustand": "erfolg",
+  "verstoesse": []
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "ansicht": "d1440",
+  "zustand": "ruhe",
+  "verstoesse": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "ziele": [
+     "div:nth-child(1) > .mb-1 > .font-normal.text-neutral-400.text-xs",
+     "div:nth-child(2) > .mb-1 > .font-normal.text-neutral-400.text-xs",
+     "div:nth-child(4) > .mb-1 > .font-normal.text-neutral-400.text-xs"
+    ]
+   }
+  ]
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "ansicht": "d1440",
+  "zustand": "fehler-pruefung",
+  "verstoesse": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "ziele": [
+     "div:nth-child(1) > .mb-1 > .font-normal.text-neutral-400.text-xs",
+     "div:nth-child(2) > .mb-1 > .font-normal.text-neutral-400.text-xs",
+     "div:nth-child(4) > .mb-1 > .font-normal.text-neutral-400.text-xs"
+    ]
+   }
+  ]
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "ansicht": "d1440",
+  "zustand": "fehler-server",
+  "verstoesse": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "ziele": [
+     "div:nth-child(1) > .mb-1 > .font-normal.text-neutral-400.text-xs",
+     "div:nth-child(2) > .mb-1 > .font-normal.text-neutral-400.text-xs",
+     "div:nth-child(4) > .mb-1 > .font-normal.text-neutral-400.text-xs"
+    ]
+   }
+  ]
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "ansicht": "d1440",
+  "zustand": "erfolg",
+  "verstoesse": []
+ },
+ {
+  "seite": "/leistungen/bad/wetzlar",
+  "ansicht": "m375",
+  "zustand": "ruhe",
+  "verstoesse": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "ziele": [
+     "div:nth-child(1) > label > .font-normal.text-neutral-400.text-xs",
+     "div:nth-child(2) > label > .font-normal.text-neutral-400.text-xs",
+     "div:nth-child(4) > label > .font-normal.text-neutral-400.text-xs"
+    ]
+   }
+  ]
+ },
+ {
+  "seite": "/leistungen/bad/wetzlar",
+  "ansicht": "m375",
+  "zustand": "fehler-pruefung",
+  "verstoesse": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "ziele": [
+     "div:nth-child(1) > label > .font-normal.text-neutral-400.text-xs",
+     "div:nth-child(2) > label > .font-normal.text-neutral-400.text-xs",
+     "div:nth-child(4) > label > .font-normal.text-neutral-400.text-xs"
+    ]
+   }
+  ]
+ },
+ {
+  "seite": "/leistungen/bad/wetzlar",
+  "ansicht": "m375",
+  "zustand": "fehler-server",
+  "verstoesse": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "ziele": [
+     "div:nth-child(1) > label > .font-normal.text-neutral-400.text-xs",
+     "div:nth-child(2) > label > .font-normal.text-neutral-400.text-xs",
+     "div:nth-child(4) > label > .font-normal.text-neutral-400.text-xs"
+    ]
+   }
+  ]
+ },
+ {
+  "seite": "/leistungen/bad/wetzlar",
+  "ansicht": "m375",
+  "zustand": "erfolg",
+  "verstoesse": []
+ },
+ {
+  "seite": "/leistungen/bad/wetzlar",
+  "ansicht": "d1440",
+  "zustand": "ruhe",
+  "verstoesse": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "ziele": [
+     "div:nth-child(1) > label > .font-normal.text-neutral-400.text-xs",
+     "div:nth-child(2) > label > .font-normal.text-neutral-400.text-xs",
+     "div:nth-child(4) > label > .font-normal.text-neutral-400.text-xs"
+    ]
+   }
+  ]
+ },
+ {
+  "seite": "/leistungen/bad/wetzlar",
+  "ansicht": "d1440",
+  "zustand": "fehler-pruefung",
+  "verstoesse": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "ziele": [
+     "div:nth-child(1) > label > .font-normal.text-neutral-400.text-xs",
+     "div:nth-child(2) > label > .font-normal.text-neutral-400.text-xs",
+     "div:nth-child(4) > label > .font-normal.text-neutral-400.text-xs"
+    ]
+   }
+  ]
+ },
+ {
+  "seite": "/leistungen/bad/wetzlar",
+  "ansicht": "d1440",
+  "zustand": "fehler-server",
+  "verstoesse": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "ziele": [
+     "div:nth-child(1) > label > .font-normal.text-neutral-400.text-xs",
+     "div:nth-child(2) > label > .font-normal.text-neutral-400.text-xs",
+     "div:nth-child(4) > label > .font-normal.text-neutral-400.text-xs"
+    ]
+   }
+  ]
+ },
+ {
+  "seite": "/leistungen/bad/wetzlar",
+  "ansicht": "d1440",
+  "zustand": "erfolg",
+  "verstoesse": []
+ }
+]

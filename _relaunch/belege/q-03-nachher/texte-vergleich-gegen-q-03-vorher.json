@@ -1,0 +1,34 @@
+{
+ "vorher": "q-03-vorher",
+ "nachher": "q-03-nachher",
+ "seiten": {
+  "/standorte/wetzlar": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "Kostenloses Vor-Ort-Aufmaß"
+    ]
+   }
+  },
+  "/leistungen/bad/wetzlar": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "Kostenloses Vor-Ort-Aufmaß"
+    ]
+   }
+  }
+ },
+ "summe": {
+  "entfernt": 0,
+  "hinzu": 2,
+  "meta": 0,
+  "seo": 0
+ },
+ "sitemap": {
+  "entfernt": [],
+  "hinzu": []
+ },
+ "robots_geaendert": false,
+ "kaputte_links": []
+}

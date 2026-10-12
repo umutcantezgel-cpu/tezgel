@@ -1,8 +1,21 @@
 'use client';
 
-import React from 'react';
+// Schnellanfrage (F-09) im KERN v2 (Q-03, E-038): gebaut wie die Direktanfrage im Einstieg der Startseite
+// (HeroContactForm), aber auf Tinte (eingebunden im Abschluss FinalCTA mit showQuickForm) – helle Varianten wie im
+// Preisrechner: Beschriftung kalk, Nebentext nacht-2, Felder Fliese (feldKlassen), Knopf „hell“, Fokus kalk (flaeche-tinte).
+// Logik unverändert aus useSchnellanfrage: Honeypot `websiteUrl` (vorgetäuschter Erfolg), Pflichtprüfung inkl.
+// Einwilligung, Fehlertexte, Nutzlast mit `_t` und `source`. Props, Standardwerte, IDs, `type`, `required` und Wortlaut
+// wie im Bestand; neu sind nur die Verknüpfung Beschriftung ↔ Feld (useId), autocomplete (WCAG 1.3.5) und aria-invalid
+// aus der Pflichtprüfung.
+// Test: funktion-schnellanfrage (Felder über `type`/`required`, Fehlertext innerhalb des <form>, „Vorgangsnummer: …“ in
+// einem Element).
+import { useId } from 'react';
 import Link from 'next/link';
-import { Send, CheckCircle2, AlertCircle, Loader2, Sparkles, Phone, Lock } from 'lucide-react';
+import clsx from 'clsx';
+import Icon from '@/components/icons/Icon';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Knopf from '@/components/kern/Knopf';
+import { etikettForm, feldKlassen } from '@/components/kern/stile';
 import { useSchnellanfrage } from '@/lib/formulare/useSchnellanfrage';
 
 export interface LeadQuickFormProps {
@@ -14,6 +27,22 @@ export interface LeadQuickFormProps {
   onSuccess?: () => void;
   className?: string;
 }
+
+// Eigene Tinte-Fläche (auch außerhalb des Abschlusses lesbar); card: gerahmtes Feld an der Nacht-Fuge wie der
+// Abschluss darüber · sheet: Fläche mit Innenabstand · inline: ohne Rahmen und Abstand
+const FLAECHE = 'flaeche-tinte bg-tinte text-left text-kalk';
+const HUELLE: Record<NonNullable<LeadQuickFormProps['variant']>, string> = {
+  card: 'border border-nacht-fuge p-6 lg:p-8',
+  sheet: 'p-6',
+  inline: '',
+};
+
+// Beschriftung, Zusatz und Pflichtmarke auf Tinte (labelKlassen/pflichtKlassen sind für helle Flächen gesetzt)
+const LABEL = 'block font-text text-fs-2 font-semibold text-kalk';
+const PFLICHT = 'ml-1 font-mono text-fs-1 text-nacht-2';
+const ZUSATZ = 'ml-1 font-mono text-fs-1 font-normal text-nacht-2';
+// Textlink im Nebentext auf Tinte: Unterstreichung sichtbar (nicht nur Farbe), ohne Überblendung
+const LINK = 'font-semibold text-kalk underline decoration-nacht-2 underline-offset-4 hover:decoration-kalk';
 
 /**
  * High-Conversion Quick Lead Capture Form
@@ -33,54 +62,54 @@ export function LeadQuickForm({
   className = '',
 }: LeadQuickFormProps) {
   const { formData, setFormData, status, errorMessage, referenceId, handleSubmit } = useSchnellanfrage({ sourceTag, onSuccess });
+  const kennung = useId();
+  const feldId = (feld: string) => `schnell-${feld}${kennung}`;
+  // Rahmen der Pflichtfelder nach der eigenen Prüfung (dieselbe Bedingung wie im Hook); bei Übertragungsfehlern bleiben
+  // die Felder gültig
+  const pruefFehler = status === 'error';
+  const nameFehlt = pruefFehler && !formData.name.trim();
+  const telefonFehlt = pruefFehler && !formData.phone.trim();
 
   if (status === 'success') {
     return (
-      <div
-        className={`p-6 sm:p-8 rounded-2xl bg-orange-50/80 border border-orange-200/80 text-center shadow-lg transition-all ${className}`}
-      >
-        <div className="inline-flex p-3 rounded-full bg-orange-500/10 text-orange-600 mb-4 ring-8 ring-orange-500/5">
-          <CheckCircle2 className="w-8 h-8" />
+      <div className={clsx(FLAECHE, HUELLE[variant], className)} role="status">
+        <div className="flex items-start gap-4">
+          <span className="flex size-11 shrink-0 items-center justify-center border border-nacht-2 text-kalk">
+            <Icon name="haken" groesse={6} />
+          </span>
+          <p className="font-anzeige text-fs-5 font-semibold text-balance text-kalk">Anfrage erfolgreich übermittelt!</p>
         </div>
-        <p className="text-xl font-bold text-neutral-900">Anfrage erfolgreich übermittelt!</p>
-        <p className="mt-2 text-sm text-neutral-700 max-w-md mx-auto leading-relaxed">
-          Vielen Dank, <strong>{formData.name}</strong>. Inhaber Deniz Tezgel prüft Ihre Anfrage und meldet sich innerhalb von 24 Stunden telefonisch bei Ihnen.
+        <p className="mt-6 max-w-mass text-fs-3 text-nacht-2">
+          Vielen Dank, <strong className="font-semibold text-kalk">{formData.name}</strong>. Inhaber Deniz Tezgel prüft Ihre Anfrage und meldet sich innerhalb von 24 Stunden telefonisch bei Ihnen.
         </p>
         {referenceId && (
-          <div className="mt-4 inline-block px-3 py-1 rounded-md bg-white border border-orange-200 text-xs font-mono text-orange-950">
+          <p className="mt-6 w-fit border border-nacht-fuge px-3 py-1 font-mono text-fs-1 text-kalk">
             Vorgangsnummer: {referenceId}
-          </div>
+          </p>
         )}
       </div>
     );
   }
 
-  const containerClasses =
-    variant === 'card'
-      ? 'p-6 sm:p-8 rounded-2xl bg-white border border-neutral-200 shadow-xl relative overflow-hidden'
-      : variant === 'sheet'
-      ? 'p-6 bg-white'
-      : 'p-0';
-
   return (
-    <div className={`${containerClasses} ${className}`}>
-      {/* Decorative Warm Highlight Bar */}
-      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-orange-500 via-amber-500 to-red-500" />
-
+    <div className={clsx(FLAECHE, HUELLE[variant], className)}>
       {heading && (
         <div className="mb-6">
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-orange-100 text-orange-800 text-[11px] font-bold uppercase tracking-wider mb-2">
-            <Sparkles className="w-3 h-3 text-orange-600" />
-            <span>Kostenloses Vor-Ort-Aufmaß</span>
+          {/* Kopf als Schriftfeld-Zeile: Etikett in Mono mit Fugenkreuz */}
+          <div className="border-b border-nacht-fuge pb-4">
+            <span className={`${etikettForm} text-nacht-2`}>
+              <Fugenkreuz className="size-3 text-nacht-2" />
+              <span>Kostenloses Vor-Ort-Aufmaß</span>
+            </span>
           </div>
-          <p className="text-xl sm:text-2xl font-black text-neutral-900 tracking-tight">{heading}</p>
-          {subheading && <p className="mt-1 text-xs sm:text-sm text-neutral-600 leading-relaxed">{subheading}</p>}
+          <p className="mt-6 font-anzeige text-fs-5 font-semibold text-balance text-kalk">{heading}</p>
+          {subheading && <p className="mt-2 text-fs-2 text-nacht-2">{subheading}</p>}
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-6">
         {/* HONEYPOT - Hidden from real visitors and assistive tech */}
-        <div className="hidden" aria-hidden="true" style={{ display: 'none' }}>
+        <div hidden className="hidden" aria-hidden="true">
           <label htmlFor={`websiteUrl-${sourceTag}`}>Do not fill this</label>
           <input
             id={`websiteUrl-${sourceTag}`}
@@ -92,131 +121,132 @@ export function LeadQuickForm({
           />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-2">
           <div>
-            <label className="block text-xs font-bold text-neutral-700 mb-1">
-              Ihr Name <span className="text-orange-600">*</span>
+            <label htmlFor={feldId('name')} className={LABEL}>
+              Ihr Name <span className={PFLICHT}>*</span>
             </label>
             <input
+              id={feldId('name')}
               type="text"
               required
+              autoComplete="name"
+              aria-invalid={nameFehlt || undefined}
               placeholder="z. B. Markus Schmidt"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full px-3.5 py-2.5 rounded-xl bg-neutral-50 border border-neutral-300 text-neutral-900 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all placeholder:text-neutral-400"
+              className={feldKlassen}
             />
           </div>
 
           <div>
-            <label className="block text-xs font-bold text-neutral-700 mb-1">
-              Telefonnummer <span className="text-orange-600">*</span>
+            <label htmlFor={feldId('telefon')} className={LABEL}>
+              Telefonnummer <span className={PFLICHT}>*</span>
             </label>
             <input
+              id={feldId('telefon')}
               type="tel"
               required
+              autoComplete="tel"
+              aria-invalid={telefonFehlt || undefined}
               placeholder="z. B. 0172 / 1234567"
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              className="w-full px-3.5 py-2.5 rounded-xl bg-neutral-50 border border-neutral-300 text-neutral-900 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all placeholder:text-neutral-400"
+              className={feldKlassen}
             />
           </div>
-        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-bold text-neutral-700 mb-1">
-              E-Mail Adresse <span className="text-xs text-neutral-400 font-normal">(optional)</span>
+            <label htmlFor={feldId('email')} className={LABEL}>
+              E-Mail Adresse <span className={ZUSATZ}>(optional)</span>
             </label>
             <input
+              id={feldId('email')}
               type="email"
+              autoComplete="email"
               placeholder="ihre-adresse@beispiel.de"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full px-3.5 py-2.5 rounded-xl bg-neutral-50 border border-neutral-300 text-neutral-900 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all placeholder:text-neutral-400"
+              className={feldKlassen}
             />
           </div>
 
           <div>
-            <label className="block text-xs font-bold text-neutral-700 mb-1">
-              PLZ / Wohnort <span className="text-xs text-neutral-400 font-normal">(optional)</span>
+            <label htmlFor={feldId('ort')} className={LABEL}>
+              PLZ / Wohnort <span className={ZUSATZ}>(optional)</span>
             </label>
             <input
+              id={feldId('ort')}
               type="text"
+              autoComplete="postal-code"
               placeholder="z. B. 35614 Aßlar"
               value={formData.zipCity}
               onChange={(e) => setFormData({ ...formData, zipCity: e.target.value })}
-              className="w-full px-3.5 py-2.5 rounded-xl bg-neutral-50 border border-neutral-300 text-neutral-900 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all placeholder:text-neutral-400"
+              className={feldKlassen}
             />
           </div>
         </div>
 
         <div>
-          <label className="block text-xs font-bold text-neutral-700 mb-1">
-            Ihr Projekt / Anmerkungen <span className="text-xs text-neutral-400 font-normal">(optional)</span>
+          <label htmlFor={feldId('notizen')} className={LABEL}>
+            Ihr Projekt / Anmerkungen <span className={ZUSATZ}>(optional)</span>
           </label>
           <textarea
-            rows={2}
+            id={feldId('notizen')}
+            rows={3}
             placeholder="z. B. Komplettbadsanierung ca. 12 m², barrierefreie Dusche, Baustart ab Mai..."
             value={formData.notes}
             onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-            className="w-full px-3.5 py-2.5 rounded-xl bg-neutral-50 border border-neutral-300 text-neutral-900 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all placeholder:text-neutral-400 resize-none"
+            className={clsx(feldKlassen, 'resize-none')}
           />
         </div>
 
-        {/* Privacy Consent Checkbox */}
-        <div className="flex items-start gap-2.5 pt-1">
+        {/* Privacy Consent Checkbox (Rechtstext wörtlich) */}
+        <div className="flex items-start gap-3">
           <input
             id={`consent-${sourceTag}`}
             type="checkbox"
             required
             checked={formData.privacyConsent}
             onChange={(e) => setFormData({ ...formData, privacyConsent: e.target.checked })}
-            className="mt-0.5 w-4 h-4 rounded border-neutral-300 text-orange-600 focus:ring-orange-500 cursor-pointer accent-orange-600"
+            className="mt-1 size-5 shrink-0 cursor-pointer rounded-r1 accent-kalk"
           />
-          <label htmlFor={`consent-${sourceTag}`} className="text-xs text-neutral-600 leading-tight cursor-pointer">
+          <label htmlFor={`consent-${sourceTag}`} className="cursor-pointer text-fs-2 text-nacht-2">
             Ich willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. Hinweise in der{' '}
-            <Link href="/datenschutz" className="text-orange-700 underline hover:text-orange-900 font-medium">
+            <Link href="/datenschutz" className={LINK}>
               Datenschutzerklärung
             </Link>
             .
           </label>
         </div>
 
+        {/* Fehler: Versatz-Zeichen + Text, als Feld auf Fliese (Rot als Text nur auf hellem Grund lesbar) */}
         {status === 'error' && errorMessage && (
-          <div className="flex items-center gap-2 p-3 rounded-xl bg-red-50 border border-red-200 text-xs font-medium text-red-700">
-            <AlertCircle className="w-4 h-4 shrink-0" />
+          <p className="flex items-start gap-2 border-l-2 border-laser bg-fliese p-3 text-fs-2 text-laser-tief" role="alert">
+            <Icon name="fehler" groesse={4} className="mt-1" />
             <span>{errorMessage}</span>
-          </div>
+          </p>
         )}
 
-        <button
-          type="submit"
-          disabled={status === 'loading'}
-          className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white font-bold text-sm shadow-md shadow-orange-500/25 hover:shadow-lg hover:shadow-orange-500/35 transition-all disabled:opacity-50 cursor-pointer"
-        >
-          {status === 'loading' ? (
-            <>
-              <Loader2 className="w-4 h-4 animate-spin" />
-              <span>Wird gesendet...</span>
-            </>
-          ) : (
-            <>
-              <span>{submitLabel}</span>
-              <Send className="w-4 h-4" />
-            </>
-          )}
-        </button>
+        <div className="flex flex-col gap-4 border-t border-nacht-fuge pt-6">
+          <Knopf type="submit" variante="hell" laedt={status === 'loading'} ladeText="Wird gesendet..." icon="pfeil-rechts" className="w-full">
+            {submitLabel}
+          </Knopf>
 
-        <div className="flex items-center justify-center gap-4 pt-1 text-[11px] text-neutral-500">
-          <span className="flex items-center gap-1">
-            <Lock className="w-3 h-3 text-neutral-400" />
-            100% DSGVO-konform
-          </span>
-          <span>&middot;</span>
-          <span className="flex items-center gap-1">
-            <Phone className="w-3 h-3 text-neutral-400" />
-            Kostenfreie Erstberatung
-          </span>
+          {/* Zusagen: mobil untereinander (Trennpunkt erst ab sm, wenn beide in einer Zeile stehen) */}
+          <div className="flex flex-col gap-2 text-fs-2 text-nacht-2 sm:flex-row sm:items-center sm:gap-4">
+            <span className="flex items-center gap-2">
+              <Icon name="schloss" groesse={4} />
+              100% DSGVO-konform
+            </span>
+            <span aria-hidden="true" className="hidden sm:inline">
+              &middot;
+            </span>
+            <span className="flex items-center gap-2">
+              <Icon name="telefon" groesse={4} />
+              Kostenfreie Erstberatung
+            </span>
+          </div>
         </div>
       </form>
     </div>
