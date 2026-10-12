@@ -1,0 +1,30 @@
+{
+ "vorher": "q-02-vorher",
+ "nachher": "q-02-nachher",
+ "seiten": {
+  "/bad": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ]
+   }
+  }
+ },
+ "summe": {
+  "entfernt": 0,
+  "hinzu": 5,
+  "meta": 0,
+  "seo": 0
+ },
+ "sitemap": {
+  "entfernt": [],
+  "hinzu": []
+ },
+ "robots_geaendert": false,
+ "kaputte_links": []
+}

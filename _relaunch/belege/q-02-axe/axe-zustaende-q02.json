@@ -1,0 +1,163 @@
+{
+ "tags": [
+  "wcag2a",
+  "wcag2aa",
+  "wcag21a",
+  "wcag21aa",
+  "wcag22aa"
+ ],
+ "laeufe": 12,
+ "ernst_kritisch_knoten": 24,
+ "ergebnisse": [
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "m375",
+   "zustand": "formular",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "m375",
+   "zustand": "erfolg",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "m375",
+   "zustand": "whatsapp",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d1440",
+   "zustand": "formular",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d1440",
+   "zustand": "erfolg",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d1440",
+   "zustand": "whatsapp",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m375",
+   "zustand": "formular",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "anzahl": 4,
+     "ziele": [
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(1) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(2) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(3) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".hover\\:underline"
+     ],
+     "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+    }
+   ]
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m375",
+   "zustand": "erfolg",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "anzahl": 4,
+     "ziele": [
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(1) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(2) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(3) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".hover\\:underline"
+     ],
+     "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+    }
+   ]
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m375",
+   "zustand": "whatsapp",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "anzahl": 4,
+     "ziele": [
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(1) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(2) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(3) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".hover\\:underline"
+     ],
+     "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+    }
+   ]
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1440",
+   "zustand": "formular",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "anzahl": 4,
+     "ziele": [
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(1) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(2) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(3) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".hover\\:underline"
+     ],
+     "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+    }
+   ]
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1440",
+   "zustand": "erfolg",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "anzahl": 4,
+     "ziele": [
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(1) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(2) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(3) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".hover\\:underline"
+     ],
+     "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+    }
+   ]
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1440",
+   "zustand": "whatsapp",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "anzahl": 4,
+     "ziele": [
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(1) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(2) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(3) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".hover\\:underline"
+     ],
+     "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+    }
+   ]
+  }
+ ]
+}
