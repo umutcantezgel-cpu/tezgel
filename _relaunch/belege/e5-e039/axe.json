@@ -1,0 +1,753 @@
+{
+ "satz": "e5-e039",
+ "tags": [
+  "wcag2a",
+  "wcag2aa",
+  "wcag21a",
+  "wcag21aa",
+  "wcag22aa"
+ ],
+ "laeufe": 123,
+ "ernst_kritisch_knoten": 0,
+ "je_regel": {},
+ "ergebnisse": [
+  {
+   "seite": "/untergrund-abdichtung/entkopplung",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/untergrund-abdichtung/entkopplung",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/untergrund-abdichtung/entkopplung",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/untergrund-abdichtung/fliesen-auf-fliesen",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/untergrund-abdichtung/fliesen-auf-fliesen",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/untergrund-abdichtung/entkopplung",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/untergrund-abdichtung/fliesen-auf-fliesen",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/untergrund-abdichtung/fliesen-auf-fliesen",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/balkon-terrasse",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/balkon-terrasse",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/balkon-terrasse",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/balkon-terrasse",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/balkon-terrasse/balkonsanierung",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/balkon-terrasse/balkonsanierung",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/balkon-terrasse/balkonsanierung",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/balkon-terrasse/stelzlager",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/balkon-terrasse/balkonsanierung",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/balkon-terrasse/stelzlager",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/balkon-terrasse/stelzlager",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/balkon-terrasse/stelzlager",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/balkon-terrasse/terrassenplatten",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/balkon-terrasse/terrassenplatten",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/balkon-terrasse/terrassenplatten",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/balkon-terrasse/terrassenplatten",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/naturstein",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/naturstein",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/naturstein",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/naturstein",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/naturstein/granit",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/naturstein/granit",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/naturstein/granit",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/naturstein/marmor-kalkstein",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/naturstein/granit",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/naturstein/marmor-kalkstein",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/naturstein/marmor-kalkstein",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/naturstein/marmor-kalkstein",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesenreparatur",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesenreparatur",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesenreparatur",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesenreparatur",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/treppen",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/treppen",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/treppen/innentreppe",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/treppen",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/treppen",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/treppen/innentreppe",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/treppen/innentreppe",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/treppen/innentreppe",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/treppen/aussentreppe",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/treppen/aussentreppe",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/treppen/aussentreppe",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/treppen/aussentreppe",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/treppen/treppenhaus",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/treppen/treppenhaus",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/treppen/treppenhaus",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/treppen/treppenhaus",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/schadensanalyse",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/schadensanalyse",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/schadensanalyse",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/schadensanalyse",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/karriere",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/karriere",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/karriere",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/karriere",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/karriere/ausbildung",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/karriere/ausbildung",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/karriere/ausbildung",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/barrierefreies-bad",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/karriere/ausbildung",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/barrierefreies-bad",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/barrierefreies-bad",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/barrierefreies-bad",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badsanierung",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badsanierung",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badsanierung",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badsanierung",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/bad-aus-einer-hand",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/bad-aus-einer-hand",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/bad-aus-einer-hand",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/bad-aus-einer-hand",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/fliesen",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/fliesen",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/fliesen",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/fliesen",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesen/fugensanierung",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesen/fugensanierung",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesen/fugensanierung",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesen/fugensanierung",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  }
+ ]
+}

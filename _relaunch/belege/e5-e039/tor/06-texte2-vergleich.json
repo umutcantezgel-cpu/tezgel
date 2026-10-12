@@ -1,0 +1,2320 @@
+{
+ "satz": "/home/user/tezgel/_relaunch/belege/e5-e039/tor/texte-live → /home/user/tezgel/_relaunch/belege/e5-e039/tor/texte-kopf",
+ "base": null,
+ "bedingungen": {
+  "a": "belege/e5-e039/tor/texte-live",
+  "b": "belege/e5-e039/tor/texte-kopf",
+  "freigabe": "MIKROTEXTE.md",
+  "volatil": [],
+  "regeln": "Anführungszeichen vor dem Vergleich vereinheitlicht. ROT: Entfernung/Änderung ohne Freigabe, hinzugekommene Überschrift, zusätzliche H1, fehlende Seite, Statuswechsel, neues kaputtes Fragment, verlorener Anker, verlorener Zustand. GELB: hinzugekommener sonstiger Text, Verschiebung, neu gegliedert (auch: alter Text vollständig in neuem Block enthalten), vorbestehend, volatil. GRÜN: per Freigabeliste."
+ },
+ "erstellt": "2026-10-12T19:01:12.444Z",
+ "ergebnis": "GRÜN",
+ "summe": {
+  "rot": 0,
+  "gelb": 251,
+  "gruen_freigegeben": 0,
+  "seiten_rot": 0,
+  "rot_nach_art": {},
+  "gelb_nach_art": {
+   "hinzu": 209,
+   "neu-gegliedert": 38,
+   "pflichtanker-fehlt": 4
+  },
+  "seiten_verglichen": 22,
+  "zustaende_verglichen": 0,
+  "freigabe_zeilen": 58,
+  "freigabe_warnungen": 0,
+  "laufzeit_s": 0.3
+ },
+ "freigabe": {
+  "datei": "MIKROTEXTE.md",
+  "warnungen": [],
+  "genutzt": []
+ },
+ "seiten": {
+  "/": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "pflichtanker-fehlt",
+     "anker": "/#express-anfrage",
+     "grund": "fehlte schon in A"
+    }
+   ],
+   "gruen": []
+  },
+  "/balkon-terrasse": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Blatt",
+     "abschnitt": "h1: Balkon und Terrasse: Beläge, die Frost und Regen standhalten",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Balkon & Terrasse fliesen",
+     "abschnitt": "h1: Balkon und Terrasse: Beläge, die Frost und Regen standhalten",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Verband",
+     "abschnitt": "h1: Balkon und Terrasse: Beläge, die Frost und Regen standhalten",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kreuzfuge",
+     "abschnitt": "h1: Balkon und Terrasse: Beläge, die Frost und Regen standhalten",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb",
+     "abschnitt": "h1: Balkon und Terrasse: Beläge, die Frost und Regen standhalten",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenverlegung Tezgel",
+     "abschnitt": "h1: Balkon und Terrasse: Beläge, die Frost und Regen standhalten",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Inhaber",
+     "abschnitt": "h1: Balkon und Terrasse: Beläge, die Frost und Regen standhalten",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Deniz Tezgel",
+     "abschnitt": "h1: Balkon und Terrasse: Beläge, die Frost und Regen standhalten",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kammer",
+     "abschnitt": "h1: Balkon und Terrasse: Beläge, die Frost und Regen standhalten",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "HWK Wiesbaden",
+     "abschnitt": "h1: Balkon und Terrasse: Beläge, die Frost und Regen standhalten",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb seit",
+     "abschnitt": "h1: Balkon und Terrasse: Beläge, die Frost und Regen standhalten",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2008",
+     "abschnitt": "h1: Balkon und Terrasse: Beläge, die Frost und Regen standhalten",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "Vergleich der Aufbauten für Balkon und Terrasse",
+     "abschnitt": "h2: Aufbauten im Vergleich: Stelzlager, Splittbett, gebunden",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/balkon-terrasse/balkonsanierung": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Blatt",
+     "abschnitt": "h1: Balkon sanieren: vom undichten Altbelag zur dauerhaften Lösung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Balkonsanierung",
+     "abschnitt": "h1: Balkon sanieren: vom undichten Altbelag zur dauerhaften Lösung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Verband",
+     "abschnitt": "h1: Balkon sanieren: vom undichten Altbelag zur dauerhaften Lösung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kreuzfuge",
+     "abschnitt": "h1: Balkon sanieren: vom undichten Altbelag zur dauerhaften Lösung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb",
+     "abschnitt": "h1: Balkon sanieren: vom undichten Altbelag zur dauerhaften Lösung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenverlegung Tezgel",
+     "abschnitt": "h1: Balkon sanieren: vom undichten Altbelag zur dauerhaften Lösung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Inhaber",
+     "abschnitt": "h1: Balkon sanieren: vom undichten Altbelag zur dauerhaften Lösung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Deniz Tezgel",
+     "abschnitt": "h1: Balkon sanieren: vom undichten Altbelag zur dauerhaften Lösung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kammer",
+     "abschnitt": "h1: Balkon sanieren: vom undichten Altbelag zur dauerhaften Lösung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "HWK Wiesbaden",
+     "abschnitt": "h1: Balkon sanieren: vom undichten Altbelag zur dauerhaften Lösung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb seit",
+     "abschnitt": "h1: Balkon sanieren: vom undichten Altbelag zur dauerhaften Lösung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2008",
+     "abschnitt": "h1: Balkon sanieren: vom undichten Altbelag zur dauerhaften Lösung",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/balkon-terrasse/stelzlager": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "2-cm-Feinsteinzeugplatte",
+     "neu": "01 2-cm-Feinsteinzeugplatte",
+     "abschnitt": "h2: So funktioniert die Stelzlager-Verlegung",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Stelzlager mit Fugensteg",
+     "neu": "02 Stelzlager mit Fugensteg",
+     "abschnitt": "h2: So funktioniert die Stelzlager-Verlegung",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Schutzlage / Lagerpad",
+     "neu": "03 Schutzlage / Lagerpad",
+     "abschnitt": "h2: So funktioniert die Stelzlager-Verlegung",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Abdichtung im Gefälle",
+     "neu": "04 Abdichtung im Gefälle",
+     "abschnitt": "h2: So funktioniert die Stelzlager-Verlegung",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Tragender Untergrund",
+     "neu": "05 Tragender Untergrund",
+     "abschnitt": "h2: So funktioniert die Stelzlager-Verlegung",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "2-cm-Feinsteinzeugplatte – frostbeständig, liegt nur an den Ecken auf",
+     "neu": "01 2-cm-Feinsteinzeugplatte – frostbeständig, liegt nur an den Ecken auf",
+     "abschnitt": "h2: So funktioniert die Stelzlager-Verlegung",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Stelzlager mit Fugensteg – höhenverstellbar, gibt die offene Fuge vor",
+     "neu": "02 Stelzlager mit Fugensteg – höhenverstellbar, gibt die offene Fuge vor",
+     "abschnitt": "h2: So funktioniert die Stelzlager-Verlegung",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Schutzlage / Lagerpad – verteilt die Last, schont die Abdichtung",
+     "neu": "03 Schutzlage / Lagerpad – verteilt die Last, schont die Abdichtung",
+     "abschnitt": "h2: So funktioniert die Stelzlager-Verlegung",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Abdichtung im Gefälle – führt das Wasser zu Ablauf oder Rinne",
+     "neu": "04 Abdichtung im Gefälle – führt das Wasser zu Ablauf oder Rinne",
+     "abschnitt": "h2: So funktioniert die Stelzlager-Verlegung",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Tragender Untergrund – Balkonplatte, Dachdecke oder Betonplatte",
+     "neu": "05 Tragender Untergrund – Balkonplatte, Dachdecke oder Betonplatte",
+     "abschnitt": "h2: So funktioniert die Stelzlager-Verlegung",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Blatt",
+     "abschnitt": "h1: Terrassenplatten auf Stelzlagern verlegen mit Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Terrassenplatten auf Stelzlagern verlegen",
+     "abschnitt": "h1: Terrassenplatten auf Stelzlagern verlegen mit Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Verband",
+     "abschnitt": "h1: Terrassenplatten auf Stelzlagern verlegen mit Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kreuzfuge",
+     "abschnitt": "h1: Terrassenplatten auf Stelzlagern verlegen mit Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb",
+     "abschnitt": "h1: Terrassenplatten auf Stelzlagern verlegen mit Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenverlegung Tezgel",
+     "abschnitt": "h1: Terrassenplatten auf Stelzlagern verlegen mit Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Inhaber",
+     "abschnitt": "h1: Terrassenplatten auf Stelzlagern verlegen mit Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Deniz Tezgel",
+     "abschnitt": "h1: Terrassenplatten auf Stelzlagern verlegen mit Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kammer",
+     "abschnitt": "h1: Terrassenplatten auf Stelzlagern verlegen mit Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "HWK Wiesbaden",
+     "abschnitt": "h1: Terrassenplatten auf Stelzlagern verlegen mit Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb seit",
+     "abschnitt": "h1: Terrassenplatten auf Stelzlagern verlegen mit Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2008",
+     "abschnitt": "h1: Terrassenplatten auf Stelzlagern verlegen mit Tezgel",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/balkon-terrasse/terrassenplatten": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Blatt",
+     "abschnitt": "h1: Terrassenplatten richtig wählen: Material, Stärke und Oberfläche",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Terrassenplatten verlegen lassen",
+     "abschnitt": "h1: Terrassenplatten richtig wählen: Material, Stärke und Oberfläche",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Verband",
+     "abschnitt": "h1: Terrassenplatten richtig wählen: Material, Stärke und Oberfläche",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kreuzfuge",
+     "abschnitt": "h1: Terrassenplatten richtig wählen: Material, Stärke und Oberfläche",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb",
+     "abschnitt": "h1: Terrassenplatten richtig wählen: Material, Stärke und Oberfläche",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenverlegung Tezgel",
+     "abschnitt": "h1: Terrassenplatten richtig wählen: Material, Stärke und Oberfläche",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Inhaber",
+     "abschnitt": "h1: Terrassenplatten richtig wählen: Material, Stärke und Oberfläche",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Deniz Tezgel",
+     "abschnitt": "h1: Terrassenplatten richtig wählen: Material, Stärke und Oberfläche",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kammer",
+     "abschnitt": "h1: Terrassenplatten richtig wählen: Material, Stärke und Oberfläche",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "HWK Wiesbaden",
+     "abschnitt": "h1: Terrassenplatten richtig wählen: Material, Stärke und Oberfläche",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb seit",
+     "abschnitt": "h1: Terrassenplatten richtig wählen: Material, Stärke und Oberfläche",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2008",
+     "abschnitt": "h1: Terrassenplatten richtig wählen: Material, Stärke und Oberfläche",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "Feinsteinzeug und Naturstein im Außenbereich",
+     "abschnitt": "h3: Rutschhemmung",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/fliesenreparatur": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Fugensanierung",
+      "Silikon- und Zementfugen erneuern"
+     ],
+     "neu": [
+      "Fugensanierung Silikon- und Zementfugen erneuern"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Schadensanalyse",
+      "Ursachen vor Ort klären"
+     ],
+     "neu": [
+      "Schadensanalyse Ursachen vor Ort klären"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Badsanierung",
+      "Wenn eine Reparatur nicht mehr reicht"
+     ],
+     "neu": [
+      "Badsanierung Wenn eine Reparatur nicht mehr reicht"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Häufige Fragen",
+      "Antworten rund um Fliesen und Ablauf"
+     ],
+     "neu": [
+      "Häufige Fragen Antworten rund um Fliesen und Ablauf"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Absperrventil bzw. Hauptabsperrhahn hinter dem Wasserzähler schließen",
+     "neu": "01 Absperrventil bzw. Hauptabsperrhahn hinter dem Wasserzähler schließen",
+     "abschnitt": "h2: Wasser tritt aus? Erst absperren, dann Installateur",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Elektrische Geräte im betroffenen Bereich nur stromlos schalten, wenn das gefahrlos möglich ist",
+     "neu": "02 Elektrische Geräte im betroffenen Bereich nur stromlos schalten, wenn das gefahrlos möglich ist",
+     "abschnitt": "h2: Wasser tritt aus? Erst absperren, dann Installateur",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Wasser aufnehmen und den Schaden für die Versicherung fotografieren",
+     "neu": "03 Wasser aufnehmen und den Schaden für die Versicherung fotografieren",
+     "abschnitt": "h2: Wasser tritt aus? Erst absperren, dann Installateur",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Einen Installateur mit der Behebung der Leckage beauftragen",
+     "neu": "04 Einen Installateur mit der Behebung der Leckage beauftragen",
+     "abschnitt": "h2: Wasser tritt aus? Erst absperren, dann Installateur",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Blatt",
+     "abschnitt": "h1: Fliesenreparatur und kleine Arbeiten: einzelne Fliesen, Fugen, Sockel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenreparatur",
+     "abschnitt": "h1: Fliesenreparatur und kleine Arbeiten: einzelne Fliesen, Fugen, Sockel",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Verband",
+     "abschnitt": "h1: Fliesenreparatur und kleine Arbeiten: einzelne Fliesen, Fugen, Sockel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kreuzfuge",
+     "abschnitt": "h1: Fliesenreparatur und kleine Arbeiten: einzelne Fliesen, Fugen, Sockel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb",
+     "abschnitt": "h1: Fliesenreparatur und kleine Arbeiten: einzelne Fliesen, Fugen, Sockel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenverlegung Tezgel",
+     "abschnitt": "h1: Fliesenreparatur und kleine Arbeiten: einzelne Fliesen, Fugen, Sockel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Inhaber",
+     "abschnitt": "h1: Fliesenreparatur und kleine Arbeiten: einzelne Fliesen, Fugen, Sockel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Deniz Tezgel",
+     "abschnitt": "h1: Fliesenreparatur und kleine Arbeiten: einzelne Fliesen, Fugen, Sockel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kammer",
+     "abschnitt": "h1: Fliesenreparatur und kleine Arbeiten: einzelne Fliesen, Fugen, Sockel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "HWK Wiesbaden",
+     "abschnitt": "h1: Fliesenreparatur und kleine Arbeiten: einzelne Fliesen, Fugen, Sockel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb seit",
+     "abschnitt": "h1: Fliesenreparatur und kleine Arbeiten: einzelne Fliesen, Fugen, Sockel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2008",
+     "abschnitt": "h1: Fliesenreparatur und kleine Arbeiten: einzelne Fliesen, Fugen, Sockel",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/karriere": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Blatt",
+     "abschnitt": "h1: Fliesenleger Jobs & Karriere bei Tezgel in Wetzlar & Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenleger Jobs",
+     "abschnitt": "h1: Fliesenleger Jobs & Karriere bei Tezgel in Wetzlar & Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Verband",
+     "abschnitt": "h1: Fliesenleger Jobs & Karriere bei Tezgel in Wetzlar & Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Drittelverband",
+     "abschnitt": "h1: Fliesenleger Jobs & Karriere bei Tezgel in Wetzlar & Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb",
+     "abschnitt": "h1: Fliesenleger Jobs & Karriere bei Tezgel in Wetzlar & Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenverlegung Tezgel",
+     "abschnitt": "h1: Fliesenleger Jobs & Karriere bei Tezgel in Wetzlar & Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Inhaber",
+     "abschnitt": "h1: Fliesenleger Jobs & Karriere bei Tezgel in Wetzlar & Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Deniz Tezgel",
+     "abschnitt": "h1: Fliesenleger Jobs & Karriere bei Tezgel in Wetzlar & Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kammer",
+     "abschnitt": "h1: Fliesenleger Jobs & Karriere bei Tezgel in Wetzlar & Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "HWK Wiesbaden",
+     "abschnitt": "h1: Fliesenleger Jobs & Karriere bei Tezgel in Wetzlar & Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb seit",
+     "abschnitt": "h1: Fliesenleger Jobs & Karriere bei Tezgel in Wetzlar & Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2008",
+     "abschnitt": "h1: Fliesenleger Jobs & Karriere bei Tezgel in Wetzlar & Aßlar",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/karriere/ausbildung": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Blatt",
+     "abschnitt": "h1: Ausbildung zum Fliesen-, Platten- und Mosaikleger (m/w/d)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Ausbildung Fliesenleger (m/w/d)",
+     "abschnitt": "h1: Ausbildung zum Fliesen-, Platten- und Mosaikleger (m/w/d)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Verband",
+     "abschnitt": "h1: Ausbildung zum Fliesen-, Platten- und Mosaikleger (m/w/d)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kreuzfuge",
+     "abschnitt": "h1: Ausbildung zum Fliesen-, Platten- und Mosaikleger (m/w/d)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb",
+     "abschnitt": "h1: Ausbildung zum Fliesen-, Platten- und Mosaikleger (m/w/d)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenverlegung Tezgel",
+     "abschnitt": "h1: Ausbildung zum Fliesen-, Platten- und Mosaikleger (m/w/d)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Inhaber",
+     "abschnitt": "h1: Ausbildung zum Fliesen-, Platten- und Mosaikleger (m/w/d)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Deniz Tezgel",
+     "abschnitt": "h1: Ausbildung zum Fliesen-, Platten- und Mosaikleger (m/w/d)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kammer",
+     "abschnitt": "h1: Ausbildung zum Fliesen-, Platten- und Mosaikleger (m/w/d)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "HWK Wiesbaden",
+     "abschnitt": "h1: Ausbildung zum Fliesen-, Platten- und Mosaikleger (m/w/d)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb seit",
+     "abschnitt": "h1: Ausbildung zum Fliesen-, Platten- und Mosaikleger (m/w/d)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2008",
+     "abschnitt": "h1: Ausbildung zum Fliesen-, Platten- und Mosaikleger (m/w/d)",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/kontakt": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "pflichtanker-fehlt",
+     "anker": "/kontakt#express-anfrage",
+     "grund": "fehlte schon in A"
+    },
+    {
+     "farbe": "gelb",
+     "art": "pflichtanker-fehlt",
+     "anker": "/kontakt#termin-buchen",
+     "grund": "fehlte schon in A"
+    }
+   ],
+   "gruen": []
+  },
+  "/naturstein": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Blatt",
+     "abschnitt": "h1: Naturstein- und Granitverlegung vom Fachbetrieb",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Naturstein verlegen",
+     "abschnitt": "h1: Naturstein- und Granitverlegung vom Fachbetrieb",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Verband",
+     "abschnitt": "h1: Naturstein- und Granitverlegung vom Fachbetrieb",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Drittelverband",
+     "abschnitt": "h1: Naturstein- und Granitverlegung vom Fachbetrieb",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb",
+     "abschnitt": "h1: Naturstein- und Granitverlegung vom Fachbetrieb",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenverlegung Tezgel",
+     "abschnitt": "h1: Naturstein- und Granitverlegung vom Fachbetrieb",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Inhaber",
+     "abschnitt": "h1: Naturstein- und Granitverlegung vom Fachbetrieb",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Deniz Tezgel",
+     "abschnitt": "h1: Naturstein- und Granitverlegung vom Fachbetrieb",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kammer",
+     "abschnitt": "h1: Naturstein- und Granitverlegung vom Fachbetrieb",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "HWK Wiesbaden",
+     "abschnitt": "h1: Naturstein- und Granitverlegung vom Fachbetrieb",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb seit",
+     "abschnitt": "h1: Naturstein- und Granitverlegung vom Fachbetrieb",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2008",
+     "abschnitt": "h1: Naturstein- und Granitverlegung vom Fachbetrieb",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "Silikatische und kalkhaltige Natursteine im Vergleich",
+     "abschnitt": "h2: Silikatisch oder kalkhaltig: was für Säure, Pflege und Verlegung zählt",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/naturstein/granit": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Blatt",
+     "abschnitt": "h1: Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Granit & Schiefer verlegen lassen",
+     "abschnitt": "h1: Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Verband",
+     "abschnitt": "h1: Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Drittelverband",
+     "abschnitt": "h1: Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb",
+     "abschnitt": "h1: Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenverlegung Tezgel",
+     "abschnitt": "h1: Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Inhaber",
+     "abschnitt": "h1: Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Deniz Tezgel",
+     "abschnitt": "h1: Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kammer",
+     "abschnitt": "h1: Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "HWK Wiesbaden",
+     "abschnitt": "h1: Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb seit",
+     "abschnitt": "h1: Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2008",
+     "abschnitt": "h1: Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/naturstein/marmor-kalkstein": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Blatt",
+     "abschnitt": "h1: Marmor, Travertin und Kalkstein: edle Natursteine richtig verlegen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Marmor & Travertin verlegen lassen",
+     "abschnitt": "h1: Marmor, Travertin und Kalkstein: edle Natursteine richtig verlegen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Verband",
+     "abschnitt": "h1: Marmor, Travertin und Kalkstein: edle Natursteine richtig verlegen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Drittelverband",
+     "abschnitt": "h1: Marmor, Travertin und Kalkstein: edle Natursteine richtig verlegen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb",
+     "abschnitt": "h1: Marmor, Travertin und Kalkstein: edle Natursteine richtig verlegen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenverlegung Tezgel",
+     "abschnitt": "h1: Marmor, Travertin und Kalkstein: edle Natursteine richtig verlegen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Inhaber",
+     "abschnitt": "h1: Marmor, Travertin und Kalkstein: edle Natursteine richtig verlegen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Deniz Tezgel",
+     "abschnitt": "h1: Marmor, Travertin und Kalkstein: edle Natursteine richtig verlegen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kammer",
+     "abschnitt": "h1: Marmor, Travertin und Kalkstein: edle Natursteine richtig verlegen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "HWK Wiesbaden",
+     "abschnitt": "h1: Marmor, Travertin und Kalkstein: edle Natursteine richtig verlegen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb seit",
+     "abschnitt": "h1: Marmor, Travertin und Kalkstein: edle Natursteine richtig verlegen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2008",
+     "abschnitt": "h1: Marmor, Travertin und Kalkstein: edle Natursteine richtig verlegen",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/referenzen": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "pflichtanker-fehlt",
+     "anker": "/referenzen#bewertungen",
+     "grund": "fehlte schon in A"
+    }
+   ],
+   "gruen": []
+  },
+  "/schadensanalyse": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Undichte Dusche erkennen",
+      "Warnzeichen für Feuchte hinter Fliesen"
+     ],
+     "neu": [
+      "Undichte Dusche erkennen Warnzeichen für Feuchte hinter Fliesen"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Schimmel in Fugen vermeiden",
+      "Lüften, Pflege und Silikonfugen"
+     ],
+     "neu": [
+      "Schimmel in Fugen vermeiden Lüften, Pflege und Silikonfugen"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Untergrund & Abdichtung",
+      "Tragfähig, eben, trocken, dicht"
+     ],
+     "neu": [
+      "Untergrund & Abdichtung Tragfähig, eben, trocken, dicht"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Außenbereiche",
+      "Balkon, Terrasse und Eingang"
+     ],
+     "neu": [
+      "Außenbereiche Balkon, Terrasse und Eingang"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Blatt",
+     "abschnitt": "h1: Schadensanalyse für Fliesen, Fugen und Abdichtung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenschäden analysieren",
+     "abschnitt": "h1: Schadensanalyse für Fliesen, Fugen und Abdichtung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Verband",
+     "abschnitt": "h1: Schadensanalyse für Fliesen, Fugen und Abdichtung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kreuzfuge",
+     "abschnitt": "h1: Schadensanalyse für Fliesen, Fugen und Abdichtung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb",
+     "abschnitt": "h1: Schadensanalyse für Fliesen, Fugen und Abdichtung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenverlegung Tezgel",
+     "abschnitt": "h1: Schadensanalyse für Fliesen, Fugen und Abdichtung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Inhaber",
+     "abschnitt": "h1: Schadensanalyse für Fliesen, Fugen und Abdichtung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Deniz Tezgel",
+     "abschnitt": "h1: Schadensanalyse für Fliesen, Fugen und Abdichtung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kammer",
+     "abschnitt": "h1: Schadensanalyse für Fliesen, Fugen und Abdichtung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "HWK Wiesbaden",
+     "abschnitt": "h1: Schadensanalyse für Fliesen, Fugen und Abdichtung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb seit",
+     "abschnitt": "h1: Schadensanalyse für Fliesen, Fugen und Abdichtung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2008",
+     "abschnitt": "h1: Schadensanalyse für Fliesen, Fugen und Abdichtung",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/treppen": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Wohnbereiche fliesen",
+      "Flur, Wohnraum und Treppe in einem Belagskonzept"
+     ],
+     "neu": [
+      "Wohnbereiche fliesen Flur, Wohnraum und Treppe in einem Belagskonzept"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Außenbereiche",
+      "Balkon, Terrasse und Eingang dauerhaft belegt"
+     ],
+     "neu": [
+      "Außenbereiche Balkon, Terrasse und Eingang dauerhaft belegt"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Rutschhemmung verstehen",
+      "R-Klassen und Bewertungsgruppen nach DIN EN 16165"
+     ],
+     "neu": [
+      "Rutschhemmung verstehen R-Klassen und Bewertungsgruppen nach DIN EN 16165"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Referenzen",
+      "Ausgeführte Projekte und Kundenstimmen"
+     ],
+     "neu": [
+      "Referenzen Ausgeführte Projekte und Kundenstimmen"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Blatt",
+     "abschnitt": "h1: Treppen neu belegen: Welche Lösung passt zu Ihrer Treppe?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Treppe fliesen & sanieren",
+     "abschnitt": "h1: Treppen neu belegen: Welche Lösung passt zu Ihrer Treppe?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Verband",
+     "abschnitt": "h1: Treppen neu belegen: Welche Lösung passt zu Ihrer Treppe?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Halbverband",
+     "abschnitt": "h1: Treppen neu belegen: Welche Lösung passt zu Ihrer Treppe?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb",
+     "abschnitt": "h1: Treppen neu belegen: Welche Lösung passt zu Ihrer Treppe?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenverlegung Tezgel",
+     "abschnitt": "h1: Treppen neu belegen: Welche Lösung passt zu Ihrer Treppe?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Inhaber",
+     "abschnitt": "h1: Treppen neu belegen: Welche Lösung passt zu Ihrer Treppe?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Deniz Tezgel",
+     "abschnitt": "h1: Treppen neu belegen: Welche Lösung passt zu Ihrer Treppe?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kammer",
+     "abschnitt": "h1: Treppen neu belegen: Welche Lösung passt zu Ihrer Treppe?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "HWK Wiesbaden",
+     "abschnitt": "h1: Treppen neu belegen: Welche Lösung passt zu Ihrer Treppe?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb seit",
+     "abschnitt": "h1: Treppen neu belegen: Welche Lösung passt zu Ihrer Treppe?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2008",
+     "abschnitt": "h1: Treppen neu belegen: Welche Lösung passt zu Ihrer Treppe?",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/treppen/aussentreppe": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Außenbereiche",
+      "Balkon, Terrasse und Eingang"
+     ],
+     "neu": [
+      "Außenbereiche Balkon, Terrasse und Eingang"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Untergrund & Abdichtung",
+      "Das Fundament jedes dauerhaften Belags"
+     ],
+     "neu": [
+      "Untergrund & Abdichtung Das Fundament jedes dauerhaften Belags"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Kantenlösungen im Vergleich",
+      "Gehrung, Profil oder Stufenplatte"
+     ],
+     "neu": [
+      "Kantenlösungen im Vergleich Gehrung, Profil oder Stufenplatte"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Häufige Fragen",
+      "Antworten rund um Fliesen und Ablauf"
+     ],
+     "neu": [
+      "Häufige Fragen Antworten rund um Fliesen und Ablauf"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Blatt",
+     "abschnitt": "h1: Außentreppe fliesen: frostsicher & rutschfest bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Außentreppe fliesen",
+     "abschnitt": "h1: Außentreppe fliesen: frostsicher & rutschfest bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Verband",
+     "abschnitt": "h1: Außentreppe fliesen: frostsicher & rutschfest bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Halbverband",
+     "abschnitt": "h1: Außentreppe fliesen: frostsicher & rutschfest bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb",
+     "abschnitt": "h1: Außentreppe fliesen: frostsicher & rutschfest bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenverlegung Tezgel",
+     "abschnitt": "h1: Außentreppe fliesen: frostsicher & rutschfest bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Inhaber",
+     "abschnitt": "h1: Außentreppe fliesen: frostsicher & rutschfest bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Deniz Tezgel",
+     "abschnitt": "h1: Außentreppe fliesen: frostsicher & rutschfest bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kammer",
+     "abschnitt": "h1: Außentreppe fliesen: frostsicher & rutschfest bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "HWK Wiesbaden",
+     "abschnitt": "h1: Außentreppe fliesen: frostsicher & rutschfest bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb seit",
+     "abschnitt": "h1: Außentreppe fliesen: frostsicher & rutschfest bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2008",
+     "abschnitt": "h1: Außentreppe fliesen: frostsicher & rutschfest bei Tezgel",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/treppen/innentreppe": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Treppen im Überblick",
+      "Voraussetzungen, Belagsarten und Steigungen"
+     ],
+     "neu": [
+      "Treppen im Überblick Voraussetzungen, Belagsarten und Steigungen"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Wohnbereiche fliesen",
+      "Flur, Wohnraum und Treppe aus einem Guss"
+     ],
+     "neu": [
+      "Wohnbereiche fliesen Flur, Wohnraum und Treppe aus einem Guss"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Verlegemuster & Abschlüsse",
+      "Fugenbild, Kanten und Sockel"
+     ],
+     "neu": [
+      "Verlegemuster & Abschlüsse Fugenbild, Kanten und Sockel"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Rutschhemmung",
+      "R-Klassen nach DIN EN 16165 erklärt"
+     ],
+     "neu": [
+      "Rutschhemmung R-Klassen nach DIN EN 16165 erklärt"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Blatt",
+     "abschnitt": "h1: Innentreppe fliesen: Stufen, Setzstufen und Sockel aus einem Guss",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Innentreppe fliesen lassen",
+     "abschnitt": "h1: Innentreppe fliesen: Stufen, Setzstufen und Sockel aus einem Guss",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Verband",
+     "abschnitt": "h1: Innentreppe fliesen: Stufen, Setzstufen und Sockel aus einem Guss",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Halbverband",
+     "abschnitt": "h1: Innentreppe fliesen: Stufen, Setzstufen und Sockel aus einem Guss",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb",
+     "abschnitt": "h1: Innentreppe fliesen: Stufen, Setzstufen und Sockel aus einem Guss",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenverlegung Tezgel",
+     "abschnitt": "h1: Innentreppe fliesen: Stufen, Setzstufen und Sockel aus einem Guss",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Inhaber",
+     "abschnitt": "h1: Innentreppe fliesen: Stufen, Setzstufen und Sockel aus einem Guss",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Deniz Tezgel",
+     "abschnitt": "h1: Innentreppe fliesen: Stufen, Setzstufen und Sockel aus einem Guss",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kammer",
+     "abschnitt": "h1: Innentreppe fliesen: Stufen, Setzstufen und Sockel aus einem Guss",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "HWK Wiesbaden",
+     "abschnitt": "h1: Innentreppe fliesen: Stufen, Setzstufen und Sockel aus einem Guss",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb seit",
+     "abschnitt": "h1: Innentreppe fliesen: Stufen, Setzstufen und Sockel aus einem Guss",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2008",
+     "abschnitt": "h1: Innentreppe fliesen: Stufen, Setzstufen und Sockel aus einem Guss",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "Gehrung, Profil oder Stufenplatte?",
+     "abschnitt": "h2: Gehrung, Profil oder Stufenplatte?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Gehrung, Profil oder Stufenplatte?",
+     "abschnitt": "h2: Gehrung, Profil oder Stufenplatte?",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/treppen/treppenhaus": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Treppen im Überblick",
+      "Voraussetzungen, Belagsarten und Steigungen"
+     ],
+     "neu": [
+      "Treppen im Überblick Voraussetzungen, Belagsarten und Steigungen"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Naturstein & Granit",
+      "Silikatische Natursteine im Porträt"
+     ],
+     "neu": [
+      "Naturstein & Granit Silikatische Natursteine im Porträt"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Wohnbereiche fliesen",
+      "Böden für Flur, Diele und Wohnen"
+     ],
+     "neu": [
+      "Wohnbereiche fliesen Böden für Flur, Diele und Wohnen"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Unser Betrieb",
+      "Fachbetrieb aus Aßlar, HWK Wiesbaden"
+     ],
+     "neu": [
+      "Unser Betrieb Fachbetrieb aus Aßlar, HWK Wiesbaden"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Blatt",
+     "abschnitt": "h1: Treppenhaus sanieren: neue Beläge im Mehrfamilienhaus",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Treppenhaus sanieren",
+     "abschnitt": "h1: Treppenhaus sanieren: neue Beläge im Mehrfamilienhaus",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Verband",
+     "abschnitt": "h1: Treppenhaus sanieren: neue Beläge im Mehrfamilienhaus",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Halbverband",
+     "abschnitt": "h1: Treppenhaus sanieren: neue Beläge im Mehrfamilienhaus",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb",
+     "abschnitt": "h1: Treppenhaus sanieren: neue Beläge im Mehrfamilienhaus",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenverlegung Tezgel",
+     "abschnitt": "h1: Treppenhaus sanieren: neue Beläge im Mehrfamilienhaus",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Inhaber",
+     "abschnitt": "h1: Treppenhaus sanieren: neue Beläge im Mehrfamilienhaus",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Deniz Tezgel",
+     "abschnitt": "h1: Treppenhaus sanieren: neue Beläge im Mehrfamilienhaus",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kammer",
+     "abschnitt": "h1: Treppenhaus sanieren: neue Beläge im Mehrfamilienhaus",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "HWK Wiesbaden",
+     "abschnitt": "h1: Treppenhaus sanieren: neue Beläge im Mehrfamilienhaus",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb seit",
+     "abschnitt": "h1: Treppenhaus sanieren: neue Beläge im Mehrfamilienhaus",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2008",
+     "abschnitt": "h1: Treppenhaus sanieren: neue Beläge im Mehrfamilienhaus",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/untergrund-abdichtung/entkopplung": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Blatt",
+     "abschnitt": "h1: Fliesen auf Holzboden verlegen: Entkopplung bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesen auf Holzboden verlegen",
+     "abschnitt": "h1: Fliesen auf Holzboden verlegen: Entkopplung bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Verband",
+     "abschnitt": "h1: Fliesen auf Holzboden verlegen: Entkopplung bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kreuzfuge",
+     "abschnitt": "h1: Fliesen auf Holzboden verlegen: Entkopplung bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb",
+     "abschnitt": "h1: Fliesen auf Holzboden verlegen: Entkopplung bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenverlegung Tezgel",
+     "abschnitt": "h1: Fliesen auf Holzboden verlegen: Entkopplung bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Inhaber",
+     "abschnitt": "h1: Fliesen auf Holzboden verlegen: Entkopplung bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Deniz Tezgel",
+     "abschnitt": "h1: Fliesen auf Holzboden verlegen: Entkopplung bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kammer",
+     "abschnitt": "h1: Fliesen auf Holzboden verlegen: Entkopplung bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "HWK Wiesbaden",
+     "abschnitt": "h1: Fliesen auf Holzboden verlegen: Entkopplung bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb seit",
+     "abschnitt": "h1: Fliesen auf Holzboden verlegen: Entkopplung bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2008",
+     "abschnitt": "h1: Fliesen auf Holzboden verlegen: Entkopplung bei Tezgel",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/untergrund-abdichtung/fliesen-auf-fliesen": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Blatt",
+     "abschnitt": "h1: Altfliesen überkleben: Wann es fachgerecht geht bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Altfliesen überkleben",
+     "abschnitt": "h1: Altfliesen überkleben: Wann es fachgerecht geht bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Verband",
+     "abschnitt": "h1: Altfliesen überkleben: Wann es fachgerecht geht bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kreuzfuge",
+     "abschnitt": "h1: Altfliesen überkleben: Wann es fachgerecht geht bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb",
+     "abschnitt": "h1: Altfliesen überkleben: Wann es fachgerecht geht bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenverlegung Tezgel",
+     "abschnitt": "h1: Altfliesen überkleben: Wann es fachgerecht geht bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Inhaber",
+     "abschnitt": "h1: Altfliesen überkleben: Wann es fachgerecht geht bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Deniz Tezgel",
+     "abschnitt": "h1: Altfliesen überkleben: Wann es fachgerecht geht bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kammer",
+     "abschnitt": "h1: Altfliesen überkleben: Wann es fachgerecht geht bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "HWK Wiesbaden",
+     "abschnitt": "h1: Altfliesen überkleben: Wann es fachgerecht geht bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb seit",
+     "abschnitt": "h1: Altfliesen überkleben: Wann es fachgerecht geht bei Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2008",
+     "abschnitt": "h1: Altfliesen überkleben: Wann es fachgerecht geht bei Tezgel",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  }
+ }
+}

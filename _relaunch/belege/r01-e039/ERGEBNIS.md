@@ -40,3 +40,5 @@ spaet auf /leistungen/[id]#kosten-rechner, scroll-mt-Reste).
 - `.spaet-zeichnen` (content-visibility) schneidet Fokusringe am Abschnittsrand ab – familienweit `overflow-clip-margin`
   prüfen statt Innenabstand je Seite (S-21); Tab-Folge über mehrere spaet-Abschnitte ohne Bedienelement (S-19).
 - 404 → „Zur Startseite“ im Dev-Server unter Last zweimal rot (S-21, gegen 4362 grün) – im Reinraum-Tor beobachten.
+- Tor e5-e039, Textabstand m375: H2 „Woran Sie einen sanierungsbedürftigen Balkon erkennen“ (/balkon-terrasse/balkonsanierung)
+  ragt 3 px über – weiches Trennzeichen in „sanierungs­bedürftigen“ (K-006) oder `hyphens` für Überschriften familienweit.

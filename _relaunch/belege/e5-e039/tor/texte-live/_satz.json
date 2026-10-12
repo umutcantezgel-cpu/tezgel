@@ -1,0 +1,843 @@
+{
+ "satz": "e5-e039-texte-live",
+ "base": null,
+ "bedingungen": {
+  "quelle": "../../../../tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/reinraum-a06bd36/.next/server/app/**/*.html",
+  "build_id": "wH3U_YszswqNc1LIJj8mP",
+  "dateien": 22,
+  "parser": "Chromium DOMParser (Playwright 1.56.1), keine Skriptausführung, keine Netzanfragen",
+  "streaming": "React $RC/$RS aufgelöst (Suspense-Inhalt an Ort, Ersatzinhalt entfernt)",
+  "ohne": [
+   "script (JSON-LD als Hash)",
+   "style",
+   "template",
+   "noscript"
+  ],
+  "normalisierung": "U+00AD/U+200B/U+2060/U+FEFF entfernt; U+00A0/U+2007/U+202F → Leerzeichen; <br> → Leerzeichen; Leerraum zusammengefasst; kein Groß/Klein-Angleich; Inline-Grenze ohne Leerraum → Leerzeichen (außer an Zeichensetzung)",
+  "meta_ohne": [
+   "charset",
+   "viewport",
+   "theme-color",
+   "color-scheme",
+   "x-build",
+   "next-size-adjust",
+   "format-detection"
+  ],
+  "hash_befehle": [
+   "cookie-settings"
+  ]
+ },
+ "erstellt": "2026-10-12T19:01:07.370Z",
+ "summe": {
+  "dateien": 22,
+  "im_manifest": 22,
+  "eintraege": 8961,
+  "seiten_mit_mehreren_h1": [],
+  "seiten_ohne_h1": [],
+  "fragmente": {
+   "gesamt": 66,
+   "ok": 22,
+   "befehle": 22,
+   "fehlend": 0,
+   "ziel_unbekannt": 22,
+   "pflichtanker_ok": "0/4"
+  },
+  "netz_protokoll": 0,
+  "laufzeit_s": 2.4
+ },
+ "fragmente": {
+  "gesamt": 66,
+  "ok": 22,
+  "befehle": [
+   {
+    "seite": "/bad/bad-aus-einer-hand",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/bad/barrierefreies-bad",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/bad/badsanierung",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/bad/fliesen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/balkon-terrasse",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/balkon-terrasse/balkonsanierung",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/balkon-terrasse/stelzlager",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/balkon-terrasse/terrassenplatten",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/fliesenreparatur",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/karriere",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/karriere/ausbildung",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/fliesen/fugensanierung",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/naturstein/granit",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/naturstein",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/schadensanalyse",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/naturstein/marmor-kalkstein",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/treppen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/treppen/aussentreppe",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/treppen/treppenhaus",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/treppen/innentreppe",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/untergrund-abdichtung/entkopplung",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/untergrund-abdichtung/fliesen-auf-fliesen",
+    "href": "#cookie-settings"
+   }
+  ],
+  "fehlend": [],
+  "ziel_unbekannt": [
+   {
+    "seite": "/bad/bad-aus-einer-hand",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/bad/barrierefreies-bad",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/bad/badsanierung",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/bad/fliesen",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/balkon-terrasse",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/balkon-terrasse/balkonsanierung",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/balkon-terrasse/stelzlager",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/balkon-terrasse/terrassenplatten",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/fliesenreparatur",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/karriere",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/karriere/ausbildung",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/fliesen/fugensanierung",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/naturstein/granit",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/naturstein",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/schadensanalyse",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/naturstein/marmor-kalkstein",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/treppen",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/treppen/aussentreppe",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/treppen/treppenhaus",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/treppen/innentreppe",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/untergrund-abdichtung/entkopplung",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/untergrund-abdichtung/fliesen-auf-fliesen",
+    "href": "/kontakt#express-anfrage"
+   }
+  ],
+  "ziele": [
+   {
+    "ziel": "/kontakt",
+    "id": "express-anfrage",
+    "verweise": 22,
+    "von": [
+     "/bad/bad-aus-einer-hand",
+     "/bad/barrierefreies-bad",
+     "/bad/badsanierung",
+     "/bad/fliesen",
+     "/balkon-terrasse"
+    ]
+   },
+   {
+    "ziel": "/bad/bad-aus-einer-hand",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad/bad-aus-einer-hand"
+    ]
+   },
+   {
+    "ziel": "/bad/barrierefreies-bad",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad/barrierefreies-bad"
+    ]
+   },
+   {
+    "ziel": "/bad/badsanierung",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad/badsanierung"
+    ]
+   },
+   {
+    "ziel": "/bad/fliesen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad/fliesen"
+    ]
+   },
+   {
+    "ziel": "/balkon-terrasse",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/balkon-terrasse"
+    ]
+   },
+   {
+    "ziel": "/balkon-terrasse/balkonsanierung",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/balkon-terrasse/balkonsanierung"
+    ]
+   },
+   {
+    "ziel": "/balkon-terrasse/stelzlager",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/balkon-terrasse/stelzlager"
+    ]
+   },
+   {
+    "ziel": "/balkon-terrasse/terrassenplatten",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/balkon-terrasse/terrassenplatten"
+    ]
+   },
+   {
+    "ziel": "/fliesenreparatur",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/fliesenreparatur"
+    ]
+   },
+   {
+    "ziel": "/karriere",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/karriere"
+    ]
+   },
+   {
+    "ziel": "/karriere/ausbildung",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/karriere/ausbildung"
+    ]
+   },
+   {
+    "ziel": "/fliesen/fugensanierung",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/fliesen/fugensanierung"
+    ]
+   },
+   {
+    "ziel": "/naturstein/granit",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/naturstein/granit"
+    ]
+   },
+   {
+    "ziel": "/naturstein",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/naturstein"
+    ]
+   },
+   {
+    "ziel": "/schadensanalyse",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/schadensanalyse"
+    ]
+   },
+   {
+    "ziel": "/naturstein/marmor-kalkstein",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/naturstein/marmor-kalkstein"
+    ]
+   },
+   {
+    "ziel": "/treppen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/treppen"
+    ]
+   },
+   {
+    "ziel": "/treppen/aussentreppe",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/treppen/aussentreppe"
+    ]
+   },
+   {
+    "ziel": "/treppen/treppenhaus",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/treppen/treppenhaus"
+    ]
+   },
+   {
+    "ziel": "/treppen/innentreppe",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/treppen/innentreppe"
+    ]
+   },
+   {
+    "ziel": "/untergrund-abdichtung/entkopplung",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/untergrund-abdichtung/entkopplung"
+    ]
+   },
+   {
+    "ziel": "/untergrund-abdichtung/fliesen-auf-fliesen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/untergrund-abdichtung/fliesen-auf-fliesen"
+    ]
+   }
+  ],
+  "pflichtanker": [
+   {
+    "anker": "/#express-anfrage",
+    "ok": false,
+    "seite_vorhanden": false
+   },
+   {
+    "anker": "/kontakt#express-anfrage",
+    "ok": false,
+    "seite_vorhanden": false
+   },
+   {
+    "anker": "/kontakt#termin-buchen",
+    "ok": false,
+    "seite_vorhanden": false
+   },
+   {
+    "anker": "/referenzen#bewertungen",
+    "ok": false,
+    "seite_vorhanden": false
+   }
+  ]
+ },
+ "seiten": {
+  "/bad/bad-aus-einer-hand": {
+   "datei": "bad__bad-aus-einer-hand.json",
+   "quelle": "bad/bad-aus-einer-hand.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 399,
+   "arten": {
+    "meta": 33,
+    "text": 317,
+    "aria": 38,
+    "alt": 3,
+    "ueberschrift": 8
+   },
+   "h1": [
+    "Bad aus einer Hand: Ein Ansprechpartner. Ein Festpreis. Null Stress."
+   ],
+   "hash": "36ab63b0a9817f20"
+  },
+  "/bad/badsanierung": {
+   "datei": "bad__badsanierung.json",
+   "quelle": "bad/badsanierung.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 410,
+   "arten": {
+    "meta": 33,
+    "text": 326,
+    "aria": 38,
+    "alt": 3,
+    "ueberschrift": 10
+   },
+   "h1": [
+    "Badsanierung in Aßlar & Wetzlar: Ihr neues Traumbad ohne Stress & zum Festpreis"
+   ],
+   "hash": "363810bf96f659a0"
+  },
+  "/bad/barrierefreies-bad": {
+   "datei": "bad__barrierefreies-bad.json",
+   "quelle": "bad/barrierefreies-bad.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 376,
+   "arten": {
+    "meta": 33,
+    "text": 292,
+    "aria": 38,
+    "alt": 3,
+    "ueberschrift": 10
+   },
+   "h1": [
+    "Barrierefreie Badmodernisierung in Aßlar & Wetzlar: Sicherheit, Komfort & bis zu 4.180 € Zuschuss"
+   ],
+   "hash": "ff7d3c9da43312c0"
+  },
+  "/bad/fliesen": {
+   "datei": "bad__fliesen.json",
+   "quelle": "bad/fliesen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 388,
+   "arten": {
+    "meta": 33,
+    "text": 300,
+    "aria": 39,
+    "alt": 3,
+    "ueberschrift": 13
+   },
+   "h1": [
+    "Perfekte Fliesenverlegung für Ihr neues Badezimmer"
+   ],
+   "hash": "6ca1fbf83546c3ba"
+  },
+  "/balkon-terrasse": {
+   "datei": "balkon-terrasse.json",
+   "quelle": "balkon-terrasse.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 435,
+   "arten": {
+    "meta": 33,
+    "text": 340,
+    "aria": 37,
+    "alt": 3,
+    "ueberschrift": 22
+   },
+   "h1": [
+    "Balkon und Terrasse: Beläge, die Frost und Regen standhalten"
+   ],
+   "hash": "e9ce2aa0f13b7110"
+  },
+  "/balkon-terrasse/balkonsanierung": {
+   "datei": "balkon-terrasse__balkonsanierung.json",
+   "quelle": "balkon-terrasse/balkonsanierung.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 410,
+   "arten": {
+    "meta": 33,
+    "text": 316,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 23
+   },
+   "h1": [
+    "Balkon sanieren: vom undichten Altbelag zur dauerhaften Lösung"
+   ],
+   "hash": "b932b39c9f1d479f"
+  },
+  "/balkon-terrasse/stelzlager": {
+   "datei": "balkon-terrasse__stelzlager.json",
+   "quelle": "balkon-terrasse/stelzlager.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 411,
+   "arten": {
+    "meta": 33,
+    "text": 321,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 19
+   },
+   "h1": [
+    "Terrassenplatten auf Stelzlagern verlegen mit Tezgel"
+   ],
+   "hash": "3b9f710e9e191cd4"
+  },
+  "/balkon-terrasse/terrassenplatten": {
+   "datei": "balkon-terrasse__terrassenplatten.json",
+   "quelle": "balkon-terrasse/terrassenplatten.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 409,
+   "arten": {
+    "meta": 33,
+    "text": 320,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 18
+   },
+   "h1": [
+    "Terrassenplatten richtig wählen: Material, Stärke und Oberfläche"
+   ],
+   "hash": "9a24e98e0bf7e2e0"
+  },
+  "/fliesen/fugensanierung": {
+   "datei": "fliesen__fugensanierung.json",
+   "quelle": "fliesen/fugensanierung.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 417,
+   "arten": {
+    "meta": 33,
+    "text": 326,
+    "aria": 37,
+    "alt": 3,
+    "ueberschrift": 18
+   },
+   "h1": [
+    "Fugensanierung: Silikon- und Zementfugen fachgerecht erneuern"
+   ],
+   "hash": "b95ab3a2fe8fbb42"
+  },
+  "/fliesenreparatur": {
+   "datei": "fliesenreparatur.json",
+   "quelle": "fliesenreparatur.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 418,
+   "arten": {
+    "meta": 33,
+    "text": 325,
+    "aria": 39,
+    "alt": 3,
+    "ueberschrift": 18
+   },
+   "h1": [
+    "Fliesenreparatur und kleine Arbeiten: einzelne Fliesen, Fugen, Sockel"
+   ],
+   "hash": "c92cb2bc8fd89c37"
+  },
+  "/karriere": {
+   "datei": "karriere.json",
+   "quelle": "karriere.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 382,
+   "arten": {
+    "meta": 33,
+    "text": 296,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 15
+   },
+   "h1": [
+    "Fliesenleger Jobs & Karriere bei Tezgel in Wetzlar & Aßlar"
+   ],
+   "hash": "c2f5c7ce484847a6"
+  },
+  "/karriere/ausbildung": {
+   "datei": "karriere__ausbildung.json",
+   "quelle": "karriere/ausbildung.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 357,
+   "arten": {
+    "meta": 33,
+    "text": 280,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 6
+   },
+   "h1": [
+    "Ausbildung zum Fliesen-, Platten- und Mosaikleger (m/w/d)"
+   ],
+   "hash": "de36817de92fd48d"
+  },
+  "/naturstein": {
+   "datei": "naturstein.json",
+   "quelle": "naturstein.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 449,
+   "arten": {
+    "meta": 33,
+    "text": 355,
+    "aria": 37,
+    "alt": 3,
+    "ueberschrift": 21
+   },
+   "h1": [
+    "Naturstein- und Granitverlegung vom Fachbetrieb"
+   ],
+   "hash": "ddc7ffd4bec17b4b"
+  },
+  "/naturstein/granit": {
+   "datei": "naturstein__granit.json",
+   "quelle": "naturstein/granit.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 396,
+   "arten": {
+    "meta": 33,
+    "text": 309,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 16
+   },
+   "h1": [
+    "Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen"
+   ],
+   "hash": "7a8a5b3150db0573"
+  },
+  "/naturstein/marmor-kalkstein": {
+   "datei": "naturstein__marmor-kalkstein.json",
+   "quelle": "naturstein/marmor-kalkstein.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 411,
+   "arten": {
+    "meta": 33,
+    "text": 318,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 22
+   },
+   "h1": [
+    "Marmor, Travertin und Kalkstein: edle Natursteine richtig verlegen"
+   ],
+   "hash": "2f0e0cb3327ed693"
+  },
+  "/schadensanalyse": {
+   "datei": "schadensanalyse.json",
+   "quelle": "schadensanalyse.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 421,
+   "arten": {
+    "meta": 33,
+    "text": 330,
+    "aria": 36,
+    "alt": 3,
+    "ueberschrift": 19
+   },
+   "h1": [
+    "Schadensanalyse für Fliesen, Fugen und Abdichtung"
+   ],
+   "hash": "1701a0d01a7d45da"
+  },
+  "/treppen": {
+   "datei": "treppen.json",
+   "quelle": "treppen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 433,
+   "arten": {
+    "meta": 33,
+    "text": 336,
+    "aria": 37,
+    "alt": 3,
+    "ueberschrift": 24
+   },
+   "h1": [
+    "Treppen neu belegen: Welche Lösung passt zu Ihrer Treppe?"
+   ],
+   "hash": "bb43720b7090dbce"
+  },
+  "/treppen/aussentreppe": {
+   "datei": "treppen__aussentreppe.json",
+   "quelle": "treppen/aussentreppe.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 410,
+   "arten": {
+    "meta": 33,
+    "text": 316,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 23
+   },
+   "h1": [
+    "Außentreppe fliesen: frostsicher & rutschfest bei Tezgel"
+   ],
+   "hash": "6acbb4271f49a315"
+  },
+  "/treppen/innentreppe": {
+   "datei": "treppen__innentreppe.json",
+   "quelle": "treppen/innentreppe.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 404,
+   "arten": {
+    "meta": 33,
+    "text": 317,
+    "aria": 37,
+    "alt": 3,
+    "ueberschrift": 14
+   },
+   "h1": [
+    "Innentreppe fliesen: Stufen, Setzstufen und Sockel aus einem Guss"
+   ],
+   "hash": "39cc415a7592ad53"
+  },
+  "/treppen/treppenhaus": {
+   "datei": "treppen__treppenhaus.json",
+   "quelle": "treppen/treppenhaus.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 395,
+   "arten": {
+    "meta": 33,
+    "text": 304,
+    "aria": 36,
+    "alt": 3,
+    "ueberschrift": 19
+   },
+   "h1": [
+    "Treppenhaus sanieren: neue Beläge im Mehrfamilienhaus"
+   ],
+   "hash": "7e7e55401163a158"
+  },
+  "/untergrund-abdichtung/entkopplung": {
+   "datei": "untergrund-abdichtung__entkopplung.json",
+   "quelle": "untergrund-abdichtung/entkopplung.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 410,
+   "arten": {
+    "meta": 33,
+    "text": 321,
+    "aria": 36,
+    "alt": 3,
+    "ueberschrift": 17
+   },
+   "h1": [
+    "Fliesen auf Holzboden verlegen: Entkopplung bei Tezgel"
+   ],
+   "hash": "2cc5b1e81ab1b429"
+  },
+  "/untergrund-abdichtung/fliesen-auf-fliesen": {
+   "datei": "untergrund-abdichtung__fliesen-auf-fliesen.json",
+   "quelle": "untergrund-abdichtung/fliesen-auf-fliesen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 420,
+   "arten": {
+    "meta": 33,
+    "text": 329,
+    "aria": 37,
+    "alt": 3,
+    "ueberschrift": 18
+   },
+   "h1": [
+    "Altfliesen überkleben: Wann es fachgerecht geht bei Tezgel"
+   ],
+   "hash": "7fbde6b1d75dadbb"
+  }
+ }
+}

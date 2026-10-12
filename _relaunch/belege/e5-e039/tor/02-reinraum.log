@@ -1,0 +1,14 @@
+npm-ci: exit 0
+build: exit 0
+typecheck: exit 0
+lint: exit 0
+test: exit 0
+qa-graph: exit 0
+nft: sauber
+commit 5be70eb
+npm-ci 0 (28s)
+build 0 (96s)
+typecheck 0 (40s)
+lint 0 (114s)
+test 0 (5s)
+qa-graph 0 (0s)

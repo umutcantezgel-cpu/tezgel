@@ -1,0 +1,15 @@
+T2 · e5-e039 · live a06bd36 → 5be70eb · Seiten /untergrund-abdichtung/entkopplung,/untergrund-abdichtung/fliesen-auf-fliesen,/balkon-terrasse,/balkon-terrasse/balkonsanierung,/balkon-terrasse/stelzlager,/balkon-terrasse/terrassenplatten,/naturstein,/naturstein/granit,/naturstein/marmor-kalkstein,/fliesenreparatur,/treppen,/treppen/innentreppe,/treppen/aussentreppe,/treppen/treppenhaus,/schadensanalyse,/karriere,/karriere/ausbildung,/bad/barrierefreies-bad,/bad/badsanierung,/bad/bad-aus-einer-hand,/bad/fliesen,/fliesen/fugensanierung · 2026-10-12T18:56:09+00:00
+01-sperrklinke 0 
+02-reinraum 0 
+03-bereich 0 {"html_abweichend":["bad/bad-aus-einer-hand.html","bad/badsanierung.html","bad/barrierefreies-bad.html","bad/fliesen.html","balkon-terrasse/balkonsanierung.html","balkon-terrasse/stelzlager.html","balkon-terrasse/terrassenplatten.html","balkon-terrasse.html","fliesen/fugensanierung.html","fliesenreparatur.html","karriere/ausbildung.html","karriere.html","naturstein/granit.html","naturstein/marmor-kalkstein.html","naturstein.html","schadensanalyse.html","treppen/aussentreppe.html","treppen/innentreppe.html","treppen/treppenhaus.html","treppen.html","untergrund-abdichtung/entkopplung.html","unte
+04-werte 0 Bericht: _relaunch/belege/e5-e039/tor/werte/2026-10-12T19-01-02-432Z.json
+05-altsystem 0 
+06-texte2 0 → belege/e5-e039/tor/06-texte2-vergleich.json
+07-server 0 
+08-axe 0 ernst/kritisch auf den Seiten des Schritts 0
+09-a11y-zusatz-lauf 0 forced {"ohne_grenze":176,"davon_mit_grafik":176,"felder_ohne_grenze":0,"laeufe":44,"fehler":0} ohnejs {"text_unter_80":0,"erster_bildschirm_versteckt":0,"erster_bildschirm_ebenso_mit_js":0,"navigation_fehlt":0,"kopf_ohne_interne_links":0,"laeufe":44,"fehler":0} 
+10-wortbruch 0 Wortbrüche: 0 {}
+11-fotos-lauf 0 {"aufnahmen":88,"fehler":0,"nicht200":0,"ueberlauf":0,"konsole":0}
+12-specs 0 [1A[2K  26 skipped   380 passed (9.8m) 
+13-pixel 0 pixel: 22 Vergleiche · abweichend 1
+T2 GRÜN (automatische Stufen) · Sichtung und a11y-Kennzahlen: /home/user/tezgel/_relaunch/belege/e5-e039/tor

@@ -1,0 +1,215 @@
+{
+ "vorher": "a06bd36",
+ "nachher": "5be70eb",
+ "laufzeit_reste": {
+  "vorher": [
+   "blog/gibt-es-nicht.html"
+  ],
+  "nachher": []
+ },
+ "variablen_weg": [
+  "--color-stone-100",
+  "--color-stone-200",
+  "--color-stone-50",
+  "--radius-lg"
+ ],
+ "variablen_neu": [],
+ "keyframes_weg": [],
+ "keyframes_neu": [],
+ "html_dateien": 172,
+ "nur_vorher": [],
+ "nur_nachher": [],
+ "html_abweichend": 22,
+ "abweichungen": [
+  {
+   "datei": "bad/bad-aus-einer-hand.html",
+   "ab": 87658,
+   "vorher": "</p></li></ul><figure class=\"mt-16 max-w-mass border-t border-fuge pt-12\"><span class=\"flex items-center gap-px text-tinte\" aria-label=\"5 von 5 Sternen\"><svg class=\"inline-block shrink-0 size-4\" aria-",
+   "nachher": "</p></li></ul><figure class=\"mt-16 max-w-mass border-t border-fuge pt-12\"><span role=\"img\" class=\"flex items-center gap-px text-tinte\" aria-label=\"5 von 5 Sternen\"><svg class=\"inline-block shrink-0 si"
+  },
+  {
+   "datei": "bad/badsanierung.html",
+   "ab": 90091,
+   "vorher": "div></li></ol><figure class=\"mt-16 max-w-mass border-t border-fuge pt-12\"><span class=\"flex items-center gap-px text-tinte\" aria-label=\"5 von 5 Sternen\"><svg class=\"inline-block shrink-0 size-4\" aria-",
+   "nachher": "div></li></ol><figure class=\"mt-16 max-w-mass border-t border-fuge pt-12\"><span role=\"img\" class=\"flex items-center gap-px text-tinte\" aria-label=\"5 von 5 Sternen\"><svg class=\"inline-block shrink-0 si"
+  },
+  {
+   "datei": "bad/barrierefreies-bad.html",
+   "ab": 87539,
+   "vorher": "figure class=\"mt-12 max-w-mass border-l-2 border-laser-tief pl-6 sm:pl-8\"><span class=\"flex items-center gap-1 text-tinte\" aria-label=\"5 von 5 Sternen\"><svg class=\"inline-block shrink-0 size-4\" aria-h",
+   "nachher": "figure class=\"mt-12 max-w-mass border-l-2 border-laser-tief pl-6 sm:pl-8\"><span role=\"img\" class=\"flex items-center gap-1 text-tinte\" aria-label=\"5 von 5 Sternen\"><svg class=\"inline-block shrink-0 siz"
+  },
+  {
+   "datei": "bad/fliesen.html",
+   "ab": 89909,
+   "vorher": "\"><div class=\"\"><figure class=\"border-l-2 border-laser-tief pl-6 sm:pl-8\"><span class=\"flex items-center gap-1 text-tinte\" aria-label=\"5 von 5 Sternen\"><svg class=\"inline-block shrink-0 size-4\" aria-h",
+   "nachher": "\"><div class=\"\"><figure class=\"border-l-2 border-laser-tief pl-6 sm:pl-8\"><span role=\"img\" class=\"flex items-center gap-1 text-tinte\" aria-label=\"5 von 5 Sternen\"><svg class=\"inline-block shrink-0 siz"
+  },
+  {
+   "datei": "balkon-terrasse/balkonsanierung.html",
+   "ab": 75628,
+   "vorher": "@type\":\"AdministrativeArea\",\"name\":\"Aßlar, Wetzlar & Mittelhessen\"}}]}</script><div class=\"pt-32 pb-24 min-h-screen relative overflow-hidden\"><div class=\"ambient-glow-orange -top-32 -left-32 opacity-7",
+   "nachher": "@type\":\"AdministrativeArea\",\"name\":\"Aßlar, Wetzlar & Mittelhessen\"}}]}</script><section aria-labelledby=\"balkonsanierung-heading\"><header class=\"relative border-b border-fuge pt-24 pb-16 lg:pt-32 lg:p"
+  },
+  {
+   "datei": "balkon-terrasse/stelzlager.html",
+   "ab": 75593,
+   "vorher": "@type\":\"AdministrativeArea\",\"name\":\"Aßlar, Wetzlar & Mittelhessen\"}}]}</script><div class=\"pt-32 pb-24 min-h-screen relative overflow-hidden\"><div class=\"ambient-glow-orange -top-32 -left-32 opacity-7",
+   "nachher": "@type\":\"AdministrativeArea\",\"name\":\"Aßlar, Wetzlar & Mittelhessen\"}}]}</script><section aria-labelledby=\"stelzlager-heading\"><header class=\"relative border-b border-fuge pt-24 pb-16 lg:pt-32 lg:pb-24\""
+  },
+  {
+   "datei": "balkon-terrasse/terrassenplatten.html",
+   "ab": 75611,
+   "vorher": "@type\":\"AdministrativeArea\",\"name\":\"Aßlar, Wetzlar & Mittelhessen\"}}]}</script><div class=\"pt-32 pb-24 min-h-screen relative overflow-hidden\"><div class=\"ambient-glow-orange -top-32 -left-32 opacity-7",
+   "nachher": "@type\":\"AdministrativeArea\",\"name\":\"Aßlar, Wetzlar & Mittelhessen\"}}]}</script><section aria-labelledby=\"terrassenplatten-heading\"><header class=\"relative border-b border-fuge pt-24 pb-16 lg:pt-32 lg:"
+  },
+  {
+   "datei": "balkon-terrasse.html",
+   "ab": 75601,
+   "vorher": "@type\":\"AdministrativeArea\",\"name\":\"Aßlar, Wetzlar & Mittelhessen\"}}]}</script><div class=\"pt-32 pb-24 min-h-screen relative overflow-hidden\"><div class=\"ambient-glow-orange -top-32 -left-32 opacity-7",
+   "nachher": "@type\":\"AdministrativeArea\",\"name\":\"Aßlar, Wetzlar & Mittelhessen\"}}]}</script><section aria-labelledby=\"balkon-heading\"><header class=\"relative border-b border-fuge pt-24 pb-16 lg:pt-32 lg:pb-24\"><di"
+  },
+  {
+   "datei": "fliesen/fugensanierung.html",
+   "ab": 102144,
+   "vorher": "md:px-8 lg:px-12 spaet-zeichnen\"><div class=\"\"><figure class=\"max-w-mass\"><span class=\"flex items-center gap-1 text-tinte\" aria-label=\"5 von 5 Sternen\"><svg class=\"inline-block shrink-0 size-5\" aria-h",
+   "nachher": "md:px-8 lg:px-12 spaet-zeichnen\"><div class=\"\"><figure class=\"max-w-mass\"><span role=\"img\" class=\"flex items-center gap-1 text-tinte\" aria-label=\"5 von 5 Sternen\"><svg class=\"inline-block shrink-0 siz"
+  },
+  {
+   "datei": "fliesenreparatur.html",
+   "ab": 75597,
+   "vorher": "@type\":\"AdministrativeArea\",\"name\":\"Aßlar, Wetzlar & Mittelhessen\"}}]}</script><div class=\"pt-32 pb-24 min-h-screen relative overflow-hidden\"><div class=\"ambient-glow-warm -top-32 -left-32 opacity-70\"",
+   "nachher": "@type\":\"AdministrativeArea\",\"name\":\"Aßlar, Wetzlar & Mittelhessen\"}}]}</script><section aria-labelledby=\"reparatur-heading\"><header class=\"relative border-b border-fuge pt-24 pb-16 lg:pt-32 lg:pb-24\">"
+  },
+  {
+   "datei": "karriere/ausbildung.html",
+   "ab": 76808,
+   "vorher": "sen, Hüttenberg, Lahnau – für Großprojekte auch in ganz Hessen.\"}}]}]}</script><div class=\"pt-32 pb-24 min-h-screen relative overflow-hidden\"><div class=\"ambient-glow-orange -top-20 -left-20 opacity-7",
+   "nachher": "sen, Hüttenberg, Lahnau – für Großprojekte auch in ganz Hessen.\"}}]}]}</script><header class=\"relative border-b border-fuge pt-24 pb-16 lg:pt-32 lg:pb-24\"><div class=\"mx-auto w-full max-w-seite px-4 m"
+  },
+  {
+   "datei": "karriere.html",
+   "ab": 76789,
+   "vorher": "sen, Hüttenberg, Lahnau – für Großprojekte auch in ganz Hessen.\"}}]}]}</script><div class=\"pt-32 pb-24 min-h-screen relative overflow-hidden\"><div class=\"ambient-glow-orange -top-20 -left-20 opacity-7",
+   "nachher": "sen, Hüttenberg, Lahnau – für Großprojekte auch in ganz Hessen.\"}}]}]}</script><header class=\"relative border-b border-fuge pt-24 pb-16 lg:pt-32 lg:pb-24\"><div class=\"mx-auto w-full max-w-seite px-4 m"
+  },
+  {
+   "datei": "naturstein/granit.html",
+   "ab": 75542,
+   "vorher": "@type\":\"AdministrativeArea\",\"name\":\"Aßlar, Wetzlar & Mittelhessen\"}}]}</script><div class=\"pt-32 pb-24 min-h-screen relative overflow-hidden\"><div class=\"ambient-glow-orange -top-32 -left-32 opacity-7",
+   "nachher": "@type\":\"AdministrativeArea\",\"name\":\"Aßlar, Wetzlar & Mittelhessen\"}}]}</script><section aria-labelledby=\"granit-heading\"><header class=\"relative border-b border-fuge pt-24 pb-16 lg:pt-32 lg:pb-24\"><di"
+  },
+  {
+   "datei": "naturstein/marmor-kalkstein.html",
+   "ab": 75582,
+   "vorher": "@type\":\"AdministrativeArea\",\"name\":\"Aßlar, Wetzlar & Mittelhessen\"}}]}</script><div class=\"pt-32 pb-24 min-h-screen relative overflow-hidden\"><div class=\"ambient-glow-orange -top-32 -left-32 opacity-7",
+   "nachher": "@type\":\"AdministrativeArea\",\"name\":\"Aßlar, Wetzlar & Mittelhessen\"}}]}</script><section aria-labelledby=\"marmor-heading\"><header class=\"relative border-b border-fuge pt-24 pb-16 lg:pt-32 lg:pb-24\"><di"
+  },
+  {
+   "datei": "naturstein.html",
+   "ab": 75551,
+   "vorher": "@type\":\"AdministrativeArea\",\"name\":\"Aßlar, Wetzlar & Mittelhessen\"}}]}</script><div class=\"pt-32 pb-24 min-h-screen relative overflow-hidden\"><div class=\"ambient-glow-orange -top-32 -left-32 opacity-7",
+   "nachher": "@type\":\"AdministrativeArea\",\"name\":\"Aßlar, Wetzlar & Mittelhessen\"}}]}</script><section aria-labelledby=\"naturstein-heading\"><header class=\"relative border-b border-fuge pt-24 pb-16 lg:pt-32 lg:pb-24\""
+  },
+  {
+   "datei": "schadensanalyse.html",
+   "ab": 74191,
+   "vorher": "chutz</a></span></div></div></div></div><main id=\"main-content\" class=\"flex-1\"><div class=\"pt-32 pb-24 min-h-screen relative overflow-hidden\"><script type=\"application/ld+json\">{\"@context\":\"https://sc",
+   "nachher": "chutz</a></span></div></div></div></div><main id=\"main-content\" class=\"flex-1\"><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https://www.tezge"
+  },
+  {
+   "datei": "treppen/aussentreppe.html",
+   "ab": 75557,
+   "vorher": "@type\":\"AdministrativeArea\",\"name\":\"Aßlar, Wetzlar & Mittelhessen\"}}]}</script><div class=\"pt-32 pb-24 min-h-screen relative overflow-hidden\"><div class=\"ambient-glow-orange -top-32 -left-32 opacity-7",
+   "nachher": "@type\":\"AdministrativeArea\",\"name\":\"Aßlar, Wetzlar & Mittelhessen\"}}]}</script><section aria-labelledby=\"aussentreppe-heading\"><header class=\"relative border-b border-fuge pt-24 pb-16 lg:pt-32 lg:pb-2"
+  },
+  {
+   "datei": "treppen/innentreppe.html",
+   "ab": 75514,
+   "vorher": "@type\":\"AdministrativeArea\",\"name\":\"Aßlar, Wetzlar & Mittelhessen\"}}]}</script><div class=\"pt-32 pb-24 min-h-screen relative overflow-hidden\"><div class=\"ambient-glow-orange -top-32 -left-32 opacity-7",
+   "nachher": "@type\":\"AdministrativeArea\",\"name\":\"Aßlar, Wetzlar & Mittelhessen\"}}]}</script><section aria-labelledby=\"innentreppe-heading\"><header class=\"relative border-b border-fuge pt-24 pb-16 lg:pt-32 lg:pb-24"
+  },
+  {
+   "datei": "treppen/treppenhaus.html",
+   "ab": 75541,
+   "vorher": "@type\":\"AdministrativeArea\",\"name\":\"Aßlar, Wetzlar & Mittelhessen\"}}]}</script><div class=\"pt-32 pb-24 min-h-screen relative overflow-hidden\"><div class=\"ambient-glow-orange -top-32 -left-32 opacity-7",
+   "nachher": "@type\":\"AdministrativeArea\",\"name\":\"Aßlar, Wetzlar & Mittelhessen\"}}]}</script><section aria-labelledby=\"treppenhaus-heading\"><header class=\"relative border-b border-fuge pt-24 pb-16 lg:pt-32 lg:pb-24"
+  },
+  {
+   "datei": "treppen.html",
+   "ab": 75539,
+   "vorher": "@type\":\"AdministrativeArea\",\"name\":\"Aßlar, Wetzlar & Mittelhessen\"}}]}</script><div class=\"pt-32 pb-24 min-h-screen relative overflow-hidden\"><div class=\"ambient-glow-orange -top-32 -left-32 opacity-7",
+   "nachher": "@type\":\"AdministrativeArea\",\"name\":\"Aßlar, Wetzlar & Mittelhessen\"}}]}</script><section aria-labelledby=\"treppen-heading\"><header class=\"relative border-b border-fuge pt-24 pb-16 lg:pt-32 lg:pb-24\"><d"
+  },
+  {
+   "datei": "untergrund-abdichtung/entkopplung.html",
+   "ab": 75695,
+   "vorher": "@type\":\"AdministrativeArea\",\"name\":\"Aßlar, Wetzlar & Mittelhessen\"}}]}</script><div class=\"pt-32 pb-24 min-h-screen relative overflow-hidden\"><div class=\"ambient-glow-warm -top-32 -left-32 opacity-70\"",
+   "nachher": "@type\":\"AdministrativeArea\",\"name\":\"Aßlar, Wetzlar & Mittelhessen\"}}]}</script><section aria-labelledby=\"entkopplung-heading\"><header class=\"relative border-b border-fuge pt-24 pb-16 lg:pt-32 lg:pb-24"
+  },
+  {
+   "datei": "untergrund-abdichtung/fliesen-auf-fliesen.html",
+   "ab": 75721,
+   "vorher": "@type\":\"AdministrativeArea\",\"name\":\"Aßlar, Wetzlar & Mittelhessen\"}}]}</script><div class=\"pt-32 pb-24 min-h-screen relative overflow-hidden\"><div class=\"ambient-glow-warm -top-32 -left-32 opacity-70\"",
+   "nachher": "@type\":\"AdministrativeArea\",\"name\":\"Aßlar, Wetzlar & Mittelhessen\"}}]}</script><section aria-labelledby=\"ueberfliesen-heading\"><header class=\"relative border-b border-fuge pt-24 pb-16 lg:pt-32 lg:pb-2"
+  }
+ ],
+ "css_selektoren_weg": [
+  ".-left-32",
+  ".-top-32",
+  ".bg-orange-50\\/50",
+  ".bg-slate-200",
+  ".bg-slate-800",
+  ".bg-stone-100",
+  ".bg-stone-50",
+  ".bg-white\\/80",
+  ".border-orange-300",
+  ".border-slate-900",
+  ".border-stone-200",
+  ".even\\:bg-slate-50:nth-child(2n)",
+  ".gap-10",
+  ".group-hover\\:text-orange-950:is(:where(.group):hover *)",
+  ".group-open\\:rotate-180:is(:where(.group):is([open],:popover-open,:open) *)",
+  ".group-open\\:rotate-90:is(:where(.group):is([open],:popover-open,:open) *)",
+  ".leading-none",
+  ".marker\\:font-bold ::-webkit-details-marker",
+  ".marker\\:font-bold ::marker",
+  ".marker\\:font-bold::-webkit-details-marker",
+  ".marker\\:font-bold::marker",
+  ".min-w-\\[560px\\]",
+  ".min-w-\\[640px\\]",
+  ".min-w-\\[720px\\]",
+  ".mt-20",
+  ".open\\:bg-white:is([open],:popover-open,:open)",
+  ".open\\:border-orange-500\\/60:is([open],:popover-open,:open)",
+  ".pb-10",
+  ".pt-10",
+  ".pt-20",
+  ".rounded-lg",
+  ".sm\\:flex",
+  ".sm\\:p-9",
+  ".sm\\:w-44",
+  ".text-amber-800",
+  ".text-orange-500\\/30",
+  ".text-orange-600\\/30"
+ ],
+ "css_selektoren_neu": [
+  ".bg-tinte-2",
+  ".first\\:border-tinte:first-child",
+  ".gap-16",
+  ".justify-around",
+  ".leading-6",
+  ".lg\\:col-start-5",
+  ".lg\\:items-baseline",
+  ".lg\\:justify-self-end",
+  ".lg\\:max-w-1\\/2",
+  ".lg\\:py-12",
+  ".lg\\:shrink-0",
+  ".max-w-1\\/2",
+  ".md\\:max-w-1\\/3",
+  ".sm\\:gap-8",
+  ".sm\\:gap-x-8",
+  ".w-2",
+  ".w-2\\/5"
+ ]
+}

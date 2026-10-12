@@ -1,0 +1,36 @@
+{
+ "base": "http://127.0.0.1:4364",
+ "seiten": [
+  "/untergrund-abdichtung/entkopplung",
+  "/untergrund-abdichtung/fliesen-auf-fliesen",
+  "/balkon-terrasse",
+  "/balkon-terrasse/balkonsanierung",
+  "/balkon-terrasse/stelzlager",
+  "/balkon-terrasse/terrassenplatten",
+  "/naturstein",
+  "/naturstein/granit",
+  "/naturstein/marmor-kalkstein",
+  "/fliesenreparatur",
+  "/treppen",
+  "/treppen/innentreppe",
+  "/treppen/aussentreppe",
+  "/treppen/treppenhaus",
+  "/schadensanalyse",
+  "/karriere",
+  "/karriere/ausbildung",
+  "/bad/barrierefreies-bad",
+  "/bad/badsanierung",
+  "/bad/bad-aus-einer-hand",
+  "/bad/fliesen",
+  "/fliesen/fugensanierung"
+ ],
+ "breiten": [
+  320,
+  375,
+  768,
+  1024,
+  1440,
+  1920
+ ],
+ "funde": []
+}
