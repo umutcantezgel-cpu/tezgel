@@ -1,0 +1,110 @@
+{
+ "modus": "einzelbilder",
+ "seite": "/fliesen",
+ "base": "http://127.0.0.1:4320",
+ "ansicht": "d1440",
+ "zeitpunkt": "2026-10-12T02:39:28.585Z",
+ "dpr": 1,
+ "reducedMotion": "no-preference",
+ "einwilligung": "abgelehnt",
+ "zeitpunkte_anteil": [
+  0,
+  0.25,
+  0.5,
+  0.75,
+  1
+ ],
+ "kennungen": [
+  {
+   "kennung": "verband",
+   "elemente": 1,
+   "ausloeser": "wahl",
+   "ausgeloest": 2,
+   "modus": "echtzeit",
+   "animationen": 7,
+   "laengste_dauer_ms": 600,
+   "bilder": [
+    {
+     "datei": "verband-halb-drittel-0.jpg",
+     "folge": "halb → drittel",
+     "zustand": "vorher",
+     "art": "ausschnitt"
+    },
+    {
+     "datei": "verband-halb-drittel-1.jpg",
+     "folge": "halb → drittel",
+     "zustand": "echtzeit",
+     "ms_nach_klick": 169,
+     "art": "ausschnitt"
+    },
+    {
+     "datei": "verband-halb-drittel-2.jpg",
+     "folge": "halb → drittel",
+     "zustand": "echtzeit",
+     "ms_nach_klick": 249,
+     "art": "ausschnitt"
+    },
+    {
+     "datei": "verband-halb-drittel-3.jpg",
+     "folge": "halb → drittel",
+     "zustand": "echtzeit",
+     "ms_nach_klick": 336,
+     "art": "ausschnitt"
+    },
+    {
+     "datei": "verband-halb-drittel-4.jpg",
+     "folge": "halb → drittel",
+     "zustand": "nachher",
+     "ms_nach_klick": 1002,
+     "art": "ausschnitt"
+    },
+    {
+     "datei": "verband-drittel-kreuz-0.jpg",
+     "folge": "drittel → kreuz",
+     "zustand": "vorher",
+     "art": "ausschnitt"
+    },
+    {
+     "datei": "verband-drittel-kreuz-1.jpg",
+     "folge": "drittel → kreuz",
+     "zustand": "echtzeit",
+     "ms_nach_klick": 104,
+     "art": "ausschnitt"
+    },
+    {
+     "datei": "verband-drittel-kreuz-2.jpg",
+     "folge": "drittel → kreuz",
+     "zustand": "echtzeit",
+     "ms_nach_klick": 162,
+     "art": "ausschnitt"
+    },
+    {
+     "datei": "verband-drittel-kreuz-3.jpg",
+     "folge": "drittel → kreuz",
+     "zustand": "echtzeit",
+     "ms_nach_klick": 218,
+     "art": "ausschnitt"
+    },
+    {
+     "datei": "verband-drittel-kreuz-4.jpg",
+     "folge": "drittel → kreuz",
+     "zustand": "nachher",
+     "ms_nach_klick": 1001,
+     "art": "ausschnitt"
+    }
+   ],
+   "befund": [
+    "verband: Bilder 1–3 sind Echtzeit-Abtastungen nach dem Klick (ms_nach_klick), keine Zeitpunkte 25/50/75 %. In dieser Umgebung folgt das Bild bei translate-Übergängen weder JS-Pause noch CDP-Seek (getestet); der Übergang steht nach etwa 150 ms zu rund 85 % im Bild"
+   ]
+  }
+ ],
+ "bilder_gesamt": 10,
+ "data_motion_elemente": 149,
+ "meldung": "1 Kennungen, 149 Elemente auf /fliesen.",
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "verzeichnis": "/home/user/tezgel/_werkstatt/belege/e4-nach/bewegung2/einzel-fliesen-verband-d1440"
+}

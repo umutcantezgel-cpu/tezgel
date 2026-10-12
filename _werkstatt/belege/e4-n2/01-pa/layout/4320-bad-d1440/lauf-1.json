@@ -1,0 +1,154 @@
+{
+ "seite": "/bad",
+ "ansicht": "d1440",
+ "base": "http://127.0.0.1:4320",
+ "lauf": 1,
+ "ladeEndeMs": 6719,
+ "fensterEndeMs": 11719,
+ "laufzeitMs": 12132,
+ "summe": 0.00067,
+ "kopfBeitrag": 0,
+ "anzahlEintraege": 2,
+ "anzahlNachEingabe": 0,
+ "eintraege": [
+  {
+   "t": 1478,
+   "wert": 0.0006650081179269547,
+   "juengst": false,
+   "quellen": [
+    {
+     "knoten": {
+      "sel": "body.antialiased.min-h-screen > header.kopf-anker.fixed > div.mx-auto.w-full > div.flex.shrink-0",
+      "h1": false,
+      "mono": false,
+      "oben": 7,
+      "text": "06441 / 44 83 567WhatsAppAufmaß anfragen",
+      "klasse": "flex shrink-0 items-center gap-2"
+     },
+     "vorher": [
+      909,
+      7,
+      419,
+      50
+     ],
+     "nachher": [
+      927,
+      7,
+      423,
+      50
+     ]
+    },
+    {
+     "knoten": {
+      "sel": "header.kopf-anker.fixed > div.mx-auto.w-full > nav.hidden.h-full > div.flex.items-stretch",
+      "h1": false,
+      "mono": false,
+      "oben": 0,
+      "text": "FachgewerkeUnsere FachgewerkeAlle FachgewerkeLeistungsübersicht unsere",
+      "klasse": "flex items-stretch"
+     },
+     "vorher": [
+      424,
+      0,
+      139,
+      64
+     ],
+     "nachher": [
+      429,
+      0,
+      143,
+      64
+     ]
+    },
+    {
+     "knoten": {
+      "sel": "header.kopf-anker.fixed > div.mx-auto.w-full > nav.hidden.h-full > div.flex.items-stretch",
+      "h1": false,
+      "mono": false,
+      "oben": 0,
+      "text": "StandorteEinsatzgebiet HessenFliesenleger WetzlarDirekt neben unserem ",
+      "klasse": "flex items-stretch"
+     },
+     "vorher": [
+      563,
+      0,
+      112,
+      64
+     ],
+     "nachher": [
+      572,
+      0,
+      117,
+      64
+     ]
+    },
+    {
+     "knoten": {
+      "sel": "div.grid.grid-cols-4 > div.col-span-4.md:col-span-8 > div.mt-8.flex > a.inline-flex.min-h-11",
+      "h1": false,
+      "mono": false,
+      "oben": 731,
+      "text": "Musterbäder entdecken",
+      "klasse": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 font-text text-fs-2 font-semibold no-under"
+     },
+     "vorher": [
+      378,
+      731,
+      216,
+      51
+     ],
+     "nachher": [
+      389,
+      731,
+      223,
+      51
+     ]
+    },
+    {
+     "knoten": {
+      "sel": "header.kopf-anker.fixed > div.mx-auto.w-full > nav.hidden.h-full > div.flex.items-stretch",
+      "h1": false,
+      "mono": false,
+      "oben": 0,
+      "text": "Über unsDas UnternehmenÜber Deniz TezgelPhilosophie & FachbetriebQuali",
+      "klasse": "flex items-stretch"
+     },
+     "vorher": [
+      784,
+      0,
+      108,
+      64
+     ],
+     "nachher": [
+      800,
+      0,
+      111,
+      64
+     ]
+    }
+   ]
+  },
+  {
+   "t": 9949,
+   "wert": 0.000009488329475308642,
+   "juengst": false,
+   "quellen": [
+    {
+     "knoten": null,
+     "vorher": [
+      67,
+      850,
+      24,
+      24
+     ],
+     "nachher": [
+      91,
+      850,
+      6,
+      24
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -6,9 +6,10 @@ import { useWhatsAppKanal } from "@/lib/formulare/useWhatsAppKanal";
 import WhatsAppLogo from "@/components/ui/WhatsAppLogo";
 
 /* ═══════════════════════════════════════════════════════════════════════════
- * WhatsApp-Knopf - Fliesenverlegung Tezgel (KERN K-009, E-008)
+ * WhatsApp-Knopf - Fliesenverlegung Tezgel (KERN K-009, E-008, E3-NACH-06)
  *
- * Flacher Knopf rechts unten, nur ab lg; darunter trägt die untere Leiste WhatsApp.
+ * Flacher 44-px-Knopf im Kopf neben der Rufnummer, nur ab lg (keine schwebende Ebene über dem Inhalt mehr);
+ * darunter trägt die untere Leiste WhatsApp. Kennung und Name bleiben (Tests F-10).
  * Verhalten wie im Bestand: seitenbezogene Nachricht, Entprellung (450 ms),
  * Analyse-Ereignis nur, wenn gtag nach Einwilligung geladen ist,
  * mobil direkte Navigation, Desktop neuer Tab – alles im gemeinsamen Hook
@@ -31,8 +32,7 @@ export default function FloatingWhatsAppWidget() {
       id="whatsapp-floating-btn"
       aria-label="WhatsApp-Nachricht an Fliesenverlegung Tezgel senden"
       onClick={triggerWhatsAppAction}
-      className="fixed bottom-6 right-6 z-30 hidden size-11 items-center justify-center border border-strich bg-fliese text-tinte transition-colors dauer-1 ease-setzen hover:border-tinte lg:inline-flex"
-      data-feste-ebene
+      className="hidden size-11 shrink-0 items-center justify-center border border-strich bg-fliese text-tinte transition-colors dauer-1 ease-setzen hover:border-tinte lg:inline-flex"
       data-motion="druck"
     >
       <WhatsAppLogo className="size-5" />

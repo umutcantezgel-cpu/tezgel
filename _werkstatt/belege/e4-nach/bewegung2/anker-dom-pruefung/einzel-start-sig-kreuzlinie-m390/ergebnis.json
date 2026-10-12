@@ -1,0 +1,186 @@
+{
+ "modus": "einzelbilder",
+ "seite": "/",
+ "base": "http://127.0.0.1:4320",
+ "ansicht": "m390",
+ "zeitpunkt": "2026-10-12T02:41:05.373Z",
+ "dpr": 2,
+ "reducedMotion": "no-preference",
+ "einwilligung": "abgelehnt",
+ "zeitpunkte_anteil": [
+  0,
+  0.25,
+  0.5,
+  0.75,
+  1
+ ],
+ "kennungen": [
+  {
+   "kennung": "sig-kreuzlinie",
+   "elemente": 4,
+   "ausloeser": "seite",
+   "ausgeloest": 1,
+   "modus": "echtzeit",
+   "animationen": 1,
+   "laengste_dauer_ms": 1200,
+   "bilder": [
+    {
+     "datei": "sig-kreuzlinie-0.jpg",
+     "zeitpunkt": 0,
+     "art": "ausschnitt",
+     "soll_ms": 0,
+     "ms_nach_dom": 3856,
+     "ist_ms": 1200,
+     "ist_nach_aufnahme_ms": 1200,
+     "animationen_laufen": 1,
+     "scroll_y": 0,
+     "oberkante_unter_kopf_px": 31,
+     "ausschnitt_px": {
+      "x": 0,
+      "y": 0,
+      "width": 390,
+      "height": 844
+     },
+     "anteil_zu_vorher_prozent": null,
+     "anteil_zu_nachher_prozent": 0
+    },
+    {
+     "datei": "sig-kreuzlinie-1.jpg",
+     "zeitpunkt": 0.25,
+     "art": "ausschnitt",
+     "soll_ms": 300,
+     "ms_nach_dom": 4360,
+     "ist_ms": 1200,
+     "ist_nach_aufnahme_ms": 1200,
+     "animationen_laufen": 1,
+     "scroll_y": 0,
+     "oberkante_unter_kopf_px": 31,
+     "ausschnitt_px": {
+      "x": 0,
+      "y": 0,
+      "width": 390,
+      "height": 844
+     },
+     "anteil_zu_vorher_prozent": 0,
+     "anteil_zu_nachher_prozent": 0
+    },
+    {
+     "datei": "sig-kreuzlinie-2.jpg",
+     "zeitpunkt": 0.5,
+     "art": "ausschnitt",
+     "soll_ms": 600,
+     "ms_nach_dom": 3946,
+     "ist_ms": 1200,
+     "ist_nach_aufnahme_ms": 1200,
+     "animationen_laufen": 1,
+     "scroll_y": 0,
+     "oberkante_unter_kopf_px": 31,
+     "ausschnitt_px": {
+      "x": 0,
+      "y": 0,
+      "width": 390,
+      "height": 844
+     },
+     "anteil_zu_vorher_prozent": 0,
+     "anteil_zu_nachher_prozent": 0
+    },
+    {
+     "datei": "sig-kreuzlinie-3.jpg",
+     "zeitpunkt": 0.75,
+     "art": "ausschnitt",
+     "soll_ms": 900,
+     "ms_nach_dom": 3678,
+     "ist_ms": 1200,
+     "ist_nach_aufnahme_ms": 1200,
+     "animationen_laufen": 1,
+     "scroll_y": 0,
+     "oberkante_unter_kopf_px": 31,
+     "ausschnitt_px": {
+      "x": 0,
+      "y": 0,
+      "width": 390,
+      "height": 844
+     },
+     "anteil_zu_vorher_prozent": 0,
+     "anteil_zu_nachher_prozent": 0
+    },
+    {
+     "datei": "sig-kreuzlinie-4.jpg",
+     "zeitpunkt": 1,
+     "art": "ausschnitt",
+     "soll_ms": 1350,
+     "ms_nach_dom": 4147,
+     "ist_ms": 1200,
+     "ist_nach_aufnahme_ms": 1200,
+     "animationen_laufen": 1,
+     "scroll_y": 0,
+     "oberkante_unter_kopf_px": 31,
+     "ausschnitt_px": {
+      "x": 0,
+      "y": 0,
+      "width": 390,
+      "height": 844
+     },
+     "anteil_zu_vorher_prozent": 0,
+     "anteil_zu_nachher_prozent": null
+    }
+   ],
+   "befund": [
+    "Element nicht vollständig sichtbar (Oberkante 96 px, Unterkante 2612 px, sichtbar bis 783 px): vor dem ersten Bild auf 0 px gescrollt, Oberkante 31 px unter dem Kopf (Ziel 80 px, Scroll-Grenze erreicht)",
+    "Ausschnitt über die ganze Ansichtshöhe (Element höher als die Ansicht)",
+    "nur 0 von 5 Bildern unterscheiden sich sichtbar (Nachbar über 0.5 %, mindestens 3 gefordert)"
+   ],
+   "vorlauf": {
+    "gerendert": 1,
+    "kopf_px": 65,
+    "fuss_px": 783,
+    "oben_px": 96,
+    "unten_px": 2612,
+    "scroll_max_px": 16669,
+    "laengste_ms": 1200
+   },
+   "cpu_drosselung": 4,
+   "anker_modus": "dom",
+   "zeitlupe": 1,
+   "puffer_ms": 150,
+   "anker": "Element im DOM, danach readyState ungleich loading; soll ms warten (Maßstab)",
+   "ms_nach_dom_bezug": "Element im DOM (attached)",
+   "zeitpunkte_ms": [
+    0,
+    300,
+    600,
+    900,
+    1350
+   ],
+   "scroll_ziel_px": 0,
+   "pixel": {
+    "groesse": "780x1688",
+    "schwelle_grau": 24,
+    "paare": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "ende_0_4": 0
+   },
+   "sichtbare_bilder": 0,
+   "sichtbar_je_bild": [
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  }
+ ],
+ "bilder_gesamt": 5,
+ "data_motion_elemente": 197,
+ "meldung": "1 Kennungen, 197 Elemente auf /.",
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "verzeichnis": "/home/user/tezgel/_werkstatt/belege/e4-nach/bewegung2/anker-dom-pruefung/einzel-start-sig-kreuzlinie-m390"
+}

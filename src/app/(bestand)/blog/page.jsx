@@ -1,11 +1,9 @@
-// Ratgeber-Übersicht `/blog` (S-03, KERN v2 Arbeitsansicht nach `/kontakt`): kompakter Einstieg und Qualitätsversprechen
-// auf dem Server; Suche, Themen, Hervorhebung, Beitragsraster, Leerzustand und Seitenleiste als eine Client-Insel
-// (`BlogListe`, Logik aus `useBlogListe`). Metadaten und JSON-LD stehen unverändert in `layout.tsx` (mit ContentProvider).
-// Wortlaut, Link-Ziele und Test-Selektoren wie im Bestand; kein großer Moment, keine Laserachse (Arbeitsansicht).
-// Die Norm im Vorspann steht in Mono wie auf der Startseite (K-006: Normen in Mono), der Text bleibt gleich.
+// Ratgeber-Liste /blog (E3-BAU-09, Arbeitsansicht): Server-Komponente. Kopf (Einstieg) und Abschnitt sind Bausteine
+// der Kern-Schicht; Suche, Kategorien und Liste liegen in der Filter-Insel BlogFilter (Client). Texte wortgleich zum Bestand.
 import Einstieg from '@/components/kern/Einstieg';
+import Abschnitt from '@/components/kern/Abschnitt';
 import Knopf from '@/components/kern/Knopf';
-import BlogListe from '@/components/blog/BlogListe';
+import BlogFilter from '@/components/blog/BlogFilter';
 import QualityPromise from '@/components/sections/QualityPromise';
 import { COMPANY_DATA } from '@/config/company';
 
@@ -15,10 +13,10 @@ export default function BlogPage() {
       <Einstieg
         art="arbeit"
         etikett={<>Ratgeber &amp; Fachwissen</>}
-        titel={<>Fliesen-Ratgeber &amp; Badsanierung Tipps</>}
+        titel={<>Fliesen-Ratgeber &amp; <span>Badsanierung Tipps</span></>}
         vorspann={
           <p>
-            Praxisnaher Fliesen-Ratgeber mit wertvollen Tipps rund um Badsanierung, Fliesenverlegung und <span className="whitespace-nowrap font-mono text-fs-3">DIN 18534</span> Verbundabdichtung – von Ihrem Fachbetrieb {COMPANY_DATA.legalName} aus {COMPANY_DATA.headquarters.city}.
+            Praxisnaher Fliesen-Ratgeber mit wertvollen Tipps rund um Badsanierung, Fliesenverlegung und DIN 18534 Verbundabdichtung – von Ihrem Fachbetrieb {COMPANY_DATA.legalName} aus {COMPANY_DATA.headquarters.city}.
           </p>
         }
         aktionen={
@@ -29,9 +27,11 @@ export default function BlogPage() {
         }
       />
 
-      <BlogListe />
+      <Abschnitt art="arbeit">
+        <BlogFilter />
+      </Abschnitt>
 
-      <QualityPromise />
+      <QualityPromise art="arbeit" />
     </>
   );
 }

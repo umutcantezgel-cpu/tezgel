@@ -1,26 +1,23 @@
 import Link from 'next/link';
 import Icon from '@/components/icons/Icon';
-import Knopf from '@/components/kern/Knopf';
-import { labelKlassen, linkKlassen, pflichtKlassen } from '@/components/kern/stile';
-import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
+import Hinweis from '@/components/kern/Hinweis';
+import { knopfKlassen, labelKlassen, linkKlassen, pflichtKlassen } from '@/components/kern/stile';
 import { COMPANY_DATA } from '@/config/company';
-import { frageClass, inputClass, nummerClass } from './stile';
+import { inputClass } from './stile';
 
-// Schritt 5: Kontaktdaten und Absenden (Q-01: Darstellung nach KERN v2 wie die Express-Anfrage; Texte, IDs, Namen,
-// autocomplete und Verhalten unverändert). Die Fehlermeldung steht direkt über den Knöpfen, die sie auslösen
-// (Absenden bzw. WhatsApp ohne Name und Telefon): Versatz-Zeichen + Text + role="alert".
+// Schritt 5: Kontaktdaten und Absenden (E-011: aus BadanfrageFunnel.jsx verschoben). E3-BAU-17: Darstellung nach dem
+// KERN-Formularmuster. V-03: Sendefehler als Hinweis (art fehler, rolle alert), Text unverändert. Texte, IDs, Labels,
+// Namen und Nutzlast unverändert.
 export default function Schritt5({ setStep, status, errorMessage, formData, setFormData, handleWhatsApp, handleOnlineSubmit }) {
     return (
-        <form onSubmit={handleOnlineSubmit} className="flex flex-col gap-6">
-            <div>
-                <p className={frageClass}>
-                    <span className={nummerClass}>5.</span> Kontaktdaten &amp; Versand Ihrer Anfrage
-                </p>
-                <p className="mt-2 max-w-mass text-fs-2 text-tinte-2">
-                    Senden Sie Ihre Badanfrage direkt online an {COMPANY_DATA.owner.fullName} oder nutzen Sie WhatsApp. Keine
-                    Weitergabe an Dritte.
-                </p>
-            </div>
+        <form onSubmit={handleOnlineSubmit} className="space-y-4">
+            <p className={`${labelKlassen} mb-1`}>
+                5. Kontaktdaten &amp; Versand Ihrer Anfrage
+            </p>
+            <p className="text-fs-2 text-tinte-2 mb-4">
+                Senden Sie Ihre Badanfrage direkt online an {COMPANY_DATA.owner.fullName} oder nutzen Sie WhatsApp. Keine
+                Weitergabe an Dritte.
+            </p>
 
             {/* Anti-spam honeypot */}
             <div className="hidden" aria-hidden="true">
@@ -36,7 +33,13 @@ export default function Schritt5({ setStep, status, errorMessage, formData, setF
                 />
             </div>
 
-            <div className="grid grid-cols-1 gap-6 @3xl:grid-cols-2 @3xl:gap-4">
+            {errorMessage && (
+                <Hinweis art="fehler" rolle="alert">
+                    {errorMessage}
+                </Hinweis>
+            )}
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                     <label htmlFor="badanfrage-name" className={labelKlassen}>
                         Vor- &amp; Nachname <span className={pflichtKlassen}>*</span>
@@ -69,9 +72,7 @@ export default function Schritt5({ setStep, status, errorMessage, formData, setF
                     />
                 </div>
                 <div>
-                    <label htmlFor="badanfrage-email" className={labelKlassen}>
-                        E-Mail-Adresse <span className="font-normal text-tinte-2">(optional)</span>
-                    </label>
+                    <label htmlFor="badanfrage-email" className={labelKlassen}>E-Mail-Adresse (optional)</label>
                     <input
                         id="badanfrage-email"
                         type="email"
@@ -83,9 +84,7 @@ export default function Schritt5({ setStep, status, errorMessage, formData, setF
                     />
                 </div>
                 <div>
-                    <label htmlFor="badanfrage-street" className={labelKlassen}>
-                        Straße &amp; Hausnummer <span className="font-normal text-tinte-2">(optional)</span>
-                    </label>
+                    <label htmlFor="badanfrage-street" className={labelKlassen}>Straße &amp; Hausnummer (optional)</label>
                     <input
                         id="badanfrage-street"
                         type="text"
@@ -112,9 +111,7 @@ export default function Schritt5({ setStep, status, errorMessage, formData, setF
             </div>
 
             <div>
-                <label htmlFor="badanfrage-notes" className={labelKlassen}>
-                    Anmerkungen oder besondere Wünsche <span className="font-normal text-tinte-2">(optional)</span>
-                </label>
+                <label htmlFor="badanfrage-notes" className={labelKlassen}>Anmerkungen oder besondere Wünsche (optional)</label>
                 <textarea
                     id="badanfrage-notes"
                     rows={3}
@@ -125,33 +122,36 @@ export default function Schritt5({ setStep, status, errorMessage, formData, setF
                 />
             </div>
 
-            <div className="flex flex-col gap-4 border-t border-fuge pt-6">
-                {errorMessage && (
-                    <div className="flex items-start gap-3 border-l-2 border-laser bg-kalk p-4 text-fs-2 text-tinte" role="alert">
-                        <Icon name="fehler" groesse={5} className="mt-px text-laser-tief" />
-                        <span>{errorMessage}</span>
-                    </div>
-                )}
-
-                <div className="flex flex-col items-stretch gap-3 @2xl:flex-row @2xl:items-center">
-                    <Knopf
+            <div className="pt-4 border-t border-fuge space-y-3">
+                <div className="flex flex-col sm:flex-row items-center gap-3">
+                    <button
                         type="submit"
-                        laedt={status === 'submitting'}
-                        ladeText="Übermittle Anfrage an Fachbetrieb …"
-                        icon="pfeil-rechts"
-                        className="w-full @2xl:flex-1"
+                        disabled={status === 'submitting'}
+                        className={knopfKlassen('haupt', 'w-full sm:flex-1')}
+                        data-motion="druck"
                     >
-                        Badanfrage jetzt absenden (Online)
-                    </Knopf>
-                    <Knopf
-                        variante="neben"
+                        {status === 'submitting' ? (
+                            <span className="flex flex-col items-center gap-2">
+                                <span>Übermittle Anfrage an Fachbetrieb …</span>
+                                <span className="laden-fuge w-16" aria-hidden="true" />
+                            </span>
+                        ) : (
+                            <>
+                                <span>Badanfrage jetzt absenden (Online)</span>
+                                <Icon name="pfeil-rechts" groesse={5} />
+                            </>
+                        )}
+                    </button>
+                    <button
+                        type="button"
                         onClick={handleWhatsApp}
-                        deaktiviert={status === 'submitting'}
-                        vorne={<WhatsAppLogo className="size-5 shrink-0" />}
-                        className="w-full @2xl:w-auto"
+                        disabled={status === 'submitting'}
+                        className={knopfKlassen('neben', 'w-full sm:w-auto')}
+                        data-motion="druck"
                     >
-                        Per WhatsApp
-                    </Knopf>
+                        <Icon name="sprechblase" groesse={5} />
+                        <span>Per WhatsApp</span>
+                    </button>
                 </div>
 
                 <p className="flex items-start gap-2 text-fs-1 text-tinte-2">
@@ -167,10 +167,16 @@ export default function Schritt5({ setStep, status, errorMessage, formData, setF
                 </p>
             </div>
 
-            <div className="flex justify-start">
-                <Knopf variante="text" onClick={() => setStep(4)} iconLinks="pfeil-links">
+            <div className="pt-1 flex justify-start">
+                <button
+                    type="button"
+                    onClick={() => setStep(4)}
+                    className={knopfKlassen('text')}
+                    data-motion="druck"
+                >
+                    <Icon name="pfeil-links" groesse={5} />
                     Zurück zu Schritt 4
-                </Knopf>
+                </button>
             </div>
         </form>
     );

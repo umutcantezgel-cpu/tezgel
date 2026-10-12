@@ -1,12 +1,16 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { IconWrapper } from '@/utils/iconMapper';
+import Icon from '@/components/icons/Icon';
+import Verlegeplan from '@/components/kern/Verlegeplan';
+import { planFuer } from '@/lib/blog/motive';
+
+// Plan je Beitrag wie in der Liste (src/lib/blog/motive.js); exportiert, damit der Einstieg des Artikels dasselbe Motiv zeigt (ARB 28)
+export const motivFuer = planFuer;
 
 /**
  * Related Posts Component
- * Shows related blog posts based on category or tags
+ * Shows related blog posts based on category or tags, als Liste an der Fuge.
+ * Ohne Foto: gezeichnetes Themenmotiv (dekorativ, ohne Laserachse) und als Anreißer der eigene Auszug.
  */
 const RelatedPosts = ({ currentPost, allPosts = [], categories = [], limit = 3 }) => {
     const posts = allPosts || [];
@@ -43,71 +47,62 @@ const RelatedPosts = ({ currentPost, allPosts = [], categories = [], limit = 3 }
     if (relatedPosts.length === 0) return null;
 
     return (
-        <div className="glass-surface rounded-3xl p-8">
-            <h2 className="text-2xl font-black text-slate-900 mb-6">
+        <div>
+            <h2 className="text-fs-5 text-tinte">
                 Das könnte Sie auch interessieren
             </h2>
 
-            <div className="grid md:grid-cols-3 gap-6">
+            <ul className="mt-8 border-t border-fuge">
                 {relatedPosts.map(post => {
                     const categoryData = categoryList.find(c => c.id === post.category);
-                    const image = post.image || post.image_url;
 
                     return (
-                        <div
+                        <li
                             key={post.id}
-                            className="group relative h-full rounded-tile-md border border-slate-200 bg-white p-5 hover:-translate-y-0.5 hover:border-orange-500 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                            data-motion="zustand"
+                            className="relative flex items-start gap-6 border-b border-fuge py-6 hover:bg-fliese focus-within:bg-fliese"
                         >
-                            {/* Image */}
-                            {image ? (
-                                <div className="h-32 rounded-tile-sm overflow-hidden mb-4">
-                                    <Image
-                                        src={image}
-                                        alt={post.title}
-                                        width={300}
-                                        height={128}
-                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                                        loading="lazy"
-                                    />
-                                </div>
-                            ) : (
-                                <div className="h-32 rounded-tile-sm overflow-hidden mb-4 bg-gradient-to-br from-orange-50 to-red-50 flex items-center justify-center">
-                                    <IconWrapper name={categoryData?.icon} className="w-8 h-8 text-orange-600" />
-                                </div>
-                            )}
-
-                            {/* Category */}
-                            {categoryData && (
-                                <span className="inline-flex items-center px-3 py-1 text-xs font-bold rounded-tile-pill bg-orange-50 border border-orange-200 text-orange-950 mb-3 pointer-events-none">
-                                    <IconWrapper name={categoryData.icon} className="w-3 h-3 mr-1" />
-                                    {categoryData.name}
-                                </span>
-                            )}
-
-                            {/* Title with Stretched Link */}
-                            <p className="font-black text-slate-900 group-hover:text-orange-600 transition-colors mb-2 line-clamp-2">
-                                <Link
-                                    href={`/blog/${post.slug}`}
-                                    className="hover:underline underline-offset-2 focus-visible:outline-none after:absolute after:inset-0 after:rounded-2xl focus-visible:after:ring-2 focus-visible:after:ring-orange-600"
-                                >
-                                    {post.title}
-                                </Link>
-                            </p>
-
-                            {/* Teaser */}
-                            <p className="text-sm text-slate-700 line-clamp-2 mb-3">
-                                Fachbeitrag von Fliesenverlegung Tezgel – praxisnahe Hinweise zu Planung, Material und Ausführung.
-                            </p>
-
-                            {/* Read More */}
-                            <div className="flex items-center text-orange-600 text-sm font-bold pointer-events-none">
-                                Artikel lesen
-                                <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            {/* Themenmotiv statt Foto: gezeichneter Verlegeplan, dekorativ */}
+                            <div
+                                className="flex size-24 shrink-0 items-center justify-center border border-fuge bg-kalk p-2"
+                                aria-hidden="true"
+                            >
+                                <Verlegeplan plan={motivFuer(post)} ohneAchse bemassung={false} />
                             </div>
-                        </div>
+
+                            <div className="min-w-0 flex-1">
+                                {/* Category */}
+                                {categoryData && (
+                                    <p className="font-mono text-fs-1 text-tinte-2">
+                                        {categoryData.name}
+                                    </p>
+                                )}
+
+                                {/* Title with Stretched Link (kein neues Überschriftenelement: Gliederung wie bisher) */}
+                                <p className="mt-2 font-anzeige text-fs-4 font-semibold text-tinte">
+                                    <Link
+                                        href={`/blog/${post.slug}`}
+                                        className="text-tinte no-underline decoration-strich underline-offset-4 after:absolute after:inset-0 hover:underline focus-visible:underline"
+                                    >
+                                        {post.title}
+                                    </Link>
+                                </p>
+
+                                {/* Teaser: der eigene Auszug des Beitrags; Bestandstext nur, wenn kein Auszug im Datensatz steht */}
+                                <p className="mt-2 max-w-mass text-fs-3 text-tinte-2">
+                                    {post.excerpt?.trim() || 'Fachbeitrag von Fliesenverlegung Tezgel – praxisnahe Hinweise zu Planung, Material und Ausführung.'}
+                                </p>
+
+                                {/* Read More */}
+                                <p className="mt-4 inline-flex items-center gap-2 font-text text-fs-2 font-semibold text-tinte">
+                                    Artikel lesen
+                                    <Icon name="pfeil-rechts" groesse={4} />
+                                </p>
+                            </div>
+                        </li>
                     );
                 })}
-            </div>
+            </ul>
         </div>
     );
 };

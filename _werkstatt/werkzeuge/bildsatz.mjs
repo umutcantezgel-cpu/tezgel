@@ -1,9 +1,11 @@
 // Prüfstufe A · Bildsatz: festes Aufnahmeprotokoll für Seiten × GERAETE (m390, t768, d1440), für vorher und nachher gleich.
-// Protokoll: Einwilligung abgelehnt, reducedMotion reduce, DPR 1, Dev-Overlay ausgeblendet; erst durchscrollen und
-// bereit, dann Ausschnitte an den festen Positionen k × Viewporthöhe, k = 0 … min(12, ceil(Seitenhöhe/vh)) − 1, JPEG q70.
+// Protokoll: Einwilligung abgelehnt, reducedMotion reduce (mit --ersatzpfad: no-preference), DPR 1, Dev-Overlay ausgeblendet;
+// erst durchscrollen und bereit, dann Ausschnitte an den festen Positionen k × Viewporthöhe, k = 0 … min(12, ceil(Seitenhöhe/vh)) − 1, JPEG q70.
 // Je Seite × Ansicht: Status, Konsolenfehler, ueberlauf() und ueberlappung().
-// Nutzung: node bildsatz.mjs --satz NAME (--hauptansichten | --seiten /a,/b) [--base URL] [--ziel DIR] [--worker 2] [--ersatzpfad]
-// --ersatzpfad: Darstellung ohne Scroll-Animationen und View Transitions (Safari < 26, Firefox) per Emulation.
+// Nutzung: node bildsatz.mjs --satz NAME (--hauptansichten | --seiten /a,/b) [--base URL] [--ziel DIR] [--worker 2] [--ersatzpfad (normale Bewegung, Animationen abwarten)]
+// --ersatzpfad: Darstellung ohne Scroll-Animationen und View Transitions (Safari < 26, Firefox) per Emulation, mit normaler
+//   Bewegung (reducedMotion no-preference). Nach dem Durchscrollen wartet der Lauf, bis keine Animation mehr läuft (höchstens 5 s);
+//   die Restzahl laufender Animationen steht je Ansicht in bildsatz.json (ergebnisse[].animationen) und in der Zusammenfassung.
 // Ziel (Standard _werkstatt/cache/bildsatz/<satz>/): <ansicht>/<slug>/NN.jpg sowie bildsatz.json.
 // --hauptansichten liest _werkstatt/HAUPTANSICHTEN.json. Zusammenfassung auf stdout.
 // Exit 1, wenn eine Aufnahme scheitert oder eine Seite nicht 200 liefert.
@@ -18,7 +20,8 @@ const arg = (k, d) => { const i = process.argv.indexOf(`--${k}`); return i > -1 
 const flag = (k) => process.argv.includes(`--${k}`);
 const MAX_AUSSCHNITTE = 12;
 const EINWILLIGUNG = 'abgelehnt';
-const NUTZUNG = 'Nutzung: node bildsatz.mjs --satz NAME (--hauptansichten | --seiten /a,/b) [--base URL] [--ziel DIR] [--worker 2] [--ersatzpfad]';
+const NUTZUNG = 'Nutzung: node bildsatz.mjs --satz NAME (--hauptansichten | --seiten /a,/b) [--base URL] [--ziel DIR] [--worker 2] [--ersatzpfad (normale Bewegung, Animationen abwarten)]';
+const ZEITLIMIT_ANIMATIONEN_MS = 5000; // --ersatzpfad: höchstens so lange auf das Ende laufender Animationen warten
 
 const base = arg('base', BASE);
 assertLocal(base);
@@ -35,10 +38,22 @@ const ERSATZPFAD = flag('ersatzpfad'); // ohne animation-timeline/View Transitio
 
 const rahmenAbwarten = (page) => page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(() => r(null)))));
 
+/** Ersatzpfad: wartet, bis keine Animation mehr läuft (playState running oder pending), höchstens ZEITLIMIT_ANIMATIONEN_MS. */
+async function wartenAufAnimationen(page) {
+  const laufend = () => page.evaluate(() => document.getAnimations().filter((a) => a.playState === 'running' || a.playState === 'pending').length);
+  const start = Date.now();
+  let rest = await laufend();
+  while (rest > 0 && Date.now() - start < ZEITLIMIT_ANIMATIONEN_MS) {
+    await page.waitForTimeout(100);
+    rest = await laufend();
+  }
+  return { rest, zeitlimit: rest > 0, wartezeit_ms: Date.now() - start };
+}
+
 /** Eine Seite in einer Ansicht: Protokoll ausführen und Ergebnis liefern. */
 async function bearbeite(browser, a, s) {
   const v = ANSICHTEN[a];
-  const context = await browser.newContext({ viewport: { width: v.width, height: v.height }, deviceScaleFactor: 1, isMobile: v.isMobile, hasTouch: v.hasTouch, reducedMotion: 'reduce', locale: 'de-DE', timezoneId: 'Europe/Berlin', colorScheme: 'light' });
+  const context = await browser.newContext({ viewport: { width: v.width, height: v.height }, deviceScaleFactor: 1, isMobile: v.isMobile, hasTouch: v.hasTouch, reducedMotion: ERSATZPFAD ? 'no-preference' : 'reduce', locale: 'de-DE', timezoneId: 'Europe/Berlin', colorScheme: 'light' });
   const protokoll = [];
   await installSperre(context, { protokoll });
   if (ERSATZPFAD) await installErsatzpfad(context);
@@ -47,7 +62,7 @@ async function bearbeite(browser, a, s) {
   const konsole = [];
   page.on('console', (m) => { if (m.type() === 'error') konsole.push(m.text().slice(0, 300)); });
   page.on('pageerror', (e) => konsole.push(`pageerror: ${String(e.message).slice(0, 300)}`));
-  const r = { ansicht: a, seite: s, status: null, hoehe: null, aufnahmen: [], konsole, ueberlauf: [], ueberlappung: [], ueberlappungGesamt: 0, ueberlappungNachArt: {}, fehler: null };
+  const r = { ansicht: a, seite: s, status: null, hoehe: null, aufnahmen: [], konsole, ueberlauf: [], ueberlappung: [], ueberlappungGesamt: 0, ueberlappungNachArt: {}, animationen: null, fehler: null };
   const dir = path.join(ziel, a, slug(s));
   try {
     const resp = await page.goto(base + s, { waitUntil: 'domcontentloaded', timeout: 45000 });
@@ -56,6 +71,7 @@ async function bearbeite(browser, a, s) {
     await versteckeDevOverlay(page);
     await durchscrollen(page);
     await bereit(page);
+    if (ERSATZPFAD) r.animationen = await wartenAufAnimationen(page); // Bewegung läuft normal: Ende abwarten, damit die Bilder vergleichbar bleiben
     r.ueberlauf = await ueberlauf(page);
     const zahl = await ueberlappungMitZahl(page); // scrollt selbst und setzt auf 0 zurück
     r.ueberlappung = zahl.befunde;
@@ -102,6 +118,10 @@ const nicht200 = ergebnisse.filter((r) => r.status !== 200).map((r) => `${r.seit
 const mitUeberlauf = ergebnisse.filter((r) => r.ueberlauf.length);
 const mitUeberlappung = ergebnisse.filter((r) => r.ueberlappung.length);
 const mitKonsole = ergebnisse.filter((r) => r.konsole.length);
+const animationen = ERSATZPFAD ? {
+  ansichten_mit_zeitlimit: ergebnisse.filter((r) => r.animationen && r.animationen.zeitlimit).length,
+  restzahl_laufend: ergebnisse.reduce((s, r) => s + (r.animationen ? r.animationen.rest : 0), 0),
+} : null;
 function summeNachArt(liste) {
   const summe = {};
   for (const r of liste) for (const [k, n] of Object.entries(r.ueberlappungNachArt)) summe[k] = (summe[k] || 0) + n;
@@ -114,12 +134,13 @@ const zusammenfassung = {
   ueberlauf: { ansichten: mitUeberlauf.length, befunde: mitUeberlauf.reduce((s, r) => s + r.ueberlauf.length, 0) },
   ueberlappung: { ansichten: mitUeberlappung.length, befunde: mitUeberlappung.reduce((s, r) => s + r.ueberlappungGesamt, 0), nachArt: summeNachArt(mitUeberlappung) },
   konsole: { ansichten: mitKonsole.length, meldungen: mitKonsole.reduce((s, r) => s + r.konsole.length, 0) },
+  animationen,
 };
 const bericht = {
   satz,
   base,
   ziel,
-  protokoll: { einwilligung: EINWILLIGUNG, bewegung: 'reduce', dpr: 1, ansichten: GERAETE, max_ausschnitte: MAX_AUSSCHNITTE, qualitaet: 70 },
+  protokoll: { einwilligung: EINWILLIGUNG, bewegung: ERSATZPFAD ? 'no-preference' : 'reduce', ersatzpfad: ERSATZPFAD, animationen_zeitlimit_ms: ERSATZPFAD ? ZEITLIMIT_ANIMATIONEN_MS : null, dpr: 1, ansichten: GERAETE, max_ausschnitte: MAX_AUSSCHNITTE, qualitaet: 70 },
   seiten,
   zusammenfassung,
   ergebnisse,
@@ -127,7 +148,7 @@ const bericht = {
 fs.writeFileSync(path.join(ziel, 'bildsatz.json'), JSON.stringify(bericht, null, 1));
 
 const z = zusammenfassung;
-console.log(`\nSatz ${satz} · Aufnahmen ${z.aufnahmen} · Fehler ${z.fehler} · nicht 200 ${z.nicht200} · Überlauf ${z.ueberlauf.ansichten} Ansichten (${z.ueberlauf.befunde} Befunde) · Überlappung ${z.ueberlappung.ansichten} Ansichten (${z.ueberlappung.befunde} Befunde: ${Object.entries(z.ueberlappung.nachArt).map(([k, n]) => `${k} ${n}`).join(', ') || 'keine'}) · Konsole ${z.konsole.ansichten} Ansichten (${z.konsole.meldungen} Meldungen)`);
+console.log(`\nSatz ${satz} · Aufnahmen ${z.aufnahmen} · Fehler ${z.fehler} · nicht 200 ${z.nicht200} · Überlauf ${z.ueberlauf.ansichten} Ansichten (${z.ueberlauf.befunde} Befunde) · Überlappung ${z.ueberlappung.ansichten} Ansichten (${z.ueberlappung.befunde} Befunde: ${Object.entries(z.ueberlappung.nachArt).map(([k, n]) => `${k} ${n}`).join(', ') || 'keine'}) · Konsole ${z.konsole.ansichten} Ansichten (${z.konsole.meldungen} Meldungen)${z.animationen ? ` · Animationen: Zeitlimit ${z.animationen.ansichten_mit_zeitlimit} Ansichten, Restzahl laufend ${z.animationen.restzahl_laufend}` : ''}`);
 const listen = [
   ['Fehler', fehler],
   ['nicht 200', nicht200],

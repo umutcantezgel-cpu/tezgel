@@ -1,0 +1,2845 @@
+{
+  "config": {
+    "configFile": "/home/user/tezgel/_werkstatt/werkzeuge/playwright.config.mjs",
+    "rootDir": "/home/user/tezgel/_werkstatt/werkzeuge/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-NACH-17/zusatz/pw.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-NACH-17/zusatz/pw",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "mobil",
+        "name": "mobil",
+        "testDir": "/home/user/tezgel/_werkstatt/werkzeuge/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-NACH-17/zusatz/pw",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "/home/user/tezgel/_werkstatt/werkzeuge/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "funktion-kontaktwege.spec.mjs",
+      "file": "funktion-kontaktwege.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "F-10 WhatsApp-Links und Widget",
+          "file": "funktion-kontaktwege.spec.mjs",
+          "line": 55,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Widget /: Klick öffnet WhatsApp mit Firmennummer und seitenbezogenem Text, ohne Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2771,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:35:05.002Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-abf91618b92038b33b8c",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 59,
+              "column": 5
+            },
+            {
+              "title": "Widget /kontakt: Klick öffnet WhatsApp mit Firmennummer und seitenbezogenem Text, ohne Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1660,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:35:07.956Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-5f023f75b61497fd2266",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 59,
+              "column": 5
+            },
+            {
+              "title": "Widget /bad: Klick öffnet WhatsApp mit Firmennummer und seitenbezogenem Text, ohne Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1941,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:35:09.655Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-cf6fef4250790b353f54",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 59,
+              "column": 5
+            },
+            {
+              "title": "Widget: kein vorgetäuschtes Benachrichtigungs-Abzeichen (E-012)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2125,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:35:11.617Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-a4571ec611c5b6e8fa79",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 73,
+              "column": 3
+            },
+            {
+              "title": "Widget: Doppelklick löst nur einen WhatsApp-Aufruf aus (Entprellung)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Am Desktop über window.open synchron prüfbar; mobil ist es eine Navigation",
+                      "location": {
+                        "file": "/home/user/tezgel/_werkstatt/werkzeuge/tests/funktion-kontaktwege.spec.mjs",
+                        "line": 87,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 79,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:35:13.772Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Am Desktop über window.open synchron prüfbar; mobil ist es eine Navigation",
+                          "location": {
+                            "file": "/home/user/tezgel/_werkstatt/werkzeuge/tests/funktion-kontaktwege.spec.mjs",
+                            "line": 87,
+                            "column": 10
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "2b3723101647f1350104-2e335dc5283e5a0bd79f",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 86,
+              "column": 3
+            },
+            {
+              "title": "/: alle WhatsApp-Links (Hero, FinalCTA, Leiste, Fußbereich) zeigen auf die Firmennummer",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1626,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:35:13.882Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-8c6e3dd1393cc0646c63",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 94,
+              "column": 5
+            },
+            {
+              "title": "/kontakt: alle WhatsApp-Links (Hero, FinalCTA, Leiste, Fußbereich) zeigen auf die Firmennummer",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1139,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:35:15.533Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-f797a6db55aa72f770fc",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 94,
+              "column": 5
+            },
+            {
+              "title": "/bad: alle WhatsApp-Links (Hero, FinalCTA, Leiste, Fußbereich) zeigen auf die Firmennummer",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1286,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:35:16.696Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-47ed17326184cebbc17b",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 94,
+              "column": 5
+            },
+            {
+              "title": "Mobil-Leiste: WhatsApp-Knopf öffnet Chat mit Firmennummer",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2529,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:35:18.009Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-59fda61adf45a4bafc5b",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 102,
+              "column": 3
+            },
+            {
+              "title": "Widget /: Klick öffnet WhatsApp mit Firmennummer und seitenbezogenem Text, ohne Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2397,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:36:53.382Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-f50e74d8c4fcd63a94a2",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 59,
+              "column": 5
+            },
+            {
+              "title": "Widget /kontakt: Klick öffnet WhatsApp mit Firmennummer und seitenbezogenem Text, ohne Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1639,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:36:55.946Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-bb9e814b7f95fb893518",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 59,
+              "column": 5
+            },
+            {
+              "title": "Widget /bad: Klick öffnet WhatsApp mit Firmennummer und seitenbezogenem Text, ohne Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1653,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:36:57.605Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-6ffe75c1a25a16bc4eb2",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 59,
+              "column": 5
+            },
+            {
+              "title": "Widget: kein vorgetäuschtes Benachrichtigungs-Abzeichen (E-012)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1504,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:36:59.283Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-824063d60789498f6088",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 73,
+              "column": 3
+            },
+            {
+              "title": "Widget: Doppelklick löst nur einen WhatsApp-Aufruf aus (Entprellung)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2424,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:37:00.809Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-1192c0d282acc10841c3",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 86,
+              "column": 3
+            },
+            {
+              "title": "/: alle WhatsApp-Links (Hero, FinalCTA, Leiste, Fußbereich) zeigen auf die Firmennummer",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1583,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:37:03.256Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-8eb8a7af98b9b452a5c6",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 94,
+              "column": 5
+            },
+            {
+              "title": "/kontakt: alle WhatsApp-Links (Hero, FinalCTA, Leiste, Fußbereich) zeigen auf die Firmennummer",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1167,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:37:04.858Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-2b4bce7291844f3f7339",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 94,
+              "column": 5
+            },
+            {
+              "title": "/bad: alle WhatsApp-Links (Hero, FinalCTA, Leiste, Fußbereich) zeigen auf die Firmennummer",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1384,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:37:06.047Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-520ef08a5e42695ac70f",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 94,
+              "column": 5
+            },
+            {
+              "title": "Mobil-Leiste: WhatsApp-Knopf öffnet Chat mit Firmennummer",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "MobileBottomBar ist nur mobil sichtbar",
+                      "location": {
+                        "file": "/home/user/tezgel/_werkstatt/werkzeuge/tests/funktion-kontaktwege.spec.mjs",
+                        "line": 103,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 62,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:37:07.455Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "MobileBottomBar ist nur mobil sichtbar",
+                          "location": {
+                            "file": "/home/user/tezgel/_werkstatt/werkzeuge/tests/funktion-kontaktwege.spec.mjs",
+                            "line": 103,
+                            "column": 10
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "2b3723101647f1350104-0b0dcde6e048f35a1f55",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 102,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "F-15 Telefon und E-Mail",
+          "file": "funktion-kontaktwege.spec.mjs",
+          "line": 115,
+          "column": 6,
+          "specs": [
+            {
+              "title": "/: alle Telefonlinks zeigen auf Festnetz oder Mobilnummer, mindestens einer auf Festnetz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2244,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:35:20.568Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-ec819208e1021028fe7a",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 117,
+              "column": 5
+            },
+            {
+              "title": "/: alle E-Mail-Links zeigen auf info@tezgel.de",
+              "ok": true,
+              "tags": [
+                "tezgel.de"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2355,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:35:22.846Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-fcd3d54aa9cc5c94f283",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 124,
+              "column": 5
+            },
+            {
+              "title": "/kontakt: alle Telefonlinks zeigen auf Festnetz oder Mobilnummer, mindestens einer auf Festnetz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1213,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:35:25.234Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-20849d48a42c4a3cbea2",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 117,
+              "column": 5
+            },
+            {
+              "title": "/kontakt: alle E-Mail-Links zeigen auf info@tezgel.de",
+              "ok": true,
+              "tags": [
+                "tezgel.de"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1294,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:35:26.471Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-273c2bc0584b903d3e59",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 124,
+              "column": 5
+            },
+            {
+              "title": "/bad: alle Telefonlinks zeigen auf Festnetz oder Mobilnummer, mindestens einer auf Festnetz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1301,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:35:27.790Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-ecbd428770eb2903506f",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 117,
+              "column": 5
+            },
+            {
+              "title": "/bad: alle E-Mail-Links zeigen auf info@tezgel.de",
+              "ok": true,
+              "tags": [
+                "tezgel.de"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1489,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:35:29.115Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-9a3beea677dfb6805222",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 124,
+              "column": 5
+            },
+            {
+              "title": "/bad Fußbereich: Festnetz, E-Mail und WhatsApp sind verlinkt",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1379,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:35:30.630Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-ac11ad5d8fac1c4caba5",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 132,
+              "column": 3
+            },
+            {
+              "title": "Mobil-Leiste: Anrufen zeigt auf die Festnetznummer",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1884,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:35:32.034Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-65b46f0b1d07a4b7661b",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 144,
+              "column": 3
+            },
+            {
+              "title": "/: alle Telefonlinks zeigen auf Festnetz oder Mobilnummer, mindestens einer auf Festnetz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1547,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:37:07.539Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-2b7b63a4cb98b4574f36",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 117,
+              "column": 5
+            },
+            {
+              "title": "/: alle E-Mail-Links zeigen auf info@tezgel.de",
+              "ok": true,
+              "tags": [
+                "tezgel.de"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1614,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:37:09.107Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-3ba6d084b8a4d76fc477",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 124,
+              "column": 5
+            },
+            {
+              "title": "/kontakt: alle Telefonlinks zeigen auf Festnetz oder Mobilnummer, mindestens einer auf Festnetz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1056,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:37:10.743Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-923c5578b13f45bd7db5",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 117,
+              "column": 5
+            },
+            {
+              "title": "/kontakt: alle E-Mail-Links zeigen auf info@tezgel.de",
+              "ok": true,
+              "tags": [
+                "tezgel.de"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1069,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:37:11.816Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-f3d467d473abef403b95",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 124,
+              "column": 5
+            },
+            {
+              "title": "/bad: alle Telefonlinks zeigen auf Festnetz oder Mobilnummer, mindestens einer auf Festnetz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1185,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:37:12.914Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-448ed62d490bd8d64d61",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 117,
+              "column": 5
+            },
+            {
+              "title": "/bad: alle E-Mail-Links zeigen auf info@tezgel.de",
+              "ok": true,
+              "tags": [
+                "tezgel.de"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1212,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:37:14.117Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-2c1973e771cf1980b6c1",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 124,
+              "column": 5
+            },
+            {
+              "title": "/bad Fußbereich: Festnetz, E-Mail und WhatsApp sind verlinkt",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1254,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:37:15.351Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b3723101647f1350104-b92f8fff990f10af7b4c",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 132,
+              "column": 3
+            },
+            {
+              "title": "Mobil-Leiste: Anrufen zeigt auf die Festnetznummer",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "MobileBottomBar ist nur mobil sichtbar",
+                      "location": {
+                        "file": "/home/user/tezgel/_werkstatt/werkzeuge/tests/funktion-kontaktwege.spec.mjs",
+                        "line": 145,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 76,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:37:16.626Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "MobileBottomBar ist nur mobil sichtbar",
+                          "location": {
+                            "file": "/home/user/tezgel/_werkstatt/werkzeuge/tests/funktion-kontaktwege.spec.mjs",
+                            "line": 145,
+                            "column": 10
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "2b3723101647f1350104-67e62f78de23b97dcb19",
+              "file": "funktion-kontaktwege.spec.mjs",
+              "line": 144,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "funktion-preisrechner.spec.mjs",
+      "file": "funktion-preisrechner.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "PricingCalculator (/preise)",
+          "file": "funktion-preisrechner.spec.mjs",
+          "line": 41,
+          "column": 6,
+          "specs": [
+            {
+              "title": "ohne Name: Pflichtfeld blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2444,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:35:33.954Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "371f6661028b33e532ae-4e59d058881b32c4d404",
+              "file": "funktion-preisrechner.spec.mjs",
+              "line": 42,
+              "column": 3
+            },
+            {
+              "title": "ohne Telefonnummer: Pflichtfeld blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2652,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:35:36.428Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "371f6661028b33e532ae-a8e75f6f5e3463ea107c",
+              "file": "funktion-preisrechner.spec.mjs",
+              "line": 52,
+              "column": 3
+            },
+            {
+              "title": "Name nur aus Leerzeichen: eigene Fehlermeldung, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3107,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:35:39.119Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "371f6661028b33e532ae-548e1a01025dbdc37c29",
+              "file": "funktion-preisrechner.spec.mjs",
+              "line": 62,
+              "column": 3
+            },
+            {
+              "title": "Einwilligung startet leer (E-014): ohne eigenen Haken Fehlermeldung, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3262,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:35:42.299Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "371f6661028b33e532ae-56273142082ebc4c5c53",
+              "file": "funktion-preisrechner.spec.mjs",
+              "line": 72,
+              "column": 3
+            },
+            {
+              "title": "ohne Einwilligung abgewählt: Fehlermeldung, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2496,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:35:45.588Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "371f6661028b33e532ae-47cfb62dc3c342a0b089",
+              "file": "funktion-preisrechner.spec.mjs",
+              "line": 81,
+              "column": 3
+            },
+            {
+              "title": "Vorauswahl Bad: sendet inquiryType \"bad\" mit Projektdetails in notes, Erfolg mit Referenz (Attrappe)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3282,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:35:48.121Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "371f6661028b33e532ae-8de5f3cd49dd28e812a7",
+              "file": "funktion-preisrechner.spec.mjs",
+              "line": 90,
+              "column": 3
+            },
+            {
+              "title": "anderes Gewerk mit Fläche, Zeitraum, Vorarbeiten und Freitext: inquiryType \"general\", Details in notes, Erfolg",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3132,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:35:51.428Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "371f6661028b33e532ae-3e889e8b22ac3da6ad76",
+              "file": "funktion-preisrechner.spec.mjs",
+              "line": 113,
+              "column": 3
+            },
+            {
+              "title": "ohne Name: Pflichtfeld blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1827,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:37:16.739Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "371f6661028b33e532ae-fa3e63ffc93c8a3e010b",
+              "file": "funktion-preisrechner.spec.mjs",
+              "line": 42,
+              "column": 3
+            },
+            {
+              "title": "ohne Telefonnummer: Pflichtfeld blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1935,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:37:18.590Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "371f6661028b33e532ae-4c8edfd2682e460b48e6",
+              "file": "funktion-preisrechner.spec.mjs",
+              "line": 52,
+              "column": 3
+            },
+            {
+              "title": "Name nur aus Leerzeichen: eigene Fehlermeldung, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2088,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:37:20.550Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "371f6661028b33e532ae-a1d834ff3e1db4e82f9c",
+              "file": "funktion-preisrechner.spec.mjs",
+              "line": 62,
+              "column": 3
+            },
+            {
+              "title": "Einwilligung startet leer (E-014): ohne eigenen Haken Fehlermeldung, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1914,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:37:22.666Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "371f6661028b33e532ae-25e9f83d48855a53628b",
+              "file": "funktion-preisrechner.spec.mjs",
+              "line": 72,
+              "column": 3
+            },
+            {
+              "title": "ohne Einwilligung abgewählt: Fehlermeldung, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1970,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:37:24.602Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "371f6661028b33e532ae-968274a132ff0b24a427",
+              "file": "funktion-preisrechner.spec.mjs",
+              "line": 81,
+              "column": 3
+            },
+            {
+              "title": "Vorauswahl Bad: sendet inquiryType \"bad\" mit Projektdetails in notes, Erfolg mit Referenz (Attrappe)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2211,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:37:26.597Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "371f6661028b33e532ae-0ab89cc4b27f61b82922",
+              "file": "funktion-preisrechner.spec.mjs",
+              "line": 90,
+              "column": 3
+            },
+            {
+              "title": "anderes Gewerk mit Fläche, Zeitraum, Vorarbeiten und Freitext: inquiryType \"general\", Details in notes, Erfolg",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2890,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:37:28.832Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "371f6661028b33e532ae-3ba44f69a7f82334ccc7",
+              "file": "funktion-preisrechner.spec.mjs",
+              "line": 113,
+              "column": 3
+            }
+          ],
+          "suites": [
+            {
+              "title": "echte Route (Mock-Modus ohne Resend-Schlüssel)",
+              "file": "funktion-preisrechner.spec.mjs",
+              "line": 142,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "Server nimmt an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 4243,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:35:54.586Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "371f6661028b33e532ae-e7fbced24e7fb68c803d",
+                  "file": "funktion-preisrechner.spec.mjs",
+                  "line": 144,
+                  "column": 5
+                },
+                {
+                  "title": "Server nimmt an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 3492,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:37:31.745Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "371f6661028b33e532ae-957c33dc8879f017f2e8",
+                  "file": "funktion-preisrechner.spec.mjs",
+                  "line": 144,
+                  "column": 5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "PricingCalculator (/faq)",
+          "file": "funktion-preisrechner.spec.mjs",
+          "line": 163,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Gutfall: Anfrage wird gesendet und mit Referenz bestätigt (Attrappe)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2179,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:35:58.863Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "371f6661028b33e532ae-e8b9d96d4d787eab8896",
+              "file": "funktion-preisrechner.spec.mjs",
+              "line": 164,
+              "column": 3
+            },
+            {
+              "title": "Gutfall: Anfrage wird gesendet und mit Referenz bestätigt (Attrappe)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2246,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:37:35.259Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "371f6661028b33e532ae-c7d44d3ffe107436dee2",
+              "file": "funktion-preisrechner.spec.mjs",
+              "line": 164,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "funktion-schnellanfrage.spec.mjs",
+      "file": "funktion-schnellanfrage.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "LeadQuickForm (/standorte/wetzlar)",
+          "file": "funktion-schnellanfrage.spec.mjs",
+          "line": 37,
+          "column": 8,
+          "specs": [
+            {
+              "title": "Name und Telefon leer: Versand blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2541,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:36:01.080Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "813bce4f54239f1ed9e8-606cbdd7f3d086a78a79",
+              "file": "funktion-schnellanfrage.spec.mjs",
+              "line": 38,
+              "column": 5
+            },
+            {
+              "title": "Einwilligung fehlt: Versand blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5102,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:36:03.644Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "813bce4f54239f1ed9e8-4ab76b859751efd6ca7c",
+              "file": "funktion-schnellanfrage.spec.mjs",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "Name nur aus Leerzeichen: eigene Meldung, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5484,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:36:08.767Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "813bce4f54239f1ed9e8-83261ea82d38be573963",
+              "file": "funktion-schnellanfrage.spec.mjs",
+              "line": 55,
+              "column": 5
+            },
+            {
+              "title": "vollständig: sendet Nutzlast an /api/anfrage und zeigt Erfolg mit Referenz (Attrappe)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4296,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:36:14.276Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "813bce4f54239f1ed9e8-c4c985562b216296acfa",
+              "file": "funktion-schnellanfrage.spec.mjs",
+              "line": 65,
+              "column": 5
+            },
+            {
+              "title": "Honeypot gefüllt: Erfolg wird vorgetäuscht, aber keine Anfrage geht raus",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5947,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:36:18.595Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "813bce4f54239f1ed9e8-040bc362c5e2209e4007",
+              "file": "funktion-schnellanfrage.spec.mjs",
+              "line": 89,
+              "column": 5
+            },
+            {
+              "title": "Name und Telefon leer: Versand blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2421,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:37:37.545Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "813bce4f54239f1ed9e8-f49b0f0b0bf134daacf2",
+              "file": "funktion-schnellanfrage.spec.mjs",
+              "line": 38,
+              "column": 5
+            },
+            {
+              "title": "Einwilligung fehlt: Versand blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3118,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:37:39.993Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "813bce4f54239f1ed9e8-35e4b53e6207d4c1f831",
+              "file": "funktion-schnellanfrage.spec.mjs",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "Name nur aus Leerzeichen: eigene Meldung, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3630,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:37:43.136Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "813bce4f54239f1ed9e8-8710d51aaf11ae553762",
+              "file": "funktion-schnellanfrage.spec.mjs",
+              "line": 55,
+              "column": 5
+            },
+            {
+              "title": "vollständig: sendet Nutzlast an /api/anfrage und zeigt Erfolg mit Referenz (Attrappe)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4298,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:37:46.786Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "813bce4f54239f1ed9e8-881f14d642a91ba7a693",
+              "file": "funktion-schnellanfrage.spec.mjs",
+              "line": 65,
+              "column": 5
+            },
+            {
+              "title": "Honeypot gefüllt: Erfolg wird vorgetäuscht, aber keine Anfrage geht raus",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4597,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:37:51.106Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "813bce4f54239f1ed9e8-f7b567e41aee9801ffc9",
+              "file": "funktion-schnellanfrage.spec.mjs",
+              "line": 89,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "LeadQuickForm (/leistungen/bad/wetzlar)",
+          "file": "funktion-schnellanfrage.spec.mjs",
+          "line": 37,
+          "column": 8,
+          "specs": [
+            {
+              "title": "Name und Telefon leer: Versand blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2096,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:36:24.568Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "813bce4f54239f1ed9e8-c5c07806e03b085ced9c",
+              "file": "funktion-schnellanfrage.spec.mjs",
+              "line": 38,
+              "column": 5
+            },
+            {
+              "title": "Einwilligung fehlt: Versand blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3277,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:36:26.689Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "813bce4f54239f1ed9e8-34313403d55c6860ba6e",
+              "file": "funktion-schnellanfrage.spec.mjs",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "Name nur aus Leerzeichen: eigene Meldung, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3674,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:36:29.990Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "813bce4f54239f1ed9e8-606232d73315741b3288",
+              "file": "funktion-schnellanfrage.spec.mjs",
+              "line": 55,
+              "column": 5
+            },
+            {
+              "title": "vollständig: sendet Nutzlast an /api/anfrage und zeigt Erfolg mit Referenz (Attrappe)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3756,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:36:33.689Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "813bce4f54239f1ed9e8-5be6cab3f118f9526c50",
+              "file": "funktion-schnellanfrage.spec.mjs",
+              "line": 65,
+              "column": 5
+            },
+            {
+              "title": "Honeypot gefüllt: Erfolg wird vorgetäuscht, aber keine Anfrage geht raus",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3732,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:36:37.465Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "813bce4f54239f1ed9e8-8874db8cc293046b3b95",
+              "file": "funktion-schnellanfrage.spec.mjs",
+              "line": 89,
+              "column": 5
+            },
+            {
+              "title": "Name und Telefon leer: Versand blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2455,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:37:55.730Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "813bce4f54239f1ed9e8-56908716156915fbbbe4",
+              "file": "funktion-schnellanfrage.spec.mjs",
+              "line": 38,
+              "column": 5
+            },
+            {
+              "title": "Einwilligung fehlt: Versand blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4538,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:37:58.218Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "813bce4f54239f1ed9e8-f43b1f512b459e6781cc",
+              "file": "funktion-schnellanfrage.spec.mjs",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "Name nur aus Leerzeichen: eigene Meldung, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4774,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:38:02.795Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "813bce4f54239f1ed9e8-ada3afca3dcdc30e084b",
+              "file": "funktion-schnellanfrage.spec.mjs",
+              "line": 55,
+              "column": 5
+            },
+            {
+              "title": "vollständig: sendet Nutzlast an /api/anfrage und zeigt Erfolg mit Referenz (Attrappe)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4306,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:38:07.586Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "813bce4f54239f1ed9e8-2b5577cbdbddc3dd8acf",
+              "file": "funktion-schnellanfrage.spec.mjs",
+              "line": 65,
+              "column": 5
+            },
+            {
+              "title": "Honeypot gefüllt: Erfolg wird vorgetäuscht, aber keine Anfrage geht raus",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3995,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:38:11.913Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "813bce4f54239f1ed9e8-937e382d982f1b3ad4d1",
+              "file": "funktion-schnellanfrage.spec.mjs",
+              "line": 89,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "LeadQuickForm (/standorte/wetzlar) · Sonderfälle",
+          "file": "funktion-schnellanfrage.spec.mjs",
+          "line": 108,
+          "column": 6,
+          "specs": [
+            {
+              "title": "nur Pflichtfelder: optionale Angaben fehlen in der Nutzlast, Erfolg mit Referenz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4871,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:36:41.217Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "813bce4f54239f1ed9e8-685e75ad053403f1bb24",
+              "file": "funktion-schnellanfrage.spec.mjs",
+              "line": 109,
+              "column": 3
+            },
+            {
+              "title": "nur Pflichtfelder: optionale Angaben fehlen in der Nutzlast, Erfolg mit Referenz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4193,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:38:15.935Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "813bce4f54239f1ed9e8-4aa98afe454d362cdf21",
+              "file": "funktion-schnellanfrage.spec.mjs",
+              "line": 109,
+              "column": 3
+            }
+          ],
+          "suites": [
+            {
+              "title": "echte Route (Mock-Modus ohne Resend-Schlüssel)",
+              "file": "funktion-schnellanfrage.spec.mjs",
+              "line": 127,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "Server nimmt an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 6167,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:36:46.109Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "813bce4f54239f1ed9e8-27954ce4d373c58e771e",
+                  "file": "funktion-schnellanfrage.spec.mjs",
+                  "line": 129,
+                  "column": 5
+                },
+                {
+                  "title": "Server nimmt an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 4957,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:38:20.152Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "813bce4f54239f1ed9e8-cbe4c76868ae0e73ea1f",
+                  "file": "funktion-schnellanfrage.spec.mjs",
+                  "line": 129,
+                  "column": 5
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-12T02:35:03.859Z",
+    "duration": 201376.92799999999,
+    "expected": 73,
+    "skipped": 3,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

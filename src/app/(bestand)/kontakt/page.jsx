@@ -4,7 +4,13 @@ import React from 'react';
 import Link from 'next/link';
 import { COMPANY_DATA } from '@/config/company';
 import TezgelAnfrageFunnel from '@/components/funnels/TezgelAnfrageFunnel';
-import ContactPremiumMap from '@/components/maps/ContactPremiumMap';
+import dynamic from 'next/dynamic';
+
+// Karte mit Ortsliste nachgeladen (E4-NACH-17, Bündelanalyse: Google-Maps-Bibliothek nicht in der Erstladung); der
+// Platzhalter vor der Einwilligung wird weiter auf dem Server gerendert
+const ContactPremiumMap = dynamic(() => import('@/components/maps/ContactPremiumMap'));
+// Terminwahl ebenso nachgeladen (unterhalb des ersten Bildschirms; Server-Rendering bleibt)
+const BookingCalendar = dynamic(() => import('@/components/contact/BookingCalendar'));
 import LocationContact from '@/components/locations/LocationContact';
 import FinalCTA from '@/components/ui/FinalCTA';
 import Einstieg from '@/components/kern/Einstieg';
@@ -14,7 +20,6 @@ import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
 
 import DirectContactCard from '@/components/contact/DirectContactCard';
-import BookingCalendar from '@/components/contact/BookingCalendar';
 
 export default function KontaktPage() {
     return (
@@ -32,7 +37,7 @@ export default function KontaktPage() {
                     <>
                         <Knopf href="#express-anfrage" icon="pfeil-rechts">Zur Express-Anfrage</Knopf>
                         <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon">
-                            {COMPANY_DATA.contact.phone}
+                            <span className="font-mono">{COMPANY_DATA.contact.phone}</span>
                         </Knopf>
                     </>
                 }
@@ -138,6 +143,7 @@ export default function KontaktPage() {
                 headline="Sie möchten Ihr Bad oder Ihre Fliesen erneuern? Jetzt unverbindlich beraten lassen."
                 subtitle="Kostenfreies Vor-Ort-Aufmaß • Feste Terminabsprachen • HWK-Fachbetrieb"
                 buttonText="Jetzt Deniz Tezgel anrufen"
+                achse={false}
             />
         </>
     );

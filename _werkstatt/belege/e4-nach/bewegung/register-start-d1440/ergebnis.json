@@ -1,0 +1,46 @@
+{
+ "modus": "register",
+ "seite": "/",
+ "base": "http://127.0.0.1:4320",
+ "ansicht": "d1440",
+ "zeitpunkt": "2026-10-12T01:28:02.552Z",
+ "schritte": {
+  "hover_geprueft": 20,
+  "hover_fehler": 0,
+  "hover_fehler_beispiel": null,
+  "hover_ausserhalb_uebersprungen": 0,
+  "tab_schritte": 30,
+  "fokus_verschieden": 21
+ },
+ "data_motion_elemente": 199,
+ "gefundene_kennungen": [
+  "anriss",
+  "aufklappen",
+  "auftritt",
+  "druck",
+  "leitachse",
+  "sig-flucht",
+  "sig-kreuzlinie",
+  "zustand"
+ ],
+ "unbekannt": [],
+ "registriert_nicht_im_dom": [
+  "szene-ablauf",
+  "sig-plan",
+  "einzugsband",
+  "verband",
+  "fugenband",
+  "notiert",
+  "laden",
+  "seitenwechsel"
+ ],
+ "ohne_register": [],
+ "mit_register_eintraege": 28,
+ "erfasste_eintraege": 28,
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "verzeichnis": "/home/user/tezgel/_werkstatt/belege/e4-nach/bewegung/register-start-d1440"
+}

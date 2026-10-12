@@ -1,0 +1,33 @@
+{
+ "seite": "/blog/rutschfeste-fliesen-r-klassen",
+ "ansicht": "m390",
+ "base": "http://127.0.0.1:4320",
+ "ergebnis": {
+  "reduce": {
+   "gefunden": true,
+   "elementDisplay": "block",
+   "rechteck": [
+    0,
+    0
+   ],
+   "clientRects": 0,
+   "displayNoneVorfahr": {
+    "tag": "div",
+    "klasse": "fixed inset-x-0 top-0 z-40 h-0 motion-reduce:hidden print:hidden",
+    "display": "none"
+   },
+   "scaleX": "none"
+  },
+  "no-preference": {
+   "gefunden": true,
+   "elementDisplay": "block",
+   "rechteck": [
+    21.7,
+    2
+   ],
+   "clientRects": 1,
+   "displayNoneVorfahr": null,
+   "scaleX": "none"
+  }
+ }
+}

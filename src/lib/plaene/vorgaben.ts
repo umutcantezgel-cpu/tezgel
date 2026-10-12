@@ -7,6 +7,11 @@ export const PLAENE = {
     raum: { b: 30, h: 20 }, platte: { b: 6, h: 3 }, verband: 'halb', achse: 'lot',
     elemente: [{ art: 'wanne', x: 1.5, y: 1.5, b: 11, h: 6 }, { art: 'rinne', x: 19, y: 18, laenge: 9, richtung: 'waagrecht' }, { art: 'tuer', seite: 'unten', von: 4, breite: 6 }],
   },
+  badsanierung: {
+    name: 'badsanierung', beschreibung: 'Grundriss eines sanierten Bades: Wanne an der Wand, bodengleiche Dusche mit Gefälle zur Rinne, Tür; Großformat im Halbverband.',
+    raum: { b: 32, h: 24 }, platte: { b: 8, h: 4 }, verband: 'halb', achse: 'lot',
+    elemente: [{ art: 'wanne', x: 1.5, y: 1.5, b: 7, h: 14 }, { art: 'gefaelle', x: 24, y: 3, laenge: 8, richtung: 'unten' }, { art: 'rinne', x: 18, y: 14, laenge: 12.5, richtung: 'waagrecht' }, { art: 'tuer', seite: 'unten', von: 13, breite: 7 }],
+  },
   wohnen: {
     name: 'wohnen', beschreibung: 'Verlegeplan eines Wohnbereichs mit Großformat im Halbverband, Achse mittig.',
     raum: { b: 36, h: 20 }, platte: { b: 8, h: 4 }, verband: 'halb', achse: 'kreuz',

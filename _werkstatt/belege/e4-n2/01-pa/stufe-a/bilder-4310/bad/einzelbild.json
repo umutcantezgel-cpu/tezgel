@@ -1,0 +1,77 @@
+{
+ "seite": "/bad",
+ "base": "http://127.0.0.1:4310",
+ "ziel": "/home/user/tezgel/_werkstatt/belege/e4-n2/01-pa/stufe-a/bilder-4310/bad",
+ "optionen": {
+  "ansichten": [
+   "m390",
+   "d1440"
+  ],
+  "scroll": "0",
+  "voll": false,
+  "einwilligung": "abgelehnt",
+  "bewegung": "reduce",
+  "warte": 0,
+  "dpr": 1,
+  "qualitaet": 70
+ },
+ "ergebnisse": [
+  {
+   "ansicht": "m390",
+   "seite": "/bad",
+   "status": 200,
+   "datei": "/home/user/tezgel/_werkstatt/belege/e4-n2/01-pa/stufe-a/bilder-4310/bad/m390.jpg",
+   "anker": null,
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "fehler": null,
+   "fremd": 0,
+   "blockiert": []
+  },
+  {
+   "ansicht": "d1440",
+   "seite": "/bad",
+   "status": 200,
+   "datei": "/home/user/tezgel/_werkstatt/belege/e4-n2/01-pa/stufe-a/bilder-4310/bad/d1440.jpg",
+   "anker": null,
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [
+    {
+     "art": "sticky",
+     "text": "06441 / 44 83 567",
+     "selektor": "div.mx-auto.w-full > div.flex.shrink-0 > a.hidden.min-h-11 > span.hidden.lg:inline",
+     "rechteck": {
+      "x": 963,
+      "y": 4534,
+      "w": 143,
+      "h": 6
+     },
+     "durch": "div > div.grid.gap-y-12 > div.lg:col-span-4 > aside.lg:sticky.lg:top-24"
+    },
+    {
+     "art": "sticky",
+     "text": "Aufmaß anfragen",
+     "selektor": "header.kopf-anker.fixed > div.mx-auto.w-full > div.flex.shrink-0 > a.inline-flex.min-h-11",
+     "rechteck": {
+      "x": 1198,
+      "y": 4534,
+      "w": 127,
+      "h": 5
+     },
+     "durch": "div > div.grid.gap-y-12 > div.lg:col-span-4 > aside.lg:sticky.lg:top-24"
+    }
+   ],
+   "ueberlappungGesamt": 2,
+   "ueberlappungNachArt": {
+    "sticky": 2
+   },
+   "fehler": null,
+   "fremd": 0,
+   "blockiert": []
+  }
+ ]
+}

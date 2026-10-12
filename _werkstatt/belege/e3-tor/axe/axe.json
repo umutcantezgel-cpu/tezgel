@@ -1,0 +1,407 @@
+{
+ "satz": "e3-tor",
+ "tags": [
+  "wcag2a",
+  "wcag2aa",
+  "wcag21a",
+  "wcag21aa",
+  "wcag22aa"
+ ],
+ "laeufe": 60,
+ "ernst_kritisch_knoten": 3,
+ "je_regel": {
+  "serious:scrollable-region-focusable": 3
+ },
+ "ergebnisse": [
+  {
+   "seite": "/bad",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesen",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesen",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesen/konfigurator",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesen/konfigurator",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/rutschfeste-fliesen-r-klassen",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "scrollable-region-focusable",
+     "impact": "serious",
+     "hilfe": "Scrollable region must have keyboard access",
+     "anzahl": 1,
+     "ziele": [
+      ".overflow-x-auto.mt-8.border:nth-child(11)"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/blog/rutschfeste-fliesen-r-klassen",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesen",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesen",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesen",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesen/konfigurator",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesen/konfigurator",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesen/konfigurator",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/rutschfeste-fliesen-r-klassen",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "scrollable-region-focusable",
+     "impact": "serious",
+     "hilfe": "Scrollable region must have keyboard access",
+     "anzahl": 1,
+     "ziele": [
+      ".overflow-x-auto.mt-8.border:nth-child(11)"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/rutschfeste-fliesen-r-klassen",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "scrollable-region-focusable",
+     "impact": "serious",
+     "hilfe": "Scrollable region must have keyboard access",
+     "anzahl": 1,
+     "ziele": [
+      ".overflow-x-auto.mt-8.border:nth-child(11)"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/blog/rutschfeste-fliesen-r-klassen",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  }
+ ]
+}

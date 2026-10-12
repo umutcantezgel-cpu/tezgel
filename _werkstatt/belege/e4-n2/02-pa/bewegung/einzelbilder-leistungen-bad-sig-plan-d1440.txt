@@ -1,0 +1,11 @@
+{
+ "modus": "einzelbilder",
+ "seite": "/leistungen/bad",
+ "ansicht": "d1440",
+ "ergebnis": "/home/user/tezgel/_werkstatt/belege/e4-n2/02-pa/bewegung/einzelbilder-leistungen-bad-sig-plan-d1440/ergebnis.json",
+ "meldung": "1 Kennungen, 181 Elemente auf /leistungen/bad.",
+ "bilder_gesamt": 5,
+ "kennungen": [
+  "sig-plan: 5 Bilder, Modus echtzeit, Dauer 1120 ms, sichtbar 2/5, Paare % 0.02 / 0.43 / 0.51 / 0.19 · nur 2 von 5 Bildern unterscheiden sich sichtbar (Nachbar über 0.5 %, mindestens 3 gefordert)"
+ ]
+}

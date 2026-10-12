@@ -1,0 +1,50 @@
+{
+ "seite": "/leistungen",
+ "base": "http://127.0.0.1:4320",
+ "ziel": "/home/user/tezgel/_werkstatt/belege/e4-n2/02-pa/bilder/leistungen",
+ "optionen": {
+  "ansichten": [
+   "m390",
+   "d1440"
+  ],
+  "scroll": "0",
+  "voll": false,
+  "einwilligung": "abgelehnt",
+  "bewegung": "reduce",
+  "warte": 0,
+  "dpr": 1,
+  "qualitaet": 70
+ },
+ "ergebnisse": [
+  {
+   "ansicht": "m390",
+   "seite": "/leistungen",
+   "status": 200,
+   "datei": "/home/user/tezgel/_werkstatt/belege/e4-n2/02-pa/bilder/leistungen/m390.jpg",
+   "anker": null,
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "fehler": null,
+   "fremd": 0,
+   "blockiert": []
+  },
+  {
+   "ansicht": "d1440",
+   "seite": "/leistungen",
+   "status": 200,
+   "datei": "/home/user/tezgel/_werkstatt/belege/e4-n2/02-pa/bilder/leistungen/d1440.jpg",
+   "anker": null,
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "fehler": null,
+   "fremd": 0,
+   "blockiert": []
+  }
+ ]
+}

@@ -1,23 +1,26 @@
-import React from 'react';
-import Link from 'next/link';
-import {
-    ShieldCheck,
-    BadgePercent,
-    Phone,
-    ArrowRight,
-    Droplets,
-    ShowerHead,
-    Accessibility,
-    Sparkles,
-    HeartHandshake,
-    Lightbulb,
-    Star,
-    Quote
-} from 'lucide-react';
+// Barrierefreies Bad (E4-BAU-02, KERN v2): Erzählansicht nach dem Muster der Familienreferenz /bad. Einstieg mit Achse, H1 links
+// bündig, Vorspann und Knöpfe; rechts das Planblatt „abdichtung“ mit dem Verlegeplan (interaktiv, ohne eigene Achse – das Blatt
+// zeigt die rote Achse). Danach die Leitachse über die Abschnitte: Zuschuss (seitlich, auf Fliese), Lösungen als Feldraster mit
+// der Kundenstimme, Badanfrage im Raster aus Funnel (8 Spalten) und Rückfrage (4 Spalten, ab lg klebend).
+// Der Anfragebereich wird nachgeladen (TEMPO). Wortlaut, Überschriften, Links, IDs und Lesefolge wie im Bestand.
+import dynamic from 'next/dynamic';
 import { COMPANY_DATA } from '@/config/company';
 import { REVIEWS } from '@/config/reviews';
-import BadanfrageFunnel from '@/components/funnels/BadanfrageFunnel';
 import { createMetadata } from '@/lib/metadata';
+import Icon from '@/components/icons/Icon';
+import Einstieg from '@/components/kern/Einstieg';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Leitachse from '@/components/kern/Leitachse';
+import { Feld, Feldraster } from '@/components/kern/Feldraster';
+import Knopf from '@/components/kern/Knopf';
+import Rueckfrage from '@/components/kern/Rueckfrage';
+import Verlegeplan from '@/components/kern/Verlegeplan';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+
+// Badanfrage nachladen wie auf der Referenzseite (TEMPO, Z-08 / E-025)
+const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFunnel'), {
+    loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
+});
 
 export const metadata = createMetadata({
     title: 'Barrierefreies Bad Wetzlar & Aßlar | DIN 18040 Tezgel',
@@ -26,137 +29,122 @@ export const metadata = createMetadata({
 });
 
 const SOLUTIONS = [
-    { title: 'Bodengleiche Walk-In-Duschen', desc: 'Schwellenloser Einstieg ohne Stolperfallen. Integrierte Duschrinne, rutschhemmende Fliesen (R10B) und breite Glaszugänge.', icon: Droplets },
-    { title: 'Wanne-zur-Dusche-Umbau', desc: 'Wir tauschen Ihre alte, hohe Badewanne gegen eine moderne, begehbare Duschzone – normgerecht abgedichtet nach DIN 18534.', icon: ShowerHead },
-    { title: 'Unterfahrbare Waschtische', desc: 'Ergonomische Waschtischanlagen mit Beinfreiheit für Rollstuhlfahrer und komfortable Einhebel- oder Sensorarmaturen.', icon: Accessibility },
-    { title: 'Komfort- & Dusch-WCs', desc: 'Höhenverstellbare oder erhöhte WCs für bequemes Aufstehen sowie moderne Dusch-WCs für optimale Intimhygiene auf Knopfdruck.', icon: Sparkles },
-    { title: 'Design-Haltegriffsysteme', desc: 'Stabile, geprüfte Stützklappgriffe und Duschhandläufe, die sich harmonisch in modernes Baddesign einfügen.', icon: HeartHandshake },
-    { title: 'Rutschhemmung & Beleuchtung', desc: 'Sichere Bodenbeläge, blendfreie LED-Beleuchtung mit Orientierungslicht und schwellenlose Bewegungsflächen.', icon: Lightbulb }
+    { title: 'Bodengleiche Walk-In-Duschen', desc: 'Schwellenloser Einstieg ohne Stolperfallen. Integrierte Duschrinne, rutschhemmende Fliesen (R10B) und breite Glaszugänge.' },
+    { title: 'Wanne-zur-Dusche-Umbau', desc: 'Wir tauschen Ihre alte, hohe Badewanne gegen eine moderne, begehbare Duschzone – normgerecht abgedichtet nach DIN 18534.' },
+    { title: 'Unterfahrbare Waschtische', desc: 'Ergonomische Waschtischanlagen mit Beinfreiheit für Rollstuhlfahrer und komfortable Einhebel- oder Sensorarmaturen.' },
+    { title: 'Komfort- & Dusch-WCs', desc: 'Höhenverstellbare oder erhöhte WCs für bequemes Aufstehen sowie moderne Dusch-WCs für optimale Intimhygiene auf Knopfdruck.' },
+    { title: 'Design-Haltegriffsysteme', desc: 'Stabile, geprüfte Stützklappgriffe und Duschhandläufe, die sich harmonisch in modernes Baddesign einfügen.' },
+    { title: 'Rutschhemmung & Beleuchtung', desc: 'Sichere Bodenbeläge, blendfreie LED-Beleuchtung mit Orientierungslicht und schwellenlose Bewegungsflächen.' }
 ];
 
 export default function BarrierefreiesBadPage() {
     const review = REVIEWS.find((r) => r.id === 'ute-t');
 
     return (
-        <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            {/* Ambient Glow */}
-            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-red top-96 -right-24 opacity-60" />
-
-            {/* Hero */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="barrierefrei-heading">
-                <div className="ceramic-hero rounded-tile-lg border border-neutral-200/80 shadow-tile p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">
-                        <ShieldCheck className="w-3.5 h-3.5" />
-                        DIN 18040-2 &middot; Barrierefreies Wohnen
-                    </span>
-                    <h1 id="barrierefrei-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Barrierefreie Badmodernisierung in Aßlar &amp; Wetzlar: <br />
-                        <span className="text-ceramic-gradient">Sicherheit, Komfort &amp; bis zu 4.180 € Zuschuss</span>
-                    </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Eine barrierefreie Badmodernisierung und Badsanierung nach DIN 18040-2 durch Fachbetrieb Tezgel in Aßlar &amp; Wetzlar schenkt Sicherheit, Komfort und Selbstbestimmung im eigenen Zuhause. Wir gestalten Ihr Badezimmer altersgerecht, rollstuhlgerecht oder barrierearm – mit bodengleichen Duschen, rutschfesten Böden und bis zu 4.180 € Zuschuss der Pflegekasse.
-                    </p>
-
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">
-                            Pflegekassen-Beratung vereinbaren
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                        </Link>
-                        <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-orange-600" />
-                            {COMPANY_DATA.contact.phone}
-                        </a>
-                    </div>
-                </div>
+        <>
+            {/* 1. EINSTIEG: Kennzeile, H1 auf der Achse, Vorspann, Knöpfe; rechts das Planblatt „abdichtung“ */}
+            <section aria-labelledby="barrierefrei-heading">
+                <Einstieg
+                    art="erzaehl"
+                    etikett="DIN 18040-2 · Barrierefreies Wohnen"
+                    titel={
+                        <span id="barrierefrei-heading">
+                            <span className="block">Barrierefreie Badmodernisierung in Aßlar &amp; Wetzlar:</span>{' '}
+                            <span className="block">Sicherheit, Komfort &amp; bis zu 4.180 € Zuschuss</span>
+                        </span>
+                    }
+                    vorspann={
+                        <p>
+                            Eine barrierefreie Badmodernisierung und Badsanierung nach DIN 18040-2 durch Fachbetrieb Tezgel in Aßlar &amp; Wetzlar schenkt Sicherheit, Komfort und Selbstbestimmung im eigenen Zuhause. Wir gestalten Ihr Badezimmer altersgerecht, rollstuhlgerecht oder barrierearm – mit bodengleichen Duschen, rutschfesten Böden und bis zu 4.180 € Zuschuss der Pflegekasse.
+                        </p>
+                    }
+                    aktionen={
+                        <>
+                            <Knopf href="/kontakt" icon="pfeil-rechts">Pflegekassen-Beratung vereinbaren</Knopf>
+                            <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon">
+                                {COMPANY_DATA.contact.phone}
+                            </Knopf>
+                        </>
+                    }
+                    rand={
+                        <Planblatt felder={planfelder('Barrierefreies Bad', 'abdichtung')}>
+                            <Verlegeplan plan="abdichtung" ohneAchse bemassung={false} interaktiv />
+                        </Planblatt>
+                    }
+                />
             </section>
 
-            {/* Grant / Funding Highlight Box - Double Bezel */}
-            <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 relative z-10" aria-labelledby="zuschuss-heading">
-                <div className="glass-bezel-outer">
-                    <div className="glass-bezel-inner p-8 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-                        <div className="md:col-span-2 flex flex-col sm:flex-row gap-5">
-                            <span className="icon-chip w-14 h-14">
-                                <BadgePercent className="w-7 h-7" />
-                            </span>
-                            <div className="space-y-2">
-                                <p className="text-[11px] font-black uppercase tracking-widest text-orange-950">
-                                    Zuschuss für wohnumfeldverbessernde Maßnahmen (§ 40 SGB XI)
-                                </p>
-                                <h2 id="zuschuss-heading" className="text-2xl font-black text-slate-900">
-                                    Bis zu 4.180 € Zuschuss von der Pflegekasse
-                                </h2>
-                                <p className="text-sm text-slate-700 leading-relaxed">
-                                    Bereits ab Pflegegrad 1 bezuschusst die Pflegekasse den Umbau auf ein barrierefreies Bad mit bis
-                                    zu 4.180 € pro Person (bei Ehepaaren mit Pflegegrad sogar bis zu 8.360 €). Wir erstellen für Sie
-                                    den förderkonformen Kostenvoranschlag.
-                                </p>
-                            </div>
-                        </div>
-                        <div className="text-center md:text-right">
-                            <Link href="/kontakt" className="btn-primary px-6 py-3.5 text-xs">
-                                Beratung anfordern
-                                <ArrowRight className="w-4 h-4" />
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Core Solutions Grid */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="loesungen-heading">
-                <div className="text-center max-w-3xl mx-auto mb-14">
-                    <span className="eyebrow eyebrow-sky mb-4">Barrierefreie Lösungen</span>
-                    <h2 id="loesungen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Unsere barrierefreien Bad-Lösungen{' '}
-                        <span className="text-ceramic-gradient">im Detail</span>
-                    </h2>
-                    <p className="mt-3 text-base text-slate-700 leading-relaxed">
-                        Ästhetik trifft auf maximale Sicherheit – ohne sterilen Krankenhaus-Charakter.
+            {/* LEITACHSE: das Lot setzt die Achse des Einstiegs über die Abschnitte fort */}
+            <Leitachse>
+                {/* 2. ZUSCHUSS auf Fliese: Kennzeile und Überschrift links, Text und Knopf rechts */}
+                <Abschnitt
+                    titelId="zuschuss-heading"
+                    flaeche="fliese"
+                    kopf="seitlich"
+                    leitachse
+                    spaet
+                    etikett="Zuschuss für wohnumfeldverbessernde Maßnahmen (§ 40 SGB XI)"
+                    titel="Bis zu 4.180 € Zuschuss von der Pflegekasse"
+                >
+                    <p className="max-w-mass font-text text-fs-3 text-tinte-2">
+                        Bereits ab Pflegegrad 1 bezuschusst die Pflegekasse den Umbau auf ein barrierefreies Bad mit bis zu 4.180 € pro Person (bei Ehepaaren mit Pflegegrad sogar bis zu 8.360 €). Wir erstellen für Sie den förderkonformen Kostenvoranschlag.
                     </p>
-                </div>
+                    <div className="mt-8">
+                        <Knopf href="/kontakt" icon="pfeil-rechts">Beratung anfordern</Knopf>
+                    </div>
+                </Abschnitt>
 
-                <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {SOLUTIONS.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                            <li
-                                key={item.title}
-                                className="group glass-surface p-7 rounded-tile-md hover:-translate-y-0.5 hover:border-orange-500 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
-                            >
-                                <span className="icon-chip w-12 h-12 mb-5">
-                                    <Icon className="w-6 h-6" />
-                                </span>
-                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">{item.title}</h3>
-                                <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
-                            </li>
-                        );
-                    })}
-                </ul>
+                {/* 3. BARRIEREFREIE LÖSUNGEN als Feldraster: je Lösung ein Feld; darunter die Kundenstimme */}
+                <Abschnitt
+                    titelId="loesungen-heading"
+                    leitachse
+                    spaet
+                    etikett="Barrierefreie Lösungen"
+                    titel={
+                        <>
+                            Unsere barrierefreien Bad-Lösungen{' '}
+                            <span>im Detail</span>
+                        </>
+                    }
+                    einleitung={<p>Ästhetik trifft auf maximale Sicherheit – ohne sterilen Krankenhaus-Charakter.</p>}
+                >
+                    <Feldraster spalten={3}>
+                        {SOLUTIONS.map((item) => (
+                            <Feld key={item.title}>
+                                <h3 className="font-text text-fs-4 font-semibold text-tinte">{item.title}</h3>
+                                <p className="mt-3 font-text text-fs-2 text-tinte-2">{item.desc}</p>
+                            </Feld>
+                        ))}
+                    </Feldraster>
 
-                {review && (
-                    <figure className="mt-12 ceramic-hero rounded-tile-md border border-neutral-200/80 p-7 sm:p-10 max-w-4xl mx-auto text-center">
-                        <div className="flex items-center justify-center gap-3 mb-4">
-                            <span className="flex items-center gap-0.5 text-amber-500" aria-label={`${review.rating} von 5 Sternen`}>
+                    {review && (
+                        <figure className="mt-12 max-w-mass border-l-2 border-laser-tief pl-6 sm:pl-8">
+                            <span className="flex items-center gap-1 text-tinte" aria-label={`${review.rating} von 5 Sternen`}>
                                 {Array.from({ length: review.rating }, (_, i) => (
-                                    <Star key={i} className="w-4 h-4 fill-current" aria-hidden="true" />
+                                    <Icon key={i} name="stern-voll" groesse={4} />
                                 ))}
                             </span>
-                            <Quote className="w-6 h-6 text-orange-600/40" aria-hidden="true" />
-                        </div>
-                        <blockquote className="text-base sm:text-lg text-slate-800 leading-relaxed">„{review.text}“</blockquote>
-                        <figcaption className="mt-4 text-sm">
-                            <span className="font-bold text-slate-900">{review.author}</span>
-                            <span className="text-slate-600"> &middot; {review.source}-Rezension &middot; {review.topic}</span>
-                        </figcaption>
-                    </figure>
-                )}
-            </section>
+                            <blockquote className="mt-4 font-text text-fs-4 text-tinte">„{review.text}“</blockquote>
+                            <figcaption className="mt-4 font-text text-fs-2 text-tinte">
+                                <span className="font-semibold">{review.author}</span>
+                                <span className="font-mono text-fs-1 text-tinte-2"> &middot; {review.source}-Rezension &middot; {review.topic}</span>
+                            </figcaption>
+                        </figure>
+                    )}
+                </Abschnitt>
 
-            {/* Funnel */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10 scroll-mt-28" id="anfrage" aria-label="Badanfrage">
-                <BadanfrageFunnel />
-            </section>
-        </div>
+                {/* 4. BADANFRAGE auf Fliese: Funnel und Rückfrage im selben Raster (Bereich „Badanfrage“, Anker #anfrage) */}
+                <Abschnitt id="anfrage" aria-label="Badanfrage" flaeche="fliese" leitachse spaet>
+                    <div className="grid gap-y-12 lg:grid-cols-12 lg:gap-x-12">
+                        <div className="min-w-0 lg:col-span-8">
+                            <BadanfrageFunnel />
+                        </div>
+                        <div className="lg:col-span-4">
+                            <Rueckfrage />
+                        </div>
+                    </div>
+                </Abschnitt>
+            </Leitachse>
+        </>
     );
 }

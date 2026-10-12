@@ -1,0 +1,36 @@
+{
+ "modus": "einzelbilder",
+ "seite": "/standorte",
+ "base": "http://127.0.0.1:4320",
+ "ansicht": "d1440",
+ "zeitpunkt": "2026-10-12T06:06:31.522Z",
+ "dpr": 1,
+ "reducedMotion": "no-preference",
+ "einwilligung": "abgelehnt",
+ "zeitpunkte_anteil": [
+  0,
+  0.25,
+  0.5,
+  0.75,
+  1
+ ],
+ "kennungen": [
+  {
+   "kennung": "einzugsband",
+   "elemente": 1,
+   "befund": [
+    "Fehler beim Auslösen: page.waitForFunction: Timeout 30000ms exceeded."
+   ],
+   "bilder": []
+  }
+ ],
+ "bilder_gesamt": 0,
+ "data_motion_elemente": 154,
+ "meldung": "1 Kennungen, 154 Elemente auf /standorte.",
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "verzeichnis": "/home/user/tezgel/_werkstatt/belege/e4-n2/02-pa/bewegung/einzelbilder-standorte-einzugsband-d1440"
+}

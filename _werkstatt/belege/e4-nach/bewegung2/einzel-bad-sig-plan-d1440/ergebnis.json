@@ -1,0 +1,154 @@
+{
+ "modus": "einzelbilder",
+ "seite": "/bad",
+ "base": "http://127.0.0.1:4320",
+ "ansicht": "d1440",
+ "zeitpunkt": "2026-10-12T02:34:19.202Z",
+ "dpr": 1,
+ "reducedMotion": "no-preference",
+ "einwilligung": "abgelehnt",
+ "zeitpunkte_anteil": [
+  0,
+  0.25,
+  0.5,
+  0.75,
+  1
+ ],
+ "kennungen": [
+  {
+   "kennung": "sig-plan",
+   "elemente": 1,
+   "ausloeser": "seite",
+   "ausgeloest": 1,
+   "modus": "echtzeit",
+   "animationen": 27,
+   "laengste_dauer_ms": 1120,
+   "bilder": [
+    {
+     "datei": "sig-plan-0.jpg",
+     "zeitpunkt": 0,
+     "art": "ansicht",
+     "soll_ms": 0,
+     "ms_nach_dom": 81,
+     "ist_ms": 28,
+     "ist_nach_aufnahme_ms": 77,
+     "animationen_laufen": 27,
+     "scroll_y": 0,
+     "oberkante_unter_kopf_px": 229,
+     "anteil_zu_vorher_prozent": null,
+     "anteil_zu_nachher_prozent": 0.02
+    },
+    {
+     "datei": "sig-plan-1.jpg",
+     "zeitpunkt": 0.25,
+     "art": "ansicht",
+     "soll_ms": 280,
+     "ms_nach_dom": 2456,
+     "ist_ms": 285,
+     "ist_nach_aufnahme_ms": 292,
+     "animationen_laufen": 27,
+     "scroll_y": 0,
+     "oberkante_unter_kopf_px": 243,
+     "anteil_zu_vorher_prozent": 0.02,
+     "anteil_zu_nachher_prozent": 0.41
+    },
+    {
+     "datei": "sig-plan-2.jpg",
+     "zeitpunkt": 0.5,
+     "art": "ansicht",
+     "soll_ms": 560,
+     "ms_nach_dom": 5152,
+     "ist_ms": 565,
+     "ist_nach_aufnahme_ms": 577,
+     "animationen_laufen": 27,
+     "scroll_y": 0,
+     "oberkante_unter_kopf_px": 243,
+     "anteil_zu_vorher_prozent": 0.41,
+     "anteil_zu_nachher_prozent": 0.5
+    },
+    {
+     "datei": "sig-plan-3.jpg",
+     "zeitpunkt": 0.75,
+     "art": "ansicht",
+     "soll_ms": 840,
+     "ms_nach_dom": 7871,
+     "ist_ms": 845,
+     "ist_nach_aufnahme_ms": 855,
+     "animationen_laufen": 27,
+     "scroll_y": 0,
+     "oberkante_unter_kopf_px": 243,
+     "anteil_zu_vorher_prozent": 0.5,
+     "anteil_zu_nachher_prozent": 0.22
+    },
+    {
+     "datei": "sig-plan-4.jpg",
+     "zeitpunkt": 1,
+     "art": "ansicht",
+     "soll_ms": 1270,
+     "ms_nach_dom": 10925,
+     "ist_ms": 1120,
+     "ist_nach_aufnahme_ms": 1120,
+     "animationen_laufen": 27,
+     "scroll_y": 0,
+     "oberkante_unter_kopf_px": 243,
+     "anteil_zu_vorher_prozent": 0.22,
+     "anteil_zu_nachher_prozent": null
+    }
+   ],
+   "befund": [
+    "nur 0 von 5 Bildern unterscheiden sich sichtbar (Nachbar über 0.5 %, mindestens 3 gefordert)"
+   ],
+   "vorlauf": {
+    "gerendert": 1,
+    "kopf_px": 65,
+    "fuss_px": 900,
+    "oben_px": 308,
+    "unten_px": 621,
+    "scroll_max_px": 6108,
+    "laengste_ms": 1120
+   },
+   "cpu_drosselung": 1,
+   "anker_modus": "animation",
+   "zeitlupe": 0.1,
+   "puffer_ms": 150,
+   "anker": "Beginn der CSS-Animation: auf die Animationszeit warten (soll ms); Ende: alle beendet + 150 ms Wartezeit",
+   "ms_nach_dom_bezug": "Element im DOM (attached)",
+   "zeitpunkte_ms": [
+    0,
+    280,
+    560,
+    840,
+    1270
+   ],
+   "scroll_ziel_px": 0,
+   "pixel": {
+    "groesse": "1440x900",
+    "schwelle_grau": 24,
+    "paare": [
+     0.02,
+     0.41,
+     0.5,
+     0.22
+    ],
+    "ende_0_4": 0.43
+   },
+   "sichtbare_bilder": 0,
+   "sichtbar_je_bild": [
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  }
+ ],
+ "bilder_gesamt": 5,
+ "data_motion_elemente": 110,
+ "meldung": "1 Kennungen, 110 Elemente auf /bad.",
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "verzeichnis": "/home/user/tezgel/_werkstatt/belege/e4-nach/bewegung2/einzel-bad-sig-plan-d1440"
+}

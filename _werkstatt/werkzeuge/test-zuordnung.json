@@ -1,15 +1,184 @@
 [
-  { "muster": "HeroContactForm", "specs": ["funktion-hero-kontakt.spec.mjs"] },
-  { "muster": "PricingCalculator|pricing", "specs": ["funktion-preisrechner.spec.mjs"] },
-  { "muster": "TezgelAnfrageFunnel", "specs": ["funktion-express-funnel.spec.mjs"] },
-  { "muster": "BadanfrageFunnel", "specs": ["funktion-badanfrage.spec.mjs"] },
-  { "muster": "BadProjektCheck", "specs": ["funktion-projektcheck.spec.mjs"] },
-  { "muster": "FliesenKonfigurator", "specs": ["funktion-konfigurator.spec.mjs"] },
-  { "muster": "BookingCalendar|app/(\\([a-z]+\\)/)?(termin|kontakt)", "specs": ["funktion-termin.spec.mjs"] },
-  { "muster": "LeadQuickForm", "specs": ["funktion-schnellanfrage.spec.mjs"] },
-  { "muster": "FloatingWhatsAppWidget|MobileBottomBar|whatsapp|DirectContactCard|Footer", "specs": ["funktion-kontaktwege.spec.mjs"] },
-  { "muster": "CookieConsent|useConsent|MapConsentGate|components/maps|TrackingScripts", "specs": ["funktion-einwilligung.spec.mjs"] },
-  { "muster": "Header|MobileMenu|navigation|FAQAccordion|components/blog|app/(\\([a-z]+\\)/)?(blog|login)|not-found|components/reviews", "specs": ["funktion-navigation.spec.mjs"] },
-  { "muster": "next.config", "specs": ["funktion-weiterleitung.spec.mjs"] },
-  { "muster": "app/(\\([a-z]+\\)/)?(layout|_dokument)\\.tsx|app/globals.css|app/bewegung.css|ClientWidgets|HeaderWrapper|components/kern/stile|components/kern/Knopf|components/icons/Icon", "specs": ["ALLE"] }
+  {
+    "muster": "HeroContactForm",
+    "specs": [
+      "funktion-hero-kontakt.spec.mjs"
+    ]
+  },
+  {
+    "muster": "PricingCalculator|pricing",
+    "specs": [
+      "funktion-preisrechner.spec.mjs"
+    ]
+  },
+  {
+    "muster": "TezgelAnfrageFunnel",
+    "specs": [
+      "funktion-express-funnel.spec.mjs"
+    ]
+  },
+  {
+    "muster": "BadanfrageFunnel",
+    "specs": [
+      "funktion-badanfrage.spec.mjs"
+    ]
+  },
+  {
+    "muster": "BadProjektCheck",
+    "specs": [
+      "funktion-projektcheck.spec.mjs"
+    ]
+  },
+  {
+    "muster": "FliesenKonfigurator",
+    "specs": [
+      "funktion-konfigurator.spec.mjs"
+    ]
+  },
+  {
+    "muster": "BookingCalendar|app/(\\([a-z]+\\)/)?(termin|kontakt)",
+    "specs": [
+      "funktion-termin.spec.mjs"
+    ]
+  },
+  {
+    "muster": "LeadQuickForm",
+    "specs": [
+      "funktion-schnellanfrage.spec.mjs"
+    ]
+  },
+  {
+    "muster": "FloatingWhatsAppWidget|MobileBottomBar|whatsapp|DirectContactCard|Footer",
+    "specs": [
+      "funktion-kontaktwege.spec.mjs"
+    ]
+  },
+  {
+    "muster": "CookieConsent|useConsent|MapConsentGate|components/maps|TrackingScripts",
+    "specs": [
+      "funktion-einwilligung.spec.mjs"
+    ]
+  },
+  {
+    "muster": "Header|MobileMenu|navigation|FAQAccordion|components/blog|app/(\\([a-z]+\\)/)?(blog|login)|not-found|components/reviews",
+    "specs": [
+      "funktion-navigation.spec.mjs"
+    ]
+  },
+  {
+    "muster": "next.config",
+    "specs": [
+      "funktion-weiterleitung.spec.mjs"
+    ]
+  },
+  {
+    "muster": "leistungen/page",
+    "specs": [
+      "funktion-express-funnel.spec.mjs",
+      "funktion-navigation.spec.mjs"
+    ]
+  },
+  {
+    "muster": "leistungen/\\[id\\]/page",
+    "specs": [
+      "funktion-express-funnel.spec.mjs",
+      "funktion-preisrechner.spec.mjs",
+      "funktion-navigation.spec.mjs",
+      "funktion-kontaktwege.spec.mjs"
+    ]
+  },
+  {
+    "muster": "leistungen/\\[id\\]/\\[stadt\\]/page",
+    "specs": [
+      "funktion-schnellanfrage.spec.mjs",
+      "funktion-navigation.spec.mjs",
+      "funktion-kontaktwege.spec.mjs"
+    ]
+  },
+  {
+    "muster": "standorte/\\[stadt\\]/page",
+    "specs": [
+      "funktion-schnellanfrage.spec.mjs"
+    ]
+  },
+  {
+    "muster": "standorte/page",
+    "specs": [
+      "funktion-einwilligung.spec.mjs"
+    ]
+  },
+  {
+    "muster": "\\(bestand\\)/bad/page\\.jsx$",
+    "specs": [
+      "funktion-projektcheck.spec.mjs",
+      "funktion-kontaktwege.spec.mjs",
+      "funktion-badanfrage.spec.mjs"
+    ]
+  },
+  {
+    "muster": "app/\\(bestand\\)/fliesen/page",
+    "specs": [
+      "funktion-konfigurator.spec.mjs",
+      "funktion-kontaktwege.spec.mjs"
+    ]
+  },
+  {
+    "muster": "\\(bestand\\)/fliesen/konfigurator/page\\.jsx$",
+    "specs": [
+      "funktion-konfigurator.spec.mjs"
+    ]
+  },
+  {
+    "muster": "app/(\\([a-z]+\\)/)?(layout|_dokument)\\.tsx|app/globals.css|app/bewegung.css|ClientWidgets|HeaderWrapper|components/kern/stile|components/kern/Knopf|components/icons/Icon",
+    "specs": [
+      "ALLE"
+    ]
+  },
+  {
+    "muster": "components/ui/FinalCTA",
+    "specs": [
+      "funktion-kontaktwege.spec.mjs",
+      "funktion-schnellanfrage.spec.mjs"
+    ]
+  },
+  {
+    "muster": "src/app/\\(bestand\\)/page\\.tsx$",
+    "specs": [
+      "funktion-kontaktwege.spec.mjs",
+      "funktion-hero-kontakt.spec.mjs"
+    ]
+  },
+  {
+    "muster": "components/sections/QualityPromise",
+    "specs": [
+      "funktion-kontaktwege.spec.mjs"
+    ]
+  },
+  {
+    "muster": "app/\\(bestand\\)/ueber-uns/",
+    "specs": [
+      "funktion-navigation.spec.mjs",
+      "funktion-kontaktwege.spec.mjs"
+    ]
+  },
+  {
+    "muster": "src/app/\\(bestand\\)/.+/page\\.(jsx|tsx)$",
+    "specs": [
+      "funktion-navigation.spec.mjs",
+      "funktion-kontaktwege.spec.mjs"
+    ]
+  },
+  {
+    "muster": "src/app/\\(bestand\\)/bad/(badsanierung|bad-aus-einer-hand|barrierefreies-bad|fliesen)/",
+    "specs": [
+      "funktion-badanfrage.spec.mjs"
+    ]
+  },
+  {
+    "muster": "\\(bestand\\)/bad/(badplaner|badanfrage|projekt-check)/page",
+    "specs": [
+      "funktion-badanfrage.spec.mjs",
+      "funktion-projektcheck.spec.mjs"
+    ]
+  }
 ]

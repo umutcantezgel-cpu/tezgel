@@ -1,0 +1,222 @@
+{
+ "m390 /kontakt": {
+  "h1_text": "Kontakt & Aufmaß Fliesenleger Tezgel",
+  "h1_fs": 32.58,
+  "h2_text": "Persönliche Fachberatung",
+  "h2_fs": 24.29,
+  "h2_im_ersten_bildschirm": false,
+  "h2_anzahl_sichtbar": 6,
+  "szene_plan_positionen": []
+ },
+ "m390 /fliesen/konfigurator": {
+  "h1_text": "Fliesen-Konfigurator & Bedarfsrechner von Tezgel",
+  "h1_fs": 32.58,
+  "h2_text": "Fliesenprojekt vorbereiten",
+  "h2_fs": 24.29,
+  "h2_im_ersten_bildschirm": true,
+  "h2_anzahl_sichtbar": 8,
+  "szene_plan_positionen": []
+ },
+ "m390 /blog": {
+  "h1_text": "Fliesen-Ratgeber & Badsanierung Tipps",
+  "h1_fs": 32.58,
+  "h2_text": "Handwerkerbonus: Fliesenarbeiten von der Steuer absetzen",
+  "h2_fs": 20.155,
+  "h2_im_ersten_bildschirm": false,
+  "h2_anzahl_sichtbar": 2,
+  "szene_plan_positionen": []
+ },
+ "m390 /blog/rutschfeste-fliesen-r-klassen": {
+  "h1_text": "Rutschfeste Fliesen: Welche R-Klasse ist wo sinnvoll?",
+  "h1_fs": 32.58,
+  "h2_text": "Die Grundlage: DIN EN 16165",
+  "h2_fs": 24.29,
+  "h2_im_ersten_bildschirm": false,
+  "h2_anzahl_sichtbar": 10,
+  "szene_plan_positionen": []
+ },
+ "m390 /": {
+  "h1_text": "Perfektion auf jedem Quadratmeter.Fliesenverlegung & Badsani",
+  "h1_fs": 44,
+  "h2_text": "Alles für Ihr Vorhaben auf über 100 Fachseiten",
+  "h2_fs": 32.58,
+  "h2_im_ersten_bildschirm": false,
+  "h2_anzahl_sichtbar": 10,
+  "szene_plan_positionen": [
+   {
+    "top": 7632,
+    "left": 41,
+    "w": 308,
+    "h": 199
+   },
+   {
+    "top": 8142,
+    "left": 41,
+    "w": 308,
+    "h": 190
+   },
+   {
+    "top": 8666,
+    "left": 41,
+    "w": 308,
+    "h": 190
+   }
+  ]
+ },
+ "m390 /leistungen": {
+  "h1_text": "Fliesenleger Leistungen & Fachgewerke Wetzlar",
+  "h1_fs": 32.58,
+  "h2_text": "Bäder & Wellness",
+  "h2_fs": 24.29,
+  "h2_im_ersten_bildschirm": false,
+  "h2_anzahl_sichtbar": 8,
+  "szene_plan_positionen": [
+   {
+    "top": 5664,
+    "left": 41,
+    "w": 308,
+    "h": 228
+   },
+   {
+    "top": 6203,
+    "left": 41,
+    "w": 308,
+    "h": 220
+   },
+   {
+    "top": 6757,
+    "left": 41,
+    "w": 308,
+    "h": 220
+   }
+  ]
+ },
+ "m390 /bad": {
+  "h1_text": "Ihr Traumbad schlüsselfertig in Fachqualität",
+  "h1_fs": 44,
+  "h2_text": "Alles für Ihr neues Bad aus einer Hand",
+  "h2_fs": 32.58,
+  "h2_im_ersten_bildschirm": false,
+  "h2_anzahl_sichtbar": 5,
+  "szene_plan_positionen": []
+ },
+ "m390 /standorte": {
+  "h1_text": "Standorte & Einsatzgebiete in Mittelhessen",
+  "h1_fs": 44,
+  "h2_text": "Unser 45-km-Einsatzgebiet in Mittelhessen",
+  "h2_fs": 32.58,
+  "h2_im_ersten_bildschirm": false,
+  "h2_anzahl_sichtbar": 7,
+  "szene_plan_positionen": []
+ },
+ "d1440 /kontakt": {
+  "h1_text": "Kontakt & Aufmaß Fliesenleger Tezgel",
+  "h1_fs": 55.68,
+  "h2_text": "Persönliche Fachberatung",
+  "h2_fs": 35.84,
+  "h2_im_ersten_bildschirm": true,
+  "h2_anzahl_sichtbar": 6,
+  "szene_plan_positionen": []
+ },
+ "d1440 /fliesen/konfigurator": {
+  "h1_text": "Fliesen-Konfigurator & Bedarfsrechner von Tezgel",
+  "h1_fs": 55.68,
+  "h2_text": "Fliesenprojekt vorbereiten",
+  "h2_fs": 35.84,
+  "h2_im_ersten_bildschirm": true,
+  "h2_anzahl_sichtbar": 8,
+  "szene_plan_positionen": []
+ },
+ "d1440 /blog": {
+  "h1_text": "Fliesen-Ratgeber & Badsanierung Tipps",
+  "h1_fs": 55.68,
+  "h2_text": "Handwerkerbonus: Fliesenarbeiten von der Steuer absetzen",
+  "h2_fs": 24,
+  "h2_im_ersten_bildschirm": true,
+  "h2_anzahl_sichtbar": 2,
+  "szene_plan_positionen": []
+ },
+ "d1440 /blog/rutschfeste-fliesen-r-klassen": {
+  "h1_text": "Rutschfeste Fliesen: Welche R-Klasse ist wo sinnvoll?",
+  "h1_fs": 55.68,
+  "h2_text": "Die Grundlage: DIN EN 16165",
+  "h2_fs": 35.84,
+  "h2_im_ersten_bildschirm": false,
+  "h2_anzahl_sichtbar": 10,
+  "szene_plan_positionen": []
+ },
+ "d1440 /": {
+  "h1_text": "Perfektion auf jedem Quadratmeter.Fliesenverlegung & Badsani",
+  "h1_fs": 94.4,
+  "h2_text": "Alles für Ihr Vorhaben auf über 100 Fachseiten",
+  "h2_fs": 55.68,
+  "h2_im_ersten_bildschirm": false,
+  "h2_anzahl_sichtbar": 10,
+  "szene_plan_positionen": [
+   {
+    "top": 6140,
+    "left": 145,
+    "w": 340,
+    "h": 219
+   },
+   {
+    "top": 6140,
+    "left": 550,
+    "w": 340,
+    "h": 219
+   },
+   {
+    "top": 6140,
+    "left": 955,
+    "w": 340,
+    "h": 219
+   }
+  ]
+ },
+ "d1440 /leistungen": {
+  "h1_text": "Fliesenleger Leistungen & Fachgewerke Wetzlar",
+  "h1_fs": 55.68,
+  "h2_text": "Bäder & Wellness",
+  "h2_fs": 35.84,
+  "h2_im_ersten_bildschirm": false,
+  "h2_anzahl_sichtbar": 8,
+  "szene_plan_positionen": [
+   {
+    "top": 3416,
+    "left": 145,
+    "w": 340,
+    "h": 251
+   },
+   {
+    "top": 3416,
+    "left": 550,
+    "w": 340,
+    "h": 251
+   },
+   {
+    "top": 3416,
+    "left": 955,
+    "w": 340,
+    "h": 251
+   }
+  ]
+ },
+ "d1440 /bad": {
+  "h1_text": "Ihr Traumbad schlüsselfertig in Fachqualität",
+  "h1_fs": 94.4,
+  "h2_text": "Alles für Ihr neues Bad aus einer Hand",
+  "h2_fs": 55.68,
+  "h2_im_ersten_bildschirm": false,
+  "h2_anzahl_sichtbar": 5,
+  "szene_plan_positionen": []
+ },
+ "d1440 /standorte": {
+  "h1_text": "Standorte & Einsatzgebiete in Mittelhessen",
+  "h1_fs": 94.4,
+  "h2_text": "Unser 45-km-Einsatzgebiet in Mittelhessen",
+  "h2_fs": 55.68,
+  "h2_im_ersten_bildschirm": false,
+  "h2_anzahl_sichtbar": 7,
+  "szene_plan_positionen": []
+ }
+}

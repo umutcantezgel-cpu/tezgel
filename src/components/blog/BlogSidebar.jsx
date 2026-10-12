@@ -1,22 +1,25 @@
 "use client";
-// Seitenleiste der Ratgeber-Liste ab lg (S-03, KERN v2 K-009): Schriftfeld-Spalte aus drei Feldern an der Fuge –
-// Suche, Kategorien, Beratung. Mono-Etikett über dem Inhalt wie im Schriftfeld; Wortlaut, Reihenfolge und Bedienung
-// wie im Bestand (Suchfeld setzt die Suche, Kategorien als Knöpfe mit aria-pressed, Kontakt und Telefon).
-// Geändert: Das Suchfeld trägt eine sichtbare Beschriftung statt aria-label (gleicher Wortlaut, MIKROTEXTE P4-08d);
-// die Kategorien sind über „Kategorien“ als Gruppe benannt; gedrückt zeigt Tinte-Fläche und Fugenkreuz (nicht nur Farbe).
-// Die Leiste klebt nicht mehr (Bestand: sticky top-24): Neben Kopf und unterer Leiste gibt es keine weitere feste Ebene
-// (K-009). Damit Suche und Kategorien trotzdem vor den Beiträgen erreichbar sind, steht die Leiste im DOM vor der Liste
-// (`BlogListe`).
-// Die Kategorie-Icons der Konfiguration (lucide) entfallen: Icon-Kacheln ersatzlos, Fugenkreuz als Marke (Zuordnung K-008).
-import { useId } from 'react';
-import clsx from 'clsx';
+import React from 'react';
+import { useContent } from '@/contexts/ContentContext';
 import Icon from '@/components/icons/Icon';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Knopf from '@/components/kern/Knopf';
-import { etikettKlassen, feldKlassen, labelKlassen, wahlKlassen } from '@/components/kern/stile';
-import { useContent } from '@/contexts/ContentContext';
+import { zeichenFuer } from '@/components/blog/BlogCard';
+import { etikettKlassen, feldKlassen } from '@/components/kern/stile';
 import { COMPANY_DATA } from '@/config/company';
 
+// Kategorie-Zeile über die volle Breite des Feldes, durch 1-px-Fugen getrennt (Gruppen-Auswahl mit aria-pressed;
+// gedrückt: Tinte, Kalk-Text, Pfeil). Keine Karten mit Zwischenraum: die Zeilen stehen aneinander.
+const KATEGORIE =
+    'flex min-h-11 w-full items-center justify-between gap-4 border-b border-fuge bg-fliese px-4 py-2 text-left font-text text-fs-2 text-tinte hover:border-strich aria-pressed:border-tinte aria-pressed:bg-tinte aria-pressed:text-kalk';
+
+/**
+ * Blog Sidebar Component
+ * Features: Suche (fließt oben), darunter Kategorien und Beratung als ein Feld mit Fugen (keine Zwischenräume).
+ * Ab xl klebt nur dieser untere Block unter dem Kopf, solange die Liste läuft; er ist kürzer als der Bildschirm
+ * (1280 × 800 und 1440 × 900 vollständig sichtbar). Die Suche bleibt in der Fließrichtung.
+ * (View counts and Popular Posts removed)
+ */
 const BlogSidebar = ({
     activeCategory,
     setActiveCategory,
@@ -24,8 +27,6 @@ const BlogSidebar = ({
     setSearchQuery
 }) => {
     const { blogCategories = [], blogPosts = [] } = useContent();
-    const suchId = useId();
-    const kategorienId = useId();
 
     // Only list categories that actually contain articles ("all" always stays).
     const categories = (blogCategories || []).filter(category =>
@@ -33,77 +34,75 @@ const BlogSidebar = ({
     );
 
     return (
-        <div className="flex flex-col gap-px border border-fuge bg-fuge">
-            {/* Suche */}
-            <div role="search" className="bg-fliese p-6">
+        <>
+            {/* Suche (fließt) */}
+            <div className="border border-fuge bg-fliese px-4 py-3">
                 <p className={etikettKlassen}>
-                    <Fugenkreuz className="size-3 text-strich" />
+                    <Fugenkreuz className="size-3 shrink-0 text-strich" />
                     Suche
                 </p>
-                <label htmlFor={suchId} className={clsx(labelKlassen, 'mt-4')}>
-                    Artikel suchen
-                </label>
-                <div className="relative">
-                    <input
-                        id={suchId}
-                        type="text"
-                        placeholder="Artikel suchen..."
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        data-motion="zustand"
-                        className={clsx(feldKlassen, 'pr-12')}
-                    />
-                    <span className="pointer-events-none absolute top-2 right-4 bottom-0 flex items-center text-tinte-2">
-                        <Icon name="suche" groesse={5} />
-                    </span>
-                </div>
+                <input
+                    type="text"
+                    aria-label="Artikel suchen"
+                    placeholder="Artikel suchen..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className={feldKlassen}
+                />
             </div>
 
-            {/* Kategorien */}
-            {categories.length > 1 && (
-                <div className="bg-fliese p-6">
-                    <p id={kategorienId} className={etikettKlassen}>
-                        <Fugenkreuz className="size-3 text-strich" />
-                        Kategorien
+            {/* Kategorien und Beratung (ab xl klebend) */}
+            <div className="divide-y divide-fuge border border-t-0 border-fuge bg-fliese xl:sticky xl:top-24">
+                {/* Kategorien */}
+                {categories.length > 1 && (
+                    <div className="px-4 py-3">
+                        <p className={etikettKlassen}>
+                            <Fugenkreuz className="size-3 shrink-0 text-strich" />
+                            Kategorien
+                        </p>
+                        <div className="-mx-4 mt-2 flex flex-col border-t border-fuge">
+                            {categories.map(category => {
+                                const zeichen = zeichenFuer(category.id);
+                                return (
+                                    <button
+                                        type="button"
+                                        key={category.id}
+                                        onClick={() => setActiveCategory(category.id)}
+                                        aria-pressed={activeCategory === category.id}
+                                        className={KATEGORIE}
+                                    >
+                                        <span className="flex min-w-0 items-center gap-2">
+                                            {zeichen && <Icon name={zeichen} groesse={5} />}
+                                            <span className="font-semibold">{category.name}</span>
+                                        </span>
+                                        {activeCategory === category.id && (
+                                            <Icon name="pfeil-rechts" groesse={5} />
+                                        )}
+                                    </button>
+                                );
+                            })}
+                        </div>
+                    </div>
+                )}
+
+                {/* Beratung */}
+                <div className="px-4 py-3">
+                    <p className="font-anzeige text-fs-4 font-bold text-tinte">Beratung gewünscht?</p>
+                    <p className="mt-2 font-text text-fs-2 text-tinte-2">
+                        Fragen zu Badsanierung, Fliesen oder Abdichtung? {COMPANY_DATA.owner.fullName} berät Sie
+                        persönlich – inklusive kostenfreiem Vor-Ort-Aufmaß.
                     </p>
-                    <div role="group" aria-labelledby={kategorienId} className="mt-4 flex flex-wrap gap-2">
-                        {categories.map(category => {
-                            const gedrueckt = activeCategory === category.id;
-                            return (
-                                <button
-                                    type="button"
-                                    key={category.id}
-                                    onClick={() => setActiveCategory(category.id)}
-                                    aria-pressed={gedrueckt}
-                                    data-motion="zustand"
-                                    className={clsx(wahlKlassen, 'gap-2 text-left')}
-                                >
-                                    {gedrueckt && <Fugenkreuz className="size-3" />}
-                                    <span>{category.name}</span>
-                                </button>
-                            );
-                        })}
+                    <div className="mt-3 flex flex-col gap-3">
+                        <Knopf href="/kontakt" icon="pfeil-rechts" className="w-full">
+                            Kontakt aufnehmen
+                        </Knopf>
+                        <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon" className="w-full tabular-nums">
+                            {COMPANY_DATA.contact.phone}
+                        </Knopf>
                     </div>
                 </div>
-            )}
-
-            {/* Beratung */}
-            <div className="bg-fliese p-6">
-                <p className="font-anzeige text-fs-4 font-extrabold text-tinte">Beratung gewünscht?</p>
-                <p className="mt-3 text-fs-2 text-tinte-2">
-                    Fragen zu Badsanierung, Fliesen oder Abdichtung? {COMPANY_DATA.owner.fullName} berät Sie
-                    persönlich – inklusive kostenfreiem Vor-Ort-Aufmaß.
-                </p>
-                <div className="mt-6 flex flex-col gap-3">
-                    <Knopf href="/kontakt" variante="neben" icon="pfeil-rechts" className="w-full">
-                        Kontakt aufnehmen
-                    </Knopf>
-                    <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon" className="w-full">
-                        <span className="font-mono">{COMPANY_DATA.contact.phone}</span>
-                    </Knopf>
-                </div>
             </div>
-        </div>
+        </>
     );
 };
 

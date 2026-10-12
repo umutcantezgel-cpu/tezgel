@@ -1,35 +1,38 @@
-import React from 'react';
+// Fliesen-Ratgeber (E3-BAU-06, KERN v2): Erzählansicht nach dem Muster der Startseite und der Leistungen. Einstieg mit
+// Laserachse, H1 links, Vorspann und zwei Knöpfe; rechts der Verband-Umschalter (E3-ORCH-04). Danach die Leitachse über
+// die Abschnitte: Themen und Nachbarthemen als Register, Wissen als Feldraster mit gezeichnetem Verlegeplan, Etikett,
+// Überschrift, Text und Links (unter md als Aufklapper), Projekt seitlich mit Merkmalen, Bewertung und drei Wegen,
+// Weiterführende Ratgeber als Merkliste, Konfigurator mit Rückfrage in der Spalte daneben. Anfragewege und der Konfigurator
+// werden nachgeladen (Tempo). Wortlaut, Überschriften, Links und IDs wie im Bestand. Kein Auftritt und kein großer Moment;
+// den Verband-Umschalter setzt der Orchestrator.
 import Link from 'next/link';
-import {
-    ArrowRight,
-    Award,
-    BookOpen,
-    Building2,
-    ChefHat,
-    CheckCircle2,
-    ClipboardCheck,
-    DoorOpen,
-    FileText,
-    Hammer,
-    Layers,
-    LayoutGrid,
-    Maximize2,
-    MessageCircle,
-    Phone,
-    Ruler,
-    Sliders,
-    Star,
-    Thermometer,
-    Trees,
-    Wrench
-} from 'lucide-react';
+import dynamic from 'next/dynamic';
+import clsx from 'clsx';
 import { COMPANY_DATA } from '@/config/company';
 import { RATING_SUMMARY } from '@/config/reviews';
 import { TOPIC_HUBS } from '@/config/topics';
 import { createMetadata } from '@/lib/metadata';
-import FliesenKonfigurator from '@/components/funnels/FliesenKonfigurator';
+import Icon from '@/components/icons/Icon';
 import QualityPromise from '@/components/sections/QualityPromise';
 import { FinalCTA } from '@/components/ui/FinalCTA';
+import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Einstieg from '@/components/kern/Einstieg';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+import { Feld, Feldraster } from '@/components/kern/Feldraster';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Knopf from '@/components/kern/Knopf';
+import Leitachse from '@/components/kern/Leitachse';
+import Merkliste from '@/components/kern/Merkliste';
+import Rueckfrage from '@/components/kern/Rueckfrage';
+import Verlegeplan from '@/components/kern/Verlegeplan';
+import VerbandUmschalter from '@/components/kern/VerbandUmschalter';
+import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
+
+// Konfigurator nachladen (Tempo, wie auf der Startseite und den Leistungsseiten); ID #konfigurator liegt am Abschnitt
+const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKonfigurator'), {
+    loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
+});
 
 export const metadata = createMetadata({
     title: 'Fliesenverlegung & Ratgeber | Fliesenleger Tezgel',
@@ -42,27 +45,18 @@ const FLIESEN_HUB = TOPIC_HUBS.find((hub) => hub.id === 'fliesen');
 const HUB_PAGES = FLIESEN_HUB ? FLIESEN_HUB.pages.filter((page) => page.path !== FLIESEN_HUB.path) : [];
 const OTHER_HUBS = TOPIC_HUBS.filter((hub) => hub.id !== 'fliesen');
 
-// Icons for the subpages of this hub (fallback: LayoutGrid for pages added later).
-const PAGE_ICONS = {
-    '/fliesen/grossformat': Maximize2,
-    '/fliesen/auf-fussbodenheizung': Thermometer,
-    '/fliesen/holzoptik': Trees,
-    '/fliesen/fliesenarten': Layers,
-    '/fliesen/kueche': ChefHat,
-    '/fliesen/flur-diele': DoorOpen,
-    '/fliesen/verlegemuster': LayoutGrid,
-    '/fliesen/verlegetechnik': Hammer,
-    '/fliesen/renovierung': Wrench,
-    '/fliesen/neubau': Building2,
-    '/fliesen/fugensanierung': Sliders,
-    '/fliesen/abnahme': ClipboardCheck,
-    '/fliesen/festpreisangebot': FileText,
-    '/fliesen/konfigurator': Ruler
-};
+// Zeile des Registers: Name links, Beschreibung daneben, Pfeil am Rand; Trefferfläche 48 px
+const ZEILE = 'group flex min-h-12 items-center gap-4 px-3 py-4 pointer-fine:hover:bg-fliese active:bg-fliese';
+// Name in der Zeile: Unterstrich erscheint beim Überfahren
+const NAME = 'font-text text-fs-3 font-semibold text-tinte md:w-1/3 md:shrink-0 decoration-1 underline-offset-4 decoration-tinte pointer-fine:group-hover:underline group-active:underline';
+// Verlegeplan im Feldkopf: kleine Zeichnung, halbe Feldbreite mobil, ein Drittel ab lg; feste Höhe h-32 (Flucht der
+// Etiketten und Überschriften in der Zeile, auch bei verschiedenen Plan-Seitenverhältnissen); dekorativ, ohne Achse
+const PLAN_BREITE = 'h-32 w-1/2 lg:w-1/3';
 
 const GUIDE_SECTIONS = [
     {
         id: 'raeume',
+        plan: 'wohnen',
         eyebrow: 'Räume',
         title: 'Wohnbereich, Küche, Flur und Diele – worauf es jeweils ankommt',
         text: 'Jeder Raum stellt andere Anforderungen an den Belag. Im Wohnbereich zählen ruhige Flächen und saubere Übergänge, in der Küche Fleck- und Fettbeständigkeit sowie belastbare Fugen, im Flur Abriebfestigkeit, Schmutzfang und Trittsicherheit bei nassen Schuhen. Wer mehrere Räume in einem Zug belegt, plant Fugenachsen und Verlegerichtung über die Türen hinweg.',
@@ -74,6 +68,7 @@ const GUIDE_SECTIONS = [
     },
     {
         id: 'neubau-bestand',
+        plan: 'untergrund',
         eyebrow: 'Neubau oder Bestand',
         title: 'Zwei Ausgangslagen, zwei Abläufe',
         text: 'Im Neubau ist der Fliesenleger ein Glied im Bauablauf: Estrich, Putz und Installation müssen fertig sein, der Estrich belegreif. Im bewohnten Bestand geht es um Etappen, Räumung, Staubschutz und die Frage, ob alte Fliesen bleiben können oder zurückgebaut werden. Beide Wege beginnen mit einem Aufmaß und einer Prüfung des Untergrunds.',
@@ -85,6 +80,7 @@ const GUIDE_SECTIONS = [
     },
     {
         id: 'formate',
+        plan: 'grossformat',
         eyebrow: 'Formate & Materialien',
         title: 'Feinsteinzeug, Holzoptik, XXL-Großformate',
         text: 'Feinsteinzeug ist dicht, frostbeständig und für fast alle Bereiche geeignet – vom Wohnzimmer bis zur Terrasse. Holzoptik-Dielen verbinden Dielencharakter mit keramischer Pflegeleichtigkeit, Großformate schaffen fugenarme, ruhige Flächen. Je größer und länger das Format, desto höher die Anforderungen an Ebenheit, Bettung und Handling.',
@@ -96,6 +92,7 @@ const GUIDE_SECTIONS = [
     },
     {
         id: 'technik',
+        plan: 'fussbodenheizung',
         eyebrow: 'Verlegetechnik',
         title: 'Verlegetechnik, Verlegemuster und saubere Abschlüsse',
         text: 'Ein dauerhafter Belag entsteht aus dem Zusammenspiel von Untergrund, Kleber, Bettung und Fugen. Das Verlegemuster bestimmt Raumwirkung und Verschnitt, Sockel, Gehrungskanten und Profile entscheiden über den fertigen Eindruck. Auf Fußbodenheizung kommen verformbare Kleber und ein durchdachter Fugenplan hinzu.',
@@ -107,6 +104,7 @@ const GUIDE_SECTIONS = [
     },
     {
         id: 'planung',
+        plan: 'fugen',
         eyebrow: 'Planung & Qualität',
         title: 'Konfigurator, Angebot verstehen, Abnahme',
         text: 'Mit dem Fliesen-Konfigurator bereiten Sie Ihr Projekt strukturiert vor und erhalten einen Richtwert für den Materialbedarf. Das verbindliche Festpreisangebot entsteht erst nach dem kostenfreien Vor-Ort-Aufmaß. Bei der Abnahme prüfen wir gemeinsam Ebenheit, Fugenbild und Anschlüsse – und bei älteren Flächen hilft oft schon eine Fugensanierung.',
@@ -119,6 +117,27 @@ const GUIDE_SECTIONS = [
     }
 ];
 
+// Bad-Feld: Text und Etikett als JSX wie im Bestand; Verweis auf den eigenen Bereich
+const BAD_FELD = {
+    id: 'bad',
+    plan: 'bad',
+    eyebrow: <>Bad, Dusche &amp; Gäste-WC</>,
+    title: <>Badsanierung hat einen eigenen Bereich</>,
+    text: (
+        <>
+            Rund ums Bad – Walk-In-Dusche, Abdichtung nach DIN 18534, Fliesen im Nassbereich, Gäste-WC – finden Sie alles gesammelt im
+            Bad-Bereich. Dieser Ratgeber konzentriert sich auf die übrigen Räume und die Verlegetechnik.
+        </>
+    ),
+    links: [
+        { label: 'Zum Bad-Bereich', href: '/bad' },
+        { label: 'Fliesen im Bad', href: '/bad/fliesen' },
+        { label: 'Gäste-WC fliesen', href: '/blog/gaeste-wc-fliesen' }
+    ]
+};
+
+const WISSEN_FELDER = [...GUIDE_SECTIONS, BAD_FELD];
+
 const WEITERLESEN = [
     { label: 'Feinsteinzeug oder Naturstein?', href: '/blog/feinsteinzeug-oder-naturstein-vergleich' },
     { label: 'Rutschfeste Fliesen: R-Klassen erklärt', href: '/blog/rutschfeste-fliesen-r-klassen' },
@@ -126,297 +145,288 @@ const WEITERLESEN = [
     { label: 'Referenzen ansehen', href: '/referenzen' }
 ];
 
+// Text und Links eines Wissensfelds; im Aufklapper (unter md) mit Abstand nach der Zusammenfassung
+function FeldText({ text, links, aufklappe = false }) {
+    return (
+        <>
+            <p className="mt-3 max-w-mass font-text text-fs-3 text-tinte-2">{text}</p>
+            <ul className={clsx('mt-auto grid gap-1', aufklappe ? 'pb-4' : 'pt-6')}>
+                {links.map((link) => (
+                    <li key={link.href}>
+                        <Knopf href={link.href} variante="text" icon="pfeil-rechts">
+                            {link.label}
+                        </Knopf>
+                    </li>
+                ))}
+            </ul>
+        </>
+    );
+}
+
+// Ein Wissensfeld: Verlegeplan oben, Etikett, Überschrift. Unter md ist die Überschrift die Zusammenfassung eines
+// Aufklappers (Text und Links darin, zu); ab md stehen Überschrift, Text und Links offen (Muster Fachgewerke, Register aufklappen).
+// Die Überschrift mit der ID trägt die Kennung für aria-labelledby und ist nur ab md sichtbar; die Zusammenfassung trägt keine ID.
+function WissensFeld({ feld }) {
+    const titelId = `guide-${feld.id}`;
+    return (
+        <Feld>
+            <article aria-labelledby={titelId} className="flex flex-1 flex-col">
+                <div className={PLAN_BREITE}>
+                    <Verlegeplan plan={feld.plan} ohneAchse bemassung={false} className="min-h-full" />
+                </div>
+                <p className={clsx(etikettKlassen, 'mt-6')}>{feld.eyebrow}</p>
+                <details className="group mt-3 border-t border-fuge md:hidden">
+                    <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-6 py-3 text-tinte [&::-webkit-details-marker]:hidden">
+                        <h3 className="min-w-0 font-anzeige text-fs-4 text-tinte">{feld.title}</h3>
+                        <span className="flex shrink-0 items-center text-tinte" aria-hidden="true">
+                            <span className="group-open:hidden">
+                                <Icon name="plus" groesse={6} />
+                            </span>
+                            <span className="hidden group-open:block">
+                                <Icon name="minus" groesse={6} />
+                            </span>
+                        </span>
+                    </summary>
+                    <FeldText text={feld.text} links={feld.links} aufklappe />
+                </details>
+                <h3 id={titelId} className="mt-3 hidden font-anzeige text-fs-4 text-tinte md:block">
+                    {feld.title}
+                </h3>
+                <div className="hidden md:flex md:flex-1 md:flex-col">
+                    <FeldText text={feld.text} links={feld.links} />
+                </div>
+            </article>
+        </Feld>
+    );
+}
+
 export default function FliesenRatgeberPage() {
     const google = RATING_SUMMARY.google;
 
     return (
-        <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-warm top-96 -right-24 opacity-60" />
-
-            {/* Hero */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="fliesen-hub-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">
-                        <BookOpen className="w-3.5 h-3.5" />
+        <>
+            {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts der Verband-Umschalter */}
+            <Einstieg
+                art="erzaehl"
+                etikett={
+                    <>
                         Fliesen-Ratgeber &middot; Gegründet {COMPANY_DATA.business.establishmentYear} &middot; Fachbetrieb ({COMPANY_DATA.authority.shortName})
-                    </span>
-                    <h1 id="fliesen-hub-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Fliesen-Ratgeber:{' '}
-                        <span className="text-ceramic-gradient">Formate, Räume und Verlegetechnik</span>{' '}
-                        verständlich erklärt
-                    </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
+                    </>
+                }
+                titel={<span id="fliesen-hub-heading">Fliesen-Ratgeber: Formate, Räume und Verlegetechnik verständlich erklärt</span>}
+                vorspann={
+                    <p>
                         In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegetechnik verständlich aus der Praxis. Welche Fliese passt in welchen Raum, was verlangen Großformate vom Untergrund und woran erkennen Sie eine saubere Verlegung? Hier bündeln wir das Fachwissen aus unserem Alltag als Fachbetrieb Fliesen Tezgel – damit Sie Ihre Möglichkeiten kennen, bevor Sie anfragen.
                     </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/fliesen/konfigurator" className="btn-primary px-7 py-3.5 text-xs group">
+                }
+                aktionen={
+                    <>
+                        <Knopf href="/fliesen/konfigurator" icon="pfeil-rechts">
                             Projekt im Konfigurator vorbereiten
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                        </Link>
-                        <Link href="/leistungen/wohnen" className="btn-ghost px-7 py-3.5 text-xs">
+                        </Knopf>
+                        <Knopf href="/leistungen/wohnen" variante="neben">
                             Leistung: Wohnbereiche &amp; Neubau
-                        </Link>
-                    </div>
-                </div>
-            </section>
+                        </Knopf>
+                    </>
+                }
+                rand={
+                    // Großer Moment (E3-ORCH-04) im Planblatt (E4-NACH-01): derselbe Raum im Kreuzfugen-, Halb- und
+                    // Drittelverband zum Umschalten; der Verband steht deshalb nicht im Schriftfeld. Unter lg rückt das
+                    // Blatt 24 px näher an den Vorspann (E4-N2-09, ERZ 24): der Umschalter bleibt an seiner Stelle.
+                    <Planblatt className="max-lg:-mt-6" felder={planfelder('Fliesen & Verlegung')}>
+                        <VerbandUmschalter />
+                    </Planblatt>
+                }
+            />
 
-            {/* All subpages */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="fliesen-themen-heading">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-orange mb-4">Alle Themen</span>
-                    <h2 id="fliesen-themen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        {FLIESEN_HUB ? FLIESEN_HUB.name : 'Fliesen & Verlegung'}{' '}
-                        <span className="text-ceramic-gradient">im Überblick</span>
-                    </h2>
-                    {FLIESEN_HUB && (
-                        <p className="mt-3 text-base text-slate-700 leading-relaxed">{FLIESEN_HUB.description}.</p>
-                    )}
-                </div>
-
-                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                    {HUB_PAGES.map((page) => {
-                        const Icon = PAGE_ICONS[page.path] || LayoutGrid;
-                        return (
-                            <li key={page.path}>
-                                <Link
-                                    href={page.path}
-                                    className="group glass-surface h-full p-6 rounded-tile-lg flex items-start gap-4 hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
-                                >
-                                    <span className="icon-chip w-11 h-11 shrink-0">
-                                        <Icon className="w-5 h-5" />
+            <Leitachse>
+                {/* 2. ALLE THEMEN: Register der Seiten des Hubs, je Seite Name, Beschreibung und Link */}
+                <Abschnitt
+                    titelId="fliesen-themen-heading"
+                    leitachse
+                    spaet
+                    etikett="Alle Themen"
+                    titel={<>{FLIESEN_HUB ? FLIESEN_HUB.name : 'Fliesen & Verlegung'} im Überblick</>}
+                    einleitung={FLIESEN_HUB ? <p>{FLIESEN_HUB.description}.</p> : undefined}
+                >
+                    <ul className="border-t border-tinte">
+                        {HUB_PAGES.map((page) => (
+                            <li key={page.path} className="border-b border-fuge">
+                                <Link href={page.path} data-motion="zustand" className={ZEILE}>
+                                    <span className="flex min-w-0 flex-1 flex-col gap-1 md:flex-row md:items-baseline md:gap-6">
+                                        <span className={NAME}>{page.name}</span>
+                                        <span className="font-text text-fs-2 text-tinte-2">{page.desc}</span>
                                     </span>
-                                    <span className="flex-1">
-                                        <span className="block font-black text-base text-slate-900 group-hover:text-orange-600 transition-colors">
-                                            {page.name}
-                                        </span>
-                                        <span className="block mt-1 text-sm text-slate-700 leading-relaxed">{page.desc}</span>
+                                    <span aria-hidden="true" className="flex shrink-0 text-strich">
+                                        <Icon name="pfeil-rechts" groesse={5} />
                                     </span>
-                                    <ArrowRight className="w-4 h-4 mt-1 text-orange-600 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
-                                </Link>
-                            </li>
-                        );
-                    })}
-                </ul>
-            </section>
-
-            {/* Guide sections */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="fliesen-wissen-heading">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-14">
-                        <span className="eyebrow mb-4">Wissen kompakt</span>
-                        <h2 id="fliesen-wissen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Vom Raum bis zur Abnahme:{' '}
-                            <span className="text-ceramic-gradient">die wichtigsten Weichen</span>
-                        </h2>
-                    </div>
-
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                        {GUIDE_SECTIONS.map((section) => (
-                            <article
-                                key={section.id}
-                                aria-labelledby={`guide-${section.id}`}
-                                className="p-7 sm:p-8 rounded-tile-xl bg-slate-50 border border-slate-200 hover:bg-white hover:border-orange-500/80 transition-all duration-300"
-                            >
-                                <span className="block text-[11px] font-black uppercase tracking-widest text-orange-600 mb-2">
-                                    {section.eyebrow}
-                                </span>
-                                <h3 id={`guide-${section.id}`} className="text-xl font-black text-slate-900 mb-3 leading-snug">
-                                    {section.title}
-                                </h3>
-                                <p className="text-sm text-slate-700 leading-relaxed">{section.text}</p>
-                                <ul className="mt-5 flex flex-wrap gap-2">
-                                    {section.links.map((link) => (
-                                        <li key={link.href}>
-                                            <Link
-                                                href={link.href}
-                                                className="inline-flex items-center gap-1 rounded-tile-pill bg-orange-50 border border-orange-200 text-orange-700 hover:text-orange-800 hover:border-orange-500/80 px-3.5 py-1.5 text-xs font-bold transition-colors"
-                                            >
-                                                {link.label}
-                                                <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </article>
-                        ))}
-
-                        {/* Bad */}
-                        <article
-                            aria-labelledby="guide-bad"
-                            className="p-7 sm:p-8 rounded-tile-xl bg-slate-50 border border-slate-200 text-slate-700"
-                        >
-                            <span className="block text-[11px] font-black uppercase tracking-widest text-orange-600 mb-2">
-                                Bad, Dusche &amp; Gäste-WC
-                            </span>
-                            <h3 id="guide-bad" className="text-xl font-black text-slate-900 mb-3 leading-snug">
-                                Badsanierung hat einen eigenen Bereich
-                            </h3>
-                            <p className="text-sm leading-relaxed">
-                                Rund ums Bad – Walk-In-Dusche, Abdichtung nach DIN 18534, Fliesen im Nassbereich, Gäste-WC – finden
-                                Sie alles gesammelt im Bad-Bereich. Dieser Ratgeber konzentriert sich auf die übrigen Räume und die
-                                Verlegetechnik.
-                            </p>
-                            <ul className="mt-5 flex flex-wrap gap-2">
-                                {[
-                                    { label: 'Zum Bad-Bereich', href: '/bad' },
-                                    { label: 'Fliesen im Bad', href: '/bad/fliesen' },
-                                    { label: 'Gäste-WC fliesen', href: '/blog/gaeste-wc-fliesen' }
-                                ].map((link) => (
-                                    <li key={link.href}>
-                                        <Link
-                                            href={link.href}
-                                            className="inline-flex items-center gap-1 rounded-tile-pill bg-white border border-slate-200 text-slate-900 hover:border-orange-500 px-3.5 py-1.5 text-xs font-bold transition-colors"
-                                        >
-                                            {link.label}
-                                            <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </article>
-                    </div>
-                </div>
-            </section>
-
-            {/* Other topic hubs */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="fliesen-weitere-heading">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-neutral mb-4">Weitere Fachthemen</span>
-                    <h2 id="fliesen-weitere-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Unter der Fliese und über das Wohnen hinaus
-                    </h2>
-                    <p className="mt-3 text-base text-slate-700 leading-relaxed">
-                        Ein Fliesenbelag ist nur so gut wie sein Untergrund. Diese Ratgeber-Bereiche vertiefen die angrenzenden Themen.
-                    </p>
-                </div>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                    {OTHER_HUBS.map((hub) => (
-                        <li key={hub.id}>
-                            <Link
-                                href={hub.path}
-                                className="group glass-surface h-full p-6 rounded-tile-lg block hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
-                            >
-                                <span className="block font-black text-base text-slate-900 group-hover:text-orange-600 transition-colors">
-                                    {hub.name}
-                                </span>
-                                <span className="block mt-1 text-sm text-slate-700 leading-relaxed">{hub.description}</span>
-                                <span className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-orange-600">
-                                    {hub.pages.length} {hub.pages.length === 1 ? 'Seite' : 'Seiten'}
-                                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
-                                </span>
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </section>
-
-            {/* Link band to /leistungen/wohnen */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 relative z-10" aria-labelledby="fliesen-projekt-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 relative overflow-hidden">
-                    <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
-                        <div className="lg:col-span-3 space-y-4">
-                            <span className="eyebrow">
-                                <Award className="w-3.5 h-3.5" />
-                                Vom Ratgeber zum Projekt
-                            </span>
-                            <h2 id="fliesen-projekt-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight leading-tight">
-                                Wohnbereiche, Küche, Flur und Neubau – ausgeführt vom Fachbetrieb
-                            </h2>
-                            <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-                                Seit {COMPANY_DATA.business.establishmentYear} verlegt {COMPANY_DATA.legalName} Fliesen,
-                                Platten und Naturstein. Der Betrieb ist eingetragener Fachbetrieb der {COMPANY_DATA.authority.name}. Sie
-                                erhalten ein kostenfreies Vor-Ort-Aufmaß, danach ein verbindliches Festpreisangebot, und bei
-                                Arbeiten im bewohnten Bestand gilt unsere Staubschutz-Garantie. Kundinnen und Kunden haben bei uns
-                                vom einzelnen Raum bis zum kompletten Haus fliesen lassen.
-                            </p>
-                            <ul className="space-y-2 text-sm text-slate-700">
-                                {[
-                                    'Kostenfreies Vor-Ort-Aufmaß mit Prüfung des Untergrunds',
-                                    'Verbindliche Festpreis-Kalkulation ohne versteckte Zusatzkosten',
-                                    `Persönliche Betreuung durch ${COMPANY_DATA.owner.fullName}`
-                                ].map((item) => (
-                                    <li key={item} className="flex items-start gap-2">
-                                        <CheckCircle2 className="w-4 h-4 mt-0.5 text-orange-600 shrink-0" aria-hidden="true" />
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div className="lg:col-span-2 space-y-4">
-                            <div className="glass-surface rounded-tile-xl p-6 text-center">
-                                <span className="flex items-center justify-center gap-0.5 text-amber-500" aria-hidden="true">
-                                    {Array.from({ length: 5 }, (_, i) => (
-                                        <Star key={i} className="w-5 h-5 fill-current" />
-                                    ))}
-                                </span>
-                                <p className="mt-2 text-3xl font-black text-slate-900 tabular-nums">{google.displayRating}</p>
-                                <p className="text-sm text-slate-700">
-                                    aus {google.count} {google.label} (Stand {RATING_SUMMARY.asOf})
-                                </p>
-                            </div>
-                            <div className="flex flex-col gap-3">
-                                <Link href="/leistungen/wohnen" className="btn-primary w-full px-7 py-3.5 text-xs group">
-                                    Zur Leistungsseite Wohnbereiche &amp; Neubau
-                                    <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                                </Link>
-                                <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost w-full px-7 py-3.5 text-xs">
-                                    <Phone className="w-4 h-4 text-slate-700" />
-                                    {COMPANY_DATA.contact.phone}
-                                </a>
-                                <a
-                                    href={COMPANY_DATA.contact.whatsappLink}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="glass-button-whatsapp w-full px-7 py-3.5 text-xs"
-                                >
-                                    <MessageCircle className="w-4 h-4" />
-                                    Fotos per WhatsApp senden
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Weiterführende Ratgeber */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="fliesen-ratgeber-heading">
-                <div className="glass-surface-subtle rounded-tile-xl p-6 sm:p-8">
-                    <h2 id="fliesen-ratgeber-heading" className="text-lg font-black text-slate-900 mb-4">Weiterführende Ratgeber zur Fliesenverlegung</h2>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        {WEITERLESEN.map((link) => (
-                            <li key={link.href}>
-                                <Link
-                                    href={link.href}
-                                    className="inline-flex items-center gap-1.5 text-sm font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2"
-                                >
-                                    <ArrowRight className="w-4 h-4" aria-hidden="true" />
-                                    {link.label}
                                 </Link>
                             </li>
                         ))}
                     </ul>
-                    <p className="mt-4 text-sm text-slate-700">
+                </Abschnitt>
+
+                {/* 3. WISSEN KOMPAKT: Feldraster mit fünf Ratgeber-Feldern und dem Bad-Feld; je Feld Plan, Etikett, Überschrift, Text, Links */}
+                <Abschnitt
+                    titelId="fliesen-wissen-heading"
+                    leitachse
+                    spaet
+                    etikett="Wissen kompakt"
+                    titel="Vom Raum bis zur Abnahme: die wichtigsten Weichen"
+                >
+                    <Feldraster spalten={2}>
+                        {WISSEN_FELDER.map((feld) => (
+                            <WissensFeld key={feld.id} feld={feld} />
+                        ))}
+                    </Feldraster>
+                </Abschnitt>
+
+                {/* 4. WEITERE FACHTHEMEN: Register der Nachbarthemen; Kopfspalte mit Einleitung und Verlegeplan im Schnitt */}
+                <Abschnitt
+                    titelId="fliesen-weitere-heading"
+                    leitachse
+                    spaet
+                    kopf="seitlich"
+                    etikett="Weitere Fachthemen"
+                    titel="Unter der Fliese und über das Wohnen hinaus"
+                    einleitung={
+                        <>
+                            <p>Ein Fliesenbelag ist nur so gut wie sein Untergrund. Diese Ratgeber-Bereiche vertiefen die angrenzenden Themen.</p>
+                            {/* Plan ganz statt an der Achse geschnitten (E4-N2-09, ERZ 23); Höhe nach Inhalt, halbe Spaltenbreite wie die Feldpläne */}
+                            <div className="mt-8 w-1/2">
+                                <Verlegeplan plan="abdichtung" ohneAchse bemassung={false} />
+                            </div>
+                        </>
+                    }
+                >
+                    <ul className="border-t border-tinte">
+                        {OTHER_HUBS.map((hub) => (
+                            <li key={hub.id} className="border-b border-fuge">
+                                <Link href={hub.path} data-motion="zustand" className={ZEILE}>
+                                    <span className="flex min-w-0 flex-1 flex-col gap-1 md:flex-row md:items-baseline md:gap-6">
+                                        <span className={NAME}>{hub.name}</span>
+                                        <span className="font-text text-fs-2 text-tinte-2 md:flex-1">{hub.description}</span>
+                                        {/* Zahlenspalte: ab md feste Breite, rechtsbündig in Mono (E4-N2-09, ERZ 23) */}
+                                        <span className="whitespace-nowrap font-mono text-fs-1 tabular-nums text-tinte-2 md:w-24 md:shrink-0 md:text-right">
+                                            {hub.pages.length} {hub.pages.length === 1 ? 'Seite' : 'Seiten'}
+                                        </span>
+                                    </span>
+                                    <span aria-hidden="true" className="flex shrink-0 text-strich">
+                                        <Icon name="pfeil-rechts" groesse={5} />
+                                    </span>
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </Abschnitt>
+
+                {/* 5. VOM RATGEBER ZUM PROJEKT: Kopf links, Text, Merkmale, Bewertung und drei Wege rechts */}
+                <Abschnitt
+                    titelId="fliesen-projekt-heading"
+                    leitachse
+                    spaet
+                    kopf="seitlich"
+                    flaeche="fliese"
+                    etikett="Vom Ratgeber zum Projekt"
+                    titel="Wohnbereiche, Küche, Flur und Neubau – ausgeführt vom Fachbetrieb"
+                    einleitung={
+                        <p>
+                            Seit {COMPANY_DATA.business.establishmentYear} verlegt {COMPANY_DATA.legalName} Fliesen, Platten und
+                            Naturstein. Der Betrieb ist eingetragener Fachbetrieb der {COMPANY_DATA.authority.name}. Sie erhalten ein
+                            kostenfreies Vor-Ort-Aufmaß, danach ein verbindliches Festpreisangebot, und bei Arbeiten im bewohnten
+                            Bestand gilt unsere Staubschutz-Garantie. Kundinnen und Kunden haben bei uns vom einzelnen Raum bis zum
+                            kompletten Haus fliesen lassen.
+                        </p>
+                    }
+                >
+                    <ul className="grid gap-3">
+                        {[
+                            'Kostenfreies Vor-Ort-Aufmaß mit Prüfung des Untergrunds',
+                            'Verbindliche Festpreis-Kalkulation ohne versteckte Zusatzkosten',
+                            `Persönliche Betreuung durch ${COMPANY_DATA.owner.fullName}`
+                        ].map((item) => (
+                            <li key={item} className="flex gap-3 font-text text-fs-2 text-tinte">
+                                <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich">
+                                    <Fugenkreuz className="size-3" />
+                                </span>
+                                <span className="min-w-0">{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+
+                    <div className="mt-12 border border-fuge bg-kalk p-6 lg:p-8">
+                        <span className="flex gap-1 text-tinte" aria-hidden="true">
+                            {Array.from({ length: 5 }, (_, i) => (
+                                <Icon key={i} name="stern-voll" groesse={5} />
+                            ))}
+                        </span>
+                        <p className="mt-4 font-anzeige text-fs-6 text-tinte tabular-nums">{google.displayRating}</p>
+                        <p className="mt-2 font-mono text-fs-1 text-tinte-2">
+                            aus {google.count} {google.label} (Stand {RATING_SUMMARY.asOf})
+                        </p>
+                    </div>
+
+                    <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                        <Knopf href="/leistungen/wohnen" icon="pfeil-rechts">
+                            Zur Leistungsseite Wohnbereiche &amp; Neubau
+                        </Knopf>
+                        <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon">
+                            <span className="font-mono font-normal">{COMPANY_DATA.contact.phone}</span>
+                        </Knopf>
+                        <Knopf
+                            href={COMPANY_DATA.contact.whatsappLink}
+                            extern
+                            variante="neben"
+                            vorne={<WhatsAppLogo className="size-5 shrink-0" />}
+                        >
+                            Fotos per WhatsApp senden
+                        </Knopf>
+                    </div>
+                </Abschnitt>
+
+                {/* 6. WEITERFÜHRENDE RATGEBER: vier Verweise als Merkliste, darunter der Hinweis auf Beratung und Blog */}
+                <Abschnitt titelId="fliesen-ratgeber-heading" leitachse spaet titel="Weiterführende Ratgeber zur Fliesenverlegung">
+                    <Merkliste
+                        spalten={2}
+                        eintraege={WEITERLESEN.map((link) => ({
+                            titel: (
+                                <Link href={link.href} className={linkKlassen}>
+                                    {link.label}
+                                </Link>
+                            )
+                        }))}
+                    />
+                    <p className="mt-8 max-w-mass font-text text-fs-3 text-tinte-2">
                         Persönliche Beratung vor Ihrer Entscheidung?{' '}
-                        <Link href="/beratung" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
+                        <Link href="/beratung" className={linkKlassen}>
                             Fachberatung anfragen
                         </Link>{' '}
                         oder unseren{' '}
-                        <Link href="/blog" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
+                        <Link href="/blog" className={linkKlassen}>
                             Fliesen-Ratgeber-Blog
                         </Link>{' '}
                         durchstöbern.
                     </p>
-                </div>
-            </section>
+                </Abschnitt>
 
-            {/* Konfigurator */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10 scroll-mt-28" id="konfigurator" aria-label="Fliesen-Konfigurator">
-                <FliesenKonfigurator />
-            </section>
+                {/* 7. KONFIGURATOR: der Kopf (Etikett „Fliesen-Konfigurator“, H2 „Fliesenprojekt vorbereiten“) steht im Werkzeug –
+                    kein zweites Etikett, kein zweiter H2; der ARIA-Name bleibt über aria-label. Funnel (nachgeladen) im Raster mit 8 Spalten,
+                    rechts die Rückfrage in 4 Spalten (ab lg); Anker #konfigurator bleibt */}
+                <Abschnitt id="konfigurator" aria-label="Fliesen-Konfigurator" leitachse spaet>
+                    <div className="grid gap-y-12 lg:grid-cols-12 lg:gap-x-12">
+                        <div className="min-w-0 lg:col-span-8">
+                            <FliesenKonfigurator />
+                        </div>
+                        <div className="lg:col-span-4">
+                            <Rueckfrage />
+                        </div>
+                    </div>
+                </Abschnitt>
+            </Leitachse>
 
+            {/* 8. ABSCHLUSS */}
             <QualityPromise />
             <FinalCTA />
-        </div>
+        </>
     );
 }

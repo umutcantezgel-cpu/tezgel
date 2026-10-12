@@ -16,7 +16,8 @@ export const REGISTER: Record<string, Registereintrag> = {
   'sig-flucht': { ausloeser: 'laden' },
   'szene-ablauf': { ausloeser: 'scroll' },
   'sig-plan': { ausloeser: 'sicht', schwelle: 0.4, nurGrob: true },
-  einzugsband: { ausloeser: 'sicht', schwelle: 0.3 },
+  // E4-NACH-02: legt sich beim Laden per CSS frei (Planblatt des Einstiegs), kein Beobachter
+  einzugsband: { ausloeser: 'laden' },
   verband: { ausloeser: 'interaktion' },
   fugenband: { ausloeser: 'scroll' },
   leitachse: { ausloeser: 'scroll' },

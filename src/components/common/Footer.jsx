@@ -89,6 +89,7 @@ export default function Footer() {
                             <a
                                 href={`tel:${contact.phoneLink}`}
                                 className={clsx(fussLink, 'mt-1 block font-mono text-fs-2')}
+                                data-motion="zustand"
                                 aria-label={`Fliesenverlegung Tezgel telefonisch anrufen: ${contact.phone}`}
                             >
                                 {contact.phone}
@@ -101,6 +102,7 @@ export default function Footer() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={clsx(fussLink, 'mt-1 block font-mono text-fs-2')}
+                                data-motion="zustand"
                                 aria-label={`Mobil & WhatsApp: ${contact.mobile} – Chat mit Deniz Tezgel starten`}
                             >
                                 {contact.mobile}
@@ -115,6 +117,7 @@ export default function Footer() {
                             <a
                                 href={`mailto:${contact.email}`}
                                 className={clsx(fussLink, 'mt-1 block text-fs-2')}
+                                data-motion="zustand"
                                 aria-label={`E-Mail an Fliesenverlegung Tezgel senden: ${contact.email}`}
                             >
                                 {contact.email}
@@ -156,6 +159,7 @@ export default function Footer() {
                                         <Link
                                             href={item.path}
                                             className="inline-block py-1 text-kalk underline decoration-transparent underline-offset-4 transition-colors dauer-1 ease-setzen hover:decoration-kalk"
+                                            data-motion="zustand"
                                         >
                                             {item.name}
                                         </Link>
@@ -175,12 +179,15 @@ export default function Footer() {
                     <nav aria-label="Rechtliches">
                         <ul className="flex flex-wrap items-center gap-x-4 gap-y-2">
                             {footerLegalLinks.map((item) => (
-                                <li key={item.path}>
-                                    <Link href={item.path} className={clsx(fussLink, 'inline-block py-1')}>
+                                <li key={item.path} className={item.path === '#cookie-settings' ? 'lg:hidden' : undefined}>
+                                    <Link href={item.path} className={clsx(fussLink, 'inline-block py-1')} data-motion="zustand">
                                         {item.name}
                                     </Link>
                                 </li>
                             ))}
+                            {/* Platz für den Widerruf-Knopf der Einwilligung (ab lg und auf Seiten ohne untere Leiste;
+                                eingehängt von CookieConsent, E3-NACH-06) */}
+                            <li id="fuss-schild" />
                         </ul>
                     </nav>
                     <p>
@@ -191,6 +198,7 @@ export default function Footer() {
                             rel="noopener"
                             title="Coday – Webdesign-Agentur Wetzlar | Webseiten, SEO & Branding"
                             className={clsx(fussLink, 'inline-block py-1 font-semibold')}
+                            data-motion="zustand"
                         >
                             Webdesign Wetzlar – Coday
                         </a>

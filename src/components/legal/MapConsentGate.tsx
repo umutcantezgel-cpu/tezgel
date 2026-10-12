@@ -12,9 +12,24 @@ interface MapConsentGateProps {
   title?: string;
   className?: string;
   height?: string | number;
-  /** gezeichnete Vorschau im Platzhalter (dekorativ, ab md), z. B. das Einzugsband – statt leerer Fläche */
+  /** gezeichnete Vorschau im Platzhalter (dekorativ), z. B. das Einzugsband – statt leerer Fläche */
   vorschau?: React.ReactNode;
+  /** ab welcher Breite die Vorschau erscheint: „immer“ auch mobil (dort nach dem Einwilligungstext), sonst ab md bzw. xl (Standard md) */
+  vorschauAb?: "immer" | "md" | "xl";
+  /**
+   * Höhe des Platzhalters. fest (Standard): Platzhalter und Karte haben `height` (kein Sprung, CLS).
+   * inhalt: der Platzhalter folgt dem Inhalt – unter md ohne Mindesthöhe, ab md mindestens `height`; die geladene
+   * Karte bleibt auf `height`.
+   */
+  hoehenModus?: "fest" | "inhalt";
 }
+
+/** Sichtbarkeit der Vorschau je Breite; „immer“ steht mobil nach dem Einwilligungstext (order), mit Fuge darüber. */
+const VORSCHAU_KLASSEN = {
+  immer: "block max-md:order-last max-md:border-t max-md:border-fuge",
+  md: "hidden md:block",
+  xl: "hidden xl:block",
+} as const;
 
 export function MapConsentGate({
   children,
@@ -23,6 +38,8 @@ export function MapConsentGate({
   className = "",
   height = "420px",
   vorschau,
+  vorschauAb = "md",
+  hoehenModus = "fest",
 }: MapConsentGateProps) {
   // Einwilligungslogik (Hydrierung, Zustimmung per Klick, Marketing-Kategorie, Einstellungen öffnen) im gemeinsamen
   // Hook useKartenEinwilligung (P3-00l) – dieselbe Logik wie die Kern-Ansicht; hier nur das Markup.
@@ -30,6 +47,12 @@ export function MapConsentGate({
 
   // Ein Rahmen mit fester Höhe für Platzhalter und geladene Karte: kein Sprung beim Laden (CLS).
   const rahmen = clsx("karten-hoehe relative w-full overflow-hidden border border-fuge bg-fliese", className);
+  // Platzhalter mit Inhaltshöhe: ein Raster mit zwei Elementen in einer Zelle – eine leere Fläche mit der Höhe `height`
+  // (nur ab md) und der Inhalt. Die Zeile ist so hoch wie der größere der beiden: unter md folgt sie dem Inhalt,
+  // ab md wächst sie nicht unter `height`, und sie wächst mit der Vorschau, wenn die nicht mehr hineinpasst.
+  // Die Fuge liegt als Umriss innen (kein Rand): ein Rand würde die Höhe um 2 px über die der geladenen Karte heben (CLS).
+  // h-full: in einem gestreckten Elternteil (Kartenspalte ab lg) füllt der Platzhalter die Spalte; sonst folgt er dem Inhalt.
+  const rahmenInhalt = clsx("relative grid h-full w-full overflow-hidden bg-fliese outline outline-1 -outline-offset-1 outline-fuge", className);
   const rahmenStil = {
     "--karten-hoehe": typeof height === "number" ? `${height}px` : height,
   } as CSSProperties;
@@ -37,6 +60,7 @@ export function MapConsentGate({
   // Vor der Hydrierung (Server und erster Browserlauf) gilt noch keine Einwilligung: das Einwilligungs-Tor mit Texten
   // und Knöpfen steht sofort im Dokument; die Karte erscheint erst danach und nur mit Einwilligung.
   const hasConsent = isHydrated && eingewilligt;
+  const inhaltshoehe = hoehenModus === "inhalt";
 
   if (hasConsent) {
     if (children) {
@@ -65,14 +89,15 @@ export function MapConsentGate({
   }
 
   return (
-    <div className={rahmen} style={rahmenStil}>
-      <div className="flex h-full flex-col p-6">
+    <div className={inhaltshoehe ? rahmenInhalt : rahmen} style={rahmenStil}>
+      {inhaltshoehe && <div aria-hidden="true" className="karten-hoehe col-start-1 row-start-1 hidden md:block" />}
+      <div className={inhaltshoehe ? "col-start-1 row-start-1 flex flex-col p-6" : "flex h-full flex-col p-6"}>
         <span className={etikettKlassen}>
           <Icon name="schloss" groesse={4} />
           Karte
         </span>
         {vorschau && (
-          <div aria-hidden="true" className="hidden min-h-0 flex-1 overflow-hidden pt-4 md:block">
+          <div aria-hidden="true" className={clsx("min-h-0 flex-1 overflow-hidden pt-4", VORSCHAU_KLASSEN[vorschauAb])}>
             {vorschau}
           </div>
         )}

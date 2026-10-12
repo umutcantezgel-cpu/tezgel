@@ -10,7 +10,7 @@
 //        nicht verschachtelten Elementen).
 //   durch: das überdeckende oder gekreuzte Element bzw. der zweite Text (Zusatz zum Briefing-Format).
 // Toleranz: 1 px bei Überdeckung und Textkreuzung, bei Leitachsen jede Überschneidung.
-// Ausgenommen: Text unter display:none, opacity:0 oder visibility:hidden; sr-only-Text (Elementbox ≤ 2 px oder
+// Ausgenommen: Text unter display:none, opacity:0 oder visibility:hidden, Inhalt geschlossener <details> (außer summary); sr-only-Text (Elementbox ≤ 2 px oder
 // clip-Zuschnitt); Textteile außerhalb eines Behälters mit overflow (z. B. Liste mit eigenem Scroll); eigene
 // Vorfahren bzw. Nachfahren der Gegenseite. Die Gesamtzahl je Bildschirmausschnitt ist durch eine Sicherheitsgrenze (5000) begrenzt.
 // Feste Ebene (KERN K-009: fester Kopf und untere Leiste, Kennzeichen data-feste-ebene selbst oder über einen Vorfahren):
@@ -51,7 +51,9 @@ function ausschnittPruefen() {
     if (!el || el.nodeType !== 1) return false;
     if (memo.has(el)) return memo.get(el);
     const cs = getComputedStyle(el);
-    const ergebnis = cs.display === 'none' || cs.opacity === '0' || ausgeblendet(el.parentElement);
+    // Inhalt eines geschlossenen <details> (außer seinem <summary>) zeichnet der Browser nicht (content-visibility: hidden)
+    const zu = el.tagName === 'DETAILS' ? false : el.parentElement?.tagName === 'DETAILS' && !el.parentElement.open && el.tagName !== 'SUMMARY';
+    const ergebnis = cs.display === 'none' || cs.opacity === '0' || zu || ausgeblendet(el.parentElement);
     memo.set(el, ergebnis);
     return ergebnis;
   };
@@ -140,9 +142,20 @@ function ausschnittPruefen() {
       if (c.r - c.l <= 2 || c.b - c.t <= 2) continue; // Rest eines Textes am Bildschirmrand oder sr-only
       // Lage ohne Ausschnitt und ohne Überlaufzuschnitt, damit dieselbe Zeile in verschiedenen Schritten gleich aussieht
       const d = fix ? { l: r0.left, t: r0.top, r: r0.right, b: r0.bottom } : { l: r0.left, t: r0.top + sy, r: r0.right, b: r0.bottom + sy };
-      texte.push({ el, text: kurz(knoten.nodeValue), r: c, d, feste });
+      texte.push({ el, text: kurz(knoten.nodeValue), r: c, d, feste, fix });
     }
   }
+
+  // Stapelhöhe: z-index des nächsten positionierten Vorfahren mit gesetztem z-index (sonst 0). Damit gilt ein klebendes
+  // Element im Seitenfluss nicht als Verdecker von Text in einer höher gestapelten festen Ebene (Kopf z-40 über einer
+  // klebenden Rückfrage) – sichtbar liegt dort der Kopf oben (E4-Rückgaben: Rückfrage am Abschnittsende „unter“ dem Kopf).
+  const stapel = (el) => {
+    for (let e = el; e && e !== document.body; e = e.parentElement) {
+      const cs = getComputedStyle(e);
+      if (cs.position !== 'static' && cs.zIndex !== 'auto') return Number(cs.zIndex) || 0;
+    }
+    return 0;
+  };
 
   // 2) Fixierte und klebende Elemente im Sichtfeld
   const fest = [];
@@ -172,6 +185,7 @@ function ausschnittPruefen() {
     for (const f of fest) {
       if (voll()) break;
       if (f.el.contains(t.el) || !ueberlappt(t.r, f.r, 1)) continue;
+      if (f.art === 'sticky' && t.fix && stapel(t.el) > stapel(f.el)) continue; // Text der festen Ebene liegt darüber
       roh.push({ art: f.art, t, durch: f.el, s: schnitt(t.r, f.r) });
     }
     for (const a of achsen) {

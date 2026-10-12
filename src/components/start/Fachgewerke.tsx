@@ -6,6 +6,8 @@
 // Kein Hover-Heben, kein Zoom. Ein Auftritt im Abschnitt: die Felder rücken beim Scrollen in die Flucht (`auftritt`, ohne
 // Staffel). Links mit Farbwechsel nach Register (`zustand`). Rot nur in der Vignette „wohnen“ (Laserachse).
 // Inhalt aus `@/config/services` (`SERVICES`), Etiketten aus `@/lib/kern/start/daten`; Merkmale wie im Bestand: Bad 6, sonst 3.
+// Unter md (Befund 9): Vignetten der Nebenfelder entfallen (dekorativ, ohne Text), die Merkmale stehen im Aufklapper
+// „Leistungsumfang“ (nativ `details`, zu); ab md bleiben sie offen sichtbar wie bisher.
 import Link from 'next/link';
 import clsx from 'clsx';
 import { SERVICES } from '@/config/services';
@@ -43,14 +45,24 @@ function Fachgewerk({ leistung, nr, lage }: { leistung: Leistung; nr: number; la
   const haupt = lage === 'haupt';
   const Vignette = istVignette(leistung.id) ? VIGNETTEN[leistung.id] : null;
   const titelId = `leistung-${leistung.id}`;
+  const merkmale = leistung.features.slice(0, haupt ? 6 : 3);
+  const zeile = (merkmal: string) => (
+    <li key={merkmal} className="flex gap-3 font-text text-fs-2 text-tinte">
+      <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich">
+        <Fugenkreuz className="size-3" />
+      </span>
+      <span className="min-w-0">{merkmal}</span>
+    </li>
+  );
   return (
     <article
       aria-labelledby={titelId}
       data-motion="auftritt"
       className={clsx('flex min-w-0 flex-col border-r border-b border-fuge bg-fliese', SPANNE[lage], AUFTEILUNG[lage])}
     >
+      {/* Unter md ohne Vignette: Nebenfelder (dekorativ, aria-hidden) – Bad behält seine Vignette */}
       {Vignette ? (
-        <div className={clsx('flex items-center border-b border-fuge p-6 text-tinte', VIGNETTE_KLASSEN[lage])}>
+        <div className={clsx('items-center border-b border-fuge p-6 text-tinte', haupt ? 'flex' : 'hidden md:flex', VIGNETTE_KLASSEN[lage])}>
           <Vignette />
         </div>
       ) : null}
@@ -73,16 +85,23 @@ function Fachgewerk({ leistung, nr, lage }: { leistung: Leistung; nr: number; la
           <p className={clsx('mt-3 max-w-mass font-text text-tinte-2', haupt ? 'text-fs-3' : 'text-fs-2')}>
             {leistung.shortDescription}
           </p>
-          <ul className={clsx('mt-6 grid gap-3', haupt && 'lg:grid-cols-2 lg:gap-x-8')}>
-            {leistung.features.slice(0, haupt ? 6 : 3).map((merkmal) => (
-              <li key={merkmal} className="flex gap-3 font-text text-fs-2 text-tinte">
-                <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich">
-                  <Fugenkreuz className="size-3" />
+          {/* Unter md: Merkmale im Aufklapper (Muster FAQAccordion, Register aufklappen); Plus/Minus per group-open */}
+          <details className="group mt-6 border-t border-fuge md:hidden">
+            <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-6 py-3 font-text text-fs-2 font-semibold text-tinte [&::-webkit-details-marker]:hidden">
+              <span className="min-w-0">Leistungsumfang</span>
+              <span className="flex shrink-0 items-center text-tinte" aria-hidden="true">
+                <span className="group-open:hidden">
+                  <Icon name="plus" groesse={6} />
                 </span>
-                <span className="min-w-0">{merkmal}</span>
-              </li>
-            ))}
-          </ul>
+                <span className="hidden group-open:block">
+                  <Icon name="minus" groesse={6} />
+                </span>
+              </span>
+            </summary>
+            <ul className="grid gap-3 pb-4">{merkmale.map(zeile)}</ul>
+          </details>
+          {/* Ab md offen wie bisher; die Liste ist für das Aufklappen unter md doppelt gerendert (ein geschlossener Aufklapper öffnet sich per CSS nicht zuverlässig) */}
+          <ul className={clsx('mt-6 hidden gap-3 md:grid', haupt && 'lg:grid-cols-2 lg:gap-x-8')}>{merkmale.map(zeile)}</ul>
         </div>
 
         <div className="mt-auto flex flex-wrap items-center justify-between gap-3 border-t border-fuge px-6 py-2 lg:px-8">
@@ -114,7 +133,7 @@ export default function Fachgewerke() {
   const nebenIds = SERVICES.filter((s) => s.id !== 'bad').map((s) => s.id);
   const breitId = nebenIds.length % 2 === 1 ? nebenIds[nebenIds.length - 1] : null;
   return (
-    <section id="leistungen" aria-labelledby="leistungen-heading" className="py-16 lg:py-24">
+    <section id="leistungen" aria-labelledby="leistungen-heading" className="spaet-zeichnen py-16 lg:py-24">
       <div className={seitenKlassen}>
         <div className="max-w-mass">
           <p className={etikettKlassen}>

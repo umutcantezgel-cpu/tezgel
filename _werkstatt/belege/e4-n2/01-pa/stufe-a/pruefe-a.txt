@@ -1,0 +1,24 @@
+PRÜFSTUFE A · Kennung E4-N2-01 · Platz slot1 · 2026-10-12T04:40:08+00:00
+Dateien: src/components/sections/QualityPromise.jsx src/app/(bestand)/fliesen/konfigurator/page.jsx src/components/kern/Zeitband.tsx src/app/globals.css src/components/common/Footer.jsx src/components/blog/ReadingProgress.jsx
+Ansichtspfade: /fliesen/konfigurator /blog /blog/rutschfeste-fliesen-r-klassen /ueber-uns /bad
+Typprüfung (tsc): GRÜN · Fehler in eigenen Dateien 0 · übrige 0 · 19 s · /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-01/tsc.txt
+Lint (eslint): GRÜN · Fehler 0 · Warnungen 1 · 4 s · /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-01/eslint.json
+Funktionstests: ROT · 1004 s · Specs funktion-kontaktwege.spec.mjs funktion-konfigurator.spec.mjs funktion-badanfrage.spec.mjs funktion-einwilligung.spec.mjs funktion-express-funnel.spec.mjs funktion-hero-kontakt.spec.mjs funktion-navigation.spec.mjs funktion-preisrechner.spec.mjs funktion-projektcheck.spec.mjs funktion-schnellanfrage.spec.mjs funktion-termin.spec.mjs funktion-tracking.spec.mjs funktion-weiterleitung.spec.mjs · erwartet 288 · unerwartet 2 · flaky 0 · Exit 1 · /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-01/pw.json
+Bilder: GRÜN · 55 s
+  /fliesen/konfigurator: HTTP 200/200 · Konsole 0 · Überlauf 0 · Überlappung 61
+  /blog: HTTP 200/200 · Konsole 0 · Überlauf 1 · Überlappung 0
+  /blog/rutschfeste-fliesen-r-klassen: HTTP 200/200 · Konsole 0 · Überlauf 0 · Überlappung 0
+  /ueber-uns: HTTP 200/200 · Konsole 0 · Überlauf 0 · Überlappung 0
+  /bad: HTTP 200/200 · Konsole 0 · Überlauf 0 · Überlappung 2
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-01/bilder/fliesen__konfigurator/m390.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-01/bilder/fliesen__konfigurator/d1440.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-01/bilder/blog/m390.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-01/bilder/blog/d1440.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-01/bilder/blog__rutschfeste-fliesen-r-klassen/m390.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-01/bilder/blog__rutschfeste-fliesen-r-klassen/d1440.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-01/bilder/ueber-uns/m390.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-01/bilder/ueber-uns/d1440.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-01/bilder/bad/m390.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-01/bilder/bad/d1440.jpg
+Textvergleich: GRÜN · gegen e0 · {"seiten_mit_abweichung":242,"entfernt":0,"hinzu":177,"meta":0,"seo":0,"spannen_entfernt":64,"spannen_hinzu":73,"spannen_unerlaubt_entfernt":0,"sitemap_entfernt":0,"sitemap_hinzu":0,"robots_geaendert":false,"kaputte_links":0,"ergebnis":"GRÜN"} · /home/user/tezgel/_werkstatt/cache/texte/E4-N2-01/texte-vergleich-gegen-e0.json
+Gesamt: ROT · Laufzeit 1120 s · Exit-Code 1 (Gate: tsc, eslint, Test, Bilder, Texte)

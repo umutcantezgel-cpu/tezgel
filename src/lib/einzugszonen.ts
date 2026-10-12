@@ -1,5 +1,6 @@
 // Einzugszonen (KERN K-007 einzugsband, E3-ORCH-03): ordnet die Orte aus `src/config/cities.ts` drei Zonen zu.
-// Die Entfernungen sind gerundete Angaben der Konfiguration („ca.“); die Zonen sind Bänder, kein Maßstab.
+// Die Entfernungen gelten ab dem Firmensitz Aßlar (`CITY_HUB_DATA`, dieselbe Quelle wie die Karte; `CITIES.distanceKm`
+// misst ab Wetzlar, M-17) und sind gerundete Angaben („ca.“); die Zonen sind Bänder, kein Maßstab.
 import type { CityData } from '@/config/cities';
 
 export interface Zone {
@@ -34,4 +35,16 @@ export function gruppiereNachZone<T extends Pick<CityData, 'name' | 'distanceKm'
       .slice()
       .sort((a, b) => a.distanceKm - b.distanceKm || a.name.localeCompare(b.name, 'de')),
   }));
+}
+
+/** Orte mit der Entfernung ab dem Firmensitz (Eintrag je Slug, z. B. `CITY_HUB_DATA`); fehlt ein Eintrag, bleibt die
+ *  Angabe der Konfiguration. Reine Funktion – die Quelle übergibt der Aufrufer. */
+export function mitEntfernungAbSitz<T extends Pick<CityData, 'slug' | 'distanceKm'>>(
+  orte: readonly T[],
+  sitz: Readonly<Record<string, { distanceKm: number } | undefined>>,
+): T[] {
+  return orte.map((o) => {
+    const km = sitz[o.slug]?.distanceKm;
+    return km === undefined ? o : { ...o, distanceKm: km };
+  });
 }

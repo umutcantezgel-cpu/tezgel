@@ -23,12 +23,14 @@ export interface AbschnittProps {
   auftritt?: boolean;
   /** Fugenkreuz auf der Leitachse an der Oberkante (innerhalb von <Leitachse>) */
   leitachse?: boolean;
+  /** Inhalt erst in Sichtnähe zeichnen (content-visibility, nur unterhalb des ersten Bildschirms; E3-NACH-07) */
+  spaet?: boolean;
   className?: string;
   children?: ReactNode;
   'aria-label'?: string;
 }
 
-export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleitung, art = 'erzaehl', flaeche = 'kalk', kopf = 'gestapelt', breite = 'seite', auftritt = false, leitachse = false, className, children, ...rest }: AbschnittProps) {
+export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleitung, art = 'erzaehl', flaeche = 'kalk', kopf = 'gestapelt', breite = 'seite', auftritt = false, leitachse = false, spaet = false, className, children, ...rest }: AbschnittProps) {
   const hId = titelId ?? (id ? `${id}-titel` : undefined);
   const tinte = flaeche === 'tinte';
   const kopfInhalt = (titel || etikett) && (
@@ -41,7 +43,8 @@ export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleit
           {etikett}
         </p>
       )}
-      {titel && <h2 id={hId} className={clsx('text-fs-6', tinte ? 'text-kalk' : 'text-tinte')}>{titel}</h2>}
+      {/* Arbeitsansicht: H1 steht in text-fs-6, die H2 eine Stufe darunter (E3-SICHT-2-ARB Befunde 4, 15, 25) */}
+      {titel && <h2 id={hId} className={clsx(art === 'arbeit' ? 'text-fs-5' : 'text-fs-6', tinte ? 'text-kalk' : 'text-tinte')}>{titel}</h2>}
       {einleitung && <div className={clsx('mt-6 text-fs-3', tinte ? 'text-nacht-2' : 'text-tinte-2')}>{einleitung}</div>}
     </div>
   );
@@ -65,7 +68,7 @@ export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleit
           </div>
         </div>
       )}
-      <div className={clsx(seitenKlassen, breite === 'mass' && 'max-w-mass')}>
+      <div className={clsx(seitenKlassen, breite === 'mass' && 'max-w-mass', spaet && 'spaet-zeichnen')}>
         {kopf === 'seitlich' ? (
           <div className="grid grid-cols-4 gap-y-12 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12">
             {kopfInhalt}

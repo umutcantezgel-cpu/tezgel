@@ -1,0 +1,17 @@
+{
+ "base": "http://127.0.0.1:4310",
+ "faelle": [
+  {
+   "seite": "/standorte",
+   "einwilligung": "alle",
+   "fehlerGrenzeSichtbar": false,
+   "fehler": []
+  },
+  {
+   "seite": "/kontakt",
+   "einwilligung": "abgelehnt",
+   "fehlerGrenzeSichtbar": false,
+   "fehler": []
+  }
+ ]
+}

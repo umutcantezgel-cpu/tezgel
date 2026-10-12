@@ -1,0 +1,4 @@
+lauf 1: summe 0.05311 · kopf 0 · Einträge 1 · laden 7718 ms
+lauf 2: summe 0 · kopf 0 · Einträge 1 · laden 7510 ms
+lauf 3: summe 0.05311 · kopf 0 · Einträge 1 · laden 7408 ms
+{"seite":"/","ansicht":"m390","base":"http://127.0.0.1:4320","laeufe":3,"median_summe":0.05311,"median_kopfBeitrag":0,"summen_je_lauf":[0.05311,0,0.05311],"kopf_je_lauf":[0,0,0]}

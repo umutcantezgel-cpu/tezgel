@@ -1,0 +1,65 @@
+{
+ "modus": "einzelbilder",
+ "seite": "/leistungen",
+ "base": "http://127.0.0.1:4320",
+ "ansicht": "d1440",
+ "zeitpunkt": "2026-10-12T02:39:20.160Z",
+ "dpr": 1,
+ "reducedMotion": "no-preference",
+ "einwilligung": "abgelehnt",
+ "zeitpunkte_anteil": [
+  0,
+  0.25,
+  0.5,
+  0.75,
+  1
+ ],
+ "kennungen": [
+  {
+   "kennung": "sig-plan",
+   "elemente": 4,
+   "ausloeser": "hover",
+   "ausgeloest": 4,
+   "modus": "zeit",
+   "animationen": 40,
+   "laengste_dauer_ms": 600,
+   "bilder": [
+    {
+     "datei": "sig-plan-0.jpg",
+     "zeitpunkt": 0,
+     "art": "ausschnitt"
+    },
+    {
+     "datei": "sig-plan-1.jpg",
+     "zeitpunkt": 0.25,
+     "art": "ausschnitt"
+    },
+    {
+     "datei": "sig-plan-2.jpg",
+     "zeitpunkt": 0.5,
+     "art": "ausschnitt"
+    },
+    {
+     "datei": "sig-plan-3.jpg",
+     "zeitpunkt": 0.75,
+     "art": "ausschnitt"
+    },
+    {
+     "datei": "sig-plan-4.jpg",
+     "zeitpunkt": 1,
+     "art": "ausschnitt"
+    }
+   ],
+   "befund": []
+  }
+ ],
+ "bilder_gesamt": 5,
+ "data_motion_elemente": 118,
+ "meldung": "1 Kennungen, 118 Elemente auf /leistungen.",
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "verzeichnis": "/home/user/tezgel/_werkstatt/belege/e4-nach/bewegung2/einzel-leistungen-sig-plan-d1440"
+}

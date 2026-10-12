@@ -1,0 +1,5380 @@
+{
+ "seiten": {
+  "/": {
+   "mobil": {
+    "median": {
+     "perf": 76,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 4112,
+     "cls": 0,
+     "tbt": 415,
+     "fcp": 1375,
+     "si": 1463,
+     "js_kb": 413,
+     "font_kb": 77,
+     "gesamt_kb": 628,
+     "benchmark": 1357.5,
+     "lcp_element": {
+      "selector": "div.max-w-7xl > div.grid > div.lg:col-span-7 > p.text-base",
+      "ausschnitt": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto lg:mx-0 leading-re…\">"
+     },
+     "spanne": {
+      "perf": [
+       76,
+       77
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       3494,
+       4260
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       373,
+       593
+      ],
+      "fcp": [
+       1364,
+       1421
+      ],
+      "si": [
+       1375,
+       1495
+      ],
+      "js_kb": [
+       413,
+       413
+      ],
+      "font_kb": [
+       77,
+       77
+      ],
+      "gesamt_kb": [
+       628,
+       628
+      ],
+      "benchmark": [
+       1351.5,
+       1502.5
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 76,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 4111.5059249999995,
+      "cls": 0,
+      "tbt": 415.49999999999955,
+      "fcp": 1375.4567,
+      "si": 1375.4567,
+      "js_kb": 413,
+      "font_kb": 77,
+      "gesamt_kb": 628,
+      "benchmark": 1351.5,
+      "lcp_element": {
+       "selector": "div.max-w-7xl > div.grid > div.lg:col-span-7 > p.text-base",
+       "ausschnitt": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto lg:mx-0 leading-re…\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 20,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 292
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     },
+     {
+      "perf": 76,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3494.32225,
+      "cls": 0,
+      "tbt": 593.2355500000001,
+      "fcp": 1363.5289,
+      "si": 1462.5580402465016,
+      "js_kb": 413,
+      "font_kb": 77,
+      "gesamt_kb": 628,
+      "benchmark": 1357.5,
+      "lcp_element": {
+       "selector": "div.max-w-7xl > div.grid > div.lg:col-span-7 > p.text-base",
+       "ausschnitt": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto lg:mx-0 leading-re…\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 20,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 368
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     },
+     {
+      "perf": 77,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 4260.1759999999995,
+      "cls": 0,
+      "tbt": 372.9999999999993,
+      "fcp": 1421.0439999999999,
+      "si": 1495.4717559999917,
+      "js_kb": 413,
+      "font_kb": 77,
+      "gesamt_kb": 628,
+      "benchmark": 1502.5,
+      "lcp_element": {
+       "selector": "div.max-w-7xl > div.grid > div.lg:col-span-7 > p.text-base",
+       "ausschnitt": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto lg:mx-0 leading-re…\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 20,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 405
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 100,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 815,
+     "cls": 0,
+     "tbt": 34,
+     "fcp": 374,
+     "si": 537,
+     "js_kb": 645,
+     "font_kb": 77,
+     "gesamt_kb": 916,
+     "benchmark": 1429,
+     "lcp_element": {
+      "selector": "div.max-w-7xl > div.grid > div.lg:col-span-7 > h1.text-4xl",
+      "ausschnitt": "<h1 class=\"text-4xl sm:text-5xl lg:text-6xl font-black text-neutral-900 tracking-tigh…\">"
+     },
+     "spanne": {
+      "perf": [
+       99,
+       100
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       796,
+       827
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       14,
+       47
+      ],
+      "fcp": [
+       372,
+       392
+      ],
+      "si": [
+       508,
+       552
+      ],
+      "js_kb": [
+       645,
+       645
+      ],
+      "font_kb": [
+       77,
+       77
+      ],
+      "gesamt_kb": [
+       916,
+       916
+      ],
+      "benchmark": [
+       1355.5,
+       1518.5
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 814.5500000000001,
+      "cls": 0,
+      "tbt": 46.5,
+      "fcp": 391.80000000000007,
+      "si": 536.8145087038629,
+      "js_kb": 645,
+      "font_kb": 77,
+      "gesamt_kb": 916,
+      "benchmark": 1355.5,
+      "lcp_element": {
+       "selector": "div.max-w-7xl > div.grid > div.lg:col-span-7 > h1.text-4xl",
+       "ausschnitt": "<h1 class=\"text-4xl sm:text-5xl lg:text-6xl font-black text-neutral-900 tracking-tigh…\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 18,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 441
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     },
+     {
+      "perf": 99,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 826.5550000000001,
+      "cls": 0,
+      "tbt": 13.5,
+      "fcp": 372.422,
+      "si": 551.5460536312952,
+      "js_kb": 645,
+      "font_kb": 77,
+      "gesamt_kb": 916,
+      "benchmark": 1429,
+      "lcp_element": {
+       "selector": "div.max-w-7xl > div.grid > div.lg:col-span-7 > h1.text-4xl",
+       "ausschnitt": "<h1 class=\"text-4xl sm:text-5xl lg:text-6xl font-black text-neutral-900 tracking-tigh…\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 19,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 386
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 796.2352499999998,
+      "cls": 0,
+      "tbt": 33.5,
+      "fcp": 374.4941,
+      "si": 508.4147019303872,
+      "js_kb": 645,
+      "font_kb": 77,
+      "gesamt_kb": 916,
+      "benchmark": 1518.5,
+      "lcp_element": {
+       "selector": "div.max-w-7xl > div.grid > div.lg:col-span-7 > h1.text-4xl",
+       "ausschnitt": "<h1 class=\"text-4xl sm:text-5xl lg:text-6xl font-black text-neutral-900 tracking-tigh…\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 20,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 416
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "/bad": {
+   "mobil": {
+    "median": {
+     "perf": 84,
+     "a11y": 97,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 3648,
+     "cls": 0,
+     "tbt": 259,
+     "fcp": 1220,
+     "si": 1220,
+     "js_kb": 431,
+     "font_kb": 77,
+     "gesamt_kb": 641,
+     "benchmark": 1373,
+     "lcp_element": {
+      "selector": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+      "ausschnitt": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">"
+     },
+     "spanne": {
+      "perf": [
+       83,
+       85
+      ],
+      "a11y": [
+       97,
+       97
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       3359,
+       3923
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       240,
+       354
+      ],
+      "fcp": [
+       1211,
+       1220
+      ],
+      "si": [
+       1211,
+       1220
+      ],
+      "js_kb": [
+       431,
+       431
+      ],
+      "font_kb": [
+       77,
+       77
+      ],
+      "gesamt_kb": [
+       641,
+       641
+      ],
+      "benchmark": [
+       1366,
+       1486
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 83,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3922.672200000001,
+      "cls": 0,
+      "tbt": 239.50000000000136,
+      "fcp": 1211.3361,
+      "si": 1211.3361,
+      "js_kb": 431,
+      "font_kb": 77,
+      "gesamt_kb": 641,
+      "benchmark": 1486,
+      "lcp_element": {
+       "selector": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+       "ausschnitt": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 12,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 284
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     },
+     {
+      "perf": 85,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3647.9900500000003,
+      "cls": 0,
+      "tbt": 259,
+      "fcp": 1220.3267,
+      "si": 1220.3267,
+      "js_kb": 431,
+      "font_kb": 77,
+      "gesamt_kb": 641,
+      "benchmark": 1366,
+      "lcp_element": {
+       "selector": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+       "ausschnitt": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 19,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 255
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     },
+     {
+      "perf": 84,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3359.124,
+      "cls": 0,
+      "tbt": 354,
+      "fcp": 1219.708,
+      "si": 1219.708,
+      "js_kb": 431,
+      "font_kb": 77,
+      "gesamt_kb": 641,
+      "benchmark": 1373,
+      "lcp_element": {
+       "selector": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+       "ausschnitt": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 27,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 289
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 100,
+     "a11y": 97,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 777,
+     "cls": 0,
+     "tbt": 27,
+     "fcp": 342,
+     "si": 487,
+     "js_kb": 653,
+     "font_kb": 77,
+     "gesamt_kb": 959,
+     "benchmark": 1410.5,
+     "lcp_element": {
+      "selector": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+      "ausschnitt": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">"
+     },
+     "spanne": {
+      "perf": [
+       100,
+       100
+      ],
+      "a11y": [
+       97,
+       97
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       769,
+       777
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       12,
+       32
+      ],
+      "fcp": [
+       335,
+       348
+      ],
+      "si": [
+       384,
+       496
+      ],
+      "js_kb": [
+       653,
+       653
+      ],
+      "font_kb": [
+       77,
+       77
+      ],
+      "gesamt_kb": [
+       959,
+       959
+      ],
+      "benchmark": [
+       1280.5,
+       1483.5
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 100,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 776.6184500000002,
+      "cls": 0,
+      "tbt": 31.999999999999886,
+      "fcp": 348.4123000000001,
+      "si": 486.8233979082094,
+      "js_kb": 653,
+      "font_kb": 77,
+      "gesamt_kb": 959,
+      "benchmark": 1410.5,
+      "lcp_element": {
+       "selector": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+       "ausschnitt": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 14,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 337
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     },
+     {
+      "perf": 100,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 777.1984,
+      "cls": 0,
+      "tbt": 27,
+      "fcp": 334.6848,
+      "si": 495.7186778992424,
+      "js_kb": 653,
+      "font_kb": 77,
+      "gesamt_kb": 959,
+      "benchmark": 1280.5,
+      "lcp_element": {
+       "selector": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+       "ausschnitt": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 12,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 312
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     },
+     {
+      "perf": 100,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 769.088375,
+      "cls": 0,
+      "tbt": 11.5,
+      "fcp": 341.6685,
+      "si": 383.87749574982644,
+      "js_kb": 653,
+      "font_kb": 77,
+      "gesamt_kb": 959,
+      "benchmark": 1483.5,
+      "lcp_element": {
+       "selector": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+       "ausschnitt": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 16,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 290
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "/leistungen": {
+   "mobil": {
+    "median": {
+     "perf": 85,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 3670,
+     "cls": 0,
+     "tbt": 252,
+     "fcp": 1216,
+     "si": 1216,
+     "js_kb": 428,
+     "font_kb": 77,
+     "gesamt_kb": 619,
+     "benchmark": 1477.5,
+     "lcp_element": {
+      "selector": "div.pt-36 > div.max-w-7xl > div.ceramic-hero > p.text-sm",
+      "ausschnitt": "<p class=\"text-sm sm:text-base text-neutral-700 max-w-3xl mx-auto leading-relaxed\">"
+     },
+     "spanne": {
+      "perf": [
+       84,
+       86
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       3651,
+       3683
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       223,
+       267
+      ],
+      "fcp": [
+       1215,
+       1218
+      ],
+      "si": [
+       1215,
+       1229
+      ],
+      "js_kb": [
+       428,
+       428
+      ],
+      "font_kb": [
+       77,
+       77
+      ],
+      "gesamt_kb": [
+       619,
+       619
+      ],
+      "benchmark": [
+       1343,
+       1488.5
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 85,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3682.5246000000006,
+      "cls": 0,
+      "tbt": 251.99999999999955,
+      "fcp": 1215.0164,
+      "si": 1215.0164,
+      "js_kb": 428,
+      "font_kb": 77,
+      "gesamt_kb": 619,
+      "benchmark": 1477.5,
+      "lcp_element": {
+       "selector": "div.pt-36 > div.max-w-7xl > div.ceramic-hero > p.text-sm",
+       "ausschnitt": "<p class=\"text-sm sm:text-base text-neutral-700 max-w-3xl mx-auto leading-relaxed\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 9,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 283
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     },
+     {
+      "perf": 84,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3651.3971999999994,
+      "cls": 0,
+      "tbt": 266.86760000000004,
+      "fcp": 1218.2648,
+      "si": 1228.73982671036,
+      "js_kb": 428,
+      "font_kb": 77,
+      "gesamt_kb": 619,
+      "benchmark": 1343,
+      "lcp_element": {
+       "selector": "div.pt-36 > div.max-w-7xl > div.ceramic-hero > p.text-sm",
+       "ausschnitt": "<p class=\"text-sm sm:text-base text-neutral-700 max-w-3xl mx-auto leading-relaxed\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 12,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 308
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     },
+     {
+      "perf": 86,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3669.6523000000007,
+      "cls": 0,
+      "tbt": 223,
+      "fcp": 1215.7682,
+      "si": 1215.7682,
+      "js_kb": 428,
+      "font_kb": 77,
+      "gesamt_kb": 619,
+      "benchmark": 1488.5,
+      "lcp_element": {
+       "selector": "div.pt-36 > div.max-w-7xl > div.ceramic-hero > p.text-sm",
+       "ausschnitt": "<p class=\"text-sm sm:text-base text-neutral-700 max-w-3xl mx-auto leading-relaxed\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 13,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 257
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 100,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 760,
+     "cls": 0,
+     "tbt": 22,
+     "fcp": 342,
+     "si": 470,
+     "js_kb": 645,
+     "font_kb": 77,
+     "gesamt_kb": 892,
+     "benchmark": 1360.5,
+     "lcp_element": {
+      "selector": "div.pt-36 > div.max-w-7xl > div.ceramic-hero > h1.text-3xl",
+      "ausschnitt": "<h1 class=\"text-3xl sm:text-5xl lg:text-6xl font-black text-neutral-900 tracking-tigh…\">"
+     },
+     "spanne": {
+      "perf": [
+       99,
+       100
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       649,
+       780
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       11,
+       86
+      ],
+      "fcp": [
+       334,
+       356
+      ],
+      "si": [
+       407,
+       542
+      ],
+      "js_kb": [
+       645,
+       645
+      ],
+      "font_kb": [
+       77,
+       77
+      ],
+      "gesamt_kb": [
+       892,
+       892
+      ],
+      "benchmark": [
+       1159.5,
+       1520
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 779.8983000000003,
+      "cls": 0,
+      "tbt": 22,
+      "fcp": 333.9322,
+      "si": 469.72094941822115,
+      "js_kb": 645,
+      "font_kb": 77,
+      "gesamt_kb": 892,
+      "benchmark": 1159.5,
+      "lcp_element": {
+       "selector": "div.pt-36 > div.max-w-7xl > div.ceramic-hero > h1.text-3xl",
+       "ausschnitt": "<h1 class=\"text-3xl sm:text-5xl lg:text-6xl font-black text-neutral-900 tracking-tigh…\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 13,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 413
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     },
+     {
+      "perf": 99,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 649.3604,
+      "cls": 0.0000067689712506748816,
+      "tbt": 86,
+      "fcp": 356.4302,
+      "si": 541.9944525916693,
+      "js_kb": 645,
+      "font_kb": 77,
+      "gesamt_kb": 892,
+      "benchmark": 1360.5,
+      "lcp_element": {
+       "selector": "div.pt-36 > div.max-w-7xl > div.ceramic-hero > h1.text-3xl",
+       "ausschnitt": "<h1 class=\"text-3xl sm:text-5xl lg:text-6xl font-black text-neutral-900 tracking-tigh…\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 14,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 290
+      },
+      "cls_quellen": [
+       {
+        "selector": "div > div.flex > button.pr-2.5 > svg.lucide",
+        "wert": 0
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 759.951,
+      "cls": 0.000203618071840035,
+      "tbt": 10.5,
+      "fcp": 341.9755,
+      "si": 407.481410916723,
+      "js_kb": 645,
+      "font_kb": 77,
+      "gesamt_kb": 892,
+      "benchmark": 1520,
+      "lcp_element": {
+       "selector": "div.pt-36 > div.max-w-7xl > div.ceramic-hero > h1.text-3xl",
+       "ausschnitt": "<h1 class=\"text-3xl sm:text-5xl lg:text-6xl font-black text-neutral-900 tracking-tigh…\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 13,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 196
+      },
+      "cls_quellen": [
+       {
+        "selector": "div > div.flex > button.pr-2.5 > svg.lucide",
+        "wert": 0.0002
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "/leistungen/bad": {
+   "mobil": {
+    "median": {
+     "perf": 85,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 3665,
+     "cls": 0,
+     "tbt": 259,
+     "fcp": 1217,
+     "si": 1233,
+     "js_kb": 442,
+     "font_kb": 77,
+     "gesamt_kb": 643,
+     "benchmark": 1430,
+     "lcp_element": {
+      "selector": "div.ceramic-hero > div.flex > div.flex-1 > p.text-sm",
+      "ausschnitt": "<p class=\"text-sm sm:text-base text-neutral-700 max-w-2xl leading-relaxed\">"
+     },
+     "spanne": {
+      "perf": [
+       84,
+       87
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       3657,
+       3709
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       169,
+       274
+      ],
+      "fcp": [
+       1215,
+       1218
+      ],
+      "si": [
+       1217,
+       1455
+      ],
+      "js_kb": [
+       442,
+       442
+      ],
+      "font_kb": [
+       77,
+       77
+      ],
+      "gesamt_kb": [
+       643,
+       643
+      ],
+      "benchmark": [
+       1308,
+       1434
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 84,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3657.33755,
+      "cls": 0,
+      "tbt": 273.50000000000045,
+      "fcp": 1214.8917,
+      "si": 1455.0079804462289,
+      "js_kb": 442,
+      "font_kb": 77,
+      "gesamt_kb": 643,
+      "benchmark": 1430,
+      "lcp_element": {
+       "selector": "div.ceramic-hero > div.flex > div.flex-1 > p.text-sm",
+       "ausschnitt": "<p class=\"text-sm sm:text-base text-neutral-700 max-w-2xl leading-relaxed\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 13,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 271
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     },
+     {
+      "perf": 85,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3665.3986999999997,
+      "cls": 0,
+      "tbt": 258.8670999999997,
+      "fcp": 1218.2658,
+      "si": 1233.047933740197,
+      "js_kb": 442,
+      "font_kb": 77,
+      "gesamt_kb": 643,
+      "benchmark": 1434,
+      "lcp_element": {
+       "selector": "div.ceramic-hero > div.flex > div.flex-1 > p.text-sm",
+       "ausschnitt": "<p class=\"text-sm sm:text-base text-neutral-700 max-w-2xl leading-relaxed\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 11,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 312
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     },
+     {
+      "perf": 87,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3709.3596,
+      "cls": 0,
+      "tbt": 168.50000000000045,
+      "fcp": 1217.1798,
+      "si": 1217.1798,
+      "js_kb": 442,
+      "font_kb": 77,
+      "gesamt_kb": 643,
+      "benchmark": 1308,
+      "lcp_element": {
+       "selector": "div.ceramic-hero > div.flex > div.flex-1 > p.text-sm",
+       "ausschnitt": "<p class=\"text-sm sm:text-base text-neutral-700 max-w-2xl leading-relaxed\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 12,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 290
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 100,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 758,
+     "cls": 0,
+     "tbt": 14,
+     "fcp": 335,
+     "si": 418,
+     "js_kb": 659,
+     "font_kb": 77,
+     "gesamt_kb": 910,
+     "benchmark": 1461,
+     "lcp_element": {
+      "selector": "div.ceramic-hero > div.flex > div.flex-1 > h1.text-3xl",
+      "ausschnitt": "<h1 class=\"text-3xl sm:text-5xl font-black tracking-tight text-neutral-900 leading-ti…\">"
+     },
+     "spanne": {
+      "perf": [
+       100,
+       100
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       749,
+       767
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       14,
+       17
+      ],
+      "fcp": [
+       334,
+       354
+      ],
+      "si": [
+       402,
+       472
+      ],
+      "js_kb": [
+       659,
+       659
+      ],
+      "font_kb": [
+       77,
+       77
+      ],
+      "gesamt_kb": [
+       910,
+       910
+      ],
+      "benchmark": [
+       1267,
+       1478
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 757.6974999999999,
+      "cls": 0,
+      "tbt": 13.5,
+      "fcp": 335.07899999999995,
+      "si": 401.7222757500173,
+      "js_kb": 659,
+      "font_kb": 77,
+      "gesamt_kb": 910,
+      "benchmark": 1267,
+      "lcp_element": {
+       "selector": "div.ceramic-hero > div.flex > div.flex-1 > h1.text-3xl",
+       "ausschnitt": "<h1 class=\"text-3xl sm:text-5xl font-black tracking-tight text-neutral-900 leading-ti…\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 15,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 298
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 767.4010249137998,
+      "cls": 0,
+      "tbt": 16.5,
+      "fcp": 354.37201423645706,
+      "si": 471.7656794994658,
+      "js_kb": 659,
+      "font_kb": 77,
+      "gesamt_kb": 910,
+      "benchmark": 1478,
+      "lcp_element": {
+       "selector": "div.ceramic-hero > div.flex > div.flex-1 > h1.text-3xl",
+       "ausschnitt": "<h1 class=\"text-3xl sm:text-5xl font-black tracking-tight text-neutral-900 leading-ti…\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 32,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 339
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 748.6402,
+      "cls": 0,
+      "tbt": 13.5,
+      "fcp": 334.3201,
+      "si": 418.20890908339413,
+      "js_kb": 659,
+      "font_kb": 77,
+      "gesamt_kb": 910,
+      "benchmark": 1461,
+      "lcp_element": {
+       "selector": "div.ceramic-hero > div.flex > div.flex-1 > h1.text-3xl",
+       "ausschnitt": "<h1 class=\"text-3xl sm:text-5xl font-black tracking-tight text-neutral-900 leading-ti…\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 16,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 322
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "/standorte": {
+   "mobil": {
+    "median": {
+     "perf": 57,
+     "a11y": 95,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 3833,
+     "cls": 0.516,
+     "tbt": 427,
+     "fcp": 1224,
+     "si": 1515,
+     "js_kb": 427,
+     "font_kb": 77,
+     "gesamt_kb": 617,
+     "benchmark": 1282.5,
+     "lcp_element": {
+      "selector": "div.min-h-screen > section.ceramic-band > div.max-w-5xl > p.text-lg",
+      "ausschnitt": "<p class=\"text-lg sm:text-xl text-neutral-700 max-w-3xl mx-auto leading-relaxed\">"
+     },
+     "spanne": {
+      "perf": [
+       48,
+       64
+      ],
+      "a11y": [
+       95,
+       95
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       3794,
+       3870
+      ],
+      "cls": [
+       0.516,
+       0.516
+      ],
+      "tbt": [
+       198,
+       774
+      ],
+      "fcp": [
+       1212,
+       1307
+      ],
+      "si": [
+       1507,
+       1790
+      ],
+      "js_kb": [
+       427,
+       427
+      ],
+      "font_kb": [
+       77,
+       77
+      ],
+      "gesamt_kb": [
+       617,
+       617
+      ],
+      "benchmark": [
+       1190,
+       1433.5
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 48,
+      "a11y": 95,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3869.859,
+      "cls": 0.5155186447875992,
+      "tbt": 774.4765000000002,
+      "fcp": 1306.953,
+      "si": 1789.854492819611,
+      "js_kb": 427,
+      "font_kb": 77,
+      "gesamt_kb": 617,
+      "benchmark": 1190,
+      "lcp_element": {
+       "selector": "div.min-h-screen > section.ceramic-band > div.max-w-5xl > p.text-lg",
+       "ausschnitt": "<p class=\"text-lg sm:text-xl text-neutral-700 max-w-3xl mx-auto leading-relaxed\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 18,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 457
+      },
+      "cls_quellen": [
+       {
+        "selector": "section.py-12 > div.w-full > div.w-full > div.relative",
+        "wert": 0.5155
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     },
+     {
+      "perf": 57,
+      "a11y": 95,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3794.4267,
+      "cls": 0.5155186447875992,
+      "tbt": 426.6911,
+      "fcp": 1223.6178,
+      "si": 1507.4683103190814,
+      "js_kb": 427,
+      "font_kb": 77,
+      "gesamt_kb": 617,
+      "benchmark": 1282.5,
+      "lcp_element": {
+       "selector": "div.min-h-screen > section.ceramic-band > div.max-w-5xl > p.text-lg",
+       "ausschnitt": "<p class=\"text-lg sm:text-xl text-neutral-700 max-w-3xl mx-auto leading-relaxed\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 17,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 346
+      },
+      "cls_quellen": [
+       {
+        "selector": "section.py-12 > div.w-full > div.w-full > div.relative",
+        "wert": 0.5155
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     },
+     {
+      "perf": 64,
+      "a11y": 95,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3833.440925,
+      "cls": 0.5155186447875992,
+      "tbt": 198,
+      "fcp": 1211.7967,
+      "si": 1514.9969306568373,
+      "js_kb": 427,
+      "font_kb": 77,
+      "gesamt_kb": 617,
+      "benchmark": 1433.5,
+      "lcp_element": {
+       "selector": "div.min-h-screen > section.ceramic-band > div.max-w-5xl > p.text-lg",
+       "ausschnitt": "<p class=\"text-lg sm:text-xl text-neutral-700 max-w-3xl mx-auto leading-relaxed\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 11,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 229
+      },
+      "cls_quellen": [
+       {
+        "selector": "section.py-12 > div.w-full > div.w-full > div.relative",
+        "wert": 0.5155
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 83,
+     "a11y": 95,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 779,
+     "cls": 0.338,
+     "tbt": 20,
+     "fcp": 345,
+     "si": 509,
+     "js_kb": 651,
+     "font_kb": 77,
+     "gesamt_kb": 897,
+     "benchmark": 1404.5,
+     "lcp_element": {
+      "selector": "div.min-h-screen > section.ceramic-band > div.max-w-5xl > h1.text-4xl",
+      "ausschnitt": "<h1 class=\"text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-neutral-90…\">"
+     },
+     "spanne": {
+      "perf": [
+       83,
+       100
+      ],
+      "a11y": [
+       95,
+       95
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       757,
+       823
+      ],
+      "cls": [
+       0,
+       0.338
+      ],
+      "tbt": [
+       20,
+       25
+      ],
+      "fcp": [
+       331,
+       355
+      ],
+      "si": [
+       480,
+       569
+      ],
+      "js_kb": [
+       651,
+       651
+      ],
+      "font_kb": [
+       77,
+       77
+      ],
+      "gesamt_kb": [
+       897,
+       897
+      ],
+      "benchmark": [
+       1286,
+       1409
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 100,
+      "a11y": 95,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 779.32875,
+      "cls": 0,
+      "tbt": 19.5,
+      "fcp": 354.665,
+      "si": 569.1467507760291,
+      "js_kb": 651,
+      "font_kb": 77,
+      "gesamt_kb": 897,
+      "benchmark": 1286,
+      "lcp_element": {
+       "selector": "div.min-h-screen > section.ceramic-band > div.max-w-5xl > h1.text-4xl",
+       "ausschnitt": "<h1 class=\"text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-neutral-90…\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 15,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 352
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     },
+     {
+      "perf": 83,
+      "a11y": 95,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 757.0519999999999,
+      "cls": 0.33756139036102073,
+      "tbt": 24.5,
+      "fcp": 331.36799999999994,
+      "si": 509.3627185830695,
+      "js_kb": 651,
+      "font_kb": 77,
+      "gesamt_kb": 897,
+      "benchmark": 1404.5,
+      "lcp_element": {
+       "selector": "div.min-h-screen > section.ceramic-band > div.max-w-5xl > h1.text-4xl",
+       "ausschnitt": "<h1 class=\"text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-neutral-90…\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 12,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 347
+      },
+      "cls_quellen": [
+       {
+        "selector": "section.py-12 > div.w-full > div.w-full > div.relative",
+        "wert": 0.3376
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     },
+     {
+      "perf": 83,
+      "a11y": 95,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 822.9058,
+      "cls": 0.33756139036102073,
+      "tbt": 20,
+      "fcp": 345.4529,
+      "si": 480.2634144173617,
+      "js_kb": 651,
+      "font_kb": 77,
+      "gesamt_kb": 897,
+      "benchmark": 1409,
+      "lcp_element": {
+       "selector": "div.min-h-screen > section.ceramic-band > div.max-w-5xl > h1.text-4xl",
+       "ausschnitt": "<h1 class=\"text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-neutral-90…\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 10,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 318
+      },
+      "cls_quellen": [
+       {
+        "selector": "section.py-12 > div.w-full > div.w-full > div.relative",
+        "wert": 0.3376
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "/standorte/wetzlar": {
+   "mobil": {
+    "median": {
+     "perf": 76,
+     "a11y": 97,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 4985,
+     "cls": 0,
+     "tbt": 305,
+     "fcp": 1213,
+     "si": 1213,
+     "js_kb": 421,
+     "font_kb": 77,
+     "gesamt_kb": 616,
+     "benchmark": 1466.5,
+     "lcp_element": {
+      "selector": "div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description",
+      "ausschnitt": "<p id=\"cookie-consent-description\" class=\"text-sm text-neutral-700 leading-relaxed mb-4\">"
+     },
+     "spanne": {
+      "perf": [
+       74,
+       76
+      ],
+      "a11y": [
+       97,
+       97
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       4859,
+       5020
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       289,
+       331
+      ],
+      "fcp": [
+       1213,
+       1220
+      ],
+      "si": [
+       1213,
+       1319
+      ],
+      "js_kb": [
+       421,
+       421
+      ],
+      "font_kb": [
+       77,
+       77
+      ],
+      "gesamt_kb": [
+       616,
+       616
+      ],
+      "benchmark": [
+       1441,
+       1519.5
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 76,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 4985.322650000002,
+      "cls": 0,
+      "tbt": 288.57770000000073,
+      "fcp": 1212.8446,
+      "si": 1212.8446,
+      "js_kb": 421,
+      "font_kb": 77,
+      "gesamt_kb": 616,
+      "benchmark": 1441,
+      "lcp_element": {
+       "selector": "div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description",
+       "ausschnitt": "<p id=\"cookie-consent-description\" class=\"text-sm text-neutral-700 leading-relaxed mb-4\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 15,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 999
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     },
+     {
+      "perf": 74,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 5019.9303500000005,
+      "cls": 0,
+      "tbt": 331.00995000000125,
+      "fcp": 1219.9800999999998,
+      "si": 1318.8900223684086,
+      "js_kb": 421,
+      "font_kb": 77,
+      "gesamt_kb": 616,
+      "benchmark": 1466.5,
+      "lcp_element": {
+       "selector": "div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description",
+       "ausschnitt": "<p id=\"cookie-consent-description\" class=\"text-sm text-neutral-700 leading-relaxed mb-4\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 19,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 1156
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     },
+     {
+      "perf": 76,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 4859.05485,
+      "cls": 0,
+      "tbt": 305.00000000000045,
+      "fcp": 1213.1233000000002,
+      "si": 1213.1233000000002,
+      "js_kb": 421,
+      "font_kb": 77,
+      "gesamt_kb": 616,
+      "benchmark": 1519.5,
+      "lcp_element": {
+       "selector": "div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description",
+       "ausschnitt": "<p id=\"cookie-consent-description\" class=\"text-sm text-neutral-700 leading-relaxed mb-4\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 10,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 1004
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 100,
+     "a11y": 97,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 715,
+     "cls": 0,
+     "tbt": 17,
+     "fcp": 340,
+     "si": 435,
+     "js_kb": 653,
+     "font_kb": 77,
+     "gesamt_kb": 904,
+     "benchmark": 1474.5,
+     "lcp_element": {
+      "selector": "div.pt-32 > div.max-w-7xl > div.ceramic-hero > h1.text-3xl",
+      "ausschnitt": "<h1 class=\"text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-neutral-90…\">"
+     },
+     "spanne": {
+      "perf": [
+       100,
+       100
+      ],
+      "a11y": [
+       97,
+       97
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       700,
+       770
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       14,
+       22
+      ],
+      "fcp": [
+       331,
+       345
+      ],
+      "si": [
+       421,
+       476
+      ],
+      "js_kb": [
+       653,
+       653
+      ],
+      "font_kb": [
+       77,
+       77
+      ],
+      "gesamt_kb": [
+       904,
+       904
+      ],
+      "benchmark": [
+       1375,
+       1517.5
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 100,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 714.6800000000001,
+      "cls": 0,
+      "tbt": 22.499999999999773,
+      "fcp": 331.12,
+      "si": 420.90077675011986,
+      "js_kb": 653,
+      "font_kb": 77,
+      "gesamt_kb": 904,
+      "benchmark": 1474.5,
+      "lcp_element": {
+       "selector": "div.pt-32 > div.max-w-7xl > div.ceramic-hero > h1.text-3xl",
+       "ausschnitt": "<h1 class=\"text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-neutral-90…\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 13,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 333
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     },
+     {
+      "perf": 100,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 769.5042249999999,
+      "cls": 0,
+      "tbt": 14,
+      "fcp": 339.71669999999995,
+      "si": 434.6185832498703,
+      "js_kb": 653,
+      "font_kb": 77,
+      "gesamt_kb": 904,
+      "benchmark": 1375,
+      "lcp_element": {
+       "selector": "div.pt-32 > div.max-w-7xl > div.ceramic-hero > h1.text-3xl",
+       "ausschnitt": "<h1 class=\"text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-neutral-90…\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 18,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 352
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     },
+     {
+      "perf": 100,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 699.9339499999999,
+      "cls": 0.0003456458174592302,
+      "tbt": 16.5,
+      "fcp": 345.2893,
+      "si": 476.2718803907927,
+      "js_kb": 653,
+      "font_kb": 77,
+      "gesamt_kb": 904,
+      "benchmark": 1517.5,
+      "lcp_element": {
+       "selector": "div.pt-32 > div.max-w-7xl > div.ceramic-hero > h1.text-3xl",
+       "ausschnitt": "<h1 class=\"text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-neutral-90…\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 12,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 227
+      },
+      "cls_quellen": [
+       {
+        "selector": "div > div.flex > button.pr-2.5 > svg.lucide",
+        "wert": 0.0003
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "/fliesen": {
+   "mobil": {
+    "median": {
+     "perf": 82,
+     "a11y": 97,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 3785,
+     "cls": 0,
+     "tbt": 267,
+     "fcp": 1365,
+     "si": 1365,
+     "js_kb": 445,
+     "font_kb": 77,
+     "gesamt_kb": 670,
+     "benchmark": 1525.5,
+     "lcp_element": {
+      "selector": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+      "ausschnitt": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">"
+     },
+     "spanne": {
+      "perf": [
+       81,
+       88
+      ],
+      "a11y": [
+       97,
+       97
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       3335,
+       4181
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       215,
+       315
+      ],
+      "fcp": [
+       1364,
+       1373
+      ],
+      "si": [
+       1364,
+       1373
+      ],
+      "js_kb": [
+       445,
+       445
+      ],
+      "font_kb": [
+       77,
+       77
+      ],
+      "gesamt_kb": [
+       670,
+       670
+      ],
+      "benchmark": [
+       1468,
+       1529
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 81,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 4181.264196918228,
+      "cls": 0,
+      "tbt": 267.1839507704424,
+      "fcp": 1364.632098459114,
+      "si": 1364.632098459114,
+      "js_kb": 445,
+      "font_kb": 77,
+      "gesamt_kb": 670,
+      "benchmark": 1468,
+      "lcp_element": {
+       "selector": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+       "ausschnitt": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 23,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 307
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     },
+     {
+      "perf": 82,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3784.7736,
+      "cls": 0,
+      "tbt": 315.4999999999991,
+      "fcp": 1373.1823999999997,
+      "si": 1373.1823999999997,
+      "js_kb": 445,
+      "font_kb": 77,
+      "gesamt_kb": 670,
+      "benchmark": 1525.5,
+      "lcp_element": {
+       "selector": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+       "ausschnitt": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 16,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 274
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     },
+     {
+      "perf": 88,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3334.9747500000008,
+      "cls": 0,
+      "tbt": 214.99999999999955,
+      "fcp": 1363.9899,
+      "si": 1363.9899,
+      "js_kb": 445,
+      "font_kb": 77,
+      "gesamt_kb": 670,
+      "benchmark": 1529,
+      "lcp_element": {
+       "selector": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+       "ausschnitt": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 14,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 248
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 100,
+     "a11y": 97,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 795,
+     "cls": 0,
+     "tbt": 19,
+     "fcp": 379,
+     "si": 490,
+     "js_kb": 662,
+     "font_kb": 77,
+     "gesamt_kb": 1054,
+     "benchmark": 1393.5,
+     "lcp_element": {
+      "selector": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > h1#fliesen-hub-heading",
+      "ausschnitt": "<h1 id=\"fliesen-hub-heading\" class=\"text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight\">"
+     },
+     "spanne": {
+      "perf": [
+       100,
+       100
+      ],
+      "a11y": [
+       97,
+       97
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       782,
+       806
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       16,
+       43
+      ],
+      "fcp": [
+       373,
+       388
+      ],
+      "si": [
+       445,
+       552
+      ],
+      "js_kb": [
+       662,
+       662
+      ],
+      "font_kb": [
+       77,
+       77
+      ],
+      "gesamt_kb": [
+       1054,
+       1054
+      ],
+      "benchmark": [
+       1262.5,
+       1426
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 100,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 781.8110000000003,
+      "cls": 0,
+      "tbt": 16,
+      "fcp": 378.72440000000006,
+      "si": 490.38685159259694,
+      "js_kb": 662,
+      "font_kb": 77,
+      "gesamt_kb": 1054,
+      "benchmark": 1393.5,
+      "lcp_element": {
+       "selector": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > h1#fliesen-hub-heading",
+       "ausschnitt": "<h1 id=\"fliesen-hub-heading\" class=\"text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 18,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 336
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     },
+     {
+      "perf": 100,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 805.95635,
+      "cls": 0,
+      "tbt": 42.514549999999986,
+      "fcp": 387.97090000000003,
+      "si": 552.4423009736123,
+      "js_kb": 662,
+      "font_kb": 77,
+      "gesamt_kb": 1054,
+      "benchmark": 1426,
+      "lcp_element": {
+       "selector": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > h1#fliesen-hub-heading",
+       "ausschnitt": "<h1 id=\"fliesen-hub-heading\" class=\"text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 17,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 444
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     },
+     {
+      "perf": 100,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 794.8620999999997,
+      "cls": 0,
+      "tbt": 19.499999999999886,
+      "fcp": 373.2414,
+      "si": 444.58277425008686,
+      "js_kb": 662,
+      "font_kb": 77,
+      "gesamt_kb": 1054,
+      "benchmark": 1262.5,
+      "lcp_element": {
+       "selector": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > h1#fliesen-hub-heading",
+       "ausschnitt": "<h1 id=\"fliesen-hub-heading\" class=\"text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 16,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 341
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "/ueber-uns": {
+   "mobil": {
+    "median": {
+     "perf": 86,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 3639,
+     "cls": 0,
+     "tbt": 236,
+     "fcp": 1216,
+     "si": 1216,
+     "js_kb": 425,
+     "font_kb": 77,
+     "gesamt_kb": 612,
+     "benchmark": 1529.5,
+     "lcp_element": {
+      "selector": "div.min-h-screen > div.ceramic-band > div.max-w-5xl > p.text-base",
+      "ausschnitt": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto leading-relaxed\">"
+     },
+     "spanne": {
+      "perf": [
+       83,
+       87
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       3633,
+       3918
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       207,
+       258
+      ],
+      "fcp": [
+       1216,
+       1217
+      ],
+      "si": [
+       1216,
+       1246
+      ],
+      "js_kb": [
+       425,
+       425
+      ],
+      "font_kb": [
+       77,
+       77
+      ],
+      "gesamt_kb": [
+       612,
+       612
+      ],
+      "benchmark": [
+       1506.5,
+       1535
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 87,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3639.2306000000003,
+      "cls": 0,
+      "tbt": 207,
+      "fcp": 1215.8204,
+      "si": 1215.8204,
+      "js_kb": 425,
+      "font_kb": 77,
+      "gesamt_kb": 612,
+      "benchmark": 1529.5,
+      "lcp_element": {
+       "selector": "div.min-h-screen > div.ceramic-band > div.max-w-5xl > p.text-base",
+       "ausschnitt": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto leading-relaxed\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 8,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 226
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     },
+     {
+      "perf": 83,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3918.3414749999997,
+      "cls": 0,
+      "tbt": 258.4999999999991,
+      "fcp": 1217.3968999999997,
+      "si": 1245.8110640005414,
+      "js_kb": 425,
+      "font_kb": 77,
+      "gesamt_kb": 612,
+      "benchmark": 1506.5,
+      "lcp_element": {
+       "selector": "div.min-h-screen > div.ceramic-band > div.max-w-5xl > p.text-base",
+       "ausschnitt": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto leading-relaxed\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 20,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 258
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     },
+     {
+      "perf": 86,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3633.2039,
+      "cls": 0,
+      "tbt": 236,
+      "fcp": 1215.8026,
+      "si": 1215.8026,
+      "js_kb": 425,
+      "font_kb": 77,
+      "gesamt_kb": 612,
+      "benchmark": 1535,
+      "lcp_element": {
+       "selector": "div.min-h-screen > div.ceramic-band > div.max-w-5xl > p.text-base",
+       "ausschnitt": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto leading-relaxed\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 8,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 213
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 100,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 743,
+     "cls": 0,
+     "tbt": 13,
+     "fcp": 332,
+     "si": 439,
+     "js_kb": 645,
+     "font_kb": 77,
+     "gesamt_kb": 888,
+     "benchmark": 1490.5,
+     "lcp_element": {
+      "selector": "div.min-h-screen > div.ceramic-band > div.max-w-5xl > h1.text-4xl",
+      "ausschnitt": "<h1 class=\"text-4xl sm:text-5xl font-black tracking-tight leading-tight text-neutral-…\">"
+     },
+     "spanne": {
+      "perf": [
+       100,
+       100
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       738,
+       764
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       12,
+       28
+      ],
+      "fcp": [
+       330,
+       335
+      ],
+      "si": [
+       420,
+       448
+      ],
+      "js_kb": [
+       645,
+       645
+      ],
+      "font_kb": [
+       77,
+       77
+      ],
+      "gesamt_kb": [
+       888,
+       888
+      ],
+      "benchmark": [
+       1412.5,
+       1493.5
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 763.7239000000001,
+      "cls": 0,
+      "tbt": 27.500000000000114,
+      "fcp": 332.48260000000005,
+      "si": 447.83618739893336,
+      "js_kb": 645,
+      "font_kb": 77,
+      "gesamt_kb": 888,
+      "benchmark": 1412.5,
+      "lcp_element": {
+       "selector": "div.min-h-screen > div.ceramic-band > div.max-w-5xl > h1.text-4xl",
+       "ausschnitt": "<h1 class=\"text-4xl sm:text-5xl font-black tracking-tight leading-tight text-neutral-…\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 12,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 360
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 742.6188442624774,
+      "cls": 0,
+      "tbt": 13,
+      "fcp": 335.07922950831824,
+      "si": 439.2800833415057,
+      "js_kb": 645,
+      "font_kb": 77,
+      "gesamt_kb": 888,
+      "benchmark": 1493.5,
+      "lcp_element": {
+       "selector": "div.min-h-screen > div.ceramic-band > div.max-w-5xl > h1.text-4xl",
+       "ausschnitt": "<h1 class=\"text-4xl sm:text-5xl font-black tracking-tight leading-tight text-neutral-…\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 23,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 339
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 738.3623500000001,
+      "cls": 0,
+      "tbt": 11.5,
+      "fcp": 329.57490000000007,
+      "si": 419.55516091654874,
+      "js_kb": 645,
+      "font_kb": 77,
+      "gesamt_kb": 888,
+      "benchmark": 1490.5,
+      "lcp_element": {
+       "selector": "div.min-h-screen > div.ceramic-band > div.max-w-5xl > h1.text-4xl",
+       "ausschnitt": "<h1 class=\"text-4xl sm:text-5xl font-black tracking-tight leading-tight text-neutral-…\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 10,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 309
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "/kontakt": {
+   "mobil": {
+    "median": {
+     "perf": 75,
+     "a11y": 95,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 4849,
+     "cls": 0,
+     "tbt": 326,
+     "fcp": 1211,
+     "si": 1214,
+     "js_kb": 413,
+     "font_kb": 77,
+     "gesamt_kb": 603,
+     "benchmark": 1475.5,
+     "lcp_element": {
+      "selector": "div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description",
+      "ausschnitt": "<p id=\"cookie-consent-description\" class=\"text-sm text-neutral-700 leading-relaxed mb-4\">"
+     },
+     "spanne": {
+      "perf": [
+       75,
+       76
+      ],
+      "a11y": [
+       95,
+       95
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       4836,
+       4871
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       305,
+       337
+      ],
+      "fcp": [
+       1210,
+       1216
+      ],
+      "si": [
+       1211,
+       1231
+      ],
+      "js_kb": [
+       413,
+       413
+      ],
+      "font_kb": [
+       77,
+       77
+      ],
+      "gesamt_kb": [
+       603,
+       603
+      ],
+      "benchmark": [
+       1415.5,
+       1503
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 75,
+      "a11y": 95,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 4870.73955,
+      "cls": 0,
+      "tbt": 326.14005,
+      "fcp": 1215.7199,
+      "si": 1231.022666942477,
+      "js_kb": 413,
+      "font_kb": 77,
+      "gesamt_kb": 603,
+      "benchmark": 1415.5,
+      "lcp_element": {
+       "selector": "div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description",
+       "ausschnitt": "<p id=\"cookie-consent-description\" class=\"text-sm text-neutral-700 leading-relaxed mb-4\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 12,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 1064
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     },
+     {
+      "perf": 75,
+      "a11y": 95,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 4836.499050000001,
+      "cls": 0,
+      "tbt": 336.78585000000044,
+      "fcp": 1210.4283,
+      "si": 1214.254811752674,
+      "js_kb": 413,
+      "font_kb": 77,
+      "gesamt_kb": 603,
+      "benchmark": 1475.5,
+      "lcp_element": {
+       "selector": "div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description",
+       "ausschnitt": "<p id=\"cookie-consent-description\" class=\"text-sm text-neutral-700 leading-relaxed mb-4\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 12,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 1059
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     },
+     {
+      "perf": 76,
+      "a11y": 95,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 4848.518425,
+      "cls": 0,
+      "tbt": 304.5000000000009,
+      "fcp": 1211.4161,
+      "si": 1211.4161,
+      "js_kb": 413,
+      "font_kb": 77,
+      "gesamt_kb": 603,
+      "benchmark": 1503,
+      "lcp_element": {
+       "selector": "div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description",
+       "ausschnitt": "<p id=\"cookie-consent-description\" class=\"text-sm text-neutral-700 leading-relaxed mb-4\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 10,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 1002
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 96,
+     "a11y": 95,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 1408,
+     "cls": 0,
+     "tbt": 18,
+     "fcp": 332,
+     "si": 396,
+     "js_kb": 645,
+     "font_kb": 77,
+     "gesamt_kb": 892,
+     "benchmark": 1499,
+     "lcp_element": {
+      "selector": "div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description",
+      "ausschnitt": "<p id=\"cookie-consent-description\" class=\"text-sm text-neutral-700 leading-relaxed mb-4\">"
+     },
+     "spanne": {
+      "perf": [
+       96,
+       96
+      ],
+      "a11y": [
+       95,
+       95
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       1395,
+       1436
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       13,
+       25
+      ],
+      "fcp": [
+       329,
+       334
+      ],
+      "si": [
+       382,
+       533
+      ],
+      "js_kb": [
+       645,
+       645
+      ],
+      "font_kb": [
+       77,
+       77
+      ],
+      "gesamt_kb": [
+       892,
+       892
+      ],
+      "benchmark": [
+       1348,
+       1565.5
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 96,
+      "a11y": 95,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 1395.1940999999997,
+      "cls": 0,
+      "tbt": 12.5,
+      "fcp": 333.94679999999994,
+      "si": 533.4295229158317,
+      "js_kb": 645,
+      "font_kb": 77,
+      "gesamt_kb": 892,
+      "benchmark": 1348,
+      "lcp_element": {
+       "selector": "div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description",
+       "ausschnitt": "<p id=\"cookie-consent-description\" class=\"text-sm text-neutral-700 leading-relaxed mb-4\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 12,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 1082
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     },
+     {
+      "perf": 96,
+      "a11y": 95,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 1408.4228,
+      "cls": 0,
+      "tbt": 24.662599999999998,
+      "fcp": 329.3496,
+      "si": 395.8002632499972,
+      "js_kb": 645,
+      "font_kb": 77,
+      "gesamt_kb": 892,
+      "benchmark": 1499,
+      "lcp_element": {
+       "selector": "div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description",
+       "ausschnitt": "<p id=\"cookie-consent-description\" class=\"text-sm text-neutral-700 leading-relaxed mb-4\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 12,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 1043
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     },
+     {
+      "perf": 96,
+      "a11y": 95,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 1436.1631499999999,
+      "cls": 0,
+      "tbt": 18.079700000000003,
+      "fcp": 331.8406,
+      "si": 381.5772964166895,
+      "js_kb": 645,
+      "font_kb": 77,
+      "gesamt_kb": 892,
+      "benchmark": 1565.5,
+      "lcp_element": {
+       "selector": "div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description",
+       "ausschnitt": "<p id=\"cookie-consent-description\" class=\"text-sm text-neutral-700 leading-relaxed mb-4\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 14,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 1045
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ],
+      "benchmark_abweichung": true
+     }
+    ],
+    "benchmark_abweichung": true
+   }
+  },
+  "/fliesen/konfigurator": {
+   "mobil": {
+    "median": {
+     "perf": 74,
+     "a11y": 97,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 5371,
+     "cls": 0,
+     "tbt": 291,
+     "fcp": 1213,
+     "si": 1213,
+     "js_kb": 444,
+     "font_kb": 77,
+     "gesamt_kb": 656,
+     "benchmark": 1467.5,
+     "lcp_element": {
+      "selector": "div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description",
+      "ausschnitt": "<p id=\"cookie-consent-description\" class=\"text-sm text-neutral-700 leading-relaxed mb-4\">"
+     },
+     "spanne": {
+      "perf": [
+       72,
+       77
+      ],
+      "a11y": [
+       97,
+       97
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       5207,
+       5429
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       216,
+       367
+      ],
+      "fcp": [
+       1212,
+       1215
+      ],
+      "si": [
+       1212,
+       1310
+      ],
+      "js_kb": [
+       444,
+       444
+      ],
+      "font_kb": [
+       77,
+       77
+      ],
+      "gesamt_kb": [
+       656,
+       656
+      ],
+      "benchmark": [
+       1420.5,
+       1478.5
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 77,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 5371.47755,
+      "cls": 0,
+      "tbt": 215.99999999999955,
+      "fcp": 1213.2792999999997,
+      "si": 1213.2792999999997,
+      "js_kb": 444,
+      "font_kb": 77,
+      "gesamt_kb": 656,
+      "benchmark": 1420.5,
+      "lcp_element": {
+       "selector": "div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description",
+       "ausschnitt": "<p id=\"cookie-consent-description\" class=\"text-sm text-neutral-700 leading-relaxed mb-4\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 11,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 933
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     },
+     {
+      "perf": 74,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 5429.029599999998,
+      "cls": 0,
+      "tbt": 290.9999999999982,
+      "fcp": 1211.8656,
+      "si": 1211.8656,
+      "js_kb": 444,
+      "font_kb": 77,
+      "gesamt_kb": 656,
+      "benchmark": 1478.5,
+      "lcp_element": {
+       "selector": "div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description",
+       "ausschnitt": "<p id=\"cookie-consent-description\" class=\"text-sm text-neutral-700 leading-relaxed mb-4\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 11,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 1020
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     },
+     {
+      "perf": 72,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 5206.528049999999,
+      "cls": 0,
+      "tbt": 367.00000000000045,
+      "fcp": 1214.7223,
+      "si": 1309.8856727353207,
+      "js_kb": 444,
+      "font_kb": 77,
+      "gesamt_kb": 656,
+      "benchmark": 1467.5,
+      "lcp_element": {
+       "selector": "div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description",
+       "ausschnitt": "<p id=\"cookie-consent-description\" class=\"text-sm text-neutral-700 leading-relaxed mb-4\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 15,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 1291
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       },
+       {
+        "pfad": "/_next/static/chunks/0mrfva4uf7_pi.js",
+        "kb": 32
+       }
+      ]
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 100,
+     "a11y": 97,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 716,
+     "cls": 0,
+     "tbt": 18,
+     "fcp": 331,
+     "si": 489,
+     "js_kb": 653,
+     "font_kb": 77,
+     "gesamt_kb": 913,
+     "benchmark": 1419.5,
+     "lcp_element": {
+      "selector": "div.pt-32 > div.max-w-7xl > section.ceramic-hero > h1.text-3xl",
+      "ausschnitt": "<h1 class=\"text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight\">"
+     },
+     "spanne": {
+      "perf": [
+       100,
+       100
+      ],
+      "a11y": [
+       97,
+       97
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       676,
+       765
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       9,
+       27
+      ],
+      "fcp": [
+       331,
+       332
+      ],
+      "si": [
+       448,
+       514
+      ],
+      "js_kb": [
+       653,
+       653
+      ],
+      "font_kb": [
+       77,
+       77
+      ],
+      "gesamt_kb": [
+       913,
+       913
+      ],
+      "benchmark": [
+       1402.5,
+       1453.5
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 100,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 716.4302999999999,
+      "cls": 0,
+      "tbt": 9,
+      "fcp": 331.62020000000007,
+      "si": 447.58851456733345,
+      "js_kb": 653,
+      "font_kb": 77,
+      "gesamt_kb": 913,
+      "benchmark": 1453.5,
+      "lcp_element": {
+       "selector": "div.pt-32 > div.max-w-7xl > section.ceramic-hero > h1.text-3xl",
+       "ausschnitt": "<h1 class=\"text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 11,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 306
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     },
+     {
+      "perf": 100,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 765.0974500000001,
+      "cls": 0,
+      "tbt": 17.5,
+      "fcp": 331.39830000000006,
+      "si": 513.6166631783217,
+      "js_kb": 653,
+      "font_kb": 77,
+      "gesamt_kb": 913,
+      "benchmark": 1402.5,
+      "lcp_element": {
+       "selector": "div.pt-32 > div.max-w-7xl > section.ceramic-hero > h1.text-3xl",
+       "ausschnitt": "<h1 class=\"text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 16,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 383
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     },
+     {
+      "perf": 100,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 676.0588500000001,
+      "cls": 0,
+      "tbt": 26.999999999999886,
+      "fcp": 330.70589999999993,
+      "si": 488.62962621848646,
+      "js_kb": 653,
+      "font_kb": 77,
+      "gesamt_kb": 913,
+      "benchmark": 1419.5,
+      "lcp_element": {
+       "selector": "div.pt-32 > div.max-w-7xl > section.ceramic-hero > h1.text-3xl",
+       "ausschnitt": "<h1 class=\"text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 9,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 340
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "/blog": {
+   "mobil": {
+    "median": {
+     "perf": 66,
+     "a11y": 97,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 6608,
+     "cls": 0,
+     "tbt": 437,
+     "fcp": 1216,
+     "si": 1216,
+     "js_kb": 597,
+     "font_kb": 77,
+     "gesamt_kb": 879,
+     "benchmark": 1476,
+     "lcp_element": {
+      "selector": "div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description",
+      "ausschnitt": "<p id=\"cookie-consent-description\" class=\"text-sm text-neutral-700 leading-relaxed mb-4\">"
+     },
+     "spanne": {
+      "perf": [
+       65,
+       68
+      ],
+      "a11y": [
+       97,
+       97
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       6553,
+       6635
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       392,
+       470
+      ],
+      "fcp": [
+       1212,
+       1216
+      ],
+      "si": [
+       1212,
+       1266
+      ],
+      "js_kb": [
+       597,
+       597
+      ],
+      "font_kb": [
+       77,
+       77
+      ],
+      "gesamt_kb": [
+       879,
+       879
+      ],
+      "benchmark": [
+       1468.5,
+       1533.5
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 68,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 6553.117200000001,
+      "cls": 0,
+      "tbt": 392.220700000001,
+      "fcp": 1215.5586,
+      "si": 1215.5586,
+      "js_kb": 597,
+      "font_kb": 77,
+      "gesamt_kb": 879,
+      "benchmark": 1533.5,
+      "lcp_element": {
+       "selector": "div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description",
+       "ausschnitt": "<p id=\"cookie-consent-description\" class=\"text-sm text-neutral-700 leading-relaxed mb-4\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 11,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 1038
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     },
+     {
+      "perf": 65,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 6607.531200000001,
+      "cls": 0,
+      "tbt": 469.99999999999955,
+      "fcp": 1211.7655999999997,
+      "si": 1211.7655999999997,
+      "js_kb": 597,
+      "font_kb": 77,
+      "gesamt_kb": 879,
+      "benchmark": 1476,
+      "lcp_element": {
+       "selector": "div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description",
+       "ausschnitt": "<p id=\"cookie-consent-description\" class=\"text-sm text-neutral-700 leading-relaxed mb-4\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 14,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 1054
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     },
+     {
+      "perf": 66,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 6634.655650000001,
+      "cls": 0,
+      "tbt": 436.5,
+      "fcp": 1216.2914,
+      "si": 1266.1990520000502,
+      "js_kb": 597,
+      "font_kb": 77,
+      "gesamt_kb": 879,
+      "benchmark": 1468.5,
+      "lcp_element": {
+       "selector": "div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description",
+       "ausschnitt": "<p id=\"cookie-consent-description\" class=\"text-sm text-neutral-700 leading-relaxed mb-4\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 10,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 1331
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 100,
+     "a11y": 97,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 720,
+     "cls": 0,
+     "tbt": 11,
+     "fcp": 331,
+     "si": 431,
+     "js_kb": 667,
+     "font_kb": 77,
+     "gesamt_kb": 1038,
+     "benchmark": 1520,
+     "lcp_element": {
+      "selector": "a.glass-bezel-inner > div.grid > div.relative > img.object-cover",
+      "ausschnitt": "<img alt=\"Handwerkerbonus: Fliesenarbeiten von der Steuer absetzen\" decoding=\"async\" data-nimg=\"fill\" class=\"object-cover group-hover:scale-105 transition-trans"
+     },
+     "spanne": {
+      "perf": [
+       100,
+       100
+      ],
+      "a11y": [
+       97,
+       97
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       704,
+       745
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       7,
+       14
+      ],
+      "fcp": [
+       328,
+       331
+      ],
+      "si": [
+       390,
+       453
+      ],
+      "js_kb": [
+       667,
+       667
+      ],
+      "font_kb": [
+       77,
+       77
+      ],
+      "gesamt_kb": [
+       1038,
+       1038
+      ],
+      "benchmark": [
+       1319,
+       1551
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 100,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 745.1451,
+      "cls": 0,
+      "tbt": 11,
+      "fcp": 331.1756,
+      "si": 430.9171421666472,
+      "js_kb": 667,
+      "font_kb": 77,
+      "gesamt_kb": 1038,
+      "benchmark": 1520,
+      "lcp_element": {
+       "selector": "a.glass-bezel-inner > div.grid > div.relative > img.object-cover",
+       "ausschnitt": "<img alt=\"Handwerkerbonus: Fliesenarbeiten von der Steuer absetzen\" decoding=\"async\" data-nimg=\"fill\" class=\"object-cover group-hover:scale-105 transition-trans"
+      },
+      "lcp_phasen": {
+       "ttfb": 19,
+       "ladeverzoegerung": 26,
+       "ladezeit": 23,
+       "renderverzoegerung": 293
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     },
+     {
+      "perf": 100,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 703.51345,
+      "cls": 0,
+      "tbt": 7,
+      "fcp": 328.2934,
+      "si": 389.6708494765231,
+      "js_kb": 667,
+      "font_kb": 77,
+      "gesamt_kb": 1038,
+      "benchmark": 1551,
+      "lcp_element": {
+       "selector": "a.glass-bezel-inner > div.grid > div.relative > img.object-cover",
+       "ausschnitt": "<img alt=\"Handwerkerbonus: Fliesenarbeiten von der Steuer absetzen\" decoding=\"async\" data-nimg=\"fill\" class=\"object-cover group-hover:scale-105 transition-trans"
+      },
+      "lcp_phasen": {
+       "ttfb": 10,
+       "ladeverzoegerung": 24,
+       "ladezeit": 21,
+       "renderverzoegerung": 254
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     },
+     {
+      "perf": 100,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 720.1633750000001,
+      "cls": 0,
+      "tbt": 13.99999999999983,
+      "fcp": 330.9505,
+      "si": 452.6741125000535,
+      "js_kb": 667,
+      "font_kb": 77,
+      "gesamt_kb": 1038,
+      "benchmark": 1319,
+      "lcp_element": {
+       "selector": "a.glass-bezel-inner > div.grid > div.relative > img.object-cover",
+       "ausschnitt": "<img alt=\"Handwerkerbonus: Fliesenarbeiten von der Steuer absetzen\" decoding=\"async\" data-nimg=\"fill\" class=\"object-cover group-hover:scale-105 transition-trans"
+      },
+      "lcp_phasen": {
+       "ttfb": 14,
+       "ladeverzoegerung": 36,
+       "ladezeit": 57,
+       "renderverzoegerung": 289
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "/blog/rutschfeste-fliesen-r-klassen": {
+   "mobil": {
+    "median": {
+     "perf": 65,
+     "a11y": 97,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 6435,
+     "cls": 0,
+     "tbt": 475,
+     "fcp": 1364,
+     "si": 1364,
+     "js_kb": 584,
+     "font_kb": 77,
+     "gesamt_kb": 793,
+     "benchmark": 1445.5,
+     "lcp_element": {
+      "selector": "div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description",
+      "ausschnitt": "<p id=\"cookie-consent-description\" class=\"text-sm text-neutral-700 leading-relaxed mb-4\">"
+     },
+     "spanne": {
+      "perf": [
+       65,
+       68
+      ],
+      "a11y": [
+       97,
+       97
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       6326,
+       6505
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       378,
+       492
+      ],
+      "fcp": [
+       1358,
+       1405
+      ],
+      "si": [
+       1358,
+       1405
+      ],
+      "js_kb": [
+       584,
+       584
+      ],
+      "font_kb": [
+       77,
+       77
+      ],
+      "gesamt_kb": [
+       793,
+       793
+      ],
+      "benchmark": [
+       1428,
+       1523
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 68,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 6326.31895717013,
+      "cls": 0,
+      "tbt": 378.02126381134076,
+      "fcp": 1358.085055245368,
+      "si": 1358.085055245368,
+      "js_kb": 584,
+      "font_kb": 77,
+      "gesamt_kb": 793,
+      "benchmark": 1445.5,
+      "lcp_element": {
+       "selector": "div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description",
+       "ausschnitt": "<p id=\"cookie-consent-description\" class=\"text-sm text-neutral-700 leading-relaxed mb-4\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 14,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 842
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     },
+     {
+      "perf": 65,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 6435.223900000001,
+      "cls": 0,
+      "tbt": 491.94029999999975,
+      "fcp": 1404.7612,
+      "si": 1404.7612,
+      "js_kb": 584,
+      "font_kb": 77,
+      "gesamt_kb": 793,
+      "benchmark": 1428,
+      "lcp_element": {
+       "selector": "div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description",
+       "ausschnitt": "<p id=\"cookie-consent-description\" class=\"text-sm text-neutral-700 leading-relaxed mb-4\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 14,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 902
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     },
+     {
+      "perf": 65,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 6504.5068,
+      "cls": 0,
+      "tbt": 475.00000000000045,
+      "fcp": 1364.1266999999998,
+      "si": 1364.1266999999998,
+      "js_kb": 584,
+      "font_kb": 77,
+      "gesamt_kb": 793,
+      "benchmark": 1523,
+      "lcp_element": {
+       "selector": "div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description",
+       "ausschnitt": "<p id=\"cookie-consent-description\" class=\"text-sm text-neutral-700 leading-relaxed mb-4\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 13,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 940
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 100,
+     "a11y": 97,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 787,
+     "cls": 0,
+     "tbt": 17,
+     "fcp": 373,
+     "si": 447,
+     "js_kb": 654,
+     "font_kb": 77,
+     "gesamt_kb": 914,
+     "benchmark": 1419,
+     "lcp_element": {
+      "selector": "div.pt-32 > div.max-w-7xl > div.ceramic-hero > h1.text-3xl",
+      "ausschnitt": "<h1 class=\"text-3xl sm:text-5xl font-black tracking-tight text-neutral-900 leading-ti…\">"
+     },
+     "spanne": {
+      "perf": [
+       100,
+       100
+      ],
+      "a11y": [
+       97,
+       97
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       753,
+       789
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       16,
+       27
+      ],
+      "fcp": [
+       372,
+       381
+      ],
+      "si": [
+       446,
+       472
+      ],
+      "js_kb": [
+       654,
+       654
+      ],
+      "font_kb": [
+       77,
+       77
+      ],
+      "gesamt_kb": [
+       914,
+       914
+      ],
+      "benchmark": [
+       1276.5,
+       1447
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 100,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 753.4224,
+      "cls": 0,
+      "tbt": 27,
+      "fcp": 372.2816,
+      "si": 446.6160620503806,
+      "js_kb": 654,
+      "font_kb": 77,
+      "gesamt_kb": 914,
+      "benchmark": 1419,
+      "lcp_element": {
+       "selector": "div.pt-32 > div.max-w-7xl > div.ceramic-hero > h1.text-3xl",
+       "ausschnitt": "<h1 class=\"text-3xl sm:text-5xl font-black tracking-tight text-neutral-900 leading-ti…\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 10,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 342
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     },
+     {
+      "perf": 100,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 786.8372999999999,
+      "cls": 0,
+      "tbt": 15.999999999999886,
+      "fcp": 380.55819999999994,
+      "si": 472.3136409167863,
+      "js_kb": 654,
+      "font_kb": 77,
+      "gesamt_kb": 914,
+      "benchmark": 1276.5,
+      "lcp_element": {
+       "selector": "div.pt-32 > div.max-w-7xl > div.ceramic-hero > h1.text-3xl",
+       "ausschnitt": "<h1 class=\"text-3xl sm:text-5xl font-black tracking-tight text-neutral-900 leading-ti…\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 11,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 388
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     },
+     {
+      "perf": 100,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 789.287,
+      "cls": 0,
+      "tbt": 16.999999999999886,
+      "fcp": 372.85799999999995,
+      "si": 445.8930354998715,
+      "js_kb": 654,
+      "font_kb": 77,
+      "gesamt_kb": 914,
+      "benchmark": 1447,
+      "lcp_element": {
+       "selector": "div.pt-32 > div.max-w-7xl > div.ceramic-hero > h1.text-3xl",
+       "ausschnitt": "<h1 class=\"text-3xl sm:text-5xl font-black tracking-tight text-neutral-900 leading-ti…\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 10,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 361
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/1l32bdzcyvs_o.js",
+        "kb": 153.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/1_ivff33scuff.js",
+        "kb": 65.2
+       },
+       {
+        "pfad": "/_next/static/chunks/1o6jxmkgouxq6.js",
+        "kb": 44.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2zx3q7e7c69qs.js",
+        "kb": 43.5
+       }
+      ]
+     }
+    ]
+   }
+  }
+ },
+ "satz": "e0",
+ "base": "http://127.0.0.1:4310",
+ "laeufe": 3,
+ "bedingungen": "lokal next start (komprimiert), Erstbesuch mit Banner, Dritt-Hosts blockiert, Lighthouse-Standard-Drosselung (mobil: simuliert 4× CPU, Slow 4G; Desktop-Preset), Aufwärmlauf, Median aus 3, Benchmark-Band ±15 %",
+ "benchmark_band": 0.15,
+ "benchmark_referenz": 1351.5
+}

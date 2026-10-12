@@ -1,0 +1,11 @@
+{
+ "modus": "einzelbilder",
+ "seite": "/bad",
+ "ansicht": "m390",
+ "ergebnis": "/home/user/tezgel/_werkstatt/belege/e4-n2/02-pa/bewegung/einzelbilder-bad-sig-plan-m390-wdh1/ergebnis.json",
+ "meldung": "1 Kennungen, 168 Elemente auf /bad.",
+ "bilder_gesamt": 5,
+ "kennungen": [
+  "sig-plan: 5 Bilder, Modus echtzeit, Dauer 1120 ms, sichtbar 4/5, Paare % 0.29 / 2.02 / 2.18 / 1.11 · Element nicht vollständig sichtbar (Oberkante 958 px, Unterkante 1192 px, sichtbar bis 783 px): vor dem ersten Bild auf 813 px gescrollt, Oberkante 80 px unter dem Kopf (Ziel 80 px)"
+ ]
+}

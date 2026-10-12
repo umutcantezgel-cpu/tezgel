@@ -1,0 +1,12 @@
+a...a...
+/
+  mobil: perf 77 [71–79] · LCP 2867 ms [2861–2873] · TBT 779 ms [637–1219] · CLS 0.001 [0–0.001] · LCP-Element div.mx-auto > div.relative > div.mt-8 > p.max-w-mass
+  desktop: perf 100 [100–100] · LCP 622 ms [620–725] · TBT 36 ms [13–47] · CLS 0.002 [0.002–0.002] · LCP-Element div.mx-auto > div.relative > div.mt-8 > p.max-w-mass
+/: mobil 77 (LCP 2867 ms, TBT 779, CLS 0.001) · desktop 100
+a...a..w.
+/kontakt
+  mobil: perf 90 [82–91] · LCP 2714 ms [2713–2715] · TBT 294 ms [268–574] · CLS 0 [0–0] · LCP-Element div.grid > div.col-span-4 > div.mt-8 > p
+  desktop: perf 100 [100–100] · LCP 607 ms [603–648] · TBT 3 ms [0–8] · CLS 0.001 [0.001–0.002] · LCP-Element div.grid > div.col-span-4 > div.mt-8 > p
+/kontakt: mobil 90 (LCP 2714 ms, TBT 294, CLS 0) · desktop 100
+
+Ergebnis: /home/user/tezgel/_werkstatt/belege/e2-tor-3/lighthouse.json · Benchmark-Referenz 1566.0

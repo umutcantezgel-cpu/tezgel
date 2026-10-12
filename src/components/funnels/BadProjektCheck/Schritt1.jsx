@@ -1,17 +1,15 @@
 import { labelKlassen } from '@/components/kern/stile';
-import { nummerClass } from './stile';
 
-// 1. Badgröße (Schieberegler) (E-011: aus BadProjektCheck.jsx verschoben). Darstellung KERN v2 (Q-02): Schrittnummer und
-// Wert in Mono, nativer Regler in Tinte (accent-color, Trefferfläche 44 px), Marken in Mono. id, Grenzen, Schritt und
-// Handler unverändert; aria-valuetext nennt den Wert wie sichtbar („8,2 m²“ statt „8.2“).
+// 1. Badgröße (Schieberegler) (E-011: aus BadProjektCheck.jsx verschoben). E3-BAU-19: Darstellung nach dem KERN-Formularmuster;
+// Label, IDs, Grenzen, Schrittweite, Anzeige und Skalenbeschriftung unverändert.
 export default function Schritt1({ sqm, changeSqm, sqmLabel }) {
     return (
-        <div>
-            <div className="flex flex-wrap items-center justify-between gap-3">
+        <div className="min-w-0">
+            <div className="mb-2 flex items-center justify-between gap-4">
                 <label htmlFor="budget-sqm" className={labelKlassen}>
-                    <span className={nummerClass}>1.</span> Badezimmer-Größe in Quadratmetern:
+                    1. Badezimmer-Größe in Quadratmetern:
                 </label>
-                <span className="whitespace-nowrap border border-fuge bg-kalk px-3 py-1 font-mono text-fs-4 tabular-nums text-tinte">
+                <span className="whitespace-nowrap border border-strich bg-fliese px-4 py-1 font-anzeige text-fs-4 font-semibold tabular-nums text-tinte">
                     {sqmLabel} m²
                 </span>
             </div>
@@ -22,15 +20,13 @@ export default function Schritt1({ sqm, changeSqm, sqmLabel }) {
                 max="25"
                 step="0.5"
                 value={sqm}
-                aria-valuetext={`${sqmLabel} m²`}
                 onChange={(e) => changeSqm(e.target.value)}
-                className="mt-4 block h-11 w-full cursor-pointer accent-tinte"
+                className="block h-2 w-full cursor-pointer appearance-none bg-strich accent-tinte"
             />
-            {/* Marken: zwei Spalten, vier nebeneinander nur, wo jede Marke in eine Zeile passt (md einspaltig, ab xl zweispaltig) */}
-            <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1 font-mono text-fs-1 tabular-nums text-tinte-2 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
+            <div className="mt-2 grid grid-cols-2 gap-x-4 gap-y-1 font-mono text-fs-1 tabular-nums text-tinte-2 sm:flex sm:justify-between">
                 <span>3,5 m² (Gäste-WC)</span>
-                <span className="text-right md:text-center lg:text-right xl:text-center">8,2 m² (Standard)</span>
-                <span className="md:text-center lg:text-left xl:text-center">15,9 m² (Komfort)</span>
+                <span className="text-right">8,2 m² (Standard)</span>
+                <span>15,9 m² (Komfort)</span>
                 <span className="text-right">25 m² (Spa)</span>
             </div>
         </div>

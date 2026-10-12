@@ -45,8 +45,11 @@
   /* Schrift (K-006) */
   --font-text: var(--font-archivo), "Archivo Ersatz", Arial, sans-serif;
   --font-anzeige: var(--font-archivo), "Archivo Anzeige Ersatz", Arial, sans-serif;
-  /* Plex Mono ohne ß (Glyphe liest sich wie „B“); ß kommt aus Archivo (K-006) */
-  --font-mono: var(--font-plex-mono), var(--font-archivo), "Plex Ersatz", "Courier New", monospace;
+  /* Plex Mono ohne ß (Glyphe liest sich wie „B“); ß kommt aus Archivo (K-006). Bis Plex Mono geladen ist (nicht
+     vorgeladen), steht die metrikgleiche „Plex Ersatz“ davor – vorher sprang die Kennzeile von Archivo (proportional)
+     auf Plex und schob die H1 (CLS /bad Desktop 0,17, E3-Tor Anlauf 2); ihr Zeichenbereich lässt ß und alles außerhalb
+     des Plex-Zeichenbereichs weiter an Archivo fallen */
+  --font-mono: var(--font-plex-mono), "Plex Ersatz", var(--font-archivo), "Courier New", monospace;
   /* Alt-Namen zeigen bis zum Abbau auf die neuen Familien */
   --font-sans: var(--font-text);
   --font-display: var(--font-anzeige);
@@ -135,11 +138,6 @@
   }
 }
 
-/* Terminliste im Kalender: höchstens etwa dreieinhalb Tage sichtbar, scrollt in sich (Region mit tabindex) */
-@utility hoehe-terminliste {
-  max-height: min(calc(var(--spacing) * 32 * 3.5), 70dvh);
-}
-
 /* Einwilligungsbanner: höchstens so hoch, dass Kopf, Leiste und ein Rand frei bleiben (scrollt sonst in sich) */
 @utility hoehe-banner {
   max-height: calc(100dvh - var(--spacing) * 32);
@@ -176,6 +174,8 @@
 @font-face {
   font-family: "Plex Ersatz";
   src: local("Courier New"), local("Liberation Mono"), local("Courier");
+  /* Zeichenbereich der Plex-Datei (Latin-1 ohne ß U+00DF, Striche, Anführungen, Punkte, €, Minus) */
+  unicode-range: U+0020-007E, U+00A0-00DE, U+00E0-00FF, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+20AC, U+2212;
   size-adjust: 100%;
   ascent-override: 102.5%;
   descent-override: 27.5%;
@@ -508,5 +508,66 @@
     .planblatt-wand {
       margin-inline: var(--wand, 0);
     }
+  }
+  /* Plan bündig mit der Textkante (unter lg): die Zeichnung ragt um ihren Rand nach außen, damit die Wand an der
+     Inhaltskante steht (--wand-aussen = Rand / (1 − 2 · Rand) des Zeichnungsanteils, E3-NACH-01) */
+  .plan-buendig {
+    margin-inline: calc(var(--wand-aussen, 0%) * -1);
+  }
+  /* Abschnitte unterhalb des ersten Bildschirms: Stil und Layout erst in Sichtnähe (E3-NACH-07 – Lighthouse e2-tor-3:
+     „Style & Layout“ 1,6 s auf / mobil, Ausgang 0,7 s). `auto` merkt sich die gezeichnete Höhe; der Schätzwert gilt
+     nur bis zum ersten Zeichnen. Nur an Hüllen ohne überstehende Zeichen (Inhalt wird am Rand beschnitten). */
+  .spaet-zeichnen {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 50rem;
+  }
+  @media print {
+    .spaet-zeichnen {
+      content-visibility: visible;
+    }
+  }
+  /* Seitenwechsel /leistungen → /leistungen/[id] (E3-ORCH-02, K-007 seitenwechsel): der Plan der Leistung gleitet in den
+     Einstieg der Leistungsseite – nur bei der Übergangsart „plan-vor“ (Knopf „Fachdetails“), Dauer 4 · setzen. Unter lg
+     und bei reduzierter Bewegung ohne Animation (sofortiger Wechsel). */
+  ::view-transition-group(.plan-morph) {
+    animation-duration: var(--dauer-4);
+    animation-timing-function: var(--ease-setzen);
+  }
+  @media (width < 64rem), (prefers-reduced-motion: reduce) {
+    ::view-transition-group(.plan-morph),
+    ::view-transition-old(.plan-morph),
+    ::view-transition-new(.plan-morph),
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+      animation: none !important;
+    }
+  }
+  /* Etikett des Einstiegs unter sm: Glied für Glied untereinander statt mitten im Glied umzubrechen; die Trennkreuze
+     zwischen den Gliedern entfallen dort (E3-SICHT-ERZ Befund 4, E4-NACH-01) */
+  @media (width < 40rem) {
+    .etikett-zeile {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--spacing);
+    }
+    .etikett-zeile > svg {
+      display: none;
+    }
+  }
+  /* Lesefortschritt (Ratgeber, E3-BAU-10): die Linie wächst mit --lesefortschritt (0–1), ohne Übergang; steht in
+     utilities, damit sie den Startzustand scale-x-0 überschreibt */
+  .lesefortschritt-linie {
+    scale: var(--lesefortschritt, 0) 1;
+  }
+  /* Ein Rot je Bildschirm (K-003): trägt das Planblatt des Einstiegs die rote Achse seines Plans, bleibt die Laserachse des
+     Einstiegs ab lg Grundschicht (sonst zwei rote Lote nebeneinander, bei reduzierter Bewegung beide voll – E4-N2-02-PA) */
+  @media (width >= 64rem) {
+    header:has(.planblatt-achse) .leitachse-rot {
+      visibility: hidden;
+    }
+  }
+  /* Zeitband (/ueber-uns, E4-NACH-01): Jahreszahlen unter dem Band, Breite je Zeitraum nach Zahl der Jahre (--jahre) */
+  .zeitband-stueck {
+    flex: var(--jahre, 1) 1 0%;
   }
 }

@@ -125,7 +125,9 @@ export default function BestandDokument({
         <ErrorBoundary>
           <TrackingScripts />
           <HeaderWrapper />
-          <main id="main-content" className="flex-1 pb-16 lg:pb-0">
+          {/* Platz für die untere Leiste (bis lg) liegt im Fuß, nicht hier: sonst steht zwischen dunklem Abschluss und Fuß
+              ein heller Streifen (E3-NACH-04, Sichtabnahme E2-SICHT-2 Befund 22) */}
+          <main id="main-content" className="flex-1">
             {children}
           </main>
           <Footer />

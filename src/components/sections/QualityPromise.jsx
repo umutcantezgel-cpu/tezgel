@@ -2,35 +2,31 @@ import React from 'react';
 import { COMPANY_DATA } from '@/config/company';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Merkliste from '@/components/kern/Merkliste';
-import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Knopf from '@/components/kern/Knopf';
 
-// Qualitätsversprechen (KERN K-009, Merkliste): acht Punkte mit Fugenkreuz, „Garantierter Standard“ als Fuß
-// je Punkt, der Abschluss als Feld an der Fuge. Überschrift, Texte und Links bleiben wortgleich.
-export default function QualityPromise() {
+// Qualitätsversprechen (KERN K-009, Merkliste im Halbverband): acht Punkte als Zeilen an der Fuge mit Mono-Nummer,
+// „Garantierter Standard“ einmal im Etikett des Abschnitts, der Abschluss als Zeile ohne Kasten.
+// Überschrift, Texte und Links bleiben wortgleich. `art="arbeit"` auf Arbeitsansichten: Abstände und H2-Stufe der
+// Arbeitsansicht (H2 eine Stufe unter der H1, E3-SICHT-2-ARB Befund 15).
+export default function QualityPromise({ art = 'erzaehl' }) {
     const punkte = COMPANY_DATA.qualityPromises.map((promise) => ({
         titel: promise.title,
         text: promise.description,
-        fuss: (
-            <span className="flex items-center gap-2 font-mono text-fs-1 text-tinte-2">
-                <Fugenkreuz className="size-3 text-strich" />
-                Garantierter Standard
-            </span>
-        ),
     }));
 
     return (
         <Abschnitt
             id="qualitaet"
+            art={art}
             titelId="quality-promise-heading"
-            etikett={<>HWK Fachbetrieb &middot; {COMPANY_DATA.authority.shortName}</>}
+            etikett={<>HWK Fachbetrieb &middot; {COMPANY_DATA.authority.shortName} &middot; Garantierter Standard</>}
             titel="Unser 8-Punkte-Qualitätsversprechen für Ihr Fliesenprojekt"
             einleitung="Vom Aufmaß bis zur fertigen Fuge: Wir stehen zu unseren Vereinbarungen, Preisen und Terminen – in Aßlar, Wetzlar und ganz Hessen."
         >
-            <Merkliste spalten={4} nummeriert eintraege={punkte} />
+            <Merkliste spalten={2} verband nummeriert eintraege={punkte} />
 
-            <div className="mt-12 flex flex-col gap-6 border border-fuge bg-fliese p-6 md:flex-row md:items-center md:justify-between lg:p-8">
-                <div className="space-y-2 text-center md:text-left">
+            <div className="mt-12 flex flex-col gap-6 border-t border-strich pt-8 md:flex-row md:items-center md:justify-between">
+                <div className="space-y-2">
                     <p className="font-anzeige text-fs-4 font-semibold text-tinte">
                         Überzeugen Sie sich selbst von unserer Fachqualität
                     </p>
@@ -38,11 +34,11 @@ export default function QualityPromise() {
                         Kostenfreies Vor-Ort-Aufmaß durch {COMPANY_DATA.owner.fullName} – in Aßlar, Wetzlar, Gießen und Umgebung.
                     </p>
                 </div>
-                <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center">
-                    <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon">
+                <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                    <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon" className="w-full sm:w-auto">
                         <span className="font-mono">{COMPANY_DATA.contact.phone}</span>
                     </Knopf>
-                    <Knopf href="/kontakt" icon="pfeil-rechts">
+                    <Knopf href="/kontakt" icon="pfeil-rechts" className="w-full sm:w-auto">
                         Aufmaß anfragen
                     </Knopf>
                 </div>

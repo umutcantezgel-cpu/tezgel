@@ -1,0 +1,159 @@
+{
+ "satz": "E4-N2-02-PA",
+ "tags": [
+  "wcag2a",
+  "wcag2aa",
+  "wcag21a",
+  "wcag21aa",
+  "wcag22aa"
+ ],
+ "laeufe": 24,
+ "ernst_kritisch_knoten": 0,
+ "je_regel": {},
+ "ergebnisse": [
+  {
+   "seite": "/bad",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesen",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesen",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesen/konfigurator",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesen/konfigurator",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/rutschfeste-fliesen-r-klassen",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/rutschfeste-fliesen-r-klassen",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  }
+ ]
+}

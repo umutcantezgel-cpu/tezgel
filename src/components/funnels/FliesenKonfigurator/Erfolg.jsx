@@ -5,64 +5,59 @@ import { COMPANY_DATA } from '@/config/company';
 import { labelOf, ROOM_OPTIONS } from '@/lib/formulare/useFliesenKonfigurator';
 import ResultSummary from './ResultSummary';
 
-// Erfolgsansicht nach dem Absenden (Q-05, KERN v2, wie die Erfolgsansicht der Express-Anfrage): Haken und Text im
-// Etikett, Vorgangsnummer in Mono, Ergebnis als Schriftfeld, Anrufen als Hauptknopf. Texte und Verhalten unverändert;
-// das Brief-Emoji vor der Bestätigungszeile ist durch das Mail-Zeichen ersetzt (Emojis sind im KERN ausgeschlossen).
+// Erfolgsansicht nach dem Absenden (E-011: aus FliesenKonfigurator.jsx verschoben, Markup unverändert).
+// E3-BAU-15: Darstellung nach dem KERN-Formularmuster (wie BadanfrageFunnel/Erfolg); Texte, IDs, role und Nutzlast
+// unverändert. Die Bestätigungszeile ohne Emoji (freigegebener Mikrotext, wie E3-BAU-18).
 export default function Erfolg({ data, referenceId, handleNewRequest }) {
     const roomsText = data.rooms.map((id) => labelOf(ROOM_OPTIONS, id)).join(', ') || 'Fliesenprojekt';
     return (
-        <div className="@container">
-            <div className="border border-strich bg-fliese p-6 @xl:p-8 @4xl:p-12" role="status">
-                <div className="flex flex-wrap items-center gap-3">
-                    <span className={etikettKlassen}>
-                        <Icon name="haken" groesse={4} className="text-abnahme" />
-                        Konfiguration erfolgreich übermittelt
+        <div className="border border-strich bg-fliese p-6 sm:p-8 lg:p-12" role="status">
+            <div className="flex flex-wrap items-center gap-3">
+                <span className={etikettKlassen}>
+                    <Icon name="haken" groesse={4} className="text-abnahme" />
+                    Konfiguration erfolgreich übermittelt
+                </span>
+                {referenceId && (
+                    <span className="border border-fuge bg-kalk px-2 py-1 font-mono text-fs-1 text-tinte">
+                        Vorgangs-Nr.: {referenceId}
                     </span>
-                    {referenceId && (
-                        <span className="border border-fuge bg-kalk px-2 py-1 font-mono text-fs-1 text-tinte">
-                            Vorgangs-Nr.: {referenceId}
-                        </span>
-                    )}
+                )}
+            </div>
+            <p className="mt-6 font-anzeige text-fs-6 font-semibold text-tinte">
+                Vielen Dank, {data.name}!
+            </p>
+            <p className="mt-4 max-w-mass text-fs-3 text-tinte-2">
+                Ihre Konfiguration für <strong className="font-semibold text-tinte">{roomsText}</strong> ist erfolgreich bei Fliesenverlegung Tezgel eingegangen.
+                {data.email && (
+                    <span className="mt-3 block border-l-2 border-tinte pl-4 text-fs-2 text-tinte">
+                        Eine ausführliche Bestätigung mit allen Angaben und Materialschätzungen wurde an <em>{data.email}</em> gesendet.
+                    </span>
+                )}
+            </p>
+
+            <div className="mt-8 border-t border-fuge pt-6 text-fs-2 text-tinte-2">
+                <div className="flex items-center gap-2 font-semibold text-tinte">
+                    <Icon name="uhr" groesse={4} />
+                    Nächste Schritte:
                 </div>
-                <p className="mt-6 font-anzeige text-fs-5 font-semibold text-tinte">
-                    Vielen Dank, {data.name}!
+                <p className="mt-2">
+                    1. Inhaber Deniz Tezgel prüft Ihre Raum- und Materialangaben sowie Machbarkeit und Vorarbeiten.<br />
+                    2. Wir melden uns binnen <strong className="font-semibold text-tinte">24 bis 48 Stunden</strong> telefonisch zur Vorab-Klärung und Terminabsprache.<br />
+                    3. Kostenfreies Aufmaß vor Ort für Ihr verbindliches Festpreisangebot.
                 </p>
-                <p className="mt-4 max-w-mass font-text text-fs-3 text-tinte-2">
-                    Ihre Konfiguration für <strong className="font-semibold text-tinte">{roomsText}</strong> ist erfolgreich bei Fliesenverlegung Tezgel eingegangen.
-                    {data.email && (
-                        <span className="mt-3 flex items-start gap-2 border-l-2 border-tinte pl-4 text-fs-2 text-tinte">
-                            <Icon name="mail" groesse={4} className="mt-1" />
-                            <span>
-                                Eine ausführliche Bestätigung mit allen Angaben und Materialschätzungen wurde an <em>{data.email}</em> gesendet.
-                            </span>
-                        </span>
-                    )}
-                </p>
+            </div>
 
-                <div className="mt-8 border-t border-fuge pt-6 font-text text-fs-2 text-tinte-2">
-                    <div className="flex items-center gap-2 font-semibold text-tinte">
-                        <Icon name="uhr" groesse={4} />
-                        Nächste Schritte:
-                    </div>
-                    <p className="mt-2">
-                        1. Inhaber Deniz Tezgel prüft Ihre Raum- und Materialangaben sowie Machbarkeit und Vorarbeiten.<br />
-                        2. Wir melden uns binnen <strong className="font-semibold text-tinte">24 bis 48 Stunden</strong> telefonisch zur Vorab-Klärung und Terminabsprache.<br />
-                        3. Kostenfreies Aufmaß vor Ort für Ihr verbindliches Festpreisangebot.
-                    </p>
-                </div>
+            <div className="mt-8">
+                <ResultSummary data={data} />
+            </div>
 
-                <div className="mt-8">
-                    <ResultSummary data={data} />
-                </div>
-
-                <div className="mt-8 flex flex-col items-stretch gap-3 @xl:flex-row @xl:items-center">
-                    <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} iconLinks="telefon" className="text-center">
-                        Direkt anrufen: <span className="whitespace-nowrap font-mono">{COMPANY_DATA.contact.phone}</span>
-                    </Knopf>
-                    <Knopf variante="neben" onClick={handleNewRequest}>
-                        Neue Konfiguration starten
-                    </Knopf>
-                </div>
+            <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+                <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} iconLinks="telefon" className="w-full sm:w-auto">
+                    Direkt anrufen: {COMPANY_DATA.contact.phone}
+                </Knopf>
+                <Knopf variante="neben" onClick={handleNewRequest} className="w-full sm:w-auto">
+                    Neue Konfiguration starten
+                </Knopf>
             </div>
         </div>
     );

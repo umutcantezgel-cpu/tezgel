@@ -221,7 +221,7 @@ export default function HeroContactForm() {
                         name="notes"
                         type="text"
                         autoComplete="off"
-                        placeholder="z. B. ca. 15 m² Fliesen, Altbau, Walk-In Dusche"
+                        placeholder="z. B. 15 m², Altbau, Walk-In Dusche"
                         value={notes}
                         onChange={(e) => setNotes(e.target.value)}
                         className={feldKlassen}

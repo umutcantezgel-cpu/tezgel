@@ -1,0 +1,46 @@
+{
+ "modus": "register",
+ "seite": "/ueber-uns",
+ "base": "http://127.0.0.1:4320",
+ "ansicht": "m390",
+ "zeitpunkt": "2026-10-12T04:44:08.067Z",
+ "schritte": {
+  "hover_geprueft": 20,
+  "hover_fehler": 0,
+  "hover_fehler_beispiel": null,
+  "hover_ausserhalb_uebersprungen": 0,
+  "tab_schritte": 30,
+  "fokus_verschieden": 30
+ },
+ "data_motion_elemente": 147,
+ "gefundene_kennungen": [
+  "aufklappen",
+  "druck",
+  "fugenband",
+  "leitachse",
+  "zustand"
+ ],
+ "unbekannt": [],
+ "registriert_nicht_im_dom": [
+  "sig-kreuzlinie",
+  "sig-flucht",
+  "szene-ablauf",
+  "sig-plan",
+  "einzugsband",
+  "verband",
+  "anriss",
+  "auftritt",
+  "notiert",
+  "laden",
+  "seitenwechsel"
+ ],
+ "ohne_register": [],
+ "mit_register_eintraege": 3,
+ "erfasste_eintraege": 3,
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "verzeichnis": "/home/user/tezgel/_werkstatt/belege/e4-n2/01-pa/bewegung/register-ueber-uns-m390"
+}

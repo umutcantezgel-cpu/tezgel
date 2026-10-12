@@ -3,17 +3,19 @@
 // je Schritt ein Kästchen auf der Linie. Abweichung zum Vorbild: Im Kästchen steht die Schrittziffer (Mono), kein
 // Haken – ein Haken liest sich wie „bereits erledigt“. Dafür entfällt die zweite große Ziffer unter dem Kästchen,
 // damit es je Schritt nur eine Ziffer gibt.
-// Desktop: waagrechte Linie über drei Spalten; mobil: senkrechte Linie links, Schritte untereinander.
-// Bewegung: ein `auftritt` am Container (Register K-007); ohne JS und bei reduzierter Bewegung sofort sichtbar.
+// Seit E3-ORCH-01 mit den drei Planständen „Verlegeplan entsteht“ (SzeneAblauf) statt der Zeitleiste – die Sichtabnahme
+// E2-SICHT-2 nannte die Drei-Schritte-Leiste generisch. Seit E4-NACH-02 ruhig (ohne Scrollbindung): der große Moment der
+// Startseite ist SIG-1, je Erzählansicht genau einer (K-007; E3-SICHT-ERZ Befund 9).
 // Inhalt wörtlich aus dem Bestand, Daten aus `@/config/company` (processSteps, owner.fullName).
 import { COMPANY_DATA, processSteps } from '@/config/company';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import SzeneAblauf from '@/components/kern/SzeneAblauf';
 import { etikettKlassen, seitenKlassen } from '@/components/kern/stile';
 
 export default function Ablauf() {
   const { owner } = COMPANY_DATA;
   return (
-    <section id="ablauf" aria-labelledby="ablauf-heading" className="py-16 lg:py-24">
+    <section id="ablauf" aria-labelledby="ablauf-heading" className="spaet-zeichnen py-16 lg:py-24">
       <div className={seitenKlassen}>
         <div className="max-w-mass">
           <span className={etikettKlassen}>
@@ -29,25 +31,22 @@ export default function Ablauf() {
           </p>
         </div>
 
-        <ol
-          data-motion="auftritt"
-          className="ml-6 mt-16 border-l border-strich lg:ml-0 lg:grid lg:grid-cols-12 lg:gap-x-12 lg:border-l-0 lg:border-t"
-        >
-          {processSteps.map((schritt) => (
-            <li key={schritt.step} className="relative pb-12 pl-12 last:pb-0 lg:col-span-4 lg:pb-0 lg:pl-0 lg:pt-12">
-              {/* Kästchen auf der Linie mit der Schrittziffer – dekorativ, die Liste trägt die Reihenfolge */}
-              <span
-                aria-hidden="true"
-                className="absolute -left-6 top-0 flex size-12 items-center justify-center border border-strich bg-kalk font-mono text-fs-4 text-tinte lg:-top-6 lg:left-0"
-              >
-                {schritt.step}
-              </span>
-              <p className="font-text text-fs-2 font-semibold text-tinte-2">{schritt.subtitle}</p>
-              <h3 className="mt-2 font-anzeige text-fs-5 text-tinte">{schritt.title}</h3>
-              <p className="mt-4 max-w-mass text-fs-3 text-tinte-2">{schritt.description}</p>
-            </li>
-          ))}
-        </ol>
+        {/* „Verlegeplan entsteht“ (E3-ORCH-01): je Schritt der Plan im passenden Stand – Aufmaß mit Prüfmarken, Fugenbild
+            mit Passstücken, verlegt und abgenommen; ruhig, ohne Scrollbindung (E4-NACH-02). Wortlaut und Reihenfolge
+            (Untertitel, Titel, Text) wie bisher; Motiv „wohnen“, damit der Badplan des Einstiegs nicht doppelt steht. */}
+        <div className="mt-16">
+          <SzeneAblauf
+            plan="wohnen"
+            bewegt={false}
+            untertitelOben
+            schritte={processSteps.map((schritt) => ({
+              nummer: schritt.step,
+              untertitel: schritt.subtitle,
+              titel: schritt.title,
+              text: <p className="max-w-mass">{schritt.description}</p>,
+            }))}
+          />
+        </div>
       </div>
     </section>
   );

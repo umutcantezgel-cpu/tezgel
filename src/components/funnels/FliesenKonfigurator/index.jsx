@@ -1,15 +1,18 @@
 'use client';
 // Fliesen-Konfigurator (E-011): Markup hier. Logik aus useFliesenKonfigurator (gemeinsam mit der Kern-Ansicht);
 // Markup in Schritt1–4, Erfolg, WhatsAppGeoeffnet, OptionGroup und ResultSummary.
-// Darstellung nach KERN v2 (Q-05, Vorbild Express-Anfrage und Projektanfrage der Startseite): ein Feld (Fliese, Rahmen
-// Strich) mit Kopf (Mono-Etikett mit Fugenkreuz, Fortschritt als Mono-Felder, Überschrift) und dem Richtwert live als
-// Schriftfeld an der Fuge (Kalk, Zahlen in Mono); darunter ein Fugenband mit dem Fortschritt, dann der Schritt.
-// Spalten nach Behälterbreite (@container): ab 56 rem steht der Richtwert rechts neben der Überschrift.
-// Texte, IDs, Rollen, aria-*, Fokusführung (headingRef) und Verhalten unverändert.
+// E3-BAU-15: Rahmen nach dem KERN-Formularmuster (wie BadanfrageFunnel/index.jsx): Feld an der Fuge, Fortschritt in Tinte
+// und Fliese ohne Orange, Zurück als Textlink, Weiter als Hauptknopf. Logik, IDs, ARIA und Texte unverändert.
+// E4-NACH-13 (E3-SICHT-ARB Befunde 12, 14, 19): mit `ergebnisSpalte` (nur die Seite /fliesen/konfigurator) Werkzeug links
+// (8 Spalten), Live-Vorschau rechts (4 Spalten, ab lg klebend); eingebettet auf den Fliesen-Seiten einspaltig, die Vorschau
+// unter dem Kopf wie bisher. Vorschau als Fliese mit Fugenrahmen, deaktivierter Knopf als Strich-Rahmen, eine
+// Fortschrittsanzeige (die Kästchen), laufender Schritt mit rotem Achsstück.
+import React from 'react';
 import Icon from '@/components/icons/Icon';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import { etikettKlassen, knopfKlassen } from '@/components/kern/stile';
-import { STEPS, fmt, useFliesenKonfigurator } from '@/lib/formulare/useFliesenKonfigurator';
+import { ROOM_OPTIONS, STEPS, fmt, useFliesenKonfigurator } from '@/lib/formulare/useFliesenKonfigurator';
+import Verlegeplan from '@/components/kern/Verlegeplan';
 import Schritt1 from './Schritt1';
 import Schritt2 from './Schritt2';
 import Schritt3 from './Schritt3';
@@ -17,12 +20,19 @@ import Schritt4 from './Schritt4';
 import Erfolg from './Erfolg';
 import WhatsAppGeoeffnet from './WhatsAppGeoeffnet';
 
+// Weiter-Knopf: aktiv als Hauptknopf, gesperrt als Strich-Rahmen auf Fliese (keine graue Fläche)
+const WEITER_AKTIV = knopfKlassen('haupt', 'w-full sm:w-auto');
+// Verlegeplan der Ergebnis-Spalte (ab lg): je Bereich ein gezeichneter Plan aus den Planvorgaben (K-008), ohne Achse
+const RAUM_PLAN = { wohnen: 'wohnen', kueche: 'fugen', flur: 'grossformat', treppe: 'treppe', balkon: 'balkon', untergrund: 'untergrund', bad: 'bad' };
+const WEITER_GESPERRT =
+    'inline-flex min-h-11 w-full cursor-not-allowed items-center justify-center gap-2 rounded-none border border-strich bg-fliese px-6 py-3 font-text text-fs-2 font-semibold text-tinte-2 sm:w-auto';
+
 /**
  * Fliesen-Konfigurator. All props are optional presets:
  * area ('kueche' | 'flur' | … or an array of room ids), substrate ('altfliesen' | …),
  * format ('xxl' | …), material ('holzoptik' | …), floorHeating (boolean).
  */
-export default function FliesenKonfigurator({ area, substrate, format, material, floorHeating } = {}) {
+export default function FliesenKonfigurator({ area, substrate, format, material, floorHeating, ergebnisSpalte = false } = {}) {
     const {
         step,
         sentVia,
@@ -55,13 +65,17 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
     }
 
     // -----------------------------------------------------------------------
-    // Stepper
+    // Stepper: Werkzeug links, Ergebnis-Spalte rechts. Mobil in dieser Reihenfolge: Kopf, Ergebnis (ab Schritt 3)
+    // bzw. erst nach dem Werkzeug die Rückfrage (Schritte 1–2), Werkzeug.
     // -----------------------------------------------------------------------
+    const gesperrt = data.rooms.length === 0;
+    const ersterBereich = ROOM_OPTIONS.find((r) => data.rooms.includes(r.id))?.id;
+
     return (
-        <div className="@container">
-            <div className="border border-strich bg-fliese">
-                {/* Kopf: Etikett, Fortschritt, Überschrift und Richtwert live */}
-                <div className="p-6 @xl:p-8 @4xl:p-12">
+        <div className="border border-strich bg-fliese p-6 sm:p-8 lg:p-6">
+            <div className="grid grid-cols-4 gap-y-8 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12 lg:gap-y-4">
+                {/* Kopf und Fortschritt: eine sichtbare Anzeige (die Kästchen), „Schritt X von 4“ für Screenreader */}
+                <div className="order-1 col-span-4 border-b border-fuge pb-4 md:col-span-8 lg:col-span-12">
                     <div className="flex flex-wrap items-center justify-between gap-4">
                         <span className={etikettKlassen}>
                             <Fugenkreuz className="size-3 text-strich" />
@@ -74,7 +88,7 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
                                     <li
                                         key={item.title}
                                         aria-current={step === s ? 'step' : undefined}
-                                        className={`flex size-8 items-center justify-center border font-mono text-fs-1 tabular-nums ${
+                                        className={`relative flex size-8 items-center justify-center border font-mono text-fs-1 tabular-nums ${
                                             step === s
                                                 ? 'border-tinte bg-tinte text-kalk'
                                                 : step > s
@@ -93,83 +107,92 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
                                                 <span className="sr-only">Schritt {s}: {item.title}</span>
                                             </>
                                         )}
+                                        {/* laufender Schritt: das rote Achsstück (2-px-Linie in Laser), der eine rote Blickfang */}
+                                        {step === s && <span aria-hidden="true" className="absolute inset-x-0 bottom-0 border-b-2 border-laser" />}
                                     </li>
                                 );
                             })}
                         </ol>
                     </div>
+                    <p className="sr-only">Schritt {step} von 4</p>
+                    <h2 className="mt-4 font-anzeige text-fs-5 font-semibold text-tinte">Fliesenprojekt vorbereiten</h2>
+                </div>
 
-                    <div className="mt-6 grid grid-cols-1 gap-6 @4xl:grid-cols-12 @4xl:items-start">
-                        <div className="@4xl:col-span-6">
-                            <p className="font-mono text-fs-1 text-tinte-2 tabular-nums">Schritt {step} von 4</p>
-                            <h2 className="mt-2 text-fs-5 text-tinte">Fliesenprojekt vorbereiten</h2>
-                        </div>
-
-                        {/* Richtwert live als Schriftfeld: Zahl und Netto-Fläche in Mono */}
-                        <div className="flex flex-col gap-2 border border-fuge bg-kalk p-4 @4xl:col-span-6" aria-live="polite">
+                {/* Ergebnis-Spalte: ab lg rechts neben dem Werkzeug und auf dessen Höhe gestreckt (keine leere Spalte): oben die
+                    Bedarfsanzeige, darunter der Verlegeplan des ersten gewählten Bereichs (gezeichnet, ohne Achse). Mobil steht die
+                    Bedarfsanzeige nur mit ergebnisSpalte ab Schritt 3 vor dem Werkzeug, in Schritt 1–2 danach. */}
+                <div
+                    className={`col-span-4 md:col-span-8 ${
+                        ergebnisSpalte
+                            ? `${step >= 3 ? 'order-2' : 'order-4'} lg:col-span-4 lg:col-start-9 lg:row-start-2 lg:sticky lg:top-24 lg:flex lg:flex-col lg:gap-4 lg:self-start`
+                            : 'order-2 lg:col-span-12'
+                    }`}
+                >
+                    {/* Live-Vorschau des Materialbedarfs in jedem Schritt (Bestand; aria-live) */}
+                    {(
+                        <div className="space-y-1 border border-fuge bg-fliese p-4" aria-live="polite">
                             <p className="font-mono text-fs-1 text-tinte-2">Materialbedarf inkl. Verschnitt (Richtwert):</p>
                             {!hasAreaRooms && !hasStairs && (
-                                <p className="font-text text-fs-2 text-tinte-2">Wählen Sie zuerst einen Bereich.</p>
+                                <p className="text-fs-2 text-tinte-2">Wählen Sie zuerst einen Bereich.</p>
                             )}
                             {areaCalc && areaCalc.valid && (
-                                <p className="flex flex-wrap items-baseline gap-x-3 gap-y-1 font-mono text-fs-4 text-tinte tabular-nums">
-                                    <span>ca. <span className="whitespace-nowrap">{fmt(areaCalc.low)}–{fmt(areaCalc.high)}</span> m²</span>
-                                    <span className="text-fs-2 text-tinte-2">aus {fmt(areaCalc.net)} m² netto</span>
+                                <p className="font-mono text-fs-4 font-semibold tabular-nums text-tinte">
+                                    ca. {fmt(areaCalc.low)}–{fmt(areaCalc.high)} m²
+                                    <span className="ml-2 font-text font-normal text-fs-2 text-tinte-2">aus {fmt(areaCalc.net)} m² netto</span>
                                 </p>
                             )}
                             {areaCalc && !areaCalc.valid && (
-                                <p className="font-text text-fs-2 text-tinte-2">Fläche in Schritt 3 eingeben.</p>
+                                <p className="text-fs-2 text-tinte-2">Fläche in Schritt 3 eingeben.</p>
                             )}
                             {stairCalc && (
-                                <p className="font-text text-fs-2 text-tinte-2">
+                                <p className="text-fs-2 text-tinte-2">
                                     <strong className="font-semibold text-tinte">Treppe:</strong>{' '}
-                                    <span className={stairCalc.valid ? 'font-mono text-tinte' : undefined}>
-                                        {stairCalc.valid
-                                            ? `${fmt(stairCalc.total, 2)} m² netto (ohne Verschnitt)`
-                                            : 'Menge nach Stufenmaßen bzw. beim Aufmaß'}
-                                    </span>
+                                    {stairCalc.valid
+                                        ? `${fmt(stairCalc.total, 2)} m² netto (ohne Verschnitt)`
+                                        : 'Menge nach Stufenmaßen bzw. beim Aufmaß'}
                                 </p>
                             )}
                         </div>
-                    </div>
-                </div>
-
-                {/* Fortschritt als Fugenband (Schmuck; der Stand steht in der Liste oben) */}
-                <div className="grid grid-cols-4 gap-px" aria-hidden="true">
-                    {[1, 2, 3, 4].map((s) => (
-                        <div key={s} className={`h-1 ${s <= step ? 'bg-tinte' : 'bg-fuge'}`} />
-                    ))}
-                </div>
-
-                <div className="flex flex-col gap-8 p-6 @xl:p-8 @4xl:p-12">
-                    <div>
-                        <p ref={headingRef} tabIndex={-1} className="font-anzeige text-fs-4 font-semibold text-tinte">
-                            {step}. {STEPS[step - 1].title}
-                        </p>
-                        <p className="mt-2 font-text text-fs-2 text-tinte-2">{STEPS[step - 1].text}</p>
-                    </div>
-
-                    {step === 1 && <Schritt1 data={data} update={update} />}
-
-                    {/* Step 2: substrate */}
-                    {step === 2 && <Schritt2 data={data} update={update} />}
-
-                    {/* Step 3: format, material, quantity */}
-                    {step === 3 && <Schritt3 data={data} update={update} hasAreaRooms={hasAreaRooms} hasStairs={hasStairs} rises={rises} />}
-
-                    {/* Step 4: summary & contact */}
-                    {step === 4 && (
-                        <Schritt4 data={data} update={update} goToStep={goToStep} handleSubmit={handleSubmit} isSubmitting={isSubmitting} errorMessage={errorMessage} />
                     )}
+                    {ergebnisSpalte && (
+                        <div className="hidden items-center justify-center border border-fuge bg-fliese p-4 lg:flex">
+                            <Verlegeplan plan={RAUM_PLAN[ersterBereich] ?? 'fugen'} ohneAchse bemassung={false} />
+                        </div>
+                    )}
+                </div>
+
+                {/* Werkzeug: Schrittüberschrift, Formularinhalt und Schrittnavigation */}
+                <div className={`order-3 col-span-4 md:col-span-8 ${ergebnisSpalte ? 'lg:col-span-8 lg:col-start-1 lg:row-start-2' : 'lg:col-span-12'}`}>
+                    <div>
+                        <div className="mb-4">
+                            <p ref={headingRef} tabIndex={-1} className="font-anzeige text-fs-4 font-semibold text-tinte focus:outline-none">
+                                {step}. {STEPS[step - 1].title}
+                            </p>
+                            <p className="mt-2 text-fs-2 text-tinte-2">{STEPS[step - 1].text}</p>
+                        </div>
+
+                        {step === 1 && <Schritt1 data={data} update={update} />}
+
+                        {/* Step 2: substrate */}
+                        {step === 2 && <Schritt2 data={data} update={update} />}
+
+                        {/* Step 3: format, material, quantity */}
+                        {step === 3 && <Schritt3 data={data} update={update} hasAreaRooms={hasAreaRooms} hasStairs={hasStairs} rises={rises} />}
+
+                        {/* Step 4: summary & contact */}
+                        {step === 4 && (
+                            <Schritt4 data={data} update={update} goToStep={goToStep} handleSubmit={handleSubmit} isSubmitting={isSubmitting} errorMessage={errorMessage} />
+                        )}
+                    </div>
 
                     {/* Step navigation */}
                     {step < 4 && (
-                        <div className="flex flex-col-reverse items-stretch gap-4 border-t border-fuge pt-6 @xl:flex-row @xl:items-center @xl:justify-between">
+                        <div className={`mt-8 flex flex-col gap-4 border-t border-fuge pt-6 sm:flex-row sm:items-center ${step === 1 ? 'sm:justify-end' : 'sm:justify-between'}`}>
                             {step > 1 && (
                                 <button
                                     type="button"
                                     onClick={() => goToStep(step - 1)}
-                                    className={knopfKlassen('text')}
+                                    className={knopfKlassen('text', 'self-start')}
                                     data-motion="druck"
                                 >
                                     <Icon name="pfeil-links" groesse={5} />
@@ -179,9 +202,9 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
                             <button
                                 type="button"
                                 onClick={() => goToStep(step + 1)}
-                                disabled={data.rooms.length === 0}
-                                aria-describedby={data.rooms.length === 0 && step === 1 ? 'konfigurator-step1-hint' : undefined}
-                                className={knopfKlassen('haupt', 'w-full @xl:ml-auto @xl:w-auto')}
+                                disabled={gesperrt}
+                                aria-describedby={gesperrt && step === 1 ? 'konfigurator-step1-hint' : undefined}
+                                className={gesperrt ? WEITER_GESPERRT : WEITER_AKTIV}
                                 data-motion="druck"
                             >
                                 {step === 3 ? 'Zur Zusammenfassung' : `Weiter zu Schritt ${step + 1}`}

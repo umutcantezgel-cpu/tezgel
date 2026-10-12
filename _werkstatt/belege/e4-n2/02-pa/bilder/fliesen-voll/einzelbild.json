@@ -1,0 +1,533 @@
+{
+ "seite": "/fliesen",
+ "base": "http://127.0.0.1:4320",
+ "ziel": "/home/user/tezgel/_werkstatt/belege/e4-n2/02-pa/bilder/fliesen-voll",
+ "optionen": {
+  "ansichten": [
+   "m390",
+   "d1440"
+  ],
+  "scroll": "0",
+  "voll": true,
+  "einwilligung": "abgelehnt",
+  "bewegung": "reduce",
+  "warte": 0,
+  "dpr": 1,
+  "qualitaet": 70
+ },
+ "ergebnisse": [
+  {
+   "ansicht": "m390",
+   "seite": "/fliesen",
+   "status": 200,
+   "datei": "/home/user/tezgel/_werkstatt/belege/e4-n2/02-pa/bilder/fliesen-voll/m390-voll.jpg",
+   "anker": null,
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [
+    {
+     "art": "textkreuzung",
+     "text": "Jeder Raum stellt andere Anforderungen an den Belag. Im Wohn",
+     "selektor": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass",
+     "rechteck": {
+      "x": 41,
+      "y": 3700,
+      "w": 148,
+      "h": 12
+     },
+     "durch": "ul.grid.grid-cols-1 > li.flex.flex-col > article.flex.flex-1 > p.inline-flex.items-center"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Jeder Raum stellt andere Anforderungen an den Belag. Im Wohn",
+     "selektor": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass",
+     "rechteck": {
+      "x": 41,
+      "y": 3742,
+      "w": 162,
+      "h": 4
+     },
+     "durch": "article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12 > h3.min-w-0.font-anzeige"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Jeder Raum stellt andere Anforderungen an den Belag. Im Wohn",
+     "selektor": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass",
+     "rechteck": {
+      "x": 41,
+      "y": 3755,
+      "w": 162,
+      "h": 9
+     },
+     "durch": "article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12 > h3.min-w-0.font-anzeige"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Jeder Raum stellt andere Anforderungen an den Belag. Im Wohn",
+     "selektor": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass",
+     "rechteck": {
+      "x": 41,
+      "y": 3773,
+      "w": 98,
+      "h": 1
+     },
+     "durch": "article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12 > h3.min-w-0.font-anzeige"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Jeder Raum stellt andere Anforderungen an den Belag. Im Wohn",
+     "selektor": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass",
+     "rechteck": {
+      "x": 41,
+      "y": 3782,
+      "w": 98,
+      "h": 12
+     },
+     "durch": "article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12 > h3.min-w-0.font-anzeige"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Küche fliesen",
+     "selektor": "ul.mt-auto.grid > li > a.inline-flex.items-center > span",
+     "rechteck": {
+      "x": 41,
+      "y": 3827,
+      "w": 99,
+      "h": 9
+     },
+     "durch": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Flur & Diele fliesen",
+     "selektor": "ul.mt-auto.grid > li > a.inline-flex.items-center > span",
+     "rechteck": {
+      "x": 41,
+      "y": 3867,
+      "w": 136,
+      "h": 7
+     },
+     "durch": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Flur & Diele fliesen",
+     "selektor": "ul.mt-auto.grid > li > a.inline-flex.items-center > span",
+     "rechteck": {
+      "x": 41,
+      "y": 3882,
+      "w": 136,
+      "h": 2
+     },
+     "durch": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Fugenachsen über mehrere Räume",
+     "selektor": "ul.mt-auto.grid > li > a.inline-flex.items-center > span",
+     "rechteck": {
+      "x": 41,
+      "y": 3915,
+      "w": 257,
+      "h": 13
+     },
+     "durch": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Im Neubau ist der Fliesenleger ein Glied im Bauablauf: Estri",
+     "selektor": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass",
+     "rechteck": {
+      "x": 41,
+      "y": 4018,
+      "w": 164,
+      "h": 12
+     },
+     "durch": "ul.grid.grid-cols-1 > li.flex.flex-col > article.flex.flex-1 > p.inline-flex.items-center"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Im Neubau ist der Fliesenleger ein Glied im Bauablauf: Estri",
+     "selektor": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass",
+     "rechteck": {
+      "x": 41,
+      "y": 4060,
+      "w": 190,
+      "h": 4
+     },
+     "durch": "article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12 > h3.min-w-0.font-anzeige"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Im Neubau ist der Fliesenleger ein Glied im Bauablauf: Estri",
+     "selektor": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass",
+     "rechteck": {
+      "x": 41,
+      "y": 4073,
+      "w": 190,
+      "h": 9
+     },
+     "durch": "article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12 > h3.min-w-0.font-anzeige"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Im Neubau ist der Fliesenleger ein Glied im Bauablauf: Estri",
+     "selektor": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass",
+     "rechteck": {
+      "x": 41,
+      "y": 4091,
+      "w": 133,
+      "h": 1
+     },
+     "durch": "article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12 > h3.min-w-0.font-anzeige"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Fliesen im Neubau",
+     "selektor": "ul.mt-auto.grid > li > a.inline-flex.items-center > span",
+     "rechteck": {
+      "x": 41,
+      "y": 4109,
+      "w": 133,
+      "h": 3
+     },
+     "durch": "article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12 > h3.min-w-0.font-anzeige"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Renovierung im Bestand",
+     "selektor": "ul.mt-auto.grid > li > a.inline-flex.items-center > span",
+     "rechteck": {
+      "x": 41,
+      "y": 4157,
+      "w": 180,
+      "h": 7
+     },
+     "durch": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Renovierung im Bestand",
+     "selektor": "ul.mt-auto.grid > li > a.inline-flex.items-center > span",
+     "rechteck": {
+      "x": 41,
+      "y": 4172,
+      "w": 180,
+      "h": 2
+     },
+     "durch": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Estrich & Belegreife",
+     "selektor": "ul.mt-auto.grid > li > a.inline-flex.items-center > span",
+     "rechteck": {
+      "x": 41,
+      "y": 4205,
+      "w": 146,
+      "h": 13
+     },
+     "durch": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Feinsteinzeug ist dicht, frostbeständig und für fast alle Be",
+     "selektor": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass",
+     "rechteck": {
+      "x": 41,
+      "y": 4336,
+      "w": 109,
+      "h": 12
+     },
+     "durch": "ul.grid.grid-cols-1 > li.flex.flex-col > article.flex.flex-1 > p.inline-flex.items-center"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Feinsteinzeug ist dicht, frostbeständig und für fast alle Be",
+     "selektor": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass",
+     "rechteck": {
+      "x": 41,
+      "y": 4378,
+      "w": 233,
+      "h": 4
+     },
+     "durch": "article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12 > h3.min-w-0.font-anzeige"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Fliesenarten im Vergleich",
+     "selektor": "ul.mt-auto.grid > li > a.inline-flex.items-center > span",
+     "rechteck": {
+      "x": 41,
+      "y": 4409,
+      "w": 185,
+      "h": 8
+     },
+     "durch": "article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12 > h3.min-w-0.font-anzeige"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Fliesen in Holzoptik",
+     "selektor": "ul.mt-auto.grid > li > a.inline-flex.items-center > span",
+     "rechteck": {
+      "x": 41,
+      "y": 4463,
+      "w": 143,
+      "h": 2
+     },
+     "durch": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "XXL-Großformate",
+     "selektor": "ul.mt-auto.grid > li > a.inline-flex.items-center > span",
+     "rechteck": {
+      "x": 41,
+      "y": 4496,
+      "w": 130,
+      "h": 13
+     },
+     "durch": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Ein dauerhafter Belag entsteht aus dem Zusammenspiel von Unt",
+     "selektor": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass",
+     "rechteck": {
+      "x": 41,
+      "y": 4654,
+      "w": 141,
+      "h": 12
+     },
+     "durch": "ul.grid.grid-cols-1 > li.flex.flex-col > article.flex.flex-1 > p.inline-flex.items-center"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Ein dauerhafter Belag entsteht aus dem Zusammenspiel von Unt",
+     "selektor": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass",
+     "rechteck": {
+      "x": 41,
+      "y": 4696,
+      "w": 131,
+      "h": 4
+     },
+     "durch": "article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12 > h3.min-w-0.font-anzeige"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Verlegetechnik & Werkstoffe",
+     "selektor": "ul.mt-auto.grid > li > a.inline-flex.items-center > span",
+     "rechteck": {
+      "x": 41,
+      "y": 4727,
+      "w": 157,
+      "h": 8
+     },
+     "durch": "article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12 > h3.min-w-0.font-anzeige"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Verlegemuster & Abschlüsse",
+     "selektor": "ul.mt-auto.grid > li > a.inline-flex.items-center > span",
+     "rechteck": {
+      "x": 41,
+      "y": 4781,
+      "w": 213,
+      "h": 2
+     },
+     "durch": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Fliesen auf Fußbodenheizung",
+     "selektor": "ul.mt-auto.grid > li > a.inline-flex.items-center > span",
+     "rechteck": {
+      "x": 41,
+      "y": 4814,
+      "w": 218,
+      "h": 13
+     },
+     "durch": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Mit dem Fliesen-Konfigurator bereiten Sie Ihr Projekt strukt",
+     "selektor": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass",
+     "rechteck": {
+      "x": 41,
+      "y": 4972,
+      "w": 172,
+      "h": 12
+     },
+     "durch": "ul.grid.grid-cols-1 > li.flex.flex-col > article.flex.flex-1 > p.inline-flex.items-center"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Mit dem Fliesen-Konfigurator bereiten Sie Ihr Projekt strukt",
+     "selektor": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass",
+     "rechteck": {
+      "x": 41,
+      "y": 5014,
+      "w": 134,
+      "h": 4
+     },
+     "durch": "article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12 > h3.min-w-0.font-anzeige"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Mit dem Fliesen-Konfigurator bereiten Sie Ihr Projekt strukt",
+     "selektor": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass",
+     "rechteck": {
+      "x": 41,
+      "y": 5027,
+      "w": 134,
+      "h": 9
+     },
+     "durch": "article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12 > h3.min-w-0.font-anzeige"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Mit dem Fliesen-Konfigurator bereiten Sie Ihr Projekt strukt",
+     "selektor": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass",
+     "rechteck": {
+      "x": 41,
+      "y": 5045,
+      "w": 164,
+      "h": 1
+     },
+     "durch": "article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12 > h3.min-w-0.font-anzeige"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Fliesen-Konfigurator",
+     "selektor": "ul.mt-auto.grid > li > a.inline-flex.items-center > span",
+     "rechteck": {
+      "x": 41,
+      "y": 5064,
+      "w": 151,
+      "h": 3
+     },
+     "durch": "article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12 > h3.min-w-0.font-anzeige"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Festpreisangebot verstehen",
+     "selektor": "ul.mt-auto.grid > li > a.inline-flex.items-center > span",
+     "rechteck": {
+      "x": 41,
+      "y": 5111,
+      "w": 206,
+      "h": 7
+     },
+     "durch": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Festpreisangebot verstehen",
+     "selektor": "ul.mt-auto.grid > li > a.inline-flex.items-center > span",
+     "rechteck": {
+      "x": 41,
+      "y": 5126,
+      "w": 206,
+      "h": 2
+     },
+     "durch": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Abnahme & Qualität",
+     "selektor": "ul.mt-auto.grid > li > a.inline-flex.items-center > span",
+     "rechteck": {
+      "x": 41,
+      "y": 5159,
+      "w": 147,
+      "h": 13
+     },
+     "durch": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Fugensanierung",
+     "selektor": "ul.mt-auto.grid > li > a.inline-flex.items-center > span",
+     "rechteck": {
+      "x": 41,
+      "y": 5208,
+      "w": 121,
+      "h": 16
+     },
+     "durch": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Rund ums Bad – Walk-In-Dusche, Abdichtung nach DIN 18534, Fl",
+     "selektor": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > p.mt-3.max-w-mass",
+     "rechteck": {
+      "x": 41,
+      "y": 5238,
+      "w": 136,
+      "h": 16
+     },
+     "durch": "div.mx-auto.w-full > div.grid.grid-cols-4 > div.col-span-4.md:col-span-8 > p.inline-flex.items-center"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Zum Bad-Bereich",
+     "selektor": "ul.mt-auto.grid > li > a.inline-flex.items-center > span",
+     "rechteck": {
+      "x": 41,
+      "y": 5272,
+      "w": 128,
+      "h": 17
+     },
+     "durch": "h2#fliesen-weitere-heading"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Fliesen im Bad",
+     "selektor": "ul.mt-auto.grid > li > a.inline-flex.items-center > span",
+     "rechteck": {
+      "x": 41,
+      "y": 5320,
+      "w": 108,
+      "h": 17
+     },
+     "durch": "h2#fliesen-weitere-heading"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Gäste-WC fliesen",
+     "selektor": "ul.mt-auto.grid > li > a.inline-flex.items-center > span",
+     "rechteck": {
+      "x": 41,
+      "y": 5372,
+      "w": 127,
+      "h": 13
+     },
+     "durch": "div.grid.grid-cols-4 > div.col-span-4.md:col-span-8 > div.mt-6.text-fs-3 > p"
+    }
+   ],
+   "ueberlappungGesamt": 40,
+   "ueberlappungNachArt": {
+    "textkreuzung": 40
+   },
+   "fehler": null,
+   "fremd": 0,
+   "blockiert": []
+  },
+  {
+   "ansicht": "d1440",
+   "seite": "/fliesen",
+   "status": 200,
+   "datei": "/home/user/tezgel/_werkstatt/belege/e4-n2/02-pa/bilder/fliesen-voll/d1440-voll.jpg",
+   "anker": null,
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "fehler": null,
+   "fremd": 0,
+   "blockiert": []
+  }
+ ]
+}

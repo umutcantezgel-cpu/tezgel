@@ -1,0 +1,4 @@
+lauf 1: summe 0.17179 · kopf 0.17179 · Einträge 2 · laden 2072 ms
+lauf 2: summe 0.17179 · kopf 0.17179 · Einträge 2 · laden 2071 ms
+lauf 3: summe 0.17179 · kopf 0.17179 · Einträge 2 · laden 2031 ms
+{"seite":"/standorte/wetzlar","ansicht":"m390","base":"http://127.0.0.1:4310","laeufe":3,"median_summe":0.17179,"median_kopfBeitrag":0.17179,"summen_je_lauf":[0.17179,0.17179,0.17179],"kopf_je_lauf":[0.17179,0.17179,0.17179]}

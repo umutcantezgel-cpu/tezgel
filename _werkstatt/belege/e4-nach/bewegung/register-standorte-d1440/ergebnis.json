@@ -1,0 +1,46 @@
+{
+ "modus": "register",
+ "seite": "/standorte",
+ "base": "http://127.0.0.1:4320",
+ "ansicht": "d1440",
+ "zeitpunkt": "2026-10-12T01:32:30.528Z",
+ "schritte": {
+  "hover_geprueft": 20,
+  "hover_fehler": 0,
+  "hover_fehler_beispiel": null,
+  "hover_ausserhalb_uebersprungen": 0,
+  "tab_schritte": 30,
+  "fokus_verschieden": 26
+ },
+ "data_motion_elemente": 100,
+ "gefundene_kennungen": [
+  "aufklappen",
+  "druck",
+  "einzugsband",
+  "leitachse",
+  "zustand"
+ ],
+ "unbekannt": [],
+ "registriert_nicht_im_dom": [
+  "sig-kreuzlinie",
+  "sig-flucht",
+  "szene-ablauf",
+  "sig-plan",
+  "verband",
+  "fugenband",
+  "anriss",
+  "auftritt",
+  "notiert",
+  "laden",
+  "seitenwechsel"
+ ],
+ "ohne_register": [],
+ "mit_register_eintraege": 21,
+ "erfasste_eintraege": 21,
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "verzeichnis": "/home/user/tezgel/_werkstatt/belege/e4-nach/bewegung/register-standorte-d1440"
+}

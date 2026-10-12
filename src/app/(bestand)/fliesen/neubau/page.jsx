@@ -1,21 +1,32 @@
-import React from 'react';
+// Fliesen im Neubau (E4-BAU-09, KERN v2): Erzählansicht nach dem Muster der Familie Fliesen (fliesen/page.jsx). Einstieg mit
+// Laserachse, H1 links bündig, Vorspann, zwei Knöpfe; rechts das Planblatt mit dem Plan „untergrund“. Danach die Leitachse über
+// die Abschnitte: Bauablauf als Schrittfolge, Schnittstellen auf Fliese, Bausteine als Merkliste, Belegreife und weitere Punkte
+// als Feldraster, Weiterführende Ratgeber als Register. Qualitätsversprechen, dann Konfigurator mit Rückfrage (Tempo: nachgeladen).
+// Wortlaut, Überschriften, Links, IDs und Lesefolge wie im Bestand.
 import Link from 'next/link';
-import {
-    HardHat,
-    ArrowRight,
-    Phone,
-    Ruler,
-    Split,
-    Gauge,
-    Palette,
-    CalendarCheck,
-    ClipboardCheck,
-    CheckCircle2
-} from 'lucide-react';
+import dynamic from 'next/dynamic';
+import clsx from 'clsx';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
+import Icon from '@/components/icons/Icon';
 import QualityPromise from '@/components/sections/QualityPromise';
-import FliesenKonfigurator from '@/components/funnels/FliesenKonfigurator';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Einstieg from '@/components/kern/Einstieg';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+import { Feld, Feldraster } from '@/components/kern/Feldraster';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Knopf from '@/components/kern/Knopf';
+import Leitachse from '@/components/kern/Leitachse';
+import Merkliste from '@/components/kern/Merkliste';
+import Rueckfrage from '@/components/kern/Rueckfrage';
+import Schrittfolge from '@/components/kern/Schrittfolge';
+import Verlegeplan from '@/components/kern/Verlegeplan';
+import { linkKlassen } from '@/components/kern/stile';
+
+// Konfigurator nachladen (Tempo, wie auf der Startseite und in der Familie)
+const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKonfigurator'), {
+    loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
+});
 
 export const metadata = createMetadata({
     title: 'Fliesen im Neubau verlegen lassen | Fliesen Tezgel',
@@ -34,32 +45,26 @@ const SEQUENCE = [
 
 const BUILDING_BLOCKS = [
     {
-        icon: Ruler,
         title: 'Aufmaß & Planprüfung',
         desc: 'Wir prüfen Pläne und Rohbaumaße, messen vor Ort auf und klären Fliesenflächen, Formate und Aufbauhöhen frühzeitig.'
     },
     {
-        icon: Split,
         title: 'Schnittstellen klären',
         desc: 'Höhen von Estrich und Bodenabläufen, Einbautiefen von Unterputzkörpern, Randdämmstreifen und Estrichfugen – was andere Gewerke vorbereiten, stimmen wir vorab ab.'
     },
     {
-        icon: Gauge,
         title: 'Belegreife prüfen',
         desc: 'Vor dem ersten Kleberauftrag messen wir die Restfeuchte des Estrichs mit dem CM-Verfahren. Erst wenn der Estrich belegreif ist, wird gefliest.'
     },
     {
-        icon: Palette,
         title: 'Bemusterung & Bestellung',
         desc: 'Formate, Farben, Fugenfarbe und Details werden rechtzeitig festgelegt, damit das Material zum Termin auf der Baustelle ist.'
     },
     {
-        icon: CalendarCheck,
         title: 'Bauzeitenplan & Festpreis',
         desc: 'Verbindlicher Festpreis nach Aufmaß und feste Zusagen für Start und Fertigstellung unserer Arbeiten – abgestimmt auf Ihren Bauablauf.'
     },
     {
-        icon: ClipboardCheck,
         title: 'Abnahme & Übergabe',
         desc: 'Gemeinsame Abnahme mit Deniz Tezgel, Übergabe von Pflegehinweisen, Materialangaben und Restfliesen.'
     }
@@ -81,217 +86,213 @@ const CROSS_LINKS = [
     { href: '/beratung', label: 'Beratung', desc: 'Neubauprojekt frühzeitig besprechen' }
 ];
 
+// Register-Zeile (wie in der Familie): Name links, Beschreibung daneben, Pfeil am Rand; Trefferfläche 48 px
+const ZEILE = 'group flex min-h-12 items-center gap-4 px-3 py-4 pointer-fine:hover:bg-fliese active:bg-fliese';
+const NAME = 'font-text text-fs-3 font-semibold text-tinte md:w-1/3 md:shrink-0 decoration-1 underline-offset-4 decoration-tinte pointer-fine:group-hover:underline group-active:underline';
+
+const TEXT = 'mt-3 font-text text-fs-3 text-tinte-2';
+
+// Ein Feld des Feldrasters: Überschrift und Text in einem Artikel, benannt über die Überschrift
+function Karte({ id, ebene: Ebene = 'h3', titel, children }) {
+    return (
+        <Feld>
+            <article aria-labelledby={id} className="flex flex-1 flex-col">
+                <Ebene id={id} className="font-anzeige text-fs-4 text-tinte">
+                    {titel}
+                </Ebene>
+                {children}
+            </article>
+        </Feld>
+    );
+}
+
 export default function NeubauPage() {
     return (
-        <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-warm top-96 -right-24 opacity-60" />
-
-            {/* Hero */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="neubau-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">
-                        <HardHat className="w-3.5 h-3.5" />
-                        Neubau &middot; Bauherren
-                    </span>
-                    <h1 id="neubau-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
+        <>
+            {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt mit dem Plan „untergrund“ */}
+            <Einstieg
+                art="erzaehl"
+                etikett={<>Neubau &middot; Bauherren</>}
+                titel={
+                    <span id="neubau-heading">
                         Fliesen im Neubau verlegen lassen mit{' '}
-                        <span className="text-ceramic-gradient">Fliesen Tezgel</span>
-                    </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Fliesen im Neubau verlegen lassen: Fachbetrieb Fliesen Tezgel begleitet Bauherren in Wetzlar &amp; Aßlar mit Belegreifeprüfung, Bemusterung und terminierter Ausführung im Bauzeitenplan.
+                        <span>Fliesen Tezgel</span>
+                    </span>
+                }
+                vorspann={
+                    <p>
+                        Fliesen im Neubau verlegen lassen: Fachbetrieb Fliesen Tezgel begleitet Bauherren in Wetzlar &amp; Aßlar mit
+                        Belegreifeprüfung, Bemusterung und terminierter Ausführung im Bauzeitenplan.
                     </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">
+                }
+                aktionen={
+                    <>
+                        <Knopf href="/kontakt" icon="pfeil-rechts">
                             Neubauprojekt anfragen
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                        </Link>
-                        <Link href="/termin" className="btn-ghost px-7 py-3.5 text-xs">
+                        </Knopf>
+                        <Knopf href="/termin" variante="neben">
                             Online-Termin buchen
-                        </Link>
-                    </div>
-                </div>
-            </section>
+                        </Knopf>
+                    </>
+                }
+                rand={
+                    <Planblatt felder={planfelder('Fliesen im Neubau verlegen lassen', 'untergrund')}>
+                        <Verlegeplan plan="untergrund" ohneAchse bemassung={false} interaktiv />
+                    </Planblatt>
+                }
+            />
 
-            {/* Bauablauf */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="bauablauf-heading">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-orange mb-4">Bauablauf</span>
-                    <h2 id="bauablauf-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Wann der Fliesenleger im Bauablauf an der Reihe ist
-                    </h2>
-                    <p className="mt-3 text-base text-slate-700 leading-relaxed">
-                        Die genaue Reihenfolge legt Ihre Bauleitung fest. Typisch für ein Wohnhaus ist dieser Ablauf:
+            <Leitachse>
+                {/* 2. BAUABLAUF: die fünf Phasen als Schrittfolge, Nummern stumm (wie im Bestand) */}
+                <Abschnitt
+                    titelId="bauablauf-heading"
+                    leitachse
+                    spaet
+                    etikett="Bauablauf"
+                    titel="Wann der Fliesenleger im Bauablauf an der Reihe ist"
+                    einleitung={<p>Die genaue Reihenfolge legt Ihre Bauleitung fest. Typisch für ein Wohnhaus ist dieser Ablauf:</p>}
+                >
+                    <Schrittfolge nummerStumm schritte={SEQUENCE.map((s) => ({ titel: s.phase, text: s.desc }))} />
+                </Abschnitt>
+
+                {/* 3. SCHNITTSTELLEN: Kopf links, Text und Fugenkreuz-Liste der Vorleistungen rechts, auf Fliese */}
+                <Abschnitt
+                    titelId="vorleistungen-heading"
+                    leitachse
+                    spaet
+                    kopf="seitlich"
+                    flaeche="fliese"
+                    etikett="Schnittstellen"
+                    titel="Vorleistungen anderer Gewerke: Estrich, Putz, Installation, Fenster"
+                    einleitung={
+                        <>
+                            <p>
+                                Estrich, Putz, Installation und Fenster liefern andere Gewerke. Wir übernehmen die Fliesenarbeiten und
+                                koordinieren unsere Termine mit Bauleitung und beteiligten Firmen. Vor Arbeitsbeginn prüfen wir, ob der
+                                Untergrund für die Verlegung geeignet ist, und melden Bedenken rechtzeitig.
+                            </p>
+                            <p className="mt-4">
+                                Wichtig: Der Randdämmstreifen des Estrichs bleibt bis nach dem Verfugen stehen und wird erst dann bündig
+                                abgeschnitten – so bleibt die Randfuge zwischen Belag und Wand erhalten.
+                            </p>
+                        </>
+                    }
+                >
+                    <h3 className="font-anzeige text-fs-4 text-tinte">Was vor Beginn der Fliesenarbeiten erledigt sein sollte</h3>
+                    <ul className="mt-6 grid gap-3">
+                        {PRECONDITIONS.map((item) => (
+                            <li key={item} className="flex gap-3 font-text text-fs-2 text-tinte">
+                                <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich">
+                                    <Fugenkreuz className="size-3" />
+                                </span>
+                                <span className="min-w-0">{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </Abschnitt>
+
+                {/* 4. BAUSTEINE: sechs Einträge als Merkliste (zwei Spalten, drei Zeilen) */}
+                <Abschnitt titelId="bausteine-heading" leitachse spaet etikett="Unsere Leistung" titel="Sechs Bausteine für Fliesen im Neubau">
+                    <Merkliste titelAls="h3" spalten={2} eintraege={BUILDING_BLOCKS.map((b) => ({ titel: b.title, text: b.desc }))} />
+                </Abschnitt>
+
+                {/* 5. BELEGREIFE, BEMUSTERUNG, FESTPREIS, ABNAHME: vier Felder im Feldraster (2 Spalten, 2 Zeilen) */}
+                <Abschnitt leitachse spaet>
+                    <Feldraster spalten={2}>
+                        <Karte id="belegreife-heading" ebene="h2" titel="Belegreife-Freigabe vor dem Verlegen im Kurzüberblick">
+                            <p className={TEXT}>
+                                Frischer Estrich gibt über Wochen Feuchtigkeit ab. Wird zu früh gefliest, drohen Risse, Hohlstellen und
+                                Verfärbungen. Deshalb messen wir vor Beginn die Restfeuchte mit dem CM-Verfahren. Die maßgeblichen Richtwerte
+                                hängen von Estrichart und Aufbau ab und richten sich nach den einschlägigen Merkblättern und Herstellerangaben.
+                                Bei temperierten Estrichen gehört das entsprechende Protokoll dazu.
+                            </p>
+                            <div className="mt-auto pt-6">
+                                <Knopf href="/untergrund-abdichtung/estrich-belegreife" variante="text" icon="pfeil-rechts">
+                                    Estrich &amp; Belegreife im Detail
+                                </Knopf>
+                            </div>
+                        </Karte>
+                        <Karte id="bemusterung-heading" ebene="h2" titel="Bemusterung und Materialbestellung rechtzeitig planen">
+                            <p className={TEXT}>
+                                Lieferzeiten für Fliesen – besonders für Großformate und besondere Oberflächen – sind sehr unterschiedlich.
+                                Legen Sie Formate, Farben und Fugenfarbe deshalb fest, bevor der Estrich eingebaut wird. Die gesamte Menge
+                                sollte aus einer Charge stammen, inklusive Reserve für Verschnitt und spätere Reparaturen.
+                            </p>
+                            <div className="mt-auto pt-6">
+                                <Knopf href="/fliesen/fliesenarten" variante="text" icon="pfeil-rechts">
+                                    Fliesenarten im Vergleich
+                                </Knopf>
+                            </div>
+                        </Karte>
+                        <Karte id="festpreis-heading" ebene="h2" titel="Festpreis und verbindlicher Bauzeitenplan">
+                            <p className={TEXT}>
+                                Nach dem Aufmaß erhalten Sie ein Festpreisangebot für den beschriebenen Leistungsumfang. Start und
+                                Fertigstellung unserer Arbeiten sagen wir verbindlich zu und stimmen sie mit Ihrem Bauzeitenplan ab.
+                                Verschieben sich Vorleistungen, passen wir den Termin gemeinsam mit Ihnen an.
+                            </p>
+                            <div className="mt-auto pt-6">
+                                <Knopf href="/fliesen/festpreisangebot" variante="text" icon="pfeil-rechts">
+                                    So entsteht das Festpreisangebot
+                                </Knopf>
+                            </div>
+                        </Karte>
+                        <Karte id="uebergabe-heading" ebene="h2" titel="Abnahme und Übergabe">
+                            <p className={TEXT}>
+                                Zum Abschluss gehen Sie mit {COMPANY_DATA.owner.fullName} gemeinsam über alle Flächen. Sie erhalten
+                                Pflegehinweise, Angaben zu den verwendeten Materialien und Restfliesen für spätere Reparaturen. Worauf Sie bei
+                                der Abnahme achten können, haben wir in einer Checkliste zusammengefasst.
+                            </p>
+                            <div className="mt-auto pt-6">
+                                <Knopf href="/fliesen/abnahme" variante="text" icon="pfeil-rechts">
+                                    Checkliste zur Abnahme
+                                </Knopf>
+                            </div>
+                        </Karte>
+                    </Feldraster>
+                </Abschnitt>
+
+                {/* 6. WEITERFÜHRENDE RATGEBER: vier Verweise als Register (Name, Beschreibung, Pfeil), darunter der direkte Weg */}
+                <Abschnitt titelId="ratgeber-heading" leitachse spaet titel="Weiterführende Ratgeber für Fliesen im Neubau">
+                    <ul className="border-t border-tinte">
+                        {CROSS_LINKS.map((link) => (
+                            <li key={link.href} className="border-b border-fuge">
+                                <Link href={link.href} className={ZEILE}>
+                                    <span className="flex min-w-0 flex-1 flex-col gap-1 md:flex-row md:items-baseline md:gap-6">
+                                        <span className={NAME}>{link.label}</span>
+                                        <span className="font-text text-fs-2 text-tinte-2">{link.desc}</span>
+                                    </span>
+                                    <span aria-hidden="true" className="flex shrink-0 text-strich">
+                                        <Icon name="pfeil-rechts" groesse={5} />
+                                    </span>
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                    <p className="mt-8 max-w-mass font-text text-fs-3 text-tinte-2">
+                        Direkt sprechen:{' '}
+                        <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className={clsx(linkKlassen, 'inline-flex items-center gap-1 whitespace-nowrap font-mono')}>
+                            <Icon name="telefon" groesse={4} />
+                            {COMPANY_DATA.contact.phone}
+                        </a>
                     </p>
-                </div>
-                <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-                    {SEQUENCE.map((item, idx) => {
-                        const isTile = item.phase === 'Fliesenarbeiten';
-                        return (
-                            <li
-                                key={item.phase}
-                                className={`p-6 rounded-tile-xl border ${isTile ? 'bg-orange-50/70 border-orange-500 ring-2 ring-orange-500/20' : 'bg-slate-50 border-slate-200'}`}
-                            >
-                                <span className="font-display block text-3xl font-black tabular-nums text-orange-500/40 mb-3" aria-hidden="true">
-                                    {String(idx + 1).padStart(2, '0')}
-                                </span>
-                                <h3 className={`font-black text-base mb-2 ${isTile ? 'text-orange-600' : 'text-slate-900'}`}>{item.phase}</h3>
-                                <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
-                            </li>
-                        );
-                    })}
-                </ol>
-            </section>
-
-            {/* Vorleistungen */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="vorleistungen-heading">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-                    <div>
-                        <span className="eyebrow mb-4">Schnittstellen</span>
-                        <h2 id="vorleistungen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Vorleistungen anderer Gewerke: Estrich, Putz, Installation, Fenster
-                        </h2>
-                        <p className="mt-4 text-base text-slate-700 leading-relaxed">
-                            Estrich, Putz, Installation und Fenster liefern andere Gewerke. Wir übernehmen die Fliesenarbeiten
-                            und koordinieren unsere Termine mit Bauleitung und beteiligten Firmen. Vor Arbeitsbeginn prüfen wir,
-                            ob der Untergrund für die Verlegung geeignet ist, und melden Bedenken rechtzeitig.
-                        </p>
-                        <p className="mt-4 text-base text-slate-700 leading-relaxed">
-                            Wichtig: Der Randdämmstreifen des Estrichs bleibt bis nach dem Verfugen stehen und wird erst dann
-                            bündig abgeschnitten – so bleibt die Randfuge zwischen Belag und Wand erhalten.
-                        </p>
-                    </div>
-                    <div className="glass-surface rounded-tile-xl p-7">
-                        <h3 className="font-black text-slate-900 mb-4">Was vor Beginn der Fliesenarbeiten erledigt sein sollte</h3>
-                        <ul className="space-y-3">
-                            {PRECONDITIONS.map((item) => (
-                                <li key={item} className="flex gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <CheckCircle2 className="w-5 h-5 text-orange-600 shrink-0" />
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            {/* 6 Bausteine */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="bausteine-heading">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-orange mb-4">Unsere Leistung</span>
-                    <h2 id="bausteine-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Sechs Bausteine für Fliesen im Neubau
-                    </h2>
-                </div>
-                <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {BUILDING_BLOCKS.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                            <li
-                                key={item.title}
-                                className="group glass-surface p-7 rounded-tile-xl hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
-                            >
-                                <span className="icon-chip w-12 h-12 mb-5">
-                                    <Icon className="w-6 h-6" />
-                                </span>
-                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">{item.title}</h3>
-                                <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
-                            </li>
-                        );
-                    })}
-                </ul>
-            </section>
-
-            {/* Belegreife, Bemusterung, Festpreis, Abnahme */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 relative z-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <article className="glass-surface rounded-tile-xl p-8" aria-labelledby="belegreife-heading">
-                        <h2 id="belegreife-heading" className="text-xl sm:text-2xl font-black text-slate-900 mb-3">Belegreife-Freigabe vor dem Verlegen im Kurzüberblick</h2>
-                        <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-                            Frischer Estrich gibt über Wochen Feuchtigkeit ab. Wird zu früh gefliest, drohen Risse, Hohlstellen
-                            und Verfärbungen. Deshalb messen wir vor Beginn die Restfeuchte mit dem CM-Verfahren. Die
-                            maßgeblichen Richtwerte hängen von Estrichart und Aufbau ab und richten sich nach den einschlägigen
-                            Merkblättern und Herstellerangaben. Bei temperierten Estrichen gehört das entsprechende Protokoll
-                            dazu.
-                        </p>
-                        <Link href="/untergrund-abdichtung/estrich-belegreife" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-orange-600 hover:text-orange-700">
-                            Estrich &amp; Belegreife im Detail
-                            <ArrowRight className="w-4 h-4" />
-                        </Link>
-                    </article>
-                    <article className="glass-surface rounded-tile-xl p-8" aria-labelledby="bemusterung-heading">
-                        <h2 id="bemusterung-heading" className="text-xl sm:text-2xl font-black text-slate-900 mb-3">Bemusterung und Materialbestellung rechtzeitig planen</h2>
-                        <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-                            Lieferzeiten für Fliesen – besonders für Großformate und besondere Oberflächen – sind sehr
-                            unterschiedlich. Legen Sie Formate, Farben und Fugenfarbe deshalb fest, bevor der Estrich eingebaut
-                            wird. Die gesamte Menge sollte aus einer Charge stammen, inklusive Reserve für Verschnitt und spätere
-                            Reparaturen.
-                        </p>
-                        <Link href="/fliesen/fliesenarten" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-orange-600 hover:text-orange-700">
-                            Fliesenarten im Vergleich
-                            <ArrowRight className="w-4 h-4" />
-                        </Link>
-                    </article>
-                    <article className="glass-surface rounded-tile-xl p-8" aria-labelledby="festpreis-heading">
-                        <h2 id="festpreis-heading" className="text-xl sm:text-2xl font-black text-slate-900 mb-3">Festpreis und verbindlicher Bauzeitenplan</h2>
-                        <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-                            Nach dem Aufmaß erhalten Sie ein Festpreisangebot für den beschriebenen Leistungsumfang. Start und
-                            Fertigstellung unserer Arbeiten sagen wir verbindlich zu und stimmen sie mit Ihrem Bauzeitenplan ab.
-                            Verschieben sich Vorleistungen, passen wir den Termin gemeinsam mit Ihnen an.
-                        </p>
-                        <Link href="/fliesen/festpreisangebot" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-orange-600 hover:text-orange-700">
-                            So entsteht das Festpreisangebot
-                            <ArrowRight className="w-4 h-4" />
-                        </Link>
-                    </article>
-                    <article className="glass-surface rounded-tile-xl p-8" aria-labelledby="uebergabe-heading">
-                        <h2 id="uebergabe-heading" className="text-xl sm:text-2xl font-black text-slate-900 mb-3">Abnahme und Übergabe</h2>
-                        <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-                            Zum Abschluss gehen Sie mit {COMPANY_DATA.owner.fullName} gemeinsam über alle Flächen. Sie erhalten
-                            Pflegehinweise, Angaben zu den verwendeten Materialien und Restfliesen für spätere Reparaturen.
-                            Worauf Sie bei der Abnahme achten können, haben wir in einer Checkliste zusammengefasst.
-                        </p>
-                        <Link href="/fliesen/abnahme" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-orange-600 hover:text-orange-700">
-                            Checkliste zur Abnahme
-                            <ArrowRight className="w-4 h-4" />
-                        </Link>
-                    </article>
-                </div>
-            </section>
-
-            {/* Weiterführende Ratgeber */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6 relative z-10" aria-labelledby="ratgeber-heading">
-                <h2 id="ratgeber-heading" className="text-xl font-black text-slate-900 mb-5">Weiterführende Ratgeber für Fliesen im Neubau</h2>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    {CROSS_LINKS.map((link) => (
-                        <li key={link.href}>
-                            <Link
-                                href={link.href}
-                                className="group block h-full glass-surface rounded-tile-md p-5 hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300"
-                            >
-                                <span className="flex items-center justify-between gap-2 font-black text-slate-900 group-hover:text-orange-600 transition-colors">
-                                    {link.label}
-                                    <ArrowRight className="w-4 h-4 shrink-0 text-orange-500" />
-                                </span>
-                                <span className="mt-1 block text-sm text-slate-600">{link.desc}</span>
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-                <p className="mt-6 text-sm text-slate-700">
-                    Direkt sprechen:{' '}
-                    <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="inline-flex items-center gap-1 font-bold text-orange-600 hover:text-orange-700">
-                        <Phone className="w-3.5 h-3.5" />
-                        {COMPANY_DATA.contact.phone}
-                    </a>
-                </p>
-            </section>
+                </Abschnitt>
+            </Leitachse>
 
             <QualityPromise />
 
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10" aria-label="Fliesen-Konfigurator">
-                <FliesenKonfigurator />
-            </section>
-        </div>
+            {/* 7. KONFIGURATOR: Funnel (nachgeladen) im Raster mit 8 Spalten, rechts die Rückfrage in 4 Spalten (ab lg) */}
+            <Leitachse>
+                <Abschnitt aria-label="Fliesen-Konfigurator" leitachse spaet>
+                    <div className="grid gap-y-12 lg:grid-cols-12 lg:gap-x-12">
+                        <div className="min-w-0 lg:col-span-8">
+                            <FliesenKonfigurator />
+                        </div>
+                        <div className="lg:col-span-4">
+                            <Rueckfrage />
+                        </div>
+                    </div>
+                </Abschnitt>
+            </Leitachse>
+        </>
     );
 }

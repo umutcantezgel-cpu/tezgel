@@ -9,6 +9,7 @@ import Icon from '@/components/icons/Icon';
 import { navigationLinks, primaryCta } from '@/config/navigation';
 import { COMPANY_DATA } from '@/config/company';
 import { etikettKlassen, knopfKlassen, seitenKlassen } from '@/components/kern/stile';
+import FloatingWhatsAppWidget from '@/components/common/FloatingWhatsAppWidget';
 
 const isActivePath = (pathname, path) =>
     path === '/' ? pathname === '/' : pathname === path || pathname.startsWith(`${path}/`);
@@ -40,7 +41,8 @@ export function BrandMark({ compact = false, sublineClassName = 'hidden lg:block
 
 // Kopf (KERN K-009): fest, Kalk mit Fuge, Logo links, Hauptnavigation ab xl mit Mega-Menü als echte Links
 // (darunter ist das Menüblatt der Zugang; Unterzeile und Nummer nur, wo die Zeile Platz hat),
-// Telefon in Mono, Hauptknopf; der Menü-Schalter öffnet das Popover-Menü – auch vor der Hydrierung.
+// Telefon in Mono, ab lg der WhatsApp-Knopf (E3-NACH-06), Hauptknopf; der Menü-Schalter öffnet das Popover-Menü – auch vor
+// der Hydrierung.
 export default function Header({ isMobileMenuOpen }) {
     const pathname = usePathname() || '/';
     const [openMenu, setOpenMenu] = useState(null);
@@ -218,6 +220,7 @@ export default function Header({ isMobileMenuOpen }) {
                         <Icon name="telefon" groesse={5} />
                         <span className="hidden lg:inline">{COMPANY_DATA.contact.phone}</span>
                     </a>
+                    <FloatingWhatsAppWidget />
                     <Link href={primaryCta.path} className={knopfKlassen('haupt', 'px-4 max-sm:hidden')} data-motion="druck">
                         {primaryCta.name}
                     </Link>

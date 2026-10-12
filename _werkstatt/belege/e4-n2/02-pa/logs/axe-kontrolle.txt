@@ -1,0 +1,18 @@
+[
+ {
+  "id": "button-name",
+  "impact": "critical",
+  "knoten": 1
+ },
+ {
+  "id": "color-contrast",
+  "impact": "serious",
+  "knoten": 1
+ },
+ {
+  "id": "image-alt",
+  "impact": "critical",
+  "knoten": 1
+ }
+]
+bestanden (Regeln ohne Verstoß): 8

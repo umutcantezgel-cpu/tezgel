@@ -1,0 +1,942 @@
+{
+ "seiten": {
+  "/": {
+   "mobil": {
+    "median": {
+     "perf": 77,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 2867,
+     "cls": 0.001,
+     "tbt": 779,
+     "fcp": 1216,
+     "si": 1265,
+     "js_kb": 267,
+     "font_kb": 72,
+     "gesamt_kb": 495,
+     "benchmark": 1566,
+     "lcp_element": {
+      "selector": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+      "ausschnitt": "<p class=\"max-w-mass text-fs-4 text-tinte\">"
+     },
+     "spanne": {
+      "perf": [
+       71,
+       79
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       2861,
+       2873
+      ],
+      "cls": [
+       0,
+       0.001
+      ],
+      "tbt": [
+       637,
+       1219
+      ],
+      "fcp": [
+       1067,
+       1235
+      ],
+      "si": [
+       1242,
+       1268
+      ],
+      "js_kb": [
+       267,
+       267
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       495,
+       495
+      ],
+      "benchmark": [
+       1494,
+       1575
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 79,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2860.9908000000005,
+      "cls": 0.001417786778254224,
+      "tbt": 637.252300000001,
+      "fcp": 1216.4862,
+      "si": 1241.782561023561,
+      "js_kb": 267,
+      "font_kb": 72,
+      "gesamt_kb": 495,
+      "benchmark": 1566,
+      "lcp_element": {
+       "selector": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+       "ausschnitt": "<p class=\"max-w-mass text-fs-4 text-tinte\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 13,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 205
+      },
+      "cls_quellen": [
+       {
+        "selector": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+        "wert": 0.0014
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/2e_lrwr-bf1eq.js",
+        "kb": 44.4
+       },
+       {
+        "pfad": "/_next/static/chunks/37n20b9chzvn3.js",
+        "kb": 17.3
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       },
+       {
+        "pfad": "/_next/static/chunks/1rojozre70a3o.js",
+        "kb": 13.5
+       }
+      ]
+     },
+     {
+      "perf": 77,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2867.1052,
+      "cls": 0,
+      "tbt": 778.7237,
+      "fcp": 1067.1052,
+      "si": 1265.4405717269847,
+      "js_kb": 267,
+      "font_kb": 72,
+      "gesamt_kb": 495,
+      "benchmark": 1575,
+      "lcp_element": {
+       "selector": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+       "ausschnitt": "<p class=\"max-w-mass text-fs-4 text-tinte\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 14,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 259
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/2e_lrwr-bf1eq.js",
+        "kb": 44.4
+       },
+       {
+        "pfad": "/_next/static/chunks/37n20b9chzvn3.js",
+        "kb": 17.3
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       },
+       {
+        "pfad": "/_next/static/chunks/1rojozre70a3o.js",
+        "kb": 13.5
+       }
+      ]
+     },
+     {
+      "perf": 71,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2873.3189,
+      "cls": 0.001417786778254224,
+      "tbt": 1218.851375,
+      "fcp": 1234.97835,
+      "si": 1267.6902508152552,
+      "js_kb": 267,
+      "font_kb": 72,
+      "gesamt_kb": 495,
+      "benchmark": 1494,
+      "lcp_element": {
+       "selector": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+       "ausschnitt": "<p class=\"max-w-mass text-fs-4 text-tinte\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 17,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 245
+      },
+      "cls_quellen": [
+       {
+        "selector": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+        "wert": 0.0014
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/2e_lrwr-bf1eq.js",
+        "kb": 44.4
+       },
+       {
+        "pfad": "/_next/static/chunks/37n20b9chzvn3.js",
+        "kb": 17.3
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       },
+       {
+        "pfad": "/_next/static/chunks/1rojozre70a3o.js",
+        "kb": 13.5
+       }
+      ]
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 100,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 622,
+     "cls": 0.002,
+     "tbt": 36,
+     "fcp": 345,
+     "si": 463,
+     "js_kb": 486,
+     "font_kb": 72,
+     "gesamt_kb": 750,
+     "benchmark": 1534,
+     "lcp_element": {
+      "selector": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+      "ausschnitt": "<p class=\"max-w-mass text-fs-4 text-tinte\">"
+     },
+     "spanne": {
+      "perf": [
+       100,
+       100
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       620,
+       725
+      ],
+      "cls": [
+       0.002,
+       0.002
+      ],
+      "tbt": [
+       13,
+       47
+      ],
+      "fcp": [
+       342,
+       349
+      ],
+      "si": [
+       383,
+       480
+      ],
+      "js_kb": [
+       486,
+       486
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       750,
+       750
+      ],
+      "benchmark": [
+       1489,
+       1608
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 724.81,
+      "cls": 0.0019272775439378759,
+      "tbt": 13,
+      "fcp": 345.2149999999999,
+      "si": 382.85806777544394,
+      "js_kb": 486,
+      "font_kb": 72,
+      "gesamt_kb": 750,
+      "benchmark": 1608,
+      "lcp_element": {
+       "selector": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+       "ausschnitt": "<p class=\"max-w-mass text-fs-4 text-tinte\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 14,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 187
+      },
+      "cls_quellen": [
+       {
+        "selector": "body.antialiased > header.kopf-anker > div.mx-auto > nav.hidden",
+        "wert": 0.0019
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/2e_lrwr-bf1eq.js",
+        "kb": 44.4
+       },
+       {
+        "pfad": "/_next/static/chunks/1cnfntyp7wp74.js",
+        "kb": 40.3
+       },
+       {
+        "pfad": "/_next/static/chunks/3lpdhjcqjriij.js",
+        "kb": 32.5
+       }
+      ]
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 619.663,
+      "cls": 0.0019818253457681845,
+      "tbt": 47,
+      "fcp": 349.4945,
+      "si": 463.10164363354596,
+      "js_kb": 486,
+      "font_kb": 72,
+      "gesamt_kb": 750,
+      "benchmark": 1489,
+      "lcp_element": {
+       "selector": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+       "ausschnitt": "<p class=\"max-w-mass text-fs-4 text-tinte\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 16,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 221
+      },
+      "cls_quellen": [
+       {
+        "selector": "body.antialiased > header.kopf-anker > div.mx-auto > nav.hidden",
+        "wert": 0.002
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/2e_lrwr-bf1eq.js",
+        "kb": 44.4
+       },
+       {
+        "pfad": "/_next/static/chunks/1cnfntyp7wp74.js",
+        "kb": 40.3
+       },
+       {
+        "pfad": "/_next/static/chunks/3lpdhjcqjriij.js",
+        "kb": 32.5
+       }
+      ]
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 622.1199750000001,
+      "cls": 0.0019818253457681845,
+      "tbt": 36,
+      "fcp": 342.38855,
+      "si": 479.5924842852221,
+      "js_kb": 486,
+      "font_kb": 72,
+      "gesamt_kb": 750,
+      "benchmark": 1534,
+      "lcp_element": {
+       "selector": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+       "ausschnitt": "<p class=\"max-w-mass text-fs-4 text-tinte\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 21,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 288
+      },
+      "cls_quellen": [
+       {
+        "selector": "body.antialiased > header.kopf-anker > div.mx-auto > nav.hidden",
+        "wert": 0.002
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/2e_lrwr-bf1eq.js",
+        "kb": 44.4
+       },
+       {
+        "pfad": "/_next/static/chunks/1cnfntyp7wp74.js",
+        "kb": 40.3
+       },
+       {
+        "pfad": "/_next/static/chunks/3lpdhjcqjriij.js",
+        "kb": 32.5
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "/kontakt": {
+   "mobil": {
+    "median": {
+     "perf": 90,
+     "a11y": 99,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 2714,
+     "cls": 0,
+     "tbt": 294,
+     "fcp": 1071,
+     "si": 1071,
+     "js_kb": 267,
+     "font_kb": 72,
+     "gesamt_kb": 460,
+     "benchmark": 1443.5,
+     "lcp_element": {
+      "selector": "div.grid > div.col-span-4 > div.mt-8 > p",
+      "ausschnitt": "<p>"
+     },
+     "spanne": {
+      "perf": [
+       82,
+       91
+      ],
+      "a11y": [
+       99,
+       99
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       2713,
+       2715
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       268,
+       574
+      ],
+      "fcp": [
+       1070,
+       1073
+      ],
+      "si": [
+       1070,
+       1073
+      ],
+      "js_kb": [
+       267,
+       267
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       460,
+       460
+      ],
+      "benchmark": [
+       1415,
+       1602.5
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 91,
+      "a11y": 99,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2715.4322,
+      "cls": 0,
+      "tbt": 267.70974999999953,
+      "fcp": 1073.1482999999998,
+      "si": 1073.1482999999998,
+      "js_kb": 267,
+      "font_kb": 72,
+      "gesamt_kb": 460,
+      "benchmark": 1443.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-8 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 16,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 203
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/2e_lrwr-bf1eq.js",
+        "kb": 44.4
+       },
+       {
+        "pfad": "/_next/static/chunks/37n20b9chzvn3.js",
+        "kb": 17.3
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       },
+       {
+        "pfad": "/_next/static/chunks/1rojozre70a3o.js",
+        "kb": 13.5
+       }
+      ]
+     },
+     {
+      "perf": 82,
+      "a11y": 99,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2713.1207000000004,
+      "cls": 0,
+      "tbt": 574.2198250000004,
+      "fcp": 1069.68105,
+      "si": 1069.68105,
+      "js_kb": 267,
+      "font_kb": 72,
+      "gesamt_kb": 460,
+      "benchmark": 1415,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-8 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 13,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 186
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/2e_lrwr-bf1eq.js",
+        "kb": 44.4
+       },
+       {
+        "pfad": "/_next/static/chunks/37n20b9chzvn3.js",
+        "kb": 17.3
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       },
+       {
+        "pfad": "/_next/static/chunks/1rojozre70a3o.js",
+        "kb": 13.5
+       }
+      ]
+     },
+     {
+      "perf": 90,
+      "a11y": 99,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2714.1174,
+      "cls": 0,
+      "tbt": 293.5000000000002,
+      "fcp": 1071.1761000000001,
+      "si": 1071.1761000000001,
+      "js_kb": 267,
+      "font_kb": 72,
+      "gesamt_kb": 460,
+      "benchmark": 1602.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-8 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 14,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 207
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/2e_lrwr-bf1eq.js",
+        "kb": 44.4
+       },
+       {
+        "pfad": "/_next/static/chunks/37n20b9chzvn3.js",
+        "kb": 17.3
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       },
+       {
+        "pfad": "/_next/static/chunks/1rojozre70a3o.js",
+        "kb": 13.5
+       }
+      ]
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 100,
+     "a11y": 99,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 607,
+     "cls": 0.001,
+     "tbt": 3,
+     "fcp": 293,
+     "si": 360,
+     "js_kb": 486,
+     "font_kb": 72,
+     "gesamt_kb": 715,
+     "benchmark": 1484,
+     "lcp_element": {
+      "selector": "div.grid > div.col-span-4 > div.mt-8 > p",
+      "ausschnitt": "<p>"
+     },
+     "spanne": {
+      "perf": [
+       100,
+       100
+      ],
+      "a11y": [
+       99,
+       99
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       603,
+       648
+      ],
+      "cls": [
+       0.001,
+       0.002
+      ],
+      "tbt": [
+       0,
+       8
+      ],
+      "fcp": [
+       265,
+       296
+      ],
+      "si": [
+       354,
+       370
+      ],
+      "js_kb": [
+       486,
+       486
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       715,
+       715
+      ],
+      "benchmark": [
+       1480.5,
+       1519.5
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 100,
+      "a11y": 99,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 648.3236999999999,
+      "cls": 0.001672524733009151,
+      "tbt": 7.919075000000078,
+      "fcp": 265.3237,
+      "si": 360.00372706884286,
+      "js_kb": 486,
+      "font_kb": 72,
+      "gesamt_kb": 715,
+      "benchmark": 1480.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-8 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 16,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 176
+      },
+      "cls_quellen": [
+       {
+        "selector": "body.antialiased > header.kopf-anker > div.mx-auto > nav.hidden",
+        "wert": 0.0014
+       },
+       {
+        "selector": "div.flex > div.flex > button.flex > svg.inline-block",
+        "wert": 0.0003
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/2e_lrwr-bf1eq.js",
+        "kb": 44.4
+       },
+       {
+        "pfad": "/_next/static/chunks/1cnfntyp7wp74.js",
+        "kb": 40.3
+       },
+       {
+        "pfad": "/_next/static/chunks/3lpdhjcqjriij.js",
+        "kb": 32.5
+       }
+      ]
+     },
+     {
+      "perf": 100,
+      "a11y": 99,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 606.7226249999999,
+      "cls": 0.0014050990342576203,
+      "tbt": 0,
+      "fcp": 293.46715,
+      "si": 354.48059839098096,
+      "js_kb": 486,
+      "font_kb": 72,
+      "gesamt_kb": 715,
+      "benchmark": 1519.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-8 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 14,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 235
+      },
+      "cls_quellen": [
+       {
+        "selector": "body.antialiased > header.kopf-anker > div.mx-auto > nav.hidden",
+        "wert": 0.0014
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/2e_lrwr-bf1eq.js",
+        "kb": 44.4
+       },
+       {
+        "pfad": "/_next/static/chunks/1cnfntyp7wp74.js",
+        "kb": 40.3
+       },
+       {
+        "pfad": "/_next/static/chunks/3lpdhjcqjriij.js",
+        "kb": 32.5
+       }
+      ]
+     },
+     {
+      "perf": 100,
+      "a11y": 99,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 603.4233750000001,
+      "cls": 0.0014050990342576203,
+      "tbt": 2.5,
+      "fcp": 295.50805,
+      "si": 370.14025257768577,
+      "js_kb": 486,
+      "font_kb": 72,
+      "gesamt_kb": 715,
+      "benchmark": 1484,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-8 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 18,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 251
+      },
+      "cls_quellen": [
+       {
+        "selector": "body.antialiased > header.kopf-anker > div.mx-auto > nav.hidden",
+        "wert": 0.0014
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/2e_lrwr-bf1eq.js",
+        "kb": 44.4
+       },
+       {
+        "pfad": "/_next/static/chunks/1cnfntyp7wp74.js",
+        "kb": 40.3
+       },
+       {
+        "pfad": "/_next/static/chunks/3lpdhjcqjriij.js",
+        "kb": 32.5
+       }
+      ]
+     }
+    ]
+   }
+  }
+ },
+ "satz": "e2-tor-3",
+ "base": "http://127.0.0.1:4312",
+ "laeufe": 3,
+ "bedingungen": "lokal next start (komprimiert), Erstbesuch mit Banner, Dritt-Hosts blockiert, Lighthouse-Standard-Drosselung (mobil: simuliert 4× CPU, Slow 4G; Desktop-Preset), Aufwärmlauf, Median aus 3, Benchmark-Band ±15 %",
+ "benchmark_band": 0.15,
+ "benchmark_referenz": 1566
+}

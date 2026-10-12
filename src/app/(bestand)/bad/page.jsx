@@ -1,24 +1,57 @@
-import React from 'react';
+// Bad (E3-BAU-01, KERN v2): Erzählansicht nach dem Muster der Startseite und von /leistungen. Einstieg mit Achse, H1 links
+// bündig, Vorspann, Knöpfe und Zusagen; rechts der Verlegeplan „bad“ ohne Achse (je Bildschirm nur ein roter Blickfang).
+// Danach die Leitachse über die Abschnitte: Bad-Leistungen als Feldraster, Qualitäts-Kategorien als Feldraster auf Fliese
+// mit je einem Grundriss, Anfragewege (Projektcheck, darunter Badanfrage) in EINEM Abschnitt auf Fliese: Raster aus Funnel
+// (8 Spalten) und eine Rückfrage (4 Spalten, ab lg klebend).
+// Die Anfragewege werden nachgeladen (TEMPO). Wortlaut, Überschriften, Links, IDs und Lesefolge wie im Bestand.
+// Kein großer Moment und keine Bewegung (setzt der Orchestrator).
 import Link from 'next/link';
-import {
-    Droplets,
-    CheckCircle2,
-    ArrowRight,
-    Sparkles,
-    Layers,
-    ShieldCheck,
-    Ruler,
-    Award,
-    Star,
-    Grid
-} from 'lucide-react';
+import dynamic from 'next/dynamic';
+import clsx from 'clsx';
 import { COMPANY_DATA } from '@/config/company';
 import { QUALITY_TIERS } from '@/config/musterbaeder';
 import { RATING_SUMMARY } from '@/config/reviews';
-import BadProjektCheck from '@/components/funnels/BadProjektCheck';
-import BadanfrageFunnel from '@/components/funnels/BadanfrageFunnel';
 import { FinalCTA } from '@/components/ui/FinalCTA';
 import { createMetadata } from '@/lib/metadata';
+import Icon from '@/components/icons/Icon';
+import Einstieg from '@/components/kern/Einstieg';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Leitachse from '@/components/kern/Leitachse';
+import { Feld, Feldraster } from '@/components/kern/Feldraster';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Knopf from '@/components/kern/Knopf';
+import Rueckfrage from '@/components/kern/Rueckfrage';
+import Verlegeplan from '@/components/kern/Verlegeplan';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
+
+// Anfragewege nachladen wie auf der Startseite (TEMPO, Z-08 / E-025)
+const BadProjektCheck = dynamic(() => import('@/components/funnels/BadProjektCheck'), {
+    loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
+});
+const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFunnel'), {
+    loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
+});
+
+// Grundrisse je Qualitäts-Kategorie (Befund 17): gezeichnet, ohne Achse und ohne Bemaßung, keine Flächenangaben.
+// Der Plan zeigt, was die Beschreibung der Kategorie nennt.
+const TIER_PLAENE = {
+    Basic: {
+        name: 'basic', beschreibung: 'Grundriss Basic: Raum mit Duschwanne in einer Ecke.',
+        raum: { b: 24, h: 16 }, platte: { b: 6, h: 3 }, verband: 'halb', achse: 'lot',
+        elemente: [{ art: 'wanne', x: 1.5, y: 1.5, b: 6, h: 3 }],
+    },
+    Premium: {
+        name: 'premium', beschreibung: 'Grundriss Premium: bodengleiche Dusche mit Gefälle zur Rinne.',
+        raum: { b: 24, h: 16 }, platte: { b: 8, h: 4 }, verband: 'halb', achse: 'lot',
+        elemente: [{ art: 'gefaelle', x: 18, y: 3, laenge: 8, richtung: 'unten' }, { art: 'rinne', x: 14, y: 12, laenge: 9, richtung: 'waagrecht' }],
+    },
+    Luxus: {
+        name: 'luxus', beschreibung: 'Grundriss Luxus: freistehende Wanne mittig im Raum, großes Format im Drittelverband.',
+        raum: { b: 24, h: 16 }, platte: { b: 12, h: 6 }, verband: 'drittel', achse: 'lot',
+        elemente: [{ art: 'wanne', x: 8, y: 5.5, b: 8, h: 5 }],
+    },
+};
 
 export const metadata = createMetadata({
     title: 'Badsanierung Wetzlar & Aßlar | Fachbetrieb Tezgel',
@@ -27,167 +60,162 @@ export const metadata = createMetadata({
 });
 
 const BATH_SERVICES = [
-    { title: 'Badsanierung komplett', desc: 'Komplettbad schlüsselfertig zum Festpreis', path: '/bad/badsanierung', icon: Droplets },
-    { title: 'Fliesen & XXL-Großformate', desc: 'Fugenarm verlegt, abgedichtet nach DIN 18534', path: '/bad/fliesen', icon: Grid },
-    { title: 'Barrierefreies Bad', desc: 'DIN 18040-2 & bis zu 4.180 € Zuschuss', path: '/bad/barrierefreies-bad', icon: ShieldCheck },
-    { title: 'Bad aus einer Hand', desc: 'Ein Ansprechpartner, abgestimmte Gewerke', path: '/bad/bad-aus-einer-hand', icon: Sparkles },
-    { title: 'Musterbad-Konzepte', desc: 'Basic, Premium & Luxus (4,6 bis 15,9 m²)', path: '/bad/musterbaeder', icon: Layers },
-    { title: 'Badplaner', desc: 'Ihr neues Bad Schritt für Schritt planen', path: '/bad/badplaner', icon: Ruler }
+    { title: 'Badsanierung komplett', desc: 'Komplettbad schlüsselfertig zum Festpreis', path: '/bad/badsanierung' },
+    { title: 'Fliesen & XXL-Großformate', desc: 'Fugenarm verlegt, abgedichtet nach DIN 18534', path: '/bad/fliesen' },
+    { title: 'Barrierefreies Bad', desc: 'DIN 18040-2 & bis zu 4.180 € Zuschuss', path: '/bad/barrierefreies-bad' },
+    { title: 'Bad aus einer Hand', desc: 'Ein Ansprechpartner, abgestimmte Gewerke', path: '/bad/bad-aus-einer-hand' },
+    { title: 'Musterbad-Konzepte', desc: 'Basic, Premium & Luxus (4,6 bis 15,9 m²)', path: '/bad/musterbaeder' },
+    { title: 'Badplaner', desc: 'Ihr neues Bad Schritt für Schritt planen', path: '/bad/badplaner' }
 ];
+
+const ZUSAGEN = ['Kostenfreies Vor-Ort-Aufmaß', 'Staubschutz-Garantie', 'Verbindlicher Festpreis'];
 
 export default function BadPage() {
     const google = RATING_SUMMARY.google;
 
     return (
-        <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            {/* Ambient Glow */}
-            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-red top-96 -right-24 opacity-60" />
-
-            {/* Hero */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 relative z-10" aria-labelledby="bad-hero-heading">
-                <div className="ceramic-hero rounded-tile-lg border border-neutral-200/80 shadow-tile p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <div className="flex flex-wrap items-center justify-center gap-2">
-                        <span className="eyebrow">
-                            <Award className="w-3.5 h-3.5" />
-                            HWK Fachbetrieb für Badsanierung &middot; Aßlar &amp; Wetzlar
+        <>
+            {/* 1. EINSTIEG: Kennzeile, H1 auf der Achse, Vorspann, Knöpfe, Zusagen; rechts der Plan ohne Achse */}
+            <section aria-labelledby="bad-hero-heading">
+                <Einstieg
+                    art="erzaehl"
+                    etikett={
+                        <>
+                            <span>HWK Fachbetrieb für Badsanierung &middot; Aßlar &amp; Wetzlar</span>
+                            <Fugenkreuz className="size-3 shrink-0 text-strich" />
+                            <span className="inline-flex items-center gap-2">
+                                <Icon name="stern-voll" groesse={4} />
+                                {google.displayRating} &middot; {google.count} {google.label}
+                            </span>
+                        </>
+                    }
+                    titel={
+                        <span id="bad-hero-heading">
+                            Ihr Traumbad schlüsselfertig{' '}
+                            <span>in Fachqualität</span>
                         </span>
-                        <span className="eyebrow eyebrow-amber">
-                            <Star className="w-3.5 h-3.5 fill-current text-amber-500" />
-                            {google.displayRating} &middot; {google.count} {google.label}
-                        </span>
-                    </div>
-                    <h1 id="bad-hero-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Ihr Traumbad schlüsselfertig{' '}
-                        <span className="text-ceramic-gradient">in Fachqualität</span>
-                    </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Ihr Fachbetrieb Tezgel realisiert Ihre schlüsselfertige Badsanierung in Aßlar, Wetzlar und ganz Mittelhessen. Von der ersten Planungsskizze bis zur schlüsselfertigen Übergabe Ihres Traumbads in Fachqualität koordinieren wir alle Gewerke, garantieren transparente Festpreise und verbauen normgerechte Verbundabdichtungen nach DIN 18534.
-                    </p>
-
-                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 pt-4 w-full sm:w-auto">
-                        <Link href="/bad/projekt-check" className="btn-primary w-full sm:w-auto px-7 py-3.5 text-xs group justify-center">
-                            Bad-Projektcheck starten
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                        </Link>
-                        <Link href="/bad/musterbaeder" className="btn-ghost w-full sm:w-auto px-7 py-3.5 text-xs justify-center">
-                            Musterbäder entdecken
-                        </Link>
-                    </div>
-
-                    <ul className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 pt-2 text-sm font-semibold text-slate-700">
-                        {['Kostenfreies Vor-Ort-Aufmaß', 'Staubschutz-Garantie', 'Verbindlicher Festpreis'].map((item) => (
-                            <li key={item} className="flex items-center gap-1.5">
-                                <CheckCircle2 className="w-4 h-4 text-orange-600" />
-                                {item}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </section>
-
-            {/* Sub-Services Navigation Grid */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 relative z-10" aria-labelledby="bad-services-heading">
-                <div className="text-center max-w-3xl mx-auto mb-10">
-                    <span className="eyebrow eyebrow-sky mb-4">Bad-Leistungen im Überblick</span>
-                    <h2 id="bad-services-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Alles für Ihr neues Bad{' '}
-                        <span className="text-ceramic-gradient">aus einer Hand</span>
-                    </h2>
-                </div>
-
-                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                    {BATH_SERVICES.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                            <li key={item.path}>
-                                <Link
-                                    href={item.path}
-                                    className="group glass-surface p-6 rounded-tile-md flex items-start gap-4 h-full hover:-translate-y-0.5 hover:border-orange-500 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
-                                >
-                                    <span className="icon-chip w-11 h-11">
-                                        <Icon className="w-5 h-5" />
-                                    </span>
-                                    <span className="flex-1">
-                                        <span className="block font-black text-sm sm:text-base text-slate-900 group-hover:text-orange-600 transition-colors mb-1">
-                                            {item.title}
-                                        </span>
-                                        <span className="block text-xs text-slate-600 font-medium">{item.desc}</span>
-                                    </span>
-                                    <ArrowRight className="w-4 h-4 mt-1 text-slate-600 group-hover:text-orange-600 group-hover:translate-x-0.5 transition-all" />
-                                </Link>
-                            </li>
-                        );
-                    })}
-                </ul>
-            </section>
-
-            {/* Quality Tiers */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="bad-tiers-heading">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-14">
-                        <span className="eyebrow mb-4">Transparente Standards</span>
-                        <h2 id="bad-tiers-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Unsere Qualitäts-Kategorien im Überblick
-                        </h2>
-                        <p className="mt-3 text-base text-slate-700 leading-relaxed">
-                            Wählen Sie das passende Konzept für Ihre Ansprüche –
-                            den verbindlichen Festpreis erhalten Sie nach dem kostenfreien Vor-Ort-Aufmaß.
+                    }
+                    vorspann={
+                        <p>
+                            Ihr Fachbetrieb Tezgel realisiert Ihre schlüsselfertige Badsanierung in Aßlar, Wetzlar und ganz Mittelhessen. Von der ersten Planungsskizze bis zur schlüsselfertigen Übergabe Ihres Traumbads in Fachqualität koordinieren wir alle Gewerke, garantieren transparente Festpreise und verbauen normgerechte Verbundabdichtungen nach DIN 18534.
                         </p>
-                    </div>
+                    }
+                    aktionen={
+                        <>
+                            <Knopf href="/bad/projekt-check" icon="pfeil-rechts">Bad-Projektcheck starten</Knopf>
+                            <Knopf href="/bad/musterbaeder" variante="neben">Musterbäder entdecken</Knopf>
+                        </>
+                    }
+                    merkmale={
+                        <ul className="grid gap-3">
+                            {ZUSAGEN.map((item) => (
+                                <li key={item} className="flex items-center gap-3 font-text text-fs-2 text-tinte">
+                                    <Fugenkreuz className="size-3 shrink-0 text-strich" />
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                    }
+                    rand={
+                        // Planblatt (E4-NACH-01): eigenes Motiv „badsanierung“ (der Badplan gehört zu /leistungen/bad);
+                        // großer Moment (E4-NACH-02): beim Laden rückt das Fugenbild in die Flucht – die Lücke an der Wand
+                        // schließt sich, beide Passstücke werden gleich
+                        <Planblatt felder={planfelder('Badsanierung', 'badsanierung')}>
+                            <Verlegeplan plan="badsanierung" ohneAchse bemassung={false} flucht="laden" />
+                        </Planblatt>
+                    }
+                />
+            </section>
 
-                    <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {QUALITY_TIERS.map((tier) => (
-                            <li
-                                key={tier.name}
-                                className="group p-8 rounded-tile-md bg-slate-50 border border-slate-200 flex flex-col justify-between hover:bg-white hover:-translate-y-0.5 hover:border-orange-500 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
-                            >
-                                <div className="space-y-3">
-                                    <span className="text-xs font-black px-3.5 py-1 rounded-tile-sm bg-orange-50 text-orange-950 inline-block border border-orange-200">
-                                        {tier.name}
+            {/* LEITACHSE: das Lot setzt die Achse des Einstiegs über die Abschnitte fort */}
+            <Leitachse>
+                {/* 2. BAD-LEISTUNGEN als Feldraster: je Leistung ein Feld, das ganz als Link dient */}
+                <Abschnitt
+                    titelId="bad-services-heading"
+                    leitachse
+                    spaet
+                    etikett="Bad-Leistungen im Überblick"
+                    titel="Alles für Ihr neues Bad aus einer Hand"
+                >
+                    <Feldraster spalten={3}>
+                        {BATH_SERVICES.map((item) => (
+                            <Feld key={item.path} className="relative">
+                                <Link href={item.path} className="group flex flex-1 flex-col gap-2 after:absolute after:inset-0">
+                                    <span className="font-text text-fs-4 font-semibold text-tinte underline decoration-strich underline-offset-4 group-hover:decoration-tinte">
+                                        {item.title}
                                     </span>
-                                    <h3 className="text-xl font-black text-slate-900 group-hover:text-orange-600 transition-colors">
-                                        {tier.subtitle}
-                                    </h3>
-                                    <p className="text-sm text-slate-700 leading-relaxed">{tier.description}</p>
-                                </div>
-                                <div className="pt-6 mt-6 border-t border-slate-200">
-                                    <Link
-                                        href="/bad/musterbaeder"
-                                        className="text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1"
-                                    >
-                                        Musterbäder ansehen
-                                        <ArrowRight className="w-4 h-4" />
-                                    </Link>
-                                </div>
-                            </li>
+                                    <span className="font-text text-fs-2 text-tinte-2">{item.desc}</span>
+                                    <span className="mt-auto pt-4">
+                                        <Icon name="pfeil-rechts" groesse={5} className="text-tinte" />
+                                    </span>
+                                </Link>
+                            </Feld>
                         ))}
-                    </ul>
+                    </Feldraster>
+                </Abschnitt>
 
-                    <p className="mt-8 text-center text-sm text-slate-700">
+                {/* 3. QUALITÄTS-KATEGORIEN auf Kalk (die Anfragewege danach stehen auf Fliese – keine zwei gleichen Flächen in Folge,
+                    Rückgabe E4-N2-04): je Kategorie ein Feld, Musterbäder als Textlink, Telefon im Satz */}
+                <Abschnitt
+                    titelId="bad-tiers-heading"
+                    leitachse
+                    spaet
+                    etikett="Transparente Standards"
+                    titel="Unsere Qualitäts-Kategorien im Überblick"
+                    einleitung={
+                        <p>
+                            Wählen Sie das passende Konzept für Ihre Ansprüche – den verbindlichen Festpreis erhalten Sie nach dem kostenfreien Vor-Ort-Aufmaß.
+                        </p>
+                    }
+                >
+                    <Feldraster spalten={3}>
+                        {QUALITY_TIERS.map((tier) => (
+                            <Feld key={tier.name} className="justify-between gap-6">
+                                <div>
+                                    <div className="mb-6 w-1/2">
+                                        <Verlegeplan plan={TIER_PLAENE[tier.name]} ohneAchse bemassung={false} />
+                                    </div>
+                                    <p className={etikettKlassen}>{tier.name}</p>
+                                    <h3 className="mt-3 font-anzeige text-fs-4 text-tinte">{tier.subtitle}</h3>
+                                    <p className="mt-3 max-w-mass font-text text-fs-2 text-tinte-2">{tier.description}</p>
+                                </div>
+                                <div className="border-t border-fuge pt-6">
+                                    <Knopf href="/bad/musterbaeder" variante="text" icon="pfeil-rechts">Musterbäder ansehen</Knopf>
+                                </div>
+                            </Feld>
+                        ))}
+                    </Feldraster>
+
+                    <p className="mt-8 font-text text-fs-2 text-tinte-2">
                         Fragen zu Ihrem Bad? Rufen Sie {COMPANY_DATA.owner.fullName} direkt an:{' '}
-                        <a
-                            href={`tel:${COMPANY_DATA.contact.phoneLink}`}
-                            className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2"
-                        >
+                        <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className={clsx(linkKlassen, 'whitespace-nowrap font-mono')}>
                             {COMPANY_DATA.contact.phone}
                         </a>
                     </p>
-                </div>
-            </section>
+                </Abschnitt>
 
-            {/* Interactive Calculator Component */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10 relative z-10 scroll-mt-28" id="projekt-check" aria-label="Bad-Projektcheck">
-                <BadProjektCheck />
-            </section>
+                {/* 4. ANFRAGEWEGE in einem Abschnitt auf Fliese: der Projektcheck, darunter mit Fuge die Badanfrage (beide Werkzeuge
+                    bleiben); rechts EINE Rückfrage (ab lg klebend, unter lg nach beiden Werkzeugen). Die IDs und ARIA-Namen liegen an
+                    den beiden inneren Hüllen; die Hüllen sind Regionen mit Namen, wie zuvor die Abschnitte. */}
+                <Abschnitt flaeche="fliese" leitachse spaet>
+                    <div className="grid gap-y-12 lg:grid-cols-12 lg:gap-x-12">
+                        <div className="min-w-0 lg:col-span-8">
+                            <div id="projekt-check" role="region" aria-label="Bad-Projektcheck" className="scroll-mt-24">
+                                <BadProjektCheck />
+                            </div>
+                            <div id="anfrage" role="region" aria-label="Badanfrage" className="mt-12 scroll-mt-24 border-t border-fuge pt-12">
+                                <BadanfrageFunnel />
+                            </div>
+                        </div>
+                        <div className="lg:col-span-4">
+                            <Rueckfrage />
+                        </div>
+                    </div>
+                </Abschnitt>
+            </Leitachse>
 
-            {/* Badanfrage Funnel */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10 scroll-mt-28" id="anfrage" aria-label="Badanfrage">
-                <BadanfrageFunnel />
-            </section>
-
-            {/* Final Conversion CTA */}
+            {/* 6. ABSCHLUSS */}
             <FinalCTA />
-        </div>
+        </>
     );
 }

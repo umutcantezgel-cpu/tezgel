@@ -1,0 +1,46 @@
+{
+ "modus": "register",
+ "seite": "/bad",
+ "base": "http://127.0.0.1:4320",
+ "ansicht": "d1440",
+ "zeitpunkt": "2026-10-12T01:29:34.944Z",
+ "schritte": {
+  "hover_geprueft": 20,
+  "hover_fehler": 0,
+  "hover_fehler_beispiel": null,
+  "hover_ausserhalb_uebersprungen": 0,
+  "tab_schritte": 30,
+  "fokus_verschieden": 23
+ },
+ "data_motion_elemente": 112,
+ "gefundene_kennungen": [
+  "aufklappen",
+  "druck",
+  "leitachse",
+  "sig-plan",
+  "zustand"
+ ],
+ "unbekannt": [],
+ "registriert_nicht_im_dom": [
+  "sig-kreuzlinie",
+  "sig-flucht",
+  "szene-ablauf",
+  "einzugsband",
+  "verband",
+  "fugenband",
+  "anriss",
+  "auftritt",
+  "notiert",
+  "laden",
+  "seitenwechsel"
+ ],
+ "ohne_register": [],
+ "mit_register_eintraege": 22,
+ "erfasste_eintraege": 22,
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "verzeichnis": "/home/user/tezgel/_werkstatt/belege/e4-nach/bewegung/register-bad-d1440"
+}

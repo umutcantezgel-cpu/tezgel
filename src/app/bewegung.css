@@ -69,6 +69,85 @@ html.k-bewegung:not(.k-notaus) [data-motion="anriss"]:not([data-motion-stand="an
   to { scale: 1 1; }
 }
 
+/* fugenband (K-007, /ueber-uns, E3-ORCH-05) – Lot an den Jahren der Firmengeschichte; das rote Stück wächst linear mit
+   dem Scrollen durch das Band (view-timeline). Ohne Unterstützung oder reduziert: fertig gezogen. */
+.fugenband-linie {
+  pointer-events: none;
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: 1px;
+  background: var(--color-fuge);
+}
+.fugenband-rot {
+  display: block;
+  width: 2px;
+  margin-inline-start: -0.5px;
+  height: 100%;
+  background: var(--color-laser);
+  transform-origin: top center;
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .fugenband {
+      view-timeline: --fugenband block;
+    }
+    .fugenband-rot {
+      animation: leitachse-ziehen linear both;
+      animation-timeline: --fugenband;
+      animation-range: cover 20% cover 80%;
+    }
+  }
+}
+@media print, (forced-colors: active) {
+  .fugenband-rot {
+    animation: none !important;
+  }
+}
+
+/* verband (K-007, /fliesen, E3-ORCH-04, E4-NACH-02) – Radiogruppe ohne JavaScript: die Auswahl versetzt über :has() die
+   Reihen des einen Plans um ½ bzw. ⅓ Plattenlänge (Zeichnungseinheiten: Platte 80, also 40 bzw. 26,667/53,333), Übergang
+   dauer-3 · setzen, nur translate. Das gewählte Feld färbt Tailwind `has-checked:` (Utility-Layer). Ohne :has() stehen die
+   drei Verbände als eigene Pläne untereinander; reduziert, ohne Startklasse und im Druck wechselt der Plan sofort. */
+.verband-wahl:has(input:focus-visible) {
+  outline: 2px solid var(--color-tinte);
+  outline-offset: -4px;
+}
+.verband .verband-bewegt {
+  display: none;
+}
+@supports selector(:has(*)) {
+  .verband .verband-bewegt {
+    display: block;
+  }
+  .verband .verband-plaene {
+    display: none;
+  }
+  .verband:has([data-verband-wahl="halb"]:checked) .verband-reihe[data-halb="1"] {
+    translate: 40px 0;
+  }
+  .verband:has([data-verband-wahl="drittel"]:checked) .verband-reihe[data-drittel="1"] {
+    translate: 26.667px 0;
+  }
+  .verband:has([data-verband-wahl="drittel"]:checked) .verband-reihe[data-drittel="2"] {
+    translate: 53.333px 0;
+  }
+  html.k-bewegung .verband .verband-reihe {
+    transition: translate var(--dauer-3) var(--ease-setzen);
+  }
+}
+@media print, (forced-colors: active) {
+  .verband .verband-reihe {
+    transition: none !important;
+  }
+}
+@media (forced-colors: active) {
+  .verband-wahl:has(input:checked) {
+    outline: 3px solid CanvasText;
+    outline-offset: -5px;
+  }
+}
+
 /* aufklappen – Höhe über grid-template-rows (Menü, Akkordeon); zu: eine Stufe kürzer */
 .aufklappen {
   display: grid;
@@ -240,21 +319,59 @@ html.k-bewegung .laden-fuge::after {
 .verlegeplan .plan-abnahme circle { fill: var(--color-abnahme); stroke: none; }
 .verlegeplan .plan-abnahme path { fill: none; stroke: var(--color-fliese); stroke-width: 2; vector-effect: non-scaling-stroke; }
 
-/* sig-plan: das Raster steht versetzt, bis Hover/Fokus (fein) bzw. Eintritt (grob) es in die Flucht rückt */
-.verlegeplan .plan-raster { --plan-versatz: -9px; }
-html.k-bewegung [data-motion="sig-plan"] .plan-raster,
-html.k-bewegung .sig-plan-ziel .plan-raster {
-  transition: translate var(--dauer-2) var(--ease-setzen);
+/* sig-plan (K-007, E4-NACH-02): Stoßfugen und Passstücke jeder Reihe stehen abwechselnd um ein gutes Drittel
+   Plattenbreite nach links bzw. rechts versetzt (--plan-versatz am <svg>, --richtung je Reihenteil; Verlegeplan.tsx) – das
+   Fugenbild ist aus der Flucht – und rücken in die Flucht: Stoßfugen auf der Achse, beide Passstücke gleich. `zeigen`: am
+   Desktop bei Hover/Fokus, mobil beim Eintritt (Übergang dauer-3 · setzen). `laden`: einmal beim Laden (Planblatt im
+   Einstieg, Animation dauer-4 · setzen nach dauer-2). Startzustände nur unter html.k-bewegung ohne Notaus; reduziert,
+   ohne JS und im Druck steht das Raster in der Flucht. */
+html.k-bewegung [data-motion="sig-plan"]:not([data-flucht="laden"]) .plan-reihenteil,
+html.k-bewegung .sig-plan-ziel .plan-reihenteil {
+  transition: translate var(--dauer-3) var(--ease-setzen);
 }
 @media (hover: hover) and (pointer: fine) {
-  html.k-bewegung:not(.k-notaus) .sig-plan-ziel:not(:hover):not(:focus-within) .plan-raster,
-  html.k-bewegung:not(.k-notaus) [data-motion="sig-plan"]:not(:hover) .plan-raster {
-    translate: var(--plan-versatz) 0;
+  html.k-bewegung:not(.k-notaus) .sig-plan-ziel:not(:hover):not(:focus-within) .plan-reihenteil,
+  html.k-bewegung:not(.k-notaus) [data-motion="sig-plan"][data-flucht="zeigen"]:not(:hover) .plan-reihenteil {
+    translate: calc(var(--plan-versatz) * var(--richtung, 1)) 0;
   }
 }
 @media (hover: none), (pointer: coarse) {
-  html.k-bewegung:not(.k-notaus) [data-motion="sig-plan"]:not([data-motion-stand="an"]) .plan-raster {
-    translate: var(--plan-versatz) 0;
+  html.k-bewegung:not(.k-notaus) [data-motion="sig-plan"]:not([data-flucht="laden"]):not([data-motion-stand="an"]) .plan-reihenteil {
+    translate: calc(var(--plan-versatz) * var(--richtung, 1)) 0;
+  }
+}
+@keyframes plan-flucht {
+  from { translate: calc(var(--plan-versatz) * var(--richtung, 1)) 0; }
+}
+html.k-bewegung [data-motion="sig-plan"][data-flucht="laden"] .plan-reihenteil {
+  animation: plan-flucht var(--dauer-4) var(--ease-setzen) var(--dauer-2) both;
+}
+/* Mit der Flucht zieht sich die rote Achse des Plans auf (E3-SICHT-2-ERZ Befund 7: bei 1440 px war die Flucht in den grauen
+   1-px-Fugen kaum zu sehen) – das gezogene Rot des Einstiegs, laser · dauer-4 parallel zur Flucht; nur scale. */
+@keyframes plan-achse-lot-ziehen {
+  from { scale: 1 0; }
+}
+@keyframes plan-achse-waage-ziehen {
+  from { scale: 0 1; }
+}
+html.k-bewegung:not(.k-notaus) [data-motion="sig-plan"][data-flucht="laden"] .plan-achse-lot,
+html.k-bewegung:not(.k-notaus) [data-motion="sig-plan"][data-flucht="laden"] .plan-achse-waage {
+  transform-box: fill-box;
+  transform-origin: 50% 0;
+  animation: plan-achse-lot-ziehen var(--dauer-4) var(--ease-laser) var(--dauer-2) both;
+}
+html.k-bewegung:not(.k-notaus) [data-motion="sig-plan"][data-flucht="laden"] .plan-achse-waage {
+  transform-origin: 0 50%;
+  animation-name: plan-achse-waage-ziehen;
+}
+@media print {
+  .verlegeplan .plan-achse {
+    scale: none !important;
+    animation: none !important;
+  }
+  .verlegeplan .plan-reihenteil {
+    translate: none !important;
+    animation: none !important;
   }
 }
 
@@ -296,19 +413,32 @@ html.k-bewegung .sig-plan-ziel .plan-raster {
 @keyframes szene-einblenden { from { opacity: 0; } to { opacity: 1; } }
 @keyframes szene-setzen { from { opacity: 0; scale: 0.6; } to { opacity: 1; scale: 1; } }
 
-/* einzugsband (K-007, /standorte und [stadt]): die Zonenkanten setzen sich nacheinander von links (dauer-3, setzen,
-   Staffel je Zone); Startzustand nur unter html.k-bewegung und solange der Stand nicht „an“ ist. */
-.einzugsband .einzugsband-kante { transform-origin: 0 50%; }
-html.k-bewegung [data-motion="einzugsband"] .einzugsband-kante {
-  transition: scale var(--dauer-3) var(--ease-setzen);
+/* einzugsband (K-007, /standorte und [stadt]; E4-NACH-02, E4-N2-03): beim Laden zieht sich die Kante jeder Zone von links
+   auf, Zone 2 und 3 je fünf Staffelstufen später (dauer-3 · setzen, gesamt 1,2 s); Orte und Entfernungen stehen ab dem
+   ersten Bild (vorher deckte eine Fläche sie ab, E3-SICHT-2-ERZ Befund 18). CSS ab dem ersten Bild unter html.k-bewegung;
+   ohne Startklasse, reduziert, nach dem Notaus und im Druck steht die Kante voll. Nur scale. */
+.einzugsband .einzugsband-kante {
+  transform-origin: left center;
 }
-html.k-bewegung [data-motion="einzugsband"] .einzugsband-zone:nth-child(2) .einzugsband-kante { transition-delay: calc(var(--staffel) * 3); }
-html.k-bewegung [data-motion="einzugsband"] .einzugsband-zone:nth-child(3) .einzugsband-kante { transition-delay: calc(var(--staffel) * 6); }
-html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"]:not([data-motion-stand="an"]) .einzugsband-kante {
-  scale: 0 1;
+@keyframes einzugsband-kante-ziehen {
+  from { scale: 0 1; }
+}
+html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"] .einzugsband-kante {
+  animation: einzugsband-kante-ziehen var(--dauer-3) var(--ease-setzen) both;
+}
+html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"] .einzugsband-zone:nth-child(2) .einzugsband-kante {
+  animation-delay: calc(var(--staffel) * 5);
+}
+html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"] .einzugsband-zone:nth-child(3) .einzugsband-kante {
+  animation-delay: calc(var(--staffel) * 10);
+}
+@media print {
+  .einzugsband .einzugsband-kante {
+    animation: none !important;
+  }
 }
 
-/* sig-kreuzlinie (SIG-1, nur /) – Waage und Lot wachsen aus dem Kreuzpunkt (dauer-5, laser); mobil nur das Lot.
+/* sig-kreuzlinie (SIG-1, nur /) – Waage und Lot wachsen aus dem Kreuzpunkt (dauer-5, linear seit E3-NACH-02); mobil nur das Lot.
    Lage (oben, links) über Klassen am Element; Endzustand = beide Linien voll. */
 .kreuzlinie {
   pointer-events: none;
@@ -336,46 +466,79 @@ html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"]:not([data-motion-stan
   margin-block-start: -1px;
   transform-origin: center left;
 }
+/* Grundschicht des Lots (Fuge, wie die Leitachse) und rotes Lot nur über den ersten Bildschirm (unter lg, Einstieg /) */
+.kreuzlinie-grund {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: 1px;
+  background: var(--color-fuge);
+}
+.kreuzlinie-lot-bildschirm {
+  inset-block-end: auto;
+  height: min(100%, 100svh);
+}
 .kreuzlinie-punkt {
   position: absolute;
   inset-block-start: 0;
   inset-inline-start: 0;
   translate: -50% -50%;
 }
-html.k-bewegung .kreuzlinie-lot,
-html.k-bewegung .kreuzlinie-waage {
-  transition: scale var(--dauer-5) var(--ease-laser);
+/* Waage auf dem Planblatt: wächst aus dem Kreuzpunkt mit dem Lot des Plans – der Plan steht mittig in der rechten
+   Blatthälfte, sein Lot also bei 75 % der Blattbreite (Einstieg, E3-NACH-02) */
+.kreuzlinie-aus-plan {
+  transform-origin: 75% center;
 }
-html.k-bewegung:not(.k-notaus) [data-motion="sig-kreuzlinie"]:not([data-motion-stand="an"]) .kreuzlinie-lot {
-  scale: 1 0;
+/* SIG-1 läuft als CSS-Animation ab dem ersten Bild (Startklasse aus dem Kopfskript), nicht erst nach der Hydrierung:
+   kein Startverzug und kein Notaus-Sprung auf langsamen Geräten. Der Laser zieht gleichmäßig (linear): bei 25/50/75 %
+   der Dauer ist die Linie ¼/½/¾ lang (E2-SICHT-2 Befunde 5 und 11). Das Lot im Plan wächst von der Schnittkante nach oben. */
+@keyframes kreuzlinie-lot-wachsen {
+  from { scale: 1 0; }
 }
-html.k-bewegung:not(.k-notaus) [data-motion="sig-kreuzlinie"]:not([data-motion-stand="an"]) .kreuzlinie-waage {
-  scale: 0 1;
+@keyframes kreuzlinie-waage-wachsen {
+  from { scale: 0 1; }
+}
+@keyframes flucht-einruecken {
+  from { translate: calc(var(--spacing) * 3) 0; }
+}
+html.k-bewegung [data-motion="sig-kreuzlinie"] .kreuzlinie-lot {
+  animation: kreuzlinie-lot-wachsen var(--dauer-5) linear both;
+}
+html.k-bewegung [data-motion="sig-kreuzlinie"] .kreuzlinie-waage {
+  animation: kreuzlinie-waage-wachsen var(--dauer-5) linear both;
+}
+/* das Lot nach der Waage (ab lg) folgt, wenn die Waage ihr linkes Ende erreicht hat */
+html.k-bewegung [data-motion="sig-kreuzlinie"] .kreuzlinie-nach-waage {
+  /* gesamt 1,52 s (große Momente ≤ 1,6 s, K-007; Rückgabe E4-NACH-18) */
+  animation-duration: var(--dauer-2);
+  animation-delay: var(--dauer-5);
+}
+/* Ursprung = Unterkante der Zeichenfläche: im geschnittenen Plan ist das die Schnittkante, also der Kreuzpunkt */
+html.k-bewegung [data-motion="sig-kreuzlinie"] .plan-achse {
+  transform-box: view-box;
+  transform-origin: center bottom;
+  animation: kreuzlinie-lot-wachsen var(--dauer-5) linear both;
 }
 
-/* sig-flucht (SIG-1) – die Zeilen der H1 rücken 12 px in die Flucht; Deckkraft bleibt 1 (LCP) */
+/* sig-flucht (SIG-1) – die Zeilen der H1 rücken 12 px in die Flucht, nacheinander (je Zeile zwei Staffelstufen),
+   während die Linien wachsen; Deckkraft bleibt 1 */
 html.k-bewegung [data-motion="sig-flucht"] > * {
-  transition: translate var(--dauer-4) var(--ease-setzen);
+  animation: flucht-einruecken var(--dauer-4) var(--ease-setzen) both;
 }
-/* Staffel: je Zeile zwei Stufen (2 × --staffel), damit die Zeilen sichtbar nacheinander einrücken */
 html.k-bewegung [data-motion="sig-flucht"] > :nth-child(2) {
-  transition-delay: calc(var(--staffel) * 2);
+  animation-delay: calc(var(--staffel) * 2);
 }
 html.k-bewegung [data-motion="sig-flucht"] > :nth-child(3) {
-  transition-delay: calc(var(--staffel) * 4);
+  animation-delay: calc(var(--staffel) * 4);
 }
 html.k-bewegung [data-motion="sig-flucht"] > :nth-child(4) {
-  transition-delay: calc(var(--staffel) * 6);
-}
-html.k-bewegung:not(.k-notaus) [data-motion="sig-flucht"]:not([data-motion-stand="an"]) > * {
-  translate: calc(var(--spacing) * 3) 0;
+  animation-delay: calc(var(--staffel) * 6);
 }
 @media print, (forced-colors: active) {
   html.k-bewegung [data-motion="sig-kreuzlinie"] .kreuzlinie-lot,
-  html.k-bewegung [data-motion="sig-kreuzlinie"] .kreuzlinie-waage {
-    scale: none !important;
-  }
+  html.k-bewegung [data-motion="sig-kreuzlinie"] .kreuzlinie-waage,
+  html.k-bewegung [data-motion="sig-kreuzlinie"] .plan-achse,
   html.k-bewegung [data-motion="sig-flucht"] > * {
-    translate: none !important;
+    animation: none !important;
   }
 }

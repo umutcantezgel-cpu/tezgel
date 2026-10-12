@@ -1,17 +1,14 @@
+import React from 'react';
 import Link from 'next/link';
-import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Icon from '@/components/icons/Icon';
 import { COMPANY_DATA } from '@/config/company';
 import { buildChecklist, buildSummaryLines, calculateArea, calculateStairs, fmt } from '@/lib/formulare/useFliesenKonfigurator';
 import { linkClass } from './stile';
 
-// Ergebnis als Schriftfeld an der Fuge (Q-05, KERN v2): drei Felder in einem Raster mit 1-px-Fugen – Projekt in Kürze
-// (Begriff in Mono über bzw. neben dem Wert), Materialbedarf (Zahlen mit Einheit in Mono, Richtwert in Tinte) und
-// Prüfliste (Fugenkreuz als Marke). Rechnung, Zeilen und Wortlaut aus dem Hook bzw. wie im Bestand; Überschriften h4.
-// Spalten nach Behälterbreite: Projekt und Materialbedarf ab 56 rem nebeneinander, die Prüfliste darunter über beide.
-const FELD = 'flex min-w-0 flex-col gap-4 p-4 @xl:p-6';
-const KOPF = 'flex items-center gap-2 text-fs-4 text-tinte';
-
+// Ergebnis: Zusammenfassung, Materialbedarf, Checkliste (E-011: aus FliesenKonfigurator.jsx verschoben, unverändert).
+// E3-BAU-14: Darstellung nach KERN („Fuge statt Karte“): ein Feld, die Abschnitte durch 1-px-Fugen getrennt, Icons aus
+// der Icon-Familie; Texte, Zeilen, Rechnung und Prüfliste unverändert.
+// E4-NACH-13 (Befund 14): Ergebnis als Fliese mit Fugenrahmen statt grauer Fläche; Richtwerte in Mono.
 export default function ResultSummary({ data }) {
     const summary = buildSummaryLines(data);
     const area = calculateArea(data);
@@ -19,33 +16,33 @@ export default function ResultSummary({ data }) {
     const checklist = buildChecklist(data);
 
     return (
-        <div className="grid grid-cols-1 gap-px border border-fuge bg-fuge text-left @4xl:grid-cols-2">
-            <div className={`${FELD} bg-fliese`}>
-                <h4 className={KOPF}>
-                    <Icon name="dokument" groesse={5} />
+        <div className="border border-fuge bg-fliese text-left">
+            <div className="p-4">
+                <h4 className="mb-3 flex items-center gap-2 text-fs-3 font-semibold text-tinte">
+                    <Icon name="dokument" groesse={4} />
                     Ihr Projekt in Kürze
                 </h4>
-                <dl className="border-t border-fuge">
+                <dl className="grid grid-cols-1 gap-x-4 gap-y-1 text-fs-2 sm:grid-cols-3 sm:gap-y-2">
                     {summary.map(([k, v]) => (
-                        <div key={k} className="flex flex-col gap-1 border-b border-fuge py-2 @xl:flex-row @xl:items-baseline @xl:gap-4">
-                            <dt className="font-mono text-fs-1 text-tinte-2 @xl:w-2/5 @xl:shrink-0">{k}</dt>
-                            <dd className="min-w-0 flex-1 font-text text-fs-2 text-tinte">{v}</dd>
-                        </div>
+                        <React.Fragment key={k}>
+                            <dt className="font-semibold text-tinte">{k}</dt>
+                            <dd className="mb-2 text-tinte-2 sm:col-span-2 sm:mb-0">{v}</dd>
+                        </React.Fragment>
                     ))}
                 </dl>
             </div>
 
-            <div className={`${FELD} bg-kalk`}>
-                <h4 className={KOPF}>
-                    <Icon name="aufmass" groesse={5} />
+            <div className="border-t border-fuge p-4">
+                <h4 className="mb-3 flex items-center gap-2 text-fs-3 font-semibold text-tinte">
+                    <Icon name="aufmass" groesse={4} />
                     Materialbedarf (Richtwert)
                 </h4>
-                <ul className="flex flex-col gap-2 font-text text-fs-2 text-tinte-2">
+                <ul className="space-y-2 text-fs-2 text-tinte-2">
                     {area && area.valid && (
                         <li>
-                            <strong className="font-semibold text-tinte">Fläche:</strong> <span className="whitespace-nowrap font-mono">{fmt(area.net)} m²</span> netto. Mit einem Verschnitt von
-                            ca. <span className="whitespace-nowrap font-mono">{area.pattern.min}–{area.pattern.max} %</span> ({area.pattern.label}) ergibt sich ein Richtwert von{' '}
-                            <strong className="font-mono font-normal text-tinte">ca. <span className="whitespace-nowrap">{fmt(area.low)}–{fmt(area.high)}</span> m²</strong>.
+                            <strong className="font-semibold text-tinte">Fläche:</strong> {fmt(area.net)} m² netto. Mit einem Verschnitt von
+                            ca. {area.pattern.min}–{area.pattern.max} % ({area.pattern.label}) ergibt sich ein Richtwert von{' '}
+                            <strong className="font-mono font-semibold tabular-nums text-tinte">ca. {fmt(area.low)}–{fmt(area.high)} m²</strong>.
                         </li>
                     )}
                     {area && !area.valid && (
@@ -55,14 +52,14 @@ export default function ResultSummary({ data }) {
                     )}
                     {area && area.skirting && (
                         <li>
-                            <strong className="font-semibold text-tinte">Sockel:</strong> ca. <span className="whitespace-nowrap font-mono">{fmt(area.skirting)}</span> laufende Meter (separat, ohne Zuschlag).
+                            <strong className="font-semibold text-tinte">Sockel:</strong> ca. {fmt(area.skirting)} laufende Meter (separat, ohne Zuschlag).
                         </li>
                     )}
                     {stairs && stairs.valid && (
                         <li>
-                            <strong className="font-semibold text-tinte">Treppe (netto):</strong> Trittstufen <span className="whitespace-nowrap font-mono">{fmt(stairs.treadArea, 2)} m²</span>
-                            {stairs.withRisers && <> + Setzstufen <span className="whitespace-nowrap font-mono">{fmt(stairs.riserArea, 2)} m²</span></>} ={' '}
-                            <strong className="whitespace-nowrap font-mono font-normal text-tinte">{fmt(stairs.total, 2)} m²</strong>. Bei Treppen nennen wir
+                            <strong className="font-semibold text-tinte">Treppe (netto):</strong> Trittstufen {fmt(stairs.treadArea, 2)} m²
+                            {stairs.withRisers && <> + Setzstufen {fmt(stairs.riserArea, 2)} m²</>} ={' '}
+                            <strong className="font-mono font-semibold tabular-nums text-tinte">{fmt(stairs.total, 2)} m²</strong>. Bei Treppen nennen wir
                             bewusst keinen Verschnittzuschlag, weil er stark von Format und Stufenmaß abhängt.
                         </li>
                     )}
@@ -72,22 +69,22 @@ export default function ResultSummary({ data }) {
                         </li>
                     )}
                 </ul>
-                <p className="border-t border-fuge pt-4 font-text text-fs-1 text-tinte-2">
+                <p className="mt-3 text-fs-1 text-tinte-2">
                     Alle Mengen sind reine Orientierungswerte. Die tatsächliche Menge ermittelt {COMPANY_DATA.owner.fullName} beim
                     kostenfreien Vor-Ort-Aufmaß – dort werden auch Treppensockel, Anschlüsse und Zuschnitte festgelegt.
                 </p>
             </div>
 
             {checklist.length > 0 && (
-                <div className={`${FELD} bg-fliese @4xl:col-span-2`}>
-                    <h4 className={KOPF}>
-                        <Icon name="info" groesse={5} />
+                <div className="border-t border-fuge p-4">
+                    <h4 className="mb-3 flex items-center gap-2 text-fs-3 font-semibold text-tinte">
+                        <Icon name="info" groesse={4} />
                         Das prüfen wir vorab
                     </h4>
-                    <ul className="grid grid-cols-1 gap-x-6 gap-y-2 font-text text-fs-2 text-tinte-2 @4xl:grid-cols-2">
+                    <ul className="space-y-2 text-fs-2 text-tinte-2">
                         {checklist.map((item) => (
-                            <li key={item.text} className="flex items-start gap-3">
-                                <Fugenkreuz className="mt-2 size-3 text-strich" />
+                            <li key={item.text} className="flex items-start gap-2">
+                                <Icon name="haken" groesse={4} className="mt-px text-tinte" />
                                 <span>
                                     {item.text}{' '}
                                     <Link href={item.href} className={linkClass}>

@@ -1,0 +1,50 @@
+{
+ "seite": "/bad",
+ "base": "http://127.0.0.1:4320",
+ "ziel": "/home/user/tezgel/_werkstatt/belege/e4-n2/02-pa/bilder/bad",
+ "optionen": {
+  "ansichten": [
+   "m390",
+   "d1440"
+  ],
+  "scroll": "0",
+  "voll": false,
+  "einwilligung": "abgelehnt",
+  "bewegung": "reduce",
+  "warte": 0,
+  "dpr": 1,
+  "qualitaet": 70
+ },
+ "ergebnisse": [
+  {
+   "ansicht": "m390",
+   "seite": "/bad",
+   "status": 200,
+   "datei": "/home/user/tezgel/_werkstatt/belege/e4-n2/02-pa/bilder/bad/m390.jpg",
+   "anker": null,
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "fehler": null,
+   "fremd": 0,
+   "blockiert": []
+  },
+  {
+   "ansicht": "d1440",
+   "seite": "/bad",
+   "status": 200,
+   "datei": "/home/user/tezgel/_werkstatt/belege/e4-n2/02-pa/bilder/bad/d1440.jpg",
+   "anker": null,
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "fehler": null,
+   "fremd": 0,
+   "blockiert": []
+  }
+ ]
+}

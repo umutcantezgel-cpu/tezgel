@@ -1,0 +1,50 @@
+{
+ "seite": "/standorte",
+ "base": "http://127.0.0.1:4320",
+ "ziel": "/home/user/tezgel/_werkstatt/belege/e4-n2/02-pa/bilder/standorte-voll",
+ "optionen": {
+  "ansichten": [
+   "m390",
+   "d1440"
+  ],
+  "scroll": "0",
+  "voll": true,
+  "einwilligung": "abgelehnt",
+  "bewegung": "reduce",
+  "warte": 0,
+  "dpr": 1,
+  "qualitaet": 70
+ },
+ "ergebnisse": [
+  {
+   "ansicht": "m390",
+   "seite": "/standorte",
+   "status": 200,
+   "datei": "/home/user/tezgel/_werkstatt/belege/e4-n2/02-pa/bilder/standorte-voll/m390-voll.jpg",
+   "anker": null,
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "fehler": null,
+   "fremd": 0,
+   "blockiert": []
+  },
+  {
+   "ansicht": "d1440",
+   "seite": "/standorte",
+   "status": 200,
+   "datei": "/home/user/tezgel/_werkstatt/belege/e4-n2/02-pa/bilder/standorte-voll/d1440-voll.jpg",
+   "anker": null,
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "fehler": null,
+   "fremd": 0,
+   "blockiert": []
+  }
+ ]
+}

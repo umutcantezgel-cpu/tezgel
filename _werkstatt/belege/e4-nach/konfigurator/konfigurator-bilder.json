@@ -1,0 +1,342 @@
+{
+ "base": "http://127.0.0.1:4320",
+ "erzeugt": "2026-10-12T02:30:27.904Z",
+ "ergebnisse": [
+  {
+   "ansicht": "m390",
+   "seite": "/fliesen/konfigurator",
+   "schritte": [
+    {
+     "schritt": 1,
+     "datei": "schritt1-m390.jpg",
+     "messung": {
+      "vw": 390,
+      "schritt": "Schritt 1 von 4",
+      "ueberschrift": "1. Raum & Einsatzbereich",
+      "vorschauText": "Materialbedarf inkl. Verschnitt (Richtwert): ca. 21–23 m²aus 20 m² netto",
+      "vorschauSeite": {
+       "links": 41,
+       "rechts": 349,
+       "oben": 995,
+       "hoehe": 107
+      },
+      "werkzeugSeite": {
+       "links": 41,
+       "rechts": 349,
+       "oben": 1134,
+       "hoehe": 958
+      },
+      "spalten": 1,
+      "vorschauUeberWerkzeug": true,
+      "horizontalUeberlauf": false,
+      "ausserhalbBreite": 0,
+      "sectionOben": 746
+     },
+     "sichtbarkeit": {
+      "imErstenBildschirm": true,
+      "vorschauTopBeiAbschnittsanfang": 249,
+      "vorschauTopNachScroll350": -101,
+      "scrollY": 350
+     },
+     "ueberlauf": []
+    },
+    {
+     "schritt": 2,
+     "datei": "schritt2-m390.jpg",
+     "messung": {
+      "vw": 390,
+      "schritt": "Schritt 2 von 4",
+      "ueberschrift": "2. Untergrund & Bestand",
+      "vorschauText": "Materialbedarf inkl. Verschnitt (Richtwert): ca. 21–23 m²aus 20 m² netto",
+      "vorschauSeite": {
+       "links": 41,
+       "rechts": 349,
+       "oben": 995,
+       "hoehe": 107
+      },
+      "werkzeugSeite": {
+       "links": 41,
+       "rechts": 349,
+       "oben": 1134,
+       "hoehe": 1610
+      },
+      "spalten": 1,
+      "vorschauUeberWerkzeug": true,
+      "horizontalUeberlauf": false,
+      "ausserhalbBreite": 0,
+      "sectionOben": 746
+     },
+     "sichtbarkeit": {
+      "imErstenBildschirm": true,
+      "vorschauTopBeiAbschnittsanfang": 249,
+      "vorschauTopNachScroll350": -101,
+      "scrollY": 350
+     },
+     "ueberlauf": []
+    },
+    {
+     "schritt": 3,
+     "datei": "schritt3-m390.jpg",
+     "messung": {
+      "vw": 390,
+      "schritt": "Schritt 3 von 4",
+      "ueberschrift": "3. Format, Material & Menge",
+      "vorschauText": "Materialbedarf inkl. Verschnitt (Richtwert): ca. 12,6–13,8 m²aus 12 m² netto",
+      "vorschauSeite": {
+       "links": 41,
+       "rechts": 349,
+       "oben": 995,
+       "hoehe": 138
+      },
+      "werkzeugSeite": {
+       "links": 41,
+       "rechts": 349,
+       "oben": 1165,
+       "hoehe": 2121
+      },
+      "spalten": 1,
+      "vorschauUeberWerkzeug": true,
+      "horizontalUeberlauf": false,
+      "ausserhalbBreite": 0,
+      "sectionOben": 746
+     },
+     "sichtbarkeit": {
+      "imErstenBildschirm": true,
+      "vorschauTopBeiAbschnittsanfang": 249,
+      "vorschauTopNachScroll350": -101,
+      "scrollY": 350
+     },
+     "ueberlauf": []
+    },
+    {
+     "schritt": 4,
+     "datei": "schritt4-m390.jpg",
+     "messung": {
+      "vw": 390,
+      "schritt": "Schritt 4 von 4",
+      "ueberschrift": "4. Zusammenfassung & Kontakt",
+      "vorschauText": "Materialbedarf inkl. Verschnitt (Richtwert): ca. 12,6–13,8 m²aus 12 m² netto",
+      "vorschauSeite": {
+       "links": 41,
+       "rechts": 349,
+       "oben": 995,
+       "hoehe": 138
+      },
+      "werkzeugSeite": {
+       "links": 41,
+       "rechts": 349,
+       "oben": 1165,
+       "hoehe": 2669
+      },
+      "spalten": 1,
+      "vorschauUeberWerkzeug": true,
+      "horizontalUeberlauf": false,
+      "ausserhalbBreite": 0,
+      "sectionOben": 746
+     },
+     "sichtbarkeit": {
+      "imErstenBildschirm": true,
+      "vorschauTopBeiAbschnittsanfang": 249,
+      "vorschauTopNachScroll350": -101,
+      "scrollY": 350
+     },
+     "ueberlauf": []
+    }
+   ],
+   "fehler": [],
+   "status": 200,
+   "konsole": [],
+   "protokoll": []
+  },
+  {
+   "ansicht": "d1440",
+   "seite": "/fliesen/konfigurator",
+   "schritte": [
+    {
+     "schritt": 1,
+     "datei": "schritt1-d1440.jpg",
+     "messung": {
+      "vw": 1440,
+      "schritt": "Schritt 1 von 4",
+      "ueberschrift": "1. Raum & Einsatzbereich",
+      "vorschauText": "Materialbedarf inkl. Verschnitt (Richtwert): ca. 21–23 m²aus 20 m² netto",
+      "vorschauSeite": {
+       "links": 938,
+       "rechts": 1279,
+       "oben": 925,
+       "hoehe": 116
+      },
+      "werkzeugSeite": {
+       "links": 161,
+       "rechts": 890,
+       "oben": 925,
+       "hoehe": 663
+      },
+      "spalten": 2,
+      "vorschauUeberWerkzeug": false,
+      "horizontalUeberlauf": false,
+      "ausserhalbBreite": 0,
+      "sectionOben": 658
+     },
+     "sichtbarkeit": {
+      "imErstenBildschirm": true,
+      "vorschauTopBeiAbschnittsanfang": 267,
+      "vorschauTopNachScroll350": 96,
+      "scrollY": 350
+     },
+     "ueberlauf": []
+    },
+    {
+     "schritt": 2,
+     "datei": "schritt2-d1440.jpg",
+     "messung": {
+      "vw": 1440,
+      "schritt": "Schritt 2 von 4",
+      "ueberschrift": "2. Untergrund & Bestand",
+      "vorschauText": "Materialbedarf inkl. Verschnitt (Richtwert): ca. 21–23 m²aus 20 m² netto",
+      "vorschauSeite": {
+       "links": 938,
+       "rechts": 1279,
+       "oben": 925,
+       "hoehe": 116
+      },
+      "werkzeugSeite": {
+       "links": 161,
+       "rechts": 890,
+       "oben": 925,
+       "hoehe": 935
+      },
+      "spalten": 2,
+      "vorschauUeberWerkzeug": false,
+      "horizontalUeberlauf": false,
+      "ausserhalbBreite": 0,
+      "sectionOben": 658
+     },
+     "sichtbarkeit": {
+      "imErstenBildschirm": true,
+      "vorschauTopBeiAbschnittsanfang": 267,
+      "vorschauTopNachScroll350": 96,
+      "scrollY": 350
+     },
+     "ueberlauf": []
+    },
+    {
+     "schritt": 3,
+     "datei": "schritt3-d1440.jpg",
+     "messung": {
+      "vw": 1440,
+      "schritt": "Schritt 3 von 4",
+      "ueberschrift": "3. Format, Material & Menge",
+      "vorschauText": "Materialbedarf inkl. Verschnitt (Richtwert): ca. 12,6–13,8 m²aus 12 m² netto",
+      "vorschauSeite": {
+       "links": 938,
+       "rechts": 1279,
+       "oben": 925,
+       "hoehe": 152
+      },
+      "werkzeugSeite": {
+       "links": 161,
+       "rechts": 890,
+       "oben": 925,
+       "hoehe": 1218
+      },
+      "spalten": 2,
+      "vorschauUeberWerkzeug": false,
+      "horizontalUeberlauf": false,
+      "ausserhalbBreite": 0,
+      "sectionOben": 658
+     },
+     "sichtbarkeit": {
+      "imErstenBildschirm": true,
+      "vorschauTopBeiAbschnittsanfang": 267,
+      "vorschauTopNachScroll350": 96,
+      "scrollY": 350
+     },
+     "ueberlauf": []
+    },
+    {
+     "schritt": 4,
+     "datei": "schritt4-d1440.jpg",
+     "messung": {
+      "vw": 1440,
+      "schritt": "Schritt 4 von 4",
+      "ueberschrift": "4. Zusammenfassung & Kontakt",
+      "vorschauText": "Materialbedarf inkl. Verschnitt (Richtwert): ca. 12,6–13,8 m²aus 12 m² netto",
+      "vorschauSeite": {
+       "links": 938,
+       "rechts": 1279,
+       "oben": 925,
+       "hoehe": 152
+      },
+      "werkzeugSeite": {
+       "links": 161,
+       "rechts": 890,
+       "oben": 925,
+       "hoehe": 1743
+      },
+      "spalten": 2,
+      "vorschauUeberWerkzeug": false,
+      "horizontalUeberlauf": false,
+      "ausserhalbBreite": 0,
+      "sectionOben": 658
+     },
+     "sichtbarkeit": {
+      "imErstenBildschirm": true,
+      "vorschauTopBeiAbschnittsanfang": 267,
+      "vorschauTopNachScroll350": 96,
+      "scrollY": 350
+     },
+     "ueberlauf": []
+    }
+   ],
+   "fehler": [],
+   "status": 200,
+   "konsole": [],
+   "protokoll": []
+  },
+  {
+   "ansicht": "d1440",
+   "seite": "/fliesen/kueche",
+   "schritte": [
+    {
+     "schritt": 1,
+     "datei": "kueche-schritt1-d1440.jpg",
+     "messung": {
+      "vw": 1440,
+      "schritt": "Schritt 1 von 4",
+      "ueberschrift": "1. Raum & Einsatzbereich",
+      "vorschauText": "Materialbedarf inkl. Verschnitt (Richtwert): ca. 21–23 m²aus 20 m² netto",
+      "vorschauSeite": {
+       "links": 161,
+       "rechts": 1279,
+       "oben": 3332,
+       "hoehe": 95
+      },
+      "werkzeugSeite": {
+       "links": 161,
+       "rechts": 1279,
+       "oben": 3459,
+       "hoehe": 613
+      },
+      "spalten": 1,
+      "vorschauUeberWerkzeug": true,
+      "horizontalUeberlauf": false,
+      "ausserhalbBreite": 0,
+      "sectionOben": 3089
+     },
+     "sichtbarkeit": {
+      "imErstenBildschirm": true,
+      "vorschauTopBeiAbschnittsanfang": 243,
+      "vorschauTopNachScroll350": -107,
+      "scrollY": 350
+     },
+     "ueberlauf": []
+    }
+   ],
+   "fehler": [],
+   "status": 200,
+   "konsole": [],
+   "protokoll": []
+  }
+ ]
+}

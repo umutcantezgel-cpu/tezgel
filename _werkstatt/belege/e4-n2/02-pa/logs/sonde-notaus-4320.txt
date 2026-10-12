@@ -1,0 +1,10 @@
+{"ansicht":"d1440","lauf":1,"klassen":["k-bewegung","k-notaus","k-modul"],"t_ms":{},"kanten":["none"],"css_anim":3}
+{"ansicht":"d1440","lauf":2,"klassen":["k-bewegung","k-modul"],"t_ms":{},"kanten":["einzugsband-kante-ziehen"],"css_anim":6}
+{"ansicht":"d1440","lauf":3,"klassen":["k-bewegung","k-modul"],"t_ms":{},"kanten":["einzugsband-kante-ziehen"],"css_anim":6}
+{"ansicht":"d1440","lauf":4,"klassen":["k-bewegung","k-modul"],"t_ms":{},"kanten":["einzugsband-kante-ziehen"],"css_anim":6}
+{"ansicht":"d1440","lauf":5,"klassen":["k-bewegung","k-modul"],"t_ms":{},"kanten":["einzugsband-kante-ziehen"],"css_anim":6}
+{"ansicht":"m390","lauf":1,"klassen":["k-bewegung","k-notaus","k-modul"],"t_ms":{},"kanten":["none"],"css_anim":3}
+{"ansicht":"m390","lauf":2,"klassen":["k-bewegung","k-modul"],"t_ms":{},"kanten":["einzugsband-kante-ziehen"],"css_anim":6}
+{"ansicht":"m390","lauf":3,"klassen":["k-bewegung","k-modul"],"t_ms":{},"kanten":["einzugsband-kante-ziehen"],"css_anim":6}
+{"ansicht":"m390","lauf":4,"klassen":["k-bewegung","k-modul"],"t_ms":{},"kanten":["einzugsband-kante-ziehen"],"css_anim":6}
+{"ansicht":"m390","lauf":5,"klassen":["k-bewegung","k-modul"],"t_ms":{},"kanten":["einzugsband-kante-ziehen"],"css_anim":6}

@@ -1,5 +1,12 @@
+// Leistung vor Ort (E5-BAU-10, KERN v2): Vorlage der 52 Seiten /leistungen/[id]/[stadt] als Erzählansicht nach dem
+// Muster der Leistungsseite (/leistungen/[id]). Einstieg mit Pfad (Brotkrumen), Etikett Region und Entfernung, H1,
+// Vorspann und Knöpfen; rechts das Planblatt der Leistung. Danach die Leitachse über Fachkompetenz (Text und drei
+// Kennzahlen an der Fuge), Leistungsspektrum (Liste mit Fugenkreuz), Ablauf (Schrittfolge) und weitere Leistungen vor
+// Ort (Feldraster mit Plänen). Wortlaut, Überschriften, Links, IDs und Lesefolge wie im Bestand; Daten, Metadaten und
+// strukturierte Daten unverändert. Keine Icon-Kacheln, kein Auftritt, kein großer Moment.
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import clsx from 'clsx';
 import { CITIES, type CityData } from '@/config/cities';
 import { SERVICES } from '@/config/services';
 import { COMPANY_DATA } from '@/config/company';
@@ -7,9 +14,20 @@ import { notFound } from 'next/navigation';
 import { buildGraph, buildServiceNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
 import { createMetadata } from '@/lib/metadata';
 import JsonLd from '@/components/seo/JsonLd';
-import { MapPin, Phone, ArrowRight, ShieldCheck, CheckCircle2, Award } from 'lucide-react';
 import QualityPromise from '@/components/sections/QualityPromise';
 import FinalCTA from '@/components/ui/FinalCTA';
+import Icon from '@/components/icons/Icon';
+import Einstieg from '@/components/kern/Einstieg';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Leitachse from '@/components/kern/Leitachse';
+import { Feld, Feldraster } from '@/components/kern/Feldraster';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Knopf from '@/components/kern/Knopf';
+import Schrittfolge from '@/components/kern/Schrittfolge';
+import Verlegeplan from '@/components/kern/Verlegeplan';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+import { linkKlassen } from '@/components/kern/stile';
+import type { PlanName } from '@/lib/plaene/vorgaben';
 
 function isHeadquartersCity(city: CityData) {
   return city.name === COMPANY_DATA.headquarters.city;
@@ -177,10 +195,9 @@ export default async function ServiceCityPage({
         : city.distanceKm === 0
           ? `Direkt neben unserem Firmensitz in ${COMPANY_DATA.headquarters.city}`
           : 'Entfernung ab Wetzlar',
-      icon: MapPin,
     },
-    { value: 'DIN 18534', label: 'Normgerechte Verbundabdichtung', icon: ShieldCheck },
-    { value: authority.shortName, label: 'Eingetragener Fachbetrieb', icon: Award },
+    { value: 'DIN 18534', label: 'Normgerechte Verbundabdichtung' },
+    { value: authority.shortName, label: 'Eingetragener Fachbetrieb' },
   ];
 
   const currentIntro = (SERVICE_CITY_INTROS[service.id] || SERVICE_CITY_INTROS.bad)(
@@ -192,211 +209,188 @@ export default async function ServiceCityPage({
   const currentSteps = (SERVICE_CITY_STEPS[service.id] || SERVICE_CITY_STEPS.bad)(city.name);
 
   return (
-    <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
+    <>
       <JsonLd schema={serviceCityGraph} />
 
-      {/* Ambient Glow */}
-      <div className="ambient-glow-orange -top-20 -left-20" />
-      <div className="ambient-glow-red top-96 -right-20" />
-
-      {/* ── Hero Section ─────────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-        <div className="ceramic-hero rounded-2xl p-8 sm:p-14 text-center space-y-5 relative overflow-hidden">
-          {/* Breadcrumbs */}
-          <nav
-            aria-label="Breadcrumb"
-            className="mb-2 text-xs text-neutral-600 flex flex-wrap items-center justify-center gap-1.5 font-medium"
-          >
-            <Link href="/" className="hover:text-orange-800 transition-colors">
-              Home
-            </Link>
-            <span aria-hidden="true">/</span>
-            <Link
-              href="/leistungen"
-              className="hover:text-orange-800 transition-colors"
-            >
-              Leistungen
-            </Link>
-            <span aria-hidden="true">/</span>
-            <Link
-              href={`/leistungen/${service.id}`}
-              className="hover:text-orange-800 transition-colors"
-            >
-              {service.name}
-            </Link>
-            <span aria-hidden="true">/</span>
-            <span className="text-neutral-900 font-bold" aria-current="page">{city.name}</span>
+      {/* 1. EINSTIEG: Pfad, Etikett mit Region und Entfernung, H1 an der Laserachse, Vorspann, Knöpfe; rechts das Planblatt */}
+      <Einstieg
+        art="erzaehl"
+        pfad={
+          <nav aria-label="Breadcrumb">
+            <ol className="flex flex-wrap items-center gap-2 font-mono text-fs-1 text-tinte-2">
+              <li>
+                <Link href="/" className={linkKlassen}>
+                  Home
+                </Link>
+              </li>
+              <li aria-hidden="true">/</li>
+              <li>
+                <Link href="/leistungen" className={linkKlassen}>
+                  Leistungen
+                </Link>
+              </li>
+              <li aria-hidden="true">/</li>
+              <li>
+                <Link href={`/leistungen/${service.id}`} className={linkKlassen}>
+                  {service.name}
+                </Link>
+              </li>
+              <li aria-hidden="true">/</li>
+              <li>
+                <span className="text-tinte" aria-current="page">
+                  {city.name}
+                </span>
+              </li>
+            </ol>
           </nav>
-
-          <span className="eyebrow">
-            <MapPin className="w-3.5 h-3.5" />
+        }
+        etikett={
+          <>
+            <Icon name="ort" groesse={4} />
             <span>
               {city.region} &middot; {distanceLabel(city)}
             </span>
-          </span>
-
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-neutral-900 leading-tight">
-            {displayName} in{' '}
-            <span className="text-ceramic-gradient">{city.name}</span>
-          </h1>
-
-          <p className="text-sm sm:text-base text-neutral-700 max-w-3xl mx-auto leading-relaxed">
-            {COMPANY_DATA.legalName} ist Ihr Fachbetrieb für {displayName} in{' '}
-            {city.name} und im {city.region}. {service.shortDescription}.{' '}
-            {distanceSentence(city)}
+          </>
+        }
+        titel={
+          <>
+            {displayName} in {city.name}
+          </>
+        }
+        vorspann={
+          <p>
+            {COMPANY_DATA.legalName} ist Ihr Fachbetrieb für {displayName} in {city.name} und im {city.region}.{' '}
+            {service.shortDescription}. {distanceSentence(city)}
           </p>
-
-          <div className="flex flex-wrap gap-3.5 justify-center pt-2">
-            <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs">
+        }
+        aktionen={
+          <>
+            <Knopf href="/kontakt" icon="pfeil-rechts">
               Kostenloses Aufmaß in {city.name} anfragen
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            <a href={`tel:${contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-              <Phone className="w-4 h-4 text-orange-700" />
-              {contact.phone}
-            </a>
-          </div>
-        </div>
-      </div>
+            </Knopf>
+            <Knopf href={`tel:${contact.phoneLink}`} variante="neben" iconLinks="telefon">
+              <span className="font-mono font-normal">{contact.phone}</span>
+            </Knopf>
+          </>
+        }
+        rand={
+          <Planblatt felder={planfelder(displayName, service.id as PlanName)}>
+            <Verlegeplan plan={service.id as PlanName} ohneAchse bemassung={false} interaktiv />
+          </Planblatt>
+        }
+      />
 
-      {/* ── Rich Intro - Double Bezel Console ────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-        <div className="glass-bezel-outer shadow-2xl max-w-5xl mx-auto">
-          <div className="glass-bezel-inner p-8 sm:p-12 space-y-6">
-            <div>
-              <span className="eyebrow mb-3">
-                <Award className="w-3.5 h-3.5" />
-                HWK Fachbetrieb &middot; {authority.shortName}
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-black text-neutral-900">
-                Fachkompetenz &amp; Präzision für {city.name}
-              </h2>
-            </div>
-
-            <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+      <Leitachse>
+        {/* 2. FACHKOMPETENZ: die zwei Absätze nebeneinander (volle Breite statt langer Spalte), darunter drei Kennzahlen
+            an der Fuge (Wert vor Bezeichnung wie im Bestand) */}
+        <Abschnitt
+          leitachse
+          spaet
+          flaeche="fliese"
+          etikett={<>HWK Fachbetrieb &middot; {authority.shortName}</>}
+          titel={<>Fachkompetenz &amp; Präzision für {city.name}</>}
+        >
+          <div className="grid gap-6 font-text text-fs-3 text-tinte-2 lg:grid-cols-2 lg:gap-x-12">
+            <p>
               {currentIntro.p1} {city.description}
             </p>
+            <p>{currentIntro.p2}</p>
+          </div>
+          <Feldraster spalten={3} className="mt-12">
+            {stats.map(({ value, label }) => (
+              <Feld key={label} className="gap-2">
+                <span className="font-anzeige text-fs-5 text-tinte">{value}</span>
+                <span className="font-mono text-fs-1 text-tinte-2">{label}</span>
+              </Feld>
+            ))}
+          </Feldraster>
+        </Abschnitt>
 
-            <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
-              {currentIntro.p2}
-            </p>
-
-            {/* Stats row */}
-            <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
-              {stats.map(({ value, label, icon: Icon }) => (
-                <li
-                  key={label}
-                  className="rounded-xl bg-white border border-neutral-200 p-6 text-center flex flex-col items-center gap-1"
-                >
-                  <Icon className="w-5 h-5 text-orange-600 mb-2" aria-hidden="true" />
-                  <span className="font-display text-2xl font-black text-neutral-900 tabular-nums">{value}</span>
-                  <span className="text-xs text-neutral-600 font-semibold">{label}</span>
+        {/* 3. LEISTUNGSSPEKTRUM: Kopf seitlich, rechts die Liste an der Fuge (Fugenkreuz als Marke) */}
+        {service.features && service.features.length > 0 && (
+          <Abschnitt
+            titelId="leistungsspektrum"
+            leitachse
+            spaet
+            kopf="seitlich"
+            titel={<>Detailliertes Leistungsspektrum in {city.name}</>}
+            einleitung={<p>Handwerkliche Präzision für dauerhaft schöne, dichte und pflegeleichte Beläge.</p>}
+          >
+            <ul className="border-b border-fuge">
+              {service.features.map((feature: string) => (
+                <li key={feature} className="flex gap-3 border-t border-fuge py-4 font-text text-fs-3 text-tinte">
+                  <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich">
+                    <Fugenkreuz className="size-3" />
+                  </span>
+                  <span className="min-w-0">{feature}</span>
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
-      </div>
+          </Abschnitt>
+        )}
 
-      {/* ── Service Features Grid ────────────────────────────────────────── */}
-      {service.features && service.features.length > 0 && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10" aria-labelledby="leistungsspektrum">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 id="leistungsspektrum" className="text-2xl sm:text-3xl font-black text-neutral-900">
-              Detailliertes Leistungsspektrum in {city.name}
-            </h2>
-            <p className="text-neutral-700 text-sm sm:text-base mt-2">
-              Handwerkliche Präzision für dauerhaft schöne, dichte und pflegeleichte Beläge.
-            </p>
-          </div>
+        {/* 4. ABLAUF: drei Schritte nebeneinander (Nummer, Phase, Titel, Text) */}
+        <Abschnitt
+          titelId="ablauf"
+          leitachse
+          spaet
+          flaeche="fliese"
+          etikett="Transparenter Ablauf"
+          titel={<>Schritt für Schritt zu Ihrem Projekterfolg in {city.name}</>}
+          einleitung={<p>Von der ersten Kontaktaufnahme bis zur Endabnahme transparent und strukturiert.</p>}
+        >
+          <Schrittfolge
+            ausrichtung="waagrecht"
+            untertitelOben
+            nummerStumm
+            titelEbene="div"
+            schritte={currentSteps.map((step) => ({
+              nummer: step.step,
+              untertitel: step.subtitle,
+              titel: step.title,
+              text: step.description,
+            }))}
+          />
+        </Abschnitt>
 
-          <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {service.features.map((feature: string) => (
-              <li
-                key={feature}
-                className="group glass-surface p-5 rounded-xl flex items-center gap-3.5 hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(23,23,23,0.14)] transition-all duration-200"
-              >
-                <span className="icon-chip w-9 h-9 rounded-lg">
-                  <CheckCircle2 className="w-5 h-5" />
-                </span>
-                <span className="text-sm font-bold text-neutral-800">{feature}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-
-      {/* ── Process Steps ────────────────────────────────────────────────── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10" aria-labelledby="ablauf">
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="eyebrow eyebrow-red mb-4">Transparenter Ablauf</span>
-          <h2 id="ablauf" className="text-2xl sm:text-3xl font-black text-neutral-900">
-            Schritt für Schritt zu Ihrem Projekterfolg in {city.name}
-          </h2>
-          <p className="text-neutral-700 text-sm sm:text-base mt-2">
-            Von der ersten Kontaktaufnahme bis zur Endabnahme transparent und strukturiert.
-          </p>
-        </div>
-
-        <ol className="grid md:grid-cols-3 gap-6">
-          {currentSteps.map((step) => (
-            <li
-              key={step.step}
-              className="glass-surface p-6 rounded-2xl hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-200"
-            >
-              <span className="font-display text-2xl sm:text-3xl font-black text-orange-700 tabular-nums mb-2 block" aria-hidden="true">
-                {step.step}
-              </span>
-              <span className="text-[11px] font-black uppercase tracking-widest text-orange-800 block mb-1">
-                {step.subtitle}
-              </span>
-              <p className="text-base font-black text-neutral-900 mb-2">{step.title}</p>
-              <p className="text-sm text-neutral-700 leading-relaxed">
-                {step.description}
-              </p>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      {/* ── More in this city ────────────────────────────────────────────── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 relative z-10" aria-labelledby="mehr-in-stadt">
-        <div className="glass-surface rounded-2xl p-8 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-          <div>
-            <h2 id="mehr-in-stadt" className="text-lg font-black text-neutral-900 mb-1">
-              Weitere Leistungen in {city.name}
-            </h2>
-            <p className="text-sm text-neutral-700">Alle Fliesengewerke aus einer Hand – vom Bad bis zur Terrasse.</p>
-          </div>
-          <ul className="flex flex-wrap gap-2">
+        {/* 5. WEITERE LEISTUNGEN VOR ORT: je Gewerk ein Feld mit kleinem Plan, dazu der Standort */}
+        <Abschnitt
+          titelId="mehr-in-stadt"
+          leitachse
+          spaet
+          titel={<>Weitere Leistungen in {city.name}</>}
+          einleitung={<p>Alle Fliesengewerke aus einer Hand – vom Bad bis zur Terrasse.</p>}
+        >
+          <Feldraster spalten={otherServices.length + 1 === 4 ? 4 : 3}>
             {otherServices.map((other) => (
-              <li key={other.id}>
+              <Feld key={other.id} className="gap-6">
+                <div className="w-24">
+                  <Verlegeplan plan={other.id as PlanName} ohneAchse bemassung={false} />
+                </div>
                 <Link
                   href={`/leistungen/${other.id}/${city.slug}`}
                   aria-label={`${other.name} in ${city.name} ansehen`}
-                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-neutral-200 text-xs font-semibold text-neutral-800 hover:border-orange-500/80 hover:text-orange-800 transition-colors"
+                  className={clsx(linkKlassen, 'mt-auto inline-flex items-center gap-2 font-text text-fs-3 text-tinte')}
                 >
                   {other.name} in {city.name}
-                  <ArrowRight className="w-3 h-3 text-orange-600" />
+                  <Icon name="pfeil-rechts" groesse={4} />
                 </Link>
-              </li>
+              </Feld>
             ))}
-            <li>
-              <Link
-                href={`/standorte/${city.slug}`}
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-orange-50 border border-orange-200 text-xs font-bold text-orange-800 hover:border-orange-500/80 transition-colors"
-              >
-                <MapPin className="w-3 h-3" />
+            <Feld className="gap-6">
+              <Icon name="ort" groesse={6} className="text-tinte-2" />
+              <Link href={`/standorte/${city.slug}`} className={clsx(linkKlassen, 'mt-auto inline-flex items-center gap-2 font-text text-fs-3 text-tinte')}>
                 Standort {city.name}
+                <Icon name="pfeil-rechts" groesse={4} />
               </Link>
-            </li>
-          </ul>
-        </div>
-      </section>
+            </Feld>
+          </Feldraster>
+        </Abschnitt>
+      </Leitachse>
 
       <QualityPromise />
 
-      {/* Final Conversion CTA with Quick Form */}
+      {/* Abschluss mit Schnellanfrage (Quelle je Leistung und Ort unverändert) */}
       <FinalCTA
         headline={`${displayName} in ${city.name}: Jetzt unverbindlich beraten lassen.`}
         subtitle={`Kostenfreies Vor-Ort-Aufmaß in ${city.name} • Festpreisangebot • HWK-Fachbetrieb`}
@@ -405,6 +399,6 @@ export default async function ServiceCityPage({
         showQuickForm={true}
         quickFormSource={`leistung-${service.id}-${city.slug}`}
       />
-    </div>
+    </>
   );
 }

@@ -1,0 +1,78 @@
+[
+  {
+    "ansicht": "m390",
+    "laeufe": 3,
+    "ladeMs_median": 1636,
+    "ladeMs_werte": [
+      1636,
+      1787,
+      1619
+    ],
+    "dienstGewaehlt_werte": [
+      true,
+      true,
+      true
+    ],
+    "groesseGewaehlt_werte": [
+      true,
+      true,
+      true
+    ],
+    "eigeneFlaeche_werte": [
+      "42",
+      "42",
+      "42"
+    ],
+    "rahmenSichtbar_werte": [
+      true,
+      true,
+      true
+    ],
+    "absendeKnopfDa_werte": [
+      true,
+      true,
+      true
+    ],
+    "anfragenGesendet_summe": 0,
+    "fremdAnfragen_summe": 0,
+    "fehler_summe": 0
+  },
+  {
+    "ansicht": "d1440",
+    "laeufe": 3,
+    "ladeMs_median": 1919,
+    "ladeMs_werte": [
+      1765,
+      1919,
+      2614
+    ],
+    "dienstGewaehlt_werte": [
+      true,
+      true,
+      true
+    ],
+    "groesseGewaehlt_werte": [
+      true,
+      true,
+      true
+    ],
+    "eigeneFlaeche_werte": [
+      "42",
+      "42",
+      "42"
+    ],
+    "rahmenSichtbar_werte": [
+      true,
+      true,
+      true
+    ],
+    "absendeKnopfDa_werte": [
+      true,
+      true,
+      true
+    ],
+    "anfragenGesendet_summe": 0,
+    "fremdAnfragen_summe": 0,
+    "fehler_summe": 0
+  }
+]

@@ -1,0 +1,46 @@
+{
+ "modus": "register",
+ "seite": "/",
+ "base": "http://127.0.0.1:4312",
+ "ansicht": "m390",
+ "zeitpunkt": "2026-10-11T19:48:12.655Z",
+ "schritte": {
+  "hover_geprueft": 20,
+  "hover_fehler": 0,
+  "hover_fehler_beispiel": null,
+  "hover_ausserhalb_uebersprungen": 0,
+  "tab_schritte": 30,
+  "fokus_verschieden": 29
+ },
+ "data_motion_elemente": 210,
+ "gefundene_kennungen": [
+  "anriss",
+  "aufklappen",
+  "auftritt",
+  "druck",
+  "sig-kreuzlinie",
+  "zustand"
+ ],
+ "unbekannt": [],
+ "registriert_nicht_im_dom": [
+  "sig-flucht",
+  "szene-ablauf",
+  "sig-plan",
+  "einzugsband",
+  "verband",
+  "fugenband",
+  "leitachse",
+  "notiert",
+  "laden",
+  "seitenwechsel"
+ ],
+ "ohne_register": [],
+ "mit_register_eintraege": 1,
+ "erfasste_eintraege": 1,
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "verzeichnis": "/home/user/tezgel/_werkstatt/belege/e2-tor-3/bewegung/register"
+}

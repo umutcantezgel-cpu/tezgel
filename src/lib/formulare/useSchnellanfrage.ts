@@ -1,6 +1,7 @@
 // Logik des Kurzformulars (F-09, LeadQuickForm) – wörtlich aus der Komponente verschoben (P3-00q).
 // Ohne Markup; Bestand und Kern-Ansicht nutzen denselben Hook.
 import React, { useState } from 'react';
+import { COMPANY_DATA } from '@/config/company';
 
 export function useSchnellanfrage({ sourceTag, onSuccess }: { sourceTag: string; onSuccess?: () => void }) {
   const [formData, setFormData] = useState({
@@ -71,7 +72,8 @@ export function useSchnellanfrage({ sourceTag, onSuccess }: { sourceTag: string;
     } catch {
       setStatus('error');
       setErrorMessage(
-        'Die Anfrage konnte leider nicht übertragen werden. Bitte rufen Sie uns direkt an: 06441 / 44 83 567.'
+        // V-05: Rufnummer aus einer Quelle (gleicher Wert wie bisher, Wortlaut unverändert)
+        `Die Anfrage konnte leider nicht übertragen werden. Bitte rufen Sie uns direkt an: ${COMPANY_DATA.contact.phone}.`
       );
     }
   };

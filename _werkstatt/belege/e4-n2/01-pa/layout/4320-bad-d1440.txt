@@ -1,0 +1,4 @@
+lauf 1: summe 0.00067 · kopf 0 · Einträge 2 · laden 6719 ms
+lauf 2: summe 0.00067 · kopf 0 · Einträge 2 · laden 8097 ms
+lauf 3: summe 0 · kopf 0 · Einträge 1 · laden 6739 ms
+{"seite":"/bad","ansicht":"d1440","base":"http://127.0.0.1:4320","laeufe":3,"median_summe":0.00067,"median_kopfBeitrag":0,"summen_je_lauf":[0.00067,0.00067,0],"kopf_je_lauf":[0,0,0]}

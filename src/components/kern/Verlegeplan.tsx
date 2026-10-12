@@ -6,7 +6,7 @@
 // `schnitt` zeigt den Plan an der waagrechten Achse geschnitten (obere Hälfte, Planblatt der Startseite): Das Lot bleibt
 // und endet an der Schnittkante; die Waage zeichnet das umgebende Blatt als Schnittlinie. `wandEinzug()` liefert den
 // Abstand der Wand vom Rand der Zeichnung als Anteil der Breite – damit setzt das Blatt die Wände nach unten fort.
-import { useId } from 'react';
+import { useId, type CSSProperties } from 'react';
 import clsx from 'clsx';
 import { fugenbild, startversatz } from '@/lib/plaene/geometrie';
 import { PLAENE, type PlanName } from '@/lib/plaene/vorgaben';
@@ -20,6 +20,9 @@ export interface VerlegeplanProps {
   beschriftet?: boolean;
   bemassung?: boolean;
   interaktiv?: boolean;
+  /** Flucht (sig-plan, E4-NACH-02): `zeigen` = wie `interaktiv` (Hover/Fokus, mobil beim Eintritt), `laden` = das Raster rückt
+   *  beim Laden einmal in die Flucht (Planblatt im Einstieg) */
+  flucht?: 'zeigen' | 'laden';
   /** ohne Laserachse (z. B. kleine Planmarken, damit je Bildschirm nur ein roter Blickfang bleibt) */
   ohneAchse?: boolean;
   /** Stand im Ablauf (K-007 szene-ablauf); Standard fugenbild */
@@ -81,11 +84,13 @@ function Element({ e, b, h }: { e: Planelement; b: number; h: number }) {
   }
 }
 
-export default function Verlegeplan({ plan, beschriftet = false, bemassung = true, interaktiv = false, ohneAchse = false, zustand = 'fugenbild', schnitt = false, className }: VerlegeplanProps) {
+export default function Verlegeplan({ plan, beschriftet = false, bemassung = true, interaktiv = false, flucht, ohneAchse = false, zustand = 'fugenbild', schnitt = false, className }: VerlegeplanProps) {
   const vorgabe: Planvorgabe = typeof plan === 'string' ? PLAENE[plan] : plan;
   const bild = fugenbild(vorgabe);
   const uid = useId().replace(/[^a-zA-Z0-9-]/g, '');
   const schraffur = `schraffur-${uid}`;
+  const raumClip = `raum-${uid}`;
+  const fluchtArt = flucht ?? (interaktiv ? 'zeigen' : undefined);
   const titelId = `plan-titel-${uid}`;
   const { b, h } = vorgabe.raum;
   const W = b * S, H = h * S;
@@ -98,6 +103,13 @@ export default function Verlegeplan({ plan, beschriftet = false, bemassung = tru
   const zeigeLot = !ohneAchse && vorgabe.achse !== 'waage';
   const zeigeWaage = !ohneAchse && !schnitt && vorgabe.achse !== 'lot';
   const zeigeRaster = zustand !== 'aufmass';
+  // Flucht (sig-plan, E4-NACH-02): Stoßfugen und Passstücke jeder Reihe rücken abwechselnd nach links bzw. rechts aus der
+  // Flucht (--richtung ±1) und kehren auf die Achse zurück; die Lagerfugen bleiben stehen
+  const reihenGrenzen = [0, ...bild.waagrecht];
+  const reihenStil = (y: number): CSSProperties => {
+    const reihe = Math.max(0, reihenGrenzen.findIndex((g) => Math.abs(g - y) < 1e-6));
+    return { '--richtung': reihe % 2 === 0 ? 1 : -1 } as CSSProperties;
+  };
   // Prüfmarken beim Aufmaß (Ebenheit, Restfeuchte, Tragfähigkeit): drei Messpunkte auf der Diagonale
   const pruefpunkte = [[0.22, 0.28], [0.5, 0.5], [0.78, 0.72]].map(([fx, fy]) => [fx * W, fy * H]);
 
@@ -106,32 +118,42 @@ export default function Verlegeplan({ plan, beschriftet = false, bemassung = tru
       viewBox={`${-rand} ${-rand} ${W + rand * 2} ${schnitt ? bild.achseY * S + rand : H + rand * 2}`}
       className={clsx('verlegeplan block h-auto w-full', schnitt && 'overflow-hidden', className)}
       {...(beschriftet ? { role: 'img', 'aria-labelledby': titelId } : { 'aria-hidden': true, focusable: false })}
-      data-motion={interaktiv ? 'sig-plan' : undefined}
+      data-motion={fluchtArt ? 'sig-plan' : undefined}
+      data-flucht={fluchtArt}
+      // Versatz außerhalb der Flucht: ein gutes Drittel Plattenbreite – eine Wand bekommt eine Lücke, die andere ein zu
+      // schmales Passstück; in der Flucht sind beide Passstücke gleich (Zeichnungseinheiten, CSS in bewegung.css)
+      style={{ '--plan-versatz': `${-0.35 * vorgabe.platte.b * S}px` } as CSSProperties}
     >
       {beschriftet && <title id={titelId}>{vorgabe.beschreibung}</title>}
       <defs>
         <pattern id={schraffur} width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
           <path d="M0 0v6" className="plan-schraffur-linie" />
         </pattern>
+        {/* das Raster bleibt im Raum, auch wenn es zur Flucht verschoben ist */}
+        <clipPath id={raumClip}>
+          <rect x={0} y={0} width={W} height={H} />
+        </clipPath>
       </defs>
       {zustand === 'verlegt' && <rect className="plan-belag" x={0} y={0} width={W} height={H} />}
       {zeigeRaster && (
+        <g clipPath={`url(#${raumClip})`}>
         <g className="plan-raster">
           {bild.passstuecke.map(([x, y, pb, ph], i) => (
-            <rect key={i} x={x * S} y={y * S} width={pb * S} height={ph * S} fill={`url(#${schraffur})`} className="plan-passstueck" />
+            <rect key={i} x={x * S} y={y * S} width={pb * S} height={ph * S} fill={`url(#${schraffur})`} className="plan-passstueck plan-reihenteil" style={reihenStil(y)} />
           ))}
           {fehl && fehl.art === 'fehlstelle' && (
             <rect className="plan-fehlstelle" x={(startversatz(b, vorgabe.platte.b) + fehl.spalte * vorgabe.platte.b) * S} y={(startversatz(h, vorgabe.platte.h) + fehl.zeile * vorgabe.platte.h) * S} width={vorgabe.platte.b * S} height={vorgabe.platte.h * S} />
           )}
           {bild.waagrecht.map((y, i) => <path key={`w${i}`} className="plan-fuge" d={`M0 ${y * S}H${W}`} />)}
-          {bild.senkrecht.map(([x, y1, y2], i) => <path key={`s${i}`} className="plan-fuge" d={`M${x * S} ${y1 * S}V${y2 * S}`} />)}
+          {bild.senkrecht.map(([x, y1, y2], i) => <path key={`s${i}`} className="plan-fuge plan-reihenteil" style={reihenStil(y1)} d={`M${x * S} ${y1 * S}V${y2 * S}`} />)}
           {kreuzpunkte.map(([x, y], i) => <rect key={`k${i}`} className="plan-stelzlager" x={x * S - 3} y={y * S - 3} width={6} height={6} />)}
+        </g>
         </g>
       )}
       <rect className="plan-raum" x={0} y={0} width={W} height={H} />
       {elemente.map((e, i) => <Element key={i} e={e} b={b} h={h} />)}
-      {zeigeLot && <path className="plan-achse" d={`M${bild.achseX * S} ${-rand + 4}V${H + rand - 4}`} />}
-      {zeigeWaage && <path className="plan-achse" d={`M${-rand + 4} ${bild.achseY * S}H${W + rand - 4}`} />}
+      {zeigeLot && <path className="plan-achse plan-achse-lot" d={`M${bild.achseX * S} ${-rand + 4}V${H + rand - 4}`} />}
+      {zeigeWaage && <path className="plan-achse plan-achse-waage" d={`M${-rand + 4} ${bild.achseY * S}H${W + rand - 4}`} />}
       {zeigeLot && zeigeWaage && <path className="plan-kreuz" d={`M${bild.achseX * S - 1.5} ${bild.achseY * S - 6}h3v4.5h4.5v3h-4.5v4.5h-3v-4.5h-4.5v-3h4.5z`} />}
       {zustand === 'aufmass' && (
         <g className="plan-pruefung">

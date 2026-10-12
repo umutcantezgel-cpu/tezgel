@@ -1,0 +1,205 @@
+{
+ "seite": "/standorte/wetzlar",
+ "ansicht": "m390",
+ "base": "http://127.0.0.1:4310",
+ "lauf": 3,
+ "ladeEndeMs": 2031,
+ "fensterEndeMs": 7031,
+ "laufzeitMs": 7388,
+ "summe": 0.17179,
+ "kopfBeitrag": 0.17179,
+ "anzahlEintraege": 2,
+ "anzahlNachEingabe": 0,
+ "eintraege": [
+  {
+   "t": 970,
+   "wert": 0.15637473856330547,
+   "juengst": false,
+   "quellen": [
+    {
+     "knoten": {
+      "sel": "div.mx-auto.w-full > div.grid.grid-cols-4 > div.col-span-4.md:col-span-8 > h1.text-tinte.text-fs-7",
+      "h1": true,
+      "mono": false,
+      "oben": 176,
+      "text": "Fliesenverlegung & Badsanierung in Wetzlar",
+      "klasse": "text-tinte text-fs-7"
+     },
+     "vorher": [
+      16,
+      194,
+      358,
+      145
+     ],
+     "nachher": [
+      16,
+      176,
+      358,
+      145
+     ]
+    },
+    {
+     "knoten": {
+      "sel": "div.mx-auto.w-full > div.grid.grid-cols-4 > div.col-span-4.md:col-span-8 > div.mt-8.max-w-mass",
+      "h1": false,
+      "mono": false,
+      "oben": 353,
+      "text": "Fliesenverlegung & Badsanierung in Wetzlar: Fliesenverlegung Tezgel – ",
+      "klasse": "mt-8 max-w-mass text-fs-4 text-tinte"
+     },
+     "vorher": [
+      16,
+      371,
+      358,
+      242
+     ],
+     "nachher": [
+      16,
+      353,
+      358,
+      242
+     ]
+    },
+    {
+     "knoten": {
+      "sel": "div.mx-auto.w-full > div.grid.grid-cols-4 > div.col-span-4.md:col-span-8 > div.mt-8.flex",
+      "h1": false,
+      "mono": false,
+      "oben": 627,
+      "text": "Aufmaß in Wetzlar anfragen06441 / 44 83 567",
+      "klasse": "mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap"
+     },
+     "vorher": [
+      16,
+      645,
+      358,
+      112
+     ],
+     "nachher": [
+      16,
+      627,
+      358,
+      110
+     ]
+    },
+    {
+     "knoten": {
+      "sel": "header.relative.border-b > div.mx-auto.w-full > div.grid.grid-cols-4 > div.col-span-4.flex",
+      "h1": false,
+      "mono": false,
+      "oben": 785,
+      "text": "Firmensitz Aßlar≤ 10 kmAßlarFirmensitzWetzlarca. 5 kmSolmsca. 8 kmBrau",
+      "klasse": "col-span-4 flex flex-col md:col-span-8 lg:col-span-5"
+     },
+     "vorher": [
+      16,
+      805,
+      358,
+      39
+     ],
+     "nachher": [
+      16,
+      785,
+      358,
+      59
+     ]
+    }
+   ]
+  },
+  {
+   "t": 1434,
+   "wert": 0.01541566571652444,
+   "juengst": false,
+   "quellen": [
+    {
+     "knoten": {
+      "sel": "div.mx-auto.w-full > div.grid.grid-cols-4 > div.col-span-4.md:col-span-8 > h1.text-tinte.text-fs-7",
+      "h1": true,
+      "mono": false,
+      "oben": 194,
+      "text": "Fliesenverlegung & Badsanierung in Wetzlar",
+      "klasse": "text-tinte text-fs-7"
+     },
+     "vorher": [
+      16,
+      176,
+      358,
+      145
+     ],
+     "nachher": [
+      16,
+      194,
+      358,
+      145
+     ]
+    },
+    {
+     "knoten": {
+      "sel": "div.mx-auto.w-full > div.grid.grid-cols-4 > div.col-span-4.md:col-span-8 > div.mt-8.max-w-mass",
+      "h1": false,
+      "mono": false,
+      "oben": 371,
+      "text": "Fliesenverlegung & Badsanierung in Wetzlar: Fliesenverlegung Tezgel – ",
+      "klasse": "mt-8 max-w-mass text-fs-4 text-tinte"
+     },
+     "vorher": [
+      16,
+      353,
+      358,
+      242
+     ],
+     "nachher": [
+      16,
+      371,
+      358,
+      242
+     ]
+    },
+    {
+     "knoten": {
+      "sel": "div.mx-auto.w-full > div.grid.grid-cols-4 > div.col-span-4.md:col-span-8 > div.mt-8.flex",
+      "h1": false,
+      "mono": false,
+      "oben": 645,
+      "text": "Aufmaß in Wetzlar anfragen06441 / 44 83 567",
+      "klasse": "mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap"
+     },
+     "vorher": [
+      16,
+      627,
+      358,
+      110
+     ],
+     "nachher": [
+      16,
+      645,
+      358,
+      112
+     ]
+    },
+    {
+     "knoten": {
+      "sel": "header.relative.border-b > div.mx-auto.w-full > div.grid.grid-cols-4 > div.col-span-4.flex",
+      "h1": false,
+      "mono": false,
+      "oben": 805,
+      "text": "Firmensitz Aßlar≤ 10 kmAßlarFirmensitzWetzlarca. 5 kmSolmsca. 8 kmBrau",
+      "klasse": "col-span-4 flex flex-col md:col-span-8 lg:col-span-5"
+     },
+     "vorher": [
+      16,
+      785,
+      358,
+      59
+     ],
+     "nachher": [
+      16,
+      805,
+      358,
+      39
+     ]
+    }
+   ]
+  }
+ ]
+}

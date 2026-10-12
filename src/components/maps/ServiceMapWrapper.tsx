@@ -11,14 +11,15 @@ import Einzugsband from "@/components/kern/Einzugsband";
 import { etikettKlassen, knopfKlassen } from "@/components/kern/stile";
 import { CITY_HUB_DATA, getDirectionsUrl } from "@/lib/maps/getMapEmbedUrl";
 
-/** Höhe der Kartenfläche. Einwilligungs-Tor und geladene Karte haben dieselbe Höhe (kein Sprung beim Laden). */
+/** Höhe der Kartenfläche. Einwilligungs-Tor und geladene Karte haben dieselbe Höhe (kein Sprung beim Laden); unter md
+ *  folgt das Tor dem Inhalt (hoehenModus „inhalt“), die geladene Karte bleibt auf dieser Höhe. */
 export const KARTE_HOEHE = "460px";
 
-/** Stadtknopf: mindestens 44 px hoch, ohne vertikales Padding, damit die Leiste genau 44 px hoch bleibt. */
+/** Stadtknopf: mindestens 44 px hoch (Touch-Ziel); in der umbrechenden Stadtleiste nebeneinander, bei Platzmangel untereinander. */
 export const STADT_KLASSEN =
   "inline-flex min-h-11 items-center gap-2 rounded-none border border-strich bg-fliese px-4 py-2 font-text text-fs-2 text-tinte hover:border-tinte aria-pressed:border-tinte aria-pressed:bg-tinte aria-pressed:text-kalk";
 
-/** Stadtleiste (feste Höhe h-11, darunter mb-4). Die Auswahl hält das übergeordnete Element. */
+/** Stadtleiste: die Knöpfe brechen um, keiner wird am Rand abgeschnitten (E3-SICHT-2-ERZ Befund 17). Die Auswahl hält das übergeordnete Element. */
 export function ServiceStadtleiste({
   selectedSlug,
   onSelectCity,
@@ -27,25 +28,23 @@ export function ServiceStadtleiste({
   onSelectCity: (slug: string) => void;
 }) {
   return (
-    <div className="mb-4 h-11 overflow-x-auto ohne-scrollleiste">
-      <div className="flex h-full min-w-max items-center gap-2">
-        {CITIES.map((city) => {
-          const isSelected = selectedSlug === city.slug;
-          return (
-            <button
-              key={city.slug}
-              type="button"
-              aria-pressed={isSelected}
-              onClick={() => onSelectCity(city.slug)}
-              className={STADT_KLASSEN}
-            >
-              <Icon name="ort" groesse={4} />
-              <span>{city.name}</span>
-              <Entfernung slug={city.slug} />
-            </button>
-          );
-        })}
-      </div>
+    <div className="mb-4 flex flex-wrap gap-2">
+      {CITIES.map((city) => {
+        const isSelected = selectedSlug === city.slug;
+        return (
+          <button
+            key={city.slug}
+            type="button"
+            aria-pressed={isSelected}
+            onClick={() => onSelectCity(city.slug)}
+            className={STADT_KLASSEN}
+          >
+            <Icon name="ort" groesse={4} />
+            <span>{city.name}</span>
+            <Entfernung slug={city.slug} />
+          </button>
+        );
+      })}
     </div>
   );
 }
@@ -186,10 +185,12 @@ function KarteBeimSehen({
 }
 
 /**
- * Höhe der Kartenfläche neben der Ortsliste im Abschnitt Servicegebiet der Startseite: 13 Orte in zwei Spalten
- * (7 Zeilen à 54 px) plus Maßzeile (61 px) ergeben 440 px – die Karte ist nicht höher als die Liste.
+ * Höhe der Kartenfläche neben der Ortsliste im Abschnitt Servicegebiet der Startseite (erlaubte Kartenhöhe, E-018).
+ * Der Platzhalter wächst mit der Einzugsband-Vorschau: ab md mindestens 460 px, darüber so hoch wie der Inhalt
+ * (E3-SICHT-ERZ Befund 11: die Vorschau bleibt bei 1024 und 1440 px vollständig sichtbar); unter md folgt er dem Inhalt,
+ * ohne Vorschau – die Ortsliste steht dort schon im Abschnitt (die Startseite bleibt mobil kürzer).
  */
-const KARTE_HOEHE_NEBEN_LISTE = "440px";
+const KARTE_HOEHE_NEBEN_LISTE = "460px";
 
 /**
  * Nur die Kartenfläche (Einwilligungs-Tor, dann Karte, sobald sie im Blick ist) für den Abschnitt Servicegebiet der
@@ -207,6 +208,8 @@ export function ServiceKartenflaeche() {
       height={KARTE_HOEHE_NEBEN_LISTE}
       className="w-full"
       vorschau={<Einzugsband kompakt />}
+      vorschauAb="md"
+      hoehenModus="inhalt"
     >
       <KarteBeimSehen selectedSlug={selectedSlug} onSelectCity={setSelectedSlug} />
     </MapConsentGate>
@@ -233,6 +236,9 @@ export default function ServiceMapWrapper({ className = "" }: { className?: stri
         title={`Einsatzgebiet Fliesenverlegung Tezgel – ${currentCity.name}`}
         height={KARTE_HOEHE}
         className="w-full"
+        hoehenModus="inhalt"
+        vorschau={<Einzugsband form="band" kompakt />}
+        vorschauAb="md"
       >
         <KarteBeimSehen selectedSlug={selectedSlug} onSelectCity={handleSelectCity} />
       </MapConsentGate>

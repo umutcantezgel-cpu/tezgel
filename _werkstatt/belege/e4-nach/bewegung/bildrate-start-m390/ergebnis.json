@@ -1,0 +1,123 @@
+{
+ "modus": "bildrate",
+ "seite": "/",
+ "base": "http://127.0.0.1:4320",
+ "ansicht": "m390",
+ "zeitpunkt": "2026-10-12T01:57:57.644Z",
+ "dpr": 2,
+ "cpu_drosselung": 4,
+ "gesten": {
+  "befehl": "Input.synthesizeScrollGesture",
+  "gestureSourceType": "default",
+  "geschwindigkeit_px_s": 800,
+  "folge": "oben→unten, dann unten→oben"
+ },
+ "wiederholungen": 3,
+ "bilder_gesamt": 3909,
+ "verworfen": 3,
+ "anteil_verworfen_prozent": 0.12,
+ "anteile_je_lauf": [
+  0.12,
+  0,
+  0.15
+ ],
+ "anteile_pipeline_je_lauf": [
+  0.31,
+  0.05,
+  0.17
+ ],
+ "loaf_anzahl": 4,
+ "loaf_summe_ms": 332,
+ "hinweis": "Median je Feld, nicht aus derselben Zeile (bilder_gesamt, verworfen, loaf_*). Kopfwert anteil_verworfen_prozent = Median der Anteile je Lauf (anteile_je_lauf).",
+ "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+ "laeufe": [
+  {
+   "bilder_gesamt": 2503,
+   "verworfen": 3,
+   "anteil_verworfen_prozent": 0.12,
+   "loaf_anzahl": 9,
+   "loaf_summe_ms": 872,
+   "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+   "zusatz": {
+    "frame_ereignisse": {
+     "praesentiert": 2500,
+     "verworfen": 3,
+     "anteil_prozent": 0.12
+    },
+    "pipeline_reporter": {
+     "praesentiert": 2569,
+     "verworfen": 8,
+     "anteil_prozent": 0.31
+    }
+   },
+   "scroll": {
+    "hoehe": 16669,
+    "nach_abwaerts": 16669,
+    "nach_aufwaerts": 0
+   },
+   "trace_vollstaendig": true,
+   "dauer_s": 58.5
+  },
+  {
+   "bilder_gesamt": 3909,
+   "verworfen": 0,
+   "anteil_verworfen_prozent": 0,
+   "loaf_anzahl": 2,
+   "loaf_summe_ms": 124,
+   "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+   "zusatz": {
+    "frame_ereignisse": {
+     "praesentiert": 3909,
+     "verworfen": 0,
+     "anteil_prozent": 0
+    },
+    "pipeline_reporter": {
+     "praesentiert": 3974,
+     "verworfen": 2,
+     "anteil_prozent": 0.05
+    }
+   },
+   "scroll": {
+    "hoehe": 26046,
+    "nach_abwaerts": 26046,
+    "nach_aufwaerts": 0
+   },
+   "trace_vollstaendig": true,
+   "dauer_s": 92.2
+  },
+  {
+   "bilder_gesamt": 3938,
+   "verworfen": 6,
+   "anteil_verworfen_prozent": 0.15,
+   "loaf_anzahl": 4,
+   "loaf_summe_ms": 332,
+   "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+   "zusatz": {
+    "frame_ereignisse": {
+     "praesentiert": 3932,
+     "verworfen": 6,
+     "anteil_prozent": 0.15
+    },
+    "pipeline_reporter": {
+     "praesentiert": 3995,
+     "verworfen": 7,
+     "anteil_prozent": 0.17
+    }
+   },
+   "scroll": {
+    "hoehe": 26244,
+    "nach_abwaerts": 26244,
+    "nach_aufwaerts": 0
+   },
+   "trace_vollstaendig": true,
+   "dauer_s": 100.2
+  }
+ ],
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "rohtrace": "nicht gespeichert (nur Kennzahlen)",
+ "verzeichnis": "/home/user/tezgel/_werkstatt/belege/e4-nach/bewegung/bildrate-start-m390"
+}

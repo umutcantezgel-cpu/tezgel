@@ -1,0 +1,46 @@
+{
+ "modus": "register",
+ "seite": "/fliesen",
+ "base": "http://127.0.0.1:4320",
+ "ansicht": "d1440",
+ "zeitpunkt": "2026-10-12T01:31:01.867Z",
+ "schritte": {
+  "hover_geprueft": 20,
+  "hover_fehler": 0,
+  "hover_fehler_beispiel": null,
+  "hover_ausserhalb_uebersprungen": 0,
+  "tab_schritte": 30,
+  "fokus_verschieden": 27
+ },
+ "data_motion_elemente": 132,
+ "gefundene_kennungen": [
+  "aufklappen",
+  "druck",
+  "leitachse",
+  "verband",
+  "zustand"
+ ],
+ "unbekannt": [],
+ "registriert_nicht_im_dom": [
+  "sig-kreuzlinie",
+  "sig-flucht",
+  "szene-ablauf",
+  "sig-plan",
+  "einzugsband",
+  "fugenband",
+  "anriss",
+  "auftritt",
+  "notiert",
+  "laden",
+  "seitenwechsel"
+ ],
+ "ohne_register": [],
+ "mit_register_eintraege": 20,
+ "erfasste_eintraege": 20,
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "verzeichnis": "/home/user/tezgel/_werkstatt/belege/e4-nach/bewegung/register-fliesen-d1440"
+}

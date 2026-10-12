@@ -1,0 +1,9 @@
+port	seite	HTTP_bytes	Rechner_Situation	Termin_Uhrzeit	Karte_Einwilligung	Schnellformular_Wohnort	Schnellformular_anfordern	Platzhalter_wird_geladen_in_HTML	Stream_S0
+4320	/	630402	4	0	1	0	0	2	1
+4320	/kontakt	261421	0	3	1	0	2	0	0
+4320	/standorte	328772	0	0	2	4	0	0	0
+4320	/leistungen	409286	4	0	0	0	0	2	1
+4310	/	534703	4	0	1	0	0	2	1
+4310	/kontakt	227304	0	3	1	0	2	0	0
+4310	/standorte	281503	0	0	2	4	0	0	0
+4310	/leistungen	331592	4	0	0	0	0	0	0

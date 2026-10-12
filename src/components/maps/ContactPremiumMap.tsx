@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo, useCallback, type CSSProperties } from "react";
+import React, { useState, useMemo, useCallback } from "react";
 import clsx from "clsx";
 import { APIProvider, Map, AdvancedMarker, Pin, useMap } from "@vis.gl/react-google-maps";
 import { CITIES } from "@/config/cities";
@@ -9,7 +9,7 @@ import MapConsentGate from "@/components/legal/MapConsentGate";
 import Einzugsband from "@/components/kern/Einzugsband";
 import { ZONEN } from "@/lib/einzugszonen";
 import Icon from "@/components/icons/Icon";
-import { etikettKlassen, feldKlassen, knopfKlassen, wahlKlassen } from "@/components/kern/stile";
+import { etikettKlassen, feldKlassen, knopfKlassen } from "@/components/kern/stile";
 import { triggerHaptic } from "@/lib/haptics";
 import {
   CITY_HUB_DATA,
@@ -80,7 +80,7 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
   return (
     <div className={clsx("flex w-full flex-col border border-fuge bg-fliese lg:flex-row", className)}>
       {/* Links: Standort, Suche, Stadtliste, Kurzprofil des gewählten Ortes */}
-      <div className="flex w-full shrink-0 flex-col justify-between gap-6 border-b border-fuge bg-kalk p-4 sm:p-6 lg:w-1/3 lg:border-b-0 lg:border-r">
+      <div className="flex w-full shrink-0 flex-col justify-between gap-6 border-b border-fuge bg-kalk p-4 sm:p-6 lg:w-2/5 lg:border-b-0 lg:border-r">
         <div className="flex flex-col gap-4">
           <p className={etikettKlassen}>
             <Icon name="ort" groesse={4} />
@@ -105,14 +105,15 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
             />
           </div>
 
-          <div className="flex flex-wrap gap-2">
+          {/* Filterzeile: vier gleich breite Spalten im 1-px-Raster (Strich), eine Zeile auch bei 390 px */}
+          <div className="grid grid-cols-4 divide-x divide-strich border border-strich">
             {ENTFERNUNGEN.map((f) => (
               <button
                 key={f.label}
                 type="button"
                 aria-pressed={distanceFilter === f.val}
                 onClick={() => setDistanceFilter(f.val)}
-                className={wahlKlassen}
+                className="min-h-11 bg-fliese px-2 py-3 text-center font-text text-fs-2 text-tinte hover:bg-kalk aria-pressed:bg-tinte aria-pressed:text-kalk"
               >
                 {f.label}
               </button>
@@ -129,7 +130,7 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
                     type="button"
                     aria-pressed={isSelected}
                     onClick={() => handleSelectCity(city.slug)}
-                    className="flex h-11 w-full items-center justify-between gap-3 px-4 text-left font-text text-fs-2 text-tinte hover:bg-kalk aria-pressed:bg-tinte aria-pressed:text-kalk"
+                    className="flex h-11 w-full items-center justify-between gap-3 px-3 text-left font-text text-fs-2 text-tinte hover:bg-kalk aria-pressed:bg-tinte aria-pressed:text-kalk"
                   >
                     <span className="flex min-w-0 items-center gap-2">
                       <Icon name="ort" groesse={4} />
@@ -180,16 +181,17 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
       </div>
 
       {/* Rechts: Kartenfläche hinter Einwilligung */}
-      <div
-        className="karten-hoehe relative w-full lg:h-auto lg:min-w-0 lg:flex-1"
-        style={{ "--karten-hoehe": KARTE_HOEHE } as CSSProperties}
-      >
+      {/* Platzhalter folgt dem Inhalt (E4-NACH-12/-17, E3-SICHT-ARB Befunde 7, 10): mobil Text und Zonen ohne Leerfeld,
+          ab md mindestens KARTE_HOEHE, ab lg so hoch wie die Ortsliste; die geladene Karte steht auf KARTE_HOEHE */}
+      <div className="relative w-full lg:h-auto lg:min-w-0 lg:flex-1">
         <MapConsentGate
           src={embedUrl}
           title={`Google Maps Ansicht ${currentHub.name}`}
-          height="100%"
+          height={KARTE_HOEHE}
           className="w-full"
           vorschau={<Einzugsband kompakt />}
+          vorschauAb="immer"
+          hoehenModus="inhalt"
         >
           {apiKey ? (
             <APIProvider apiKey={apiKey}>

@@ -1,16 +1,22 @@
-import React from 'react';
+// Musterbäder (E4-BAU-04, KERN v2): Erzählansicht nach dem Muster der Familienreferenz (bad/page.jsx). Einstieg mit Achse,
+// H1 links bündig, Vorspann, Knöpfe; rechts das Planblatt „bad“ mit dem Verlegeplan (interaktiv, ohne Bemaßung).
+// Danach die Leitachse über die Musterbad-Karten als Feldraster (je Musterbad ein Feld) und der Richtwert-Hinweis.
+// Wortlaut, Überschriften, Links, IDs und Lesefolge wie im Bestand. Kein großer Moment (setzt der Orchestrator).
 import Link from 'next/link';
-import {
-    Layers,
-    Check,
-    ArrowRight,
-    Eye,
-    Calculator,
-    Info
-} from 'lucide-react';
+import clsx from 'clsx';
 import { MUSTERBAEDER } from '@/config/musterbaeder';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
+import Icon from '@/components/icons/Icon';
+import Einstieg from '@/components/kern/Einstieg';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Leitachse from '@/components/kern/Leitachse';
+import { Feld, Feldraster } from '@/components/kern/Feldraster';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Knopf from '@/components/kern/Knopf';
+import Verlegeplan from '@/components/kern/Verlegeplan';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
 
 export const metadata = createMetadata({
     title: 'Musterbäder & Badideen Wetzlar | Badsanierung Tezgel',
@@ -20,112 +26,99 @@ export const metadata = createMetadata({
 
 export default function MusterbaederPage() {
     return (
-        <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            {/* Ambient Glow */}
-            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-red top-96 -right-24 opacity-60" />
-
-            {/* Hero */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="musterbaeder-heading">
-                <div className="ceramic-hero rounded-tile-lg border border-neutral-200/80 shadow-tile p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">
-                        <Layers className="w-3.5 h-3.5" />
-                        Transparente Raumkonzepte
-                    </span>
-                    <h1 id="musterbaeder-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Musterbäder &amp; Badideen Wetzlar:{' '}
-                        <span className="text-ceramic-gradient">Badsanierung Tezgel</span>
-                    </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Entdecken Sie unsere Musterbäder und modernen Badideen für Wetzlar, Aßlar und Mittelhessen. Als Fachbetrieb für Badsanierung Tezgel bieten wir transparente Ausstattungslisten und verlässliche Festpreis-Orientierungen mit hochwertigen Markenprodukten.
-                    </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/bad/projekt-check" className="btn-primary px-7 py-3.5 text-xs">
-                            <Calculator className="w-4 h-4" />
-                            Individuelles Bad online kalkulieren
-                        </Link>
-                        <Link href="/bad/badanfrage" className="btn-ghost px-7 py-3.5 text-xs">
-                            Badanfrage stellen
-                        </Link>
-                    </div>
-                </div>
+        <>
+            {/* 1. EINSTIEG: Etikett, H1 auf der Achse, Vorspann, Knöpfe; rechts das Planblatt „bad“ */}
+            <section aria-labelledby="musterbaeder-heading">
+                <Einstieg
+                    art="erzaehl"
+                    etikett="Transparente Raumkonzepte"
+                    titel={
+                        <span id="musterbaeder-heading">
+                            Musterbäder &amp; Badideen Wetzlar:{' '}
+                            <span>Badsanierung Tezgel</span>
+                        </span>
+                    }
+                    vorspann={
+                        <p>
+                            Entdecken Sie unsere Musterbäder und modernen Badideen für Wetzlar, Aßlar und Mittelhessen. Als Fachbetrieb für Badsanierung Tezgel bieten wir transparente Ausstattungslisten und verlässliche Festpreis-Orientierungen mit hochwertigen Markenprodukten.
+                        </p>
+                    }
+                    aktionen={
+                        <>
+                            <Knopf href="/bad/projekt-check" iconLinks="aufmass">Individuelles Bad online kalkulieren</Knopf>
+                            <Knopf href="/bad/badanfrage" variante="neben">Badanfrage stellen</Knopf>
+                        </>
+                    }
+                    rand={
+                        <Planblatt felder={planfelder('Musterbäder & Badideen', 'bad')}>
+                            <Verlegeplan plan="bad" ohneAchse bemassung={false} interaktiv />
+                        </Planblatt>
+                    }
+                />
             </section>
 
-            {/* Musterbad Double-Bezel Grid */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-label="Musterbäder">
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {MUSTERBAEDER.map((bath) => (
-                        <li
-                            key={bath.id}
-                            className="glass-bezel-outer group transition-all duration-300 hover:-translate-y-0.5 hover:border-orange-500 hover:shadow-[0_24px_48px_-16px_rgba(15,23,42,0.18)]"
-                        >
-                            <article className="glass-bezel-inner p-7 sm:p-8 flex flex-col justify-between h-full">
-                                <div>
-                                    <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
-                                        <div className="flex items-center gap-2">
-                                            <span className="text-xs font-black px-3.5 py-1 rounded-tile-pill bg-orange-600 text-white tabular-nums">
-                                                {bath.size}
-                                            </span>
-                                            <span className="text-xs font-bold px-3 py-1 rounded-tile-pill bg-orange-50 text-orange-950 border border-orange-200">
-                                                {bath.tier}
-                                            </span>
-                                        </div>
-                                    </div>
+            {/* LEITACHSE: das Lot setzt die Achse des Einstiegs über die Abschnitte fort */}
+            <Leitachse>
+                {/* 2. MUSTERBÄDER als Feldraster: je Musterbad ein Feld mit Ausstattungs-Highlights und den beiden Wegen */}
+                <Abschnitt aria-label="Musterbäder" leitachse spaet>
+                    <Feldraster spalten={2}>
+                        {MUSTERBAEDER.map((bath) => (
+                            <Feld key={bath.id} className="gap-6">
+                                <article className="flex flex-1 flex-col justify-between gap-6">
+                                    <div>
+                                        <p className={clsx(etikettKlassen, 'flex-wrap')}>
+                                            <span className="tabular-nums">{bath.size}</span>
+                                            <Fugenkreuz className="size-3 shrink-0 text-strich" />
+                                            <span>{bath.tier}</span>
+                                        </p>
 
-                                    <h2 className="text-2xl font-black text-slate-900 mb-1 group-hover:text-orange-600 transition-colors">
-                                        {bath.title}
-                                    </h2>
-                                    <p className="text-sm text-slate-700 mb-6">
-                                        {bath.headline}
-                                    </p>
+                                        <h2 className="mt-4 font-anzeige text-fs-4 font-semibold text-tinte">
+                                            {bath.title}
+                                        </h2>
+                                        <p className="mt-2 font-text text-fs-2 text-tinte-2">
+                                            {bath.headline}
+                                        </p>
 
-                                    <div className="space-y-2.5 mb-6">
-                                        <div className="text-[11px] font-black uppercase tracking-widest text-orange-950">Ausstattungs-Highlights</div>
-                                        <ul className="space-y-2">
+                                        <p className={clsx(etikettKlassen, 'mt-6')}>Ausstattungs-Highlights</p>
+                                        <ul className="mt-3 grid gap-3">
                                             {bath.highlights.map((h) => (
-                                                <li key={h} className="flex items-start gap-2 text-sm text-slate-700">
-                                                    <Check className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
+                                                <li key={h} className="flex items-start gap-3 font-text text-fs-2 text-tinte">
+                                                    <Fugenkreuz className="mt-1 size-3 shrink-0 text-strich" />
                                                     <span>{h}</span>
                                                 </li>
                                             ))}
                                         </ul>
                                     </div>
-                                </div>
 
-                                <div className="pt-5 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3">
-                                    <Link
-                                        href={`/bad/musterbaeder/${bath.slug}`}
-                                        className="inline-flex items-center gap-1.5 text-sm font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2"
-                                    >
-                                        <Eye className="w-4 h-4" />
-                                        <span>Ausstattung &amp; Details: {bath.title}</span>
-                                    </Link>
+                                    <div className="flex flex-wrap items-center justify-between gap-3 border-t border-fuge pt-6">
+                                        <Link
+                                            href={`/bad/musterbaeder/${bath.slug}`}
+                                            className={clsx(linkKlassen, 'inline-flex min-h-11 items-center gap-2 font-semibold')}
+                                        >
+                                            <Icon name="suche" groesse={4} />
+                                            <span>Ausstattung &amp; Details: {bath.title}</span>
+                                        </Link>
 
-                                    <Link href="/bad/badanfrage" className="btn-primary px-5 py-2.5 text-xs">
-                                        Anfragen
-                                        <ArrowRight className="w-4 h-4" />
-                                    </Link>
-                                </div>
-                            </article>
-                        </li>
-                    ))}
-                </ul>
+                                        <Knopf href="/bad/badanfrage" icon="pfeil-rechts">Anfragen</Knopf>
+                                    </div>
+                                </article>
+                            </Feld>
+                        ))}
+                    </Feldraster>
 
-                <p className="mt-10 max-w-3xl mx-auto flex items-start justify-center gap-2 text-sm text-slate-700 text-center">
-                    <Info className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
-                    <span>
-                        Alle Preise sind Richtwerte zur Orientierung. Den verbindlichen Festpreis erhalten Sie nach dem kostenfreien
-                        Vor-Ort-Aufmaß – Fragen beantwortet {COMPANY_DATA.owner.fullName} gerne unter{' '}
-                        <a
-                            href={`tel:${COMPANY_DATA.contact.phoneLink}`}
-                            className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2 whitespace-nowrap"
-                        >
-                            {COMPANY_DATA.contact.phone}
-                        </a>
-                        .
-                    </span>
-                </p>
-            </section>
-        </div>
+                    <p className="mx-auto mt-8 flex max-w-mass items-start justify-center gap-2 text-center font-text text-fs-2 text-tinte-2">
+                        <Icon name="info" groesse={4} className="mt-1 shrink-0 text-tinte" />
+                        <span>
+                            Alle Preise sind Richtwerte zur Orientierung. Den verbindlichen Festpreis erhalten Sie nach dem kostenfreien
+                            Vor-Ort-Aufmaß – Fragen beantwortet {COMPANY_DATA.owner.fullName} gerne unter{' '}
+                            <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className={clsx(linkKlassen, 'whitespace-nowrap font-mono')}>
+                                {COMPANY_DATA.contact.phone}
+                            </a>
+                            .
+                        </span>
+                    </p>
+                </Abschnitt>
+            </Leitachse>
+        </>
     );
 }

@@ -1,0 +1,2312 @@
+{
+  "config": {
+    "configFile": "/home/user/tezgel/_werkstatt/werkzeuge/playwright.config.mjs",
+    "rootDir": "/home/user/tezgel/_werkstatt/werkzeuge/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-NACH-17/pw.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-NACH-17/pw",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "mobil",
+        "name": "mobil",
+        "testDir": "/home/user/tezgel/_werkstatt/werkzeuge/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-NACH-17/pw",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "/home/user/tezgel/_werkstatt/werkzeuge/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "funktion-einwilligung.spec.mjs",
+      "file": "funktion-einwilligung.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Einwilligung (F-11, global)",
+          "file": "funktion-einwilligung.spec.mjs",
+          "line": 35,
+          "column": 6,
+          "specs": [],
+          "suites": [
+            {
+              "title": "Erstbesuch (kein Cookie)",
+              "file": "funktion-einwilligung.spec.mjs",
+              "line": 36,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "/: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 6662,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:28:05.340Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-58f2d2ef11df4b34192c",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 40,
+                  "column": 7
+                },
+                {
+                  "title": "/standorte: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 5710,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:28:12.223Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-974457c27909d3819815",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 40,
+                  "column": 7
+                },
+                {
+                  "title": "/kontakt: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 4844,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:28:17.966Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-1526c71fa8159a5152c2",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 40,
+                  "column": 7
+                },
+                {
+                  "title": "Schließen ohne Wahl setzt nur technisch notwendige Cookies (keine Voreinstellung für Analyse oder Marketing)",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 3504,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:28:22.830Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-321d5ec31fc9b64931ca",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 50,
+                  "column": 5
+                },
+                {
+                  "title": "Alle ablehnen: speichert Ablehnung in tezgel_consent_status, Banner schließt und bleibt nach Neuladen zu",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 7037,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:28:26.364Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-176e7c68986d273e6fd1",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 58,
+                  "column": 5
+                },
+                {
+                  "title": "Alle akzeptieren: speichert Analyse und Marketing in tezgel_consent_status, Banner schließt",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 2574,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:28:33.428Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-18929a8194a974a93e77",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 70,
+                  "column": 5
+                },
+                {
+                  "title": "#cookie-settings öffnet die Einstellungen direkt (Auswahl speichern und Zurück sichtbar)",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 3150,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:28:36.033Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-7d4138e835dce34a736f",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 78,
+                  "column": 5
+                },
+                {
+                  "title": "Einstellungen: „Auswahl speichern“ übernimmt nur die gewählte Kategorie (Marketing an, Analyse aus)",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 4998,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:28:39.218Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-7d779787987c79e4d5cd",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 86,
+                  "column": 5
+                },
+                {
+                  "title": "/: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 3691,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:29:47.298Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-1f2350d9ceb4caf198d7",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 40,
+                  "column": 7
+                },
+                {
+                  "title": "/standorte: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 2354,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:29:51.174Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-b1c16fc1062cc2fcc686",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 40,
+                  "column": 7
+                },
+                {
+                  "title": "/kontakt: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 3004,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:29:53.556Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-45ee2a61f1354f75302c",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 40,
+                  "column": 7
+                },
+                {
+                  "title": "Schließen ohne Wahl setzt nur technisch notwendige Cookies (keine Voreinstellung für Analyse oder Marketing)",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 4034,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:29:56.589Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-99e18c705ee7da844855",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 50,
+                  "column": 5
+                },
+                {
+                  "title": "Alle ablehnen: speichert Ablehnung in tezgel_consent_status, Banner schließt und bleibt nach Neuladen zu",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 6516,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:30:00.653Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-7984a0c109ea275c036c",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 58,
+                  "column": 5
+                },
+                {
+                  "title": "Alle akzeptieren: speichert Analyse und Marketing in tezgel_consent_status, Banner schließt",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 2077,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:30:07.192Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-cb828111bc89034ea14f",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 70,
+                  "column": 5
+                },
+                {
+                  "title": "#cookie-settings öffnet die Einstellungen direkt (Auswahl speichern und Zurück sichtbar)",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 2783,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:30:09.288Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-4121f5e71d7a9d0d6ce9",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 78,
+                  "column": 5
+                },
+                {
+                  "title": "Einstellungen: „Auswahl speichern“ übernimmt nur die gewählte Kategorie (Marketing an, Analyse aus)",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 4006,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:30:12.095Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-bca62c049907b60816fa",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 86,
+                  "column": 5
+                }
+              ]
+            },
+            {
+              "title": "Widerruf (Zustimmung vorhanden)",
+              "file": "funktion-einwilligung.spec.mjs",
+              "line": 98,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "Schild öffnet die Einstellungen mit aktuellem Stand; „Alle ablehnen“ entzieht Analyse und Marketing",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 3830,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:28:44.248Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-b36602e73fd1b1b7d375",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 101,
+                  "column": 5
+                },
+                {
+                  "title": "Schild öffnet die Einstellungen mit aktuellem Stand; „Alle ablehnen“ entzieht Analyse und Marketing",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 2619,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:30:16.123Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-e29314795086eb61fdbf",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 101,
+                  "column": 5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Karten hinter Einwilligung (F-12)",
+          "file": "funktion-einwilligung.spec.mjs",
+          "line": 115,
+          "column": 6,
+          "specs": [],
+          "suites": [
+            {
+              "title": "Erstbesuch (keine Entscheidung)",
+              "file": "funktion-einwilligung.spec.mjs",
+              "line": 116,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "/kontakt: vor jeder Entscheidung Platzhalter statt Karte und keine Anfrage an Karten-Hosts",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 2279,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:28:48.110Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-e9f85f1b029ac2b532ce",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 119,
+                  "column": 5
+                },
+                {
+                  "title": "/kontakt: vor jeder Entscheidung Platzhalter statt Karte und keine Anfrage an Karten-Hosts",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 3407,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:30:18.765Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-594f0f248f52135b6b23",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 119,
+                  "column": 5
+                }
+              ]
+            },
+            {
+              "title": "ohne Marketing-Einwilligung (abgelehnt)",
+              "file": "funktion-einwilligung.spec.mjs",
+              "line": 129,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "/: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 2711,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:28:50.420Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-775c11ee5e188b537198",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 131,
+                  "column": 7
+                },
+                {
+                  "title": "/standorte: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1867,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:28:53.161Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-8cd41d065bddf982f08d",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 131,
+                  "column": 7
+                },
+                {
+                  "title": "/kontakt: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1624,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:28:55.055Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-4306fd411f3c8b30884c",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 131,
+                  "column": 7
+                },
+                {
+                  "title": "/standorte: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host)",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 4885,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:28:56.704Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-c751bd3638a8ce03e414",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 141,
+                  "column": 5
+                },
+                {
+                  "title": "/kontakt: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host)",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 2126,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:29:01.619Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-df51b545e3ee92db8381",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 152,
+                  "column": 5
+                },
+                {
+                  "title": "/: „Karte laden & zustimmen“ im Servicegebiet setzt Marketing-Einwilligung und ersetzt den Platzhalter",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 2440,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:29:03.773Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-0afa0823d8bc4f6a3a13",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 161,
+                  "column": 5
+                },
+                {
+                  "title": "/: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 3245,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:30:22.198Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-b9db778a3177efd0c34f",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 131,
+                  "column": 7
+                },
+                {
+                  "title": "/standorte: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 2425,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:30:25.481Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-ae804df0cb5394ac6d67",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 131,
+                  "column": 7
+                },
+                {
+                  "title": "/kontakt: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1995,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:30:27.968Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-ddc1d161cc80774776cc",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 131,
+                  "column": 7
+                },
+                {
+                  "title": "/standorte: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host)",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 2576,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:30:30.006Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-f9b5a44eb20da2f52db8",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 141,
+                  "column": 5
+                },
+                {
+                  "title": "/kontakt: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host)",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1933,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:30:32.611Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-88b71da03cde29332661",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 152,
+                  "column": 5
+                },
+                {
+                  "title": "/: „Karte laden & zustimmen“ im Servicegebiet setzt Marketing-Einwilligung und ersetzt den Platzhalter",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 2398,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:30:34.584Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-1b3201ce2e3a4e36afb5",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 161,
+                  "column": 5
+                }
+              ]
+            },
+            {
+              "title": "mit Marketing-Einwilligung (alle)",
+              "file": "funktion-einwilligung.spec.mjs",
+              "line": 170,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "/standorte: Karte ohne Platzhalter, Anfrage an Karten-Host",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1701,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:29:06.237Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-9f855af18e1c5b601dc1",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 173,
+                  "column": 5
+                },
+                {
+                  "title": "/standorte: Karte ohne Platzhalter, Anfrage an Karten-Host",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1599,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:30:37.003Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-753d611d303b0de5d5a0",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 173,
+                  "column": 5
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "funktion-termin.spec.mjs",
+      "file": "funktion-termin.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "BookingCalendar (F-07) auf /termin",
+          "file": "funktion-termin.spec.mjs",
+          "line": 44,
+          "column": 8,
+          "specs": [
+            {
+              "title": "ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1622,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:29:07.974Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-680ff72cd2733a40690e",
+              "file": "funktion-termin.spec.mjs",
+              "line": 45,
+              "column": 5
+            },
+            {
+              "title": "nur Leerzeichen als Name: Fehlermeldung, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2630,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:29:09.623Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-e49094be9fd248965185",
+              "file": "funktion-termin.spec.mjs",
+              "line": 57,
+              "column": 5
+            },
+            {
+              "title": "ohne Einwilligung: Anfrage wird blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1696,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:29:12.271Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-6046f93c0b95544cffc0",
+              "file": "funktion-termin.spec.mjs",
+              "line": 68,
+              "column": 5
+            },
+            {
+              "title": "gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2728,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:29:13.986Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-d8f66b2b0ae956afcdaf",
+              "file": "funktion-termin.spec.mjs",
+              "line": 81,
+              "column": 5
+            },
+            {
+              "title": "ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1716,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:30:38.640Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-292848b451d10d43a2b6",
+              "file": "funktion-termin.spec.mjs",
+              "line": 45,
+              "column": 5
+            },
+            {
+              "title": "nur Leerzeichen als Name: Fehlermeldung, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1702,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:30:40.378Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-d0c6933c182a7af297be",
+              "file": "funktion-termin.spec.mjs",
+              "line": 57,
+              "column": 5
+            },
+            {
+              "title": "ohne Einwilligung: Anfrage wird blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1571,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:30:42.104Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-13b43ba5cb214c9c445d",
+              "file": "funktion-termin.spec.mjs",
+              "line": 68,
+              "column": 5
+            },
+            {
+              "title": "gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1785,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:30:43.696Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-cd035d3e15360923fb00",
+              "file": "funktion-termin.spec.mjs",
+              "line": 81,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "BookingCalendar (F-07) auf /kontakt#termin-buchen",
+          "file": "funktion-termin.spec.mjs",
+          "line": 44,
+          "column": 8,
+          "specs": [
+            {
+              "title": "ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2281,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:29:16.738Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-0c2748f0486e342748d7",
+              "file": "funktion-termin.spec.mjs",
+              "line": 45,
+              "column": 5
+            },
+            {
+              "title": "nur Leerzeichen als Name: Fehlermeldung, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3864,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:29:19.045Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-d5b2ea2323ac1664282b",
+              "file": "funktion-termin.spec.mjs",
+              "line": 57,
+              "column": 5
+            },
+            {
+              "title": "ohne Einwilligung: Anfrage wird blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2858,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:29:22.928Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-4d1744d7e8cb2dad82c3",
+              "file": "funktion-termin.spec.mjs",
+              "line": 68,
+              "column": 5
+            },
+            {
+              "title": "gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2825,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:29:25.814Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-3cf9b60ea9b358c9bf0d",
+              "file": "funktion-termin.spec.mjs",
+              "line": 81,
+              "column": 5
+            },
+            {
+              "title": "ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1796,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:30:45.498Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-7300e535c57baced2263",
+              "file": "funktion-termin.spec.mjs",
+              "line": 45,
+              "column": 5
+            },
+            {
+              "title": "nur Leerzeichen als Name: Fehlermeldung, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1994,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:30:47.315Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-8ce998a2342544588431",
+              "file": "funktion-termin.spec.mjs",
+              "line": 57,
+              "column": 5
+            },
+            {
+              "title": "ohne Einwilligung: Anfrage wird blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2104,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:30:49.331Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-75bc05c73694538d2070",
+              "file": "funktion-termin.spec.mjs",
+              "line": 68,
+              "column": 5
+            },
+            {
+              "title": "gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2094,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:30:51.459Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-b1b4f39401a25464382f",
+              "file": "funktion-termin.spec.mjs",
+              "line": 81,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "Termin-Formular (F-08) auf /termin",
+          "file": "funktion-termin.spec.mjs",
+          "line": 118,
+          "column": 6,
+          "specs": [
+            {
+              "title": "ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1789,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:29:28.660Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-c3c28fdb8d3f0d6756de",
+              "file": "funktion-termin.spec.mjs",
+              "line": 119,
+              "column": 3
+            },
+            {
+              "title": "Telefonnummer unter 6 Zeichen: blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3399,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:29:30.474Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-d48ee3c9e717d5717509",
+              "file": "funktion-termin.spec.mjs",
+              "line": 129,
+              "column": 3
+            },
+            {
+              "title": "ohne Einwilligung: blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2482,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:29:33.894Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-b1cc087f84392082031c",
+              "file": "funktion-termin.spec.mjs",
+              "line": 141,
+              "column": 3
+            },
+            {
+              "title": "gültig: Termin-Anfrage mit terminDetails geht raus, Erfolg mit Referenz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4306,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:29:36.413Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-9bd20744684dba1b2244",
+              "file": "funktion-termin.spec.mjs",
+              "line": 152,
+              "column": 3
+            },
+            {
+              "title": "ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1352,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:30:53.574Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-396aaad7a24e68e616f2",
+              "file": "funktion-termin.spec.mjs",
+              "line": 119,
+              "column": 3
+            },
+            {
+              "title": "Telefonnummer unter 6 Zeichen: blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3261,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:30:54.945Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-49eafe9b4f21e7b59c41",
+              "file": "funktion-termin.spec.mjs",
+              "line": 129,
+              "column": 3
+            },
+            {
+              "title": "ohne Einwilligung: blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3229,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:30:58.232Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-41d5ecffb2921142e2e8",
+              "file": "funktion-termin.spec.mjs",
+              "line": 141,
+              "column": 3
+            },
+            {
+              "title": "gültig: Termin-Anfrage mit terminDetails geht raus, Erfolg mit Referenz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3440,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:31:01.486Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-6f528dcd137cbf2fcc0a",
+              "file": "funktion-termin.spec.mjs",
+              "line": 152,
+              "column": 3
+            }
+          ],
+          "suites": [
+            {
+              "title": "echte Route (Mock-Modus ohne Resend-Schlüssel)",
+              "file": "funktion-termin.spec.mjs",
+              "line": 179,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "Server nimmt Termin-Formular an und vergibt echte Referenz",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 3751,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:29:40.742Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "3e16c5684ec33e19cefe-187d572cc865e6d66764",
+                  "file": "funktion-termin.spec.mjs",
+                  "line": 181,
+                  "column": 5
+                },
+                {
+                  "title": "Server nimmt Termin-Formular an und vergibt echte Referenz",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 4821,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-12T02:31:04.957Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "3e16c5684ec33e19cefe-234344fa5a00c102adbb",
+                  "file": "funktion-termin.spec.mjs",
+                  "line": 181,
+                  "column": 5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "V-02 Kalender rechnet mit dem Besuchstag",
+          "file": "funktion-termin.spec.mjs",
+          "line": 200,
+          "column": 6,
+          "specs": [
+            {
+              "title": "/kontakt#termin-buchen mit Uhr auf heute + 1: kein Hydrierungsfehler, erster Tag = Besuchstag + 1 (ohne Sonntag)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1626,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:29:44.513Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-d6d9c1469ffeae8fcdd1",
+              "file": "funktion-termin.spec.mjs",
+              "line": 201,
+              "column": 3
+            },
+            {
+              "title": "/kontakt#termin-buchen mit Uhr auf heute + 1: kein Hydrierungsfehler, erster Tag = Besuchstag + 1 (ohne Sonntag)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1804,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T02:31:09.804Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-048ccec50fcd744b1134",
+              "file": "funktion-termin.spec.mjs",
+              "line": 201,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-12T02:28:03.969Z",
+    "duration": 187741.047,
+    "expected": 62,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

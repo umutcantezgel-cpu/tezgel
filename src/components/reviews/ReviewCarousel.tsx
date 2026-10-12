@@ -123,8 +123,9 @@ export default function ReviewCarousel({
         role="region"
         aria-label="Kundenstimmen"
       >
+        {/* Befund 4: je Aufnahme trägt nur die erste sichtbare Stimme den roten Anriss (Stand: Zustand „erste“) */}
         {reviews.map((rev, idx) => (
-          <ReviewCard key={rev.id || idx} review={rev} />
+          <ReviewCard key={rev.id || idx} review={rev} mitAnriss={idx === erste - 1} />
         ))}
       </div>
     </div>
