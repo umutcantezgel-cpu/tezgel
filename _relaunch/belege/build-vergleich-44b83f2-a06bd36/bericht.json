@@ -1,0 +1,276 @@
+{
+ "vorher": "44b83f2",
+ "nachher": "a06bd36",
+ "laufzeit_reste": {
+  "vorher": [
+   "blog/gibt-es-nicht.html"
+  ],
+  "nachher": []
+ },
+ "variablen_weg": [],
+ "variablen_neu": [
+  "--banner-platz"
+ ],
+ "keyframes_weg": [],
+ "keyframes_neu": [],
+ "html_dateien": 172,
+ "nur_vorher": [],
+ "nur_nachher": [],
+ "html_abweichend": 171,
+ "abweichungen": [
+  {
+   "datei": "_not-found.html",
+   "ab": 78576,
+   "vorher": " py-8 lg:flex-row lg:items-center lg:justify-between\"><ul class=\"grid grid-cols-2 gap-px bg-nacht-fuge md:grid-cols-4 lg:flex-1\"><li class=\"flex items-start gap-3 bg-tinte py-4 pr-4 md:px-4 md:first:p",
+   "nachher": " py-8 lg:flex-row lg:items-center lg:justify-between\"><ul class=\"grid grid-cols-1 gap-px bg-nacht-fuge sm:grid-cols-2 lg:flex-1 xl:grid-cols-4\"><li class=\"flex items-start gap-3 bg-tinte py-4 pr-4\"><s"
+  },
+  {
+   "datei": "agb.html",
+   "ab": 78851,
+   "vorher": " py-8 lg:flex-row lg:items-center lg:justify-between\"><ul class=\"grid grid-cols-2 gap-px bg-nacht-fuge md:grid-cols-4 lg:flex-1\"><li class=\"flex items-start gap-3 bg-tinte py-4 pr-4 md:px-4 md:first:p",
+   "nachher": " py-8 lg:flex-row lg:items-center lg:justify-between\"><ul class=\"grid grid-cols-1 gap-px bg-nacht-fuge sm:grid-cols-2 lg:flex-1 xl:grid-cols-4\"><li class=\"flex items-start gap-3 bg-tinte py-4 pr-4\"><s"
+  },
+  {
+   "datei": "ausstellung/giessen.html",
+   "ab": 92536,
+   "vorher": "ection id=\"qualitaet\" aria-labelledby=\"quality-promise-heading\" class=\"relative scroll-mt-24 py-16 lg:py-24\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class=\"max-w-mass\"><p cl",
+   "nachher": "ection id=\"qualitaet\" aria-labelledby=\"quality-promise-heading\" class=\"relative py-16 lg:py-24\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class=\"max-w-mass\"><p class=\"inline-f"
+  },
+  {
+   "datei": "ausstellung/wetzlar.html",
+   "ab": 92506,
+   "vorher": "ection id=\"qualitaet\" aria-labelledby=\"quality-promise-heading\" class=\"relative scroll-mt-24 py-16 lg:py-24\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class=\"max-w-mass\"><p cl",
+   "nachher": "ection id=\"qualitaet\" aria-labelledby=\"quality-promise-heading\" class=\"relative py-16 lg:py-24\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class=\"max-w-mass\"><p class=\"inline-f"
+  },
+  {
+   "datei": "bad/bad-aus-einer-hand.html",
+   "ab": 84807,
+   "vorher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0 z-10\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitac",
+   "nachher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitachse=\""
+  },
+  {
+   "datei": "bad/badanfrage.html",
+   "ab": 76396,
+   "vorher": "iv></div></header><section id=\"anfrage\" aria-label=\"Badanfrage\" class=\"relative scroll-mt-24 py-12 lg:py-16 border-y border-fuge bg-fliese\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12",
+   "nachher": "iv></div></header><section id=\"anfrage\" aria-label=\"Badanfrage\" class=\"relative py-12 lg:py-16 border-y border-fuge bg-fliese\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 spaet-zeichn"
+  },
+  {
+   "datei": "bad/badplaner.html",
+   "ab": 78559,
+   "vorher": "section><section id=\"planung\" aria-labelledby=\"planung-heading\" class=\"relative scroll-mt-24 py-12 lg:py-16\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 spaet-zeichnen\"><div class=\"gr",
+   "nachher": "section><section id=\"planung\" aria-labelledby=\"planung-heading\" class=\"relative py-12 lg:py-16\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 spaet-zeichnen\"><div class=\"grid grid-cols-"
+  },
+  {
+   "datei": "bad/badsanierung.html",
+   "ab": 83763,
+   "vorher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0 z-10\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitac",
+   "nachher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitachse=\""
+  },
+  {
+   "datei": "bad/barrierefreies-bad.html",
+   "ab": 81948,
+   "vorher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0 z-10\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitac",
+   "nachher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitachse=\""
+  },
+  {
+   "datei": "bad/fliesen.html",
+   "ab": 82088,
+   "vorher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0 z-10\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitac",
+   "nachher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitachse=\""
+  },
+  {
+   "datei": "bad/musterbaeder/basic-bad-15_9.html",
+   "ab": 83517,
+   "vorher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0 z-10\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitac",
+   "nachher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitachse=\""
+  },
+  {
+   "datei": "bad/musterbaeder/basic-bad-4_6.html",
+   "ab": 83480,
+   "vorher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0 z-10\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitac",
+   "nachher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitachse=\""
+  },
+  {
+   "datei": "bad/musterbaeder/basic-bad-7.html",
+   "ab": 83512,
+   "vorher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0 z-10\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitac",
+   "nachher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitachse=\""
+  },
+  {
+   "datei": "bad/musterbaeder/basic-bad-8_2.html",
+   "ab": 83484,
+   "vorher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0 z-10\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitac",
+   "nachher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitachse=\""
+  },
+  {
+   "datei": "bad/musterbaeder/luxus-bad-15_9.html",
+   "ab": 83509,
+   "vorher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0 z-10\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitac",
+   "nachher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitachse=\""
+  },
+  {
+   "datei": "bad/musterbaeder/luxus-bad-4_6.html",
+   "ab": 83483,
+   "vorher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0 z-10\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitac",
+   "nachher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitachse=\""
+  },
+  {
+   "datei": "bad/musterbaeder/luxus-bad-7.html",
+   "ab": 83508,
+   "vorher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0 z-10\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitac",
+   "nachher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitachse=\""
+  },
+  {
+   "datei": "bad/musterbaeder/luxus-bad-8_2.html",
+   "ab": 83503,
+   "vorher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0 z-10\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitac",
+   "nachher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitachse=\""
+  },
+  {
+   "datei": "bad/musterbaeder/premium-bad-15_9.html",
+   "ab": 83551,
+   "vorher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0 z-10\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitac",
+   "nachher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitachse=\""
+  },
+  {
+   "datei": "bad/musterbaeder/premium-bad-4_6.html",
+   "ab": 83511,
+   "vorher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0 z-10\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitac",
+   "nachher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitachse=\""
+  },
+  {
+   "datei": "bad/musterbaeder/premium-bad-7.html",
+   "ab": 83527,
+   "vorher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0 z-10\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitac",
+   "nachher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitachse=\""
+  },
+  {
+   "datei": "bad/musterbaeder/premium-bad-8_2.html",
+   "ab": 83535,
+   "vorher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0 z-10\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitac",
+   "nachher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitachse=\""
+  },
+  {
+   "datei": "bad/musterbaeder.html",
+   "ab": 84645,
+   "vorher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0 z-10\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitac",
+   "nachher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitachse=\""
+  },
+  {
+   "datei": "bad/projekt-check.html",
+   "ab": 76479,
+   "vorher": "eader><section id=\"projekt-check\" aria-label=\"Bad-Projektcheck\" class=\"relative scroll-mt-24 py-12 lg:py-16 border-y border-fuge bg-fliese\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12",
+   "nachher": "eader><section id=\"projekt-check\" aria-label=\"Bad-Projektcheck\" class=\"relative py-12 lg:py-16 border-y border-fuge bg-fliese\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class="
+  },
+  {
+   "datei": "bad.html",
+   "ab": 84851,
+   "vorher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0 z-10\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitac",
+   "nachher": "s=\"relative\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-0\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 relative h-full\"><div aria-hidden=\"true\" data-leitachse=\""
+  },
+  {
+   "datei": "balkon-terrasse/balkonsanierung.html",
+   "ab": 102443,
+   "vorher": "ection id=\"qualitaet\" aria-labelledby=\"quality-promise-heading\" class=\"relative scroll-mt-24 py-16 lg:py-24\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class=\"max-w-mass\"><p cl",
+   "nachher": "ection id=\"qualitaet\" aria-labelledby=\"quality-promise-heading\" class=\"relative py-16 lg:py-24\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class=\"max-w-mass\"><p class=\"inline-f"
+  },
+  {
+   "datei": "balkon-terrasse/stelzlager.html",
+   "ab": 102986,
+   "vorher": "ection id=\"qualitaet\" aria-labelledby=\"quality-promise-heading\" class=\"relative scroll-mt-24 py-16 lg:py-24\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class=\"max-w-mass\"><p cl",
+   "nachher": "ection id=\"qualitaet\" aria-labelledby=\"quality-promise-heading\" class=\"relative py-16 lg:py-24\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class=\"max-w-mass\"><p class=\"inline-f"
+  },
+  {
+   "datei": "balkon-terrasse/terrassenplatten.html",
+   "ab": 99111,
+   "vorher": "ection id=\"qualitaet\" aria-labelledby=\"quality-promise-heading\" class=\"relative scroll-mt-24 py-16 lg:py-24\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class=\"max-w-mass\"><p cl",
+   "nachher": "ection id=\"qualitaet\" aria-labelledby=\"quality-promise-heading\" class=\"relative py-16 lg:py-24\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class=\"max-w-mass\"><p class=\"inline-f"
+  },
+  {
+   "datei": "balkon-terrasse.html",
+   "ab": 103954,
+   "vorher": "ection id=\"qualitaet\" aria-labelledby=\"quality-promise-heading\" class=\"relative scroll-mt-24 py-16 lg:py-24\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class=\"max-w-mass\"><p cl",
+   "nachher": "ection id=\"qualitaet\" aria-labelledby=\"quality-promise-heading\" class=\"relative py-16 lg:py-24\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class=\"max-w-mass\"><p class=\"inline-f"
+  },
+  {
+   "datei": "barrierefreiheit.html",
+   "ab": 79064,
+   "vorher": " py-8 lg:flex-row lg:items-center lg:justify-between\"><ul class=\"grid grid-cols-2 gap-px bg-nacht-fuge md:grid-cols-4 lg:flex-1\"><li class=\"flex items-start gap-3 bg-tinte py-4 pr-4 md:px-4 md:first:p",
+   "nachher": " py-8 lg:flex-row lg:items-center lg:justify-between\"><ul class=\"grid grid-cols-1 gap-px bg-nacht-fuge sm:grid-cols-2 lg:flex-1 xl:grid-cols-4\"><li class=\"flex items-start gap-3 bg-tinte py-4 pr-4\"><s"
+  },
+  {
+   "datei": "beratung.html",
+   "ab": 99923,
+   "vorher": "ung Tezgel telefonisch anrufen: 06441 / 44 83 567\" data-motion=\"zustand\" class=\"inline-flex w-fit font-mono text-fs-5 text-tinte underline decoration-strich decoration-1 underline-offset-8 transition-",
+   "nachher": "ung Tezgel telefonisch anrufen: 06441 / 44 83 567\" data-motion=\"zustand\" class=\"-my-2 inline-flex min-h-11 w-fit items-center font-mono text-fs-5 text-tinte underline decoration-strich decoration-1 un"
+  },
+  {
+   "datei": "blog/barrierefreier-balkonaustritt.html",
+   "ab": 118604,
+   "vorher": "ection id=\"qualitaet\" aria-labelledby=\"quality-promise-heading\" class=\"relative scroll-mt-24 py-12 lg:py-16\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class=\"max-w-mass\"><p cl",
+   "nachher": "ection id=\"qualitaet\" aria-labelledby=\"quality-promise-heading\" class=\"relative py-12 lg:py-16\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class=\"max-w-mass\"><p class=\"inline-f"
+  },
+  {
+   "datei": "blog/duschrinne-oder-punktablauf.html",
+   "ab": 123563,
+   "vorher": "ection id=\"qualitaet\" aria-labelledby=\"quality-promise-heading\" class=\"relative scroll-mt-24 py-12 lg:py-16\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class=\"max-w-mass\"><p cl",
+   "nachher": "ection id=\"qualitaet\" aria-labelledby=\"quality-promise-heading\" class=\"relative py-12 lg:py-16\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class=\"max-w-mass\"><p class=\"inline-f"
+  },
+  {
+   "datei": "blog/feinsteinzeug-oder-naturstein-vergleich.html",
+   "ab": 642,
+   "vorher": "l=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/X\"/><meta name=\"theme-color\" content=\"#F5F4F0\"/><meta name=\"color-scheme\" content=\"light\"/><title>Feinsteinzeug oder Naturstein? Der ehr",
+   "nachher": "l=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/X\"/><meta name=\"geo.region\" content=\"DE-HE\"/><meta name=\"geo.placename\" content=\"Aßlar\"/><meta name=\"geo.position\" content=\"50.5900;8.46"
+  },
+  {
+   "datei": "blog/fliesen-fuer-allergiker.html",
+   "ab": 118786,
+   "vorher": "ection id=\"qualitaet\" aria-labelledby=\"quality-promise-heading\" class=\"relative scroll-mt-24 py-12 lg:py-16\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class=\"max-w-mass\"><p cl",
+   "nachher": "ection id=\"qualitaet\" aria-labelledby=\"quality-promise-heading\" class=\"relative py-12 lg:py-16\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class=\"max-w-mass\"><p class=\"inline-f"
+  },
+  {
+   "datei": "blog/fliesen-mythen-faktencheck.html",
+   "ab": 118156,
+   "vorher": "ection id=\"qualitaet\" aria-labelledby=\"quality-promise-heading\" class=\"relative scroll-mt-24 py-12 lg:py-16\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class=\"max-w-mass\"><p cl",
+   "nachher": "ection id=\"qualitaet\" aria-labelledby=\"quality-promise-heading\" class=\"relative py-12 lg:py-16\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class=\"max-w-mass\"><p class=\"inline-f"
+  },
+  {
+   "datei": "blog/fliesen-reinigen-pflegen.html",
+   "ab": 126341,
+   "vorher": "ection id=\"qualitaet\" aria-labelledby=\"quality-promise-heading\" class=\"relative scroll-mt-24 py-12 lg:py-16\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class=\"max-w-mass\"><p cl",
+   "nachher": "ection id=\"qualitaet\" aria-labelledby=\"quality-promise-heading\" class=\"relative py-12 lg:py-16\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class=\"max-w-mass\"><p class=\"inline-f"
+  },
+  {
+   "datei": "blog/fliesenleger-gesucht-geselle-meister.html",
+   "ab": 108067,
+   "vorher": "ection id=\"qualitaet\" aria-labelledby=\"quality-promise-heading\" class=\"relative scroll-mt-24 py-12 lg:py-16\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class=\"max-w-mass\"><p cl",
+   "nachher": "ection id=\"qualitaet\" aria-labelledby=\"quality-promise-heading\" class=\"relative py-12 lg:py-16\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class=\"max-w-mass\"><p class=\"inline-f"
+  },
+  {
+   "datei": "blog/gaeste-wc-fliesen.html",
+   "ab": 121765,
+   "vorher": "ection id=\"qualitaet\" aria-labelledby=\"quality-promise-heading\" class=\"relative scroll-mt-24 py-12 lg:py-16\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class=\"max-w-mass\"><p cl",
+   "nachher": "ection id=\"qualitaet\" aria-labelledby=\"quality-promise-heading\" class=\"relative py-12 lg:py-16\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class=\"max-w-mass\"><p class=\"inline-f"
+  },
+  {
+   "datei": "blog/handwerkerbonus-fliesenarbeiten.html",
+   "ab": 120218,
+   "vorher": "ection id=\"qualitaet\" aria-labelledby=\"quality-promise-heading\" class=\"relative scroll-mt-24 py-12 lg:py-16\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class=\"max-w-mass\"><p cl",
+   "nachher": "ection id=\"qualitaet\" aria-labelledby=\"quality-promise-heading\" class=\"relative py-12 lg:py-16\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class=\"max-w-mass\"><p class=\"inline-f"
+  }
+ ],
+ "css_selektoren_weg": [
+  ".flex-col-reverse",
+  ".md\\:first\\:pl-0:first-child",
+  ".md\\:px-4",
+  ".scroll-mt-0\\!"
+ ],
+ "css_selektoren_neu": [
+  ".-my-2",
+  ".sm\\:pl-4",
+  ".sm\\:self-auto",
+  ".xl\\:grid-cols-4",
+  ".xl\\:pl-4",
+  "html:not(.k-bewegung) .leitachse-rot"
+ ]
+}

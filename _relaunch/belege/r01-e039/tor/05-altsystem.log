@@ -1,0 +1,7 @@
+src/app/(bestand)/fliesen/page.jsx:61:        eyebrow: 'Räume',
+src/app/(bestand)/fliesen/page.jsx:73:        eyebrow: 'Neubau oder Bestand',
+src/app/(bestand)/fliesen/page.jsx:85:        eyebrow: 'Formate & Materialien',
+src/app/(bestand)/fliesen/page.jsx:97:        eyebrow: 'Verlegetechnik',
+src/app/(bestand)/fliesen/page.jsx:109:        eyebrow: 'Planung & Qualität',
+src/app/(bestand)/fliesen/page.jsx:125:    eyebrow: <>Bad, Dusche &amp; Gäste-WC</>,
+src/app/(bestand)/fliesen/page.jsx:178:                <p className={clsx(etikettKlassen, 'mt-6')}>{feld.eyebrow}</p>
