@@ -39,8 +39,11 @@ export default function Einstieg({ formular }: { formular?: ReactNode }) {
     <section aria-labelledby={titelId} className="relative border-b border-fuge pt-24 pb-16 lg:pb-24">
       <div className={clsx(seitenKlassen, 'relative')}>
         {/* Lot unter lg: im Seitenrand vor der Inhaltskante (ACHSE_LAGE wie die Leitachse darunter), volle Höhe */}
+        {/* Unter lg: Grundschicht in Fuge über die ganze Höhe des Einstiegs, das rote Lot wächst nur über den ersten Bildschirm –
+            sonst wäre der sichtbare Teil nach einem Viertel der Dauer fertig (Rückgabe E4-NACH-18, E3-SICHT-ERZ Befund 10) */}
         <div aria-hidden="true" data-motion="sig-kreuzlinie" className={clsx('pointer-events-none absolute inset-y-0 lg:hidden', ACHSE_LAGE)}>
-          <span className="kreuzlinie-lot" />
+          <span className="kreuzlinie-grund" />
+          <span className="kreuzlinie-lot kreuzlinie-lot-bildschirm" />
         </div>
 
         <div className="relative grid grid-cols-1 lg:grid-cols-12">

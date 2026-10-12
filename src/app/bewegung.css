@@ -447,6 +447,18 @@ html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"] .einzugsband-zone:nth
   margin-block-start: -1px;
   transform-origin: center left;
 }
+/* Grundschicht des Lots (Fuge, wie die Leitachse) und rotes Lot nur über den ersten Bildschirm (unter lg, Einstieg /) */
+.kreuzlinie-grund {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: 1px;
+  background: var(--color-fuge);
+}
+.kreuzlinie-lot-bildschirm {
+  inset-block-end: auto;
+  height: min(100%, 100svh);
+}
 .kreuzlinie-punkt {
   position: absolute;
   inset-block-start: 0;
@@ -478,7 +490,8 @@ html.k-bewegung [data-motion="sig-kreuzlinie"] .kreuzlinie-waage {
 }
 /* das Lot nach der Waage (ab lg) folgt, wenn die Waage ihr linkes Ende erreicht hat */
 html.k-bewegung [data-motion="sig-kreuzlinie"] .kreuzlinie-nach-waage {
-  animation-duration: var(--dauer-3);
+  /* gesamt 1,52 s (große Momente ≤ 1,6 s, K-007; Rückgabe E4-NACH-18) */
+  animation-duration: var(--dauer-2);
   animation-delay: var(--dauer-5);
 }
 /* Ursprung = Unterkante der Zeichenfläche: im geschnittenen Plan ist das die Schnittkante, also der Kreuzpunkt */
