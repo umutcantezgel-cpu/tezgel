@@ -1,29 +1,31 @@
-import React from 'react';
+// Balkon & Terrasse (E5-BAU-04 im Relaunch-Ablauf S-13, KERN v2): Seitenkörper der Themenseite als Erzählansicht nach
+// dem Muster der Familienreferenz (leistungen/[id], fliesen) und der Schwesterseite /untergrund-abdichtung. Einstieg mit
+// Laserachse, H1 links, Vorspann und zwei Knöpfe; rechts das Planblatt „aussen“ (Plan ohne Bemaßung, interaktiv; das
+// Blatt trägt die rote Achse des Plans). Danach die Leitachse über die Abschnitte, Flächen Kalk und Fliese im Wechsel:
+// 2. Grundlagen als Feldraster (Kalk) · 3. Aufbauten im Vergleich als Tabelle mit Hinweis (Fliese) · 4. Entscheidungshilfe,
+// Kopf seitlich: Situationen als Merkliste an der Fuge, Eigenschaften als Feldraster 2 × 2 (Kalk) · 5. Detailseiten als
+// Register (Fliese) · 6. Vom Ratgeber zum Angebot mit drei Wegen (Kalk) · 7. Weiterführende Ratgeber als Navigation mit
+// Merkliste (Fliese). Danach Qualitätsversprechen und Abschluss (geteilte Bausteine).
+// Wortlaut, Überschriften, Links, IDs und Lesefolge wie im Bestand. Kein Auftritt und kein großer Moment. `spaet` auf
+// allen Abschnitten unter dem ersten Bildschirm (keine Sprungziele, keine Formulare). Metadaten und Daten unverändert.
 import Link from 'next/link';
-import {
-    ArrowRight,
-    Phone,
-    MessageCircle,
-    Snowflake,
-    Footprints,
-    Droplets,
-    Sparkles,
-    Layers,
-    Wrench,
-    LayoutGrid,
-    Building2,
-    House,
-    Trees,
-    ThermometerSun,
-    CloudRain,
-    Info,
-    BookOpen
-} from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
 import { TOPIC_HUBS } from '@/config/topics';
 import { createMetadata } from '@/lib/metadata';
+import Icon from '@/components/icons/Icon';
 import QualityPromise from '@/components/sections/QualityPromise';
 import { FinalCTA } from '@/components/ui/FinalCTA';
+import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Einstieg from '@/components/kern/Einstieg';
+import { Feld, Feldraster } from '@/components/kern/Feldraster';
+import Knopf from '@/components/kern/Knopf';
+import Leitachse from '@/components/kern/Leitachse';
+import Merkliste from '@/components/kern/Merkliste';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+import Tabelle from '@/components/kern/Tabelle';
+import Verlegeplan from '@/components/kern/Verlegeplan';
+import { linkKlassen } from '@/components/kern/stile';
 
 export const metadata = createMetadata({
     title: 'Balkon & Terrasse fliesen Wetzlar | Fachbetrieb Tezgel',
@@ -35,27 +37,18 @@ export const metadata = createMetadata({
 const HUB = TOPIC_HUBS.find((hub) => hub.id === 'balkon-terrasse');
 const SUBPAGES = HUB ? HUB.pages.filter((page) => page.path !== HUB.path) : [];
 
-const SUBPAGE_ICONS = {
-    '/balkon-terrasse/stelzlager': Layers,
-    '/balkon-terrasse/balkonsanierung': Wrench,
-    '/balkon-terrasse/terrassenplatten': LayoutGrid
-};
-
 const OUTDOOR_RULES = [
     {
         title: 'Frost',
-        desc: 'Wasser dehnt sich beim Gefrieren um rund 9 % aus. Dringt es in Poren, Hohlstellen oder Mörtelfugen ein, sprengt jeder Frost-Tau-Wechsel das Gefüge ein Stück weiter auf.',
-        icon: Snowflake
+        desc: 'Wasser dehnt sich beim Gefrieren um rund 9 % aus. Dringt es in Poren, Hohlstellen oder Mörtelfugen ein, sprengt jeder Frost-Tau-Wechsel das Gefüge ein Stück weiter auf.'
     },
     {
         title: 'Wasser',
-        desc: 'Regen, Schnee und Tauwasser müssen die Fläche zügig verlassen. Stehendes Wasser im oder unter dem Belag ist die häufigste Ursache für Ausblühungen, Frostschäden und lose Platten.',
-        icon: CloudRain
+        desc: 'Regen, Schnee und Tauwasser müssen die Fläche zügig verlassen. Stehendes Wasser im oder unter dem Belag ist die häufigste Ursache für Ausblühungen, Frostschäden und lose Platten.'
     },
     {
         title: 'Temperaturwechsel',
-        desc: 'Eine besonnte Fläche heizt sich im Sommer stark auf und kühlt bei einem Gewitterschauer schlagartig ab. Belag, Bettung und Untergrund bewegen sich dabei unterschiedlich – das Aufbausystem muss das aufnehmen.',
-        icon: ThermometerSun
+        desc: 'Eine besonnte Fläche heizt sich im Sommer stark auf und kühlt bei einem Gewitterschauer schlagartig ab. Belag, Bettung und Untergrund bewegen sich dabei unterschiedlich – das Aufbausystem muss das aufnehmen.'
     }
 ];
 
@@ -86,29 +79,35 @@ const CONSTRUCTIONS = [
     }
 ];
 
+// Zeilen der Vergleichstabelle (Kriterium → Schlüssel in CONSTRUCTIONS), Reihenfolge wie im Bestand
+const CRITERIA_ROWS = [
+    { key: 'height', label: 'Aufbauhöhe' },
+    { key: 'drainage', label: 'Entwässerung' },
+    { key: 'slabs', label: 'Platten' },
+    { key: 'suitability', label: 'Geeignet für' },
+    { key: 'access', label: 'Revision' }
+];
+
 const SITUATIONS = [
     {
         title: 'Balkon & Loggia',
-        icon: Building2,
         text: 'Im Bestand entscheidet meist die Höhe bis zur Türschwelle. Reicht sie aus, sind Stelzlager auf einer intakten, im Gefälle liegenden Abdichtung die robusteste Lösung. Vorher prüfen wir, ob Abdichtung und Untergrund das zulassen; die Tragfähigkeit der Balkonplatte beurteilt bei Zweifeln ein Tragwerksplaner.'
     },
     {
         title: 'Dachterrasse über Wohnraum',
-        icon: House,
         text: 'Hier ist die Abdichtung Teil der Dachabdichtung und häufig Aufgabe des Dachdeckers. Ein Plattenbelag auf Stelzlagern belastet diese Abdichtung nur punktuell über Schutzpads und bleibt für Kontrollen abnehmbar. Wir stimmen den Belag auf die vorhandene oder neu hergestellte Abdichtung ab.'
     },
     {
         title: 'Terrasse auf Erdreich',
-        icon: Trees,
         text: 'Voraussetzung ist ein tragfähiger, frostsicherer und wasserdurchlässiger Unterbau mit Gefälle vom Haus weg. Darauf eignen sich Splittbett oder Stelzlager. Wie der Unterbau aufgebaut sein muss, klären wir vor Ort, bevor ein Belag geplant wird.'
     }
 ];
 
 const BENEFITS = [
-    { title: 'Frostbeständig', desc: 'Nur Platten mit geprüfter Frostbeständigkeit kommen ins Freie.', icon: Snowflake },
-    { title: 'Rutschhemmend', desc: 'Oberflächen mit einer für außen sinnvollen Rutschhemmung, auch bei Nässe.', icon: Footprints },
-    { title: 'Schnell entwässernd', desc: 'Gefälle und Aufbau führen Wasser gezielt von Belag und Gebäude weg.', icon: Droplets },
-    { title: 'Pflegeleicht', desc: 'Dichtes Feinsteinzeug nimmt kaum Schmutz auf und lässt sich einfach reinigen.', icon: Sparkles }
+    { title: 'Frostbeständig', desc: 'Nur Platten mit geprüfter Frostbeständigkeit kommen ins Freie.' },
+    { title: 'Rutschhemmend', desc: 'Oberflächen mit einer für außen sinnvollen Rutschhemmung, auch bei Nässe.' },
+    { title: 'Schnell entwässernd', desc: 'Gefälle und Aufbau führen Wasser gezielt von Belag und Gebäude weg.' },
+    { title: 'Pflegeleicht', desc: 'Dichtes Feinsteinzeug nimmt kaum Schmutz auf und lässt sich einfach reinigen.' }
 ];
 
 const FURTHER_READING = [
@@ -118,264 +117,234 @@ const FURTHER_READING = [
     { label: 'Häufige Fragen', href: '/faq' }
 ];
 
+// Zeile des Registers (Detailseiten) auf Fliese: die ganze Zeile ist der Link; Überfahren färbt die Fläche auf Kalk
+const ZEILE = 'group flex min-h-12 items-center gap-4 px-3 py-4 pointer-fine:hover:bg-kalk active:bg-kalk';
+// Name in der Zeile (H3 wie im Bestand): Unterstrich beim Überfahren
+const NAME =
+    'font-text text-fs-3 font-semibold text-tinte lg:w-1/3 lg:shrink-0 decoration-1 underline-offset-4 decoration-tinte pointer-fine:group-hover:underline group-active:underline';
+
 export default function BalkonTerrassePage() {
     return (
-        <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-red top-96 -right-24 opacity-60" />
-
-            {/* Hero */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="balkon-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">
-                        <Layers className="w-3.5 h-3.5" />
-                        Ratgeber Außenbeläge
-                    </span>
-                    <h1 id="balkon-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Balkon und Terrasse:{' '}
-                        <span className="text-ceramic-gradient">Beläge, die Frost und Regen standhalten</span>
-                    </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Balkon und Terrasse: Belagsaufbauten im Vergleich für Beläge, die Frost und Regen standhalten. Draußen entscheidet nicht die Fliese allein, sondern der gesamte Aufbau darunter. Als Fachbetrieb Tezgel vergleichen wir Stelzlager, Splittbett und gebundene Verlegung und zeigen, welche Lösung zu Balkon, Dachterrasse oder Terrasse auf Erdreich passt.
-                    </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">
-                            Aufmaß für Balkon oder Terrasse anfragen
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                        </Link>
-                        <Link href="/leistungen/aussen" className="btn-ghost px-7 py-3.5 text-xs">
-                            Leistung Außenbereiche
-                        </Link>
-                    </div>
-                </div>
+        <>
+            {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt „aussen“ */}
+            <section aria-labelledby="balkon-heading">
+                <Einstieg
+                    art="erzaehl"
+                    etikett="Ratgeber Außenbeläge"
+                    titel={
+                        <span id="balkon-heading">
+                            Balkon und Terrasse:{' '}
+                            <span>Beläge, die Frost und Regen standhalten</span>
+                        </span>
+                    }
+                    vorspann={
+                        <p>
+                            Balkon und Terrasse: Belagsaufbauten im Vergleich für Beläge, die Frost und Regen standhalten. Draußen entscheidet nicht die Fliese allein, sondern der gesamte Aufbau darunter. Als Fachbetrieb Tezgel vergleichen wir Stelzlager, Splittbett und gebundene Verlegung und zeigen, welche Lösung zu Balkon, Dachterrasse oder Terrasse auf Erdreich passt.
+                        </p>
+                    }
+                    aktionen={
+                        <>
+                            <Knopf href="/kontakt" icon="pfeil-rechts">
+                                Aufmaß für Balkon oder Terrasse anfragen
+                            </Knopf>
+                            <Knopf href="/leistungen/aussen" variante="neben">
+                                Leistung Außenbereiche
+                            </Knopf>
+                        </>
+                    }
+                    rand={
+                        <Planblatt felder={planfelder('Balkon & Terrasse fliesen', 'aussen')}>
+                            <Verlegeplan plan="aussen" ohneAchse bemassung={false} interaktiv />
+                        </Planblatt>
+                    }
+                />
             </section>
 
-            {/* Why outdoor rules differ */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="balkon-regeln-heading">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow mb-4">Grundlagen</span>
-                    <h2 id="balkon-regeln-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Warum Außenbeläge eigene Regeln brauchen
-                    </h2>
-                    <p className="mt-3 text-base text-slate-700 leading-relaxed">
-                        Ein Belag im Freien ist Belastungen ausgesetzt, die im Wohnraum keine Rolle spielen. Drei Faktoren bestimmen,
-                        ob er über viele Winter hält.
+            <Leitachse>
+                {/* 2. GRUNDLAGEN: drei Belastungen als Feldraster; das dritte Feld überspannt in md die freie Breite */}
+                <Abschnitt
+                    titelId="balkon-regeln-heading"
+                    leitachse
+                    spaet
+                    etikett="Grundlagen"
+                    titel="Warum Außenbeläge eigene Regeln brauchen"
+                    einleitung={
+                        <p>
+                            Ein Belag im Freien ist Belastungen ausgesetzt, die im Wohnraum keine Rolle spielen. Drei Faktoren bestimmen,
+                            ob er über viele Winter hält.
+                        </p>
+                    }
+                >
+                    <Feldraster spalten={3}>
+                        {OUTDOOR_RULES.map((item, i) => {
+                            const letzter = i === OUTDOOR_RULES.length - 1;
+                            return (
+                                <Feld key={item.title} spanne={letzter ? 2 : undefined} className={letzter ? 'lg:col-span-1' : undefined}>
+                                    <h3 className="font-anzeige text-fs-4 text-tinte">{item.title}</h3>
+                                    <p className="mt-3 max-w-mass font-text text-fs-2 text-tinte-2">{item.desc}</p>
+                                </Feld>
+                            );
+                        })}
+                    </Feldraster>
+                    <p className="mt-8 max-w-mass font-text text-fs-2 text-tinte-2">
+                        Typische Schadensbilder, Gefälle und Entwässerung, Abdichtungsanschlüsse und Tropfkanten behandeln wir ausführlich
+                        auf der Seite{' '}
+                        <Link href="/balkon-terrasse/balkonsanierung" className={linkKlassen}>
+                            Balkonsanierung
+                        </Link>
+                        .
                     </p>
-                </div>
-                <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {OUTDOOR_RULES.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                            <li key={item.title} className="group glass-surface p-7 rounded-tile-lg hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300">
-                                <span className="icon-chip w-12 h-12 mb-5">
-                                    <Icon className="w-6 h-6" />
-                                </span>
-                                <h3 className="font-black text-base text-slate-900 mb-2">{item.title}</h3>
-                                <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
-                            </li>
-                        );
-                    })}
-                </ul>
-                <p className="mt-8 max-w-3xl mx-auto text-sm text-slate-700 leading-relaxed text-center">
-                    Typische Schadensbilder, Gefälle und Entwässerung, Abdichtungsanschlüsse und Tropfkanten behandeln wir ausführlich
-                    auf der Seite{' '}
-                    <Link href="/balkon-terrasse/balkonsanierung" className="font-bold text-orange-800 hover:text-orange-700 hover:underline underline-offset-2">
-                        Balkonsanierung
-                    </Link>
-                    .
-                </p>
-            </section>
+                </Abschnitt>
 
-            {/* Comparison table */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="balkon-vergleich-heading">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow mb-4">Vergleich</span>
-                        <h2 id="balkon-vergleich-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                {/* 3. VERGLEICH: Tabelle als benannte Region (Name = bisherige Beschriftung), darunter der Hinweis zur Plattenstärke */}
+                <Abschnitt
+                    titelId="balkon-vergleich-heading"
+                    flaeche="fliese"
+                    leitachse
+                    spaet
+                    etikett="Vergleich"
+                    titel={
+                        <>
                             Aufbauten im Vergleich:{' '}
-                            <span className="text-ceramic-gradient">Stelzlager, Splittbett, gebunden</span>
-                        </h2>
-                        <p className="mt-3 text-base text-slate-700 leading-relaxed">
+                            <span>Stelzlager, Splittbett, gebunden</span>
+                        </>
+                    }
+                    einleitung={
+                        <p>
                             Alle drei Bauweisen funktionieren – wenn sie zur Fläche passen. Entscheidend sind verfügbare Aufbauhöhe,
                             Untergrund und der Weg, den das Wasser nehmen soll.
                         </p>
+                    }
+                >
+                    <Tabelle
+                        name="Vergleich der Aufbauten für Balkon und Terrasse"
+                        kopf={['Kriterium', ...CONSTRUCTIONS.map((c) => c.name)]}
+                        zeilen={CRITERIA_ROWS.map((row) => [row.label, ...CONSTRUCTIONS.map((c) => c[row.key])])}
+                    />
+                    {/* Hinweis in der Form des Bausteins (Rahmen, Kante links, Info-Zeichen); der Titel steht im Satz wie im Bestand.
+                        Breite = Lesebreite der Einleitung (max-w-mass in der Fließtextstufe), damit rechts im Kasten keine leere Fläche bleibt */}
+                    <div className="mt-6 max-w-mass text-fs-3">
+                        <div className="flex items-start gap-4 border border-l-2 border-strich bg-fliese p-6 font-text text-fs-2 text-tinte">
+                            <Icon name="info" groesse={5} className="mt-1 text-tinte" />
+                            <p className="min-w-0">
+                                <strong className="font-semibold">Plattenstärke:</strong> 2-cm-Platten sind für Stelzlager und Splittbett
+                                nötig, weil sie dort frei spannen bzw. punktuell aufliegen. Bei gebundener Verlegung trägt das Bett die
+                                Platte vollflächig – dann genügt frostbeständiges Feinsteinzeug in üblicher Stärke.
+                            </p>
+                        </div>
                     </div>
+                </Abschnitt>
 
-                    <div className="overflow-x-auto rounded-tile-lg border border-slate-200">
-                        <table className="w-full min-w-[720px] text-left text-sm">
-                            <caption className="sr-only">Vergleich der Aufbauten für Balkon und Terrasse</caption>
-                            <thead className="bg-slate-100 text-slate-900">
-                                <tr>
-                                    <th scope="col" className="px-5 py-4 font-black border-b border-slate-200">Kriterium</th>
-                                    {CONSTRUCTIONS.map((c) => (
-                                        <th key={c.name} scope="col" className="px-5 py-4 font-black border-b border-slate-200">
-                                            {c.name}
-                                        </th>
-                                    ))}
-                                </tr>
-                            </thead>
-                            <tbody className="text-slate-700">
-                                {[
-                                    { key: 'height', label: 'Aufbauhöhe' },
-                                    { key: 'drainage', label: 'Entwässerung' },
-                                    { key: 'slabs', label: 'Platten' },
-                                    { key: 'suitability', label: 'Geeignet für' },
-                                    { key: 'access', label: 'Revision' }
-                                ].map((row) => (
-                                    <tr key={row.key} className="border-b border-slate-200 last:border-b-0 even:bg-slate-50">
-                                        <th scope="row" className="px-5 py-4 font-bold text-slate-900 align-top">{row.label}</th>
-                                        {CONSTRUCTIONS.map((c) => (
-                                            <td key={c.name} className="px-5 py-4 align-top leading-relaxed">{c[row.key]}</td>
-                                        ))}
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
+                {/* 4. ENTSCHEIDUNGSHILFE: Kopf links mit dem Plan „balkon“ als Zeichnung (dekorativ, ohne Achse, halbe Spaltenbreite
+                    wie in der Referenz /fliesen, Abschnitt „Weitere Fachthemen“); rechts die drei Situationen als Merkliste an der Fuge
+                    (H3 wie im Bestand), darunter die vier Eigenschaften als Feldraster 2 × 2 */}
+                <Abschnitt
+                    titelId="balkon-situation-heading"
+                    leitachse
+                    spaet
+                    kopf="seitlich"
+                    etikett="Entscheidungshilfe"
+                    titel="Welche Lösung passt zu Ihrer Fläche?"
+                    einleitung={
+                        <div className="mt-2 w-1/2">
+                            <Verlegeplan plan="balkon" ohneAchse bemassung={false} />
+                        </div>
+                    }
+                >
+                    <Merkliste spalten={1} titelAls="h3" eintraege={SITUATIONS.map((item) => ({ titel: item.title, text: item.text }))} />
+                    <Feldraster spalten={2} className="mt-12">
+                        {BENEFITS.map((item) => (
+                            <Feld key={item.title}>
+                                <h3 className="font-text text-fs-3 font-semibold text-tinte">{item.title}</h3>
+                                <p className="mt-2 font-text text-fs-2 text-tinte-2">{item.desc}</p>
+                            </Feld>
+                        ))}
+                    </Feldraster>
+                </Abschnitt>
 
-                    <div className="mt-6 flex gap-3 rounded-tile-md bg-orange-50 border border-orange-200 p-5 text-sm text-slate-700 leading-relaxed">
-                        <Info className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" aria-hidden="true" />
-                        <p>
-                            <strong className="text-slate-900">Plattenstärke:</strong> 2-cm-Platten sind für Stelzlager und Splittbett
-                            nötig, weil sie dort frei spannen bzw. punktuell aufliegen. Bei gebundener Verlegung trägt das Bett die
-                            Platte vollflächig – dann genügt frostbeständiges Feinsteinzeug in üblicher Stärke.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            {/* Situations */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="balkon-situation-heading">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow mb-4">Entscheidungshilfe</span>
-                    <h2 id="balkon-situation-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Welche Lösung passt zu Ihrer Fläche?
-                    </h2>
-                </div>
-                <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {SITUATIONS.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                            <li key={item.title} className="glass-surface p-7 rounded-tile-lg">
-                                <span className="icon-chip w-12 h-12 mb-5">
-                                    <Icon className="w-6 h-6" />
-                                </span>
-                                <h3 className="font-black text-lg text-slate-900 mb-3">{item.title}</h3>
-                                <p className="text-sm text-slate-700 leading-relaxed">{item.text}</p>
-                            </li>
-                        );
-                    })}
-                </ul>
-
-                <ul className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    {BENEFITS.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                            <li key={item.title} className="flex gap-4 rounded-tile-md bg-white border border-slate-200 p-5">
-                                <Icon className="w-6 h-6 text-orange-600 shrink-0" aria-hidden="true" />
-                                <div>
-                                    <h3 className="font-black text-sm text-slate-900">{item.title}</h3>
-                                    <p className="mt-1 text-sm text-slate-700 leading-relaxed">{item.desc}</p>
-                                </div>
-                            </li>
-                        );
-                    })}
-                </ul>
-            </section>
-
-            {/* Subpages */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="balkon-themen-heading">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow mb-4">Vertiefen</span>
-                        <h2 id="balkon-themen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            System, Sanierung, Material: die Detailseiten
-                        </h2>
-                    </div>
-                    <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {SUBPAGES.map((page) => {
-                            const Icon = SUBPAGE_ICONS[page.path] || Layers;
-                            return (
-                                <li key={page.path}>
-                                    <Link
-                                        href={page.path}
-                                        className="group glass-surface p-7 rounded-tile-lg h-full flex flex-col hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
-                                    >
-                                        <span className="icon-chip w-12 h-12 mb-5">
-                                            <Icon className="w-6 h-6" />
-                                        </span>
-                                        <h3 className="font-black text-lg text-slate-900 mb-2 group-hover:text-orange-950 transition-colors">
-                                            {page.name}
-                                        </h3>
-                                        <p className="text-sm text-slate-700 leading-relaxed mb-5">{page.desc}</p>
-                                        <span className="mt-auto inline-flex items-center gap-1 text-sm font-bold text-orange-800">
-                                            Mehr zu {page.name} erfahren
-                                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                                        </span>
-                                    </Link>
-                                </li>
-                            );
-                        })}
-                    </ul>
-                </div>
-            </section>
-
-            {/* From guide to offer */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 relative z-10" aria-labelledby="balkon-angebot-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">Vom Ratgeber zum Angebot</span>
-                    <h2 id="balkon-angebot-heading" className="text-2xl sm:text-4xl font-black tracking-tight text-slate-900 leading-tight">
-                        Wir sehen uns Ihre Fläche vor Ort an
-                    </h2>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Beim kostenfreien Aufmaß prüft {COMPANY_DATA.owner.fullName} Gefälle, Abdichtung, Anschlusshöhen und
-                        Untergrund und empfiehlt den passenden Aufbau. Was wir im Außenbereich ausführen, finden Sie auf unserer
-                        Leistungsseite.
-                    </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">
-                            Kostenfreies Aufmaß anfragen
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                        </Link>
-                        <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-orange-700" />
-                            {COMPANY_DATA.contact.phone}
-                        </a>
-                        <a
-                            href={COMPANY_DATA.contact.whatsappLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="glass-button-whatsapp px-7 py-3.5 text-xs"
-                        >
-                            <MessageCircle className="w-4 h-4" />
-                            Fotos per WhatsApp senden
-                        </a>
-                    </div>
-                </div>
-
-                <nav className="mt-10 glass-surface rounded-tile-xl p-7" aria-labelledby="balkon-ratgeber-heading">
-                    <h2 id="balkon-ratgeber-heading" className="flex items-center gap-2 font-black text-base text-slate-900 mb-4">
-                        <BookOpen className="w-5 h-5 text-orange-600" aria-hidden="true" />
-                        Weiterführende Ratgeber zu Balkon &amp; Terrasse
-                    </h2>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        {FURTHER_READING.map((link) => (
-                            <li key={link.href}>
-                                <Link
-                                    href={link.href}
-                                    className="inline-flex items-center gap-1.5 text-sm font-bold text-orange-800 hover:text-orange-700 hover:underline underline-offset-2"
-                                >
-                                    <ArrowRight className="w-4 h-4" aria-hidden="true" />
-                                    {link.label}
+                {/* 5. DETAILSEITEN: Register der Unterseiten des Themas, je Zeile Name (H3), Beschreibung und „Mehr zu …“ */}
+                <Abschnitt
+                    titelId="balkon-themen-heading"
+                    flaeche="fliese"
+                    leitachse
+                    spaet
+                    etikett="Vertiefen"
+                    titel="System, Sanierung, Material: die Detailseiten"
+                >
+                    <ul className="border-t border-tinte">
+                        {SUBPAGES.map((page) => (
+                            <li key={page.path} className="border-b border-fuge">
+                                <Link href={page.path} data-motion="zustand" className={ZEILE}>
+                                    <div className="flex min-w-0 flex-1 flex-col gap-1 lg:flex-row lg:items-baseline lg:gap-6">
+                                        <h3 className={NAME}>{page.name}</h3>
+                                        <p className="font-text text-fs-2 text-tinte-2 lg:min-w-0 lg:flex-1">{page.desc}</p>
+                                        <span className="font-text text-fs-2 text-tinte">Mehr zu {page.name} erfahren</span>
+                                    </div>
+                                    <span aria-hidden="true" className="flex shrink-0 text-strich">
+                                        <Icon name="pfeil-rechts" groesse={5} />
+                                    </span>
                                 </Link>
                             </li>
                         ))}
                     </ul>
-                </nav>
-            </section>
+                </Abschnitt>
+
+                {/* 6. VOM RATGEBER ZUM ANGEBOT: Überschrift, Einleitung und drei Wege als Knöpfe; Telefon und WhatsApp aus COMPANY_DATA */}
+                <Abschnitt
+                    titelId="balkon-angebot-heading"
+                    leitachse
+                    spaet
+                    etikett="Vom Ratgeber zum Angebot"
+                    titel="Wir sehen uns Ihre Fläche vor Ort an"
+                    einleitung={
+                        <p>
+                            Beim kostenfreien Aufmaß prüft {COMPANY_DATA.owner.fullName} Gefälle, Abdichtung, Anschlusshöhen und
+                            Untergrund und empfiehlt den passenden Aufbau. Was wir im Außenbereich ausführen, finden Sie auf unserer
+                            Leistungsseite.
+                        </p>
+                    }
+                >
+                    <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                        <Knopf href="/kontakt" icon="pfeil-rechts">
+                            Kostenfreies Aufmaß anfragen
+                        </Knopf>
+                        <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon">
+                            <span className="font-mono font-normal">{COMPANY_DATA.contact.phone}</span>
+                        </Knopf>
+                        <Knopf
+                            href={COMPANY_DATA.contact.whatsappLink}
+                            extern
+                            variante="neben"
+                            vorne={<WhatsAppLogo className="size-5 shrink-0" />}
+                        >
+                            Fotos per WhatsApp senden
+                        </Knopf>
+                    </div>
+                </Abschnitt>
+
+                {/* 7. WEITERFÜHRENDE RATGEBER: bleibt eine Navigation (Bestand nav mit H2); vier Verweise als Merkliste in zwei Spalten */}
+                <Abschnitt flaeche="fliese" leitachse spaet>
+                    <nav aria-labelledby="balkon-ratgeber-heading">
+                        <h2 id="balkon-ratgeber-heading" className="max-w-mass text-fs-6 text-tinte">
+                            Weiterführende Ratgeber zu Balkon &amp; Terrasse
+                        </h2>
+                        <Merkliste
+                            spalten={2}
+                            className="mt-12"
+                            eintraege={FURTHER_READING.map((link) => ({
+                                titel: (
+                                    <Link href={link.href} className={linkKlassen}>
+                                        {link.label}
+                                    </Link>
+                                )
+                            }))}
+                        />
+                    </nav>
+                </Abschnitt>
+            </Leitachse>
 
             <QualityPromise />
             <FinalCTA />
-        </div>
+        </>
     );
 }
