@@ -178,8 +178,11 @@ export default function UntergrundAbdichtungPage() {
             </section>
 
             <Leitachse>
-                {/* 2. THEMEN: Register der Unterseiten, je Zeile Name, Beschreibung und „Mehr zu …“; die Überschrift ist nur für Screenreader */}
-                <section aria-labelledby="themen-heading" className="relative scroll-mt-24 py-16 lg:py-24">
+                {/* 2. THEMEN: Register der Unterseiten, je Zeile Name, Beschreibung und „Mehr zu …“; die Überschrift ist nur für Screenreader.
+                    Die Beschreibung ist ab md mindestens so breit wie ihr längstes Wort (ohne min-w-0): bei 768 px lief
+                    „Verbundabdichtung“ sonst in „Mehr zu … erfahren“ hinein (einzelbild textkreuzung, R-02b); „Mehr zu …“ bricht
+                    dann selbst um. Ab lg ist genug Platz, dort ändert sich nichts */}
+                <section aria-labelledby="themen-heading" className="relative py-16 lg:py-24">
                     <div className={`${seitenKlassen} spaet-zeichnen`}>
                         <h2 id="themen-heading" className="sr-only">
                             Themen rund um Untergrund und Abdichtung
@@ -190,7 +193,7 @@ export default function UntergrundAbdichtungPage() {
                                     <Link href={page.path} className={ZEILE}>
                                         <span className="flex min-w-0 flex-1 flex-col gap-1 md:flex-row md:items-baseline md:gap-6">
                                             <span className={NAME}>{page.name}</span>
-                                            <span className="font-text text-fs-2 text-tinte-2 md:min-w-0 md:flex-1">{page.desc}</span>
+                                            <span className="font-text text-fs-2 text-tinte-2 md:flex-1">{page.desc}</span>
                                             <span className="font-text text-fs-2 text-tinte">Mehr zu {page.name} erfahren</span>
                                         </span>
                                         <span aria-hidden="true" className="flex shrink-0 text-strich">
@@ -230,12 +233,14 @@ export default function UntergrundAbdichtungPage() {
                     <Schrittfolge nummerStumm schritte={CRITERIA.map((item) => ({ titel: item.title, text: item.desc }))} />
                 </Abschnitt>
 
-                {/* 5. ÜBERBLICK: vier Felder mit Anker je Thema, zwei Spalten ohne Rest */}
-                <Abschnitt aria-label="Themen im Überblick" leitachse spaet>
+                {/* 5. ÜBERBLICK: vier Felder mit Anker je Thema, zwei Spalten ohne Rest. Die Artikel sind Sprungziele
+                    (#din18534, #abbruch, #ausgleich, #rissverharzung): darum ohne `spaet` und ohne eigenes scroll-margin –
+                    sie landen allein über scroll-padding-top bei 96 px (R-02b) */}
+                <Abschnitt aria-label="Themen im Überblick" leitachse>
                     <Feldraster spalten={2}>
                         {OVERVIEWS.map((item) => (
                             <Feld key={item.id}>
-                                <article id={item.id} className="flex flex-1 flex-col scroll-mt-24">
+                                <article id={item.id} className="flex flex-1 flex-col">
                                     <h2 className="font-anzeige text-fs-5 text-tinte">{item.titel}</h2>
                                     <p className="mt-3 max-w-mass font-text text-fs-2 text-tinte-2">{item.text}</p>
                                     <div className="mt-auto pt-6">

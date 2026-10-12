@@ -1,0 +1,2645 @@
+{
+ "paket": "R-02b",
+ "werkzeug": "_relaunch/werkzeuge/a11y-zusatz.mjs --pruefungen tastatur,textabstand --ansichten m375,d1440 --worker 1 (Rohdaten _relaunch/cache/a11y-zusatz/<satz>/)",
+ "vorher_live_4364": {
+  "base": "http://127.0.0.1:4364",
+  "erstellt": "2026-10-12T20:53:00.347Z",
+  "laufzeit_s": 594,
+  "kennzahlen": {
+   "tastatur": {
+    "fokus_nicht_sichtbar": 28,
+    "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 12,
+    "fokus_ring_teilverdeckt_fest": 31,
+    "fokus_unter_2px": 53,
+    "fokus_nicht_messbar": 0,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 13,
+    "fokus_verdeckt_fest": 1,
+    "sprung_rueckwaerts": 4,
+    "falle": 0,
+    "zyklus_ohne_ausweg": 0,
+    "sprunglink_fehlt": 0,
+    "laeufe": 16,
+    "fehler": 0,
+    "schritte": 2024,
+    "m375_abgelehnt": {
+     "fokus_nicht_sichtbar": 16,
+     "fokus_unter_2px": 7,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 6,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "sprunglink_fehlt": 0
+    },
+    "d1440_abgelehnt": {
+     "fokus_nicht_sichtbar": 0,
+     "fokus_unter_2px": 19,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 2,
+     "falle": 0,
+     "sprunglink_fehlt": 0
+    },
+    "m375_erstbesuch": {
+     "fokus_nicht_sichtbar": 12,
+     "fokus_unter_2px": 8,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 6,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "sprunglink_fehlt": 0
+    },
+    "d1440_erstbesuch": {
+     "fokus_nicht_sichtbar": 0,
+     "fokus_unter_2px": 19,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 1,
+     "fokus_verdeckt_fest": 1,
+     "sprung_rueckwaerts": 2,
+     "falle": 0,
+     "sprunglink_fehlt": 0
+    }
+   },
+   "textabstand": {
+    "abgeschnitten_neu": 1,
+    "scroll_ueberhang_neu": 0,
+    "davon_line_clamp": 0,
+    "ueberlauf_neu": 8,
+    "horizontal_neu": 0,
+    "laeufe": 8,
+    "fehler": 0
+   }
+  },
+  "je_seite": {
+   "/": {
+    "tastatur": {
+     "fokus_nicht_sichtbar": 7,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 3,
+     "fokus_ring_teilverdeckt_fest": 10,
+     "fokus_unter_2px": 13,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 13,
+     "fokus_verdeckt_fest": 1,
+     "sprung_rueckwaerts": 2,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "textabstand": {
+     "abgeschnitten_neu": 0,
+     "scroll_ueberhang_neu": 0,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 2,
+     "horizontal_neu": 0
+    }
+   },
+   "/preise": {
+    "tastatur": {
+     "fokus_nicht_sichtbar": 7,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 3,
+     "fokus_ring_teilverdeckt_fest": 7,
+     "fokus_unter_2px": 4,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 2,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "textabstand": {
+     "abgeschnitten_neu": 0,
+     "scroll_ueberhang_neu": 0,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 2,
+     "horizontal_neu": 0
+    }
+   },
+   "/untergrund-abdichtung": {
+    "tastatur": {
+     "fokus_nicht_sichtbar": 7,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 3,
+     "fokus_ring_teilverdeckt_fest": 7,
+     "fokus_unter_2px": 22,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "textabstand": {
+     "abgeschnitten_neu": 0,
+     "scroll_ueberhang_neu": 0,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 2,
+     "horizontal_neu": 0
+    }
+   },
+   "/balkon-terrasse/balkonsanierung": {
+    "tastatur": {
+     "fokus_nicht_sichtbar": 7,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 3,
+     "fokus_ring_teilverdeckt_fest": 7,
+     "fokus_unter_2px": 14,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "textabstand": {
+     "abgeschnitten_neu": 1,
+     "scroll_ueberhang_neu": 0,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 2,
+     "horizontal_neu": 0
+    }
+   }
+  },
+  "befunde": [
+   {
+    "pruefung": "tastatur",
+    "seite": "/",
+    "ansicht": "d1440",
+    "zustand": "abgelehnt",
+    "schritte": 209,
+    "ende": "seitenende",
+    "sprung": [
+     {
+      "nr": 87,
+      "von": {
+       "pfad": "textarea#situation-notes",
+       "name": "Beschreiben Sie hier Ihre Ausgangslage: z. B. Zustand des Un",
+       "docY": 5988
+      },
+      "nach": {
+       "pfad": "input#calc-name",
+       "name": "Vor- und Nachname",
+       "docY": 5061,
+       "fest": null
+      }
+     }
+    ],
+    "verdeckt": [],
+    "fokus_unsichtbar": []
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/",
+    "ansicht": "d1440",
+    "zustand": "erstbesuch",
+    "schritte": 214,
+    "ende": "seitenende",
+    "sprung": [
+     {
+      "nr": 87,
+      "von": {
+       "pfad": "textarea#situation-notes",
+       "name": "Beschreiben Sie hier Ihre Ausgangslage: z. B. Zustand des Un",
+       "docY": 5988
+      },
+      "nach": {
+       "pfad": "input#calc-name",
+       "name": "Vor- und Nachname",
+       "docY": 5061,
+       "fest": null
+      }
+     }
+    ],
+    "verdeckt": [
+     {
+      "nr": 16,
+      "art": "fest",
+      "ganz": true,
+      "pfad": "div.relative.grid > div.mt-8 > div.mt-8.flex > a.inline-flex.min-h-11",
+      "name": "Aufmaß vor Ort anfragen",
+      "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.mt-4.grid > button.inline-flex.min-h-11",
+      "ebene": "div.hoehe-banner.ueber-leiste-12",
+      "rect": {
+       "x": 112,
+       "y": 754,
+       "w": 258,
+       "h": 51
+      }
+     }
+    ],
+    "fokus_unsichtbar": []
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/",
+    "ansicht": "m375",
+    "zustand": "abgelehnt",
+    "schritte": 205,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [
+     {
+      "nr": 97,
+      "art": "ausserhalb",
+      "ganz": false,
+      "pfad": "article.flex.h-full > footer.mt-6.border-t > p.mt-3.font-mono > a.underline.decoration-strich",
+      "name": "Ablauf 03 · Ausführung & Abnahme",
+      "durch": null,
+      "ebene": null,
+      "rect": {
+       "x": 315,
+       "y": 622,
+       "w": 187,
+       "h": 37
+      }
+     },
+     {
+      "nr": 99,
+      "art": "ausserhalb",
+      "ganz": false,
+      "pfad": "article.flex.h-full > footer.mt-6.border-t > p.mt-3.font-mono > a.underline.decoration-strich",
+      "name": "Leistung · Balkon & Terrasse",
+      "durch": null,
+      "ebene": null,
+      "rect": {
+       "x": 314,
+       "y": 622,
+       "w": 148,
+       "h": 37
+      }
+     },
+     {
+      "nr": 101,
+      "art": "ausserhalb",
+      "ganz": false,
+      "pfad": "article.flex.h-full > footer.mt-6.border-t > p.mt-3.font-mono > a.underline.decoration-strich",
+      "name": "Badsanierung",
+      "durch": null,
+      "ebene": null,
+      "rect": {
+       "x": 331,
+       "y": 642,
+       "w": 94,
+       "h": 17
+      }
+     },
+     {
+      "nr": 105,
+      "art": "ausserhalb",
+      "ganz": false,
+      "pfad": "article.flex.h-full > footer.mt-6.border-t > p.mt-3.font-mono > a.underline.decoration-strich",
+      "name": "Ablauf 01 · Planung & Aufmaß vor Ort",
+      "durch": null,
+      "ebene": null,
+      "rect": {
+       "x": 315,
+       "y": 622,
+       "w": 179,
+       "h": 37
+      }
+     },
+     {
+      "nr": 109,
+      "art": "ausserhalb",
+      "ganz": false,
+      "pfad": "article.flex.h-full > footer.mt-6.border-t > p.mt-3.font-mono > a.underline.decoration-strich",
+      "name": "Ablauf 03 · Staubgeschützt",
+      "durch": null,
+      "ebene": null,
+      "rect": {
+       "x": 330,
+       "y": 642,
+       "w": 203,
+       "h": 17
+      }
+     },
+     {
+      "nr": 111,
+      "art": "ausserhalb",
+      "ganz": false,
+      "pfad": "article.flex.h-full > footer.mt-6.border-t > p.mt-3.font-mono > a.underline.decoration-strich",
+      "name": "Festpreisangebot",
+      "durch": null,
+      "ebene": null,
+      "rect": {
+       "x": 331,
+       "y": 642,
+       "w": 125,
+       "h": 17
+      }
+     }
+    ],
+    "fokus_unsichtbar": [
+     {
+      "nr": 202,
+      "status": "unsichtbar",
+      "pfad": "div#leiste-schild > button.flex.size-full",
+      "name": "Cookie-Einstellungen verwalten",
+      "kontrast": 2,
+      "maxKontrast": 13.88,
+      "umfang": 216,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 203,
+      "status": "kontrastarm",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+      "kontrast": 124,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 204,
+      "status": "kontrastarm",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "WhatsApp-Chat starten",
+      "kontrast": 124,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 205,
+      "status": "kontrastarm",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Aufmaß",
+      "kontrast": 122,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     }
+    ]
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/",
+    "ansicht": "m375",
+    "zustand": "erstbesuch",
+    "schritte": 210,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [
+     {
+      "nr": 97,
+      "art": "ausserhalb",
+      "ganz": false,
+      "pfad": "article.flex.h-full > footer.mt-6.border-t > p.mt-3.font-mono > a.underline.decoration-strich",
+      "name": "Ablauf 03 · Ausführung & Abnahme",
+      "durch": null,
+      "ebene": null,
+      "rect": {
+       "x": 315,
+       "y": 363,
+       "w": 187,
+       "h": 37
+      }
+     },
+     {
+      "nr": 99,
+      "art": "ausserhalb",
+      "ganz": false,
+      "pfad": "article.flex.h-full > footer.mt-6.border-t > p.mt-3.font-mono > a.underline.decoration-strich",
+      "name": "Leistung · Balkon & Terrasse",
+      "durch": null,
+      "ebene": null,
+      "rect": {
+       "x": 314,
+       "y": 363,
+       "w": 148,
+       "h": 37
+      }
+     },
+     {
+      "nr": 101,
+      "art": "ausserhalb",
+      "ganz": false,
+      "pfad": "article.flex.h-full > footer.mt-6.border-t > p.mt-3.font-mono > a.underline.decoration-strich",
+      "name": "Badsanierung",
+      "durch": null,
+      "ebene": null,
+      "rect": {
+       "x": 331,
+       "y": 383,
+       "w": 94,
+       "h": 17
+      }
+     },
+     {
+      "nr": 105,
+      "art": "ausserhalb",
+      "ganz": false,
+      "pfad": "article.flex.h-full > footer.mt-6.border-t > p.mt-3.font-mono > a.underline.decoration-strich",
+      "name": "Ablauf 01 · Planung & Aufmaß vor Ort",
+      "durch": null,
+      "ebene": null,
+      "rect": {
+       "x": 315,
+       "y": 363,
+       "w": 179,
+       "h": 37
+      }
+     },
+     {
+      "nr": 109,
+      "art": "ausserhalb",
+      "ganz": false,
+      "pfad": "article.flex.h-full > footer.mt-6.border-t > p.mt-3.font-mono > a.underline.decoration-strich",
+      "name": "Ablauf 03 · Staubgeschützt",
+      "durch": null,
+      "ebene": null,
+      "rect": {
+       "x": 330,
+       "y": 383,
+       "w": 203,
+       "h": 17
+      }
+     },
+     {
+      "nr": 111,
+      "art": "ausserhalb",
+      "ganz": false,
+      "pfad": "article.flex.h-full > footer.mt-6.border-t > p.mt-3.font-mono > a.underline.decoration-strich",
+      "name": "Festpreisangebot",
+      "durch": null,
+      "ebene": null,
+      "rect": {
+       "x": 331,
+       "y": 383,
+       "w": 125,
+       "h": 17
+      }
+     }
+    ],
+    "fokus_unsichtbar": [
+     {
+      "nr": 202,
+      "status": "kontrastarm",
+      "grund": "ring-unter-fester-ebene",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+      "kontrast": 98,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 203,
+      "status": "kontrastarm",
+      "grund": "ring-unter-fester-ebene",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "WhatsApp-Chat starten",
+      "kontrast": 98,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 204,
+      "status": "kontrastarm",
+      "grund": "ring-unter-fester-ebene",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Aufmaß",
+      "kontrast": 98,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     }
+    ]
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/balkon-terrasse/balkonsanierung",
+    "ansicht": "d1440",
+    "zustand": "abgelehnt",
+    "schritte": 87,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [],
+    "fokus_unsichtbar": []
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/balkon-terrasse/balkonsanierung",
+    "ansicht": "d1440",
+    "zustand": "erstbesuch",
+    "schritte": 92,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [],
+    "fokus_unsichtbar": []
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/balkon-terrasse/balkonsanierung",
+    "ansicht": "m375",
+    "zustand": "abgelehnt",
+    "schritte": 79,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [],
+    "fokus_unsichtbar": [
+     {
+      "nr": 76,
+      "status": "unsichtbar",
+      "pfad": "div#leiste-schild > button.flex.size-full",
+      "name": "Cookie-Einstellungen verwalten",
+      "kontrast": 2,
+      "maxKontrast": 13.88,
+      "umfang": 216,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 77,
+      "status": "kontrastarm",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+      "kontrast": 124,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 78,
+      "status": "kontrastarm",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "WhatsApp-Chat starten",
+      "kontrast": 124,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 79,
+      "status": "kontrastarm",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Aufmaß",
+      "kontrast": 122,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     }
+    ]
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/balkon-terrasse/balkonsanierung",
+    "ansicht": "m375",
+    "zustand": "erstbesuch",
+    "schritte": 84,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [],
+    "fokus_unsichtbar": [
+     {
+      "nr": 76,
+      "status": "kontrastarm",
+      "grund": "ring-unter-fester-ebene",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+      "kontrast": 98,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 77,
+      "status": "kontrastarm",
+      "grund": "ring-unter-fester-ebene",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "WhatsApp-Chat starten",
+      "kontrast": 98,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 78,
+      "status": "kontrastarm",
+      "grund": "ring-unter-fester-ebene",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Aufmaß",
+      "kontrast": 98,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     }
+    ]
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/preise",
+    "ansicht": "d1440",
+    "zustand": "abgelehnt",
+    "schritte": 113,
+    "ende": "seitenende",
+    "sprung": [
+     {
+      "nr": 41,
+      "von": {
+       "pfad": "textarea#situation-notes",
+       "name": "Beschreiben Sie hier Ihre Ausgangslage: z. B. Zustand des Un",
+       "docY": 2943
+      },
+      "nach": {
+       "pfad": "input#calc-name",
+       "name": "Vor- und Nachname",
+       "docY": 2015,
+       "fest": null
+      }
+     }
+    ],
+    "verdeckt": [],
+    "fokus_unsichtbar": []
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/preise",
+    "ansicht": "d1440",
+    "zustand": "erstbesuch",
+    "schritte": 118,
+    "ende": "seitenende",
+    "sprung": [
+     {
+      "nr": 41,
+      "von": {
+       "pfad": "textarea#situation-notes",
+       "name": "Beschreiben Sie hier Ihre Ausgangslage: z. B. Zustand des Un",
+       "docY": 2943
+      },
+      "nach": {
+       "pfad": "input#calc-name",
+       "name": "Vor- und Nachname",
+       "docY": 2015,
+       "fest": null
+      }
+     }
+    ],
+    "verdeckt": [],
+    "fokus_unsichtbar": []
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/preise",
+    "ansicht": "m375",
+    "zustand": "abgelehnt",
+    "schritte": 105,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [],
+    "fokus_unsichtbar": [
+     {
+      "nr": 102,
+      "status": "unsichtbar",
+      "pfad": "div#leiste-schild > button.flex.size-full",
+      "name": "Cookie-Einstellungen verwalten",
+      "kontrast": 2,
+      "maxKontrast": 13.88,
+      "umfang": 216,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 103,
+      "status": "kontrastarm",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+      "kontrast": 124,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 104,
+      "status": "kontrastarm",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "WhatsApp-Chat starten",
+      "kontrast": 124,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 105,
+      "status": "kontrastarm",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Aufmaß",
+      "kontrast": 122,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     }
+    ]
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/preise",
+    "ansicht": "m375",
+    "zustand": "erstbesuch",
+    "schritte": 110,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [],
+    "fokus_unsichtbar": [
+     {
+      "nr": 102,
+      "status": "kontrastarm",
+      "grund": "ring-unter-fester-ebene",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+      "kontrast": 98,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 103,
+      "status": "kontrastarm",
+      "grund": "ring-unter-fester-ebene",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "WhatsApp-Chat starten",
+      "kontrast": 98,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 104,
+      "status": "kontrastarm",
+      "grund": "ring-unter-fester-ebene",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Aufmaß",
+      "kontrast": 98,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     }
+    ]
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/untergrund-abdichtung",
+    "ansicht": "d1440",
+    "zustand": "abgelehnt",
+    "schritte": 101,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [],
+    "fokus_unsichtbar": []
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/untergrund-abdichtung",
+    "ansicht": "d1440",
+    "zustand": "erstbesuch",
+    "schritte": 106,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [],
+    "fokus_unsichtbar": []
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/untergrund-abdichtung",
+    "ansicht": "m375",
+    "zustand": "abgelehnt",
+    "schritte": 93,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [],
+    "fokus_unsichtbar": [
+     {
+      "nr": 90,
+      "status": "unsichtbar",
+      "pfad": "div#leiste-schild > button.flex.size-full",
+      "name": "Cookie-Einstellungen verwalten",
+      "kontrast": 2,
+      "maxKontrast": 13.88,
+      "umfang": 216,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 91,
+      "status": "kontrastarm",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+      "kontrast": 124,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 92,
+      "status": "kontrastarm",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "WhatsApp-Chat starten",
+      "kontrast": 124,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 93,
+      "status": "kontrastarm",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Aufmaß",
+      "kontrast": 122,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     }
+    ]
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/untergrund-abdichtung",
+    "ansicht": "m375",
+    "zustand": "erstbesuch",
+    "schritte": 98,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [],
+    "fokus_unsichtbar": [
+     {
+      "nr": 90,
+      "status": "kontrastarm",
+      "grund": "ring-unter-fester-ebene",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+      "kontrast": 98,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 91,
+      "status": "kontrastarm",
+      "grund": "ring-unter-fester-ebene",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "WhatsApp-Chat starten",
+      "kontrast": 98,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 92,
+      "status": "kontrastarm",
+      "grund": "ring-unter-fester-ebene",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Aufmaß",
+      "kontrast": 98,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     }
+    ]
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/",
+    "ansicht": "d1440",
+    "zustand": null,
+    "abgeschnitten_neu": [],
+    "scroll_ueberhang_neu": [],
+    "ueberlauf_neu": [
+     {
+      "art": "ragt-heraus",
+      "tag": "div",
+      "cls": "flex shrink-0 items-center gap-2",
+      "left": 1021,
+      "right": 1514
+     },
+     {
+      "art": "ragt-heraus",
+      "tag": "a",
+      "cls": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 fo",
+      "left": 1306,
+      "right": 1514
+     }
+    ]
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/",
+    "ansicht": "m375",
+    "zustand": null,
+    "abgeschnitten_neu": [],
+    "scroll_ueberhang_neu": [],
+    "ueberlauf_neu": []
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/balkon-terrasse/balkonsanierung",
+    "ansicht": "d1440",
+    "zustand": null,
+    "abgeschnitten_neu": [],
+    "scroll_ueberhang_neu": [],
+    "ueberlauf_neu": [
+     {
+      "art": "ragt-heraus",
+      "tag": "div",
+      "cls": "flex shrink-0 items-center gap-2",
+      "left": 1021,
+      "right": 1514
+     },
+     {
+      "art": "ragt-heraus",
+      "tag": "a",
+      "cls": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 fo",
+      "left": 1306,
+      "right": 1514
+     }
+    ]
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/balkon-terrasse/balkonsanierung",
+    "ansicht": "m375",
+    "zustand": null,
+    "abgeschnitten_neu": [
+     {
+      "id": 1,
+      "pfad": "main#main-content",
+      "text": "Woran Sie einen sanierungsbedürftigen Balkon erkennen",
+      "ueberstand": 3,
+      "achse": "x",
+      "lineClamp": false
+     }
+    ],
+    "scroll_ueberhang_neu": [],
+    "ueberlauf_neu": []
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/preise",
+    "ansicht": "d1440",
+    "zustand": null,
+    "abgeschnitten_neu": [],
+    "scroll_ueberhang_neu": [],
+    "ueberlauf_neu": [
+     {
+      "art": "ragt-heraus",
+      "tag": "div",
+      "cls": "flex shrink-0 items-center gap-2",
+      "left": 1021,
+      "right": 1514
+     },
+     {
+      "art": "ragt-heraus",
+      "tag": "a",
+      "cls": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 fo",
+      "left": 1306,
+      "right": 1514
+     }
+    ]
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/preise",
+    "ansicht": "m375",
+    "zustand": null,
+    "abgeschnitten_neu": [],
+    "scroll_ueberhang_neu": [],
+    "ueberlauf_neu": []
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/untergrund-abdichtung",
+    "ansicht": "d1440",
+    "zustand": null,
+    "abgeschnitten_neu": [],
+    "scroll_ueberhang_neu": [],
+    "ueberlauf_neu": [
+     {
+      "art": "ragt-heraus",
+      "tag": "div",
+      "cls": "flex shrink-0 items-center gap-2",
+      "left": 1021,
+      "right": 1514
+     },
+     {
+      "art": "ragt-heraus",
+      "tag": "a",
+      "cls": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 fo",
+      "left": 1306,
+      "right": 1514
+     }
+    ]
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/untergrund-abdichtung",
+    "ansicht": "m375",
+    "zustand": null,
+    "abgeschnitten_neu": [],
+    "scroll_ueberhang_neu": [],
+    "ueberlauf_neu": []
+   }
+  ]
+ },
+ "nachher_dev_4350": {
+  "base": "http://127.0.0.1:4350",
+  "erstellt": "2026-10-12T21:06:56.030Z",
+  "laufzeit_s": 535,
+  "kennzahlen": {
+   "tastatur": {
+    "fokus_nicht_sichtbar": 29,
+    "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 12,
+    "fokus_ring_teilverdeckt_fest": 31,
+    "fokus_unter_2px": 53,
+    "fokus_nicht_messbar": 0,
+    "fokus_ohne_outline_schatten": 1,
+    "fokus_verdeckt": 14,
+    "fokus_verdeckt_fest": 1,
+    "sprung_rueckwaerts": 1,
+    "falle": 0,
+    "zyklus_ohne_ausweg": 0,
+    "sprunglink_fehlt": 0,
+    "laeufe": 16,
+    "fehler": 0,
+    "schritte": 2025,
+    "m375_abgelehnt": {
+     "fokus_nicht_sichtbar": 16,
+     "fokus_unter_2px": 7,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 6,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "sprunglink_fehlt": 0
+    },
+    "d1440_abgelehnt": {
+     "fokus_nicht_sichtbar": 1,
+     "fokus_unter_2px": 19,
+     "fokus_ohne_outline_schatten": 1,
+     "fokus_verdeckt": 1,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 1,
+     "falle": 0,
+     "sprunglink_fehlt": 0
+    },
+    "m375_erstbesuch": {
+     "fokus_nicht_sichtbar": 12,
+     "fokus_unter_2px": 8,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 6,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "sprunglink_fehlt": 0
+    },
+    "d1440_erstbesuch": {
+     "fokus_nicht_sichtbar": 0,
+     "fokus_unter_2px": 19,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 1,
+     "fokus_verdeckt_fest": 1,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "sprunglink_fehlt": 0
+    }
+   },
+   "textabstand": {
+    "abgeschnitten_neu": 0,
+    "scroll_ueberhang_neu": 0,
+    "davon_line_clamp": 0,
+    "ueberlauf_neu": 8,
+    "horizontal_neu": 0,
+    "laeufe": 8,
+    "fehler": 0
+   }
+  },
+  "je_seite": {
+   "/": {
+    "tastatur": {
+     "fokus_nicht_sichtbar": 8,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 3,
+     "fokus_ring_teilverdeckt_fest": 10,
+     "fokus_unter_2px": 13,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 1,
+     "fokus_verdeckt": 14,
+     "fokus_verdeckt_fest": 1,
+     "sprung_rueckwaerts": 1,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "textabstand": {
+     "abgeschnitten_neu": 0,
+     "scroll_ueberhang_neu": 0,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 2,
+     "horizontal_neu": 0
+    }
+   },
+   "/preise": {
+    "tastatur": {
+     "fokus_nicht_sichtbar": 7,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 3,
+     "fokus_ring_teilverdeckt_fest": 7,
+     "fokus_unter_2px": 4,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "textabstand": {
+     "abgeschnitten_neu": 0,
+     "scroll_ueberhang_neu": 0,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 2,
+     "horizontal_neu": 0
+    }
+   },
+   "/untergrund-abdichtung": {
+    "tastatur": {
+     "fokus_nicht_sichtbar": 7,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 3,
+     "fokus_ring_teilverdeckt_fest": 7,
+     "fokus_unter_2px": 22,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "textabstand": {
+     "abgeschnitten_neu": 0,
+     "scroll_ueberhang_neu": 0,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 2,
+     "horizontal_neu": 0
+    }
+   },
+   "/balkon-terrasse/balkonsanierung": {
+    "tastatur": {
+     "fokus_nicht_sichtbar": 7,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 3,
+     "fokus_ring_teilverdeckt_fest": 7,
+     "fokus_unter_2px": 14,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "textabstand": {
+     "abgeschnitten_neu": 0,
+     "scroll_ueberhang_neu": 0,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 2,
+     "horizontal_neu": 0
+    }
+   }
+  },
+  "befunde": [
+   {
+    "pruefung": "tastatur",
+    "seite": "/",
+    "ansicht": "d1440",
+    "zustand": "abgelehnt",
+    "schritte": 210,
+    "ende": "seitenende",
+    "sprung": [
+     {
+      "nr": 210,
+      "von": {
+       "pfad": "div.border-t.border-nacht-fuge > div.mx-auto.w-full > p > a.text-kalk.underline",
+       "name": "Webdesign Wetzlar – Coday",
+       "docY": 16028
+      },
+      "nach": {
+       "pfad": "script > nextjs-portal",
+       "name": "",
+       "docY": 0,
+       "fest": null
+      }
+     }
+    ],
+    "verdeckt": [
+     {
+      "nr": 210,
+      "art": "ausserhalb",
+      "ganz": true,
+      "pfad": "script > nextjs-portal",
+      "name": "",
+      "durch": null,
+      "ebene": null,
+      "rect": {
+       "x": 0,
+       "y": -15197,
+       "w": 0,
+       "h": 0
+      }
+     }
+    ],
+    "fokus_unsichtbar": [
+     {
+      "nr": 210,
+      "status": "unsichtbar",
+      "grund": "ohne-groesse",
+      "pfad": "script > nextjs-portal",
+      "name": "",
+      "stilAenderung": []
+     }
+    ]
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/",
+    "ansicht": "d1440",
+    "zustand": "erstbesuch",
+    "schritte": 214,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [
+     {
+      "nr": 16,
+      "art": "fest",
+      "ganz": true,
+      "pfad": "div.relative.grid > div.mt-8 > div.mt-8.flex > a.inline-flex.min-h-11",
+      "name": "Aufmaß vor Ort anfragen",
+      "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.mt-4.grid > button.inline-flex.min-h-11",
+      "ebene": "div.hoehe-banner.ueber-leiste-12",
+      "rect": {
+       "x": 112,
+       "y": 754,
+       "w": 258,
+       "h": 51
+      }
+     }
+    ],
+    "fokus_unsichtbar": []
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/",
+    "ansicht": "m375",
+    "zustand": "abgelehnt",
+    "schritte": 205,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [
+     {
+      "nr": 97,
+      "art": "ausserhalb",
+      "ganz": false,
+      "pfad": "article.flex.h-full > footer.mt-6.border-t > p.mt-3.font-mono > a.underline.decoration-strich",
+      "name": "Ablauf 03 · Ausführung & Abnahme",
+      "durch": null,
+      "ebene": null,
+      "rect": {
+       "x": 315,
+       "y": 622,
+       "w": 187,
+       "h": 37
+      }
+     },
+     {
+      "nr": 99,
+      "art": "ausserhalb",
+      "ganz": false,
+      "pfad": "article.flex.h-full > footer.mt-6.border-t > p.mt-3.font-mono > a.underline.decoration-strich",
+      "name": "Leistung · Balkon & Terrasse",
+      "durch": null,
+      "ebene": null,
+      "rect": {
+       "x": 314,
+       "y": 622,
+       "w": 148,
+       "h": 37
+      }
+     },
+     {
+      "nr": 101,
+      "art": "ausserhalb",
+      "ganz": false,
+      "pfad": "article.flex.h-full > footer.mt-6.border-t > p.mt-3.font-mono > a.underline.decoration-strich",
+      "name": "Badsanierung",
+      "durch": null,
+      "ebene": null,
+      "rect": {
+       "x": 331,
+       "y": 642,
+       "w": 94,
+       "h": 17
+      }
+     },
+     {
+      "nr": 105,
+      "art": "ausserhalb",
+      "ganz": false,
+      "pfad": "article.flex.h-full > footer.mt-6.border-t > p.mt-3.font-mono > a.underline.decoration-strich",
+      "name": "Ablauf 01 · Planung & Aufmaß vor Ort",
+      "durch": null,
+      "ebene": null,
+      "rect": {
+       "x": 315,
+       "y": 622,
+       "w": 179,
+       "h": 37
+      }
+     },
+     {
+      "nr": 109,
+      "art": "ausserhalb",
+      "ganz": false,
+      "pfad": "article.flex.h-full > footer.mt-6.border-t > p.mt-3.font-mono > a.underline.decoration-strich",
+      "name": "Ablauf 03 · Staubgeschützt",
+      "durch": null,
+      "ebene": null,
+      "rect": {
+       "x": 330,
+       "y": 642,
+       "w": 203,
+       "h": 17
+      }
+     },
+     {
+      "nr": 111,
+      "art": "ausserhalb",
+      "ganz": false,
+      "pfad": "article.flex.h-full > footer.mt-6.border-t > p.mt-3.font-mono > a.underline.decoration-strich",
+      "name": "Festpreisangebot",
+      "durch": null,
+      "ebene": null,
+      "rect": {
+       "x": 331,
+       "y": 642,
+       "w": 125,
+       "h": 17
+      }
+     }
+    ],
+    "fokus_unsichtbar": [
+     {
+      "nr": 202,
+      "status": "unsichtbar",
+      "pfad": "div#leiste-schild > button.flex.size-full",
+      "name": "Cookie-Einstellungen verwalten",
+      "kontrast": 2,
+      "maxKontrast": 13.88,
+      "umfang": 216,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 203,
+      "status": "kontrastarm",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+      "kontrast": 124,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 204,
+      "status": "kontrastarm",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "WhatsApp-Chat starten",
+      "kontrast": 124,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 205,
+      "status": "kontrastarm",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Aufmaß",
+      "kontrast": 122,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     }
+    ]
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/",
+    "ansicht": "m375",
+    "zustand": "erstbesuch",
+    "schritte": 210,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [
+     {
+      "nr": 97,
+      "art": "ausserhalb",
+      "ganz": false,
+      "pfad": "article.flex.h-full > footer.mt-6.border-t > p.mt-3.font-mono > a.underline.decoration-strich",
+      "name": "Ablauf 03 · Ausführung & Abnahme",
+      "durch": null,
+      "ebene": null,
+      "rect": {
+       "x": 315,
+       "y": 363,
+       "w": 187,
+       "h": 37
+      }
+     },
+     {
+      "nr": 99,
+      "art": "ausserhalb",
+      "ganz": false,
+      "pfad": "article.flex.h-full > footer.mt-6.border-t > p.mt-3.font-mono > a.underline.decoration-strich",
+      "name": "Leistung · Balkon & Terrasse",
+      "durch": null,
+      "ebene": null,
+      "rect": {
+       "x": 314,
+       "y": 363,
+       "w": 148,
+       "h": 37
+      }
+     },
+     {
+      "nr": 101,
+      "art": "ausserhalb",
+      "ganz": false,
+      "pfad": "article.flex.h-full > footer.mt-6.border-t > p.mt-3.font-mono > a.underline.decoration-strich",
+      "name": "Badsanierung",
+      "durch": null,
+      "ebene": null,
+      "rect": {
+       "x": 331,
+       "y": 383,
+       "w": 94,
+       "h": 17
+      }
+     },
+     {
+      "nr": 105,
+      "art": "ausserhalb",
+      "ganz": false,
+      "pfad": "article.flex.h-full > footer.mt-6.border-t > p.mt-3.font-mono > a.underline.decoration-strich",
+      "name": "Ablauf 01 · Planung & Aufmaß vor Ort",
+      "durch": null,
+      "ebene": null,
+      "rect": {
+       "x": 315,
+       "y": 363,
+       "w": 179,
+       "h": 37
+      }
+     },
+     {
+      "nr": 109,
+      "art": "ausserhalb",
+      "ganz": false,
+      "pfad": "article.flex.h-full > footer.mt-6.border-t > p.mt-3.font-mono > a.underline.decoration-strich",
+      "name": "Ablauf 03 · Staubgeschützt",
+      "durch": null,
+      "ebene": null,
+      "rect": {
+       "x": 330,
+       "y": 383,
+       "w": 203,
+       "h": 17
+      }
+     },
+     {
+      "nr": 111,
+      "art": "ausserhalb",
+      "ganz": false,
+      "pfad": "article.flex.h-full > footer.mt-6.border-t > p.mt-3.font-mono > a.underline.decoration-strich",
+      "name": "Festpreisangebot",
+      "durch": null,
+      "ebene": null,
+      "rect": {
+       "x": 331,
+       "y": 383,
+       "w": 125,
+       "h": 17
+      }
+     }
+    ],
+    "fokus_unsichtbar": [
+     {
+      "nr": 202,
+      "status": "kontrastarm",
+      "grund": "ring-unter-fester-ebene",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+      "kontrast": 98,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 203,
+      "status": "kontrastarm",
+      "grund": "ring-unter-fester-ebene",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "WhatsApp-Chat starten",
+      "kontrast": 98,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 204,
+      "status": "kontrastarm",
+      "grund": "ring-unter-fester-ebene",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Aufmaß",
+      "kontrast": 98,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     }
+    ]
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/balkon-terrasse/balkonsanierung",
+    "ansicht": "d1440",
+    "zustand": "abgelehnt",
+    "schritte": 87,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [],
+    "fokus_unsichtbar": []
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/balkon-terrasse/balkonsanierung",
+    "ansicht": "d1440",
+    "zustand": "erstbesuch",
+    "schritte": 92,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [],
+    "fokus_unsichtbar": []
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/balkon-terrasse/balkonsanierung",
+    "ansicht": "m375",
+    "zustand": "abgelehnt",
+    "schritte": 79,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [],
+    "fokus_unsichtbar": [
+     {
+      "nr": 76,
+      "status": "unsichtbar",
+      "pfad": "div#leiste-schild > button.flex.size-full",
+      "name": "Cookie-Einstellungen verwalten",
+      "kontrast": 2,
+      "maxKontrast": 13.88,
+      "umfang": 216,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 77,
+      "status": "kontrastarm",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+      "kontrast": 124,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 78,
+      "status": "kontrastarm",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "WhatsApp-Chat starten",
+      "kontrast": 124,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 79,
+      "status": "kontrastarm",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Aufmaß",
+      "kontrast": 122,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     }
+    ]
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/balkon-terrasse/balkonsanierung",
+    "ansicht": "m375",
+    "zustand": "erstbesuch",
+    "schritte": 84,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [],
+    "fokus_unsichtbar": [
+     {
+      "nr": 76,
+      "status": "kontrastarm",
+      "grund": "ring-unter-fester-ebene",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+      "kontrast": 98,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 77,
+      "status": "kontrastarm",
+      "grund": "ring-unter-fester-ebene",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "WhatsApp-Chat starten",
+      "kontrast": 98,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 78,
+      "status": "kontrastarm",
+      "grund": "ring-unter-fester-ebene",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Aufmaß",
+      "kontrast": 98,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     }
+    ]
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/preise",
+    "ansicht": "d1440",
+    "zustand": "abgelehnt",
+    "schritte": 113,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [],
+    "fokus_unsichtbar": []
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/preise",
+    "ansicht": "d1440",
+    "zustand": "erstbesuch",
+    "schritte": 118,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [],
+    "fokus_unsichtbar": []
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/preise",
+    "ansicht": "m375",
+    "zustand": "abgelehnt",
+    "schritte": 105,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [],
+    "fokus_unsichtbar": [
+     {
+      "nr": 102,
+      "status": "unsichtbar",
+      "pfad": "div#leiste-schild > button.flex.size-full",
+      "name": "Cookie-Einstellungen verwalten",
+      "kontrast": 2,
+      "maxKontrast": 13.88,
+      "umfang": 216,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 103,
+      "status": "kontrastarm",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+      "kontrast": 124,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 104,
+      "status": "kontrastarm",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "WhatsApp-Chat starten",
+      "kontrast": 124,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 105,
+      "status": "kontrastarm",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Aufmaß",
+      "kontrast": 122,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     }
+    ]
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/preise",
+    "ansicht": "m375",
+    "zustand": "erstbesuch",
+    "schritte": 110,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [],
+    "fokus_unsichtbar": [
+     {
+      "nr": 102,
+      "status": "kontrastarm",
+      "grund": "ring-unter-fester-ebene",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+      "kontrast": 98,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 103,
+      "status": "kontrastarm",
+      "grund": "ring-unter-fester-ebene",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "WhatsApp-Chat starten",
+      "kontrast": 98,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 104,
+      "status": "kontrastarm",
+      "grund": "ring-unter-fester-ebene",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Aufmaß",
+      "kontrast": 98,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     }
+    ]
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/untergrund-abdichtung",
+    "ansicht": "d1440",
+    "zustand": "abgelehnt",
+    "schritte": 101,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [],
+    "fokus_unsichtbar": []
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/untergrund-abdichtung",
+    "ansicht": "d1440",
+    "zustand": "erstbesuch",
+    "schritte": 106,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [],
+    "fokus_unsichtbar": []
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/untergrund-abdichtung",
+    "ansicht": "m375",
+    "zustand": "abgelehnt",
+    "schritte": 93,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [],
+    "fokus_unsichtbar": [
+     {
+      "nr": 90,
+      "status": "unsichtbar",
+      "pfad": "div#leiste-schild > button.flex.size-full",
+      "name": "Cookie-Einstellungen verwalten",
+      "kontrast": 2,
+      "maxKontrast": 13.88,
+      "umfang": 216,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 91,
+      "status": "kontrastarm",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+      "kontrast": 124,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 92,
+      "status": "kontrastarm",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "WhatsApp-Chat starten",
+      "kontrast": 124,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 93,
+      "status": "kontrastarm",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Aufmaß",
+      "kontrast": 122,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     }
+    ]
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/untergrund-abdichtung",
+    "ansicht": "m375",
+    "zustand": "erstbesuch",
+    "schritte": 98,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [],
+    "fokus_unsichtbar": [
+     {
+      "nr": 90,
+      "status": "kontrastarm",
+      "grund": "ring-unter-fester-ebene",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+      "kontrast": 98,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 91,
+      "status": "kontrastarm",
+      "grund": "ring-unter-fester-ebene",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "WhatsApp-Chat starten",
+      "kontrast": 98,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 92,
+      "status": "kontrastarm",
+      "grund": "ring-unter-fester-ebene",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Aufmaß",
+      "kontrast": 98,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     }
+    ]
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/",
+    "ansicht": "d1440",
+    "zustand": null,
+    "abgeschnitten_neu": [],
+    "scroll_ueberhang_neu": [],
+    "ueberlauf_neu": [
+     {
+      "art": "ragt-heraus",
+      "tag": "div",
+      "cls": "flex shrink-0 items-center gap-2",
+      "left": 1021,
+      "right": 1514
+     },
+     {
+      "art": "ragt-heraus",
+      "tag": "a",
+      "cls": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 fo",
+      "left": 1306,
+      "right": 1514
+     }
+    ]
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/",
+    "ansicht": "m375",
+    "zustand": null,
+    "abgeschnitten_neu": [],
+    "scroll_ueberhang_neu": [],
+    "ueberlauf_neu": []
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/balkon-terrasse/balkonsanierung",
+    "ansicht": "d1440",
+    "zustand": null,
+    "abgeschnitten_neu": [],
+    "scroll_ueberhang_neu": [],
+    "ueberlauf_neu": [
+     {
+      "art": "ragt-heraus",
+      "tag": "div",
+      "cls": "flex shrink-0 items-center gap-2",
+      "left": 1021,
+      "right": 1514
+     },
+     {
+      "art": "ragt-heraus",
+      "tag": "a",
+      "cls": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 fo",
+      "left": 1306,
+      "right": 1514
+     }
+    ]
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/balkon-terrasse/balkonsanierung",
+    "ansicht": "m375",
+    "zustand": null,
+    "abgeschnitten_neu": [],
+    "scroll_ueberhang_neu": [],
+    "ueberlauf_neu": []
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/preise",
+    "ansicht": "d1440",
+    "zustand": null,
+    "abgeschnitten_neu": [],
+    "scroll_ueberhang_neu": [],
+    "ueberlauf_neu": [
+     {
+      "art": "ragt-heraus",
+      "tag": "div",
+      "cls": "flex shrink-0 items-center gap-2",
+      "left": 1021,
+      "right": 1514
+     },
+     {
+      "art": "ragt-heraus",
+      "tag": "a",
+      "cls": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 fo",
+      "left": 1306,
+      "right": 1514
+     }
+    ]
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/preise",
+    "ansicht": "m375",
+    "zustand": null,
+    "abgeschnitten_neu": [],
+    "scroll_ueberhang_neu": [],
+    "ueberlauf_neu": []
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/untergrund-abdichtung",
+    "ansicht": "d1440",
+    "zustand": null,
+    "abgeschnitten_neu": [],
+    "scroll_ueberhang_neu": [],
+    "ueberlauf_neu": [
+     {
+      "art": "ragt-heraus",
+      "tag": "div",
+      "cls": "flex shrink-0 items-center gap-2",
+      "left": 1021,
+      "right": 1514
+     },
+     {
+      "art": "ragt-heraus",
+      "tag": "a",
+      "cls": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 fo",
+      "left": 1306,
+      "right": 1514
+     }
+    ]
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/untergrund-abdichtung",
+    "ansicht": "m375",
+    "zustand": null,
+    "abgeschnitten_neu": [],
+    "scroll_ueberhang_neu": [],
+    "ueberlauf_neu": []
+   }
+  ]
+ },
+ "nachher2_untergrund_nach_registerfix": {
+  "base": "http://127.0.0.1:4350",
+  "erstellt": "2026-10-12T21:36:50.370Z",
+  "laufzeit_s": 149,
+  "kennzahlen": {
+   "tastatur": {
+    "fokus_nicht_sichtbar": 7,
+    "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 3,
+    "fokus_ring_teilverdeckt_fest": 7,
+    "fokus_unter_2px": 22,
+    "fokus_nicht_messbar": 0,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 0,
+    "fokus_verdeckt_fest": 0,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "zyklus_ohne_ausweg": 0,
+    "sprunglink_fehlt": 0,
+    "laeufe": 4,
+    "fehler": 0,
+    "schritte": 398,
+    "m375_abgelehnt": {
+     "fokus_nicht_sichtbar": 4,
+     "fokus_unter_2px": 3,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "sprunglink_fehlt": 0
+    },
+    "d1440_abgelehnt": {
+     "fokus_nicht_sichtbar": 0,
+     "fokus_unter_2px": 8,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "sprunglink_fehlt": 0
+    },
+    "m375_erstbesuch": {
+     "fokus_nicht_sichtbar": 3,
+     "fokus_unter_2px": 3,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "sprunglink_fehlt": 0
+    },
+    "d1440_erstbesuch": {
+     "fokus_nicht_sichtbar": 0,
+     "fokus_unter_2px": 8,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "sprunglink_fehlt": 0
+    }
+   },
+   "textabstand": {
+    "abgeschnitten_neu": 0,
+    "scroll_ueberhang_neu": 0,
+    "davon_line_clamp": 0,
+    "ueberlauf_neu": 2,
+    "horizontal_neu": 0,
+    "laeufe": 2,
+    "fehler": 0
+   }
+  },
+  "je_seite": {
+   "/untergrund-abdichtung": {
+    "tastatur": {
+     "fokus_nicht_sichtbar": 7,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 3,
+     "fokus_ring_teilverdeckt_fest": 7,
+     "fokus_unter_2px": 22,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "textabstand": {
+     "abgeschnitten_neu": 0,
+     "scroll_ueberhang_neu": 0,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 2,
+     "horizontal_neu": 0
+    }
+   }
+  },
+  "befunde": [
+   {
+    "pruefung": "tastatur",
+    "seite": "/untergrund-abdichtung",
+    "ansicht": "d1440",
+    "zustand": "abgelehnt",
+    "schritte": 101,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [],
+    "fokus_unsichtbar": []
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/untergrund-abdichtung",
+    "ansicht": "d1440",
+    "zustand": "erstbesuch",
+    "schritte": 106,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [],
+    "fokus_unsichtbar": []
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/untergrund-abdichtung",
+    "ansicht": "m375",
+    "zustand": "abgelehnt",
+    "schritte": 93,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [],
+    "fokus_unsichtbar": [
+     {
+      "nr": 90,
+      "status": "unsichtbar",
+      "pfad": "div#leiste-schild > button.flex.size-full",
+      "name": "Cookie-Einstellungen verwalten",
+      "kontrast": 2,
+      "maxKontrast": 13.88,
+      "umfang": 216,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 91,
+      "status": "kontrastarm",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+      "kontrast": 124,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 92,
+      "status": "kontrastarm",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "WhatsApp-Chat starten",
+      "kontrast": 124,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 93,
+      "status": "kontrastarm",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Aufmaß",
+      "kontrast": 122,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     }
+    ]
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/untergrund-abdichtung",
+    "ansicht": "m375",
+    "zustand": "erstbesuch",
+    "schritte": 98,
+    "ende": "seitenende",
+    "sprung": [],
+    "verdeckt": [],
+    "fokus_unsichtbar": [
+     {
+      "nr": 90,
+      "status": "kontrastarm",
+      "grund": "ring-unter-fester-ebene",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+      "kontrast": 98,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 91,
+      "status": "kontrastarm",
+      "grund": "ring-unter-fester-ebene",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "WhatsApp-Chat starten",
+      "kontrast": 98,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     },
+     {
+      "nr": 92,
+      "status": "kontrastarm",
+      "grund": "ring-unter-fester-ebene",
+      "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "name": "Aufmaß",
+      "kontrast": 98,
+      "maxKontrast": 16.96,
+      "umfang": 336,
+      "stilAenderung": [
+       "outline",
+       "outlineOffset"
+      ]
+     }
+    ]
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/untergrund-abdichtung",
+    "ansicht": "d1440",
+    "zustand": null,
+    "abgeschnitten_neu": [],
+    "scroll_ueberhang_neu": [],
+    "ueberlauf_neu": [
+     {
+      "art": "ragt-heraus",
+      "tag": "div",
+      "cls": "flex shrink-0 items-center gap-2",
+      "left": 1021,
+      "right": 1514
+     },
+     {
+      "art": "ragt-heraus",
+      "tag": "a",
+      "cls": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 fo",
+      "left": 1306,
+      "right": 1514
+     }
+    ]
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/untergrund-abdichtung",
+    "ansicht": "m375",
+    "zustand": null,
+    "abgeschnitten_neu": [],
+    "scroll_ueberhang_neu": [],
+    "ueberlauf_neu": []
+   }
+  ]
+ },
+ "agb_vorher_dev_4350": {
+  "base": "http://127.0.0.1:4350",
+  "erstellt": "2026-10-12T21:40:50.999Z",
+  "laufzeit_s": 5,
+  "kennzahlen": {
+   "textabstand": {
+    "abgeschnitten_neu": 1,
+    "scroll_ueberhang_neu": 1,
+    "davon_line_clamp": 0,
+    "ueberlauf_neu": 2,
+    "horizontal_neu": 0,
+    "laeufe": 2,
+    "fehler": 0
+   }
+  },
+  "je_seite": {
+   "/agb": {
+    "textabstand": {
+     "abgeschnitten_neu": 1,
+     "scroll_ueberhang_neu": 1,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 2,
+     "horizontal_neu": 0
+    }
+   }
+  },
+  "befunde": [
+   {
+    "pruefung": "textabstand",
+    "seite": "/agb",
+    "ansicht": "d1440",
+    "zustand": null,
+    "abgeschnitten_neu": [],
+    "scroll_ueberhang_neu": [],
+    "ueberlauf_neu": [
+     {
+      "art": "ragt-heraus",
+      "tag": "div",
+      "cls": "flex shrink-0 items-center gap-2",
+      "left": 1021,
+      "right": 1514
+     },
+     {
+      "art": "ragt-heraus",
+      "tag": "a",
+      "cls": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 fo",
+      "left": 1306,
+      "right": 1514
+     }
+    ]
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/agb",
+    "ansicht": "m375",
+    "zustand": null,
+    "abgeschnitten_neu": [
+     {
+      "id": 1,
+      "pfad": "main#main-content",
+      "text": "Allgemeine Geschäftsbedingungen (AGB)",
+      "ueberstand": 7,
+      "achse": "x",
+      "lineClamp": false
+     }
+    ],
+    "scroll_ueberhang_neu": [
+     {
+      "id": 1,
+      "pfad": "main#main-content",
+      "dx": 7,
+      "dy": 0
+     }
+    ],
+    "ueberlauf_neu": []
+   }
+  ]
+ },
+ "agb_nachher_dev_4350": {
+  "base": "http://127.0.0.1:4350",
+  "erstellt": "2026-10-12T21:41:17.429Z",
+  "laufzeit_s": 4,
+  "kennzahlen": {
+   "textabstand": {
+    "abgeschnitten_neu": 0,
+    "scroll_ueberhang_neu": 0,
+    "davon_line_clamp": 0,
+    "ueberlauf_neu": 2,
+    "horizontal_neu": 0,
+    "laeufe": 2,
+    "fehler": 0
+   }
+  },
+  "je_seite": {
+   "/agb": {
+    "textabstand": {
+     "abgeschnitten_neu": 0,
+     "scroll_ueberhang_neu": 0,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 2,
+     "horizontal_neu": 0
+    }
+   }
+  },
+  "befunde": [
+   {
+    "pruefung": "textabstand",
+    "seite": "/agb",
+    "ansicht": "d1440",
+    "zustand": null,
+    "abgeschnitten_neu": [],
+    "scroll_ueberhang_neu": [],
+    "ueberlauf_neu": [
+     {
+      "art": "ragt-heraus",
+      "tag": "div",
+      "cls": "flex shrink-0 items-center gap-2",
+      "left": 1021,
+      "right": 1514
+     },
+     {
+      "art": "ragt-heraus",
+      "tag": "a",
+      "cls": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 fo",
+      "left": 1306,
+      "right": 1514
+     }
+    ]
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/agb",
+    "ansicht": "m375",
+    "zustand": null,
+    "abgeschnitten_neu": [],
+    "scroll_ueberhang_neu": [],
+    "ueberlauf_neu": []
+   }
+  ]
+ },
+ "hinweis": "Nachher / d1440 abgelehnt: 1 sprung_rueckwaerts, +1 fokus_verdeckt, +1 fokus_nicht_sichtbar, +1 ohne Outline = Schritt 210 auf script > nextjs-portal (Entwicklungs-Overlay von next dev, im Build nicht vorhanden); sonst gleich. Rechner-Sprung textarea#situation-notes -> input#calc-name entfällt."
+}

@@ -1,0 +1,49 @@
+R-02b · Prüfprotokoll (12.10.2026) · Entwicklung 4350 (Arbeitsbaum), Live 4364 (5be70eb)
+Scratchpad: /tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/r-02b/
+
+1 Typen   flock tsc --noEmit -p .  → exit 0, 0 Zeilen (nach allen Änderungen, tsc3.log)
+2 Lint    npx eslint <5 Dateien>    → exit 0, 0 Fehler, 0 Warnungen
+3 Werte   werte.mjs --dateien <4 Dateien> → befunde gesamt 0; agb/page.jsx → befunde gesamt 0
+4 Altsystem-grep (HEAD → jetzt): PricingCalculator 0→0 · Fachbereiche 2→2 (Datenschlüssel hub.eyebrow, keine Klasse,
+  Fehlalarm wie Tor r01) · untergrund-abdichtung 0→0 · balkonsanierung 0→0 · agb 0→0
+5 Texttreue  texte.mjs r-02b-vorher (4364) / r-02b-nachher (4350), 7 Seiten → texte-vergleich ROT: entfernt 4, hinzu 1,
+  meta 0, seo 0, kaputte Links 0. Alle Zeilen fremd:
+  - /preise main „EMPFOHLENER STANDARD“ → „Empfohlener Standard“ (PriceCard, S-26 2c46ffb seit live)
+  - footer „Cookie-Einstellungen“ fehlt auf 3–4 Seiten je Lauf (wechselnd): Portal-Knopf aus CookieConsent erscheint im
+    Dev-Server erst nach der Hydrierung (gemessen 2,3–4,0 s), Komponente unberührt
+  Überschriften, H1/H2, main-Zeilen, Metadaten, JSON-LD gleich (weiche Trennzeichen normalisiert).
+  /agb (r-02b-agb-nachher gegen belege/s-28-nachher): alles gleich, nur footer „Cookie-Einstellungen“ (Zeitpunkt).
+  Zugängliche Namen: H1 „Allgemeine Geschäftsbedingungen (AGB)“, H2 „Woran Sie einen sanierungsbedürftigen Balkon
+  erkennen“ ohne U+00AD, getByRole exakt je 1 Treffer.
+6 Bilder einzelbild --voll m390,t768,d1440 (4350): / · /untergrund-abdichtung · /balkon-terrasse/balkonsanierung · /agb
+  → alle HTTP 200, Konsole 0, Überlauf 0, Überlappung 0. /untergrund-abdichtung t768 vor dem Registerfix: textkreuzung 1
+  („Verbundabdichtung“ läuft in „Mehr zu … erfahren“) – live 4364 identisch vorhanden → nach Fix 0.
+7 Wortbruch  wortbruch.mjs (320–1920) /,/leistungen,/leistungen/bad,/preise,/faq,/untergrund-abdichtung,
+  /balkon-terrasse/balkonsanierung → 0; /agb → 0
+8 Funktionstests (4350, beide Projekte): funktion-preisrechner + funktion-navigation + funktion-kontaktwege
+  → 121 passed, 13 skipped (mobil/desktop-Ausschlüsse der Specs), 0 failed, 5.5 min, ohne Wiederholung.
+  Hinweis: die Specs „echte Route (Mock-Modus ohne Resend-Schlüssel)“ lassen POST /api/anfrage an den lokalen Dev-Server
+  durch (so gebaut); Fremd-Hosts gesperrt (installSperre).
+9 git status: geändert von R-02b nur die 5 Schreibrechte-Dateien; globals.css, Header.jsx, Leitachse.tsx, Planblatt.tsx,
+  standorte/[stadt]/page.tsx = R-02a; CLAUDE.md fremd.
+
+Aufgabe 1 · Tab-Folge (rechner-tab.mjs; r-02b-tabfolge.json)
+  Textfeld → Name, Δy (Dokument):  vorher live d1440 −927/−928 (/, /leistungen, /leistungen/bad, /preise), −1219 (/faq,
+  live 832 px breit) · nachher d1440 −623 auf allen 5 Seiten (Δx +728, im selben Bildschirm) · m390 vorher = nachher +661.
+  sprung_rueckwaerts (Probe): d1440 5 → 0, m390 0 → 0; 26 Schritte, Reihenfolge der Ziele gleich.
+  a11y-zusatz sprung_rueckwaerts 4 (/ 2, /preise 2) → 0 (+1 Dev-Overlay nextjs-portal nach dem letzten Fußlink).
+  Geometrie (rechner-geometrie.mjs, 52/54 Elemente): m390 0 sichtbare verschoben (nur sr-only Honeypot-Label +24);
+  d1440 linke Spalte 0, rechte Spalte Kontaktteil einheitlich +304 px; Wurzel 1216×1655 gleich. /faq d1440: Dev / = Dev /faq.
+Aufgabe 2 · Sprungziele (sprung.mjs; r-02b-sprungziele.json)
+  /untergrund-abdichtung 15 ids × Adresse/Link × d1440/m390: vorher 44/60 ok, 16 bei 191,6–192,1 px (#din18534,
+  #abbruch, #ausgleich, #rissverharzung) → nachher 60/60 bei 95,5–96,4 px (final). Zwei Zwischenstände im Dev unter Last
+  (m390 Adresse #aufmass-heading, #quality-promise-heading) vor der Hydrierung, von SprungHalter auf 96 gerichtet.
+  / #portal-netzwerk: 192,3 / 191,7 → 96,3 / 95,7 (Adresse und Link, d1440/m390).
+Aufgabe 3 · /balkon-terrasse/balkonsanierung m375 textabstand abgeschnitten_neu 1 → 0 (rechte Kante 378 → 286 px, Hülle 375)
+Aufgabe 4 · /agb m375 textabstand abgeschnitten_neu 1 → 0, scroll_ueberhang_neu 1 → 0 (vorher dev 4350, 7 px)
+a11y-zusatz gesamt (4 Seiten, tastatur 16 + textabstand 8 Läufe; vorher 4364, nachher 4350): Falle 0, Zyklus 0,
+  Sprunglink 0 · fokus_verdeckt 13 → 13 · nicht sichtbar 28 → 28 · unter 2 px 53 → 53 · Ring teilverdeckt 31 → 31 ·
+  textabstand abgeschnitten 1 → 0 · ueberlauf_neu 8 → 8 (je +1 Befund durch nextjs-portal, nur next dev)
+Pixel (r-02b-pixel.json): pixel.mjs / 0·0 (spaet-Abschnitt leer fotografiert), /preise Maße (S-26),
+  /untergrund 37248·24682 px = Abschnitt „Themen im Überblick“ jetzt ohne spaet gezeichnet. Mit gezeichneten
+  spaet-Abschnitten: / m375 0 px, / d1440 152266 px nur in #kosten-rechner (rechte Spalte x 777–1166), /untergrund m375/d1440 0.

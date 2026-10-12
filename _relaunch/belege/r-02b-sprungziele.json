@@ -1,0 +1,3388 @@
+{
+ "paket": "R-02b",
+ "probe": "scratchpad r-02b/sprung.mjs: Oberkante des Ziels unter dem Bildrand nach Sprung per Adresse (#id) bzw. Klick auf eingefügten Link; ruhig = 600 ms stabil, final = nach >= 5 s (Ende SprungHalter); Soll 96 px +- 8; Bewegung no-preference (weicher Sprung)",
+ "vorher_live_4364": {
+  "untergrund": {
+   "base": "http://127.0.0.1:4364",
+   "seite": "/untergrund-abdichtung",
+   "bewegung": "no-preference",
+   "soll": 96,
+   "toleranz": 8,
+   "erstellt": "2026-10-12T20:38:36.226Z",
+   "laeufe": [
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "untergrund-heading",
+     "ruhig": {
+      "top": 96,
+      "y": 79,
+      "max": 10266,
+      "t": 854
+     },
+     "final": {
+      "top": 96,
+      "y": 79,
+      "max": 10266
+     },
+     "sichtbar": true,
+     "h": 122,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "themen-heading",
+     "ruhig": {
+      "top": 95.6,
+      "y": 787,
+      "max": 10266,
+      "t": 988
+     },
+     "final": {
+      "top": 95.6,
+      "y": 787,
+      "max": 10266
+     },
+     "sichtbar": false,
+     "h": 1,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "schaeden-heading",
+     "ruhig": {
+      "top": 96,
+      "y": 1335,
+      "max": 10266,
+      "t": 1243
+     },
+     "final": {
+      "top": 96,
+      "y": 1335,
+      "max": 10266
+     },
+     "sichtbar": true,
+     "h": 123,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "kriterien-heading",
+     "ruhig": {
+      "top": 96,
+      "y": 2146,
+      "max": 10029,
+      "t": 1425
+     },
+     "final": {
+      "top": 96,
+      "y": 2146,
+      "max": 10029
+     },
+     "sichtbar": true,
+     "h": 123,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "din18534",
+     "ruhig": {
+      "top": 191.7,
+      "y": 3554,
+      "max": 9450,
+      "t": 1250
+     },
+     "final": {
+      "top": 191.7,
+      "y": 3554,
+      "max": 9450
+     },
+     "sichtbar": true,
+     "h": 237,
+     "spaetVorfahr": true,
+     "scrollMargin": "96px",
+     "status_ruhig": "abweichung",
+     "status_final": "abweichung",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "abbruch",
+     "ruhig": {
+      "top": 191.7,
+      "y": 3554,
+      "max": 9450,
+      "t": 1363
+     },
+     "final": {
+      "top": 191.7,
+      "y": 3554,
+      "max": 9450
+     },
+     "sichtbar": true,
+     "h": 237,
+     "spaetVorfahr": true,
+     "scrollMargin": "96px",
+     "status_ruhig": "abweichung",
+     "status_final": "abweichung",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "ausgleich",
+     "ruhig": {
+      "top": 191.6,
+      "y": 3856,
+      "max": 9012,
+      "t": 1576
+     },
+     "final": {
+      "top": 191.6,
+      "y": 3856,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 196,
+     "spaetVorfahr": true,
+     "scrollMargin": "96px",
+     "status_ruhig": "abweichung",
+     "status_final": "abweichung",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "rissverharzung",
+     "ruhig": {
+      "top": 191.6,
+      "y": 3856,
+      "max": 9012,
+      "t": 1375
+     },
+     "final": {
+      "top": 191.6,
+      "y": 3856,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 196,
+     "spaetVorfahr": true,
+     "scrollMargin": "96px",
+     "status_ruhig": "abweichung",
+     "status_final": "abweichung",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "untergruende-heading",
+     "ruhig": {
+      "top": 95.7,
+      "y": 4410,
+      "max": 9012,
+      "t": 1316
+     },
+     "final": {
+      "top": 95.7,
+      "y": 4410,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 123,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "aufmass-heading",
+     "ruhig": {
+      "top": 95.7,
+      "y": 5218,
+      "max": 9012,
+      "t": 1465
+     },
+     "final": {
+      "top": 95.7,
+      "y": 5218,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 123,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "ratgeber-heading",
+     "ruhig": {
+      "top": 95.5,
+      "y": 5779,
+      "max": 9012,
+      "t": 1413
+     },
+     "final": {
+      "top": 95.5,
+      "y": 5779,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 123,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "qualitaet",
+     "ruhig": {
+      "top": 95.8,
+      "y": 6237,
+      "max": 9012,
+      "t": 1278
+     },
+     "final": {
+      "top": 95.8,
+      "y": 6237,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 1490,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "quality-promise-heading",
+     "ruhig": {
+      "top": 96.3,
+      "y": 6370,
+      "max": 9012,
+      "t": 1662
+     },
+     "final": {
+      "top": 96.3,
+      "y": 6370,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 184,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "final-cta-heading",
+     "ruhig": {
+      "top": 96.4,
+      "y": 7904,
+      "max": 9012,
+      "t": 1163
+     },
+     "final": {
+      "top": 96.4,
+      "y": 7904,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 245,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "seitenindex",
+     "ruhig": {
+      "top": 95.8,
+      "y": 8857,
+      "max": 9012,
+      "t": 1316
+     },
+     "final": {
+      "top": 95.8,
+      "y": 8857,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 765,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "untergrund-heading",
+     "ruhig": {
+      "top": 96,
+      "y": 79,
+      "max": 10266,
+      "t": 812
+     },
+     "final": {
+      "top": 96,
+      "y": 79,
+      "max": 10266
+     },
+     "sichtbar": true,
+     "h": 122,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "themen-heading",
+     "ruhig": {
+      "top": 95.6,
+      "y": 787,
+      "max": 10266,
+      "t": 1121
+     },
+     "final": {
+      "top": 95.6,
+      "y": 787,
+      "max": 10266
+     },
+     "sichtbar": false,
+     "h": 1,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "schaeden-heading",
+     "ruhig": {
+      "top": 96,
+      "y": 1335,
+      "max": 10266,
+      "t": 1239
+     },
+     "final": {
+      "top": 96,
+      "y": 1335,
+      "max": 10266
+     },
+     "sichtbar": true,
+     "h": 123,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "kriterien-heading",
+     "ruhig": {
+      "top": 96,
+      "y": 2146,
+      "max": 10029,
+      "t": 1346
+     },
+     "final": {
+      "top": 96,
+      "y": 2146,
+      "max": 10029
+     },
+     "sichtbar": true,
+     "h": 123,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "din18534",
+     "ruhig": {
+      "top": 191.7,
+      "y": 3554,
+      "max": 9450,
+      "t": 1116
+     },
+     "final": {
+      "top": 191.7,
+      "y": 3554,
+      "max": 9450
+     },
+     "sichtbar": true,
+     "h": 237,
+     "spaetVorfahr": true,
+     "scrollMargin": "96px",
+     "status_ruhig": "abweichung",
+     "status_final": "abweichung",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "abbruch",
+     "ruhig": {
+      "top": 191.7,
+      "y": 3554,
+      "max": 9450,
+      "t": 1349
+     },
+     "final": {
+      "top": 191.7,
+      "y": 3554,
+      "max": 9450
+     },
+     "sichtbar": true,
+     "h": 237,
+     "spaetVorfahr": true,
+     "scrollMargin": "96px",
+     "status_ruhig": "abweichung",
+     "status_final": "abweichung",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "ausgleich",
+     "ruhig": {
+      "top": 191.6,
+      "y": 3856,
+      "max": 9012,
+      "t": 1094
+     },
+     "final": {
+      "top": 191.6,
+      "y": 3856,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 196,
+     "spaetVorfahr": true,
+     "scrollMargin": "96px",
+     "status_ruhig": "abweichung",
+     "status_final": "abweichung",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "rissverharzung",
+     "ruhig": {
+      "top": 191.6,
+      "y": 3856,
+      "max": 9012,
+      "t": 1364
+     },
+     "final": {
+      "top": 191.6,
+      "y": 3856,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 196,
+     "spaetVorfahr": true,
+     "scrollMargin": "96px",
+     "status_ruhig": "abweichung",
+     "status_final": "abweichung",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "untergruende-heading",
+     "ruhig": {
+      "top": 95.7,
+      "y": 4410,
+      "max": 9012,
+      "t": 1401
+     },
+     "final": {
+      "top": 95.7,
+      "y": 4410,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 123,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "aufmass-heading",
+     "ruhig": {
+      "top": 95.7,
+      "y": 5218,
+      "max": 9012,
+      "t": 1443
+     },
+     "final": {
+      "top": 95.7,
+      "y": 5218,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 123,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "ratgeber-heading",
+     "ruhig": {
+      "top": 95.5,
+      "y": 5779,
+      "max": 9012,
+      "t": 1368
+     },
+     "final": {
+      "top": 95.5,
+      "y": 5779,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 123,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "qualitaet",
+     "ruhig": {
+      "top": 95.8,
+      "y": 6237,
+      "max": 9012,
+      "t": 1458
+     },
+     "final": {
+      "top": 95.8,
+      "y": 6237,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 1490,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "quality-promise-heading",
+     "ruhig": {
+      "top": 96.3,
+      "y": 6370,
+      "max": 9012,
+      "t": 1512
+     },
+     "final": {
+      "top": 96.3,
+      "y": 6370,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 184,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "final-cta-heading",
+     "ruhig": {
+      "top": 96.4,
+      "y": 7904,
+      "max": 9012,
+      "t": 1415
+     },
+     "final": {
+      "top": 96.4,
+      "y": 7904,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 245,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "seitenindex",
+     "ruhig": {
+      "top": 95.8,
+      "y": 8857,
+      "max": 9012,
+      "t": 1385
+     },
+     "final": {
+      "top": 95.8,
+      "y": 8857,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 765,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "untergrund-heading",
+     "ruhig": {
+      "top": 95.5,
+      "y": 46,
+      "max": 13824,
+      "t": 647
+     },
+     "final": {
+      "top": 95.5,
+      "y": 46,
+      "max": 13824
+     },
+     "sichtbar": true,
+     "h": 108,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "themen-heading",
+     "ruhig": {
+      "top": 96,
+      "y": 1312,
+      "max": 14855,
+      "t": 1301
+     },
+     "final": {
+      "top": 96,
+      "y": 1312,
+      "max": 14855
+     },
+     "sichtbar": false,
+     "h": 1,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "schaeden-heading",
+     "ruhig": {
+      "top": 95.5,
+      "y": 2100,
+      "max": 14855,
+      "t": 1357
+     },
+     "final": {
+      "top": 95.5,
+      "y": 2100,
+      "max": 14855
+     },
+     "sichtbar": true,
+     "h": 72,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "kriterien-heading",
+     "ruhig": {
+      "top": 95.6,
+      "y": 3244,
+      "max": 15261,
+      "t": 1365
+     },
+     "final": {
+      "top": 95.6,
+      "y": 3244,
+      "max": 15261
+     },
+     "sichtbar": true,
+     "h": 72,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "din18534",
+     "ruhig": {
+      "top": 192.1,
+      "y": 4881,
+      "max": 15269,
+      "t": 1259
+     },
+     "final": {
+      "top": 192.1,
+      "y": 4881,
+      "max": 15269
+     },
+     "sichtbar": true,
+     "h": 275,
+     "spaetVorfahr": true,
+     "scrollMargin": "96px",
+     "status_ruhig": "abweichung",
+     "status_final": "abweichung",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "abbruch",
+     "ruhig": {
+      "top": 191.5,
+      "y": 5206,
+      "max": 14987,
+      "t": 1362
+     },
+     "final": {
+      "top": 191.5,
+      "y": 5206,
+      "max": 14987
+     },
+     "sichtbar": true,
+     "h": 229,
+     "spaetVorfahr": true,
+     "scrollMargin": "96px",
+     "status_ruhig": "abweichung",
+     "status_final": "abweichung",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "ausgleich",
+     "ruhig": {
+      "top": 192.4,
+      "y": 5483,
+      "max": 14987,
+      "t": 1358
+     },
+     "final": {
+      "top": 192.4,
+      "y": 5483,
+      "max": 14987
+     },
+     "sichtbar": true,
+     "h": 252,
+     "spaetVorfahr": true,
+     "scrollMargin": "96px",
+     "status_ruhig": "abweichung",
+     "status_final": "abweichung",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "rissverharzung",
+     "ruhig": {
+      "top": 191.5,
+      "y": 5785,
+      "max": 14987,
+      "t": 1348
+     },
+     "final": {
+      "top": 191.5,
+      "y": 5785,
+      "max": 14987
+     },
+     "sichtbar": true,
+     "h": 252,
+     "spaetVorfahr": true,
+     "scrollMargin": "96px",
+     "status_ruhig": "abweichung",
+     "status_final": "abweichung",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "untergruende-heading",
+     "ruhig": {
+      "top": 96.4,
+      "y": 6322,
+      "max": 14613,
+      "t": 1152
+     },
+     "final": {
+      "top": 96.4,
+      "y": 6322,
+      "max": 14613
+     },
+     "sichtbar": true,
+     "h": 72,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "aufmass-heading",
+     "ruhig": {
+      "top": 96,
+      "y": 7260,
+      "max": 14613,
+      "t": 1091
+     },
+     "final": {
+      "top": 96,
+      "y": 7260,
+      "max": 14613
+     },
+     "sichtbar": true,
+     "h": 72,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "ratgeber-heading",
+     "ruhig": {
+      "top": 95.5,
+      "y": 7870,
+      "max": 14613,
+      "t": 1331
+     },
+     "final": {
+      "top": 95.5,
+      "y": 7870,
+      "max": 14613
+     },
+     "sichtbar": true,
+     "h": 72,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "qualitaet",
+     "ruhig": {
+      "top": 95.5,
+      "y": 8360,
+      "max": 14613,
+      "t": 1062
+     },
+     "final": {
+      "top": 95.5,
+      "y": 8360,
+      "max": 14613
+     },
+     "sichtbar": true,
+     "h": 2138,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "quality-promise-heading",
+     "ruhig": {
+      "top": 95.6,
+      "y": 8479,
+      "max": 14613,
+      "t": 1139
+     },
+     "final": {
+      "top": 95.6,
+      "y": 8479,
+      "max": 14613
+     },
+     "sichtbar": true,
+     "h": 107,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "final-cta-heading",
+     "ruhig": {
+      "top": 96.2,
+      "y": 10611,
+      "max": 14613,
+      "t": 1174
+     },
+     "final": {
+      "top": 96.2,
+      "y": 10611,
+      "max": 14613
+     },
+     "sichtbar": true,
+     "h": 179,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "seitenindex",
+     "ruhig": {
+      "top": 95.8,
+      "y": 13360,
+      "max": 14987,
+      "t": 946
+     },
+     "final": {
+      "top": 95.8,
+      "y": 13360,
+      "max": 14987
+     },
+     "sichtbar": true,
+     "h": 1992,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "untergrund-heading",
+     "ruhig": {
+      "top": 95.5,
+      "y": 46,
+      "max": 13824,
+      "t": 716
+     },
+     "final": {
+      "top": 95.5,
+      "y": 46,
+      "max": 13824
+     },
+     "sichtbar": true,
+     "h": 108,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "themen-heading",
+     "ruhig": {
+      "top": 96,
+      "y": 1312,
+      "max": 14855,
+      "t": 1278
+     },
+     "final": {
+      "top": 96,
+      "y": 1312,
+      "max": 14855
+     },
+     "sichtbar": false,
+     "h": 1,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "schaeden-heading",
+     "ruhig": {
+      "top": 95.5,
+      "y": 2100,
+      "max": 14855,
+      "t": 1364
+     },
+     "final": {
+      "top": 95.5,
+      "y": 2100,
+      "max": 14855
+     },
+     "sichtbar": true,
+     "h": 72,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "kriterien-heading",
+     "ruhig": {
+      "top": 95.6,
+      "y": 3244,
+      "max": 15261,
+      "t": 1363
+     },
+     "final": {
+      "top": 95.6,
+      "y": 3244,
+      "max": 15261
+     },
+     "sichtbar": true,
+     "h": 72,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "din18534",
+     "ruhig": {
+      "top": 192.1,
+      "y": 4881,
+      "max": 15269,
+      "t": 1377
+     },
+     "final": {
+      "top": 192.1,
+      "y": 4881,
+      "max": 15269
+     },
+     "sichtbar": true,
+     "h": 275,
+     "spaetVorfahr": true,
+     "scrollMargin": "96px",
+     "status_ruhig": "abweichung",
+     "status_final": "abweichung",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "abbruch",
+     "ruhig": {
+      "top": 191.5,
+      "y": 5206,
+      "max": 14987,
+      "t": 1298
+     },
+     "final": {
+      "top": 191.5,
+      "y": 5206,
+      "max": 14987
+     },
+     "sichtbar": true,
+     "h": 229,
+     "spaetVorfahr": true,
+     "scrollMargin": "96px",
+     "status_ruhig": "abweichung",
+     "status_final": "abweichung",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "ausgleich",
+     "ruhig": {
+      "top": 192.4,
+      "y": 5483,
+      "max": 14987,
+      "t": 1434
+     },
+     "final": {
+      "top": 192.4,
+      "y": 5483,
+      "max": 14987
+     },
+     "sichtbar": true,
+     "h": 252,
+     "spaetVorfahr": true,
+     "scrollMargin": "96px",
+     "status_ruhig": "abweichung",
+     "status_final": "abweichung",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "rissverharzung",
+     "ruhig": {
+      "top": 191.5,
+      "y": 5785,
+      "max": 14987,
+      "t": 1453
+     },
+     "final": {
+      "top": 191.5,
+      "y": 5785,
+      "max": 14987
+     },
+     "sichtbar": true,
+     "h": 252,
+     "spaetVorfahr": true,
+     "scrollMargin": "96px",
+     "status_ruhig": "abweichung",
+     "status_final": "abweichung",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "untergruende-heading",
+     "ruhig": {
+      "top": 96.4,
+      "y": 6322,
+      "max": 14613,
+      "t": 1322
+     },
+     "final": {
+      "top": 96.4,
+      "y": 6322,
+      "max": 14613
+     },
+     "sichtbar": true,
+     "h": 72,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "aufmass-heading",
+     "ruhig": {
+      "top": 96,
+      "y": 7260,
+      "max": 14613,
+      "t": 1386
+     },
+     "final": {
+      "top": 96,
+      "y": 7260,
+      "max": 14613
+     },
+     "sichtbar": true,
+     "h": 72,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "ratgeber-heading",
+     "ruhig": {
+      "top": 95.5,
+      "y": 7870,
+      "max": 14613,
+      "t": 1436
+     },
+     "final": {
+      "top": 95.5,
+      "y": 7870,
+      "max": 14613
+     },
+     "sichtbar": true,
+     "h": 72,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "qualitaet",
+     "ruhig": {
+      "top": 95.5,
+      "y": 8360,
+      "max": 14613,
+      "t": 1326
+     },
+     "final": {
+      "top": 95.5,
+      "y": 8360,
+      "max": 14613
+     },
+     "sichtbar": true,
+     "h": 2138,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "quality-promise-heading",
+     "ruhig": {
+      "top": 95.6,
+      "y": 8479,
+      "max": 14613,
+      "t": 1433
+     },
+     "final": {
+      "top": 95.6,
+      "y": 8479,
+      "max": 14613
+     },
+     "sichtbar": true,
+     "h": 107,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "final-cta-heading",
+     "ruhig": {
+      "top": 96.2,
+      "y": 10611,
+      "max": 14613,
+      "t": 1396
+     },
+     "final": {
+      "top": 96.2,
+      "y": 10611,
+      "max": 14613
+     },
+     "sichtbar": true,
+     "h": 179,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "seitenindex",
+     "ruhig": {
+      "top": 95.8,
+      "y": 12986,
+      "max": 14613,
+      "t": 1458
+     },
+     "final": {
+      "top": 95.8,
+      "y": 12986,
+      "max": 14613
+     },
+     "sichtbar": true,
+     "h": 1992,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    }
+   ],
+   "zusammenfassung": {
+    "laeufe": 60,
+    "ok": 44,
+    "seitenende": 0,
+    "abweichung": 16,
+    "ruhig_abweichung": 16
+   }
+  },
+  "start": {
+   "base": "http://127.0.0.1:4364",
+   "seite": "/",
+   "bewegung": "no-preference",
+   "soll": 96,
+   "toleranz": 8,
+   "erstellt": "2026-10-12T20:45:50.070Z",
+   "laeufe": [
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "portal-netzwerk",
+     "ruhig": {
+      "top": 192.3,
+      "y": 2482,
+      "max": 14417,
+      "t": 1326
+     },
+     "final": {
+      "top": 192.3,
+      "y": 2482,
+      "max": 14417
+     },
+     "sichtbar": true,
+     "h": 1407,
+     "spaetVorfahr": true,
+     "scrollMargin": "96px",
+     "status_ruhig": "abweichung",
+     "status_final": "abweichung",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "portal-heading",
+     "ruhig": {
+      "top": 96.3,
+      "y": 2715,
+      "max": 14417,
+      "t": 1393
+     },
+     "final": {
+      "top": 96.3,
+      "y": 2715,
+      "max": 14417
+     },
+     "sichtbar": true,
+     "h": 123,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "kosten-rechner",
+     "ruhig": {
+      "top": 96,
+      "y": 3985,
+      "max": 14417,
+      "t": 1390
+     },
+     "final": {
+      "top": 96,
+      "y": 3985,
+      "max": 14417
+     },
+     "sichtbar": true,
+     "h": 2200,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "portal-netzwerk",
+     "ruhig": {
+      "top": 192.3,
+      "y": 2482,
+      "max": 14417,
+      "t": 1328
+     },
+     "final": {
+      "top": 192.3,
+      "y": 2482,
+      "max": 14417
+     },
+     "sichtbar": true,
+     "h": 1407,
+     "spaetVorfahr": true,
+     "scrollMargin": "96px",
+     "status_ruhig": "abweichung",
+     "status_final": "abweichung",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "portal-heading",
+     "ruhig": {
+      "top": 96.3,
+      "y": 2715,
+      "max": 14417,
+      "t": 1368
+     },
+     "final": {
+      "top": 96.3,
+      "y": 2715,
+      "max": 14417
+     },
+     "sichtbar": true,
+     "h": 123,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "kosten-rechner",
+     "ruhig": {
+      "top": 96,
+      "y": 3985,
+      "max": 14417,
+      "t": 1376
+     },
+     "final": {
+      "top": 96,
+      "y": 3985,
+      "max": 14417
+     },
+     "sichtbar": true,
+     "h": 2200,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "portal-netzwerk",
+     "ruhig": {
+      "top": 191.7,
+      "y": 3973,
+      "max": 18684,
+      "t": 1498
+     },
+     "final": {
+      "top": 191.7,
+      "y": 3973,
+      "max": 18684
+     },
+     "sichtbar": true,
+     "h": 3074,
+     "spaetVorfahr": true,
+     "scrollMargin": "96px",
+     "status_ruhig": "abweichung",
+     "status_final": "abweichung",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "portal-heading",
+     "ruhig": {
+      "top": 95.7,
+      "y": 4174,
+      "max": 18684,
+      "t": 1412
+     },
+     "final": {
+      "top": 95.7,
+      "y": 4174,
+      "max": 18684
+     },
+     "sichtbar": true,
+     "h": 72,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "kosten-rechner",
+     "ruhig": {
+      "top": 95.5,
+      "y": 7143,
+      "max": 21885,
+      "t": 1247
+     },
+     "final": {
+      "top": 95.5,
+      "y": 7143,
+      "max": 21885
+     },
+     "sichtbar": true,
+     "h": 4130,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "portal-netzwerk",
+     "ruhig": {
+      "top": 191.7,
+      "y": 3973,
+      "max": 18684,
+      "t": 1420
+     },
+     "final": {
+      "top": 191.7,
+      "y": 3973,
+      "max": 18684
+     },
+     "sichtbar": true,
+     "h": 3074,
+     "spaetVorfahr": true,
+     "scrollMargin": "96px",
+     "status_ruhig": "abweichung",
+     "status_final": "abweichung",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "portal-heading",
+     "ruhig": {
+      "top": 95.7,
+      "y": 4174,
+      "max": 18684,
+      "t": 1379
+     },
+     "final": {
+      "top": 95.7,
+      "y": 4174,
+      "max": 18684
+     },
+     "sichtbar": true,
+     "h": 72,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "kosten-rechner",
+     "ruhig": {
+      "top": 95.5,
+      "y": 7143,
+      "max": 21885,
+      "t": 1325
+     },
+     "final": {
+      "top": 95.5,
+      "y": 7143,
+      "max": 21885
+     },
+     "sichtbar": true,
+     "h": 4130,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    }
+   ],
+   "zusammenfassung": {
+    "laeufe": 12,
+    "ok": 8,
+    "seitenende": 0,
+    "abweichung": 4,
+    "ruhig_abweichung": 4
+   }
+  }
+ },
+ "nachher_dev_4350": {
+  "untergrund": {
+   "base": "http://127.0.0.1:4350",
+   "seite": "/untergrund-abdichtung",
+   "bewegung": "no-preference",
+   "soll": 96,
+   "toleranz": 8,
+   "erstellt": "2026-10-12T20:47:25.547Z",
+   "laeufe": [
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "untergrund-heading",
+     "ruhig": {
+      "top": 96,
+      "y": 79,
+      "max": 10014,
+      "t": 634
+     },
+     "final": {
+      "top": 96,
+      "y": 79,
+      "max": 10029
+     },
+     "sichtbar": true,
+     "h": 122,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "themen-heading",
+     "ruhig": {
+      "top": 95.6,
+      "y": 787,
+      "max": 10029,
+      "t": 657
+     },
+     "final": {
+      "top": 95.6,
+      "y": 787,
+      "max": 10029
+     },
+     "sichtbar": false,
+     "h": 1,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "schaeden-heading",
+     "ruhig": {
+      "top": 96,
+      "y": 1335,
+      "max": 10014,
+      "t": 609
+     },
+     "final": {
+      "top": 96,
+      "y": 1335,
+      "max": 10029
+     },
+     "sichtbar": true,
+     "h": 123,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "kriterien-heading",
+     "ruhig": {
+      "top": 96,
+      "y": 2146,
+      "max": 10014,
+      "t": 683
+     },
+     "final": {
+      "top": 96,
+      "y": 2146,
+      "max": 10029
+     },
+     "sichtbar": true,
+     "h": 123,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "din18534",
+     "ruhig": {
+      "top": 95.7,
+      "y": 3650,
+      "max": 9012,
+      "t": 658
+     },
+     "final": {
+      "top": 95.7,
+      "y": 3650,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 237,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "abbruch",
+     "ruhig": {
+      "top": 95.7,
+      "y": 3650,
+      "max": 8997,
+      "t": 641
+     },
+     "final": {
+      "top": 95.7,
+      "y": 3650,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 237,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "ausgleich",
+     "ruhig": {
+      "top": 95.6,
+      "y": 3952,
+      "max": 8997,
+      "t": 625
+     },
+     "final": {
+      "top": 95.6,
+      "y": 3952,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 196,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "rissverharzung",
+     "ruhig": {
+      "top": 95.6,
+      "y": 3952,
+      "max": 9012,
+      "t": 646
+     },
+     "final": {
+      "top": 95.6,
+      "y": 3952,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 196,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "untergruende-heading",
+     "ruhig": {
+      "top": 95.7,
+      "y": 4410,
+      "max": 9012,
+      "t": 684
+     },
+     "final": {
+      "top": 95.7,
+      "y": 4410,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 123,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "aufmass-heading",
+     "ruhig": {
+      "top": 95.7,
+      "y": 5218,
+      "max": 9012,
+      "t": 1142
+     },
+     "final": {
+      "top": 95.7,
+      "y": 5218,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 123,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "ratgeber-heading",
+     "ruhig": {
+      "top": 95.5,
+      "y": 5779,
+      "max": 9012,
+      "t": 1208
+     },
+     "final": {
+      "top": 95.5,
+      "y": 5779,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 123,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "qualitaet",
+     "ruhig": {
+      "top": 95.8,
+      "y": 6237,
+      "max": 9012,
+      "t": 1292
+     },
+     "final": {
+      "top": 95.8,
+      "y": 6237,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 1490,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "quality-promise-heading",
+     "ruhig": {
+      "top": 96.3,
+      "y": 6370,
+      "max": 9012,
+      "t": 1173
+     },
+     "final": {
+      "top": 96.3,
+      "y": 6370,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 184,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "final-cta-heading",
+     "ruhig": {
+      "top": 96.1,
+      "y": 8342,
+      "max": 9450,
+      "t": 1226
+     },
+     "final": {
+      "top": 96.1,
+      "y": 8342,
+      "max": 9450
+     },
+     "sichtbar": true,
+     "h": 245,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "seitenindex",
+     "ruhig": {
+      "top": 95.8,
+      "y": 8857,
+      "max": 9012,
+      "t": 1062
+     },
+     "final": {
+      "top": 95.8,
+      "y": 8857,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 765,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "untergrund-heading",
+     "ruhig": {
+      "top": 96,
+      "y": 79,
+      "max": 10029,
+      "t": 806
+     },
+     "final": {
+      "top": 96,
+      "y": 79,
+      "max": 10029
+     },
+     "sichtbar": true,
+     "h": 122,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "themen-heading",
+     "ruhig": {
+      "top": 95.6,
+      "y": 787,
+      "max": 10029,
+      "t": 1126
+     },
+     "final": {
+      "top": 95.6,
+      "y": 787,
+      "max": 10029
+     },
+     "sichtbar": false,
+     "h": 1,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "schaeden-heading",
+     "ruhig": {
+      "top": 96,
+      "y": 1335,
+      "max": 10029,
+      "t": 1181
+     },
+     "final": {
+      "top": 96,
+      "y": 1335,
+      "max": 10029
+     },
+     "sichtbar": true,
+     "h": 123,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "kriterien-heading",
+     "ruhig": {
+      "top": 96,
+      "y": 2146,
+      "max": 10029,
+      "t": 1353
+     },
+     "final": {
+      "top": 96,
+      "y": 2146,
+      "max": 10029
+     },
+     "sichtbar": true,
+     "h": 123,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "din18534",
+     "ruhig": {
+      "top": 95.7,
+      "y": 3650,
+      "max": 9012,
+      "t": 1423
+     },
+     "final": {
+      "top": 95.7,
+      "y": 3650,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 237,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "abbruch",
+     "ruhig": {
+      "top": 95.7,
+      "y": 3650,
+      "max": 9012,
+      "t": 1329
+     },
+     "final": {
+      "top": 95.7,
+      "y": 3650,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 237,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "ausgleich",
+     "ruhig": {
+      "top": 95.6,
+      "y": 3952,
+      "max": 9012,
+      "t": 1372
+     },
+     "final": {
+      "top": 95.6,
+      "y": 3952,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 196,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "rissverharzung",
+     "ruhig": {
+      "top": 95.6,
+      "y": 3952,
+      "max": 9012,
+      "t": 1311
+     },
+     "final": {
+      "top": 95.6,
+      "y": 3952,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 196,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "untergruende-heading",
+     "ruhig": {
+      "top": 95.7,
+      "y": 4410,
+      "max": 9012,
+      "t": 1347
+     },
+     "final": {
+      "top": 95.7,
+      "y": 4410,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 123,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "aufmass-heading",
+     "ruhig": {
+      "top": 95.7,
+      "y": 5218,
+      "max": 9012,
+      "t": 1352
+     },
+     "final": {
+      "top": 95.7,
+      "y": 5218,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 123,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "ratgeber-heading",
+     "ruhig": {
+      "top": 95.5,
+      "y": 5779,
+      "max": 9012,
+      "t": 1416
+     },
+     "final": {
+      "top": 95.5,
+      "y": 5779,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 123,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "qualitaet",
+     "ruhig": {
+      "top": 95.8,
+      "y": 6237,
+      "max": 9012,
+      "t": 1425
+     },
+     "final": {
+      "top": 95.8,
+      "y": 6237,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 1490,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "quality-promise-heading",
+     "ruhig": {
+      "top": 96.3,
+      "y": 6370,
+      "max": 9012,
+      "t": 1319
+     },
+     "final": {
+      "top": 96.3,
+      "y": 6370,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 184,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "final-cta-heading",
+     "ruhig": {
+      "top": 96.4,
+      "y": 7904,
+      "max": 9012,
+      "t": 1411
+     },
+     "final": {
+      "top": 96.4,
+      "y": 7904,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 245,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "seitenindex",
+     "ruhig": {
+      "top": 95.8,
+      "y": 8857,
+      "max": 9012,
+      "t": 1348
+     },
+     "final": {
+      "top": 95.8,
+      "y": 8857,
+      "max": 9012
+     },
+     "sichtbar": true,
+     "h": 765,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "untergrund-heading",
+     "ruhig": {
+      "top": 95.5,
+      "y": 46,
+      "max": 14229,
+      "t": 685
+     },
+     "final": {
+      "top": 95.5,
+      "y": 46,
+      "max": 14229
+     },
+     "sichtbar": true,
+     "h": 108,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "themen-heading",
+     "ruhig": {
+      "top": 96,
+      "y": 1312,
+      "max": 15261,
+      "t": 725
+     },
+     "final": {
+      "top": 96,
+      "y": 1312,
+      "max": 15261
+     },
+     "sichtbar": false,
+     "h": 1,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "schaeden-heading",
+     "ruhig": {
+      "top": 95.5,
+      "y": 2100,
+      "max": 15261,
+      "t": 657
+     },
+     "final": {
+      "top": 95.5,
+      "y": 2100,
+      "max": 15261
+     },
+     "sichtbar": true,
+     "h": 72,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "kriterien-heading",
+     "ruhig": {
+      "top": 95.6,
+      "y": 3244,
+      "max": 15261,
+      "t": 1065
+     },
+     "final": {
+      "top": 95.6,
+      "y": 3244,
+      "max": 15261
+     },
+     "sichtbar": true,
+     "h": 72,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "din18534",
+     "ruhig": {
+      "top": 96.1,
+      "y": 4977,
+      "max": 15269,
+      "t": 951
+     },
+     "final": {
+      "top": 96.1,
+      "y": 4977,
+      "max": 15269
+     },
+     "sichtbar": true,
+     "h": 275,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "abbruch",
+     "ruhig": {
+      "top": 95.5,
+      "y": 5302,
+      "max": 14987,
+      "t": 1064
+     },
+     "final": {
+      "top": 95.5,
+      "y": 5302,
+      "max": 14987
+     },
+     "sichtbar": true,
+     "h": 229,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "ausgleich",
+     "ruhig": {
+      "top": 96.4,
+      "y": 5579,
+      "max": 14987,
+      "t": 1117
+     },
+     "final": {
+      "top": 96.4,
+      "y": 5579,
+      "max": 14987
+     },
+     "sichtbar": true,
+     "h": 252,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "rissverharzung",
+     "ruhig": {
+      "top": 95.5,
+      "y": 5881,
+      "max": 14613,
+      "t": 1169
+     },
+     "final": {
+      "top": 95.5,
+      "y": 5881,
+      "max": 14613
+     },
+     "sichtbar": true,
+     "h": 252,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "untergruende-heading",
+     "ruhig": {
+      "top": 96.4,
+      "y": 6322,
+      "max": 14613,
+      "t": 1148
+     },
+     "final": {
+      "top": 96.4,
+      "y": 6322,
+      "max": 14613
+     },
+     "sichtbar": true,
+     "h": 72,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "aufmass-heading",
+     "ruhig": {
+      "top": 1136,
+      "y": 6220,
+      "max": 14613,
+      "t": 672
+     },
+     "final": {
+      "top": 96,
+      "y": 7260,
+      "max": 14613
+     },
+     "sichtbar": true,
+     "h": 72,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "abweichung",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "ratgeber-heading",
+     "ruhig": {
+      "top": 95.5,
+      "y": 7870,
+      "max": 14613,
+      "t": 1178
+     },
+     "final": {
+      "top": 95.5,
+      "y": 7870,
+      "max": 14613
+     },
+     "sichtbar": true,
+     "h": 72,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "qualitaet",
+     "ruhig": {
+      "top": 95.5,
+      "y": 8360,
+      "max": 14613,
+      "t": 1026
+     },
+     "final": {
+      "top": 95.5,
+      "y": 8360,
+      "max": 14613
+     },
+     "sichtbar": true,
+     "h": 2138,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "quality-promise-heading",
+     "ruhig": {
+      "top": 479.6,
+      "y": 8095,
+      "max": 14613,
+      "t": 689
+     },
+     "final": {
+      "top": 95.6,
+      "y": 8479,
+      "max": 14613
+     },
+     "sichtbar": true,
+     "h": 107,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "abweichung",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "final-cta-heading",
+     "ruhig": {
+      "top": 96.2,
+      "y": 10611,
+      "max": 14613,
+      "t": 1042
+     },
+     "final": {
+      "top": 96.2,
+      "y": 10611,
+      "max": 14613
+     },
+     "sichtbar": true,
+     "h": 179,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "seitenindex",
+     "ruhig": {
+      "top": 96.2,
+      "y": 12977,
+      "max": 14604,
+      "t": 1152
+     },
+     "final": {
+      "top": 96.2,
+      "y": 12977,
+      "max": 14604
+     },
+     "sichtbar": true,
+     "h": 1992,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "untergrund-heading",
+     "ruhig": {
+      "top": 95.5,
+      "y": 46,
+      "max": 14229,
+      "t": 809
+     },
+     "final": {
+      "top": 95.5,
+      "y": 46,
+      "max": 14229
+     },
+     "sichtbar": true,
+     "h": 108,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 1
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "themen-heading",
+     "ruhig": {
+      "top": 96,
+      "y": 1312,
+      "max": 15261,
+      "t": 1209
+     },
+     "final": {
+      "top": 96,
+      "y": 1312,
+      "max": 15261
+     },
+     "sichtbar": false,
+     "h": 1,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "schaeden-heading",
+     "ruhig": {
+      "top": 95.5,
+      "y": 2100,
+      "max": 15261,
+      "t": 1315
+     },
+     "final": {
+      "top": 95.5,
+      "y": 2100,
+      "max": 15261
+     },
+     "sichtbar": true,
+     "h": 72,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "kriterien-heading",
+     "ruhig": {
+      "top": 95.6,
+      "y": 3244,
+      "max": 15261,
+      "t": 1408
+     },
+     "final": {
+      "top": 95.6,
+      "y": 3244,
+      "max": 15261
+     },
+     "sichtbar": true,
+     "h": 72,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "din18534",
+     "ruhig": {
+      "top": 96.1,
+      "y": 4977,
+      "max": 15269,
+      "t": 1419
+     },
+     "final": {
+      "top": 96.1,
+      "y": 4977,
+      "max": 15269
+     },
+     "sichtbar": true,
+     "h": 275,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "abbruch",
+     "ruhig": {
+      "top": 95.5,
+      "y": 5302,
+      "max": 14987,
+      "t": 1430
+     },
+     "final": {
+      "top": 95.5,
+      "y": 5302,
+      "max": 14987
+     },
+     "sichtbar": true,
+     "h": 229,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "ausgleich",
+     "ruhig": {
+      "top": 96.4,
+      "y": 5579,
+      "max": 14987,
+      "t": 1408
+     },
+     "final": {
+      "top": 96.4,
+      "y": 5579,
+      "max": 14987
+     },
+     "sichtbar": true,
+     "h": 252,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "rissverharzung",
+     "ruhig": {
+      "top": 95.5,
+      "y": 5881,
+      "max": 14613,
+      "t": 1414
+     },
+     "final": {
+      "top": 95.5,
+      "y": 5881,
+      "max": 14613
+     },
+     "sichtbar": true,
+     "h": 252,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "untergruende-heading",
+     "ruhig": {
+      "top": 96.4,
+      "y": 6322,
+      "max": 14613,
+      "t": 1409
+     },
+     "final": {
+      "top": 96.4,
+      "y": 6322,
+      "max": 14613
+     },
+     "sichtbar": true,
+     "h": 72,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "aufmass-heading",
+     "ruhig": {
+      "top": 96,
+      "y": 7260,
+      "max": 14613,
+      "t": 1407
+     },
+     "final": {
+      "top": 96,
+      "y": 7260,
+      "max": 14613
+     },
+     "sichtbar": true,
+     "h": 72,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "ratgeber-heading",
+     "ruhig": {
+      "top": 95.5,
+      "y": 7870,
+      "max": 14613,
+      "t": 1413
+     },
+     "final": {
+      "top": 95.5,
+      "y": 7870,
+      "max": 14613
+     },
+     "sichtbar": true,
+     "h": 72,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "qualitaet",
+     "ruhig": {
+      "top": 95.5,
+      "y": 8360,
+      "max": 14613,
+      "t": 1415
+     },
+     "final": {
+      "top": 95.5,
+      "y": 8360,
+      "max": 14613
+     },
+     "sichtbar": true,
+     "h": 2138,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "quality-promise-heading",
+     "ruhig": {
+      "top": 95.6,
+      "y": 8479,
+      "max": 14613,
+      "t": 1406
+     },
+     "final": {
+      "top": 95.6,
+      "y": 8479,
+      "max": 14613
+     },
+     "sichtbar": true,
+     "h": 107,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "final-cta-heading",
+     "ruhig": {
+      "top": 96.2,
+      "y": 10611,
+      "max": 14613,
+      "t": 1414
+     },
+     "final": {
+      "top": 96.2,
+      "y": 10611,
+      "max": 14613
+     },
+     "sichtbar": true,
+     "h": 179,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "seitenindex",
+     "ruhig": {
+      "top": 95.8,
+      "y": 12986,
+      "max": 14613,
+      "t": 1405
+     },
+     "final": {
+      "top": 95.8,
+      "y": 12986,
+      "max": 14613
+     },
+     "sichtbar": true,
+     "h": 1992,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    }
+   ],
+   "zusammenfassung": {
+    "laeufe": 60,
+    "ok": 60,
+    "seitenende": 0,
+    "abweichung": 0,
+    "ruhig_abweichung": 2
+   }
+  },
+  "start": {
+   "base": "http://127.0.0.1:4350",
+   "seite": "/",
+   "bewegung": "no-preference",
+   "soll": 96,
+   "toleranz": 8,
+   "erstellt": "2026-10-12T20:56:02.609Z",
+   "laeufe": [
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "portal-netzwerk",
+     "ruhig": {
+      "top": 96.3,
+      "y": 2578,
+      "max": 14402,
+      "t": 667
+     },
+     "final": {
+      "top": 96.3,
+      "y": 2578,
+      "max": 14417
+     },
+     "sichtbar": true,
+     "h": 1407,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "portal-heading",
+     "ruhig": {
+      "top": 96.3,
+      "y": 2715,
+      "max": 14417,
+      "t": 782
+     },
+     "final": {
+      "top": 96.3,
+      "y": 2715,
+      "max": 14417
+     },
+     "sichtbar": true,
+     "h": 123,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "adresse",
+     "id": "kosten-rechner",
+     "ruhig": {
+      "top": 509,
+      "y": 3572,
+      "max": 15306,
+      "t": 694
+     },
+     "final": {
+      "top": 96,
+      "y": 3985,
+      "max": 15321
+     },
+     "sichtbar": true,
+     "h": 2200,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "abweichung",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "portal-netzwerk",
+     "ruhig": {
+      "top": 96.3,
+      "y": 2578,
+      "max": 14417,
+      "t": 1216
+     },
+     "final": {
+      "top": 96.3,
+      "y": 2578,
+      "max": 14417
+     },
+     "sichtbar": true,
+     "h": 1407,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "portal-heading",
+     "ruhig": {
+      "top": 96.3,
+      "y": 2715,
+      "max": 14417,
+      "t": 1309
+     },
+     "final": {
+      "top": 96.3,
+      "y": 2715,
+      "max": 14417
+     },
+     "sichtbar": true,
+     "h": 123,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "d1440",
+     "weg": "link",
+     "id": "kosten-rechner",
+     "ruhig": {
+      "top": 96,
+      "y": 3985,
+      "max": 14417,
+      "t": 1320
+     },
+     "final": {
+      "top": 96,
+      "y": 3985,
+      "max": 14417
+     },
+     "sichtbar": true,
+     "h": 2200,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "portal-netzwerk",
+     "ruhig": {
+      "top": -145.3,
+      "y": 4310,
+      "max": 18684,
+      "t": 668
+     },
+     "final": {
+      "top": 95.7,
+      "y": 4069,
+      "max": 18684
+     },
+     "sichtbar": true,
+     "h": 3074,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "abweichung",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "portal-heading",
+     "ruhig": {
+      "top": 95.7,
+      "y": 4174,
+      "max": 18684,
+      "t": 1158
+     },
+     "final": {
+      "top": 95.7,
+      "y": 4174,
+      "max": 18684
+     },
+     "sichtbar": true,
+     "h": 72,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "adresse",
+     "id": "kosten-rechner",
+     "ruhig": {
+      "top": 1998.5,
+      "y": 5240,
+      "max": 24307,
+      "t": 626
+     },
+     "final": {
+      "top": 95.5,
+      "y": 7143,
+      "max": 24307
+     },
+     "sichtbar": true,
+     "h": 4130,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "abweichung",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "portal-netzwerk",
+     "ruhig": {
+      "top": 95.7,
+      "y": 4069,
+      "max": 18684,
+      "t": 1409
+     },
+     "final": {
+      "top": 95.7,
+      "y": 4069,
+      "max": 18684
+     },
+     "sichtbar": true,
+     "h": 3074,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "portal-heading",
+     "ruhig": {
+      "top": 95.7,
+      "y": 4174,
+      "max": 18684,
+      "t": 1795
+     },
+     "final": {
+      "top": 95.7,
+      "y": 4174,
+      "max": 18684
+     },
+     "sichtbar": true,
+     "h": 72,
+     "spaetVorfahr": true,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    },
+    {
+     "ansicht": "m390",
+     "weg": "link",
+     "id": "kosten-rechner",
+     "ruhig": {
+      "top": 95.5,
+      "y": 7143,
+      "max": 21885,
+      "t": 1319
+     },
+     "final": {
+      "top": 95.5,
+      "y": 7143,
+      "max": 21885
+     },
+     "sichtbar": true,
+     "h": 4130,
+     "spaetVorfahr": false,
+     "scrollMargin": "0px",
+     "status_ruhig": "ok",
+     "status_final": "ok",
+     "anfragen_lokal_schreibend": 0
+    }
+   ],
+   "zusammenfassung": {
+    "laeufe": 12,
+    "ok": 12,
+    "seitenende": 0,
+    "abweichung": 0,
+    "ruhig_abweichung": 3
+   }
+  }
+ }
+}

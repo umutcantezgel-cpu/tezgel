@@ -20,7 +20,10 @@ export default function AGBPage() {
             <Einstieg
                 art="arbeit"
                 etikett="Geschäftsbedingungen für Werk- und Montageleistungen"
-                titel="Allgemeine Geschäftsbedingungen (AGB)"
+                // &shy; an der Fuge des Kompositums (K-006, Darstellung, Wortlaut gleich; Muster /unternehmen): bei 375 px und
+                // erhöhten Textabständen (WCAG 1.4.12) trennt „Geschäfts-bedingungen“ dort, statt 7 px über den Rand von <main>
+                // zu laufen und beschnitten zu werden (R-02b, Tor e6-e039)
+                titel={<>Allgemeine Geschäfts&shy;bedingungen (AGB)</>}
             />
 
             {/* LESEMODUS: Bedingungen im Satzspiegel, Lesefolge wie im Bestand */}

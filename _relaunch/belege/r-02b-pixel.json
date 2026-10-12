@@ -1,0 +1,1058 @@
+{
+ "paket": "R-02b",
+ "amtlich_pixel_mjs": {
+  "satz": "r-02b-pixel",
+  "a": "http://127.0.0.1:4364",
+  "b": "http://127.0.0.1:4350",
+  "laeufe": 6,
+  "abweichend": 4,
+  "ergebnis": [
+   {
+    "seite": "/",
+    "ansicht": "d1440",
+    "gleich": true,
+    "abweichende_pixel": 0,
+    "flaeche": 23179680
+   },
+   {
+    "seite": "/",
+    "ansicht": "m375",
+    "gleich": true,
+    "abweichende_pixel": 0,
+    "flaeche": 10183125
+   },
+   {
+    "seite": "/preise",
+    "ansicht": "m375",
+    "gleich": false,
+    "grund": "Maße",
+    "a": [
+     375,
+     13341
+    ],
+    "b": [
+     375,
+     13117
+    ]
+   },
+   {
+    "seite": "/preise",
+    "ansicht": "d1440",
+    "gleich": false,
+    "grund": "Maße",
+    "a": [
+     1440,
+     6292
+    ],
+    "b": [
+     1440,
+     6221
+    ]
+   },
+   {
+    "seite": "/untergrund-abdichtung",
+    "ansicht": "d1440",
+    "gleich": false,
+    "abweichende_pixel": 37248,
+    "flaeche": 14273280
+   },
+   {
+    "seite": "/untergrund-abdichtung",
+    "ansicht": "m375",
+    "gleich": false,
+    "abweichende_pixel": 24682,
+    "flaeche": 5898000
+   }
+  ]
+ },
+ "amtlich_hinweis": "pixel.mjs fotografiert spaet-Abschnitte außerhalb des Bildes leer: / gleich, weil #kosten-rechner spaet ist; /untergrund-abdichtung d1440 3747-4230 und m375 5120-6257 = Abschnitt „Themen im Überblick“ (d1440 3617-4372, m375 5027-6359), in B ohne spaet gezeichnet, in A leerer Platzhalter gleicher Höhe; /preise Maße = S-26 (2c46ffb) seit live",
+ "mit_spaet_gezeichnet": {
+  "a": "http://127.0.0.1:4364",
+  "b": "http://127.0.0.1:4350",
+  "erstellt": "2026-10-12T21:15:55.804Z",
+  "bedingungen": "DPR 1, reduce, abgelehnt, durchgescrollt, spaet gezeichnet, WhatsApp maskiert, pixelmatch 0.1",
+  "laeufe": [
+   {
+    "seite": "/",
+    "ansicht": "m375",
+    "a": [
+     375,
+     27155
+    ],
+    "b": [
+     375,
+     27155
+    ],
+    "abweichende_pixel": 0,
+    "baender": []
+   },
+   {
+    "seite": "/",
+    "ansicht": "d1440",
+    "a": [
+     1440,
+     16097
+    ],
+    "b": [
+     1440,
+     16097
+    ],
+    "abweichende_pixel": 152266,
+    "baender": [
+     {
+      "y0": 5034,
+      "y1": 5718,
+      "px": 105662,
+      "bereiche": [
+       "section #kosten-rechner [4081–6281]"
+      ]
+     },
+     {
+      "y0": 5757,
+      "y1": 5928,
+      "px": 9203,
+      "bereiche": [
+       "section #kosten-rechner [4081–6281]"
+      ]
+     },
+     {
+      "y0": 5964,
+      "y1": 6136,
+      "px": 37401,
+      "bereiche": [
+       "section #kosten-rechner [4081–6281]"
+      ]
+     }
+    ]
+   },
+   {
+    "seite": "/preise",
+    "ansicht": "m375",
+    "a": [
+     375,
+     13341
+    ],
+    "b": [
+     375,
+     13117
+    ],
+    "grund": "Maße",
+    "streifen_a": [
+     101,
+     12473
+    ],
+    "streifen_b": [
+     101,
+     12249
+    ],
+    "bereiche_a": [
+     "section Planen Sie ein Fliesen- oder Badprojekt? Sprechen Sie direkt [8384–9387]",
+     "footer footer [9483–13341]"
+    ],
+    "bereiche_b": [
+     "section #leistungspakete [731–3145]",
+     "section #anfrage [3145–7026]",
+     "section Kostenfreies Vor-Ort-Aufmaß [7026–7641]",
+     "section #kostenfragen [7641–8256]",
+     "section Planen Sie ein Fliesen- oder Badprojekt? Sprechen Sie direkt [8256–9259]",
+     "footer footer [9259–13117]"
+    ]
+   },
+   {
+    "seite": "/preise",
+    "ansicht": "d1440",
+    "a": [
+     1440,
+     6292
+    ],
+    "b": [
+     1440,
+     6221
+    ],
+    "grund": "Maße",
+    "streifen_a": [
+     133,
+     6076
+    ],
+    "streifen_b": [
+     133,
+     6005
+    ],
+    "bereiche_a": [
+     "section Planen Sie ein Fliesen- oder Badprojekt? Sprechen Sie direkt [4106–5000]",
+     "footer footer [5096–6292]"
+    ],
+    "bereiche_b": [
+     "section #leistungspakete [598–1626]",
+     "section #anfrage [1626–3411]",
+     "section Kostenfreies Vor-Ort-Aufmaß [3411–3748]",
+     "section #kostenfragen [3748–4132]",
+     "section Planen Sie ein Fliesen- oder Badprojekt? Sprechen Sie direkt [4132–5026]",
+     "footer footer [5026–6221]"
+    ]
+   },
+   {
+    "seite": "/untergrund-abdichtung",
+    "ansicht": "m375",
+    "a": [
+     375,
+     15728
+    ],
+    "b": [
+     375,
+     15728
+    ],
+    "abweichende_pixel": 0,
+    "baender": []
+   },
+   {
+    "seite": "/untergrund-abdichtung",
+    "ansicht": "d1440",
+    "a": [
+     1440,
+     9912
+    ],
+    "b": [
+     1440,
+     9912
+    ],
+    "abweichende_pixel": 0,
+    "baender": []
+   }
+  ]
+ },
+ "untergrund_nach_registerfix": {
+  "a": "http://127.0.0.1:4364",
+  "b": "http://127.0.0.1:4350",
+  "erstellt": "2026-10-12T21:33:31.088Z",
+  "bedingungen": "DPR 1, reduce, abgelehnt, durchgescrollt, spaet gezeichnet, WhatsApp maskiert, pixelmatch 0.1",
+  "laeufe": [
+   {
+    "seite": "/untergrund-abdichtung",
+    "ansicht": "m375",
+    "a": [
+     375,
+     15728
+    ],
+    "b": [
+     375,
+     15728
+    ],
+    "abweichende_pixel": 0,
+    "baender": []
+   },
+   {
+    "seite": "/untergrund-abdichtung",
+    "ansicht": "d1440",
+    "a": [
+     1440,
+     9912
+    ],
+    "b": [
+     1440,
+     9912
+    ],
+    "abweichende_pixel": 0,
+    "baender": []
+   }
+  ]
+ },
+ "rechner_element": {
+  "a": "http://127.0.0.1:4364",
+  "b": "http://127.0.0.1:4350",
+  "laeufe": [
+   {
+    "seite": "/",
+    "ansicht": "m390",
+    "a": [
+     358,
+     3657
+    ],
+    "b": [
+     358,
+     3657
+    ],
+    "rechte_spalte_ab_x": 1,
+    "abweichende_pixel": 0
+   },
+   {
+    "seite": "/",
+    "ansicht": "d1440",
+    "a": [
+     1216,
+     1654
+    ],
+    "b": [
+     1216,
+     1654
+    ],
+    "rechte_spalte_ab_x": 729,
+    "abweichende_pixel": 152266,
+    "lage": {
+     "x0": 777,
+     "x1": 1166,
+     "y0": 503,
+     "y1": 1604
+    },
+    "nur_rechte_spalte": true
+   },
+   {
+    "seite": "/leistungen",
+    "ansicht": "m390",
+    "a": [
+     358,
+     3657
+    ],
+    "b": [
+     358,
+     3657
+    ],
+    "rechte_spalte_ab_x": 1,
+    "abweichende_pixel": 0
+   },
+   {
+    "seite": "/leistungen",
+    "ansicht": "d1440",
+    "a": [
+     1216,
+     1654
+    ],
+    "b": [
+     1216,
+     1654
+    ],
+    "rechte_spalte_ab_x": 729,
+    "abweichende_pixel": 151542,
+    "lage": {
+     "x0": 777,
+     "x1": 1166,
+     "y0": 503,
+     "y1": 1604
+    },
+    "nur_rechte_spalte": true
+   },
+   {
+    "seite": "/leistungen/bad",
+    "ansicht": "m390",
+    "a": [
+     358,
+     3657
+    ],
+    "b": [
+     358,
+     3657
+    ],
+    "rechte_spalte_ab_x": 1,
+    "abweichende_pixel": 0
+   },
+   {
+    "seite": "/leistungen/bad",
+    "ansicht": "d1440",
+    "a": [
+     1216,
+     1654
+    ],
+    "b": [
+     1216,
+     1654
+    ],
+    "rechte_spalte_ab_x": 729,
+    "abweichende_pixel": 152266,
+    "lage": {
+     "x0": 777,
+     "x1": 1166,
+     "y0": 504,
+     "y1": 1605
+    },
+    "nur_rechte_spalte": true
+   },
+   {
+    "seite": "/preise",
+    "ansicht": "m390",
+    "a": [
+     358,
+     3657
+    ],
+    "b": [
+     358,
+     3657
+    ],
+    "rechte_spalte_ab_x": 1,
+    "abweichende_pixel": 36499,
+    "lage": {
+     "x0": 0,
+     "x1": 357,
+     "y0": 0,
+     "y1": 3656
+    },
+    "nur_rechte_spalte": false
+   },
+   {
+    "seite": "/preise",
+    "ansicht": "d1440",
+    "a": [
+     1216,
+     1654
+    ],
+    "b": [
+     1216,
+     1654
+    ],
+    "rechte_spalte_ab_x": 729,
+    "abweichende_pixel": 178348,
+    "lage": {
+     "x0": 49,
+     "x1": 1166,
+     "y0": 156,
+     "y1": 1605
+    },
+    "nur_rechte_spalte": false
+   },
+   {
+    "seite": "/faq",
+    "ansicht": "m390",
+    "a": [
+     358,
+     3657
+    ],
+    "b": [
+     358,
+     3657
+    ],
+    "rechte_spalte_ab_x": 1,
+    "abweichende_pixel": 66125,
+    "lage": {
+     "x0": 0,
+     "x1": 357,
+     "y0": 556,
+     "y1": 3468
+    },
+    "nur_rechte_spalte": false
+   },
+   {
+    "seite": "/faq",
+    "ansicht": "d1440",
+    "a": [
+     832,
+     2178
+    ],
+    "b": [
+     1216,
+     1654
+    ],
+    "rechte_spalte_ab_x": 729,
+    "grund": "Maße"
+   }
+  ]
+ },
+ "rechner_dev_start_gegen_preise": {
+  "a": "http://127.0.0.1:4350",
+  "b": "http://127.0.0.1:4350",
+  "laeufe": [
+   {
+    "seite": "/",
+    "seite_b": "/preise",
+    "ansicht": "m390",
+    "a": [
+     358,
+     3657
+    ],
+    "b": [
+     358,
+     3657
+    ],
+    "rechte_spalte_ab_x": 1,
+    "abweichende_pixel": 31027,
+    "lage": {
+     "x0": 0,
+     "x1": 357,
+     "y0": 0,
+     "y1": 3656
+    },
+    "nur_rechte_spalte": false
+   },
+   {
+    "seite": "/",
+    "seite_b": "/preise",
+    "ansicht": "d1440",
+    "a": [
+     1216,
+     1654
+    ],
+    "b": [
+     1216,
+     1654
+    ],
+    "rechte_spalte_ab_x": 729,
+    "abweichende_pixel": 68714,
+    "lage": {
+     "x0": 1,
+     "x1": 1214,
+     "y0": 54,
+     "y1": 1653
+    },
+    "nur_rechte_spalte": false
+   }
+  ]
+ },
+ "rechner_geometrie_live_gegen_dev": {
+  "a": "http://127.0.0.1:4364",
+  "b": "http://127.0.0.1:4350",
+  "regel": "Lage relativ zur Rechner-Wurzel, auf 0,5 px gerundet; verschoben = |Δx|, |Δy|, |Δw| oder |Δh| > 0,5 px",
+  "laeufe": [
+   {
+    "seite": "/",
+    "seite_b": "/",
+    "ansicht": "m390",
+    "wurzel_a": [
+     358,
+     3657
+    ],
+    "wurzel_b": [
+     358,
+     3657
+    ],
+    "elemente": 52,
+    "fehlt_in_b": 0,
+    "neu_in_b": 0,
+    "verschoben_links": 0,
+    "verschoben_rechts": 1,
+    "dy_rechts": [
+     24
+    ],
+    "beispiele": [
+     {
+      "k": "label:Faxnummer#1",
+      "rechts": true,
+      "dx": 0,
+      "dy": 24,
+      "dw": 0,
+      "dh": 0
+     }
+    ]
+   },
+   {
+    "seite": "/",
+    "seite_b": "/",
+    "ansicht": "d1440",
+    "wurzel_a": [
+     1216,
+     1655
+    ],
+    "wurzel_b": [
+     1216,
+     1655
+    ],
+    "elemente": 54,
+    "fehlt_in_b": 0,
+    "neu_in_b": 0,
+    "verschoben_links": 0,
+    "verschoben_rechts": 15,
+    "dy_rechts": [
+     328,
+     304
+    ],
+    "beispiele": [
+     {
+      "k": "label:Faxnummer#1",
+      "rechts": true,
+      "dx": 0,
+      "dy": 328,
+      "dw": 0,
+      "dh": 0
+     },
+     {
+      "k": "label:Ihr Name *#1",
+      "rechts": true,
+      "dx": 0,
+      "dy": 304,
+      "dw": 0,
+      "dh": 0
+     },
+     {
+      "k": "input:calc-name#1",
+      "rechts": true,
+      "dx": 0,
+      "dy": 304,
+      "dw": 0,
+      "dh": 0
+     },
+     {
+      "k": "label:Telefonnummer *#1",
+      "rechts": true,
+      "dx": 0,
+      "dy": 304,
+      "dw": 0,
+      "dh": 0
+     },
+     {
+      "k": "input:calc-phone#1",
+      "rechts": true,
+      "dx": 0,
+      "dy": 304,
+      "dw": 0,
+      "dh": 0
+     },
+     {
+      "k": "label:E-Mail-Adresse#1",
+      "rechts": true,
+      "dx": 0,
+      "dy": 304,
+      "dw": 0,
+      "dh": 0
+     }
+    ]
+   },
+   {
+    "seite": "/leistungen",
+    "seite_b": "/leistungen",
+    "ansicht": "m390",
+    "wurzel_a": [
+     358,
+     3657
+    ],
+    "wurzel_b": [
+     358,
+     3657
+    ],
+    "elemente": 52,
+    "fehlt_in_b": 0,
+    "neu_in_b": 0,
+    "verschoben_links": 0,
+    "verschoben_rechts": 1,
+    "dy_rechts": [
+     24
+    ],
+    "beispiele": [
+     {
+      "k": "label:Faxnummer#1",
+      "rechts": true,
+      "dx": 0,
+      "dy": 24,
+      "dw": 0,
+      "dh": 0
+     }
+    ]
+   },
+   {
+    "seite": "/leistungen",
+    "seite_b": "/leistungen",
+    "ansicht": "d1440",
+    "wurzel_a": [
+     1216,
+     1655
+    ],
+    "wurzel_b": [
+     1216,
+     1655
+    ],
+    "elemente": 54,
+    "fehlt_in_b": 0,
+    "neu_in_b": 0,
+    "verschoben_links": 0,
+    "verschoben_rechts": 15,
+    "dy_rechts": [
+     328,
+     304
+    ],
+    "beispiele": [
+     {
+      "k": "label:Faxnummer#1",
+      "rechts": true,
+      "dx": 0,
+      "dy": 328,
+      "dw": 0,
+      "dh": 0
+     },
+     {
+      "k": "label:Ihr Name *#1",
+      "rechts": true,
+      "dx": 0,
+      "dy": 304,
+      "dw": 0,
+      "dh": 0
+     },
+     {
+      "k": "input:calc-name#1",
+      "rechts": true,
+      "dx": 0,
+      "dy": 304,
+      "dw": 0,
+      "dh": 0
+     },
+     {
+      "k": "label:Telefonnummer *#1",
+      "rechts": true,
+      "dx": 0,
+      "dy": 304,
+      "dw": 0,
+      "dh": 0
+     },
+     {
+      "k": "input:calc-phone#1",
+      "rechts": true,
+      "dx": 0,
+      "dy": 304,
+      "dw": 0,
+      "dh": 0
+     },
+     {
+      "k": "label:E-Mail-Adresse#1",
+      "rechts": true,
+      "dx": 0,
+      "dy": 304,
+      "dw": 0,
+      "dh": 0
+     }
+    ]
+   },
+   {
+    "seite": "/leistungen/bad",
+    "seite_b": "/leistungen/bad",
+    "ansicht": "m390",
+    "wurzel_a": [
+     358,
+     3657
+    ],
+    "wurzel_b": [
+     358,
+     3657
+    ],
+    "elemente": 52,
+    "fehlt_in_b": 0,
+    "neu_in_b": 0,
+    "verschoben_links": 0,
+    "verschoben_rechts": 1,
+    "dy_rechts": [
+     24
+    ],
+    "beispiele": [
+     {
+      "k": "label:Faxnummer#1",
+      "rechts": true,
+      "dx": 0,
+      "dy": 24,
+      "dw": 0,
+      "dh": 0
+     }
+    ]
+   },
+   {
+    "seite": "/leistungen/bad",
+    "seite_b": "/leistungen/bad",
+    "ansicht": "d1440",
+    "wurzel_a": [
+     1216,
+     1655
+    ],
+    "wurzel_b": [
+     1216,
+     1655
+    ],
+    "elemente": 54,
+    "fehlt_in_b": 0,
+    "neu_in_b": 0,
+    "verschoben_links": 0,
+    "verschoben_rechts": 15,
+    "dy_rechts": [
+     328,
+     304
+    ],
+    "beispiele": [
+     {
+      "k": "label:Faxnummer#1",
+      "rechts": true,
+      "dx": 0,
+      "dy": 328,
+      "dw": 0,
+      "dh": 0
+     },
+     {
+      "k": "label:Ihr Name *#1",
+      "rechts": true,
+      "dx": 0,
+      "dy": 304,
+      "dw": 0,
+      "dh": 0
+     },
+     {
+      "k": "input:calc-name#1",
+      "rechts": true,
+      "dx": 0,
+      "dy": 304,
+      "dw": 0,
+      "dh": 0
+     },
+     {
+      "k": "label:Telefonnummer *#1",
+      "rechts": true,
+      "dx": 0,
+      "dy": 304,
+      "dw": 0,
+      "dh": 0
+     },
+     {
+      "k": "input:calc-phone#1",
+      "rechts": true,
+      "dx": 0,
+      "dy": 304,
+      "dw": 0,
+      "dh": 0
+     },
+     {
+      "k": "label:E-Mail-Adresse#1",
+      "rechts": true,
+      "dx": 0,
+      "dy": 304,
+      "dw": 0,
+      "dh": 0
+     }
+    ]
+   },
+   {
+    "seite": "/preise",
+    "seite_b": "/preise",
+    "ansicht": "m390",
+    "wurzel_a": [
+     358,
+     3657
+    ],
+    "wurzel_b": [
+     358,
+     3657
+    ],
+    "elemente": 52,
+    "fehlt_in_b": 0,
+    "neu_in_b": 0,
+    "verschoben_links": 0,
+    "verschoben_rechts": 1,
+    "dy_rechts": [
+     24
+    ],
+    "beispiele": [
+     {
+      "k": "label:Faxnummer#1",
+      "rechts": true,
+      "dx": 0,
+      "dy": 24,
+      "dw": 0,
+      "dh": 0
+     }
+    ]
+   },
+   {
+    "seite": "/preise",
+    "seite_b": "/preise",
+    "ansicht": "d1440",
+    "wurzel_a": [
+     1216,
+     1655
+    ],
+    "wurzel_b": [
+     1216,
+     1655
+    ],
+    "elemente": 54,
+    "fehlt_in_b": 0,
+    "neu_in_b": 0,
+    "verschoben_links": 0,
+    "verschoben_rechts": 15,
+    "dy_rechts": [
+     328,
+     304
+    ],
+    "beispiele": [
+     {
+      "k": "label:Faxnummer#1",
+      "rechts": true,
+      "dx": 0,
+      "dy": 328,
+      "dw": 0,
+      "dh": 0
+     },
+     {
+      "k": "label:Ihr Name *#1",
+      "rechts": true,
+      "dx": 0,
+      "dy": 304,
+      "dw": 0,
+      "dh": 0
+     },
+     {
+      "k": "input:calc-name#1",
+      "rechts": true,
+      "dx": 0,
+      "dy": 304,
+      "dw": 0,
+      "dh": 0
+     },
+     {
+      "k": "label:Telefonnummer *#1",
+      "rechts": true,
+      "dx": 0,
+      "dy": 304,
+      "dw": 0,
+      "dh": 0
+     },
+     {
+      "k": "input:calc-phone#1",
+      "rechts": true,
+      "dx": 0,
+      "dy": 304,
+      "dw": 0,
+      "dh": 0
+     },
+     {
+      "k": "label:E-Mail-Adresse#1",
+      "rechts": true,
+      "dx": 0,
+      "dy": 304,
+      "dw": 0,
+      "dh": 0
+     }
+    ]
+   },
+   {
+    "seite": "/faq",
+    "seite_b": "/faq",
+    "ansicht": "m390",
+    "wurzel_a": [
+     358,
+     3657
+    ],
+    "wurzel_b": [
+     358,
+     3657
+    ],
+    "elemente": 52,
+    "fehlt_in_b": 0,
+    "neu_in_b": 0,
+    "verschoben_links": 0,
+    "verschoben_rechts": 1,
+    "dy_rechts": [
+     24
+    ],
+    "beispiele": [
+     {
+      "k": "label:Faxnummer#1",
+      "rechts": true,
+      "dx": 0,
+      "dy": 24,
+      "dw": 0,
+      "dh": 0
+     }
+    ]
+   },
+   {
+    "seite": "/faq",
+    "seite_b": "/faq",
+    "ansicht": "d1440",
+    "wurzel_a": [
+     832,
+     2179
+    ],
+    "wurzel_b": [
+     1216,
+     1655
+    ],
+    "elemente": 54,
+    "fehlt_in_b": 0,
+    "neu_in_b": 0,
+    "verschoben_links": 27,
+    "verschoben_rechts": 25,
+    "dy_rechts": [
+     -18,
+     -59.5,
+     -170.5,
+     -158.5,
+     -183.5,
+     -183,
+     -220,
+     -208,
+     95,
+     71,
+     71.5,
+     21.5,
+     -24.5
+    ],
+    "beispiele": [
+     {
+      "k": "ol:1Gewerk2Fläche3Situation#1",
+      "rechts": false,
+      "dx": 0,
+      "dy": 0,
+      "dw": 230.5,
+      "dh": 0
+     },
+     {
+      "k": "li:#1",
+      "rechts": false,
+      "dx": 0,
+      "dy": 0,
+      "dw": 115,
+      "dh": 0
+     },
+     {
+      "k": "li:2Fläche#1",
+      "rechts": false,
+      "dx": 115.5,
+      "dy": 0,
+      "dw": 0,
+      "dh": 0
+     },
+     {
+      "k": "li:#2",
+      "rechts": false,
+      "dx": 115.5,
+      "dy": 0,
+      "dw": 115,
+      "dh": 0
+     },
+     {
+      "k": "li:3Situation#1",
+      "rechts": false,
+      "dx": 230.5,
+      "dy": 0,
+      "dw": 0,
+      "dh": 0
+     },
+     {
+      "k": "button:Badsanierung & Walk-In DuscheSehr gefrag#1",
+      "rechts": false,
+      "dx": 0,
+      "dy": -29,
+      "dw": 115,
+      "dh": -67
+     }
+    ]
+   }
+  ]
+ },
+ "rechner_geometrie_dev_start_gegen_faq": {
+  "a": "http://127.0.0.1:4350",
+  "b": "http://127.0.0.1:4350",
+  "regel": "Lage relativ zur Rechner-Wurzel, auf 0,5 px gerundet; verschoben = |Δx|, |Δy|, |Δw| oder |Δh| > 0,5 px",
+  "laeufe": [
+   {
+    "seite": "/",
+    "seite_b": "/faq",
+    "ansicht": "d1440",
+    "wurzel_a": [
+     1216,
+     1655
+    ],
+    "wurzel_b": [
+     1216,
+     1655
+    ],
+    "elemente": 54,
+    "fehlt_in_b": [],
+    "neu_in_b": [],
+    "verschoben_links": 0,
+    "verschoben_rechts": 0,
+    "dy_rechts": [],
+    "beispiele": []
+   }
+  ]
+ }
+}

@@ -1,0 +1,442 @@
+{
+ "paket": "R-02b",
+ "probe": "scratchpad r-02b/rechner-tab.mjs: Fokus auf erste Gewerk-Schaltfläche, Tab bis der Fokus den Rechner verlässt; sprung_rueckwaerts = nächstes Ziel > 1 Bildschirmhöhe höher (Regel a11y-zusatz); gegen_sichtfolge (streng) = Ziel endet > 1/2 Bildschirmhöhe über dem vorigen",
+ "vorher_live_4364": {
+  "base": "http://127.0.0.1:4364",
+  "erstellt": "2026-10-12T20:31:50.435Z",
+  "laeufe": [
+   {
+    "seite": "/",
+    "ansicht": "d1440",
+    "schritte": 26,
+    "nach_textfeld": {
+     "pfad": "input#calc-name",
+     "dy": -927,
+     "dx": 728
+    },
+    "sprung_rueckwaerts": 1,
+    "sprung": [
+     {
+      "von": "textarea#situation-notes situation-notes",
+      "nach": "input#calc-name calc-name",
+      "dy": -927
+     }
+    ],
+    "gegen_sichtfolge": 1,
+    "fremd_oder_post": 0,
+    "folge": [
+     "button|Badsanierung & Walk-In DuscheSehr gefrag|161,4280",
+     "button|XXL-Großformat (ab 120 cm)SpezialgebietF|481,4280",
+     "button|Wohnraum, Flur & KücheKlassikerFeinstein|161,4855",
+     "button|Balkon, Terrasse & AußenAußenbereichFros|481,4855",
+     "button|DIN 18534 Abdichtung & EstrichZertifizie|161,4993",
+     "button|Reparatur & SchadensbeseitigungSchnellhi|481,4993",
+     "button|Kompakt / Gäste-WCbis ca. 10 m²|161,5236",
+     "button|Standard-Raum / Badca. 10 - 25 m²|321,5236",
+     "button|Großraum / Wohnbereichca. 25 - 50 m²|481,5236",
+     "button|Gesamtes Objekt / Etageab 50 m²|641,5236",
+     "input#calc-custom-area|Quadratmeterzahl manuell eingeben|462,5361",
+     "button|Altfliesen entfernen & entsorgenBestehen|161,5506",
+     "button|Untergrundausgleich / Estrich nötigUnebe|481,5506",
+     "button|Fußbodenheizung vorhanden / geplantVerle|161,5635",
+     "button|Barrierefreier / schwellenloser ZugangBo|481,5635",
+     "button|Staubschutz im bewohnten WohnbereichEins|161,5765",
+     "button|Material- & Fliesenberatung gewünschtUnt|481,5765",
+     "textarea#situation-notes|situation-notes|161,5988",
+     "input#calc-name|calc-name|889,5061",
+     "input#calc-phone|calc-phone|889,5166",
+     "input#calc-email|calc-email|889,5271",
+     "input#calc-location|calc-location|889,5376",
+     "select#calc-timing|Gewünschter Zeitraum|889,5482",
+     "input#calc-privacy|calc-privacy|889,5558",
+     "button|Unverbindliche Anfrage absenden|889,5685",
+     "a|06441 / 44 83 567|889,5781",
+     "-> raus a"
+    ]
+   },
+   {
+    "seite": "/leistungen",
+    "ansicht": "d1440",
+    "schritte": 26,
+    "nach_textfeld": {
+     "pfad": "input#calc-name",
+     "dy": -928,
+     "dx": 728
+    },
+    "sprung_rueckwaerts": 1,
+    "sprung": [
+     {
+      "von": "textarea#situation-notes situation-notes",
+      "nach": "input#calc-name calc-name",
+      "dy": -928
+     }
+    ],
+    "gegen_sichtfolge": 1,
+    "fremd_oder_post": 0
+   },
+   {
+    "seite": "/leistungen/bad",
+    "ansicht": "d1440",
+    "schritte": 26,
+    "nach_textfeld": {
+     "pfad": "input#calc-name",
+     "dy": -927,
+     "dx": 728
+    },
+    "sprung_rueckwaerts": 1,
+    "sprung": [
+     {
+      "von": "textarea#situation-notes situation-notes",
+      "nach": "input#calc-name calc-name",
+      "dy": -927
+     }
+    ],
+    "gegen_sichtfolge": 1,
+    "fremd_oder_post": 0
+   },
+   {
+    "seite": "/preise",
+    "ansicht": "d1440",
+    "schritte": 26,
+    "nach_textfeld": {
+     "pfad": "input#calc-name",
+     "dy": -928,
+     "dx": 728
+    },
+    "sprung_rueckwaerts": 1,
+    "sprung": [
+     {
+      "von": "textarea#situation-notes situation-notes",
+      "nach": "input#calc-name calc-name",
+      "dy": -928
+     }
+    ],
+    "gegen_sichtfolge": 1,
+    "fremd_oder_post": 0
+   },
+   {
+    "seite": "/faq",
+    "ansicht": "d1440",
+    "schritte": 26,
+    "nach_textfeld": {
+     "pfad": "input#calc-name",
+     "dy": -1219,
+     "dx": 498
+    },
+    "sprung_rueckwaerts": 1,
+    "sprung": [
+     {
+      "von": "textarea#situation-notes situation-notes",
+      "nach": "input#calc-name calc-name",
+      "dy": -1219
+     }
+    ],
+    "gegen_sichtfolge": 1,
+    "fremd_oder_post": 0
+   },
+   {
+    "seite": "/",
+    "ansicht": "m390",
+    "schritte": 26,
+    "nach_textfeld": {
+     "pfad": "input#calc-name",
+     "dy": 661,
+     "dx": 0
+    },
+    "sprung_rueckwaerts": 0,
+    "sprung": [],
+    "gegen_sichtfolge": 0,
+    "fremd_oder_post": 0,
+    "folge": [
+     "button|Badsanierung & Walk-In DuscheSehr gefrag|41,5908",
+     "button|XXL-Großformat (ab 120 cm)SpezialgebietF|41,8259",
+     "button|Wohnraum, Flur & KücheKlassikerFeinstein|41,8368",
+     "button|Balkon, Terrasse & AußenAußenbereichFros|41,8476",
+     "button|DIN 18534 Abdichtung & EstrichZertifizie|41,8584",
+     "button|Reparatur & SchadensbeseitigungSchnellhi|41,8716",
+     "button|Kompakt / Gäste-WCbis ca. 10 m²|41,8927",
+     "button|Standard-Raum / Badca. 10 - 25 m²|199,8927",
+     "button|Großraum / Wohnbereichca. 25 - 50 m²|41,9039",
+     "button|Gesamtes Objekt / Etageab 50 m²|199,9039",
+     "input#calc-custom-area|Quadratmeterzahl manuell eingeben|41,9194",
+     "button|Altfliesen entfernen & entsorgenBestehen|41,9335",
+     "button|Untergrundausgleich / Estrich nötigUnebe|41,9435",
+     "button|Fußbodenheizung vorhanden / geplantVerle|41,9536",
+     "button|Barrierefreier / schwellenloser ZugangBo|41,9659",
+     "button|Staubschutz im bewohnten WohnbereichEins|41,9783",
+     "button|Material- & Fliesenberatung gewünschtUnt|41,9906",
+     "textarea#situation-notes|situation-notes|41,10152",
+     "input#calc-name|calc-name|41,10813",
+     "input#calc-phone|calc-phone|41,10913",
+     "input#calc-email|calc-email|41,11014",
+     "input#calc-location|calc-location|41,11115",
+     "select#calc-timing|Gewünschter Zeitraum|41,11215",
+     "input#calc-privacy|calc-privacy|41,11288",
+     "button|Unverbindliche Anfrage absenden|41,11411",
+     "a|06441 / 44 83 567|41,11547",
+     "-> raus summary"
+    ]
+   },
+   {
+    "seite": "/leistungen",
+    "ansicht": "m390",
+    "schritte": 26,
+    "nach_textfeld": {
+     "pfad": "input#calc-name",
+     "dy": 661,
+     "dx": 0
+    },
+    "sprung_rueckwaerts": 0,
+    "sprung": [],
+    "gegen_sichtfolge": 0,
+    "fremd_oder_post": 0
+   },
+   {
+    "seite": "/leistungen/bad",
+    "ansicht": "m390",
+    "schritte": 26,
+    "nach_textfeld": {
+     "pfad": "input#calc-name",
+     "dy": 661,
+     "dx": 0
+    },
+    "sprung_rueckwaerts": 0,
+    "sprung": [],
+    "gegen_sichtfolge": 0,
+    "fremd_oder_post": 0
+   },
+   {
+    "seite": "/preise",
+    "ansicht": "m390",
+    "schritte": 26,
+    "nach_textfeld": {
+     "pfad": "input#calc-name",
+     "dy": 661,
+     "dx": 0
+    },
+    "sprung_rueckwaerts": 0,
+    "sprung": [],
+    "gegen_sichtfolge": 0,
+    "fremd_oder_post": 0
+   },
+   {
+    "seite": "/faq",
+    "ansicht": "m390",
+    "schritte": 26,
+    "nach_textfeld": {
+     "pfad": "input#calc-name",
+     "dy": 661,
+     "dx": 0
+    },
+    "sprung_rueckwaerts": 0,
+    "sprung": [],
+    "gegen_sichtfolge": 0,
+    "fremd_oder_post": 0
+   }
+  ]
+ },
+ "nachher_dev_4350": {
+  "base": "http://127.0.0.1:4350",
+  "erstellt": "2026-10-12T20:41:16.463Z",
+  "laeufe": [
+   {
+    "seite": "/",
+    "ansicht": "d1440",
+    "schritte": 26,
+    "nach_textfeld": {
+     "pfad": "input#calc-name",
+     "dy": -623,
+     "dx": 728
+    },
+    "sprung_rueckwaerts": 0,
+    "sprung": [],
+    "gegen_sichtfolge": 1,
+    "fremd_oder_post": 1,
+    "folge": [
+     "button|Badsanierung & Walk-In DuscheSehr gefrag|161,4692",
+     "button|XXL-Großformat (ab 120 cm)SpezialgebietF|481,4692",
+     "button|Wohnraum, Flur & KücheKlassikerFeinstein|161,4855",
+     "button|Balkon, Terrasse & AußenAußenbereichFros|481,4855",
+     "button|DIN 18534 Abdichtung & EstrichZertifizie|161,4993",
+     "button|Reparatur & SchadensbeseitigungSchnellhi|481,4993",
+     "button|Kompakt / Gäste-WCbis ca. 10 m²|161,5236",
+     "button|Standard-Raum / Badca. 10 - 25 m²|321,5236",
+     "button|Großraum / Wohnbereichca. 25 - 50 m²|481,5236",
+     "button|Gesamtes Objekt / Etageab 50 m²|641,5236",
+     "input#calc-custom-area|Quadratmeterzahl manuell eingeben|462,5361",
+     "button|Altfliesen entfernen & entsorgenBestehen|161,5506",
+     "button|Untergrundausgleich / Estrich nötigUnebe|481,5506",
+     "button|Fußbodenheizung vorhanden / geplantVerle|161,5635",
+     "button|Barrierefreier / schwellenloser ZugangBo|481,5635",
+     "button|Staubschutz im bewohnten WohnbereichEins|161,5765",
+     "button|Material- & Fliesenberatung gewünschtUnt|481,5765",
+     "textarea#situation-notes|situation-notes|161,5988",
+     "input#calc-name|calc-name|889,5365",
+     "input#calc-phone|calc-phone|889,5470",
+     "input#calc-email|calc-email|889,5575",
+     "input#calc-location|calc-location|889,5680",
+     "select#calc-timing|Gewünschter Zeitraum|889,5786",
+     "input#calc-privacy|calc-privacy|889,5862",
+     "button|Unverbindliche Anfrage absenden|889,5989",
+     "a|06441 / 44 83 567|889,6085",
+     "-> raus a"
+    ]
+   },
+   {
+    "seite": "/leistungen",
+    "ansicht": "d1440",
+    "schritte": 26,
+    "nach_textfeld": {
+     "pfad": "input#calc-name",
+     "dy": -624,
+     "dx": 728
+    },
+    "sprung_rueckwaerts": 0,
+    "sprung": [],
+    "gegen_sichtfolge": 1,
+    "fremd_oder_post": 1
+   },
+   {
+    "seite": "/leistungen/bad",
+    "ansicht": "d1440",
+    "schritte": 26,
+    "nach_textfeld": {
+     "pfad": "input#calc-name",
+     "dy": -623,
+     "dx": 728
+    },
+    "sprung_rueckwaerts": 0,
+    "sprung": [],
+    "gegen_sichtfolge": 1,
+    "fremd_oder_post": 1
+   },
+   {
+    "seite": "/preise",
+    "ansicht": "d1440",
+    "schritte": 26,
+    "nach_textfeld": {
+     "pfad": "input#calc-name",
+     "dy": -623,
+     "dx": 728
+    },
+    "sprung_rueckwaerts": 0,
+    "sprung": [],
+    "gegen_sichtfolge": 1,
+    "fremd_oder_post": 0
+   },
+   {
+    "seite": "/faq",
+    "ansicht": "d1440",
+    "schritte": 26,
+    "nach_textfeld": {
+     "pfad": "input#calc-name",
+     "dy": -623,
+     "dx": 728
+    },
+    "sprung_rueckwaerts": 0,
+    "sprung": [],
+    "gegen_sichtfolge": 1,
+    "fremd_oder_post": 0
+   },
+   {
+    "seite": "/",
+    "ansicht": "m390",
+    "schritte": 26,
+    "nach_textfeld": {
+     "pfad": "input#calc-name",
+     "dy": 661,
+     "dx": 0
+    },
+    "sprung_rueckwaerts": 0,
+    "sprung": [],
+    "gegen_sichtfolge": 0,
+    "fremd_oder_post": 1,
+    "folge": [
+     "button|Badsanierung & Walk-In DuscheSehr gefrag|41,5908",
+     "button|XXL-Großformat (ab 120 cm)SpezialgebietF|41,8259",
+     "button|Wohnraum, Flur & KücheKlassikerFeinstein|41,8368",
+     "button|Balkon, Terrasse & AußenAußenbereichFros|41,8476",
+     "button|DIN 18534 Abdichtung & EstrichZertifizie|41,8584",
+     "button|Reparatur & SchadensbeseitigungSchnellhi|41,8716",
+     "button|Kompakt / Gäste-WCbis ca. 10 m²|41,8927",
+     "button|Standard-Raum / Badca. 10 - 25 m²|199,8927",
+     "button|Großraum / Wohnbereichca. 25 - 50 m²|41,9039",
+     "button|Gesamtes Objekt / Etageab 50 m²|199,9039",
+     "input#calc-custom-area|Quadratmeterzahl manuell eingeben|41,9194",
+     "button|Altfliesen entfernen & entsorgenBestehen|41,9335",
+     "button|Untergrundausgleich / Estrich nötigUnebe|41,9435",
+     "button|Fußbodenheizung vorhanden / geplantVerle|41,9536",
+     "button|Barrierefreier / schwellenloser ZugangBo|41,9659",
+     "button|Staubschutz im bewohnten WohnbereichEins|41,9783",
+     "button|Material- & Fliesenberatung gewünschtUnt|41,9906",
+     "textarea#situation-notes|situation-notes|41,10152",
+     "input#calc-name|calc-name|41,10813",
+     "input#calc-phone|calc-phone|41,10913",
+     "input#calc-email|calc-email|41,11014",
+     "input#calc-location|calc-location|41,11115",
+     "select#calc-timing|Gewünschter Zeitraum|41,11215",
+     "input#calc-privacy|calc-privacy|41,11288",
+     "button|Unverbindliche Anfrage absenden|41,11411",
+     "a|06441 / 44 83 567|41,11547",
+     "-> raus summary"
+    ]
+   },
+   {
+    "seite": "/leistungen",
+    "ansicht": "m390",
+    "schritte": 26,
+    "nach_textfeld": {
+     "pfad": "input#calc-name",
+     "dy": 661,
+     "dx": 0
+    },
+    "sprung_rueckwaerts": 0,
+    "sprung": [],
+    "gegen_sichtfolge": 0,
+    "fremd_oder_post": 0
+   },
+   {
+    "seite": "/leistungen/bad",
+    "ansicht": "m390",
+    "schritte": 26,
+    "nach_textfeld": {
+     "pfad": "input#calc-name",
+     "dy": 661,
+     "dx": 0
+    },
+    "sprung_rueckwaerts": 0,
+    "sprung": [],
+    "gegen_sichtfolge": 0,
+    "fremd_oder_post": 0
+   },
+   {
+    "seite": "/preise",
+    "ansicht": "m390",
+    "schritte": 26,
+    "nach_textfeld": {
+     "pfad": "input#calc-name",
+     "dy": 661,
+     "dx": 0
+    },
+    "sprung_rueckwaerts": 0,
+    "sprung": [],
+    "gegen_sichtfolge": 0,
+    "fremd_oder_post": 0
+   },
+   {
+    "seite": "/faq",
+    "ansicht": "m390",
+    "schritte": 26,
+    "nach_textfeld": {
+     "pfad": "input#calc-name",
+     "dy": 661,
+     "dx": 0
+    },
+    "sprung_rueckwaerts": 0,
+    "sprung": [],
+    "gegen_sichtfolge": 0,
+    "fremd_oder_post": 0
+   }
+  ]
+ }
+}

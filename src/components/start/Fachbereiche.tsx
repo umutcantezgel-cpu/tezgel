@@ -58,11 +58,12 @@ function Linkliste({ links }: { links: PortalLink[] }) {
 }
 
 export default function Fachbereiche() {
+  // Anker ohne eigenes scroll-margin: allein scroll-padding-top (globals.css) setzt ihn auf 96 px (R-01a, R-02b)
   return (
     <section
       id="portal-netzwerk"
       aria-labelledby="portal-heading"
-      className="spaet-zeichnen relative scroll-mt-24 border-y border-fuge bg-fliese py-16 lg:py-24"
+      className="spaet-zeichnen relative border-y border-fuge bg-fliese py-16 lg:py-24"
     >
       <div className={seitenKlassen}>
         {/* Kopf über volle Breite: Titel links, Einleitung rechts */}

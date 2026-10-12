@@ -1,0 +1,50 @@
+{
+ "vorher": "r-02b-vorher",
+ "nachher": "r-02b-nachher",
+ "seiten": {
+  "/leistungen/bad": {
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  },
+  "/preise": {
+   "main_zeilen": {
+    "entfernt": [
+     "EMPFOHLENER STANDARD"
+    ],
+    "hinzu": [
+     "Empfohlener Standard"
+    ]
+   },
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  },
+  "/untergrund-abdichtung": {
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  }
+ },
+ "summe": {
+  "entfernt": 4,
+  "hinzu": 1,
+  "meta": 0,
+  "seo": 0
+ },
+ "sitemap": {
+  "entfernt": [],
+  "hinzu": []
+ },
+ "robots_geaendert": false,
+ "kaputte_links": []
+}

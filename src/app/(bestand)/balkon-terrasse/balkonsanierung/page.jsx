@@ -162,7 +162,10 @@ export default function BalkonsanierungPage() {
                     leitachse
                     spaet
                     etikett="Schadensbilder"
-                    titel="Woran Sie einen sanierungsbedürftigen Balkon erkennen"
+                    // &shy; an der Fuge des Kompositums (K-006, Darstellung, Wortlaut gleich; Muster /unternehmen): bei 375 px
+                    // und erhöhten Textabständen (WCAG 1.4.12) trennt „sanierungs-bedürftigen“ dort, statt 3 px über den Rand
+                    // der spaet-Hülle zu laufen und beschnitten zu werden (R-02b)
+                    titel={<>Woran Sie einen sanierungs&shy;bedürftigen Balkon erkennen</>}
                 >
                     <Feldraster spalten={3}>
                         {DAMAGE.map((item) => (
