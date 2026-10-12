@@ -1,24 +1,27 @@
 import Link from 'next/link';
 import Icon from '@/components/icons/Icon';
 import Hinweis from '@/components/kern/Hinweis';
-import { hilfeKlassen, knopfKlassen, kontrollKlassen, labelKlassen, pflichtKlassen } from '@/components/kern/stile';
+import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
+import { kontrollKlassen, knopfKlassen, pflichtKlassen } from '@/components/kern/stile';
 import { TIMING_OPTIONS } from '@/lib/formulare/useFliesenKonfigurator';
-import { inputClass, linkClass } from './stile';
-import Auswahlgruppe from './Auswahlgruppe';
+import { hintClass, inputClass, labelClass, linkClass, zusatzClass } from './stile';
+import OptionGroup from './OptionGroup';
 import ResultSummary from './ResultSummary';
 
-// Schritt 4: Zusammenfassung und Kontakt (E-011: aus FliesenKonfigurator.jsx verschoben, Markup unverändert).
-// E3-BAU-14: Darstellung nach KERN wie Schritt1–3 (Felder mit Pflichtmarke, Auswahlgruppe, Hinweis für den Sendefehler,
-// Knöpfe über knopfKlassen mit data-motion); Texte, IDs, name/value der Absende-Knöpfe, ARIA, Bedingungen, Reihenfolge
-// und Nutzlast unverändert.
+// Schritt 4: Zusammenfassung und Kontakt (F-06, Fusion E-039; Grundgerüst B): Ergebnis als Schriftfeld, Felder mit
+// Beschriftung darüber und abgesetztem „(optional)“, Zeitraum im Fugenraster mit Haken (A), Sendefehler als Hinweis „fehler“
+// mit role="alert" und verstecktem Vorsatz „Fehler:“ (A) direkt über den Knöpfen, ein Hauptknopf (online) mit aria-busy
+// beim Senden, WhatsApp als Nebenknopf mit Markenzeichen (B); Einwilligung und Fußnote im Zeilenmaß max-w-mass (A).
+// Beide Absende-Knöpfe bleiben type="submit" mit name="channel" (der Hook liest den auslösenden Knopf); Texte, IDs,
+// autocomplete, Pflichtfelder und Verhalten unverändert.
 export default function Schritt4({ data, update, goToStep, handleSubmit, isSubmitting, errorMessage }) {
     return (
         <form onSubmit={handleSubmit} className="flex flex-col gap-8">
             <ResultSummary data={data} />
 
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-4">
+            <div className="grid grid-cols-1 gap-6 @xl:grid-cols-2 @xl:gap-4">
                 <div>
-                    <label htmlFor="fk-name" className={labelKlassen}>
+                    <label htmlFor="fk-name" className={labelClass}>
                         Name <span className={pflichtKlassen}>*</span>
                     </label>
                     <input
@@ -33,7 +36,7 @@ export default function Schritt4({ data, update, goToStep, handleSubmit, isSubmi
                     />
                 </div>
                 <div>
-                    <label htmlFor="fk-phone" className={labelKlassen}>
+                    <label htmlFor="fk-phone" className={labelClass}>
                         Telefon- oder Mobilnummer <span className={pflichtKlassen}>*</span>
                     </label>
                     <input
@@ -49,7 +52,9 @@ export default function Schritt4({ data, update, goToStep, handleSubmit, isSubmi
                     />
                 </div>
                 <div>
-                    <label htmlFor="fk-email" className={labelKlassen}>E-Mail-Adresse (optional)</label>
+                    <label htmlFor="fk-email" className={labelClass}>
+                        E-Mail-Adresse <span className={zusatzClass}>(optional)</span>
+                    </label>
                     <input
                         id="fk-email"
                         type="email"
@@ -61,7 +66,7 @@ export default function Schritt4({ data, update, goToStep, handleSubmit, isSubmi
                     />
                 </div>
                 <div>
-                    <label htmlFor="fk-zip" className={labelKlassen}>PLZ &amp; Ort des Projekts</label>
+                    <label htmlFor="fk-zip" className={labelClass}>PLZ &amp; Ort des Projekts</label>
                     <input
                         id="fk-zip"
                         type="text"
@@ -74,16 +79,18 @@ export default function Schritt4({ data, update, goToStep, handleSubmit, isSubmi
                 </div>
             </div>
 
-            <Auswahlgruppe
+            <OptionGroup
                 legend="Gewünschter Zeitraum:"
                 options={TIMING_OPTIONS.map((t) => ({ id: t, label: t }))}
                 value={data.timing}
-                columns="grid-cols-1 sm:grid-cols-3"
+                muster="drei"
                 onChange={(id) => update({ timing: id })}
             />
 
             <div>
-                <label htmlFor="fk-notes" className={labelKlassen}>Notiz (optional)</label>
+                <label htmlFor="fk-notes" className={labelClass}>
+                    Notiz <span className={zusatzClass}>(optional)</span>
+                </label>
                 <textarea
                     id="fk-notes"
                     rows={3}
@@ -92,10 +99,10 @@ export default function Schritt4({ data, update, goToStep, handleSubmit, isSubmi
                     onChange={(e) => update({ notes: e.target.value })}
                     className={`${inputClass} resize-none`}
                 />
-                <p className={hilfeKlassen}>Fotos senden Sie gern im Anschluss per WhatsApp nach.</p>
+                <p className={hintClass}>Fotos senden Sie gern im Anschluss per WhatsApp nach.</p>
             </div>
 
-            <label className="flex items-start gap-3 text-fs-2 text-tinte">
+            <label className="flex max-w-mass cursor-pointer items-start gap-3 font-text text-fs-2 text-tinte">
                 <input
                     type="checkbox"
                     required
@@ -117,13 +124,14 @@ export default function Schritt4({ data, update, goToStep, handleSubmit, isSubmi
             )}
 
             <div className="flex flex-col gap-4 border-t border-fuge pt-6">
-                <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+                <div className="flex flex-col items-stretch gap-3 @xl:flex-row @xl:items-center">
                     <button
                         type="submit"
                         name="channel"
                         value="online"
                         disabled={isSubmitting}
-                        className={knopfKlassen('haupt', 'w-full sm:flex-1')}
+                        aria-busy={isSubmitting || undefined}
+                        className={knopfKlassen('haupt', 'w-full @xl:w-auto @xl:flex-1')}
                         data-motion="druck"
                     >
                         {isSubmitting ? (
@@ -133,7 +141,7 @@ export default function Schritt4({ data, update, goToStep, handleSubmit, isSubmi
                             </span>
                         ) : (
                             <>
-                                Online absenden (mit E-Mail-Bestätigung)
+                                <span>Online absenden (mit E-Mail-Bestätigung)</span>
                                 <Icon name="pfeil-rechts" groesse={5} />
                             </>
                         )}
@@ -143,14 +151,14 @@ export default function Schritt4({ data, update, goToStep, handleSubmit, isSubmi
                         name="channel"
                         value="whatsapp"
                         disabled={isSubmitting}
-                        className={knopfKlassen('neben', 'w-full sm:w-auto')}
+                        className={knopfKlassen('neben', 'w-full @xl:w-auto')}
                         data-motion="druck"
                     >
-                        <Icon name="sprechblase" groesse={5} />
-                        Per WhatsApp senden
+                        <WhatsAppLogo className="size-5 shrink-0" />
+                        <span>Per WhatsApp senden</span>
                     </button>
                 </div>
-                <p className="flex items-start gap-2 text-fs-1 text-tinte-2">
+                <p className="flex max-w-mass items-start gap-2 font-text text-fs-1 text-tinte-2">
                     <Icon name="schloss" groesse={4} className="mt-px" />
                     <span>
                         Bei Online-Absendung erhalten Sie unmittelbar eine schriftliche Zusammenfassung per E-Mail. Bei Auswahl von WhatsApp öffnet sich WhatsApp mit Ihren vorbereiteten Angaben.

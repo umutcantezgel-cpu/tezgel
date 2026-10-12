@@ -1,10 +1,15 @@
 import Icon from '@/components/icons/Icon';
-import Hinweis from '@/components/kern/Hinweis';
-import { hilfeKlassen, labelKlassen } from '@/components/kern/stile';
 import { FORMAT_OPTIONS, MATERIAL_OPTIONS, PATTERN_OPTIONS, STAIR_COVERING_OPTIONS, STAIR_TYPE_OPTIONS, YES_NO, parseNumber } from '@/lib/formulare/useFliesenKonfigurator';
-import { inputClass, legendClass } from './stile';
+import { absatzHintClass, labelClass, legendClass, merkClass, zahlClass, zusatzClass } from './stile';
+import OptionGroup from './OptionGroup';
 
-// Verbandszeichen je Muster (E4-NACH-13, Befund 17): dekorativ, neben dem Namen; „Noch offen“ ohne Zeichen.
+// Verbandszeichen je Muster (A, E4-NACH-13, Befund 17): dekorativ, neben dem Namen; „Noch offen“ ohne Zeichen.
+// Stufenfelder (F-06 Nachbesserung): je Gruppe einspaltig; ab 42 rem Werkzeugbreite drei nebeneinander, nie 2 + 1. In der
+// Dreierreihe Wert und Platzhalter eine Stufe kleiner und px-3, damit „14 (automatisch)“ auch mit erhöhtem Textabstand
+// (WCAG 1.4.12) ins Feld passt; Labels dürfen zweizeilig werden, die Felder stehen unten bündig und gleich hoch.
+const STUFEN_RASTER = 'grid grid-cols-1 gap-6 @2xl:grid-cols-3 @2xl:items-end @2xl:gap-4';
+const stufenClass = `${zahlClass} @2xl:px-3 @2xl:text-fs-2`;
+
 const VERBAND_ZEICHEN = {
     kreuzfuge: 'verband-kreuz',
     verband: 'verband-halb',
@@ -12,89 +17,47 @@ const VERBAND_ZEICHEN = {
     diagonal: 'verband-diagonal',
     fischgraet: 'verband-fischgraet'
 };
-const MUSTER_MIT_ZEICHEN = PATTERN_OPTIONS.map((o) =>
-    VERBAND_ZEICHEN[o.id]
-        ? {
-            ...o,
-            label: (
-                <span className="inline-flex items-center gap-2">
-                    <Icon name={VERBAND_ZEICHEN[o.id]} groesse={6} />
-                    {o.label}
-                </span>
-            )
-        }
-        : o
-);
 
-// Auswahl als Feldraster (E4-NACH-13, Befunde 13, 14; wie Schritt 1): Felder an der Fuge (gap-px auf Fuge), Fliese,
-// gewählt Tinte mit Haken. Legende, Optionen, aria-pressed, Labels, Nebentexte und Reihenfolge wie bisher; ein einzelnes
-// letztes Feld spannt die Spalten, damit kein leerer Rasterplatz bleibt. spalten: auto (1 mobil, 2 ab sm), zwei, eins.
-function Feldwahl({ legend, options, value, onChange, spalten = 'auto' }) {
-    const raster = spalten === 'eins' ? 'grid-cols-1' : spalten === 'zwei' ? 'grid-cols-2' : 'grid-cols-1 sm:grid-cols-2';
-    const einzeln = options.length % 2 === 1 ? options.length - 1 : -1;
-    const spanne = spalten === 'auto' ? 'sm:col-span-2' : spalten === 'zwei' ? 'col-span-2' : '';
-    return (
-        <fieldset className="m-0 min-w-0 border-0 p-0">
-            <legend className={labelKlassen}>{legend}</legend>
-            <div className={`mt-2 grid gap-px border border-fuge bg-fuge ${raster}`}>
-                {options.map((o, i) => {
-                    const selected = value === o.id;
-                    return (
-                        <button
-                            key={o.id}
-                            type="button"
-                            aria-pressed={selected}
-                            onClick={() => onChange(o.id)}
-                            className={`flex min-h-11 w-full items-center gap-4 p-4 text-left font-text ${i === einzeln ? spanne : ''} ${
-                                selected ? 'bg-tinte text-kalk hover:bg-tinte-2' : 'bg-fliese text-tinte hover:bg-kalk'
-                            }`}
-                        >
-                            <span className="flex min-w-0 flex-1 flex-col">
-                                <span className="block text-fs-3 font-semibold">{o.label ?? o.title}</span>
-                                {o.desc && <span className={`mt-1 block text-fs-2 ${selected ? 'text-nacht-2' : 'text-tinte-2'}`}>{o.desc}</span>}
-                            </span>
-                            {selected && <Icon name="haken" groesse={4} />}
-                        </button>
-                    );
-                })}
-            </div>
-        </fieldset>
-    );
-}
-
-// Schritt 3: Format, Material und Menge (E-011: aus FliesenKonfigurator.jsx verschoben; E3-BAU-13: Darstellung nach KERN
-// wie Schritt1/2, Zahlenfelder wie E3-BAU-17; Texte, IDs, ARIA, Bedingungen, Reihenfolge und Nutzlast unverändert).
+// Schritt 3: Format, Material und Menge (F-06, Fusion E-039): Takt von B (Luft zwischen den Gruppen, Material und
+// Verlegemuster nebeneinander, Zahlenfelder und Skala in Mono, „(optional)“ abgesetzt, Merkhinweis auf Kalk mit Abstand),
+// Auswahl als Fugenraster mit Haken und Verbandszeichen von A; Abstand zwischen Regler und Skala (A), damit der Fokusring
+// die Skala nicht berührt. Spalten nach der Breite des Werkzeugs (@container in index.jsx) bzw. der Gruppe.
+// Texte, IDs, Labels, Rechenwege, Bedingungen, Reihenfolge und Verhalten unverändert.
 export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises }) {
     return (
-        <div className="space-y-8">
+        <div className="flex flex-col gap-12">
             {hasAreaRooms && (
-                <div className="space-y-6">
-                    <Feldwahl
+                <div className="flex flex-col gap-8">
+                    <OptionGroup
                         legend="Fliesenformat:"
                         options={FORMAT_OPTIONS}
                         value={data.format}
+                        muster="format"
                         onChange={(id) => update({ format: id })}
                     />
 
-                    <Feldwahl
-                        legend="Material bzw. Optik:"
-                        options={MATERIAL_OPTIONS}
-                        value={data.material}
-                        onChange={(id) => update({ material: id })}
-                    />
+                    <div className="grid grid-cols-1 gap-8 @2xl:grid-cols-2 @2xl:items-start">
+                        <OptionGroup
+                            legend="Material bzw. Optik:"
+                            options={MATERIAL_OPTIONS}
+                            value={data.material}
+                            onChange={(id) => update({ material: id })}
+                        />
 
-                    <Feldwahl
-                        legend="Verlegemuster:"
-                        options={MUSTER_MIT_ZEICHEN}
-                        value={data.pattern}
-                        onChange={(id) => update({ pattern: id })}
-                    />
+                        <OptionGroup
+                            legend="Verlegemuster:"
+                            options={PATTERN_OPTIONS}
+                            value={data.pattern}
+                            zeichen={VERBAND_ZEICHEN}
+                            onChange={(id) => update({ pattern: id })}
+                        />
+                    </div>
 
-                    <fieldset className="m-0 min-w-0 space-y-3 border-0 p-0">
+                    <fieldset className="m-0 flex min-w-0 flex-col gap-4 border-0 p-0">
                         <legend className={legendClass}>Menge (Fläche):</legend>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div className="mt-4 grid grid-cols-1 gap-6 @xl:grid-cols-2 @xl:items-end @xl:gap-4">
                             <div>
-                                <label htmlFor="fk-area" className={labelKlassen}>
+                                <label htmlFor="fk-area" className={labelClass}>
                                     Zu belegende Fläche in m² (Boden und/oder Wand, netto)
                                 </label>
                                 <input
@@ -103,14 +66,14 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
                                     inputMode="decimal"
                                     placeholder="z. B. 24,5"
                                     value={data.area}
-                        onChange={(e) => update({ area: e.target.value })}
-                                    className={`${inputClass} tabular-nums`}
+                                    onChange={(e) => update({ area: e.target.value })}
+                                    className={zahlClass}
                                     aria-describedby="fk-area-help"
                                 />
                             </div>
                             <div>
-                                <label htmlFor="fk-skirting" className={labelKlassen}>
-                                    Sockel in laufenden Metern (optional)
+                                <label htmlFor="fk-skirting" className={labelClass}>
+                                    Sockel in laufenden Metern <span className={zusatzClass}>(optional)</span>
                                 </label>
                                 <input
                                     id="fk-skirting"
@@ -118,8 +81,8 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
                                     inputMode="decimal"
                                     placeholder="z. B. 18"
                                     value={data.skirting}
-                        onChange={(e) => update({ skirting: e.target.value })}
-                                    className={`${inputClass} tabular-nums`}
+                                    onChange={(e) => update({ skirting: e.target.value })}
+                                    className={zahlClass}
                                 />
                             </div>
                         </div>
@@ -132,16 +95,17 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
                                 max="150"
                                 step="1"
                                 value={Math.min(Math.max(Math.round(parseNumber(data.area)) || 1, 1), 150)}
-                        onChange={(e) => update({ area: e.target.value })}
-                                className="w-full min-h-11 cursor-pointer accent-tinte"
+                                onChange={(e) => update({ area: e.target.value })}
+                                className="block min-h-11 w-full cursor-pointer accent-tinte"
                             />
-                            <div className="mt-1 flex justify-between font-mono text-fs-1 text-tinte-2 tabular-nums" aria-hidden="true">
+                            {/* Abstand zur Skala (A): der Fokusring (2 px mit 2 px Abstand) liegt nie auf „1 m² · 75 m² · 150 m²“ */}
+                            <div className="mt-2 flex justify-between font-mono text-fs-1 text-tinte-2 tabular-nums" aria-hidden="true">
                                 <span>1 m²</span>
                                 <span>75 m²</span>
                                 <span>150 m²</span>
                             </div>
                         </div>
-                        <p id="fk-area-help" className={hilfeKlassen}>
+                        <p id="fk-area-help" className={absatzHintClass}>
                             Länge × Breite je Raum addieren; größere Flächen einfach eintippen. Treppen werden unten separat erfasst.
                         </p>
                     </fieldset>
@@ -149,27 +113,27 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
             )}
 
             {hasStairs && (
-                <div className={`space-y-6 ${hasAreaRooms ? 'pt-6 border-t border-fuge' : ''}`}>
-                    <h4 className="text-fs-3 font-semibold text-tinte">Treppe</h4>
+                <div className={`flex flex-col gap-8 ${hasAreaRooms ? 'border-t border-fuge pt-12' : ''}`}>
+                    <h4 className="text-fs-4 text-tinte">Treppe</h4>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <Feldwahl
+                    <div className="grid grid-cols-1 gap-8 @xl:grid-cols-2 @xl:gap-6">
+                        <OptionGroup
                             legend="Lage:"
                             options={[{ id: 'innen', label: 'Innentreppe' }, { id: 'aussen', label: 'Außentreppe' }]}
                             value={data.stairLocation}
-                            spalten="zwei"
+                            muster="paar"
                             onChange={(id) => update({ stairLocation: id })}
                         />
-                        <Feldwahl
+                        <OptionGroup
                             legend="Treppenform:"
                             options={[{ id: 'gerade', label: 'Gerade' }, { id: 'gewendelt', label: 'Gewendelt' }]}
                             value={data.stairShape}
-                            spalten="zwei"
+                            muster="paar"
                             onChange={(id) => update({ stairShape: id })}
                         />
                     </div>
 
-                    <Feldwahl
+                    <OptionGroup
                         legend="Bauart der Treppe:"
                         options={STAIR_TYPE_OPTIONS}
                         value={data.stairType}
@@ -177,29 +141,28 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
                     />
 
                     {data.stairType !== 'blockstufen' && (
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <Feldwahl
+                        <div className="grid grid-cols-1 gap-8 @xl:grid-cols-2 @xl:items-start @xl:gap-6">
+                            <OptionGroup
                                 legend="Belag:"
                                 options={STAIR_COVERING_OPTIONS}
                                 value={data.stairCovering}
-                                spalten="eins"
-                        onChange={(id) => update({ stairCovering: id })}
+                                onChange={(id) => update({ stairCovering: id })}
                             />
-                            <Feldwahl
+                            <OptionGroup
                                 legend="Setzstufen (senkrechte Flächen) belegen?"
                                 options={YES_NO}
                                 value={data.risersOn}
-                                spalten="zwei"
-                        onChange={(id) => update({ risersOn: id })}
+                                muster="paar"
+                                onChange={(id) => update({ risersOn: id })}
                             />
                         </div>
                     )}
 
-                    <fieldset className="m-0 min-w-0 space-y-4 border-0 p-0">
+                    <fieldset className="m-0 flex min-w-0 flex-col gap-4 border-0 p-0">
                         <legend className={legendClass}>Stufen und Maße:</legend>
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div className={`mt-4 ${STUFEN_RASTER}`}>
                             <div>
-                                <label htmlFor="fk-rises" className={labelKlassen}>Anzahl Steigungen</label>
+                                <label htmlFor="fk-rises" className={labelClass}>Anzahl Steigungen</label>
                                 <input
                                     id="fk-rises"
                                     type="number"
@@ -208,14 +171,14 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
                                     inputMode="numeric"
                                     placeholder="z. B. 14"
                                     value={data.stairRises}
-                        onChange={(e) => update({ stairRises: e.target.value })}
-                                    className={`${inputClass} tabular-nums`}
+                                    onChange={(e) => update({ stairRises: e.target.value })}
+                                    className={stufenClass}
                                     aria-describedby="fk-stairs-help"
                                 />
                             </div>
                             {data.stairType !== 'blockstufen' && data.risersOn === 'ja' && (
                                 <div>
-                                    <label htmlFor="fk-risers" className={labelKlassen}>Setzstufen zu belegen</label>
+                                    <label htmlFor="fk-risers" className={labelClass}>Setzstufen zu belegen</label>
                                     <input
                                         id="fk-risers"
                                         type="number"
@@ -224,13 +187,13 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
                                         inputMode="numeric"
                                         placeholder={Number.isFinite(rises) ? `${rises} (automatisch)` : 'automatisch'}
                                         value={data.risersCount}
-                        onChange={(e) => update({ risersCount: e.target.value })}
-                                        className={`${inputClass} tabular-nums`}
+                                        onChange={(e) => update({ risersCount: e.target.value })}
+                                        className={stufenClass}
                                     />
                                 </div>
                             )}
                             <div>
-                                <label htmlFor="fk-treads" className={labelKlassen}>Trittstufen zu belegen</label>
+                                <label htmlFor="fk-treads" className={labelClass}>Trittstufen zu belegen</label>
                                 <input
                                     id="fk-treads"
                                     type="number"
@@ -239,52 +202,52 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
                                     inputMode="numeric"
                                     placeholder={Number.isFinite(rises) ? `${Math.max(rises - 1, 0)} (automatisch)` : 'automatisch'}
                                     value={data.treadsCount}
-                        onChange={(e) => update({ treadsCount: e.target.value })}
-                                    className={`${inputClass} tabular-nums`}
+                                    onChange={(e) => update({ treadsCount: e.target.value })}
+                                    className={stufenClass}
                                 />
                             </div>
                         </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div className={STUFEN_RASTER}>
                             <div>
-                                <label htmlFor="fk-width" className={labelKlassen}>Laufbreite (cm)</label>
+                                <label htmlFor="fk-width" className={labelClass}>Laufbreite (cm)</label>
                                 <input
                                     id="fk-width"
                                     type="text"
                                     inputMode="decimal"
                                     placeholder="z. B. 100"
                                     value={data.stairWidth}
-                        onChange={(e) => update({ stairWidth: e.target.value })}
-                                    className={`${inputClass} tabular-nums`}
+                                    onChange={(e) => update({ stairWidth: e.target.value })}
+                                    className={stufenClass}
                                 />
                             </div>
                             <div>
-                                <label htmlFor="fk-depth" className={labelKlassen}>Auftrittstiefe inkl. Überstand (cm)</label>
+                                <label htmlFor="fk-depth" className={labelClass}>Auftrittstiefe inkl. Überstand (cm)</label>
                                 <input
                                     id="fk-depth"
                                     type="text"
                                     inputMode="decimal"
                                     placeholder="z. B. 30"
                                     value={data.treadDepth}
-                        onChange={(e) => update({ treadDepth: e.target.value })}
-                                    className={`${inputClass} tabular-nums`}
+                                    onChange={(e) => update({ treadDepth: e.target.value })}
+                                    className={stufenClass}
                                 />
                             </div>
                             {data.stairType !== 'blockstufen' && data.risersOn === 'ja' && (
                                 <div>
-                                    <label htmlFor="fk-height" className={labelKlassen}>Steigungshöhe (cm)</label>
+                                    <label htmlFor="fk-height" className={labelClass}>Steigungshöhe (cm)</label>
                                     <input
                                         id="fk-height"
                                         type="text"
                                         inputMode="decimal"
                                         placeholder="z. B. 18"
                                         value={data.riserHeight}
-                        onChange={(e) => update({ riserHeight: e.target.value })}
-                                        className={`${inputClass} tabular-nums`}
+                                        onChange={(e) => update({ riserHeight: e.target.value })}
+                                        className={stufenClass}
                                     />
                                 </div>
                             )}
                         </div>
-                        <p id="fk-stairs-help" className={hilfeKlassen}>
+                        <p id="fk-stairs-help" className={absatzHintClass}>
                             Eine Treppe mit n Steigungen hat n Setzstufen und in der Regel n − 1 Trittstufen – der oberste
                             Auftritt ist meist der Boden des Obergeschosses. Soll dieser Austritt mit belegt werden, tragen Sie
                             die Zahl der Trittstufen einfach selbst ein.
@@ -292,27 +255,31 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
                     </fieldset>
 
                     {data.stairType === 'blockstufen' && (
-                        <Hinweis art="merk">
-                            <p>
+                        <p className={merkClass}>
+                            <Icon name="info" groesse={5} className="mt-px" />
+                            <span>
+                                <span className="sr-only">Hinweis: </span>
                                 Blockstufen sind eine massive Bauart (meist Naturstein oder Betonwerkstein), die auf Fundament
                                 bzw. Mörtelbett versetzt wird – kein Belag auf eine bestehende Treppe. Stückzahl und Maße klären wir
                                 beim Aufmaß.
-                            </p>
-                        </Hinweis>
+                            </span>
+                        </p>
                     )}
 
-                    <Feldwahl
-                        legend="Treppensockel mit ausführen?"
-                        options={YES_NO}
-                        value={data.stairSkirting}
-                        spalten="zwei"
-                        onChange={(id) => update({ stairSkirting: id })}
-                    />
+                    <div className="grid grid-cols-1 @xl:grid-cols-2">
+                        <OptionGroup
+                            legend="Treppensockel mit ausführen?"
+                            options={YES_NO}
+                            value={data.stairSkirting}
+                            muster="paar"
+                            onChange={(id) => update({ stairSkirting: id })}
+                        />
+                    </div>
                 </div>
             )}
 
             {!hasAreaRooms && !hasStairs && (
-                <p className={hilfeKlassen}>Bitte wählen Sie in Schritt 1 zuerst einen Bereich aus.</p>
+                <p className={absatzHintClass}>Bitte wählen Sie in Schritt 1 zuerst einen Bereich aus.</p>
             )}
         </div>
     );

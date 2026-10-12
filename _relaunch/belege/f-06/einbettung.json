@@ -1,0 +1,401 @@
+[
+ {
+  "ansicht": "m375",
+  "seite": "/fliesen/konfigurator",
+  "status": 200,
+  "breite": 375,
+  "live": 1,
+  "zaehler": 1,
+  "plan": 1,
+  "gewaehlt": [],
+  "richtwert": "Materialbedarf inkl. Verschnitt (Richtwert):Wählen Sie zuerst einen Bereich.",
+  "funde": [],
+  "seiteH": false,
+  "konsole": []
+ },
+ {
+  "ansicht": "m375",
+  "seite": "/fliesen",
+  "status": 200,
+  "breite": 375,
+  "live": 1,
+  "zaehler": 1,
+  "plan": 0,
+  "gewaehlt": [],
+  "richtwert": "Materialbedarf inkl. Verschnitt (Richtwert):Wählen Sie zuerst einen Bereich.",
+  "funde": [
+   "raus:svg.[object SVGAnimatedString]",
+   "raus:path.[object SVGAnimatedString]"
+  ],
+  "seiteH": false,
+  "konsole": []
+ },
+ {
+  "ansicht": "m375",
+  "seite": "/fliesen/flur-diele",
+  "status": 200,
+  "breite": 375,
+  "live": 1,
+  "zaehler": 1,
+  "plan": 0,
+  "gewaehlt": [
+   "Flur & DieleEingang,"
+  ],
+  "richtwert": "Materialbedarf inkl. Verschnitt (Richtwert):ca. 21–23 m² aus 20 m² netto",
+  "funde": [
+   "raus:svg.[object SVGAnimatedString]",
+   "raus:path.[object SVGAnimatedString]"
+  ],
+  "seiteH": false,
+  "konsole": []
+ },
+ {
+  "ansicht": "m375",
+  "seite": "/fliesen/kueche",
+  "status": 200,
+  "breite": 375,
+  "live": 1,
+  "zaehler": 1,
+  "plan": 0,
+  "gewaehlt": [
+   "KücheKüchenboden und"
+  ],
+  "richtwert": "Materialbedarf inkl. Verschnitt (Richtwert):ca. 21–23 m² aus 20 m² netto",
+  "funde": [
+   "raus:svg.[object SVGAnimatedString]",
+   "raus:path.[object SVGAnimatedString]"
+  ],
+  "seiteH": false,
+  "konsole": []
+ },
+ {
+  "ansicht": "m375",
+  "seite": "/fliesen/holzoptik",
+  "status": 200,
+  "breite": 375,
+  "live": 1,
+  "zaehler": 1,
+  "plan": 0,
+  "gewaehlt": [],
+  "richtwert": "Materialbedarf inkl. Verschnitt (Richtwert):Wählen Sie zuerst einen Bereich.",
+  "funde": [
+   "raus:svg.[object SVGAnimatedString]",
+   "raus:path.[object SVGAnimatedString]"
+  ],
+  "seiteH": false,
+  "konsole": []
+ },
+ {
+  "ansicht": "m375",
+  "seite": "/fliesen/verlegetechnik",
+  "status": 200,
+  "breite": 375,
+  "live": 1,
+  "zaehler": 1,
+  "plan": 0,
+  "gewaehlt": [],
+  "richtwert": "Materialbedarf inkl. Verschnitt (Richtwert):Wählen Sie zuerst einen Bereich.",
+  "funde": [],
+  "seiteH": false,
+  "konsole": []
+ },
+ {
+  "ansicht": "m375",
+  "seite": "/fliesen/grossformat",
+  "status": 200,
+  "breite": 375,
+  "live": 1,
+  "zaehler": 1,
+  "plan": 0,
+  "gewaehlt": [],
+  "richtwert": "Materialbedarf inkl. Verschnitt (Richtwert):Wählen Sie zuerst einen Bereich.",
+  "funde": [
+   "raus:svg.[object SVGAnimatedString]",
+   "raus:path.[object SVGAnimatedString]"
+  ],
+  "seiteH": false,
+  "konsole": []
+ },
+ {
+  "ansicht": "m375",
+  "seite": "/fliesen/verlegemuster",
+  "status": 200,
+  "breite": 375,
+  "live": 1,
+  "zaehler": 1,
+  "plan": 0,
+  "gewaehlt": [],
+  "richtwert": "Materialbedarf inkl. Verschnitt (Richtwert):Wählen Sie zuerst einen Bereich.",
+  "funde": [
+   "raus:svg.[object SVGAnimatedString]",
+   "raus:path.[object SVGAnimatedString]"
+  ],
+  "seiteH": false,
+  "konsole": []
+ },
+ {
+  "ansicht": "m375",
+  "seite": "/fliesen/fliesenarten",
+  "status": 200,
+  "breite": 375,
+  "live": 1,
+  "zaehler": 1,
+  "plan": 0,
+  "gewaehlt": [],
+  "richtwert": "Materialbedarf inkl. Verschnitt (Richtwert):Wählen Sie zuerst einen Bereich.",
+  "funde": [
+   "raus:svg.[object SVGAnimatedString]",
+   "raus:path.[object SVGAnimatedString]"
+  ],
+  "seiteH": false,
+  "konsole": []
+ },
+ {
+  "ansicht": "m375",
+  "seite": "/fliesen/festpreisangebot",
+  "status": 200,
+  "breite": 375,
+  "live": 1,
+  "zaehler": 1,
+  "plan": 0,
+  "gewaehlt": [],
+  "richtwert": "Materialbedarf inkl. Verschnitt (Richtwert):Wählen Sie zuerst einen Bereich.",
+  "funde": [],
+  "seiteH": false,
+  "konsole": []
+ },
+ {
+  "ansicht": "m375",
+  "seite": "/fliesen/neubau",
+  "status": 200,
+  "breite": 375,
+  "live": 1,
+  "zaehler": 1,
+  "plan": 0,
+  "gewaehlt": [],
+  "richtwert": "Materialbedarf inkl. Verschnitt (Richtwert):Wählen Sie zuerst einen Bereich.",
+  "funde": [
+   "raus:svg.[object SVGAnimatedString]",
+   "raus:path.[object SVGAnimatedString]"
+  ],
+  "seiteH": false,
+  "konsole": []
+ },
+ {
+  "ansicht": "m375",
+  "seite": "/fliesen/auf-fussbodenheizung",
+  "status": 200,
+  "breite": 375,
+  "live": 1,
+  "zaehler": 1,
+  "plan": 0,
+  "gewaehlt": [],
+  "richtwert": "Materialbedarf inkl. Verschnitt (Richtwert):Wählen Sie zuerst einen Bereich.",
+  "funde": [
+   "raus:svg.[object SVGAnimatedString]",
+   "raus:path.[object SVGAnimatedString]"
+  ],
+  "seiteH": false,
+  "konsole": []
+ },
+ {
+  "ansicht": "m375",
+  "seite": "/fliesen/renovierung",
+  "status": 200,
+  "breite": 375,
+  "live": 1,
+  "zaehler": 1,
+  "plan": 0,
+  "gewaehlt": [],
+  "richtwert": "Materialbedarf inkl. Verschnitt (Richtwert):Wählen Sie zuerst einen Bereich.",
+  "funde": [],
+  "seiteH": false,
+  "konsole": []
+ },
+ {
+  "ansicht": "d1440",
+  "seite": "/fliesen/konfigurator",
+  "status": 200,
+  "breite": 1440,
+  "live": 1,
+  "zaehler": 1,
+  "plan": 1,
+  "gewaehlt": [],
+  "richtwert": "Materialbedarf inkl. Verschnitt (Richtwert):Wählen Sie zuerst einen Bereich.",
+  "funde": [],
+  "seiteH": false,
+  "konsole": []
+ },
+ {
+  "ansicht": "d1440",
+  "seite": "/fliesen",
+  "status": 200,
+  "breite": 1440,
+  "live": 1,
+  "zaehler": 1,
+  "plan": 0,
+  "gewaehlt": [],
+  "richtwert": "Materialbedarf inkl. Verschnitt (Richtwert):Wählen Sie zuerst einen Bereich.",
+  "funde": [],
+  "seiteH": false,
+  "konsole": []
+ },
+ {
+  "ansicht": "d1440",
+  "seite": "/fliesen/flur-diele",
+  "status": 200,
+  "breite": 1440,
+  "live": 1,
+  "zaehler": 1,
+  "plan": 0,
+  "gewaehlt": [
+   "Flur & DieleEingang,"
+  ],
+  "richtwert": "Materialbedarf inkl. Verschnitt (Richtwert):ca. 21–23 m² aus 20 m² netto",
+  "funde": [],
+  "seiteH": false,
+  "konsole": []
+ },
+ {
+  "ansicht": "d1440",
+  "seite": "/fliesen/kueche",
+  "status": 200,
+  "breite": 1440,
+  "live": 1,
+  "zaehler": 1,
+  "plan": 0,
+  "gewaehlt": [
+   "KücheKüchenboden und"
+  ],
+  "richtwert": "Materialbedarf inkl. Verschnitt (Richtwert):ca. 21–23 m² aus 20 m² netto",
+  "funde": [],
+  "seiteH": false,
+  "konsole": []
+ },
+ {
+  "ansicht": "d1440",
+  "seite": "/fliesen/holzoptik",
+  "status": 200,
+  "breite": 1440,
+  "live": 1,
+  "zaehler": 1,
+  "plan": 0,
+  "gewaehlt": [],
+  "richtwert": "Materialbedarf inkl. Verschnitt (Richtwert):Wählen Sie zuerst einen Bereich.",
+  "funde": [],
+  "seiteH": false,
+  "konsole": []
+ },
+ {
+  "ansicht": "d1440",
+  "seite": "/fliesen/verlegetechnik",
+  "status": 200,
+  "breite": 1440,
+  "live": 1,
+  "zaehler": 1,
+  "plan": 0,
+  "gewaehlt": [],
+  "richtwert": "Materialbedarf inkl. Verschnitt (Richtwert):Wählen Sie zuerst einen Bereich.",
+  "funde": [],
+  "seiteH": false,
+  "konsole": []
+ },
+ {
+  "ansicht": "d1440",
+  "seite": "/fliesen/grossformat",
+  "status": 200,
+  "breite": 1440,
+  "live": 1,
+  "zaehler": 1,
+  "plan": 0,
+  "gewaehlt": [],
+  "richtwert": "Materialbedarf inkl. Verschnitt (Richtwert):Wählen Sie zuerst einen Bereich.",
+  "funde": [],
+  "seiteH": false,
+  "konsole": []
+ },
+ {
+  "ansicht": "d1440",
+  "seite": "/fliesen/verlegemuster",
+  "status": 200,
+  "breite": 1440,
+  "live": 1,
+  "zaehler": 1,
+  "plan": 0,
+  "gewaehlt": [],
+  "richtwert": "Materialbedarf inkl. Verschnitt (Richtwert):Wählen Sie zuerst einen Bereich.",
+  "funde": [],
+  "seiteH": false,
+  "konsole": []
+ },
+ {
+  "ansicht": "d1440",
+  "seite": "/fliesen/fliesenarten",
+  "status": 200,
+  "breite": 1440,
+  "live": 1,
+  "zaehler": 1,
+  "plan": 0,
+  "gewaehlt": [],
+  "richtwert": "Materialbedarf inkl. Verschnitt (Richtwert):Wählen Sie zuerst einen Bereich.",
+  "funde": [],
+  "seiteH": false,
+  "konsole": []
+ },
+ {
+  "ansicht": "d1440",
+  "seite": "/fliesen/festpreisangebot",
+  "status": 200,
+  "breite": 1440,
+  "live": 1,
+  "zaehler": 1,
+  "plan": 0,
+  "gewaehlt": [],
+  "richtwert": "Materialbedarf inkl. Verschnitt (Richtwert):Wählen Sie zuerst einen Bereich.",
+  "funde": [],
+  "seiteH": false,
+  "konsole": []
+ },
+ {
+  "ansicht": "d1440",
+  "seite": "/fliesen/neubau",
+  "status": 200,
+  "breite": 1440,
+  "live": 1,
+  "zaehler": 1,
+  "plan": 0,
+  "gewaehlt": [],
+  "richtwert": "Materialbedarf inkl. Verschnitt (Richtwert):Wählen Sie zuerst einen Bereich.",
+  "funde": [],
+  "seiteH": false,
+  "konsole": []
+ },
+ {
+  "ansicht": "d1440",
+  "seite": "/fliesen/auf-fussbodenheizung",
+  "status": 200,
+  "breite": 1440,
+  "live": 1,
+  "zaehler": 1,
+  "plan": 0,
+  "gewaehlt": [],
+  "richtwert": "Materialbedarf inkl. Verschnitt (Richtwert):Wählen Sie zuerst einen Bereich.",
+  "funde": [],
+  "seiteH": false,
+  "konsole": []
+ },
+ {
+  "ansicht": "d1440",
+  "seite": "/fliesen/renovierung",
+  "status": 200,
+  "breite": 1440,
+  "live": 1,
+  "zaehler": 1,
+  "plan": 0,
+  "gewaehlt": [],
+  "richtwert": "Materialbedarf inkl. Verschnitt (Richtwert):Wählen Sie zuerst einen Bereich.",
+  "funde": [],
+  "seiteH": false,
+  "konsole": []
+ }
+]

@@ -1,0 +1,205 @@
+{
+ "quelle": "Gutachten-Protokoll bilder.mjs (u6), Fusion auf 4350, nach Nachbesserung",
+ "axe": [
+  {
+   "ansicht": "m390",
+   "zustand": "00-start",
+   "verstoesse": []
+  },
+  {
+   "ansicht": "m390",
+   "zustand": "01-schritt-1-auswahl",
+   "verstoesse": []
+  },
+  {
+   "ansicht": "m390",
+   "zustand": "02-schritt-1-bad-hinweis",
+   "verstoesse": []
+  },
+  {
+   "ansicht": "m390",
+   "zustand": "03-schritt-2-auswahl",
+   "verstoesse": []
+  },
+  {
+   "ansicht": "m390",
+   "zustand": "04-schritt-3-auswahl",
+   "verstoesse": []
+  },
+  {
+   "ansicht": "m390",
+   "zustand": "05-schieberegler-tastatur",
+   "verstoesse": []
+  },
+  {
+   "ansicht": "m390",
+   "zustand": "06-schritt-3-blockstufen",
+   "verstoesse": []
+  },
+  {
+   "ansicht": "m390",
+   "zustand": "07-ergebnis-schritt-4",
+   "verstoesse": []
+  },
+  {
+   "ansicht": "m390",
+   "zustand": "08-pflichtfeldfehler",
+   "verstoesse": []
+  },
+  {
+   "ansicht": "m390",
+   "zustand": "09-pflichtfeldfehler-whatsapp",
+   "verstoesse": []
+  },
+  {
+   "ansicht": "m390",
+   "zustand": "10-kontakt-ausgefuellt",
+   "verstoesse": []
+  },
+  {
+   "ansicht": "m390",
+   "zustand": "14-whatsapp",
+   "verstoesse": []
+  },
+  {
+   "ansicht": "m390",
+   "zustand": "12-serverfehler-500",
+   "verstoesse": []
+  },
+  {
+   "ansicht": "m390",
+   "zustand": "11-laden",
+   "verstoesse": []
+  },
+  {
+   "ansicht": "m390",
+   "zustand": "13-erfolg",
+   "verstoesse": []
+  },
+  {
+   "ansicht": "d1440",
+   "zustand": "00-start",
+   "verstoesse": []
+  },
+  {
+   "ansicht": "d1440",
+   "zustand": "01-schritt-1-auswahl",
+   "verstoesse": []
+  },
+  {
+   "ansicht": "d1440",
+   "zustand": "02-schritt-1-bad-hinweis",
+   "verstoesse": []
+  },
+  {
+   "ansicht": "d1440",
+   "zustand": "03-schritt-2-auswahl",
+   "verstoesse": []
+  },
+  {
+   "ansicht": "d1440",
+   "zustand": "04-schritt-3-auswahl",
+   "verstoesse": []
+  },
+  {
+   "ansicht": "d1440",
+   "zustand": "05-schieberegler-tastatur",
+   "verstoesse": []
+  },
+  {
+   "ansicht": "d1440",
+   "zustand": "06-schritt-3-blockstufen",
+   "verstoesse": []
+  },
+  {
+   "ansicht": "d1440",
+   "zustand": "07-ergebnis-schritt-4",
+   "verstoesse": []
+  },
+  {
+   "ansicht": "d1440",
+   "zustand": "08-pflichtfeldfehler",
+   "verstoesse": []
+  },
+  {
+   "ansicht": "d1440",
+   "zustand": "09-pflichtfeldfehler-whatsapp",
+   "verstoesse": []
+  },
+  {
+   "ansicht": "d1440",
+   "zustand": "10-kontakt-ausgefuellt",
+   "verstoesse": []
+  },
+  {
+   "ansicht": "d1440",
+   "zustand": "14-whatsapp",
+   "verstoesse": []
+  },
+  {
+   "ansicht": "d1440",
+   "zustand": "12-serverfehler-500",
+   "verstoesse": []
+  },
+  {
+   "ansicht": "d1440",
+   "zustand": "11-laden",
+   "verstoesse": []
+  },
+  {
+   "ansicht": "d1440",
+   "zustand": "13-erfolg",
+   "verstoesse": []
+  }
+ ],
+ "protokoll_sperre": {
+  "m390-A": [
+   {
+    "art": "fremd",
+    "methode": "GET",
+    "url": "https://api.whatsapp.com/send"
+   }
+  ],
+  "m390-B": [
+   {
+    "art": "blockiert",
+    "methode": "POST",
+    "url": "/__nextjs_original-stack-frames"
+   }
+  ],
+  "m390-C": [],
+  "m390-N": [],
+  "d1440-A": [
+   {
+    "art": "fremd",
+    "methode": "GET",
+    "url": "https://api.whatsapp.com/send"
+   }
+  ],
+  "d1440-B": [
+   {
+    "art": "blockiert",
+    "methode": "POST",
+    "url": "/__nextjs_original-stack-frames"
+   }
+  ],
+  "d1440-C": [],
+  "d1440-N": []
+ },
+ "konsole_fehler": {
+  "m390-A": [],
+  "m390-B": [
+   "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+   "Fliesen-Konfigurator submission error: Error: Test-Ausfall\n    at handleSubmit (http://127.0.0.1:4350/_next/static/chunks/src_0ypi73w._.js:4689:23)",
+   "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+  ],
+  "m390-C": [],
+  "d1440-A": [],
+  "d1440-B": [
+   "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+   "Fliesen-Konfigurator submission error: Error: Test-Ausfall\n    at handleSubmit (http://127.0.0.1:4350/_next/static/chunks/src_0ypi73w._.js:4689:23)",
+   "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+  ],
+  "d1440-C": []
+ }
+}

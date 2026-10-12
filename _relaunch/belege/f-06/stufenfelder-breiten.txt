@@ -1,0 +1,5 @@
+1440 {"ohne":{"werkzeug":729,"tops":[768,768,768],"feld":206,"platzhalter":154},"mit":{"feld":206,"platzhalter":184}}
+1280 {"ohne":{"werkzeug":708,"tops":[768,768,768],"feld":199,"platzhalter":154},"mit":{"feld":199,"platzhalter":184}}
+1120 {"ohne":{"werkzeug":601,"tops":[765,877,990],"feld":567,"platzhalter":178},"mit":{"feld":567,"platzhalter":214}}
+768 {"ohne":{"werkzeug":638,"tops":[734,844,955],"feld":604,"platzhalter":171},"mit":{"feld":604,"platzhalter":206}}
+390 {"ohne":{"werkzeug":308,"tops":[734,842,951],"feld":274,"platzhalter":164},"mit":{"feld":274,"platzhalter":197}}

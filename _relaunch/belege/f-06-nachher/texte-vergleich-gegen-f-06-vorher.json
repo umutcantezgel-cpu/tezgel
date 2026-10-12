@@ -1,0 +1,106 @@
+{
+ "vorher": "f-06-vorher",
+ "nachher": "f-06-nachher",
+ "seiten": {
+  "/fliesen/flur-diele": {
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  },
+  "/fliesen/konfigurator": {
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  },
+  "/fliesen/kueche": {
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  },
+  "/fliesen/holzoptik": {
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  },
+  "/fliesen/verlegetechnik": {
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  },
+  "/fliesen/grossformat": {
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  },
+  "/fliesen/fliesenarten": {
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  },
+  "/fliesen/verlegemuster": {
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  },
+  "/fliesen/festpreisangebot": {
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  },
+  "/fliesen/neubau": {
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  },
+  "/fliesen/auf-fussbodenheizung": {
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  }
+ },
+ "summe": {
+  "entfernt": 11,
+  "hinzu": 0,
+  "meta": 0,
+  "seo": 0
+ },
+ "sitemap": {
+  "entfernt": [],
+  "hinzu": []
+ },
+ "robots_geaendert": false,
+ "kaputte_links": []
+}

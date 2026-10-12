@@ -1,18 +1,18 @@
 import { SUBSTRATE_OPTIONS, YES_NO, YES_NO_UNSURE, toggleInList } from '@/lib/formulare/useFliesenKonfigurator';
-import Auswahlgruppe from './Auswahlgruppe';
+import OptionGroup from './OptionGroup';
 
-// Schritt 2: Untergrund (E-011: aus FliesenKonfigurator.jsx verschoben; E3-BAU-12: Darstellung nach KERN wie Schritt1,
-// Texte, IDs, ARIA und Verhalten unverändert).
+// Schritt 2: Untergrund (F-06, Fusion E-039): eine Frage je Zeile, linksbündig, Fugenraster mit Haken (A); Untergrund
+// mobil einspaltig, Ja/Nein/Weiß nicht immer in drei Spalten (B), großzügiger Abstand zwischen den Fragegruppen (B).
+// Texte, Namen und Verhalten unverändert.
 export default function Schritt2({ data, update }) {
     return (
-        <div className="flex flex-col gap-8">
-            <Auswahlgruppe
+        <div className="flex flex-col gap-12">
+            <OptionGroup
                 legend="Untergrund bzw. Bestand (Mehrfachauswahl):"
                 hint="Bei mehreren Räumen alles auswählen, was vorkommt."
                 options={SUBSTRATE_OPTIONS}
                 value={data.substrates}
                 multi
-                columns="grid-cols-1 sm:grid-cols-2"
                 onChange={(id) => {
                     const substrates = toggleInList(data.substrates, id);
                     const patch = { substrates };
@@ -20,25 +20,25 @@ export default function Schritt2({ data, update }) {
                     update(patch);
                 }}
             />
-            <Auswahlgruppe
+            <OptionGroup
                 legend="Ist eine Fußbodenheizung vorhanden oder geplant?"
                 options={YES_NO_UNSURE}
                 value={data.floorHeating}
-                columns="grid-cols-1 sm:grid-cols-3"
+                muster="dreier"
                 onChange={(id) => update({ floorHeating: id })}
             />
-            <Auswahlgruppe
+            <OptionGroup
                 legend="Muss ein Altbelag zurückgebaut werden?"
                 options={YES_NO_UNSURE}
                 value={data.removal}
-                columns="grid-cols-1 sm:grid-cols-3"
+                muster="dreier"
                 onChange={(id) => update({ removal: id })}
             />
-            <Auswahlgruppe
+            <OptionGroup
                 legend="Liegt die Fläche in einem Nassbereich (z. B. Duschbereich, Hauswirtschaftsraum mit Bodenablauf)?"
                 options={YES_NO}
                 value={data.wetArea}
-                columns="grid-cols-2"
+                muster="paar"
                 onChange={(id) => update({ wetArea: id })}
             />
         </div>

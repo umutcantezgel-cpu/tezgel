@@ -1,0 +1,80 @@
+##### X
+FOKUS d1440: ok 115/152 {'duenn': 23, 'ok': 115, 'kontrastarm': 14}
+    ('s1-start', 'button "Wohn- & EssbereichBöden in Wohnräumen un"', 'duenn')
+    ('s1-start', 'button "KücheKüchenboden und Küchenrückwand"', 'duenn')
+    ('s1-start', 'button "Flur & DieleEingang, Diele, Garderobe"', 'duenn')
+    ('s1-start', 'button "TreppeInnen- oder Außentreppe, Tritt- un"', 'duenn')
+    ('s1-start', 'button "Balkon & TerrasseFrostsichere Außenbeläg"', 'duenn')
+    ('s1-start', 'button "Nur Untergrund / AbdichtungAusgleich, En"', 'duenn')
+    ('s1-auswahl', 'button "Wohn- & EssbereichBöden in Wohnräumen un"', 'duenn')
+    ('s1-auswahl', 'button "KücheKüchenboden und Küchenrückwand"', 'duenn')
+    ('s1-auswahl', 'button "Flur & DieleEingang, Diele, Garderobe"', 'duenn')
+    ('s1-auswahl', 'button "TreppeInnen- oder Außentreppe, Tritt- un"', 'kontrastarm')
+    ('s1-auswahl', 'button "Balkon & TerrasseFrostsichere Außenbeläg"', 'duenn')
+    ('s1-auswahl', 'button "Nur Untergrund / AbdichtungAusgleich, En"', 'kontrastarm')
+FOKUS m390: ok 112/152 {'duenn': 34, 'ok': 112, 'kontrastarm': 6}
+    ('s1-start', 'button "Wohn- & EssbereichBöden in Wohnräumen un"', 'duenn')
+    ('s1-start', 'button "KücheKüchenboden und Küchenrückwand"', 'duenn')
+    ('s1-start', 'button "Flur & DieleEingang, Diele, Garderobe"', 'duenn')
+    ('s1-start', 'button "TreppeInnen- oder Außentreppe, Tritt- un"', 'duenn')
+    ('s1-start', 'button "Balkon & TerrasseFrostsichere Außenbeläg"', 'duenn')
+    ('s1-start', 'button "Nur Untergrund / AbdichtungAusgleich, En"', 'duenn')
+    ('s1-auswahl', 'button "Wohn- & EssbereichBöden in Wohnräumen un"', 'duenn')
+    ('s1-auswahl', 'button "KücheKüchenboden und Küchenrückwand"', 'duenn')
+    ('s1-auswahl', 'button "Flur & DieleEingang, Diele, Garderobe"', 'kontrastarm')
+    ('s1-auswahl', 'button "TreppeInnen- oder Außentreppe, Tritt- un"', 'duenn')
+    ('s1-auswahl', 'button "Balkon & TerrasseFrostsichere Außenbeläg"', 'kontrastarm')
+    ('s1-auswahl', 'button "Nur Untergrund / AbdichtungAusgleich, En"', 'duenn')
+REFLOW320 {'s1-start': (0, [], 0), 's1-auswahl': (0, [], 0), 's2': (0, [], 0), 's3': (0, [], 0), 's4': (1, [('platzhalter-abgeschnitten', 'fk-phone', 'Für die Rücksprache zum Aufmaß')], 0), 's4-leer-absenden': (1, [('platzhalter-abgeschnitten', 'fk-phone', 'Für die Rücksprache zum Aufmaß')], 0), 'serverfehler': (0, [], 0), 'erfolg': (0, [], 0), 'whatsapp': (0, [], 0)}
+ZOOM200 {'s1-start': (9, [('baustein-scrollWidth>clientWidth', '', ''), ('ragt-heraus', 'div "Fliesen-Konfigurator1Schritt 1: Rau', ''), ('ragt-heraus', 'div "Fliesen-Konfigurator1Schritt 1: Rau', '')], 0), 's1-auswahl': (9, [('baustein-scrollWidth>clientWidth', '', ''), ('ragt-heraus', 'div "Fliesen-Konfigurator1Schritt 1: Rau', ''), ('ragt-heraus', 'div "Fliesen-Konfigurator1Schritt 1: Rau', '')], 0), 's2': (9, [('baustein-scrollWidth>clientWidth', '', ''), ('ragt-heraus', 'div "Fliesen-KonfiguratorSchritt 1: Raum', ''), ('ragt-heraus', 'div "Fliesen-KonfiguratorSchritt 1: Raum', '')], 0), 's3': (11, [('baustein-scrollWidth>clientWidth', '', ''), ('ragt-heraus', 'div "Fliesen-KonfiguratorSchritt 1: Raum', ''), ('ragt-heraus', 'div "Fliesen-KonfiguratorSchritt 1: Raum', '')], 0), 's4': (13, [('baustein-scrollWidth>clientWidth', '', ''), ('ragt-heraus', 'div "Fliesen-KonfiguratorSchritt 1: Raum', ''), ('ragt-heraus', 'div "Fliesen-KonfiguratorSchritt 1: Raum', '')], 0), 's4-leer-absenden': (13, [('baustein-scrollWidth>clientWidth', '', ''), ('ragt-heraus', 'div "Fliesen-KonfiguratorSchritt 1: Raum', ''), ('ragt-heraus', 'div "Fliesen-KonfiguratorSchritt 1: Raum', '')], 0), 'serverfehler': (11, [('baustein-scrollWidth>clientWidth', '', ''), ('ragt-heraus', 'div "Fliesen-KonfiguratorSchritt 1: Raum', ''), ('ragt-heraus', 'div "Fliesen-KonfiguratorSchritt 1: Raum', '')], 0), 'erfolg': (0, [], 0), 'whatsapp': (0, [], 0)}
+ZOOMAEQUIVALENT {'s1-start': (0, [], 0), 's1-auswahl': (0, [], 0), 's2': (0, [], 0), 's3': (0, [], 0), 's4': (1, [('platzhalter-abgeschnitten', 'fk-phone', 'Für die Rücksprache zum Aufmaß')], 0), 's4-leer-absenden': (1, [('platzhalter-abgeschnitten', 'fk-phone', 'Für die Rücksprache zum Aufmaß')], 0), 'serverfehler': (0, [], 0), 'erfolg': (0, [], 0), 'whatsapp': (0, [], 0)}
+TEXTABSTAND d1440 {'s4': [('platzhalter-abgeschnitten', 'fk-phone', 'Für die Rücksprache zum Aufmaß')], 's4-leer-absenden': [('platzhalter-abgeschnitten', 'fk-phone', 'Für die Rücksprache zum Aufmaß')]}
+TEXTABSTAND m390 {'s4': [('platzhalter-abgeschnitten', 'fk-phone', 'Für die Rücksprache zum Aufmaß')], 's4-leer-absenden': [('platzhalter-abgeschnitten', 'fk-phone', 'Für die Rücksprache zum Aufmaß')]}
+SCHRITTFOKUS d1440 {'s1→s2': 'p "2. Untergrund & Bestand"', 's2→s3': 'p "3. Format, Material & Menge"', 's3→s2 (Zurück)': 'p "2. Untergrund & Bestand"', 's2→s3 erneut': 'p "3. Format, Material & Menge"', 's3→s4': 'p "4. Zusammenfassung & Kontakt"', 's4→s3 (Zurück zu Schritt 3)': 'p "3. Format, Material & Menge"', 's3→s4 erneut': 'p "4. Zusammenfassung & Kontakt"', 'leer absenden (Enter)': 'input#fk-name ""', 'WhatsApp leer (Enter)': 'input#fk-name ""', 'Serverfehler (Enter)': 'body "Zum Hauptinhalt springenFachbetriebAßlar"', 'Laden (Enter)': 'body "Zum Hauptinhalt springenFachbetriebAßlar"', 'Erfolg danach': 'body "Zum Hauptinhalt springenFachbetriebAßlar"', 'Erfolg: Neue Konfiguration (Enter)': 'body "Zum Hauptinhalt springenFachbetriebAßlar"', 'WhatsApp ausgefüllt (Enter)': 'body "Zum Hauptinhalt springenFachbetriebAßlar"'}
+SCHRITTFOKUS m390 {'s1→s2': 'p "2. Untergrund & Bestand"', 's2→s3': 'p "3. Format, Material & Menge"', 's3→s2 (Zurück)': 'p "2. Untergrund & Bestand"', 's2→s3 erneut': 'p "3. Format, Material & Menge"', 's3→s4': 'p "4. Zusammenfassung & Kontakt"', 's4→s3 (Zurück zu Schritt 3)': 'p "3. Format, Material & Menge"', 's3→s4 erneut': 'p "4. Zusammenfassung & Kontakt"', 'leer absenden (Enter)': 'input#fk-name ""', 'WhatsApp leer (Enter)': 'input#fk-name ""', 'Serverfehler (Enter)': 'body "Zum Hauptinhalt springenFachbetriebAßlar"', 'Laden (Enter)': 'body "Zum Hauptinhalt springenFachbetriebAßlar"', 'Erfolg danach': 'body "Zum Hauptinhalt springenFachbetriebAßlar"', 'Erfolg: Neue Konfiguration (Enter)': 'body "Zum Hauptinhalt springenFachbetriebAßlar"', 'WhatsApp ausgefüllt (Enter)': 'body "Zum Hauptinhalt springenFachbetriebAßlar"'}
+REGLER d1440 {"regler": "25", "feld": "25", "valuetext": null, "live": [{"reg": "div live=polite role=null", "text": "Materialbedarf inkl. Verschnitt (Richtwert):ca. 24,2–26,5 m²aus 23 m² nettoTreppe: Menge nach Stufenmaßen bzw. beim Aufmaß"}, {"reg": "div live=polite role=null", "text": "Materialbedarf inkl. Ve
+REGLER m390 {"regler": "25", "feld": "25", "valuetext": null, "live": [{"reg": "div live=polite role=null", "text": "Materialbedarf inkl. Verschnitt (Richtwert):ca. 24,2–26,5 m²aus 23 m² nettoTreppe: Menge nach Stufenmaßen bzw. beim Aufmaß"}, {"reg": "div live=polite role=null", "text": "Materialbedarf inkl. Ve
+##### Y
+FOKUS d1440: ok 152/152 {'ok': 152}
+FOKUS m390: ok 142/152 {'ok': 142, 'duenn': 10}
+    ('s4', 'a "Ausgleich & Gefälle"', 'duenn')
+    ('s4', 'a "Treppen neu belegen"', 'duenn')
+    ('s4-leer-absenden', 'a "Ausgleich & Gefälle"', 'duenn')
+    ('s4-leer-absenden', 'a "Treppen neu belegen"', 'duenn')
+    ('serverfehler', 'a "Ausgleich & Gefälle"', 'duenn')
+    ('serverfehler', 'a "Treppen neu belegen"', 'duenn')
+    ('erfolg', 'a "Ausgleich & Gefälle"', 'duenn')
+    ('erfolg', 'a "Treppen neu belegen"', 'duenn')
+    ('whatsapp', 'a "Ausgleich & Gefälle"', 'duenn')
+    ('whatsapp', 'a "Treppen neu belegen"', 'duenn')
+REFLOW320 {'s1-start': (0, [], 0), 's1-auswahl': (0, [], 0), 's2': (0, [], 0), 's3': (0, [], 0), 's4': (1, [('platzhalter-abgeschnitten', 'fk-phone', 'Für die Rücksprache zum Aufmaß')], 0), 's4-leer-absenden': (1, [('platzhalter-abgeschnitten', 'fk-phone', 'Für die Rücksprache zum Aufmaß')], 0), 'serverfehler': (0, [], 0), 'erfolg': (0, [], 0), 'whatsapp': (0, [], 0)}
+ZOOM200 {'s1-start': (0, [], 0), 's1-auswahl': (0, [], 0), 's2': (0, [], 0), 's3': (0, [], 0), 's4': (2, [('platzhalter-abgeschnitten', 'fk-phone', 'Für die Rücksprache zum Aufmaß'), ('platzhalter-abgeschnitten', 'fk-email', 'ihre-adresse@beispiel.de')], 0), 's4-leer-absenden': (2, [('platzhalter-abgeschnitten', 'fk-phone', 'Für die Rücksprache zum Aufmaß'), ('platzhalter-abgeschnitten', 'fk-email', 'ihre-adresse@beispiel.de')], 0), 'serverfehler': (0, [], 0), 'erfolg': (0, [], 0), 'whatsapp': (0, [], 0)}
+ZOOMAEQUIVALENT {'s1-start': (0, [], 0), 's1-auswahl': (0, [], 0), 's2': (0, [], 0), 's3': (0, [], 0), 's4': (1, [('platzhalter-abgeschnitten', 'fk-phone', 'Für die Rücksprache zum Aufmaß')], 0), 's4-leer-absenden': (1, [('platzhalter-abgeschnitten', 'fk-phone', 'Für die Rücksprache zum Aufmaß')], 0), 'serverfehler': (0, [], 0), 'erfolg': (0, [], 0), 'whatsapp': (0, [], 0)}
+TEXTABSTAND d1440 ohne neuen Befund
+TEXTABSTAND m390 {'s4': [('platzhalter-abgeschnitten', 'fk-phone', 'Für die Rücksprache zum Aufmaß')], 's4-leer-absenden': [('platzhalter-abgeschnitten', 'fk-phone', 'Für die Rücksprache zum Aufmaß')]}
+SCHRITTFOKUS d1440 {'s1→s2': 'p "2. Untergrund & Bestand"', 's2→s3': 'p "3. Format, Material & Menge"', 's3→s2 (Zurück)': 'p "2. Untergrund & Bestand"', 's2→s3 erneut': 'p "3. Format, Material & Menge"', 's3→s4': 'p "4. Zusammenfassung & Kontakt"', 's4→s3 (Zurück zu Schritt 3)': 'p "3. Format, Material & Menge"', 's3→s4 erneut': 'p "4. Zusammenfassung & Kontakt"', 'leer absenden (Enter)': 'input#fk-name ""', 'WhatsApp leer (Enter)': 'input#fk-name ""', 'Serverfehler (Enter)': 'body "Zum Hauptinhalt springenFachbetriebAßlar"', 'Laden (Enter)': 'body "Zum Hauptinhalt springenFachbetriebAßlar"', 'Erfolg danach': 'body "Zum Hauptinhalt springenFachbetriebAßlar"', 'Erfolg: Neue Konfiguration (Enter)': 'body "Zum Hauptinhalt springenFachbetriebAßlar"', 'WhatsApp ausgefüllt (Enter)': 'body "Zum Hauptinhalt springenFachbetriebAßlar"'}
+SCHRITTFOKUS m390 {'s1→s2': 'p "2. Untergrund & Bestand"', 's2→s3': 'p "3. Format, Material & Menge"', 's3→s2 (Zurück)': 'p "2. Untergrund & Bestand"', 's2→s3 erneut': 'p "3. Format, Material & Menge"', 's3→s4': 'p "4. Zusammenfassung & Kontakt"', 's4→s3 (Zurück zu Schritt 3)': 'p "3. Format, Material & Menge"', 's3→s4 erneut': 'p "4. Zusammenfassung & Kontakt"', 'leer absenden (Enter)': 'input#fk-name ""', 'WhatsApp leer (Enter)': 'input#fk-name ""', 'Serverfehler (Enter)': 'body "Zum Hauptinhalt springenFachbetriebAßlar"', 'Laden (Enter)': 'body "Zum Hauptinhalt springenFachbetriebAßlar"', 'Erfolg danach': 'body "Zum Hauptinhalt springenFachbetriebAßlar"', 'Erfolg: Neue Konfiguration (Enter)': 'body "Zum Hauptinhalt springenFachbetriebAßlar"', 'WhatsApp ausgefüllt (Enter)': 'body "Zum Hauptinhalt springenFachbetriebAßlar"'}
+REGLER d1440 {"regler": "25", "feld": "25", "valuetext": null, "live": [{"reg": "div live=polite role=null", "text": "Materialbedarf inkl. Verschnitt (Richtwert):ca. 24,2–26,5 m²aus 23 m² nettoTreppe: Menge nach Stufenmaßen bzw. beim Aufmaß"}, {"reg": "div live=polite role=null", "text": "Materialbedarf inkl. Ve
+REGLER m390 {"regler": "25", "feld": "25", "valuetext": null, "live": [{"reg": "div live=polite role=null", "text": "Materialbedarf inkl. Verschnitt (Richtwert):ca. 24,2–26,5 m²aus 23 m² nettoTreppe: Menge nach Stufenmaßen bzw. beim Aufmaß"}, {"reg": "div live=polite role=null", "text": "Materialbedarf inkl. Ve
+##### F
+FOKUS d1440: ok 152/152 {'ok': 152}
+FOKUS m390: ok 142/152 {'ok': 142, 'duenn': 10}
+    ('s4', 'a "Ausgleich & Gefälle"', 'duenn')
+    ('s4', 'a "Treppen neu belegen"', 'duenn')
+    ('s4-leer-absenden', 'a "Ausgleich & Gefälle"', 'duenn')
+    ('s4-leer-absenden', 'a "Treppen neu belegen"', 'duenn')
+    ('serverfehler', 'a "Ausgleich & Gefälle"', 'duenn')
+    ('serverfehler', 'a "Treppen neu belegen"', 'duenn')
+    ('erfolg', 'a "Ausgleich & Gefälle"', 'duenn')
+    ('erfolg', 'a "Treppen neu belegen"', 'duenn')
+    ('whatsapp', 'a "Ausgleich & Gefälle"', 'duenn')
+    ('whatsapp', 'a "Treppen neu belegen"', 'duenn')
+REFLOW320 {'s1-start': (0, [], 0), 's1-auswahl': (0, [], 0), 's2': (0, [], 0), 's3': (0, [], 0), 's4': (1, [('platzhalter-abgeschnitten', 'fk-phone', 'Für die Rücksprache zum Aufmaß')], 0), 's4-leer-absenden': (1, [('platzhalter-abgeschnitten', 'fk-phone', 'Für die Rücksprache zum Aufmaß')], 0), 'serverfehler': (0, [], 0), 'erfolg': (0, [], 0), 'whatsapp': (0, [], 0)}
+ZOOM200 {'s1-start': (0, [], 0), 's1-auswahl': (0, [], 0), 's2': (0, [], 0), 's3': (0, [], 0), 's4': (0, [], 0), 's4-leer-absenden': (0, [], 0), 'serverfehler': (0, [], 0), 'erfolg': (0, [], 0), 'whatsapp': (0, [], 0)}
+ZOOMAEQUIVALENT {'s1-start': (0, [], 0), 's1-auswahl': (0, [], 0), 's2': (0, [], 0), 's3': (0, [], 0), 's4': (0, [], 0), 's4-leer-absenden': (0, [], 0), 'serverfehler': (0, [], 0), 'erfolg': (0, [], 0), 'whatsapp': (0, [], 0)}
+TEXTABSTAND d1440 ohne neuen Befund
+TEXTABSTAND m390 {'s4': [('platzhalter-abgeschnitten', 'fk-phone', 'Für die Rücksprache zum Aufmaß')], 's4-leer-absenden': [('platzhalter-abgeschnitten', 'fk-phone', 'Für die Rücksprache zum Aufmaß')]}
+SCHRITTFOKUS d1440 {'s1→s2': 'p "2. Untergrund & Bestand"', 's2→s3': 'p "3. Format, Material & Menge"', 's3→s2 (Zurück)': 'p "2. Untergrund & Bestand"', 's2→s3 erneut': 'p "3. Format, Material & Menge"', 's3→s4': 'p "4. Zusammenfassung & Kontakt"', 's4→s3 (Zurück zu Schritt 3)': 'p "3. Format, Material & Menge"', 's3→s4 erneut': 'p "4. Zusammenfassung & Kontakt"', 'leer absenden (Enter)': 'input#fk-name ""', 'WhatsApp leer (Enter)': 'input#fk-name ""', 'Serverfehler (Enter)': 'body "Zum Hauptinhalt springenFachbetriebAßlar"', 'Laden (Enter)': 'body "Zum Hauptinhalt springenFachbetriebAßlar"', 'Erfolg danach': 'body "Zum Hauptinhalt springenFachbetriebAßlar"', 'Erfolg: Neue Konfiguration (Enter)': 'body "Zum Hauptinhalt springenFachbetriebAßlar"', 'WhatsApp ausgefüllt (Enter)': 'body "Zum Hauptinhalt springenFachbetriebAßlar"'}
+SCHRITTFOKUS m390 {'s1→s2': 'p "2. Untergrund & Bestand"', 's2→s3': 'p "3. Format, Material & Menge"', 's3→s2 (Zurück)': 'p "2. Untergrund & Bestand"', 's2→s3 erneut': 'p "3. Format, Material & Menge"', 's3→s4': 'p "4. Zusammenfassung & Kontakt"', 's4→s3 (Zurück zu Schritt 3)': 'p "3. Format, Material & Menge"', 's3→s4 erneut': 'p "4. Zusammenfassung & Kontakt"', 'leer absenden (Enter)': 'input#fk-name ""', 'WhatsApp leer (Enter)': 'input#fk-name ""', 'Serverfehler (Enter)': 'body "Zum Hauptinhalt springenFachbetriebAßlar"', 'Laden (Enter)': 'body "Zum Hauptinhalt springenFachbetriebAßlar"', 'Erfolg danach': 'body "Zum Hauptinhalt springenFachbetriebAßlar"', 'Erfolg: Neue Konfiguration (Enter)': 'body "Zum Hauptinhalt springenFachbetriebAßlar"', 'WhatsApp ausgefüllt (Enter)': 'body "Zum Hauptinhalt springenFachbetriebAßlar"'}
+REGLER d1440 {"regler": "25", "feld": "25", "valuetext": null, "live": [{"reg": "div live=polite role=null", "text": "Materialbedarf inkl. Verschnitt (Richtwert):ca. 24,2–26,5 m² aus 23 m² nettoTreppe: Menge nach Stufenmaßen bzw. beim Aufmaß"}, {"reg": "div live=polite role=null", "text": "Materialbedarf inkl. V
+REGLER m390 {"regler": "25", "feld": "25", "valuetext": null, "live": [{"reg": "div live=polite role=null", "text": "Materialbedarf inkl. Verschnitt (Richtwert):ca. 24,2–26,5 m² aus 23 m² nettoTreppe: Menge nach Stufenmaßen bzw. beim Aufmaß"}, {"reg": "div live=polite role=null", "text": "Materialbedarf inkl. V
