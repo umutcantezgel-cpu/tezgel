@@ -20,6 +20,10 @@ dein S-Auftrag vor dieser Datei vor den Seitenregeln vor dem Werkstatt-Auftrag.
   Muster `src/app/(bestand)/bad/page.jsx`) – ohne JavaScript ein gleichwertiger Weg (Telefon, WhatsApp, E-Mail).
 - **`spaet` nie auf einem Sprungziel** (Abschnitt mit `id`, auf das Links zeigen) und nicht auf Abschnitten mit
   Formularen/Funnels; sonst landen Sprünge daneben bzw. Prüfwerkzeuge lesen den Inhalt nicht.
+- **`spaet` und Tastatur (S-19, S-21):** Folgen mehrere `spaet`-Abschnitte ohne Bedienelement direkt vor einem
+  fokussierbaren Ziel, landet der Fokus beim Tabben unter dem Bildrand (die Abschnitte haben nur Platzhalterhöhe) – dann
+  einen davon ohne `spaet` lassen und mit a11y-zusatz (`fokus_verdeckt`) belegen. `content-visibility` schneidet
+  Fokusringe am Rand des Abschnitts ab: Bedienelemente am Rand brauchen Innenabstand (z. B. `py-1`).
 - **Sprungziele:** kein eigenes `scroll-mt-*` (`scroll-padding-top` in `globals.css` reicht; Landeplatz 96 px).
 - **Pflichtsternchen** nur über `pflichtKlassen` (grau), nie rot. **Rot** nur Achse/Anriss/Fehlerzeichen; die Leitachse ist
   grau, rot nur das gezogene Stück – kein weiteres rotes Element in einem Bildschirm mit Plan-Laser.

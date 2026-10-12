@@ -37,3 +37,6 @@ spaet auf /leistungen/[id]#kosten-rechner, scroll-mt-Reste).
 - scroll-mt-Reste in Fachbereiche, ReviewsSection, CalendlySection, /preise, /foerderung, Untergrund-Seiten.
 - PricingCalculator Tab-Rücksprung (Textfeld → Name); Messwerkzeuge lesen innerText in spaet-Abschnitten.
 - Planblatt unter lg in der Familie sehr hoch (t768) – Begrenzung (z. B. `max-w-md`) familienweit entscheiden (S-14, F-02).
+- `.spaet-zeichnen` (content-visibility) schneidet Fokusringe am Abschnittsrand ab – familienweit `overflow-clip-margin`
+  prüfen statt Innenabstand je Seite (S-21); Tab-Folge über mehrere spaet-Abschnitte ohne Bedienelement (S-19).
+- 404 → „Zur Startseite“ im Dev-Server unter Last zweimal rot (S-21, gegen 4362 grün) – im Reinraum-Tor beobachten.
