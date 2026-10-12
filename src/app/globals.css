@@ -45,8 +45,11 @@
   /* Schrift (K-006) */
   --font-text: var(--font-archivo), "Archivo Ersatz", Arial, sans-serif;
   --font-anzeige: var(--font-archivo), "Archivo Anzeige Ersatz", Arial, sans-serif;
-  /* Plex Mono ohne ß (Glyphe liest sich wie „B“); ß kommt aus Archivo (K-006) */
-  --font-mono: var(--font-plex-mono), var(--font-archivo), "Plex Ersatz", "Courier New", monospace;
+  /* Plex Mono ohne ß (Glyphe liest sich wie „B“); ß kommt aus Archivo (K-006). Bis Plex Mono geladen ist (nicht
+     vorgeladen), steht die metrikgleiche „Plex Ersatz“ davor – vorher sprang die Kennzeile von Archivo (proportional)
+     auf Plex und schob die H1 (CLS /bad Desktop 0,17, E3-Tor Anlauf 2); ihr Zeichenbereich lässt ß und alles außerhalb
+     des Plex-Zeichenbereichs weiter an Archivo fallen */
+  --font-mono: var(--font-plex-mono), "Plex Ersatz", var(--font-archivo), "Courier New", monospace;
   /* Alt-Namen zeigen bis zum Abbau auf die neuen Familien */
   --font-sans: var(--font-text);
   --font-display: var(--font-anzeige);
@@ -171,6 +174,8 @@
 @font-face {
   font-family: "Plex Ersatz";
   src: local("Courier New"), local("Liberation Mono"), local("Courier");
+  /* Zeichenbereich der Plex-Datei (Latin-1 ohne ß U+00DF, Striche, Anführungen, Punkte, €, Minus) */
+  unicode-range: U+0020-007E, U+00A0-00DE, U+00E0-00FF, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+20AC, U+2212;
   size-adjust: 100%;
   ascent-override: 102.5%;
   descent-override: 27.5%;
