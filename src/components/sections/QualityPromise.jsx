@@ -20,6 +20,7 @@ export default function QualityPromise() {
             etikett={<>HWK Fachbetrieb &middot; {COMPANY_DATA.authority.shortName} &middot; Garantierter Standard</>}
             titel="Unser 8-Punkte-Qualitätsversprechen für Ihr Fliesenprojekt"
             einleitung="Vom Aufmaß bis zur fertigen Fuge: Wir stehen zu unseren Vereinbarungen, Preisen und Terminen – in Aßlar, Wetzlar und ganz Hessen."
+            spaet
         >
             <Merkliste spalten={2} verband nummeriert eintraege={punkte} />
 

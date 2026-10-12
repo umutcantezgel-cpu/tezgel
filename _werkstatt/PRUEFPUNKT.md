@@ -1,5 +1,13 @@
 # PRUEFPUNKT
 
+- Etappe: E3 · Stand 12.10.2026 ~05:00 CEST · Nacharbeit E4-NACH-01…18 fertig (PLAN-Status mit Commits; Prüfstufe A je Paket grün, Tempo-Inseln 79742a4). main = 6156079 (live), Push nur auf den Arbeitsbranch.
+- Jetzt: E3-Tor Anlauf 2 (letzter Anlauf, Workflow `e3-tor-2`): Prüfer Reinraum + Server 4310 neu auf dem Tor-Stand; Prüfer Funktion/Texte/axe/Werte; Prüfer Bilder (Abschnitte der 12 Hauptansichten, Bildsatz-Kennzahlen, Ersatzpfad, Bewegungsfolgen mit Echtzeit-Lademomenten); zwei frische Gutachter (Erzähl-/Arbeitsansichten, danach Abgleich mit den Befunden aus Anlauf 1); Lighthouse im Ruhefenster gegen e0 und e3-tor. Belege `_werkstatt/belege/e3-tor-2/`, Rohbilder `scratchpad/belege-roh/e3-tor-2/`, Berichte `berichte/E3-SICHT-2-*.md`.
+- Danach: E-026 (Ausgang); Befunde als zweiter und letzter Durchgang je Ansicht und Kategorie (Zählstand PLAN); Lighthouse-Budget nach zwei belegten Anläufen ggf. AUSNAHME mit Ersatzlösung; dann E4 Familien (Pfade der E4–E6-Zeilen auf `src/app/(bestand)/…` umstellen).
+- Offene Kleinpunkte (Rückgaben): Feldraster-Restzellen grau; Abschnitt-Prop `titelGroesse` statt `[&_h2]:text-fs-5` (Konfigurator); auf [stadt] zwei Feldraster in Folge; Ortsleiste in InteractiveServiceMap abgeschnitten; Funktionsfall „Rechner auf /“ (Vorlage `belege/e4-nach/tempo-pa/rechner-probe.mjs`).
+- Offene Menschen-Fragen: M-15 bis M-23; Textvorschläge in TEXTVORSCHLAEGE (Abschnitt Vorschläge).
+
+## Vorheriger Stand (überholt)
+
 - Etappe: E3 · Stand 12.10.2026 ~09:30 CEST · E3-Tor Anlauf 1 ausgewertet (E-025, Belege `belege/e3-tor/`, Berichte `berichte/E3-SICHT-*.md`). main = 6156079 (live), Push nur auf den Arbeitsbranch.
 - Jetzt: Nacharbeit nach PLAN „Offene Punkte · E3-Tor, Anlauf 1“ (E4-NACH-01…15).
   1. Server: 4310 = Reinraum 8debc92 läuft; Dev 4320 für Prüfstufe A neu starten (`dev-server.sh start`).

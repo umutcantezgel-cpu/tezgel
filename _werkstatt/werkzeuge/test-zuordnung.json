@@ -125,5 +125,25 @@
     "specs": [
       "ALLE"
     ]
+  },
+  {
+    "muster": "components/ui/FinalCTA",
+    "specs": [
+      "funktion-kontaktwege.spec.mjs",
+      "funktion-schnellanfrage.spec.mjs"
+    ]
+  },
+  {
+    "muster": "src/app/\\(bestand\\)/page\\.tsx$",
+    "specs": [
+      "funktion-kontaktwege.spec.mjs",
+      "funktion-hero-kontakt.spec.mjs"
+    ]
+  },
+  {
+    "muster": "components/sections/QualityPromise",
+    "specs": [
+      "funktion-kontaktwege.spec.mjs"
+    ]
   }
 ]
