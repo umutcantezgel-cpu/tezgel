@@ -1,0 +1,444 @@
+{
+ "vorher": "3c02fe5",
+ "nachher": "5acf5e1",
+ "laufzeit_reste": {
+  "vorher": [
+   "blog/gibt-es-nicht.html"
+  ],
+  "nachher": []
+ },
+ "variablen_weg": [
+  "--blur-md",
+  "--color-black",
+  "--color-green-500",
+  "--color-sky-200",
+  "--color-sky-50",
+  "--color-sky-800",
+  "--radius-md",
+  "--tracking-wide",
+  "--tw-space-x-reverse"
+ ],
+ "variablen_neu": [
+  "--aspect-video"
+ ],
+ "keyframes_weg": [],
+ "keyframes_neu": [],
+ "html_dateien": 172,
+ "nur_vorher": [],
+ "nur_nachher": [],
+ "html_abweichend": 107,
+ "abweichungen": [
+  {
+   "datei": "bad/bad-aus-einer-hand.html",
+   "ab": 95436,
+   "vorher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"glass-bezel-outer max-w-3xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"@container\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb-8 border-b border-fuge pb-"
+  },
+  {
+   "datei": "bad/badanfrage.html",
+   "ab": 75203,
+   "vorher": "etzlar erstellt Ihr maßgeschneidertes Festpreisangebot.</p></header><div class=\"glass-bezel-outer max-w-3xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "etzlar erstellt Ihr maßgeschneidertes Festpreisangebot.</p></header><div class=\"@container\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb-8 border-b border-fuge pb-"
+  },
+  {
+   "datei": "bad/badplaner.html",
+   "ab": 85099,
+   "vorher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"glass-bezel-outer max-w-3xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"@container\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb-8 border-b border-fuge pb-"
+  },
+  {
+   "datei": "bad/badsanierung.html",
+   "ab": 95845,
+   "vorher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"glass-bezel-outer max-w-3xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"@container\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb-8 border-b border-fuge pb-"
+  },
+  {
+   "datei": "bad/barrierefreies-bad.html",
+   "ab": 90286,
+   "vorher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"glass-bezel-outer max-w-3xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"@container\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb-8 border-b border-fuge pb-"
+  },
+  {
+   "datei": "bad/fliesen.html",
+   "ab": 91397,
+   "vorher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"glass-bezel-outer max-w-3xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"@container\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb-8 border-b border-fuge pb-"
+  },
+  {
+   "datei": "bad/musterbaeder/basic-bad-15_9.html",
+   "ab": 89031,
+   "vorher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"glass-bezel-outer max-w-3xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"@container\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb-8 border-b border-fuge pb-"
+  },
+  {
+   "datei": "bad/musterbaeder/basic-bad-4_6.html",
+   "ab": 87658,
+   "vorher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"glass-bezel-outer max-w-3xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"@container\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb-8 border-b border-fuge pb-"
+  },
+  {
+   "datei": "bad/musterbaeder/basic-bad-7.html",
+   "ab": 87324,
+   "vorher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"glass-bezel-outer max-w-3xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"@container\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb-8 border-b border-fuge pb-"
+  },
+  {
+   "datei": "bad/musterbaeder/basic-bad-8_2.html",
+   "ab": 87488,
+   "vorher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"glass-bezel-outer max-w-3xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"@container\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb-8 border-b border-fuge pb-"
+  },
+  {
+   "datei": "bad/musterbaeder/luxus-bad-15_9.html",
+   "ab": 84920,
+   "vorher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"glass-bezel-outer max-w-3xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"@container\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb-8 border-b border-fuge pb-"
+  },
+  {
+   "datei": "bad/musterbaeder/luxus-bad-4_6.html",
+   "ab": 86581,
+   "vorher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"glass-bezel-outer max-w-3xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"@container\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb-8 border-b border-fuge pb-"
+  },
+  {
+   "datei": "bad/musterbaeder/luxus-bad-7.html",
+   "ab": 85936,
+   "vorher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"glass-bezel-outer max-w-3xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"@container\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb-8 border-b border-fuge pb-"
+  },
+  {
+   "datei": "bad/musterbaeder/luxus-bad-8_2.html",
+   "ab": 84988,
+   "vorher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"glass-bezel-outer max-w-3xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"@container\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb-8 border-b border-fuge pb-"
+  },
+  {
+   "datei": "bad/musterbaeder/premium-bad-15_9.html",
+   "ab": 90677,
+   "vorher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"glass-bezel-outer max-w-3xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"@container\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb-8 border-b border-fuge pb-"
+  },
+  {
+   "datei": "bad/musterbaeder/premium-bad-4_6.html",
+   "ab": 87090,
+   "vorher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"glass-bezel-outer max-w-3xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"@container\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb-8 border-b border-fuge pb-"
+  },
+  {
+   "datei": "bad/musterbaeder/premium-bad-7.html",
+   "ab": 84560,
+   "vorher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"glass-bezel-outer max-w-3xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"@container\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb-8 border-b border-fuge pb-"
+  },
+  {
+   "datei": "bad/musterbaeder/premium-bad-8_2.html",
+   "ab": 85893,
+   "vorher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"glass-bezel-outer max-w-3xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "10 relative z-10 scroll-mt-28\" id=\"anfrage\" aria-label=\"Badanfrage\"><div class=\"@container\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb-8 border-b border-fuge pb-"
+  },
+  {
+   "datei": "bad/projekt-check.html",
+   "ab": 75277,
+   "vorher": "reis erhalten Sie nach dem kostenfreien Vor-Ort-Aufmaß.</p></header><div class=\"glass-bezel-outer max-w-4xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "reis erhalten Sie nach dem kostenfreien Vor-Ort-Aufmaß.</p></header><div class=\"border border-strich bg-fliese\"><div class=\"border-b border-fuge p-6 sm:p-8 lg:p-12\"><div class=\"flex flex-wrap items-ce"
+  },
+  {
+   "datei": "bad.html",
+   "ab": 92628,
+   "vorher": "z-10 scroll-mt-28\" id=\"projekt-check\" aria-label=\"Bad-Projektcheck\"><div class=\"glass-bezel-outer max-w-4xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "z-10 scroll-mt-28\" id=\"projekt-check\" aria-label=\"Bad-Projektcheck\"><div class=\"border border-strich bg-fliese\"><div class=\"border-b border-fuge p-6 sm:p-8 lg:p-12\"><div class=\"flex flex-wrap items-ce"
+  },
+  {
+   "datei": "blog.html",
+   "ab": 594,
+   "vorher": " imageSrcSet=\"/_next/image?url=%2Fimages%2Fbad%2Fbad-holz-waschtisch.webp&amp;w=384&amp;q=75 384w, /_next/image?url=%2Fimages%2Fbad%2Fbad-holz-waschtisch.webp&amp;w=640&amp;q=75 640w, /_next/image?url",
+   "nachher": " imageSrcSet=\"/_next/image?url=%2Fimages%2Fbad%2Fbad-holz-waschtisch.webp&amp;w=256&amp;q=75 256w, /_next/image?url=%2Fimages%2Fbad%2Fbad-holz-waschtisch.webp&amp;w=384&amp;q=75 384w, /_next/image?url"
+  },
+  {
+   "datei": "faq.html",
+   "ab": 87281,
+   "vorher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-center gap-2\"><",
+   "nachher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-cente"
+  },
+  {
+   "datei": "fliesen/auf-fussbodenheizung.html",
+   "ab": 89405,
+   "vorher": "0 scroll-mt-28\" id=\"konfigurator\" aria-label=\"Fliesen-Konfigurator\"><div class=\"glass-bezel-outer max-w-4xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "0 scroll-mt-28\" id=\"konfigurator\" aria-label=\"Fliesen-Konfigurator\"><div class=\"@container\"><div class=\"border border-strich bg-fliese\"><div class=\"p-6 @xl:p-8 @4xl:p-12\"><div class=\"flex flex-wrap it"
+  },
+  {
+   "datei": "fliesen/festpreisangebot.html",
+   "ab": 109185,
+   "vorher": "px-6 lg:px-8 py-10 relative z-10\" aria-label=\"Fliesen-Konfigurator\"><div class=\"glass-bezel-outer max-w-4xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "px-6 lg:px-8 py-10 relative z-10\" aria-label=\"Fliesen-Konfigurator\"><div class=\"@container\"><div class=\"border border-strich bg-fliese\"><div class=\"p-6 @xl:p-8 @4xl:p-12\"><div class=\"flex flex-wrap it"
+  },
+  {
+   "datei": "fliesen/fliesenarten.html",
+   "ab": 98656,
+   "vorher": "0 scroll-mt-28\" id=\"konfigurator\" aria-label=\"Fliesen-Konfigurator\"><div class=\"glass-bezel-outer max-w-4xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "0 scroll-mt-28\" id=\"konfigurator\" aria-label=\"Fliesen-Konfigurator\"><div class=\"@container\"><div class=\"border border-strich bg-fliese\"><div class=\"p-6 @xl:p-8 @4xl:p-12\"><div class=\"flex flex-wrap it"
+  },
+  {
+   "datei": "fliesen/flur-diele.html",
+   "ab": 103357,
+   "vorher": "px-6 lg:px-8 py-10 relative z-10\" aria-label=\"Fliesen-Konfigurator\"><div class=\"glass-bezel-outer max-w-4xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "px-6 lg:px-8 py-10 relative z-10\" aria-label=\"Fliesen-Konfigurator\"><div class=\"@container\"><div class=\"border border-strich bg-fliese\"><div class=\"p-6 @xl:p-8 @4xl:p-12\"><div class=\"flex flex-wrap it"
+  },
+  {
+   "datei": "fliesen/grossformat.html",
+   "ab": 96944,
+   "vorher": "0 scroll-mt-28\" id=\"konfigurator\" aria-label=\"Fliesen-Konfigurator\"><div class=\"glass-bezel-outer max-w-4xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "0 scroll-mt-28\" id=\"konfigurator\" aria-label=\"Fliesen-Konfigurator\"><div class=\"@container\"><div class=\"border border-strich bg-fliese\"><div class=\"p-6 @xl:p-8 @4xl:p-12\"><div class=\"flex flex-wrap it"
+  },
+  {
+   "datei": "fliesen/holzoptik.html",
+   "ab": 92319,
+   "vorher": "0 scroll-mt-28\" id=\"konfigurator\" aria-label=\"Fliesen-Konfigurator\"><div class=\"glass-bezel-outer max-w-4xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "0 scroll-mt-28\" id=\"konfigurator\" aria-label=\"Fliesen-Konfigurator\"><div class=\"@container\"><div class=\"border border-strich bg-fliese\"><div class=\"p-6 @xl:p-8 @4xl:p-12\"><div class=\"flex flex-wrap it"
+  },
+  {
+   "datei": "fliesen/konfigurator.html",
+   "ab": 81232,
+   "vorher": "onfigurator\" aria-label=\"Fliesen-Konfigurator\" class=\"scroll-mt-32\"><div class=\"glass-bezel-outer max-w-4xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "onfigurator\" aria-label=\"Fliesen-Konfigurator\" class=\"scroll-mt-32\"><div class=\"@container\"><div class=\"border border-strich bg-fliese\"><div class=\"p-6 @xl:p-8 @4xl:p-12\"><div class=\"flex flex-wrap it"
+  },
+  {
+   "datei": "fliesen/kueche.html",
+   "ab": 91721,
+   "vorher": "0 scroll-mt-28\" id=\"konfigurator\" aria-label=\"Fliesen-Konfigurator\"><div class=\"glass-bezel-outer max-w-4xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "0 scroll-mt-28\" id=\"konfigurator\" aria-label=\"Fliesen-Konfigurator\"><div class=\"@container\"><div class=\"border border-strich bg-fliese\"><div class=\"p-6 @xl:p-8 @4xl:p-12\"><div class=\"flex flex-wrap it"
+  },
+  {
+   "datei": "fliesen/neubau.html",
+   "ab": 106326,
+   "vorher": "px-6 lg:px-8 py-10 relative z-10\" aria-label=\"Fliesen-Konfigurator\"><div class=\"glass-bezel-outer max-w-4xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "px-6 lg:px-8 py-10 relative z-10\" aria-label=\"Fliesen-Konfigurator\"><div class=\"@container\"><div class=\"border border-strich bg-fliese\"><div class=\"p-6 @xl:p-8 @4xl:p-12\"><div class=\"flex flex-wrap it"
+  },
+  {
+   "datei": "fliesen/renovierung.html",
+   "ab": 108263,
+   "vorher": "px-6 lg:px-8 py-10 relative z-10\" aria-label=\"Fliesen-Konfigurator\"><div class=\"glass-bezel-outer max-w-4xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "px-6 lg:px-8 py-10 relative z-10\" aria-label=\"Fliesen-Konfigurator\"><div class=\"@container\"><div class=\"border border-strich bg-fliese\"><div class=\"p-6 @xl:p-8 @4xl:p-12\"><div class=\"flex flex-wrap it"
+  },
+  {
+   "datei": "fliesen/verlegemuster.html",
+   "ab": 146486,
+   "vorher": "0 scroll-mt-28\" id=\"konfigurator\" aria-label=\"Fliesen-Konfigurator\"><div class=\"glass-bezel-outer max-w-4xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "0 scroll-mt-28\" id=\"konfigurator\" aria-label=\"Fliesen-Konfigurator\"><div class=\"@container\"><div class=\"border border-strich bg-fliese\"><div class=\"p-6 @xl:p-8 @4xl:p-12\"><div class=\"flex flex-wrap it"
+  },
+  {
+   "datei": "fliesen/verlegetechnik.html",
+   "ab": 113007,
+   "vorher": "px-6 lg:px-8 py-10 relative z-10\" aria-label=\"Fliesen-Konfigurator\"><div class=\"glass-bezel-outer max-w-4xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "px-6 lg:px-8 py-10 relative z-10\" aria-label=\"Fliesen-Konfigurator\"><div class=\"@container\"><div class=\"border border-strich bg-fliese\"><div class=\"p-6 @xl:p-8 @4xl:p-12\"><div class=\"flex flex-wrap it"
+  },
+  {
+   "datei": "fliesen.html",
+   "ab": 129768,
+   "vorher": "0 scroll-mt-28\" id=\"konfigurator\" aria-label=\"Fliesen-Konfigurator\"><div class=\"glass-bezel-outer max-w-4xl mx-auto overflow-hidden\"><div class=\"glass-bezel-inner overflow-hidden\"><div class=\"ceramic-",
+   "nachher": "0 scroll-mt-28\" id=\"konfigurator\" aria-label=\"Fliesen-Konfigurator\"><div class=\"@container\"><div class=\"border border-strich bg-fliese\"><div class=\"p-6 @xl:p-8 @4xl:p-12\"><div class=\"flex flex-wrap it"
+  },
+  {
+   "datei": "index.html",
+   "ab": 124835,
+   "vorher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-center gap-2\"><",
+   "nachher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-cente"
+  },
+  {
+   "datei": "leistungen/aussen/asslar.html",
+   "ab": 107114,
+   "vorher": "></div></div><div class=\"mx-auto mt-12 w-full max-w-mass text-left\"><div class=\"p-6 sm:p-8 rounded-2xl bg-white border border-neutral-200 shadow-xl relative overflow-hidden \"><div class=\"absolute top-",
+   "nachher": "></div></div><div class=\"mx-auto mt-12 w-full max-w-mass text-left\"><div class=\"flaeche-tinte bg-tinte text-left text-kalk border border-nacht-fuge p-6 lg:p-8\"><div class=\"mb-6\"><div class=\"border-b b"
+  },
+  {
+   "datei": "leistungen/aussen/bad-nauheim.html",
+   "ab": 107439,
+   "vorher": "></div></div><div class=\"mx-auto mt-12 w-full max-w-mass text-left\"><div class=\"p-6 sm:p-8 rounded-2xl bg-white border border-neutral-200 shadow-xl relative overflow-hidden \"><div class=\"absolute top-",
+   "nachher": "></div></div><div class=\"mx-auto mt-12 w-full max-w-mass text-left\"><div class=\"flaeche-tinte bg-tinte text-left text-kalk border border-nacht-fuge p-6 lg:p-8\"><div class=\"mb-6\"><div class=\"border-b b"
+  },
+  {
+   "datei": "leistungen/aussen/braunfels.html",
+   "ab": 107315,
+   "vorher": "></div></div><div class=\"mx-auto mt-12 w-full max-w-mass text-left\"><div class=\"p-6 sm:p-8 rounded-2xl bg-white border border-neutral-200 shadow-xl relative overflow-hidden \"><div class=\"absolute top-",
+   "nachher": "></div></div><div class=\"mx-auto mt-12 w-full max-w-mass text-left\"><div class=\"flaeche-tinte bg-tinte text-left text-kalk border border-nacht-fuge p-6 lg:p-8\"><div class=\"mb-6\"><div class=\"border-b b"
+  },
+  {
+   "datei": "leistungen/aussen/butzbach.html",
+   "ab": 107284,
+   "vorher": "></div></div><div class=\"mx-auto mt-12 w-full max-w-mass text-left\"><div class=\"p-6 sm:p-8 rounded-2xl bg-white border border-neutral-200 shadow-xl relative overflow-hidden \"><div class=\"absolute top-",
+   "nachher": "></div></div><div class=\"mx-auto mt-12 w-full max-w-mass text-left\"><div class=\"flaeche-tinte bg-tinte text-left text-kalk border border-nacht-fuge p-6 lg:p-8\"><div class=\"mb-6\"><div class=\"border-b b"
+  }
+ ],
+ "css_selektoren_weg": [
+  ".backdrop-blur-md",
+  ".bg-gradient-to-t",
+  ".bg-green-100",
+  ".bg-neutral-200",
+  ".bg-orange-500\\/10",
+  ".bg-orange-700",
+  ".bg-sky-50",
+  ".bg-slate-900\\/75",
+  ".border-sky-200",
+  ".duration-700",
+  ".first\\:pt-0:first-child",
+  ".flex-grow",
+  ".focus\\:bg-white:focus",
+  ".focus\\:border-orange-500:focus",
+  ".focus\\:ring-orange-500:focus",
+  ".from-black\\/50",
+  ".gap-y-1\\.5",
+  ".h-2",
+  ".h-2\\.5",
+  ".h-52",
+  ".h-60",
+  ".hover\\:border-green-500\\/80:hover",
+  ".hover\\:from-orange-700:hover",
+  ".hover\\:shadow-lg:hover",
+  ".hover\\:shadow-orange-500\\/35:hover",
+  ".hover\\:text-orange-900:hover",
+  ".hover\\:to-orange-600:hover",
+  ".left-1\\/3",
+  ".left-3\\.5",
+  ".line-clamp-3",
+  ".mb-2\\.5",
+  ".min-\\[420px\\]\\:grid-cols-2",
+  ".opacity-40",
+  ".placeholder\\:text-neutral-400::placeholder",
+  ".ring-8",
+  ".ring-orange-500\\/5",
+  ".ring-orange-600\\/20",
+  ".rounded-md",
+  ".shadow-orange-500\\/25",
+  ".shadow-orange-600\\/30",
+  ".shadow-orange-900\\/10",
+  ".sm\\:grid-cols-\\[max-content_1fr\\]",
+  ".sm\\:h-72",
+  ".sm\\:mb-0",
+  ".sm\\:text-\\[11px\\]",
+  ".text-green-800",
+  ".text-red-700",
+  ".text-sky-800",
+  ".to-orange-500",
+  ".to-red-500",
+  ".to-transparent",
+  ".top-24",
+  ".top-\\[1200px\\]",
+  ".tracking-wide",
+  ".via-amber-500",
+  ".via-black\\/10",
+  ".w-80",
+  ":where(.divide-slate-100>:not(:last-child))",
+  ":where(.space-x-3>:not(:last-child))",
+  ":where(.space-y-7>:not(:last-child))",
+  "html:has(.menue-blatt:popover-open)"
+ ],
+ "css_selektoren_neu": [
+  ".-ml-px",
+  ".-mt-px",
+  ".-mx-4",
+  ".\\@2xl\\:flex-1",
+  ".\\@2xl\\:flex-row",
+  ".\\@2xl\\:grid-cols-3",
+  ".\\@2xl\\:items-center",
+  ".\\@2xl\\:p-8",
+  ".\\@2xl\\:w-auto",
+  ".\\@3xl\\:gap-4",
+  ".\\@3xl\\:grid-cols-2",
+  ".\\@3xl\\:grid-cols-3",
+  ".\\@3xl\\:grid-cols-4",
+  ".\\@3xl\\:p-12",
+  ".\\@3xs\\:whitespace-nowrap",
+  ".\\@4xl\\:col-span-2",
+  ".\\@4xl\\:col-span-6",
+  ".\\@4xl\\:grid-cols-12",
+  ".\\@4xl\\:grid-cols-2",
+  ".\\@4xl\\:grid-cols-3",
+  ".\\@4xl\\:grid-cols-4",
+  ".\\@4xl\\:grid-cols-5",
+  ".\\@4xl\\:items-end",
+  ".\\@4xl\\:items-start",
+  ".\\@4xl\\:p-12",
+  ".\\@5xl\\:grid-cols-3",
+  ".\\@6xl\\:grid-cols-4",
+  ".\\@container",
+  ".\\@lg\\:gap-4",
+  ".\\@lg\\:grid-cols-2",
+  ".\\@lg\\:items-end",
+  ".\\@max-3xs\\:px-4",
+  ".\\@md\\:flex-row",
+  ".\\@md\\:grid-cols-2",
+  ".\\@md\\:items-center",
+  ".\\@md\\:justify-between",
+  ".\\@md\\:justify-end",
+  ".\\@md\\:w-auto",
+  ".\\@xl\\:flex-1",
+  ".\\@xl\\:flex-row",
+  ".\\@xl\\:gap-4",
+  ".\\@xl\\:gap-6",
+  ".\\@xl\\:grid-cols-2",
+  ".\\@xl\\:grid-cols-3",
+  ".\\@xl\\:items-baseline",
+  ".\\@xl\\:items-center",
+  ".\\@xl\\:items-end",
+  ".\\@xl\\:justify-between",
+  ".\\@xl\\:ml-auto",
+  ".\\@xl\\:p-6",
+  ".\\@xl\\:p-8",
+  ".\\@xl\\:shrink-0",
+  ".\\@xl\\:w-2\\/5",
+  ".\\@xl\\:w-auto",
+  ".\\@xs\\:grid-cols-2",
+  ".align-middle",
+  ".aspect-4\\/3",
+  ".aspect-video",
+  ".border-t-tinte",
+  ".decoration-nacht-2",
+  ".focus-within\\:z-10:focus-within",
+  ".gap-x-8",
+  ".gap-y-16",
+  ".gap-y-4",
+  ".gap-y-6",
+  ".group-hover\\:decoration-tinte:is(:where(.group):hover *)",
+  ".group-hover\\:text-tinte:is(:where(.group):hover *)",
+  ".items-baseline",
+  ".justify-self-stretch",
+  ".lg\\:col-start-1",
+  ".lg\\:col-start-6",
+  ".lg\\:col-start-8",
+  ".lg\\:grid-cols-1",
+  ".lg\\:py-12",
+  ".lg\\:text-left",
+  ".lg\\:top-24",
+  ".md\\:aspect-3\\/4",
+  ".md\\:border-l",
+  ".md\\:border-t-0",
+  ".md\\:first\\:pt-0:first-child",
+  ".md\\:flex-wrap",
+  ".md\\:gap-8",
+  ".md\\:gap-x-8",
+  ".md\\:items-stretch",
+  ".md\\:min-h-32",
+  ".md\\:overflow-visible",
+  ".md\\:px-0",
+  ".md\\:text-center",
+  ".mr-4",
+  ".object-right-bottom",
+  ".pl-px",
+  ".pt-12",
+  ".pt-px",
+  ".self-stretch",
+  ".sm\\:block",
+  ".sm\\:columns-2",
+  ".w-max",
+  ".wrap-anywhere",
+  ".wrap-break-word",
+  ".xl\\:col-span-4",
+  ".xl\\:col-span-8",
+  ".xl\\:col-start-9",
+  ".xl\\:grid-cols-4",
+  ".xl\\:text-center",
+  "body:has(.menue-blatt:popover-open)",
+  "body>footer",
+  "body>main"
+ ]
+}

@@ -1,0 +1,419 @@
+{
+ "satz": "t-sammel-1-texte-kopf",
+ "base": null,
+ "bedingungen": {
+  "quelle": "../../../../tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/reinraum-5acf5e1/.next/server/app/**/*.html",
+  "build_id": "6vD7VW-LC_C-mbGvTLEPs",
+  "dateien": 8,
+  "parser": "Chromium DOMParser (Playwright 1.56.1), keine Skriptausführung, keine Netzanfragen",
+  "streaming": "React $RC/$RS aufgelöst (Suspense-Inhalt an Ort, Ersatzinhalt entfernt)",
+  "ohne": [
+   "script (JSON-LD als Hash)",
+   "style",
+   "template",
+   "noscript"
+  ],
+  "normalisierung": "U+00AD/U+200B/U+2060/U+FEFF entfernt; U+00A0/U+2007/U+202F → Leerzeichen; <br> → Leerzeichen; Leerraum zusammengefasst; kein Groß/Klein-Angleich; Inline-Grenze ohne Leerraum → Leerzeichen (außer an Zeichensetzung)",
+  "meta_ohne": [
+   "charset",
+   "viewport",
+   "theme-color",
+   "color-scheme",
+   "x-build",
+   "next-size-adjust",
+   "format-detection"
+  ],
+  "hash_befehle": [
+   "cookie-settings"
+  ]
+ },
+ "erstellt": "2026-10-12T06:30:43.330Z",
+ "summe": {
+  "dateien": 8,
+  "im_manifest": 8,
+  "eintraege": 3856,
+  "seiten_mit_mehreren_h1": [],
+  "seiten_ohne_h1": [],
+  "fragmente": {
+   "gesamt": 29,
+   "ok": 16,
+   "befehle": 8,
+   "fehlend": 0,
+   "ziel_unbekannt": 5,
+   "pflichtanker_ok": "1/4"
+  },
+  "netz_protokoll": 0,
+  "laufzeit_s": 1.4
+ },
+ "fragmente": {
+  "gesamt": 29,
+  "ok": 16,
+  "befehle": [
+   {
+    "seite": "/bad/badanfrage",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/bad/projekt-check",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/blog",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/fliesen/konfigurator",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/bad",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/standorte/giessen",
+    "href": "#cookie-settings"
+   }
+  ],
+  "fehlend": [],
+  "ziel_unbekannt": [
+   {
+    "seite": "/blog",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/leistungen",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/leistungen/bad",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/standorte/giessen",
+    "href": "/kontakt#express-anfrage"
+   }
+  ],
+  "ziele": [
+   {
+    "ziel": "/kontakt",
+    "id": "express-anfrage",
+    "verweise": 5,
+    "von": [
+     "/blog",
+     "/leistungen",
+     "/",
+     "/leistungen/bad",
+     "/standorte/giessen"
+    ]
+   },
+   {
+    "ziel": "/bad/badanfrage",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad/badanfrage"
+    ]
+   },
+   {
+    "ziel": "/bad/projekt-check",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad/projekt-check"
+    ]
+   },
+   {
+    "ziel": "/blog",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/blog"
+    ]
+   },
+   {
+    "ziel": "/fliesen/konfigurator",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/fliesen/konfigurator"
+    ]
+   },
+   {
+    "ziel": "/fliesen/konfigurator",
+    "id": "konfigurator",
+    "verweise": 1,
+    "von": [
+     "/fliesen/konfigurator"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "express-anfrage",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "bad",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "wohnen",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "aussen",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "untergrund",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/"
+    ]
+   },
+   {
+    "ziel": "/",
+    "id": "ablauf",
+    "verweise": 1,
+    "von": [
+     "/"
+    ]
+   },
+   {
+    "ziel": "/leistungen/bad",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/bad"
+    ]
+   },
+   {
+    "ziel": "/leistungen/bad",
+    "id": "express-anfrage",
+    "verweise": 1,
+    "von": [
+     "/leistungen/bad"
+    ]
+   },
+   {
+    "ziel": "/standorte/giessen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/standorte/giessen"
+    ]
+   }
+  ],
+  "pflichtanker": [
+   {
+    "anker": "/#express-anfrage",
+    "ok": true,
+    "seite_vorhanden": true
+   },
+   {
+    "anker": "/kontakt#express-anfrage",
+    "ok": false,
+    "seite_vorhanden": false
+   },
+   {
+    "anker": "/kontakt#termin-buchen",
+    "ok": false,
+    "seite_vorhanden": false
+   },
+   {
+    "anker": "/referenzen#bewertungen",
+    "ok": false,
+    "seite_vorhanden": false
+   }
+  ]
+ },
+ "seiten": {
+  "/": {
+   "datei": "start.json",
+   "quelle": "index.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 785,
+   "arten": {
+    "meta": 32,
+    "text": 626,
+    "aria": 101,
+    "alt": 3,
+    "ueberschrift": 23
+   },
+   "h1": [
+    "Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar"
+   ],
+   "hash": "1ef740d25c946729"
+  },
+  "/bad/badanfrage": {
+   "datei": "bad__badanfrage.json",
+   "quelle": "bad/badanfrage.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 357,
+   "arten": {
+    "meta": 33,
+    "text": 287,
+    "aria": 31,
+    "alt": 3,
+    "ueberschrift": 3
+   },
+   "h1": [
+    "Badsanierung Angebot anfordern bei Tezgel Wetzlar"
+   ],
+   "hash": "ae9cf17f8ff3f263"
+  },
+  "/bad/projekt-check": {
+   "datei": "bad__projekt-check.json",
+   "quelle": "bad/projekt-check.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 383,
+   "arten": {
+    "meta": 33,
+    "text": 313,
+    "aria": 31,
+    "alt": 3,
+    "ueberschrift": 3
+   },
+   "h1": [
+    "Bad-Projektcheck: Badsanierung online prüfen bei Tezgel Wetzlar"
+   ],
+   "hash": "2d07cb7774256e12"
+  },
+  "/blog": {
+   "datei": "blog.json",
+   "quelle": "blog.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 469,
+   "arten": {
+    "meta": 33,
+    "text": 369,
+    "aria": 36,
+    "alt": 16,
+    "ueberschrift": 15
+   },
+   "h1": [
+    "Fliesen-Ratgeber & Badsanierung Tipps"
+   ],
+   "hash": "a144488b0e7bdd02"
+  },
+  "/fliesen/konfigurator": {
+   "datei": "fliesen__konfigurator.json",
+   "quelle": "fliesen/konfigurator.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 440,
+   "arten": {
+    "meta": 33,
+    "text": 355,
+    "aria": 33,
+    "alt": 3,
+    "ueberschrift": 16
+   },
+   "h1": [
+    "Fliesen-Konfigurator & Bedarfsrechner von Tezgel"
+   ],
+   "hash": "161905b4962a7764"
+  },
+  "/leistungen": {
+   "datei": "leistungen.json",
+   "quelle": "leistungen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 490,
+   "arten": {
+    "meta": 33,
+    "text": 394,
+    "aria": 48,
+    "alt": 3,
+    "ueberschrift": 12
+   },
+   "h1": [
+    "Fliesenleger Leistungen & Fachgewerke Wetzlar"
+   ],
+   "hash": "a5902f9bcb980217"
+  },
+  "/leistungen/bad": {
+   "datei": "leistungen__bad.json",
+   "quelle": "leistungen/bad.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 467,
+   "arten": {
+    "meta": 33,
+    "text": 371,
+    "aria": 50,
+    "alt": 3,
+    "ueberschrift": 10
+   },
+   "h1": [
+    "Badsanierung & Komplettbäder: Bäder & Wellness in Wetzlar"
+   ],
+   "hash": "56316a6e32b706e1"
+  },
+  "/standorte/giessen": {
+   "datei": "standorte__giessen.json",
+   "quelle": "standorte/giessen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 465,
+   "arten": {
+    "meta": 33,
+    "text": 375,
+    "aria": 46,
+    "alt": 3,
+    "ueberschrift": 8
+   },
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Gießen"
+   ],
+   "hash": "db3b7a3923da5821"
+  }
+ }
+}

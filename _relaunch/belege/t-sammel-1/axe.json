@@ -1,0 +1,730 @@
+{
+ "satz": "t-sammel-1",
+ "tags": [
+  "wcag2a",
+  "wcag2aa",
+  "wcag21a",
+  "wcag21aa",
+  "wcag22aa"
+ ],
+ "laeufe": 67,
+ "ernst_kritisch_knoten": 44,
+ "je_regel": {
+  "serious:color-contrast": 44
+ },
+ "ergebnisse": [
+  {
+   "seite": "/",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesen/konfigurator",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 5,
+     "ziele": [
+      ".pt-2 > .hover\\:underline.hover\\:text-orange-700.underline-offset-2:nth-child(1)",
+      ".pt-2 > .hover\\:underline.hover\\:text-orange-700.underline-offset-2:nth-child(2)",
+      ".hover\\:text-orange-700.underline-offset-2[href$=\"treppen\"]",
+      ".text-sm.text-slate-700 > .hover\\:underline.hover\\:text-orange-700.underline-offset-2:nth-child(1)",
+      ".text-sm.text-slate-700 > .hover\\:underline.hover\\:text-orange-700.underline-offset-2:nth-child(2)"
+     ],
+     "knoten": [
+      {
+       "html": "<a class=\"text-orange-600 hover:text-orange-700 hover:underline underline-offset-2 font-bold\" href=\"/bad/badplaner\">Zum Badplaner</a>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #f54900, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-orange-600 hover:text-orange-700 hover:underline underline-offset-2 font-bold\" href=\"/bad/projekt-check\">Bad-Projektcheck</a>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #f54900, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-orange-600 hover:text-orange-700 underline underline-offset-2 font-bold\" href=\"/treppen\">Treppen neu belegen</a>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #f54900, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/fliesen/konfigurator",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 5,
+     "ziele": [
+      ".pt-2 > .hover\\:underline.hover\\:text-orange-700.underline-offset-2:nth-child(1)",
+      ".pt-2 > .hover\\:underline.hover\\:text-orange-700.underline-offset-2:nth-child(2)",
+      ".hover\\:text-orange-700.underline-offset-2[href$=\"treppen\"]",
+      ".text-sm.text-slate-700 > .hover\\:underline.hover\\:text-orange-700.underline-offset-2:nth-child(1)",
+      ".text-sm.text-slate-700 > .hover\\:underline.hover\\:text-orange-700.underline-offset-2:nth-child(2)"
+     ],
+     "knoten": [
+      {
+       "html": "<a class=\"text-orange-600 hover:text-orange-700 hover:underline underline-offset-2 font-bold\" href=\"/bad/badplaner\">Zum Badplaner</a>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #f54900, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-orange-600 hover:text-orange-700 hover:underline underline-offset-2 font-bold\" href=\"/bad/projekt-check\">Bad-Projektcheck</a>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #f54900, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-orange-600 hover:text-orange-700 underline underline-offset-2 font-bold\" href=\"/treppen\">Treppen neu belegen</a>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #f54900, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/fliesen/konfigurator",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 5,
+     "ziele": [
+      ".pt-2 > .hover\\:underline.hover\\:text-orange-700.underline-offset-2:nth-child(1)",
+      ".pt-2 > .hover\\:underline.hover\\:text-orange-700.underline-offset-2:nth-child(2)",
+      ".hover\\:text-orange-700.underline-offset-2[href$=\"treppen\"]",
+      ".text-sm.text-slate-700 > .hover\\:underline.hover\\:text-orange-700.underline-offset-2:nth-child(1)",
+      ".text-sm.text-slate-700 > .hover\\:underline.hover\\:text-orange-700.underline-offset-2:nth-child(2)"
+     ],
+     "knoten": [
+      {
+       "html": "<a class=\"text-orange-600 hover:text-orange-700 hover:underline underline-offset-2 font-bold\" href=\"/bad/badplaner\">Zum Badplaner</a>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #f54900, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-orange-600 hover:text-orange-700 hover:underline underline-offset-2 font-bold\" href=\"/bad/projekt-check\">Bad-Projektcheck</a>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #f54900, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-orange-600 hover:text-orange-700 underline underline-offset-2 font-bold\" href=\"/treppen\">Treppen neu belegen</a>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #f54900, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 1,
+     "ziele": [
+      ".text-neutral-400"
+     ],
+     "knoten": [
+      {
+       "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-neutral-400\">Startpunkt</span>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 2.58 (foreground color: #a1a1a1, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 1,
+     "ziele": [
+      ".text-neutral-400"
+     ],
+     "knoten": [
+      {
+       "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-neutral-400\">Startpunkt</span>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 2.58 (foreground color: #a1a1a1, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/fliesen/konfigurator",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 5,
+     "ziele": [
+      ".pt-2 > .hover\\:underline.hover\\:text-orange-700.underline-offset-2:nth-child(1)",
+      ".pt-2 > .hover\\:underline.hover\\:text-orange-700.underline-offset-2:nth-child(2)",
+      ".hover\\:text-orange-700.underline-offset-2[href$=\"treppen\"]",
+      ".text-sm.text-slate-700 > .hover\\:underline.hover\\:text-orange-700.underline-offset-2:nth-child(1)",
+      ".text-sm.text-slate-700 > .hover\\:underline.hover\\:text-orange-700.underline-offset-2:nth-child(2)"
+     ],
+     "knoten": [
+      {
+       "html": "<a class=\"text-orange-600 hover:text-orange-700 hover:underline underline-offset-2 font-bold\" href=\"/bad/badplaner\">Zum Badplaner</a>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #f54900, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-orange-600 hover:text-orange-700 hover:underline underline-offset-2 font-bold\" href=\"/bad/projekt-check\">Bad-Projektcheck</a>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #f54900, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-orange-600 hover:text-orange-700 underline underline-offset-2 font-bold\" href=\"/treppen\">Treppen neu belegen</a>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #f54900, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 1,
+     "ziele": [
+      ".text-neutral-400"
+     ],
+     "knoten": [
+      {
+       "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-neutral-400\">Startpunkt</span>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 2.58 (foreground color: #a1a1a1, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 1,
+     "ziele": [
+      ".text-neutral-400"
+     ],
+     "knoten": [
+      {
+       "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-neutral-400\">Startpunkt</span>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 2.58 (foreground color: #a1a1a1, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 4,
+     "ziele": [
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(1) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(2) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(3) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".hover\\:underline"
+     ],
+     "knoten": [
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 4,
+     "ziele": [
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(1) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(2) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(3) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".hover\\:underline"
+     ],
+     "knoten": [
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 4,
+     "ziele": [
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(1) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(2) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(3) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".hover\\:underline"
+     ],
+     "knoten": [
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 4,
+     "ziele": [
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(1) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(2) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(3) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".hover\\:underline"
+     ],
+     "knoten": [
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 4,
+     "ziele": [
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(1) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(2) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".bg-slate-50.hover\\:bg-white.p-8:nth-child(3) > .pt-6.mt-6.border-slate-200 > .font-bold.hover\\:text-orange-700.text-orange-600",
+      ".hover\\:underline"
+     ],
+     "knoten": [
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  }
+ ]
+}
