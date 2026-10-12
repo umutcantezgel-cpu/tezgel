@@ -54,3 +54,4 @@ STATUS · Vereinheitlichung (E-037/E-038) · Vorbild: live laufende Fusions-Star
 - 2026-10-12 07:50 CEST · S-04 abgenommen (0be3106). Q-01/02/03/05 laufen (Q-03 fertig, Nachtrag autocomplete). Tor S-01/03+N-01: alles grün außer neu waagerecht scrollbarem Viewport bei Zoom/Textabstand durch N-01 → N-01b; Push bis dahin angehalten. Morgenbericht gesendet.
 - 2026-10-12 10:05 CEST · Zweite Sitzung entdeckt: Werkstatt hat a1aeda6 (191 Commits, E3–E5) gepusht. Auftraggeber: abschnittsweise fusionieren, /bad·/fliesen·Artikel aus der Werkstatt, nur diese Sitzung pusht (E-039). Merge c4f2a04 (Konflikte vorläufig Werkstatt), WIP gesichert, Reinraum läuft.
 - 2026-10-12 10:55 CEST · F0: Sammel-Tor m-e039 (M gegen live a1aeda6) grün, Lighthouse ruhig gemessen; Push M; F1 Gutachten Formulare läuft.
+- 2026-10-12 12:20 CEST · F0 live 28ee443; F1 Gutachten U1–U8 fertig; F2 Baumeister F-01–F-05 gestartet, F-06/F-07 folgen.
