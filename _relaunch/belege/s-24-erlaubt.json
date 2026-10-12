@@ -1,0 +1,5 @@
+[
+ { "seite": "/termin", "alt": "📅 2-Schritt Schnellauswahl", "grund": "Mikrotext (Emoji-Verbot, Barrierefreiheit): Emoji entfällt, an seiner Stelle das Kern-Icon „kalender“ (aria-hidden); Name des Umschalters jetzt „2-Schritt Schnellauswahl“ ohne vorgelesenes Emoji" },
+ { "seite": "/termin", "alt": "📝 Individuelles Formular", "grund": "Mikrotext (Emoji-Verbot, Barrierefreiheit): Emoji entfällt, an seiner Stelle das Kern-Icon „dokument“ (aria-hidden); Testmuster /Individuelles Formular/ greift weiter" },
+ { "seite": "*", "alt": "Cookie-Einstellungen", "grund": "geteilter Fuß (nicht in den Schreibrechten): CookieConsent hängt die Zeile nach der Hydrierung an, auf dem Dev-Server je nach Zeitpunkt (bekannt, R-01a, S-22)" }
+]

@@ -1,0 +1,27 @@
+{
+ "satz": "s-24-axe",
+ "tags": [
+  "wcag2a",
+  "wcag2aa",
+  "wcag21a",
+  "wcag21aa",
+  "wcag22aa"
+ ],
+ "laeufe": 2,
+ "ernst_kritisch_knoten": 0,
+ "je_regel": {},
+ "ergebnisse": [
+  {
+   "seite": "/termin",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  }
+ ]
+}

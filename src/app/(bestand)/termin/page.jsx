@@ -1,13 +1,36 @@
 "use client";
+// Termin (S-24 · E6-BAU-05, KERN v2): Arbeitsansicht nach dem Muster von (bestand)/kontakt und (bestand)/bad/badanfrage.
+// Kompakter Einstieg (Kennzeile, H1 in text-fs-6, Vorspann), danach im ersten Bildschirm die Terminwahl: Umschalter
+// Kalender/Formular, darunter der Terminkalender (BookingCalendar, unverändert eingebunden) bzw. das individuelle Formular;
+// daneben ab xl die Rückfrage (Ansprechpartner und direkte Wege). Nach dem Absenden steht die Meldung (online bzw. WhatsApp)
+// an derselben Stelle. Zum Schluss der Abschluss ohne Laserachse (Arbeitsansicht). Kein großer Moment, keine Auftritte.
+// Client-Komponente bleibt: die Seite trägt den Zustand der Terminanfrage (useTerminAnfrage, Logik unverändert).
+// Texte, Überschriften, Links, IDs, name/value der Absende-Knöpfe und die Lesefolge wie im Bestand.
+import { useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { CalendarCheck, CheckCircle2, Phone, MessageCircle, Send, Lock, Loader2, AlertCircle, Sparkles } from 'lucide-react';
+import clsx from 'clsx';
 import { COMPANY_DATA } from '@/config/company';
 import { FinalCTA } from '@/components/ui/FinalCTA';
 import BookingCalendar from '@/components/contact/BookingCalendar';
+import Einstieg from '@/components/kern/Einstieg';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Knopf from '@/components/kern/Knopf';
+import Rueckfrage from '@/components/kern/Rueckfrage';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Icon from '@/components/icons/Icon';
+import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
+import { etikettKlassen, feldKlassen, knopfKlassen, kontrollKlassen, labelKlassen, linkKlassen, pflichtKlassen } from '@/components/kern/stile';
 import { useTerminAnfrage, TOPICS, TIME_SLOTS, labelOf, formatDate } from '@/lib/formulare/useTerminAnfrage';
 
-const inputClass =
-    'w-full px-4 py-3 rounded-tile-sm bg-white border border-slate-300 text-slate-900 placeholder:text-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-orange-600 transition-all';
+// Feld der Terminwahl: wie der Terminkalender (Strich-Rahmen auf Fliese), damit Kalender, Formular und Meldung gleich stehen
+const FELD = 'border border-strich bg-fliese p-6 sm:p-8 lg:p-12';
+// Umschalter Kalender/Formular: Auswahlknöpfe mit aria-pressed (gewählt: Tinte-Fläche); mobil nebeneinander, das Zeichen
+// entfällt dort, damit „Schnellauswahl“ ohne Trennung in die halbe Breite passt
+const UMSCHALTER =
+    'inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 rounded-none border border-strich bg-fliese px-4 py-3 text-center font-text text-fs-2 font-semibold text-tinte hover:border-tinte aria-pressed:border-tinte aria-pressed:bg-tinte aria-pressed:text-kalk';
+// Auswahl mit eigenem Winkel (Kern-Icon statt Browserpfeil); top-2 gleicht den Abstand mt-2 des Felds aus
+const AUSWAHL = clsx(feldKlassen, 'appearance-none pr-12');
+const AUSWAHL_WINKEL = 'pointer-events-none absolute top-2 right-4 bottom-0 flex items-center text-tinte';
 
 export default function TerminPage() {
     const {
@@ -24,337 +47,372 @@ export default function TerminPage() {
         handleNewRequest
     } = useTerminAnfrage();
 
-    return (
-        <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            {/* Ambient Glow */}
-            <div className="ambient-glow-orange -top-20 -left-20 opacity-70" />
-            <div className="ambient-glow-red top-96 -right-20 opacity-60" />
+    // Fokus (WCAG 2.4.3): nach dem Absenden auf die Meldung, nach „Weiteren Termin anfragen“ bzw. „Anfrage bearbeiten“ auf
+    // den gewählten Umschalter – sonst fiele er mit dem ersetzten Knopf an den Seitenanfang. Beim ersten Rendern nichts.
+    const meldungRef = useRef(null);
+    const umschalterRef = useRef(null);
+    const vorherRef = useRef(sentVia);
+    useEffect(() => {
+        if (vorherRef.current === sentVia) return;
+        vorherRef.current = sentVia;
+        if (sentVia) meldungRef.current?.focus();
+        else umschalterRef.current?.querySelector('[aria-pressed="true"]')?.focus();
+    }, [sentVia]);
 
-            {/* Hero */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-                <div className="ceramic-hero rounded-tile-xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">
-                        <CalendarCheck className="w-3.5 h-3.5" />
+    const anrufen = (
+        <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} iconLinks="telefon" className="w-full sm:w-auto">
+            Direkt anrufen: <span className="whitespace-nowrap font-mono">{COMPANY_DATA.contact.phone}</span>
+        </Knopf>
+    );
+
+    return (
+        <>
+            {/* 1. EINSTIEG: Kennzeile (vormals Badge), H1, Vorspann */}
+            <Einstieg
+                art="arbeit"
+                etikett={
+                    <>
+                        <Icon name="kalender" groesse={4} />
                         Direkte Fachberatung
-                    </span>
-                    <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Termin vereinbaren bei <span className="text-ceramic-gradient">Fliesenleger Tezgel</span>
-                    </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed">
+                    </>
+                }
+                titel={<>Termin vereinbaren bei Fliesenleger Tezgel</>}
+                vorspann={
+                    <p>
                         Jetzt Ihren Vor-Ort-Termin vereinbaren: Wählen Sie Ihr Wunschthema für eine persönliche Fachberatung durch Fliesenleger Tezgel in {COMPANY_DATA.headquarters.city}, Wetzlar &amp; Umgebung. Ihre Anfrage senden Sie direkt online mit E-Mail-Bestätigung oder per WhatsApp an {COMPANY_DATA.owner.fullName}.
                     </p>
-                </div>
-            </div>
+                }
+            />
 
-            <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
-                {sentVia === 'online' ? (
-                    <div className="glass-surface rounded-tile-xl p-8 md:p-12 text-center shadow-2xl" role="status">
-                        <div className="icon-chip w-20 h-20 rounded-tile-pill mx-auto mb-6 bg-orange-100 text-orange-600">
-                            <CheckCircle2 className="w-10 h-10" />
-                        </div>
-                        <div className="flex flex-wrap items-center justify-center gap-2 mb-3">
-                            <span className="eyebrow">Terminanfrage erfolgreich übermittelt</span>
-                            {referenceId && (
-                                <span className="px-3 py-1 bg-slate-100 border border-slate-200 rounded-full font-mono text-xs font-bold text-slate-800">
-                                    Vorgangs-Nr.: {referenceId}
-                                </span>
-                            )}
-                        </div>
-                        <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-3">
-                            Vielen Dank, {formData.name}!
-                        </h2>
-                        <p className="text-slate-700 mb-6 leading-relaxed text-sm sm:text-base max-w-xl mx-auto">
-                            Ihre Terminanfrage für <strong>{labelOf(TOPICS, formData.topic)}</strong> am <strong>{formatDate(formData.date)}</strong> ({labelOf(TIME_SLOTS, formData.timeSlot)}) ist erfolgreich eingegangen.
-                            {formData.email && (
-                                <span className="block mt-2 font-semibold text-orange-800 bg-orange-50/80 border border-orange-200/80 rounded-xl p-2.5 max-w-md mx-auto text-xs sm:text-sm">
-                                    ✉️ Eine Bestätigung mit allen Termindaten wurde an <em>{formData.email}</em> gesendet.
-                                </span>
-                            )}
-                        </p>
-
-                        <div className="p-5 rounded-2xl bg-neutral-50 border border-neutral-200 text-left text-xs sm:text-sm text-neutral-700 mb-6 space-y-2 max-w-xl mx-auto">
-                            <div className="font-bold text-neutral-900 flex items-center gap-2">
-                                <Sparkles className="w-4 h-4 text-orange-600" />
-                                Nächste Schritte:
-                            </div>
-                            <p className="text-xs text-neutral-600 leading-relaxed">
-                                1. Inhaber Deniz Tezgel gleicht Ihren Wunschtermin mit dem aktuellen Einsatzplan ab.<br />
-                                2. Wir bestätigen Ihnen das Zeitfenster telefonisch unter <strong>{formData.phone}</strong>.<br />
-                                3. Pünktlicher Termin bei Ihnen vor Ort für das kostenfreie Aufmaß und die persönliche Beratung.
-                            </p>
-                        </div>
-
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                            <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-primary w-full sm:w-auto">
-                                <Phone className="w-4 h-4" />
-                                Direkt anrufen: {COMPANY_DATA.contact.phone}
-                            </a>
-                            <button
-                                type="button"
-                                onClick={handleNewRequest}
-                                className="btn-ghost w-full sm:w-auto"
-                            >
-                                Weiteren Termin anfragen
-                            </button>
-                        </div>
-                    </div>
-                ) : sentVia === 'whatsapp' ? (
-                    <div className="glass-surface rounded-tile-xl p-8 md:p-12 text-center" role="status">
-                        <div className="icon-chip w-20 h-20 rounded-tile-pill mx-auto mb-6">
-                            <CheckCircle2 className="w-10 h-10" />
-                        </div>
-                        <span className="eyebrow mb-4">
-                            WhatsApp wurde geöffnet
-                        </span>
-                        <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-3">
-                            Fast geschafft – bitte jetzt absenden
-                        </h2>
-                        <p className="text-slate-700 mb-6 leading-relaxed text-sm sm:text-base">
-                            Vielen Dank, {formData.name}. Ihre Terminanfrage ({formatDate(formData.date)} &middot; {labelOf(TIME_SLOTS, formData.timeSlot)}) ist vorbereitet. Senden Sie die Nachricht in WhatsApp ab – {COMPANY_DATA.owner.fullName} meldet sich dann persönlich bei Ihnen, um den Termin abzustimmen.
-                        </p>
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                            <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-primary w-full sm:w-auto">
-                                <Phone className="w-4 h-4" />
-                                Direkt anrufen: {COMPANY_DATA.contact.phone}
-                            </a>
-                            <button
-                                type="button"
-                                onClick={() => setSentVia(null)}
-                                className="btn-ghost w-full sm:w-auto"
-                            >
-                                Anfrage bearbeiten
-                            </button>
-                        </div>
-                    </div>
-                ) : (
-                    <div>
-                        {/* Booking Mode Selector Tabs */}
-                        <div className="flex items-center justify-center p-1.5 rounded-2xl bg-neutral-100 border border-neutral-200 mb-8 max-w-md mx-auto">
-                            <button
-                                type="button"
-                                onClick={() => setBookingMode('calendar')}
-                                className={`flex-1 py-2.5 px-4 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                                    bookingMode === 'calendar'
-                                        ? 'bg-white text-orange-950 shadow-sm border border-neutral-200/80'
-                                        : 'text-neutral-600 hover:text-neutral-900'
-                                }`}
-                            >
-                                📅 2-Schritt Schnellauswahl
-                            </button>
-                            <button
-                                type="button"
-                                onClick={() => setBookingMode('form')}
-                                className={`flex-1 py-2.5 px-4 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                                    bookingMode === 'form'
-                                        ? 'bg-white text-orange-950 shadow-sm border border-neutral-200/80'
-                                        : 'text-neutral-600 hover:text-neutral-900'
-                                }`}
-                            >
-                                📝 Individuelles Formular
-                            </button>
-                        </div>
-
-                        {bookingMode === 'calendar' ? (
-                            <BookingCalendar initialServiceType="Kostenfreies Vor-Ort-Aufmaß & Beratung" />
-                        ) : (
-                            <div className="glass-bezel-outer shadow-2xl">
-                                <form onSubmit={handleSubmit} className="glass-bezel-inner p-8 sm:p-10 space-y-6">
-                                    <div>
-                                <label htmlFor="termin-topic" className="block text-sm font-black text-slate-900 mb-2">
-                                    1. Welches Thema möchten Sie besprechen? <span className="text-orange-600">*</span>
-                                </label>
-                                <select
-                                    id="termin-topic"
-                                    required
-                                    value={formData.topic}
-                                    onChange={update('topic')}
-                                    className={`${inputClass} font-semibold`}
-                                >
-                                    {TOPICS.map((topic) => (
-                                        <option key={topic.value} value={topic.value}>{topic.label}</option>
-                                    ))}
-                                </select>
-                            </div>
-
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label htmlFor="termin-date" className="block text-sm font-black text-slate-900 mb-1.5">
-                                        2. Wunschdatum
-                                    </label>
-                                    <input
-                                        id="termin-date"
-                                        type="date"
-                                        value={formData.date}
-                                        onChange={update('date')}
-                                        className={inputClass}
-                                    />
-                                </div>
-                                <div>
-                                    <label htmlFor="termin-slot" className="block text-sm font-black text-slate-900 mb-1.5">
-                                        Bevorzugtes Zeitfenster
-                                    </label>
-                                    <select
-                                        id="termin-slot"
-                                        value={formData.timeSlot}
-                                        onChange={update('timeSlot')}
-                                        className={inputClass}
-                                    >
-                                        {TIME_SLOTS.map((slot) => (
-                                            <option key={slot.value} value={slot.value}>{slot.label}</option>
-                                        ))}
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                                <div>
-                                    <label htmlFor="termin-name" className="block text-sm font-bold text-slate-800 mb-1.5">
-                                        Name, Vorname <span className="text-orange-600">*</span>
-                                    </label>
-                                    <input
-                                        id="termin-name"
-                                        type="text"
-                                        required
-                                        autoComplete="name"
-                                        placeholder="Max Mustermann"
-                                        value={formData.name}
-                                        onChange={update('name')}
-                                        className={inputClass}
-                                    />
-                                </div>
-                                <div>
-                                    <label htmlFor="termin-phone" className="block text-sm font-bold text-slate-800 mb-1.5">
-                                        Telefonnummer <span className="text-orange-600">*</span>
-                                    </label>
-                                    <input
-                                        id="termin-phone"
-                                        type="tel"
-                                        required
-                                        minLength={6}
-                                        autoComplete="tel"
-                                        placeholder="Für die Rücksprache zum Termin"
-                                        value={formData.phone}
-                                        onChange={update('phone')}
-                                        className={inputClass}
-                                    />
-                                </div>
-                                <div>
-                                    <label htmlFor="termin-email" className="block text-sm font-bold text-slate-800 mb-1.5">
-                                        E-Mail-Adresse (optional)
-                                    </label>
-                                    <input
-                                        id="termin-email"
-                                        type="email"
-                                        autoComplete="email"
-                                        placeholder="ihre-adresse@beispiel.de"
-                                        value={formData.email}
-                                        onChange={update('email')}
-                                        className={inputClass}
-                                    />
-                                </div>
-                                <div>
-                                    <label htmlFor="termin-zip" className="block text-sm font-bold text-slate-800 mb-1.5">
-                                        PLZ &amp; Ort
-                                    </label>
-                                    <input
-                                        id="termin-zip"
-                                        type="text"
-                                        autoComplete="postal-code"
-                                        placeholder="z. B. 35614 Aßlar"
-                                        value={formData.zipCity}
-                                        onChange={update('zipCity')}
-                                        className={inputClass}
-                                    />
-                                </div>
-                            </div>
-
-                            <div>
-                                <label htmlFor="termin-notes" className="block text-sm font-bold text-slate-800 mb-1.5">
-                                    Ihre Notizen / Anliegen
-                                </label>
-                                <textarea
-                                    id="termin-notes"
-                                    rows={3}
-                                    placeholder="z. B. Bad-Grundriss vorhanden, bodengleiche Dusche gewünscht, Fliesenformat ca. 60 x 120 cm …"
-                                    value={formData.notes}
-                                    onChange={update('notes')}
-                                    className={`${inputClass} resize-none`}
-                                />
-                            </div>
-
-                            <div>
-                                <label className="flex items-start gap-2.5 cursor-pointer text-sm text-slate-700">
-                                    <input
-                                        type="checkbox"
-                                        required
-                                        checked={formData.privacyConsent}
-                                        onChange={update('privacyConsent')}
-                                        className="mt-1 w-4 h-4 rounded-tile-sm accent-orange-600 shrink-0"
-                                    />
-                                    <span>
-                                        Ich stimme zu, dass meine Angaben zur Bearbeitung der Terminanfrage gemäß der{' '}
-                                        <Link href="/datenschutz" target="_blank" className="font-bold text-orange-700 hover:text-orange-600 underline underline-offset-2">
-                                            Datenschutzerklärung
-                                        </Link>{' '}
-                                        verarbeitet werden. Beim Versand per WhatsApp gelten zusätzlich die Datenschutzbestimmungen von WhatsApp.
+            {/* 2. TERMINWAHL im ersten Bildschirm: Umschalter, Kalender bzw. Formular bzw. Meldung; ab xl 8 + 4 Spalten mit der
+                Rückfrage daneben (darunter in voller Breite, damit Uhrzeiten und Formularfelder nicht eng werden) */}
+            <Abschnitt art="arbeit">
+                <div className="grid gap-y-12 xl:grid-cols-12 xl:gap-x-12">
+                    <div className="min-w-0 xl:col-span-8">
+                        {sentVia === 'online' ? (
+                            <div ref={meldungRef} tabIndex={-1} className={FELD} role="status">
+                                <div className="flex flex-wrap items-center gap-3">
+                                    <span className={etikettKlassen}>
+                                        <span className="inline-flex text-abnahme" data-motion="notiert">
+                                            <Icon name="haken" groesse={4} />
+                                        </span>
+                                        Terminanfrage erfolgreich übermittelt
                                     </span>
-                                </label>
-                            </div>
-
-                            {errorMessage && (
-                                <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-xs font-bold text-red-800 flex items-start gap-2">
-                                    <AlertCircle className="w-4 h-4 shrink-0 mt-0.5 text-red-600" />
-                                    <span>{errorMessage}</span>
+                                    {referenceId && (
+                                        <span className="border border-fuge bg-kalk px-2 py-1 font-mono text-fs-1 text-tinte">
+                                            Vorgangs-Nr.: {referenceId}
+                                        </span>
+                                    )}
                                 </div>
-                            )}
-
-                            <div className="pt-4 border-t border-slate-200 space-y-3">
-                                <div className="flex flex-col sm:flex-row items-center gap-3">
-                                    <button
-                                        type="submit"
-                                        name="channel"
-                                        value="online"
-                                        disabled={isSubmitting}
-                                        className="btn-primary w-full sm:flex-1 text-sm flex items-center justify-center gap-2"
-                                    >
-                                        {isSubmitting ? (
-                                            <>
-                                                <Loader2 className="w-4 h-4 animate-spin" />
-                                                Wird übertragen …
-                                            </>
-                                        ) : (
-                                            <>
-                                                <Send className="w-4 h-4" />
-                                                Termin online anfragen (mit E-Mail-Bestätigung)
-                                            </>
-                                        )}
-                                    </button>
-                                    <button
-                                        type="submit"
-                                        name="channel"
-                                        value="whatsapp"
-                                        disabled={isSubmitting}
-                                        className="glass-button-whatsapp w-full sm:w-auto text-sm flex items-center justify-center gap-2"
-                                    >
-                                        <MessageCircle className="w-4 h-4" />
-                                        Per WhatsApp senden
-                                    </button>
-                                </div>
-                                <p className="flex items-start justify-center gap-1.5 text-xs text-slate-700 text-center leading-relaxed">
-                                    <Lock className="w-3.5 h-3.5 text-orange-600 shrink-0 mt-0.5" />
-                                    <span>
-                                        Bei Online-Absendung erhalten Sie unmittelbar eine schriftliche Bestätigung per E-Mail. Bei WhatsApp öffnet sich WhatsApp mit Ihren vorbereiteten Angaben. Der Termin gilt nach persönlicher Abstimmung als fest vereinbart.
-                                    </span>
+                                <h2 className="mt-6 text-fs-5 text-tinte">
+                                    Vielen Dank, {formData.name}!
+                                </h2>
+                                <p className="mt-4 max-w-mass text-fs-3 text-tinte-2">
+                                    Ihre Terminanfrage für <strong className="font-semibold text-tinte">{labelOf(TOPICS, formData.topic)}</strong> am <strong className="font-semibold text-tinte">{formatDate(formData.date)}</strong> ({labelOf(TIME_SLOTS, formData.timeSlot)}) ist erfolgreich eingegangen.
+                                    {formData.email && (
+                                        <span className="mt-3 flex items-start gap-2 border-l-2 border-tinte pl-4 text-fs-2 text-tinte">
+                                            <Icon name="mail" groesse={4} className="mt-1" />
+                                            <span className="min-w-0">
+                                                Eine Bestätigung mit allen Termindaten wurde an <em className="wrap-break-word">{formData.email}</em> gesendet.
+                                            </span>
+                                        </span>
+                                    )}
                                 </p>
-                            </div>
-                        </form>
-                    </div>
-                )}
-            </div>
-        )}
-    </div>
 
-            <FinalCTA />
-        </div>
+                                <div className="mt-8 border-t border-fuge pt-6 text-fs-2 text-tinte-2">
+                                    <div className="flex items-center gap-2 font-semibold text-tinte">
+                                        <Fugenkreuz className="size-3 text-strich" />
+                                        Nächste Schritte:
+                                    </div>
+                                    <p className="mt-2">
+                                        1. Inhaber Deniz Tezgel gleicht Ihren Wunschtermin mit dem aktuellen Einsatzplan ab.<br />
+                                        2. Wir bestätigen Ihnen das Zeitfenster telefonisch unter <strong className="font-mono font-normal text-tinte">{formData.phone}</strong>.<br />
+                                        3. Pünktlicher Termin bei Ihnen vor Ort für das kostenfreie Aufmaß und die persönliche Beratung.
+                                    </p>
+                                </div>
+
+                                <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+                                    {anrufen}
+                                    <Knopf variante="neben" onClick={handleNewRequest} className="w-full sm:w-auto">
+                                        Weiteren Termin anfragen
+                                    </Knopf>
+                                </div>
+                            </div>
+                        ) : sentVia === 'whatsapp' ? (
+                            <div ref={meldungRef} tabIndex={-1} className={FELD} role="status">
+                                <span className={etikettKlassen}>
+                                    <WhatsAppLogo className="size-4 shrink-0" />
+                                    WhatsApp wurde geöffnet
+                                </span>
+                                <h2 className="mt-6 text-fs-5 text-tinte">
+                                    Fast geschafft – bitte jetzt absenden
+                                </h2>
+                                <p className="mt-4 max-w-mass text-fs-3 text-tinte-2">
+                                    Vielen Dank, {formData.name}. Ihre Terminanfrage (<span className="font-mono">{formatDate(formData.date)}</span> &middot; {labelOf(TIME_SLOTS, formData.timeSlot)}) ist vorbereitet. Senden Sie die Nachricht in WhatsApp ab – {COMPANY_DATA.owner.fullName} meldet sich dann persönlich bei Ihnen, um den Termin abzustimmen.
+                                </p>
+                                <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+                                    {anrufen}
+                                    <Knopf variante="neben" onClick={() => setSentVia(null)} className="w-full sm:w-auto">
+                                        Anfrage bearbeiten
+                                    </Knopf>
+                                </div>
+                            </div>
+                        ) : (
+                            <div>
+                                {/* Umschalter Kalender / Formular */}
+                                <div ref={umschalterRef} className="grid grid-cols-2 gap-2 sm:max-w-mass">
+                                    <button
+                                        type="button"
+                                        aria-pressed={bookingMode === 'calendar'}
+                                        onClick={() => setBookingMode('calendar')}
+                                        className={UMSCHALTER}
+                                        data-motion="zustand"
+                                    >
+                                        <Icon name="kalender" groesse={5} className="max-sm:hidden" />
+                                        <span>2-Schritt Schnellauswahl</span>
+                                    </button>
+                                    <button
+                                        type="button"
+                                        aria-pressed={bookingMode === 'form'}
+                                        onClick={() => setBookingMode('form')}
+                                        className={UMSCHALTER}
+                                        data-motion="zustand"
+                                    >
+                                        <Icon name="dokument" groesse={5} className="max-sm:hidden" />
+                                        <span>Individuelles Formular</span>
+                                    </button>
+                                </div>
+
+                                <div className="mt-6">
+                                    {bookingMode === 'calendar' ? (
+                                        <BookingCalendar initialServiceType="Kostenfreies Vor-Ort-Aufmaß & Beratung" />
+                                    ) : (
+                                        <form onSubmit={handleSubmit} className={clsx(FELD, 'flex flex-col gap-6')}>
+                                            <div>
+                                                <label htmlFor="termin-topic" className={labelKlassen}>
+                                                    1. Welches Thema möchten Sie besprechen? <span className={pflichtKlassen}>*</span>
+                                                </label>
+                                                <div className="relative">
+                                                    <select
+                                                        id="termin-topic"
+                                                        required
+                                                        value={formData.topic}
+                                                        onChange={update('topic')}
+                                                        className={AUSWAHL}
+                                                        data-motion="zustand"
+                                                    >
+                                                        {TOPICS.map((topic) => (
+                                                            <option key={topic.value} value={topic.value}>{topic.label}</option>
+                                                        ))}
+                                                    </select>
+                                                    <span className={AUSWAHL_WINKEL}>
+                                                        <Icon name="winkel-unten" groesse={5} />
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            {/* Datum schmal, Zeitfenster breit: „Flexibel nach telefonischer Vereinbarung“ passt ganz in die Auswahl */}
+                                            <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-4">
+                                                <div>
+                                                    <label htmlFor="termin-date" className={labelKlassen}>
+                                                        2. Wunschdatum
+                                                    </label>
+                                                    <input
+                                                        id="termin-date"
+                                                        type="date"
+                                                        value={formData.date}
+                                                        onChange={update('date')}
+                                                        className={feldKlassen}
+                                                        data-motion="zustand"
+                                                    />
+                                                </div>
+                                                <div className="md:col-span-2">
+                                                    <label htmlFor="termin-slot" className={labelKlassen}>
+                                                        Bevorzugtes Zeitfenster
+                                                    </label>
+                                                    <div className="relative">
+                                                        <select
+                                                            id="termin-slot"
+                                                            value={formData.timeSlot}
+                                                            onChange={update('timeSlot')}
+                                                            className={AUSWAHL}
+                                                            data-motion="zustand"
+                                                        >
+                                                            {TIME_SLOTS.map((slot) => (
+                                                                <option key={slot.value} value={slot.value}>{slot.label}</option>
+                                                            ))}
+                                                        </select>
+                                                        <span className={AUSWAHL_WINKEL}>
+                                                            <Icon name="winkel-unten" groesse={5} />
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div className="grid grid-cols-1 gap-6 border-t border-fuge pt-6 md:grid-cols-2 md:gap-4">
+                                                <div>
+                                                    <label htmlFor="termin-name" className={labelKlassen}>
+                                                        Name, Vorname <span className={pflichtKlassen}>*</span>
+                                                    </label>
+                                                    <input
+                                                        id="termin-name"
+                                                        type="text"
+                                                        required
+                                                        autoComplete="name"
+                                                        placeholder="Max Mustermann"
+                                                        value={formData.name}
+                                                        onChange={update('name')}
+                                                        className={feldKlassen}
+                                                        data-motion="zustand"
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <label htmlFor="termin-phone" className={labelKlassen}>
+                                                        Telefonnummer <span className={pflichtKlassen}>*</span>
+                                                    </label>
+                                                    <input
+                                                        id="termin-phone"
+                                                        type="tel"
+                                                        required
+                                                        minLength={6}
+                                                        autoComplete="tel"
+                                                        placeholder="Für die Rücksprache zum Termin"
+                                                        value={formData.phone}
+                                                        onChange={update('phone')}
+                                                        className={feldKlassen}
+                                                        data-motion="zustand"
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <label htmlFor="termin-email" className={labelKlassen}>
+                                                        E-Mail-Adresse <span className="font-normal text-tinte-2">(optional)</span>
+                                                    </label>
+                                                    <input
+                                                        id="termin-email"
+                                                        type="email"
+                                                        autoComplete="email"
+                                                        placeholder="ihre-adresse@beispiel.de"
+                                                        value={formData.email}
+                                                        onChange={update('email')}
+                                                        className={feldKlassen}
+                                                        data-motion="zustand"
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <label htmlFor="termin-zip" className={labelKlassen}>
+                                                        PLZ &amp; Ort
+                                                    </label>
+                                                    <input
+                                                        id="termin-zip"
+                                                        type="text"
+                                                        autoComplete="postal-code"
+                                                        placeholder="z. B. 35614 Aßlar"
+                                                        value={formData.zipCity}
+                                                        onChange={update('zipCity')}
+                                                        className={feldKlassen}
+                                                        data-motion="zustand"
+                                                    />
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <label htmlFor="termin-notes" className={labelKlassen}>
+                                                    Ihre Notizen / Anliegen
+                                                </label>
+                                                <textarea
+                                                    id="termin-notes"
+                                                    rows={3}
+                                                    placeholder="z. B. Bad-Grundriss vorhanden, bodengleiche Dusche gewünscht, Fliesenformat ca. 60 x 120 cm …"
+                                                    value={formData.notes}
+                                                    onChange={update('notes')}
+                                                    className={clsx(feldKlassen, 'resize-none')}
+                                                    data-motion="zustand"
+                                                />
+                                            </div>
+
+                                            <div>
+                                                <label className="flex cursor-pointer items-start gap-3 text-fs-2 text-tinte-2">
+                                                    <input
+                                                        type="checkbox"
+                                                        required
+                                                        checked={formData.privacyConsent}
+                                                        onChange={update('privacyConsent')}
+                                                        className={clsx(kontrollKlassen, 'cursor-pointer')}
+                                                    />
+                                                    <span>
+                                                        Ich stimme zu, dass meine Angaben zur Bearbeitung der Terminanfrage gemäß der{' '}
+                                                        <Link href="/datenschutz" target="_blank" className={linkKlassen}>
+                                                            Datenschutzerklärung
+                                                        </Link>{' '}
+                                                        verarbeitet werden. Beim Versand per WhatsApp gelten zusätzlich die Datenschutzbestimmungen von WhatsApp.
+                                                    </span>
+                                                </label>
+                                            </div>
+
+                                            {/* Fehler: Versatz-Zeichen + Text, role="alert" (wie im Terminkalender) */}
+                                            {errorMessage && (
+                                                <p className="flex items-start gap-2 border-l-2 border-laser bg-kalk p-3 text-fs-2 text-laser-tief" role="alert">
+                                                    <Icon name="fehler" groesse={4} className="mt-1 shrink-0" />
+                                                    <span>{errorMessage}</span>
+                                                </p>
+                                            )}
+
+                                            {/* Absenden: online (Hauptknopf) oder per WhatsApp; beide Knöpfe in voller Breite wie im Terminkalender.
+                                                name/value bleiben: der Hook liest den auslösenden Knopf. */}
+                                            <div className="flex flex-col gap-3 border-t border-fuge pt-6">
+                                                <button
+                                                    type="submit"
+                                                    name="channel"
+                                                    value="online"
+                                                    disabled={isSubmitting}
+                                                    aria-busy={isSubmitting || undefined}
+                                                    className={knopfKlassen('haupt', 'w-full')}
+                                                    data-motion="druck"
+                                                >
+                                                    {isSubmitting ? (
+                                                        <span className="flex flex-col items-center gap-2">
+                                                            <span>Wird übertragen …</span>
+                                                            <span className="laden-fuge w-16" data-motion="laden" aria-hidden="true" />
+                                                        </span>
+                                                    ) : (
+                                                        <>
+                                                            <span>Termin online anfragen (mit E-Mail-Bestätigung)</span>
+                                                            <Icon name="pfeil-rechts" groesse={5} />
+                                                        </>
+                                                    )}
+                                                </button>
+                                                <button
+                                                    type="submit"
+                                                    name="channel"
+                                                    value="whatsapp"
+                                                    disabled={isSubmitting}
+                                                    className={knopfKlassen('neben', 'w-full')}
+                                                    data-motion="druck"
+                                                >
+                                                    <WhatsAppLogo className="size-5 shrink-0" />
+                                                    <span>Per WhatsApp senden</span>
+                                                </button>
+                                                <p className="mt-1 flex items-start gap-2 text-fs-2 text-tinte-2">
+                                                    <Icon name="schloss" groesse={4} className="mt-1" />
+                                                    <span>
+                                                        Bei Online-Absendung erhalten Sie unmittelbar eine schriftliche Bestätigung per E-Mail. Bei WhatsApp öffnet sich WhatsApp mit Ihren vorbereiteten Angaben. Der Termin gilt nach persönlicher Abstimmung als fest vereinbart.
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        </form>
+                                    )}
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                    <div className="xl:col-span-4">
+                        <Rueckfrage />
+                    </div>
+                </div>
+            </Abschnitt>
+
+            {/* 3. ABSCHLUSS: unverändert eingebunden, ohne Laserachse (Arbeitsansicht wie /kontakt) */}
+            <FinalCTA achse={false} />
+        </>
     );
 }

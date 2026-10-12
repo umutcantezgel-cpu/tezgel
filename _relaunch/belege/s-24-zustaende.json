@@ -1,0 +1,267 @@
+{
+ "zweck": "S-24: Zustände von /termin (Formular, Fehler, lädt, Erfolg online, WhatsApp) 4362 (vorher) gegen 4350 (nachher), hinter der Anfragesperre (Attrappe bzw. page.route, nie echt)",
+ "zustaende": {
+  "m390/formular": {
+   "entfernt": [
+    "📅 2-Schritt Schnellauswahl",
+    "📝 Individuelles Formular"
+   ],
+   "hinzu": [
+    "2-Schritt Schnellauswahl",
+    "Individuelles Formular",
+    "Ansprechpartner",
+    "Deniz Tezgel",
+    "Telefon",
+    "06441 / 44 83 567",
+    "Mobil & WhatsApp",
+    "0172 / 67 28 504",
+    "E-Mail",
+    "info@tezgel.de",
+    "Sitz",
+    "Hohwardstraße 14, 35614 Aßlar"
+   ],
+   "lesefolge_ohne_rueckfrage_und_emoji": "gleich",
+   "fokus_vorher": "button 📝 Individuelles Formular",
+   "fokus_nachher": "button Individuelles Formular",
+   "ueberlauf_nachher": false,
+   "anfragen_nachher": []
+  },
+  "m390/fehler": {
+   "entfernt": [
+    "📅 2-Schritt Schnellauswahl",
+    "📝 Individuelles Formular"
+   ],
+   "hinzu": [
+    "2-Schritt Schnellauswahl",
+    "Individuelles Formular",
+    "Ansprechpartner",
+    "Deniz Tezgel",
+    "Telefon",
+    "06441 / 44 83 567",
+    "Mobil & WhatsApp",
+    "0172 / 67 28 504",
+    "E-Mail",
+    "info@tezgel.de",
+    "Sitz",
+    "Hohwardstraße 14, 35614 Aßlar"
+   ],
+   "lesefolge_ohne_rueckfrage_und_emoji": "gleich",
+   "fokus_vorher": "body Zum Hauptinhalt springenFachbetriebAßlar",
+   "fokus_nachher": "body Zum Hauptinhalt springenFachbetriebAßlar",
+   "ueberlauf_nachher": false,
+   "anfragen_nachher": [
+    {
+     "art": "blockiert",
+     "methode": "POST",
+     "url": "/__nextjs_original-stack-frames"
+    }
+   ]
+  },
+  "m390/laedt": {
+   "entfernt": [
+    "📅 2-Schritt Schnellauswahl",
+    "📝 Individuelles Formular"
+   ],
+   "hinzu": [
+    "2-Schritt Schnellauswahl",
+    "Individuelles Formular",
+    "Ansprechpartner",
+    "Deniz Tezgel",
+    "Telefon",
+    "06441 / 44 83 567",
+    "Mobil & WhatsApp",
+    "0172 / 67 28 504",
+    "E-Mail",
+    "info@tezgel.de",
+    "Sitz",
+    "Hohwardstraße 14, 35614 Aßlar"
+   ],
+   "lesefolge_ohne_rueckfrage_und_emoji": "gleich",
+   "fokus_vorher": "body Zum Hauptinhalt springenFachbetriebAßlar",
+   "fokus_nachher": "body Zum Hauptinhalt springenFachbetriebAßlar",
+   "ueberlauf_nachher": false,
+   "anfragen_nachher": []
+  },
+  "m390/erfolg": {
+   "entfernt": [
+    "✉️ Eine Bestätigung mit allen Termindaten wurde an pruef@beispiel.de gesendet."
+   ],
+   "hinzu": [
+    "Eine Bestätigung mit allen Termindaten wurde an pruef@beispiel.de gesendet.",
+    "Ansprechpartner",
+    "Deniz Tezgel",
+    "Telefon",
+    "06441 / 44 83 567",
+    "Mobil & WhatsApp",
+    "0172 / 67 28 504",
+    "E-Mail",
+    "info@tezgel.de",
+    "Sitz",
+    "Hohwardstraße 14, 35614 Aßlar"
+   ],
+   "lesefolge_ohne_rueckfrage_und_emoji": "gleich",
+   "fokus_vorher": "body Zum Hauptinhalt springenFachbetriebAßlar",
+   "fokus_nachher": "div[role=status] Terminanfrage erfolgreich übermitteltVor",
+   "ueberlauf_nachher": false,
+   "anfragen_nachher": [
+    {
+     "art": "anfrage",
+     "methode": "POST",
+     "url": "/api/anfrage",
+     "echteRoute": false
+    }
+   ]
+  },
+  "m390/whatsapp": {
+   "entfernt": [],
+   "hinzu": [
+    "Ansprechpartner",
+    "Deniz Tezgel",
+    "Telefon",
+    "06441 / 44 83 567",
+    "Mobil & WhatsApp",
+    "0172 / 67 28 504",
+    "E-Mail",
+    "info@tezgel.de",
+    "Sitz",
+    "Hohwardstraße 14, 35614 Aßlar"
+   ],
+   "lesefolge_ohne_rueckfrage_und_emoji": "gleich",
+   "fokus_vorher": "body Zum Hauptinhalt springenFachbetriebAßlar",
+   "fokus_nachher": "div[role=status] WhatsApp wurde geöffnetFast geschafft – ",
+   "ueberlauf_nachher": false,
+   "anfragen_nachher": []
+  },
+  "d1440/formular": {
+   "entfernt": [
+    "📅 2-Schritt Schnellauswahl",
+    "📝 Individuelles Formular"
+   ],
+   "hinzu": [
+    "2-Schritt Schnellauswahl",
+    "Individuelles Formular",
+    "Ansprechpartner",
+    "Deniz Tezgel",
+    "Telefon",
+    "06441 / 44 83 567",
+    "Mobil & WhatsApp",
+    "0172 / 67 28 504",
+    "E-Mail",
+    "info@tezgel.de",
+    "Sitz",
+    "Hohwardstraße 14, 35614 Aßlar"
+   ],
+   "lesefolge_ohne_rueckfrage_und_emoji": "gleich",
+   "fokus_vorher": "button 📝 Individuelles Formular",
+   "fokus_nachher": "button Individuelles Formular",
+   "ueberlauf_nachher": false,
+   "anfragen_nachher": []
+  },
+  "d1440/fehler": {
+   "entfernt": [
+    "📅 2-Schritt Schnellauswahl",
+    "📝 Individuelles Formular"
+   ],
+   "hinzu": [
+    "2-Schritt Schnellauswahl",
+    "Individuelles Formular",
+    "Ansprechpartner",
+    "Deniz Tezgel",
+    "Telefon",
+    "06441 / 44 83 567",
+    "Mobil & WhatsApp",
+    "0172 / 67 28 504",
+    "E-Mail",
+    "info@tezgel.de",
+    "Sitz",
+    "Hohwardstraße 14, 35614 Aßlar"
+   ],
+   "lesefolge_ohne_rueckfrage_und_emoji": "gleich",
+   "fokus_vorher": "body Zum Hauptinhalt springenFachbetriebAßlar",
+   "fokus_nachher": "body Zum Hauptinhalt springenFachbetriebAßlar",
+   "ueberlauf_nachher": false,
+   "anfragen_nachher": [
+    {
+     "art": "blockiert",
+     "methode": "POST",
+     "url": "/__nextjs_original-stack-frames"
+    }
+   ]
+  },
+  "d1440/laedt": {
+   "entfernt": [
+    "📅 2-Schritt Schnellauswahl",
+    "📝 Individuelles Formular"
+   ],
+   "hinzu": [
+    "2-Schritt Schnellauswahl",
+    "Individuelles Formular",
+    "Ansprechpartner",
+    "Deniz Tezgel",
+    "Telefon",
+    "06441 / 44 83 567",
+    "Mobil & WhatsApp",
+    "0172 / 67 28 504",
+    "E-Mail",
+    "info@tezgel.de",
+    "Sitz",
+    "Hohwardstraße 14, 35614 Aßlar"
+   ],
+   "lesefolge_ohne_rueckfrage_und_emoji": "gleich",
+   "fokus_vorher": "body Zum Hauptinhalt springenFachbetriebAßlar",
+   "fokus_nachher": "body Zum Hauptinhalt springenFachbetriebAßlar",
+   "ueberlauf_nachher": false,
+   "anfragen_nachher": []
+  },
+  "d1440/erfolg": {
+   "entfernt": [
+    "✉️ Eine Bestätigung mit allen Termindaten wurde an pruef@beispiel.de gesendet."
+   ],
+   "hinzu": [
+    "Eine Bestätigung mit allen Termindaten wurde an pruef@beispiel.de gesendet.",
+    "Ansprechpartner",
+    "Deniz Tezgel",
+    "Telefon",
+    "06441 / 44 83 567",
+    "Mobil & WhatsApp",
+    "0172 / 67 28 504",
+    "E-Mail",
+    "info@tezgel.de",
+    "Sitz",
+    "Hohwardstraße 14, 35614 Aßlar"
+   ],
+   "lesefolge_ohne_rueckfrage_und_emoji": "gleich",
+   "fokus_vorher": "body Zum Hauptinhalt springenFachbetriebAßlar",
+   "fokus_nachher": "div[role=status] Terminanfrage erfolgreich übermitteltVor",
+   "ueberlauf_nachher": false,
+   "anfragen_nachher": [
+    {
+     "art": "anfrage",
+     "methode": "POST",
+     "url": "/api/anfrage",
+     "echteRoute": false
+    }
+   ]
+  },
+  "d1440/whatsapp": {
+   "entfernt": [],
+   "hinzu": [
+    "Ansprechpartner",
+    "Deniz Tezgel",
+    "Telefon",
+    "06441 / 44 83 567",
+    "Mobil & WhatsApp",
+    "0172 / 67 28 504",
+    "E-Mail",
+    "info@tezgel.de",
+    "Sitz",
+    "Hohwardstraße 14, 35614 Aßlar"
+   ],
+   "lesefolge_ohne_rueckfrage_und_emoji": "gleich",
+   "fokus_vorher": "body Zum Hauptinhalt springenFachbetriebAßlar",
+   "fokus_nachher": "div[role=status] WhatsApp wurde geöffnetFast geschafft – ",
+   "ueberlauf_nachher": false,
+   "anfragen_nachher": []
+  }
+ }
+}
