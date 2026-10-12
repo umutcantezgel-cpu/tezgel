@@ -13,16 +13,19 @@ import { triggerHaptic } from "@/lib/haptics";
 interface LocationContactProps {
   cityName?: string;
   className?: string;
+  /** Standortseiten (E4-NACH-09, Tempo Z-08): Inhalt erst in Sichtnähe zeichnen; opt-in, damit andere Seiten unverändert bleiben */
+  spaet?: boolean;
 }
 
 export default function LocationContact({
   cityName = "Aßlar & Wetzlar",
   className = "",
+  spaet = false,
 }: LocationContactProps) {
   const titelId = useId();
   return (
     <section aria-labelledby={titelId} className={clsx("py-12 lg:py-16", className)}>
-      <div className={seitenKlassen}>
+      <div className={clsx(seitenKlassen, spaet && "spaet-zeichnen")}>
         <div className="grid grid-cols-1 gap-8 border border-fuge bg-fliese p-6 sm:p-8 md:grid-cols-2 lg:gap-12 lg:p-12">
           <div>
             <span className={etikettKlassen}>

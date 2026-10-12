@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import { CITIES, type CityData } from '@/config/cities';
 import { SERVICES } from '@/config/services';
 import { COMPANY_DATA } from '@/config/company';
@@ -15,6 +16,8 @@ import Leitachse from '@/components/kern/Leitachse';
 import { Feld, Feldraster } from '@/components/kern/Feldraster';
 import Knopf from '@/components/kern/Knopf';
 import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+import Rueckfrage from '@/components/kern/Rueckfrage';
+import { seitenKlassen } from '@/components/kern/stile';
 import QualityPromise from '@/components/sections/QualityPromise';
 import RouteVisualization from '@/components/locations/RouteVisualization';
 import LocationContact from '@/components/locations/LocationContact';
@@ -22,12 +25,17 @@ import LocalDominanceMap from '@/components/maps/LocalDominanceMap';
 import FinalCTA from '@/components/ui/FinalCTA';
 import Einzugsband from '@/components/kern/Einzugsband';
 
+// Schnellformular nachgeladen wie auf / (Tempo, E-025): eigenes Paket, das Server-Rendering bleibt erhalten
+const LeadQuickForm = dynamic(() => import('@/components/forms/LeadQuickForm'), {
+  loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
+});
+
 // Standortseite (E3-BAU-05, KERN v2): Erzählansicht nach dem Muster der Standorte-Übersicht (E3-BAU-04) und von
 // /leistungen/[id]. Einstieg mit Laserachse, H1 links, Vorspann und Knöpfe; rechts das Planblatt mit dem Einzugsband. Danach
 // die Leitachse über die Abschnitte: Kennzahlen, Anfahrt, Einsatzgebiet mit Karte, Leistungen vor Ort als Felder, Orte
-// der Region, regionaler Kontakt und Qualitätsversprechen. Der Abschluss steht außerhalb der Leitachse. Wortlaut,
-// Überschriften, Links, IDs und Lesefolge wie im Bestand. Großer Moment: das Einzugsband (E3-ORCH-03) im Planblatt des
-// Einstiegs (E4-NACH-01), die eigene Stadt mit Fugenkreuz.
+// der Region, regionaler Kontakt und Qualitätsversprechen. Der Abschluss steht außerhalb der Leitachse; das Schnellformular
+// folgt ihm im Raster mit der Rückfrage (E4-NACH-09, Befund 30). Wortlaut, Überschriften, Links, IDs und Lesefolge wie im
+// Bestand. Großer Moment: das Einzugsband (E3-ORCH-03) im Planblatt des Einstiegs (E4-NACH-01), die eigene Stadt mit Fugenkreuz.
 
 // Stadtfeld: das ganze Feld ist der Link (Fuge statt Karte); der Name unterstreicht sich bei feinem Zeiger
 const STADT_LINK = 'group flex flex-1 flex-col justify-between after:absolute after:inset-0';
@@ -220,15 +228,12 @@ export default async function StandortPage({
             </>
           }
         >
+          {/* Helle Zonenliste statt Radar (Befund 27/29); die Badge-Zeile „#1 Fachbetrieb …“ entfällt (Befund 28) */}
           <LocalDominanceMap
             centerCity={`${city.name} (${city.region})`}
             citySlug={city.slug}
             radiusKm={Math.max(25, city.distanceKm + 10)}
-            topRankings={[
-              `#1 Fachbetrieb in ${city.name} & Region`,
-              '5,0★ Google-Bewertung (27 Rezensionen)',
-              'Eingetragener HWK-Betrieb',
-            ]}
+            topRankings={['5,0★ Google-Bewertung (27 Rezensionen)', 'Eingetragener HWK-Betrieb']}
           />
         </Abschnitt>
 
@@ -303,7 +308,7 @@ export default async function StandortPage({
         </Abschnitt>
 
         {/* 7. REGIONALER KONTAKT: Bestandsbaustein, unverändert eingebunden (Hintergrundklasse entfällt wie in E3-BAU-04) */}
-        <LocationContact cityName={city.name} />
+        <LocationContact cityName={city.name} spaet />
 
         {/* 8. QUALITÄT: Bestandsbaustein (Merkliste), unverändert eingebunden */}
         <QualityPromise />
@@ -315,9 +320,26 @@ export default async function StandortPage({
         subtitle={`Schnelle Anfahrt nach ${city.name} • Festpreisangebot • HWK-Fachbetrieb`}
         buttonText={`Jetzt Aufmaß in ${city.name} anfragen`}
         serviceContext={`Einsatzgebiet ${city.name}`}
-        showQuickForm={true}
-        quickFormSource={`standort-${city.slug}`}
       />
+
+      {/* Anfrage: Schnellformular unter dem Abschlussband, linksbündig im Raster (8 Spalten), die Rückfrage rechts (4 Spalten,
+          ab lg klebend). Der negative Abstand holt das Formular an den Abschluss heran (dessen Abstand nach unten bleibt).
+          E4-NACH-09, Befund 30. */}
+      <div className={`${seitenKlassen} -mt-12 pb-24 lg:-mt-24 lg:pb-32`}>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12">
+          <div className="md:col-span-8 lg:col-span-8">
+            <LeadQuickForm
+              variant="card"
+              sourceTag={`standort-${city.slug}`}
+              heading="Kostenfreies Vor-Ort-Aufmaß anfordern"
+              subheading="Tragen Sie Ihre Kontaktdaten ein – Fachbetriebsleiter Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich."
+            />
+          </div>
+          <div className="md:col-span-8 lg:col-span-4">
+            <Rueckfrage />
+          </div>
+        </div>
+      </div>
     </>
   );
 }

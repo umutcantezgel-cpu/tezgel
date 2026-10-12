@@ -1,7 +1,8 @@
 "use client";
 
 // Anfahrt je Standort (E3-BAU-21, Muster LocationContact und DirectContactCard): Abschnitt im System, drei Schritte als
-// Zeilen an der Fuge in einem Schriftfeld (Mono-Etikett über dem Wert, Icons der Familie), Hauptknopf zum Anruf.
+// Zeilen an der Fuge, Hauptknopf zum Anruf. E4-NACH-09 (Befund 30): die Schritte stehen dicht in einer Zeile (ab sm, mit
+// Fugen statt gefüllter Felder); untereinander nur auf dem Telefon. Höhe folgt dem Inhalt.
 // Texte, Ziele und die Fahrzeitformel unverändert; Verlauf, Schatten, Rundungen und Orange entfallen.
 import React from "react";
 import Icon from "@/components/icons/Icon";
@@ -24,6 +25,7 @@ export default function RouteVisualization({ city, className = "" }: RouteVisual
   return (
     <Abschnitt
       art="arbeit"
+      spaet
       etikett={<>Kurze Anfahrtswege in Mittelhessen</>}
       titel={<>Schnell bei Ihnen in {city.name}</>}
       einleitung={
@@ -35,11 +37,11 @@ export default function RouteVisualization({ city, className = "" }: RouteVisual
       }
       className={className}
     >
-      <div className="border border-fuge bg-fliese p-6 sm:p-8 lg:p-12">
+      <div className="flex flex-col divide-y divide-fuge border-y border-fuge sm:flex-row sm:divide-x sm:divide-y-0">
         {/* Step 1: Start HQ */}
-        <div className="flex items-start gap-4 border-b border-fuge py-4">
-          <Icon name="ort" groesse={5} className="mt-1 text-tinte-2" />
-          <div>
+        <div className="flex flex-1 items-start gap-3 py-4 sm:px-6 sm:first:pl-0 sm:last:pr-0">
+          <Icon name="ort" groesse={5} className="mt-1 shrink-0 text-tinte-2" />
+          <div className="min-w-0">
             <span className={etikett}>Startpunkt</span>
             <div className="mt-1 font-text text-fs-3 font-semibold text-tinte">Aßlar (Firmensitz)</div>
             <p className="mt-1 font-text text-fs-2 text-tinte-2">{siteConfig.company.street}</p>
@@ -47,9 +49,9 @@ export default function RouteVisualization({ city, className = "" }: RouteVisual
         </div>
 
         {/* Step 2: Route details */}
-        <div className="flex items-start gap-4 border-b border-fuge py-4">
-          <Icon name="uhr" groesse={5} className="mt-1 text-tinte-2" />
-          <div>
+        <div className="flex flex-1 items-start gap-3 py-4 sm:px-6 sm:first:pl-0 sm:last:pr-0">
+          <Icon name="uhr" groesse={5} className="mt-1 shrink-0 text-tinte-2" />
+          <div className="min-w-0">
             <span className={etikett}>Fahrtzeit & Strecke</span>
             <div className="mt-1 font-anzeige text-fs-5 font-semibold text-tinte">
               ca. {drivingMinutes} Min.
@@ -61,9 +63,9 @@ export default function RouteVisualization({ city, className = "" }: RouteVisual
         </div>
 
         {/* Step 3: Destination – ohne Icon (Zuordnung: ShieldCheck entfällt); die leere Icon-Spalte hält den Text bündig */}
-        <div className="flex items-start gap-4 py-4">
-          <span aria-hidden="true" className="size-5 shrink-0" />
-          <div>
+        <div className="flex flex-1 items-start gap-3 py-4 sm:px-6 sm:first:pl-0 sm:last:pr-0">
+          <span aria-hidden="true" className="mt-1 size-5 shrink-0" />
+          <div className="min-w-0">
             <span className={etikett}>Ihr Projekt</span>
             <div className="mt-1 font-text text-fs-3 font-semibold text-tinte">{city.name}</div>
             <p className="mt-1 font-text text-fs-2 text-tinte-2">Kostenfreies Vor-Ort-Aufmaß</p>

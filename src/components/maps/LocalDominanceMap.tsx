@@ -1,8 +1,11 @@
 'use client';
 
+// Regionale Marktabdeckung der Stadtseite (E4-NACH-09, Befund 27/28/29): helle Fliesenfläche mit Fugen statt des Radars auf
+// Tinte. Die Zonen ab Aßlar als Zonenliste (Einzugsband, kompakt, stapelnd) mit der eigenen Stadt hervorgehoben; die Rangliste
+// als Felder an der Fuge; Zentrum, Fahrtzeit und Radius wie im Bestand; Route in Google Maps als Nebenknopf.
 import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
-import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Einzugsband from '@/components/kern/Einzugsband';
 import { knopfKlassen } from '@/components/kern/stile';
 import { getDirectionsUrl, calculateEstimatedDriveTime, CITY_HUB_DATA } from '@/lib/maps/getMapEmbedUrl';
 
@@ -14,21 +17,19 @@ export interface LocalDominanceMapProps {
   citySlug?: string;
 }
 
-/** Ringe um den Mittelpunkt im Raster ±160 (Innen-, Mittel- und Außenring) */
-const RINGE = [56, 96, 136];
-
 /**
  * ══════════════════════════════════════════════════════════════
  * Regionale Marktabdeckung (Stadtseite)
  * ══════════════════════════════════════════════════════════════
- * - Rangliste als Felder an der Fuge, Radar mit Ringen und Fugenkreuz im Mittelpunkt.
+ * - Rangliste als Felder an der Fuge: Sterne für Bewertungen, Haken für Angaben.
+ * - Zonenliste ab Aßlar (Einzugsband, kompakt) mit der eigenen Stadt hervorgehoben.
  * - Berechnet die Fahrtzeit ab Aßlar und verlinkt auf die Routenplanung.
  */
 export function LocalDominanceMap({
   className = '',
   centerCity = 'Aßlar & Wetzlar',
   radiusKm = 25,
-  topRankings = ['#1 Fachbetrieb Aßlar & Wetzlar', '5,0★ Google-Bewertung (27 Rezensionen)', 'Eingetragener HWK-Betrieb'],
+  topRankings = ['5,0★ Google-Bewertung (27 Rezensionen)', 'Eingetragener HWK-Betrieb'],
   citySlug,
 }: LocalDominanceMapProps) {
   // Normalize slug for city hub lookup
@@ -46,9 +47,22 @@ export function LocalDominanceMap({
   const routeUrl = getDirectionsUrl(centerCity);
 
   return (
-    <div className={clsx('flaeche-tinte flex flex-col gap-6 border border-nacht-fuge bg-tinte p-6 text-kalk lg:p-8', className)}>
-      {/* Zentrum und Fahrtzeit stehen im DOM vor der Rangliste (wie im Ausgangsstand); sichtbar unter dem Radar (order) */}
-      <div className="order-3 flex flex-col items-center gap-2 text-center font-mono text-fs-1 text-nacht-2">
+    <div className={clsx('flex flex-col gap-6 border border-fuge bg-fliese p-6 text-tinte lg:p-8', className)}>
+      {/* Rangliste: Felder an der Fuge */}
+      <ul className="grid gap-px border border-fuge bg-fuge">
+        {topRankings.map((badge, idx) => (
+          <li key={idx} className="flex items-center gap-3 bg-fliese px-4 py-3 font-text text-fs-2 text-tinte">
+            <Icon name={badge.includes('★') ? 'stern' : 'haken'} groesse={4} className="text-tinte-2" />
+            <span>{badge}</span>
+          </li>
+        ))}
+      </ul>
+
+      {/* Zonen ab Aßlar: stapelnd, ohne Lot in Rot; die eigene Stadt trägt das Fugenkreuz */}
+      <Einzugsband aktuell={citySlug} kompakt form="stapel" />
+
+      {/* Zentrum und Fahrtzeit */}
+      <div className="flex flex-col gap-2 font-mono text-fs-1 text-tinte-2 sm:flex-row sm:flex-wrap sm:gap-x-6">
         <span>Zentrum: {centerCity}</span>
         <span className="inline-flex items-center gap-2">
           <Icon name="uhr" groesse={4} />
@@ -56,45 +70,14 @@ export function LocalDominanceMap({
         </span>
       </div>
 
-      {/* Rangliste: Felder an der Fuge */}
-      <ul className="order-1 grid gap-px border border-nacht-fuge bg-nacht-fuge">
-        {topRankings.map((badge, idx) => (
-          <li key={idx} className="flex items-center gap-3 bg-tinte px-4 py-3 font-text text-fs-2 text-kalk">
-            <Icon name={idx < 2 ? 'stern' : 'haken'} groesse={4} className="text-nacht-2" />
-            <span>{badge}</span>
-          </li>
-        ))}
-      </ul>
-
-      {/* Radar: Ringe um den Firmensitz, Fugenkreuz im Mittelpunkt */}
-      <div className="order-2 relative mx-auto w-full max-w-md">
-        <svg viewBox="-160 -160 320 320" aria-hidden="true" focusable="false" className="block h-auto w-full">
-          {RINGE.map((r) => (
-            <circle
-              key={r}
-              cx={0}
-              cy={0}
-              r={r}
-              fill="none"
-              strokeWidth={1}
-              vectorEffect="non-scaling-stroke"
-              className="stroke-nacht-fuge"
-            />
-          ))}
-        </svg>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <Fugenkreuz className="size-6 text-laser" />
-        </div>
-      </div>
-
       {/* Fußzeile: Radius und Routenlink */}
-      <div className="order-4 flex flex-col gap-4 border-t border-nacht-fuge pt-6 sm:flex-row sm:items-center sm:justify-between">
-        <span className="inline-flex items-center gap-2 font-text text-fs-2 text-nacht-2">
+      <div className="flex flex-col gap-4 border-t border-fuge pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <span className="inline-flex items-center gap-2 font-text text-fs-2 text-tinte-2">
           <Icon name="haken" groesse={4} />
           <span>Radius: ca. {radiusKm} km Vor-Ort-Einsatz</span>
         </span>
 
-        <a href={routeUrl} target="_blank" rel="noopener noreferrer" className={knopfKlassen('hell', 'shrink-0')} data-motion="druck">
+        <a href={routeUrl} target="_blank" rel="noopener noreferrer" className={knopfKlassen('neben', 'shrink-0')} data-motion="druck">
           <span>Route in Google Maps</span>
           <Icon name="link-extern" groesse={4} />
         </a>

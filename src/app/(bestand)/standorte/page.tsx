@@ -5,8 +5,10 @@
 // außerhalb der Leitachse. Wortlaut, Überschriften, Links und IDs wie im Bestand (#karte-ueberschrift,
 // #leistungen-ueberall). Großer Moment: das Einzugsband im Planblatt des Einstiegs (E3-ORCH-03, E4-NACH-01).
 import Link from 'next/link';
+import clsx from 'clsx';
 import { CITIES, type CityData } from '@/config/cities';
 import { COMPANY_DATA } from '@/config/company';
+import { siteConfig } from '@/lib/config';
 import { createMetadata } from '@/lib/metadata';
 import { buildGraph, buildBreadcrumbNode, buildWebPageNode, SITE_URL, ORG_ID } from '@/lib/schema';
 import JsonLd from '@/components/seo/JsonLd';
@@ -18,11 +20,13 @@ import Icon from '@/components/icons/Icon';
 import Einstieg from '@/components/kern/Einstieg';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Leitachse from '@/components/kern/Leitachse';
-import { Feld, Feldraster } from '@/components/kern/Feldraster';
+import { Feld } from '@/components/kern/Feldraster';
 import Knopf from '@/components/kern/Knopf';
 import Merkliste from '@/components/kern/Merkliste';
 import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import Einzugsband from '@/components/kern/Einzugsband';
+import Schriftfeld from '@/components/kern/Schriftfeld';
+import { linkKlassen } from '@/components/kern/stile';
 
 export const metadata = createMetadata({
   title: 'Fliesenleger Standorte & Einsatzgebiete | Tezgel',
@@ -131,14 +135,15 @@ export default function StandorteOverviewPage() {
           }
         >
           {/* Stadtfelder (Entfernungen laut Einleitung ab Wetzlar – Angleichung als Textvorschlag, M-17); das Einzugsband
-              ab Aßlar steht seit E4-NACH-01 im Planblatt des Einstiegs */}
-          <Feldraster spalten={3}>
+              ab Aßlar steht seit E4-NACH-01 im Planblatt des Einstiegs. Fugen als Linien an Zelle rechts und unten; die
+              leeren Restzellen der letzten Reihe bleiben Fliese statt Grau (E4-NACH-09, Befund 24). */}
+          <ul className="grid grid-cols-1 border-l border-t border-fuge bg-fliese md:grid-cols-2 lg:grid-cols-3">
             {CITIES.map((city) => (
-              <Feld key={city.slug} className="relative">
+              <Feld key={city.slug} className="relative border-b border-r border-fuge">
                 <Link href={`/standorte/${city.slug}`} className={STADT_LINK}>
                   <div>
-                    <div className="mb-4 flex items-center justify-between gap-3">
-                      <span className="font-mono text-fs-1 text-tinte-2">{city.region}</span>
+                    <div className="mb-4 flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                      <span className="whitespace-nowrap font-mono text-fs-1 text-tinte-2">{city.region}</span>
                       <span className="whitespace-nowrap font-mono text-fs-1 text-tinte-2 tabular-nums">
                         {distanceLabel(city)}
                       </span>
@@ -153,7 +158,7 @@ export default function StandorteOverviewPage() {
                 </Link>
               </Feld>
             ))}
-          </Feldraster>
+          </ul>
         </Abschnitt>
 
         {/* 4. LEISTUNGEN VOR ORT: Merkliste aus den Leistungen des Betriebs, Fläche Fliese */}
@@ -197,7 +202,9 @@ export default function StandorteOverviewPage() {
           </div>
         </Abschnitt>
 
-        {/* 6. ANFAHRT: Firmensitz mit der Standortkarte (hinter Einwilligung, unverändert) */}
+        {/* 6. ANFAHRT: Firmensitz. Die Karte bleibt hinter der Einwilligung (unverändert, ohne eigenen Infokasten); daneben
+              Anschrift, Telefon, Zeiten und der Weg als Schriftfeld, damit keine leere Fläche neben der Karte bleibt
+              (E4-NACH-09, Befund 23). Name, Routenlink und Wortlaut des Infokastens bleiben erhalten. */}
         <Abschnitt
           titelId="hauptsitz-heading"
           leitachse
@@ -211,11 +218,45 @@ export default function StandorteOverviewPage() {
             </p>
           }
         >
-          <InteractiveMap height="400px" />
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12">
+            <div className="md:col-span-8 lg:col-span-7">
+              <InteractiveMap height="400px" showInfoBox={false} />
+            </div>
+            <div className="flex flex-col justify-between gap-6 md:col-span-8 lg:col-span-5">
+              <div className="flex flex-col gap-4">
+                <h4 className="font-text text-fs-3 font-semibold text-tinte">{COMPANY_DATA.legalName}</h4>
+                <Schriftfeld
+                  spalten={1}
+                  felder={[
+                    {
+                      etikett: 'Anschrift',
+                      wert: (
+                        <>
+                          {headquarters.street}, <span className="font-mono">{headquarters.postalCode}</span> {headquarters.city}
+                        </>
+                      ),
+                    },
+                    {
+                      etikett: 'Telefon',
+                      wert: (
+                        <a href={`tel:${contact.phoneLink}`} className={clsx(linkKlassen, 'font-mono')}>
+                          {contact.phone}
+                        </a>
+                      ),
+                    },
+                    { etikett: 'Zeiten', wert: <span className="font-mono">{siteConfig.openingHours.store}</span> },
+                  ]}
+                />
+              </div>
+              <Knopf href={headquarters.mapsUrl} extern variante="neben" icon="pfeil-rechts">
+                Route planen
+              </Knopf>
+            </div>
+          </div>
         </Abschnitt>
 
-        {/* 7. REGIONALER KONTAKT: Bestandsbaustein, unverändert */}
-        <LocationContact cityName="Mittelhessen & Lahn-Dill-Kreis" />
+        {/* 7. REGIONALER KONTAKT: Bestandsbaustein, unverändert bis auf den Tempo-Schalter */}
+        <LocationContact cityName="Mittelhessen & Lahn-Dill-Kreis" spaet />
       </Leitachse>
 
       {/* 8. ABSCHLUSS */}
