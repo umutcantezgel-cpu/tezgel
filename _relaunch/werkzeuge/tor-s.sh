@@ -47,7 +47,8 @@ node -e '
   const auch = (process.env.BEREICH_AUCH || "").split(",").filter(Boolean);
   const erlaubt = new Set([...seiten.split(","), ...auch].map((s) => (s === "/" ? "index" : s.replace(/^\//, "")) + ".html"));
   const dateien = [...new Set(j.abweichungen.map((a) => a.datei))];
-  const fremd = dateien.filter((d) => !erlaubt.has(d));
+  // BEREICH_AUCH="*": Sammel-Tor über mehrere geteilte Komponenten – keine Sperre, die Liste prüft der Orchestrator von Hand.
+  const fremd = auch.includes("*") ? [] : dateien.filter((d) => !erlaubt.has(d));
   console.log(JSON.stringify({ html_abweichend: dateien, fremd, nur_vorher: j.nur_vorher, nur_nachher: j.nur_nachher, css_weg: j.css_selektoren_weg.length, css_neu: j.css_selektoren_neu.length, keyframes_weg: j.keyframes_weg, keyframes_neu: j.keyframes_neu }));
   process.exit(fremd.length || j.nur_vorher.length || j.nur_nachher.length ? 1 : 0);
 ' "$BV" "$SEITEN" > "$AUS/03-bereich.json" 2>&1; r=$?; stufe 03-bereich $r "$(cat "$AUS/03-bereich.json" | head -c 600)"
