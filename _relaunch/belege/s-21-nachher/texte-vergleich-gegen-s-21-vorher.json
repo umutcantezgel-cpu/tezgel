@@ -1,0 +1,62 @@
+{
+ "vorher": "s-21-vorher",
+ "nachher": "s-21-nachher",
+ "seiten": {
+  "/karriere/ausbildung": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "Blatt",
+     "Ausbildung Fliesenleger (m/w/d)",
+     "Verband",
+     "Kreuzfuge",
+     "Betrieb",
+     "Fliesenverlegung Tezgel",
+     "Inhaber",
+     "Deniz Tezgel",
+     "Kammer",
+     "HWK Wiesbaden",
+     "Betrieb seit",
+     "2008"
+    ]
+   }
+  },
+  "/karriere": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "Blatt",
+     "Fliesenleger Jobs",
+     "Verband",
+     "Drittelverband",
+     "Betrieb",
+     "Fliesenverlegung Tezgel",
+     "Inhaber",
+     "Deniz Tezgel",
+     "Kammer",
+     "HWK Wiesbaden",
+     "Betrieb seit",
+     "2008"
+    ]
+   },
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  }
+ },
+ "summe": {
+  "entfernt": 1,
+  "hinzu": 24,
+  "meta": 0,
+  "seo": 0
+ },
+ "sitemap": {
+  "entfernt": [],
+  "hinzu": []
+ },
+ "robots_geaendert": false,
+ "kaputte_links": []
+}

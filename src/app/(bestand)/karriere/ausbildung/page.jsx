@@ -1,9 +1,26 @@
-import React from 'react';
-import Link from 'next/link';
-import { CheckCircle2, GraduationCap, Mail, Phone, MessageCircle, ArrowRight } from 'lucide-react';
+// Ausbildung (S-21 im Relaunch-Ablauf, Werkstatt-Planzeile E6-BAU-02, KERN v2): Erzählansicht nach dem Vorbild von
+// /ueber-uns und der Themenfamilie. Einstieg mit Laserachse, Etikett, H1 links bündig und Vorspann – ohne Knöpfe, wie im
+// Bestand (die Wege stehen im Aufruf darunter); rechts das Planblatt „fugen“ (Plan ohne Bemaßung, interaktiv; das Blatt
+// trägt die rote Achse des Plans – das Fugenbild als Grundlage des Handwerks, das man hier lernt).
+// Danach die Leitachse über die Abschnitte: 2. Was du lernst · Wo du lernst · Was du mitbringst als Feldraster mit drei
+// Feldern (H2 wie im Bestand; zwei Spalten ab md mit dem letzten Feld über beide, drei ab lg) auf Kalk · 3. Bereit für deine
+// Zukunft?: Text links, rechts die Wege E-Mail (Hauptknopf), Telefon, WhatsApp und der Verweis auf alle Stellen (Fliese).
+// Danach das Qualitätsversprechen (Kalk).
+// Wortlaut, Links, Überschriftenebenen und Lesefolge wie im Bestand; Metadaten unverändert. Serverkomponente. Kein
+// Auftritt und kein großer Moment; `spaet` auf beiden Abschnitten unter dem Einstieg (keine Sprungziele, keine Formulare).
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
+import Icon from '@/components/icons/Icon';
 import QualityPromise from '@/components/sections/QualityPromise';
+import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Einstieg from '@/components/kern/Einstieg';
+import { Feld, Feldraster } from '@/components/kern/Feldraster';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Knopf from '@/components/kern/Knopf';
+import Leitachse from '@/components/kern/Leitachse';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+import Verlegeplan from '@/components/kern/Verlegeplan';
 
 const APPRENTICESHIP_TITLE = 'Fliesen-, Platten- und Mosaikleger (m/w/d)';
 
@@ -23,78 +40,89 @@ export default function AusbildungPage() {
     ];
 
     return (
-        <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            {/* Ambient Glow */}
-            <div className="ambient-glow-orange -top-20 -left-20 opacity-70" />
-            <div className="ambient-glow-red top-96 -right-20 opacity-60" />
-
-            {/* Hero */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-                <div className="ceramic-hero rounded-tile-xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">
-                        <GraduationCap className="w-3.5 h-3.5" />
+        <>
+            {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann; rechts das Planblatt „fugen“ */}
+            <Einstieg
+                art="erzaehl"
+                etikett={
+                    <>
+                        <Fugenkreuz className="size-3 shrink-0 text-strich" />
                         Ausbildung im Fachbetrieb
-                    </span>
-                    <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        <span className="text-ceramic-gradient">Ausbildung</span> zum {APPRENTICESHIP_TITLE}
-                    </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed">
+                    </>
+                }
+                titel={<>Ausbildung zum {APPRENTICESHIP_TITLE}</>}
+                vorspann={
+                    <p>
                         Starte deine Ausbildung zum Fliesen-, Platten- und Mosaikleger (m/w/d) bei {COMPANY_DATA.legalName} in {headquarters.city}: Du möchtest ein zukunftssicheres Handwerk lernen, bei dem du täglich siehst, was du geschaffen hast? Bewirb dich unkompliziert per E-Mail, Telefon oder WhatsApp.
                     </p>
-                </div>
-            </div>
+                }
+                rand={
+                    <Planblatt felder={planfelder('Ausbildung Fliesenleger (m/w/d)', 'fugen')}>
+                        <Verlegeplan plan="fugen" ohneAchse bemassung={false} interaktiv />
+                    </Planblatt>
+                }
+            />
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
-                <ul className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                    {cards.map((card) => (
-                        <li
-                            key={card.title}
-                            className="group glass-surface p-8 rounded-tile-lg hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
-                        >
-                            <CheckCircle2 className="w-6 h-6 text-orange-600 mb-3" />
-                            <h2 className="font-black text-lg text-slate-900 mb-2 group-hover:text-orange-700 transition-colors">{card.title}</h2>
-                            <p className="text-sm text-slate-700 leading-relaxed">{card.desc}</p>
-                        </li>
-                    ))}
-                </ul>
+            <Leitachse>
+                {/* 2. WAS DU LERNST · WO DU LERNST · WAS DU MITBRINGST: drei Felder mit Haken (wie im Bestand), H2 je Feld */}
+                <Abschnitt leitachse spaet>
+                    <Feldraster spalten={3}>
+                        {cards.map((card, i) => {
+                            const letzter = i === cards.length - 1;
+                            return (
+                                <Feld key={card.title} spanne={letzter ? 2 : undefined} className={letzter ? 'lg:col-span-1' : undefined}>
+                                    <Icon name="haken" groesse={6} className="text-tinte" />
+                                    <h2 className="mt-6 text-fs-5 text-tinte">{card.title}</h2>
+                                    <p className="mt-3 max-w-mass font-text text-fs-2 text-tinte-2">{card.desc}</p>
+                                </Feld>
+                            );
+                        })}
+                    </Feldraster>
+                </Abschnitt>
 
-                <div className="ceramic-hero rounded-tile-xl max-w-3xl mx-auto p-8 sm:p-10 text-center space-y-4">
-                    <h3 className="text-xl sm:text-2xl font-black text-slate-900">Bereit für deine Zukunft?</h3>
-                    <p className="text-sm text-slate-700 max-w-xl mx-auto leading-relaxed">
-                        Bewirb dich unkompliziert per E-Mail oder ruf uns direkt an für ein erstes Kennenlernen.
-                    </p>
-                    <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-3 pt-2">
-                        <a
-                            href={`mailto:${contact.email}?subject=${encodeURIComponent(`Bewerbung Ausbildung ${APPRENTICESHIP_TITLE}`)}`}
-                            className="btn-primary w-full sm:w-auto"
-                        >
-                            <Mail className="w-4 h-4" />
-                            Jetzt per E-Mail bewerben
-                        </a>
-                        <a href={`tel:${contact.phoneLink}`} className="btn-ghost w-full sm:w-auto">
-                            <Phone className="w-4 h-4 text-orange-600" />
-                            {contact.phone}
-                        </a>
-                        <a
-                            href={contact.whatsappLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="glass-button-whatsapp w-full sm:w-auto text-sm"
-                        >
-                            <MessageCircle className="w-4 h-4" />
-                            WhatsApp
-                        </a>
+                {/* 3. BEREIT FÜR DEINE ZUKUNFT?: H3 wie im Bestand mit Text links; rechts die Wege wie im Abschluss der Startseite –
+                    E-Mail als Hauptknopf, Telefon (Mono) und WhatsApp als Nebenknöpfe, darunter der Verweis auf alle Stellen */}
+                <Abschnitt flaeche="fliese" leitachse spaet>
+                    {/* py-1: Fokusringe des ersten Knopfs und des letzten Verweises bleiben innerhalb der spaet-Hülle
+                        (content-visibility beschneidet am Rand) */}
+                    <div className="grid grid-cols-4 gap-y-8 py-1 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12">
+                        <div className="col-span-4 md:col-span-8 lg:col-span-7">
+                            <h3 className="text-fs-6 text-tinte">Bereit für deine Zukunft?</h3>
+                            <p className="mt-6 max-w-mass font-text text-fs-3 text-tinte-2">
+                                Bewirb dich unkompliziert per E-Mail oder ruf uns direkt an für ein erstes Kennenlernen.
+                            </p>
+                        </div>
+                        <div className="col-span-4 flex flex-col gap-3 md:col-span-6 lg:col-span-5">
+                            <Knopf
+                                href={`mailto:${contact.email}?subject=${encodeURIComponent(`Bewerbung Ausbildung ${APPRENTICESHIP_TITLE}`)}`}
+                                iconLinks="mail"
+                                className="w-full"
+                            >
+                                Jetzt per E-Mail bewerben
+                            </Knopf>
+                            <Knopf href={`tel:${contact.phoneLink}`} variante="neben" iconLinks="telefon" className="w-full">
+                                <span className="font-mono font-normal">{contact.phone}</span>
+                            </Knopf>
+                            <Knopf
+                                href={contact.whatsappLink}
+                                extern
+                                variante="neben"
+                                vorne={<WhatsAppLogo className="size-5 shrink-0" />}
+                                className="w-full"
+                            >
+                                WhatsApp
+                            </Knopf>
+                            <p className="mt-3">
+                                <Knopf href="/karriere" variante="text" icon="pfeil-rechts">
+                                    Alle Stellenangebote ansehen
+                                </Knopf>
+                            </p>
+                        </div>
                     </div>
-                    <p className="pt-2 text-sm text-slate-700">
-                        <Link href="/karriere" className="inline-flex items-center gap-1 font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">
-                            Alle Stellenangebote ansehen
-                            <ArrowRight className="w-4 h-4" />
-                        </Link>
-                    </p>
-                </div>
-            </div>
+                </Abschnitt>
+            </Leitachse>
 
             <QualityPromise />
-        </div>
+        </>
     );
 }

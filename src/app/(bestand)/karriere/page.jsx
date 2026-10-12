@@ -1,16 +1,37 @@
-import React from 'react';
-import Link from 'next/link';
-import { Briefcase, Award, ArrowRight, Layers, Ruler, MapPin, Mail, Phone, MessageCircle, HelpCircle, GraduationCap } from 'lucide-react';
+// Karriere (S-21 im Relaunch-Ablauf, Werkstatt-Planzeile E6-BAU-02, KERN v2): Erzählansicht nach dem Vorbild von
+// /ueber-uns und der Themenfamilie. Einstieg mit Laserachse, Etikett, H1 links bündig, Vorspann und die beiden
+// Bewerbungswege des Bestands als Knöpfe (E-Mail als Hauptknopf, Telefon); rechts das Planblatt „grossformat“ (Plan ohne
+// Bemaßung, interaktiv; das Blatt trägt die rote Achse des Plans – die Verlegetechnik für Großformate ist Inhalt der Seite).
+// Danach die Leitachse über die Abschnitte, Flächen Fliese und Kalk im Wechsel:
+// 2. Was Sie bei uns erwartet: vier Felder mit Zeichen der eigenen Familie (Fliese) · 3. Stellenangebote als Zeilen an der
+// Fuge – Ort als Mono-Etikett, Titel, Text, rechts „Jetzt bewerben“ als Nebenknopf (Kalk) · 4. Häufige Fragen zur
+// Bewerbung, Kopf seitlich: Frage und Antwort an der Fuge, darunter die drei Wege Telefon, WhatsApp, E-Mail (Fliese).
+// Danach das Qualitätsversprechen (Kalk).
+// Wortlaut, Links und Lesefolge wie im Bestand; die erste Stelle und die Fragen spiegeln das JSON-LD in ./layout.tsx.
+// Serverkomponente. Kein Auftritt und kein großer Moment; `spaet` auf allen Abschnitten unter dem ersten Bildschirm
+// (keine Sprungziele, keine Formulare). Metadaten und JSON-LD bleiben in ./layout.tsx.
 import { COMPANY_DATA } from '@/config/company';
+import Icon from '@/components/icons/Icon';
 import QualityPromise from '@/components/sections/QualityPromise';
+import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Einstieg from '@/components/kern/Einstieg';
+import { Feld, Feldraster } from '@/components/kern/Feldraster';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Knopf from '@/components/kern/Knopf';
+import Leitachse from '@/components/kern/Leitachse';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+import Verlegeplan from '@/components/kern/Verlegeplan';
+import { etikettKlassen } from '@/components/kern/stile';
 
 const { contact, authority, headquarters, business } = COMPANY_DATA;
 
+// Zeichen der eigenen Familie nach `icons/zuordnung.ts` (Award ohne Entsprechung → haken wie die HWK-Zeile auf /ueber-uns)
 const HIGHLIGHTS = [
-    { icon: Award, title: 'Eingetragener HWK-Fachbetrieb', desc: `Handwerk nach geprüften Standards – eingetragen bei der ${authority.name} als ${authority.responsibility}.` },
-    { icon: Layers, title: 'Anspruchsvolle Projekte', desc: 'Badsanierungen, bodengleiche Walk-In-Duschen, XXL-Großformate, Treppen, Naturstein sowie Balkone und Terrassen.' },
-    { icon: Ruler, title: 'Moderne Verlegetechnik', desc: 'Nivelliersystem, Vakuumhebetechnik und spezialisierte Schneidtechnik für millimetergenaue Großformate.' },
-    { icon: MapPin, title: 'Regionale Baustellen', desc: `Unsere Projekte liegen in ${headquarters.city}, Wetzlar, Gießen und Mittelhessen – für Großprojekte auch in ganz Hessen.` }
+    { icon: 'haken', title: 'Eingetragener HWK-Fachbetrieb', desc: `Handwerk nach geprüften Standards – eingetragen bei der ${authority.name} als ${authority.responsibility}.` },
+    { icon: 'untergrund', title: 'Anspruchsvolle Projekte', desc: 'Badsanierungen, bodengleiche Walk-In-Duschen, XXL-Großformate, Treppen, Naturstein sowie Balkone und Terrassen.' },
+    { icon: 'aufmass', title: 'Moderne Verlegetechnik', desc: 'Nivelliersystem, Vakuumhebetechnik und spezialisierte Schneidtechnik für millimetergenaue Großformate.' },
+    { icon: 'ort', title: 'Regionale Baustellen', desc: `Unsere Projekte liegen in ${headquarters.city}, Wetzlar, Gießen und Mittelhessen – für Großprojekte auch in ganz Hessen.` }
 ];
 
 // The first entry is mirrored as JobPosting JSON-LD in ./layout.tsx.
@@ -53,137 +74,128 @@ const applyHref = (title) => `mailto:${contact.email}?subject=${encodeURICompone
 
 export default function KarrierePage() {
     return (
-        <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            {/* Ambient Glow */}
-            <div className="ambient-glow-orange -top-20 -left-20 opacity-70" />
-            <div className="ambient-glow-red top-96 -right-20 opacity-60" />
-
-            {/* Hero */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-                <div className="ceramic-hero rounded-tile-xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">
-                        <Briefcase className="w-3.5 h-3.5" />
+        <>
+            {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, die zwei Bewerbungswege; rechts das Planblatt „grossformat“ */}
+            <Einstieg
+                art="erzaehl"
+                etikett={
+                    <>
+                        <Fugenkreuz className="size-3 shrink-0 text-strich" />
                         Werde Teil unseres Teams
-                    </span>
-                    <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Fliesenleger Jobs &amp; Karriere bei{' '}
-                        <span className="text-ceramic-gradient">Tezgel in Wetzlar &amp; Aßlar</span>
-                    </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed">
+                    </>
+                }
+                titel={<>Fliesenleger Jobs &amp; Karriere bei Tezgel in Wetzlar &amp; Aßlar</>}
+                vorspann={
+                    <p>
                         Fliesenleger Jobs in Wetzlar &amp; Aßlar gesucht: Verstärken Sie das Team von {COMPANY_DATA.legalName} als Geselle oder erfahrene Fachkraft. Bewerben Sie sich direkt bei Inhaber {COMPANY_DATA.owner.fullName} – ein starkes Team von bis zu 12 Handwerkern im Einsatz in Mittelhessen.
                     </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <a href={applyHref(JOBS[0].title)} className="btn-primary px-7 py-3.5 text-xs">
-                            <Mail className="w-4 h-4" />
+                }
+                aktionen={
+                    <>
+                        <Knopf href={applyHref(JOBS[0].title)} iconLinks="mail">
                             Jetzt per E-Mail bewerben
-                        </a>
-                        <a href={`tel:${contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-orange-600" />
-                            {contact.phone}
-                        </a>
-                    </div>
-                </div>
-            </div>
+                        </Knopf>
+                        <Knopf href={`tel:${contact.phoneLink}`} variante="neben" iconLinks="telefon">
+                            <span className="font-mono font-normal">{contact.phone}</span>
+                        </Knopf>
+                    </>
+                }
+                rand={
+                    <Planblatt felder={planfelder('Fliesenleger Jobs', 'grossformat')}>
+                        <Verlegeplan plan="grossformat" ohneAchse bemassung={false} interaktiv />
+                    </Planblatt>
+                }
+            />
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
-                {/* Highlights */}
-                <div className="text-center max-w-3xl mx-auto mb-10">
-                    <span className="eyebrow mb-4">Arbeiten im Fachbetrieb</span>
-                    <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Was Sie bei uns erwartet</h2>
-                </div>
-                <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-                    {HIGHLIGHTS.map(({ icon: Icon, title, desc }) => (
-                        <li
-                            key={title}
-                            className="group glass-surface p-6 rounded-tile-lg hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
-                        >
-                            <span className="icon-chip w-11 h-11 mb-4">
-                                <Icon className="w-5 h-5" />
-                            </span>
-                            <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-700 transition-colors">{title}</h3>
-                            <p className="text-sm text-slate-700 leading-relaxed">{desc}</p>
-                        </li>
-                    ))}
-                </ul>
-
-                {/* Job Openings */}
-                <div className="space-y-6 max-w-4xl mx-auto">
-                    <h2 className="text-2xl sm:text-3xl font-black text-slate-900 text-center mb-8 tracking-tight">
-                        Aktuelle Stellenangebote in {headquarters.city}
-                    </h2>
-
-                    {JOBS.map((job) => (
-                        <article
-                            key={job.title}
-                            className="glass-surface p-8 rounded-tile-lg flex flex-col sm:flex-row sm:items-center justify-between gap-6 hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
-                        >
-                            <div>
-                                <span className="text-xs font-black text-orange-800 bg-orange-50 px-3.5 py-1 rounded-tile-pill inline-flex items-center gap-1.5 mb-2 border border-orange-200">
-                                    <MapPin className="w-3.5 h-3.5 text-orange-600" />
-                                    {job.loc}
+            <Leitachse>
+                {/* 2. WAS SIE BEI UNS ERWARTET: vier Felder (zwei Spalten ab md, vier ab lg – ohne Restzelle), je Feld ein Zeichen */}
+                <Abschnitt
+                    titelId="karriere-erwartung-heading"
+                    flaeche="fliese"
+                    leitachse
+                    spaet
+                    etikett="Arbeiten im Fachbetrieb"
+                    titel="Was Sie bei uns erwartet"
+                >
+                    <Feldraster spalten={4}>
+                        {HIGHLIGHTS.map(({ icon, title, desc }) => (
+                            <Feld key={title}>
+                                <span aria-hidden="true" className="flex size-6 items-center justify-center text-tinte">
+                                    <Icon name={icon} groesse={6} />
                                 </span>
-                                <h3 className="text-lg font-black text-slate-900 mb-2">{job.title}</h3>
-                                <p className="text-sm text-slate-700 leading-relaxed">{job.desc}</p>
-                                {job.moreHref && (
-                                    <Link
-                                        href={job.moreHref}
-                                        className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2"
-                                    >
-                                        <GraduationCap className="w-4 h-4" />
-                                        Mehr zur Ausbildung
-                                    </Link>
-                                )}
-                            </div>
-                            <div className="shrink-0">
-                                <a href={applyHref(job.title)} className="btn-primary px-6 py-3 text-xs w-full sm:w-auto">
-                                    Jetzt bewerben
-                                    <ArrowRight className="w-4 h-4" />
-                                </a>
-                            </div>
-                        </article>
-                    ))}
-                </div>
+                                <h3 className="mt-6 text-fs-4 text-tinte">{title}</h3>
+                                <p className="mt-2 max-w-mass font-text text-fs-2 text-tinte-2">{desc}</p>
+                            </Feld>
+                        ))}
+                    </Feldraster>
+                </Abschnitt>
 
-                {/* Application FAQ */}
-                <div className="max-w-4xl mx-auto mt-20">
-                    <div className="text-center mb-10">
-                        <span className="eyebrow mb-4">Bewerbung</span>
-                        <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Häufige Fragen zur Bewerbung</h2>
+                {/* 3. STELLENANGEBOTE: je Stelle eine Zeile an der Fuge – links Ort (Mono), Titel, Text und der Verweis zur
+                    Ausbildung, rechts „Jetzt bewerben“ (Nebenknopf: der Hauptknopf des Bildschirms bleibt im Einstieg) */}
+                <Abschnitt titelId="karriere-stellen-heading" leitachse spaet titel={<>Aktuelle Stellenangebote in {headquarters.city}</>}>
+                    <div className="border-t border-tinte">
+                        {JOBS.map((job) => (
+                            <article
+                                key={job.title}
+                                className="grid grid-cols-4 gap-y-6 border-b border-fuge py-8 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12 lg:py-12"
+                            >
+                                <div className="col-span-4 md:col-span-8">
+                                    <p className={etikettKlassen}>
+                                        <Icon name="ort" groesse={4} />
+                                        {job.loc}
+                                    </p>
+                                    <h3 className="mt-4 text-fs-5 text-tinte">{job.title}</h3>
+                                    <p className="mt-4 max-w-mass font-text text-fs-3 text-tinte-2">{job.desc}</p>
+                                    {job.moreHref && (
+                                        <Knopf href={job.moreHref} variante="text" icon="pfeil-rechts" className="mt-2">
+                                            Mehr zur Ausbildung
+                                        </Knopf>
+                                    )}
+                                </div>
+                                <div className="col-span-4 md:col-span-8 lg:col-span-4 lg:justify-self-end">
+                                    <Knopf href={applyHref(job.title)} variante="neben" icon="pfeil-rechts" className="w-full sm:w-auto">
+                                        Jetzt bewerben
+                                    </Knopf>
+                                </div>
+                            </article>
+                        ))}
                     </div>
-                    <div className="space-y-4">
+                </Abschnitt>
+
+                {/* 4. HÄUFIGE FRAGEN ZUR BEWERBUNG: Kopf links, rechts Frage und Antwort an der Fuge; darunter die drei Wege */}
+                <Abschnitt
+                    titelId="karriere-fragen-heading"
+                    flaeche="fliese"
+                    leitachse
+                    spaet
+                    kopf="seitlich"
+                    etikett="Bewerbung"
+                    titel="Häufige Fragen zur Bewerbung"
+                >
+                    <div className="border-t border-tinte">
                         {KARRIERE_FAQS.map((faq) => (
-                            <div key={faq.q} className="glass-surface rounded-tile-md p-6">
-                                <h3 className="font-black text-base text-slate-900 mb-2 flex items-start gap-2">
-                                    <HelpCircle className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />
-                                    {faq.q}
-                                </h3>
-                                <p className="text-sm text-slate-700 leading-relaxed pl-7">{faq.a}</p>
+                            <div key={faq.q} className="border-b border-fuge py-6">
+                                <h3 className="text-fs-4 text-tinte">{faq.q}</h3>
+                                <p className="mt-2 max-w-mass font-text text-fs-3 text-tinte-2">{faq.a}</p>
                             </div>
                         ))}
                     </div>
-                    <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-                        <a href={`tel:${contact.phoneLink}`} className="btn-ghost w-full sm:w-auto">
-                            <Phone className="w-4 h-4 text-orange-600" />
-                            {contact.phone}
-                        </a>
-                        <a
-                            href={contact.whatsappLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="glass-button-whatsapp w-full sm:w-auto text-sm"
-                        >
-                            <MessageCircle className="w-4 h-4" />
+                    {/* pb-1: der Fokusring der letzten Zeile bleibt innerhalb der spaet-Hülle (content-visibility beschneidet am Rand) */}
+                    <div className="mt-8 flex flex-col gap-3 pb-1 sm:flex-row sm:flex-wrap">
+                        <Knopf href={`tel:${contact.phoneLink}`} variante="neben" iconLinks="telefon">
+                            <span className="font-mono font-normal">{contact.phone}</span>
+                        </Knopf>
+                        <Knopf href={contact.whatsappLink} extern variante="neben" vorne={<WhatsAppLogo className="size-5 shrink-0" />}>
                             WhatsApp
-                        </a>
-                        <a href={`mailto:${contact.email}`} className="btn-ghost w-full sm:w-auto">
-                            <Mail className="w-4 h-4 text-orange-600" />
+                        </Knopf>
+                        <Knopf href={`mailto:${contact.email}`} variante="neben" iconLinks="mail">
                             {contact.email}
-                        </a>
+                        </Knopf>
                     </div>
-                </div>
-            </div>
+                </Abschnitt>
+            </Leitachse>
 
             <QualityPromise />
-        </div>
+        </>
     );
 }
