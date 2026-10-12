@@ -5,7 +5,13 @@ import { knopfKlassen, seitenKlassen } from "@/components/kern/stile";
 import Laserachse from "@/components/kern/Laserachse";
 import { ACHSE_LAGE } from "@/components/kern/Leitachse";
 import { siteConfig } from "@/lib/config";
-import { LeadQuickForm } from "@/components/forms/LeadQuickForm";
+import dynamic from "next/dynamic";
+
+// Schnellformular nachgeladen (E4-NACH-06, Bündelanalyse: 62 KiB roh in der Erstladung von 9 Hauptansichten): eigenes
+// Paket statt im gemeinsamen Erstladungsbündel; Server-Rendering bleibt, sichtbar und bedienbar wie bisher.
+const LeadQuickForm = dynamic(() => import("@/components/forms/LeadQuickForm"), {
+  loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
+});
 import WhatsAppLogo from "@/components/ui/WhatsAppLogo";
 
 interface FinalCTAProps {
