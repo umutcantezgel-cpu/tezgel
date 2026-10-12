@@ -1,0 +1,718 @@
+{
+ "einheit": "u3-blog",
+ "zuordnung": {
+  "X": "B",
+  "Y": "A"
+ },
+ "urteil": {
+  "einheit": "u3-blog – Ratgeber-Übersicht /blog",
+  "je_abschnitt": [
+   {
+    "name": "Erster Bildschirm (Seitenrahmen-Kopf + Seitenkopf)",
+    "ansicht": "d1440",
+    "wahl": "Y",
+    "begruendung": "Seitenkopf in beiden fast gleich. Den Ausschlag gibt der Blickfang darunter: A zeigt eine Verlegeplan-Zeichnung im Stil der Startseite (K-003 Nr. 4, K-008, Vorbild V4). B zeigt ein großes Badfoto mit Dampf, das wie Stock-Ware wirkt und im Raster gleich danach noch einmal vorkommt. Die Kategorienliste in A liest sich ruhiger als die umbrechende Chip-Wolke in B.",
+    "uebernehmen_aus_anderer": "Aus B: „DIN 18534“ in der Einleitung in Mono (K-003 Nr. 3, wie im Vorbild). Sichtbares Label „Artikel suchen“ über dem Feld, Lupe im Feld. Leitfaden-H2 in der größeren Stufe von B (A setzt sie kaum größer als die H3 der Karten).",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Erster Bildschirm (Seitenrahmen-Kopf + Seitenkopf)",
+    "ansicht": "m390",
+    "wahl": "Y",
+    "begruendung": "Arbeitsansicht nach K-009 heißt: kompakter Kopf, Liste bzw. Bedienung im ersten Bildschirm. A zeigt Suchfeld und Filter-Chips schon im ersten Bildschirm, B nur das Suchfeld (Seitenkopf 539 px statt 651 px).",
+    "uebernehmen_aus_anderer": "Aus B: Mono-Satz „DIN 18534“ und Lupe im Suchfeld.",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Seitenkopf „Fliesen-Ratgeber & Badsanierung Tipps“ (H1, Einleitung, 2 Knöpfe)",
+    "ansicht": "d1440",
+    "wahl": "X",
+    "begruendung": "Sonst gleich. B setzt die Norm „DIN 18534“ in IBM Plex Mono, wie K-003 Nr. 3 („Maß statt Behauptung“) und die Startseite es verlangen. A setzt sie in Fließtextschrift.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Seitenkopf „Fliesen-Ratgeber & Badsanierung Tipps“ (H1, Einleitung, 2 Knöpfe)",
+    "ansicht": "m390",
+    "wahl": "beide",
+    "begruendung": "A hält den Kopf für eine Arbeitsansicht angemessen knapp (weniger Abstand oben, 539 px). B setzt den Vorspann tokentreu in fs-4 wie das Vorbild mobil und die Norm in Mono. A verkleinert den Vorspann mobil auf Fließtextstufe.",
+    "uebernehmen_aus_anderer": "Grundlage sind die Abstände von A. Aus B: Vorspann in text-fs-4 und „DIN 18534“ in Mono. Die Höhe trotzdem nahe 540 px halten, über den oberen Abstand statt über die Schriftstufe.",
+    "wahl_fassung": "beide"
+   },
+   {
+    "name": "Artikelübersicht im Ruhezustand (Leitfaden-Karte, 12 Karten, Seitenleiste mit Suche, Kategorien und „Beratung gewünscht?“)",
+    "ansicht": "d1440",
+    "wahl": "Y",
+    "begruendung": "A bleibt im Formsystem: eine gezeichnete Verlegeplan-Vorschau je Karte, Zeilenliste an Fugen wie „Fachthemen im Detail“ im Vorbild V3, ruhige Dichte, klebende Kategorienliste. B arbeitet mit Rasterfotos, die K-003 Nr. 4 widersprechen: 9 Fotos für 13 Karten, mehrere doppelt, das Leitfaden-Foto direkt darunter noch einmal, auf mehreren Fotos ein sichtbares Funkel-Wasserzeichen in der Ecke. Das zweispaltige Raster ist zwar Fuge statt Karte, wirkt aber wegen der Fotos wie ein Bildkatalog. Schwächen in A: Anrisstexte per line-clamp gekürzt (Leitfaden schon nach „auf die…“), Leitfaden-H2 zu klein, Telefon nicht in Mono, zwei dunkle Flächen in der Seitenleiste (aktive Zeile und „Kontakt aufnehmen“), kleine leere Lücke unter der klebenden Liste.",
+    "uebernehmen_aus_anderer": "Aus B: voller Anrisstext ohne line-clamp, auch beim Leitfaden. Leitfaden-H2 größer (Stufe fs-5). Telefon „06441 / 44 83 567“ in Mono. „Kontakt aufnehmen“ als Nebenknopf (Strich-Rahmen), damit die Tinte-Fläche der aktiven Kategorie der einzige dunkle Block der Leiste bleibt. Sichtbares Label „Artikel suchen“ und Lupe. Semantik <li><article>.",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Artikelübersicht im Ruhezustand (Such-/Filterleiste mobil, Leitfaden-Karte, 12 Karten)",
+    "ansicht": "m390",
+    "wahl": "Y",
+    "begruendung": "Mobil als eigenes Blatt (K-003 Nr. 7): A braucht 4349 px statt 7743 px. Zeichnung links, Text rechts, Chips mit Kategoriesymbol und scroll-snap. B stapelt Fotos über die volle Breite, mit Dubletten und Wasserzeichen, und verlangt fast doppelt so viel Scrollen. Schwächen in A: In der nur ~245 px breiten Textspalte kappt line-clamp den Anriss schon nach zwei, drei Zeilen. Die Metazeile bricht mit hängendem „·“ am Zeilenende um. Der aktive Chip trägt „+“ und Kategoriesymbol zugleich.",
+    "uebernehmen_aus_anderer": "Aus B: voller Anrisstext. Dafür den Anriss mobil unter Zeichnung und Kopfzeile in voller Breite setzen, statt ihn in der schmalen Spalte zu kürzen. Metazeile sauber zweizeilig wie in B, ohne Trennpunkt am Zeilenende (Trenner per CSS statt als Textzeichen). Lupe im Suchfeld. Beim aktiven Chip nur ein Zeichen.",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Unser 8-Punkte-Qualitätsversprechen für Ihr Fliesenprojekt (#qualitaet)",
+    "ansicht": "d1440",
+    "wahl": "beide",
+    "begruendung": "B: echtes Feldraster 4 × 2 an 1-px-Fugen, H2 in der Stufe fs-6 wie im Vorbild. Hinter der Zeilenliste der Übersicht (Grundgerüst A) ist das der verlangte Wechsel von Struktur und Dichte (K-006). Allerdings wiederholt B „Garantierter Standard“ achtmal und setzt den Abschluss als Kasten. A: „Garantierter Standard“ nur einmal in der Dachzeile, Nummern „01…08“ als Mono-Spalte wie die Zeilen in V2, Abschluss als Zeile mit Linie (Fuge statt Kasten). Die versetzten Spalten von A wirken aber zufällig, und die H2 ist eine Stufe zu klein.",
+    "uebernehmen_aus_anderer": "Feldraster 4 × 2 und H2-Größe aus B. Aus A: Dachzeile mit „Garantierter Standard“ (einmal), Mono-Nummern, Abschlusszeile mit Linie oben, linksbündig. Die 8 Fußzeilen „Garantierter Standard“ entfallen.",
+    "wahl_fassung": "beide"
+   },
+   {
+    "name": "Unser 8-Punkte-Qualitätsversprechen für Ihr Fliesenprojekt (#qualitaet)",
+    "ansicht": "m390",
+    "wahl": "Y",
+    "begruendung": "A ist knapper (2054 statt 2758 px): Zeilen an der Fuge mit Mono-Nummer links, wie die Garantien im Vorbild mobil (V2). Keine achtfache Wiederholung, Abschluss linksbündig. B stapelt 8 Kästen mit je eigener Fußzeile und zentriert den Abschluss im Kasten, gegen K-006 („nie zentriert“).",
+    "uebernehmen_aus_anderer": "Aus B: H2 mobil in fs-6 (in A kleiner). Die Dachzeile von A bricht mit frei hängendem „+“ um. Das „+“ an die erste Zeile binden oder die Dachzeile kürzen.",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Fuß (Seitenrahmen)",
+    "ansicht": "d1440",
+    "wahl": "gleich",
+    "begruendung": "Gehört zum Seitenrahmen und ist inhaltlich gleich. Nur die Reihenfolge der Rechtslinks in der letzten Zeile unterscheidet sich, und die wird nicht in dieser Einheit entschieden.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Fuß (Seitenrahmen)",
+    "ansicht": "m390",
+    "wahl": "gleich",
+    "begruendung": "Sichtbar gleich (alle drei Streifen verglichen).",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Zustand: Kategorie „Bad & Dusche“ gewählt (3 Treffer)",
+    "ansicht": "d1440",
+    "wahl": "Y",
+    "begruendung": "Drei Zeilen lesen sich als vollständige, ruhige Liste. Im zweispaltigen Raster von B bleibt neben der dritten Karte ein leeres Feld, die Komposition wirkt löchrig. Der aktive Zustand ist in A als dunkle Zeile mit Pfeil eindeutig. Keine Fassung zeigt eine Ergebniszahl.",
+    "uebernehmen_aus_anderer": "Aus B: Telefon in Mono und „Kontakt aufnehmen“ als Nebenknopf. Neu für beide: eine Ergebniszahl in Mono (etwa „3 Artikel“), die in der Live-Region angesagt wird.",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Zustand: Kategorie „Bad & Dusche“ gewählt (3 Treffer)",
+    "ansicht": "m390",
+    "wahl": "Y",
+    "begruendung": "Alle drei Treffer fast in einem Bildschirm (1234 px statt 1982 px). Rückmeldung und Ergebnis stehen zusammen.",
+    "uebernehmen_aus_anderer": "Voller Anrisstext (B). Am aktiven Chip nicht „+“ und Symbol zugleich.",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Zustand: Suche mit Treffer („Schimmel“, 1 Treffer)",
+    "ansicht": "d1440",
+    "wahl": "Y",
+    "begruendung": "Ein einzelner Treffer steht als saubere Zeile da. In B steht die Karte in einer halben Rasterzelle, und die obere Fuge läuft nach rechts ins Leere.",
+    "uebernehmen_aus_anderer": "Aus B: sichtbares Label „Artikel suchen“ über dem Feld und Lupe im Feld.",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Zustand: Suche mit Treffer („Schimmel“, 1 Treffer)",
+    "ansicht": "m390",
+    "wahl": "beide",
+    "begruendung": "A ist knapper und gezeichnet, kürzt den Anriss aber auf „Wi…“. B zeigt den vollen Text und die Lupe, das Foto beansprucht aber die halbe Höhe.",
+    "uebernehmen_aus_anderer": "Zeilenform und Zeichnung aus A. Aus B: voller Anriss und Lupe.",
+    "wahl_fassung": "beide"
+   },
+   {
+    "name": "Zustand: Suche ohne Treffer („Xylophon“, Leerzustand mit „Filter zurücksetzen“)",
+    "ansicht": "d1440",
+    "wahl": "beide",
+    "begruendung": "A macht „Filter zurücksetzen“ zum Hauptknopf. Das ist richtig, denn es ist der einzige Weg weiter (K-009: Hauptknopf Tinte). Gleichzeitig stehen in A aber drei dunkle Blöcke im Bildschirm (Knopf, aktive Kategorie, „Kontakt aufnehmen“). B rahmt den Kasten mit Strich (deutlicher) und hat die Meldung in einer role=status-Hülle; der Knopf ist dort nur Nebenknopf.",
+    "uebernehmen_aus_anderer": "Hauptknopf aus A. Aus B: role=status-Hülle, Strich-Rahmen und „Kontakt aufnehmen“ als Nebenknopf. So bleibt „Filter zurücksetzen“ die einzige Tinte-Aktion neben der aktiven Kategorie.",
+    "wahl_fassung": "beide"
+   },
+   {
+    "name": "Zustand: Suche ohne Treffer („Xylophon“, Leerzustand mit „Filter zurücksetzen“)",
+    "ansicht": "m390",
+    "wahl": "Y",
+    "begruendung": "Klarer Ausweg als Hauptknopf, Kasten ruhig und knapp. B zeigt den Knopf nur als Nebenknopf.",
+    "uebernehmen_aus_anderer": "Aus B: role=status und Lupe im Suchfeld.",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Zustand: Tastaturfokus auf der Leitfaden-Karte („Handwerkerbonus …“)",
+    "ansicht": "d1440",
+    "wahl": "beide",
+    "begruendung": "Sichtbar ist A besser: Der Ring liegt um die ganze Karte und zeigt eindeutig, was aktiviert wird. In B läuft ein gestufter Ring um drei Überschriftzeilen. Technisch ist B besser: Der Link ist die Überschrift (kurzer Name, per ::after gestreckt). In A ist die ganze Karte ein <a> mit 340 Zeichen Namen.",
+    "uebernehmen_aus_anderer": "Technik aus B (H2-Link, gestreckt), Optik aus A: den Fokusring auf die gestreckte Fläche legen (a:focus-visible::after mit outline 2px Tinte, Abstand 2px), am Text selbst keinen Ring.",
+    "wahl_fassung": "beide"
+   },
+   {
+    "name": "Zustand: Tastaturfokus auf der Leitfaden-Karte („Handwerkerbonus …“)",
+    "ansicht": "m390",
+    "wahl": "Y",
+    "begruendung": "Die Karte in A passt samt Ring in einen Bildschirm. In B ist die Karte mit 743 px höher als der Bildschirm, der Ring sitzt nur an der Überschrift, darüber ein großes Foto.",
+    "uebernehmen_aus_anderer": "Kurzer Linkname (B) wie bei d1440 beschrieben.",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Zustand: Tastaturfokus auf der ersten Standardkarte („Undichte Dusche? …“)",
+    "ansicht": "d1440",
+    "wahl": "Y",
+    "begruendung": "Ring um die Überschrift, dazu hebt focus-within die ganze Zeile hervor (Fliese-Grund und dunkle Unterkante). Das orientiert gut und bleibt in der Farbsprache. Die Kategorienliste klebt am Rand und bleibt beim Durchgehen sichtbar, ohne den Fokus zu verdecken.",
+    "uebernehmen_aus_anderer": "Semantik <li><article> aus B.",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Zustand: Tastaturfokus auf der ersten Standardkarte („Undichte Dusche? …“)",
+    "ansicht": "m390",
+    "wahl": "gleich",
+    "begruendung": "In beiden ein klarer Tinte-Ring um die Überschrift, nicht verdeckt. A fügt eine dunklere Zeilen-Unterkante hinzu, B ist dafür von Foto umgeben. Kein erheblicher Unterschied.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Prüfbild: 320 × 640, Leerzustand",
+    "ansicht": "m390",
+    "wahl": "gleich",
+    "begruendung": "Beide ohne waagerechtes Scrollen, Meldung und Knopf lesbar. A zeigt den Hauptknopf. In der Faktentabelle hat A bei 320 px im Ruhezustand aber einen abgeschnittenen Anrisstext (line-clamp).",
+    "uebernehmen_aus_anderer": "Kein line-clamp (B), damit bei 320 px 0 Befunde bleiben.",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Prüfbild: ohne JavaScript, erster Bildschirm",
+    "ansicht": "d1440",
+    "wahl": "gleich",
+    "begruendung": "In beiden ohne JS alles sichtbar: 13 Karten, 8 Filterknöpfe, Suchfeld. Optisch entspricht es dem jeweiligen ersten Bildschirm.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   }
+  ],
+  "a11y_uebernehmen": [
+   {
+    "aus_fassung": "B",
+    "was": "Sichtbares <label> „Artikel suchen“ über dem Suchfeld bei d1440 (htmlFor/id mit useId), K-009. A hat dort nur aria-label."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "Suchbereich als role=search, je Ansicht. In der Fusion zusätzlich benennen (etwa aria-label „Ratgeber durchsuchen“), damit die Landmarke einen Namen hat."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "Kategorieknöpfe in role=group mit aria-labelledby auf das Etikett „Kategorien“ (d1440). In der Fusion auch mobil gruppieren und benennen; das fehlt in beiden Fassungen."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "Dauerhaft vorhandene Live-Region role=status, im Ruhezustand leer. Der Leerzustand („Keine Artikel zur Suchanfrage gefunden.“) wird damit angesagt; A hat auf der ganzen Seite keine Live-Region."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "Kein line-clamp, voller Anrisstext sichtbar: 0 abgeschnittene Texte bei 320 px, bei 200 % CSS-Zoom und bei erhöhtem Textabstand nach WCAG 1.4.12. In A 1 Befund bei 320 px, 9 bei Zoom, bis zu 13 bei 1.4.12."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "Leitfaden-Karte mit kurzem Linknamen: Die H2-Überschrift ist der Link, per ::after gestreckt, statt der ganzen Karte als <a> mit 340 Zeichen Namen (2.4.4, 2.5.3)."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "Karten als <li><article>, genau 1 Link je Karte, keine verschachtelten Bedienelemente, „Artikel lesen“ ist kein eigener Link."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "Touch-Ziele bei d1440 großzügig: Kategorieknöpfe 51 px, Kartenlinks auch ohne Streckung 62–121 px. In der Fusion bleiben die Kategoriezeilen mindestens 44 px hoch, die Überschriftlinks gestreckt."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "Tab-Reihenfolge bei d1440 mit den Filtern vor den Ergebnissen (Suchfeld, 8 Kategorien, Kontakt, Telefon, dann Karten), wie mobil. Wer filtert, muss nicht erst durch 13 Karten tabben, und die Liste folgt in der Reihenfolge auf das Bedienelement, das sie steuert. A führt die Karten zuerst."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "Lupe im Suchfeld als Schmuck (aria-hidden) gibt einen sichtbaren Hinweis auf die Funktion."
+   },
+   {
+    "aus_fassung": "A",
+    "was": "Bildwelt aus Inline-SVG, alle Zeichnungen aria-hidden=\"true\", ohne role=img, mit eindeutigen Musterkennungen je Instanz (K-008). Keine doppelte Ansage wie in B, wo alt gleich der Überschrift ist."
+   },
+   {
+    "aus_fassung": "A",
+    "was": "Leitfaden-Karte mit Fokusring um die ganze Karte. In der Fusion wird er über den gestreckten Link erzeugt (outline am ::after), nicht durch ein Karten-<a>."
+   },
+   {
+    "aus_fassung": "A",
+    "was": "Standardkarten mit focus-within: Zeilenhintergrund Fliese und dunkle Unterkante zusätzlich zum Ring an der Überschrift."
+   },
+   {
+    "aus_fassung": "A",
+    "was": "Klebende Kategorienliste bei d1440: Der Filter bleibt beim Lesen erreichbar und sichtbar, ohne Fokus zu verdecken. top = Kopfhöhe + 16 px, keine eigene z-Ebene außerhalb von K-005."
+   },
+   {
+    "aus_fassung": "A",
+    "was": "Mobile Chipleiste mit scroll-snap x und Kategoriesymbolen (aria-hidden, Namen der Knöpfe bleiben exakt)."
+   },
+   {
+    "aus_fassung": "A",
+    "was": "Mobil kompakter Kopf (539 px): Suchfeld und Filter-Chips stehen im ersten Bildschirm, wie es K-009 für Arbeitsansichten verlangt."
+   },
+   {
+    "aus_fassung": "A",
+    "was": "Im Leerzustand ist „Filter zurücksetzen“ der Hauptknopf (Tinte-Fläche), der einzige Weg weiter ist eindeutig."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "In beiden gleich, zu erhalten: aria-pressed an allen 8 Knöpfen je Ansicht, :focus-visible mit 2px Tinte und 2px Abstand (16,96:1 bzw. 18,66:1), nicht verdeckt. 0 axe-Verstöße in 8 Läufen, ohne JS alles sichtbar, Überschriftenfolge H1 → H2 Leitfaden → 12 × H3 → H2 Qualität, mobil alle Ziele ≥ 44 px."
+   },
+   {
+    "aus_fassung": "A",
+    "was": "Lücken beider Fassungen, die die Fusion schließen soll: Fokus nach „Filter zurücksetzen“ ins Suchfeld setzen statt auf <body>. Fokussierten Chip mobil ganz ins Bild scrollen (scrollIntoView mit inline nearest bzw. scroll-padding-inline; bisher ragen 3 von 8 heraus). Ergebniszahl in der role=status-Region ansagen. Datum als <time datetime>. Suchbegriff trimmen. enterkeyhint=\"search\" und autocomplete=\"off\" setzen."
+   }
+  ],
+  "gesamt": {
+   "B_desktop": 6,
+   "B_handy": 5,
+   "A_desktop": 7,
+   "A_handy": 7
+  },
+  "rezept": "GRUNDGERÜST: A. A bleibt im Formsystem der Startseite: Verlegeplan-Zeichnungen statt doppelter Fotos mit Wasserzeichen, Zeilenliste an Fugen, klebende Kategorienliste, knapper mobiler Kopf, 4349 statt 7743 px mobil. Die Semantik- und Robustheitsteile kommen aus B.\n\nREIHENFOLGE DER ARBEIT\n1. Seitenkopf: Markup und knappe Abstände von A. Aus B kommt „DIN 18534“ als Mono-Spanne (Wortlaut unverändert). Vorspann mobil in text-fs-4 wie B; die Höhe über den oberen Abstand nahe 540 px halten.\n2. Such- und Filterbereich, beide Ansichten: in role=search mit Namen. d1440: sichtbares <label> „Artikel suchen“ (B) über dem Feld, Lupe aria-hidden im Feld (B). Darunter die senkrechte, klebende Kategorienliste aus A, aber als role=group mit aria-labelledby auf das Etikett „Kategorien“ (B). Die leere Lücke unter der klebenden Liste in A beseitigen. m390: Label „Ratgeber durchsuchen“ und Chips mit Symbol und scroll-snap aus A, dazu role=group mit Namen. Fokussierten Chip ganz ins Bild scrollen. Am aktiven Chip nur ein Zeichen, nicht „+“ und Symbol zugleich.\n3. Seitenleiste „Beratung gewünscht?“: Text gleich. „Kontakt aufnehmen“ als Nebenknopf (B), Telefon in Mono im Format aus COMPANY_DATA (B). Damit bleibt je Bildschirm höchstens eine Tinte-Aktion neben der aktiven Kategorie.\n4. Leitfaden-Karte: Kasten und Zeichnung aus A, H2 in der größeren Stufe aus B (fs-5), voller Anriss ohne Kürzung. Technik aus B: Die H2 enthält den einzigen Link, per ::after über die Karte gestreckt. Der Fokusring aus A entsteht über a:focus-visible::after (outline 2px Tinte, Abstand 2px), nicht über ein Karten-<a>.\n5. Standardkarten: Zeilenliste aus A, eingebettet in <ul><li><article> aus B. h3 > a[href^=\"/blog/\"] gestreckt, focus-within-Hervorhebung aus A. line-clamp komplett entfernen. d1440: Text neben der 128-px-Zeichnung. m390: Zeichnung (96 px) und Metazeile oben nebeneinander, Überschrift und Anriss darunter in voller Breite. Metazeile ohne Trennpunkt am Zeilenende (Trenner per CSS oder zweizeilig wie B). Datum als <time datetime>.\n6. Zustände: Eine dauerhaft vorhandene role=status-Hülle (B), im Ruhezustand leer. Sie trägt die Ergebniszahl (neu, in Mono, etwa „3 Artikel“) und im Leerzustand die Meldung samt „Filter zurücksetzen“. Der Knopf ist ein Hauptknopf (A), der Kasten hat einen Strich-Rahmen (B). Nach dem Zurücksetzen den Fokus ins Suchfeld setzen. Die Leitfaden-Karte verschwindet weiter bei aktivem Filter oder aktiver Suche. Suchbegriff trimmen.\n7. Qualitätsabschnitt #qualitaet: bei lg das Feldraster 4 × 2 aus B und H2 in fs-6 (B). Das sorgt für den Strukturwechsel nach der Zeilenliste (K-006). Dachzeile mit „Garantierter Standard“ einmal (A), keine 8 Fußzeilen. Abschluss als linksbündige Zeile mit Linie oben (A). Mobil Zeilen an der Fuge mit Mono-Nummer links (A), H2 in fs-6, das „+“ der Dachzeile nicht frei hängen lassen.\n8. Danach prüfen: funktion-navigation (Blog-Block), axe in allen 8 Läufen, 320 px, 200 % Zoom auf beide Arten, WCAG 1.4.12, Fokus-Durchlauf 24 bzw. 26 Ziele, ohne JS.\n\nSTOLPERSTEINE\n- Getestete Selektoren und Namen (funktion-navigation.spec.mjs, E0-KUN-05 Abschnitt 2) müssen exakt bleiben. Die Standardkarten bleiben `h3 a[href^=\"/blog/\"]`. Die Leitfaden-Karte muss H2 bleiben, sonst ändert sich die Kartenzahl im Test. Textbox-Name /Ratgeber durchsuchen|Artikel suchen/. Das Feld bleibt type=text: type=search hätte die Rolle searchbox, und getByRole('textbox') fände das Feld nicht mehr. Knöpfe exakt „Filter zurücksetzen“, „Pflege & Werterhalt“ usw. und /^Alle (Themen|Artikel)$/. Die Ergebniszahl deshalb nie in den Knopfnamen schreiben, und die Symbole bleiben aria-hidden. aria-pressed bleibt. Leermeldung wörtlich „Keine Artikel zur Suchanfrage gefunden.“, auch wenn die Kategorie die Ursache ist.\n- Wortlaut gleich halten: „Alle Artikel“ (d1440) und „Alle Themen“ (m390), Platzhalter „Artikel suchen...“ und „Ratgeber durchsuchen...“, „Empfohlener Leitfaden“, „Vollständigen Leitfaden lesen“, „Artikel lesen“, Text von „Beratung gewünscht?“, „Kontakt aufnehmen“, „06441 / 44 83 567“. „Beratung gewünscht?“ bleibt ein <p> (Überschriftenfolge).\n- Anker und IDs: qualitaet und quality-promise-heading bleiben. Die SVG-Muster-IDs bleiben je Instanz eindeutig (useId), auch wenn Desktop- und Mobil-Markup nebeneinander gerendert werden. Zwei Bediensätze (Desktop und Mobil) teilen einen Zustand; der ausgeblendete Satz liegt per display:none ohne Tab-Stopps.\n- Der Qualitätsabschnitt ist ein geteilter Baustein (QualityPromise bzw. Qualitaetsversprechen, auf über 18 Seiten eingebunden), und im Repo liegen dafür zwei Varianten. Die hier empfohlene Mischung muss mit den Urteilen der anderen Einheiten abgestimmt werden, damit die Seiten nicht auseinanderlaufen. Den Wortlaut der Etiketten („Punkt 01“ oder „01“, „Garantierter Standard“) gegen den Bestand prüfen.\n- Rot: höchstens ein rotes Element je Bildschirm. Die Zeichnung zu „Undichte Dusche?“ trägt eine rote Fliese. Deshalb das „+“ bei „Empfohlener Leitfaden“ grau lassen wie in A, nicht rot wie in B.\n- Klebende Liste: top = Kopfhöhe + 16 px, keine z-Ebene außerhalb von K-005. Fokus und Ring dürfen nicht unter den festen Kopf geraten (scroll-padding-top prüfen).\n- Ohne line-clamp wird die Übersicht bei d1440 etwas höher als 3938 px. Das ist hinzunehmen; die Kürzung darf nicht über ein festes max-height zurückkehren.\n- Tab-Reihenfolge Filter vor Karten (B) per DOM-Reihenfolge herstellen, die Seitenleiste per CSS-Raster rechts platzieren, kein tabindex."
+ },
+ "a11y_fakten": [
+  {
+   "merkmal": "axe (wcag2a/2aa/21a/21aa/22aa), Ruhezustand, Filter, Suche mit Treffer, Leerzustand; je m390 und d1440",
+   "B": "0 Verstöße in allen 8 Läufen (auch keine geringen oder mittleren)",
+   "A": "0 Verstöße in allen 8 Läufen (auch keine geringen oder mittleren)"
+  },
+  {
+   "merkmal": "Fokusring der Bedienelemente der Einheit (Tab-Durchlauf: 24 Ziele bei m390, 26 bei d1440)",
+   "B": "Alle :focus-visible; outline 2px solid rgb(10,17,41), Abstand 2px; Kontrast zum Hintergrund 16,96:1 bzw. 18,66:1; von keiner festen oder klebenden Ebene verdeckt",
+   "A": "Alle :focus-visible; outline 2px solid rgb(10,17,41), Abstand 2px; Kontrast 16,96:1 bzw. 18,66:1; nicht verdeckt"
+  },
+  {
+   "merkmal": "Fokusring an Karten",
+   "B": "Ring nur um die Überschrift (Link per ::after über die ganze Karte gestreckt), auch bei der Leitfaden-Karte",
+   "A": "Leitfaden-Karte: Ring um die ganze Karte (die Karte ist ein <a>). Standardkarten: Ring um die Überschrift, dazu weißer Zeilenhintergrund per focus-within"
+  },
+  {
+   "merkmal": "Tab-Reihenfolge bei d1440 (sichtbar: Karten links, Seitenleiste rechts)",
+   "B": "Seitenleiste zuerst (Suchfeld, 8 Kategorien, „Kontakt aufnehmen“, Telefon), danach die 13 Karten",
+   "A": "Die 13 Karten zuerst, danach die Seitenleiste (Suchfeld, 8 Kategorien, „Kontakt aufnehmen“, Telefon)"
+  },
+  {
+   "merkmal": "Fokus in der mobilen Chipleiste (Tab durch 8 Chips, 500 ms Wartezeit)",
+   "B": "3 von 8 fokussierten Chips ragen teilweise aus dem Bildschirm (z. B. „Fliesen & Material“ x 299–452 bei 390 px Breite)",
+   "A": "3 von 8 fokussierten Chips ragen teilweise aus dem Bildschirm (z. B. „Fliesen & Material“ x 323–500)"
+  },
+  {
+   "merkmal": "Fokus nach „Filter zurücksetzen“ (Enter)",
+   "B": "Fokus fällt auf <body> zurück",
+   "A": "Fokus fällt auf <body> zurück"
+  },
+  {
+   "merkmal": "Fokus nach Filterknopf (Enter)",
+   "B": "Bleibt auf dem Knopf; die Seite scrollt zum Listenanfang",
+   "A": "Bleibt auf dem Knopf; die Seite scrollt zum Listenanfang"
+  },
+  {
+   "merkmal": "Sichtbares Label Suchfeld d1440",
+   "B": "Ja: <label> „Artikel suchen“ sichtbar über dem Feld, dazu Dachzeile „Suche“",
+   "A": "Nein: kein <label>, nur aria-label=\"Artikel suchen\"; die Dachzeile „Suche“ ist nicht mit dem Feld verknüpft"
+  },
+  {
+   "merkmal": "Sichtbares Label Suchfeld m390",
+   "B": "Ja: <label> „Ratgeber durchsuchen“ (useId-Kennung)",
+   "A": "Ja: <label> „Ratgeber durchsuchen“ (id=blog-suche-mobil)"
+  },
+  {
+   "merkmal": "Suchfeld: type, autocomplete, enterkeyhint, aria-controls",
+   "B": "type=text; autocomplete fehlt; enterkeyhint fehlt; kein aria-controls/aria-describedby; Lupe als Schmuck im Feld",
+   "A": "type=text; autocomplete fehlt; enterkeyhint fehlt; kein aria-controls/aria-describedby; keine Lupe"
+  },
+  {
+   "merkmal": "Suchbereich-Landmarke",
+   "B": "div[role=search] je Ansicht, ohne Namen",
+   "A": "Keine role=search; die Liste steht in einer <section> ohne Namen"
+  },
+  {
+   "merkmal": "Filterknöpfe: Zustand",
+   "B": "<button aria-pressed=\"true|false\">, 8 je Ansicht; bei d1440 in div[role=group] mit aria-labelledby → „Kategorien“; bei m390 ohne Gruppe; Symbole aria-hidden",
+   "A": "<button aria-pressed=\"true|false\">, 8 je Ansicht; keine Gruppe und kein Gruppenname (weder d1440 noch m390); Kategoriesymbole aria-hidden"
+  },
+  {
+   "merkmal": "aria-valuetext",
+   "B": "Nicht zutreffend (kein Regler in der Einheit)",
+   "A": "Nicht zutreffend (kein Regler in der Einheit)"
+  },
+  {
+   "merkmal": "Ergebniszahl als Live-Region",
+   "B": "Keine Ergebniszahl, weder sichtbar noch nur für Screenreader",
+   "A": "Keine Ergebniszahl, weder sichtbar noch nur für Screenreader"
+  },
+  {
+   "merkmal": "role=status/alert an Meldungen (Leerzustand)",
+   "B": "Leerzustand steht in einem dauerhaft vorhandenen div[role=status] (ohne Zusatz-ARIA). Es enthält Text und Knopf „Filter zurücksetzen“ und ist im Ruhezustand leer",
+   "A": "Keine role=status/alert/aria-live auf der ganzen Seite; der Leerzustand wird nicht angesagt"
+  },
+  {
+   "merkmal": "Karten als ein Link (nicht verschachtelt)",
+   "B": "Je Karte genau 1 Link (Überschrift, per ::after über die Karte gestreckt), 0 verschachtelte Bedienelemente; „Artikel lesen“ ist kein Link; Karten als <li><article>",
+   "A": "Je Karte genau 1 Link, 0 verschachtelt. Leitfaden-Karte: ganzes <a> mit 340 Zeichen Namen („Empfohlener Leitfaden24. September 20265 Min. LesezeitHandwerkerbonus…“). Standardkarten: Überschriftlink per ::after gestreckt. Kein <article>"
+  },
+  {
+   "merkmal": "Datum maschinenlesbar",
+   "B": "Kein <time>",
+   "A": "Kein <time>"
+  },
+  {
+   "merkmal": "Bilder alt/sizes",
+   "B": "13 <img> (next/image). alt = Artikeltitel, gleicher Text wie die Überschrift. sizes=\"(min-width: 1312px) 400px, (min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw\" für alle Bilder, auch die Leitfaden-Karte. Erstes Bild ohne loading und ohne fetchpriority, übrige loading=lazy. 9 verschiedene Fotos für 13 Karten, mehrere doppelt",
+   "A": "Keine <img>. Inline-SVG-Zeichnungen, alle 4 SVGs je Karte aria-hidden=\"true\"; keine role=img; 26 SVG-Musterkennungen (schraffur-*/raum-*), eindeutig je Karte"
+  },
+  {
+   "merkmal": "Touch-Ziele ≥ 44 px (m390)",
+   "B": "Alle 24 Ziele ≥ 44 px (Chips 49 px hoch, Suchfeld 53, Knöpfe im Seitenkopf 49, „Filter zurücksetzen“ 180×49; Kartenlinks gestreckt über die Karte)",
+   "A": "Alle 24 Ziele ≥ 44 px (Chips 49 px hoch, Suchfeld 53, „Filter zurücksetzen“ 180×49; Kartenlinks gestreckt)"
+  },
+  {
+   "merkmal": "Touch-Ziele ≥ 44 px (d1440)",
+   "B": "Alle 26 ≥ 44 px (Kategorie-Chips 51 px hoch, Kartenlinks 62–121 px und gestreckt)",
+   "A": "Kategoriezeilen genau 44 px hoch (371 breit). 8 Kartenüberschriften sind als Link nur 26 px hoch, die gestreckte Fläche misst aber 795×270"
+  },
+  {
+   "merkmal": "Überlauf bei 320 px (Ruhezustand und Leerzustand)",
+   "B": "Kein waagerechtes Scrollen (scrollWidth 320); 0 Befunde",
+   "A": "Kein waagerechtes Scrollen (scrollWidth 320); 1 Befund „Text abgeschnitten“: Anrisstext „R9 bis R13, A bis C …“ (scrollWidth 197 > 176 bei overflow hidden durch line-clamp)"
+  },
+  {
+   "merkmal": "200 % Zoom (1280 × 800, CSS-Zoom 2)",
+   "B": "Kein waagerechtes Scrollen; nur der Seitenrahmen-Kopf ragt heraus (Navigation, Telefon, Knopf); in der Einheit 0 Befunde",
+   "A": "Kein waagerechtes Scrollen; der Seitenrahmen-Kopf ragt heraus (wie X, dazu der WhatsApp-Knopf). Zusätzlich 9 Anrisstexte der Karten waagerecht abgeschnitten (Textspalte 108–123 px)"
+  },
+  {
+   "merkmal": "200 % Zoom gleichwertig (640 × 400, DPR 2)",
+   "B": "0 Befunde, 8 Filterknöpfe sichtbar",
+   "A": "0 Befunde, 8 Filterknöpfe sichtbar"
+  },
+  {
+   "merkmal": "Erhöhter Textabstand (WCAG 1.4.12)",
+   "B": "0 abgeschnittene Texte vorher und nachher (m390, d1440); kein waagerechtes Scrollen",
+   "A": "Anrisstexte per line-clamp: 3 gekürzt. d1440: 4 abgeschnitten vorher, 13 nachher (9 neu); m390: 13 vorher und nachher; kein waagerechtes Scrollen"
+  },
+  {
+   "merkmal": "Anrisstexte gekürzt",
+   "B": "Nein, voller Text sichtbar",
+   "A": "Ja, CSS line-clamp: 3 mit Auslassungspunkten (z. B. sichtbar „Arbeitskosten....“); der volle Text bleibt im DOM"
+  },
+  {
+   "merkmal": "Kontrast",
+   "B": "axe color-contrast ohne Befund",
+   "A": "axe color-contrast ohne Befund"
+  },
+  {
+   "merkmal": "Ohne JavaScript",
+   "B": "13 Karten, 8 Filterknöpfe, 1 Suchfeld sichtbar",
+   "A": "13 Karten, 8 Filterknöpfe, 1 Suchfeld sichtbar"
+  },
+  {
+   "merkmal": "Überschriftenfolge in main",
+   "B": "H1 → H2 Leitfaden → 12 × H3 Karten → H2 Qualität; „Beratung gewünscht?“ ist ein <p>",
+   "A": "Gleich: H1 → H2 Leitfaden → 12 × H3 → H2 Qualität; „Beratung gewünscht?“ ist ein <p>"
+  },
+  {
+   "merkmal": "Klebende Elemente in der Einheit",
+   "B": "Keine (die Seitenleiste scrollt mit)",
+   "A": "Die Kategorienliste der Seitenleiste ist bei d1440 position: sticky"
+  }
+ ],
+ "funktion": [
+  "Erreichbare Zustände in beiden gleich: Ruhezustand (13 Artikel inkl. Leitfaden-Karte), Kategorie gewählt, Suche mit Treffern, Suche ohne Treffer mit „Filter zurücksetzen“, Kombination aus Kategorie und Suche. Die Leitfaden-Karte verschwindet in beiden, sobald ein Filter oder eine Suche aktiv ist.",
+  "Trefferzahlen sind in beiden gleich. Kategorien: Alle 13, Bad & Dusche 3, Fliesen & Material 3, Untergrund & Abdichtung 1, Balkon & Terrasse 1, Pflege & Werterhalt 2, Ratgeber & Kosten 2, Neuigkeiten 1. Suchwörter: „Dusche“ 3, „abdichtung“ 3, „DIN“ 1, „Kosten“ 1, „Steuer“ 1, „neuigkeiten“ 0, „fliesen“ 10, „R11“ 0, „  schimmel  “ (mit Leerzeichen) 0, „Fliesenpflege“ 1. Die Suche beachtet keine Groß-/Kleinschreibung, schneidet Leerzeichen nicht ab und durchsucht nicht den Kategorienamen.",
+  "Die Suche filtert in beiden während der Eingabe. Enter ändert nichts (URL bleibt /blog), Escape leert das Feld nicht. Der Zustand steht in keiner Fassung in der URL (kein Query-Parameter, kein Anker).",
+  "Kategorie und Suche wirken in beiden zusammen; die gewählte Kategorie bleibt beim Tippen gewählt. Auch wenn die Kategorie die Ursache ist, lautet die Leermeldung in beiden wörtlich „Keine Artikel zur Suchanfrage gefunden.“",
+  "„Filter zurücksetzen“ leert in beiden das Suchfeld, setzt „Alle Artikel“ bzw. „Alle Themen“ und zeigt wieder die 13 Artikel mit Leitfaden-Karte. Der Fokus geht dabei in beiden verloren (auf body).",
+  "Ein Filterklick aus der Mitte der Seite (scrollY 1500) scrollt in beiden zum Listenanfang: B auf 414 (m390) bzw. 642 (d1440), A auf 310 bzw. 535.",
+  "Wortlaut des Alle-Knopfs in beiden gleich: d1440 „Alle Artikel“, m390 „Alle Themen“. Weitere gleiche Texte: Mobil-Label „Ratgeber durchsuchen“, Platzhalter „Ratgeber durchsuchen...“ bzw. „Artikel suchen...“, „Empfohlener Leitfaden“, „Vollständigen Leitfaden lesen“, „Artikel lesen“, „Beratung gewünscht?“, „Fragen zu Badsanierung, Fliesen oder Abdichtung? Deniz Tezgel berät Sie persönlich – inklusive kostenfreiem Vor-Ort-Aufmaß.“, „Kontakt aufnehmen“, „06441 / 44 83 567“.",
+  "Wortlaut nur in B: sichtbares Label „Artikel suchen“ über dem Suchfeld (d1440). In A gibt es diesen Text nur als aria-label.",
+  "Metazeile der Karten: B zweizeilig mit Symbolen („+ Untergrund & Abdichtung  ◷ 4 Min.“ / „▦ 24. September 2026“). A einzeilig mit Trennpunkten („Untergrund & Abdichtung · 4 Min. · 24. September 2026“) und eigenem Symbol je Kategorie.",
+  "Darstellung der Karten: B mit Fotos (Rasterbilder, Leitfaden-Karte mit großem Foto links), bei d1440 zweispaltiges Raster, voller Anrisstext. A mit Strichzeichnungen (Inline-SVG, Stil wie die Startseite), bei d1440 einspaltige Zeilenliste mit 128-px-Vorschau, Anrisstext auf 3 Zeilen gekürzt.",
+  "Seitenleiste bei d1440: B mit Kategorien als umbrechende Chips (+ vor dem aktiven) und Suchfeld mit Lupe; „Kontakt aufnehmen“ umrandet, Telefon in Festbreitenschrift „06441 / 44 83 567“. A mit Kategorien als senkrechte Liste mit Symbolen und Pfeil am aktiven Eintrag (sticky), Suchfeld ohne Lupe; „Kontakt aufnehmen“ dunkel gefüllt, Telefon in Fließtextschrift „06441 / 44 83 567“.",
+  "Mobile Chipleiste: In beiden waagerecht scrollbar. B ohne Kategoriesymbole, Scrollleiste ausgeblendet (Klasse ohne-scrollleiste). A mit Kategoriesymbolen, scroll-snap x, Scrollleiste nicht ausgeblendet.",
+  "Leerzustand: Gleicher Text „Keine Artikel zur Suchanfrage gefunden.“ mit Lupe und Knopf „Filter zurücksetzen“. B: Knopf umrandet, Text als <span> in <p>, Hülle mit role=status. A: Knopf dunkel gefüllt, Text als <p>, keine Live-Region.",
+  "Qualitätsabschnitt (#qualitaet, H2 #quality-promise-heading in beiden). Dachzeile in B „HWK Fachbetrieb · HWK Wiesbaden“, in A „HWK Fachbetrieb · HWK Wiesbaden · Garantierter Standard“. Nummern in B „Punkt 01“ … „Punkt 08“, in A „01“ … „08“. In B steht unter jedem der 8 Punkte „Garantierter Standard“, in A nicht. Übrige Texte gleich (Abschluss „Überzeugen Sie sich selbst von unserer Fachqualität“, „Kostenfreies Vor-Ort-Aufmaß durch Deniz Tezgel – in Aßlar, Wetzlar, Gießen und Umgebung.“, „06441 / 44 83 567“, „Aufmaß anfragen“).",
+  "Anker/IDs in main: B: qualitaet, quality-promise-heading, sonst nur React-useId-Kennungen (_R_…) für Label und Gruppenname. A: qualitaet, quality-promise-heading, blog-suche-mobil, dazu 26 SVG-Musterkennungen (schraffur-R…, raum-R…).",
+  "Linkziele gleich: Seitenkopf „Projekt unverbindlich anfragen“ → /kontakt, „Häufige Fragen“ → /faq; Seitenleiste „Kontakt aufnehmen“ → /kontakt, Telefon → tel:+4964414483567; Karten → /blog/<slug> (gleiche 13 Slugs, gleiche Reihenfolge).",
+  "Titel und Meta gleich: <title> „Fliesen-Ratgeber & Badsanierung Tipps | Tezgel“, canonical /blog, gleiche Beschreibung, JSON-LD WebPage/BreadcrumbList/Blog in beiden.",
+  "Seitenhöhe des Übersichtsbereichs: B 4506 px (d1440) / 7743 px (m390), A 3938 px / 4349 px. Seitenkopf mobil: B 651 px, A 539 px."
+ ],
+ "probleme": [
+  "Das Abschnittswerkzeug (abschnitte.mjs) erfasst nur äußere <section>/<header> in main. In X steht die Artikelübersicht in einem <div> und fehlte deshalb ganz. In Y fehlte im Streifen bei d1440 die klebende Kategorienliste, weil das Werkzeug sticky-Elemente ausblendet. Lösung: Die Übersicht wurde für X und Y mit einem eigenen Skript nach demselben Protokoll aufgenommen (U-uebersicht-*): Einwilligung abgelehnt, reducedMotion reduce, DPR 1, Sperre, durchgescrollt, Streifen zu 2 × Bildschirmhöhe; feste Ebenen ausgeblendet, sticky in main an den Ruheplatz gesetzt. Die Streifen des Werkzeugs für Y wurden entfernt (bei m390 bytegleich zu U-uebersicht, bei d1440 unvollständig).",
+  "a11y-zusatz.mjs und axe.mjs schreiben nach belege/ bzw. cache/ im Repo und wurden deshalb nicht ausgeführt. axe (@axe-core/playwright, gleiche Tags), Fokus-Durchlauf, Reflow 320, Zoom 200 % (CSS-Zoom und 640/DPR2), Textabstand und ueberlauf() aus lib.mjs liefen in eigenen Skripten unter /tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/skripte; die Rohdaten liegen in X/a11y.json, Y/a11y.json, X|Y/aufnahme.json und X|Y/nachpruefung.json.",
+  "Fokusringe wurden über berechnete Stile (outline, Kontrast zum Hintergrund) und Überlappung mit festen/klebenden Ebenen geprüft, nicht per Pixelvergleich wie in a11y-zusatz.",
+  "Bei m390 ist die Leitfaden-Karte in X (743 px) höher als der Bildschirm. Ihr Fokusausschnitt ist auf den Bildschirm begrenzt und zeigt den festen Kopf und die Aktionsleiste mit.",
+  "Das erste Bild ohne JavaScript zeigte in X die Leitfaden-Fotofläche leer, weil das Bild beim load-Ereignis noch nicht dekodiert war. Es wurde neu aufgenommen, nachdem alle Bilder im ersten Bildschirm fertig geladen waren (für X und Y gleich).",
+  "Ein Leerzustand nur durch die Kategorie ist nicht erreichbar, denn jede Kategorie hat mindestens 1 Artikel. Der Leerzustand wurde per Suche bzw. Kategorie + Suche hergestellt.",
+  "Nicht geprüft: forced-colors und die Zustände mit offenem Einwilligungsbanner, weil der Auftrag sie nicht verlangt. Es gab keinen POST: Die Einheit hat kein Formular, und die Sperre war in jedem Lauf aktiv."
+ ],
+ "abschnitte": [
+  {
+   "name": "Erster Bildschirm (Seitenrahmen-Kopf + Seitenkopf)",
+   "ansicht": "d1440",
+   "hinweis": "Mit festen Ebenen. Der Seitenrahmen-Kopf gehört nicht zur Einheit: In A steht dort zusätzlich ein WhatsApp-Symbolknopf, und der Knopf „Aufmaß anfragen“ reicht bis x≈1350 (in B bis 1328).",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/d1440/00-erster-bildschirm.jpg"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/d1440/00-erster-bildschirm.jpg"
+   ]
+  },
+  {
+   "name": "Erster Bildschirm (Seitenrahmen-Kopf + Seitenkopf)",
+   "ansicht": "m390",
+   "hinweis": "In A ist der Seitenkopf niedriger (539 px gegenüber 651 px), deshalb sind im ersten Bildschirm von A schon die Filter-Chips zu sehen, in B nur das Suchfeld.",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/m390/00-erster-bildschirm.jpg"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/m390/00-erster-bildschirm.jpg"
+   ]
+  },
+  {
+   "name": "Seitenkopf „Fliesen-Ratgeber & Badsanierung Tipps“ (H1, Einleitung, 2 Knöpfe)",
+   "ansicht": "d1440",
+   "hinweis": "Wortlaut gleich. B setzt „DIN 18534“ in Festbreitenschrift, A in der Fließtextschrift.",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/d1440/01-Fliesen-Ratgeber & Badsanierung Tipps.jpg"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/d1440/01-Fliesen-Ratgeber & Badsanierung Tipps.jpg"
+   ]
+  },
+  {
+   "name": "Seitenkopf „Fliesen-Ratgeber & Badsanierung Tipps“ (H1, Einleitung, 2 Knöpfe)",
+   "ansicht": "m390",
+   "hinweis": "Einleitung in B in größerer Schriftstufe und mit mehr Abstand oben (651 px gegenüber 539 px).",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/m390/01-Fliesen-Ratgeber & Badsanierung Tipps.jpg"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/m390/01-Fliesen-Ratgeber & Badsanierung Tipps.jpg"
+   ]
+  },
+  {
+   "name": "Artikelübersicht im Ruhezustand (Leitfaden-Karte, 12 Karten, Seitenleiste mit Suche, Kategorien und „Beratung gewünscht?“)",
+   "ansicht": "d1440",
+   "hinweis": "Bereich von der Unterkante des Seitenkopfs bis zur Oberkante von #qualitaet, nach demselben Protokoll in Streifen zu 2 × Bildschirmhöhe. B: 4506 px hoch, Kartenraster mit 2 Spalten, Foto über dem Text, voller Anrisstext. A: 3938 px hoch, Zeilenliste mit Strichzeichnung links, Anrisstext per line-clamp auf 3 Zeilen gekürzt. Klebende Elemente in main stehen für die Aufnahme an ihrem Ruheplatz (die Kategorienliste in A ist sticky).",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/d1440/U-uebersicht-1von3.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/d1440/U-uebersicht-2von3.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/d1440/U-uebersicht-3von3.jpg"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/d1440/U-uebersicht-1von3.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/d1440/U-uebersicht-2von3.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/d1440/U-uebersicht-3von3.jpg"
+   ]
+  },
+  {
+   "name": "Artikelübersicht im Ruhezustand (Such-/Filterleiste mobil, Leitfaden-Karte, 12 Karten)",
+   "ansicht": "m390",
+   "hinweis": "B: 7743 px hoch (5 Streifen), Karten mit Foto in voller Breite; Chips ohne Kategoriesymbol, Scrollleiste ausgeblendet. A: 4349 px hoch (3 Streifen), Karten mit 96-px-Zeichnung links; Chips mit Kategoriesymbol, scroll-snap, Scrollleiste nicht ausgeblendet. Die Seitenleiste mit „Beratung gewünscht?“ ist mobil in beiden ausgeblendet.",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/m390/U-uebersicht-1von5.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/m390/U-uebersicht-2von5.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/m390/U-uebersicht-3von5.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/m390/U-uebersicht-4von5.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/m390/U-uebersicht-5von5.jpg"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/m390/U-uebersicht-1von3.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/m390/U-uebersicht-2von3.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/m390/U-uebersicht-3von3.jpg"
+   ]
+  },
+  {
+   "name": "Unser 8-Punkte-Qualitätsversprechen für Ihr Fliesenprojekt (#qualitaet)",
+   "ansicht": "d1440",
+   "hinweis": "B: Raster aus 4 × 2 Karten, „Punkt 01…08“, unter jeder Karte „Garantierter Standard“, Überschrift größer (3 Zeilen), Abschlussblock als Kasten. A: zweispaltige Liste mit versetzten Spalten, Nummern „01…08“, „Garantierter Standard“ nur einmal in der Dachzeile, Überschrift kleiner (2 Zeilen), Abschlussblock mit Linie oben statt Kasten.",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/d1440/02-Unser 8-Punkte-Qualitätsversprechen für .jpg"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/d1440/05-Unser 8-Punkte-Qualitätsversprechen für .jpg"
+   ]
+  },
+  {
+   "name": "Unser 8-Punkte-Qualitätsversprechen für Ihr Fliesenprojekt (#qualitaet)",
+   "ansicht": "m390",
+   "hinweis": "B 2758 px, A 2054 px. Abschlussblock in B zentriert im Kasten, in A linksbündig.",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/m390/02-Unser 8-Punkte-Qualitätsversprechen für .jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/m390/03-Unser 8-Punkte-Qualitätsversprechen für .jpg"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/m390/05-Unser 8-Punkte-Qualitätsversprechen für .jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/m390/06-Unser 8-Punkte-Qualitätsversprechen für .jpg"
+   ]
+  },
+  {
+   "name": "Fuß (Seitenrahmen)",
+   "ansicht": "d1440",
+   "hinweis": "Gehört zum Seitenrahmen, nicht zur Einheit. Inhalt gleich; nur die Rechtslinks in der letzten Zeile sind anders angeordnet (A: „Barrierefreiheit“ vor „Cookie-Einstellungen“, mit Schlosssymbol).",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/d1440/03-Fuß: footer.jpg"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/d1440/06-Fuß: footer.jpg"
+   ]
+  },
+  {
+   "name": "Fuß (Seitenrahmen)",
+   "ansicht": "m390",
+   "hinweis": "Gehört zum Seitenrahmen. Sichtbar gleich.",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/m390/04-Fuß: footer.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/m390/05-Fuß: footer.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/m390/06-Fuß: footer.jpg"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/m390/07-Fuß: footer.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/m390/08-Fuß: footer.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/m390/09-Fuß: footer.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Kategorie „Bad & Dusche“ gewählt (3 Treffer)",
+   "ansicht": "d1440",
+   "hinweis": "Gleiche 3 Karten; die Leitfaden-Karte entfällt in beiden. Aktiver Filter in B: dunkler Chip mit „+“; in A: dunkle Listenzeile mit Pfeil. In keiner Fassung wird eine Ergebniszahl angezeigt.",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/d1440/Z1-filter-bad-dusche-1von1.jpg"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/d1440/Z1-filter-bad-dusche-1von1.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Kategorie „Bad & Dusche“ gewählt (3 Treffer)",
+   "ansicht": "m390",
+   "hinweis": "B: 1982 px (2 Streifen), A: 1234 px.",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/m390/Z1-filter-bad-dusche-1von2.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/m390/Z1-filter-bad-dusche-2von2.jpg"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/m390/Z1-filter-bad-dusche-1von1.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Suche mit Treffer („Schimmel“, 1 Treffer)",
+   "ansicht": "d1440",
+   "hinweis": "Das Suchfeld trägt den Fokusring, weil es gerade fokussiert ist. In B steht eine Lupe im Feld, in A nicht.",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/d1440/Z2-suche-treffer-1von1.jpg"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/d1440/Z2-suche-treffer-1von1.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Suche mit Treffer („Schimmel“, 1 Treffer)",
+   "ansicht": "m390",
+   "hinweis": "Mobil zeigt B eine Lupe im Feld, A nicht.",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/m390/Z2-suche-treffer-1von1.jpg"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/m390/Z2-suche-treffer-1von1.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Suche ohne Treffer („Xylophon“, Leerzustand mit „Filter zurücksetzen“)",
+   "ansicht": "d1440",
+   "hinweis": "Text gleich. Knopf „Filter zurücksetzen“ in B umrandet (sekundär), in A dunkel gefüllt (primär). Rahmen des Kastens in B dunkler.",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/d1440/Z3-suche-leer-1von1.jpg"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/d1440/Z3-suche-leer-1von1.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Suche ohne Treffer („Xylophon“, Leerzustand mit „Filter zurücksetzen“)",
+   "ansicht": "m390",
+   "hinweis": "",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/m390/Z3-suche-leer-1von1.jpg"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/m390/Z3-suche-leer-1von1.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Tastaturfokus auf der Leitfaden-Karte („Handwerkerbonus …“)",
+   "ansicht": "d1440",
+   "hinweis": "Fokus per Tab-Taste. B: Ring um die Überschrift (der Link ist per ::after über die Karte gestreckt). A: Ring um die ganze Karte (die Karte ist ein einziges <a>). Je ein Kartenausschnitt und ein Bildschirmbild mit festen Ebenen.",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/d1440/Z4-fokus-karte-1.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/d1440/Z4-fokus-karte-1-bildschirm.jpg"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/d1440/Z4-fokus-karte-1.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/d1440/Z4-fokus-karte-1-bildschirm.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Tastaturfokus auf der Leitfaden-Karte („Handwerkerbonus …“)",
+   "ansicht": "m390",
+   "hinweis": "Die Karte in B ist 743 px hoch und damit höher als der Bildschirm. Der Ausschnitt ist auf den Bildschirm begrenzt und zeigt oben den festen Kopf und unten die Aktionsleiste.",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/m390/Z4-fokus-karte-1.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/m390/Z4-fokus-karte-1-bildschirm.jpg"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/m390/Z4-fokus-karte-1.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/m390/Z4-fokus-karte-1-bildschirm.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Tastaturfokus auf der ersten Standardkarte („Undichte Dusche? …“)",
+   "ansicht": "d1440",
+   "hinweis": "Ring in beiden um die Überschrift. In A bekommt zusätzlich die ganze Kartenzeile einen weißen Hintergrund und eine dunkle Unterkante (focus-within). In A bleibt beim Scrollen die Kategorienliste der Seitenleiste stehen (sticky); in B scrollt die Seitenleiste mit.",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/d1440/Z4-fokus-karte-2.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/d1440/Z4-fokus-karte-2-bildschirm.jpg"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/d1440/Z4-fokus-karte-2.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/d1440/Z4-fokus-karte-2-bildschirm.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Tastaturfokus auf der ersten Standardkarte („Undichte Dusche? …“)",
+   "ansicht": "m390",
+   "hinweis": "",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/m390/Z4-fokus-karte-2.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/m390/Z4-fokus-karte-2-bildschirm.jpg"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/m390/Z4-fokus-karte-2.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/m390/Z4-fokus-karte-2-bildschirm.jpg"
+   ]
+  },
+  {
+   "name": "Prüfbild: 320 × 640, Leerzustand",
+   "ansicht": "m390",
+   "hinweis": "Bildschirmbild bei 320 px Breite, abgelegt im Ordner m390. In keiner Fassung scrollt die Seite waagerecht.",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/m390/P-reflow-320-leerzustand.jpg"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/m390/P-reflow-320-leerzustand.jpg"
+   ]
+  },
+  {
+   "name": "Prüfbild: ohne JavaScript, erster Bildschirm",
+   "ansicht": "d1440",
+   "hinweis": "In beiden sind ohne JavaScript alle 13 Karten, 8 Filterknöpfe und das Suchfeld sichtbar.",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/X/d1440/P-ohne-js-erster-bildschirm.jpg"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u3-blog/Y/d1440/P-ohne-js-erster-bildschirm.jpg"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1135 @@
+{
+ "einheit": "u1-leistungen",
+ "zuordnung": {
+  "X": "A",
+  "Y": "B"
+ },
+ "urteil": {
+  "einheit": "u1-leistungen – Übersichtsseite /leistungen (Leistungsbereiche, Sprungindex, Preisrechner/Anfrage-Einbindung, Abschluss)",
+  "je_abschnitt": [
+   {
+    "name": "Erster Bildschirm (ohne Scrollen, mit festem Kopf)",
+    "ansicht": "d1440",
+    "wahl": "beide",
+    "begruendung": "A ist ruhig und vollständig: H1, Einleitung, drei Knöpfe, rechts Verlegeplan mit Laser und Schriftfeld (Inhaber, HWK, seit 2008), so wie im Vorbild H1 links und Plan rechts. Die H1 steht aber nur in fs-6, laut K-006 ist das die Größe für Arbeitsansichten. Außerdem sind im ersten Bildschirm zwei rote Elemente zu sehen (Plan-Laser und der Achsbeginn des Folgeabschnitts). B setzt die H1 korrekt in fs-7 und hat eine einzige rote Achse am Einstieg. Dafür bleibt rechts oben eine große leere Fläche, und der Index sitzt angeschnitten am unteren Rand.",
+    "uebernehmen_aus_anderer": "Aus B: H1 in text-fs-7, Kicker als zwei Etiketten mit Fugenkreuz „+“, „DIN 18534“ im Einleitungstext in Mono (gleicher Wortlaut), Sprungindex in der rechten Spalte unter Plan und Schriftfeld (füllt Ys Leerraum, ergänzt Xs fehlenden Index).",
+    "wahl_fassung": "beide"
+   },
+   {
+    "name": "Kopfbereich: H1 „Fliesenleger Leistungen & Fachgewerke Wetzlar“, Einleitung, drei Handlungsknöpfe",
+    "ansicht": "d1440",
+    "wahl": "beide",
+    "begruendung": "Xs rechte Spalte mit Plan und Schriftfeld erfüllt K-009 (Erzählansicht mit Schriftfeld) und bedient Hauptaufgabe 2 (Vertrauen). Ys Sprungindex 01–04 bedient Hauptaufgabe 1 (passende Leistung finden). Ys Typografie entspricht K-006 (H1 fs-7, Normen in Mono). Ys Spalte rechts ist unten ausgerichtet und oben leer, das ist keine ruhige Komposition.",
+    "uebernehmen_aus_anderer": "Aus B: H1 fs-7, „+“-Etiketten, DIN 18534 in Mono, Sprungindex <ol aria-label=\"Fachgewerke\">. Aus A: Verlegeplan mit Schriftfeld oben rechts. Reihenfolge rechts: Plan, Schriftfeld, Index.",
+    "wahl_fassung": "beide"
+   },
+   {
+    "name": "Leistungsbereiche #gewerke (Bäder & Wellness, Wohnbereiche & Neubau, Balkon- & Terrassensanierung, Untergrund & DIN 18534 Abdichtung)",
+    "ansicht": "d1440",
+    "wahl": "X",
+    "begruendung": "A zeigt ein 2×2-Fugenraster (Feldraster, Gliederung durch 1-px-Fugen), überblickbar in rund 2,5 Bildschirmhöhen (2324 px). Die Merkliste steht in Archivo mit Fugenkreuz, die langen Merkmale sind zuklappbar, und die rote Achse läuft weiter. B braucht mit vier ganzbreiten Zeilen 3938 px, hat große leere Planzellen und doppelt Kurz- und Langmerkmale (Mono-Chips plus Liste). Die Achse fehlt dort, und in der Wohnbereich-Zeichnung steckt ein eigenes Rot. Ys Nummernkopf „01 … Geprüfte Fachkompetenz“ und die Wege-Hierarchie (Textlink für Fachdetails, Knopf für Aufmaß) sind näher an der Startseite.",
+    "uebernehmen_aus_anderer": "Aus B: Nummern 01–04 im Mono-Etikett bzw. in einer Kopfzeile je Feld. Der Summary-Wortlaut „Ausstattungsmerkmale & Vorteile:“ (Bestand Klasse 3; Xs „Merkmale · 6“ ändert den Wortlaut). aria-labelledby je article auf die H2-id (bad-titel …). „Fachdetails & Ratgeber: …“ als Pfeil-Textlink und „Aufmaß anfragen“ als Nebenknopf.",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Ablauf „Ihr verlässlicher Weg zum neuen Traumbelag“ (3 Schritte)",
+    "ansicht": "d1440",
+    "wahl": "X",
+    "begruendung": "A entspricht dem Vorbild-Ablauf genau: je Schritt ein gezeichneter Plan (Aufmaß, Raster, Raster mit Abnahme-Haken), beiger Grund, durchlaufende Achse. Das ist Verlegeplan statt Karte. B lässt die Zeichnungen weg. Der weiße Streifen bringt zwar Wechsel, aber ohne Plan ist der Abschnitt nur eine Textreihe.",
+    "uebernehmen_aus_anderer": "Aus B: id=\"ablauf\" am <section> mit aria-labelledby auf eine Überschriften-id.",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Preisrechner/Projektanfrage „Projekt anfragen & Situation schildern“",
+    "ansicht": "d1440",
+    "wahl": "gleich",
+    "begruendung": "Aufbau, Wortlaut und Zustände sind pixelgleich. Einziger sichtbarer Unterschied: A führt die rote Achse links weiter, B nicht. Bei A fluchtet der Abschnitt damit an der Leitachse.",
+    "uebernehmen_aus_anderer": "Aus B: Abschnitts-id „kosten-rechner“ (Bestand-Anker wie auf der Startseite) mit aria-labelledby=\"rechner-heading\". Aus A: Achse links.",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Express-Anfrage „Fordern Sie Ihr persönliches Angebot an“ (Ausgangszustand Schritt 1)",
+    "ansicht": "d1440",
+    "wahl": "X",
+    "begruendung": "Xs lückenloses Kachelraster 3+2 ohne Plaketten entspricht dem Vorbild und der Leitidee (Fugen statt Karten, Raster-Symbol für Wohnbereich). B bricht mit Abständen, leerer dritter Zelle und fünf Mono-Plaketten. Das ist unruhig, und die Plaketten verlängern den zugänglichen Namen. Allerdings verdeckt Xs Raster den Fokusring (siehe Zustand z11).",
+    "uebernehmen_aus_anderer": "Aus B nur das Verhalten: vollständig sichtbarer Fokusring je Kachel (Kachel bei :focus-visible relative z-10, wie Ys li focus-within:z-10). Keine Plaketten übernehmen.",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Abschluss „Planen Sie ein Fliesen- oder Badprojekt? Sprechen Sie direkt mit Fachbetriebsleiter Deniz Tezgel.“",
+    "ansicht": "d1440",
+    "wahl": "X",
+    "begruendung": "A entspricht dem Vorbild-Abschluss eins zu eins: helle Karte auf Kalk, rote Senkrechte, dunkler Anrufknopf, gefüllter Stern. Ys dunkle Fläche stößt direkt an den Fuß auf Tinte. Zwei Tinte-Bänder verschmelzen, der Abschluss verliert seine Kante, und der Stern ist nur umrandet.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Fuß (Rahmen, nicht Teil der Einheit)",
+    "ansicht": "d1440",
+    "wahl": "gleich",
+    "begruendung": "Inhaltlich und gestalterisch gleich; Rahmen.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Erster Bildschirm (ohne Scrollen, mit festem Kopf und unterer Leiste)",
+    "ansicht": "m390",
+    "wahl": "Y",
+    "begruendung": "B entspricht dem Vorbild m390: H1 in fs-7 über drei Zeilen, Etiketten mit „+“, Mono-Norm, rote Achse, die Hauptaktion steht vollständig über der unteren Leiste. A zeigt zwar alle drei Knöpfe, aber nur mit einer H1 in Arbeitsansicht-Größe (fs-6). Damit fehlt der Blickfang einer Erzählansicht.",
+    "uebernehmen_aus_anderer": "Aus A: Prüfen, dass die Hauptaktion „Vor-Ort-Aufmaß vereinbaren“ ganz über der unteren Leiste bleibt; der zweite Knopf darf angeschnitten sein.",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Kopfbereich: H1, Einleitung, Handlungsknöpfe",
+    "ansicht": "m390",
+    "wahl": "beide",
+    "begruendung": "Ys Sprungindex direkt nach den Knöpfen macht die sehr lange mobile Seite navigierbar (Hauptaufgabe 1). Xs Plan mit Schriftfeld bringt Vertrauen (Inhaber, HWK, seit 2008) und den Verlegeplan, den K-006 mobil ans Ende des Einstiegs setzt (H1 → Kennwerte → Hauptaktion → Plan).",
+    "uebernehmen_aus_anderer": "Reihenfolge mobil: H1 (fs-7, B), Einleitung, drei Knöpfe, Sprungindex (B), Plan und Schriftfeld (A). Prüfen, dass das Schriftfeld innerhalb von zwei Bildschirmhöhen beginnt (K-002 Hauptaufgabe 2).",
+    "wahl_fassung": "beide"
+   },
+   {
+    "name": "Leistungsbereiche #gewerke",
+    "ansicht": "m390",
+    "wahl": "X",
+    "begruendung": "A entspricht dem Vorbild m390 (aufklappbarer Leistungsumfang) und ist mit 4093 px rund 1700 px kürzer als B (5815 px). B stapelt Mono-Chips über die volle Breite und zeigt sechs Merkmale offen. Das ergibt sehr viel Text je Karte ohne Wechsel der Dichte. Gut an B: der vollbreite Knopf „Aufmaß anfragen“ (51 px) und die Nummern.",
+    "uebernehmen_aus_anderer": "Aus B: „Aufmaß anfragen“ als vollbreiter Nebenknopf mit mindestens 44 px (statt Textlink 123×44 am Grenzwert), „Fachdetails & Ratgeber: …“ als Pfeil-Textlink, Nummern 01–04, Summary-Wortlaut „Ausstattungsmerkmale & Vorteile:“.",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Ablauf „Ihr verlässlicher Weg zum neuen Traumbelag“",
+    "ansicht": "m390",
+    "wahl": "X",
+    "begruendung": "A entspricht der mobilen Startseite: gestapelte Felder mit gezeichnetem Plan je Schritt, Achse links. Ys senkrechte Zeitleiste mit Fugenkreuzen ist kompakt (1115 statt 1933 px) und eine eigenständige mobile Form. Ohne Pläne verliert der Abschnitt aber das Verlegeplan-Motiv und weicht vom Vorbild ab.",
+    "uebernehmen_aus_anderer": "Aus B: id=\"ablauf\" und aria-labelledby. Optional: Planfelder mobil niedriger setzen, falls die Seitenlänge zum Problem wird.",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Preisrechner/Projektanfrage „Projekt anfragen & Situation schildern“",
+    "ansicht": "m390",
+    "wahl": "gleich",
+    "begruendung": "Inhalt und Darstellung sind gleich (je 4075 px). A führt die Achse links weiter.",
+    "uebernehmen_aus_anderer": "Aus B: id „kosten-rechner“ und aria-labelledby.",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Express-Anfrage „Fordern Sie Ihr persönliches Angebot an“ (Ausgangszustand Schritt 1)",
+    "ansicht": "m390",
+    "wahl": "X",
+    "begruendung": "Xs kompakte Listenzeilen mit Symbol links entsprechen dem Vorbild m390 und sind 300 px kürzer. Ys Kacheln mit Plaketten rechts oben wirken wie Karten, und die Plakette steht vor dem Namen im zugänglichen Namen. Xs Fokusring ist oben und unten verdeckt (siehe z11).",
+    "uebernehmen_aus_anderer": "Aus B: vollständig sichtbarer Fokusring (Zeile bei :focus-visible relative z-10).",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Abschluss „Planen Sie ein Fliesen- oder Badprojekt? …“",
+    "ansicht": "m390",
+    "wahl": "X",
+    "begruendung": "Hell mit roter Senkrechter wie im Vorbild m390. Bei B fließt die dunkle Fläche in den dunklen Fuß, der Abschluss hebt sich nicht ab.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Fuß (Rahmen, nicht Teil der Einheit)",
+    "ansicht": "m390",
+    "wahl": "gleich",
+    "begruendung": "Gleich; Rahmen.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Zustand: Sprungindex – Tastaturfokus auf „02 Wohnbereiche & Neubau“ (Baustein-Ausschnitt)",
+    "ansicht": "d1440",
+    "wahl": "Y",
+    "begruendung": "Nur B hat den Index. Der Fokusring ist vollständig (li focus-within:z-10), die Zeilen sind 477×49 px groß, Nummern in Mono, Fugen zwischen den Zeilen. Das ist ein sauberer Baustein nach K-009. A fehlt diese Funktion ganz.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Zustand: Sprungindex – Tastaturfokus auf „02 Wohnbereiche & Neubau“ (Baustein-Ausschnitt)",
+    "ansicht": "m390",
+    "wahl": "Y",
+    "begruendung": "Nur in B. Fokus vollständig sichtbar, Umbruch bei „Untergrund & DIN 18534 Abdichtung“ sauber, Touch-Ziele über 44 px.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Zustand: Sprungziel #aussen erreicht (Bildschirm mit festem Kopf)",
+    "ansicht": "d1440",
+    "wahl": "beide",
+    "begruendung": "Xs Landung ist die richtige: 96 px, also nur scroll-padding-top nach K-005, und die Zeile beginnt sauber unter dem Kopf. B landet bei 192 px (scroll-padding plus scroll-margin 96) und zeigt noch das Ende der vorigen Karte. Nur B erreicht das Ziel aber über einen Index, A nur über die Adresse.",
+    "uebernehmen_aus_anderer": "Weg aus B (Index-Klick), Landeposition aus A (kein zusätzliches scroll-margin, eine Regel für alle Ziele).",
+    "wahl_fassung": "beide"
+   },
+   {
+    "name": "Zustand: Sprungziel #aussen erreicht (Bildschirm mit festem Kopf)",
+    "ansicht": "m390",
+    "wahl": "beide",
+    "begruendung": "Bei A steht die Karte unmittelbar unter dem Kopf, und Plan, Etikett und H2 sind voll sichtbar. B zeigt oben 127 px Rest der Wohnbereich-Karte (Links „Fachdetails …“, „Aufmaß anfragen“). Auf dem kleinen Bildschirm ist das verschwendeter Platz und verwirrt kurz. Der Index-Weg kommt aus B.",
+    "uebernehmen_aus_anderer": "Weg aus B, Landeposition aus A.",
+    "wahl_fassung": "beide"
+   },
+   {
+    "name": "Zustand: Karte „Bäder & Wellness“ in Ruhe (Baustein-Ausschnitt article#bad)",
+    "ansicht": "d1440",
+    "wahl": "X",
+    "begruendung": "Xs Feld ist kompakt (607×1065): Plan auf Kalk-Feld, Mono-Etikett, H2, Text, Merkliste mit Fugenkreuz, Zuklapper, Wege. Ys Breitfeld (1215×828) zeigt Kurzmerkmale als Mono-Chips und die Langliste offen nebeneinander. Das ist dicht und doppelt. Die Wege-Rangfolge in B (Aufmaß als Knopf) ist besser.",
+    "uebernehmen_aus_anderer": "Aus B: Nummer „01“ im Etikett, aria-labelledby=\"bad-titel\", Wege-Rangfolge (Textlink Fachdetails, Nebenknopf Aufmaß), Wortlaut „Ausstattungsmerkmale & Vorteile:“ im Summary.",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Zustand: Karte „Bäder & Wellness“ in Ruhe (Baustein-Ausschnitt article#bad)",
+    "ansicht": "m390",
+    "wahl": "X",
+    "begruendung": "A ist 992 px hoch statt 1483 px, die Langmerkmale stehen hinter dem Zuklapper wie im Vorbild mobil. Ys vollbreiter Aufmaß-Knopf ist das bessere Touch-Ziel.",
+    "uebernehmen_aus_anderer": "Aus B: vollbreiter Knopf „Aufmaß anfragen“ (≥ 44 px), Nummer 01, aria-labelledby.",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Zustand: Karte – Tastaturfokus auf „Merkmale · 6“ (Auf-/Zuklapper)",
+    "ansicht": "d1440",
+    "wahl": "X",
+    "begruendung": "Nur in A: natives <summary> mit vollständigem 2-px-Fokusring über die ganze Zeile, Plus-Zeichen als Zustand. Das ist K-009-konform. Der Wortlaut weicht vom Bestands-Etikett ab.",
+    "uebernehmen_aus_anderer": "Summary-Text „Ausstattungsmerkmale & Vorteile:“ aus B (Klasse 3, Wortlaut bleibt). Eine Zählung „· 6“ höchstens als dekorativer Zusatz.",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Zustand: Karte – „Merkmale · 6“ geöffnet (Enter)",
+    "ansicht": "d1440",
+    "wahl": "X",
+    "begruendung": "Öffnet per Tastatur, Plus wird Minus, die Liste ist wörtlich die Bestandsliste, axe meldet auch im offenen Zustand 0. Kleiner Mangel: Die Liste klebt direkt am Fokusumriss des Summary.",
+    "uebernehmen_aus_anderer": "Etwas Abstand (pt-2 oder pt-3) zwischen Summary und offener Liste.",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Zustand: Karte – Tastaturfokus auf „Merkmale · 6“ (Auf-/Zuklapper)",
+    "ansicht": "m390",
+    "wahl": "X",
+    "begruendung": "Nur in A. Fokus vollständig, die Zeile ist in voller Breite antippbar.",
+    "uebernehmen_aus_anderer": "Wortlaut aus B.",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Zustand: Karte – „Merkmale · 6“ geöffnet (Enter)",
+    "ansicht": "m390",
+    "wahl": "X",
+    "begruendung": "Nur in A. Sauber, die Liste bricht gut um, die Wege bleiben darunter.",
+    "uebernehmen_aus_anderer": "Abstand zwischen Summary und Liste wie d1440.",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Zustand: Rechner – Tastaturfokus auf Gewerk-Kachel „XXL-Großformat (ab 120 cm)“ (Kachelraster)",
+    "ansicht": "d1440",
+    "wahl": "gleich",
+    "begruendung": "Pixelgleich; der Fokusring ist vollständig (Kacheln mit Abstand).",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Zustand: Rechner – Tastaturfokus auf Gewerk-Kachel „XXL-Großformat (ab 120 cm)“ (Kachelraster)",
+    "ansicht": "m390",
+    "wahl": "gleich",
+    "begruendung": "Nahezu gleich; der Fokus ist vollständig sichtbar.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Zustand: Rechner – Auswahl geändert (XXL-Großformat, Fläche, Altfliesen, 35 m²) (ganzer Baustein)",
+    "ansicht": "d1440",
+    "wahl": "gleich",
+    "begruendung": "Gleich. aria-pressed-Auswahl, m²-Eingabe hebt die Voreinstellung auf, die Zusammenfassung zeigt „35 m²“.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Zustand: Rechner – Auswahl geändert (ganzer Baustein, 3 Streifen)",
+    "ansicht": "m390",
+    "wahl": "gleich",
+    "begruendung": "Gleich.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Zustand: Rechner – Absenden ohne Einwilligung (Meldung role=alert), Anfrage-Spalte",
+    "ansicht": "d1440",
+    "wahl": "gleich",
+    "begruendung": "Gleich. Fehler mit Rahmen, Versatz-Zeichen und Text (K-005/K-009), der Fokus bleibt sichtbar auf dem Absendeknopf. Gemeinsame Schwäche: Die Meldung steht oben in der Spalte, weit weg von der Checkbox.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Zustand: Rechner – Absenden ohne Einwilligung (Meldung role=alert), Anfrage-Spalte",
+    "ansicht": "m390",
+    "wahl": "gleich",
+    "begruendung": "Gleich.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Zustand: Rechner – Serverfehler (500 per page.route), Anfrage-Spalte",
+    "ansicht": "d1440",
+    "wahl": "gleich",
+    "begruendung": "Gleich (role=alert „Test-Ausfall“). In beiden geht der Fokus danach auf body.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Zustand: Rechner – Serverfehler (500 per page.route), Anfrage-Spalte",
+    "ansicht": "m390",
+    "wahl": "gleich",
+    "begruendung": "Gleich.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Zustand: Rechner – Erfolg (Attrappe, nichts versendet), Anfrage-Spalte",
+    "ansicht": "d1440",
+    "wahl": "gleich",
+    "begruendung": "Pixelgleich. Gemeinsame Schwäche: Die Erfolgsmeldung schwebt mittig in einer sehr hohen leeren Tinte-Fläche.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Zustand: Rechner – Erfolg (Attrappe, nichts versendet), Anfrage-Spalte",
+    "ansicht": "m390",
+    "wahl": "gleich",
+    "begruendung": "Gleich; mobil kompakt und gut.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Zustand: Express-Anfrage Schritt 1 – Tastaturfokus auf zweite Kachel „Wohnbereich & Neubau“ (Anfragekarte)",
+    "ansicht": "d1440",
+    "wahl": "Y",
+    "begruendung": "Bei B ist der Ring auf allen vier Seiten sichtbar. Bei A verdecken die Nachbarkacheln im lückenlosen Raster den Ring bis auf die Oberkante. Das verstößt gegen K-009 („Fokus nie verdeckt“), Pixelprüfung 46/50.",
+    "uebernehmen_aus_anderer": "Xs lückenloses Raster bleibt, nur mit Ys Verhalten: Fokus-Kachel relative z-10, Ring vollständig.",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Zustand: Express-Anfrage Schritt 1 – Tastaturfokus auf zweite Kachel „Wohnbereich & Neubau“ (Anfragekarte)",
+    "ansicht": "m390",
+    "wahl": "Y",
+    "begruendung": "B vollständig; bei A sind nur die Seiten sichtbar, oben und unten verdeckt.",
+    "uebernehmen_aus_anderer": "Xs Listenzeilen mit Ys vollständigem Ring (z-10 bei :focus-visible).",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Zustand: Express-Anfrage Schritt 2 (Enter auf „Weiter zu Schritt 2: Fläche & Ort“)",
+    "ansicht": "d1440",
+    "wahl": "gleich",
+    "begruendung": "Nahezu pixelgleich. Gemeinsame Schwäche: Der Fokus geht nach „Weiter“ auf body statt auf den Schritttitel.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Zustand: Express-Anfrage Schritt 2",
+    "ansicht": "m390",
+    "wahl": "gleich",
+    "begruendung": "Gleich. Gemeinsam: Die Platzhalter „Oder genaue m²-Zahl eingeben (z. B…“ und der Einsatzort-Platzhalter werden abgeschnitten.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Zustand: Express-Anfrage Schritt 3 (Kontaktdaten)",
+    "ansicht": "d1440",
+    "wahl": "gleich",
+    "begruendung": "Gleich: sichtbare Labels, Pflichtsterne, Zusammenfassung mit „Ändern“.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Zustand: Express-Anfrage Schritt 3 (Kontaktdaten)",
+    "ansicht": "m390",
+    "wahl": "gleich",
+    "begruendung": "Gleich.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Zustand: Express-Anfrage Serverfehler (500 per page.route)",
+    "ansicht": "d1440",
+    "wahl": "gleich",
+    "begruendung": "Gleich: role=alert, Versatz-Zeichen, roter Rand, Ausweg per WhatsApp und Anruf.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Zustand: Express-Anfrage Serverfehler (500 per page.route)",
+    "ansicht": "m390",
+    "wahl": "gleich",
+    "begruendung": "Gleich.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Zustand: Express-Anfrage Erfolg (Attrappe, nichts versendet)",
+    "ansicht": "d1440",
+    "wahl": "gleich",
+    "begruendung": "Gleich: role=status, Haken, Vorgangsnummer in Mono, Inhaber-Zitat, nächste Schritte.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Zustand: Express-Anfrage Erfolg (Attrappe, nichts versendet)",
+    "ansicht": "m390",
+    "wahl": "gleich",
+    "begruendung": "Gleich.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   }
+  ],
+  "a11y_uebernehmen": [
+   {
+    "aus_fassung": "B",
+    "was": "Sprungindex <ol aria-label=\"Fachgewerke\"> mit 4 echten Links („01 Bäder & Wellness“ … „04 Untergrund & DIN 18534 Abdichtung“), Zeilen ≥ 44 px (d1440 477×49), li focus-within:z-10, sodass der Fokusring vollständig sichtbar ist. Nach Enter trifft der nächste Tab den ersten Link im Ziel."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "Fokusring je Seite vollständig sichtbar 50/50, auch Express Schritt 1 (6/6), Schritt 2 (11/11), Schritt 3 (9/9). a11y-zusatz ohne Fokusbefund in <main> (A: 3× „dünn“, 1× „kontrastarm“ an den Express-Kacheln). Die Fusion muss mit lückenlosem Raster 6/6 erreichen."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "Benannte Bereiche: <article id=bad aria-labelledby=\"bad-titel\"> usw. für alle vier Gewerke, <section id=\"ablauf\" aria-labelledby=…>, <section id=\"kosten-rechner\" aria-labelledby=\"rechner-heading\">."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "Zusätzliche adressierbare Anker ablauf und kosten-rechner (kosten-rechner ist Bestand-Anker der Startseite)."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "Karten-„Aufmaß anfragen“ als Knopf mit klarem Touch-Ziel (m390 volle Breite × 51 px, d1440 177×51) statt Textlink 123×44 am Grenzwert."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "Eine einheitliche Regel für alle Sprungziele (#bad … #untergrund, #ablauf, #kosten-rechner, #express-anfrage gleich behandelt). In der Fusion einheitlich, aber mit Xs Abstand (siehe A)."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "200 %-Lauf mit CSS-Zoom 2 hat alle Elemente einmal ins Bild gebracht („Nie im Bild“ nur 6 feste Kopf-Elemente, 89 Scrollpositionen; A: 64, Lauf brach nach 57 Positionen ab). Die Fusion muss „Nie im Bild“ ≤ 6 erreichen."
+   },
+   {
+    "aus_fassung": "A",
+    "was": "Natives <details>/<summary> für die Merkmale je Karte: Tastatur Enter/Leertaste, sichtbarer Zustand (Plus/Minus), vollständiger Fokusring, axe 0 auch im offenen Zustand, kürzere Seite ohne JavaScript."
+   },
+   {
+    "aus_fassung": "A",
+    "was": "Sprungziel-Artikel ohne zusätzliches scroll-margin: Oberkante 96 px (nur scroll-padding-top nach K-005), 31 px unter dem festen Kopf, kein Rest der vorigen Karte im Bild."
+   },
+   {
+    "aus_fassung": "A",
+    "was": "200 %-Zoom (CSS-Zoom 2, 1280): kein Überlauf in <main> (Überlauf 15, alle im Kopf und Fuß). B hat 8 Überläufe im Sprungindex (rechte Kante 1299 px bei 1280 px). Die Fusion muss 0 Überläufe in <main> haben, also auch mit Index."
+   },
+   {
+    "aus_fassung": "A",
+    "was": "Leistung: content-visibility:auto (spaet-zeichnen, contain-intrinsic-size auto 800px) für vier Bereiche in <main>. Behalten, sofern Sprungziele und der Zoom-Lauf dadurch nicht leiden."
+   },
+   {
+    "aus_fassung": "A",
+    "was": "Rahmen d1440 ohne schwebende Knöpfe: keine „unsichtbar“-Fokusbefunde für Cookie- und WhatsApp-Knopf (B: 2× „unsichtbar“). Gehört nicht zur Einheit, nur falls der Rahmen mitgezogen wird."
+   },
+   {
+    "aus_fassung": "A",
+    "was": "(in A und B gleich, muss bleiben) axe wcag2a/aa, 21a/aa, 22aa: 0 Verstöße auf der Seite und in allen Zuständen, Kontrast 0. Fokusring aller 50 Bedienelemente outline 2px solid tinte, offset 2px, über :focus-visible."
+   },
+   {
+    "aus_fassung": "A",
+    "was": "(in A und B gleich, muss bleiben) Meldungen: Rechner „Bitte willigen Sie …“ role=alert, Serverfehler role=alert „Test-Ausfall“, Erfolg role=status; Express-Fehler role=alert mit WhatsApp- und Anruf-Ausweg, Erfolg role=status; Wortlaute unverändert. Bei fehlender Einwilligung bleibt der Fokus auf dem Absendeknopf."
+   },
+   {
+    "aus_fassung": "A",
+    "was": "(in A und B gleich, muss bleiben) Pflichtfelder required (#calc-name, #calc-phone, #funnel-name, #funnel-phone); sichtbare <label> im Rechner und in Express Schritt 3; autocomplete name/tel/email/address-level2; Honigtopf mit tabindex -1."
+   },
+   {
+    "aus_fassung": "A",
+    "was": "(in A und B gleich, muss bleiben) 21 Umschalter mit aria-pressed (Rechner 6+4+6, Express Schritt 1: 5) plus 7 in Schritt 2; keine Schieberegler; Tastaturfalle 0; erster Tab = Sprunglink; nur ein Rücksprung (textarea#situation-notes → input#calc-name)."
+   },
+   {
+    "aus_fassung": "A",
+    "was": "(in A und B gleich, muss bleiben) Reflow 320×640: horizontal 0, ragt heraus 0, abgeschnitten 0. Browser-Zoom 200 % (640×400, DPR 2): alle Kennzahlen 0. Erhöhter Textabstand: abgeschnitten 0, neue Überläufe nur im Kopf. Fokus verdeckt durch feste Ebenen: 0."
+   }
+  ],
+  "gesamt": {
+   "A_desktop": 7,
+   "A_handy": 7,
+   "B_desktop": 6,
+   "B_handy": 6.5
+  },
+  "rezept": "GRUNDGERÜST: A. Es entspricht der live laufenden Startseite (KERN v2) am genauesten: durchgehende rote Laserachse, 2×2-Fugenraster der Gewerke, Ablauf mit Plänen, lückenlose Express-Kacheln bzw. mobile Listenzeilen, heller Abschluss mit roter Senkrechter. In dieses Gerüst kommen in dieser Reihenfolge:\n\n1. KOPFBEREICH (aus B in A). H1 in text-fs-7 (K-006, Erzählansicht; A hat fs-6). Kicker als zwei Etiketten mit Fugenkreuz „+ HWK Wiesbaden Fachbetrieb“ und „+ Aßlar · Wetzlar · Mittelhessen“. „DIN 18534“ im Einleitungstext in Mono, gleicher Wortlaut. d1440: links Etiketten, H1, Einleitung, drei Knöpfe; rechts oben Xs Verlegeplan mit Schriftfeld (Blatt/Verband/Betrieb/Inhaber/Kammer/Betrieb seit), darunter Ys Sprungindex. Die Spalte nicht unten ausrichten, das war Ys Leerraum. m390: H1, Einleitung, Knöpfe, Sprungindex, Plan mit Schriftfeld. Prüfen: Hauptaktion ganz über der unteren Leiste, Schriftfeld beginnt innerhalb von zwei Bildschirmhöhen. Rot zählen: Im ersten Bildschirm höchstens ein rotes Element. Entweder der Plan-Laser rot und die Achse am Einstieg in Fuge, wie A, oder die Achse rot und der Plan-Laser in Tinte. Der Achsbeginn des Folgeabschnitts darf nicht zusätzlich rot im ersten Bildschirm stehen.\n\n2. SPRUNGINDEX (aus B). <ol aria-label=\"Fachgewerke\"> mit den vier Links und Wortlauten wie in B, Nummern in Mono, Pfeil nach unten, Zeilen ≥ 44 px, li focus-within:z-10. Den Überlauf bei CSS-Zoom 2 beheben: Index-Breite an die Spalte binden (w-full, min-w-0, Umbruch), keine feste Breite. Ziel: 0 Überläufe in <main>.\n\n3. LEISTUNGSBEREICHE (A mit Teilen aus B). Xs 2×2-Raster bzw. mobil gestapelte Felder mit Plan auf Kalk-Feld, Etikett „Geprüfte Fachkompetenz“, H2, Text, vier Kurzmerkmale als Merkliste mit Fugenkreuz, <details> für die sechs Langmerkmale. Aus B: Nummer 01–04 ins Mono-Etikett bzw. in eine Kopfzeile je Feld wie auf der Startseite. aria-labelledby je article auf eine H2-id (bad-titel, wohnen-titel, aussen-titel, untergrund-titel). Wege-Rangfolge: „Fachdetails & Ratgeber: …“ als Pfeil-Textlink, „Aufmaß anfragen“ als Nebenknopf, mobil volle Breite und ≥ 44 px. STOLPERSTEIN WORTLAUT: Das Summary muss „Ausstattungsmerkmale & Vorteile:“ heißen (Bestand, MIKROTEXTE Klasse 3: Wortlaut bleibt, nur Form und Ort ändern sich). Xs „Merkmale · 6“ ist eine Wortlautänderung, die Zählung höchstens als dekorativer Zusatz. „Geprüfte Fachkompetenz“ und „Aufmaß anfragen“ unverändert. Kleiner Abstand zwischen Summary und geöffneter Liste. IDs gewerke, bad, wohnen, aussen, untergrund bleiben (Bestand-Sprungziele /leistungen#bad usw.). #gewerke darf <section> bleiben; als Namen den vorhandenen Wortlaut „Fachgewerke“ per aria-label verwenden, kein neuer Text. Zeichnungen: Xs Pläne behalten. Werden die Startseiten-Pläne aus B genommen, die rote Linie im Wohnbereich-Plan in Tinte oder Strich setzen, damit die Achse das eine Rot bleibt.\n\n4. SPRUNGZIELE (eine Regel). Alle Ziele (#bad … #untergrund, #gewerke, #ablauf, #kosten-rechner, #express-anfrage) nur über scroll-padding-top aus globals.css, ohne zusätzliches scroll-margin. Ergebnis wie A: Oberkante 96 px, Überschrift frei, kein Rest der vorigen Karte. Danach mit Index-Klick und mit Adresse messen, beide Ansichten.\n\n5. ABLAUF: A (Pläne je Schritt, beiger Grund, Achse), dazu Ys id=\"ablauf\" am <section> mit aria-labelledby. Texte wörtlich.\n\n6. PREISRECHNER: Inhalt identisch, Xs Achse links. Abschnitts-id „kosten-rechner“ und aria-labelledby=\"rechner-heading\" wie in B bzw. der Startseiten-Komponente. Prüfen, ob Tests oder Links Xs Überschriften-ids (projekt-heading, ablauf-heading) erwarten, und dann einheitlich umbenennen.\n\n7. EXPRESS-ANFRAGE: Xs lückenloses Raster (d1440 3+2, zweite Reihe zwei breite Kacheln) und Xs mobile Listenzeilen, ohne Plaketten. Damit bleibt der zugängliche Name ohne Plakettentext, und das Wohnbereich-Symbol ist das Raster wie im Vorbild. PFLICHT: Kachel bzw. Zeile bei :focus-visible relative z-10, sodass der 2-px-Ring mit offset 2px über die Nachbarn malt. Die Pixelprüfung muss in Schritt 1 6/6 in beiden Ansichten ergeben, a11y-zusatz ohne „dünn“ oder „kontrastarm“. Keinen overflow-hidden-Rahmen um das Raster legen, sonst wird der Ring am Außenrand beschnitten.\n\n8. ABSCHLUSS: A (helle Karte auf Kalk, rote Senkrechte, gefüllter Stern). Nicht Ys dunkle Fläche, die mit dem Tinte-Fuß verschmilzt. Das Touch-Ziel des großen Telefonlinks „06441 / 44 83 567“ auf ≥ 44 px Höhe bringen (beide: 248×28 m390).\n\n9. TECHNIK. Xs content-visibility (spaet-zeichnen) nur behalten, wenn danach (a) die Index-Sprünge exakt bei 96 px landen und (b) der CSS-Zoom-2-Lauf „Nie im Bild“ ≤ 6 erreicht (Ys Wert). Die Platzhalterhöhe 800px kann Sprungziele verschieben und war die wahrscheinliche Ursache für Xs abgebrochenen Zoom-Lauf. Im Zweifel #gewerke und alles oberhalb der Sprungziele davon ausnehmen.\n\n10. TORE. axe 0 in allen Zuständen, einschließlich „Merkmale offen“. Fokusring 50/50 bzw. mit Index 54/54 vollständig. Reflow 320 und Textabstand 0. Tab-Reihenfolge höchstens der eine bekannte Rücksprung. Alle Meldungen, Rollen und Wortlaute aus der Faktentabelle unverändert. G5-Sperre: nichts echt versenden.\n\nOPTIONAL, ÜBER BEIDE HINAUS (keine Kennzahl darf schlechter werden; Text- und Label-Änderungen nur über MIKROTEXTE). Fokus nach Express „Weiter“, Fehler und Erfolg sowie nach Rechner-Fehler und -Erfolg auf den Schritttitel bzw. die Meldung (tabindex -1) statt auf body. Express-Schritttitel als Überschriften. Pflichtfelder mit aria-invalid und aria-describedby statt nur nativer Blase. #calc-custom-area: Das aria-label „Quadratmeterzahl manuell eingeben“ überschreibt das sichtbare Label (WCAG 2.5.3, Label in Name). Vorschlag ist, das aria-label zu entfernen (Klasse 2). Desktop-Rechner-Erfolg oben ausrichten statt mittig in der leeren Tinte-Fläche. Abgeschnittene Platzhalter in Express Schritt 2 mobil."
+ },
+ "a11y_fakten": [
+  {
+   "merkmal": "axe (wcag2a/aa, 21a/aa, 22aa), Seite /leistungen, m390 + d1440 – ernst/kritisch je Regel",
+   "A": "0 Knoten; überhaupt keine Verstöße, auch nicht leichte oder mittlere",
+   "B": "0 Knoten; überhaupt keine Verstöße"
+  },
+  {
+   "merkmal": "axe Fehlerzustand Express-Anfrage Serverfehler (axe.mjs --fehler, m375 + d1440)",
+   "A": "0 Verstöße",
+   "B": "0 Verstöße"
+  },
+  {
+   "merkmal": "axe in eigenen Zuständen (Merkmale offen; Rechner: Einwilligung fehlt, Serverfehler, Erfolg; Express: Schritt 2, Schritt 3, Serverfehler, Erfolg; m390 + d1440)",
+   "A": "0 Verstöße in allen Zuständen",
+   "B": "0 Verstöße in allen Zuständen (Zustand „Merkmale offen“ gibt es nicht)"
+  },
+  {
+   "merkmal": "Kontrast (axe color-contrast, alle Läufe)",
+   "A": "0 Verstöße",
+   "B": "0 Verstöße"
+  },
+  {
+   "merkmal": "Fokusring-Stil aller Bedienelemente in <main>",
+   "A": "50 Elemente; alle outline solid 2px, offset 2px, Farbe rgb(10,17,41); alle mit :focus-visible",
+   "B": "50 Elemente; alle outline solid 2px, offset 2px, Farbe rgb(10,17,41); alle mit :focus-visible"
+  },
+  {
+   "merkmal": "Fokusring vollständig sichtbar, Pixelprüfung je Seite (Ruhe gegen Fokus, Linie in der Mitte des Umrisses, feste Ebenen ausgeblendet)",
+   "A": "Je Ansicht 46 von 50. Unvollständig sind 4 Kacheln in Express-Anfrage Schritt 1. d1440: „Bad & Wellness“ unten/rechts fehlt, „Wohnbereich & Neubau“ nur oben sichtbar, „Balkon & Terrasse“ unten fehlt, „Treppen & Naturstein“ oben 29 % und rechts fehlt. m390: unten fehlt jeweils, bei „Wohnbereich“ auch oben. Ursache: Nachbarkacheln im lückenlosen Raster verdecken den Ring; kein overflow-Beschnitt. Schritt 2: 11/11, Schritt 3: 9/9",
+   "B": "Je Ansicht 50 von 50; Schritt 1: 6/6, Schritt 2: 11/11, Schritt 3: 9/9"
+  },
+  {
+   "merkmal": "a11y-zusatz Tastatur: Fokus sichtbar (Befunde innerhalb der Einheit)",
+   "A": "d1440: Express-Kacheln 3× „dünn“ und 1× „kontrastarm“ („Wohnbereich & Neubau“). m390: Express-Kacheln 3× „dünn“ und 1× „kontrastarm“",
+   "B": "Keine Befunde in <main>"
+  },
+  {
+   "merkmal": "a11y-zusatz Tastatur: Befunde im Rahmen (Kopf/Leiste, nicht Einheit)",
+   "A": "d1440: Kopfnavigation 3× „dünn“. m390: Cookie-Knopf „unsichtbar“, untere Leiste 3× „kontrastarm“",
+   "B": "d1440: Kopfnavigation 3× „dünn“ und schwebende Knöpfe 2× „unsichtbar“ (Cookie-Einstellungen, WhatsApp). m390: wie X"
+  },
+  {
+   "merkmal": "Fokus verdeckt / Ring teilverdeckt durch feste Ebene (a11y-zusatz)",
+   "A": "Verdeckt 0; teilverdeckt nur der Sprunglink „Zum Hauptinhalt springen“ (Kopf)",
+   "B": "Verdeckt 0; teilverdeckt nur der Sprunglink „Zum Hauptinhalt springen“ (Kopf)"
+  },
+  {
+   "merkmal": "Tab-Reihenfolge, Tastaturfalle, Sprunglink",
+   "A": "1 Sprung rückwärts: textarea#situation-notes → input#calc-name (zweispaltiger Rechner). Falle 0. Erster Tab = Sprunglink. Schritte d1440 123, m390 115",
+   "B": "1 Sprung rückwärts: textarea#situation-notes → input#calc-name. Falle 0. Erster Tab = Sprunglink. Schritte d1440 124, m390 115"
+  },
+  {
+   "merkmal": "Sprungindex",
+   "A": "Nicht vorhanden; in <main> gibt es keine Links auf #bad/#wohnen/#aussen/#untergrund",
+   "B": "<ol aria-label=\"Fachgewerke\"> mit 4 Links „01 Bäder & Wellness“ … „04 Untergrund & DIN 18534 Abdichtung“, je 477×49 px (d1440). Nach Enter auf „03“ liegt der Fokus auf body, der nächste Tab trifft „Fachdetails & Ratgeber: Balkon- & Terrassensanierung“ im Ziel (im Bild). Fokusring vollständig sichtbar (li focus-within:z-10)"
+  },
+  {
+   "merkmal": "Sprungziele unter festem Kopf (Kopf 65 px, html scroll-padding-top 96 px in beiden)",
+   "A": "Artikel #bad/#wohnen/#aussen/#untergrund: scroll-margin 0, Oberkante 96 px (31 px unter dem Kopf). #gewerke/#express-anfrage: scroll-margin 96, Oberkante 192 px. Überschrift jeweils frei",
+   "B": "Alle Ziele (#bad … #untergrund, #ablauf, #kosten-rechner, #express-anfrage): scroll-margin 96, Oberkante 192 px (127 px unter dem Kopf); Überschrift frei"
+  },
+  {
+   "merkmal": "Hero-Knopf „Vor-Ort-Aufmaß vereinbaren“ (#express-anfrage) per Enter",
+   "A": "Ziel 192 px. Fokus bleibt auf dem Link; der nächste Tab geht zu „WhatsApp Schnellkontakt“ (Rücksprung in den Kopfbereich)",
+   "B": "Gleich: Ziel 192 px, Fokus bleibt auf dem Link, nächster Tab „WhatsApp Schnellkontakt“"
+  },
+  {
+   "merkmal": "Überschriftenfolge h1–h3",
+   "A": "H1 → H2 ×4 (Karten) → H2 Ablauf → H3 ×3 → H2 Projekt anfragen → H2 Angebot → H2 Abschluss. Keine eigene Überschrift für den Leistungsbereich. Express-Schritttitel und „Unverbindliche Projektanfrage“ sind keine h-Elemente",
+   "B": "Identische Folge und Wortlaute; gleiche Lücken"
+  },
+  {
+   "merkmal": "Struktur/Benennung der Bereiche",
+   "A": "#gewerke = <section> ohne Namen; <article id=bad …> ohne aria-labelledby. Ablauf und Projekt: <section aria-labelledby=\"ablauf-heading\"/\"projekt-heading\"> ohne id",
+   "B": "#gewerke = <div>; <article id=bad aria-labelledby=\"bad-titel\"> usw.; <section id=\"ablauf\" aria-labelledby=\"ablauf-titel\">, <section id=\"kosten-rechner\" aria-labelledby=\"rechner-heading\">"
+  },
+  {
+   "merkmal": "role=alert / role=status an Meldungen",
+   "A": "Rechner: Einwilligung fehlt → role=alert „Bitte willigen Sie in die Datenverarbeitung zur Kontaktaufnahme ein.“; Serverfehler → role=alert „Test-Ausfall“; Erfolg → role=status. Express: Serverfehler → role=alert „Fehler beim Absenden: Test-Ausfall …“; Erfolg → role=status. Kein zusätzliches aria-live",
+   "B": "Identisch (gleiche Rollen und Wortlaute)"
+  },
+  {
+   "merkmal": "Fokus nach Zustandswechsel (Tastatur)",
+   "A": "Express „Weiter“ (Enter) → body; Express Serverfehler/Erfolg → body. Rechner: Einwilligung fehlt → Fokus bleibt auf dem Absendeknopf; Serverfehler/Erfolg → body",
+   "B": "Identisch"
+  },
+  {
+   "merkmal": "Pflichtfelder / Validierung",
+   "A": "#calc-name, #calc-phone, #funnel-name, #funnel-phone mit required; leer → native Browserblase, keine eigene Meldung, kein aria-invalid/aria-describedby",
+   "B": "Identisch"
+  },
+  {
+   "merkmal": "Sichtbare Labels",
+   "A": "Alle Felder im Rechner und in Express Schritt 3 mit sichtbarem <label>. #calc-custom-area: sichtbares Label „Oder genaue Quadratmeterzahl bekannt:“, überschrieben durch aria-label „Quadratmeterzahl manuell eingeben“. #calc-timing: aria-label = Labeltext. Honigtopf #calc-organization-fax: tabindex -1",
+   "B": "Identisch"
+  },
+  {
+   "merkmal": "autocomplete",
+   "A": "Rechner: name, tel, email, address-level2; custom-area und notes off. Express: name, tel, email; funnel-location und funnel-custom-area ohne Angabe",
+   "B": "Identisch"
+  },
+  {
+   "merkmal": "aria-pressed / aria-valuetext / aria-expanded",
+   "A": "21 Umschalter mit aria-pressed in <main> (Rechner 6 Gewerk + 4 Fläche + 6 Rahmen; Express Schritt 1: 5), Schritt 2: 7. aria-valuetext 0, keine Schieberegler. aria-expanded 0; 4 native <details>/<summary> („Merkmale · 6“)",
+   "B": "21 aria-pressed (gleiche Verteilung), Schritt 2: 7; aria-valuetext 0, keine Schieberegler; aria-expanded 0; keine <details>"
+  },
+  {
+   "merkmal": "Touch-Ziele < 44 px in <main> (m390)",
+   "A": "1: Telefonlink im Abschluss „06441 / 44 83 567“ 248×28 px (d1440 365×41). Karten-Link „Aufmaß anfragen“ genau 123×44 (Grenzwert). Einwilligungs-Checkbox 20×20, mit Label größer",
+   "B": "1: derselbe Telefonlink 248×28 px (d1440 365×41). Karten-Knopf „Aufmaß anfragen“ volle Breite × 51 px (d1440 177×51)"
+  },
+  {
+   "merkmal": "Überlauf bei 320 px (reflow 320×640)",
+   "A": "horizontal 0, ragt heraus 0, Text abgeschnitten 0",
+   "B": "horizontal 0, ragt heraus 0, Text abgeschnitten 0"
+  },
+  {
+   "merkmal": "200 % Zoom, CSS-Zoom 2 auf 1280×800",
+   "A": "Horizontal 0, verdeckt 0. Überlauf 15, alle im Kopf/Fuß. Nie im Bild 64: 7 feste Kopf-Elemente, Rest Fuß-Links ab Dokument-y ≈ 23 200 px; der Lauf hatte nur 57 Scrollpositionen",
+   "B": "Horizontal 0, verdeckt 0. Überlauf 22, davon 8 im Sprungindex (li/a rechte Kante 1299 px bei 1280 px Breite), Rest Kopf/Fuß. Nie im Bild 6 (alle fest im Kopf; 89 Scrollpositionen)"
+  },
+  {
+   "merkmal": "200 % Zoom, Browser-Äquivalent (640×400, DPR 2)",
+   "A": "alle Kennzahlen 0",
+   "B": "alle Kennzahlen 0"
+  },
+  {
+   "merkmal": "Erhöhter Textabstand (WCAG 1.4.12)",
+   "A": "Abgeschnitten 0. Neuer Überlauf 2 (d1440, beide im Kopf: Telefon/Knopf-Gruppe); m390 0",
+   "B": "Abgeschnitten 0. Neuer Überlauf 2 (d1440, Kopf); m390 0"
+  }
+ ],
+ "funktion": [
+  "Kopfbereich rechts (d1440) bzw. unter den Knöpfen (m390): A zeigt eine Fliesenzeichnung mit Datenkarte „Blatt / Leistungen“, „Verband / Drittelverband“, „Betrieb / Fliesenverlegung Tezgel“, „Inhaber / Deniz Tezgel“, „Kammer / HWK Wiesbaden“, „Betrieb seit / 2008“. B zeigt stattdessen den Sprungindex „01 Bäder & Wellness“, „02 Wohnbereiche & Neubau“, „03 Balkon- & Terrassensanierung“, „04 Untergrund & DIN 18534 Abdichtung“, je mit Pfeil-nach-unten-Symbol. Die Datenkarte fehlt in B, der Index fehlt in A.",
+  "Kopfbereich Gestaltung: Die H1 hat in A 2 Zeilen, in B 4 Zeilen (d1440, deutlich größere Schrift). Kicker in A einzeilig „HWK Wiesbaden Fachbetrieb + Aßlar · Wetzlar · Mittelhessen“; in B zwei Einträge mit je „+“ davor. In B steht „DIN 18534“ im Einleitungstext in Monospace. Senkrechte rote Linie: A neben dem Kopfbereich und durchgehend an den Folgebereichen, B nur am Kopfbereich.",
+  "Leistungsbereiche, Anordnung: A als 2×2-Raster aus Karten (Zeichnung oben, Kicker, H2, Text, 4 Plus-Punkte). Darunter der Zuklapper „Merkmale · 6“ (zu), der Rahmenknopf „Fachdetails & Ratgeber: …“ und der Textlink „Aufmaß anfragen“. B als 4 ganzbreite Zeilen, Zeichnung abwechselnd links und rechts, Nummer „01“–„04“ vor „Geprüfte Fachkompetenz“, die 4 Kurzmerkmale als Mono-Chips, darunter „Ausstattungsmerkmale & Vorteile:“ mit 6 Punkten zweispaltig und immer sichtbar, der Textlink „Fachdetails & Ratgeber: …“ und der Rahmenknopf „Aufmaß anfragen“. Die Zeichnungen sind in A und B verschieden.",
+  "Leistungsbereiche, Wortlaut: Einleitungstexte, 4 Kurzmerkmale und die 6 Langmerkmale sind wörtlich gleich. Unterschiede: A-Überschrift der Merkmalliste „Merkmale · 6“ (Summary), B „Ausstattungsmerkmale & Vorteile:“; B zusätzlich „01“–„04“. Zustände: A kann je Karte auf- und zuklappen (natives details), B hat keinen Zustand.",
+  "Ablauf „Ihr verlässlicher Weg zum neuen Traumbelag“: Texte wörtlich gleich (Kicker „Ausführungs-Standards“, 3 Schritte). A zeigt je Schritt eine Zeichnung (Aufmaß-Plan, Raster, Raster mit Haken) und enthält zusätzlich Zeichnungstext „=“ „=“. B hat keine Zeichnungen und ist auf m390 eine senkrechte Zeitleiste mit „+“-Marken. Hintergrund A beige, B weiß mit Linien oben und unten.",
+  "Preisrechner/Projektanfrage: Aufbau, Wortlaute, Zustände und Meldungen in A und B gleich. Erreichbar sind: Ausgangszustand; Auswahl (aria-pressed); die Eingabe einer m²-Zahl hebt die Flächen-Voreinstellung auf (Zusammenfassung „Fläche: 35 m²“); leer absenden (native Blase); Absenden ohne Einwilligung (role=alert); Serverfehler (role=alert „Test-Ausfall“); Erfolg (role=status, „Referenz: TEZ-26-TEST“, „Anfrage erfolgreich übermittelt!“, Knopf „Weitere Projektanfrage senden“). Die Bilder sind nahezu pixelgleich (0 bis < 2 % Abweichung, nur Symbole). Abschnittsüberschrift-ID: A „projekt-heading“, B „rechner-heading“; die Abschnitts-id „kosten-rechner“ gibt es nur in B.",
+  "Express-Anfrage Schritt 1: A ist ein lückenloses Raster 3+2 (d1440; zweite Reihe 2 breite Kacheln, 347 px) ohne Plaketten. B hat Abstände zwischen den Kacheln, 5 gleich breite Kacheln (dritte Zelle der zweiten Reihe leer) und Plaketten „Sehr beliebt“, „Großformat“, „Frostsicher“, „Präzision“, „DIN-Norm“. Symbol für Wohnbereich: A Raster, B Haus. m390: A kompakte Listenzeilen mit Symbol links (Bereich 1200 px), B gestapelte Kacheln mit Plakette rechts oben (1496 px). Der zugängliche Name der B-Kacheln beginnt mit dem Plakettentext, z. B. „Großformat Wohnbereich & Neubau Feinsteinzeug, Küche, Diele & Flure“.",
+  "Express-Anfrage Schritte 2 und 3, Serverfehler, Erfolg: Ablauf, Wortlaute und Bilder in A und B gleich, darunter „Schritt 2: Fläche, Zeitraum & Ort“, „Schritt 3: Kontaktdaten & Absenden“, „Fehler beim Absenden: Test-Ausfall / Sie können die Anfrage alternativ direkt per WhatsApp senden oder anrufen.“ und „Vielen Dank, Prüf Person!“ mit „Vorgangs-Nr.: TEZ-26-TEST“. Auch die Schrittmarken (Haken statt 1/2) sind gleich.",
+  "Abschluss: Wortlaut gleich, darunter „Schnelle Reaktionszeit • Persönliche Betreuung vor Ort • HWK-Fachbetrieb“, 3 Haken-Punkte, „Jetzt kostenfrei anrufen“, „Per WhatsApp schreiben“ und „5,0 Google-Bewertung bei 27 echten Kundenstimmen“. Gestaltung: A helle Karte auf beigem Grund mit roter Senkrechter, dunkler Anruf-Knopf, Stern gefüllt. B dunkle Fläche mit dunkler Karte, heller Anruf-Knopf, Stern umrandet.",
+  "Anker/IDs in <main>, nur A: keine. Nur B: ablauf, kosten-rechner, bad-titel, wohnen-titel, aussen-titel, untergrund-titel, ablauf-titel, rechner-heading. Nur A (Überschriften-IDs): ablauf-heading, projekt-heading. In beiden: gewerke, bad, wohnen, aussen, untergrund, express-anfrage, anfrage-heading, final-cta-heading, calc-* und situation-notes. scroll-margin der Artikel: A 0, B 96 px; daraus folgt die Ziel-Oberkante A 96 px, B 192 px.",
+  "Metadaten gleich: title „Fliesenleger Leistungen Wetzlar | Fachbetrieb Tezgel“, gleiche description, canonical https://www.tezgel.de/leistungen und gleiche JSON-LD-Typen (Organization … Product; WebPage, BreadcrumbList, OfferCatalog).",
+  "Technik: A hat in <main> 4 Bereiche mit content-visibility:auto (contain-intrinsic-size auto 800px, Klasse spaet-zeichnen), B keine. Seitenlänge: d1440 A 9262 px / B 10926 px; m390 A 17378 px / B 18504 px. Konsole beim Laden: 0 Fehler in beiden. In den Fehlerzuständen je 2 erwartete Meldungen (500 und „Anfrageformular Fehler: Error: Test-Ausfall“).",
+  "Rahmen (nicht Teil der Einheit, nur zur Einordnung): d1440 hat A einen zusätzlichen WhatsApp-Knopf im Kopf; B hat schwebende Knöpfe unten links (Cookie-Einstellungen) und unten rechts (WhatsApp). Die mobile untere Leiste und der Fuß sind gleich.",
+  "Sperre (G5): Je Lauf wurde genau ein POST /api/anfrage durch die Attrappe von installSperre beantwortet (Rechner und Express). Serverfehler kamen nur über page.route mit 500; nichts wurde echt versendet."
+ ],
+ "probleme": [
+  "abschnitte.mjs lieferte vereinzelt versetzte Ausschnitte. X d1440 08 (Abschluss) war reproduzierbar um rund 84 px verschoben, mit der Fußoberkante im Bild. Ersetzt durch einen Ausschnitt aus einem Ganzseitenbild nach gleichem Protokoll; alle übrigen Abschnittsbilder wurden gegen das Ganzseitenbild geprüft (Versatz 0). X d1440 05 war im ersten Lauf um 77 px versetzt und kommt aus dem Wiederholungslauf. Im Vorbild war d1440 15 (Abschluss) ebenso versetzt (368 px) und wurde ersetzt; das ebenfalls versetzte Vorbild-Bild 03 wurde nicht ausgewählt.",
+  "Y #gewerke ist ein <div> und wird von abschnitte.mjs nicht als Abschnitt erfasst. Ergänzt durch das eigene Skript gewerke.mjs (gleiches Protokoll, gleiche Streifenregel); die Dateien heißen 01g-*.",
+  "Y m390 z15 (Express-Erfolg) zeigte im ersten Lauf einen Teil des festen Kopfs. Neu aufgenommen; der Wiederholungslauf ist sauber.",
+  "Leer absenden (native Pflichtfeld-Blase) lässt sich im Bildschirmfoto nicht abbilden; dazu gibt es nur Text in beiden.",
+  "Einen Sprungindex gibt es in X nicht; Fokus- und Klick-Zustand daher nur für Y. Das Sprungziel #aussen wurde in X per Adresse (location.hash) erreicht.",
+  "axe.mjs und a11y-zusatz.mjs schreiben ins Repo (belege/, cache/). Deshalb liefen unveränderte Kopien im Scratchpad (werkzeug-kopie, mit verlinkten node_modules); in der kopierten lib.mjs ist nur die Ansicht m390 ergänzt. Der Fehlerzustand von axe.mjs (--fehler) läuft fest mit m375/d1440.",
+  "Fokusringe in Rastern wurden mit einer eigenen Pixelprüfung je Seite gemessen (zustaende.mjs, ringPruefung); Verdeckung durch feste Ebenen stammt aus a11y-zusatz.",
+  "Die Angabe „imBild“ der Meldungen in zustaende-*.json ist nicht aussagekräftig: Sie wurde nach dem Zuschnitt-Scrollen gemessen und ging nicht ins Manifest ein.",
+  "Zur Blindheit wurden die Basis-URLs in allen Ausgabedateien unter u1-leistungen durch „basis-X“ und „basis-Y“ ersetzt. Werkzeug-JSON und Logs liegen unter …/u1-leistungen/werkzeug-kopie und …/u1-leistungen/zustaende-X.json bzw. zustaende-Y.json."
+ ],
+ "abschnitte": [
+  {
+   "name": "Erster Bildschirm (ohne Scrollen, mit festem Kopf)",
+   "ansicht": "d1440",
+   "hinweis": "Rahmen (nicht Teil der Einheit) weicht ab: A hat im Kopf einen zusätzlichen WhatsApp-Knopf; B hat schwebende Knöpfe unten links (Cookie-Einstellungen) und unten rechts (WhatsApp).",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/d1440/00-erster-bildschirm.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/d1440/00-erster-bildschirm.jpg"
+   ]
+  },
+  {
+   "name": "Kopfbereich: H1 „Fliesenleger Leistungen & Fachgewerke Wetzlar“, Einleitung, drei Handlungsknöpfe",
+   "ansicht": "d1440",
+   "hinweis": "Rechts zeigt A eine Fliesenzeichnung mit Datenkarte, B den Sprungindex 01–04. Die H1 läuft bei A über 2 Zeilen (Bereich 755 px hoch), bei B über 4 Zeilen (Bereich 1047 px hoch).",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/d1440/01-Fliesenleger Leistungen & Fachgewerke We.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/d1440/01-Fliesenleger Leistungen & Fachgewerke We.jpg"
+   ]
+  },
+  {
+   "name": "Leistungsbereiche #gewerke (Bäder & Wellness, Wohnbereiche & Neubau, Balkon- & Terrassensanierung, Untergrund & DIN 18534 Abdichtung)",
+   "ansicht": "d1440",
+   "hinweis": "Anders zugeschnitten: Bei A ist #gewerke ein <section>, bei B ein <div>. abschnitte.mjs erfasst B deshalb nicht; die B-Bilder kommen aus dem Ergänzungsskript gewerke.mjs (gleiches Protokoll, Streifen zu je 2 × Bildschirmhöhe). Höhe: A 2324 px (2×2-Raster), B 3938 px (4 ganzbreite Zeilen).",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/d1440/02-Bäder & Wellness.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/d1440/03-Bäder & Wellness.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/d1440/01g-Leistungsbereiche (gewerke)-1.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/d1440/01g-Leistungsbereiche (gewerke)-2.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/d1440/01g-Leistungsbereiche (gewerke)-3.jpg"
+   ]
+  },
+  {
+   "name": "Ablauf „Ihr verlässlicher Weg zum neuen Traumbelag“ (3 Schritte)",
+   "ansicht": "d1440",
+   "hinweis": "A zeigt je Schritt eine Zeichnung (Bereich 1042 px hoch), B zeigt keine Zeichnungen (755 px).",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/d1440/04-Ihr verlässlicher Weg zum neuen Traumbel.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/d1440/02-Ihr verlässlicher Weg zum neuen Traumbel.jpg"
+   ]
+  },
+  {
+   "name": "Preisrechner/Projektanfrage „Projekt anfragen & Situation schildern“",
+   "ansicht": "d1440",
+   "hinweis": "Baustein in beiden Fassungen inhaltlich gleich. A 05 stammt aus dem Wiederholungslauf, weil der erste Lauf um 77 px versetzt war.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/d1440/05-Projekt anfragen & Situation schildern.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/d1440/06-Projekt anfragen & Situation schildern.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/d1440/03-Projekt anfragen & Situation schildern.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/d1440/04-Projekt anfragen & Situation schildern.jpg"
+   ]
+  },
+  {
+   "name": "Express-Anfrage „Fordern Sie Ihr persönliches Angebot an“ (Ausgangszustand Schritt 1)",
+   "ansicht": "d1440",
+   "hinweis": "Kachelraster Schritt 1: A lückenlos 3+2 ohne Plaketten, B mit Abständen 3+2 und Plaketten. Höhe A 912 px, B 972 px.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/d1440/07-Fordern Sie Ihr persönliches Angebot an.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/d1440/05-Fordern Sie Ihr persönliches Angebot an.jpg"
+   ]
+  },
+  {
+   "name": "Abschluss „Planen Sie ein Fliesen- oder Badprojekt? Sprechen Sie direkt mit Fachbetriebsleiter Deniz Tezgel.“",
+   "ansicht": "d1440",
+   "hinweis": "Das A-Bild war bei abschnitte.mjs reproduzierbar um rund 84 px versetzt (Fußoberkante im Bild). Ersetzt durch einen Ausschnitt aus dem Ganzseitenbild nach gleichem Protokoll (y 7172, h 894). A ist hell auf beigem Grund, B eine dunkle Fläche.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/d1440/08-Planen Sie ein Fliesen- oder Badprojekt?.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/d1440/06-Planen Sie ein Fliesen- oder Badprojekt?.jpg"
+   ]
+  },
+  {
+   "name": "Fuß (Rahmen, nicht Teil der Einheit)",
+   "ansicht": "d1440",
+   "hinweis": "Inhaltlich gleich; nur zur Vollständigkeit.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/d1440/09-Fuß: footer.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/d1440/07-Fuß: footer.jpg"
+   ]
+  },
+  {
+   "name": "Erster Bildschirm (ohne Scrollen, mit festem Kopf und unterer Leiste)",
+   "ansicht": "m390",
+   "hinweis": "Bei A sind alle drei Handlungsknöpfe im ersten Bildschirm, bei B wegen der größeren H1 nur der erste ganz und der zweite angeschnitten.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/00-erster-bildschirm.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/00-erster-bildschirm.jpg"
+   ]
+  },
+  {
+   "name": "Kopfbereich: H1, Einleitung, Handlungsknöpfe",
+   "ansicht": "m390",
+   "hinweis": "Unter den Knöpfen zeigt A Zeichnung und Datenkarte (1326 px), B den Sprungindex 01–04 (1188 px).",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/01-Fliesenleger Leistungen & Fachgewerke We.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/01-Fliesenleger Leistungen & Fachgewerke We.jpg"
+   ]
+  },
+  {
+   "name": "Leistungsbereiche #gewerke",
+   "ansicht": "m390",
+   "hinweis": "B-Bilder wie bei d1440 aus gewerke.mjs. Höhe A 4093 px (Merkmale zugeklappt), B 5815 px (6 Merkmale je Karte offen).",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/02-Bäder & Wellness.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/03-Bäder & Wellness.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/04-Bäder & Wellness.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/01g-Leistungsbereiche (gewerke)-1.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/01g-Leistungsbereiche (gewerke)-2.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/01g-Leistungsbereiche (gewerke)-3.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/01g-Leistungsbereiche (gewerke)-4.jpg"
+   ]
+  },
+  {
+   "name": "Ablauf „Ihr verlässlicher Weg zum neuen Traumbelag“",
+   "ansicht": "m390",
+   "hinweis": "A: gestapelte Karten mit Zeichnung (1933 px). B: senkrechte Zeitleiste mit „+“-Marken, ohne Zeichnungen (1115 px).",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/05-Ihr verlässlicher Weg zum neuen Traumbel.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/06-Ihr verlässlicher Weg zum neuen Traumbel.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/02-Ihr verlässlicher Weg zum neuen Traumbel.jpg"
+   ]
+  },
+  {
+   "name": "Preisrechner/Projektanfrage „Projekt anfragen & Situation schildern“",
+   "ansicht": "m390",
+   "hinweis": "Inhaltlich gleich, je 4075 px hoch.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/07-Projekt anfragen & Situation schildern.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/08-Projekt anfragen & Situation schildern.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/09-Projekt anfragen & Situation schildern.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/03-Projekt anfragen & Situation schildern.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/04-Projekt anfragen & Situation schildern.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/05-Projekt anfragen & Situation schildern.jpg"
+   ]
+  },
+  {
+   "name": "Express-Anfrage „Fordern Sie Ihr persönliches Angebot an“ (Ausgangszustand Schritt 1)",
+   "ansicht": "m390",
+   "hinweis": "A: kompakte Listenzeilen mit Symbol links (1200 px). B: gestapelte Kacheln mit Plakette rechts oben (1496 px).",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/10-Fordern Sie Ihr persönliches Angebot an.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/06-Fordern Sie Ihr persönliches Angebot an.jpg"
+   ]
+  },
+  {
+   "name": "Abschluss „Planen Sie ein Fliesen- oder Badprojekt? …“",
+   "ansicht": "m390",
+   "hinweis": "A hell, B dunkel; Texte gleich.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/11-Planen Sie ein Fliesen- oder Badprojekt?.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/07-Planen Sie ein Fliesen- oder Badprojekt?.jpg"
+   ]
+  },
+  {
+   "name": "Fuß (Rahmen, nicht Teil der Einheit)",
+   "ansicht": "m390",
+   "hinweis": "Inhaltlich gleich.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/12-Fuß: footer.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/13-Fuß: footer.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/14-Fuß: footer.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/08-Fuß: footer.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/09-Fuß: footer.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/10-Fuß: footer.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Sprungindex – Tastaturfokus auf „02 Wohnbereiche & Neubau“ (Baustein-Ausschnitt)",
+   "ansicht": "d1440",
+   "hinweis": "Nur in B vorhanden. A hat keinen Sprungindex: in <main> gibt es keine Links auf #bad … #untergrund.",
+   "bilder_A": [],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/d1440/z01-sprungindex-fokus.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Sprungindex – Tastaturfokus auf „02 Wohnbereiche & Neubau“ (Baustein-Ausschnitt)",
+   "ansicht": "m390",
+   "hinweis": "Nur in B vorhanden.",
+   "bilder_A": [],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/z01-sprungindex-fokus.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Sprungziel #aussen erreicht (Bildschirm mit festem Kopf)",
+   "ansicht": "d1440",
+   "hinweis": "Auf verschiedenen Wegen erreicht: A per Adresse (location.hash = aussen), weil es keinen Index gibt; B per Klick im Sprungindex. Ziel-Oberkante A 96 px, B 192 px unter Bildschirmoberkante (fester Kopf 65 px); Überschrift in beiden frei.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/d1440/z02-sprungziel-aussen.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/d1440/z02-sprungziel-aussen.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Sprungziel #aussen erreicht (Bildschirm mit festem Kopf)",
+   "ansicht": "m390",
+   "hinweis": "Wie d1440: A per Adresse, B per Klick. Bei B steht oberhalb des Ziels noch das Ende der vorigen Karte (Links „Fachdetails …“, „Aufmaß anfragen“) im Bild.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/z02-sprungziel-aussen.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/z02-sprungziel-aussen.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Karte „Bäder & Wellness“ in Ruhe (Baustein-Ausschnitt article#bad)",
+   "ansicht": "d1440",
+   "hinweis": "A-Karte 607×1065 px (Rasterzelle), B-Karte 1215×828 px (ganze Breite).",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/d1440/z03-karte-bad.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/d1440/z03-karte-bad.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Karte „Bäder & Wellness“ in Ruhe (Baustein-Ausschnitt article#bad)",
+   "ansicht": "m390",
+   "hinweis": "A 992 px hoch (Merkmale zugeklappt), B 1483 px (Merkmale offen).",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/z03-karte-bad.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/z03-karte-bad.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Karte – Tastaturfokus auf „Merkmale · 6“ (Auf-/Zuklapper)",
+   "ansicht": "d1440",
+   "hinweis": "Nur in A: <details>/<summary>. B hat keinen Zuklapper; die Merkmalliste ist immer sichtbar.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/d1440/z04-karte-bad-merkmale-fokus.jpg"
+   ],
+   "bilder_B": []
+  },
+  {
+   "name": "Zustand: Karte – „Merkmale · 6“ geöffnet (Enter)",
+   "ansicht": "d1440",
+   "hinweis": "Nur in A. Die offene Liste entspricht im Wortlaut der B-Liste „Ausstattungsmerkmale & Vorteile:“ (vgl. B z03).",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/d1440/z05-karte-bad-merkmale-offen.jpg"
+   ],
+   "bilder_B": []
+  },
+  {
+   "name": "Zustand: Karte – Tastaturfokus auf „Merkmale · 6“ (Auf-/Zuklapper)",
+   "ansicht": "m390",
+   "hinweis": "Nur in A.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/z04-karte-bad-merkmale-fokus.jpg"
+   ],
+   "bilder_B": []
+  },
+  {
+   "name": "Zustand: Karte – „Merkmale · 6“ geöffnet (Enter)",
+   "ansicht": "m390",
+   "hinweis": "Nur in A.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/z05-karte-bad-merkmale-offen.jpg"
+   ],
+   "bilder_B": []
+  },
+  {
+   "name": "Zustand: Rechner – Tastaturfokus auf Gewerk-Kachel „XXL-Großformat (ab 120 cm)“ (Kachelraster)",
+   "ansicht": "d1440",
+   "hinweis": "Pixelgleich (0 abweichende Pixel).",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/d1440/z06-rechner-gewerk-fokus.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/d1440/z06-rechner-gewerk-fokus.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Rechner – Tastaturfokus auf Gewerk-Kachel „XXL-Großformat (ab 120 cm)“ (Kachelraster)",
+   "ansicht": "m390",
+   "hinweis": "Nahezu gleich: ca. 2 % abweichende Pixel, nur an Symbolen und Zeilenumbrüchen.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/z06-rechner-gewerk-fokus.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/z06-rechner-gewerk-fokus.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Rechner – Auswahl geändert (XXL-Großformat, Fläche, Altfliesen, 35 m²) (ganzer Baustein)",
+   "ansicht": "d1440",
+   "hinweis": "Nahezu pixelgleich (< 0,2 % Abweichung). In beiden hebt die Eingabe 35 m² die Flächen-Voreinstellung auf; die Zusammenfassung zeigt „Fläche: 35 m²“.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/d1440/z07-rechner-auswahl.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/d1440/z07-rechner-auswahl.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Rechner – Auswahl geändert (ganzer Baustein, 3 Streifen)",
+   "ansicht": "m390",
+   "hinweis": "Nahezu gleich.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/z07-rechner-auswahl-1.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/z07-rechner-auswahl-2.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/z07-rechner-auswahl-3.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/z07-rechner-auswahl-1.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/z07-rechner-auswahl-2.jpg",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/z07-rechner-auswahl-3.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Rechner – Absenden ohne Einwilligung (Meldung role=alert), Anfrage-Spalte",
+   "ansicht": "d1440",
+   "hinweis": "Gleich. Der Fokus bleibt sichtbar auf „Unverbindliche Anfrage absenden“.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/d1440/z08-rechner-einwilligung-fehlt.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/d1440/z08-rechner-einwilligung-fehlt.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Rechner – Absenden ohne Einwilligung (Meldung role=alert), Anfrage-Spalte",
+   "ansicht": "m390",
+   "hinweis": "Gleich.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/z08-rechner-einwilligung-fehlt.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/z08-rechner-einwilligung-fehlt.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Rechner – Serverfehler (500 per page.route), Anfrage-Spalte",
+   "ansicht": "d1440",
+   "hinweis": "Gleich: Meldung „Test-Ausfall“ mit role=alert, Fokus danach auf body.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/d1440/z09-rechner-serverfehler.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/d1440/z09-rechner-serverfehler.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Rechner – Serverfehler (500 per page.route), Anfrage-Spalte",
+   "ansicht": "m390",
+   "hinweis": "Gleich.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/z09-rechner-serverfehler.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/z09-rechner-serverfehler.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Rechner – Erfolg (Attrappe, nichts versendet), Anfrage-Spalte",
+   "ansicht": "d1440",
+   "hinweis": "Pixelgleich. Die Spalte behält die Höhe der linken Spalte, die Meldung steht mittig in einer großen dunklen Fläche (beide).",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/d1440/z10-rechner-erfolg.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/d1440/z10-rechner-erfolg.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Rechner – Erfolg (Attrappe, nichts versendet), Anfrage-Spalte",
+   "ansicht": "m390",
+   "hinweis": "Gleich.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/z10-rechner-erfolg.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/z10-rechner-erfolg.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Express-Anfrage Schritt 1 – Tastaturfokus auf zweite Kachel „Wohnbereich & Neubau“ (Anfragekarte)",
+   "ansicht": "d1440",
+   "hinweis": "Bei A ist der Fokusring der Kachel im lückenlosen Raster nur oben sichtbar (Pixelprüfung). Bei B ist er auf allen vier Seiten sichtbar.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/d1440/z11-anfrage-schritt1-fokus.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/d1440/z11-anfrage-schritt1-fokus.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Express-Anfrage Schritt 1 – Tastaturfokus auf zweite Kachel „Wohnbereich & Neubau“ (Anfragekarte)",
+   "ansicht": "m390",
+   "hinweis": "A: Ring nur links und rechts sichtbar, oben und unten verdeckt. B: vollständig.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/z11-anfrage-schritt1-fokus.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/z11-anfrage-schritt1-fokus.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Express-Anfrage Schritt 2 (Enter auf „Weiter zu Schritt 2: Fläche & Ort“)",
+   "ansicht": "d1440",
+   "hinweis": "Nahezu pixelgleich (< 0,5 %). Fokus danach in beiden auf body.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/d1440/z12-anfrage-schritt2.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/d1440/z12-anfrage-schritt2.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Express-Anfrage Schritt 2",
+   "ansicht": "m390",
+   "hinweis": "Nahezu gleich.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/z12-anfrage-schritt2.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/z12-anfrage-schritt2.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Express-Anfrage Schritt 3 (Kontaktdaten)",
+   "ansicht": "d1440",
+   "hinweis": "Nahezu gleich.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/d1440/z13-anfrage-schritt3.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/d1440/z13-anfrage-schritt3.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Express-Anfrage Schritt 3 (Kontaktdaten)",
+   "ansicht": "m390",
+   "hinweis": "Nahezu gleich.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/z13-anfrage-schritt3.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/z13-anfrage-schritt3.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Express-Anfrage Serverfehler (500 per page.route)",
+   "ansicht": "d1440",
+   "hinweis": "Gleich (role=alert).",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/d1440/z14-anfrage-serverfehler.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/d1440/z14-anfrage-serverfehler.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Express-Anfrage Serverfehler (500 per page.route)",
+   "ansicht": "m390",
+   "hinweis": "Gleich.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/z14-anfrage-serverfehler.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/z14-anfrage-serverfehler.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Express-Anfrage Erfolg (Attrappe, nichts versendet)",
+   "ansicht": "d1440",
+   "hinweis": "Gleich (role=status).",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/d1440/z15-anfrage-erfolg.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/d1440/z15-anfrage-erfolg.jpg"
+   ]
+  },
+  {
+   "name": "Zustand: Express-Anfrage Erfolg (Attrappe, nichts versendet)",
+   "ansicht": "m390",
+   "hinweis": "Gleich. B-Bild aus dem Wiederholungslauf, weil im ersten Lauf ein Stück des festen Kopfs eingeblendet war.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/X/m390/z15-anfrage-erfolg.jpg"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u1-leistungen/Y/m390/z15-anfrage-erfolg.jpg"
+   ]
+  }
+ ]
+}
