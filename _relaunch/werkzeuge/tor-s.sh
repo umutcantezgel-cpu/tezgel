@@ -9,7 +9,7 @@
 #   5 Altsystem-Suche in geänderten src-Dateien · 6 texte2 (Build gegen Build, Freigabe MIKROTEXTE.md): rot 0 ·
 #   7 Server HEAD auf 4360 · 8 axe mit Zuständen (0 ernst/kritisch) · 9 a11y-zusatz (Zahlen, harte Kennzahlen prüft der
 #   Orchestrator) · 10 Wortbruch 0 · 11 Fotos 4 Ansichten (Überlauf, Konsolenfehler; Sichtung durch den Orchestrator) ·
-#   12 Funktionstests (beide Projekte) · 13 (--q) Pixel-Stichprobe.
+#   12 Funktionstests (beide Projekte) · 13 (--q) Pixel-Stichprobe. Port des HEAD-Servers: TOR_PORT (Standard 4360).
 # Exit 0 = alle automatischen Stufen grün (Sichtung und a11y-Kennzahlen bleiben Orchestrator-Aufgabe), 1 = rot.
 set -uo pipefail
 REPO="$(git -C "$(dirname "$0")" rev-parse --show-toplevel)"; W="$REPO/_relaunch/werkzeuge"
@@ -20,7 +20,7 @@ LIVE="$(git -C "$REPO" rev-parse --short "$1")"; KENNUNG="$2"; SEITEN="$3"; SPEC
 Q=0; for a in "$@"; do [ "$a" = "--q" ] && Q=1; done; [ "$SPECS" = "--q" ] && SPECS=""
 KOPF="$(git -C "$REPO" rev-parse --short HEAD)"
 AUS="$REPO/_relaunch/belege/$KENNUNG/tor"; mkdir -p "$AUS"; ROH="$AUS/ergebnis.txt"; : > "$ROH"
-PORT=4360; HEAD_URL="http://127.0.0.1:$PORT"
+PORT="${TOR_PORT:-4360}"; HEAD_URL="http://127.0.0.1:$PORT"
 rot=0
 stufe() { echo "$1 $2 ${3:-}" | tee -a "$ROH"; [ "$2" = "0" ] || rot=1; }
 
