@@ -66,5 +66,11 @@ Stand 10.10.2026 · P3-00j · 10 Einträge für `/`, alle Klasse 1. Orchestrator
 | `/kontakt` | `≤ 45 km` | `–` | 1 | P4-08f | wie oben |
 | `*` | `WhatsApp-Nachricht an Fliesenverlegung Tezgel senden` | `–` | 2 | P4-13 | Nur im **Server-HTML** entfernt: Der schwebende Kanal wird wie im Bestand erst im Browser eingehängt (H1, E-029 Berichtigung, E-034). Im Browser steht er unverändert mit diesem Namen (`belege/p4-tor-r2/kanal/kanal-probe-4321.json`, 7 Seiten × m375/d1440; Funktionstest F-10 „Widget /“). Keine Textänderung (P4-GEG2 N-J). |
 | `/leistungen` | `Merkmale · 6` | `Ausstattungsmerkmale & Vorteile:` | 1 | F-01 (E-039) | Beschriftung des Aufklappers je Gewerk: zurück zum Bestandswortlaut (Werkstatt-Fassung hatte „Merkmale · {Anzahl}“ gesetzt; Gutachten u1, Stolperstein Wortlaut). Die Zahl entfällt, die Liste nennt die Merkmale selbst |
+| `/blog` | `·` | `–` | 1 | F-03 (E-039) | Kennzeile der Ratgeber-Karten: Das Trennzeichen „·“ war aria-hidden (reine Typografie, kein Wortlaut) und entfällt, weil Kategorie, Lesezeit und Datum jetzt als eigene Elemente mit Symbol stehen (Gutachten u3 „Metazeile ohne Trennpunkt am Zeilenende“); alle Angaben bleiben wörtlich |
+| `/blog` | `4 Min. ·` | `–` | 1 | F-03 (E-039) | wie oben; „4 Min.“ steht als eigenes Element vor dem Datum |
+| `/blog` | `5 Min. ·` | `–` | 1 | F-03 (E-039) | wie oben; „5 Min.“ steht als eigenes Element vor dem Datum |
+| `/blog` | `2 Min. ·` | `–` | 1 | F-03 (E-039) | wie oben; „2 Min.“ steht als eigenes Element vor dem Datum |
+| `/leistungen/*` | `Telefon` | `–` | 1 | F-02 (E-039) | Beschriftung der zweiten Kontaktliste der Werkstatt-Fassung im Direktkontakt entfällt mit der Liste (Gutachten u2: keine doppelte Kontaktliste mit 16–19 px hohen Links); Telefon-, WhatsApp- und E-Mail-Weg bleiben als Knöpfe bzw. Zeile mit 44 px (mailto 4×, wie live) |
+| `/leistungen/*` | `E-Mail` | `–` | 1 | F-02 (E-039) | wie oben; die E-Mail-Zeile steht als eigene Zeile mit Etikett im Direktkontakt |
 
 Aufgehoben: Die Zeile `*` „WhatsApp-Chat starten“ → „–“ (P3-06) ist gestrichen. Der Kern-Kopf führt den Link ab lg wieder mit dem Bestandsnamen (P4-13, E-029 Berichtigung, E-034).
