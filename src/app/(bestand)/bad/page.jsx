@@ -201,10 +201,10 @@ export default function BadPage() {
                 <Abschnitt flaeche="fliese" leitachse spaet>
                     <div className="grid gap-y-12 lg:grid-cols-12 lg:gap-x-12">
                         <div className="min-w-0 lg:col-span-8">
-                            <div id="projekt-check" role="region" aria-label="Bad-Projektcheck" className="scroll-mt-24">
+                            <div id="projekt-check" role="region" aria-label="Bad-Projektcheck">
                                 <BadProjektCheck />
                             </div>
-                            <div id="anfrage" role="region" aria-label="Badanfrage" className="mt-12 scroll-mt-24 border-t border-fuge pt-12">
+                            <div id="anfrage" role="region" aria-label="Badanfrage" className="mt-12 border-t border-fuge pt-12">
                                 <BadanfrageFunnel />
                             </div>
                         </div>
