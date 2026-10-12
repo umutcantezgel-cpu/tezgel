@@ -28,9 +28,11 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                         ['Ausstattung', tierLabel],
                         ['Wünsche', extras.join(', ') || 'Keine Extras gewählt']
                     ].map(([term, value]) => (
-                        <div key={term} className="flex flex-col gap-1 py-2 sm:flex-row sm:justify-between sm:gap-3">
+                        // Zeile erst ab xl nebeneinander: die Spalte ist seit der Rückfrage-Spalte (E4-NACH-07) schmal, lange
+                        // Werte liefen sonst über den Rand (E3-SICHT-ERZ Befund 16)
+                        <div key={term} className="flex flex-col gap-1 py-2 xl:flex-row xl:justify-between xl:gap-3">
                             <dt className="shrink-0 text-tinte-2">{term}</dt>
-                            <dd className="break-words font-semibold text-tinte sm:text-right">{value}</dd>
+                            <dd className="min-w-0 break-words font-semibold text-tinte hyphens-auto xl:text-right">{value}</dd>
                         </div>
                     ))}
                 </dl>
@@ -227,7 +229,7 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                 )}
 
                 <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon" className="w-full">
-                    Sofort anrufen: {COMPANY_DATA.contact.phone}
+                    Sofort anrufen: <span className="whitespace-nowrap font-mono">{COMPANY_DATA.contact.phone}</span>
                 </Knopf>
             </div>
         </div>
