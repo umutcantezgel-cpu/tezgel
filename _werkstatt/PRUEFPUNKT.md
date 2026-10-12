@@ -1,9 +1,9 @@
 # PRUEFPUNKT
 
 - Etappe: E4 · Stand 12.10.2026 ~08:05 CEST · zweiter Durchgang E4-N2-01…13 abgenommen (Commits im PLAN); Prüfstufe A der Bausteine (E4-N2-02-PA) läuft. E4 Familien: E4-BAU-01 (fb069cf), -02 (559975b), -03 (dc5f2ae) abgenommen; -04, -05, -06 laufen. main = 6156079 (live), Push nur auf den Arbeitsbranch.
-- Jetzt: zweiter und letzter Durchgang E4-N2-01…13 (PLAN „Offene Punkte · E3-Tor, Anlauf 2“). Umgesetzt durch den Orchestrator: -01 (2229ba8, 066aa25), -02/-03 (172bd63). Laufend: E4-N2-01-PA (Prüfstufe A Mängel), Baumeister -05 (/leistungen), -06 (/leistungen/[id]), -07 (/standorte). Danach -04, -08, -09, -10 (nach -01-PA), -11, -12, -13; Prüfstufe A für -02/-03 (Bilder aller Erzählansichten, Bewegungsfolgen /bad, /standorte).
+- Jetzt: E4 Familien nach PLAN (E4-BAU-04…11, je Paket Prüfstufe A, Commit, Push; 4 Plätze); Rückgabe E4-N2-02-PA auswerten. Danach E4-PRUEF-B (Prüfstufe B der Etappe), E5 (Spezifikationen im Generator, E5-BAU-10 von Hand), E6.
 - Kleinpunkte nach E4-N2: `src/components/sections/CompanyHistory.jsx` verwaist (Firmengeschichte steht jetzt in /ueber-uns) → mit E6-BAU-11 entfernen; Rinne im Schnitt für `bad`/`untergrund` (vorgaben.ts); Leitachse mit Abschnittsbezug statt Verdeckung (/ueber-uns); mobil Einstieg der Arbeitsansichten kürzer (/blog erster Eintrag bei ~1150 px).
-- Danach: E4 Familien – Briefings E4-BAU-01…11 bereit (`_werkstatt/pakete/`), E5-Spezifikationen im Generator `scratchpad/orch/spez/e4/erzeuge.py` (E5-BAU-10 von Hand).
+- Briefings E4-BAU-01…11 liegen in `_werkstatt/pakete/` (Generator `scratchpad/orch/spez/e4/erzeuge.py`, dort auch E5-BAU-01…09/-11).
 - Offene Menschen-Fragen: M-15 bis M-26.
 
 ## Vorheriger Stand (überholt)
