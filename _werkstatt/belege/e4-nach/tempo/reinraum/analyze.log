@@ -1,0 +1,5 @@
+✓ Running next.config.ts took 53ms
+  Analyzing a production build...
+✓ Analyze completed in 36.5s. Results written to /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/reinraum-3b10790/.next/diagnostics/analyze.
+To explore the analyze results interactively, run `next experimental-analyze` without `--output`.
+exit 0
