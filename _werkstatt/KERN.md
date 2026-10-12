@@ -140,7 +140,7 @@ Neutrale auf Farbton 228°, gestuft nach Soll-Kontrast gegen Kalk; genau ein Akz
   | `einzugsband` | Orientierung: Zonen ab Aßlar | Laden (CSS ab dem ersten Bild, Planblatt des Einstiegs; E4-NACH-02) | Abdeckung schrumpft, dauer-3 · setzen, Staffel 5 je Zone | Endzustand sofort |
   | `verband` | Rückmeldung: Verband wechselt, Reihen gleiten um ½ bzw. ⅓ Platte | Auswahl (Radiogruppe) | dauer-3 · setzen | Sofortzustand |
   | `fugenband` | Zusammenhang: Jahre an der Fuge | Scroll (view-timeline) | linear an Scroll | Endzustand |
-  | `leitachse` | Orientierung: Lesefortschritt an der Achse | Scroll (scroll-timeline) | linear an Scroll | rotes Stück voll, statisch |
+  | `leitachse` | Orientierung: Lesefortschritt an der Achse | Scroll (scroll-timeline) | linear an Scroll | Grundschicht `fuge`, nichts gezogen (KERN-Regel 2; R-01a, 12.10.2026) |
   | `anriss` | Hierarchie: Schlüsselwort einer Stimme | IO 50 % | dauer-4 · setzen | Strich sofort sichtbar |
   | `auftritt` | Hierarchie: Abschnitt rückt 8 px in die Flucht | IO 20 % | dauer-3 · setzen | Überblendung dauer-2 |
   | `aufklappen` | Rückmeldung: Menü, Akkordeon, Mega-Menü | Klick/Taste | auf: dauer-2 · setzen; zu: dauer-1 · weg | Sofortzustand |
