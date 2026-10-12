@@ -1,0 +1,3623 @@
+{
+ "base": "http://127.0.0.1:4350",
+ "erstellt": "2026-10-12T21:56:56.691Z",
+ "ergebnis": [
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "d1440",
+   "bewegung": "no-preference",
+   "ohneJs": false,
+   "html_klasse": "archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable k-bewegung k-modul",
+   "hoehe": 10077,
+   "bildschirme": 42,
+   "max_blickfaenge": 1,
+   "ueber_eins": [],
+   "je_bildschirm": [
+    {
+     "n": 0,
+     "y": 0,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-00.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 2,
+     "gruppen": [
+      {
+       "x": 882,
+       "y": 166,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "div.einzugsband.relative > p.inline-flex.items-center.gap-2 > svg.inline-block.shrink-0",
+       "idx": 751
+      },
+      {
+       "x": 908,
+       "y": 501,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 800
+      }
+     ]
+    },
+    {
+     "n": 1,
+     "y": 225,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-01.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 908,
+       "y": 276,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 800
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "y": 450,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-02.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 3,
+     "y": 675,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-03.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 4,
+     "y": 900,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-04.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 5,
+     "y": 1125,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-05.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 6,
+     "y": 1350,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-06.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 145,
+       "y": 784,
+       "w": 794,
+       "h": 2,
+       "pixel": 1588,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 7,
+     "y": 1575,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-07.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 145,
+       "y": 559,
+       "w": 794,
+       "h": 2,
+       "pixel": 1588,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 8,
+     "y": 1800,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-08.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 145,
+       "y": 334,
+       "w": 794,
+       "h": 2,
+       "pixel": 1588,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 9,
+     "y": 2025,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-09.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 145,
+       "y": 109,
+       "w": 794,
+       "h": 2,
+       "pixel": 1588,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 10,
+     "y": 2250,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-10.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 11,
+     "y": 2475,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-11.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 12,
+     "y": 2700,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-12.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 13,
+     "y": 2925,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-13.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 14,
+     "y": 3150,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-14.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 15,
+     "y": 3375,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-15.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 683,
+       "w": 2,
+       "h": 217,
+       "pixel": 429,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 16,
+     "y": 3600,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-16.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 458,
+       "w": 2,
+       "h": 442,
+       "pixel": 879,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 17,
+     "y": 3825,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-17.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 233,
+       "w": 2,
+       "h": 667,
+       "pixel": 1329,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 18,
+     "y": 4050,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-18.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 65,
+       "w": 2,
+       "h": 835,
+       "pixel": 1670,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 19,
+     "y": 4275,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-19.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 65,
+       "w": 2,
+       "h": 835,
+       "pixel": 1670,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 20,
+     "y": 4500,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-20.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 65,
+       "w": 2,
+       "h": 835,
+       "pixel": 1670,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 21,
+     "y": 4725,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-21.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 65,
+       "w": 2,
+       "h": 787,
+       "pixel": 1574,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 22,
+     "y": 4950,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-22.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 65,
+       "w": 2,
+       "h": 635,
+       "pixel": 1270,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 23,
+     "y": 5175,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-23.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 65,
+       "w": 2,
+       "h": 482,
+       "pixel": 964,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 24,
+     "y": 5400,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-24.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 65,
+       "w": 2,
+       "h": 330,
+       "pixel": 660,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 25,
+     "y": 5625,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-25.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 65,
+       "w": 2,
+       "h": 177,
+       "pixel": 354,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 26,
+     "y": 5850,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-26.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 65,
+       "w": 2,
+       "h": 24,
+       "pixel": 48,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 27,
+     "y": 6075,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-27.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 28,
+     "y": 6300,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-28.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 839,
+       "w": 2,
+       "h": 61,
+       "pixel": 122,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 29,
+     "y": 6525,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-29.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 614,
+       "w": 2,
+       "h": 286,
+       "pixel": 572,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 30,
+     "y": 6750,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-30.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 389,
+       "w": 2,
+       "h": 457,
+       "pixel": 914,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 31,
+     "y": 6975,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-31.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 164,
+       "w": 2,
+       "h": 472,
+       "pixel": 944,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 32,
+     "y": 7200,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-32.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 65,
+       "w": 2,
+       "h": 361,
+       "pixel": 722,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 33,
+     "y": 7425,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-33.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 65,
+       "w": 2,
+       "h": 151,
+       "pixel": 302,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 34,
+     "y": 7650,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-34.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 35,
+     "y": 7875,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-35.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 36,
+     "y": 8100,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-36.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 37,
+     "y": 8325,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-37.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 38,
+     "y": 8550,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-38.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 112,
+       "y": 689,
+       "w": 2,
+       "h": 60,
+       "pixel": 120,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1400
+      }
+     ]
+    },
+    {
+     "n": 39,
+     "y": 8775,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-39.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 112,
+       "y": 464,
+       "w": 2,
+       "h": 60,
+       "pixel": 120,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1400
+      }
+     ]
+    },
+    {
+     "n": 40,
+     "y": 9000,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-40.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 112,
+       "y": 239,
+       "w": 2,
+       "h": 60,
+       "pixel": 120,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1400
+      }
+     ]
+    },
+    {
+     "n": 41,
+     "y": 9177,
+     "datei": "../rot-nachher-q/standorte__giessen-d1440-no-preference-41.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 112,
+       "y": 65,
+       "w": 2,
+       "h": 57,
+       "pixel": 114,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1400
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "m390",
+   "bewegung": "no-preference",
+   "ohneJs": false,
+   "html_klasse": "archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable k-bewegung k-modul",
+   "hoehe": 16696,
+   "bildschirme": 77,
+   "max_blickfaenge": 1,
+   "ueber_eins": [],
+   "je_bildschirm": [
+    {
+     "n": 0,
+     "y": 0,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-00.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 41,
+       "y": 725,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "div.einzugsband.relative > p.inline-flex.items-center.gap-2 > svg.inline-block.shrink-0",
+       "idx": 751
+      }
+     ]
+    },
+    {
+     "n": 1,
+     "y": 211,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-01.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 41,
+       "y": 514,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "div.einzugsband.relative > p.inline-flex.items-center.gap-2 > svg.inline-block.shrink-0",
+       "idx": 751
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "y": 422,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-02.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 2,
+     "gruppen": [
+      {
+       "x": 41,
+       "y": 303,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "div.einzugsband.relative > p.inline-flex.items-center.gap-2 > svg.inline-block.shrink-0",
+       "idx": 751
+      },
+      {
+       "x": 59,
+       "y": 748,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 800
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "y": 633,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-03.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 2,
+     "gruppen": [
+      {
+       "x": 41,
+       "y": 92,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "div.einzugsband.relative > p.inline-flex.items-center.gap-2 > svg.inline-block.shrink-0",
+       "idx": 751
+      },
+      {
+       "x": 59,
+       "y": 537,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 800
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "y": 844,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-04.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 59,
+       "y": 326,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 800
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "y": 1055,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-05.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 59,
+       "y": 115,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 800
+      }
+     ]
+    },
+    {
+     "n": 6,
+     "y": 1266,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-06.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 7,
+     "y": 1477,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-07.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 8,
+     "y": 1688,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-08.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 9,
+     "y": 1899,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-09.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 10,
+     "y": 2110,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-10.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 11,
+     "y": 2321,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-11.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 40,
+       "y": 682,
+       "w": 2,
+       "h": 101,
+       "pixel": 202,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0 > span.absolute.left-6.-translate-x-1/2",
+       "idx": 907
+      }
+     ]
+    },
+    {
+     "n": 12,
+     "y": 2532,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-12.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 40,
+       "y": 471,
+       "w": 2,
+       "h": 264,
+       "pixel": 528,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.left-6.-translate-x-1/2",
+       "idx": 922
+      }
+     ]
+    },
+    {
+     "n": 13,
+     "y": 2743,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-13.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 40,
+       "y": 260,
+       "w": 2,
+       "h": 264,
+       "pixel": 528,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.left-6.-translate-x-1/2",
+       "idx": 922
+      }
+     ]
+    },
+    {
+     "n": 14,
+     "y": 2954,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-14.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 40,
+       "y": 65,
+       "w": 2,
+       "h": 248,
+       "pixel": 496,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.left-6.-translate-x-1/2",
+       "idx": 922
+      }
+     ]
+    },
+    {
+     "n": 15,
+     "y": 3165,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-15.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 40,
+       "y": 65,
+       "w": 2,
+       "h": 37,
+       "pixel": 74,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.left-6.-translate-x-1/2",
+       "idx": 935
+      }
+     ]
+    },
+    {
+     "n": 16,
+     "y": 3376,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-16.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 17,
+     "y": 3587,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-17.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 18,
+     "y": 3798,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-18.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 19,
+     "y": 4009,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-19.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 20,
+     "y": 4220,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-20.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 21,
+     "y": 4431,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-21.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 22,
+     "y": 4642,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-22.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 23,
+     "y": 4853,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-23.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 24,
+     "y": 5064,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-24.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 641,
+       "w": 2,
+       "h": 142,
+       "pixel": 279,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 25,
+     "y": 5275,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-25.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 430,
+       "w": 2,
+       "h": 353,
+       "pixel": 701,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 26,
+     "y": 5486,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-26.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 219,
+       "w": 2,
+       "h": 564,
+       "pixel": 1123,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 27,
+     "y": 5697,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-27.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 718,
+       "pixel": 1436,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 28,
+     "y": 5908,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-28.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 718,
+       "pixel": 1436,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 29,
+     "y": 6119,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-29.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 718,
+       "pixel": 1436,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 30,
+     "y": 6330,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-30.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 718,
+       "pixel": 1436,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 31,
+     "y": 6541,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-31.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 718,
+       "pixel": 1436,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 32,
+     "y": 6752,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-32.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 718,
+       "pixel": 1436,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 33,
+     "y": 6963,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-33.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 626,
+       "pixel": 1252,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 34,
+     "y": 7174,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-34.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 474,
+       "pixel": 948,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 35,
+     "y": 7385,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-35.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 322,
+       "pixel": 644,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 36,
+     "y": 7596,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-36.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 171,
+       "pixel": 342,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 37,
+     "y": 7807,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-37.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 19,
+       "pixel": 38,
+       "art": "marke",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 38,
+     "y": 8018,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-38.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 39,
+     "y": 8229,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-39.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 40,
+     "y": 8440,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-40.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 41,
+     "y": 8651,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-41.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 42,
+     "y": 8862,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-42.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 43,
+     "y": 9073,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-43.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 44,
+     "y": 9284,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-44.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 45,
+     "y": 9495,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-45.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 747,
+       "w": 2,
+       "h": 36,
+       "pixel": 72,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 46,
+     "y": 9706,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-46.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 536,
+       "w": 2,
+       "h": 247,
+       "pixel": 494,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 47,
+     "y": 9917,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-47.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 325,
+       "w": 2,
+       "h": 458,
+       "pixel": 916,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 48,
+     "y": 10128,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-48.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 114,
+       "w": 2,
+       "h": 523,
+       "pixel": 1046,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 49,
+     "y": 10339,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-49.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 372,
+       "pixel": 744,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 50,
+     "y": 10550,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-50.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 172,
+       "pixel": 344,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 51,
+     "y": 10761,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-51.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 52,
+     "y": 10972,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-52.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 53,
+     "y": 11183,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-53.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 54,
+     "y": 11394,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-54.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 55,
+     "y": 11605,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-55.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 56,
+     "y": 11816,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-56.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 57,
+     "y": 12027,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-57.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 58,
+     "y": 12238,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-58.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 59,
+     "y": 12449,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-59.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 60,
+     "y": 12660,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-60.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 61,
+     "y": 12871,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-61.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 610,
+       "w": 2,
+       "h": 54,
+       "pixel": 108,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1400
+      }
+     ]
+    },
+    {
+     "n": 62,
+     "y": 13082,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-62.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 399,
+       "w": 2,
+       "h": 54,
+       "pixel": 108,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1400
+      }
+     ]
+    },
+    {
+     "n": 63,
+     "y": 13293,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-63.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 188,
+       "w": 2,
+       "h": 54,
+       "pixel": 108,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1400
+      }
+     ]
+    },
+    {
+     "n": 64,
+     "y": 13504,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-64.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 65,
+     "y": 13715,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-65.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 66,
+     "y": 13926,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-66.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 67,
+     "y": 14137,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-67.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 68,
+     "y": 14348,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-68.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 69,
+     "y": 14559,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-69.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 70,
+     "y": 14770,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-70.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 71,
+     "y": 14981,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-71.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 72,
+     "y": 15192,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-72.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 73,
+     "y": 15403,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-73.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 74,
+     "y": 15614,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-74.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 75,
+     "y": 15825,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-75.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 76,
+     "y": 15852,
+     "datei": "../rot-nachher-q/standorte__giessen-m390-no-preference-76.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    }
+   ]
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "ansicht": "d1440",
+   "bewegung": "no-preference",
+   "ohneJs": false,
+   "html_klasse": "archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable k-bewegung k-modul",
+   "hoehe": 10058,
+   "bildschirme": 42,
+   "max_blickfaenge": 1,
+   "ueber_eins": [],
+   "je_bildschirm": [
+    {
+     "n": 0,
+     "y": 0,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-00.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 2,
+     "gruppen": [
+      {
+       "x": 882,
+       "y": 166,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "div.einzugsband.relative > p.inline-flex.items-center.gap-2 > svg.inline-block.shrink-0",
+       "idx": 751
+      },
+      {
+       "x": 1101,
+       "y": 278,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 769
+      }
+     ]
+    },
+    {
+     "n": 1,
+     "y": 225,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-01.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 2,
+     "y": 450,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-02.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 3,
+     "y": 675,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-03.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 4,
+     "y": 900,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-04.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 5,
+     "y": 1125,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-05.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 6,
+     "y": 1350,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-06.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 145,
+       "y": 814,
+       "w": 794,
+       "h": 2,
+       "pixel": 1588,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 7,
+     "y": 1575,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-07.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 145,
+       "y": 589,
+       "w": 794,
+       "h": 2,
+       "pixel": 1588,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 8,
+     "y": 1800,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-08.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 145,
+       "y": 364,
+       "w": 794,
+       "h": 2,
+       "pixel": 1588,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 9,
+     "y": 2025,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-09.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 145,
+       "y": 139,
+       "w": 794,
+       "h": 2,
+       "pixel": 1588,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 10,
+     "y": 2250,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-10.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 11,
+     "y": 2475,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-11.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 12,
+     "y": 2700,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-12.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 13,
+     "y": 2925,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-13.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 14,
+     "y": 3150,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-14.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 15,
+     "y": 3375,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-15.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 713,
+       "w": 2,
+       "h": 187,
+       "pixel": 369,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1072
+      }
+     ]
+    },
+    {
+     "n": 16,
+     "y": 3600,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-16.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 488,
+       "w": 2,
+       "h": 412,
+       "pixel": 819,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1072
+      }
+     ]
+    },
+    {
+     "n": 17,
+     "y": 3825,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-17.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 263,
+       "w": 2,
+       "h": 637,
+       "pixel": 1269,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1072
+      }
+     ]
+    },
+    {
+     "n": 18,
+     "y": 4050,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-18.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 65,
+       "w": 2,
+       "h": 835,
+       "pixel": 1670,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1072
+      }
+     ]
+    },
+    {
+     "n": 19,
+     "y": 4275,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-19.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 65,
+       "w": 2,
+       "h": 835,
+       "pixel": 1670,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1072
+      }
+     ]
+    },
+    {
+     "n": 20,
+     "y": 4500,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-20.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 65,
+       "w": 2,
+       "h": 835,
+       "pixel": 1670,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1072
+      }
+     ]
+    },
+    {
+     "n": 21,
+     "y": 4725,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-21.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 65,
+       "w": 2,
+       "h": 795,
+       "pixel": 1590,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1072
+      }
+     ]
+    },
+    {
+     "n": 22,
+     "y": 4950,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-22.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 65,
+       "w": 2,
+       "h": 641,
+       "pixel": 1282,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1072
+      }
+     ]
+    },
+    {
+     "n": 23,
+     "y": 5175,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-23.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 65,
+       "w": 2,
+       "h": 487,
+       "pixel": 974,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1072
+      }
+     ]
+    },
+    {
+     "n": 24,
+     "y": 5400,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-24.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 65,
+       "w": 2,
+       "h": 334,
+       "pixel": 668,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1072
+      }
+     ]
+    },
+    {
+     "n": 25,
+     "y": 5625,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-25.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 65,
+       "w": 2,
+       "h": 180,
+       "pixel": 360,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1072
+      }
+     ]
+    },
+    {
+     "n": 26,
+     "y": 5850,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-26.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 65,
+       "w": 2,
+       "h": 26,
+       "pixel": 52,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1072
+      }
+     ]
+    },
+    {
+     "n": 27,
+     "y": 6075,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-27.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 28,
+     "y": 6300,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-28.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 820,
+       "w": 2,
+       "h": 80,
+       "pixel": 160,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1257
+      }
+     ]
+    },
+    {
+     "n": 29,
+     "y": 6525,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-29.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 595,
+       "w": 2,
+       "h": 305,
+       "pixel": 610,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1257
+      }
+     ]
+    },
+    {
+     "n": 30,
+     "y": 6750,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-30.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 370,
+       "w": 2,
+       "h": 458,
+       "pixel": 916,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1257
+      }
+     ]
+    },
+    {
+     "n": 31,
+     "y": 6975,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-31.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 145,
+       "w": 2,
+       "h": 473,
+       "pixel": 946,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1257
+      }
+     ]
+    },
+    {
+     "n": 32,
+     "y": 7200,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-32.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 65,
+       "w": 2,
+       "h": 343,
+       "pixel": 686,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1257
+      }
+     ]
+    },
+    {
+     "n": 33,
+     "y": 7425,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-33.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 96,
+       "y": 65,
+       "w": 2,
+       "h": 133,
+       "pixel": 266,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1257
+      }
+     ]
+    },
+    {
+     "n": 34,
+     "y": 7650,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-34.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 35,
+     "y": 7875,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-35.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 36,
+     "y": 8100,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-36.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 37,
+     "y": 8325,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-37.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 112,
+       "y": 894,
+       "w": 2,
+       "h": 6,
+       "pixel": 12,
+       "art": "marke",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1405
+      }
+     ]
+    },
+    {
+     "n": 38,
+     "y": 8550,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-38.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 112,
+       "y": 669,
+       "w": 2,
+       "h": 61,
+       "pixel": 122,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1405
+      }
+     ]
+    },
+    {
+     "n": 39,
+     "y": 8775,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-39.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 112,
+       "y": 444,
+       "w": 2,
+       "h": 61,
+       "pixel": 122,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1405
+      }
+     ]
+    },
+    {
+     "n": 40,
+     "y": 9000,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-40.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 112,
+       "y": 219,
+       "w": 2,
+       "h": 61,
+       "pixel": 122,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1405
+      }
+     ]
+    },
+    {
+     "n": 41,
+     "y": 9158,
+     "datei": "../rot-nachher-q/standorte__wetzlar-d1440-no-preference-41.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 112,
+       "y": 65,
+       "w": 2,
+       "h": 57,
+       "pixel": 114,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1405
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "ansicht": "m390",
+   "bewegung": "no-preference",
+   "ohneJs": false,
+   "html_klasse": "archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable k-bewegung k-modul",
+   "hoehe": 16780,
+   "bildschirme": 77,
+   "max_blickfaenge": 1,
+   "ueber_eins": [],
+   "je_bildschirm": [
+    {
+     "n": 0,
+     "y": 0,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-00.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 41,
+       "y": 744,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "div.einzugsband.relative > p.inline-flex.items-center.gap-2 > svg.inline-block.shrink-0",
+       "idx": 751
+      }
+     ]
+    },
+    {
+     "n": 1,
+     "y": 211,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-01.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 2,
+     "gruppen": [
+      {
+       "x": 41,
+       "y": 533,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "div.einzugsband.relative > p.inline-flex.items-center.gap-2 > svg.inline-block.shrink-0",
+       "idx": 751
+      },
+      {
+       "x": 59,
+       "y": 682,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 769
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "y": 422,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-02.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 2,
+     "gruppen": [
+      {
+       "x": 41,
+       "y": 322,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "div.einzugsband.relative > p.inline-flex.items-center.gap-2 > svg.inline-block.shrink-0",
+       "idx": 751
+      },
+      {
+       "x": 59,
+       "y": 471,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 769
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "y": 633,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-03.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 2,
+     "gruppen": [
+      {
+       "x": 41,
+       "y": 111,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "div.einzugsband.relative > p.inline-flex.items-center.gap-2 > svg.inline-block.shrink-0",
+       "idx": 751
+      },
+      {
+       "x": 59,
+       "y": 260,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 769
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "y": 844,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-04.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 5,
+     "y": 1055,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-05.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 6,
+     "y": 1266,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-06.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 7,
+     "y": 1477,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-07.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 8,
+     "y": 1688,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-08.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 9,
+     "y": 1899,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-09.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 10,
+     "y": 2110,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-10.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 11,
+     "y": 2321,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-11.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 40,
+       "y": 748,
+       "w": 2,
+       "h": 35,
+       "pixel": 70,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0 > span.absolute.left-6.-translate-x-1/2",
+       "idx": 907
+      }
+     ]
+    },
+    {
+     "n": 12,
+     "y": 2532,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-12.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 40,
+       "y": 537,
+       "w": 2,
+       "h": 246,
+       "pixel": 492,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.left-6.-translate-x-1/2",
+       "idx": 922
+      }
+     ]
+    },
+    {
+     "n": 13,
+     "y": 2743,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-13.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 40,
+       "y": 326,
+       "w": 2,
+       "h": 264,
+       "pixel": 528,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.left-6.-translate-x-1/2",
+       "idx": 922
+      }
+     ]
+    },
+    {
+     "n": 14,
+     "y": 2954,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-14.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 40,
+       "y": 115,
+       "w": 2,
+       "h": 264,
+       "pixel": 528,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.left-6.-translate-x-1/2",
+       "idx": 922
+      }
+     ]
+    },
+    {
+     "n": 15,
+     "y": 3165,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-15.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 40,
+       "y": 65,
+       "w": 2,
+       "h": 103,
+       "pixel": 206,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.left-6.-translate-x-1/2",
+       "idx": 922
+      }
+     ]
+    },
+    {
+     "n": 16,
+     "y": 3376,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-16.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 17,
+     "y": 3587,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-17.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 18,
+     "y": 3798,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-18.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 19,
+     "y": 4009,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-19.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 20,
+     "y": 4220,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-20.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 21,
+     "y": 4431,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-21.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 22,
+     "y": 4642,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-22.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 23,
+     "y": 4853,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-23.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 24,
+     "y": 5064,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-24.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 771,
+       "w": 2,
+       "h": 12,
+       "pixel": 19,
+       "art": "marke",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1072
+      }
+     ]
+    },
+    {
+     "n": 25,
+     "y": 5275,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-25.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 560,
+       "w": 2,
+       "h": 223,
+       "pixel": 441,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1072
+      }
+     ]
+    },
+    {
+     "n": 26,
+     "y": 5486,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-26.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 349,
+       "w": 2,
+       "h": 434,
+       "pixel": 863,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1072
+      }
+     ]
+    },
+    {
+     "n": 27,
+     "y": 5697,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-27.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 138,
+       "w": 2,
+       "h": 645,
+       "pixel": 1285,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1072
+      }
+     ]
+    },
+    {
+     "n": 28,
+     "y": 5908,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-28.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 718,
+       "pixel": 1436,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1072
+      }
+     ]
+    },
+    {
+     "n": 29,
+     "y": 6119,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-29.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 718,
+       "pixel": 1436,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1072
+      }
+     ]
+    },
+    {
+     "n": 30,
+     "y": 6330,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-30.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 718,
+       "pixel": 1436,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1072
+      }
+     ]
+    },
+    {
+     "n": 31,
+     "y": 6541,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-31.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 718,
+       "pixel": 1436,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1072
+      }
+     ]
+    },
+    {
+     "n": 32,
+     "y": 6752,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-32.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 718,
+       "pixel": 1436,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1072
+      }
+     ]
+    },
+    {
+     "n": 33,
+     "y": 6963,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-33.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 718,
+       "pixel": 1436,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1072
+      }
+     ]
+    },
+    {
+     "n": 34,
+     "y": 7174,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-34.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 573,
+       "pixel": 1146,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1072
+      }
+     ]
+    },
+    {
+     "n": 35,
+     "y": 7385,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-35.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 420,
+       "pixel": 840,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1072
+      }
+     ]
+    },
+    {
+     "n": 36,
+     "y": 7596,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-36.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 267,
+       "pixel": 534,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1072
+      }
+     ]
+    },
+    {
+     "n": 37,
+     "y": 7807,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-37.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 115,
+       "pixel": 230,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1072
+      }
+     ]
+    },
+    {
+     "n": 38,
+     "y": 8018,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-38.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 39,
+     "y": 8229,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-39.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 40,
+     "y": 8440,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-40.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 41,
+     "y": 8651,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-41.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 42,
+     "y": 8862,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-42.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 43,
+     "y": 9073,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-43.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 44,
+     "y": 9284,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-44.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 45,
+     "y": 9495,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-45.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 46,
+     "y": 9706,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-46.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 619,
+       "w": 2,
+       "h": 164,
+       "pixel": 328,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1257
+      }
+     ]
+    },
+    {
+     "n": 47,
+     "y": 9917,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-47.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 408,
+       "w": 2,
+       "h": 375,
+       "pixel": 750,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1257
+      }
+     ]
+    },
+    {
+     "n": 48,
+     "y": 10128,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-48.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 197,
+       "w": 2,
+       "h": 521,
+       "pixel": 1042,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1257
+      }
+     ]
+    },
+    {
+     "n": 49,
+     "y": 10339,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-49.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 452,
+       "pixel": 904,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1257
+      }
+     ]
+    },
+    {
+     "n": 50,
+     "y": 10550,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-50.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 252,
+       "pixel": 504,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1257
+      }
+     ]
+    },
+    {
+     "n": 51,
+     "y": 10761,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-51.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 52,
+       "pixel": 104,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1257
+      }
+     ]
+    },
+    {
+     "n": 52,
+     "y": 10972,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-52.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 53,
+     "y": 11183,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-53.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 54,
+     "y": 11394,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-54.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 55,
+     "y": 11605,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-55.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 56,
+     "y": 11816,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-56.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 57,
+     "y": 12027,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-57.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 58,
+     "y": 12238,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-58.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 59,
+     "y": 12449,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-59.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 60,
+     "y": 12660,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-60.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 61,
+     "y": 12871,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-61.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 693,
+       "w": 2,
+       "h": 55,
+       "pixel": 110,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1405
+      }
+     ]
+    },
+    {
+     "n": 62,
+     "y": 13082,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-62.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 482,
+       "w": 2,
+       "h": 55,
+       "pixel": 110,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1405
+      }
+     ]
+    },
+    {
+     "n": 63,
+     "y": 13293,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-63.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 271,
+       "w": 2,
+       "h": 55,
+       "pixel": 110,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1405
+      }
+     ]
+    },
+    {
+     "n": 64,
+     "y": 13504,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-64.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 65,
+       "w": 2,
+       "h": 50,
+       "pixel": 100,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1405
+      }
+     ]
+    },
+    {
+     "n": 65,
+     "y": 13715,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-65.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 66,
+     "y": 13926,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-66.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 67,
+     "y": 14137,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-67.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 68,
+     "y": 14348,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-68.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 69,
+     "y": 14559,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-69.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 70,
+     "y": 14770,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-70.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 71,
+     "y": 14981,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-71.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 72,
+     "y": 15192,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-72.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 73,
+     "y": 15403,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-73.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 74,
+     "y": 15614,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-74.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 75,
+     "y": 15825,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-75.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 76,
+     "y": 15936,
+     "datei": "../rot-nachher-q/standorte__wetzlar-m390-no-preference-76.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    }
+   ]
+  }
+ ]
+}

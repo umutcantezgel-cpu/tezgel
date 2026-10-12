@@ -1,0 +1,2217 @@
+{
+ "base": "http://127.0.0.1:4350",
+ "erstellt": "2026-10-12T20:59:47.541Z",
+ "aus": [
+  {
+   "seite": "/bad",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 276,
+    "w": 704,
+    "h": 134
+   },
+   "vorspann": {
+    "top": 308,
+    "bottom": 451,
+    "w": 675,
+    "h": 143
+   },
+   "knopf": {
+    "top": 483,
+    "bottom": 533,
+    "w": 259,
+    "h": 50
+   },
+   "blatt": {
+    "top": 725,
+    "bottom": 1005,
+    "w": 704,
+    "h": 280
+   },
+   "zeichnung": {
+    "top": 726,
+    "bottom": 1004,
+    "w": 351,
+    "h": 278
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 1070,
+    "w": 768,
+    "h": 1070
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/bad/bad-aus-einer-hand",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 277,
+    "w": 704,
+    "h": 135
+   },
+   "vorspann": {
+    "top": 309,
+    "bottom": 452,
+    "w": 675,
+    "h": 143
+   },
+   "knopf": {
+    "top": 484,
+    "bottom": 534,
+    "w": 259,
+    "h": 50
+   },
+   "blatt": {
+    "top": 582,
+    "bottom": 876,
+    "w": 704,
+    "h": 294
+   },
+   "zeichnung": {
+    "top": 583,
+    "bottom": 875,
+    "w": 351,
+    "h": 292
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 941,
+    "w": 768,
+    "h": 941
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/bad/badsanierung",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 277,
+    "w": 704,
+    "h": 135
+   },
+   "vorspann": {
+    "top": 309,
+    "bottom": 452,
+    "w": 675,
+    "h": 143
+   },
+   "knopf": {
+    "top": 484,
+    "bottom": 534,
+    "w": 259,
+    "h": 50
+   },
+   "blatt": {
+    "top": 582,
+    "bottom": 876,
+    "w": 704,
+    "h": 294
+   },
+   "zeichnung": {
+    "top": 583,
+    "bottom": 875,
+    "w": 351,
+    "h": 292
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 941,
+    "w": 768,
+    "h": 941
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/bad/barrierefreies-bad",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 277,
+    "w": 704,
+    "h": 135
+   },
+   "vorspann": {
+    "top": 309,
+    "bottom": 452,
+    "w": 675,
+    "h": 143
+   },
+   "knopf": {
+    "top": 484,
+    "bottom": 534,
+    "w": 335,
+    "h": 50
+   },
+   "blatt": {
+    "top": 582,
+    "bottom": 935,
+    "w": 704,
+    "h": 353
+   },
+   "zeichnung": {
+    "top": 583,
+    "bottom": 934,
+    "w": 351,
+    "h": 351
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 1000,
+    "w": 768,
+    "h": 1000
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/bad/fliesen",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 378,
+    "w": 675,
+    "h": 114
+   },
+   "knopf": {
+    "top": 410,
+    "bottom": 460,
+    "w": 285,
+    "h": 50
+   },
+   "blatt": {
+    "top": 508,
+    "bottom": 802,
+    "w": 704,
+    "h": 294
+   },
+   "zeichnung": {
+    "top": 509,
+    "bottom": 801,
+    "w": 351,
+    "h": 292
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 867,
+    "w": 768,
+    "h": 867
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/bad/musterbaeder",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 395,
+    "w": 704,
+    "h": 131
+   },
+   "knopf": {
+    "top": 427,
+    "bottom": 477,
+    "w": 329,
+    "h": 50
+   },
+   "blatt": {
+    "top": 525,
+    "bottom": 819,
+    "w": 704,
+    "h": 294
+   },
+   "zeichnung": {
+    "top": 526,
+    "bottom": 818,
+    "w": 351,
+    "h": 292
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 884,
+    "w": 768,
+    "h": 884
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/bad/musterbaeder/basic-bad-7",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 164,
+    "bottom": 254,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 286,
+    "bottom": 429,
+    "w": 675,
+    "h": 143
+   },
+   "knopf": null,
+   "blatt": {
+    "top": 549,
+    "bottom": 843,
+    "w": 704,
+    "h": 294
+   },
+   "zeichnung": {
+    "top": 550,
+    "bottom": 842,
+    "w": 351,
+    "h": 292
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 908,
+    "w": 768,
+    "h": 908
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": null
+  },
+  {
+   "seite": "/balkon-terrasse",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 407,
+    "w": 675,
+    "h": 143
+   },
+   "knopf": {
+    "top": 439,
+    "bottom": 489,
+    "w": 378,
+    "h": 50
+   },
+   "blatt": {
+    "top": 537,
+    "bottom": 831,
+    "w": 704,
+    "h": 294
+   },
+   "zeichnung": {
+    "top": 538,
+    "bottom": 830,
+    "w": 351,
+    "h": 292
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 896,
+    "w": 768,
+    "h": 896
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/balkon-terrasse/balkonsanierung",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 395,
+    "w": 704,
+    "h": 131
+   },
+   "knopf": {
+    "top": 427,
+    "bottom": 477,
+    "w": 271,
+    "h": 50
+   },
+   "blatt": {
+    "top": 525,
+    "bottom": 795,
+    "w": 704,
+    "h": 270
+   },
+   "zeichnung": {
+    "top": 526,
+    "bottom": 794,
+    "w": 351,
+    "h": 268
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 860,
+    "w": 768,
+    "h": 860
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/balkon-terrasse/stelzlager",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 395,
+    "w": 704,
+    "h": 131
+   },
+   "knopf": {
+    "top": 427,
+    "bottom": 477,
+    "w": 288,
+    "h": 50
+   },
+   "blatt": {
+    "top": 525,
+    "bottom": 819,
+    "w": 704,
+    "h": 294
+   },
+   "zeichnung": {
+    "top": 526,
+    "bottom": 818,
+    "w": 351,
+    "h": 292
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 884,
+    "w": 768,
+    "h": 884
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/balkon-terrasse/terrassenplatten",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 395,
+    "w": 704,
+    "h": 131
+   },
+   "knopf": {
+    "top": 427,
+    "bottom": 477,
+    "w": 288,
+    "h": 50
+   },
+   "blatt": {
+    "top": 525,
+    "bottom": 819,
+    "w": 704,
+    "h": 294
+   },
+   "zeichnung": {
+    "top": 526,
+    "bottom": 818,
+    "w": 351,
+    "h": 292
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 884,
+    "w": 768,
+    "h": 884
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/fliesen",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 407,
+    "w": 675,
+    "h": 143
+   },
+   "knopf": {
+    "top": 439,
+    "bottom": 489,
+    "w": 327,
+    "h": 50
+   },
+   "blatt": {
+    "top": 513,
+    "bottom": 1149,
+    "w": 704,
+    "h": 636
+   },
+   "zeichnung": {
+    "top": 514,
+    "bottom": 1009,
+    "w": 702,
+    "h": 495
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 1238,
+    "w": 768,
+    "h": 1238
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/fliesen/abnahme",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 395,
+    "w": 704,
+    "h": 131
+   },
+   "knopf": {
+    "top": 427,
+    "bottom": 477,
+    "w": 217,
+    "h": 50
+   },
+   "blatt": {
+    "top": 525,
+    "bottom": 819,
+    "w": 704,
+    "h": 294
+   },
+   "zeichnung": {
+    "top": 526,
+    "bottom": 818,
+    "w": 351,
+    "h": 292
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 884,
+    "w": 768,
+    "h": 884
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/fliesen/auf-fussbodenheizung",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 407,
+    "w": 675,
+    "h": 143
+   },
+   "knopf": {
+    "top": 439,
+    "bottom": 489,
+    "w": 201,
+    "h": 50
+   },
+   "blatt": {
+    "top": 537,
+    "bottom": 855,
+    "w": 704,
+    "h": 318
+   },
+   "zeichnung": {
+    "top": 538,
+    "bottom": 854,
+    "w": 351,
+    "h": 316
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 920,
+    "w": 768,
+    "h": 920
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/fliesen/festpreisangebot",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 395,
+    "w": 704,
+    "h": 131
+   },
+   "knopf": {
+    "top": 427,
+    "bottom": 478,
+    "w": 295,
+    "h": 51
+   },
+   "blatt": {
+    "top": 526,
+    "bottom": 820,
+    "w": 704,
+    "h": 294
+   },
+   "zeichnung": {
+    "top": 527,
+    "bottom": 819,
+    "w": 351,
+    "h": 292
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 885,
+    "w": 768,
+    "h": 885
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/fliesen/fliesenarten",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 395,
+    "w": 704,
+    "h": 131
+   },
+   "knopf": {
+    "top": 427,
+    "bottom": 477,
+    "w": 261,
+    "h": 50
+   },
+   "blatt": {
+    "top": 525,
+    "bottom": 819,
+    "w": 704,
+    "h": 294
+   },
+   "zeichnung": {
+    "top": 526,
+    "bottom": 818,
+    "w": 351,
+    "h": 292
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 884,
+    "w": 768,
+    "h": 884
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/fliesen/flur-diele",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 378,
+    "w": 675,
+    "h": 114
+   },
+   "knopf": {
+    "top": 410,
+    "bottom": 460,
+    "w": 295,
+    "h": 50
+   },
+   "blatt": {
+    "top": 508,
+    "bottom": 802,
+    "w": 704,
+    "h": 294
+   },
+   "zeichnung": {
+    "top": 509,
+    "bottom": 801,
+    "w": 351,
+    "h": 292
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 867,
+    "w": 768,
+    "h": 867
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/fliesen/fugensanierung",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 378,
+    "w": 675,
+    "h": 114
+   },
+   "knopf": {
+    "top": 410,
+    "bottom": 460,
+    "w": 262,
+    "h": 50
+   },
+   "blatt": {
+    "top": 508,
+    "bottom": 826,
+    "w": 704,
+    "h": 318
+   },
+   "zeichnung": {
+    "top": 509,
+    "bottom": 825,
+    "w": 351,
+    "h": 316
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 891,
+    "w": 768,
+    "h": 891
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/fliesen/grossformat",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 395,
+    "w": 704,
+    "h": 131
+   },
+   "knopf": {
+    "top": 427,
+    "bottom": 477,
+    "w": 201,
+    "h": 50
+   },
+   "blatt": {
+    "top": 525,
+    "bottom": 819,
+    "w": 704,
+    "h": 294
+   },
+   "zeichnung": {
+    "top": 526,
+    "bottom": 818,
+    "w": 351,
+    "h": 292
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 884,
+    "w": 768,
+    "h": 884
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/fliesen/holzoptik",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 395,
+    "w": 704,
+    "h": 131
+   },
+   "knopf": {
+    "top": 427,
+    "bottom": 477,
+    "w": 285,
+    "h": 50
+   },
+   "blatt": {
+    "top": 525,
+    "bottom": 819,
+    "w": 704,
+    "h": 294
+   },
+   "zeichnung": {
+    "top": 526,
+    "bottom": 818,
+    "w": 351,
+    "h": 292
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 884,
+    "w": 768,
+    "h": 884
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/fliesen/kueche",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 362,
+    "w": 704,
+    "h": 98
+   },
+   "knopf": {
+    "top": 394,
+    "bottom": 444,
+    "w": 201,
+    "h": 50
+   },
+   "blatt": {
+    "top": 492,
+    "bottom": 786,
+    "w": 704,
+    "h": 294
+   },
+   "zeichnung": {
+    "top": 493,
+    "bottom": 785,
+    "w": 351,
+    "h": 292
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 851,
+    "w": 768,
+    "h": 851
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/fliesen/neubau",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 362,
+    "w": 704,
+    "h": 98
+   },
+   "knopf": {
+    "top": 394,
+    "bottom": 444,
+    "w": 251,
+    "h": 50
+   },
+   "blatt": {
+    "top": 492,
+    "bottom": 786,
+    "w": 704,
+    "h": 294
+   },
+   "zeichnung": {
+    "top": 493,
+    "bottom": 785,
+    "w": 351,
+    "h": 292
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 851,
+    "w": 768,
+    "h": 851
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/fliesen/renovierung",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 395,
+    "w": 704,
+    "h": 131
+   },
+   "knopf": {
+    "top": 427,
+    "bottom": 477,
+    "w": 295,
+    "h": 50
+   },
+   "blatt": {
+    "top": 525,
+    "bottom": 795,
+    "w": 704,
+    "h": 270
+   },
+   "zeichnung": {
+    "top": 526,
+    "bottom": 794,
+    "w": 351,
+    "h": 268
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 860,
+    "w": 768,
+    "h": 860
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/fliesen/verlegemuster",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 362,
+    "w": 704,
+    "h": 98
+   },
+   "knopf": {
+    "top": 394,
+    "bottom": 444,
+    "w": 285,
+    "h": 50
+   },
+   "blatt": {
+    "top": 492,
+    "bottom": 1153,
+    "w": 704,
+    "h": 660
+   },
+   "zeichnung": {
+    "top": 493,
+    "bottom": 988,
+    "w": 702,
+    "h": 495
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 1218,
+    "w": 768,
+    "h": 1218
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/fliesen/verlegetechnik",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 407,
+    "w": 675,
+    "h": 143
+   },
+   "knopf": {
+    "top": 439,
+    "bottom": 490,
+    "w": 285,
+    "h": 51
+   },
+   "blatt": {
+    "top": 538,
+    "bottom": 832,
+    "w": 704,
+    "h": 294
+   },
+   "zeichnung": {
+    "top": 539,
+    "bottom": 831,
+    "w": 351,
+    "h": 292
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 897,
+    "w": 768,
+    "h": 897
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/fliesenreparatur",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 378,
+    "w": 675,
+    "h": 114
+   },
+   "knopf": {
+    "top": 410,
+    "bottom": 461,
+    "w": 280,
+    "h": 51
+   },
+   "blatt": {
+    "top": 509,
+    "bottom": 779,
+    "w": 704,
+    "h": 270
+   },
+   "zeichnung": {
+    "top": 510,
+    "bottom": 778,
+    "w": 351,
+    "h": 268
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 844,
+    "w": 768,
+    "h": 844
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/karriere",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 141,
+    "bottom": 231,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 263,
+    "bottom": 394,
+    "w": 704,
+    "h": 131
+   },
+   "knopf": {
+    "top": 426,
+    "bottom": 477,
+    "w": 262,
+    "h": 51
+   },
+   "blatt": {
+    "top": 525,
+    "bottom": 795,
+    "w": 704,
+    "h": 270
+   },
+   "zeichnung": {
+    "top": 526,
+    "bottom": 794,
+    "w": 351,
+    "h": 268
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 860,
+    "w": 768,
+    "h": 860
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/karriere/ausbildung",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 141,
+    "bottom": 231,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 263,
+    "bottom": 394,
+    "w": 704,
+    "h": 131
+   },
+   "knopf": null,
+   "blatt": {
+    "top": 442,
+    "bottom": 736,
+    "w": 704,
+    "h": 294
+   },
+   "zeichnung": {
+    "top": 443,
+    "bottom": 735,
+    "w": 351,
+    "h": 292
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 801,
+    "w": 768,
+    "h": 801
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": null
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 141,
+    "bottom": 275,
+    "w": 704,
+    "h": 134
+   },
+   "vorspann": {
+    "top": 307,
+    "bottom": 450,
+    "w": 675,
+    "h": 143
+   },
+   "knopf": {
+    "top": 482,
+    "bottom": 532,
+    "w": 280,
+    "h": 50
+   },
+   "blatt": {
+    "top": 864,
+    "bottom": 1134,
+    "w": 704,
+    "h": 270
+   },
+   "zeichnung": {
+    "top": 865,
+    "bottom": 1133,
+    "w": 351,
+    "h": 268
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 1199,
+    "w": 768,
+    "h": 1199
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 164,
+    "bottom": 254,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 286,
+    "bottom": 429,
+    "w": 675,
+    "h": 143
+   },
+   "knopf": {
+    "top": 461,
+    "bottom": 511,
+    "w": 207,
+    "h": 50
+   },
+   "blatt": {
+    "top": 559,
+    "bottom": 829,
+    "w": 704,
+    "h": 270
+   },
+   "zeichnung": {
+    "top": 560,
+    "bottom": 828,
+    "w": 351,
+    "h": 268
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 894,
+    "w": 768,
+    "h": 894
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/leistungen/bad/wetzlar",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 184,
+    "bottom": 318,
+    "w": 704,
+    "h": 134
+   },
+   "vorspann": {
+    "top": 350,
+    "bottom": 481,
+    "w": 704,
+    "h": 131
+   },
+   "knopf": {
+    "top": 513,
+    "bottom": 564,
+    "w": 366,
+    "h": 51
+   },
+   "blatt": {
+    "top": 612,
+    "bottom": 906,
+    "w": 704,
+    "h": 294
+   },
+   "zeichnung": {
+    "top": 613,
+    "bottom": 905,
+    "w": 351,
+    "h": 292
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 971,
+    "w": 768,
+    "h": 971
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/naturstein",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 378,
+    "w": 675,
+    "h": 114
+   },
+   "knopf": {
+    "top": 410,
+    "bottom": 460,
+    "w": 291,
+    "h": 50
+   },
+   "blatt": {
+    "top": 508,
+    "bottom": 778,
+    "w": 704,
+    "h": 270
+   },
+   "zeichnung": {
+    "top": 509,
+    "bottom": 777,
+    "w": 351,
+    "h": 268
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 843,
+    "w": 768,
+    "h": 843
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/naturstein/granit",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 378,
+    "w": 675,
+    "h": 114
+   },
+   "knopf": {
+    "top": 410,
+    "bottom": 460,
+    "w": 261,
+    "h": 50
+   },
+   "blatt": {
+    "top": 508,
+    "bottom": 802,
+    "w": 704,
+    "h": 294
+   },
+   "zeichnung": {
+    "top": 509,
+    "bottom": 801,
+    "w": 351,
+    "h": 292
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 867,
+    "w": 768,
+    "h": 867
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/naturstein/marmor-kalkstein",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 428,
+    "w": 704,
+    "h": 164
+   },
+   "knopf": {
+    "top": 460,
+    "bottom": 510,
+    "w": 272,
+    "h": 50
+   },
+   "blatt": {
+    "top": 558,
+    "bottom": 852,
+    "w": 704,
+    "h": 294
+   },
+   "zeichnung": {
+    "top": 559,
+    "bottom": 851,
+    "w": 351,
+    "h": 292
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 917,
+    "w": 768,
+    "h": 917
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/partner",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 141,
+    "bottom": 231,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 263,
+    "bottom": 361,
+    "w": 704,
+    "h": 98
+   },
+   "knopf": null,
+   "blatt": {
+    "top": 409,
+    "bottom": 703,
+    "w": 704,
+    "h": 294
+   },
+   "zeichnung": {
+    "top": 410,
+    "bottom": 702,
+    "w": 351,
+    "h": 292
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 768,
+    "w": 768,
+    "h": 768
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": null
+  },
+  {
+   "seite": "/referenzen",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 140,
+    "bottom": 274,
+    "w": 704,
+    "h": 134
+   },
+   "vorspann": {
+    "top": 306,
+    "bottom": 437,
+    "w": 704,
+    "h": 131
+   },
+   "knopf": {
+    "top": 469,
+    "bottom": 519,
+    "w": 216,
+    "h": 50
+   },
+   "blatt": {
+    "top": 567,
+    "bottom": 861,
+    "w": 704,
+    "h": 294
+   },
+   "zeichnung": {
+    "top": 568,
+    "bottom": 860,
+    "w": 351,
+    "h": 292
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 926,
+    "w": 768,
+    "h": 926
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/referenzen/badsanierung-grossformat",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 210,
+    "bottom": 300,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 332,
+    "bottom": 463,
+    "w": 704,
+    "h": 131
+   },
+   "knopf": {
+    "top": 495,
+    "bottom": 545,
+    "w": 541,
+    "h": 50
+   },
+   "blatt": {
+    "top": 655,
+    "bottom": 973,
+    "w": 704,
+    "h": 318
+   },
+   "zeichnung": {
+    "top": 656,
+    "bottom": 972,
+    "w": 351,
+    "h": 316
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 1038,
+    "w": 768,
+    "h": 1038
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/schadensanalyse",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 435,
+    "w": 675,
+    "h": 171
+   },
+   "knopf": {
+    "top": 467,
+    "bottom": 518,
+    "w": 251,
+    "h": 50
+   },
+   "blatt": {
+    "top": 711,
+    "bottom": 1005,
+    "w": 704,
+    "h": 294
+   },
+   "zeichnung": {
+    "top": 712,
+    "bottom": 1004,
+    "w": 351,
+    "h": 292
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 1070,
+    "w": 768,
+    "h": 1070
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 276,
+    "w": 704,
+    "h": 134
+   },
+   "vorspann": {
+    "top": 308,
+    "bottom": 439,
+    "w": 704,
+    "h": 131
+   },
+   "knopf": {
+    "top": 471,
+    "bottom": 522,
+    "w": 259,
+    "h": 51
+   },
+   "blatt": {
+    "top": 570,
+    "bottom": 1352,
+    "w": 704,
+    "h": 781
+   },
+   "zeichnung": {
+    "top": 571,
+    "bottom": 1187,
+    "w": 702,
+    "h": 616
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 1417,
+    "w": 768,
+    "h": 1417
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 276,
+    "w": 704,
+    "h": 134
+   },
+   "vorspann": {
+    "top": 308,
+    "bottom": 422,
+    "w": 675,
+    "h": 114
+   },
+   "knopf": {
+    "top": 454,
+    "bottom": 505,
+    "w": 273,
+    "h": 51
+   },
+   "blatt": {
+    "top": 553,
+    "bottom": 1335,
+    "w": 704,
+    "h": 781
+   },
+   "zeichnung": {
+    "top": 554,
+    "bottom": 1170,
+    "w": 702,
+    "h": 616
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 1400,
+    "w": 768,
+    "h": 1400
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/team",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 141,
+    "bottom": 231,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 263,
+    "bottom": 394,
+    "w": 704,
+    "h": 131
+   },
+   "knopf": null,
+   "blatt": {
+    "top": 442,
+    "bottom": 712,
+    "w": 704,
+    "h": 270
+   },
+   "zeichnung": {
+    "top": 443,
+    "bottom": 711,
+    "w": 351,
+    "h": 268
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 777,
+    "w": 768,
+    "h": 777
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": null
+  },
+  {
+   "seite": "/treppen",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 435,
+    "w": 675,
+    "h": 171
+   },
+   "knopf": {
+    "top": 467,
+    "bottom": 518,
+    "w": 253,
+    "h": 50
+   },
+   "blatt": {
+    "top": 566,
+    "bottom": 859,
+    "w": 704,
+    "h": 294
+   },
+   "zeichnung": {
+    "top": 567,
+    "bottom": 858,
+    "w": 351,
+    "h": 292
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 924,
+    "w": 768,
+    "h": 924
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/treppen/aussentreppe",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 395,
+    "w": 704,
+    "h": 131
+   },
+   "knopf": {
+    "top": 427,
+    "bottom": 477,
+    "w": 315,
+    "h": 50
+   },
+   "blatt": {
+    "top": 525,
+    "bottom": 795,
+    "w": 704,
+    "h": 270
+   },
+   "zeichnung": {
+    "top": 526,
+    "bottom": 794,
+    "w": 351,
+    "h": 268
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 860,
+    "w": 768,
+    "h": 860
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/treppen/innentreppe",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 395,
+    "w": 704,
+    "h": 131
+   },
+   "knopf": {
+    "top": 427,
+    "bottom": 477,
+    "w": 307,
+    "h": 50
+   },
+   "blatt": {
+    "top": 621,
+    "bottom": 915,
+    "w": 704,
+    "h": 294
+   },
+   "zeichnung": {
+    "top": 622,
+    "bottom": 914,
+    "w": 351,
+    "h": 292
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 980,
+    "w": 768,
+    "h": 980
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/treppen/treppenhaus",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 428,
+    "w": 704,
+    "h": 164
+   },
+   "knopf": {
+    "top": 460,
+    "bottom": 511,
+    "w": 240,
+    "h": 51
+   },
+   "blatt": {
+    "top": 559,
+    "bottom": 853,
+    "w": 704,
+    "h": 294
+   },
+   "zeichnung": {
+    "top": 560,
+    "bottom": 852,
+    "w": 351,
+    "h": 292
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 918,
+    "w": 768,
+    "h": 918
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/untergrund-abdichtung",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 407,
+    "w": 675,
+    "h": 143
+   },
+   "knopf": {
+    "top": 439,
+    "bottom": 489,
+    "w": 260,
+    "h": 50
+   },
+   "blatt": {
+    "top": 537,
+    "bottom": 855,
+    "w": 704,
+    "h": 318
+   },
+   "zeichnung": {
+    "top": 538,
+    "bottom": 854,
+    "w": 351,
+    "h": 316
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 920,
+    "w": 768,
+    "h": 920
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/untergrund-abdichtung/ausgleich-gefaelle",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 277,
+    "w": 704,
+    "h": 135
+   },
+   "vorspann": {
+    "top": 309,
+    "bottom": 423,
+    "w": 675,
+    "h": 114
+   },
+   "knopf": {
+    "top": 455,
+    "bottom": 505,
+    "w": 292,
+    "h": 50
+   },
+   "blatt": {
+    "top": 553,
+    "bottom": 906,
+    "w": 704,
+    "h": 353
+   },
+   "zeichnung": {
+    "top": 554,
+    "bottom": 905,
+    "w": 351,
+    "h": 351
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 971,
+    "w": 768,
+    "h": 971
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/untergrund-abdichtung/din-18534",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 378,
+    "w": 675,
+    "h": 114
+   },
+   "knopf": {
+    "top": 410,
+    "bottom": 460,
+    "w": 249,
+    "h": 50
+   },
+   "blatt": {
+    "top": 508,
+    "bottom": 861,
+    "w": 704,
+    "h": 353
+   },
+   "zeichnung": {
+    "top": 509,
+    "bottom": 860,
+    "w": 351,
+    "h": 351
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 926,
+    "w": 768,
+    "h": 926
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/untergrund-abdichtung/entkopplung",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 362,
+    "w": 704,
+    "h": 98
+   },
+   "knopf": {
+    "top": 394,
+    "bottom": 444,
+    "w": 285,
+    "h": 50
+   },
+   "blatt": {
+    "top": 492,
+    "bottom": 786,
+    "w": 704,
+    "h": 294
+   },
+   "zeichnung": {
+    "top": 493,
+    "bottom": 785,
+    "w": 351,
+    "h": 292
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 851,
+    "w": 768,
+    "h": 851
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/untergrund-abdichtung/estrich-belegreife",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 395,
+    "w": 704,
+    "h": 131
+   },
+   "knopf": {
+    "top": 427,
+    "bottom": 477,
+    "w": 229,
+    "h": 50
+   },
+   "blatt": {
+    "top": 525,
+    "bottom": 843,
+    "w": 704,
+    "h": 318
+   },
+   "zeichnung": {
+    "top": 526,
+    "bottom": 842,
+    "w": 351,
+    "h": 316
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 908,
+    "w": 768,
+    "h": 908
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/untergrund-abdichtung/fliesen-auf-fliesen",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 142,
+    "bottom": 232,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 264,
+    "bottom": 362,
+    "w": 704,
+    "h": 98
+   },
+   "knopf": {
+    "top": 394,
+    "bottom": 444,
+    "w": 237,
+    "h": 50
+   },
+   "blatt": {
+    "top": 492,
+    "bottom": 786,
+    "w": 704,
+    "h": 294
+   },
+   "zeichnung": {
+    "top": 493,
+    "bottom": 785,
+    "w": 351,
+    "h": 292
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 851,
+    "w": 768,
+    "h": 851
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": true
+  },
+  {
+   "seite": "/unternehmen",
+   "ansicht": "t768",
+   "status": 200,
+   "h1": {
+    "top": 141,
+    "bottom": 231,
+    "w": 704,
+    "h": 90
+   },
+   "vorspann": {
+    "top": 263,
+    "bottom": 394,
+    "w": 704,
+    "h": 131
+   },
+   "knopf": null,
+   "blatt": {
+    "top": 442,
+    "bottom": 760,
+    "w": 704,
+    "h": 318
+   },
+   "zeichnung": {
+    "top": 443,
+    "bottom": 759,
+    "w": 351,
+    "h": 316
+   },
+   "kopf": {
+    "top": 0,
+    "bottom": 825,
+    "w": 768,
+    "h": 825
+   },
+   "erster_bildschirm": 1024,
+   "im_ersten_bildschirm": null
+  }
+ ]
+}

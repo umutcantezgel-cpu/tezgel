@@ -1,0 +1,56 @@
+# Kopf bei CSS-Zoom: Bedienelemente außerhalb des Bildes je Fensterbreite (live 4364, dann Arbeitsbaum 4350)
+## live 4364
+W=1024 zoom=2 {"sub":"block","sichtbar":5,"ausserhalb":["Fliesenverlegung Tezgel telefo","WhatsApp-Nachricht an Fliesenv","Aufmaß anfragen","Architektur-Menü öffnen"],"nav":"none","menue":"flex","telNummer":"block","rechts":1737,"w":1024}
+W=1100 zoom=2 {"sub":"block","sichtbar":5,"ausserhalb":["Fliesenverlegung Tezgel telefo","WhatsApp-Nachricht an Fliesenv","Aufmaß anfragen","Architektur-Menü öffnen"],"nav":"none","menue":"flex","telNummer":"block","rechts":1741,"w":1100}
+W=1152 zoom=2 {"sub":"block","sichtbar":5,"ausserhalb":["Fliesenverlegung Tezgel telefo","WhatsApp-Nachricht an Fliesenv","Aufmaß anfragen","Architektur-Menü öffnen"],"nav":"none","menue":"flex","telNummer":"block","rechts":1742,"w":1152}
+W=1200 zoom=2 {"sub":"block","sichtbar":5,"ausserhalb":["WhatsApp-Nachricht an Fliesenv","Aufmaß anfragen","Architektur-Menü öffnen"],"nav":"none","menue":"flex","telNummer":"block","rechts":1743,"w":1200}
+W=1280 zoom=2 {"sub":"none","sichtbar":14,"ausserhalb":["Ratgeber","Untermenü Ratgeber öffnen","Über uns","Untermenü Über uns öffnen","Fliesenverlegung Tezgel telefo","WhatsApp-Nachricht an Fliesenv","Aufmaß anfragen"],"nav":"flex","menue":"none","telNummer":"block","rechts":2570,"w":1280}
+W=1440 zoom=2 {"sub":"none","sichtbar":14,"ausserhalb":["Untermenü Ratgeber öffnen","Über uns","Untermenü Über uns öffnen","Fliesenverlegung Tezgel telefo","WhatsApp-Nachricht an Fliesenv","Aufmaß anfragen"],"nav":"flex","menue":"none","telNummer":"block","rechts":2572,"w":1440}
+W=1536 zoom=2 {"sub":"block","sichtbar":14,"ausserhalb":["Untermenü Standorte öffnen","Ratgeber","Untermenü Ratgeber öffnen","Über uns","Untermenü Über uns öffnen","Fliesenverlegung Tezgel telefo","WhatsApp-Nachricht an Fliesenv","Aufmaß anfragen"],"nav":"flex","menue":"none","telNummer":"block","rechts":2987,"w":1536}
+W=1600 zoom=2 {"sub":"block","sichtbar":14,"ausserhalb":["Ratgeber","Untermenü Ratgeber öffnen","Über uns","Untermenü Über uns öffnen","Fliesenverlegung Tezgel telefo","WhatsApp-Nachricht an Fliesenv","Aufmaß anfragen"],"nav":"flex","menue":"none","telNummer":"block","rechts":2987,"w":1600}
+W=1920 zoom=2 {"sub":"block","sichtbar":14,"ausserhalb":["Über uns","Untermenü Über uns öffnen","Fliesenverlegung Tezgel telefo","WhatsApp-Nachricht an Fliesenv","Aufmaß anfragen"],"nav":"flex","menue":"none","telNummer":"block","rechts":2987,"w":1920}
+W=375 zoom=1 {"sub":"none","sichtbar":2,"ausserhalb":[],"nav":"none","menue":"flex","telNummer":"none","rechts":359,"w":375}
+W=576 zoom=1 {"sub":"none","sichtbar":2,"ausserhalb":[],"nav":"none","menue":"flex","telNummer":"none","rechts":560,"w":576}
+W=639 zoom=1 {"sub":"none","sichtbar":2,"ausserhalb":[],"nav":"none","menue":"flex","telNummer":"none","rechts":623,"w":639}
+W=640 zoom=1 {"sub":"none","sichtbar":4,"ausserhalb":[],"nav":"none","menue":"flex","telNummer":"none","rechts":624,"w":640}
+W=768 zoom=1 {"sub":"none","sichtbar":4,"ausserhalb":[],"nav":"none","menue":"flex","telNummer":"none","rechts":736,"w":768}
+W=1023 zoom=1 {"sub":"none","sichtbar":4,"ausserhalb":[],"nav":"none","menue":"flex","telNummer":"none","rechts":991,"w":1023}
+W=1024 zoom=1 {"sub":"block","sichtbar":5,"ausserhalb":[],"nav":"none","menue":"flex","telNummer":"block","rechts":976,"w":1024}
+W=1279 zoom=1 {"sub":"block","sichtbar":5,"ausserhalb":[],"nav":"none","menue":"flex","telNummer":"block","rechts":1231,"w":1279}
+W=1280 zoom=1 {"sub":"none","sichtbar":14,"ausserhalb":["Aufmaß anfragen"],"nav":"flex","menue":"none","telNummer":"block","rechts":1285,"w":1280}
+W=1440 zoom=1 {"sub":"none","sichtbar":14,"ausserhalb":[],"nav":"flex","menue":"none","telNummer":"block","rechts":1350,"w":1440}
+W=1535 zoom=1 {"sub":"none","sichtbar":14,"ausserhalb":[],"nav":"flex","menue":"none","telNummer":"block","rechts":1398,"w":1535}
+W=1536 zoom=1 {"sub":"block","sichtbar":14,"ausserhalb":["Aufmaß anfragen"],"nav":"flex","menue":"none","telNummer":"block","rechts":1606,"w":1536}
+W=1920 zoom=1 {"sub":"block","sichtbar":14,"ausserhalb":[],"nav":"flex","menue":"none","telNummer":"block","rechts":1798,"w":1920}
+## Arbeitsbaum 4350
+W=1024 zoom=2 {"sub":"none","sichtbar":4,"ausserhalb":[],"nav":"none","menue":"flex","telNummer":"none","rechts":928,"w":1024}
+W=1100 zoom=2 {"sub":"none","sichtbar":4,"ausserhalb":[],"nav":"none","menue":"flex","telNummer":"none","rechts":1004,"w":1100}
+W=1152 zoom=2 {"sub":"none","sichtbar":5,"ausserhalb":[],"nav":"none","menue":"flex","telNummer":"none","rechts":1101,"w":1152}
+W=1200 zoom=2 {"sub":"none","sichtbar":5,"ausserhalb":[],"nav":"none","menue":"flex","telNummer":"none","rechts":1104,"w":1200}
+W=1280 zoom=2 {"sub":"none","sichtbar":5,"ausserhalb":[],"nav":"none","menue":"flex","telNummer":"none","rechts":1184,"w":1280}
+W=1440 zoom=2 {"sub":"none","sichtbar":5,"ausserhalb":[],"nav":"none","menue":"flex","telNummer":"none","rechts":1344,"w":1440}
+W=1536 zoom=2 {"sub":"block","sichtbar":5,"ausserhalb":[],"nav":"none","menue":"flex","telNummer":"none","rechts":1440,"w":1536}
+W=1600 zoom=2 {"sub":"block","sichtbar":5,"ausserhalb":[],"nav":"none","menue":"flex","telNummer":"none","rechts":1504,"w":1600}
+W=1920 zoom=2 {"sub":"block","sichtbar":5,"ausserhalb":[],"nav":"none","menue":"flex","telNummer":"none","rechts":1824,"w":1920}
+W=375 zoom=1 {"sub":"none","sichtbar":2,"ausserhalb":[],"nav":"none","menue":"flex","telNummer":"none","rechts":359,"w":375}
+W=576 zoom=1 {"sub":"none","sichtbar":2,"ausserhalb":[],"nav":"none","menue":"flex","telNummer":"none","rechts":560,"w":576}
+W=639 zoom=1 {"sub":"none","sichtbar":2,"ausserhalb":[],"nav":"none","menue":"flex","telNummer":"none","rechts":623,"w":639}
+W=640 zoom=1 {"sub":"none","sichtbar":4,"ausserhalb":[],"nav":"none","menue":"flex","telNummer":"none","rechts":624,"w":640}
+W=768 zoom=1 {"sub":"none","sichtbar":4,"ausserhalb":[],"nav":"none","menue":"flex","telNummer":"none","rechts":736,"w":768}
+W=1023 zoom=1 {"sub":"none","sichtbar":4,"ausserhalb":[],"nav":"none","menue":"flex","telNummer":"none","rechts":991,"w":1023}
+W=1024 zoom=1 {"sub":"block","sichtbar":5,"ausserhalb":[],"nav":"none","menue":"flex","telNummer":"block","rechts":976,"w":1024}
+W=1279 zoom=1 {"sub":"block","sichtbar":5,"ausserhalb":[],"nav":"none","menue":"flex","telNummer":"block","rechts":1231,"w":1279}
+W=1280 zoom=1 {"sub":"none","sichtbar":14,"ausserhalb":["Aufmaß anfragen"],"nav":"flex","menue":"none","telNummer":"block","rechts":1285,"w":1280}
+W=1440 zoom=1 {"sub":"none","sichtbar":14,"ausserhalb":[],"nav":"flex","menue":"none","telNummer":"block","rechts":1350,"w":1440}
+W=1535 zoom=1 {"sub":"none","sichtbar":14,"ausserhalb":[],"nav":"flex","menue":"none","telNummer":"block","rechts":1398,"w":1535}
+W=1536 zoom=1 {"sub":"block","sichtbar":14,"ausserhalb":["Aufmaß anfragen"],"nav":"flex","menue":"none","telNummer":"block","rechts":1606,"w":1536}
+W=1920 zoom=1 {"sub":"block","sichtbar":14,"ausserhalb":[],"nav":"flex","menue":"none","telNummer":"block","rechts":1798,"w":1920}
+## Menüblatt bei CSS-Zoom 2 (4350)
+W=1280 H=800 zoom=2 {"offen":true,"menue":{"top":0,"h":800,"w":896},"innerHeight":800,"bedienelemente":17,"nie_im_bild":[]}
+W=1024 H=768 zoom=2 {"offen":true,"menue":{"top":0,"h":768,"w":896},"innerHeight":768,"bedienelemente":17,"nie_im_bild":[]}
+W=1440 H=900 zoom=2 {"offen":true,"menue":{"top":0,"h":900,"w":896},"innerHeight":900,"bedienelemente":17,"nie_im_bild":[]}
+W=640 H=400 zoom=1 {"offen":true,"menue":{"top":0,"h":400,"w":448},"innerHeight":400,"bedienelemente":17,"nie_im_bild":[]}
+W=375 H=812 zoom=1 {"offen":true,"menue":{"top":0,"h":812,"w":375},"innerHeight":812,"bedienelemente":17,"nie_im_bild":[]}
+## Menüblatt vorher
+live 4364: Menü-Schalter bei 1280 × 800 / Zoom 2 verborgen (xl:hidden), bei 1024–1200 / Zoom 2 rechts außerhalb des Bildes (siehe oben) – kein Weg ins Menü.
+Arbeitsbaum ohne max-height (Zwischenstand R-02a, 1280 × 800 / Zoom 2): Blatt 1600 px hoch, 9 von 17 Bedienelementen nie im Bild (Ratgeber, Über uns je mit Schalter, Kostenfreies Vor-Ort-Aufmaß anfragen, Anrufen, WhatsApp, Impressum, Datenschutz).

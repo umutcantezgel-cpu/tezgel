@@ -43,6 +43,14 @@ export function BrandMark({ compact = false, sublineClassName = 'hidden lg:block
 // (darunter ist das Menüblatt der Zugang; Unterzeile und Nummer nur, wo die Zeile Platz hat),
 // Telefon in Mono, ab lg der WhatsApp-Knopf (E3-NACH-06), Hauptknopf; der Menü-Schalter öffnet das Popover-Menü – auch vor
 // der Hydrierung.
+// Vergrößerung (R-02a): Ob die Navigation in die Zeile passt, entscheidet die Breite des Kopfs selbst (Container-Abfrage
+// @7xl = 80rem = xl, Nummer @5xl = 64rem = lg), nicht die Breite des Fensters. Bei CSS-Zoom 200 % meldet das Fenster
+// weiter 1280 px, der Kopf hat aber nur 640 px – vorher stand die Navigation dann voll da und schob Telefon, WhatsApp,
+// Hauptknopf und zwei Menüpunkte rechts aus dem Bild, der Menü-Schalter fehlte (a11y-zusatz zoom: 7 „nie im Bild“).
+// Jetzt zeigt der Kopf dort den Menü-Schalter (Menüblatt mit allen Einträgen, Anruf, WhatsApp und Anfrage) und alle
+// übrigen Bedienelemente bleiben im Bild. Auch die Unterzeile folgt der Kopfbreite (zwischen @5xl und @7xl; ab 2xl wie
+// bisher), und unter @xl (36rem, nur bei starkem Zoom – ohne Zoom ist er dort ohnehin verborgen) weicht der Hauptknopf
+// dem Menü-Schalter, der denselben Weg trägt. Ohne Zoom sind Kopf- und Fensterbreite gleich (bis auf eine Scrollleiste).
 export default function Header({ isMobileMenuOpen }) {
     const pathname = usePathname() || '/';
     const [openMenu, setOpenMenu] = useState(null);
@@ -97,15 +105,15 @@ export default function Header({ isMobileMenuOpen }) {
 
     return (
         <header
-            className="kopf-anker fixed inset-x-0 top-0 z-40 border-b border-fuge bg-kalk"
+            className="kopf-anker @container fixed inset-x-0 top-0 z-40 border-b border-fuge bg-kalk"
             data-feste-ebene
         >
             <div className={clsx(seitenKlassen, 'flex h-16 items-center justify-between gap-6 xl:gap-4 2xl:gap-6')}>
                 <Link href="/" className="shrink-0" aria-label="Fliesenverlegung Tezgel – Fachbetrieb Aßlar · Wetzlar – Startseite">
-                    <BrandMark />
+                    <BrandMark sublineClassName="hidden @5xl:@max-7xl:block 2xl:block" />
                 </Link>
 
-                <nav ref={navRef} aria-label="Hauptnavigation" className="hidden h-full items-stretch xl:flex">
+                <nav ref={navRef} aria-label="Hauptnavigation" className="hidden h-full items-stretch @7xl:flex">
                     {navigationLinks.map((link, index) => {
                         const active = isSectionActive(pathname, link);
                         const isOpen = openMenu === link.name;
@@ -222,17 +230,17 @@ export default function Header({ isMobileMenuOpen }) {
                         data-motion="zustand"
                     >
                         <Icon name="telefon" groesse={5} />
-                        <span className="hidden lg:inline">{COMPANY_DATA.contact.phone}</span>
+                        <span className="hidden @5xl:inline">{COMPANY_DATA.contact.phone}</span>
                     </a>
                     <FloatingWhatsAppWidget />
-                    <Link href={primaryCta.path} className={knopfKlassen('haupt', 'px-4 max-sm:hidden')} data-motion="druck">
+                    <Link href={primaryCta.path} className={knopfKlassen('haupt', 'px-4 max-sm:hidden @max-xl:hidden')} data-motion="druck">
                         {primaryCta.name}
                     </Link>
                     <button
                         type="button"
                         popoverTarget="mobile-menu"
                         onClick={ohnePopover}
-                        className="inline-flex size-11 items-center justify-center border border-strich bg-fliese text-tinte transition-colors dauer-1 ease-setzen hover:border-tinte xl:hidden"
+                        className="inline-flex size-11 items-center justify-center border border-strich bg-fliese text-tinte transition-colors dauer-1 ease-setzen hover:border-tinte @7xl:hidden"
                         aria-label={isMobileMenuOpen ? 'Architektur-Menü schließen' : 'Architektur-Menü öffnen'}
                         aria-expanded={isMobileMenuOpen}
                         aria-controls="mobile-menu"

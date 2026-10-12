@@ -1,0 +1,798 @@
+{
+ "base": "http://127.0.0.1:4350",
+ "erstellt": "2026-10-12T22:06:57.559Z",
+ "aus": [
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "am_rand": 14,
+   "ring_vorher_abgeschnitten_jetzt_sichtbar": 1,
+   "befunde": [
+    {
+     "hi": 7,
+     "ei": 5,
+     "seiten": [
+      "rechts"
+     ],
+     "name": "Leistung · Balkon & Terrasse",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 7,
+     "ei": 6,
+     "seiten": [
+      "rechts"
+     ],
+     "name": "Barrierefreies Bad",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 7,
+     "ei": 7,
+     "seiten": [
+      "rechts"
+     ],
+     "name": "Badsanierung",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 7,
+     "ei": 8,
+     "seiten": [
+      "rechts"
+     ],
+     "name": "Ablauf 01 · Planung & Aufmaß vor Ort",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 7,
+     "ei": 9,
+     "seiten": [
+      "rechts"
+     ],
+     "name": "Treppen",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 7,
+     "ei": 10,
+     "seiten": [
+      "rechts"
+     ],
+     "name": "Ablauf 03 · Ausführung & Abnahme",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 7,
+     "ei": 11,
+     "seiten": [
+      "rechts"
+     ],
+     "name": "Ablauf 01 · Planung & Aufmaß vor Ort",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 7,
+     "ei": 12,
+     "seiten": [
+      "rechts"
+     ],
+     "name": "Ablauf 01–03",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 7,
+     "ei": 13,
+     "seiten": [
+      "rechts"
+     ],
+     "name": "Treppen",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 7,
+     "ei": 14,
+     "seiten": [
+      "rechts"
+     ],
+     "name": "Leistungen",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 7,
+     "ei": 15,
+     "seiten": [
+      "rechts"
+     ],
+     "name": "Ablauf 03 · Staubgeschützt",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 7,
+     "ei": 16,
+     "seiten": [
+      "rechts"
+     ],
+     "name": "Ablauf 03 · Staubgeschützt",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 7,
+     "ei": 17,
+     "seiten": [
+      "rechts"
+     ],
+     "name": "Festpreisangebot",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 9,
+     "ei": 0,
+     "seiten": [
+      "oben"
+     ],
+     "name": "Was kostet eine professionelle Fliesenverlegung od",
+     "ring_aussen_alt": 0,
+     "ring_aussen_neu": 1610
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "am_rand": 0,
+   "ring_vorher_abgeschnitten_jetzt_sichtbar": 0,
+   "befunde": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1440",
+   "am_rand": 1,
+   "ring_vorher_abgeschnitten_jetzt_sichtbar": 0,
+   "befunde": [
+    {
+     "hi": 1,
+     "ei": 3,
+     "seiten": [
+      "unten"
+     ],
+     "name": "06441 / 44 83 567",
+     "ring_aussen_alt": 0,
+     "ring_aussen_neu": 0
+    }
+   ]
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "am_rand": 0,
+   "ring_vorher_abgeschnitten_jetzt_sichtbar": 0,
+   "befunde": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "d1440",
+   "am_rand": 2,
+   "ring_vorher_abgeschnitten_jetzt_sichtbar": 2,
+   "befunde": [
+    {
+     "hi": 1,
+     "ei": 0,
+     "seiten": [
+      "unten"
+     ],
+     "name": "Jetzt Vor-Ort-Termin für Gießen anfragen",
+     "ring_aussen_alt": 0,
+     "ring_aussen_neu": 776
+    },
+    {
+     "hi": 4,
+     "ei": 6,
+     "seiten": [
+      "unten"
+     ],
+     "name": "Alle Standorte ansehen",
+     "ring_aussen_alt": 0,
+     "ring_aussen_neu": 522
+    }
+   ]
+  },
+  {
+   "seite": "/karriere",
+   "ansicht": "d1440",
+   "am_rand": 0,
+   "ring_vorher_abgeschnitten_jetzt_sichtbar": 0,
+   "befunde": []
+  },
+  {
+   "seite": "/treppen",
+   "ansicht": "d1440",
+   "am_rand": 4,
+   "ring_vorher_abgeschnitten_jetzt_sichtbar": 4,
+   "befunde": [
+    {
+     "hi": 4,
+     "ei": 0,
+     "seiten": [
+      "unten"
+     ],
+     "name": "Treppe begutachten lassen",
+     "ring_aussen_alt": 280,
+     "ring_aussen_neu": 570
+    },
+    {
+     "hi": 4,
+     "ei": 1,
+     "seiten": [
+      "unten"
+     ],
+     "name": "06441 / 44 83 567",
+     "ring_aussen_alt": 4,
+     "ring_aussen_neu": 261
+    },
+    {
+     "hi": 5,
+     "ei": 0,
+     "seiten": [
+      "oben"
+     ],
+     "name": "Wohnbereiche fliesenFlur, Wohnraum und Treppe in e",
+     "ring_aussen_alt": 0,
+     "ring_aussen_neu": 1607
+    },
+    {
+     "hi": 5,
+     "ei": 3,
+     "seiten": [
+      "unten"
+     ],
+     "name": "ReferenzenAusgeführte Projekte und Kundenstimmen",
+     "ring_aussen_alt": 0,
+     "ring_aussen_neu": 1607
+    }
+   ]
+  },
+  {
+   "seite": "/unternehmen",
+   "ansicht": "d1440",
+   "am_rand": 0,
+   "ring_vorher_abgeschnitten_jetzt_sichtbar": 0,
+   "befunde": []
+  },
+  {
+   "seite": "/fliesen",
+   "ansicht": "d1440",
+   "am_rand": 2,
+   "ring_vorher_abgeschnitten_jetzt_sichtbar": 2,
+   "befunde": [
+    {
+     "hi": 0,
+     "ei": 13,
+     "seiten": [
+      "unten"
+     ],
+     "name": "Fliesen-KonfiguratorProjekt in 4 Schritten vorbere",
+     "ring_aussen_alt": 0,
+     "ring_aussen_neu": 2452
+    },
+    {
+     "hi": 2,
+     "ei": 0,
+     "seiten": [
+      "oben"
+     ],
+     "name": "Untergrund & AbdichtungDas Fundament jedes dauerha",
+     "ring_aussen_alt": 0,
+     "ring_aussen_neu": 1607
+    }
+   ]
+  },
+  {
+   "seite": "/balkon-terrasse",
+   "ansicht": "d1440",
+   "am_rand": 4,
+   "ring_vorher_abgeschnitten_jetzt_sichtbar": 4,
+   "befunde": [
+    {
+     "hi": 3,
+     "ei": 2,
+     "seiten": [
+      "unten"
+     ],
+     "name": "TerrassenplattenMaterial, Stärke und OberflächeMeh",
+     "ring_aussen_alt": 0,
+     "ring_aussen_neu": 2452
+    },
+    {
+     "hi": 4,
+     "ei": 0,
+     "seiten": [
+      "unten"
+     ],
+     "name": "Kostenfreies Aufmaß anfragen",
+     "ring_aussen_alt": 0,
+     "ring_aussen_neu": 622
+    },
+    {
+     "hi": 4,
+     "ei": 1,
+     "seiten": [
+      "unten"
+     ],
+     "name": "06441 / 44 83 567",
+     "ring_aussen_alt": 0,
+     "ring_aussen_neu": 502
+    },
+    {
+     "hi": 4,
+     "ei": 2,
+     "seiten": [
+      "unten"
+     ],
+     "name": "Fotos per WhatsApp senden",
+     "ring_aussen_alt": 0,
+     "ring_aussen_neu": 589
+    }
+   ]
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "d1440",
+   "am_rand": 1,
+   "ring_vorher_abgeschnitten_jetzt_sichtbar": 1,
+   "befunde": [
+    {
+     "hi": 2,
+     "ei": 0,
+     "seiten": [
+      "unten"
+     ],
+     "name": "Alle Leistungen im Überblick",
+     "ring_aussen_alt": 0,
+     "ring_aussen_neu": 494
+    }
+   ]
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "d1440",
+   "am_rand": 0,
+   "ring_vorher_abgeschnitten_jetzt_sichtbar": 0,
+   "befunde": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "am_rand": 16,
+   "ring_vorher_abgeschnitten_jetzt_sichtbar": 1,
+   "befunde": [
+    {
+     "hi": 7,
+     "ei": 3,
+     "seiten": [
+      "rechts"
+     ],
+     "name": "Ablauf 03 · Ausführung & Abnahme",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 7,
+     "ei": 4,
+     "seiten": [
+      "rechts"
+     ],
+     "name": "Leistung · Wohnbereiche",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 7,
+     "ei": 5,
+     "seiten": [
+      "rechts"
+     ],
+     "name": "Leistung · Balkon & Terrasse",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 7,
+     "ei": 6,
+     "seiten": [
+      "rechts"
+     ],
+     "name": "Barrierefreies Bad",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 7,
+     "ei": 7,
+     "seiten": [
+      "rechts"
+     ],
+     "name": "Badsanierung",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 7,
+     "ei": 8,
+     "seiten": [
+      "rechts"
+     ],
+     "name": "Ablauf 01 · Planung & Aufmaß vor Ort",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 7,
+     "ei": 9,
+     "seiten": [
+      "rechts"
+     ],
+     "name": "Treppen",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 7,
+     "ei": 10,
+     "seiten": [
+      "rechts"
+     ],
+     "name": "Ablauf 03 · Ausführung & Abnahme",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 7,
+     "ei": 11,
+     "seiten": [
+      "rechts"
+     ],
+     "name": "Ablauf 01 · Planung & Aufmaß vor Ort",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 7,
+     "ei": 12,
+     "seiten": [
+      "rechts"
+     ],
+     "name": "Ablauf 01–03",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 7,
+     "ei": 13,
+     "seiten": [
+      "rechts"
+     ],
+     "name": "Treppen",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 7,
+     "ei": 14,
+     "seiten": [
+      "rechts"
+     ],
+     "name": "Leistungen",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 7,
+     "ei": 15,
+     "seiten": [
+      "rechts"
+     ],
+     "name": "Ablauf 03 · Staubgeschützt",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 7,
+     "ei": 16,
+     "seiten": [
+      "rechts"
+     ],
+     "name": "Ablauf 03 · Staubgeschützt",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 7,
+     "ei": 17,
+     "seiten": [
+      "rechts"
+     ],
+     "name": "Festpreisangebot",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 9,
+     "ei": 8,
+     "seiten": [
+      "unten"
+     ],
+     "name": "Wie schnell erhalten wir einen Termin zum Aufmaß v",
+     "ring_aussen_alt": 0,
+     "ring_aussen_neu": 706
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m375",
+   "am_rand": 0,
+   "ring_vorher_abgeschnitten_jetzt_sichtbar": 0,
+   "befunde": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m375",
+   "am_rand": 1,
+   "ring_vorher_abgeschnitten_jetzt_sichtbar": 1,
+   "befunde": [
+    {
+     "hi": 1,
+     "ei": 3,
+     "seiten": [
+      "unten"
+     ],
+     "name": "06441 / 44 83 567",
+     "ring_aussen_alt": 0,
+     "ring_aussen_neu": 161
+    }
+   ]
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m375",
+   "am_rand": 0,
+   "ring_vorher_abgeschnitten_jetzt_sichtbar": 0,
+   "befunde": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "m375",
+   "am_rand": 2,
+   "ring_vorher_abgeschnitten_jetzt_sichtbar": 2,
+   "befunde": [
+    {
+     "hi": 1,
+     "ei": 0,
+     "seiten": [
+      "unten"
+     ],
+     "name": "Jetzt Vor-Ort-Termin für Gießen anfragen",
+     "ring_aussen_alt": 347,
+     "ring_aussen_neu": 706
+    },
+    {
+     "hi": 4,
+     "ei": 6,
+     "seiten": [
+      "unten"
+     ],
+     "name": "Alle Standorte ansehen",
+     "ring_aussen_alt": 4,
+     "ring_aussen_neu": 258
+    }
+   ]
+  },
+  {
+   "seite": "/karriere",
+   "ansicht": "m375",
+   "am_rand": 0,
+   "ring_vorher_abgeschnitten_jetzt_sichtbar": 0,
+   "befunde": []
+  },
+  {
+   "seite": "/treppen",
+   "ansicht": "m375",
+   "am_rand": 2,
+   "ring_vorher_abgeschnitten_jetzt_sichtbar": 2,
+   "befunde": [
+    {
+     "hi": 4,
+     "ei": 1,
+     "seiten": [
+      "unten"
+     ],
+     "name": "06441 / 44 83 567",
+     "ring_aussen_alt": 0,
+     "ring_aussen_neu": 710
+    },
+    {
+     "hi": 5,
+     "ei": 3,
+     "seiten": [
+      "unten"
+     ],
+     "name": "ReferenzenAusgeführte Projekte und Kundenstimmen",
+     "ring_aussen_alt": 0,
+     "ring_aussen_neu": 702
+    }
+   ]
+  },
+  {
+   "seite": "/unternehmen",
+   "ansicht": "m375",
+   "am_rand": 0,
+   "ring_vorher_abgeschnitten_jetzt_sichtbar": 0,
+   "befunde": []
+  },
+  {
+   "seite": "/fliesen",
+   "ansicht": "m375",
+   "am_rand": 9,
+   "ring_vorher_abgeschnitten_jetzt_sichtbar": 3,
+   "befunde": [
+    {
+     "hi": 0,
+     "ei": 13,
+     "seiten": [
+      "unten"
+     ],
+     "name": "Fliesen-KonfiguratorProjekt in 4 Schritten vorbere",
+     "ring_aussen_alt": 0,
+     "ring_aussen_neu": 706
+    },
+    {
+     "hi": 1,
+     "ei": 30,
+     "seiten": [
+      "unten"
+     ],
+     "name": "Festpreisangebot verstehen",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 1,
+     "ei": 31,
+     "seiten": [
+      "unten"
+     ],
+     "name": "Abnahme & Qualität",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 1,
+     "ei": 32,
+     "seiten": [
+      "unten"
+     ],
+     "name": "Fugensanierung",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 1,
+     "ei": 38,
+     "seiten": [
+      "unten"
+     ],
+     "name": "Zum Bad-Bereich",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 1,
+     "ei": 39,
+     "seiten": [
+      "unten"
+     ],
+     "name": "Fliesen im Bad",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 1,
+     "ei": 40,
+     "seiten": [
+      "unten"
+     ],
+     "name": "Gäste-WC fliesen",
+     "ring_aussen_alt": null,
+     "ring_aussen_neu": null
+    },
+    {
+     "hi": 2,
+     "ei": 4,
+     "seiten": [
+      "unten"
+     ],
+     "name": "Service & ReparaturSchäden erkennen und fachgerech",
+     "ring_aussen_alt": 0,
+     "ring_aussen_neu": 706
+    },
+    {
+     "hi": 3,
+     "ei": 2,
+     "seiten": [
+      "unten"
+     ],
+     "name": "Fotos per WhatsApp senden",
+     "ring_aussen_alt": 4,
+     "ring_aussen_neu": 363
+    }
+   ]
+  },
+  {
+   "seite": "/balkon-terrasse",
+   "ansicht": "m375",
+   "am_rand": 2,
+   "ring_vorher_abgeschnitten_jetzt_sichtbar": 2,
+   "befunde": [
+    {
+     "hi": 3,
+     "ei": 2,
+     "seiten": [
+      "unten"
+     ],
+     "name": "TerrassenplattenMaterial, Stärke und OberflächeMeh",
+     "ring_aussen_alt": 0,
+     "ring_aussen_neu": 706
+    },
+    {
+     "hi": 4,
+     "ei": 2,
+     "seiten": [
+      "unten"
+     ],
+     "name": "Fotos per WhatsApp senden",
+     "ring_aussen_alt": 0,
+     "ring_aussen_neu": 710
+    }
+   ]
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m375",
+   "am_rand": 1,
+   "ring_vorher_abgeschnitten_jetzt_sichtbar": 1,
+   "befunde": [
+    {
+     "hi": 2,
+     "ei": 0,
+     "seiten": [
+      "unten"
+     ],
+     "name": "Alle Leistungen im Überblick",
+     "ring_aussen_alt": 0,
+     "ring_aussen_neu": 494
+    }
+   ]
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m375",
+   "am_rand": 0,
+   "ring_vorher_abgeschnitten_jetzt_sichtbar": 0,
+   "befunde": []
+  }
+ ]
+}

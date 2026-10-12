@@ -1,0 +1,6104 @@
+{
+ "base": "http://127.0.0.1:4350",
+ "erstellt": "2026-10-12T22:00:07.369Z",
+ "ergebnis": [
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "d1920",
+   "bewegung": "no-preference",
+   "ohneJs": false,
+   "html_klasse": "archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable k-bewegung k-modul",
+   "hoehe": 10082,
+   "bildschirme": 35,
+   "max_blickfaenge": 1,
+   "ueber_eins": [],
+   "je_bildschirm": [
+    {
+     "n": 0,
+     "y": 0,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-00.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 2,
+     "gruppen": [
+      {
+       "x": 1122,
+       "y": 166,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "div.einzugsband.relative > p.inline-flex.items-center.gap-2 > svg.inline-block.shrink-0",
+       "idx": 751
+      },
+      {
+       "x": 1148,
+       "y": 501,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 800
+      }
+     ]
+    },
+    {
+     "n": 1,
+     "y": 270,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-01.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 1148,
+       "y": 231,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 800
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "y": 540,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-02.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 3,
+     "y": 810,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-03.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 4,
+     "y": 1080,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-04.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 385,
+       "y": 1054,
+       "w": 794,
+       "h": 2,
+       "pixel": 1588,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "y": 1350,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-05.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 385,
+       "y": 784,
+       "w": 794,
+       "h": 2,
+       "pixel": 1588,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 6,
+     "y": 1620,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-06.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 385,
+       "y": 514,
+       "w": 794,
+       "h": 2,
+       "pixel": 1588,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 7,
+     "y": 1890,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-07.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 385,
+       "y": 244,
+       "w": 794,
+       "h": 2,
+       "pixel": 1588,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 8,
+     "y": 2160,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-08.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 9,
+     "y": 2430,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-09.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 10,
+     "y": 2700,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-10.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 11,
+     "y": 2970,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-11.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 12,
+     "y": 3240,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-12.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 820,
+       "w": 2,
+       "h": 260,
+       "pixel": 515,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 13,
+     "y": 3510,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-13.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 550,
+       "w": 2,
+       "h": 530,
+       "pixel": 1055,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 14,
+     "y": 3780,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-14.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 280,
+       "w": 2,
+       "h": 800,
+       "pixel": 1595,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 15,
+     "y": 4050,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-15.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 65,
+       "w": 2,
+       "h": 1015,
+       "pixel": 2030,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 16,
+     "y": 4320,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-16.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 65,
+       "w": 2,
+       "h": 1015,
+       "pixel": 2030,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 17,
+     "y": 4590,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-17.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 65,
+       "w": 2,
+       "h": 911,
+       "pixel": 1822,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 18,
+     "y": 4860,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-18.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 65,
+       "w": 2,
+       "h": 729,
+       "pixel": 1458,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 19,
+     "y": 5130,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-19.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 65,
+       "w": 2,
+       "h": 548,
+       "pixel": 1096,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 20,
+     "y": 5400,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-20.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 65,
+       "w": 2,
+       "h": 367,
+       "pixel": 734,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 21,
+     "y": 5670,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-21.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 65,
+       "w": 2,
+       "h": 185,
+       "pixel": 370,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 22,
+     "y": 5940,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-22.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 65,
+       "w": 2,
+       "h": 4,
+       "pixel": 8,
+       "art": "marke",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 23,
+     "y": 6210,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-23.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 933,
+       "w": 2,
+       "h": 147,
+       "pixel": 294,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 24,
+     "y": 6480,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-24.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 663,
+       "w": 2,
+       "h": 417,
+       "pixel": 834,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 25,
+     "y": 6750,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-25.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 393,
+       "w": 2,
+       "h": 466,
+       "pixel": 932,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 26,
+     "y": 7020,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-26.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 123,
+       "w": 2,
+       "h": 485,
+       "pixel": 970,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 27,
+     "y": 7290,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-27.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 65,
+       "w": 2,
+       "h": 292,
+       "pixel": 584,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 28,
+     "y": 7560,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-28.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 65,
+       "w": 2,
+       "h": 40,
+       "pixel": 80,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 29,
+     "y": 7830,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-29.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 30,
+     "y": 8100,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-30.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 31,
+     "y": 8370,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-31.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 352,
+       "y": 874,
+       "w": 2,
+       "h": 61,
+       "pixel": 122,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1400
+      }
+     ]
+    },
+    {
+     "n": 32,
+     "y": 8640,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-32.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 352,
+       "y": 604,
+       "w": 2,
+       "h": 61,
+       "pixel": 122,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1400
+      }
+     ]
+    },
+    {
+     "n": 33,
+     "y": 8910,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-33.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 352,
+       "y": 334,
+       "w": 2,
+       "h": 61,
+       "pixel": 122,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1400
+      }
+     ]
+    },
+    {
+     "n": 34,
+     "y": 9002,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d1920-no-preference-34.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 352,
+       "y": 242,
+       "w": 2,
+       "h": 61,
+       "pixel": 122,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1400
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "d2560",
+   "bewegung": "no-preference",
+   "ohneJs": false,
+   "html_klasse": "archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable k-bewegung k-modul",
+   "hoehe": 10082,
+   "bildschirme": 26,
+   "max_blickfaenge": 2,
+   "ueber_eins": [
+    16
+   ],
+   "je_bildschirm": [
+    {
+     "n": 0,
+     "y": 0,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d2560-no-preference-00.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 2,
+     "gruppen": [
+      {
+       "x": 1442,
+       "y": 166,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "div.einzugsband.relative > p.inline-flex.items-center.gap-2 > svg.inline-block.shrink-0",
+       "idx": 751
+      },
+      {
+       "x": 1468,
+       "y": 501,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 800
+      }
+     ]
+    },
+    {
+     "n": 1,
+     "y": 360,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d2560-no-preference-01.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 1468,
+       "y": 141,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 800
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "y": 720,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d2560-no-preference-02.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 705,
+       "y": 1414,
+       "w": 794,
+       "h": 2,
+       "pixel": 1588,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "y": 1080,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d2560-no-preference-03.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 705,
+       "y": 1054,
+       "w": 794,
+       "h": 2,
+       "pixel": 1588,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "y": 1440,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d2560-no-preference-04.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 705,
+       "y": 694,
+       "w": 794,
+       "h": 2,
+       "pixel": 1588,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "y": 1800,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d2560-no-preference-05.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 705,
+       "y": 334,
+       "w": 794,
+       "h": 2,
+       "pixel": 1588,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 6,
+     "y": 2160,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d2560-no-preference-06.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 7,
+     "y": 2520,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d2560-no-preference-07.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 8,
+     "y": 2880,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d2560-no-preference-08.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 656,
+       "y": 1180,
+       "w": 2,
+       "h": 260,
+       "pixel": 515,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 9,
+     "y": 3240,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d2560-no-preference-09.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 656,
+       "y": 820,
+       "w": 2,
+       "h": 620,
+       "pixel": 1235,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 10,
+     "y": 3600,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d2560-no-preference-10.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 656,
+       "y": 460,
+       "w": 2,
+       "h": 980,
+       "pixel": 1955,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 11,
+     "y": 3960,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d2560-no-preference-11.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 656,
+       "y": 100,
+       "w": 2,
+       "h": 1340,
+       "pixel": 2675,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 12,
+     "y": 4320,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d2560-no-preference-12.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 656,
+       "y": 65,
+       "w": 2,
+       "h": 1151,
+       "pixel": 2302,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 13,
+     "y": 4680,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d2560-no-preference-13.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 656,
+       "y": 65,
+       "w": 2,
+       "h": 914,
+       "pixel": 1828,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 14,
+     "y": 5040,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d2560-no-preference-14.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 656,
+       "y": 65,
+       "w": 2,
+       "h": 677,
+       "pixel": 1354,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 15,
+     "y": 5400,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d2560-no-preference-15.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 656,
+       "y": 65,
+       "w": 2,
+       "h": 440,
+       "pixel": 880,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 16,
+     "y": 5760,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d2560-no-preference-16.png",
+     "blickfaenge": 2,
+     "gruppen_blickfang": 2,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 656,
+       "y": 65,
+       "w": 2,
+       "h": 204,
+       "pixel": 408,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      },
+      {
+       "x": 656,
+       "y": 1383,
+       "w": 2,
+       "h": 57,
+       "pixel": 114,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 17,
+     "y": 6120,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d2560-no-preference-17.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 656,
+       "y": 1023,
+       "w": 2,
+       "h": 417,
+       "pixel": 834,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 18,
+     "y": 6480,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d2560-no-preference-18.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 656,
+       "y": 663,
+       "w": 2,
+       "h": 466,
+       "pixel": 932,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 19,
+     "y": 6840,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d2560-no-preference-19.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 656,
+       "y": 303,
+       "w": 2,
+       "h": 492,
+       "pixel": 984,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 20,
+     "y": 7200,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d2560-no-preference-20.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 656,
+       "y": 65,
+       "w": 2,
+       "h": 396,
+       "pixel": 792,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 21,
+     "y": 7560,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d2560-no-preference-21.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 656,
+       "y": 65,
+       "w": 2,
+       "h": 62,
+       "pixel": 124,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 22,
+     "y": 7920,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d2560-no-preference-22.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 672,
+       "y": 1324,
+       "w": 2,
+       "h": 61,
+       "pixel": 122,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1400
+      }
+     ]
+    },
+    {
+     "n": 23,
+     "y": 8280,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d2560-no-preference-23.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 672,
+       "y": 964,
+       "w": 2,
+       "h": 61,
+       "pixel": 122,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1400
+      }
+     ]
+    },
+    {
+     "n": 24,
+     "y": 8640,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d2560-no-preference-24.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 672,
+       "y": 604,
+       "w": 2,
+       "h": 61,
+       "pixel": 122,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1400
+      }
+     ]
+    },
+    {
+     "n": 25,
+     "y": 8642,
+     "datei": "../rot-nachher-weitere/standorte__giessen-d2560-no-preference-25.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 672,
+       "y": 602,
+       "w": 2,
+       "h": 61,
+       "pixel": 122,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1400
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "t768",
+   "bewegung": "no-preference",
+   "ohneJs": false,
+   "html_klasse": "archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable k-bewegung k-modul",
+   "hoehe": 12054,
+   "bildschirme": 45,
+   "max_blickfaenge": 1,
+   "ueber_eins": [],
+   "je_bildschirm": [
+    {
+     "n": 0,
+     "y": 0,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-00.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 2,
+     "gruppen": [
+      {
+       "x": 57,
+       "y": 583,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "div.einzugsband.relative > p.inline-flex.items-center.gap-2 > svg.inline-block.shrink-0",
+       "idx": 751
+      },
+      {
+       "x": 75,
+       "y": 894,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 800
+      }
+     ]
+    },
+    {
+     "n": 1,
+     "y": 256,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-01.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 2,
+     "gruppen": [
+      {
+       "x": 57,
+       "y": 327,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "div.einzugsband.relative > p.inline-flex.items-center.gap-2 > svg.inline-block.shrink-0",
+       "idx": 751
+      },
+      {
+       "x": 75,
+       "y": 638,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 800
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "y": 512,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-02.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 2,
+     "gruppen": [
+      {
+       "x": 57,
+       "y": 71,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "div.einzugsband.relative > p.inline-flex.items-center.gap-2 > svg.inline-block.shrink-0",
+       "idx": 751
+      },
+      {
+       "x": 75,
+       "y": 382,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 800
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "y": 768,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-03.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 75,
+       "y": 126,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 800
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "y": 1024,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-04.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 5,
+     "y": 1280,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-05.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 65,
+       "y": 918,
+       "w": 453,
+       "h": 2,
+       "pixel": 906,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 6,
+     "y": 1536,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-06.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 65,
+       "y": 662,
+       "w": 453,
+       "h": 2,
+       "pixel": 906,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 7,
+     "y": 1792,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-07.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 65,
+       "y": 406,
+       "w": 453,
+       "h": 2,
+       "pixel": 906,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 8,
+     "y": 2048,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-08.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 65,
+       "y": 150,
+       "w": 453,
+       "h": 2,
+       "pixel": 906,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 9,
+     "y": 2304,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-09.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 10,
+     "y": 2560,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-10.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 11,
+     "y": 2816,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-11.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 12,
+     "y": 3072,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-12.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 13,
+     "y": 3328,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-13.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 873,
+       "w": 2,
+       "h": 90,
+       "pixel": 175,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 14,
+     "y": 3584,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-14.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 617,
+       "w": 2,
+       "h": 346,
+       "pixel": 687,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 15,
+     "y": 3840,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-15.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 361,
+       "w": 2,
+       "h": 602,
+       "pixel": 1199,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 16,
+     "y": 4096,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-16.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 105,
+       "w": 2,
+       "h": 858,
+       "pixel": 1711,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 17,
+     "y": 4352,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-17.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 65,
+       "w": 2,
+       "h": 898,
+       "pixel": 1796,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 18,
+     "y": 4608,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-18.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 65,
+       "w": 2,
+       "h": 785,
+       "pixel": 1570,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 19,
+     "y": 4864,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-19.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 65,
+       "w": 2,
+       "h": 599,
+       "pixel": 1198,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 20,
+     "y": 5120,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-20.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 65,
+       "w": 2,
+       "h": 413,
+       "pixel": 826,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 21,
+     "y": 5376,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-21.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 65,
+       "w": 2,
+       "h": 227,
+       "pixel": 454,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 22,
+     "y": 5632,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-22.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 65,
+       "w": 2,
+       "h": 41,
+       "pixel": 82,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 23,
+     "y": 5888,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-23.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 24,
+     "y": 6144,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-24.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 25,
+     "y": 6400,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-25.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 909,
+       "w": 2,
+       "h": 54,
+       "pixel": 108,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 26,
+     "y": 6656,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-26.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 653,
+       "w": 2,
+       "h": 310,
+       "pixel": 620,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 27,
+     "y": 6912,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-27.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 397,
+       "w": 2,
+       "h": 474,
+       "pixel": 948,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 28,
+     "y": 7168,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-28.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 141,
+       "w": 2,
+       "h": 492,
+       "pixel": 984,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 29,
+     "y": 7424,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-29.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 65,
+       "w": 2,
+       "h": 330,
+       "pixel": 660,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 30,
+     "y": 7680,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-30.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 65,
+       "w": 2,
+       "h": 91,
+       "pixel": 182,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 31,
+     "y": 7936,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-31.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 32,
+     "y": 8192,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-32.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 33,
+     "y": 8448,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-33.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 34,
+     "y": 8704,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-34.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 35,
+     "y": 8960,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-35.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 36,
+     "y": 9216,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-36.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 32,
+       "y": 795,
+       "w": 2,
+       "h": 28,
+       "pixel": 56,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1400
+      }
+     ]
+    },
+    {
+     "n": 37,
+     "y": 9472,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-37.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 32,
+       "y": 539,
+       "w": 2,
+       "h": 28,
+       "pixel": 56,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1400
+      }
+     ]
+    },
+    {
+     "n": 38,
+     "y": 9728,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-38.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 32,
+       "y": 283,
+       "w": 2,
+       "h": 28,
+       "pixel": 56,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1400
+      }
+     ]
+    },
+    {
+     "n": 39,
+     "y": 9984,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-39.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 40,
+     "y": 10240,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-40.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 41,
+     "y": 10496,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-41.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 42,
+     "y": 10752,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-42.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 43,
+     "y": 11008,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-43.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 44,
+     "y": 11030,
+     "datei": "../rot-nachher-weitere/standorte__giessen-t768-no-preference-44.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    }
+   ]
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "m375",
+   "bewegung": "no-preference",
+   "ohneJs": false,
+   "html_klasse": "archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable k-bewegung k-modul",
+   "hoehe": 16946,
+   "bildschirme": 81,
+   "max_blickfaenge": 1,
+   "ueber_eins": [],
+   "je_bildschirm": [
+    {
+     "n": 0,
+     "y": 0,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-00.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 41,
+       "y": 724,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "div.einzugsband.relative > p.inline-flex.items-center.gap-2 > svg.inline-block.shrink-0",
+       "idx": 751
+      }
+     ]
+    },
+    {
+     "n": 1,
+     "y": 203,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-01.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 41,
+       "y": 521,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "div.einzugsband.relative > p.inline-flex.items-center.gap-2 > svg.inline-block.shrink-0",
+       "idx": 751
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "y": 406,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-02.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 41,
+       "y": 318,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "div.einzugsband.relative > p.inline-flex.items-center.gap-2 > svg.inline-block.shrink-0",
+       "idx": 751
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "y": 609,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-03.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 2,
+     "gruppen": [
+      {
+       "x": 41,
+       "y": 115,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "div.einzugsband.relative > p.inline-flex.items-center.gap-2 > svg.inline-block.shrink-0",
+       "idx": 751
+      },
+      {
+       "x": 59,
+       "y": 561,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 800
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "y": 812,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-04.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 59,
+       "y": 358,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 800
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "y": 1015,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-05.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 59,
+       "y": 155,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 800
+      }
+     ]
+    },
+    {
+     "n": 6,
+     "y": 1218,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-06.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 7,
+     "y": 1421,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-07.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 8,
+     "y": 1624,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-08.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 9,
+     "y": 1827,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-09.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 10,
+     "y": 2030,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-10.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 11,
+     "y": 2233,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-11.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 12,
+     "y": 2436,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-12.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 40,
+       "y": 564,
+       "w": 2,
+       "h": 187,
+       "pixel": 374,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0 > span.absolute.left-6.-translate-x-1/2",
+       "idx": 907
+      }
+     ]
+    },
+    {
+     "n": 13,
+     "y": 2639,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-13.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 40,
+       "y": 361,
+       "w": 2,
+       "h": 264,
+       "pixel": 528,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.left-6.-translate-x-1/2",
+       "idx": 922
+      }
+     ]
+    },
+    {
+     "n": 14,
+     "y": 2842,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-14.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 40,
+       "y": 158,
+       "w": 2,
+       "h": 264,
+       "pixel": 528,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.left-6.-translate-x-1/2",
+       "idx": 922
+      }
+     ]
+    },
+    {
+     "n": 15,
+     "y": 3045,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-15.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 40,
+       "y": 65,
+       "w": 2,
+       "h": 154,
+       "pixel": 308,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.left-6.-translate-x-1/2",
+       "idx": 922
+      }
+     ]
+    },
+    {
+     "n": 16,
+     "y": 3248,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-16.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 17,
+     "y": 3451,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-17.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 18,
+     "y": 3654,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-18.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 19,
+     "y": 3857,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-19.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 20,
+     "y": 4060,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-20.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 21,
+     "y": 4263,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-21.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 22,
+     "y": 4466,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-22.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 23,
+     "y": 4669,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-23.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 24,
+     "y": 4872,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-24.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 25,
+     "y": 5075,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-25.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 708,
+       "w": 2,
+       "h": 43,
+       "pixel": 81,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 26,
+     "y": 5278,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-26.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 505,
+       "w": 2,
+       "h": 246,
+       "pixel": 487,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 27,
+     "y": 5481,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-27.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 302,
+       "w": 2,
+       "h": 449,
+       "pixel": 893,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 28,
+     "y": 5684,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-28.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 99,
+       "w": 2,
+       "h": 652,
+       "pixel": 1299,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 29,
+     "y": 5887,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-29.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 686,
+       "pixel": 1372,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 30,
+     "y": 6090,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-30.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 686,
+       "pixel": 1372,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 31,
+     "y": 6293,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-31.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 686,
+       "pixel": 1372,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 32,
+     "y": 6496,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-32.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 686,
+       "pixel": 1372,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 33,
+     "y": 6699,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-33.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 686,
+       "pixel": 1372,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 34,
+     "y": 6902,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-34.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 686,
+       "pixel": 1372,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 35,
+     "y": 7105,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-35.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 645,
+       "pixel": 1290,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 36,
+     "y": 7308,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-36.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 500,
+       "pixel": 1000,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 37,
+     "y": 7511,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-37.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 355,
+       "pixel": 710,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 38,
+     "y": 7714,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-38.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 210,
+       "pixel": 420,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 39,
+     "y": 7917,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-39.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 65,
+       "pixel": 130,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1067
+      }
+     ]
+    },
+    {
+     "n": 40,
+     "y": 8120,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-40.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 41,
+     "y": 8323,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-41.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 42,
+     "y": 8526,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-42.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 43,
+     "y": 8729,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-43.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 44,
+     "y": 8932,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-44.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 45,
+     "y": 9135,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-45.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 46,
+     "y": 9338,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-46.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 47,
+     "y": 9541,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-47.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 48,
+     "y": 9744,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-48.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 49,
+     "y": 9947,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-49.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 548,
+       "w": 2,
+       "h": 203,
+       "pixel": 406,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 50,
+     "y": 10150,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-50.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 345,
+       "w": 2,
+       "h": 406,
+       "pixel": 812,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 51,
+     "y": 10353,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-51.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 142,
+       "w": 2,
+       "h": 524,
+       "pixel": 1048,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 52,
+     "y": 10556,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-52.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 409,
+       "pixel": 818,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 53,
+     "y": 10759,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-53.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 216,
+       "pixel": 432,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 54,
+     "y": 10962,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-54.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 23,
+       "pixel": 46,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1252
+      }
+     ]
+    },
+    {
+     "n": 55,
+     "y": 11165,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-55.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 56,
+     "y": 11368,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-56.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 57,
+     "y": 11571,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-57.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 58,
+     "y": 11774,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-58.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 59,
+     "y": 11977,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-59.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 60,
+     "y": 12180,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-60.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 61,
+     "y": 12383,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-61.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 62,
+     "y": 12586,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-62.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 63,
+     "y": 12789,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-63.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 64,
+     "y": 12992,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-64.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 739,
+       "w": 2,
+       "h": 12,
+       "pixel": 24,
+       "art": "marke",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1400
+      }
+     ]
+    },
+    {
+     "n": 65,
+     "y": 13195,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-65.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 536,
+       "w": 2,
+       "h": 54,
+       "pixel": 108,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1400
+      }
+     ]
+    },
+    {
+     "n": 66,
+     "y": 13398,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-66.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 333,
+       "w": 2,
+       "h": 54,
+       "pixel": 108,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1400
+      }
+     ]
+    },
+    {
+     "n": 67,
+     "y": 13601,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-67.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 130,
+       "w": 2,
+       "h": 54,
+       "pixel": 108,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1400
+      }
+     ]
+    },
+    {
+     "n": 68,
+     "y": 13804,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-68.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 69,
+     "y": 14007,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-69.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 70,
+     "y": 14210,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-70.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 71,
+     "y": 14413,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-71.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 72,
+     "y": 14616,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-72.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 73,
+     "y": 14819,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-73.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 74,
+     "y": 15022,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-74.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 75,
+     "y": 15225,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-75.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 76,
+     "y": 15428,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-76.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 77,
+     "y": 15631,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-77.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 78,
+     "y": 15834,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-78.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 79,
+     "y": 16037,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-79.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 80,
+     "y": 16134,
+     "datei": "../rot-nachher-weitere/standorte__giessen-m375-no-preference-80.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    }
+   ]
+  },
+  {
+   "seite": "/standorte/marburg",
+   "ansicht": "d1920",
+   "bewegung": "no-preference",
+   "ohneJs": false,
+   "html_klasse": "archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable k-bewegung k-modul",
+   "hoehe": 10271,
+   "bildschirme": 36,
+   "max_blickfaenge": 1,
+   "ueber_eins": [],
+   "je_bildschirm": [
+    {
+     "n": 0,
+     "y": 0,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-00.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 2,
+     "gruppen": [
+      {
+       "x": 1122,
+       "y": 166,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "div.einzugsband.relative > p.inline-flex.items-center.gap-2 > svg.inline-block.shrink-0",
+       "idx": 751
+      },
+      {
+       "x": 1148,
+       "y": 741,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 831
+      }
+     ]
+    },
+    {
+     "n": 1,
+     "y": 270,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-01.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 1148,
+       "y": 471,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 831
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "y": 540,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-02.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 1148,
+       "y": 201,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 831
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "y": 810,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-03.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 4,
+     "y": 1080,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-04.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 385,
+       "y": 1054,
+       "w": 794,
+       "h": 2,
+       "pixel": 1588,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "y": 1350,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-05.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 385,
+       "y": 784,
+       "w": 794,
+       "h": 2,
+       "pixel": 1588,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 6,
+     "y": 1620,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-06.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 385,
+       "y": 514,
+       "w": 794,
+       "h": 2,
+       "pixel": 1588,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 7,
+     "y": 1890,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-07.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 385,
+       "y": 244,
+       "w": 794,
+       "h": 2,
+       "pixel": 1588,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 8,
+     "y": 2160,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-08.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 9,
+     "y": 2430,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-09.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 10,
+     "y": 2700,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-10.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 11,
+     "y": 2970,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-11.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 12,
+     "y": 3240,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-12.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 928,
+       "w": 2,
+       "h": 152,
+       "pixel": 299,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 13,
+     "y": 3510,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-13.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 658,
+       "w": 2,
+       "h": 422,
+       "pixel": 839,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 14,
+     "y": 3780,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-14.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 388,
+       "w": 2,
+       "h": 692,
+       "pixel": 1379,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 15,
+     "y": 4050,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-15.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 118,
+       "w": 2,
+       "h": 962,
+       "pixel": 1919,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 16,
+     "y": 4320,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-16.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 65,
+       "w": 2,
+       "h": 1015,
+       "pixel": 2030,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 17,
+     "y": 4590,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-17.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 65,
+       "w": 2,
+       "h": 1015,
+       "pixel": 2030,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 18,
+     "y": 4860,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-18.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 65,
+       "w": 2,
+       "h": 847,
+       "pixel": 1694,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 19,
+     "y": 5130,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-19.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 65,
+       "w": 2,
+       "h": 666,
+       "pixel": 1332,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 20,
+     "y": 5400,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-20.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 65,
+       "w": 2,
+       "h": 485,
+       "pixel": 970,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 21,
+     "y": 5670,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-21.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 65,
+       "w": 2,
+       "h": 304,
+       "pixel": 608,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 22,
+     "y": 5940,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-22.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 65,
+       "w": 2,
+       "h": 123,
+       "pixel": 246,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 23,
+     "y": 6210,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-23.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 24,
+     "y": 6480,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-24.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 852,
+       "w": 2,
+       "h": 228,
+       "pixel": 456,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1267
+      }
+     ]
+    },
+    {
+     "n": 25,
+     "y": 6750,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-25.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 582,
+       "w": 2,
+       "h": 457,
+       "pixel": 914,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1267
+      }
+     ]
+    },
+    {
+     "n": 26,
+     "y": 7020,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-26.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 312,
+       "w": 2,
+       "h": 475,
+       "pixel": 950,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1267
+      }
+     ]
+    },
+    {
+     "n": 27,
+     "y": 7290,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-27.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 65,
+       "w": 2,
+       "h": 470,
+       "pixel": 940,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1267
+      }
+     ]
+    },
+    {
+     "n": 28,
+     "y": 7560,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-28.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 336,
+       "y": 65,
+       "w": 2,
+       "h": 219,
+       "pixel": 438,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1267
+      }
+     ]
+    },
+    {
+     "n": 29,
+     "y": 7830,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-29.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 30,
+     "y": 8100,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-30.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 31,
+     "y": 8370,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-31.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 352,
+       "y": 1062,
+       "w": 2,
+       "h": 18,
+       "pixel": 36,
+       "art": "marke",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1415
+      }
+     ]
+    },
+    {
+     "n": 32,
+     "y": 8640,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-32.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 352,
+       "y": 792,
+       "w": 2,
+       "h": 61,
+       "pixel": 122,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1415
+      }
+     ]
+    },
+    {
+     "n": 33,
+     "y": 8910,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-33.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 352,
+       "y": 522,
+       "w": 2,
+       "h": 61,
+       "pixel": 122,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1415
+      }
+     ]
+    },
+    {
+     "n": 34,
+     "y": 9180,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-34.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 352,
+       "y": 252,
+       "w": 2,
+       "h": 61,
+       "pixel": 122,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1415
+      }
+     ]
+    },
+    {
+     "n": 35,
+     "y": 9191,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d1920-no-preference-35.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 352,
+       "y": 241,
+       "w": 2,
+       "h": 61,
+       "pixel": 122,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1415
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/standorte/marburg",
+   "ansicht": "d2560",
+   "bewegung": "no-preference",
+   "ohneJs": false,
+   "html_klasse": "archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable k-bewegung k-modul",
+   "hoehe": 10271,
+   "bildschirme": 26,
+   "max_blickfaenge": 2,
+   "ueber_eins": [
+    17
+   ],
+   "je_bildschirm": [
+    {
+     "n": 0,
+     "y": 0,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d2560-no-preference-00.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 2,
+     "gruppen": [
+      {
+       "x": 1442,
+       "y": 166,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "div.einzugsband.relative > p.inline-flex.items-center.gap-2 > svg.inline-block.shrink-0",
+       "idx": 751
+      },
+      {
+       "x": 1468,
+       "y": 741,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 831
+      }
+     ]
+    },
+    {
+     "n": 1,
+     "y": 360,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d2560-no-preference-01.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 1468,
+       "y": 381,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 831
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "y": 720,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d2560-no-preference-02.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 705,
+       "y": 1414,
+       "w": 794,
+       "h": 2,
+       "pixel": 1588,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "y": 1080,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d2560-no-preference-03.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 705,
+       "y": 1054,
+       "w": 794,
+       "h": 2,
+       "pixel": 1588,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "y": 1440,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d2560-no-preference-04.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 705,
+       "y": 694,
+       "w": 794,
+       "h": 2,
+       "pixel": 1588,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "y": 1800,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d2560-no-preference-05.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 705,
+       "y": 334,
+       "w": 794,
+       "h": 2,
+       "pixel": 1588,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 6,
+     "y": 2160,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d2560-no-preference-06.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 7,
+     "y": 2520,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d2560-no-preference-07.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 8,
+     "y": 2880,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d2560-no-preference-08.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 656,
+       "y": 1288,
+       "w": 2,
+       "h": 152,
+       "pixel": 299,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 9,
+     "y": 3240,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d2560-no-preference-09.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 656,
+       "y": 928,
+       "w": 2,
+       "h": 512,
+       "pixel": 1019,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 10,
+     "y": 3600,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d2560-no-preference-10.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 656,
+       "y": 568,
+       "w": 2,
+       "h": 872,
+       "pixel": 1739,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 11,
+     "y": 3960,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d2560-no-preference-11.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 656,
+       "y": 208,
+       "w": 2,
+       "h": 1232,
+       "pixel": 2459,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 12,
+     "y": 4320,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d2560-no-preference-12.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 656,
+       "y": 65,
+       "w": 2,
+       "h": 1267,
+       "pixel": 2534,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 13,
+     "y": 4680,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d2560-no-preference-13.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 656,
+       "y": 65,
+       "w": 2,
+       "h": 1030,
+       "pixel": 2060,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 14,
+     "y": 5040,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d2560-no-preference-14.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 656,
+       "y": 65,
+       "w": 2,
+       "h": 794,
+       "pixel": 1588,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 15,
+     "y": 5400,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d2560-no-preference-15.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 656,
+       "y": 65,
+       "w": 2,
+       "h": 558,
+       "pixel": 1116,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 16,
+     "y": 5760,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d2560-no-preference-16.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 656,
+       "y": 65,
+       "w": 2,
+       "h": 322,
+       "pixel": 644,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 17,
+     "y": 6120,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d2560-no-preference-17.png",
+     "blickfaenge": 2,
+     "gruppen_blickfang": 2,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 656,
+       "y": 65,
+       "w": 2,
+       "h": 85,
+       "pixel": 170,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      },
+      {
+       "x": 656,
+       "y": 1212,
+       "w": 2,
+       "h": 228,
+       "pixel": 456,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1267
+      }
+     ]
+    },
+    {
+     "n": 18,
+     "y": 6480,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d2560-no-preference-18.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 656,
+       "y": 852,
+       "w": 2,
+       "h": 456,
+       "pixel": 912,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1267
+      }
+     ]
+    },
+    {
+     "n": 19,
+     "y": 6840,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d2560-no-preference-19.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 656,
+       "y": 492,
+       "w": 2,
+       "h": 482,
+       "pixel": 964,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1267
+      }
+     ]
+    },
+    {
+     "n": 20,
+     "y": 7200,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d2560-no-preference-20.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 656,
+       "y": 132,
+       "w": 2,
+       "h": 507,
+       "pixel": 1014,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1267
+      }
+     ]
+    },
+    {
+     "n": 21,
+     "y": 7560,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d2560-no-preference-21.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 656,
+       "y": 65,
+       "w": 2,
+       "h": 239,
+       "pixel": 478,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1267
+      }
+     ]
+    },
+    {
+     "n": 22,
+     "y": 7920,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d2560-no-preference-22.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 23,
+     "y": 8280,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d2560-no-preference-23.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 672,
+       "y": 1152,
+       "w": 2,
+       "h": 61,
+       "pixel": 122,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1415
+      }
+     ]
+    },
+    {
+     "n": 24,
+     "y": 8640,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d2560-no-preference-24.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 672,
+       "y": 792,
+       "w": 2,
+       "h": 61,
+       "pixel": 122,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1415
+      }
+     ]
+    },
+    {
+     "n": 25,
+     "y": 8831,
+     "datei": "../rot-nachher-weitere/standorte__marburg-d2560-no-preference-25.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 672,
+       "y": 601,
+       "w": 2,
+       "h": 61,
+       "pixel": 122,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1415
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/standorte/marburg",
+   "ansicht": "t768",
+   "bewegung": "no-preference",
+   "ohneJs": false,
+   "html_klasse": "archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable k-bewegung k-modul",
+   "hoehe": 12254,
+   "bildschirme": 45,
+   "max_blickfaenge": 1,
+   "ueber_eins": [],
+   "je_bildschirm": [
+    {
+     "n": 0,
+     "y": 0,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-00.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 57,
+       "y": 583,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "div.einzugsband.relative > p.inline-flex.items-center.gap-2 > svg.inline-block.shrink-0",
+       "idx": 751
+      }
+     ]
+    },
+    {
+     "n": 1,
+     "y": 256,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-01.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 2,
+     "gruppen": [
+      {
+       "x": 57,
+       "y": 327,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "div.einzugsband.relative > p.inline-flex.items-center.gap-2 > svg.inline-block.shrink-0",
+       "idx": 751
+      },
+      {
+       "x": 75,
+       "y": 845,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 831
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "y": 512,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-02.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 2,
+     "gruppen": [
+      {
+       "x": 57,
+       "y": 71,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "div.einzugsband.relative > p.inline-flex.items-center.gap-2 > svg.inline-block.shrink-0",
+       "idx": 751
+      },
+      {
+       "x": 75,
+       "y": 589,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 831
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "y": 768,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-03.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 75,
+       "y": 333,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 831
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "y": 1024,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-04.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 75,
+       "y": 77,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 831
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "y": 1280,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-05.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 65,
+       "y": 918,
+       "w": 453,
+       "h": 2,
+       "pixel": 906,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 6,
+     "y": 1536,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-06.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 65,
+       "y": 662,
+       "w": 453,
+       "h": 2,
+       "pixel": 906,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 7,
+     "y": 1792,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-07.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 65,
+       "y": 406,
+       "w": 453,
+       "h": 2,
+       "pixel": 906,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 8,
+     "y": 2048,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-08.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 65,
+       "y": 150,
+       "w": 453,
+       "h": 2,
+       "pixel": 906,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.top-6.hidden",
+       "idx": 923
+      }
+     ]
+    },
+    {
+     "n": 9,
+     "y": 2304,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-09.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 10,
+     "y": 2560,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-10.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 11,
+     "y": 2816,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-11.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 12,
+     "y": 3072,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-12.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 13,
+     "y": 3328,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-13.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 14,
+     "y": 3584,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-14.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 740,
+       "w": 2,
+       "h": 223,
+       "pixel": 441,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 15,
+     "y": 3840,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-15.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 484,
+       "w": 2,
+       "h": 479,
+       "pixel": 953,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 16,
+     "y": 4096,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-16.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 228,
+       "w": 2,
+       "h": 735,
+       "pixel": 1465,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 17,
+     "y": 4352,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-17.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 65,
+       "w": 2,
+       "h": 898,
+       "pixel": 1796,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 18,
+     "y": 4608,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-18.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 65,
+       "w": 2,
+       "h": 898,
+       "pixel": 1796,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 19,
+     "y": 4864,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-19.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 65,
+       "w": 2,
+       "h": 732,
+       "pixel": 1464,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 20,
+     "y": 5120,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-20.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 65,
+       "w": 2,
+       "h": 546,
+       "pixel": 1092,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 21,
+     "y": 5376,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-21.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 65,
+       "w": 2,
+       "h": 361,
+       "pixel": 722,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 22,
+     "y": 5632,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-22.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 65,
+       "w": 2,
+       "h": 175,
+       "pixel": 350,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 23,
+     "y": 5888,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-23.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 24,
+     "y": 6144,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-24.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 25,
+     "y": 6400,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-25.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 26,
+     "y": 6656,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-26.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 853,
+       "w": 2,
+       "h": 110,
+       "pixel": 220,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1267
+      }
+     ]
+    },
+    {
+     "n": 27,
+     "y": 6912,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-27.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 597,
+       "w": 2,
+       "h": 366,
+       "pixel": 732,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1267
+      }
+     ]
+    },
+    {
+     "n": 28,
+     "y": 7168,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-28.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 341,
+       "w": 2,
+       "h": 483,
+       "pixel": 966,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1267
+      }
+     ]
+    },
+    {
+     "n": 29,
+     "y": 7424,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-29.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 85,
+       "w": 2,
+       "h": 500,
+       "pixel": 1000,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1267
+      }
+     ]
+    },
+    {
+     "n": 30,
+     "y": 7680,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-30.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 65,
+       "w": 2,
+       "h": 282,
+       "pixel": 564,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1267
+      }
+     ]
+    },
+    {
+     "n": 31,
+     "y": 7936,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-31.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 65,
+       "w": 2,
+       "h": 43,
+       "pixel": 86,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1267
+      }
+     ]
+    },
+    {
+     "n": 32,
+     "y": 8192,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-32.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 33,
+     "y": 8448,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-33.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 34,
+     "y": 8704,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-34.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 35,
+     "y": 8960,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-35.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 36,
+     "y": 9216,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-36.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 37,
+     "y": 9472,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-37.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 32,
+       "y": 739,
+       "w": 2,
+       "h": 28,
+       "pixel": 56,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1415
+      }
+     ]
+    },
+    {
+     "n": 38,
+     "y": 9728,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-38.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 32,
+       "y": 483,
+       "w": 2,
+       "h": 28,
+       "pixel": 56,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1415
+      }
+     ]
+    },
+    {
+     "n": 39,
+     "y": 9984,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-39.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 32,
+       "y": 227,
+       "w": 2,
+       "h": 28,
+       "pixel": 56,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1415
+      }
+     ]
+    },
+    {
+     "n": 40,
+     "y": 10240,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-40.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 41,
+     "y": 10496,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-41.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 42,
+     "y": 10752,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-42.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 43,
+     "y": 11008,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-43.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 44,
+     "y": 11230,
+     "datei": "../rot-nachher-weitere/standorte__marburg-t768-no-preference-44.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    }
+   ]
+  },
+  {
+   "seite": "/standorte/marburg",
+   "ansicht": "m375",
+   "bewegung": "no-preference",
+   "ohneJs": false,
+   "html_klasse": "archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable k-bewegung k-modul",
+   "hoehe": 17226,
+   "bildschirme": 82,
+   "max_blickfaenge": 1,
+   "ueber_eins": [],
+   "je_bildschirm": [
+    {
+     "n": 0,
+     "y": 0,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-00.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 1,
+     "y": 203,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-01.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 41,
+       "y": 568,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "div.einzugsband.relative > p.inline-flex.items-center.gap-2 > svg.inline-block.shrink-0",
+       "idx": 751
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "y": 406,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-02.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 41,
+       "y": 365,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "div.einzugsband.relative > p.inline-flex.items-center.gap-2 > svg.inline-block.shrink-0",
+       "idx": 751
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "y": 609,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-03.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 41,
+       "y": 162,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "div.einzugsband.relative > p.inline-flex.items-center.gap-2 > svg.inline-block.shrink-0",
+       "idx": 751
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "y": 812,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-04.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 59,
+       "y": 702,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 831
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "y": 1015,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-05.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 59,
+       "y": 499,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 831
+      }
+     ]
+    },
+    {
+     "n": 6,
+     "y": 1218,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-06.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 59,
+       "y": 296,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 831
+      }
+     ]
+    },
+    {
+     "n": 7,
+     "y": 1421,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-07.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 1,
+     "gruppen": [
+      {
+       "x": 59,
+       "y": 93,
+       "w": 12,
+       "h": 12,
+       "pixel": 44,
+       "art": "marke",
+       "element": "a.flex.min-h-11.flex-wrap > span.flex.min-w-0.items-center > svg.inline-block.shrink-0",
+       "idx": 831
+      }
+     ]
+    },
+    {
+     "n": 8,
+     "y": 1624,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-08.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 9,
+     "y": 1827,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-09.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 10,
+     "y": 2030,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-10.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 11,
+     "y": 2233,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-11.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 12,
+     "y": 2436,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-12.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 40,
+       "y": 611,
+       "w": 2,
+       "h": 140,
+       "pixel": 280,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0 > span.absolute.left-6.-translate-x-1/2",
+       "idx": 907
+      }
+     ]
+    },
+    {
+     "n": 13,
+     "y": 2639,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-13.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 40,
+       "y": 408,
+       "w": 2,
+       "h": 264,
+       "pixel": 528,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.left-6.-translate-x-1/2",
+       "idx": 922
+      }
+     ]
+    },
+    {
+     "n": 14,
+     "y": 2842,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-14.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 40,
+       "y": 205,
+       "w": 2,
+       "h": 264,
+       "pixel": 528,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.left-6.-translate-x-1/2",
+       "idx": 922
+      }
+     ]
+    },
+    {
+     "n": 15,
+     "y": 3045,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-15.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 40,
+       "y": 65,
+       "w": 2,
+       "h": 201,
+       "pixel": 402,
+       "art": "blickfang",
+       "element": "ol.grid.grid-cols-1.border > li.relative.min-w-0.border-t > span.absolute.left-6.-translate-x-1/2",
+       "idx": 922
+      }
+     ]
+    },
+    {
+     "n": 16,
+     "y": 3248,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-16.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 17,
+     "y": 3451,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-17.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 18,
+     "y": 3654,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-18.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 19,
+     "y": 3857,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-19.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 20,
+     "y": 4060,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-20.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 21,
+     "y": 4263,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-21.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 22,
+     "y": 4466,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-22.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 23,
+     "y": 4669,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-23.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 24,
+     "y": 4872,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-24.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 25,
+     "y": 5075,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-25.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 26,
+     "y": 5278,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-26.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 692,
+       "w": 2,
+       "h": 59,
+       "pixel": 113,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 27,
+     "y": 5481,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-27.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 489,
+       "w": 2,
+       "h": 262,
+       "pixel": 519,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 28,
+     "y": 5684,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-28.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 286,
+       "w": 2,
+       "h": 465,
+       "pixel": 925,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 29,
+     "y": 5887,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-29.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 83,
+       "w": 2,
+       "h": 668,
+       "pixel": 1331,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 30,
+     "y": 6090,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-30.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 686,
+       "pixel": 1372,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 31,
+     "y": 6293,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-31.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 686,
+       "pixel": 1372,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 32,
+     "y": 6496,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-32.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 686,
+       "pixel": 1372,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 33,
+     "y": 6699,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-33.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 686,
+       "pixel": 1372,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 34,
+     "y": 6902,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-34.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 686,
+       "pixel": 1372,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 35,
+     "y": 7105,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-35.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 686,
+       "pixel": 1372,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 36,
+     "y": 7308,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-36.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 682,
+       "pixel": 1364,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 37,
+     "y": 7511,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-37.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 537,
+       "pixel": 1074,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 38,
+     "y": 7714,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-38.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 392,
+       "pixel": 784,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 39,
+     "y": 7917,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-39.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 247,
+       "pixel": 494,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 40,
+     "y": 8120,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-40.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 102,
+       "pixel": 204,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1082
+      }
+     ]
+    },
+    {
+     "n": 41,
+     "y": 8323,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-41.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 42,
+     "y": 8526,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-42.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 43,
+     "y": 8729,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-43.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 44,
+     "y": 8932,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-44.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 45,
+     "y": 9135,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-45.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 46,
+     "y": 9338,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-46.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 47,
+     "y": 9541,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-47.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 48,
+     "y": 9744,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-48.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 49,
+     "y": 9947,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-49.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 50,
+     "y": 10150,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-50.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 602,
+       "w": 2,
+       "h": 149,
+       "pixel": 298,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1267
+      }
+     ]
+    },
+    {
+     "n": 51,
+     "y": 10353,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-51.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 399,
+       "w": 2,
+       "h": 352,
+       "pixel": 704,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1267
+      }
+     ]
+    },
+    {
+     "n": 52,
+     "y": 10556,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-52.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 196,
+       "w": 2,
+       "h": 540,
+       "pixel": 1080,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1267
+      }
+     ]
+    },
+    {
+     "n": 53,
+     "y": 10759,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-53.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 479,
+       "pixel": 958,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1267
+      }
+     ]
+    },
+    {
+     "n": 54,
+     "y": 10962,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-54.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 286,
+       "pixel": 572,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1267
+      }
+     ]
+    },
+    {
+     "n": 55,
+     "y": 11165,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-55.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 4,
+       "y": 65,
+       "w": 2,
+       "h": 93,
+       "pixel": 186,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.leitachse.left-1.md:left-4 > span.leitachse-rot",
+       "idx": 1267
+      }
+     ]
+    },
+    {
+     "n": 56,
+     "y": 11368,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-56.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 57,
+     "y": 11571,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-57.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 58,
+     "y": 11774,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-58.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 59,
+     "y": 11977,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-59.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 60,
+     "y": 12180,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-60.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 61,
+     "y": 12383,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-61.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 62,
+     "y": 12586,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-62.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 63,
+     "y": 12789,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-63.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 64,
+     "y": 12992,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-64.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 65,
+     "y": 13195,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-65.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 66,
+     "y": 13398,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-66.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 613,
+       "w": 2,
+       "h": 55,
+       "pixel": 110,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1415
+      }
+     ]
+    },
+    {
+     "n": 67,
+     "y": 13601,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-67.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 410,
+       "w": 2,
+       "h": 55,
+       "pixel": 110,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1415
+      }
+     ]
+    },
+    {
+     "n": 68,
+     "y": 13804,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-68.png",
+     "blickfaenge": 1,
+     "gruppen_blickfang": 1,
+     "marken": 0,
+     "gruppen": [
+      {
+       "x": 16,
+       "y": 207,
+       "w": 2,
+       "h": 55,
+       "pixel": 110,
+       "art": "blickfang",
+       "element": "div.mx-auto.w-full.max-w-seite > div.flex.flex-col.gap-6 > blockquote.border-l-2.border-laser.pl-4",
+       "idx": 1415
+      }
+     ]
+    },
+    {
+     "n": 69,
+     "y": 14007,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-69.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 70,
+     "y": 14210,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-70.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 71,
+     "y": 14413,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-71.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 72,
+     "y": 14616,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-72.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 73,
+     "y": 14819,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-73.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 74,
+     "y": 15022,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-74.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 75,
+     "y": 15225,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-75.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 76,
+     "y": 15428,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-76.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 77,
+     "y": 15631,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-77.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 78,
+     "y": 15834,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-78.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 79,
+     "y": 16037,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-79.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 80,
+     "y": 16240,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-80.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    },
+    {
+     "n": 81,
+     "y": 16414,
+     "datei": "../rot-nachher-weitere/standorte__marburg-m375-no-preference-81.png",
+     "blickfaenge": 0,
+     "gruppen_blickfang": 0,
+     "marken": 0,
+     "gruppen": []
+    }
+   ]
+  }
+ ]
+}

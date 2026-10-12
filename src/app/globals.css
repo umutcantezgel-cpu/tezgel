@@ -542,6 +542,20 @@
       content-visibility: visible;
     }
   }
+  /* Fokusringe am Rand einer spaet-Hülle (R-02a): content-visibility schließt Malen ein und schneidet an der Innenkante
+     der Hülle – Fokusring (2 px) mit Versatz (2 px) eines Bedienelements an der Ober- oder Unterkante wurde abgeschnitten
+     (S-20, S-21 mussten je Seite pb-1/py-1 setzen). Der Schnitt liegt jetzt um Ringbreite + Versatz außerhalb; Lage, Größe
+     und das spätere Zeichnen bleiben unverändert (keine :has()-Regel, N-01/N-01b). Eine Abstandsstufe (4 px) ohne calc():
+     Chromium verwirft calc() in overflow-clip-margin (berechneter Wert 0 px). */
+  .spaet-zeichnen {
+    overflow-clip-margin: var(--spacing);
+  }
+  /* Menüblatt bei Vergrößerung (R-02a): h-dvh rechnet die Vergrößerung mit ein – bei CSS-Zoom 200 % wurde das Blatt doppelt
+     so hoch wie der Bildschirm, Anfrage, Anruf, WhatsApp und die letzten Einträge lagen unerreichbar darunter. Höchstens so
+     hoch wie der Bildschirm (Bezug des festen Blatts); ohne Zoom sind beide Werte gleich. */
+  .menue-blatt {
+    max-height: 100%;
+  }
   /* Seitenwechsel /leistungen → /leistungen/[id] (E3-ORCH-02, K-007 seitenwechsel): der Plan der Leistung gleitet in den
      Einstieg der Leistungsseite – nur bei der Übergangsart „plan-vor“ (Knopf „Fachdetails“), Dauer 4 · setzen. Unter lg
      und bei reduzierter Bewegung ohne Animation (sofortiger Wechsel). */

@@ -191,7 +191,12 @@ export default async function StandortPage({
         }
       />
 
-      <Leitachse>
+      {/* Leitachse in zwei Folgen (R-02a, K-003 „ein Rot je Bildschirm“): Um die Anfahrt (Abschnitte 2–5) ist die rote
+          Strecke der Blickfang, dort bleibt das Lot Grundschicht ohne gezogenes Stück – mit erlaubter Bewegung standen
+          sonst Achsstück und Strecke in einem Bildschirm (R-01). Die Folge reicht bis über die Leistungen, damit zwischen
+          Strecke und erstem Achsstück auch auf hohen Bildschirmen (1440 px) mehr als eine Bildschirmhöhe liegt. Ab den
+          weiteren Orten (6) wächst das rote Stück wie gewohnt. */}
+      <Leitachse gezogen={false}>
         {/* 2. ÜBER DIE STADT: Etikett und H2 an der Achse, Vorspann, drei Kennzahlen im Feldraster */}
         <Abschnitt
           leitachse
@@ -265,6 +270,9 @@ export default async function StandortPage({
           </Feldraster>
         </Abschnitt>
 
+      </Leitachse>
+
+      <Leitachse>
         {/* 6. WEITERE ORTE DER REGION: je Ort ein Feld mit Link */}
         <Abschnitt
           titelId="weitere-orte"

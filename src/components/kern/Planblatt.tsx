@@ -4,6 +4,11 @@
 // mittig; die Felder stehen an der unteren Fuge. Alle Werte kommen aus der Konfiguration – nichts Erfundenes, kein Maßstab.
 // Ist die Zeichnung ein Verlegeplan, zeigt das Blatt seine rote Achse (das gezogene Rot des Einstiegs, E3-SICHT-2-ERZ Q3);
 // mit `flucht="laden"` zieht sich die Achse während der Flucht auf (bewegung.css, sig-plan).
+// Tablett (md bis unter lg, R-02a): Dort steht die Randspalte unter dem Text in voller Breite – ein Plan über die ganze
+// Breite mit dem Schriftfeld darunter war bei 768 px 530–890 px hoch, der Einstieg endete erst nach anderthalb Bildschirmen.
+// Bei einem Verlegeplan stehen Zeichnung und Schriftfeld deshalb dort nebeneinander wie auf einem gezeichneten Blatt
+// (Zeichnung links, Schriftfeld rechts in zwei Spalten), das Blatt ist nur noch 270–360 px hoch. Andere Zeichnungen
+// (Einzugsband, Verband-Umschalter) brauchen die volle Breite und bleiben gestapelt; mobil und ab lg bleibt alles wie bisher.
 import { cloneElement, isValidElement, type ReactNode } from 'react';
 import clsx from 'clsx';
 import Schriftfeld, { type SchriftfeldFeld } from './Schriftfeld';
@@ -29,19 +34,31 @@ export interface PlanblattProps {
 export default function Planblatt({ children, felder, achse = true, mitAchse = false, className }: PlanblattProps) {
   const istPlan = isValidElement<VerlegeplanProps>(children) && children.type === Verlegeplan;
   const zeichnung = achse && istPlan ? cloneElement(children, { ohneAchse: false }) : children;
+  // Verlegeplan (auch in einer Hülle, die die Achse selbst trägt) mit Schriftfeld: auf dem Tablett nebeneinander
+  const nebeneinander = (istPlan || mitAchse) && Boolean(felder?.length);
   // planblatt-achse: das Blatt trägt das eine Rot des ersten Bildschirms – die Laserachse des Einstiegs bleibt ab lg Grundschicht
   // (globals.css; K-003 „höchstens ein roter Blickfang“, auch bei reduzierter Bewegung, Prüfstufe A E4-N2-02-PA)
   return (
-    <div className={clsx('flex h-full flex-col border border-fuge bg-fliese', ((achse && istPlan) || mitAchse) && 'planblatt-achse', className)}>
+    <div className={clsx('flex h-full flex-col border border-fuge bg-fliese', nebeneinander && 'md:max-lg:flex-row', ((achse && istPlan) || mitAchse) && 'planblatt-achse', className)}>
       {/* Blattfläche mit Schnittmarken an den Ecken: der freie Rand um die Zeichnung gehört zum Blatt */}
-      <div className="relative flex flex-1 flex-col justify-center p-6 lg:p-8">
+      <div className={clsx('relative flex flex-1 flex-col justify-center p-6 lg:p-8', nebeneinander && 'md:max-lg:min-w-0')}>
         <span aria-hidden="true" className="absolute top-3 left-3 size-3 border-t border-l border-strich" />
         <span aria-hidden="true" className="absolute top-3 right-3 size-3 border-t border-r border-strich" />
         <span aria-hidden="true" className="absolute bottom-3 left-3 size-3 border-b border-l border-strich" />
         <span aria-hidden="true" className="absolute right-3 bottom-3 size-3 border-r border-b border-strich" />
         {zeichnung}
       </div>
-      {felder && felder.length > 0 && <Schriftfeld felder={felder} spalten="blatt" className="border-x-0 border-b-0" />}
+      {felder && felder.length > 0 && (
+        <Schriftfeld
+          felder={felder}
+          spalten="blatt"
+          className={clsx(
+            'border-x-0 border-b-0',
+            // Tablett: rechte Blatthälfte, Fuge links statt oben, zwei Spalten (drei wären bei halber Breite zu eng)
+            nebeneinander && 'md:max-lg:w-1/2 md:max-lg:shrink-0 md:max-lg:grid-cols-2 md:max-lg:border-t-0 md:max-lg:border-l',
+          )}
+        />
+      )}
     </div>
   );
 }
