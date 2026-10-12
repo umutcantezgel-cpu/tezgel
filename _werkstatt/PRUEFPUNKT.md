@@ -1,5 +1,16 @@
 # PRUEFPUNKT
 
+- Etappe: E3 · Stand 12.10.2026 ~09:30 CEST · E3-Tor Anlauf 1 ausgewertet (E-025, Belege `belege/e3-tor/`, Berichte `berichte/E3-SICHT-*.md`). main = 6156079 (live), Push nur auf den Arbeitsbranch.
+- Jetzt: Nacharbeit nach PLAN „Offene Punkte · E3-Tor, Anlauf 1“ (E4-NACH-01…15).
+  1. Server: 4310 = Reinraum 8debc92 läuft; Dev 4320 für Prüfstufe A neu starten (`dev-server.sh start`).
+  2. Welle N1: Orchestrator E4-NACH-01 (Planblatt-Einstieg, Rückfrage, Motive) und -02 (große Momente, Verbandszeichen); Baumeister -03 (Abschluss/Fuß), -04 (Qualitätsversprechen), -05 (Express-Anfrage), Prüfer -06 (Bündelanalyse); danach in freie Plätze -12 (/kontakt), -14 (/blog), -15 (Artikel).
+  3. Welle N2 nach -01/-02: -07 (/bad), -08 (/leistungen, [id]), -09 (/standorte, [stadt]), -10 (/fliesen), -11 (/ueber-uns), -13 (Konfigurator).
+  4. Tempo nach -06: frühe Skripte kürzen (Orchestrator), nachgeladene Funnels und spätes Zeichnen in den Seitenpaketen.
+  5. Je Welle Reinraum, Prüfstufe A, Commit, Push. Danach E3-Tor Anlauf 2 (Reinraum, Funktion/Texte/axe, Bilder 12, Sichtabnahme, Lighthouse), dann E4 Familien (Pfade der E4–E6-Zeilen auf `src/app/(bestand)/…` umstellen).
+- Offene Menschen-Fragen: M-15 bis M-22; Textvorschläge in TEXTVORSCHLAEGE (Abschnitt Vorschläge).
+
+## Vorheriger Stand (überholt)
+
 - Etappe: E3 · Stand 12.10.2026 ~01:00 CEST · alle E3-Baupakete abgenommen (E3-BAU-01…21), Nacharbeiten E3-NACH-03/-05 abgenommen; E3-ORCH-01…05 und E3-NACH-01/-02/-04/-06/-07 umgesetzt, Abnahme am E3-Tor (E-022…E-024). main = 6156079 (live), Push nur auf den Arbeitsbranch.
 - Jetzt: E3-Tor (Workflow): Prüfer A Reinraum + Server 4310 neu (+ Nachweis server.sh-Stop schont 4310), Prüfer B Funktion/Texte/axe/Werte, Prüfer C Bilder (Abschnitte 12 Hauptansichten, Bildsatz-Kennzahlen, Ersatzpfad, Bewegung), zwei Gutachter (Erzähl-/Arbeitsansichten), Lighthouse im Ruhefenster (12 Ansichten gegen e0). Bilder im Scratchpad `belege-roh/e3-tor/`, Berichte unter `_werkstatt/belege/e3-tor/` und `_werkstatt/berichte/E3-SICHT-*.md`.
 - Danach: Befunde → Nacharbeit (höchstens 2 je Ansicht und Kategorie), dann E4 (Familien auf Systemstand).

@@ -942,5 +942,47 @@
   "teil": "main_zeilen",
   "alt": "XXL",
   "vermerk": "E3-NACH-01: Großformat-Kennwert „XXL“ → Maß „120 × 260 cm“ aus dem Bestand der Seite (Sichtabnahme E2-SICHT-2 Befund 1) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/fliesen/konfigurator",
+  "teil": "main_zeilen",
+  "ansicht": "m390",
+  "alt": "Verlegemuster Verschnitt (Richtwert)",
+  "vermerk": "E3-BAU-08: Verschnitttabelle zeigt mobil auch die Spalte „Warum“ aus dem Bestand – die Zeile steht jetzt zusammen mit dem Bestands-Hinweis (z. B. „Kreuzfuge ca. 5–10 % Einfache Schnitte an Wänden und Türen“); kein Wort entfernt, Zeilenzahl gleich (E3-Tor)"
+ },
+ {
+  "seite": "/fliesen/konfigurator",
+  "teil": "main_zeilen",
+  "ansicht": "m390",
+  "alt": "Kreuzfuge ca. 5–10 %",
+  "vermerk": "E3-BAU-08: Verschnitttabelle zeigt mobil auch die Spalte „Warum“ aus dem Bestand – die Zeile steht jetzt zusammen mit dem Bestands-Hinweis (z. B. „Kreuzfuge ca. 5–10 % Einfache Schnitte an Wänden und Türen“); kein Wort entfernt, Zeilenzahl gleich (E3-Tor)"
+ },
+ {
+  "seite": "/fliesen/konfigurator",
+  "teil": "main_zeilen",
+  "ansicht": "m390",
+  "alt": "Halb- / Drittelverband ca. 5–10 %",
+  "vermerk": "E3-BAU-08: Verschnitttabelle zeigt mobil auch die Spalte „Warum“ aus dem Bestand – die Zeile steht jetzt zusammen mit dem Bestands-Hinweis (z. B. „Kreuzfuge ca. 5–10 % Einfache Schnitte an Wänden und Türen“); kein Wort entfernt, Zeilenzahl gleich (E3-Tor)"
+ },
+ {
+  "seite": "/fliesen/konfigurator",
+  "teil": "main_zeilen",
+  "ansicht": "m390",
+  "alt": "Wilder Verband ca. 5–10 %",
+  "vermerk": "E3-BAU-08: Verschnitttabelle zeigt mobil auch die Spalte „Warum“ aus dem Bestand – die Zeile steht jetzt zusammen mit dem Bestands-Hinweis (z. B. „Kreuzfuge ca. 5–10 % Einfache Schnitte an Wänden und Türen“); kein Wort entfernt, Zeilenzahl gleich (E3-Tor)"
+ },
+ {
+  "seite": "/fliesen/konfigurator",
+  "teil": "main_zeilen",
+  "ansicht": "m390",
+  "alt": "Diagonal ca. 10–15 %",
+  "vermerk": "E3-BAU-08: Verschnitttabelle zeigt mobil auch die Spalte „Warum“ aus dem Bestand – die Zeile steht jetzt zusammen mit dem Bestands-Hinweis (z. B. „Kreuzfuge ca. 5–10 % Einfache Schnitte an Wänden und Türen“); kein Wort entfernt, Zeilenzahl gleich (E3-Tor)"
+ },
+ {
+  "seite": "/fliesen/konfigurator",
+  "teil": "main_zeilen",
+  "ansicht": "m390",
+  "alt": "Fischgrät ca. 10–15 %",
+  "vermerk": "E3-BAU-08: Verschnitttabelle zeigt mobil auch die Spalte „Warum“ aus dem Bestand – die Zeile steht jetzt zusammen mit dem Bestands-Hinweis (z. B. „Kreuzfuge ca. 5–10 % Einfache Schnitte an Wänden und Türen“); kein Wort entfernt, Zeilenzahl gleich (E3-Tor)"
  }
 ]
