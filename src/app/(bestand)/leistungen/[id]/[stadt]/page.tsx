@@ -281,23 +281,22 @@ export default async function ServiceCityPage({
       />
 
       <Leitachse>
-        {/* 2. FACHKOMPETENZ: zwei Absätze, darunter drei Kennzahlen an der Fuge (Wert vor Bezeichnung wie im Bestand) */}
+        {/* 2. FACHKOMPETENZ: die zwei Absätze nebeneinander (volle Breite statt langer Spalte), darunter drei Kennzahlen
+            an der Fuge (Wert vor Bezeichnung wie im Bestand) */}
         <Abschnitt
           leitachse
           spaet
           flaeche="fliese"
           etikett={<>HWK Fachbetrieb &middot; {authority.shortName}</>}
           titel={<>Fachkompetenz &amp; Präzision für {city.name}</>}
-          einleitung={
-            <>
-              <p>
-                {currentIntro.p1} {city.description}
-              </p>
-              <p className="mt-4">{currentIntro.p2}</p>
-            </>
-          }
         >
-          <Feldraster spalten={3}>
+          <div className="grid gap-6 font-text text-fs-3 text-tinte-2 lg:grid-cols-2 lg:gap-x-12">
+            <p>
+              {currentIntro.p1} {city.description}
+            </p>
+            <p>{currentIntro.p2}</p>
+          </div>
+          <Feldraster spalten={3} className="mt-12">
             {stats.map(({ value, label }) => (
               <Feld key={label} className="gap-2">
                 <span className="font-anzeige text-fs-5 text-tinte">{value}</span>
@@ -307,18 +306,19 @@ export default async function ServiceCityPage({
           </Feldraster>
         </Abschnitt>
 
-        {/* 3. LEISTUNGSSPEKTRUM als dichte Liste an der Fuge; ungerade Anzahl: der letzte Eintrag füllt die Zeile */}
+        {/* 3. LEISTUNGSSPEKTRUM: Kopf seitlich, rechts die Liste an der Fuge (Fugenkreuz als Marke) */}
         {service.features && service.features.length > 0 && (
           <Abschnitt
             titelId="leistungsspektrum"
             leitachse
             spaet
+            kopf="seitlich"
             titel={<>Detailliertes Leistungsspektrum in {city.name}</>}
             einleitung={<p>Handwerkliche Präzision für dauerhaft schöne, dichte und pflegeleichte Beläge.</p>}
           >
-            <ul className="grid border-b border-fuge md:grid-cols-2 md:gap-x-12">
+            <ul className="border-b border-fuge">
               {service.features.map((feature: string) => (
-                <li key={feature} className="flex gap-3 border-t border-fuge py-4 font-text text-fs-2 text-tinte md:odd:last:col-span-2">
+                <li key={feature} className="flex gap-3 border-t border-fuge py-4 font-text text-fs-3 text-tinte">
                   <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich">
                     <Fugenkreuz className="size-3" />
                   </span>
