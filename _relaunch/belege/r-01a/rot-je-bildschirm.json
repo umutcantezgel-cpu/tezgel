@@ -1,0 +1,458 @@
+{
+ "regel": "rote Gebilde je Viewport (Schritt ½ Bildschirmhöhe), Kopf/Leiste/Logos ausgeblendet; Werkzeug scratchpad/r-01a/rot.mjs",
+ "vorher": "4362",
+ "nachher": "4350",
+ "rot-vorher-m390-reduce.json": [
+  {
+   "seite": "/leistungen",
+   "ansicht": "m390",
+   "bewegung": "reduce",
+   "schritte": 40,
+   "max": 2,
+   "mehr_als_eins": [
+    {
+     "y": 422,
+     "gebilde": [
+      {
+       "px": 1436,
+       "x": 0,
+       "y": 48,
+       "w": 24,
+       "h": 744
+      },
+      {
+       "px": 148,
+       "x": 192,
+       "y": 696,
+       "w": 24,
+       "h": 96
+      }
+     ]
+    },
+    {
+     "y": 844,
+     "gebilde": [
+      {
+       "px": 1334,
+       "x": 0,
+       "y": 48,
+       "w": 24,
+       "h": 696
+      },
+      {
+       "px": 306,
+       "x": 192,
+       "y": 264,
+       "w": 24,
+       "h": 192
+      }
+     ]
+    },
+    {
+     "y": 1266,
+     "gebilde": [
+      {
+       "px": 490,
+       "x": 0,
+       "y": 48,
+       "w": 24,
+       "h": 264
+      },
+      {
+       "px": 809,
+       "x": 0,
+       "y": 360,
+       "w": 24,
+       "h": 432
+      }
+     ]
+    },
+    {
+     "y": 12238,
+     "gebilde": [
+      {
+       "px": 942,
+       "x": 0,
+       "y": 48,
+       "w": 24,
+       "h": 504
+      },
+      {
+       "px": 300,
+       "x": 0,
+       "y": 624,
+       "w": 24,
+       "h": 168
+      }
+     ]
+    },
+    {
+     "y": 12660,
+     "gebilde": [
+      {
+       "px": 98,
+       "x": 0,
+       "y": 48,
+       "w": 24,
+       "h": 72
+      },
+      {
+       "px": 1144,
+       "x": 0,
+       "y": 192,
+       "w": 24,
+       "h": 600
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "m390",
+   "bewegung": "reduce",
+   "schritte": 38,
+   "max": 2,
+   "mehr_als_eins": [
+    {
+     "y": 422,
+     "gebilde": [
+      {
+       "px": 1480,
+       "x": 0,
+       "y": 48,
+       "w": 72,
+       "h": 744
+      },
+      {
+       "px": 44,
+       "x": 48,
+       "y": 744,
+       "w": 24,
+       "h": 24
+      }
+     ]
+    },
+    {
+     "y": 844,
+     "gebilde": [
+      {
+       "px": 1436,
+       "x": 0,
+       "y": 48,
+       "w": 24,
+       "h": 744
+      },
+      {
+       "px": 44,
+       "x": 48,
+       "y": 312,
+       "w": 24,
+       "h": 48
+      }
+     ]
+    },
+    {
+     "y": 1266,
+     "gebilde": [
+      {
+       "px": 1030,
+       "x": 0,
+       "y": 48,
+       "w": 24,
+       "h": 552
+      },
+      {
+       "px": 269,
+       "x": 0,
+       "y": 624,
+       "w": 24,
+       "h": 168
+      }
+     ]
+    },
+    {
+     "y": 1688,
+     "gebilde": [
+      {
+       "px": 186,
+       "x": 0,
+       "y": 48,
+       "w": 24,
+       "h": 120
+      },
+      {
+       "px": 1113,
+       "x": 0,
+       "y": 216,
+       "w": 24,
+       "h": 576
+      }
+     ]
+    },
+    {
+     "y": 2532,
+     "gebilde": [
+      {
+       "px": 162,
+       "x": 0,
+       "y": 48,
+       "w": 24,
+       "h": 120
+      },
+      {
+       "px": 528,
+       "x": 24,
+       "y": 456,
+       "w": 24,
+       "h": 288
+      }
+     ]
+    },
+    {
+     "y": 2954,
+     "gebilde": [
+      {
+       "px": 496,
+       "x": 24,
+       "y": 48,
+       "w": 24,
+       "h": 288
+      },
+      {
+       "px": 393,
+       "x": 0,
+       "y": 576,
+       "w": 24,
+       "h": 216
+      }
+     ]
+    },
+    {
+     "y": 9706,
+     "gebilde": [
+      {
+       "px": 748,
+       "x": 0,
+       "y": 48,
+       "w": 24,
+       "h": 408
+      },
+      {
+       "px": 494,
+       "x": 0,
+       "y": 528,
+       "w": 24,
+       "h": 264
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "rot-vorher-m390-no-preference.json": [
+  {
+   "seite": "/leistungen",
+   "ansicht": "m390",
+   "bewegung": "no-preference",
+   "schritte": 40,
+   "max": 1,
+   "mehr_als_eins": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "m390",
+   "bewegung": "no-preference",
+   "schritte": 38,
+   "max": 2,
+   "mehr_als_eins": [
+    {
+     "y": 422,
+     "gebilde": [
+      {
+       "px": 44,
+       "x": 24,
+       "y": 312,
+       "w": 48,
+       "h": 48
+      },
+      {
+       "px": 38,
+       "x": 48,
+       "y": 768,
+       "w": 24,
+       "h": 24
+      }
+     ]
+    },
+    {
+     "y": 2532,
+     "gebilde": [
+      {
+       "px": 162,
+       "x": 0,
+       "y": 48,
+       "w": 24,
+       "h": 120
+      },
+      {
+       "px": 528,
+       "x": 24,
+       "y": 456,
+       "w": 24,
+       "h": 288
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "rot-nachher-reduce.json": [
+  {
+   "seite": "/leistungen",
+   "ansicht": "m390",
+   "bewegung": "reduce",
+   "schritte": 40,
+   "max": 1,
+   "mehr_als_eins": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "bewegung": "reduce",
+   "schritte": 20,
+   "max": 1,
+   "mehr_als_eins": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "m390",
+   "bewegung": "reduce",
+   "schritte": 38,
+   "max": 2,
+   "mehr_als_eins": [
+    {
+     "y": 422,
+     "gebilde": [
+      {
+       "px": 44,
+       "x": 24,
+       "y": 288,
+       "w": 48,
+       "h": 48
+      },
+      {
+       "px": 44,
+       "x": 48,
+       "y": 744,
+       "w": 24,
+       "h": 24
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "d1440",
+   "bewegung": "reduce",
+   "schritte": 21,
+   "max": 2,
+   "mehr_als_eins": [
+    {
+     "y": 0,
+     "gebilde": [
+      {
+       "px": 44,
+       "x": 864,
+       "y": 144,
+       "w": 48,
+       "h": 48
+      },
+      {
+       "px": 44,
+       "x": 888,
+       "y": 480,
+       "w": 48,
+       "h": 48
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "rot-nachher-no-preference.json": [
+  {
+   "seite": "/leistungen",
+   "ansicht": "m390",
+   "bewegung": "no-preference",
+   "schritte": 40,
+   "max": 1,
+   "mehr_als_eins": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "bewegung": "no-preference",
+   "schritte": 20,
+   "max": 1,
+   "mehr_als_eins": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "m390",
+   "bewegung": "no-preference",
+   "schritte": 38,
+   "max": 2,
+   "mehr_als_eins": [
+    {
+     "y": 2532,
+     "gebilde": [
+      {
+       "px": 162,
+       "x": 0,
+       "y": 48,
+       "w": 24,
+       "h": 120
+      },
+      {
+       "px": 528,
+       "x": 24,
+       "y": 456,
+       "w": 24,
+       "h": 288
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "d1440",
+   "bewegung": "no-preference",
+   "schritte": 21,
+   "max": 2,
+   "mehr_als_eins": [
+    {
+     "y": 1350,
+     "gebilde": [
+      {
+       "px": 732,
+       "x": 96,
+       "y": 48,
+       "w": 24,
+       "h": 384
+      },
+      {
+       "px": 1588,
+       "x": 144,
+       "y": 768,
+       "w": 816,
+       "h": 24
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

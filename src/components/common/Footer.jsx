@@ -4,6 +4,8 @@ import Image from 'next/image';
 import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import BannerPlatz from '@/components/kern/einwilligung/BannerPlatz';
+import SprungHalter from '@/components/kern/fuss/SprungHalter';
 import { knopfKlassen, seitenKlassen } from '@/components/kern/stile';
 import { COMPANY_DATA } from '@/config/company';
 import {
@@ -33,6 +35,10 @@ const fussLink = 'text-kalk underline decoration-nacht-fuge underline-offset-4 t
 
 // Fuß (KERN K-009): Tinte-Fläche; oben die Zusagen an der Fuge, links das Schriftfeld des Betriebs
 // (wie das Stempelfeld eines Verlegeplans), rechts der Seitenindex. Inhalte wie im Bestand.
+// Breiten (R-01a): Zusagen mobil einspaltig, ab sm zwei, ab xl vier Felder; der Seitenindex ab lg zwei, ab xl vier
+// Spalten. So passen die langen Wörter („Verbundabdichtung“, „Qualitätsversprechen“) in jeder Breite in ihr Feld, auch
+// bei erhöhtem Textabstand (WCAG 1.4.12) – vorher ragten sie mobil über den waagerechten clip des Fußes (N-01b) und
+// zwischen 768 und 1279 px ins Nachbarfeld. Wird es enger (Zoom), bricht das Wort im Feld um, statt zu überstehen.
 export default function Footer() {
     const currentYear = new Date().getFullYear();
     const { headquarters, contact, hours, authority, tax, owner, motto, business } = COMPANY_DATA;
@@ -41,11 +47,14 @@ export default function Footer() {
         <footer className="flaeche-tinte border-t border-nacht-fuge bg-tinte text-kalk">
             <div className="border-b border-nacht-fuge">
                 <div className={clsx(seitenKlassen, 'flex flex-col gap-6 py-8 lg:flex-row lg:items-center lg:justify-between')}>
-                    <ul className="grid grid-cols-2 gap-px bg-nacht-fuge md:grid-cols-4 lg:flex-1">
-                        {GUARANTEES.map(({ title, text }) => (
-                            <li key={title} className="flex items-start gap-3 bg-tinte py-4 pr-4 md:px-4 md:first:pl-0">
+                    <ul className="grid grid-cols-1 gap-px bg-nacht-fuge sm:grid-cols-2 lg:flex-1 xl:grid-cols-4">
+                        {GUARANTEES.map(({ title, text }, idx) => (
+                            <li
+                                key={title}
+                                className={clsx('flex items-start gap-3 bg-tinte py-4 pr-4', idx % 2 === 1 && 'sm:pl-4', idx === 2 && 'xl:pl-4')}
+                            >
                                 <Fugenkreuz className="mt-1 size-4 shrink-0 text-nacht-2" />
-                                <span className="text-fs-2">
+                                <span className="min-w-0 text-fs-2 wrap-break-word">
                                     <span className="block font-semibold text-kalk">{title}</span>
                                     <span className="text-nacht-2">{text}</span>
                                 </span>
@@ -149,7 +158,7 @@ export default function Footer() {
                     </dl>
                 </div>
 
-                <div id="seitenindex" className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-7 lg:grid-cols-4 lg:gap-6">
+                <div id="seitenindex" className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-7 xl:grid-cols-4 xl:gap-4">
                     {LINK_COLUMNS.map((column) => (
                         <nav key={column.title} aria-label={column.title}>
                             <p className={clsx(etikett, 'border-b border-nacht-fuge pb-2')}>{column.title}</p>
@@ -158,7 +167,7 @@ export default function Footer() {
                                     <li key={item.path + item.name}>
                                         <Link
                                             href={item.path}
-                                            className="inline-block py-1 text-kalk underline decoration-transparent underline-offset-4 transition-colors dauer-1 ease-setzen hover:decoration-kalk"
+                                            className="inline-block max-w-full py-1 text-kalk underline decoration-transparent underline-offset-4 wrap-break-word transition-colors dauer-1 ease-setzen hover:decoration-kalk"
                                             data-motion="zustand"
                                         >
                                             {item.name}
@@ -205,6 +214,10 @@ export default function Footer() {
                     </p>
                 </div>
             </div>
+            {/* Rahmen-Inseln ohne Ausgabe (R-01a): Platz des offenen Einwilligungsbanners für scroll-padding (Fokus nie
+                verdeckt) und Sprungziel halten, solange Inhalt darüber nachwächst */}
+            <BannerPlatz />
+            <SprungHalter />
         </footer>
     );
 }

@@ -54,7 +54,8 @@ export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleit
       aria-labelledby={titel ? hId : undefined}
       aria-label={!titel ? rest['aria-label'] : undefined}
       className={clsx(
-        'relative scroll-mt-24',
+        // Sprungziel ohne eigenen Versatz: allein scroll-padding-top (Kopfhöhe + 16 px) an <html> setzt es auf 96 px (R-01a)
+        'relative',
         art === 'erzaehl' ? 'py-16 lg:py-24' : 'py-12 lg:py-16',
         flaeche === 'fliese' && 'border-y border-fuge bg-fliese',
         tinte && 'flaeche-tinte bg-tinte text-kalk',
@@ -62,7 +63,8 @@ export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleit
       )}
     >
       {leitachse && (
-        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 z-20">
+        // Fugenkreuz auf dem Lot (Ebene z-10, K-005): über der Zierebene der Leitachse und über einer Nachbarfläche mit z-10
+        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 z-10">
           <div className={clsx(seitenKlassen, 'relative')}>
             <Fugenkreuz className={clsx('absolute top-0 size-3 -translate-x-1/2 -translate-y-1/2', ACHSE_LAGE, tinte ? 'text-nacht-2' : 'text-tinte')} />
           </div>

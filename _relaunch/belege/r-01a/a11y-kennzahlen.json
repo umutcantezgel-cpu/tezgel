@@ -1,0 +1,915 @@
+{
+ "vorher": {
+  "base": "http://127.0.0.1:4362",
+  "kennzahlen": {
+   "tastatur": {
+    "fokus_nicht_sichtbar": 122,
+    "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 82,
+    "fokus_ring_teilverdeckt_fest": 239,
+    "fokus_unter_2px": 468,
+    "fokus_nicht_messbar": 0,
+    "fokus_ohne_outline_schatten": 4,
+    "fokus_verdeckt": 738,
+    "fokus_verdeckt_fest": 726,
+    "sprung_rueckwaerts": 6,
+    "falle": 0,
+    "zyklus_ohne_ausweg": 0,
+    "sprunglink_fehlt": 0,
+    "laeufe": 28,
+    "fehler": 0,
+    "schritte": 3838,
+    "m375_abgelehnt": {
+     "fokus_nicht_sichtbar": 32,
+     "fokus_unter_2px": 35,
+     "fokus_ohne_outline_schatten": 1,
+     "fokus_verdeckt": 6,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "sprunglink_fehlt": 0
+    },
+    "d1440_abgelehnt": {
+     "fokus_nicht_sichtbar": 4,
+     "fokus_unter_2px": 39,
+     "fokus_ohne_outline_schatten": 1,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 3,
+     "falle": 0,
+     "sprunglink_fehlt": 0
+    },
+    "m375_erstbesuch": {
+     "fokus_nicht_sichtbar": 82,
+     "fokus_unter_2px": 322,
+     "fokus_ohne_outline_schatten": 1,
+     "fokus_verdeckt": 655,
+     "fokus_verdeckt_fest": 649,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "sprunglink_fehlt": 0
+    },
+    "d1440_erstbesuch": {
+     "fokus_nicht_sichtbar": 4,
+     "fokus_unter_2px": 72,
+     "fokus_ohne_outline_schatten": 1,
+     "fokus_verdeckt": 77,
+     "fokus_verdeckt_fest": 77,
+     "sprung_rueckwaerts": 3,
+     "falle": 0,
+     "sprunglink_fehlt": 0
+    }
+   },
+   "reflow": {
+    "horizontal": 0,
+    "ueberlauf": 0,
+    "ragt_heraus": 0,
+    "text_abgeschnitten": 0,
+    "laeufe": 7,
+    "fehler": 0
+   },
+   "zoom": {
+    "horizontal": 0,
+    "verdeckt": 1,
+    "verdeckt_fest": 0,
+    "nie_im_bild": 49,
+    "ueberlauf": 106,
+    "laeufe": 14,
+    "fehler": 0,
+    "css": {
+     "horizontal": 0,
+     "verdeckt": 1,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 49,
+     "ueberlauf": 106
+    },
+    "aequivalent": {
+     "horizontal": 0,
+     "verdeckt": 0,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 0,
+     "ueberlauf": 0
+    }
+   },
+   "textabstand": {
+    "abgeschnitten_neu": 10,
+    "scroll_ueberhang_neu": 10,
+    "davon_line_clamp": 0,
+    "ueberlauf_neu": 35,
+    "horizontal_neu": 0,
+    "laeufe": 14,
+    "fehler": 0
+   },
+   "forced": {
+    "ohne_grenze": 259,
+    "davon_mit_grafik": 164,
+    "felder_ohne_grenze": 0,
+    "laeufe": 14,
+    "fehler": 0
+   },
+   "ohnejs": {
+    "text_unter_80": 2,
+    "erster_bildschirm_versteckt": 0,
+    "erster_bildschirm_ebenso_mit_js": 0,
+    "navigation_fehlt": 0,
+    "kopf_ohne_interne_links": 0,
+    "laeufe": 14,
+    "fehler": 0
+   }
+  },
+  "je_seite": {
+   "/": {
+    "tastatur": {
+     "fokus_nicht_sichtbar": 19,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 12,
+     "fokus_ring_teilverdeckt_fest": 58,
+     "fokus_unter_2px": 116,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 182,
+     "fokus_verdeckt_fest": 170,
+     "sprung_rueckwaerts": 2,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "reflow": {
+     "horizontal": 0,
+     "ueberlauf": 0,
+     "ragt_heraus": 0,
+     "text_abgeschnitten": 0
+    },
+    "zoom": {
+     "horizontal": 0,
+     "verdeckt": 0,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 7,
+     "ueberlauf": 15
+    },
+    "textabstand": {
+     "abgeschnitten_neu": 1,
+     "scroll_ueberhang_neu": 1,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 5,
+     "horizontal_neu": 0
+    },
+    "forced": {
+     "ohne_grenze": 175,
+     "davon_mit_grafik": 91,
+     "felder_ohne_grenze": 0
+    },
+    "ohnejs": {
+     "text_unter_80": 0,
+     "erster_bildschirm_versteckt": 0,
+     "erster_bildschirm_ebenso_mit_js": 0,
+     "navigation_fehlt": 0,
+     "kopf_ohne_interne_links": 0
+    }
+   },
+   "/leistungen": {
+    "tastatur": {
+     "fokus_nicht_sichtbar": 19,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 12,
+     "fokus_ring_teilverdeckt_fest": 32,
+     "fokus_unter_2px": 71,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 94,
+     "fokus_verdeckt_fest": 94,
+     "sprung_rueckwaerts": 2,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "reflow": {
+     "horizontal": 0,
+     "ueberlauf": 0,
+     "ragt_heraus": 0,
+     "text_abgeschnitten": 0
+    },
+    "zoom": {
+     "horizontal": 0,
+     "verdeckt": 0,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 7,
+     "ueberlauf": 15
+    },
+    "textabstand": {
+     "abgeschnitten_neu": 1,
+     "scroll_ueberhang_neu": 1,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 5,
+     "horizontal_neu": 0
+    },
+    "forced": {
+     "ohne_grenze": 8,
+     "davon_mit_grafik": 8,
+     "felder_ohne_grenze": 0
+    },
+    "ohnejs": {
+     "text_unter_80": 0,
+     "erster_bildschirm_versteckt": 0,
+     "erster_bildschirm_ebenso_mit_js": 0,
+     "navigation_fehlt": 0,
+     "kopf_ohne_interne_links": 0
+    }
+   },
+   "/leistungen/bad": {
+    "tastatur": {
+     "fokus_nicht_sichtbar": 19,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 12,
+     "fokus_ring_teilverdeckt_fest": 32,
+     "fokus_unter_2px": 63,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 101,
+     "fokus_verdeckt_fest": 101,
+     "sprung_rueckwaerts": 2,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "reflow": {
+     "horizontal": 0,
+     "ueberlauf": 0,
+     "ragt_heraus": 0,
+     "text_abgeschnitten": 0
+    },
+    "zoom": {
+     "horizontal": 0,
+     "verdeckt": 0,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 7,
+     "ueberlauf": 15
+    },
+    "textabstand": {
+     "abgeschnitten_neu": 1,
+     "scroll_ueberhang_neu": 1,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 5,
+     "horizontal_neu": 0
+    },
+    "forced": {
+     "ohne_grenze": 8,
+     "davon_mit_grafik": 8,
+     "felder_ohne_grenze": 0
+    },
+    "ohnejs": {
+     "text_unter_80": 0,
+     "erster_bildschirm_versteckt": 0,
+     "erster_bildschirm_ebenso_mit_js": 0,
+     "navigation_fehlt": 0,
+     "kopf_ohne_interne_links": 0
+    }
+   },
+   "/blog": {
+    "tastatur": {
+     "fokus_nicht_sichtbar": 16,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 12,
+     "fokus_ring_teilverdeckt_fest": 34,
+     "fokus_unter_2px": 23,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 4,
+     "fokus_verdeckt": 57,
+     "fokus_verdeckt_fest": 57,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "reflow": {
+     "horizontal": 0,
+     "ueberlauf": 0,
+     "ragt_heraus": 0,
+     "text_abgeschnitten": 0
+    },
+    "zoom": {
+     "horizontal": 0,
+     "verdeckt": 0,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 7,
+     "ueberlauf": 15
+    },
+    "textabstand": {
+     "abgeschnitten_neu": 1,
+     "scroll_ueberhang_neu": 1,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 5,
+     "horizontal_neu": 0
+    },
+    "forced": {
+     "ohne_grenze": 8,
+     "davon_mit_grafik": 8,
+     "felder_ohne_grenze": 0
+    },
+    "ohnejs": {
+     "text_unter_80": 0,
+     "erster_bildschirm_versteckt": 0,
+     "erster_bildschirm_ebenso_mit_js": 0,
+     "navigation_fehlt": 0,
+     "kopf_ohne_interne_links": 0
+    }
+   },
+   "/bad": {
+    "tastatur": {
+     "fokus_nicht_sichtbar": 15,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 11,
+     "fokus_ring_teilverdeckt_fest": 27,
+     "fokus_unter_2px": 41,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 86,
+     "fokus_verdeckt_fest": 86,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "reflow": {
+     "horizontal": 0,
+     "ueberlauf": 0,
+     "ragt_heraus": 0,
+     "text_abgeschnitten": 0
+    },
+    "zoom": {
+     "horizontal": 0,
+     "verdeckt": 0,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 7,
+     "ueberlauf": 15
+    },
+    "textabstand": {
+     "abgeschnitten_neu": 1,
+     "scroll_ueberhang_neu": 1,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 5,
+     "horizontal_neu": 0
+    },
+    "forced": {
+     "ohne_grenze": 24,
+     "davon_mit_grafik": 13,
+     "felder_ohne_grenze": 0
+    },
+    "ohnejs": {
+     "text_unter_80": 2,
+     "erster_bildschirm_versteckt": 0,
+     "erster_bildschirm_ebenso_mit_js": 0,
+     "navigation_fehlt": 0,
+     "kopf_ohne_interne_links": 0
+    }
+   },
+   "/kontakt": {
+    "tastatur": {
+     "fokus_nicht_sichtbar": 19,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 12,
+     "fokus_ring_teilverdeckt_fest": 29,
+     "fokus_unter_2px": 113,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 133,
+     "fokus_verdeckt_fest": 133,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "reflow": {
+     "horizontal": 0,
+     "ueberlauf": 0,
+     "ragt_heraus": 0,
+     "text_abgeschnitten": 0
+    },
+    "zoom": {
+     "horizontal": 0,
+     "verdeckt": 1,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 7,
+     "ueberlauf": 15
+    },
+    "textabstand": {
+     "abgeschnitten_neu": 3,
+     "scroll_ueberhang_neu": 3,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 5,
+     "horizontal_neu": 0
+    },
+    "forced": {
+     "ohne_grenze": 8,
+     "davon_mit_grafik": 8,
+     "felder_ohne_grenze": 0
+    },
+    "ohnejs": {
+     "text_unter_80": 0,
+     "erster_bildschirm_versteckt": 0,
+     "erster_bildschirm_ebenso_mit_js": 0,
+     "navigation_fehlt": 0,
+     "kopf_ohne_interne_links": 0
+    }
+   },
+   "/standorte/giessen": {
+    "tastatur": {
+     "fokus_nicht_sichtbar": 15,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 11,
+     "fokus_ring_teilverdeckt_fest": 27,
+     "fokus_unter_2px": 41,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 85,
+     "fokus_verdeckt_fest": 85,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "reflow": {
+     "horizontal": 0,
+     "ueberlauf": 0,
+     "ragt_heraus": 0,
+     "text_abgeschnitten": 0
+    },
+    "zoom": {
+     "horizontal": 0,
+     "verdeckt": 0,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 7,
+     "ueberlauf": 16
+    },
+    "textabstand": {
+     "abgeschnitten_neu": 2,
+     "scroll_ueberhang_neu": 2,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 5,
+     "horizontal_neu": 0
+    },
+    "forced": {
+     "ohne_grenze": 28,
+     "davon_mit_grafik": 28,
+     "felder_ohne_grenze": 0
+    },
+    "ohnejs": {
+     "text_unter_80": 0,
+     "erster_bildschirm_versteckt": 0,
+     "erster_bildschirm_ebenso_mit_js": 0,
+     "navigation_fehlt": 0,
+     "kopf_ohne_interne_links": 0
+    }
+   }
+  }
+ },
+ "nachher": {
+  "base": "http://127.0.0.1:4350",
+  "kennzahlen": {
+   "tastatur": {
+    "fokus_nicht_sichtbar": 51,
+    "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 23,
+    "fokus_ring_teilverdeckt_fest": 53,
+    "fokus_unter_2px": 102,
+    "fokus_nicht_messbar": 0,
+    "fokus_ohne_outline_schatten": 6,
+    "fokus_verdeckt": 17,
+    "fokus_verdeckt_fest": 1,
+    "sprung_rueckwaerts": 8,
+    "falle": 0,
+    "zyklus_ohne_ausweg": 0,
+    "sprunglink_fehlt": 0,
+    "laeufe": 28,
+    "fehler": 0,
+    "schritte": 3840,
+    "m375_abgelehnt": {
+     "fokus_nicht_sichtbar": 29,
+     "fokus_unter_2px": 23,
+     "fokus_ohne_outline_schatten": 2,
+     "fokus_verdeckt": 9,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 1,
+     "falle": 0,
+     "sprunglink_fehlt": 0
+    },
+    "d1440_abgelehnt": {
+     "fokus_nicht_sichtbar": 1,
+     "fokus_unter_2px": 27,
+     "fokus_ohne_outline_schatten": 2,
+     "fokus_verdeckt": 1,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 4,
+     "falle": 0,
+     "sprunglink_fehlt": 0
+    },
+    "m375_erstbesuch": {
+     "fokus_nicht_sichtbar": 21,
+     "fokus_unter_2px": 25,
+     "fokus_ohne_outline_schatten": 1,
+     "fokus_verdeckt": 6,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "sprunglink_fehlt": 0
+    },
+    "d1440_erstbesuch": {
+     "fokus_nicht_sichtbar": 0,
+     "fokus_unter_2px": 27,
+     "fokus_ohne_outline_schatten": 1,
+     "fokus_verdeckt": 1,
+     "fokus_verdeckt_fest": 1,
+     "sprung_rueckwaerts": 3,
+     "falle": 0,
+     "sprunglink_fehlt": 0
+    }
+   },
+   "reflow": {
+    "horizontal": 0,
+    "ueberlauf": 0,
+    "ragt_heraus": 0,
+    "text_abgeschnitten": 0,
+    "laeufe": 7,
+    "fehler": 0
+   },
+   "zoom": {
+    "horizontal": 0,
+    "verdeckt": 1,
+    "verdeckt_fest": 0,
+    "nie_im_bild": 49,
+    "ueberlauf": 99,
+    "laeufe": 14,
+    "fehler": 0,
+    "css": {
+     "horizontal": 0,
+     "verdeckt": 1,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 49,
+     "ueberlauf": 99
+    },
+    "aequivalent": {
+     "horizontal": 0,
+     "verdeckt": 0,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 0,
+     "ueberlauf": 0
+    }
+   },
+   "textabstand": {
+    "abgeschnitten_neu": 3,
+    "scroll_ueberhang_neu": 3,
+    "davon_line_clamp": 0,
+    "ueberlauf_neu": 14,
+    "horizontal_neu": 0,
+    "laeufe": 14,
+    "fehler": 0
+   },
+   "forced": {
+    "ohne_grenze": 259,
+    "davon_mit_grafik": 164,
+    "felder_ohne_grenze": 0,
+    "laeufe": 14,
+    "fehler": 0
+   },
+   "ohnejs": {
+    "text_unter_80": 2,
+    "erster_bildschirm_versteckt": 0,
+    "erster_bildschirm_ebenso_mit_js": 0,
+    "navigation_fehlt": 0,
+    "kopf_ohne_interne_links": 0,
+    "laeufe": 14,
+    "fehler": 0
+   }
+  },
+  "je_seite": {
+   "/": {
+    "tastatur": {
+     "fokus_nicht_sichtbar": 9,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 5,
+     "fokus_ring_teilverdeckt_fest": 10,
+     "fokus_unter_2px": 13,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 2,
+     "fokus_verdeckt": 17,
+     "fokus_verdeckt_fest": 1,
+     "sprung_rueckwaerts": 4,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "reflow": {
+     "horizontal": 0,
+     "ueberlauf": 0,
+     "ragt_heraus": 0,
+     "text_abgeschnitten": 0
+    },
+    "zoom": {
+     "horizontal": 0,
+     "verdeckt": 0,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 7,
+     "ueberlauf": 14
+    },
+    "textabstand": {
+     "abgeschnitten_neu": 0,
+     "scroll_ueberhang_neu": 0,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 2,
+     "horizontal_neu": 0
+    },
+    "forced": {
+     "ohne_grenze": 175,
+     "davon_mit_grafik": 91,
+     "felder_ohne_grenze": 0
+    },
+    "ohnejs": {
+     "text_unter_80": 0,
+     "erster_bildschirm_versteckt": 0,
+     "erster_bildschirm_ebenso_mit_js": 0,
+     "navigation_fehlt": 0,
+     "kopf_ohne_interne_links": 0
+    }
+   },
+   "/leistungen": {
+    "tastatur": {
+     "fokus_nicht_sichtbar": 7,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 3,
+     "fokus_ring_teilverdeckt_fest": 7,
+     "fokus_unter_2px": 6,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 2,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "reflow": {
+     "horizontal": 0,
+     "ueberlauf": 0,
+     "ragt_heraus": 0,
+     "text_abgeschnitten": 0
+    },
+    "zoom": {
+     "horizontal": 0,
+     "verdeckt": 0,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 7,
+     "ueberlauf": 14
+    },
+    "textabstand": {
+     "abgeschnitten_neu": 0,
+     "scroll_ueberhang_neu": 0,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 2,
+     "horizontal_neu": 0
+    },
+    "forced": {
+     "ohne_grenze": 8,
+     "davon_mit_grafik": 8,
+     "felder_ohne_grenze": 0
+    },
+    "ohnejs": {
+     "text_unter_80": 0,
+     "erster_bildschirm_versteckt": 0,
+     "erster_bildschirm_ebenso_mit_js": 0,
+     "navigation_fehlt": 0,
+     "kopf_ohne_interne_links": 0
+    }
+   },
+   "/leistungen/bad": {
+    "tastatur": {
+     "fokus_nicht_sichtbar": 7,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 3,
+     "fokus_ring_teilverdeckt_fest": 7,
+     "fokus_unter_2px": 6,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 2,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "reflow": {
+     "horizontal": 0,
+     "ueberlauf": 0,
+     "ragt_heraus": 0,
+     "text_abgeschnitten": 0
+    },
+    "zoom": {
+     "horizontal": 0,
+     "verdeckt": 0,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 7,
+     "ueberlauf": 14
+    },
+    "textabstand": {
+     "abgeschnitten_neu": 0,
+     "scroll_ueberhang_neu": 0,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 2,
+     "horizontal_neu": 0
+    },
+    "forced": {
+     "ohne_grenze": 8,
+     "davon_mit_grafik": 8,
+     "felder_ohne_grenze": 0
+    },
+    "ohnejs": {
+     "text_unter_80": 0,
+     "erster_bildschirm_versteckt": 0,
+     "erster_bildschirm_ebenso_mit_js": 0,
+     "navigation_fehlt": 0,
+     "kopf_ohne_interne_links": 0
+    }
+   },
+   "/blog": {
+    "tastatur": {
+     "fokus_nicht_sichtbar": 7,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 3,
+     "fokus_ring_teilverdeckt_fest": 7,
+     "fokus_unter_2px": 8,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 4,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "reflow": {
+     "horizontal": 0,
+     "ueberlauf": 0,
+     "ragt_heraus": 0,
+     "text_abgeschnitten": 0
+    },
+    "zoom": {
+     "horizontal": 0,
+     "verdeckt": 0,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 7,
+     "ueberlauf": 14
+    },
+    "textabstand": {
+     "abgeschnitten_neu": 0,
+     "scroll_ueberhang_neu": 0,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 2,
+     "horizontal_neu": 0
+    },
+    "forced": {
+     "ohne_grenze": 8,
+     "davon_mit_grafik": 8,
+     "felder_ohne_grenze": 0
+    },
+    "ohnejs": {
+     "text_unter_80": 0,
+     "erster_bildschirm_versteckt": 0,
+     "erster_bildschirm_ebenso_mit_js": 0,
+     "navigation_fehlt": 0,
+     "kopf_ohne_interne_links": 0
+    }
+   },
+   "/bad": {
+    "tastatur": {
+     "fokus_nicht_sichtbar": 7,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 3,
+     "fokus_ring_teilverdeckt_fest": 7,
+     "fokus_unter_2px": 4,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "reflow": {
+     "horizontal": 0,
+     "ueberlauf": 0,
+     "ragt_heraus": 0,
+     "text_abgeschnitten": 0
+    },
+    "zoom": {
+     "horizontal": 0,
+     "verdeckt": 0,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 7,
+     "ueberlauf": 14
+    },
+    "textabstand": {
+     "abgeschnitten_neu": 0,
+     "scroll_ueberhang_neu": 0,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 2,
+     "horizontal_neu": 0
+    },
+    "forced": {
+     "ohne_grenze": 24,
+     "davon_mit_grafik": 13,
+     "felder_ohne_grenze": 0
+    },
+    "ohnejs": {
+     "text_unter_80": 2,
+     "erster_bildschirm_versteckt": 0,
+     "erster_bildschirm_ebenso_mit_js": 0,
+     "navigation_fehlt": 0,
+     "kopf_ohne_interne_links": 0
+    }
+   },
+   "/kontakt": {
+    "tastatur": {
+     "fokus_nicht_sichtbar": 7,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 3,
+     "fokus_ring_teilverdeckt_fest": 8,
+     "fokus_unter_2px": 51,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "reflow": {
+     "horizontal": 0,
+     "ueberlauf": 0,
+     "ragt_heraus": 0,
+     "text_abgeschnitten": 0
+    },
+    "zoom": {
+     "horizontal": 0,
+     "verdeckt": 1,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 7,
+     "ueberlauf": 14
+    },
+    "textabstand": {
+     "abgeschnitten_neu": 2,
+     "scroll_ueberhang_neu": 2,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 2,
+     "horizontal_neu": 0
+    },
+    "forced": {
+     "ohne_grenze": 8,
+     "davon_mit_grafik": 8,
+     "felder_ohne_grenze": 0
+    },
+    "ohnejs": {
+     "text_unter_80": 0,
+     "erster_bildschirm_versteckt": 0,
+     "erster_bildschirm_ebenso_mit_js": 0,
+     "navigation_fehlt": 0,
+     "kopf_ohne_interne_links": 0
+    }
+   },
+   "/standorte/giessen": {
+    "tastatur": {
+     "fokus_nicht_sichtbar": 7,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 3,
+     "fokus_ring_teilverdeckt_fest": 7,
+     "fokus_unter_2px": 14,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "reflow": {
+     "horizontal": 0,
+     "ueberlauf": 0,
+     "ragt_heraus": 0,
+     "text_abgeschnitten": 0
+    },
+    "zoom": {
+     "horizontal": 0,
+     "verdeckt": 0,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 7,
+     "ueberlauf": 15
+    },
+    "textabstand": {
+     "abgeschnitten_neu": 1,
+     "scroll_ueberhang_neu": 1,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 2,
+     "horizontal_neu": 0
+    },
+    "forced": {
+     "ohne_grenze": 28,
+     "davon_mit_grafik": 28,
+     "felder_ohne_grenze": 0
+    },
+    "ohnejs": {
+     "text_unter_80": 0,
+     "erster_bildschirm_versteckt": 0,
+     "erster_bildschirm_ebenso_mit_js": 0,
+     "navigation_fehlt": 0,
+     "kopf_ohne_interne_links": 0
+    }
+   }
+  }
+ },
+ "hinweis": "Rohdaten: scratchpad/r-01a/a11y-vorher.json, a11y-nachher2.json (je ~0,5–1 MB)"
+}

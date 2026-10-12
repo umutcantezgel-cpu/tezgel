@@ -1,0 +1,624 @@
+{
+ "base": "http://127.0.0.1:4350",
+ "bewegung": "no-preference",
+ "soll": 96,
+ "toleranz": 8,
+ "zeilen": [
+  {
+   "ansicht": "d1440",
+   "ziel": "/leistungen#bad",
+   "adresse": {
+    "top": 96,
+    "scrollY": 1048,
+    "rest": 7540,
+    "smt": "0px",
+    "spt": "96px",
+    "frueh": 154
+   },
+   "link": {
+    "top": 96,
+    "scrollY": 1048,
+    "rest": 7540,
+    "smt": "0px",
+    "spt": "96px"
+   },
+   "linkArt": "vorhanden",
+   "ok_adresse": true,
+   "ok_link": true
+  },
+  {
+   "ansicht": "d1440",
+   "ziel": "/leistungen#wohnen",
+   "adresse": {
+    "top": 96,
+    "scrollY": 1048,
+    "rest": 7540,
+    "smt": "0px",
+    "spt": "96px",
+    "frueh": 96
+   },
+   "link": {
+    "top": 96,
+    "scrollY": 1048,
+    "rest": 7540,
+    "smt": "0px",
+    "spt": "96px"
+   },
+   "linkArt": "vorhanden",
+   "ok_adresse": true,
+   "ok_link": true
+  },
+  {
+   "ansicht": "d1440",
+   "ziel": "/leistungen#aussen",
+   "adresse": {
+    "top": 96,
+    "scrollY": 2080,
+    "rest": 6508,
+    "smt": "0px",
+    "spt": "96px",
+    "frueh": 96
+   },
+   "link": {
+    "top": 96,
+    "scrollY": 2080,
+    "rest": 6508,
+    "smt": "0px",
+    "spt": "96px"
+   },
+   "linkArt": "vorhanden",
+   "ok_adresse": true,
+   "ok_link": true
+  },
+  {
+   "ansicht": "d1440",
+   "ziel": "/leistungen#untergrund",
+   "adresse": {
+    "top": 96,
+    "scrollY": 2080,
+    "rest": 6508,
+    "smt": "0px",
+    "spt": "96px",
+    "frueh": 96
+   },
+   "link": {
+    "top": 96,
+    "scrollY": 2080,
+    "rest": 6508,
+    "smt": "0px",
+    "spt": "96px"
+   },
+   "linkArt": "vorhanden",
+   "ok_adresse": true,
+   "ok_link": true
+  },
+  {
+   "ansicht": "d1440",
+   "ziel": "/leistungen#ablauf",
+   "adresse": {
+    "top": 96,
+    "scrollY": 3209,
+    "rest": 5379,
+    "smt": "0px",
+    "spt": "96px",
+    "frueh": 2849
+   },
+   "link": {
+    "top": 96,
+    "scrollY": 3209,
+    "rest": 5379,
+    "smt": "0px",
+    "spt": "96px"
+   },
+   "linkArt": "eingesetzt",
+   "ok_adresse": true,
+   "ok_link": true
+  },
+  {
+   "ansicht": "d1440",
+   "ziel": "/leistungen#kosten-rechner",
+   "adresse": {
+    "top": 96,
+    "scrollY": 4251,
+    "rest": 4337,
+    "smt": "0px",
+    "spt": "96px",
+    "frueh": 96
+   },
+   "link": {
+    "top": 96,
+    "scrollY": 4251,
+    "rest": 4337,
+    "smt": "0px",
+    "spt": "96px"
+   },
+   "linkArt": "eingesetzt",
+   "ok_adresse": true,
+   "ok_link": true
+  },
+  {
+   "ansicht": "d1440",
+   "ziel": "/leistungen#express-anfrage",
+   "adresse": {
+    "top": 96,
+    "scrollY": 6390,
+    "rest": 2198,
+    "smt": "0px",
+    "spt": "96px",
+    "frueh": 3291
+   },
+   "link": {
+    "top": 96,
+    "scrollY": 6390,
+    "rest": 2198,
+    "smt": "0px",
+    "spt": "96px"
+   },
+   "linkArt": "vorhanden",
+   "ok_adresse": true,
+   "ok_link": true
+  },
+  {
+   "ansicht": "d1440",
+   "ziel": "/bad#projekt-check",
+   "adresse": {
+    "top": 192,
+    "scrollY": 2786,
+    "rest": 4275,
+    "smt": "96px",
+    "spt": "96px",
+    "frueh": 2422
+   },
+   "link": {
+    "top": 192,
+    "scrollY": 2786,
+    "rest": 4275,
+    "smt": "96px",
+    "spt": "96px"
+   },
+   "linkArt": "eingesetzt",
+   "ok_adresse": false,
+   "ok_link": false
+  },
+  {
+   "ansicht": "d1440",
+   "ziel": "/bad/badanfrage#anfrage",
+   "adresse": {
+    "top": 96,
+    "scrollY": 407,
+    "rest": 2541,
+    "smt": "0px",
+    "spt": "96px",
+    "frueh": 96
+   },
+   "link": {
+    "top": 96,
+    "scrollY": 407,
+    "rest": 2541,
+    "smt": "0px",
+    "spt": "96px"
+   },
+   "linkArt": "eingesetzt",
+   "ok_adresse": true,
+   "ok_link": true
+  },
+  {
+   "ansicht": "d1440",
+   "ziel": "/#kosten-rechner",
+   "adresse": {
+    "top": 96,
+    "scrollY": 3985,
+    "rest": 10432,
+    "smt": "0px",
+    "spt": "96px",
+    "frueh": 509
+   },
+   "link": {
+    "top": 96,
+    "scrollY": 3985,
+    "rest": 10432,
+    "smt": "0px",
+    "spt": "96px"
+   },
+   "linkArt": "eingesetzt",
+   "ok_adresse": true,
+   "ok_link": true
+  },
+  {
+   "ansicht": "d1440",
+   "ziel": "/#express-anfrage",
+   "adresse": {
+    "top": 96,
+    "scrollY": 12999,
+    "rest": 2198,
+    "smt": "0px",
+    "spt": "96px",
+    "frueh": 2579
+   },
+   "link": {
+    "top": 96,
+    "scrollY": 12999,
+    "rest": 2198,
+    "smt": "0px",
+    "spt": "96px"
+   },
+   "linkArt": "eingesetzt",
+   "ok_adresse": true,
+   "ok_link": true
+  },
+  {
+   "ansicht": "d1440",
+   "ziel": "/kontakt#express-anfrage",
+   "adresse": {
+    "top": 96,
+    "scrollY": 3782,
+    "rest": 2133,
+    "smt": "0px",
+    "spt": "96px",
+    "frueh": 96
+   },
+   "link": {
+    "top": 96,
+    "scrollY": 3782,
+    "rest": 2133,
+    "smt": "0px",
+    "spt": "96px"
+   },
+   "linkArt": "vorhanden",
+   "ok_adresse": true,
+   "ok_link": true
+  },
+  {
+   "ansicht": "d1440",
+   "ziel": "/kontakt#termin-buchen",
+   "adresse": {
+    "top": 96,
+    "scrollY": 2976,
+    "rest": 2939,
+    "smt": "0px",
+    "spt": "96px",
+    "frueh": 96
+   },
+   "link": {
+    "top": 96,
+    "scrollY": 2976,
+    "rest": 2939,
+    "smt": "0px",
+    "spt": "96px"
+   },
+   "linkArt": "eingesetzt",
+   "ok_adresse": true,
+   "ok_link": true
+  },
+  {
+   "ansicht": "d1440",
+   "ziel": "/kontakt#standort-anfahrt",
+   "adresse": {
+    "top": 96,
+    "scrollY": 1348,
+    "rest": 4567,
+    "smt": "0px",
+    "spt": "96px",
+    "frueh": 96
+   },
+   "link": {
+    "top": 96,
+    "scrollY": 1348,
+    "rest": 4567,
+    "smt": "0px",
+    "spt": "96px"
+   },
+   "linkArt": "eingesetzt",
+   "ok_adresse": true,
+   "ok_link": true
+  },
+  {
+   "ansicht": "m390",
+   "ziel": "/leistungen#bad",
+   "adresse": {
+    "top": 96,
+    "scrollY": 1610,
+    "rest": 15184,
+    "smt": "0px",
+    "spt": "96px",
+    "frueh": 905
+   },
+   "link": {
+    "top": 96,
+    "scrollY": 1610,
+    "rest": 15184,
+    "smt": "0px",
+    "spt": "96px"
+   },
+   "linkArt": "vorhanden",
+   "ok_adresse": true,
+   "ok_link": true
+  },
+  {
+   "ansicht": "m390",
+   "ziel": "/leistungen#wohnen",
+   "adresse": {
+    "top": 96,
+    "scrollY": 2567,
+    "rest": 14227,
+    "smt": "0px",
+    "spt": "96px",
+    "frueh": 1068
+   },
+   "link": {
+    "top": 96,
+    "scrollY": 2567,
+    "rest": 14227,
+    "smt": "0px",
+    "spt": "96px"
+   },
+   "linkArt": "vorhanden",
+   "ok_adresse": true,
+   "ok_link": true
+  },
+  {
+   "ansicht": "m390",
+   "ziel": "/leistungen#aussen",
+   "adresse": {
+    "top": 96,
+    "scrollY": 3495,
+    "rest": 13299,
+    "smt": "0px",
+    "spt": "96px",
+    "frueh": 96
+   },
+   "link": {
+    "top": 96,
+    "scrollY": 3495,
+    "rest": 13299,
+    "smt": "0px",
+    "spt": "96px"
+   },
+   "linkArt": "vorhanden",
+   "ok_adresse": true,
+   "ok_link": true
+  },
+  {
+   "ansicht": "m390",
+   "ziel": "/leistungen#untergrund",
+   "adresse": {
+    "top": 96,
+    "scrollY": 4422,
+    "rest": 12372,
+    "smt": "0px",
+    "spt": "96px",
+    "frueh": 3635
+   },
+   "link": {
+    "top": 96,
+    "scrollY": 4422,
+    "rest": 12372,
+    "smt": "0px",
+    "spt": "96px"
+   },
+   "linkArt": "vorhanden",
+   "ok_adresse": true,
+   "ok_link": true
+  },
+  {
+   "ansicht": "m390",
+   "ziel": "/leistungen#ablauf",
+   "adresse": {
+    "top": 96,
+    "scrollY": 5471,
+    "rest": 11323,
+    "smt": "0px",
+    "spt": "96px",
+    "frueh": 96
+   },
+   "link": {
+    "top": 96,
+    "scrollY": 5471,
+    "rest": 11323,
+    "smt": "0px",
+    "spt": "96px"
+   },
+   "linkArt": "eingesetzt",
+   "ok_adresse": true,
+   "ok_link": true
+  },
+  {
+   "ansicht": "m390",
+   "ziel": "/leistungen#kosten-rechner",
+   "adresse": {
+    "top": 96,
+    "scrollY": 7404,
+    "rest": 9390,
+    "smt": "0px",
+    "spt": "96px",
+    "frueh": 6953
+   },
+   "link": {
+    "top": 96,
+    "scrollY": 7404,
+    "rest": 9390,
+    "smt": "0px",
+    "spt": "96px"
+   },
+   "linkArt": "eingesetzt",
+   "ok_adresse": true,
+   "ok_link": true
+  },
+  {
+   "ansicht": "m390",
+   "ziel": "/leistungen#express-anfrage",
+   "adresse": {
+    "top": 96,
+    "scrollY": 11479,
+    "rest": 5315,
+    "smt": "0px",
+    "spt": "96px",
+    "frueh": 1728
+   },
+   "link": {
+    "top": 96,
+    "scrollY": 11479,
+    "rest": 5315,
+    "smt": "0px",
+    "spt": "96px"
+   },
+   "linkArt": "vorhanden",
+   "ok_adresse": true,
+   "ok_link": true
+  },
+  {
+   "ansicht": "m390",
+   "ziel": "/bad#projekt-check",
+   "adresse": {
+    "top": 192,
+    "scrollY": 4541,
+    "rest": 8530,
+    "smt": "96px",
+    "spt": "96px",
+    "frueh": 1329
+   },
+   "link": {
+    "top": 192,
+    "scrollY": 4541,
+    "rest": 8530,
+    "smt": "96px",
+    "spt": "96px"
+   },
+   "linkArt": "eingesetzt",
+   "ok_adresse": false,
+   "ok_link": false
+  },
+  {
+   "ansicht": "m390",
+   "ziel": "/bad/badanfrage#anfrage",
+   "adresse": {
+    "top": 96,
+    "scrollY": 328,
+    "rest": 6579,
+    "smt": "0px",
+    "spt": "96px",
+    "frueh": 96
+   },
+   "link": {
+    "top": 96,
+    "scrollY": 328,
+    "rest": 6579,
+    "smt": "0px",
+    "spt": "96px"
+   },
+   "linkArt": "eingesetzt",
+   "ok_adresse": true,
+   "ok_link": true
+  },
+  {
+   "ansicht": "m390",
+   "ziel": "/#kosten-rechner",
+   "adresse": {
+    "top": 96,
+    "scrollY": 7143,
+    "rest": 14742,
+    "smt": "0px",
+    "spt": "96px",
+    "frueh": 1999
+   },
+   "link": {
+    "top": 96,
+    "scrollY": 7143,
+    "rest": 14742,
+    "smt": "0px",
+    "spt": "96px"
+   },
+   "linkArt": "eingesetzt",
+   "ok_adresse": true,
+   "ok_link": true
+  },
+  {
+   "ansicht": "m390",
+   "ziel": "/#express-anfrage",
+   "adresse": {
+    "top": 96,
+    "scrollY": 20462,
+    "rest": 5342,
+    "smt": "0px",
+    "spt": "96px",
+    "frueh": 8148
+   },
+   "link": {
+    "top": 96,
+    "scrollY": 19935,
+    "rest": 5343,
+    "smt": "0px",
+    "spt": "96px"
+   },
+   "linkArt": "eingesetzt",
+   "ok_adresse": true,
+   "ok_link": true
+  },
+  {
+   "ansicht": "m390",
+   "ziel": "/kontakt#express-anfrage",
+   "adresse": {
+    "top": 96,
+    "scrollY": 5679,
+    "rest": 5232,
+    "smt": "0px",
+    "spt": "96px",
+    "frueh": 96
+   },
+   "link": {
+    "top": 96,
+    "scrollY": 5679,
+    "rest": 5232,
+    "smt": "0px",
+    "spt": "96px"
+   },
+   "linkArt": "vorhanden",
+   "ok_adresse": true,
+   "ok_link": true
+  },
+  {
+   "ansicht": "m390",
+   "ziel": "/kontakt#termin-buchen",
+   "adresse": {
+    "top": 96,
+    "scrollY": 4580,
+    "rest": 6331,
+    "smt": "0px",
+    "spt": "96px",
+    "frueh": 96
+   },
+   "link": {
+    "top": 96,
+    "scrollY": 4580,
+    "rest": 6331,
+    "smt": "0px",
+    "spt": "96px"
+   },
+   "linkArt": "eingesetzt",
+   "ok_adresse": true,
+   "ok_link": true
+  },
+  {
+   "ansicht": "m390",
+   "ziel": "/kontakt#standort-anfahrt",
+   "adresse": {
+    "top": 96,
+    "scrollY": 2002,
+    "rest": 8909,
+    "smt": "0px",
+    "spt": "96px",
+    "frueh": 178
+   },
+   "link": {
+    "top": 96,
+    "scrollY": 2002,
+    "rest": 8909,
+    "smt": "0px",
+    "spt": "96px"
+   },
+   "linkArt": "eingesetzt",
+   "ok_adresse": true,
+   "ok_link": true
+  }
+ ]
+}

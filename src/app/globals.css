@@ -182,15 +182,27 @@
   line-gap-override: 0%;
 }
 
+/* Belegter Raum des offenen Einwilligungsbanners (R-01a): Abstand seiner Oberkante zum unteren Bildrand, gemessen von
+   BannerPlatz (src/components/kern/einwilligung, eingebunden im Fuß) und am <footer> gesetzt; ohne Banner 0. Der Fuß wird
+   um diesen Platz länger, damit auch die letzten Bedienelemente der Seite über den Banner rollen können (Fokus nie
+   verdeckt). Nicht vererbt: Setzen und Entfernen rechnet nur den Fuß neu. */
+@property --banner-platz {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
 @layer base {
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
-    /* Kopfhöhe + 16 px, damit Anker und Fokus nie unter dem festen Kopf liegen */
+    /* Kopfhöhe + 16 px, damit Anker und Fokus nie unter dem festen Kopf liegen. Einzige Quelle des Sprungversatzes:
+       Sprungziele tragen kein eigenes scroll-margin, sie landen alle bei 96 px (R-01a) */
     scroll-padding-top: calc(var(--spacing) * 24);
     /* unten ebenso frei: bis lg die Leiste (mit Schild), ab lg WhatsApp-Knopf und Schild –
-       fokussierte oder angesprungene Elemente liegen nie unter einer festen Ebene (WCAG 2.4.11) */
+       fokussierte oder angesprungene Elemente liegen nie unter einer festen Ebene (WCAG 2.4.11). Den offenen
+       Einwilligungsbanner hält BannerPlatz frei (nur Elemente unter ihm, nicht klebende Spalten; R-01a) */
     scroll-padding-bottom: calc(var(--spacing) * 32);
     background-color: var(--color-kalk);
     color: var(--color-tinte);
@@ -220,6 +232,10 @@
   body > main,
   body > footer {
     overflow-x: clip;
+  }
+  /* Platz am Seitenende, solange der Einwilligungsbanner offen ist (--banner-platz, sonst 0; R-01a) */
+  body > footer {
+    padding-bottom: var(--banner-platz);
   }
 
   /* Offenes Menüblatt sperrt das Scrollen der Seite (ohne JavaScript, auch vor der Hydrierung), über <body> am Viewport.
@@ -558,6 +574,16 @@
      utilities, damit sie den Startzustand scale-x-0 überschreibt */
   .lesefortschritt-linie {
     scale: var(--lesefortschritt, 0) 1;
+  }
+  /* Laserachse (K-003 Nr. 2, K-007 leitachse, R-01a): Grundschicht in Fuge, rot nur das gezogene Stück. Im Grundzustand
+     ist nichts gezogen; das Stück wächst allein über den Scroll-Zeitstrahl aus bewegung.css und nur, wenn das Kopfskript
+     die Startklasse gesetzt hat (Bewegung erlaubt, JavaScript an). Reduziert, ohne JavaScript und ohne scroll-timeline
+     bleibt das Lot grau – vorher stand es dann seitenlang voll rot neben Plan-Laser, Strecke und Fehlerrahmen. */
+  .leitachse-rot {
+    scale: 1 0;
+  }
+  html:not(.k-bewegung) .leitachse-rot {
+    animation: none;
   }
   /* Ein Rot je Bildschirm (K-003): trägt das Planblatt des Einstiegs die rote Achse seines Plans, bleibt die Laserachse des
      Einstiegs ab lg Grundschicht (sonst zwei rote Lote nebeneinander, bei reduzierter Bewegung beide voll – E4-N2-02-PA) */

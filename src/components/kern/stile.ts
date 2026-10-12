@@ -21,8 +21,9 @@ export function knopfKlassen(variante: KnopfVariante = 'haupt', className?: stri
 
 /** Beschriftung über dem Feld */
 export const labelKlassen = 'block font-text text-fs-2 font-semibold text-tinte';
-/** Pflichtmarke hinter dem Label (Text „Pflichtfeld“ für Screenreader ergänzen) */
-export const pflichtKlassen = 'ml-1 font-mono text-fs-1 text-laser-tief';
+/** Pflichtmarke hinter dem Label (Text „Pflichtfeld“ für Screenreader ergänzen). Nicht rot: Rot nur für Achse, Anriss,
+ *  Fokus-Akzent und Fehlerzeichen (K-003 Nr. 2) – sonst stehen Sternchen und Fehlerrand als zwei Rot im Bildschirm (R-01a) */
+export const pflichtKlassen = 'ml-1 font-mono text-fs-1 text-tinte-2';
 /** Eingabe, Auswahl, Textbereich */
 export const feldKlassen =
   'mt-2 block w-full min-h-11 rounded-r1 border border-strich bg-fliese px-4 py-3 font-text text-fs-3 text-tinte placeholder:text-tinte-2 hover:border-tinte focus-visible:border-tinte aria-[invalid=true]:border-laser-tief disabled:opacity-50';
