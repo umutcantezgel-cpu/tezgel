@@ -67,6 +67,7 @@ TEXTE-Regel: Mikrotexte (Knöpfe, Labels, Badges/Etiketten, Alt-Texte, Zustands-
 | E4-NACH-07/-08/-09 | nachgeladene Anfragewege (`/bad`, `/leistungen`, `/leistungen/[id]`, Stadtseiten) | – | Ladehinweis „Anfrageformular wird geladen...“ (nur bei Seitenwechsel ohne geladenes Paket sichtbar, Wortlaut wie auf `/`) | Tempo (E-025) |
 | E4-NACH-09 | Stadtseiten, Einsatzgebiet (`LocalDominanceMap.tsx`) | Badge „#1 Fachbetrieb in {Stadt} & Region“ (Standard „#1 Fachbetrieb Aßlar & Wetzlar“) | (entfällt) | Behauptung ohne Beleg (E3-SICHT-ERZ Befund 28) |
 | E4-NACH-09 | `/standorte`, Hauptstandort | Infokasten der Karte mit Anschrift | Schriftfeld neben der Karte: Etiketten „Anschrift“, „Telefon“, „Zeiten“, Werte aus der Konfiguration; „Route planen“ darunter | Kartenplatz ohne Leerfläche (Befund 23) |
+| E4-NACH-13 | `/fliesen/konfigurator` | – ; Fortschritt „Schritt X von 4“ sichtbar | Etikett „Ratgeber“ am Abschnitt „Weiterführende Ratgeber zur Fliesenplanung“; „Schritt X von 4“ nur für Screenreader (Kästchen bleiben sichtbar); Name „Verschnitt-Richtwerte je Verlegemuster“ am mobilen Zeilenblock; Werkzeug vor „Vier Schritte …“ (Reihenfolge, Wortlaut gleich) | E3-SICHT-ARB Befunde 12, 13, 19 |
 
 ## Vorschläge (Überschriften, Fließtext)
 | Paket | Fundstelle | heute | Vorschlag | Grund |

@@ -1429,5 +1429,11 @@
   "teil": "main_zeilen",
   "alt": "35614 Aßlar",
   "vermerk": "E4-NACH-09: Hauptstandort als Schriftfeld – Anschrift in einer Zeile „Hohwardstraße 14, 35614 Aßlar“ (gleicher Wortlaut)"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Punkt",
+  "vermerk": "E4-NACH-04: Marke „Punkt 0X“ des Qualitätsversprechens → Mono-Nummer „0X“ (Wort „Punkt“ entfällt) – TEXTVORSCHLAEGE"
  }
 ]

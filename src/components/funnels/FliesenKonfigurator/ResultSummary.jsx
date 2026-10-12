@@ -8,6 +8,7 @@ import { linkClass } from './stile';
 // Ergebnis: Zusammenfassung, Materialbedarf, Checkliste (E-011: aus FliesenKonfigurator.jsx verschoben, unverändert).
 // E3-BAU-14: Darstellung nach KERN („Fuge statt Karte“): ein Feld, die Abschnitte durch 1-px-Fugen getrennt, Icons aus
 // der Icon-Familie; Texte, Zeilen, Rechnung und Prüfliste unverändert.
+// E4-NACH-13 (Befund 14): Ergebnis als Fliese mit Fugenrahmen statt grauer Fläche; Richtwerte in Mono.
 export default function ResultSummary({ data }) {
     const summary = buildSummaryLines(data);
     const area = calculateArea(data);
@@ -15,7 +16,7 @@ export default function ResultSummary({ data }) {
     const checklist = buildChecklist(data);
 
     return (
-        <div className="border border-fuge bg-kalk text-left">
+        <div className="border border-fuge bg-fliese text-left">
             <div className="p-4">
                 <h4 className="mb-3 flex items-center gap-2 text-fs-3 font-semibold text-tinte">
                     <Icon name="dokument" groesse={4} />
@@ -41,7 +42,7 @@ export default function ResultSummary({ data }) {
                         <li>
                             <strong className="font-semibold text-tinte">Fläche:</strong> {fmt(area.net)} m² netto. Mit einem Verschnitt von
                             ca. {area.pattern.min}–{area.pattern.max} % ({area.pattern.label}) ergibt sich ein Richtwert von{' '}
-                            <strong className="font-semibold tabular-nums text-tinte">ca. {fmt(area.low)}–{fmt(area.high)} m²</strong>.
+                            <strong className="font-mono font-semibold tabular-nums text-tinte">ca. {fmt(area.low)}–{fmt(area.high)} m²</strong>.
                         </li>
                     )}
                     {area && !area.valid && (
@@ -58,7 +59,7 @@ export default function ResultSummary({ data }) {
                         <li>
                             <strong className="font-semibold text-tinte">Treppe (netto):</strong> Trittstufen {fmt(stairs.treadArea, 2)} m²
                             {stairs.withRisers && <> + Setzstufen {fmt(stairs.riserArea, 2)} m²</>} ={' '}
-                            <strong className="font-semibold tabular-nums text-tinte">{fmt(stairs.total, 2)} m²</strong>. Bei Treppen nennen wir
+                            <strong className="font-mono font-semibold tabular-nums text-tinte">{fmt(stairs.total, 2)} m²</strong>. Bei Treppen nennen wir
                             bewusst keinen Verschnittzuschlag, weil er stark von Format und Stufenmaß abhängt.
                         </li>
                     )}

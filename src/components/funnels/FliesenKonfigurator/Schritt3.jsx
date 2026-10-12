@@ -1,8 +1,31 @@
+import Icon from '@/components/icons/Icon';
 import Hinweis from '@/components/kern/Hinweis';
 import { hilfeKlassen, labelKlassen } from '@/components/kern/stile';
 import { FORMAT_OPTIONS, MATERIAL_OPTIONS, PATTERN_OPTIONS, STAIR_COVERING_OPTIONS, STAIR_TYPE_OPTIONS, YES_NO, parseNumber } from '@/lib/formulare/useFliesenKonfigurator';
 import { inputClass, legendClass } from './stile';
 import Auswahlgruppe from './Auswahlgruppe';
+
+// Verbandszeichen je Muster (E4-NACH-13, Befund 17): dekorativ, neben dem Namen; „Noch offen“ ohne Zeichen.
+const VERBAND_ZEICHEN = {
+    kreuzfuge: 'verband-kreuz',
+    verband: 'verband-halb',
+    wild: 'verband-wild',
+    diagonal: 'verband-diagonal',
+    fischgraet: 'verband-fischgraet'
+};
+const MUSTER_MIT_ZEICHEN = PATTERN_OPTIONS.map((o) =>
+    VERBAND_ZEICHEN[o.id]
+        ? {
+            ...o,
+            label: (
+                <span className="inline-flex items-center gap-2">
+                    <Icon name={VERBAND_ZEICHEN[o.id]} groesse={6} />
+                    {o.label}
+                </span>
+            )
+        }
+        : o
+);
 
 // Schritt 3: Format, Material und Menge (E-011: aus FliesenKonfigurator.jsx verschoben; E3-BAU-13: Darstellung nach KERN
 // wie Schritt1/2, Zahlenfelder wie E3-BAU-17; Texte, IDs, ARIA, Bedingungen, Reihenfolge und Nutzlast unverändert).
@@ -29,7 +52,7 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
 
                     <Auswahlgruppe
                         legend="Verlegemuster:"
-                        options={PATTERN_OPTIONS}
+                        options={MUSTER_MIT_ZEICHEN}
                         value={data.pattern}
                         columns="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
                         onChange={(id) => update({ pattern: id })}

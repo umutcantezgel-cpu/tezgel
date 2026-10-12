@@ -1,10 +1,10 @@
-// Fliesen-Konfigurator (E3-BAU-08, Arbeitsansicht nach dem Muster /kontakt): kompakter Einstieg, danach der
-// abgenommene Konfigurator in Lesebreite (8 Spalten), anschließend Ablauf, Berechnung, Treppen, nächste Schritte,
-// FAQ und Ratgeber in ruhigen Abschnitten. Reihenfolge, Texte, Links und IDs wie im Bestand; der Konfigurator
-// selbst (src/components/funnels/FliesenKonfigurator) bleibt unverändert.
+// Fliesen-Konfigurator (E3-BAU-08, Arbeitsansicht nach dem Muster /kontakt; E4-NACH-13 nach E3-SICHT-ARB Befunde 11–14,
+// 17–19): kompakter Einstieg, danach direkt das Werkzeug (8 Spalten, rechts die Ergebnis-Spalte), anschließend Ablauf,
+// Berechnung, Treppen, nächste Schritte, FAQ und Ratgeber in ruhigen Abschnitten. Texte, Links und IDs wie im Bestand;
+// der Konfigurator selbst (src/components/funnels/FliesenKonfigurator) wird nur eingebunden und nachgeladen.
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import Icon from '@/components/icons/Icon';
-import FliesenKonfigurator from '@/components/funnels/FliesenKonfigurator';
 import QualityPromise from '@/components/sections/QualityPromise';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
@@ -16,12 +16,19 @@ import Schrittfolge from '@/components/kern/Schrittfolge';
 import Tabelle from '@/components/kern/Tabelle';
 import { linkKlassen } from '@/components/kern/stile';
 
+const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKonfigurator'), {
+    loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
+});
+
 export const metadata = createMetadata({
     title: 'Fliesen-Konfigurator & Bedarfsrechner | Tezgel',
     description:
         'Fliesen online konfigurieren: Raum, Untergrund, Format & Fläche wählen und unverbindliche Preisschätzung erhalten. Fliesenverlegung Tezgel in Hessen.',
     path: '/fliesen/konfigurator'
 });
+
+// Erklärabschnitte: H2 eine Stufe kleiner als die H1 (text-fs-5 statt text-fs-6, E3-SICHT-ARB Befund 11)
+const ERKLAER_H2 = '[&_h2]:text-fs-5';
 
 const STEP_CARDS = [
     {
@@ -42,12 +49,13 @@ const STEP_CARDS = [
     }
 ];
 
+// Verschnitt je Verlegemuster; icon = Verbandszeichen aus der Icon-Familie (dekorativ, neben dem Namen)
 const WASTE_ROWS = [
-    { pattern: 'Kreuzfuge', value: 'ca. 5–10 %', note: 'Einfache Schnitte an Wänden und Türen' },
-    { pattern: 'Halb- / Drittelverband', value: 'ca. 5–10 %', note: 'Reststücke lassen sich oft am Reihenende weiterverwenden' },
-    { pattern: 'Wilder Verband', value: 'ca. 5–10 %', note: 'Abhängig von Dielenlängen und Raumform' },
-    { pattern: 'Diagonal', value: 'ca. 10–15 %', note: 'Viele Dreiecksschnitte an allen Rändern' },
-    { pattern: 'Fischgrät', value: 'ca. 10–15 %', note: 'Schräge Randschnitte über die ganze Fläche' }
+    { pattern: 'Kreuzfuge', icon: 'verband-kreuz', value: 'ca. 5–10 %', note: 'Einfache Schnitte an Wänden und Türen' },
+    { pattern: 'Halb- / Drittelverband', icon: 'verband-halb', value: 'ca. 5–10 %', note: 'Reststücke lassen sich oft am Reihenende weiterverwenden' },
+    { pattern: 'Wilder Verband', icon: 'verband-wild', value: 'ca. 5–10 %', note: 'Abhängig von Dielenlängen und Raumform' },
+    { pattern: 'Diagonal', icon: 'verband-diagonal', value: 'ca. 10–15 %', note: 'Viele Dreiecksschnitte an allen Rändern' },
+    { pattern: 'Fischgrät', icon: 'verband-fischgraet', value: 'ca. 10–15 %', note: 'Schräge Randschnitte über die ganze Fläche' }
 ];
 
 const FAQS = [
@@ -102,7 +110,7 @@ const RELATED_LINKS = [
 export default function FliesenKonfiguratorPage() {
     return (
         <>
-            {/* 1. Einstieg: kompakter Kopf, Aktionen und der Hinweis auf die Badseiten */}
+            {/* 1. Einstieg: kompakter Kopf (H1 text-fs-6), Aktionen und der Hinweis auf die Badseiten */}
             <Einstieg
                 art="arbeit"
                 etikett="Fliesen-Konfigurator"
@@ -137,12 +145,19 @@ export default function FliesenKonfiguratorPage() {
                 }
             />
 
-            {/* 2. Ablauf in vier Schritten als Feldraster an der Fuge */}
+            {/* 2. Werkzeug direkt unter dem Kopf: Fortschritt und Formular links (8 Spalten), Ergebnis-Spalte rechts (ab lg klebend) */}
+            <Abschnitt art="arbeit" id="konfigurator" aria-label="Fliesen-Konfigurator" spaet>
+                <FliesenKonfigurator ergebnisSpalte />
+            </Abschnitt>
+
+            {/* 3. Ablauf in vier Schritten als Feldraster an der Fuge (nach dem Werkzeug) */}
             <Abschnitt
                 art="arbeit"
                 titelId="ablauf-heading"
                 etikett="So funktioniert es"
                 titel="Vier Schritte bis zur strukturierten Anfrage"
+                className={ERKLAER_H2}
+                spaet
                 einleitung={
                     <p>
                         Der Konfigurator ist für Fliesenprojekte außerhalb der Badsanierung gedacht: Wohnräume, Küche, Flur, Treppen,
@@ -160,18 +175,15 @@ export default function FliesenKonfiguratorPage() {
                 </Feldraster>
             </Abschnitt>
 
-            {/* 3. Konfigurator (abgenommen, unverändert): im Seitenkörper in Lesebreite, 8 Spalten statt Vollbreite */}
-            <Abschnitt art="arbeit" id="konfigurator" aria-label="Fliesen-Konfigurator" kopf="seitlich">
-                <FliesenKonfigurator />
-            </Abschnitt>
-
-            {/* 4. Berechnung: Erläuterung links, Verschnitt-Richtwerte als Tabelle rechts */}
+            {/* 4. Berechnung: Erläuterung links, Verschnitt-Richtwerte rechts (Tabelle ab sm, sonst Zeilenblöcke) */}
             <Abschnitt
                 art="arbeit"
                 titelId="rechnung-heading"
                 kopf="seitlich"
                 etikett="Berechnung"
                 titel="So rechnet der Konfigurator: Fläche, Muster, Verschnitt"
+                className={ERKLAER_H2}
+                spaet
                 einleitung={
                     <div className="space-y-4">
                         <p>
@@ -187,16 +199,39 @@ export default function FliesenKonfiguratorPage() {
                     </div>
                 }
             >
-                <Tabelle
-                    name="Verschnitt-Richtwerte je Verlegemuster"
-                    kopf={[<>Verlegemuster</>, <>Verschnitt (Richtwert)</>, <>Warum</>]}
-                    zeilen={WASTE_ROWS.map((row) => [row.pattern, row.value, row.note])}
-                    ausrichtung={['links', 'rechts', 'links']}
-                />
+                <div className="hidden sm:block">
+                    <Tabelle
+                        name="Verschnitt-Richtwerte je Verlegemuster"
+                        kopf={[<>Verlegemuster</>, <>Verschnitt (Richtwert)</>, <>Warum</>]}
+                        zeilen={WASTE_ROWS.map((row) => [
+                            <span key="muster" className="inline-flex items-center gap-2">
+                                <Icon name={row.icon} groesse={6} />
+                                {row.pattern}
+                            </span>,
+                            row.value,
+                            row.note
+                        ])}
+                        ausrichtung={['links', 'rechts', 'links']}
+                    />
+                </div>
+                <ul aria-label="Verschnitt-Richtwerte je Verlegemuster" className="border border-fuge bg-fliese sm:hidden">
+                    {WASTE_ROWS.map((row) => (
+                        <li key={row.pattern} className="border-b border-fuge p-4 last:border-b-0">
+                            <div className="flex items-center justify-between gap-4">
+                                <span className="flex min-w-0 items-center gap-2 font-text text-fs-2 font-semibold text-tinte">
+                                    <Icon name={row.icon} groesse={6} />
+                                    {row.pattern}
+                                </span>
+                                <span className="shrink-0 whitespace-nowrap font-mono text-fs-2 tabular-nums text-tinte">{row.value}</span>
+                            </div>
+                            <p className="mt-2 font-text text-fs-2 text-tinte-2">{row.note}</p>
+                        </li>
+                    ))}
+                </ul>
             </Abschnitt>
 
             {/* 5. Treppen: die drei Regeln als Liste an der Fuge, je Regel ein Absatz mit fettem Einstieg */}
-            <Abschnitt art="arbeit" titelId="treppen-heading" titel="Bei Treppen nur die Nettofläche">
+            <Abschnitt art="arbeit" titelId="treppen-heading" titel="Bei Treppen nur die Nettofläche" className={ERKLAER_H2} spaet>
                 <ul className="border-t border-fuge">
                     <li className="border-b border-fuge py-6">
                         <p className="max-w-mass font-text text-fs-3 text-tinte">
@@ -226,6 +261,8 @@ export default function FliesenKonfiguratorPage() {
                 titelId="weiter-heading"
                 etikett="Nach der Anfrage"
                 titel="Wie es weitergeht: Aufmaß und Festpreisangebot"
+                className={ERKLAER_H2}
+                spaet
             >
                 <Schrittfolge
                     ausrichtung="waagrecht"
@@ -234,7 +271,7 @@ export default function FliesenKonfiguratorPage() {
             </Abschnitt>
 
             {/* 7. FAQ: native Aufklapper (ohne Skript), Fuge statt Kasten; Plus geschlossen, Minus offen */}
-            <Abschnitt art="arbeit" titelId="faq-heading" etikett="FAQ" titel="Häufige Fragen zum Konfigurator">
+            <Abschnitt art="arbeit" titelId="faq-heading" etikett="FAQ" titel="Häufige Fragen zum Konfigurator" className={ERKLAER_H2} spaet>
                 <div className="border-t border-fuge">
                     {FAQS.map((faq) => (
                         <details key={faq.q} className="group border-b border-fuge">
@@ -255,8 +292,15 @@ export default function FliesenKonfiguratorPage() {
                 </div>
             </Abschnitt>
 
-            {/* 8. Weiterführende Ratgeber als Feldraster mit Links (Titel wie im Bestand, keine zusätzlichen Überschriften), danach der direkte Kontaktweg */}
-            <Abschnitt art="arbeit" titelId="ratgeber-heading" titel="Weiterführende Ratgeber zur Fliesenplanung">
+            {/* 8. Weiterführende Ratgeber als Feldraster mit Links (Titel wie im Bestand, Mono-Etikett „Ratgeber“), danach der direkte Kontaktweg */}
+            <Abschnitt
+                art="arbeit"
+                titelId="ratgeber-heading"
+                etikett="Ratgeber"
+                titel="Weiterführende Ratgeber zur Fliesenplanung"
+                className={ERKLAER_H2}
+                spaet
+            >
                 <Feldraster spalten={4} als="ul">
                     {RELATED_LINKS.map((link) => (
                         <Feld key={link.href} als="li" className="relative">
