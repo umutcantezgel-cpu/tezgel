@@ -189,7 +189,8 @@ function KarteBeimSehen({
 /**
  * Höhe der Kartenfläche neben der Ortsliste im Abschnitt Servicegebiet der Startseite (erlaubte Kartenhöhe, E-018).
  * Der Platzhalter wächst mit der Einzugsband-Vorschau: ab md mindestens 460 px, darüber so hoch wie der Inhalt
- * (E3-SICHT-ERZ Befund 11: die Vorschau bleibt bei 1024 und 1440 px vollständig sichtbar); unter md folgt er dem Inhalt.
+ * (E3-SICHT-ERZ Befund 11: die Vorschau bleibt bei 1024 und 1440 px vollständig sichtbar); unter md folgt er dem Inhalt,
+ * ohne Vorschau – die Ortsliste steht dort schon im Abschnitt (die Startseite bleibt mobil kürzer).
  */
 const KARTE_HOEHE_NEBEN_LISTE = "460px";
 
@@ -209,7 +210,7 @@ export function ServiceKartenflaeche() {
       height={KARTE_HOEHE_NEBEN_LISTE}
       className="w-full"
       vorschau={<Einzugsband kompakt />}
-      vorschauAb="immer"
+      vorschauAb="md"
       hoehenModus="inhalt"
     >
       <KarteBeimSehen selectedSlug={selectedSlug} onSelectCity={setSelectedSlug} />

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo, useCallback, type CSSProperties } from "react";
+import React, { useState, useMemo, useCallback } from "react";
 import clsx from "clsx";
 import { APIProvider, Map, AdvancedMarker, Pin, useMap } from "@vis.gl/react-google-maps";
 import { CITIES } from "@/config/cities";
@@ -181,16 +181,17 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
       </div>
 
       {/* Rechts: Kartenfläche hinter Einwilligung */}
-      <div
-        className="karten-hoehe relative w-full lg:h-auto lg:min-w-0 lg:flex-1"
-        style={{ "--karten-hoehe": KARTE_HOEHE } as CSSProperties}
-      >
+      {/* Platzhalter folgt dem Inhalt (E4-NACH-12/-17, E3-SICHT-ARB Befunde 7, 10): mobil Text und Zonen ohne Leerfeld,
+          ab md mindestens KARTE_HOEHE, ab lg so hoch wie die Ortsliste; die geladene Karte steht auf KARTE_HOEHE */}
+      <div className="relative w-full lg:h-auto lg:min-w-0 lg:flex-1">
         <MapConsentGate
           src={embedUrl}
           title={`Google Maps Ansicht ${currentHub.name}`}
-          height="100%"
+          height={KARTE_HOEHE}
           className="w-full"
           vorschau={<Einzugsband kompakt />}
+          vorschauAb="immer"
+          hoehenModus="inhalt"
         >
           {apiKey ? (
             <APIProvider apiKey={apiKey}>
