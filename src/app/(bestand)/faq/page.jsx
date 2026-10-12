@@ -9,11 +9,12 @@
 // die Kategorien aus. Fragen und Antworten wortgleich mit dem FAQPage-JSON-LD in ./layout.tsx.
 // Die Seite bleibt Client-Komponente: Suche und Filter halten Zustand, eine eigene Insel läge außerhalb der Schreibrechte.
 import { useState, useMemo } from 'react';
-import dynamic from 'next/dynamic';
 import clsx from 'clsx';
 import QualityPromise from '@/components/sections/QualityPromise';
 import { COMPANY_DATA } from '@/config/company';
-import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzhalter';
+// Rechner direkt eingebunden wie im Bestand: Nachladen brachte hier keinen messbaren Gewinn (Lighthouse e6-e039: TBT
+// −8 ms, JS +10 KB), ohne JavaScript bleibt der Rechner sichtbar (Orchestrator, Tor e6-e039).
+import { PricingCalculator } from '@/components/pricing/PricingCalculator';
 import { FinalCTA } from '@/components/ui/FinalCTA';
 import Icon from '@/components/icons/Icon';
 import Einstieg from '@/components/kern/Einstieg';
@@ -22,11 +23,6 @@ import Knopf from '@/components/kern/Knopf';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import { feldKlassen, labelKlassen } from '@/components/kern/stile';
 
-// Rechner nachgeladen wie auf der Startseite (Tempo, E4-NACH-17); ohne JavaScript bleibt der Platzhalter mit Anruf,
-// WhatsApp und E-Mail stehen (R-01b)
-const PricingCalculator = dynamic(() => import('@/components/pricing/PricingCalculator'), {
-    loading: () => <FormularPlatzhalter />,
-});
 
 // Keep in sync with the FAQPage JSON-LD in ./layout.tsx (same questions & answers).
 // Zeichen je Kategorie aus der eigenen Icon-Familie (statt lucide Layers, Droplets, Sun, ClipboardCheck)
