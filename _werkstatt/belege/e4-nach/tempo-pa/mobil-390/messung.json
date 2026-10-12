@@ -1,0 +1,316 @@
+{
+  "erzeugt": "2026-10-12T02:34:33.861Z",
+  "basis": "http://127.0.0.1:4320",
+  "ansicht": "390x844 mobil, Einwilligung abgelehnt",
+  "zusammen": [
+    {
+      "seite": "/",
+      "laeufe": 3,
+      "leerfeldMaxPx_median": 48,
+      "leerfeldMaxPx_werte": [
+        48,
+        48,
+        48
+      ],
+      "sichtbareListen_werte": [
+        0,
+        0,
+        0
+      ],
+      "sichtbareListenElemente_werte": [
+        0,
+        0,
+        0
+      ],
+      "zonenSichtbar_werte": [
+        0,
+        0,
+        0
+      ],
+      "zonenImDOM_werte": [
+        3,
+        3,
+        3
+      ],
+      "scrollBreite_werte": [
+        390,
+        390,
+        390
+      ],
+      "rahmenHoehe_median": 355,
+      "konsoleFehler_summe": 0,
+      "fremdAnfragen_summe": 0
+    },
+    {
+      "seite": "/kontakt",
+      "laeufe": 3,
+      "leerfeldMaxPx_median": 42,
+      "leerfeldMaxPx_werte": [
+        42,
+        42,
+        42
+      ],
+      "sichtbareListen_werte": [
+        4,
+        4,
+        4
+      ],
+      "sichtbareListenElemente_werte": [
+        16,
+        16,
+        16
+      ],
+      "zonenSichtbar_werte": [
+        3,
+        3,
+        3
+      ],
+      "zonenImDOM_werte": [
+        3,
+        3,
+        3
+      ],
+      "scrollBreite_werte": [
+        390,
+        390,
+        390
+      ],
+      "rahmenHoehe_median": 741,
+      "konsoleFehler_summe": 0,
+      "fremdAnfragen_summe": 0
+    }
+  ],
+  "laeufe": [
+    {
+      "seite": "/",
+      "lauf": 1,
+      "status": 200,
+      "rahmenHoehe": 355,
+      "leerfeldMaxPx": 48,
+      "leerfeldLuecken": [
+        28,
+        28,
+        16,
+        16,
+        12,
+        48
+      ],
+      "sichtbareListen": 0,
+      "sichtbareListenElemente": 0,
+      "zonenSichtbar": 0,
+      "zonenImDOM": 3,
+      "sichtbareOrte": [],
+      "textAusschnitt": "",
+      "scrollBreite": 390,
+      "fensterBreite": 390,
+      "kartenTitel": "",
+      "konsoleFehler": 0,
+      "fremdAnfragen": 0,
+      "blockiert": 0
+    },
+    {
+      "seite": "/",
+      "lauf": 2,
+      "status": 200,
+      "rahmenHoehe": 355,
+      "leerfeldMaxPx": 48,
+      "leerfeldLuecken": [
+        28,
+        28,
+        16,
+        16,
+        12,
+        48
+      ],
+      "sichtbareListen": 0,
+      "sichtbareListenElemente": 0,
+      "zonenSichtbar": 0,
+      "zonenImDOM": 3,
+      "sichtbareOrte": [],
+      "textAusschnitt": "",
+      "scrollBreite": 390,
+      "fensterBreite": 390,
+      "kartenTitel": "",
+      "konsoleFehler": 0,
+      "fremdAnfragen": 0,
+      "blockiert": 0
+    },
+    {
+      "seite": "/",
+      "lauf": 3,
+      "status": 200,
+      "rahmenHoehe": 355,
+      "leerfeldMaxPx": 48,
+      "leerfeldLuecken": [
+        28,
+        28,
+        16,
+        16,
+        12,
+        48
+      ],
+      "sichtbareListen": 0,
+      "sichtbareListenElemente": 0,
+      "zonenSichtbar": 0,
+      "zonenImDOM": 3,
+      "sichtbareOrte": [],
+      "textAusschnitt": "",
+      "scrollBreite": 390,
+      "fensterBreite": 390,
+      "kartenTitel": "",
+      "konsoleFehler": 0,
+      "fremdAnfragen": 0,
+      "blockiert": 0
+    },
+    {
+      "seite": "/kontakt",
+      "lauf": 1,
+      "status": 200,
+      "rahmenHoehe": 741,
+      "leerfeldMaxPx": 42,
+      "leerfeldLuecken": [
+        28,
+        28,
+        16,
+        16,
+        12,
+        42,
+        4,
+        6,
+        1,
+        2,
+        6,
+        1,
+        2,
+        6,
+        1,
+        26
+      ],
+      "sichtbareListen": 4,
+      "sichtbareListenElemente": 16,
+      "zonenSichtbar": 3,
+      "zonenImDOM": 3,
+      "sichtbareOrte": [
+        "≤ 10 km\n\nAßlar\nFirmensitz\nWetzlar\nca. 5 km\nSolms\nca. 8 km\nBraunfels\nca. 10 km",
+        "Aßlar\nFirmensitz",
+        "Wetzlar\nca. 5 km",
+        "Solms\nca. 8 km",
+        "Braunfels\nca. 10 km",
+        "≤ 25 km\n\nHerborn\nca. 20 km\nDillenburg\nca. 25 km\nGießen\nca. 25 km",
+        "Herborn\nca. 20 km",
+        "Dillenburg\nca. 25 km",
+        "Gießen\nca. 25 km",
+        "≤ 50 km\n\nHaiger\nca. 30 km\nButzbach\nca. 35 km\nLimburg an der Lahn\nca. 35 km\nBad Nauheim\nca. 40 km\nMarburg\nca. 40 km\nFriedberg (Hessen)\nca. 45 km",
+        "Haiger\nca. 30 km",
+        "Butzbach\nca. 35 km"
+      ],
+      "textAusschnitt": "Karte Firmensitz Aßlar ≤ 10 km Aßlar Firmensitz Wetzlar ca. 5 km Solms ca. 8 km Braunfels ca. 10 km ≤ 25 km Herborn ca. 20 km Dillenburg ca. 25 km Gießen ca. 25 km ≤ 50 km Haiger ca. 30 km Butzbach ca. 35 km Limburg an der Lahn ca. 35 km Bad Nauheim ca. 40 km ",
+      "scrollBreite": 390,
+      "fensterBreite": 390,
+      "kartenTitel": "Karte",
+      "konsoleFehler": 0,
+      "fremdAnfragen": 0,
+      "blockiert": 0
+    },
+    {
+      "seite": "/kontakt",
+      "lauf": 2,
+      "status": 200,
+      "rahmenHoehe": 741,
+      "leerfeldMaxPx": 42,
+      "leerfeldLuecken": [
+        28,
+        28,
+        16,
+        16,
+        12,
+        42,
+        4,
+        6,
+        1,
+        2,
+        6,
+        1,
+        2,
+        6,
+        1,
+        26
+      ],
+      "sichtbareListen": 4,
+      "sichtbareListenElemente": 16,
+      "zonenSichtbar": 3,
+      "zonenImDOM": 3,
+      "sichtbareOrte": [
+        "≤ 10 km\n\nAßlar\nFirmensitz\nWetzlar\nca. 5 km\nSolms\nca. 8 km\nBraunfels\nca. 10 km",
+        "Aßlar\nFirmensitz",
+        "Wetzlar\nca. 5 km",
+        "Solms\nca. 8 km",
+        "Braunfels\nca. 10 km",
+        "≤ 25 km\n\nHerborn\nca. 20 km\nDillenburg\nca. 25 km\nGießen\nca. 25 km",
+        "Herborn\nca. 20 km",
+        "Dillenburg\nca. 25 km",
+        "Gießen\nca. 25 km",
+        "≤ 50 km\n\nHaiger\nca. 30 km\nButzbach\nca. 35 km\nLimburg an der Lahn\nca. 35 km\nBad Nauheim\nca. 40 km\nMarburg\nca. 40 km\nFriedberg (Hessen)\nca. 45 km",
+        "Haiger\nca. 30 km",
+        "Butzbach\nca. 35 km"
+      ],
+      "textAusschnitt": "Karte Firmensitz Aßlar ≤ 10 km Aßlar Firmensitz Wetzlar ca. 5 km Solms ca. 8 km Braunfels ca. 10 km ≤ 25 km Herborn ca. 20 km Dillenburg ca. 25 km Gießen ca. 25 km ≤ 50 km Haiger ca. 30 km Butzbach ca. 35 km Limburg an der Lahn ca. 35 km Bad Nauheim ca. 40 km ",
+      "scrollBreite": 390,
+      "fensterBreite": 390,
+      "kartenTitel": "Karte",
+      "konsoleFehler": 0,
+      "fremdAnfragen": 0,
+      "blockiert": 0
+    },
+    {
+      "seite": "/kontakt",
+      "lauf": 3,
+      "status": 200,
+      "rahmenHoehe": 741,
+      "leerfeldMaxPx": 42,
+      "leerfeldLuecken": [
+        28,
+        28,
+        16,
+        16,
+        12,
+        42,
+        4,
+        6,
+        1,
+        2,
+        6,
+        1,
+        2,
+        6,
+        1,
+        26
+      ],
+      "sichtbareListen": 4,
+      "sichtbareListenElemente": 16,
+      "zonenSichtbar": 3,
+      "zonenImDOM": 3,
+      "sichtbareOrte": [
+        "≤ 10 km\n\nAßlar\nFirmensitz\nWetzlar\nca. 5 km\nSolms\nca. 8 km\nBraunfels\nca. 10 km",
+        "Aßlar\nFirmensitz",
+        "Wetzlar\nca. 5 km",
+        "Solms\nca. 8 km",
+        "Braunfels\nca. 10 km",
+        "≤ 25 km\n\nHerborn\nca. 20 km\nDillenburg\nca. 25 km\nGießen\nca. 25 km",
+        "Herborn\nca. 20 km",
+        "Dillenburg\nca. 25 km",
+        "Gießen\nca. 25 km",
+        "≤ 50 km\n\nHaiger\nca. 30 km\nButzbach\nca. 35 km\nLimburg an der Lahn\nca. 35 km\nBad Nauheim\nca. 40 km\nMarburg\nca. 40 km\nFriedberg (Hessen)\nca. 45 km",
+        "Haiger\nca. 30 km",
+        "Butzbach\nca. 35 km"
+      ],
+      "textAusschnitt": "Karte Firmensitz Aßlar ≤ 10 km Aßlar Firmensitz Wetzlar ca. 5 km Solms ca. 8 km Braunfels ca. 10 km ≤ 25 km Herborn ca. 20 km Dillenburg ca. 25 km Gießen ca. 25 km ≤ 50 km Haiger ca. 30 km Butzbach ca. 35 km Limburg an der Lahn ca. 35 km Bad Nauheim ca. 40 km ",
+      "scrollBreite": 390,
+      "fensterBreite": 390,
+      "kartenTitel": "Karte",
+      "konsoleFehler": 0,
+      "fremdAnfragen": 0,
+      "blockiert": 0
+    }
+  ]
+}
