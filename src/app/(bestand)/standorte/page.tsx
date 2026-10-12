@@ -13,7 +13,10 @@ import { createMetadata } from '@/lib/metadata';
 import { buildGraph, buildBreadcrumbNode, buildWebPageNode, SITE_URL, ORG_ID } from '@/lib/schema';
 import JsonLd from '@/components/seo/JsonLd';
 import ServiceMapWrapper from '@/components/maps/ServiceMapWrapper';
-import InteractiveMap from '@/components/maps/InteractiveMap';
+import dynamic from 'next/dynamic';
+
+// Standortkarte nachgeladen (E4-NACH-17: Google-Maps-Bibliothek nicht in der Erstladung); Platzhalter serverseitig
+const InteractiveMap = dynamic(() => import('@/components/maps/InteractiveMap'));
 import LocationContact from '@/components/locations/LocationContact';
 import FinalCTA from '@/components/ui/FinalCTA';
 import Icon from '@/components/icons/Icon';

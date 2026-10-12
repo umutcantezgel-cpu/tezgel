@@ -8,7 +8,6 @@ import { COMPANY_DATA } from '@/config/company';
 import HeroContactForm from '@/components/forms/HeroContactForm';
 import TrustStrip from '@/components/trust/TrustStrip';
 import GoogleReviewsBadge from '@/components/reviews/GoogleReviewsBadge';
-import PricingCalculator from '@/components/pricing/PricingCalculator';
 import FAQAccordion from '@/components/ui/FAQAccordion';
 import FinalCTA from '@/components/ui/FinalCTA';
 import Abschnitt from '@/components/kern/Abschnitt';
@@ -24,6 +23,8 @@ import Servicegebiet from '@/components/start/Servicegebiet';
 import { etikettKlassen, seitenKlassen } from '@/components/kern/stile';
 import { createMetadata } from '@/lib/metadata';
 
+// Rechner unterhalb des ersten Bildschirms nachgeladen (E4-NACH-17, Bündelanalyse); Server-Rendering bleibt
+const PricingCalculator = dynamic(() => import('@/components/pricing/PricingCalculator'));
 const TezgelAnfrageFunnel = dynamic(() => import('@/components/funnels/TezgelAnfrageFunnel'), {
     loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
 });
