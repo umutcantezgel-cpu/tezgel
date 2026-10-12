@@ -1,4 +1,4 @@
-STATUS · Branch claude/amazing-mendel-b0g40w · Etappe 4/9 · zweiter Durchgang E4-N2 abgenommen · E4 Familien: 7 von 11 Paketen abgenommen (BAU-01…07), BAU-08…11 laufen · main = 6156079 live, Push nur auf den Arbeitsbranch
+STATUS · HALT auf Anweisung (12.10. 09:40 CEST) · Etappe 4 abgeschlossen (11/11), Etappe 5: E5-BAU-01, -02, -10 fertig · main = Arbeitsbranch
 
 # STATUS · Werkstatt-Lauf „Tezgel auf Spitzenniveau“
 
