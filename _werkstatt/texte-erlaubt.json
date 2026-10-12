@@ -1435,5 +1435,92 @@
   "block": "main",
   "entfernt": "Punkt",
   "vermerk": "E4-NACH-04: Marke „Punkt 0X“ des Qualitätsversprechens → Mono-Nummer „0X“ (Wort „Punkt“ entfällt) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "teil": "description",
+  "alt": "Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenlose Großformate & Terrassen. DIN 18534 zertifiziert. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!",
+  "neu": "Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenarme Großformate & Terrassen. Abdichtung DIN 18534. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!",
+  "vermerk": "E-020 (Zusammenführung mit main): Meta-Beschreibung aus main übernommen (2e5317f, live seit 6156079) – „fugenlose“ → „fugenarme“, „DIN 18534 zertifiziert“ → „Abdichtung DIN 18534“ (keine Behauptung ohne Beleg) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "teil": "og_description",
+  "alt": "Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenlose Großformate & Terrassen. DIN 18534 zertifiziert. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!",
+  "neu": "Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenarme Großformate & Terrassen. Abdichtung DIN 18534. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!",
+  "vermerk": "E-020 (Zusammenführung mit main): Meta-Beschreibung aus main übernommen (2e5317f, live seit 6156079) – „fugenlose“ → „fugenarme“, „DIN 18534 zertifiziert“ → „Abdichtung DIN 18534“ (keine Behauptung ohne Beleg) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/login",
+  "teil": "og_description",
+  "alt": "Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenlose Großformate & Terrassen. DIN 18534 zertifiziert. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!",
+  "neu": "Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenarme Großformate & Terrassen. Abdichtung DIN 18534. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!",
+  "vermerk": "E-020 (Zusammenführung mit main): Meta-Beschreibung aus main übernommen (2e5317f, live seit 6156079) – „fugenlose“ → „fugenarme“, „DIN 18534 zertifiziert“ → „Abdichtung DIN 18534“ (keine Behauptung ohne Beleg) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/blog/barrierefreier-balkonaustritt",
+  "teil": "main_zeilen",
+  "alt": "F",
+  "vermerk": "E4-NACH-15 Autorenkarte: Platzhalter-Monogramm (Anfangsbuchstabe „F“, aria-hidden) → Logo des Betriebs (ARB 34); Autorenname unverändert – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/blog/duschrinne-oder-punktablauf",
+  "teil": "main_zeilen",
+  "alt": "F",
+  "vermerk": "E4-NACH-15 Autorenkarte: Platzhalter-Monogramm (Anfangsbuchstabe „F“, aria-hidden) → Logo des Betriebs (ARB 34); Autorenname unverändert – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/blog/feinsteinzeug-oder-naturstein-vergleich",
+  "teil": "main_zeilen",
+  "alt": "F",
+  "vermerk": "E4-NACH-15 Autorenkarte: Platzhalter-Monogramm (Anfangsbuchstabe „F“, aria-hidden) → Logo des Betriebs (ARB 34); Autorenname unverändert – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/blog/fliesen-fuer-allergiker",
+  "teil": "main_zeilen",
+  "alt": "F",
+  "vermerk": "E4-NACH-15 Autorenkarte: Platzhalter-Monogramm (Anfangsbuchstabe „F“, aria-hidden) → Logo des Betriebs (ARB 34); Autorenname unverändert – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/blog/fliesen-reinigen-pflegen",
+  "teil": "main_zeilen",
+  "alt": "F",
+  "vermerk": "E4-NACH-15 Autorenkarte: Platzhalter-Monogramm (Anfangsbuchstabe „F“, aria-hidden) → Logo des Betriebs (ARB 34); Autorenname unverändert – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/blog/fliesenleger-gesucht-geselle-meister",
+  "teil": "main_zeilen",
+  "alt": "F",
+  "vermerk": "E4-NACH-15 Autorenkarte: Platzhalter-Monogramm (Anfangsbuchstabe „F“, aria-hidden) → Logo des Betriebs (ARB 34); Autorenname unverändert – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/blog/gaeste-wc-fliesen",
+  "teil": "main_zeilen",
+  "alt": "F",
+  "vermerk": "E4-NACH-15 Autorenkarte: Platzhalter-Monogramm (Anfangsbuchstabe „F“, aria-hidden) → Logo des Betriebs (ARB 34); Autorenname unverändert – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/blog/rutschfeste-fliesen-r-klassen",
+  "teil": "main_zeilen",
+  "alt": "F",
+  "vermerk": "E4-NACH-15 Autorenkarte: Platzhalter-Monogramm (Anfangsbuchstabe „F“, aria-hidden) → Logo des Betriebs (ARB 34); Autorenname unverändert – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/blog/schimmel-fliesenfugen-vermeiden",
+  "teil": "main_zeilen",
+  "alt": "F",
+  "vermerk": "E4-NACH-15 Autorenkarte: Platzhalter-Monogramm (Anfangsbuchstabe „F“, aria-hidden) → Logo des Betriebs (ARB 34); Autorenname unverändert – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/blog/undichte-dusche-warnzeichen",
+  "teil": "main_zeilen",
+  "alt": "F",
+  "vermerk": "E4-NACH-15 Autorenkarte: Platzhalter-Monogramm (Anfangsbuchstabe „F“, aria-hidden) → Logo des Betriebs (ARB 34); Autorenname unverändert – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/fliesen/konfigurator",
+  "block": "main",
+  "entfernt": "Fliesen-Konfigurator Schritt 1: Raum & Einsatzbereich Schritt 2: Untergrund & Bestand Schritt 3: Format, Material & Menge Schritt 4: Zusammenfassung & Kontakt Schritt 1 von 4 Fliesenprojekt vorbereiten Materialbedarf inkl. Verschnitt (Richtwert): Wählen Sie zuerst einen Bereich. 1. Raum & Einsatzbereich Wo soll gefliest werden? Mehrfachauswahl ist möglich. Raum und Einsatzbereich (Mehrfachauswahl) Wohn- & Essbereich Böden in Wohnräumen und offenen Grundrissen Küche Küchenboden und Küchenrückwand Flur & Diele Eingang, Diele, Garderobe Treppe Innen- oder Außentreppe, Tritt- und Setzstufen Balkon & Terrasse Frostsichere Außenbeläge Nur Untergrund / Abdichtung Ausgleich, Entkopplung, Abdichtung Bad, Dusche, Gäste-WC Dafür gibt es eigene Planungswerkzeuge Bitte wählen Sie mindestens einen Bereich aus. Weiter zu Schritt 2",
+  "vermerk": "E4-NACH-13 Konfigurator: Werkzeug direkt unter dem Kopf (ARB 12, 13) – Block wortgleich, nur Lage verschoben (vor „So funktioniert es …“ statt danach); Verschiebung, kein Wortverlust – TEXTVORSCHLAEGE"
  }
 ]

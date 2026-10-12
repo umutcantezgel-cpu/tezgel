@@ -214,7 +214,9 @@ export default function FliesenKonfiguratorPage() {
                         ausrichtung={['links', 'rechts', 'links']}
                     />
                 </div>
-                <ul aria-label="Verschnitt-Richtwerte je Verlegemuster" className="border border-fuge bg-fliese sm:hidden">
+                {/* mobil: Name wie die Beschriftung der Tabelle (caption, nur für Screenreader) – gleiche Textfolge in beiden Breiten */}
+                <p id="verschnitt-liste-name" className="sr-only sm:hidden">Verschnitt-Richtwerte je Verlegemuster</p>
+                <ul aria-labelledby="verschnitt-liste-name" className="border border-fuge bg-fliese sm:hidden">
                     {WASTE_ROWS.map((row) => (
                         <li key={row.pattern} className="border-b border-fuge p-4 last:border-b-0">
                             <div className="flex items-center justify-between gap-4">

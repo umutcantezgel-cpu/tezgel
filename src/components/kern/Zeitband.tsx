@@ -4,6 +4,7 @@
 // Kreuzverband, ab 2014 fugenarme Großformate („Fokus auf fugenarme Großformate“), ab 2019 zusätzlich das umlaufende
 // Dichtband („Verbundabdichtung nach DIN 18534 als Standard“). An jeder Fuge steht das Jahr in Mono, am Ende „Heute“.
 // Keine erfundenen Werte – nur die Jahre der Konfiguration und das Baujahr der Seite für „Heute“. Dekorativ.
+import type { CSSProperties } from 'react';
 import { historyTimeline } from '@/config/company';
 
 const JAHR_HEUTE = new Date().getFullYear();
@@ -15,13 +16,13 @@ export default function Zeitband() {
     etikett: e.year,
     jahr: /^\d{4}$/.test(e.year) ? Number(e.year) : JAHR_HEUTE,
   }));
-  const abschnitte = punkte.slice(0, -1).map((p, i) => ({ von: p, bis: punkte[i + 1], dauer: Math.max(1, punkte[i + 1].jahr - p.jahr) }));
+  const abschnitte = punkte.slice(0, -1).map((p, i) => ({ von: p, bis: punkte[i + 1], jahre: Math.max(1, punkte[i + 1].jahr - p.jahr) }));
   // Lage je Stück = Summe der vorherigen Breiten (ohne veränderliche Zählvariable)
   const stuecke = abschnitte.map((a, i) => ({
     ...a,
     i,
-    b: a.dauer * E,
-    x: abschnitte.slice(0, i).reduce((summe, v) => summe + v.dauer * E, 0),
+    b: a.jahre * E,
+    x: abschnitte.slice(0, i).reduce((summe, v) => summe + v.jahre * E, 0),
   }));
   const W = stuecke.reduce((summe, s) => summe + s.b, 0);
 
@@ -49,7 +50,8 @@ export default function Zeitband() {
       {/* Jahre an den Fugen */}
       <div className="mt-3 flex font-mono text-fs-1 text-tinte-2">
         {stuecke.map((s) => (
-          <div key={s.von.etikett} className="flex justify-between" style={{ flexGrow: s.dauer, flexBasis: 0 }}>
+          // Breite je Zeitraum nach Zahl der Jahre: CSS-Variable --jahre, Regel `.zeitband-stueck` in globals.css
+          <div key={s.von.etikett} className="zeitband-stueck flex justify-between" style={{ '--jahre': s.jahre } as CSSProperties}>
             <span className={s.i === 0 ? 'text-tinte' : undefined}>{s.von.etikett}</span>
             {s.i === stuecke.length - 1 && <span className="text-tinte">{s.bis.etikett}</span>}
           </div>

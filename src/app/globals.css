@@ -542,4 +542,8 @@
   .lesefortschritt-linie {
     scale: var(--lesefortschritt, 0) 1;
   }
+  /* Zeitband (/ueber-uns, E4-NACH-01): Jahreszahlen unter dem Band, Breite je Zeitraum nach Zahl der Jahre (--jahre) */
+  .zeitband-stueck {
+    flex: var(--jahre, 1) 1 0%;
+  }
 }
