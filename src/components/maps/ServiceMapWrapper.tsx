@@ -11,7 +11,8 @@ import Einzugsband from "@/components/kern/Einzugsband";
 import { etikettKlassen, knopfKlassen } from "@/components/kern/stile";
 import { CITY_HUB_DATA, getDirectionsUrl } from "@/lib/maps/getMapEmbedUrl";
 
-/** Höhe der Kartenfläche. Einwilligungs-Tor und geladene Karte haben dieselbe Höhe (kein Sprung beim Laden). */
+/** Höhe der Kartenfläche. Einwilligungs-Tor und geladene Karte haben dieselbe Höhe (kein Sprung beim Laden); unter md
+ *  folgt das Tor dem Inhalt (hoehenModus „inhalt“), die geladene Karte bleibt auf dieser Höhe. */
 export const KARTE_HOEHE = "460px";
 
 /** Stadtknopf: mindestens 44 px hoch, ohne vertikales Padding, damit die Leiste genau 44 px hoch bleibt. */
@@ -186,10 +187,9 @@ function KarteBeimSehen({
 }
 
 /**
- * Höhe der Kartenfläche neben der Ortsliste im Abschnitt Servicegebiet der Startseite: 13 Orte in zwei Spalten
- * (7 Zeilen à 54 px) plus Maßzeile (61 px) ergeben 440 px. Mit 460 px (erlaubte Kartenhöhe, E-018) passt die
- * kompakte Einzugsband-Vorschau ganz in den Platzhalter (bei 440 px unten beschnitten, Rückgabe E3-NACH-05);
- * die Vorschau erscheint erst ab xl, weil die Spalte darunter zu schmal ist.
+ * Höhe der Kartenfläche neben der Ortsliste im Abschnitt Servicegebiet der Startseite (erlaubte Kartenhöhe, E-018).
+ * Der Platzhalter wächst mit der Einzugsband-Vorschau: ab md mindestens 460 px, darüber so hoch wie der Inhalt
+ * (E3-SICHT-ERZ Befund 11: die Vorschau bleibt bei 1024 und 1440 px vollständig sichtbar); unter md folgt er dem Inhalt.
  */
 const KARTE_HOEHE_NEBEN_LISTE = "460px";
 
@@ -209,7 +209,8 @@ export function ServiceKartenflaeche() {
       height={KARTE_HOEHE_NEBEN_LISTE}
       className="w-full"
       vorschau={<Einzugsband kompakt />}
-      vorschauAb="xl"
+      vorschauAb="immer"
+      hoehenModus="inhalt"
     >
       <KarteBeimSehen selectedSlug={selectedSlug} onSelectCity={setSelectedSlug} />
     </MapConsentGate>
@@ -236,6 +237,7 @@ export default function ServiceMapWrapper({ className = "" }: { className?: stri
         title={`Einsatzgebiet Fliesenverlegung Tezgel – ${currentCity.name}`}
         height={KARTE_HOEHE}
         className="w-full"
+        hoehenModus="inhalt"
       >
         <KarteBeimSehen selectedSlug={selectedSlug} onSelectCity={handleSelectCity} />
       </MapConsentGate>

@@ -32,7 +32,7 @@ export default function KontaktPage() {
                     <>
                         <Knopf href="#express-anfrage" icon="pfeil-rechts">Zur Express-Anfrage</Knopf>
                         <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon">
-                            {COMPANY_DATA.contact.phone}
+                            <span className="font-mono">{COMPANY_DATA.contact.phone}</span>
                         </Knopf>
                     </>
                 }

@@ -56,7 +56,7 @@ export function BookingCalendar({
         <h3 className="mt-6 text-fs-5 text-tinte">Terminanfrage bestätigt!</h3>
         <p className="mt-3 max-w-mass text-fs-3 text-tinte-2">
           Vielen Dank, <strong className="font-semibold text-tinte">{contactData.name}</strong>. Wir haben Ihren Wunschtermin für den{' '}
-          <strong className="font-semibold text-tinte">{formattedDate} um {selectedTime} Uhr</strong> eingetragen.
+          <strong className="font-semibold text-tinte">{formattedDate} um <span className="font-mono">{selectedTime} Uhr</span></strong> eingetragen.
         </p>
         <div className="mt-6 border-t border-fuge pt-6 font-mono text-fs-2 text-tinte">
           <div className="font-text font-semibold">Termindetails:</div>
@@ -110,7 +110,7 @@ export function BookingCalendar({
             {availableDays.length === 0 && (
               <p className="py-6 text-fs-2 text-tinte-2">
                 Die freien Termine erscheinen, sobald die Seite vollständig geladen ist. Telefonisch erreichen Sie uns unter{' '}
-                <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className={linkKlassen}>{COMPANY_DATA.contact.phone}</a>.
+                <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className={`${linkKlassen} font-mono`}>{COMPANY_DATA.contact.phone}</a>.
               </p>
             )}
             {availableDays.map((day) => (
@@ -135,10 +135,10 @@ export function BookingCalendar({
                         type="button"
                         disabled={isTaken}
                         onClick={() => handleSelectSlot(day.dateStr, slot.time)}
-                        className={`${wahlKlassen} h-12 last:odd:col-span-2 md:last:odd:col-span-1 disabled:border-fuge disabled:bg-kalk disabled:text-tinte-2`}
+                        className={`${wahlKlassen} h-12 sm:last:odd:col-span-2 md:last:odd:col-span-1 disabled:border-fuge disabled:bg-kalk disabled:text-tinte-2`}
                         data-motion="zustand"
                       >
-                        {slot.time} Uhr
+                        <span className="font-mono">{slot.time} Uhr</span>
                       </button>
                     );
                   })}
