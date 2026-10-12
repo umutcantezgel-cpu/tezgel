@@ -82,18 +82,19 @@ export default function PricingCalculator() {
       {/* ── Linke Spalte: Angaben zu Vorhaben und Situation ── */}
       <div className="flex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12">
         {/* Phasen */}
-        {/* Umbruch erlaubt (Tor S-01/03): bei 320 px und erhöhtem Textabstand ragten die Phasen sonst über den Rand */}
+        {/* Tor S-01/03: Die Phasen ragten schon bei 375 px 15 px in den Innenrand (320 px: 70 px). Unter sm entfallen die
+            Trennlinien (eine Zeile bis 375 px); Umbruch nur noch bei 320 px und erhöhtem Textabstand. */}
         <ol className="flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte" aria-label="Phasen der Anfrage">
           <li className="flex items-center gap-2">
             <span className="inline-flex size-6 items-center justify-center bg-tinte text-kalk">1</span>
             <span>Gewerk</span>
           </li>
-          <li aria-hidden="true" className="h-px flex-1 bg-fuge" />
+          <li aria-hidden="true" className="hidden h-px flex-1 bg-fuge sm:block" />
           <li className="flex items-center gap-2">
             <span className="inline-flex size-6 items-center justify-center bg-tinte text-kalk">2</span>
             <span>Fläche</span>
           </li>
-          <li aria-hidden="true" className="h-px flex-1 bg-fuge" />
+          <li aria-hidden="true" className="hidden h-px flex-1 bg-fuge sm:block" />
           <li className="flex items-center gap-2">
             <span className="inline-flex size-6 items-center justify-center bg-tinte text-kalk">3</span>
             <span>Situation</span>

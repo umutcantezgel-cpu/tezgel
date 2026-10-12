@@ -96,7 +96,11 @@ fi
 # 13 Pixel-Stichprobe der übrigen Hauptansichten (T2-Q)
 if [ $Q -eq 1 ]; then
   [ -n "$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:4337/)" ] || true
-  (cd "$W" && node pixel.mjs --a http://127.0.0.1:4337 --b "$HEAD_URL" --satz "$KENNUNG-pixel" --ohne "$SEITEN" --ansichten m375,d1440) > "$AUS/13-pixel.log" 2>&1
+  # Feste Stichprobe der Hauptvorlagen (die ganze Grundmenge sprengt das Zeitfenster); Vergleich gegen PIXEL_A (Standard:
+  # Live-Server 4337 – Seiten, die seit dessen Stand umgebaut wurden, gehören nicht in die Stichprobe).
+  STICH="${PIXEL_STICHPROBE:-/,/kontakt,/bad,/standorte,/standorte/giessen,/fliesen,/faq,/preise,/leistungen/bad,/bad/badanfrage,/fliesen/konfigurator}"
+  STICH="$(echo "$STICH" | tr ',' '\n' | grep -vxF -f <(echo "$SEITEN" | tr ',' '\n') | paste -sd, -)"
+  (cd "$W" && node pixel.mjs --a "${PIXEL_A:-http://127.0.0.1:4337}" --b "$HEAD_URL" --satz "$KENNUNG-pixel" --seiten "$STICH" --ansichten m375,d1440) > "$AUS/13-pixel.log" 2>&1
   stufe 13-pixel $? "$(grep -E '^pixel:' "$AUS/13-pixel.log")"
 fi
 
