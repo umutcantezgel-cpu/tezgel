@@ -1,9 +1,10 @@
 // Leistung (E3-BAU-03, KERN v2): Seitenkörper der Leistungsseiten als Erzählansicht nach dem Muster der
 // Leistungsübersicht (E3-BAU-02). Einstieg mit Laserachse, H1 links, Vorspann und Knöpfe; rechts der Verlegeplan der
-// Leistung ohne Achse. Danach die Leitachse über die Abschnitte: Spezialisierungen und Merkmale als Feldraster,
-// Hinweis zur Fachqualität, Städteregister, Direktkontakt, Projektanfrage mit Rechner, Fragen, Express-Anfrage mit
-// Funnel. Wortlaut, Überschriften, Links, IDs (#express-anfrage) und Lesefolge wie im Bestand. Keine Icon-Kacheln,
-// kein Auftritt und kein großer Moment (setzt der Orchestrator). Daten und Metadaten unverändert.
+// Leistung ohne Achse. Danach die Leitachse über die Abschnitte: Spezialisierungen als dichte Liste an der Fuge,
+// Merkmale und Schnittzeichnung der Leistung, Städteregister, Direktkontakt als Schriftfeld mit Knöpfen, Projektanfrage
+// mit Rechner, Fragen, Express-Anfrage mit Funnel. Wortlaut, Überschriften, Links, IDs (#express-anfrage) und Lesefolge
+// wie im Bestand. Keine Icon-Kacheln, kein Auftritt und kein großer Moment (setzt der Orchestrator). Daten und
+// Metadaten unverändert.
 import { ViewTransition } from 'react';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
@@ -24,9 +25,8 @@ import Abschnitt from '@/components/kern/Abschnitt';
 import Leitachse from '@/components/kern/Leitachse';
 import { Feld, Feldraster } from '@/components/kern/Feldraster';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
-import Hinweis from '@/components/kern/Hinweis';
 import Knopf from '@/components/kern/Knopf';
-import Merkliste from '@/components/kern/Merkliste';
+import Schriftfeld from '@/components/kern/Schriftfeld';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
@@ -207,19 +207,36 @@ export default async function ServiceDetailPage({ params }) {
       />
 
       <Leitachse>
-        {/* 2. SPEZIALISIERUNGEN als Feldraster: je Unterpunkt ein Feld mit Fugenkreuz, ohne Icon-Kacheln */}
+        {/* 2. SPEZIALISIERUNGEN als dichte Liste: Zeilen an der Fuge, Fugenkreuz als Marke, Höhe nach Inhalt (ohne Versatz) */}
         {service.subcategories && service.subcategories.length > 0 && (
-          <Abschnitt titelId="spezialisierung-heading" leitachse spaet titel={<>Spezialisierungen in {service.name}</>}>
-            <Merkliste spalten={2} verband eintraege={service.subcategories.map((sub) => ({ titel: sub.name }))} />
+          <Abschnitt
+            titelId="spezialisierung-heading"
+            leitachse
+            spaet
+            etikett="Spezialisierungen"
+            titel={<>Spezialisierungen in {service.name}</>}
+          >
+            {/* ungerade Anzahl: der letzte Eintrag füllt die Zeile über beide Spalten, keine leere Zelle */}
+            <ul className="grid border-b border-fuge md:grid-cols-2 md:gap-x-12">
+              {service.subcategories.map((sub) => (
+                <li key={sub.id} className="flex gap-3 border-t border-fuge py-4 font-text text-fs-2 text-tinte md:odd:last:col-span-2">
+                  <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich">
+                    <Fugenkreuz className="size-3" />
+                  </span>
+                  <span className="min-w-0">{sub.name}</span>
+                </li>
+              ))}
+            </ul>
           </Abschnitt>
         )}
 
-        {/* 3. FACHKOMPETENZ: Vorspann, Merkmale mit Fugenkreuz, Hinweis zur Fachqualität */}
+        {/* 3. FACHKOMPETENZ: Vorspann, Merkmale mit Fugenkreuz, Hinweis zur Fachqualität mit Schnittzeichnung der Leistung */}
         <Abschnitt
           titelId="fachkompetenz-heading"
           leitachse
           flaeche="fliese"
           spaet
+          etikett="Fachkompetenz"
           titel={<>Fachkompetenz &amp; Ausführungsdetails</>}
           einleitung={<p>{service.shortDescription}</p>}
         >
@@ -237,14 +254,24 @@ export default async function ServiceDetailPage({ params }) {
                 ))}
               </ul>
             </div>
-            <Hinweis titel={<>Warum Fachqualität von {COMPANY_DATA.legalName}?</>}>
-              {serviceQualityNotes[service.id] || serviceQualityNotes.bad}
-            </Hinweis>
+            {/* Hinweistext ohne Info-Zeichen; daneben die Schnittzeichnung der Leistung (Planvorgabe service.id, dekorativ) */}
+            <div className="grid gap-6 lg:grid-cols-2 lg:gap-x-12">
+              <div className="border border-l-2 border-strich bg-fliese p-6 font-text text-fs-2 text-tinte">
+                <div className="font-semibold">Warum Fachqualität von {COMPANY_DATA.legalName}?</div>
+                <div className="mt-2">{serviceQualityNotes[service.id] || serviceQualityNotes.bad}</div>
+              </div>
+              <div className="border border-fuge p-6">
+                {/* Schnittkante = untere Linie: die Zeichnung endet an der waagrechten Achse */}
+                <div className="border-b-2 border-tinte">
+                  <Verlegeplan plan={service.id} schnitt ohneAchse bemassung={false} />
+                </div>
+              </div>
+            </div>
           </div>
         </Abschnitt>
 
         {/* 4. WEITERE GEWERKE als Feldraster: Name und Verweis je Leistung */}
-        <Abschnitt titelId="weitere-heading" leitachse spaet titel={<>Weitere Gewerke von {COMPANY_DATA.legalName}:</>}>
+        <Abschnitt titelId="weitere-heading" leitachse spaet etikett="Gewerke" titel={<>Weitere Gewerke von {COMPANY_DATA.legalName}:</>}>
           <Feldraster spalten={3}>
             {relatedServices.map((rel) => (
               <Feld key={rel.id} className="gap-6">
@@ -267,6 +294,7 @@ export default async function ServiceDetailPage({ params }) {
           titelId="region-heading"
           leitachse
           spaet
+          etikett="Region"
           titel={<>{service.name} in Ihrer Region</>}
           einleitung={
             <p>
@@ -292,7 +320,7 @@ export default async function ServiceDetailPage({ params }) {
           </ul>
         </Abschnitt>
 
-        {/* 6. DIREKTKONTAKT: Telefon, WhatsApp, Aufmaß-Knopf und Leitsatz des Inhabers (vormals Seitenleiste) */}
+        {/* 6. DIREKTKONTAKT: Schriftfeld links (Telefon, WhatsApp, E-Mail aus COMPANY_DATA), rechts die Knöpfe; Leitsatz in der Kopfspalte */}
         <Abschnitt
           titelId="direktkontakt-heading"
           flaeche="fliese"
@@ -311,9 +339,39 @@ export default async function ServiceDetailPage({ params }) {
             </>
           }
         >
-          <div className="flex flex-col gap-6">
-            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon">
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-x-12">
+            <Schriftfeld
+              spalten={1}
+              className="sm:max-w-md"
+              felder={[
+                {
+                  etikett: 'Telefon',
+                  wert: (
+                    <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className={clsx(linkKlassen, 'font-mono')}>
+                      {COMPANY_DATA.contact.phone}
+                    </a>
+                  ),
+                },
+                {
+                  etikett: 'WhatsApp',
+                  wert: (
+                    <a href={COMPANY_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" className={clsx(linkKlassen, 'font-mono')}>
+                      {COMPANY_DATA.contact.mobile}
+                    </a>
+                  ),
+                },
+                {
+                  etikett: 'E-Mail',
+                  wert: (
+                    <a href={`mailto:${COMPANY_DATA.contact.email}`} className={linkKlassen}>
+                      {COMPANY_DATA.contact.email}
+                    </a>
+                  ),
+                },
+              ]}
+            />
+            <div className="flex flex-col gap-3 sm:max-w-md">
+              <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon" className="w-full">
                 <span className="font-mono font-normal">{COMPANY_DATA.contact.phone}</span>
               </Knopf>
               <Knopf
@@ -321,13 +379,14 @@ export default async function ServiceDetailPage({ params }) {
                 extern
                 variante="neben"
                 vorne={<WhatsAppLogo className="size-5 shrink-0" />}
+                className="w-full"
               >
                 WhatsApp Chat
               </Knopf>
+              <Knopf href="#express-anfrage" icon="pfeil-rechts" className="w-full">
+                Kostenfreies Aufmaß buchen
+              </Knopf>
             </div>
-            <Knopf href="#express-anfrage" icon="pfeil-rechts" className="w-full sm:w-auto sm:self-start">
-              Kostenfreies Aufmaß buchen
-            </Knopf>
           </div>
         </Abschnitt>
 
