@@ -1,0 +1,43 @@
+{
+ "werkzeug": "werte.mjs",
+ "zeitpunkt": "2026-10-12T05:27:08.825Z",
+ "basis": "--dateien",
+ "arbeitsbaum": false,
+ "regeln": "_werkstatt/werkzeuge/werte-regeln.json",
+ "dateien": [
+  "src/app/(bestand)/blog/page.jsx",
+  "src/app/(bestand)/leistungen/[id]/page.jsx",
+  "src/app/(bestand)/leistungen/page.jsx",
+  "src/components/blog/BlogCard.jsx",
+  "src/components/blog/BlogListe.jsx",
+  "src/components/blog/BlogSidebar.jsx",
+  "src/components/leistungen/Gewerk.tsx",
+  "src/components/leistungen/Gewerke.tsx",
+  "src/components/leistungen/Sprungindex.tsx",
+  "src/components/leistungen/detail/Fachdetails.tsx",
+  "src/components/leistungen/detail/Planfeld.tsx",
+  "src/components/leistungen/detail/Seitenspalte.tsx",
+  "src/components/leistungen/detail/Unterkategorien.tsx",
+  "src/components/leistungen/detail/satz.ts",
+  "src/components/pricing/PricingCalculator.tsx"
+ ],
+ "kandidaten_vorkommen": 1047,
+ "kandidaten_eindeutig": 199,
+ "stil_nicht_pruefbar": 0,
+ "laufzeit_ms": 319,
+ "zusammenfassung": {
+  "ohne_css": 0,
+  "beliebig": 0,
+  "farbe_ausserhalb": 0,
+  "abstand_ausserhalb": 0,
+  "groesse_ausserhalb": 0,
+  "schrift_ausserhalb": 0,
+  "radius_ausserhalb": 0,
+  "dauer_ausserhalb": 0,
+  "farbe_literal": 0,
+  "style_wert": 0,
+  "dauer_zahl": 0
+ },
+ "befunde": [],
+ "fehler": []
+}

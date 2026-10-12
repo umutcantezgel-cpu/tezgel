@@ -86,7 +86,7 @@ n="$(node -e 'const [d,s]=process.argv.slice(1);const j=require(d);const S=new S
 (cd "$W" && node wortbruch.mjs --base "$HEAD_URL" --seiten "$SEITEN" --satz "$KENNUNG") > "$AUS/10-wortbruch.log" 2>&1; stufe 10-wortbruch $? "$(tail -1 "$AUS/10-wortbruch.log")"
 
 # 11 Fotos in vier Ansichten
-(cd "$W" && node fotos.mjs --satz "$KENNUNG" --seiten "$SEITEN" --ansichten m375,t768,d1440,d1920 --belege) > "$AUS/11-fotos.log" 2>&1; stufe 11-fotos-lauf $? "$(tail -1 "$AUS/11-fotos.log")"
+(cd "$W" && node fotos.mjs --satz "$KENNUNG" --seiten "$SEITEN" --ansichten m375,t768,d1440,d1920) > "$AUS/11-fotos.log" 2>&1; stufe 11-fotos-lauf $? "$(tail -1 "$AUS/11-fotos.log")"
 
 # 12 Funktionstests
 if [ -n "$SPECS" ]; then

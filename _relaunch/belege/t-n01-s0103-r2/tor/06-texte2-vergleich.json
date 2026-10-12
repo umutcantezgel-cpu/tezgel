@@ -1,0 +1,450 @@
+{
+ "satz": "/home/user/tezgel/_relaunch/belege/t-n01-s0103-r2/tor/texte-live → /home/user/tezgel/_relaunch/belege/t-n01-s0103-r2/tor/texte-kopf",
+ "base": null,
+ "bedingungen": {
+  "a": "belege/t-n01-s0103-r2/tor/texte-live",
+  "b": "belege/t-n01-s0103-r2/tor/texte-kopf",
+  "freigabe": "MIKROTEXTE.md",
+  "volatil": [],
+  "regeln": "Anführungszeichen vor dem Vergleich vereinheitlicht. ROT: Entfernung/Änderung ohne Freigabe, hinzugekommene Überschrift, zusätzliche H1, fehlende Seite, Statuswechsel, neues kaputtes Fragment, verlorener Anker, verlorener Zustand. GELB: hinzugekommener sonstiger Text, Verschiebung, neu gegliedert (auch: alter Text vollständig in neuem Block enthalten), vorbestehend, volatil. GRÜN: per Freigabeliste."
+ },
+ "erstellt": "2026-10-12T05:27:12.946Z",
+ "ergebnis": "GRÜN",
+ "summe": {
+  "rot": 0,
+  "gelb": 37,
+  "gruen_freigegeben": 2,
+  "seiten_rot": 0,
+  "rot_nach_art": {},
+  "gelb_nach_art": {
+   "verschoben": 15,
+   "hinzu": 7,
+   "neu-gegliedert": 12,
+   "pflichtanker-fehlt": 3
+  },
+  "seiten_verglichen": 3,
+  "zustaende_verglichen": 0,
+  "freigabe_zeilen": 51,
+  "freigabe_warnungen": 0,
+  "laufzeit_s": 0
+ },
+ "freigabe": {
+  "datei": "MIKROTEXTE.md",
+  "warnungen": [],
+  "genutzt": [
+   60,
+   61
+  ]
+ },
+ "seiten": {
+  "/blog": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Suche",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "aria:placeholder",
+     "wert": "Artikel suchen...",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Kategorien",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Alle Artikel",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Bad & Dusche",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Fliesen & Material",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Untergrund & Abdichtung",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Balkon & Terrasse",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Pflege & Werterhalt",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Ratgeber & Kosten",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Neuigkeiten",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Beratung gewünscht?",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Fragen zu Badsanierung, Fliesen oder Abdichtung? Deniz Tezgel berät Sie persönlich – inklusive kostenfreiem Vor-Ort-Aufmaß.",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Kontakt aufnehmen",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "06441 / 44 83 567",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Artikel suchen",
+     "abschnitt": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Ratgeber durchsuchen",
+     "abschnitt": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    }
+   ],
+   "gruen": [
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Ratgeber durchsuchen",
+     "freigabe": [
+      60
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Artikel suchen",
+     "freigabe": [
+      61
+     ],
+     "kontext": ""
+    }
+   ]
+  },
+  "/kontakt": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "pflichtanker-fehlt",
+     "anker": "/kontakt#express-anfrage",
+     "grund": "fehlte schon in A"
+    },
+    {
+     "farbe": "gelb",
+     "art": "pflichtanker-fehlt",
+     "anker": "/kontakt#termin-buchen",
+     "grund": "fehlte schon in A"
+    }
+   ],
+   "gruen": []
+  },
+  "/leistungen": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "HWK Wiesbaden Fachbetrieb Aßlar · Wetzlar · Mittelhessen"
+     ],
+     "neu": [
+      "HWK Wiesbaden Fachbetrieb",
+      "Aßlar · Wetzlar · Mittelhessen"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Bodengleiche Walk-In-Duschen XXL-Großformatfliesen Beleuchtete Wandnischen Trockenbau & Vorwandelemente"
+     ],
+     "neu": [
+      "Bodengleiche Walk-In-Duschen",
+      "XXL-Großformatfliesen",
+      "Beleuchtete Wandnischen",
+      "Trockenbau & Vorwandelemente"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Feinsteinzeug & Fliesen Treppen neu belegen Küchen, Dielen & Flure Granit & Natursteinbeläge"
+     ],
+     "neu": [
+      "Feinsteinzeug & Fliesen",
+      "Treppen neu belegen",
+      "Küchen, Dielen & Flure",
+      "Granit & Natursteinbeläge"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "20 mm Platten auf Stelzlagern Gefälleausbildung & Entwässerung Witterungsbeständige Abdichtung"
+     ],
+     "neu": [
+      "20 mm Platten auf Stelzlagern",
+      "Gefälleausbildung & Entwässerung",
+      "Witterungsbeständige Abdichtung"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Abdichtung nach DIN 18534 Rückbau & Entkernung alter Beläge Estrich- & Nivellierarbeiten Rissverharzung & Haftbrücken"
+     ],
+     "neu": [
+      "Abdichtung nach DIN 18534",
+      "Rückbau & Entkernung alter Beläge",
+      "Estrich- & Nivellierarbeiten",
+      "Rissverharzung & Haftbrücken"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "01 Begutachtung & Untergrundanalyse"
+     ],
+     "neu": [
+      "01",
+      "Begutachtung & Untergrundanalyse"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "02 Beratung zu Formaten & Rutschhemmung"
+     ],
+     "neu": [
+      "02",
+      "Beratung zu Formaten & Rutschhemmung"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "03 Staubgeschützt, termintreu & DIN-gerecht"
+     ],
+     "neu": [
+      "03",
+      "Staubgeschützt, termintreu & DIN-gerecht"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Geprüfte Fachkompetenz",
+     "neu": "01 Geprüfte Fachkompetenz",
+     "abschnitt": "h1: Fliesenleger Leistungen & Fachgewerke Wetzlar",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Geprüfte Fachkompetenz",
+     "neu": "02 Geprüfte Fachkompetenz",
+     "abschnitt": "h2: Bäder & Wellness",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Geprüfte Fachkompetenz",
+     "neu": "03 Geprüfte Fachkompetenz",
+     "abschnitt": "h2: Wohnbereiche & Neubau",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Geprüfte Fachkompetenz",
+     "neu": "04 Geprüfte Fachkompetenz",
+     "abschnitt": "h2: Balkon- & Terrassensanierung",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "Fachgewerke",
+     "abschnitt": "h1: Fliesenleger Leistungen & Fachgewerke Wetzlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "01 Bäder & Wellness",
+     "abschnitt": "h1: Fliesenleger Leistungen & Fachgewerke Wetzlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "02 Wohnbereiche & Neubau",
+     "abschnitt": "h1: Fliesenleger Leistungen & Fachgewerke Wetzlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "03 Balkon- & Terrassensanierung",
+     "abschnitt": "h1: Fliesenleger Leistungen & Fachgewerke Wetzlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "04 Untergrund & DIN 18534 Abdichtung",
+     "abschnitt": "h1: Fliesenleger Leistungen & Fachgewerke Wetzlar",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/referenzen": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "pflichtanker-fehlt",
+     "anker": "/referenzen#bewertungen",
+     "grund": "fehlte schon in A"
+    }
+   ],
+   "gruen": []
+  }
+ }
+}

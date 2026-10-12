@@ -1,0 +1,16 @@
+{"html":172,"nur_vorher":0,"nur_nachher":0,"html_abweichend":9,"css_weg":22,"css_neu":28,"var_weg":4,"var_neu":1,"keyframes_weg":0,"keyframes_neu":0}
+≠ blog.html 
+  vorher:   imageSrcSet="/_next/image?url=%2Fimages%2Fbad%2Fbad-holz-waschtisch.webp&amp;w=384&amp;q=75 384w, /_next/image?url=%2Fimages%2Fbad%2Fbad-holz-waschtisch.webp&amp;w=640&amp;q=75 640w, /_next/image?url 
+  nachher:  imageSrcSet="/_next/image?url=%2Fimages%2Fbad%2Fbad-holz-waschtisch.webp&amp;w=256&amp;q=75 256w, /_next/image?url=%2Fimages%2Fbad%2Fbad-holz-waschtisch.webp&amp;w=384&amp;q=75 384w, /_next/image?url
+≠ faq.html 
+  vorher:  lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12"><ol class="flex items-center gap-3 font-mono text-fs-1 text-tinte" aria-label="Phasen der Anfrage"><li class="flex items-center gap-2">< 
+  nachher: lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12"><ol class="flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte" aria-label="Phasen der Anfrage"><li class="flex items-cente
+≠ index.html 
+  vorher:  lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12"><ol class="flex items-center gap-3 font-mono text-fs-1 text-tinte" aria-label="Phasen der Anfrage"><li class="flex items-center gap-2">< 
+  nachher: lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12"><ol class="flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte" aria-label="Phasen der Anfrage"><li class="flex items-cente
+≠ leistungen/aussen.html 
+  vorher:  lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12"><ol class="flex items-center gap-3 font-mono text-fs-1 text-tinte" aria-label="Phasen der Anfrage"><li class="flex items-center gap-2">< 
+  nachher: lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12"><ol class="flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte" aria-label="Phasen der Anfrage"><li class="flex items-cente
+≠ leistungen/bad.html 
+  vorher:  lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12"><ol class="flex items-center gap-3 font-mono text-fs-1 text-tinte" aria-label="Phasen der Anfrage"><li class="flex items-center gap-2">< 
+  nachher: lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12"><ol class="flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte" aria-label="Phasen der Anfrage"><li class="flex items-cente

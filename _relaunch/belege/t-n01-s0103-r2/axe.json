@@ -1,0 +1,439 @@
+{
+ "satz": "t-n01-s0103-r2",
+ "tags": [
+  "wcag2a",
+  "wcag2aa",
+  "wcag21a",
+  "wcag21aa",
+  "wcag22aa"
+ ],
+ "laeufe": 47,
+ "ernst_kritisch_knoten": 40,
+ "je_regel": {
+  "serious:color-contrast": 40
+ },
+ "ergebnisse": [
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 8,
+     "ziele": [
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(1) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(2) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(3) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".mt-8.text-center.text-slate-700 > .hover\\:underline.underline-offset-2.hover\\:text-orange-700",
+      ".font-bold.text-slate-900 > .hover\\:underline.underline-offset-2.hover\\:text-orange-700"
+     ],
+     "knoten": [
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 8,
+     "ziele": [
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(1) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(2) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(3) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".mt-8.text-center.text-slate-700 > .hover\\:underline.underline-offset-2.hover\\:text-orange-700",
+      ".font-bold.text-slate-900 > .hover\\:underline.underline-offset-2.hover\\:text-orange-700"
+     ],
+     "knoten": [
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 8,
+     "ziele": [
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(1) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(2) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(3) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".mt-8.text-center.text-slate-700 > .hover\\:underline.underline-offset-2.hover\\:text-orange-700",
+      ".font-bold.text-slate-900 > .hover\\:underline.underline-offset-2.hover\\:text-orange-700"
+     ],
+     "knoten": [
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 8,
+     "ziele": [
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(1) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(2) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(3) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".mt-8.text-center.text-slate-700 > .hover\\:underline.underline-offset-2.hover\\:text-orange-700",
+      ".font-bold.text-slate-900 > .hover\\:underline.underline-offset-2.hover\\:text-orange-700"
+     ],
+     "knoten": [
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 8,
+     "ziele": [
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(1) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(2) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(3) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".mt-8.text-center.text-slate-700 > .hover\\:underline.underline-offset-2.hover\\:text-orange-700",
+      ".font-bold.text-slate-900 > .hover\\:underline.underline-offset-2.hover\\:text-orange-700"
+     ],
+     "knoten": [
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  }
+ ]
+}

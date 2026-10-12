@@ -1,0 +1,135 @@
+{
+ "vorher": "3c02fe5",
+ "nachher": "328463c",
+ "laufzeit_reste": {
+  "vorher": [
+   "blog/gibt-es-nicht.html"
+  ],
+  "nachher": []
+ },
+ "variablen_weg": [
+  "--blur-md",
+  "--color-black",
+  "--tracking-wide",
+  "--tw-space-x-reverse"
+ ],
+ "variablen_neu": [
+  "--aspect-video"
+ ],
+ "keyframes_weg": [],
+ "keyframes_neu": [],
+ "html_dateien": 172,
+ "nur_vorher": [],
+ "nur_nachher": [],
+ "html_abweichend": 9,
+ "abweichungen": [
+  {
+   "datei": "blog.html",
+   "ab": 594,
+   "vorher": " imageSrcSet=\"/_next/image?url=%2Fimages%2Fbad%2Fbad-holz-waschtisch.webp&amp;w=384&amp;q=75 384w, /_next/image?url=%2Fimages%2Fbad%2Fbad-holz-waschtisch.webp&amp;w=640&amp;q=75 640w, /_next/image?url",
+   "nachher": " imageSrcSet=\"/_next/image?url=%2Fimages%2Fbad%2Fbad-holz-waschtisch.webp&amp;w=256&amp;q=75 256w, /_next/image?url=%2Fimages%2Fbad%2Fbad-holz-waschtisch.webp&amp;w=384&amp;q=75 384w, /_next/image?url"
+  },
+  {
+   "datei": "faq.html",
+   "ab": 87281,
+   "vorher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-center gap-2\"><",
+   "nachher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-cente"
+  },
+  {
+   "datei": "index.html",
+   "ab": 124835,
+   "vorher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-center gap-2\"><",
+   "nachher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-cente"
+  },
+  {
+   "datei": "leistungen/aussen.html",
+   "ab": 100529,
+   "vorher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-center gap-2\"><",
+   "nachher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-cente"
+  },
+  {
+   "datei": "leistungen/bad.html",
+   "ab": 101281,
+   "vorher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-center gap-2\"><",
+   "nachher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-cente"
+  },
+  {
+   "datei": "leistungen/untergrund.html",
+   "ab": 101070,
+   "vorher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-center gap-2\"><",
+   "nachher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-cente"
+  },
+  {
+   "datei": "leistungen/wohnen.html",
+   "ab": 101560,
+   "vorher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-center gap-2\"><",
+   "nachher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-cente"
+  },
+  {
+   "datei": "leistungen.html",
+   "ab": 72659,
+   "vorher": "n></div></div></div></div><main id=\"main-content\" class=\"flex-1 pb-16 lg:pb-0\"><div class=\"pt-36 pb-24 min-h-screen relative overflow-hidden\"><script type=\"application/ld+json\">{\"@context\":\"https://sc",
+   "nachher": "n></div></div></div></div><main id=\"main-content\" class=\"flex-1 pb-16 lg:pb-0\"><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https://www.tezge"
+  },
+  {
+   "datei": "preise.html",
+   "ab": 91319,
+   "vorher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-center gap-2\"><",
+   "nachher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-cente"
+  }
+ ],
+ "css_selektoren_weg": [
+  ".backdrop-blur-md",
+  ".bg-gradient-to-t",
+  ".bg-orange-700",
+  ".bg-slate-900\\/75",
+  ".duration-700",
+  ".flex-grow",
+  ".from-black\\/50",
+  ".h-52",
+  ".h-60",
+  ".left-1\\/3",
+  ".left-3\\.5",
+  ".line-clamp-3",
+  ".opacity-40",
+  ".sm\\:h-72",
+  ".to-transparent",
+  ".top-24",
+  ".top-\\[1200px\\]",
+  ".tracking-wide",
+  ".via-black\\/10",
+  ".w-80",
+  ":where(.space-x-3>:not(:last-child))",
+  "html:has(.menue-blatt:popover-open)"
+ ],
+ "css_selektoren_neu": [
+  ".-ml-px",
+  ".-mt-px",
+  ".-mx-4",
+  ".aspect-4\\/3",
+  ".aspect-video",
+  ".focus-within\\:z-10:focus-within",
+  ".group-hover\\:decoration-tinte:is(:where(.group):hover *)",
+  ".group-hover\\:text-tinte:is(:where(.group):hover *)",
+  ".justify-self-stretch",
+  ".lg\\:col-start-1",
+  ".lg\\:col-start-6",
+  ".lg\\:col-start-8",
+  ".lg\\:grid-cols-1",
+  ".lg\\:py-12",
+  ".md\\:aspect-3\\/4",
+  ".md\\:border-l",
+  ".md\\:flex-wrap",
+  ".md\\:gap-x-8",
+  ".md\\:overflow-visible",
+  ".md\\:px-0",
+  ".mr-4",
+  ".object-right-bottom",
+  ".pl-px",
+  ".pt-px",
+  ".self-stretch",
+  ".sm\\:block",
+  ".w-max",
+  "body:has(.menue-blatt:popover-open)"
+ ]
+}
