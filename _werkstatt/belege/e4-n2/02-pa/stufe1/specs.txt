@@ -1,0 +1,13 @@
+funktion-badanfrage.spec.mjs
+funktion-einwilligung.spec.mjs
+funktion-express-funnel.spec.mjs
+funktion-hero-kontakt.spec.mjs
+funktion-konfigurator.spec.mjs
+funktion-kontaktwege.spec.mjs
+funktion-navigation.spec.mjs
+funktion-preisrechner.spec.mjs
+funktion-projektcheck.spec.mjs
+funktion-schnellanfrage.spec.mjs
+funktion-termin.spec.mjs
+funktion-tracking.spec.mjs
+funktion-weiterleitung.spec.mjs

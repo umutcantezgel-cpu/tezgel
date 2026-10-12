@@ -1,0 +1,11 @@
+{
+ "modus": "einzelbilder",
+ "seite": "/standorte",
+ "ansicht": "d1440",
+ "ergebnis": "/home/user/tezgel/_werkstatt/belege/e4-n2/02-pa/bewegung/einzelbilder-standorte-einzugsband-d1440-wdh1/ergebnis.json",
+ "meldung": "1 Kennungen, 154 Elemente auf /standorte.",
+ "bilder_gesamt": 0,
+ "kennungen": [
+  "einzugsband: 0 Bilder, Modus undefined, Dauer undefined ms · Fehler beim Auslösen: page.waitForFunction: Timeout 30000ms exceeded."
+ ]
+}

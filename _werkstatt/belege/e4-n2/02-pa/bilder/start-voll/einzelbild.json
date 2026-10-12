@@ -1,0 +1,353 @@
+{
+ "seite": "/",
+ "base": "http://127.0.0.1:4320",
+ "ziel": "/home/user/tezgel/_werkstatt/belege/e4-n2/02-pa/bilder/start-voll",
+ "optionen": {
+  "ansichten": [
+   "m390",
+   "d1440"
+  ],
+  "scroll": "0",
+  "voll": true,
+  "einwilligung": "abgelehnt",
+  "bewegung": "reduce",
+  "warte": 0,
+  "dpr": 1,
+  "qualitaet": 70
+ },
+ "ergebnisse": [
+  {
+   "ansicht": "m390",
+   "seite": "/",
+   "status": 200,
+   "datei": "/home/user/tezgel/_werkstatt/belege/e4-n2/02-pa/bilder/start-voll/m390-voll.jpg",
+   "anker": null,
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [
+    {
+     "art": "textkreuzung",
+     "text": "Fugenarme XXL-Fliesen (bis 120 x 278 cm) für edle, monolithi",
+     "selektor": "details.group.mt-6 > ul.grid.gap-3 > li.flex.gap-3 > span.min-w-0",
+     "rechteck": {
+      "x": 65,
+      "y": 12430,
+      "w": 130,
+      "h": 3
+     },
+     "durch": "div.flex.min-w-0 > div.mt-auto.flex > a.group.inline-flex > span.underline.decoration-1"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Fugenarme XXL-Fliesen (bis 120 x 278 cm) für edle, monolithi",
+     "selektor": "details.group.mt-6 > ul.grid.gap-3 > li.flex.gap-3 > span.min-w-0",
+     "rechteck": {
+      "x": 195,
+      "y": 12430,
+      "w": 121,
+      "h": 3
+     },
+     "durch": "div.flex.min-w-0 > div.mt-auto.flex > a.group.inline-flex > span.underline.decoration-1"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Indirekt illuminierte Wandnischen & Ablagen mit Edelstahl- o",
+     "selektor": "details.group.mt-6 > ul.grid.gap-3 > li.flex.gap-3 > span.min-w-0",
+     "rechteck": {
+      "x": 85,
+      "y": 12488,
+      "w": 213,
+      "h": 13
+     },
+     "durch": "div.flex.min-w-0 > div.mt-auto.flex > a.inline-flex.min-h-11 > span"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Indirekt illuminierte Wandnischen & Ablagen mit Edelstahl- o",
+     "selektor": "details.group.mt-6 > ul.grid.gap-3 > li.flex.gap-3 > span.min-w-0",
+     "rechteck": {
+      "x": 65,
+      "y": 12549,
+      "w": 7,
+      "h": 2
+     },
+     "durch": "div.flex.min-w-0 > div.flex.flex-wrap > p.inline-flex.items-center > span"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Indirekt illuminierte Wandnischen & Ablagen mit Edelstahl- o",
+     "selektor": "details.group.mt-6 > ul.grid.gap-3 > li.flex.gap-3 > span.min-w-0",
+     "rechteck": {
+      "x": 80,
+      "y": 12549,
+      "w": 96,
+      "h": 2
+     },
+     "durch": "div.flex.min-w-0 > div.flex.flex-wrap > p.inline-flex.items-center > span.text-tinte"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Fachgerechte Verkleidung von Vorwandelementen und Installati",
+     "selektor": "details.group.mt-6 > ul.grid.gap-3 > li.flex.gap-3 > span.min-w-0",
+     "rechteck": {
+      "x": 65,
+      "y": 12608,
+      "w": 157,
+      "h": 1
+     },
+     "durch": "h3#leistung-wohnen"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Fachgerechte Verkleidung von Vorwandelementen und Installati",
+     "selektor": "details.group.mt-6 > ul.grid.gap-3 > li.flex.gap-3 > span.min-w-0",
+     "rechteck": {
+      "x": 65,
+      "y": 12617,
+      "w": 150,
+      "h": 14
+     },
+     "durch": "h3#leistung-wohnen"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Staubarme Sanierung mit Schonvlies und modernen Staubschutzw",
+     "selektor": "details.group.mt-6 > ul.grid.gap-3 > li.flex.gap-3 > span.min-w-0",
+     "rechteck": {
+      "x": 65,
+      "y": 12652,
+      "w": 209,
+      "h": 8
+     },
+     "durch": "article.flex.min-w-0 > div.flex.min-w-0 > div.px-6.py-6 > p.mt-3.max-w-mass"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Staubarme Sanierung mit Schonvlies und modernen Staubschutzw",
+     "selektor": "details.group.mt-6 > ul.grid.gap-3 > li.flex.gap-3 > span.min-w-0",
+     "rechteck": {
+      "x": 65,
+      "y": 12675,
+      "w": 174,
+      "h": 14
+     },
+     "durch": "article.flex.min-w-0 > div.flex.min-w-0 > div.px-6.py-6 > p.mt-3.max-w-mass"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Normgerechte Verbundabdichtung nach DIN 18534 für dauerhaft ",
+     "selektor": "details.group.mt-6 > ul.grid.gap-3 > li.flex.gap-3 > span.min-w-0",
+     "rechteck": {
+      "x": 65,
+      "y": 12710,
+      "w": 84,
+      "h": 2
+     },
+     "durch": "article.flex.min-w-0 > div.flex.min-w-0 > div.px-6.py-6 > p.mt-3.max-w-mass"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Normgerechte Verbundabdichtung nach DIN 18534 für dauerhaft ",
+     "selektor": "details.group.mt-6 > ul.grid.gap-3 > li.flex.gap-3 > span.min-w-0",
+     "rechteck": {
+      "x": 65,
+      "y": 12757,
+      "w": 96,
+      "h": 16
+     },
+     "durch": "div.px-6.py-6 > details.group.mt-6 > summary.flex.min-h-12 > span.min-w-0"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Verlegung großformatiger Feinsteinzeugfliesen in Wohnzimmern",
+     "selektor": "details.group.mt-6 > ul.grid.gap-3 > li.flex.gap-3 > span.min-w-0",
+     "rechteck": {
+      "x": 65,
+      "y": 12826,
+      "w": 130,
+      "h": 6
+     },
+     "durch": "div.flex.min-w-0 > div.mt-auto.flex > a.group.inline-flex > span.underline.decoration-1"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Verlegung großformatiger Feinsteinzeugfliesen in Wohnzimmern",
+     "selektor": "details.group.mt-6 > ul.grid.gap-3 > li.flex.gap-3 > span.min-w-0",
+     "rechteck": {
+      "x": 195,
+      "y": 12826,
+      "w": 114,
+      "h": 6
+     },
+     "durch": "div.flex.min-w-0 > div.mt-auto.flex > a.group.inline-flex > span.underline.decoration-1"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Verlegung großformatiger Feinsteinzeugfliesen in Wohnzimmern",
+     "selektor": "details.group.mt-6 > ul.grid.gap-3 > li.flex.gap-3 > span.min-w-0",
+     "rechteck": {
+      "x": 65,
+      "y": 12839,
+      "w": 56,
+      "h": 3
+     },
+     "durch": "div.flex.min-w-0 > div.mt-auto.flex > a.group.inline-flex > span.underline.decoration-1"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Verlegung großformatiger Feinsteinzeugfliesen in Wohnzimmern",
+     "selektor": "details.group.mt-6 > ul.grid.gap-3 > li.flex.gap-3 > span.min-w-0",
+     "rechteck": {
+      "x": 65,
+      "y": 12849,
+      "w": 30,
+      "h": 6
+     },
+     "durch": "div.flex.min-w-0 > div.mt-auto.flex > a.group.inline-flex > span.underline.decoration-1"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Harmonisch durchlaufende Fugenbilder von Küche bis Eingangsb",
+     "selektor": "details.group.mt-6 > ul.grid.gap-3 > li.flex.gap-3 > span.min-w-0",
+     "rechteck": {
+      "x": 65,
+      "y": 12897,
+      "w": 7,
+      "h": 12
+     },
+     "durch": "div.flex.min-w-0 > div.flex.flex-wrap > p.inline-flex.items-center > span"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Harmonisch durchlaufende Fugenbilder von Küche bis Eingangsb",
+     "selektor": "details.group.mt-6 > ul.grid.gap-3 > li.flex.gap-3 > span.min-w-0",
+     "rechteck": {
+      "x": 80,
+      "y": 12897,
+      "w": 133,
+      "h": 12
+     },
+     "durch": "div.flex.min-w-0 > div.flex.flex-wrap > p.inline-flex.items-center > span.text-tinte"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Harmonisch durchlaufende Fugenbilder von Küche bis Eingangsb",
+     "selektor": "details.group.mt-6 > ul.grid.gap-3 > li.flex.gap-3 > span.min-w-0",
+     "rechteck": {
+      "x": 271,
+      "y": 12897,
+      "w": 2,
+      "h": 12
+     },
+     "durch": "article.flex.min-w-0 > div.flex.min-w-0 > div.flex.flex-wrap > span.inline-flex.items-center"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Ideale Wärmeleitfähigkeit für moderne Fußbodenheizungen",
+     "selektor": "details.group.mt-6 > ul.grid.gap-3 > li.flex.gap-3 > span.min-w-0",
+     "rechteck": {
+      "x": 65,
+      "y": 12956,
+      "w": 139,
+      "h": 16
+     },
+     "durch": "h3#leistung-aussen"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Verlegung robuster 2-cm-Außenkeramik auf Stelzlagern oder Sp",
+     "selektor": "details.group.mt-6 > ul.grid.gap-3 > li.flex.gap-3 > span.min-w-0",
+     "rechteck": {
+      "x": 65,
+      "y": 13146,
+      "w": 130,
+      "h": 6
+     },
+     "durch": "div.flex.min-w-0 > div.mt-auto.flex > a.group.inline-flex > span.underline.decoration-1"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Verlegung robuster 2-cm-Außenkeramik auf Stelzlagern oder Sp",
+     "selektor": "details.group.mt-6 > ul.grid.gap-3 > li.flex.gap-3 > span.min-w-0",
+     "rechteck": {
+      "x": 195,
+      "y": 13146,
+      "w": 65,
+      "h": 6
+     },
+     "durch": "div.flex.min-w-0 > div.mt-auto.flex > a.group.inline-flex > span.underline.decoration-1"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Frei ablaufendes Regenwasser durch offene Fugen – dauerhafte",
+     "selektor": "details.group.mt-6 > ul.grid.gap-3 > li.flex.gap-3 > span.min-w-0",
+     "rechteck": {
+      "x": 65,
+      "y": 13171,
+      "w": 114,
+      "h": 15
+     },
+     "durch": "div.flex.min-w-0 > div.mt-auto.flex > a.group.inline-flex > span.underline.decoration-1"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Normgerechte Verbundabdichtung (AIV) nach DIN 18534 in Feuch",
+     "selektor": "details.group.mt-6 > ul.grid.gap-3 > li.flex.gap-3 > span.min-w-0",
+     "rechteck": {
+      "x": 65,
+      "y": 13490,
+      "w": 130,
+      "h": 6
+     },
+     "durch": "div.flex.min-w-0 > div.mt-auto.flex > a.group.inline-flex > span.underline.decoration-1"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Normgerechte Verbundabdichtung (AIV) nach DIN 18534 in Feuch",
+     "selektor": "details.group.mt-6 > ul.grid.gap-3 > li.flex.gap-3 > span.min-w-0",
+     "rechteck": {
+      "x": 195,
+      "y": 13490,
+      "w": 84,
+      "h": 6
+     },
+     "durch": "div.flex.min-w-0 > div.mt-auto.flex > a.group.inline-flex > span.underline.decoration-1"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Normgerechte Verbundabdichtung (AIV) nach DIN 18534 in Feuch",
+     "selektor": "details.group.mt-6 > ul.grid.gap-3 > li.flex.gap-3 > span.min-w-0",
+     "rechteck": {
+      "x": 65,
+      "y": 13513,
+      "w": 102,
+      "h": 6
+     },
+     "durch": "div.flex.min-w-0 > div.mt-auto.flex > a.group.inline-flex > span.underline.decoration-1"
+    }
+   ],
+   "ueberlappungGesamt": 25,
+   "ueberlappungNachArt": {
+    "textkreuzung": 25
+   },
+   "fehler": null,
+   "fremd": 0,
+   "blockiert": []
+  },
+  {
+   "ansicht": "d1440",
+   "seite": "/",
+   "status": 200,
+   "datei": "/home/user/tezgel/_werkstatt/belege/e4-n2/02-pa/bilder/start-voll/d1440-voll.jpg",
+   "anker": null,
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "fehler": null,
+   "fremd": 0,
+   "blockiert": []
+  }
+ ]
+}

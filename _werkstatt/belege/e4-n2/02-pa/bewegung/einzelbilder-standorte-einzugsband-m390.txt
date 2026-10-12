@@ -1,0 +1,11 @@
+{
+ "modus": "einzelbilder",
+ "seite": "/standorte",
+ "ansicht": "m390",
+ "ergebnis": "/home/user/tezgel/_werkstatt/belege/e4-n2/02-pa/bewegung/einzelbilder-standorte-einzugsband-m390/ergebnis.json",
+ "meldung": "1 Kennungen, 154 Elemente auf /standorte.",
+ "bilder_gesamt": 5,
+ "kennungen": [
+  "einzugsband: 5 Bilder, Modus echtzeit, Dauer 1200 ms, sichtbar 0/5, Paare % 0.08 / 0.11 / 0.09 / 0 · Element nicht vollständig sichtbar (Oberkante 692 px, Unterkante 1530 px, sichtbar bis 783 px): vor dem ersten Bild auf 547 px gescrollt, Oberkante 80 px unter dem Kopf (Ziel 80 px); Ausschnitt über die ganze Ansichtshöhe (Element höher als die Ansicht); nur 0 von 5 Bildern unterscheiden sich sichtbar (Nachbar über 0.5 %, mindestens 3 gefordert)"
+ ]
+}

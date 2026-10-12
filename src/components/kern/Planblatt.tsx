@@ -21,14 +21,18 @@ export interface PlanblattProps {
   felder?: SchriftfeldFeld[];
   /** rote Achse eines Verlegeplans im Blatt zeigen (Standard ja; `ohneAchse` am Plan wird dann übergangen) */
   achse?: boolean;
+  /** die Zeichnung trägt ihre rote Achse selbst (z. B. Plan in einer ViewTransition-Hülle, die das Blatt nicht erkennt) */
+  mitAchse?: boolean;
   className?: string;
 }
 
-export default function Planblatt({ children, felder, achse = true, className }: PlanblattProps) {
-  const zeichnung =
-    achse && isValidElement<VerlegeplanProps>(children) && children.type === Verlegeplan ? cloneElement(children, { ohneAchse: false }) : children;
+export default function Planblatt({ children, felder, achse = true, mitAchse = false, className }: PlanblattProps) {
+  const istPlan = isValidElement<VerlegeplanProps>(children) && children.type === Verlegeplan;
+  const zeichnung = achse && istPlan ? cloneElement(children, { ohneAchse: false }) : children;
+  // planblatt-achse: das Blatt trägt das eine Rot des ersten Bildschirms – die Laserachse des Einstiegs bleibt ab lg Grundschicht
+  // (globals.css; K-003 „höchstens ein roter Blickfang“, auch bei reduzierter Bewegung, Prüfstufe A E4-N2-02-PA)
   return (
-    <div className={clsx('flex h-full flex-col border border-fuge bg-fliese', className)}>
+    <div className={clsx('flex h-full flex-col border border-fuge bg-fliese', ((achse && istPlan) || mitAchse) && 'planblatt-achse', className)}>
       {/* Blattfläche mit Schnittmarken an den Ecken: der freie Rand um die Zeichnung gehört zum Blatt */}
       <div className="relative flex flex-1 flex-col justify-center p-6 lg:p-8">
         <span aria-hidden="true" className="absolute top-3 left-3 size-3 border-t border-l border-strich" />

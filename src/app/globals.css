@@ -547,6 +547,13 @@
   .lesefortschritt-linie {
     scale: var(--lesefortschritt, 0) 1;
   }
+  /* Ein Rot je Bildschirm (K-003): trägt das Planblatt des Einstiegs die rote Achse seines Plans, bleibt die Laserachse des
+     Einstiegs ab lg Grundschicht (sonst zwei rote Lote nebeneinander, bei reduzierter Bewegung beide voll – E4-N2-02-PA) */
+  @media (width >= 64rem) {
+    header:has(.planblatt-achse) .leitachse-rot {
+      visibility: hidden;
+    }
+  }
   /* Zeitband (/ueber-uns, E4-NACH-01): Jahreszahlen unter dem Band, Breite je Zeitraum nach Zahl der Jahre (--jahre) */
   .zeitband-stueck {
     flex: var(--jahre, 1) 1 0%;

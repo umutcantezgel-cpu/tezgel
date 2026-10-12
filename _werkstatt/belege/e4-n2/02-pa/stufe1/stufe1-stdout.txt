@@ -1,0 +1,49 @@
+Beide Plätze belegt, warte auf slot1 …
+PRÜFSTUFE A · Kennung E4-N2-02-PA · Platz slot1 · 2026-10-12T06:24:09+00:00
+Dateien: src/components/kern/Abschnitt.tsx src/components/kern/Einstieg.tsx src/components/kern/Planblatt.tsx src/components/kern/Verlegeplan.tsx src/components/kern/Einzugsband.tsx src/components/kern/SzeneAblauf.tsx src/app/bewegung.css src/components/ui/FinalCTA.tsx src/components/sections/QualityPromise.jsx src/components/locations/LocationContact.tsx src/lib/motion/bewegung.ts src/lib/blog/motive.js src/components/blog/BlogCard.jsx src/components/blog/RelatedPosts.jsx src/app/(bestand)/blog/[slug]/page.jsx src/app/(bestand)/standorte/page.tsx src/components/funnels/BadProjektCheck/index.jsx src/components/funnels/BadProjektCheck/Zusammenfassung.jsx src/app/(bestand)/bad/page.jsx
+Ansichtspfade: / /bad /leistungen /leistungen/bad /standorte /standorte/wetzlar /fliesen /ueber-uns /kontakt /fliesen/konfigurator /blog /blog/rutschfeste-fliesen-r-klassen /bad/projekt-check
+Typprüfung (tsc): GRÜN · Fehler in eigenen Dateien 0 · übrige 0 · 28 s · /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-02-PA/tsc.txt
+Lint (eslint): GRÜN · Fehler 0 · Warnungen 1 · 7 s · /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-02-PA/eslint.json
+Funktionstests: GRÜN · 1171 s · Specs funktion-badanfrage.spec.mjs funktion-einwilligung.spec.mjs funktion-express-funnel.spec.mjs funktion-hero-kontakt.spec.mjs funktion-konfigurator.spec.mjs funktion-kontaktwege.spec.mjs funktion-navigation.spec.mjs funktion-preisrechner.spec.mjs funktion-projektcheck.spec.mjs funktion-schnellanfrage.spec.mjs funktion-termin.spec.mjs funktion-tracking.spec.mjs funktion-weiterleitung.spec.mjs · erwartet 290 · unerwartet 0 · flaky 0 · Exit 0 · /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-02-PA/pw.json
+Bilder: GRÜN · 197 s
+  /: HTTP 200/200 · Konsole 0 · Überlauf 0 · Überlappung 25
+  /bad: HTTP 200/200 · Konsole 0 · Überlauf 0 · Überlappung 0
+  /leistungen: HTTP 200/200 · Konsole 0 · Überlauf 0 · Überlappung 0
+  /leistungen/bad: HTTP 200/200 · Konsole 0 · Überlauf 0 · Überlappung 0
+  /standorte: HTTP 200/200 · Konsole 0 · Überlauf 0 · Überlappung 0
+  /standorte/wetzlar: HTTP 200/200 · Konsole 0 · Überlauf 0 · Überlappung 0
+  /fliesen: HTTP 200/200 · Konsole 0 · Überlauf 0 · Überlappung 40
+  /ueber-uns: HTTP 200/200 · Konsole 0 · Überlauf 0 · Überlappung 0
+  /kontakt: HTTP 200/200 · Konsole 0 · Überlauf 0 · Überlappung 0
+  /fliesen/konfigurator: HTTP 200/200 · Konsole 0 · Überlauf 0 · Überlappung 61
+  /blog: HTTP 200/200 · Konsole 0 · Überlauf 0 · Überlappung 0
+  /blog/rutschfeste-fliesen-r-klassen: HTTP 200/200 · Konsole 0 · Überlauf 0 · Überlappung 0
+  /bad/projekt-check: HTTP 200/200 · Konsole 0 · Überlauf 0 · Überlappung 0
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-02-PA/bilder/start/m390.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-02-PA/bilder/start/d1440.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-02-PA/bilder/bad/m390.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-02-PA/bilder/bad/d1440.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-02-PA/bilder/leistungen/m390.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-02-PA/bilder/leistungen/d1440.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-02-PA/bilder/leistungen__bad/m390.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-02-PA/bilder/leistungen__bad/d1440.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-02-PA/bilder/standorte/m390.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-02-PA/bilder/standorte/d1440.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-02-PA/bilder/standorte__wetzlar/m390.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-02-PA/bilder/standorte__wetzlar/d1440.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-02-PA/bilder/fliesen/m390.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-02-PA/bilder/fliesen/d1440.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-02-PA/bilder/ueber-uns/m390.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-02-PA/bilder/ueber-uns/d1440.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-02-PA/bilder/kontakt/m390.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-02-PA/bilder/kontakt/d1440.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-02-PA/bilder/fliesen__konfigurator/m390.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-02-PA/bilder/fliesen__konfigurator/d1440.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-02-PA/bilder/blog/m390.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-02-PA/bilder/blog/d1440.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-02-PA/bilder/blog__rutschfeste-fliesen-r-klassen/m390.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-02-PA/bilder/blog__rutschfeste-fliesen-r-klassen/d1440.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-02-PA/bilder/bad__projekt-check/m390.jpg
+  Bild: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E4-N2-02-PA/bilder/bad__projekt-check/d1440.jpg
+Textvergleich: GRÜN · gegen e0 · {"seiten_mit_abweichung":242,"entfernt":0,"hinzu":728,"meta":0,"seo":0,"spannen_entfernt":244,"spannen_hinzu":351,"spannen_unerlaubt_entfernt":0,"sitemap_entfernt":0,"sitemap_hinzu":0,"robots_geaendert":false,"kaputte_links":0,"ergebnis":"GRÜN"} · /home/user/tezgel/_werkstatt/cache/texte/E4-N2-02-PA/texte-vergleich-gegen-e0.json
+Gesamt: GRÜN · Laufzeit 1507 s · Exit-Code 0 (Gate: tsc, eslint, Test, Bilder, Texte)

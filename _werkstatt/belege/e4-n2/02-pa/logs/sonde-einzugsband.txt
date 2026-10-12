@@ -1,0 +1,76 @@
+d1440 {
+ "html_klasse": "archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable k-bewegung k-notaus k-modul",
+ "elemente": 1,
+ "elemente_sichtbar": 1,
+ "elemente_ketten_display_none": [
+  []
+ ],
+ "kanten": [
+  {
+   "sichtbar": true,
+   "animationName": "none",
+   "animationDuration": "0s",
+   "animationPlayState": "running",
+   "breite_px": 410,
+   "hoehe_px": 1
+  },
+  {
+   "sichtbar": true,
+   "animationName": "none",
+   "animationDuration": "0s",
+   "animationPlayState": "running",
+   "breite_px": 410,
+   "hoehe_px": 1
+  },
+  {
+   "sichtbar": true,
+   "animationName": "none",
+   "animationDuration": "0s",
+   "animationPlayState": "running",
+   "breite_px": 410,
+   "hoehe_px": 1
+  }
+ ],
+ "css_animationen_am_einzugsband": 0,
+ "einzugsband_form": [
+  "einzugsband relative"
+ ]
+}
+m390 {
+ "html_klasse": "archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable k-bewegung k-modul",
+ "elemente": 1,
+ "elemente_sichtbar": 1,
+ "elemente_ketten_display_none": [
+  []
+ ],
+ "kanten": [
+  {
+   "sichtbar": true,
+   "animationName": "einzugsband-kante-ziehen",
+   "animationDuration": "0.6s",
+   "animationPlayState": "running",
+   "breite_px": 305,
+   "hoehe_px": 1
+  },
+  {
+   "sichtbar": true,
+   "animationName": "einzugsband-kante-ziehen",
+   "animationDuration": "0.6s",
+   "animationPlayState": "running",
+   "breite_px": 305,
+   "hoehe_px": 1
+  },
+  {
+   "sichtbar": true,
+   "animationName": "einzugsband-kante-ziehen",
+   "animationDuration": "0.6s",
+   "animationPlayState": "running",
+   "breite_px": 305,
+   "hoehe_px": 1
+  }
+ ],
+ "css_animationen_am_einzugsband": 3,
+ "einzugsband_form": [
+  "einzugsband relative"
+ ]
+}

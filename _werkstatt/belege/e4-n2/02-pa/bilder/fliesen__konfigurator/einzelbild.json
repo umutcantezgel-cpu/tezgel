@@ -1,0 +1,788 @@
+{
+ "seite": "/fliesen/konfigurator",
+ "base": "http://127.0.0.1:4320",
+ "ziel": "/home/user/tezgel/_werkstatt/belege/e4-n2/02-pa/bilder/fliesen__konfigurator",
+ "optionen": {
+  "ansichten": [
+   "m390",
+   "d1440"
+  ],
+  "scroll": "0",
+  "voll": false,
+  "einwilligung": "abgelehnt",
+  "bewegung": "reduce",
+  "warte": 0,
+  "dpr": 1,
+  "qualitaet": 70
+ },
+ "ergebnisse": [
+  {
+   "ansicht": "m390",
+   "seite": "/fliesen/konfigurator",
+   "status": 200,
+   "datei": "/home/user/tezgel/_werkstatt/belege/e4-n2/02-pa/bilder/fliesen__konfigurator/m390.jpg",
+   "anker": null,
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [
+    {
+     "art": "textkreuzung",
+     "text": "Es ist ein Richtwert zur Orientierung: Nettofläche plus ein ",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6263,
+      "w": 290,
+      "h": 14
+     },
+     "durch": "div.border-t.border-fuge > details.group.border-b > summary.flex.min-h-11 > span.min-w-0"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Es ist ein Richtwert zur Orientierung: Nettofläche plus ein ",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6286,
+      "w": 51,
+      "h": 16
+     },
+     "durch": "div.border-t.border-fuge > details.group.border-b > summary.flex.min-h-11 > span.min-w-0"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Es ist ein Richtwert zur Orientierung: Nettofläche plus ein ",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6333,
+      "w": 287,
+      "h": 11
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Es ist ein Richtwert zur Orientierung: Nettofläche plus ein ",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6345,
+      "w": 287,
+      "h": 3
+     },
+     "durch": "div.border-t.border-fuge > details.group.border-b > summary.flex.min-h-11 > span.min-w-0"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Der Aufwand hängt vor allem vom Untergrund, vom Format und v",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6351,
+      "w": 307,
+      "h": 14
+     },
+     "durch": "div.border-t.border-fuge > details.group.border-b > summary.flex.min-h-11 > span.min-w-0"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Es ist ein Richtwert zur Orientierung: Nettofläche plus ein ",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6356,
+      "w": 331,
+      "h": 11
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Es ist ein Richtwert zur Orientierung: Nettofläche plus ein ",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6356,
+      "w": 307,
+      "h": 8
+     },
+     "durch": "div.border-t.border-fuge > details.group.border-b > summary.flex.min-h-11 > span.min-w-0"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Der Aufwand hängt vor allem vom Untergrund, vom Format und v",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6374,
+      "w": 60,
+      "h": 16
+     },
+     "durch": "div.border-t.border-fuge > details.group.border-b > summary.flex.min-h-11 > span.min-w-0"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Es ist ein Richtwert zur Orientierung: Nettofläche plus ein ",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6379,
+      "w": 115,
+      "h": 11
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Es ist ein Richtwert zur Orientierung: Nettofläche plus ein ",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6379,
+      "w": 60,
+      "h": 13
+     },
+     "durch": "div.border-t.border-fuge > details.group.border-b > summary.flex.min-h-11 > span.min-w-0"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Der Aufwand hängt vor allem vom Untergrund, vom Format und v",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6420,
+      "w": 323,
+      "h": 11
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Der Aufwand hängt vor allem vom Untergrund, vom Format und v",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6433,
+      "w": 192,
+      "h": 3
+     },
+     "durch": "div.border-t.border-fuge > details.group.border-b > summary.flex.min-h-11 > span.min-w-0"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Zählen Sie die Steigungen, also die Höhensprünge von unten n",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6438,
+      "w": 192,
+      "h": 14
+     },
+     "durch": "div.border-t.border-fuge > details.group.border-b > summary.flex.min-h-11 > span.min-w-0"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Der Aufwand hängt vor allem vom Untergrund, vom Format und v",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6444,
+      "w": 336,
+      "h": 11
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Der Aufwand hängt vor allem vom Untergrund, vom Format und v",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6444,
+      "w": 192,
+      "h": 8
+     },
+     "durch": "div.border-t.border-fuge > details.group.border-b > summary.flex.min-h-11 > span.min-w-0"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Zählen Sie die Steigungen, also die Höhensprünge von unten n",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6476,
+      "w": 355,
+      "h": 2
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Zählen Sie die Steigungen, also die Höhensprünge von unten n",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6485,
+      "w": 356,
+      "h": 7
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Zählen Sie die Steigungen, also die Höhensprünge von unten n",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6494,
+      "w": 270,
+      "h": 7
+     },
+     "durch": "div.border-t.border-fuge > details.group.border-b > summary.flex.min-h-11 > span.min-w-0"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Zählen Sie die Steigungen, also die Höhensprünge von unten n",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6499,
+      "w": 352,
+      "h": 2
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Blockstufen sind keine Belagsart, sondern eine eigene Bauwei",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6499,
+      "w": 270,
+      "h": 14
+     },
+     "durch": "div.border-t.border-fuge > details.group.border-b > summary.flex.min-h-11 > span.min-w-0"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Zählen Sie die Steigungen, also die Höhensprünge von unten n",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6508,
+      "w": 297,
+      "h": 7
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Zählen Sie die Steigungen, also die Höhensprünge von unten n",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6508,
+      "w": 270,
+      "h": 4
+     },
+     "durch": "div.border-t.border-fuge > details.group.border-b > summary.flex.min-h-11 > span.min-w-0"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Zählen Sie die Steigungen, also die Höhensprünge von unten n",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6522,
+      "w": 297,
+      "h": 2
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Zählen Sie die Steigungen, also die Höhensprünge von unten n",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6531,
+      "w": 319,
+      "h": 7
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Zählen Sie die Steigungen, also die Höhensprünge von unten n",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6536,
+      "w": 319,
+      "h": 12
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Blockstufen sind keine Belagsart, sondern eine eigene Bauwei",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6536,
+      "w": 344,
+      "h": 2
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Zählen Sie die Steigungen, also die Höhensprünge von unten n",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6545,
+      "w": 289,
+      "h": 2
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Blockstufen sind keine Belagsart, sondern eine eigene Bauwei",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6545,
+      "w": 289,
+      "h": 7
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Blockstufen sind keine Belagsart, sondern eine eigene Bauwei",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6554,
+      "w": 247,
+      "h": 7
+     },
+     "durch": "div.border-t.border-fuge > details.group.border-b > summary.flex.min-h-11 > span.min-w-0"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Blockstufen sind keine Belagsart, sondern eine eigene Bauwei",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6559,
+      "w": 289,
+      "h": 2
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Nein, nicht auf dieser Website. Der Konfigurator öffnet ledi",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6559,
+      "w": 247,
+      "h": 14
+     },
+     "durch": "div.border-t.border-fuge > details.group.border-b > summary.flex.min-h-11 > span.min-w-0"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Blockstufen sind keine Belagsart, sondern eine eigene Bauwei",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6569,
+      "w": 315,
+      "h": 7
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Blockstufen sind keine Belagsart, sondern eine eigene Bauwei",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6569,
+      "w": 247,
+      "h": 4
+     },
+     "durch": "div.border-t.border-fuge > details.group.border-b > summary.flex.min-h-11 > span.min-w-0"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Blockstufen sind keine Belagsart, sondern eine eigene Bauwei",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6581,
+      "w": 238,
+      "h": 3
+     },
+     "durch": "div.border-t.border-fuge > details.group.border-b > summary.flex.min-h-11 > span.min-w-0"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Blockstufen sind keine Belagsart, sondern eine eigene Bauwei",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6582,
+      "w": 315,
+      "h": 2
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Nein, nicht auf dieser Website. Der Konfigurator öffnet ledi",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6582,
+      "w": 238,
+      "h": 16
+     },
+     "durch": "div.border-t.border-fuge > details.group.border-b > summary.flex.min-h-11 > span.min-w-0"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Blockstufen sind keine Belagsart, sondern eine eigene Bauwei",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6592,
+      "w": 277,
+      "h": 7
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Blockstufen sind keine Belagsart, sondern eine eigene Bauwei",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6592,
+      "w": 238,
+      "h": 8
+     },
+     "durch": "div.border-t.border-fuge > details.group.border-b > summary.flex.min-h-11 > span.min-w-0"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Blockstufen sind keine Belagsart, sondern eine eigene Bauwei",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 16,
+      "y": 6606,
+      "w": 269,
+      "h": 2
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    }
+   ],
+   "ueberlappungGesamt": 39,
+   "ueberlappungNachArt": {
+    "textkreuzung": 39
+   },
+   "fehler": null,
+   "fremd": 0,
+   "blockiert": []
+  },
+  {
+   "ansicht": "d1440",
+   "seite": "/fliesen/konfigurator",
+   "status": 200,
+   "datei": "/home/user/tezgel/_werkstatt/belege/e4-n2/02-pa/bilder/fliesen__konfigurator/d1440.jpg",
+   "anker": null,
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [
+    {
+     "art": "textkreuzung",
+     "text": "Es ist ein Richtwert zur Orientierung: Nettofläche plus ein ",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 112,
+      "y": 4439,
+      "w": 383,
+      "h": 14
+     },
+     "durch": "div.border-t.border-fuge > details.group.border-b > summary.flex.min-h-11 > span.min-w-0"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Es ist ein Richtwert zur Orientierung: Nettofläche plus ein ",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 112,
+      "y": 4478,
+      "w": 558,
+      "h": 3
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Es ist ein Richtwert zur Orientierung: Nettofläche plus ein ",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 112,
+      "y": 4489,
+      "w": 573,
+      "h": 6
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Es ist ein Richtwert zur Orientierung: Nettofläche plus ein ",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 112,
+      "y": 4496,
+      "w": 412,
+      "h": 4
+     },
+     "durch": "div.border-t.border-fuge > details.group.border-b > summary.flex.min-h-11 > span.min-w-0"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Es ist ein Richtwert zur Orientierung: Nettofläche plus ein ",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 112,
+      "y": 4503,
+      "w": 569,
+      "h": 3
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Der Aufwand hängt vor allem vom Untergrund, vom Format und v",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 112,
+      "y": 4503,
+      "w": 412,
+      "h": 14
+     },
+     "durch": "div.border-t.border-fuge > details.group.border-b > summary.flex.min-h-11 > span.min-w-0"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Der Aufwand hängt vor allem vom Untergrund, vom Format und v",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 112,
+      "y": 4541,
+      "w": 568,
+      "h": 3
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Der Aufwand hängt vor allem vom Untergrund, vom Format und v",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 112,
+      "y": 4552,
+      "w": 358,
+      "h": 6
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Der Aufwand hängt vor allem vom Untergrund, vom Format und v",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 112,
+      "y": 4559,
+      "w": 214,
+      "h": 10
+     },
+     "durch": "div.border-t.border-fuge > details.group.border-b > summary.flex.min-h-11 > span.min-w-0"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Der Aufwand hängt vor allem vom Untergrund, vom Format und v",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 112,
+      "y": 4566,
+      "w": 358,
+      "h": 3
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Zählen Sie die Steigungen, also die Höhensprünge von unten n",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 112,
+      "y": 4566,
+      "w": 214,
+      "h": 14
+     },
+     "durch": "div.border-t.border-fuge > details.group.border-b > summary.flex.min-h-11 > span.min-w-0"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Zählen Sie die Steigungen, also die Höhensprünge von unten n",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 112,
+      "y": 4605,
+      "w": 576,
+      "h": 3
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Zählen Sie die Steigungen, also die Höhensprünge von unten n",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 112,
+      "y": 4616,
+      "w": 367,
+      "h": 6
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Zählen Sie die Steigungen, also die Höhensprünge von unten n",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 112,
+      "y": 4623,
+      "w": 300,
+      "h": 10
+     },
+     "durch": "div.border-t.border-fuge > details.group.border-b > summary.flex.min-h-11 > span.min-w-0"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Zählen Sie die Steigungen, also die Höhensprünge von unten n",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 112,
+      "y": 4630,
+      "w": 367,
+      "h": 3
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Blockstufen sind keine Belagsart, sondern eine eigene Bauwei",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 112,
+      "y": 4630,
+      "w": 300,
+      "h": 14
+     },
+     "durch": "div.border-t.border-fuge > details.group.border-b > summary.flex.min-h-11 > span.min-w-0"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Blockstufen sind keine Belagsart, sondern eine eigene Bauwei",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 112,
+      "y": 4668,
+      "w": 588,
+      "h": 3
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Blockstufen sind keine Belagsart, sondern eine eigene Bauwei",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 112,
+      "y": 4679,
+      "w": 322,
+      "h": 6
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Blockstufen sind keine Belagsart, sondern eine eigene Bauwei",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 112,
+      "y": 4686,
+      "w": 322,
+      "h": 10
+     },
+     "durch": "div.border-t.border-fuge > details.group.border-b > summary.flex.min-h-11 > span.min-w-0"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Blockstufen sind keine Belagsart, sondern eine eigene Bauwei",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 112,
+      "y": 4693,
+      "w": 322,
+      "h": 3
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Nein, nicht auf dieser Website. Der Konfigurator öffnet ledi",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 112,
+      "y": 4693,
+      "w": 544,
+      "h": 14
+     },
+     "durch": "div.border-t.border-fuge > details.group.border-b > summary.flex.min-h-11 > span.min-w-0"
+    },
+    {
+     "art": "textkreuzung",
+     "text": "Nein, nicht auf dieser Website. Der Konfigurator öffnet ledi",
+     "selektor": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6",
+     "rechteck": {
+      "x": 112,
+      "y": 4732,
+      "w": 177,
+      "h": 3
+     },
+     "durch": "div.mt-12 > div.border-t.border-fuge > details.group.border-b > p.max-w-mass.pb-6"
+    }
+   ],
+   "ueberlappungGesamt": 22,
+   "ueberlappungNachArt": {
+    "textkreuzung": 22
+   },
+   "fehler": null,
+   "fremd": 0,
+   "blockiert": []
+  }
+ ]
+}
