@@ -1,7 +1,9 @@
 import clsx from "clsx";
 import Icon from "@/components/icons/Icon";
 import Knopf from "@/components/kern/Knopf";
-import { seitenKlassen } from "@/components/kern/stile";
+import { knopfKlassen, seitenKlassen } from "@/components/kern/stile";
+import Laserachse from "@/components/kern/Laserachse";
+import { ACHSE_LAGE } from "@/components/kern/Leitachse";
 import { siteConfig } from "@/lib/config";
 import { LeadQuickForm } from "@/components/forms/LeadQuickForm";
 import WhatsAppLogo from "@/components/ui/WhatsAppLogo";
@@ -26,13 +28,9 @@ const defaultBenefits = [
 
 // Telefonnummer groß in Mono, als tel:-Link (Farbwechsel der Linie: zustand)
 const TELEFON_KLASSEN =
-  "inline-flex w-fit font-mono text-fs-5 text-kalk underline decoration-nacht-fuge decoration-1 underline-offset-8 transition-colors dauer-1 ease-setzen hover:decoration-kalk";
+  "inline-flex w-fit font-mono text-fs-5 text-tinte underline decoration-strich decoration-1 underline-offset-8 transition-colors dauer-1 ease-setzen hover:decoration-tinte";
 
-// WhatsApp als Nebenknopf auf Tinte: Kontur in Nacht-Farben (die Knopf-Varianten sind für helle Flächen gedacht)
-const NEBENKNOPF_AUF_TINTE =
-  "inline-flex min-h-11 w-full items-center justify-center gap-2 border border-nacht-2 bg-transparent px-6 py-3 font-text text-fs-2 font-semibold text-kalk no-underline transition-colors dauer-1 ease-setzen hover:border-kalk";
-
-// Abschluss (KERN v2, nach src/components/kern/start/Abschluss.tsx): Tinte-Fläche, gerahmtes Feld mit klarer Rangfolge
+// Abschluss (KERN v2, nach src/components/kern/start/Abschluss.tsx): helle Fläche (Kalk), gerahmtes Feld auf Fliese mit klarer Rangfolge
 // (Überschrift, Untertitel, große Telefonnummer, gefüllter Hauptknopf, WhatsApp mit Markenzeichen, ruhige Leiste).
 // Ein Aufmaß-Aufruf: der Hauptknopf (buttonText). Props und Standardwerte wie im Bestand.
 // Das Schnellformular erscheint nur bei showQuickForm (Unterseiten mit Standorten/Leistungen), wie bisher.
@@ -51,22 +49,23 @@ export default function FinalCTA({
   return (
     <section
       aria-labelledby="final-cta-heading"
-      className={clsx("flaeche-tinte relative w-full border-t border-nacht-fuge bg-tinte py-24 text-kalk lg:py-32", className)}
+      className={clsx("relative w-full border-t border-fuge bg-kalk py-24 text-tinte lg:py-32", className)}
     >
-      <div className={seitenKlassen}>
-        <div className="border border-nacht-fuge">
+      <div className={clsx(seitenKlassen, "relative")}>
+        <Laserachse className={ACHSE_LAGE} />
+        <div className="border border-fuge bg-fliese">
           <div className="grid grid-cols-1 lg:grid-cols-12">
             {/* Anliegen: Kontext, Überschrift, Untertitel, Zusagen */}
             <div className="flex flex-col gap-6 p-4 md:p-8 lg:col-span-7 lg:p-12">
-              {serviceContext && <p className="font-mono text-fs-1 text-nacht-2">{serviceContext}</p>}
-              <h2 id="final-cta-heading" className="font-anzeige text-fs-6 text-kalk">
+              {serviceContext && <p className="font-mono text-fs-1 text-tinte-2">{serviceContext}</p>}
+              <h2 id="final-cta-heading" className="font-anzeige text-fs-6 text-tinte">
                 {headline}
               </h2>
-              <p className="font-text text-fs-2 text-nacht-2">{subtitle}</p>
-              <ul className="flex flex-col border-t border-nacht-fuge">
+              <p className="font-text text-fs-2 text-tinte-2">{subtitle}</p>
+              <ul className="flex flex-col border-t border-fuge">
                 {benefits.map((benefit, i) => (
-                  <li key={i} className="flex items-start gap-3 border-b border-nacht-fuge py-3 font-text text-fs-3 text-kalk">
-                    <Icon name="haken" groesse={5} className="mt-1 text-nacht-2" />
+                  <li key={i} className="flex items-start gap-3 border-b border-fuge py-3 font-text text-fs-3 text-tinte">
+                    <Icon name="haken" groesse={5} className="mt-1 text-strich" />
                     <span className="min-w-0">{benefit}</span>
                   </li>
                 ))}
@@ -74,7 +73,7 @@ export default function FinalCTA({
             </div>
 
             {/* Wege: Telefonnummer, Hauptknopf, WhatsApp */}
-            <div className="flex flex-col justify-center gap-4 border-t border-nacht-fuge p-4 md:p-8 lg:col-span-5 lg:border-l lg:border-t-0 lg:p-12">
+            <div className="flex flex-col justify-center gap-4 border-t border-fuge p-4 md:p-8 lg:col-span-5 lg:border-l lg:border-t-0 lg:p-12">
               <a
                 href={siteConfig.contact.phone.link}
                 aria-label={`Fliesenverlegung Tezgel telefonisch anrufen: ${siteConfig.contact.phone.formatted}`}
@@ -83,7 +82,7 @@ export default function FinalCTA({
               >
                 {siteConfig.contact.phone.formatted}
               </a>
-              <Knopf href={siteConfig.contact.phone.link} variante="hell" iconLinks="telefon" className="w-full">
+              <Knopf href={siteConfig.contact.phone.link} variante="haupt" iconLinks="telefon" className="w-full">
                 {buttonText}
               </Knopf>
               <a
@@ -92,7 +91,7 @@ export default function FinalCTA({
                 rel="noopener noreferrer"
                 aria-label="WhatsApp Nachricht an Fliesenverlegung Tezgel senden"
                 data-motion="druck"
-                className={NEBENKNOPF_AUF_TINTE}
+                className={knopfKlassen("neben", "w-full")}
               >
                 <WhatsAppLogo className="size-5" />
                 <span>Per WhatsApp schreiben</span>
@@ -101,9 +100,9 @@ export default function FinalCTA({
           </div>
 
           {/* Leiste: Beleg in Mono, ruhig */}
-          <div className="flex items-center gap-2 border-t border-nacht-fuge px-4 py-4 md:px-8 lg:px-12">
-            <Icon name="stern" groesse={4} className="text-nacht-2" />
-            <p className="font-mono text-fs-1 text-nacht-2">{socialProof}</p>
+          <div className="flex items-center gap-2 border-t border-fuge px-4 py-4 md:px-8 lg:px-12">
+            <Icon name="stern-voll" groesse={4} className="text-tinte" />
+            <p className="font-mono text-fs-1 text-tinte-2">{socialProof}</p>
           </div>
         </div>
 

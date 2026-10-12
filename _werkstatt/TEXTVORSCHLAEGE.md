@@ -57,6 +57,9 @@ TEXTE-Regel: Mikrotexte (Knöpfe, Labels, Badges/Etiketten, Alt-Texte, Zustands-
 | E3-NACH-03 | `src/components/forms/HeroContactForm.tsx` (Platzhalter Projektnotiz) | „z. B. ca. 15 m² Fliesen, Altbau, Walk-In Dusche“ | „z. B. 15 m², Altbau, Walk-In Dusche“ | bei 390 px abgeschnitten (E2-SICHT-2 Befund 13) |
 | E3-NACH-03 | `src/components/start/Fachgewerke.tsx` (Aufklapper unter md, neu) | – | „Leistungsumfang“ | Merkmale mobil im Aufklapper (Befund 9); ab md offen wie bisher |
 | E3-ORCH-04 | `src/components/kern/VerbandUmschalter.tsx` (neu, /fliesen Einstieg) | – | Radiogruppe „Kreuzfuge“ · „Halbverband“ · „Drittelverband“, Legende (nur Screenreader) „Verband“ | Begriffe aus dem Bestand (/fliesen/verlegemuster, Konfigurator „Halb- / Drittelverband“); Bedienelement des großen Moments |
+| E4-NACH-03 | Fuß, Rechtszeile (`Footer.jsx`, `CookieConsent.tsx`) | ab lg Link „Cookie-Einstellungen“ und Knopf „Cookie-Einstellungen“ nebeneinander | ab lg nur der Knopf (gleiche Funktion, Name „Cookie-Einstellungen verwalten“); unter lg der Link | doppelter Eintrag (E3-SICHT-ARB Befund 8) |
+| E4-NACH-04 | Qualitätsversprechen (`QualityPromise.jsx`, 56 Seiten) | je Punkt „Punkt 01“ … „Punkt 08“ und Fuß „Garantierter Standard“ (8×) | Nummer „01“ … „08“; „Garantierter Standard“ einmal im Etikett („HWK Fachbetrieb · HWK Wiesbaden · Garantierter Standard“) | Wiederholung (E3-SICHT-ERZ Befund 5) |
+| E4-NACH-05 | Express-Anfrage Schritt 1 (`TezgelAnfrageFunnel/Schritt1.jsx`) | Eckmarken „Sehr beliebt“, „Großformat“, „Frostsicher“, „Präzision“, „DIN-Norm“ | (entfallen; Daten in `useAnfrageFunnel` unverändert) | wertende Marken ohne Beleg (E3-SICHT-ERZ Befund 7, E3-SICHT-ARB Befund 6) |
 
 ## Vorschläge (Überschriften, Fließtext)
 | Paket | Fundstelle | heute | Vorschlag | Grund |

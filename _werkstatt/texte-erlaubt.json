@@ -984,5 +984,132 @@
   "ansicht": "m390",
   "alt": "Fischgrät ca. 10–15 %",
   "vermerk": "E3-BAU-08: Verschnitttabelle zeigt mobil auch die Spalte „Warum“ aus dem Bestand – die Zeile steht jetzt zusammen mit dem Bestands-Hinweis (z. B. „Kreuzfuge ca. 5–10 % Einfache Schnitte an Wänden und Türen“); kein Wort entfernt, Zeilenzahl gleich (E3-Tor)"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "Sehr beliebt",
+  "vermerk": "E4-NACH-05: wertende Eckmarke der Express-Anfrage entfällt (E3-SICHT-ERZ Befund 7, E3-SICHT-ARB Befund 6; Mikrotext ohne Beleg, Daten im Hook unverändert) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Sehr beliebt",
+  "vermerk": "E4-NACH-05: Eckmarke der Express-Anfrage entfällt – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "Großformat",
+  "vermerk": "E4-NACH-05: wertende Eckmarke der Express-Anfrage entfällt (E3-SICHT-ERZ Befund 7, E3-SICHT-ARB Befund 6; Mikrotext ohne Beleg, Daten im Hook unverändert) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Großformat",
+  "vermerk": "E4-NACH-05: Eckmarke der Express-Anfrage entfällt – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "Frostsicher",
+  "vermerk": "E4-NACH-05: wertende Eckmarke der Express-Anfrage entfällt (E3-SICHT-ERZ Befund 7, E3-SICHT-ARB Befund 6; Mikrotext ohne Beleg, Daten im Hook unverändert) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Frostsicher",
+  "vermerk": "E4-NACH-05: Eckmarke der Express-Anfrage entfällt – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "Präzision",
+  "vermerk": "E4-NACH-05: wertende Eckmarke der Express-Anfrage entfällt (E3-SICHT-ERZ Befund 7, E3-SICHT-ARB Befund 6; Mikrotext ohne Beleg, Daten im Hook unverändert) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Präzision",
+  "vermerk": "E4-NACH-05: Eckmarke der Express-Anfrage entfällt – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "DIN-Norm",
+  "vermerk": "E4-NACH-05: wertende Eckmarke der Express-Anfrage entfällt (E3-SICHT-ERZ Befund 7, E3-SICHT-ARB Befund 6; Mikrotext ohne Beleg, Daten im Hook unverändert) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "DIN-Norm",
+  "vermerk": "E4-NACH-05: Eckmarke der Express-Anfrage entfällt – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "Punkt 01",
+  "vermerk": "E4-NACH-04: Qualitätsversprechen als Merkliste – Marke „Punkt 0X“ → Mono-Nummer „0X“ (Mikrotext) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "Punkt 02",
+  "vermerk": "E4-NACH-04: Qualitätsversprechen als Merkliste – Marke „Punkt 0X“ → Mono-Nummer „0X“ (Mikrotext) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "Punkt 03",
+  "vermerk": "E4-NACH-04: Qualitätsversprechen als Merkliste – Marke „Punkt 0X“ → Mono-Nummer „0X“ (Mikrotext) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "Punkt 04",
+  "vermerk": "E4-NACH-04: Qualitätsversprechen als Merkliste – Marke „Punkt 0X“ → Mono-Nummer „0X“ (Mikrotext) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "Punkt 05",
+  "vermerk": "E4-NACH-04: Qualitätsversprechen als Merkliste – Marke „Punkt 0X“ → Mono-Nummer „0X“ (Mikrotext) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "Punkt 06",
+  "vermerk": "E4-NACH-04: Qualitätsversprechen als Merkliste – Marke „Punkt 0X“ → Mono-Nummer „0X“ (Mikrotext) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "Punkt 07",
+  "vermerk": "E4-NACH-04: Qualitätsversprechen als Merkliste – Marke „Punkt 0X“ → Mono-Nummer „0X“ (Mikrotext) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "Punkt 08",
+  "vermerk": "E4-NACH-04: Qualitätsversprechen als Merkliste – Marke „Punkt 0X“ → Mono-Nummer „0X“ (Mikrotext) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "Garantierter Standard",
+  "vermerk": "E4-NACH-04: „Garantierter Standard“ steht einmal im Abschnittsetikett statt achtmal als Fuß (E3-SICHT-ERZ Befund 5, Mikrotext) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "HWK Fachbetrieb · HWK Wiesbaden",
+  "vermerk": "E4-NACH-04: Etikett des Qualitätsversprechens um „· Garantierter Standard“ ergänzt (Mikrotext) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "footer_zeilen",
+  "ansicht": "d1440",
+  "alt": "Cookie-Einstellungen",
+  "vermerk": "E4-NACH-03: ab lg steht „Cookie-Einstellungen“ einmal als Schild-Knopf am Ende der Rechtszeile (gleiche Funktion, Name „Cookie-Einstellungen verwalten“); der gleichlautende Link aus navigation.js ist dort ausgeblendet (E3-SICHT-ARB Befund 8)"
  }
 ]

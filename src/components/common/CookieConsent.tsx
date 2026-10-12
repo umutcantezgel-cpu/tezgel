@@ -285,10 +285,7 @@ export default function CookieConsent() {
         <button
           type="button"
           onClick={handleShieldClick}
-          className={clsx(
-            "min-h-11 items-center gap-2 py-1 text-kalk underline decoration-nacht-fuge underline-offset-4 transition-colors dauer-1 ease-setzen hover:decoration-kalk",
-            schildPlatz ? "hidden lg:inline-flex" : "inline-flex",
-          )}
+          className="hidden min-h-11 items-center gap-2 py-1 text-kalk underline decoration-nacht-fuge underline-offset-4 transition-colors dauer-1 ease-setzen hover:decoration-kalk lg:inline-flex"
           aria-label="Cookie-Einstellungen verwalten"
           title="Cookie-Einstellungen öffnen"
           data-motion="zustand"

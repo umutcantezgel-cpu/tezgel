@@ -175,7 +175,7 @@ export default function Footer() {
                     <nav aria-label="Rechtliches">
                         <ul className="flex flex-wrap items-center gap-x-4 gap-y-2">
                             {footerLegalLinks.map((item) => (
-                                <li key={item.path}>
+                                <li key={item.path} className={item.path === '#cookie-settings' ? 'lg:hidden' : undefined}>
                                     <Link href={item.path} className={clsx(fussLink, 'inline-block py-1')}>
                                         {item.name}
                                     </Link>
