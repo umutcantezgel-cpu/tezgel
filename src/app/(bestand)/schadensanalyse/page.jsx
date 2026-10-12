@@ -1,35 +1,43 @@
-import React from 'react';
+// Schadensanalyse (S-19 nach E5-BAU-11, KERN v2): Seitenkörper der Themenseite als Erzählansicht nach dem Muster der
+// Familienreferenz (leistungen/[id], fliesen) und der Schwesterseiten /treppen und /balkon-terrasse. Einstieg mit
+// Laserachse, H1 links, Vorspann, zwei Knöpfe und – als Merkmale in der Textspalte – das bisherige Band
+// „Leistungsmerkmale“ (Region bleibt); rechts das Planblatt „Fliesenschäden analysieren“ mit dem Plan „reparatur“
+// (interaktiv, die rote Achse trägt das Blatt). Danach die Leitachse über die Abschnitte, Flächen im Wechsel Kalk/Fliese:
+// 2. Schadensbilder als Feldraster 3 × 2 (Kalk) · 3. Ablauf als Schrittfolge (Fliese) · 4. Prüfung vor Ort als Merkliste im
+// Halbverband (Kalk) · 5. Schwerpunkte: drei Listen an der Fuge nebeneinander (Fliese) · 6. Lösungen als Feldraster, je Feld
+// ein Link (Kalk) · 7. Andere Fachleute, Kopf seitlich, Liste an der Fuge (Fliese) · 8. Fragen als Aufklapper (Kalk) ·
+// 9. Ratgeber als Register (Fliese) · 10. Abschluss mit drei Wegen (Kalk). Kein Auftritt, kein großer Moment.
+// Wortlaut, Überschriften, Links, IDs und Lesefolge wie im Bestand; Metadaten, Daten und JSON-LD unverändert.
+// Serverkomponente; `spaet` auf den Abschnitten unter dem ersten Bildschirm (keine Sprungziele, keine Formulare) außer
+// „Schwerpunkte“: Zwischen dem Link im Abschnitt „Schadensbilder“ und dem ersten Link der Lösungen liegen drei Abschnitte
+// ohne Bedienelement; mit `spaet` auf allen dreien landete der Tastaturfokus beim ersten Tab (m375) unter dem Bildrand,
+// weil der Platzhalter direkt über dem Ziel erst nach dem Sprung seine echte Höhe bekam (a11y-zusatz, fokus_verdeckt).
 import Link from 'next/link';
-import {
-    ScanSearch,
-    ArrowRight,
-    Phone,
-    ClipboardList,
-    Search,
-    FileText,
-    Hammer,
-    CheckCircle2,
-    Grid,
-    Droplets,
-    Trees,
-    ShieldCheck,
-    Sparkles,
-    HelpCircle,
-    Users,
-    Gauge,
-    Ruler
-} from 'lucide-react';
+import clsx from 'clsx';
 import { COMPANY_DATA } from '@/config/company';
 import { buildGraph, buildServiceNode, buildFaqNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
 import JsonLd from '@/components/seo/JsonLd';
+import Icon from '@/components/icons/Icon';
+import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Einstieg from '@/components/kern/Einstieg';
+import { Feld, Feldraster } from '@/components/kern/Feldraster';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Knopf from '@/components/kern/Knopf';
+import Leitachse from '@/components/kern/Leitachse';
+import Merkliste from '@/components/kern/Merkliste';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+import Schrittfolge from '@/components/kern/Schrittfolge';
+import Verlegeplan from '@/components/kern/Verlegeplan';
+import { linkKlassen } from '@/components/kern/stile';
 
 const PAGE_PATH = '/schadensanalyse';
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 const HIGHLIGHTS = [
-    { icon: Search, title: 'Kostenfrei', desc: 'Teil des Vor-Ort-Aufmaßes' },
-    { icon: FileText, title: 'Festpreisangebot', desc: 'für die vorgeschlagene Lösung' },
-    { icon: Sparkles, title: 'Staubschutz', desc: 'bei der späteren Ausführung' }
+    { title: 'Kostenfrei', desc: 'Teil des Vor-Ort-Aufmaßes' },
+    { title: 'Festpreisangebot', desc: 'für die vorgeschlagene Lösung' },
+    { title: 'Staubschutz', desc: 'bei der späteren Ausführung' }
 ];
 
 const DAMAGE_PATTERNS = [
@@ -42,32 +50,29 @@ const DAMAGE_PATTERNS = [
 ];
 
 const STEPS = [
-    { icon: ClipboardList, title: 'Bestandsaufnahme', desc: 'Wir sehen uns das Schadensbild an, fragen nach Alter des Belags, früheren Reparaturen und wann der Schaden aufgefallen ist.' },
-    { icon: Search, title: 'Ursachenanalyse', desc: 'Klopfprobe, Rissverlauf, Fugen, Anschlüsse und Untergrund werden geprüft; bei Bedarf messen wir die Restfeuchte.' },
-    { icon: FileText, title: 'Sanierungsvorschlag', desc: 'Sie erfahren, was die Ursache ist, welche Lösung sinnvoll ist – und wo eine Reparatur an ihre Grenzen kommt. Danach erhalten Sie ein Festpreisangebot.' },
-    { icon: Hammer, title: 'Umsetzung', desc: 'Reparatur, Fugenerneuerung oder Neuverlegung durch unseren HWK-Fachbetrieb – mit Staubschutz und sauber abgegrenztem Arbeitsbereich.' }
+    { title: 'Bestandsaufnahme', desc: 'Wir sehen uns das Schadensbild an, fragen nach Alter des Belags, früheren Reparaturen und wann der Schaden aufgefallen ist.' },
+    { title: 'Ursachenanalyse', desc: 'Klopfprobe, Rissverlauf, Fugen, Anschlüsse und Untergrund werden geprüft; bei Bedarf messen wir die Restfeuchte.' },
+    { title: 'Sanierungsvorschlag', desc: 'Sie erfahren, was die Ursache ist, welche Lösung sinnvoll ist – und wo eine Reparatur an ihre Grenzen kommt. Danach erhalten Sie ein Festpreisangebot.' },
+    { title: 'Umsetzung', desc: 'Reparatur, Fugenerneuerung oder Neuverlegung durch unseren HWK-Fachbetrieb – mit Staubschutz und sauber abgegrenztem Arbeitsbereich.' }
 ];
 
 const CHECKS = [
-    { icon: Hammer, title: 'Klopfprobe', desc: 'Mit einem Prüfhammer oder Metallstab abgeklopft, verraten hohle Fliesen sich durch ihren Klang. So lässt sich die Fläche der Hohlstellen eingrenzen.' },
-    { icon: Gauge, title: 'Restfeuchte', desc: 'Wo es auf die Feuchte im Untergrund ankommt, etwa bei Estrich vor einer Neuverlegung, messen wir die Restfeuchte und vergleichen sie mit den Richtwerten aus Merkblättern und Herstellerangaben.' },
-    { icon: Ruler, title: 'Untergrund und Risse', desc: 'Verlauf und Breite von Rissen, Lage von Bewegungs- und Randfugen, Ebenheit und Gefälle geben Hinweise darauf, ob der Schaden aus dem Untergrund kommt.' },
-    { icon: ShieldCheck, title: 'Abdichtung und Anschlüsse', desc: 'Im Nassbereich prüfen wir Silikonfugen, Übergänge an Wanne, Duschtasse und Durchdringungen. Ob unter den Fliesen eine intakte Verbundabdichtung liegt, lässt sich oft erst nach dem Öffnen einer Stelle sicher sagen.' }
+    { title: 'Klopfprobe', desc: 'Mit einem Prüfhammer oder Metallstab abgeklopft, verraten hohle Fliesen sich durch ihren Klang. So lässt sich die Fläche der Hohlstellen eingrenzen.' },
+    { title: 'Restfeuchte', desc: 'Wo es auf die Feuchte im Untergrund ankommt, etwa bei Estrich vor einer Neuverlegung, messen wir die Restfeuchte und vergleichen sie mit den Richtwerten aus Merkblättern und Herstellerangaben.' },
+    { title: 'Untergrund und Risse', desc: 'Verlauf und Breite von Rissen, Lage von Bewegungs- und Randfugen, Ebenheit und Gefälle geben Hinweise darauf, ob der Schaden aus dem Untergrund kommt.' },
+    { title: 'Abdichtung und Anschlüsse', desc: 'Im Nassbereich prüfen wir Silikonfugen, Übergänge an Wanne, Duschtasse und Durchdringungen. Ob unter den Fliesen eine intakte Verbundabdichtung liegt, lässt sich oft erst nach dem Öffnen einer Stelle sicher sagen.' }
 ];
 
 const TOPICS = [
     {
-        icon: Grid,
         title: 'Fliesen & Fugen',
         items: ['Einzelne gesprungene oder lose Fliesen', 'Hohlstellen in Boden und Wand', 'Ausgewaschene Zementfugen', 'Gerissene oder verfärbte Silikonfugen']
     },
     {
-        icon: Droplets,
         title: 'Feuchte & Abdichtung',
         items: ['Feuchte Fugen im Duschbereich', 'Feuchteflecken an angrenzenden Wänden', 'Anschlüsse an Wanne, Duschtasse und Ablauf', 'Abdichtung nach DIN 18534 bei Erneuerung']
     },
     {
-        icon: Trees,
         title: 'Balkon & Außenbereich',
         items: ['Frostabplatzungen und lose Platten', 'Ausblühungen an Belag und Stirnseite', 'Stehendes Wasser durch fehlendes Gefälle', 'Schäden an Außentreppen und Eingangspodesten']
     }
@@ -146,310 +151,294 @@ const WEITERLESEN = [
     { title: 'Außenbereiche', path: '/leistungen/aussen', desc: 'Balkon, Terrasse und Eingang' }
 ];
 
+// Zeile des Registers (Ratgeber auf Fliese): die ganze Zeile ist der Link; Überfahren färbt die Fläche auf Kalk
+const ZEILE = 'group flex min-h-12 items-center gap-4 px-3 py-4 pointer-fine:hover:bg-kalk active:bg-kalk';
+// Name in der Zeile: Unterstrich beim Überfahren
+const NAME =
+    'font-text text-fs-3 font-semibold text-tinte md:w-1/3 md:shrink-0 decoration-1 underline-offset-4 decoration-tinte pointer-fine:group-hover:underline group-active:underline';
+
+// Liste an der Fuge: Fugenkreuz als Marke, Text in Textschrift
+function FugenListe({ eintraege, className }) {
+    return (
+        <ul className={clsx('border-t border-fuge', className)}>
+            {eintraege.map((item) => (
+                <li key={item} className="flex gap-3 border-b border-fuge py-4 font-text text-fs-2 text-tinte">
+                    <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich">
+                        <Fugenkreuz className="size-3" />
+                    </span>
+                    <span className="min-w-0">{item}</span>
+                </li>
+            ))}
+        </ul>
+    );
+}
+
 export default function SchadensanalysePage() {
     return (
-        <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
+        <>
             <JsonLd schema={schadensGraph} />
-            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-warm top-96 -right-24 opacity-60" />
 
-            {/* Hero */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 relative z-10" aria-labelledby="schadensanalyse-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow eyebrow-orange">
-                        <ScanSearch className="w-3.5 h-3.5 text-orange-600" />
-                        Service &middot; Ursachen vor Ort klären
-                    </span>
-                    <h1 id="schadensanalyse-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Schadensanalyse für{' '}
-                        <span className="text-ceramic-gradient">Fliesen, Fugen und Abdichtung</span>
-                    </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerechte Schadensanalyse für Fliesen, Fugen und Abdichtung von Fachbetrieb Tezgel. Eine gesprungene Fliese lässt sich tauschen – doch wenn die Ursache im Untergrund oder in der Abdichtung liegt, kehrt der Schaden zurück. Deshalb klärt Deniz Tezgel beim kostenfreien Vor-Ort-Termin die Schadensursache und schlägt die passende Sanierungslösung vor.
-                    </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">
-                            Vor-Ort-Termin anfragen
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                        </Link>
-                        <a
-                            href={COMPANY_DATA.contact.whatsappLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="glass-button-whatsapp px-7 py-3.5 text-xs"
-                        >
-                            Fotos per WhatsApp senden
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            {/* Highlight band */}
-            <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-label="Leistungsmerkmale">
-                <ul className="glass-surface rounded-tile-2xl p-6 grid grid-cols-1 sm:grid-cols-3 gap-6">
-                    {HIGHLIGHTS.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                            <li key={item.title} className="flex items-center gap-4">
-                                <span className="icon-chip w-11 h-11 shrink-0 text-orange-600">
-                                    <Icon className="w-5 h-5" />
-                                </span>
-                                <span>
-                                    <span className="block font-black text-slate-900">{item.title}</span>
-                                    <span className="block text-sm text-slate-600">{item.desc}</span>
-                                </span>
-                            </li>
-                        );
-                    })}
-                </ul>
-            </section>
-
-            {/* Schadensbilder */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="schadensbilder-heading">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-orange mb-4">Schadensbilder</span>
-                    <h2 id="schadensbilder-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Typische Schäden an Fliesen und Fugen
-                    </h2>
-                    <p className="mt-3 text-base text-slate-700 leading-relaxed">
-                        Welche Anzeichen im Bad auf Feuchtigkeit hinter den Fliesen hindeuten, beschreibt unser Beitrag{' '}
-                        <Link href="/blog/undichte-dusche-warnzeichen" className="font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">
-                            Undichte Dusche: Warnzeichen
-                        </Link>
-                        . Hier geht es darum, was hinter dem jeweiligen Schadensbild stecken kann.
-                    </p>
-                </div>
-                <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {DAMAGE_PATTERNS.map((item) => (
-                        <li
-                            key={item.title}
-                            className="group glass-surface p-7 rounded-tile-xl hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
-                        >
-                            <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-700 transition-colors">{item.title}</h3>
-                            <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
-                        </li>
-                    ))}
-                </ul>
-            </section>
-
-            {/* Ablauf */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="ablauf-heading">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow eyebrow-orange mb-4">Ablauf</span>
-                        <h2 id="ablauf-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            In 4 Schritten von der Ursache zur Lösung
-                        </h2>
-                    </div>
-                    <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {STEPS.map((step, idx) => {
-                            const Icon = step.icon;
-                            return (
-                                <li
-                                    key={step.title}
-                                    className="group p-7 rounded-tile-xl bg-slate-50 border border-slate-200 hover:bg-white hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300"
-                                >
-                                    <div className="flex items-center justify-between mb-4">
-                                        <span className="icon-chip w-11 h-11 text-orange-600">
-                                            <Icon className="w-5 h-5" />
-                                        </span>
-                                        <span className="font-display text-4xl font-black tabular-nums text-orange-500/30" aria-hidden="true">
-                                            {String(idx + 1).padStart(2, '0')}
-                                        </span>
-                                    </div>
-                                    <p className="text-base font-black text-slate-900 mb-2">{step.title}</p>
-                                    <p className="text-sm text-slate-700 leading-relaxed">{step.desc}</p>
-                                </li>
-                            );
-                        })}
-                    </ol>
-                </div>
-            </section>
-
-            {/* Was vor Ort geprüft wird */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="pruefung-heading">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-orange mb-4">Prüfung vor Ort</span>
-                    <h2 id="pruefung-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Was vor Ort geprüft wird
-                    </h2>
-                </div>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {CHECKS.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                            <li key={item.title} className="glass-surface p-7 rounded-tile-2xl">
-                                <span className="icon-chip w-11 h-11 mb-4 text-orange-600">
-                                    <Icon className="w-5 h-5" />
-                                </span>
-                                <p className="font-black text-base text-slate-900 mb-2">{item.title}</p>
-                                <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
-                            </li>
-                        );
-                    })}
-                </ul>
-            </section>
-
-            {/* Themen */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="themen-heading">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow eyebrow-orange mb-4">Schwerpunkte</span>
-                        <h2 id="themen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Wo wir Schäden begutachten
-                        </h2>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {TOPICS.map((topic) => {
-                            const Icon = topic.icon;
-                            return (
-                                <div key={topic.title} className="p-7 rounded-tile-xl bg-slate-50 border border-slate-200">
-                                    <span className="icon-chip w-12 h-12 mb-5 text-orange-600">
-                                        <Icon className="w-6 h-6" />
-                                    </span>
-                                    <h3 className="text-lg font-black text-slate-900 mb-4">{topic.title}</h3>
-                                    <ul className="space-y-3">
-                                        {topic.items.map((item) => (
-                                            <li key={item} className="flex items-start gap-2.5 text-sm text-slate-700">
-                                                <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
-                                                <span>{item}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
-            </section>
-
-            {/* Reparieren, Fugen oder neu */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="loesung-heading">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-orange mb-4">Die passende Lösung</span>
-                    <h2 id="loesung-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Reparieren, Fugen erneuern oder neu verlegen?
-                    </h2>
-                </div>
-                <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {OPTIONS.map((option) => (
-                        <li key={option.title} className="glass-surface p-7 rounded-tile-2xl flex flex-col">
-                            <p className="font-black text-lg text-slate-900 mb-2">{option.title}</p>
-                            <p className="text-sm text-slate-700 leading-relaxed flex-1">{option.desc}</p>
-                            <Link
-                                href={option.link.href}
-                                className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-orange-700 hover:text-orange-600"
+            {/* 1. EINSTIEG: Kennzeile, H1 an der Laserachse, Vorspann, zwei Knöpfe, darunter die Leistungsmerkmale (bisher ein
+                eigenes Band direkt unter dem Einstieg, Region bleibt); rechts das Planblatt mit dem Plan „reparatur“ */}
+            <section aria-labelledby="schadensanalyse-heading">
+                <Einstieg
+                    art="erzaehl"
+                    etikett={<>Service &middot; Ursachen vor Ort klären</>}
+                    titel={
+                        <span id="schadensanalyse-heading">
+                            Schadensanalyse für{' '}
+                            <span>Fliesen, Fugen und Abdichtung</span>
+                        </span>
+                    }
+                    vorspann={
+                        <p>
+                            Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerechte Schadensanalyse für Fliesen, Fugen und Abdichtung von Fachbetrieb Tezgel. Eine gesprungene Fliese lässt sich tauschen – doch wenn die Ursache im Untergrund oder in der Abdichtung liegt, kehrt der Schaden zurück. Deshalb klärt Deniz Tezgel beim kostenfreien Vor-Ort-Termin die Schadensursache und schlägt die passende Sanierungslösung vor.
+                        </p>
+                    }
+                    aktionen={
+                        <>
+                            <Knopf href="/kontakt" icon="pfeil-rechts">
+                                Vor-Ort-Termin anfragen
+                            </Knopf>
+                            <Knopf
+                                href={COMPANY_DATA.contact.whatsappLink}
+                                extern
+                                variante="neben"
+                                vorne={<WhatsAppLogo className="size-5 shrink-0" />}
                             >
-                                {option.link.label}
-                                <ArrowRight className="w-4 h-4" />
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
+                                Fotos per WhatsApp senden
+                            </Knopf>
+                        </>
+                    }
+                    merkmale={
+                        // Leistungsmerkmale an der Fuge: je Merkmal Fugenkreuz, Name und Zusatz; ab sm drei Spalten
+                        <section aria-label="Leistungsmerkmale">
+                            <ul className="grid gap-6 border-t border-fuge pt-6 sm:grid-cols-3 sm:gap-8">
+                                {HIGHLIGHTS.map((item) => (
+                                    <li key={item.title} className="flex gap-3 font-text text-fs-2">
+                                        <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich">
+                                            <Fugenkreuz className="size-3" />
+                                        </span>
+                                        <span className="min-w-0">
+                                            <span className="block font-semibold text-tinte">{item.title}</span>
+                                            <span className="block text-tinte-2">{item.desc}</span>
+                                        </span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </section>
+                    }
+                    rand={
+                        <Planblatt felder={planfelder('Fliesenschäden analysieren', 'reparatur')}>
+                            <Verlegeplan plan="reparatur" ohneAchse bemassung={false} interaktiv />
+                        </Planblatt>
+                    }
+                />
             </section>
 
-            {/* Andere Fachleute */}
-            <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 relative z-10" aria-labelledby="fachleute-heading">
-                <div className="rounded-tile-2xl bg-orange-50/50 border border-orange-200/80 p-7 sm:p-10">
-                    <h2 id="fachleute-heading" className="text-2xl font-black text-slate-900 mb-2 flex items-center gap-2">
-                        <Users className="w-6 h-6 text-orange-600" />
-                        Wann andere Fachleute gefragt sind
-                    </h2>
-                    <p className="text-sm text-slate-700 leading-relaxed mb-5">
-                        Wir sagen offen, wenn eine Ursache außerhalb unseres Handwerks liegt, und nennen Ihnen den richtigen
-                        Ansprechpartner:
-                    </p>
-                    <ul className="space-y-3">
-                        {OTHER_EXPERTS.map((item) => (
-                            <li key={item} className="flex items-start gap-2.5 text-sm text-slate-700 leading-relaxed">
-                                <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
-                                <span>{item}</span>
-                            </li>
+            {/* LEITACHSE: das Lot setzt die Achse des Einstiegs über die Abschnitte fort */}
+            <Leitachse>
+                {/* 2. SCHADENSBILDER als Feldraster: sechs Felder, drei bzw. zwei Spalten ohne Restzelle */}
+                <Abschnitt
+                    titelId="schadensbilder-heading"
+                    leitachse
+                    spaet
+                    etikett="Schadensbilder"
+                    titel="Typische Schäden an Fliesen und Fugen"
+                    einleitung={
+                        <p>
+                            Welche Anzeichen im Bad auf Feuchtigkeit hinter den Fliesen hindeuten, beschreibt unser Beitrag{' '}
+                            <Link href="/blog/undichte-dusche-warnzeichen" className={linkKlassen}>
+                                Undichte Dusche: Warnzeichen
+                            </Link>
+                            . Hier geht es darum, was hinter dem jeweiligen Schadensbild stecken kann.
+                        </p>
+                    }
+                >
+                    <Feldraster spalten={3}>
+                        {DAMAGE_PATTERNS.map((item) => (
+                            <Feld key={item.title}>
+                                <h3 className="font-anzeige text-fs-4 text-tinte">{item.title}</h3>
+                                <p className="mt-3 max-w-mass font-text text-fs-2 text-tinte-2">{item.desc}</p>
+                            </Feld>
                         ))}
-                    </ul>
-                    <p className="mt-5 text-sm text-slate-700">
+                    </Feldraster>
+                </Abschnitt>
+
+                {/* 3. ABLAUF auf Fliese: vier Schritte als Schrittfolge (ab lg waagrecht); Titel wie im Bestand keine Überschriften,
+                    die Nummer bleibt sichtbar und für Screenreader stumm */}
+                <Abschnitt
+                    titelId="ablauf-heading"
+                    leitachse
+                    spaet
+                    flaeche="fliese"
+                    etikett="Ablauf"
+                    titel="In 4 Schritten von der Ursache zur Lösung"
+                >
+                    <Schrittfolge
+                        ausrichtung="waagrecht"
+                        titelEbene="div"
+                        nummerStumm
+                        schritte={STEPS.map((step) => ({ titel: step.title, text: step.desc }))}
+                    />
+                </Abschnitt>
+
+                {/* 4. PRÜFUNG VOR ORT: vier Prüfungen als Merkliste im Halbverband (Zeilen an der Fuge, ab md versetzt) */}
+                <Abschnitt
+                    titelId="pruefung-heading"
+                    leitachse
+                    spaet
+                    etikett="Prüfung vor Ort"
+                    titel="Was vor Ort geprüft wird"
+                >
+                    <Merkliste spalten={2} verband eintraege={CHECKS.map((item) => ({ titel: item.title, text: item.desc }))} />
+                </Abschnitt>
+
+                {/* 5. SCHWERPUNKTE auf Fliese: drei Bereiche nebeneinander (ab md), je Bereich Überschrift und Liste an der Fuge;
+                    ohne `spaet`, damit der Fokussprung auf den ersten Lösungs-Link im Bild landet (Kopfkommentar) */}
+                <Abschnitt
+                    titelId="themen-heading"
+                    leitachse
+                    flaeche="fliese"
+                    etikett="Schwerpunkte"
+                    titel="Wo wir Schäden begutachten"
+                >
+                    <div className="grid gap-y-12 md:grid-cols-3 md:gap-x-8 lg:gap-x-12">
+                        {TOPICS.map((topic) => (
+                            <div key={topic.title} className="border-t border-tinte pt-6">
+                                <h3 className="font-anzeige text-fs-4 text-tinte">{topic.title}</h3>
+                                <FugenListe eintraege={topic.items} className="mt-6" />
+                            </div>
+                        ))}
+                    </div>
+                </Abschnitt>
+
+                {/* 6. DIE PASSENDE LÖSUNG als Feldraster: je Weg ein Feld mit einem Link unten; das dritte Feld überspannt in md
+                    die freie Breite (keine Restzelle) */}
+                <Abschnitt
+                    titelId="loesung-heading"
+                    leitachse
+                    spaet
+                    etikett="Die passende Lösung"
+                    titel="Reparieren, Fugen erneuern oder neu verlegen?"
+                >
+                    <Feldraster spalten={3}>
+                        {OPTIONS.map((option, i) => {
+                            const letzter = i === OPTIONS.length - 1;
+                            return (
+                                <Feld key={option.title} spanne={letzter ? 2 : undefined} className={letzter ? 'lg:col-span-1' : undefined}>
+                                    <p className="font-anzeige text-fs-4 text-tinte">{option.title}</p>
+                                    <p className="mt-3 max-w-mass font-text text-fs-2 text-tinte-2">{option.desc}</p>
+                                    <div className="mt-auto pt-6">
+                                        <Knopf href={option.link.href} variante="text" icon="pfeil-rechts">
+                                            {option.link.label}
+                                        </Knopf>
+                                    </div>
+                                </Feld>
+                            );
+                        })}
+                    </Feldraster>
+                </Abschnitt>
+
+                {/* 7. ANDERE FACHLEUTE auf Fliese: Kopf seitlich mit Einleitung, rechts die Ansprechpartner als Liste an der Fuge
+                    und der Verweis zur Vorbeugung */}
+                <Abschnitt
+                    titelId="fachleute-heading"
+                    leitachse
+                    spaet
+                    flaeche="fliese"
+                    kopf="seitlich"
+                    titel="Wann andere Fachleute gefragt sind"
+                    einleitung={
+                        <p>
+                            Wir sagen offen, wenn eine Ursache außerhalb unseres Handwerks liegt, und nennen Ihnen den richtigen
+                            Ansprechpartner:
+                        </p>
+                    }
+                >
+                    <FugenListe eintraege={OTHER_EXPERTS} className="max-w-mass" />
+                    <p className="mt-8 max-w-mass font-text text-fs-2 text-tinte-2">
                         Tipps zur Vorbeugung:{' '}
-                        <Link href="/blog/schimmel-fliesenfugen-vermeiden" className="font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">
+                        <Link href="/blog/schimmel-fliesenfugen-vermeiden" className={linkKlassen}>
                             Schimmel in Fliesenfugen vermeiden
                         </Link>
                     </p>
-                </div>
-            </section>
+                </Abschnitt>
 
-            {/* FAQ */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="faq-heading">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-12">
-                        <span className="eyebrow eyebrow-orange mb-4">
-                            <HelpCircle className="w-3.5 h-3.5 text-orange-600" />
-                            FAQ
-                        </span>
-                        <h2 id="faq-heading" className="text-3xl font-black text-slate-900 tracking-tight">
-                            Häufige Fragen zur Schadensanalyse
-                        </h2>
-                    </div>
-                    <div className="space-y-4">
+                {/* 8. FRAGEN: je Frage ein Aufklapper an der Fuge; die Antwort öffnet sich beim Klick (ohne JavaScript bedienbar) */}
+                <Abschnitt titelId="faq-heading" leitachse spaet etikett="FAQ" titel="Häufige Fragen zur Schadensanalyse">
+                    <div className="border-t border-tinte">
                         {schadensFaqs.map((faq) => (
-                            <details key={faq.question} className="group p-6 rounded-tile-lg bg-slate-50 border border-slate-200 open:bg-white open:border-orange-500/60 transition-colors">
-                                <summary className="cursor-pointer list-none font-black text-base text-slate-900 flex items-start justify-between gap-4">
-                                    <span>{faq.question}</span>
-                                    <ArrowRight className="w-4 h-4 text-orange-600 shrink-0 mt-1 transition-transform group-open:rotate-90" aria-hidden="true" />
+                            <details key={faq.question} className="group border-b border-fuge">
+                                <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-6 py-4 font-text text-fs-3 font-semibold text-tinte [&::-webkit-details-marker]:hidden">
+                                    <span className="min-w-0">{faq.question}</span>
+                                    <span className="flex shrink-0 items-center text-tinte" aria-hidden="true">
+                                        <span className="group-open:hidden">
+                                            <Icon name="plus" groesse={6} />
+                                        </span>
+                                        <span className="hidden group-open:block">
+                                            <Icon name="minus" groesse={6} />
+                                        </span>
+                                    </span>
                                 </summary>
-                                <p className="mt-3 text-sm text-slate-700 leading-relaxed">{faq.answer}</p>
+                                <p className="max-w-mass pb-6 font-text text-fs-2 text-tinte-2">{faq.answer}</p>
                             </details>
                         ))}
                     </div>
-                </div>
-            </section>
+                </Abschnitt>
 
-            {/* Weiterführende Ratgeber */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10" aria-labelledby="schaden-ratgeber-heading">
-                <h2 id="schaden-ratgeber-heading" className="text-2xl font-black text-slate-900 tracking-tight mb-6">
-                    Weiterführende Ratgeber zur Schadensanalyse &amp; Ursachenermittlung
-                </h2>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    {WEITERLESEN.map((link) => (
-                        <li key={link.path}>
-                            <Link
-                                href={link.path}
-                                className="group glass-surface rounded-tile-lg p-5 h-full block hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300"
-                            >
-                                <span className="font-black text-slate-900 group-hover:text-orange-700 transition-colors flex items-center gap-1">
-                                    {link.title}
-                                    <ArrowRight className="w-4 h-4" />
-                                </span>
-                                <span className="block mt-1 text-sm text-slate-700">{link.desc}</span>
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </section>
+                {/* 9. RATGEBER auf Fliese: Register, je Zeile Titel, Beschreibung und Pfeil; die ganze Zeile ist der Link. Kopf
+                    gestapelt, weil „Ursachenermittlung“ in der schmalen Kopfspalte nicht ohne Bruch steht */}
+                <Abschnitt
+                    titelId="schaden-ratgeber-heading"
+                    leitachse
+                    spaet
+                    flaeche="fliese"
+                    titel="Weiterführende Ratgeber zur Schadensanalyse & Ursachenermittlung"
+                >
+                    <ul className="border-t border-tinte">
+                        {WEITERLESEN.map((link) => (
+                            <li key={link.path} className="border-b border-fuge">
+                                <Link href={link.path} data-motion="zustand" className={ZEILE}>
+                                    <span className="flex min-w-0 flex-1 flex-col gap-1 md:flex-row md:items-baseline md:gap-6">
+                                        <span className={NAME}>{link.title}</span>
+                                        <span className="font-text text-fs-2 text-tinte-2">{link.desc}</span>
+                                    </span>
+                                    <span aria-hidden="true" className="flex shrink-0 text-strich">
+                                        <Icon name="pfeil-rechts" groesse={5} />
+                                    </span>
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </Abschnitt>
 
-            {/* Closing CTA */}
-            <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" aria-labelledby="schaden-cta-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4">
-                    <h2 id="schaden-cta-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-                        Schaden entdeckt? Lassen Sie die Ursache klären.
-                    </h2>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed">
-                        Vereinbaren Sie einen Vor-Ort-Termin – {COMPANY_DATA.hours.formattedWeekdays},{' '}
-                        {COMPANY_DATA.hours.formattedSaturday}. Die Schadensanalyse ist Teil des kostenfreien Aufmaßes.
-                    </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-2">
-                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs">
+                {/* 10. ABSCHLUSS: Überschrift, Einleitung mit Öffnungszeiten aus COMPANY_DATA und drei Wege als Knöpfe */}
+                <Abschnitt
+                    titelId="schaden-cta-heading"
+                    leitachse
+                    spaet
+                    titel="Schaden entdeckt? Lassen Sie die Ursache klären."
+                    einleitung={
+                        <p>
+                            Vereinbaren Sie einen Vor-Ort-Termin – {COMPANY_DATA.hours.formattedWeekdays},{' '}
+                            {COMPANY_DATA.hours.formattedSaturday}. Die Schadensanalyse ist Teil des kostenfreien Aufmaßes.
+                        </p>
+                    }
+                >
+                    <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                        <Knopf href="/kontakt" icon="pfeil-rechts">
                             Termin anfragen
-                            <ArrowRight className="w-4 h-4" />
-                        </Link>
-                        <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-orange-600" />
-                            {COMPANY_DATA.contact.phone}
-                        </a>
-                        <Link href="/beratung" className="btn-ghost px-7 py-3.5 text-xs">
+                        </Knopf>
+                        <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon">
+                            <span className="font-mono font-normal">{COMPANY_DATA.contact.phone}</span>
+                        </Knopf>
+                        <Knopf href="/beratung" variante="neben">
                             Beratung
-                        </Link>
+                        </Knopf>
                     </div>
-                </div>
-            </section>
-        </div>
+                </Abschnitt>
+            </Leitachse>
+        </>
     );
 }
