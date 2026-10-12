@@ -1,0 +1,62 @@
+a...a..w.
+/
+  mobil: perf 92 [92–94] · LCP 3338 ms [2860–3365] · TBT 90 ms [78–117] · CLS 0 [0–0.019] · LCP-Element div.mx-auto > div.relative > div.mt-8 > p.max-w-mass
+  desktop: perf 100 [100–100] · LCP 696 ms [670–704] · TBT 0 ms [0–1] · CLS 0.001 [0.001–0.001] · LCP-Element div.mx-auto > div.relative > div.mt-8 > p.max-w-mass
+/: mobil 92 (LCP 3338 ms, TBT 90, CLS 0) · desktop 100
+a...a..w.
+/bad
+  mobil: perf 93 [90–93] · LCP 2488 ms [2487–2488] · TBT 243 ms [236–333] · CLS 0 [0–0] · LCP-Element div.grid > div.col-span-4 > div.mt-8 > p
+  desktop: perf 96 [96–96] · LCP 667 ms [532–669] · TBT 0 ms [0–0] · CLS 0.121 [0.121–0.121] · LCP-Element div.grid > div.col-span-4 > h1.text-tinte > span.block
+/bad: mobil 93 (LCP 2488 ms, TBT 243, CLS 0) · desktop 96
+a...a...
+/leistungen
+  mobil: perf 83 [80–90] · LCP 2713 ms [2711–2911] · TBT 356 ms [275–481] · CLS 0 [0–0.179] · LCP-Element div.grid > div.col-span-4 > div.mt-8 > p
+  desktop: perf 100 [100–100] · LCP 582 ms [575–650] · TBT 0 ms [0–0] · CLS 0.001 [0.001–0.001] · LCP-Element div.grid > div.col-span-4 > h1.text-tinte > span.block
+/leistungen: mobil 83 (LCP 2713 ms, TBT 356, CLS 0) · desktop 100
+a...a...
+/leistungen/bad
+  mobil: perf 89 [85–90] · LCP 2994 ms [2560–2995] · TBT 311 ms [288–385] · CLS 0 [0–0] · LCP-Element div.grid > div.col-span-4 > div.mt-8 > p
+  desktop: perf 100 [100–100] · LCP 536 ms [530–648] · TBT 0 ms [0–8] · CLS 0.001 [0.001–0.001] · LCP-Element div.grid > div.col-span-4 > h1.text-tinte > span.block
+/leistungen/bad: mobil 89 (LCP 2994 ms, TBT 311, CLS 0) · desktop 100
+a...a...
+/standorte
+  mobil: perf 94 [89–95] · LCP 2564 ms [2563–3205] · TBT 191 ms [156–242] · CLS 0 [0–0] · LCP-Element div.grid > div.col-span-4 > div.mt-8 > p
+  desktop: perf 100 [100–100] · LCP 692 ms [536–699] · TBT 0 ms [0–3] · CLS 0.001 [0.001–0.001] · LCP-Element div.grid > div.col-span-4 > h1.text-tinte > span.block
+/standorte: mobil 94 (LCP 2564 ms, TBT 191, CLS 0) · desktop 100
+a...a...
+/standorte/wetzlar
+  mobil: perf 96 [93–96] · LCP 2416 ms [2412–2619] · TBT 157 ms [153–206] · CLS 0 [0–0.016] · LCP-Element div.grid > div.col-span-4 > div.mt-8 > p
+  desktop: perf 100 [100–100] · LCP 531 ms [442–700] · TBT 10 ms [3–10] · CLS 0.001 [0–0.001] · LCP-Element div.grid > div.col-span-4 > h1.text-tinte > span.block
+/standorte/wetzlar: mobil 96 (LCP 2416 ms, TBT 157, CLS 0) · desktop 100
+a...a...
+/fliesen
+  mobil: perf 83 [83–84] · LCP 2716 ms [2713–3149] · TBT 500 ms [414–533] · CLS 0 [0–0] · LCP-Element div.grid > div.col-span-4 > div.mt-8 > p
+  desktop: perf 100 [100–100] · LCP 578 ms [554–730] · TBT 8 ms [0–18] · CLS 0.001 [0.001–0.001] · LCP-Element div.grid > div.col-span-4 > h1.text-tinte > span.block
+/fliesen: mobil 83 (LCP 2716 ms, TBT 500, CLS 0) · desktop 100
+a...a...
+/ueber-uns
+  mobil: perf 95 [90–96] · LCP 2617 ms [2601–3164] · TBT 152 ms [100–214] · CLS 0 [0–0] · LCP-Element div.grid > div.col-span-4 > div.mt-8 > p
+  desktop: perf 100 [100–100] · LCP 649 ms [566–653] · TBT 0 ms [0–3] · CLS 0.001 [0.001–0.001] · LCP-Element div.grid > div.col-span-4 > h1.text-tinte > span.block
+/ueber-uns: mobil 95 (LCP 2617 ms, TBT 152, CLS 0) · desktop 100
+aw...a...
+/kontakt
+  mobil: perf 91 [88–95] · LCP 2716 ms [2411–2834] · TBT 234 ms [188–370] · CLS 0 [0–0] · LCP-Element div.grid > div.col-span-4 > div.mt-8 > p
+  desktop: perf 100 [100–100] · LCP 565 ms [563–607] · TBT 1 ms [0–6] · CLS 0.001 [0.001–0.001] · LCP-Element div.grid > div.col-span-4 > div.mt-8 > p
+/kontakt: mobil 91 (LCP 2716 ms, TBT 234, CLS 0) · desktop 100
+a...a...
+/fliesen/konfigurator
+  mobil: perf 97 [97–97] · LCP 2488 ms [2486–2493] · TBT 114 ms [78–118] · CLS 0 [0–0] · LCP-Element div.grid > div.col-span-4 > div.mt-8 > p
+  desktop: perf 100 [100–100] · LCP 592 ms [572–701] · TBT 3 ms [0–5] · CLS 0.001 [0.001–0.001] · LCP-Element div.grid > div.col-span-4 > div.mt-8 > p
+/fliesen/konfigurator: mobil 97 (LCP 2488 ms, TBT 114, CLS 0) · desktop 100
+a...a...
+/blog
+  mobil: perf 83 [78–89] · LCP 3289 ms [2476–3309] · TBT 388 ms [355–570] · CLS 0 [0–0] · LCP-Element div.grid > div.col-span-4 > div.mt-8 > p
+  desktop: perf 100 [100–100] · LCP 730 ms [662–767] · TBT 11 ms [7–25] · CLS 0.001 [0.001–0.001] · LCP-Element div.mb-12 > a.group > div.relative > img.object-cover
+/blog: mobil 83 (LCP 3289 ms, TBT 388, CLS 0) · desktop 100
+a...a..w.
+/blog/rutschfeste-fliesen-r-klassen
+  mobil: perf 89 [84–91] · LCP 3067 ms [3065–3196] · TBT 258 ms [207–376] · CLS 0 [0–0] · LCP-Element div.mx-auto > div.grid > div.col-span-4 > p.max-w-mass
+  desktop: perf 100 [100–100] · LCP 672 ms [662–710] · TBT 0 ms [0–5] · CLS 0.001 [0.001–0.001] · LCP-Element div.mx-auto > div.grid > div.col-span-4 > p.max-w-mass
+/blog/rutschfeste-fliesen-r-klassen: mobil 89 (LCP 3067 ms, TBT 258, CLS 0) · desktop 100
+
+Ergebnis: /home/user/tezgel/_werkstatt/belege/e3-tor/lighthouse.json · Benchmark-Referenz 1426.5
