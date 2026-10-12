@@ -57,3 +57,7 @@ Kein Commit, kein Push.
 3. **ID-Bezug:** `verlegemuster-heading` steht jetzt auf dem Span in der H1. Das frühere `aria-labelledby` des Hero-Abschnitts entfällt, weil der Einstieg ein `header` ist. Das entspricht der Form auf /fliesen.
 4. **Tabelle:** Die Tabellenkomponente legt eine benannte Region an. Sie trägt den Wortlaut der H2 und ist ein neuer Landmark ohne neuen Text.
 5. **Skizzenbreite:** Die Skizzen sind mit `w-1/2 lg:w-1/3` schmal. Auf dem Desktop bleibt rechts Leerraum. Feinjustierung optional.
+
+## Nachtrag Orchestrator (Abnahme)
+- Offene Frage 1: Der Verband-Umschalter stand als eigene Zeile mit großer leerer Fläche daneben. Orchestrator hat ihn wie auf /fliesen in das Planblatt des Einstiegs verlegt (Schriftfeld ohne Plan: Sitz statt Verband); der Plan „naturstein“ entfällt auf dieser Seite. Prüfstufe A nach der Änderung (E4-BAU-11-NACH, Prüfer): tsc/ESLint 0, Funktionstests 72/0, Bilder ohne Überlauf und Überlappung, Textvergleich 0 unerlaubt entfernt, Werte 0 (`_werkstatt/pakete/E5-BAU-10.pruefung.md`).
+- Fragen 2–5: so angenommen (Skizzen als SVG-Schemata in Systemfarben; ID an der H1 wie auf /fliesen; Tabellenbereich mit Wortlaut der Überschrift; Skizzenbreite bleibt).
