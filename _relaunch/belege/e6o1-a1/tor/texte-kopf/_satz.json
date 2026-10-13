@@ -1,0 +1,382 @@
+{
+ "satz": "e6o1-a1-texte-kopf",
+ "base": null,
+ "bedingungen": {
+  "quelle": "../../../../tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/reinraum-f7822f5/.next/server/app/**/*.html",
+  "build_id": "x__sX1IlBCNlxDRCPFHD8",
+  "dateien": 8,
+  "parser": "Chromium DOMParser (Playwright 1.56.1), keine Skriptausführung, keine Netzanfragen",
+  "streaming": "React $RC/$RS aufgelöst (Suspense-Inhalt an Ort, Ersatzinhalt entfernt)",
+  "ohne": [
+   "script (JSON-LD als Hash)",
+   "style",
+   "template",
+   "noscript"
+  ],
+  "normalisierung": "U+00AD/U+200B/U+2060/U+FEFF entfernt; U+00A0/U+2007/U+202F → Leerzeichen; <br> → Leerzeichen; Leerraum zusammengefasst; kein Groß/Klein-Angleich; Inline-Grenze ohne Leerraum → Leerzeichen (außer an Zeichensetzung)",
+  "meta_ohne": [
+   "charset",
+   "viewport",
+   "theme-color",
+   "color-scheme",
+   "x-build",
+   "next-size-adjust",
+   "format-detection"
+  ],
+  "hash_befehle": [
+   "cookie-settings"
+  ]
+ },
+ "erstellt": "2026-10-13T00:26:58.769Z",
+ "summe": {
+  "dateien": 8,
+  "im_manifest": 8,
+  "eintraege": 4062,
+  "seiten_mit_mehreren_h1": [],
+  "seiten_ohne_h1": [],
+  "fragmente": {
+   "gesamt": 31,
+   "ok": 23,
+   "befehle": 8,
+   "fehlend": 0,
+   "ziel_unbekannt": 0,
+   "pflichtanker_ok": "3/4"
+  },
+  "netz_protokoll": 0,
+  "laufzeit_s": 0.7
+ },
+ "fragmente": {
+  "gesamt": 31,
+  "ok": 23,
+  "befehle": [
+   {
+    "seite": "/bad",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/blog",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/fliesen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/kontakt",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/standorte",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/ueber-uns",
+    "href": "#cookie-settings"
+   }
+  ],
+  "fehlend": [],
+  "ziel_unbekannt": [],
+  "ziele": [
+   {
+    "ziel": "/kontakt",
+    "id": "express-anfrage",
+    "verweise": 9,
+    "von": [
+     "/bad",
+     "/blog",
+     "/fliesen",
+     "/",
+     "/kontakt"
+    ]
+   },
+   {
+    "ziel": "/bad",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad"
+    ]
+   },
+   {
+    "ziel": "/blog",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/blog"
+    ]
+   },
+   {
+    "ziel": "/fliesen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/fliesen"
+    ]
+   },
+   {
+    "ziel": "/",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/"
+    ]
+   },
+   {
+    "ziel": "/",
+    "id": "ablauf",
+    "verweise": 1,
+    "von": [
+     "/"
+    ]
+   },
+   {
+    "ziel": "/kontakt",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/kontakt"
+    ]
+   },
+   {
+    "ziel": "/standorte",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/standorte"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "express-anfrage",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "bad",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "wohnen",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "aussen",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "untergrund",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/ueber-uns",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/ueber-uns"
+    ]
+   }
+  ],
+  "pflichtanker": [
+   {
+    "anker": "/#express-anfrage",
+    "ok": true,
+    "seite_vorhanden": true
+   },
+   {
+    "anker": "/kontakt#express-anfrage",
+    "ok": true,
+    "seite_vorhanden": true
+   },
+   {
+    "anker": "/kontakt#termin-buchen",
+    "ok": true,
+    "seite_vorhanden": true
+   },
+   {
+    "anker": "/referenzen#bewertungen",
+    "ok": false,
+    "seite_vorhanden": false
+   }
+  ]
+ },
+ "seiten": {
+  "/": {
+   "datei": "start.json",
+   "quelle": "index.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 808,
+   "arten": {
+    "meta": 32,
+    "text": 647,
+    "aria": 103,
+    "alt": 3,
+    "ueberschrift": 23
+   },
+   "h1": [
+    "Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar"
+   ],
+   "hash": "53d4f5fadb80c332"
+  },
+  "/bad": {
+   "datei": "bad.json",
+   "quelle": "bad.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 433,
+   "arten": {
+    "meta": 33,
+    "text": 348,
+    "aria": 40,
+    "alt": 3,
+    "ueberschrift": 9
+   },
+   "h1": [
+    "Ihr Traumbad schlüsselfertig in Fachqualität"
+   ],
+   "hash": "b97713a66c15c794"
+  },
+  "/blog": {
+   "datei": "blog.json",
+   "quelle": "blog.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 454,
+   "arten": {
+    "meta": 33,
+    "text": 363,
+    "aria": 40,
+    "alt": 3,
+    "ueberschrift": 15
+   },
+   "h1": [
+    "Fliesen-Ratgeber & Badsanierung Tipps"
+   ],
+   "hash": "ddb14b84181425c4"
+  },
+  "/fliesen": {
+   "datei": "fliesen.json",
+   "quelle": "fliesen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 520,
+   "arten": {
+    "meta": 33,
+    "text": 423,
+    "aria": 40,
+    "alt": 3,
+    "ueberschrift": 21
+   },
+   "h1": [
+    "Fliesen-Ratgeber: Formate, Räume und Verlegetechnik verständlich erklärt"
+   ],
+   "hash": "eb231a7d53bac92b"
+  },
+  "/kontakt": {
+   "datei": "kontakt.json",
+   "quelle": "kontakt.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 437,
+   "arten": {
+    "meta": 33,
+    "text": 348,
+    "aria": 43,
+    "alt": 3,
+    "ueberschrift": 10
+   },
+   "h1": [
+    "Kontakt & Aufmaß Fliesenleger Tezgel"
+   ],
+   "hash": "4394c3fc37dce5c9"
+  },
+  "/leistungen": {
+   "datei": "leistungen.json",
+   "quelle": "leistungen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 508,
+   "arten": {
+    "meta": 33,
+    "text": 410,
+    "aria": 50,
+    "alt": 3,
+    "ueberschrift": 12
+   },
+   "h1": [
+    "Fliesenleger Leistungen & Fachgewerke Wetzlar"
+   ],
+   "hash": "18062a7a5675772e"
+  },
+  "/standorte": {
+   "datei": "standorte.json",
+   "quelle": "standorte.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 497,
+   "arten": {
+    "meta": 33,
+    "text": 414,
+    "aria": 37,
+    "alt": 3,
+    "ueberschrift": 10
+   },
+   "h1": [
+    "Standorte & Einsatzgebiete in Mittelhessen"
+   ],
+   "hash": "b3b9275f60ae7f36"
+  },
+  "/ueber-uns": {
+   "datei": "ueber-uns.json",
+   "quelle": "ueber-uns.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 405,
+   "arten": {
+    "meta": 33,
+    "text": 316,
+    "aria": 37,
+    "alt": 3,
+    "ueberschrift": 16
+   },
+   "h1": [
+    "Über uns – Fliesenleger-Fachbetrieb Tezgel in Aßlar"
+   ],
+   "hash": "95fc779187252084"
+  }
+ }
+}

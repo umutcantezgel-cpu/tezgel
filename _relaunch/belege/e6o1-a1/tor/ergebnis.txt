@@ -1,0 +1,15 @@
+T2 · e6o1-a1 · live 9988385 → f7822f5 · Seiten /,/kontakt,/standorte,/blog,/leistungen,/bad,/ueber-uns,/fliesen · 2026-10-13T00:24:49+00:00
+01-sperrklinke 0 
+02-reinraum 0 
+03-bereich 0 {"html_abweichend":[],"fremd":[],"nur_vorher":[],"nur_nachher":[],"css_weg":161,"css_neu":0,"keyframes_weg":["pulse","spin"],"keyframes_neu":[]}
+04-werte 0 Bericht: _relaunch/belege/e6o1-a1/tor/werte/2026-10-13T00-26-55-812Z.json
+05-altsystem 0 
+06-texte2 0 → belege/e6o1-a1/tor/06-texte2-vergleich.json
+07-server 0 
+08-axe 0 ernst/kritisch auf den Seiten des Schritts 0
+09-a11y-zusatz-lauf 0 forced {"ohne_grenze":64,"davon_mit_grafik":64,"felder_ohne_grenze":6,"laeufe":16,"fehler":0} ohnejs {"text_unter_80":2,"erster_bildschirm_versteckt":0,"erster_bildschirm_ebenso_mit_js":0,"navigation_fehlt":0,"kopf_ohne_interne_links":0,"laeufe":16,"fehler":0} 
+10-wortbruch 0 Wortbrüche: 0 {}
+11-fotos-lauf 0 {"aufnahmen":32,"fehler":0,"nicht200":0,"ueberlauf":0,"konsole":0}
+12-specs 0 [1A[2K  26 skipped   380 passed (7.6m) 
+13-pixel 0 pixel: 12 Vergleiche · abweichend 1
+T2 GRÜN (automatische Stufen) · Sichtung und a11y-Kennzahlen: /home/user/tezgel/_relaunch/belege/e6o1-a1/tor
