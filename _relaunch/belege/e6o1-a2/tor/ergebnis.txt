@@ -1,0 +1,15 @@
+T2 · e6o1-a2 · live f7822f5 → 51f2cad · Seiten /,/kontakt,/standorte,/leistungen,/bad,/ueber-uns,/blog,/fliesen · 2026-10-13T01:16:55+00:00
+01-sperrklinke 0 
+02-reinraum 0 
+03-bereich 0 {"html_abweichend":[],"fremd":[],"nur_vorher":[],"nur_nachher":[],"css_weg":0,"css_neu":0,"keyframes_weg":[],"keyframes_neu":[]}
+04-werte 0 Bericht: _relaunch/belege/e6o1-a2/tor/werte/2026-10-13T01-18-37-474Z.json
+05-altsystem 0 
+06-texte2 0 → belege/e6o1-a2/tor/06-texte2-vergleich.json
+07-server 0 
+08-axe 0 ernst/kritisch auf den Seiten des Schritts 0
+09-a11y-zusatz-lauf 0 forced {"ohne_grenze":64,"davon_mit_grafik":64,"felder_ohne_grenze":6,"laeufe":16,"fehler":0} ohnejs {"text_unter_80":2,"erster_bildschirm_versteckt":0,"erster_bildschirm_ebenso_mit_js":0,"navigation_fehlt":0,"kopf_ohne_interne_links":0,"laeufe":16,"fehler":0} 
+10-wortbruch 0 Wortbrüche: 0 {}
+11-fotos-lauf 0 {"aufnahmen":32,"fehler":0,"nicht200":0,"ueberlauf":0,"konsole":0}
+12-specs 0 [1A[2K  26 skipped   380 passed (7.8m) 
+13-pixel 0 pixel: 12 Vergleiche · abweichend 0
+T2 GRÜN (automatische Stufen) · Sichtung und a11y-Kennzahlen: /home/user/tezgel/_relaunch/belege/e6o1-a2/tor

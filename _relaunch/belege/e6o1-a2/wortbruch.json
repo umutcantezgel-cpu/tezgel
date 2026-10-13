@@ -1,0 +1,22 @@
+{
+ "base": "http://127.0.0.1:4368",
+ "seiten": [
+  "/",
+  "/kontakt",
+  "/standorte",
+  "/leistungen",
+  "/bad",
+  "/ueber-uns",
+  "/blog",
+  "/fliesen"
+ ],
+ "breiten": [
+  320,
+  375,
+  768,
+  1024,
+  1440,
+  1920
+ ],
+ "funde": []
+}
