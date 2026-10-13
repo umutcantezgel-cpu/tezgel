@@ -1,0 +1,27 @@
+GELOESCHT src/components/CookieConsent.tsx | Importeure: 0 | Textsuche: src/components/common/ConsentManager.jsx:3:import CookieConsent from "./CookieConsent";
+GELOESCHT src/components/animations/HeartbeatCTA.tsx | Importeure: 0 | Textsuche: 0 Treffer
+GELOESCHT src/components/common/GoogleMap.tsx | Importeure: 0 | Textsuche: 0 Treffer
+GELOESCHT src/components/common/PageWrapper.jsx | Importeure: 0 | Textsuche: 0 Treffer
+GELOESCHT src/components/common/TileCraftIcons.jsx | Importeure: 0 | Textsuche: 0 Treffer
+GELOESCHT src/components/common/WaterCursor.tsx | Importeure: 0 | Textsuche: 0 Treffer
+GELOESCHT src/components/common/WhatsAppButton.tsx | Importeure: 0 | Textsuche: 0 Treffer
+GELOESCHT src/components/layout/FloatingDock.tsx | Importeure: 0 | Textsuche: 0 Treffer
+GELOESCHT src/components/maps/ContactMapWrapper.tsx | Importeure: 0 | Textsuche: 0 Treffer
+GELOESCHT src/components/providers/MotionProvider.tsx | Importeure: 0 | Textsuche: 0 Treffer
+GELOESCHT src/components/providers/UIProvider.tsx | Importeure: 0 | Textsuche: 0 Treffer
+GELOESCHT src/components/sections/home/ContactSection.tsx | Importeure: 0 | Textsuche: 0 Treffer
+GELOESCHT src/components/trust/TrustBadges.tsx | Importeure: 0 | Textsuche: 0 Treffer
+GELOESCHT src/components/trust/TrustSignals.tsx | Importeure: 0 | Textsuche: 0 Treffer
+GELOESCHT src/components/ui/AnimatedNumber.tsx | Importeure: 0 | Textsuche: 0 Treffer
+GELOESCHT src/components/ui/GradientText.tsx | Importeure: 0 | Textsuche: 0 Treffer
+GELOESCHT src/components/ui/OptimizedImage.tsx | Importeure: 0 | Textsuche: 0 Treffer
+GELOESCHT src/components/ui/RotatingText.tsx | Importeure: 0 | Textsuche: 0 Treffer
+GELOESCHT src/components/ui/SpotlightCard.tsx | Importeure: 0 | Textsuche: 0 Treffer
+GELOESCHT src/components/ui/TiltCard.tsx | Importeure: 0 | Textsuche: 0 Treffer
+GELOESCHT src/components/ui/WaterCursor.tsx | Importeure: 0 | Textsuche: 0 Treffer
+GELOESCHT src/lib/indexnow.ts | Importeure: 0 | Textsuche: 0 Treffer
+GELOESCHT src/lib/physics/widgetPhysicsCoordinator.ts | Importeure: 0 | Textsuche: 0 Treffer
+GELOESCHT src/utils/index.js | Importeure: 0 | Textsuche: 0 Treffer
+GELOESCHT src/utils/iconMapper.jsx | Importeure: 0 | Textsuche: 0 Treffer
+Hinweis: Textsuche-Treffer src/components/common/ConsentManager.jsx:3 './CookieConsent' loest auf src/components/common/CookieConsent.tsx auf (lebend, bleibt), nicht auf die geloeschte src/components/CookieConsent.tsx (Resolver: 0 Importeure).
+Leere Ordner entfernt: src/components/animations, src/components/sections/home, src/lib/physics, src/utils

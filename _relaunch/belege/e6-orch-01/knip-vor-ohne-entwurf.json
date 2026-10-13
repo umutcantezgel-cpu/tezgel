@@ -1,0 +1,8129 @@
+{
+  "issues": [
+    {
+      "file": "src/components/CookieConsent.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/CookieConsent.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/lib/indexnow.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/lib/indexnow.ts"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/utils/iconMapper.jsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/utils/iconMapper.jsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/utils/index.js",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/utils/index.js"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/common/GoogleMap.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/common/GoogleMap.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/common/PageWrapper.jsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/common/PageWrapper.jsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/common/TileCraftIcons.jsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/common/TileCraftIcons.jsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/common/WaterCursor.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/common/WaterCursor.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/common/WhatsAppButton.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/common/WhatsAppButton.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/icons/ersatz.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/icons/ersatz.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/icons/zuordnung.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/icons/zuordnung.ts"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/layout/FloatingDock.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/layout/FloatingDock.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/Bildfeld.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/Bildfeld.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/Kennwerte.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/Kennwerte.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/RatgeberListe.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/RatgeberListe.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/Zeitband.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/Zeitband.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/animations/HeartbeatCTA.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/animations/HeartbeatCTA.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/maps/ContactMapWrapper.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/maps/ContactMapWrapper.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/providers/MotionProvider.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/providers/MotionProvider.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/providers/UIProvider.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/providers/UIProvider.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/trust/TrustBadges.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/trust/TrustBadges.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/trust/TrustSignals.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/trust/TrustSignals.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/ui/AnimatedNumber.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/ui/AnimatedNumber.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/ui/GradientText.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/ui/GradientText.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/ui/OptimizedImage.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/ui/OptimizedImage.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/ui/RotatingText.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/ui/RotatingText.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/ui/SpotlightCard.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/ui/SpotlightCard.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/ui/TiltCard.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/ui/TiltCard.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/ui/WaterCursor.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/ui/WaterCursor.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/lib/kern/icons.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/lib/kern/icons.ts"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/lib/physics/widgetPhysicsCoordinator.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/lib/physics/widgetPhysicsCoordinator.ts"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/lib/polyfills/empty.js",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/lib/polyfills/empty.js"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(bestand)/werkstatt-schaufenster/page.dev.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(bestand)/werkstatt-schaufenster/page.dev.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/einwilligung/KartenPlatzhalter.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/einwilligung/KartenPlatzhalter.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/formulare/AnfrageFunnel.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/formulare/AnfrageFunnel.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/formulare/Badanfrage.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/formulare/Badanfrage.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/formulare/HeroKontakt.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/formulare/HeroKontakt.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/formulare/Konfigurator.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/formulare/Konfigurator.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/formulare/Preisrechner.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/formulare/Preisrechner.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/formulare/ProjektCheck.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/formulare/ProjektCheck.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/formulare/Schnellanfrage.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/formulare/Schnellanfrage.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/formulare/TerminAnfrage.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/formulare/TerminAnfrage.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/formulare/TerminKalender.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/formulare/TerminKalender.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/start/Ablauf.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/start/Ablauf.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/start/Abschluss.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/start/Abschluss.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/start/Anfrage.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/start/Anfrage.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/start/Fachbereiche.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/start/Fachbereiche.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/start/Fachgewerke.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/start/Fachgewerke.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/start/Fragen.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/start/Fragen.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/start/Grossformat.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/start/Grossformat.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/start/Servicegebiet.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/start/Servicegebiet.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/start/Stimmen.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/start/Stimmen.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/start/Vertrauen.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/start/Vertrauen.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/motive/Verband.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/motive/Verband.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/motive/VerlegeplanBad.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/motive/VerlegeplanBad.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/sections/home/ContactSection.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/sections/home/ContactSection.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(bestand)/werkstatt-schaufenster/bausteine/page.dev.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(bestand)/werkstatt-schaufenster/bausteine/page.dev.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(bestand)/werkstatt-schaufenster/merkliste/page.dev.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(bestand)/werkstatt-schaufenster/merkliste/page.dev.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(bestand)/werkstatt-schaufenster/schritte/page.dev.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(bestand)/werkstatt-schaufenster/schritte/page.dev.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(bestand)/werkstatt-schaufenster/szene/page.dev.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(bestand)/werkstatt-schaufenster/szene/page.dev.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(bestand)/werkstatt-schaufenster/tabelle/page.dev.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(bestand)/werkstatt-schaufenster/tabelle/page.dev.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/bad/page.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/bad/page.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/blog/page.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/blog/page.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/kontakt/page.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/kontakt/page.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/leistungen/page.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/leistungen/page.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/p3-03/Probe.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/p3-03/Probe.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/p3-03/page.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/p3-03/page.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/p3-04/page.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/p3-04/page.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/p3-05/page.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/p3-05/page.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/p3-06-b/page.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/p3-06-b/page.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/p3-07/page.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/p3-07/page.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/p3-08/Vorschau.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/p3-08/Vorschau.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/p3-08/page.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/p3-08/page.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/p3-09-b/page.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/p3-09-b/page.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/p3-10/page.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/p3-10/page.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/p3-11/page.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/p3-11/page.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/p3-12/page.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/p3-12/page.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/p3-13-a/page.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/p3-13-a/page.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/p3-13-b/page.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/p3-13-b/page.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/p4-01/Badsanierung.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/p4-01/Badsanierung.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/p4-01/Din18534.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/p4-01/Din18534.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/p4-01/Zustaende.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/p4-01/Zustaende.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/p4-01/page.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/p4-01/page.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/p4-02/Artikel.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/p4-02/Artikel.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/p4-02/Detail.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/p4-02/Detail.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/p4-02/Liste.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/p4-02/Liste.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/p4-02/Uebersicht.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/p4-02/Uebersicht.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/p4-02/daten.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/p4-02/daten.ts"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/p4-02/page.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/p4-02/page.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/p4-03/page.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/p4-03/page.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/p4-04/page.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/p4-04/page.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/p4-05a/page.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/p4-05a/page.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/p4-05b/page.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/p4-05b/page.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/p4-05c/page.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/p4-05c/page.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/standorte/page.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/standorte/page.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/start/page.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/start/page.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/app/(kern)/_entwurf/ueber-uns/page.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/app/(kern)/_entwurf/ueber-uns/page.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/formulare/b/AnfrageFunnelAnsicht.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/formulare/b/AnfrageFunnelAnsicht.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/formulare/b/FeldMitEinheit.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/formulare/b/FeldMitEinheit.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/formulare/b/PreisrechnerAnsicht.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/formulare/b/PreisrechnerAnsicht.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/formulare/b/TextKnopf.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/formulare/b/TextKnopf.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/formulare/b/Vorschau.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/formulare/b/Vorschau.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/formulare/b/useFokusBeiWechsel.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/formulare/b/useFokusBeiWechsel.ts"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/formulare/a/Erfolgszeichen.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/formulare/a/Erfolgszeichen.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/formulare/a/Vorschau.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/formulare/a/Vorschau.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/formulare/a/useFokusWechsel.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/formulare/a/useFokusWechsel.ts"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/formulare/d/KonfiguratorAnsicht.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/formulare/d/KonfiguratorAnsicht.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/formulare/d/KonfiguratorErgebnis.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/formulare/d/KonfiguratorErgebnis.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/formulare/d/Vorschau.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/formulare/d/Vorschau.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/formulare/c/BadanfrageAnsicht.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/formulare/c/BadanfrageAnsicht.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/formulare/c/ProjektCheckAnsicht.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/formulare/c/ProjektCheckAnsicht.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/formulare/c/Regler.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/formulare/c/Regler.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/formulare/c/Vorschau.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/formulare/c/Vorschau.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/formulare/c/raster.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/formulare/c/raster.ts"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/formulare/e/TerminAnfrageAnsicht.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/formulare/e/TerminAnfrageAnsicht.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/formulare/e/TerminKalenderAnsicht.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/formulare/e/TerminKalenderAnsicht.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/formulare/e/Vorschau.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/formulare/e/Vorschau.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/start/einstieg-b/Einstieg.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/start/einstieg-b/Einstieg.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/start/einstieg-b/Laser.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/start/einstieg-b/Laser.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/start/einstieg-b/Plan.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/start/einstieg-b/Plan.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/start/einstieg-b/Vorschau.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/start/einstieg-b/Vorschau.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/start/vertrauen/KarteImBlick.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/start/vertrauen/KarteImBlick.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/start/vertrauen/Karussell.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/start/vertrauen/Karussell.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/start/vertrauen/MonoZahlen.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/start/vertrauen/MonoZahlen.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/start/vertrauen/Sterne.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/start/vertrauen/Sterne.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/start/vertrauen/stimmen-daten.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/start/vertrauen/stimmen-daten.ts"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/motive/plaene/Abdichtung.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/motive/plaene/Abdichtung.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/motive/plaene/Bad.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/motive/plaene/Bad.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/motive/plaene/Balkon.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/motive/plaene/Balkon.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/motive/plaene/Dusche.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/motive/plaene/Dusche.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/motive/plaene/Flur.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/motive/plaene/Flur.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/motive/plaene/Fussbodenheizung.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/motive/plaene/Fussbodenheizung.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/motive/plaene/Grossformat.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/motive/plaene/Grossformat.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/motive/plaene/Holzoptik.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/motive/plaene/Holzoptik.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/motive/plaene/Kreuzfuge.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/motive/plaene/Kreuzfuge.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/motive/plaene/Naturstein.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/motive/plaene/Naturstein.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/motive/plaene/Planblatt.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/motive/plaene/Planblatt.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/motive/plaene/Reparatur.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/motive/plaene/Reparatur.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/motive/plaene/Stelzlager.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/motive/plaene/Stelzlager.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/motive/plaene/Treppe.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/motive/plaene/Treppe.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/motive/plaene/Verlegemuster.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/motive/plaene/Verlegemuster.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/motive/plaene/Wandnische.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/motive/plaene/Wandnische.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/motive/plaene/Wohnen.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/motive/plaene/Wohnen.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/motive/plaene/geometrie.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/motive/plaene/geometrie.ts"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/motive/plaene/index.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/motive/plaene/index.ts"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/motive/vignetten/Aussen.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/motive/vignetten/Aussen.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/motive/vignetten/Bad.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/motive/vignetten/Bad.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/motive/vignetten/Untergrund.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/motive/vignetten/Untergrund.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/motive/vignetten/Wohnen.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/motive/vignetten/Wohnen.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/motive/vignetten/index.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/motive/vignetten/index.ts"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/motive/vignetten/zeichnen.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/motive/vignetten/zeichnen.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/artikel/Inhaltsverzeichnis.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/artikel/Inhaltsverzeichnis.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/artikel/Satz.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/artikel/Satz.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/artikel/Teile.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/artikel/Teile.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/artikel/Teilen.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/artikel/Teilen.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/artikel/Verwandte.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/artikel/Verwandte.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/artikel/index.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/artikel/index.ts"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/detail/Bestandteile.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/detail/Bestandteile.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/detail/Randfeld.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/detail/Randfeld.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/detail/Raster.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/detail/Raster.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/detail/Steckbrief.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/detail/Steckbrief.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/detail/Umfang.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/detail/Umfang.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/detail/Vorschautafel.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/detail/Vorschautafel.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/detail/index.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/detail/index.ts"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/fachseite/Ablauf.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/fachseite/Ablauf.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/fachseite/Abschluss.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/fachseite/Abschluss.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/fachseite/Abschnitt.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/fachseite/Abschnitt.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/fachseite/Anfrage.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/fachseite/Anfrage.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/fachseite/Einstieg.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/fachseite/Einstieg.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/fachseite/Faktenfeld.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/fachseite/Faktenfeld.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/fachseite/Felder.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/fachseite/Felder.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/fachseite/Fragen.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/fachseite/Fragen.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/fachseite/Knopfreihe.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/fachseite/Knopfreihe.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/fachseite/Mass.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/fachseite/Mass.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/fachseite/Merkfeld.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/fachseite/Merkfeld.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/fachseite/Notiz.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/fachseite/Notiz.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/fachseite/Punkte.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/fachseite/Punkte.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/fachseite/Qualitaetsversprechen.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/fachseite/Qualitaetsversprechen.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/fachseite/Querverweise.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/fachseite/Querverweise.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/fachseite/Schriftfeld.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/fachseite/Schriftfeld.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/fachseite/Stimme.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/fachseite/Stimme.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/fachseite/Tabelle.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/fachseite/Tabelle.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/fachseite/Vorschau.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/fachseite/Vorschau.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/fachseite/index.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/fachseite/index.ts"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/fachseite/typen.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/fachseite/typen.ts"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/liste/Beitragsliste.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/liste/Beitragsliste.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/liste/Bild.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/liste/Bild.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/liste/Filterleiste.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/liste/Filterleiste.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/liste/Kopf.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/liste/Kopf.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/liste/index.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/liste/index.ts"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/teile/Abschnitt.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/teile/Abschnitt.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/teile/Einstieg.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/teile/Einstieg.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/teile/Felder.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/teile/Felder.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/teile/Fugenraster.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/teile/Fugenraster.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/teile/Handlungsfeld.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/teile/Handlungsfeld.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/teile/Knopfreihe.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/teile/Knopfreihe.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/teile/Mass.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/teile/Mass.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/teile/Pfeillink.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/teile/Pfeillink.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/teile/PlanDerSeite.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/teile/PlanDerSeite.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/teile/Punkte.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/teile/Punkte.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/teile/Schriftfeld.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/teile/Schriftfeld.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/teile/Verweise.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/teile/Verweise.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/teile/Vorschau.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/teile/Vorschau.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/teile/index.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/teile/index.ts"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/teile/satz.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/teile/satz.ts"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/teile/typen.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/teile/typen.ts"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/uebersicht/Abschnitt.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/uebersicht/Abschnitt.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/uebersicht/Einstieg.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/uebersicht/Einstieg.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/uebersicht/Felder.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/uebersicht/Felder.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/uebersicht/Projektband.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/uebersicht/Projektband.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/uebersicht/Verzeichnis.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/uebersicht/Verzeichnis.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/uebersicht/Weiterlesen.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/uebersicht/Weiterlesen.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/vorlagen/uebersicht/index.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/vorlagen/uebersicht/index.ts"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/bad/Einstieg.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/bad/Einstieg.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/bad/Kategorien.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/bad/Kategorien.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/bad/Leistungen.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/bad/Leistungen.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/bad/Norm.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/bad/Norm.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/bad/Schrittfuge.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/bad/Schrittfuge.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/bad/Station.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/bad/Station.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/bad/Werkzeuge.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/bad/Werkzeuge.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/bad/daten.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/bad/daten.ts"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/blog/BlogListe.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/blog/BlogListe.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/blog/Filter.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/blog/Filter.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/blog/ListeAnsicht.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/blog/ListeAnsicht.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/blog/bilder.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/blog/bilder.ts"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/kontakt/Anfrage.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/kontakt/Anfrage.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/kontakt/Ansprechpartner.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/kontakt/Ansprechpartner.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/kontakt/Karte.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/kontakt/Karte.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/kontakt/Kontaktblatt.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/kontakt/Kontaktblatt.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/kontakt/Kopf.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/kontakt/Kopf.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/kontakt/Qualitaet.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/kontakt/Qualitaet.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/kontakt/Standort.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/kontakt/Standort.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/leistungen/Ablauf.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/leistungen/Ablauf.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/leistungen/Anfrage.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/leistungen/Anfrage.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/leistungen/Einstieg.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/leistungen/Einstieg.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/leistungen/Gewerke.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/leistungen/Gewerke.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/standorte/Abschnitte.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/standorte/Abschnitte.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/standorte/Karten.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/standorte/Karten.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/standorte/Kopfblatt.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/standorte/Kopfblatt.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/standorte/Register.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/standorte/Register.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/standorte/Vorschau.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/standorte/Vorschau.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/standorte/daten.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/standorte/daten.ts"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/ueber-uns/Betrieb.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/ueber-uns/Betrieb.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/ueber-uns/Einstieg.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/ueber-uns/Einstieg.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/ueber-uns/Geschichte.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/ueber-uns/Geschichte.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/seiten/ueber-uns/Werte.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [
+        {
+          "name": "src/components/kern/seiten/ueber-uns/Werte.tsx"
+        }
+      ],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "package.json",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [
+        {
+          "name": "@googlemaps/js-api-loader",
+          "line": 19,
+          "col": 6,
+          "pos": 614
+        },
+        {
+          "name": "@phosphor-icons/react",
+          "line": 20,
+          "col": 6,
+          "pos": 657
+        },
+        {
+          "name": "@types/google.maps",
+          "line": 21,
+          "col": 6,
+          "pos": 697
+        },
+        {
+          "name": "framer-motion",
+          "line": 24,
+          "col": 6,
+          "pos": 800
+        }
+      ],
+      "devDependencies": [
+        {
+          "name": "tailwindcss",
+          "line": 42,
+          "col": 6,
+          "pos": 1276
+        }
+      ],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/lib/email/validation.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "CustomerContactSchema",
+          "line": 32,
+          "col": 14,
+          "pos": 873
+        },
+        {
+          "name": "BadDetailsSchema",
+          "line": 76,
+          "col": 14,
+          "pos": 2257
+        },
+        {
+          "name": "FliesenDetailsSchema",
+          "line": 92,
+          "col": 14,
+          "pos": 3034
+        },
+        {
+          "name": "TerminDetailsSchema",
+          "line": 108,
+          "col": 14,
+          "pos": 3768
+        },
+        {
+          "name": "ProjektCheckDetailsSchema",
+          "line": 117,
+          "col": 14,
+          "pos": 4093
+        },
+        {
+          "name": "InquirySubmissionSchema",
+          "line": 129,
+          "col": 14,
+          "pos": 4510
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/lib/maps/getMapEmbedUrl.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "TEZGEL_HQ_ADDRESS",
+          "line": 34,
+          "col": 14,
+          "pos": 1410
+        },
+        {
+          "name": "getGoogleMapsEmbedUrl",
+          "line": 263,
+          "col": 17,
+          "pos": 9628
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/config/posts.js",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [
+        [
+          {
+            "name": "posts",
+            "line": 17,
+            "col": 14,
+            "pos": 1124
+          },
+          {
+            "name": "default",
+            "line": 33,
+            "col": 16,
+            "pos": 1567
+          }
+        ]
+      ],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "default",
+          "line": 33,
+          "col": 16,
+          "pos": 1567
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/config/projects.js",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [
+        [
+          {
+            "name": "PORTFOLIO_PROJECTS",
+            "line": 10,
+            "col": 14,
+            "pos": 478
+          },
+          {
+            "name": "projects",
+            "line": 115,
+            "col": 14,
+            "pos": 5639
+          },
+          {
+            "name": "default",
+            "line": 117,
+            "col": 16,
+            "pos": 5686
+          }
+        ]
+      ],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "projects",
+          "line": 115,
+          "col": 14,
+          "pos": 5639
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/lib/schema.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [
+        [
+          {
+            "name": "buildFaqPageNode",
+            "line": 531,
+            "col": 17,
+            "pos": 14829
+          },
+          {
+            "name": "buildFaqNode",
+            "line": 546,
+            "col": 14,
+            "pos": 15156
+          }
+        ]
+      ],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "WEBSITE_ID",
+          "line": 8,
+          "col": 14,
+          "pos": 321
+        },
+        {
+          "name": "FOUNDER_ID",
+          "line": 9,
+          "col": 14,
+          "pos": 371
+        },
+        {
+          "name": "LOCAL_BUSINESS_ID",
+          "line": 10,
+          "col": 14,
+          "pos": 421
+        },
+        {
+          "name": "LOGO_ID",
+          "line": 11,
+          "col": 14,
+          "pos": 485
+        },
+        {
+          "name": "MAIN_SERVICE_PACKAGE_ID",
+          "line": 13,
+          "col": 14,
+          "pos": 590
+        },
+        {
+          "name": "buildOrganizationNode",
+          "line": 69,
+          "col": 17,
+          "pos": 1692
+        },
+        {
+          "name": "buildWebSiteNode",
+          "line": 102,
+          "col": 17,
+          "pos": 2668
+        },
+        {
+          "name": "buildFounderNode",
+          "line": 135,
+          "col": 17,
+          "pos": 3649
+        },
+        {
+          "name": "buildLocalBusinessNode",
+          "line": 163,
+          "col": 17,
+          "pos": 4416
+        },
+        {
+          "name": "buildCountryNode",
+          "line": 227,
+          "col": 17,
+          "pos": 6609
+        },
+        {
+          "name": "buildFaqPageNode",
+          "line": 531,
+          "col": 17,
+          "pos": 14829
+        },
+        {
+          "name": "buildHowToNode",
+          "line": 611,
+          "col": 17,
+          "pos": 16945
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "FaqItem",
+          "line": 26,
+          "col": 18,
+          "pos": 848
+        },
+        {
+          "name": "HowToStepItem",
+          "line": 45,
+          "col": 18,
+          "pos": 1170
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/config/topics.js",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [
+        [
+          {
+            "name": "TOPIC_HUBS",
+            "line": 6,
+            "col": 14,
+            "pos": 240
+          },
+          {
+            "name": "default",
+            "line": 93,
+            "col": 16,
+            "pos": 5691
+          }
+        ]
+      ],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "default",
+          "line": 93,
+          "col": 16,
+          "pos": 5691
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/config/musterbaeder.js",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [
+        [
+          {
+            "name": "MUSTERBAEDER",
+            "line": 6,
+            "col": 14,
+            "pos": 321
+          },
+          {
+            "name": "default",
+            "line": 668,
+            "col": 16,
+            "pos": 29550
+          }
+        ]
+      ],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "ROOM_SIZES",
+          "line": 643,
+          "col": 14,
+          "pos": 28443
+        },
+        {
+          "name": "default",
+          "line": 668,
+          "col": 16,
+          "pos": 29550
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/kopf-b/Kopf.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "KopfRahmen",
+          "line": 39,
+          "col": 17,
+          "pos": 2690
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "KopfRahmenProps",
+          "line": 32,
+          "col": 13,
+          "pos": 2391
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/fuss/WhatsAppKanal.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "FREIHALTEN",
+          "line": 28,
+          "col": 14,
+          "pos": 2212
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/basis/index.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "LADETEXT",
+          "line": 2,
+          "col": 28,
+          "pos": 135
+        },
+        {
+          "name": "SendeKnopf",
+          "line": 3,
+          "col": 21,
+          "pos": 295
+        },
+        {
+          "name": "Feld",
+          "line": 7,
+          "col": 21,
+          "pos": 744
+        },
+        {
+          "name": "Mehrzeilig",
+          "line": 8,
+          "col": 21,
+          "pos": 838
+        },
+        {
+          "name": "Auswahl",
+          "line": 9,
+          "col": 21,
+          "pos": 936
+        },
+        {
+          "name": "Auswahlknopf",
+          "line": 11,
+          "col": 21,
+          "pos": 1126
+        },
+        {
+          "name": "Feldgruppe",
+          "line": 12,
+          "col": 21,
+          "pos": 1230
+        },
+        {
+          "name": "FeldMeldung",
+          "line": 13,
+          "col": 10,
+          "pos": 1317
+        },
+        {
+          "name": "Akkordeon",
+          "line": 14,
+          "col": 10,
+          "pos": 1401
+        },
+        {
+          "name": "Hinweis",
+          "line": 15,
+          "col": 21,
+          "pos": 1521
+        },
+        {
+          "name": "Fugenlinie",
+          "line": 18,
+          "col": 21,
+          "pos": 1850
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "KnopfProps",
+          "line": 2,
+          "col": 43,
+          "pos": 150
+        },
+        {
+          "name": "KnopfAlsLink",
+          "line": 2,
+          "col": 60,
+          "pos": 167
+        },
+        {
+          "name": "KnopfAlsButton",
+          "line": 2,
+          "col": 79,
+          "pos": 186
+        },
+        {
+          "name": "KnopfArt",
+          "line": 2,
+          "col": 100,
+          "pos": 207
+        },
+        {
+          "name": "KnopfGroesse",
+          "line": 2,
+          "col": 115,
+          "pos": 222
+        },
+        {
+          "name": "SendeKnopfProps",
+          "line": 3,
+          "col": 38,
+          "pos": 312
+        },
+        {
+          "name": "TextlinkProps",
+          "line": 6,
+          "col": 36,
+          "pos": 667
+        },
+        {
+          "name": "FeldProps",
+          "line": 7,
+          "col": 32,
+          "pos": 755
+        },
+        {
+          "name": "FeldArt",
+          "line": 7,
+          "col": 48,
+          "pos": 771
+        },
+        {
+          "name": "MehrzeiligProps",
+          "line": 8,
+          "col": 38,
+          "pos": 855
+        },
+        {
+          "name": "AuswahlProps",
+          "line": 9,
+          "col": 35,
+          "pos": 950
+        },
+        {
+          "name": "AnkreuzfeldProps",
+          "line": 10,
+          "col": 39,
+          "pos": 1043
+        },
+        {
+          "name": "AuswahlknopfProps",
+          "line": 11,
+          "col": 40,
+          "pos": 1145
+        },
+        {
+          "name": "FeldgruppeProps",
+          "line": 12,
+          "col": 38,
+          "pos": 1247
+        },
+        {
+          "name": "FeldAngaben",
+          "line": 13,
+          "col": 28,
+          "pos": 1335
+        },
+        {
+          "name": "AkkordeonEintragProps",
+          "line": 14,
+          "col": 44,
+          "pos": 1435
+        },
+        {
+          "name": "HinweisProps",
+          "line": 15,
+          "col": 35,
+          "pos": 1535
+        },
+        {
+          "name": "HinweisArt",
+          "line": 15,
+          "col": 54,
+          "pos": 1554
+        },
+        {
+          "name": "EtikettProps",
+          "line": 16,
+          "col": 35,
+          "pos": 1641
+        },
+        {
+          "name": "FeldrasterProps",
+          "line": 17,
+          "col": 39,
+          "pos": 1734
+        },
+        {
+          "name": "RasterfeldProps",
+          "line": 17,
+          "col": 61,
+          "pos": 1756
+        },
+        {
+          "name": "Breite",
+          "line": 17,
+          "col": 83,
+          "pos": 1778
+        },
+        {
+          "name": "FugenlinieProps",
+          "line": 18,
+          "col": 38,
+          "pos": 1867
+        },
+        {
+          "name": "Grund",
+          "line": 20,
+          "col": 32,
+          "pos": 2021
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/config/company.js",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [
+        [
+          {
+            "name": "team",
+            "line": 218,
+            "col": 14,
+            "pos": 9037
+          },
+          {
+            "name": "meinTeam",
+            "line": 257,
+            "col": 14,
+            "pos": 10776
+          }
+        ],
+        [
+          {
+            "name": "COMPANY_DATA",
+            "line": 6,
+            "col": 14,
+            "pos": 209
+          },
+          {
+            "name": "default",
+            "line": 259,
+            "col": 16,
+            "pos": 10809
+          }
+        ]
+      ],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "meinTeam",
+          "line": 257,
+          "col": 14,
+          "pos": 10776
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/ui/FAQAccordion.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "FaqAccordion",
+          "line": 86,
+          "col": 26,
+          "pos": 3424
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/shared/config/site.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [
+        [
+          {
+            "name": "SITE_CONFIG",
+            "line": 10,
+            "col": 14,
+            "pos": 461
+          },
+          {
+            "name": "default",
+            "line": 155,
+            "col": 16,
+            "pos": 4657
+          }
+        ]
+      ],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "default",
+          "line": 155,
+          "col": 16,
+          "pos": 4657
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "SiteConfig",
+          "line": 153,
+          "col": 13,
+          "pos": 4608
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/config/reviews.js",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [
+        [
+          {
+            "name": "REVIEWS",
+            "line": 29,
+            "col": 14,
+            "pos": 846
+          },
+          {
+            "name": "default",
+            "line": 166,
+            "col": 16,
+            "pos": 5753
+          }
+        ]
+      ],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "FEATURED_REVIEW_IDS",
+          "line": 161,
+          "col": 14,
+          "pos": 5568
+        },
+        {
+          "name": "getFeaturedReviews",
+          "line": 163,
+          "col": 14,
+          "pos": 5637
+        },
+        {
+          "name": "default",
+          "line": 166,
+          "col": 16,
+          "pos": 5753
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/contact/DirectContactCard.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [
+        [
+          {
+            "name": "DirectContactCard",
+            "line": 39,
+            "col": 17,
+            "pos": 1693
+          },
+          {
+            "name": "default",
+            "line": 89,
+            "col": 16,
+            "pos": 4158
+          }
+        ]
+      ],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "DirectContactCard",
+          "line": 39,
+          "col": 17,
+          "pos": 1693
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "DirectContactCardProps",
+          "line": 10,
+          "col": 18,
+          "pos": 602
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/contact/BookingCalendar.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [
+        [
+          {
+            "name": "BookingCalendar",
+            "line": 26,
+            "col": 17,
+            "pos": 1227
+          },
+          {
+            "name": "default",
+            "line": 300,
+            "col": 16,
+            "pos": 12899
+          }
+        ]
+      ],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "BookingCalendar",
+          "line": 26,
+          "col": 17,
+          "pos": 1227
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "BookingCalendarProps",
+          "line": 15,
+          "col": 18,
+          "pos": 820
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/lib/config.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [
+        [
+          {
+            "name": "siteConfig",
+            "line": 111,
+            "col": 14,
+            "pos": 2321
+          },
+          {
+            "name": "default",
+            "line": 228,
+            "col": 16,
+            "pos": 6153
+          }
+        ]
+      ],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "default",
+          "line": 228,
+          "col": 16,
+          "pos": 6153
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/maps/ServiceMapWrapper.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "STADT_KLASSEN",
+          "line": 19,
+          "col": 14,
+          "pos": 964
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/Schriftfeld.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "SchriftfeldBetrieb",
+          "line": 43,
+          "col": 17,
+          "pos": 1516
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/maps/InteractiveMap.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [
+        [
+          {
+            "name": "InteractiveMap",
+            "line": 29,
+            "col": 17,
+            "pos": 1094
+          },
+          {
+            "name": "default",
+            "line": 103,
+            "col": 16,
+            "pos": 3712
+          }
+        ]
+      ],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "InteractiveMap",
+          "line": 29,
+          "col": 17,
+          "pos": 1094
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "InteractiveMapProps",
+          "line": 11,
+          "col": 18,
+          "pos": 450
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/config/site.js",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [
+        [
+          {
+            "name": "siteConfig",
+            "line": 4,
+            "col": 14,
+            "pos": 111
+          },
+          {
+            "name": "default",
+            "line": 60,
+            "col": 16,
+            "pos": 2278
+          }
+        ]
+      ],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "default",
+          "line": 60,
+          "col": 16,
+          "pos": 2278
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/lib/schemaPyramid.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "HESSEN_GEO_HIERARCHY",
+          "line": 48,
+          "col": 14,
+          "pos": 1647
+        },
+        {
+          "name": "getStateHubSchema",
+          "line": 237,
+          "col": 17,
+          "pos": 6536
+        },
+        {
+          "name": "getCountyHubSchema",
+          "line": 262,
+          "col": 17,
+          "pos": 7284
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "CountyConfig",
+          "line": 34,
+          "col": 18,
+          "pos": 1420
+        },
+        {
+          "name": "StateConfig",
+          "line": 41,
+          "col": 18,
+          "pos": 1534
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/maps/LocalDominanceMap.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [
+        [
+          {
+            "name": "LocalDominanceMap",
+            "line": 37,
+            "col": 17,
+            "pos": 1881
+          },
+          {
+            "name": "default",
+            "line": 126,
+            "col": 16,
+            "pos": 5929
+          }
+        ]
+      ],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "LocalDominanceMap",
+          "line": 37,
+          "col": 17,
+          "pos": 1881
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "LocalDominanceMapProps",
+          "line": 15,
+          "col": 18,
+          "pos": 957
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/forms/LeadQuickForm.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [
+        [
+          {
+            "name": "LeadQuickForm",
+            "line": 59,
+            "col": 17,
+            "pos": 3416
+          },
+          {
+            "name": "default",
+            "line": 352,
+            "col": 16,
+            "pos": 15320
+          }
+        ]
+      ],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "LeadQuickForm",
+          "line": 59,
+          "col": 17,
+          "pos": 3416
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "LeadQuickFormProps",
+          "line": 26,
+          "col": 18,
+          "pos": 2067
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/lib/email/templates/components.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "renderEmailHeader",
+          "line": 83,
+          "col": 17,
+          "pos": 2853
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/lib/cookie-inventory.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "DATA_PROCESSING_INVENTORY",
+          "line": 133,
+          "col": 14,
+          "pos": 4204
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "DataProcessingEntry",
+          "line": 27,
+          "col": 18,
+          "pos": 829
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/ui/SkipNav.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [
+        [
+          {
+            "name": "SkipNav",
+            "line": 3,
+            "col": 17,
+            "pos": 185
+          },
+          {
+            "name": "default",
+            "line": 14,
+            "col": 16,
+            "pos": 551
+          }
+        ]
+      ],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "SkipNav",
+          "line": 3,
+          "col": 17,
+          "pos": 185
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/providers/ErrorBoundary.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [
+        [
+          {
+            "name": "ErrorBoundary",
+            "line": 16,
+            "col": 14,
+            "pos": 276
+          },
+          {
+            "name": "default",
+            "line": 62,
+            "col": 16,
+            "pos": 1847
+          }
+        ]
+      ],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "default",
+          "line": 62,
+          "col": 16,
+          "pos": 1847
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/common/ConsentManager.jsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "getStoredConsent",
+          "line": 6,
+          "col": 22,
+          "pos": 167
+        },
+        {
+          "name": "hasStoredConsent",
+          "line": 6,
+          "col": 40,
+          "pos": 185
+        },
+        {
+          "name": "default",
+          "line": 7,
+          "col": 16,
+          "pos": 220
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/icons/geometrie.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "FAMILIEN_NAMEN",
+          "line": 122,
+          "col": 14,
+          "pos": 7885
+        },
+        {
+          "name": "MARKEN_NAMEN",
+          "line": 123,
+          "col": 14,
+          "pos": 7957
+        },
+        {
+          "name": "ICON_NAMEN",
+          "line": 124,
+          "col": 14,
+          "pos": 8026
+        },
+        {
+          "name": "VOLLSATZ_NAMEN",
+          "line": 127,
+          "col": 14,
+          "pos": 8249
+        },
+        {
+          "name": "GRUNDSATZ_NAMEN",
+          "line": 130,
+          "col": 14,
+          "pos": 8468
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "IconTeil",
+          "line": 20,
+          "col": 13,
+          "pos": 1346
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/icons/Icon.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "ICON_GROESSEN",
+          "line": 13,
+          "col": 14,
+          "pos": 961
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "IconGroesse",
+          "line": 14,
+          "col": 13,
+          "pos": 1016
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/kopf-b/modell.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "liegtUnter",
+          "line": 68,
+          "col": 17,
+          "pos": 2587
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "Kategorie",
+          "line": 12,
+          "col": 13,
+          "pos": 467
+        },
+        {
+          "name": "Hervorhebung",
+          "line": 14,
+          "col": 13,
+          "pos": 533
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/config/navigation.js",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [
+        [
+          {
+            "name": "navigationLinks",
+            "line": 8,
+            "col": 14,
+            "pos": 291
+          },
+          {
+            "name": "default",
+            "line": 189,
+            "col": 16,
+            "pos": 9160
+          }
+        ]
+      ],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "default",
+          "line": 189,
+          "col": 16,
+          "pos": 9160
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/lib/whatsapp.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "formatWhatsAppNumber",
+          "line": 7,
+          "col": 17,
+          "pos": 246
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/lib/formulare/useWhatsAppKanal.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "getContextualMessage",
+          "line": 8,
+          "col": 17,
+          "pos": 501
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/lib/data/company.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [
+        [
+          {
+            "name": "companyInfo",
+            "line": 3,
+            "col": 14,
+            "pos": 63
+          },
+          {
+            "name": "default",
+            "line": 27,
+            "col": 16,
+            "pos": 874
+          }
+        ]
+      ],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "COMPANY_DATA",
+          "line": 26,
+          "col": 10,
+          "pos": 843
+        },
+        {
+          "name": "default",
+          "line": 27,
+          "col": 16,
+          "pos": 874
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/einwilligung/Banner.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "BannerAnsicht",
+          "line": 96,
+          "col": 17,
+          "pos": 5927
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "BannerAnsichtProps",
+          "line": 37,
+          "col": 13,
+          "pos": 3127
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/basis/Knopf.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "LADETEXT",
+          "line": 95,
+          "col": 14,
+          "pos": 5192
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "KnopfArt",
+          "line": 12,
+          "col": 13,
+          "pos": 965
+        },
+        {
+          "name": "KnopfGroesse",
+          "line": 13,
+          "col": 13,
+          "pos": 1016
+        },
+        {
+          "name": "KnopfAlsLink",
+          "line": 39,
+          "col": 13,
+          "pos": 2074
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/basis/SendeKnopf.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "default",
+          "line": 21,
+          "col": 25,
+          "pos": 1288
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "SendeKnopfProps",
+          "line": 16,
+          "col": 13,
+          "pos": 1122
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/basis/Feld.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "default",
+          "line": 25,
+          "col": 25,
+          "pos": 1362
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "FeldArt",
+          "line": 8,
+          "col": 13,
+          "pos": 646
+        },
+        {
+          "name": "FeldProps",
+          "line": 10,
+          "col": 13,
+          "pos": 725
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/basis/Mehrzeilig.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "default",
+          "line": 8,
+          "col": 25,
+          "pos": 469
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "MehrzeiligProps",
+          "line": 6,
+          "col": 13,
+          "pos": 352
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/basis/Auswahl.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "default",
+          "line": 10,
+          "col": 25,
+          "pos": 617
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "AuswahlProps",
+          "line": 8,
+          "col": 13,
+          "pos": 505
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/basis/Auswahlknopf.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "default",
+          "line": 21,
+          "col": 25,
+          "pos": 1293
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "AuswahlknopfProps",
+          "line": 12,
+          "col": 13,
+          "pos": 898
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/basis/Feldgruppe.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "default",
+          "line": 31,
+          "col": 25,
+          "pos": 1668
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "FeldgruppeProps",
+          "line": 11,
+          "col": 13,
+          "pos": 973
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/basis/Feldrahmen.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "Beschriftung",
+          "line": 66,
+          "col": 17,
+          "pos": 2897
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/basis/Akkordeon.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [
+        [
+          {
+            "name": "Akkordeon",
+            "line": 12,
+            "col": 17,
+            "pos": 751
+          },
+          {
+            "name": "default",
+            "line": 110,
+            "col": 16,
+            "pos": 4520
+          }
+        ]
+      ],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "Akkordeon",
+          "line": 12,
+          "col": 17,
+          "pos": 751
+        },
+        {
+          "name": "default",
+          "line": 110,
+          "col": 16,
+          "pos": 4520
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/basis/Hinweis.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "default",
+          "line": 34,
+          "col": 25,
+          "pos": 1660
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "HinweisArt",
+          "line": 9,
+          "col": 13,
+          "pos": 582
+        },
+        {
+          "name": "HinweisProps",
+          "line": 11,
+          "col": 13,
+          "pos": 638
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/basis/Feldraster.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [
+        [
+          {
+            "name": "Feldraster",
+            "line": 32,
+            "col": 17,
+            "pos": 1618
+          },
+          {
+            "name": "default",
+            "line": 67,
+            "col": 16,
+            "pos": 3130
+          }
+        ]
+      ],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "default",
+          "line": 67,
+          "col": 16,
+          "pos": 3130
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "Breite",
+          "line": 11,
+          "col": 13,
+          "pos": 624
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/basis/Fugenlinie.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "default",
+          "line": 18,
+          "col": 25,
+          "pos": 891
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "FugenlinieProps",
+          "line": 7,
+          "col": 13,
+          "pos": 501
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/lib/textRotation.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "hashString",
+          "line": 1,
+          "col": 17,
+          "pos": 16
+        },
+        {
+          "name": "seededRandom",
+          "line": 15,
+          "col": 17,
+          "pos": 428
+        },
+        {
+          "name": "shuffleArray",
+          "line": 24,
+          "col": 17,
+          "pos": 675
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/pricing/pricing.constants.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "ADDON_OPTIONS",
+          "line": 145,
+          "col": 14,
+          "pos": 4454
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/lib/email/templates/leadNotification.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "renderLeadNotificationEmail",
+          "line": 6,
+          "col": 17,
+          "pos": 156
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/lib/email/templates/clientConfirmation.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "renderClientConfirmationEmail",
+          "line": 6,
+          "col": 17,
+          "pos": 131
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/icons/namen.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "ICON_NAMEN",
+          "line": 2,
+          "col": 14,
+          "pos": 85
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/services/dataService.js",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "KEYS",
+          "line": 164,
+          "col": 14,
+          "pos": 5906
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/lib/formulare/useFliesenKonfigurator.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "AREA_ROOMS",
+          "line": 93,
+          "col": 14,
+          "pos": 4724
+        },
+        {
+          "name": "parseCount",
+          "line": 167,
+          "col": 14,
+          "pos": 7253
+        },
+        {
+          "name": "buildQuantityLines",
+          "line": 336,
+          "col": 17,
+          "pos": 17169
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/legal/MapConsentGate.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [
+        [
+          {
+            "name": "MapConsentGate",
+            "line": 34,
+            "col": 17,
+            "pos": 1329
+          },
+          {
+            "name": "default",
+            "line": 130,
+            "col": 16,
+            "pos": 5738
+          }
+        ]
+      ],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "MapConsentGate",
+          "line": 34,
+          "col": 17,
+          "pos": 1329
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/services/authService.js",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "ADMIN_DISABLED_MESSAGE",
+          "line": 20,
+          "col": 14,
+          "pos": 939
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/lib/blog/motive.js",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "KATEGORIE_MOTIV",
+          "line": 6,
+          "col": 14,
+          "pos": 466
+        },
+        {
+          "name": "BEITRAG_MOTIV",
+          "line": 17,
+          "col": 14,
+          "pos": 944
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/hooks/useConsent.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "DEFAULT_CONSENT",
+          "line": 23,
+          "col": 14,
+          "pos": 719
+        },
+        {
+          "name": "readConsentCookie",
+          "line": 33,
+          "col": 17,
+          "pos": 904
+        },
+        {
+          "name": "writeConsentCookie",
+          "line": 49,
+          "col": 17,
+          "pos": 1377
+        },
+        {
+          "name": "deleteConsentCookie",
+          "line": 66,
+          "col": 17,
+          "pos": 1987
+        },
+        {
+          "name": "deleteCookiesByCategory",
+          "line": 77,
+          "col": 17,
+          "pos": 2317
+        },
+        {
+          "name": "hasConsent",
+          "line": 259,
+          "col": 17,
+          "pos": 8114
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/basis/useLadeanzeige.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "LADE_VERZUG_MS",
+          "line": 6,
+          "col": 14,
+          "pos": 384
+        },
+        {
+          "name": "LADE_MINDEST_MS",
+          "line": 7,
+          "col": 14,
+          "pos": 419
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/config/team.js",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [
+        [
+          {
+            "name": "teamMembers",
+            "line": 7,
+            "col": 14,
+            "pos": 128
+          },
+          {
+            "name": "default",
+            "line": 30,
+            "col": 16,
+            "pos": 1044
+          }
+        ]
+      ],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "default",
+          "line": 30,
+          "col": 16,
+          "pos": 1044
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/schemas/validation.js",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [
+        {
+          "name": "projectSchema",
+          "line": 3,
+          "col": 14,
+          "pos": 41
+        },
+        {
+          "name": "blogPostSchema",
+          "line": 15,
+          "col": 14,
+          "pos": 594
+        }
+      ],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/lib/motion/register.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "Ausloeser",
+          "line": 4,
+          "col": 13,
+          "pos": 197
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/Merkliste.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "MerklisteEintrag",
+          "line": 10,
+          "col": 18,
+          "pos": 658
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/Tabelle.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "TabellenAusrichtung",
+          "line": 9,
+          "col": 13,
+          "pos": 640
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/Schrittfolge.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "SchrittfolgeSchritt",
+          "line": 9,
+          "col": 18,
+          "pos": 506
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/SzeneAblauf.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "SzeneSchritt",
+          "line": 11,
+          "col": 18,
+          "pos": 692
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/Hinweis.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "HinweisArt",
+          "line": 8,
+          "col": 13,
+          "pos": 395
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/lib/email/types.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "CustomerContact",
+          "line": 7,
+          "col": 18,
+          "pos": 190
+        },
+        {
+          "name": "BadSpecifics",
+          "line": 16,
+          "col": 18,
+          "pos": 339
+        },
+        {
+          "name": "FliesenSpecifics",
+          "line": 32,
+          "col": 18,
+          "pos": 685
+        },
+        {
+          "name": "TerminSpecifics",
+          "line": 48,
+          "col": 18,
+          "pos": 1043
+        },
+        {
+          "name": "ProjektCheckSpecifics",
+          "line": 57,
+          "col": 18,
+          "pos": 1212
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/lib/plaene/typen.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "Achse",
+          "line": 5,
+          "col": 13,
+          "pos": 253
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/lib/formulare/useBlogListe.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "BlogKategorie",
+          "line": 11,
+          "col": 13,
+          "pos": 845
+        },
+        {
+          "name": "BlogListe",
+          "line": 81,
+          "col": 13,
+          "pos": 3273
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/kopf-b/MobilBlatt.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [],
+      "enumMembers": [],
+      "exports": [],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [
+        {
+          "name": "MobilBlattProps",
+          "line": 23,
+          "col": 13,
+          "pos": 1185
+        }
+      ],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/lib/metadata.ts",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [
+        [
+          {
+            "name": "generatePageMetadata",
+            "line": 148,
+            "col": 17,
+            "pos": 5137
+          },
+          {
+            "name": "createMetadata",
+            "line": 200,
+            "col": 14,
+            "pos": 6711
+          }
+        ]
+      ],
+      "enumMembers": [],
+      "exports": [],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/config/services.js",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [
+        [
+          {
+            "name": "SERVICES",
+            "line": 4,
+            "col": 14,
+            "pos": 104
+          },
+          {
+            "name": "default",
+            "line": 137,
+            "col": 16,
+            "pos": 7350
+          }
+        ]
+      ],
+      "enumMembers": [],
+      "exports": [],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    },
+    {
+      "file": "src/components/kern/Feldraster.tsx",
+      "binaries": [],
+      "catalog": [],
+      "catalogReferences": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "duplicates": [
+        [
+          {
+            "name": "Feldraster",
+            "line": 11,
+            "col": 17,
+            "pos": 329
+          },
+          {
+            "name": "default",
+            "line": 21,
+            "col": 16,
+            "pos": 943
+          }
+        ]
+      ],
+      "enumMembers": [],
+      "exports": [],
+      "files": [],
+      "namespaceMembers": [],
+      "optionalPeerDependencies": [],
+      "types": [],
+      "unlisted": [],
+      "unresolved": []
+    }
+  ]
+}

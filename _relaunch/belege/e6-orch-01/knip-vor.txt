@@ -1,0 +1,95 @@
+E6-ORCH-01 · knip-Basis VOR dem Abbau (vor Schritt 1)
+=====================================================
+
+Zeitpunkt: 2026-10-12T23:48:01Z
+HEAD:      cbc3de2f342c4aef84b48f3e4f1a7f316a951d9c
+Baum:      `git status --short` vor und nach dem Lauf gleich: nur ` M CLAUDE.md` (liegt nicht im knip-Umfang).
+           Kein paralleler Schritt hatte zu diesem Zeitpunkt eine Datei geändert.
+Werkzeug:  knip 6.41.0 (_relaunch/werkzeuge/node_modules/.bin/knip), Node v22.22.0. Nichts installiert.
+Konfig:    _relaunch/werkzeuge/knip.json (unverändert, Schema-Verweis noch knip@5)
+Befehl:    _relaunch/werkzeuge/node_modules/.bin/knip --config _relaunch/werkzeuge/knip.json \
+             --reporter json --no-progress --no-exit-code
+           (im Repo-Wurzelordner; Laufzeit ≈ 2 s; stderr leer)
+Ergebnis:  knip-vor.json = Ausgabe des JSON-Reporters, nur mit JSON.stringify(…, null, 2) eingerückt
+           (Inhalt gegen die Rohausgabe auf Gleichheit geprüft). Der Text-Reporter liefert dieselben Zahlen.
+
+Zahlen (154 Einträge in issues[])
+---------------------------------
+Ungenutzte Dateien ............ 56
+Ungenutzte Abhängigkeiten ..... 4   (dependencies)
+Ungenutzte devDependencies .... 1
+Ungenutzte Exporte ............ 148
+Ungenutzte exportierte Typen .. 139
+Doppelte Exporte .............. 28
+unlisted / unresolved / binaries / enumMembers / namespaceMembers / catalog: 0
+
+Ungenutzte Dateien (56)
+-----------------------
+25  genau die Liste aus Schritt 1 (karte-plan-kritik.json, plan.schritte[nr=1].dateien); alle 25 enthalten,
+    keine fehlt.
+22  flache bzw. ruhende Kern-Dateien unter src/components/kern/** (Bildfeld, Kennwerte, RatgeberListe,
+    Zeitband, formulare/Konfigurator, formulare/TerminAnfrage, seiten/standorte/Vorschau,
+    vorlagen/{artikel,detail,fachseite,liste,uebersicht}/…).
+ 6  src/app/(bestand)/werkstatt-schaufenster/**/page.dev.tsx. FEHLALARM: Dev-Seiten (pageExtensions 'dev.tsx' nur
+    unter NODE_ENV=development, next.config.ts:12). Der Ausdruck ist bedingt, deshalb erkennt das Next-Plugin
+    von knip die Endung nicht.
+ 1  src/lib/polyfills/empty.js. FEHLALARM, NICHT LÖSCHEN: Ziel von turbopack.resolveAlias als Zeichenkette
+    (next.config.ts:39-40).
+ 2  src/components/icons/ersatz.tsx und src/components/icons/zuordnung.ts (Icon-Ersatzmodul für den
+    lucide-Übergang, E2-ORCH-07). Ohne Importeur und nicht in Schritt 1. Bezug zu M-25 (lucide), offen.
+
+Ungenutzte Abhängigkeiten (4 + 1)
+---------------------------------
+framer-motion              Importe nur noch in 4 Waisen aus Schritt 1 (maps/ContactMapWrapper,
+                           animations/HeartbeatCTA, providers/MotionProvider, ui/AnimatedNumber) → Schritt 2.
+@phosphor-icons/react      0 Importe in src → Schritt 2.
+@googlemaps/js-api-loader  0 Importe in src. Nicht im Plan, offen.
+@types/google.maps         0 Treffer für „google.maps“ in src. Nicht im Plan, offen.
+tailwindcss (dev)          FEHLALARM: wird über `@import "tailwindcss"` (src/app/globals.css:2) und
+                           @tailwindcss/postcss geladen. knip folgt CSS-Importen nicht (siehe Hinweis „.css“).
+lucide-react wird NICHT gemeldet. Lebende Importe: src/lib/formulare/useAnfrageFunnel.ts,
+src/config/company.js, src/config/blog.js, src/components/providers/ErrorBoundary.tsx, dazu 5 Waisen aus
+Schritt 1. Es bleibt installiert (M-25).
+optimizePackageImports in next.config.ts nennt weiterhin '@phosphor-icons/react', 'lucide-react' und
+'framer-motion'. knip wertet das nicht als Nutzung.
+
+Exporte, Typen, Duplikate nach Bereich
+--------------------------------------
+Exporte 148:  src/config 12 (unantastbar) · src/components/kern 63 · src/lib/kern 6 · (kern)/_entwurf 1 · sonst 66
+Typen 139:    src/components/kern 119 · src/lib/kern 1 · sonst 19
+Duplikate 28: src/config 11 (unantastbar) · src/components/kern 4 · sonst 13
+Außerhalb von config und Kern betrifft es 37 Dateien, u. a. lib/schema.ts (14), lib/email/* (14), hooks/useConsent.ts
+(6) und lib/schemaPyramid.ts (5). Das ist der Ausgangsstand und gehört nicht zum Auftrag E6-ORCH-01.
+Ausgangswert für Schritt 3: src/components/providers/ErrorBoundary.tsx meldet den Export default:62 als
+ungenutzt und das Paar ErrorBoundary:16 / default:62 als Duplikat.
+
+Konfigurationshinweise (7, nur Text-Reporter)
+---------------------------------------------
+Die ignore-Muster _relaunch/**, „Pipeline Kopie 5/**“, K-Aqua-Cursor-Animation/**, WhatsApp-Button-Export/** und
+CookieConsentExport/** wirken nicht, weil diese Pfade außerhalb von project liegen. Das Muster next.config.ts in
+entry ist überflüssig. „.css“: Die Endung ist durch project ausgeschlossen, CSS-Importe verfolgt knip nicht.
+
+Grenze dieser Konfiguration und Ergänzungslauf
+----------------------------------------------
+Das Eintragsmuster src/app/**/page.* in knip.json (ebenso im Next-Plugin) schließt den privaten Ordner
+src/app/(kern)/_entwurf/** ein. Next liefert diesen Ordner nicht aus, knip zählt den ruhenden Kern aber als benutzt.
+Ergänzend liegt deshalb knip-vor-ohne-entwurf.json vor: gleicher Stand, gleicher Befehl. Die Konfiguration lag nur
+im Scratchpad und unterscheidet sich von knip.json nur in zwei Punkten:
+  "entry" zusätzlich "!src/app/**/_*/**";
+  "next": { "entry": ["src/app/**/{page,layout,route,template,default,error,loading,not-found}.{ts,tsx,js,jsx}",
+            "src/app/global-not-found.tsx", "src/app/{robots,sitemap}.ts", "src/proxy.ts", "!src/app/**/_*/**"] }.
+Zahlen: Dateien 246 (+190: 153 src/components/kern, 36 (kern)/_entwurf, 1 src/lib/kern/icons.ts; 0 sonst),
+Exporte 115, Typen 70, Duplikate 27, Abhängigkeiten unverändert (4 + 1).
+Die drei lebenden Dateien des ruhenden Baums haben in beiden Läufen keinen Befund: lib/kern/start/daten.ts,
+components/kern/einwilligung/BannerPlatz.tsx und components/kern/fuss/SprungHalter.tsx.
+Vorhersage für Schritt 5: Wenn der ruhende Kern fällt, kommen außerhalb von src/components/kern genau ein neuer
+Fund hinzu, nämlich der Typ BlogListe (src/lib/formulare/useBlogListe.ts:81). In src/config kommt nichts hinzu.
+Die übrigen 38 neuen Exporte bzw. Typen liegen in components/kern/{basis,icons,einwilligung/Banner,kopf-b}.
+
+Vergleich nach einem Schritt („nur Wegfälle“)
+---------------------------------------------
+Denselben Befehl als knip-nach-<schritt>.json speichern, dann:
+node -e 'const f=require("fs"),r=p=>JSON.parse(f.readFileSync(p,"utf8")),k=(i,t,x)=>i.file+"|"+t+"|"+(x.name??JSON.stringify(x)),s=j=>new Set(j.issues.flatMap(i=>Object.entries(i).filter(([t,v])=>Array.isArray(v)).flatMap(([t,v])=>v.map(x=>k(i,t,x))))),a=s(r(process.argv[1])),b=s(r(process.argv[2]));console.log("neu:",[...b].filter(x=>!a.has(x)));console.log("weg:",[...a].filter(x=>!b.has(x)).length)' _relaunch/belege/e6-orch-01/knip-vor.json <nach.json>
+Erwartung: neu = [] bei den Schritten 1, 2 und 3. Für Schritt 3 gilt das, solange der Default-Export bleibt.
+Schritt 1 ist am Stand vorab simuliert: Die 25 Dateien wurden per "!pfad" aus project genommen, nichts gelöscht.
+Ergebnis: neu = [], weg = 25 (genau die 25 Dateibefunde). framer-motion bleibt bis Schritt 2 als ungenutzt gemeldet.

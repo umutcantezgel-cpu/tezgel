@@ -1,0 +1,107 @@
+{
+  "werkzeug": "knip 6.41.0, _relaunch/werkzeuge/node_modules/.bin/knip --config _relaunch/werkzeuge/knip.json --reporter json --no-progress --no-exit-code (stderr leer)",
+  "hinweis": "Lauf nach Schritt 1 im gemeinsamen Arbeitsbaum; Schritt 3 hatte zu dem Zeitpunkt ErrorBoundary.tsx geaendert und src/app/(bestand)/fehlerprobe-e6/ angelegt (nicht Teil von Schritt 1).",
+  "ungenutzteDateien": {
+    "vor": 56,
+    "nach": 31
+  },
+  "entfallen": [
+    "src/components/CookieConsent.tsx",
+    "src/components/animations/HeartbeatCTA.tsx",
+    "src/components/common/GoogleMap.tsx",
+    "src/components/common/PageWrapper.jsx",
+    "src/components/common/TileCraftIcons.jsx",
+    "src/components/common/WaterCursor.tsx",
+    "src/components/common/WhatsAppButton.tsx",
+    "src/components/layout/FloatingDock.tsx",
+    "src/components/maps/ContactMapWrapper.tsx",
+    "src/components/providers/MotionProvider.tsx",
+    "src/components/providers/UIProvider.tsx",
+    "src/components/sections/home/ContactSection.tsx",
+    "src/components/trust/TrustBadges.tsx",
+    "src/components/trust/TrustSignals.tsx",
+    "src/components/ui/AnimatedNumber.tsx",
+    "src/components/ui/GradientText.tsx",
+    "src/components/ui/OptimizedImage.tsx",
+    "src/components/ui/RotatingText.tsx",
+    "src/components/ui/SpotlightCard.tsx",
+    "src/components/ui/TiltCard.tsx",
+    "src/components/ui/WaterCursor.tsx",
+    "src/lib/indexnow.ts",
+    "src/lib/physics/widgetPhysicsCoordinator.ts",
+    "src/utils/iconMapper.jsx",
+    "src/utils/index.js"
+  ],
+  "neuUngenutzt": [],
+  "weiterhinUngenutzt": [
+    "src/app/(bestand)/werkstatt-schaufenster/bausteine/page.dev.tsx",
+    "src/app/(bestand)/werkstatt-schaufenster/merkliste/page.dev.tsx",
+    "src/app/(bestand)/werkstatt-schaufenster/page.dev.tsx",
+    "src/app/(bestand)/werkstatt-schaufenster/schritte/page.dev.tsx",
+    "src/app/(bestand)/werkstatt-schaufenster/szene/page.dev.tsx",
+    "src/app/(bestand)/werkstatt-schaufenster/tabelle/page.dev.tsx",
+    "src/components/icons/ersatz.tsx",
+    "src/components/icons/zuordnung.ts",
+    "src/components/kern/Bildfeld.tsx",
+    "src/components/kern/Kennwerte.tsx",
+    "src/components/kern/RatgeberListe.tsx",
+    "src/components/kern/Zeitband.tsx",
+    "src/components/kern/formulare/Konfigurator.tsx",
+    "src/components/kern/formulare/TerminAnfrage.tsx",
+    "src/components/kern/seiten/standorte/Vorschau.tsx",
+    "src/components/kern/vorlagen/artikel/index.ts",
+    "src/components/kern/vorlagen/detail/Vorschautafel.tsx",
+    "src/components/kern/vorlagen/detail/index.ts",
+    "src/components/kern/vorlagen/fachseite/Abschnitt.tsx",
+    "src/components/kern/vorlagen/fachseite/Einstieg.tsx",
+    "src/components/kern/vorlagen/fachseite/Felder.tsx",
+    "src/components/kern/vorlagen/fachseite/Knopfreihe.tsx",
+    "src/components/kern/vorlagen/fachseite/Mass.tsx",
+    "src/components/kern/vorlagen/fachseite/Querverweise.tsx",
+    "src/components/kern/vorlagen/fachseite/Schriftfeld.tsx",
+    "src/components/kern/vorlagen/fachseite/typen.ts",
+    "src/components/kern/vorlagen/liste/index.ts",
+    "src/components/kern/vorlagen/uebersicht/Abschnitt.tsx",
+    "src/components/kern/vorlagen/uebersicht/Weiterlesen.tsx",
+    "src/components/kern/vorlagen/uebersicht/index.ts",
+    "src/lib/polyfills/empty.js"
+  ],
+  "abhaengigkeiten": {
+    "vor": [
+      "dep:@googlemaps/js-api-loader",
+      "dep:@phosphor-icons/react",
+      "dep:@types/google.maps",
+      "dep:framer-motion",
+      "dev:tailwindcss"
+    ],
+    "nach": [
+      "dep:@googlemaps/js-api-loader",
+      "dep:@phosphor-icons/react",
+      "dep:@types/google.maps",
+      "dep:framer-motion",
+      "dev:tailwindcss"
+    ]
+  },
+  "zahlen": {
+    "exports": {
+      "vor": 148,
+      "nach": 148
+    },
+    "types": {
+      "vor": 139,
+      "nach": 139
+    },
+    "duplicates": {
+      "vor": 28,
+      "nach": 28
+    },
+    "unlisted": {
+      "vor": 0,
+      "nach": 0
+    },
+    "unresolved": {
+      "vor": 0,
+      "nach": 0
+    }
+  }
+}

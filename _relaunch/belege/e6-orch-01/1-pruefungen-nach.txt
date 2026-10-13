@@ -1,0 +1,68 @@
+E6-ORCH-01 · Schritt 1 (tote Komponenten löschen) · Prüfungen nach dem Löschen
+=============================================================================
+Zeitpunkt: 2026-10-12T23:58:28Z
+HEAD:      cbc3de2f342c4aef84b48f3e4f1a7f316a951d9c (nichts committet; Orchestrator committet)
+Arbeitsbaum geteilt mit Schritt 3 (ErrorBoundary.tsx geändert, src/app/(bestand)/fehlerprobe-e6/ neu) und
+Schritten 1→2 (Waisen/package.json/Markenlogos); deren Änderungen sind nicht Teil dieses Schritts.
+
+Vorher (Beleg 1-importeure-vorher.json)
+  Auflösung aller Import-Spezifizierer (from, import, import(), require(), dynamic(() => import()))
+  in src, test, scripts, _relaunch/werkzeuge/tests, docs und Root-Konfiguration: 0 externe Importeure für
+  alle 25 Dateien. Interne Bezüge nur innerhalb der Löschmenge (PageWrapper.jsx -> @/utils,
+  common/WaterCursor.tsx -> @/components/ui/WaterCursor, utils/index.js -> ./iconMapper).
+  Textsuche nach Basisnamen: nur Kommentare und Markup-Suchmuster in _relaunch/werkzeuge/statisch.mjs.
+
+Löschung (Beleg 1-loeschung.txt)
+  Je Datei unmittelbar vor rm erneut geprüft (Resolver über den aktuellen Baum inkl. noch vorhandener
+  Löschkandidaten + rg nach @/-Alias, Pfad, relativem Pfad, Dateiname in Anführungszeichen). Reihenfolge so,
+  dass Importeure innerhalb der Löschmenge zuerst fallen. 25/25 mit 0 Importeuren gelöscht, 0 behalten.
+  Leere Ordner entfernt: src/components/animations, src/components/sections/home, src/lib/physics, src/utils.
+  src/components/sections/ bleibt (CompanyHistory.jsx, QualityPromise.jsx, ReviewsSection.jsx).
+  Bleiben ausdrücklich: providers/ErrorBoundary.tsx, trust/TrustStrip.tsx, common/CookieConsent.tsx,
+  icons/ersatz.tsx, icons/zuordnung.ts, alle flachen kern/*.tsx.
+
+tsc
+  npx tsc --noEmit -p tsconfig.json  -> Exit 0, keine Ausgabe (≈20 s)
+eslint (Ordner und Nachbarn der gelöschten Dateien, keine Datei inhaltlich geändert)
+  npx eslint src/components/common src/components/trust src/components/providers src/components/ui
+    src/components/maps src/components/layout src/components/sections
+    src/lib/formulare/useEinwilligungsBanner.ts src/lib/kern/icons.ts src/components/pricing/PricingCalculator.tsx
+  -> Exit 0, keine Ausgabe
+npm test
+  -> Exit 0; tests 37, pass 37, fail 0, cancelled 0, skipped 0, todo 0
+
+Unauflösbare lokale Importe (@/ und relativ, src/test/scripts, 605 Dateien, 2847 Spezifizierer)
+  -> 0 echte; 2 Treffer sind Kommentar-Beispiele in
+     src/components/funnels/TezgelAnfrageFunnel/Platzhalter.tsx:10 und :12 ('@/components/…/X').
+
+Importe (nicht Kommentare) in src
+  rg -n "from ['\"](framer-motion|@phosphor-icons)|import\(\s*['\"](framer-motion|@phosphor-icons)" src
+  -> 0 Treffer (vorher 4 framer-motion-Importe, alle in gelöschten Dateien: MotionProvider, AnimatedNumber,
+     ContactMapWrapper, HeartbeatCTA).
+  Volltext 'framer-motion' in src: 1 Treffer, erwartet (Kommentar)
+     src/components/kern/seiten/ueber-uns/Geschichte.tsx:7 (bleibt bis Schritt 5).
+  lucide-react-Importe in src danach genau 4 Dateien:
+     src/config/company.js, src/config/blog.js, src/lib/formulare/useAnfrageFunnel.ts,
+     src/components/providers/ErrorBoundary.tsx
+
+Abhängigkeiten der gelöschten Dateien (neu verwaist?)
+  Weiter lebend importiert: common/FloatingWhatsAppWidget.tsx (Header.jsx), forms/HeroContactForm.tsx
+  ((bestand)/page.tsx), maps/ContactPremiumMap.tsx (kontakt/page.jsx), ui/GoogleIcon.tsx, lib/utils.ts
+  (GoogleIcon.tsx), lib/haptics.ts, lib/config.ts, lib/whatsapp.ts, lib/maps/getMapEmbedUrl.ts,
+  lib/seo/indexnow.ts (api/indexnow/route.ts), hooks/useConsent.ts, icons/Icon.tsx, icons/namen.ts.
+  Ohne Importeur: icons/zuordnung.ts (bisher nur von utils/iconMapper.jsx importiert) und icons/ersatz.tsx
+  (schon vorher ohne Importeur) – laut Plan bis Schritt 9 stehen lassen.
+
+knip (Beleg 1-knip-nach.json)
+  Ungenutzte Dateien 56 -> 31; entfallen genau die 25 Dateien; neu ungenutzt: 0.
+  Exporte/Typen/Duplikate unverändert (148/139/28), unresolved/unlisted 0.
+
+next dev (127.0.0.1:4350, nur Abruf, nicht gestartet/gestoppt)
+  / 200, /kontakt 200, /ueber-uns 200, /bad 200, /fliesen 200, /standorte 200, /preise 200;
+  in / und /kontakt kein 'Module not found' / "Can't resolve" / 'Build Error'.
+
+Tailwind-Hinweis (Korrektur zu Schritt 1)
+  Tailwind 4 scannt nach dem Löschen nicht nur lebende Quellen (u. a. docs, README, *.dev.tsx,
+  icons/ersatz.tsx, icons/zuordnung.ts); classList kommt auch in src/lib/motion vor (nur Nicht-Tailwind-Klassen).
+  Die Zahl wegfallender Selektoren (≈158) ist daher eine Simulation; maßgeblich bleiben build-vergleich und
+  Pixel im Tor des Orchestrators. Kein next build im Arbeitsbaum ausgeführt.

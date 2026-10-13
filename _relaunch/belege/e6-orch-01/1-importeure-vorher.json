@@ -1,0 +1,62 @@
+{
+  "gescannteDateien": 656,
+  "bereiche": [
+    "src",
+    "test",
+    "scripts",
+    "_relaunch/werkzeuge/tests",
+    "docs",
+    "next.config.ts",
+    "eslint.config.mjs",
+    "postcss.config.mjs",
+    "vercel.json",
+    "package.json",
+    "tsconfig.json"
+  ],
+  "externeImporteure": {
+    "src/components/CookieConsent.tsx": [],
+    "src/components/animations/HeartbeatCTA.tsx": [],
+    "src/components/common/GoogleMap.tsx": [],
+    "src/components/common/PageWrapper.jsx": [],
+    "src/components/common/TileCraftIcons.jsx": [],
+    "src/components/common/WaterCursor.tsx": [],
+    "src/components/common/WhatsAppButton.tsx": [],
+    "src/components/layout/FloatingDock.tsx": [],
+    "src/components/maps/ContactMapWrapper.tsx": [],
+    "src/components/providers/MotionProvider.tsx": [],
+    "src/components/providers/UIProvider.tsx": [],
+    "src/components/sections/home/ContactSection.tsx": [],
+    "src/components/trust/TrustBadges.tsx": [],
+    "src/components/trust/TrustSignals.tsx": [],
+    "src/components/ui/AnimatedNumber.tsx": [],
+    "src/components/ui/GradientText.tsx": [],
+    "src/components/ui/OptimizedImage.tsx": [],
+    "src/components/ui/RotatingText.tsx": [],
+    "src/components/ui/SpotlightCard.tsx": [],
+    "src/components/ui/TiltCard.tsx": [],
+    "src/components/ui/WaterCursor.tsx": [],
+    "src/lib/indexnow.ts": [],
+    "src/lib/physics/widgetPhysicsCoordinator.ts": [],
+    "src/utils/iconMapper.jsx": [],
+    "src/utils/index.js": []
+  },
+  "interneImporteureInnerhalbDerLoeschmenge": {
+    "src/utils/index.js": [
+      "src/components/common/PageWrapper.jsx -> @/utils"
+    ],
+    "src/components/ui/WaterCursor.tsx": [
+      "src/components/common/WaterCursor.tsx -> @/components/ui/WaterCursor",
+      "src/components/common/WaterCursor.tsx -> @/components/ui/WaterCursor"
+    ],
+    "src/utils/iconMapper.jsx": [
+      "src/utils/index.js -> ./iconMapper"
+    ]
+  },
+  "methode": "Alle Import-Spezifizierer (from, import, import(), require(), next/dynamic(()=>import())) in src, test, scripts, _relaunch/werkzeuge/tests, docs und Root-Konfigurationen aufgeloest (@/ -> src/, relativ, Endungen .ts/.tsx/.js/.jsx/.mjs, index-Dateien). Positivkontrolle: common/CookieConsent.tsx, providers/ErrorBoundary.tsx, trust/TrustStrip.tsx, lib/seo/indexnow.ts werden mit Importeuren gefunden.",
+  "zusatzTextsuche": {
+    "basisnamen_ausserhalb_loeschmenge": "rg \\bName\\b in src, test, scripts, _relaunch/werkzeuge, Root-Konfig: nur Kommentare (HeartbeatCTA in PricingCalculator.tsx:5, kern/start/Abschluss.tsx:7, kern/seiten/standorte/Abschnitte.tsx:123, kern/seiten/kontakt/Ansprechpartner.tsx:8; widgetPhysicsCoordinator in lib/formulare/useEinwilligungsBanner.ts:3; iconMapper in lib/kern/icons.ts:4/107/158) und Regex-Muster in _relaunch/werkzeuge/statisch.mjs:31/36 (<GradientText, <WaterCursor als Markup-Suchmuster, kein Import).",
+    "template_literal_dynamic_import": "rg import(` / require(` / import(variable) in src, test, scripts: 0",
+    "pfadtext_in_test_scripts_werkzeuge_konfig": "0 (nur statisch.mjs:31 Suchmuster <GradientText)",
+    "at_utils": "einziger Treffer src/components/common/PageWrapper.jsx:3 (selbst in der Loeschmenge)"
+  }
+}
