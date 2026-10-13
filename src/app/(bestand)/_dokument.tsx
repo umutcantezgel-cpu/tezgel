@@ -1,7 +1,7 @@
 // Dokument-Gerüst der Bestandsseiten (E-015): Inhalt des früheren Root-Layouts (Stand KERN v2), eingebunden über ./layout.tsx.
 import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
-// Pfad nach dem Umzug in die Gruppe (bestand); globals.css bindet tokens.css selbst in layer(alt) ein (KERN K-004).
+// Pfad nach dem Umzug in die Gruppe (bestand); globals.css ist die einzige Quelle der Gestaltungswerte (KERN K-005).
 import '@/app/globals.css';
 import { HeaderWrapper } from '@/components/layout/HeaderWrapper';
 import { ClientWidgets } from '@/components/layout/ClientWidgets';

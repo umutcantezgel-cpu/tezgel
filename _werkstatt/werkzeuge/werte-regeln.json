@@ -153,8 +153,7 @@
    "src/components/ui/GoogleIcon.tsx",
    "src/components/ui/WhatsAppLogo.tsx",
    "**/opengraph-image.*",
-   "src/app/(bestand)/werkstatt-schaufenster/**",
-   "src/styles/**"
+   "src/app/(bestand)/werkstatt-schaufenster/**"
   ],
   "svg_pfaddaten": [
    "d",

@@ -7,11 +7,11 @@
 
 ## 🏛️ Über das Projekt
 
-Vollständiger High-End Relaunch für den Handwerks-Meisterbetrieb **Fliesenverlegung Tezgel** (Hohwardstraße 14, 35614 Aßlar). Die Plattform vereint **Clean Architectural Ceramic Light Design**, interaktive Beratungswerkzeuge und ein umfassendes **174-Seiten-Portalnetzwerk** für maximale organische Sichtbarkeit (SEO) und Conversion.
+Vollständiger High-End Relaunch für den Handwerks-Meisterbetrieb **Fliesenverlegung Tezgel** (Hohwardstraße 14, 35614 Aßlar). Die Plattform vereint das Gestaltungssystem **KERN v2**, interaktive Beratungswerkzeuge und ein umfassendes **174-Seiten-Portalnetzwerk** für maximale organische Sichtbarkeit (SEO) und Conversion.
 
 * **Leitmotiv:** *„Die Zufriedenheit unserer Kunden ist die beste Reklame für uns.“*
-* **Designsystem:** Clean Architectural Ceramic Light (Marmorweiß `#FFFFFF`, Feinkeramik `#F8FAFC`, Tiefschiefer `#0F172A`, Smaragd/Mint `#059669`, Ceramic Sky `#0284C7`)
-* **Framework:** Next.js (App Router, Turbopack, SSG) + Tailwind CSS + Lucide Icons + Framer Motion
+* **Designsystem:** KERN v2 – „Jede Seite ist ein Verlegeplan“: Neutrale auf 228° (Kalk, Fliese, Fuge, Tinte), genau ein Akzent (Laser = Logo-Rot), Archivo und IBM Plex Mono. Regeln in `_werkstatt/KERN.md`, Werte nur in `src/app/globals.css`
+* **Framework:** Next.js 16 (App Router, Turbopack, SSG) + React 19 + Tailwind CSS 4; Icons als eigenes SVG-Sprite (`src/components/icons/`), Bewegung zentral in `src/lib/motion/` ohne Animationsbibliothek
 
 ---
 
@@ -80,7 +80,7 @@ npm run start
 │   │   ├── standorte/            # Städte-Landingpages in Hessen
 │   │   ├── layout.tsx            # Globales Root-Layout
 │   │   ├── page.tsx              # Startseite mit Portal-Netzwerk
-│   │   └── globals.css           # Globale Styles & Glassmorphism Tokens
+│   │   └── globals.css           # Gestaltungswerte KERN v2 (einzige Quelle)
 │   ├── components/               # Wiederverwendbare UI-Komponenten
 │   │   ├── common/               # Header, Footer, MobileMenu, HelpSidebar
 │   │   ├── funnels/              # TezgelAnfrageFunnel (WhatsApp/E-Mail)
@@ -89,7 +89,7 @@ npm run start
 │   │   ├── company.js            # Kontaktdaten, HWK Wiesbaden, USt-ID
 │   │   ├── navigation.js         # Vollständige 174-Routen-Hierarchie
 │   │   └── services.js           # Leistungsbeschreibungen & Gewerke
-│   └── styles/                   # Design Tokens (Farben, Glassmorphism, Schatten)
+│   └── lib/motion/               # Bewegung nach KERN v2 (K-007)
 └── package.json
 ```
 

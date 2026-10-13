@@ -1,7 +1,5 @@
-@layer alt, theme, base, components, utilities;
+@layer theme, base, components, utilities;
 @import "tailwindcss";
-/* Alt-System (bis zum Abbau in E6): liegt unter dem Theme, überschreibt nichts mehr (KERN K-004, E-004). */
-@import "../styles/tokens.css" layer(alt);
 /* Bewegungsregister (KERN K-007) */
 @import "./bewegung.css" layer(components);
 /* Arbeitsbereiche sind Dokumentation – nicht in die Klassenerkennung aufnehmen. */
@@ -34,10 +32,8 @@
      auf Plex und schob die H1 (CLS /bad Desktop 0,17, E3-Tor Anlauf 2); ihr Zeichenbereich lässt ß und alles außerhalb
      des Plex-Zeichenbereichs weiter an Archivo fallen */
   --font-mono: var(--font-plex-mono), "Plex Ersatz", var(--font-archivo), "Courier New", monospace;
-  /* Alt-Namen zeigen bis zum Abbau auf die neuen Familien */
+  /* Tailwinds Preflight setzt die Schrift von <html> über --font-sans (--default-font-family): zeigt auf die Textfamilie */
   --font-sans: var(--font-text);
-  --font-display: var(--font-anzeige);
-  --font-heading: var(--font-anzeige);
 
   --text-fs-1: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
   --text-fs-1--line-height: 1.5;
@@ -75,32 +71,6 @@
   --ease-setzen: cubic-bezier(0.2, 0.8, 0.2, 1);
   --ease-laser: cubic-bezier(0.7, 0, 0.2, 1);
   --ease-weg: cubic-bezier(0.32, 0, 0.67, 0);
-
-  /* Alt-Theme (primary/secondary) bleibt bis E6 als Alias erhalten */
-  --color-primary: #EA580C;
-  --color-primary-dark: #C2410C;
-  --color-primary-light: #F97316;
-  --color-primary-50: #FFF7ED;
-  --color-primary-100: #FFEDD5;
-  --color-primary-200: #FED7AA;
-  --color-primary-300: #FDBA74;
-  --color-primary-400: #FB923C;
-  --color-primary-500: #F97316;
-  --color-primary-600: #EA580C;
-  --color-primary-700: #C2410C;
-  --color-primary-800: #9A3412;
-  --color-primary-900: #7C2D12;
-  --color-secondary: #DC2626;
-  --color-secondary-50: #FEF2F2;
-  --color-secondary-100: #FEE2E2;
-  --color-secondary-200: #FECACA;
-  --color-secondary-300: #FCA5A5;
-  --color-secondary-400: #F87171;
-  --color-secondary-500: #EF4444;
-  --color-secondary-600: #DC2626;
-  --color-secondary-700: #B91C1C;
-  --color-secondary-800: #991B1B;
-  --color-secondary-900: #7F1D1D;
 }
 
 /* Bänder mit eigenem Wischen (Kundenstimmen) ohne sichtbare Leiste */
@@ -293,205 +263,12 @@
   }
 }
 
-/* ==========================================================================
-   ALIASSE DES ALT-SYSTEMS (E-004) – auf KERN umgefärbt, bis die Suche null
-   Nutzungen zeigt (Abbau E6). Neue Arbeit nutzt sie nicht.
-   ========================================================================== */
 @layer components {
   /* Kartenfläche (E2-BAU-04): feste Höhe aus der Variablen am Element (Platzhalter = geladene Karte, kein CLS);
      als Komponentenklasse, damit Utilities wie lg:h-auto sie übersteuern */
   .karten-hoehe {
     height: var(--karten-hoehe);
   }
-
-  .ceramic-hero,
-  .ceramic-band {
-    position: relative;
-    color: var(--color-tinte);
-    background: var(--color-fliese);
-  }
-
-  .ceramic-hero {
-    border: 1px solid var(--color-fuge);
-    border-radius: 0;
-  }
-
-  .ceramic-band {
-    border-bottom: 1px solid var(--color-fuge);
-  }
-
-  /* Badge → Mono-Etikett (Wortlaut bleibt, E-013) */
-  .eyebrow,
-  .eyebrow-red,
-  .eyebrow-neutral,
-  .eyebrow-amber {
-    display: inline-flex;
-    align-items: center;
-    gap: calc(var(--spacing) * 2);
-    padding: 0;
-    border: 0;
-    border-radius: 0;
-    background: transparent;
-    color: var(--color-tinte-2);
-    font-family: var(--font-mono);
-    font-size: var(--text-fs-1);
-    line-height: var(--text-fs-1--line-height);
-    font-weight: 400;
-    letter-spacing: 0;
-    text-transform: none;
-  }
-
-  .btn-primary,
-  .btn-ghost {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: calc(var(--spacing) * 2);
-    min-height: calc(var(--spacing) * 11);
-    padding: calc(var(--spacing) * 3) calc(var(--spacing) * 6);
-    border-radius: 0;
-    font-family: var(--font-text);
-    font-size: var(--text-fs-2);
-    line-height: var(--text-fs-2--line-height);
-    font-weight: 600;
-    text-align: center;
-    box-shadow: none;
-    transition-property: background-color, border-color, color, translate;
-    transition-duration: var(--dauer-1);
-    transition-timing-function: var(--ease-setzen);
-  }
-
-  .btn-primary {
-    background: var(--color-tinte);
-    border: 1px solid var(--color-tinte);
-    color: var(--color-kalk);
-  }
-
-  .btn-ghost {
-    background: var(--color-fliese);
-    border: 1px solid var(--color-strich);
-    color: var(--color-tinte);
-  }
-
-  @media (hover: hover) and (pointer: fine) {
-    .btn-primary:hover {
-      background: var(--color-tinte-2);
-      border-color: var(--color-tinte-2);
-      color: var(--color-kalk);
-    }
-    .btn-ghost:hover {
-      border-color: var(--color-tinte);
-      color: var(--color-tinte);
-    }
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    .btn-primary:active,
-    .btn-ghost:active {
-      translate: 0 1px;
-    }
-  }
-
-  .btn-primary:disabled,
-  .btn-ghost:disabled,
-  .btn-primary[aria-disabled="true"],
-  .btn-ghost[aria-disabled="true"] {
-    opacity: 0.5;
-    pointer-events: none;
-  }
-
-  /* Verlaufstext entfällt: Hervorhebung nur über Gewicht */
-  .text-ceramic-gradient {
-    color: var(--color-tinte);
-    background: none;
-  }
-
-  /* Icon-Kachel → stilles Zeichen ohne Fläche */
-  .icon-chip {
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0;
-    background: transparent;
-    border: 1px solid var(--color-fuge);
-    color: var(--color-tinte);
-  }
-
-  /* Lesemodus (Ratgeber) im System */
-  .prose-ceramic {
-    color: var(--color-tinte);
-    font-size: var(--text-fs-3);
-    line-height: var(--text-fs-3--line-height);
-    max-width: var(--container-mass);
-  }
-
-  .prose-ceramic > :first-child { margin-top: 0; }
-  .prose-ceramic :is(p, ul, ol, blockquote, pre, figure, table) { margin: 1.25em 0; }
-  .prose-ceramic h2 { font-size: var(--text-fs-5); line-height: var(--text-fs-5--line-height); margin: calc(var(--spacing) * 12) 0 calc(var(--spacing) * 4); }
-  .prose-ceramic h3 { font-size: var(--text-fs-4); line-height: var(--text-fs-4--line-height); margin: calc(var(--spacing) * 8) 0 calc(var(--spacing) * 3); }
-  .prose-ceramic h4 { font-size: var(--text-fs-3); margin: calc(var(--spacing) * 6) 0 calc(var(--spacing) * 2); }
-  .prose-ceramic strong { font-weight: 600; }
-  .prose-ceramic a { color: var(--color-tinte); text-decoration: underline; text-decoration-color: var(--color-strich); text-underline-offset: 3px; }
-  .prose-ceramic a:hover { text-decoration-color: var(--color-tinte); }
-  .prose-ceramic ul { list-style: square; padding-left: calc(var(--spacing) * 6); }
-  .prose-ceramic ol { list-style: decimal; padding-left: calc(var(--spacing) * 6); }
-  .prose-ceramic li + li { margin-top: calc(var(--spacing) * 2); }
-  .prose-ceramic li::marker { color: var(--color-tinte-2); }
-  .prose-ceramic blockquote { border-left: 2px solid var(--color-laser); padding: calc(var(--spacing) * 1) 0 calc(var(--spacing) * 1) calc(var(--spacing) * 6); color: var(--color-tinte); }
-  .prose-ceramic code { font-family: var(--font-mono); font-size: 0.9em; }
-  .prose-ceramic hr { border: 0; border-top: 1px solid var(--color-fuge); margin: calc(var(--spacing) * 12) 0; }
-  .prose-ceramic img { margin: calc(var(--spacing) * 8) 0; }
-  .prose-ceramic table { width: 100%; border-collapse: collapse; font-size: var(--text-fs-2); }
-  .prose-ceramic th { text-align: left; font-weight: 600; padding: calc(var(--spacing) * 3); border-bottom: 1px solid var(--color-strich); }
-  .prose-ceramic td { padding: calc(var(--spacing) * 3); border-bottom: 1px solid var(--color-fuge); }
-}
-
-@layer utilities {
-  /* Flächen ohne Glas: Feld auf Kalk, getrennt durch Fuge */
-  .glass-surface,
-  .glass-surface-subtle,
-  .glass-bezel-inner {
-    background: var(--color-fliese);
-    border: 1px solid var(--color-fuge);
-    box-shadow: none;
-    border-radius: 0;
-  }
-
-  .glass-bezel-outer {
-    padding: 0;
-    border: 0;
-    border-radius: 0;
-    background: transparent;
-    box-shadow: none;
-  }
-
-  /* WhatsApp-Knopf als Nebenknopf; das Markenzeichen bleibt im Icon */
-  .glass-button-whatsapp {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: calc(var(--spacing) * 2);
-    min-height: calc(var(--spacing) * 11);
-    padding: calc(var(--spacing) * 3) calc(var(--spacing) * 6);
-    border-radius: 0;
-    background: var(--color-fliese);
-    color: var(--color-tinte);
-    font-weight: 600;
-    font-size: var(--text-fs-2);
-    border: 1px solid var(--color-strich);
-    box-shadow: none;
-  }
-
-  /* Leuchtkugeln entfallen (Katalog „weich“) */
-  .ambient-glow-orange,
-  .ambient-glow-red,
-  .ambient-glow-slate,
-  .ambient-glow-mint,
-  .ambient-glow-sky {
-    display: none;
-  }
-
 }
 
 /* Anzeigeschnitt für Titel ohne Überschriften-Element (Formulartitel, Kennwerte, Merkliste): schmal gesetzt wie

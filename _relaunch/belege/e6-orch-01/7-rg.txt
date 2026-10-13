@@ -1,0 +1,40 @@
+E6-ORCH-01 · Schritt 7 · Suche nach dem Abbau (Arbeitsbaum), 2026-10-13T01:33:50Z
+=== 1 Verweise auf tokens.css / src/styles / layer(alt) in src test scripts public docs README.md und Root-Konfiguration
+src/lib/motion/kopfskript.ts:16://    Werten in `src/styles/kern.css`; nach dem Laden ändert sich der Stil von <html> nicht mehr (vorher volle
+=== 2 Ordner src/styles
+ls: cannot access 'src/styles': No such file or directory
+=== 3 Alias-Klassen (Wortgrenze) in src test scripts public, ohne Datenschlüssel eyebrow
+(keine Treffer)
+=== 4 eyebrow (nur Datenschlüssel erwartet)
+  src/config/navigation.js:35:            eyebrow: 'DIN 18534',
+  src/config/navigation.js:70:            eyebrow: 'Konfigurator',
+  src/lib/start/daten.ts:12:  eyebrow: string;
+  src/lib/start/daten.ts:21:    eyebrow: 'Komplettbäder',
+  src/lib/start/daten.ts:34:    eyebrow: 'Planungshilfen',
+  src/lib/start/daten.ts:47:    eyebrow: 'Standorte Hessen',
+  src/lib/start/daten.ts:54:    eyebrow: 'Referenzen & Wissen',
+  src/components/common/MobileMenu.jsx:112:                                                    {link.featured?.eyebrow && <span className={etikettKlassen}>{link.featured.eyebrow}</span>}
+  src/components/common/Header.jsx:202:                                                        <span className="inline-flex items-center gap-2 font-mono text-fs-1 text-nacht-2">{link.featured.eyebrow}</span>
+  src/components/start/Fachbereiche.tsx:90:              key={hub.eyebrow}
+  src/components/start/Fachbereiche.tsx:95:                <span className={clsx(etikettForm, 'text-tinte')}>{hub.eyebrow}</span>
+  src/app/(bestand)/fliesen/page.jsx:61:        eyebrow: 'Räume',
+  src/app/(bestand)/fliesen/page.jsx:73:        eyebrow: 'Neubau oder Bestand',
+  src/app/(bestand)/fliesen/page.jsx:85:        eyebrow: 'Formate & Materialien',
+  src/app/(bestand)/fliesen/page.jsx:97:        eyebrow: 'Verlegetechnik',
+  src/app/(bestand)/fliesen/page.jsx:109:        eyebrow: 'Planung & Qualität',
+  src/app/(bestand)/fliesen/page.jsx:125:    eyebrow: <>Bad, Dusche &amp; Gäste-WC</>,
+  src/app/(bestand)/fliesen/page.jsx:178:                <p className={clsx(etikettKlassen, 'mt-6')}>{feld.eyebrow}</p>
+=== 5 Theme-Aliase in src test scripts public
+(keine Treffer)
+=== 6 globals.css: was bleiben muss
+1:@layer theme, base, components, utilities;
+35:  /* Tailwinds Preflight setzt die Schrift von <html> über --font-sans (--default-font-family): zeigt auf die Textfamilie */
+36:  --font-sans: var(--font-text);
+252:  @media (prefers-reduced-motion: reduce) {
+259:      transition-duration: 0.01ms !important;
+260:      animation-duration: 0.01ms !important;
+269:  .karten-hoehe {
+327:  @media (width < 64rem), (prefers-reduced-motion: reduce) {
+=== 7 Übrige Erwähnungen des Alt-Systems in src (nur Kommentare, ausserhalb des Schritts)
+src/lib/motion/kopfskript.ts:16://    Werten in `src/styles/kern.css`; nach dem Laden ändert sich der Stil von <html> nicht mehr (vorher volle
+  (Kommentar in src/lib/motion/kopfskript.ts verweist auf die in Schritt 5 gelöschte src/styles/kern.css; Datei ist unantastbar (M-27), nicht in diesem Schritt)

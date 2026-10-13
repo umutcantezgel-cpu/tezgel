@@ -1,0 +1,46 @@
+E6-ORCH-01 · Schritt 7 · Alias-Schicht abbauen · Prüfungen am Arbeitsbaum (HEAD 51f2cad + Schritt 7 ungecommittet), 2026-10-13T01:35Z
+====================================================================================================================================
+Änderungsmenge Schritt 7 (git status): " D" src/styles/tokens.css (Ordner src/styles danach leer und entfernt);
+" M" src/app/globals.css, src/app/(bestand)/_dokument.tsx (nur Kommentar Z. 4), docs/DESIGN_SYSTEM.md, README.md, _werkstatt/KERN.md (Z. 43, K-004),
+_werkstatt/werkzeuge/werte-regeln.json; neu die Belege 7-*. Nicht aus diesem Schritt: " M" CLAUDE.md, "??" _relaunch/belege/build-vergleich-f7822f5-51f2cad/
+und _relaunch/belege/e6o1-a2/ (Orchestrator).
+Fassungen für den getrennten Commit: scratchpad/e6-orch-01/stand-7/globals.css (sha256 d7b273df…) und stand-7/werte-regeln.json (sha256 dd335573…).
+
+00 Bedingung K-004 (vorher)    k004.mjs auf HEAD: rg -P je Name in src (inkl. src/lib/email, TrackingScripts.jsx, cookie-inventory.ts), test, scripts, public;
+                               zusätzlich _werkstatt/werkzeuge/tests, _relaunch/werkzeuge/tests, beide knip.json, werte-regeln.json, Root-Konfiguration   GRUEN
+                               136 tokens-Variablen (138 Deklarationen, --color-red-500/-600 doppelt): 0 Leser. Im kompilierten CSS liest nur tokens.css selbst
+                               zwei eigene Namen (--color-canvas-white/-subtle); kein tokens-Name ist ausserhalb von layer alt deklariert (keine gleichnamige
+                               Tailwind-Farbe im Einsatz). 21 Alias-Klassen: 0 Klassennutzungen; eyebrow 18 Treffer, alle Datenschlüssel (Objekt-/Typfeld,
+                               .eyebrow-Zugriff, key=); "btn-" nur die id faq-btn-${uniqueId}. Theme-Aliase: jeder Kandidat mit primary/secondary/display/heading
+                               einzeln kompiliert – keine Utility aus primary/secondary; nur font-display/font-heading, beide nur aus docs/DESIGN_SYSTEM.md.
+                               services.js color: "primary"/"secondary" hat keinen Leser (kein .color/{ color } ausserhalb src/config). Beleg 7-k004.json
+01 Tailwind-CSS vorher/nachher tw-stand.mjs (@tailwindcss/node compile + oxide-Scanner wie @tailwindcss/postcss) + postcss-Zählung   GRUEN
+                               vorher 131562 B, 1388 Selektoren, 261 Variablen, 41 @property; nachher 118184 B, 1327, 96, 40.
+                               neu 0 Selektoren, 0 Variablen, 0 @property; Wegfall 61 Selektoren (1 :root layer alt, 48 Alias, .font-display/.font-heading,
+                               10 Doku-Klassen aus dem alten docs/DESIGN_SYSTEM.md inkl. .font-sans) und 165 Variablen (136 tokens, 26 Theme-Aliase,
+                               --color-emerald-500, --radius-2xl, --tw-duration der Doku-Klassen). Gemeinsame Regeln: nur Wegfälle in @layer theme :root und
+                               im @layer-properties-Rückfall (--tw-duration:initial). .karten-hoehe bleibt (@layer components); --font-sans und
+                               --default-font-family bleiben im Theme; layer alt 0. Einziger neuer Kandidat "zentral" (README) erzeugt keine Regel. Beleg 7-tailwind.json
+02 Suche nachher               7-rg.txt: tokens.css/src/styles/layer(alt) 0 in src test scripts public docs README Root-Konfig (ausser Kommentar
+                               kopfskript.ts:16 zu src/styles/kern.css, unantastbar M-27); Alias-Klassen 0; eyebrow nur Datenschlüssel; Theme-Aliase 0   GRUEN
+03 JSON.parse                  werte-regeln.json und 7-k004/7-tailwind/7-karten/7-dom.json                                   GRUEN  alle gültig; ausnahmen.dateien = 5 Einträge
+04 werte                       node _werkstatt/werkzeuge/werte.mjs --dateien src/app/globals.css,src/app/(bestand)/_dokument.tsx   GRUEN  befunde gesamt 0
+                               ebenso im git-diff-Modus (dieselben 2 src-Dateien)                                            GRUEN  befunde gesamt 0
+05 Typprüfung                  npx tsc --noEmit -p tsconfig.json                                                             GRUEN  Exit 0, keine Ausgabe
+06 ESLint über src             npx eslint src                                                                                GRUEN  Exit 0, keine Ausgabe
+07 Unit-Tests                  npm test                                                                                      GRUEN  # tests 37 # pass 37 # fail 0
+08 Seitenaufruf 4350           karten.mjs, Playwright (PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers), Anfragen nach aussen abgebrochen, HMR-Filter wie Schritt 6,
+                               /, /kontakt, /standorte × d1440/m375 × Erstbesuch/abgelehnt                                    GRUEN  12/12 HTTP 200, hydriert, 0 Konsolenfehler,
+                               0 pageerror, 0 lokale Antworten ≥ 400, kein Next-Fehlerdialog. Ausgeliefertes CSS ist das neue (--color-brand-primary,
+                               --color-primary, --font-display am <html> leer; vorher #ea580c bzw. gesetzt). next dev seit der Änderung ohne FATAL/Fehler.
+09 Kartenflächen               getBoundingClientRect (+scrollY) und berechnete Höhe jeder .karten-hoehe bzw. ihres Rahmens: nachher 4350 = vorher 4350 =
+                               live 4366 in 12/12 Läufen (Breite, Höhe, Lage, --karten-hoehe); Dokumenthöhe 12/12 gleich. Startseite (Servicegebiet) d1440
+                               696×471,08, m375 343×355,06; /kontakt d1440 728,41×769,56, m375 341×740,53; /standorte d1440 1216×471,08 und 689,33×400,
+                               m375 343×355,06 und 343×400                                                                     GRUEN  Beleg 7-karten.json
+10 Pixel Kartenflächen         Ausschnitt des Kartenrahmens, Einwilligung abgelehnt, feste/klebende Ebenen ausgeblendet, DPR 1, pixelmatch threshold 0,
+                               4350 vorher gegen 4350 nachher                                                                 GRUEN  8/8 Ausschnitte 0 abweichende Pixel
+11 Schrift von <html>          getComputedStyle(html).fontFamily vorher = nachher = live: archivo, "Archivo Ersatz", Arial, sans-serif; --font-sans gesetzt   GRUEN  12/12
+12 DOM-Probe entfallene Klassen dom-klassen.mjs: 120 Seiten der Grundmenge auf 4366 (live) und /, /kontakt, /standorte auf 4350 (nachher)   GRUEN
+                               0 Elemente mit einer der 31 entfallenen Klassen (Alias, Theme-Alias-Utilities, Doku-Klassen), 0 Inline-Stile mit entfallener
+                               Variable, 123/123 HTTP 200. Beleg 7-dom.json
+Nicht gelaufen (verboten bzw. Tor): next build, build-vergleich --streng, volle Playwright-Suite, knip, Server-Neustart.
