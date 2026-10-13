@@ -1,0 +1,198 @@
+{
+ "live_css": "reinraum-9988385 (.next/static/chunks/0omglciwtg0n0.css; src identisch mit HEAD cbc3de2)",
+ "errorboundary": [
+  {
+   "klasse": "mx-auto",
+   "im_live_css": true
+  },
+  {
+   "klasse": "my-6",
+   "im_live_css": true
+  },
+  {
+   "klasse": "max-w-mass",
+   "im_live_css": true
+  },
+  {
+   "klasse": "border",
+   "im_live_css": true
+  },
+  {
+   "klasse": "border-l-2",
+   "im_live_css": true
+  },
+  {
+   "klasse": "border-laser-tief",
+   "im_live_css": true
+  },
+  {
+   "klasse": "bg-fliese",
+   "im_live_css": true
+  },
+  {
+   "klasse": "p-6",
+   "im_live_css": true
+  },
+  {
+   "klasse": "font-text",
+   "im_live_css": true
+  },
+  {
+   "klasse": "text-fs-2",
+   "im_live_css": true
+  },
+  {
+   "klasse": "text-tinte",
+   "im_live_css": true
+  },
+  {
+   "klasse": "flex",
+   "im_live_css": true
+  },
+  {
+   "klasse": "text-laser-tief",
+   "im_live_css": true
+  },
+  {
+   "klasse": "mt-4",
+   "im_live_css": true
+  },
+  {
+   "klasse": "text-fs-5",
+   "im_live_css": true
+  },
+  {
+   "klasse": "mt-2",
+   "im_live_css": true
+  },
+  {
+   "klasse": "mt-6",
+   "im_live_css": true
+  }
+ ],
+ "icon": [
+  {
+   "klasse": "inline-block",
+   "im_live_css": true
+  },
+  {
+   "klasse": "shrink-0",
+   "im_live_css": true
+  },
+  {
+   "klasse": "size-5",
+   "im_live_css": true
+  },
+  {
+   "klasse": "size-6",
+   "im_live_css": true
+  }
+ ],
+ "knopfKlassen_haupt": [
+  {
+   "klasse": "inline-flex",
+   "im_live_css": true
+  },
+  {
+   "klasse": "min-h-11",
+   "im_live_css": true
+  },
+  {
+   "klasse": "items-center",
+   "im_live_css": true
+  },
+  {
+   "klasse": "justify-center",
+   "im_live_css": true
+  },
+  {
+   "klasse": "gap-2",
+   "im_live_css": true
+  },
+  {
+   "klasse": "rounded-none",
+   "im_live_css": true
+  },
+  {
+   "klasse": "px-6",
+   "im_live_css": true
+  },
+  {
+   "klasse": "py-3",
+   "im_live_css": true
+  },
+  {
+   "klasse": "font-text",
+   "im_live_css": true
+  },
+  {
+   "klasse": "text-fs-2",
+   "im_live_css": true
+  },
+  {
+   "klasse": "font-semibold",
+   "im_live_css": true
+  },
+  {
+   "klasse": "no-underline",
+   "im_live_css": true
+  },
+  {
+   "klasse": "transition-colors",
+   "im_live_css": true
+  },
+  {
+   "klasse": "dauer-1",
+   "im_live_css": true
+  },
+  {
+   "klasse": "ease-setzen",
+   "im_live_css": true
+  },
+  {
+   "klasse": "motion-safe:active:translate-y-px",
+   "im_live_css": true
+  },
+  {
+   "klasse": "disabled:pointer-events-none",
+   "im_live_css": true
+  },
+  {
+   "klasse": "disabled:opacity-50",
+   "im_live_css": true
+  },
+  {
+   "klasse": "aria-disabled:pointer-events-none",
+   "im_live_css": true
+  },
+  {
+   "klasse": "aria-disabled:opacity-50",
+   "im_live_css": true
+  },
+  {
+   "klasse": "border",
+   "im_live_css": true
+  },
+  {
+   "klasse": "border-tinte",
+   "im_live_css": true
+  },
+  {
+   "klasse": "bg-tinte",
+   "im_live_css": true
+  },
+  {
+   "klasse": "text-kalk",
+   "im_live_css": true
+  },
+  {
+   "klasse": "hover:border-tinte-2",
+   "im_live_css": true
+  },
+  {
+   "klasse": "hover:bg-tinte-2",
+   "im_live_css": true
+  }
+ ],
+ "fehlend": []
+}

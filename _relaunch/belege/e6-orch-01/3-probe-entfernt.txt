@@ -1,0 +1,48 @@
+Probe-Route src/app/(bestand)/fehlerprobe-e6 (page.tsx, Werfer.tsx) geloescht mit rm -r
+ls src/app/(bestand)/fehlerprobe-e6:
+ls: cannot access 'src/app/(bestand)/fehlerprobe-e6': No such file or directory
+git status --short --untracked-files=all -- 'src/app/(bestand)/fehlerprobe-e6' (leer = weg):
+Treffer 'fehlerprobe' in git status (alle Pfade): 0
+rg fehlerprobe in src: 0
+HTTP /fehlerprobe-e6 auf 4350: 404
+git status --short (gesamt, Stand nach Loeschung):
+ M CLAUDE.md
+ D src/components/CookieConsent.tsx
+ D src/components/animations/HeartbeatCTA.tsx
+ D src/components/common/GoogleMap.tsx
+ D src/components/common/PageWrapper.jsx
+ D src/components/common/TileCraftIcons.jsx
+ D src/components/common/WaterCursor.tsx
+ D src/components/common/WhatsAppButton.tsx
+ D src/components/layout/FloatingDock.tsx
+ D src/components/maps/ContactMapWrapper.tsx
+ M src/components/providers/ErrorBoundary.tsx
+ D src/components/providers/MotionProvider.tsx
+ D src/components/providers/UIProvider.tsx
+ D src/components/sections/home/ContactSection.tsx
+ D src/components/trust/TrustBadges.tsx
+ D src/components/trust/TrustSignals.tsx
+ D src/components/ui/AnimatedNumber.tsx
+ D src/components/ui/GradientText.tsx
+ D src/components/ui/OptimizedImage.tsx
+ D src/components/ui/RotatingText.tsx
+ D src/components/ui/SpotlightCard.tsx
+ D src/components/ui/TiltCard.tsx
+ D src/components/ui/WaterCursor.tsx
+ D src/lib/indexnow.ts
+ D src/lib/physics/widgetPhysicsCoordinator.ts
+ D src/utils/iconMapper.jsx
+ D src/utils/index.js
+?? _relaunch/belege/e6-orch-01/1-importeure-vorher.json
+?? _relaunch/belege/e6-orch-01/1-knip-nach.json
+?? _relaunch/belege/e6-orch-01/1-loeschung.txt
+?? _relaunch/belege/e6-orch-01/1-pruefungen-nach.txt
+?? _relaunch/belege/e6-orch-01/3-altsystem.txt
+?? _relaunch/belege/e6-orch-01/3-klassen-live.json
+?? _relaunch/belege/e6-orch-01/3-probe-entfernt.txt
+?? _relaunch/belege/e6-orch-01/3-sichtung.json
+?? _relaunch/belege/e6-orch-01/3-werte.json
+?? _relaunch/belege/e6-orch-01/3-wortlaut.txt
+?? _relaunch/belege/e6-orch-01/knip-vor-ohne-entwurf.json
+?? _relaunch/belege/e6-orch-01/knip-vor.json
+?? _relaunch/belege/e6-orch-01/knip-vor.txt

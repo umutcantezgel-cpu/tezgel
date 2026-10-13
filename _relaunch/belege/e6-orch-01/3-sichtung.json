@@ -1,0 +1,257 @@
+{
+ "url": "http://127.0.0.1:4350/fehlerprobe-e6",
+ "zeitpunkt": "2026-10-12T23:59:44.298Z",
+ "server": "next dev 4350 (Arbeitsbaum)",
+ "overlay_css": "nextjs-portal { display: none !important; }",
+ "ansichten": [
+  {
+   "ansicht": "m390",
+   "viewport": "390x844",
+   "blockierte_ursprünge": [],
+   "kasten": {
+    "klassen": "mx-auto my-6 max-w-mass border border-l-2 border-laser-tief bg-fliese p-6 font-text text-fs-2 text-tinte",
+    "rolle": "alert",
+    "rechteck": {
+     "x": 0,
+     "y": 24,
+     "w": 390,
+     "h": 274
+    },
+    "viewport_breite": 390,
+    "waagrechter_ueberlauf": false,
+    "hintergrund": "rgb(255, 255, 255)",
+    "rahmen_links": "2px solid rgb(168, 23, 28)",
+    "rahmen_oben": "1px solid rgb(168, 23, 28)",
+    "radius": "0px",
+    "farbe": "rgb(10, 17, 41)",
+    "h3": {
+     "text": "Ein unerwarteter Fehler ist aufgetreten",
+     "schrift": "24.29px",
+     "gewicht": "760",
+     "farbe": "rgb(10, 17, 41)"
+    },
+    "p": {
+     "text": "Dieser Abschnitt konnte leider nicht korrekt geladen werden.",
+     "schrift": "15px",
+     "farbe": "rgb(10, 17, 41)"
+    },
+    "knopf": {
+     "text": "Erneut versuchen",
+     "hoehe": 49,
+     "hintergrund": "rgb(10, 17, 41)",
+     "farbe": "rgb(245, 244, 240)",
+     "radius": "0px",
+     "data_motion": "druck"
+    },
+    "icons": [
+     "fehler",
+     "pfeil-links"
+    ],
+    "struktur": [
+     "div",
+     "h3",
+     "p",
+     "button"
+    ]
+   },
+   "foto": "3-fehlerbild-m390.png (Scratchpad)",
+   "axe": {
+    "verstoesse": [
+     {
+      "id": "landmark-one-main",
+      "impact": "moderate",
+      "anzahl": 1,
+      "ziele": [
+       "html"
+      ]
+     },
+     {
+      "id": "page-has-heading-one",
+      "impact": "moderate",
+      "anzahl": 1,
+      "ziele": [
+       "html"
+      ]
+     },
+     {
+      "id": "region",
+      "impact": "moderate",
+      "anzahl": 1,
+      "ziele": [
+       ".sr-only"
+      ]
+     }
+    ],
+    "ernst_kritisch": 0,
+    "bestanden": 26
+   },
+   "tastatur": {
+    "tabfolge": [
+     {
+      "tag": "a",
+      "text": "Zum Hauptinhalt springen",
+      "fv": true
+     },
+     {
+      "tag": "button",
+      "text": "Erneut versuchen",
+      "fv": true
+     }
+    ],
+    "knopf_erreicht": true,
+    "tabs": 2,
+    "fokus": {
+     "focus_visible": true,
+     "outline": "2px solid rgb(10, 17, 41)",
+     "outline_offset": "2px",
+     "hintergrund_umfeld": "rgb(255, 255, 255)",
+     "ring_farbe_ist_tinte": true,
+     "kontrast_ring_zu_umfeld": 18.66,
+     "sichtbar": true
+    },
+    "foto": "3-fokus-m390.png (Scratchpad)"
+   },
+   "zuruecksetzen_wirft_weiter": {
+    "logs_vorher": 1,
+    "logs_nachher": 2,
+    "fehlerbild_wieder_da": true
+   },
+   "zuruecksetzen_ok": {
+    "kind_sichtbar": true,
+    "fehlerbild_weg": true,
+    "main_da": true
+   },
+   "konsole_fehler_auszug": [
+    "%o\n\n%s Error: Fehlerprobe E6-ORCH-01: absichtlicher Wurf beim Rendern\n    at Werfer (http://127.0.0.1:4350/_next/static/chunks/src_app_(bestand)_fehlerprobe-e6_Werfer_tsx_0gj1tq1._.js:25:15)\n    at Ob",
+    "Uncaught error in component tree: Error: Fehlerprobe E6-ORCH-01: absichtlicher Wurf beim Rendern\n    at Werfer (http://127.0.0.1:4350/_next/static/chunks/src_app_(bestand)_fehlerprobe-e6_Werfer_tsx_0g",
+    "%o\n\n%s Error: Fehlerprobe E6-ORCH-01: absichtlicher Wurf beim Rendern\n    at Werfer (http://127.0.0.1:4350/_next/static/chunks/src_app_(bestand)_fehlerprobe-e6_Werfer_tsx_0gj1tq1._.js:25:15)\n    at Ob",
+    "Uncaught error in component tree: Error: Fehlerprobe E6-ORCH-01: absichtlicher Wurf beim Rendern\n    at Werfer (http://127.0.0.1:4350/_next/static/chunks/src_app_(bestand)_fehlerprobe-e6_Werfer_tsx_0g"
+   ]
+  },
+  {
+   "ansicht": "d1440",
+   "viewport": "1440x900",
+   "blockierte_ursprünge": [],
+   "kasten": {
+    "klassen": "mx-auto my-6 max-w-mass border border-l-2 border-laser-tief bg-fliese p-6 font-text text-fs-2 text-tinte",
+    "rolle": "alert",
+    "rechteck": {
+     "x": 435,
+     "y": 24,
+     "w": 569,
+     "h": 239
+    },
+    "viewport_breite": 1440,
+    "waagrechter_ueberlauf": false,
+    "hintergrund": "rgb(255, 255, 255)",
+    "rahmen_links": "2px solid rgb(168, 23, 28)",
+    "rahmen_oben": "1px solid rgb(168, 23, 28)",
+    "radius": "0px",
+    "farbe": "rgb(10, 17, 41)",
+    "h3": {
+     "text": "Ein unerwarteter Fehler ist aufgetreten",
+     "schrift": "35.84px",
+     "gewicht": "760",
+     "farbe": "rgb(10, 17, 41)"
+    },
+    "p": {
+     "text": "Dieser Abschnitt konnte leider nicht korrekt geladen werden.",
+     "schrift": "16px",
+     "farbe": "rgb(10, 17, 41)"
+    },
+    "knopf": {
+     "text": "Erneut versuchen",
+     "hoehe": 51,
+     "hintergrund": "rgb(10, 17, 41)",
+     "farbe": "rgb(245, 244, 240)",
+     "radius": "0px",
+     "data_motion": "druck"
+    },
+    "icons": [
+     "fehler",
+     "pfeil-links"
+    ],
+    "struktur": [
+     "div",
+     "h3",
+     "p",
+     "button"
+    ]
+   },
+   "foto": "3-fehlerbild-d1440.png (Scratchpad)",
+   "axe": {
+    "verstoesse": [
+     {
+      "id": "landmark-one-main",
+      "impact": "moderate",
+      "anzahl": 1,
+      "ziele": [
+       "html"
+      ]
+     },
+     {
+      "id": "page-has-heading-one",
+      "impact": "moderate",
+      "anzahl": 1,
+      "ziele": [
+       "html"
+      ]
+     },
+     {
+      "id": "region",
+      "impact": "moderate",
+      "anzahl": 1,
+      "ziele": [
+       ".sr-only"
+      ]
+     }
+    ],
+    "ernst_kritisch": 0,
+    "bestanden": 26
+   },
+   "tastatur": {
+    "tabfolge": [
+     {
+      "tag": "a",
+      "text": "Zum Hauptinhalt springen",
+      "fv": true
+     },
+     {
+      "tag": "button",
+      "text": "Erneut versuchen",
+      "fv": true
+     }
+    ],
+    "knopf_erreicht": true,
+    "tabs": 2,
+    "fokus": {
+     "focus_visible": true,
+     "outline": "2px solid rgb(10, 17, 41)",
+     "outline_offset": "2px",
+     "hintergrund_umfeld": "rgb(255, 255, 255)",
+     "ring_farbe_ist_tinte": true,
+     "kontrast_ring_zu_umfeld": 18.66,
+     "sichtbar": true
+    },
+    "foto": "3-fokus-d1440.png (Scratchpad)"
+   },
+   "zuruecksetzen_wirft_weiter": {
+    "logs_vorher": 1,
+    "logs_nachher": 2,
+    "fehlerbild_wieder_da": true
+   },
+   "zuruecksetzen_ok": {
+    "kind_sichtbar": true,
+    "fehlerbild_weg": true,
+    "main_da": true
+   },
+   "konsole_fehler_auszug": [
+    "%o\n\n%s Error: Fehlerprobe E6-ORCH-01: absichtlicher Wurf beim Rendern\n    at Werfer (http://127.0.0.1:4350/_next/static/chunks/src_app_(bestand)_fehlerprobe-e6_Werfer_tsx_0gj1tq1._.js:25:15)\n    at Ob",
+    "Uncaught error in component tree: Error: Fehlerprobe E6-ORCH-01: absichtlicher Wurf beim Rendern\n    at Werfer (http://127.0.0.1:4350/_next/static/chunks/src_app_(bestand)_fehlerprobe-e6_Werfer_tsx_0g",
+    "%o\n\n%s Error: Fehlerprobe E6-ORCH-01: absichtlicher Wurf beim Rendern\n    at Werfer (http://127.0.0.1:4350/_next/static/chunks/src_app_(bestand)_fehlerprobe-e6_Werfer_tsx_0gj1tq1._.js:25:15)\n    at Ob",
+    "Uncaught error in component tree: Error: Fehlerprobe E6-ORCH-01: absichtlicher Wurf beim Rendern\n    at Werfer (http://127.0.0.1:4350/_next/static/chunks/src_app_(bestand)_fehlerprobe-e6_Werfer_tsx_0g"
+   ]
+  }
+ ],
+ "ok": true
+}

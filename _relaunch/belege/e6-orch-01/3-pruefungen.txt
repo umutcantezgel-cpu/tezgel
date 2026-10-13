@@ -1,0 +1,11 @@
+== npx tsc --noEmit -p tsconfig.json
+tsc-exit=0
+== npx eslint src/components/providers/ErrorBoundary.tsx
+eslint-exit=0
+== npm test (node --test): 37 Tests, pass 37, fail 0, exit 0
+== Importe lucide-react in ErrorBoundary (from/import()): 0
+== Dateien in src mit lucide-react-Import (Stand Arbeitsbaum, inkl. paralleler Schritte): 3
+== Werte (node _werkstatt/werkzeuge/werte.mjs --dateien src/components/providers/ErrorBoundary.tsx): 0 Befunde (3-werte.json)
+== Altsystem-Muster Stufe 05: 0 Treffer (3-altsystem.txt)
+== Wortlaut: 0 Abweichungen (3-wortlaut.txt)
+== Sichtung: 3-sichtung.json (ok=true)

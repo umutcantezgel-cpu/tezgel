@@ -1,0 +1,4 @@
+Wortlaut (JSX-Textknoten + Protokollzeile) src/components/providers/ErrorBoundary.tsx
+HEAD:       ["console.error: Uncaught error in component tree:","Ein unerwarteter Fehler ist aufgetreten","Dieser Abschnitt konnte leider nicht korrekt geladen werden.","Erneut versuchen"]
+Arbeitsbaum: ["console.error: Uncaught error in component tree:","Ein unerwarteter Fehler ist aufgetreten","Dieser Abschnitt konnte leider nicht korrekt geladen werden.","Erneut versuchen"]
+Abweichungen: 0

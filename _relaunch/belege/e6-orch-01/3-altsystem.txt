@@ -1,0 +1,6 @@
+Altsystem-Muster aus _relaunch/werkzeuge/tor-s.sh Stufe 05 auf src/components/providers/ErrorBoundary.tsx
+Befehl: grep -nE '<Muster Stufe 05>' src/components/providers/ErrorBoundary.tsx
+grep-exit=1 (1 = kein Treffer)
+Treffer: 0
+Zusatz: rounded-* (ausser rounded-none) und lucide im Volltext:
+Zusatz-Treffer: 0
