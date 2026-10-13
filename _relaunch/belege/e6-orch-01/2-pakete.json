@@ -1,0 +1,73 @@
+{
+  "befehl": "npm uninstall --offline --no-audit --no-fund framer-motion @phosphor-icons/react (Wurzelordner; npm 10.9.4, node v22.22.0; keine Lifecycle-Skripte in package.json)",
+  "package_json": {
+    "dependencies_weg": [
+      "@phosphor-icons/react",
+      "framer-motion"
+    ],
+    "dependencies_versionsaenderung": [],
+    "devDependencies_unveraendert": true,
+    "lucide_react": "^1.16.0"
+  },
+  "package_lock": {
+    "zeilen": "0\t57\tpackage-lock.json",
+    "eintraege_weg": [
+      "node_modules/@phosphor-icons/react",
+      "node_modules/framer-motion",
+      "node_modules/motion-dom",
+      "node_modules/motion-utils"
+    ],
+    "eintraege_neu": [],
+    "eintraege_geaendert": [
+      ""
+    ],
+    "wurzel_dependencies_weg": [
+      "@phosphor-icons/react",
+      "framer-motion"
+    ],
+    "lockfileVersion": [
+      3,
+      3
+    ],
+    "tslib_bleibt": "2.8.1",
+    "tslib_abhaengige_nachher": [
+      "node_modules/@emnapi/core",
+      "node_modules/@emnapi/runtime",
+      "node_modules/@emnapi/wasi-threads",
+      "node_modules/@img/sharp-wasm32/node_modules/@emnapi/runtime",
+      "node_modules/@swc/helpers",
+      "node_modules/@tailwindcss/oxide-wasm32-wasi",
+      "node_modules/@tybys/wasm-util"
+    ]
+  },
+  "probelauf": {
+    "befehl": "npm uninstall --package-lock-only --ignore-scripts --offline in Scratch-Kopie von package.json/package-lock.json",
+    "ergebnis": "package.json und package-lock.json byte-gleich mit dem echten Lauf (cmp)"
+  },
+  "trockenlauf_node_modules": {
+    "befehl": "npm uninstall --dry-run --ignore-scripts --offline",
+    "remove": [
+      "motion-utils 12.39.0",
+      "motion-dom 12.40.0",
+      "framer-motion 12.40.0",
+      "@phosphor-icons/react 2.1.10"
+    ],
+    "add": "66 Meldungen, alle optionale Plattformpakete mit fremdem os/cpu (win32, darwin, linux-arm*, wasm32 u. a.); keines passt zu linux/x64, beim echten Lauf übersprungen"
+  },
+  "node_modules": {
+    "package_json_vorher": 475,
+    "nachher": 467,
+    "weg": [
+      "./@phosphor-icons/react/package.json",
+      "./framer-motion/client/package.json",
+      "./framer-motion/dom/package.json",
+      "./framer-motion/m/package.json",
+      "./framer-motion/mini/package.json",
+      "./framer-motion/package.json",
+      "./motion-dom/package.json",
+      "./motion-utils/package.json"
+    ],
+    "neu": [],
+    "fremde_pakete_unberuehrt": "@emnapi/*, @img/sharp-wasm32, @napi-rs/wasm-runtime, @tybys/wasm-util bleiben (npm ls: extraneous, schon vorher)"
+  }
+}

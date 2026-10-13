@@ -1,0 +1,79 @@
+E6-ORCH-01 Schritt 2 – Prüfungen im Arbeitsbaum (2026-10-13 00:14 UTC)
+
+== Diff next.config.ts / Markenlogos.tsx
+diff --git a/next.config.ts b/next.config.ts
+index 3e6df42..59a99f2 100644
+--- a/next.config.ts
++++ b/next.config.ts
+@@ -25,14 +25,9 @@ const nextConfig: NextConfig = {
+     qualities: [75],
+   },
+   experimental: {
+-    // E-015: mehrere Root-Layouts (bestand/kern) → 404 für unbekannte Adressen über app/global-not-found.tsx
++    // E-015: kein app/layout.tsx, das lebende Root-Layout liegt in der Gruppe (bestand) → 404 für unbekannte Adressen
++    // über app/global-not-found.tsx
+     globalNotFound: true,
+-    optimizePackageImports: [
+-      '@phosphor-icons/react',
+-      '@phosphor-icons/react/dist/ssr',
+-      'lucide-react',
+-      'framer-motion'
+-    ],
+   },
+   turbopack: {
+     resolveAlias: {
+diff --git a/src/components/ui/Markenlogos.tsx b/src/components/ui/Markenlogos.tsx
+index 2aa180e..a53ac35 100644
+--- a/src/components/ui/Markenlogos.tsx
++++ b/src/components/ui/Markenlogos.tsx
+@@ -1,5 +1,6 @@
+-// Markenlogos für Teilen-Knöpfe und Autorenprofil (E3-Vorlauf, ersetzt @phosphor-icons/react; gehören nicht zur
+-// eigenen Icon-Familie, Z-06). Pfade aus Phosphor Icons, Gewicht „regular“ (MIT-Lizenz), einfarbig in currentColor.
++// Markenlogos für Teilen-Knöpfe und Autorenprofil (E3-Vorlauf, ersetzt phosphor-icons/react; gehören nicht zur
++// eigenen Icon-Familie, Z-06). Pfade aus Phosphor Icons, Gewicht „regular“, einfarbig in currentColor.
++// Copyright (c) 2020 Phosphor Icons, MIT-Lizenz; vollständiger Text in ./LIZENZ-Phosphor.txt (beizubehalten).
+ type LogoProps = { className?: string };
+ 
+ function Logo({ d, className }: { d: string; className?: string }) {
+
+== git diff --stat (Schritt-2-Dateien)
+ next.config.ts                    |  9 ++-----
+ package-lock.json                 | 57 ---------------------------------------
+ package.json                      |  2 --
+ src/components/ui/Markenlogos.tsx |  5 ++--
+ 4 files changed, 5 insertions(+), 68 deletions(-)
+neu: src/components/ui/LIZENZ-Phosphor.txt (21 Zeilen, sha256 6918b72504641180…)
+
+== npx tsc --noEmit -p tsconfig.json
+exit=0
+
+== npx eslint next.config.ts src/components/ui/Markenlogos.tsx src/components/blog/ShareButtons.jsx src/components/blog/BlogAuthorCard.jsx
+exit=0
+
+== npm test
+# tests 37
+# pass 37
+# fail 0
+
+== Importe (from/import()/require) framer-motion|motion-dom|motion-utils|@phosphor-icons in src test scripts next.config.ts
+Treffer: 0 Dateien
+(ganzes Repo ohne node_modules/.next/.git/Belege: ebenfalls 0)
+
+== Volltext (erwartete Reste)
+src/components/ui/Markenlogos.tsx:1:// Markenlogos für Teilen-Knöpfe und Autorenprofil (E3-Vorlauf, ersetzt phosphor-icons/react; gehören nicht zur
+src/components/kern/seiten/ueber-uns/Geschichte.tsx:7:// (Lehre 1, E-026). Die scrollgebundene Linie (framer-motion, Feder) und die Seiten-Einflüge entfallen; die Liste trägt einen
+
+== lucide-Importe in src (lucide bleibt installiert, M-25)
+src/lib/formulare/useAnfrageFunnel.ts
+src/config/company.js
+src/config/blog.js
+
+== next dev 4350 (nicht gestartet/gestoppt; nach next.config-Änderung lädt next dev selbst neu)
+/ 200 fehlertreffer=0
+/kontakt 200 fehlertreffer=0
+/ueber-uns 200 fehlertreffer=0
+/blog 200 fehlertreffer=0
+/blog/handwerkerbonus-fliesenarbeiten 200 fehlertreffer=0
+/preise 200 fehlertreffer=0
+/gibt-es-nicht-e6 404 fehlertreffer=0
+Dev-Chunks mit neuem Markenlogos-Kommentar (LIZENZ-Phosphor): 2 Dateien

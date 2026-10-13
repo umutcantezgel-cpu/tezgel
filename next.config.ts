@@ -25,14 +25,9 @@ const nextConfig: NextConfig = {
     qualities: [75],
   },
   experimental: {
-    // E-015: mehrere Root-Layouts (bestand/kern) → 404 für unbekannte Adressen über app/global-not-found.tsx
+    // E-015: kein app/layout.tsx, das lebende Root-Layout liegt in der Gruppe (bestand) → 404 für unbekannte Adressen
+    // über app/global-not-found.tsx
     globalNotFound: true,
-    optimizePackageImports: [
-      '@phosphor-icons/react',
-      '@phosphor-icons/react/dist/ssr',
-      'lucide-react',
-      'framer-motion'
-    ],
   },
   turbopack: {
     resolveAlias: {

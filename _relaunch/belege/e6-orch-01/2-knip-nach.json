@@ -1,0 +1,30 @@
+{
+  "werkzeug": "knip 6.41.0, _relaunch/werkzeuge/node_modules/.bin/knip --config _relaunch/werkzeuge/knip.json --reporter json --no-progress --no-exit-code (stderr leer, git status vorher = nachher)",
+  "hinweis": "Lauf nach Schritt 2 im gemeinsamen Arbeitsbaum (Schritt 3 hat ErrorBoundary.tsx geändert).",
+  "ungenutzteDateien": {
+    "nach_schritt1": 31,
+    "nach_schritt2": 31,
+    "liste_gleich": true
+  },
+  "abhaengigkeiten": {
+    "nach_schritt1": [
+      "dep:@googlemaps/js-api-loader",
+      "dep:@phosphor-icons/react",
+      "dep:@types/google.maps",
+      "dep:framer-motion",
+      "dev:tailwindcss"
+    ],
+    "nach_schritt2": [
+      "dep:@googlemaps/js-api-loader",
+      "dep:@types/google.maps",
+      "dev:tailwindcss"
+    ]
+  },
+  "zahlen": {
+    "exports": 148,
+    "types": 139,
+    "duplicates": 28,
+    "unlisted": 0,
+    "unresolved": 0
+  }
+}

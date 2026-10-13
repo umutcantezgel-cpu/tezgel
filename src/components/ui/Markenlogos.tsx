@@ -1,5 +1,6 @@
-// Markenlogos für Teilen-Knöpfe und Autorenprofil (E3-Vorlauf, ersetzt @phosphor-icons/react; gehören nicht zur
-// eigenen Icon-Familie, Z-06). Pfade aus Phosphor Icons, Gewicht „regular“ (MIT-Lizenz), einfarbig in currentColor.
+// Markenlogos für Teilen-Knöpfe und Autorenprofil (E3-Vorlauf, ersetzt phosphor-icons/react; gehören nicht zur
+// eigenen Icon-Familie, Z-06). Pfade aus Phosphor Icons, Gewicht „regular“, einfarbig in currentColor.
+// Copyright (c) 2020 Phosphor Icons, MIT-Lizenz; vollständiger Text in ./LIZENZ-Phosphor.txt (beizubehalten).
 type LogoProps = { className?: string };
 
 function Logo({ d, className }: { d: string; className?: string }) {

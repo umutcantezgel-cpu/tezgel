@@ -1,0 +1,17 @@
+{
+  "datei": "src/components/ui/LIZENZ-Phosphor.txt",
+  "quelle": "node_modules/@phosphor-icons/react/LICENSE (Paket 2.1.10, license MIT), vor der Deinstallation mit cp kopiert",
+  "sha256": "6918b72504641180600cbbd4a86b0dfa9dfccf788775694325b71b9a029f6eb4 (Kopie und Quelle identisch, cmp ohne Unterschied)",
+  "inhalt": "vollständiger MIT-Text: Kopf MIT License, Copyright (c) 2020 Phosphor Icons, Erlaubnistext, Bedingung, Gewährleistungsausschluss",
+  "verweis": "src/components/ui/Markenlogos.tsx:3 // Copyright (c) 2020 Phosphor Icons, MIT-Lizenz; vollständiger Text in ./LIZENZ-Phosphor.txt (beizubehalten).",
+  "tailwind": {
+    "befehl": "node scratchpad/e6-orch-01/s2-tw.mjs (@tailwindcss/oxide Scanner + @tailwindcss/node compile von src/app/globals.css)",
+    "datei_im_projektscan": true,
+    "kandidaten": 45,
+    "css_ohne": 40001,
+    "css_mit": 40001,
+    "css_gleich": true,
+    "deutung": "Tailwind scannt die .txt-Datei, keiner der Kandidaten erzeugt CSS; das kompilierte CSS bleibt unverändert."
+  },
+  "tor_grep": "grep -nE \"lucide-react|framer-motion|@phosphor\" next.config.ts src/components/ui/Markenlogos.tsx src/components/ui/LIZENZ-Phosphor.txt: 0 Treffer (tor-s.sh Stufe 05 prüft ohnehin nur .tsx/.ts/.jsx/.js)"
+}
