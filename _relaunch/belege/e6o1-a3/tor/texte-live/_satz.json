@@ -1,0 +1,510 @@
+{
+ "satz": "e6o1-a3-texte-live",
+ "base": null,
+ "bedingungen": {
+  "quelle": "../../../../tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/reinraum-51f2cad/.next/server/app/**/*.html",
+  "build_id": "myvwzhvG_6aRteToEbxHP",
+  "dateien": 12,
+  "parser": "Chromium DOMParser (Playwright 1.56.1), keine Skriptausführung, keine Netzanfragen",
+  "streaming": "React $RC/$RS aufgelöst (Suspense-Inhalt an Ort, Ersatzinhalt entfernt)",
+  "ohne": [
+   "script (JSON-LD als Hash)",
+   "style",
+   "template",
+   "noscript"
+  ],
+  "normalisierung": "U+00AD/U+200B/U+2060/U+FEFF entfernt; U+00A0/U+2007/U+202F → Leerzeichen; <br> → Leerzeichen; Leerraum zusammengefasst; kein Groß/Klein-Angleich; Inline-Grenze ohne Leerraum → Leerzeichen (außer an Zeichensetzung)",
+  "meta_ohne": [
+   "charset",
+   "viewport",
+   "theme-color",
+   "color-scheme",
+   "x-build",
+   "next-size-adjust",
+   "format-detection"
+  ],
+  "hash_befehle": [
+   "cookie-settings"
+  ]
+ },
+ "erstellt": "2026-10-13T02:14:19.268Z",
+ "summe": {
+  "dateien": 12,
+  "im_manifest": 12,
+  "eintraege": 5783,
+  "seiten_mit_mehreren_h1": [],
+  "seiten_ohne_h1": [],
+  "fragmente": {
+   "gesamt": 44,
+   "ok": 32,
+   "befehle": 12,
+   "fehlend": 0,
+   "ziel_unbekannt": 0,
+   "pflichtanker_ok": "3/4"
+  },
+  "netz_protokoll": 0,
+  "laufzeit_s": 0.8
+ },
+ "fragmente": {
+  "gesamt": 44,
+  "ok": 32,
+  "befehle": [
+   {
+    "seite": "/bad",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/blog",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/faq",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/fliesen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/kontakt",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/preise",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/standorte",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/standorte/giessen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/ueber-uns",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/widerruf",
+    "href": "#cookie-settings"
+   }
+  ],
+  "fehlend": [],
+  "ziel_unbekannt": [],
+  "ziele": [
+   {
+    "ziel": "/kontakt",
+    "id": "express-anfrage",
+    "verweise": 13,
+    "von": [
+     "/bad",
+     "/blog",
+     "/faq",
+     "/fliesen",
+     "/kontakt"
+    ]
+   },
+   {
+    "ziel": "/bad",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad"
+    ]
+   },
+   {
+    "ziel": "/blog",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/blog"
+    ]
+   },
+   {
+    "ziel": "/faq",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/faq"
+    ]
+   },
+   {
+    "ziel": "/fliesen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/fliesen"
+    ]
+   },
+   {
+    "ziel": "/kontakt",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/kontakt"
+    ]
+   },
+   {
+    "ziel": "/",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/"
+    ]
+   },
+   {
+    "ziel": "/",
+    "id": "ablauf",
+    "verweise": 1,
+    "von": [
+     "/"
+    ]
+   },
+   {
+    "ziel": "/preise",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/preise"
+    ]
+   },
+   {
+    "ziel": "/preise",
+    "id": "anfrage",
+    "verweise": 1,
+    "von": [
+     "/preise"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "express-anfrage",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "bad",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "wohnen",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "aussen",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "untergrund",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/standorte",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/standorte"
+    ]
+   },
+   {
+    "ziel": "/standorte/giessen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/standorte/giessen"
+    ]
+   },
+   {
+    "ziel": "/ueber-uns",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/ueber-uns"
+    ]
+   },
+   {
+    "ziel": "/widerruf",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/widerruf"
+    ]
+   }
+  ],
+  "pflichtanker": [
+   {
+    "anker": "/#express-anfrage",
+    "ok": true,
+    "seite_vorhanden": true
+   },
+   {
+    "anker": "/kontakt#express-anfrage",
+    "ok": true,
+    "seite_vorhanden": true
+   },
+   {
+    "anker": "/kontakt#termin-buchen",
+    "ok": true,
+    "seite_vorhanden": true
+   },
+   {
+    "anker": "/referenzen#bewertungen",
+    "ok": false,
+    "seite_vorhanden": false
+   }
+  ]
+ },
+ "seiten": {
+  "/": {
+   "datei": "start.json",
+   "quelle": "index.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 808,
+   "arten": {
+    "meta": 32,
+    "text": 647,
+    "aria": 103,
+    "alt": 3,
+    "ueberschrift": 23
+   },
+   "h1": [
+    "Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar"
+   ],
+   "hash": "53d4f5fadb80c332"
+  },
+  "/bad": {
+   "datei": "bad.json",
+   "quelle": "bad.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 433,
+   "arten": {
+    "meta": 33,
+    "text": 348,
+    "aria": 40,
+    "alt": 3,
+    "ueberschrift": 9
+   },
+   "h1": [
+    "Ihr Traumbad schlüsselfertig in Fachqualität"
+   ],
+   "hash": "b97713a66c15c794"
+  },
+  "/blog": {
+   "datei": "blog.json",
+   "quelle": "blog.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 454,
+   "arten": {
+    "meta": 33,
+    "text": 363,
+    "aria": 40,
+    "alt": 3,
+    "ueberschrift": 15
+   },
+   "h1": [
+    "Fliesen-Ratgeber & Badsanierung Tipps"
+   ],
+   "hash": "ddb14b84181425c4"
+  },
+  "/faq": {
+   "datei": "faq.json",
+   "quelle": "faq.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 433,
+   "arten": {
+    "meta": 33,
+    "text": 344,
+    "aria": 49,
+    "alt": 3,
+    "ueberschrift": 4
+   },
+   "h1": [
+    "FAQ: Häufige Fragen zu Fliesen & Bad bei Tezgel"
+   ],
+   "hash": "ffc77220cd475ab5"
+  },
+  "/fliesen": {
+   "datei": "fliesen.json",
+   "quelle": "fliesen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 520,
+   "arten": {
+    "meta": 33,
+    "text": 423,
+    "aria": 40,
+    "alt": 3,
+    "ueberschrift": 21
+   },
+   "h1": [
+    "Fliesen-Ratgeber: Formate, Räume und Verlegetechnik verständlich erklärt"
+   ],
+   "hash": "eb231a7d53bac92b"
+  },
+  "/kontakt": {
+   "datei": "kontakt.json",
+   "quelle": "kontakt.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 437,
+   "arten": {
+    "meta": 33,
+    "text": 348,
+    "aria": 43,
+    "alt": 3,
+    "ueberschrift": 10
+   },
+   "h1": [
+    "Kontakt & Aufmaß Fliesenleger Tezgel"
+   ],
+   "hash": "4394c3fc37dce5c9"
+  },
+  "/leistungen": {
+   "datei": "leistungen.json",
+   "quelle": "leistungen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 508,
+   "arten": {
+    "meta": 33,
+    "text": 410,
+    "aria": 50,
+    "alt": 3,
+    "ueberschrift": 12
+   },
+   "h1": [
+    "Fliesenleger Leistungen & Fachgewerke Wetzlar"
+   ],
+   "hash": "18062a7a5675772e"
+  },
+  "/preise": {
+   "datei": "preise.json",
+   "quelle": "preise.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 455,
+   "arten": {
+    "meta": 32,
+    "text": 362,
+    "aria": 51,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Kosten & Preise auf Anfrage – Verbindliche Festpreise"
+   ],
+   "hash": "9ce5bf9c59b0abdd"
+  },
+  "/standorte": {
+   "datei": "standorte.json",
+   "quelle": "standorte.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 497,
+   "arten": {
+    "meta": 33,
+    "text": 414,
+    "aria": 37,
+    "alt": 3,
+    "ueberschrift": 10
+   },
+   "h1": [
+    "Standorte & Einsatzgebiete in Mittelhessen"
+   ],
+   "hash": "b3b9275f60ae7f36"
+  },
+  "/standorte/giessen": {
+   "datei": "standorte__giessen.json",
+   "quelle": "standorte/giessen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 503,
+   "arten": {
+    "meta": 33,
+    "text": 411,
+    "aria": 47,
+    "alt": 3,
+    "ueberschrift": 9
+   },
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Gießen"
+   ],
+   "hash": "935bfc40e79287b7"
+  },
+  "/ueber-uns": {
+   "datei": "ueber-uns.json",
+   "quelle": "ueber-uns.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 405,
+   "arten": {
+    "meta": 33,
+    "text": 316,
+    "aria": 37,
+    "alt": 3,
+    "ueberschrift": 16
+   },
+   "h1": [
+    "Über uns – Fliesenleger-Fachbetrieb Tezgel in Aßlar"
+   ],
+   "hash": "95fc779187252084"
+  },
+  "/widerruf": {
+   "datei": "widerruf.json",
+   "quelle": "widerruf.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 330,
+   "arten": {
+    "meta": 33,
+    "text": 258,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 1
+   },
+   "h1": [
+    "Widerrufsbelehrung & Muster-Widerrufsformular"
+   ],
+   "hash": "a2b6cca251b0178c"
+  }
+ }
+}

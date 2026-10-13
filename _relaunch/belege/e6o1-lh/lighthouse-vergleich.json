@@ -1,0 +1,2715 @@
+{
+ "satz": "e6o1-lh",
+ "base": "http://127.0.0.1:4368",
+ "kandidat": "http://127.0.0.1:4369",
+ "modus": "verschraenkt",
+ "bedingungen": "lokal next start (komprimiert), Erstbesuch mit Banner (Speicher je Lauf zurückgesetzt), Dritt-Hosts blockiert, Lighthouse-Standard-Drosselung (mobil: simuliert 4× CPU, Slow 4G; Desktop-Preset), Chromium headless --no-sandbox --disable-gpu, eine Chrome-Instanz für alle Läufe; verschränkt: je Seite und Form 5 Paare, Reihenfolge A B A B … (A = Basis http://127.0.0.1:4368, B = Kandidat http://127.0.0.1:4369) im selben Messfenster",
+ "erstellt": "2026-10-13T02:46:59.069Z",
+ "laeufe": 5,
+ "seiten": {
+  "/": {
+   "mobil": {
+    "basis": {
+     "median": {
+      "perf": 90,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3461,
+      "cls": 0,
+      "tbt": 149,
+      "fcp": 1375,
+      "si": 1382,
+      "js_kb": 261,
+      "font_kb": 72,
+      "gesamt_kb": 495,
+      "benchmark": 1455.5,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+       "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+       "snippet": "<p class=\"max-w-mass text-fs-4 text-tinte\">",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,1,DIV,3,DIV,0,P",
+       "rechteck": {
+        "top": 445,
+        "left": 16,
+        "width": 380,
+        "height": 213
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 24,
+       "elementRenderDelay": 229
+      },
+      "streuung_perf": [
+       79,
+       94
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 86,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3479.4494,
+       "cls": 0,
+       "tbt": 247.0506000000005,
+       "fcp": 1374.6741,
+       "si": 1374.6741,
+       "js_kb": 261,
+       "font_kb": 72,
+       "gesamt_kb": 495,
+       "benchmark": 1455.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-mass text-fs-4 text-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,1,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 445,
+         "left": 16,
+         "width": 380,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 21,
+        "elementRenderDelay": 247
+       },
+       "reihenfolge": 0
+      },
+      {
+       "perf": 90,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3461.0019999999995,
+       "cls": 0,
+       "tbt": 116.99799999999982,
+       "fcp": 1378.503,
+       "si": 1534.3530682949176,
+       "js_kb": 261,
+       "font_kb": 72,
+       "gesamt_kb": 495,
+       "benchmark": 1417,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-mass text-fs-4 text-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,1,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 445,
+         "left": 16,
+         "width": 380,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 24,
+        "elementRenderDelay": 229
+       },
+       "reihenfolge": 2
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2991.869,
+       "cls": 0,
+       "tbt": 149.2539999999999,
+       "fcp": 1362.3690000000001,
+       "si": 1362.3690000000001,
+       "js_kb": 261,
+       "font_kb": 72,
+       "gesamt_kb": 495,
+       "benchmark": 1542,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-mass text-fs-4 text-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,1,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 445,
+         "left": 16,
+         "width": 380,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 29,
+        "elementRenderDelay": 209
+       },
+       "reihenfolge": 4
+      },
+      {
+       "perf": 79,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3536.538,
+       "cls": 0,
+       "tbt": 460.7310000000002,
+       "fcp": 1208.538,
+       "si": 1703.6559532134188,
+       "js_kb": 261,
+       "font_kb": 72,
+       "gesamt_kb": 495,
+       "benchmark": 1253.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-mass text-fs-4 text-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,1,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 445,
+         "left": 16,
+         "width": 380,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 43,
+        "elementRenderDelay": 562
+       },
+       "reihenfolge": 6
+      },
+      {
+       "perf": 94,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3006.593999999999,
+       "cls": 0,
+       "tbt": 105.10400000000004,
+       "fcp": 1382.0939999999998,
+       "si": 1382.0939999999998,
+       "js_kb": 261,
+       "font_kb": 72,
+       "gesamt_kb": 495,
+       "benchmark": 1542,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-mass text-fs-4 text-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,1,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 445,
+         "left": 16,
+         "width": 380,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 21,
+        "elementRenderDelay": 220
+       },
+       "reihenfolge": 8
+      }
+     ]
+    },
+    "kandidat": {
+     "median": {
+      "perf": 90,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3414,
+      "cls": 0,
+      "tbt": 121,
+      "fcp": 1367,
+      "si": 1367,
+      "js_kb": 261,
+      "font_kb": 72,
+      "gesamt_kb": 492,
+      "benchmark": 1454.5,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+       "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+       "snippet": "<p class=\"max-w-mass text-fs-4 text-tinte\">",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,1,DIV,3,DIV,0,P",
+       "rechteck": {
+        "top": 445,
+        "left": 16,
+        "width": 380,
+        "height": 213
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 19,
+       "elementRenderDelay": 210
+      },
+      "streuung_perf": [
+       90,
+       95
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 90,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3154.20325,
+       "cls": 0,
+       "tbt": 195.50000000000023,
+       "fcp": 1218.1626,
+       "si": 1218.1626,
+       "js_kb": 261,
+       "font_kb": 72,
+       "gesamt_kb": 492,
+       "benchmark": 1387.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-mass text-fs-4 text-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,1,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 445,
+         "left": 16,
+         "width": 380,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 19,
+        "elementRenderDelay": 240
+       },
+       "reihenfolge": 1
+      },
+      {
+       "perf": 90,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3466.304,
+       "cls": 0,
+       "tbt": 121.19600000000014,
+       "fcp": 1377.4560000000001,
+       "si": 1377.4560000000001,
+       "js_kb": 261,
+       "font_kb": 72,
+       "gesamt_kb": 492,
+       "benchmark": 1436,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-mass text-fs-4 text-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,1,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 445,
+         "left": 16,
+         "width": 380,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 19,
+        "elementRenderDelay": 195
+       },
+       "reihenfolge": 3
+      },
+      {
+       "perf": 91,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3429.4139999999998,
+       "cls": 0,
+       "tbt": 73.5,
+       "fcp": 1377.6209999999999,
+       "si": 1377.6209999999999,
+       "js_kb": 261,
+       "font_kb": 72,
+       "gesamt_kb": 492,
+       "benchmark": 1567.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-mass text-fs-4 text-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,1,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 445,
+         "left": 16,
+         "width": 380,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 210
+       },
+       "reihenfolge": 5
+      },
+      {
+       "perf": 90,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3414.054,
+       "cls": 0,
+       "tbt": 121,
+       "fcp": 1366.5810000000001,
+       "si": 1366.5810000000001,
+       "js_kb": 261,
+       "font_kb": 72,
+       "gesamt_kb": 492,
+       "benchmark": 1454.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-mass text-fs-4 text-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,1,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 445,
+         "left": 16,
+         "width": 380,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 19,
+        "elementRenderDelay": 187
+       },
+       "reihenfolge": 7
+      },
+      {
+       "perf": 95,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2396.806,
+       "cls": 0,
+       "tbt": 175.5,
+       "fcp": 1217.806,
+       "si": 1217.806,
+       "js_kb": 261,
+       "font_kb": 72,
+       "gesamt_kb": 492,
+       "benchmark": 1542,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-mass text-fs-4 text-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,1,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 445,
+         "left": 16,
+         "width": 380,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 212
+       },
+       "reihenfolge": 9
+      }
+     ]
+    },
+    "differenz": {
+     "perf": 0,
+     "a11y": 0,
+     "bp": 0,
+     "seo": 0,
+     "lcp": -47,
+     "cls": 0,
+     "tbt": -28,
+     "fcp": -8,
+     "si": -15,
+     "js_kb": 0,
+     "font_kb": 0,
+     "gesamt_kb": -3,
+     "benchmark": -1,
+     "lcp_relativ": -0.014
+    },
+    "lcp_element_gleich": true,
+    "hinweis": null,
+    "z12": "innerhalb der Streuung oder besser"
+   },
+   "desktop": {
+    "basis": {
+     "median": {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 618,
+      "cls": 0,
+      "tbt": 3,
+      "fcp": 338,
+      "si": 414,
+      "js_kb": 411,
+      "font_kb": 72,
+      "gesamt_kb": 706,
+      "benchmark": 1519,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+       "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+       "snippet": "<p class=\"max-w-mass text-fs-4 text-tinte\">",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,1,DIV,3,DIV,0,P",
+       "rechteck": {
+        "top": 547,
+        "left": 60,
+        "width": 576,
+        "height": 180
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 16,
+       "elementRenderDelay": 267
+      },
+      "streuung_perf": [
+       100,
+       100
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 616.4739999999999,
+       "cls": 0.00001337677651919084,
+       "tbt": 1.5,
+       "fcp": 344.711,
+       "si": 344.711,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 706,
+       "benchmark": 1648,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-mass text-fs-4 text-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,1,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 547,
+         "left": 60,
+         "width": 576,
+         "height": 180
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 165
+       },
+       "reihenfolge": 0
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 649.3075,
+       "cls": 0,
+       "tbt": 2.5,
+       "fcp": 337.769,
+       "si": 450.186866244598,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 706,
+       "benchmark": 1542.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-mass text-fs-4 text-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,1,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 547,
+         "left": 60,
+         "width": 576,
+         "height": 180
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 267
+       },
+       "reihenfolge": 2
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 656.0450000000001,
+       "cls": 0,
+       "tbt": 16.790999999999997,
+       "fcp": 342.254,
+       "si": 478.0141199784889,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 706,
+       "benchmark": 1352,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-mass text-fs-4 text-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,1,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 547,
+         "left": 60,
+         "width": 576,
+         "height": 180
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 20,
+        "elementRenderDelay": 324
+       },
+       "reihenfolge": 4
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 618.145,
+       "cls": 0,
+       "tbt": 1.5,
+       "fcp": 335.087,
+       "si": 346.9241158514801,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 706,
+       "benchmark": 1514.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-mass text-fs-4 text-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,1,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 547,
+         "left": 60,
+         "width": 576,
+         "height": 180
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 222
+       },
+       "reihenfolge": 6
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 611.9300000000001,
+       "cls": 0,
+       "tbt": 7,
+       "fcp": 334.316,
+       "si": 414.4320731588246,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 706,
+       "benchmark": 1519,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-mass text-fs-4 text-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,1,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 547,
+         "left": 60,
+         "width": 576,
+         "height": 180
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 319
+       },
+       "reihenfolge": 8
+      }
+     ]
+    },
+    "kandidat": {
+     "median": {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 650,
+      "cls": 0,
+      "tbt": 1,
+      "fcp": 334,
+      "si": 380,
+      "js_kb": 411,
+      "font_kb": 72,
+      "gesamt_kb": 703,
+      "benchmark": 1457,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+       "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+       "snippet": "<p class=\"max-w-mass text-fs-4 text-tinte\">",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,1,DIV,3,DIV,0,P",
+       "rechteck": {
+        "top": 547,
+        "left": 60,
+        "width": 576,
+        "height": 180
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 17,
+       "elementRenderDelay": 237
+      },
+      "streuung_perf": [
+       100,
+       100
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 682.805,
+       "cls": 0,
+       "tbt": 0.5,
+       "fcp": 329.366,
+       "si": 380.3624803209567,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 703,
+       "benchmark": 1434.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-mass text-fs-4 text-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,1,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 547,
+         "left": 60,
+         "width": 576,
+         "height": 180
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 35,
+        "elementRenderDelay": 220
+       },
+       "reihenfolge": 1
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 650.11,
+       "cls": 0,
+       "tbt": 3,
+       "fcp": 333.932,
+       "si": 396.8864481263844,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 703,
+       "benchmark": 1439.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-mass text-fs-4 text-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,1,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 547,
+         "left": 60,
+         "width": 576,
+         "height": 180
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 243
+       },
+       "reihenfolge": 3
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 690.6100000000001,
+       "cls": 0,
+       "tbt": 0,
+       "fcp": 334.415,
+       "si": 368.44351674039297,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 703,
+       "benchmark": 1511.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-mass text-fs-4 text-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,1,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 547,
+         "left": 60,
+         "width": 576,
+         "height": 180
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 243
+       },
+       "reihenfolge": 5
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 648.9200000000001,
+       "cls": 0,
+       "tbt": 1.5,
+       "fcp": 340.3040000000001,
+       "si": 382.2278269713797,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 703,
+       "benchmark": 1457,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-mass text-fs-4 text-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,1,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 547,
+         "left": 60,
+         "width": 576,
+         "height": 180
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 237
+       },
+       "reihenfolge": 7
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 592.9100000000001,
+       "cls": 0,
+       "tbt": 0,
+       "fcp": 332.54600000000005,
+       "si": 368.18181006421275,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 703,
+       "benchmark": 1605,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-mass text-fs-4 text-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,1,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 547,
+         "left": 60,
+         "width": 576,
+         "height": 180
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 224
+       },
+       "reihenfolge": 9
+      }
+     ]
+    },
+    "differenz": {
+     "perf": 0,
+     "a11y": 0,
+     "bp": 0,
+     "seo": 0,
+     "lcp": 32,
+     "cls": 0,
+     "tbt": -2,
+     "fcp": -4,
+     "si": -34,
+     "js_kb": 0,
+     "font_kb": 0,
+     "gesamt_kb": -3,
+     "benchmark": -62,
+     "lcp_relativ": 0.052
+    },
+    "lcp_element_gleich": true,
+    "hinweis": null,
+    "z12": "innerhalb der Streuung oder besser"
+   }
+  },
+  "/kontakt": {
+   "mobil": {
+    "basis": {
+     "median": {
+      "perf": 93,
+      "a11y": 99,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2833,
+      "cls": 0,
+      "tbt": 163,
+      "fcp": 1070,
+      "si": 1076,
+      "js_kb": 261,
+      "font_kb": 72,
+      "gesamt_kb": 454,
+      "benchmark": 1464,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hessen: Rufen Sie uns direkt an, s…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 239,
+        "left": 16,
+        "width": 380,
+        "height": 137
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 15,
+       "elementRenderDelay": 208
+      },
+      "streuung_perf": [
+       93,
+       94
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 93,
+       "a11y": 99,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3148.312500000001,
+       "cls": 0,
+       "tbt": 111,
+       "fcp": 1069.575,
+       "si": 1069.575,
+       "js_kb": 261,
+       "font_kb": 72,
+       "gesamt_kb": 454,
+       "benchmark": 1566,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hessen: Rufen Sie uns direkt an, s…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 194
+       },
+       "reihenfolge": 0
+      },
+      {
+       "perf": 93,
+       "a11y": 99,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2845.6524999999992,
+       "cls": 0,
+       "tbt": 163.2779999999998,
+       "fcp": 1067.583,
+       "si": 1085.1578289787024,
+       "js_kb": 261,
+       "font_kb": 72,
+       "gesamt_kb": 454,
+       "benchmark": 1373.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hessen: Rufen Sie uns direkt an, s…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 18,
+        "elementRenderDelay": 213
+       },
+       "reihenfolge": 2
+      },
+      {
+       "perf": 93,
+       "a11y": 99,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2574.2724999999996,
+       "cls": 0,
+       "tbt": 244.4999999999999,
+       "fcp": 919.4179999999999,
+       "si": 1166.1187384992731,
+       "js_kb": 261,
+       "font_kb": 72,
+       "gesamt_kb": 454,
+       "benchmark": 1337,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hessen: Rufen Sie uns direkt an, s…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 246
+       },
+       "reihenfolge": 4
+      },
+      {
+       "perf": 94,
+       "a11y": 99,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2572.0474999999997,
+       "cls": 0,
+       "tbt": 193.59050000000025,
+       "fcp": 1076.4569999999999,
+       "si": 1076.4569999999999,
+       "js_kb": 261,
+       "font_kb": 72,
+       "gesamt_kb": 454,
+       "benchmark": 1464,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hessen: Rufen Sie uns direkt an, s…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 208
+       },
+       "reihenfolge": 6
+      },
+      {
+       "perf": 94,
+       "a11y": 99,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2832.5725,
+       "cls": 0,
+       "tbt": 127,
+       "fcp": 1071.687,
+       "si": 1071.687,
+       "js_kb": 261,
+       "font_kb": 72,
+       "gesamt_kb": 454,
+       "benchmark": 1536.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hessen: Rufen Sie uns direkt an, s…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 201
+       },
+       "reihenfolge": 8
+      }
+     ]
+    },
+    "kandidat": {
+     "median": {
+      "perf": 96,
+      "a11y": 99,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2567,
+      "cls": 0,
+      "tbt": 131,
+      "fcp": 1072,
+      "si": 1072,
+      "js_kb": 261,
+      "font_kb": 72,
+      "gesamt_kb": 452,
+      "benchmark": 1473,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hessen: Rufen Sie uns direkt an, s…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 239,
+        "left": 16,
+        "width": 380,
+        "height": 137
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 15,
+       "elementRenderDelay": 218
+      },
+      "streuung_perf": [
+       96,
+       96
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 96,
+       "a11y": 99,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2566.7675,
+       "cls": 0,
+       "tbt": 112.5,
+       "fcp": 1070.121,
+       "si": 1070.121,
+       "js_kb": 261,
+       "font_kb": 72,
+       "gesamt_kb": 452,
+       "benchmark": 1473,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hessen: Rufen Sie uns direkt an, s…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 21,
+        "elementRenderDelay": 166
+       },
+       "reihenfolge": 1
+      },
+      {
+       "perf": 96,
+       "a11y": 99,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2417.29,
+       "cls": 0,
+       "tbt": 151.7099999999998,
+       "fcp": 1075.935,
+       "si": 1075.935,
+       "js_kb": 261,
+       "font_kb": 72,
+       "gesamt_kb": 452,
+       "benchmark": 1417,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hessen: Rufen Sie uns direkt an, s…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 245
+       },
+       "reihenfolge": 3
+      },
+      {
+       "perf": 96,
+       "a11y": 99,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2563.3524999999995,
+       "cls": 0,
+       "tbt": 130.5,
+       "fcp": 1066.0230000000001,
+       "si": 1066.0230000000001,
+       "js_kb": 261,
+       "font_kb": 72,
+       "gesamt_kb": 452,
+       "benchmark": 1577.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hessen: Rufen Sie uns direkt an, s…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 183
+       },
+       "reihenfolge": 5
+      },
+      {
+       "perf": 96,
+       "a11y": 99,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2572.855,
+       "cls": 0,
+       "tbt": 136,
+       "fcp": 1077.426,
+       "si": 1077.426,
+       "js_kb": 261,
+       "font_kb": 72,
+       "gesamt_kb": 452,
+       "benchmark": 1412,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hessen: Rufen Sie uns direkt an, s…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 11,
+        "elementRenderDelay": 218
+       },
+       "reihenfolge": 7
+      },
+      {
+       "perf": 96,
+       "a11y": 99,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2567.9399999999996,
+       "cls": 0,
+       "tbt": 122.99999999999977,
+       "fcp": 1071.528,
+       "si": 1071.528,
+       "js_kb": 261,
+       "font_kb": 72,
+       "gesamt_kb": 452,
+       "benchmark": 1551,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hessen: Rufen Sie uns direkt an, s…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 244
+       },
+       "reihenfolge": 9
+      }
+     ]
+    },
+    "differenz": {
+     "perf": 3,
+     "a11y": 0,
+     "bp": 0,
+     "seo": 0,
+     "lcp": -266,
+     "cls": 0,
+     "tbt": -32,
+     "fcp": 2,
+     "si": -4,
+     "js_kb": 0,
+     "font_kb": 0,
+     "gesamt_kb": -2,
+     "benchmark": 9,
+     "lcp_relativ": -0.094
+    },
+    "lcp_element_gleich": true,
+    "hinweis": "Grenzbereich: |Δ Leistung| = 3 Punkte (2–5) – mit --laeufe 10 nachmessen",
+    "z12": "innerhalb der Streuung oder besser"
+   },
+   "desktop": {
+    "basis": {
+     "median": {
+      "perf": 100,
+      "a11y": 99,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 713,
+      "cls": 0,
+      "tbt": 3,
+      "fcp": 301,
+      "si": 333,
+      "js_kb": 411,
+      "font_kb": 72,
+      "gesamt_kb": 665,
+      "benchmark": 1473.5,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hessen: Rufen Sie uns direkt an, s…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 266,
+        "left": 60,
+        "width": 904,
+        "height": 108
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 14,
+       "elementRenderDelay": 224
+      },
+      "streuung_perf": [
+       100,
+       100
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 100,
+       "a11y": 99,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 559.743,
+       "cls": 0,
+       "tbt": 2.999999999999943,
+       "fcp": 299.743,
+       "si": 332.7173894690228,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 665,
+       "benchmark": 1473.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hessen: Rufen Sie uns direkt an, s…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 266,
+         "left": 60,
+         "width": 904,
+         "height": 108
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 224
+       },
+       "reihenfolge": 0
+      },
+      {
+       "perf": 100,
+       "a11y": 99,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 716.7674999999999,
+       "cls": 0,
+       "tbt": 7.5,
+       "fcp": 303.121,
+       "si": 366.3342731969683,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 665,
+       "benchmark": 1470,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hessen: Rufen Sie uns direkt an, s…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 266,
+         "left": 60,
+         "width": 904,
+         "height": 108
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 278
+       },
+       "reihenfolge": 2
+      },
+      {
+       "perf": 100,
+       "a11y": 99,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 690.3925,
+       "cls": 0,
+       "tbt": 5.684341886080802e-14,
+       "fcp": 293.671,
+       "si": 293.671,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 665,
+       "benchmark": 1640,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hessen: Rufen Sie uns direkt an, s…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 266,
+         "left": 60,
+         "width": 904,
+         "height": 108
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 188
+       },
+       "reihenfolge": 4
+      },
+      {
+       "perf": 100,
+       "a11y": 99,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 738.8675000000001,
+       "cls": 0,
+       "tbt": 26.926500000000033,
+       "fcp": 301.441,
+       "si": 369.2201240387601,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 665,
+       "benchmark": 1375.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hessen: Rufen Sie uns direkt an, s…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 266,
+         "left": 60,
+         "width": 904,
+         "height": 108
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 273
+       },
+       "reihenfolge": 6
+      },
+      {
+       "perf": 100,
+       "a11y": 99,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 713.135,
+       "cls": 0,
+       "tbt": 1.5,
+       "fcp": 308.962,
+       "si": 308.962,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 665,
+       "benchmark": 1595,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hessen: Rufen Sie uns direkt an, s…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 266,
+         "left": 60,
+         "width": 904,
+         "height": 108
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 213
+       },
+       "reihenfolge": 8
+      }
+     ]
+    },
+    "kandidat": {
+     "median": {
+      "perf": 100,
+      "a11y": 99,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 712,
+      "cls": 0,
+      "tbt": 3,
+      "fcp": 299,
+      "si": 326,
+      "js_kb": 411,
+      "font_kb": 72,
+      "gesamt_kb": 663,
+      "benchmark": 1461.5,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hessen: Rufen Sie uns direkt an, s…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 266,
+        "left": 60,
+        "width": 904,
+        "height": 108
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 16,
+       "elementRenderDelay": 252
+      },
+      "streuung_perf": [
+       100,
+       100
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 100,
+       "a11y": 99,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 715.9799999999999,
+       "cls": 0,
+       "tbt": 7.500000000000057,
+       "fcp": 299.176,
+       "si": 360.35985460400707,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 663,
+       "benchmark": 1374.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hessen: Rufen Sie uns direkt an, s…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 266,
+         "left": 60,
+         "width": 904,
+         "height": 108
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 279
+       },
+       "reihenfolge": 1
+      },
+      {
+       "perf": 100,
+       "a11y": 99,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 725.9275,
+       "cls": 0,
+       "tbt": 0,
+       "fcp": 311.71299999999997,
+       "si": 386.8794633917104,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 663,
+       "benchmark": 1400.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hessen: Rufen Sie uns direkt an, s…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 266,
+         "left": 60,
+         "width": 904,
+         "height": 108
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 347
+       },
+       "reihenfolge": 3
+      },
+      {
+       "perf": 100,
+       "a11y": 99,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 539.4250000000002,
+       "cls": 0.004047628502263636,
+       "tbt": 21.499999999999943,
+       "fcp": 299.425,
+       "si": 322.11695284315306,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 663,
+       "benchmark": 1464,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hessen: Rufen Sie uns direkt an, s…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 266,
+         "left": 60,
+         "width": 904,
+         "height": 108
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 198
+       },
+       "reihenfolge": 5
+      },
+      {
+       "perf": 100,
+       "a11y": 99,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 711.7225,
+       "cls": 0,
+       "tbt": 2.5,
+       "fcp": 300.067,
+       "si": 300.067,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 663,
+       "benchmark": 1580,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hessen: Rufen Sie uns direkt an, s…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 266,
+         "left": 60,
+         "width": 904,
+         "height": 108
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 18,
+        "elementRenderDelay": 252
+       },
+       "reihenfolge": 7
+      },
+      {
+       "perf": 100,
+       "a11y": 99,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 537.5500000000001,
+       "cls": 0,
+       "tbt": 0,
+       "fcp": 297.55,
+       "si": 325.560905262161,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 663,
+       "benchmark": 1461.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hessen: Rufen Sie uns direkt an, s…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 266,
+         "left": 60,
+         "width": 904,
+         "height": 108
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 11,
+        "elementRenderDelay": 220
+       },
+       "reihenfolge": 9
+      }
+     ]
+    },
+    "differenz": {
+     "perf": 0,
+     "a11y": 0,
+     "bp": 0,
+     "seo": 0,
+     "lcp": -1,
+     "cls": 0,
+     "tbt": 0,
+     "fcp": -2,
+     "si": -7,
+     "js_kb": 0,
+     "font_kb": 0,
+     "gesamt_kb": -2,
+     "benchmark": -12,
+     "lcp_relativ": -0.001
+    },
+    "lcp_element_gleich": true,
+    "hinweis": null,
+    "z12": "innerhalb der Streuung oder besser"
+   }
+  },
+  "/leistungen": {
+   "mobil": {
+    "basis": {
+     "median": {
+      "perf": 93,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2915,
+      "cls": 0,
+      "tbt": 117,
+      "fcp": 1222,
+      "si": 1222,
+      "js_kb": 271,
+      "font_kb": 72,
+      "gesamt_kb": 504,
+      "benchmark": 1496.5,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 334,
+        "left": 16,
+        "width": 380,
+        "height": 274
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 14,
+       "elementRenderDelay": 181
+      },
+      "streuung_perf": [
+       92,
+       96
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 92,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3175.2030000000004,
+       "cls": 0,
+       "tbt": 136.29700000000025,
+       "fcp": 1219.8045,
+       "si": 1219.8045,
+       "js_kb": 271,
+       "font_kb": 72,
+       "gesamt_kb": 504,
+       "benchmark": 1496.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 334,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 181
+       },
+       "reihenfolge": 0
+      },
+      {
+       "perf": 96,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2712.702500000001,
+       "cls": 0,
+       "tbt": 103.45949999999993,
+       "fcp": 1215.2430000000002,
+       "si": 1215.2430000000002,
+       "js_kb": 271,
+       "font_kb": 72,
+       "gesamt_kb": 504,
+       "benchmark": 1447.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 334,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 187
+       },
+       "reihenfolge": 2
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3176.277,
+       "cls": 0.001063606995808651,
+       "tbt": 101.68074999999999,
+       "fcp": 1225.9155,
+       "si": 1225.9155,
+       "js_kb": 271,
+       "font_kb": 72,
+       "gesamt_kb": 504,
+       "benchmark": 1566.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 334,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 146
+       },
+       "reihenfolge": 4
+      },
+      {
+       "perf": 95,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2718.067499999999,
+       "cls": 0,
+       "tbt": 116.93250000000012,
+       "fcp": 1221.681,
+       "si": 1221.681,
+       "js_kb": 271,
+       "font_kb": 72,
+       "gesamt_kb": 504,
+       "benchmark": 1504.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 334,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 167
+       },
+       "reihenfolge": 6
+      },
+      {
+       "perf": 92,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2914.9775000000004,
+       "cls": 0,
+       "tbt": 186.02250000000026,
+       "fcp": 1223.373,
+       "si": 1223.373,
+       "js_kb": 271,
+       "font_kb": 72,
+       "gesamt_kb": 504,
+       "benchmark": 1384,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 334,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 244
+       },
+       "reihenfolge": 8
+      }
+     ]
+    },
+    "kandidat": {
+     "median": {
+      "perf": 93,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2723,
+      "cls": 0,
+      "tbt": 178,
+      "fcp": 1219,
+      "si": 1219,
+      "js_kb": 271,
+      "font_kb": 72,
+      "gesamt_kb": 502,
+      "benchmark": 1502,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 334,
+        "left": 16,
+        "width": 380,
+        "height": 274
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 16,
+       "elementRenderDelay": 184
+      },
+      "streuung_perf": [
+       93,
+       94
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2722.2225000000008,
+       "cls": 0,
+       "tbt": 192.05549999999994,
+       "fcp": 1226.6670000000001,
+       "si": 1226.6670000000001,
+       "js_kb": 271,
+       "font_kb": 72,
+       "gesamt_kb": 502,
+       "benchmark": 1502,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 334,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 184
+       },
+       "reihenfolge": 1
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3096.0340000000006,
+       "cls": 0,
+       "tbt": 104.95749999999998,
+       "fcp": 1215.0510000000002,
+       "si": 1215.0510000000002,
+       "js_kb": 271,
+       "font_kb": 72,
+       "gesamt_kb": 502,
+       "benchmark": 1553,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 334,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 18,
+        "elementRenderDelay": 170
+       },
+       "reihenfolge": 3
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3105.8649999999993,
+       "cls": 0,
+       "tbt": 77.99999999999977,
+       "fcp": 1219.2974999999997,
+       "si": 1219.2974999999997,
+       "js_kb": 271,
+       "font_kb": 72,
+       "gesamt_kb": 502,
+       "benchmark": 1661.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 334,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 174
+       },
+       "reihenfolge": 5
+      },
+      {
+       "perf": 94,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2722.7612499999996,
+       "cls": 0,
+       "tbt": 178.2909999999997,
+       "fcp": 1227.3135000000002,
+       "si": 1227.3135000000002,
+       "js_kb": 271,
+       "font_kb": 72,
+       "gesamt_kb": 502,
+       "benchmark": 1430,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 334,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 259
+       },
+       "reihenfolge": 7
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2716.246250000001,
+       "cls": 0,
+       "tbt": 207.75075000000038,
+       "fcp": 1219.4955000000002,
+       "si": 1219.4955000000002,
+       "js_kb": 271,
+       "font_kb": 72,
+       "gesamt_kb": 502,
+       "benchmark": 1461,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 334,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 203
+       },
+       "reihenfolge": 9
+      }
+     ]
+    },
+    "differenz": {
+     "perf": 0,
+     "a11y": 0,
+     "bp": 0,
+     "seo": 0,
+     "lcp": -192,
+     "cls": 0,
+     "tbt": 61,
+     "fcp": -3,
+     "si": -3,
+     "js_kb": 0,
+     "font_kb": 0,
+     "gesamt_kb": -2,
+     "benchmark": 5.5,
+     "lcp_relativ": -0.066
+    },
+    "lcp_element_gleich": true,
+    "hinweis": null,
+    "z12": "innerhalb der Streuung oder besser"
+   },
+   "desktop": {
+    "basis": {
+     "median": {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 577,
+      "cls": 0,
+      "tbt": 0,
+      "fcp": 340,
+      "si": 344,
+      "js_kb": 411,
+      "font_kb": 72,
+      "gesamt_kb": 686,
+      "benchmark": 1562,
+      "werkzeug_wiederholungen": 1,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 601,
+        "left": 60,
+        "width": 689,
+        "height": 182
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 17,
+       "elementRenderDelay": 233
+      },
+      "streuung_perf": [
+       100,
+       100
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 680.7660000000001,
+       "cls": 0,
+       "tbt": 0,
+       "fcp": 343.649,
+       "si": 343.649,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 686,
+       "benchmark": 1571.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 601,
+         "left": 60,
+         "width": 689,
+         "height": 182
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 201
+       },
+       "reihenfolge": 0
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 577.4549999999998,
+       "cls": 0,
+       "tbt": 0,
+       "fcp": 340.9459999999999,
+       "si": 340.9459999999999,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 686,
+       "benchmark": 1670,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 601,
+         "left": 60,
+         "width": 689,
+         "height": 182
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 238
+       },
+       "reihenfolge": 2
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 671.924,
+       "cls": 0.01306955789484994,
+       "tbt": 0,
+       "fcp": 333.38599999999997,
+       "si": 333.38599999999997,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 686,
+       "benchmark": 1407,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 601,
+         "left": 60,
+         "width": 689,
+         "height": 182
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 18,
+        "elementRenderDelay": 233
+       },
+       "reihenfolge": 4
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 530.364,
+       "cls": 0.0004668035383692928,
+       "tbt": 6,
+       "fcp": 304.364,
+       "si": 374.84856787603536,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 686,
+       "benchmark": 1560,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 601,
+         "left": 60,
+         "width": 689,
+         "height": 182
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 23,
+        "elementRenderDelay": 147
+       },
+       "reihenfolge": 6
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 573.1190999999999,
+       "cls": 0,
+       "tbt": 4,
+       "fcp": 339.67865,
+       "si": 375.57092775922035,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 686,
+       "benchmark": 1562,
+       "werkzeug_wiederholungen": 1,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 601,
+         "left": 60,
+         "width": 689,
+         "height": 182
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 245
+       },
+       "reihenfolge": 8
+      }
+     ]
+    },
+    "kandidat": {
+     "median": {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 596,
+      "cls": 0,
+      "tbt": 4,
+      "fcp": 340,
+      "si": 415,
+      "js_kb": 411,
+      "font_kb": 72,
+      "gesamt_kb": 683,
+      "benchmark": 1459,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 601,
+        "left": 60,
+        "width": 689,
+        "height": 182
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 16,
+       "elementRenderDelay": 317
+      },
+      "streuung_perf": [
+       100,
+       100
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 570.626,
+       "cls": 0,
+       "tbt": 16,
+       "fcp": 335.93899999999996,
+       "si": 414.9252123327682,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 683,
+       "benchmark": 1436,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 601,
+         "left": 60,
+         "width": 689,
+         "height": 182
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 329
+       },
+       "reihenfolge": 1
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 572.75,
+       "cls": 0,
+       "tbt": 3.5,
+       "fcp": 340.375,
+       "si": 459.9203984217412,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 683,
+       "benchmark": 1364.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 601,
+         "left": 60,
+         "width": 689,
+         "height": 182
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 33,
+        "elementRenderDelay": 344
+       },
+       "reihenfolge": 3
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 740.3999999999999,
+       "cls": 0,
+       "tbt": 1.5,
+       "fcp": 338.47999999999996,
+       "si": 338.47999999999996,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 683,
+       "benchmark": 1560,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 601,
+         "left": 60,
+         "width": 689,
+         "height": 182
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 260
+       },
+       "reihenfolge": 5
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 596.2280000000001,
+       "cls": 0,
+       "tbt": 33.44300000000004,
+       "fcp": 344.34200000000004,
+       "si": 384.71956709511306,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 683,
+       "benchmark": 1459,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 601,
+         "left": 60,
+         "width": 689,
+         "height": 182
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 19,
+        "elementRenderDelay": 307
+       },
+       "reihenfolge": 7
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 755.3025,
+       "cls": 0,
+       "tbt": 4.499999999999943,
+       "fcp": 345.563,
+       "si": 436.1899089422931,
+       "js_kb": 411,
+       "font_kb": 72,
+       "gesamt_kb": 683,
+       "benchmark": 1529.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 601,
+         "left": 60,
+         "width": 689,
+         "height": 182
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 317
+       },
+       "reihenfolge": 9
+      }
+     ]
+    },
+    "differenz": {
+     "perf": 0,
+     "a11y": 0,
+     "bp": 0,
+     "seo": 0,
+     "lcp": 19,
+     "cls": 0,
+     "tbt": 4,
+     "fcp": 0,
+     "si": 71,
+     "js_kb": 0,
+     "font_kb": 0,
+     "gesamt_kb": -3,
+     "benchmark": -103,
+     "lcp_relativ": 0.033
+    },
+    "lcp_element_gleich": true,
+    "hinweis": null,
+    "z12": "innerhalb der Streuung oder besser"
+   }
+  }
+ },
+ "umgebung": {
+  "lighthouse": "13.5.0",
+  "chrome": "Chromium 1194 (Playwright-Build)",
+  "node": "v22.22.0",
+  "cpus": 4,
+  "last_1min": 0.57,
+  "last_1min_start": 0.57,
+  "last_1min_ende": 1.9
+ },
+ "schwellen": {
+  "grenzbereich_punkte": [
+   2,
+   5
+  ],
+  "z12_schlechter": "Δ Leistung < −3 Punkte oder Δ LCP > +10 %"
+ }
+}

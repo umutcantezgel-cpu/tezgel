@@ -1,0 +1,26 @@
+{
+ "base": "http://127.0.0.1:4369",
+ "seiten": [
+  "/",
+  "/kontakt",
+  "/standorte",
+  "/standorte/giessen",
+  "/leistungen",
+  "/bad",
+  "/fliesen",
+  "/blog",
+  "/ueber-uns",
+  "/widerruf",
+  "/faq",
+  "/preise"
+ ],
+ "breiten": [
+  320,
+  375,
+  768,
+  1024,
+  1440,
+  1920
+ ],
+ "funde": []
+}
