@@ -685,6 +685,10 @@ Danach das Phasentor E3.
 - Danach das Phasentor.
 
 **E6-ORCH-01 · Abbau des alten Systems** (eigener Schritt mit build-vergleich und knip/grep-Nachweis):
+- **Stand 13.10., 05:10 CEST – umgesetzt und live:** Schritte 1–3 (4d3b742), 5–6 (8f1e979), 7–8 (cb46951), 10 (Werkzeuge,
+  Regel-Dokumente). Tore e6o1-a1/a2/a3 grün: HTML auf 172 Seiten gleich, CSS nur Wegfälle (−161/−77, 0/0, −58/−165
+  Selektoren/Variablen), Specs 380/0, Lighthouse innerhalb der Streuung oder besser. **Offen nur mit Freigabe:** Schritte 4/9
+  (lucide in src/config, M-25) und die toten Teile von kopfskript.ts (M-27).
 - **Stand 13.10. – Karte und Plan** (Analyse-Workflow, nur lesend; Gegenprüfung ohne blockierenden Befund;
   `belege/e6-orch-01/karte-plan-kritik.json`). Importgraph: 113 Wurzeln, 336 lebende Dateien; vom ruhenden Baum (253 Dateien)
   sind nur `lib/kern/start/daten.ts`, `kern/einwilligung/BannerPlatz.tsx`, `kern/fuss/SprungHalter.tsx` lebend; 25 Dateien

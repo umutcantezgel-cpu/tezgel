@@ -1,21 +1,17 @@
 #!/usr/bin/env bash
 # Reinraum-Build: baut einen Commit aus einer frischen git-archive-Kopie (nur getrackte Dateien),
 # genau wie Vercel ihn sieht. Nutzung: reinraum.sh <commit> [logverzeichnis]
-# Kandidat (E-015): KANDIDAT="/ bad" reinraum.sh <commit> – wendet freischalten.sh auf die Kopie an (Suffix -k, Stempel .kandidat-stempel).
-# Vorschau (Plan Runde 3): VORSCHAU="<alle Entwürfe>" reinraum.sh <commit> – gleiche Technik, Suffix -v (nie für eine Freischaltung).
 set -uo pipefail
+[ -z "${KANDIDAT:-}${VORSCHAU:-}" ] || { echo "KANDIDAT/VORSCHAU gibt es nicht mehr (E6-ORCH-01 Schritt 10) – reinraum.sh baut nur noch den Commit selbst" >&2; exit 2; }
 REPO="$(git -C "$(dirname "$0")" rev-parse --show-toplevel)"
 REF="${1:-HEAD}"
-SUF=""; [ -n "${KANDIDAT:-}" ] && SUF="-k"; [ -n "${VORSCHAU:-}" ] && SUF="-v"
-SHA="$(git -C "$REPO" rev-parse --short "$REF")$SUF"
+SHA="$(git -C "$REPO" rev-parse --short "$REF")"
 SCRATCH="${RELAUNCH_SCRATCH:-/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad}"
 DIR="$SCRATCH/reinraum-$SHA"
 LOG="$(realpath -m "${2:-$REPO/_relaunch/cache/reinraum-$SHA}")"
 mkdir -p "$LOG"
 rm -rf "$DIR" && mkdir -p "$DIR"
 git -C "$REPO" archive "$REF" | tar -x -C "$DIR"
-ROUTEN="${KANDIDAT:-${VORSCHAU:-}}"
-if [ -n "$ROUTEN" ]; then bash "$REPO/_relaunch/werkzeuge/freischalten.sh" "$DIR" $ROUTEN || { echo "Freischalten fehlgeschlagen"; exit 2; }; printf "basis: %s\nrouten: %s\nart: %s\n" "$(git -C "$REPO" rev-parse --short "$REF")" "$ROUTEN" "${SUF#-}" > "$DIR/.kandidat-stempel"; fi
 cd "$DIR" || exit 2
 declare -A RES
 run() { local name="$1"; shift; local t0=$(date +%s); "$@" > "$LOG/$name.log" 2>&1; local rc=$?; RES[$name]="$rc ($(( $(date +%s)-t0 ))s)"; echo "$name: exit $rc"; return 0; }

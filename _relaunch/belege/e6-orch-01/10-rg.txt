@@ -1,0 +1,98 @@
+# E6-ORCH-01 Schritt 10 · Aufrufer-Suche vor dem Löschen (HEAD dd04074, 2026-10-13T03:05:10+00:00)
+
+## 1 Alle Nicht-Markdown-Dateien (Skripte, Module, package.json, knip.json, Tests, CI) mit Bezug auf freischalten/kern-klassen
+$ rg -n --hidden -g '!node_modules' -g '!.git' -g '!_relaunch/belege/**' -g '!_relaunch/cache/**' -g '!*.md' 'freischalten|kern-klassen' .
+./_relaunch/werkzeuge/tor-t1.sh:17:# oder aus einem privaten Unterordner („./_x/…“): freischalten.sh verschiebt Dateien und _-Ordner gemeinsam.
+./_relaunch/werkzeuge/reinraum.sh:4:# Kandidat (E-015): KANDIDAT="/ bad" reinraum.sh <commit> – wendet freischalten.sh auf die Kopie an (Suffix -k, Stempel .kandidat-stempel).
+./_relaunch/werkzeuge/reinraum.sh:18:if [ -n "$ROUTEN" ]; then bash "$REPO/_relaunch/werkzeuge/freischalten.sh" "$DIR" $ROUTEN || { echo "Freischalten fehlgeschlagen"; exit 2; }; printf "basis: %s\nrouten: %s\nart: %s\n" "$(git -C "$REPO" r
+./_relaunch/werkzeuge/freischalten.sh:4:#   freischalten.sh <wurzel> <route> [<route> ...]          – auf eine Kopie anwenden (Kandidat, reinraum.sh KANDIDAT=…)
+./_relaunch/werkzeuge/freischalten.sh:5:#   KANDIDAT_BASIS=<sha> freischalten.sh --commit <route> …  – im Repo: nur bei sauberem Baum und HEAD = Kandidat-Basis;
+./_relaunch/werkzeuge/kern-klassen.mjs:7://   node kern-klassen.mjs --build <pfad-zu-.next> [--seiten /kern-probe,/kern-probe/a] [--satz <name>]
+./_relaunch/werkzeuge/kern-klassen.mjs:8://   node kern-klassen.mjs --build <pfad-zu-.next> --html <datei>
+./_relaunch/werkzeuge/kern-klassen.mjs:22:// Ausgabe: JSON auf stdout. Mit --satz zusätzlich _relaunch/belege/<satz>/kern-klassen.json.
+./_relaunch/werkzeuge/kern-klassen.mjs:260:  if (!bauArg) fehler('Aufruf: node kern-klassen.mjs --build <pfad-zu-.next> [--seiten /a,/b] [--html <datei>] [--satz <name>]');
+./_relaunch/werkzeuge/kern-klassen.mjs:325:    const ziel = path.join(ensureDir(path.join(RELAUNCH, 'belege', satzArg)), 'kern-klassen.json');
+
+Gegenprobe einschließlich .gitignore-Dateien (ohne node_modules, .next, belege, cache):
+$ rg -l --no-ignore --hidden -g '!**/node_modules/**' -g '!.git' -g '!_relaunch/belege/**' -g '!_relaunch/cache/**' -g '!.next/**' -g '!*.md' 'freischalten|kern-klassen' .
+./_relaunch/werkzeuge/tor-t1.sh
+./_relaunch/werkzeuge/reinraum.sh
+./_relaunch/werkzeuge/freischalten.sh
+./_relaunch/werkzeuge/kern-klassen.mjs
+
+Bewertung: Aufrufer außerhalb der beiden Dateien selbst:
+- _relaunch/werkzeuge/reinraum.sh:18 ruft freischalten.sh im Zweig KANDIDAT/VORSCHAU auf -> Zweig wird in diesem Schritt entfernt.
+- _relaunch/werkzeuge/tor-t1.sh:17 nennt freischalten.sh nur im Kommentar der Entwurfs-Importregel -> Regel samt Kommentar wird in diesem Schritt entfernt.
+- Kein Modul importiert kern-klassen.mjs (auch nicht ZUSTANDSMARKER); kein package.json-Skript, kein knip-Eintrag, keine Spec, kein CI.
+
+## 2 Paket-Aufträge und Regel-Dokumente (Markdown, ohne Rückgaben und Belege)
+$ rg -n -g '*.md' -g '!*.rueckgabe.md' -g '!_relaunch/belege/**' -g '!_relaunch/cache/**' -g '!node_modules' 'freischalten|kern-klassen' .
+./_relaunch/PLAN.md:383:| P3-00i | Härtung: `commit.sh` (nur Dateien, Abgleich Kopfzeile), `server.sh` (Abbruch bei `RESEND_API_KEY` oder `.env*` außer `.env.example`), `testzahl.mjs` (Sperrklinke), `freischalten.sh` + `reinraum.sh --kand
+./_relaunch/PLAN.md:450:| **T2 Kandidat-Tor** | jede Freischaltung; jede Welle mit Abweichung in T1; jedes sofort wirksame Paket (Umzug, 308/410, N-14, Hooks) | Kandidat = Reinraum-Kopie + `freischalten.sh` (bzw. HEAD) gegen den letzten Liv
+./_relaunch/PLAN.md:452:| **Vorschau-Kandidat** | jeder Wellenschluss, auf Anforderung | `KANDIDAT="<alle Entwürfe>" reinraum.sh HEAD` + `server.sh start <sha>-k` (Port 4320); für unfertige Arbeit Vorschaubaum im Scratchpad (Kopie des Arb
+./_relaunch/PLAN.md:454:**Freischalt-Ablauf (N-02):** `freischalten.sh --commit <routen>` läuft nur bei sauberem Baum (außer CLAUDE.md) und `HEAD = KANDIDAT_BASIS`, nutzt `git mv`/`git rm`, committet selbst und vergleicht danach `git arch
+./_relaunch/PLAN.md:462:6. **Segment-Layouts (N-08):** `freischalten.sh` entfernt im Bestand `layout.*`, `template.*`, `not-found.*`, `error.*`, `loading.*` nur, wenn darunter keine Bestands-`page.*` mehr liegt.
+./_relaunch/PLAN.md:470:- **P3-00m** (Haiku): `kern-klassen.mjs` (jede Klasse im HTML einer Kern-Seite hat eine Regel im Kern-CSS, N-19).
+./_relaunch/PLAN.md:496:Wiederaufnahme nach jedem Paket (L5) · `testzahl.mjs` zusätzlich mit Laufzeitzahlen aus dem Playwright-Bericht (Basis 289 Fälle; statisch fixme 3 + skip 6 = 9) · Fragment-Ziele in Text v2 · Klassen-Abdeckung (P3
+./_relaunch/PLAN.md:504:| 4 | Vorschau/Kandidat-Verzeichnis, Stempel, Rückweg | `reinraum.sh`: `KANDIDAT=` → `-k`, `VORSCHAU=` → `-v`, Stempel `.kandidat-stempel` (Basis, Routen, Art); `freischalten.sh --commit` prüft Stempel `art: k`
+./_relaunch/PLAN.md:593:   - Abgelöst: `kern-klassen.mjs` durch `werte.mjs`. `freischalten.sh` entfällt, weil die Seiten direkt in `(bestand)` umgebaut werden, statt ruhend freigeschaltet.
+./_relaunch/pakete/P4-14.md:38:  - Die sechs Entwürfe sind ruhend; für deren Prüfung `freischalten.sh` nur in einer zweiten Kopie.
+./_relaunch/pakete/P4-13.md:49:- Die Entwürfe sind dort ruhend. Zum Prüfen der sechs Seiten in der Kopie `bash _relaunch/werkzeuge/freischalten.sh <kopie> bad leistungen standorte blog ueber-uns kontakt` anwenden, **nur in der Kopie**.
+./_relaunch/pakete/_vorlage-P4-08.md:6:Baue die Hauptseite als ruhenden Entwurf unter `src/app/(kern)/_entwurf/<route>/`. Die Seite geht erst in ihrer Welle live (Freischaltung mit `freischalten.sh`). Ihr Inhalt ist der Bestand der Seite, i
+./_relaunch/pakete/P3-16-GEG.md:14:- Freischalt-Diff: Die Kandidat-Kopie `/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/reinraum-bcd8fcb-k/` gegen das Repo (`git diff`/`diff -r` nur lesend über `src/`). Pr
+./_relaunch/pakete/P3-00m.md:1:# P3-00m · Werkzeugbauer · Stufe 2 · Modell: Haiku · Kern-Version: 1.2 · Schreibrechte: `_relaunch/werkzeuge/kern-klassen.mjs`, `_relaunch/pakete/P3-00m.rueckgabe.md` · Kriterium: Z-07, Z-13
+./_relaunch/pakete/P3-00m.md:4:Baue `_relaunch/werkzeuge/kern-klassen.mjs`, das für jede Kern-Seite eines Builds prüft, ob jede im HTML verwendete CSS-Klasse eine Regel im ausgelieferten CSS dieser Seite hat (fehlende Klassen = ungestalte
+./_relaunch/pakete/P3-00m.md:10:- Aufruf: `node kern-klassen.mjs --build <pfad-zu-.next> [--seiten /kern-probe,…]`. Ohne `--seiten`: alle HTML-Dateien, deren Route aus `src/app/(kern)/` stammt (erkennbar an `.next/server/app-paths-manifes
+./_relaunch/pakete/P3-00m.md:18:Kopiere eine Kern-HTML-Datei nach `_relaunch/cache/kern-klassen/` und füge eine Klasse `bg-orange-600` (Bestandsklasse, nicht im Kern-CSS) ein; das Werkzeug muss sie melden (Option `--html <datei>` zum Prüf
+./_relaunch/ENTSCHEIDUNGEN.md:134:  3. *Zwei Routen-Gruppen mit je eigenem Root-Layout:* `src/app/(bestand)/` (heutiges Layout unverändert: Schale, Inter/Jakarta, `globals.css`) und `src/app/(kern)/` (neues Layout: Kern-Schale, Archivo/Ple
+./_relaunch/ENTSCHEIDUNGEN.md:486:  - UNANTASTBAR, G1–G9, Tore T1/T2/T3, Bauregeln (Einfrieren, ruhende Entwürfe, `freischalten.sh`), E-035 (P4-14 vor der nächsten Freischaltung) und M-20 (Zielgruppe im Wortlaut für `/kontakt`, `/leist
+./_relaunch/NEBELKARTE.md:20:| riskant | Markenbruch in der Übergangszeit: Kern- und Bestandsseiten sehen verschieden aus, Wechsel lädt voll neu (E-015) | mittel | gering | Hauptwege früh freischalten (W1, dann W9-01 `/kontakt`), Navigat
+./_relaunch/NEBELKARTE.md:25:- „Fremdkörper“: neue Teile wirken als Bruch zu nicht umgebauten Seiten, die zwischen den Wellen live sind → E-015: jede Seite ganz alt oder ganz neu; Hauptwege früh freischalten (Plan Runde 3). (Früher
+./_relaunch/LERNEN.md:18:- 10.10. 23:40 · N-20 präzisiert: Entwürfe dürfen Nachbardateien im eigenen Ordner relativ importieren („./Datei“, „./_privat/…“) – sie wandern mit `freischalten.sh` mit; verboten bleiben `../` und U
+
+Bewertung:
+- _relaunch/pakete/P3-00m.md (baute kern-klassen.mjs), P4-13.md, P4-14.md, P3-16-GEG.md: abgeschlossene Paket-Aufträge (Rückgaben liegen vor), historisch, nicht geändert.
+- _relaunch/PLAN.md, ENTSCHEIDUNGEN.md, LERNEN.md, NEBELKARTE.md: Plan-/Entscheidungsgeschichte; PLAN.md:593 nennt die Ablösung ausdrücklich. Nicht geändert (Plan/Status pflegt der Orchestrator).
+- _relaunch/pakete/_vorlage-P4-08.md:6: Vorlage der ruhenden Hauptseiten-Entwürfe -> Abgelöst-Hinweis (Schritt 3 dieses Auftrags).
+
+## 3 Suffixe -k/-v/-m (server.sh) und KANDIDAT/VORSCHAU (reinraum.sh)
+$ rg -n -g '!node_modules' -g '!.git' -g '!_relaunch/belege/**' -g '!_relaunch/cache/**' -g '!*.rueckgabe.md' 'KANDIDAT=|VORSCHAU=|kandidat-stempel|server\.sh start [^ ]*-[kvm]\b' .
+./_relaunch/PLAN.md:452:| **Vorschau-Kandidat** | jeder Wellenschluss, auf Anforderung | `KANDIDAT="<alle Entwürfe>" reinraum.sh HEAD` + `server.sh start <sha>-k` (Port 4320); für unfertige Arbeit Vorschaubaum im Scratchpad (Kopie des Arb
+./_relaunch/PLAN.md:504:| 4 | Vorschau/Kandidat-Verzeichnis, Stempel, Rückweg | `reinraum.sh`: `KANDIDAT=` → `-k`, `VORSCHAU=` → `-v`, Stempel `.kandidat-stempel` (Basis, Routen, Art); `freischalten.sh --commit` prüft Stempel `art: k`
+./_relaunch/werkzeuge/tests/fixtures.mjs:55:// Stempel `.kandidat-stempel` des Builds (plus „/“, das live Kern ist). Ohne Liste bricht der Lauf ab.
+./_relaunch/werkzeuge/server.sh:3:# Nutzung: server.sh start <commit>[-k|-v|-m] | server.sh stop   (Suffix -k = Kandidat-Build aus reinraum.sh mit KANDIDAT=…, -v = Vorschau, -m = Mutationskopie)
+./_relaunch/werkzeuge/reinraum.sh:4:# Kandidat (E-015): KANDIDAT="/ bad" reinraum.sh <commit> – wendet freischalten.sh auf die Kopie an (Suffix -k, Stempel .kandidat-stempel).
+./_relaunch/werkzeuge/reinraum.sh:5:# Vorschau (Plan Runde 3): VORSCHAU="<alle Entwürfe>" reinraum.sh <commit> – gleiche Technik, Suffix -v (nie für eine Freischaltung).
+./_relaunch/werkzeuge/reinraum.sh:18:if [ -n "$ROUTEN" ]; then bash "$REPO/_relaunch/werkzeuge/freischalten.sh" "$DIR" $ROUTEN || { echo "Freischalten fehlgeschlagen"; exit 2; }; printf "basis: %s\nrouten: %s\nart: %s\n" "$(git -C "$REPO" r
+./_relaunch/werkzeuge/freischalten.sh:4:#   freischalten.sh <wurzel> <route> [<route> ...]          – auf eine Kopie anwenden (Kandidat, reinraum.sh KANDIDAT=…)
+./_relaunch/werkzeuge/freischalten.sh:62:  { grep -qx "routen: $*" "$K/.kandidat-stempel" && grep -qx "art: k" "$K/.kandidat-stempel"; } 2>/dev/null || { echo "ROT: Stempel der Kandidat-Kopie passt nicht zu den Routen ($*) – nicht pushen 
+./_relaunch/werkzeuge/freischalten.sh:64:  if diff -rq -x node_modules -x .next -x '*.log' -x 'next-env.d.ts' -x '*.tsbuildinfo' -x '.kandidat-stempel' "$T" "$K" > "$T.diff"; then
+
+Bewertung -k/-v: nur noch reinraum.sh, server.sh, freischalten.sh selbst und PLAN.md (Geschichte) sowie ein Kommentar in tests/fixtures.mjs:55 (Sperrklinke, bleibt unverändert). Ohne KANDIDAT/VORSCHAU entsteht kein -k/-v-Verzeichnis mehr -> Suffixe entfernt.
+
+$ rg -n -i 'mutationsprobe' _relaunch/PLAN.md _relaunch/AUFTRAG.md | (Auszug)
+_relaunch/PLAN.md:247:- Ein Lauf ohne JavaScript je Welle; die Mutationsprobe an jedem Phasentor und bei jedem neuen Testtyp, im ruhigen Fenster, dateigenau zurückgesetzt.
+_relaunch/PLAN.md:290:- **An Phasentoren:** Volltest über die 120 Seiten in 4 Ansichten (Lauf 2: 6), Lighthouse-Median aus 5 je Hauptseite, Jury zu dritt mit Lockvogel, Mutationsprobe, Gegenprüfer.
+_relaunch/PLAN.md:368:4. **Testordnung:** Fälle und `expect` je Spec ≥ Vorstand, `fixme`/`skip` ≤ Vorstand (11); Formular-IDs und `name` bleiben (Alias, wenn nötig); Selektor-Anpassungen nur in 
+_relaunch/PLAN.md:414:| P4-06 | Testschreiber für P4-05 + Mutationsprobe (Reinraum) + Opus-Gegenprüfer | Haiku + Opus | Z-03 |
+_relaunch/PLAN.md:451:| **T3 Phasentor** | Ende P3, P4, P5, P6 | alle Z der Phase nach AUFTRAG + L3: Probeläufer (15 Läufe), Fünf-Sekunden-Probe, frischer Gegenprüfer, Mutationsprobe; P4-Tor über
+_relaunch/PLAN.md:459:3. **Formulare (N-05):** Logik je Formular in einen Hook ohne Markup (`src/lib/formulare/use<Formular>.ts`, wörtlich verschoben); Bestand und Kern nutzen ihn; Nachweis: build-ve
+_relaunch/PLAN.md:489:| P7 | Volltest 8 Ebenen · Probeläufer 15 Läufe + Fünf-Sekunden-Probe (Z-04) · Jury-Stichprobe 10 % (≥ 5) · Slop-Jäger Grundmenge (Z-07) · Mutationsprobe je F (Z-03) ·
+_relaunch/PLAN.md:610:     - Mutationsprobe für jede neue Formular-Ansicht.
+_relaunch/PLAN.md:616:   - **Phasentor** am Ende jeder Etappe (E3, E4/E5, E6): Probeläufer, Fünf-Sekunden-Probe mit vorab festgelegter Regel, Mutationsprobe, frischer Gegenprüfer.
+_relaunch/AUFTRAG.md:85:- Testschreiber (H): schreibt Funktions-, Darstellungs- und Bewegungstests nach den Testmustern der Referenzseite; die Mutationsprobe sichert ihre Aussagekraft. Häufige Fehler
+_relaunch/AUFTRAG.md:260:- Ebene 2 Funktion: je zurückgeführter Funktion ein Test ihrer Kernaufgabe; Rechner und Logik mit mindestens zehn Eingaben gegen das Altverhalten, wo der Altstand lauffähig
+_relaunch/AUFTRAG.md:286:- Z-03 Funktion · Ebene 2 · 100 % grün, Mutationsprobe bestanden, Logik bei mindestens zehn Eingaben gleich dem Altverhalten, wo der Altstand lauffähig ist · Testprotokol
+$ rg -n 'Kopie .?-m|-m`|[0-9a-f]{7}-m' _relaunch/belege/t2-*/ERGEBNIS.md _relaunch/belege/*/MUTATION*.md _relaunch/belege/*/mutation/MUTATION.md
+_relaunch/belege/t2-ad80754/MUTATION.md:3:Kopie `reinraum-ad80754-m` (aus `-k`), Port 4313. Neun Mutationen gleichzeitig, je eine in einer anderen Datei (Skript `scratchpad/mutationen-ad80754.py`, jed
+_relaunch/belege/t2-8319525/ERGEBNIS.md:13:| Mutationsprobe (Kopie `-m`, Port 4313, desktop, 46 Fälle) | W1 Kontexttext /bad → 1 rot · W2 Entprellung 0 → 1 rot · B1 Ablehnen ruft Annehmen → 2
+_relaunch/belege/t2-4bd371f/ERGEBNIS.md:29:| Mutationsprobe (Kopie 4bd371f-m, gebaut) | 3/3 rot, 24 Fälle: `Math.floor` in `fmt` (Konfigurator-Rechner und Gutfälle) · `timeSlot: selectedDate` (Kale
+_relaunch/belege/t2-bcd8fcb/MUTATION-2.md:3:Kopie `reinraum-bf63dbe-m`, Port 4313. Elf Mutationen gleichzeitig (Skript `mutationen-m2.py`), je Ersetzung mit Soll-Trefferzahl. Specs: Hero, Einwilligung
+_relaunch/belege/t2-ca8d5ff/ERGEBNIS.md:18:| Mutationsprobe Hooks (Kopie cefbde0-m, gebaut) | 3/3 rot: `toFixed(2)` in useBadanfrage → 3 Fälle × 2 Ansichten rot · `parseInt` in `changeSqm` → 4 
+_relaunch/belege/t2-56fd0dd/ERGEBNIS.md:10:| Mutationsprobe (Reinraum-Kopie `-m`, Port 4313, desktop) | M1 Hero `inquiryType` → 1 rot · M2 Funnel `inquiryType` → 6 rot · M3 Preisrechner Einwilli
+_relaunch/belege/p4-tor-r2/mutation/MUTATION.md:6:- Kopie `reinraum-c5ef582-m` aus `-v`, darin **nur** P6 (`mutation-p6.py`, Trefferzahl geprüft): In `KartenPlatzhalter.tsx` wird `onLaden={handleAcce
+_relaunch/belege/p4-tor/mutation/MUTATION.md:3:Vorgehen: Kopie `reinraum-1c6c9cd-m` aus `-v` mit sechs Mutationen gleichzeitig, je eine in einer anderen Datei. Skript `mutationen.py`, jede Ersetzung m
+_relaunch/belege/t2-f2c4180/ERGEBNIS.md:12:| Mutationsprobe (Kopie f2c4180-m, je gebaut) | M1 Suche ohne Kleinschreibung → 2 Fälle rot · M2 „Filter zurücksetzen“ leert die Suche nicht → 3 F
+_relaunch/belege/t2-74e768c/ERGEBNIS.md:15:| Mutationsprobe Werkzeug | Kopie 74e768c-m (matcher `/blog/:pfad*` + Status 404): ROT, 16 unbeteiligte Treffer, 33 HTTP-Proben rot | `../t2-74e768c-mutation
+
+Bewertung -m: Die Mutationsprobe bleibt Pflicht an Phasentoren und für neue Formular-Ansichten (PLAN.md:610, :616; AUFTRAG.md:260, :286). Sie läuft auf einer von Hand angelegten Kopie reinraum-<sha>-m, die server.sh start <sha>-m bedient (zuletzt t2-56fd0dd, t2-8319525, t2-74e768c). -> Suffix -m bleibt.

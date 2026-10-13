@@ -1,10 +1,14 @@
 # FUSION · Übersetzungsblatt Kern (Relaunch-Sitzung) → KERN v2 (Werkstatt)
 
-Gilt für alle Pakete `E020-F-*`. Ziel: Abschnitte der Kern-Startseite (Vorbild, `src/components/kern/start/*`, gerendert von
-`src/app/(kern)/_entwurf/start/page.tsx`) werden **im KERN-v2-System nachgebaut** – gleiche Komposition, gleiche Inhalte, aber
-nur mit Klassen aus `src/app/globals.css` und unseren Bausteinen. Das Kern-CSS (`src/styles/kern.css`) ist im Seitenrahmen
-`(bestand)` **nicht geladen**: Jede Klasse mit `k-` erzeugt dort nichts. Kern-Dateien werden nie geändert und nie importiert –
-Ausnahme: reine Daten- und Logikmodule ohne Klassen (`@/lib/kern/start/daten`, `@/config/*`, `@/lib/formulare/*`, `@/lib/maps/*`).
+Gilt für alle Pakete `E020-F-*`. Ziel: Abschnitte der Kern-Startseite (Vorbild der Relaunch-Sitzung, früher
+`src/components/kern/start/*`, gerendert von `src/app/(kern)/_entwurf/start/page.tsx`) werden **im KERN-v2-System nachgebaut** –
+gleiche Komposition, gleiche Inhalte, aber nur mit Klassen aus `src/app/globals.css` und unseren Bausteinen.
+Stand E6-ORCH-01 (Schritte 5–7: 81d3016, 51f2cad, 2026cd2): Der ruhende Kern-Baum ist abgebaut – `src/app/(kern)`,
+`src/components/kern/{basis,einwilligung,formulare,fuss,icons,kopf-b,motive,schale,seiten,start,vorlagen}`, `src/lib/kern`, `src/styles` (samt
+Kern-CSS) gibt es nicht mehr; jede Klasse mit `k-` erzeugt nichts. Das Vorbild nur lesen, wenn ein Auftrag es verlangt
+(`git show 81d3016~1:<pfad>`), nie wiederherstellen oder importieren. Importiert werden die lebenden Bausteine flach aus
+`@/components/kern/*` (Tabelle unten) und reine Daten- und Logikmodule ohne Klassen (`@/lib/start/daten`, `@/config/*`,
+`@/lib/formulare/*`, `@/lib/maps/*`).
 
 Bilder des Vorbilds (Fassung A, Desktop/Handy): `/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/vergleich/A/start/{d1440,m390}/NN-*.jpg`
 Bilder unseres Stands (Fassung B): `…/vergleich/B/start/{d1440,m390}/`. Gutachten: `…/vergleich/gutachten.md`.

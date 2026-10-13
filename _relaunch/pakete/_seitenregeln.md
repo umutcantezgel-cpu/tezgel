@@ -24,13 +24,15 @@ Mono-Etiketten, Archivo-Überschriften, Kalk/Fliese/Tinte, genau ein Rot je Bild
 5. Next.js 16: vor jeder API-Nutzung die passende Seite unter `node_modules/next/dist/docs/` lesen (z. B. `next/image`:
    `preload` statt `priority`, `sizes` immer, Qualität nur 75).
 
-## Inhaltliche Vorlage (nur lesen, nie importieren)
-Für die Hauptseiten gibt es ruhende Entwürfe der Relaunch-Sitzung: `src/app/(kern)/_entwurf/<seite>/page.tsx` und
-`src/components/kern/seiten/<seite>/*`, `src/components/kern/vorlagen/**`. Sie sind in einem anderen Klassensystem (`k-*`)
-geschrieben und dürfen **nicht importiert** werden (im Seitenrahmen `(bestand)` erzeugen `k-*`-Klassen nichts). Nutze sie
-als Vorlage für Abschnittsfolge, Barrierefreiheit (Überschriftenfolge, Namen, Zustände) und Kommentare – die Optik baust du
-mit KERN v2. Erlaubte Importe aus diesem Bereich: nur reine Daten-/Logikmodule ohne Klassen (`@/lib/kern/start/daten`,
-`@/lib/formulare/*`, `@/lib/maps/*`, `@/config/*`, `@/lib/schema`, `@/lib/metadata`).
+## Ruhende Entwürfe (abgebaut) und Datenmodule
+Die ruhenden Entwürfe der Relaunch-Sitzung im Klassensystem `k-*` (früher `src/app/(kern)/_entwurf/…`,
+`src/components/kern/{basis,einwilligung,formulare,fuss,icons,kopf-b,motive,schale,seiten,start,vorlagen}/…`, `src/lib/kern/…`,
+`src/styles/…`) sind abgebaut (E6-ORCH-01, Schritte 5–7: 81d3016, 51f2cad, 2026cd2). Vorlage sind allein die
+Referenzseiten oben; lebende Bausteine liegen flach in `src/components/kern/*.tsx` und `src/components/kern/stile.ts`.
+Importe aus den abgebauten Pfaden (`@/app/(kern)/…`, `@/lib/kern/…`, `@/styles/…`, `@/components/kern/<unterordner>/…`)
+gibt es nicht mehr. Den alten Stand nur lesen, wenn dein Auftrag es ausdrücklich verlangt (`git show 81d3016~1:<pfad>`),
+nie wiederherstellen. Reine Daten-/Logikmodule ohne Klassen: `@/lib/start/daten` (Startseiten-Daten),
+`@/lib/formulare/*`, `@/lib/maps/*`, `@/config/*`, `@/lib/schema`, `@/lib/metadata`.
 
 ## Unantastbar
 - **Wortlaut** aller Überschriften (H1–H6), Fließtexte, Knopf- und Linktexte, Etiketten, Listen, Zitate; jedes `href`.

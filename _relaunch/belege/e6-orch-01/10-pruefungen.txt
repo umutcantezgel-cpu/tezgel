@@ -1,0 +1,92 @@
+# E6-ORCH-01 Schritt 10 · Prüfungen · HEAD dd04074 · 2026-10-13T03:11:12+00:00
+
+## 1 bash -n (geänderte Skripte)
+bash -n reinraum.sh: ok (exit 0)
+bash -n server.sh: ok (exit 0)
+bash -n tor-t1.sh: ok (exit 0)
+bash -n tor-s.sh: ok (exit 0)
+
+## 2 Gelöscht
+freischalten.sh: gelöscht
+kern-klassen.mjs: gelöscht
+Aufrufer danach (alle Nicht-Markdown-Dateien ohne belege/cache/node_modules):
+$ rg -n --hidden -g '!node_modules' -g '!.git' -g '!_relaunch/belege/**' -g '!_relaunch/cache/**' -g '!*.md' 'freischalten|kern-klassen|KANDIDAT=|VORSCHAU=' .
+(rg exit 1 – 1 = keine Treffer)
+
+## 3 Stufe 05 (tor-s.sh) – Probelauf, Einzelheiten in 10-stufe05.txt
+### a-treffer · tor-s.neu.sh · SRC=src/components/trust/TrustBadges.tsx
+05-altsystem 1 3 Treffer
+### b-sauber · tor-s.neu.sh · SRC=src/components/common/SprungHalter.tsx
+05-altsystem 0 
+### c-beide · tor-s.neu.sh · SRC=src/components/trust/TrustBadges.tsx,src/components/common/SprungHalter.tsx
+05-altsystem 1 3 Treffer
+### d-kern-neu · tor-s.neu.sh · SRC=src/components/kern/basis/AltProbe.tsx
+05-altsystem 1 3 Treffer
+### e-kern-alt · tor-s.alt.sh · SRC=src/components/kern/basis/AltProbe.tsx
+05-altsystem 0 
+### f-treffer-alt · tor-s.alt.sh · SRC=src/components/trust/TrustBadges.tsx
+05-altsystem 1 3 Treffer
+
+## 4 Sperrklinke
+$ git diff --quiet -- _relaunch/werkzeuge/testzahl.mjs _relaunch/werkzeuge/tests/
+unverändert (exit 0)
+$ node _relaunch/werkzeuge/testzahl.mjs
+Specs 14 · Fälle 121 · expect 528 · fixme 3 · skip 7
+Sperrklinke grün
+exit 0
+
+## 5 tor-t1.sh 7b8ab21 (letzter Produkt-Commit; Plan Schritt 10: „T1 GRÜN: nur Arbeitsordner“)
+T1 · live 7b8ab21 → dd04074 · geänderte Dateien: 54 · davon außerhalb _relaunch: 0
+Specs 14 · Fälle 121 · expect 528 · fixme 3 · skip 7
+Sperrklinke grün
+T1 GRÜN: nur Arbeitsordner (wird nicht ausgeliefert)
+exit 0
+
+## 6 reinraum.sh HEAD im Grundpfad (ohne KANDIDAT/VORSCHAU, RELAUNCH_SCRATCH=/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad)
+Kopie: /tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/reinraum-dd04074 (ohne Suffix, ohne .kandidat-stempel), Logs: _relaunch/cache/reinraum-dd04074/ (gitignoriert)
+npm-ci: exit 0
+build: exit 0
+typecheck: exit 0
+lint: exit 0
+test: exit 0
+qa-graph: exit 0
+nft: sauber
+commit dd04074
+npm-ci 0 (22s)
+build 0 (43s)
+typecheck 0 (12s)
+lint 0 (28s)
+test 0 (2s)
+qa-graph 0 (0s)
+Danach gelöscht (Produktcode dd04074 = 7b8ab21, Kopie reinraum-7b8ab21 liegt vor; df vorher 12G frei, nachher 13G; 3 reinraum-*-Kopien im Scratchpad: 51f2cad, 707a93d, 7b8ab21).
+
+## 7 server.sh (PORT=4370)
+$ PORT=4370 server.sh start dd04074   -> läuft: dd04074 auf 4370 (exit 0)
+  GET / 200 · GET /kontakt 200 · GET /gibt-es-nicht 404
+$ PORT=4370 server.sh stop            -> gestoppt (exit 0); danach GET / auf 4370: 000, kein next start auf 4370, kein next-server mit cwd reinraum-dd04074
+Gegenproben (vor dem Build, brechen vor stoppe/Start ab):
+$ PORT=4370 server.sh start dd04074-k -> 'fatal: Needed a single revision' + 'kein Build in …/reinraum- …' (exit 2): Suffix -k wird nicht mehr aufgelöst
+$ PORT=4370 server.sh start 7b8ab21-m -> 'kein Build in …/reinraum-7b8ab21-m' (exit 2): Suffix -m wird weiter auf die Mutationskopie abgebildet
+Fremde Ports vor/nach: 4350 200, 4368 200, 4369 200 (nicht angefasst)
+jetzt port 4350: 200
+jetzt port 4368: 200
+jetzt port 4369: 200
+jetzt port 4370: 000
+
+## 8 git status (nur lesend)
+ M CLAUDE.md
+ M _relaunch/pakete/_lehren-P3.md
+ M _relaunch/pakete/_seitenregeln.md
+ M _relaunch/pakete/_vorlage-P4-08.md
+ M _relaunch/pakete/_vorlage-kern-P3.md
+ D _relaunch/werkzeuge/freischalten.sh
+ D _relaunch/werkzeuge/kern-klassen.mjs
+ M _relaunch/werkzeuge/reinraum.sh
+ M _relaunch/werkzeuge/server.sh
+ M _relaunch/werkzeuge/tor-s.sh
+ M _relaunch/werkzeuge/tor-t1.sh
+ M _werkstatt/pakete/FUSION-UEBERSETZUNG.md
+?? _relaunch/belege/e6-orch-01/10-aenderungen.txt
+?? _relaunch/belege/e6-orch-01/10-pruefungen.txt
+?? _relaunch/belege/e6-orch-01/10-rg.txt
+?? _relaunch/belege/e6-orch-01/10-stufe05.txt

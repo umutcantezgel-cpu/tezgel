@@ -1,5 +1,10 @@
 # Vorlage P4-08 · Entwurf einer Hauptseite im Kern (ruhend, für das P4-Tor nach E-017)
 
+> **Abgelöst (E-038, E6-ORCH-01 Schritte 5 und 10):** Der ruhende Kern-Baum (`src/app/(kern)`, die Unterordner von
+> `src/components/kern/`, `src/lib/kern`, `src/styles`) ist abgebaut (81d3016, 51f2cad, 2026cd2), `freischalten.sh` ist gelöscht. Diese Vorlage
+> nicht mehr für neue Aufträge verwenden; Seitenaufträge folgen `_seitenregeln.md` (Formulare zusätzlich `_formularregeln.md`).
+> Die Pfade unten sind Geschichte und keine Vorlage und kein erlaubter Import mehr.
+
 Gilt für P4-08a bis P4-08f. Das Einzelbriefing nennt Route, Seitenart, Quellen, Funktionen und Besonderheiten.
 
 ## Aufgabe

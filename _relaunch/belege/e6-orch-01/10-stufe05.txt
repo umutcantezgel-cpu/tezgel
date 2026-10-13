@@ -1,0 +1,75 @@
+# E6-ORCH-01 Schritt 10 · Probelauf Stufe 05 (Altsystem-Suche) aus tor-s.sh · 2026-10-13T03:08:14+00:00
+
+Verfahren: Die Zeilen von Stufe 05 werden wörtlich aus tor-s.sh ausgeschnitten (awk von '(cd "$REPO" && echo "$SRC"' bis 'stufe 05-altsystem 0') und mit REPO=<Probebaum im Scratchpad> und SRC=<Liste> ausgeführt.
+neu = Arbeitsbaum _relaunch/werkzeuge/tor-s.sh (ohne die beiden grep -v-Filter), alt = git show HEAD:_relaunch/werkzeuge/tor-s.sh (dd04074).
+Probebaum: /tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e6o1-10-stufe05/baum
+- src/components/trust/TrustBadges.tsx = git show a09d483~1:src/components/trust/TrustBadges.tsx (alte Datei, Altsystem)
+- src/components/kern/basis/AltProbe.tsx = dieselbe Datei unter einem ehemaligen Kern-Unterordner (Nachweis, dass der Filter weg ist)
+- src/components/common/SprungHalter.tsx = lebende saubere Datei (cp aus dem Repo)
+
+## Ausgeschnittene Stufe 05 (neu)
+  (cd "$REPO" && echo "$SRC" | tr ',' '\n' \
+    | xargs -r grep -nE "lucide-react|framer-motion|@phosphor|glass-|ambient-|ceramic-|(^|[\"' \`])eyebrow(-[a-z]+)?([\"' \`]|$)|btn-primary|btn-ghost|icon-chip|gradient|backdrop-blur|shadow-\[|rounded-(sm|md|lg|xl|2xl|3xl|full|tile)|(slate|neutral|orange|amber|gray|zinc|stone)-[0-9]") > "$AUS/05-altsystem.log" 2>&1
+  [ -s "$AUS/05-altsystem.log" ] && stufe 05-altsystem 1 "$(wc -l < "$AUS/05-altsystem.log") Treffer" || stufe 05-altsystem 0
+
+## Hilfsskript
+#!/usr/bin/env bash
+# Probe: führt genau die Zeilen von Stufe 05 aus <tor-s.sh> aus (per awk ausgeschnitten), mit REPO=<baum>, SRC=<liste>.
+set -uo pipefail
+TOR="$1"; REPO="$2"; SRC="$3"; AUS="$4"
+mkdir -p "$AUS"; ROH="$AUS/ergebnis.txt"; : > "$ROH"; rot=0
+stufe() { echo "$1 $2 ${3:-}" | tee -a "$ROH"; [ "$2" = "0" ] || rot=1; }
+STUECK="$(awk '/\(cd "\$REPO" && echo "\$SRC"/{f=1} f{print} /stufe 05-altsystem 0$/{exit}' "$TOR")"
+[ -n "$STUECK" ] || { echo "Stufe 05 nicht gefunden"; exit 2; }
+eval "$STUECK"
+echo "treffer_zeilen=$(wc -l < "$AUS/05-altsystem.log")"
+
+## Ergebnisse
+### a-treffer · tor-s.neu.sh · SRC=src/components/trust/TrustBadges.tsx
+05-altsystem 1 3 Treffer
+treffer_zeilen=3
+exit=0
+2:import { Award, ShieldCheck, Check, Sparkles, Clock, Ruler } from "lucide-react";
+35:            className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-neutral-700 bg-neutral-100/80 px-3 py-1.5 rounded-full border border-n
+37:            <IconComp className="h-4 w-4 text-orange-600 shrink-0" aria-hidden="true" />
+
+### b-sauber · tor-s.neu.sh · SRC=src/components/common/SprungHalter.tsx
+05-altsystem 0 
+treffer_zeilen=0
+exit=0
+
+### c-beide · tor-s.neu.sh · SRC=src/components/trust/TrustBadges.tsx,src/components/common/SprungHalter.tsx
+05-altsystem 1 3 Treffer
+treffer_zeilen=3
+exit=0
+src/components/trust/TrustBadges.tsx:2:import { Award, ShieldCheck, Check, Sparkles, Clock, Ruler } from "lucide-react";
+src/components/trust/TrustBadges.tsx:35:            className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-neutral-700 bg-neutral-100/80 px-
+src/components/trust/TrustBadges.tsx:37:            <IconComp className="h-4 w-4 text-orange-600 shrink-0" aria-hidden="true" />
+
+### d-kern-neu · tor-s.neu.sh · SRC=src/components/kern/basis/AltProbe.tsx
+05-altsystem 1 3 Treffer
+treffer_zeilen=3
+exit=0
+2:import { Award, ShieldCheck, Check, Sparkles, Clock, Ruler } from "lucide-react";
+35:            className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-neutral-700 bg-neutral-100/80 px-3 py-1.5 rounded-full border border-n
+37:            <IconComp className="h-4 w-4 text-orange-600 shrink-0" aria-hidden="true" />
+
+### e-kern-alt · tor-s.alt.sh · SRC=src/components/kern/basis/AltProbe.tsx
+05-altsystem 0 
+treffer_zeilen=0
+exit=0
+
+### f-treffer-alt · tor-s.alt.sh · SRC=src/components/trust/TrustBadges.tsx
+05-altsystem 1 3 Treffer
+treffer_zeilen=3
+exit=0
+2:import { Award, ShieldCheck, Check, Sparkles, Clock, Ruler } from "lucide-react";
+35:            className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-neutral-700 bg-neutral-100/80 px-3 py-1.5 rounded-full border border-n
+37:            <IconComp className="h-4 w-4 text-orange-600 shrink-0" aria-hidden="true" />
+
+## Bewertung
+- a (alte Datei, neu): 3 Treffer, Stufe rot (1) -> erwartet.
+- b (saubere Datei, neu): 0 Treffer, Stufe grün (0) -> erwartet.
+- c (beide, neu): 3 Treffer, nur aus TrustBadges.tsx -> erwartet.
+- d/e (ehemaliger Kern-Unterordner): neu 3 Treffer, alt 0 (vom gestrichenen Filter verdeckt) -> die Filter sind wirksam entfernt.
+- f (alte Datei, alt): 3 Treffer = a -> Pipeline sonst unverändert.

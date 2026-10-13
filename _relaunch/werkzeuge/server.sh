@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Startet den Reinraum-Build eines Commits als Produktionsserver auf 127.0.0.1:${PORT:-4310}.
-# Nutzung: server.sh start <commit>[-k|-v|-m] | server.sh stop   (Suffix -k = Kandidat-Build aus reinraum.sh mit KANDIDAT=…, -v = Vorschau, -m = Mutationskopie)
+# Nutzung: server.sh start <commit>[-m] | server.sh stop   (Suffix -m = Mutationskopie reinraum-<sha>-m, von Hand aus einem Reinraum-Build angelegt)
 # Schutz: Ist der Port nach dem Stoppen noch belegt (fremder Server) oder meldet das Log EADDRINUSE oder lauscht kein next-server aus $DIR, bricht das Skript ab.
 # G5: Abbruch, wenn ein Versandschlüssel gesetzt ist oder eine .env-Datei im Build liegt (echte Route bliebe sonst nicht im Mock-Modus).
 set -uo pipefail
@@ -18,7 +18,7 @@ case "${1:-}" in
   stop) stoppe; echo "gestoppt";;
   start)
     REPO="$(git -C "$(dirname "$0")" rev-parse --show-toplevel)"
-    NAME="${2:-HEAD}"; SUF=""; case "$NAME" in *-k) SUF="-k"; NAME="${NAME%-k}";; *-v) SUF="-v"; NAME="${NAME%-v}";; *-m) SUF="-m"; NAME="${NAME%-m}";; esac
+    NAME="${2:-HEAD}"; SUF=""; case "$NAME" in *-m) SUF="-m"; NAME="${NAME%-m}";; esac
     SHA="$(git -C "$REPO" rev-parse --short "$NAME")$SUF"
     DIR="$SCRATCH/reinraum-$SHA"
     [ -z "${RESEND_API_KEY:-}" ] || { echo "ABBRUCH (G5): RESEND_API_KEY ist gesetzt"; exit 3; }

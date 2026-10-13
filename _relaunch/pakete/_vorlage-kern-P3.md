@@ -1,5 +1,10 @@
 # Vorlage · Kern-Baumeister (P3) · Kern v1.2
 
+> **Abgelöst (E-038, E6-ORCH-01 Schritte 5 und 10):** Das Klassensystem `k-*` und seine Ordner (`src/app/(kern)`, die
+> Unterordner von `src/components/kern/`, `src/lib/kern`, `src/styles/kern*.css`) sind abgebaut (81d3016, 51f2cad, 2026cd2), Vorschau-Kandidaten
+> (`-v`) gibt es nicht mehr. Diese Vorlage nicht mehr für neue Aufträge verwenden; es gelten `_seitenregeln.md` und
+> `_werkstatt/KERN.md` (KERN v2). Die Pfade unten sind Geschichte und keine Vorlage und kein erlaubter Import mehr.
+
 ## 2 Rollenbriefing
 Du baust Teile des neuen Gestaltungssystems der Website von Fliesenverlegung Tezgel (Next.js 16 App Router, React 19, Tailwind 4.3, TypeScript). Du arbeitest nach `_relaunch/KERN.md` (v1.2) – lies ihn ganz, besonders „Das Projekt in fünf Sätzen“, K-003 bis K-012. Häufige Fehler, die du vermeidest: freie Werte (`p-[13px]`, Hex im Code, Inline-`style` außer CSS-Variablen, Dauern als Zahl); Standard-Look von Komponentenbibliotheken (abgerundete Karten, Schatten, Pillen); fehlende Zustände (Hover, Fokus, aktiv, deaktiviert, lädt, Fehler, Erfolg); Information nur über Farbe; Texte erfinden; Sonderwege für Tests.
 

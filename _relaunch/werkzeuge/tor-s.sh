@@ -57,8 +57,8 @@ node -e '
 SRC="$(git -C "$REPO" diff --name-only "$LIVE" HEAD -- src | grep -E '\.(tsx|ts|jsx|js)$' | while read -r f; do [ -f "$REPO/$f" ] && echo "$f"; done | paste -sd, -)"
 if [ -n "$SRC" ]; then
   (cd "$REPO" && node _werkstatt/werkzeuge/werte.mjs --dateien "$SRC" --ziel "$AUS/werte") > "$AUS/04-werte.log" 2>&1; stufe 04-werte $? "$(tail -1 "$AUS/04-werte.log")"
-  (cd "$REPO" && echo "$SRC" | tr ',' '\n' | grep -v '^src/components/kern/\(basis\|seiten\|start\|vorlagen\|einwilligung\|formulare\|fuss\|kopf-b\|icons\|motive\|schale\)/' | grep -v '^src/app/(kern)/' \
-    | xargs -r grep -nE "lucide-react|framer-motion|@phosphor|glass-|ambient-|ceramic-|(^|[\"' \`])eyebrow(-[a-z]+)?([\"' \`]|$)|btn-primary|btn-ghost|icon-chip|gradient|backdrop-blur|shadow-\[|rounded-(sm|md|lg|xl|2xl|3xl|full|tile)|(slate|neutral|orange|amber|gray|zinc|stone)-[0-9]") > "$AUS/05-altsystem.log" 2>&1
+  (cd "$REPO" && echo "$SRC" | tr ',' '\n' \
+    | xargs -r grep -HnE "lucide-react|framer-motion|@phosphor|glass-|ambient-|ceramic-|(^|[\"' \`])eyebrow(-[a-z]+)?([\"' \`]|$)|btn-primary|btn-ghost|icon-chip|gradient|backdrop-blur|shadow-\[|rounded-(sm|md|lg|xl|2xl|3xl|full|tile)|(slate|neutral|orange|amber|gray|zinc|stone)-[0-9]") > "$AUS/05-altsystem.log" 2>&1
   [ -s "$AUS/05-altsystem.log" ] && stufe 05-altsystem 1 "$(wc -l < "$AUS/05-altsystem.log") Treffer" || stufe 05-altsystem 0
 else
   stufe 04-werte 0 "keine src-Datei"; stufe 05-altsystem 0 "keine src-Datei"

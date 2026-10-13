@@ -3,7 +3,7 @@
 //    keine API-Route („Hauptseiten laufen nicht durch den Proxy“).
 // 2. HTTP (lokal am Server des Builds, oder --live mit ≤ 1 Anfrage/s, nur GET/HEAD):
 //    410 samt Seite und Sicherheitsköpfen · 308 mit Ziel · Grenzfälle unverändert · (lokal) jede Sitemap-Adresse 200.
-// Nutzung: node --experimental-strip-types wege.mjs --build <sha[-k]> [--base http://127.0.0.1:4331] [--live] [--satz <beleg>]
+// Nutzung: node --experimental-strip-types wege.mjs --build <sha[-m]> [--base http://127.0.0.1:4331] [--live] [--satz <beleg>]
 import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
