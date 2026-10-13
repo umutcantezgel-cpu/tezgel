@@ -1,0 +1,300 @@
+{
+  "zeitpunkt": "2026-10-13T01:57:10.543Z",
+  "seite": "/widerruf",
+  "bedingungen": "Chromium (Playwright), Anfragen nach aussen abgebrochen, DPR 1, reduzierte Bewegung, Einwilligung abgelehnt, Hydrierung abgewartet, page.emulateMedia({ media }), ganzseitiges Bild; 4350 mit HMR-Filter. Bilder nur im Scratchpad (scratchpad/e6o1-s8/bilder-druck-{vorher,nachher,live}).",
+  "vergleich": [
+    {
+      "lauf": "d1440|print",
+      "vorher4350": {
+        "status": 200,
+        "printMatch": true,
+        "linien": 7,
+        "hintergrund": [
+          "rgb(255, 255, 255)"
+        ],
+        "rand": [
+          "rgb(129, 134, 152)"
+        ],
+        "colorWhite": "#fff",
+        "printHiddenSichtbar": "0/2",
+        "dokumentHoehe": 3294,
+        "konsolenfehler": 0,
+        "standardpalette": {
+          "--color-orange-600": "",
+          "--color-black": ""
+        }
+      },
+      "nachher4350": {
+        "status": 200,
+        "printMatch": true,
+        "linien": 7,
+        "hintergrund": [
+          "rgb(255, 255, 255)"
+        ],
+        "rand": [
+          "rgb(129, 134, 152)"
+        ],
+        "colorWhite": "#fff",
+        "printHiddenSichtbar": "0/2",
+        "dokumentHoehe": 3294,
+        "konsolenfehler": 0,
+        "standardpalette": {
+          "--color-orange-600": "",
+          "--color-black": ""
+        }
+      },
+      "live4366": {
+        "status": 200,
+        "printMatch": true,
+        "linien": 7,
+        "hintergrund": [
+          "rgb(255, 255, 255)"
+        ],
+        "rand": [
+          "rgb(129, 134, 152)"
+        ],
+        "colorWhite": "#fff",
+        "printHiddenSichtbar": "0/2",
+        "dokumentHoehe": 3294,
+        "konsolenfehler": 0,
+        "standardpalette": {
+          "--color-orange-600": "lab(57.1026% 64.2584 89.8886)",
+          "--color-black": ""
+        }
+      },
+      "linienBoxenGleich": true,
+      "bildVorherNachher": {
+        "groesse": "1440x3294",
+        "abweichendePixel": 0,
+        "shaGleich": true
+      },
+      "bildNachherLive": {
+        "groesse": "1440x3294",
+        "abweichendePixel": 0,
+        "shaGleich": true
+      }
+    },
+    {
+      "lauf": "d1440|screen",
+      "vorher4350": {
+        "status": 200,
+        "printMatch": false,
+        "linien": 7,
+        "hintergrund": [
+          "rgb(245, 244, 240)"
+        ],
+        "rand": [
+          "rgb(129, 134, 152)"
+        ],
+        "colorWhite": "#fff",
+        "printHiddenSichtbar": "2/2",
+        "dokumentHoehe": 3421,
+        "konsolenfehler": 0,
+        "standardpalette": {
+          "--color-orange-600": "",
+          "--color-black": ""
+        }
+      },
+      "nachher4350": {
+        "status": 200,
+        "printMatch": false,
+        "linien": 7,
+        "hintergrund": [
+          "rgb(245, 244, 240)"
+        ],
+        "rand": [
+          "rgb(129, 134, 152)"
+        ],
+        "colorWhite": "#fff",
+        "printHiddenSichtbar": "2/2",
+        "dokumentHoehe": 3421,
+        "konsolenfehler": 0,
+        "standardpalette": {
+          "--color-orange-600": "",
+          "--color-black": ""
+        }
+      },
+      "live4366": {
+        "status": 200,
+        "printMatch": false,
+        "linien": 7,
+        "hintergrund": [
+          "rgb(245, 244, 240)"
+        ],
+        "rand": [
+          "rgb(129, 134, 152)"
+        ],
+        "colorWhite": "#fff",
+        "printHiddenSichtbar": "2/2",
+        "dokumentHoehe": 3421,
+        "konsolenfehler": 0,
+        "standardpalette": {
+          "--color-orange-600": "lab(57.1026% 64.2584 89.8886)",
+          "--color-black": ""
+        }
+      },
+      "linienBoxenGleich": true,
+      "bildVorherNachher": {
+        "groesse": "1440x3421",
+        "abweichendePixel": 0,
+        "shaGleich": true
+      },
+      "bildNachherLive": {
+        "groesse": "1440x3421",
+        "abweichendePixel": 0,
+        "shaGleich": true
+      }
+    },
+    {
+      "lauf": "m375|print",
+      "vorher4350": {
+        "status": 200,
+        "printMatch": true,
+        "linien": 7,
+        "hintergrund": [
+          "rgb(255, 255, 255)"
+        ],
+        "rand": [
+          "rgb(129, 134, 152)"
+        ],
+        "colorWhite": "#fff",
+        "printHiddenSichtbar": "0/2",
+        "dokumentHoehe": 6027,
+        "konsolenfehler": 0,
+        "standardpalette": {
+          "--color-orange-600": "",
+          "--color-black": ""
+        }
+      },
+      "nachher4350": {
+        "status": 200,
+        "printMatch": true,
+        "linien": 7,
+        "hintergrund": [
+          "rgb(255, 255, 255)"
+        ],
+        "rand": [
+          "rgb(129, 134, 152)"
+        ],
+        "colorWhite": "#fff",
+        "printHiddenSichtbar": "0/2",
+        "dokumentHoehe": 6027,
+        "konsolenfehler": 0,
+        "standardpalette": {
+          "--color-orange-600": "",
+          "--color-black": ""
+        }
+      },
+      "live4366": {
+        "status": 200,
+        "printMatch": true,
+        "linien": 7,
+        "hintergrund": [
+          "rgb(255, 255, 255)"
+        ],
+        "rand": [
+          "rgb(129, 134, 152)"
+        ],
+        "colorWhite": "#fff",
+        "printHiddenSichtbar": "0/2",
+        "dokumentHoehe": 6027,
+        "konsolenfehler": 0,
+        "standardpalette": {
+          "--color-orange-600": "lab(57.1026% 64.2584 89.8886)",
+          "--color-black": ""
+        }
+      },
+      "linienBoxenGleich": true,
+      "bildVorherNachher": {
+        "groesse": "375x6027",
+        "abweichendePixel": 0,
+        "shaGleich": true
+      },
+      "bildNachherLive": {
+        "groesse": "375x6027",
+        "abweichendePixel": 0,
+        "shaGleich": true
+      }
+    },
+    {
+      "lauf": "m375|screen",
+      "vorher4350": {
+        "status": 200,
+        "printMatch": false,
+        "linien": 7,
+        "hintergrund": [
+          "rgb(245, 244, 240)"
+        ],
+        "rand": [
+          "rgb(129, 134, 152)"
+        ],
+        "colorWhite": "#fff",
+        "printHiddenSichtbar": "2/2",
+        "dokumentHoehe": 6213,
+        "konsolenfehler": 0,
+        "standardpalette": {
+          "--color-orange-600": "",
+          "--color-black": ""
+        }
+      },
+      "nachher4350": {
+        "status": 200,
+        "printMatch": false,
+        "linien": 7,
+        "hintergrund": [
+          "rgb(245, 244, 240)"
+        ],
+        "rand": [
+          "rgb(129, 134, 152)"
+        ],
+        "colorWhite": "#fff",
+        "printHiddenSichtbar": "2/2",
+        "dokumentHoehe": 6213,
+        "konsolenfehler": 0,
+        "standardpalette": {
+          "--color-orange-600": "",
+          "--color-black": ""
+        }
+      },
+      "live4366": {
+        "status": 200,
+        "printMatch": false,
+        "linien": 7,
+        "hintergrund": [
+          "rgb(245, 244, 240)"
+        ],
+        "rand": [
+          "rgb(129, 134, 152)"
+        ],
+        "colorWhite": "#fff",
+        "printHiddenSichtbar": "2/2",
+        "dokumentHoehe": 6213,
+        "konsolenfehler": 0,
+        "standardpalette": {
+          "--color-orange-600": "lab(57.1026% 64.2584 89.8886)",
+          "--color-black": ""
+        }
+      },
+      "linienBoxenGleich": true,
+      "bildVorherNachher": {
+        "groesse": "375x6213",
+        "abweichendePixel": 0,
+        "shaGleich": true
+      },
+      "bildNachherLive": {
+        "groesse": "375x6213",
+        "abweichendePixel": 0,
+        "shaGleich": true
+      }
+    }
+  ],
+  "empfindlichkeit": {
+    "basis": "http://127.0.0.1:4350",
+    "ansicht": "d1440 print",
+    "klasseEntfernt": 7,
+    "hintergrundOhneKlasse": [
+      "rgb(245, 244, 240)"
+    ],
+    "abweichendePixelGegenNachher": 183394
+  }
+}

@@ -1,0 +1,56 @@
+E6-ORCH-01 · Schritt 8 · Tailwind-Standardpalette sperren · Prüfungen am Arbeitsbaum (HEAD 8f1e979 + Schritte 7 und 8 ungecommittet), 2026-10-13T02:00Z
+====================================================================================================================================================
+Änderungsmenge Schritt 8: " M" src/app/globals.css, sonst nichts. In @theme static stehen vor den KERN-Farben:
+  /* Tailwind-Standardpalette gesperrt: Farbklassen nur aus den KERN-Farben. white ist der Tailwind-Standardwert und
+     bleibt für print:bg-white (Widerrufsformular) */
+  --color-*: initial;
+  --color-white: #fff;
+Neu sind die Belege 8-*. Die übrigen Einträge in git status stammen aus Schritt 7 bzw. vom Orchestrator (CLAUDE.md). werte-regeln.json ist
+unverändert (sha256 dd335573…, gleich stand-7). Der Hilfswert "white" in farben bleibt nötig.
+Die Fassung nach Schritt 7 (scratchpad/e6-orch-01/stand-7/globals.css, sha256 d7b273df…) ist unverändert. Die Fassung nach Schritt 8 hat sha256 d6d54a19….
+
+01 Tailwind-CSS gegen Stand 7   scratchpad/e6o1-s8/tw-stand.mjs (@tailwindcss/node compile + oxide-Scanner wie @tailwindcss/postcss, base src/app),
+                               Quelle vorher = stand-7/globals.css, nachher = Arbeitsbaum; Zählung mit postcss wie 6-/7-tailwind.json             GRUEN
+                               Vorher und nachher je 118184 B, 1327 Selektoren, 96 Variablen (126 Deklarationen), 40 @property, 7732 Kandidaten.
+                               Neu 0 und Weg 0 bei Selektoren, Variablen, @property und Kandidaten. Regeln 1290 = 1290.
+                               Einziger Textunterschied: In @layer theme :root, :host steht „--color-white: #fff;“ jetzt direkt vor --color-kalk
+                               (vorher an Stelle 3 aus dem Standard-Theme). Menge und Wert bleiben gleich.
+                               .print:bg-white bleibt, .karten-hoehe bleibt, --font-sans/--default-font-family bleiben, die Reduced-motion-Regel bleibt.
+                               Gegenlauf: stand-7 neu gescannt nach der Änderung = vorher.css (byte-gleich). Beleg 8-tailwind.json
+02 Undefinierte var(--color-*)  farbvars.cjs: Erzeugtes CSS 12 Bezüge, 12 definiert (11 KERN + white), 0 undefiniert, keine theme()-Bezüge.
+                               Markup (rg in src, public, scripts, ohne die Definitionen in globals.css): 50 Treffer in 5 Dateien, 9 Namen, alle KERN.
+                               0 undefiniert, 0 dynamisch gebildet (--color-${…})                                                                GRUEN
+03 Gegenprobe Scratch-Kopie     gegenprobe.mjs in scratchpad/e6o1-s8/geg/{stand7,stand8} (nicht im Arbeitsbaum), Probe-Datei mit
+                               bg-orange-600 text-black border-emerald-500 hover:bg-slate-900 bg-kalk text-tinte print:bg-white                       GRUEN
+                               Stand 7: alle 7 Klassen erzeugen CSS. Schritt 8: bg-orange-600, text-black, border-emerald-500 und hover:bg-slate-900
+                               erzeugen kein CSS; bg-kalk, text-tinte und print:bg-white bleiben. Ausserhalb von KERN bleibt als einzige Farbvariable
+                               --color-white: #fff. werte.mjs auf der Probe meldet 4× ohne_css, genau die vier Palettenklassen. Beleg 8-gegenprobe.json
+04 Druckansicht /widerruf       druck.mjs, emulateMedia print und screen, d1440 und m375. 4350 vorher, 4350 nachher, live 4366                       GRUEN
+                               4/4 Bilder vorher = nachher mit 0 Pixeln (pixelmatch threshold 0, PNG sha256 gleich), nachher = live 4/4.
+                               Im Druck 7 Schreiblinien rgb(255,255,255), --color-white "#fff". Empfindlichkeit: ohne print:bg-white weichen
+                               183394 Pixel ab. Belege 8-druck.txt und 8-druck.json, Bilder nur im Scratchpad
+05 Ausgeliefertes CSS 4350      served-vgl.cjs: CSS-Bündel von /widerruf vorher und nachher. 0 Selektoren neu, 0 Variablen neu.            GRUEN (Deutung)
+                               Weg sind 8 Selektoren und 3 Variablen. Es sind die Doku-Klassen, die Schritt 7 entfernt hat: .duration-300,
+                               .font-sans, .hover:-translate-y-0.5, .hover:border-emerald-500/80, .rounded-2xl, .rounded-[2rem], .rounded-full,
+                               .transition-all sowie --color-emerald-500, --radius-2xl, --tw-duration. Alle stehen in der Wegfall-Liste von
+                               7-tailwind.json und in keiner der beiden Simulationen. next dev hielt die alten Kandidaten bis zum nächsten vollen
+                               Neuaufbau; die Änderung an globals.css hat ihn ausgelöst. Kein Element nutzt sie (7-dom.json).
+                               .print:bg-white bleibt. 4350 liefert nachweislich die neue Fassung (--color-white vor --color-kalk).
+06 Seitenaufruf 4350           karten.mjs aus Schritt 7, Playwright, Anfragen nach aussen abgebrochen, HMR-Filter. /, /kontakt, /standorte ×
+                               d1440/m375 × Erstbesuch/abgelehnt                                                                              GRUEN
+                               12/12 HTTP 200, hydriert, 0 Konsolenfehler, 0 pageerror, kein Next-Fehlerdialog.
+                               next dev zeigt seit der Änderung nur GET-Zeilen, kein FATAL. Die FATAL-Einträge im Log stammen alle aus der Zeit vor
+                               „✓ Compiled in 24.4s“, also vor diesem Schritt.
+07 Kartenflächen               getBoundingClientRect (+scrollY) und berechnete Höhe jeder .karten-hoehe bzw. ihres Rahmens. 4350 nachher = 4350
+                               vorher = live 4366 in 12/12 Läufen, Dokumenthöhe 12/12 gleich. Startseite d1440 696×471,08, m375 343×355,06;
+                               /kontakt d1440 728,41×769,56, m375 341×740,53; /standorte d1440 1216×471,08 und 689,33×400, m375 343×355,06 und
+                               343×400. Pixel der Kartenrahmen vorher gegen nachher: 8/8 mit 0 Pixeln. Schrift von <html> 12/12 gleich
+                               (archivo, "Archivo Ersatz", Arial, sans-serif)                                                               GRUEN  Beleg 8-karten.json
+08 werte                       node _werkstatt/werkzeuge/werte.mjs --dateien src/app/globals.css                                               GRUEN  befunde gesamt 0
+                               git-diff-Modus (globals.css, _dokument.tsx)                                                                    GRUEN  befunde gesamt 0
+                               --dateien src/app/(bestand)/widerruf/page.jsx (nutzt print:bg-white, 83 Klassenvorkommen)                      GRUEN  befunde gesamt 0
+09 Typprüfung                  npx tsc --noEmit -p tsconfig.json                                                                              GRUEN  Exit 0, keine Ausgabe
+10 ESLint über src             npx eslint src                                                                                                 GRUEN  Exit 0, keine Ausgabe
+11 Unit-Tests                  npm test                                                                                                       GRUEN  # tests 37 # pass 37 # fail 0
+12 JSON.parse                  8-tailwind.json, 8-gegenprobe.json, 8-karten.json, 8-druck.json                                                GRUEN  alle gültig
+Nicht gelaufen (im Arbeitsbaum verboten bzw. Sache des Tors): next build, build-vergleich --streng, volle Playwright-Suite, knip, Server-Neustart.

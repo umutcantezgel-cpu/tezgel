@@ -1,0 +1,521 @@
+{
+  "zeitpunkt": "2026-10-13T01:57:07.321Z",
+  "quellen": {
+    "vorher": "http://127.0.0.1:4350 (Arbeitsbaum nach Schritt 7, vor Schritt 8, 2026-10-13T01:51:49.442Z)",
+    "live": "http://127.0.0.1:4366 (2026-10-13T01:51:49.508Z)",
+    "nachher": "http://127.0.0.1:4350 (Arbeitsbaum nach Schritt 8, 2026-10-13T01:55:53.826Z)"
+  },
+  "bedingungen": "Chromium (Playwright, PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers), Anfragen nach aussen abgebrochen, DPR 1, reduzierte Bewegung, Hydrierung abgewartet, durchgerollt; 4350 mit HMR-Filter (serverComponentChanges) wie Schritt 6. Kartenfläche = .karten-hoehe bzw. ihr Rahmen (Platzhalter mit Inhaltshöhe), getBoundingClientRect + scrollY. Bilder: Rahmen der Kartenfläche, feste und klebende Ebenen ausgeblendet, Einwilligung „abgelehnt“ (kein Banner).",
+  "zusammenfassung": {
+    "laeufe": 12,
+    "geometrieGleichVorher": 12,
+    "geometrieGleichLive": 12,
+    "dokumentHoeheGleich": 12,
+    "htmlSchriftGleich": 12,
+    "status200": 12,
+    "konsolenfehler": 0,
+    "bilder": 8,
+    "bilderPixelGleich": 8
+  },
+  "laeufe": [
+    {
+      "lauf": "erstbesuch|d1440|/",
+      "status": {
+        "vorher": 200,
+        "live": 200,
+        "nachher": 200
+      },
+      "kartenflaechen": [
+        {
+          "abschnitt": "servicegebiet",
+          "karteHoeheVar": "460px",
+          "rahmenBxH": "696x471.078125",
+          "top": 11707.984375
+        }
+      ],
+      "geometrieNachherGleichVorher": true,
+      "geometrieNachherGleichLive": true,
+      "dokumentHoehe": {
+        "vorher": 16482,
+        "live": 16482,
+        "nachher": 16482
+      },
+      "htmlSchriftGleich": true,
+      "bodySchriftGleich": true,
+      "fontSansNachher": "\"archivo\", \"Archivo Ersatz\", Arial, sans-serif",
+      "altVariablenNachher": {
+        "--color-brand-primary": "",
+        "--color-primary": "",
+        "--font-display": ""
+      },
+      "konsolenfehlerNachher": 0,
+      "seitenfehlerNachher": 0,
+      "lokaleAb400Nachher": 0,
+      "nextFehlerdialogNachher": false,
+      "blockiertNachher": []
+    },
+    {
+      "lauf": "erstbesuch|d1440|/kontakt",
+      "status": {
+        "vorher": 200,
+        "live": 200,
+        "nachher": 200
+      },
+      "kartenflaechen": [
+        {
+          "abschnitt": "standort-anfahrt",
+          "karteHoeheVar": "440px",
+          "rahmenBxH": "728.40625x769.5625",
+          "top": 1762.53125
+        }
+      ],
+      "geometrieNachherGleichVorher": true,
+      "geometrieNachherGleichLive": true,
+      "dokumentHoehe": {
+        "vorher": 7200,
+        "live": 7200,
+        "nachher": 7200
+      },
+      "htmlSchriftGleich": true,
+      "bodySchriftGleich": true,
+      "fontSansNachher": "\"archivo\", \"Archivo Ersatz\", Arial, sans-serif",
+      "altVariablenNachher": {
+        "--color-brand-primary": "",
+        "--color-primary": "",
+        "--font-display": ""
+      },
+      "konsolenfehlerNachher": 0,
+      "seitenfehlerNachher": 0,
+      "lokaleAb400Nachher": 0,
+      "nextFehlerdialogNachher": false,
+      "blockiertNachher": []
+    },
+    {
+      "lauf": "erstbesuch|d1440|/standorte",
+      "status": {
+        "vorher": 200,
+        "live": 200,
+        "nachher": 200
+      },
+      "kartenflaechen": [
+        {
+          "abschnitt": "karte-ueberschrift",
+          "karteHoeheVar": "460px",
+          "rahmenBxH": "1216x471.078125",
+          "top": 1687.265625
+        },
+        {
+          "abschnitt": "hauptsitz-heading",
+          "karteHoeheVar": "400px",
+          "rahmenBxH": "689.328125x400",
+          "top": 5751.875
+        }
+      ],
+      "geometrieNachherGleichVorher": true,
+      "geometrieNachherGleichLive": true,
+      "dokumentHoehe": {
+        "vorher": 9548,
+        "live": 9548,
+        "nachher": 9548
+      },
+      "htmlSchriftGleich": true,
+      "bodySchriftGleich": true,
+      "fontSansNachher": "\"archivo\", \"Archivo Ersatz\", Arial, sans-serif",
+      "altVariablenNachher": {
+        "--color-brand-primary": "",
+        "--color-primary": "",
+        "--font-display": ""
+      },
+      "konsolenfehlerNachher": 0,
+      "seitenfehlerNachher": 0,
+      "lokaleAb400Nachher": 0,
+      "nextFehlerdialogNachher": false,
+      "blockiertNachher": []
+    },
+    {
+      "lauf": "erstbesuch|m375|/",
+      "status": {
+        "vorher": 200,
+        "live": 200,
+        "nachher": 200
+      },
+      "kartenflaechen": [
+        {
+          "abschnitt": "servicegebiet",
+          "karteHoeheVar": "460px",
+          "rahmenBxH": "343x355.0625",
+          "top": 19184.328125
+        }
+      ],
+      "geometrieNachherGleichVorher": true,
+      "geometrieNachherGleichLive": true,
+      "dokumentHoehe": {
+        "vorher": 27551,
+        "live": 27551,
+        "nachher": 27551
+      },
+      "htmlSchriftGleich": true,
+      "bodySchriftGleich": true,
+      "fontSansNachher": "\"archivo\", \"Archivo Ersatz\", Arial, sans-serif",
+      "altVariablenNachher": {
+        "--color-brand-primary": "",
+        "--color-primary": "",
+        "--font-display": ""
+      },
+      "konsolenfehlerNachher": 0,
+      "seitenfehlerNachher": 0,
+      "lokaleAb400Nachher": 0,
+      "nextFehlerdialogNachher": false,
+      "blockiertNachher": []
+    },
+    {
+      "lauf": "erstbesuch|m375|/kontakt",
+      "status": {
+        "vorher": 200,
+        "live": 200,
+        "nachher": 200
+      },
+      "kartenflaechen": [
+        {
+          "abschnitt": "standort-anfahrt",
+          "karteHoeheVar": "440px",
+          "rahmenBxH": "341x740.53125",
+          "top": 3170.375
+        }
+      ],
+      "geometrieNachherGleichVorher": true,
+      "geometrieNachherGleichLive": true,
+      "dokumentHoehe": {
+        "vorher": 12211,
+        "live": 12211,
+        "nachher": 12211
+      },
+      "htmlSchriftGleich": true,
+      "bodySchriftGleich": true,
+      "fontSansNachher": "\"archivo\", \"Archivo Ersatz\", Arial, sans-serif",
+      "altVariablenNachher": {
+        "--color-brand-primary": "",
+        "--color-primary": "",
+        "--font-display": ""
+      },
+      "konsolenfehlerNachher": 0,
+      "seitenfehlerNachher": 0,
+      "lokaleAb400Nachher": 0,
+      "nextFehlerdialogNachher": false,
+      "blockiertNachher": []
+    },
+    {
+      "lauf": "erstbesuch|m375|/standorte",
+      "status": {
+        "vorher": 200,
+        "live": 200,
+        "nachher": 200
+      },
+      "kartenflaechen": [
+        {
+          "abschnitt": "karte-ueberschrift",
+          "karteHoeheVar": "460px",
+          "rahmenBxH": "343x355.0625",
+          "top": 2684.875
+        },
+        {
+          "abschnitt": "hauptsitz-heading",
+          "karteHoeheVar": "400px",
+          "rahmenBxH": "343x400",
+          "top": 9318.59375
+        }
+      ],
+      "geometrieNachherGleichVorher": true,
+      "geometrieNachherGleichLive": true,
+      "dokumentHoehe": {
+        "vorher": 16743,
+        "live": 16743,
+        "nachher": 16743
+      },
+      "htmlSchriftGleich": true,
+      "bodySchriftGleich": true,
+      "fontSansNachher": "\"archivo\", \"Archivo Ersatz\", Arial, sans-serif",
+      "altVariablenNachher": {
+        "--color-brand-primary": "",
+        "--color-primary": "",
+        "--font-display": ""
+      },
+      "konsolenfehlerNachher": 0,
+      "seitenfehlerNachher": 0,
+      "lokaleAb400Nachher": 0,
+      "nextFehlerdialogNachher": false,
+      "blockiertNachher": []
+    },
+    {
+      "lauf": "abgelehnt|d1440|/",
+      "status": {
+        "vorher": 200,
+        "live": 200,
+        "nachher": 200
+      },
+      "kartenflaechen": [
+        {
+          "abschnitt": "servicegebiet",
+          "karteHoeheVar": "460px",
+          "rahmenBxH": "696x471.078125",
+          "top": 11707.984375
+        }
+      ],
+      "geometrieNachherGleichVorher": true,
+      "geometrieNachherGleichLive": true,
+      "dokumentHoehe": {
+        "vorher": 16097,
+        "live": 16097,
+        "nachher": 16097
+      },
+      "htmlSchriftGleich": true,
+      "bodySchriftGleich": true,
+      "fontSansNachher": "\"archivo\", \"Archivo Ersatz\", Arial, sans-serif",
+      "altVariablenNachher": {
+        "--color-brand-primary": "",
+        "--color-primary": "",
+        "--font-display": ""
+      },
+      "konsolenfehlerNachher": 0,
+      "seitenfehlerNachher": 0,
+      "lokaleAb400Nachher": 0,
+      "nextFehlerdialogNachher": false,
+      "blockiertNachher": []
+    },
+    {
+      "lauf": "abgelehnt|d1440|/kontakt",
+      "status": {
+        "vorher": 200,
+        "live": 200,
+        "nachher": 200
+      },
+      "kartenflaechen": [
+        {
+          "abschnitt": "standort-anfahrt",
+          "karteHoeheVar": "440px",
+          "rahmenBxH": "728.40625x769.5625",
+          "top": 1762.53125
+        }
+      ],
+      "geometrieNachherGleichVorher": true,
+      "geometrieNachherGleichLive": true,
+      "dokumentHoehe": {
+        "vorher": 6815,
+        "live": 6815,
+        "nachher": 6815
+      },
+      "htmlSchriftGleich": true,
+      "bodySchriftGleich": true,
+      "fontSansNachher": "\"archivo\", \"Archivo Ersatz\", Arial, sans-serif",
+      "altVariablenNachher": {
+        "--color-brand-primary": "",
+        "--color-primary": "",
+        "--font-display": ""
+      },
+      "konsolenfehlerNachher": 0,
+      "seitenfehlerNachher": 0,
+      "lokaleAb400Nachher": 0,
+      "nextFehlerdialogNachher": false,
+      "blockiertNachher": []
+    },
+    {
+      "lauf": "abgelehnt|d1440|/standorte",
+      "status": {
+        "vorher": 200,
+        "live": 200,
+        "nachher": 200
+      },
+      "kartenflaechen": [
+        {
+          "abschnitt": "karte-ueberschrift",
+          "karteHoeheVar": "460px",
+          "rahmenBxH": "1216x471.078125",
+          "top": 1687.265625
+        },
+        {
+          "abschnitt": "hauptsitz-heading",
+          "karteHoeheVar": "400px",
+          "rahmenBxH": "689.328125x400",
+          "top": 5751.875
+        }
+      ],
+      "geometrieNachherGleichVorher": true,
+      "geometrieNachherGleichLive": true,
+      "dokumentHoehe": {
+        "vorher": 9163,
+        "live": 9163,
+        "nachher": 9163
+      },
+      "htmlSchriftGleich": true,
+      "bodySchriftGleich": true,
+      "fontSansNachher": "\"archivo\", \"Archivo Ersatz\", Arial, sans-serif",
+      "altVariablenNachher": {
+        "--color-brand-primary": "",
+        "--color-primary": "",
+        "--font-display": ""
+      },
+      "konsolenfehlerNachher": 0,
+      "seitenfehlerNachher": 0,
+      "lokaleAb400Nachher": 0,
+      "nextFehlerdialogNachher": false,
+      "blockiertNachher": []
+    },
+    {
+      "lauf": "abgelehnt|m375|/",
+      "status": {
+        "vorher": 200,
+        "live": 200,
+        "nachher": 200
+      },
+      "kartenflaechen": [
+        {
+          "abschnitt": "servicegebiet",
+          "karteHoeheVar": "460px",
+          "rahmenBxH": "343x355.0625",
+          "top": 19184.328125
+        }
+      ],
+      "geometrieNachherGleichVorher": true,
+      "geometrieNachherGleichLive": true,
+      "dokumentHoehe": {
+        "vorher": 27155,
+        "live": 27155,
+        "nachher": 27155
+      },
+      "htmlSchriftGleich": true,
+      "bodySchriftGleich": true,
+      "fontSansNachher": "\"archivo\", \"Archivo Ersatz\", Arial, sans-serif",
+      "altVariablenNachher": {
+        "--color-brand-primary": "",
+        "--color-primary": "",
+        "--font-display": ""
+      },
+      "konsolenfehlerNachher": 0,
+      "seitenfehlerNachher": 0,
+      "lokaleAb400Nachher": 0,
+      "nextFehlerdialogNachher": false,
+      "blockiertNachher": []
+    },
+    {
+      "lauf": "abgelehnt|m375|/kontakt",
+      "status": {
+        "vorher": 200,
+        "live": 200,
+        "nachher": 200
+      },
+      "kartenflaechen": [
+        {
+          "abschnitt": "standort-anfahrt",
+          "karteHoeheVar": "440px",
+          "rahmenBxH": "341x740.53125",
+          "top": 3170.375
+        }
+      ],
+      "geometrieNachherGleichVorher": true,
+      "geometrieNachherGleichLive": true,
+      "dokumentHoehe": {
+        "vorher": 11815,
+        "live": 11815,
+        "nachher": 11815
+      },
+      "htmlSchriftGleich": true,
+      "bodySchriftGleich": true,
+      "fontSansNachher": "\"archivo\", \"Archivo Ersatz\", Arial, sans-serif",
+      "altVariablenNachher": {
+        "--color-brand-primary": "",
+        "--color-primary": "",
+        "--font-display": ""
+      },
+      "konsolenfehlerNachher": 0,
+      "seitenfehlerNachher": 0,
+      "lokaleAb400Nachher": 0,
+      "nextFehlerdialogNachher": false,
+      "blockiertNachher": []
+    },
+    {
+      "lauf": "abgelehnt|m375|/standorte",
+      "status": {
+        "vorher": 200,
+        "live": 200,
+        "nachher": 200
+      },
+      "kartenflaechen": [
+        {
+          "abschnitt": "karte-ueberschrift",
+          "karteHoeheVar": "460px",
+          "rahmenBxH": "343x355.0625",
+          "top": 2684.875
+        },
+        {
+          "abschnitt": "hauptsitz-heading",
+          "karteHoeheVar": "400px",
+          "rahmenBxH": "343x400",
+          "top": 9318.59375
+        }
+      ],
+      "geometrieNachherGleichVorher": true,
+      "geometrieNachherGleichLive": true,
+      "dokumentHoehe": {
+        "vorher": 16347,
+        "live": 16347,
+        "nachher": 16347
+      },
+      "htmlSchriftGleich": true,
+      "bodySchriftGleich": true,
+      "fontSansNachher": "\"archivo\", \"Archivo Ersatz\", Arial, sans-serif",
+      "altVariablenNachher": {
+        "--color-brand-primary": "",
+        "--color-primary": "",
+        "--font-display": ""
+      },
+      "konsolenfehlerNachher": 0,
+      "seitenfehlerNachher": 0,
+      "lokaleAb400Nachher": 0,
+      "nextFehlerdialogNachher": false,
+      "blockiertNachher": []
+    }
+  ],
+  "bilder": [
+    {
+      "datei": "d1440-kontakt-0.png",
+      "groesse": "729x771",
+      "abweichendePixel": 0
+    },
+    {
+      "datei": "d1440-standorte-0.png",
+      "groesse": "1216x472",
+      "abweichendePixel": 0
+    },
+    {
+      "datei": "d1440-standorte-1.png",
+      "groesse": "690x401",
+      "abweichendePixel": 0
+    },
+    {
+      "datei": "d1440-start-0.png",
+      "groesse": "696x473",
+      "abweichendePixel": 0
+    },
+    {
+      "datei": "m375-kontakt-0.png",
+      "groesse": "341x741",
+      "abweichendePixel": 0
+    },
+    {
+      "datei": "m375-standorte-0.png",
+      "groesse": "343x356",
+      "abweichendePixel": 0
+    },
+    {
+      "datei": "m375-standorte-1.png",
+      "groesse": "343x401",
+      "abweichendePixel": 0
+    },
+    {
+      "datei": "m375-start-0.png",
+      "groesse": "343x356",
+      "abweichendePixel": 0
+    }
+  ],
+  "skripte": "scratchpad/e6o1-s7/karten.mjs und vergleich.mjs (unverändert aus Schritt 7)"
+}

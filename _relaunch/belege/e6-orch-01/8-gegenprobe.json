@@ -1,0 +1,93 @@
+{
+  "zeitpunkt": "2026-10-13T01:54:49.734Z",
+  "ort": "Scratch-Kopie scratchpad/e6o1-s8/geg/{stand7,stand8} (nicht im Arbeitsbaum): src/app/globals.css (Stand 7 bzw. Schritt 8), src/app/bewegung.css, node_modules als Verweis, Probe-Datei src/probe.jsx",
+  "probe": "<div className=\"bg-orange-600 text-black border-emerald-500 hover:bg-slate-900 bg-kalk text-tinte print:bg-white\">",
+  "werkzeug": "@tailwindcss/node compile + @tailwindcss/oxide Scanner, Wurzel = Kopie (gegenprobe.mjs)",
+  "staende": {
+    "stand7": {
+      "gescannt": [
+        "src/app/bewegung.css",
+        "src/app/globals.css",
+        "src/probe.jsx"
+      ],
+      "kandidatenAusProbe": [
+        "bg-orange-600",
+        "text-black",
+        "border-emerald-500",
+        "hover:bg-slate-900",
+        "bg-kalk",
+        "text-tinte",
+        "print:bg-white"
+      ],
+      "cssBytes": 28730,
+      "regelErzeugt": {
+        "bg-orange-600": true,
+        "text-black": true,
+        "border-emerald-500": true,
+        "hover:bg-slate-900": true,
+        "bg-kalk": true,
+        "text-tinte": true,
+        "print:bg-white": true
+      },
+      "nichtKernFarbvariablen": [
+        "--color-black: #000",
+        "--color-emerald-500: oklch(69.6% 0.17 162.48)",
+        "--color-orange-600: oklch(64.6% 0.222 41.116)",
+        "--color-slate-900: oklch(20.8% 0.042 265.755)",
+        "--color-white: #fff"
+      ]
+    },
+    "stand8": {
+      "gescannt": [
+        "src/app/bewegung.css",
+        "src/app/globals.css",
+        "src/probe.jsx"
+      ],
+      "kandidatenAusProbe": [
+        "bg-orange-600",
+        "text-black",
+        "border-emerald-500",
+        "hover:bg-slate-900",
+        "bg-kalk",
+        "text-tinte",
+        "print:bg-white"
+      ],
+      "cssBytes": 28222,
+      "regelErzeugt": {
+        "bg-orange-600": false,
+        "text-black": false,
+        "border-emerald-500": false,
+        "hover:bg-slate-900": false,
+        "bg-kalk": true,
+        "text-tinte": true,
+        "print:bg-white": true
+      },
+      "nichtKernFarbvariablen": [
+        "--color-white: #fff"
+      ]
+    }
+  },
+  "ergebnis": "Stand 7: alle 7 Klassen erzeugen CSS (Standardpalette offen: --color-orange-600, --color-black, --color-emerald-500, --color-slate-900). Schritt 8: bg-orange-600, text-black, border-emerald-500 und hover:bg-slate-900 erzeugen kein CSS mehr; bg-kalk, text-tinte und print:bg-white bleiben; einzige Farbvariable ausserhalb von KERN ist --color-white: #fff.",
+  "werteMjsAufProbe": {
+    "befehl": "node _werkstatt/werkzeuge/werte.mjs --dateien scratchpad/e6o1-s8/geg/stand8/src/probe.jsx",
+    "zusammenfassung": {
+      "ohne_css": 4,
+      "beliebig": 0,
+      "farbe_ausserhalb": 0,
+      "abstand_ausserhalb": 0,
+      "groesse_ausserhalb": 0,
+      "schrift_ausserhalb": 0,
+      "radius_ausserhalb": 0,
+      "dauer_ausserhalb": 0,
+      "farbe_literal": 0,
+      "style_wert": 0,
+      "dauer_zahl": 0
+    },
+    "befunde": [
+      "ohne_css bg-orange-600",
+      "ohne_css text-black",
+      "ohne_css border-emerald-500",
+      "ohne_css hover:bg-slate-900"
+    ]
+  }
+}

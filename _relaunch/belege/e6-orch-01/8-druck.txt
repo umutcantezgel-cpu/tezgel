@@ -1,0 +1,33 @@
+E6-ORCH-01 · Schritt 8 · Tailwind-Standardpalette sperren · Druckansicht /widerruf vorher/nachher, 2026-10-13T01:56Z
+===================================================================================================================
+Werkzeug: scratchpad/e6o1-s8/druck.mjs (Playwright Chromium, PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers). Anfragen nach aussen
+abgebrochen, DPR 1, reduzierte Bewegung, Einwilligung abgelehnt (kein Banner), Hydrierung abgewartet. Danach
+page.emulateMedia({ media: 'print' }) (zur Kontrolle auch 'screen'), dann ein ganzseitiges Bild. 4350 lief mit dem HMR-Filter
+wie in Schritt 6/7. Die Bilder liegen nur im Scratchpad: scratchpad/e6o1-s8/bilder-druck-{vorher,nachher,live}/widerruf-<ansicht>-<medium>.png.
+Messwerte und Vergleich: 8-druck.json.
+
+Stände
+  vorher   http://127.0.0.1:4350, Arbeitsbaum nach Schritt 7 (globals.css sha256 d7b273df…)                    2026-10-13T01:51:31Z
+  nachher  http://127.0.0.1:4350, Arbeitsbaum nach Schritt 8 (globals.css sha256 d6d54a19…)                    2026-10-13T01:55:43Z
+  live     http://127.0.0.1:4366 (Bezug)                                                                        2026-10-13T01:52:36Z
+
+Lauf          Status  Schreiblinien (print:bg-white)  Hintergrund            Linie unten            print:hidden sichtbar  Dokumenthöhe  Bild sha256 (vorher = nachher = live)
+d1440 print   200     7                               rgb(255, 255, 255)     rgb(129, 134, 152)     0 von 2                3294          5f6873312878…  gleich
+d1440 screen  200     7                               rgb(245, 244, 240)     rgb(129, 134, 152)     2 von 2                3421          18b3177cd489…  gleich
+m375  print   200     7                               rgb(255, 255, 255)     rgb(129, 134, 152)     0 von 2                6027          be01db21d104…  gleich
+m375  screen  200     7                               rgb(245, 244, 240)     rgb(129, 134, 152)     2 von 2                6213          1ac2d557b62e…  gleich
+(Die Werte gelten für alle drei Stände, sie sind gleich. 0 Konsolenfehler, 0 pageerror, kein Next-Fehlerdialog.)
+
+Ergebnis
+  - Bildvergleich vorher gegen nachher (pixelmatch threshold 0): 4/4 Bilder mit 0 abweichenden Pixeln. Die PNG-Dateien sind
+    sogar byte-gleich, sha256 gleich. Nachher gegen live 4366: ebenfalls 4/4 mit 0 Pixeln.
+  - Lage und Grösse der 7 Schreiblinien sind in allen Läufen gleich (getBoundingClientRect + scrollY).
+  - --color-white am <html>: vorher "#fff" (Tailwind-Standard-Theme), nachher "#fff" (jetzt aus dem @theme-static-Block).
+    Im Druck sind die Schreiblinien weiss (rgb 255, 255, 255), am Bildschirm Kalk (rgb 245, 244, 240).
+  - Die Variablen der Standardpalette --color-orange-600 und --color-black sind am <html> vorher und nachher leer: Keine Klasse
+    benutzt sie.
+
+Empfindlichkeit (druck-empfindlich.mjs, nur im Browser, der Arbeitsbaum bleibt unberührt)
+  Ich habe auf 4350 (nachher) in der Druckansicht d1440 die Klasse print:bg-white von den 7 Schreiblinien genommen. Das ist der
+  Zustand, der ohne --color-white entstünde. Die Linien sind dann rgb(245, 244, 240), und das Bild weicht in 183394 Pixeln vom
+  Nachher-Bild ab. Die Probe erkennt den Wegfall also. Mit der Sperre bleibt er aus, weil --color-white: #fff gesetzt ist.

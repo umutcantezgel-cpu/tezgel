@@ -11,6 +11,11 @@
    Einzige Quelle der Gestaltungswerte (K-005). Werte nie im Code wiederholen.
    ========================================================================== */
 @theme static {
+  /* Tailwind-Standardpalette gesperrt: Farbklassen nur aus den KERN-Farben. white ist der Tailwind-Standardwert und
+     bleibt für print:bg-white (Widerrufsformular) */
+  --color-*: initial;
+  --color-white: #fff;
+
   /* Farbe – Neutrale auf 228°, ein Akzent (Laser = Logo-Rot) */
   --color-kalk: #F5F4F0;
   --color-fliese: #FFFFFF;

@@ -1,0 +1,254 @@
+{
+  "zeitpunkt": "2026-10-13T01:54:01.486Z",
+  "werkzeug": "@tailwindcss/node compile + @tailwindcss/oxide Scanner (Quellen wie @tailwindcss/postcss, Wurzel /home/user/tezgel, base src/app), Selektoren und Custom Properties mit postcss gezählt (Selektor = Layer/At-Rule-Kontext + Einzelselektor; ohne @keyframes) – wie 6-/7-tailwind.json",
+  "aenderung": "src/app/globals.css, @theme static: vor den KERN-Farben „--color-*: initial;“ und „--color-white: #fff;“ (mit zweizeiligem Kommentar); sonst keine Zeile geändert",
+  "vorher": {
+    "stand": "Schritt 7 (scratchpad/e6-orch-01/stand-7/globals.css, identisch mit dem Arbeitsbaum vor Schritt 8)",
+    "quelle": "scratchpad/e6-orch-01/stand-7/globals.css",
+    "quelleSha256": "d7b273dfd4696f1b57490139abd1ffcb30ec4bea3f6690ffde0458c3de309f99",
+    "abhaengigkeiten": [
+      "node_modules/tailwindcss/index.css",
+      "src/app/bewegung.css"
+    ],
+    "dateienGescannt": 425,
+    "kandidaten": 7732,
+    "cssBytes": 118184,
+    "selektoren": 1327,
+    "variablen": 96,
+    "variablenDeklarationen": 126,
+    "atProperty": 40
+  },
+  "nachher": {
+    "stand": "Arbeitsbaum nach Schritt 8",
+    "quelle": "/home/user/tezgel/src/app/globals.css",
+    "quelleSha256": "d6d54a190fcc06b22dae2d4f5f28374518173606133139bb754e903629c73894",
+    "abhaengigkeiten": [
+      "node_modules/tailwindcss/index.css",
+      "src/app/bewegung.css"
+    ],
+    "dateienGescannt": 425,
+    "kandidaten": 7732,
+    "cssBytes": 118184,
+    "selektoren": 1327,
+    "variablen": 96,
+    "variablenDeklarationen": 126,
+    "atProperty": 40
+  },
+  "erwartungPlan": "0 Selektoren und 0 Variablen weniger, keine undefinierte var(--color-*), Ausgabe gleich lang; ohne --color-white entfiele nur .print:bg-white",
+  "ergebnis": {
+    "neueSelektoren": 0,
+    "wegfallSelektoren": 0,
+    "neueVariablen": 0,
+    "wegfallVariablen": 0,
+    "neueAtProperty": 0,
+    "wegfallAtProperty": 0,
+    "neueKandidaten": [],
+    "wegfallKandidaten": [],
+    "cssBytesGleich": true,
+    "regeln": {
+      "vorher": 1290,
+      "nachher": 1290,
+      "nurVorher": 0,
+      "nurNachher": 0
+    },
+    "regelnMitGeaenderterDeklaration": [
+      {
+        "regel": "@layer theme » :root, :host",
+        "deklarationenVorher": 55,
+        "deklarationenNachher": 55,
+        "gleicheMenge": true,
+        "positionColorWhite": {
+          "vorher": 2,
+          "nachher": 12
+        },
+        "positionColorKalk": {
+          "vorher": 13,
+          "nachher": 13
+        }
+      }
+    ],
+    "textunterschied": "diff vorher.css nachher.css: einzig die Zeile „--color-white: #fff;“ in @layer theme :root, :host steht nachher direkt vor --color-kalk (Theme-Reihenfolge: static-Block statt Standard-Theme); Wert und Menge gleich",
+    "printBgWhite": {
+      "vorher": [
+        "@layer utilities » .print\\:bg-white"
+      ],
+      "nachher": [
+        "@layer utilities » .print\\:bg-white"
+      ]
+    },
+    "colorWhite": {
+      "vorher": [
+        "@layer theme » :root, :host"
+      ],
+      "nachher": [
+        "@layer theme » :root, :host"
+      ]
+    },
+    "farbvariablenNachher": [
+      "--color-abnahme",
+      "--color-fliese",
+      "--color-fuge",
+      "--color-kalk",
+      "--color-laser",
+      "--color-laser-tief",
+      "--color-nacht-2",
+      "--color-nacht-fuge",
+      "--color-strich",
+      "--color-tinte",
+      "--color-tinte-2",
+      "--color-white"
+    ],
+    "kartenHoehe": [
+      "@layer components » .karten-hoehe"
+    ],
+    "fontSans": [
+      "@layer theme » :root, :host"
+    ],
+    "defaultFontFamily": [
+      "@layer theme » :root, :host"
+    ],
+    "reducedMotionRegel": [
+      "@layer base » @media (prefers-reduced-motion: reduce) » *::after"
+    ]
+  },
+  "undefinierteFarbvariablen": {
+    "methode": "farbvars.cjs: alle var(--color-*) im erzeugten CSS gegen die deklarierten --color-*; rg -o „--color-[A-Za-z0-9_-]+“ und „--color-${“ über src, public, scripts (Rohtext, ausser den Definitionen in globals.css) gegen dieselbe Menge",
+    "definiert": [
+      "--color-abnahme",
+      "--color-fliese",
+      "--color-fuge",
+      "--color-kalk",
+      "--color-laser",
+      "--color-laser-tief",
+      "--color-nacht-2",
+      "--color-nacht-fuge",
+      "--color-strich",
+      "--color-tinte",
+      "--color-tinte-2",
+      "--color-white"
+    ],
+    "cssBezuege": [
+      "--color-abnahme",
+      "--color-fliese",
+      "--color-fuge",
+      "--color-kalk",
+      "--color-laser",
+      "--color-laser-tief",
+      "--color-nacht-2",
+      "--color-nacht-fuge",
+      "--color-strich",
+      "--color-tinte",
+      "--color-tinte-2",
+      "--color-white"
+    ],
+    "cssUndefiniert": [],
+    "markupTreffer": 50,
+    "markupDateien": [
+      "src/app/(bestand)/_dokument.tsx",
+      "src/app/bewegung.css",
+      "src/components/maps/ContactPremiumMap.tsx",
+      "src/components/maps/InteractiveMap.tsx",
+      "src/components/maps/InteractiveServiceMap.tsx"
+    ],
+    "markupNamen": [
+      "--color-abnahme",
+      "--color-fliese",
+      "--color-fuge",
+      "--color-kalk",
+      "--color-laser",
+      "--color-laser-tief",
+      "--color-strich",
+      "--color-tinte",
+      "--color-tinte-2"
+    ],
+    "markupUndefiniert": [],
+    "markupDynamisch": []
+  },
+  "ausgeliefertVon4350": {
+    "methode": "CSS-Bündel von /widerruf (src_app_1s6nba_._.css) vor und nach der Änderung von next dev 4350 geladen, mit postcss verglichen (served-vgl.cjs)",
+    "vorher": {
+      "bytes": 120638,
+      "selektoren": 1156,
+      "variablen": 103
+    },
+    "nachher": {
+      "bytes": 119340,
+      "selektoren": 1148,
+      "variablen": 100
+    },
+    "selektorenNeu": [],
+    "variablenNeu": [],
+    "selektorenWeg": [
+      {
+        "selektor": ".duration-300",
+        "inWegfallSchritt7": true,
+        "inSimulationNachSchritt8": false
+      },
+      {
+        "selektor": ".font-sans",
+        "inWegfallSchritt7": true,
+        "inSimulationNachSchritt8": false
+      },
+      {
+        "selektor": ".hover\\:-translate-y-0\\.5:hover",
+        "inWegfallSchritt7": true,
+        "inSimulationNachSchritt8": false
+      },
+      {
+        "selektor": ".hover\\:border-emerald-500\\/80:hover",
+        "inWegfallSchritt7": true,
+        "inSimulationNachSchritt8": false
+      },
+      {
+        "selektor": ".rounded-2xl",
+        "inWegfallSchritt7": true,
+        "inSimulationNachSchritt8": false
+      },
+      {
+        "selektor": ".rounded-\\[2rem\\]",
+        "inWegfallSchritt7": true,
+        "inSimulationNachSchritt8": false
+      },
+      {
+        "selektor": ".rounded-full",
+        "inWegfallSchritt7": true,
+        "inSimulationNachSchritt8": false
+      },
+      {
+        "selektor": ".transition-all",
+        "inWegfallSchritt7": true,
+        "inSimulationNachSchritt8": false
+      }
+    ],
+    "variablenWeg": [
+      {
+        "variable": "--color-emerald-500",
+        "inWegfallSchritt7": true,
+        "inSimulationNachSchritt8": false
+      },
+      {
+        "variable": "--radius-2xl",
+        "inWegfallSchritt7": true,
+        "inSimulationNachSchritt8": false
+      },
+      {
+        "variable": "--tw-duration",
+        "inWegfallSchritt7": true,
+        "inSimulationNachSchritt8": false
+      }
+    ],
+    "printBgWhite": {
+      "vorher": true,
+      "nachher": true
+    },
+    "colorWhite": {
+      "vorher": [
+        "#fff"
+      ],
+      "nachher": [
+        "#fff"
+      ]
+    },
+    "deutung": "next dev hielt bis zu dieser Änderung 8 Doku-Klassen und 3 Variablen, die Schritt 7 mit dem alten docs/DESIGN_SYSTEM.md entfernt hat (alle in der Wegfall-Liste von 7-tailwind.json, keine in der Simulation von Stand 7 oder Schritt 8). Kandidaten bleiben im laufenden next dev bis zum nächsten vollen Neuaufbau stehen; die Änderung an globals.css hat ihn ausgelöst. Kein Element nutzt eine dieser Klassen (7-dom.json: 0 Elemente). Ausgeliefert wird nachweislich die neue Fassung: --color-white steht nachher vor --color-kalk, --color-emerald-500 fehlt."
+  }
+}
