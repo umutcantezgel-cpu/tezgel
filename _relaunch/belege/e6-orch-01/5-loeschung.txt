@@ -1,0 +1,350 @@
+E6-ORCH-01 · Schritt 5 · Ruhenden Kern-Baum abbauen
+==================================================
+Basis:      HEAD f7822f5 (Schritte 1-3 committet), Arbeitsbaum; nur rm/rmdir, kein git-Befehl mit Schreibwirkung.
+Dateiliste: git ls-files fuer die Plan-Pfade (src/app/(kern), src/components/kern/{basis,formulare,icons,kopf-b,motive,
+            schale,seiten,start,vorlagen}, einwilligung/{Banner,BannerInsel,KartenPlatzhalter}.tsx,
+            fuss/{Fuss,UntereLeiste,WhatsAppKanal}.tsx, src/lib/kern/{icons,metadaten}.ts, src/styles/kern{,-global}.css,
+            src/app/fonts/kern.ts mit 2 woff2, src/lib/motion/BewegungsRegie.tsx). Dateisystem = git (keine
+            unversionierten Dateien in diesen Ordnern).
+Freigabe:   Importgraph unmittelbar vor dem rm (5-graph.json, "unmittelbarVorher"): 0 der 254 Dateien lebend
+            erreichbar, 0 Kanten von ausserhalb in die Loeschmenge, 0 unaufgeloeste Importe.
+Zahlen:     254 Dateien = (kern) 38 + kern-Unterordner 202 + einwilligung 3 + fuss 3
+            + lib/kern 2 + styles 2 + fonts/kern.ts 1 + woff2 2 + BewegungsRegie 1.
+            (Plan "253 im Baum": 38 + 202 + 4 + 4 + 3 + 2 = 253; davon bleiben 3, faellt 250; dazu 4 Folgewaisen
+            ausserhalb des Baums: kern.ts, 2 woff2, BewegungsRegie.tsx.)
+
+BLEIBT (lebend, laut Graph ueber lebende Wurzeln erreichbar):
+  src/components/kern/einwilligung/BannerPlatz.tsx   global-not-found.tsx -> (bestand)/_dokument.tsx -> common/Footer.jsx
+  src/components/kern/fuss/SprungHalter.tsx          global-not-found.tsx -> (bestand)/_dokument.tsx -> common/Footer.jsx
+  src/lib/kern/start/daten.ts                         (bestand)/page.tsx -> start/Fachgewerke.tsx (und Fachbereiche.tsx)
+  src/app/fonts/archivo-variabel.woff2                next/font/local in src/app/(bestand)/_dokument.tsx:21
+  src/app/fonts/plex-mono-400.woff2                   next/font/local in src/app/(bestand)/_dokument.tsx:30
+  src/app/fonts/OFL-Archivo.txt, OFL-IBM-Plex-Mono.txt  unveraendert
+  src/components/kern/*.tsx (flach, 24) und stile.ts  unveraendert
+  src/lib/motion/{bewegung,kopfskript,register}.ts    unveraendert (kopfskript.ts: M-27)
+Schriften:  archivo-latin-variabel.woff2 und ibm-plex-mono-latin-400.woff2 hatten als einzigen next/font/local-Aufrufer
+            src/app/fonts/kern.ts (selbst nicht lebend); kein lebender localFont-Aufruf nennt sie.
+
+GEAENDERT:
+  src/app/fonts/LIZENZEN.md      Zeile 3 (Satz zum ruhenden Kern) samt Leerzeile, Tabellenzeilen 9-10 und Schlussabsatz
+                                 (Zeile 14) samt Leerzeile entfernt; Kopf, Tabellenkopf, Zeilen 7-8 und Absatz 12 wortgleich.
+  src/app/global-not-found.tsx:5 Kommentar "da es mehrere Root-Layouts gibt" -> "da es kein app/layout.tsx gibt (das
+                                 Root-Layout liegt in der Gruppe (bestand))" (Wortlaut wie next.config.ts:28).
+
+ENTFERNTE ORDNER (rmdir, danach leer): 58
+  src/app/(kern)/
+  src/app/(kern)/_entwurf/
+  src/app/(kern)/_entwurf/bad/
+  src/app/(kern)/_entwurf/blog/
+  src/app/(kern)/_entwurf/kontakt/
+  src/app/(kern)/_entwurf/leistungen/
+  src/app/(kern)/_entwurf/p3-03/
+  src/app/(kern)/_entwurf/p3-04/
+  src/app/(kern)/_entwurf/p3-05/
+  src/app/(kern)/_entwurf/p3-06-b/
+  src/app/(kern)/_entwurf/p3-07/
+  src/app/(kern)/_entwurf/p3-08/
+  src/app/(kern)/_entwurf/p3-09-b/
+  src/app/(kern)/_entwurf/p3-10/
+  src/app/(kern)/_entwurf/p3-11/
+  src/app/(kern)/_entwurf/p3-12/
+  src/app/(kern)/_entwurf/p3-13-a/
+  src/app/(kern)/_entwurf/p3-13-b/
+  src/app/(kern)/_entwurf/p4-01/
+  src/app/(kern)/_entwurf/p4-02/
+  src/app/(kern)/_entwurf/p4-03/
+  src/app/(kern)/_entwurf/p4-04/
+  src/app/(kern)/_entwurf/p4-05a/
+  src/app/(kern)/_entwurf/p4-05b/
+  src/app/(kern)/_entwurf/p4-05c/
+  src/app/(kern)/_entwurf/standorte/
+  src/app/(kern)/_entwurf/start/
+  src/app/(kern)/_entwurf/ueber-uns/
+  src/components/kern/basis/
+  src/components/kern/formulare/
+  src/components/kern/formulare/a/
+  src/components/kern/formulare/b/
+  src/components/kern/formulare/c/
+  src/components/kern/formulare/d/
+  src/components/kern/formulare/e/
+  src/components/kern/icons/
+  src/components/kern/kopf-b/
+  src/components/kern/motive/
+  src/components/kern/motive/plaene/
+  src/components/kern/motive/vignetten/
+  src/components/kern/schale/
+  src/components/kern/seiten/
+  src/components/kern/seiten/bad/
+  src/components/kern/seiten/blog/
+  src/components/kern/seiten/kontakt/
+  src/components/kern/seiten/leistungen/
+  src/components/kern/seiten/standorte/
+  src/components/kern/seiten/ueber-uns/
+  src/components/kern/start/
+  src/components/kern/start/einstieg-b/
+  src/components/kern/start/vertrauen/
+  src/components/kern/vorlagen/
+  src/components/kern/vorlagen/artikel/
+  src/components/kern/vorlagen/detail/
+  src/components/kern/vorlagen/fachseite/
+  src/components/kern/vorlagen/liste/
+  src/components/kern/vorlagen/teile/
+  src/components/kern/vorlagen/uebersicht/
+
+STEHENDE ORDNER: src/components/kern/einwilligung/, src/components/kern/fuss/, src/lib/kern/, src/lib/kern/start/
+
+GELOESCHT (254):
+  src/app/(kern)/_entwurf/bad/page.tsx
+  src/app/(kern)/_entwurf/blog/page.tsx
+  src/app/(kern)/_entwurf/kontakt/page.tsx
+  src/app/(kern)/_entwurf/leistungen/page.tsx
+  src/app/(kern)/_entwurf/p3-03/Probe.tsx
+  src/app/(kern)/_entwurf/p3-03/page.tsx
+  src/app/(kern)/_entwurf/p3-04/page.tsx
+  src/app/(kern)/_entwurf/p3-05/page.tsx
+  src/app/(kern)/_entwurf/p3-06-b/page.tsx
+  src/app/(kern)/_entwurf/p3-07/page.tsx
+  src/app/(kern)/_entwurf/p3-08/Vorschau.tsx
+  src/app/(kern)/_entwurf/p3-08/page.tsx
+  src/app/(kern)/_entwurf/p3-09-b/page.tsx
+  src/app/(kern)/_entwurf/p3-10/page.tsx
+  src/app/(kern)/_entwurf/p3-11/page.tsx
+  src/app/(kern)/_entwurf/p3-12/page.tsx
+  src/app/(kern)/_entwurf/p3-13-a/page.tsx
+  src/app/(kern)/_entwurf/p3-13-b/page.tsx
+  src/app/(kern)/_entwurf/p4-01/Badsanierung.tsx
+  src/app/(kern)/_entwurf/p4-01/Din18534.tsx
+  src/app/(kern)/_entwurf/p4-01/Zustaende.tsx
+  src/app/(kern)/_entwurf/p4-01/page.tsx
+  src/app/(kern)/_entwurf/p4-02/Artikel.tsx
+  src/app/(kern)/_entwurf/p4-02/Detail.tsx
+  src/app/(kern)/_entwurf/p4-02/Liste.tsx
+  src/app/(kern)/_entwurf/p4-02/Uebersicht.tsx
+  src/app/(kern)/_entwurf/p4-02/daten.ts
+  src/app/(kern)/_entwurf/p4-02/page.tsx
+  src/app/(kern)/_entwurf/p4-03/page.tsx
+  src/app/(kern)/_entwurf/p4-04/page.tsx
+  src/app/(kern)/_entwurf/p4-05a/page.tsx
+  src/app/(kern)/_entwurf/p4-05b/page.tsx
+  src/app/(kern)/_entwurf/p4-05c/page.tsx
+  src/app/(kern)/_entwurf/standorte/page.tsx
+  src/app/(kern)/_entwurf/start/page.tsx
+  src/app/(kern)/_entwurf/ueber-uns/page.tsx
+  src/app/(kern)/layout.tsx
+  src/app/(kern)/not-found.tsx
+  src/components/kern/basis/Akkordeon.tsx
+  src/components/kern/basis/Ankreuzfeld.tsx
+  src/components/kern/basis/Auswahl.tsx
+  src/components/kern/basis/Auswahlknopf.tsx
+  src/components/kern/basis/Etikett.tsx
+  src/components/kern/basis/Feld.tsx
+  src/components/kern/basis/Feldgruppe.tsx
+  src/components/kern/basis/Feldrahmen.tsx
+  src/components/kern/basis/Feldraster.tsx
+  src/components/kern/basis/Fugenlinie.tsx
+  src/components/kern/basis/Hinweis.tsx
+  src/components/kern/basis/Knopf.tsx
+  src/components/kern/basis/Mehrzeilig.tsx
+  src/components/kern/basis/SendeKnopf.tsx
+  src/components/kern/basis/Textlink.tsx
+  src/components/kern/basis/Zeichen.tsx
+  src/components/kern/basis/index.ts
+  src/components/kern/basis/klassen.ts
+  src/components/kern/basis/useLadeanzeige.ts
+  src/components/kern/formulare/AnfrageFunnel.tsx
+  src/components/kern/formulare/Badanfrage.tsx
+  src/components/kern/formulare/HeroKontakt.tsx
+  src/components/kern/formulare/Konfigurator.tsx
+  src/components/kern/formulare/Preisrechner.tsx
+  src/components/kern/formulare/ProjektCheck.tsx
+  src/components/kern/formulare/Schnellanfrage.tsx
+  src/components/kern/formulare/TerminAnfrage.tsx
+  src/components/kern/formulare/TerminKalender.tsx
+  src/components/kern/formulare/a/Erfolgszeichen.tsx
+  src/components/kern/formulare/a/Vorschau.tsx
+  src/components/kern/formulare/a/useFokusWechsel.ts
+  src/components/kern/formulare/b/AnfrageFunnelAnsicht.tsx
+  src/components/kern/formulare/b/FeldMitEinheit.tsx
+  src/components/kern/formulare/b/PreisrechnerAnsicht.tsx
+  src/components/kern/formulare/b/TextKnopf.tsx
+  src/components/kern/formulare/b/Vorschau.tsx
+  src/components/kern/formulare/b/useFokusBeiWechsel.ts
+  src/components/kern/formulare/c/BadanfrageAnsicht.tsx
+  src/components/kern/formulare/c/ProjektCheckAnsicht.tsx
+  src/components/kern/formulare/c/Regler.tsx
+  src/components/kern/formulare/c/Vorschau.tsx
+  src/components/kern/formulare/c/raster.ts
+  src/components/kern/formulare/d/KonfiguratorAnsicht.tsx
+  src/components/kern/formulare/d/KonfiguratorErgebnis.tsx
+  src/components/kern/formulare/d/Vorschau.tsx
+  src/components/kern/formulare/e/TerminAnfrageAnsicht.tsx
+  src/components/kern/formulare/e/TerminKalenderAnsicht.tsx
+  src/components/kern/formulare/e/Vorschau.tsx
+  src/components/kern/icons/Icon.tsx
+  src/components/kern/icons/IconSprite.tsx
+  src/components/kern/icons/IconTeile.tsx
+  src/components/kern/icons/geometrie.ts
+  src/components/kern/kopf-b/Hauptnavigation.tsx
+  src/components/kern/kopf-b/Kopf.tsx
+  src/components/kern/kopf-b/Marke.tsx
+  src/components/kern/kopf-b/MegaBlatt.tsx
+  src/components/kern/kopf-b/MobilBlatt.tsx
+  src/components/kern/kopf-b/Mobilmenue.tsx
+  src/components/kern/kopf-b/daten.ts
+  src/components/kern/kopf-b/modell.ts
+  src/components/kern/motive/Verband.tsx
+  src/components/kern/motive/VerlegeplanBad.tsx
+  src/components/kern/motive/plaene/Abdichtung.tsx
+  src/components/kern/motive/plaene/Bad.tsx
+  src/components/kern/motive/plaene/Balkon.tsx
+  src/components/kern/motive/plaene/Dusche.tsx
+  src/components/kern/motive/plaene/Flur.tsx
+  src/components/kern/motive/plaene/Fussbodenheizung.tsx
+  src/components/kern/motive/plaene/Grossformat.tsx
+  src/components/kern/motive/plaene/Holzoptik.tsx
+  src/components/kern/motive/plaene/Kreuzfuge.tsx
+  src/components/kern/motive/plaene/Naturstein.tsx
+  src/components/kern/motive/plaene/Planblatt.tsx
+  src/components/kern/motive/plaene/Reparatur.tsx
+  src/components/kern/motive/plaene/Stelzlager.tsx
+  src/components/kern/motive/plaene/Treppe.tsx
+  src/components/kern/motive/plaene/Verlegemuster.tsx
+  src/components/kern/motive/plaene/Wandnische.tsx
+  src/components/kern/motive/plaene/Wohnen.tsx
+  src/components/kern/motive/plaene/geometrie.ts
+  src/components/kern/motive/plaene/index.ts
+  src/components/kern/motive/vignetten/Aussen.tsx
+  src/components/kern/motive/vignetten/Bad.tsx
+  src/components/kern/motive/vignetten/Untergrund.tsx
+  src/components/kern/motive/vignetten/Wohnen.tsx
+  src/components/kern/motive/vignetten/index.ts
+  src/components/kern/motive/vignetten/zeichnen.tsx
+  src/components/kern/schale/Sprunglink.tsx
+  src/components/kern/seiten/bad/Einstieg.tsx
+  src/components/kern/seiten/bad/Kategorien.tsx
+  src/components/kern/seiten/bad/Leistungen.tsx
+  src/components/kern/seiten/bad/Norm.tsx
+  src/components/kern/seiten/bad/Schrittfuge.tsx
+  src/components/kern/seiten/bad/Station.tsx
+  src/components/kern/seiten/bad/Werkzeuge.tsx
+  src/components/kern/seiten/bad/daten.ts
+  src/components/kern/seiten/blog/BlogListe.tsx
+  src/components/kern/seiten/blog/Filter.tsx
+  src/components/kern/seiten/blog/ListeAnsicht.tsx
+  src/components/kern/seiten/blog/bilder.ts
+  src/components/kern/seiten/kontakt/Anfrage.tsx
+  src/components/kern/seiten/kontakt/Ansprechpartner.tsx
+  src/components/kern/seiten/kontakt/Karte.tsx
+  src/components/kern/seiten/kontakt/Kontaktblatt.tsx
+  src/components/kern/seiten/kontakt/Kopf.tsx
+  src/components/kern/seiten/kontakt/Qualitaet.tsx
+  src/components/kern/seiten/kontakt/Standort.tsx
+  src/components/kern/seiten/leistungen/Ablauf.tsx
+  src/components/kern/seiten/leistungen/Anfrage.tsx
+  src/components/kern/seiten/leistungen/Einstieg.tsx
+  src/components/kern/seiten/leistungen/Gewerke.tsx
+  src/components/kern/seiten/standorte/Abschnitte.tsx
+  src/components/kern/seiten/standorte/Karten.tsx
+  src/components/kern/seiten/standorte/Kopfblatt.tsx
+  src/components/kern/seiten/standorte/Register.tsx
+  src/components/kern/seiten/standorte/Vorschau.tsx
+  src/components/kern/seiten/standorte/daten.ts
+  src/components/kern/seiten/ueber-uns/Betrieb.tsx
+  src/components/kern/seiten/ueber-uns/Einstieg.tsx
+  src/components/kern/seiten/ueber-uns/Geschichte.tsx
+  src/components/kern/seiten/ueber-uns/Werte.tsx
+  src/components/kern/start/Ablauf.tsx
+  src/components/kern/start/Abschluss.tsx
+  src/components/kern/start/Anfrage.tsx
+  src/components/kern/start/Fachbereiche.tsx
+  src/components/kern/start/Fachgewerke.tsx
+  src/components/kern/start/Fragen.tsx
+  src/components/kern/start/Grossformat.tsx
+  src/components/kern/start/Servicegebiet.tsx
+  src/components/kern/start/Stimmen.tsx
+  src/components/kern/start/Vertrauen.tsx
+  src/components/kern/start/einstieg-b/Einstieg.tsx
+  src/components/kern/start/einstieg-b/Laser.tsx
+  src/components/kern/start/einstieg-b/Plan.tsx
+  src/components/kern/start/einstieg-b/Vorschau.tsx
+  src/components/kern/start/vertrauen/KarteImBlick.tsx
+  src/components/kern/start/vertrauen/Karussell.tsx
+  src/components/kern/start/vertrauen/MonoZahlen.tsx
+  src/components/kern/start/vertrauen/Sterne.tsx
+  src/components/kern/start/vertrauen/stimmen-daten.ts
+  src/components/kern/vorlagen/artikel/Inhaltsverzeichnis.tsx
+  src/components/kern/vorlagen/artikel/Satz.tsx
+  src/components/kern/vorlagen/artikel/Teile.tsx
+  src/components/kern/vorlagen/artikel/Teilen.tsx
+  src/components/kern/vorlagen/artikel/Verwandte.tsx
+  src/components/kern/vorlagen/artikel/index.ts
+  src/components/kern/vorlagen/detail/Bestandteile.tsx
+  src/components/kern/vorlagen/detail/Randfeld.tsx
+  src/components/kern/vorlagen/detail/Raster.tsx
+  src/components/kern/vorlagen/detail/Steckbrief.tsx
+  src/components/kern/vorlagen/detail/Umfang.tsx
+  src/components/kern/vorlagen/detail/Vorschautafel.tsx
+  src/components/kern/vorlagen/detail/index.ts
+  src/components/kern/vorlagen/fachseite/Ablauf.tsx
+  src/components/kern/vorlagen/fachseite/Abschluss.tsx
+  src/components/kern/vorlagen/fachseite/Abschnitt.tsx
+  src/components/kern/vorlagen/fachseite/Anfrage.tsx
+  src/components/kern/vorlagen/fachseite/Einstieg.tsx
+  src/components/kern/vorlagen/fachseite/Faktenfeld.tsx
+  src/components/kern/vorlagen/fachseite/Felder.tsx
+  src/components/kern/vorlagen/fachseite/Fragen.tsx
+  src/components/kern/vorlagen/fachseite/Knopfreihe.tsx
+  src/components/kern/vorlagen/fachseite/Mass.tsx
+  src/components/kern/vorlagen/fachseite/Merkfeld.tsx
+  src/components/kern/vorlagen/fachseite/Notiz.tsx
+  src/components/kern/vorlagen/fachseite/Punkte.tsx
+  src/components/kern/vorlagen/fachseite/Qualitaetsversprechen.tsx
+  src/components/kern/vorlagen/fachseite/Querverweise.tsx
+  src/components/kern/vorlagen/fachseite/Schriftfeld.tsx
+  src/components/kern/vorlagen/fachseite/Stimme.tsx
+  src/components/kern/vorlagen/fachseite/Tabelle.tsx
+  src/components/kern/vorlagen/fachseite/Vorschau.tsx
+  src/components/kern/vorlagen/fachseite/index.ts
+  src/components/kern/vorlagen/fachseite/typen.ts
+  src/components/kern/vorlagen/liste/Beitragsliste.tsx
+  src/components/kern/vorlagen/liste/Bild.tsx
+  src/components/kern/vorlagen/liste/Filterleiste.tsx
+  src/components/kern/vorlagen/liste/Kopf.tsx
+  src/components/kern/vorlagen/liste/index.ts
+  src/components/kern/vorlagen/teile/Abschnitt.tsx
+  src/components/kern/vorlagen/teile/Einstieg.tsx
+  src/components/kern/vorlagen/teile/Felder.tsx
+  src/components/kern/vorlagen/teile/Fugenraster.tsx
+  src/components/kern/vorlagen/teile/Handlungsfeld.tsx
+  src/components/kern/vorlagen/teile/Knopfreihe.tsx
+  src/components/kern/vorlagen/teile/Mass.tsx
+  src/components/kern/vorlagen/teile/Pfeillink.tsx
+  src/components/kern/vorlagen/teile/PlanDerSeite.tsx
+  src/components/kern/vorlagen/teile/Punkte.tsx
+  src/components/kern/vorlagen/teile/Schriftfeld.tsx
+  src/components/kern/vorlagen/teile/Verweise.tsx
+  src/components/kern/vorlagen/teile/Vorschau.tsx
+  src/components/kern/vorlagen/teile/index.ts
+  src/components/kern/vorlagen/teile/satz.ts
+  src/components/kern/vorlagen/teile/typen.ts
+  src/components/kern/vorlagen/uebersicht/Abschnitt.tsx
+  src/components/kern/vorlagen/uebersicht/Einstieg.tsx
+  src/components/kern/vorlagen/uebersicht/Felder.tsx
+  src/components/kern/vorlagen/uebersicht/Projektband.tsx
+  src/components/kern/vorlagen/uebersicht/Verzeichnis.tsx
+  src/components/kern/vorlagen/uebersicht/Weiterlesen.tsx
+  src/components/kern/vorlagen/uebersicht/index.ts
+  src/app/fonts/archivo-latin-variabel.woff2
+  src/app/fonts/ibm-plex-mono-latin-400.woff2
+  src/app/fonts/kern.ts
+  src/components/kern/einwilligung/Banner.tsx
+  src/components/kern/einwilligung/BannerInsel.tsx
+  src/components/kern/einwilligung/KartenPlatzhalter.tsx
+  src/components/kern/fuss/Fuss.tsx
+  src/components/kern/fuss/UntereLeiste.tsx
+  src/components/kern/fuss/WhatsAppKanal.tsx
+  src/lib/kern/icons.ts
+  src/lib/kern/metadaten.ts
+  src/lib/motion/BewegungsRegie.tsx
+  src/styles/kern-global.css
+  src/styles/kern.css

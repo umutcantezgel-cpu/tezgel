@@ -1,0 +1,24 @@
+E6-ORCH-01 · Schritt 5 · Prüfungen am Arbeitsbaum (HEAD f7822f5 + Schritt 5 ungecommittet), 2026-10-13T00:38:55Z
+=========================================================================================================
+Änderungsmenge laut git status: 254 × " D" (genau die Liste in 5-loeschung.txt, comm-Abgleich leer), " M" src/app/fonts/LIZENZEN.md,
+" M" src/app/global-not-found.tsx; " M" CLAUDE.md und die ?? unter _relaunch/belege stammen nicht aus diesem Schritt (bzw. sind diese Belege).
+
+01 Importgraph vor dem rm     node graph.cjs (Scratchpad)       GRUEN  0/254 lebend erreichbar, 0 Kanten von aussen, 0 unaufgeloest (5-graph.json)
+02 Importgraph nach dem rm    node graph.cjs (Scratchpad)       GRUEN  lebende Menge unveraendert 335/375, 0 unaufgeloeste Importe
+03 Typpruefung                npx tsc --noEmit -p tsconfig.json GRUEN  Exit 0, keine Ausgabe (0 Zeilen). .next/dev/types/validator.ts hat next dev
+                                                                       vorher selbst neu geschrieben (kein Eintrag (kern)/layout mehr).
+04 ESLint geaenderte Datei    npx eslint src/app/global-not-found.tsx   GRUEN  Exit 0, keine Ausgabe
+05 ESLint ueber src           npx eslint src                    GRUEN  Exit 0, keine Ausgabe
+06 Unit-Tests                 npm test                          GRUEN  # tests 37 # pass 37 # fail 0 
+07 werte                      node _werkstatt/werkzeuge/werte.mjs --dateien src/app/global-not-found.tsx   GRUEN  befunde gesamt 0
+                              (auch mit src/app/fonts/LIZENZEN.md: 0)
+08 Stufe-05-Muster (tor-s.sh:60-61) auf global-not-found.tsx    GRUEN  0 Treffer (tor-s nimmt nur vorhandene Dateien, die geloeschten fallen heraus)
+09 JSON.parse                 node -e JSON.parse 5-graph.json 5-knip-nach.json 5-aufruf.json   GRUEN  (keine JSON-Datei im Produktcode geaendert)
+10 knip                       knip.json und ohne-Entwurf-Konfiguration   NICHT NUR WEGFAELLE  (1 echter Folgebefund, vorhergesagt) siehe 5-knip-nach.json:
+                              gegen knip-vor-ohne-entwurf.json: neu = KOPF_SKRIPT (Folge, M-27) + ErrorBoundary-Duplikat (nur Zeilenverschiebung aus Schritt 3);
+                              gegen knip-vor.json zusaetzlich Typ BlogListe (vorhergesagt); gegen den Stand vor Schritt 5: neu KOPF_SKRIPT (+ BlogListe bei knip.json).
+11 rg-Nachweis                5-rg.txt                          GRUEN  Importe auf geloeschte Pfade: 0; Reste nur Kommentare/@source-not/Fehltreffer
+12 Seitenaufruf 4350          Playwright, Fremdanfragen blockiert   ROT am laufenden Dev-Server (Ursache next dev, nicht Seitencode): / und /kontakt HTTP 200, 0 seitenfehler, Fuss vorhanden; nach dem rm
+                              1 Konsolenfehler aus dem HMR-Client von next dev (Turbopack-HMR-Panik nach dem Massen-rm); mit stummgeschaltetem
+                              /_next/hmr-Websocket 0 Konsolenfehler auf beiden Seiten (2 Laeufe). Einzelheiten 5-aufruf.json.
+Nicht gelaufen (verboten bzw. Tor): next build, build-vergleich, volle Playwright-Suite, Server-Neustart.

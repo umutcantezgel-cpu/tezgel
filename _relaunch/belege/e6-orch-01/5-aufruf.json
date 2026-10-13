@@ -1,0 +1,170 @@
+{
+  "werkzeug": "Playwright (Chromium aus /opt/pw-browsers), Skript Scratchpad e6o1-s5/aufruf.mjs; alle Anfragen ausser 127.0.0.1 abgebrochen; 1440x900; load + 2,5 s, ans Ende scrollen + 1,5 s; Konsole error/warning, pageerror, lokale Antworten >= 400",
+  "server": "http://127.0.0.1:4350 (next dev auf dem Arbeitsbaum, nicht neu gestartet)",
+  "vorher": {
+    "zeitpunkt": "2026-10-13T00:30:37.795Z",
+    "seiten": [
+      {
+        "pfad": "/",
+        "status": 200,
+        "titel": "Fliesenleger Wetzlar & Aßlar | Fliesenverlegung Tezgel",
+        "h1": "Perfektion auf jedem Quadratmeter.Fliesenverlegung & Badsanierung aus Aßlar",
+        "fuss": true,
+        "bannerPlatzVariable": "0px",
+        "konsolenfehler": [],
+        "konsolenwarnungen": 0,
+        "seitenfehler": [],
+        "lokaleAntwortenAb400": 0,
+        "blockierteFremdUrspruenge": []
+      },
+      {
+        "pfad": "/kontakt",
+        "status": 200,
+        "titel": "Kontakt & Vor-Ort-Aufmaß | Fliesenleger Tezgel Aßlar",
+        "h1": "Kontakt & Aufmaß Fliesenleger Tezgel",
+        "fuss": true,
+        "bannerPlatzVariable": "400px",
+        "konsolenfehler": [],
+        "konsolenwarnungen": 0,
+        "seitenfehler": [],
+        "lokaleAntwortenAb400": 0,
+        "blockierteFremdUrspruenge": []
+      }
+    ]
+  },
+  "nachher": {
+    "zeitpunkt": "2026-10-13T00:33:41.597Z",
+    "seiten": [
+      {
+        "pfad": "/",
+        "status": 200,
+        "titel": "Fliesenleger Wetzlar & Aßlar | Fliesenverlegung Tezgel",
+        "h1": "Perfektion auf jedem Quadratmeter.Fliesenverlegung & Badsanierung aus Aßlar",
+        "fuss": true,
+        "bannerPlatzVariable": "0px",
+        "konsolenfehler": [
+          {
+            "typ": "error",
+            "text": "Can't perform a React state update on a component that hasn't mounted yet. This indicates that you have a side-effect in your render function that asynchronously tries to update the component. Move this work to useEffect instead."
+          }
+        ],
+        "konsolenwarnungen": 0,
+        "seitenfehler": [],
+        "lokaleAntwortenAb400": 0,
+        "blockierteFremdUrspruenge": []
+      },
+      {
+        "pfad": "/kontakt",
+        "status": 200,
+        "titel": "Kontakt & Vor-Ort-Aufmaß | Fliesenleger Tezgel Aßlar",
+        "h1": "Kontakt & Aufmaß Fliesenleger Tezgel",
+        "fuss": true,
+        "bannerPlatzVariable": "400px",
+        "konsolenfehler": [],
+        "konsolenwarnungen": 0,
+        "seitenfehler": [],
+        "lokaleAntwortenAb400": 0,
+        "blockierteFremdUrspruenge": []
+      }
+    ]
+  },
+  "wiederholungen": [
+    {
+      "lauf": "aufruf-wdh-1.json",
+      "seiten": [
+        {
+          "pfad": "/",
+          "status": 200,
+          "konsolenfehler": 1
+        },
+        {
+          "pfad": "/kontakt",
+          "status": 200,
+          "konsolenfehler": 0
+        }
+      ]
+    },
+    {
+      "lauf": "aufruf-wdh-2.json",
+      "seiten": [
+        {
+          "pfad": "/",
+          "status": 200,
+          "konsolenfehler": 1
+        },
+        {
+          "pfad": "/kontakt",
+          "status": 200,
+          "konsolenfehler": 1
+        }
+      ]
+    },
+    {
+      "lauf": "aufruf-wdh-3.json",
+      "seiten": [
+        {
+          "pfad": "/",
+          "status": 200,
+          "konsolenfehler": 1
+        },
+        {
+          "pfad": "/kontakt",
+          "status": 200,
+          "konsolenfehler": 1
+        }
+      ]
+    },
+    {
+      "lauf": "aufruf-mit-hmr-4.json",
+      "seiten": [
+        {
+          "pfad": "/",
+          "status": 200,
+          "konsolenfehler": 1
+        },
+        {
+          "pfad": "/kontakt",
+          "status": 200,
+          "konsolenfehler": 0
+        }
+      ]
+    }
+  ],
+  "kontrolleOhneHmr": [
+    {
+      "lauf": "aufruf-ohne-hmr-1.json",
+      "seiten": [
+        {
+          "pfad": "/",
+          "status": 200,
+          "konsolenfehler": 0,
+          "seitenfehler": 0
+        },
+        {
+          "pfad": "/kontakt",
+          "status": 200,
+          "konsolenfehler": 0,
+          "seitenfehler": 0
+        }
+      ]
+    },
+    {
+      "lauf": "aufruf-ohne-hmr-2.json",
+      "seiten": [
+        {
+          "pfad": "/",
+          "status": 200,
+          "konsolenfehler": 0,
+          "seitenfehler": 0
+        },
+        {
+          "pfad": "/kontakt",
+          "status": 200,
+          "konsolenfehler": 0,
+          "seitenfehler": 0
+        }
+      ]
+    }
+  ],
+  "befund": "Nach dem rm geraet next dev in eine Turbopack-HMR-Panik (\"[Server HMR] Subscription error, resubscribing: TurbopackInternalError: Cell ... EcmascriptMergedChunkVersion ... no longer exists\", FATAL im Dev-Log, Panik-Log /tmp/next-panic-35d7b37eea6e75fe30ffae70c0520992.log; erster Eintrag zwischen dem letzten Vorher- und dem ersten Nachher-Aufruf). Der Server schickt seitdem fortlaufend serverComponentChanges; der Dev-Client ruft hmrRefresh vor dem Einhaengen des App-Routers auf und React (DEV) meldet \"Can't perform a React state update on a component that hasn't mounted yet\". Stapel ausschliesslich in Next-Interna: WebSocket.handleMessage -> processMessage -> hmrRefresh -> dispatchAppRouterAction -> warnAboutUpdateOnNotYetMountedFiberInDEV. Mit stummgeschaltetem /_next/hmr-Websocket (sonst gleicher Lauf) zweimal 0 Konsolenfehler auf / und /kontakt. Kein \"Module not found\" im Dev-Log, alle Seiten HTTP 200, Fuss mit --banner-platz wie vorher. Abhilfe: Neustart von next dev auf 4350 durch den Orchestrator (dem Unteragenten untersagt)."
+}

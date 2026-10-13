@@ -1,0 +1,106 @@
+{
+  "werkzeug": "knip 6.41.0, _relaunch/werkzeuge/node_modules/.bin/knip --config _relaunch/werkzeuge/knip.json --reporter json --no-progress --no-exit-code; zweiter Lauf mit der ohne-Entwurf-Konfiguration aus knip-vor.txt (entry zusaetzlich !src/app/**/_*/**, next.entry ohne private Ordner); stderr jeweils leer; git status vorher = nachher",
+  "vergleich": "Schluessel datei|art|name (Duplikate: JSON der Fundstellen), wie in knip-vor.txt beschrieben",
+  "nachSchritt5": {
+    "zahlen": {
+      "files": 13,
+      "dependencies": 2,
+      "devDependencies": 1,
+      "exports": 80,
+      "duplicates": 25,
+      "types": 25
+    },
+    "beideKonfigurationenGleich": true,
+    "ungenutzteDateien": [
+      "src/components/icons/ersatz.tsx",
+      "src/components/icons/zuordnung.ts",
+      "src/components/kern/Bildfeld.tsx",
+      "src/components/kern/Kennwerte.tsx",
+      "src/components/kern/RatgeberListe.tsx",
+      "src/components/kern/Zeitband.tsx",
+      "src/lib/polyfills/empty.js",
+      "src/app/(bestand)/werkstatt-schaufenster/page.dev.tsx",
+      "src/app/(bestand)/werkstatt-schaufenster/bausteine/page.dev.tsx",
+      "src/app/(bestand)/werkstatt-schaufenster/merkliste/page.dev.tsx",
+      "src/app/(bestand)/werkstatt-schaufenster/schritte/page.dev.tsx",
+      "src/app/(bestand)/werkstatt-schaufenster/szene/page.dev.tsx",
+      "src/app/(bestand)/werkstatt-schaufenster/tabelle/page.dev.tsx"
+    ],
+    "abhaengigkeiten": [
+      "dep:@googlemaps/js-api-loader",
+      "dep:@types/google.maps",
+      "dev:tailwindcss"
+    ]
+  },
+  "gegenKnipVor": {
+    "datei": "knip-vor.json",
+    "neu": [
+      "src/lib/motion/kopfskript.ts|exports|KOPF_SKRIPT",
+      "src/components/providers/ErrorBoundary.tsx|duplicates|[{\"name\":\"ErrorBoundary\",\"line\":21,\"col\":14,\"pos\":810},{\"name\":\"default\",\"line\":71,\"col\":16,\"pos\":2237}]",
+      "src/lib/formulare/useBlogListe.ts|types|BlogListe"
+    ],
+    "weg": 233,
+    "wegNachArt": {
+      "files": 43,
+      "dependencies": 2,
+      "exports": 69,
+      "types": 115,
+      "duplicates": 4
+    }
+  },
+  "gegenKnipVorOhneEntwurf": {
+    "datei": "knip-vor-ohne-entwurf.json",
+    "neu": [
+      "src/lib/motion/kopfskript.ts|exports|KOPF_SKRIPT",
+      "src/components/providers/ErrorBoundary.tsx|duplicates|[{\"name\":\"ErrorBoundary\",\"line\":21,\"col\":14,\"pos\":810},{\"name\":\"default\",\"line\":71,\"col\":16,\"pos\":2237}]"
+    ],
+    "weg": 319,
+    "wegNachArt": {
+      "files": 233,
+      "dependencies": 2,
+      "exports": 36,
+      "types": 45,
+      "duplicates": 3
+    }
+  },
+  "gegenStandVorSchritt5": {
+    "hinweis": "gleicher Befehl am Arbeitsbaum unmittelbar vor dem rm (HEAD f7822f5)",
+    "knipJson": {
+      "neu": [
+        "src/lib/motion/kopfskript.ts|exports|KOPF_SKRIPT",
+        "src/lib/formulare/useBlogListe.ts|types|BlogListe"
+      ],
+      "weg": 205,
+      "wegNachArt": {
+        "files": 18,
+        "exports": 69,
+        "types": 115,
+        "duplicates": 3
+      }
+    },
+    "ohneEntwurf": {
+      "neu": [
+        "src/lib/motion/kopfskript.ts|exports|KOPF_SKRIPT"
+      ],
+      "weg": 291,
+      "wegNachArt": {
+        "files": 208,
+        "exports": 36,
+        "types": 45,
+        "duplicates": 2
+      }
+    }
+  },
+  "bewertungNeu": {
+    "src/lib/motion/kopfskript.ts|exports|KOPF_SKRIPT": "Folge des Abbaus: einziger Importeur war src/app/(kern)/layout.tsx. Erwartet laut Karte kern-ruhend (Blocker 5); Datei bleibt unveraendert (M-27 offen). Kein Wegfall, sondern ein neuer Befund - Entscheidung beim Orchestrator.",
+    "src/lib/formulare/useBlogListe.ts|types|BlogListe": "Folge des Abbaus, in knip-vor.txt vorhergesagt (\"genau ein neuer Fund ... Typ BlogListe\"); in knip-vor-ohne-entwurf.json schon enthalten. Formular-Hook, nicht angefasst.",
+    "src/components/providers/ErrorBoundary.tsx|duplicates|ErrorBoundary/default": "kein neuer Befund: dasselbe Paar wie in der Basis (dort Zeilen 16/62), durch Schritt 3 auf Zeilen 21/71 verschoben; im Vergleich mit dem Stand vor Schritt 5 nicht neu."
+  },
+  "bekannteFehlmeldungen": [
+    "*.dev.tsx (6, bedingte pageExtensions)",
+    "src/lib/polyfills/empty.js (Alias-Ziel)",
+    "dev:tailwindcss (CSS-Import)",
+    "dep:@googlemaps/js-api-loader, dep:@types/google.maps (Basis, nicht im Plan)",
+    "src/components/kern/{Bildfeld,Kennwerte,RatgeberListe,Zeitband}.tsx und src/components/icons/{ersatz.tsx,zuordnung.ts} (Basis, nicht im Umfang)"
+  ]
+}

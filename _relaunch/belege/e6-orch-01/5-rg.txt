@@ -1,0 +1,59 @@
+E6-ORCH-01 · Schritt 5 · rg-Nachweis nach dem Abbau (2026-10-13T00:38:20Z, Arbeitsbaum auf HEAD f7822f5)
+Muster P = (\(kern\)|components/kern/(basis|formulare|icons|kopf-b|motive|schale|seiten|start|vorlagen)|kern/einwilligung/(Banner|BannerInsel|KartenPlatzhalter)\b|kern/fuss/(Fuss|UntereLeiste|WhatsAppKanal)\b|lib/kern/(icons|metadaten)|styles/kern(-global)?\.css|fonts/kern\b|archivo-latin-variabel|ibm-plex-mono-latin-400|BewegungsRegie)
+
+1) Importe auf geloeschte Pfade (from / import / import() / require() / @import) in src, test, scripts, _relaunch/werkzeuge/tests, Root-Konfig:
+   rg -n -e "(from\s+|import\s*\(\s*|require\s*\(\s*|@import\s+(url\()?|import\s+)['\"][^'\"]*P" src test scripts _relaunch/werkzeuge/tests next.config.ts eslint.config.mjs postcss.config.mjs
+   -> Exit 1 (1 = 0 Treffer)
+   Zusaetzlich Importgraph nachher (5-graph.json): 0 unaufgeloeste relative/@/-Importe, d. h. auch kein relativer Import (./kern, ../styles/kern.css) zeigt ins Leere.
+
+2) Alle Textfundstellen von P in src, test, scripts, _relaunch/werkzeuge/tests, Root-Konfig, package.json, tsconfig.json, vercel.json:
+src/lib/motion/kopfskript.ts:11:// Ruhendes Dokument (Gruppe (kern), kern.css + BewegungsRegie): Inline-Kopfskript des Kern-Layouts, läuft im <head> vor dem ersten Rendern (CSP erlaubt Inline-Skripte
+src/lib/motion/kopfskript.ts:16://    Werten in `src/styles/kern.css`; nach dem Laden ändert sich der Stil von <html> nicht mehr (vorher volle
+src/app/globals.css:10:/* E-015: Ruhender Kern-Code hat ein eigenes CSS (src/styles/kern-global.css). Nur seine Unterordner ausnehmen:
+src/app/globals.css:12:@source not "../components/kern/basis";
+src/app/globals.css:14:@source not "../components/kern/formulare";
+src/app/globals.css:16:@source not "../components/kern/icons";
+src/app/globals.css:18:@source not "../components/kern/kopf-b";
+src/app/globals.css:19:@source not "../components/kern/motive";
+src/app/globals.css:20:@source not "../components/kern/schale";
+src/app/globals.css:21:@source not "../components/kern/seiten";
+src/app/globals.css:22:@source not "../components/kern/start";
+src/app/globals.css:23:@source not "../components/kern/vorlagen";
+src/app/globals.css:25:@source not "./(kern)";
+src/app/fonts/LIZENZEN.md:6:| `plex-mono-400.woff2` | IBM Plex Mono 400 (Teilmenge latin ohne ß – ß setzt Archivo, weil die Plex-Glyphe wie „B“ wirkt) | @fontsource/ibm-plex-mono 5.3.0 (`ibm-p
+src/components/start/Ablauf.tsx:2:// Nachbau des Vorbilds (src/components/kern/start/Ablauf.tsx) im KERN-v2-System: Zeitleiste mit durchgehender Linie,
+src/components/start/Grossformat.tsx:2:// Nachbau des Vorbilds (src/components/kern/start/Grossformat.tsx) im KERN-v2-System: Feldraster mit Fugen, links das
+src/components/start/Fachbereiche.tsx:2:// Anker #portal-netzwerk. Nachbau des Vorbilds (src/components/kern/start/Fachbereiche.tsx) im KERN-v2-System.
+src/components/ui/FinalCTA.tsx:48:// Abschluss (KERN v2, nach src/components/kern/start/Abschluss.tsx): helle Fläche (Kalk), gerahmtes Feld auf Fliese mit klarer Rangfolge
+
+Einordnung (alle erwartet, keine Importe):
+  Kommentare: src/components/ui/FinalCTA.tsx:48, src/components/start/Ablauf.tsx:2, src/components/start/Grossformat.tsx:2,
+    src/components/start/Fachbereiche.tsx:2, src/lib/motion/kopfskript.ts:11 und :16 (M-27, nicht anfassen), src/app/globals.css:10 (faellt in Schritt 6).
+  Direktiven: src/app/globals.css:12-25 '@source not' auf nicht mehr vorhandene Ordner (Schritt 6; schon heute steht dort kopf-a ohne Ordner).
+  Fehltreffer: src/app/fonts/LIZENZEN.md:6 nennt die Fontsource-Quelldatei 'ibm-plex-mono-latin-400-normal.woff2' der LEBENDEN
+    plex-mono-400.woff2 (Herkunftsangabe, bleibt wortlich).
+
+3) Ausserhalb des Umfangs von Schritt 5 (Werkzeuge, Schritt 6/10), nur zur Kenntnis:
+_relaunch/werkzeuge/kern-klassen.mjs:4:// Kern-Seite, den kern-global.css nicht scannt). Kriterien Z-07, Z-13.
+_relaunch/werkzeuge/kern-klassen.mjs:19://   - Kern-Seiten: Schlüssel mit Segment (kern) in server/app-paths-manifest.json bzw. app-path-routes-manifest.json.
+_relaunch/werkzeuge/kern-klassen.mjs:166:// Kern-Routen aus dem Build-Manifest: Seiten-Schlüssel mit Segment (kern).
+_relaunch/werkzeuge/kern-klassen.mjs:176:    if (teile.at(-1) !== 'page' || !teile.includes('(kern)')) continue;
+_relaunch/werkzeuge/kern-klassen.mjs:286:    if (!routen.length) fehler('keine Kern-Seiten im Build (kein Manifest-Schlüssel mit Segment (kern))');
+_werkstatt/werkzeuge/werte-regeln.json:157:   "src/app/(kern)/**",
+_werkstatt/werkzeuge/werte-regeln.json:158:   "src/components/kern/basis/**",
+_werkstatt/werkzeuge/werte-regeln.json:159:   "src/components/kern/einwilligung/**",
+_werkstatt/werkzeuge/werte-regeln.json:160:   "src/components/kern/formulare/**",
+_werkstatt/werkzeuge/werte-regeln.json:161:   "src/components/kern/fuss/**",
+_werkstatt/werkzeuge/werte-regeln.json:162:   "src/components/kern/icons/**",
+_werkstatt/werkzeuge/werte-regeln.json:163:   "src/components/kern/kopf-b/**",
+_werkstatt/werkzeuge/werte-regeln.json:164:   "src/components/kern/motive/**",
+_werkstatt/werkzeuge/werte-regeln.json:165:   "src/components/kern/schale/**",
+_werkstatt/werkzeuge/werte-regeln.json:166:   "src/components/kern/start/**",
+_werkstatt/werkzeuge/werte-regeln.json:167:   "src/components/kern/vorlagen/**",
+_werkstatt/werkzeuge/werte-regeln.json:168:   "src/lib/kern/**",
+_werkstatt/werkzeuge/werte-regeln.json:170:   "src/components/kern/seiten/**"
+_werkstatt/werkzeuge/werte-regeln.json:193:  "_kommentar_kern": "Kern-System der Relaunch-Sitzung (eigene Werte in src/styles/kern.css, eigenes Root-Layout (ker
+_relaunch/werkzeuge/tor-s.sh:60:  (cd "$REPO" && echo "$SRC" | tr ',' '\n' | grep -v '^src/components/kern/\(basis\|seiten\|start\|vorlagen\|einwilligung\|formu
+_relaunch/werkzeuge/tor-t1.sh:18:if git -C "$REPO" ls-files 'src/app/(kern)/_entwurf' | grep -E '\.(tsx|ts|jsx|js)$' | xargs -r grep -nE "from ['\"](\.\./|\./[^
+_relaunch/werkzeuge/freischalten.sh:8:# Je Route: Dateien und private Ordner (_…) aus src/app/(kern)/_entwurf/<route>/ nach src/app/(kern)/<route>/;
+_relaunch/werkzeuge/freischalten.sh:31:  von="$A/(kern)/_entwurf/$rel"; nach="$A/(kern)/$rel"; alt="$A/(bestand)/$rel"

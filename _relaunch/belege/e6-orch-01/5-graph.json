@@ -1,0 +1,169 @@
+{
+  "schritt": "E6-ORCH-01 · 5",
+  "werkzeug": "eigenes Skript (Scratchpad e6o1-s5/graph.cjs), node graph.cjs . <loeschliste> <ausgabe>; TypeScript 5.9.3",
+  "methode": "TypeScript ts.preProcessFile (statische Importe, export-from, import(), require, next/dynamic(() => import())), @/ -> src/, relativ, Endungen .ts/.tsx/.js/.jsx/.mjs/.cjs/.mts/.json/.css, index-Dateien; CSS-@import und url(); next/font/local wörtliche src-Pfade. Wurzeln: Next-Spezialdateien unter src/app ohne (kern) und ohne private _-Ordner, die *.dev.tsx-Seiten (bedingte pageExtensions), src/proxy.ts, next.config.ts, postcss/eslint-Konfig, Alias-Ziel src/lib/polyfills/empty.js, alle Code-Dateien in test/, scripts/, _relaunch/werkzeuge/tests/.",
+  "wurzeln": {
+    "routen": 111,
+    "dev": 6,
+    "weitere": [
+      "src/proxy.ts",
+      "next.config.ts",
+      "postcss.config.mjs",
+      "eslint.config.mjs",
+      "src/lib/polyfills/empty.js"
+    ],
+    "testUndSkripte": 24
+  },
+  "ersterLauf": {
+    "lebendeDateienUeberRouten": 335,
+    "lebendeDateienUeberAlleWurzeln": 375,
+    "loeschmenge": 254,
+    "loeschmengeLebendErreichbar": 0,
+    "kantenVonAusserhalbInDieLoeschmenge": 0,
+    "unaufgeloest": 0
+  },
+  "unmittelbarVorher": {
+    "lebendeDateienUeberRouten": 335,
+    "lebendeDateienUeberAlleWurzeln": 375,
+    "loeschmenge": 254,
+    "loeschmengeLebendErreichbar": 0,
+    "kantenVonAusserhalbInDieLoeschmenge": 0,
+    "unaufgeloest": 0,
+    "loeschmengeLebendErreichbarListe": [],
+    "kantenVonAusserhalb": [],
+    "bleibendeBaumDateien": [
+      {
+        "datei": "src/components/kern/einwilligung/BannerPlatz.tsx",
+        "lebendUeberRouten": true,
+        "kette": [
+          "src/app/global-not-found.tsx",
+          "src/app/(bestand)/_dokument.tsx",
+          "src/components/common/Footer.jsx",
+          "src/components/kern/einwilligung/BannerPlatz.tsx"
+        ]
+      },
+      {
+        "datei": "src/components/kern/fuss/SprungHalter.tsx",
+        "lebendUeberRouten": true,
+        "kette": [
+          "src/app/global-not-found.tsx",
+          "src/app/(bestand)/_dokument.tsx",
+          "src/components/common/Footer.jsx",
+          "src/components/kern/fuss/SprungHalter.tsx"
+        ]
+      },
+      {
+        "datei": "src/lib/kern/start/daten.ts",
+        "lebendUeberRouten": true,
+        "kette": [
+          "src/app/(bestand)/page.tsx",
+          "src/components/start/Fachgewerke.tsx",
+          "src/lib/kern/start/daten.ts"
+        ]
+      }
+    ],
+    "schriften": [
+      {
+        "datei": "src/app/fonts/archivo-latin-variabel.woff2",
+        "inLoeschmenge": true,
+        "lebend": false,
+        "kette": null,
+        "nextFontLocalAufrufer": [
+          {
+            "datei": "src/app/fonts/kern.ts",
+            "lebend": false,
+            "inLoeschmenge": true
+          }
+        ]
+      },
+      {
+        "datei": "src/app/fonts/archivo-variabel.woff2",
+        "inLoeschmenge": false,
+        "lebend": true,
+        "kette": [
+          "src/app/global-not-found.tsx",
+          "src/app/(bestand)/_dokument.tsx",
+          "src/app/fonts/archivo-variabel.woff2"
+        ],
+        "nextFontLocalAufrufer": [
+          {
+            "datei": "src/app/(bestand)/_dokument.tsx",
+            "lebend": true,
+            "inLoeschmenge": false
+          }
+        ]
+      },
+      {
+        "datei": "src/app/fonts/ibm-plex-mono-latin-400.woff2",
+        "inLoeschmenge": true,
+        "lebend": false,
+        "kette": null,
+        "nextFontLocalAufrufer": [
+          {
+            "datei": "src/app/fonts/kern.ts",
+            "lebend": false,
+            "inLoeschmenge": true
+          }
+        ]
+      },
+      {
+        "datei": "src/app/fonts/plex-mono-400.woff2",
+        "inLoeschmenge": false,
+        "lebend": true,
+        "kette": [
+          "src/app/global-not-found.tsx",
+          "src/app/(bestand)/_dokument.tsx",
+          "src/app/fonts/plex-mono-400.woff2"
+        ],
+        "nextFontLocalAufrufer": [
+          {
+            "datei": "src/app/(bestand)/_dokument.tsx",
+            "lebend": true,
+            "inLoeschmenge": false
+          }
+        ]
+      }
+    ],
+    "freigabe": true
+  },
+  "nachher": {
+    "lebendeDateienUeberRouten": 335,
+    "lebendeDateienUeberAlleWurzeln": 375,
+    "loeschmenge": 254,
+    "loeschmengeLebendErreichbar": 0,
+    "kantenVonAusserhalbInDieLoeschmenge": 0,
+    "unaufgeloest": 0,
+    "hinweis": "gleiche Wurzeln nach dem rm: lebende Menge unveraendert (Routen 335, alle Wurzeln 375), 0 unaufgeloeste Importe in src/test/scripts/Werkzeug-Tests",
+    "bleibendeBaumDateien": [
+      {
+        "datei": "src/components/kern/einwilligung/BannerPlatz.tsx",
+        "lebend": true
+      },
+      {
+        "datei": "src/components/kern/fuss/SprungHalter.tsx",
+        "lebend": true
+      },
+      {
+        "datei": "src/lib/kern/start/daten.ts",
+        "lebend": true
+      }
+    ],
+    "schriften": [
+      {
+        "datei": "src/app/fonts/archivo-variabel.woff2",
+        "lebend": true,
+        "aufrufer": [
+          "src/app/(bestand)/_dokument.tsx"
+        ]
+      },
+      {
+        "datei": "src/app/fonts/plex-mono-400.woff2",
+        "lebend": true,
+        "aufrufer": [
+          "src/app/(bestand)/_dokument.tsx"
+        ]
+      }
+    ]
+  },
+  "positivkontrolle": "Die drei stehenbleibenden Dateien und beide lebenden woff2 werden ueber lebende Wurzeln gefunden (Ketten in unmittelbarVorher.bleibendeBaumDateien/schriften)."
+}
