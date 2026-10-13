@@ -1,0 +1,44 @@
+{
+  "werkzeug": "node _werkstatt/werkzeuge/werte.mjs --dateien <liste> (Regeln _werkstatt/werkzeuge/werte-regeln.json im Arbeitsbaum)",
+  "lauf_auftrag": {
+    "dateien": [
+      "src/components/common/SprungHalter.tsx",
+      "src/components/common/BannerPlatz.tsx",
+      "src/components/common/Footer.jsx",
+      "src/components/start/Fachbereiche.tsx",
+      "src/components/start/Fachgewerke.tsx"
+    ],
+    "befunde": 0,
+    "befundListe": []
+  },
+  "lauf_alle_geaenderten_src": {
+    "dateien": [
+      "src/components/common/SprungHalter.tsx",
+      "src/components/common/BannerPlatz.tsx",
+      "src/lib/start/daten.ts",
+      "src/components/common/Footer.jsx",
+      "src/components/start/Fachbereiche.tsx",
+      "src/components/start/Fachgewerke.tsx",
+      "src/app/globals.css"
+    ],
+    "befunde": 0,
+    "befundListe": []
+  },
+  "gegenprobe_ohne_neue_zeilenausnahme": {
+    "regeln": "Kopie von werte-regeln.json ohne den Eintrag fuer src/components/common/SprungHalter.tsx (Scratchpad)",
+    "dateien": [
+      "src/components/common/SprungHalter.tsx"
+    ],
+    "befunde": 1,
+    "befundListe": [
+      {
+        "datei": "src/components/common/SprungHalter.tsx",
+        "zeile": 13,
+        "art": "dauer_zahl",
+        "kandidat": "DAUER: 4000",
+        "hinweis": "Dauer als Zahl; nur dauer-1 … dauer-5 und ease-Tokens"
+      }
+    ]
+  },
+  "bewertung": "Mit der neuen Zeilenausnahme 0 Befunde in beiden Laeufen. Ohne sie meldet werte genau 1 Befund (dauer_zahl, SprungHalter.tsx:13 \"DAUER: 4000\"); die Ausnahme ist also tragend und deckt nur diese Zeile. SUCHE = 1500 und der Zeitgeber 120 ms werden nicht gemeldet. Die Konstante ist nicht umbenannt (Werkzeugtaeuschung vermieden)."
+}

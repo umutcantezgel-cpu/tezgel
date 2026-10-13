@@ -7,22 +7,6 @@
 /* Arbeitsbereiche sind Dokumentation – nicht in die Klassenerkennung aufnehmen. */
 @source not "../../_relaunch";
 @source not "../../_werkstatt";
-/* E-015: Ruhender Kern-Code hat ein eigenes CSS (src/styles/kern-global.css). Nur seine Unterordner ausnehmen:
-   die flachen Bausteine direkt in src/components/kern (KERN v2) sind aktiv und brauchen dieses Theme. */
-@source not "../components/kern/basis";
-@source not "../components/kern/einwilligung";
-@source not "../components/kern/formulare";
-@source not "../components/kern/fuss";
-@source not "../components/kern/icons";
-@source not "../components/kern/kopf-a";
-@source not "../components/kern/kopf-b";
-@source not "../components/kern/motive";
-@source not "../components/kern/schale";
-@source not "../components/kern/seiten";
-@source not "../components/kern/start";
-@source not "../components/kern/vorlagen";
-@source not "../lib/kern";
-@source not "./(kern)";
 
 /* ==========================================================================
    FLIESENVERLEGUNG TEZGEL · KERN v2 – „Jede Seite ist ein Verlegeplan“
@@ -183,7 +167,7 @@
 }
 
 /* Belegter Raum des offenen Einwilligungsbanners (R-01a): Abstand seiner Oberkante zum unteren Bildrand, gemessen von
-   BannerPlatz (src/components/kern/einwilligung, eingebunden im Fuß) und am <footer> gesetzt; ohne Banner 0. Der Fuß wird
+   BannerPlatz (src/components/common, eingebunden im Fuß) und am <footer> gesetzt; ohne Banner 0. Der Fuß wird
    um diesen Platz länger, damit auch die letzten Bedienelemente der Seite über den Banner rollen können (Fokus nie
    verdeckt). Nicht vererbt: Setzen und Entfernen rechnet nur den Fuß neu. */
 @property --banner-platz {

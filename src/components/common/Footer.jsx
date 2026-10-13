@@ -4,8 +4,8 @@ import Image from 'next/image';
 import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
-import BannerPlatz from '@/components/kern/einwilligung/BannerPlatz';
-import SprungHalter from '@/components/kern/fuss/SprungHalter';
+import BannerPlatz from '@/components/common/BannerPlatz';
+import SprungHalter from '@/components/common/SprungHalter';
 import { knopfKlassen, seitenKlassen } from '@/components/kern/stile';
 import { COMPANY_DATA } from '@/config/company';
 import {

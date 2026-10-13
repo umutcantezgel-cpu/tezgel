@@ -5,7 +5,7 @@
 // 4 Spalten (Tablett 4 · 4 · 8, das breite mit Vignette neben dem Text).
 // Kein Hover-Heben, kein Zoom. Ein Auftritt im Abschnitt: die Felder rücken beim Scrollen in die Flucht (`auftritt`, ohne
 // Staffel). Links mit Farbwechsel nach Register (`zustand`). Rot nur in der Vignette „wohnen“ (Laserachse).
-// Inhalt aus `@/config/services` (`SERVICES`), Etiketten aus `@/lib/kern/start/daten`; Merkmale wie im Bestand: Bad 6, sonst 3.
+// Inhalt aus `@/config/services` (`SERVICES`), Etiketten aus `@/lib/start/daten`; Merkmale wie im Bestand: Bad 6, sonst 3.
 // Unter md (Befund 9): Vignetten der Nebenfelder entfallen (dekorativ, ohne Text), die Merkmale stehen im Aufklapper
 // „Leistungsumfang“ (nativ `details`, zu); ab md bleiben sie offen sichtbar wie bisher.
 import Link from 'next/link';
@@ -16,7 +16,7 @@ import Knopf from '@/components/kern/Knopf';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import { etikettForm, etikettKlassen, seitenKlassen } from '@/components/kern/stile';
 import { VIGNETTEN, istVignette } from '@/components/start/vignetten';
-import { FACHGEWERK_ETIKETTEN } from '@/lib/kern/start/daten';
+import { FACHGEWERK_ETIKETTEN } from '@/lib/start/daten';
 
 type Leistung = (typeof SERVICES)[number];
 type Lage = 'haupt' | 'neben' | 'breit';

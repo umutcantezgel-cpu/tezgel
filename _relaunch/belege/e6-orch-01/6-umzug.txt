@@ -1,0 +1,104 @@
+E6-ORCH-01 · Schritt 6 · Umzug der drei lebenden Dateien (Arbeitsbaum, HEAD 4d3b742 + Schritt 5 + Schritt 6 ungecommittet), 2026-10-13T01:04:24Z
+======================================================================================================================
+Verfahren: mkdir src/lib/start; mv (je Datei); danach rmdir der leeren Ordner. Inhalte bytegleich (Blob-Hash = HEAD-Blob, sha256 vor = nach).
+
+src/components/kern/einwilligung/BannerPlatz.tsx -> src/components/common/BannerPlatz.tsx
+  HEAD-Blob 3ddff77de43d73fff91975789d3d24927cf43f0d  neu 3ddff77de43d73fff91975789d3d24927cf43f0d  GLEICH (100 % Aehnlichkeit)
+  sha256 neu 52e89899611409f97bfa6366cf6ba4dbfc2d1c928516429430449f404728d320
+src/components/kern/fuss/SprungHalter.tsx -> src/components/common/SprungHalter.tsx
+  HEAD-Blob eff88fd961e16a218f670394d4a66978963df104  neu eff88fd961e16a218f670394d4a66978963df104  GLEICH (100 % Aehnlichkeit)
+  sha256 neu e81f2c7ed649dd4b895720c4fe2c601e157be69aaa233151e9d4eafeac56d61d
+src/lib/kern/start/daten.ts -> src/lib/start/daten.ts
+  HEAD-Blob 396eda14f663878cd258247ae0914ca8fb7b13d1  neu 396eda14f663878cd258247ae0914ca8fb7b13d1  GLEICH (100 % Aehnlichkeit)
+  sha256 neu 8e84f8840dc7ca4443b0108ea2830e58877f6767b62996753416ad15758379ca
+
+sha256 vor dem mv (alte Pfade):
+  52e89899611409f97bfa6366cf6ba4dbfc2d1c928516429430449f404728d320  src/components/kern/einwilligung/BannerPlatz.tsx
+  e81f2c7ed649dd4b895720c4fe2c601e157be69aaa233151e9d4eafeac56d61d  src/components/kern/fuss/SprungHalter.tsx
+  8e84f8840dc7ca4443b0108ea2830e58877f6767b62996753416ad15758379ca  src/lib/kern/start/daten.ts
+
+Entfernte leere Ordner (rmdir): src/components/kern/einwilligung, src/components/kern/fuss, src/lib/kern/start, src/lib/kern
+Neu angelegter Ordner: src/lib/start
+src/components/kern hat danach keine Unterordner mehr (nur die flachen *.tsx und stile.ts):
+  0 Unterordner, 25 Dateien
+
+Importpfade und Pfad-Kommentare (git diff, nur diese Zeilen geaendert):
+  +++ b/src/components/common/Footer.jsx
+  -import BannerPlatz from '@/components/kern/einwilligung/BannerPlatz';
+  -import SprungHalter from '@/components/kern/fuss/SprungHalter';
+  +import BannerPlatz from '@/components/common/BannerPlatz';
+  +import SprungHalter from '@/components/common/SprungHalter';
+  +++ b/src/components/start/Fachbereiche.tsx
+  -// Inhalt: `PORTAL_HUBS`, `LANGE_LISTE_AB`, `PortalLink` aus `@/lib/kern/start/daten` (wortgleich mit der Bestandsfassung
+  +// Inhalt: `PORTAL_HUBS`, `LANGE_LISTE_AB`, `PortalLink` aus `@/lib/start/daten` (wortgleich mit der Bestandsfassung
+  -import { LANGE_LISTE_AB, PORTAL_HUBS, type PortalLink } from '@/lib/kern/start/daten';
+  +import { LANGE_LISTE_AB, PORTAL_HUBS, type PortalLink } from '@/lib/start/daten';
+  +++ b/src/components/start/Fachgewerke.tsx
+  -// Inhalt aus `@/config/services` (`SERVICES`), Etiketten aus `@/lib/kern/start/daten`; Merkmale wie im Bestand: Bad 6, sonst 3.
+  +// Inhalt aus `@/config/services` (`SERVICES`), Etiketten aus `@/lib/start/daten`; Merkmale wie im Bestand: Bad 6, sonst 3.
+  -import { FACHGEWERK_ETIKETTEN } from '@/lib/kern/start/daten';
+  +import { FACHGEWERK_ETIKETTEN } from '@/lib/start/daten';
+
+globals.css (git diff -U0):
+  @@ -10,16 +9,0 @@
+  -/* E-015: Ruhender Kern-Code hat ein eigenes CSS (src/styles/kern-global.css). Nur seine Unterordner ausnehmen:
+  -   die flachen Bausteine direkt in src/components/kern (KERN v2) sind aktiv und brauchen dieses Theme. */
+  -@source not "../components/kern/basis";
+  -@source not "../components/kern/einwilligung";
+  -@source not "../components/kern/formulare";
+  -@source not "../components/kern/fuss";
+  -@source not "../components/kern/icons";
+  -@source not "../components/kern/kopf-a";
+  -@source not "../components/kern/kopf-b";
+  -@source not "../components/kern/motive";
+  -@source not "../components/kern/schale";
+  -@source not "../components/kern/seiten";
+  -@source not "../components/kern/start";
+  -@source not "../components/kern/vorlagen";
+  -@source not "../lib/kern";
+  -@source not "./(kern)";
+  @@ -186 +170 @@
+  -   BannerPlatz (src/components/kern/einwilligung, eingebunden im Fuß) und am <footer> gesetzt; ohne Banner 0. Der Fuß wird
+  +   BannerPlatz (src/components/common, eingebunden im Fuß) und am <footer> gesetzt; ohne Banner 0. Der Fuß wird
+
+werte-regeln.json (git diff -U0):
+  @@ -157,14 +157 @@
+  -   "src/app/(kern)/**",
+  -   "src/components/kern/basis/**",
+  -   "src/components/kern/einwilligung/**",
+  -   "src/components/kern/formulare/**",
+  -   "src/components/kern/fuss/**",
+  -   "src/components/kern/icons/**",
+  -   "src/components/kern/kopf-b/**",
+  -   "src/components/kern/motive/**",
+  -   "src/components/kern/schale/**",
+  -   "src/components/kern/start/**",
+  -   "src/components/kern/vorlagen/**",
+  -   "src/lib/kern/**",
+  -   "src/styles/**",
+  -   "src/components/kern/seiten/**"
+  +   "src/styles/**"
+  @@ -190,0 +178,5 @@
+  +   },
+  +   {
+  +    "datei": "src/components/common/SprungHalter.tsx",
+  +    "muster": "const DAUER = 4000",
+  +    "grund": "Haltefenster nach Ankersprung, JS-Zeitgeber, keine Bewegungsdauer"
+  @@ -192,2 +184 @@
+  -  ],
+  -  "_kommentar_kern": "Kern-System der Relaunch-Sitzung (eigene Werte in src/styles/kern.css, eigenes Root-Layout (kern)); geprüft wird es mit deren Werkzeugen, nicht gegen KERN v2 (E-020)."
+  +  ]
+
+git status der Schritt-6-Pfade:
+   M _werkstatt/werkzeuge/werte-regeln.json
+   M src/app/globals.css
+   M src/components/common/Footer.jsx
+   D src/components/kern/einwilligung/BannerPlatz.tsx
+   D src/components/kern/fuss/SprungHalter.tsx
+   M src/components/start/Fachbereiche.tsx
+   M src/components/start/Fachgewerke.tsx
+   D src/lib/kern/start/daten.ts
+  ?? src/components/common/BannerPlatz.tsx
+  ?? src/components/common/SprungHalter.tsx
+  ?? src/lib/start/
+  (Hinweis: ohne git add zeigt git die Umzuege als ' D' + '??'; beim Commit erkennt git sie wegen gleicher Blobs als Umbenennung mit 100 %.)

@@ -1,0 +1,35 @@
+E6-ORCH-01 · Schritt 6 · Prüfungen am Arbeitsbaum (HEAD 4d3b742 + Schritt 5 + Schritt 6 ungecommittet), 2026-10-13T01:05:31Z
+============================================================================================================================
+Änderungsmenge Schritt 6 (git status): 3 Umzüge (je " D" alter Pfad + "??" neuer Pfad, Blob gleich, s. 6-umzug.txt),
+" M" src/components/common/Footer.jsx, src/components/start/Fachbereiche.tsx, src/components/start/Fachgewerke.tsx, src/app/globals.css,
+_werkstatt/werkzeuge/werte-regeln.json. Leere Ordner entfernt: src/components/kern/{einwilligung,fuss}, src/lib/kern/start, src/lib/kern.
+Nicht aus diesem Schritt: " M" CLAUDE.md, die 254 " D" und zwei " M" aus Schritt 5, die Belege 5-*.
+
+01 Umzug bytegleich            git rev-parse HEAD:<alt> = git hash-object <neu>, sha256 vor = nach   GRUEN  3/3 gleich (100 % Ähnlichkeit beim Commit)
+02 rg Auftragsmuster           rg -n "lib/kern|components/kern/(einwilligung|fuss)" src              GRUEN  0 Treffer (auch keine Kommentare)
+03 rg Importe alte Pfade       from/import/import()/require() in src test scripts _relaunch/werkzeuge/tests + Root-Konfig   GRUEN  0 Treffer
+04 werte (Auftrag)             node _werkstatt/werkzeuge/werte.mjs --dateien SprungHalter.tsx,BannerPlatz.tsx,Footer.jsx,Fachbereiche.tsx,Fachgewerke.tsx   GRUEN  befunde gesamt 0
+05 werte (alle geänderten src) zusätzlich src/lib/start/daten.ts und src/app/globals.css              GRUEN  befunde gesamt 0
+06 werte Gegenprobe            gleiche Regeln ohne die neue Zeilenausnahme, nur SprungHalter.tsx      ERWARTET 1 Befund (dauer_zahl :13 "DAUER: 4000") -> Ausnahme trägt, deckt nur diese Zeile
+07 JSON.parse                  node -e JSON.parse _werkstatt/werkzeuge/werte-regeln.json und 6-*.json   GRUEN  alle gültig; werte-regeln.json: ausnahmen = {dateien (6), svg_pfaddaten, zeilen (4)}
+08 Typprüfung                  npx tsc --noEmit -p tsconfig.json                                      GRUEN  Exit 0, keine Ausgabe; --listFilesOnly enthält die drei neuen Pfade, keinen alten
+09 ESLint geänderte Dateien    npx eslint <3 verschobene + Footer.jsx + Fachbereiche.tsx + Fachgewerke.tsx>   GRUEN  Exit 0, keine Ausgabe
+10 ESLint über src             npx eslint src                                                          GRUEN  Exit 0, keine Ausgabe
+11 Unit-Tests                  npm test                                                                GRUEN  # tests 37 # pass 37 # fail 0
+12 knip                        knip.json und ohne-Entwurf-Konfiguration (wie Schritt 5)               GRUEN  gegen den Stand nach Schritt 5: 0 neu, 0 weg, gleiche Zähler (13/2/1/80/25/25);
+                               gegen knip-vor*.json dieselben, in Schritt 5 bewerteten Einträge (KOPF_SKRIPT, ErrorBoundary-Duplikat, BlogListe). Keine Befunde zu den
+                               verschobenen oder geänderten Dateien. Siehe 6-knip-nach.json.
+13 Tailwind: kein Zusatz-CSS   @tailwindcss/node + oxide: globals.css (A) gegen A + @source not für die drei Dateien (B)   GRUEN  CSS byte-gleich (131562 Bytes);
+                               44 Kandidaten nur aus den drei Dateien, keiner erzeugt eine Regel; keine Datei aus (kern)/kern-Unterordnern/lib/kern mehr gescannt (6-tailwind.json)
+14 Stufe-05-Muster tor-s.sh:61 grep -nE auf die sechs src-Dateien (am neuen Ort greift der kern-Filter aus tor-s.sh:60 nicht mehr)   GRUEN  0 Treffer
+15 Seitenaufruf 4350           Playwright, Fremdanfragen abgebrochen, Hydrierung abgewartet; /, /kontakt, /leistungen   GRUEN  vorher und nachher HTTP 200, Fuß mit 58 Links,
+                               Banner offen, --banner-platz 400px am <footer>, kein Next-Fehlerdialog, 0 pageerror. Konsolenfehler nachher 0 (mit HMR und mit HMR-Filter).
+                               Vorher mit HMR 4 Meldungen aus der Turbopack-HMR-Panik (Schritt 5), mit Filter 0. next dev hat nach dem Umzug neu kompiliert ("Compiled in 24.4s"),
+                               seitdem kein FATAL, keine HMR-Neuanmeldung, kein "Module not found". Siehe 6-aufruf.json.
+16 Sprungverhalten             Laden mit Anker /kontakt#express-anfrage und /#express-anfrage             GRUEN  Landung 96 px (= scroll-padding-top); 400 px Wachstum oben im Fenster
+                               (Scroll-Verankerung abgeschaltet) -> wieder 96 px; nach Ablauf der 4 s: 300 px Wachstum -> 396 px. Vorher und nachher gleich.
+17 Sprung per Klick            /leistungen a[href="#express-anfrage"]; / a[href="/kontakt#express-anfrage"] (Next-Navigation)   GRUEN  Landung 96 px, nach Wachstum 96 px, 0 Fehler
+18 Fokus unter dem Banner      Tab durch ganze Seite bei offenem Banner, 1440 und 375, /kontakt /leistungen /   GRUEN  1440: 0 verdeckt. 375: je 1 Element auf /kontakt und /,
+                               das höher ist als der freie Raum (476 bzw. 415 px); es steht wie vorgesehen bündig bei 96 px und ist nicht ganz verdeckt (BannerPlatz-Kommentar).
+                               Datei bytegleich, also unverändertes Verhalten; eine Vorher-Messung dieser Probe gibt es nicht (Umzug ist bytegleich).
+Nicht gelaufen (verboten bzw. Tor): next build, build-vergleich, volle Playwright-Suite, Server-Neustart.

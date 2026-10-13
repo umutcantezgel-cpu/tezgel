@@ -154,20 +154,7 @@
    "src/components/ui/WhatsAppLogo.tsx",
    "**/opengraph-image.*",
    "src/app/(bestand)/werkstatt-schaufenster/**",
-   "src/app/(kern)/**",
-   "src/components/kern/basis/**",
-   "src/components/kern/einwilligung/**",
-   "src/components/kern/formulare/**",
-   "src/components/kern/fuss/**",
-   "src/components/kern/icons/**",
-   "src/components/kern/kopf-b/**",
-   "src/components/kern/motive/**",
-   "src/components/kern/schale/**",
-   "src/components/kern/start/**",
-   "src/components/kern/vorlagen/**",
-   "src/lib/kern/**",
-   "src/styles/**",
-   "src/components/kern/seiten/**"
+   "src/styles/**"
   ],
   "svg_pfaddaten": [
    "d",
@@ -188,8 +175,12 @@
     "datei": "src/app/bewegung.css",
     "muster": "0s !important",
     "grund": "reduzierte Bewegung: Seitenwechsel ohne Dauer (Sofortzustand, K-007)"
+   },
+   {
+    "datei": "src/components/common/SprungHalter.tsx",
+    "muster": "const DAUER = 4000",
+    "grund": "Haltefenster nach Ankersprung, JS-Zeitgeber, keine Bewegungsdauer"
    }
-  ],
-  "_kommentar_kern": "Kern-System der Relaunch-Sitzung (eigene Werte in src/styles/kern.css, eigenes Root-Layout (kern)); geprüft wird es mit deren Werkzeugen, nicht gegen KERN v2 (E-020)."
+  ]
  }
 }

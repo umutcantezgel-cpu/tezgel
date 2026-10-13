@@ -1,0 +1,28 @@
+E6-ORCH-01 · Schritt 6 · rg-Nachweise, 2026-10-13T01:04:44Z
+================================================================
+1) Muster aus dem Auftrag: rg -n "lib/kern|components/kern/(einwilligung|fuss)" src
+   Exit 1, Treffer: 0
+
+2) Import-Spezifizierer (from/import/import()/require()) auf die alten Pfade in src test scripts _relaunch/werkzeuge/tests und den Root-Konfigurationen
+   Exit 1, Treffer: 0
+
+3) Jede Textfundstelle der alten Pfade (auch Kommentare) in denselben Pfaden: rg -n "kern/(einwilligung|fuss)|lib/kern"
+   Exit 1, Treffer: 0
+
+4) @source not in src/app/globals.css (nur noch _relaunch und _werkstatt):
+   8:@source not "../../_relaunch";
+   9:@source not "../../_werkstatt";
+
+5) Neue Importpfade (lebende Importeure):
+   src/components/common/Footer.jsx:7:import BannerPlatz from '@/components/common/BannerPlatz';
+   src/components/common/Footer.jsx:8:import SprungHalter from '@/components/common/SprungHalter';
+   src/components/start/Fachgewerke.tsx:8:// Inhalt aus `@/config/services` (`SERVICES`), Etiketten aus `@/lib/start/daten`; Merkmale wie im Bestand: Bad 6, sonst 3.
+   src/components/start/Fachgewerke.tsx:19:import { FACHGEWERK_ETIKETTEN } from '@/lib/start/daten';
+   src/components/start/Fachbereiche.tsx:10:// Inhalt: `PORTAL_HUBS`, `LANGE_LISTE_AB`, `PortalLink` aus `@/lib/start/daten` (wortgleich mit der Bestandsfassung
+   src/components/start/Fachbereiche.tsx:19:import { LANGE_LISTE_AB, PORTAL_HUBS, type PortalLink } from '@/lib/start/daten';
+
+6) Stufe-05-Muster aus tor-s.sh:61 auf die sechs geaenderten bzw. verschobenen src-Dateien (die drei Dateien fallen am neuen Ort nicht mehr unter den kern-Filter aus tor-s.sh:60):
+   Treffer: 0
+
+7) Ausserhalb von src (nur Doku/Belege, nicht angefasst): Verweise auf die alten Pfade stehen weiter in _relaunch/PLAN.md, _relaunch/pakete/*.md,
+   _relaunch/pakete/_seitenregeln.md:32, _werkstatt/pakete/FUSION-UEBERSETZUNG.md:7 und alten Belegen; tor-s.sh:60 filtert noch die kern-Unterordner (Schritt 10).

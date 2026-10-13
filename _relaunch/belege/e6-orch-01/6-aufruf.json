@@ -1,0 +1,473 @@
+{
+  "werkzeug": "Playwright (Chromium aus /opt/pw-browsers), Skripte Scratchpad e6o1-s6/{aufruf,fokus,klick}.mjs; alle Anfragen ausser 127.0.0.1 abgebrochen; 1440x900 (Fokus zusaetzlich 375x812); vor jeder Messung Hydrierung abgewartet (React-Fiber am <footer>); Konsole error/warning, pageerror, lokale Antworten >= 400. FILTER_HMR=1: HMR-Websocket bleibt verbunden, nur eingehende serverComponentChanges-Meldungen verworfen (Kontrolle gegen die Turbopack-HMR-Panikschleife aus Schritt 5). Der Websocket ganz stumm (Kontrolle aus Schritt 5) verhindert in next dev die Hydrierung; damit laufen BannerPlatz und SprungHalter gar nicht, daher hier nicht verwendet.",
+  "server": "http://127.0.0.1:4350 (next dev auf dem Arbeitsbaum, nicht neu gestartet). Nach den Aenderungen von Schritt 6 hat next dev neu kompiliert (Dev-Log: Compiled in 24.4s); seitdem kein FATAL und keine HMR-Neuanmeldung mehr, kein Module not found.",
+  "sprungMessung": "Laden mit Anker; Landeplatz 700 ms nach der Hydrierung; dann overflow-anchor:none auf allen Elementen (nur der SprungHalter kann ausgleichen) und 400 px Wachstum oben im body innerhalb des 4-s-Fensters, danach nach Ablauf des Fensters 300 px Wachstum (soll nicht mehr ausgeglichen werden: 96 -> 396)",
+  "vorher": {
+    "mitHmr": {
+      "zeitpunkt": "2026-10-13T00:54:42.028Z",
+      "filterHmr": false,
+      "seiten": [
+        {
+          "pfad": "/",
+          "status": 200,
+          "hydriertBeiMs": 2371,
+          "titel": "Fliesenleger Wetzlar & Aßlar | Fliesenverlegung Tezgel",
+          "h1": "Perfektion auf jedem Quadratmeter.Fliesenverlegung & Badsanierung aus Aßlar",
+          "fuss": true,
+          "fussLinks": 58,
+          "bannerOffen": true,
+          "bannerPlatz": "400px",
+          "bannerOberkanteAbstandUnten": 400,
+          "nextFehlerDialog": false,
+          "konsolenfehler": [
+            "Can't perform a React state update on a component that hasn't mounted yet. This indicates that you have a side-effect in your render function that asynchronously tries to update the component. Move this work to useEffect instead."
+          ],
+          "konsolenwarnungen": 0,
+          "seitenfehler": [],
+          "lokaleAntwortenAb400": 0,
+          "blockierteFremdUrspruenge": 0
+        },
+        {
+          "pfad": "/kontakt",
+          "status": 200,
+          "hydriertBeiMs": 1408,
+          "titel": "Kontakt & Vor-Ort-Aufmaß | Fliesenleger Tezgel Aßlar",
+          "h1": "Kontakt & Aufmaß Fliesenleger Tezgel",
+          "fuss": true,
+          "fussLinks": 58,
+          "bannerOffen": true,
+          "bannerPlatz": "400px",
+          "bannerOberkanteAbstandUnten": 400,
+          "nextFehlerDialog": false,
+          "konsolenfehler": [],
+          "konsolenwarnungen": 0,
+          "seitenfehler": [],
+          "lokaleAntwortenAb400": 0,
+          "blockierteFremdUrspruenge": 0
+        },
+        {
+          "pfad": "/leistungen",
+          "status": 200,
+          "hydriertBeiMs": 1691,
+          "titel": "Fliesenleger Leistungen Wetzlar | Fachbetrieb Tezgel",
+          "h1": "Fliesenleger Leistungen & Fachgewerke Wetzlar",
+          "fuss": true,
+          "fussLinks": 58,
+          "bannerOffen": true,
+          "bannerPlatz": "400px",
+          "bannerOberkanteAbstandUnten": 400,
+          "nextFehlerDialog": false,
+          "konsolenfehler": [],
+          "konsolenwarnungen": 0,
+          "seitenfehler": [],
+          "lokaleAntwortenAb400": 0,
+          "blockierteFremdUrspruenge": 0
+        }
+      ],
+      "sprung": [
+        {
+          "ziel": "/kontakt#express-anfrage",
+          "status": 200,
+          "hydriertBeiMs": 1527,
+          "zielVorhanden": true,
+          "scrollPaddingTop": "96px",
+          "landung_nach700ms": 96,
+          "nach400pxWachstumImFenster": 96,
+          "vor300pxWachstumNachFenster": 96,
+          "nach300pxWachstumNachFenster": 396,
+          "konsolenfehler": [],
+          "seitenfehler": [
+            "Error: Internal Next.js error: Router action dispatched before initialization."
+          ]
+        },
+        {
+          "ziel": "/#express-anfrage",
+          "status": 200,
+          "hydriertBeiMs": 2518,
+          "zielVorhanden": true,
+          "scrollPaddingTop": "96px",
+          "landung_nach700ms": 96,
+          "nach400pxWachstumImFenster": 96,
+          "vor300pxWachstumNachFenster": 96,
+          "nach300pxWachstumNachFenster": 396,
+          "konsolenfehler": [
+            "Can't perform a React state update on a component that hasn't mounted yet. This indicates that you have a side-effect in your render function that asynchronously tries to update the component. Move this work to useEffect instead.",
+            "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML ta"
+          ],
+          "seitenfehler": []
+        }
+      ]
+    },
+    "hmrGefiltert": {
+      "zeitpunkt": "2026-10-13T00:55:15.945Z",
+      "filterHmr": true,
+      "seiten": [
+        {
+          "pfad": "/",
+          "status": 200,
+          "hydriertBeiMs": 1727,
+          "titel": "Fliesenleger Wetzlar & Aßlar | Fliesenverlegung Tezgel",
+          "h1": "Perfektion auf jedem Quadratmeter.Fliesenverlegung & Badsanierung aus Aßlar",
+          "fuss": true,
+          "fussLinks": 58,
+          "bannerOffen": true,
+          "bannerPlatz": "400px",
+          "bannerOberkanteAbstandUnten": 400,
+          "nextFehlerDialog": false,
+          "konsolenfehler": [],
+          "konsolenwarnungen": 0,
+          "seitenfehler": [],
+          "lokaleAntwortenAb400": 0,
+          "blockierteFremdUrspruenge": 0
+        },
+        {
+          "pfad": "/kontakt",
+          "status": 200,
+          "hydriertBeiMs": 1218,
+          "titel": "Kontakt & Vor-Ort-Aufmaß | Fliesenleger Tezgel Aßlar",
+          "h1": "Kontakt & Aufmaß Fliesenleger Tezgel",
+          "fuss": true,
+          "fussLinks": 58,
+          "bannerOffen": true,
+          "bannerPlatz": "400px",
+          "bannerOberkanteAbstandUnten": 400,
+          "nextFehlerDialog": false,
+          "konsolenfehler": [],
+          "konsolenwarnungen": 0,
+          "seitenfehler": [],
+          "lokaleAntwortenAb400": 0,
+          "blockierteFremdUrspruenge": 0
+        },
+        {
+          "pfad": "/leistungen",
+          "status": 200,
+          "hydriertBeiMs": 1741,
+          "titel": "Fliesenleger Leistungen Wetzlar | Fachbetrieb Tezgel",
+          "h1": "Fliesenleger Leistungen & Fachgewerke Wetzlar",
+          "fuss": true,
+          "fussLinks": 58,
+          "bannerOffen": true,
+          "bannerPlatz": "400px",
+          "bannerOberkanteAbstandUnten": 400,
+          "nextFehlerDialog": false,
+          "konsolenfehler": [],
+          "konsolenwarnungen": 0,
+          "seitenfehler": [],
+          "lokaleAntwortenAb400": 0,
+          "blockierteFremdUrspruenge": 0
+        }
+      ],
+      "sprung": [
+        {
+          "ziel": "/kontakt#express-anfrage",
+          "status": 200,
+          "hydriertBeiMs": 1227,
+          "zielVorhanden": true,
+          "scrollPaddingTop": "96px",
+          "landung_nach700ms": 96,
+          "nach400pxWachstumImFenster": 96,
+          "vor300pxWachstumNachFenster": 96,
+          "nach300pxWachstumNachFenster": 396,
+          "konsolenfehler": [],
+          "seitenfehler": []
+        },
+        {
+          "ziel": "/#express-anfrage",
+          "status": 200,
+          "hydriertBeiMs": 1905,
+          "zielVorhanden": true,
+          "scrollPaddingTop": "96px",
+          "landung_nach700ms": 96,
+          "nach400pxWachstumImFenster": 96,
+          "vor300pxWachstumNachFenster": 96,
+          "nach300pxWachstumNachFenster": 396,
+          "konsolenfehler": [],
+          "seitenfehler": []
+        }
+      ]
+    }
+  },
+  "nachher": {
+    "mitHmr": {
+      "zeitpunkt": "2026-10-13T00:59:36.984Z",
+      "filterHmr": false,
+      "seiten": [
+        {
+          "pfad": "/",
+          "status": 200,
+          "hydriertBeiMs": 1791,
+          "titel": "Fliesenleger Wetzlar & Aßlar | Fliesenverlegung Tezgel",
+          "h1": "Perfektion auf jedem Quadratmeter.Fliesenverlegung & Badsanierung aus Aßlar",
+          "fuss": true,
+          "fussLinks": 58,
+          "bannerOffen": true,
+          "bannerPlatz": "400px",
+          "bannerOberkanteAbstandUnten": 400,
+          "nextFehlerDialog": false,
+          "konsolenfehler": [],
+          "konsolenwarnungen": 0,
+          "seitenfehler": [],
+          "lokaleAntwortenAb400": 0,
+          "blockierteFremdUrspruenge": 0
+        },
+        {
+          "pfad": "/kontakt",
+          "status": 200,
+          "hydriertBeiMs": 1162,
+          "titel": "Kontakt & Vor-Ort-Aufmaß | Fliesenleger Tezgel Aßlar",
+          "h1": "Kontakt & Aufmaß Fliesenleger Tezgel",
+          "fuss": true,
+          "fussLinks": 58,
+          "bannerOffen": true,
+          "bannerPlatz": "400px",
+          "bannerOberkanteAbstandUnten": 400,
+          "nextFehlerDialog": false,
+          "konsolenfehler": [],
+          "konsolenwarnungen": 0,
+          "seitenfehler": [],
+          "lokaleAntwortenAb400": 0,
+          "blockierteFremdUrspruenge": 0
+        },
+        {
+          "pfad": "/leistungen",
+          "status": 200,
+          "hydriertBeiMs": 1779,
+          "titel": "Fliesenleger Leistungen Wetzlar | Fachbetrieb Tezgel",
+          "h1": "Fliesenleger Leistungen & Fachgewerke Wetzlar",
+          "fuss": true,
+          "fussLinks": 58,
+          "bannerOffen": true,
+          "bannerPlatz": "400px",
+          "bannerOberkanteAbstandUnten": 400,
+          "nextFehlerDialog": false,
+          "konsolenfehler": [],
+          "konsolenwarnungen": 0,
+          "seitenfehler": [],
+          "lokaleAntwortenAb400": 0,
+          "blockierteFremdUrspruenge": 0
+        }
+      ],
+      "sprung": [
+        {
+          "ziel": "/kontakt#express-anfrage",
+          "status": 200,
+          "hydriertBeiMs": 1308,
+          "zielVorhanden": true,
+          "scrollPaddingTop": "96px",
+          "landung_nach700ms": 96,
+          "nach400pxWachstumImFenster": 96,
+          "vor300pxWachstumNachFenster": 96,
+          "nach300pxWachstumNachFenster": 396,
+          "konsolenfehler": [],
+          "seitenfehler": []
+        },
+        {
+          "ziel": "/#express-anfrage",
+          "status": 200,
+          "hydriertBeiMs": 2081,
+          "zielVorhanden": true,
+          "scrollPaddingTop": "96px",
+          "landung_nach700ms": 96,
+          "nach400pxWachstumImFenster": 96,
+          "vor300pxWachstumNachFenster": 96,
+          "nach300pxWachstumNachFenster": 396,
+          "konsolenfehler": [],
+          "seitenfehler": []
+        }
+      ]
+    },
+    "hmrGefiltert": {
+      "zeitpunkt": "2026-10-13T00:59:03.481Z",
+      "filterHmr": true,
+      "seiten": [
+        {
+          "pfad": "/",
+          "status": 200,
+          "hydriertBeiMs": 3167,
+          "titel": "Fliesenleger Wetzlar & Aßlar | Fliesenverlegung Tezgel",
+          "h1": "Perfektion auf jedem Quadratmeter.Fliesenverlegung & Badsanierung aus Aßlar",
+          "fuss": true,
+          "fussLinks": 58,
+          "bannerOffen": true,
+          "bannerPlatz": "400px",
+          "bannerOberkanteAbstandUnten": 400,
+          "nextFehlerDialog": false,
+          "konsolenfehler": [],
+          "konsolenwarnungen": 0,
+          "seitenfehler": [],
+          "lokaleAntwortenAb400": 0,
+          "blockierteFremdUrspruenge": 0
+        },
+        {
+          "pfad": "/kontakt",
+          "status": 200,
+          "hydriertBeiMs": 1401,
+          "titel": "Kontakt & Vor-Ort-Aufmaß | Fliesenleger Tezgel Aßlar",
+          "h1": "Kontakt & Aufmaß Fliesenleger Tezgel",
+          "fuss": true,
+          "fussLinks": 58,
+          "bannerOffen": true,
+          "bannerPlatz": "400px",
+          "bannerOberkanteAbstandUnten": 400,
+          "nextFehlerDialog": false,
+          "konsolenfehler": [],
+          "konsolenwarnungen": 0,
+          "seitenfehler": [],
+          "lokaleAntwortenAb400": 0,
+          "blockierteFremdUrspruenge": 0
+        },
+        {
+          "pfad": "/leistungen",
+          "status": 200,
+          "hydriertBeiMs": 1601,
+          "titel": "Fliesenleger Leistungen Wetzlar | Fachbetrieb Tezgel",
+          "h1": "Fliesenleger Leistungen & Fachgewerke Wetzlar",
+          "fuss": true,
+          "fussLinks": 58,
+          "bannerOffen": true,
+          "bannerPlatz": "400px",
+          "bannerOberkanteAbstandUnten": 400,
+          "nextFehlerDialog": false,
+          "konsolenfehler": [],
+          "konsolenwarnungen": 0,
+          "seitenfehler": [],
+          "lokaleAntwortenAb400": 0,
+          "blockierteFremdUrspruenge": 0
+        }
+      ],
+      "sprung": [
+        {
+          "ziel": "/kontakt#express-anfrage",
+          "status": 200,
+          "hydriertBeiMs": 1325,
+          "zielVorhanden": true,
+          "scrollPaddingTop": "96px",
+          "landung_nach700ms": 96,
+          "nach400pxWachstumImFenster": 96,
+          "vor300pxWachstumNachFenster": 96,
+          "nach300pxWachstumNachFenster": 396,
+          "konsolenfehler": [],
+          "seitenfehler": []
+        },
+        {
+          "ziel": "/#express-anfrage",
+          "status": 200,
+          "hydriertBeiMs": 2173,
+          "zielVorhanden": true,
+          "scrollPaddingTop": "96px",
+          "landung_nach700ms": 96,
+          "nach400pxWachstumImFenster": 96,
+          "vor300pxWachstumNachFenster": 96,
+          "nach300pxWachstumNachFenster": 396,
+          "konsolenfehler": [],
+          "seitenfehler": []
+        }
+      ]
+    }
+  },
+  "klickMitAnker_nachher": [
+    {
+      "start": "/leistungen",
+      "selektor": "a[href=\"#express-anfrage\"]",
+      "links": 5,
+      "url": "/leistungen#express-anfrage",
+      "landung": 96,
+      "nach400pxWachstum": 96,
+      "fehler": []
+    },
+    {
+      "start": "/",
+      "selektor": "a[href=\"/kontakt#express-anfrage\"]",
+      "links": 2,
+      "url": "/kontakt#express-anfrage",
+      "landung": 96,
+      "nach400pxWachstum": 96,
+      "fehler": []
+    }
+  ],
+  "fokusUnterBanner_nachher": {
+    "verfahren": "Banner offen (Erstbesuch); Tab durch die ganze Seite bis zur Wiederholung; je fokussiertes Element ausserhalb des Banners, nicht klebend/fest, waagerecht unter dem Banner: verdeckt, wenn seine Unterkante unter der Banner-Oberkante liegt",
+    "laeufe": [
+      {
+        "ansicht": "d1440",
+        "pfad": "/kontakt",
+        "banner": true,
+        "tabSchritte": 168,
+        "imBanner": 6,
+        "unterBannerSpalte": 29,
+        "verdeckt": [],
+        "fehler": []
+      },
+      {
+        "ansicht": "d1440",
+        "pfad": "/leistungen",
+        "banner": true,
+        "tabSchritte": 132,
+        "imBanner": 6,
+        "unterBannerSpalte": 21,
+        "verdeckt": [],
+        "fehler": []
+      },
+      {
+        "ansicht": "d1440",
+        "pfad": "/",
+        "banner": true,
+        "tabSchritte": 214,
+        "imBanner": 6,
+        "unterBannerSpalte": 51,
+        "verdeckt": [],
+        "fehler": []
+      },
+      {
+        "ansicht": "m375",
+        "pfad": "/kontakt",
+        "banner": true,
+        "tabSchritte": 160,
+        "imBanner": 6,
+        "unterBannerSpalte": 148,
+        "verdeckt": [
+          {
+            "pfad": "MAIN:4>SECTION:5>DIV:0>DIV:0>DIV:1>DIV:0>DIV:1>DIV:1",
+            "hoehe": 476,
+            "oberkante": 96,
+            "unterkante": 572,
+            "bannerOben": 416,
+            "text": "Mi, 14.10.202608:30 Uhr10:30 Uhr13:00 Uhr15:00 Uhr16:30 UhrD"
+          }
+        ],
+        "fehler": []
+      },
+      {
+        "ansicht": "m375",
+        "pfad": "/leistungen",
+        "banner": true,
+        "tabSchritte": 124,
+        "imBanner": 6,
+        "unterBannerSpalte": 112,
+        "verdeckt": [],
+        "fehler": []
+      },
+      {
+        "ansicht": "m375",
+        "pfad": "/",
+        "banner": true,
+        "tabSchritte": 210,
+        "imBanner": 6,
+        "unterBannerSpalte": 198,
+        "verdeckt": [
+          {
+            "pfad": "MAIN:4>DIV:1>DIV:1>SECTION:7>DIV:0>DIV:1>DIV:1",
+            "hoehe": 415,
+            "oberkante": 96,
+            "unterkante": 511,
+            "bannerOben": 416,
+            "text": "Elke S.Bad„Die Fa.Tezgel hat uns im Bad neue Fliesen verlegt"
+          }
+        ],
+        "fehler": []
+      }
+    ],
+    "bewertung": "0 verdeckte Elemente bei 1440. Bei 375 je ein Element auf /kontakt und / (476 bzw. 415 px hoch, hoeher als der freie Raum zwischen Kopf und Banner): Es steht wie vorgesehen buendig bei 96 px (scroll-padding-top, Kommentar BannerPlatz.tsx: zu hohe Elemente stehen dort buendig) und ist nicht ganz verdeckt. BannerPlatz.tsx ist bytegleich umgezogen, das Verhalten ist dasselbe wie vor dem Umzug."
+  },
+  "befund": "Vorher und nachher: alle Seiten HTTP 200, Fuss mit 58 Links, Banner offen, --banner-platz 400px am <footer> (= Abstand Banner-Oberkante zum unteren Bildrand), kein Next-Fehlerdialog, 0 seitenfehler, 0 lokale Antworten >= 400. Sprung: /kontakt#express-anfrage und /#express-anfrage landen bei 96 px und bleiben bei Wachstum im Fenster bei 96 px; nach dem Fenster 396 px (unveraendert). Konsolenfehler: vorher mit HMR 4 Meldungen aus der HMR-Panik (React state update before mount, Router action dispatched before initialization, Hydrationshinweis auf / mit Anker), mit Filter 0; nachher mit und ohne Filter 0."
+}

@@ -1,0 +1,120 @@
+{
+  "werkzeug": "knip 6.41.0, _relaunch/werkzeuge/node_modules/.bin/knip --config _relaunch/werkzeuge/knip.json --reporter json --no-progress --no-exit-code; zweiter Lauf mit derselben ohne-Entwurf-Konfiguration wie in Schritt 5 (Scratchpad e6o1-s5/knip-ohne-entwurf.cfg.json); stderr jeweils leer; Vergleichsschluessel datei|art|name (knipdiff.cjs aus Schritt 5)",
+  "zeitpunkt": "2026-10-13T01:03:21.296Z",
+  "beideKonfigurationenGleich": true,
+  "gegenStandNachSchritt5": {
+    "knip.json": {
+      "neu": [],
+      "wegAnzahl": 0,
+      "wegNachArt": {},
+      "zahlenVor": {
+        "files": 13,
+        "dependencies": 2,
+        "devDependencies": 1,
+        "exports": 80,
+        "duplicates": 25,
+        "types": 25
+      },
+      "zahlenNach": {
+        "files": 13,
+        "dependencies": 2,
+        "devDependencies": 1,
+        "exports": 80,
+        "duplicates": 25,
+        "types": 25
+      }
+    },
+    "ohne-entwurf": {
+      "neu": [],
+      "wegAnzahl": 0,
+      "wegNachArt": {},
+      "zahlenVor": {
+        "files": 13,
+        "dependencies": 2,
+        "devDependencies": 1,
+        "exports": 80,
+        "duplicates": 25,
+        "types": 25
+      },
+      "zahlenNach": {
+        "files": 13,
+        "dependencies": 2,
+        "devDependencies": 1,
+        "exports": 80,
+        "duplicates": 25,
+        "types": 25
+      }
+    }
+  },
+  "gegenKnipVor": {
+    "neu": [
+      "src/lib/motion/kopfskript.ts|exports|KOPF_SKRIPT",
+      "src/components/providers/ErrorBoundary.tsx|duplicates|[{\"name\":\"ErrorBoundary\",\"line\":21,\"col\":14,\"pos\":810},{\"name\":\"default\",\"line\":71,\"col\":16,\"pos\":2237}]",
+      "src/lib/formulare/useBlogListe.ts|types|BlogListe"
+    ],
+    "wegAnzahl": 233,
+    "wegNachArt": {
+      "files": 43,
+      "dependencies": 2,
+      "exports": 69,
+      "types": 115,
+      "duplicates": 4
+    },
+    "zahlenVor": {
+      "files": 56,
+      "dependencies": 4,
+      "devDependencies": 1,
+      "exports": 148,
+      "duplicates": 28,
+      "types": 139
+    },
+    "zahlenNach": {
+      "files": 13,
+      "dependencies": 2,
+      "devDependencies": 1,
+      "exports": 80,
+      "duplicates": 25,
+      "types": 25
+    }
+  },
+  "gegenKnipVorOhneEntwurf": {
+    "neu": [
+      "src/lib/motion/kopfskript.ts|exports|KOPF_SKRIPT",
+      "src/components/providers/ErrorBoundary.tsx|duplicates|[{\"name\":\"ErrorBoundary\",\"line\":21,\"col\":14,\"pos\":810},{\"name\":\"default\",\"line\":71,\"col\":16,\"pos\":2237}]"
+    ],
+    "wegAnzahl": 319,
+    "wegNachArt": {
+      "files": 233,
+      "dependencies": 2,
+      "exports": 36,
+      "types": 45,
+      "duplicates": 3
+    },
+    "zahlenVor": {
+      "files": 246,
+      "dependencies": 4,
+      "devDependencies": 1,
+      "exports": 115,
+      "duplicates": 27,
+      "types": 70
+    },
+    "zahlenNach": {
+      "files": 13,
+      "dependencies": 2,
+      "devDependencies": 1,
+      "exports": 80,
+      "duplicates": 25,
+      "types": 25
+    }
+  },
+  "befundeZuDenGeaendertenOderVerschobenenDateien": [],
+  "bewertung": "Schritt 6 aendert die knip-Befunde nicht: gegen den Stand nach Schritt 5 in beiden Konfigurationen 0 neu, 0 weg, gleiche Zaehler. Die Eintraege, die gegen die beiden Basen als neu erscheinen (KOPF_SKRIPT, ErrorBoundary-Duplikat mit verschobenen Zeilen, Typ BlogListe nur bei knip.json), sind dieselben wie nach Schritt 5 und dort bewertet; Schritt 6 fuegt keinen hinzu. Keine der drei umgezogenen Dateien und keiner ihrer Importeure erscheint in den Befunden.",
+  "bekannteFehlmeldungen": [
+    "*.dev.tsx (bedingte pageExtensions)",
+    "src/lib/polyfills/empty.js",
+    "@googlemaps/js-api-loader",
+    "@types/google.maps",
+    "tailwindcss (devDependency)"
+  ],
+  "beideKonfigurationenGleich_hinweis": "gleich nach Schluessel datei|art|name (0 neu, 0 weg zwischen knip.json und ohne-Entwurf); die Rohausgaben unterscheiden sich nur in der Reihenfolge"
+}

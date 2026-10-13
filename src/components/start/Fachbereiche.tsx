@@ -7,7 +7,7 @@
 // nicht als Raster ungleich breiter Felder.
 // Fläche: Fliese mit Fugenrahmen, damit sich der Abschnitt vom Kalk der Garantien absetzt; die Felder sind Kalk.
 // Kein Rot, kein Auftritt, kein 'use client'. Zustände (Register `zustand`) nur bei Links mit Farbwechsel.
-// Inhalt: `PORTAL_HUBS`, `LANGE_LISTE_AB`, `PortalLink` aus `@/lib/kern/start/daten` (wortgleich mit der Bestandsfassung
+// Inhalt: `PORTAL_HUBS`, `LANGE_LISTE_AB`, `PortalLink` aus `@/lib/start/daten` (wortgleich mit der Bestandsfassung
 // in `src/app/(bestand)/page.tsx`), `TOPIC_HUBS` aus `@/config/topics`. Überschriften und Texte wörtlich wie heute.
 import Link from 'next/link';
 import clsx from 'clsx';
@@ -16,7 +16,7 @@ import Icon from '@/components/icons/Icon';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Knopf from '@/components/kern/Knopf';
 import { etikettForm, etikettKlassen, seitenKlassen } from '@/components/kern/stile';
-import { LANGE_LISTE_AB, PORTAL_HUBS, type PortalLink } from '@/lib/kern/start/daten';
+import { LANGE_LISTE_AB, PORTAL_HUBS, type PortalLink } from '@/lib/start/daten';
 
 // Unterstrich am Namen: erscheint bei feinem Zeiger beim Überfahren und beim Antippen
 const UNTERSTRICH = 'decoration-1 underline-offset-4 decoration-tinte pointer-fine:group-hover:underline group-active:underline';

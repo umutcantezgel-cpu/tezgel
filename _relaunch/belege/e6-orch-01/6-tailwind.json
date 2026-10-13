@@ -1,0 +1,33 @@
+{
+  "zeitpunkt": "2026-10-13T00:58:51.415Z",
+  "werkzeug": "@tailwindcss/node compile + @tailwindcss/oxide Scanner (wie @tailwindcss/postcss), Wurzel /home/user/tezgel, src/app/globals.css",
+  "dreiDateien": [
+    "src/components/common/BannerPlatz.tsx",
+    "src/components/common/SprungHalter.tsx",
+    "src/lib/start/daten.ts"
+  ],
+  "A_wieArbeitsbaum": {
+    "dateienGescannt": 426,
+    "dreiGescannt": [
+      "src/components/common/BannerPlatz.tsx",
+      "src/components/common/SprungHalter.tsx",
+      "src/lib/start/daten.ts"
+    ],
+    "kandidaten": 7788,
+    "cssBytes": 131562
+  },
+  "B_ohneDieDrei": {
+    "dateienGescannt": 423,
+    "dreiGescannt": [],
+    "kandidaten": 7744,
+    "cssBytes": 131562
+  },
+  "kandidatenNurAusDenDrei": 44,
+  "davonCssErzeugendFuerSichAllein": [],
+  "cssIdentisch": true,
+  "kernPfadeGescannt": [],
+  "frage": "Erzeugen die drei Dateien am neuen, gescannten Ort zusaetzliches CSS? (Vorher lagen sie unter @source not.)",
+  "vergleich": "A = globals.css wie im Arbeitsbaum (ohne den Kern-Block); B = dieselbe Datei plus @source not fuer genau die drei Dateien. Gleiches CSS bedeutet: kein zusaetzliches CSS durch den Umzug.",
+  "antwort": "Nein. A und B liefern byte-gleiches CSS (131562 Bytes). Die 44 Kandidaten, die nur aus den drei Dateien kommen, erzeugen keine Regel.",
+  "hinweis": "kernPfadeGescannt: keine Datei unter (kern), components/kern/<Unterordner>, lib/kern oder styles/kern wird mehr gescannt (die Ordner gibt es nicht mehr). Die flachen src/components/kern/*.tsx werden wie bisher gescannt."
+}
