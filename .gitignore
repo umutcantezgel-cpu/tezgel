@@ -65,3 +65,6 @@ playwright-report/
 /_werkstatt/**/*.report.json
 /_werkstatt/**/lhr-*.json
 /_werkstatt/werkzeuge/node_modules
+
+# Eingang für Bildquellen (nie committen, G4)
+/_eingang/

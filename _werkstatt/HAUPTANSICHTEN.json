@@ -1,18 +1,30 @@
 {
-  "festgelegt": "2026-10-10 (E0, danach unveränderlich)",
-  "geraete": { "m390": [390, 844], "t768": [768, 1024], "d1440": [1440, 900] },
+  "festgelegt": "2026-10-23 (E0, Lauf „Verständlich, echt, ausgezeichnet“, danach unveränderlich)",
+  "geraete": {
+    "m360": [360, 740],
+    "m390": [390, 844],
+    "m430": [430, 932],
+    "q844": [844, 390],
+    "t768": [768, 1024],
+    "t1024": [1024, 768],
+    "d1280": [1280, 800],
+    "d1440": [1440, 900],
+    "d1920": [1920, 1080],
+    "d2560": [2560, 1440]
+  },
   "hauptansichten": [
     { "pfad": "/", "art": "erzaehl", "rolle": "Referenzansicht" },
     { "pfad": "/bad", "art": "erzaehl" },
+    { "pfad": "/bad/badsanierung", "art": "erzaehl" },
+    { "pfad": "/bad/barrierefreies-bad", "art": "erzaehl", "rolle": "Referenztext Bereichsseite" },
     { "pfad": "/leistungen", "art": "erzaehl" },
-    { "pfad": "/leistungen/bad", "art": "erzaehl" },
-    { "pfad": "/standorte", "art": "erzaehl" },
-    { "pfad": "/standorte/wetzlar", "art": "erzaehl" },
-    { "pfad": "/fliesen", "art": "erzaehl" },
+    { "pfad": "/fliesen", "art": "wissen" },
+    { "pfad": "/balkon-terrasse", "art": "erzaehl" },
+    { "pfad": "/referenzen", "art": "erzaehl" },
     { "pfad": "/ueber-uns", "art": "erzaehl" },
-    { "pfad": "/kontakt", "art": "arbeit", "rolle": "Referenz für Arbeitsansichten" },
-    { "pfad": "/fliesen/konfigurator", "art": "arbeit" },
-    { "pfad": "/blog", "art": "arbeit" },
-    { "pfad": "/blog/rutschfeste-fliesen-r-klassen", "art": "arbeit" }
-  ]
+    { "pfad": "/kontakt", "art": "arbeit" },
+    { "pfad": "/standorte/wetzlar", "art": "ort", "rolle": "Muster aller Ortsseiten, Referenztext Ortsseite" },
+    { "pfad": "/blog", "art": "wissen" }
+  ],
+  "referenztext_wissen": "/untergrund-abdichtung/din-18534"
 }
