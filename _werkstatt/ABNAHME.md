@@ -73,7 +73,7 @@ Ausgangswerte E0 trägt der Orchestrator nach E0-PRUEF-03 und E0-PROBE-01…10 e
 
 ### Z-11 Nutzerführung (keine Ausnahme)
 - Methode: `probelauf.mjs` mit P1 bis P5 (K-002) für A1 bis A6, je mobil und Desktop, Systemschrift 200 % für P1; Strukturprüfung der Navigation; Zählung von Hauptknöpfen (`data-hauptknopf`), Formularen der Startseite und Pflichtangaben des Hauptwegs.
-- Schwelle: alle 60 Fälle (5 Personen × 6 Aufgaben × 2 Geräte) gelöst, ohne Abbruch, je Fall höchstens so viele Schritte wie in E0; höchstens 5 Hauptpunkte, eine Aufklappebene, kein Thema doppelt, Mobilmenü ohne Scrollen auf 360 × 740; jede Seite genau ein Hauptknopf; Startseite höchstens ein Formular; Hauptweg höchstens 4 Pflichtangaben.
+- Schwelle: alle 60 Fälle (5 Personen × 6 Aufgaben × 2 Geräte) gelöst, ohne Abbruch, je Fall höchstens so viele Schritte wie in E0; höchstens 5 Hauptpunkte, eine Aufklappebene, kein Thema doppelt, Mobilmenü ohne Scrollen auf 360 × 740; jede Seite genau eine Hauptaktion (alle `data-hauptknopf` einer Seite mit derselben Beschriftung und demselben Ziel, kein zweiter Knopf in Hauptform, K-004); Startseite höchstens ein Formular; Hauptweg höchstens 4 Pflichtangaben.
 - Beleg: `belege/abschluss/probelauf/`, `belege/abschluss/struktur.json`.
 - E0: Startseite mit 3 Formularen; Menü 5 Aufklappmenüs, 37 Ziele, 3 Ebenen; Schritte je Fall folgen aus E0-PROBE-01…10. Stand: offen.
 
