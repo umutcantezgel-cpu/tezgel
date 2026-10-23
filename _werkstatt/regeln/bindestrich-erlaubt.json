@@ -1,10 +1,36 @@
 {
-  "stand": "E0 Startliste (Auftrag K-010-B); jedes Wort mit Grund. Erweiterung nur durch den Orchestrator über KERN K-010-B.",
+  "stand": "KERN v3.0 K-010-B (24.10.2026)",
   "woerter": [
-    { "wort": "E-Mail", "grund": "Rechtschreibung verlangt den Bindestrich" },
-    { "wort": "Gäste-WC", "grund": "Rechtschreibung verlangt den Bindestrich (Abkürzung)" },
-    { "wort": "Lahn-Dill-Kreis", "grund": "Eigenname" },
-    { "wort": "Marburg-Biedenkopf", "grund": "Eigenname" }
+    {
+      "wort": "E-Mail",
+      "grund": "Rechtschreibung verlangt den Bindestrich"
+    },
+    {
+      "wort": "Gäste-WC",
+      "grund": "Rechtschreibung verlangt den Bindestrich (Abkürzung)"
+    },
+    {
+      "wort": "Lahn-Dill-Kreis",
+      "grund": "Eigenname"
+    },
+    {
+      "wort": "Marburg-Biedenkopf",
+      "grund": "Eigenname"
+    },
+    {
+      "wort": "Limburg-Weilburg",
+      "grund": "Eigenname (Landkreis)"
+    },
+    {
+      "wort": "Walk-in-Dusche",
+      "grund": "nur wo Suchbegriff der Seite (englischer Bestandteil verlangt Bindestriche); sonst „bodengleiche Dusche“"
+    },
+    {
+      "wort": "Walk-in-Duschen",
+      "grund": "wie Walk-in-Dusche"
+    }
   ],
-  "praefixe_mit_bindestrich_erlaubt": ["E-Mail-"]
+  "praefixe_mit_bindestrich_erlaubt": [
+    "E-Mail-"
+  ]
 }

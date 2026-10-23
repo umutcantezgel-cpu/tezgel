@@ -1,10 +1,454 @@
 {
-  "stand": "E0 Startliste der Fachwörter (aus E0-KUND-09). Die Alltagserklärungen (≤ 15 Wörter) schreibt der Orchestrator in E1 in KERN K-011; bis dahin dient die Liste nur der Erkennung.",
+  "stand": "KERN v3.0 K-011 (24.10.2026); Quelle der Erklärungen ist KERN, Code-Fassung src/config/glossar.ts",
+  "eintraege": [
+    {
+      "id": "abdichtung",
+      "begriffe": [
+        "Abdichtung",
+        "Verbundabdichtung",
+        "AIV"
+      ],
+      "erklaerung": "Eine wasserdichte Schicht direkt unter den Fliesen, damit kein Wasser in Wand und Boden dringt.",
+      "woerter": 15
+    },
+    {
+      "id": "din-18534",
+      "begriffe": [
+        "DIN 18534"
+      ],
+      "erklaerung": "Die Regel für Abdichtungen in Bad und Dusche. So kommt kein Wasser in die Wände.",
+      "woerter": 15
+    },
+    {
+      "id": "din-18040",
+      "begriffe": [
+        "DIN 18040"
+      ],
+      "erklaerung": "Die Regel für barrierefreies Bauen: ohne Stufen, mit genug Platz zum Bewegen.",
+      "woerter": 12
+    },
+    {
+      "id": "din-18157",
+      "begriffe": [
+        "DIN 18157"
+      ],
+      "erklaerung": "Die Regel, wie Fliesen im Kleberbett fest und dauerhaft verlegt werden.",
+      "woerter": 11
+    },
+    {
+      "id": "barrierefrei",
+      "begriffe": [
+        "barrierefrei",
+        "barrierearm"
+      ],
+      "erklaerung": "So gebaut, dass man es auch mit Rollator oder Rollstuhl gut nutzen kann.",
+      "woerter": 13
+    },
+    {
+      "id": "bodengleiche-dusche",
+      "begriffe": [
+        "bodengleiche Dusche",
+        "Walk-in-Dusche"
+      ],
+      "erklaerung": "Eine Dusche ohne Stufe, auf gleicher Höhe wie der Boden im Bad.",
+      "woerter": 12
+    },
+    {
+      "id": "c2te-s1",
+      "begriffe": [
+        "C2TE S1",
+        "Kleberklasse"
+      ],
+      "erklaerung": "Gibt an, wie fest ein Fliesenkleber hält und wie gut er nachgibt.",
+      "woerter": 12
+    },
+    {
+      "id": "stelzlager",
+      "begriffe": [
+        "Stelzlager"
+      ],
+      "erklaerung": "Kleine Füße, auf denen Terrassenplatten liegen. Regen läuft darunter ab.",
+      "woerter": 10
+    },
+    {
+      "id": "rutschhemmung",
+      "begriffe": [
+        "Rutschhemmung",
+        "R9",
+        "R10",
+        "R11"
+      ],
+      "erklaerung": "Wie rutschfest eine Fliese ist. Je höher die Zahl nach dem R, desto sicherer.",
+      "woerter": 14
+    },
+    {
+      "id": "en-16165",
+      "begriffe": [
+        "EN 16165"
+      ],
+      "erklaerung": "Ein Prüfverfahren dafür, wie rutschfest ein Bodenbelag ist.",
+      "woerter": 8
+    },
+    {
+      "id": "nivelliersystem",
+      "begriffe": [
+        "Nivelliersystem"
+      ],
+      "erklaerung": "Kleine Klemmen, die große Fliesen beim Verlegen genau auf eine Höhe bringen.",
+      "woerter": 12
+    },
+    {
+      "id": "vakuumhebetechnik",
+      "begriffe": [
+        "Vakuumhebetechnik"
+      ],
+      "erklaerung": "Saugheber, mit denen wir sehr große Fliesen sicher anheben und ablegen.",
+      "woerter": 11
+    },
+    {
+      "id": "untergrund",
+      "begriffe": [
+        "Untergrund"
+      ],
+      "erklaerung": "Alles, was unter der Fliese liegt, zum Beispiel Estrich, Putz oder alte Fliesen.",
+      "woerter": 13
+    },
+    {
+      "id": "estrich",
+      "begriffe": [
+        "Estrich",
+        "Heizestrich",
+        "Calciumsulfatestrich"
+      ],
+      "erklaerung": "Die glatte Schicht auf dem Rohboden, auf die später die Fliesen kommen.",
+      "woerter": 12
+    },
+    {
+      "id": "belegreife",
+      "begriffe": [
+        "Belegreife",
+        "Restfeuchte",
+        "CM-Messung"
+      ],
+      "erklaerung": "Wir messen, ob der Estrich trocken genug ist, damit die Fliesen sicher halten.",
+      "woerter": 13
+    },
+    {
+      "id": "ausgleichsmasse",
+      "begriffe": [
+        "Ausgleichsmasse"
+      ],
+      "erklaerung": "Eine flüssige Masse, die Unebenheiten im Boden glättet, bevor wir fliesen.",
+      "woerter": 11
+    },
+    {
+      "id": "entkopplung",
+      "begriffe": [
+        "Entkopplung"
+      ],
+      "erklaerung": "Eine Matte unter den Fliesen, die kleine Risse im Untergrund abfängt.",
+      "woerter": 11
+    },
+    {
+      "id": "drainage",
+      "begriffe": [
+        "Drainage"
+      ],
+      "erklaerung": "Eine Schicht, durch die Wasser unter dem Belag abfließen kann.",
+      "woerter": 10
+    },
+    {
+      "id": "gefaelle",
+      "begriffe": [
+        "Gefälle"
+      ],
+      "erklaerung": "Der Boden neigt sich leicht, damit Wasser von selbst zum Ablauf fließt.",
+      "woerter": 12
+    },
+    {
+      "id": "feinsteinzeug",
+      "begriffe": [
+        "Feinsteinzeug"
+      ],
+      "erklaerung": "Sehr harte, dichte Fliesen, die kaum Wasser aufnehmen und lange halten.",
+      "woerter": 11
+    },
+    {
+      "id": "grossformat",
+      "begriffe": [
+        "Großformat"
+      ],
+      "erklaerung": "Große Fliesen, zum Beispiel 120 × 260 cm. Es gibt dann weniger Fugen.",
+      "woerter": 13
+    },
+    {
+      "id": "kuvertschnitt",
+      "begriffe": [
+        "Kuvertschnitt"
+      ],
+      "erklaerung": "Die Fliesen sind schräg zum Ablauf geschnitten, damit das Wasser gut abläuft.",
+      "woerter": 12
+    },
+    {
+      "id": "gehrung",
+      "begriffe": [
+        "Gehrung"
+      ],
+      "erklaerung": "Zwei Fliesenkanten sind schräg geschnitten und bilden an der Ecke eine saubere Kante.",
+      "woerter": 13
+    },
+    {
+      "id": "silikonfuge",
+      "begriffe": [
+        "Silikonfuge"
+      ],
+      "erklaerung": "Die weiche Fuge in Ecken und an Wanne oder Dusche.",
+      "woerter": 10
+    },
+    {
+      "id": "epoxidharz",
+      "begriffe": [
+        "Epoxidharz"
+      ],
+      "erklaerung": "Ein sehr fester Kunststoff für Fugen, die viel aushalten müssen.",
+      "woerter": 10
+    },
+    {
+      "id": "haftbruecke",
+      "begriffe": [
+        "Haftbrücke",
+        "Grundierung"
+      ],
+      "erklaerung": "Ein Anstrich auf dem Untergrund, damit Kleber oder Spachtel gut halten.",
+      "woerter": 11
+    },
+    {
+      "id": "dichtband",
+      "begriffe": [
+        "Dichtband",
+        "Dichtmanschette"
+      ],
+      "erklaerung": "Bänder und Stücke, die Ecken, Rohre und Abläufe in der Abdichtung dicht machen.",
+      "woerter": 13
+    },
+    {
+      "id": "duschrinne",
+      "begriffe": [
+        "Duschrinne"
+      ],
+      "erklaerung": "Ein schmaler, langer Ablauf im Boden der Dusche.",
+      "woerter": 8
+    },
+    {
+      "id": "punktablauf",
+      "begriffe": [
+        "Punktablauf"
+      ],
+      "erklaerung": "Ein kleiner, quadratischer Ablauf im Boden der Dusche.",
+      "woerter": 8
+    },
+    {
+      "id": "vorwand",
+      "begriffe": [
+        "Vorwand"
+      ],
+      "erklaerung": "Eine vorgesetzte Wand, in der Rohre und der Spülkasten verschwinden.",
+      "woerter": 10
+    },
+    {
+      "id": "trockenbau",
+      "begriffe": [
+        "Trockenbau"
+      ],
+      "erklaerung": "Wände aus Platten statt aus Stein, zum Beispiel für Vorwände und Nischen.",
+      "woerter": 12
+    },
+    {
+      "id": "impraegnierung",
+      "begriffe": [
+        "Imprägnierung"
+      ],
+      "erklaerung": "Ein Schutzmittel, das Naturstein vor Flecken und Wasser schützt.",
+      "woerter": 9
+    },
+    {
+      "id": "ausbluehung",
+      "begriffe": [
+        "Ausblühung"
+      ],
+      "erklaerung": "Weiße Flecken auf Platten oder Fugen, die durch Wasser im Untergrund entstehen.",
+      "woerter": 12
+    },
+    {
+      "id": "duennbett",
+      "begriffe": [
+        "Dünnbett",
+        "Mittelbett",
+        "Mörtelbett"
+      ],
+      "erklaerung": "Wie dick die Kleberschicht unter der Fliese ist: dünn, mittel oder dick.",
+      "woerter": 12
+    },
+    {
+      "id": "buttering",
+      "begriffe": [
+        "Buttering"
+      ],
+      "erklaerung": "Wir streichen Kleber zusätzlich auf die Rückseite der Fliese, damit sie voll aufliegt.",
+      "woerter": 13
+    },
+    {
+      "id": "passstueck",
+      "begriffe": [
+        "Passstück"
+      ],
+      "erklaerung": "Eine zugeschnittene Fliese am Rand einer Fläche.",
+      "woerter": 7
+    },
+    {
+      "id": "fugenachse",
+      "begriffe": [
+        "Fugenachse",
+        "Fugenraster"
+      ],
+      "erklaerung": "Die Linien, die die Fugen über die ganze Fläche bilden.",
+      "woerter": 10
+    },
+    {
+      "id": "ueberzaehne",
+      "begriffe": [
+        "Überzähne"
+      ],
+      "erklaerung": "Fliesenkanten, die höher stehen als die Nachbarfliese.",
+      "woerter": 7
+    },
+    {
+      "id": "blockstufe",
+      "begriffe": [
+        "Blockstufe"
+      ],
+      "erklaerung": "Eine Treppenstufe aus einem massiven Stück.",
+      "woerter": 6
+    },
+    {
+      "id": "rissverharzung",
+      "begriffe": [
+        "Rissverharzung"
+      ],
+      "erklaerung": "Risse im Estrich werden mit Harz gefüllt und dauerhaft verschlossen.",
+      "woerter": 10
+    },
+    {
+      "id": "randfuge",
+      "begriffe": [
+        "Randfuge"
+      ],
+      "erklaerung": "Ein schmaler Spalt am Rand, damit sich der Boden bewegen kann.",
+      "woerter": 11
+    },
+    {
+      "id": "sinterschicht",
+      "begriffe": [
+        "Sinterschicht"
+      ],
+      "erklaerung": "Eine dünne, feste Haut auf neuem Estrich, die wir vor dem Fliesen abschleifen.",
+      "woerter": 13
+    },
+    {
+      "id": "klopfprobe",
+      "begriffe": [
+        "Klopfprobe"
+      ],
+      "erklaerung": "Wir klopfen auf die Fliesen. Klingt es hohl, hält die Fliese nicht mehr.",
+      "woerter": 13
+    },
+    {
+      "id": "bodenrost",
+      "begriffe": [
+        "Bodenrost"
+      ],
+      "erklaerung": "Ein Gitter vor der Tür, unter dem Regenwasser abläuft.",
+      "woerter": 9
+    },
+    {
+      "id": "schadensanalyse",
+      "begriffe": [
+        "Schadensanalyse"
+      ],
+      "erklaerung": "Wir suchen vor Ort die Ursache eines Schadens, bevor wir etwas reparieren.",
+      "woerter": 12
+    }
+  ],
   "begriffe": [
-    "Verbundabdichtung", "AIV", "C2TE", "C2-TE", "S1", "Stelzlager", "Rutschhemmung", "R9", "R10", "R11", "Nivelliersystem", "Vakuumhebetechnik", "Vakuum-Hebetechnik",
-    "DIN 18534", "DIN 18157", "DIN 18040", "EN 16165", "Fachgewerke", "Estrich", "Belegreife", "Restfeuchte", "CM-Messung", "Ausgleichsmasse", "Entkopplung", "Drainage",
-    "Feinsteinzeug", "Kuvertschnitt", "Gehrung", "Silikonfuge", "Epoxidharz", "Haftbrücke", "Grundierung", "Dichtband", "Dichtmanschette", "Duschrinne", "Punktablauf",
-    "Vorwand", "Trockenbau", "Imprägnierung", "Ausblühung", "Dünnbett", "Mittelbett", "Mörtelbett", "Passstück", "Fugenachse", "Blockstufe", "Rissverharzung",
-    "Calciumsulfat", "Heizestrich", "Randfuge", "Sinterschicht", "Buttering", "Kleberklasse", "Walk-In", "Walk-in", "Großformat", "Fugenraster", "Überzähne", "Klopfprobe"
+    "AIV",
+    "Abdichtung",
+    "Ausblühung",
+    "Ausgleichsmasse",
+    "Belegreife",
+    "Blockstufe",
+    "Bodenrost",
+    "Buttering",
+    "C2-TE",
+    "C2TE",
+    "C2TE S1",
+    "CM-Messung",
+    "Calciumsulfat",
+    "Calciumsulfatestrich",
+    "DIN 18040",
+    "DIN 18157",
+    "DIN 18534",
+    "Dichtband",
+    "Dichtmanschette",
+    "Drainage",
+    "Duschrinne",
+    "Dünnbett",
+    "EN 16165",
+    "Entkopplung",
+    "Epoxidharz",
+    "Estrich",
+    "Fachgewerke",
+    "Feinsteinzeug",
+    "Fugenachse",
+    "Fugenraster",
+    "Gefälle",
+    "Gehrung",
+    "Großformat",
+    "Grundierung",
+    "Haftbrücke",
+    "Heizestrich",
+    "Imprägnierung",
+    "Kleberklasse",
+    "Klopfprobe",
+    "Kuvertschnitt",
+    "Mittelbett",
+    "Mörtelbett",
+    "Nivelliersystem",
+    "Passstück",
+    "Punktablauf",
+    "R10",
+    "R11",
+    "R9",
+    "Randfuge",
+    "Restfeuchte",
+    "Rissverharzung",
+    "Rutschhemmung",
+    "S1",
+    "Schadensanalyse",
+    "Silikonfuge",
+    "Sinterschicht",
+    "Stelzlager",
+    "Trockenbau",
+    "Untergrund",
+    "Vakuum-Hebetechnik",
+    "Vakuumhebetechnik",
+    "Verbundabdichtung",
+    "Vorwand",
+    "Walk-In",
+    "Walk-in",
+    "Walk-in-Dusche",
+    "barrierearm",
+    "barrierefrei",
+    "bodengleiche Dusche",
+    "Überzähne"
   ]
 }
