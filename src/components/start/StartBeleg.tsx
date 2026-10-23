@@ -18,11 +18,11 @@ import { Bewertungszeile } from './StartEinstieg';
 
 const FOTOS: { id: ArbeitId; unterschrift: string }[] = [
   { id: 'start-galerie-1', unterschrift: 'Dusche ohne Stufe mit Sitzbank und Mosaik' },
-  { id: 'start-galerie-2', unterschrift: 'Badewanne mit dunkler Mosaikverkleidung' },
-  { id: 'start-galerie-3', unterschrift: 'Balkon mit dunklen Fliesen, versetzt verlegt' },
+  { id: 'start-galerie-2', unterschrift: 'Badewanne mit dunklen Mosaikfliesen' },
+  { id: 'start-galerie-3', unterschrift: 'Balkon mit dunklen Fliesen, jede Reihe um ein Stück versetzt' },
   { id: 'start-galerie-4', unterschrift: 'Terrasse mit großen hellgrauen Platten' },
-  { id: 'start-galerie-5', unterschrift: 'Treppe vor dem Haus mit Fliesen in Terrakotta' },
-  { id: 'start-galerie-6', unterschrift: 'Balkon vor dem Fliesen: Dichtband an allen Rändern' },
+  { id: 'start-galerie-5', unterschrift: 'Außentreppe mit Fliesen in Terrakotta' },
+  { id: 'start-galerie-6', unterschrift: 'Balkonboden vor dem Verlegen: ein blaues Band dichtet die Ränder ab' },
 ];
 
 export function Arbeiten() {
@@ -82,7 +82,8 @@ export function Kundenstimmen() {
 }
 
 const GRUPPEN = gruppiereNachZone(mitEntfernungAbSitz(CITIES, CITY_HUB_DATA));
-const GRUPPE_NAME: Record<string, string> = { nah: 'Bis 10 km', mittel: 'Bis 25 km', weit: 'Bis 50 km' };
+// Gruppennamen ohne eigene Obergrenze für die letzte Zone (K-015 nennt das Einsatzgebiet, keine 50 km; Rückgabe E2-LEKT-404)
+const GRUPPE_NAME: Record<string, string> = { nah: 'Bis 10 km ab Aßlar', mittel: 'Bis 25 km ab Aßlar', weit: 'Mehr als 25 km ab Aßlar' };
 
 export function Einsatzorte() {
   return (
@@ -97,7 +98,7 @@ export function Einsatzorte() {
       <div className="grid gap-px border border-fuge bg-fuge md:grid-cols-3">
         {GRUPPEN.map((g) => (
           <div key={g.zone.id} className="bg-fliese p-6">
-            <h3 className="font-text text-fs-2 font-semibold text-tinte-2">{GRUPPE_NAME[g.zone.id]} ab Aßlar</h3>
+            <h3 className="font-text text-fs-2 font-semibold text-tinte-2">{GRUPPE_NAME[g.zone.id]}</h3>
             <ul className="mt-4 flex flex-col">
               {g.orte.map((o) => (
                 <li key={o.slug} className="flex items-baseline justify-between gap-3 border-b border-fuge last:border-b-0">

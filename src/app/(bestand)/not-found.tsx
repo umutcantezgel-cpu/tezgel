@@ -7,7 +7,7 @@ import { COMPANY_DATA } from '@/config/company';
 export const metadata: Metadata = {
   // Marke hängt die Vorlage an (Root-Layout bzw. global-not-found.tsx), daher hier nur der Seitenname
   title: 'Seite nicht gefunden (404)',
-  description: 'Diese Adresse gibt es bei Fliesenverlegung Tezgel nicht. Von hier kommen Sie zur Startseite, zum Termin bei Ihnen vor Ort oder direkt ans Telefon.',
+  description: 'Diese Seite gibt es bei Fliesenverlegung Tezgel nicht. Von hier kommen Sie zur Startseite, zum Termin bei Ihnen vor Ort oder direkt ans Telefon.',
   robots: {
     index: false,
     follow: true,
@@ -66,8 +66,8 @@ export default function NotFound() {
       titel="Seite nicht gefunden"
       vorspann={
         <p>
-          Hier liegt eine Fliese schief: Diese Adresse gibt es nicht, oder die Seite ist umgezogen. Einer dieser drei Wege
-          bringt Sie weiter.
+          Hier ist etwas verrutscht: Diese Seite gibt es nicht, oder sie ist umgezogen. Einer dieser drei Wege bringt Sie
+          weiter.
         </p>
       }
       aktionen={
@@ -75,7 +75,7 @@ export default function NotFound() {
           <Knopf href="/" variante="neben" iconLinks="haus">Zur Startseite</Knopf>
           <Hauptknopf breit />
           <Knopf href={`tel:${contact.phoneLink}`} variante="neben" iconLinks="telefon" aria-label={`Anrufen: ${contact.phone}`}>
-            <span className="font-mono">{contact.phone}</span>
+            Anrufen: <span className="font-mono">{contact.phone}</span>
           </Knopf>
         </>
       }
