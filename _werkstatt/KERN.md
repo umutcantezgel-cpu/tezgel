@@ -224,6 +224,7 @@ Maschinenfassung `src/config/glossar.ts` (Quelle) und `regeln/glossar.json` (Pr�
 | Klopfprobe | Wir klopfen auf die Fliesen. Klingt es hohl, hält die Fliese nicht mehr. |
 | Bodenrost | Ein Gitter vor der Tür, unter dem Regenwasser abläuft. |
 | Schadensanalyse | Wir suchen vor Ort die Ursache eines Schadens, bevor wir etwas reparieren. |
+| Wassereinwirkungsklasse (W0-I bis W3-I) | Gruppe einer Fläche danach, wie viel Wasser auf sie trifft, von wenig bis sehr viel. |
 
 ## K-012 Bildregeln
 - Nur echte Bilder aus `_eingang/entpackt/` (84 Originale) und dem Bestand; nie die 11 Generatorbilder aus `public/images/bad/` (E-013), nie Stock oder generierte Bilder.

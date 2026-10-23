@@ -377,6 +377,19 @@
       ],
       "erklaerung": "Wir suchen vor Ort die Ursache eines Schadens, bevor wir etwas reparieren.",
       "woerter": 12
+    },
+    {
+      "id": "wassereinwirkungsklasse",
+      "begriffe": [
+        "Wassereinwirkungsklasse",
+        "Wassereinwirkungsklassen",
+        "W0-I",
+        "W1-I",
+        "W2-I",
+        "W3-I"
+      ],
+      "erklaerung": "Gruppe einer Fläche danach, wie viel Wasser auf sie trifft, von wenig bis sehr viel.",
+      "woerter": 15
     }
   ],
   "begriffe": [
@@ -449,6 +462,8 @@
     "barrierearm",
     "barrierefrei",
     "bodengleiche Dusche",
-    "Überzähne"
+    "Überzähne",
+    "Wassereinwirkungsklasse",
+    "Wassereinwirkungsklassen"
   ]
 }
