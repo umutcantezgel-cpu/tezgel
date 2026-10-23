@@ -1,0 +1,128 @@
+{
+ "kriterium": "Z-06, Auftrag Abschnitt 9: Formflächen bei doppelter Größe ≥ 98 % deckungsgleich mit der größten Bilddatei (public/images/logo/tezgel-logo.png, 640 × 200)",
+ "anlauf_1_schriftkonturen": {
+  "werkzeug": "_werkstatt/werkzeuge/logo/wortmarke.mjs",
+  "methode": "Glyphenpfade (opentype.js), Feinsuche über Lage, Größe und Laufweite, harte IoU bei doppelter Größe",
+  "ergebnisse": [
+   {
+    "schrift": "Inter-ExtraBold.otf",
+    "zeile": "Fliesenverlegung",
+    "iou": 0.8172,
+    "lage": {
+     "dx": 3.5,
+     "dy": 0,
+     "s": 0.97,
+     "dl": -0.8
+    }
+   },
+   {
+    "schrift": "Inter-ExtraBold.otf",
+    "zeile": "Tezgel",
+    "iou": 0.7087,
+    "lage": {
+     "dx": -5,
+     "dy": -1,
+     "s": 0.93,
+     "dl": -0.8
+    }
+   },
+   {
+    "schrift": "LiberationSans-Bold.ttf",
+    "zeile": "Fliesenverlegung",
+    "iou": 0.8656,
+    "lage": {
+     "dx": 0,
+     "dy": 0,
+     "s": 1,
+     "dl": 0
+    }
+   },
+   {
+    "schrift": "LiberationSans-Bold.ttf",
+    "zeile": "Tezgel",
+    "iou": 0.7944,
+    "lage": {
+     "dx": -3,
+     "dy": 0.5,
+     "s": 1.02,
+     "dl": -1
+    }
+   },
+   {
+    "schrift": "FreeSansBold.ttf",
+    "zeile": "Fliesenverlegung",
+    "iou": 0.8835,
+    "lage": {
+     "dx": -1,
+     "dy": 0,
+     "s": 0.98,
+     "dl": 0.2
+    }
+   },
+   {
+    "schrift": "FreeSansBold.ttf",
+    "zeile": "Tezgel",
+    "iou": 0.8274,
+    "lage": {
+     "dx": -5,
+     "dy": 0,
+     "s": 0.99,
+     "dl": -0.8
+    }
+   },
+   {
+    "schrift": "plus-jakarta-sans-latin-800-normal.woff",
+    "zeile": "Fliesenverlegung",
+    "iou": 0.7998,
+    "lage": {
+     "dx": 3,
+     "dy": 0.5,
+     "s": 0.97,
+     "dl": 0.2
+    }
+   },
+   {
+    "schrift": "plus-jakarta-sans-latin-800-normal.woff",
+    "zeile": "Tezgel",
+    "iou": 0.8792,
+    "lage": {
+     "dx": 3,
+     "dy": 0.5,
+     "s": 0.98,
+     "dl": -0.8
+    }
+   }
+  ],
+  "bestwert": 0.8835
+ },
+ "anlauf_2_nachzeichnung": {
+  "werkzeug": "_werkstatt/werkzeuge/logo/nachzeichnen.mjs --teil wortmarke --auf 4 --alpha 0.7 --opt 0.2",
+  "methode": "Farbebenen im vierfach vergrößerten Bild, potrace, harte und weiche IoU bei doppelter Größe",
+  "ergebnis": {
+   "name": "wortmarke",
+   "faktor": 2,
+   "auf": 4,
+   "gewichtet": 0.9639,
+   "gewichtetWeich": 0.929,
+   "ebenen": [
+    {
+     "ebene": "fliesenverlegung",
+     "farbe": "#0F172A",
+     "iou": 0.9599,
+     "weich": 0.9253,
+     "flaeche": 29001,
+     "teilpfade": 23
+    },
+    {
+     "ebene": "tezgel",
+     "farbe": "#DC2626",
+     "iou": 0.9711,
+     "weich": 0.9356,
+     "flaeche": 16147,
+     "teilpfade": 9
+    }
+   ]
+  }
+ },
+ "urteil": "unter 98 %: Ersatz-Intro „Der erste Boden“ nach Abschnitt 9 (E-018), Bitte um Vektordatei M-09"
+}
