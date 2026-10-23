@@ -70,3 +70,15 @@ Webfassungen als JPEG unter `public/images/arbeiten/<raum>/<sprechender-name>.jp
 
 ## E-015 · Ergebnis des Baumtests (24.10.2026, E1)
 Fünf Haiku-Personen (P1 bis P5) haben fünf Aufgaben in zwei neutral benannten Menüs gelöst (X = alter Stand, Y = Navigation aus E-008; Reihenfolge gewechselt). Ergebnis (`berichte/E1-PROBE-IA-baumtest.json`): Y von 5 von 5 Personen vorgezogen; in Y 25 von 25 Aufgaben mit Sicherheit 3 bis 5 gefunden, in X eine Aufgabe aufgegeben und 16 unklare Wörter (Aufmaß, Fachgewerke, Referenzen, Einsatzgebiet, Vor-Ort-Beratung, Musterbäder, Badsanierung, Untergrund, Abdichtung …). Einzige Verwechslung in Y: P5 suchte Fotos fertiger Arbeiten unter „Beispielbäder“. Folge: Der Punkt heißt „Ideen nach Badgröße“. Die Navigation aus E-008 gilt damit als bestätigt (KERN v3.0, K-009 ohne Annahme). „Ablauf und Kosten“ führt auf `/preise`; die Seite muss beides im ersten Bildschirm beantworten.
+
+## E-016 · Abnahme der Werkzeug-Welle E0 (23.10.2026, E0)
+Pakete E0-PRUEF-01, -02a bis -02d und die unabhängige Abnahme E0-PRUEF-02-PA sind abgenommen (Rückgaben in `pakete/*.rueckgabe.md`; Haiku legt keine Berichtsdateien an, der Orchestrator sichert sie aus dem Workflow-Protokoll). Antworten auf die offenen Fragen:
+- Chrome: `lib.mjs` ermittelt das neueste `/opt/pw-browsers/chromium-*/chrome-linux*/chrome` und setzt `CHROME_PATH`, falls die Variable fehlt; alle Browser-Werkzeuge, `playwright.config.mjs` und Lighthouse nutzen ihn. Deshalb liefen in der Abnahme `erstesbild` und `lesbarkeit` auch ohne Variable.
+- Branch: `claude/tezgel-website-redesign-iqxt8z` (E-001); der CLAUDE.md-Block nennt ihn.
+- Belege von Lighthouse ohne `RELAUNCH_BELEGE` nach `_werkstatt/belege`: bleibt so; Prüfer setzen die Variable laut Briefing.
+- Logik-Tests der Werkzeuge: `node --test tests-logik/*.test.mjs` (Glob ausgeschrieben; Node 22 nimmt keinen Ordner).
+- Lesbarkeit: Ordinalzahlen trennen keinen Satz; Glossar-Endungen e, en, er, em, es, n, s gelten als derselbe Begriff; `details` werden zur Messung geöffnet; Zeichenregeln gelten auch für Alt-Texte und Bedienbeschriftungen (Auftrag Abschnitt 7); Status ungleich 200 bleibt ROT; Messung auf d1440 genügt (Text gleich in allen Größen). Floskeln mit Wortformen in `regeln/floskeln.json`.
+- Adressen: Die 170 Adressen des Auftrags sind 163 aus der Sitemap, 5 nur verlinkte und 2 Weiterleitungsquellen. Die 32 Adressen mit 410 (`src/lib/wege.ts`, davon 7 Platzhalterbeispiele) sind bewusst entfernte Seiten des Vorlaufs; sie bleiben 410 und zählen nicht zu den 170 (Z-14). Absolute Links auf tezgel.de bleiben ungeprüft, im Bestand nur zwei in Rechtstexten.
+- Probelauf: P4 wechselt auf m390, mobile Personen auf d1440, P2 auf t768 zählt zur Touch-Gruppe. Die Absendesperre ist auf der Testseite belegt; ein Lauf mit Absenden auf 4310 findet nicht statt (G5). Eingabefelder stehen in der Bedienliste, sobald sie im Bild sind (Gegenprobe des Orchestrators auf `/` mit 200 % Schrift: die alte Startseite ist dabei 39.737 px lang).
+- Rauchlauf 02d: Auf `/kontakt` liegt im ersten Bildschirm kein Feld für Name oder Telefon; das ist ein Befund des alten Stands, kein Werkzeugfehler.
+

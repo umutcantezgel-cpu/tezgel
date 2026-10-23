@@ -1,8 +1,8 @@
-// Prüfstufe A · Bildsatz: festes Aufnahmeprotokoll für Seiten × GERAETE (m390, t768, d1440), für vorher und nachher gleich.
+// Prüfstufe A · Bildsatz: festes Aufnahmeprotokoll für Seiten × Geräte (Standard: alle 10 GERAETE_ALLE, --geraete alle|liste), für vorher und nachher gleich.
 // Protokoll: Einwilligung abgelehnt, reducedMotion reduce (mit --ersatzpfad: no-preference), DPR 1, Dev-Overlay ausgeblendet;
 // erst durchscrollen und bereit, dann Ausschnitte an den festen Positionen k × Viewporthöhe, k = 0 … min(12, ceil(Seitenhöhe/vh)) − 1, JPEG q70.
 // Je Seite × Ansicht: Status, Konsolenfehler, ueberlauf() und ueberlappung().
-// Nutzung: node bildsatz.mjs --satz NAME (--hauptansichten | --seiten /a,/b) [--base URL] [--ziel DIR] [--worker 2] [--ersatzpfad (normale Bewegung, Animationen abwarten)]
+// Nutzung: node bildsatz.mjs --satz NAME (--hauptansichten | --seiten /a,/b) [--geraete alle|liste] [--base URL] [--ziel DIR] [--worker 2] [--ersatzpfad (normale Bewegung, Animationen abwarten)]
 // --ersatzpfad: Darstellung ohne Scroll-Animationen und View Transitions (Safari < 26, Firefox) per Emulation, mit normaler
 //   Bewegung (reducedMotion no-preference). Nach dem Durchscrollen wartet der Lauf, bis keine Animation mehr läuft (höchstens 5 s);
 //   die Restzahl laufender Animationen steht je Ansicht in bildsatz.json (ergebnisse[].animationen) und in der Zusammenfassung.
@@ -13,14 +13,14 @@
 import { chromium } from '@playwright/test';
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, assertLocal, ANSICHTEN, GERAETE, installSperre, installErsatzpfad, setzeEinwilligung, durchscrollen, bereit, slug, ensureDir, ueberlauf, versteckeDevOverlay, RELAUNCH } from './lib.mjs';
+import { BASE, assertLocal, ANSICHTEN, GERAETE_ALLE, geraeteWahl, installSperre, installErsatzpfad, setzeEinwilligung, durchscrollen, bereit, slug, ensureDir, ueberlauf, versteckeDevOverlay, RELAUNCH } from './lib.mjs';
 import { ueberlappungMitZahl } from './ueberlappung.mjs';
 
 const arg = (k, d) => { const i = process.argv.indexOf(`--${k}`); return i > -1 ? process.argv[i + 1] : d; };
 const flag = (k) => process.argv.includes(`--${k}`);
 const MAX_AUSSCHNITTE = 12;
 const EINWILLIGUNG = 'abgelehnt';
-const NUTZUNG = 'Nutzung: node bildsatz.mjs --satz NAME (--hauptansichten | --seiten /a,/b) [--base URL] [--ziel DIR] [--worker 2] [--ersatzpfad (normale Bewegung, Animationen abwarten)]';
+const NUTZUNG = 'Nutzung: node bildsatz.mjs --satz NAME (--hauptansichten | --seiten /a,/b) [--geraete alle|liste] [--base URL] [--ziel DIR] [--worker 2] [--ersatzpfad (normale Bewegung, Animationen abwarten)]';
 const ZEITLIMIT_ANIMATIONEN_MS = 5000; // --ersatzpfad: höchstens so lange auf das Ende laufender Animationen warten
 
 const base = arg('base', BASE);
@@ -35,6 +35,8 @@ for (const s of seiten) if (!s.startsWith('/')) { console.error(`Seite muss mit 
 const ziel = ensureDir(arg('ziel') ? path.resolve(arg('ziel')) : path.join(RELAUNCH, 'cache', 'bildsatz', satz));
 const worker = Number(arg('worker', '2'));
 const ERSATZPFAD = flag('ersatzpfad'); // ohne animation-timeline/View Transitions (lib.mjs installErsatzpfad)
+const geraete = geraeteWahl(arg('geraete', 'alle'));
+if (!geraete) { console.error(`${NUTZUNG}\n--geraete: alle oder Kommaliste aus ${GERAETE_ALLE.join(', ')}`); process.exit(2); }
 
 const rahmenAbwarten = (page) => page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(() => r(null)))));
 
@@ -97,9 +99,10 @@ async function bearbeite(browser, a, s) {
   return r;
 }
 
-const browser = await chromium.launch({ args: ['--font-render-hinting=none'] });
+// CHROME_PATH (EINRICHTUNG.md, Host mit chromium-1243 statt 1194); ohne Variable wie bisher.
+const browser = await chromium.launch({ args: ['--font-render-hinting=none'], executablePath: process.env.CHROME_PATH || undefined });
 const auftraege = [];
-for (const a of GERAETE) for (const s of seiten) auftraege.push({ a, s });
+for (const a of geraete) for (const s of seiten) auftraege.push({ a, s });
 const ergebnisse = [];
 let naechster = 0;
 await Promise.all(Array.from({ length: worker }, async () => {
@@ -140,7 +143,7 @@ const bericht = {
   satz,
   base,
   ziel,
-  protokoll: { einwilligung: EINWILLIGUNG, bewegung: ERSATZPFAD ? 'no-preference' : 'reduce', ersatzpfad: ERSATZPFAD, animationen_zeitlimit_ms: ERSATZPFAD ? ZEITLIMIT_ANIMATIONEN_MS : null, dpr: 1, ansichten: GERAETE, max_ausschnitte: MAX_AUSSCHNITTE, qualitaet: 70 },
+  protokoll: { einwilligung: EINWILLIGUNG, bewegung: ERSATZPFAD ? 'no-preference' : 'reduce', ersatzpfad: ERSATZPFAD, animationen_zeitlimit_ms: ERSATZPFAD ? ZEITLIMIT_ANIMATIONEN_MS : null, dpr: 1, ansichten: geraete, max_ausschnitte: MAX_AUSSCHNITTE, qualitaet: 70 },
   seiten,
   zusammenfassung,
   ergebnisse,

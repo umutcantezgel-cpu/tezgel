@@ -203,7 +203,7 @@ async function einSeitenlauf(browser, base, seite, ansicht) {
 }
 
 async function seitenmodus(base, seiten) {
-  const browser = await chromium.launch();
+  const browser = await chromium.launch({ executablePath: process.env.CHROME_PATH || undefined });
   const jobs = seiten.flatMap((s) => ANSICHTEN_SEITE.map((a) => [s, a]));
   const ergebnisse = [];
   let i = 0;

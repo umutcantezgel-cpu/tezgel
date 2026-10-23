@@ -1,9 +1,60 @@
 {
-  "stand": "E0 Startliste (Auftrag K-010-F), Erweiterung in E1 über KERN K-010-F",
-  "woerter": ["nahtlos", "ganzheitlich", "maßgeschneidert", "maßgeschneiderte", "maßgeschneiderten", "Entdecken Sie", "Ihr Partner für", "höchste Qualität", "Perfektion", "von A bis Z", "rundum sorglos", "erstklassig", "innovativ", "Traumbad"],
+  "stand": "E1 (23.10.2026): Startliste K-010-F plus Wortformen (Rückfrage E0-PRUEF-02b, Frage 2)",
+  "woerter": [
+    "nahtlos",
+    "ganzheitlich",
+    "maßgeschneidert",
+    "maßgeschneiderte",
+    "maßgeschneiderten",
+    "Entdecken Sie",
+    "Ihr Partner für",
+    "höchste Qualität",
+    "Perfektion",
+    "von A bis Z",
+    "rundum sorglos",
+    "erstklassig",
+    "innovativ",
+    "Traumbad",
+    "nahtlose",
+    "nahtlosen",
+    "nahtloser",
+    "nahtloses",
+    "ganzheitliche",
+    "ganzheitlichen",
+    "ganzheitlicher",
+    "ganzheitliches",
+    "maßgeschneiderter",
+    "maßgeschneidertes",
+    "erstklassige",
+    "erstklassigen",
+    "erstklassiger",
+    "erstklassiges",
+    "innovative",
+    "innovativen",
+    "innovativer",
+    "innovatives",
+    "Traumbäder",
+    "Traumbades",
+    "höchster Qualität",
+    "perfekt",
+    "perfekte",
+    "perfekten",
+    "Rundum-sorglos",
+    "Rundum-sorglos-Paket"
+  ],
   "muster": [
-    { "name": "nicht nur … sondern auch", "regex": "nicht nur\\b[^.!?]{0,80}\\bsondern auch" },
-    { "name": "Stakkato aus kurzen Ein-Wort-Sätzen", "regex": "(?:^|[.!?]\\s)([A-ZÄÖÜ][a-zäöüß]+)\\.\\s([A-ZÄÖÜ][a-zäöüß]+)\\.\\s([A-ZÄÖÜ][a-zäöüß]+)\\." },
-    { "name": "Überschrift nach dem Muster „Begriff: Erklärung“", "nur_ueberschriften": true, "regex": "^[^:]{2,40}:\\s\\S" }
+    {
+      "name": "nicht nur … sondern auch",
+      "regex": "nicht nur\\b[^.!?]{0,80}\\bsondern auch"
+    },
+    {
+      "name": "Stakkato aus kurzen Ein-Wort-Sätzen",
+      "regex": "(?:^|[.!?]\\s)([A-ZÄÖÜ][a-zäöüß]+)\\.\\s([A-ZÄÖÜ][a-zäöüß]+)\\.\\s([A-ZÄÖÜ][a-zäöüß]+)\\."
+    },
+    {
+      "name": "Überschrift nach dem Muster „Begriff: Erklärung“",
+      "nur_ueberschriften": true,
+      "regex": "^[^:]{2,40}:\\s\\S"
+    }
   ]
 }

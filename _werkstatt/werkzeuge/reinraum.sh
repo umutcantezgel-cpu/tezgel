@@ -5,7 +5,7 @@ set -uo pipefail
 REPO="$(git -C "$(dirname "$0")" rev-parse --show-toplevel)"
 REF="${1:-HEAD}"
 SHA="$(git -C "$REPO" rev-parse --short "$REF")"
-SCRATCH="${RELAUNCH_SCRATCH:-/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad}"
+source "$(dirname "$0")/scratch.sh" || exit 1
 DIR="${REINRAUM_DIR:-$SCRATCH/reinraum-$SHA}"
 LOG="$(realpath -m "${2:-$REPO/_werkstatt/cache/reinraum-$SHA}")"
 mkdir -p "$LOG"

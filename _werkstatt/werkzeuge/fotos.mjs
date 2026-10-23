@@ -29,7 +29,7 @@ const belegSeiten = new Set([...G.hauptseiten,
   '/referenzen/badsanierung-grossformat', '/referenzen/balkon-stelzlager']);
 const belegDir = path.join(RELAUNCH, 'belege', satz, 'fotos');
 
-const browser = await chromium.launch({ args: ['--font-render-hinting=none'] });
+const browser = await chromium.launch({ args: ['--font-render-hinting=none'], executablePath: process.env.CHROME_PATH || undefined });
 const ergebnisse = [];
 const auftraege = [];
 for (const s of seiten) for (const a of ansichten) auftraege.push({ s, a });

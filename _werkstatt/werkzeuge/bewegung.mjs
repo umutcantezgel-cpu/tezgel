@@ -1051,7 +1051,7 @@ export async function laufe({ modus, seite = '/', base = BASE, ansicht = 'm390',
   if (!(Number.isFinite(zeitlupe) && zeitlupe > 0 && zeitlupe <= 1)) throw new Error('--zeitlupe zwischen 0 und 1');
   const verzeichnis = ensureDir(ziel ? path.resolve(ziel) : path.join(RELAUNCH, 'cache', 'bewegung', modus, slug(seite)));
   const basis = { seite, base, ansicht, zeitpunkt: new Date().toISOString(), vorbereitung };
-  const browser = await chromium.launch();
+  const browser = await chromium.launch({ executablePath: process.env.CHROME_PATH || undefined });
   let ergebnis;
   try {
     if (modus === 'einzelbilder') ergebnis = await einzelbilder({ browser, ...basis, kennung, verzeichnis, ganzeAnsicht: ausschnitt === 'ansicht', anker, cpu, zeitlupe });

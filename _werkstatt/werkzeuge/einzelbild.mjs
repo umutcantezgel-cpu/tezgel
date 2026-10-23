@@ -1,6 +1,6 @@
 // Prüfstufe A · Einzelbild: je Ansicht ein JPEG einer Seite (q70, DPR 1), dazu einzelbild.json mit HTTP-Status,
 // Konsolenfehlern, ueberlauf() und ueberlappung() je Ansicht.
-// Nutzung: node einzelbild.mjs [--base URL] --seite /kontakt [--ansichten m390,d1440] [--ziel DIR]
+// Nutzung: node einzelbild.mjs [--base URL] --seite /kontakt [--ansichten m390,d1440 | --geraete alle|liste] [--ziel DIR]
 //          [--scroll 0|<px>|#anker] [--voll] [--einwilligung abgelehnt|erstbesuch|alle]
 //          [--bewegung reduce|no-preference] [--warte ms]
 // Standard: --base aus lib.mjs (BASE, 4310), --ansichten m390,t768,d1440, --scroll 0, Ziel
@@ -11,7 +11,7 @@
 import { chromium } from '@playwright/test';
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, assertLocal, ANSICHTEN, GERAETE, installSperre, setzeEinwilligung, durchscrollen, bereit, slug, ensureDir, ueberlauf, versteckeDevOverlay, RELAUNCH } from './lib.mjs';
+import { BASE, assertLocal, ANSICHTEN, GERAETE, geraeteWahl, installSperre, setzeEinwilligung, durchscrollen, bereit, slug, ensureDir, ueberlauf, versteckeDevOverlay, RELAUNCH } from './lib.mjs';
 import { ueberlappungMitZahl } from './ueberlappung.mjs';
 
 const arg = (k, d) => { const i = process.argv.indexOf(`--${k}`); return i > -1 ? process.argv[i + 1] : d; };
@@ -21,7 +21,8 @@ const base = arg('base', BASE);
 assertLocal(base);
 const seite = arg('seite', '/');
 if (!seite.startsWith('/')) { console.error('--seite muss mit / beginnen'); process.exit(2); }
-const ansichten = (arg('ansichten') || GERAETE.join(',')).split(',');
+const ansichten = arg('geraete') ? geraeteWahl(arg('geraete')) : (arg('ansichten') || GERAETE.join(',')).split(',');
+if (!ansichten) { console.error('--geraete: alle oder Kommaliste aus den Gerätegrößen in ANSICHTEN'); process.exit(2); }
 for (const a of ansichten) if (!ANSICHTEN[a]) { console.error(`unbekannte Ansicht: ${a}`); process.exit(2); }
 const scroll = arg('scroll', '0');
 if (scroll !== '0' && !scroll.startsWith('#') && !Number.isFinite(Number(scroll))) { console.error('--scroll: 0, <px> oder #anker'); process.exit(2); }
@@ -48,7 +49,8 @@ async function setzeScroll(page) {
   return null;
 }
 
-const browser = await chromium.launch({ args: ['--font-render-hinting=none'] });
+// CHROME_PATH (EINRICHTUNG.md, Host mit chromium-1243 statt 1194); ohne Variable wie bisher.
+const browser = await chromium.launch({ args: ['--font-render-hinting=none'], executablePath: process.env.CHROME_PATH || undefined });
 const ergebnisse = [];
 for (const a of ansichten) {
   const v = ANSICHTEN[a];

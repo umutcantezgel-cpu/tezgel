@@ -19,7 +19,7 @@ const HAUPT = JSON.parse(fs.readFileSync(path.join(RELAUNCH, 'HAUPTANSICHTEN.jso
 const seiten = hauptansichten ? HAUPT : (arg('seiten') ? arg('seiten').split(',') : G.seiten);
 const ansichten = (arg('ansichten') || Object.keys(ANSICHTEN).join(',')).split(',');
 const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
-const browser = await chromium.launch();
+const browser = await chromium.launch({ executablePath: process.env.CHROME_PATH || undefined });
 const ergebnisse = [];
 
 async function pruefe(s, a, zustand = 'normal') {

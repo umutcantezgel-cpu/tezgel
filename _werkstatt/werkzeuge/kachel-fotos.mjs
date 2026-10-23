@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { RELAUNCH, ANSICHTEN, ensureDir } from './lib.mjs';
 const kacheln = process.argv.slice(2);
-const browser = await chromium.launch();
+const browser = await chromium.launch({ executablePath: process.env.CHROME_PATH || undefined });
 for (const k of kacheln) {
   for (const [a, v] of Object.entries(ANSICHTEN)) {
     const context = await browser.newContext({ viewport: { width: v.width, height: v.height }, deviceScaleFactor: 1, isMobile: v.isMobile, hasTouch: v.hasTouch, locale: 'de-DE' });

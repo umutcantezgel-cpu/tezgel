@@ -20,7 +20,7 @@ for (const a of ansichten) if (!ANSICHTEN[a]) { console.error(`unbekannte Ansich
 if (!arg('ziel')) { console.error('Nutzung: node abschnitte.mjs --base URL --seite / [--ansichten m390,t768,d1440] --ziel DIR'); process.exit(2); }
 const ziel = ensureDir(path.resolve(arg('ziel')));
 
-const browser = await chromium.launch({ args: ['--font-render-hinting=none'] });
+const browser = await chromium.launch({ args: ['--font-render-hinting=none'], executablePath: process.env.CHROME_PATH || undefined });
 const bericht = { seite, base, ergebnisse: [] };
 for (const a of ansichten) {
   const v = ANSICHTEN[a];

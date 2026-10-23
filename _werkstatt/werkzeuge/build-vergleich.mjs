@@ -3,9 +3,8 @@
 // Nutzung: node build-vergleich.mjs <shaVorher> <shaNachher>
 import fs from 'node:fs';
 import path from 'node:path';
-import { RELAUNCH, ensureDir } from './lib.mjs';
+import { RELAUNCH, ensureDir, SCRATCH } from './lib.mjs';
 
-const SCRATCH = process.env.RELAUNCH_SCRATCH || '/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad';
 const [, , A, B] = process.argv;
 // --streng (P2-GEG-03 H-1): Skripte und Chunk-Namen bleiben im Vergleich (Turbopack benennt Chunks nach Inhalt),
 // nur Build-ID-Pfade und Build-Kennungen werden normalisiert; CSS wird als volle Regelmenge verglichen.

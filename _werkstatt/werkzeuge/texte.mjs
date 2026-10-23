@@ -30,7 +30,7 @@ const schluessel = (s, a) => (a === 'd1440' ? s : `${s}@${a}`);
 // Dateien: d1440 immer als <slug>.json (bisherige Datei); bei mehreren Ansichten zusätzlich <slug>@d1440.json; andere Ansichten als <slug>@<ansicht>.json.
 const dateien = (s, a) => [...(a === 'd1440' ? [`${slug(s)}.json`] : []), ...(a !== 'd1440' || ansichten.length > 1 ? [`${slug(s)}@${a}.json`] : [])];
 
-const browser = await chromium.launch();
+const browser = await chromium.launch({ executablePath: process.env.CHROME_PATH || undefined });
 const index = {};
 const ergebnisse = [];
 const aufgaben = seiten.flatMap((s) => ansichten.map((a) => [s, a]));

@@ -1,7 +1,364 @@
-# PLAN · Fassung 0 (im Chat freigegeben am 23.10.2026)
+# PLAN · Lauf „Verständlich, echt, ausgezeichnet“ · Fassung 1
 
-> Wörtliche Kopie des freigegebenen Plans. E1 erweitert ihn zu PLAN.md Fassung 1 (alle Pakete mit Kennung, Rolle, Modell, Schreibrechten, Abhängigkeit, Kriterium).
+Stand 23.10.2026, E1. Erweitert Fassung 0 (freigegebener Plan, unten im Anhang wörtlich). Gegen KERN v3.0. Jedes Paket: Kennung, Gegenstand, Rolle, Modell, Stufe, Schreibrechte, Abhängigkeit, Kriterium, Welle, Status (mit Commit, sobald abgenommen). Briefings entstehen je Welle in `_werkstatt/pakete/<Kennung>.md` nach dem 11-teiligen Paket-Bauplan.
 
+## Mengengerüst
+- Seiten nach Art (170 Adressen): Erzählseiten 24 Dateien · Wissensseiten 33 Dateien plus 13 Artikel und 12 Musterbäder · Ortsseiten 1 Vorlage (13 Orte) und 1 Vorlage (52 Leistung × Ort) und `/standorte` · Arbeitsseiten 11 · Rechtstexte 6 (nur Gestaltung) · 404.
+- Texte: 11 Hauptansichten und 53 übrige Seitendateien als Texter- und Lektorpakete, 13 Artikel, Datentexte für 13 Orte, 4 Leistungen, 52 Leistung × Ort, 12 Musterbäder; 4 Referenztexte (erledigt).
+- Bilder: 84 Originale, rund 60 Webfassungen nach `bildplaetze.md`, OG-Bild; Fliesenkompositionen für Plätze ohne Foto.
+- Komponenten: 6 Bausteine (E2-ORCH-02), 4 Vorlagen (E3-ORCH-01), Kopf, Fuß, Menü, untere Leiste, 404, B-01, B-02, 9 große Momente.
+- Bewegungen: B-01, B-02, `startbild` und 9 große Momente; 7 Einträge aus v2 entfallen (E-009).
+- Weiterleitungen: neu nur aus E5-BAU-01 (Referenzseiten ohne passende Fotos); keine Adresse entfällt.
+
+## Etappen, Wellen, kritischer Pfad
+- E0 (Tag 1): Werkzeuge → Ausgangswerte Stufe B und Probeläufe → LAGEBILD.
+- E1 (Tag 1 bis 2): KERN v3 (erledigt), Baumtest (erledigt), PLAN und ABNAHME (dieses Dokument), Planprüfung.
+- E2 (Tag 2 bis 4) Referenz: W1 Designsystem, Bausteine, Bewertungen, Bildwerkzeug, Logo-Nachzeichnung, LCP-Ursache · W2 Kopf und Navigation, B-01 mit Tests · W3 B-02, Startseite, 404 · Tor (Stufe B, Probeläufe P1 und P5, Sichtabnahme ≥ 8, höchstens 2 Anläufe).
+- E3 (Tag 4 bis 6): W1 Vorlagen, große Momente, Texte der Hauptansichten · W2 Lektorat, Datentexte · W3 Seitenbau · Tor.
+- E4 (Tag 6 bis 9): drei Wellen zu je etwa 18 Seiten im Fluss Text → Lektorat → Bau (je Seite als Kette ohne Sperre zwischen den Seiten), Datenvorlagen, 13 Artikel, Rechtstexte · Tor.
+- E5 (Tag 8 bis 10, teils parallel zu E4): restliche Bilder, Generatorbilder raus, Referenzseiten, Weiterleitungen und Sitemap, Abbau entfallender Bewegung · Tor.
+- Kür (nach Wirkung), dann Abschluss.
+- **Kritischer Pfad:** E0-PRUEF-03 → E2-PRUEF-00/E2-ORCH-00 (LCP) → E2-ORCH-04 (B-01) → E2-ORCH-05 (B-02) → E2-ORCH-06 (Startseite) → E2-Tor → E3-ORCH-01 (Vorlagen) → E3-BAU → E4 → AB.
+
+## Modellanteil und Kapazität
+- Pakete gesamt: 299 (davon E0 und E1 14 Zeilen, E2 18, E3 48, E4 202, E5 6, Abschluss 3, Kür 8).
+- Haiku 276, Opus 23 (≈ 92 % Haiku).
+- Kapazität: Tage = Pakete ÷ (HAIKU-PLÄTZE × Wellen pro Tag) × 1,2 = 299 ÷ (5 × 10) × 1,2 ≈ 7.2 Tage. Engpass ist der Container (4 Kerne, Workflows mit höchstens 2 gleichzeitigen Agenten, E-005); rechenleichte Text- und Lektorpakete laufen in zwei Workflows parallel.
+
+## Pflicht
+Alle Pakete unten außer `KUER-*` sind Pflicht, nach Wirkung sortiert innerhalb jeder Etappe (Rahmen und Startseite vor Hauptansichten vor übrigen Seiten).
+
+### E0 und E1
+| Kennung | Gegenstand | Rolle | Modell | Status |
+|---|---|---|---|---|
+| E0-ORCH-01 | Werkstatt einrichten | Orchestrator | Opus | erledigt df3c241 |
+| E0-KUND-01…09 | Erkundung | Kundschafter | Haiku | erledigt |
+| E0-PRUEF-BILD-01 | Bildtechnik | Prüfer | Haiku | erledigt |
+| E0-BILD-01…05 | Bildsichtung | Bildsichter | Haiku | erledigt |
+| E0-GUT-01/02 | Technikgutachten B-01, B-02 | Gutachter | Opus | erledigt |
+| E0-PRUEF-01 | Einrichtung | Prüfer | Haiku | erledigt (Rückgabe im Journal) |
+| E0-PRUEF-02a…d, -02-PA | Werkzeuge | Prüfer | Haiku | läuft |
+| E0-PRUEF-03 | Ausgangswerte Stufe B | Prüfer | Haiku | offen |
+| E0-PROBE-01…10 | Probeläufe alter Stand | Probeläufer | Haiku | offen |
+| E0-ORCH-02 | LAGEBILD, Faktenblatt | Orchestrator | Opus | offen |
+| E1-ORCH-01 | KERN v3, Denkprotokolle, Referenztexte, Bildplätze, MENSCHEN | Orchestrator | Opus | erledigt daf0f30, 394b300 |
+| E1-PROBE-IA | Baumtest Navigation | Probeläufer | Haiku | erledigt 394b300 |
+| E1-ORCH-02 | PLAN.md, ABNAHME.md | Orchestrator | Opus | läuft |
+| E1-PRUEF-PLAN | Planprüfung (≤ 2 Runden) | Prüfer | Haiku | offen |
+
+### E2 · Referenz
+| Kennung | Gegenstand | Rolle | Modell | Stufe | Schreibrechte | Abhängig von | Kriterium | Welle | Status |
+|---|---|---|---|---|---|---|---|---|---|
+| E2-PRUEF-00 | Spurenanalyse LCP auf `/` mobil (Trace, LCP-Element, Kette bis zum Malen) | Prüfer | Haiku | 1 | `$SCRATCH/E2-PRUEF-00/**`, Bericht | E0-PRUEF-03 | Z-08 | E2-W1 | offen |
+| E2-ORCH-00 | LCP-Ursache auf `/` beheben (Schrift, Startzustände, späte Abschnitte) | Orchestrator | Opus | 3 | `_dokument.tsx`, `globals.css`, `bewegung.css`, `src/components/start/Einstieg.tsx` | E2-PRUEF-00 | Z-08 | E2-W1 | offen |
+| E2-ORCH-01 | Designsystem v3: Tokens und Skalen aus K-005 (Schatten, z-60, `ease-hammer`, Verlegen- und Intro-Dauern), Abbau entfallender Register-Einträge vorbereiten | Orchestrator | Opus | 3 | `src/app/globals.css`, `src/app/bewegung.css`, `src/lib/motion/register.ts`, `_werkstatt/register.json`, `_werkstatt/werkzeuge/werte-regeln.json` | — | Z-03, Z-05 | E2-W1 | offen |
+| E2-ORCH-02 | Bausteine: `Fachwort`, `Seitenformel`, `Bildfeld` v3, `Hauptknopf`, `Brotkrumen`, `Fliesenkomposition`, `src/config/glossar.ts`, `src/config/arbeiten.ts` | Orchestrator | Opus | 3 | `src/components/kern/*` (neue Dateien und `Bildfeld.tsx`), `src/config/glossar.ts`, `src/config/arbeiten.ts` | E2-ORCH-01 | Z-03, Z-12, Z-13 | E2-W1 | offen |
+| E2-FIX-01 | Bewertungen aus einer Quelle (27, 5,0), Kundenstimmen in `schema.ts` wörtlich, Bewertungszeile ohne „527“ | Orchestrator | Opus | 3 | `src/config/reviews.js`, `src/lib/schema.ts`, `src/components/reviews/GoogleReviewsBadge.tsx`, `src/components/trust/TrustStrip.tsx`, `src/app/llms.txt/route.ts` | — | Z-12, Z-14, G8 | E2-W1 | offen |
+| E2-ORCH-03 | Kopf, Navigation (K-009), Mobilmenü, untere Leiste, Fuß als vollständige Übersicht, Markierung der aktuellen Seite | Orchestrator | Opus | 3 | `src/config/navigation.js`, `src/components/common/{Header,MobileMenu,Footer}.jsx`, `src/components/layout/{HeaderWrapper,MobileBottomBar}.tsx` | E2-ORCH-01 | Z-11, Z-09 | E2-W2 | offen |
+| E2-ORCH-04 | B-01 „Verlegen“ (Überlagerung, Klick-Abfangen, Zustandsautomat, Zurück und Vor, Wartephase, reduziert) | Orchestrator | Opus | 3 | `src/components/verlegen/*`, `src/lib/verlegen/*`, `_dokument.tsx` (Einhängen) | E2-ORCH-01 | Z-05, Z-07, Z-08 | E2-W2 | offen |
+| E2-TEST-04 | Tests für die Logik von B-01: Fliesenraster im Drittelverband, Größenwahl ≤ 80, Linkfilter (Ausnahmen), Zustandsautomat (Doppelklick, Wartephase, Abbruch), Dauern 1.200/900 ms | Prüfer | Haiku | 2 | `test/verlegen.test.mjs` (neu), Eintrag im Skript `test` meldet der Prüfer | E2-ORCH-04 | Z-05 | E2-W2 | offen |
+| E2-GRAF-05 | Logo nachzeichnen per Skript (Farbebenen, potrace), Wortmarke aus Schriftkonturen, Deckungsmessung bei doppelter Größe | Grafiker | Haiku | 2 | `_werkstatt/werkzeuge/logo/**` (neu, eigene Pakete in `werkzeuge/package.json` nach E-011), `$SCRATCH/E2-GRAF-05/**` | — | Z-06 | E2-W1 | offen |
+| E2-ORCH-05 | B-02 Intro: Pfade bereinigen und ordnen, Ablauf, Abbruch, reduziert; Ersatz-Intro falls < 98 % | Orchestrator | Opus | 3 | `src/components/intro/*`, `src/lib/motion/kopfskript.ts`, `_dokument.tsx` | E2-GRAF-05, E2-ORCH-04 | Z-05, Z-06, Z-08 | E2-W3 | offen |
+| E2-BILD-01 | Bildwerkzeug `bilder.mjs` (sharp) und Webfassungen aller Bildplätze aus `bildplaetze.md` mit Platzhaltern; Metadaten weg | Bildbearbeiter | Haiku | 2 | `_werkstatt/werkzeuge/bilder.mjs`, `public/images/arbeiten/**`, `_werkstatt/bilder/arbeiten.json` (Bilddaten für `arbeiten.ts`) | — | Z-13 | E2-W1 | offen |
+| E2-ORCH-06 | Startseite nach `REF-start.md`: erster Bildschirm, Lage-Fliesen, Was wir tun, Ablauf, Beleg, Formular; großer Moment `startbild`; Preisrechner und Express-Anfrage von `/` entfernt | Orchestrator | Opus | 3 | `src/app/(bestand)/page.tsx`, `src/components/start/*` | E2-ORCH-02, -03, -04, E2-BILD-01 | Z-04, Z-11, Z-12, Z-13 | E2-W3 | offen |
+| E2-ORCH-07 | 404 mit verrutschter Fliese und drei Wegen | Orchestrator | Opus | 3 | `src/app/(bestand)/not-found.tsx`, `src/app/global-not-found.tsx` | E2-ORCH-02 | Z-11 | E2-W3 | offen |
+| E2-PRUEF-A | Stufe A je Welle für alle Opus-Pakete (Typprüfung, Linter, Tests, Lesbarkeit, Bild mobil und Desktop) | Prüfer | Haiku | 1 | `$SCRATCH/E2-PRUEF-A*/**` | je Welle | Z-02 | E2-W1…W3 | offen |
+| E2-PRUEF-B | Stufe B für `/` (alle Werkzeuge, 10 Geräte, Lighthouse mit Intro) | Prüfer | Haiku | 1 | `_werkstatt/belege/e2/**` | E2-ORCH-06 | Z-02…Z-09 | E2-Tor | offen |
+| E2-PROBE-01…04 | Probeläufe P1 und P5, je mobil und Desktop, A1 bis A3 | Probeläufer | Haiku | 1 | `_werkstatt/cache/probelauf/e2/**` | E2-PRUEF-B | Z-11 | E2-Tor | offen |
+| E2-DOK-01 | Bildsatz der Referenz nach `_werkstatt/bilder/e2/` (≤ 1440 px) | Dokumentar | Haiku | 1 | `_werkstatt/bilder/e2/**` | E2-PRUEF-B | Z-10 | E2-Tor | offen |
+| E2-SICHT | Sichtabnahme der Referenz nach Award-Rubrik (frischer Opus-Unteragent), Ziel ≥ 8 | Juror | Opus | 3 | `_werkstatt/berichte/E2-SICHT.md` | E2-DOK-01 | Z-04 | E2-Tor | offen |
+
+### E3 · Vorlagen, große Momente, Hauptansichten
+| Kennung | Gegenstand | Rolle | Modell | Stufe | Schreibrechte | Abhängig von | Kriterium | Welle | Status |
+|---|---|---|---|---|---|---|---|---|---|
+| E3-ORCH-01 | Vorlagen je Seitenart: `ErzaehlSeite`, `WissensSeite`, `OrtsSeite`, `ArbeitsSeite` nach Seitenformel K-009 | Orchestrator | Opus | 3 | `src/components/vorlagen/*` (neu) | E2-Tor | Z-03, Z-11 | E3-W1 | offen |
+| E3-GRAF-01 | Großer Moment `schichten` für `/bad`: Was unter der Fliese steckt (Untergrund, Abdichtung, Kleber, Fliese, Fuge), scrollgebunden; Register-Eintrag K-007, reduzierte Bewegung, Budget | Grafiker | Haiku | 2 | `src/components/momente/schichten/*` (neu) | E3-ORCH-01 | Z-04, Z-05 | E3-W1 | offen |
+| E3-GRAF-02 | Großer Moment `weg` für `/bad/badsanierung`: Vom Anruf bis zur letzten Fuge, Weg mit Stationen; Register-Eintrag K-007, reduzierte Bewegung, Budget | Grafiker | Haiku | 2 | `src/components/momente/weg/*` (neu) | E3-ORCH-01 | Z-04, Z-05 | E3-W1 | offen |
+| E3-GRAF-03 | Großer Moment `gefaelle-dusche` für `/bad/barrierefreies-bad`: Wasser läuft über das Gefälle zum Ablauf; Register-Eintrag K-007, reduzierte Bewegung, Budget | Grafiker | Haiku | 2 | `src/components/momente/gefaelle-dusche/*` (neu) | E3-ORCH-01 | Z-04, Z-05 | E3-W1 | offen |
+| E3-GRAF-04 | Großer Moment `gefaelle-balkon` für `/balkon-terrasse`: Regen läuft vom Balkon ab; Register-Eintrag K-007, reduzierte Bewegung, Budget | Grafiker | Haiku | 2 | `src/components/momente/gefaelle-balkon/*` (neu) | E3-ORCH-01 | Z-04, Z-05 | E3-W1 | offen |
+| E3-GRAF-05 | Großer Moment `formatregler` für `/leistungen`: Formatvergleich 60 × 60 gegen 120 × 260 als Regler; Register-Eintrag K-007, reduzierte Bewegung, Budget | Grafiker | Haiku | 2 | `src/components/momente/formatregler/*` (neu) | E3-ORCH-01 | Z-04, Z-05 | E3-W1 | offen |
+| E3-GRAF-06 | Großer Moment `verband` für `/fliesen`: Verlegemuster zum Ausprobieren: Kreuzfuge, Halbverband, Drittelverband, Fischgrät; Register-Eintrag K-007, reduzierte Bewegung, Budget | Grafiker | Haiku | 2 | `src/components/momente/verband/*` (neu) | E3-ORCH-01 | Z-04, Z-05 | E3-W1 | offen |
+| E3-GRAF-07 | Großer Moment `vorher-nachher` für `/referenzen`: Vorher-Nachher-Regler (Außentreppe); Register-Eintrag K-007, reduzierte Bewegung, Budget | Grafiker | Haiku | 2 | `src/components/momente/vorher-nachher/*` (neu) | E3-ORCH-01 | Z-04, Z-05 | E3-W1 | offen |
+| E3-GRAF-08 | Großer Moment `galerie-filter` für `/referenzen`: Galerie „Unsere Arbeiten“ mit Filter nach Raum; Register-Eintrag K-007, reduzierte Bewegung, Budget | Grafiker | Haiku | 2 | `src/components/momente/galerie-filter/*` (neu) | E3-ORCH-01 | Z-04, Z-05 | E3-W1 | offen |
+| E3-GRAF-09 | Großer Moment `karte` für `/ueber-uns`: Einsatzkarte mit Aßlar in der Mitte (auch `/standorte`); Register-Eintrag K-007, reduzierte Bewegung, Budget | Grafiker | Haiku | 2 | `src/components/momente/karte/*` (neu) | E3-ORCH-01 | Z-04, Z-05 | E3-W1 | offen |
+| E3-TEXT-01 | Text `/bad` (erzaehl) nach Seitenformel und `texte/REF-start.md`, `texte/REF-bereich-barrierefreies-bad.md` | Texter | Haiku | 2 | `_werkstatt/texte/bad.md` (neu) | E3-ORCH-01 | Z-12 | E3-W1 | offen |
+| E3-LEKT-01 | Lektorat `/bad` nach Checkliste (Verständlichkeit, Schreibregeln, Fakten K-015, Suchbegriffe) | Lektor | Haiku | 2 | `_werkstatt/texte/bad.md` | E3-TEXT-01 | Z-12 | E3-W2 | offen |
+| E3-BAU-01 | Seite `/bad` nach Vorlage `erzaehl`, Text aus `texte/bad.md`, Bilder aus `bildplaetze.md`, Moment falls vorgesehen; Stufe A selbst | Baumeister | Haiku | 2 | `src/app/(bestand)/bad/page.*` und seitenspezifische Komponenten unter `src/components/seiten/bad/*` | E3-LEKT-01, E3-GRAF (falls Moment) | Z-04, Z-09, Z-11, Z-13 | E3-W3 | offen |
+| E3-TEXT-02 | Text `/bad/badsanierung` (erzaehl) nach Seitenformel und `texte/REF-start.md`, `texte/REF-bereich-barrierefreies-bad.md` | Texter | Haiku | 2 | `_werkstatt/texte/bad-badsanierung.md` (neu) | E3-ORCH-01 | Z-12 | E3-W1 | offen |
+| E3-LEKT-02 | Lektorat `/bad/badsanierung` nach Checkliste (Verständlichkeit, Schreibregeln, Fakten K-015, Suchbegriffe) | Lektor | Haiku | 2 | `_werkstatt/texte/bad-badsanierung.md` | E3-TEXT-02 | Z-12 | E3-W2 | offen |
+| E3-BAU-02 | Seite `/bad/badsanierung` nach Vorlage `erzaehl`, Text aus `texte/bad-badsanierung.md`, Bilder aus `bildplaetze.md`, Moment falls vorgesehen; Stufe A selbst | Baumeister | Haiku | 2 | `src/app/(bestand)/bad/badsanierung/page.*` und seitenspezifische Komponenten unter `src/components/seiten/bad-badsanierung/*` | E3-LEKT-02, E3-GRAF (falls Moment) | Z-04, Z-09, Z-11, Z-13 | E3-W3 | offen |
+| E3-TEXT-03 | Text `/bad/barrierefreies-bad` (erzaehl) nach Seitenformel und `texte/REF-start.md`, `texte/REF-bereich-barrierefreies-bad.md` | Texter | Haiku | 2 | `_werkstatt/texte/bad-barrierefreies-bad.md` (neu) | E3-ORCH-01 | Z-12 | E3-W1 | offen |
+| E3-LEKT-03 | Lektorat `/bad/barrierefreies-bad` nach Checkliste (Verständlichkeit, Schreibregeln, Fakten K-015, Suchbegriffe) | Lektor | Haiku | 2 | `_werkstatt/texte/bad-barrierefreies-bad.md` | E3-TEXT-03 | Z-12 | E3-W2 | offen |
+| E3-BAU-03 | Seite `/bad/barrierefreies-bad` nach Vorlage `erzaehl`, Text aus `texte/bad-barrierefreies-bad.md`, Bilder aus `bildplaetze.md`, Moment falls vorgesehen; Stufe A selbst | Baumeister | Haiku | 2 | `src/app/(bestand)/bad/barrierefreies-bad/page.*` und seitenspezifische Komponenten unter `src/components/seiten/bad-barrierefreies-bad/*` | E3-LEKT-03, E3-GRAF (falls Moment) | Z-04, Z-09, Z-11, Z-13 | E3-W3 | offen |
+| E3-TEXT-04 | Text `/leistungen` (erzaehl) nach Seitenformel und `texte/REF-start.md`, `texte/REF-bereich-barrierefreies-bad.md` | Texter | Haiku | 2 | `_werkstatt/texte/leistungen.md` (neu) | E3-ORCH-01 | Z-12 | E3-W1 | offen |
+| E3-LEKT-04 | Lektorat `/leistungen` nach Checkliste (Verständlichkeit, Schreibregeln, Fakten K-015, Suchbegriffe) | Lektor | Haiku | 2 | `_werkstatt/texte/leistungen.md` | E3-TEXT-04 | Z-12 | E3-W2 | offen |
+| E3-BAU-04 | Seite `/leistungen` nach Vorlage `erzaehl`, Text aus `texte/leistungen.md`, Bilder aus `bildplaetze.md`, Moment falls vorgesehen; Stufe A selbst | Baumeister | Haiku | 2 | `src/app/(bestand)/leistungen/page.*` und seitenspezifische Komponenten unter `src/components/seiten/leistungen/*` | E3-LEKT-04, E3-GRAF (falls Moment) | Z-04, Z-09, Z-11, Z-13 | E3-W3 | offen |
+| E3-TEXT-05 | Text `/fliesen` (wissen) nach Seitenformel und `texte/REF-wissen-din-18534.md` | Texter | Haiku | 2 | `_werkstatt/texte/fliesen.md` (neu) | E3-ORCH-01 | Z-12 | E3-W1 | offen |
+| E3-LEKT-05 | Lektorat `/fliesen` nach Checkliste (Verständlichkeit, Schreibregeln, Fakten K-015, Suchbegriffe) | Lektor | Haiku | 2 | `_werkstatt/texte/fliesen.md` | E3-TEXT-05 | Z-12 | E3-W2 | offen |
+| E3-BAU-05 | Seite `/fliesen` nach Vorlage `wissen`, Text aus `texte/fliesen.md`, Bilder aus `bildplaetze.md`, Moment falls vorgesehen; Stufe A selbst | Baumeister | Haiku | 2 | `src/app/(bestand)/fliesen/page.*` und seitenspezifische Komponenten unter `src/components/seiten/fliesen/*` | E3-LEKT-05, E3-GRAF (falls Moment) | Z-04, Z-09, Z-11, Z-13 | E3-W3 | offen |
+| E3-TEXT-06 | Text `/balkon-terrasse` (erzaehl) nach Seitenformel und `texte/REF-start.md`, `texte/REF-bereich-barrierefreies-bad.md` | Texter | Haiku | 2 | `_werkstatt/texte/balkon-terrasse.md` (neu) | E3-ORCH-01 | Z-12 | E3-W1 | offen |
+| E3-LEKT-06 | Lektorat `/balkon-terrasse` nach Checkliste (Verständlichkeit, Schreibregeln, Fakten K-015, Suchbegriffe) | Lektor | Haiku | 2 | `_werkstatt/texte/balkon-terrasse.md` | E3-TEXT-06 | Z-12 | E3-W2 | offen |
+| E3-BAU-06 | Seite `/balkon-terrasse` nach Vorlage `erzaehl`, Text aus `texte/balkon-terrasse.md`, Bilder aus `bildplaetze.md`, Moment falls vorgesehen; Stufe A selbst | Baumeister | Haiku | 2 | `src/app/(bestand)/balkon-terrasse/page.*` und seitenspezifische Komponenten unter `src/components/seiten/balkon-terrasse/*` | E3-LEKT-06, E3-GRAF (falls Moment) | Z-04, Z-09, Z-11, Z-13 | E3-W3 | offen |
+| E3-TEXT-07 | Text `/referenzen` (erzaehl) nach Seitenformel und `texte/REF-start.md`, `texte/REF-bereich-barrierefreies-bad.md` | Texter | Haiku | 2 | `_werkstatt/texte/referenzen.md` (neu) | E3-ORCH-01 | Z-12 | E3-W1 | offen |
+| E3-LEKT-07 | Lektorat `/referenzen` nach Checkliste (Verständlichkeit, Schreibregeln, Fakten K-015, Suchbegriffe) | Lektor | Haiku | 2 | `_werkstatt/texte/referenzen.md` | E3-TEXT-07 | Z-12 | E3-W2 | offen |
+| E3-BAU-07 | Seite `/referenzen` nach Vorlage `erzaehl`, Text aus `texte/referenzen.md`, Bilder aus `bildplaetze.md`, Moment falls vorgesehen; Stufe A selbst | Baumeister | Haiku | 2 | `src/app/(bestand)/referenzen/page.*` und seitenspezifische Komponenten unter `src/components/seiten/referenzen/*` | E3-LEKT-07, E3-GRAF (falls Moment) | Z-04, Z-09, Z-11, Z-13 | E3-W3 | offen |
+| E3-TEXT-08 | Text `/ueber-uns` (erzaehl) nach Seitenformel und `texte/REF-start.md`, `texte/REF-bereich-barrierefreies-bad.md` | Texter | Haiku | 2 | `_werkstatt/texte/ueber-uns.md` (neu) | E3-ORCH-01 | Z-12 | E3-W1 | offen |
+| E3-LEKT-08 | Lektorat `/ueber-uns` nach Checkliste (Verständlichkeit, Schreibregeln, Fakten K-015, Suchbegriffe) | Lektor | Haiku | 2 | `_werkstatt/texte/ueber-uns.md` | E3-TEXT-08 | Z-12 | E3-W2 | offen |
+| E3-BAU-08 | Seite `/ueber-uns` nach Vorlage `erzaehl`, Text aus `texte/ueber-uns.md`, Bilder aus `bildplaetze.md`, Moment falls vorgesehen; Stufe A selbst | Baumeister | Haiku | 2 | `src/app/(bestand)/ueber-uns/page.*` und seitenspezifische Komponenten unter `src/components/seiten/ueber-uns/*` | E3-LEKT-08, E3-GRAF (falls Moment) | Z-04, Z-09, Z-11, Z-13 | E3-W3 | offen |
+| E3-TEXT-09 | Text `/kontakt` (arbeit) nach Seitenformel und `texte/REF-start.md` Abschnitt 6 und `texte/REF-bereich-barrierefreies-bad.md` Abschnitt 6 | Texter | Haiku | 2 | `_werkstatt/texte/kontakt.md` (neu) | E3-ORCH-01 | Z-12 | E3-W1 | offen |
+| E3-LEKT-09 | Lektorat `/kontakt` nach Checkliste (Verständlichkeit, Schreibregeln, Fakten K-015, Suchbegriffe) | Lektor | Haiku | 2 | `_werkstatt/texte/kontakt.md` | E3-TEXT-09 | Z-12 | E3-W2 | offen |
+| E3-BAU-09 | Seite `/kontakt` nach Vorlage `arbeit`, Text aus `texte/kontakt.md`, Bilder aus `bildplaetze.md`, Moment falls vorgesehen; Stufe A selbst | Baumeister | Haiku | 2 | `src/app/(bestand)/kontakt/page.*` und seitenspezifische Komponenten unter `src/components/seiten/kontakt/*` | E3-LEKT-09, E3-GRAF (falls Moment) | Z-04, Z-09, Z-11, Z-13 | E3-W3 | offen |
+| E3-TEXT-10 | Text `/standorte/[stadt]` (ort) nach Seitenformel und `texte/REF-ort-wetzlar.md` | Texter | Haiku | 2 | `_werkstatt/texte/standorte-stadt.md` (neu) | E3-ORCH-01 | Z-12 | E3-W1 | offen |
+| E3-LEKT-10 | Lektorat `/standorte/[stadt]` nach Checkliste (Verständlichkeit, Schreibregeln, Fakten K-015, Suchbegriffe) | Lektor | Haiku | 2 | `_werkstatt/texte/standorte-stadt.md` | E3-TEXT-10 | Z-12 | E3-W2 | offen |
+| E3-BAU-10 | Seite `/standorte/[stadt]` nach Vorlage `ort`, Text aus `texte/standorte-stadt.md`, Bilder aus `bildplaetze.md`, Moment falls vorgesehen; Stufe A selbst | Baumeister | Haiku | 2 | `src/app/(bestand)/standorte/[stadt]/page.tsx` und seitenspezifische Komponenten unter `src/components/seiten/standorte-stadt/*` | E3-LEKT-10, E3-GRAF (falls Moment) | Z-04, Z-09, Z-11, Z-13 | E3-W3 | offen |
+| E3-TEXT-11 | Text `/blog` (wissen) nach Seitenformel und `texte/REF-wissen-din-18534.md` | Texter | Haiku | 2 | `_werkstatt/texte/blog.md` (neu) | E3-ORCH-01 | Z-12 | E3-W1 | offen |
+| E3-LEKT-11 | Lektorat `/blog` nach Checkliste (Verständlichkeit, Schreibregeln, Fakten K-015, Suchbegriffe) | Lektor | Haiku | 2 | `_werkstatt/texte/blog.md` | E3-TEXT-11 | Z-12 | E3-W2 | offen |
+| E3-BAU-11 | Seite `/blog` nach Vorlage `wissen`, Text aus `texte/blog.md`, Bilder aus `bildplaetze.md`, Moment falls vorgesehen; Stufe A selbst | Baumeister | Haiku | 2 | `src/app/(bestand)/blog/page.*` und seitenspezifische Komponenten unter `src/components/seiten/blog/*` | E3-LEKT-11, E3-GRAF (falls Moment) | Z-04, Z-09, Z-11, Z-13 | E3-W3 | offen |
+| E3-ORCH-02 | Datentexte der Welle übertragen (`cities.ts`, `services.js`, `company.js`, `topics.js`) und gemeinsame Dateien bündeln | Orchestrator | Opus | 3 | gemeinsame Daten- und Textdateien | E3-LEKT-* | Z-12 | E3-W2 | offen |
+| E3-PRUEF-A | Stufe A je Welle (unabhängig) | Prüfer | Haiku | 1 | `$SCRATCH/E3-PRUEF-A*/**` | je Welle | Z-02 | E3-W1…W3 | offen |
+| E3-PRUEF-B | Stufe B der 12 Hauptansichten | Prüfer | Haiku | 1 | `_werkstatt/belege/e3/**` | E3-BAU-* | Z-02…Z-09 | E3-Tor | offen |
+| E3-PROBE-01…10 | Probeläufe P1 bis P5 × mobil und Desktop, A1 bis A6 | Probeläufer | Haiku | 1 | `_werkstatt/cache/probelauf/e3/**` | E3-PRUEF-B | Z-11 | E3-Tor | offen |
+| E3-SICHT | Sichtabnahme der Hauptansichten (Orchestrator an Bildsatz) | Orchestrator | Opus | 3 | `_werkstatt/berichte/E3-SICHT.md` | E3-PRUEF-B | Z-04 | E3-Tor | offen |
+
+### E4 · Übrige Seiten
+| Kennung | Gegenstand | Rolle | Modell | Stufe | Schreibrechte | Abhängig von | Kriterium | Welle | Status |
+|---|---|---|---|---|---|---|---|---|---|
+| E4-TEXT-01 | Text `/ausstellung/giessen` (erzaehl) | Texter | Haiku | 2 | `_werkstatt/texte/ausstellung-giessen.md` | E3-Tor | Z-12 | E4-W1 | offen |
+| E4-LEKT-01 | Lektorat `/ausstellung/giessen` | Lektor | Haiku | 2 | `_werkstatt/texte/ausstellung-giessen.md` | E4-TEXT-01 | Z-12 | E4-W1+1 | offen |
+| E4-BAU-01 | Seite `/ausstellung/giessen` nach Vorlage `erzaehl` | Baumeister | Haiku | 2 | `src/app/(bestand)/ausstellung/giessen/page.*` und `src/components/seiten/ausstellung-giessen/*` | E4-LEKT-01 | Z-04, Z-09, Z-11, Z-13 | E4-W1+2 | offen |
+| E4-TEXT-02 | Text `/ausstellung/wetzlar` (erzaehl) | Texter | Haiku | 2 | `_werkstatt/texte/ausstellung-wetzlar.md` | E3-Tor | Z-12 | E4-W1 | offen |
+| E4-LEKT-02 | Lektorat `/ausstellung/wetzlar` | Lektor | Haiku | 2 | `_werkstatt/texte/ausstellung-wetzlar.md` | E4-TEXT-02 | Z-12 | E4-W1+1 | offen |
+| E4-BAU-02 | Seite `/ausstellung/wetzlar` nach Vorlage `erzaehl` | Baumeister | Haiku | 2 | `src/app/(bestand)/ausstellung/wetzlar/page.*` und `src/components/seiten/ausstellung-wetzlar/*` | E4-LEKT-02 | Z-04, Z-09, Z-11, Z-13 | E4-W1+2 | offen |
+| E4-TEXT-03 | Text `/bad/bad-aus-einer-hand` (erzaehl) | Texter | Haiku | 2 | `_werkstatt/texte/bad-bad-aus-einer-hand.md` | E3-Tor | Z-12 | E4-W1 | offen |
+| E4-LEKT-03 | Lektorat `/bad/bad-aus-einer-hand` | Lektor | Haiku | 2 | `_werkstatt/texte/bad-bad-aus-einer-hand.md` | E4-TEXT-03 | Z-12 | E4-W1+1 | offen |
+| E4-BAU-03 | Seite `/bad/bad-aus-einer-hand` nach Vorlage `erzaehl` | Baumeister | Haiku | 2 | `src/app/(bestand)/bad/bad-aus-einer-hand/page.*` und `src/components/seiten/bad-bad-aus-einer-hand/*` | E4-LEKT-03 | Z-04, Z-09, Z-11, Z-13 | E4-W1+2 | offen |
+| E4-TEXT-04 | Text `/bad/badanfrage` (arbeit) | Texter | Haiku | 2 | `_werkstatt/texte/bad-badanfrage.md` | E3-Tor | Z-12 | E4-W1 | offen |
+| E4-LEKT-04 | Lektorat `/bad/badanfrage` | Lektor | Haiku | 2 | `_werkstatt/texte/bad-badanfrage.md` | E4-TEXT-04 | Z-12 | E4-W1+1 | offen |
+| E4-BAU-04 | Seite `/bad/badanfrage` nach Vorlage `arbeit` | Baumeister | Haiku | 2 | `src/app/(bestand)/bad/badanfrage/page.*` und `src/components/seiten/bad-badanfrage/*` | E4-LEKT-04 | Z-04, Z-09, Z-11, Z-13 | E4-W1+2 | offen |
+| E4-TEXT-05 | Text `/bad/badplaner` (arbeit) | Texter | Haiku | 2 | `_werkstatt/texte/bad-badplaner.md` | E3-Tor | Z-12 | E4-W1 | offen |
+| E4-LEKT-05 | Lektorat `/bad/badplaner` | Lektor | Haiku | 2 | `_werkstatt/texte/bad-badplaner.md` | E4-TEXT-05 | Z-12 | E4-W1+1 | offen |
+| E4-BAU-05 | Seite `/bad/badplaner` nach Vorlage `arbeit` | Baumeister | Haiku | 2 | `src/app/(bestand)/bad/badplaner/page.*` und `src/components/seiten/bad-badplaner/*` | E4-LEKT-05 | Z-04, Z-09, Z-11, Z-13 | E4-W1+2 | offen |
+| E4-TEXT-06 | Text `/bad/fliesen` (erzaehl) | Texter | Haiku | 2 | `_werkstatt/texte/bad-fliesen.md` | E3-Tor | Z-12 | E4-W1 | offen |
+| E4-LEKT-06 | Lektorat `/bad/fliesen` | Lektor | Haiku | 2 | `_werkstatt/texte/bad-fliesen.md` | E4-TEXT-06 | Z-12 | E4-W1+1 | offen |
+| E4-BAU-06 | Seite `/bad/fliesen` nach Vorlage `erzaehl` | Baumeister | Haiku | 2 | `src/app/(bestand)/bad/fliesen/page.*` und `src/components/seiten/bad-fliesen/*` | E4-LEKT-06 | Z-04, Z-09, Z-11, Z-13 | E4-W1+2 | offen |
+| E4-TEXT-07 | Text `/bad/musterbaeder` (wissen) | Texter | Haiku | 2 | `_werkstatt/texte/bad-musterbaeder.md` | E3-Tor | Z-12 | E4-W1 | offen |
+| E4-LEKT-07 | Lektorat `/bad/musterbaeder` | Lektor | Haiku | 2 | `_werkstatt/texte/bad-musterbaeder.md` | E4-TEXT-07 | Z-12 | E4-W1+1 | offen |
+| E4-BAU-07 | Seite `/bad/musterbaeder` nach Vorlage `wissen` | Baumeister | Haiku | 2 | `src/app/(bestand)/bad/musterbaeder/page.*` und `src/components/seiten/bad-musterbaeder/*` | E4-LEKT-07 | Z-04, Z-09, Z-11, Z-13 | E4-W1+2 | offen |
+| E4-TEXT-08 | Text `/bad/projekt-check` (arbeit) | Texter | Haiku | 2 | `_werkstatt/texte/bad-projekt-check.md` | E3-Tor | Z-12 | E4-W1 | offen |
+| E4-LEKT-08 | Lektorat `/bad/projekt-check` | Lektor | Haiku | 2 | `_werkstatt/texte/bad-projekt-check.md` | E4-TEXT-08 | Z-12 | E4-W1+1 | offen |
+| E4-BAU-08 | Seite `/bad/projekt-check` nach Vorlage `arbeit` | Baumeister | Haiku | 2 | `src/app/(bestand)/bad/projekt-check/page.*` und `src/components/seiten/bad-projekt-check/*` | E4-LEKT-08 | Z-04, Z-09, Z-11, Z-13 | E4-W1+2 | offen |
+| E4-TEXT-09 | Text `/balkon-terrasse/balkonsanierung` (wissen) | Texter | Haiku | 2 | `_werkstatt/texte/balkon-terrasse-balkonsanierung.md` | E3-Tor | Z-12 | E4-W1 | offen |
+| E4-LEKT-09 | Lektorat `/balkon-terrasse/balkonsanierung` | Lektor | Haiku | 2 | `_werkstatt/texte/balkon-terrasse-balkonsanierung.md` | E4-TEXT-09 | Z-12 | E4-W1+1 | offen |
+| E4-BAU-09 | Seite `/balkon-terrasse/balkonsanierung` nach Vorlage `wissen` | Baumeister | Haiku | 2 | `src/app/(bestand)/balkon-terrasse/balkonsanierung/page.*` und `src/components/seiten/balkon-terrasse-balkonsanierung/*` | E4-LEKT-09 | Z-04, Z-09, Z-11, Z-13 | E4-W1+2 | offen |
+| E4-TEXT-10 | Text `/balkon-terrasse/stelzlager` (wissen) | Texter | Haiku | 2 | `_werkstatt/texte/balkon-terrasse-stelzlager.md` | E3-Tor | Z-12 | E4-W1 | offen |
+| E4-LEKT-10 | Lektorat `/balkon-terrasse/stelzlager` | Lektor | Haiku | 2 | `_werkstatt/texte/balkon-terrasse-stelzlager.md` | E4-TEXT-10 | Z-12 | E4-W1+1 | offen |
+| E4-BAU-10 | Seite `/balkon-terrasse/stelzlager` nach Vorlage `wissen` | Baumeister | Haiku | 2 | `src/app/(bestand)/balkon-terrasse/stelzlager/page.*` und `src/components/seiten/balkon-terrasse-stelzlager/*` | E4-LEKT-10 | Z-04, Z-09, Z-11, Z-13 | E4-W1+2 | offen |
+| E4-TEXT-11 | Text `/balkon-terrasse/terrassenplatten` (wissen) | Texter | Haiku | 2 | `_werkstatt/texte/balkon-terrasse-terrassenplatten.md` | E3-Tor | Z-12 | E4-W1 | offen |
+| E4-LEKT-11 | Lektorat `/balkon-terrasse/terrassenplatten` | Lektor | Haiku | 2 | `_werkstatt/texte/balkon-terrasse-terrassenplatten.md` | E4-TEXT-11 | Z-12 | E4-W1+1 | offen |
+| E4-BAU-11 | Seite `/balkon-terrasse/terrassenplatten` nach Vorlage `wissen` | Baumeister | Haiku | 2 | `src/app/(bestand)/balkon-terrasse/terrassenplatten/page.*` und `src/components/seiten/balkon-terrasse-terrassenplatten/*` | E4-LEKT-11 | Z-04, Z-09, Z-11, Z-13 | E4-W1+2 | offen |
+| E4-TEXT-12 | Text `/beratung` (arbeit) | Texter | Haiku | 2 | `_werkstatt/texte/beratung.md` | E3-Tor | Z-12 | E4-W1 | offen |
+| E4-LEKT-12 | Lektorat `/beratung` | Lektor | Haiku | 2 | `_werkstatt/texte/beratung.md` | E4-TEXT-12 | Z-12 | E4-W1+1 | offen |
+| E4-BAU-12 | Seite `/beratung` nach Vorlage `arbeit` | Baumeister | Haiku | 2 | `src/app/(bestand)/beratung/page.*` und `src/components/seiten/beratung/*` | E4-LEKT-12 | Z-04, Z-09, Z-11, Z-13 | E4-W1+2 | offen |
+| E4-TEXT-13 | Text `/downloads` (arbeit) | Texter | Haiku | 2 | `_werkstatt/texte/downloads.md` | E3-Tor | Z-12 | E4-W1 | offen |
+| E4-LEKT-13 | Lektorat `/downloads` | Lektor | Haiku | 2 | `_werkstatt/texte/downloads.md` | E4-TEXT-13 | Z-12 | E4-W1+1 | offen |
+| E4-BAU-13 | Seite `/downloads` nach Vorlage `arbeit` | Baumeister | Haiku | 2 | `src/app/(bestand)/downloads/page.*` und `src/components/seiten/downloads/*` | E4-LEKT-13 | Z-04, Z-09, Z-11, Z-13 | E4-W1+2 | offen |
+| E4-TEXT-14 | Text `/faq` (wissen) | Texter | Haiku | 2 | `_werkstatt/texte/faq.md` | E3-Tor | Z-12 | E4-W1 | offen |
+| E4-LEKT-14 | Lektorat `/faq` | Lektor | Haiku | 2 | `_werkstatt/texte/faq.md` | E4-TEXT-14 | Z-12 | E4-W1+1 | offen |
+| E4-BAU-14 | Seite `/faq` nach Vorlage `wissen` | Baumeister | Haiku | 2 | `src/app/(bestand)/faq/page.*` und `src/components/seiten/faq/*` | E4-LEKT-14 | Z-04, Z-09, Z-11, Z-13 | E4-W1+2 | offen |
+| E4-TEXT-15 | Text `/fliesen/abnahme` (wissen) | Texter | Haiku | 2 | `_werkstatt/texte/fliesen-abnahme.md` | E3-Tor | Z-12 | E4-W1 | offen |
+| E4-LEKT-15 | Lektorat `/fliesen/abnahme` | Lektor | Haiku | 2 | `_werkstatt/texte/fliesen-abnahme.md` | E4-TEXT-15 | Z-12 | E4-W1+1 | offen |
+| E4-BAU-15 | Seite `/fliesen/abnahme` nach Vorlage `wissen` | Baumeister | Haiku | 2 | `src/app/(bestand)/fliesen/abnahme/page.*` und `src/components/seiten/fliesen-abnahme/*` | E4-LEKT-15 | Z-04, Z-09, Z-11, Z-13 | E4-W1+2 | offen |
+| E4-TEXT-16 | Text `/fliesen/auf-fussbodenheizung` (wissen) | Texter | Haiku | 2 | `_werkstatt/texte/fliesen-auf-fussbodenheizung.md` | E3-Tor | Z-12 | E4-W1 | offen |
+| E4-LEKT-16 | Lektorat `/fliesen/auf-fussbodenheizung` | Lektor | Haiku | 2 | `_werkstatt/texte/fliesen-auf-fussbodenheizung.md` | E4-TEXT-16 | Z-12 | E4-W1+1 | offen |
+| E4-BAU-16 | Seite `/fliesen/auf-fussbodenheizung` nach Vorlage `wissen` | Baumeister | Haiku | 2 | `src/app/(bestand)/fliesen/auf-fussbodenheizung/page.*` und `src/components/seiten/fliesen-auf-fussbodenheizung/*` | E4-LEKT-16 | Z-04, Z-09, Z-11, Z-13 | E4-W1+2 | offen |
+| E4-TEXT-17 | Text `/fliesen/festpreisangebot` (arbeit) | Texter | Haiku | 2 | `_werkstatt/texte/fliesen-festpreisangebot.md` | E3-Tor | Z-12 | E4-W1 | offen |
+| E4-LEKT-17 | Lektorat `/fliesen/festpreisangebot` | Lektor | Haiku | 2 | `_werkstatt/texte/fliesen-festpreisangebot.md` | E4-TEXT-17 | Z-12 | E4-W1+1 | offen |
+| E4-BAU-17 | Seite `/fliesen/festpreisangebot` nach Vorlage `arbeit` | Baumeister | Haiku | 2 | `src/app/(bestand)/fliesen/festpreisangebot/page.*` und `src/components/seiten/fliesen-festpreisangebot/*` | E4-LEKT-17 | Z-04, Z-09, Z-11, Z-13 | E4-W1+2 | offen |
+| E4-TEXT-18 | Text `/fliesen/fliesenarten` (wissen) | Texter | Haiku | 2 | `_werkstatt/texte/fliesen-fliesenarten.md` | E3-Tor | Z-12 | E4-W1 | offen |
+| E4-LEKT-18 | Lektorat `/fliesen/fliesenarten` | Lektor | Haiku | 2 | `_werkstatt/texte/fliesen-fliesenarten.md` | E4-TEXT-18 | Z-12 | E4-W1+1 | offen |
+| E4-BAU-18 | Seite `/fliesen/fliesenarten` nach Vorlage `wissen` | Baumeister | Haiku | 2 | `src/app/(bestand)/fliesen/fliesenarten/page.*` und `src/components/seiten/fliesen-fliesenarten/*` | E4-LEKT-18 | Z-04, Z-09, Z-11, Z-13 | E4-W1+2 | offen |
+| E4-TEXT-19 | Text `/fliesen/flur-diele` (wissen) | Texter | Haiku | 2 | `_werkstatt/texte/fliesen-flur-diele.md` | E3-Tor | Z-12 | E4-W2 | offen |
+| E4-LEKT-19 | Lektorat `/fliesen/flur-diele` | Lektor | Haiku | 2 | `_werkstatt/texte/fliesen-flur-diele.md` | E4-TEXT-19 | Z-12 | E4-W2+1 | offen |
+| E4-BAU-19 | Seite `/fliesen/flur-diele` nach Vorlage `wissen` | Baumeister | Haiku | 2 | `src/app/(bestand)/fliesen/flur-diele/page.*` und `src/components/seiten/fliesen-flur-diele/*` | E4-LEKT-19 | Z-04, Z-09, Z-11, Z-13 | E4-W2+2 | offen |
+| E4-TEXT-20 | Text `/fliesen/fugensanierung` (wissen) | Texter | Haiku | 2 | `_werkstatt/texte/fliesen-fugensanierung.md` | E3-Tor | Z-12 | E4-W2 | offen |
+| E4-LEKT-20 | Lektorat `/fliesen/fugensanierung` | Lektor | Haiku | 2 | `_werkstatt/texte/fliesen-fugensanierung.md` | E4-TEXT-20 | Z-12 | E4-W2+1 | offen |
+| E4-BAU-20 | Seite `/fliesen/fugensanierung` nach Vorlage `wissen` | Baumeister | Haiku | 2 | `src/app/(bestand)/fliesen/fugensanierung/page.*` und `src/components/seiten/fliesen-fugensanierung/*` | E4-LEKT-20 | Z-04, Z-09, Z-11, Z-13 | E4-W2+2 | offen |
+| E4-TEXT-21 | Text `/fliesen/grossformat` (wissen) | Texter | Haiku | 2 | `_werkstatt/texte/fliesen-grossformat.md` | E3-Tor | Z-12 | E4-W2 | offen |
+| E4-LEKT-21 | Lektorat `/fliesen/grossformat` | Lektor | Haiku | 2 | `_werkstatt/texte/fliesen-grossformat.md` | E4-TEXT-21 | Z-12 | E4-W2+1 | offen |
+| E4-BAU-21 | Seite `/fliesen/grossformat` nach Vorlage `wissen` | Baumeister | Haiku | 2 | `src/app/(bestand)/fliesen/grossformat/page.*` und `src/components/seiten/fliesen-grossformat/*` | E4-LEKT-21 | Z-04, Z-09, Z-11, Z-13 | E4-W2+2 | offen |
+| E4-TEXT-22 | Text `/fliesen/holzoptik` (wissen) | Texter | Haiku | 2 | `_werkstatt/texte/fliesen-holzoptik.md` | E3-Tor | Z-12 | E4-W2 | offen |
+| E4-LEKT-22 | Lektorat `/fliesen/holzoptik` | Lektor | Haiku | 2 | `_werkstatt/texte/fliesen-holzoptik.md` | E4-TEXT-22 | Z-12 | E4-W2+1 | offen |
+| E4-BAU-22 | Seite `/fliesen/holzoptik` nach Vorlage `wissen` | Baumeister | Haiku | 2 | `src/app/(bestand)/fliesen/holzoptik/page.*` und `src/components/seiten/fliesen-holzoptik/*` | E4-LEKT-22 | Z-04, Z-09, Z-11, Z-13 | E4-W2+2 | offen |
+| E4-TEXT-23 | Text `/fliesen/konfigurator` (arbeit) | Texter | Haiku | 2 | `_werkstatt/texte/fliesen-konfigurator.md` | E3-Tor | Z-12 | E4-W2 | offen |
+| E4-LEKT-23 | Lektorat `/fliesen/konfigurator` | Lektor | Haiku | 2 | `_werkstatt/texte/fliesen-konfigurator.md` | E4-TEXT-23 | Z-12 | E4-W2+1 | offen |
+| E4-BAU-23 | Seite `/fliesen/konfigurator` nach Vorlage `arbeit` | Baumeister | Haiku | 2 | `src/app/(bestand)/fliesen/konfigurator/page.*` und `src/components/seiten/fliesen-konfigurator/*` | E4-LEKT-23 | Z-04, Z-09, Z-11, Z-13 | E4-W2+2 | offen |
+| E4-TEXT-24 | Text `/fliesen/kueche` (wissen) | Texter | Haiku | 2 | `_werkstatt/texte/fliesen-kueche.md` | E3-Tor | Z-12 | E4-W2 | offen |
+| E4-LEKT-24 | Lektorat `/fliesen/kueche` | Lektor | Haiku | 2 | `_werkstatt/texte/fliesen-kueche.md` | E4-TEXT-24 | Z-12 | E4-W2+1 | offen |
+| E4-BAU-24 | Seite `/fliesen/kueche` nach Vorlage `wissen` | Baumeister | Haiku | 2 | `src/app/(bestand)/fliesen/kueche/page.*` und `src/components/seiten/fliesen-kueche/*` | E4-LEKT-24 | Z-04, Z-09, Z-11, Z-13 | E4-W2+2 | offen |
+| E4-TEXT-25 | Text `/fliesen/neubau` (wissen) | Texter | Haiku | 2 | `_werkstatt/texte/fliesen-neubau.md` | E3-Tor | Z-12 | E4-W2 | offen |
+| E4-LEKT-25 | Lektorat `/fliesen/neubau` | Lektor | Haiku | 2 | `_werkstatt/texte/fliesen-neubau.md` | E4-TEXT-25 | Z-12 | E4-W2+1 | offen |
+| E4-BAU-25 | Seite `/fliesen/neubau` nach Vorlage `wissen` | Baumeister | Haiku | 2 | `src/app/(bestand)/fliesen/neubau/page.*` und `src/components/seiten/fliesen-neubau/*` | E4-LEKT-25 | Z-04, Z-09, Z-11, Z-13 | E4-W2+2 | offen |
+| E4-TEXT-26 | Text `/fliesen/renovierung` (wissen) | Texter | Haiku | 2 | `_werkstatt/texte/fliesen-renovierung.md` | E3-Tor | Z-12 | E4-W2 | offen |
+| E4-LEKT-26 | Lektorat `/fliesen/renovierung` | Lektor | Haiku | 2 | `_werkstatt/texte/fliesen-renovierung.md` | E4-TEXT-26 | Z-12 | E4-W2+1 | offen |
+| E4-BAU-26 | Seite `/fliesen/renovierung` nach Vorlage `wissen` | Baumeister | Haiku | 2 | `src/app/(bestand)/fliesen/renovierung/page.*` und `src/components/seiten/fliesen-renovierung/*` | E4-LEKT-26 | Z-04, Z-09, Z-11, Z-13 | E4-W2+2 | offen |
+| E4-TEXT-27 | Text `/fliesen/verlegemuster` (wissen) | Texter | Haiku | 2 | `_werkstatt/texte/fliesen-verlegemuster.md` | E3-Tor | Z-12 | E4-W2 | offen |
+| E4-LEKT-27 | Lektorat `/fliesen/verlegemuster` | Lektor | Haiku | 2 | `_werkstatt/texte/fliesen-verlegemuster.md` | E4-TEXT-27 | Z-12 | E4-W2+1 | offen |
+| E4-BAU-27 | Seite `/fliesen/verlegemuster` nach Vorlage `wissen` | Baumeister | Haiku | 2 | `src/app/(bestand)/fliesen/verlegemuster/page.*` und `src/components/seiten/fliesen-verlegemuster/*` | E4-LEKT-27 | Z-04, Z-09, Z-11, Z-13 | E4-W2+2 | offen |
+| E4-TEXT-28 | Text `/fliesen/verlegetechnik` (wissen) | Texter | Haiku | 2 | `_werkstatt/texte/fliesen-verlegetechnik.md` | E3-Tor | Z-12 | E4-W2 | offen |
+| E4-LEKT-28 | Lektorat `/fliesen/verlegetechnik` | Lektor | Haiku | 2 | `_werkstatt/texte/fliesen-verlegetechnik.md` | E4-TEXT-28 | Z-12 | E4-W2+1 | offen |
+| E4-BAU-28 | Seite `/fliesen/verlegetechnik` nach Vorlage `wissen` | Baumeister | Haiku | 2 | `src/app/(bestand)/fliesen/verlegetechnik/page.*` und `src/components/seiten/fliesen-verlegetechnik/*` | E4-LEKT-28 | Z-04, Z-09, Z-11, Z-13 | E4-W2+2 | offen |
+| E4-TEXT-29 | Text `/fliesenreparatur` (erzaehl) | Texter | Haiku | 2 | `_werkstatt/texte/fliesenreparatur.md` | E3-Tor | Z-12 | E4-W2 | offen |
+| E4-LEKT-29 | Lektorat `/fliesenreparatur` | Lektor | Haiku | 2 | `_werkstatt/texte/fliesenreparatur.md` | E4-TEXT-29 | Z-12 | E4-W2+1 | offen |
+| E4-BAU-29 | Seite `/fliesenreparatur` nach Vorlage `erzaehl` | Baumeister | Haiku | 2 | `src/app/(bestand)/fliesenreparatur/page.*` und `src/components/seiten/fliesenreparatur/*` | E4-LEKT-29 | Z-04, Z-09, Z-11, Z-13 | E4-W2+2 | offen |
+| E4-TEXT-30 | Text `/foerderung` (wissen) | Texter | Haiku | 2 | `_werkstatt/texte/foerderung.md` | E3-Tor | Z-12 | E4-W2 | offen |
+| E4-LEKT-30 | Lektorat `/foerderung` | Lektor | Haiku | 2 | `_werkstatt/texte/foerderung.md` | E4-TEXT-30 | Z-12 | E4-W2+1 | offen |
+| E4-BAU-30 | Seite `/foerderung` nach Vorlage `wissen` | Baumeister | Haiku | 2 | `src/app/(bestand)/foerderung/page.*` und `src/components/seiten/foerderung/*` | E4-LEKT-30 | Z-04, Z-09, Z-11, Z-13 | E4-W2+2 | offen |
+| E4-TEXT-31 | Text `/karriere` (erzaehl) | Texter | Haiku | 2 | `_werkstatt/texte/karriere.md` | E3-Tor | Z-12 | E4-W2 | offen |
+| E4-LEKT-31 | Lektorat `/karriere` | Lektor | Haiku | 2 | `_werkstatt/texte/karriere.md` | E4-TEXT-31 | Z-12 | E4-W2+1 | offen |
+| E4-BAU-31 | Seite `/karriere` nach Vorlage `erzaehl` | Baumeister | Haiku | 2 | `src/app/(bestand)/karriere/page.*` und `src/components/seiten/karriere/*` | E4-LEKT-31 | Z-04, Z-09, Z-11, Z-13 | E4-W2+2 | offen |
+| E4-TEXT-32 | Text `/karriere/ausbildung` (erzaehl) | Texter | Haiku | 2 | `_werkstatt/texte/karriere-ausbildung.md` | E3-Tor | Z-12 | E4-W2 | offen |
+| E4-LEKT-32 | Lektorat `/karriere/ausbildung` | Lektor | Haiku | 2 | `_werkstatt/texte/karriere-ausbildung.md` | E4-TEXT-32 | Z-12 | E4-W2+1 | offen |
+| E4-BAU-32 | Seite `/karriere/ausbildung` nach Vorlage `erzaehl` | Baumeister | Haiku | 2 | `src/app/(bestand)/karriere/ausbildung/page.*` und `src/components/seiten/karriere-ausbildung/*` | E4-LEKT-32 | Z-04, Z-09, Z-11, Z-13 | E4-W2+2 | offen |
+| E4-TEXT-33 | Text `/login` (arbeit) | Texter | Haiku | 2 | `_werkstatt/texte/login.md` | E3-Tor | Z-12 | E4-W2 | offen |
+| E4-LEKT-33 | Lektorat `/login` | Lektor | Haiku | 2 | `_werkstatt/texte/login.md` | E4-TEXT-33 | Z-12 | E4-W2+1 | offen |
+| E4-BAU-33 | Seite `/login` nach Vorlage `arbeit` | Baumeister | Haiku | 2 | `src/app/(bestand)/login/page.*` und `src/components/seiten/login/*` | E4-LEKT-33 | Z-04, Z-09, Z-11, Z-13 | E4-W2+2 | offen |
+| E4-TEXT-34 | Text `/naturstein` (erzaehl) | Texter | Haiku | 2 | `_werkstatt/texte/naturstein.md` | E3-Tor | Z-12 | E4-W2 | offen |
+| E4-LEKT-34 | Lektorat `/naturstein` | Lektor | Haiku | 2 | `_werkstatt/texte/naturstein.md` | E4-TEXT-34 | Z-12 | E4-W2+1 | offen |
+| E4-BAU-34 | Seite `/naturstein` nach Vorlage `erzaehl` | Baumeister | Haiku | 2 | `src/app/(bestand)/naturstein/page.*` und `src/components/seiten/naturstein/*` | E4-LEKT-34 | Z-04, Z-09, Z-11, Z-13 | E4-W2+2 | offen |
+| E4-TEXT-35 | Text `/naturstein/granit` (wissen) | Texter | Haiku | 2 | `_werkstatt/texte/naturstein-granit.md` | E3-Tor | Z-12 | E4-W2 | offen |
+| E4-LEKT-35 | Lektorat `/naturstein/granit` | Lektor | Haiku | 2 | `_werkstatt/texte/naturstein-granit.md` | E4-TEXT-35 | Z-12 | E4-W2+1 | offen |
+| E4-BAU-35 | Seite `/naturstein/granit` nach Vorlage `wissen` | Baumeister | Haiku | 2 | `src/app/(bestand)/naturstein/granit/page.*` und `src/components/seiten/naturstein-granit/*` | E4-LEKT-35 | Z-04, Z-09, Z-11, Z-13 | E4-W2+2 | offen |
+| E4-TEXT-36 | Text `/naturstein/marmor-kalkstein` (wissen) | Texter | Haiku | 2 | `_werkstatt/texte/naturstein-marmor-kalkstein.md` | E3-Tor | Z-12 | E4-W2 | offen |
+| E4-LEKT-36 | Lektorat `/naturstein/marmor-kalkstein` | Lektor | Haiku | 2 | `_werkstatt/texte/naturstein-marmor-kalkstein.md` | E4-TEXT-36 | Z-12 | E4-W2+1 | offen |
+| E4-BAU-36 | Seite `/naturstein/marmor-kalkstein` nach Vorlage `wissen` | Baumeister | Haiku | 2 | `src/app/(bestand)/naturstein/marmor-kalkstein/page.*` und `src/components/seiten/naturstein-marmor-kalkstein/*` | E4-LEKT-36 | Z-04, Z-09, Z-11, Z-13 | E4-W2+2 | offen |
+| E4-TEXT-37 | Text `/partner` (erzaehl) | Texter | Haiku | 2 | `_werkstatt/texte/partner.md` | E3-Tor | Z-12 | E4-W3 | offen |
+| E4-LEKT-37 | Lektorat `/partner` | Lektor | Haiku | 2 | `_werkstatt/texte/partner.md` | E4-TEXT-37 | Z-12 | E4-W3+1 | offen |
+| E4-BAU-37 | Seite `/partner` nach Vorlage `erzaehl` | Baumeister | Haiku | 2 | `src/app/(bestand)/partner/page.*` und `src/components/seiten/partner/*` | E4-LEKT-37 | Z-04, Z-09, Z-11, Z-13 | E4-W3+2 | offen |
+| E4-TEXT-38 | Text `/preise` (arbeit) | Texter | Haiku | 2 | `_werkstatt/texte/preise.md` | E3-Tor | Z-12 | E4-W3 | offen |
+| E4-LEKT-38 | Lektorat `/preise` | Lektor | Haiku | 2 | `_werkstatt/texte/preise.md` | E4-TEXT-38 | Z-12 | E4-W3+1 | offen |
+| E4-BAU-38 | Seite `/preise` nach Vorlage `arbeit` | Baumeister | Haiku | 2 | `src/app/(bestand)/preise/page.*` und `src/components/seiten/preise/*` | E4-LEKT-38 | Z-04, Z-09, Z-11, Z-13 | E4-W3+2 | offen |
+| E4-TEXT-39 | Text `/schadensanalyse` (erzaehl) | Texter | Haiku | 2 | `_werkstatt/texte/schadensanalyse.md` | E3-Tor | Z-12 | E4-W3 | offen |
+| E4-LEKT-39 | Lektorat `/schadensanalyse` | Lektor | Haiku | 2 | `_werkstatt/texte/schadensanalyse.md` | E4-TEXT-39 | Z-12 | E4-W3+1 | offen |
+| E4-BAU-39 | Seite `/schadensanalyse` nach Vorlage `erzaehl` | Baumeister | Haiku | 2 | `src/app/(bestand)/schadensanalyse/page.*` und `src/components/seiten/schadensanalyse/*` | E4-LEKT-39 | Z-04, Z-09, Z-11, Z-13 | E4-W3+2 | offen |
+| E4-TEXT-40 | Text `/standorte` (ort) | Texter | Haiku | 2 | `_werkstatt/texte/standorte.md` | E3-Tor | Z-12 | E4-W3 | offen |
+| E4-LEKT-40 | Lektorat `/standorte` | Lektor | Haiku | 2 | `_werkstatt/texte/standorte.md` | E4-TEXT-40 | Z-12 | E4-W3+1 | offen |
+| E4-BAU-40 | Seite `/standorte` nach Vorlage `ort` | Baumeister | Haiku | 2 | `src/app/(bestand)/standorte/page.*` und `src/components/seiten/standorte/*` | E4-LEKT-40 | Z-04, Z-09, Z-11, Z-13 | E4-W3+2 | offen |
+| E4-TEXT-41 | Text `/team` (erzaehl) | Texter | Haiku | 2 | `_werkstatt/texte/team.md` | E3-Tor | Z-12 | E4-W3 | offen |
+| E4-LEKT-41 | Lektorat `/team` | Lektor | Haiku | 2 | `_werkstatt/texte/team.md` | E4-TEXT-41 | Z-12 | E4-W3+1 | offen |
+| E4-BAU-41 | Seite `/team` nach Vorlage `erzaehl` | Baumeister | Haiku | 2 | `src/app/(bestand)/team/page.*` und `src/components/seiten/team/*` | E4-LEKT-41 | Z-04, Z-09, Z-11, Z-13 | E4-W3+2 | offen |
+| E4-TEXT-42 | Text `/termin` (arbeit) | Texter | Haiku | 2 | `_werkstatt/texte/termin.md` | E3-Tor | Z-12 | E4-W3 | offen |
+| E4-LEKT-42 | Lektorat `/termin` | Lektor | Haiku | 2 | `_werkstatt/texte/termin.md` | E4-TEXT-42 | Z-12 | E4-W3+1 | offen |
+| E4-BAU-42 | Seite `/termin` nach Vorlage `arbeit` | Baumeister | Haiku | 2 | `src/app/(bestand)/termin/page.*` und `src/components/seiten/termin/*` | E4-LEKT-42 | Z-04, Z-09, Z-11, Z-13 | E4-W3+2 | offen |
+| E4-TEXT-43 | Text `/treppen` (erzaehl) | Texter | Haiku | 2 | `_werkstatt/texte/treppen.md` | E3-Tor | Z-12 | E4-W3 | offen |
+| E4-LEKT-43 | Lektorat `/treppen` | Lektor | Haiku | 2 | `_werkstatt/texte/treppen.md` | E4-TEXT-43 | Z-12 | E4-W3+1 | offen |
+| E4-BAU-43 | Seite `/treppen` nach Vorlage `erzaehl` | Baumeister | Haiku | 2 | `src/app/(bestand)/treppen/page.*` und `src/components/seiten/treppen/*` | E4-LEKT-43 | Z-04, Z-09, Z-11, Z-13 | E4-W3+2 | offen |
+| E4-TEXT-44 | Text `/treppen/aussentreppe` (wissen) | Texter | Haiku | 2 | `_werkstatt/texte/treppen-aussentreppe.md` | E3-Tor | Z-12 | E4-W3 | offen |
+| E4-LEKT-44 | Lektorat `/treppen/aussentreppe` | Lektor | Haiku | 2 | `_werkstatt/texte/treppen-aussentreppe.md` | E4-TEXT-44 | Z-12 | E4-W3+1 | offen |
+| E4-BAU-44 | Seite `/treppen/aussentreppe` nach Vorlage `wissen` | Baumeister | Haiku | 2 | `src/app/(bestand)/treppen/aussentreppe/page.*` und `src/components/seiten/treppen-aussentreppe/*` | E4-LEKT-44 | Z-04, Z-09, Z-11, Z-13 | E4-W3+2 | offen |
+| E4-TEXT-45 | Text `/treppen/innentreppe` (wissen) | Texter | Haiku | 2 | `_werkstatt/texte/treppen-innentreppe.md` | E3-Tor | Z-12 | E4-W3 | offen |
+| E4-LEKT-45 | Lektorat `/treppen/innentreppe` | Lektor | Haiku | 2 | `_werkstatt/texte/treppen-innentreppe.md` | E4-TEXT-45 | Z-12 | E4-W3+1 | offen |
+| E4-BAU-45 | Seite `/treppen/innentreppe` nach Vorlage `wissen` | Baumeister | Haiku | 2 | `src/app/(bestand)/treppen/innentreppe/page.*` und `src/components/seiten/treppen-innentreppe/*` | E4-LEKT-45 | Z-04, Z-09, Z-11, Z-13 | E4-W3+2 | offen |
+| E4-TEXT-46 | Text `/treppen/treppenhaus` (wissen) | Texter | Haiku | 2 | `_werkstatt/texte/treppen-treppenhaus.md` | E3-Tor | Z-12 | E4-W3 | offen |
+| E4-LEKT-46 | Lektorat `/treppen/treppenhaus` | Lektor | Haiku | 2 | `_werkstatt/texte/treppen-treppenhaus.md` | E4-TEXT-46 | Z-12 | E4-W3+1 | offen |
+| E4-BAU-46 | Seite `/treppen/treppenhaus` nach Vorlage `wissen` | Baumeister | Haiku | 2 | `src/app/(bestand)/treppen/treppenhaus/page.*` und `src/components/seiten/treppen-treppenhaus/*` | E4-LEKT-46 | Z-04, Z-09, Z-11, Z-13 | E4-W3+2 | offen |
+| E4-TEXT-47 | Text `/untergrund-abdichtung` (wissen) | Texter | Haiku | 2 | `_werkstatt/texte/untergrund-abdichtung.md` | E3-Tor | Z-12 | E4-W3 | offen |
+| E4-LEKT-47 | Lektorat `/untergrund-abdichtung` | Lektor | Haiku | 2 | `_werkstatt/texte/untergrund-abdichtung.md` | E4-TEXT-47 | Z-12 | E4-W3+1 | offen |
+| E4-BAU-47 | Seite `/untergrund-abdichtung` nach Vorlage `wissen` | Baumeister | Haiku | 2 | `src/app/(bestand)/untergrund-abdichtung/page.*` und `src/components/seiten/untergrund-abdichtung/*` | E4-LEKT-47 | Z-04, Z-09, Z-11, Z-13 | E4-W3+2 | offen |
+| E4-TEXT-48 | Text `/untergrund-abdichtung/ausgleich-gefaelle` (wissen) | Texter | Haiku | 2 | `_werkstatt/texte/untergrund-abdichtung-ausgleich-gefaelle.md` | E3-Tor | Z-12 | E4-W3 | offen |
+| E4-LEKT-48 | Lektorat `/untergrund-abdichtung/ausgleich-gefaelle` | Lektor | Haiku | 2 | `_werkstatt/texte/untergrund-abdichtung-ausgleich-gefaelle.md` | E4-TEXT-48 | Z-12 | E4-W3+1 | offen |
+| E4-BAU-48 | Seite `/untergrund-abdichtung/ausgleich-gefaelle` nach Vorlage `wissen` | Baumeister | Haiku | 2 | `src/app/(bestand)/untergrund-abdichtung/ausgleich-gefaelle/page.*` und `src/components/seiten/untergrund-abdichtung-ausgleich-gefaelle/*` | E4-LEKT-48 | Z-04, Z-09, Z-11, Z-13 | E4-W3+2 | offen |
+| E4-TEXT-49 | Text `/untergrund-abdichtung/din-18534` (wissen) | Texter | Haiku | 2 | `_werkstatt/texte/untergrund-abdichtung-din-18534.md` | E3-Tor | Z-12 | E4-W3 | offen |
+| E4-LEKT-49 | Lektorat `/untergrund-abdichtung/din-18534` | Lektor | Haiku | 2 | `_werkstatt/texte/untergrund-abdichtung-din-18534.md` | E4-TEXT-49 | Z-12 | E4-W3+1 | offen |
+| E4-BAU-49 | Seite `/untergrund-abdichtung/din-18534` nach Vorlage `wissen` | Baumeister | Haiku | 2 | `src/app/(bestand)/untergrund-abdichtung/din-18534/page.*` und `src/components/seiten/untergrund-abdichtung-din-18534/*` | E4-LEKT-49 | Z-04, Z-09, Z-11, Z-13 | E4-W3+2 | offen |
+| E4-TEXT-50 | Text `/untergrund-abdichtung/entkopplung` (wissen) | Texter | Haiku | 2 | `_werkstatt/texte/untergrund-abdichtung-entkopplung.md` | E3-Tor | Z-12 | E4-W3 | offen |
+| E4-LEKT-50 | Lektorat `/untergrund-abdichtung/entkopplung` | Lektor | Haiku | 2 | `_werkstatt/texte/untergrund-abdichtung-entkopplung.md` | E4-TEXT-50 | Z-12 | E4-W3+1 | offen |
+| E4-BAU-50 | Seite `/untergrund-abdichtung/entkopplung` nach Vorlage `wissen` | Baumeister | Haiku | 2 | `src/app/(bestand)/untergrund-abdichtung/entkopplung/page.*` und `src/components/seiten/untergrund-abdichtung-entkopplung/*` | E4-LEKT-50 | Z-04, Z-09, Z-11, Z-13 | E4-W3+2 | offen |
+| E4-TEXT-51 | Text `/untergrund-abdichtung/estrich-belegreife` (wissen) | Texter | Haiku | 2 | `_werkstatt/texte/untergrund-abdichtung-estrich-belegreife.md` | E3-Tor | Z-12 | E4-W3 | offen |
+| E4-LEKT-51 | Lektorat `/untergrund-abdichtung/estrich-belegreife` | Lektor | Haiku | 2 | `_werkstatt/texte/untergrund-abdichtung-estrich-belegreife.md` | E4-TEXT-51 | Z-12 | E4-W3+1 | offen |
+| E4-BAU-51 | Seite `/untergrund-abdichtung/estrich-belegreife` nach Vorlage `wissen` | Baumeister | Haiku | 2 | `src/app/(bestand)/untergrund-abdichtung/estrich-belegreife/page.*` und `src/components/seiten/untergrund-abdichtung-estrich-belegreife/*` | E4-LEKT-51 | Z-04, Z-09, Z-11, Z-13 | E4-W3+2 | offen |
+| E4-TEXT-52 | Text `/untergrund-abdichtung/fliesen-auf-fliesen` (wissen) | Texter | Haiku | 2 | `_werkstatt/texte/untergrund-abdichtung-fliesen-auf-fliesen.md` | E3-Tor | Z-12 | E4-W3 | offen |
+| E4-LEKT-52 | Lektorat `/untergrund-abdichtung/fliesen-auf-fliesen` | Lektor | Haiku | 2 | `_werkstatt/texte/untergrund-abdichtung-fliesen-auf-fliesen.md` | E4-TEXT-52 | Z-12 | E4-W3+1 | offen |
+| E4-BAU-52 | Seite `/untergrund-abdichtung/fliesen-auf-fliesen` nach Vorlage `wissen` | Baumeister | Haiku | 2 | `src/app/(bestand)/untergrund-abdichtung/fliesen-auf-fliesen/page.*` und `src/components/seiten/untergrund-abdichtung-fliesen-auf-fliesen/*` | E4-LEKT-52 | Z-04, Z-09, Z-11, Z-13 | E4-W3+2 | offen |
+| E4-TEXT-53 | Text `/unternehmen` (erzaehl) | Texter | Haiku | 2 | `_werkstatt/texte/unternehmen.md` | E3-Tor | Z-12 | E4-W3 | offen |
+| E4-LEKT-53 | Lektorat `/unternehmen` | Lektor | Haiku | 2 | `_werkstatt/texte/unternehmen.md` | E4-TEXT-53 | Z-12 | E4-W3+1 | offen |
+| E4-BAU-53 | Seite `/unternehmen` nach Vorlage `erzaehl` | Baumeister | Haiku | 2 | `src/app/(bestand)/unternehmen/page.*` und `src/components/seiten/unternehmen/*` | E4-LEKT-53 | Z-04, Z-09, Z-11, Z-13 | E4-W3+2 | offen |
+| E4-TEXT-ORTE | Texte der 13 Ortsseiten aus echten Angaben (Entfernung, Region, Präposition) als JSON | Texter | Haiku | 2 | `_werkstatt/texte/orte.json` | E3-Tor | Z-12 | E4-W1…W3 | offen |
+| E4-LEKT-ORTE | Lektorat Ortstexte | Lektor | Haiku | 2 | `_werkstatt/texte/orte.json` | E3-Tor | Z-12 | E4-W1…W3 | offen |
+| E4-TEXT-LEISTUNGEN | Texte der 4 Leistungen (`services.js`) als JSON | Texter | Haiku | 2 | `_werkstatt/texte/leistungen.json` | E3-Tor | Z-12 | E4-W1…W3 | offen |
+| E4-LEKT-LEISTUNGEN | Lektorat Leistungen | Lektor | Haiku | 2 | `_werkstatt/texte/leistungen.json` | E3-Tor | Z-12 | E4-W1…W3 | offen |
+| E4-BAU-LEISTUNG | Vorlage `/leistungen/[id]` (4 Seiten) | Baumeister | Haiku | 2 | `src/app/(bestand)/leistungen/[id]/page.jsx` | E3-Tor | Z-04, Z-12 | E4-W1…W3 | offen |
+| E4-TEXT-LS | Bausteine der 52 Seiten Leistung × Ort (nur echte Angaben) | Texter | Haiku | 2 | `_werkstatt/texte/leistung-ort.json` | E3-Tor | Z-12 | E4-W1…W3 | offen |
+| E4-LEKT-LS | Lektorat Leistung × Ort | Lektor | Haiku | 2 | `_werkstatt/texte/leistung-ort.json` | E3-Tor | Z-12 | E4-W1…W3 | offen |
+| E4-BAU-LS | Vorlage `/leistungen/[id]/[stadt]` (52 Seiten) | Baumeister | Haiku | 2 | `src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx` | E3-Tor | Z-04, Z-12 | E4-W1…W3 | offen |
+| E4-TEXT-MUSTER-1 | Texte Musterbäder 1 bis 6 (`musterbaeder.js`) als JSON | Texter | Haiku | 2 | `_werkstatt/texte/musterbaeder-1.json` | E3-Tor | Z-12 | E4-W1…W3 | offen |
+| E4-TEXT-MUSTER-2 | Texte Musterbäder 7 bis 12 als JSON | Texter | Haiku | 2 | `_werkstatt/texte/musterbaeder-2.json` | E3-Tor | Z-12 | E4-W1…W3 | offen |
+| E4-LEKT-MUSTER | Lektorat Musterbäder | Lektor | Haiku | 2 | `_werkstatt/texte/musterbaeder-*.json` | E3-Tor | Z-12 | E4-W1…W3 | offen |
+| E4-BAU-MUSTER | Vorlage `/bad/musterbaeder/[slug]` (12 Seiten) | Baumeister | Haiku | 2 | `src/app/(bestand)/bad/musterbaeder/[slug]/page.jsx` | E3-Tor | Z-04, Z-12 | E4-W1…W3 | offen |
+| E4-BAU-BLOG | Vorlage `/blog/[slug]` (Lesemodus, Wissensseite) | Baumeister | Haiku | 2 | `src/app/(bestand)/blog/[slug]/page.jsx`, `layout.jsx` | E3-Tor | Z-04, Z-12 | E4-W1…W3 | offen |
+| E4-BAU-RECHT | Darstellung der 6 Rechtstexte (Inhalt unverändert, G8) | Baumeister | Haiku | 2 | 6 Seitendateien der Rechtstexte | E3-Tor | Z-04, Z-12 | E4-W1…W3 | offen |
+| E4-ORCH-01 | Datentexte übertragen (`cities.ts`, `services.js`, `musterbaeder.js`, `topics.js`) | Orchestrator | Opus | 3 | gemeinsame Datendateien | E3-Tor | Z-04, Z-12 | E4-W1…W3 | offen |
+| E4-TEXT-POST-01 | Artikel `/blog/handwerkerbonus-fliesenarbeiten` neu schreiben (Wissensseite), Bild aus `bildplaetze.md` | Texter | Haiku | 2 | `src/config/posts/handwerkerbonus-fliesenarbeiten.js` | E4-BAU-BLOG | Z-12, Z-13 | E4-W2 | offen |
+| E4-LEKT-POST-01 | Lektorat `/blog/handwerkerbonus-fliesenarbeiten` | Lektor | Haiku | 2 | `src/config/posts/handwerkerbonus-fliesenarbeiten.js` | E4-TEXT-POST-01 | Z-12 | E4-W3 | offen |
+| E4-TEXT-POST-02 | Artikel `/blog/undichte-dusche-warnzeichen` neu schreiben (Wissensseite), Bild aus `bildplaetze.md` | Texter | Haiku | 2 | `src/config/posts/undichte-dusche-warnzeichen.js` | E4-BAU-BLOG | Z-12, Z-13 | E4-W2 | offen |
+| E4-LEKT-POST-02 | Lektorat `/blog/undichte-dusche-warnzeichen` | Lektor | Haiku | 2 | `src/config/posts/undichte-dusche-warnzeichen.js` | E4-TEXT-POST-02 | Z-12 | E4-W3 | offen |
+| E4-TEXT-POST-03 | Artikel `/blog/feinsteinzeug-oder-naturstein-vergleich` neu schreiben (Wissensseite), Bild aus `bildplaetze.md` | Texter | Haiku | 2 | `src/config/posts/feinsteinzeug-oder-naturstein-vergleich.js` | E4-BAU-BLOG | Z-12, Z-13 | E4-W2 | offen |
+| E4-LEKT-POST-03 | Lektorat `/blog/feinsteinzeug-oder-naturstein-vergleich` | Lektor | Haiku | 2 | `src/config/posts/feinsteinzeug-oder-naturstein-vergleich.js` | E4-TEXT-POST-03 | Z-12 | E4-W3 | offen |
+| E4-TEXT-POST-04 | Artikel `/blog/fliesen-reinigen-pflegen` neu schreiben (Wissensseite), Bild aus `bildplaetze.md` | Texter | Haiku | 2 | `src/config/posts/fliesen-reinigen-pflegen.js` | E4-BAU-BLOG | Z-12, Z-13 | E4-W2 | offen |
+| E4-LEKT-POST-04 | Lektorat `/blog/fliesen-reinigen-pflegen` | Lektor | Haiku | 2 | `src/config/posts/fliesen-reinigen-pflegen.js` | E4-TEXT-POST-04 | Z-12 | E4-W3 | offen |
+| E4-TEXT-POST-05 | Artikel `/blog/barrierefreier-balkonaustritt` neu schreiben (Wissensseite), Bild aus `bildplaetze.md` | Texter | Haiku | 2 | `src/config/posts/barrierefreier-balkonaustritt.js` | E4-BAU-BLOG | Z-12, Z-13 | E4-W2 | offen |
+| E4-LEKT-POST-05 | Lektorat `/blog/barrierefreier-balkonaustritt` | Lektor | Haiku | 2 | `src/config/posts/barrierefreier-balkonaustritt.js` | E4-TEXT-POST-05 | Z-12 | E4-W3 | offen |
+| E4-TEXT-POST-06 | Artikel `/blog/wandnischen-dusche-planen` neu schreiben (Wissensseite), Bild aus `bildplaetze.md` | Texter | Haiku | 2 | `src/config/posts/wandnischen-dusche-planen.js` | E4-BAU-BLOG | Z-12, Z-13 | E4-W2 | offen |
+| E4-LEKT-POST-06 | Lektorat `/blog/wandnischen-dusche-planen` | Lektor | Haiku | 2 | `src/config/posts/wandnischen-dusche-planen.js` | E4-TEXT-POST-06 | Z-12 | E4-W3 | offen |
+| E4-TEXT-POST-07 | Artikel `/blog/duschrinne-oder-punktablauf` neu schreiben (Wissensseite), Bild aus `bildplaetze.md` | Texter | Haiku | 2 | `src/config/posts/duschrinne-oder-punktablauf.js` | E4-BAU-BLOG | Z-12, Z-13 | E4-W2 | offen |
+| E4-LEKT-POST-07 | Lektorat `/blog/duschrinne-oder-punktablauf` | Lektor | Haiku | 2 | `src/config/posts/duschrinne-oder-punktablauf.js` | E4-TEXT-POST-07 | Z-12 | E4-W3 | offen |
+| E4-TEXT-POST-08 | Artikel `/blog/schimmel-fliesenfugen-vermeiden` neu schreiben (Wissensseite), Bild aus `bildplaetze.md` | Texter | Haiku | 2 | `src/config/posts/schimmel-fliesenfugen-vermeiden.js` | E4-BAU-BLOG | Z-12, Z-13 | E4-W2 | offen |
+| E4-LEKT-POST-08 | Lektorat `/blog/schimmel-fliesenfugen-vermeiden` | Lektor | Haiku | 2 | `src/config/posts/schimmel-fliesenfugen-vermeiden.js` | E4-TEXT-POST-08 | Z-12 | E4-W3 | offen |
+| E4-TEXT-POST-09 | Artikel `/blog/fliesen-fuer-allergiker` neu schreiben (Wissensseite), Bild aus `bildplaetze.md` | Texter | Haiku | 2 | `src/config/posts/fliesen-fuer-allergiker.js` | E4-BAU-BLOG | Z-12, Z-13 | E4-W2 | offen |
+| E4-LEKT-POST-09 | Lektorat `/blog/fliesen-fuer-allergiker` | Lektor | Haiku | 2 | `src/config/posts/fliesen-fuer-allergiker.js` | E4-TEXT-POST-09 | Z-12 | E4-W3 | offen |
+| E4-TEXT-POST-10 | Artikel `/blog/rutschfeste-fliesen-r-klassen` neu schreiben (Wissensseite), Bild aus `bildplaetze.md` | Texter | Haiku | 2 | `src/config/posts/rutschfeste-fliesen-r-klassen.js` | E4-BAU-BLOG | Z-12, Z-13 | E4-W2 | offen |
+| E4-LEKT-POST-10 | Lektorat `/blog/rutschfeste-fliesen-r-klassen` | Lektor | Haiku | 2 | `src/config/posts/rutschfeste-fliesen-r-klassen.js` | E4-TEXT-POST-10 | Z-12 | E4-W3 | offen |
+| E4-TEXT-POST-11 | Artikel `/blog/fliesen-mythen-faktencheck` neu schreiben (Wissensseite), Bild aus `bildplaetze.md` | Texter | Haiku | 2 | `src/config/posts/fliesen-mythen-faktencheck.js` | E4-BAU-BLOG | Z-12, Z-13 | E4-W2 | offen |
+| E4-LEKT-POST-11 | Lektorat `/blog/fliesen-mythen-faktencheck` | Lektor | Haiku | 2 | `src/config/posts/fliesen-mythen-faktencheck.js` | E4-TEXT-POST-11 | Z-12 | E4-W3 | offen |
+| E4-TEXT-POST-12 | Artikel `/blog/gaeste-wc-fliesen` neu schreiben (Wissensseite), Bild aus `bildplaetze.md` | Texter | Haiku | 2 | `src/config/posts/gaeste-wc-fliesen.js` | E4-BAU-BLOG | Z-12, Z-13 | E4-W2 | offen |
+| E4-LEKT-POST-12 | Lektorat `/blog/gaeste-wc-fliesen` | Lektor | Haiku | 2 | `src/config/posts/gaeste-wc-fliesen.js` | E4-TEXT-POST-12 | Z-12 | E4-W3 | offen |
+| E4-TEXT-POST-13 | Artikel `/blog/fliesenleger-gesucht-geselle-meister` neu schreiben (Wissensseite), Bild aus `bildplaetze.md` | Texter | Haiku | 2 | `src/config/posts/fliesenleger-gesucht-geselle-meister.js` | E4-BAU-BLOG | Z-12, Z-13 | E4-W2 | offen |
+| E4-LEKT-POST-13 | Lektorat `/blog/fliesenleger-gesucht-geselle-meister` | Lektor | Haiku | 2 | `src/config/posts/fliesenleger-gesucht-geselle-meister.js` | E4-TEXT-POST-13 | Z-12 | E4-W3 | offen |
+| E4-PRUEF-A | Stufe A je Welle (unabhängig) und Textstichprobe 10 % (mindestens 5 Seiten) | Prüfer | Haiku | 1 | `$SCRATCH/E4-PRUEF-A*/**` | je Welle | Z-02, Z-12 | E4-W1…W3 | offen |
+| E4-PRUEF-B | Stufe B der Etappe | Prüfer | Haiku | 1 | `_werkstatt/belege/e4/**` | E4-* | Z-02…Z-14 | E4-Tor | offen |
+
+### E5 · Bilder, Referenzen, Adressen, Abbau
+| Kennung | Gegenstand | Rolle | Modell | Stufe | Schreibrechte | Abhängig von | Kriterium | Welle | Status |
+|---|---|---|---|---|---|---|---|---|---|
+| E5-BILD-01 | Restliche Webfassungen (Galerie, Artikel, Ortsseiten, OG-Bild 1200 × 630) | Bildbearbeiter | Haiku | 2 | `public/images/arbeiten/**`, `_werkstatt/bilder/arbeiten.json` | E2-BILD-01 | Z-13 | E5-W1 | offen |
+| E5-ORCH-01 | `arbeiten.ts` aus den Bilddaten übertragen; Generatorbilder aus allen Verwendungen entfernen (Leistungen, Musterbäder, Artikel, strukturierte Daten) (E-013) | Orchestrator | Opus | 3 | `src/config/{arbeiten.ts,services.js,musterbaeder.js}`, `src/lib/schema.ts` | E5-BILD-01 | Z-13, Z-14 | E5-W1 | offen |
+| E5-BAU-01 | Referenzseiten `/referenzen/[id]`: ehrliche Themenansichten mit echten Fotos oder 308 auf die gefilterte Galerie (E-013) | Baumeister | Haiku | 2 | `src/app/(bestand)/referenzen/[id]/page.jsx`, `src/config/projects.js` (nur Kennzeichnung), Weiterleitungen meldet er | E5-ORCH-01 | Z-12, Z-14 | E5-W2 | offen |
+| E5-ORCH-02 | Weiterleitungen und Sitemap: 308 aus E5-BAU-01 in `next.config.ts`, Sitemap angleichen, echtes OG-Bild mit richtigen Maßen, Video-Sitemap ohne fehlende Videos | Orchestrator | Opus | 3 | `next.config.ts`, `src/app/sitemap.ts`, `src/lib/metadata.ts`, `src/shared/config/site.ts`, `src/app/video-sitemap.xml/route.ts` | E5-BAU-01 | Z-14 | E5-W2 | offen |
+| E5-ORCH-03 | Abbau entfallender Bewegung und toter Teile (Kreuzlinie, Flucht, Planblatt-Szene, Einzugsband, Fugenband, Plan-Morph), Register und Werkzeuge angleichen | Orchestrator | Opus | 3 | `bewegung.css`, `register.ts`, `register.json`, betroffene Komponenten | E4-Tor | Z-05, Z-03 | E5-W2 | offen |
+| E5-PRUEF-B | Stufe B der Etappe | Prüfer | Haiku | 1 | `_werkstatt/belege/e5/**` | E5-* | Z-02…Z-14 | E5-Tor | offen |
+
+### Abschluss
+| Kennung | Gegenstand | Rolle | Modell | Stufe | Schreibrechte | Abhängig von | Kriterium | Welle | Status |
+|---|---|---|---|---|---|---|---|---|---|
+| AB-PRUEF-C | Stufe C (Endprüfung) mit Stichprobe 10 %, allen Adressen, Probeläufen, Systemschrift 200 % | Prüfer | Haiku | 1 | `_werkstatt/belege/abschluss/**` | Kür leer | Z-01…Z-14 | AB | offen |
+| AB-DOK-01 | BERICHT.md, Vorher-Nachher-Galerie (`_werkstatt/bilder/galerie.html`), blinder Vergleich (neutral benannt, Schlüssel getrennt), Anleitung Zusammenführen und Zurückrollen | Dokumentar | Haiku | 1 | `_werkstatt/BERICHT.md`, `_werkstatt/bilder/abschluss/**` | AB-PRUEF-C | Z-04, Z-10 | AB | offen |
+| AB-END | Endprüfung jedes Kriteriums gegen Beleg (frischer Opus-Unteragent, keine Tests) | Juror | Opus | 3 | `_werkstatt/berichte/ABSCHLUSS.md` | AB-DOK-01 | Z-01…Z-14 | AB | offen |
+
+## Kür (nach Wirkung)
+| Kennung | Gegenstand | Kriterium | Status |
+|---|---|---|---|
+| KUER-01 | Feinschliff nach Jury: jede Hauptansicht, jede Kategorie unter 9 wird ein Paket (höchstens 2 Runden je Ansicht und Kategorie) | Z-04 | offen |
+| KUER-02 | Klang „leises Klacken je Spalte“ (Einstellung KLANG Alternative), nur nach Interaktion, mit Schalter | Z-05 | offen |
+| KUER-03 | Halbverband als Alternative für B-01 testen (Einstellung SEITENWECHSEL Alternative) und per Jury entscheiden | Z-04 | offen |
+| KUER-04 | Badplaner und Badanfrage zusammenlegen, falls Probeläufe Verwirrung zeigen (E-012 Umkehrprobe) | Z-11 | offen |
+| KUER-05 | Ortsseiten: gezeichnete Karte mit Anfahrt je Ort | Z-04 | offen |
+| KUER-06 | Artikelbilder je Abschnitt (zweites Foto) | Z-13 | offen |
+| KUER-07 | Fuß: Öffnungszeiten als „Jetzt geöffnet“ ohne Uhrzeit-Hydrierfehler | Z-11 | offen |
+| KUER-08 | Druckansicht der Wissensseiten | Z-09 | offen |
+
+## Offene Punkte
+- (wird an Etappentoren ergänzt)
+
+## Anhang · Fassung 0 (wörtlich, im Chat freigegeben am 23.10.2026)
 
 ## Context
 

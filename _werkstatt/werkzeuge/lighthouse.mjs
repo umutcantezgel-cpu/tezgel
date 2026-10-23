@@ -4,8 +4,14 @@
 // Je Lauf zusätzlich: lcp_element, lcp_phasen, cls_quellen (bis 5), js_top (5 größte Skripte).
 // Benchmark-Band ±15 %: Referenz ist der Benchmark-Index des ersten gezählten Laufs der Sitzung. Weicht ein Lauf ab,
 // wird er bis zu 2-mal wiederholt; bleibt er außerhalb, trägt er benchmark_abweichung: true.
+// Frisches Profil je Lauf (E0-PRUEF-01): jeder Lighthouse-Lauf – auch Aufwärm- und Wiederholungsläufe – startet eine
+// neue Chrome-Instanz mit neuem, leerem userDataDir unter $SCRATCH/lh-profile/<lauf-nr>-<zeitstempel>. Nach dem Lauf
+// wird Chrome beendet und das Profil gelöscht. Grund: localStorage (Einwilligung, Intro) bleibt sonst über Läufe erhalten
+// (Gutachten E0-GUT-02-b02, „Vorab“). Jeder Lauf trägt profil: "frisch", profil_pfad und profil_dateien (Anzahl der
+// Einträge im Profil vor dem Löschen; 0 hieße: Chrome hat das Profil nicht benutzt).
 // Nutzung: CHROME_PATH=… node lighthouse.mjs --satz <name> [--seiten /,/bad | --hauptansichten] [--laeufe 3]
 //          [--formen mobil,desktop] [--base URL] [--zusammenfuehren]
+//          RELAUNCH_BELEGE=<Ordner> setzt das Ausgabeverzeichnis (Standard _werkstatt/belege).
 // Messbedingungen: Erstbesuch (Einwilligungsbanner sichtbar), Dritt-Hosts blockiert (Muster aus GESPERRTE_HOSTS in lib.mjs),
 // lokale Auslieferung (next start, komprimiert). Lighthouse läuft über einen eigenen Chrome; die Sperre ist daher
 // blockedUrlPatterns und nicht installSperre (das ist eine Playwright-API).
@@ -13,7 +19,7 @@ import lighthouse from 'lighthouse';
 import * as chromeLauncher from 'chrome-launcher';
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, assertLocal, grundmenge, slug, ensureDir, RELAUNCH, GESPERRTE_HOSTS } from './lib.mjs';
+import { BASE, assertLocal, grundmenge, slug, ensureDir, RELAUNCH, GESPERRTE_HOSTS, SCRATCH } from './lib.mjs';
 
 const arg = (k, d) => { const i = process.argv.indexOf(`--${k}`); return i > -1 ? process.argv[i + 1] : d; };
 const base = arg('base', BASE);
@@ -28,7 +34,10 @@ const laeufe = Number(arg('laeufe', '3'));
 if (!Number.isInteger(laeufe) || laeufe < 1) throw new Error(`ABBRUCH: --laeufe braucht eine ganze Zahl ab 1 (erhalten: ${arg('laeufe')}).`);
 const formen = (arg('formen') || 'mobil,desktop').split(',');
 if (formen.some((f) => !['mobil', 'desktop'].includes(f))) throw new Error(`ABBRUCH: --formen nur mobil und/oder desktop (erhalten: ${formen.join(',')}).`);
-const CHROME = process.env.CHROME_PATH || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
+const CHROME = process.env.CHROME_PATH; // von lib.mjs ermittelt, falls nicht gesetzt
+if (!CHROME) throw new Error('ABBRUCH: kein Chrome gefunden. CHROME_PATH setzen (EINRICHTUNG.md).');
+const BELEGE = process.env.RELAUNCH_BELEGE || path.join(RELAUNCH, 'belege');
+const PROFIL_WURZEL = path.join(SCRATCH, 'lh-profile');
 const BAND = 0.15;        // Benchmark-Band ±15 %
 const WIEDERHOLUNGEN = 2; // bei Abweichung je gezähltem Lauf höchstens 2 Wiederholungen
 const ZAHLEN = ['perf', 'a11y', 'bp', 'seo', 'lcp', 'cls', 'tbt', 'fcp', 'si', 'js_kb', 'font_kb', 'gesamt_kb', 'benchmark'];
@@ -46,8 +55,15 @@ const rawDir = ensureDir(path.join(RELAUNCH, 'cache', 'lighthouse', satz));
 // LCP-Element und -Phasen: Lighthouse 13 ersetzt den Audit largest-contentful-paint-element durch lcp-breakdown-insight.
 // Dessen Details sind eine Liste aus Phasen-Tabelle (type table) und Knoten (type node).
 const lcpListe = (a) => a['lcp-breakdown-insight']?.details?.items ?? [];
+// Erster Knoten (type node mit selector) in einer beliebig verschachtelten Detailstruktur.
+function erstesKnoten(d) {
+  if (!d || typeof d !== 'object') return null;
+  if (d.type === 'node' && d.selector) return d;
+  for (const v of Object.values(d)) { const f = erstesKnoten(v); if (f) return f; }
+  return null;
+}
 function lcpElement(a) {
-  const knoten = lcpListe(a).find((x) => x.type === 'node');
+  const knoten = lcpListe(a).find((x) => x.type === 'node') ?? erstesKnoten(a['largest-contentful-paint-element']?.details);
   return knoten ? { selector: knoten.selector ?? null, ausschnitt: String(knoten.snippet ?? '').slice(0, 160) } : null;
 }
 function lcpPhasen(a) {
@@ -82,8 +98,8 @@ function jsTop(a) {
   }
   return top;
 }
-// Kennzahlen eines Laufs aus dem Lighthouse-Ergebnis (LHR).
-function werte(lhr) {
+// Kennzahlen eines Laufs aus dem Lighthouse-Ergebnis (LHR); frisch = Profilangaben des Laufs.
+function werte(lhr, frisch) {
   const a = lhr.audits;
   const ressourcen = (typ) => Math.round((a['resource-summary']?.details?.items?.find((x) => x.resourceType === typ)?.transferSize || 0) / 1024);
   return {
@@ -96,6 +112,7 @@ function werte(lhr) {
     js_kb: ressourcen('script'), font_kb: ressourcen('font'), gesamt_kb: ressourcen('total'),
     benchmark: lhr.environment.benchmarkIndex,
     lcp_element: lcpElement(a), lcp_phasen: lcpPhasen(a), cls_quellen: clsQuellen(a), js_top: jsTop(a),
+    ...frisch,
   };
 }
 // Median je Kennzahl (ungerade: mittleres Element; gerade: Mittelwert der beiden mittleren) und spanne [min, max].
@@ -115,64 +132,79 @@ function zusammenfassen(laufliste) {
   median.spanne = spanne;
   return median;
 }
-// Ein Lighthouse-Lauf; Messfehler des Werkzeugs (z. B. NO_NAVSTART) zählen nicht: bis zu 3 Wiederholungen.
-async function messe(chrome, s, form, konfig) {
+
+// Frisches Profil: neues, leeres Verzeichnis je Lauf; Chrome startet darin neu.
+let profilZaehler = 0;
+async function frischerChrome() {
+  profilZaehler++;
+  fs.mkdirSync(PROFIL_WURZEL, { recursive: true });
+  const dir = path.join(PROFIL_WURZEL, `${profilZaehler}-${new Date().toISOString().replace(/[:.]/g, '-')}`);
+  fs.mkdirSync(dir); // schlägt fehl, falls das Verzeichnis schon existiert (kein Wiederverwenden)
+  const chrome = await chromeLauncher.launch({ chromePath: CHROME, userDataDir: dir, chromeFlags: ['--headless=new', '--no-sandbox', '--disable-gpu'] });
+  return { chrome, dir };
+}
+// Ein Lighthouse-Lauf in frischem Profil; Messfehler des Werkzeugs (z. B. NO_NAVSTART) zählen nicht: bis zu 3 Wiederholungen.
+// Chrome wird nach jedem Versuch beendet und das Profil gelöscht.
+async function messe(s, form, konfig) {
   let r;
+  let frisch;
   let versuch = 0;
   do {
-    r = await lighthouse(base + s, { port: chrome.port, output: 'json', logLevel: 'error', onlyCategories: ['performance', 'accessibility', 'best-practices', 'seo'], blockedUrlPatterns: blocked, disableStorageReset: false }, konfig);
+    const { chrome, dir } = await frischerChrome();
+    try {
+      r = await lighthouse(base + s, { port: chrome.port, output: 'json', logLevel: 'error', onlyCategories: ['performance', 'accessibility', 'best-practices', 'seo'], blockedUrlPatterns: blocked, disableStorageReset: false }, konfig);
+      frisch = { profil: 'frisch', profil_pfad: dir, profil_dateien: fs.readdirSync(dir).length };
+    } finally {
+      await chrome.kill();
+      fs.rmSync(dir, { recursive: true, force: true });
+    }
     versuch++;
   } while (r.lhr.runtimeError && versuch < 4);
   if (r.lhr.runtimeError) throw new Error(`${s} ${form}: ${r.lhr.runtimeError.code}`);
-  return r.lhr;
+  return { lhr: r.lhr, frisch };
 }
 const konfigFuer = async (form) => (form === 'desktop' ? (await import('lighthouse/core/config/desktop-config.js')).default : undefined);
 
-const vorhanden = process.argv.includes('--zusammenfuehren') && fs.existsSync(path.join(RELAUNCH, 'belege', satz, 'lighthouse.json')) ? JSON.parse(fs.readFileSync(path.join(RELAUNCH, 'belege', satz, 'lighthouse.json'), 'utf8')) : null;
-const bedingungen = `lokal next start (komprimiert), Erstbesuch mit Banner, Dritt-Hosts blockiert, Lighthouse-Standard-Drosselung (mobil: simuliert 4× CPU, Slow 4G; Desktop-Preset), Aufwärmlauf, Median aus ${laeufe}, Benchmark-Band ±15 %`;
+const vorhanden = process.argv.includes('--zusammenfuehren') && fs.existsSync(path.join(BELEGE, satz, 'lighthouse.json')) ? JSON.parse(fs.readFileSync(path.join(BELEGE, satz, 'lighthouse.json'), 'utf8')) : null;
+const bedingungen = `lokal next start (komprimiert), Erstbesuch mit Banner, Dritt-Hosts blockiert, Lighthouse-Standard-Drosselung (mobil: simuliert 4× CPU, Slow 4G; Desktop-Preset), frisches Chrome-Profil je Lauf, Aufwärmlauf, Median aus ${laeufe}, Benchmark-Band ±15 %`;
 const ergebnis = { ...(vorhanden || { seiten: {} }), satz, base, laeufe, bedingungen, benchmark_band: BAND };
 let referenz = null; // Benchmark-Index des ersten gezählten Laufs der Sitzung
 
-const chrome = await chromeLauncher.launch({ chromePath: CHROME, chromeFlags: ['--headless=new', '--no-sandbox', '--disable-gpu'] });
-try {
-  for (const s of seiten) {
-    ergebnis.seiten[s] = ergebnis.seiten[s] || {};
-    for (const form of formen) {
-      const konfig = await konfigFuer(form);
-      await messe(chrome, s, form, konfig); // Aufwärmlauf: nicht gezählt, nicht gespeichert
-      process.stdout.write('a');
-      const laufliste = [];
-      for (let k = 0; k < laeufe; k++) {
-        let lhr = await messe(chrome, s, form, konfig);
-        let w = werte(lhr);
-        referenz ??= w.benchmark;
-        for (let v = 0; v < WIEDERHOLUNGEN && abweicht(w.benchmark, referenz); v++) {
-          process.stdout.write('w');
-          lhr = await messe(chrome, s, form, konfig);
-          w = werte(lhr);
-        }
-        if (abweicht(w.benchmark, referenz)) w.benchmark_abweichung = true;
-        laufliste.push(w);
-        fs.writeFileSync(path.join(rawDir, `${slug(s)}-${form}-${k}.report.json`), JSON.stringify(lhr));
-        process.stdout.write('.');
+for (const s of seiten) {
+  ergebnis.seiten[s] = ergebnis.seiten[s] || {};
+  for (const form of formen) {
+    const konfig = await konfigFuer(form);
+    await messe(s, form, konfig); // Aufwärmlauf: nicht gezählt, nicht gespeichert
+    process.stdout.write('a');
+    const laufliste = [];
+    for (let k = 0; k < laeufe; k++) {
+      let { lhr, frisch } = await messe(s, form, konfig);
+      let w = werte(lhr, frisch);
+      referenz ??= w.benchmark;
+      for (let v = 0; v < WIEDERHOLUNGEN && abweicht(w.benchmark, referenz); v++) {
+        process.stdout.write('w');
+        ({ lhr, frisch } = await messe(s, form, konfig));
+        w = werte(lhr, frisch);
       }
-      const block = { median: zusammenfassen(laufliste), laeufe: laufliste };
-      if (laufliste.some((x) => x.benchmark_abweichung)) block.benchmark_abweichung = true;
-      ergebnis.seiten[s][form] = block;
+      if (abweicht(w.benchmark, referenz)) w.benchmark_abweichung = true;
+      laufliste.push(w);
+      fs.writeFileSync(path.join(rawDir, `${slug(s)}-${form}-${k}.report.json`), JSON.stringify(lhr));
+      process.stdout.write('.');
     }
-    const e = ergebnis.seiten[s];
-    console.log(`\n${s}`);
-    for (const form of formen) {
-      const m = e[form].median;
-      const sp = (k) => `[${m.spanne[k][0]}–${m.spanne[k][1]}]`;
-      console.log(`  ${form}: perf ${m.perf} ${sp('perf')} · LCP ${m.lcp} ms ${sp('lcp')} · TBT ${m.tbt} ms ${sp('tbt')} · CLS ${m.cls} ${sp('cls')} · LCP-Element ${m.lcp_element?.selector ?? '–'}${e[form].benchmark_abweichung ? ' · Benchmark außerhalb des Bands' : ''}`);
-    }
-    if (e.mobil && e.desktop) console.log(`${s}: mobil ${e.mobil.median.perf} (LCP ${e.mobil.median.lcp} ms, TBT ${e.mobil.median.tbt}, CLS ${e.mobil.median.cls}) · desktop ${e.desktop.median.perf}`);
+    const block = { median: zusammenfassen(laufliste), laeufe: laufliste };
+    if (laufliste.some((x) => x.benchmark_abweichung)) block.benchmark_abweichung = true;
+    ergebnis.seiten[s][form] = block;
   }
-} finally {
-  await chrome.kill();
+  const e = ergebnis.seiten[s];
+  console.log(`\n${s}`);
+  for (const form of formen) {
+    const m = e[form].median;
+    const sp = (k) => `[${m.spanne[k][0]}–${m.spanne[k][1]}]`;
+    console.log(`  ${form}: perf ${m.perf} ${sp('perf')} · LCP ${m.lcp} ms ${sp('lcp')} · TBT ${m.tbt} ms ${sp('tbt')} · CLS ${m.cls} ${sp('cls')} · LCP-Element ${m.lcp_element?.selector ?? '–'}${e[form].benchmark_abweichung ? ' · Benchmark außerhalb des Bands' : ''}`);
+  }
+  if (e.mobil && e.desktop) console.log(`${s}: mobil ${e.mobil.median.perf} (LCP ${e.mobil.median.lcp} ms, TBT ${e.mobil.median.tbt}, CLS ${e.mobil.median.cls}) · desktop ${e.desktop.median.perf}`);
 }
 ergebnis.benchmark_referenz = referenz;
-const out = ensureDir(path.join(RELAUNCH, 'belege', satz));
+const out = ensureDir(path.join(BELEGE, satz));
 fs.writeFileSync(path.join(out, 'lighthouse.json'), JSON.stringify(ergebnis, null, 1));
 console.log(`\nErgebnis: ${path.join(out, 'lighthouse.json')} · Benchmark-Referenz ${referenz?.toFixed(1)}`);

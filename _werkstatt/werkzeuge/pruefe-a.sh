@@ -15,7 +15,7 @@ export PLAYWRIGHT_BROWSERS_PATH="${PLAYWRIGHT_BROWSERS_PATH:-/opt/pw-browsers}"
 
 WERKZEUGE="$(cd "$(dirname "$0")" && pwd)"
 REPO="$(cd "$WERKZEUGE/../.." && pwd)"
-SCRATCH="${RELAUNCH_SCRATCH:-/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad}"
+source "$WERKZEUGE/scratch.sh" || exit 1
 DEV="http://127.0.0.1:4320"
 ZUORDNUNG="$WERKZEUGE/test-zuordnung.json"
 TESTS="$WERKZEUGE/tests"

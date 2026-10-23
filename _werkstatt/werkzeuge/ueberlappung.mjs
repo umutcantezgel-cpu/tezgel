@@ -256,7 +256,7 @@ async function cli() {
   const ansicht = arg('ansicht', 'd1440');
   const v = ANSICHTEN[ansicht];
   if (!v) { console.error(`unbekannte Ansicht: ${ansicht}`); process.exit(2); }
-  const browser = await chromium.launch({ args: ['--font-render-hinting=none'] });
+  const browser = await chromium.launch({ args: ['--font-render-hinting=none'], executablePath: process.env.CHROME_PATH || undefined });
   try {
     const context = await browser.newContext({ viewport: { width: v.width, height: v.height }, deviceScaleFactor: 1, isMobile: v.isMobile, hasTouch: v.hasTouch, reducedMotion: 'reduce', locale: 'de-DE', timezoneId: 'Europe/Berlin', colorScheme: 'light' });
     await installSperre(context);

@@ -3,7 +3,7 @@
 # Abgelöst per setsid (überlebt das Ende der aufrufenden Sitzung); gestoppt wird die ganze Prozessgruppe.
 # Nutzung: server.sh start <commit> | server.sh stop | server.sh status
 set -uo pipefail
-SCRATCH="${RELAUNCH_SCRATCH:-/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad}"
+source "$(dirname "$0")/scratch.sh" || exit 1
 PORT="${PORT:-4310}"
 PIDFILE="$SCRATCH/server-$PORT.pid"
 DIRFILE="$SCRATCH/server-$PORT.dir"

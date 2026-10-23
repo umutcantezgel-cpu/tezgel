@@ -9,11 +9,10 @@ import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { BASE, RELAUNCH, assertLocal, ensureDir } from './lib.mjs';
+import { BASE, RELAUNCH, assertLocal, ensureDir, SCRATCH } from './lib.mjs';
 
 const HIER = path.dirname(fileURLToPath(import.meta.url));
 const GLYPHEN_PY = path.join(HIER, 'glyphen.py');
-const SCRATCH = process.env.RELAUNCH_SCRATCH || '/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad';
 const META = ['title', 'description', 'og_title', 'og_description'];
 const LISTEN = ['h1', 'ueberschriften', 'main_zeilen', 'header_zeilen', 'footer_zeilen', 'alt'];
 const UNSICHTBAR = /[\p{Cc}\p{Cf}\p{Cs}\p{Co}\p{Cn}\p{Zl}\p{Zp}]/u;
