@@ -1,6 +1,6 @@
 # ABNAHME · Definition of Done
 
-Stand 23.10.2026, E1, Fassung 1. Grundlage: AUFTRAG.md Abschnitt 16 (rekonstruiert, Annahme) mit den Schwellen aus Abschnitt 0 und 6 bis 11. Jede Zeile: Kriterium · Methode · Schwelle · Beleg · Ausgangswert E0 · Stand. Ein Kriterium gilt erst als erfüllt, wenn sein Beleg im Repository liegt und der Abschlussprüfer (AB-END) es bestätigt. Kriterien sinken nie still.
+Stand 24.10.2026, E1, Fassung 1.2 (nach Planprüfung Runde 1 und 2). Grundlage: AUFTRAG.md Abschnitt 16 (rekonstruiert, Annahme) mit den Schwellen aus Abschnitt 0 und 6 bis 11. Jede Zeile: Kriterium · Methode · Schwelle · Beleg · Ausgangswert E0 · Stand. Ein Kriterium gilt erst als erfüllt, wenn sein Beleg im Repository liegt und der Abschlussprüfer (AB-END) es bestätigt. Kriterien sinken nie still.
 
 Ausgangswerte E0 trägt der Orchestrator nach E0-PRUEF-03 und E0-PROBE-01…10 ein (`belege/e0/`). „Besser als Budget“ heißt: Der E0-Wert wird zur Schwelle.
 
@@ -10,17 +10,17 @@ Ausgangswerte E0 trägt der Orchestrator nach E0-PRUEF-03 und E0-PROBE-01…10 e
 - Methode: Abgleich PLAN.md gegen Commits.
 - Schwelle: 100 % der Pflichtpakete erledigt und abgenommen, jede Zeile mit Commit-Kennung; Kür leer (jedes Kürpaket erledigt).
 - Beleg: PLAN.md.
-- E0: 0 von 291 Pflichtzeilen. Stand: offen.
+- E0: 0 von 398 Pflichtzeilen (PLAN.md Fassung 1.2). Stand: offen.
 
 ### Z-02 Bestand (keine Ausnahme)
 - Methode: Stufe C, Reinraum (`reinraum.sh`), Durchlauf der Funktionsliste aus LAGEBILD.md.
-- Schwelle: `npm run build`, `typecheck`, `lint`, `test`, `qa:graph` mit Exit 0; Zahl bestandener Tests mindestens wie E0; alle Funktionen der Liste so gut wie in E0; null neue Konsolenfehler auf den Hauptansichten.
+- Schwelle: `npm run build`, `typecheck`, `lint`, `test`, `qa:graph` mit Exit 0; Zahl bestandener Tests mindestens wie E0; alle Funktionen der Liste so gut wie in E0; null neue Konsolenfehler in allen Browserläufen der Stufe C (Hauptansichten und Stichprobe).
 - Beleg: `belege/abschluss/reinraum.txt`, `belege/abschluss/funktionsliste.md`, `belege/abschluss/konsole.json`.
 - E0: reinraum grün bei c53faf4 (Build, Typen, Linter, Tests, Graph alle 0); Testzahl und Konsolenfehler folgen aus E0-PRUEF-03. Stand: offen.
 
 ### Z-03 Designsystem
 - Methode: Suche nach Werten außerhalb der Tokens in geänderten Dateien (`werte.mjs` mit `werte-regeln.json`: Farben, Abstände, Größen, Schrift, Radien, Dauern, Tailwind-Beliebigwerte und Stilwerte; dazu `statisch.mjs` für Icon-Familien, Emojis und Platzhalter), Stichprobe von 10 neuen Komponenten durch den Prüfer.
-- Schwelle: null Treffer außer Unantastbarem (Logo, Rechtstexte) und Bildinhalten; jede neue Komponente nutzt Tokens aus K-005. Zur Laufzeit berechnete Lage und Größe (Fliesenraster von B-01, Bildmaße aus `arbeiten.ts`) sind keine Gestaltungswerte; der Prüfer weist sie getrennt aus.
+- Schwelle: null Treffer außer Unantastbarem (Logo, Rechtstexte) und Bildinhalten; jede neue Komponente nutzt Tokens aus K-005.
 - Beleg: `belege/abschluss/werte.json`.
 - E0: Zählung im Bestand folgt aus E0-PRUEF-03 (nur Bericht, nicht Schwelle). Stand: offen.
 
@@ -43,7 +43,7 @@ Ausgangswerte E0 trägt der Orchestrator nach E0-PRUEF-03 und E0-PROBE-01…10 e
 
 ### Z-06 Grafik
 - Methode: `svg.mjs` über alle SVG-Dateien und Hauptansichten, Sichtprüfung des Sprites, Deckungsmessung des Logo-Vektors (`werkzeuge/logo/`).
-- Schwelle: eine Icon-Familie mit einer Strichstärke; jede SVG-Datei optimiert (keine Editor-Reste, keine eingebetteten Rasterbilder außer Logo-Bestand) und zugänglich (dekorativ mit `aria-hidden`, sonst mit Titel); keine doppelten Kennungen je Ansicht; Logo-Vektor mit mindestens 98 % Deckung bei doppelter Größe und exakten Farben, sonst Ersatz-Intro „Der erste Boden“ und Bitte in MENSCHEN.md (M-09).
+- Schwelle: eine Icon-Familie mit einer Strichstärke; jede SVG-Datei optimiert (svgo ohne sichtbaren Verlust, keine Editor-Reste und Metadaten) und zugänglich (dekorativ mit `aria-hidden`, sonst mit Titel); keine doppelten Kennungen je Ansicht; Logo-Vektor mit mindestens 98 % Deckung bei doppelter Größe und exakten Farben, sonst Ersatz-Intro „Der erste Boden“ und Bitte in MENSCHEN.md (M-09).
 - Beleg: `belege/abschluss/svg.json`, `belege/e2/logo-deckung.json`.
 - E0: 45 Icons im Sprite, Logo-SVGs betten ein PNG ein. Stand: offen.
 
@@ -91,7 +91,7 @@ Ausgangswerte E0 trägt der Orchestrator nach E0-PRUEF-03 und E0-PROBE-01…10 e
 
 ### Z-14 Adressen (keine Ausnahme)
 - Methode: `adressen.mjs` gegen `adressen-e0.csv` (alle 170 Adressen), Linkprüfung aller internen Links, Prüfung strukturierter Daten, Abgleich Sitemap.
-- Schwelle: jede der 170 Adressen aus `adressen-e0.csv` (Quellen sitemap, link, weiterleitung) liefert 200 oder 308 auf eine gleichwertige Seite; die 32 Adressen mit 410 bleiben 410 (E-016); null kaputte interne Links; je Seite genau eine H1, ein Titel, eine Beschreibung, ein absoluter Canonical; strukturierte Daten gültig (JSON-LD parst, `@context` schema.org, Pflichteigenschaften je verwendetem Typ: LocalBusiness, Organization, WebSite, WebPage, BreadcrumbList, FAQPage, Article, Service, Review); Sitemap enthält jede indexierbare Adresse.
+- Schwelle: jede Adresse aus `adressen-e0.csv`, die Abschnitt 11 meint (Sitemap und Durchlauf aller internen Links, Quellen `sitemap`, `link`, `weiterleitung`: 170 Adressen), liefert 200 oder leitet dauerhaft auf eine gleichwertige Seite; die übrigen 32 Zeilen (Quelle `wege`, Status 410 schon in E0, weder in der Sitemap noch verlinkt) bleiben unverändert 410 (E-016, Bestätigung M-16); null kaputte interne Links; je Seite genau eine H1, ein Titel, eine Beschreibung, ein absoluter Canonical; strukturierte Daten gültig (JSON-LD parst, `@context` schema.org, Pflichteigenschaften je verwendetem Typ: LocalBusiness, Organization, WebSite, WebPage, BreadcrumbList, FAQPage, Article, Service, Review); Sitemap enthält jede indexierbare Adresse.
 - Beleg: `belege/abschluss/adressen.csv`, `belege/abschluss/links.json`.
 - E0: `adressen-e0.csv` (E0-PRUEF-02c): 168 × 200, 2 × 308, 32 × 410, 0 kaputte Links, 0 Abweichungen bei H1, Titel, Beschreibung, Canonical und JSON-LD-Syntax; Video-Sitemap zeigt auf zwei fehlende Videos. Stand: offen.
 

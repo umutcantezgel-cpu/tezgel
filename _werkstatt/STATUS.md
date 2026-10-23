@@ -1,4 +1,4 @@
-STATUS · Branch claude/tezgel-website-redesign-iqxt8z · Etappe E0 (0/6) · Welle 0 · Pflicht 0/offen (PLAN in E1) · Kür 0/offen · Kriterien 0/14 · Ausnahmen 0 · Bestand grün (src unverändert) · Nächster Schritt: E0-PRUEF-01 Einrichtung
+STATUS · Branch claude/tezgel-website-redesign-iqxt8z · Etappe E0/E1 (1/7) · Welle Ausgangsmessung · Pflicht 9/291 · Kür 0/8 · Kriterien 0/14 · Ausnahmen 0 · Bestand grün (src unverändert committet) · Nächster Schritt: Ausgangswerte E0-PRUEF-03 und E0-PROBE, PLAN 1.1
 
 # STATUS · Lauf „Verständlich, echt, ausgezeichnet“
 
@@ -26,3 +26,4 @@ Siehe `werkzeuge/EINRICHTUNG.md` (wird in E0-PRUEF-01 aktualisiert).
 
 ## Protokoll (stündlich, unten anfügen)
 - 2026-10-23 23:30 CEST · E0 gestartet. Plan im Chat freigegeben. Erkundung lief schon vor der Freigabe nur lesend (9 Kundschafter, Bildtechnik, 5 Bildsichter, 2 Technikgutachten; Berichte in `berichte/`, Bilder in `bildinventar.csv`). Alter Lauf archiviert, Originale nach `_eingang/`, AUFTRAG.md mit Ergänzung, CLAUDE.md-Block erneuert.
+- 2026-10-24 00:40 · Werkzeug-Welle abgenommen und gepusht (583656d); PLAN Fassung 1, ABNAHME, LAGEBILD-Entwurf; Planprüfung Runde 1: 25 Befunde; Ausgangsmessung und Probeläufe laufen; B-01-Vorarbeit im Arbeitsbaum.

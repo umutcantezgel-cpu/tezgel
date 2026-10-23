@@ -28,6 +28,8 @@ Bis zur Antwort gilt die genannte Annahme; neue Texte nennen nur, was dort steht
 - **M-13 · Cookie-Inventar** nennt `visitor_type`, `tezgel_wa_button_pos` und Calendly ohne passenden Code (`src/lib/cookie-inventory.ts`). Gehört zur Cookie-Richtlinie; bitte prüfen.
 - **M-14 · Login** leitet nach Erfolg nach `/admin`, das es nicht gibt (`src/app/(bestand)/login/page.jsx:33`).
 
+- **M-16 · Entfernte Adressen mit 410.** 32 Adressen aus früheren Läufen (`src/lib/wege.ts`, davon 7 Platzhalterbeispiele) antworten mit 410 „dauerhaft entfernt“. Annahme: Sie bleiben so; die 170 Adressen des Auftrags sind die übrigen. Falls einige davon wieder auf eine passende Seite weiterleiten sollen (308), bitte nennen.
+
 ## Umgebungsausnahmen (Ersatzprüfung in ABNAHME.md)
 - **M-15 ·** Kein echtes iPhone, Android-Gerät, Safari oder Firefox in der Cloud (nur Chromium). Bitte die Startseite, einen Seitenwechsel und das Formular einmal auf einem echten Handy prüfen.
 

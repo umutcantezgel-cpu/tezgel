@@ -82,3 +82,10 @@ Pakete E0-PRUEF-01, -02a bis -02d und die unabhängige Abnahme E0-PRUEF-02-PA si
 - Probelauf: P4 wechselt auf m390, mobile Personen auf d1440, P2 auf t768 zählt zur Touch-Gruppe. Die Absendesperre ist auf der Testseite belegt; ein Lauf mit Absenden auf 4310 findet nicht statt (G5). Eingabefelder stehen in der Bedienliste, sobald sie im Bild sind (Gegenprobe des Orchestrators auf `/` mit 200 % Schrift: die alte Startseite ist dabei 39.737 px lang).
 - Rauchlauf 02d: Auf `/kontakt` liegt im ersten Bildschirm kein Feld für Name oder Telefon; das ist ein Befund des alten Stands, kein Werkzeugfehler.
 
+## E-017 · Feinheiten von B-01 aus dem ersten Bau (24.10.2026, E2-Vorarbeit, Denkprotokoll)
+- **Ziel:** Weiterziehen nach Auftrag Abschnitt 9: Spalte für Spalte nach links, keine Fliese über einer anderen, Freigabekante von rechts nach links.
+- **Drei Wege:** (1) Spalten von links zuerst mit deutlichem Versatz; (2) rechte Spalten zuerst, unter den linken hindurch; (3) jede Reihe starr, Reihen nach ihrer Versatzstufe gestaffelt.
+- **Bewertung (Bildfolgen in Zeitlupe, m390 und d1440):** (1) öffnet Schlitze zwischen den Spalten, die Seite erscheint zuerst links, also gegen die Richtung des Auftrags. (2) versteckt Fliesen unter anderen und lässt sie am linken Rand überholen. (3) hat keine Schlitze und kein Überholen; die Freigabekante folgt dem Drittelverband und wandert von rechts nach links, die Spalten verlassen das Bild nacheinander. Gewählt: (3), Staffel 15 % der Phase.
+- **Weitere Befunde:** Der CSS-Minifier schreibt `1200ms` als `1.2s`; Dauern werden deshalb mit Einheit gelesen. Das Raster rechnet in ganzen Pixeln (gerade Länge), sonst zeigen Haarlinien die Seite. Zurück und Vor starten mit dem Aufschub (Weg a aus E-010); der Ablauftest E2-PRUEF-04 entscheidet endgültig.
+- **Kriterien:** Z-05. **Umkehrprobe:** Wirkt die gestufte Kante in der Sichtabnahme unruhig, zieht der Belag ohne Staffel als Ganzes ab. **Folgen zweiter Ordnung:** Der Zeitplan braucht den Verband als Eingabe; die Logik-Tests (E2-TEST-04) prüfen Staffel und Überholfreiheit je Reihe.
+
