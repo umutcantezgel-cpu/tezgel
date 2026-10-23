@@ -7,7 +7,7 @@ Spalten: **ID** · Seite und Platz · Format (Breite : Höhe) · Original · Zus
 ## Startseite `/`
 | ID | Platz | Format | Original | Zuschnitt | Alt-Text | sizes | Vorrang |
 |---|---|---|---|---|---|---|---|
-| start-dusche | Einstieg, rechts (Desktop) bzw. unter Knopf und Telefon (mobil) | 4:5 | IMG_2578 | Schwerpunkt 50 % / 52 %; Heizkörper links darf angeschnitten sein | Bodengleiche Dusche mit großen grauen Fliesen und einer Glaswand | `(min-width: 1024px) 40vw, 100vw` | ja (einziges `preload`) |
+| start-dusche | Einstieg, rechts (Desktop) bzw. unter Knopf und Telefon (mobil) | 4:5 | IMG_2578 | Schwerpunkt 50 % / 52 %; Heizkörper links darf angeschnitten sein | Dusche ohne Stufe mit großen grauen Fliesen und einer Glaswand | `(min-width: 1024px) 40vw, 100vw` | ja (einziges `preload`) |
 | lage-dusche | Fliese „Wanne raus, Dusche ohne Stufe“ | 1:1 | IMG_2582 | Sitzbank und Mosaik mittig | Dusche ohne Stufe mit Sitzbank und türkisen Mosaikfliesen | `(min-width: 1024px) 16vw, 50vw` | nein |
 | lage-bad | Fliese „Das ganze Bad soll neu werden“ | 1:1 | IMG_2610 | Wanne und Boden | Badewanne mit dunkler Verkleidung und hellen Wandfliesen | wie oben | nein |
 | lage-neubau | Fliese „Im Neubau Böden und Wände fliesen“ | 1:1 | — | kein passendes Foto: Fliesenkomposition „Halbverband“ | (dekorativ) | — | — |

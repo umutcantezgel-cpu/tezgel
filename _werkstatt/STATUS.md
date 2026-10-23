@@ -1,4 +1,4 @@
-STATUS · Branch claude/tezgel-website-redesign-iqxt8z · Etappe E0/E1 (1/7) · Welle Ausgangsmessung · Pflicht 9/291 · Kür 0/8 · Kriterien 0/14 · Ausnahmen 0 · Bestand grün (src unverändert committet) · Nächster Schritt: Ausgangswerte E0-PRUEF-03 und E0-PROBE, PLAN 1.1
+STATUS · Branch claude/tezgel-website-redesign-iqxt8z · Etappe E0/E1 abgeschlossen bis auf Ausgangswerte, E2 Vorarbeit · Welle E2-W1 (vorgezogen) · Pflicht 21/398 · Kür 0/8 · Kriterien 0/14 · Ausnahmen 0 · Bestand grün (src-Änderungen im Arbeitsbaum, nicht committet) · Nächster Schritt: Ausgangswerte fertig, dann Lighthouse E0-PRUEF-03L und erster src-Commit (E2-W1)
 
 # STATUS · Lauf „Verständlich, echt, ausgezeichnet“
 
@@ -27,3 +27,4 @@ Siehe `werkzeuge/EINRICHTUNG.md` (wird in E0-PRUEF-01 aktualisiert).
 ## Protokoll (stündlich, unten anfügen)
 - 2026-10-23 23:30 CEST · E0 gestartet. Plan im Chat freigegeben. Erkundung lief schon vor der Freigabe nur lesend (9 Kundschafter, Bildtechnik, 5 Bildsichter, 2 Technikgutachten; Berichte in `berichte/`, Bilder in `bildinventar.csv`). Alter Lauf archiviert, Originale nach `_eingang/`, AUFTRAG.md mit Ergänzung, CLAUDE.md-Block erneuert.
 - 2026-10-24 00:40 · Werkzeug-Welle abgenommen und gepusht (583656d); PLAN Fassung 1, ABNAHME, LAGEBILD-Entwurf; Planprüfung Runde 1: 25 Befunde; Ausgangsmessung und Probeläufe laufen; B-01-Vorarbeit im Arbeitsbaum.
+- 2026-10-24 01:00 · Planprüfung Runde 2 eingearbeitet (PLAN 1.2, 398 Pflichtzeilen), Referenztexte lektoriert, Glossar 46 Einträge. Logo-Vektor in zwei Anläufen unter 98 % (bestens 96,4 %): Ersatz-Intro „Der erste Boden“ (E-018, M-09). Im Arbeitsbaum: B-01 (Logik, Komponente, 35 Tests), Tokens v3, Register v3, Bewertungen aus einer Quelle; Suite 73 von 73 grün, Werte-Scan 0. Laufend: Ausgangsmessung E0-PRUEF-03, Probeläufe P3 bis P5, Ablauftest B-01, Bildwerkzeug.
