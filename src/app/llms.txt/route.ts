@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { SITE_CONFIG } from '@/shared/config/site';
+import { RATING_SUMMARY } from '@/config/reviews';
 
 export const dynamic = 'force-static';
 
@@ -40,7 +41,7 @@ export async function GET() {
 - [Ratgeber & Fachwissen](${SITE_CONFIG.baseUrl}/blog)
 
 ## Vertrauensmerkmale & Garantien
-- **5,0 Sterne Google-Bewertung** (27 verifizierte Kundenstimmen)
+- **${RATING_SUMMARY.google.displayRating} Sterne Google-Bewertung** (${RATING_SUMMARY.google.count} verifizierte Kundenstimmen)
 - **Kostenfreies Vor-Ort-Aufmaß** & Beratung direkt durch Inhaber Deniz Tezgel
 - **Verbindlicher Festpreis** ohne versteckte Nachforderungen
 - **Staubschutz-Garantie** mit Unterdruck-Luftreinigern bei bewohnten Sanierungen

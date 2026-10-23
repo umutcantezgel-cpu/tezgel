@@ -1,0 +1,82 @@
+// Startseite · 2 Ihre Lage (KERN v3 K-003 Nr. 2, K-009; Text REF-start): sechs Fliesen, je eine Lage in den Worten des
+// Kunden, jede ein Link auf die passende Seite. Fliese = Foto (oder Fliesenkomposition, wo kein Foto passt) und Satz,
+// aneinander an der Fuge. Ab lg zwei Streifen zu je drei Fliesen, der rechte um ein Drittel versetzt (der eine Versatz
+// dieses Bildschirms, K-005); mobil eine Liste mit kleinem Bild links, groß genug zum Tippen. Bilder im Link sind
+// dekorativ (alt=""), der Satz ist der Name des Links. Serverkomponente.
+import Link from 'next/link';
+import Image from 'next/image';
+import clsx from 'clsx';
+import Icon from '@/components/icons/Icon';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Fliesenkomposition, { type Kompositionsmotiv } from '@/components/kern/Fliesenkomposition';
+import { ARBEITEN, type ArbeitId } from '@/config/arbeiten';
+
+type Lage = { satz: string; href: string } & ({ bild: ArbeitId; motiv?: never } | { motiv: Kompositionsmotiv; bild?: never });
+
+const LAGEN: Lage[] = [
+  { satz: 'Die Badewanne soll raus. Ich möchte eine Dusche ohne Stufe.', href: '/bad/barrierefreies-bad', bild: 'lage-dusche' },
+  { satz: 'Das ganze Bad ist alt und soll neu werden.', href: '/bad/badsanierung', bild: 'lage-bad' },
+  { satz: 'Im Neubau sollen Böden und Wände gefliest werden.', href: '/fliesen/neubau', motiv: 'halbverband' },
+  { satz: 'Eine Fliese ist gesprungen, oder die Fugen sind alt.', href: '/fliesenreparatur', motiv: 'riss' },
+  { satz: 'Auf dem Balkon bleibt nach dem Regen Wasser stehen.', href: '/balkon-terrasse', bild: 'lage-balkon' },
+  { satz: 'Die Treppe vor dem Haus ist kaputt.', href: '/treppen/aussentreppe', bild: 'lage-treppe' },
+];
+
+function Bild({ lage }: { lage: Lage }) {
+  if (lage.motiv) return <Fliesenkomposition motiv={lage.motiv} fuellen className="absolute inset-0" />;
+  const b = ARBEITEN[lage.bild];
+  return (
+    <Image
+      src={b.src}
+      alt=""
+      fill
+      sizes="(min-width: 1024px) 16vw, 96px"
+      placeholder="blur"
+      blurDataURL={b.blur}
+      className="object-cover"
+    />
+  );
+}
+
+export default function Lagefliesen() {
+  return (
+    <Abschnitt
+      id="ihre-lage"
+      formel="lage"
+      leitachse
+      kopf="seitlich"
+      titel="Was möchten Sie ändern?"
+      einleitung={<p>Wählen Sie, was am besten passt. Sie kommen direkt zu den Bildern und Antworten für Ihre Lage.</p>}
+      className="lg:pb-32"
+    >
+      <ul className="grid gap-px border border-fuge bg-fuge lg:grid-flow-col lg:grid-cols-2 lg:grid-rows-3 lg:gap-0 lg:border-0 lg:bg-transparent">
+        {LAGEN.map((lage, i) => (
+          <li
+            key={lage.href}
+            className={clsx(
+              'bg-fliese lg:border-x lg:border-fuge',
+              i % 3 === 0 && 'lg:border-t',
+              'lg:border-b',
+              // rechter Streifen: um ein Drittel versetzt, die Fuge zum linken Streifen liegt übereinander (1 px)
+              i >= 3 && 'lg:-ml-px lg:translate-y-16',
+            )}
+          >
+            <Link
+              href={lage.href}
+              data-motion="zustand"
+              className="group grid h-full grid-cols-4 text-tinte transition-colors dauer-1 ease-setzen hover:bg-kalk lg:grid-cols-5"
+            >
+              <span aria-hidden="true" className="relative col-span-1 aspect-square overflow-hidden border-r border-fuge lg:col-span-2 lg:aspect-auto lg:min-h-full">
+                <Bild lage={lage} />
+              </span>
+              <span className="col-span-3 flex items-start justify-between gap-3 p-4 lg:p-6">
+                <span className="font-text text-fs-4 font-semibold text-pretty">{lage.satz}</span>
+                <Icon name="pfeil-rechts" groesse={5} className="mt-1 shrink-0 text-tinte-2 transition-colors dauer-1 group-hover:text-tinte" />
+              </span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </Abschnitt>
+  );
+}

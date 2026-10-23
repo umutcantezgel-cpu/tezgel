@@ -2,6 +2,10 @@
  * Type-safe Schema.org Linked Data & Knowledge Graph builder for Fliesenverlegung Tezgel.
  * Uses interconnected canonical @id URIs and standard @graph notation.
  */
+import { RATING_SUMMARY, REVIEWS } from '@/config/reviews';
+
+/** Kundenstimmen in den strukturierten Daten (Auswahl wie im Bestand). */
+const SCHEMA_STIMMEN = ['elke-s', 'c-wolf', 'rabia-oe'];
 
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.tezgel.de';
 export const ORG_ID = `${SITE_URL}/#organization`;
@@ -273,61 +277,26 @@ export function buildMainProductOfferNode(options?: {
     },
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: '5.0',
-      reviewCount: '27',
+      ratingValue: RATING_SUMMARY.google.rating.toFixed(1),
+      reviewCount: String(RATING_SUMMARY.google.count),
       bestRating: '5',
       worstRating: '1',
     },
-    review: [
-      {
-        '@type': 'Review',
-        reviewRating: {
-          '@type': 'Rating',
-          ratingValue: '5',
-          bestRating: '5',
-          worstRating: '1',
-        },
-        author: {
-          '@type': 'Person',
-          name: 'Elke S.',
-        },
-        datePublished: '2024-05-12',
-        reviewBody:
-          'Die Fa. Tezgel hat uns im Bad neue Fliesen verlegt. Wir können diese Firma uneingeschränkt und wärmstens empfehlen. Handwerklich perfekt, saubere u. präzise Ausführung.',
+    // Kundenstimmen wörtlich aus src/config/reviews.js (G8); ohne Datum, weil die Quelle keines nennt (E2-FIX-01c)
+    review: REVIEWS.filter((r: { id: string }) => SCHEMA_STIMMEN.includes(r.id)).map((r: { author: string; rating: number; text: string }) => ({
+      '@type': 'Review',
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: String(r.rating),
+        bestRating: '5',
+        worstRating: '1',
       },
-      {
-        '@type': 'Review',
-        reviewRating: {
-          '@type': 'Rating',
-          ratingValue: '5',
-          bestRating: '5',
-          worstRating: '1',
-        },
-        author: {
-          '@type': 'Person',
-          name: 'C. W.',
-        },
-        datePublished: '2024-06-20',
-        reviewBody:
-          'Die Firma Tezgel hat für mich zwei Bäder saniert. Als einziges der Gewerke wurden die Arbeiten ordnungsgemäß, sauber und pünktlich abgeschlossen.',
+      author: {
+        '@type': 'Person',
+        name: r.author,
       },
-      {
-        '@type': 'Review',
-        reviewRating: {
-          '@type': 'Rating',
-          ratingValue: '5',
-          bestRating: '5',
-          worstRating: '1',
-        },
-        author: {
-          '@type': 'Person',
-          name: 'Rabia Ö.',
-        },
-        datePublished: '2024-08-15',
-        reviewBody:
-          'Wir haben unser gesamtes Haus von der Firma Fliesenverlegung Tezgel verlegen lassen – und sind rundum zufrieden. Vom ersten Tag an lief alles absolut verlässlich.',
-      },
-    ],
+      reviewBody: r.text,
+    })),
   };
 }
 

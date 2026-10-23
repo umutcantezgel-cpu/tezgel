@@ -62,9 +62,15 @@
   --container-seite: 82rem;
   --container-mass: 66ch;
 
+  /* Hauch Glanz auf den Fliesen des Seitenwechsels, nur als eigene Ebene (KERN v3, K-005) */
+  --color-fliese-glanz: color-mix(in srgb, var(--color-fliese) 55%, transparent);
+
   /* Formen und Tiefe (K-005) */
   --radius-r1: 2px;
   --shadow-fuge: 0 1px 0 var(--color-fuge);
+  /* Schattenskala v3: gelegte Fliese und Fliese im Flug, nur als Ebenen mit Deckkraft animiert */
+  --shadow-gesetzt: 0 1px 2px color-mix(in srgb, var(--color-tinte) 22%, transparent);
+  --shadow-flug: 0 10px 24px color-mix(in srgb, var(--color-tinte) 18%, transparent);
 
   /* Bewegung (K-005/K-007) */
   --dauer-1: 140ms;
@@ -76,6 +82,14 @@
   --ease-setzen: cubic-bezier(0.2, 0.8, 0.2, 1);
   --ease-laser: cubic-bezier(0.7, 0, 0.2, 1);
   --ease-weg: cubic-bezier(0.32, 0, 0.67, 0);
+  /* v3: schnell ankommen, ohne Überschwingen (Fliese unter dem Gummihammer) */
+  --ease-hammer: cubic-bezier(0.3, 0.9, 0.35, 1);
+  /* Seitenwechsel B-01 und Intro B-02: Gesamtdauern, nur aus diesen Variablen lesen (K-005) */
+  --verlegen-gesamt: 1200ms;
+  --verlegen-gesamt-folge: 900ms;
+  /* reduzierte Bewegung: Überblendung statt Fliesen (Auftrag Abschnitt 9) */
+  --verlegen-ruhig: 150ms;
+  --intro-gesamt: 1600ms;
 }
 
 /* Bänder mit eigenem Wischen (Kundenstimmen) ohne sichtbare Leiste */
@@ -322,22 +336,6 @@
   .menue-blatt {
     max-height: 100%;
   }
-  /* Seitenwechsel /leistungen → /leistungen/[id] (E3-ORCH-02, K-007 seitenwechsel): der Plan der Leistung gleitet in den
-     Einstieg der Leistungsseite – nur bei der Übergangsart „plan-vor“ (Knopf „Fachdetails“), Dauer 4 · setzen. Unter lg
-     und bei reduzierter Bewegung ohne Animation (sofortiger Wechsel). */
-  ::view-transition-group(.plan-morph) {
-    animation-duration: var(--dauer-4);
-    animation-timing-function: var(--ease-setzen);
-  }
-  @media (width < 64rem), (prefers-reduced-motion: reduce) {
-    ::view-transition-group(.plan-morph),
-    ::view-transition-old(.plan-morph),
-    ::view-transition-new(.plan-morph),
-    ::view-transition-old(root),
-    ::view-transition-new(root) {
-      animation: none !important;
-    }
-  }
   /* Etikett des Einstiegs unter sm: Glied für Glied untereinander statt mitten im Glied umzubrechen; die Trennkreuze
      zwischen den Gliedern entfallen dort (E3-SICHT-ERZ Befund 4, E4-NACH-01) */
   @media (width < 40rem) {
@@ -375,5 +373,21 @@
   /* Zeitband (/ueber-uns, E4-NACH-01): Jahreszahlen unter dem Band, Breite je Zeitraum nach Zahl der Jahre (--jahre) */
   .zeitband-stueck {
     flex: var(--jahre, 1) 1 0%;
+  }
+  /* Handy quer (K-013): Kopf und untere Leiste zusammen höchstens ein Viertel der Höhe. Kopf 48 px statt 64 px, Leiste
+     44 px mit Zeichen und Wort nebeneinander (Touchziel bleibt 44 × 44); Messung in der Prüfung „Erstes Bild“. */
+  @media (orientation: landscape) and (height <= 32rem) {
+    .kopf-zeile {
+      height: calc(var(--spacing) * 12);
+    }
+    .kopf-zeile img {
+      height: calc(var(--spacing) * 10);
+    }
+    [data-leiste] a {
+      min-height: calc(var(--spacing) * 11);
+      flex-direction: row;
+      gap: calc(var(--spacing) * 2);
+      padding-block: 0;
+    }
   }
 }

@@ -9,12 +9,40 @@ import { labelKlassen, feldKlassen, hilfeKlassen, fehlerKlassen, wahlKlassen, pf
 import ReviewCarousel from '@/components/reviews/ReviewCarousel';
 import FAQAccordion from '@/components/ui/FAQAccordion';
 import FinalCTA from '@/components/ui/FinalCTA';
+import Fachwort from '@/components/kern/Fachwort';
+import Hauptknopf from '@/components/kern/Hauptknopf';
+import Brotkrumen from '@/components/kern/Brotkrumen';
+import Fliesenkomposition from '@/components/kern/Fliesenkomposition';
+import Seitenformel from '@/components/kern/Seitenformel';
 
 export const metadata = { title: 'Schaufenster · Bausteine', robots: { index: false, follow: false } };
 
 export default function Bausteine() {
   return (
     <>
+      {/* KERN v3 (E2-ORCH-02): neue Bausteine in der Seitenformel */}
+      <Seitenformel>
+        <Abschnitt id="v3-worum" formel="worum" etikett="KERN v3" titel="Wir verlegen Fliesen in Bad, Küche, Flur und auf dem Balkon.">
+          <Brotkrumen wege={[{ name: 'Start', href: '/' }, { name: 'Bad', href: '/bad' }, { name: 'Dusche statt Wanne' }]} />
+          <p className="mt-6 max-w-mass text-fs-4">
+            Unter die Fliesen kommt eine <Fachwort id="abdichtung">Abdichtung</Fachwort> nach <Fachwort id="din-18534" />. So bleibt das Wasser in der Dusche.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Hauptknopf erstesBild />
+            <Knopf href="tel:+4964414483567" variante="neben" iconLinks="telefon">Anrufen: 06441 / 44 83 567</Knopf>
+          </div>
+        </Abschnitt>
+        <Abschnitt id="v3-komposition" formel="beleg" titel="Fliesenkompositionen für Plätze ohne Foto" flaeche="fliese">
+          <div className="grid grid-cols-2 gap-6 md:grid-cols-5">
+            {(['drittelverband', 'halbverband', 'kreuzfuge', 'riss', 'fischgraet'] as const).map((m) => (
+              <figure key={m}>
+                <Fliesenkomposition motiv={m} format="4:5" />
+                <figcaption className="mt-2 font-mono text-fs-1 text-tinte-2">{m}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </Abschnitt>
+      </Seitenformel>
       <Einstieg
         etikett="Handwerkskammer-eingetragener Fachbetrieb · seit 2008"
         titel={<>Perfektion auf jedem Quadratmeter.</>}

@@ -714,7 +714,7 @@ const context = await browser.newContext({
   viewport: { width: V.width, height: V.height }, isMobile: V.isMobile, hasTouch: V.hasTouch, deviceScaleFactor: 1,
   locale: 'de-DE', timezoneId: 'Europe/Berlin', reducedMotion: 'no-preference',
 });
-await installSperre(context, { protokoll });
+await installSperre(context, { protokoll, intro: 'erstbesuch' }); // Personen kommen zum ersten Mal: Intro wie im Leben
 await setzeEinwilligung(context, ohneBanner ? 'abgelehnt' : 'erstbesuch');
 await context.addInitScript(KONTAKT_INIT); // Telefon/WhatsApp: Attrappe (G5), ruft nichts auf
 if (schrift) await context.addInitScript(SCHRIFT_INIT, Number(schrift)); // Systemschrift, jede Navigation

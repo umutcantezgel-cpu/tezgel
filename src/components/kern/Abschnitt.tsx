@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import Fugenkreuz from './Fugenkreuz';
 import { ACHSE_LAGE } from './Leitachse';
 import { etikettForm, seitenKlassen } from './stile';
+import type { Formelteil } from './Seitenformel';
 
 export interface AbschnittProps {
   id?: string;
@@ -25,12 +26,14 @@ export interface AbschnittProps {
   leitachse?: boolean;
   /** Inhalt erst in Sichtnähe zeichnen (content-visibility, nur unterhalb des ersten Bildschirms; E3-NACH-07) */
   spaet?: boolean;
+  /** Teil der Seitenformel (KERN v3 K-009), als data-formel für die Prüfung */
+  formel?: Formelteil;
   className?: string;
   children?: ReactNode;
   'aria-label'?: string;
 }
 
-export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleitung, art = 'erzaehl', flaeche = 'kalk', kopf = 'gestapelt', breite = 'seite', auftritt = false, leitachse = false, spaet = false, className, children, ...rest }: AbschnittProps) {
+export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleitung, art = 'erzaehl', flaeche = 'kalk', kopf = 'gestapelt', breite = 'seite', auftritt = false, leitachse = false, spaet = false, formel, className, children, ...rest }: AbschnittProps) {
   const hId = titelId ?? (id ? `${id}-titel` : undefined);
   const tinte = flaeche === 'tinte';
   const kopfInhalt = (titel || etikett) && (
@@ -51,6 +54,7 @@ export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleit
   return (
     <section
       id={id}
+      data-formel={formel}
       aria-labelledby={titel ? hId : undefined}
       aria-label={!titel ? rest['aria-label'] : undefined}
       className={clsx(

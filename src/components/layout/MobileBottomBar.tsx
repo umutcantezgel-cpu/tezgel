@@ -8,9 +8,11 @@ import WhatsAppLogo from "@/components/ui/WhatsAppLogo";
 import { siteConfig } from "@/lib/config";
 import { buildWhatsAppUrl, kontextNachricht, openWhatsApp } from "@/lib/whatsapp";
 import { triggerHaptic } from "@/lib/haptics";
+import { hauptziel } from "@/config/navigation";
 
-// Untere Leiste (KERN K-009): einzige feste Ebene neben dem Kopf, bis lg; drei Wege an der Fuge, die Anfrage als
-// Hauptaktion auf Tinte (Kalender für den Aufmaß-Termin, WhatsApp mit Markenzeichen – Fusion E-020). Das erste Feld
+// Untere Leiste (KERN v3 K-009, E-012): einzige feste Ebene neben dem Kopf, bis lg; drei Wege an der Fuge, die
+// Hauptaktion „Termin vor Ort anfragen“ auf Tinte (sichtbar kurz „Termin“, Name für Screenreader vollständig), WhatsApp mit
+// Markenzeichen. Anrufen und Termin tragen die Markierungen für „Erstes Bild“ (K-004). Das erste Feld
 // ist der Platz des Widerruf-Schilds der Einwilligung (#leiste-schild): die
 // Einwilligungs-Komponente hängt ihren Knopf dort ein, sobald sie geladen ist – so verdeckt kein schwebender Knopf Inhalt.
 const feld =
@@ -32,7 +34,7 @@ export default function MobileBottomBar() {
 
   return (
     <aside
-      aria-label="Schnellkontakt Daumenleiste"
+      aria-label="Schnellkontakt"
       className="unten-sicher fixed inset-x-0 bottom-0 z-30 border-t border-fuge bg-fuge lg:hidden"
       data-feste-ebene
       data-leiste
@@ -44,6 +46,7 @@ export default function MobileBottomBar() {
           onClick={() => triggerHaptic("medium")}
           className={`${feld} bg-kalk text-tinte hover:bg-fliese`}
           aria-label={`Fliesenverlegung Tezgel anrufen: ${siteConfig.contact.phone.formatted}`}
+          data-erstes-bild="kontakt"
           data-motion="druck"
         >
           <Icon name="telefon" groesse={5} />
@@ -61,7 +64,7 @@ export default function MobileBottomBar() {
             openWhatsApp({ phone: siteConfig.contact.whatsapp, text: kontextNachricht(pathname) });
           }}
           className={`${feld} bg-kalk text-tinte hover:bg-fliese`}
-          aria-label="WhatsApp-Chat starten"
+          aria-label="Nachricht per WhatsApp"
           data-motion="druck"
         >
           <WhatsAppLogo className="size-5" />
@@ -69,13 +72,16 @@ export default function MobileBottomBar() {
         </a>
 
         <Link
-          href="/kontakt#express-anfrage"
+          href={hauptziel(pathname)}
           onClick={() => triggerHaptic("light")}
           className={`${feld} bg-tinte text-kalk hover:bg-tinte-2`}
+          aria-label="Termin vor Ort anfragen"
+          data-hauptknopf=""
+          data-erstes-bild="hauptknopf"
           data-motion="druck"
         >
           <Icon name="kalender" groesse={5} />
-          <span>Aufmaß</span>
+          <span>Termin</span>
         </Link>
       </div>
     </aside>

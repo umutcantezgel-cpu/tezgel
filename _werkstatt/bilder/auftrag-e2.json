@@ -1,0 +1,730 @@
+[
+  {
+    "id": "start-dusche",
+    "original": "IMG_2578.PNG",
+    "raum": "dusche",
+    "name": "dusche-ohne-stufe-graue-fliesen",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 50,
+      "y": 48
+    },
+    "breiten": [
+      640,
+      960,
+      1280
+    ],
+    "alt": "Dusche ohne Stufe mit großen grauen Fliesen und einer Glaswand",
+    "korrektur": true
+  },
+  {
+    "id": "lage-dusche",
+    "original": "IMG_2582.PNG",
+    "raum": "dusche",
+    "name": "dusche-ohne-stufe-sitzbank-mosaik",
+    "format": "1:1",
+    "schwerpunkt": {
+      "x": 50,
+      "y": 58
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Dusche ohne Stufe mit Sitzbank und türkisen Mosaikfliesen",
+    "korrektur": true
+  },
+  {
+    "id": "lage-bad",
+    "original": "IMG_2610.PNG",
+    "raum": "bad",
+    "name": "badewanne-dunkle-verkleidung-quadrat",
+    "format": "1:1",
+    "schwerpunkt": {
+      "x": 50,
+      "y": 50
+    },
+    "ausschnitt": {
+      "oben": 33,
+      "unten": 33
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Badewanne mit dunkler Verkleidung und hellen Wandfliesen",
+    "korrektur": true
+  },
+  {
+    "id": "lage-balkon",
+    "original": "IMG_2545.PNG",
+    "raum": "balkon-und-terrasse",
+    "name": "balkon-grosse-hellgraue-fliesen",
+    "format": "1:1",
+    "schwerpunkt": {
+      "x": 62,
+      "y": 62
+    },
+    "ausschnitt": {
+      "links": 40
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Balkon mit großen hellgrauen Fliesen",
+    "korrektur": true
+  },
+  {
+    "id": "lage-treppe",
+    "original": "IMG_2525.PNG",
+    "raum": "treppe",
+    "name": "aussentreppe-terrakotta-quadrat",
+    "format": "1:1",
+    "schwerpunkt": {
+      "x": 45,
+      "y": 50
+    },
+    "ausschnitt": {
+      "rechts": 22
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Außentreppe mit terrakottafarbenen Fliesen und hellen Kanten",
+    "korrektur": false
+  },
+  {
+    "id": "start-galerie-1",
+    "original": "IMG_2582.PNG",
+    "raum": "dusche",
+    "name": "galerie-dusche-sitzbank-mosaik",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 50,
+      "y": 58
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Dusche ohne Stufe mit Sitzbank und Mosaikfliesen am Boden und an der Bank",
+    "korrektur": true
+  },
+  {
+    "id": "start-galerie-2",
+    "original": "IMG_2610.PNG",
+    "raum": "bad",
+    "name": "badewanne-dunkle-verkleidung-hochformat",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 50,
+      "y": 50
+    },
+    "ausschnitt": {
+      "oben": 33,
+      "unten": 33
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Badewanne mit dunkler Mosaikverkleidung und Fenster mit blauem Plissee",
+    "korrektur": true
+  },
+  {
+    "id": "start-galerie-3",
+    "original": "IMG_2544.PNG",
+    "raum": "balkon-und-terrasse",
+    "name": "balkon-anthrazit-fliesen-versetzt",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 45,
+      "y": 60
+    },
+    "ausschnitt": {
+      "rechts": 36
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Balkon mit anthrazitfarbenen Rechteckfliesen im versetzten Verband",
+    "korrektur": true
+  },
+  {
+    "id": "start-galerie-4",
+    "original": "IMG_2533.PNG",
+    "raum": "balkon-und-terrasse",
+    "name": "terrasse-hellgraue-platten-stuetze",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 50,
+      "y": 55
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Terrasse mit hellgrauen Platten, einer Stütze in der Mitte und einem Geländer am Rand",
+    "korrektur": true
+  },
+  {
+    "id": "start-galerie-5",
+    "original": "IMG_2525.PNG",
+    "raum": "treppe",
+    "name": "aussentreppe-terrakotta-hochformat",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 45,
+      "y": 55
+    },
+    "ausschnitt": {
+      "rechts": 22
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Außentreppe mit terrakottafarbenen Fliesen und hellen Stufenkanten",
+    "korrektur": false
+  },
+  {
+    "id": "start-galerie-6",
+    "original": "IMG_2547.PNG",
+    "raum": "balkon-und-terrasse",
+    "name": "balkon-dichtband-von-hinten",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 42,
+      "y": 50
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Mitarbeiter von hinten auf grauem Balkonboden, blaues Dichtband an den Rändern",
+    "korrektur": true
+  },
+  {
+    "id": "bad-einstieg",
+    "original": "IMG_2550.PNG",
+    "raum": "bad",
+    "name": "helles-bad-glasdusche-holzoptik",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 50,
+      "y": 50
+    },
+    "ausschnitt": {
+      "links": 16
+    },
+    "breiten": [
+      640,
+      960,
+      1280
+    ],
+    "alt": "Helles Bad mit Glasdusche, WC an der Wand, Holzoptik am Boden und Waschtisch",
+    "korrektur": false
+  },
+  {
+    "id": "bad-beleg-1",
+    "original": "IMG_2573.PNG",
+    "raum": "bad",
+    "name": "wanne-weisse-fliesen-lichtlinie",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 50,
+      "y": 55
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Badewanne mit weißen Fliesen und Lichtlinie am Rand, Boden mit Ornamentfliesen in Schwarz und Beige",
+    "korrektur": false
+  },
+  {
+    "id": "bad-beleg-2",
+    "original": "IMG_2599.PNG",
+    "raum": "bad",
+    "name": "landhausbad-wanne-holzregal",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 45,
+      "y": 45
+    },
+    "ausschnitt": {
+      "oben": 35,
+      "unten": 35
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Landhausbad mit Wanne unter weißen Fliesen und einem Holzregal",
+    "korrektur": false
+  },
+  {
+    "id": "bad-beleg-3",
+    "original": "IMG_2571.PNG",
+    "raum": "bad",
+    "name": "landhausbad-doppelwaschtisch-goldspiegel",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 45,
+      "y": 55
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Bad mit Doppelwaschtisch aus dunklem Holz, Goldspiegel und Ornamentboden",
+    "korrektur": false
+  },
+  {
+    "id": "bad-beleg-4",
+    "original": "IMG_2603.PNG",
+    "raum": "bad",
+    "name": "dusche-mosaikstreifen-handbrause",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 45,
+      "y": 50
+    },
+    "ausschnitt": {
+      "unten": 33
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Bodengleiche Dusche mit Mosaik an der Wand, Handbrause und WC an der Wand",
+    "korrektur": true
+  },
+  {
+    "id": "sanierung-einstieg",
+    "original": "IMG_2570.PNG",
+    "raum": "bad",
+    "name": "freistehende-wanne-steinoptik",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 45,
+      "y": 50
+    },
+    "ausschnitt": {
+      "oben": 35,
+      "unten": 35
+    },
+    "breiten": [
+      640,
+      960,
+      1280
+    ],
+    "alt": "Bad mit freistehender ovaler Badewanne und beigen Fliesen in Steinoptik",
+    "korrektur": false
+  },
+  {
+    "id": "sanierung-weg-1",
+    "original": "IMG_2587.PNG",
+    "raum": "bad",
+    "name": "bad-waehrend-arbeit-beige-wand",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 30,
+      "y": 42
+    },
+    "ausschnitt": {
+      "rechts": 48
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Bad während der Arbeit: beige Wandfliesen bis halbhoch, Glasbausteine im Fenster und Anschlüsse an der Wand",
+    "korrektur": false
+  },
+  {
+    "id": "sanierung-weg-2",
+    "original": "IMG_2575.PNG",
+    "raum": "bad",
+    "name": "bad-waehrend-ausbau-holzoptik-decke",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 60,
+      "y": 60
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Bad während der Arbeit: offene Decke, dunkle Holzoptik am Boden und eine Badewanne",
+    "korrektur": false
+  },
+  {
+    "id": "sanierung-weg-3",
+    "original": "IMG_2568.PNG",
+    "raum": "bad",
+    "name": "bad-waehrend-ausbau-braune-fliesen",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 52,
+      "y": 62
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Bad während der Arbeit: brauner Boden im Duschbereich, WC vor einer braunen Wand, Decke im Ausbau",
+    "korrektur": false
+  },
+  {
+    "id": "bereich-dusche-sitzbank",
+    "original": "IMG_2582.PNG",
+    "raum": "dusche",
+    "name": "barrierefrei-dusche-sitzbank-mosaik",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 50,
+      "y": 58
+    },
+    "breiten": [
+      640,
+      960,
+      1280
+    ],
+    "alt": "Dusche ohne Stufe mit Sitzbank und kleinen Mosaikfliesen",
+    "korrektur": true
+  },
+  {
+    "id": "bereich-dusche-streifen-sitzbank",
+    "original": "IMG_2608.PNG",
+    "raum": "dusche",
+    "name": "dusche-dunkler-streifen-sitzbank",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 55,
+      "y": 50
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Bodengleiche Dusche mit dunklem Fliesenstreifen an der Wand und gefliester Sitzbank",
+    "korrektur": true,
+    "ausschnitt": {
+      "oben": 34
+    }
+  },
+  {
+    "id": "bereich-wanne-mit-tuer",
+    "original": "IMG_2567.PNG",
+    "raum": "bad",
+    "name": "einstiegswanne-mit-tuer",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 62,
+      "y": 55
+    },
+    "ausschnitt": {
+      "links": 34
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Einstiegswanne mit Tür am Rand, daneben eine Dusche mit großen hellen Wandfliesen",
+    "korrektur": true
+  },
+  {
+    "id": "entstehung-dusche-1",
+    "original": "IMG_2555.PNG",
+    "raum": "dusche",
+    "name": "dusche-im-bau-nivellierlaschen",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 45,
+      "y": 62
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Dusche im Bau: große Fliesen liegen auf Nivellierlaschen, damit sie auf eine Höhe kommen",
+    "korrektur": false
+  },
+  {
+    "id": "entstehung-dusche-2",
+    "original": "IMG_2549.PNG",
+    "raum": "dusche",
+    "name": "dusche-im-bau-fliesen-schraeg-zum-ablauf",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 52,
+      "y": 60
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Dusche im Bau: Fliesen sind schräg zum Ablauf geschnitten, die Nische ist noch offen",
+    "korrektur": false
+  },
+  {
+    "id": "leistungen-bad",
+    "original": "IMG_2610.PNG",
+    "raum": "bad",
+    "name": "badewanne-dunkle-verkleidung-hochformat",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 50,
+      "y": 50
+    },
+    "ausschnitt": {
+      "oben": 33,
+      "unten": 33
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Badewanne mit dunkler Mosaikverkleidung und Fenster mit blauem Plissee",
+    "korrektur": true
+  },
+  {
+    "id": "leistungen-balkon",
+    "original": "IMG_2544.PNG",
+    "raum": "balkon-und-terrasse",
+    "name": "balkon-anthrazit-fliesen-versetzt",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 45,
+      "y": 60
+    },
+    "ausschnitt": {
+      "rechts": 36
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Balkon mit anthrazitfarbenen Fliesen im versetzten Verband",
+    "korrektur": true
+  },
+  {
+    "id": "leistungen-untergrund",
+    "original": "IMG_2547.PNG",
+    "raum": "balkon-und-terrasse",
+    "name": "balkon-dichtband-von-hinten",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 42,
+      "y": 50
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Mitarbeiter von hinten auf einem grauen Balkon, blaues Dichtband an den Rändern",
+    "korrektur": true
+  },
+  {
+    "id": "fliesen-fischgraet",
+    "original": "IMG_2563.PNG",
+    "raum": "bad",
+    "name": "fischgraet-gruene-fliesen-nische",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 55,
+      "y": 45
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Grüne Fliesen im Fischgrätmuster an einer Wand mit großer Nische",
+    "korrektur": false
+  },
+  {
+    "id": "fliesen-halbverband",
+    "original": "IMG_2544.PNG",
+    "raum": "balkon-und-terrasse",
+    "name": "balkon-anthrazit-fliesen-versetzt",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 45,
+      "y": 60
+    },
+    "ausschnitt": {
+      "rechts": 36
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Balkon mit dunklen Rechteckfliesen, die versetzt verlegt sind",
+    "korrektur": true
+  },
+  {
+    "id": "balkon-einstieg",
+    "original": "IMG_2535.PNG",
+    "raum": "balkon-und-terrasse",
+    "name": "terrasse-aluprofil-plattenkante",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 29,
+      "y": 50
+    },
+    "ausschnitt": {
+      "rechts": 42
+    },
+    "breiten": [
+      640,
+      960,
+      1280
+    ],
+    "alt": "Terrassenkante mit grauen Platten und hellem Aluprofil, davor Kies",
+    "korrektur": true
+  },
+  {
+    "id": "balkon-beleg-1",
+    "original": "IMG_2544.PNG",
+    "raum": "balkon-und-terrasse",
+    "name": "balkon-anthrazit-fliesen-versetzt",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 45,
+      "y": 60
+    },
+    "ausschnitt": {
+      "rechts": 36
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Balkon mit anthrazitfarbenen Fliesen im versetzten Verband",
+    "korrektur": true
+  },
+  {
+    "id": "balkon-beleg-2",
+    "original": "IMG_2536.PNG",
+    "raum": "balkon-und-terrasse",
+    "name": "balkon-rosebraune-fliesen",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 50,
+      "y": 55
+    },
+    "ausschnitt": {
+      "rechts": 8
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Balkon mit rosébraunen Fliesen im geraden Verband und einem Geländer am Rand",
+    "korrektur": false
+  },
+  {
+    "id": "balkon-beleg-3",
+    "original": "IMG_2539.PNG",
+    "raum": "balkon-und-terrasse",
+    "name": "terrasse-erdtoene-ablaufrost",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 55,
+      "y": 55
+    },
+    "ausschnitt": {
+      "links": 22
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Terrasse mit rustikalen Fliesen in Erdtönen und einem Ablaufrost",
+    "korrektur": false
+  },
+  {
+    "id": "balkon-beleg-4",
+    "original": "IMG_2533.PNG",
+    "raum": "balkon-und-terrasse",
+    "name": "terrasse-hellgraue-platten-stuetze",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 50,
+      "y": 55
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Terrasse mit hellgrauen Platten, einer Stütze in der Mitte und einem Geländer am Rand",
+    "korrektur": true
+  },
+  {
+    "id": "balkon-stelzlager",
+    "original": "IMG_2542.PNG",
+    "raum": "balkon-und-terrasse",
+    "name": "platten-auf-stelzlagern",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 48,
+      "y": 55
+    },
+    "ausschnitt": {
+      "links": 16,
+      "rechts": 20,
+      "unten": 27
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Große Platten werden auf Stelzlagern verlegt",
+    "korrektur": true
+  },
+  {
+    "id": "ueber-einstieg",
+    "original": "IMG_2547.PNG",
+    "raum": "balkon-und-terrasse",
+    "name": "ueber-uns-dichtband-balkon",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 35,
+      "y": 50
+    },
+    "breiten": [
+      640,
+      960,
+      1280
+    ],
+    "alt": "Mitarbeiter von Fliesenverlegung Tezgel kniet auf dem Balkon, blaues Dichtband läuft an den Rändern entlang",
+    "korrektur": true,
+    "ausschnitt": {
+      "rechts": 35
+    }
+  },
+  {
+    "id": "kontakt-eingang",
+    "original": "IMG_2524.PNG",
+    "raum": "treppe",
+    "name": "eingang-stufen-beige-fliesen",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 45,
+      "y": 75
+    },
+    "ausschnitt": {
+      "oben": 47
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Treppenstufen mit beigen Fliesen und hellen Profilkanten",
+    "korrektur": false
+  }
+]

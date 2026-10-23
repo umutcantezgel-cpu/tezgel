@@ -18,7 +18,6 @@
 // d1440 unter 900 px und in m390 unter die feste Leiste fallen (Rückgabe F-02, OFFENE FRAGE); weiche Trennung über `fugen`.
 // Server-Komponente (async, params als Promise nach Next 16); Client-Inseln sind nur Formulare und Fragen.
 // Wortlaut, Anker, JSON-LD, generateStaticParams und notFound wie im Bestand; Metadaten im layout.jsx der Route.
-import { ViewTransition } from 'react';
 import dynamic from 'next/dynamic';
 import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzhalter';
 import Link from 'next/link';
@@ -204,10 +203,7 @@ export default async function ServiceDetailPage({ params }) {
         }
         rand={
           <Planfeld id={service.id} name={service.name}>
-            {/* Seitenwechsel (E3-ORCH-02): derselbe Plan wie im Feld der Leistungsübersicht gleitet ab lg hierher */}
-            <ViewTransition name={`plan-${service.id}`} share={{ 'plan-vor': 'plan-morph', default: 'none' }} default="none">
-              <Verlegeplan plan={service.id} flucht="laden" />
-            </ViewTransition>
+            <Verlegeplan plan={service.id} flucht="laden" />
           </Planfeld>
         }
       />

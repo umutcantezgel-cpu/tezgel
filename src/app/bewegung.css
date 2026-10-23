@@ -246,38 +246,303 @@ html.k-bewegung .laden-fuge::after {
   to { translate: 340% 0; }
 }
 
-/* seitenwechsel – Morph des Plans und kurze Überblendung; Kopf bleibt stehen */
-::view-transition {
+/* verlegen (B-01, KERN v3 K-007) – Seitenwechsel: eine feste Schicht über allem, für Screenreader verborgen, nur während
+   des Wechsels sichtbar und klickdicht. Jede Fliese trägt ihre halbe Fuge selbst (Rand in Fugenfarbe), so ist die Fuge
+   zwischen zwei gelegten Fliesen ganz und die Seite scheint nie durch. Bewegt werden nur transform und opacity (WAAPI). */
+.verlegen {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  overflow: hidden;
+  contain: strict;
+  visibility: hidden;
   pointer-events: none;
 }
-::view-transition-group(root) {
-  animation-duration: var(--dauer-2);
-  animation-timing-function: var(--ease-setzen);
+.verlegen:not([data-zustand="ruhe"]) {
+  visibility: visible;
+  pointer-events: auto;
 }
-/* Der feste Kopf ist beim Seitenwechsel verankert (KERN K-007) */
-.kopf-anker {
-  view-transition-name: kopf;
+.verlegen-boden {
+  position: absolute;
+  inset: 0;
 }
-::view-transition-group(kopf) {
-  animation: none;
-  z-index: 40;
+.verlegen-fliese {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  background-color: var(--color-fuge);
+  will-change: transform, opacity;
 }
-::view-transition-old(kopf) {
-  display: none;
+.verlegen-fliese > span {
+  position: absolute;
+  inset: 0;
 }
-::view-transition-new(kopf) {
-  animation: none;
+.verlegen-schatten-flug {
+  box-shadow: var(--shadow-flug);
+  opacity: 0;
 }
-::view-transition-group(.plan-morph) {
-  animation-duration: var(--dauer-3);
-  animation-timing-function: var(--ease-setzen);
+.verlegen-schatten-gesetzt {
+  box-shadow: var(--shadow-gesetzt);
 }
+/* Oberfläche: Fliese mit feiner Körnung (SVG-Rauschen in Tinte, sehr leicht) und einem Hauch Glanz als eigener Ebene */
+.verlegen-fliese > .verlegen-oberflaeche {
+  inset: var(--fuge);
+  background-color: var(--color-fliese);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96'%3E%3Cfilter id='k'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .04 0 0 0 0 .07 0 0 0 0 .16 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='96' height='96' filter='url(%23k)'/%3E%3C/svg%3E");
+}
+.verlegen-glanz {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(120deg, var(--color-fliese-glanz), transparent 40%);
+}
+/* Wartephase: Laserlinie wandert ruhig über den stillen Boden (höchstens 3 s, Steuerung in der Komponente) */
+.verlegen-laser {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background-color: var(--color-laser);
+  opacity: 0;
+}
+/* Reduzierte Bewegung: Überblendung über eine Kalkfläche statt Fliesen */
+.verlegen-blende {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-kalk);
+  opacity: 0;
+}
+@media print {
+  .verlegen {
+    display: none;
+  }
+}
+
+/* intro (B-02, Ersatz „Der erste Boden“, E-018) – erster Besuch je Browser (html.k-intro aus dem Kopfskript). Eine feste
+   Schicht über allem: ein Kalkblatt aus Reihen mit Fugenraster, in der Mitte eine Fläche 3 × 3 im Drittelverband, darauf
+   das Logo. Ablauf ab dem ersten Bild als CSS, alle Zeiten als Anteile von --intro-gesamt (--a Beginn, --d Dauer, aus
+   src/lib/intro/ablauf.ts): Fliesen legen sich von rechts (wie B-01), das Logo setzt sich, deckend bis zur Hälfte; dann
+   gleitet das Logo an den Platz des Kopf-Logos (Zielwerte vom Skript nach dem Kopf), und die Reihen ziehen starr nach
+   links ab, gestaffelt nach Versatzstufe. Am Ende tauschen Logo und Kopf-Logo an derselben Stelle. Nur transform und
+   opacity; das Blatt ist Kalk, damit der Speed Index kaum Farbunterschied sieht; kein overflow: hidden am Dokument. */
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  overflow: hidden;
+  contain: strict;
+  container-type: size;
+  pointer-events: none;
+  --intro-fliese: clamp(6rem, 24vw, 9rem);
+  --intro-reihe: calc(var(--intro-fliese) / 2);
+  --intro-oben: calc(47cqh - var(--intro-reihe) * 1.5);
+}
+/* ganze Pixel, damit zwischen den Reihen keine Haarlinien entstehen (wie B-01) */
+@supports (width: round(1px, 1px)) {
+  .intro {
+    --intro-fliese: round(clamp(6rem, 24vw, 9rem), 2px);
+    --intro-oben: round(calc(47cqh - var(--intro-reihe) * 1.5), 1px);
+  }
+}
+.intro-reihe {
+  position: absolute;
+  left: 0;
+  top: calc(var(--intro-oben) + var(--k) * var(--intro-reihe));
+  width: calc(100cqw + var(--intro-fliese));
+  /* 1 px Überlappung: die nächste Reihe liegt darüber und zieht ihre Fuge selbst */
+  height: calc(var(--intro-reihe) + 1px);
+  background-color: var(--color-kalk);
+  background-image:
+    linear-gradient(to right, var(--color-fuge) 1px, transparent 1px),
+    linear-gradient(var(--color-fuge) 1px, transparent 1px);
+  background-size: var(--intro-fliese) 100%, 100% 100%;
+  background-repeat: repeat-x, no-repeat;
+  background-position: calc(50cqw - var(--intro-fliese) * (1.5 + var(--v))) 0, 0 0;
+}
+.intro-flaeche {
+  position: absolute;
+  top: 0;
+  left: calc(50cqw - var(--intro-fliese) * 1.5);
+  width: calc(var(--intro-fliese) * 3);
+  height: calc(var(--intro-reihe) + 1px);
+  overflow: hidden;
+}
+/* Fliese wie B-01: Fugenfarbe als halbe Fuge rundum (zusammen 2 px), darin die Fliese mit einem Hauch Glanz */
+.intro-fliese {
+  position: absolute;
+  top: 0;
+  left: calc(var(--x) * var(--intro-fliese));
+  width: var(--intro-fliese);
+  height: var(--intro-reihe);
+  background-color: var(--color-fuge);
+}
+.intro-fliese::before,
+.intro-fliese::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+}
+.intro-fliese::before {
+  background-color: var(--color-fliese);
+  box-shadow: var(--shadow-gesetzt);
+}
+.intro-fliese::after {
+  background-image: linear-gradient(120deg, var(--color-fliese-glanz), transparent 40%);
+}
+/* Logo mittig auf der Fläche: 80 % ihrer Breite, Seitenverhältnis des Originals 3,2 : 1 */
+.intro-schild {
+  position: absolute;
+  left: calc(50cqw - var(--intro-fliese) * 1.2);
+  top: calc(var(--intro-oben) + var(--intro-fliese) * 0.375);
+  width: calc(var(--intro-fliese) * 2.4);
+  transform-origin: center;
+}
+.intro-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+@keyframes intro-legen {
+  from {
+    opacity: 0;
+    translate: calc(var(--intro-fliese) * var(--intro-flug)) 0;
+    scale: var(--intro-gross);
+  }
+}
+@keyframes intro-setzen {
+  from {
+    opacity: 0;
+    scale: var(--intro-gross);
+  }
+}
+@keyframes intro-gleiten {
+  to {
+    translate: var(--intro-x, 0px) var(--intro-y, 0px);
+    scale: var(--intro-s, 1);
+  }
+}
+@keyframes intro-ziehen {
+  to {
+    translate: calc(-100cqw - var(--intro-fliese)) 0;
+  }
+}
+/* Zeiger: in der deckenden Hälfte fängt die Schicht ab (ein Tipp beendet nur das Intro), ab dem Freilegen geht ein Tipp
+   an die sichtbare Seite durch (der Lauscher im Kopfskript beendet das Intro vorher). Am Ende verborgen. */
+@keyframes intro-ende {
+  0% {
+    pointer-events: auto;
+  }
+  50% {
+    pointer-events: none;
+  }
+  100% {
+    pointer-events: none;
+    visibility: hidden;
+  }
+}
+@keyframes intro-verdeckt {
+  from,
+  to {
+    opacity: 0;
+  }
+}
+@keyframes intro-einblenden {
+  from {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  html.k-intro .intro {
+    display: block !important;
+    animation: intro-ende var(--intro-gesamt) step-end forwards;
+  }
+  html.k-intro .intro-fliese {
+    animation: intro-legen calc(var(--intro-gesamt) * var(--d)) var(--ease-hammer) calc(var(--intro-gesamt) * var(--a)) both;
+  }
+  html.k-intro .intro-logo {
+    animation: intro-setzen calc(var(--intro-gesamt) * var(--d)) var(--ease-setzen) calc(var(--intro-gesamt) * var(--a)) both;
+  }
+  html.k-intro .intro-schild {
+    animation: intro-gleiten calc(var(--intro-gesamt) * var(--d)) var(--ease-setzen) calc(var(--intro-gesamt) * var(--a)) both;
+  }
+  html.k-intro .intro-reihe {
+    /* linear: der sichtbare Teil der Seite wächst stetig ab der Hälfte (B-02, Speed Index) */
+    animation: intro-ziehen calc(var(--intro-gesamt) * var(--d)) linear calc(var(--intro-gesamt) * var(--a)) both;
+  }
+  /* Kopf-Logo bis zum Tausch verborgen (nur Deckkraft, kein Platzwechsel) */
+  html.k-intro header [data-erstes-bild="logo"] {
+    animation: intro-verdeckt var(--intro-gesamt) linear backwards;
+  }
+}
+/* Reduzierte Bewegung: keine Schicht, das Kopf-Logo blendet ein (dauer-2) */
 @media (prefers-reduced-motion: reduce) {
-  ::view-transition-old(*),
-  ::view-transition-new(*),
-  ::view-transition-group(*) {
-    animation-duration: 0s !important;
-    animation-delay: 0s !important;
+  html.k-intro header [data-erstes-bild="logo"] {
+    animation: intro-einblenden var(--dauer-2) var(--ease-setzen) both;
+  }
+}
+@media print, (forced-colors: active) {
+  html.k-intro .intro {
+    display: none !important;
+  }
+  html.k-intro header [data-erstes-bild="logo"] {
+    animation: none;
+  }
+}
+
+/* startbild (K-007, E2-ORCH-06b) – das Startbild legt sich frei: über dem Foto ein Belag aus Fliesen (Fliese mit
+   Fugenraster, drei Fliesen je Reihe im Drittelverband), der beim Laden Reihe für Reihe nach links abzieht, gestaffelt nach
+   Versatzstufe (wie B-01), gesamt dauer-4 · ease-weg; Zeiten als Anteile (--a, --d) aus src/lib/motion/startbild.ts.
+   Nur unter html.k-startbild (Kopfskript: Bewegung erlaubt, kein Intro; der erste Seitenwechsel nimmt die Klasse weg).
+   Ohne Klasse, reduziert, im Druck und bei erzwungenen Farben steht das Foto sofort frei. Nur transform. */
+.startbild-decke {
+  position: absolute;
+  inset: 1px;
+  display: none;
+  overflow: hidden;
+  contain: strict;
+  container-type: size;
+  pointer-events: none;
+  --sb-fliese: calc(100cqw / 3);
+  --sb-reihe: calc(var(--sb-fliese) / 2);
+}
+.startbild-reihe {
+  position: absolute;
+  left: 0;
+  top: calc(var(--k) * var(--sb-reihe));
+  width: calc(100cqw + var(--sb-fliese));
+  /* 1 px Überlappung: kein Durchblick zwischen den Reihen */
+  height: calc(var(--sb-reihe) + 1px);
+  background-color: var(--color-fliese);
+  background-image:
+    linear-gradient(to right, var(--color-fuge) 1px, transparent 1px),
+    linear-gradient(var(--color-fuge) 1px, transparent 1px);
+  background-size: var(--sb-fliese) 100%, 100% 100%;
+  background-repeat: repeat-x, no-repeat;
+  background-position: calc(var(--sb-fliese) * (1 - var(--v))) 0, 0 0;
+}
+@keyframes startbild-ziehen {
+  to {
+    translate: calc(-100cqw - var(--sb-fliese)) 0;
+  }
+}
+@keyframes startbild-ende {
+  to {
+    visibility: hidden;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  html.k-startbild.k-bewegung .startbild-decke {
+    display: block;
+    animation: startbild-ende var(--dauer-4) step-end forwards;
+  }
+  html.k-startbild.k-bewegung .startbild-reihe {
+    animation: startbild-ziehen calc(var(--dauer-4) * var(--d)) var(--ease-weg) calc(var(--dauer-4) * var(--a)) both;
+  }
+}
+@media print, (forced-colors: active) {
+  .startbild-decke {
+    display: none !important;
   }
 }
 

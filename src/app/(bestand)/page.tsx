@@ -1,178 +1,56 @@
-// Startseite (Fusion E-020): Komposition aus dem blinden Abschnittsvergleich der beiden Fassungen – Einstieg
-// „Planblatt“, Fachbereiche-Index, Fachgewerke-Raster, Ablauf-Zeitleiste, Großformat, Stimmen und Servicegebiet nach
-// der Kern-Startseite der Relaunch-Sitzung, im KERN v2 nachgebaut (src/components/start/*); Rechner, Express-Anfrage,
-// Rahmen und gemeinsame Bausteine aus dem Werkstatt-Stand. Überschriften, Fließtexte, Links und Formulare wortgleich.
+// Startseite (KERN v3 K-009, Seitenformel; Text _werkstatt/texte/REF-start.md, E2-ORCH-06): die Erzählseite, an der
+// sich alle anderen messen. Sechs Abschnitte in fester Folge an einer Laserlinie (Leitachse): 1 Worum es geht (H1, Ort,
+// Hauptknopf, Anruf, WhatsApp, Startbild), 2 Ihre Lage (sechs Fliesen), 3 Was wir tun, 4 So läuft es ab, 5 Beleg
+// (Fotos, Stimmen, Orte), 6 Nächster Schritt (das eine Formular, #termin). Preisrechner und Express-Anfrage stehen nicht
+// mehr hier, sondern auf ihren übrigen Seiten (E-012, LAGEBILD F-02, F-03); alle Hauptknöpfe dieser Seite führen zu #termin.
 import type { Metadata } from 'next';
-import dynamic from 'next/dynamic';
-import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzhalter';
-import { COMPANY_DATA } from '@/config/company';
-import HeroContactForm from '@/components/forms/HeroContactForm';
-import TrustStrip from '@/components/trust/TrustStrip';
-import GoogleReviewsBadge from '@/components/reviews/GoogleReviewsBadge';
-import FAQAccordion from '@/components/ui/FAQAccordion';
-import FinalCTA from '@/components/ui/FinalCTA';
 import Abschnitt from '@/components/kern/Abschnitt';
-import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Leitachse from '@/components/kern/Leitachse';
-import Einstieg from '@/components/start/Einstieg';
-import Fachbereiche from '@/components/start/Fachbereiche';
-import Fachgewerke from '@/components/start/Fachgewerke';
-import Ablauf from '@/components/start/Ablauf';
-import Grossformat from '@/components/start/Grossformat';
-import Stimmen from '@/components/start/Stimmen';
-import Servicegebiet from '@/components/start/Servicegebiet';
-import { etikettKlassen, seitenKlassen } from '@/components/kern/stile';
+import Schrittfolge from '@/components/kern/Schrittfolge';
+import Seitenformel from '@/components/kern/Seitenformel';
+import StartEinstieg from '@/components/start/StartEinstieg';
+import Lagefliesen from '@/components/start/Lagefliesen';
+import WasWirTun from '@/components/start/WasWirTun';
+import { Arbeiten, Einsatzorte, Kundenstimmen } from '@/components/start/StartBeleg';
+import TerminAnfrage from '@/components/start/TerminAnfrage';
 import { createMetadata } from '@/lib/metadata';
 
-// Rechner unterhalb des ersten Bildschirms nachgeladen (E4-NACH-17, Bündelanalyse); Server-Rendering bleibt. Ohne JavaScript
-// stehen Rechner und Express-Anfrage nur als Platzhalter mit Anruf, WhatsApp und E-Mail (R-01b, Variante b; Startseite nur b)
-const PricingCalculator = dynamic(() => import('@/components/pricing/PricingCalculator'), {
-    loading: () => <FormularPlatzhalter />,
-});
-const TezgelAnfrageFunnel = dynamic(() => import('@/components/funnels/TezgelAnfrageFunnel'), {
-    loading: () => <FormularPlatzhalter />,
-});
-
 export const metadata: Metadata = createMetadata({
-    title: 'Fliesenleger Wetzlar & Aßlar | Fliesenverlegung Tezgel',
-    description: 'Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenarme Großformate & Terrassen. Abdichtung DIN 18534. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!',
+    title: 'Fliesenleger Aßlar und Wetzlar | Fliesenverlegung Tezgel',
+    description: 'Fliesenverlegung Tezgel aus Aßlar: Badsanierung, Böden, Balkon und Terrasse für Wetzlar und Umgebung. Der Termin bei Ihnen vor Ort ist kostenfrei.',
     path: '/',
 });
 
-const PILLAR_EYEBROWS = ['Normgerechte Sicherheit', 'Fachgerechte Ausführung', 'Wohnkomfort bei Sanierung'];
+const SCHRITTE = [
+    {
+        titel: 'Termin bei Ihnen vor Ort',
+        text: 'Deniz Tezgel kommt zu Ihnen. Er schaut sich den Raum genau an und prüft den Untergrund. Dieser Termin ist für Sie kostenfrei.',
+    },
+    {
+        titel: 'Planen und auswählen',
+        text: 'Sie suchen mit uns Fliesen, ihre Größe und die Farbe der Fugen aus. Danach bekommen Sie ein Angebot mit festem Preis.',
+    },
+    {
+        titel: 'Verlegen und übergeben',
+        text: 'Wir verlegen sauber und übergeben den Raum besenrein. Zum Schluss gehen wir alles gemeinsam durch.',
+    },
+];
 
 export default function HomePage() {
-    const { owner } = COMPANY_DATA;
-
     return (
-        <>
-            {/* 1. EINSTIEG „Planblatt“: Verlegeplan an der Achse geschnitten, die Waage trägt H1 und Formular */}
-            <Einstieg formular={<HeroContactForm />} />
-
-            {/* LEITACHSE (K-007): Das Lot setzt die Achse des Einstiegs über alle Abschnitte bis zur Anfrage fort; das rote
-                Stück wächst mit dem Lesefortschritt, Abschnittsköpfe setzen ein Fugenkreuz auf das Lot (E3-NACH-02) */}
+        <Seitenformel>
             <Leitachse>
-            {/* VERTRAUENSZEILE: sechs Zusagen und der Google-Kennwert über zwei Felder im selben Raster */}
-            <div className="spaet-zeichnen border-b border-fuge bg-kalk">
-                <div className={`${seitenKlassen} py-8`}>
-                    <TrustStrip ende={<GoogleReviewsBadge imRaster />} />
-                </div>
-            </div>
-
-            {/* 2. GARANTIEN als Zeilen an der Fuge: Etikett, Zusage, Text – oben bündig */}
-            <Abschnitt id="vertrauen" leitachse spaet aria-label="Garantien &amp; Qualitätsversprechen von Fliesenverlegung Tezgel">
-                <ul className="border-t border-strich">
-                    {COMPANY_DATA.trustPillars.map((pillar: { title: string; description: string }, idx: number) => (
-                        <li key={pillar.title} className="grid grid-cols-4 items-start gap-x-6 gap-y-3 border-b border-fuge py-12 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-8">
-                            <span className={`${etikettKlassen} col-span-4 pt-1 md:col-span-3 lg:col-span-3`}>
-                                <Fugenkreuz className="size-3 text-strich" />
-                                {PILLAR_EYEBROWS[idx]}
-                            </span>
-                            <p className="col-span-4 font-anzeige text-fs-5 font-extrabold text-tinte md:col-span-5 lg:col-span-4">{pillar.title}</p>
-                            <p className="col-span-4 max-w-mass text-fs-3 text-tinte-2 md:col-span-5 md:col-start-4 lg:col-span-5 lg:col-start-auto">{pillar.description}</p>
-                        </li>
-                    ))}
-                </ul>
-            </Abschnitt>
-
-            {/* 3. FACHBEREICHE & PLANUNGSHILFEN */}
-            <Fachbereiche />
-
-            {/* 4. PROJEKTANFRAGE & SITUATIONSSCHILDERUNG */}
-            <Abschnitt
-                id="kosten-rechner"
-                leitachse
-                spaet
-                titelId="rechner-heading"
-                etikett="Umfassende Projektanfrage"
-                titel="Projekt anfragen & Situation schildern"
-                einleitung={
-                    <p>
-                        Wählen Sie Ihr geplantes Vorhaben und beschreiben Sie kurz Ihre Ausgangslage vor Ort.
-                        Fachbetriebsleiter Deniz Tezgel prüft Ihre Angaben und meldet sich zeitnah für eine persönliche Abstimmung und das kostenfreie Vor-Ort-Aufmaß.
-                    </p>
-                }
-            >
-                <PricingCalculator />
-            </Abschnitt>
-
-            {/* 5. FACHGEWERKE als Feldraster mit Plan-Vignetten */}
-            <Fachgewerke />
-
-            {/* 6. ABLAUF als Zeitleiste */}
-            <Ablauf />
-
-            {/* 7. XXL-GROSSFORMATE */}
-            <Grossformat />
-
-            {/* 8. KUNDENSTIMMEN */}
-            <Stimmen />
-
-            {/* 9. EINSATZGEBIET: Orte mit Entfernung ab Aßlar neben der Karte */}
-            <Servicegebiet />
-
-            {/* 10. HÄUFIGE FRAGEN */}
-            <Abschnitt
-                id="faq"
-                leitachse
-                spaet
-                titelId="home-faq-heading"
-                kopf="seitlich"
-                etikett="Transparente Antworten"
-                titel="Häufig gestellte Fragen zu Fliesen & Badsanierung"
-                einleitung={<p>Wichtige Fragen zu Kosten, DIN 18534 Abdichtung, Staubschutz und dem Ablauf vor Ort.</p>}
-            >
-                <div>
-                    <FAQAccordion
-                        question="Was kostet eine professionelle Fliesenverlegung oder Badsanierung?"
-                        answer="Die Kosten richten sich nach Format, Material und Zustand des Untergrunds. Nach dem kostenfreien Vor-Ort-Aufmaß in Aßlar, Wetzlar oder Hessen erhalten Sie eine transparente Kostenaufstellung nach Quadratmetern und Arbeitsaufwand – als verbindliches Festpreisangebot."
-                    />
-                    <FAQAccordion
-                        question="Wie garantieren Sie den Staubschutz bei bewohnten Sanierungen?"
-                        answer="Wir setzen moderne Staubschutztüren, Unterdruck-Luftreiniger und saugfähige Schutzvliese ein. So bleibt der Feinstaub im Arbeitsbereich und Ihre übrigen Wohnräume bleiben sauber und bewohnbar."
-                    />
-                    <FAQAccordion
-                        question="Warum ist die Verbundabdichtung nach DIN 18534 im Bad unverzichtbar?"
-                        answer="Normgerechte Verbundabdichtung nach DIN 18534 mit Dichtbändern und Dichtmanschetten schützt das Mauerwerk und den Estrich dauerhaft vor Feuchteschäden, Wassereintritt und Schimmelbildung – besonders in bodengleichen Walk-In-Duschen."
-                    />
-                    <FAQAccordion
-                        question="Verlegen Sie auch XXL-Großformate planeben ohne Überzähne?"
-                        answer="Ja! Wir nutzen modernste Nivelliersysteme und Vakuum-Hebetechnik für millimetergenaue Großformatverlegung (z. B. 120x120 cm oder 120x260 cm) mit minimalen, harmonischen Fugenachsen."
-                    />
-                    <FAQAccordion
-                        question="Wie schnell erhalten wir einen Termin zum Aufmaß vor Ort?"
-                        answer="In der Regel vereinbaren wir binnen 24 bis 48 Stunden einen passenden Termin direkt bei Ihnen vor Ort in Aßlar, Wetzlar, Gießen oder Mittelhessen."
-                    />
-                </div>
-            </Abschnitt>
-
-            {/* 11. EXPRESS-ANFRAGE: Kopf links, Assistent rechts */}
-            <Abschnitt
-                id="express-anfrage"
-                leitachse
-                spaet
-                titelId="anfrage-heading"
-                flaeche="fliese"
-                kopf="seitlich"
-                etikett="Kostenfrei & unverbindlich"
-                titel="Ihre Express-Anfrage in 3 Klicks"
-                einleitung={
-                    <p>
-                        Vorhaben wählen, Eckdaten eintragen und die Anfrage direkt per WhatsApp an {owner.fullName} oder per
-                        E-Mail senden.
-                    </p>
-                }
-            >
-                <TezgelAnfrageFunnel />
-            </Abschnitt>
+                <StartEinstieg />
+                <Lagefliesen />
+                <WasWirTun />
+                <Abschnitt id="ablauf" formel="ablauf" leitachse flaeche="fliese" titel="So kommen Sie zu Ihrem neuen Boden.">
+                    <Schrittfolge schritte={SCHRITTE} ausrichtung="waagrecht" />
+                </Abschnitt>
+                <Arbeiten />
+                <Kundenstimmen />
+                <Einsatzorte />
+                <TerminAnfrage />
             </Leitachse>
-
-            {/* 12. ABSCHLUSS */}
-            <FinalCTA
-                headline="Bereit für Ihr Fliesen- oder Badprojekt? Sprechen Sie direkt mit Fachbetriebsleiter Deniz Tezgel."
-                subtitle="Kostenfreies Vor-Ort-Aufmaß • Verbindlicher Festpreis • Über 15 Jahre Erfahrung"
-                buttonText="Jetzt Vor-Ort-Aufmaß anfragen"
-            />
-        </>
+        </Seitenformel>
     );
 }

@@ -8,10 +8,15 @@
  "E1-LEKT-REF-3": "erledigt 6be59f9",
  "E1-LEKT-REF-4": "erledigt 6be59f9",
  "E2-TEST-04": "abgenommen, im Arbeitsbaum bis zum Commit von E2-ORCH-04",
- "E2-ORCH-04": "gebaut im Arbeitsbaum, Ablauftest E2-PRUEF-04 läuft",
+ "E2-ORCH-04": "gebaut im Arbeitsbaum (Zurück-Weg aufschub, E-020)",
  "E2-FIX-01a": "gebaut im Arbeitsbaum",
  "E2-FIX-01b": "gebaut im Arbeitsbaum",
  "E2-FIX-01c": "gebaut im Arbeitsbaum",
  "E2-ORCH-01": "gebaut im Arbeitsbaum",
- "E2-ORCH-01b": "gebaut im Arbeitsbaum"
+ "E2-ORCH-01b": "gebaut im Arbeitsbaum",
+ "E2-ORCH-05": "gebaut im Arbeitsbaum (Ersatz-Intro, E-019; Tests Intro 1–11)",
+ "E2-ORCH-04b": "gebaut im Arbeitsbaum (Plan-Morph entfernt)",
+ "E2-ORCH-02c": "gebaut im Arbeitsbaum (Bildfeld v3, arbeiten.ts)",
+ "E2-BILD-02": "abgenommen (32 Motive, 91 Dateien; Fragen in M-08, M-17)",
+ "E2-PRUEF-04": "abgenommen (Befund behoben, E-020; Lauf 5: 26/26)"
 }

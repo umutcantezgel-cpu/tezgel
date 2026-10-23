@@ -41,7 +41,7 @@ Stand 24.10.2026, E1. Quelle der Wahrheit für alle Pakete. Hervorgegangen aus K
 - Vor jeder Next-API-Nutzung die passende Seite in `node_modules/next/dist/docs/` lesen (AGENTS.md).
 - Neu in v3:
   - Seitenwechsel B-01: `src/components/verlegen/` (Client-Komponente im Root-Layout `_dokument.tsx`, außerhalb von `main`; reine Logik in `src/lib/verlegen/` mit Tests in `test/`).
-  - Intro B-02: `src/components/intro/` mit Logo-Vektor `src/components/intro/logo-pfade.ts`; Startschalter im Kopfskript `src/lib/motion/kopfskript.ts`.
+  - Intro B-02: `src/components/intro/Intro.tsx` (Ersatz „Der erste Boden“, E-019; mit Vektordatei später `logo-pfade.ts`), Ablauf `src/lib/intro/ablauf.ts`; Startschalter im Kopfskript `src/lib/motion/kopfskript.ts`.
   - Bilder: Webfassungen unter `public/images/arbeiten/<raum>/<name>.jpg`, Bilddaten (Maße, Alt-Text, Platzhalter, Raum, Paar) in `src/config/arbeiten.ts`; Einbau nur über den Baustein `Bildfeld` (`next/image`).
   - Texte: Fachwörter nur über den Baustein `Fachwort` (`<dfn data-glossar>` plus Erklärung mit `data-erklaert`), Glossar maschinenlesbar in `src/config/glossar.ts` (gespiegelt in `_werkstatt/regeln/glossar.json`).
   - Erstes Bild: Die fünf Pflichtelemente tragen `data-erstes-bild="logo|ueberschrift|ort|hauptknopf|kontakt"`.
@@ -110,7 +110,7 @@ Bezug ist eine Fliese 30 × 60 cm im Maßstab 1 cm = 3,2 px: kurze Seite **F = 9
 | Kennung | Zweck | Auslöser | Dauer · Kurve | Reduziert | Wo |
 |---|---|---|---|---|---|
 | **`verlegen`** (B-01) | Zusammenhang: Seitenwechsel | Klick auf internen Link; Zurück und Vor gespiegelt mit 70 % | gesamt 1200 ms (erster) bzw. 900 ms (folgende): Verlegen ~45 % je Fliese `ease-hammer`, Wechsel, Weiterziehen ~40 % `ease-weg` | Überblendung 150 ms | global |
-| **`intro`** (B-02) | Charakter: Logo zeichnet sich | erster Besuch je Browser | Kontur ~1000 ms linear, Flächen ~400 ms `ease-setzen` (überlappend), Gleiten ~600 ms `ease-setzen`; deckend ≤ 800 ms, gesamt ≤ 1600 ms Ziel, ≤ 2200 ms Grenze | Logo blendet in 300 ms ein | `/` und jede Erstseite |
+| **`intro`** (B-02) | Charakter: Logo zeichnet sich; bis zur Vektordatei Ersatz „Der erste Boden“ (E-018, E-019) | erster Besuch je Browser | Ersatz: Fläche 3 × 3 legt sich 80–624 ms (`ease-hammer`), Logo setzt sich 448–752 ms (`ease-setzen`), deckend bis 800 ms, Logo gleitet 800–1400 ms (`ease-setzen`), Reihen ziehen 800–1504 ms linear ab; alles Anteile von `--intro-gesamt` (1600 ms), Grenze 2200 ms | Kopf-Logo blendet in `dauer-2` ein, keine Schicht | jede Erstseite |
 | `startbild` | Charakter: Startbild legt sich frei | Laden (ohne Intro) bzw. Ende des Intros | `dauer-4`, Fliesen ziehen im Drittelverband ab, `ease-weg`, Staffel ≤ 8 Spalten | Bild sofort sichtbar | `/` |
 | `schichten` | Zusammenhang: Was unter der Fliese steckt | Scroll (view-timeline) | linear an Scroll, je Schicht ein Satz | alle Schichten sichtbar | `/bad` |
 | `weg` | Orientierung: Vom Anruf bis zur letzten Fuge | Scroll (view-timeline) | Laserlinie zieht von Station zu Station | Linie voll, alle Stationen | `/bad/badsanierung` |
@@ -142,6 +142,7 @@ Bezug ist eine Fliese 30 × 60 cm im Maßstab 1 cm = 3,2 px: kurze Seite **F = 9
 - Kontur in der Reihenfolge Kopf und Haare, Gesicht, Körper, Arm mit Fliese, Beine, dann Wortmarke Buchstabe für Buchstabe; dann Flächen; dann gleitet das Logo per FLIP an den Platz des Kopf-Logos, während Fliesen die Decke von der Seite abziehen.
 - Jeder Klick, Tipp, Tastendruck oder Scroll beendet sofort (Lauscher im Kopfskript, passiv, `once`). Reduziert: Einblenden in 300 ms.
 - Logotreue: Vektor ≥ 98 % deckungsgleich bei doppelter Größe, Farben exakt; sonst Ersatz-Intro „Der erste Boden“ (E-011).
+- Stand (E-018, E-019): Ersatz-Intro gebaut. Kalkblatt mit Fugenraster, Fläche 3 × 3 im Drittelverband, Original-Logo als Bild, Gleiten per FLIP (Zielmaß vom Inline-Skript nach dem Kopf), Reihen ziehen ab wie B-01. Serverkomponente `src/components/intro/Intro.tsx`, Ablauf `src/lib/intro/ablauf.ts`, Schalter, Abbruch und Grenze im Kopfskript; Ablauf als CSS in `bewegung.css` ab dem ersten Bild.
 
 ## K-008 Formsystem
 - Grundraster: Fugenraster aus K-005; Linien 1 px Fuge, 1 px Strich, 2 px Tinte (Fokus), 2 px Laser (Laserlinie).

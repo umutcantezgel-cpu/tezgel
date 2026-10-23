@@ -7,8 +7,7 @@
 // Achsenlogik wie im Vorbild (Startseite): ab lg trägt nur der Plan das Rot (Lot bzw. Achsenkreuz), das Lot des Einstiegs
 // bleibt dort Grundschicht (`planblatt-achse`, globals.css); unter lg steht das rote Lot im Seitenrand und der Plan zeigt
 // keine Achse – so steht in jeder Ansicht und in allen vier Instanzen genau ein Rot je Bildschirm (Stolperstein d, g).
-// `children` ist die Zeichnung ab lg (die Seite hüllt sie in die ViewTransition des Plan-Morphs von /leistungen); ohne
-// `children` zeichnet das Feld den Plan selbst. Beide Pläne rücken beim Laden in die Flucht (`flucht="laden"`, Register
+// `children` ist die Zeichnung ab lg (von der Seite gesetzt); ohne `children` zeichnet das Feld den Plan selbst. Beide Pläne rücken beim Laden in die Flucht (`flucht="laden"`, Register
 // sig-plan). Zeichnungen dekorativ (aria-hidden), Server-Komponente.
 import type { ReactNode } from 'react';
 import Planblatt, { planfelder } from '@/components/kern/Planblatt';

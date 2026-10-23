@@ -9,6 +9,7 @@ import Icon from '@/components/icons/Icon';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import { etikettForm, etikettKlassen, knopfKlassen } from '@/components/kern/stile';
 import { CITIES } from '@/config/cities';
+import { RATING_SUMMARY } from '@/config/reviews';
 import { gruppiereNachZone, mitEntfernungAbSitz } from '@/lib/einzugszonen';
 import { getDirectionsUrl, calculateEstimatedDriveTime, CITY_HUB_DATA } from '@/lib/maps/getMapEmbedUrl';
 
@@ -38,7 +39,7 @@ export function LocalDominanceMap({
   className = '',
   centerCity = 'Aßlar & Wetzlar',
   radiusKm = 25,
-  topRankings = ['5,0★ Google-Bewertung (27 Rezensionen)', 'Eingetragener HWK-Betrieb'],
+  topRankings = [`${RATING_SUMMARY.google.displayRating}★ Google-Bewertung (${RATING_SUMMARY.google.count} Rezensionen)`, 'Eingetragener HWK-Betrieb'],
   citySlug,
 }: LocalDominanceMapProps) {
   // Normalize slug for city hub lookup

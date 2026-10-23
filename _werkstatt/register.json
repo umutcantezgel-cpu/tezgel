@@ -1,13 +1,10 @@
 {
-  "quelle": "KERN K-007 (v2)",
+  "quelle": "KERN v3.0 K-007 (24.10.2026), Maschinenfassung wie src/lib/motion/register.ts",
   "kennungen": [
-    "sig-kreuzlinie",
-    "sig-flucht",
-    "szene-ablauf",
-    "sig-plan",
-    "einzugsband",
+    "verlegen",
+    "intro",
+    "startbild",
     "verband",
-    "fugenband",
     "leitachse",
     "anriss",
     "auftritt",
@@ -16,6 +13,41 @@
     "zustand",
     "notiert",
     "laden",
-    "seitenwechsel"
+    "sig-kreuzlinie",
+    "sig-flucht",
+    "szene-ablauf",
+    "sig-plan",
+    "einzugsband",
+    "fugenband"
+  ],
+  "v3": [
+    "verlegen",
+    "intro",
+    "startbild",
+    "verband",
+    "leitachse",
+    "anriss",
+    "auftritt",
+    "aufklappen",
+    "druck",
+    "zustand",
+    "notiert",
+    "laden"
+  ],
+  "entfallen_e009": [
+    "sig-kreuzlinie",
+    "sig-flucht",
+    "szene-ablauf",
+    "sig-plan",
+    "einzugsband",
+    "fugenband"
+  ],
+  "hinweis": "`kennungen` = alles, was registriert ist (auch markierte v2-Einträge, solange Seiten sie nutzen; bewegung.mjs prüft dagegen). Große Momente (schichten, weg, gefaelle-dusche, gefaelle-balkon, formatregler, vorher-nachher, galerie-filter, karte) kommen mit E3-ORCH-02a dazu; entfallende Einträge gehen mit E5-ORCH-03b.",
+  "entfernt": [
+    {
+      "kennung": "seitenwechsel",
+      "paket": "E2-ORCH-04b",
+      "grund": "ein System für Seitenwechsel (E-010)"
+    }
   ]
 }

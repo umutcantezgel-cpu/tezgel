@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { CITIES, type CityData } from '@/config/cities';
 import { SERVICES } from '@/config/services';
 import { COMPANY_DATA } from '@/config/company';
+import { RATING_SUMMARY } from '@/config/reviews';
 import { notFound } from 'next/navigation';
 import { buildGraph, buildCityLocalBusinessNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
 import { findCityConfig, getCityLandingPageSchema } from '@/lib/schemaPyramid';
@@ -235,7 +236,7 @@ export default async function StandortPage({
             centerCity={`${city.name} (${city.region})`}
             citySlug={city.slug}
             radiusKm={Math.max(25, city.distanceKm + 10)}
-            topRankings={['5,0★ Google-Bewertung (27 Rezensionen)', 'Eingetragener HWK-Betrieb']}
+            topRankings={[`${RATING_SUMMARY.google.displayRating}★ Google-Bewertung (${RATING_SUMMARY.google.count} Rezensionen)`, 'Eingetragener HWK-Betrieb']}
           />
         </Abschnitt>
 

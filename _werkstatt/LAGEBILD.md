@@ -73,8 +73,25 @@ Altfehler aus dem Vorlauf (bleiben, MENSCHEN.md): Konfigurator 2 Fälle `fixme`;
 - Lighthouse: offen bis E0-PRUEF-03L (Ruhefenster nach den Probeläufen).
 - Bildsatz des ersten Bildschirms: `bilder/e0/<seite>/<gerät>.jpg` (120 Bilder).
 
-## 5. Probeläufe alter Stand (offen bis E0-PROBE-01…10)
-P1 bis P5 × eigenes und anderes Gerät × A1 bis A6.
+## 5. Probeläufe alter Stand (E0-PROBE-01…10, Satz e0, Matrix `cache/probelauf/e0/matrix.json`)
+Je Person zwei Gerätegruppen, Start `/`, Einwilligung als Erstbesuch („Alle ablehnen“ zählt als Handlung). Zahl = Handlungen bis zum Ziel; „offen“ = nicht gelöst innerhalb von 40 Handlungen. Rückgaben in `pakete/E0-PROBE-*.rueckgabe.md`.
+
+| Person · Gerät | A1 | A2 | A3 | A4 | A5 | A6 |
+|---|---|---|---|---|---|---|
+| P1 · m390 | 3 | 3 | 27 | offen | offen | 21 |
+| P1 · d1440 | 1 | 2 | 21 | offen | 6 | 4 |
+| P2 · t768 | 0 | 1 | 13 | offen | 4 | 3 |
+| P2 · d1440 | 1 | 0 | 12 | offen | 4 | 2 |
+| P3 · m360 | 1 | 2 | 15 | offen | 4 | 11 |
+| P3 · d1440 | 1 | 0 | 5 | offen | 10 | 3 |
+| P4 · m390 | 1 | 2 | 16 | offen | 5 | 18 |
+| P4 · d1280 | 1 | 0 | 12 | offen | 10 | 3 |
+| P5 · m390 | 1 | 2 | 13 | offen | 6 | 19 |
+| P5 · d1440 | 1 | 0 | 4 | offen | 9 | 13 |
+
+- Gelöst: A1, A2, A3 und A6 je 10 von 10, A5 9 von 10, **A4 0 von 10** (11 Befunde „hoch“: keine Fotos fertiger Arbeiten, die Referenzseite sagt „Projektdokumentation in Vorbereitung“).
+- Häufige Befunde: Menüpunkte unter der unteren Leiste nicht antippbar (P1, P4, P5 mobil); „Aufmaß anfragen“ führt zur Kontaktseite, nicht ins Formular (A3); Vorauswahl ohne Hinweis im Formular; Fachwörter (Walk-In-Dusche, Stelzlager, DIN 18534, Festpreisangebot, Endübergabe); Ort „Aßlar“ erst nach einem Bildlauf (P1 mobil); Telefonnummer im Kopf nur als Symbol; A6 mobil lang (11 bis 21 Handlungen) über „Alles für Ihr Vorhaben“.
+- Zielwert Z-11 für den neuen Stand: jede Aufgabe gelöst und Handlungen ≤ diese Zahlen (bei „offen“: gelöst innerhalb der Grenze).
 
 ## 6. Stärken, die bleiben
 - Sauberer technischer Kern: grüner Bestand, 289 Funktionsfälle aus dem Vorlauf, Weiterleitungen und 410 gepflegt, Adressen und strukturierte Daten fehlerfrei.

@@ -5,6 +5,7 @@ import { knopfKlassen, seitenKlassen } from "@/components/kern/stile";
 import Laserachse from "@/components/kern/Laserachse";
 import { ACHSE_LAGE } from "@/components/kern/Leitachse";
 import { siteConfig } from "@/lib/config";
+import { RATING_SUMMARY } from "@/config/reviews";
 import dynamic from "next/dynamic";
 import FormularPlatzhalter from "@/components/funnels/TezgelAnfrageFunnel/Platzhalter";
 
@@ -55,7 +56,7 @@ export default function FinalCTA({
   headline = "Planen Sie ein Fliesen- oder Badprojekt? Sprechen Sie direkt mit Fachbetriebsleiter Deniz Tezgel.",
   benefits = defaultBenefits,
   buttonText = "Jetzt kostenfrei anrufen",
-  socialProof = "5,0 Google-Bewertung bei 27 echten Kundenstimmen",
+  socialProof = `${RATING_SUMMARY.google.displayRating} Google-Bewertung bei ${RATING_SUMMARY.google.count} echten Kundenstimmen`,
   subtitle = "Schnelle Reaktionszeit • Persönliche Betreuung vor Ort • HWK-Fachbetrieb",
   serviceContext,
   showQuickForm = false,

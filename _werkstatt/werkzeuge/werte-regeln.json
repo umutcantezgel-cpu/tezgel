@@ -1,8 +1,9 @@
 {
- "_kommentar": "Quelle: KERN v1, wird mit v2 angepasst. Erste Fassung nach Briefing E0-PRUEF-02d; der Orchestrator pflegt die Datei. Abweichung zum Briefing: schrift und kurven folgen dem Theme in src/app/globals.css und KERN v2 (font-text, font-anzeige, font-mono; ease-setzen, ease-laser, ease-weg, ease-linear).",
+ "_kommentar": "Quelle: KERN v1, wird mit v2 angepasst. Erste Fassung nach Briefing E0-PRUEF-02d; der Orchestrator pflegt die Datei. Abweichung zum Briefing: schrift und kurven folgen dem Theme in src/app/globals.css und KERN v2 (font-text, font-anzeige, font-mono; ease-setzen, ease-laser, ease-weg, ease-linear). KERN v3 (E2-ORCH-01b): Farbe fliese-glanz, Kurve hammer; Schatten shadow-gesetzt und shadow-flug, Dauern --verlegen-gesamt, --verlegen-gesamt-folge, --verlegen-ruhig, --intro-gesamt nur als CSS-Variablen.",
  "farben": [
   "kalk",
   "fliese",
+  "fliese-glanz",
   "fuge",
   "strich",
   "tinte",
@@ -141,7 +142,8 @@
   "setzen",
   "laser",
   "weg",
-  "linear"
+  "linear",
+  "hammer"
  ],
  "radien": [
   "rounded-none",

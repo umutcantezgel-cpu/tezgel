@@ -35,6 +35,8 @@ export default function GoogleReviewsBadge({
         <span className="font-anzeige text-fs-5 font-semibold">
           {wert} <span className="font-mono text-fs-1 font-normal text-tinte-2">von 5</span>
         </span>
+        {/* Trenner für Textinhalt und Screenreader: ohne ihn liest sich die Zeile als „5,0 von 527 …“ (LAGEBILD, E2-FIX-01a) */}
+        <span className="sr-only">, </span>
         <span className="font-mono text-fs-1 text-tinte-2">{count} Google-Rezensionen</span>
       </span>
       {imRaster && <Icon name="link-extern" groesse={5} className="ml-auto shrink-0 text-tinte-2" />}

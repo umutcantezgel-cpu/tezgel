@@ -8,33 +8,24 @@ import BannerPlatz from '@/components/common/BannerPlatz';
 import SprungHalter from '@/components/common/SprungHalter';
 import { knopfKlassen, seitenKlassen } from '@/components/kern/stile';
 import { COMPANY_DATA } from '@/config/company';
-import {
-    footerBathLinks,
-    footerServiceLinks,
-    footerLocationLinks,
-    footerCompanyLinks,
-    footerLegalLinks
-} from '@/config/navigation';
+import { footerGruppen, footerLegalLinks } from '@/config/navigation';
+import { oeffnungszeilen } from '@/lib/oeffnungszeiten';
 
-const LINK_COLUMNS = [
-    { title: 'Badsanierung', links: footerBathLinks },
-    { title: 'Fachgewerke & Fachthemen', links: footerServiceLinks },
-    { title: 'Standorte Hessen', links: footerLocationLinks },
-    { title: 'Unternehmen & Ratgeber', links: footerCompanyLinks }
-];
+const LINK_COLUMNS = footerGruppen;
 
+// Belege aus dem Faktenblatt K-015 (F-05, F-15, F-17, F-12), keine Garantien (M-07)
 const GUARANTEES = [
-    { title: 'HWK Fachbetrieb', text: COMPANY_DATA.authority.shortName },
-    { title: 'DIN 18534', text: 'Verbundabdichtung' },
-    { title: 'Staubschutz-Garantie', text: 'bei bewohnten Sanierungen' },
-    { title: 'Festpreisgarantie', text: 'transparent kalkuliert' }
+    { title: 'Eingetragener Fachbetrieb', text: COMPANY_DATA.authority.shortName },
+    { title: 'Abdichtung nach DIN 18534', text: 'bei uns Standard seit 2019' },
+    { title: 'Staubschutz', text: 'wenn Sie während der Arbeiten im Haus wohnen' },
+    { title: 'Termin vor Ort', text: 'für Sie kostenfrei' }
 ];
 
 const etikett = 'font-mono text-fs-1 text-nacht-2';
 const fussLink = 'text-kalk underline decoration-nacht-fuge underline-offset-4 transition-colors dauer-1 ease-setzen hover:decoration-kalk';
 
-// Fuß (KERN K-009): Tinte-Fläche; oben die Zusagen an der Fuge, links das Schriftfeld des Betriebs
-// (wie das Stempelfeld eines Verlegeplans), rechts der Seitenindex. Inhalte wie im Bestand.
+// Fuß (KERN v3 K-009): Tinte-Fläche; oben belegte Fakten an der Fuge, links das Schriftfeld des Betriebs
+// (wie das Stempelfeld eines Verlegeplans), rechts der vollständige Seitenindex in sieben Gruppen (Auftrag Abschnitt 6).
 // Breiten (R-01a): Zusagen mobil einspaltig, ab sm zwei, ab xl vier Felder; der Seitenindex ab lg zwei, ab xl vier
 // Spalten. So passen die langen Wörter („Verbundabdichtung“, „Qualitätsversprechen“) in jeder Breite in ihr Feld, auch
 // bei erhöhtem Textabstand (WCAG 1.4.12) – vorher ragten sie mobil über den waagerechten clip des Fußes (N-01b) und
@@ -70,10 +61,10 @@ export default function Footer() {
 
             <div className={clsx(seitenKlassen, 'grid grid-cols-1 gap-12 py-16 lg:grid-cols-12 lg:gap-8')}>
                 <div className="flex flex-col gap-6 lg:col-span-5">
-                    <Link href="/" className="inline-block self-start" aria-label={`Fliesenverlegung Tezgel – Inh. ${owner.fullName} · Fachbetrieb Aßlar / Wetzlar – Startseite`}>
+                    <Link href="/" className="inline-block self-start" aria-label="Zur Startseite von Fliesenverlegung Tezgel">
                         <Image
                             src="/images/logo/tezgel-logo-dark.webp"
-                            alt="Fliesenverlegung Tezgel – Fachbetrieb Aßlar & Wetzlar"
+                            alt="Fliesenverlegung Tezgel"
                             width={220}
                             height={68}
                             className="h-12 w-auto shrink-0 object-contain sm:h-16"
@@ -105,14 +96,14 @@ export default function Footer() {
                             </a>
                         </div>
                         <div className="bg-tinte p-4">
-                            <span className={etikett}>Mobil &amp; WhatsApp</span>
+                            <span className={etikett}>Mobil und WhatsApp</span>
                             <a
                                 href={contact.whatsappLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={clsx(fussLink, 'mt-1 block font-mono text-fs-2')}
                                 data-motion="zustand"
-                                aria-label={`Mobil & WhatsApp: ${contact.mobile} – Chat mit Deniz Tezgel starten`}
+                                aria-label={`Mobil und WhatsApp: ${contact.mobile}, Nachricht an Deniz Tezgel`}
                             >
                                 {contact.mobile}
                             </a>
@@ -135,9 +126,9 @@ export default function Footer() {
                         <div className="bg-tinte p-4 sm:col-span-2">
                             <span className={etikett}>Zeiten</span>
                             <span className="mt-1 block text-fs-2">
-                                {hours.formattedWeekdays}
-                                <br />
-                                {hours.formattedSaturday}
+                                {oeffnungszeilen(hours).map((zeile) => (
+                                    <span key={zeile} className="block">{zeile}</span>
+                                ))}
                             </span>
                         </div>
                     </address>
@@ -200,16 +191,16 @@ export default function Footer() {
                         </ul>
                     </nav>
                     <p>
-                        Webdesign &amp; SEO:{' '}
+                        Webdesign und SEO:{' '}
                         <a
                             href="https://www.codayweb.de/de"
                             target="_blank"
                             rel="noopener"
-                            title="Coday – Webdesign-Agentur Wetzlar | Webseiten, SEO & Branding"
+                            title="Coday, Agentur für Webdesign in Wetzlar"
                             className={clsx(fussLink, 'inline-block py-1 font-semibold')}
                             data-motion="zustand"
                         >
-                            Webdesign Wetzlar – Coday
+                            Coday, Wetzlar
                         </a>
                     </p>
                 </div>

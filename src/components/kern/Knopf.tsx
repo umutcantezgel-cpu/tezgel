@@ -16,7 +16,7 @@ interface Gemeinsam {
   'aria-label'?: string;
 }
 
-type AlsLink = Gemeinsam & { href: string; extern?: boolean; transitionTypes?: string[] };
+type AlsLink = Gemeinsam & { href: string; extern?: boolean };
 type AlsKnopf = Gemeinsam & { href?: undefined; type?: 'button' | 'submit'; onClick?: MouseEventHandler<HTMLButtonElement>; deaktiviert?: boolean; laedt?: boolean; ladeText?: string };
 
 export default function Knopf(props: AlsLink | AlsKnopf) {
@@ -31,7 +31,7 @@ export default function Knopf(props: AlsLink | AlsKnopf) {
   );
   const klassen = knopfKlassen(variante, className);
   if (props.href !== undefined) {
-    const { href, extern, transitionTypes } = props;
+    const { href, extern } = props;
     const roh = extern || /^(tel:|mailto:|https?:)/.test(href);
     if (roh) {
       return (
@@ -41,7 +41,7 @@ export default function Knopf(props: AlsLink | AlsKnopf) {
       );
     }
     return (
-      <Link href={href} className={klassen} data-motion="druck" aria-label={props['aria-label']} transitionTypes={transitionTypes}>
+      <Link href={href} className={klassen} data-motion="druck" aria-label={props['aria-label']}>
         {inhalt}
       </Link>
     );

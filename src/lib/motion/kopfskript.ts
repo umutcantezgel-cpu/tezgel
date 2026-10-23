@@ -1,4 +1,5 @@
 import { CONSENT_COOKIE_NAME, CONSENT_VERSION } from '@/lib/cookie-inventory';
+import { INTRO_GRENZE, INTRO_LOGO, SPEICHER_INTRO } from '@/lib/intro/ablauf';
 
 // Zwei Kopfskripte für zwei Dokumente. Beide setzen html.k-bewegung vor dem ersten Rendern, aber nur ohne Wunsch nach
 // reduzierter Bewegung; sie unterscheiden sich im Notaus, weil die beiden Bewegungsmodule sich verschieden melden.
@@ -6,7 +7,27 @@ import { CONSENT_COOKIE_NAME, CONSENT_VERSION } from '@/lib/cookie-inventory';
 // Aktives Dokument (Gruppe (bestand), KERN v2, bewegung.css + BewegungsWaechter):
 // Meldet sich das Bewegungsmodul (html.k-modul) nicht binnen 2 s, setzt es html.k-notaus – dann gelten keine
 // Startzustände und alles ist sichtbar (KERN K-007).
-export const KOPFSKRIPT = `(function(){var d=document.documentElement;try{if(!window.matchMedia||!window.matchMedia('(prefers-reduced-motion: no-preference)').matches)return;d.classList.add('k-bewegung');setTimeout(function(){if(!d.classList.contains('k-modul'))d.classList.add('k-notaus');},2000);}catch(e){d.classList.add('k-notaus');}})();`;
+//
+// Intro B-02 (Ersatz „Der erste Boden“, E-018): Nur beim ersten Besuch je Browser setzt es html.k-intro; der Eintrag im
+// localStorage entsteht sofort, im Fehlerfall (kein Speicher, Speicher voll) gibt es kein Intro. Das Logo wird sofort geholt
+// (die Schicht lädt es sonst erst lazy; ohne Intro lädt sie nichts). Das Intro läuft als CSS ab
+// dem ersten Bild (bewegung.css), auch ohne die App. Jeder Klick, Tipp, Tastendruck oder Scroll beendet es sofort
+// (Lauscher passiv, once, setzen nur die Klasse zurück); ebenso das Ende der Schlussanimation und spätestens die Obergrenze.
+// Die Zielwerte für das Gleiten setzt das Skript nach dem Kopf (Intro.tsx); sie verschwinden erst nach dem nächsten Bild.
+// Ohne Intro und mit erlaubter Bewegung setzt der zweite Teil html.k-startbild (großer Moment `startbild` auf `/`);
+// B-01 nimmt die Klasse beim ersten Seitenwechsel weg, damit das Startbild nur beim Laden freigelegt wird.
+const INTRO = `var mitIntro=0;try{var l=window.localStorage;if(!l.getItem(${JSON.stringify(SPEICHER_INTRO)})){l.setItem(${JSON.stringify(SPEICHER_INTRO)},'1');d.classList.add('k-intro');mitIntro=1;new Image().src=${JSON.stringify(INTRO_LOGO)};var aus=0,ende=function(){if(aus)return;aus=1;d.classList.remove('k-intro');requestAnimationFrame(function(){['--intro-x','--intro-y','--intro-s'].forEach(function(n){d.style.removeProperty(n)})})};['pointerdown','keydown','wheel','touchstart','scroll'].forEach(function(n){window.addEventListener(n,ende,{passive:true,once:true,capture:true})});window.addEventListener('animationend',function(e){if(e.animationName==='intro-ende'||e.animationName==='intro-einblenden')ende()});setTimeout(ende,${INTRO_GRENZE})}}catch(e){}`;
+
+const BEWEGUNG_BESTAND = `try{if(!window.matchMedia||!window.matchMedia('(prefers-reduced-motion: no-preference)').matches)return;d.classList.add('k-bewegung');if(!mitIntro)d.classList.add('k-startbild');setTimeout(function(){if(!d.classList.contains('k-modul'))d.classList.add('k-notaus');},2000);}catch(e){d.classList.add('k-notaus');}`;
+
+export const KOPFSKRIPT = `(function(){var d=document.documentElement;${INTRO}${BEWEGUNG_BESTAND}})();`;
+
+/**
+ * Zielwerte für das Gleiten (FLIP): läuft als Inline-Skript direkt nach dem Kopf, also vor der App, misst das Logo auf der
+ * Fläche und das Kopf-Logo und legt Versatz und Maßstab als Variablen an html (das Kopfskript räumt sie am Ende ab).
+ * Ohne Messung bleibt das Logo in der Mitte und verschwindet mit dem Blatt. Eingebunden in _dokument.tsx nach dem Kopf.
+ */
+export const INTRO_ZIEL = `(function(){var d=document.documentElement;if(!d.classList.contains('k-intro'))return;try{var z=document.querySelector('header [data-erstes-bild="logo"]'),s=document.querySelector('.intro-schild');if(!z||!s)return;var a=s.getBoundingClientRect(),b=z.getBoundingClientRect();if(!(a.width>0&&b.width>0))return;d.style.setProperty('--intro-x',(b.left+b.width/2-a.left-a.width/2)+'px');d.style.setProperty('--intro-y',(b.top+b.height/2-a.top-a.height/2)+'px');d.style.setProperty('--intro-s',String(b.width/a.width))}catch(e){}})();`;
 
 // Ruhendes Dokument (Gruppe (kern), kern.css + BewegungsRegie): Inline-Kopfskript des Kern-Layouts, läuft im <head> vor dem ersten Rendern (CSP erlaubt Inline-Skripte).
 // Zwei unabhängige Teile, jeder in eigenem try – ein Fehler im einen hält den anderen nicht auf.

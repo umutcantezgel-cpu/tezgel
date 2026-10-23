@@ -26,7 +26,7 @@ export interface PlanblattProps {
   felder?: SchriftfeldFeld[];
   /** rote Achse eines Verlegeplans im Blatt zeigen (Standard ja; `ohneAchse` am Plan wird dann übergangen) */
   achse?: boolean;
-  /** die Zeichnung trägt ihre rote Achse selbst (z. B. Plan in einer ViewTransition-Hülle, die das Blatt nicht erkennt) */
+  /** die Zeichnung trägt ihre rote Achse selbst (z. B. ein Plan, den die Seite als Kind setzt und das Blatt nicht erkennt) */
   mitAchse?: boolean;
   className?: string;
 }

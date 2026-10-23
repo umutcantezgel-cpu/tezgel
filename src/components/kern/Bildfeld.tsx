@@ -1,8 +1,11 @@
-// Bildfeld (KERN K-006, K-009): Foto im Raster mit Rahmen aus Fuge. next/image mit den festen Maßen der Bilddatei
+// Bildfeld (KERN K-006, K-012): Foto im Raster mit Rahmen aus Fuge. next/image mit den festen Maßen der Bilddatei
 // (das Seitenverhältnis bleibt, kein Zuschnitt per CSS, keine Layoutverschiebung). Beschriftung in Archivo, Quelle in Mono.
-// Vorgeladen wird nur das tatsächliche LCP-Bild (lcp); alle anderen Bilder laden verzögert.
+// v3: echte Fotos per Kennung aus `src/config/arbeiten.ts` (Maße, Alt-Text und Platzhalter aus der Bilddatei), `sizes` je
+// Bildplatz aus `_werkstatt/bildplaetze.md`, unscharfer Platzhalter bis zum Laden. Vorgeladen wird nur das tatsächliche
+// LCP-Bild (lcp); alle anderen Bilder laden verzögert.
 import type { ReactNode } from 'react';
 import Image from 'next/image';
+import { ARBEITEN, type ArbeitId } from '@/config/arbeiten';
 
 export type BildfeldSpalten = 'voll' | 'halb' | 'drittel';
 
@@ -13,14 +16,10 @@ const GROESSEN: Record<BildfeldSpalten, string> = {
   drittel: '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw',
 };
 
-export interface BildfeldProps {
-  src: string;
-  /** Pflicht. Leerer String nur bei rein dekorativen Bildern; dann ist das figure für Screenreader ausgeblendet */
-  alt: string;
-  /** Breite und Höhe der Bilddatei in Pixeln (aus der Datei gelesen, nicht geschätzt) */
-  breite: number;
-  hoehe: number;
+interface Gemeinsam {
   spalten?: BildfeldSpalten;
+  /** eigene sizes des Bildplatzes; geht vor `spalten` */
+  sizes?: string;
   /** true nur für das tatsächliche LCP-Bild (preload) */
   lcp?: boolean;
   beschriftung?: ReactNode;
@@ -29,11 +28,43 @@ export interface BildfeldProps {
   className?: string;
 }
 
-export default function Bildfeld({ src, alt, breite, hoehe, spalten = 'voll', lcp = false, beschriftung, quelle, className }: BildfeldProps) {
+interface MitArbeit extends Gemeinsam {
+  /** Foto aus `ARBEITEN` (Bildplatz-Kennung) */
+  arbeit: ArbeitId;
+  src?: never;
+}
+
+interface MitDatei extends Gemeinsam {
+  arbeit?: never;
+  src: string;
+  /** Pflicht. Leerer String nur bei rein dekorativen Bildern; dann ist das figure für Screenreader ausgeblendet */
+  alt: string;
+  /** Breite und Höhe der Bilddatei in Pixeln (aus der Datei gelesen, nicht geschätzt) */
+  breite: number;
+  hoehe: number;
+  /** Platzhalter als Daten-URL (optional) */
+  blur?: string;
+}
+
+export type BildfeldProps = MitArbeit | MitDatei;
+
+export default function Bildfeld(props: BildfeldProps) {
+  const { spalten = 'voll', sizes, lcp = false, beschriftung, quelle, className } = props;
+  const bild = props.arbeit ? ARBEITEN[props.arbeit] : props;
   return (
-    <figure className={className} aria-hidden={alt === '' || undefined}>
+    <figure className={className} aria-hidden={bild.alt === '' || undefined}>
       <div className="border border-fuge bg-fliese">
-        <Image src={src} alt={alt} width={breite} height={hoehe} sizes={GROESSEN[spalten]} preload={lcp} className="block h-auto w-full" />
+        <Image
+          src={bild.src}
+          alt={bild.alt}
+          width={bild.breite}
+          height={bild.hoehe}
+          sizes={sizes ?? GROESSEN[spalten]}
+          preload={lcp}
+          placeholder={bild.blur ? 'blur' : 'empty'}
+          blurDataURL={bild.blur}
+          className="block h-auto w-full"
+        />
       </div>
       {(beschriftung || quelle) && (
         <figcaption className="mt-3">

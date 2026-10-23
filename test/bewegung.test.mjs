@@ -1,14 +1,26 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { REGISTER, KENNUNGEN, beobachteteKennungen, ladeKennungen, schwelleFuer, istRegistriert } from '../src/lib/motion/register.ts';
+import { REGISTER, KENNUNGEN, beobachteteKennungen, ladeKennungen, schwelleFuer, istRegistriert, entfallendeKennungen, SELBST } from '../src/lib/motion/register.ts';
 import { KOPFSKRIPT } from '../src/lib/motion/kopfskript.ts';
 
-// Register laut Gestaltungskern (K-007): 16 Einträge – neue Bewegungen nur mit Registereintrag.
-const KERN_REGISTER = ['sig-kreuzlinie', 'sig-flucht', 'szene-ablauf', 'sig-plan', 'einzugsband', 'verband', 'fugenband', 'leitachse',
-  'anriss', 'auftritt', 'aufklappen', 'druck', 'zustand', 'notiert', 'laden', 'seitenwechsel'];
+// Register laut Gestaltungskern v3 (K-007): neue Bewegungen nur mit Registereintrag. Die großen Momente kommen mit
+// ihren Seiten dazu (E3-ORCH-02a); die sieben v2-Einträge aus E-009 bleiben markiert, bis ihre Seiten neu gebaut sind.
+const KERN_V3 = ['verlegen', 'intro', 'startbild', 'verband', 'leitachse', 'anriss', 'auftritt', 'aufklappen', 'druck', 'zustand', 'notiert', 'laden'];
+// seitenwechsel (Plan-Morph) ist mit E2-ORCH-04b entfernt; B-01 „verlegen“ ist das einzige System für Seitenwechsel (E-010).
+const ENTFALLEN_E009 = ['sig-kreuzlinie', 'sig-flucht', 'szene-ablauf', 'sig-plan', 'einzugsband', 'fugenband'];
 
-test('Bewegung 1: Register enthält genau die 16 Einträge des Gestaltungskerns', () => {
-  assert.deepEqual([...KENNUNGEN].sort(), [...KERN_REGISTER].sort());
+test('Bewegung 1: Register enthält genau die Einträge von KERN v3 und die markierten v2-Einträge aus E-009', () => {
+  assert.deepEqual([...KENNUNGEN].sort(), [...KERN_V3, ...ENTFALLEN_E009].sort());
+  assert.deepEqual(entfallendeKennungen().sort(), [...ENTFALLEN_E009].sort());
+  for (const k of KERN_V3) assert.ok(!REGISTER[k].entfaellt, `${k} gehört zu v3`);
+});
+
+test('Bewegung 1b: B-01, B-02 und Startbild steuern sich selbst und laufen nicht über Beobachter oder Ladeeinträge', () => {
+  for (const k of SELBST) {
+    assert.ok(istRegistriert(k));
+    assert.ok(!ladeKennungen().includes(k));
+    assert.ok(!beobachteteKennungen(true).includes(k) && !beobachteteKennungen(false).includes(k));
+  }
 });
 
 test('Bewegung 2: sig-plan wird nur auf groben Zeigegeräten über Sichtbarkeit ausgelöst', () => {
