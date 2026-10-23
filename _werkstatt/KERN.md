@@ -150,8 +150,8 @@ Bezug ist eine Fliese 30 × 60 cm im Maßstab 1 cm = 3,2 px: kurze Seite **F = 9
 - Zugänglichkeit: dekorativ `aria-hidden="true" focusable="false"`; bedeutungstragend `role="img"` mit Namen; IDs je Instanz eindeutig. Budgets: Icon ≤ 1,5 KB, Zeichnung ≤ 40 KB gzip; SVGO.
 
 ## K-009 Informationsarchitektur
-- **Navigation** (fünf Hauptpunkte, je höchstens eine Aufklappebene, kein Thema doppelt) **[A: Baumtest E1-PROBE-IA]**:
-  1. **Bad** → `/bad`: Bad komplett erneuern (`/bad/badsanierung`) · Dusche statt Wanne (`/bad/barrierefreies-bad`) · Große Fliesen im Bad (`/bad/fliesen`) · Alles aus einer Hand (`/bad/bad-aus-einer-hand`) · Beispielbäder (`/bad/musterbaeder`)
+- **Navigation** (fünf Hauptpunkte, je höchstens eine Aufklappebene, kein Thema doppelt), bestätigt im Baumtest E1-PROBE-IA (`berichte/E1-PROBE-IA-baumtest.json`: 5 von 5 Personen ziehen sie vor, 25 von 25 Aufgaben gefunden):
+  1. **Bad** → `/bad`: Bad komplett erneuern (`/bad/badsanierung`) · Dusche statt Wanne (`/bad/barrierefreies-bad`) · Große Fliesen im Bad (`/bad/fliesen`) · Alles aus einer Hand (`/bad/bad-aus-einer-hand`) · Ideen nach Badgröße (`/bad/musterbaeder`; „Beispielbäder“ wurde im Baumtest mit echten Arbeiten verwechselt)
   2. **Böden und Wände** → `/leistungen/wohnen`: Küche (`/fliesen/kueche`) · Flur und Diele (`/fliesen/flur-diele`) · Neubau (`/fliesen/neubau`) · Treppen (`/treppen`) · Naturstein (`/naturstein`) · Reparatur und Fugen (`/fliesenreparatur`)
   3. **Balkon und Terrasse** → `/balkon-terrasse`: Balkon erneuern (`/balkon-terrasse/balkonsanierung`) · Terrassenplatten (`/balkon-terrasse/terrassenplatten`) · Platten auf Stelzen (`/balkon-terrasse/stelzlager`)
   4. **Unsere Arbeiten** → `/referenzen` (ohne Aufklappmenü)
@@ -272,7 +272,7 @@ Maschinenfassung `src/config/glossar.ts` (Quelle) und `regeln/glossar.json` (Pr�
 - **Nicht verwenden** (nicht belegt): Meisterbrief oder „Meisterbetrieb“, Zahl der Mitarbeitenden, „über 15 Jahre“, Zertifikate, Partnerstatus der Marken, Projektorte zu Fotos, Dauer einer Badsanierung.
 
 ## Markierte Annahmen
-K-009 Navigation bis zum Baumtest; F-07, F-09, F-14, F-20 und die Versprechen bis zur Antwort (MENSCHEN.md); Herkunft einzelner Fotos (M-08).
+F-07, F-09, F-14, F-20 und die Versprechen bis zur Antwort (MENSCHEN.md); Herkunft einzelner Fotos (M-08).
 
 ## Änderungsprotokoll
 - v3.0 (24.10.2026, E1): neue Leitidee „Klar verlegt“ aus dem Auftrag „Verständlich, echt, ausgezeichnet“; Personen P1 bis P5 mit Aufgaben A1 bis A6; Prinzipien neu; Fliesenskala als Lesart der v2-Abstände; Schatten-, Ebenen-, Dauer- und Kurvenstufen ergänzt; Register mit B-01, B-02 und neun großen Momenten, sieben v2-Einträge entfallen; Navigation mit fünf Hauptpunkten; Seitenarten und Seitenformel; Schreibregeln, K-010-B, K-010-F, Glossar; Bildregeln; Faktenblatt.

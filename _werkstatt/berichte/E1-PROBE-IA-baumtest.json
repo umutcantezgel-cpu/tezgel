@@ -1,0 +1,626 @@
+[
+ {
+  "person": "P2",
+  "antworten": [
+   {
+    "menue": "Y",
+    "aufgabe": "T1",
+    "pfad": [
+     "Böden und Wände",
+     "Neubau"
+    ],
+    "sicherheit": 4,
+    "unklare_woerter": [
+     "Neubau (unklar, ob dort auch Bäder und Küche im Neubau stehen)"
+    ],
+    "kommentar": "Ich würde zuerst Böden und Wände öffnen und dort Neubau wählen, für die Bäder wäre ich danach bei Bad gelandet, bin dort aber unsicher."
+   },
+   {
+    "menue": "Y",
+    "aufgabe": "T2",
+    "pfad": [
+     "Unsere Arbeiten"
+    ],
+    "sicherheit": 4,
+    "unklare_woerter": [],
+    "kommentar": "Unsere Arbeiten ist ohne Aufklappmenü direkt anklickbar und passt zu fertigen Arbeiten."
+   },
+   {
+    "menue": "Y",
+    "aufgabe": "T3",
+    "pfad": [
+     "Über uns",
+     "Wo wir arbeiten"
+    ],
+    "sicherheit": 4,
+    "unklare_woerter": [],
+    "kommentar": "Unter Über uns sollte Wo wir arbeiten zeigen, ob Gießen dabei ist."
+   },
+   {
+    "menue": "Y",
+    "aufgabe": "T4",
+    "pfad": [
+     "Über uns",
+     "Ablauf und Kosten"
+    ],
+    "sicherheit": 4,
+    "unklare_woerter": [],
+    "kommentar": "Ablauf und Kosten passt zu meiner Frage; OFFENE FRAGE: ob der erste Termin bei uns zu Hause kostenlos ist, erkenne ich im Menü noch nicht."
+   },
+   {
+    "menue": "Y",
+    "aufgabe": "T5",
+    "pfad": [
+     "Termin vor Ort anfragen"
+    ],
+    "sicherheit": 5,
+    "unklare_woerter": [],
+    "kommentar": "Der Knopf rechts oben heißt genau so, wie ich einen Termin bei uns zu Hause anfragen möchte."
+   },
+   {
+    "menue": "X",
+    "aufgabe": "T1",
+    "pfad": [
+     "Fachgewerke",
+     "Wohnbereiche & Neubau"
+    ],
+    "sicherheit": 3,
+    "unklare_woerter": [
+     "Fachgewerke (Gewerk, Fachbegriff)",
+     "Wohnbereiche"
+    ],
+    "kommentar": "Ich würde Fachgewerke öffnen und Wohnbereiche & Neubau wählen, für die Bäder bin ich mir danach bei Bäder & Wellness oder Badsanierung unsicher."
+   },
+   {
+    "menue": "X",
+    "aufgabe": "T2",
+    "pfad": [
+     "Ratgeber",
+     "Referenzen & Bewertungen"
+    ],
+    "sicherheit": 3,
+    "unklare_woerter": [
+     "Referenzen"
+    ],
+    "kommentar": "Ich vermute, dass Referenzen Fotos fertiger Arbeiten zeigen; Musterbäder wäre die Alternative, aber das ist nur für Bäder."
+   },
+   {
+    "menue": "X",
+    "aufgabe": "T3",
+    "pfad": [
+     "Standorte",
+     "Fliesenleger Gießen"
+    ],
+    "sicherheit": 5,
+    "unklare_woerter": [],
+    "kommentar": "Fliesenleger Gießen steht direkt unter Standorte und nennt meinen Ort."
+   },
+   {
+    "menue": "X",
+    "aufgabe": "T4",
+    "pfad": [
+     "Ratgeber",
+     "Vor-Ort-Beratung"
+    ],
+    "sicherheit": 2,
+    "unklare_woerter": [
+     "Ablauf (im Menü nicht zu finden)"
+    ],
+    "kommentar": "Einen Punkt Ablauf finde ich nicht, ich vermute Vor-Ort-Beratung; OFFENE FRAGE: ob dort auch steht, was der erste Termin kostet."
+   },
+   {
+    "menue": "X",
+    "aufgabe": "T5",
+    "pfad": [
+     "Aufmaß anfragen"
+    ],
+    "sicherheit": 3,
+    "unklare_woerter": [
+     "Aufmaß"
+    ],
+    "kommentar": "Der Knopf Aufmaß anfragen klingt nach Termin bei uns vor Ort, aber ich weiß nicht sicher, was Aufmaß genau bedeutet."
+   }
+  ],
+  "vorzug": "Y",
+  "vorzug_grund": "Menü Y hat weniger Fachbegriffe und führt die Aufgaben mit klaren Beschriftungen wie Neubau, Unsere Arbeiten, Ablauf und Kosten und Termin vor Ort anfragen direkt zum Ziel, während Menü X mit Fachgewerke und Aufmaß unklar bleibt."
+ },
+ {
+  "person": "P1: 72 Jahre, wohnt in Solms, möchte die Badewanne gegen eine Dusche ohne Stufe tauschen, liest am Handy mit großer Schrift und ist unsicher bei Fachbegriffen.",
+  "antworten": [
+   {
+    "menue": "X",
+    "aufgabe": "T1",
+    "pfad": [
+     "Badsanierung",
+     "Barrierefreies Bad"
+    ],
+    "sicherheit": 3,
+    "unklare_woerter": [
+     "Badsanierung",
+     "barrierefreies"
+    ],
+    "kommentar": "Ich würde zuerst auf Badsanierung tippen und dann auf Barrierefreies Bad, weil ich ohne Stufe duschen möchte, auch wenn ich das Wort barrierefrei nicht sicher kenne."
+   },
+   {
+    "menue": "X",
+    "aufgabe": "T2",
+    "pfad": [
+     "Badsanierung",
+     "Musterbäder"
+    ],
+    "sicherheit": 4,
+    "unklare_woerter": [
+     "Musterbäder"
+    ],
+    "kommentar": "Unter Badsanierung steht Musterbäder, das klingt nach fertigen Bädern zum Ansehen."
+   },
+   {
+    "menue": "X",
+    "aufgabe": "T3",
+    "pfad": [
+     "Standorte",
+     "Alle 13 Standorte"
+    ],
+    "sicherheit": 3,
+    "unklare_woerter": [
+     "Einsatzgebiet"
+    ],
+    "kommentar": "Ich klicke auf Standorte und dann auf Alle 13 Standorte, weil ich nicht weiß, ob Solms in einem der genannten Orte liegt. OFFENE FRAGE: Arbeitet der Betrieb in Solms?"
+   },
+   {
+    "menue": "X",
+    "aufgabe": "T4",
+    "pfad": [
+     "Ratgeber",
+     "Vor-Ort-Beratung"
+    ],
+    "sicherheit": 4,
+    "unklare_woerter": [
+     "Vor-Ort-Beratung"
+    ],
+    "kommentar": "Vor-Ort-Beratung klingt so, als würde jemand zu mir nach Hause kommen, aber ob das etwas kostet, sehe ich dort nicht sofort."
+   },
+   {
+    "menue": "X",
+    "aufgabe": "T5",
+    "pfad": [
+     "gebe auf"
+    ],
+    "sicherheit": 2,
+    "unklare_woerter": [
+     "Aufmaß anfragen",
+     "Badanfrage"
+    ],
+    "kommentar": "Ich sehe den Knopf Aufmaß anfragen oben rechts, aber ich weiß nicht, was Aufmaß bedeutet, also würde ich vielleicht eher anrufen. OFFENE FRAGE: Ist Aufmaß anfragen dasselbe wie ein Termin bei mir zu Hause?"
+   },
+   {
+    "menue": "Y",
+    "aufgabe": "T1",
+    "pfad": [
+     "Bad",
+     "Dusche statt Wanne"
+    ],
+    "sicherheit": 5,
+    "unklare_woerter": [],
+    "kommentar": "Unter Bad steht Dusche statt Wanne, das ist genau mein Wunsch."
+   },
+   {
+    "menue": "Y",
+    "aufgabe": "T2",
+    "pfad": [
+     "Unsere Arbeiten"
+    ],
+    "sicherheit": 4,
+    "unklare_woerter": [],
+    "kommentar": "Unsere Arbeiten klingt nach fertigen Projekten, die ich direkt anschauen kann."
+   },
+   {
+    "menue": "Y",
+    "aufgabe": "T3",
+    "pfad": [
+     "Über uns",
+     "Wo wir arbeiten"
+    ],
+    "sicherheit": 4,
+    "unklare_woerter": [],
+    "kommentar": "Unter Über uns finde ich Wo wir arbeiten, dort sollte ich sehen, ob Solms dabei ist. OFFENE FRAGE: Steht Solms dort tatsächlich auf der Liste?"
+   },
+   {
+    "menue": "Y",
+    "aufgabe": "T4",
+    "pfad": [
+     "Über uns",
+     "Ablauf und Kosten"
+    ],
+    "sicherheit": 5,
+    "unklare_woerter": [],
+    "kommentar": "Ablauf und Kosten sagt genau, was ich wissen will."
+   },
+   {
+    "menue": "Y",
+    "aufgabe": "T5",
+    "pfad": [
+     "Termin vor Ort anfragen"
+    ],
+    "sicherheit": 5,
+    "unklare_woerter": [],
+    "kommentar": "Der Knopf oben rechts heißt Termin vor Ort anfragen, das passt genau zu meinem Anliegen."
+   }
+  ],
+  "vorzug": "Y",
+  "vorzug_grund": "Menü Y hat weniger Fachwörter, nennt Dusche statt Wanne direkt und hat einen klar beschrifteten Knopf für einen Termin vor Ort, während Menü X mit Aufmaß, Fachgewerke und Einsatzgebiet unsicher macht."
+ },
+ {
+  "person": "P3: Vermieter aus Herborn. Eine Fliese im Flur ist gesprungen, die Fugen sind alt und dunkel. Nutzt das Handy.",
+  "antworten": [
+   {
+    "menue": "X",
+    "aufgabe": "T1",
+    "pfad": [
+     "Fachgewerke",
+     "Fliesenreparatur"
+    ],
+    "sicherheit": 4,
+    "unklare_woerter": [
+     "Fachgewerke"
+    ],
+    "kommentar": "Ich würde unter Fachgewerke die Fliesenreparatur suchen, weil dort mein Problem (eine gesprungene Fliese) steht; das Wort Fachgewerke ist für mich als Vermieter aber unklar, und die alten Fugen finde ich im Menü nicht direkt."
+   },
+   {
+    "menue": "X",
+    "aufgabe": "T2",
+    "pfad": [
+     "Ratgeber",
+     "Referenzen & Bewertungen"
+    ],
+    "sicherheit": 4,
+    "unklare_woerter": [
+     "Referenzen"
+    ],
+    "kommentar": "Ich würde Ratgeber und dann Referenzen & Bewertungen anklicken, weil dort wohl Fotos früherer Arbeiten zu finden sind, auch wenn ich nicht sicher bin, ob Flur-Arbeiten dabei sind."
+   },
+   {
+    "menue": "X",
+    "aufgabe": "T3",
+    "pfad": [
+     "Standorte",
+     "Alle 13 Standorte"
+    ],
+    "sicherheit": 2,
+    "unklare_woerter": [
+     "Standorte"
+    ],
+    "kommentar": "Ich würde Standorte und dann Alle 13 Standorte anklicken; OFFENE FRAGE: Herborn steht im Menü nicht, deshalb weiß ich nicht, ob der Betrieb dort arbeitet."
+   },
+   {
+    "menue": "X",
+    "aufgabe": "T4",
+    "pfad": [
+     "Ratgeber",
+     "Vor-Ort-Beratung"
+    ],
+    "sicherheit": 3,
+    "unklare_woerter": [
+     "Vor-Ort-Beratung"
+    ],
+    "kommentar": "Ich würde Ratgeber und dann Vor-Ort-Beratung anklicken, weil das nach einem Besuch bei mir klingt; OFFENE FRAGE: ob der erste Termin kostenlos ist und wie der Ablauf aussieht, steht nicht auf den Namen, Häufige Fragen wäre ein möglicher Versuch."
+   },
+   {
+    "menue": "X",
+    "aufgabe": "T5",
+    "pfad": [
+     "Aufmaß anfragen"
+    ],
+    "sicherheit": 3,
+    "unklare_woerter": [
+     "Aufmaß"
+    ],
+    "kommentar": "Ich würde oben rechts auf Aufmaß anfragen klicken, auch wenn ich das Wort Aufmaß nicht kenne und nicht sicher bin, ob das ein Termin bei mir zu Hause ist."
+   },
+   {
+    "menue": "Y",
+    "aufgabe": "T1",
+    "pfad": [
+     "Böden und Wände",
+     "Reparatur und Fugen"
+    ],
+    "sicherheit": 4,
+    "unklare_woerter": [],
+    "kommentar": "Ich würde unter Böden und Wände auf Reparatur und Fugen klicken, weil dort gesprungene Fliesen und alte Fugen stehen; Flur und Diele wäre ein zweiter Versuch."
+   },
+   {
+    "menue": "Y",
+    "aufgabe": "T2",
+    "pfad": [
+     "Unsere Arbeiten"
+    ],
+    "sicherheit": 5,
+    "unklare_woerter": [],
+    "kommentar": "Ich würde direkt auf Unsere Arbeiten klicken, weil dort fertige Arbeiten zu sehen sein sollten."
+   },
+   {
+    "menue": "Y",
+    "aufgabe": "T3",
+    "pfad": [
+     "Über uns",
+     "Wo wir arbeiten"
+    ],
+    "sicherheit": 5,
+    "unklare_woerter": [],
+    "kommentar": "Ich würde Über uns und dann Wo wir arbeiten anklicken, weil dort klar steht, ob der Betrieb in meinem Ort arbeitet."
+   },
+   {
+    "menue": "Y",
+    "aufgabe": "T4",
+    "pfad": [
+     "Über uns",
+     "Ablauf und Kosten"
+    ],
+    "sicherheit": 5,
+    "unklare_woerter": [],
+    "kommentar": "Ich würde Über uns und dann Ablauf und Kosten anklicken, weil genau das meine Frage nach Ablauf und Kosten des ersten Termins beantwortet."
+   },
+   {
+    "menue": "Y",
+    "aufgabe": "T5",
+    "pfad": [
+     "Termin vor Ort anfragen"
+    ],
+    "sicherheit": 5,
+    "unklare_woerter": [],
+    "kommentar": "Ich würde oben rechts auf Termin vor Ort anfragen klicken, weil das genau heißt, dass jemand zu mir nach Hause kommt."
+   }
+  ],
+  "vorzug": "Y",
+  "vorzug_grund": "Menü Y benutzt einfache Wörter wie Reparatur und Fugen, Ablauf und Kosten und Termin vor Ort anfragen, die meinem Anliegen direkt entsprechen, während Menü X mit Fachgewerke, Aufmaß und Standorten mehr Fachbegriffe verlangt und Herborn nicht nennt."
+ },
+ {
+  "person": "P5",
+  "antworten": [
+   {
+    "menue": "X",
+    "aufgabe": "T1",
+    "pfad": [
+     "Aufmaß anfragen"
+    ],
+    "sicherheit": 3,
+    "unklare_woerter": [
+     "Aufmaß"
+    ],
+    "kommentar": "Ich klicke oben rechts auf den Knopf. Das Wort Aufmaß kenne ich nicht, aber anfragen ist klar."
+   },
+   {
+    "menue": "X",
+    "aufgabe": "T2",
+    "pfad": [
+     "Badsanierung",
+     "Musterbäder"
+    ],
+    "sicherheit": 3,
+    "unklare_woerter": [
+     "Musterbäder"
+    ],
+    "kommentar": "Ich denke, Musterbäder zeigt fertige Bäder mit Fotos. Ich bin nicht ganz sicher."
+   },
+   {
+    "menue": "X",
+    "aufgabe": "T3",
+    "pfad": [
+     "Standorte",
+     "Alle 13 Standorte"
+    ],
+    "sicherheit": 2,
+    "unklare_woerter": [
+     "Standorte",
+     "Einsatzgebiet"
+    ],
+    "kommentar": "OFFENE FRAGE: Ich sehe Limburg in der Liste nicht. Ich schaue bei Alle 13 Standorte nach."
+   },
+   {
+    "menue": "X",
+    "aufgabe": "T4",
+    "pfad": [
+     "Ratgeber",
+     "Vor-Ort-Beratung"
+    ],
+    "sicherheit": 3,
+    "unklare_woerter": [
+     "Vor-Ort-Beratung"
+    ],
+    "kommentar": "Ich denke, Vor-Ort-Beratung heißt, jemand kommt zu mir. OFFENE FRAGE: Ob das Geld kostet, weiß ich nicht."
+   },
+   {
+    "menue": "X",
+    "aufgabe": "T5",
+    "pfad": [
+     "Aufmaß anfragen"
+    ],
+    "sicherheit": 3,
+    "unklare_woerter": [
+     "Aufmaß"
+    ],
+    "kommentar": "Ich klicke oben rechts auf Aufmaß anfragen. Das ist der Knopf für den Termin bei mir."
+   },
+   {
+    "menue": "Y",
+    "aufgabe": "T1",
+    "pfad": [
+     "Termin vor Ort anfragen"
+    ],
+    "sicherheit": 5,
+    "unklare_woerter": [],
+    "kommentar": "Der Knopf oben rechts sagt genau, was ich will."
+   },
+   {
+    "menue": "Y",
+    "aufgabe": "T2",
+    "pfad": [
+     "Bad",
+     "Beispielbäder"
+    ],
+    "sicherheit": 3,
+    "unklare_woerter": [
+     "Beispielbäder"
+    ],
+    "kommentar": "Ich denke, Beispielbäder sind Fotos von Bädern. OFFENE FRAGE: Ob es Fotos von fertigen Arbeiten sind, sehe ich nicht sicher."
+   },
+   {
+    "menue": "Y",
+    "aufgabe": "T3",
+    "pfad": [
+     "Über uns",
+     "Wo wir arbeiten"
+    ],
+    "sicherheit": 4,
+    "unklare_woerter": [],
+    "kommentar": "Ich klicke auf Über uns, dann auf Wo wir arbeiten. Dort sehe ich, ob Limburg dabei ist."
+   },
+   {
+    "menue": "Y",
+    "aufgabe": "T4",
+    "pfad": [
+     "Über uns",
+     "Ablauf und Kosten"
+    ],
+    "sicherheit": 4,
+    "unklare_woerter": [
+     "Ablauf"
+    ],
+    "kommentar": "Ich klicke auf Ablauf und Kosten. OFFENE FRAGE: Ob der erste Besuch bei mir etwas kostet, sehe ich vielleicht dort."
+   },
+   {
+    "menue": "Y",
+    "aufgabe": "T5",
+    "pfad": [
+     "Termin vor Ort anfragen"
+    ],
+    "sicherheit": 5,
+    "unklare_woerter": [],
+    "kommentar": "Der Knopf oben rechts ist genau für das, was ich will."
+   }
+  ],
+  "vorzug": "Y",
+  "vorzug_grund": "Menü Y hat kürzere Wörter und den klaren Knopf „Termin vor Ort anfragen“, den ich sofort finde, während in Menü X Wörter wie Aufmaß und Einsatzgebiet unklar sind."
+ },
+ {
+  "person": "P4: Hausbesitzer/in in Braunfels, Wasser bleibt nach Regen auf dem Balkon stehen, sitzt am Laptop",
+  "antworten": [
+   {
+    "menue": "Y",
+    "aufgabe": "T1",
+    "pfad": [
+     "Balkon und Terrasse",
+     "Balkon erneuern"
+    ],
+    "sicherheit": 4,
+    "unklare_woerter": [],
+    "kommentar": "Ich öffne Balkon und Terrasse und wähle dann Balkon erneuern. OFFENE FRAGE: Ob das bei stehendem Wasser passt oder ob es eher um die Abdichtung geht, sehe ich nicht."
+   },
+   {
+    "menue": "Y",
+    "aufgabe": "T2",
+    "pfad": [
+     "Unsere Arbeiten"
+    ],
+    "sicherheit": 4,
+    "unklare_woerter": [],
+    "kommentar": "Ich klicke Unsere Arbeiten, dort sollten fertige Arbeiten stehen. OFFENE FRAGE: Ob auch Balkone zu sehen sind, ist nicht ersichtlich."
+   },
+   {
+    "menue": "Y",
+    "aufgabe": "T3",
+    "pfad": [
+     "Über uns",
+     "Wo wir arbeiten"
+    ],
+    "sicherheit": 4,
+    "unklare_woerter": [],
+    "kommentar": "Ich öffne Über uns und klicke Wo wir arbeiten. OFFENE FRAGE: Ob Braunfels dort genannt wird, sehe ich erst auf der Seite."
+   },
+   {
+    "menue": "Y",
+    "aufgabe": "T4",
+    "pfad": [
+     "Über uns",
+     "Ablauf und Kosten"
+    ],
+    "sicherheit": 5,
+    "unklare_woerter": [],
+    "kommentar": "Ablauf und Kosten unter Über uns passt genau zu meiner Frage nach dem ersten Termin."
+   },
+   {
+    "menue": "Y",
+    "aufgabe": "T5",
+    "pfad": [
+     "Termin vor Ort anfragen"
+    ],
+    "sicherheit": 5,
+    "unklare_woerter": [],
+    "kommentar": "Der Knopf rechts oben heißt Termin vor Ort anfragen, das ist genau mein Wunsch."
+   },
+   {
+    "menue": "X",
+    "aufgabe": "T1",
+    "pfad": [
+     "Fachgewerke",
+     "Balkon & Terrasse"
+    ],
+    "sicherheit": 3,
+    "unklare_woerter": [
+     "Abdichtung",
+     "Untergrund"
+    ],
+    "kommentar": "Ich würde Fachgewerke öffnen und Balkon & Terrasse wählen. OFFENE FRAGE: Der Eintrag steht zweimal, und Untergrund & Abdichtung wäre bei stehendem Wasser wohl wichtig, das sagt mir aber nichts."
+   },
+   {
+    "menue": "X",
+    "aufgabe": "T2",
+    "pfad": [
+     "Ratgeber",
+     "Referenzen & Bewertungen"
+    ],
+    "sicherheit": 4,
+    "unklare_woerter": [],
+    "kommentar": "Ich vermute, dass Fotos fertiger Arbeiten unter Referenzen & Bewertungen stehen. OFFENE FRAGE: Ob dort Fotos oder nur Texte sind, sehe ich nicht."
+   },
+   {
+    "menue": "X",
+    "aufgabe": "T3",
+    "pfad": [
+     "Standorte",
+     "Alle 13 Standorte"
+    ],
+    "sicherheit": 3,
+    "unklare_woerter": [
+     "Einsatzgebiet"
+    ],
+    "kommentar": "Ich sehe nicht sofort, ob Braunfels unter den 13 Standorten ist. OFFENE FRAGE: Was Einsatzgebiet Hessen genau umfasst, ist mir unklar."
+   },
+   {
+    "menue": "X",
+    "aufgabe": "T4",
+    "pfad": [
+     "Ratgeber",
+     "Vor-Ort-Beratung"
+    ],
+    "sicherheit": 2,
+    "unklare_woerter": [],
+    "kommentar": "Ablauf steht hier nicht direkt. OFFENE FRAGE: Ob Vor-Ort-Beratung die Kosten nennt oder Häufige Fragen besser passt, ist unklar."
+   },
+   {
+    "menue": "X",
+    "aufgabe": "T5",
+    "pfad": [
+     "Aufmaß anfragen"
+    ],
+    "sicherheit": 4,
+    "unklare_woerter": [
+     "Aufmaß"
+    ],
+    "kommentar": "Der Knopf rechts oben heißt Aufmaß anfragen. Aufmaß ist ein Fachwort, ich wüsste nicht sofort, dass es um einen Termin bei mir zu Hause geht."
+   }
+  ],
+  "vorzug": "Y",
+  "vorzug_grund": "Die Begriffe sind direkter, es gibt weniger doppelte Bezeichnungen, und der Knopf \"Termin vor Ort anfragen\" ist verständlicher als \"Aufmaß anfragen\"."
+ }
+]
