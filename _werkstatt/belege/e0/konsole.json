@@ -1,0 +1,386 @@
+[
+  {
+    "geraet": "m390",
+    "pfad": "/",
+    "status": 200,
+    "konsolenfehler": 0,
+    "konsolenfehlerOhneRessourcen": 0,
+    "seitenfehler": 0,
+    "fehlgeschlageneEigeneAnfragen": 0,
+    "details": {
+      "konsole": [],
+      "seitenfehler": [],
+      "anfragen": []
+    },
+    "gesperrt": 0,
+    "blockiert": 0
+  },
+  {
+    "geraet": "m390",
+    "pfad": "/bad",
+    "status": 200,
+    "konsolenfehler": 0,
+    "konsolenfehlerOhneRessourcen": 0,
+    "seitenfehler": 0,
+    "fehlgeschlageneEigeneAnfragen": 0,
+    "details": {
+      "konsole": [],
+      "seitenfehler": [],
+      "anfragen": []
+    },
+    "gesperrt": 0,
+    "blockiert": 0
+  },
+  {
+    "geraet": "m390",
+    "pfad": "/bad/badsanierung",
+    "status": 200,
+    "konsolenfehler": 0,
+    "konsolenfehlerOhneRessourcen": 0,
+    "seitenfehler": 0,
+    "fehlgeschlageneEigeneAnfragen": 0,
+    "details": {
+      "konsole": [],
+      "seitenfehler": [],
+      "anfragen": []
+    },
+    "gesperrt": 0,
+    "blockiert": 0
+  },
+  {
+    "geraet": "m390",
+    "pfad": "/bad/barrierefreies-bad",
+    "status": 200,
+    "konsolenfehler": 0,
+    "konsolenfehlerOhneRessourcen": 0,
+    "seitenfehler": 0,
+    "fehlgeschlageneEigeneAnfragen": 0,
+    "details": {
+      "konsole": [],
+      "seitenfehler": [],
+      "anfragen": []
+    },
+    "gesperrt": 0,
+    "blockiert": 0
+  },
+  {
+    "geraet": "m390",
+    "pfad": "/leistungen",
+    "status": 200,
+    "konsolenfehler": 0,
+    "konsolenfehlerOhneRessourcen": 0,
+    "seitenfehler": 0,
+    "fehlgeschlageneEigeneAnfragen": 0,
+    "details": {
+      "konsole": [],
+      "seitenfehler": [],
+      "anfragen": []
+    },
+    "gesperrt": 0,
+    "blockiert": 0
+  },
+  {
+    "geraet": "m390",
+    "pfad": "/fliesen",
+    "status": 200,
+    "konsolenfehler": 0,
+    "konsolenfehlerOhneRessourcen": 0,
+    "seitenfehler": 0,
+    "fehlgeschlageneEigeneAnfragen": 0,
+    "details": {
+      "konsole": [],
+      "seitenfehler": [],
+      "anfragen": []
+    },
+    "gesperrt": 0,
+    "blockiert": 0
+  },
+  {
+    "geraet": "m390",
+    "pfad": "/balkon-terrasse",
+    "status": 200,
+    "konsolenfehler": 0,
+    "konsolenfehlerOhneRessourcen": 0,
+    "seitenfehler": 0,
+    "fehlgeschlageneEigeneAnfragen": 0,
+    "details": {
+      "konsole": [],
+      "seitenfehler": [],
+      "anfragen": []
+    },
+    "gesperrt": 0,
+    "blockiert": 0
+  },
+  {
+    "geraet": "m390",
+    "pfad": "/referenzen",
+    "status": 200,
+    "konsolenfehler": 0,
+    "konsolenfehlerOhneRessourcen": 0,
+    "seitenfehler": 0,
+    "fehlgeschlageneEigeneAnfragen": 0,
+    "details": {
+      "konsole": [],
+      "seitenfehler": [],
+      "anfragen": []
+    },
+    "gesperrt": 0,
+    "blockiert": 0
+  },
+  {
+    "geraet": "m390",
+    "pfad": "/ueber-uns",
+    "status": 200,
+    "konsolenfehler": 0,
+    "konsolenfehlerOhneRessourcen": 0,
+    "seitenfehler": 0,
+    "fehlgeschlageneEigeneAnfragen": 0,
+    "details": {
+      "konsole": [],
+      "seitenfehler": [],
+      "anfragen": []
+    },
+    "gesperrt": 0,
+    "blockiert": 0
+  },
+  {
+    "geraet": "m390",
+    "pfad": "/kontakt",
+    "status": 200,
+    "konsolenfehler": 0,
+    "konsolenfehlerOhneRessourcen": 0,
+    "seitenfehler": 0,
+    "fehlgeschlageneEigeneAnfragen": 0,
+    "details": {
+      "konsole": [],
+      "seitenfehler": [],
+      "anfragen": []
+    },
+    "gesperrt": 0,
+    "blockiert": 0
+  },
+  {
+    "geraet": "m390",
+    "pfad": "/standorte/wetzlar",
+    "status": 200,
+    "konsolenfehler": 0,
+    "konsolenfehlerOhneRessourcen": 0,
+    "seitenfehler": 0,
+    "fehlgeschlageneEigeneAnfragen": 0,
+    "details": {
+      "konsole": [],
+      "seitenfehler": [],
+      "anfragen": []
+    },
+    "gesperrt": 0,
+    "blockiert": 0
+  },
+  {
+    "geraet": "m390",
+    "pfad": "/blog",
+    "status": 200,
+    "konsolenfehler": 0,
+    "konsolenfehlerOhneRessourcen": 0,
+    "seitenfehler": 0,
+    "fehlgeschlageneEigeneAnfragen": 0,
+    "details": {
+      "konsole": [],
+      "seitenfehler": [],
+      "anfragen": []
+    },
+    "gesperrt": 0,
+    "blockiert": 0
+  },
+  {
+    "geraet": "d1440",
+    "pfad": "/",
+    "status": 200,
+    "konsolenfehler": 0,
+    "konsolenfehlerOhneRessourcen": 0,
+    "seitenfehler": 0,
+    "fehlgeschlageneEigeneAnfragen": 0,
+    "details": {
+      "konsole": [],
+      "seitenfehler": [],
+      "anfragen": []
+    },
+    "gesperrt": 0,
+    "blockiert": 0
+  },
+  {
+    "geraet": "d1440",
+    "pfad": "/bad",
+    "status": 200,
+    "konsolenfehler": 0,
+    "konsolenfehlerOhneRessourcen": 0,
+    "seitenfehler": 0,
+    "fehlgeschlageneEigeneAnfragen": 0,
+    "details": {
+      "konsole": [],
+      "seitenfehler": [],
+      "anfragen": []
+    },
+    "gesperrt": 0,
+    "blockiert": 0
+  },
+  {
+    "geraet": "d1440",
+    "pfad": "/bad/badsanierung",
+    "status": 200,
+    "konsolenfehler": 0,
+    "konsolenfehlerOhneRessourcen": 0,
+    "seitenfehler": 0,
+    "fehlgeschlageneEigeneAnfragen": 0,
+    "details": {
+      "konsole": [],
+      "seitenfehler": [],
+      "anfragen": []
+    },
+    "gesperrt": 0,
+    "blockiert": 0
+  },
+  {
+    "geraet": "d1440",
+    "pfad": "/bad/barrierefreies-bad",
+    "status": 200,
+    "konsolenfehler": 0,
+    "konsolenfehlerOhneRessourcen": 0,
+    "seitenfehler": 0,
+    "fehlgeschlageneEigeneAnfragen": 0,
+    "details": {
+      "konsole": [],
+      "seitenfehler": [],
+      "anfragen": []
+    },
+    "gesperrt": 0,
+    "blockiert": 0
+  },
+  {
+    "geraet": "d1440",
+    "pfad": "/leistungen",
+    "status": 200,
+    "konsolenfehler": 0,
+    "konsolenfehlerOhneRessourcen": 0,
+    "seitenfehler": 0,
+    "fehlgeschlageneEigeneAnfragen": 0,
+    "details": {
+      "konsole": [],
+      "seitenfehler": [],
+      "anfragen": []
+    },
+    "gesperrt": 0,
+    "blockiert": 0
+  },
+  {
+    "geraet": "d1440",
+    "pfad": "/fliesen",
+    "status": 200,
+    "konsolenfehler": 0,
+    "konsolenfehlerOhneRessourcen": 0,
+    "seitenfehler": 0,
+    "fehlgeschlageneEigeneAnfragen": 0,
+    "details": {
+      "konsole": [],
+      "seitenfehler": [],
+      "anfragen": []
+    },
+    "gesperrt": 0,
+    "blockiert": 0
+  },
+  {
+    "geraet": "d1440",
+    "pfad": "/balkon-terrasse",
+    "status": 200,
+    "konsolenfehler": 0,
+    "konsolenfehlerOhneRessourcen": 0,
+    "seitenfehler": 0,
+    "fehlgeschlageneEigeneAnfragen": 0,
+    "details": {
+      "konsole": [],
+      "seitenfehler": [],
+      "anfragen": []
+    },
+    "gesperrt": 0,
+    "blockiert": 0
+  },
+  {
+    "geraet": "d1440",
+    "pfad": "/referenzen",
+    "status": 200,
+    "konsolenfehler": 0,
+    "konsolenfehlerOhneRessourcen": 0,
+    "seitenfehler": 0,
+    "fehlgeschlageneEigeneAnfragen": 0,
+    "details": {
+      "konsole": [],
+      "seitenfehler": [],
+      "anfragen": []
+    },
+    "gesperrt": 0,
+    "blockiert": 0
+  },
+  {
+    "geraet": "d1440",
+    "pfad": "/ueber-uns",
+    "status": 200,
+    "konsolenfehler": 0,
+    "konsolenfehlerOhneRessourcen": 0,
+    "seitenfehler": 0,
+    "fehlgeschlageneEigeneAnfragen": 0,
+    "details": {
+      "konsole": [],
+      "seitenfehler": [],
+      "anfragen": []
+    },
+    "gesperrt": 0,
+    "blockiert": 0
+  },
+  {
+    "geraet": "d1440",
+    "pfad": "/kontakt",
+    "status": 200,
+    "konsolenfehler": 0,
+    "konsolenfehlerOhneRessourcen": 0,
+    "seitenfehler": 0,
+    "fehlgeschlageneEigeneAnfragen": 0,
+    "details": {
+      "konsole": [],
+      "seitenfehler": [],
+      "anfragen": []
+    },
+    "gesperrt": 0,
+    "blockiert": 0
+  },
+  {
+    "geraet": "d1440",
+    "pfad": "/standorte/wetzlar",
+    "status": 200,
+    "konsolenfehler": 0,
+    "konsolenfehlerOhneRessourcen": 0,
+    "seitenfehler": 0,
+    "fehlgeschlageneEigeneAnfragen": 0,
+    "details": {
+      "konsole": [],
+      "seitenfehler": [],
+      "anfragen": []
+    },
+    "gesperrt": 0,
+    "blockiert": 0
+  },
+  {
+    "geraet": "d1440",
+    "pfad": "/blog",
+    "status": 200,
+    "konsolenfehler": 0,
+    "konsolenfehlerOhneRessourcen": 0,
+    "seitenfehler": 0,
+    "fehlgeschlageneEigeneAnfragen": 0,
+    "details": {
+      "konsole": [],
+      "seitenfehler": [],
+      "anfragen": []
+    },
+    "gesperrt": 0,
+    "blockiert": 0
+  }
+]

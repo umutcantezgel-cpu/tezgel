@@ -16,7 +16,7 @@ Ausgangswerte E0 trägt der Orchestrator nach E0-PRUEF-03 und E0-PROBE-01…10 e
 - Methode: Stufe C, Reinraum (`reinraum.sh`), Durchlauf der Funktionsliste aus LAGEBILD.md.
 - Schwelle: `npm run build`, `typecheck`, `lint`, `test`, `qa:graph` mit Exit 0; Zahl bestandener Tests mindestens wie E0; alle Funktionen der Liste so gut wie in E0; null neue Konsolenfehler in allen Browserläufen der Stufe C (Hauptansichten und Stichprobe).
 - Beleg: `belege/abschluss/reinraum.txt`, `belege/abschluss/funktionsliste.md`, `belege/abschluss/konsole.json`.
-- E0: reinraum grün bei c53faf4 (Build, Typen, Linter, Tests, Graph alle 0); Testzahl und Konsolenfehler folgen aus E0-PRUEF-03. Stand: offen.
+- E0: Reinraum c53faf4 grün (Build, Typen, Linter, Tests, Graph Exit 0); `node --test` 37 von 37; Funktionsspecs 290 bestanden, 0 fehlgeschlagen, 12 übersprungen von 302; Konsole 0 auf den Hauptansichten (`belege/e0/STUFE-B.md`). Stand: offen.
 
 ### Z-03 Designsystem
 - Methode: Suche nach Werten außerhalb der Tokens in geänderten Dateien (`werte.mjs` mit `werte-regeln.json`: Farben, Abstände, Größen, Schrift, Radien, Dauern, Tailwind-Beliebigwerte und Stilwerte; dazu `statisch.mjs` für Icon-Familien, Emojis und Platzhalter), Stichprobe von 10 neuen Komponenten durch den Prüfer.
@@ -51,7 +51,7 @@ Ausgangswerte E0 trägt der Orchestrator nach E0-PRUEF-03 und E0-PROBE-01…10 e
 - Methode: axe (WCAG 2.2 AA) auf allen Hauptansichten mobil und Desktop, Tastaturlauf für A1 bis A6 (`probelauf.mjs --eingabe tastatur`), Kontrastrechnung der Tokens, Bildsatz mit Systemschrift 200 %.
 - Schwelle: null ernste oder kritische Befunde; alle Hauptaufgaben A1 bis A6 am Desktop nur mit Tastatur lösbar; Fokus immer sichtbar; Text ≥ 4,5:1, große Schrift, Bedienelemente und bedeutungstragende Grafik ≥ 3:1; bei 200 % Systemschrift alles lesbar und bedienbar; Lighthouse Zugänglichkeit ≥ 95 oder E0-Wert, falls höher.
 - Beleg: `belege/abschluss/axe.json`, `belege/abschluss/tastatur.md`, `belege/abschluss/schrift200/`.
-- E0: folgt aus E0-PRUEF-03. Stand: offen.
+- E0: axe 0 Befunde in allen Schweren (132 Läufe, `belege/e0/axe.json`); Tastatur und 200 % in E0-PROBE (P1). Stand: offen.
 
 ### Z-08 Leistung
 - Methode: `lighthouse.mjs` mobil und Desktop, Median aus 3 Läufen, frisches Profil je Lauf (also mit Intro), im Ruhefenster ohne parallele Last; Reaktion (INP) per Playwright: `PerformanceObserver` vom Typ `event` (Schwelle 16 ms) auf m390 mit 4-fach gedrosselter CPU bei fünf Handlungen (Hauptknopf, Menü öffnen, Akkordeon, Eingabefeld, interner Link), höchster Wert je Seite, Median aus 3; Bundle-Messung des Bewegungscodes (`build-vergleich.mjs`); Größe der Startbild-Datei.
@@ -63,7 +63,7 @@ Ausgangswerte E0 trägt der Orchestrator nach E0-PRUEF-03 und E0-PROBE-01…10 e
 - Methode: `bildsatz.mjs` mit Überlaufprüfung und `ueberlappung.mjs` in allen 10 Gerätegrößen; `erstesbild.mjs` je Hauptansicht und Gerät in beiden Durchgängen (Erstbesuch, nach Einwilligung); Stichprobe 10 % der übrigen Seiten.
 - Schwelle: null seitliches Scrollen, null abgeschnittener, überlappender oder verdeckter Text; Erstes Bild (Logo, Überschrift, Ort, Hauptknopf, Telefon oder WhatsApp) vollständig sichtbar auf allen 12 Hauptansichten in allen 10 Gerätegrößen; Handy quer: Kopf und Leisten ≤ 25 % der Höhe; Fließtext mobil ≥ 16 px; Touchziele ≥ 44 × 44.
 - Beleg: `belege/abschluss/erstes-bild.json`, `belege/abschluss/bildsatz/`.
-- E0: Rauchlauf `/` und `/kontakt`: alle fünf Elemente in 20 von 40 Fällen, Querformat 32,4 % (E0-PRUEF-02a); vollständig folgt aus E0-PRUEF-03. Stand: offen.
+- E0: Überlauf 24 Befunde (alle d1280); Erstes Bild 116 von 240 Fällen bestanden; Querformat Kopf und Leisten 32,4 % (`belege/e0/STUFE-B.md`, `erstes-bild.json`). Stand: offen.
 
 ### Z-10 Übergabe
 - Methode: Endprüfung der Dateien.
@@ -81,7 +81,7 @@ Ausgangswerte E0 trägt der Orchestrator nach E0-PRUEF-03 und E0-PROBE-01…10 e
 - Methode: `lesbarkeit.mjs` über alle gerenderten Seiten außer Rechtstexten (Flesch nach Amstad, Satzlängen, Absätze, Striche gegen `regeln/bindestrich-erlaubt.json`, Floskeln gegen `regeln/floskeln.json`, Glossar gegen `regeln/glossar.json`, Titel und Beschreibung); Textstichprobe je Welle (10 %, mindestens 5 Seiten) durch den unabhängigen Haiku-Prüfer der Welle (`E*-PRUEF-A`), Urteil durch den Orchestrator; Faktenabgleich gegen K-015; Suchbegriffe gegen `adressen-e0.csv`.
 - Schwelle: Flesch ≥ 60 auf Erzähl- und Ortsseiten, ≥ 50 auf Wissensseiten; mittlere Satzlänge ≤ 14 Wörter; kein Satz über 25 Wörter; Absätze ≤ 4 Sätze; null Gedankenstriche und null Bindestriche außerhalb der Liste; null Floskeln; jedes Glossarwort beim ersten Vorkommen erklärt (≤ 15 Wörter); Titel ≤ 60, Beschreibung 120 bis 155 Zeichen; alle Stichproben bestanden (höchstens 10 % Regelverstöße je Welle, sonst zurück); null Fakten außerhalb K-015; Suchbegriffe je Seite erhalten; Kundenstimmen wörtlich.
 - Beleg: `belege/abschluss/lesbarkeit.json`, `berichte/*-LEKT-*.md`, `belege/abschluss/suchbegriffe.json`.
-- E0: 830 Gedankenstriche in 217 Dateien, „Vor-Ort-Aufmaß“ 132-mal; Seitenwerte folgen aus E0-PRUEF-03. Stand: offen.
+- E0: 162 von 163 Seiten ROT (Gedankenstrich 162, Bindestrich 162, Glossar 155, Flesch 142, Floskel 135, Satzlänge 57, Absatz 4; `belege/e0/lesbarkeit.md`); im Code 830 Gedankenstriche in 217 Dateien, „Vor-Ort-Aufmaß“ 132-mal. Stand: offen.
 
 ### Z-13 Bilder
 - Methode: Bildinventar gegen `bildplaetze.md`, Metadatenprüfung aller ausgelieferten Rasterbilder unter `public/**` (`bilder.mjs --pruefe`), Alt-Text-Prüfung in `lesbarkeit.mjs`, Sichtprüfung auf Personen und Kennzeichen.

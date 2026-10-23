@@ -62,8 +62,16 @@ Altfehler aus dem Vorlauf (bleiben, MENSCHEN.md): Konfigurator 2 Fälle `fixme`;
 - Erstes Bild, Rauchlauf `/` und `/kontakt` (E0-PRUEF-02a): alle fünf Elemente in 20 von 40 Fällen; auf `/` mobil m360 nur 1 von 5 beim Erstbesuch; Handy quer: Kopf und Leisten 32,4 % der Höhe (Schwelle 25 %).
 - Lighthouse Probe `/` mobil, ein Lauf: 88, LCP 3.240 ms, TBT 237 ms, CLS 0; LCP-Element `p.max-w-mass` im Einstieg.
 
-### Stufe B (offen bis E0-PRUEF-03)
-Konsolenfehler, Bildsatz in 10 Größen, Erstes Bild aller Hauptansichten, axe, Lesbarkeit aller Seiten, reduzierte Bewegung, Lighthouse Median aus 3 mobil und Desktop, Funktionsspecs.
+### Stufe B (E0-PRUEF-03, `belege/e0/STUFE-B.md`)
+- Bestand: npm ci, Build, Typprüfung, Linter, `qa:graph` Exit 0; `node --test` 37 von 37; Funktionsspecs 290 bestanden, 0 fehlgeschlagen, 12 übersprungen (4 `fixme` als Altfehler, 8 je Ansicht), gesamt 302.
+- Konsole: 0 Fehler, 0 Seitenfehler, 0 eigene Anfragen ≥ 400 auf den 12 Hauptansichten (m390 und d1440).
+- Überlauf: 24 Befunde, alle bei d1280 (je Hauptansicht 2, rechte Kante bei 1285 px); alle übrigen Größen ohne Befund.
+- Erstes Bild: 116 von 240 Fällen mit allen fünf Elementen. Am schwächsten: Handy klein (m360, `/` nur 1 von 5 beim Erstbesuch), Querformat q844 durchgehend 3 von 5, d1280 2 bis 4 von 5; ab d1920 immer 5 von 5.
+- Zugänglichkeit (axe, 132 Läufe): 0 Befunde in allen Schweren.
+- Lesbarkeit (163 Seiten): 162 ROT, 1 ausgenommen. ROT je Regel: Gedankenstrich 162, Bindestrich 162, Glossar offen 155, Flesch 142, Floskel 135, Satz über 25 Wörter 57, Absatz über 4 Sätze 4.
+- Reduzierte Bewegung: 0 Befunde.
+- Lighthouse: offen bis E0-PRUEF-03L (Ruhefenster nach den Probeläufen).
+- Bildsatz des ersten Bildschirms: `bilder/e0/<seite>/<gerät>.jpg` (120 Bilder).
 
 ## 5. Probeläufe alter Stand (offen bis E0-PROBE-01…10)
 P1 bis P5 × eigenes und anderes Gerät × A1 bis A6.
