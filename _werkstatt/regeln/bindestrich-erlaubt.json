@@ -1,0 +1,10 @@
+{
+  "stand": "E0 Startliste (Auftrag K-010-B); jedes Wort mit Grund. Erweiterung nur durch den Orchestrator über KERN K-010-B.",
+  "woerter": [
+    { "wort": "E-Mail", "grund": "Rechtschreibung verlangt den Bindestrich" },
+    { "wort": "Gäste-WC", "grund": "Rechtschreibung verlangt den Bindestrich (Abkürzung)" },
+    { "wort": "Lahn-Dill-Kreis", "grund": "Eigenname" },
+    { "wort": "Marburg-Biedenkopf", "grund": "Eigenname" }
+  ],
+  "praefixe_mit_bindestrich_erlaubt": ["E-Mail-"]
+}

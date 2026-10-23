@@ -1,0 +1,10 @@
+{
+  "stand": "E0 Startliste der Fachwörter (aus E0-KUND-09). Die Alltagserklärungen (≤ 15 Wörter) schreibt der Orchestrator in E1 in KERN K-011; bis dahin dient die Liste nur der Erkennung.",
+  "begriffe": [
+    "Verbundabdichtung", "AIV", "C2TE", "C2-TE", "S1", "Stelzlager", "Rutschhemmung", "R9", "R10", "R11", "Nivelliersystem", "Vakuumhebetechnik", "Vakuum-Hebetechnik",
+    "DIN 18534", "DIN 18157", "DIN 18040", "EN 16165", "Fachgewerke", "Estrich", "Belegreife", "Restfeuchte", "CM-Messung", "Ausgleichsmasse", "Entkopplung", "Drainage",
+    "Feinsteinzeug", "Kuvertschnitt", "Gehrung", "Silikonfuge", "Epoxidharz", "Haftbrücke", "Grundierung", "Dichtband", "Dichtmanschette", "Duschrinne", "Punktablauf",
+    "Vorwand", "Trockenbau", "Imprägnierung", "Ausblühung", "Dünnbett", "Mittelbett", "Mörtelbett", "Passstück", "Fugenachse", "Blockstufe", "Rissverharzung",
+    "Calciumsulfat", "Heizestrich", "Randfuge", "Sinterschicht", "Buttering", "Kleberklasse", "Walk-In", "Walk-in", "Großformat", "Fugenraster", "Überzähne", "Klopfprobe"
+  ]
+}
