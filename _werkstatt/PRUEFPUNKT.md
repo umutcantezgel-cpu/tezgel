@@ -1,10 +1,10 @@
 # PRUEFPUNKT
 
 - Lauf „Verständlich, echt, ausgezeichnet“ · Etappe E2 (Referenz) · Stand 2026-10-24 01:55 CEST
-- Letzter grüner Commit (src): c53faf4 (src gleich main 388fa7b). HEAD 77eaf89 (nur `_werkstatt`).
+- Letzter grüner Commit (src): c53faf4 (src gleich main 388fa7b). HEAD cce868a = Zwischenstand E2 (gepusht, Stop-Hook): enthält alle unten genannten Arbeitsbaum-Pakete; Startseite, Startbild und 404 darin noch ungeprüft.
 - E0 abgeschlossen bis auf Lighthouse: E0-PRUEF-03 und E0-PROBE-01…10 zurück und gesichert (`pakete/*.rueckgabe.md`), Werte in LAGEBILD Abschnitt 4 und 5, ABNAHME Z-11.
 - Laufend: E0-PRUEF-03L (Lighthouse, Orchestrator, Hintergrund-Shell): `RELAUNCH_BELEGE=$SCRATCH/E0-PRUEF-03/lh-belege node _werkstatt/werkzeuge/lighthouse.mjs --satz e0 --hauptansichten --laeufe 3 --formen mobil,desktop --base http://127.0.0.1:4310`, Ausgabe `$SCRATCH/E0-PRUEF-03/lh-lauf.txt`. Während des Laufs keine Last (kein Build, kein Dev-Aufruf, keine Agenten mit Browser).
-- Im Arbeitsbaum, nicht committet (Orchestrator), je Paket:
+- Im Zwischenstand cce868a (Orchestrator), je Paket:
   - E2-ORCH-01 Tokens (`globals.css`), E2-ORCH-01b Register (`register.ts`, `test/bewegung.test.mjs`, `_werkstatt/register.json`, `werte-regeln.json`).
   - E2-FIX-01a bis c (GoogleReviewsBadge, FinalCTA, LocalDominanceMap, llms.txt, schema.ts, standorte/[stadt]).
   - E2-ORCH-04 B-01 (`src/lib/verlegen/*`, `src/components/verlegen/Verlegen.tsx`, `bewegung.css`, `_dokument.tsx`, `package.json`), E2-TEST-04 (`test/verlegen.test.mjs`), Spec `werkzeuge/tests/verlegen.spec.mjs` (E2-PRUEF-04, 26/26 nach Korrektur E-020).
