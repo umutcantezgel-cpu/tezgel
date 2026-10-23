@@ -28,6 +28,14 @@
     {
       "wort": "Walk-in-Duschen",
       "grund": "wie Walk-in-Dusche"
+    },
+    {
+      "wort": "Cookie-Richtlinie",
+      "grund": "Name des Rechtstexts und seiner Adresse (G8, Rechtstexte unverändert)"
+    },
+    {
+      "wort": "Cookie-Einstellungen",
+      "grund": "feste Bedienbeschriftung der Einwilligung (G8, Verhalten unverändert); englischer Bestandteil verlangt den Bindestrich"
     }
   ],
   "praefixe_mit_bindestrich_erlaubt": [

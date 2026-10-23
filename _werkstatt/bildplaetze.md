@@ -1,18 +1,18 @@
 # Bildplätze · Lauf „Verständlich, echt, ausgezeichnet“ · Fassung 1 (E1, 24.10.2026)
 
-Auswahl durch den Orchestrator nach `bildinventar.csv` (Sichtung E0-BILD-01…05, Technik E0-PRUEF-BILD-01) und eigener Sichtung der Schlüsselbilder. Regeln: KERN K-012. Quelle jeder Webfassung ist das **Original** in `_eingang/entpackt/IMG_xxxx.PNG` (bis 1320 px breit), nicht der Social-Zuschnitt; der Social-Zuschnitt dient nur als Vorschau und für den Schwerpunkt. Nie hochskalieren. Ablage `public/images/arbeiten/<raum>/<name>.jpg`, Daten in `src/config/arbeiten.ts`.
+Auswahl durch den Orchestrator nach `bildinventar.csv` (Sichtung E0-BILD-01…05, Technik E0-PRUEF-BILD-01) und eigener Sichtung der Schlüsselbilder. Regeln: KERN K-012. Quelle jeder Webfassung ist das **Original** in `_eingang/entpackt/IMG_xxxx.PNG` (meist 1320 × 2868 mit schwarzen Balken oben und unten; die Spalten `breite`, `hoehe`, `kb` in `bildinventar.csv` beschreiben die Social-Zuschnitte), nicht der Social-Zuschnitt; der Social-Zuschnitt dient nur als Vorschau und für den Schwerpunkt. Nie hochskalieren. Ablage `public/images/arbeiten/<raum>/<name>.jpg`, Daten in `src/config/arbeiten.ts`.
 
 Spalten: **ID** · Seite und Platz · Format (Breite : Höhe) · Original · Zuschnitt (Schwerpunkt, was weg muss) · Alt-Text (≤ 125 Zeichen) · `sizes` · Vorrang
 
 ## Startseite `/`
 | ID | Platz | Format | Original | Zuschnitt | Alt-Text | sizes | Vorrang |
 |---|---|---|---|---|---|---|---|
-| start-dusche | Einstieg, rechts (Desktop) bzw. unter Knopf und Telefon (mobil) | 4:5 | IMG_2578 | Schwerpunkt 50 % / 52 %; Heizkörper links darf angeschnitten sein | Dusche ohne Stufe mit großen grauen Fliesen und einer Glaswand | `(min-width: 1024px) 40vw, 100vw` | ja (einziges `preload`) |
+| start-dusche | Einstieg, rechts (Desktop) bzw. unter Knopf und Telefon (mobil) | 4:5 | IMG_2578 | Schwerpunkt 50 % / 48 % (Duschkopf ganz im Bild); Heizkörper links darf angeschnitten sein | Dusche ohne Stufe mit großen grauen Fliesen und einer Glaswand | `(min-width: 1024px) 40vw, 100vw` | ja (einziges `preload`) |
 | lage-dusche | Fliese „Wanne raus, Dusche ohne Stufe“ | 1:1 | IMG_2582 | Sitzbank und Mosaik mittig | Dusche ohne Stufe mit Sitzbank und türkisen Mosaikfliesen | `(min-width: 1024px) 16vw, 50vw` | nein |
 | lage-bad | Fliese „Das ganze Bad soll neu werden“ | 1:1 | IMG_2610 | Wanne und Boden | Badewanne mit dunkler Verkleidung und hellen Wandfliesen | wie oben | nein |
 | lage-neubau | Fliese „Im Neubau Böden und Wände fliesen“ | 1:1 | — | kein passendes Foto: Fliesenkomposition „Halbverband“ | (dekorativ) | — | — |
 | lage-reparatur | Fliese „Fliese gesprungen, Fugen alt“ | 1:1 | — | kein Foto: Fliesenkomposition „eine Fliese mit Riss“ | (dekorativ) | — | — |
-| lage-balkon | Fliese „Wasser auf dem Balkon“ | 1:1 | IMG_2545 | Stange in der Mitte wegschneiden (Ausschnitt links oder rechts davon) | Balkon mit großen hellgrauen Fliesen | wie oben | nein |
+| lage-balkon | Fliese „Wasser auf dem Balkon“ | 1:1 | IMG_2545 | rechts der Säule: Fliesen mit Geländer, Schwerpunkt 62 % / 62 %; Säule links und Schatten unten links weg (E2-BILD-01) | Balkon mit großen hellgrauen Fliesen | wie oben | nein |
 | lage-treppe | Fliese „Treppe vor dem Haus kaputt“ | 1:1 | IMG_2525 | Stufen mittig, Tuch rechts weg | Außentreppe mit terrakottafarbenen Fliesen und hellen Kanten | wie oben | nein |
 | start-galerie-1…6 | Beleg „So sieht unsere Arbeit aus“ | 4:5 | IMG_2582, IMG_2610, IMG_2544, IMG_2533, IMG_2525, IMG_2547 | je Schwerpunkt aus dem Inventar; IMG_2547: Person nur von hinten, Gesicht nicht sichtbar | aus `arbeiten.ts` | `(min-width: 1024px) 30vw, 50vw` | nein |
 
