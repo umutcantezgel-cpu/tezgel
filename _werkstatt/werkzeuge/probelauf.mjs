@@ -149,7 +149,10 @@ const KONTAKT_INIT = () => {
 // Init-Skript (Seitenkontext, eigenständig): Systemschrift als Näherung über die Wurzelschriftgröße.
 const SCHRIFT_INIT = (pct) => {
   const add = () => { const s = document.createElement('style'); s.setAttribute('data-probelauf-schrift', ''); s.textContent = `html { font-size: ${pct}% !important; }`; (document.head || document.documentElement).appendChild(s); };
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', add); else add();
+  // ab dem ersten Byte wie eine echte Systemschrift: das Kopfskript misst vor dem ersten Bild (E-038); Wurzel fehlt im Init-Skript
+  // noch, darum beim Einhängen von <html> setzen (Mikrotask läuft vor dem ersten Inline-Skript des Parsers)
+  if (document.documentElement) add();
+  else new MutationObserver((_, o) => { if (document.documentElement) { o.disconnect(); add(); } }).observe(document, { childList: true });
 };
 
 // Seitenkontext (eigenständig): Anfrageformular mit gültigen Pflichtfeldern und sichtbarem Absendeknopf im Bild (A3).

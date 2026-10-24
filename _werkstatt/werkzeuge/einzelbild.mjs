@@ -34,7 +34,10 @@ const schrift = arg('schrift', null);
 if (schrift !== null && !/^\d{2,3}$/.test(schrift)) { console.error(`--schrift ungültig: ${schrift}`); process.exit(2); }
 const SCHRIFT_INIT = (pct) => {
   const add = () => { const st = document.createElement('style'); st.setAttribute('data-einzelbild-schrift', ''); st.textContent = `html { font-size: ${pct}% !important; }`; (document.head || document.documentElement).appendChild(st); };
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', add); else add();
+  // ab dem ersten Byte wie eine echte Systemschrift: das Kopfskript misst vor dem ersten Bild (E-038); Wurzel fehlt im Init-Skript
+  // noch, darum beim Einhängen von <html> setzen (Mikrotask läuft vor dem ersten Inline-Skript des Parsers)
+  if (document.documentElement) add();
+  else new MutationObserver((_, o) => { if (document.documentElement) { o.disconnect(); add(); } }).observe(document, { childList: true });
 };
 const warte = Number(arg('warte', '0'));
 const voll = flag('voll');

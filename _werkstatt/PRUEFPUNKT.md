@@ -1,11 +1,12 @@
 # PRUEFPUNKT
 
-- Lauf „Verständlich, echt, ausgezeichnet“ · Etappe E2 (Referenz), Tor Anlauf 2 · Stand 2026-10-24 13:31 CEST
-- HEAD 564ff56 (src) plus Doku-Commits, gepusht: E2-ORCH-08a bis 08g (E-036) und E2-ORCH-09 (E-037). Produktionsserver 4311 = Reinraum 564ff56 (`$SCRATCH/reinraum-564ff56`), alter Stand 4310 = `$SCRATCH/reinraum-c53faf4`, Entwicklungsserver 4320. GA-Variante für den Tracking-Test bei Bedarf aus 564ff56 neu bauen (`NEXT_PUBLIC_GA4_ID=G-TEST000000`, Port 4313).
-- Laufend (13:31): E2-ORCH-09 umgesetzt (E-037, HEAD nach 564ff56 nur Doku). Hintergrundlauf: Reinraum 564ff56 (`$SCRATCH/orch/reinraum-564ff56.log`), dann Server 4311 = 564ff56 und `$SCRATCH/orch/material-2.sh` (Specs, Erstes Bild, Bildsätze, axe, Lesbarkeit, Videos, Lighthouse, CLS; Log `$SCRATCH/orch/material-2.log`, Ergebnisse `$SCRATCH/E2-SICHT-2/`). Danach: belege/e2/STUFE-B-2.md schreiben, Sichtabnahme E2-SICHT-2 als Workflow (frischer Juror, Auftrag `$SCRATCH/orch/briefings/E2-SICHT-2-prompt.md`, Stand 564ff56, Schema wie wf_30bc065a-3da), Bericht nach berichte/E2-SICHT-2.md, dann E2-TOR.
-- Offen nach dem Tor: Startseite auf vorlagen/teile umstellen (Bereichsfliesen übernehmen), hauptziel für /kontakt und /standorte, E3-BAU-Wellen, Leistungspaket (Hebel aus E-034), Fotos kuratieren (E5), Abschnittsköpfe variieren (E3).
+- Lauf „Verständlich, echt, ausgezeichnet“ · Etappe E3, Welle E3-W0 (Befunde des Tors E2 an der Startseite) · Stand 2026-10-24 14:12 CEST
+- Tor E2 abgeschlossen nach zwei Anläufen (E-038, `berichte/E2-SICHT-2.md`): Ansichtswert 7,14, Z-04 auf `/` offener Punkt in PLAN.md, `/` ist das Muster. Pakete E3-START-01 bis 08, E3-LEIST-01, E3-PRUEF-W0 in PLAN.md (Welle E3-W0), danach E3-W1 (Vorlagen tragen die SVG-Bewegungen nach E-037, Startseite auf vorlagen/teile umstellen, hauptziel für /kontakt und /standorte).
+- Server: Produktionsbau 4311 = Reinraum 564ff56 (`$SCRATCH/reinraum-564ff56`), alter Stand 4310 = `$SCRATCH/reinraum-c53faf4`, Entwicklungsserver 4320. Material Anlauf 2 in `$SCRATCH/E2-SICHT-2/` (Juror, Faktenprüfung fakten-0/1/2/5, Messskripte).
+- Laufend (14:12): E3-W0 in der Reihenfolge 02 (Leitachse), 01 (Einstieg ab lg, t768), 05 (Satz 200 %), 03 (Intro), 04 (Rückkehr), 06, 07, 08, dann E3-LEIST-01 und E3-PRUEF-W0 im Reinraum.
+- Werkzeuge: `einzelbild.mjs` und `probelauf.mjs` setzen die 200-%-Schrift jetzt ab dem ersten Byte (E-038).
+
 - E0 abgeschlossen bis auf Lighthouse: E0-PRUEF-03 und E0-PROBE-01…10 zurück und gesichert (`pakete/*.rueckgabe.md`), Werte in LAGEBILD Abschnitt 4 und 5, ABNAHME Z-11.
-- Laufend (10:31): Workflow wf_30bc065a-3da (Tor-Material): E2-PRUEF-B auf 4311 = Reinraum 5df89bc (`$SCRATCH/reinraum-5df89bc`), Tracking auf 4313 = `$SCRATCH/reinraum-ga-5df89bc`; danach E2-PROBE-01 bis 04 und E2-DOK-01 (je zwei gleichzeitig), dann E2-SICHT (frischer Opus-Juror, Auftrag `$SCRATCH/orch/briefings/E2-SICHT-prompt.md`). Danach: Rückgaben sichern, E2-TOR (Abgleich ABNAHME, Befunde als Pakete der E3). Erledigt heute: E-028, E-030, E-031, E-032, E-033, E-034 (Leistung 89, LCP 2,9 s, TBT 270, Reaktion 180).
 - Im Zwischenstand cce868a (Orchestrator), je Paket:
   - E2-ORCH-01 Tokens (`globals.css`), E2-ORCH-01b Register (`register.ts`, `test/bewegung.test.mjs`, `_werkstatt/register.json`, `werte-regeln.json`).
   - E2-FIX-01a bis c (GoogleReviewsBadge, FinalCTA, LocalDominanceMap, llms.txt, schema.ts, standorte/[stadt]).
