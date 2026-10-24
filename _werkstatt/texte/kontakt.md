@@ -27,7 +27,7 @@
 - Adresse unseres Betriebs: `{{COMPANY_DATA.address.fullAddress}}` (K-015 F-03)
 - Satz: `Seit 2008 sind wir als Handwerksbetrieb bei der Handwerkskammer Wiesbaden eingetragen.` (K-015 F-05, F-06)
 - Einsatzgebiet: `Wir arbeiten in Aßlar, Wetzlar, Gießen, Herborn und Dillenburg.` (K-015 F-09)
-- Anfahrt: `Den Weg zu uns zeigt eine Karte. Sie erscheint, wenn Sie auf „Karte laden & zustimmen“ klicken.` (Karte hinter Einwilligung, Funktion F-12; Knopftext aus `MapConsentGate.tsx:118`; Einwilligung unverändert, Funktion F-11)
+- Anfahrt: `Den Weg zu uns zeigt eine Karte. Sie erscheint, wenn Sie auf „Karte laden & zustimmen“ klicken.` (Karte hinter Einwilligung, Funktion F-12; Knopftext aus `MapConsentGate.tsx`; Einwilligung unverändert, Funktion F-11)
 - Öffnungszeiten: `Öffnungszeiten: Montag bis Donnerstag 7:30 bis 18 Uhr, Freitag 7:30 bis 17 Uhr, Samstag nach Vereinbarung.` (K-015 F-07; Freitag 17 Uhr wie im Bestand company.js:125, M-03 offen: company.js:128 sagt 18 Uhr)
 - Bild: `{Bild: kontakt-eingang}` Alt: `Hauseingang mit Podest und beigen Fliesen` (kleines Bild neben den Kontaktwegen; Alt-Text aus `bildplaetze.md`, Motiv nicht gegengesichtet, siehe OFFENE FRAGEN)
 
