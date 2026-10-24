@@ -1,6 +1,6 @@
 // Ablauftest Plan-Morph (K-007 seitenwechsel, zurück nach E-037; Paket E2-ORCH-09): Auf /leistungen gleitet der Verlegeplan
 // eines Fachgewerks beim Klick auf „Fachdetails“ als View Transition (Typ plan-vor) in den Einstieg der Leistungsseite;
-// B-01 „Verlegen“ lässt den Klick dann durch. Unter lg, bei reduzierter Bewegung, beim Zurück und Vor übernimmt B-01, und
+// B-01 „Verlegen“ startet sie selbst statt der Fliesen. Unter lg, bei reduzierter Bewegung, beim Zurück und Vor übernimmt B-01, und
 // eine laufende View Transition endet, sobald B-01 legt. Nur gegen den Produktionsbau sinnvoll (RELAUNCH_BASE, Vorladen):
 // Im Entwicklungsserver ohne Vorladen kann der Morph ausbleiben.
 // Protokoll: ein Init-Skript umhüllt document.startViewTransition (Typen, Pseudo-Animationen mit Dauer), ein MutationObserver
@@ -38,9 +38,10 @@ async function protokolliereUebergaenge(page) {
   });
 }
 
-async function oeffne(page, ziel = START) {
+async function oeffne(page, ziel = START, { reduziert = false } = {}) {
   await page.goto(ziel);
-  await expect(page.locator('html')).toHaveClass(/k-modul/);
+  // bei reduzierter Bewegung setzt das Kopfskript keine Bewegungsklassen, dann gibt es auch kein k-modul
+  if (!reduziert) await expect(page.locator('html')).toHaveClass(/k-modul/);
   await bedienbar(page.locator('.verlegen'));
   await page.evaluate(() => {
     const schicht = document.querySelector('.verlegen');
@@ -82,6 +83,8 @@ test.describe('Plan-Morph (E-037)', () => {
     const link = await linkInsBild(page);
     await expect.poll(() => page.evaluate((sel) => !!document.querySelector(sel), LINK)).toBe(true);
     await link.click();
+    // während des Morphs: Kopf als eigene Gruppe benannt (steht still)
+    const kopf = await page.evaluate(() => getComputedStyle(document.querySelector('header.kopf-anker')).viewTransitionName);
     await expect.poll(() => pfad(page)).toBe(ZIEL);
     const vt = await uebergaenge(page);
     const morph = vt.find((e) => e.typen.includes('plan-vor'));
@@ -91,7 +94,7 @@ test.describe('Plan-Morph (E-037)', () => {
     const plan = gruppen.find((g) => g.pseudo === '::view-transition-group(plan-bad)');
     expect.soft(plan, 'Gruppe plan-bad').toBeTruthy();
     expect.soft(plan?.dauer, 'Plan gleitet dauer-4').toBe(800);
-    expect.soft(gruppen.some((g) => g.pseudo === '::view-transition-group(kopf)'), 'Kopf als eigene Gruppe (steht still)').toBe(true);
+    expect.soft(kopf, 'Kopf als eigene Gruppe (steht still)').toBe('kopf');
     expect.soft(await zustaende(page), 'B-01 hat nicht gelegt').toEqual(['ruhe']);
     await expect.poll(() => page.evaluate(() => !!document.activeElement?.matches?.('#main-content h1')), { timeout: 5_000 }).toBe(true);
     const ls = await page.evaluate(() => window.__verlegen.ls.filter((e) => !e.eingabe).reduce((s, e) => s + e.wert, 0));
@@ -122,7 +125,8 @@ test.describe('Plan-Morph (E-037)', () => {
     await oeffne(page);
     const link = await linkInsBild(page);
     await link.click();
-    await page.waitForTimeout(150);
+    // Zurück, sobald die neue Adresse steht, während der Plan noch gleitet (800 ms); früher gäbe es noch keinen Eintrag
+    await expect.poll(() => pfad(page), { timeout: 5_000, intervals: [16] }).toBe(ZIEL);
     await page.goBack();
     await expect.poll(() => pfad(page), { timeout: 10_000 }).toBe(START);
     await expect.poll(async () => (await zustaende(page)).at(-1), { timeout: 10_000 }).toBe('ruhe');
@@ -147,7 +151,7 @@ test.describe('Plan-Morph (E-037)', () => {
     test.skip(info.project.name !== 'desktop', 'nur ab lg');
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await protokolliereUebergaenge(page);
-    await oeffne(page);
+    await oeffne(page, START, { reduziert: true });
     const link = await linkInsBild(page);
     await link.click();
     await expect.poll(() => pfad(page)).toBe(ZIEL);

@@ -19,7 +19,6 @@
 // Server-Komponente (async, params als Promise nach Next 16); Client-Inseln sind nur Formulare und Fragen.
 // Wortlaut, Anker, JSON-LD, generateStaticParams und notFound wie im Bestand; Metadaten im layout.jsx der Route.
 import dynamic from 'next/dynamic';
-import PlanUebergang from '@/components/leistungen/uebersicht/PlanUebergang';
 import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzhalter';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -204,10 +203,11 @@ export default async function ServiceDetailPage({ params }) {
         }
         rand={
           <Planfeld id={service.id} name={service.name}>
-            {/* Seitenwechsel (E3-ORCH-02, zurück nach E-037): derselbe Plan wie im Feld der Leistungsübersicht gleitet ab lg hierher */}
-            <PlanUebergang id={service.id}>
+            {/* Seitenwechsel (E3-ORCH-02, zurück nach E-037): derselbe Plan wie im Feld der Leistungsübersicht gleitet ab lg
+                hierher (Ziel des Plan-Morphs, Verlegen.tsx) */}
+            <div data-plan-uebergang={service.id}>
               <Verlegeplan plan={service.id} flucht="laden" />
-            </PlanUebergang>
+            </div>
           </Planfeld>
         }
       />

@@ -157,10 +157,18 @@ function bewegungErlaubt(): boolean {
   return html.classList.contains('k-bewegung') && !html.classList.contains('k-notaus');
 }
 
-// Plan-Morph (K-007 seitenwechsel, zurück nach E-037): Links mit data-uebergang tragen einen eigenen Übergang (View
-// Transition über React, Typ „plan-vor“). Ist er jetzt möglich, lässt B-01 den Klick durch; beide laufen nie gleichzeitig.
+// Plan-Morph (K-007 seitenwechsel, zurück nach E-037): Links mit data-uebergang="plan-vor" und data-uebergang-plan="<id>"
+// führen zu einer Seite, deren Plan (data-plan-uebergang="<id>") derselbe ist wie der im Feld der Übersicht. Ist der Morph
+// möglich, startet B-01 statt der Fliesen selbst eine View Transition (Typ „plan-vor“): Plan im alten Bild benennen,
+// navigieren, warten bis die neue Seite steht, Plan im neuen Bild benennen; der Browser lässt ihn gleiten. Über Reacts
+// <ViewTransition> fand React das Paar nicht, weil Next 16 die alte Seite verborgen stehen lässt statt sie abzubauen (auch im
+// Live-Stand glitt der Plan deshalb nicht). Beide Übergänge laufen nie gleichzeitig.
 const UEBERGANG_TYP = 'plan-vor';
+/** Obergrenze für das Warten auf die neue Seite im Morph (danach endet die View Transition ohne Gleiten) */
+const MORPH_WARTEN = 2500;
 type Uebergang = { skipTransition: () => void; finished: Promise<unknown> };
+/** der laufende Plan-Morph dieser Schicht (Chromium 141 kennt document.activeViewTransition noch nicht) */
+let morphLauf: Uebergang | null = null;
 
 /** Morph nur ab lg, bei erlaubter Bewegung und wenn der Browser View Transitions mit Typen kann (sonst übernimmt B-01). */
 function uebergangMoeglich(): boolean {
@@ -173,10 +181,17 @@ function uebergangMoeglich(): boolean {
   );
 }
 
-/** die laufende View Transition (Standard: document.activeViewTransition; Chromium 141 kennt sie noch nicht, React legt sie ab) */
+/** die laufende View Transition (Standard: document.activeViewTransition; sonst der eigene Morph oder die von React) */
 function aktiverUebergang(): Uebergang | null {
   const d = document as Document & { activeViewTransition?: Uebergang | null; __reactViewTransition?: Uebergang | null };
-  return d.activeViewTransition ?? d.__reactViewTransition ?? null;
+  return d.activeViewTransition ?? morphLauf ?? d.__reactViewTransition ?? null;
+}
+
+/** Benennt ein Element für den Morph (Name je Plan, Klasse plan-morph für Dauer und Kurve) bzw. hebt den Namen wieder auf. */
+function benenne(el: HTMLElement | null | undefined, plan: string | null): void {
+  if (!el) return;
+  el.style.setProperty('view-transition-name', plan ? `plan-${plan}` : '');
+  el.style.setProperty('view-transition-class', plan ? 'plan-morph' : '');
 }
 
 /** Eine laufende View Transition sofort beenden (der Wechsel im DOM bleibt, nur die Animation entfällt): Sonst lägen
@@ -515,6 +530,49 @@ export default function Verlegen() {
       for (const a of aktionen) ausfuehren(a);
     };
 
+    // Plan-Morph: Plan im alten Bild benennen, navigieren, warten bis die neue Seite mit ihrem Plan steht (während der
+    // Aktualisierung ruht das Rendern, darum setTimeout statt requestAnimationFrame), Plan im neuen Bild benennen.
+    const morph = (a: HTMLAnchorElement) => {
+      const plan = a.dataset.uebergangPlan ?? '';
+      const ziel = new URL(a.href);
+      const zielPfad = ziel.pathname.replace(/\/+$/, '');
+      const quelle = a.closest('[data-motion="sig-plan"]')?.querySelector<HTMLElement>(`[data-plan-uebergang="${plan}"]`);
+      router.prefetch(ziel.pathname + ziel.search);
+      pfadRef.current = location.pathname;
+      let neu: HTMLElement | undefined;
+      const d = document as Document & { startViewTransition: (o: { update: () => Promise<void>; types: string[] }) => Uebergang };
+      benenne(quelle, plan);
+      const lauf = d.startViewTransition({
+        types: [UEBERGANG_TYP],
+        update: () =>
+          new Promise<void>((fertig) => {
+            benenne(quelle, null);
+            startTransition(() => router.push(ziel.pathname + ziel.search + ziel.hash));
+            const bis = performance.now() + MORPH_WARTEN;
+            const pruefe = () => {
+              if (location.pathname.replace(/\/+$/, '') === zielPfad) {
+                neu = [...document.querySelectorAll<HTMLElement>(`[data-plan-uebergang="${plan}"]`)].find(
+                  (el) => el !== quelle && el.getClientRects().length > 0,
+                );
+              }
+              if (neu || performance.now() > bis) {
+                benenne(neu, plan);
+                fertig();
+              } else window.setTimeout(pruefe, 16);
+            };
+            pruefe();
+          }),
+      });
+      morphLauf = lauf;
+      void lauf.finished
+        .catch(() => undefined)
+        .finally(() => {
+          if (morphLauf === lauf) morphLauf = null;
+          benenne(neu, null);
+          benenne(quelle, null);
+        });
+    };
+
     const klick = (e: MouseEvent) => {
       const a = (e.target as Element | null)?.closest?.('a[href]') as HTMLAnchorElement | null;
       if (!a) return;
@@ -530,9 +588,10 @@ export default function Verlegen() {
         eigenerUebergang: a.closest('[data-uebergang]') !== null && lage.zustand === 'ruhe' && !angefordert && uebergangMoeglich(),
       });
       if (grund === 'eigener-uebergang') {
-        // next/link navigiert selbst (transitionTypes); B-01 merkt sich nur den Scroll für das spätere Zurück
+        e.preventDefault();
         merkeScroll(adresse());
         eigenerWechsel = true;
+        morph(a);
         return;
       }
       if (grund !== 'verlegen') return;

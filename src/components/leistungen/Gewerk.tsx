@@ -8,7 +8,8 @@
 // Sprungziel `#<id>` ohne eigenes scroll-margin: Es gilt nur `scroll-padding-top` (K-005), Oberkante 96 px.
 // SIG-3 (E3-ORCH-02): Das Fugenbild rückt beim Zeigen auf das Feld bzw. beim Fokus auf einen seiner Links in die Flucht,
 // mobil beim Eintritt (`sig-plan`); derselbe Plan gleitet beim Weg zu den Fachdetails in den Einstieg der Leistungsseite
-// (PlanUebergang, Übergangsart „plan-vor“, ab lg bei erlaubter Bewegung; sonst Seitenwechsel B-01; zurück seit E-037).
+// (Plan-Morph, zurück seit E-037: der Link trägt data-uebergang, das Feld data-plan-uebergang; B-01 startet die View
+// Transition selbst, ab lg bei erlaubter Bewegung, sonst verlegt B-01 wie bei jedem Link; Verlegen.tsx).
 // Kein Hover-Heben; Links mit Farbwechsel (`zustand`), der Knopf trägt `druck`.
 import Link from 'next/link';
 import clsx from 'clsx';
@@ -20,7 +21,6 @@ import Verlegeplan from '@/components/kern/Verlegeplan';
 import { etikettForm } from '@/components/kern/stile';
 import { PLAENE, type PlanName } from '@/lib/plaene/vorgaben';
 import { gewerkNummer } from '@/components/leistungen/Sprungindex';
-import PlanUebergang from '@/components/leistungen/uebersicht/PlanUebergang';
 
 export type Leistung = (typeof SERVICES)[number];
 
@@ -35,11 +35,9 @@ export default function Gewerk({ leistung, nr }: { leistung: Leistung; nr: numbe
       className="sig-plan-ziel row-span-7 grid min-w-0 grid-rows-subgrid gap-0 bg-fliese p-6 lg:p-8"
       data-motion="sig-plan"
     >
-      <PlanUebergang id={leistung.id}>
-        <div className="flex items-center border border-fuge bg-kalk p-6">
-          {istPlan(leistung.id) ? <Verlegeplan plan={leistung.id} ohneAchse bemassung={false} /> : null}
-        </div>
-      </PlanUebergang>
+      <div className="flex items-center border border-fuge bg-kalk p-6" data-plan-uebergang={leistung.id}>
+        {istPlan(leistung.id) ? <Verlegeplan plan={leistung.id} ohneAchse bemassung={false} /> : null}
+      </div>
 
       {/* Etikett mit Nummer (wie der Abschnittskopf: Ziffer in Tinte, Trennpunkt, Etikett) */}
       <p className={clsx(etikettForm, 'mt-6 text-tinte-2')}>
@@ -92,8 +90,8 @@ export default function Gewerk({ leistung, nr }: { leistung: Leistung; nr: numbe
       <div className="mt-6 flex flex-col items-start gap-2 border-t border-fuge pt-4 xl:flex-row xl:items-center xl:justify-between xl:gap-6">
         <Link
           href={`/leistungen/${leistung.id}`}
-          transitionTypes={['plan-vor']}
           data-uebergang="plan-vor"
+          data-uebergang-plan={leistung.id}
           data-motion="zustand"
           className="group inline-flex min-h-12 min-w-0 items-center gap-2 font-text text-fs-2 font-semibold text-tinte"
         >
