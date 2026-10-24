@@ -7,6 +7,7 @@ import Icon from '@/components/icons/Icon';
 import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
 import Hauptknopf from '@/components/kern/Hauptknopf';
 import Rufnummer from '@/components/kern/Rufnummer';
+import { zusammen } from '@/components/kern/zusammen';
 import { knopfKlassen, seitenKlassen } from '@/components/kern/stile';
 import { COMPANY_DATA } from '@/config/company';
 import { RATING_SUMMARY } from '@/config/reviews';
@@ -22,12 +23,11 @@ export function Bewertungszeile({ stand = false, className }: { stand?: boolean;
           <Icon key={i} name="stern-voll" groesse={4} />
         ))}
       </span>{' '}
-      <span className="font-semibold text-tinte">
-        {g.displayRating} von {g.maxRating} Sternen
-      </span>
+      <span className="font-semibold text-tinte">{zusammen(`${g.displayRating} von ${g.maxRating} Sternen`)}</span>
       <span aria-hidden="true"> · </span>
       <span className="sr-only">, </span>
-      <span>{g.count} Bewertungen bei Google</span>
+      {/* Zahl und Nomen bleiben beisammen (Runde 4) */}
+      {zusammen(`${g.count} Bewertungen bei Google`)}
       {stand && (
         <>
           <span aria-hidden="true"> · </span>

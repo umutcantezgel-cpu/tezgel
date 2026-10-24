@@ -26,9 +26,11 @@ export default function TerminAnfrage() {
       leitachse
       flaeche="fliese"
       kopf="seitlich"
+      ziel
       titel={zusammen('Termin vor Ort anfragen')}
       unterKopf={
-        <div className="grid gap-6 border-t border-fuge pt-6 md:grid-cols-2 lg:mt-4 lg:grid-cols-1">
+        // Container-Abfrage: unter 20 rem steht der Hörer über der großen Nummer, damit sie nicht über den Rand läuft (Runde 4)
+        <div className="@container grid gap-6 border-t border-fuge pt-6 md:grid-cols-2 lg:mt-4 lg:grid-cols-1">
           {/* die Rufnummer über die volle Breite, Schreiben und Zeiten darunter nebeneinander (ab lg untereinander) */}
           <div className="md:col-span-2 lg:col-span-1">
             <p className="font-text text-fs-3 text-tinte">Lieber anrufen?</p>
@@ -36,7 +38,7 @@ export default function TerminAnfrage() {
               href={`tel:${contact.phoneLink}`}
               data-motion="zustand"
               aria-label={`Anrufen: ${contact.phone}`}
-              className={`${linkKlassen} mt-2 inline-flex min-h-11 items-center gap-3 text-fs-5 text-tinte lg:text-fs-4`}
+              className={`${linkKlassen} mt-2 inline-flex min-h-11 items-center gap-3 text-fs-5 text-tinte lg:text-fs-4 @max-xs:flex-col @max-xs:items-start @max-xs:gap-1`}
             >
               <Icon name="telefon" groesse={6} className="shrink-0" />
               <Rufnummer nummer={contact.phone} />

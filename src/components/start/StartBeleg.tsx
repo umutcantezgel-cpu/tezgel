@@ -9,6 +9,7 @@ import Icon from '@/components/icons/Icon';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Bildfeld from '@/components/kern/Bildfeld';
 import { linkKlassen } from '@/components/kern/stile';
+import WeiterLink from '@/components/kern/WeiterLink';
 import { zusammen } from '@/components/kern/zusammen';
 import type { ArbeitId } from '@/config/arbeiten';
 import { CITIES } from '@/config/cities';
@@ -31,7 +32,8 @@ export function Arbeiten() {
     <Abschnitt id="unsere-arbeiten" formel="beleg" leitachse titel="So sieht unsere Arbeit aus.">
       {/* zweispaltig erst, wenn eine Spalte mindestens 20 rem hat (große Systemschrift: ein Foto über die volle Breite) */}
       <div className="@container">
-        <ul className="grid grid-cols-1 gap-px border border-fuge bg-fuge @xl:grid-cols-2 @5xl:grid-cols-3">
+        {/* zweispaltig ab 20 rem (Telefon bei normaler Schrift), einspaltig nur bei großer Systemschrift (Runde 4) */}
+        <ul className="grid grid-cols-1 gap-px border border-fuge bg-fuge @xs:grid-cols-2 @5xl:grid-cols-3">
           {FOTOS.map((f) => (
             <li key={f.id} className="bg-kalk">
               <Bildfeld arbeit={f.id} sizes="(min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw" beschriftung={f.unterschrift} flaeche />
@@ -40,10 +42,7 @@ export function Arbeiten() {
         </ul>
       </div>
       <p className="mt-12">
-        <Link href="/referenzen" data-motion="zustand" className={clsx(linkKlassen, 'inline-flex min-h-11 items-center gap-2 font-semibold text-fs-3')}>
-          Alle Arbeiten ansehen
-          <Icon name="pfeil-rechts" groesse={5} />
-        </Link>
+        <WeiterLink href="/referenzen">Alle Arbeiten ansehen</WeiterLink>
       </p>
     </Abschnitt>
   );
@@ -101,19 +100,20 @@ export function Kundenstimmen() {
   const [erste, ...weitere] = stimmen;
   return (
     <Abschnitt id="kundenstimmen" formel="beleg" leitachse flaeche="fliese" titel="Das sagen unsere Kunden.">
+      {/* ab lg steht die Kennzeile links unter der großen Stimme (die Spalten schließen ruhiger ab), mobil am Ende (Runde 4) */}
       <div className="grid gap-12 border-t border-fuge pt-12 lg:grid-cols-12 lg:gap-x-12">
         <div className="min-w-0 lg:col-span-7">
           <Stimme s={erste} gross />
         </div>
-        <ul className="flex min-w-0 flex-col gap-12 border-t border-fuge pt-12 lg:col-span-5 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-12">
+        <ul className="flex min-w-0 flex-col gap-12 border-t border-fuge pt-12 lg:col-span-5 lg:row-span-2 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-12">
           {weitere.map((s, i) => (
             <li key={s.id} className={clsx(i > 0 && 'border-t border-fuge pt-12')}>
               <Stimme s={s} gross={false} />
             </li>
           ))}
         </ul>
+        <Bewertungszeile stand className="font-text text-fs-2 text-tinte-2 hyphens-none lg:col-span-7" />
       </div>
-      <Bewertungszeile stand className="mt-12 font-text text-fs-2 text-tinte-2 hyphens-none" />
     </Abschnitt>
   );
 }
@@ -151,7 +151,8 @@ function Ortsgruppe({ g, bereich }: { g: (typeof GRUPPEN)[number]; bereich: numb
           {g.orte.map((o) => (
             <li key={o.slug} className="flex flex-col items-start border-b border-fuge pb-2 last:border-b-0 @xs:flex-row @xs:items-center @xs:justify-between @xs:gap-3 @xs:pb-0">
               {/* der Link nimmt die ganze Zeile bis zur Entfernung ein (Trefffläche ≥ 44 px auch bei kurzen Namen) */}
-              <Link href={`/standorte/${o.slug}`} data-motion="zustand" className={clsx(linkKlassen, 'flex min-h-11 w-full items-center font-text text-fs-3 hyphens-none @xs:w-auto @xs:flex-1')}>
+              {/* schmal: gleicher Abstand über und unter jeder Zeile, auch bei zweizeiligen Namen (Runde 4) */}
+              <Link href={`/standorte/${o.slug}`} data-motion="zustand" className={clsx(linkKlassen, 'flex min-h-11 w-full items-center font-text text-fs-3 hyphens-none @max-xs:pt-2 @xs:w-auto @xs:flex-1')}>
                 <span>{o.name}</span>
               </Link>
               {o.distanceKm === 0 ? (
@@ -191,10 +192,7 @@ export function Einsatzorte() {
         </div>
       </div>
       <p className="mt-8">
-        <Link href="/standorte" data-motion="zustand" className={clsx(linkKlassen, 'inline-flex min-h-11 items-center gap-2 font-semibold text-fs-3')}>
-          Alle Orte ansehen
-          <Icon name="pfeil-rechts" groesse={5} />
-        </Link>
+        <WeiterLink href="/standorte">Alle Orte ansehen</WeiterLink>
       </p>
     </Abschnitt>
   );
