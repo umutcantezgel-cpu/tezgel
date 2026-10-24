@@ -231,7 +231,7 @@ Maschinenfassung `src/config/glossar.ts` (Quelle) und `regeln/glossar.json` (Pr�
 - Nur echte Bilder aus `_eingang/entpackt/` (84 Originale) und dem Bestand; nie die 11 Generatorbilder aus `public/images/bad/` (E-013), nie Stock oder generierte Bilder.
 - Bearbeitung per Skript (`werkzeuge/bilder.mjs`, sharp): Ränder der Bildschirmfotos entfernen, Ausrichtung, sanfte Belichtung und Weißabgleich, Geraderichten, Zuschnitt nach Bildplatz und Schwerpunkt aus `bildinventar.csv`, nie hochskalieren (Quellen ≤ 1320 px breit), alle Metadaten entfernen, JPEG Qualität 82 als Webfassung (Next erzeugt AVIF/WebP); sprechende Namen.
 - Nicht verwenden oder wegschneiden: erkennbare Personen und Gesichter, Kind im Hintergrund, Hausnummern, Kennzeichen, Namen, fremde Firmenlogos und Markenaufdrucke. Bis zur Klärung nicht verwenden: Schiefer-Dusche mit Glaswand (wirkt wie Herstellerfoto), IMG_2577 (Bildbetrachter), Dubletten IMG_2594 und IMG_2581.
-- Einbau nur über `Bildfeld` (`next/image`): feste Maße, `sizes`, unscharfer Platzhalter, `preload` nur für das Startbild. Alt-Text in Alltagssprache ≤ 125 Zeichen nach den Zeichenregeln, ehrlich (zum Beispiel „Sanitärmontage noch offen“), keine erfundenen Orte; dekorativ ohne Alt-Text.
+- Einbau nur über `Bildfeld` (`next/image`): feste Maße, `sizes`, unscharfer Platzhalter; nur das Startbild lädt sofort mit hoher Priorität (`loading="eager"`, `fetchPriority="high"` statt `preload`, E-034). Alt-Text in Alltagssprache ≤ 125 Zeichen nach den Zeichenregeln, ehrlich (zum Beispiel „Sanitärmontage noch offen“), keine erfundenen Orte; dekorativ ohne Alt-Text.
 - Bildplätze: `_werkstatt/bildplaetze.md`. Wo kein passendes Foto da ist: Fliesenkomposition aus dem Formsystem, nie graue Kästen.
 
 ## K-013 Geräte und Budgets

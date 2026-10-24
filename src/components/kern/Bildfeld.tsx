@@ -21,7 +21,7 @@ interface Gemeinsam {
   spalten?: BildfeldSpalten;
   /** eigene sizes des Bildplatzes; geht vor `spalten` */
   sizes?: string;
-  /** true nur für das tatsächliche LCP-Bild (preload) */
+  /** true nur für das tatsächliche LCP-Bild: sofort laden mit hoher Priorität (statt preload, Next-16-Doku Image; E-034) */
   lcp?: boolean;
   beschriftung?: ReactNode;
   /** Quelle, in Mono unter der Beschriftung */
@@ -64,7 +64,8 @@ export default function Bildfeld(props: BildfeldProps) {
           width={bild.breite}
           height={bild.hoehe}
           sizes={sizes ?? GROESSEN[spalten]}
-          preload={lcp}
+          loading={lcp ? 'eager' : undefined}
+          fetchPriority={lcp ? 'high' : undefined}
           placeholder={bild.blur ? 'blur' : 'empty'}
           blurDataURL={bild.blur}
           className="block h-auto w-full"
