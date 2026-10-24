@@ -489,18 +489,26 @@ export default function Verlegen() {
     };
   }, [router]);
 
-  // Neue Seite ist da: nach zwei Bildern (Layout und Malen der neuen Seite) zieht der Belag ab.
+  // Neue Seite ist da: nach zwei Bildern (Layout und Malen der neuen Seite) und sobald der Hauptfaden frei ist, zieht der
+  // Belag ab. Ohne die Ruhe startete das Abziehen, während die neue Seite noch rechnete, und der Boden lag sichtbar still
+  // (Sichtabnahme E2, Befund 1 und 2; E-036). Bis dahin zeigt die Laserlinie das Warten; spätestens nach 400 ms geht es los.
   useEffect(() => {
     if (pfad === pfadRef.current) return;
     pfadRef.current = pfad;
     angezeigt = adresse();
     let zweites = 0;
+    let ruhe = 0;
+    const melden = () => senden.current({ typ: 'bereit' });
     const erstes = requestAnimationFrame(() => {
-      zweites = requestAnimationFrame(() => senden.current({ typ: 'bereit' }));
+      zweites = requestAnimationFrame(() => {
+        ruhe = window.requestIdleCallback ? window.requestIdleCallback(melden, { timeout: 400 }) : window.setTimeout(melden, 0);
+      });
     });
     return () => {
       cancelAnimationFrame(erstes);
       cancelAnimationFrame(zweites);
+      if (window.cancelIdleCallback) window.cancelIdleCallback(ruhe);
+      else window.clearTimeout(ruhe);
     };
   }, [pfad]);
 

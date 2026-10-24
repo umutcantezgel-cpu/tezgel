@@ -272,6 +272,9 @@ html.k-bewegung .laden-fuge::after {
 .verlegen-boden {
   position: absolute;
   inset: 0;
+  /* eigener Stapelkontext: die z-index der Fliesen bleiben im Boden, die Laserlinie liegt darüber (Sichtabnahme E2,
+     Befund 1: im Wartezustand 0 rote Bildpunkte, E-036) */
+  isolation: isolate;
 }
 .verlegen-fliese {
   position: absolute;
@@ -306,6 +309,7 @@ html.k-bewegung .laden-fuge::after {
 /* Wartephase: Laserlinie wandert ruhig über den stillen Boden (höchstens 3 s, Steuerung in der Komponente) */
 .verlegen-laser {
   position: absolute;
+  z-index: 1;
   left: 0;
   right: 0;
   top: 0;
