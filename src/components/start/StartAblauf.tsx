@@ -1,7 +1,8 @@
 // Startseite · 4 So läuft es ab (KERN v3 K-003 Nr. 5, K-005, K-009; Text REF-start): drei Schritte an der Laserlinie.
 // Die rote Linie führt durch die Schrittfolge (K-003 Nr. 5): ab lg waagrecht über den drei Spalten, der mittlere Schritt
 // um ein Drittel der langen Fliesenseite tiefer (Stufe 16, der Versatz dieses Bildschirms), sodass die Linie wie eine
-// versetzte Reihe springt; mobil senkrecht links vom Text. Je Schritt ein Fugenkreuz am Anfang der Linie, die Nummer in
+// versetzte Reihe springt; mobil senkrecht links vom Text, genau auf dem Lot der Laserlinie (die Leitachse steht dort
+// links im Seitenrand, darum rückt die Liste um den Abstand Rand bis Lot nach links). Je Schritt ein Fugenkreuz am Anfang der Linie, die Nummer in
 // Mono (Zahl), ohne Kästen, damit der Abschnitt anders gebaut ist als Lage, Stimmen und Orte. Serverkomponente.
 import clsx from 'clsx';
 import Abschnitt from '@/components/kern/Abschnitt';
@@ -25,7 +26,7 @@ const SCHRITTE = [
 export default function StartAblauf() {
   return (
     <Abschnitt id="ablauf" formel="ablauf" leitachse flaeche="fliese" titel="So kommen Sie zu Ihrem neuen Boden." className="lg:pb-32">
-      <ol className="grid lg:grid-cols-3">
+      <ol className="-ml-2 grid md:-ml-4 lg:ml-0 lg:grid-cols-3">
         {SCHRITTE.map((s, i) => {
           const letzter = i === SCHRITTE.length - 1;
           return (

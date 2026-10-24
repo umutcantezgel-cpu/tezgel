@@ -90,7 +90,7 @@ export default function HeroContactForm({ titel = true }: { titel?: boolean } = 
     }
 
     return (
-        <div className="border border-strich bg-fliese p-6 text-left lg:p-8">
+        <div className="border border-strich bg-fliese p-4 text-left sm:p-6 lg:p-8">
             {/* Kopf des Formulars: Schriftfeld-Zeile */}
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-fuge pb-4">
                 <span className="inline-flex items-center gap-2 font-text text-fs-2 text-tinte-2">
@@ -128,7 +128,9 @@ export default function HeroContactForm({ titel = true }: { titel?: boolean } = 
                     <p id="hero-vorhaben" className={labelKlassen}>
                         1. Ihr Vorhaben wählen
                     </p>
-                    <div className="mt-2 grid grid-cols-2 gap-2">
+                    {/* zweispaltig nur, wenn der Platz in der Schriftgröße reicht (Containerabfrage in rem: bei 200 %
+                        Systemschrift einspaltig, Sichtprüfung E2 Runde 2) */}
+                    <div className="@container mt-2"><div className="grid grid-cols-1 gap-2 @3xs:grid-cols-2">
                         {PROJECT_OPTIONS.map((opt) => {
                             const isSelected = projectType === opt.id;
                             return (
@@ -144,7 +146,7 @@ export default function HeroContactForm({ titel = true }: { titel?: boolean } = 
                                 </button>
                             );
                         })}
-                    </div>
+                    </div></div>
                 </div>
 
                 {/* 2. Kontaktdaten */}
@@ -188,7 +190,7 @@ export default function HeroContactForm({ titel = true }: { titel?: boolean } = 
                 <div className="grid grid-cols-1 gap-4">
                     <div>
                         <label htmlFor="hero-email" className={labelKlassen}>
-                            E-Mail <span className="font-mono text-fs-1 font-normal text-tinte-2">(für Bestätigung)</span>
+                            E-Mail <span className="font-text text-fs-1 font-normal text-tinte-2">(für Bestätigung)</span>
                         </label>
                         <input
                             id="hero-email"
@@ -229,7 +231,7 @@ export default function HeroContactForm({ titel = true }: { titel?: boolean } = 
                         name="notes"
                         type="text"
                         autoComplete="off"
-                        placeholder="z. B. 15 m², Altbau, Dusche ohne Stufe"
+                        placeholder="z. B. Dusche ohne Stufe"
                         value={notes}
                         onChange={(e) => setNotes(e.target.value)}
                         className={feldKlassen}

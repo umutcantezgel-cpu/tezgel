@@ -6,6 +6,7 @@
 import Icon from '@/components/icons/Icon';
 import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
 import Hauptknopf from '@/components/kern/Hauptknopf';
+import Rufnummer from '@/components/kern/Rufnummer';
 import { knopfKlassen, seitenKlassen } from '@/components/kern/stile';
 import { COMPANY_DATA } from '@/config/company';
 import { RATING_SUMMARY } from '@/config/reviews';
@@ -51,35 +52,39 @@ export default function StartEinstieg() {
           <p data-erstes-bild="ort" className="mt-6 font-text text-fs-4 text-tinte">
             Fliesenleger Deniz Tezgel aus Aßlar, für Wetzlar und die Orte rundherum.
           </p>
-          <p className="mt-4 max-w-mass font-text text-fs-3 text-pretty text-tinte-2">
-            Deniz Tezgel kommt selbst zu Ihnen, schaut sich alles an und sagt Ihnen, was zu tun ist. Danach verlegt er mit
-            seinem Team Fliese für Fliese.
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-            <Hauptknopf href="#termin" erstesBild breit />
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <a
-                href={`tel:${contact.phoneLink}`}
-                data-erstes-bild="kontakt"
-                data-motion="druck"
-                className={knopfKlassen('neben', 'w-full px-4 sm:w-auto')}
-              >
-                <Icon name="telefon" groesse={5} />
-                <span>
-                  Anrufen: <span className="font-mono whitespace-nowrap">{contact.phone}</span>
-                </span>
-              </a>
-              <a
-                href={buildWhatsAppUrl(contact.whatsappNumber, kontextNachricht('/'))}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-motion="druck"
-                // mobil trägt die untere Leiste WhatsApp; hier erst ab sm (weniger doppelte Bedienflächen, Sichtprüfung E2)
-                className={knopfKlassen('neben', 'px-4 max-sm:hidden')}
-              >
-                <WhatsAppLogo className="size-5" />
-                <span>Nachricht per WhatsApp</span>
-              </a>
+          {/* mobil folgen Hauptknopf und Telefon direkt auf Überschrift und Ort, der Vorspann danach (K-006; bei großer
+              Systemschrift stand der Knopf sonst erst nach fast zwei Bildschirmen) */}
+          <div className="flex flex-col">
+            <p className="mt-4 max-w-mass font-text text-fs-3 text-pretty text-tinte-2 max-sm:order-1 max-sm:mt-8">
+              Deniz Tezgel kommt selbst zu Ihnen, schaut sich alles an und sagt Ihnen, was zu tun ist. Danach verlegt er mit
+              seinem Team Fliese für Fliese.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+              <Hauptknopf href="#termin" erstesBild breit />
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <a
+                  href={`tel:${contact.phoneLink}`}
+                  data-erstes-bild="kontakt"
+                  data-motion="druck"
+                  className={knopfKlassen('neben', 'w-full px-4 sm:w-auto')}
+                >
+                  <Icon name="telefon" groesse={5} className="shrink-0" />
+                  <span className="min-w-0">
+                    Anrufen: <Rufnummer nummer={contact.phone} />
+                  </span>
+                </a>
+                <a
+                  href={buildWhatsAppUrl(contact.whatsappNumber, kontextNachricht('/'))}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-motion="druck"
+                  // unter lg trägt die untere Leiste WhatsApp (weniger doppelte Bedienflächen, Sichtprüfung E2)
+                  className={knopfKlassen('neben', 'px-4 max-lg:hidden')}
+                >
+                  <WhatsAppLogo className="size-5 shrink-0" />
+                  <span>Nachricht per WhatsApp</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>

@@ -2,8 +2,9 @@
 // Kunden, jede ein Link auf die passende Seite. Fliese = Foto (oder Fliesenkomposition, wo kein Foto passt) und Satz,
 // aneinander an der Fuge. Ab lg zwei Streifen zu je drei Fliesen über die volle Satzbreite, der rechte um ein Drittel
 // versetzt (der eine Versatz dieses Bildschirms, K-005); je Fliese Bild links (ein Drittel) und Satz rechts, ohne
-// Silbentrennung. Mobil eine Liste mit kleinem Bild links, groß genug zum Tippen. Bilder im Link sind dekorativ (alt=""),
-// der Satz ist der Name des Links. Serverkomponente.
+// Silbentrennung. Mobil eine Liste mit kleinem Bild links, groß genug zum Tippen. Ist die Fliese schmaler als 20 rem (große
+// Systemschrift), steht das Bild als Streifen über dem Satz, damit der Satz die volle Breite behält (Container-Abfrage in
+// rem, wächst mit der Schrift). Bilder im Link sind dekorativ (alt=""), der Satz ist der Name des Links. Serverkomponente.
 import Link from 'next/link';
 import Image from 'next/image';
 import clsx from 'clsx';
@@ -32,7 +33,7 @@ function Bild({ lage }: { lage: Lage }) {
       src={b.src}
       alt=""
       fill
-      sizes="(min-width: 1024px) 16vw, (min-width: 768px) 25vw, 96px"
+      sizes="(min-width: 1024px) 16vw, (min-width: 768px) 25vw, 33vw"
       placeholder="blur"
       blurDataURL={b.blur}
       className="object-cover"
@@ -55,7 +56,7 @@ export default function Lagefliesen() {
           <li
             key={lage.href}
             className={clsx(
-              'bg-fliese lg:border-x lg:border-fuge',
+              '@container bg-fliese lg:border-x lg:border-fuge',
               i % 3 === 0 && 'lg:border-t',
               'lg:border-b',
               // rechter Streifen: um ein Drittel versetzt, die Fuge zum linken Streifen liegt übereinander (1 px)
@@ -65,13 +66,17 @@ export default function Lagefliesen() {
             <Link
               href={lage.href}
               data-motion="zustand"
-              className="group grid h-full grid-cols-4 text-tinte transition-colors dauer-1 ease-setzen hover:bg-kalk lg:grid-cols-3"
+              className="group grid h-full grid-cols-1 text-tinte transition-colors dauer-1 ease-setzen hover:bg-kalk @xs:grid-cols-4 @xs:lg:grid-cols-3"
             >
-              {/* mobil füllt das Bild die ganze Höhe der Fliese (mindestens 96 px), ab lg quadratisch */}
-              <span aria-hidden="true" className="relative col-span-1 min-h-24 overflow-hidden border-r border-fuge lg:aspect-square lg:min-h-0">
+              {/* schmal ein Streifen über dem Satz; sonst füllt das Bild die ganze Höhe der Fliese (mindestens 96 px), ab lg
+                  quadratisch */}
+              <span
+                aria-hidden="true"
+                className="relative h-24 overflow-hidden border-b border-fuge @xs:col-span-1 @xs:h-auto @xs:min-h-24 @xs:border-r @xs:border-b-0 @xs:lg:aspect-square @xs:lg:min-h-0"
+              >
                 <Bild lage={lage} />
               </span>
-              <span className="col-span-3 flex items-start justify-between gap-3 p-4 lg:col-span-2 lg:p-8">
+              <span className="flex min-w-0 items-start justify-between gap-3 p-4 @xs:col-span-3 lg:p-8 @xs:lg:col-span-2">
                 <span className="font-text text-fs-4 font-semibold text-pretty hyphens-none">{lage.satz}</span>
                 <Icon name="pfeil-rechts" groesse={5} className="mt-1 shrink-0 text-tinte-2 transition-colors dauer-1 group-hover:text-tinte" />
               </span>
