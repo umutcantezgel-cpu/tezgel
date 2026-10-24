@@ -1,7 +1,7 @@
 # E2-PRUEF-B
 
 ## 1. Kopfzeile
-E2-PRUEF-B · Rolle Prüfer · Modell Haiku 5.5 · Stufe 1 (Messung nach Checkliste) · Kern-Version v3.0 · Schreibrechte (exakt): `_werkstatt/belege/e2/**` (neu: STUFE-B.md, funktion.json, bildsatz.json, schrift200.json, erstes-bild.json, axe.json, lesbarkeit.*, bewegung-reduziert.json, reaktion.json, lighthouse.json), `_werkstatt/pakete/E2-PRUEF-B.rueckgabe.md`, `_werkstatt/cache/**`, `$SCRATCH/E2-PRUEF-B/**` · Umfang: Stufe B für die Referenzansicht `/` (und `/gibt-es-nicht`) auf dem Produktionsbau des neuen Stands, Vergleich mit den Ausgangswerten E0
+E2-PRUEF-B · Rolle Prüfer · Modell Haiku 5.5 · Stufe 1 (Messung nach Checkliste) · Kern-Version v3.0 · Schreibrechte (exakt): `_werkstatt/belege/e2/**` (neu: STUFE-B.md, funktion.json, bildsatz.json, schrift200.json, erstes-bild.json, axe.json, lesbarkeit.*, bewegung-reduziert.json, bewegung-bildrate.json, werte.json, adressen.json, reaktion.json, lighthouse.json), `_werkstatt/pakete/E2-PRUEF-B.rueckgabe.md`, `_werkstatt/cache/**`, `$SCRATCH/E2-PRUEF-B/**` · Umfang: Stufe B für die Referenzansicht `/` (und `/gibt-es-nicht`) auf dem Produktionsbau des neuen Stands, Vergleich mit den Ausgangswerten E0
 
 ## 2. Rollenbriefing
 Du bist **Prüfer**: Du richtest Werkzeuge ein, führst die Prüfungen deiner Stufe aus und berichtest knapp mit Belegpfaden.
@@ -27,7 +27,7 @@ Miss auf dem Produktionsbau des neuen Stands (Port 4311, Commit `{STAND}`) alle 
 - Unantastbar (melden, falls verändert; kein Befund gegen die Seite): Logo, Rechtstexte, Firmendaten, Wortlaut der Kundenstimmen, Cookie-Einwilligung, Pflichtfelder und Empfänger der Formulare.
 
 ## 6. Maßstab
-Jede Zahl stammt aus einem Werkzeuglauf mit Pfad. Funktionstests: erwartet ≥ E0 je Spec, 0 unerwartet. Bildsatz, Schrift 200 %: Überlauf 0 und Überlappung 0 je Gerät. Erstes Bild: 5 von 5 je Gerät. axe: 0 kritisch, 0 ernst. Lesbarkeit GRÜN. Reduzierte Bewegung: 0 Befunde. Reaktion: höchster Median ≤ 200 ms. Lighthouse: Median aus 5 Läufen mobil und 3 Läufen Desktop.
+Jede Zahl stammt aus einem Werkzeuglauf mit Pfad. Funktionstests: erwartet ≥ E0 je Spec, 0 unerwartet. Bildsatz, Schrift 200 %: Überlauf 0 und Überlappung 0 je Gerät. Erstes Bild: 5 von 5 je Gerät. axe: 0 kritisch, 0 ernst. Lesbarkeit GRÜN. Reduzierte Bewegung: 0 Befunde. Reaktion: höchster Median ≤ 200 ms. Bildrate: ≤ 5 % verworfene Bilder. Werte: 0 Funde. Adressen: alle aus E0 mit 200 oder 308, 0 kaputte Links. Lighthouse: Median aus 5 Läufen mobil und 3 Läufen Desktop.
 
 ## 7. Grenzen
 - Nur die Dateien unter „Schreibrechte“ ändern oder anlegen; alles andere nur lesen. Fehler in fremden Dateien unter GEMEINSAME DATEIEN melden, nie beheben.
@@ -46,7 +46,12 @@ Alle Befehle aus `/home/user/tezgel/_werkstatt/werkzeuge`, Ausgaben nach `$SCRAT
 4. **Erstes Bild:** `RELAUNCH_BASE=http://127.0.0.1:4311 node erstesbild.mjs --satz e2 --seiten / --geraete alle --ziel /home/user/tezgel/_werkstatt/belege/e2`.
 5. **Zugänglichkeit:** `RELAUNCH_BASE=http://127.0.0.1:4311 node axe.mjs --satz e2 --seiten /,/gibt-es-nicht --zustaende --ziel /home/user/tezgel/_werkstatt/belege/e2`. Befunde je Schwere je Seite und Zustand.
 6. **Lesbarkeit:** `RELAUNCH_BASE=http://127.0.0.1:4311 node lesbarkeit.mjs --satz e2 --seiten /,/gibt-es-nicht --ziel /home/user/tezgel/_werkstatt/belege/e2`.
-7. **Reduzierte Bewegung und Register:** `node bewegung.mjs --modus reduziert --seite / --base http://127.0.0.1:4311 --ziel $SCRATCH/E2-PRUEF-B/bewegung-reduziert` und `--modus register` ebenso; Befunde nach `_werkstatt/belege/e2/bewegung-reduziert.json`.
+7. **Bewegung:** aus `werkzeuge`, je Lauf `--base http://127.0.0.1:4311 --ziel $SCRATCH/E2-PRUEF-B/bewegung-<modus>[-<kennung>]`:
+   - `node bewegung.mjs --modus reduziert --seite /` und `--modus register --seite /`; Befunde nach `_werkstatt/belege/e2/bewegung-reduziert.json`.
+   - Einzelbilder der neuen großen Momente: `--modus einzelbilder --seite / --ansicht m390 --kennung intro`, ebenso `--kennung startbild` und `--kennung verlegen` (fünf Bilder je Moment). Kennt das Werkzeug für eine Kennung keinen Auslöser, steht das als OFFENE FRAGE im Bericht.
+   - Bildrate: `--modus bildrate --seite / --ansicht m390` (4-fach gedrosselte CPU, Kopf der Datei); Anteil verworfener Bilder (Ziel ≤ 5 %, Z-05).
+7a. **Werte außerhalb des Designsystems:** `node werte.mjs --dateien <Liste> --ziel $SCRATCH/E2-PRUEF-B/werte` mit allen Dateien aus den Paketen der Briefings `E2-PRUEF-A1.md` bis `E2-PRUEF-A3.md` (Abschnitt 5 und Nachtrag), durch Komma getrennt; Zahl der Funde (Ziel 0, Z-03).
+7b. **Adressen und Links:** `RELAUNCH_BASE=http://127.0.0.1:4311 node adressen.mjs --satz e2 --ziel $SCRATCH/E2-PRUEF-B/adressen` (nur HTTP, alle Adressen); Zahl der Adressen je Status, kaputte Links (Ziel 0, Z-14), Seiten ohne genau eine H1, Titel, Beschreibung oder Canonical. Vergleich mit `_werkstatt/adressen-e0.csv` (Zahl der Adressen mit 200 oder 308).
 8. **Reaktion:** `node reaktion.mjs --satz e2 --seiten / --laeufe 5 --base http://127.0.0.1:4311 --ziel /home/user/tezgel/_werkstatt/belege/e2` (fünf Handlungen, m390, CPU 4-fach); Median je Handlung.
 9. **Leistung (Ruhefenster, zuletzt):** `RELAUNCH_BELEGE=$SCRATCH/E2-PRUEF-B/lh-belege node lighthouse.mjs --satz e2 --seiten / --laeufe 5 --formen mobil --base http://127.0.0.1:4311`, dann `--laeufe 3 --formen desktop` mit `--zusammenfuehren` (Kopf von `lighthouse.mjs` lesen). Zusammenfassung nach `_werkstatt/belege/e2/lighthouse.json` (keine Rohberichte ins Repo). Je Lauf LCP-Element und LCP-Zeit nennen.
 10. **Zusammenfassung** `_werkstatt/belege/e2/STUFE-B.md`: je Prüfung eine Tabelle neuer Wert, E0-Wert für `/`, Budget, erfüllt ja oder nein. Keine Deutungen, keine Empfehlungen.
