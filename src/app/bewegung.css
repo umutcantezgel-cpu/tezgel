@@ -413,7 +413,7 @@ html.k-notaus::view-transition-new(*) {
   }
   /* Startseite ab lg (Sichtabnahme E2, Befund 6): eine Reihe so hoch wie eine Zeile der H1 (fs-7), eine Reihengrenze auf der
      Oberkante der H1, damit beim Abziehen keine Zeile mitten im Buchstaben angeschnitten wird. Oberkante der H1 im Einstieg:
-     pt-32, eine Zeile Firmensitz in fs-1, mt-4 (StartEinstieg.tsx; der Kopf ist fest, der Einstieg beginnt bei 0). Die Fläche
+     pt-32, eine Zeile Firmensitz in fs-1, mt-4 (vorlagen/teile/EinstiegPlanblatt.tsx; der Kopf ist fest, der Einstieg beginnt bei 0). Die Fläche
      bleibt nahe 47 % der Höhe: Abstand dorthin auf ganze Reihen gerundet. Fliese = zwei Reihen. */
   @media (width >= 64rem) {
     html.k-intro-start .intro {
@@ -849,7 +849,7 @@ html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"] .einzugsband-zone:nth
 /* Waage im Einstieg der Startseite (E-037): Kreuzpunkt = Lot des Plans in der Mitte der Spalten 7 bis 12 eines Rasters mit
    12 Spalten und 3rem Abstand; die Waage beginnt 1rem vor der Inhaltskante, Prozent beziehen sich auf ihre Breite B:
    Ursprung = 3/4 · B + 1rem (die Spaltenabstände heben sich genau auf). Gekoppelt an lg:grid-cols-12, lg:gap-x-12, Plan in
-   col 7–12 und -left-4 (StartEinstieg.tsx). */
+   col 7–12 und -left-4 (vorlagen/teile/EinstiegPlanblatt.tsx). */
 .kreuzlinie-aus-start {
   transform-origin: calc(75% + var(--spacing) * 4) center;
 }

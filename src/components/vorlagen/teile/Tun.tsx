@@ -1,17 +1,19 @@
 // Vorlagen · 3 Was wir tun (KERN v3 K-009, K-011, K-012; E-025): gebaut wie „Was wir tun“ der Startseite. Kopf seitlich
 // mit Einleitung; Bereiche oder Unterseiten als Zeilen an der Fuge mit einem Verlegemuster aus dem Formsystem statt eines
 // Strichsymbols (unter 20 rem Zeilenbreite entfällt das Muster); Aussagen als Fliesen an der Fuge (bei großer Schrift das
-// Fugenkreuz über dem Satz); danach ein Absatz und der Platz für den großen Moment der Seite. Serverkomponente.
+// Fugenkreuz über dem Satz); oder Bereiche als Fliesen mit Plan-Vignette (Startseite, E-037); danach ein Absatz und der Platz
+// für den großen Moment der Seite. Wahlweise unter dem Kopf eine erklärende Zeichnung mit Bildunterschrift (ab lg in der
+// Kopfspalte, mobil nach dem Inhalt). Der Abschnitt zeichnet spät (unter dem ersten Bildschirm, E-044). Serverkomponente.
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import Icon from '@/components/icons/Icon';
 import clsx from 'clsx';
 import Abschnitt from '@/components/kern/Abschnitt';
-import Fliesenkomposition, { type Kompositionsmotiv } from '@/components/kern/Fliesenkomposition';
-import { VIGNETTEN, type VignettenName } from '@/components/kern/vignetten';
+import Fliesenkomposition from '@/components/kern/Fliesenkomposition';
+import { VIGNETTEN } from '@/components/kern/vignetten';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Textmarken from '@/components/kern/Textmarken';
-import type { TunInhalt } from '../inhalt';
+import type { BereichFliese, TunInhalt } from '../inhalt';
 
 export function Bereichszeilen({ bereiche }: { bereiche: NonNullable<TunInhalt['bereiche']> }) {
   return (
@@ -42,7 +44,7 @@ export function Bereichszeilen({ bereiche }: { bereiche: NonNullable<TunInhalt['
   );
 }
 
-export type Bereich = { name: string; href: string } & ({ motiv: Kompositionsmotiv; vignette?: never } | { vignette: VignettenName; motiv?: never });
+export type Bereich = BereichFliese;
 
 /** Bereiche als Fliesen mit Zeichnung (Startseite, Sichtabnahme E2, Befunde 8 und 12; E-037): an der Fuge, oben die Zeichnung,
  *  darunter der Name und der Pfeil. So ist der Abschnitt anders gebaut als die Zeilen der Lage davor.
@@ -103,17 +105,35 @@ export function Punktfliesen({ punkte }: { punkte: ReactNode[] }) {
   );
 }
 
+/** Zeichnung unter dem Kopf mit Bildunterschrift (Startseite: der Schnitt am Wandanschluss erklärt die Abdichtung) */
+function Zeichnung({ vignette, unterschrift }: NonNullable<TunInhalt['unterKopf']>) {
+  const Vignette = VIGNETTEN[vignette];
+  return (
+    <figure className="max-w-mass text-tinte">
+      <Vignette />
+      <figcaption className="mt-4 font-text text-fs-2 text-tinte-2">
+        <p>
+          <Textmarken text={unterschrift} />
+        </p>
+      </figcaption>
+    </figure>
+  );
+}
+
 export default function Tun({ inhalt, moment }: { inhalt: TunInhalt; moment?: ReactNode }) {
   return (
     <Abschnitt
       id="was-wir-tun"
       formel="tun"
       leitachse
+      spaet
       kopf="seitlich"
       titel={inhalt.titel}
       einleitung={inhalt.einleitung ? <p><Textmarken text={inhalt.einleitung} /></p> : undefined}
+      unterKopf={inhalt.unterKopf ? <Zeichnung {...inhalt.unterKopf} /> : undefined}
     >
       {inhalt.bereiche && inhalt.bereiche.length > 0 && <Bereichszeilen bereiche={inhalt.bereiche} />}
+      {inhalt.bereichsfliesen && inhalt.bereichsfliesen.length > 0 && <Bereichsfliesen bereiche={inhalt.bereichsfliesen} />}
       {inhalt.punkte && inhalt.punkte.length > 0 && (
         <div className={inhalt.bereiche?.length ? 'mt-16' : undefined}>
           <Punktfliesen punkte={inhalt.punkte.map((p) => <Textmarken key={p} text={p} />)} />

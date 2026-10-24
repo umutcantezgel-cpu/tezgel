@@ -2,7 +2,11 @@
 // links Überschrift und Satz, rechts der Hauptknopf „Termin vor Ort anfragen“ (→ /kontakt, dasselbe Ziel wie im Einstieg),
 // darunter die Rufnummer groß wie im Termin-Abschnitt der Startseite und WhatsApp. Hilfen (Werkzeuge der Seite) folgen
 // als ruhige Liste und konkurrieren nicht mit dem Hauptknopf; Wissensseiten nennen verwandte Seiten („Mehr zum Thema“).
-// Fläche Fliese als Abschluss vor dem Fuß. Serverkomponente.
+// Fläche Fliese als Abschluss vor dem Fuß. Variante mit Formular (Startseite #termin, Ortsseite #anfrage; E-044): rechts die
+// Anfrage mit vorhandener Logik (Slot, Pflichtfelder und Empfänger unverändert, G8), unter dem Satz Anruf, WhatsApp und ein
+// Zusatz (Öffnungszeiten oder Nachbarorte), ab lg in der Kopfspalte, mobil nach dem Formular, damit es nach dem Sprung zum
+// Ziel sofort im Bild steht. Die Rufnummer steht groß wie auf einem Bauschild (P1). Serverkomponente.
+import type { ReactNode } from 'react';
 import Link from 'next/link';
 import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
@@ -12,11 +16,114 @@ import Hauptknopf from '@/components/kern/Hauptknopf';
 import Rufnummer from '@/components/kern/Rufnummer';
 import Textmarken from '@/components/kern/Textmarken';
 import { linkKlassen } from '@/components/kern/stile';
+import { zusammen } from '@/components/kern/zusammen';
 import { COMPANY_DATA } from '@/config/company';
+import { oeffnungszeilen } from '@/lib/oeffnungszeiten';
 import { buildWhatsAppUrl, kontextNachricht } from '@/lib/whatsapp';
-import type { SchrittInhalt } from '../inhalt';
+import type { SchrittInhalt, Verweis } from '../inhalt';
 
-export default function Schritt({ inhalt, pfad }: { inhalt: SchrittInhalt; pfad: string }) {
+/** Zusatz im Formular-Schritt: Öffnungszeiten aus COMPANY_DATA (Zeilen nach den Schreibregeln) */
+export function Oeffnungszeiten() {
+  return (
+    <div>
+      <h3 className="font-text text-fs-3 font-semibold text-tinte">Wann Sie uns erreichen</h3>
+      <ul className="mt-2 font-text text-fs-2 text-tinte-2">
+        {oeffnungszeilen().map((z) => (
+          <li key={z}>{z}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+/** Zusatz im Formular-Schritt der Ortsseite: die nächstgelegenen Orte */
+export function Nachbarorte({ nachbarn }: { nachbarn: Verweis[] }) {
+  if (!nachbarn.length) return null;
+  return (
+    <div>
+      <h3 className="font-text text-fs-3 font-semibold text-tinte">Wir arbeiten auch in:</h3>
+      <ul className="mt-2 flex flex-wrap gap-x-4">
+        {nachbarn.map((n) => (
+          <li key={n.href}>
+            <Link href={n.href} data-motion="zustand" className={clsx(linkKlassen, 'inline-flex min-h-11 items-center font-text text-fs-3 hyphens-none')}>
+              {n.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function FormularSchritt({ inhalt, pfad, formular, titelId, zusatz }: { inhalt: SchrittInhalt; pfad: string; formular: ReactNode; titelId: string; zusatz?: ReactNode }) {
+  const { contact } = COMPANY_DATA;
+  return (
+    <Abschnitt
+      titelId={titelId}
+      formel="schritt"
+      leitachse
+      flaeche="fliese"
+      kopf="seitlich"
+      ziel
+      titel={zusammen(inhalt.titel)}
+      unterKopf={
+        // Container-Abfrage: unter 20 rem steht der Hörer über der großen Nummer, damit sie nicht über den Rand läuft (Runde 4),
+        // und die Nummer eine Stufe kleiner mit offenerer Zeilenhöhe: bricht sie nach „06441 /“ um, kreuzt die Unterstreichung
+        // sonst die zweite Zeile (Sichtabnahme E2, Befund 9)
+        <div className="@container grid gap-6 border-t border-fuge pt-6 md:grid-cols-2 lg:mt-4 lg:grid-cols-1">
+          {/* die Rufnummer über die volle Breite, Schreiben und Zusatz darunter nebeneinander (ab lg untereinander) */}
+          <div className="md:col-span-2 lg:col-span-1">
+            <p className="font-text text-fs-3 text-tinte">Lieber anrufen?</p>
+            <a
+              href={`tel:${contact.phoneLink}`}
+              data-motion="zustand"
+              aria-label={`Anrufen: ${contact.phone}`}
+              className={`${linkKlassen} mt-2 inline-flex min-h-11 items-center gap-3 text-fs-5 text-tinte lg:text-fs-4 @max-xs:flex-col @max-xs:items-start @max-xs:gap-1 @max-xs:text-fs-4`}
+            >
+              <Icon name="telefon" groesse={6} className="shrink-0" />
+              <Rufnummer nummer={contact.phone} />
+            </a>
+          </div>
+          <div>
+            <p className="font-text text-fs-3 text-tinte">Lieber schreiben?</p>
+            <a
+              href={buildWhatsAppUrl(contact.whatsappNumber, kontextNachricht(pfad))}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-motion="zustand"
+              className={`${linkKlassen} mt-1 inline-flex min-h-11 items-center gap-2 font-text text-fs-3`}
+            >
+              <WhatsAppLogo className="size-5" />
+              Nachricht per WhatsApp
+            </a>
+          </div>
+          {zusatz}
+        </div>
+      }
+      einleitung={
+        <p>
+          <Textmarken text={inhalt.satz} />
+        </p>
+      }
+    >
+      {formular}
+    </Abschnitt>
+  );
+}
+
+export interface SchrittProps {
+  inhalt: SchrittInhalt;
+  pfad: string;
+  /** Anfrageformular der Seite (Startseite, Ortsseite): dann steht es rechts, Anruf und WhatsApp in der Kopfspalte */
+  formular?: ReactNode;
+  /** id der H2 (Ziel aller Hauptknöpfe der Seite, `hauptziel` in navigation.js), nur mit Formular */
+  titelId?: string;
+  /** dritter Block unter Anruf und WhatsApp, nur mit Formular (z. B. Öffnungszeiten, Nachbarorte) */
+  zusatz?: ReactNode;
+}
+
+export default function Schritt({ inhalt, pfad, formular, titelId = 'anfrage', zusatz }: SchrittProps) {
+  if (formular) return <FormularSchritt inhalt={inhalt} pfad={pfad} formular={formular} titelId={titelId} zusatz={zusatz} />;
   const { contact } = COMPANY_DATA;
   return (
     <Abschnitt

@@ -1,8 +1,11 @@
-// Vorlagen · 4 So läuft es ab (KERN v3 K-003 Nr. 5, K-005, K-009; E-025): die Schritte an der roten Linie wie auf der
-// Startseite. Ab lg waagrecht über den Spalten, jeder zweite Schritt um Stufe 16 tiefer (die Linie springt wie eine
-// versetzte Reihe); mobil senkrecht genau auf dem Lot der Laserlinie. Je Schritt ein Fugenkreuz am Anfang der Linie und die
-// Nummer in Mono. Ein großer Moment (z. B. der Weg einer Badsanierung) kann die Schritte ersetzen; darunter ein Hinweis mit
-// Verweis. Serverkomponente.
+// Vorlagen · 4 So läuft es ab (KERN v3 K-003 Nr. 5, K-005, K-009; E-025, E-044): die Schritte an der roten Linie wie auf der
+// Startseite. Ab lg als fallende Treppe über den Spalten, jeder Schritt um ein Drittel der langen Fliesenseite tiefer als
+// der vorige (Stufe 16, der Versatz dieses Bildschirms), dazwischen eine rote Setzstufe; so liest sich die Folge 01, 02, 03
+// (vorher stand nur jeder zweite tiefer und wirkte wie ein Versatzfehler, E2-SICHT-2 Befund 7). Mobil senkrecht genau auf
+// dem Lot der Laserlinie. Je Schritt ein Fugenkreuz am Anfang der Linie und die Nummer in Mono, ohne Kästen. Darunter,
+// abgesetzt durch eine Fuge, Belege aus dem Faktenblatt (ab lg in Spalten wie die Schritte, je mit Fugenkreuz). Ein großer
+// Moment (z. B. der Weg einer Badsanierung) kann die Schritte ersetzen; darunter ein Hinweis mit Verweis. Der Abschnitt
+// zeichnet spät (unter dem ersten Bildschirm). Serverkomponente.
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import Abschnitt from '@/components/kern/Abschnitt';
@@ -11,8 +14,9 @@ import Textmarken from '@/components/kern/Textmarken';
 import WeiterLink from '@/components/kern/WeiterLink';
 import type { AblaufInhalt } from '../inhalt';
 
-// Spalten ab lg je Schrittzahl (Klassen fest im Quelltext)
+// Spalten ab lg je Schrittzahl und Stufen der Treppe (Klassen fest im Quelltext)
 const SPALTEN: Record<number, string> = { 2: 'lg:grid-cols-2', 3: 'lg:grid-cols-3', 4: 'lg:grid-cols-4' };
+const STUFE = ['', 'lg:mt-16', 'lg:mt-32', 'lg:mt-48'];
 
 export function Schritte({ schritte }: { schritte: AblaufInhalt['schritte'] }) {
   return (
@@ -25,9 +29,11 @@ export function Schritte({ schritte }: { schritte: AblaufInhalt['schritte'] }) {
             className={clsx(
               'relative border-l-2 pb-12 pl-8 lg:border-t-2 lg:border-l-0 lg:pt-8 lg:pr-12 lg:pb-0 lg:pl-0',
               letzter ? 'border-l-transparent lg:border-t-laser' : 'border-laser',
-              i % 2 === 1 && 'lg:mt-16',
+              STUFE[i],
             )}
           >
+            {/* Setzstufe ab lg: vom Ende der vorigen Linie senkrecht herab zum Anfang dieser */}
+            {i > 0 && <span aria-hidden="true" className="absolute bottom-full left-0 hidden h-16 -translate-x-1/2 border-l-2 border-laser lg:block" />}
             <Fugenkreuz className="absolute top-1 left-0 size-3 -translate-x-1/2 text-tinte lg:top-0 lg:-translate-y-1/2" />
             <p className="font-mono text-fs-4 text-tinte-2">{String(i + 1).padStart(2, '0')}</p>
             <h3 className="mt-2 font-anzeige text-fs-5 font-extrabold text-tinte">{s.titel}</h3>
@@ -41,10 +47,27 @@ export function Schritte({ schritte }: { schritte: AblaufInhalt['schritte'] }) {
   );
 }
 
+/** Belege unter den Schritten: ab lg in Spalten wie die Schritte, mobil untereinander, je mit Fugenkreuz, ohne Kästen */
+function Belege({ belege }: { belege: string[] }) {
+  return (
+    <ul className={clsx('mt-4 grid gap-6 border-t border-fuge pt-8 lg:mt-24 lg:gap-12', SPALTEN[belege.length] ?? 'lg:grid-cols-3')}>
+      {belege.map((b) => (
+        <li key={b} className="flex gap-3">
+          <Fugenkreuz className="mt-2 size-3 shrink-0 text-tinte" />
+          <p className="font-text text-fs-3 text-tinte">
+            <Textmarken text={b} />
+          </p>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export default function Ablauf({ inhalt, moment }: { inhalt: AblaufInhalt; moment?: ReactNode }) {
   return (
-    <Abschnitt id="ablauf" formel="ablauf" leitachse flaeche="fliese" titel={inhalt.titel} className="lg:pb-32">
+    <Abschnitt id="ablauf" formel="ablauf" leitachse spaet flaeche="fliese" titel={inhalt.titel} className="lg:pb-32">
       {moment ?? <Schritte schritte={inhalt.schritte} />}
+      {inhalt.belege && inhalt.belege.length > 0 && <Belege belege={inhalt.belege} />}
       {inhalt.hinweis && (
         <div className="mt-12 max-w-mass border-l-2 border-tinte pl-6 lg:mt-24">
           <p className="font-text text-fs-3 text-tinte">

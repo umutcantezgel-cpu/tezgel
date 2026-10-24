@@ -3,7 +3,9 @@
 // ab lg zwei Streifen, der rechte um ein Drittel versetzt, der eine Versatz dieses Bildschirms, K-005; oben rechts und unten
 // links je ein schraffiertes Passstück wie in den Plan-Zeichnungen, damit das Feld ein Rechteck ist, E-040). Bei großer
 // Systemschrift steht das Bild als Streifen über dem Satz und der Pfeil darunter (Container-Abfrage in rem, Runden 2 und
-// 3). Bilder im Link sind dekorativ (alt=""), der Satz ist der Name des Links. Serverkomponente.
+// 3). Bilder im Link sind dekorativ (alt=""), der Satz ist der Name des Links. Der Abschnitt zeichnet spät (content-visibility,
+// unter dem ersten Bildschirm, E3-LEIST-01); darum hält lg:mb-16 den versetzten Streifen und das untere Passstück im Fluss
+// (spätes Zeichnen beschneidet, was überragt), mit lg:pb-16 am Abschnitt dieselben 128 px wie vorher (E-044). Serverkomponente.
 import Link from 'next/link';
 import Image from 'next/image';
 import clsx from 'clsx';
@@ -38,10 +40,10 @@ export function Passstuecke() {
   );
 }
 
-export function LageFliesen({ fliesen }: { fliesen: Fliese[] }) {
+export function LageFliesen({ fliesen, className }: { fliesen: Fliese[]; className?: string }) {
   const proStreifen = Math.ceil(fliesen.length / 2);
   return (
-    <div className="relative">
+    <div className={clsx('relative', fliesen.length > 1 && 'lg:mb-16', className)}>
       <ul className={clsx('grid gap-px border border-fuge bg-fuge md:grid-cols-2 lg:grid-flow-col lg:gap-0 lg:border-0 lg:bg-transparent', STREIFEN_ZEILEN[proStreifen])}>
         {fliesen.map((f, i) => (
           <li
@@ -77,16 +79,17 @@ export function LageFliesen({ fliesen }: { fliesen: Fliese[] }) {
   );
 }
 
-export default function Lage({ inhalt, einleitung }: { inhalt: LageInhalt; einleitung?: string }) {
+export default function Lage({ inhalt }: { inhalt: LageInhalt }) {
   const fliesen = inhalt.fliesen ?? [];
   return (
     <Abschnitt
       id="ihre-lage"
       formel="lage"
       leitachse
+      spaet
       titel={inhalt.titel}
-      einleitung={einleitung ? <p><Textmarken text={einleitung} /></p> : undefined}
-      className={fliesen.length > 1 ? 'lg:pb-32' : undefined}
+      einleitung={inhalt.einleitung ? <p><Textmarken text={inhalt.einleitung} /></p> : undefined}
+      className={fliesen.length > 1 ? 'lg:pb-16' : undefined}
     >
       {inhalt.absaetze && inhalt.absaetze.length > 0 && (
         <div className="max-w-mass space-y-4 font-text text-fs-4 text-pretty text-tinte">
@@ -97,11 +100,7 @@ export default function Lage({ inhalt, einleitung }: { inhalt: LageInhalt; einle
           ))}
         </div>
       )}
-      {fliesen.length > 0 && (
-        <div className={clsx(inhalt.absaetze?.length && 'mt-12')}>
-          <LageFliesen fliesen={fliesen} />
-        </div>
-      )}
+      {fliesen.length > 0 && <LageFliesen fliesen={fliesen} className={clsx(inhalt.absaetze?.length && 'mt-12')} />}
       {inhalt.wege && inhalt.wege.length > 0 && (
         <div className={clsx((inhalt.absaetze?.length || fliesen.length) && 'mt-12')}>
           <Bereichszeilen bereiche={inhalt.wege} />
