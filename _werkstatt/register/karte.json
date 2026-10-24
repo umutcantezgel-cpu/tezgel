@@ -1,0 +1,21 @@
+{
+  "kennung": "karte",
+  "paket": "E3-GRAF-09",
+  "kern": "3.4",
+  "zweck": "Orientierung: Einsatzgebiet ab Aßlar",
+  "ausloeser": "sicht",
+  "schwelle": 0.4,
+  "nurGrob": false,
+  "element": "div[role=img][data-motion=karte] in src/components/momente/karte/Einsatzkarte.tsx",
+  "bewegt": [".karte-ring: scale 0.6 → 1 und opacity 0 → 1", ".karte-orte: opacity 0 → 1"],
+  "dauer": "Ring 10 km dauer-3 ab 0 ms; Ring 25 km dauer-3 ab staffel × 5; Punkte nah dauer-2 ab staffel × 4, mittel ab staffel × 9, weit ab staffel × 13; gesamt 1100 ms",
+  "kurve": "ease-setzen",
+  "reduziert": "Endzustand: ohne html.k-bewegung keine Startzustände",
+  "druck_und_erzwungene_farben": "Endzustand ohne Übergang",
+  "ohne_javascript": "Endzustand",
+  "wo": ["/ueber-uns", "/standorte"],
+  "schlitz": "momente.beleg (ErzaehlSeite); wahlweise karte (OrtsSeite) mit aktuell und liste={false}",
+  "css": "src/app/bewegung.css, Block karte (Orchestrator); src/app/globals.css, Klasse karte-marke (Orchestrator)",
+  "register_ts": "karte: { ausloeser: 'sicht', schwelle: 0.4 }",
+  "budget": "Serverkomponente, 0 KB zusätzliches JavaScript; Zeichnung unter 2 KB gzip; CSS etwa 1,3 KB roh"
+}
