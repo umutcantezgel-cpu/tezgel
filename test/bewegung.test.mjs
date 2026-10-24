@@ -8,11 +8,16 @@ import { KOPFSKRIPT } from '../src/lib/motion/kopfskript.ts';
 const KERN_V3 = ['verlegen', 'seitenwechsel', 'intro', 'startbild', 'verband', 'leitachse', 'anriss', 'auftritt', 'aufklappen', 'druck', 'zustand', 'notiert', 'laden'];
 const V2_SVG_E037 = ['sig-kreuzlinie', 'sig-flucht', 'szene-ablauf', 'sig-plan', 'einzugsband', 'fugenband'];
 const ENTFALLEN_E009 = [];
+// große Momente (E3-ORCH-02a, KERN v3.4 K-007); verband steht in KERN_V3
+const MOMENTE_SCROLL = ['schichten', 'weg'];
+const MOMENTE_SICHT = ['gefaelle-dusche', 'gefaelle-balkon', 'karte'];
+const MOMENTE_INTERAKTION = ['formatregler', 'vorher-nachher', 'galerie-filter'];
+const GROSSE_MOMENTE = [...MOMENTE_SCROLL, ...MOMENTE_SICHT, ...MOMENTE_INTERAKTION];
 
-test('Bewegung 1: Register enthält genau die Einträge von KERN v3 und die SVG-Bewegungen aus v2 (E-037), keine entfällt', () => {
-  assert.deepEqual([...KENNUNGEN].sort(), [...KERN_V3, ...V2_SVG_E037, ...ENTFALLEN_E009].sort());
+test('Bewegung 1: Register enthält genau die Einträge von KERN v3, die SVG-Bewegungen aus v2 (E-037) und die großen Momente, keine entfällt', () => {
+  assert.deepEqual([...KENNUNGEN].sort(), [...KERN_V3, ...V2_SVG_E037, ...GROSSE_MOMENTE, ...ENTFALLEN_E009].sort());
   assert.deepEqual(entfallendeKennungen().sort(), [...ENTFALLEN_E009].sort());
-  for (const k of [...KERN_V3, ...V2_SVG_E037]) assert.ok(!REGISTER[k].entfaellt, `${k} gehört zum System`);
+  for (const k of [...KERN_V3, ...V2_SVG_E037, ...GROSSE_MOMENTE]) assert.ok(!REGISTER[k].entfaellt, `${k} gehört zum System`);
 });
 
 test('Bewegung 1b: B-01, Plan-Morph und B-02 steuern sich selbst, das Startbild legt sich beim Eintritt frei (Sicht 0,4; E-037)', () => {
@@ -71,4 +76,29 @@ test('Bewegung 5: Kopfskript setzt k-bewegung nur ohne reduzierte Bewegung und h
   klassen.add('k-modul');
   zeitgeber.fn();
   assert.equal(klassen.has('k-notaus'), false, 'mit Bereitmeldung bleibt die Bewegung aktiv');
+});
+
+test('Bewegung 6: scroll-gebundene große Momente laufen über CSS, ohne Beobachter und ohne Ladezustand', () => {
+  for (const k of MOMENTE_SCROLL) {
+    assert.equal(REGISTER[k].ausloeser, 'scroll', k);
+    assert.ok(!beobachteteKennungen(true).includes(k) && !beobachteteKennungen(false).includes(k), k);
+    assert.ok(!ladeKennungen().includes(k), k);
+  }
+});
+
+test('Bewegung 7: große Momente mit Sichtbarkeit starten bei 0,4 auf jedem Zeigegerät', () => {
+  for (const k of MOMENTE_SICHT) {
+    assert.equal(schwelleFuer(k), 0.4, k);
+    assert.ok(beobachteteKennungen(true).includes(k) && beobachteteKennungen(false).includes(k), k);
+    assert.ok(!ladeKennungen().includes(k), k);
+  }
+});
+
+test('Bewegung 8: Regler und Auswahl folgen der Eingabe, ohne Beobachter und ohne Selbststeuerung', () => {
+  for (const k of MOMENTE_INTERAKTION) {
+    assert.equal(REGISTER[k].ausloeser, 'interaktion', k);
+    assert.ok(!beobachteteKennungen(true).includes(k) && !beobachteteKennungen(false).includes(k), k);
+    assert.ok(!SELBST.includes(k), k);
+    assert.ok(!ladeKennungen().includes(k), k);
+  }
 });

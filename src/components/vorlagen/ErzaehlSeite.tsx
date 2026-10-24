@@ -28,14 +28,15 @@ import EinstiegPlanblatt from './teile/EinstiegPlanblatt';
 import Lage from './teile/Lage';
 import Tun from './teile/Tun';
 import Ablauf from './teile/Ablauf';
-import Beleg from './teile/Beleg';
+import Beleg, { type ZweiterBeleg } from './teile/Beleg';
 import Schritt, { Oeffnungszeiten } from './teile/Schritt';
 import { Werkzeug, type Arbeitsabschnitt } from './ArbeitsSeite';
 
 export interface ErzaehlSeiteProps {
   inhalt: ErzaehlInhalt;
-  /** große Momente der Seite an ihrem Platz (Registereinträge, K-007) */
-  momente?: { tun?: ReactNode; ablauf?: ReactNode; beleg?: ReactNode };
+  /** große Momente der Seite an ihrem Platz (Registereinträge, K-007); belegZwei steht als eigener Abschnitt mit H2 zwischen
+   *  Fotos und Stimmen (E-045) */
+  momente?: { tun?: ReactNode; ablauf?: ReactNode; beleg?: ReactNode; belegZwei?: ZweiterBeleg };
   /** Werkzeug der Seite (Badanfrage, Preisrechner …) nach dem nächsten Schritt, Kennung wie im Bestand */
   werkzeug?: Arbeitsabschnitt;
   /** eigener Bildplatz für das hohe Foto im Planblatt (Startseite: das Startbild mit seinem großen Moment) */
@@ -52,7 +53,7 @@ export default function ErzaehlSeite({ inhalt, momente, werkzeug, einstiegBild, 
       <Lage inhalt={inhalt.lage} />
       <Tun inhalt={inhalt.tun} moment={momente?.tun} />
       <Ablauf inhalt={inhalt.ablauf} moment={momente?.ablauf} />
-      <Beleg inhalt={inhalt.beleg} moment={momente?.beleg} />
+      <Beleg inhalt={inhalt.beleg} moment={momente?.beleg} zweiter={momente?.belegZwei} />
       <Schritt
         inhalt={inhalt.schritt}
         pfad={inhalt.pfad}

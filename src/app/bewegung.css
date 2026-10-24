@@ -112,6 +112,33 @@ html.k-bewegung:not(.k-notaus) [data-motion="anriss"]:not([data-motion-stand="an
   }
 }
 
+/* vorher-nachher (K-007, großer Moment /referenzen, E3-GRAF-07) – Regler (Zeiger und Tastatur), direkt: links vom Lot (Tinte,
+   E-045) das Vorher-Foto, rechts das Nachher-Foto. Der Regler setzt --teilung (0 bis 100, ohne Einheit) an .vn-buehne;
+   Standard 50, so auch ohne JavaScript. Bewegt wird nur translate: das Fenster rückt um (Teilung − 100) %, das Vorher-Foto
+   darin um denselben Betrag zurück, das Lot steht bei Teilung %; alle drei sind so breit wie die Bühne. Kein Übergang:
+   reduziert gleich. */
+.vn-buehne {
+  --teilung: 50;
+}
+.vn-fenster {
+  translate: calc((var(--teilung) - 100) * 1%) 0;
+}
+.vn-gegen {
+  translate: calc((100 - var(--teilung)) * 1%) 0;
+}
+.vn-teiler {
+  translate: calc(var(--teilung) * 1%) 0;
+}
+.vn-buehne:has(.vn-regler:focus-visible) .vn-griff {
+  outline: 2px solid var(--color-tinte);
+  outline-offset: 2px;
+}
+@media (forced-colors: active) {
+  .vn-buehne:has(.vn-regler:focus-visible) .vn-griff {
+    outline-color: Highlight;
+  }
+}
+
 /* verband (K-007, /fliesen, E3-ORCH-04, E4-NACH-02) – Radiogruppe ohne JavaScript: die Auswahl versetzt über :has() die
    Reihen des einen Plans um ½ bzw. ⅓ Plattenlänge (Zeichnungseinheiten: Platte 80, also 40 bzw. 26,667/53,333), Übergang
    dauer-3 · setzen, nur translate. Das gewählte Feld färbt Tailwind `has-checked:` (Utility-Layer). Ohne :has() stehen die
@@ -143,8 +170,58 @@ html.k-bewegung:not(.k-notaus) [data-motion="anriss"]:not([data-motion-stand="an
     transition: translate var(--dauer-3) var(--ease-setzen);
   }
 }
+/* verband · Musterprobe /fliesen (E3-GRAF-06): vier Muster; Fischgrät als eigene Ebene, Beschreibung je Muster. Zustände
+   gelten ohne Startklasse (auch ohne JavaScript, reduziert sofort); nur Übergänge und der Anlauf der Fischgrät-Ebene hängen
+   an html.k-bewegung. Die Ebene, die geht, geht in dauer-1 · weg, die gewählte legt sich in dauer-3 · setzen. Fokus auf dem
+   gewählten (tintefarbenen) Feld in Kalk, sonst wäre der Rahmen unsichtbar (gilt auch für den VerbandUmschalter). */
+.verband-wahl:has(input:checked:focus-visible) {
+  outline-color: var(--color-kalk);
+}
+@supports selector(:has(*)) {
+  .verband .muster-fisch {
+    opacity: 0;
+  }
+  .verband:has([data-verband-wahl="fisch"]:checked) .muster-fisch {
+    opacity: 1;
+  }
+  .verband:has([data-verband-wahl="fisch"]:checked) .muster-reihen {
+    opacity: 0;
+  }
+  .verband .muster-text {
+    grid-area: 1 / 1;
+    visibility: hidden;
+  }
+  .verband:has([data-verband-wahl="kreuz"]:checked) .muster-text[data-muster="kreuz"],
+  .verband:has([data-verband-wahl="halb"]:checked) .muster-text[data-muster="halb"],
+  .verband:has([data-verband-wahl="drittel"]:checked) .muster-text[data-muster="drittel"],
+  .verband:has([data-verband-wahl="fisch"]:checked) .muster-text[data-muster="fisch"] {
+    visibility: visible;
+  }
+  html.k-bewegung:not(.k-notaus) .verband:not(:has([data-verband-wahl="fisch"]:checked)) .muster-fisch {
+    translate: -20px 0;
+  }
+  html.k-bewegung .verband .muster-reihen {
+    transition: opacity var(--dauer-3) var(--ease-setzen);
+  }
+  html.k-bewegung .verband:has([data-verband-wahl="fisch"]:checked) .muster-reihen {
+    transition: opacity var(--dauer-1) var(--ease-weg);
+  }
+  html.k-bewegung .verband .muster-fisch {
+    transition: opacity var(--dauer-1) var(--ease-weg), translate var(--dauer-1) var(--ease-weg);
+  }
+  html.k-bewegung .verband:has([data-verband-wahl="fisch"]:checked) .muster-fisch {
+    transition: opacity var(--dauer-3) var(--ease-setzen), translate var(--dauer-3) var(--ease-setzen);
+  }
+}
+@supports not selector(:has(*)) {
+  .verband .muster-legende {
+    display: none;
+  }
+}
 @media print, (forced-colors: active) {
-  .verband .verband-reihe {
+  .verband .verband-reihe,
+  .verband .muster-reihen,
+  .verband .muster-fisch {
     transition: none !important;
   }
 }
@@ -152,6 +229,76 @@ html.k-bewegung:not(.k-notaus) [data-motion="anriss"]:not([data-motion-stand="an
   .verband-wahl:has(input:checked) {
     outline: 3px solid CanvasText;
     outline-offset: -5px;
+  }
+}
+
+/* formatregler (K-007, /leistungen, E3-GRAF-05): dieselbe Wand links mit kleinen, rechts mit großen Fliesen. Der Regler
+   setzt --formatregler-teil (0 % bis 100 %, Anteil der kleinen Fliesen von links) am Bildfeld; Ebene und Trennlinie
+   rücken direkt dorthin, ohne Übergang (direkt, reduziert gleich). Nur translate: die Ebene rückt um den Anteil nach
+   rechts, ihr Inhalt um denselben Betrag zurück. Kein Startzustand: ohne JavaScript und im Druck steht die Linie in der
+   Mitte. */
+.formatregler-bild {
+  --formatregler-teil: 50%;
+  position: relative;
+  overflow: hidden;
+}
+.formatregler-gross,
+.formatregler-trenner {
+  position: absolute;
+  inset: 0;
+  translate: var(--formatregler-teil) 0;
+}
+.formatregler-gross {
+  overflow: hidden;
+}
+.formatregler-gross > * {
+  translate: calc(var(--formatregler-teil) * -1) 0;
+}
+.formatregler-trenner {
+  pointer-events: none;
+}
+.formatregler-trenner::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: -1px;
+  border-inline-start: 2px solid var(--color-tinte);
+}
+.formatregler-griff {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  translate: -50% -50%;
+}
+.formatregler-flaeche {
+  fill: var(--color-fliese);
+  stroke: none;
+}
+@media (forced-colors: active) {
+  .formatregler-flaeche {
+    fill: Canvas;
+  }
+}
+@media print {
+  .formatregler-regler {
+    display: none;
+  }
+}
+
+/* galerie-filter (K-007, /referenzen, E3-GRAF-08) – Galerie „Unsere Arbeiten“ mit Filter nach Raum: Die Auswahl (Knöpfe mit
+   aria-pressed, Insel momente/galerie-filter/GalerieWahl) verbirgt Fotos per hidden; Fotos mit data-galerie-neu blenden in
+   dauer-2 · setzen ein, Stück für Stück in Lesefolge (Staffel, Stufe 0 bis 7 in --galerie-stufe), wegfallende gehen sofort.
+   Nur opacity. Startzustand nur unter html.k-bewegung ohne Notaus; reduziert, ohne JavaScript, im Druck und bei erzwungenen
+   Farben wechseln die Fotos sofort. */
+@keyframes galerie-zeigen {
+  from { opacity: 0; }
+}
+html.k-bewegung:not(.k-notaus) [data-motion="galerie-filter"][data-galerie-neu] {
+  animation: galerie-zeigen var(--dauer-2) var(--ease-setzen) calc(var(--staffel) * var(--galerie-stufe, 0)) both;
+}
+@media print, (forced-colors: active) {
+  [data-motion="galerie-filter"] {
+    animation: none !important;
   }
 }
 
@@ -768,7 +915,195 @@ html.k-bewegung:not(.k-notaus) [data-motion="sig-plan"][data-flucht="laden"] .pl
 }
 @keyframes szene-ziehen { from { scale: 1 0; } to { scale: 1 1; } }
 @keyframes szene-einblenden { from { opacity: 0; } to { opacity: 1; } }
+/* auch weg: Marke setzt sich */
 @keyframes szene-setzen { from { opacity: 0; scale: 0.6; } to { opacity: 1; scale: 1; } }
+
+/* schichten (großer Moment /bad, K-007, E3-GRAF-01) – Was unter der Fliese steckt: Schnitt durch einen Boden im Bad.
+   Der Untergrund liegt von Anfang an; je Satz der Liste setzt sich linear an Scroll eine Schicht darauf: die Abdichtung
+   streicht sich von links auf, der Kleber setzt sich, die Fugen füllen sich von unten, die Fliesen legen sich Fliese für
+   Fliese. Zeitstrahl je Satz (view-timeline --schichten-2 bis -5 an den Listenpunkten, über timeline-scope an der Figur
+   für die Zeichnung sichtbar). Solange die Liste läuft, klebt die Zeichnung unter dem Kopf. Alles nur ab 32rem Höhe
+   (Querformat, Zoom: ohne Kleben sähe man die Zeichnung nie fertig). Nur scale, translate und opacity. Ersatzpfad (ohne
+   animation-timeline oder timeline-scope, reduziert, ohne JS, nach dem Notaus, Druck, forced-colors) = Endzustand. */
+.schichten .schichten-abdichtung,
+.schichten .schichten-fugen {
+  transform-box: fill-box;
+}
+.schichten .schichten-abdichtung { transform-origin: 0 50%; }
+.schichten .schichten-fugen { transform-origin: 50% 100%; }
+@supports (animation-timeline: view()) and (timeline-scope: --a) {
+  @media screen and (prefers-reduced-motion: no-preference) and (height > 32rem) {
+    html.k-bewegung:not(.k-notaus) .schichten {
+      timeline-scope: --schichten-2, --schichten-3, --schichten-4, --schichten-5;
+    }
+    html.k-bewegung:not(.k-notaus) .schichten .schichten-satz:nth-child(2) { view-timeline: --schichten-2 block; }
+    html.k-bewegung:not(.k-notaus) .schichten .schichten-satz:nth-child(3) { view-timeline: --schichten-3 block; }
+    html.k-bewegung:not(.k-notaus) .schichten .schichten-satz:nth-child(4) { view-timeline: --schichten-4 block; }
+    html.k-bewegung:not(.k-notaus) .schichten .schichten-satz:nth-child(5) { view-timeline: --schichten-5 block; }
+    html.k-bewegung:not(.k-notaus) .schichten .schichten-buehne {
+      position: sticky;
+      top: calc(var(--spacing) * 16);
+      z-index: 10;
+    }
+    html.k-bewegung:not(.k-notaus) .schichten .schichten-abdichtung {
+      animation: schichten-streichen linear both;
+      animation-timeline: --schichten-2;
+      animation-range: cover 15% cover 45%;
+    }
+    html.k-bewegung:not(.k-notaus) .schichten .schichten-kleber {
+      animation: schichten-setzen linear both;
+      animation-timeline: --schichten-3;
+      animation-range: cover 15% cover 45%;
+    }
+    html.k-bewegung:not(.k-notaus) .schichten .schichten-fliese {
+      animation: schichten-setzen linear both;
+      animation-timeline: --schichten-4;
+    }
+    html.k-bewegung:not(.k-notaus) .schichten .schichten-fliese:nth-child(1) { animation-range: cover 15% cover 30%; }
+    html.k-bewegung:not(.k-notaus) .schichten .schichten-fliese:nth-child(2) { animation-range: cover 20% cover 35%; }
+    html.k-bewegung:not(.k-notaus) .schichten .schichten-fliese:nth-child(3) { animation-range: cover 25% cover 40%; }
+    html.k-bewegung:not(.k-notaus) .schichten .schichten-fliese:nth-child(4) { animation-range: cover 30% cover 45%; }
+    html.k-bewegung:not(.k-notaus) .schichten .schichten-fugen {
+      animation: schichten-fuellen linear both;
+      animation-timeline: --schichten-5;
+      animation-range: cover 15% cover 45%;
+    }
+  }
+  @media screen and (prefers-reduced-motion: no-preference) and (height > 32rem) and (width >= 64rem) {
+    html.k-bewegung:not(.k-notaus) .schichten .schichten-buehne {
+      top: calc(var(--spacing) * 24);
+    }
+  }
+}
+@keyframes schichten-streichen { from { scale: 0 1; } to { scale: 1 1; } }
+@keyframes schichten-setzen { from { opacity: 0; translate: 0 -16px; } to { opacity: 1; translate: 0 0; } }
+@keyframes schichten-fuellen { from { scale: 1 0; } to { scale: 1 1; } }
+@media print, (forced-colors: active) {
+  .schichten [data-motion] {
+    animation: none !important;
+  }
+  .schichten .schichten-buehne {
+    position: static !important;
+  }
+}
+
+/* weg (großer Moment /bad/badsanierung, K-007, E3-GRAF-02) – Vom Anruf bis zur letzten Fuge: Die Laserlinie zieht
+   scrollgebunden von Station zu Station. Jedes Wegstück (.weg-strecke, von einer Marke zur nächsten) ist sein eigener
+   Zeitstrahl; sein rotes Stück wächst linear, während das Stück die Höhe 60 % des Bildschirms (von oben) kreuzt. Die
+   Stücke stoßen aneinander, so steht die Spitze immer auf derselben Höhe und die Linie hat keine Lücke; die Marke der
+   nächsten Station setzt sich auf 4vh Scrollweg, sobald die Spitze sie erreicht (Zeitstrahl der Marke selbst). Nur scale
+   und opacity, Keyframes leitachse-ziehen und szene-setzen. Ersatzpfad (ohne animation-timeline oder ohne Längen im
+   Bereich, reduziert, ohne JavaScript, Notaus, Druck, erzwungene Farben) = Endzustand: Linie voll, alle Stationen gesetzt. */
+@supports (animation-timeline: view()) and (animation-range-end: cover calc(100% - 60vh)) {
+  @media screen and (prefers-reduced-motion: no-preference) {
+    [data-motion="weg"] .weg-strecke {
+      view-timeline: --weg-strecke block;
+    }
+    html.k-bewegung:not(.k-notaus) [data-motion="weg"] .weg-rot {
+      animation: leitachse-ziehen linear both;
+      animation-timeline: --weg-strecke;
+      animation-range: cover 40vh cover calc(100% - 60vh);
+    }
+    html.k-bewegung:not(.k-notaus) [data-motion="weg"] .weg-marke-an {
+      animation: szene-setzen linear both;
+      animation-timeline: view();
+      animation-range: cover 40vh cover 44vh;
+    }
+  }
+}
+@media print, (forced-colors: active) {
+  [data-motion="weg"] .weg-rot,
+  [data-motion="weg"] .weg-marke-an {
+    animation: none !important;
+  }
+}
+
+/* gefaelle-dusche (K-007, großer Moment /bad/barrierefreies-bad, E3-GRAF-03) – Schnitt durch eine Dusche ohne Stufe: Beim
+   Eintritt (Sicht 0,4, data-motion-stand="an" vom Bewegungsmodul) läuft ein Tropfen über das Gefälle in den Ablauf
+   (dauer-5 linear, einmal) und verschwindet darin; die drei Pfeile legen sich hinter ihm hin, je Pfeil sobald der Tropfen
+   seinen Anfang erreicht (dauer-2 · setzen). Weg in Einheiten der viewBox (px auf SVG-Elementen), Anteile von dauer-5;
+   gekoppelt an src/components/momente/gefaelle-dusche/geometrie.ts (Test test/gefaelle-dusche.test.mjs). Ersatzpfad =
+   Endzustand: Pfeile stehen, kein Tropfen (ohne JavaScript, reduziert, Notaus, Druck, erzwungene Farben, Zurück und
+   Vor). Nur translate und opacity. */
+.gefaelle-tropfen {
+  opacity: 0;
+}
+@media screen and (prefers-reduced-motion: no-preference) and (forced-colors: none) {
+  html.k-bewegung:not(.k-notaus) [data-motion="gefaelle-dusche"]:not([data-motion-stand="an"]) .gefaelle-tropfen {
+    opacity: 1;
+  }
+  html.k-bewegung:not(.k-notaus) [data-motion="gefaelle-dusche"]:not([data-motion-stand="an"]) .gefaelle-pfeil {
+    opacity: 0;
+  }
+  html.k-bewegung:not(.k-notaus) [data-motion="gefaelle-dusche"][data-motion-stand="an"] .gefaelle-tropfen {
+    animation: gefaelle-tropfen var(--dauer-5) linear both;
+  }
+  html.k-bewegung:not(.k-notaus) [data-motion="gefaelle-dusche"][data-motion-stand="an"] .gefaelle-pfeil {
+    animation: gefaelle-pfeil var(--dauer-2) var(--ease-setzen) both;
+  }
+  html.k-bewegung:not(.k-notaus) [data-motion="gefaelle-dusche"][data-motion-stand="an"] .gefaelle-pfeil:nth-child(1) { animation-delay: calc(var(--dauer-5) * 0.05); }
+  html.k-bewegung:not(.k-notaus) [data-motion="gefaelle-dusche"][data-motion-stand="an"] .gefaelle-pfeil:nth-child(2) { animation-delay: calc(var(--dauer-5) * 0.32); }
+  html.k-bewegung:not(.k-notaus) [data-motion="gefaelle-dusche"][data-motion-stand="an"] .gefaelle-pfeil:nth-child(3) { animation-delay: calc(var(--dauer-5) * 0.58); }
+}
+@keyframes gefaelle-tropfen {
+  0% { translate: 0 0; opacity: 1; }
+  85% { translate: 147px 14px; opacity: 1; }
+  100% { translate: 159px 29.5px; opacity: 0; }
+}
+@keyframes gefaelle-pfeil {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+/* Zurück und Vor (html.k-verlauf aus B-01, wie SIG-1): sofort der Endzustand, der Tropfen läuft nicht noch einmal */
+html.k-verlauf [data-motion="gefaelle-dusche"] .gefaelle-tropfen {
+  animation: none !important;
+  opacity: 0 !important;
+}
+html.k-verlauf [data-motion="gefaelle-dusche"] .gefaelle-pfeil {
+  animation: none !important;
+  opacity: 1 !important;
+}
+
+/* gefaelle-balkon (großer Moment /balkon-terrasse, K-007, E3-GRAF-04): Schnitt durch einen Balkon. Ein Regentropfen fällt
+   auf die Platten, läuft gleichmäßig über das Gefälle zur Kante, über das Tropfblech in die Rinne und bleibt dort liegen;
+   hinter ihm erscheinen die Pfeile des Wasserwegs (je Pfeil --ab = Anteil von dauer-5, wenn der Tropfen ihn erreicht).
+   Auslöser Sicht 0,4 (data-motion-stand="an" vom Bewegungsmodul), dauer-5 linear, einmal; gesamt 1,36 s. Gezeichnet ist
+   der Endzustand: ohne JavaScript, reduziert, nach dem Notaus, im Druck und bei erzwungenen Farben liegt der Tropfen in der
+   Rinne und die Pfeile stehen still. Nur translate und opacity, Verschiebung in Zeichnungseinheiten aus
+   momente/gefaelle-balkon/geometrie.ts (WEG minus ENDE; test/gefaelle-balkon.test.mjs vergleicht). */
+html.k-bewegung:not(.k-notaus) [data-motion="gefaelle-balkon"]:not([data-motion-stand="an"]) .gefaelle-balkon-tropfen,
+html.k-bewegung:not(.k-notaus) [data-motion="gefaelle-balkon"]:not([data-motion-stand="an"]) .gefaelle-balkon-pfeil {
+  opacity: 0;
+}
+html.k-bewegung:not(.k-notaus) [data-motion="gefaelle-balkon"][data-motion-stand="an"] .gefaelle-balkon-tropfen {
+  animation: gefaelle-balkon-tropfen var(--dauer-5) linear both;
+}
+html.k-bewegung:not(.k-notaus) [data-motion="gefaelle-balkon"][data-motion-stand="an"] .gefaelle-balkon-pfeil {
+  animation: gefaelle-balkon-pfeil var(--dauer-2) linear calc(var(--dauer-5) * var(--ab, 0)) both;
+}
+@keyframes gefaelle-balkon-tropfen {
+  0% { opacity: 0; translate: -161px -86px; }
+  6% { opacity: 1; translate: -161px -72.44px; }
+  15% { translate: -161px -52.1px; }
+  79% { translate: -13px -41.74px; }
+  87% { translate: 0 -30px; }
+  100% { translate: 0 0; }
+}
+@keyframes gefaelle-balkon-pfeil {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@media print, (forced-colors: active) {
+  .gefaelle-balkon-tropfen,
+  .gefaelle-balkon-pfeil {
+    animation: none !important;
+    opacity: 1 !important;
+    translate: none !important;
+  }
+}
+/* Zurück und Vor (html.k-verlauf aus B-01, E-045): sofort der Endzustand, der Tropfen läuft nicht noch einmal */
+html.k-verlauf [data-motion="gefaelle-balkon"] .gefaelle-balkon-tropfen,
+html.k-verlauf [data-motion="gefaelle-balkon"] .gefaelle-balkon-pfeil { animation: none !important; opacity: 1 !important; translate: none !important; }
 
 /* einzugsband (K-007, /standorte und [stadt]; E4-NACH-02, E4-N2-03): beim Laden zieht sich die Kante jeder Zone von links
    auf, Zone 2 und 3 je fünf Staffelstufen später (dauer-3 · setzen, gesamt 1,2 s); Orte und Entfernungen stehen ab dem
@@ -794,6 +1129,53 @@ html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"] .einzugsband-zone:nth
     animation: none !important;
   }
 }
+
+/* karte (K-007, /ueber-uns und /standorte; E3-GRAF-09) – Einsatzkarte: beim Eintritt (Sicht 0,4, data-motion-stand vom
+   Bewegungsmodul) legen sich die Ringe um Aßlar von innen nach außen an ihren Platz (scale 0,6 → 1 mit Deckkraft, dauer-3 ·
+   setzen; 25 km fünf Staffelstufen nach 10 km); die Punkte jeder Zone erscheinen mit ihrem Ring (Deckkraft dauer-2), die
+   Orte über 25 km zuletzt; gesamt 1,1 s. Aßlar, Achsen, Raster und alle Beschriftungen stehen ab dem ersten Bild.
+   Startzustände nur unter html.k-bewegung ohne Notaus; reduziert, ohne JS, nach dem Notaus, im Druck und in erzwungenen
+   Farben steht die Karte fertig. Nur scale und opacity, Übergänge statt Keyframes (wie auftritt). */
+.karte-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+html.k-bewegung [data-motion="karte"] .karte-ring {
+  transition: scale var(--dauer-3) var(--ease-setzen), opacity var(--dauer-3) var(--ease-setzen);
+}
+html.k-bewegung [data-motion="karte"] .karte-orte {
+  transition: opacity var(--dauer-2) var(--ease-setzen);
+}
+html.k-bewegung [data-motion="karte"] .karte-orte[data-zone="nah"] {
+  transition-delay: calc(var(--staffel) * 4);
+}
+html.k-bewegung [data-motion="karte"] .karte-ring[data-zone="mittel"] {
+  transition-delay: calc(var(--staffel) * 5);
+}
+html.k-bewegung [data-motion="karte"] .karte-orte[data-zone="mittel"] {
+  transition-delay: calc(var(--staffel) * 9);
+}
+html.k-bewegung [data-motion="karte"] .karte-orte[data-zone="weit"] {
+  transition-delay: calc(var(--staffel) * 13);
+}
+html.k-bewegung:not(.k-notaus) [data-motion="karte"]:not([data-motion-stand="an"]) .karte-ring {
+  opacity: 0;
+  scale: 0.6;
+}
+html.k-bewegung:not(.k-notaus) [data-motion="karte"]:not([data-motion-stand="an"]) .karte-orte {
+  opacity: 0;
+}
+@media print, (forced-colors: active) {
+  [data-motion="karte"] .karte-ring,
+  [data-motion="karte"] .karte-orte {
+    opacity: 1 !important;
+    scale: none !important;
+    transition: none !important;
+  }
+}
+/* Zurück und Vor (html.k-verlauf aus B-01, E-045): die Karte steht sofort fertig */
+html.k-verlauf [data-motion="karte"] .karte-ring,
+html.k-verlauf [data-motion="karte"] .karte-orte { opacity: 1 !important; scale: none !important; transition: none !important; }
 
 /* sig-kreuzlinie (SIG-1, nur /) – Waage und Lot wachsen aus dem Kreuzpunkt (dauer-5, linear seit E3-NACH-02); mobil nur das Lot.
    Lage (oben, links) über Klassen am Element; Endzustand = beide Linien voll. */

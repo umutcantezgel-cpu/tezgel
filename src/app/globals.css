@@ -427,6 +427,13 @@
   .zeitband-stueck {
     flex: var(--jahre, 1) 1 0%;
   }
+  /* Einsatzkarte (großer Moment karte, E3-GRAF-09): Beschriftung an einem Punkt der Zeichnung; Lage in Prozent der
+     quadratischen Zeichenfläche (--x, --y am Element, aus src/components/momente/karte/geometrie.ts) */
+  .karte-marke {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+  }
   /* Handy quer (K-013): Kopf und untere Leiste zusammen höchstens ein Viertel der Höhe. Kopf 48 px statt 64 px, Leiste
      44 px mit Zeichen und Wort nebeneinander (Touchziel bleibt 44 × 44); Messung in der Prüfung „Erstes Bild“. */
   @media (orientation: landscape) and (height <= 32rem) {

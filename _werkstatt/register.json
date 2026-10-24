@@ -1,5 +1,5 @@
 {
-  "quelle": "KERN v3.3 K-007 (24.10.2026, E-043: B-01 Fliese für Fliese), Maschinenfassung wie src/lib/motion/register.ts",
+  "quelle": "KERN v3.4 K-007 (24.10.2026, E-044; große Momente E3-ORCH-02a, E-045), Maschinenfassung wie src/lib/motion/register.ts",
   "kennungen": [
     "verlegen",
     "seitenwechsel",
@@ -19,7 +19,15 @@
     "szene-ablauf",
     "sig-plan",
     "einzugsband",
-    "fugenband"
+    "fugenband",
+    "schichten",
+    "weg",
+    "gefaelle-dusche",
+    "gefaelle-balkon",
+    "formatregler",
+    "vorher-nachher",
+    "karte",
+    "galerie-filter"
   ],
   "v3": [
     "verlegen",
@@ -40,10 +48,18 @@
     "szene-ablauf",
     "sig-plan",
     "einzugsband",
-    "fugenband"
+    "fugenband",
+    "schichten",
+    "weg",
+    "gefaelle-dusche",
+    "gefaelle-balkon",
+    "formatregler",
+    "vorher-nachher",
+    "karte",
+    "galerie-filter"
   ],
   "entfallen_e009": [],
-  "hinweis": "`kennungen` = alles, was registriert ist (bewegung.mjs prüft dagegen). Seit E-037 (Entscheidung des Auftraggebers) sind die SVG-Bewegungen aus v2 fester Teil des Systems und der Plan-Morph (seitenwechsel) ist zurück; startbild löst seit E-037 über Sichtbarkeit aus (0,4). Große Momente (schichten, weg, gefaelle-dusche, gefaelle-balkon, formatregler, vorher-nachher, galerie-filter, karte) kommen mit E3-ORCH-02a dazu.",
+  "hinweis": "`kennungen` = alles, was registriert ist (bewegung.mjs prüft dagegen). Seit E-037 (Entscheidung des Auftraggebers) sind die SVG-Bewegungen aus v2 fester Teil des Systems und der Plan-Morph (seitenwechsel) ist zurück; startbild löst seit E-037 über Sichtbarkeit aus (0,4). Die großen Momente stehen seit E3-ORCH-02a im Register (Bauvorgaben je Moment in _werkstatt/register/<kennung>.json).",
   "entfernt": [],
   "zurueck": [
     {

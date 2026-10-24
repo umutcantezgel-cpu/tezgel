@@ -79,6 +79,8 @@ export interface TunInhalt {
 /** 4 · So läuft es ab */
 export interface AblaufInhalt {
   titel: string;
+  /** Satz unter der Überschrift (z. B. der feste Ansprechpartner), vor den Schritten oder dem großen Moment (E3-GRAF-02) */
+  einleitung?: Markentext;
   schritte: { titel: string; text: Markentext }[];
   /** Belege aus dem Faktenblatt unter den Schritten, je mit Fugenkreuz (E-040) */
   belege?: Markentext[];

@@ -33,16 +33,21 @@ export const AUSLOESER = {
   notiert: 'erfolg', laden: 'absenden', seitenwechsel: 'navigation',
   // E-037: das Startbild legt sich beim Eintritt frei (Sicht 0,4), beim Durchscrollen auslösen
   startbild: 'scroll',
+  // große Momente (E3-ORCH-02a): Szenen beim Durchscrollen (Sicht 0,4 oder scroll-gebunden), Regler und Auswahl folgen der Eingabe
+  schichten: 'scroll', weg: 'scroll', 'gefaelle-dusche': 'scroll', 'gefaelle-balkon': 'scroll', karte: 'scroll',
+  formatregler: 'regler', 'vorher-nachher': 'regler', 'galerie-filter': 'auswahl',
 };
 // Auslöser, die nur nach Formularsendung oder Navigation entstehen. Sie werden bewusst nicht ausgelöst.
 const NICHT_AUSLOESBAR = {
   erfolg: 'Erfolgsmeldung entsteht erst nach einer Formularsendung',
   absenden: 'Ladeanzeige entsteht erst nach Absenden (keine Formularsendung in Prüfläufen)',
   navigation: 'Seitenwechsel entsteht nur per Navigation',
+  regler: 'Regler ohne Animation (K-007 direkt): die Lage folgt der Eingabe',
+  auswahl: 'Galerie: Folgen per Playwright-Schritt (Klick auf [data-galerie-wahl]), bis das Werkzeug eine Auswahl-Folge kennt',
 };
 const ZEITPUNKTE = [0, 0.25, 0.5, 0.75, 1];
 const SCROLL_ANTEILE = [0.1, 0.3, 0.5, 0.7, 0.9];   // Scrollmodus: Anteile am Durchgang des Elements (Eintritt bis Austritt)
-const WAHL_FOLGEN = ['drittel', 'kreuz'];            // verband: Start ist Halb (Standard); Folgen Halb → Drittel, Drittel → Kreuz
+const WAHL_FOLGEN = ['drittel', 'fisch', 'kreuz'];   // verband: Start ist Kreuzfuge (Musterprobe /fliesen, E3-GRAF-06); fehlt ein Feld, Befund
 const LADE_MIN_HOEHE = 400;                          // Auslöser seite, Ausschnitt: mindestens so hoch
 const LADE_PUFFER_MS = 150;                          // Auslöser seite: Puffer nach der längsten Dauer (letztes Bild)
 const LADE_CPU_RATE = 1;                             // Auslöser seite: CPU-Drosselung je Bild (CDP); Maßstab 4× verschiebt den Beginn der Beobachtung (Befund)
@@ -360,10 +365,10 @@ async function zeitBilder(page, loc, { st, verzeichnis, praefix, bildModus, folg
 }
 
 /**
- * Auslöser wahl (verband): je Radiowechsel in WAHL_FOLGEN eine Folge mit fünf Zeitpunkten. Der Start ist Halb (Standard),
- * die Folgen sind Halb → Drittel und Drittel → Kreuz. Nach jeder Folge werden die Übergänge abgebrochen, damit die nächste
- * Folge nur ihre eigenen zeigt. Das Feld wird über seinen Wert gewählt, nicht über die Position (Reihenfolge im Markup:
- * Kreuz, Halb, Drittel).
+ * Auslöser wahl (verband): je Radiowechsel in WAHL_FOLGEN eine Folge mit fünf Zeitpunkten. Die Musterprobe auf /fliesen
+ * startet bei Kreuzfuge (E3-GRAF-06), die Folgen sind dort Kreuz → Drittel, Drittel → Fischgrät und Fischgrät → Kreuz. Nach
+ * jeder Folge werden die Übergänge abgebrochen, damit die nächste Folge nur ihre eigenen zeigt. Das Feld wird über seinen Wert
+ * gewählt, nicht über die Position; fehlt ein Feld (älterer Umschalter ohne Fischgrät), wird die Folge mit Befund übersprungen.
  */
 async function wahlFolgen(page, loc, info, { kennung, verzeichnis, bildModus }) {
   const gewaehlt = () => page.evaluate((k) => {

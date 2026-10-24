@@ -4,8 +4,8 @@
 // (vorher stand nur jeder zweite tiefer und wirkte wie ein Versatzfehler, E2-SICHT-2 Befund 7). Mobil senkrecht genau auf
 // dem Lot der Laserlinie. Je Schritt ein Fugenkreuz am Anfang der Linie und die Nummer in Mono, ohne Kästen. Darunter,
 // abgesetzt durch eine Fuge, Belege aus dem Faktenblatt (ab lg in Spalten wie die Schritte, je mit Fugenkreuz). Ein großer
-// Moment (z. B. der Weg einer Badsanierung) kann die Schritte ersetzen; darunter ein Hinweis mit Verweis. Der Abschnitt
-// zeichnet spät (unter dem ersten Bildschirm). Serverkomponente.
+// Moment (z. B. der Weg einer Badsanierung) kann die Schritte ersetzen; darunter ein Hinweis mit Verweis. Wahlweise ein Satz
+// unter der Überschrift (Einleitung). Der Abschnitt zeichnet spät (unter dem ersten Bildschirm). Serverkomponente.
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import Abschnitt from '@/components/kern/Abschnitt';
@@ -65,7 +65,16 @@ function Belege({ belege }: { belege: string[] }) {
 
 export default function Ablauf({ inhalt, moment }: { inhalt: AblaufInhalt; moment?: ReactNode }) {
   return (
-    <Abschnitt id="ablauf" formel="ablauf" leitachse spaet flaeche="fliese" titel={inhalt.titel} className="lg:pb-32">
+    <Abschnitt
+      id="ablauf"
+      formel="ablauf"
+      leitachse
+      spaet
+      flaeche="fliese"
+      titel={inhalt.titel}
+      einleitung={inhalt.einleitung ? <p><Textmarken text={inhalt.einleitung} /></p> : undefined}
+      className="lg:pb-32"
+    >
       {moment ?? <Schritte schritte={inhalt.schritte} />}
       {inhalt.belege && inhalt.belege.length > 0 && <Belege belege={inhalt.belege} />}
       {inhalt.hinweis && (

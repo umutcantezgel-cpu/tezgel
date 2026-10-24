@@ -41,6 +41,16 @@ export const REGISTER: Record<string, Registereintrag> = {
   // E4-NACH-02: legt sich beim Laden per CSS frei (Planblatt des Einstiegs), kein Beobachter
   einzugsband: { ausloeser: 'laden' },
   fugenband: { ausloeser: 'scroll' },
+  // große Momente (KERN v3.4 K-007, E3-ORCH-02a; E3-GRAF-01 bis 09): Szenen scroll-gebunden per CSS, Sicht 0,4 über das
+  // Modul (data-motion-stand), Regler und Auswahl ohne Beobachter; verband steht oben
+  schichten: { ausloeser: 'scroll' },
+  weg: { ausloeser: 'scroll' },
+  'gefaelle-dusche': { ausloeser: 'sicht', schwelle: 0.4 },
+  'gefaelle-balkon': { ausloeser: 'sicht', schwelle: 0.4 },
+  formatregler: { ausloeser: 'interaktion' },
+  'vorher-nachher': { ausloeser: 'interaktion' },
+  karte: { ausloeser: 'sicht', schwelle: 0.4 },
+  'galerie-filter': { ausloeser: 'interaktion' },
 };
 
 export const KENNUNGEN = Object.keys(REGISTER);
