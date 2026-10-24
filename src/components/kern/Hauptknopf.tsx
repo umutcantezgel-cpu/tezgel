@@ -22,16 +22,20 @@ interface HauptknopfProps {
 }
 
 export default function Hauptknopf({ href = HAUPTAKTION.ziel, children = HAUPTAKTION.text, erstesBild = false, breit = false, className }: HauptknopfProps) {
-  return (
-    <Link
-      href={href}
-      data-hauptknopf=""
-      data-erstes-bild={erstesBild ? 'hauptknopf' : undefined}
-      data-motion="druck"
-      className={knopfKlassen('haupt', clsx(breit && 'w-full sm:w-auto', className))}
-    >
+  const merkmale = {
+    'data-hauptknopf': '',
+    'data-erstes-bild': erstesBild ? 'hauptknopf' : undefined,
+    'data-motion': 'druck',
+    className: knopfKlassen('haupt', clsx(breit && 'w-full sm:w-auto', className)),
+  };
+  const inhalt = (
+    <>
       <span>{zusammen(children)}</span>
       <Icon name="pfeil-rechts" groesse={5} />
-    </Link>
+    </>
   );
+  // Anker derselben Seite (#termin, #anfrage) als einfacher Link: Der Browser springt weich (scroll-behavior) und setzt den
+  // Fokus-Startpunkt, ohne Router-Navigation im Klick (Reaktion, E-033); Seitenwechsel bleiben bei next/link (B-01).
+  if (href.startsWith('#')) return <a href={href} {...merkmale}>{inhalt}</a>;
+  return <Link href={href} {...merkmale}>{inhalt}</Link>;
 }

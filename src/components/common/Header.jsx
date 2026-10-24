@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { Suspense, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -123,90 +123,94 @@ export default function Header({ isMobileMenuOpen }) {
                     <BrandMark sublineClassName="hidden @5xl:@max-7xl:block" />
                 </Link>
 
-                <nav ref={navRef} aria-label="Hauptnavigation" className="hidden h-full items-stretch @7xl:flex">
-                    {navigationLinks.map((link, index) => {
-                        const active = isSectionActive(pathname, link);
-                        const hatBlatt = link.items.length > 0;
-                        const isOpen = openMenu === link.name;
-                        const panelId = `kopf-blatt-${index}`;
+                {/* Navigation mit Aufklappblättern als eigene Hydrierungseinheit (E-033): unter 80 rem verborgen, ein früher Tipp auf
+                    Logo, Telefon oder Hauptknopf wartet nicht auf sie */}
+                <Suspense>
+                    <nav ref={navRef} aria-label="Hauptnavigation" className="hidden h-full items-stretch @7xl:flex">
+                        {navigationLinks.map((link, index) => {
+                            const active = isSectionActive(pathname, link);
+                            const hatBlatt = link.items.length > 0;
+                            const isOpen = openMenu === link.name;
+                            const panelId = `kopf-blatt-${index}`;
 
-                        return (
-                            <div
-                                key={link.name}
-                                className="relative flex items-stretch"
-                                onMouseEnter={() => (hatBlatt ? openPanel(link.name) : scheduleClose())}
-                                onMouseLeave={scheduleClose}
-                            >
-                                {/* Laserlinie: aktueller Bereich (Rot, K-003 Nr. 5); geöffnetes Blatt: Tinte */}
-                                <div className={clsx('flex items-stretch border-b-2', active ? 'border-laser' : isOpen ? 'border-tinte' : 'border-transparent')}>
-                                    <Link
-                                        href={link.path}
-                                        onClick={() => setOpenMenu(null)}
-                                        aria-current={active ? 'page' : undefined}
-                                        className={clsx(
-                                            'flex items-center whitespace-nowrap pl-2 text-fs-2 font-semibold text-tinte transition-colors dauer-1 ease-setzen hover:text-tinte-2',
-                                            hatBlatt ? 'pr-1' : 'pr-2'
-                                        )}
-                                        data-motion="zustand"
-                                    >
-                                        {link.name}
-                                    </Link>
-                                    {hatBlatt && (
-                                        <button
-                                            type="button"
-                                            aria-expanded={isOpen}
-                                            aria-controls={panelId}
-                                            aria-label={`Unterpunkte zu ${link.name} ${isOpen ? 'schließen' : 'öffnen'}`}
-                                            onClick={() => setOpenMenu(isOpen ? null : link.name)}
-                                            className="flex w-6 items-center justify-center text-tinte-2 transition-colors dauer-1 ease-setzen hover:text-tinte"
+                            return (
+                                <div
+                                    key={link.name}
+                                    className="relative flex items-stretch"
+                                    onMouseEnter={() => (hatBlatt ? openPanel(link.name) : scheduleClose())}
+                                    onMouseLeave={scheduleClose}
+                                >
+                                    {/* Laserlinie: aktueller Bereich (Rot, K-003 Nr. 5); geöffnetes Blatt: Tinte */}
+                                    <div className={clsx('flex items-stretch border-b-2', active ? 'border-laser' : isOpen ? 'border-tinte' : 'border-transparent')}>
+                                        <Link
+                                            href={link.path}
+                                            onClick={() => setOpenMenu(null)}
+                                            aria-current={active ? 'page' : undefined}
+                                            className={clsx(
+                                                'flex items-center whitespace-nowrap pl-2 text-fs-2 font-semibold text-tinte transition-colors dauer-1 ease-setzen hover:text-tinte-2',
+                                                hatBlatt ? 'pr-1' : 'pr-2'
+                                            )}
                                             data-motion="zustand"
                                         >
-                                            <Icon
-                                                name="winkel-unten"
-                                                groesse={4}
-                                                className={clsx('motion-safe:transition-transform motion-safe:dauer-2 motion-safe:ease-setzen motion-reduce:transition-none', isOpen && 'rotate-180')}
-                                            />
-                                        </button>
+                                            {link.name}
+                                        </Link>
+                                        {hatBlatt && (
+                                            <button
+                                                type="button"
+                                                aria-expanded={isOpen}
+                                                aria-controls={panelId}
+                                                aria-label={`Unterpunkte zu ${link.name} ${isOpen ? 'schließen' : 'öffnen'}`}
+                                                onClick={() => setOpenMenu(isOpen ? null : link.name)}
+                                                className="flex w-6 items-center justify-center text-tinte-2 transition-colors dauer-1 ease-setzen hover:text-tinte"
+                                                data-motion="zustand"
+                                            >
+                                                <Icon
+                                                    name="winkel-unten"
+                                                    groesse={4}
+                                                    className={clsx('motion-safe:transition-transform motion-safe:dauer-2 motion-safe:ease-setzen motion-reduce:transition-none', isOpen && 'rotate-180')}
+                                                />
+                                            </button>
+                                        )}
+                                    </div>
+
+                                    {hatBlatt && (
+                                        <div
+                                            id={panelId}
+                                            hidden={!isOpen}
+                                            className="mega-blatt absolute left-0 top-full w-max min-w-full max-w-mass border border-t-0 border-fuge bg-fliese shadow-gesetzt"
+                                            data-motion="aufklappen"
+                                        >
+                                            <p className="border-b border-fuge px-6 py-4 text-fs-2 text-tinte-2">{link.kurz}</p>
+                                            <ul>
+                                                {link.items.map((item) => {
+                                                    const itemActive = pathname === item.path;
+                                                    return (
+                                                        <li key={item.path + item.name} className="border-b border-fuge last:border-b-0">
+                                                            <Link
+                                                                href={item.path}
+                                                                prefetch={false}
+                                                                onClick={() => setOpenMenu(null)}
+                                                                aria-current={itemActive ? 'page' : undefined}
+                                                                className="group flex items-center justify-between gap-6 px-6 py-3 transition-colors dauer-1 ease-setzen hover:bg-kalk"
+                                                                data-motion="zustand"
+                                                            >
+                                                                <span className="flex flex-col gap-1">
+                                                                    <span className="text-fs-3 font-semibold text-tinte group-aria-[current=page]:text-laser-tief">{item.name}</span>
+                                                                    <span className="text-fs-2 text-tinte-2">{item.desc}</span>
+                                                                </span>
+                                                                <Icon name="pfeil-rechts" groesse={4} className="shrink-0 text-tinte-2" />
+                                                            </Link>
+                                                        </li>
+                                                    );
+                                                })}
+                                            </ul>
+                                        </div>
                                     )}
                                 </div>
-
-                                {hatBlatt && (
-                                    <div
-                                        id={panelId}
-                                        hidden={!isOpen}
-                                        className="mega-blatt absolute left-0 top-full w-max min-w-full max-w-mass border border-t-0 border-fuge bg-fliese shadow-gesetzt"
-                                        data-motion="aufklappen"
-                                    >
-                                        <p className="border-b border-fuge px-6 py-4 text-fs-2 text-tinte-2">{link.kurz}</p>
-                                        <ul>
-                                            {link.items.map((item) => {
-                                                const itemActive = pathname === item.path;
-                                                return (
-                                                    <li key={item.path + item.name} className="border-b border-fuge last:border-b-0">
-                                                        <Link
-                                                            href={item.path}
-                                                            prefetch={false}
-                                                            onClick={() => setOpenMenu(null)}
-                                                            aria-current={itemActive ? 'page' : undefined}
-                                                            className="group flex items-center justify-between gap-6 px-6 py-3 transition-colors dauer-1 ease-setzen hover:bg-kalk"
-                                                            data-motion="zustand"
-                                                        >
-                                                            <span className="flex flex-col gap-1">
-                                                                <span className="text-fs-3 font-semibold text-tinte group-aria-[current=page]:text-laser-tief">{item.name}</span>
-                                                                <span className="text-fs-2 text-tinte-2">{item.desc}</span>
-                                                            </span>
-                                                            <Icon name="pfeil-rechts" groesse={4} className="shrink-0 text-tinte-2" />
-                                                        </Link>
-                                                    </li>
-                                                );
-                                            })}
-                                        </ul>
-                                    </div>
-                                )}
-                            </div>
-                        );
-                    })}
-                </nav>
+                            );
+                        })}
+                    </nav>
+                </Suspense>
 
                 {/* unter lg tragen die untere Leiste Anruf und Hauptknopf; der Kopf zeigt dort nur Logo und Menü-Schalter
                     (Sichtprüfung E2 Runde 2: doppelte Bedienflächen, Hauptknopf quer am Rand angeschnitten). Auf den
