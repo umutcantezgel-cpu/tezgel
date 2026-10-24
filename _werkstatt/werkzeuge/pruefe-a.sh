@@ -36,13 +36,14 @@ for p in ${PFADE[@]+"${PFADE[@]}"}; do case "$p" in /*) ;; *) echo "Ansichtspfad
 # Slug wie lib.mjs (slug()): / → start, /a/b → a__b
 slug_von() { local s="${1#/}"; s="${s//\//__}"; echo "${s:-start}"; }
 
-# Specs je geänderter Datei: Muster aus test-zuordnung.json (Regex, sonst Teilstring); ALLE = alle funktion-Specs.
+# Specs je geänderter Datei: Muster aus test-zuordnung.json (Regex, sonst Teilstring); ALLE = alle funktion-Specs und verlegen.spec.mjs.
 spec_liste() {
   node -e '
     const fs = require("node:fs");
     const [zuordnung, testDir, ...dateien] = process.argv.slice(1);
     const z = JSON.parse(fs.readFileSync(zuordnung, "utf8"));
-    const alle = fs.readdirSync(testDir).filter((f) => /^funktion-.*\.spec\.mjs$/.test(f)).sort();
+    // ALLE = alle Specs der Funktionsliste und der Seitenwechsel B-01 (verlegen.spec.mjs, wirkt auf jedem Seitenwechsel; E-032)
+    const alle = fs.readdirSync(testDir).filter((f) => /^(funktion-.*|verlegen)\.spec\.mjs$/.test(f)).sort();
     const aus = new Set();
     for (const d of dateien) for (const e of z) {
       let trifft;

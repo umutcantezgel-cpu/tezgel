@@ -67,5 +67,8 @@
  "E3-ORCH-01a": "Entwurf gebaut (E-025: vorlagen/ErzaehlSeite, teile/*, Textmarken, Inhalt barrierefreies-bad im Schaufenster); Umstellung der Startseite nach dem Tor E2",
  "E3-ORCH-01b": "Entwurf gebaut (WissensSeite mit Wissensblöcken, E-025)",
  "E3-ORCH-01c": "Entwurf gebaut (OrtsSeite, Texte aus ortsInhalt() in src/inhalte/orte.ts, Test orte 1 bis 6; Hauptziel #anfrage bei der Umstellung in navigation.js)",
- "E2-PRUEF-TESTS": "erledigt (E-028, 129/0/5)"
+ "E2-PRUEF-TESTS": "erledigt (E-028, 129/0/5)",
+ "E2-PRUEF-A1": "erledigt (E-032)",
+ "E2-PRUEF-A2": "erledigt (E-032, Lesbarkeit /bad und /leistungen folgen mit E3-BAU)",
+ "E2-PRUEF-A3": "erledigt (E-032, 404-Befunde waren Werkzeugbefunde, behoben)"
 }

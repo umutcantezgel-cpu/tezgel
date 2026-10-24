@@ -180,5 +180,34 @@
       "funktion-badanfrage.spec.mjs",
       "funktion-projektcheck.spec.mjs"
     ]
+  },
+  {
+    "muster": "components/kern/|lib/textmarken|config/glossar",
+    "specs": [
+      "funktion-navigation.spec.mjs",
+      "funktion-kontaktwege.spec.mjs",
+      "funktion-hero-kontakt.spec.mjs"
+    ]
+  },
+  {
+    "muster": "components/start/|components/vorlagen/|src/inhalte/",
+    "specs": [
+      "funktion-hero-kontakt.spec.mjs",
+      "funktion-kontaktwege.spec.mjs",
+      "funktion-navigation.spec.mjs",
+      "funktion-einwilligung.spec.mjs"
+    ]
+  },
+  {
+    "muster": "components/verlegen|lib/verlegen",
+    "specs": [
+      "verlegen.spec.mjs"
+    ]
+  },
+  {
+    "muster": "components/intro|lib/intro|lib/motion",
+    "specs": [
+      "ALLE"
+    ]
   }
 ]

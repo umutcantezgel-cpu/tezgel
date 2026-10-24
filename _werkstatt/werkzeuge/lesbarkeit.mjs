@@ -58,7 +58,8 @@ async function extrahiere(page) {
   return page.evaluate(() => {
     // Aufklappbares öffnen, damit Antworten im Text stehen (nur lesen).
     document.querySelectorAll('details').forEach((d) => d.setAttribute('open', ''));
-    const AUS = 'nav, header, footer, form, [data-zitat], blockquote, [aria-hidden="true"]';
+    // header innerhalb von main ist Inhalt (Einstieg mit Vorspann), der Kopf der Website liegt außerhalb von main (E-032).
+    const AUS = 'nav, footer, form, [data-zitat], blockquote, [aria-hidden="true"]';
     const sichtbar = (el) => {
       const cs = getComputedStyle(el);
       if (cs.display === 'none' || cs.visibility === 'hidden') return false;
@@ -282,7 +283,8 @@ async function probe() {
   }
   const e = bewerte(roh, 'erzaehl', { pfad: 'probe' });
   // Erwartet: genau die bekannten Verstöße aus der Probe; das Zitat mit Gedankenstrich zählt nicht; der Glossarbegriff mit Erklärung ist erfüllt.
-  const erwartet = { gedankenstrich: 2, bindestrich: 1, floskel: 1, 'satz-lang': 1, 'absatz-lang': 1, 'glossar-offen': 1 };
+  // satz-lang 2: einer im Fließtext, einer im Vorspann innerhalb von <header> in main (E-032)
+  const erwartet = { gedankenstrich: 2, bindestrich: 1, floskel: 1, 'satz-lang': 2, 'absatz-lang': 1, 'glossar-offen': 1 };
   const gezaehlt = e.zaehlung;
   const abweichungen = [...new Set([...Object.keys(erwartet), ...Object.keys(gezaehlt)])]
     .filter((k) => (gezaehlt[k] ?? 0) !== (erwartet[k] ?? 0))

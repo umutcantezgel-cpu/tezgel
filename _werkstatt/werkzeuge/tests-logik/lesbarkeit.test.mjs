@@ -77,10 +77,13 @@ test('bindestrichwoerter: Präfix E-Mail- zählt als erlaubt, Groß und klein eg
   assert.deepEqual(bindestrichwoerter('e-mail schreiben', erlaubt), []);
 });
 
-test('floskeln: nahtlos wird nur als ganzes Wort gefunden („nahtloser“ nicht)', () => {
-  assert.equal(floskeln('Ein nahtloser Übergang', floskelRegeln).length, 0);
+// Die Liste führt seit 583656d auch die gebeugten Formen (nahtlose, nahtloser …); der Test nahm „nahtloser“ noch als
+// Gegenbeispiel und war seitdem rot (E-032). Gegenbeispiel für die Wortgrenze ist jetzt ein Wort, das nicht in der Liste steht.
+test('floskeln: nahtlos wird nur als ganzes Wort gefunden („Nahtlosigkeit“ nicht), gebeugte Formen der Liste schon', () => {
+  assert.equal(floskeln('Eine Nahtlosigkeit gibt es nicht', floskelRegeln).length, 0);
   const treffer = floskeln('Das passt nahtlos.', floskelRegeln);
   assert.deepEqual(treffer.map((t) => t.treffer), ['nahtlos']);
+  assert.deepEqual(floskeln('Ein nahtloser Übergang', floskelRegeln).map((t) => t.treffer), ['nahtloser']);
 });
 
 test('floskeln: Stakkato „Dicht. Sauber. Termintreu.“ und „nicht nur … sondern auch“ werden gefunden', () => {

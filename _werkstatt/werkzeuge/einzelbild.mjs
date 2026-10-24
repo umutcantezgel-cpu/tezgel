@@ -69,7 +69,14 @@ for (const a of ansichten) {
   if (schrift) await context.addInitScript(SCHRIFT_INIT, Number(schrift));
   const page = await context.newPage();
   const konsole = [];
-  page.on('console', (m) => { if (m.type() === 'error') konsole.push(m.text().slice(0, 300)); });
+  // Die Ladefehlermeldung des Dokuments selbst (z. B. 404 der Seite „nicht gefunden“) steht schon als HTTP-Status im Ergebnis
+  // und zählt nicht als Konsolenfehler; Ladefehler jeder anderen Ressource zählen weiter (E-032).
+  page.on('console', (m) => {
+    if (m.type() !== 'error') return;
+    const quelle = m.location()?.url ?? '';
+    if (/^Failed to load resource/.test(m.text()) && quelle && new URL(quelle).pathname === new URL(seite, base).pathname) return;
+    konsole.push(`${m.text().slice(0, 300)}${quelle ? ` @ ${quelle}` : ''}`);
+  });
   page.on('pageerror', (e) => konsole.push(`pageerror: ${String(e.message).slice(0, 300)}`));
   const r = { ansicht: a, seite, schrift: schrift ? Number(schrift) : 100, status: null, datei: null, anker: null, konsole, ueberlauf: [], ueberlappung: [], ueberlappungGesamt: 0, ueberlappungNachArt: {}, fehler: null };
   try {
