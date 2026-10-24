@@ -344,15 +344,29 @@ html.k-bewegung .laden-fuge::after {
   contain: strict;
   container-type: size;
   pointer-events: none;
-  --intro-fliese: clamp(6rem, 24vw, 9rem);
+  /* am Desktop mit der Breite wachsend (etwa acht Fliesen je Reihe bei 1440 px wie B-01, Sichtabnahme E2, Befund 6); auf der
+     Startseite ab lg Reihe und Fliese nach der Zeilenhöhe der H1 (unten, html.k-intro-start) */
+  --intro-fliese: clamp(6rem, 24vw, min(15rem, max(9rem, 12.5vw)));
   --intro-reihe: calc(var(--intro-fliese) / 2);
   --intro-oben: calc(47cqh - var(--intro-reihe) * 1.5);
 }
 /* ganze Pixel, damit zwischen den Reihen keine Haarlinien entstehen (wie B-01) */
 @supports (width: round(1px, 1px)) {
   .intro {
-    --intro-fliese: round(clamp(6rem, 24vw, 9rem), 2px);
+    --intro-fliese: round(clamp(6rem, 24vw, min(15rem, max(9rem, 12.5vw))), 2px);
     --intro-oben: round(calc(47cqh - var(--intro-reihe) * 1.5), 1px);
+  }
+  /* Startseite ab lg (Sichtabnahme E2, Befund 6): eine Reihe so hoch wie eine Zeile der H1 (fs-7), eine Reihengrenze auf der
+     Oberkante der H1, damit beim Abziehen keine Zeile mitten im Buchstaben angeschnitten wird. Oberkante der H1 im Einstieg:
+     pt-32, eine Zeile Firmensitz in fs-1, mt-4 (StartEinstieg.tsx; der Kopf ist fest, der Einstieg beginnt bei 0). Die Fläche
+     bleibt nahe 47 % der Höhe: Abstand dorthin auf ganze Reihen gerundet. Fliese = zwei Reihen. */
+  @media (width >= 64rem) {
+    html.k-intro-start .intro {
+      --intro-reihe: round(calc(var(--text-fs-7) * var(--text-fs-7--line-height)), 1px);
+      --intro-fliese: calc(var(--intro-reihe) * 2);
+      --intro-h1: calc(var(--spacing) * 36 + var(--text-fs-1) * var(--text-fs-1--line-height));
+      --intro-oben: calc(var(--intro-h1) + round(nearest, calc(47cqh - var(--intro-reihe) * 1.5 - var(--intro-h1)), var(--intro-reihe)));
+    }
   }
 }
 .intro-reihe {
@@ -378,7 +392,8 @@ html.k-bewegung .laden-fuge::after {
   height: calc(var(--intro-reihe) + 1px);
   overflow: hidden;
 }
-/* Fliese wie B-01: Fugenfarbe als halbe Fuge rundum (zusammen 2 px), darin die Fliese mit einem Hauch Glanz */
+/* Fliese wie B-01: Fugenfarbe als halbe Fuge rundum, darin die Fliese mit einem Hauch Glanz; die Fuge wächst mit der Fliese
+   (1/80, mindestens 1 px je Seite), damit die Fläche am Desktop als verlegter Boden lesbar ist (Sichtabnahme E2, Befund 6) */
 .intro-fliese {
   position: absolute;
   top: 0;
@@ -391,7 +406,7 @@ html.k-bewegung .laden-fuge::after {
 .intro-fliese::after {
   content: "";
   position: absolute;
-  inset: 1px;
+  inset: max(1px, calc(var(--intro-fliese) / 80));
 }
 .intro-fliese::before {
   background-color: var(--color-fliese);

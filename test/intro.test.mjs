@@ -77,7 +77,7 @@ test('Intro 6: Halbverband als Alternative bleibt gültig', () => {
 });
 
 /** Kopfskript in einer nachgebauten Umgebung ausführen (ohne Browser). */
-function umgebung({ gespeichert = null, speicherFehler = null, reduziert = false } = {}) {
+function umgebung({ gespeichert = null, speicherFehler = null, reduziert = false, pfad = '/' } = {}) {
   const klassen = new Set();
   const stil = new Map([['--intro-x', '1px']]);
   const lauscher = [];
@@ -109,12 +109,13 @@ function umgebung({ gespeichert = null, speicherFehler = null, reduziert = false
       geholt.push(v);
     }
   }
-  new Function('window', 'document', 'setTimeout', 'requestAnimationFrame', 'Image', KOPFSKRIPT)(
+  new Function('window', 'document', 'setTimeout', 'requestAnimationFrame', 'Image', 'location', KOPFSKRIPT)(
     fenster,
     { documentElement: html },
     (fn, ms) => zeitgeber.push({ fn, ms }),
     (fn) => bilder.push(fn),
     Bild,
+    { pathname: pfad },
   );
   return { klassen, stil, lauscher, zeitgeber, bilder, speicher, geholt };
 }
@@ -132,6 +133,10 @@ test('Intro 7: erster Besuch setzt k-intro und merkt sich das sofort, zweiter Be
   assert.equal(wieder.geholt.length, 0, 'ohne Intro kein Abruf');
   assert.ok(wieder.klassen.has('k-startbild'), 'ohne Intro legt sich das Startbild frei');
   assert.ok(!umgebung({ gespeichert: '1', reduziert: true }).klassen.has('k-startbild'), 'reduziert: Startbild sofort frei');
+  // Raster an der H1 nur auf der Startseite und nur mit Intro (Sichtabnahme E2, Befund 6)
+  assert.ok(erst.klassen.has('k-intro-start'));
+  assert.ok(!umgebung({ pfad: '/bad' }).klassen.has('k-intro-start'));
+  assert.ok(!wieder.klassen.has('k-intro-start'));
 });
 
 test('Intro 8: Fehler im Speicher heißt kein Intro, ohne den Rest des Kopfskripts aufzuhalten', () => {

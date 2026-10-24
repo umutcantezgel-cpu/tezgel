@@ -257,10 +257,11 @@ export default function HeroContactForm({ titel = true }: { titel?: boolean } = 
                     />
                 </div>
 
-                {/* Absenden */}
+                {/* Absenden: Mikrotext aus KERN v3 („Anfrage senden“), nicht noch einmal der Name des Hauptknopfs, der hierher
+                    führt (Sichtabnahme E2); die Funktionstests suchen den Knopf über type="submit" */}
                 <div className="flex flex-col gap-4">
                     <Knopf type="submit" laedt={status === 'submitting'} ladeText="Wird gesendet …" icon="pfeil-rechts" className="w-full">
-                        {zusammen('Termin vor Ort anfragen')}
+                        {zusammen('Anfrage senden')}
                     </Knopf>
 
                     <div className="flex flex-wrap items-center justify-between gap-2 text-fs-2 text-tinte-2">

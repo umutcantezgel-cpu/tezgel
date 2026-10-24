@@ -6,7 +6,9 @@
 // Alles nach dem Einstieg ist eine Suspense-Grenze, also eine eigene Hydrierungseinheit: Ein früher Tipp im ersten Bildschirm
 // erzwingt nur den Rahmen und den Einstieg, nicht die ganze Seite in einem Zug (Reaktion, E-033; Next-Doku „Streaming“,
 // Abschnitt INP). Eine Grenze statt sieben: React lagert jede große Grenze aus und setzt sie per Skript an ihren Platz, jede
-// davon kostet eine Verschiebung mit Layout (Blockierzeit, E-034). Die Inhalte warten auf nichts, die Grenze zeigt nie einen Ersatz.
+// davon kostet eine Verschiebung mit Layout (Blockierzeit, E-034). Die Inhalte warten auf nichts; bis React die ausgelagerte
+// Grenze eingesetzt hat, hält ein Platzhalter von einer Bildschirmhöhe den Fuß unter dem ersten Bildschirm (sonst stand er
+// dort kurz und sprang dann weg: CLS 0,07 am Desktop, E-036).
 import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import Leitachse from '@/components/kern/Leitachse';
@@ -30,7 +32,7 @@ export default function HomePage() {
         <Seitenformel>
             <Leitachse>
                 <StartEinstieg />
-                <Suspense>
+                <Suspense fallback={<div aria-hidden="true" className="min-h-dvh" />}>
                     <Lagefliesen />
                     <WasWirTun />
                     <StartAblauf />
