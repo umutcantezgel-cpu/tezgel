@@ -1,6 +1,7 @@
 // Intro B-02 als Ersatz „Der erste Boden“ (KERN K-007, E-018): Kalkblatt mit Fugenraster, in der Mitte legt sich eine
-// kleine Fläche im Drittelverband, darauf erscheint das Original-Logo; dann gleitet es an den Platz des Kopf-Logos, und
-// das Blatt zieht Reihe für Reihe nach links ab (wie B-01). Serverkomponente ohne JavaScript im Browser: Die Schicht steht
+// kleine Fläche im Drittelverband, darauf erscheint das Logo (dieselbe Datei wie im Kopf, über den Bildoptimierer); dann
+// gleitet es an den Platz des Kopf-Logos, und das Blatt zieht Reihe für Reihe nach links ab (wie B-01). Serverkomponente
+// ohne JavaScript im Browser: Die Schicht steht
 // im HTML, ist ohne html.k-intro per Inline-Stil verborgen und läuft als CSS ab dem ersten Bild (bewegung.css). Die Zeiten
 // kommen als Anteile von --intro-gesamt aus der Ablauf-Logik. Das Blatt besteht nur aus Flächen und Verläufen; einziges
 // Bild ist das Logo (lazy: ohne Intro bleibt die Schicht verborgen und lädt nichts; mit Intro holt es das Kopfskript

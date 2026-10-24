@@ -15,8 +15,13 @@ import {
 /** Speicher für „schon gesehen“ (localStorage, ein Eintrag je Browser) */
 export const SPEICHER_INTRO = 'tezgel-intro';
 
-/** Original-Logo (UNANTASTBAR) als Bild auf der Fläche; das Kopfskript holt es beim ersten Besuch sofort. */
-export const INTRO_LOGO = '/images/logo/tezgel-logo.webp';
+/** Logo-Datei (UNANTASTBAR, dieselbe wie im Kopf). */
+export const INTRO_LOGO_DATEI = '/images/logo/tezgel-logo.webp';
+/** Das Logo auf der Fläche über den Bildoptimierer in 640 px (wie das Kopf-Logo, AVIF etwa 9,5 KB statt 19,5 KB als WebP):
+ *  Form und Proportion bleiben, die frühe Anfrage konkurriert weniger mit dem Startbild (E-034). Feste Adresse, damit das
+ *  Kopfskript beim ersten Besuch genau die Datei holt, die das Bild danach aus dem Speicher nimmt. 640 und 75 sind in Next
+ *  Standard (deviceSizes, qualities). */
+export const INTRO_LOGO = `/_next/image?url=${encodeURIComponent(INTRO_LOGO_DATEI)}&w=640&q=75`;
 
 /** Obergrenze des Intros in ms ab dem Kopfskript (KERN K-007: Ziel 1.600 ms über --intro-gesamt, Grenze 2.200 ms). */
 export const INTRO_GRENZE = 2200;
