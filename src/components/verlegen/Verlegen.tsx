@@ -306,6 +306,7 @@ export default function Verlegen() {
       fokussiereUeberschrift();
       const fertig = () => senden.current({ typ: 'gezogen' });
       if (ruhig || !belag) {
+        verbergeLaser();
         const von = Number(getComputedStyle(blende).opacity) || 1;
         beende(laufend);
         laufend.push(blende.animate([{ opacity: von }, { opacity: 0 }], { duration: halbeBlende(), fill: 'forwards' }));
@@ -330,6 +331,8 @@ export default function Verlegen() {
       });
       beende(laufend);
       laufend.push(...neu);
+      // Laserlinie erst aus, wenn das Abziehen wirklich läuft (Start nach dem Rastern der neuen Seite, E-036)
+      void (neu[0]?.ready ?? Promise.resolve()).then(verbergeLaser, verbergeLaser);
       void warte(laufend).then(fertig);
     };
 
@@ -342,10 +345,12 @@ export default function Verlegen() {
         easing: lies('--ease-laser') || 'ease-in-out',
       });
     };
+    // weich aus (Übergang in bewegung.css), die Wanderung endet erst danach, damit die Linie nicht springt
     const verbergeLaser = () => {
-      laserLauf?.cancel();
-      laserLauf = null;
       laser.style.opacity = '0';
+      const lauf = laserLauf;
+      laserLauf = null;
+      if (lauf) window.setTimeout(() => lauf.cancel(), ms('--dauer-1'));
     };
 
     const freigeben = () => {
@@ -384,6 +389,8 @@ export default function Verlegen() {
         case 'zeige-laser':
           return zeigeLaser();
         case 'verberge-laser':
+          // beim Übergang zum Abziehen übernimmt ziehe() das Ausblenden, sobald die Fliesen sich bewegen
+          if (lage.zustand === 'ziehen') return;
           return verbergeLaser();
         case 'ziehe':
           return ziehe();

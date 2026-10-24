@@ -377,7 +377,7 @@ test('Automat 7: Zurück und Vor beginnen liegend aus ruhe mit start-liegend', (
   assert.deepEqual(aktionen, ['liege', 'ziehe', 'freigeben']);
 });
 
-test('Automat 8: Laserlinie erst nach 150 ms, Wartezeit höchstens 3000 ms', () => {
-  assert.equal(LASER_NACH, 150);
+test('Automat 8: Laserlinie, sobald der Boden liegt (E-036), Wartezeit höchstens 3000 ms', () => {
+  assert.equal(LASER_NACH, 0);
   assert.equal(WARTEN_HOECHSTENS, 3000);
 });

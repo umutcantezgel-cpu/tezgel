@@ -314,6 +314,7 @@ html.k-bewegung .laden-fuge::after {
   height: 2px;
   background-color: var(--color-laser);
   opacity: 0;
+  transition: opacity var(--dauer-1) var(--ease-setzen);
 }
 /* Reduzierte Bewegung: Überblendung über eine Kalkfläche statt Fliesen */
 .verlegen-blende {

@@ -28,8 +28,10 @@ export interface Lage {
 
 export const RUHE: Lage = { zustand: 'ruhe', ziel: null, richtung: 'vor', bereitFrueh: false };
 
-/** Laserlinie erst nach kurzer Wartezeit, damit sie bei schnellen Seiten nicht aufblitzt. */
-export const LASER_NACH = 150;
+/** Laserlinie, sobald der Boden liegt: Sie zeigt das Warten, bis das Abziehen sichtbar läuft (die neue Seite wird unter dem
+ *  Boden erst gerastert; ohne Linie lag der Boden 0,4 bis 0,7 s still, Sichtabnahme E2, Befund 1; E-036). Gegen Aufblitzen
+ *  blendet die Komponente sie über dauer-1 ein und aus. */
+export const LASER_NACH = 0;
 /** Höchste Wartezeit unter dem Boden (Auftrag Abschnitt 9). */
 export const WARTEN_HOECHSTENS = 3000;
 
