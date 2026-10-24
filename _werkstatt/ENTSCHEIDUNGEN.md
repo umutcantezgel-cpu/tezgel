@@ -140,3 +140,17 @@ Pakete E0-PRUEF-01, -02a bis -02d und die unabhängige Abnahme E0-PRUEF-02-PA si
   - Texte: Abdichtungsbeleg in zwei Sätzen nach dem Ablauf („Im Bad kommt vor dem Verlegen eine Abdichtung …“, „Dabei halten wir uns an DIN 18534 …“), DIN-18534-Erklärung ohne Wiederholung, Normnummer ungetrennt; „vor Ort“ bricht nicht um (Span mit `nowrap`, Wortlaut unverändert); „Inh.“ und „HWK“ ausgeschrieben; Mono nur noch für Zahlen.
   - 404: Hauptknopf zuerst, Startseite und Anrufen darunter in einer Reihe.
 - **Nicht nachstellbar:** axe `target-size` im Menüfuß (Runde 2, 14 Knoten) tritt am aktuellen Stand weder mit Banner noch mit reduzierter Bewegung auf; Runde 3 prüft erneut.
+
+## E-023 · Sichtprüfung der Startseite, Runde 3 (24.10.2026, Workflow wf_174fe5a5-972)
+- **Urteil Runde 3:** Verständlichkeit 7, Hierarchie 8, Komposition 7, Typografie 7, Bild 8, Eigenständigkeit 7, Handwerk 6. 13 von 16 Befunden der Runde 2 behoben, 15 neue (4 hoch). Rückgaben: `pakete/E2-PRUEF-START-3-{W,R,SICHT}.rueckgabe.md`.
+- **Prüfstand:** Der Entwicklungsserver lieferte `globals.css` seit 01:32 UTC veraltet aus (Regeln der Leiste fehlten; `touch` half nicht). Neustart mit geleertem `.next/dev`; künftig prüft jede Runde vorab, ob eine Marke aus der Quelle im ausgelieferten CSS steht.
+- **Übernommen:**
+  - `zusammen()` liefert genau ein Element (äußerer Span): keine doppelten Wortabstände im Kopf-Hauptknopf, kein Überlauf des Menü-Hauptknopfs bei 200 %; hält auch „25 km“ zusammen.
+  - Kopf-Logo ab @7xl ohne Schrumpfen, keine 2xl-Zuschläge der Navigation mehr (141 px Logo von 1280 bis 2560 px, gemessen).
+  - Große Systemschrift: Container-Abfragen (unter 20 rem) für Ortsgruppen (Entfernung unter dem Ort, Ortsnamen ungetrennt), Belegkasten (Fugenkreuz über dem Satz), Lage-Fliesen (Pfeil unter dem Satz), Formular (Rahmen `p-3`, Felder `px-3`, Kopfzeile im Textfluss), Fuß-Datenkästen (einspaltig); Rufnummern im Fuß über `Rufnummer`; Fuß-Links mit 44 px Trefffläche. Mobilmenü: Unterzeilen unter 20 rem ausgeblendet, Anrufen und WhatsApp am Listenende, fest im Fuß nur der Hauptknopf (gemessen: alle fünf Bereiche im ersten Bild bei 200 %).
+  - Galerie als gerade verlegte Fläche mit 1-px-Fugen, ohne Versatz (der bleibt bei Lage und Ablauf), einspaltig bis 36 rem Breite.
+  - Große Stimme oben ausgerichtet, „ordnungsgemäß, sauber und pünktlich“ mit Laserlinie unterstrichen (Wortlaut unverändert, G8).
+  - Neubau-Fliese mit Verlegekante (Halbverband bis zur Kante, freier Estrich, Laserlinie), neues Motiv `verlegekante`.
+  - Silbentrennung erst ab 12 Zeichen mit Teilen ab 5 (`hyphenate-limit-chars: 12 5 5`), Kennzeile und Bildunterschriften der Fläche ohne Trennung.
+  - Startbild auf md rechtsbündig an der Textkante (zwei von acht Spalten eingerückt).
+- **Nicht übernommen:** axe `target-size` im Menü-Zustand (Werkzeugbefund: axe wertet die untere Leiste unter dem Popover-Blatt als Verdeckung; im Bild und per Trefferpunkt-Test liegt das Menü oben, Prüferin Runde 3 bestätigt). Platzhaltertexte bleiben (passen jetzt bei 200 %).
