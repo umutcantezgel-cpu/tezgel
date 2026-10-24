@@ -1,18 +1,26 @@
 // Fliesenkomposition (KERN v3 K-012, Auftrag Abschnitt 8): bewusst gestaltete Fläche aus dem Formsystem für Bildplätze
 // ohne passendes Foto, nie ein grauer Kasten. Fliesen 2:1 in Fliese und Fuge; je Motiv ein Verband oder ein Detail.
-// Dekorativ (aria-hidden), Seitenverhältnis über `format` wie beim Bildfeld.
+// Dekorativ (aria-hidden), Seitenverhältnis über `format` wie beim Bildfeld. Verbände als SVG-Muster (eine Musterkachel je Zeichnung
+// statt einer Fläche je Fliese: weniger Elemente im Dokument und in den Daten der Hydrierung, gleiche Geometrie; E-034).
+import { useId } from 'react';
 import clsx from 'clsx';
 
 export type Kompositionsmotiv = 'drittelverband' | 'halbverband' | 'kreuzfuge' | 'riss' | 'fischgraet' | 'verlegekante';
 
 const B = 120; // Rasterbreite der Zeichnung (Fliese 24 × 12 bzw. 12 × 12)
 
-function reihen(versatz: (r: number) => number, laenge: number, hoehe: number, h: number) {
-  const fl: { x: number; y: number; w: number; h: number }[] = [];
-  for (let r = 0; r * hoehe < h; r++) {
-    for (let x = -versatz(r); x < B; x += laenge) fl.push({ x, y: r * hoehe, w: laenge, h: hoehe });
+type Flaeche = { x: number; y: number; w: number; h: number };
+
+/** Musterkachel eines Verbands: `periode` Reihen der Höhe `hoehe`, Reihe r um versatz(r) nach links verschoben, Fliesen der Länge
+ *  `laenge` mit 1 Einheit Fuge (je 0,5 rundum). Die Kachel wiederholt sich ab dem Ursprung wie zuvor die einzelnen Reihen. */
+function kachel(versatz: (r: number) => number, periode: number, laenge: number, hoehe: number) {
+  const teile: Flaeche[] = [];
+  for (let r = 0; r < periode; r++) {
+    for (let x = -versatz(r); x < laenge; x += laenge) {
+      if (x + laenge > 0) teile.push({ x: x + 0.5, y: r * hoehe + 0.5, w: laenge - 1, h: hoehe - 1 });
+    }
   }
-  return fl;
+  return { w: laenge, h: hoehe * periode, teile };
 }
 
 // Mitte des Risses (Motiv „riss“), damit ein Ausschnitt ihn zeigt
@@ -33,16 +41,15 @@ export default function Fliesenkomposition({ motiv, format = '1:1', fuellen = fa
   const mitte = motiv === 'riss' ? RISS_MITTE : { x: B / 2, y: H / 2 };
   const ax = Math.min(Math.max(mitte.x - aw / 2, 0), B - aw);
   const ay = Math.min(Math.max(mitte.y - ah / 2, 0), H - ah);
-  const fliesen =
+  const muster =
     motiv === 'kreuzfuge' || motiv === 'riss'
-      ? reihen(() => 0, 24, 24, H)
+      ? kachel(() => 0, 1, 24, 24)
       : motiv === 'halbverband' || motiv === 'verlegekante'
-        ? reihen((r) => (r % 2) * 12, 24, 12, H)
-        : reihen((r) => (r % 3) * 8, 24, 12, H);
+        ? kachel((r) => r * 12, 2, 24, 12)
+        : kachel((r) => r * 8, 3, 24, 12);
+  const id = `fk${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`;
   const fisch = motiv === 'fischgraet';
   const kante = motiv === 'verlegekante';
-  // an der Verlegekante geschnittene Fliesen (Zuschnitt wie auf der Baustelle)
-  const gelegt = kante ? fliesen.filter((f) => f.x < KANTE).map((f) => ({ ...f, w: Math.min(f.w, KANTE - f.x) })) : fliesen;
   return (
     <svg viewBox={`${ax} ${ay} ${aw} ${ah}`} aria-hidden="true" focusable="false" className={clsx('block w-full bg-fuge', fuellen ? 'h-full' : 'h-auto', className)} preserveAspectRatio="xMidYMid slice">
       {fisch ? (
@@ -56,11 +63,17 @@ export default function Fliesenkomposition({ motiv, format = '1:1', fuellen = fa
           )}
         </g>
       ) : (
-        <g className="fill-fliese">
-          {gelegt.map((f, i) => (
-            <rect key={i} x={f.x + 0.5} y={f.y + 0.5} width={f.w - 1} height={f.h - 1} />
-          ))}
-        </g>
+        <>
+          <defs>
+            <pattern id={id} patternUnits="userSpaceOnUse" width={muster.w} height={muster.h}>
+              {muster.teile.map((f, i) => (
+                <rect key={i} x={f.x} y={f.y} width={f.w} height={f.h} className="fill-fliese" />
+              ))}
+            </pattern>
+          </defs>
+          {/* an der Verlegekante geschnitten (Zuschnitt wie auf der Baustelle, eine halbe Fuge vor dem Estrich) */}
+          <rect x={0} y={0} width={kante ? KANTE - 0.5 : B} height={H} fill={`url(#${id})`} />
+        </>
       )}
       {kante && (
         <>
