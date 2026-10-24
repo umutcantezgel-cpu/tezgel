@@ -3,9 +3,10 @@
 // Hauptknopf, Anruf, WhatsApp, Startbild), 2 Ihre Lage (sechs Fliesen), 3 Was wir tun, 4 So läuft es ab, 5 Beleg
 // (Fotos, Stimmen, Orte), 6 Nächster Schritt (das eine Formular, #termin). Preisrechner und Express-Anfrage stehen nicht
 // mehr hier, sondern auf ihren übrigen Seiten (E-012, LAGEBILD F-02, F-03); alle Hauptknöpfe dieser Seite führen zu #termin.
-// Jeder Abschnitt nach dem Einstieg ist eine eigene Suspense-Grenze, also eine eigene Hydrierungseinheit: Ein früher Tipp im
-// ersten Bildschirm erzwingt nur den Rahmen und den Einstieg, nicht die ganze Seite in einem Zug (Reaktion, E-033; Next-Doku
-// „Streaming“, Abschnitt INP). Die Inhalte warten auf nichts, die Grenzen zeigen nie einen Ersatz.
+// Alles nach dem Einstieg ist eine Suspense-Grenze, also eine eigene Hydrierungseinheit: Ein früher Tipp im ersten Bildschirm
+// erzwingt nur den Rahmen und den Einstieg, nicht die ganze Seite in einem Zug (Reaktion, E-033; Next-Doku „Streaming“,
+// Abschnitt INP). Eine Grenze statt sieben: React lagert jede große Grenze aus und setzt sie per Skript an ihren Platz, jede
+// davon kostet eine Verschiebung mit Layout (Blockierzeit, E-034). Die Inhalte warten auf nichts, die Grenze zeigt nie einen Ersatz.
 import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import Leitachse from '@/components/kern/Leitachse';
@@ -29,13 +30,15 @@ export default function HomePage() {
         <Seitenformel>
             <Leitachse>
                 <StartEinstieg />
-                <Suspense><Lagefliesen /></Suspense>
-                <Suspense><WasWirTun /></Suspense>
-                <Suspense><StartAblauf /></Suspense>
-                <Suspense><Arbeiten /></Suspense>
-                <Suspense><Kundenstimmen /></Suspense>
-                <Suspense><Einsatzorte /></Suspense>
-                <Suspense><TerminAnfrage /></Suspense>
+                <Suspense>
+                    <Lagefliesen />
+                    <WasWirTun />
+                    <StartAblauf />
+                    <Arbeiten />
+                    <Kundenstimmen />
+                    <Einsatzorte />
+                    <TerminAnfrage />
+                </Suspense>
             </Leitachse>
         </Seitenformel>
     );
