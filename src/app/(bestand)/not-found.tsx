@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Einstieg from '@/components/kern/Einstieg';
 import Hauptknopf from '@/components/kern/Hauptknopf';
+import Rufnummer from '@/components/kern/Rufnummer';
 import Knopf from '@/components/kern/Knopf';
 import { COMPANY_DATA } from '@/config/company';
 
@@ -56,7 +57,7 @@ function Boden() {
   );
 }
 
-// 404 (KERN v3 K-009, F-17): Arbeitsansicht mit der verrutschten Fliese und drei Wegen: Startseite, Termin anfragen, Anrufen.
+// 404 (KERN v3 K-009, F-17): Arbeitsansicht mit der verrutschten Fliese und drei Wegen: Termin anfragen, Startseite, Anrufen.
 export default function NotFound() {
   const { contact } = COMPANY_DATA;
   return (
@@ -71,11 +72,14 @@ export default function NotFound() {
       }
       aktionen={
         <>
-          <Knopf href="/" variante="neben" iconLinks="haus">Zur Startseite</Knopf>
+          {/* zuerst die Hauptaktion (K-004), darunter die zwei Nebenwege in einer Reihe (Sichtprüfung E2 Runde 2) */}
           <Hauptknopf breit />
-          <Knopf href={`tel:${contact.phoneLink}`} variante="neben" iconLinks="telefon" aria-label={`Anrufen: ${contact.phone}`}>
-            Anrufen: <span className="font-mono">{contact.phone}</span>
-          </Knopf>
+          <div className="flex flex-col gap-3 sm:basis-full sm:flex-row sm:flex-wrap">
+            <Knopf href="/" variante="neben" iconLinks="haus">Zur Startseite</Knopf>
+            <Knopf href={`tel:${contact.phoneLink}`} variante="neben" iconLinks="telefon" aria-label={`Anrufen: ${contact.phone}`}>
+              Anrufen: <Rufnummer nummer={contact.phone} />
+            </Knopf>
+          </div>
         </>
       }
       rand={
