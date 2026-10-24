@@ -501,7 +501,8 @@ html.k-bewegung .laden-fuge::after {
 
 /* startbild (K-007, E2-ORCH-06b) – das Startbild legt sich frei: über dem Foto ein Belag aus Fliesen (Fliese mit
    Fugenraster, drei Fliesen je Reihe im Drittelverband), der beim Laden Reihe für Reihe nach links abzieht, gestaffelt nach
-   Versatzstufe (wie B-01), gesamt dauer-4 · ease-weg; Zeiten als Anteile (--a, --d) aus src/lib/motion/startbild.ts.
+   Versatzstufe (wie B-01), gesamt dauer-4 · linear (wie die Reihen des Intros; mit ease-weg lag der Belag die ersten
+   rund 200 ms sichtbar still, Sichtabnahme E2; E-036); Zeiten als Anteile (--a, --d) aus src/lib/motion/startbild.ts.
    Nur unter html.k-startbild (Kopfskript: Bewegung erlaubt, kein Intro; der erste Seitenwechsel nimmt die Klasse weg).
    Ohne Klasse, reduziert, im Druck und bei erzwungenen Farben steht das Foto sofort frei. Nur transform. */
 .startbild-decke {
@@ -546,7 +547,7 @@ html.k-bewegung .laden-fuge::after {
     animation: startbild-ende var(--dauer-4) step-end forwards;
   }
   html.k-startbild.k-bewegung .startbild-reihe {
-    animation: startbild-ziehen calc(var(--dauer-4) * var(--d)) var(--ease-weg) calc(var(--dauer-4) * var(--a)) both;
+    animation: startbild-ziehen calc(var(--dauer-4) * var(--d)) linear calc(var(--dauer-4) * var(--a)) both;
   }
 }
 @media print, (forced-colors: active) {

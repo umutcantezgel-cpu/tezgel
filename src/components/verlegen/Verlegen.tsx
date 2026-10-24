@@ -77,7 +77,7 @@ function lies(name: string): string {
 
 /** Alle Tokens des Wechsels auf einmal lesen (beim Einhängen im Leerlauf, nie zwischen zwei Schreibzugriffen). */
 function liesVorab(): void {
-  for (const name of ['--verlegen-gesamt', '--verlegen-gesamt-folge', '--verlegen-ruhig', '--ease-hammer', '--ease-weg', '--ease-laser', '--dauer-1', '--dauer-5']) lies(name);
+  for (const name of ['--verlegen-gesamt', '--verlegen-gesamt-folge', '--verlegen-ruhig', '--ease-hammer', '--ease-laser', '--dauer-1', '--dauer-5']) lies(name);
 }
 
 /** Erst nach dem nächsten gemalten Bild ausführen: Das Bild nach dem Klick bleibt billig (Reaktion), die Arbeit folgt danach,
@@ -313,7 +313,9 @@ export default function Verlegen() {
         return;
       }
       const strecke = ziehStrecke(belag.mass, belag.breite) * (lage.richtung === 'vor' ? -1 : 1);
-      const kurve = lies('--ease-weg') || 'ease-in';
+      // linear wie die Reihen des Intros: mit ease-weg bewegten sich die Fliesen die ersten rund 200 ms kaum, und der Boden
+      // wirkte nach dem Legen still (Sichtabnahme E2, Befund 1; E-036)
+      const kurve = 'linear';
       const neu: Animation[] = [];
       belag.elemente.forEach((el, i) => {
         const t = takte[i];

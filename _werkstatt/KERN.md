@@ -109,9 +109,9 @@ Bezug ist eine Fliese 30 × 60 cm im Maßstab 1 cm = 3,2 px: kurze Seite **F = 9
 
 | Kennung | Zweck | Auslöser | Dauer · Kurve | Reduziert | Wo |
 |---|---|---|---|---|---|
-| **`verlegen`** (B-01) | Zusammenhang: Seitenwechsel | Klick auf internen Link; Zurück und Vor gespiegelt mit 70 % | gesamt 1200 ms (erster) bzw. 900 ms (folgende): Verlegen ~45 % je Fliese `ease-hammer`, Wechsel, Weiterziehen ~40 % `ease-weg` | Überblendung 150 ms | global |
+| **`verlegen`** (B-01) | Zusammenhang: Seitenwechsel | Klick auf internen Link; Zurück und Vor gespiegelt mit 70 % | gesamt 1200 ms (erster) bzw. 900 ms (folgende): Verlegen ~45 % je Fliese `ease-hammer`, Wechsel, Weiterziehen ~40 % linear wie die Reihen des Intros (E-036) | Überblendung 150 ms | global |
 | **`intro`** (B-02) | Charakter: Logo zeichnet sich; bis zur Vektordatei Ersatz „Der erste Boden“ (E-018, E-019) | erster Besuch je Browser | Ersatz: Fläche 3 × 3 legt sich 80–624 ms (`ease-hammer`), Logo setzt sich 448–752 ms (`ease-setzen`), deckend bis 800 ms, Logo gleitet 800–1400 ms (`ease-setzen`), Reihen ziehen 800–1504 ms linear ab; alles Anteile von `--intro-gesamt` (1600 ms), Grenze 2200 ms | Kopf-Logo blendet in `dauer-2` ein, keine Schicht | jede Erstseite |
-| `startbild` | Charakter: Startbild legt sich frei | Laden (ohne Intro) bzw. Ende des Intros | `dauer-4`, Fliesen ziehen im Drittelverband ab, `ease-weg`, Staffel ≤ 8 Spalten | Bild sofort sichtbar | `/` |
+| `startbild` | Charakter: Startbild legt sich frei | Laden (ohne Intro) bzw. Ende des Intros | `dauer-4`, Fliesen ziehen im Drittelverband linear ab (E-036), Staffel ≤ 8 Spalten | Bild sofort sichtbar | `/` |
 | `schichten` | Zusammenhang: Was unter der Fliese steckt | Scroll (view-timeline) | linear an Scroll, je Schicht ein Satz | alle Schichten sichtbar | `/bad` |
 | `weg` | Orientierung: Vom Anruf bis zur letzten Fuge | Scroll (view-timeline) | Laserlinie zieht von Station zu Station | Linie voll, alle Stationen | `/bad/badsanierung` |
 | `gefaelle-dusche` | Zusammenhang: Wasser läuft zum Ablauf | Sichtbarkeit (IO 40 %) | Tropfen `dauer-5` linear, einmal | Pfeile statisch | `/bad/barrierefreies-bad` |
