@@ -121,7 +121,7 @@ Alle Pakete außer `KUER-*` sind Pflicht, nach Wirkung sortiert (Rahmen und Star
 ### E3 · Vorlagen, große Momente, Hauptansichten
 | Kennung | Gegenstand | Rolle | Modell | Stufe | Schreibrechte | Abhängig von | Kriterium | Welle | Status |
 |---|---|---|---|---|---|---|---|---|---|
-| E3-ORCH-01a | Vorlage `ErzaehlSeite` für Erzählseiten nach Seitenformel K-009 | Orchestrator | Opus | 3 | `src/components/vorlagen/ErzaehlSeite.tsx` | E2-TOR | Z-03, Z-11 | E3-W1 | offen |
+| E3-ORCH-01a | Vorlage `ErzaehlSeite` für Erzählseiten nach Seitenformel K-009 | Orchestrator | Opus | 3 | `src/components/vorlagen/ErzaehlSeite.tsx` | E2-TOR | Z-03, Z-11 | E3-W1 | Entwurf gebaut (E-025: vorlagen/ErzaehlSeite, teile/*, Textmarken, Inhalt barrierefreies-bad im Schaufenster); Umstellung der Startseite nach dem Tor E2 |
 | E3-ORCH-01b | Vorlage `WissensSeite` für Wissensseiten nach Seitenformel K-009 | Orchestrator | Opus | 3 | `src/components/vorlagen/WissensSeite.tsx` | E2-TOR | Z-03, Z-11 | E3-W1 | offen |
 | E3-ORCH-01c | Vorlage `OrtsSeite` für Ortsseiten nach Seitenformel K-009 | Orchestrator | Opus | 3 | `src/components/vorlagen/OrtsSeite.tsx` | E2-TOR | Z-03, Z-11 | E3-W1 | offen |
 | E3-ORCH-01d | Vorlage `ArbeitsSeite` für Arbeitsseiten nach Seitenformel K-009 | Orchestrator | Opus | 3 | `src/components/vorlagen/ArbeitsSeite.tsx` | E2-TOR | Z-03, Z-11 | E3-W1 | offen |

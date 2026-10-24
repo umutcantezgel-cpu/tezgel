@@ -22,6 +22,7 @@ Prüfe und verbessere `_werkstatt/texte/referenzen.md` nach der Checkliste (Vers
 ## 5. Kern-Auszug
 - Seitenformel K-009 und Schreibregeln K-010 (mit K-010-B erlaubte Bindestrichwörter, K-010-F Floskeln, Ersetzungen im Bestand): `_werkstatt/KERN.md` Abschnitte K-009 und K-010 lesen. Maschinenfassungen: `_werkstatt/regeln/bindestrich-erlaubt.json`, `_werkstatt/regeln/floskeln.json`.
 - Glossar K-011: `_werkstatt/regeln/glossar.json`. Jedes Glossarwort steht im Fließtext beim ersten Vorkommen als `[[id|Wort]]` (die Erklärung setzt der Baustein `Fachwort` dazu; schreibe sie nicht selbst in Klammern). Überschriften bekommen keine Auszeichnung.
+- Der Baustein `Fachwort` setzt die Erklärung aus `glossar.json` in Klammern direkt hinter das ausgezeichnete Wort. Lies jeden Satz mit dieser Klammer: Ein Satz, der danach nur die Erklärung wiederholt („So fließt das Wasser von selbst zum Ablauf.“ nach Gefälle), fällt weg.
 - Faktenblatt K-015: `_werkstatt/KERN.md` Abschnitt K-015. Nur diese Fakten, Zahlen und Zusagen; die Liste „Nicht verwenden“ gilt. Was du aus der Quelle übernehmen willst und nicht in K-015 steht, kommt unter OFFENE FRAGEN, nicht in den Text.
 - Format wie das Muster `_werkstatt/texte/REF-bereich-barrierefreies-bad.md`: Abschnitte `## Meta`, `## 1 · Worum es geht` bis `## 6 · Nächster Schritt`; Texte in Backticks mit Etikett (`- H1:`, `- H2:`, `- Vorspann:`, `- Absatz:`, `- Satz:`, nummerierte Zeilen `1. `Name` · `Satz``), Bilder als `{Bild: id}`, Stimmen als `{Stimme: id}`, Firmendaten als `{{COMPANY_DATA.contact.phone}}`, Bauhinweise in Klammern nach dem Backtick-Text.
 - Suchbegriffe: Zeile `/referenzen` in `_werkstatt/adressen-e0.csv` (Spalten titel, beschreibung, h1, durch Semikolon getrennt). Die Hauptbegriffe daraus kommen natürlich im neuen Titel, in der H1 oder im Vorspann vor.
@@ -39,7 +40,8 @@ Checkliste, jeder Punkt mit Ergebnis im Bericht:
 3. Fakten: Jede Zahl, jeder Ort, jede Zusage hat eine F-Nummer in K-015; Treffer aus „Nicht verwenden“ sind entfernt; Versprechen nicht verschärft.
 4. Suchbegriffe: Hauptbegriffe aus Titel, H1 und Beschreibung des Bestands (Zeile in `adressen-e0.csv`) kommen natürlich vor.
 5. Seitenformel: alle Abschnitte da, genau ein Hauptknopf „Termin vor Ort anfragen“ in Abschnitt 1 und 6, Links mit gültigen Pfaden (das Verzeichnis `src/app/(bestand)/` hat die Seite), keine Aussage doppelt.
-6. Ton: wie das Muster; Sie-Form; keine Werbewörter; keine Ich-Form außer in Lage-Sätzen, die die Stimme der Kundschaft wiedergeben.
+6. Glossarklammern: Lies jeden Satz mit der Erklärung aus `glossar.json` in Klammern hinter dem Fachwort; Sätze, die nur die Erklärung wiederholen, streichst du.
+7. Ton: wie das Muster; Sie-Form; keine Werbewörter; keine Ich-Form außer in Lage-Sätzen, die die Stimme der Kundschaft wiedergeben.
 
 ## 7. Grenzen
 - Nur die Dateien unter „Schreibrechte“ ändern oder anlegen; alles andere nur lesen. Fehler in fremden Dateien unter GEMEINSAME DATEIEN melden, nie beheben.
