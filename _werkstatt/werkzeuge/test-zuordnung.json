@@ -209,5 +209,11 @@
     "specs": [
       "ALLE"
     ]
+  },
+  {
+    "muster": "leistungen/uebersicht|leistungen/Gewerk|leistungen/\\[id\\]/page|components/verlegen|lib/verlegen",
+    "specs": [
+      "plan-morph.spec.mjs"
+    ]
   }
 ]

@@ -80,6 +80,51 @@ function liesVorab(): void {
   for (const name of ['--verlegen-gesamt', '--verlegen-gesamt-folge', '--verlegen-ruhig', '--ease-hammer', '--ease-laser', '--dauer-1', '--dauer-5']) lies(name);
 }
 
+/** Feine Körnung der Fliese (KERN B-01: SVG-Rauschen als Hintergrund der Fliese, ≤ 1 KB; zurück nach E-037). */
+const KOERNUNG =
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96'%3E%3Cfilter id='k'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .04 0 0 0 0 .07 0 0 0 0 .16 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='96' height='96' filter='url(%23k)'/%3E%3C/svg%3E";
+
+/** Rastert die Körnung einmal im Leerlauf zu einer Kachel (Blob, bis DPR 2) und setzt sie als --verlegen-koernung an die
+ *  Schicht: Die Fliesen kacheln dann ein fertiges Bild statt feTurbulence je Fliese zu rechnen (E-036 maß rund 70 ms je
+ *  Wechsel). Gelingt das nicht, bleibt das SVG selbst als Rückfall (gleiches Bild, teureres Rastern). */
+function bereiteKoernung(schicht: HTMLElement): () => void {
+  let aus = false;
+  let url = '';
+  const setze = (wert: string) => {
+    if (!aus) schicht.style.setProperty('--verlegen-koernung', `url("${wert}")`);
+  };
+  const svg = new Image();
+  svg.onload = () => {
+    if (aus) return;
+    try {
+      const dpr = Math.min(2, Math.max(1, Math.round(window.devicePixelRatio || 1)));
+      const leinwand = document.createElement('canvas');
+      leinwand.width = leinwand.height = 96 * dpr;
+      const g = leinwand.getContext('2d');
+      if (!g) return setze(KOERNUNG);
+      g.drawImage(svg, 0, 0, leinwand.width, leinwand.height);
+      leinwand.toBlob((blob) => {
+        if (aus) return;
+        if (!blob) return setze(KOERNUNG);
+        url = URL.createObjectURL(blob);
+        const bild = new Image();
+        bild.src = url;
+        void bild
+          .decode()
+          .catch(() => undefined)
+          .then(() => setze(url));
+      }, 'image/png');
+    } catch {
+      setze(KOERNUNG);
+    }
+  };
+  svg.src = KOERNUNG;
+  return () => {
+    aus = true;
+    if (url) URL.revokeObjectURL(url);
+  };
+}
+
 /** Erst nach dem nächsten gemalten Bild ausführen: Das Bild nach dem Klick bleibt billig (Reaktion), die Arbeit folgt danach,
  *  mit Vorrang vor Hintergrundaufgaben wie dem Vorladen der Zielseite (scheduler.postTask, sonst setTimeout). */
 function nachDemMalen(f: () => void): void {
@@ -111,6 +156,45 @@ function bewegungErlaubt(): boolean {
   const html = document.documentElement;
   return html.classList.contains('k-bewegung') && !html.classList.contains('k-notaus');
 }
+
+// Plan-Morph (K-007 seitenwechsel, zurück nach E-037): Links mit data-uebergang tragen einen eigenen Übergang (View
+// Transition über React, Typ „plan-vor“). Ist er jetzt möglich, lässt B-01 den Klick durch; beide laufen nie gleichzeitig.
+const UEBERGANG_TYP = 'plan-vor';
+type Uebergang = { skipTransition: () => void; finished: Promise<unknown> };
+
+/** Morph nur ab lg, bei erlaubter Bewegung und wenn der Browser View Transitions mit Typen kann (sonst übernimmt B-01). */
+function uebergangMoeglich(): boolean {
+  return (
+    bewegungErlaubt() &&
+    window.matchMedia('(width >= 64rem)').matches &&
+    typeof (document as Document & { startViewTransition?: unknown }).startViewTransition === 'function' &&
+    typeof CSS !== 'undefined' &&
+    CSS.supports(`selector(:active-view-transition-type(${UEBERGANG_TYP}))`)
+  );
+}
+
+/** die laufende View Transition (Standard: document.activeViewTransition; Chromium 141 kennt sie noch nicht, React legt sie ab) */
+function aktiverUebergang(): Uebergang | null {
+  const d = document as Document & { activeViewTransition?: Uebergang | null; __reactViewTransition?: Uebergang | null };
+  return d.activeViewTransition ?? d.__reactViewTransition ?? null;
+}
+
+/** Eine laufende View Transition sofort beenden (der Wechsel im DOM bleibt, nur die Animation entfällt): Sonst lägen
+ *  benannte Gruppen (Plan, Kopf) über der Schicht von B-01. */
+function beendeUebergang(): void {
+  try {
+    aktiverUebergang()?.skipTransition();
+  } catch {
+    // schon beendet
+  }
+  for (const a of document.documentElement.getAnimations({ subtree: true })) {
+    const pseudo = (a.effect as KeyframeEffect | null)?.pseudoElement;
+    if (pseudo?.startsWith('::view-transition')) a.finish();
+  }
+}
+
+/** true, solange ein Klick mit eigenem Übergang navigiert (Fokus auf die H1 nach dem Morph, wie bei B-01) */
+let eigenerWechsel = false;
 
 function adresse(): string {
   return location.pathname + location.search;
@@ -243,6 +327,7 @@ export default function Verlegen() {
     };
 
     const lege = () => {
+      beendeUebergang();
       gesamt = gesamtdauer(lage.richtung);
       ruhig = !bewegungErlaubt() || !Number.isFinite(gesamt);
       merkeGewechselt();
@@ -277,6 +362,7 @@ export default function Verlegen() {
     };
 
     const liege = () => {
+      beendeUebergang();
       gesamt = gesamtdauer(lage.richtung);
       ruhig = !bewegungErlaubt() || !Number.isFinite(gesamt);
       ohneStartbild();
@@ -367,6 +453,16 @@ export default function Verlegen() {
       const ziel = lage.ziel;
       if (!ziel) return;
       startTransition(() => router.push(ziel));
+      // React startet eine View Transition auch bei B-01-Wechseln, die eine <ViewTransition> ein- oder aushängen (Plan-Morph
+      // auf /leistungen): unter dem Boden sofort beenden, solange er liegt (höchstens bis zum Ende des Wartens)
+      const bis = performance.now() + WARTEN_HOECHSTENS;
+      const wache = () => {
+        if (aktiverUebergang()) beendeUebergang();
+        if (performance.now() < bis && (lage.zustand === 'legen' || lage.zustand === 'bedeckt' || lage.zustand === 'warten')) {
+          requestAnimationFrame(wache);
+        }
+      };
+      requestAnimationFrame(wache);
     };
 
     const starteWarten = () => {
@@ -431,7 +527,14 @@ export default function Verlegen() {
         target: a.getAttribute('target'),
         download: a.hasAttribute('download'),
         keinVerlegen: a.closest('[data-kein-verlegen]') !== null,
+        eigenerUebergang: a.closest('[data-uebergang]') !== null && lage.zustand === 'ruhe' && !angefordert && uebergangMoeglich(),
       });
+      if (grund === 'eigener-uebergang') {
+        // next/link navigiert selbst (transitionTypes); B-01 merkt sich nur den Scroll für das spätere Zurück
+        merkeScroll(adresse());
+        eigenerWechsel = true;
+        return;
+      }
       if (grund !== 'verlegen') return;
       e.preventDefault();
       if (lage.zustand !== 'ruhe' || angefordert) return; // Doppelklick: kein zweiter Wechsel
@@ -482,7 +585,12 @@ export default function Verlegen() {
     };
 
     angezeigt = adresse();
-    const leerlauf = window.requestIdleCallback ? window.requestIdleCallback(liesVorab) : window.setTimeout(liesVorab, 1);
+    let koernungAus: () => void = () => undefined;
+    const vorab = () => {
+      liesVorab();
+      koernungAus = bereiteKoernung(schicht);
+    };
+    const leerlauf = window.requestIdleCallback ? window.requestIdleCallback(vorab) : window.setTimeout(vorab, 1);
     const speichernVorVerlassen = () => merkeScroll(adresse());
     document.addEventListener('click', klick, true);
     window.addEventListener('pagehide', speichernVorVerlassen);
@@ -491,6 +599,7 @@ export default function Verlegen() {
       window.removeEventListener('pagehide', speichernVorVerlassen);
       if (window.cancelIdleCallback) window.cancelIdleCallback(leerlauf);
       else window.clearTimeout(leerlauf);
+      koernungAus();
       steuerung = null;
       freigeben();
     };
@@ -503,6 +612,11 @@ export default function Verlegen() {
     if (pfad === pfadRef.current) return;
     pfadRef.current = pfad;
     angezeigt = adresse();
+    if (eigenerWechsel) {
+      // nach dem Plan-Morph: Fokus auf die H1 wie nach jedem Wechsel (Scroll 0 setzt Next selbst)
+      eigenerWechsel = false;
+      void (aktiverUebergang()?.finished ?? Promise.resolve()).finally(fokussiereUeberschrift);
+    }
     let zweites = 0;
     let ruhe = 0;
     const melden = () => senden.current({ typ: 'bereit' });

@@ -5,8 +5,10 @@
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import Icon from '@/components/icons/Icon';
+import clsx from 'clsx';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Fliesenkomposition, { type Kompositionsmotiv } from '@/components/kern/Fliesenkomposition';
+import { VIGNETTEN, type VignettenName } from '@/components/kern/vignetten';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Textmarken from '@/components/kern/Textmarken';
 import type { TunInhalt } from '../inhalt';
@@ -40,20 +42,36 @@ export function Bereichszeilen({ bereiche }: { bereiche: NonNullable<TunInhalt['
   );
 }
 
-/** Bereiche als Fliesen mit Zeichnung (Startseite, Sichtabnahme E2, Befunde 8 und 12): zwei Spalten an der Fuge, oben ein
- *  Verlegemuster im Format 16:9 mit Fugen in Strich und roter Laserlinie, darunter der Name und der Pfeil. So ist der Abschnitt
- *  anders gebaut als die Zeilen der Lage davor. Schmal (große Systemschrift, unter 20 rem) eine Spalte ohne Zeichnung; lange
- *  Namen dürfen dort trennen (sonst ragte „Badsanierung“ bei 200 % über den Rand). */
-export function Bereichsfliesen({ bereiche }: { bereiche: { name: string; href: string; motiv: Kompositionsmotiv }[] }) {
+export type Bereich = { name: string; href: string } & ({ motiv: Kompositionsmotiv; vignette?: never } | { vignette: VignettenName; motiv?: never });
+
+/** Bereiche als Fliesen mit Zeichnung (Startseite, Sichtabnahme E2, Befunde 8 und 12; E-037): an der Fuge, oben die Zeichnung,
+ *  darunter der Name und der Pfeil. So ist der Abschnitt anders gebaut als die Zeilen der Lage davor.
+ *  - Plan-Vignette (E-037, Linienzeichnung 1,5 px wie im alten Stand): eine Spalte als Streifen 2:1, ab 36rem Container zwei
+ *    Spalten (16:9, ab 48rem 3:2); zweispaltig am Handy liefe die Schraffur zu Brei zusammen.
+ *  - Verlegemuster (Fliesenkomposition deutlich): ab 20rem zwei Spalten, 16:9, ab lg 3:2.
+ *  Schmal (große Systemschrift, unter 20rem) eine Spalte ohne Zeichnung; lange Namen dürfen dort trennen. */
+export function Bereichsfliesen({ bereiche }: { bereiche: Bereich[] }) {
+  const mitVignetten = bereiche.some((b) => b.vignette);
   return (
     <div className="@container">
-      <ul className="grid grid-cols-1 gap-px border border-fuge bg-fuge @xs:grid-cols-2">
-        {bereiche.map((b) => (
+      <ul className={clsx('grid grid-cols-1 gap-px border border-fuge bg-fuge', mitVignetten ? '@xl:grid-cols-2' : '@xs:grid-cols-2')}>
+        {bereiche.map((b) => {
+          const Vignette = b.vignette ? VIGNETTEN[b.vignette] : null;
+          return (
           <li key={b.href} className="bg-fliese">
             <Link href={b.href} data-motion="zustand" className="group flex h-full flex-col text-tinte">
-              <span aria-hidden="true" className="hidden aspect-video overflow-hidden border-b border-fuge @xs:block lg:aspect-3/2">
-                <Fliesenkomposition motiv={b.motiv} format="16:9" ausschnitt={96} fuellen deutlich />
-              </span>
+              {Vignette ? (
+                // min-h-0: sonst dehnt die höhere Zeichnung (Bad 1,3 : 1) das Feld über sein Seitenverhältnis hinaus
+                <span aria-hidden="true" className="hidden aspect-2/1 min-h-0 items-center justify-center overflow-hidden border-b border-fuge p-4 @xs:flex @xl:aspect-video @3xl:aspect-3/2 lg:p-6">
+                  <Vignette fuellen />
+                </span>
+              ) : (
+                b.motiv && (
+                  <span aria-hidden="true" className="hidden aspect-video overflow-hidden border-b border-fuge @xs:block lg:aspect-3/2">
+                    <Fliesenkomposition motiv={b.motiv} format="16:9" ausschnitt={96} fuellen deutlich />
+                  </span>
+                )
+              )}
               <span className="flex flex-1 items-start gap-3 p-4 lg:p-6">
                 <span className="min-w-0 flex-1 font-text text-fs-3 font-semibold hyphens-auto underline decoration-transparent decoration-2 underline-offset-4 transition-colors dauer-1 group-hover:decoration-laser lg:font-anzeige lg:text-fs-4 lg:font-extrabold">
                   {b.name}
@@ -62,7 +80,8 @@ export function Bereichsfliesen({ bereiche }: { bereiche: { name: string; href: 
               </span>
             </Link>
           </li>
-        ))}
+          );
+        })}
       </ul>
     </div>
   );

@@ -3,19 +3,22 @@ import assert from 'node:assert/strict';
 import { REGISTER, KENNUNGEN, beobachteteKennungen, ladeKennungen, schwelleFuer, istRegistriert, entfallendeKennungen, SELBST } from '../src/lib/motion/register.ts';
 import { KOPFSKRIPT } from '../src/lib/motion/kopfskript.ts';
 
-// Register laut Gestaltungskern v3 (K-007): neue Bewegungen nur mit Registereintrag. Die großen Momente kommen mit
-// ihren Seiten dazu (E3-ORCH-02a); die sieben v2-Einträge aus E-009 bleiben markiert, bis ihre Seiten neu gebaut sind.
-const KERN_V3 = ['verlegen', 'intro', 'startbild', 'verband', 'leitachse', 'anriss', 'auftritt', 'aufklappen', 'druck', 'zustand', 'notiert', 'laden'];
-// seitenwechsel (Plan-Morph) ist mit E2-ORCH-04b entfernt; B-01 „verlegen“ ist das einzige System für Seitenwechsel (E-010).
-const ENTFALLEN_E009 = ['sig-kreuzlinie', 'sig-flucht', 'szene-ablauf', 'sig-plan', 'einzugsband', 'fugenband'];
+// Register laut Gestaltungskern v3 (K-007): neue Bewegungen nur mit Registereintrag. Die SVG-Bewegungen aus v2 sind seit
+// E-037 (Entscheidung des Auftraggebers) fester Teil des Systems und nicht mehr als entfallend markiert.
+const KERN_V3 = ['verlegen', 'seitenwechsel', 'intro', 'startbild', 'verband', 'leitachse', 'anriss', 'auftritt', 'aufklappen', 'druck', 'zustand', 'notiert', 'laden'];
+const V2_SVG_E037 = ['sig-kreuzlinie', 'sig-flucht', 'szene-ablauf', 'sig-plan', 'einzugsband', 'fugenband'];
+const ENTFALLEN_E009 = [];
 
-test('Bewegung 1: Register enthält genau die Einträge von KERN v3 und die markierten v2-Einträge aus E-009', () => {
-  assert.deepEqual([...KENNUNGEN].sort(), [...KERN_V3, ...ENTFALLEN_E009].sort());
+test('Bewegung 1: Register enthält genau die Einträge von KERN v3 und die SVG-Bewegungen aus v2 (E-037), keine entfällt', () => {
+  assert.deepEqual([...KENNUNGEN].sort(), [...KERN_V3, ...V2_SVG_E037, ...ENTFALLEN_E009].sort());
   assert.deepEqual(entfallendeKennungen().sort(), [...ENTFALLEN_E009].sort());
-  for (const k of KERN_V3) assert.ok(!REGISTER[k].entfaellt, `${k} gehört zu v3`);
+  for (const k of [...KERN_V3, ...V2_SVG_E037]) assert.ok(!REGISTER[k].entfaellt, `${k} gehört zum System`);
 });
 
-test('Bewegung 1b: B-01, B-02 und Startbild steuern sich selbst und laufen nicht über Beobachter oder Ladeeinträge', () => {
+test('Bewegung 1b: B-01, Plan-Morph und B-02 steuern sich selbst, das Startbild legt sich beim Eintritt frei (Sicht 0,4; E-037)', () => {
+  assert.deepEqual([...SELBST].sort(), ['intro', 'seitenwechsel', 'verlegen']);
+  assert.ok(beobachteteKennungen(true).includes('startbild') && beobachteteKennungen(false).includes('startbild'));
+  assert.equal(schwelleFuer('startbild'), 0.4);
   for (const k of SELBST) {
     assert.ok(istRegistriert(k));
     assert.ok(!ladeKennungen().includes(k));

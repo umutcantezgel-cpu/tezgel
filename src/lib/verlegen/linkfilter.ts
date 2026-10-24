@@ -1,6 +1,7 @@
 // Seitenwechsel B-01: Welche Klicks verlegen Fliesen? Reine Logik, prüfbar ohne DOM (KERN K-007).
 // Nie bei Ankern derselben Seite, externen Links, tel:, mailto:, WhatsApp, Downloads, neuem Tab, Formularen
-// und Links mit data-kein-verlegen; ebenso nicht, wenn ein anderer Handler den Klick schon übernommen hat.
+// und Links mit data-kein-verlegen; ebenso nicht, wenn ein anderer Handler den Klick schon übernommen hat, und nicht bei
+// Links mit eigenem Übergang (data-uebergang), wenn dieser jetzt möglich ist (Plan-Morph, E-037).
 
 export interface Klick {
   /** Maustaste laut MouseEvent.button (0 = Haupttaste) */
@@ -14,6 +15,8 @@ export interface Klick {
   target: string | null;
   download: boolean;
   keinVerlegen: boolean;
+  /** Link trägt einen eigenen Übergang (data-uebergang) UND er ist jetzt möglich (Breite, Bewegung, Browser) */
+  eigenerUebergang?: boolean;
 }
 
 export type Grund =
@@ -28,7 +31,8 @@ export type Grund =
   | 'protokoll'
   | 'extern'
   | 'gleiche-seite'
-  | 'datei';
+  | 'datei'
+  | 'eigener-uebergang';
 
 /** Endungen, die keine Seite sind (PDF, Bilder, Feeds, Textdateien): normaler Abruf ohne Fliesen. */
 const DATEI = /\.(pdf|jpe?g|png|webp|avif|gif|svg|xml|txt|json|zip|ics|vcf|mp4)$/i;
@@ -53,5 +57,6 @@ export function pruefeKlick(k: Klick): Grund {
   // Gleicher Pfad (Anker, Filter per Suchparameter, dieselbe Adresse): keine neue Seite, also kein Belag.
   if (ziel.pathname.replace(/\/+$/, '') === hier.pathname.replace(/\/+$/, '')) return 'gleiche-seite';
   if (DATEI.test(ziel.pathname)) return 'datei';
+  if (k.eigenerUebergang) return 'eigener-uebergang';
   return 'verlegen';
 }

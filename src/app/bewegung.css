@@ -295,8 +295,12 @@ html.k-bewegung .laden-fuge::after {
 .verlegen-fliese > .verlegen-oberflaeche {
   inset: var(--fuge);
   background-color: var(--color-fliese);
-  /* der kleine Schatten der gesetzten Fliese liegt fest an der Oberfläche; nur der Flugschatten blendet aus. Keine
-     Rauschtextur mehr: ein SVG mit feTurbulence je Fliese kostete beim Rastern rund 70 ms je Wechsel (E-036) */
+  /* feine Körnung (SVG-Rauschen in Tinte, ≤ 1 KB, KERN B-01; zurück nach E-037): einmal im Leerlauf zu einer Kachel
+     gerastert und als --verlegen-koernung an die Schicht gesetzt (Verlegen.tsx), die Fliesen kacheln nur das fertige Bild
+     statt feTurbulence je Fliese (E-036). Der kleine Schatten der gesetzten Fliese liegt fest an der Oberfläche; nur der
+     Flugschatten blendet aus (E-036). */
+  background-image: var(--verlegen-koernung, none);
+  background-size: 96px 96px;
   box-shadow: var(--shadow-gesetzt);
 }
 .verlegen-glanz {
@@ -327,6 +331,48 @@ html.k-bewegung .laden-fuge::after {
   .verlegen {
     display: none;
   }
+}
+
+/* seitenwechsel (K-007, zurück nach E-037) – Plan-Morph /leistungen → /leistungen/[id]: derselbe Verlegeplan gleitet in
+   dauer-4 · ease-setzen vom Feld der Übersicht in den Einstieg der Leistungsseite, die übrige Seite überblendet in dauer-2,
+   der Kopf steht still (wie im Live-Stand). Alles hängt am Übergangstyp plan-vor, damit Transitionen, die React bei
+   B-01-Wechseln startet, nichts Benanntes (vor allem den Kopf) über die Schicht von B-01 heben; B-01 beendet sie ohnehin
+   sofort (Verlegen.tsx). Unter lg, bei reduzierter Bewegung und im Notaus ohne Animation; dort übernimmt B-01 den Link. */
+::view-transition {
+  pointer-events: none;
+}
+:root:active-view-transition-type(plan-vor) .kopf-anker {
+  view-transition-name: kopf;
+}
+:root:active-view-transition-type(plan-vor)::view-transition-group(root) {
+  animation-duration: var(--dauer-2);
+  animation-timing-function: var(--ease-setzen);
+}
+::view-transition-group(kopf) {
+  animation: none;
+  z-index: 40;
+}
+::view-transition-old(kopf) {
+  display: none;
+}
+::view-transition-new(kopf) {
+  animation: none;
+}
+::view-transition-group(.plan-morph) {
+  animation-duration: var(--dauer-4);
+  animation-timing-function: var(--ease-setzen);
+}
+@media (width < 64rem), (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+html.k-notaus::view-transition-group(*),
+html.k-notaus::view-transition-old(*),
+html.k-notaus::view-transition-new(*) {
+  animation: none !important;
 }
 
 /* intro (B-02, Ersatz „Der erste Boden“, E-018) – erster Besuch je Browser (html.k-intro aus dem Kopfskript). Eine feste
@@ -520,7 +566,10 @@ html.k-bewegung .laden-fuge::after {
    Versatzstufe (wie B-01), gesamt dauer-4 · linear (wie die Reihen des Intros; mit ease-weg lag der Belag die ersten
    rund 200 ms sichtbar still, Sichtabnahme E2; E-036); Zeiten als Anteile (--a, --d) aus src/lib/motion/startbild.ts.
    Nur unter html.k-startbild (Kopfskript: Bewegung erlaubt, kein Intro; der erste Seitenwechsel nimmt die Klasse weg).
-   Ohne Klasse, reduziert, im Druck und bei erzwungenen Farben steht das Foto sofort frei. Nur transform. */
+   Seit E-037 steht das Foto unter der Waage des Planblatts: Es legt sich unter lg frei, sobald es zu 40 % im Blick ist
+   (Register: Sicht, data-motion-stand="an" vom Bewegungsmodul); ab lg steht es sofort frei, dort ist die Kreuzlinie der eine
+   große Moment des ersten Bildschirms (K-007). Ohne Klasse, reduziert, ohne Modul (Notaus), im Druck und bei erzwungenen
+   Farben steht das Foto sofort frei. Nur transform. */
 .startbild-decke {
   position: absolute;
   inset: 1px;
@@ -557,12 +606,14 @@ html.k-bewegung .laden-fuge::after {
     visibility: hidden;
   }
 }
-@media (prefers-reduced-motion: no-preference) {
-  html.k-startbild.k-bewegung .startbild-decke {
+@media (prefers-reduced-motion: no-preference) and (width < 64rem) {
+  html.k-startbild.k-bewegung:not(.k-notaus) [data-motion="startbild"] .startbild-decke {
     display: block;
+  }
+  html.k-startbild.k-bewegung:not(.k-notaus) [data-motion="startbild"][data-motion-stand="an"] .startbild-decke {
     animation: startbild-ende var(--dauer-4) step-end forwards;
   }
-  html.k-startbild.k-bewegung .startbild-reihe {
+  html.k-startbild.k-bewegung:not(.k-notaus) [data-motion="startbild"][data-motion-stand="an"] .startbild-reihe {
     animation: startbild-ziehen calc(var(--dauer-4) * var(--d)) linear calc(var(--dauer-4) * var(--a)) both;
   }
 }
@@ -780,6 +831,13 @@ html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"] .einzugsband-zone:nth
 .kreuzlinie-aus-plan {
   transform-origin: 75% center;
 }
+/* Waage im Einstieg der Startseite (E-037): Kreuzpunkt = Lot des Plans in der Mitte der Spalten 7 bis 12 eines Rasters mit
+   12 Spalten und 3rem Abstand; die Waage beginnt 1rem vor der Inhaltskante, Prozent beziehen sich auf ihre Breite B:
+   Ursprung = 3/4 · B + 1rem (die Spaltenabstände heben sich genau auf). Gekoppelt an lg:grid-cols-12, lg:gap-x-12, Plan in
+   col 7–12 und -left-4 (StartEinstieg.tsx). */
+.kreuzlinie-aus-start {
+  transform-origin: calc(75% + var(--spacing) * 4) center;
+}
 /* SIG-1 läuft als CSS-Animation ab dem ersten Bild (Startklasse aus dem Kopfskript), nicht erst nach der Hydrierung:
    kein Startverzug und kein Notaus-Sprung auf langsamen Geräten. Der Laser zieht gleichmäßig (linear): bei 25/50/75 %
    der Dauer ist die Linie ¼/½/¾ lang (E2-SICHT-2 Befunde 5 und 11). Das Lot im Plan wächst von der Schnittkante nach oben. */
@@ -809,6 +867,40 @@ html.k-bewegung [data-motion="sig-kreuzlinie"] .plan-achse {
   transform-box: view-box;
   transform-origin: center bottom;
   animation: kreuzlinie-lot-wachsen var(--dauer-5) linear both;
+}
+
+/* Plan mit Flucht beim Laden im Planblatt der Startseite (E-037): Sein Lot wächst mit der Waage aus dem Kreuzpunkt (wie
+   oben), nicht von oben wie sonst bei sig-plan „laden“ (diese Regel ist spezifischer und muss hier überstimmt werden). */
+html.k-bewegung:not(.k-notaus) [data-motion="sig-kreuzlinie"] [data-flucht="laden"] .plan-achse-lot {
+  transform-box: view-box;
+  transform-origin: center bottom;
+  animation: kreuzlinie-lot-wachsen var(--dauer-5) linear both;
+}
+/* Erster Besuch mit Intro auf / (html.k-intro-start bleibt stehen): SIG-1 und die Flucht des Plans beginnen erst, wenn das
+   Blatt freilegt (Hälfte von --intro-gesamt), sonst liefen sie unter dem deckenden Blatt ab */
+html.k-bewegung.k-intro-start [data-motion="sig-kreuzlinie"] .kreuzlinie-lot,
+html.k-bewegung.k-intro-start [data-motion="sig-kreuzlinie"] .kreuzlinie-waage,
+html.k-bewegung.k-intro-start [data-motion="sig-kreuzlinie"] .plan-achse,
+html.k-bewegung.k-intro-start [data-motion="sig-flucht"] > :first-child {
+  animation-delay: calc(var(--intro-gesamt) * 0.5);
+}
+html.k-bewegung.k-intro-start:not(.k-notaus) [data-motion="sig-kreuzlinie"] [data-flucht="laden"] .plan-achse-lot {
+  animation-delay: calc(var(--intro-gesamt) * 0.5);
+}
+html.k-bewegung.k-intro-start [data-motion="sig-kreuzlinie"] .kreuzlinie-nach-waage {
+  animation-delay: calc(var(--intro-gesamt) * 0.5 + var(--dauer-5));
+}
+html.k-bewegung.k-intro-start [data-motion="sig-flucht"] > :nth-child(2) {
+  animation-delay: calc(var(--intro-gesamt) * 0.5 + var(--staffel) * 2);
+}
+html.k-bewegung.k-intro-start [data-motion="sig-flucht"] > :nth-child(3) {
+  animation-delay: calc(var(--intro-gesamt) * 0.5 + var(--staffel) * 4);
+}
+html.k-bewegung.k-intro-start [data-motion="sig-flucht"] > :nth-child(4) {
+  animation-delay: calc(var(--intro-gesamt) * 0.5 + var(--staffel) * 6);
+}
+html.k-bewegung.k-intro-start:not(.k-notaus) [data-motion="sig-plan"][data-flucht="laden"] .plan-reihenteil {
+  animation-delay: calc(var(--intro-gesamt) * 0.5 + var(--dauer-2));
 }
 
 /* sig-flucht (SIG-1) – die Zeilen der H1 rücken 12 px in die Flucht, nacheinander (je Zeile zwei Staffelstufen),

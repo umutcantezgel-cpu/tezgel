@@ -1,7 +1,9 @@
 // Bewegungsregister (KERN v3 K-007) – Maschinenfassung für Auslöser und Schwellen.
 // Jedes animierte Element trägt data-motion="<Kennung>"; Startzustände hängen nur an html.k-bewegung.
-// Einträge mit `entfaellt` stammen aus v2 und verschwinden mit dem Neubau ihrer Seiten (E-009, Abbau in E5-ORCH-03b).
-// B-01 „verlegen“ steuert seine Schicht selbst (WAAPI), B-02 „intro“ läuft als CSS ab dem ersten Bild; beide ohne data-motion im Inhalt.
+// Die SVG-Bewegungen aus v2 (Kreuzlinie, Flucht, Plan, Einzugsband, Szene Ablauf, Fugenband) sind seit E-037 fester Teil des
+// Systems (Entscheidung des Auftraggebers; vorher als entfallend markiert, E-009). `entfaellt` bleibt als Feld für künftige
+// Abbauten. B-01 „verlegen“ steuert seine Schicht selbst (WAAPI), B-02 „intro“ läuft als CSS ab dem ersten Bild; beide ohne
+// data-motion im Inhalt. Das Startbild legt sich seit E-037 beim Eintritt frei (Sicht 0,4).
 
 export type Ausloeser = 'laden' | 'sicht' | 'scroll' | 'interaktion';
 
@@ -16,10 +18,11 @@ export interface Registereintrag {
 }
 
 export const REGISTER: Record<string, Registereintrag> = {
-  // v3 (K-007): Seitenwechsel, Intro, Startbild
+  // v3 (K-007): Seitenwechsel, Intro, Startbild; Plan-Morph zurück nach E-037 (View Transition beim Klick, Typ plan-vor)
   verlegen: { ausloeser: 'interaktion' },
+  seitenwechsel: { ausloeser: 'interaktion' },
   intro: { ausloeser: 'laden' },
-  startbild: { ausloeser: 'laden' },
+  startbild: { ausloeser: 'sicht', schwelle: 0.4 },
   // aus v2, bleiben
   verband: { ausloeser: 'interaktion' },
   leitachse: { ausloeser: 'scroll' },
@@ -30,14 +33,14 @@ export const REGISTER: Record<string, Registereintrag> = {
   zustand: { ausloeser: 'interaktion' },
   notiert: { ausloeser: 'interaktion' },
   laden: { ausloeser: 'interaktion' },
-  // aus v2, entfallen in v3 (E-009)
-  'sig-kreuzlinie': { ausloeser: 'laden', entfaellt: true },
-  'sig-flucht': { ausloeser: 'laden', entfaellt: true },
-  'szene-ablauf': { ausloeser: 'scroll', entfaellt: true },
-  'sig-plan': { ausloeser: 'sicht', schwelle: 0.4, nurGrob: true, entfaellt: true },
+  // aus v2, fester Teil des Systems seit E-037 (vorher E-009 entfallend)
+  'sig-kreuzlinie': { ausloeser: 'laden' },
+  'sig-flucht': { ausloeser: 'laden' },
+  'szene-ablauf': { ausloeser: 'scroll' },
+  'sig-plan': { ausloeser: 'sicht', schwelle: 0.4, nurGrob: true },
   // E4-NACH-02: legt sich beim Laden per CSS frei (Planblatt des Einstiegs), kein Beobachter
-  einzugsband: { ausloeser: 'laden', entfaellt: true },
-  fugenband: { ausloeser: 'scroll', entfaellt: true },
+  einzugsband: { ausloeser: 'laden' },
+  fugenband: { ausloeser: 'scroll' },
 };
 
 export const KENNUNGEN = Object.keys(REGISTER);
@@ -51,13 +54,13 @@ export function beobachteteKennungen(grobesZeigegeraet: boolean): string[] {
   });
 }
 
-/** Kennungen, die beim Laden sofort in den Endzustand wechseln (data-motion im Inhalt; intro und startbild steuern sich selbst). */
+/** Kennungen, die beim Laden sofort in den Endzustand wechseln (data-motion im Inhalt; verlegen und intro steuern sich selbst). */
 export function ladeKennungen(): string[] {
   return KENNUNGEN.filter((k) => REGISTER[k].ausloeser === 'laden' && !SELBST.includes(k));
 }
 
-/** Kennungen mit eigener Steuerung (Komponente mit WAAPI), nicht über data-motion und Beobachter. */
-export const SELBST = ['verlegen', 'intro', 'startbild'];
+/** Kennungen mit eigener Steuerung (Komponente mit WAAPI bzw. CSS ab dem ersten Bild), nicht über data-motion und Beobachter. */
+export const SELBST = ['verlegen', 'intro', 'seitenwechsel'];
 
 /** v2-Einträge, die in KERN v3 entfallen (E-009). */
 export function entfallendeKennungen(): string[] {

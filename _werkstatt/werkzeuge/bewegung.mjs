@@ -31,6 +31,8 @@ export const AUSLOESER = {
   einzugsband: 'seite', fugenband: 'scroll', leitachse: 'scroll', verband: 'wahl',
   anriss: 'scroll', auftritt: 'scroll', aufklappen: 'klick', druck: 'aktiv', zustand: 'hover+fokus',
   notiert: 'erfolg', laden: 'absenden', seitenwechsel: 'navigation',
+  // E-037: das Startbild legt sich beim Eintritt frei (Sicht 0,4), beim Durchscrollen auslösen
+  startbild: 'scroll',
 };
 // Auslöser, die nur nach Formularsendung oder Navigation entstehen. Sie werden bewusst nicht ausgelöst.
 const NICHT_AUSLOESBAR = {

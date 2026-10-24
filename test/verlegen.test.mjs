@@ -297,6 +297,26 @@ test('Linkfilter 12: ungültige Adresse → ungueltig', () => {
   assert.equal(pruefeKlick(klick({ ziel: 'http://[' })), 'ungueltig');
 });
 
+test('Linkfilter 13: eigener Übergang (Plan-Morph, data-uebergang) und möglich → eigener-uebergang (E-037)', () => {
+  assert.equal(pruefeKlick(klick({ ziel: 'https://tezgel.de/leistungen/bad', hier: 'https://tezgel.de/leistungen', eigenerUebergang: true })), 'eigener-uebergang');
+});
+
+test('Linkfilter 14: alle anderen Gründe gehen dem eigenen Übergang vor', () => {
+  const mit = (u) => pruefeKlick(klick({ eigenerUebergang: true, ...u }));
+  assert.equal(mit({ zusatztaste: true }), 'zusatztaste');
+  assert.equal(mit({ taste: 1 }), 'taste');
+  assert.equal(mit({ target: '_blank' }), 'target');
+  assert.equal(mit({ download: true }), 'download');
+  assert.equal(mit({ keinVerlegen: true }), 'kein-verlegen');
+  assert.equal(mit({ ziel: 'https://wa.me/49123' }), 'extern');
+  assert.equal(mit({ ziel: HIER + '#termin' }), 'gleiche-seite');
+  assert.equal(mit({ ziel: 'https://tezgel.de/downloads/preise.pdf' }), 'datei');
+});
+
+test('Linkfilter 15: eigener Übergang jetzt nicht möglich (mobil, reduziert, ohne Browserunterstützung) → verlegen (B-01)', () => {
+  assert.equal(pruefeKlick(klick({ ziel: 'https://tezgel.de/leistungen/bad', hier: 'https://tezgel.de/leistungen', eigenerUebergang: false })), 'verlegen');
+});
+
 // Zustandsautomat ------------------------------------------------------------
 
 /** Führt Ereignisse nacheinander aus; liefert Endlage, alle Aktionen und die Folge der Zustände. */
