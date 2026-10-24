@@ -5,6 +5,7 @@
 // LCP-Bild (lcp); alle anderen Bilder laden verzögert.
 import type { ReactNode } from 'react';
 import Image from 'next/image';
+import clsx from 'clsx';
 import { ARBEITEN, type ArbeitId } from '@/config/arbeiten';
 
 export type BildfeldSpalten = 'voll' | 'halb' | 'drittel';
@@ -25,6 +26,9 @@ interface Gemeinsam {
   beschriftung?: ReactNode;
   /** Quelle, in Mono unter der Beschriftung */
   quelle?: ReactNode;
+  /** als Fliese einer verlegten Fläche (Raster mit 1-px-Fugen): Bild ohne eigenen Rahmen, Beschriftung mit Innenabstand
+   *  und ohne Silbentrennung */
+  flaeche?: boolean;
   className?: string;
 }
 
@@ -49,11 +53,11 @@ interface MitDatei extends Gemeinsam {
 export type BildfeldProps = MitArbeit | MitDatei;
 
 export default function Bildfeld(props: BildfeldProps) {
-  const { spalten = 'voll', sizes, lcp = false, beschriftung, quelle, className } = props;
+  const { spalten = 'voll', sizes, lcp = false, beschriftung, quelle, flaeche = false, className } = props;
   const bild = props.arbeit ? ARBEITEN[props.arbeit] : props;
   return (
     <figure className={className} aria-hidden={bild.alt === '' || undefined}>
-      <div className="border border-fuge bg-fliese">
+      <div className={flaeche ? 'bg-fliese' : 'border border-fuge bg-fliese'}>
         <Image
           src={bild.src}
           alt={bild.alt}
@@ -67,8 +71,8 @@ export default function Bildfeld(props: BildfeldProps) {
         />
       </div>
       {(beschriftung || quelle) && (
-        <figcaption className="mt-3">
-          {beschriftung && <span className="block font-text text-fs-2 text-tinte">{beschriftung}</span>}
+        <figcaption className={flaeche ? 'px-4 pt-3 pb-4' : 'mt-3'}>
+          {beschriftung && <span className={clsx('block font-text text-fs-2 text-tinte', flaeche && 'hyphens-none')}>{beschriftung}</span>}
           {quelle && <span className="mt-1 block font-mono text-fs-1 text-tinte-2">{quelle}</span>}
         </figcaption>
       )}
