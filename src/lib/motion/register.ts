@@ -2,8 +2,8 @@
 // Jedes animierte Element trägt data-motion="<Kennung>"; Startzustände hängen nur an html.k-bewegung.
 // Die SVG-Bewegungen aus v2 (Kreuzlinie, Flucht, Plan, Einzugsband, Szene Ablauf, Fugenband) sind seit E-037 fester Teil des
 // Systems (Entscheidung des Auftraggebers; vorher als entfallend markiert, E-009). `entfaellt` bleibt als Feld für künftige
-// Abbauten. B-01 „verlegen“ (seit E-042 der Wind, eine View Transition) steuert sich selbst, B-02 „intro“ läuft als CSS ab dem
-// ersten Bild; beide ohne data-motion im Inhalt. Das Startbild legt sich seit E-037 beim Eintritt frei (Sicht 0,4).
+// Abbauten. B-01 „verlegen“ (seit E-043 Fliese für Fliese) steuert seine Schicht selbst (WAAPI), B-02 „intro“ läuft als CSS
+// ab dem ersten Bild; beide ohne data-motion im Inhalt. Das Startbild legt sich seit E-037 beim Eintritt frei (Sicht 0,4).
 
 export type Ausloeser = 'laden' | 'sicht' | 'scroll' | 'interaktion';
 
