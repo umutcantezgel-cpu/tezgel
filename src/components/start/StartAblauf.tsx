@@ -57,8 +57,9 @@ export default function StartAblauf() {
         <li className="flex gap-3">
           <Fugenkreuz className="mt-2 size-3 shrink-0 text-tinte" />
           <p className="font-text text-fs-3 text-tinte">
-            {/* zwei Sätze, jedes Fachwort mit seiner Erklärung am Satzende (höchstens 25 Wörter je Satz, K-010) */}
-            Im Bad kommt vor dem Verlegen eine <Fachwort id="abdichtung">Abdichtung</Fachwort>. Dabei halten wir uns
+            {/* zwei Sätze, jedes Fachwort mit seiner Erklärung am Satzende (höchstens 25 Wörter je Satz, K-010); die Abdichtung
+                ist schon an der Zeichnung in „Was wir tun“ erklärt */}
+            Im Bad kommt vor dem Verlegen eine <Fachwort id="abdichtung" erklaert={false}>Abdichtung</Fachwort>. Dabei halten wir uns
             an <Fachwort id="din-18534">DIN 18534</Fachwort>.
           </p>
         </li>

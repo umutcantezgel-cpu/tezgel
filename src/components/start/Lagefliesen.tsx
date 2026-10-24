@@ -26,7 +26,8 @@ const LAGEN: Lage[] = [
 ];
 
 function Bild({ lage }: { lage: Lage }) {
-  if (lage.motiv) return <Fliesenkomposition motiv={lage.motiv} fuellen className="absolute inset-0" />;
+  // Zeichnung nur, wo kein Foto passt, und dann im selben Stil wie die Bereichsfliesen (deutlich; Sichtabnahme E2, Befund 13)
+  if (lage.motiv) return <Fliesenkomposition motiv={lage.motiv} ausschnitt={72} fuellen deutlich className="absolute inset-0" />;
   const b = ARBEITEN[lage.bild];
   return (
     <Image

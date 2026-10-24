@@ -20,7 +20,8 @@ type Fliese = { satz: string; href: string } & BildOderMotiv;
 const STREIFEN_ZEILEN: Record<number, string> = { 1: 'lg:grid-rows-1', 2: 'lg:grid-rows-2', 3: 'lg:grid-rows-3', 4: 'lg:grid-rows-4' };
 
 function Bild({ fliese }: { fliese: Fliese }) {
-  if (fliese.motiv) return <Fliesenkomposition motiv={fliese.motiv} fuellen className="absolute inset-0" />;
+  // Zeichnung im selben Stil wie die Bereichsfliesen (deutlich; Sichtabnahme E2, Befund 13)
+  if (fliese.motiv) return <Fliesenkomposition motiv={fliese.motiv} ausschnitt={72} fuellen deutlich className="absolute inset-0" />;
   const b = ARBEITEN[fliese.bild];
   return <Image src={b.src} alt="" fill sizes="(min-width: 1024px) 16vw, (min-width: 768px) 25vw, 33vw" placeholder="blur" blurDataURL={b.blur} className="object-cover" />;
 }

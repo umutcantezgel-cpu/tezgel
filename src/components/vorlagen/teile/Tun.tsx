@@ -51,7 +51,7 @@ export function Bereichsfliesen({ bereiche }: { bereiche: { name: string; href: 
         {bereiche.map((b) => (
           <li key={b.href} className="bg-fliese">
             <Link href={b.href} data-motion="zustand" className="group flex h-full flex-col text-tinte">
-              <span aria-hidden="true" className="hidden aspect-video overflow-hidden border-b border-fuge @xs:block">
+              <span aria-hidden="true" className="hidden aspect-video overflow-hidden border-b border-fuge @xs:block lg:aspect-3/2">
                 <Fliesenkomposition motiv={b.motiv} format="16:9" ausschnitt={96} fuellen deutlich />
               </span>
               <span className="flex flex-1 items-start gap-3 p-4 lg:p-6">
