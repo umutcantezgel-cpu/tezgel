@@ -19,7 +19,7 @@ const LAGEN: Lage[] = [
   // Fotos anders als in der Galerie „So sieht unsere Arbeit aus.“, damit kein Bild doppelt erscheint (Sichtprüfung E2)
   { satz: 'Die Badewanne soll raus. Ich möchte eine Dusche ohne Stufe.', href: '/bad/barrierefreies-bad', bild: 'bereich-dusche-streifen-sitzbank' },
   { satz: 'Das ganze Bad ist alt und soll neu werden.', href: '/bad/badsanierung', bild: 'bad-einstieg' },
-  { satz: 'Im Neubau sollen Böden und Wände gefliest werden.', href: '/fliesen/neubau', motiv: 'halbverband' },
+  { satz: 'Im Neubau sollen Böden und Wände gefliest werden.', href: '/fliesen/neubau', motiv: 'verlegekante' },
   { satz: 'Eine Fliese ist gesprungen, oder die Fugen sind alt.', href: '/fliesenreparatur', motiv: 'riss' },
   { satz: 'Auf dem Balkon bleibt nach dem Regen Wasser stehen.', href: '/balkon-terrasse', bild: 'lage-balkon' },
   { satz: 'Die Treppe vor dem Haus ist kaputt.', href: '/treppen/aussentreppe', bild: 'kontakt-eingang' },
@@ -76,9 +76,10 @@ export default function Lagefliesen() {
               >
                 <Bild lage={lage} />
               </span>
-              <span className="flex min-w-0 items-start justify-between gap-3 p-4 @xs:col-span-3 lg:p-8 @xs:lg:col-span-2">
+              {/* schmal: Pfeil in eigener Zeile unter dem Satz, damit der Satz die volle Breite hat (Runde 3) */}
+              <span className="flex min-w-0 flex-col gap-2 p-3 @xs:col-span-3 @xs:flex-row @xs:items-start @xs:justify-between @xs:gap-3 @xs:p-4 lg:p-8 @xs:lg:col-span-2">
                 <span className="font-text text-fs-4 font-semibold text-pretty hyphens-none">{lage.satz}</span>
-                <Icon name="pfeil-rechts" groesse={5} className="mt-1 shrink-0 text-tinte-2 transition-colors dauer-1 group-hover:text-tinte" />
+                <Icon name="pfeil-rechts" groesse={5} className="shrink-0 self-end text-tinte-2 transition-colors dauer-1 group-hover:text-tinte @xs:mt-1 @xs:self-auto" />
               </span>
             </Link>
           </li>

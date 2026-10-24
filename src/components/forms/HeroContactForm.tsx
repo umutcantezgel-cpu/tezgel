@@ -91,16 +91,20 @@ export default function HeroContactForm({ titel = true }: { titel?: boolean } = 
     }
 
     return (
-        <div className="border border-strich bg-fliese p-4 text-left sm:p-6 lg:p-8">
-            {/* Kopf des Formulars: Schriftfeld-Zeile */}
+        // Container-Abfrage: Bei großer Systemschrift (Rahmen schmaler als 20 rem) weniger Innenabstand in Rahmen und Feldern,
+        // damit die Platzhalter lesbar bleiben (Sichtprüfung E2 Runde 3)
+        <div className="@container">
+        <div className="border border-strich bg-fliese p-3 text-left @xs:p-4 sm:p-6 lg:p-8">
+            {/* Kopf des Formulars: Schriftfeld-Zeile; Zeichen im Textfluss, damit umbrechende Zeilen ohne hängenden Einzug
+                unter dem Zeichen weiterlaufen */}
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-fuge pb-4">
-                <span className="inline-flex items-center gap-2 font-text text-fs-2 text-tinte-2">
-                    <Fugenkreuz className="size-3 text-strich" />
+                <span className="font-text text-fs-2 text-tinte-2">
+                    <Fugenkreuz className="mr-2 inline-block size-3 text-strich" />
                     Anfrage direkt an Deniz Tezgel
                 </span>
                 {/* eigene Zusage des Formulars, sinngleich ausgeschrieben (K-015, M-07) */}
-                <span className="flex items-center gap-2 font-text text-fs-2 text-tinte">
-                    <Icon name="uhr" groesse={4} />
+                <span className="font-text text-fs-2 text-tinte">
+                    <Icon name="uhr" groesse={4} className="mr-2 align-text-bottom" />
                     Rückruf innerhalb von 24 Stunden
                 </span>
             </div>
@@ -277,6 +281,7 @@ export default function HeroContactForm({ titel = true }: { titel?: boolean } = 
                     </div>
                 </div>
             </form>
+        </div>
         </div>
     );
 }

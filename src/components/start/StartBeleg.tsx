@@ -1,6 +1,6 @@
 // Startseite · 5 Beleg (KERN v3 K-003 Nr. 3, K-009, K-012; Text REF-start): drei Teile in eigener Form.
-// Arbeiten: sechs echte Fotos (je Raum eins) mit kurzer Unterschrift, die mittlere Spalte ab lg um ein Drittel versetzt
-// (der Versatz dieses Bildschirms), darunter der Weg zur Galerie. Kunden: drei Stimmen wörtlich aus REVIEWS (nur mit „…“
+// Arbeiten: sechs echte Fotos (je Raum eins) mit kurzer Unterschrift als gerade verlegte Fläche mit 1-px-Fugen (kein
+// Versatz: den tragen Lage und Ablauf; Runde 3), schmal einspaltig, darunter der Weg zur Galerie. Kunden: drei Stimmen wörtlich aus REVIEWS (nur mit „…“
 // gekürzt, wie in der Quelle), Quelle Google, darunter die Kennzeile mit Stand. Orte: der Satz zum Einsatzgebiet und alle
 // Orte aus CITIES nach Entfernung ab Aßlar in drei Gruppen, je Ort ein Link. Serverkomponenten.
 import Link from 'next/link';
@@ -9,6 +9,7 @@ import Icon from '@/components/icons/Icon';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Bildfeld from '@/components/kern/Bildfeld';
 import { linkKlassen } from '@/components/kern/stile';
+import { zusammen } from '@/components/kern/zusammen';
 import type { ArbeitId } from '@/config/arbeiten';
 import { CITIES } from '@/config/cities';
 import { REVIEWS } from '@/config/reviews';
@@ -27,15 +28,18 @@ const FOTOS: { id: ArbeitId; unterschrift: string }[] = [
 
 export function Arbeiten() {
   return (
-    <Abschnitt id="unsere-arbeiten" formel="beleg" leitachse titel="So sieht unsere Arbeit aus." className="lg:pb-32">
-      <ul className="grid grid-cols-2 gap-x-4 gap-y-8 md:gap-x-6 lg:grid-cols-3 lg:gap-x-8">
-        {FOTOS.map((f, i) => (
-          <li key={f.id} className={clsx(i % 3 === 1 && 'lg:translate-y-16')}>
-            <Bildfeld arbeit={f.id} sizes="(min-width: 1024px) 30vw, 50vw" beschriftung={f.unterschrift} />
-          </li>
-        ))}
-      </ul>
-      <p className="mt-12 lg:mt-24">
+    <Abschnitt id="unsere-arbeiten" formel="beleg" leitachse titel="So sieht unsere Arbeit aus.">
+      {/* zweispaltig erst, wenn eine Spalte mindestens 20 rem hat (große Systemschrift: ein Foto über die volle Breite) */}
+      <div className="@container">
+        <ul className="grid grid-cols-1 gap-px border border-fuge bg-fuge @xl:grid-cols-2 @5xl:grid-cols-3">
+          {FOTOS.map((f) => (
+            <li key={f.id} className="bg-kalk">
+              <Bildfeld arbeit={f.id} sizes="(min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw" beschriftung={f.unterschrift} flaeche />
+            </li>
+          ))}
+        </ul>
+      </div>
+      <p className="mt-12">
         <Link href="/referenzen" data-motion="zustand" className={clsx(linkKlassen, 'inline-flex min-h-11 items-center gap-2 font-semibold text-fs-3')}>
           Alle Arbeiten ansehen
           <Icon name="pfeil-rechts" groesse={5} />
@@ -47,6 +51,21 @@ export function Arbeiten() {
 
 // Die große Stimme ist die von C. W. (vollständige Sätze); Wortlaut aller Stimmen unverändert aus REVIEWS
 const STIMMEN = ['c-wolf', 'rabia-oe', 'elke-s'];
+// In der großen Stimme unterstreicht die Laserlinie die Worte, auf die es dem Kunden ankommt (Wortlaut unverändert, G8;
+// fehlt die Stelle im Wortlaut, bleibt die Stimme ohne Markierung)
+const MARKIERUNG: Record<string, string> = { 'c-wolf': 'ordnungsgemäß, sauber und pünktlich' };
+
+function markiert(text: string, stelle?: string) {
+  const i = stelle ? text.indexOf(stelle) : -1;
+  if (!stelle || i < 0) return text;
+  return (
+    <>
+      {text.slice(0, i)}
+      <span className="underline decoration-laser decoration-2 underline-offset-4">{stelle}</span>
+      {text.slice(i + stelle.length)}
+    </>
+  );
+}
 
 /** Eine Stimme: Sterne nur als Bild (der Name nennt die Bewertung), Wortlaut unverändert aus REVIEWS. */
 function Stimme({ s, gross }: { s: (typeof REVIEWS)[number]; gross: boolean }) {
@@ -60,7 +79,7 @@ function Stimme({ s, gross }: { s: (typeof REVIEWS)[number]; gross: boolean }) {
       {/* wrap-break-word: der Wortlaut enthält Stellen ohne Leerzeichen („empfehlen.Handwerklich“), die bei großer
           Systemschrift sonst über den Rand laufen; keine Silbentrennung im Zitat */}
       <blockquote className={clsx('mt-4 min-w-0 font-text text-pretty wrap-break-word text-tinte hyphens-none', gross ? 'text-fs-4 font-semibold' : 'text-fs-3')}>
-        <p>{s.text}</p>
+        <p>{gross ? markiert(s.text, MARKIERUNG[s.id]) : s.text}</p>
       </blockquote>
       <figcaption className="mt-6 font-text text-fs-2 text-tinte-2">
         <span className="font-semibold text-tinte">{s.author}</span> bei {s.source}
@@ -83,7 +102,7 @@ export function Kundenstimmen() {
   return (
     <Abschnitt id="kundenstimmen" formel="beleg" leitachse flaeche="fliese" titel="Das sagen unsere Kunden.">
       <div className="grid gap-12 border-t border-fuge pt-12 lg:grid-cols-12 lg:gap-x-12">
-        <div className="min-w-0 lg:col-span-7 lg:self-center">
+        <div className="min-w-0 lg:col-span-7">
           <Stimme s={erste} gross />
         </div>
         <ul className="flex min-w-0 flex-col gap-12 border-t border-fuge pt-12 lg:col-span-5 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-12">
@@ -122,25 +141,28 @@ function Masskette({ bereich }: { bereich: number }) {
 
 function Ortsgruppe({ g, bereich }: { g: (typeof GRUPPEN)[number]; bereich: number }) {
   return (
-    // die letzte Gruppe einer Spalte füllt die Spalte bis unten (sonst bliebe unter der kürzeren Spalte Fugenfläche)
-    <div className="bg-fliese p-6 last:grow">
-      <h3 className="font-text text-fs-2 font-semibold text-tinte-2">{GRUPPE_NAME[g.zone.id]}</h3>
-      <Masskette bereich={bereich} />
-      <ul className="mt-4 flex flex-col">
-        {g.orte.map((o) => (
-          <li key={o.slug} className="flex items-center justify-between gap-3 border-b border-fuge last:border-b-0">
-            {/* der Link nimmt die ganze Zeile bis zur Entfernung ein (Trefffläche ≥ 44 px auch bei kurzen Namen) */}
-            <Link href={`/standorte/${o.slug}`} data-motion="zustand" className={clsx(linkKlassen, 'flex min-h-11 flex-1 items-center font-text text-fs-3')}>
-              <span>{o.name}</span>
-            </Link>
-            {o.distanceKm === 0 ? (
-              <span className="shrink-0 font-text text-fs-1 text-tinte-2">Firmensitz</span>
-            ) : (
-              <span className="shrink-0 font-mono text-fs-1 text-tinte-2">ca. {o.distanceKm} km</span>
-            )}
-          </li>
-        ))}
-      </ul>
+    // die letzte Gruppe einer Spalte füllt die Spalte bis unten (sonst bliebe unter der kürzeren Spalte Fugenfläche);
+    // schmal (große Systemschrift) steht die Entfernung unter dem Ort, Ortsnamen werden nie getrennt (Runde 3)
+    <div className="@container bg-fliese last:grow">
+      <div className="p-4 @xs:p-6">
+        <h3 className="font-text text-fs-2 font-semibold text-tinte-2">{zusammen(GRUPPE_NAME[g.zone.id])}</h3>
+        <Masskette bereich={bereich} />
+        <ul className="mt-4 flex flex-col">
+          {g.orte.map((o) => (
+            <li key={o.slug} className="flex flex-col items-start border-b border-fuge pb-2 last:border-b-0 @xs:flex-row @xs:items-center @xs:justify-between @xs:gap-3 @xs:pb-0">
+              {/* der Link nimmt die ganze Zeile bis zur Entfernung ein (Trefffläche ≥ 44 px auch bei kurzen Namen) */}
+              <Link href={`/standorte/${o.slug}`} data-motion="zustand" className={clsx(linkKlassen, 'flex min-h-11 w-full items-center font-text text-fs-3 hyphens-none @xs:w-auto @xs:flex-1')}>
+                <span>{o.name}</span>
+              </Link>
+              {o.distanceKm === 0 ? (
+                <span className="shrink-0 font-text text-fs-1 text-tinte-2">Firmensitz</span>
+              ) : (
+                <span className="shrink-0 font-mono text-fs-1 text-tinte-2">{zusammen(`ca. ${o.distanceKm} km`)}</span>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

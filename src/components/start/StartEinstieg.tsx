@@ -88,9 +88,10 @@ export default function StartEinstieg() {
             </div>
           </div>
         </div>
-        <div className="col-span-4 md:col-span-6 lg:col-span-5 lg:col-start-8">
+        {/* md: rechtsbündig an der Textkante, um zwei von acht Spalten eingerückt (kein Rest rechts, Runde 3) */}
+        <div className="col-span-4 md:col-span-6 md:col-start-3 lg:col-span-5 lg:col-start-8">
           <Startbild sizes="(min-width: 1024px) 40vw, (min-width: 768px) 75vw, 100vw" />
-          <Bewertungszeile className="mt-4 font-text text-fs-2 text-tinte-2" />
+          <Bewertungszeile className="mt-4 font-text text-fs-2 text-tinte-2 hyphens-none" />
         </div>
       </div>
     </section>
