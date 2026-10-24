@@ -8,7 +8,7 @@ import WhatsAppLogo from "@/components/ui/WhatsAppLogo";
 import { siteConfig } from "@/lib/config";
 import { buildWhatsAppUrl, kontextNachricht, openWhatsApp } from "@/lib/whatsapp";
 import { triggerHaptic } from "@/lib/haptics";
-import { hauptziel } from "@/config/navigation";
+import { hauptziel, ohneLeiste } from "@/config/navigation";
 
 // Untere Leiste (KERN v3 K-009, E-012): einzige feste Ebene neben dem Kopf, bis lg; drei Wege an der Fuge, die
 // Hauptaktion „Termin vor Ort anfragen“ auf Tinte (sichtbar kurz „Termin“, Name für Screenreader vollständig), WhatsApp mit
@@ -22,13 +22,7 @@ export default function MobileBottomBar() {
   const pathname = usePathname() || "";
 
   // Auf den Abläufen selbst ausgeblendet, damit die Leiste keine Schritte verdeckt
-  const isInteractiveFormPage =
-    pathname.includes("/badanfrage") ||
-    pathname.includes("/projekt-check") ||
-    pathname.includes("/badplaner") ||
-    pathname.includes("/konfigurator");
-
-  if (isInteractiveFormPage) {
+  if (ohneLeiste(pathname)) {
     return null;
   }
 

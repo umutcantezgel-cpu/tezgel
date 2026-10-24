@@ -8,6 +8,7 @@ import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import { hauptziel, navigationLinks, primaryCta } from '@/config/navigation';
 import { COMPANY_DATA } from '@/config/company';
 import { openWhatsApp } from '@/lib/whatsapp';
+import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
 import { knopfKlassen } from '@/components/kern/stile';
 import { BrandMark } from '@/components/common/Header';
 
@@ -170,7 +171,9 @@ export default function MobileMenu({ isOpen, onToggle }) {
                         {primaryCta.name}
                         <Icon name="pfeil-rechts" groesse={4} />
                     </Link>
-                    <div className="mt-2 grid grid-cols-2 gap-2">
+                    {/* nebeneinander nur, wenn beide Knöpfe ihre Wörter fassen (Container-Abfrage in rem, große Systemschrift) */}
+                    <div className="@container mt-2">
+                    <div className="grid grid-cols-1 gap-2 @3xs:grid-cols-2">
                         <a
                             href={`tel:${COMPANY_DATA.contact.phoneLink}`}
                             className={knopfKlassen('neben', 'px-3')}
@@ -192,9 +195,10 @@ export default function MobileMenu({ isOpen, onToggle }) {
                             aria-label={`Nachricht per WhatsApp an Deniz Tezgel: ${COMPANY_DATA.contact.whatsapp}`}
                             data-motion="druck"
                         >
-                            <Icon name="sprechblase" groesse={4} />
+                            <WhatsAppLogo className="size-4 shrink-0" />
                             <span>WhatsApp</span>
                         </a>
+                    </div>
                     </div>
                 </div>
             </div>

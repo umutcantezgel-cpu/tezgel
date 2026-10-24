@@ -71,6 +71,12 @@ export function hauptziel(pathname) {
     return pathname === '/' ? '#termin' : primaryCta.path;
 }
 
+/** Abläufe, auf denen die untere Leiste ausgeblendet ist (sie verdeckte sonst Schritte); dort behält der Kopf Telefon
+ *  und Hauptknopf auch unter lg. Eine Liste für Leiste und Kopf. */
+export function ohneLeiste(pathname) {
+    return ['/badanfrage', '/projekt-check', '/badplaner', '/konfigurator'].some((teil) => pathname.includes(teil));
+}
+
 /** Fuß: vollständige, geordnete Übersicht aller Bereiche (Auftrag Abschnitt 6, K-009). */
 export const footerGruppen = [
     {

@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
-import { hauptziel, navigationLinks, primaryCta } from '@/config/navigation';
+import { hauptziel, navigationLinks, ohneLeiste, primaryCta } from '@/config/navigation';
 import { COMPANY_DATA } from '@/config/company';
 import { knopfKlassen, seitenKlassen } from '@/components/kern/stile';
 import FloatingWhatsAppWidget from '@/components/common/FloatingWhatsAppWidget';
@@ -56,6 +56,7 @@ export function BrandMark({ compact = false, sublineClassName = 'hidden lg:block
 // dem Menü-Schalter, der denselben Weg trägt. Ohne Zoom sind Kopf- und Fensterbreite gleich (bis auf eine Scrollleiste).
 export default function Header({ isMobileMenuOpen }) {
     const pathname = usePathname() || '/';
+    const leisteAus = ohneLeiste(pathname);
     const [openMenu, setOpenMenu] = useState(null);
     const navRef = useRef(null);
     const closeTimerRef = useRef(null);
@@ -202,11 +203,17 @@ export default function Header({ isMobileMenuOpen }) {
                     })}
                 </nav>
 
+                {/* unter lg tragen die untere Leiste Anruf und Hauptknopf; der Kopf zeigt dort nur Logo und Menü-Schalter
+                    (Sichtprüfung E2 Runde 2: doppelte Bedienflächen, Hauptknopf quer am Rand angeschnitten). Auf den
+                    Abläufen ohne Leiste bleiben beide im Kopf. */}
                 <div className="flex shrink-0 items-center gap-2">
                     <a
                         href={`tel:${COMPANY_DATA.contact.phoneLink}`}
                         data-erstes-bild="kontakt"
-                        className="hidden min-h-11 items-center gap-2 px-1 font-mono text-fs-2 @7xl:text-fs-1 2xl:px-2 2xl:text-fs-2 text-tinte underline decoration-transparent underline-offset-4 transition-colors dauer-1 ease-setzen hover:decoration-tinte sm:inline-flex"
+                        className={clsx(
+                            'hidden min-h-11 items-center gap-2 px-1 font-mono text-fs-2 @7xl:text-fs-1 2xl:px-2 2xl:text-fs-2 text-tinte underline decoration-transparent underline-offset-4 transition-colors dauer-1 ease-setzen hover:decoration-tinte',
+                            leisteAus ? 'sm:inline-flex' : 'lg:inline-flex',
+                        )}
                         aria-label={`Fliesenverlegung Tezgel telefonisch anrufen: ${COMPANY_DATA.contact.phone}`}
                         data-motion="zustand"
                     >
@@ -220,7 +227,7 @@ export default function Header({ isMobileMenuOpen }) {
                     </span>
                     <Link
                         href={hauptziel(pathname)}
-                        className={knopfKlassen('haupt', 'px-4 max-sm:hidden @max-xl:hidden @7xl:px-3 2xl:px-4')}
+                        className={knopfKlassen('haupt', clsx('px-4 @max-xl:hidden @7xl:px-3 2xl:px-4', leisteAus ? 'max-sm:hidden' : 'max-lg:hidden'))}
                         data-motion="druck"
                         data-hauptknopf=""
                         data-erstes-bild="hauptknopf"

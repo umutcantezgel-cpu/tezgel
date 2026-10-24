@@ -15,7 +15,7 @@ const LINK_COLUMNS = footerGruppen;
 
 // Belege aus dem Faktenblatt K-015 (F-05, F-15, F-17, F-12), keine Garantien (M-07)
 const GUARANTEES = [
-    { title: 'Eingetragener Fachbetrieb', text: COMPANY_DATA.authority.shortName },
+    { title: 'Eingetragener Fachbetrieb', text: COMPANY_DATA.authority.name },
     { title: 'Abdichtung nach DIN 18534', text: 'bei uns Standard seit 2019' },
     { title: 'Staubschutz', text: 'wenn Sie während der Arbeiten im Haus wohnen' },
     { title: 'Termin vor Ort', text: 'für Sie kostenfrei' }
@@ -67,7 +67,7 @@ export default function Footer() {
                             className="h-12 w-auto shrink-0 object-contain sm:h-16"
                         />
                         <span className={clsx(etikett, 'mt-3 block')}>
-                            Inh. {owner.fullName} &middot; Fachbetrieb Aßlar / Wetzlar
+                            Inhaber {owner.fullName} &middot; Fachbetrieb Aßlar / Wetzlar
                         </span>
                     </Link>
 
@@ -168,15 +168,15 @@ export default function Footer() {
             </div>
 
             <div className="border-t border-nacht-fuge">
-                <div className={clsx(seitenKlassen, 'flex flex-col items-start gap-4 pb-24 pt-6 font-mono text-fs-1 text-nacht-2 lg:pb-6 lg:flex-row lg:items-center lg:justify-between')}>
+                <div className={clsx(seitenKlassen, 'flex flex-col items-start gap-4 pb-24 pt-6 font-text text-fs-1 text-nacht-2 lg:pb-6 lg:flex-row lg:items-center lg:justify-between')}>
                     <p>
-                        &copy; {currentYear} {COMPANY_DATA.legalName} &middot; Inh. {owner.fullName} &middot; Alle Rechte vorbehalten.
+                        &copy; {currentYear} {COMPANY_DATA.legalName} &middot; Inhaber {owner.fullName} &middot; Alle Rechte vorbehalten.
                     </p>
                     <nav aria-label="Rechtliches">
                         <ul className="flex flex-wrap items-center gap-x-4 gap-y-2">
                             {footerLegalLinks.map((item) => (
                                 <li key={item.path} className={item.path === '#cookie-settings' ? 'lg:hidden' : undefined}>
-                                    <Link href={item.path} className={clsx(fussLink, 'inline-block py-1')} data-motion="zustand">
+                                    <Link href={item.path} className={clsx(fussLink, 'inline-flex min-h-11 items-center')} data-motion="zustand">
                                         {item.name}
                                     </Link>
                                 </li>

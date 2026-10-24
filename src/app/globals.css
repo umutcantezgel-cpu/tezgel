@@ -401,19 +401,23 @@
     }
   }
   /* Große Systemschrift (K-013, P1 mit 200 %): Ist die untere Leiste schmaler als 20 em ihrer eigenen Schriftgröße (bei
-     100 % also unter 320 px, bei 200 % unter 640 px), stehen nur die Zeichen da; die Namen bleiben für Screenreader
-     (aria-label) und als verborgener Text. So passen alle vier Felder in die Breite (Sichtprüfung E2). */
+     100 % also unter 320 px, bei 200 % unter 640 px), stehen bei Anrufen und WhatsApp nur die Zeichen da; die Namen
+     bleiben für Screenreader (aria-label). So passen alle vier Felder in die Breite (Sichtprüfung E2, Runden 1 und 2). */
   [data-leiste] {
     container-type: inline-size;
   }
   @container (width < 20em) {
-    [data-leiste] .leiste-text {
+    /* Hörer und WhatsApp-Zeichen sind allgemein bekannt; „Termin“ behält sein Wort und bekommt dafür doppelte Breite */
+    [data-leiste] a:not([data-hauptknopf]) .leiste-text {
       position: absolute;
       width: 1px;
       height: 1px;
       overflow: hidden;
       clip-path: inset(50%);
       white-space: nowrap;
+    }
+    [data-leiste] [data-hauptknopf] {
+      flex-grow: 2;
     }
   }
 }
