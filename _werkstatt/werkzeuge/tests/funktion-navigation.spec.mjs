@@ -1,36 +1,38 @@
-// Funktionstests F-13 (Navigation), F-14 (FAQ), F-16 (Blog-Werkzeuge), F-17 (404), F-18 (Login), F-19 (Bewertungs-Karussell).
+// Funktionstests F-13 (Navigation), F-14 (FAQ), F-16 (Blog-Werkzeuge), F-17 (404), F-18 (Login), F-19 (Stimmen auf /).
 // Prüft Verhalten (Zustand, Ziel, Status, Fehlermeldung, Fokus), nicht Aussehen. Keine Wartezeiten, nur Zustandsabfragen.
 // Kein Test gegen die echte Route nötig: keines dieser Elemente sendet an /api/anfrage (Login wird clientseitig abgewiesen).
 import { test, expect, bedienbar } from './fixtures.mjs';
+import fs from 'node:fs';
+// Wortlaut der Stimmen aus src/config/reviews.js: die Quelldatei lesen und das Feld REVIEWS auswerten. Die Datei wird
+// nicht als Modul geladen (kein „type“ im Repo-Paket, dadurch ESM-Import unmöglich); die Datei enthält keine Importe.
+const reviewsQuelle = fs.readFileSync(new URL('../../../src/config/reviews.js', import.meta.url), 'utf8');
+const REVIEWS = new Function(
+  `${reviewsQuelle.replace(/^export default .*$/m, '').replace(/^export (const|function) /gm, '$1 ')}\nreturn REVIEWS;`,
+)();
 
 const ARTIKEL = '/blog/fliesen-reinigen-pflegen';
 
-// Hauptnavigation des Desktops (exakt benannt – die Mobilnavigation heißt „Hauptnavigation Kategorien“).
+// Hauptnavigation im Kopf (ab 80 rem Kopfbreite). Das Menüblatt trägt denselben Namen als Dialog.
 const hauptnav = (page) => page.getByRole('navigation', { name: 'Hauptnavigation', exact: true });
-// Mobil-Drawer (Dialog); im geschlossenen Zustand per aria-hidden nicht im Accessibility-Baum.
-const drawer = (page) => page.getByRole('dialog', { name: 'Hauptnavigation' });
-const menueSchalter = (page) => page.getByRole('button', { name: /^Architektur-Menü (öffnen|schließen)$/ });
-// Ein Klick vor der Hydrierung bleibt wirkungslos (Ausgangsstand, siehe PLAN V-06). Verhalten prüfen: Öffnen gelingt.
-async function oeffneMenue(page) {
-  const schalter = menueSchalter(page);
-  await expect(async () => {
-    if ((await schalter.getAttribute('aria-expanded')) !== 'true') await schalter.click();
-    await expect(schalter).toHaveAttribute('aria-expanded', 'true', { timeout: 1500 });
-  }).toPass({ timeout: 15_000 });
-}
+// Menüblatt (Popover-Dialog „Hauptnavigation“); geschlossen steht es nicht im Accessibility-Baum.
+const drawer = (page) => page.getByRole('dialog', { name: 'Hauptnavigation', exact: true });
+// Menü-Schalter im Kopf (liegt außerhalb des Blatts; im Blatt heißt der Schalter zum Schließen ebenso).
+const menueSchalter = (page) => page.locator('header').getByRole('button', { name: /^Menü (öffnen|schließen)$/ });
+// Schalter „Unterpunkte zu …“ eines Bereichs, im Kopf oder im Blatt.
+const untermenue = (bereich, name) => bereich.getByRole('button', { name: new RegExp(`^Unterpunkte zu ${name} (öffnen|schließen)$`) });
 
-test.describe('Mega-Menü (Desktop, ab lg)', () => {
-  test.skip(({ isMobile }) => isMobile, 'Mega-Menü ist mobil ausgeblendet (hidden lg:flex)');
+test.describe('Aufklappblatt im Kopf (ab 80 rem Kopfbreite)', () => {
+  test.skip(({ isMobile }) => isMobile, 'Die Hauptnavigation im Kopf ist mobil ausgeblendet');
 
-  test('Hover öffnet das Untermenü, Escape schließt es', async ({ page }) => {
+  test('Zeiger: Hover öffnet das Aufklappblatt, Escape schließt es', async ({ page }) => {
     await page.goto('/');
     const nav = hauptnav(page);
-    const schalter = nav.getByRole('button', { name: /^Untermenü Badsanierung (öffnen|schließen)$/ });
-    const punkt = nav.getByRole('link', { name: /^Badsanierung komplett/ });
-    // Blockierfall: ohne Auslöser bleibt das Menü zu.
+    const schalter = untermenue(nav, 'Bad');
+    const punkt = nav.getByRole('link', { name: /^Bad komplett erneuern/ });
+    // Blockierfall: ohne Auslöser bleibt das Blatt zu.
     await expect(schalter).toHaveAttribute('aria-expanded', 'false');
     await expect(punkt).toHaveCount(0);
-    await nav.getByRole('link', { name: 'Badsanierung', exact: true }).hover();
+    await nav.getByRole('link', { name: 'Bad', exact: true }).hover();
     await expect(schalter).toHaveAttribute('aria-expanded', 'true');
     await expect(punkt).toBeVisible();
     await page.keyboard.press('Escape');
@@ -41,45 +43,52 @@ test.describe('Mega-Menü (Desktop, ab lg)', () => {
   test('Tastatur: Schalter per Enter öffnen, Escape schließt, Fokus bleibt am Schalter', async ({ page }) => {
     await page.goto('/');
     const nav = hauptnav(page);
-    const schalter = nav.getByRole('button', { name: /^Untermenü Badsanierung (öffnen|schließen)$/ });
-    // Zustand statt Wartezeit: erst nach dem Hydrieren bedienen (wie die übrigen Fälle; vor dem Hydrieren ist das
-    // Mega-Menü noch nicht bedienbar – Ausgangsstand, PLAN V-06). Gleiche Schritte, gleiche Erwartungen.
+    const schalter = untermenue(nav, 'Bad');
+    // Zustand statt Wartezeit: erst nach dem Hydrieren bedienen (vor dem Hydrieren ist das Blatt noch nicht bedienbar).
     await bedienbar(schalter);
     await schalter.focus();
     await page.keyboard.press('Enter');
     await expect(schalter).toHaveAttribute('aria-expanded', 'true');
-    await expect(nav.getByRole('link', { name: /^Badsanierung komplett/ })).toBeVisible();
+    await expect(nav.getByRole('link', { name: /^Bad komplett erneuern/ })).toBeVisible();
     await page.keyboard.press('Escape');
     await expect(schalter).toHaveAttribute('aria-expanded', 'false');
     await expect(schalter).toBeFocused();
   });
 
-  test('Klick auf einen Untermenü-Punkt führt zum Ziel und schließt das Menü', async ({ page }) => {
+  test('Klick auf einen Eintrag führt zum Ziel und schließt das Blatt', async ({ page }) => {
     await page.goto('/');
     const nav = hauptnav(page);
-    await (await bedienbar(nav.getByRole('link', { name: 'Badsanierung', exact: true }))).hover();
-    await nav.getByRole('link', { name: /^Badsanierung komplett/ }).click();
+    await (await bedienbar(nav.getByRole('link', { name: 'Bad', exact: true }))).hover();
+    await nav.getByRole('link', { name: /^Bad komplett erneuern/ }).click();
     await expect(page).toHaveURL(/\/bad\/badsanierung$/);
-    await expect(nav.getByRole('button', { name: /^Untermenü Badsanierung (öffnen|schließen)$/ })).toHaveAttribute('aria-expanded', 'false');
+    await expect(untermenue(hauptnav(page), 'Bad')).toHaveAttribute('aria-expanded', 'false');
   });
 });
 
-test.describe('Mobilmenü (Drawer)', () => {
-  // Ab xl steht die Hauptnavigation offen und der Schalter ist ausgeblendet (Fusion E-020: kein doppelter Zugang).
-  // Im Desktop-Projekt wird der Drawer deshalb bei 1024 px geprüft (unter xl, Schalter sichtbar) – gleiche Schritte,
-  // gleiche Erwartungen, gleiche Strenge; mobil unverändert bei 390 px.
+test.describe('Menüblatt (unter 80 rem Kopfbreite)', () => {
+  // Ab 80 rem steht die Hauptnavigation im Kopf und der Menü-Schalter ist ausgeblendet. Im Desktop-Projekt wird das
+  // Menüblatt deshalb bei 1024 px geprüft (Kopf schmaler als 80 rem, Schalter sichtbar) – gleiche Schritte, gleiche Erwartungen.
   test.beforeEach(async ({ page, isMobile }) => {
     if (!isMobile) await page.setViewportSize({ width: 1024, height: 900 });
   });
 
-  test('mobil: Desktop-Navigation ist ausgeblendet, der Drawer ist der Zugang', async ({ page, isMobile }) => {
+  // Ein Klick vor der Hydrierung kann wirkungslos bleiben; das Blatt öffnet nativ über popovertarget.
+  async function oeffneMenue(page) {
+    const schalter = menueSchalter(page);
+    await expect(async () => {
+      if ((await schalter.getAttribute('aria-expanded')) !== 'true') await schalter.click();
+      await expect(schalter).toHaveAttribute('aria-expanded', 'true', { timeout: 1500 });
+    }).toPass({ timeout: 15_000 });
+  }
+
+  test('mobil: Desktop-Navigation ist ausgeblendet, der Menü-Schalter ist der Zugang', async ({ page, isMobile }) => {
     test.skip(!isMobile, 'nur im Projekt mobil');
     await page.goto('/');
     await expect(hauptnav(page)).toBeHidden();
     await expect(menueSchalter(page)).toBeVisible();
   });
 
-  test('Schalter öffnet den Drawer, Escape schließt ihn', async ({ page }) => {
+  test('Schalter öffnet das Menüblatt, Escape schließt es', async ({ page }) => {
     await page.goto('/');
     const schalter = menueSchalter(page);
     await expect(schalter).toHaveAttribute('aria-expanded', 'false');
@@ -91,21 +100,30 @@ test.describe('Mobilmenü (Drawer)', () => {
     await expect(drawer(page)).toHaveCount(0);
   });
 
-  test('Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Drawer schließt', async ({ page }) => {
+  test('Schließen-Knopf im Blatt schließt es', async ({ page }) => {
+    await page.goto('/');
+    await oeffneMenue(page);
+    await expect(drawer(page)).toBeVisible();
+    await drawer(page).getByRole('button', { name: 'Menü schließen', exact: true }).click();
+    await expect(drawer(page)).toHaveCount(0);
+    await expect(menueSchalter(page)).toHaveAttribute('aria-expanded', 'false');
+  });
+
+  test('Bereich aufklappen, Link folgen: Ziel wird geöffnet, Menüblatt schließt', async ({ page }) => {
     await page.goto('/');
     await oeffneMenue(page);
     const dialog = drawer(page);
     await expect(dialog).toBeVisible();
-    // Zustand statt Wartezeit: Einblend-Übergang des Drawers abschließen lassen, dann aufklappen
+    // Zustand statt Wartezeit: Einblend-Übergang des Blatts abschließen lassen, dann aufklappen
     await dialog.evaluate((el) => Promise.all(el.getAnimations({ subtree: true }).map((a) => a.finished.catch(() => null))));
-    const kategorie = dialog.getByRole('button', { name: /^Badsanierung/ });
-    // Der Drawer wird beim ersten Öffnen nachgeladen und kann einmal neu einhängen (Zustand zurückgesetzt).
-    // Verhalten „Kategorie lässt sich aufklappen“ prüfen: Klick wiederholen, bis aufgeklappt (max. 10 s).
+    const bereich = untermenue(dialog, 'Bad');
+    // Der Blatt-Inhalt wird beim ersten Öffnen nachgeladen und kann einmal neu einhängen (Zustand zurückgesetzt).
+    // Verhalten „Bereich lässt sich aufklappen“ prüfen: Klick wiederholen, bis aufgeklappt (max. 10 s).
     await expect(async () => {
-      if ((await kategorie.getAttribute('aria-expanded')) !== 'true') await kategorie.click();
-      await expect(kategorie).toHaveAttribute('aria-expanded', 'true', { timeout: 1500 });
+      if ((await bereich.getAttribute('aria-expanded')) !== 'true') await bereich.click();
+      await expect(bereich).toHaveAttribute('aria-expanded', 'true', { timeout: 1500 });
     }).toPass({ timeout: 10_000 });
-    await dialog.getByRole('link', { name: /^Badsanierung komplett/ }).click();
+    await dialog.getByRole('link', { name: /^Bad komplett erneuern/ }).click();
     await expect(page).toHaveURL(/\/bad\/badsanierung$/);
     await expect(drawer(page)).toHaveCount(0);
   });
@@ -162,30 +180,22 @@ test.describe('FAQ-Akkordeon (/faq)', () => {
     await suche.fill('xqzwjkpv');
     await expect(page.getByText('Keine passenden Fragen gefunden')).toBeVisible();
   });
-
-  test('Startseite: Akkordeon-Frage wechselt aria-expanded und blendet die Antwort ein/aus', async ({ page }) => {
-    const frageStart = 'Wie garantieren Sie den Staubschutz bei bewohnten Sanierungen?';
-    await page.goto('/');
-    const knopf = page.getByRole('button', { name: frageStart });
-    const bereich = page.getByRole('region', { name: frageStart });
-    await expect(knopf).toHaveAttribute('aria-expanded', 'false');
-    await expect.poll(() => bereich.evaluate((el) => el.getBoundingClientRect().height)).toBe(0);
-    await knopf.click();
-    await expect(knopf).toHaveAttribute('aria-expanded', 'true');
-    await expect.poll(() => bereich.evaluate((el) => el.getBoundingClientRect().height)).toBeGreaterThan(0);
-    await knopf.click();
-    await expect(knopf).toHaveAttribute('aria-expanded', 'false');
-    await expect.poll(() => bereich.evaluate((el) => el.getBoundingClientRect().height)).toBe(0);
-  });
 });
 
 test.describe('404', () => {
-  test('unbekannte Adresse liefert Status 404 mit Hinweis und Wegen zurück', async ({ page }) => {
+  test('unbekannte Adresse liefert Status 404 mit Hinweis und drei Wegen zurück', async ({ page }) => {
     const antwort = await page.goto('/gibt-es-nicht');
     expect(antwort.status()).toBe(404);
-    await expect(page.getByRole('heading', { name: 'Seite nicht gefunden' })).toBeVisible();
-    await expect(page.getByRole('link', { name: 'Zur Startseite', exact: true })).toHaveAttribute('href', '/');
-    await expect(page.getByRole('link', { name: 'Zur Leistungsübersicht', exact: true })).toHaveAttribute('href', '/leistungen');
+    await expect(page.getByRole('heading', { name: 'Seite nicht gefunden', level: 1 })).toBeVisible();
+    // Die drei Wege stehen im Hauptbereich in dieser Reihenfolge: Termin vor Ort anfragen, Startseite, Anruf.
+    const wege = page.getByRole('main').getByRole('link');
+    await expect(wege).toHaveCount(3);
+    await expect(wege.nth(0)).toHaveAccessibleName(/Termin vor Ort anfragen/);
+    await expect(wege.nth(0)).toHaveAttribute('href', '/kontakt');
+    await expect(wege.nth(1)).toHaveAccessibleName('Zur Startseite');
+    await expect(wege.nth(1)).toHaveAttribute('href', '/');
+    await expect(wege.nth(2)).toHaveAccessibleName(/^Anrufen: /);
+    await expect(wege.nth(2)).toHaveAttribute('href', /^tel:/);
   });
 
   test('Link „Zur Startseite“ führt zurück zur Startseite', async ({ page }) => {
@@ -229,43 +239,32 @@ test.describe('Login (deaktiviert)', () => {
   });
 });
 
-test.describe('Bewertungs-Karussell (/)', () => {
-  const weiter = (page) => page.getByRole('button', { name: 'Nächste Rezensionen', exact: true });
-  const zurueck = (page) => page.getByRole('button', { name: 'Vorherige Rezensionen', exact: true });
-  // Spur mit den Karten: Geschwister des Steuerungsbereichs.
-  const spur = (page) => weiter(page).locator('xpath=../../following-sibling::div[1]');
+test.describe('Stimmen auf / (F-19, ruhige Stimmenreihe statt Karussell)', () => {
+  // Drei Stimmen, Wortlaut wörtlich aus src/config/reviews.js; die große Stimme steht zuerst (c-wolf).
+  const STIMMEN = ['c-wolf', 'rabia-oe', 'elke-s'];
+  const wortlaut = (id) => REVIEWS.find((r) => r.id === id)?.text;
+  const zitate = (page) => page.locator('#kundenstimmen blockquote');
 
-  test('am Anfang ist „Vorherige“ gesperrt, „Nächste“ frei', async ({ page }) => {
+  test('drei Stimmen auf /, Wortlaut wörtlich aus REVIEWS, in der Reihenfolge c-wolf, rabia-oe, elke-s', async ({ page }) => {
     await page.goto('/');
-    await expect(zurueck(page)).toBeDisabled();
-    await expect(weiter(page)).toBeEnabled();
-    // Startposition: mobil rastet die Spur bei 4 px ein, nicht bei 0 px.
-    await expect.poll(() => spur(page).evaluate((el) => el.scrollLeft)).toBeLessThanOrEqual(10);
+    await expect(zitate(page)).toHaveCount(3);
+    const gelesen = await zitate(page).evaluateAll((els) => els.map((el) => el.textContent?.trim() ?? ''));
+    expect(gelesen).toEqual(STIMMEN.map(wortlaut));
   });
 
-  test('„Nächste“ blättert vor, „Vorherige“ führt zurück und sperrt sich am Anfang', async ({ page }) => {
+  test('c-wolf ist die große Stimme: ihre Schrift ist größer als die der beiden anderen', async ({ page }) => {
     await page.goto('/');
-    const position = () => spur(page).evaluate((el) => el.scrollLeft);
-    await weiter(page).click();
-    await expect(zurueck(page)).toBeEnabled();
-    const vorher = await position();
-    await zurueck(page).click();
-    await expect.poll(position).toBeLessThan(vorher);
-    // Der Schritt (360 px) passt nicht genau auf die Kartenraster; bis zum Anfang zurückblättern.
-    // Ein Klick auf einen inzwischen gesperrten Knopf wartet sonst bis zum Testlimit: kurz begrenzen und neu prüfen.
-    await expect.poll(async () => {
-      if (await zurueck(page).isEnabled()) await zurueck(page).click({ timeout: 1000 }).catch(() => {});
-      return zurueck(page).isDisabled();
-    }).toBe(true);
-    await expect.poll(position).toBeLessThanOrEqual(10);
+    await expect(zitate(page)).toHaveCount(3);
+    const groesse = await zitate(page).evaluateAll((els) => els.map((el) => parseFloat(getComputedStyle(el).fontSize)));
+    expect(groesse[0]).toBeGreaterThan(groesse[1]);
+    expect(groesse[1]).toBe(groesse[2]);
   });
 
-  test('Tastatur: „Nächste“ mit Enter blättert vor', async ({ page }) => {
+  test('statt Karussell: keine Blätter-Knöpfe auf /', async ({ page }) => {
     await page.goto('/');
-    await weiter(page).focus();
-    await page.keyboard.press('Enter');
-    await expect.poll(() => spur(page).evaluate((el) => el.scrollLeft)).toBeGreaterThan(0);
-    await expect(weiter(page)).toBeFocused();
+    await expect(zitate(page)).toHaveCount(3);
+    await expect(page.getByRole('button', { name: 'Nächste Rezensionen', exact: true })).toHaveCount(0);
+    await expect(page.getByRole('button', { name: 'Vorherige Rezensionen', exact: true })).toHaveCount(0);
   });
 });
 

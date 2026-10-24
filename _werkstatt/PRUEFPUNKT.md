@@ -1,9 +1,9 @@
 # PRUEFPUNKT
 
-- Lauf „Verständlich, echt, ausgezeichnet“ · Etappe E2 (Referenz) · Stand 2026-10-24 05:31 CEST
+- Lauf „Verständlich, echt, ausgezeichnet“ · Etappe E2 (Referenz) · Stand 2026-10-24 06:32 CEST
 - Letzter grüner Commit (src): c53faf4 (src gleich main 388fa7b). HEAD 27639b6 und folgende = Zwischenstände E2 (gepusht): Startseite, Startbild und 404 nachgebessert, im Prüf-Workflow.
 - E0 abgeschlossen bis auf Lighthouse: E0-PRUEF-03 und E0-PROBE-01…10 zurück und gesichert (`pakete/*.rueckgabe.md`), Werte in LAGEBILD Abschnitt 4 und 5, ABNAHME Z-11.
-- Laufend (05:31): (1) Workflow E2-PRUEF-TESTS zweiter Anlauf (wf_cd610d35-773, Skript `workflows/scripts/tezgel-e2-funktionsspecs-wf_767ff19d-0a2.js`; erster Anlauf ohne Änderung, Hintergrundlauf starb mit dem Agenten). (2) Workflow E3-Texte (wf_358e4bf7-a6b), Lektorate 8 und 9. Erledigt: Startseite Runde 4 umgesetzt (E-026, Commits bis 3310abf), Vorlagen E3-ORCH-01a bis d, Werkzeugkorrekturen erstesbild und axe. Nach jeder Änderung an `globals.css` den Entwicklungsserver neu starten (EINRICHTUNG.md). Danach: Rückgaben sichern, Stufe A (A1 bis A3), Reinraum und Produktionsserver 4311, INP des Ankerknopfs, E2-PRUEF-00, E2-PRUEF-B, Probeläufe, E2-DOK-01, E2-SICHT, E2-TOR; Morgenbericht 06:47,
+- Laufend (06:32): Workflow E2-PRUEF-TESTS (wf_cd610d35-773): Anpassung fertig (vier Specs im ZWISCHENSTAND, noch nicht abgenommen; Belege `$SCRATCH/E2-PRUEF-TESTS/`), Gegenprüfung läuft. Erledigt: E3-Texte (b9a0c64, E-027), Startseite Runde 4 (E-026), Vorlagen E3-ORCH-01a bis d. Danach: Rückgabe sichern und Specs abnehmen, Stufe A (A1 bis A3), Reinraum und Produktionsserver 4311, INP des Ankerknopfs, E2-PRUEF-00, E2-PRUEF-B, Probeläufe, E2-DOK-01, E2-SICHT, E2-TOR; Morgenbericht 06:47,
 - Im Zwischenstand cce868a (Orchestrator), je Paket:
   - E2-ORCH-01 Tokens (`globals.css`), E2-ORCH-01b Register (`register.ts`, `test/bewegung.test.mjs`, `_werkstatt/register.json`, `werte-regeln.json`).
   - E2-FIX-01a bis c (GoogleReviewsBadge, FinalCTA, LocalDominanceMap, llms.txt, schema.ts, standorte/[stadt]).

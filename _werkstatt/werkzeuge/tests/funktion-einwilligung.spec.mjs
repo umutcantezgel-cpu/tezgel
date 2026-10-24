@@ -1,9 +1,12 @@
 // F-11 Einwilligung (Banner, Schaltflächen, #cookie-settings, Widerruf) und F-12 Karten hinter Einwilligung.
 // Prüft Verhalten: gespeicherter Zustand (Cookie tezgel_consent_status), Anfragen an Karten-Hosts (Protokoll, art 'fremd'),
-// Platzhalter vor und geladene Karte nach Einwilligung. Keine Gestaltungsklassen, keine festen Wartezeiten.
+// Platzhalter vor und geladene Karte nach Einwilligung. Auf / steht keine Karte mehr (E2, LAGEBILD F-12): dort wird nur
+// geprüft, dass keine Anfrage an Karten-Hosts geht. Keine Gestaltungsklassen, keine festen Wartezeiten.
 import { test, expect } from './fixtures.mjs';
 
 const ORTE = ['/', '/standorte', '/kontakt'];
+// Orte mit Karte hinter Einwilligung (F-12); auf / gibt es keine Karte mehr.
+const KARTEN_ORTE = ['/standorte', '/kontakt'];
 const COOKIE = 'tezgel_consent_status';
 const KARTEN_HOST = /maps\.googleapis\.com|maps\.gstatic\.com|openstreetmap\.org|google\.(com|de)\/maps/;
 const LADE_KNOPF = 'Karte laden & zustimmen';
@@ -26,8 +29,6 @@ const ruhe = (page) => page.waitForLoadState('networkidle', { timeout: 5000 }).c
 
 // Platzhalter-Knopf der Karte am jeweiligen Ort. Die Servicegebiet-Karte der Startseite wird erst im Blick eingebunden.
 async function ladeKnopf(page, ort) {
-  // E2-BAU-04: auf / steht das Einwilligungs-Tor sofort im Dokument (vorher erst ein Ladehinweis) – Knopf in den Blick holen
-  if (ort === '/') await page.getByRole('button', { name: LADE_KNOPF }).first().scrollIntoViewIfNeeded();
   const bereich = ort === '/standorte' ? standortKarte(page) : page;
   return bereich.getByRole('button', { name: LADE_KNOPF });
 }
@@ -127,7 +128,7 @@ test.describe('Karten hinter Einwilligung (F-12)', () => {
   });
 
   test.describe('ohne Marketing-Einwilligung (abgelehnt)', () => {
-    for (const ort of ORTE) {
+    for (const ort of KARTEN_ORTE) {
       test(`${ort}: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts`, async ({ page, protokoll }) => {
         await page.goto(ort);
         const knopf = await ladeKnopf(page, ort);
@@ -137,6 +138,13 @@ test.describe('Karten hinter Einwilligung (F-12)', () => {
         expect(kartenAnfragen(protokoll)).toHaveLength(0);
       });
     }
+
+    test('/: keine Karte und keine Anfrage an Karten-Hosts (Servicegebiet als Ortsliste)', async ({ page, protokoll }) => {
+      await page.goto('/');
+      await expect(page.locator('iframe[src*="openstreetmap.org"], iframe[src*="google.com/maps"]')).toHaveCount(0);
+      await ruhe(page);
+      expect(kartenAnfragen(protokoll)).toHaveLength(0);
+    });
 
     test('/standorte: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host)', async ({ page, context, protokoll }) => {
       // V-01 behoben (E2-BAU-04): Der Info-Kasten steht im Fluss unter der Karte und überdeckt den Knopf nicht mehr;
@@ -158,13 +166,6 @@ test.describe('Karten hinter Einwilligung (F-12)', () => {
       await expect.poll(() => kartenAnfragen(protokoll).length).toBeGreaterThan(0);
     });
 
-    test('/: „Karte laden & zustimmen“ im Servicegebiet setzt Marketing-Einwilligung und ersetzt den Platzhalter', async ({ page, context }) => {
-      await page.goto('/');
-      const knopf = await ladeKnopf(page, '/');
-      await knopf.click();
-      await expect.poll(() => lesEinwilligung(context)).toMatchObject({ marketing: true });
-      await expect(page.getByRole('button', { name: LADE_KNOPF })).toHaveCount(0);
-    });
   });
 
   test.describe('mit Marketing-Einwilligung (alle)', () => {
