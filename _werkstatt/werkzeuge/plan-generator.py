@@ -345,7 +345,7 @@ Alle Pakete außer `KUER-*` sind Pflicht, nach Wirkung sortiert (Rahmen und Star
 ### E0 und E1
 | Kennung | Gegenstand | Rolle | Modell | Stufe | Schreibrechte | Abhängig von | Kriterium | Welle | Status |
 |---|---|---|---|---|---|---|---|---|---|
-""" + '\n'.join('| '+' | '.join(k)+' |' for k in E0) + '\n' + '\n'.join(tab('E1-').split('\n')[2:]) + f"""
+""" + '\n'.join('| '+' | '.join(list(k[:-1])+[STATUS.get(k[0],k[-1])])+' |' for k in E0) + '\n' + '\n'.join(tab('E1-').split('\n')[2:]) + f"""
 
 ### E2 · Referenz
 {tab('E2-')}

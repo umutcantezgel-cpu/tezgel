@@ -49,9 +49,9 @@ Alle Pakete außer `KUER-*` sind Pflicht, nach Wirkung sortiert (Rahmen und Star
 | E0-PRUEF-01 | Einrichtung | Prüfer | Haiku | 1 | `_werkstatt/werkzeuge/**` | E0-ORCH-01 | Z-02 | E0 | erledigt 583656d |
 | E0-PRUEF-02a…02d | Werkzeuge (Geräte und Erstes Bild, Lesbarkeit, Adressen, Laufwerkzeug) | Prüfer | Haiku | 1 | `_werkstatt/werkzeuge/**`, `_werkstatt/adressen-e0.csv`, `_werkstatt/belege/e0/**` | E0-PRUEF-01 | Z-09, Z-11, Z-12, Z-14 | E0 | erledigt 583656d |
 | E0-PRUEF-02-PA | Unabhängige Abnahme der Werkzeuge | Prüfer | Haiku | 1 | `$SCRATCH/E0-PRUEF-02-PA/**` | E0-PRUEF-02a…02d | Z-02 | E0 | erledigt 583656d |
-| E0-PRUEF-03 | Ausgangswerte Stufe B ohne Lighthouse | Prüfer | Haiku | 1 | `_werkstatt/belege/e0/**`, `_werkstatt/bilder/e0/**` | E0-PRUEF-02-PA | Z-02 bis Z-09, Z-12 | E0 | läuft |
-| E0-PRUEF-03L | Ausgangswerte Lighthouse im Ruhefenster | Prüfer | Haiku | 1 | `_werkstatt/belege/e0/lighthouse.json` | E0-PRUEF-03, E0-PROBE-01…10 | Z-08 | E0 | offen |
-| E0-PROBE-01…10 | Probeläufe alter Stand (P1 bis P5 × eigenes und anderes Gerät) | Probeläufer | Haiku | 1 | `_werkstatt/cache/probelauf/e0/**` | E0-PRUEF-02-PA | Z-11 | E0 | läuft |
+| E0-PRUEF-03 | Ausgangswerte Stufe B ohne Lighthouse | Prüfer | Haiku | 1 | `_werkstatt/belege/e0/**`, `_werkstatt/bilder/e0/**` | E0-PRUEF-02-PA | Z-02 bis Z-09, Z-12 | E0 | erledigt cce868a (Rückgabe gesichert) |
+| E0-PRUEF-03L | Ausgangswerte Lighthouse im Ruhefenster | Prüfer | Haiku | 1 | `_werkstatt/belege/e0/lighthouse.json` | E0-PRUEF-03, E0-PROBE-01…10 | Z-08 | E0 | erledigt (Orchestrator, reiner Werkzeuglauf; Tabelle STUFE-B Abschnitt 8) |
+| E0-PROBE-01…10 | Probeläufe alter Stand (P1 bis P5 × eigenes und anderes Gerät) | Probeläufer | Haiku | 1 | `_werkstatt/cache/probelauf/e0/**` | E0-PRUEF-02-PA | Z-11 | E0 | erledigt (zehn Rückgaben gesichert, LAGEBILD Abschnitt 5) |
 | E0-ORCH-02 | LAGEBILD mit Ausgangswerten, Faktenblatt | Orchestrator | Opus | 3 | `_werkstatt/LAGEBILD.md`, `_werkstatt/ABNAHME.md` | E0-PRUEF-03L | Z-01, Z-02 | E0 | läuft (Entwurf 583656d) |
 | E1-ORCH-01 | KERN v3, Denkprotokolle, Referenztexte, Bildplätze, MENSCHEN | Orchestrator | Opus | 3 | `_werkstatt/KERN.md`, `_werkstatt/ENTSCHEIDUNGEN.md`, `_werkstatt/texte/REF-*.md`, `_werkstatt/bildplaetze.md`, `_werkstatt/MENSCHEN.md`, `_werkstatt/regeln/**` | E0-ORCH-01 | Z-10, Z-12 | E1 | erledigt daf0f30, 16a1873, 394b300 |
 | E1-PROBE-IA | Baumtest Navigation | Probeläufer | Haiku | 1 | keine (Ergebnis als Antwort) | E1-ORCH-01 | Z-11 | E1 | erledigt 394b300 |

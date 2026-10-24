@@ -21,5 +21,7 @@
  "E2-PRUEF-04": "abgenommen (Befund behoben, E-020; Lauf 5: 26/26)",
  "E2-LEKT-404": "abgenommen (7 Befunde übernommen; Fragen M-03, M-04 offen)",
  "E2-ORCH-07": "gebaut (Text nach E2-LEKT-404), Browserprüfung offen",
- "E0-PRUEF-03L": "erledigt (Orchestrator, reiner Werkzeuglauf; Tabelle STUFE-B Abschnitt 8)"
+ "E0-PRUEF-03L": "erledigt (Orchestrator, reiner Werkzeuglauf; Tabelle STUFE-B Abschnitt 8)",
+ "E0-PRUEF-03": "erledigt cce868a (Rückgabe gesichert)",
+ "E0-PROBE-01…10": "erledigt (zehn Rückgaben gesichert, LAGEBILD Abschnitt 5)"
 }
