@@ -25,5 +25,8 @@
  "E0-PRUEF-03": "erledigt cce868a (Rückgabe gesichert)",
  "E0-PROBE-01…10": "erledigt (zehn Rückgaben gesichert, LAGEBILD Abschnitt 5)",
  "E2-ORCH-06": "gebaut, Sichtprüfung Runde 1 umgesetzt (E-021), Runde 2 läuft",
- "E2-ORCH-06b": "gebaut (Startbild-Belag, Tests Startbild 1), im Prüf-Workflow bestanden"
+ "E2-ORCH-06b": "gebaut (Startbild-Belag, Tests Startbild 1), im Prüf-Workflow bestanden",
+ "E2-TEST-05": "erledigt durch den Orchestrator (test/intro.test.mjs, Intro 1 bis 11, Startbild 1)",
+ "E2-TEST-02": "läuft (erweitert um test/oeffnungszeiten.test.mjs)",
+ "E2-PRUEF-INP": "läuft (Werkzeug und Positivprobe; Ausgangswert auf 4310 im Ruhefenster durch den Orchestrator)"
 }
