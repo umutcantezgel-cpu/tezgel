@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Probe Reaktion</title>
+<style>
+  /* Positivprobe für reaktion.mjs --probe (m390, 390 × 844, CPU 4-fach gedrosselt).
+     Bekannte Lage: „langsam“ rechnet im Klick 300 ms (Wandzeit, Schleife), „schnell“ antwortet sofort.
+     Erwartung: Reaktion langsam > 200 ms, schnell < 200 ms. */
+  html, body { margin: 0; padding: 0; font-family: sans-serif; font-size: 16px; background: #fff; color: #111; }
+  main { padding: 16px; }
+  button { display: block; width: 100%; min-height: 44px; margin: 12px 0; padding: 0 16px; font-size: 16px; font-family: inherit; }
+  p { margin: 8px 0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Reaktionsprobe</h1>
+  <button id="langsam" type="button">Langsam rechnen</button>
+  <button id="schnell" type="button">Schnell antworten</button>
+  <p id="stand">Bereit</p>
+</main>
+<script>
+  document.getElementById('langsam').addEventListener('click', function () {
+    var t = performance.now();
+    while (performance.now() - t < 300) { /* 300 ms Rechenschleife im Klick */ }
+    document.getElementById('stand').textContent = 'langsam fertig';
+  });
+  document.getElementById('schnell').addEventListener('click', function () {
+    document.getElementById('stand').textContent = 'schnell fertig';
+  });
+</script>
+</body>
+</html>
