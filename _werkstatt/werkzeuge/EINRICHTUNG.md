@@ -136,3 +136,10 @@ RELAUNCH_BASE=http://127.0.0.1:4311 RELAUNCH_TRACKING=1 npx playwright test funk
 ## Logik-Tests der Werkzeuge
     cd /home/user/tezgel/_werkstatt/werkzeuge && node --test tests-logik/*.test.mjs
 (Node 22 nimmt bei `--test` keinen Ordner; der Glob muss ausgeschrieben sein, E-016.)
+
+## Entwicklungsserver und globals.css (E-026)
+Der Entwicklungsserver (Turbopack, `next dev` auf 4320) übernimmt Inhaltsänderungen an `src/app/globals.css` nicht zuverlässig: Das Bündel wird neu geschrieben, enthält aber den alten Stand. Nach jeder Änderung an `globals.css`:
+
+    _werkstatt/werkzeuge/dev-server.sh stop && rm -rf .next/dev && _werkstatt/werkzeuge/dev-server.sh start
+    for u in $(curl -s http://127.0.0.1:4320/ | grep -o '/_next/static/chunks/[^"]*\.css' | sort -u); do curl -s "http://127.0.0.1:4320$u" | grep -c '<Marke aus der Änderung>'; done
+
