@@ -81,7 +81,8 @@ function messeErstesBild(cfg) {
     const r = el.getBoundingClientRect();
     return r.right > 0 && r.bottom > 0 && r.left < vw && r.top < vh;
   };
-  const ersterSichtbar = (liste) => liste.find(sichtbar) || liste[0] || null;
+  // Vorrang: sichtbar und im Ausschnitt (q844: die untere Leiste vor dem Einstieg unter dem Falz, Runde 4), dann sichtbar
+  const ersterSichtbar = (liste) => liste.find((e) => sichtbar(e) && imAusschnitt(e)) || liste.find(sichtbar) || liste[0] || null;
   const ownText = (el) => Array.from(el.childNodes).filter((n) => n.nodeType === 3).map((n) => n.textContent).join(' ').replace(/\s+/g, ' ').trim();
 
   // Auffinden: Datenattribut zuerst, sonst Ersatzregel

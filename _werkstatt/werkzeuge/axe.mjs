@@ -44,7 +44,8 @@ async function pruefe(s, a, zustand = 'normal') {
 
 const jobs = [];
 if (!process.argv.includes('--nur-zustaende')) for (const s of seiten) for (const a of ansichten) jobs.push([s, a, 'normal']);
-if (process.argv.includes('--zustaende')) for (const s of hauptansichten ? HAUPT : G.hauptseiten) { jobs.push([s, 'm390', 'menue']); jobs.push([s, 'm390', 'erstbesuch']); jobs.push([s, 'd1440', 'erstbesuch']); }
+// Zustände für die gewählten Seiten (--seiten), sonst Hauptansichten bzw. Hauptseiten (Runde 4: --seiten wurde übergangen)
+if (process.argv.includes('--zustaende')) for (const s of hauptansichten ? HAUPT : arg('seiten') ? seiten : G.hauptseiten) { jobs.push([s, 'm390', 'menue']); jobs.push([s, 'm390', 'erstbesuch']); jobs.push([s, 'd1440', 'erstbesuch']); }
 let i = 0;
 await Promise.all(Array.from({ length: 3 }, async () => { while (i < jobs.length) { const j = jobs[i++]; try { await pruefe(...j); } catch (e) { ergebnisse.push({ seite: j[0], ansicht: j[1], zustand: j[2], fehler: String(e.message).slice(0, 200) }); } } }));
 await browser.close();
