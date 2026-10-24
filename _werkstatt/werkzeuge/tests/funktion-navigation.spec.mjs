@@ -182,6 +182,31 @@ test.describe('FAQ-Akkordeon (/faq)', () => {
   });
 });
 
+// F-14 Ausgleich für die entfallene Startseiten-FAQ (E-028): die Kostenfragen auf /preise nutzen FAQAccordion (Bereich
+// bleibt im DOM, geschlossen inert und zugeklappt).
+test.describe('FAQ-Aufklapper (/preise)', () => {
+  const frage = 'Wie setzen sich die Gesamtkosten einer Fliesenverlegung zusammen?';
+  // zugeklappt hat der Bereich die Höhe 0 (der Text darin gilt für Playwright trotzdem als „sichtbar“, darum die Höhe)
+  const hoehe = (bereich) => bereich.evaluate((el) => Math.round(el.getBoundingClientRect().height));
+
+  test('Frage öffnet die Antwort, zweiter Klick schließt sie (aria-expanded, Höhe, Bereich inert)', async ({ page }) => {
+    await page.goto('/preise');
+    const knopf = await bedienbar(page.getByRole('button', { name: frage, exact: true }));
+    const bereich = page.locator(`[id="${await knopf.getAttribute('aria-controls')}"]`);
+    await expect(knopf).toHaveAttribute('aria-expanded', 'false');
+    await expect(bereich).toHaveAttribute('inert', '');
+    await expect.poll(() => hoehe(bereich)).toBe(0);
+    await knopf.click();
+    await expect(knopf).toHaveAttribute('aria-expanded', 'true');
+    await expect(bereich).not.toHaveAttribute('inert', '');
+    await expect.poll(() => hoehe(bereich)).toBeGreaterThan(40);
+    await knopf.click();
+    await expect(knopf).toHaveAttribute('aria-expanded', 'false');
+    await expect(bereich).toHaveAttribute('inert', '');
+    await expect.poll(() => hoehe(bereich)).toBe(0);
+  });
+});
+
 test.describe('404', () => {
   test('unbekannte Adresse liefert Status 404 mit Hinweis und drei Wegen zurück', async ({ page }) => {
     const antwort = await page.goto('/gibt-es-nicht');

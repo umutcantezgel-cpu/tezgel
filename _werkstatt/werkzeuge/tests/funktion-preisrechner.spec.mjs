@@ -143,7 +143,7 @@ test.describe('PricingCalculator (/preise)', () => {
     test.use({ echteRoute: true });
     test('Server nimmt an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)', async ({ page, anfragen }) => {
       await page.goto('/preise');
-      await warteBotSchwelle(page);
+      await warteBotSchwelle(page, page.locator('#calc-name'));
       await kontaktAusfuellen(page, {
         name: `Prüf ${Date.now() % 100000}`,
         telefon: `0170 ${String(Date.now()).slice(-7)}`,

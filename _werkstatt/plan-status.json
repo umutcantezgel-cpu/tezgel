@@ -66,5 +66,6 @@
  "E3-LEKT-ORTE-2": "entfällt (E-024)",
  "E3-ORCH-01a": "Entwurf gebaut (E-025: vorlagen/ErzaehlSeite, teile/*, Textmarken, Inhalt barrierefreies-bad im Schaufenster); Umstellung der Startseite nach dem Tor E2",
  "E3-ORCH-01b": "Entwurf gebaut (WissensSeite mit Wissensblöcken, E-025)",
- "E3-ORCH-01c": "Entwurf gebaut (OrtsSeite, Texte aus ortsInhalt() in src/inhalte/orte.ts, Test orte 1 bis 6; Hauptziel #anfrage bei der Umstellung in navigation.js)"
+ "E3-ORCH-01c": "Entwurf gebaut (OrtsSeite, Texte aus ortsInhalt() in src/inhalte/orte.ts, Test orte 1 bis 6; Hauptziel #anfrage bei der Umstellung in navigation.js)",
+ "E2-PRUEF-TESTS": "erledigt (E-028, 129/0/5)"
 }

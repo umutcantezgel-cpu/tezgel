@@ -1,11 +1,12 @@
-// FUNKTIONSTEST F-03 · TezgelAnfrageFunnel (3 Schritte). Hauptort /kontakt; Gutfall zusätzlich an /leistungen und /foerderung (F-03 ohne /, LAGEBILD).
+// FUNKTIONSTEST F-03 · TezgelAnfrageFunnel (3 Schritte). Hauptort /kontakt; Gutfall zusätzlich an /leistungen, /foerderung und /leistungen/bad (F-03 ohne /, LAGEBILD; /leistungen/bad
+// ersetzt den entfallenen Ort /, E-028).
 // Kernaufgabe: Schritte vor/zurück (Auswahl bleibt erhalten), Validierung im Kontaktschritt, Versand POST /api/anfrage
 // mit inquiryType „general“ und Projektdaten, Erfolg mit Referenz; WhatsApp-Alternative (Ziel-Link mit vorbelegtem Text).
 // Geprüft wird Verhalten (Nutzlast, Zustand, Ziel), nicht Aussehen. Bedienelemente über Rollen, Namen und IDs.
 import { test, expect, warteBotSchwelle, istEchteReferenz } from './fixtures.mjs';
 
 const SEITE = '/kontakt';
-const ORTE = ['/kontakt', '/leistungen', '/foerderung'];
+const ORTE = ['/kontakt', '/leistungen', '/foerderung', '/leistungen/bad'];
 
 // Bedienelemente (Rollen, sichtbare Texte, IDs der Felder).
 const SCHRITT_TITEL = { 1: 'Welches Projekt planen Sie?', 2: 'Fläche, Zeitraum & Ort', 3: 'Kontaktdaten & Absenden' };
@@ -194,7 +195,7 @@ test.describe('TezgelAnfrageFunnel (F-03, /kontakt)', () => {
     test.use({ echteRoute: true });
     test('Server nimmt Anfrage an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)', async ({ page }) => {
       await page.goto(SEITE);
-      await warteBotSchwelle(page);
+      await warteBotSchwelle(page, weiterZu(page, 2));
       await zuSchritt3(page);
       await kontaktEintragen(page, { name: `Prüf ${Date.now() % 100000}`, telefon: `0170 ${String(Date.now()).slice(-7)}` });
       await absenden(page).click();

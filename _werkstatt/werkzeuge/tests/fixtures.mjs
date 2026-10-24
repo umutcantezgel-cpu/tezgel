@@ -30,5 +30,10 @@ export async function bedienbar(locator) {
   await expect.poll(() => locator.first().evaluate((el) => Object.keys(el).some((k) => k.startsWith('__reactProps$'))), { timeout: 15_000 }).toBe(true);
   return locator;
 }
-export const warteBotSchwelle = (page) => page.waitForTimeout(1700);
+// Bot-Schwelle der Formulare (1,5 s ab dem Einhängen des Formulars): mit Locator erst die Hydrierung abwarten, dann 1,7 s
+// (sonst zählt die Zeit vor dem Einhängen mit, und der Server antwortet bei langsamer Hydrierung mit „TEZ-BOT-IGN“).
+export async function warteBotSchwelle(page, formular) {
+  if (formular) await bedienbar(formular);
+  await page.waitForTimeout(1700);
+}
 export const istEchteReferenz = (id) => /^TEZ-\d{2}-[A-Z0-9]{4,}$/.test(id) && !/IGN/.test(id);

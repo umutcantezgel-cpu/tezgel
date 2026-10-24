@@ -1,7 +1,7 @@
 // F-11 Einwilligung (Banner, Schaltflächen, #cookie-settings, Widerruf) und F-12 Karten hinter Einwilligung.
 // Prüft Verhalten: gespeicherter Zustand (Cookie tezgel_consent_status), Anfragen an Karten-Hosts (Protokoll, art 'fremd'),
-// Platzhalter vor und geladene Karte nach Einwilligung. Auf / steht keine Karte mehr (E2, LAGEBILD F-12): dort wird nur
-// geprüft, dass keine Anfrage an Karten-Hosts geht. Keine Gestaltungsklassen, keine festen Wartezeiten.
+// Platzhalter vor und geladene Karte nach Einwilligung. Auf / und /ueber-uns steht keine Karte (E2, LAGEBILD F-12): dort
+// wird nur geprüft, dass keine Anfrage an Karten-Hosts geht. Keine Gestaltungsklassen, keine festen Wartezeiten.
 import { test, expect } from './fixtures.mjs';
 
 const ORTE = ['/', '/standorte', '/kontakt'];
@@ -26,6 +26,12 @@ async function lesEinwilligung(context) {
 const kartenAnfragen = (protokoll) => protokoll.filter((e) => e.art === 'fremd' && KARTEN_HOST.test(e.url ?? ''));
 // Auf Ruhe im Netz warten (mit Obergrenze), bevor „keine Anfrage“ geprüft wird.
 const ruhe = (page) => page.waitForLoadState('networkidle', { timeout: 5000 }).catch(() => {});
+
+// Die Standortkarte lädt erst im Blick (iframe loading="lazy"). Nach einem Sprung tief in die Seite zeichnen sich die
+// spaet-Abschnitte darüber nach, und die Karte rutscht aus dem Bild (auch auf dem alten Stand 4310 gemessen, E-028): wie ein
+// Mensch bis zur Karte selbst scrollen, nicht nur bis zum Abschnitt.
+const KARTEN_RAHMEN = 'iframe[src*="openstreetmap.org"], iframe[src*="google.com/maps"]';
+const karteInDenBlick = (page) => standortKarte(page).locator(KARTEN_RAHMEN).scrollIntoViewIfNeeded();
 
 // Platzhalter-Knopf der Karte am jeweiligen Ort. Die Servicegebiet-Karte der Startseite wird erst im Blick eingebunden.
 async function ladeKnopf(page, ort) {
@@ -146,6 +152,13 @@ test.describe('Karten hinter Einwilligung (F-12)', () => {
       expect(kartenAnfragen(protokoll)).toHaveLength(0);
     });
 
+    test('/ueber-uns: keine Karte und keine Anfrage an Karten-Hosts (LAGEBILD F-12)', async ({ page, protokoll }) => {
+      await page.goto('/ueber-uns');
+      await expect(page.locator('iframe[src*="openstreetmap.org"], iframe[src*="google.com/maps"]')).toHaveCount(0);
+      await ruhe(page);
+      expect(kartenAnfragen(protokoll)).toHaveLength(0);
+    });
+
     test('/standorte: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host)', async ({ page, context, protokoll }) => {
       // V-01 behoben (E2-BAU-04): Der Info-Kasten steht im Fluss unter der Karte und überdeckt den Knopf nicht mehr;
       // der Ausgangsbefund (Smartphone-Breite, Kasten absolut über dem Knopf) gilt damit als Abnahmetest auch mobil.
@@ -154,6 +167,7 @@ test.describe('Karten hinter Einwilligung (F-12)', () => {
       await knopf.click();
       await expect.poll(() => lesEinwilligung(context)).toMatchObject({ marketing: true });
       await expect(standortKarte(page).getByRole('button', { name: LADE_KNOPF })).toHaveCount(0);
+      await karteInDenBlick(page);
       await expect.poll(() => kartenAnfragen(protokoll).length).toBeGreaterThan(0);
     });
 
@@ -173,8 +187,8 @@ test.describe('Karten hinter Einwilligung (F-12)', () => {
 
     test('/standorte: Karte ohne Platzhalter, Anfrage an Karten-Host', async ({ page, protokoll }) => {
       await page.goto('/standorte');
-      await standortKarte(page).scrollIntoViewIfNeeded();
       await expect(standortKarte(page).getByRole('button', { name: LADE_KNOPF })).toHaveCount(0);
+      await karteInDenBlick(page);
       await expect.poll(() => kartenAnfragen(protokoll).length).toBeGreaterThan(0);
     });
   });
