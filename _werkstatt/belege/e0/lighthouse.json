@@ -1,0 +1,5641 @@
+{
+ "seiten": {
+  "/": {
+   "mobil": {
+    "median": {
+     "perf": 89,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 3472,
+     "cls": 0,
+     "tbt": 162,
+     "fcp": 1364,
+     "si": 1364,
+     "js_kb": 261,
+     "font_kb": 72,
+     "gesamt_kb": 492,
+     "benchmark": 1548.5,
+     "lcp_element": {
+      "selector": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+      "ausschnitt": "<p class=\"max-w-mass text-fs-4 text-tinte\">"
+     },
+     "spanne": {
+      "perf": [
+       88,
+       90
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       3446,
+       3497
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       107,
+       173
+      ],
+      "fcp": [
+       1362,
+       1368
+      ],
+      "si": [
+       1362,
+       1368
+      ],
+      "js_kb": [
+       261,
+       261
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       492,
+       492
+      ],
+      "benchmark": [
+       1535.5,
+       1552.5
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 90,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3446.0706,
+      "cls": 0,
+      "tbt": 106.50000000000023,
+      "fcp": 1363.6059,
+      "si": 1363.6059,
+      "js_kb": 261,
+      "font_kb": 72,
+      "gesamt_kb": 492,
+      "benchmark": 1535.5,
+      "lcp_element": {
+       "selector": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+       "ausschnitt": "<p class=\"max-w-mass text-fs-4 text-tinte\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 18,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 170
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/2-2026-10-23T23-48-17-743Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 88,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3496.8414000000002,
+      "cls": 0,
+      "tbt": 172.65859999999952,
+      "fcp": 1361.7621000000001,
+      "si": 1361.7621000000001,
+      "js_kb": 261,
+      "font_kb": 72,
+      "gesamt_kb": 492,
+      "benchmark": 1552.5,
+      "lcp_element": {
+       "selector": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+       "ausschnitt": "<p class=\"max-w-mass text-fs-4 text-tinte\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 30,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 243
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/3-2026-10-23T23-48-30-381Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 89,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3471.7892,
+      "cls": 0,
+      "tbt": 161.5,
+      "fcp": 1367.6838000000002,
+      "si": 1367.6838000000002,
+      "js_kb": 261,
+      "font_kb": 72,
+      "gesamt_kb": 492,
+      "benchmark": 1548.5,
+      "lcp_element": {
+       "selector": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+       "ausschnitt": "<p class=\"max-w-mass text-fs-4 text-tinte\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 16,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 209
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/4-2026-10-23T23-48-43-618Z",
+      "profil_dateien": 20
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 100,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 687,
+     "cls": 0,
+     "tbt": 4,
+     "fcp": 333,
+     "si": 383,
+     "js_kb": 411,
+     "font_kb": 72,
+     "gesamt_kb": 703,
+     "benchmark": 1496,
+     "lcp_element": {
+      "selector": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+      "ausschnitt": "<p class=\"max-w-mass text-fs-4 text-tinte\">"
+     },
+     "spanne": {
+      "perf": [
+       100,
+       100
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       660,
+       694
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       0,
+       6
+      ],
+      "fcp": [
+       332,
+       337
+      ],
+      "si": [
+       368,
+       446
+      ],
+      "js_kb": [
+       411,
+       411
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       703,
+       703
+      ],
+      "benchmark": [
+       1388,
+       1615.5
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 659.8753749999998,
+      "cls": 0,
+      "tbt": 6,
+      "fcp": 337.25045,
+      "si": 445.6481071030968,
+      "js_kb": 411,
+      "font_kb": 72,
+      "gesamt_kb": 703,
+      "benchmark": 1388,
+      "lcp_element": {
+       "selector": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+       "ausschnitt": "<p class=\"max-w-mass text-fs-4 text-tinte\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 27,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 248
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/6-2026-10-23T23-49-11-901Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 687.2006,
+      "cls": 0,
+      "tbt": 0,
+      "fcp": 332.3009,
+      "si": 368.01818252559656,
+      "js_kb": 411,
+      "font_kb": 72,
+      "gesamt_kb": 703,
+      "benchmark": 1615.5,
+      "lcp_element": {
+       "selector": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+       "ausschnitt": "<p class=\"max-w-mass text-fs-4 text-tinte\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 14,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 200
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/7-2026-10-23T23-49-27-265Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 693.6122,
+      "cls": 0.00001340464480360582,
+      "tbt": 4,
+      "fcp": 332.91830000000004,
+      "si": 382.78605899029645,
+      "js_kb": 411,
+      "font_kb": 72,
+      "gesamt_kb": 703,
+      "benchmark": 1496,
+      "lcp_element": {
+       "selector": "div.mx-auto > div.relative > div.mt-8 > p.max-w-mass",
+       "ausschnitt": "<p class=\"max-w-mass text-fs-4 text-tinte\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 19,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 249
+      },
+      "cls_quellen": [
+       {
+        "selector": "div.mx-auto > div.flex > a.hidden > svg.inline-block",
+        "wert": 0
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/8-2026-10-23T23-49-41-906Z",
+      "profil_dateien": 20
+     }
+    ]
+   }
+  },
+  "/bad": {
+   "mobil": {
+    "median": {
+     "perf": 92,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 2854,
+     "cls": 0,
+     "tbt": 207,
+     "fcp": 1061,
+     "si": 1068,
+     "js_kb": 282,
+     "font_kb": 72,
+     "gesamt_kb": 498,
+     "benchmark": 1551.5,
+     "lcp_element": {
+      "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+      "ausschnitt": "<p>"
+     },
+     "spanne": {
+      "perf": [
+       88,
+       94
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       2506,
+       2881
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       192,
+       319
+      ],
+      "fcp": [
+       910,
+       1068
+      ],
+      "si": [
+       1035,
+       1089
+      ],
+      "js_kb": [
+       282,
+       282
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       498,
+       498
+      ],
+      "benchmark": [
+       1523,
+       1596
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 88,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2853.835,
+      "cls": 0,
+      "tbt": 319.0319999999997,
+      "fcp": 1061.2020000000002,
+      "si": 1089.0529982216494,
+      "js_kb": 282,
+      "font_kb": 72,
+      "gesamt_kb": 498,
+      "benchmark": 1596,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 18,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 222
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/10-2026-10-23T23-50-07-833Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 92,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2880.6735,
+      "cls": 0,
+      "tbt": 191.99999999999955,
+      "fcp": 910.1388,
+      "si": 1035.354719719552,
+      "js_kb": 282,
+      "font_kb": 72,
+      "gesamt_kb": 498,
+      "benchmark": 1523,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 14,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 198
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/11-2026-10-23T23-50-19-082Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 94,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2505.747,
+      "cls": 0,
+      "tbt": 206.75300000000038,
+      "fcp": 1067.6205,
+      "si": 1067.6205,
+      "js_kb": 282,
+      "font_kb": 72,
+      "gesamt_kb": 498,
+      "benchmark": 1551.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 16,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 217
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/12-2026-10-23T23-50-30-128Z",
+      "profil_dateien": 20
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 100,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 671,
+     "cls": 0,
+     "tbt": 19,
+     "fcp": 294,
+     "si": 308,
+     "js_kb": 419,
+     "font_kb": 72,
+     "gesamt_kb": 695,
+     "benchmark": 1605.5,
+     "lcp_element": {
+      "selector": "div.grid > div.col-span-4 > h1.text-tinte > span.block",
+      "ausschnitt": "<span class=\"block\">"
+     },
+     "spanne": {
+      "perf": [
+       100,
+       100
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       538,
+       686
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       16,
+       33
+      ],
+      "fcp": [
+       292,
+       302
+      ],
+      "si": [
+       305,
+       333
+      ],
+      "js_kb": [
+       419,
+       419
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       695,
+       695
+      ],
+      "benchmark": [
+       1518,
+       1610
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 670.51925,
+      "cls": 0,
+      "tbt": 16,
+      "fcp": 293.8231,
+      "si": 333.2883872516128,
+      "js_kb": 419,
+      "font_kb": 72,
+      "gesamt_kb": 695,
+      "benchmark": 1518,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > h1.text-tinte > span.block",
+       "ausschnitt": "<span class=\"block\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 16,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 217
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/14-2026-10-23T23-50-54-253Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 538.444375,
+      "cls": 0,
+      "tbt": 19,
+      "fcp": 302.13325,
+      "si": 304.52077549757723,
+      "js_kb": 419,
+      "font_kb": 72,
+      "gesamt_kb": 695,
+      "benchmark": 1610,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > h1.text-tinte > span.block",
+       "ausschnitt": "<span class=\"block\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 10,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 222
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/15-2026-10-23T23-51-06-233Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 686.3281249999999,
+      "cls": 0,
+      "tbt": 33,
+      "fcp": 291.79375,
+      "si": 308.2550614245932,
+      "js_kb": 419,
+      "font_kb": 72,
+      "gesamt_kb": 695,
+      "benchmark": 1605.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > h1.text-tinte > span.block",
+       "ausschnitt": "<span class=\"block\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 16,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 233
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/16-2026-10-23T23-51-18-041Z",
+      "profil_dateien": 20
+     }
+    ]
+   }
+  },
+  "/bad/badsanierung": {
+   "mobil": {
+    "median": {
+     "perf": 92,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 2596,
+     "cls": 0,
+     "tbt": 287,
+     "fcp": 1065,
+     "si": 1065,
+     "js_kb": 277,
+     "font_kb": 72,
+     "gesamt_kb": 478,
+     "benchmark": 1479.5,
+     "lcp_element": {
+      "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+      "ausschnitt": "<p>"
+     },
+     "spanne": {
+      "perf": [
+       89,
+       96
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       2418,
+       2609
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       117,
+       330
+      ],
+      "fcp": [
+       1062,
+       1071
+      ],
+      "si": [
+       1062,
+       1071
+      ],
+      "js_kb": [
+       277,
+       277
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       478,
+       478
+      ],
+      "benchmark": [
+       1442,
+       1576.5
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 92,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2418.4844463530553,
+      "cls": 0,
+      "tbt": 287,
+      "fcp": 1064.9813356236668,
+      "si": 1064.9813356236668,
+      "js_kb": 277,
+      "font_kb": 72,
+      "gesamt_kb": 478,
+      "benchmark": 1479.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 14,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 254
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/18-2026-10-23T23-51-40-274Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 89,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2596.270375,
+      "cls": 0,
+      "tbt": 329.78369999999995,
+      "fcp": 1071.32445,
+      "si": 1071.32445,
+      "js_kb": 277,
+      "font_kb": 72,
+      "gesamt_kb": 478,
+      "benchmark": 1442,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 22,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 235
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/19-2026-10-23T23-51-51-373Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 96,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2609.33025,
+      "cls": 0,
+      "tbt": 116.53395,
+      "fcp": 1061.7963,
+      "si": 1061.7963,
+      "js_kb": 277,
+      "font_kb": 72,
+      "gesamt_kb": 478,
+      "benchmark": 1576.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 12,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 196
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/20-2026-10-23T23-52-02-198Z",
+      "profil_dateien": 20
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 100,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 687,
+     "cls": 0,
+     "tbt": 8,
+     "fcp": 292,
+     "si": 348,
+     "js_kb": 427,
+     "font_kb": 72,
+     "gesamt_kb": 689,
+     "benchmark": 1552,
+     "lcp_element": {
+      "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+      "ausschnitt": "<p>"
+     },
+     "spanne": {
+      "perf": [
+       100,
+       100
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       662,
+       696
+      ],
+      "cls": [
+       0,
+       0.026
+      ],
+      "tbt": [
+       3,
+       10
+      ],
+      "fcp": [
+       251,
+       292
+      ],
+      "si": [
+       297,
+       359
+      ],
+      "js_kb": [
+       427,
+       427
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       689,
+       689
+      ],
+      "benchmark": [
+       1545.5,
+       1609.5
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 696.4159999999999,
+      "cls": 0.025975429569649645,
+      "tbt": 3,
+      "fcp": 250.7328,
+      "si": 348.4082443527868,
+      "js_kb": 427,
+      "font_kb": 72,
+      "gesamt_kb": 689,
+      "benchmark": 1552,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 22,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 288
+      },
+      "cls_quellen": [
+       {
+        "selector": "body.antialiased > header.kopf-anker > div.mx-auto > nav.hidden",
+        "wert": 0.026
+       },
+       {
+        "selector": "div.mx-auto > div.flex > a.hidden > svg.inline-block",
+        "wert": 0
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/22-2026-10-23T23-52-24-617Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 661.579375,
+      "cls": 0,
+      "tbt": 10,
+      "fcp": 292.09524999999996,
+      "si": 297.1963684949527,
+      "js_kb": 427,
+      "font_kb": 72,
+      "gesamt_kb": 689,
+      "benchmark": 1545.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 11,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 210
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/23-2026-10-23T23-52-36-232Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 686.6581249999999,
+      "cls": 0,
+      "tbt": 8,
+      "fcp": 291.58975,
+      "si": 358.50807391622726,
+      "js_kb": 427,
+      "font_kb": 72,
+      "gesamt_kb": 689,
+      "benchmark": 1609.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 15,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 240
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/24-2026-10-23T23-52-47-897Z",
+      "profil_dateien": 20
+     }
+    ]
+   }
+  },
+  "/bad/barrierefreies-bad": {
+   "mobil": {
+    "median": {
+     "perf": 95,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 2472,
+     "cls": 0,
+     "tbt": 197,
+     "fcp": 1061,
+     "si": 1061,
+     "js_kb": 269,
+     "font_kb": 72,
+     "gesamt_kb": 459,
+     "benchmark": 1574,
+     "lcp_element": {
+      "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+      "ausschnitt": "<p>"
+     },
+     "spanne": {
+      "perf": [
+       92,
+       96
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       2412,
+       2565
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       166,
+       256
+      ],
+      "fcp": [
+       910,
+       1065
+      ],
+      "si": [
+       910,
+       1065
+      ],
+      "js_kb": [
+       269,
+       269
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       459,
+       459
+      ],
+      "benchmark": [
+       1558.5,
+       1593
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 92,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2565.478,
+      "cls": 0,
+      "tbt": 256,
+      "fcp": 1060.7736,
+      "si": 1060.7736,
+      "js_kb": 269,
+      "font_kb": 72,
+      "gesamt_kb": 459,
+      "benchmark": 1593,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 11,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 183
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/26-2026-10-23T23-53-09-575Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 96,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2412.212375,
+      "cls": 0,
+      "tbt": 165.5575249999995,
+      "fcp": 1064.65485,
+      "si": 1064.65485,
+      "js_kb": 269,
+      "font_kb": 72,
+      "gesamt_kb": 459,
+      "benchmark": 1574,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 13,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 191
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/27-2026-10-23T23-53-19-730Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 95,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2471.5097499999997,
+      "cls": 0,
+      "tbt": 196.59804999999972,
+      "fcp": 909.6078,
+      "si": 909.6078,
+      "js_kb": 269,
+      "font_kb": 72,
+      "gesamt_kb": 459,
+      "benchmark": 1558.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 16,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 198
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/28-2026-10-23T23-53-30-076Z",
+      "profil_dateien": 20
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 100,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 665,
+     "cls": 0,
+     "tbt": 7,
+     "fcp": 294,
+     "si": 318,
+     "js_kb": 419,
+     "font_kb": 72,
+     "gesamt_kb": 674,
+     "benchmark": 1524,
+     "lcp_element": {
+      "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+      "ausschnitt": "<p>"
+     },
+     "spanne": {
+      "perf": [
+       100,
+       100
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       605,
+       704
+      ],
+      "cls": [
+       0,
+       0.038
+      ],
+      "tbt": [
+       0,
+       21
+      ],
+      "fcp": [
+       291,
+       296
+      ],
+      "si": [
+       296,
+       324
+      ],
+      "js_kb": [
+       419,
+       419
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       674,
+       674
+      ],
+      "benchmark": [
+       1476,
+       1617.5
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 664.549,
+      "cls": 0,
+      "tbt": 7.000000000000114,
+      "fcp": 294.4588,
+      "si": 324.08702567018116,
+      "js_kb": 419,
+      "font_kb": 72,
+      "gesamt_kb": 674,
+      "benchmark": 1476,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 24,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 248
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/30-2026-10-23T23-53-52-313Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 704.18025,
+      "cls": 0,
+      "tbt": 21.16395,
+      "fcp": 291.0163,
+      "si": 317.6460401845018,
+      "js_kb": 419,
+      "font_kb": 72,
+      "gesamt_kb": 674,
+      "benchmark": 1524,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 16,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 243
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/31-2026-10-23T23-54-03-812Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 605.1046249999999,
+      "cls": 0.03770936274373744,
+      "tbt": 5.684341886080802e-14,
+      "fcp": 296.32554999999996,
+      "si": 296.32554999999996,
+      "js_kb": 419,
+      "font_kb": 72,
+      "gesamt_kb": 674,
+      "benchmark": 1617.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 12,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 175
+      },
+      "cls_quellen": [
+       {
+        "selector": "main#main-content > section > header.relative > div.mx-auto",
+        "wert": 0.0377
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/32-2026-10-23T23-54-15-517Z",
+      "profil_dateien": 20
+     }
+    ]
+   }
+  },
+  "/leistungen": {
+   "mobil": {
+    "median": {
+     "perf": 87,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 2925,
+     "cls": 0,
+     "tbt": 283,
+     "fcp": 1063,
+     "si": 1063,
+     "js_kb": 271,
+     "font_kb": 72,
+     "gesamt_kb": 502,
+     "benchmark": 1605.5,
+     "lcp_element": {
+      "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+      "ausschnitt": "<p>"
+     },
+     "spanne": {
+      "perf": [
+       86,
+       91
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       2868,
+       3161
+      ],
+      "cls": [
+       0,
+       0.011
+      ],
+      "tbt": [
+       224,
+       387
+      ],
+      "fcp": [
+       1060,
+       1217
+      ],
+      "si": [
+       1060,
+       1217
+      ],
+      "js_kb": [
+       271,
+       271
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       502,
+       502
+      ],
+      "benchmark": [
+       1574,
+       1620
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 91,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2868.3067500000006,
+      "cls": 0,
+      "tbt": 224.3386499999997,
+      "fcp": 1062.6454,
+      "si": 1062.6454,
+      "js_kb": 271,
+      "font_kb": 72,
+      "gesamt_kb": 502,
+      "benchmark": 1620,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 17,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 200
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/34-2026-10-23T23-54-39-345Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 86,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2924.88475,
+      "cls": 0,
+      "tbt": 386.6152500000003,
+      "fcp": 1217.2617,
+      "si": 1217.2617,
+      "js_kb": 271,
+      "font_kb": 72,
+      "gesamt_kb": 502,
+      "benchmark": 1574,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 15,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 317
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/35-2026-10-23T23-54-51-871Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 87,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3160.5149,
+      "cls": 0.01092817338398326,
+      "tbt": 283.12127499999997,
+      "fcp": 1059.5149,
+      "si": 1059.5149,
+      "js_kb": 271,
+      "font_kb": 72,
+      "gesamt_kb": 502,
+      "benchmark": 1605.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 17,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 201
+      },
+      "cls_quellen": [
+       {
+        "selector": "body.antialiased > aside.unten-sicher",
+        "wert": 0.0109
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/36-2026-10-23T23-55-03-788Z",
+      "profil_dateien": 20
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 100,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 593,
+     "cls": 0,
+     "tbt": 13,
+     "fcp": 335,
+     "si": 340,
+     "js_kb": 411,
+     "font_kb": 72,
+     "gesamt_kb": 683,
+     "benchmark": 1519.5,
+     "lcp_element": {
+      "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+      "ausschnitt": "<p>"
+     },
+     "spanne": {
+      "perf": [
+       100,
+       100
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       550,
+       682
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       9,
+       35
+      ],
+      "fcp": [
+       333,
+       340
+      ],
+      "si": [
+       333,
+       384
+      ],
+      "js_kb": [
+       411,
+       411
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       683,
+       683
+      ],
+      "benchmark": [
+       1515.5,
+       1579.5
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 550.237,
+      "cls": 0,
+      "tbt": 9,
+      "fcp": 335.3555,
+      "si": 384.3321415557001,
+      "js_kb": 411,
+      "font_kb": 72,
+      "gesamt_kb": 683,
+      "benchmark": 1579.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 20,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 299
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/38-2026-10-23T23-55-30-293Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 681.561,
+      "cls": 0.00001340464480360582,
+      "tbt": 35.35974999999996,
+      "fcp": 332.8415,
+      "si": 332.8415,
+      "js_kb": 411,
+      "font_kb": 72,
+      "gesamt_kb": 683,
+      "benchmark": 1519.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 16,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 233
+      },
+      "cls_quellen": [
+       {
+        "selector": "div.mx-auto > div.flex > a.hidden > svg.inline-block",
+        "wert": 0
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/39-2026-10-23T23-55-43-963Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 593.2796000000001,
+      "cls": 0,
+      "tbt": 12.680100000000039,
+      "fcp": 339.9194,
+      "si": 339.9194,
+      "js_kb": 411,
+      "font_kb": 72,
+      "gesamt_kb": 683,
+      "benchmark": 1515.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 20,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 208
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/40-2026-10-23T23-55-57-848Z",
+      "profil_dateien": 20
+     }
+    ]
+   }
+  },
+  "/fliesen": {
+   "mobil": {
+    "median": {
+     "perf": 91,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 2718,
+     "cls": 0,
+     "tbt": 215,
+     "fcp": 1215,
+     "si": 1215,
+     "js_kb": 300,
+     "font_kb": 72,
+     "gesamt_kb": 543,
+     "benchmark": 1524,
+     "lcp_element": {
+      "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+      "ausschnitt": "<p>"
+     },
+     "spanne": {
+      "perf": [
+       91,
+       95
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       2559,
+       2932
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       118,
+       289
+      ],
+      "fcp": [
+       1213,
+       1220
+      ],
+      "si": [
+       1213,
+       1220
+      ],
+      "js_kb": [
+       300,
+       300
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       543,
+       543
+      ],
+      "benchmark": [
+       1471.5,
+       1611.5
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 95,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2717.5009999999993,
+      "cls": 0,
+      "tbt": 117.99919999999952,
+      "fcp": 1215.0012000000002,
+      "si": 1215.0012000000002,
+      "js_kb": 300,
+      "font_kb": 72,
+      "gesamt_kb": 543,
+      "benchmark": 1611.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 15,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 169
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/42-2026-10-23T23-56-22-451Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 91,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2558.7780000000002,
+      "cls": 0,
+      "tbt": 288.8055000000004,
+      "fcp": 1213.1670000000004,
+      "si": 1213.1670000000004,
+      "js_kb": 300,
+      "font_kb": 72,
+      "gesamt_kb": 543,
+      "benchmark": 1471.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 20,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 198
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/43-2026-10-23T23-56-34-732Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 91,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2931.5215,
+      "cls": 0,
+      "tbt": 214.6957,
+      "fcp": 1219.8258,
+      "si": 1219.8258,
+      "js_kb": 300,
+      "font_kb": 72,
+      "gesamt_kb": 543,
+      "benchmark": 1524,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 18,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 217
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/44-2026-10-23T23-56-46-698Z",
+      "profil_dateien": 20
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 100,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 589,
+     "cls": 0.051,
+     "tbt": 1,
+     "fcp": 333,
+     "si": 336,
+     "js_kb": 450,
+     "font_kb": 72,
+     "gesamt_kb": 754,
+     "benchmark": 1562.5,
+     "lcp_element": {
+      "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+      "ausschnitt": "<p>"
+     },
+     "spanne": {
+      "perf": [
+       100,
+       100
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       576,
+       687
+      ],
+      "cls": [
+       0.026,
+       0.051
+      ],
+      "tbt": [
+       0,
+       15
+      ],
+      "fcp": [
+       299,
+       344
+      ],
+      "si": [
+       308,
+       344
+      ],
+      "js_kb": [
+       450,
+       450
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       754,
+       754
+      ],
+      "benchmark": [
+       1560,
+       1585
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 575.6945000000001,
+      "cls": 0.05148516740407565,
+      "tbt": 0,
+      "fcp": 343.5417500000001,
+      "si": 343.5417500000001,
+      "js_kb": 450,
+      "font_kb": 72,
+      "gesamt_kb": 754,
+      "benchmark": 1562.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 17,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 207
+      },
+      "cls_quellen": [
+       {
+        "selector": "body.antialiased > main#main-content > header.relative > div.mx-auto",
+        "wert": 0.0515
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/46-2026-10-23T23-57-12-554Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 588.7921,
+      "cls": 0.05148516740407565,
+      "tbt": 15.30197499999997,
+      "fcp": 333.18815,
+      "si": 336.32571301232804,
+      "js_kb": 450,
+      "font_kb": 72,
+      "gesamt_kb": 754,
+      "benchmark": 1585,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 21,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 207
+      },
+      "cls_quellen": [
+       {
+        "selector": "body.antialiased > main#main-content > header.relative > div.mx-auto",
+        "wert": 0.0515
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/47-2026-10-23T23-57-27-082Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 686.7139,
+      "cls": 0.025975429569649645,
+      "tbt": 1,
+      "fcp": 298.7139,
+      "si": 308.3383176399169,
+      "js_kb": 450,
+      "font_kb": 72,
+      "gesamt_kb": 754,
+      "benchmark": 1560,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 25,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 260
+      },
+      "cls_quellen": [
+       {
+        "selector": "body.antialiased > header.kopf-anker > div.mx-auto > nav.hidden",
+        "wert": 0.026
+       },
+       {
+        "selector": "div.mx-auto > div.flex > a.hidden > svg.inline-block",
+        "wert": 0
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/48-2026-10-23T23-57-41-163Z",
+      "profil_dateien": 20
+     }
+    ]
+   }
+  },
+  "/balkon-terrasse": {
+   "mobil": {
+    "median": {
+     "perf": 95,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 2429,
+     "cls": 0,
+     "tbt": 179,
+     "fcp": 1063,
+     "si": 1068,
+     "js_kb": 276,
+     "font_kb": 72,
+     "gesamt_kb": 492,
+     "benchmark": 1576.5,
+     "lcp_element": {
+      "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+      "ausschnitt": "<p>"
+     },
+     "spanne": {
+      "perf": [
+       90,
+       96
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       2415,
+       2484
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       160,
+       347
+      ],
+      "fcp": [
+       924,
+       1068
+      ],
+      "si": [
+       1033,
+       1437
+      ],
+      "js_kb": [
+       276,
+       276
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       492,
+       492
+      ],
+      "benchmark": [
+       1395.5,
+       1637
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 96,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2415.287125,
+      "cls": 0,
+      "tbt": 159.94257500000003,
+      "fcp": 1068.34455,
+      "si": 1068.34455,
+      "js_kb": 276,
+      "font_kb": 72,
+      "gesamt_kb": 492,
+      "benchmark": 1395.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 14,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 228
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/50-2026-10-23T23-58-06-697Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 95,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2483.9884,
+      "cls": 0,
+      "tbt": 178.51160000000004,
+      "fcp": 1063.4826,
+      "si": 1437.368216950573,
+      "js_kb": 276,
+      "font_kb": 72,
+      "gesamt_kb": 492,
+      "benchmark": 1576.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 16,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 221
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/51-2026-10-23T23-58-18-123Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 90,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2429.3774999999996,
+      "cls": 0,
+      "tbt": 347,
+      "fcp": 923.502,
+      "si": 1032.69226270757,
+      "js_kb": 276,
+      "font_kb": 72,
+      "gesamt_kb": 492,
+      "benchmark": 1637,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 41,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 310
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/52-2026-10-23T23-58-29-677Z",
+      "profil_dateien": 20
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 100,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 662,
+     "cls": 0,
+     "tbt": 24,
+     "fcp": 294,
+     "si": 304,
+     "js_kb": 422,
+     "font_kb": 72,
+     "gesamt_kb": 698,
+     "benchmark": 1493.5,
+     "lcp_element": {
+      "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+      "ausschnitt": "<p>"
+     },
+     "spanne": {
+      "perf": [
+       100,
+       100
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       535,
+       695
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       6,
+       53
+      ],
+      "fcp": [
+       289,
+       296
+      ],
+      "si": [
+       300,
+       411
+      ],
+      "js_kb": [
+       422,
+       422
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       698,
+       698
+      ],
+      "benchmark": [
+       1460.5,
+       1527.5
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 535.23425,
+      "cls": 0,
+      "tbt": 52.999999999999886,
+      "fcp": 295.8811,
+      "si": 411.0634437581867,
+      "js_kb": 422,
+      "font_kb": 72,
+      "gesamt_kb": 698,
+      "benchmark": 1460.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 17,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 285
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/54-2026-10-23T23-58-54-573Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 694.740375,
+      "cls": 0.00001340464480360582,
+      "tbt": 24,
+      "fcp": 294.08844999999997,
+      "si": 304.05563973061703,
+      "js_kb": 422,
+      "font_kb": 72,
+      "gesamt_kb": 698,
+      "benchmark": 1527.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 17,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 275
+      },
+      "cls_quellen": [
+       {
+        "selector": "div.mx-auto > div.flex > a.hidden > svg.inline-block",
+        "wert": 0
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/55-2026-10-23T23-59-07-698Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 661.8374360872202,
+      "cls": 0.00001340464480360582,
+      "tbt": 6,
+      "fcp": 288.80492330466427,
+      "si": 300.26620855968025,
+      "js_kb": 422,
+      "font_kb": 72,
+      "gesamt_kb": 698,
+      "benchmark": 1493.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 16,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 254
+      },
+      "cls_quellen": [
+       {
+        "selector": "div.mx-auto > div.flex > a.hidden > svg.inline-block",
+        "wert": 0
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/56-2026-10-23T23-59-20-553Z",
+      "profil_dateien": 20
+     }
+    ]
+   }
+  },
+  "/referenzen": {
+   "mobil": {
+    "median": {
+     "perf": 94,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 2411,
+     "cls": 0,
+     "tbt": 208,
+     "fcp": 1062,
+     "si": 1249,
+     "js_kb": 269,
+     "font_kb": 72,
+     "gesamt_kb": 484,
+     "benchmark": 1530,
+     "lcp_element": {
+      "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+      "ausschnitt": "<p>"
+     },
+     "spanne": {
+      "perf": [
+       94,
+       94
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       2410,
+       2418
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       206,
+       218
+      ],
+      "fcp": [
+       1062,
+       1063
+      ],
+      "si": [
+       1079,
+       1267
+      ],
+      "js_kb": [
+       269,
+       269
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       484,
+       484
+      ],
+      "benchmark": [
+       1474,
+       1540
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 94,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2410.33275,
+      "cls": 0,
+      "tbt": 217.93345,
+      "fcp": 1062.3993,
+      "si": 1267.3751672597768,
+      "js_kb": 269,
+      "font_kb": 72,
+      "gesamt_kb": 484,
+      "benchmark": 1530,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 14,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 199
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/58-2026-10-23T23-59-45-099Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 94,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2417.827,
+      "cls": 0,
+      "tbt": 206.13840000000027,
+      "fcp": 1061.7924,
+      "si": 1078.7599926008866,
+      "js_kb": 269,
+      "font_kb": 72,
+      "gesamt_kb": 484,
+      "benchmark": 1540,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 18,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 217
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/59-2026-10-23T23-59-56-936Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 94,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2411.2446250000003,
+      "cls": 0,
+      "tbt": 207.75107499999945,
+      "fcp": 1063.49355,
+      "si": 1249.3933362889875,
+      "js_kb": 269,
+      "font_kb": 72,
+      "gesamt_kb": 484,
+      "benchmark": 1474,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 15,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 201
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/60-2026-10-24T00-00-08-742Z",
+      "profil_dateien": 20
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 100,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 618,
+     "cls": 0,
+     "tbt": 10,
+     "fcp": 291,
+     "si": 348,
+     "js_kb": 419,
+     "font_kb": 72,
+     "gesamt_kb": 695,
+     "benchmark": 1556.5,
+     "lcp_element": {
+      "selector": "div.grid > div.col-span-4 > h1.text-tinte > span.block",
+      "ausschnitt": "<span class=\"block\">"
+     },
+     "spanne": {
+      "perf": [
+       100,
+       100
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       565,
+       619
+      ],
+      "cls": [
+       0,
+       0.001
+      ],
+      "tbt": [
+       7,
+       19
+      ],
+      "fcp": [
+       263,
+       300
+      ],
+      "si": [
+       344,
+       349
+      ],
+      "js_kb": [
+       419,
+       419
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       695,
+       695
+      ],
+      "benchmark": [
+       1527.5,
+       1578.5
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 617.800125,
+      "cls": 0,
+      "tbt": 9.999999999999886,
+      "fcp": 299.56015,
+      "si": 348.0902879527726,
+      "js_kb": 419,
+      "font_kb": 72,
+      "gesamt_kb": 695,
+      "benchmark": 1527.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > h1.text-tinte > span.block",
+       "ausschnitt": "<span class=\"block\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 19,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 222
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/62-2026-10-24T00-00-34-397Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 564.801589211992,
+      "cls": 0,
+      "tbt": 18.999999999999886,
+      "fcp": 291.16190705439044,
+      "si": 343.9064871989427,
+      "js_kb": 419,
+      "font_kb": 72,
+      "gesamt_kb": 695,
+      "benchmark": 1556.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > h1.text-tinte > span.block",
+       "ausschnitt": "<span class=\"block\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 22,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 226
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/63-2026-10-24T00-00-46-956Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 618.861625,
+      "cls": 0.0005931337919400892,
+      "tbt": 7.000000000000114,
+      "fcp": 263.0893,
+      "si": 349.3561318042632,
+      "js_kb": 419,
+      "font_kb": 72,
+      "gesamt_kb": 695,
+      "benchmark": 1578.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > h1.text-tinte > span.block",
+       "ausschnitt": "<span class=\"block\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 16,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 260
+      },
+      "cls_quellen": [
+       {
+        "selector": "div.flex > div.flex > button.flex > svg.inline-block",
+        "wert": 0.0006
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/64-2026-10-24T00-00-59-778Z",
+      "profil_dateien": 20
+     }
+    ]
+   }
+  },
+  "/ueber-uns": {
+   "mobil": {
+    "median": {
+     "perf": 94,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 2629,
+     "cls": 0,
+     "tbt": 166,
+     "fcp": 1066,
+     "si": 1067,
+     "js_kb": 266,
+     "font_kb": 72,
+     "gesamt_kb": 458,
+     "benchmark": 1525.5,
+     "lcp_element": {
+      "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+      "ausschnitt": "<p>"
+     },
+     "spanne": {
+      "perf": [
+       94,
+       95
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       2413,
+       2710
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       133,
+       231
+      ],
+      "fcp": [
+       1064,
+       1067
+      ],
+      "si": [
+       1064,
+       1214
+      ],
+      "js_kb": [
+       266,
+       266
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       458,
+       458
+      ],
+      "benchmark": [
+       1496.5,
+       1557
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 94,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2709.6362500000005,
+      "cls": 0,
+      "tbt": 165.69100000000049,
+      "fcp": 1063.9634999999998,
+      "si": 1063.9634999999998,
+      "js_kb": 266,
+      "font_kb": 72,
+      "gesamt_kb": 458,
+      "benchmark": 1557,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 12,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 207
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/66-2026-10-24T00-01-23-468Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 95,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2628.987,
+      "cls": 0,
+      "tbt": 133.1025999999997,
+      "fcp": 1067.3844,
+      "si": 1067.3844,
+      "js_kb": 266,
+      "font_kb": 72,
+      "gesamt_kb": 458,
+      "benchmark": 1496.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 14,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 212
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/67-2026-10-24T00-01-34-253Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 94,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2413.45575,
+      "cls": 0,
+      "tbt": 230.54424999999992,
+      "fcp": 1066.1469,
+      "si": 1213.787950166135,
+      "js_kb": 266,
+      "font_kb": 72,
+      "gesamt_kb": 458,
+      "benchmark": 1525.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 13,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 233
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/68-2026-10-24T00-01-44-741Z",
+      "profil_dateien": 20
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 100,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 537,
+     "cls": 0,
+     "tbt": 7,
+     "fcp": 295,
+     "si": 330,
+     "js_kb": 411,
+     "font_kb": 72,
+     "gesamt_kb": 664,
+     "benchmark": 1576.5,
+     "lcp_element": {
+      "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+      "ausschnitt": "<p>"
+     },
+     "spanne": {
+      "perf": [
+       100,
+       100
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       533,
+       693
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       7,
+       29
+      ],
+      "fcp": [
+       294,
+       300
+      ],
+      "si": [
+       311,
+       361
+      ],
+      "js_kb": [
+       411,
+       411
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       664,
+       664
+      ],
+      "benchmark": [
+       1503.5,
+       1589
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 536.5615,
+      "cls": 0,
+      "tbt": 6.5,
+      "fcp": 299.87379999999996,
+      "si": 361.26518179453535,
+      "js_kb": 411,
+      "font_kb": 72,
+      "gesamt_kb": 664,
+      "benchmark": 1589,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 18,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 222
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/70-2026-10-24T00-02-07-141Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 532.911125,
+      "cls": 0,
+      "tbt": 6.5,
+      "fcp": 295.49334999999996,
+      "si": 311.0112785775325,
+      "js_kb": 411,
+      "font_kb": 72,
+      "gesamt_kb": 664,
+      "benchmark": 1503.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 15,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 238
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/71-2026-10-24T00-02-19-255Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 692.6143750000001,
+      "cls": 0,
+      "tbt": 29,
+      "fcp": 293.93725,
+      "si": 329.53071308278567,
+      "js_kb": 411,
+      "font_kb": 72,
+      "gesamt_kb": 664,
+      "benchmark": 1576.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 15,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 278
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/72-2026-10-24T00-02-30-955Z",
+      "profil_dateien": 20
+     }
+    ]
+   }
+  },
+  "/kontakt": {
+   "mobil": {
+    "median": {
+     "perf": 88,
+     "a11y": 99,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 2706,
+     "cls": 0,
+     "tbt": 376,
+     "fcp": 914,
+     "si": 931,
+     "js_kb": 261,
+     "font_kb": 72,
+     "gesamt_kb": 452,
+     "benchmark": 1573,
+     "lcp_element": {
+      "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+      "ausschnitt": "<p>"
+     },
+     "spanne": {
+      "perf": [
+       87,
+       89
+      ],
+      "a11y": [
+       99,
+       99
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       2399,
+       2859
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       353,
+       379
+      ],
+      "fcp": [
+       909,
+       921
+      ],
+      "si": [
+       909,
+       1032
+      ],
+      "js_kb": [
+       261,
+       261
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       452,
+       452
+      ],
+      "benchmark": [
+       1493,
+       1611.5
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 88,
+      "a11y": 99,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2706.424875,
+      "cls": 0,
+      "tbt": 352.71502499999986,
+      "fcp": 909.1398999999999,
+      "si": 909.1398999999999,
+      "js_kb": 261,
+      "font_kb": 72,
+      "gesamt_kb": 452,
+      "benchmark": 1611.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 12,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 185
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/74-2026-10-24T00-02-54-058Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 89,
+      "a11y": 99,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2398.6818000000003,
+      "cls": 0,
+      "tbt": 379.32955000000004,
+      "fcp": 920.6818000000001,
+      "si": 1031.540927174579,
+      "js_kb": 261,
+      "font_kb": 72,
+      "gesamt_kb": 452,
+      "benchmark": 1573,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 26,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 270
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/75-2026-10-24T00-03-05-198Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 87,
+      "a11y": 99,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2859.034124999999,
+      "cls": 0,
+      "tbt": 376.4931750000004,
+      "fcp": 914.0273,
+      "si": 930.5581670667784,
+      "js_kb": 261,
+      "font_kb": 72,
+      "gesamt_kb": 452,
+      "benchmark": 1493,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 10,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 266
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/76-2026-10-24T00-03-16-692Z",
+      "profil_dateien": 20
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 100,
+     "a11y": 99,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 553,
+     "cls": 0.002,
+     "tbt": 4,
+     "fcp": 297,
+     "si": 301,
+     "js_kb": 411,
+     "font_kb": 72,
+     "gesamt_kb": 663,
+     "benchmark": 1541.5,
+     "lcp_element": {
+      "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+      "ausschnitt": "<p>"
+     },
+     "spanne": {
+      "perf": [
+       100,
+       100
+      ],
+      "a11y": [
+       99,
+       99
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       534,
+       698
+      ],
+      "cls": [
+       0.001,
+       0.016
+      ],
+      "tbt": [
+       3,
+       9
+      ],
+      "fcp": [
+       260,
+       298
+      ],
+      "si": [
+       283,
+       313
+      ],
+      "js_kb": [
+       411,
+       411
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       663,
+       663
+      ],
+      "benchmark": [
+       1524,
+       1617.5
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 100,
+      "a11y": 99,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 533.96005,
+      "cls": 0.0005931337919400892,
+      "tbt": 3.499999999999943,
+      "fcp": 260.3067,
+      "si": 282.8521778060703,
+      "js_kb": 411,
+      "font_kb": 72,
+      "gesamt_kb": 663,
+      "benchmark": 1617.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 16,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 212
+      },
+      "cls_quellen": [
+       {
+        "selector": "div.flex > div.flex > button.flex > svg.inline-block",
+        "wert": 0.0006
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/78-2026-10-24T00-03-40-038Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 99,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 697.584625,
+      "cls": 0.016326645166649324,
+      "tbt": 4,
+      "fcp": 297.50155,
+      "si": 301.032295543356,
+      "js_kb": 411,
+      "font_kb": 72,
+      "gesamt_kb": 663,
+      "benchmark": 1524,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 16,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 273
+      },
+      "cls_quellen": [
+       {
+        "selector": "body.antialiased > header.kopf-anker > div.mx-auto > nav.hidden",
+        "wert": 0.0163
+       },
+       {
+        "selector": "div.mx-auto > div.flex > a.hidden > svg.inline-block",
+        "wert": 0
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/79-2026-10-24T00-03-51-797Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 99,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 552.5669410977241,
+      "cls": 0.001966095322067831,
+      "tbt": 9,
+      "fcp": 296.60041164658605,
+      "si": 313.4017625506177,
+      "js_kb": 411,
+      "font_kb": 72,
+      "gesamt_kb": 663,
+      "benchmark": 1541.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 20,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 193
+      },
+      "cls_quellen": [
+       {
+        "selector": "body.antialiased > main#main-content > header.relative > div.mx-auto",
+        "wert": 0.002
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/80-2026-10-24T00-04-03-722Z",
+      "profil_dateien": 20
+     }
+    ]
+   }
+  },
+  "/standorte/wetzlar": {
+   "mobil": {
+    "median": {
+     "perf": 90,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 2427,
+     "cls": 0,
+     "tbt": 300,
+     "fcp": 1064,
+     "si": 1064,
+     "js_kb": 270,
+     "font_kb": 72,
+     "gesamt_kb": 521,
+     "benchmark": 1562.5,
+     "lcp_element": {
+      "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+      "ausschnitt": "<p>"
+     },
+     "spanne": {
+      "perf": [
+       89,
+       96
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       2414,
+       2857
+      ],
+      "cls": [
+       0,
+       0.006
+      ],
+      "tbt": [
+       167,
+       349
+      ],
+      "fcp": [
+       1061,
+       1067
+      ],
+      "si": [
+       1061,
+       1067
+      ],
+      "js_kb": [
+       270,
+       270
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       519,
+       521
+      ],
+      "benchmark": [
+       1528.5,
+       1566
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 96,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2426.627875,
+      "cls": 0.005511010144687829,
+      "tbt": 167.1976999999997,
+      "fcp": 1060.95345,
+      "si": 1060.95345,
+      "js_kb": 270,
+      "font_kb": 72,
+      "gesamt_kb": 519,
+      "benchmark": 1528.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 17,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 213
+      },
+      "cls_quellen": [
+       {
+        "selector": "body.antialiased > aside.unten-sicher > div.flex > a.flex",
+        "wert": 0.0055
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/82-2026-10-24T00-04-28-054Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 90,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2414.4596250000004,
+      "cls": 0,
+      "tbt": 348.6080749999994,
+      "fcp": 1067.35155,
+      "si": 1067.35155,
+      "js_kb": 270,
+      "font_kb": 72,
+      "gesamt_kb": 521,
+      "benchmark": 1566,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 14,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 195
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/83-2026-10-24T00-04-39-800Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 89,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2856.568125,
+      "cls": 0,
+      "tbt": 299.686375,
+      "fcp": 1063.88175,
+      "si": 1063.88175,
+      "js_kb": 270,
+      "font_kb": 72,
+      "gesamt_kb": 521,
+      "benchmark": 1562.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 14,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 173
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       },
+       {
+        "pfad": "/_next/static/chunks/2y_ne68ovt0xw.js",
+        "kb": 17.2
+       },
+       {
+        "pfad": "/_next/static/chunks/0hzy3txlh-w14.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/84-2026-10-24T00-04-51-475Z",
+      "profil_dateien": 20
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 100,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 569,
+     "cls": 0,
+     "tbt": 9,
+     "fcp": 290,
+     "si": 322,
+     "js_kb": 420,
+     "font_kb": 72,
+     "gesamt_kb": 836,
+     "benchmark": 1580,
+     "lcp_element": {
+      "selector": "div.grid > div.col-span-4 > h1.text-tinte > span.block",
+      "ausschnitt": "<span class=\"block\">"
+     },
+     "spanne": {
+      "perf": [
+       100,
+       100
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       567,
+       665
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       7,
+       10
+      ],
+      "fcp": [
+       290,
+       292
+      ],
+      "si": [
+       316,
+       334
+      ],
+      "js_kb": [
+       420,
+       420
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       836,
+       836
+      ],
+      "benchmark": [
+       1462,
+       1605
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 664.6700000000001,
+      "cls": 0,
+      "tbt": 8.999999999999886,
+      "fcp": 290.404,
+      "si": 334.4521834417174,
+      "js_kb": 420,
+      "font_kb": 72,
+      "gesamt_kb": 836,
+      "benchmark": 1605,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > h1.text-tinte > span.block",
+       "ausschnitt": "<span class=\"block\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 13,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 264
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/86-2026-10-24T00-05-16-982Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 566.9483749999999,
+      "cls": 0,
+      "tbt": 7.000000000000114,
+      "fcp": 290.13804999999996,
+      "si": 316.07513936694545,
+      "js_kb": 420,
+      "font_kb": 72,
+      "gesamt_kb": 836,
+      "benchmark": 1580,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > h1.text-tinte > span.block",
+       "ausschnitt": "<span class=\"block\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 14,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 239
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/87-2026-10-24T00-05-30-226Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 568.9075,
+      "cls": 0,
+      "tbt": 10,
+      "fcp": 292.48900000000003,
+      "si": 322.4065372236069,
+      "js_kb": 420,
+      "font_kb": 72,
+      "gesamt_kb": 836,
+      "benchmark": 1462,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > h1.text-tinte > span.block",
+       "ausschnitt": "<span class=\"block\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 20,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 235
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/88-2026-10-24T00-05-43-458Z",
+      "profil_dateien": 20
+     }
+    ]
+   }
+  },
+  "/blog": {
+   "mobil": {
+    "median": {
+     "perf": 85,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 3120,
+     "cls": 0,
+     "tbt": 369,
+     "fcp": 912,
+     "si": 1048,
+     "js_kb": 386,
+     "font_kb": 72,
+     "gesamt_kb": 605,
+     "benchmark": 1490.5,
+     "lcp_element": {
+      "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+      "ausschnitt": "<p>"
+     },
+     "spanne": {
+      "perf": [
+       84,
+       88
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       2729,
+       3179
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       338,
+       413
+      ],
+      "fcp": [
+       910,
+       1067
+      ],
+      "si": [
+       912,
+       1067
+      ],
+      "js_kb": [
+       386,
+       386
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       605,
+       605
+      ],
+      "benchmark": [
+       1447.5,
+       1572.5
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 85,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3178.9497499999998,
+      "cls": 0,
+      "tbt": 368.5000000000001,
+      "fcp": 911.5799,
+      "si": 911.5799,
+      "js_kb": 386,
+      "font_kb": 72,
+      "gesamt_kb": 605,
+      "benchmark": 1572.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 21,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 201
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/90-2026-10-24T00-06-08-123Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 84,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3119.5087000000003,
+      "cls": 0,
+      "tbt": 412.62282499999935,
+      "fcp": 909.5087000000001,
+      "si": 1048.1324062654107,
+      "js_kb": 386,
+      "font_kb": 72,
+      "gesamt_kb": 605,
+      "benchmark": 1490.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 13,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 182
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/91-2026-10-24T00-06-20-221Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 88,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2728.87025,
+      "cls": 0,
+      "tbt": 337.612975,
+      "fcp": 1067.32215,
+      "si": 1067.32215,
+      "js_kb": 386,
+      "font_kb": 72,
+      "gesamt_kb": 605,
+      "benchmark": 1447.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 13,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 194
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/92-2026-10-24T00-06-31-853Z",
+      "profil_dateien": 20
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 100,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 655,
+     "cls": 0,
+     "tbt": 5,
+     "fcp": 291,
+     "si": 333,
+     "js_kb": 426,
+     "font_kb": 72,
+     "gesamt_kb": 706,
+     "benchmark": 1481,
+     "lcp_element": {
+      "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+      "ausschnitt": "<p>"
+     },
+     "spanne": {
+      "perf": [
+       100,
+       100
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       597,
+       661
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       5,
+       16
+      ],
+      "fcp": [
+       289,
+       296
+      ],
+      "si": [
+       310,
+       379
+      ],
+      "js_kb": [
+       426,
+       426
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       706,
+       706
+      ],
+      "benchmark": [
+       1473.5,
+       1564
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 661.308475,
+      "cls": 0,
+      "tbt": 4.813075000000026,
+      "fcp": 296.12155,
+      "si": 333.06336933444123,
+      "js_kb": 426,
+      "font_kb": 72,
+      "gesamt_kb": 706,
+      "benchmark": 1564,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 13,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 243
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/94-2026-10-24T00-06-54-893Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 596.9159067813673,
+      "cls": 0,
+      "tbt": 15.620454802070299,
+      "fcp": 291.2772711875782,
+      "si": 378.7460828669903,
+      "js_kb": 426,
+      "font_kb": 72,
+      "gesamt_kb": 706,
+      "benchmark": 1473.5,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 28,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 292
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/95-2026-10-24T00-07-07-254Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 655.4759999999999,
+      "cls": 0,
+      "tbt": 5.4524000000000115,
+      "fcp": 289.2856,
+      "si": 309.78984075802157,
+      "js_kb": 426,
+      "font_kb": 72,
+      "gesamt_kb": 706,
+      "benchmark": 1481,
+      "lcp_element": {
+       "selector": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "ausschnitt": "<p>"
+      },
+      "lcp_phasen": {
+       "ttfb": 15,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 217
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/21ludfwbeufxn.js",
+        "kb": 64.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/1lp9zqdloocn9.js",
+        "kb": 34.3
+       },
+       {
+        "pfad": "/_next/static/chunks/07uy6yzs4zj4h.js",
+        "kb": 18.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/96-2026-10-24T00-07-19-907Z",
+      "profil_dateien": 20
+     }
+    ]
+   }
+  }
+ },
+ "satz": "e0",
+ "base": "http://127.0.0.1:4310",
+ "laeufe": 3,
+ "bedingungen": "lokal next start (komprimiert), Erstbesuch mit Banner, Dritt-Hosts blockiert, Lighthouse-Standard-Drosselung (mobil: simuliert 4× CPU, Slow 4G; Desktop-Preset), frisches Chrome-Profil je Lauf, Aufwärmlauf, Median aus 3, Benchmark-Band ±15 %",
+ "benchmark_band": 0.15,
+ "benchmark_referenz": 1535.5
+}

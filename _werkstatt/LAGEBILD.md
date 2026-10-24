@@ -70,7 +70,7 @@ Altfehler aus dem Vorlauf (bleiben, MENSCHEN.md): Konfigurator 2 Fälle `fixme`;
 - Zugänglichkeit (axe, 132 Läufe): 0 Befunde in allen Schweren.
 - Lesbarkeit (163 Seiten): 162 ROT, 1 ausgenommen. ROT je Regel: Gedankenstrich 162, Bindestrich 162, Glossar offen 155, Flesch 142, Floskel 135, Satz über 25 Wörter 57, Absatz über 4 Sätze 4.
 - Reduzierte Bewegung: 0 Befunde.
-- Lighthouse: offen bis E0-PRUEF-03L (Ruhefenster nach den Probeläufen).
+- Lighthouse (E0-PRUEF-03L, Median aus 3, `belege/e0/lighthouse.json`): mobil Leistung 85 bis 95, Zugänglichkeit 99 bis 100, Best Practices und SEO je 100; LCP 2.411 bis 3.472 ms (über 2,5 s auf `/`, `/bad`, `/bad/badsanierung`, `/leistungen`, `/fliesen`, `/ueber-uns`, `/kontakt`, `/blog`), TBT 162 bis 376 ms (über 200 ms auf acht Seiten), CLS 0. Unter 90: `/` 89, `/leistungen` 87, `/kontakt` 88, `/blog` 85. Desktop überall 100, LCP unter 0,7 s. Auf `/` mobil: FCP 1.364 ms, LCP 3.472 ms, LCP-Element der Vorspann `p.max-w-mass` im Einstieg (beobachtete Renderverzögerung 170 ms; der Abstand zur FCP entsteht in der Simulation, Spur in E2-PRUEF-00).
 - Bildsatz des ersten Bildschirms: `bilder/e0/<seite>/<gerät>.jpg` (120 Bilder).
 
 ## 5. Probeläufe alter Stand (E0-PROBE-01…10, Satz e0, Matrix `cache/probelauf/e0/matrix.json`)

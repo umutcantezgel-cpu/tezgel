@@ -151,6 +151,34 @@ Flesch-Schwelle je Seitenart: erzählend 60, Ort 60, Wissen 50, Arbeit ohne Schw
 | /standorte/wetzlar | 0 | 152 | 5 | 0 | 30 |
 | /blog | 0 | 167 | 5 | 0 | 30 |
 
-## 8 · Leistung (Lighthouse)
+## 8 · Leistung (Lighthouse, E0-PRUEF-03L)
 
-offen (E0-PRUEF-03L)
+Lauf 24.10.2026 00:00 bis 01:00 CEST im Ruhefenster gegen den Prüfbau von c53faf4 (Port 4310), Werkzeug `lighthouse.mjs --satz e0 --hauptansichten --laeufe 3 --formen mobil,desktop`: lokal `next start` (komprimiert), Erstbesuch mit Banner, Dritt-Hosts blockiert, Standard-Drosselung (mobil simuliert 4× CPU, Slow 4G; Desktop-Preset), frisches Profil je Lauf, ein Aufwärmlauf, Median aus 3. Zusammenfassung `belege/e0/lighthouse.json`; Rohberichte nur im Scratchpad.
+
+| Seite | Form | Leistung (Spanne) | Zugängl. | Best Practices | SEO | LCP ms (Spanne) | CLS | TBT ms (Spanne) | FCP ms | LCP-Element |
+|---|---|---|---|---|---|---|---|---|---|---|
+| `/` | mobil | 89 (88–90) | 100 | 100 | 100 | 3472 (3446–3497) | 0 | 162 (107–173) | 1364 | `> div.relative > div.mt-8 > p.max-w-mass` |
+| `/` | desktop | 100 (100) | 100 | 100 | 100 | 687 (660–694) | 0 | 4 (0–6) | 333 | `> div.relative > div.mt-8 > p.max-w-mass` |
+| `/bad` | mobil | 92 (88–94) | 100 | 100 | 100 | 2854 (2506–2881) | 0 | 207 (192–319) | 1061 | `div.grid > div.col-span-4 > div.mt-6 > p` |
+| `/bad` | desktop | 100 (100) | 100 | 100 | 100 | 671 (538–686) | 0 | 19 (16–33) | 294 | `.col-span-4 > h1.text-tinte > span.block` |
+| `/bad/badsanierung` | mobil | 92 (89–96) | 100 | 100 | 100 | 2596 (2418–2609) | 0 | 287 (117–330) | 1065 | `div.grid > div.col-span-4 > div.mt-6 > p` |
+| `/bad/badsanierung` | desktop | 100 (100) | 100 | 100 | 100 | 687 (662–696) | 0 | 8 (3–10) | 292 | `div.grid > div.col-span-4 > div.mt-6 > p` |
+| `/bad/barrierefreies-bad` | mobil | 95 (92–96) | 100 | 100 | 100 | 2472 (2412–2565) | 0 | 197 (166–256) | 1061 | `div.grid > div.col-span-4 > div.mt-6 > p` |
+| `/bad/barrierefreies-bad` | desktop | 100 (100) | 100 | 100 | 100 | 665 (605–704) | 0 | 7 (0–21) | 294 | `div.grid > div.col-span-4 > div.mt-6 > p` |
+| `/leistungen` | mobil | 87 (86–91) | 100 | 100 | 100 | 2925 (2868–3161) | 0 | 283 (224–387) | 1063 | `div.grid > div.col-span-4 > div.mt-6 > p` |
+| `/leistungen` | desktop | 100 (100) | 100 | 100 | 100 | 593 (550–682) | 0 | 13 (9–35) | 335 | `div.grid > div.col-span-4 > div.mt-6 > p` |
+| `/fliesen` | mobil | 91 (91–95) | 100 | 100 | 100 | 2718 (2559–2932) | 0 | 215 (118–289) | 1215 | `div.grid > div.col-span-4 > div.mt-6 > p` |
+| `/fliesen` | desktop | 100 (100) | 100 | 100 | 100 | 589 (576–687) | 0.051 | 1 (0–15) | 333 | `div.grid > div.col-span-4 > div.mt-6 > p` |
+| `/balkon-terrasse` | mobil | 95 (90–96) | 100 | 100 | 100 | 2429 (2415–2484) | 0 | 179 (160–347) | 1063 | `div.grid > div.col-span-4 > div.mt-6 > p` |
+| `/balkon-terrasse` | desktop | 100 (100) | 100 | 100 | 100 | 662 (535–695) | 0 | 24 (6–53) | 294 | `div.grid > div.col-span-4 > div.mt-6 > p` |
+| `/referenzen` | mobil | 94 (94) | 100 | 100 | 100 | 2411 (2410–2418) | 0 | 208 (206–218) | 1062 | `div.grid > div.col-span-4 > div.mt-6 > p` |
+| `/referenzen` | desktop | 100 (100) | 100 | 100 | 100 | 618 (565–619) | 0 | 10 (7–19) | 291 | `.col-span-4 > h1.text-tinte > span.block` |
+| `/ueber-uns` | mobil | 94 (94–95) | 100 | 100 | 100 | 2629 (2413–2710) | 0 | 166 (133–231) | 1066 | `div.grid > div.col-span-4 > div.mt-6 > p` |
+| `/ueber-uns` | desktop | 100 (100) | 100 | 100 | 100 | 537 (533–693) | 0 | 7 (7–29) | 295 | `div.grid > div.col-span-4 > div.mt-6 > p` |
+| `/kontakt` | mobil | 88 (87–89) | 99 | 100 | 100 | 2706 (2399–2859) | 0 | 376 (353–379) | 914 | `div.grid > div.col-span-4 > div.mt-6 > p` |
+| `/kontakt` | desktop | 100 (100) | 99 | 100 | 100 | 553 (534–698) | 0.002 | 4 (3–9) | 297 | `div.grid > div.col-span-4 > div.mt-6 > p` |
+| `/standorte/wetzlar` | mobil | 90 (89–96) | 100 | 100 | 100 | 2427 (2414–2857) | 0 | 300 (167–349) | 1064 | `div.grid > div.col-span-4 > div.mt-6 > p` |
+| `/standorte/wetzlar` | desktop | 100 (100) | 100 | 100 | 100 | 569 (567–665) | 0 | 9 (7–10) | 290 | `.col-span-4 > h1.text-tinte > span.block` |
+| `/blog` | mobil | 85 (84–88) | 100 | 100 | 100 | 3120 (2729–3179) | 0 | 369 (338–413) | 912 | `div.grid > div.col-span-4 > div.mt-6 > p` |
+| `/blog` | desktop | 100 (100) | 100 | 100 | 100 | 655 (597–661) | 0 | 5 (5–16) | 291 | `div.grid > div.col-span-4 > div.mt-6 > p` |
+
