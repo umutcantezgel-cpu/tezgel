@@ -1,6 +1,8 @@
 // Funktionstests F-10 (WhatsApp-Links und Widget) und F-15 (Telefon/E-Mail).
 // Prüft Ziele (href bzw. geöffnetes Ziel), vorbelegten Text und Versand, nicht Aussehen.
 // Kein Formular: ein Test gegen die echte Route entfällt. Jeder Browserlauf läuft hinter der Sperre (G5).
+// E2 (E-030): Namen nach K-010 „Nachricht per WhatsApp“, Leiste „Schnellkontakt“; der Desktop-Knopf steht im Kopf ab lg auf allen
+// Breiten (vorher ab 1280 px ausgeblendet, Rückschritt gegen F-10 „gleich“, behoben).
 import { test, expect } from './fixtures.mjs';
 
 const WA_NUMMER = '491726728504';
@@ -59,7 +61,7 @@ test.describe('F-10 WhatsApp-Links und Widget', () => {
     test(`Widget ${pfad}: Klick öffnet WhatsApp mit Firmennummer und seitenbezogenem Text, ohne Anfrage`, async ({ page, anfragen }) => {
       await page.goto(pfad);
       const ausloeser = test.info().project.name === 'mobil'
-        ? page.getByRole('complementary', { name: 'Schnellkontakt Daumenleiste' }).getByRole('link', { name: 'WhatsApp-Chat starten' })
+        ? page.getByRole('complementary', { name: 'Schnellkontakt', exact: true }).getByRole('link', { name: 'Nachricht per WhatsApp', exact: true })
         : page.locator('#whatsapp-floating-btn');
       const ziele = await waAufrufen(page, () => ausloeser.click());
       const z = waZiel(ziele[0]);
@@ -78,7 +80,7 @@ test.describe('F-10 WhatsApp-Links und Widget', () => {
     // Name und Abzeichen werden in beiden Projekten am Knopf selbst geprüft.
     if (test.info().project.name === 'mobil') await expect(knopf).toHaveCount(1);
     else await expect(knopf).toBeVisible();
-    await expect(knopf).toHaveAttribute('aria-label', 'WhatsApp-Nachricht an Fliesenverlegung Tezgel senden');
+    await expect(knopf).toHaveAttribute('aria-label', 'Nachricht per WhatsApp an Fliesenverlegung Tezgel senden');
     // Das Abzeichen saß im Knopf selbst (Ausgangsstand: ein Element mit Text „1“); Schrittnummern der Seite zählen nicht.
     await expect(knopf.getByText('1', { exact: true })).toHaveCount(0);
   });
@@ -103,8 +105,8 @@ test.describe('F-10 WhatsApp-Links und Widget', () => {
     test.skip(test.info().project.name !== 'mobil', 'MobileBottomBar ist nur mobil sichtbar');
     await page.goto('/');
     const knopf = page
-      .getByRole('complementary', { name: 'Schnellkontakt Daumenleiste' })
-      .getByRole('link', { name: 'WhatsApp-Chat starten' });
+      .getByRole('complementary', { name: 'Schnellkontakt', exact: true })
+      .getByRole('link', { name: 'Nachricht per WhatsApp', exact: true });
     const ziele = await waAufrufen(page, () => knopf.click());
     const z = waZiel(ziele[0]);
     expect(z.passt, z.url).toBe(true);
@@ -144,7 +146,7 @@ test.describe('F-15 Telefon und E-Mail', () => {
   test('Mobil-Leiste: Anrufen zeigt auf die Festnetznummer', async ({ page }) => {
     test.skip(test.info().project.name !== 'mobil', 'MobileBottomBar ist nur mobil sichtbar');
     await page.goto('/');
-    const anrufen = page.locator('aside[aria-label="Schnellkontakt Daumenleiste"] a[href^="tel:"]');
+    const anrufen = page.locator('aside[aria-label="Schnellkontakt"] a[href^="tel:"]');
     expect(await hrefs(anrufen)).toEqual([`tel:+${TEL_FESTNETZ}`]);
   });
 });

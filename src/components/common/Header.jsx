@@ -215,21 +215,24 @@ export default function Header({ isMobileMenuOpen }) {
                     <a
                         href={`tel:${COMPANY_DATA.contact.phoneLink}`}
                         data-erstes-bild="kontakt"
+                        // mit voller Navigation (@7xl) ein Feld wie WhatsApp und Menü: Nummer, WhatsApp und Hauptknopf passen dort nicht
+                        // nebeneinander (Zeile ragte bei 1280 px schon 24 px in den Rand). Die Nummer steht im Namen, im Hinweis und im
+                        // ersten Bildschirm jeder Seite (Einstieg „Anrufen: …“, K-009).
                         className={clsx(
-                            'hidden min-h-11 items-center gap-2 px-1 font-mono text-fs-2 @7xl:text-fs-1 text-tinte underline decoration-transparent underline-offset-4 transition-colors dauer-1 ease-setzen hover:decoration-tinte',
+                            'hidden min-h-11 items-center gap-2 px-1 font-mono text-fs-2 text-tinte underline decoration-transparent underline-offset-4 transition-colors dauer-1 ease-setzen hover:decoration-tinte',
+                            '@7xl:size-11 @7xl:justify-center @7xl:border @7xl:border-strich @7xl:bg-fliese @7xl:px-0 @7xl:hover:border-tinte',
                             leisteAus ? 'sm:inline-flex' : 'lg:inline-flex',
                         )}
                         aria-label={`Fliesenverlegung Tezgel telefonisch anrufen: ${COMPANY_DATA.contact.phone}`}
+                        title={`Anrufen: ${COMPANY_DATA.contact.phone}`}
                         data-motion="zustand"
                     >
                         <Icon name="telefon" groesse={5} />
-                        <span className="hidden @5xl:inline">{COMPANY_DATA.contact.phone}</span>
+                        <span className="hidden @5xl:inline @7xl:hidden">{COMPANY_DATA.contact.phone}</span>
                     </a>
-                    {/* WhatsApp im Kopf nur, solange die Hauptpunkte im Menüblatt stehen; mit voller Navigation fehlt der Platz
-                        (am Desktop im Fuß und auf /kontakt, mobil in der unteren Leiste) */}
-                    <span className="contents @7xl:hidden">
-                        <FloatingWhatsAppWidget />
-                    </span>
+                    {/* WhatsApp am Desktop auf allen Breiten ab lg (F-10 „gleich“, E-015 im Archiv: flacher Knopf mit seitenbezogener
+                        Nachricht, Entprellung und Ereignis whatsapp_click); mobil trägt die untere Leiste WhatsApp */}
+                    <FloatingWhatsAppWidget />
                     <Link
                         href={hauptziel(pathname)}
                         className={knopfKlassen('haupt', clsx('px-4 @max-xl:hidden @7xl:px-3', leisteAus ? 'max-sm:hidden' : 'max-lg:hidden'))}
