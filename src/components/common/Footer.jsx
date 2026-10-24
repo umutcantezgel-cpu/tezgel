@@ -10,6 +10,7 @@ import { seitenKlassen } from '@/components/kern/stile';
 import { COMPANY_DATA } from '@/config/company';
 import { footerGruppen, footerLegalLinks } from '@/config/navigation';
 import { oeffnungszeilen } from '@/lib/oeffnungszeiten';
+import Rufnummer from '@/components/kern/Rufnummer';
 
 const LINK_COLUMNS = footerGruppen;
 
@@ -85,11 +86,11 @@ export default function Footer() {
                             <span className={etikett}>Telefon</span>
                             <a
                                 href={`tel:${contact.phoneLink}`}
-                                className={clsx(fussLink, 'mt-1 block font-mono text-fs-2')}
+                                className={clsx(fussLink, 'flex min-h-11 items-center text-fs-2')}
                                 data-motion="zustand"
                                 aria-label={`Fliesenverlegung Tezgel telefonisch anrufen: ${contact.phone}`}
                             >
-                                {contact.phone}
+                                <Rufnummer nummer={contact.phone} />
                             </a>
                         </div>
                         <div className="bg-tinte p-4">
@@ -98,22 +99,22 @@ export default function Footer() {
                                 href={contact.whatsappLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={clsx(fussLink, 'mt-1 block font-mono text-fs-2')}
+                                className={clsx(fussLink, 'flex min-h-11 items-center text-fs-2')}
                                 data-motion="zustand"
                                 aria-label={`Mobil und WhatsApp: ${contact.mobile}, Nachricht an Deniz Tezgel`}
                             >
-                                {contact.mobile}
+                                <Rufnummer nummer={contact.mobile} />
                             </a>
                         </div>
                         <div className="bg-tinte p-4">
                             <span className={etikett}>Fax</span>
-                            <span className="mt-1 block font-mono text-fs-2">{contact.fax}</span>
+                            <Rufnummer nummer={contact.fax} className="mt-1 block text-fs-2" />
                         </div>
                         <div className="bg-tinte p-4">
                             <span className={etikett}>E-Mail</span>
                             <a
                                 href={`mailto:${contact.email}`}
-                                className={clsx(fussLink, 'mt-1 block text-fs-2')}
+                                className={clsx(fussLink, 'flex min-h-11 items-center text-fs-2 break-all')}
                                 data-motion="zustand"
                                 aria-label={`E-Mail an Fliesenverlegung Tezgel senden: ${contact.email}`}
                             >
@@ -130,8 +131,10 @@ export default function Footer() {
                         </div>
                     </address>
 
-                    <dl className="grid grid-cols-2 gap-px border border-nacht-fuge bg-nacht-fuge">
-                        <div className="col-span-2 bg-tinte p-4">
+                    {/* zweispaltig nur, wenn die Kästen ihre Werte fassen (Container-Abfrage in rem, große Systemschrift) */}
+                    <div className="@container">
+                    <dl className="grid grid-cols-1 gap-px border border-nacht-fuge bg-nacht-fuge @xs:grid-cols-2">
+                        <div className="bg-tinte p-4 @xs:col-span-2">
                             <dt className={etikett}>Kammer</dt>
                             <dd className="mt-1 text-fs-2">{authority.name}</dd>
                         </div>
@@ -141,9 +144,10 @@ export default function Footer() {
                         </div>
                         <div className="bg-tinte p-4">
                             <dt className={etikett}>USt-IdNr.</dt>
-                            <dd className="mt-1 font-mono text-fs-2">{tax.ustId}</dd>
+                            <dd className="mt-1 font-mono text-fs-2 break-all">{tax.ustId}</dd>
                         </div>
                     </dl>
+                    </div>
                 </div>
 
                 <div id="seitenindex" className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-7 xl:grid-cols-4 xl:gap-4">

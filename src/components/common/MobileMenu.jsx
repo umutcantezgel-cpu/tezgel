@@ -23,7 +23,8 @@ const istOffen = (el) => {
 
 // Menü als Popover-Blatt (KERN v3 K-009): fünf Bereiche mit je einer Ebene, passt auf 360 × 740 ohne Scrollen; öffnet nativ über popovertarget, auch bevor React hydriert ist;
 // Escape und Klick daneben schließen es. React hält nur aria-expanded, das Aufklappen der Bereiche und den Fokus.
-// Fuß des Blatts: Hauptknopf, Anrufen und WhatsApp; Öffnungszeiten und Rechtliches stehen im Fuß der Seite (Platz auf 360 × 740, Sichtprüfung E2).
+// Fuß des Blatts: nur der Hauptknopf; Anrufen und WhatsApp am Ende der Liste; Öffnungszeiten und Rechtliches stehen im Fuß
+// der Seite (Platz auf 360 × 740 und bei großer Systemschrift, Sichtprüfung E2 Runden 1 bis 3).
 export default function MobileMenu({ isOpen, onToggle }) {
     const pathname = usePathname() || '/';
     const [expandedMenu, setExpandedMenu] = useState(null);
@@ -71,7 +72,9 @@ export default function MobileMenu({ isOpen, onToggle }) {
             className="menue-blatt fixed inset-y-0 right-0 left-auto m-0 h-dvh max-h-none w-full max-w-md overflow-hidden border-0 bg-kalk p-0 text-tinte"
             data-motion="aufklappen"
         >
-            <div className="flex h-full flex-col border-l border-fuge">
+            {/* Container-Abfrage in rem: Bei großer Systemschrift (Blatt schmaler als 20 rem) entfallen die Unterzeilen der
+                Hauptpunkte, damit alle fünf Namen im ersten Bild stehen (Sichtprüfung E2 Runde 3) */}
+            <div className="@container flex h-full flex-col border-l border-fuge">
                 <div className="flex h-16 shrink-0 items-center justify-between gap-3 border-b border-fuge px-4">
                     <Link href="/" onClick={schliessen} aria-label="Zur Startseite von Fliesenverlegung Tezgel">
                         <BrandMark sublineClassName="hidden sm:block" />
@@ -106,7 +109,7 @@ export default function MobileMenu({ isOpen, onToggle }) {
                                                 className="flex min-w-0 flex-1 flex-col py-2"
                                             >
                                                 <span className="text-fs-4 font-semibold text-tinte">{link.name}</span>
-                                                <span className="text-fs-2 text-tinte-2">{link.kurz}</span>
+                                                <span className="hidden text-fs-2 text-tinte-2 @xs:block">{link.kurz}</span>
                                             </Link>
                                             {link.items.length > 0 && (
                                                 <button
@@ -165,6 +168,36 @@ export default function MobileMenu({ isOpen, onToggle }) {
                             })}
                         </ul>
                     </nav>
+                    {/* Anrufen und WhatsApp am Ende der Liste (sie scrollen mit, die untere Leiste trägt sie ohnehin); fest im Fuß bleibt
+                        nur der Hauptknopf. Nebeneinander nur, wenn beide Knöpfe ihre Wörter fassen (Container-Abfrage in rem). */}
+                    <div className="@container mt-6">
+                        <div className="grid grid-cols-1 gap-2 @3xs:grid-cols-2">
+                            <a
+                                href={`tel:${COMPANY_DATA.contact.phoneLink}`}
+                                className={knopfKlassen('neben', 'px-3')}
+                                aria-label={`Fliesenverlegung Tezgel telefonisch anrufen: ${COMPANY_DATA.contact.phone}`}
+                                data-motion="druck"
+                            >
+                                <Icon name="telefon" groesse={4} />
+                                <span>Anrufen</span>
+                            </a>
+                            <a
+                                href={COMPANY_DATA.contact.whatsappLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    openWhatsApp({ phone: COMPANY_DATA.contact.whatsappNumber });
+                                }}
+                                className={knopfKlassen('neben', 'px-3')}
+                                aria-label={`Nachricht per WhatsApp an Deniz Tezgel: ${COMPANY_DATA.contact.whatsapp}`}
+                                data-motion="druck"
+                            >
+                                <WhatsAppLogo className="size-4 shrink-0" />
+                                <span>WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="shrink-0 border-t border-fuge bg-fliese p-4">
@@ -172,35 +205,6 @@ export default function MobileMenu({ isOpen, onToggle }) {
                         {zusammen(primaryCta.name)}
                         <Icon name="pfeil-rechts" groesse={4} />
                     </Link>
-                    {/* nebeneinander nur, wenn beide Knöpfe ihre Wörter fassen (Container-Abfrage in rem, große Systemschrift) */}
-                    <div className="@container mt-2">
-                    <div className="grid grid-cols-1 gap-2 @3xs:grid-cols-2">
-                        <a
-                            href={`tel:${COMPANY_DATA.contact.phoneLink}`}
-                            className={knopfKlassen('neben', 'px-3')}
-                            aria-label={`Fliesenverlegung Tezgel telefonisch anrufen: ${COMPANY_DATA.contact.phone}`}
-                            data-motion="druck"
-                        >
-                            <Icon name="telefon" groesse={4} />
-                            <span>Anrufen</span>
-                        </a>
-                        <a
-                            href={COMPANY_DATA.contact.whatsappLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={(e) => {
-                                e.preventDefault();
-                                openWhatsApp({ phone: COMPANY_DATA.contact.whatsappNumber });
-                            }}
-                            className={knopfKlassen('neben', 'px-3')}
-                            aria-label={`Nachricht per WhatsApp an Deniz Tezgel: ${COMPANY_DATA.contact.whatsapp}`}
-                            data-motion="druck"
-                        >
-                            <WhatsAppLogo className="size-4 shrink-0" />
-                            <span>WhatsApp</span>
-                        </a>
-                    </div>
-                    </div>
                 </div>
             </div>
         </div>

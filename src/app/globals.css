@@ -247,8 +247,9 @@
     text-wrap: pretty;
     hyphens: auto;
     -webkit-hyphens: auto;
-    /* nur lange Wörter trennen, je Teil mindestens vier Zeichen (kein „da-mit“, „wie-der“; Sichtprüfung E2) */
-    hyphenate-limit-chars: 10 4 4;
+    /* nur lange Wörter trennen (ab 12 Zeichen), je Teil mindestens fünf Zeichen: kein „da-mit“, „Unter-grund“,
+       „Bewer-tungen“ (Sichtprüfung E2, Runden 1 und 3) */
+    hyphenate-limit-chars: 12 5 5;
   }
   /* Linknamen in Navigation und Fuß nie trennen */
   nav a,

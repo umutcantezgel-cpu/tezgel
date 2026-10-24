@@ -52,8 +52,8 @@ export function BrandMark({ compact = false, sublineClassName = 'hidden lg:block
 // weiter 1280 px, der Kopf hat aber nur 640 px – vorher stand die Navigation dann voll da und schob Telefon, WhatsApp,
 // Hauptknopf und zwei Menüpunkte rechts aus dem Bild, der Menü-Schalter fehlte (a11y-zusatz zoom: 7 „nie im Bild“).
 // Jetzt zeigt der Kopf dort den Menü-Schalter (Menüblatt mit allen Einträgen, Anruf, WhatsApp und Anfrage) und alle
-// übrigen Bedienelemente bleiben im Bild. Auch die Unterzeile folgt der Kopfbreite (zwischen @5xl und @7xl; ab 2xl wie
-// bisher), und unter @xl (36rem, nur bei starkem Zoom – ohne Zoom ist er dort ohnehin verborgen) weicht der Hauptknopf
+// übrigen Bedienelemente bleiben im Bild. Auch die Unterzeile folgt der Kopfbreite (nur zwischen @5xl und @7xl), und
+// unter @xl (36rem, nur bei starkem Zoom – ohne Zoom ist er dort ohnehin verborgen) weicht der Hauptknopf
 // dem Menü-Schalter, der denselben Weg trägt. Ohne Zoom sind Kopf- und Fensterbreite gleich (bis auf eine Scrollleiste).
 export default function Header({ isMobileMenuOpen }) {
     const pathname = usePathname() || '/';
@@ -114,8 +114,10 @@ export default function Header({ isMobileMenuOpen }) {
             data-feste-ebene
         >
             {/* Kopfhöhe 64 px, im Querformat am Handy 48 px (Kopf und Leisten höchstens ein Viertel der Höhe, K-013) */}
-            <div className={clsx(seitenKlassen, 'kopf-zeile flex h-16 items-center justify-between gap-6 @7xl:gap-3 2xl:gap-6')}>
-                <Link href="/" className="min-w-0 shrink" aria-label="Zur Startseite von Fliesenverlegung Tezgel">
+            <div className={clsx(seitenKlassen, 'kopf-zeile flex h-16 items-center justify-between gap-6 @7xl:gap-3')}>
+                {/* Logo darf nur unter @7xl schrumpfen (große Systemschrift, Menü-Schalter bleibt im Bild); mit voller Navigation
+                    behält es seine Größe, die Navigation hat ab 2xl keine Zuschläge mehr (Runde 3: auf d1920 nur 74 px breit) */}
+                <Link href="/" className="min-w-0 shrink @7xl:shrink-0" aria-label="Zur Startseite von Fliesenverlegung Tezgel">
                     <BrandMark sublineClassName="hidden @5xl:@max-7xl:block" />
                 </Link>
 
@@ -140,8 +142,8 @@ export default function Header({ isMobileMenuOpen }) {
                                         onClick={() => setOpenMenu(null)}
                                         aria-current={active ? 'page' : undefined}
                                         className={clsx(
-                                            'flex items-center whitespace-nowrap pl-2 2xl:pl-3 text-fs-2 font-semibold text-tinte transition-colors dauer-1 ease-setzen hover:text-tinte-2',
-                                            hatBlatt ? 'pr-1' : 'pr-2 2xl:pr-3'
+                                            'flex items-center whitespace-nowrap pl-2 text-fs-2 font-semibold text-tinte transition-colors dauer-1 ease-setzen hover:text-tinte-2',
+                                            hatBlatt ? 'pr-1' : 'pr-2'
                                         )}
                                         data-motion="zustand"
                                     >
@@ -154,7 +156,7 @@ export default function Header({ isMobileMenuOpen }) {
                                             aria-controls={panelId}
                                             aria-label={`Unterpunkte zu ${link.name} ${isOpen ? 'schließen' : 'öffnen'}`}
                                             onClick={() => setOpenMenu(isOpen ? null : link.name)}
-                                            className="flex w-6 items-center justify-center text-tinte-2 transition-colors dauer-1 ease-setzen hover:text-tinte 2xl:w-8"
+                                            className="flex w-6 items-center justify-center text-tinte-2 transition-colors dauer-1 ease-setzen hover:text-tinte"
                                             data-motion="zustand"
                                         >
                                             <Icon
@@ -212,7 +214,7 @@ export default function Header({ isMobileMenuOpen }) {
                         href={`tel:${COMPANY_DATA.contact.phoneLink}`}
                         data-erstes-bild="kontakt"
                         className={clsx(
-                            'hidden min-h-11 items-center gap-2 px-1 font-mono text-fs-2 @7xl:text-fs-1 2xl:px-2 2xl:text-fs-2 text-tinte underline decoration-transparent underline-offset-4 transition-colors dauer-1 ease-setzen hover:decoration-tinte',
+                            'hidden min-h-11 items-center gap-2 px-1 font-mono text-fs-2 @7xl:text-fs-1 text-tinte underline decoration-transparent underline-offset-4 transition-colors dauer-1 ease-setzen hover:decoration-tinte',
                             leisteAus ? 'sm:inline-flex' : 'lg:inline-flex',
                         )}
                         aria-label={`Fliesenverlegung Tezgel telefonisch anrufen: ${COMPANY_DATA.contact.phone}`}
@@ -228,7 +230,7 @@ export default function Header({ isMobileMenuOpen }) {
                     </span>
                     <Link
                         href={hauptziel(pathname)}
-                        className={knopfKlassen('haupt', clsx('px-4 @max-xl:hidden @7xl:px-3 2xl:px-4', leisteAus ? 'max-sm:hidden' : 'max-lg:hidden'))}
+                        className={knopfKlassen('haupt', clsx('px-4 @max-xl:hidden @7xl:px-3', leisteAus ? 'max-sm:hidden' : 'max-lg:hidden'))}
                         data-motion="druck"
                         data-hauptknopf=""
                         data-erstes-bild="hauptknopf"
