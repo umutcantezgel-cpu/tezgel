@@ -4,15 +4,15 @@
 
 ## Meta
 - Titel (57 Zeichen): `Badsanierung in Aßlar & Wetzlar | Fliesenverlegung Tezgel`
-- Beschreibung (131 Zeichen): `Komplette Badsanierung in Aßlar und Wetzlar mit Walk-in-Dusche. Festpreisangebot vom Fachbetrieb Tezgel, Termin vor Ort kostenfrei.`
-- H1: `Ihr altes Bad wird neu, ohne Stress und zum Festpreis`
+- Beschreibung (136 Zeichen): `Komplette Badsanierung in Aßlar und Wetzlar mit Walk-in-Dusche. Festpreisangebot von Fliesenverlegung Tezgel, Termin vor Ort kostenfrei.`
+- H1: `Ihr altes Bad wird neu zum Festpreis`
 - Suchbegriffe aus E0: Badsanierung, Aßlar, Wetzlar, Festpreisangebot, Komplettbad, Walk-in-Dusche, Verbundabdichtung, Großformate.
 
 ## 1 · Worum es geht
 - Brotkrumen: `Start › Bad › Badsanierung`
 - Ort: `Für Aßlar, Wetzlar und Umgebung.`
-- H1: `Ihr altes Bad wird neu, ohne Stress und zum Festpreis`
-- Vorspann: `Badsanierung in Aßlar und Wetzlar: Wir machen aus Ihrem alten Bad ein neues Komplettbad, Stück für Stück. Deniz Tezgel erklärt Ihnen in einfachen Worten, was zu tun ist.`
+- H1: `Ihr altes Bad wird neu zum Festpreis`
+- Vorspann: `Badsanierung in Aßlar und Wetzlar: Wir bauen Ihr Bad Stück für Stück zum Komplettbad um. Deniz Tezgel erklärt Ihnen in einfachen Worten, was zu tun ist.`
 - Hauptknopf: `Termin vor Ort anfragen` → `/kontakt` · Kontakt: `Anrufen: {{COMPANY_DATA.contact.phone}}` (derselbe Hauptknopf wie in Abschnitt 6, K-009)
 - Bild: `{Bild: sanierung-einstieg}` Alt: `Bad mit freistehender ovaler Badewanne und beigen Fliesen in Steinoptik`
 
@@ -24,24 +24,24 @@
 ## 3 · Was wir tun
 - H2: `So wird aus Ihrer Wanne eine sichere Dusche.`
 - Vier Fliesen (eine Aussage je Fliese):
-  1. `Die Wanne geht raus, und an ihre Stelle kommt eine [[bodengleiche-dusche|bodengleiche Dusche]].`
+  1. `Die Wanne geht raus, und an ihre Stelle kommt eine [[bodengleiche-dusche|bodengleiche Dusche]]. Man nennt sie auch Walk-in-Dusche.`
   2. `Der Boden bekommt ein leichtes [[gefaelle|Gefälle]]. Der Einstieg bleibt dabei eben, ohne Stufe.`
-  3. `Unter die Fliesen kommt eine [[abdichtung|Verbundabdichtung]] nach [[din-18534|DIN 18534]]. Das ist bei uns seit 2019 Standard.`
-  4. `Wir verlegen Fliesen mit [[rutschhemmung|Rutschhemmung]] R10 und R11, je nach Raum.`
-- Absatz: `Zu unseren Leistungen gehören [[barrierefrei|barrierefreie]] Bäder mit bodengleichen Duschen.`
+  3. `Wir bauen eine [[abdichtung|Verbundabdichtung]] ein. Sie richtet sich nach der [[din-18534|DIN 18534]]. Das ist bei uns seit 2019 Standard.`
+  4. `Wir verlegen Fliesen mit [[rutschhemmung|Rutschhemmung R10 oder R11]], je nach Raum.`
+- Absatz: `Zu unseren Leistungen gehören [[barrierefrei|barrierefreie]] Bäder mit bodengleichen Duschen und das Verlegen von [[grossformat|Großformaten]].`
 - Absatz: `Wenn Sie ein Bad ohne Stufen wünschen, planen wir nach [[din-18040|DIN 18040]]. So bleibt Ihr Bad auch später gut nutzbar.`
 
 ## 4 · So läuft es ab
 - H2: `So kommen Sie zu Ihrem neuen Bad.`
 - Absatz: `Deniz Tezgel ist Ihr fester Ansprechpartner, von der ersten Skizze bis zum Schluss.`
 - Großer Moment `weg`: Vom Anruf bis zur letzten Fuge, als Weg mit sechs Stationen.
-  1. `Anruf und Rückruf` · `Sie rufen an oder schicken Ihre Anfrage, und Deniz Tezgel ruft Sie zurück.`
+  1. `Anruf und Rückruf` · `Sie rufen an oder schicken uns Ihre Anfrage. Deniz Tezgel ruft Sie zurück.`
   2. `Termin bei Ihnen` · `Deniz Tezgel kommt zu Ihnen, sieht sich Ihr Bad genau an, und dieser Termin ist kostenfrei.`
-  3. `Planen und auswählen` · `Gemeinsam wählen Sie Fliesen und Dusche aus, danach bekommen Sie ein Angebot mit festem Preis.`
+  3. `Planen und auswählen` · `Gemeinsam wählen Sie Fliesen und Dusche aus, danach bekommen Sie ein Festpreisangebot, also ein Angebot mit festem Preis.`
   4. `Ausbau mit Staubschutz` · `Wenn Sie während des Umbaus zu Hause wohnen, schützen wir Ihre Räume mit Staubschutzwänden und Luftreinigern.`
   5. `Fliesen verlegen` · `Wir verlegen den neuen Boden und die Wände, bis die letzte Fuge fertig ist.`
   6. `Übergabe an Sie` · `Zum Schluss ist der Raum gefegt und sauber, und wir gehen alles gemeinsam mit Ihnen durch.`
-- Bilder aus drei verschiedenen Baustellen, ohne gemeinsame Reihenfolge:
+- Drei Bilder ohne feste Reihenfolge (Bauhinweis: Herkunft der Fotos ist in K-015 nicht belegt, siehe OFFENE FRAGEN):
   - Bild: `{Bild: sanierung-weg-1}` Alt: `Bad während der Arbeit: beige Wandfliesen bis halbhoch, Glasbausteine im Fenster und Anschlüsse an der Wand` Unterschrift: `Bad während der Arbeit: beige Wandfliesen bis halbhoch.`
   - Bild: `{Bild: sanierung-weg-2}` Alt: `Bad während der Arbeit: offene Decke, dunkle Holzoptik am Boden und eine Badewanne` Unterschrift: `Bad während der Arbeit: offene Decke und dunkle Holzoptik am Boden.`
   - Bild: `{Bild: sanierung-weg-3}` Alt: `Bad während der Arbeit: brauner Boden im Duschbereich, WC vor einer braunen Wand, Decke im Ausbau` Unterschrift: `Bad während der Arbeit: brauner Boden im Duschbereich, Decke im Ausbau.`

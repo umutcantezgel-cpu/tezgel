@@ -12,7 +12,7 @@
 - Brotkrumen: `Start › Leistungen`
 - Ort: `Für Aßlar, Wetzlar und Umgebung.`
 - H1: `Alle Leistungen vom Fliesenleger aus Aßlar, Fliese für Fliese.`
-- Vorspann: `Sie haben ein Bad, einen Boden oder einen Balkon, der nicht mehr passt. Hier sehen Sie, was wir tun, von der Badsanierung bis zur Terrasse.`
+- Vorspann: `Sie haben ein Bad, einen Boden oder einen Balkon, der nicht mehr passt. Hier sehen Sie, was wir tun: von der Badsanierung bis zur Terrasse, dazu Böden und Naturstein.`
 - Hauptknopf: `Termin vor Ort anfragen` → `/kontakt` · Kontakt: `Anrufen: {{COMPANY_DATA.contact.phone}}` · `Nachricht per WhatsApp` (derselbe Hauptknopf wie in Abschnitt 6, K-009)
 
 ## 2 · Ihre Lage
@@ -21,18 +21,18 @@
 - Absatz: `Sie wissen vielleicht nicht, wo Sie anfangen sollen. Das ist normal. Den ersten Schritt gehen wir gemeinsam.`
 
 ## 3 · Was wir tun
-- H2: `Vier Bereiche, vom Bad bis zur Abdichtung.`
-- Absatz: `Deniz Tezgel betreut Sie persönlich. Er ist Ihr fester Ansprechpartner von der ersten Skizze bis zur Abnahme.`
+- H2: `Vier Bereiche, vom Bad bis unter die Fliesen.`
+- Absatz: `Deniz Tezgel betreut Sie persönlich. Er ist Ihr fester Ansprechpartner von der ersten Skizze bis zur fertigen Arbeit.`
 1. `Bad` · `Wir bauen Ihr Bad um. Statt der Wanne kommt eine [[bodengleiche-dusche|bodengleiche Dusche]].`
    - Bild: `{Bild: leistungen-bad}` (Kopfbild Bad, Alttext aus arbeiten-e2.json)
    - Link: `Mehr zum Bad` → `/leistungen/bad`
-2. `Böden und Wände` · `Wir verlegen Fliesen auf Böden und an Wänden, dazu große Fliesen und Naturstein. Das gilt für Wohnräume, Küchen und den Neubau.`
+2. `Böden und Wände` · `Wir verlegen Fliesen auf Böden und an Wänden, dazu große Fliesen und Naturstein. Das gilt für Wohnräume, Küchen, Treppen und den Neubau. Auch Reparaturen an Fliesen gehören dazu.`
    - (Kein Foto: hier steht die Fliesenkomposition, ohne Unterschrift.)
    - Link: `Mehr zu Böden und Wänden` → `/leistungen/wohnen`
-3. `Balkon und Terrasse` · `Wir sanieren Balkone und Terrassen. Die Platten liegen auf [[stelzlager|Stelzlagern]], darunter läuft der Regen ab.`
+3. `Balkon und Terrasse` · `Wir sanieren Balkone und Terrassen, auch auf [[stelzlager|Stelzlagern]].`
    - Bild: `{Bild: leistungen-balkon}` (Kopfbild Balkon, Alttext aus arbeiten-e2.json)
    - Link: `Mehr zu Balkon und Terrasse` → `/leistungen/aussen`
-4. `Untergrund und Abdichtung` · `Das ist die Arbeit unter dem Belag, die man später nicht mehr sieht. Wir gleichen den [[untergrund|Untergrund]] aus und bringen eine [[abdichtung|Abdichtung]] nach [[din-18534|DIN 18534]] auf.`
+4. `Untergrund und Abdichtung` · `Das ist die Arbeit unter dem Belag, die man später nicht mehr sieht. Wir gleichen den [[untergrund|Untergrund]] aus. Darauf kommt eine [[abdichtung|Abdichtung]] nach [[din-18534|DIN 18534]].`
    - Bild: `{Bild: leistungen-untergrund}` (Kopfbild Untergrund und Abdichtung, Alttext aus arbeiten-e2.json)
    - Link: `Mehr zu Untergrund und Abdichtung` → `/leistungen/untergrund`
 - Großer Moment `formatregler` (Regler mit Zeiger und Tastatur): Links steht eine `Kleine Fliese`, rechts eine `Große Fliese, bis 120 × 260 cm`. Unterschrift: `Große Fliesen haben weniger Fugen.`
@@ -40,8 +40,8 @@
 ## 4 · So läuft es ab
 - H2: `So läuft jede Arbeit bei uns ab.`
 1. `Termin bei Ihnen vor Ort` · `Deniz Tezgel kommt zu Ihnen. Er schaut sich den Raum genau an und prüft den Untergrund. Dieser Termin ist für Sie kostenfrei.`
-2. `Planen und auswählen` · `Sie wählen mit uns Fliesen, ihre Größe und die Farbe der Fugen aus. Danach bekommen Sie ein Angebot mit festem Preis.`
-3. `Verlegen und übergeben` · `Wir verlegen sauber und übergeben besenrein. Wohnen Sie weiter im Haus, schützen wir Ihre Räume vor Staub. Zum Schluss gehen wir alles gemeinsam durch.`
+2. `Planen und auswählen` · `Sie wählen mit uns die Fliesen aus, dazu die Größe und die Farbe der Fugen. Danach bekommen Sie ein Angebot mit festem Preis.`
+3. `Verlegen und übergeben` · `Wir verlegen sauber und übergeben Ihnen die Räume gefegt. Wohnen Sie weiter im Haus, schützen wir Ihre Räume vor Staub. Zum Schluss gehen wir alles gemeinsam durch.`
 
 ## 5 · Beleg
 - H2: `Das sagen unsere Kunden.`
@@ -52,8 +52,8 @@
 
 ## 6 · Nächster Schritt
 - H2: `Sprechen Sie mit uns über Ihr Vorhaben.`
-- Satz: `Schreiben Sie uns Ihren Namen und Ihre Telefonnummer. Deniz Tezgel ruft Sie zurück und macht einen Termin mit Ihnen aus.`
+- Satz: `Nennen Sie uns Ihren Namen und Ihre Telefonnummer. Deniz Tezgel ruft Sie zurück und macht einen Termin mit Ihnen aus.`
 - Hauptknopf: `Termin vor Ort anfragen` → `/kontakt` · Kontakt: `Anrufen: {{COMPANY_DATA.contact.phone}}` · `Nachricht per WhatsApp` (derselbe Hauptknopf wie in Abschnitt 1, K-004)
-- Absatz: `Als Hilfe gibt es den Preisrechner. Er nennt einen Richtpreis, noch kein festes Angebot.`
+- Absatz: `Als Hilfe gibt es den Preisrechner. Er nennt einen Richtpreis, also einen ungefähren Preis. Ein festes Angebot ist das noch nicht.`
 - Link: `Richtpreis berechnen` → `#kosten-rechner`
 - Link: `Anfrage in drei Schritten` → `#express-anfrage`
