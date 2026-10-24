@@ -678,7 +678,8 @@ test.describe('Bewegung an (Wechsel mit Fliesen)', () => {
     expect.soft(voll.some((e) => e.z === 'bedeckt'), 'Logo sichtbar in bedeckt').toBe(true);
     const f = voll[0];
     const [breite, hoehe] = f.ansicht;
-    expect.soft(Math.abs(f.box.x + f.box.b / 2 - breite / 2), 'waagrecht mittig (± 1 px)').toBeLessThanOrEqual(1);
+    // für das Auge mittig: die Mitte des sichtbaren Inhalts der Datei (12 bis 587 von 640 px, LOGO_INHALT_MITTE in raster.ts)
+    expect.soft(Math.abs(f.box.x + f.box.b * ((12 + 587) / 2 / 640) - breite / 2), 'waagrecht mittig für das Auge (± 1 px)').toBeLessThanOrEqual(1);
     expect.soft(Math.abs(f.box.y + f.box.h / 2 - hoehe / 2), 'senkrecht mittig (± 1 px)').toBeLessThanOrEqual(1);
     expect.soft(Math.abs(f.box.b / f.box.h - 3.2), `unverzerrt wie die Datei 640 × 200 (${f.box.b} × ${f.box.h})`).toBeLessThan(0.02);
     expect.soft(Number.isInteger(f.box.x) && Number.isInteger(f.box.y) && Number.isInteger(f.box.b), `ganze Pixel (${JSON.stringify(f.box)})`).toBe(true);

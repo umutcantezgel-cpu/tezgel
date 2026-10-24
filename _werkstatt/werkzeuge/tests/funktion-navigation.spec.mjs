@@ -264,32 +264,77 @@ test.describe('Login (deaktiviert)', () => {
   });
 });
 
-test.describe('Stimmen auf / (F-19, ruhige Stimmenreihe statt Karussell)', () => {
-  // Drei Stimmen, Wortlaut wörtlich aus src/config/reviews.js; die große Stimme steht zuerst (c-wolf).
-  const STIMMEN = ['c-wolf', 'rabia-oe', 'elke-s'];
+test.describe('Stimmen auf / (F-19; seit E-047 langsames Karussell mit gleich großen Karten)', () => {
+  // Acht Stimmen, Wortlaut wörtlich aus src/config/reviews.js (G8), in der Reihenfolge von src/inhalte/start.ts. Seit E-047
+  // (Auftraggeber: „Rezensionen als Karussell, langsam“) stehen sie als Reihe gleich großer Karten mit Zurück, Weiter und bei
+  // erlaubter Bewegung einem Knopf zum Anhalten; vorher galt „ruhige Reihe statt Karussell“ (E-012).
+  const STIMMEN = ['c-wolf', 'rabia-oe', 'elke-s', 'hasan-oe', 'ute-t', 'peter-p', 'christian-d', 'sara-j'];
   const wortlaut = (id) => REVIEWS.find((r) => r.id === id)?.text;
   const zitate = (page) => page.locator('#kundenstimmen blockquote');
+  const region = (page) => page.getByRole('region', { name: 'Kundenstimmen', exact: true });
 
-  test('drei Stimmen auf /, Wortlaut wörtlich aus REVIEWS, in der Reihenfolge c-wolf, rabia-oe, elke-s', async ({ page }) => {
+  test('acht Stimmen auf /, Wortlaut wörtlich aus REVIEWS, in der Reihenfolge des Inhalts', async ({ page }) => {
     await page.goto('/');
-    await expect(zitate(page)).toHaveCount(3);
+    await expect(zitate(page)).toHaveCount(STIMMEN.length);
     const gelesen = await zitate(page).evaluateAll((els) => els.map((el) => el.textContent?.trim() ?? ''));
     expect(gelesen).toEqual(STIMMEN.map(wortlaut));
   });
 
-  test('c-wolf ist die große Stimme: ihre Schrift ist größer als die der beiden anderen', async ({ page }) => {
+  test('gleich große Karten: alle Zitate in derselben Schrift, alle Karten gleich breit, jede sichtbare Karte ganz im Bild', async ({ page }) => {
     await page.goto('/');
-    await expect(zitate(page)).toHaveCount(3);
+    await expect(zitate(page)).toHaveCount(STIMMEN.length);
     const groesse = await zitate(page).evaluateAll((els) => els.map((el) => parseFloat(getComputedStyle(el).fontSize)));
-    expect(groesse[0]).toBeGreaterThan(groesse[1]);
-    expect(groesse[1]).toBe(groesse[2]);
+    expect(new Set(groesse).size).toBe(1);
+    await region(page).scrollIntoViewIfNeeded();
+    const lage = await region(page).locator('ul').evaluate((ul) => {
+      const r = ul.getBoundingClientRect();
+      return [...ul.children].map((li) => { const k = li.getBoundingClientRect(); return { l: k.left, r: k.right, b: Math.round(k.width), sichtbar: k.right > r.left + 1 && k.left < r.right - 1, ganz: k.left >= r.left - 1 && k.right <= r.right + 1 }; });
+    });
+    expect(new Set(lage.map((k) => k.b)).size, `Breiten ${lage.map((k) => k.b)}`).toBe(1);
+    for (const k of lage.filter((x) => x.sichtbar)) expect(k.ganz, `Karte ${Math.round(k.l)} bis ${Math.round(k.r)} angeschnitten`).toBe(true);
   });
 
-  test('statt Karussell: keine Blätter-Knöpfe auf /', async ({ page }) => {
+  test('bedienbar: Weiter rückt um genau eine Karte, Zurück zurück; bei reduzierter Bewegung kein Selbstlauf und kein Anhalten-Knopf', async ({ page }) => {
+    // ausdrücklich emulieren: reducedMotion aus der Konfiguration greift in diesem Lauf nicht (E-047, Befund der Prüfung)
+    await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/');
-    await expect(zitate(page)).toHaveCount(3);
-    await expect(page.getByRole('button', { name: 'Nächste Rezensionen', exact: true })).toHaveCount(0);
-    await expect(page.getByRole('button', { name: 'Vorherige Rezensionen', exact: true })).toHaveCount(0);
+    await region(page).scrollIntoViewIfNeeded();
+    const reihe = region(page).locator('ul');
+    const weiter = region(page).getByRole('button', { name: 'Weiter', exact: true });
+    const zurueck = region(page).getByRole('button', { name: 'Zurück', exact: true });
+    await expect(weiter).toBeVisible();
+    await expect(region(page).getByRole('button', { name: /^(Anhalten|Weiterlaufen lassen)$/ })).toHaveCount(0);
+    const karte = await reihe.evaluate((ul) => Math.round(ul.firstElementChild.getBoundingClientRect().width));
+    await weiter.click();
+    await expect.poll(() => reihe.evaluate((ul) => Math.round(ul.scrollLeft))).toBeGreaterThanOrEqual(karte - 2);
+    expect(await reihe.evaluate((ul) => Math.round(ul.scrollLeft))).toBeLessThanOrEqual(karte + 2);
+    await zurueck.click();
+    await expect.poll(() => reihe.evaluate((ul) => Math.round(ul.scrollLeft))).toBeLessThanOrEqual(2);
+    const x = await reihe.evaluate((ul) => ul.scrollLeft);
+    await page.waitForTimeout(9000);
+    expect(await reihe.evaluate((ul) => ul.scrollLeft), 'ohne erlaubte Bewegung rückt nichts von selbst').toBe(x);
+  });
+
+  test.describe('mit erlaubter Bewegung', () => {
+    test('Selbstlauf langsam (eine Karte nach rund 8 s) und Anhalten hält ihn an (WCAG 2.2.2)', async ({ page }) => {
+      await page.emulateMedia({ reducedMotion: 'no-preference' });
+      await page.goto('/');
+      await region(page).scrollIntoViewIfNeeded();
+      await page.mouse.move(1, 1);
+      const reihe = region(page).locator('ul');
+      const x0 = await reihe.evaluate((ul) => ul.scrollLeft);
+      await page.waitForTimeout(3000);
+      expect(await reihe.evaluate((ul) => ul.scrollLeft), 'nach 3 s noch nicht weiter (langsam)').toBe(x0);
+      await expect.poll(() => reihe.evaluate((ul) => ul.scrollLeft), { timeout: 9000 }).toBeGreaterThan(x0 + 10);
+      const halt = region(page).getByRole('button', { name: 'Anhalten', exact: true });
+      await halt.click();
+      await expect(region(page).getByRole('button', { name: 'Weiterlaufen lassen', exact: true })).toHaveAttribute('aria-pressed', 'true');
+      await page.mouse.move(1, 1);
+      await page.waitForTimeout(1500);
+      const x1 = await reihe.evaluate((ul) => ul.scrollLeft);
+      await page.waitForTimeout(9000);
+      expect(await reihe.evaluate((ul) => ul.scrollLeft), 'angehalten bleibt die Reihe stehen').toBe(x1);
+    });
   });
 });
 
