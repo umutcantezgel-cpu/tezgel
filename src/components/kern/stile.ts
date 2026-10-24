@@ -26,7 +26,7 @@ export const labelKlassen = 'block font-text text-fs-2 font-semibold text-tinte'
 export const pflichtKlassen = 'ml-1 font-mono text-fs-1 text-tinte-2';
 /** Eingabe, Auswahl, Textbereich */
 export const feldKlassen =
-  'mt-2 block w-full min-h-11 rounded-r1 border border-strich bg-fliese px-4 py-3 font-text text-fs-3 text-tinte placeholder:text-tinte-2 @max-xs:px-3 hover:border-tinte focus-visible:border-tinte aria-[invalid=true]:border-laser-tief disabled:opacity-50';
+  'mt-2 block w-full min-h-11 rounded-r1 border border-strich bg-fliese px-4 py-3 font-text text-fs-3 text-tinte placeholder:text-tinte-2 @max-xs:px-3 @max-xs:placeholder:text-transparent hover:border-tinte focus-visible:border-tinte aria-[invalid=true]:border-laser-tief disabled:opacity-50';
 /** Hilfetext unter dem Feld */
 export const hilfeKlassen = 'mt-2 font-text text-fs-2 text-tinte-2';
 /** Fehlertext (mit Fehler-Icon und role="alert") */

@@ -29,6 +29,8 @@ export interface AbschnittProps {
   leitachse?: boolean;
   /** Inhalt erst in Sichtnähe zeichnen (content-visibility, nur unterhalb des ersten Bildschirms; E3-NACH-07) */
   spaet?: boolean;
+  /** Laserlinie links an der H2: das Ziel der Hauptknöpfe (K-004), damit die Linie, die führt, nicht vor dem Ziel endet */
+  ziel?: boolean;
   /** Teil der Seitenformel (KERN v3 K-009), als data-formel für die Prüfung */
   formel?: Formelteil;
   className?: string;
@@ -36,7 +38,7 @@ export interface AbschnittProps {
   'aria-label'?: string;
 }
 
-export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleitung, unterKopf, art = 'erzaehl', flaeche = 'kalk', kopf = 'gestapelt', breite = 'seite', auftritt = false, leitachse = false, spaet = false, formel, className, children, ...rest }: AbschnittProps) {
+export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleitung, unterKopf, art = 'erzaehl', flaeche = 'kalk', kopf = 'gestapelt', breite = 'seite', auftritt = false, leitachse = false, spaet = false, ziel = false, formel, className, children, ...rest }: AbschnittProps) {
   const hId = titelId ?? (id ? `${id}-titel` : undefined);
   const tinte = flaeche === 'tinte';
   const kopfInhalt = (titel || etikett) && (
@@ -50,7 +52,7 @@ export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleit
         </p>
       )}
       {/* Arbeitsansicht: H1 steht in text-fs-6, die H2 eine Stufe darunter (E3-SICHT-2-ARB Befunde 4, 15, 25) */}
-      {titel && <h2 id={hId} className={clsx(art === 'arbeit' ? 'text-fs-5' : 'text-fs-6', tinte ? 'text-kalk' : 'text-tinte')}>{titel}</h2>}
+      {titel && <h2 id={hId} className={clsx(art === 'arbeit' ? 'text-fs-5' : 'text-fs-6', tinte ? 'text-kalk' : 'text-tinte', ziel && 'border-l-2 border-laser pl-4')}>{titel}</h2>}
       {einleitung && <div className={clsx('mt-6 text-fs-3', tinte ? 'text-nacht-2' : 'text-tinte-2')}>{einleitung}</div>}
     </div>
   );

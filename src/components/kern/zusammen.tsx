@@ -1,11 +1,11 @@
-// Wortgruppen, die nicht umbrechen sollen (Sichtprüfung E2 Runden 2 und 3: „Termin vor / Ort anfragen“, „25 / km“): als
-// Span mit white-space: nowrap. Der Wortlaut bleibt für Vorleser, Suche und Prüfungen unverändert (kein geschütztes
-// Leerzeichen). Das Ergebnis ist immer genau ein Element (ein äußerer Span), damit es in Flex-Knöpfen ein einziges
+// Wortgruppen, die nicht umbrechen sollen (Sichtprüfung E2 Runden 2 bis 4: „Termin vor / Ort anfragen“, „25 / km“,
+// „27 / Bewertungen“): als Span mit white-space: nowrap. Der Wortlaut bleibt für Vorleser, Suche und Prüfungen
+// unverändert (kein geschütztes Leerzeichen). Das Ergebnis ist immer genau ein Element (ein äußerer Span), damit es in Flex-Knöpfen ein einziges
 // Flex-Kind bleibt: Sonst würden Textstücke und Gruppe einzelne Flex-Kinder mit dem Abstand des Knopfs dazwischen
 // (doppelte Wortabstände, Überlauf bei großer Schrift; Runde 3).
 import type { ReactNode } from 'react';
 
-const GRUPPEN = [/vor Ort/, /\d+ km/];
+const GRUPPEN = [/vor Ort/, /\d+ km/, /\d+ Bewertungen/, /\d+ Sternen/];
 
 function teile(text: string): ReactNode[] {
   let erster: RegExpExecArray | null = null;
