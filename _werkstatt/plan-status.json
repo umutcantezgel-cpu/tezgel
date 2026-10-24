@@ -20,8 +20,10 @@
  "E2-BILD-02": "abgenommen (32 Motive, 91 Dateien; Fragen in M-08, M-17)",
  "E2-PRUEF-04": "abgenommen (Befund behoben, E-020; Lauf 5: 26/26)",
  "E2-LEKT-404": "abgenommen (7 Befunde übernommen; Fragen M-03, M-04 offen)",
- "E2-ORCH-07": "gebaut (Text nach E2-LEKT-404), Browserprüfung offen",
+ "E2-ORCH-07": "gebaut (Text nach E2-LEKT-404, Sichtprüfung Runde 1 umgesetzt)",
  "E0-PRUEF-03L": "erledigt (Orchestrator, reiner Werkzeuglauf; Tabelle STUFE-B Abschnitt 8)",
  "E0-PRUEF-03": "erledigt cce868a (Rückgabe gesichert)",
- "E0-PROBE-01…10": "erledigt (zehn Rückgaben gesichert, LAGEBILD Abschnitt 5)"
+ "E0-PROBE-01…10": "erledigt (zehn Rückgaben gesichert, LAGEBILD Abschnitt 5)",
+ "E2-ORCH-06": "gebaut, Sichtprüfung Runde 1 umgesetzt (E-021), Runde 2 läuft",
+ "E2-ORCH-06b": "gebaut (Startbild-Belag, Tests Startbild 1), im Prüf-Workflow bestanden"
 }
