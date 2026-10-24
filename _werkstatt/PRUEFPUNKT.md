@@ -1,9 +1,9 @@
 # PRUEFPUNKT
 
-- Lauf „Verständlich, echt, ausgezeichnet“ · Etappe E2 (Referenz) · Stand 2026-10-24 04:27 CEST
+- Lauf „Verständlich, echt, ausgezeichnet“ · Etappe E2 (Referenz) · Stand 2026-10-24 04:52 CEST
 - Letzter grüner Commit (src): c53faf4 (src gleich main 388fa7b). HEAD 27639b6 und folgende = Zwischenstände E2 (gepusht): Startseite, Startbild und 404 nachgebessert, im Prüf-Workflow.
 - E0 abgeschlossen bis auf Lighthouse: E0-PRUEF-03 und E0-PROBE-01…10 zurück und gesichert (`pakete/*.rueckgabe.md`), Werte in LAGEBILD Abschnitt 4 und 5, ABNAHME Z-11.
-- Laufend (04:27): Workflow Prüfrunde 4 (wf_531f3308-f5d, Skript `$SCRATCH/orch/runde4.js`, Stand 58df170; Ordner `$SCRATCH/E2-R4-{W,R,SICHT}`). Runde 3 ergab 7/8/7/7/8/7/6 (E-023), alle Befunde umgesetzt (Commits bis 237ce94). Entwicklungsserver 4320 mit geleertem `.next/dev` neu gestartet (veraltetes CSS). Bricht der Workflow ab: mit `resumeFromRunId` fortsetzen. Danach Befunde umsetzen, E2-PRUEF-TESTS, Stufe A (Briefings A1 bis A3), Reinraum, INP des Ankerknopfs im Produktionsbau, E2-PRUEF-00,
+- Laufend (04:52): (1) Workflow Prüfrunde 4 (wf_531f3308-f5d, Skript `$SCRATCH/orch/runde4.js`, Stand 58df170; Ordner `$SCRATCH/E2-R4-{W,R,SICHT}`). (2) Workflow E3-Texte (wf_358e4bf7-a6b): E3-TEXT-01 bis 09, danach E3-LEKT-01 bis 09; Texte in `_werkstatt/texte/` (Zwischenstand committet, 0ff5196). Bricht einer ab: mit `resumeFromRunId` fortsetzen. Fertig ohne Prüfung: Vorlagen E3-ORCH-01a bis d (`src/components/vorlagen/`, E-025), `src/inhalte/` (barrierefreies-bad, orte, galerie), Briefings E3-BAU-01 bis 11. Danach: Befunde Runde 4 umsetzen, Startseite auf `vorlagen/teile` umstellen, E2-PRUEF-TESTS, Stufe A (A1 bis A3), Reinraum, INP des Ankerknopfs im Produktionsbau, E2-PRUEF-00,
 - Im Zwischenstand cce868a (Orchestrator), je Paket:
   - E2-ORCH-01 Tokens (`globals.css`), E2-ORCH-01b Register (`register.ts`, `test/bewegung.test.mjs`, `_werkstatt/register.json`, `werte-regeln.json`).
   - E2-FIX-01a bis c (GoogleReviewsBadge, FinalCTA, LocalDominanceMap, llms.txt, schema.ts, standorte/[stadt]).
