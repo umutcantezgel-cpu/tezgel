@@ -1,4 +1,4 @@
-# KERN · Lauf „Verständlich, echt, ausgezeichnet“ · Version 3.4
+# KERN · Lauf „Verständlich, echt, ausgezeichnet“ · Version 3.5
 
 Stand 24.10.2026, E1. Quelle der Wahrheit für alle Pakete. Hervorgegangen aus KERN v2 „Verlegeplan“ (`archiv/2026-10-werkstatt/KERN.md`): Werte und Bausteine von v2 gelten weiter, soweit dieser Kern sie nicht ändert. Über dem Kern stehen Grenzen und Leitplanken, Bestand und Adressen, Verständlichkeit, Zugänglichkeit und Leistung und die Abnahmeliste (Auftrag Abschnitt 4). **[A]** = Annahme (offen in MENSCHEN.md). Jedes Paket nennt die Kern-Version, gegen die es gebaut wurde.
 
@@ -105,7 +105,7 @@ Bezug ist eine Fliese 30 × 60 cm im Maßstab 1 cm = 3,2 px: kurze Seite **F = 9
 
 ## K-007 Bewegungssystem und Register
 - Haltung: Bewegung legt Dinge an ihren Platz. Technik: nur `transform` und `opacity` (einzige Ausnahme: `stroke-dashoffset` für das Zeichnen der Logo-Kontur in B-02, weil die Kontur sich zeichnen soll). Startzustände nur unter `html.k-bewegung` (Kopfskript aus v2); ohne JavaScript ist alles sichtbar; scrollgebundene Szenen per `animation-timeline` mit Ersatzzweig = Endzustand. Reduzierte Bewegung: Überblendung `dauer-2` oder Sofortzustand. Hover nur bei `(hover: hover) and (pointer: fine)`.
-- Jedes animierte Element trägt `data-motion="<Kennung>"`; Maschinenfassung `_werkstatt/register.json`.
+- Jedes animierte Element liegt in einem Element mit `data-motion="<Kennung>"` (am Element selbst oder am Behälter des Moments: das Bewegungsmodul setzt `data-motion-stand` am Träger des Attributs, die CSS-Regeln greifen von dort auf die Teile, v3.5); Maschinenfassung `_werkstatt/register.json`, Bauvorgabe je großem Moment in `_werkstatt/register/<kennung>.json`.
 
 | Kennung | Zweck | Auslöser | Dauer · Kurve | Reduziert | Wo |
 |---|---|---|---|---|---|
@@ -117,15 +117,15 @@ Bezug ist eine Fliese 30 × 60 cm im Maßstab 1 cm = 3,2 px: kurze Seite **F = 9
 | `sig-plan` (E-037) | Orientierung: das Fugenbild des Verlegeplans rückt in die Flucht | Laden (`data-flucht="laden"`) bzw. Hover/Fokus, auf Touch IO 40 % (`zeigen`) | Laden `dauer-4` · `ease-setzen` nach `dauer-2`; Zeigen `dauer-3` | Raster in der Flucht | `/`, `/bad`, `/leistungen`, `/leistungen/[id]`; Planblatt-Einstiege (laden), Wissensseiten mit Plan (zeigen, E-044) |
 | `seitenwechsel` (Plan-Morph, E-037) | Zusammenhang: derselbe Plan gleitet von der Übersicht in den Einstieg der Leistungsseite | Klick „Fachdetails“ (`data-uebergang="plan-vor"`, View Transition Typ plan-vor), nur ab lg bei erlaubter Bewegung und Browserunterstützung, sonst B-01 | Plan `dauer-4` · `ease-setzen`, Seite überblendet `dauer-2`, Kopf steht; nur vorwärts | B-01-Überblendung | `/leistungen` → `/leistungen/[id]` |
 | `einzugsband` · `szene-ablauf` · `fugenband` (E-037) | Orientierung und Zusammenhang wie in v2 | Laden · Scroll · Scroll | wie v2 | Endzustand | `/standorte`, `/leistungen`, `/ueber-uns` |
-| `schichten` | Zusammenhang: Was unter der Fliese steckt | Scroll (view-timeline) | linear an Scroll, je Schicht ein Satz | alle Schichten sichtbar | `/bad` |
+| `schichten` | Zusammenhang: Was unter der Fliese steckt | Scroll (view-timeline je Satz, Zeichnung klebt) | linear an Scroll, je Schicht ein Satz (cover 15 bis 45 %) | alle Schichten sichtbar, nichts klebt | `/bad` |
 | `weg` | Orientierung: Vom Anruf bis zur letzten Fuge | Scroll (view-timeline) | Laserlinie zieht von Station zu Station | Linie voll, alle Stationen | `/bad/badsanierung` |
-| `gefaelle-dusche` | Zusammenhang: Wasser läuft zum Ablauf | Sichtbarkeit (IO 40 %) | Tropfen `dauer-5` linear, einmal | Pfeile statisch | `/bad/barrierefreies-bad` |
-| `gefaelle-balkon` | Zusammenhang: Regen läuft vom Balkon ab | Sichtbarkeit (IO 40 %) | `dauer-5` linear, einmal | Pfeile statisch | `/balkon-terrasse` |
-| `formatregler` | Rückmeldung: 60 × 60 gegen 120 × 260 | Regler (Zeiger und Tastatur) | direkt, ohne Verzögerung | gleich | `/leistungen` |
-| `verband` | Rückmeldung: Verlegemuster wechselt | Auswahl (Radiogruppe) | `dauer-3` · `ease-setzen` | Sofortzustand | `/fliesen` |
-| `vorher-nachher` | Rückmeldung: Vorher gegen Nachher | Regler (Zeiger und Tastatur) | direkt | gleich | `/referenzen` |
-| `karte` | Orientierung: Einsatzgebiet ab Aßlar | Sichtbarkeit (IO 40 %) | Ringe `dauer-3` gestaffelt | Endzustand | `/ueber-uns`, `/standorte` |
-| `galerie-filter` | Rückmeldung: Bilder nach Raum | Auswahl | `dauer-2` Überblendung | Sofortzustand | `/referenzen` |
+| `gefaelle-dusche` | Zusammenhang: Wasser läuft zum Ablauf | Sichtbarkeit (IO 40 %) | Tropfen `dauer-5` linear, einmal; Pfeile `dauer-2` · `ease-setzen` hinter dem Tropfen | Pfeile statisch; Zurück/Vor Endzustand | `/bad/barrierefreies-bad` |
+| `gefaelle-balkon` | Zusammenhang: Regen läuft vom Balkon ab | Sichtbarkeit (IO 40 %) | `dauer-5` linear, einmal | Pfeile statisch, Tropfen in der Rinne; Zurück/Vor Endzustand | `/balkon-terrasse` |
+| `formatregler` | Rückmeldung: kleine Fliese gegen große Fliese bis 120 × 260 (Wand quer, ohne Zahlen, E-045) | Regler (Zeiger und Tastatur) | direkt, ohne Verzögerung | gleich | `/leistungen` |
+| `verband` | Rückmeldung: Verlegemuster wechselt (vier Muster, Fischgrät als eigene Ebene) | Auswahl (Radiogruppe, ohne JS) | gewählte Ebene `dauer-3` · `ease-setzen`, gehende `dauer-1` · `ease-weg` | Sofortzustand | `/fliesen` |
+| `vorher-nachher` | Rückmeldung: Vorher gegen Nachher (Lot in Tinte, eigener Abschnitt mit H2, E-045) | Regler (Zeiger und Tastatur) | direkt | gleich | `/referenzen` |
+| `karte` | Orientierung: Einsatzgebiet ab Aßlar | Sichtbarkeit (IO 40 %) | Ringe `dauer-3` · `ease-setzen` von innen nach außen, Punkte je Zone `dauer-2` | Endzustand; Zurück/Vor Endzustand | `/ueber-uns` (auf `/standorte` nur nach Rückfrage, E-037) |
+| `galerie-filter` | Rückmeldung: Bilder nach Raum | Auswahl (Knöpfe mit `aria-pressed`) | `dauer-2` · `ease-setzen` Überblendung in Lesefolge, Staffel höchstens 8 Stufen | Sofortzustand | `/referenzen` |
 | `leitachse` | Orientierung: Lesefortschritt | Scroll (scroll-timeline) | linear | Grundschicht, nichts gezogen | Erzählseiten (aus v2) |
 | `auftritt` | Hierarchie: Abschnitt rückt 8 px ein | IO 20 % | `dauer-3` · `ease-setzen` | Überblendung | Erzählseiten (aus v2) |
 | `aufklappen` | Rückmeldung | Klick, Taste | auf `dauer-2`, zu `dauer-1` | Sofortzustand | Menü, Akkordeon (aus v2) |
@@ -291,6 +291,7 @@ Maschinenfassung `src/config/glossar.ts` (Quelle) und `regeln/glossar.json` (Pr�
 F-07, F-09, F-14, F-20 und die Versprechen bis zur Antwort (MENSCHEN.md); Herkunft einzelner Fotos (M-08).
 
 ## Änderungsprotokoll
+- v3.5 (24.10.2026, E-045): große Momente gebaut (E3-GRAF-01 bis 09); Regel zu `data-motion` am Behälter; Registerzeilen genauer (Dauer, Kurve, Zurück/Vor); formatregler ohne Fugenmeter, vorher-nachher mit Lot in Tinte als eigener Abschnitt.
 - v3.4 (24.10.2026, E-044): Vorlagen tragen die SVG-Bewegungen (Planblatt-Einstieg mit SIG-1, Wissensseiten mit Plan „zeigen“, Ortsseiten mit Einzugsband im Schlitz); Verzögerung hinter dem Intro auf jeder Seite (`k-intro-sig`), Geometrie an `/` (`k-intro-start`); Startseite über die Vorlage ErzaehlSeite; K-012 Ladevorrang nach E-037/E-041 nachgezogen.
 - v3.3 (24.10.2026, E-043): B-01 „Fliese für Fliese“ (Entscheidung des Auftraggebers): ganze Seite Fliese für Fliese von rechts belegen, dann einzeln abnehmen, 1800/1400 ms; Kalk neutral #F4F4F5; Wartelinie in `strich`; Token `ease-aufsetzen`, `ease-wind` entfällt.
 - v3.2 (24.10.2026, E-042): B-01 als „Wind“ (Entscheidung des Auftraggebers): Band aus Fliesen weht über die Seite, alte Seite davor, neue dahinter; Token `ease-wind`.
