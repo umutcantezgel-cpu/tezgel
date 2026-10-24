@@ -28,7 +28,7 @@
   2. `Der Duschboden bekommt ein leichtes [[gefaelle|Gefälle]]. So fließt das Wasser von selbst zum Ablauf.`
   3. `Unter die Fliesen kommt eine [[abdichtung|Abdichtung]] nach [[din-18534|DIN 18534]]. So bleibt das Wasser in der Dusche.`
   4. `Wir verlegen rutschfeste Fliesen, je nach Raum mit [[rutschhemmung|Rutschhemmung R10 oder R11]].`
-- Absatz: `Wir planen nach der Regel für barrierefreies Bauen ([[din-18040|DIN 18040]]). Danach ist genug Platz zum Bewegen, und es gibt keine Stufen.` (F-25)
+- Absatz: `Wir planen nach [[din-18040|DIN 18040]]. So bleibt Ihr Bad auch später gut nutzbar.` (F-25; die Erklärung der Norm nennt Stufen und Platz zum Bewegen schon, Textprüfung E3)
 - Großer Moment `gefaelle-dusche`: Zeichnung des Duschbodens; ein Tropfen läuft über das Gefälle zum Ablauf. Unterschrift: `Das Wasser läuft von selbst zum Ablauf.`
 
 ## 4 · So läuft es ab

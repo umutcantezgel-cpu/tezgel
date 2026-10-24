@@ -12,7 +12,7 @@
 - Brotkrumen: `Start › Untergrund und Abdichtung › DIN 18534`
 - Ort: `Fliesenverlegung Tezgel aus Aßlar`
 - H1: `Verbundabdichtung nach DIN 18534 im Bad und in der Dusche`
-- Vorspann: `Die [[din-18534|DIN 18534]] ist die Regel für Abdichtungen in Bad und Dusche. Wir erklären, was sie verlangt und wie wir danach arbeiten.`
+- Vorspann: `Die [[din-18534|DIN 18534]] sagt, wie Bad und Dusche gegen Wasser geschützt werden. Wir erklären, was sie verlangt und wie wir danach arbeiten.`
 - Hauptknopf: `Termin vor Ort anfragen` → `/kontakt` · Kontakt: `Anrufen: {{COMPANY_DATA.contact.phone}}`
 
 ## 2 · Ihre Lage
@@ -39,7 +39,7 @@
 - Drei Schritte (F-11): `Termin bei Ihnen vor Ort` · `Wir sehen uns Wände, Boden und Abläufe an.` — `Planen und auswählen` · `Wir wählen mit Ihnen die passende Abdichtung und die Fliesen aus.` — `Abdichten und verlegen` · `Wir dichten ab, verlegen die Fliesen und gehen am Ende alles mit Ihnen durch.` (Trennstrich nur hier im Bauhinweis zwischen den Schritten, nicht im Seitentext)
 
 ## 5 · Beleg
-- Foto `{Bild: wissen-dichtband-balkon}` Alt: `Mitarbeiter klebt Dichtband an den Übergängen eines Balkons` (Person nur von hinten, kein Gesicht).
+- Foto `{Bild: start-galerie-6}` Alt: `Mitarbeiter klebt Dichtband an den Übergängen eines Balkons` (Person nur von hinten, kein Gesicht).
 - Satz: `Seit 2019 ist die Abdichtung nach DIN 18534 bei uns Standard.` (F-15)
 
 ## 6 · Nächster Schritt

@@ -51,7 +51,7 @@
 
 ## 5 · Beleg
 - H2: `So sieht unsere Arbeit aus.`
-- Sechs Fotos aus der Galerie (je Raum eins: Dusche, Bad, Balkon, Terrasse, Treppe, Baustelle), jedes mit kurzer Unterschrift, zum Beispiel `{Bild: galerie-dusche-sitzbank}` `Dusche mit Sitzbank und Mosaik`.
+- Sechs Fotos aus der Galerie (je Raum eins: Dusche, Bad, Balkon, Terrasse, Treppe, Baustelle), jedes mit kurzer Unterschrift, zum Beispiel `{Bild: start-galerie-1}` `Dusche mit Sitzbank und Mosaik`.
 - Link: `Alle Arbeiten ansehen` → `/referenzen`
 - H2: `Das sagen unsere Kunden.`
 - Drei Stimmen wörtlich aus `REVIEWS` (Elke S., C. W., Rabia Ö.), gekürzt nur mit „…“, Quelle `Google`.
