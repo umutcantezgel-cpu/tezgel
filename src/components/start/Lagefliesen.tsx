@@ -1,8 +1,9 @@
 // Startseite · 2 Ihre Lage (KERN v3 K-003 Nr. 2, K-009; Text REF-start): sechs Fliesen, je eine Lage in den Worten des
 // Kunden, jede ein Link auf die passende Seite. Fliese = Foto (oder Fliesenkomposition, wo kein Foto passt) und Satz,
-// aneinander an der Fuge. Ab lg zwei Streifen zu je drei Fliesen, der rechte um ein Drittel versetzt (der eine Versatz
-// dieses Bildschirms, K-005); mobil eine Liste mit kleinem Bild links, groß genug zum Tippen. Bilder im Link sind
-// dekorativ (alt=""), der Satz ist der Name des Links. Serverkomponente.
+// aneinander an der Fuge. Ab lg zwei Streifen zu je drei Fliesen über die volle Satzbreite, der rechte um ein Drittel
+// versetzt (der eine Versatz dieses Bildschirms, K-005); je Fliese Bild links (ein Drittel) und Satz rechts, ohne
+// Silbentrennung. Mobil eine Liste mit kleinem Bild links, groß genug zum Tippen. Bilder im Link sind dekorativ (alt=""),
+// der Satz ist der Name des Links. Serverkomponente.
 import Link from 'next/link';
 import Image from 'next/image';
 import clsx from 'clsx';
@@ -44,7 +45,6 @@ export default function Lagefliesen() {
       id="ihre-lage"
       formel="lage"
       leitachse
-      kopf="seitlich"
       titel="Was möchten Sie ändern?"
       einleitung={<p>Wählen Sie, was am besten passt. Sie kommen direkt zu den Bildern und Antworten für Ihre Lage.</p>}
       className="lg:pb-32"
@@ -64,13 +64,13 @@ export default function Lagefliesen() {
             <Link
               href={lage.href}
               data-motion="zustand"
-              className="group grid h-full grid-cols-4 text-tinte transition-colors dauer-1 ease-setzen hover:bg-kalk lg:grid-cols-5"
+              className="group grid h-full grid-cols-4 text-tinte transition-colors dauer-1 ease-setzen hover:bg-kalk lg:grid-cols-3"
             >
-              <span aria-hidden="true" className="relative col-span-1 aspect-square overflow-hidden border-r border-fuge lg:col-span-2 lg:aspect-auto lg:min-h-full">
+              <span aria-hidden="true" className="relative col-span-1 aspect-square overflow-hidden border-r border-fuge">
                 <Bild lage={lage} />
               </span>
-              <span className="col-span-3 flex items-start justify-between gap-3 p-4 lg:p-6">
-                <span className="font-text text-fs-4 font-semibold text-pretty">{lage.satz}</span>
+              <span className="col-span-3 flex items-start justify-between gap-3 p-4 lg:col-span-2 lg:p-8">
+                <span className="font-text text-fs-4 font-semibold text-pretty hyphens-none">{lage.satz}</span>
                 <Icon name="pfeil-rechts" groesse={5} className="mt-1 shrink-0 text-tinte-2 transition-colors dauer-1 group-hover:text-tinte" />
               </span>
             </Link>

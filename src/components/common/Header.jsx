@@ -26,7 +26,7 @@ export function BrandMark({ compact = false, sublineClassName = 'hidden lg:block
                 alt="Fliesenverlegung Tezgel"
                 width={140}
                 height={44}
-                className="h-12 w-auto shrink-0 object-contain @7xl:h-10 2xl:h-12"
+                className="h-12 w-auto shrink-0 object-contain @7xl:h-11 2xl:h-12"
                 data-erstes-bild="logo"
                 priority
             />

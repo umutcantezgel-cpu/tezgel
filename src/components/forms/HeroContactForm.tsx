@@ -1,7 +1,10 @@
 "use client";
 
-// Direktanfrage im Einstieg der Startseite (E2-ORCH-08): Formular als Feld an der Fuge, Klassen aus kern/stile.ts.
-// Logik, Nutzlast, IDs, Labels und Texte unverändert (Test funktion-hero-kontakt).
+// Anfrage „Termin vor Ort anfragen“ (E2-ORCH-08, KERN v3 E-012): Formular als Feld an der Fuge, Klassen aus kern/stile.ts.
+// Logik, Nutzlast, IDs, Labels, Pflichtfelder und Empfänger unverändert (G8, Test funktion-hero-kontakt). Texte nach den
+// Schreibregeln (E2-ORCH-06): „Termin vor Ort“ statt „Aufmaß“, Knopf mit der Hauptaktion; die eigenen Zusagen des
+// Formulars (Rückruf in 24 Stunden, unverbindlich) bleiben wörtlich (K-015, M-07). `titel={false}`: ohne eigene
+// Überschrift, wenn der Abschnitt sie schon trägt (Startseite #termin).
 // Zustände, Prüfung, Absenden und WhatsApp-Weg kommen aus useHeroKontakt (P3-00l, eine Logik für Bestand und Kern).
 
 import Icon from '@/components/icons/Icon';
@@ -11,7 +14,7 @@ import Knopf from '@/components/kern/Knopf';
 import { etikettKlassen, feldKlassen, fehlerKlassen, labelKlassen, linkKlassen, pflichtKlassen, wahlKlassen } from '@/components/kern/stile';
 import { PROJECT_OPTIONS, useHeroKontakt } from '@/lib/formulare/useHeroKontakt';
 
-export default function HeroContactForm() {
+export default function HeroContactForm({ titel = true }: { titel?: boolean } = {}) {
     const {
         projectType,
         setProjectType,
@@ -70,7 +73,7 @@ export default function HeroContactForm() {
                         <span>Nächste Schritte:</span>
                     </p>
                     <p className="mt-2 text-fs-2 text-tinte-2">
-                        Herr Tezgel prüft Ihre Angaben persönlich und ruft Sie innerhalb von <strong className="font-semibold text-tinte">24 Stunden</strong> unter {phone} an, um den Termin für das kostenfreie Aufmaß vor Ort abzustimmen.
+                        Herr Tezgel prüft Ihre Angaben persönlich und ruft Sie innerhalb von <strong className="font-semibold text-tinte">24 Stunden</strong> unter {phone} an, um den kostenfreien Termin bei Ihnen vor Ort abzustimmen.
                     </p>
                 </div>
 
@@ -99,11 +102,13 @@ export default function HeroContactForm() {
                     Rückruf &lt; 24h
                 </span>
             </div>
-            <p className="mt-6 font-anzeige text-fs-5 font-semibold text-balance text-tinte">
-                Kostenloses Aufmaß vor Ort anfragen
-            </p>
-            <p className="mt-2 text-fs-2 text-tinte-2">
-                Beschreiben Sie Ihr Projekt in 30 Sekunden – Herr Tezgel meldet sich direkt persönlich bei Ihnen.
+            {titel && (
+                <p className="mt-6 font-anzeige text-fs-5 font-semibold text-balance text-tinte">
+                    Kostenfreien Termin vor Ort anfragen
+                </p>
+            )}
+            <p className={titel ? 'mt-2 text-fs-2 text-tinte-2' : 'mt-6 text-fs-2 text-tinte-2'}>
+                Sagen Sie uns kurz, worum es geht. Deniz Tezgel meldet sich persönlich bei Ihnen.
             </p>
 
             {/* Fehlermeldung */}
@@ -221,7 +226,7 @@ export default function HeroContactForm() {
                         name="notes"
                         type="text"
                         autoComplete="off"
-                        placeholder="z. B. 15 m², Altbau, Walk-In Dusche"
+                        placeholder="z. B. 15 m², Altbau, Dusche ohne Stufe"
                         value={notes}
                         onChange={(e) => setNotes(e.target.value)}
                         className={feldKlassen}
@@ -244,8 +249,8 @@ export default function HeroContactForm() {
 
                 {/* Absenden */}
                 <div className="flex flex-col gap-4">
-                    <Knopf type="submit" laedt={status === 'submitting'} ladeText="Wird übertragen..." icon="pfeil-rechts" className="w-full">
-                        Kostenfreies Aufmaß anfragen
+                    <Knopf type="submit" laedt={status === 'submitting'} ladeText="Wird gesendet …" icon="pfeil-rechts" className="w-full">
+                        Termin vor Ort anfragen
                     </Knopf>
 
                     <div className="flex flex-wrap items-center justify-between gap-2 text-fs-2 text-tinte-2">
@@ -261,7 +266,7 @@ export default function HeroContactForm() {
                             className={`${linkKlassen} inline-flex min-h-11 items-center gap-2 font-semibold`}
                         >
                             <WhatsAppLogo className="size-4 shrink-0" />
-                            <span>Oder via WhatsApp</span>
+                            <span>Oder per WhatsApp</span>
                         </a>
                     </div>
                 </div>

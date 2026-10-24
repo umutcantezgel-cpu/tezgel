@@ -42,7 +42,8 @@ export default function StartEinstieg() {
   const { contact } = COMPANY_DATA;
   return (
     <section aria-labelledby="start-titel" data-formel="worum" className="relative">
-      <div className={`${seitenKlassen} grid grid-cols-4 gap-y-12 pt-12 pb-16 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12 lg:pt-16 lg:pb-24`}>
+      {/* oben Platz für den festen Kopf (64 px, wie der Baustein Einstieg) */}
+      <div className={`${seitenKlassen} grid grid-cols-4 gap-y-12 pt-24 pb-16 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12 lg:pt-32 lg:pb-24`}>
         <div className="col-span-4 md:col-span-8 lg:col-span-7 lg:self-center">
           <h1 id="start-titel" data-erstes-bild="ueberschrift" className="text-fs-7 text-balance text-tinte">
             Wir verlegen Fliesen in Bad, Küche, Flur und auf dem Balkon.

@@ -1,5 +1,5 @@
 "use client";
-// Bewertungen auf /referenzen (KERN v2, S-23; Muster: Startseite „Kundenstimmen“ src/components/start/Stimmen.tsx).
+// Bewertungen auf /referenzen (KERN v2, S-23; Muster bis E2: Startseite „Kundenstimmen“, früher src/components/start/Stimmen.tsx; heute Kundenstimmen in src/components/start/StartBeleg.tsx).
 // Kopf zweispaltig: links Etikett mit Fugenkreuz, H2 und Einleitung, rechts Google und Trustlocal als Maß in Mono mit
 // „Stand“. Darunter der Themenfilter (Insel mit Zustand: Auswahlknöpfe mit aria-pressed) und die Stimmen als Feldraster an
 // der Fuge. Jede Stimme ist eine Kundenstimme (K-009): Sterne als Gruppe mit role="img" und Namen, Zitat wörtlich in der

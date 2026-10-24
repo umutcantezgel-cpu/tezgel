@@ -2,11 +2,11 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import clsx from 'clsx';
-import Icon from '@/components/icons/Icon';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import BannerPlatz from '@/components/common/BannerPlatz';
 import SprungHalter from '@/components/common/SprungHalter';
-import { knopfKlassen, seitenKlassen } from '@/components/kern/stile';
+import FussHauptknopf from '@/components/common/FussHauptknopf';
+import { seitenKlassen } from '@/components/kern/stile';
 import { COMPANY_DATA } from '@/config/company';
 import { footerGruppen, footerLegalLinks } from '@/config/navigation';
 import { oeffnungszeilen } from '@/lib/oeffnungszeiten';
@@ -52,10 +52,7 @@ export default function Footer() {
                             </li>
                         ))}
                     </ul>
-                    <Link href="/kontakt" className={knopfKlassen('hell', 'shrink-0 self-start lg:self-auto')} data-motion="druck">
-                        Kostenfreies Vor-Ort-Aufmaß
-                        <Icon name="pfeil-rechts" groesse={4} />
-                    </Link>
+                    <FussHauptknopf />
                 </div>
             </div>
 

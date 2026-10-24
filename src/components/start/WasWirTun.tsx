@@ -1,6 +1,7 @@
 // Startseite · 3 Was wir tun (KERN v3 K-009, K-011; Text REF-start): ein Absatz in Alltagssprache mit dem Fachwort
 // „Untergrund“ samt Erklärung, vier Bereiche als Zeilen an der Fuge (je ein Link), darunter drei Belege aus dem
-// Faktenblatt (K-015) als ruhiges Band. Kopf seitlich, damit dieser Abschnitt anders gebaut ist als die Lage davor.
+// Faktenblatt (K-015) als Zeilen an der Fuge (die Erklärungen der Fachwörter brauchen die Zeilenlänge). Kopf seitlich,
+// damit dieser Abschnitt anders gebaut ist als die Lage davor.
 // Serverkomponente.
 import Link from 'next/link';
 import Icon from '@/components/icons/Icon';
@@ -41,7 +42,7 @@ export default function WasWirTun() {
               className="group flex min-h-16 items-center gap-4 py-4 text-tinte lg:gap-6 lg:py-6"
             >
               <Icon name={b.icon} groesse={6} className="shrink-0 text-tinte-2 transition-colors dauer-1 group-hover:text-tinte" />
-              <span className="flex-1 font-anzeige text-fs-5 font-extrabold underline decoration-transparent decoration-2 underline-offset-8 transition-colors dauer-1 group-hover:decoration-laser">
+              <span className="flex-1 font-anzeige text-fs-5 font-extrabold hyphens-none underline decoration-transparent decoration-2 underline-offset-8 transition-colors dauer-1 group-hover:decoration-laser">
                 {b.name}
               </span>
               <Icon name="pfeil-rechts" groesse={6} className="shrink-0 text-tinte-2 transition-colors dauer-1 group-hover:text-tinte" />
@@ -49,7 +50,7 @@ export default function WasWirTun() {
           </li>
         ))}
       </ul>
-      <ul className="mt-16 grid gap-px border border-fuge bg-fuge md:grid-cols-3">
+      <ul className="mt-16 grid gap-px border border-fuge bg-fuge">
         <li className="flex gap-3 bg-fliese p-6">
           <Fugenkreuz className="mt-2 size-3 shrink-0 text-tinte" />
           <p className="font-text text-fs-3 text-tinte">Seit 2008 sind wir bei der Handwerkskammer Wiesbaden eingetragen.</p>
@@ -57,8 +58,7 @@ export default function WasWirTun() {
         <li className="flex gap-3 bg-fliese p-6">
           <Fugenkreuz className="mt-2 size-3 shrink-0 text-tinte" />
           <p className="font-text text-fs-3 text-tinte">
-            Die <Fachwort id="abdichtung">Abdichtung</Fachwort> machen wir nach <Fachwort id="din-18534">DIN 18534</Fachwort>. So kommt
-            kein Wasser in Wand und Boden.
+            Die <Fachwort id="abdichtung">Abdichtung</Fachwort> machen wir nach <Fachwort id="din-18534">DIN 18534</Fachwort>.
           </p>
         </li>
         <li className="flex gap-3 bg-fliese p-6">
