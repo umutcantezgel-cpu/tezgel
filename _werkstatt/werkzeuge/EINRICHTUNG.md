@@ -101,6 +101,8 @@ Aufruf (Chrome-Pfad auf diesem Host, Ausgabe nach Scratchpad):
 Stand E0-PRUEF-01: angelegt (vorher kein Eintrag vorhanden).
 
 ## Stolpersteine
+- `git add` mit einem Pfad, den es nicht mehr gibt (gelöschter Ordner), bricht ganz ab („pathspec did not match“); ein folgendes `git commit` nimmt dann nur, was schon vorgemerkt war (zweimal in E2-ORCH-09, Nachtrags-Commits 05af18e und e33c42c). Gelöschte Dateien mit `git rm` vormerken und nur vorhandene Pfade an `git add` geben, oder `git add -u` für Änderungen und Löschungen.
+- `npx prettier --write` ohne Projektkonfiguration formt Dateien in einen fremden Stil um (doppelte Anführungszeichen, 80 Zeichen); das Projekt hat keine Prettier-Vorgabe, nicht verwenden.
 
 - Der Scratchpad-Pfad ist sitzungsgebunden. Keine festen Sitzungspfade mehr in den Werkzeugen: `scratch.sh`, `lib.mjs` und die Skripte lesen `RELAUNCH_SCRATCH`, sonst `SCRATCH`, sonst den zuletzt geänderten Scratchpad-Ordner. Ein Lauf in einer neuen Sitzung braucht keine Änderung, nur `RELAUNCH_SCRATCH`, falls mehrere Scratchpads existieren.
 - Schritt 5 nicht wiederholen, ohne vorher aufzuräumen: Existiert `$SCRATCH/werkzeuge-nm/node_modules` schon, verschiebt `mv` den neuen Ordner hinein statt ihn zu ersetzen. Vorher `rm -rf "$SCRATCH/werkzeuge-nm/node_modules"` und den Symlink `_werkstatt/werkzeuge/node_modules` entfernen.
