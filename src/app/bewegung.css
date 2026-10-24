@@ -891,30 +891,31 @@ html.k-bewegung:not(.k-notaus) [data-motion="sig-kreuzlinie"] [data-flucht="lade
   transform-origin: center bottom;
   animation: kreuzlinie-lot-wachsen var(--dauer-5) linear both;
 }
-/* Erster Besuch mit Intro auf / (html.k-intro-start bleibt stehen): SIG-1 und die Flucht des Plans beginnen erst, wenn das
-   Blatt freilegt (Hälfte von --intro-gesamt), sonst liefen sie unter dem deckenden Blatt ab */
-html.k-bewegung.k-intro-start [data-motion="sig-kreuzlinie"] .kreuzlinie-lot,
-html.k-bewegung.k-intro-start [data-motion="sig-kreuzlinie"] .kreuzlinie-waage,
-html.k-bewegung.k-intro-start [data-motion="sig-kreuzlinie"] .plan-achse,
-html.k-bewegung.k-intro-start [data-motion="sig-flucht"] > :first-child {
+/* Erster Besuch mit Intro (html.k-intro-sig, auf jeder Seite; E-044): SIG-1 und die Flucht des Plans beginnen erst, wenn das
+   Blatt freilegt (Hälfte von --intro-gesamt), sonst liefen sie unter dem deckenden Blatt ab. Die Geometrie der Intro-Reihen an
+   der H1 bleibt an der Startseite (html.k-intro-start, oben) */
+html.k-bewegung.k-intro-sig [data-motion="sig-kreuzlinie"] .kreuzlinie-lot,
+html.k-bewegung.k-intro-sig [data-motion="sig-kreuzlinie"] .kreuzlinie-waage,
+html.k-bewegung.k-intro-sig [data-motion="sig-kreuzlinie"] .plan-achse,
+html.k-bewegung.k-intro-sig [data-motion="sig-flucht"] > :first-child {
   animation-delay: calc(var(--intro-gesamt) * 0.5);
 }
-html.k-bewegung.k-intro-start:not(.k-notaus) [data-motion="sig-kreuzlinie"] [data-flucht="laden"] .plan-achse-lot {
+html.k-bewegung.k-intro-sig:not(.k-notaus) [data-motion="sig-kreuzlinie"] [data-flucht="laden"] .plan-achse-lot {
   animation-delay: calc(var(--intro-gesamt) * 0.5);
 }
-html.k-bewegung.k-intro-start [data-motion="sig-kreuzlinie"] .kreuzlinie-nach-waage {
+html.k-bewegung.k-intro-sig [data-motion="sig-kreuzlinie"] .kreuzlinie-nach-waage {
   animation-delay: calc(var(--intro-gesamt) * 0.5 + var(--dauer-5));
 }
-html.k-bewegung.k-intro-start [data-motion="sig-flucht"] > :nth-child(2) {
+html.k-bewegung.k-intro-sig [data-motion="sig-flucht"] > :nth-child(2) {
   animation-delay: calc(var(--intro-gesamt) * 0.5 + var(--staffel) * 2);
 }
-html.k-bewegung.k-intro-start [data-motion="sig-flucht"] > :nth-child(3) {
+html.k-bewegung.k-intro-sig [data-motion="sig-flucht"] > :nth-child(3) {
   animation-delay: calc(var(--intro-gesamt) * 0.5 + var(--staffel) * 4);
 }
-html.k-bewegung.k-intro-start [data-motion="sig-flucht"] > :nth-child(4) {
+html.k-bewegung.k-intro-sig [data-motion="sig-flucht"] > :nth-child(4) {
   animation-delay: calc(var(--intro-gesamt) * 0.5 + var(--staffel) * 6);
 }
-html.k-bewegung.k-intro-start:not(.k-notaus) [data-motion="sig-kreuzlinie"] [data-motion="sig-plan"][data-flucht="laden"] .plan-reihenteil {
+html.k-bewegung.k-intro-sig:not(.k-notaus) [data-motion="sig-kreuzlinie"] [data-motion="sig-plan"][data-flucht="laden"] .plan-reihenteil {
   animation-delay: calc(var(--intro-gesamt) * 0.5 + var(--dauer-2));
 }
 

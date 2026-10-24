@@ -26,7 +26,7 @@ function Karten({ karten }: { karten: NonNullable<Wissensblock['karten']> }) {
 
 export function Block({ block, nummer, zeichnung }: { block: Wissensblock; nummer: number; zeichnung?: ReactNode }) {
   return (
-    <Abschnitt id={`wissen-${nummer}`} formel="tun" leitachse kopf="seitlich" titel={block.titel} einleitung={block.absatz ? <p><Textmarken text={block.absatz} /></p> : undefined}>
+    <Abschnitt id={`wissen-${nummer}`} formel="tun" leitachse spaet kopf="seitlich" titel={block.titel} einleitung={block.absatz ? <p><Textmarken text={block.absatz} /></p> : undefined}>
       <div className="flex flex-col gap-12">
         {block.karten && block.karten.length > 0 && <Karten karten={block.karten} />}
         {block.liste && block.liste.length > 0 && <Punktfliesen punkte={block.liste.map((p) => <Textmarken key={p} text={p} />)} />}

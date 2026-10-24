@@ -137,6 +137,10 @@ test('Intro 7: erster Besuch setzt k-intro und merkt sich das sofort, zweiter Be
   assert.ok(erst.klassen.has('k-intro-start'));
   assert.ok(!umgebung({ pfad: '/bad' }).klassen.has('k-intro-start'));
   assert.ok(!wieder.klassen.has('k-intro-start'));
+  // Verzögerung der Einstiegsbewegungen hinter dem Blatt auf jeder Seite mit Intro, ohne Intro nie (E-044)
+  assert.ok(erst.klassen.has('k-intro-sig'));
+  assert.ok(umgebung({ pfad: '/bad' }).klassen.has('k-intro-sig'));
+  assert.ok(!wieder.klassen.has('k-intro-sig'));
 });
 
 test('Intro 8: Fehler im Speicher heißt kein Intro, ohne den Rest des Kopfskripts aufzuhalten', () => {

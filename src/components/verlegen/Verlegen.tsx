@@ -296,10 +296,10 @@ function merkeGewechselt(): void {
 }
 
 /** Der große Moment `startbild` gilt nur beim Laden der Seite, nicht nach einem Seitenwechsel (K-007); ebenso die
- *  Verzögerung der Kreuzlinie hinter dem Intro (k-intro-start, E-037), sonst liefe SIG-1 bei jeder Rückkehr nach / und
+ *  Verzögerung der Kreuzlinie hinter dem Intro (k-intro-sig, Geometrie k-intro-start; E-037, E-044), sonst liefe SIG-1 bei jeder Rückkehr nach / und
  *  die Flucht des Plans auf anderen Seiten verspätet. Eine Änderung an html, während der Boden schließt. */
 function ohneStartbild(): void {
-  document.documentElement.classList.remove('k-startbild', 'k-intro-start');
+  document.documentElement.classList.remove('k-startbild', 'k-intro-start', 'k-intro-sig');
 }
 
 /** Zurück und Vor (Verlauf): Die Bewegungen des Einstiegs (SIG-1, Flucht, Plan beim Laden) stehen im Endzustand, wie die
