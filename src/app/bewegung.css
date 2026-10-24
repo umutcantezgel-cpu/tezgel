@@ -292,14 +292,12 @@ html.k-bewegung .laden-fuge::after {
   box-shadow: var(--shadow-flug);
   opacity: 0;
 }
-.verlegen-schatten-gesetzt {
-  box-shadow: var(--shadow-gesetzt);
-}
-/* Oberfläche: Fliese mit feiner Körnung (SVG-Rauschen in Tinte, sehr leicht) und einem Hauch Glanz als eigener Ebene */
 .verlegen-fliese > .verlegen-oberflaeche {
   inset: var(--fuge);
   background-color: var(--color-fliese);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96'%3E%3Cfilter id='k'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .04 0 0 0 0 .07 0 0 0 0 .16 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='96' height='96' filter='url(%23k)'/%3E%3C/svg%3E");
+  /* der kleine Schatten der gesetzten Fliese liegt fest an der Oberfläche; nur der Flugschatten blendet aus. Keine
+     Rauschtextur mehr: ein SVG mit feTurbulence je Fliese kostete beim Rastern rund 70 ms je Wechsel (E-036) */
+  box-shadow: var(--shadow-gesetzt);
 }
 .verlegen-glanz {
   position: absolute;

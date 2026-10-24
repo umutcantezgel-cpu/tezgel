@@ -190,7 +190,7 @@ function baueBelag(boden: HTMLElement, alt: Belag | null): Belag {
     el.style.translate = `${f.x}px ${f.y}px`;
     el.style.setProperty('--fuge', `${mass.fuge / 2}px`);
     el.innerHTML =
-      '<span class="verlegen-schatten-flug"></span><span class="verlegen-schatten-gesetzt"></span><span class="verlegen-oberflaeche"><span class="verlegen-glanz"></span></span>';
+      '<span class="verlegen-schatten-flug"></span><span class="verlegen-oberflaeche"><span class="verlegen-glanz"></span></span>';
     return el;
   });
   boden.replaceChildren(...elemente);
@@ -271,7 +271,6 @@ export default function Verlegen() {
             zeit,
           ),
           (el.children[0] as HTMLElement).animate([{ opacity: 1 }, { opacity: 0 }], zeit),
-          (el.children[1] as HTMLElement).animate([{ opacity: 0 }, { opacity: 1 }], zeit),
         );
       });
       void warte(laufend).then(() => senden.current({ typ: 'gelegt' }));
@@ -292,7 +291,6 @@ export default function Verlegen() {
         el.style.zIndex = String(takte[i].ebene);
         el.style.opacity = '1';
         (el.children[0] as HTMLElement).style.opacity = '0';
-        (el.children[1] as HTMLElement).style.opacity = '1';
       });
     };
 
