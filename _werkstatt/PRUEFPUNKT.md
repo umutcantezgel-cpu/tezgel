@@ -1,9 +1,9 @@
 # PRUEFPUNKT
 
-- Lauf „Verständlich, echt, ausgezeichnet“ · Etappe E2 (Referenz) · Stand 2026-10-24 03:42 CEST
+- Lauf „Verständlich, echt, ausgezeichnet“ · Etappe E2 (Referenz) · Stand 2026-10-24 04:45 CEST
 - Letzter grüner Commit (src): c53faf4 (src gleich main 388fa7b). HEAD 27639b6 und folgende = Zwischenstände E2 (gepusht): Startseite, Startbild und 404 nachgebessert, im Prüf-Workflow.
 - E0 abgeschlossen bis auf Lighthouse: E0-PRUEF-03 und E0-PROBE-01…10 zurück und gesichert (`pakete/*.rueckgabe.md`), Werte in LAGEBILD Abschnitt 4 und 5, ABNAHME Z-11.
-- Laufend (03:42): Workflow Prüfrunde 3 `tezgel-e2-startseite-runde3` (wf_174fe5a5-972, Stand 7502d90; Ordner `$SCRATCH/E2-R3-{W,R,SICHT}`); Befunde Runde 2 vollständig eingearbeitet (E-022). Briefings E2-PRUEF-00 und E2-PRUEF-A1 bis A3 liegen in `pakete/` (822259d). Bricht der Workflow ab: mit `resumeFromRunId` fortsetzen; ist die Umgebung neu, neu starten (Skript unter `workflows/scripts/`). Danach Befunde umsetzen, E2-PRUEF-TESTS, Stufe A, Reinraum, INP des Ankerknopfs im Produktionsbau, E2-PRUEF-00, Reinraum, INP des Ankerknopfs im Produktionsbau, Stufe A, E2-PRUEF-00, E2-PRUEF-TESTS, Tor E2.
+- Laufend (04:45): Workflow Prüfrunde 4 (wf_531f3308-f5d, Skript `$SCRATCH/orch/runde4.js`, Stand 58df170; Ordner `$SCRATCH/E2-R4-{W,R,SICHT}`). Runde 3 ergab 7/8/7/7/8/7/6 (E-023), alle Befunde umgesetzt (Commits bis 237ce94). Entwicklungsserver 4320 mit geleertem `.next/dev` neu gestartet (veraltetes CSS). Bricht der Workflow ab: mit `resumeFromRunId` fortsetzen. Danach Befunde umsetzen, E2-PRUEF-TESTS, Stufe A (Briefings A1 bis A3), Reinraum, INP des Ankerknopfs im Produktionsbau, E2-PRUEF-00,
 - Im Zwischenstand cce868a (Orchestrator), je Paket:
   - E2-ORCH-01 Tokens (`globals.css`), E2-ORCH-01b Register (`register.ts`, `test/bewegung.test.mjs`, `_werkstatt/register.json`, `werte-regeln.json`).
   - E2-FIX-01a bis c (GoogleReviewsBadge, FinalCTA, LocalDominanceMap, llms.txt, schema.ts, standorte/[stadt]).
