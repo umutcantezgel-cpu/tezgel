@@ -43,6 +43,12 @@ let eigenerPopstate = false;
 let angezeigt = '';
 /** Der laufende Wechsel kommt aus dem Verlauf (Zurück, Vor). */
 let ausVerlauf = false;
+/** Nummer der zuletzt abgeschickten Navigation (router.push, nachgereichtes oder durchgelassenes popstate): Ein „bereit“
+ *  zählt nur, wenn die neue Seite nach genau dieser Navigation erschien; ältere (Plan-Morph, Abbruch) verfallen. */
+let auftrag = 0;
+/** Zurück oder Vor kam, während die Fliesen schon abgenommen wurden: das Ereignis lief ohne Boden an Next, Scroll und Fokus
+ *  setzt der Pfad-Effekt. */
+let verlaufOhneBoden = false;
 
 // Auf Modulebene, also vor dem popstate-Lauscher des App Routers (useEffect): sichert die Reihenfolge auch in
 // Firefox vor 116, das Lauscher am Ziel nach Registrierung statt nach Phase ordnet (Gutachten E0-GUT-01, Frage 3).
@@ -81,7 +87,7 @@ function lies(name: string): string {
 
 /** Alle Tokens des Wechsels auf einmal lesen (beim Einhängen im Leerlauf, nie zwischen zwei Schreibzugriffen). */
 function liesVorab(): void {
-  for (const name of ['--verlegen-gesamt', '--verlegen-gesamt-folge', '--verlegen-ruhig', '--ease-aufsetzen', '--ease-weg', '--ease-laser', '--dauer-1', '--dauer-5']) lies(name);
+  for (const name of ['--verlegen-gesamt', '--verlegen-gesamt-folge', '--verlegen-ruhig', '--ease-aufsetzen', '--ease-setzen', '--ease-laser', '--dauer-1', '--dauer-5']) lies(name);
 }
 
 /** Feine Körnung der Fliese (KERN B-01: SVG-Rauschen als Hintergrund der Fliese, ≤ 1 KB; zurück nach E-037). */
@@ -434,7 +440,8 @@ export default function Verlegen() {
       // Fliese für Fliese in derselben Reihenfolge wie beim Legen: jede weicht in den Hintergrund zurück (wird kleiner und
       // blendet aus), die neue Seite erscheint von der Startkante her. Die erste Fliese beginnt sofort, damit der Boden nach
       // dem Legen nicht still liegt (Sichtabnahme E2, Befund 1; E-036).
-      const kurve = lies('--ease-weg') || 'ease-in';
+      // sichtbar kleiner, solange sie noch deckt (ease-setzen: zügig zurück), danach blendet sie aus
+      const kurve = lies('--ease-setzen') || 'ease-out';
       const weg = `scale(${GROESSE_HINTERGRUND})`;
       const neu: Animation[] = [];
       belag.elemente.forEach((el, i) => {
@@ -443,7 +450,7 @@ export default function Verlegen() {
           el.animate(
             [
               { opacity: 1, transform: 'none', easing: kurve },
-              { opacity: 1, offset: 0.2 },
+              { opacity: 1, offset: 0.4 },
               { opacity: 0, transform: weg },
             ],
             { delay: t.abnehmenBeginn, duration: t.abnehmenDauer, fill: 'both' },
@@ -452,12 +459,14 @@ export default function Verlegen() {
       });
       beende(laufend);
       laufend.push(...neu);
-      // Laserlinie erst aus, wenn das Abnehmen wirklich läuft (Start nach dem Rastern der neuen Seite, E-036)
+      // Wartelinie erst aus, wenn das Abnehmen wirklich läuft (Start nach dem Rastern der neuen Seite, E-036)
       void (neu[0]?.ready ?? Promise.resolve()).then(verbergeLaser, verbergeLaser);
       void warte(laufend).then(fertig);
     };
 
     const zeigeLaser = () => {
+      // reduzierte Bewegung und Notaus: keine wandernde Linie, die Blende allein zeigt den Wechsel
+      if (ruhig) return;
       laser.style.opacity = '1';
       laserLauf = laser.animate([{ transform: 'translateY(0)' }, { transform: `translateY(${window.innerHeight}px)` }], {
         duration: ms('--dauer-5'),
@@ -487,6 +496,7 @@ export default function Verlegen() {
     const navigiere = () => {
       const ziel = lage.ziel;
       if (!ziel) return;
+      auftrag++;
       startTransition(() => router.push(ziel));
       // React startet eine View Transition auch bei B-01-Wechseln, die eine <ViewTransition> ein- oder aushängen (Plan-Morph
       // auf /leistungen): unter dem Boden sofort beenden, solange er liegt (höchstens bis zum Ende des Wartens)
@@ -517,6 +527,9 @@ export default function Verlegen() {
         case 'navigiere':
           navigiere();
           return starteWarten();
+        case 'reiche-nach':
+          neuAbschicken();
+          return starteWarten();
         case 'zeige-laser':
           return zeigeLaser();
         case 'verberge-laser':
@@ -526,14 +539,14 @@ export default function Verlegen() {
         case 'nimm-ab':
           return nimmAb();
         case 'blende-aus': {
-          // Seite braucht länger als 3 s: Boden weg, die Navigation läuft normal weiter.
+          // Seite braucht länger als 3 s: Boden blendet weg, die Navigation läuft normal weiter. Die Fliesen bleiben liegen,
+          // bis die Schicht unsichtbar ist (freigeben beendet sie), sonst verschwände der Boden in einem Bild.
           stoppeUhren();
-          beende(laufend);
           sperre(false);
           const teile = [schicht.animate([{ opacity: 1 }, { opacity: 0 }], { duration: ms('--dauer-1'), fill: 'forwards' })];
           void warte(teile).then(() => {
-            for (const a of teile) a.cancel();
             senden.current({ typ: 'ausgeblendet' });
+            for (const a of teile) a.cancel();
           });
           return;
         }
@@ -643,8 +656,11 @@ export default function Verlegen() {
       });
     };
 
+    // Das angehaltene popstate geht mit dem aktuellen history.state an Next (der Browser steht schon auf dem Ziel). Die Nummer
+    // zählt vorher hoch: React kann beim popstate synchron rendern, der Pfad-Effekt läuft dann noch im dispatchEvent.
     const neuAbschicken = () => {
       zurueckAusAufschub = true;
+      auftrag++;
       eigenerPopstate = true;
       try {
         window.dispatchEvent(new PopStateEvent('popstate', { state: history.state }));
@@ -674,16 +690,27 @@ export default function Verlegen() {
           senden.current({ typ: 'start-liegend', richtung: 'zurueck' });
           return false;
         }
-        if (lage.zustand === 'legen' || lage.zustand === 'bedeckt' || lage.zustand === 'warten') return true; // folgt beim Neuabschicken
-        if (lage.zustand !== 'ruhe') return false;
+        // Boden wird noch gelegt, navigiert ist noch nicht: das Ereignis wartet und wird nachgereicht, sobald der Boden liegt
+        // (aus einem Vorwärtswechsel wird ein Wechsel aus dem Verlauf, kein router.push mehr; Prüfung E-043)
+        if (lage.zustand === 'legen') {
+          senden.current({ typ: 'umkehr' });
+          return true;
+        }
+        // Boden liegt, die Navigation läuft schon: Next übernimmt das Ereignis (verwirft die offene Navigation), der Boden
+        // wartet auf die Seite aus dem Verlauf und deckt sie mit ihrer gemerkten Scrollstellung auf
+        if (lage.zustand === 'bedeckt' || lage.zustand === 'warten') {
+          auftrag++;
+          zurueckAusAufschub = true;
+          return false;
+        }
+        // Fliesen werden schon abgenommen (oder blenden nach dem Abbruch aus): ohne Boden an Next, Scroll und Fokus danach
+        if (lage.zustand !== 'ruhe') {
+          merkeScroll(angezeigt);
+          verlaufOhneBoden = true;
+          return false;
+        }
         merkeScroll(angezeigt);
         senden.current({ typ: 'start', ziel: '', richtung: 'zurueck' });
-        void warte(laufend).then(() => {
-          if (lage.zustand === 'bedeckt') {
-            neuAbschicken();
-            starteWarten();
-          }
-        });
         return true;
       },
     };
@@ -711,7 +738,8 @@ export default function Verlegen() {
 
   // Neue Seite ist da: nach zwei Bildern (Layout und Malen der neuen Seite) und sobald der Hauptfaden frei ist, werden die
   // Fliesen abgenommen. Ohne die Ruhe startete das Abnehmen, während die neue Seite noch rechnete, und der Boden lag sichtbar still
-  // (Sichtabnahme E2, Befund 1 und 2; E-036). Bis dahin zeigt die Laserlinie das Warten; spätestens nach 400 ms geht es los.
+  // (Sichtabnahme E2, Befund 1 und 2; E-036). Bis dahin zeigt die Wartelinie das Warten; spätestens nach 400 ms geht es los.
+  // Gemeldet wird nur, wenn die Seite nach der zuletzt abgeschickten Navigation erschien (auftrag, Prüfung E-043).
   useEffect(() => {
     if (pfad === pfadRef.current) return;
     pfadRef.current = pfad;
@@ -725,9 +753,17 @@ export default function Verlegen() {
       eigenerWechsel = false;
       void (aktiverUebergang()?.finished ?? Promise.resolve()).finally(fokussiereUeberschrift);
     }
+    if (verlaufOhneBoden) {
+      verlaufOhneBoden = false;
+      window.scrollTo({ top: gemerkterScroll(), left: 0, behavior: 'instant' });
+      fokussiereUeberschrift();
+    }
     let zweites = 0;
     let ruhe = 0;
-    const melden = () => senden.current({ typ: 'bereit' });
+    const meiner = auftrag;
+    const melden = () => {
+      if (meiner === auftrag) senden.current({ typ: 'bereit' });
+    };
     const erstes = requestAnimationFrame(() => {
       zweites = requestAnimationFrame(() => {
         ruhe = window.requestIdleCallback ? window.requestIdleCallback(melden, { timeout: 400 }) : window.setTimeout(melden, 0);

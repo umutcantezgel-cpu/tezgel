@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { verlegeRaster, fliesenmass, zeitplan, ziehStrecke, stueckplan, wechselDauer } from '../src/lib/verlegen/raster.ts';
 import { pruefeKlick } from '../src/lib/verlegen/linkfilter.ts';
 import { schritt, RUHE, LASER_NACH, WARTEN_HOECHSTENS } from '../src/lib/verlegen/automat.ts';
@@ -222,6 +223,9 @@ test('Zeitplan 7 (Intro, Startbild): Reihen setzen nach ihrer Versatzstufe ein, 
 });
 
 // Stückplan (B-01, E-043) ------------------------------------------------------------------------------------------------
+// Wunsch des Auftraggebers: Die ganze Seite wird Stück für Stück gefliest, von rechts nach links, jede Fliese einzeln
+// animiert (tak, tak, tak); am Ende werden die Fliesen von rechts nach links Stück für Stück wieder abgenommen und
+// verschwinden im Hintergrund; komplett neutral. Gewählte Dauer: 1,8 s, danach 1,4 s (Belegen plus Abnehmen).
 
 /** Alle Kombinationen aus Gerät, Gesamtdauer (ms) und Richtung: vor (Klick) und zurueck (Zurück und Vor). */
 function alleFaelle(fn) {
@@ -230,51 +234,91 @@ function alleFaelle(fn) {
     for (const gesamt of [1800, 1400, 1260, 980]) {
       for (const richtung of ['vor', 'zurueck']) {
         const takte = stueckplan(fliesen, mass, breite, gesamt, richtung);
-        fn({ name, breite, mass, fliesen, takte, gesamt, richtung, fall: `${name}, ${richtung}, ${gesamt} ms` });
+        fn({ name, breite, mass, fliesen, takte, gesamt, richtung, spalten: spaltenVon(fliesen, mass, breite, richtung), fall: `${name}, ${richtung}, ${gesamt} ms` });
       }
     }
   }
 }
 
+/** Spalte ab der Startkante (vor: rechts, zurueck: links), hier unabhängig von der Umsetzung aus der Lage der Fliese:
+ *  Abstand der Startkante zur nahen Kante der Fliese, in ganzen Fliesenlängen ab der nächstgelegenen Fliese. */
+function spaltenVon(fliesen, mass, breite, richtung) {
+  const abstand = fliesen.map((f) => (richtung === 'vor' ? breite - (f.x + mass.laenge) : f.x));
+  const min = Math.min(...abstand);
+  return abstand.map((a) => Math.floor((a - min) / mass.laenge + 1e-6));
+}
+
 /** Die Fliese liegt an der Kante, an der das Legen beginnt (vor: rechts, zurueck: links), bzw. an der gegenüberliegenden. */
 const anStartkante = (f, mass, breite, richtung) => (richtung === 'vor' ? f.x + mass.laenge >= breite : f.x <= 0);
 const anEndkante = (f, mass, breite, richtung) => anStartkante(f, mass, breite, richtung === 'vor' ? 'zurueck' : 'vor');
+const ende = (t, feld) => t[`${feld}Beginn`] + t[`${feld}Dauer`];
 
-test('Stückplan 1: Belegen beginnt nicht vor dem Phasenstart und endet spätestens bei der Hälfte der Gesamtdauer', () => {
+test('Stückplan 1: Belegen liegt in der ersten Hälfte der Gesamtdauer und füllt sie (letzte Fliese landet nach mindestens 45 %)', () => {
   alleFaelle(({ fall, takte, gesamt }) => {
     for (const t of takte) {
       assert.ok(t.legenBeginn >= 0, `${fall}: Belegen beginnt vor 0`);
-      assert.ok(t.legenBeginn + t.legenDauer <= 0.5 * gesamt + 1e-9, `${fall}: Belegen endet bei ${t.legenBeginn + t.legenDauer} ms`);
+      assert.ok(ende(t, 'legen') <= 0.5 * gesamt + 1e-9, `${fall}: Belegen endet bei ${ende(t, 'legen')} ms`);
     }
+    const letzte = Math.max(...takte.map((t) => ende(t, 'legen')));
+    assert.ok(letzte >= 0.45 * gesamt, `${fall}: Belegen schon nach ${letzte} ms fertig`);
   });
 });
 
-test('Stückplan 2: Abnehmen beginnt nicht vor seinem Phasenstart und endet spätestens nach der anderen Hälfte der Gesamtdauer', () => {
+test('Stückplan 2: Abnehmen liegt in der zweiten Hälfte der Gesamtdauer und füllt sie (letzte Fliese weg nach mindestens 45 %)', () => {
   alleFaelle(({ fall, takte, gesamt }) => {
     for (const t of takte) {
       assert.ok(t.abnehmenBeginn >= 0, `${fall}: Abnehmen beginnt vor 0`);
-      assert.ok(t.abnehmenBeginn + t.abnehmenDauer <= 0.5 * gesamt + 1e-9, `${fall}: Abnehmen endet bei ${t.abnehmenBeginn + t.abnehmenDauer} ms`);
+      assert.ok(ende(t, 'abnehmen') <= 0.5 * gesamt + 1e-9, `${fall}: Abnehmen endet bei ${ende(t, 'abnehmen')} ms`);
     }
+    const letzte = Math.max(...takte.map((t) => ende(t, 'abnehmen')));
+    assert.ok(letzte >= 0.45 * gesamt, `${fall}: Abnehmen schon nach ${letzte} ms fertig`);
   });
 });
 
-test('Stückplan 3: von rechts nach links (vor) bzw. gespiegelt (zurueck): in einer Reihe beginnt die Fliese näher an der Startkante nie später, beim Legen wie beim Abnehmen', () => {
-  alleFaelle(({ fall, fliesen, takte, richtung }) => {
-    for (let i = 0; i < fliesen.length; i++) {
-      for (let j = 0; j < fliesen.length; j++) {
-        const a = fliesen[i];
-        const b = fliesen[j];
-        if (a.reihe !== b.reihe) continue;
-        const naeher = richtung === 'vor' ? a.x > b.x : a.x < b.x;
-        if (!naeher) continue;
-        assert.ok(takte[i].legenBeginn < takte[j].legenBeginn, `${fall}: Fliese bei x=${a.x} wird nach x=${b.x} derselben Reihe gelegt`);
-        assert.ok(takte[i].abnehmenBeginn < takte[j].abnehmenBeginn, `${fall}: Fliese bei x=${a.x} wird nach x=${b.x} derselben Reihe abgenommen`);
+test('Stückplan 3: von rechts nach links (vor) bzw. gespiegelt (zurueck) Spalte für Spalte: jede Fliese einer Spalte beginnt vor jeder Fliese der nächsten, beim Legen wie beim Abnehmen', () => {
+  alleFaelle(({ fall, takte, spalten }) => {
+    for (const feld of ['legenBeginn', 'abnehmenBeginn']) {
+      for (let i = 0; i < takte.length; i++) {
+        for (let j = 0; j < takte.length; j++) {
+          if (spalten[i] < spalten[j]) {
+            assert.ok(takte[i][feld] < takte[j][feld], `${fall}: ${feld} Spalte ${spalten[i]} nicht vor Spalte ${spalten[j]}`);
+          }
+        }
       }
     }
   });
 });
 
-test('Stückplan 4: die ganze Ansicht wird von der Startkante her belegt: zuerst eine Fliese an der Startkante, zuletzt eine an der gegenüberliegenden Kante', () => {
+test('Stückplan 4: tak, tak, tak: zwischen den Anfängen zweier Spalten liegen mindestens 50 ms (höchstens 20 Schläge je Sekunde)', () => {
+  alleFaelle(({ fall, takte, spalten }) => {
+    const anfang = new Map();
+    takte.forEach((t, i) => anfang.set(spalten[i], Math.min(anfang.get(spalten[i]) ?? Infinity, t.legenBeginn)));
+    const werte = [...anfang.entries()].sort((a, b) => a[0] - b[0]).map(([, w]) => w);
+    for (let k = 1; k < werte.length; k++) {
+      assert.ok(werte[k] - werte[k - 1] >= 50, `${fall}: Spalte ${k} beginnt ${werte[k] - werte[k - 1]} ms nach Spalte ${k - 1}`);
+    }
+  });
+});
+
+test('Stückplan 5: jede Fliese einzeln: in einer Spalte von oben nach unten nacheinander, und wenn die übernächste Spalte beginnt, ist jede Fliese gelandet (kein Wischen)', () => {
+  alleFaelle(({ fall, fliesen, takte, spalten }) => {
+    const anfang = new Map();
+    takte.forEach((t, i) => anfang.set(spalten[i], Math.min(anfang.get(spalten[i]) ?? Infinity, t.legenBeginn)));
+    for (let i = 0; i < takte.length; i++) {
+      for (let j = 0; j < takte.length; j++) {
+        if (spalten[i] === spalten[j] && fliesen[i].reihe < fliesen[j].reihe) {
+          assert.ok(takte[i].legenBeginn < takte[j].legenBeginn, `${fall}: Spalte ${spalten[i]}: Reihe ${fliesen[i].reihe} nicht vor Reihe ${fliesen[j].reihe}`);
+        }
+      }
+      const uebernaechste = anfang.get(spalten[i] + 2);
+      if (uebernaechste !== undefined) {
+        assert.ok(ende(takte[i], 'legen') <= uebernaechste + 1e-9, `${fall}: Fliese in Spalte ${spalten[i]} fliegt noch, wenn Spalte ${spalten[i] + 2} beginnt`);
+      }
+    }
+  });
+});
+
+test('Stückplan 6: die ganze Ansicht wird von der Startkante her belegt: zuerst eine Fliese an der Startkante, zuletzt eine an der gegenüberliegenden Kante', () => {
   alleFaelle(({ fall, fliesen, takte, mass, breite, richtung }) => {
     const beginn = takte.map((t) => t.legenBeginn);
     const erste = fliesen[beginn.indexOf(Math.min(...beginn))];
@@ -284,48 +328,51 @@ test('Stückplan 4: die ganze Ansicht wird von der Startkante her belegt: zuerst
   });
 });
 
-test('Stückplan 5: Fliese für Fliese: keine zwei Fliesen beginnen im selben Augenblick, und eine Fliese braucht höchstens ein Drittel ihrer Phase (sonst wäre es ein Wischen)', () => {
-  alleFaelle(({ fall, takte, gesamt }) => {
-    for (const feld of ['legenBeginn', 'abnehmenBeginn']) {
-      const werte = takte.map((t) => t[feld]);
-      assert.equal(new Set(werte).size, werte.length, `${fall}: zwei Fliesen beginnen gleichzeitig (${feld})`);
-    }
-    for (const t of takte) {
-      assert.ok(t.legenDauer <= (0.5 * gesamt) / 3, `${fall}: eine Fliese legt sich ${t.legenDauer} ms lang`);
-      assert.ok(t.abnehmenDauer <= (0.5 * gesamt) / 3, `${fall}: eine Fliese weicht ${t.abnehmenDauer} ms lang zurück`);
-    }
-  });
-});
-
-test('Stückplan 6: später gelegte Fliesen liegen in der Stapelreihenfolge höher (die Fliese im Flug wirft ihren Schatten auf die gelegten)', () => {
+test('Stückplan 7: später gelegte Fliesen liegen höher (Flugschatten auf den gelegten), abgenommen wird in derselben Reihenfolge', () => {
   alleFaelle(({ fall, takte }) => {
     for (let i = 0; i < takte.length; i++) {
       for (let j = 0; j < takte.length; j++) {
         if (takte[i].legenBeginn > takte[j].legenBeginn) {
           assert.ok(takte[i].ebene > takte[j].ebene, `${fall}: später gelegte Fliese ${i} liegt nicht höher als ${j}`);
+          assert.ok(takte[i].abnehmenBeginn > takte[j].abnehmenBeginn, `${fall}: Fliese ${i} wird später gelegt, aber nicht später abgenommen als ${j}`);
         }
       }
     }
   });
 });
 
-test('Stückplan 7: abgenommen wird in derselben Reihenfolge, in der gelegt wurde (Stück für Stück, wieder von der Startkante her)', () => {
-  alleFaelle(({ fall, takte }) => {
-    for (let i = 0; i < takte.length; i++) {
-      for (let j = 0; j < takte.length; j++) {
-        if (takte[i].legenBeginn < takte[j].legenBeginn) {
-          assert.ok(takte[i].abnehmenBeginn < takte[j].abnehmenBeginn, `${fall}: Fliese ${i} wird früher gelegt, aber nicht früher abgenommen als ${j}`);
-        }
-      }
-    }
-  });
-});
-
-test('Stückplan 8: Dauer des Wechsels (Belegen plus Abnehmen, E-043): 1800 ms beim ersten, 1400 ms ab dem zweiten, Zurück 70 % davon', () => {
+test('Stückplan 8: Dauer des Wechsels (Belegen plus Abnehmen, E-043): 1800 ms beim ersten, 1400 ms ab dem zweiten, Zurück 70 % davon, so auch in den Tokens', () => {
   assert.equal(wechselDauer(1800, 1400, false, 'vor'), 1800);
   assert.equal(wechselDauer(1800, 1400, true, 'vor'), 1400);
   assert.equal(wechselDauer(1800, 1400, false, 'zurueck'), 1260);
   assert.equal(wechselDauer(1800, 1400, true, 'zurueck'), 980);
+  const css = readFileSync(new URL('../src/app/globals.css', import.meta.url), 'utf8');
+  assert.match(css, /--verlegen-gesamt:\s*1800ms;/);
+  assert.match(css, /--verlegen-gesamt-folge:\s*1400ms;/);
+});
+
+/** Buntheit (OKLCH-Chroma) einer Hex-Farbe. */
+function buntheit(hex) {
+  const lin = (c) => (c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
+  const [r, g, b] = [1, 3, 5].map((i) => lin(Number.parseInt(hex.slice(i, i + 2), 16) / 255));
+  const [l, m, s] = [
+    0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b,
+    0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b,
+    0.0883024619 * r + 0.2817188376 * g + 0.6299787005 * b,
+  ].map(Math.cbrt);
+  return Math.hypot(1.9779984951 * l - 2.428592205 * m + 0.4505937099 * s, 0.0259040371 * l + 0.7827717662 * m - 0.808675766 * s);
+}
+
+test('Stückplan 9: komplett neutral: Grundton Kalk ohne Farbe (Buntheit unter 0,003), themeColor gleich Kalk, Wartelinie im Seitenwechsel nicht in Laserrot', () => {
+  const css = readFileSync(new URL('../src/app/globals.css', import.meta.url), 'utf8');
+  const kalk = css.match(/--color-kalk:\s*(#[0-9A-Fa-f]{6});/)?.[1];
+  assert.ok(kalk, 'Kalk in globals.css');
+  assert.ok(buntheit(kalk) < 0.003, `Kalk ${kalk}: Buntheit ${buntheit(kalk).toFixed(4)}`);
+  const dokument = readFileSync(new URL('../src/app/(bestand)/_dokument.tsx', import.meta.url), 'utf8');
+  assert.equal(dokument.match(/themeColor:\s*'(#[0-9A-Fa-f]{6})'/)?.[1].toUpperCase(), kalk.toUpperCase());
+  const bewegung = readFileSync(new URL('../src/app/bewegung.css', import.meta.url), 'utf8');
+  const linie = bewegung.match(/\.verlegen-laser\s*\{[^}]*\}/)?.[0] ?? '';
+  assert.match(linie, /background-color:\s*var\(--color-strich\)/);
 });
 
 // Linkfilter -----------------------------------------------------------------
@@ -471,11 +518,10 @@ test('Automat 3: ein zweiter Start wird in jedem Zustand eines laufenden Wechsel
   }
 });
 
-test('Automat 4: bereit während legen führt nach gelegt direkt zu abnehmen, ohne Stopp in bedeckt', () => {
-  const { aktionen, zustaende } = laufe([START, { typ: 'bereit' }, { typ: 'gelegt' }, { typ: 'abgenommen' }]);
-  assert.deepEqual(zustaende, ['ruhe', 'legen', 'legen', 'abnehmen', 'ruhe']);
-  assert.ok(aktionen.includes('nimm-ab'), 'Fliesen werden abgenommen');
-  assert.ok(!aktionen.includes('zeige-laser'), 'keine Laserlinie, die Seite war schon bereit');
+test('Automat 4: ein bereit während legen stammt von einem früheren Wechsel und wird verworfen; navigiert wird erst, wenn der Boden liegt (Prüfung E-043)', () => {
+  const { aktionen, zustaende } = laufe([START, { typ: 'bereit' }, { typ: 'gelegt' }, { typ: 'bereit' }, { typ: 'abgenommen' }]);
+  assert.deepEqual(zustaende, ['ruhe', 'legen', 'legen', 'bedeckt', 'abnehmen', 'ruhe']);
+  assert.deepEqual(aktionen, ['lege', 'navigiere', 'nimm-ab', 'freigeben']);
 });
 
 test('Automat 5: Wartephase: Laserlinie erscheint, verschwindet vor dem Abnehmen, danach abnehmen', () => {
@@ -504,4 +550,34 @@ test('Automat 7: Zurück und Vor beginnen liegend aus ruhe mit start-liegend', (
 test('Automat 8: Laserlinie, sobald der Boden liegt (E-036), Wartezeit höchstens 3000 ms', () => {
   assert.equal(LASER_NACH, 0);
   assert.equal(WARTEN_HOECHSTENS, 3000);
+});
+
+test('Automat 9: Zurück aus ruhe (Ziel leer): nach dem Legen wird das angehaltene popstate nachgereicht, nicht navigiert', () => {
+  const { aktionen, zustaende } = laufe([{ typ: 'start', ziel: '', richtung: 'zurueck' }, { typ: 'gelegt' }, { typ: 'bereit' }, { typ: 'abgenommen' }]);
+  assert.deepEqual(zustaende, ['ruhe', 'legen', 'bedeckt', 'abnehmen', 'ruhe']);
+  assert.deepEqual(aktionen, ['lege', 'reiche-nach', 'nimm-ab', 'freigeben']);
+});
+
+test('Automat 10: Zurück im Browser während des Legens eines Klicks (umkehr): statt router.push wird das popstate nachgereicht, der Verlauf bleibt ganz (Prüfung E-043)', () => {
+  const { lage, aktionen } = laufe([START, { typ: 'umkehr' }]);
+  assert.equal(lage.zustand, 'legen');
+  assert.equal(lage.ziel, '');
+  assert.deepEqual(aktionen, ['lege']);
+  const weiter = schritt(lage, { typ: 'gelegt' });
+  assert.deepEqual(weiter.aktionen, ['reiche-nach']);
+  assert.ok(!weiter.aktionen.includes('navigiere'), 'kein router.push zum alten Ziel');
+});
+
+test('Automat 11: umkehr wirkt nur beim Legen; in bedeckt, warten und abnehmen ändert es nichts (dort übernimmt Next das Ereignis)', () => {
+  const wege = {
+    bedeckt: [START, { typ: 'gelegt' }],
+    warten: [START, { typ: 'gelegt' }, { typ: 'zeit-laser' }],
+    abnehmen: [START, { typ: 'gelegt' }, { typ: 'bereit' }],
+  };
+  for (const [zustand, ereignisse] of Object.entries(wege)) {
+    const { lage } = laufe(ereignisse);
+    const r = schritt(lage, { typ: 'umkehr' });
+    assert.deepEqual(r.aktionen, [], zustand);
+    assert.deepEqual(r.lage, lage, zustand);
+  }
 });

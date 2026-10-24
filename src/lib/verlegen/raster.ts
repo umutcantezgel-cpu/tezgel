@@ -188,51 +188,52 @@ function abstandStueck(f: Fliese, breite: number, laenge: number, richtung: Rich
   return (richtung === 'vor' ? breite - (f.x + laenge) : f.x) / laenge;
 }
 
-/** Anteil der Phase, den eine einzelne Fliese braucht; der Rest ist der Takt zwischen den Fliesen (tak, tak, tak). */
-export const ANTEIL_FLIESE_LEGEN = 0.25;
-export const ANTEIL_FLIESE_ABNEHMEN = 0.3;
 /**
- * Nachlauf der untersten Reihe gegenüber der obersten, in Fliesenlängen: Innerhalb einer Spalte folgen die Reihen von oben
- * nach unten aufeinander, die Kante läuft leicht schräg.
+ * Spalten ab der Startkante (0 = an der Startkante): je Reihe eine Fliese, deren Abstand in dasselbe Band von einer
+ * Fliesenlänge fällt; im Drittelverband ist jede Spalte eine Treppe, die Spalten zusammen ergeben das Zickzack.
  */
-export const REIHEN_NACHLAUF = 1.5;
-
-/** Stückwert einer Fliese (Reihenfolge): Spalte ab der Startkante (stetig, der Verband ergibt das Zickzack) plus der
- *  Nachlauf ihrer Reihe. */
-function stueckwert(f: Fliese, mass: Mass, breite: number, reihen: number, richtung: Richtung): number {
-  return abstandStueck(f, breite, mass.laenge, richtung) + (REIHEN_NACHLAUF * f.reihe) / Math.max(1, reihen - 1);
+export function stueckSpalten(fliesen: Fliese[], mass: Mass, breite: number, richtung: Richtung): number[] {
+  const abstand = fliesen.map((f) => abstandStueck(f, breite, mass.laenge, richtung));
+  const kleinster = Math.min(...abstand);
+  return abstand.map((a) => Math.floor(a - kleinster + 1e-6));
 }
+
+/** Kaskade in einer Spalte: Die Fliesen setzen von oben nach unten nacheinander auf, verteilt über diesen Anteil des Schlags. */
+export const KASKADE_ANTEIL = 0.5;
+/** Flugdauer je Fliese beim Legen in Schlägen: Eine Spalte ist gelandet, wenn die übernächste beginnt (tak, tak, tak). */
+export const FLUG_SCHLAEGE = 1;
+/** Dauer des Zurückweichens je Fliese beim Abnehmen in Schlägen. */
+export const WEICHEN_SCHLAEGE = 1.5;
 
 /**
  * Stückplan je Fliese für eine Gesamtdauer (E-043, Auftraggeber): Die ganze Ansicht wird Fliese für Fliese belegt, von der
- * Startkante her (vor: rechts, zurueck: links). Die Reihenfolge folgt dem Stückwert, die Fliesen setzen im gleichen Abstand
- * nacheinander ein (tak, tak, tak), keine zwei im selben Augenblick. Liegt alles, wechselt darunter die Seite; dann werden
- * die Fliesen in derselben Reihenfolge einzeln abgenommen und weichen in den Hintergrund zurück, die neue Seite erscheint
- * von der Startkante her. Später gelegte Fliesen liegen oben: Im Flug werfen sie ihren Schatten auf die schon gelegten.
+ * Startkante her (vor: rechts, zurueck: links), Spalte für Spalte im gleichen Schlag; in jeder Spalte setzen die Fliesen
+ * von oben nach unten nacheinander auf. Bei bis zu 80 Fliesen in der halben Gesamtdauer kann nicht jede Fliese einen
+ * eigenen hörbaren Schlag haben (das wären 5 bis 10 ms je Fliese, eine Welle); so bekommt jede Spalte ihren Schlag und
+ * jede Fliese ihr eigenes Aufsetzen. Liegt alles, wechselt darunter die Seite; dann werden die Fliesen in derselben
+ * Reihenfolge einzeln abgenommen und weichen in den Hintergrund zurück. Später gelegte Fliesen liegen oben: Im Flug werfen
+ * sie ihren Schatten auf die schon gelegten.
  */
 export function stueckplan(fliesen: Fliese[], mass: Mass, breite: number, gesamt: number, richtung: Richtung): Stuecktakt[] {
   const legenPhase = gesamt * STUECK_ANTEIL_LEGEN;
   const abnehmenPhase = gesamt * STUECK_ANTEIL_ABNEHMEN;
-  const legenDauer = legenPhase * ANTEIL_FLIESE_LEGEN;
-  const abnehmenDauer = abnehmenPhase * ANTEIL_FLIESE_ABNEHMEN;
-  const reihen = fliesen.reduce((n, f) => Math.max(n, f.reihe + 1), 0);
-  const werte = fliesen.map((f) => stueckwert(f, mass, breite, reihen, richtung));
-  // gleicher Stückwert (Zufall des Verbands): die obere Reihe zuerst
-  const reihenfolge = werte
-    .map((w, i) => [w, i] as const)
-    .sort((a, b) => a[0] - b[0] || fliesen[a[1]].reihe - fliesen[b[1]].reihe || a[1] - b[1]);
-  const rang = new Array<number>(fliesen.length);
-  reihenfolge.forEach(([, i], r) => {
-    rang[i] = r;
+  const spalten = stueckSpalten(fliesen, mass, breite, richtung);
+  const letzteSpalte = Math.max(0, ...spalten);
+  const letzteReihe = Math.max(1, ...fliesen.map((f) => f.reihe));
+  // Phase = letzte Spalte · Schlag + Kaskade + Flug der letzten Fliese, alles in Schlägen
+  const legenSchlag = legenPhase / (letzteSpalte + KASKADE_ANTEIL + FLUG_SCHLAEGE);
+  const abnehmenSchlag = abnehmenPhase / (letzteSpalte + KASKADE_ANTEIL + WEICHEN_SCHLAEGE);
+  const versatz = (i: number) => spalten[i] + (KASKADE_ANTEIL * fliesen[i].reihe) / letzteReihe;
+  const reihenfolge = fliesen.map((_, i) => i).sort((a, b) => versatz(a) - versatz(b) || a - b);
+  const ebene = new Array<number>(fliesen.length);
+  reihenfolge.forEach((i, rang) => {
+    ebene[i] = rang + 1;
   });
-  const schritte = Math.max(1, fliesen.length - 1);
-  const legenTakt = (legenPhase - legenDauer) / schritte;
-  const abnehmenTakt = (abnehmenPhase - abnehmenDauer) / schritte;
-  return rang.map((r) => ({
-    legenBeginn: r * legenTakt,
-    legenDauer,
-    abnehmenBeginn: r * abnehmenTakt,
-    abnehmenDauer,
-    ebene: r + 1,
+  return fliesen.map((_, i) => ({
+    legenBeginn: versatz(i) * legenSchlag,
+    legenDauer: FLUG_SCHLAEGE * legenSchlag,
+    abnehmenBeginn: versatz(i) * abnehmenSchlag,
+    abnehmenDauer: WEICHEN_SCHLAEGE * abnehmenSchlag,
+    ebene: ebene[i],
   }));
 }

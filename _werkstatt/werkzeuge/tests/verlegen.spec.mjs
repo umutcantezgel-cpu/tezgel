@@ -74,6 +74,7 @@ async function beobachte(page) {
       blende: Number(getComputedStyle(blende).opacity),
       fliesen: document.querySelectorAll('.verlegen-fliese').length,
       animFliesen: document.getAnimations().filter((a) => a.effect?.target?.closest?.('.verlegen-fliese')).length,
+      animLinie: document.getAnimations().filter((a) => a.effect?.target?.classList?.contains('verlegen-laser')).length,
       inert: inertStand(),
       fokusH1: !!document.activeElement?.matches?.('#main-content h1'),
     });
@@ -459,6 +460,105 @@ test.describe('Bewegung an (Wechsel mit Fliesen)', () => {
     console.log(`layout-shift zwischen Klick und ruhe: ${im.length} Einträge, ohne Eingabe Summe ${summe}`);
     expect.soft(summe, 'Summe ohne hadRecentInput').toBe(0);
   });
+  /** H1 einer Adresse, direkt geladen (Vergleich: zeigt die Seite nach Zurück den Inhalt ihrer Adresse?). */
+  async function h1Von(browser, pfadUndSuche) {
+    const ctx = await browser.newContext({ baseURL: process.env.RELAUNCH_BASE || 'http://127.0.0.1:4310', locale: 'de-DE' });
+    await installSperre(ctx);
+    const p = await ctx.newPage();
+    await p.goto(pfadUndSuche);
+    const text = (await p.locator('#main-content h1').first().textContent())?.trim() ?? '';
+    await ctx.close();
+    return text;
+  }
+
+  /** Zweiter Wechsel nach ZIEL: Klick auf einen weiteren internen Link, Zurück im Browser, sobald die Schicht `zustaende`
+   *  erreicht (mit `eingehaengt`: erst wenn die neue Seite unter dem Boden schon steht, Adresse = Ziel); danach ruhe,
+   *  Adresse und Inhalt müssen zusammenpassen. */
+  async function zurueckIn(page, browser, zustaende, eingehaengt = false) {
+    await oeffne(page);
+    await beobachte(page);
+    await wechsel(page, () => linkZu(page, ZIEL).click(), ZIEL);
+    const weiter = await page.evaluate((ziele) => {
+      const hier = location.pathname;
+      return ziele.find((z) => z !== hier && [...document.querySelectorAll(`#main-content a[href="${z}"]`)].some((el) => el.getClientRects().length > 0)) ?? null;
+    }, ['/bad/barrierefreies-bad', '/bad/fliesen', '/bad/bad-aus-einer-hand', '/bad/musterbaeder', '/kontakt', '/bad']);
+    expect(weiter, 'weiterer interner Link auf der Zielseite').not.toBeNull();
+    const ab = await laenge(page);
+    const link = page.locator(`#main-content a[href="${weiter}"]`).filter({ visible: true }).first();
+    await link.scrollIntoViewIfNeeded();
+    await link.click();
+    await page.waitForFunction(
+      ([z, w, e]) => z.includes(document.querySelector('.verlegen')?.dataset.zustand) && (!e || location.pathname === w),
+      [zustaende, weiter, eingehaengt],
+      { polling: 'raf', timeout: 10_000 },
+    );
+    const bei = await zustand(page);
+    await page.evaluate(() => history.back());
+    await warteAufRuhe(page, ab);
+    await page.waitForTimeout(300);
+    const adresse = await pfad(page);
+    const h1 = (await page.locator('#main-content h1').first().textContent())?.trim() ?? '';
+    expect.soft(h1, `Zurück in ${bei}: Inhalt passt zur Adresse ${adresse}`).toBe(await h1Von(browser, adresse));
+    expect.soft(await zustand(page)).toBe('ruhe');
+    return { bei, adresse, weiter };
+  }
+
+  test('(17) Zurück im Browser, während der Boden liegt und die neue Seite geladen wird (bedeckt, warten): Adresse und Inhalt passen zusammen (Prüfung E-043)', async ({ page, browser }) => {
+    await zurueckIn(page, browser, ['bedeckt', 'warten']);
+    // die neue Seite steht schon unter dem Boden, gemeldet ist sie noch nicht (Befund der Prüfung: Inhalt der Zielseite
+    // unter der Adresse der verlassenen)
+    await zurueckIn(page, browser, ['bedeckt', 'warten'], true);
+  });
+
+  test('(18) Zurück im Browser, während der Boden gelegt wird: Zurück wirkt, Adresse und Inhalt passen, Vor führt wieder auf die verlassene Seite (Prüfung E-043)', async ({ page, browser }) => {
+    const { adresse } = await zurueckIn(page, browser, ['legen']);
+    expect.soft(adresse, 'Zurück aus der Zielseite führt auf die Startseite des Falls').toBe(START);
+    const ab = await laenge(page);
+    await page.evaluate(() => history.forward());
+    await expect.poll(() => pfad(page), { timeout: 10_000 }).toBe(ZIEL);
+    await warteAufRuhe(page, ab);
+    const h1 = (await page.locator('#main-content h1').first().textContent())?.trim() ?? '';
+    expect.soft(h1, 'Vor zeigt die verlassene Seite').toBe(await h1Von(browser, ZIEL));
+  });
+
+  test('(19) Abbruch nach 3 s (Zielseite antwortet nicht): der Boden blendet aus statt in einem Bild zu verschwinden, danach erscheint die Seite', async ({ page }) => {
+    // vor dem Laden: auch das Vorladen des Links im Sichtfeld wartet, die Navigation hängt also sicher länger als 3 s
+    await page.route('**/*', async (route) => {
+      const url = new URL(route.request().url());
+      if (url.pathname.replace(/\/+$/, '') === ZIEL && url.searchParams.has('_rsc')) await new Promise((r) => setTimeout(r, 4500));
+      await route.continue().catch(() => undefined);
+    });
+    await oeffne(page);
+    await beobachte(page);
+    const ab = await laenge(page);
+    const link = linkZu(page, ZIEL);
+    await bedienbar(link);
+    // je Bild: Zustand, deckende Fliesen und Deckkraft der Schicht, ab dem Abbruch
+    await page.evaluate(() => {
+      const v = (window.__abbruch = []);
+      const schritt = () => {
+        const s = document.querySelector('.verlegen');
+        if (s.dataset.zustand === 'abbruch' || v.length) {
+          v.push({
+            z: s.dataset.zustand,
+            schicht: Number(getComputedStyle(s).opacity),
+            fliesen: [...document.querySelectorAll('.verlegen-fliese')].filter((el) => Number(getComputedStyle(el).opacity) > 0.99).length,
+          });
+        }
+        if (v.length < 40) requestAnimationFrame(schritt);
+      };
+      requestAnimationFrame(schritt);
+    });
+    await link.click();
+    await expect.poll(() => page.evaluate(() => window.__abbruch.length), { timeout: 15_000 }).toBeGreaterThanOrEqual(5);
+    await warteAufRuhe(page, ab);
+    const b = await page.evaluate(() => window.__abbruch);
+    const imAbbruch = b.filter((e) => e.z === 'abbruch');
+    expect.soft(imAbbruch.length, `Bilder im Abbruch (${JSON.stringify(b.slice(0, 12))})`).toBeGreaterThan(1);
+    expect.soft(imAbbruch.some((e) => e.schicht > 0.05 && e.schicht < 0.95), 'Schicht blendet über Zwischenwerte aus').toBe(true);
+    expect.soft(Math.min(...imAbbruch.map((e) => e.fliesen)), 'Fliesen liegen, solange die Schicht ausblendet').toBeGreaterThan(0);
+    await expect.poll(() => pfad(page), { timeout: 10_000 }).toBe(ZIEL);
+  });
 });
 
 test.describe('Reduzierte Bewegung', () => {
@@ -479,6 +579,7 @@ test.describe('Reduzierte Bewegung', () => {
     expect.soft(ohneWarten(folge(l, ab)), 'Zustandsfolge').toEqual(VOLL);
     expect.soft(Math.max(...l.slice(ab).map((e) => e.blende)), 'Deckkraft der Blende während des Wechsels').toBeGreaterThan(0);
     expect.soft(Math.max(...l.map((e) => e.animFliesen)), 'laufende Animationen auf .verlegen-fliese').toBe(0);
+    expect.soft(Math.max(...l.map((e) => e.animLinie)), 'keine wandernde Wartelinie bei reduzierter Bewegung').toBe(0);
     expect.soft(l[l.length - 1].scroll, 'Scroll bei ruhe').toBe(0);
     await expect.soft(page.locator('#main-content h1')).toBeFocused();
   });
