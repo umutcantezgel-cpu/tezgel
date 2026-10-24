@@ -12,13 +12,16 @@ import Wissen from './teile/Wissen';
 import Ablauf from './teile/Ablauf';
 import Beleg from './teile/Beleg';
 import Schritt from './teile/Schritt';
+import { Werkzeug, type Arbeitsabschnitt } from './ArbeitsSeite';
 
 export interface WissensSeiteProps {
   inhalt: WissenInhalt;
   zeichnungen?: Record<string, ReactNode>;
+  /** Werkzeug der Seite nach dem nächsten Schritt (z. B. Konfigurator), Kennung wie im Bestand */
+  werkzeug?: Arbeitsabschnitt;
 }
 
-export default function WissensSeite({ inhalt, zeichnungen }: WissensSeiteProps) {
+export default function WissensSeite({ inhalt, zeichnungen, werkzeug }: WissensSeiteProps) {
   const { worum } = inhalt;
   return (
     <Seitenformel>
@@ -29,6 +32,7 @@ export default function WissensSeite({ inhalt, zeichnungen }: WissensSeiteProps)
         <Ablauf inhalt={inhalt.ablauf} />
         <Beleg inhalt={inhalt.beleg} />
         <Schritt inhalt={inhalt.schritt} pfad={inhalt.pfad} />
+        {werkzeug && <Werkzeug werkzeug={werkzeug} />}
       </Leitachse>
     </Seitenformel>
   );

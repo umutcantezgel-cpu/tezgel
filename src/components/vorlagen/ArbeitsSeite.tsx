@@ -35,6 +35,26 @@ export interface ArbeitsSeiteProps {
   abschnitte: Arbeitsabschnitt[];
 }
 
+/** Werkzeug der Seite nach dem nächsten Schritt (E-012: unter dem Hauptweg, nicht konkurrierend; Funktion wie im Bestand,
+ *  F-02, F-04): eigener Abschnitt mit der Kennung aus dem Bestand */
+export function Werkzeug({ werkzeug }: { werkzeug: Arbeitsabschnitt }) {
+  return (
+    <Abschnitt
+      id={werkzeug.id}
+      titelId={werkzeug.titelId}
+      art="arbeit"
+      leitachse
+      flaeche={werkzeug.flaeche ?? 'kalk'}
+      kopf={werkzeug.kopf ?? 'seitlich'}
+      titel={werkzeug.titel}
+      einleitung={werkzeug.einleitung ? <p><Textmarken text={werkzeug.einleitung} /></p> : undefined}
+      unterKopf={werkzeug.unterKopf}
+    >
+      {werkzeug.inhalt}
+    </Abschnitt>
+  );
+}
+
 export default function ArbeitsSeite({ pfad, brotkrumen, titel, ort, vorspann, hauptziel, abschnitte }: ArbeitsSeiteProps) {
   return (
     <Leitachse>

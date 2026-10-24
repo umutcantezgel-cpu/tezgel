@@ -13,14 +13,17 @@ import Tun from './teile/Tun';
 import Ablauf from './teile/Ablauf';
 import Beleg from './teile/Beleg';
 import Schritt from './teile/Schritt';
+import { Werkzeug, type Arbeitsabschnitt } from './ArbeitsSeite';
 
 export interface ErzaehlSeiteProps {
   inhalt: ErzaehlInhalt;
   /** große Momente der Seite an ihrem Platz (Registereinträge, K-007) */
   momente?: { tun?: ReactNode; ablauf?: ReactNode; beleg?: ReactNode };
+  /** Werkzeug der Seite (Badanfrage, Preisrechner …) nach dem nächsten Schritt, Kennung wie im Bestand */
+  werkzeug?: Arbeitsabschnitt;
 }
 
-export default function ErzaehlSeite({ inhalt, momente }: ErzaehlSeiteProps) {
+export default function ErzaehlSeite({ inhalt, momente, werkzeug }: ErzaehlSeiteProps) {
   const { worum } = inhalt;
   return (
     <Seitenformel>
@@ -31,6 +34,7 @@ export default function ErzaehlSeite({ inhalt, momente }: ErzaehlSeiteProps) {
         <Ablauf inhalt={inhalt.ablauf} moment={momente?.ablauf} />
         <Beleg inhalt={inhalt.beleg} moment={momente?.beleg} />
         <Schritt inhalt={inhalt.schritt} pfad={inhalt.pfad} />
+        {werkzeug && <Werkzeug werkzeug={werkzeug} />}
       </Leitachse>
     </Seitenformel>
   );
