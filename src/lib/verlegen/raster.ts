@@ -279,6 +279,9 @@ export const LOGO_ANTEIL_BREITE = 0.76;
 export const LOGO_BREITE_GROSS = 480;
 export const LOGO_BREITE_HOECHSTENS = 640;
 export const LOGO_ANTEIL_HOEHE = 0.3;
+/** Sichtbarer Inhalt der Logo-Datei waagrecht von 12 bis 587 px (von 640; links mehr Rand als rechts): seine Mitte liegt bei
+ *  46,8 % der Breite. Damit das Logo für das Auge mittig steht, rückt die Box um den Unterschied nach rechts. */
+export const LOGO_INHALT_MITTE = (12 + 587) / 2 / 640;
 /** Raster der Logogröße: je 32 px Breite 10 px Höhe (3,2 : 1), so sind Breite und Höhe ganze Pixel (scharf, unverzerrt). */
 const LOGO_SCHRITT_BREITE = 32;
 const LOGO_SCHRITT_HOEHE = 10;
@@ -290,7 +293,7 @@ export interface Logomass {
   hoehe: number;
 }
 
-/** Lage und Größe des Logos in einer Ansicht: mittig, ganze Pixel, Seitenverhältnis genau 3,2. */
+/** Lage und Größe des Logos in einer Ansicht: der sichtbare Inhalt mittig, ganze Pixel, Seitenverhältnis genau 3,2. */
 export function logoMass(breite: number, hoehe: number): Logomass {
   const ziel = Math.min(
     breite * LOGO_ANTEIL_BREITE,
@@ -301,7 +304,7 @@ export function logoMass(breite: number, hoehe: number): Logomass {
   const schritte = Math.max(1, Math.floor(ziel / LOGO_SCHRITT_BREITE));
   const b = schritte * LOGO_SCHRITT_BREITE;
   const h = schritte * LOGO_SCHRITT_HOEHE;
-  return { x: Math.round((breite - b) / 2), y: Math.round((hoehe - h) / 2), breite: b, hoehe: h };
+  return { x: Math.round((breite - b) / 2 + (0.5 - LOGO_INHALT_MITTE) * b), y: Math.round((hoehe - h) / 2), breite: b, hoehe: h };
 }
 
 /** Mindestzeit vom Liegen des Bodens bis zum Abnehmen nach einem Klick (ms): Aufklatschen plus Stehen. Bei reduzierter

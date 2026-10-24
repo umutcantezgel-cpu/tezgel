@@ -15,8 +15,7 @@ import {
   LOGO_GROESSE_START,
   LOGO_AUFKLATSCHEN,
   LOGO_STEHEN,
-  LOGO_WEG,
-} from '../src/lib/verlegen/raster.ts';
+  LOGO_WEG, LOGO_INHALT_MITTE } from '../src/lib/verlegen/raster.ts';
 import { pruefeKlick } from '../src/lib/verlegen/linkfilter.ts';
 import { schritt, RUHE, LASER_NACH, WARTEN_HOECHSTENS } from '../src/lib/verlegen/automat.ts';
 
@@ -671,7 +670,8 @@ test('Logo 1: mittig in jeder Ansicht, ganze Pixel, Seitenverhältnis genau wie 
     const m = logoMass(breite, hoehe);
     for (const k of ['x', 'y', 'breite', 'hoehe']) assert.ok(Number.isInteger(m[k]), `${name}: ${k} = ${m[k]} nicht ganzzahlig`);
     assert.equal(m.breite * 200, m.hoehe * 640, `${name}: ${m.breite} × ${m.hoehe} verzerrt`);
-    assert.ok(Math.abs(m.x + m.breite / 2 - breite / 2) <= 0.5, `${name}: waagrecht nicht mittig`);
+    // für das Auge mittig: die Mitte des sichtbaren Inhalts (12 bis 587 von 640 px) liegt auf der Mitte der Ansicht
+    assert.ok(Math.abs(m.x + m.breite * LOGO_INHALT_MITTE - breite / 2) <= 0.5, `${name}: waagrecht nicht mittig`);
     assert.ok(Math.abs(m.y + m.hoehe / 2 - hoehe / 2) <= 0.5, `${name}: senkrecht nicht mittig`);
     assert.ok(m.x >= 0 && m.y >= 0 && m.breite <= 640, `${name}: ragt aus dem Bild oder über die Dateibreite`);
     assert.ok(m.hoehe <= 0.3 * hoehe + 1e-9, `${name}: höher als 30 % der Ansicht`);
