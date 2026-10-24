@@ -899,7 +899,7 @@ html.k-bewegung.k-intro-start [data-motion="sig-flucht"] > :nth-child(3) {
 html.k-bewegung.k-intro-start [data-motion="sig-flucht"] > :nth-child(4) {
   animation-delay: calc(var(--intro-gesamt) * 0.5 + var(--staffel) * 6);
 }
-html.k-bewegung.k-intro-start:not(.k-notaus) [data-motion="sig-plan"][data-flucht="laden"] .plan-reihenteil {
+html.k-bewegung.k-intro-start:not(.k-notaus) [data-motion="sig-kreuzlinie"] [data-motion="sig-plan"][data-flucht="laden"] .plan-reihenteil {
   animation-delay: calc(var(--intro-gesamt) * 0.5 + var(--dauer-2));
 }
 

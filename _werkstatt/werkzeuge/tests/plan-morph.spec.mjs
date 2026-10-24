@@ -135,6 +135,20 @@ test.describe('Plan-Morph (E-037)', () => {
     if (ab > -1) expect.soft(log.slice(ab).every((e) => !e.vtAnimationen), 'keine View-Transition-Animationen, während B-01 liegt').toBe(true);
   });
 
+  test('M9 desktop: Doppelklick auf Fachdetails ergibt genau einen Wechsel (ein neuer Verlaufseintrag)', async ({ page }, info) => {
+    test.skip(info.project.name !== 'desktop', 'nur ab lg');
+    await protokolliereUebergaenge(page);
+    await oeffne(page);
+    const link = await linkInsBild(page);
+    const vorher = await page.evaluate(() => history.length);
+    await link.dblclick();
+    await expect.poll(() => pfad(page)).toBe(ZIEL);
+    await expect.poll(() => page.evaluate(() => document.documentElement.getAnimations({ subtree: true }).filter((a) => String(a.effect?.pseudoElement ?? '').startsWith('::view-transition')).length), { timeout: 5_000 }).toBe(0);
+    expect.soft(await page.evaluate(() => history.length), 'genau ein neuer Eintrag').toBe(vorher + 1);
+    expect.soft((await uebergaenge(page)).filter((e) => e.typen.includes('plan-vor')).length, 'ein Morph').toBe(1);
+    expect.soft(await zustaende(page), 'B-01 hat nicht gelegt').toEqual(['ruhe']);
+  });
+
   test('M5 mobil: Fachdetails verlegt mit B-01, kein Morph', async ({ page }, info) => {
     test.skip(info.project.name !== 'mobil', 'nur unter lg');
     await protokolliereUebergaenge(page);

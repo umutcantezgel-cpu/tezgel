@@ -162,7 +162,8 @@ export default function StartEinstieg() {
         <div aria-hidden="true" data-motion="sig-kreuzlinie" className="pointer-events-none absolute top-0 right-0 -left-4 hidden lg:col-span-full lg:row-start-2 lg:block">
           <span className="kreuzlinie-waage kreuzlinie-aus-start" />
         </div>
-        <div aria-hidden="true" data-motion="sig-kreuzlinie" className="pointer-events-none absolute top-0 -bottom-24 -left-4 hidden lg:col-start-1 lg:row-start-2 lg:block">
+        {/* bottom-0: die Rasterfläche der letzten Zeile reicht für absolute Kinder bis zur Polsterkante, also bis zum Fuß */}
+        <div aria-hidden="true" data-motion="sig-kreuzlinie" className="pointer-events-none absolute top-0 bottom-0 -left-4 hidden lg:col-start-1 lg:row-start-2 lg:block">
           <span className="kreuzlinie-lot kreuzlinie-nach-waage" />
         </div>
       </div>

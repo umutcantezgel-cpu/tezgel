@@ -169,6 +169,8 @@ const MORPH_WARTEN = 2500;
 type Uebergang = { skipTransition: () => void; finished: Promise<unknown> };
 /** der laufende Plan-Morph dieser Schicht (Chromium 141 kennt document.activeViewTransition noch nicht) */
 let morphLauf: Uebergang | null = null;
+/** true, solange der Morph auf die neue Seite wartet (das Bild steht still): Klicks ruhen, Zurück geht an Next */
+let morphOffen = false;
 
 /** Morph nur ab lg, bei erlaubter Bewegung und wenn der Browser View Transitions mit Typen kann (sonst übernimmt B-01). */
 function uebergangMoeglich(): boolean {
@@ -250,9 +252,11 @@ function merkeGewechselt(): void {
   }
 }
 
-/** Der große Moment `startbild` gilt nur beim Laden der Seite, nicht nach einem Seitenwechsel (K-007). */
+/** Der große Moment `startbild` gilt nur beim Laden der Seite, nicht nach einem Seitenwechsel (K-007); ebenso die
+ *  Verzögerung der Kreuzlinie hinter dem Intro (k-intro-start, E-037), sonst liefe SIG-1 bei jeder Rückkehr nach / und
+ *  die Flucht des Plans auf anderen Seiten verspätet. Eine Änderung an html, während der Boden schließt. */
 function ohneStartbild(): void {
-  document.documentElement.classList.remove('k-startbild');
+  document.documentElement.classList.remove('k-startbild', 'k-intro-start');
 }
 
 function sperre(an: boolean): void {
@@ -540,8 +544,11 @@ export default function Verlegen() {
       router.prefetch(ziel.pathname + ziel.search);
       pfadRef.current = location.pathname;
       let neu: HTMLElement | undefined;
-      const d = document as Document & { startViewTransition: (o: { update: () => Promise<void>; types: string[] }) => Uebergang };
+      const d = document as Document & {
+        startViewTransition: (o: { update: () => Promise<void>; types: string[] }) => Uebergang & { ready: Promise<unknown> };
+      };
       benenne(quelle, plan);
+      morphOffen = true;
       const lauf = d.startViewTransition({
         types: [UEBERGANG_TYP],
         update: () =>
@@ -555,8 +562,9 @@ export default function Verlegen() {
                   (el) => el !== quelle && el.getClientRects().length > 0,
                 );
               }
-              if (neu || performance.now() > bis) {
-                benenne(neu, plan);
+              if (neu || performance.now() > bis || !morphOffen) {
+                if (morphOffen) benenne(neu, plan);
+                morphOffen = false;
                 fertig();
               } else window.setTimeout(pruefe, 16);
             };
@@ -564,10 +572,13 @@ export default function Verlegen() {
           }),
       });
       morphLauf = lauf;
+      // ein übersprungener Morph (Zurück, B-01 legt) ist kein Fehler
+      void lauf.ready.catch(() => undefined);
       void lauf.finished
         .catch(() => undefined)
         .finally(() => {
           if (morphLauf === lauf) morphLauf = null;
+          morphOffen = false;
           benenne(neu, null);
           benenne(quelle, null);
         });
@@ -585,8 +596,13 @@ export default function Verlegen() {
         target: a.getAttribute('target'),
         download: a.hasAttribute('download'),
         keinVerlegen: a.closest('[data-kein-verlegen]') !== null,
-        eigenerUebergang: a.closest('[data-uebergang]') !== null && lage.zustand === 'ruhe' && !angefordert && uebergangMoeglich(),
+        eigenerUebergang: a.closest('[data-uebergang]') !== null && lage.zustand === 'ruhe' && !angefordert && !morphOffen && uebergangMoeglich(),
       });
+      // Der Morph wartet noch auf die neue Seite (das Bild steht still): ein zweiter interner Klick ruht, wie ein Doppelklick
+      if (morphOffen && grund === 'verlegen') {
+        e.preventDefault();
+        return;
+      }
       if (grund === 'eigener-uebergang') {
         e.preventDefault();
         merkeScroll(adresse());
@@ -621,6 +637,13 @@ export default function Verlegen() {
 
     steuerung = {
       popstate: (e) => {
+        // Zurück, während der Morph noch auf die neue Seite wartet: Next soll es sehen (verwirft die offene Navigation),
+        // der Morph endet ohne Gleiten
+        if (morphOffen) {
+          morphOffen = false;
+          beendeUebergang();
+          return false;
+        }
         const state = e.state as { __NA?: boolean } | null;
         // Ohne Next-Zustand (z. B. Sprunglink #main-content) oder bei gleichem Pfad: nichts tun.
         if (!state?.__NA || location.pathname === pfadRef.current) return false;
