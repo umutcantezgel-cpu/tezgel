@@ -58,8 +58,36 @@ if (typeof window !== 'undefined') {
   }
 }
 
+// Tokens ändern sich zur Laufzeit nicht: einmal lesen und merken. Ein getComputedStyle nach dem Sperren (inert) und dem
+// Entfernen von k-startbild erzwang im Klick die Stilberechnung des ganzen Dokuments (81 bis 112 ms bei 4-facher Drosselung,
+// Reaktion 456 ms; E-031). Der Speicher leert sich, wenn sich der Bewegungswunsch des Systems ändert.
+const tokens = new Map<string, string>();
+if (typeof window !== 'undefined') {
+  window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener?.('change', () => tokens.clear());
+}
+
 function lies(name: string): string {
-  return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  let wert = tokens.get(name);
+  if (wert === undefined) {
+    wert = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+    if (wert) tokens.set(name, wert);
+  }
+  return wert;
+}
+
+/** Alle Tokens des Wechsels auf einmal lesen (beim Einhängen im Leerlauf, nie zwischen zwei Schreibzugriffen). */
+function liesVorab(): void {
+  for (const name of ['--verlegen-gesamt', '--verlegen-gesamt-folge', '--verlegen-ruhig', '--ease-hammer', '--ease-weg', '--ease-laser', '--dauer-1', '--dauer-5']) lies(name);
+}
+
+/** Erst nach dem nächsten gemalten Bild ausführen: Das Bild nach dem Klick bleibt billig (Reaktion), die Arbeit folgt danach,
+ *  mit Vorrang vor Hintergrundaufgaben wie dem Vorladen der Zielseite (scheduler.postTask, sonst setTimeout). */
+function nachDemMalen(f: () => void): void {
+  const planer = (globalThis as { scheduler?: { postTask?: (f: () => void, o: { priority: string }) => Promise<unknown> } }).scheduler;
+  requestAnimationFrame(() => {
+    if (planer?.postTask) void planer.postTask(f, { priority: 'user-blocking' });
+    else window.setTimeout(f, 0);
+  });
 }
 
 /** Dauer aus einer CSS-Variablen in ms (NaN, wenn sie fehlt); der Minifier schreibt 1200ms als 1.2s, deshalb zählt die Einheit. */
@@ -204,6 +232,7 @@ export default function Verlegen() {
     const laufend: Animation[] = [];
     const uhren: number[] = [];
     let laserLauf: Animation | null = null;
+    let angefordert = false;
 
     const stelle = (z: string) => {
       schicht.dataset.zustand = z;
@@ -398,12 +427,17 @@ export default function Verlegen() {
       });
       if (grund !== 'verlegen') return;
       e.preventDefault();
-      if (lage.zustand !== 'ruhe') return; // Doppelklick: kein zweiter Wechsel
+      if (lage.zustand !== 'ruhe' || angefordert) return; // Doppelklick: kein zweiter Wechsel
+      angefordert = true;
       const ziel = new URL(a.href);
       router.prefetch(ziel.pathname + ziel.search);
       merkeScroll(adresse());
       pfadRef.current = location.pathname;
-      senden.current({ typ: 'start', ziel: ziel.pathname + ziel.search + ziel.hash, richtung: 'vor' });
+      // Der Klick selbst tut nur das Nötigste; Belag, Sperre und Animationen entstehen nach dem nächsten Bild (E-031).
+      nachDemMalen(() => {
+        angefordert = false;
+        senden.current({ typ: 'start', ziel: ziel.pathname + ziel.search + ziel.hash, richtung: 'vor' });
+      });
     };
 
     const neuAbschicken = () => {
@@ -441,12 +475,15 @@ export default function Verlegen() {
     };
 
     angezeigt = adresse();
+    const leerlauf = window.requestIdleCallback ? window.requestIdleCallback(liesVorab) : window.setTimeout(liesVorab, 1);
     const speichernVorVerlassen = () => merkeScroll(adresse());
     document.addEventListener('click', klick, true);
     window.addEventListener('pagehide', speichernVorVerlassen);
     return () => {
       document.removeEventListener('click', klick, true);
       window.removeEventListener('pagehide', speichernVorVerlassen);
+      if (window.cancelIdleCallback) window.cancelIdleCallback(leerlauf);
+      else window.clearTimeout(leerlauf);
       steuerung = null;
       freigeben();
     };

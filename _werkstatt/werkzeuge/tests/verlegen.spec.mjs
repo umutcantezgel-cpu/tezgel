@@ -211,7 +211,24 @@ test.describe('Bewegung an (Wechsel mit Fliesen)', () => {
     await bedienbar(link);
     await beobachte(page);
     const ab = await laenge(page);
+    // Der Belag startet nach dem nächsten gemalten Bild, nicht im Klick selbst (Reaktion, E-031): Gezählt werden die Bilder
+    // (requestAnimationFrame) vom Klick bis „legen“; erlaubt sind höchstens drei (das Bild nach dem Klick, das Bild mit dem
+    // Start und eines Spielraum für ein langes Bild auf belastetem Rechner). Millisekunden schwanken hier zu stark (67 bis 163 ms).
+    await page.evaluate(() => {
+      window.__bilderBisLegen = -1;
+      document.addEventListener('click', () => {
+        let bilder = 0;
+        const zaehle = () => {
+          if (document.querySelector('.verlegen').dataset.zustand === 'legen') { window.__bilderBisLegen = bilder; return; }
+          bilder += 1;
+          if (bilder < 60) requestAnimationFrame(zaehle);
+        };
+        requestAnimationFrame(zaehle);
+      }, { capture: true, once: true });
+    });
     await link.click();
+    await page.waitForFunction(() => window.__bilderBisLegen >= 0, null, { timeout: 3000 });
+    expect.soft(await page.evaluate(() => window.__bilderBisLegen), 'Bilder vom Klick bis legen').toBeLessThanOrEqual(3);
     const mitte = await page.evaluate(() => {
       const x = Math.round(window.innerWidth / 2);
       const y = Math.round(window.innerHeight / 2);
@@ -226,7 +243,7 @@ test.describe('Bewegung an (Wechsel mit Fliesen)', () => {
         trifft: !!el?.closest('.verlegen'),
       };
     });
-    expect.soft(mitte.zustand, 'Zustand direkt nach dem Klick').toBe('legen');
+    expect.soft(mitte.zustand, 'Zustand während des Legens').toBe('legen');
     expect.soft([mitte.header, mitte.main, mitte.footer], 'inert header, main, footer').toEqual([true, true, true]);
     expect.soft(mitte.trifft, 'Element in der Mitte gehört zur Schicht').toBe(true);
     await page.mouse.click(mitte.x, mitte.y);
