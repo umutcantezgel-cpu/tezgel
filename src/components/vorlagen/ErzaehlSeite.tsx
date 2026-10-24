@@ -24,6 +24,7 @@ import Seitenformel from '@/components/kern/Seitenformel';
 import { hauptziel } from '@/config/navigation';
 import type { ErzaehlInhalt } from './inhalt';
 import Einstieg from './teile/Einstieg';
+import EinstiegMitte from './teile/EinstiegMitte';
 import EinstiegPlanblatt from './teile/EinstiegPlanblatt';
 import Lage from './teile/Lage';
 import Tun from './teile/Tun';
@@ -64,6 +65,23 @@ export default function ErzaehlSeite({ inhalt, momente, werkzeug, einstiegBild, 
       {werkzeug && <Werkzeug werkzeug={werkzeug} />}
     </Suspense>
   );
+  if (worum.einstieg === 'mitte' && worum.titelZeilen) {
+    // ruhiger Einstieg (K-016, E-047): mittig, ohne Plan und ohne Waage; die Leitachse beginnt an seinem Fuß
+    return (
+      <Seitenformel>
+        <EinstiegMitte
+          pfad={inhalt.pfad}
+          brotkrumen={worum.brotkrumen}
+          titelZeilen={worum.titelZeilen}
+          ort={worum.ort}
+          hauptziel={ziel}
+          bild={einstiegBild ?? worum.bild}
+          bewertung={worum.bewertung}
+        />
+        <Leitachse>{rest}</Leitachse>
+      </Seitenformel>
+    );
+  }
   if (worum.plan && worum.titelZeilen && worum.bildGross) {
     return (
       <Seitenformel>

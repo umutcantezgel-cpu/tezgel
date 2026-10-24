@@ -51,6 +51,8 @@ export const REGISTER: Record<string, Registereintrag> = {
   'vorher-nachher': { ausloeser: 'interaktion' },
   karte: { ausloeser: 'sicht', schwelle: 0.4 },
   'galerie-filter': { ausloeser: 'interaktion' },
+  // Ruhe (KERN v3.6 K-016, E-047): Laufband und Reihen steuert der Baustein selbst (Selbstlauf, Anhalten), kein Beobachter
+  karussell: { ausloeser: 'interaktion' },
 };
 
 export const KENNUNGEN = Object.keys(REGISTER);

@@ -18,5 +18,5 @@ export const metadata: Metadata = createMetadata({
 });
 
 export default function HomePage() {
-    return <ErzaehlSeite inhalt={START} einstiegBild={<Startbild sizes="(min-width: 768px) 75vw, 100vw" />} formular={<HeroContactForm titel={false} />} />;
+    return <ErzaehlSeite inhalt={START} einstiegBild={<Startbild sizes="(min-width: 1024px) 40vw, (min-width: 640px) 28rem, 100vw" />} formular={<HeroContactForm titel={false} />} />;
 }

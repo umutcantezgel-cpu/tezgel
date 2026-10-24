@@ -13,11 +13,13 @@ const MOMENTE_SCROLL = ['schichten', 'weg'];
 const MOMENTE_SICHT = ['gefaelle-dusche', 'gefaelle-balkon', 'karte'];
 const MOMENTE_INTERAKTION = ['formatregler', 'vorher-nachher', 'galerie-filter'];
 const GROSSE_MOMENTE = [...MOMENTE_SCROLL, ...MOMENTE_SICHT, ...MOMENTE_INTERAKTION];
+// Ruhe (E-047, KERN v3.6 K-016)
+const RUHE_E047 = ['karussell'];
 
 test('Bewegung 1: Register enthält genau die Einträge von KERN v3, die SVG-Bewegungen aus v2 (E-037) und die großen Momente, keine entfällt', () => {
-  assert.deepEqual([...KENNUNGEN].sort(), [...KERN_V3, ...V2_SVG_E037, ...GROSSE_MOMENTE, ...ENTFALLEN_E009].sort());
+  assert.deepEqual([...KENNUNGEN].sort(), [...KERN_V3, ...V2_SVG_E037, ...GROSSE_MOMENTE, ...RUHE_E047, ...ENTFALLEN_E009].sort());
   assert.deepEqual(entfallendeKennungen().sort(), [...ENTFALLEN_E009].sort());
-  for (const k of [...KERN_V3, ...V2_SVG_E037, ...GROSSE_MOMENTE]) assert.ok(!REGISTER[k].entfaellt, `${k} gehört zum System`);
+  for (const k of [...KERN_V3, ...V2_SVG_E037, ...GROSSE_MOMENTE, ...RUHE_E047]) assert.ok(!REGISTER[k].entfaellt, `${k} gehört zum System`);
 });
 
 test('Bewegung 1b: B-01, Plan-Morph und B-02 steuern sich selbst, das Startbild legt sich beim Eintritt frei (Sicht 0,4; E-037)', () => {
@@ -101,4 +103,10 @@ test('Bewegung 8: Regler und Auswahl folgen der Eingabe, ohne Beobachter und ohn
     assert.ok(!SELBST.includes(k), k);
     assert.ok(!ladeKennungen().includes(k), k);
   }
+});
+
+test('Bewegung 9: Karussell (E-047) läuft im Baustein, ohne Beobachter und ohne Ladezustand', () => {
+  assert.equal(REGISTER.karussell.ausloeser, 'interaktion');
+  assert.ok(!beobachteteKennungen(true).includes('karussell') && !beobachteteKennungen(false).includes('karussell'));
+  assert.ok(!ladeKennungen().includes('karussell'));
 });

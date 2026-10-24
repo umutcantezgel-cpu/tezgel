@@ -1,9 +1,8 @@
-// Vorlagen · 3 Was wir tun (KERN v3 K-009, K-011, K-012; E-025): gebaut wie „Was wir tun“ der Startseite. Kopf seitlich
-// mit Einleitung; Bereiche oder Unterseiten als Zeilen an der Fuge mit einem Verlegemuster aus dem Formsystem statt eines
+// Vorlagen · 3 Was wir tun (KERN v3 K-009, K-011, K-012; E-025; K-016 „Ruhe“, E-047): gebaut wie „Was wir tun“ der Startseite.
+// Kopf mittig über dem Inhalt mit einem Satz (kein Theorietext neben den Zeichnungen, E-047); Bereiche oder Unterseiten als Zeilen an der Fuge mit einem Verlegemuster aus dem Formsystem statt eines
 // Strichsymbols (unter 20 rem Zeilenbreite entfällt das Muster); Aussagen als Fliesen an der Fuge (bei großer Schrift das
 // Fugenkreuz über dem Satz); oder Bereiche als Fliesen mit Plan-Vignette (Startseite, E-037); danach ein Absatz und der Platz
-// für den großen Moment der Seite. Wahlweise unter dem Kopf eine erklärende Zeichnung mit Bildunterschrift (ab lg in der
-// Kopfspalte, mobil nach dem Inhalt). Der Abschnitt zeichnet spät (unter dem ersten Bildschirm, E-044). Serverkomponente.
+// für den großen Moment der Seite. Wahlweise eine erklärende Zeichnung mit Bildunterschrift nach dem Inhalt. Der Abschnitt zeichnet spät (unter dem ersten Bildschirm, E-044). Serverkomponente.
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import Icon from '@/components/icons/Icon';
@@ -56,11 +55,12 @@ export function Bereichsfliesen({ bereiche }: { bereiche: Bereich[] }) {
   const mitVignetten = bereiche.some((b) => b.vignette);
   return (
     <div className="@container">
-      <ul className={clsx('grid grid-cols-1 gap-px border border-fuge bg-fuge', mitVignetten ? '@xl:grid-cols-2' : '@xs:grid-cols-2')}>
+      {/* einzelne Fliesen mit Luft dazwischen statt aneinandergesetzt (E-047: nicht gequetscht); ab 64rem vier nebeneinander */}
+      <ul className={clsx('grid grid-cols-1 gap-6 lg:gap-8', mitVignetten ? '@xl:grid-cols-2 @5xl:grid-cols-4' : '@xs:grid-cols-2')}>
         {bereiche.map((b) => {
           const Vignette = b.vignette ? VIGNETTEN[b.vignette] : null;
           return (
-          <li key={b.href} className="bg-fliese">
+          <li key={b.href} className="border border-fuge bg-fliese">
             <Link href={b.href} data-motion="zustand" className="group flex h-full flex-col text-tinte">
               {Vignette ? (
                 // min-h-0: sonst dehnt die höhere Zeichnung (Bad 1,3 : 1) das Feld über sein Seitenverhältnis hinaus
@@ -127,10 +127,9 @@ export default function Tun({ inhalt, moment }: { inhalt: TunInhalt; moment?: Re
       formel="tun"
       leitachse
       spaet
-      kopf="seitlich"
+      mitte
       titel={inhalt.titel}
       einleitung={inhalt.einleitung ? <p><Textmarken text={inhalt.einleitung} /></p> : undefined}
-      unterKopf={inhalt.unterKopf ? <Zeichnung {...inhalt.unterKopf} /> : undefined}
     >
       {inhalt.bereiche && inhalt.bereiche.length > 0 && <Bereichszeilen bereiche={inhalt.bereiche} />}
       {inhalt.bereichsfliesen && inhalt.bereichsfliesen.length > 0 && <Bereichsfliesen bereiche={inhalt.bereichsfliesen} />}
@@ -143,6 +142,11 @@ export default function Tun({ inhalt, moment }: { inhalt: TunInhalt; moment?: Re
         <p className="mt-8 max-w-mass font-text text-fs-3 text-pretty text-tinte">
           <Textmarken text={inhalt.absatz} />
         </p>
+      )}
+      {inhalt.unterKopf && (
+        <div className="mt-16">
+          <Zeichnung {...inhalt.unterKopf} />
+        </div>
       )}
       {moment && <div className="mt-16">{moment}</div>}
     </Abschnitt>

@@ -36,6 +36,8 @@ export const AUSLOESER = {
   // große Momente (E3-ORCH-02a): Szenen beim Durchscrollen (Sicht 0,4 oder scroll-gebunden), Regler und Auswahl folgen der Eingabe
   schichten: 'scroll', weg: 'scroll', 'gefaelle-dusche': 'scroll', 'gefaelle-balkon': 'scroll', karte: 'scroll',
   formatregler: 'regler', 'vorher-nachher': 'regler', 'galerie-filter': 'auswahl',
+  // Ruhe (E-047): Laufband und Reihen steuern sich selbst
+  karussell: 'selbst',
 };
 // Auslöser, die nur nach Formularsendung oder Navigation entstehen. Sie werden bewusst nicht ausgelöst.
 const NICHT_AUSLOESBAR = {
@@ -44,6 +46,7 @@ const NICHT_AUSLOESBAR = {
   navigation: 'Seitenwechsel entsteht nur per Navigation',
   regler: 'Regler ohne Animation (K-007 direkt): die Lage folgt der Eingabe',
   auswahl: 'Galerie: Folgen per Playwright-Schritt (Klick auf [data-galerie-wahl]), bis das Werkzeug eine Auswahl-Folge kennt',
+  selbst: 'Karussell: Laufband 60 s je Durchlauf und Reihe im Baustein; Prüfung per Playwright (Anhalten, Tastatur)',
 };
 const ZEITPUNKTE = [0, 0.25, 0.5, 0.75, 1];
 const SCROLL_ANTEILE = [0.1, 0.3, 0.5, 0.7, 0.9];   // Scrollmodus: Anteile am Durchgang des Elements (Eintritt bis Austritt)

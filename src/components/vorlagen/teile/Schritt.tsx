@@ -2,10 +2,10 @@
 // links Überschrift und Satz, rechts der Hauptknopf „Termin vor Ort anfragen“ (→ /kontakt, dasselbe Ziel wie im Einstieg),
 // darunter die Rufnummer groß wie im Termin-Abschnitt der Startseite und WhatsApp. Hilfen (Werkzeuge der Seite) folgen
 // als ruhige Liste und konkurrieren nicht mit dem Hauptknopf; Wissensseiten nennen verwandte Seiten („Mehr zum Thema“).
-// Fläche Fliese als Abschluss vor dem Fuß. Variante mit Formular (Startseite #termin, Ortsseite #anfrage; E-044): rechts die
-// Anfrage mit vorhandener Logik (Slot, Pflichtfelder und Empfänger unverändert, G8), unter dem Satz Anruf, WhatsApp und ein
-// Zusatz (Öffnungszeiten oder Nachbarorte), ab lg in der Kopfspalte, mobil nach dem Formular, damit es nach dem Sprung zum
-// Ziel sofort im Bild steht. Die Rufnummer steht groß wie auf einem Bauschild (P1). Serverkomponente.
+// Fläche Fliese als Abschluss vor dem Fuß. Variante mit Formular (Startseite #termin, Ortsseite #anfrage; E-044, E-047): Kopf
+// mittig, darunter die Anfrage mit vorhandener Logik (Slot, Pflichtfelder und Empfänger unverändert, G8), dann Anruf,
+// WhatsApp und ein Zusatz (Öffnungszeiten oder Nachbarorte) in einer ruhigen Zeile. Die Rufnummer steht groß wie auf einem
+// Bauschild (P1). Serverkomponente.
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import clsx from 'clsx';
@@ -57,56 +57,52 @@ export function Nachbarorte({ nachbarn }: { nachbarn: Verweis[] }) {
 
 function FormularSchritt({ inhalt, pfad, formular, titelId, zusatz }: { inhalt: SchrittInhalt; pfad: string; formular: ReactNode; titelId: string; zusatz?: ReactNode }) {
   const { contact } = COMPANY_DATA;
+  // ruhig (K-016, E-047): Kopf mittig, darunter das Formular mittig und dann Anruf, WhatsApp und Zusatz in einer Zeile,
+  // statt links und rechts zugleich (vorher Kopfspalte mit Anruf neben dem Formular)
   return (
     <Abschnitt
       titelId={titelId}
       formel="schritt"
       leitachse
       flaeche="fliese"
-      kopf="seitlich"
-      ziel
+      mitte
       titel={zusammen(inhalt.titel)}
-      unterKopf={
-        // Container-Abfrage: unter 20 rem steht der Hörer über der großen Nummer, damit sie nicht über den Rand läuft (Runde 4),
-        // und die Nummer eine Stufe kleiner mit offenerer Zeilenhöhe: bricht sie nach „06441 /“ um, kreuzt die Unterstreichung
-        // sonst die zweite Zeile (Sichtabnahme E2, Befund 9)
-        <div className="@container grid gap-6 border-t border-fuge pt-6 md:grid-cols-2 lg:mt-4 lg:grid-cols-1">
-          {/* die Rufnummer über die volle Breite, Schreiben und Zusatz darunter nebeneinander (ab lg untereinander) */}
-          <div className="md:col-span-2 lg:col-span-1">
-            <p className="font-text text-fs-3 text-tinte">Lieber anrufen?</p>
-            <a
-              href={`tel:${contact.phoneLink}`}
-              data-motion="zustand"
-              aria-label={`Anrufen: ${contact.phone}`}
-              className={`${linkKlassen} mt-2 inline-flex min-h-11 items-center gap-3 text-fs-5 text-tinte lg:text-fs-4 @max-xs:flex-col @max-xs:items-start @max-xs:gap-1 @max-xs:text-fs-4`}
-            >
-              <Icon name="telefon" groesse={6} className="shrink-0" />
-              <Rufnummer nummer={contact.phone} />
-            </a>
-          </div>
-          <div>
-            <p className="font-text text-fs-3 text-tinte">Lieber schreiben?</p>
-            <a
-              href={buildWhatsAppUrl(contact.whatsappNumber, kontextNachricht(pfad))}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-motion="zustand"
-              className={`${linkKlassen} mt-1 inline-flex min-h-11 items-center gap-2 font-text text-fs-3`}
-            >
-              <WhatsAppLogo className="size-5" />
-              Nachricht per WhatsApp
-            </a>
-          </div>
-          {zusatz}
-        </div>
-      }
       einleitung={
         <p>
           <Textmarken text={inhalt.satz} />
         </p>
       }
     >
-      {formular}
+      <div className="mx-auto w-full max-w-mass">{formular}</div>
+      {/* Container-Abfrage: unter 20 rem steht der Hörer über der großen Nummer, damit sie nicht über den Rand läuft (Runde 4) */}
+      <div className="@container mx-auto mt-12 grid max-w-mass gap-8 border-t border-fuge pt-8 text-center md:grid-cols-2 md:text-left">
+        <div>
+          <p className="font-text text-fs-3 text-tinte">Lieber anrufen?</p>
+          <a
+            href={`tel:${contact.phoneLink}`}
+            data-motion="zustand"
+            aria-label={`Anrufen: ${contact.phone}`}
+            className={`${linkKlassen} mt-2 inline-flex min-h-11 items-center gap-3 text-fs-4 text-tinte @max-xs:flex-col @max-xs:gap-1`}
+          >
+            <Icon name="telefon" groesse={6} className="shrink-0" />
+            <Rufnummer nummer={contact.phone} />
+          </a>
+        </div>
+        <div>
+          <p className="font-text text-fs-3 text-tinte">Lieber schreiben?</p>
+          <a
+            href={buildWhatsAppUrl(contact.whatsappNumber, kontextNachricht(pfad))}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-motion="zustand"
+            className={`${linkKlassen} mt-2 inline-flex min-h-11 items-center gap-2 font-text text-fs-3`}
+          >
+            <WhatsAppLogo className="size-5" />
+            Nachricht per WhatsApp
+          </a>
+        </div>
+        {zusatz && <div className="md:col-span-2">{zusatz}</div>}
+      </div>
     </Abschnitt>
   );
 }

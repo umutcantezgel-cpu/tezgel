@@ -1,5 +1,7 @@
 // Inhalt der Startseite (KERN v3 K-009, Seitenformel; Text _werkstatt/texte/REF-start.md, E2-ORCH-06; E-044): wörtlich aus
-// den bisherigen Bausteinen der Startseite (src/components/start/*) übernommen, gesetzt von der Vorlage ErzaehlSeite.
+// den bisherigen Bausteinen der Startseite (src/components/start/*) übernommen, gesetzt von der Vorlage ErzaehlSeite. Seit
+// E-047 ruhig nach K-016: Einstieg mittig mit dem Satz des Auftraggebers, Bilder vollständig, Stimmen als Karussell, die
+// Belege stehen als Laufband im Fuß.
 // Preisrechner und Express-Anfrage stehen nicht hier, sondern auf ihren übrigen Seiten (E-012, LAGEBILD F-02, F-03); alle
 // Hauptknöpfe dieser Seite führen zum Formular #termin (hauptziel in navigation.js).
 import type { ErzaehlInhalt } from '@/components/vorlagen/inhalt';
@@ -12,14 +14,12 @@ export const START: ErzaehlInhalt = {
   },
   worum: {
     brotkrumen: [],
-    titel: 'Wir verlegen Fliesen in Bad, Küche, Flur und auf dem Balkon.',
-    // höchstens 15 Zeichen je Zeile, damit keine Zeile in fs-7 ab lg umbricht (E3-START-01)
-    titelZeilen: ['Wir verlegen', 'Fliesen in Bad,', 'Küche, Flur und', 'auf dem Balkon.'],
-    firmensitz: 'Firmensitz Aßlar',
-    ort: 'Fliesenleger Deniz Tezgel aus Aßlar, für Wetzlar und die Orte rundherum.',
+    // Wortlaut des Auftraggebers (E-047): mittig und kleiner als vorher, darunter was und wo
+    einstieg: 'mitte',
+    titel: 'Perfektion auf jedem Quadratmeter.',
+    titelZeilen: ['Perfektion auf', 'jedem Quadratmeter.'],
+    ort: 'Fliesenverlegung und Badsanierung aus Aßlar',
     vorspann: 'Deniz Tezgel kommt selbst zu Ihnen, schaut sich alles an und sagt Ihnen, was zu tun ist. Danach verlegt er mit seinem Team Fliese für Fliese.',
-    plan: 'bad',
-    bildGross: 'start-dusche-boden',
     bewertung: true,
   },
   lage: {
@@ -38,8 +38,8 @@ export const START: ErzaehlInhalt = {
   },
   tun: {
     titel: 'Wir kümmern uns um alles, was mit Fliesen zu tun hat.',
-    einleitung:
-      'Wir nehmen alte Fliesen heraus und bereiten den [[untergrund|Untergrund]] vor. Dann verlegen wir neue Fliesen, auch große Fliesen mit wenigen Fugen. Am Ende ist alles sauber, und Sie können Ihren Raum wieder nutzen.',
+    // ein Satz statt Theorie neben den Zeichnungen (E-047); der Satz stand vorher als H1
+    einleitung: 'Wir verlegen Fliesen in Bad, Küche, Flur und auf dem Balkon.',
     // vier Bereiche als Fliesen mit den Plan-Vignetten des alten Stands (Bad, Wohnen, Außen; Reparatur neu in derselben
     // Zeichensprache, E-037)
     bereichsfliesen: [
@@ -48,11 +48,6 @@ export const START: ErzaehlInhalt = {
       { name: 'Balkon, Terrasse und Treppen', href: '/balkon-terrasse', vignette: 'aussen' },
       { name: 'Reparatur von Fliesen und Fugen', href: '/fliesenreparatur', vignette: 'reparatur' },
     ],
-    // eine erklärende Zeichnung: der Schnitt am Wandanschluss mit der Erklärung der Abdichtung (Sichtabnahme E2, Befund 13)
-    unterKopf: {
-      vignette: 'untergrund',
-      unterschrift: 'So ist der Boden im Bad am Rand zur Wand aufgebaut. Unter den Fliesen liegt die [[abdichtung|Abdichtung]]. Sie geht ein Stück an der Wand hoch.',
-    },
   },
   ablauf: {
     titel: 'So kommen Sie zu Ihrem neuen Boden.',
@@ -70,28 +65,23 @@ export const START: ErzaehlInhalt = {
         text: 'Wir verlegen sauber und übergeben den Raum besenrein. Zum Schluss gehen wir alles gemeinsam durch.',
       },
     ],
-    // die drei Belege aus dem Faktenblatt (K-015, Sichtabnahme E2, Befund 8); zwei Sätze, jedes Fachwort mit seiner Erklärung
-    // am Satzende (höchstens 25 Wörter je Satz, K-010); die Abdichtung ist schon an der Zeichnung in „Was wir tun“ erklärt
-    belege: [
-      'Seit 2008 sind wir bei der Handwerkskammer Wiesbaden eingetragen.',
-      'Im Bad kommt vor dem Verlegen eine Abdichtung. Dabei halten wir uns an [[din-18534|DIN 18534]].',
-      'Wohnen Sie während der Arbeiten im Haus, schützen wir Ihre Räume vor Staub.',
-    ],
+    // die Belege aus dem Faktenblatt stehen seit E-047 als Laufband im Fuß (auf jeder Seite)
   },
   beleg: {
     titel: 'So sieht unsere Arbeit aus.',
-    // sechs echte Fotos, je Raum eins
+    // sechs echte Fotos, je Raum eins, vollständig; der Name steht auf der Glasfläche und führt zur passenden Leistung (E-047)
     fotos: [
-      { bild: 'start-galerie-1', unterschrift: 'Dusche ohne Stufe mit Sitzbank und Mosaik' },
-      { bild: 'start-galerie-2', unterschrift: 'Badewanne mit dunklen Mosaikfliesen' },
-      { bild: 'start-galerie-3', unterschrift: 'Balkon mit dunklen Fliesen, jede Reihe um ein Stück versetzt' },
-      { bild: 'start-galerie-4', unterschrift: 'Terrasse mit großen hellgrauen Platten' },
-      { bild: 'start-galerie-5', unterschrift: 'Außentreppe mit Fliesen in Terrakotta' },
-      { bild: 'start-galerie-6', unterschrift: 'Balkonboden vor dem Verlegen: ein blaues Band dichtet die Ränder ab' },
+      { bild: 'start-galerie-1', unterschrift: 'Dusche ohne Stufe', href: '/bad/barrierefreies-bad' },
+      { bild: 'start-galerie-2', unterschrift: 'Neues Bad mit Badewanne', href: '/bad/badsanierung' },
+      { bild: 'start-galerie-3', unterschrift: 'Balkon mit neuen Fliesen', href: '/balkon-terrasse' },
+      { bild: 'start-galerie-4', unterschrift: 'Terrasse mit großen Platten', href: '/balkon-terrasse' },
+      { bild: 'start-galerie-5', unterschrift: 'Außentreppe', href: '/treppen/aussentreppe' },
+      { bild: 'start-galerie-6', unterschrift: 'Balkon abdichten', href: '/balkon-terrasse' },
     ],
     verweis: { name: 'Alle Arbeiten ansehen', href: '/referenzen' },
-    // die große Stimme ist die von C. W. (vollständige Sätze); Wortlaut aller Stimmen unverändert aus REVIEWS (G8)
-    stimmen: ['c-wolf', 'rabia-oe', 'elke-s'],
+    // Wortlaut aller Stimmen unverändert aus REVIEWS (G8)
+    // als Karussell mit gleich großen Karten (E-047)
+    stimmen: ['c-wolf', 'rabia-oe', 'elke-s', 'hasan-oe', 'ute-t', 'peter-p', 'christian-d', 'sara-j'],
     orte: {
       titel: 'Hier sind wir für Sie unterwegs.',
       einleitung: 'Unser Betrieb sitzt in Aßlar. Wir arbeiten in Wetzlar, Gießen, Herborn und den Orten rundherum.',

@@ -1,5 +1,5 @@
 {
-  "quelle": "KERN v3.5 K-007 (24.10.2026, E-045; große Momente E3-ORCH-02a), Maschinenfassung wie src/lib/motion/register.ts",
+  "quelle": "KERN v3.6 K-007, K-016 (25.10.2026, E-047: Ruhe, Karussell; große Momente E3-ORCH-02a), Maschinenfassung wie src/lib/motion/register.ts",
   "kennungen": [
     "verlegen",
     "seitenwechsel",
@@ -27,7 +27,8 @@
     "formatregler",
     "vorher-nachher",
     "karte",
-    "galerie-filter"
+    "galerie-filter",
+    "karussell"
   ],
   "v3": [
     "verlegen",
@@ -56,7 +57,8 @@
     "formatregler",
     "vorher-nachher",
     "karte",
-    "galerie-filter"
+    "galerie-filter",
+    "karussell"
   ],
   "entfallen_e009": [],
   "hinweis": "`kennungen` = alles, was registriert ist (bewegung.mjs prüft dagegen). Seit E-037 (Entscheidung des Auftraggebers) sind die SVG-Bewegungen aus v2 fester Teil des Systems und der Plan-Morph (seitenwechsel) ist zurück; startbild löst seit E-037 über Sichtbarkeit aus (0,4). Die großen Momente stehen seit E3-ORCH-02a im Register (Bauvorgaben je Moment in _werkstatt/register/<kennung>.json).",

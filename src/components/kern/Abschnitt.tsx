@@ -22,6 +22,8 @@ export interface AbschnittProps {
   art?: 'erzaehl' | 'arbeit';
   flaeche?: 'kalk' | 'fliese' | 'tinte';
   kopf?: 'gestapelt' | 'seitlich';
+  /** nur gestapelt: Kopf mittig über dem Inhalt (K-016 „Ruhe“, E-047) */
+  mitte?: boolean;
   breite?: 'seite' | 'mass';
   /** data-motion="auftritt" für den Inhalt (nur Erzählansichten, höchstens jeder zweite Abschnitt) */
   auftritt?: boolean;
@@ -38,11 +40,11 @@ export interface AbschnittProps {
   'aria-label'?: string;
 }
 
-export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleitung, unterKopf, art = 'erzaehl', flaeche = 'kalk', kopf = 'gestapelt', breite = 'seite', auftritt = false, leitachse = false, spaet = false, ziel = false, formel, className, children, ...rest }: AbschnittProps) {
+export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleitung, unterKopf, art = 'erzaehl', flaeche = 'kalk', kopf = 'gestapelt', mitte = false, breite = 'seite', auftritt = false, leitachse = false, spaet = false, ziel = false, formel, className, children, ...rest }: AbschnittProps) {
   const hId = titelId ?? (id ? `${id}-titel` : undefined);
   const tinte = flaeche === 'tinte';
   const kopfInhalt = (titel || etikett) && (
-    <div className={clsx(kopf === 'seitlich' ? 'col-span-4 md:col-span-8 lg:col-span-4' : 'max-w-mass')}>
+    <div className={clsx(kopf === 'seitlich' ? 'col-span-4 md:col-span-8 lg:col-span-4' : 'max-w-mass', kopf !== 'seitlich' && mitte && 'mx-auto text-center text-balance')}>
       {(etikett || nummer) && (
         <p className={clsx(etikettForm, 'mb-4', tinte ? 'text-nacht-2' : 'text-tinte-2')}>
           {!nummer && <Fugenkreuz className={clsx('size-3 shrink-0', tinte ? 'text-nacht-2' : 'text-strich')} />}

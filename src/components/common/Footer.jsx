@@ -11,15 +11,19 @@ import { COMPANY_DATA } from '@/config/company';
 import { footerGruppen, footerLegalLinks } from '@/config/navigation';
 import { oeffnungszeilen } from '@/lib/oeffnungszeiten';
 import Rufnummer from '@/components/kern/Rufnummer';
+import Karussell from '@/components/kern/Karussell';
 
 const LINK_COLUMNS = footerGruppen;
 
-// Belege aus dem Faktenblatt K-015 (F-05, F-15, F-17, F-12), keine Garantien (M-07)
+// Belege aus dem Faktenblatt K-015 (F-05, F-15, F-17, F-12; Sitz und Einsatzgebiet aus COMPANY_DATA), keine Garantien (M-07).
+// In Alltagssprache als langsames Laufband von rechts nach links (K-016 „Ruhe“, E-047): man soll sie lesen, ohne dass sie wie
+// eine Liste von Qualifikationen wirken.
 const GUARANTEES = [
-    { title: 'Eingetragener Fachbetrieb', text: COMPANY_DATA.authority.name },
-    { title: 'Abdichtung nach DIN 18534', text: 'bei uns Standard seit 2019' },
+    { title: 'Vor Ort in Aßlar, Wetzlar und Umgebung', text: 'Deniz Tezgel kommt selbst zu Ihnen' },
+    { title: 'Eingetragen bei der Handwerkskammer', text: COMPANY_DATA.authority.name },
+    { title: 'Abdichtung nach der Norm für Bäder', text: 'DIN 18534, bei uns Standard seit 2019' },
     { title: 'Staubschutz', text: 'wenn Sie während der Arbeiten im Haus wohnen' },
-    { title: 'Termin vor Ort', text: 'für Sie kostenfrei' }
+    { title: 'Termin bei Ihnen vor Ort', text: 'für Sie kostenfrei' }
 ];
 
 // Feldnamen in Archivo, Mono nur für Nummern und Zahlen (K-006, Sichtprüfung E2)
@@ -46,21 +50,18 @@ export default function Footer() {
                 spätere Grenze hydriert wäre (sonst Abweichung und Neuaufbau des Fußes). */}
             <Suspense>
                 <div className="border-b border-nacht-fuge">
-                    <div className={clsx(seitenKlassen, 'flex flex-col gap-6 py-8 lg:flex-row lg:items-center lg:justify-between')}>
-                        <ul className="grid grid-cols-1 gap-px bg-nacht-fuge sm:grid-cols-2 lg:flex-1 xl:grid-cols-4">
-                            {GUARANTEES.map(({ title, text }, idx) => (
-                                <li
-                                    key={title}
-                                    className={clsx('flex items-start gap-3 bg-tinte py-4 pr-4', idx % 2 === 1 && 'sm:pl-4', idx === 2 && 'xl:pl-4')}
-                                >
+                    <div className={clsx(seitenKlassen, 'py-6')}>
+                        <Karussell art="band" name="Was Sie von uns erwarten können" dunkel>
+                            {GUARANTEES.map(({ title, text }) => (
+                                <p key={title} className="flex items-start gap-3 text-fs-2">
                                     <Fugenkreuz className="mt-1 size-4 shrink-0 text-nacht-2" />
-                                    <span className="min-w-0 text-fs-2 wrap-break-word">
-                                        <span className="block font-semibold text-kalk">{title}</span>
-                                        <span className="text-nacht-2">{text}</span>
+                                    <span className="whitespace-nowrap">
+                                        <span className="font-semibold text-kalk">{title}</span>
+                                        <span className="text-nacht-2"> · {text}</span>
                                     </span>
-                                </li>
+                                </p>
                             ))}
-                        </ul>
+                        </Karussell>
                     </div>
                 </div>
 

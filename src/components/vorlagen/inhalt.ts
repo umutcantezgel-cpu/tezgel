@@ -35,8 +35,11 @@ export interface WorumInhalt {
   titelZeilen?: string[];
   firmensitz?: string;
   bildGross?: ArbeitId;
-  /** Bewertungszeile als Kennzeile über dem Plan */
+  /** Bewertungszeile als Kennzeile über dem Plan (mittig: unter den Knöpfen) */
   bewertung?: boolean;
+  /** Form des Einstiegs: `mitte` = ruhig und mittig, H1 in `titelZeilen`, darunter `ort` als eine Zeile, dann das Foto
+   *  vollständig (K-016 „Ruhe“, E-047); ohne Angabe Planblatt (mit `plan`) bzw. der einfache Einstieg */
+  einstieg?: 'planblatt' | 'mitte';
 }
 
 /** 2 · Ihre Lage: Absätze in der Stimme der Kundschaft, wahlweise Fliesen mit Link (wie auf der Startseite) */
@@ -90,7 +93,9 @@ export interface AblaufInhalt {
 /** 5 · Beleg */
 export interface BelegInhalt {
   titel: string;
-  fotos: { bild: ArbeitId; unterschrift: string }[];
+  /** Fotos vollständig; ab zwei Fotos als Reihe zum Wischen, ohne Unterschrift darunter: `unterschrift` steht als Name auf
+   *  der Glasfläche, `href` führt zur passenden Leistungsseite (K-016, E-047) */
+  fotos: { bild: ArbeitId; unterschrift: string; href?: string }[];
   /** zwei Bilder desselben Vorgangs nebeneinander (kein Regler, wenn die Blickwinkel verschieden sind) */
   zweierbild?: { titel: string; bilder: [{ bild: ArbeitId; unterschrift: string }, { bild: ArbeitId; unterschrift: string }] };
   /** Kennungen aus REVIEWS, Wortlaut unverändert (G8) */

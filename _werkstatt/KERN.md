@@ -1,4 +1,4 @@
-# KERN · Lauf „Verständlich, echt, ausgezeichnet“ · Version 3.5
+# KERN · Lauf „Verständlich, echt, ausgezeichnet“ · Version 3.6
 
 Stand 24.10.2026, E1. Quelle der Wahrheit für alle Pakete. Hervorgegangen aus KERN v2 „Verlegeplan“ (`archiv/2026-10-werkstatt/KERN.md`): Werte und Bausteine von v2 gelten weiter, soweit dieser Kern sie nicht ändert. Über dem Kern stehen Grenzen und Leitplanken, Bestand und Adressen, Verständlichkeit, Zugänglichkeit und Leistung und die Abnahmeliste (Auftrag Abschnitt 4). **[A]** = Annahme (offen in MENSCHEN.md). Jedes Paket nennt die Kern-Version, gegen die es gebaut wurde.
 
@@ -252,6 +252,17 @@ Maschinenfassung `src/config/glossar.ts` (Quelle) und `regeln/glossar.json` (Pr�
 - Je Seite genau eine H1, Titel (über `createMetadata`, `src/lib/metadata.ts`), Beschreibung, absolutes Canonical; strukturierte Daten gültig (`src/lib/schema.ts`), Bewertungen nur aus `src/config/reviews.js` (wörtlich, eine Quelle); Sitemap vollständig (`src/app/sitemap.ts`).
 - Suchbegriffe je Seite (Titel, H1, Beschreibung aus E0) bleiben natürlich im neuen Text; Titel ≤ 60, Beschreibung 120 bis 155 (Test `test/titleLength.test.mjs` verlangt ≤ 58 und bleibt).
 
+## K-016 Ruhe (E-047, Auftraggeber nach der Durchsicht der Live-Seite)
+Geht K-005 und K-006 vor, wo sie sich widersprechen. Leitsatz: „Man soll genau sehen, wo man hinschaut, und nichts verwirrt.“
+- **Fläche:** ein Gedanke je Bildschirm, viel freie Fläche. Nie zwei Stränge nebeneinander (Text links und Bild oder zweiter Text rechts zugleich); Köpfe der Abschnitte mittig (`Abschnitt mitte`), außer Ablauf-Treppe und Einsatzorte (gelobt, bleiben).
+- **Einstieg:** mittig (`EinstiegMitte`): H1 in `fs-6`, darunter eine Zeile, was und wo; Hauptknopf, Anruf, WhatsApp; Bewertungszeile; dann das Foto vollständig.
+- **Text:** weniger je Seite. Fachtext für Suchmaschinen weiter unten in „Mehr erfahren“ oder auf eigenen Unterseiten (z. B. Normen), nicht neben Zeichnungen. Firmendaten (Inhaber, Kammer, Betrieb seit) nur auf `/kontakt`, `/ueber-uns` und im Fuß. Keine Versprechen, die sich nicht halten lassen („zum Festpreis“, nicht „ohne Stress“).
+- **Bilder:** immer vollständig im eigenen Seitenverhältnis, nie angeschnitten, nie aneinandergequetscht. Reihen von Fotos als Karussell, in dem jede sichtbare Karte ganz im Bild steht (Kartenbreite teilt die Zeile genau). Keine Unterschrift unter Galeriefotos: Name und Weg zur Leistung auf der Glasfläche (`Glasbild`, beim Darüberfahren; ohne Maus immer sichtbar). Jedes Bild mit eigenem Alt-Text. KI-Bilder nur als Stimmungsbilder, nie unter „Unsere Arbeiten“ oder bei Referenzen.
+- **Karussells** (`Karussell`, Register `karussell`): langsam, von rechts nach links; Laufband 60 s je Durchlauf (Qualifikationen im Fuß), Reihe mit Selbstlauf alle 8 s (Kundenstimmen, gleich große Karten). Halten bei Maus und Fokus an, Knopf zum Anhalten (WCAG 2.2.2); reduziert, ohne JavaScript und im Notaus kein Selbstlauf.
+- **Abläufe** auf einen Blick: Treppe bis vier Schritte; ab fünf Schritten Kopf und Satz mittig, darunter zwei Spalten (1 bis 3, 4 bis 6) oder eine Roadmap.
+- **Zeichnungen** bleiben, mit einem Satz, was man sieht; keine Fachwörter im Einstieg ohne Not.
+- **Seitenwechsel:** Fliesen neutral, größer, langsamer gelegt; auf der fertigen Wand Logo und Schriftzug (E3-B01-LOGO).
+
 ## K-015 Faktenblatt (nur diese Fakten; Fundstellen im Code)
 | Nr | Fakt | Fundstelle |
 |---|---|---|
@@ -291,6 +302,7 @@ Maschinenfassung `src/config/glossar.ts` (Quelle) und `regeln/glossar.json` (Pr�
 F-07, F-09, F-14, F-20 und die Versprechen bis zur Antwort (MENSCHEN.md); Herkunft einzelner Fotos (M-08).
 
 ## Änderungsprotokoll
+- v3.6 (25.10.2026, E-047): K-016 Ruhe (Einstieg mittig, Bilder vollständig, Karussells, weniger Text, Firmendaten nur an drei Orten); Register `karussell`; Startseite danach umgebaut (E3-RUHE-01).
 - v3.5 (24.10.2026, E-045): große Momente gebaut (E3-GRAF-01 bis 09); Regel zu `data-motion` am Behälter; Registerzeilen genauer (Dauer, Kurve, Zurück/Vor); formatregler ohne Fugenmeter, vorher-nachher mit Lot in Tinte als eigener Abschnitt.
 - v3.4 (24.10.2026, E-044): Vorlagen tragen die SVG-Bewegungen (Planblatt-Einstieg mit SIG-1, Wissensseiten mit Plan „zeigen“, Ortsseiten mit Einzugsband im Schlitz); Verzögerung hinter dem Intro auf jeder Seite (`k-intro-sig`), Geometrie an `/` (`k-intro-start`); Startseite über die Vorlage ErzaehlSeite; K-012 Ladevorrang nach E-037/E-041 nachgezogen.
 - v3.3 (24.10.2026, E-043): B-01 „Fliese für Fliese“ (Entscheidung des Auftraggebers): ganze Seite Fliese für Fliese von rechts belegen, dann einzeln abnehmen, 1800/1400 ms; Kalk neutral #F4F4F5; Wartelinie in `strich`; Token `ease-aufsetzen`, `ease-wind` entfällt.

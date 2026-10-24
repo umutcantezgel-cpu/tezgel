@@ -302,6 +302,86 @@ html.k-bewegung:not(.k-notaus) [data-motion="galerie-filter"][data-galerie-neu] 
   }
 }
 
+/* karussell (K-016 „Ruhe“, E-047) – langsam, von rechts nach links. Band: der Inhalt steht zweimal, die Spur rückt linear um
+   die halbe Länge (eine Fassung) und beginnt von vorn; 60 s je Durchlauf. Hält an, solange Maus oder Fokus darin sind oder
+   der Knopf es anhält. Ohne Startklasse (ohne JavaScript), reduziert, im Notaus und im Druck steht eine wischbare Reihe
+   ohne Kopie. Reihe: Einrasten beim Wischen, Selbstlauf im Baustein (Scrollposition), hier nur die Leiste ohne Rand. Nur
+   translate. */
+.karussell-band {
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.karussell-band-spur {
+  display: flex;
+  width: max-content;
+}
+.karussell-band-teil {
+  display: flex;
+  gap: calc(var(--spacing) * 12);
+  padding-inline-end: calc(var(--spacing) * 12);
+}
+.karussell-band-kopie {
+  display: none;
+}
+@keyframes karussell-laufen {
+  to {
+    translate: -50% 0;
+  }
+}
+@media screen and (prefers-reduced-motion: no-preference) {
+  html.k-bewegung:not(.k-notaus) .karussell-band {
+    overflow: hidden;
+  }
+  html.k-bewegung:not(.k-notaus) .karussell-band-kopie {
+    display: flex;
+  }
+  html.k-bewegung:not(.k-notaus) .karussell-band-spur {
+    animation: karussell-laufen 60s linear infinite;
+  }
+  html.k-bewegung:not(.k-notaus) .karussell-band:hover .karussell-band-spur,
+  html.k-bewegung:not(.k-notaus) .karussell-band:focus-within .karussell-band-spur,
+  html.k-bewegung:not(.k-notaus) .karussell-band[data-angehalten] .karussell-band-spur {
+    animation-play-state: paused;
+  }
+}
+.karussell-reihe {
+  scrollbar-width: thin;
+  scroll-padding-inline: 0;
+}
+@media print, (forced-colors: active) {
+  .karussell-band-spur {
+    animation: none !important;
+  }
+  .karussell-band-kopie {
+    display: none !important;
+  }
+}
+
+/* glasbild (K-016, E-047) – Foto ohne Unterschrift; beim Darüberfahren oder mit dem Fokus dunkelt eine Glasfläche das Bild ab
+   und zeigt Name und Link (dauer-2 · setzen, nur opacity). Ohne Maus (Touch) steht der Name immer unten auf einem Verlauf. */
+.glasbild-flaeche {
+  background: linear-gradient(to top, color-mix(in srgb, var(--color-tinte) 72%, transparent), transparent 55%);
+}
+@media (hover: hover) {
+  .glasbild-flaeche {
+    opacity: 0;
+    background: color-mix(in srgb, var(--color-tinte) 45%, transparent);
+    backdrop-filter: blur(6px);
+    transition: opacity var(--dauer-2) var(--ease-setzen);
+  }
+  .glasbild:hover .glasbild-flaeche,
+  .glasbild:focus-visible .glasbild-flaeche {
+    opacity: 1;
+  }
+}
+@media (forced-colors: active) {
+  .glasbild-flaeche {
+    opacity: 1;
+    background: Canvas;
+    backdrop-filter: none;
+  }
+}
+
 /* aufklappen – Höhe über grid-template-rows (Menü, Akkordeon); zu: eine Stufe kürzer */
 .aufklappen {
   display: grid;
@@ -558,15 +638,15 @@ html.k-notaus::view-transition-new(*) {
     --intro-fliese: round(clamp(min(6rem, 28vw), 24vw, min(15rem, max(9rem, 12.5vw))), 2px);
     --intro-oben: round(calc(47cqh - var(--intro-reihe) * 1.5), 1px);
   }
-  /* Startseite ab lg (Sichtabnahme E2, Befund 6): eine Reihe so hoch wie eine Zeile der H1 (fs-7), eine Reihengrenze auf der
-     Oberkante der H1, damit beim Abziehen keine Zeile mitten im Buchstaben angeschnitten wird. Oberkante der H1 im Einstieg:
-     pt-32, eine Zeile Firmensitz in fs-1, mt-4 (vorlagen/teile/EinstiegPlanblatt.tsx; der Kopf ist fest, der Einstieg beginnt bei 0). Die Fläche
-     bleibt nahe 47 % der Höhe: Abstand dorthin auf ganze Reihen gerundet. Fliese = zwei Reihen. */
+  /* Startseite ab lg (Sichtabnahme E2, Befund 6): eine Reihe so hoch wie eine Zeile der H1 (fs-6 seit E-047), eine
+     Reihengrenze auf der Oberkante der H1, damit beim Abziehen keine Zeile mitten im Buchstaben angeschnitten wird. Oberkante
+     der H1 im mittigen Einstieg: pt-32 (vorlagen/teile/EinstiegMitte.tsx; der Kopf ist fest, der Einstieg beginnt bei 0). Die
+     Fläche bleibt nahe 47 % der Höhe: Abstand dorthin auf ganze Reihen gerundet. Fliese = zwei Reihen. */
   @media (width >= 64rem) {
     html.k-intro-start .intro {
-      --intro-reihe: round(calc(var(--text-fs-7) * var(--text-fs-7--line-height)), 1px);
+      --intro-reihe: round(calc(var(--text-fs-6) * var(--text-fs-6--line-height)), 1px);
       --intro-fliese: calc(var(--intro-reihe) * 2);
-      --intro-h1: calc(var(--spacing) * 36 + var(--text-fs-1) * var(--text-fs-1--line-height));
+      --intro-h1: calc(var(--spacing) * 32);
       --intro-oben: calc(var(--intro-h1) + round(nearest, calc(47cqh - var(--intro-reihe) * 1.5 - var(--intro-h1)), var(--intro-reihe)));
     }
   }
@@ -728,9 +808,9 @@ html.k-notaus::view-transition-new(*) {
    Versatzstufe (wie B-01), gesamt dauer-4 · linear (wie die Reihen des Intros; mit ease-weg lag der Belag die ersten
    rund 200 ms sichtbar still, Sichtabnahme E2; E-036); Zeiten als Anteile (--a, --d) aus src/lib/motion/startbild.ts.
    Nur unter html.k-startbild (Kopfskript: Bewegung erlaubt, kein Intro; der erste Seitenwechsel nimmt die Klasse weg).
-   Seit E-037 steht das Foto unter der Waage des Planblatts: Es legt sich unter lg frei, sobald es zu 40 % im Blick ist
-   (Register: Sicht, data-motion-stand="an" vom Bewegungsmodul); ab lg steht es sofort frei, dort ist die Kreuzlinie der eine
-   große Moment des ersten Bildschirms (K-007). Ohne Klasse, reduziert, ohne Modul (Notaus), im Druck und bei erzwungenen
+   Seit E-047 steht das Foto vollständig unter dem mittigen Einstieg und ist auf jeder Breite der eine große Moment des
+   ersten Bildschirms: es legt sich frei, sobald es zu 40 % im Blick ist (Register: Sicht, data-motion-stand="an" vom
+   Bewegungsmodul). Ohne Klasse, reduziert, ohne Modul (Notaus), im Druck und bei erzwungenen
    Farben steht das Foto sofort frei. Nur transform. */
 .startbild-decke {
   position: absolute;
@@ -768,7 +848,7 @@ html.k-notaus::view-transition-new(*) {
     visibility: hidden;
   }
 }
-@media (prefers-reduced-motion: no-preference) and (width < 64rem) {
+@media (prefers-reduced-motion: no-preference) {
   html.k-startbild.k-bewegung:not(.k-notaus) [data-motion="startbild"] .startbild-decke {
     display: block;
   }
