@@ -1,0 +1,225 @@
+{
+ "quelle": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/bildsatz/bildsatz.json",
+ "befehl": "node bildsatz.mjs --satz e2 --seiten /,/gibt-es-nicht --geraete alle --base http://127.0.0.1:4311",
+ "zusammenfassung": {
+  "aufnahmen": 161,
+  "fehler": 0,
+  "nicht200": 10,
+  "ueberlauf": {
+   "ansichten": 0,
+   "befunde": 0
+  },
+  "ueberlappung": {
+   "ansichten": 0,
+   "befunde": 0,
+   "nachArt": {}
+  },
+  "konsole": {
+   "ansichten": 10,
+   "meldungen": 15
+  },
+  "animationen": null
+ },
+ "je_seite_geraet": [
+  {
+   "seite": "/",
+   "geraet": "d1280",
+   "status": 200,
+   "aufnahmen": 12,
+   "ueberlauf": 0,
+   "ueberlappung": 0,
+   "konsole": 0,
+   "fehler": null
+  },
+  {
+   "seite": "/gibt-es-nicht",
+   "geraet": "d1280",
+   "status": 404,
+   "aufnahmen": 4,
+   "ueberlauf": 0,
+   "ueberlappung": 0,
+   "konsole": 1,
+   "fehler": null
+  },
+  {
+   "seite": "/",
+   "geraet": "d1440",
+   "status": 200,
+   "aufnahmen": 12,
+   "ueberlauf": 0,
+   "ueberlappung": 0,
+   "konsole": 0,
+   "fehler": null
+  },
+  {
+   "seite": "/gibt-es-nicht",
+   "geraet": "d1440",
+   "status": 404,
+   "aufnahmen": 3,
+   "ueberlauf": 0,
+   "ueberlappung": 0,
+   "konsole": 1,
+   "fehler": null
+  },
+  {
+   "seite": "/",
+   "geraet": "d1920",
+   "status": 200,
+   "aufnahmen": 10,
+   "ueberlauf": 0,
+   "ueberlappung": 0,
+   "konsole": 0,
+   "fehler": null
+  },
+  {
+   "seite": "/gibt-es-nicht",
+   "geraet": "d1920",
+   "status": 404,
+   "aufnahmen": 3,
+   "ueberlauf": 0,
+   "ueberlappung": 0,
+   "konsole": 1,
+   "fehler": null
+  },
+  {
+   "seite": "/",
+   "geraet": "d2560",
+   "status": 200,
+   "aufnahmen": 8,
+   "ueberlauf": 0,
+   "ueberlappung": 0,
+   "konsole": 0,
+   "fehler": null
+  },
+  {
+   "seite": "/gibt-es-nicht",
+   "geraet": "d2560",
+   "status": 404,
+   "aufnahmen": 2,
+   "ueberlauf": 0,
+   "ueberlappung": 0,
+   "konsole": 1,
+   "fehler": null
+  },
+  {
+   "seite": "/",
+   "geraet": "m360",
+   "status": 200,
+   "aufnahmen": 12,
+   "ueberlauf": 0,
+   "ueberlappung": 0,
+   "konsole": 0,
+   "fehler": null
+  },
+  {
+   "seite": "/gibt-es-nicht",
+   "geraet": "m360",
+   "status": 404,
+   "aufnahmen": 5,
+   "ueberlauf": 0,
+   "ueberlappung": 0,
+   "konsole": 2,
+   "fehler": null
+  },
+  {
+   "seite": "/",
+   "geraet": "m390",
+   "status": 200,
+   "aufnahmen": 12,
+   "ueberlauf": 0,
+   "ueberlappung": 0,
+   "konsole": 0,
+   "fehler": null
+  },
+  {
+   "seite": "/gibt-es-nicht",
+   "geraet": "m390",
+   "status": 404,
+   "aufnahmen": 4,
+   "ueberlauf": 0,
+   "ueberlappung": 0,
+   "konsole": 2,
+   "fehler": null
+  },
+  {
+   "seite": "/",
+   "geraet": "m430",
+   "status": 200,
+   "aufnahmen": 12,
+   "ueberlauf": 0,
+   "ueberlappung": 0,
+   "konsole": 0,
+   "fehler": null
+  },
+  {
+   "seite": "/gibt-es-nicht",
+   "geraet": "m430",
+   "status": 404,
+   "aufnahmen": 4,
+   "ueberlauf": 0,
+   "ueberlappung": 0,
+   "konsole": 2,
+   "fehler": null
+  },
+  {
+   "seite": "/",
+   "geraet": "q844",
+   "status": 200,
+   "aufnahmen": 12,
+   "ueberlauf": 0,
+   "ueberlappung": 0,
+   "konsole": 0,
+   "fehler": null
+  },
+  {
+   "seite": "/gibt-es-nicht",
+   "geraet": "q844",
+   "status": 404,
+   "aufnahmen": 12,
+   "ueberlauf": 0,
+   "ueberlappung": 0,
+   "konsole": 2,
+   "fehler": null
+  },
+  {
+   "seite": "/",
+   "geraet": "t1024",
+   "status": 200,
+   "aufnahmen": 12,
+   "ueberlauf": 0,
+   "ueberlappung": 0,
+   "konsole": 0,
+   "fehler": null
+  },
+  {
+   "seite": "/gibt-es-nicht",
+   "geraet": "t1024",
+   "status": 404,
+   "aufnahmen": 5,
+   "ueberlauf": 0,
+   "ueberlappung": 0,
+   "konsole": 1,
+   "fehler": null
+  },
+  {
+   "seite": "/",
+   "geraet": "t768",
+   "status": 200,
+   "aufnahmen": 12,
+   "ueberlauf": 0,
+   "ueberlappung": 0,
+   "konsole": 0,
+   "fehler": null
+  },
+  {
+   "seite": "/gibt-es-nicht",
+   "geraet": "t768",
+   "status": 404,
+   "aufnahmen": 5,
+   "ueberlauf": 0,
+   "ueberlappung": 0,
+   "konsole": 2,
+   "fehler": null
+  }
+ ]
+}

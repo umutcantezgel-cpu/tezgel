@@ -1,0 +1,65 @@
+{
+ "modus": "register",
+ "seite": "/",
+ "base": "http://127.0.0.1:4311",
+ "ansicht": "m390",
+ "zeitpunkt": "2026-10-24T08:25:40.178Z",
+ "schritte": {
+  "hover_geprueft": 20,
+  "hover_fehler": 0,
+  "hover_fehler_beispiel": null,
+  "hover_ausserhalb_uebersprungen": 0,
+  "tab_schritte": 30,
+  "fokus_verschieden": 19
+ },
+ "data_motion_elemente": 188,
+ "gefundene_kennungen": [
+  "aufklappen",
+  "druck",
+  "leitachse",
+  "zustand"
+ ],
+ "unbekannt": [],
+ "registriert_nicht_im_dom": [
+  "verlegen",
+  "intro",
+  "startbild",
+  "verband",
+  "anriss",
+  "auftritt",
+  "notiert",
+  "laden",
+  "sig-kreuzlinie",
+  "sig-flucht",
+  "szene-ablauf",
+  "sig-plan",
+  "einzugsband",
+  "fugenband"
+ ],
+ "ohne_register": [
+  {
+   "art": "animation",
+   "sel": "span.startbild-reihe",
+   "eigenschaften": [
+    "translate"
+   ],
+   "anzahl": 8
+  },
+  {
+   "art": "animation",
+   "sel": "div.startbild-decke",
+   "eigenschaften": [
+    "visibility"
+   ],
+   "anzahl": 1
+  }
+ ],
+ "mit_register_eintraege": 3,
+ "erfasste_eintraege": 5,
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/bewegung-register"
+}

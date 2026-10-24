@@ -1,0 +1,385 @@
+{
+ "satz": "e2",
+ "base": "http://127.0.0.1:4311",
+ "ziel": "/home/user/tezgel/_werkstatt/belege/e2",
+ "erstellt": "2026-10-24T08:30:17.350Z",
+ "bedingungen": {
+  "geraet": "m390",
+  "viewport": {
+   "width": 390,
+   "height": 844
+  },
+  "mobil_mit_touch": true,
+  "dpr": 1,
+  "cpu_drosselung": 4,
+  "ereignis_schwelle_ms": 16,
+  "schwelle_ms": 200,
+  "laeufe": 5,
+  "einwilligung": "abgelehnt",
+  "intro": "gesehen (Speicher tezgel-intro gesetzt)",
+  "hydriert": "Element mit __reactProps$ vorhanden",
+  "eingabe": "antippen (tap, Touch-Emulation); Eingabefeld: 5 Zeichen „Hallo“, kein Absenden",
+  "messung": "größter duration-Wert der Ereignisse mit interactionId > 0 im Zeitfenster der Handlung; Median je Handlung über die Läufe; Seitenwert = höchster Median",
+  "handlungen": [
+   "hauptknopf",
+   "menue",
+   "akkordeon",
+   "eingabe",
+   "link"
+  ],
+  "commit": "3f4122b",
+  "arbeitsbaum": "mit ungesicherten Änderungen",
+  "chromium": "153.0.8010.12",
+  "basisadresse": "http://127.0.0.1:4311"
+ },
+ "zusammenfassung": {
+  "seiten": 1,
+  "bestanden": 1,
+  "nicht_bestanden": 0,
+  "unvollstaendig": 0
+ },
+ "seiten": [
+  {
+   "seite": "/",
+   "handlungen": {
+    "hauptknopf": {
+     "werte": [
+      160,
+      88,
+      176,
+      80,
+      168
+     ],
+     "median": 160,
+     "fehlende_laeufe": 0,
+     "ziel": "anker"
+    },
+    "menue": {
+     "werte": [
+      208,
+      176,
+      136,
+      144,
+      168
+     ],
+     "median": 168,
+     "fehlende_laeufe": 0,
+     "ziel": "schalter"
+    },
+    "akkordeon": {
+     "nicht_vorhanden": true
+    },
+    "eingabe": {
+     "werte": [
+      72,
+      72,
+      64,
+      64,
+      72
+     ],
+     "median": 72,
+     "fehlende_laeufe": 0,
+     "ziel": "eingabe"
+    },
+    "link": {
+     "werte": [
+      80,
+      144,
+      88,
+      72,
+      56
+     ],
+     "median": 80,
+     "fehlende_laeufe": 0,
+     "ziel": "link"
+    }
+   },
+   "hoechster_median": 168,
+   "hoechste_handlung": "menue",
+   "bestanden": true,
+   "unvollstaendig": false,
+   "laeufe": [
+    {
+     "lauf": 1,
+     "seite": "/",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 160,
+       "eintraege": 3,
+       "ziel": "anker",
+       "fenster": [
+        1792830577826,
+        1792830578940
+       ]
+      },
+      "menue": {
+       "wert": 208,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1792830579110,
+        1792830580490
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "nicht_vorhanden": true
+      },
+      "eingabe": {
+       "wert": 72,
+       "eintraege": 14,
+       "ziel": "eingabe",
+       "fenster": [
+        1792830580634,
+        1792830581927
+       ]
+      },
+      "link": {
+       "wert": 80,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1792830582011,
+        1792830583879
+       ],
+       "navigiert_zu": "/bad/barrierefreies-bad",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 112,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    },
+    {
+     "lauf": 2,
+     "seite": "/",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 88,
+       "eintraege": 3,
+       "ziel": "anker",
+       "fenster": [
+        1792830586960,
+        1792830587793
+       ]
+      },
+      "menue": {
+       "wert": 176,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1792830587952,
+        1792830589342
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "nicht_vorhanden": true
+      },
+      "eingabe": {
+       "wert": 72,
+       "eintraege": 14,
+       "ziel": "eingabe",
+       "fenster": [
+        1792830589499,
+        1792830590761
+       ]
+      },
+      "link": {
+       "wert": 144,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1792830590840,
+        1792830592201
+       ],
+       "navigiert_zu": "/bad/barrierefreies-bad",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 40,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    },
+    {
+     "lauf": 3,
+     "seite": "/",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 176,
+       "eintraege": 3,
+       "ziel": "anker",
+       "fenster": [
+        1792830594685,
+        1792830595873
+       ]
+      },
+      "menue": {
+       "wert": 136,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1792830596001,
+        1792830597271
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "nicht_vorhanden": true
+      },
+      "eingabe": {
+       "wert": 64,
+       "eintraege": 14,
+       "ziel": "eingabe",
+       "fenster": [
+        1792830597374,
+        1792830598609
+       ]
+      },
+      "link": {
+       "wert": 88,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1792830598705,
+        1792830600485
+       ],
+       "navigiert_zu": "/bad/barrierefreies-bad",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 128,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    },
+    {
+     "lauf": 4,
+     "seite": "/",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 80,
+       "eintraege": 3,
+       "ziel": "anker",
+       "fenster": [
+        1792830603342,
+        1792830604186
+       ]
+      },
+      "menue": {
+       "wert": 144,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1792830604310,
+        1792830605741
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "nicht_vorhanden": true
+      },
+      "eingabe": {
+       "wert": 64,
+       "eintraege": 14,
+       "ziel": "eingabe",
+       "fenster": [
+        1792830605855,
+        1792830607038
+       ]
+      },
+      "link": {
+       "wert": 72,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1792830607089,
+        1792830608837
+       ],
+       "navigiert_zu": "/bad/barrierefreies-bad",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 24,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    },
+    {
+     "lauf": 5,
+     "seite": "/",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 168,
+       "eintraege": 3,
+       "ziel": "anker",
+       "fenster": [
+        1792830611187,
+        1792830612291
+       ]
+      },
+      "menue": {
+       "wert": 168,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1792830612410,
+        1792830613761
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "nicht_vorhanden": true
+      },
+      "eingabe": {
+       "wert": 72,
+       "eintraege": 14,
+       "ziel": "eingabe",
+       "fenster": [
+        1792830613886,
+        1792830615182
+       ]
+      },
+      "link": {
+       "wert": 56,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1792830615283,
+        1792830617324
+       ],
+       "navigiert_zu": "/bad/barrierefreies-bad",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 168,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    }
+   ]
+  }
+ ]
+}

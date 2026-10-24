@@ -1,0 +1,1713 @@
+{
+ "satz": "e2",
+ "base": "http://127.0.0.1:4311",
+ "ziel": "/home/user/tezgel/_werkstatt/belege/e2",
+ "protokoll": {
+  "durchgaenge": [
+   "erstbesuch",
+   "nach-einwilligung"
+  ],
+  "geraete": [
+   "m360",
+   "m390",
+   "m430",
+   "q844",
+   "t768",
+   "t1024",
+   "d1280",
+   "d1440",
+   "d1920",
+   "d2560"
+  ],
+  "seiten": [
+   "/"
+  ],
+  "pruefpunkte": [
+   "logo",
+   "ueberschrift",
+   "ort",
+   "hauptknopf",
+   "kontakt"
+  ],
+  "bewegung": "no-preference",
+  "dpr": 1,
+  "locale": "de-DE",
+  "zeitzone": "Europe/Berlin",
+  "scroll": 0,
+  "ort_regex": "Aßlar|Wetzlar|Gießen|Mittelhessen|Lahn-Dill|Hessen",
+  "hauptknopf_regex": "anfragen|Termin|Aufmaß",
+  "ketten": {
+   "logo": [
+    "header a[href=\"/\"] img",
+    "header img[alt*=\"Tezgel\"]"
+   ],
+   "ueberschrift": [
+    "h1"
+   ],
+   "kontakt": [
+    "a[href^=\"tel:\"]",
+    "a[href*=\"wa.me\"]",
+    "a[href*=\"whatsapp\"]"
+   ]
+  }
+ },
+ "zusammenfassung": {
+  "faelle": 20,
+  "fehler": 0,
+  "nicht200": 0,
+  "fremd": 0,
+  "blockiert": 0,
+  "alleBestanden": 14
+ },
+ "ergebnisse": [
+  {
+   "seite": "/",
+   "geraet": "m360",
+   "durchgang": "erstbesuch",
+   "status": 200,
+   "messung": {
+    "elemente": {
+     "logo": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"logo\"]",
+      "selektor": "div.mx-auto.w-full > a.min-w-0.shrink > span.flex.min-w-0 > img.h-12.w-auto",
+      "rechteck": {
+       "x": 16,
+       "y": 8,
+       "w": 153.6,
+       "h": 48
+      }
+     },
+     "ueberschrift": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ueberschrift\"]",
+      "selektor": "h1#start-titel",
+      "rechteck": {
+       "x": 16,
+       "y": 96,
+       "w": 328,
+       "h": 116.9
+      }
+     },
+     "ort": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ort\"]",
+      "selektor": "section.relative > div.mx-auto.w-full > div.col-span-4.md:col-span-8 > p.mt-6.font-text",
+      "rechteck": {
+       "x": 16,
+       "y": 236.9,
+       "w": 328,
+       "h": 60
+      }
+     },
+     "hauptknopf": {
+      "gefunden": true,
+      "sichtbar": false,
+      "ursache": "verdeckt-durch",
+      "regel": "[data-erstes-bild=\"hauptknopf\"]",
+      "selektor": "div.col-span-4.md:col-span-8 > div.flex.flex-col > div.mt-8.flex > a.inline-flex.min-h-11",
+      "rechteck": {
+       "x": 16,
+       "y": 328.9,
+       "w": 328,
+       "h": 49.3
+      },
+      "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4.md:p-6 > div.flex.items-start > p.pt-2.text-fs-3"
+     },
+     "kontakt": {
+      "gefunden": true,
+      "sichtbar": false,
+      "ursache": "verdeckt-durch",
+      "regel": "[data-erstes-bild=\"kontakt\"]",
+      "selektor": "div.flex.flex-col > div.mt-8.flex > div.flex.flex-col > a.inline-flex.min-h-11",
+      "rechteck": {
+       "x": 16,
+       "y": 390.2,
+       "w": 328,
+       "h": 50.3
+      },
+      "durch": "p#cookie-consent-description > span.block"
+     }
+    },
+    "querformat": null,
+    "vw": 360,
+    "vh": 740
+   },
+   "bestanden": 3,
+   "bild": null,
+   "fehler": null
+  },
+  {
+   "seite": "/",
+   "geraet": "m360",
+   "durchgang": "nach-einwilligung",
+   "status": 200,
+   "messung": {
+    "elemente": {
+     "logo": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"logo\"]",
+      "selektor": "div.mx-auto.w-full > a.min-w-0.shrink > span.flex.min-w-0 > img.h-12.w-auto",
+      "rechteck": {
+       "x": 16,
+       "y": 8,
+       "w": 153.6,
+       "h": 48
+      }
+     },
+     "ueberschrift": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ueberschrift\"]",
+      "selektor": "h1#start-titel",
+      "rechteck": {
+       "x": 16,
+       "y": 96,
+       "w": 328,
+       "h": 116.9
+      }
+     },
+     "ort": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ort\"]",
+      "selektor": "section.relative > div.mx-auto.w-full > div.col-span-4.md:col-span-8 > p.mt-6.font-text",
+      "rechteck": {
+       "x": 16,
+       "y": 236.9,
+       "w": 328,
+       "h": 60
+      }
+     },
+     "hauptknopf": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"hauptknopf\"]",
+      "selektor": "div.col-span-4.md:col-span-8 > div.flex.flex-col > div.mt-8.flex > a.inline-flex.min-h-11",
+      "rechteck": {
+       "x": 16,
+       "y": 328.9,
+       "w": 328,
+       "h": 49.3
+      }
+     },
+     "kontakt": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"kontakt\"]",
+      "selektor": "div.flex.flex-col > div.mt-8.flex > div.flex.flex-col > a.inline-flex.min-h-11",
+      "rechteck": {
+       "x": 16,
+       "y": 390.2,
+       "w": 328,
+       "h": 50.3
+      }
+     }
+    },
+    "querformat": null,
+    "vw": 360,
+    "vh": 740
+   },
+   "bestanden": 5,
+   "bild": null,
+   "fehler": null
+  },
+  {
+   "seite": "/",
+   "geraet": "m390",
+   "durchgang": "erstbesuch",
+   "status": 200,
+   "messung": {
+    "elemente": {
+     "logo": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"logo\"]",
+      "selektor": "div.mx-auto.w-full > a.min-w-0.shrink > span.flex.min-w-0 > img.h-12.w-auto",
+      "rechteck": {
+       "x": 16,
+       "y": 8,
+       "w": 153.6,
+       "h": 48
+      }
+     },
+     "ueberschrift": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ueberschrift\"]",
+      "selektor": "h1#start-titel",
+      "rechteck": {
+       "x": 16,
+       "y": 96,
+       "w": 358,
+       "h": 122.3
+      }
+     },
+     "ort": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ort\"]",
+      "selektor": "section.relative > div.mx-auto.w-full > div.col-span-4.md:col-span-8 > p.mt-6.font-text",
+      "rechteck": {
+       "x": 16,
+       "y": 242.3,
+       "w": 358,
+       "h": 60.5
+      }
+     },
+     "hauptknopf": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"hauptknopf\"]",
+      "selektor": "div.col-span-4.md:col-span-8 > div.flex.flex-col > div.mt-8.flex > a.inline-flex.min-h-11",
+      "rechteck": {
+       "x": 16,
+       "y": 334.8,
+       "w": 358,
+       "h": 49.3
+      }
+     },
+     "kontakt": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"kontakt\"]",
+      "selektor": "div.flex.flex-col > div.mt-8.flex > div.flex.flex-col > a.inline-flex.min-h-11",
+      "rechteck": {
+       "x": 16,
+       "y": 396,
+       "w": 358,
+       "h": 50.3
+      }
+     }
+    },
+    "querformat": null,
+    "vw": 390,
+    "vh": 844
+   },
+   "bestanden": 5,
+   "bild": null,
+   "fehler": null
+  },
+  {
+   "seite": "/",
+   "geraet": "m390",
+   "durchgang": "nach-einwilligung",
+   "status": 200,
+   "messung": {
+    "elemente": {
+     "logo": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"logo\"]",
+      "selektor": "div.mx-auto.w-full > a.min-w-0.shrink > span.flex.min-w-0 > img.h-12.w-auto",
+      "rechteck": {
+       "x": 16,
+       "y": 8,
+       "w": 153.6,
+       "h": 48
+      }
+     },
+     "ueberschrift": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ueberschrift\"]",
+      "selektor": "h1#start-titel",
+      "rechteck": {
+       "x": 16,
+       "y": 96,
+       "w": 358,
+       "h": 122.3
+      }
+     },
+     "ort": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ort\"]",
+      "selektor": "section.relative > div.mx-auto.w-full > div.col-span-4.md:col-span-8 > p.mt-6.font-text",
+      "rechteck": {
+       "x": 16,
+       "y": 242.3,
+       "w": 358,
+       "h": 60.5
+      }
+     },
+     "hauptknopf": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"hauptknopf\"]",
+      "selektor": "div.col-span-4.md:col-span-8 > div.flex.flex-col > div.mt-8.flex > a.inline-flex.min-h-11",
+      "rechteck": {
+       "x": 16,
+       "y": 334.8,
+       "w": 358,
+       "h": 49.3
+      }
+     },
+     "kontakt": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"kontakt\"]",
+      "selektor": "div.flex.flex-col > div.mt-8.flex > div.flex.flex-col > a.inline-flex.min-h-11",
+      "rechteck": {
+       "x": 16,
+       "y": 396,
+       "w": 358,
+       "h": 50.3
+      }
+     }
+    },
+    "querformat": null,
+    "vw": 390,
+    "vh": 844
+   },
+   "bestanden": 5,
+   "bild": null,
+   "fehler": null
+  },
+  {
+   "seite": "/",
+   "geraet": "m430",
+   "durchgang": "erstbesuch",
+   "status": 200,
+   "messung": {
+    "elemente": {
+     "logo": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"logo\"]",
+      "selektor": "div.mx-auto.w-full > a.min-w-0.shrink > span.flex.min-w-0 > img.h-12.w-auto",
+      "rechteck": {
+       "x": 16,
+       "y": 8,
+       "w": 153.6,
+       "h": 48
+      }
+     },
+     "ueberschrift": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ueberschrift\"]",
+      "selektor": "h1#start-titel",
+      "rechteck": {
+       "x": 16,
+       "y": 96,
+       "w": 398,
+       "h": 129.4
+      }
+     },
+     "ort": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ort\"]",
+      "selektor": "section.relative > div.mx-auto.w-full > div.col-span-4.md:col-span-8 > p.mt-6.font-text",
+      "rechteck": {
+       "x": 16,
+       "y": 249.4,
+       "w": 398,
+       "h": 61
+      }
+     },
+     "hauptknopf": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"hauptknopf\"]",
+      "selektor": "div.col-span-4.md:col-span-8 > div.flex.flex-col > div.mt-8.flex > a.inline-flex.min-h-11",
+      "rechteck": {
+       "x": 16,
+       "y": 342.4,
+       "w": 398,
+       "h": 49.3
+      }
+     },
+     "kontakt": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"kontakt\"]",
+      "selektor": "div.flex.flex-col > div.mt-8.flex > div.flex.flex-col > a.inline-flex.min-h-11",
+      "rechteck": {
+       "x": 16,
+       "y": 403.7,
+       "w": 398,
+       "h": 50.3
+      }
+     }
+    },
+    "querformat": null,
+    "vw": 430,
+    "vh": 932
+   },
+   "bestanden": 5,
+   "bild": null,
+   "fehler": null
+  },
+  {
+   "seite": "/",
+   "geraet": "m430",
+   "durchgang": "nach-einwilligung",
+   "status": 200,
+   "messung": {
+    "elemente": {
+     "logo": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"logo\"]",
+      "selektor": "div.mx-auto.w-full > a.min-w-0.shrink > span.flex.min-w-0 > img.h-12.w-auto",
+      "rechteck": {
+       "x": 16,
+       "y": 8,
+       "w": 153.6,
+       "h": 48
+      }
+     },
+     "ueberschrift": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ueberschrift\"]",
+      "selektor": "h1#start-titel",
+      "rechteck": {
+       "x": 16,
+       "y": 96,
+       "w": 398,
+       "h": 129.4
+      }
+     },
+     "ort": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ort\"]",
+      "selektor": "section.relative > div.mx-auto.w-full > div.col-span-4.md:col-span-8 > p.mt-6.font-text",
+      "rechteck": {
+       "x": 16,
+       "y": 249.4,
+       "w": 398,
+       "h": 61
+      }
+     },
+     "hauptknopf": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"hauptknopf\"]",
+      "selektor": "div.col-span-4.md:col-span-8 > div.flex.flex-col > div.mt-8.flex > a.inline-flex.min-h-11",
+      "rechteck": {
+       "x": 16,
+       "y": 342.4,
+       "w": 398,
+       "h": 49.3
+      }
+     },
+     "kontakt": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"kontakt\"]",
+      "selektor": "div.flex.flex-col > div.mt-8.flex > div.flex.flex-col > a.inline-flex.min-h-11",
+      "rechteck": {
+       "x": 16,
+       "y": 403.7,
+       "w": 398,
+       "h": 50.3
+      }
+     }
+    },
+    "querformat": null,
+    "vw": 430,
+    "vh": 932
+   },
+   "bestanden": 5,
+   "bild": null,
+   "fehler": null
+  },
+  {
+   "seite": "/",
+   "geraet": "q844",
+   "durchgang": "erstbesuch",
+   "status": 200,
+   "messung": {
+    "elemente": {
+     "logo": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"logo\"]",
+      "selektor": "div.mx-auto.w-full > a.min-w-0.shrink > span.flex.min-w-0 > img.h-12.w-auto",
+      "rechteck": {
+       "x": 32,
+       "y": 4,
+       "w": 128,
+       "h": 40
+      }
+     },
+     "ueberschrift": {
+      "gefunden": true,
+      "sichtbar": false,
+      "ursache": "verdeckt-durch",
+      "regel": "[data-erstes-bild=\"ueberschrift\"]",
+      "selektor": "h1#start-titel",
+      "rechteck": {
+       "x": 32,
+       "y": 96,
+       "w": 780,
+       "h": 135.5
+      },
+      "durch": "p#cookie-consent-description > span.block > strong.font-semibold.text-tinte"
+     },
+     "ort": {
+      "gefunden": true,
+      "sichtbar": false,
+      "ursache": "verdeckt-durch",
+      "regel": "[data-erstes-bild=\"ort\"]",
+      "selektor": "section.relative > div.mx-auto.w-full > div.col-span-4.md:col-span-8 > p.mt-6.font-text",
+      "rechteck": {
+       "x": 32,
+       "y": 255.5,
+       "w": 780,
+       "h": 33.3
+      },
+      "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4.md:p-6 > div.mt-4.grid"
+     },
+     "hauptknopf": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"hauptknopf\"]",
+      "selektor": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "rechteck": {
+       "x": 579.7,
+       "y": 346,
+       "w": 264.3,
+       "h": 44
+      }
+     },
+     "kontakt": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"kontakt\"]",
+      "selektor": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "rechteck": {
+       "x": 49,
+       "y": 346,
+       "w": 264.3,
+       "h": 44
+      }
+     }
+    },
+    "querformat": {
+     "hoehe": 390,
+     "summe": 94,
+     "anteil_prozent": 24.1,
+     "ok": true,
+     "elemente": [
+      "oben header.kopf-anker.@container (49 px)",
+      "unten aside.unten-sicher.fixed (45 px)"
+     ]
+    },
+    "vw": 844,
+    "vh": 390
+   },
+   "bestanden": 3,
+   "bild": null,
+   "fehler": null
+  },
+  {
+   "seite": "/",
+   "geraet": "q844",
+   "durchgang": "nach-einwilligung",
+   "status": 200,
+   "messung": {
+    "elemente": {
+     "logo": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"logo\"]",
+      "selektor": "div.mx-auto.w-full > a.min-w-0.shrink > span.flex.min-w-0 > img.h-12.w-auto",
+      "rechteck": {
+       "x": 32,
+       "y": 4,
+       "w": 128,
+       "h": 40
+      }
+     },
+     "ueberschrift": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ueberschrift\"]",
+      "selektor": "h1#start-titel",
+      "rechteck": {
+       "x": 32,
+       "y": 96,
+       "w": 780,
+       "h": 135.5
+      }
+     },
+     "ort": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ort\"]",
+      "selektor": "section.relative > div.mx-auto.w-full > div.col-span-4.md:col-span-8 > p.mt-6.font-text",
+      "rechteck": {
+       "x": 32,
+       "y": 255.5,
+       "w": 780,
+       "h": 33.3
+      }
+     },
+     "hauptknopf": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"hauptknopf\"]",
+      "selektor": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "rechteck": {
+       "x": 579.7,
+       "y": 346,
+       "w": 264.3,
+       "h": 44
+      }
+     },
+     "kontakt": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"kontakt\"]",
+      "selektor": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+      "rechteck": {
+       "x": 49,
+       "y": 346,
+       "w": 264.3,
+       "h": 44
+      }
+     }
+    },
+    "querformat": {
+     "hoehe": 390,
+     "summe": 94,
+     "anteil_prozent": 24.1,
+     "ok": true,
+     "elemente": [
+      "oben header.kopf-anker.@container (49 px)",
+      "unten aside.unten-sicher.fixed (45 px)"
+     ]
+    },
+    "vw": 844,
+    "vh": 390
+   },
+   "bestanden": 5,
+   "bild": null,
+   "fehler": null
+  },
+  {
+   "seite": "/",
+   "geraet": "t768",
+   "durchgang": "erstbesuch",
+   "status": 200,
+   "messung": {
+    "elemente": {
+     "logo": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"logo\"]",
+      "selektor": "div.mx-auto.w-full > a.min-w-0.shrink > span.flex.min-w-0 > img.h-12.w-auto",
+      "rechteck": {
+       "x": 32,
+       "y": 8,
+       "w": 153.6,
+       "h": 48
+      }
+     },
+     "ueberschrift": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ueberschrift\"]",
+      "selektor": "h1#start-titel",
+      "rechteck": {
+       "x": 32,
+       "y": 96,
+       "w": 704,
+       "h": 126.4
+      }
+     },
+     "ort": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ort\"]",
+      "selektor": "section.relative > div.mx-auto.w-full > div.col-span-4.md:col-span-8 > p.mt-6.font-text",
+      "rechteck": {
+       "x": 32,
+       "y": 246.4,
+       "w": 704,
+       "h": 32.8
+      }
+     },
+     "hauptknopf": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"hauptknopf\"]",
+      "selektor": "div.col-span-4.md:col-span-8 > div.flex.flex-col > div.mt-8.flex > a.inline-flex.min-h-11",
+      "rechteck": {
+       "x": 32,
+       "y": 384.8,
+       "w": 245.6,
+       "h": 50.1
+      }
+     },
+     "kontakt": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"kontakt\"]",
+      "selektor": "div.flex.flex-col > div.mt-8.flex > div.flex.flex-col > a.inline-flex.min-h-11",
+      "rechteck": {
+       "x": 289.6,
+       "y": 384.3,
+       "w": 302.2,
+       "h": 51.1
+      }
+     }
+    },
+    "querformat": null,
+    "vw": 768,
+    "vh": 1024
+   },
+   "bestanden": 5,
+   "bild": null,
+   "fehler": null
+  },
+  {
+   "seite": "/",
+   "geraet": "t768",
+   "durchgang": "nach-einwilligung",
+   "status": 200,
+   "messung": {
+    "elemente": {
+     "logo": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"logo\"]",
+      "selektor": "div.mx-auto.w-full > a.min-w-0.shrink > span.flex.min-w-0 > img.h-12.w-auto",
+      "rechteck": {
+       "x": 32,
+       "y": 8,
+       "w": 153.6,
+       "h": 48
+      }
+     },
+     "ueberschrift": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ueberschrift\"]",
+      "selektor": "h1#start-titel",
+      "rechteck": {
+       "x": 32,
+       "y": 96,
+       "w": 704,
+       "h": 126.4
+      }
+     },
+     "ort": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ort\"]",
+      "selektor": "section.relative > div.mx-auto.w-full > div.col-span-4.md:col-span-8 > p.mt-6.font-text",
+      "rechteck": {
+       "x": 32,
+       "y": 246.4,
+       "w": 704,
+       "h": 32.8
+      }
+     },
+     "hauptknopf": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"hauptknopf\"]",
+      "selektor": "div.col-span-4.md:col-span-8 > div.flex.flex-col > div.mt-8.flex > a.inline-flex.min-h-11",
+      "rechteck": {
+       "x": 32,
+       "y": 384.8,
+       "w": 245.6,
+       "h": 50.1
+      }
+     },
+     "kontakt": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"kontakt\"]",
+      "selektor": "div.flex.flex-col > div.mt-8.flex > div.flex.flex-col > a.inline-flex.min-h-11",
+      "rechteck": {
+       "x": 289.6,
+       "y": 384.3,
+       "w": 302.2,
+       "h": 51.1
+      }
+     }
+    },
+    "querformat": null,
+    "vw": 768,
+    "vh": 1024
+   },
+   "bestanden": 5,
+   "bild": null,
+   "fehler": null
+  },
+  {
+   "seite": "/",
+   "geraet": "t1024",
+   "durchgang": "erstbesuch",
+   "status": 200,
+   "messung": {
+    "elemente": {
+     "logo": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"logo\"]",
+      "selektor": "div.mx-auto.w-full > a.min-w-0.shrink > span.flex.min-w-0 > img.h-12.w-auto",
+      "rechteck": {
+       "x": 48,
+       "y": 8,
+       "w": 153.6,
+       "h": 48
+      }
+     },
+     "ueberschrift": {
+      "gefunden": true,
+      "sichtbar": false,
+      "ursache": "verdeckt-durch",
+      "regel": "[data-erstes-bild=\"ueberschrift\"]",
+      "selektor": "h1#start-titel",
+      "rechteck": {
+       "x": 48,
+       "y": 128,
+       "w": 521.3,
+       "h": 313.7
+      },
+      "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4.md:p-6 > div.flex.items-start"
+     },
+     "ort": {
+      "gefunden": true,
+      "sichtbar": false,
+      "ursache": "verdeckt-durch",
+      "regel": "[data-erstes-bild=\"ort\"]",
+      "selektor": "section.relative > div.mx-auto.w-full > div.col-span-4.md:col-span-8 > p.mt-6.font-text",
+      "rechteck": {
+       "x": 48,
+       "y": 465.7,
+       "w": 521.3,
+       "h": 69
+      },
+      "durch": "p#cookie-consent-description > span.block"
+     },
+     "hauptknopf": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"hauptknopf\"]",
+      "selektor": "header.kopf-anker.@container > div.mx-auto.w-full > div.flex.shrink-0 > a.inline-flex.min-h-11",
+      "rechteck": {
+       "x": 702.4,
+       "y": 6.6,
+       "w": 221.6,
+       "h": 50.7
+      }
+     },
+     "kontakt": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"kontakt\"]",
+      "selektor": "header.kopf-anker.@container > div.mx-auto.w-full > div.flex.shrink-0 > a.hidden.min-h-11",
+      "rechteck": {
+       "x": 444,
+       "y": 10,
+       "w": 198.4,
+       "h": 44
+      }
+     }
+    },
+    "querformat": null,
+    "vw": 1024,
+    "vh": 768
+   },
+   "bestanden": 3,
+   "bild": null,
+   "fehler": null
+  },
+  {
+   "seite": "/",
+   "geraet": "t1024",
+   "durchgang": "nach-einwilligung",
+   "status": 200,
+   "messung": {
+    "elemente": {
+     "logo": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"logo\"]",
+      "selektor": "div.mx-auto.w-full > a.min-w-0.shrink > span.flex.min-w-0 > img.h-12.w-auto",
+      "rechteck": {
+       "x": 48,
+       "y": 8,
+       "w": 153.6,
+       "h": 48
+      }
+     },
+     "ueberschrift": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ueberschrift\"]",
+      "selektor": "h1#start-titel",
+      "rechteck": {
+       "x": 48,
+       "y": 128,
+       "w": 521.3,
+       "h": 313.7
+      }
+     },
+     "ort": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ort\"]",
+      "selektor": "section.relative > div.mx-auto.w-full > div.col-span-4.md:col-span-8 > p.mt-6.font-text",
+      "rechteck": {
+       "x": 48,
+       "y": 465.7,
+       "w": 521.3,
+       "h": 69
+      }
+     },
+     "hauptknopf": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"hauptknopf\"]",
+      "selektor": "header.kopf-anker.@container > div.mx-auto.w-full > div.flex.shrink-0 > a.inline-flex.min-h-11",
+      "rechteck": {
+       "x": 702.4,
+       "y": 6.6,
+       "w": 221.6,
+       "h": 50.7
+      }
+     },
+     "kontakt": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"kontakt\"]",
+      "selektor": "header.kopf-anker.@container > div.mx-auto.w-full > div.flex.shrink-0 > a.hidden.min-h-11",
+      "rechteck": {
+       "x": 444,
+       "y": 10,
+       "w": 198.4,
+       "h": 44
+      }
+     }
+    },
+    "querformat": null,
+    "vw": 1024,
+    "vh": 768
+   },
+   "bestanden": 5,
+   "bild": null,
+   "fehler": null
+  },
+  {
+   "seite": "/",
+   "geraet": "d1280",
+   "durchgang": "erstbesuch",
+   "status": 200,
+   "messung": {
+    "elemente": {
+     "logo": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"logo\"]",
+      "selektor": "div.mx-auto.w-full > a.min-w-0.shrink > span.flex.min-w-0 > img.h-12.w-auto",
+      "rechteck": {
+       "x": 48,
+       "y": 10,
+       "w": 140.8,
+       "h": 44
+      }
+     },
+     "ueberschrift": {
+      "gefunden": true,
+      "sichtbar": false,
+      "ursache": "verdeckt-durch",
+      "regel": "[data-erstes-bild=\"ueberschrift\"]",
+      "selektor": "h1#start-titel",
+      "rechteck": {
+       "x": 48,
+       "y": 139.1,
+       "w": 670.7,
+       "h": 280.9
+      },
+      "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4.md:p-6"
+     },
+     "ort": {
+      "gefunden": true,
+      "sichtbar": false,
+      "ursache": "verdeckt-durch",
+      "regel": "[data-erstes-bild=\"ort\"]",
+      "selektor": "section.relative > div.mx-auto.w-full > div.col-span-4.md:col-span-8 > p.mt-6.font-text",
+      "rechteck": {
+       "x": 48,
+       "y": 443.9,
+       "w": 670.7,
+       "h": 72
+      },
+      "durch": "p#cookie-consent-description > span.block"
+     },
+     "hauptknopf": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"hauptknopf\"]",
+      "selektor": "header.kopf-anker.@container > div.mx-auto.w-full > div.flex.shrink-0 > a.inline-flex.min-h-11",
+      "rechteck": {
+       "x": 1033.5,
+       "y": 6.6,
+       "w": 198.5,
+       "h": 50.8
+      }
+     },
+     "kontakt": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"kontakt\"]",
+      "selektor": "header.kopf-anker.@container > div.mx-auto.w-full > div.flex.shrink-0 > a.hidden.min-h-11",
+      "rechteck": {
+       "x": 929.5,
+       "y": 10,
+       "w": 44,
+       "h": 44
+      }
+     }
+    },
+    "querformat": null,
+    "vw": 1280,
+    "vh": 800
+   },
+   "bestanden": 3,
+   "bild": null,
+   "fehler": null
+  },
+  {
+   "seite": "/",
+   "geraet": "d1280",
+   "durchgang": "nach-einwilligung",
+   "status": 200,
+   "messung": {
+    "elemente": {
+     "logo": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"logo\"]",
+      "selektor": "div.mx-auto.w-full > a.min-w-0.shrink > span.flex.min-w-0 > img.h-12.w-auto",
+      "rechteck": {
+       "x": 48,
+       "y": 10,
+       "w": 140.8,
+       "h": 44
+      }
+     },
+     "ueberschrift": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ueberschrift\"]",
+      "selektor": "h1#start-titel",
+      "rechteck": {
+       "x": 48,
+       "y": 139.1,
+       "w": 670.7,
+       "h": 280.9
+      }
+     },
+     "ort": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ort\"]",
+      "selektor": "section.relative > div.mx-auto.w-full > div.col-span-4.md:col-span-8 > p.mt-6.font-text",
+      "rechteck": {
+       "x": 48,
+       "y": 443.9,
+       "w": 670.7,
+       "h": 72
+      }
+     },
+     "hauptknopf": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"hauptknopf\"]",
+      "selektor": "header.kopf-anker.@container > div.mx-auto.w-full > div.flex.shrink-0 > a.inline-flex.min-h-11",
+      "rechteck": {
+       "x": 1033.5,
+       "y": 6.6,
+       "w": 198.5,
+       "h": 50.8
+      }
+     },
+     "kontakt": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"kontakt\"]",
+      "selektor": "header.kopf-anker.@container > div.mx-auto.w-full > div.flex.shrink-0 > a.hidden.min-h-11",
+      "rechteck": {
+       "x": 929.5,
+       "y": 10,
+       "w": 44,
+       "h": 44
+      }
+     }
+    },
+    "querformat": null,
+    "vw": 1280,
+    "vh": 800
+   },
+   "bestanden": 5,
+   "bild": null,
+   "fehler": null
+  },
+  {
+   "seite": "/",
+   "geraet": "d1440",
+   "durchgang": "erstbesuch",
+   "status": 200,
+   "messung": {
+    "elemente": {
+     "logo": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"logo\"]",
+      "selektor": "div.mx-auto.w-full > a.min-w-0.shrink > span.flex.min-w-0 > img.h-12.w-auto",
+      "rechteck": {
+       "x": 112,
+       "y": 10,
+       "w": 140.8,
+       "h": 44
+      }
+     },
+     "ueberschrift": {
+      "gefunden": true,
+      "sichtbar": false,
+      "ursache": "verdeckt-durch",
+      "regel": "[data-erstes-bild=\"ueberschrift\"]",
+      "selektor": "h1#start-titel",
+      "rechteck": {
+       "x": 112,
+       "y": 128,
+       "w": 689.3,
+       "h": 412.6
+      },
+      "durch": "div.p-4.md:p-6 > div.flex.items-start > p.pt-2.text-fs-3 > span"
+     },
+     "ort": {
+      "gefunden": true,
+      "sichtbar": false,
+      "ursache": "verdeckt-durch",
+      "regel": "[data-erstes-bild=\"ort\"]",
+      "selektor": "section.relative > div.mx-auto.w-full > div.col-span-4.md:col-span-8 > p.mt-6.font-text",
+      "rechteck": {
+       "x": 112,
+       "y": 564.6,
+       "w": 689.3,
+       "h": 72
+      },
+      "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4.md:p-6"
+     },
+     "hauptknopf": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"hauptknopf\"]",
+      "selektor": "header.kopf-anker.@container > div.mx-auto.w-full > div.flex.shrink-0 > a.inline-flex.min-h-11",
+      "rechteck": {
+       "x": 1129.5,
+       "y": 6.6,
+       "w": 198.5,
+       "h": 50.8
+      }
+     },
+     "kontakt": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"kontakt\"]",
+      "selektor": "header.kopf-anker.@container > div.mx-auto.w-full > div.flex.shrink-0 > a.hidden.min-h-11",
+      "rechteck": {
+       "x": 1025.5,
+       "y": 10,
+       "w": 44,
+       "h": 44
+      }
+     }
+    },
+    "querformat": null,
+    "vw": 1440,
+    "vh": 900
+   },
+   "bestanden": 3,
+   "bild": null,
+   "fehler": null
+  },
+  {
+   "seite": "/",
+   "geraet": "d1440",
+   "durchgang": "nach-einwilligung",
+   "status": 200,
+   "messung": {
+    "elemente": {
+     "logo": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"logo\"]",
+      "selektor": "div.mx-auto.w-full > a.min-w-0.shrink > span.flex.min-w-0 > img.h-12.w-auto",
+      "rechteck": {
+       "x": 112,
+       "y": 10,
+       "w": 140.8,
+       "h": 44
+      }
+     },
+     "ueberschrift": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ueberschrift\"]",
+      "selektor": "h1#start-titel",
+      "rechteck": {
+       "x": 112,
+       "y": 128,
+       "w": 689.3,
+       "h": 412.6
+      }
+     },
+     "ort": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ort\"]",
+      "selektor": "section.relative > div.mx-auto.w-full > div.col-span-4.md:col-span-8 > p.mt-6.font-text",
+      "rechteck": {
+       "x": 112,
+       "y": 564.6,
+       "w": 689.3,
+       "h": 72
+      }
+     },
+     "hauptknopf": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"hauptknopf\"]",
+      "selektor": "header.kopf-anker.@container > div.mx-auto.w-full > div.flex.shrink-0 > a.inline-flex.min-h-11",
+      "rechteck": {
+       "x": 1129.5,
+       "y": 6.6,
+       "w": 198.5,
+       "h": 50.8
+      }
+     },
+     "kontakt": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"kontakt\"]",
+      "selektor": "header.kopf-anker.@container > div.mx-auto.w-full > div.flex.shrink-0 > a.hidden.min-h-11",
+      "rechteck": {
+       "x": 1025.5,
+       "y": 10,
+       "w": 44,
+       "h": 44
+      }
+     }
+    },
+    "querformat": null,
+    "vw": 1440,
+    "vh": 900
+   },
+   "bestanden": 5,
+   "bild": null,
+   "fehler": null
+  },
+  {
+   "seite": "/",
+   "geraet": "d1920",
+   "durchgang": "erstbesuch",
+   "status": 200,
+   "messung": {
+    "elemente": {
+     "logo": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"logo\"]",
+      "selektor": "div.mx-auto.w-full > a.min-w-0.shrink > span.flex.min-w-0 > img.h-12.w-auto",
+      "rechteck": {
+       "x": 352,
+       "y": 10,
+       "w": 140.8,
+       "h": 44
+      }
+     },
+     "ueberschrift": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ueberschrift\"]",
+      "selektor": "h1#start-titel",
+      "rechteck": {
+       "x": 352,
+       "y": 128,
+       "w": 689.3,
+       "h": 457.6
+      }
+     },
+     "ort": {
+      "gefunden": true,
+      "sichtbar": false,
+      "ursache": "verdeckt-durch",
+      "regel": "[data-erstes-bild=\"ort\"]",
+      "selektor": "section.relative > div.mx-auto.w-full > div.col-span-4.md:col-span-8 > p.mt-6.font-text",
+      "rechteck": {
+       "x": 352,
+       "y": 609.6,
+       "w": 689.3,
+       "h": 72
+      },
+      "durch": "div.hoehe-banner.ueber-leiste-12"
+     },
+     "hauptknopf": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"hauptknopf\"]",
+      "selektor": "header.kopf-anker.@container > div.mx-auto.w-full > div.flex.shrink-0 > a.inline-flex.min-h-11",
+      "rechteck": {
+       "x": 1369.5,
+       "y": 6.6,
+       "w": 198.5,
+       "h": 50.8
+      }
+     },
+     "kontakt": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"kontakt\"]",
+      "selektor": "header.kopf-anker.@container > div.mx-auto.w-full > div.flex.shrink-0 > a.hidden.min-h-11",
+      "rechteck": {
+       "x": 1265.5,
+       "y": 10,
+       "w": 44,
+       "h": 44
+      }
+     }
+    },
+    "querformat": null,
+    "vw": 1920,
+    "vh": 1080
+   },
+   "bestanden": 4,
+   "bild": null,
+   "fehler": null
+  },
+  {
+   "seite": "/",
+   "geraet": "d1920",
+   "durchgang": "nach-einwilligung",
+   "status": 200,
+   "messung": {
+    "elemente": {
+     "logo": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"logo\"]",
+      "selektor": "div.mx-auto.w-full > a.min-w-0.shrink > span.flex.min-w-0 > img.h-12.w-auto",
+      "rechteck": {
+       "x": 352,
+       "y": 10,
+       "w": 140.8,
+       "h": 44
+      }
+     },
+     "ueberschrift": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ueberschrift\"]",
+      "selektor": "h1#start-titel",
+      "rechteck": {
+       "x": 352,
+       "y": 128,
+       "w": 689.3,
+       "h": 457.6
+      }
+     },
+     "ort": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ort\"]",
+      "selektor": "section.relative > div.mx-auto.w-full > div.col-span-4.md:col-span-8 > p.mt-6.font-text",
+      "rechteck": {
+       "x": 352,
+       "y": 609.6,
+       "w": 689.3,
+       "h": 72
+      }
+     },
+     "hauptknopf": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"hauptknopf\"]",
+      "selektor": "header.kopf-anker.@container > div.mx-auto.w-full > div.flex.shrink-0 > a.inline-flex.min-h-11",
+      "rechteck": {
+       "x": 1369.5,
+       "y": 6.6,
+       "w": 198.5,
+       "h": 50.8
+      }
+     },
+     "kontakt": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"kontakt\"]",
+      "selektor": "header.kopf-anker.@container > div.mx-auto.w-full > div.flex.shrink-0 > a.hidden.min-h-11",
+      "rechteck": {
+       "x": 1265.5,
+       "y": 10,
+       "w": 44,
+       "h": 44
+      }
+     }
+    },
+    "querformat": null,
+    "vw": 1920,
+    "vh": 1080
+   },
+   "bestanden": 5,
+   "bild": null,
+   "fehler": null
+  },
+  {
+   "seite": "/",
+   "geraet": "d2560",
+   "durchgang": "erstbesuch",
+   "status": 200,
+   "messung": {
+    "elemente": {
+     "logo": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"logo\"]",
+      "selektor": "div.mx-auto.w-full > a.min-w-0.shrink > span.flex.min-w-0 > img.h-12.w-auto",
+      "rechteck": {
+       "x": 672,
+       "y": 10,
+       "w": 140.8,
+       "h": 44
+      }
+     },
+     "ueberschrift": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ueberschrift\"]",
+      "selektor": "h1#start-titel",
+      "rechteck": {
+       "x": 672,
+       "y": 128,
+       "w": 689.3,
+       "h": 457.6
+      }
+     },
+     "ort": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ort\"]",
+      "selektor": "section.relative > div.mx-auto.w-full > div.col-span-4.md:col-span-8 > p.mt-6.font-text",
+      "rechteck": {
+       "x": 672,
+       "y": 609.6,
+       "w": 689.3,
+       "h": 72
+      }
+     },
+     "hauptknopf": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"hauptknopf\"]",
+      "selektor": "header.kopf-anker.@container > div.mx-auto.w-full > div.flex.shrink-0 > a.inline-flex.min-h-11",
+      "rechteck": {
+       "x": 1689.5,
+       "y": 6.6,
+       "w": 198.5,
+       "h": 50.8
+      }
+     },
+     "kontakt": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"kontakt\"]",
+      "selektor": "header.kopf-anker.@container > div.mx-auto.w-full > div.flex.shrink-0 > a.hidden.min-h-11",
+      "rechteck": {
+       "x": 1585.5,
+       "y": 10,
+       "w": 44,
+       "h": 44
+      }
+     }
+    },
+    "querformat": null,
+    "vw": 2560,
+    "vh": 1440
+   },
+   "bestanden": 5,
+   "bild": null,
+   "fehler": null
+  },
+  {
+   "seite": "/",
+   "geraet": "d2560",
+   "durchgang": "nach-einwilligung",
+   "status": 200,
+   "messung": {
+    "elemente": {
+     "logo": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"logo\"]",
+      "selektor": "div.mx-auto.w-full > a.min-w-0.shrink > span.flex.min-w-0 > img.h-12.w-auto",
+      "rechteck": {
+       "x": 672,
+       "y": 10,
+       "w": 140.8,
+       "h": 44
+      }
+     },
+     "ueberschrift": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ueberschrift\"]",
+      "selektor": "h1#start-titel",
+      "rechteck": {
+       "x": 672,
+       "y": 128,
+       "w": 689.3,
+       "h": 457.6
+      }
+     },
+     "ort": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"ort\"]",
+      "selektor": "section.relative > div.mx-auto.w-full > div.col-span-4.md:col-span-8 > p.mt-6.font-text",
+      "rechteck": {
+       "x": 672,
+       "y": 609.6,
+       "w": 689.3,
+       "h": 72
+      }
+     },
+     "hauptknopf": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"hauptknopf\"]",
+      "selektor": "header.kopf-anker.@container > div.mx-auto.w-full > div.flex.shrink-0 > a.inline-flex.min-h-11",
+      "rechteck": {
+       "x": 1689.5,
+       "y": 6.6,
+       "w": 198.5,
+       "h": 50.8
+      }
+     },
+     "kontakt": {
+      "gefunden": true,
+      "sichtbar": true,
+      "ursache": "ok",
+      "regel": "[data-erstes-bild=\"kontakt\"]",
+      "selektor": "header.kopf-anker.@container > div.mx-auto.w-full > div.flex.shrink-0 > a.hidden.min-h-11",
+      "rechteck": {
+       "x": 1585.5,
+       "y": 10,
+       "w": 44,
+       "h": 44
+      }
+     }
+    },
+    "querformat": null,
+    "vw": 2560,
+    "vh": 1440
+   },
+   "bestanden": 5,
+   "bild": null,
+   "fehler": null
+  }
+ ]
+}

@@ -1,0 +1,183 @@
+{
+ "satz": "e2",
+ "tags": [
+  "wcag2a",
+  "wcag2aa",
+  "wcag21a",
+  "wcag21aa",
+  "wcag22aa"
+ ],
+ "laeufe": 28,
+ "ernst_kritisch_knoten": 0,
+ "je_regel": {},
+ "ergebnisse": [
+  {
+   "seite": "/",
+   "ansicht": "m360",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m430",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "q844",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "t1024",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1280",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/gibt-es-nicht",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d2560",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/gibt-es-nicht",
+   "ansicht": "m360",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/gibt-es-nicht",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/gibt-es-nicht",
+   "ansicht": "m430",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/gibt-es-nicht",
+   "ansicht": "q844",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/gibt-es-nicht",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/gibt-es-nicht",
+   "ansicht": "t1024",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/gibt-es-nicht",
+   "ansicht": "d1280",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/gibt-es-nicht",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/gibt-es-nicht",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/gibt-es-nicht",
+   "ansicht": "d2560",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/gibt-es-nicht",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/gibt-es-nicht",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/gibt-es-nicht",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  }
+ ]
+}

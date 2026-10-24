@@ -1,0 +1,140 @@
+{
+ "befehl": "RELAUNCH_BASE=http://127.0.0.1:4311 npx playwright test tests/<spec> --workers=1 (je Spec); tracking gegen 4313 mit RELAUNCH_TRACKING=1",
+ "stand": "5df89bc (Produktionsbau 4311)",
+ "specs": [
+  {
+   "spec": "funktion-badanfrage.spec.mjs",
+   "erwartet": 14,
+   "unerwartet": 0,
+   "uebersprungen": 0,
+   "flaky": 0,
+   "report": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/funktion/funktion-badanfrage.json"
+  },
+  {
+   "spec": "funktion-einwilligung.spec.mjs",
+   "erwartet": 34,
+   "unerwartet": 0,
+   "uebersprungen": 0,
+   "flaky": 0,
+   "report": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/funktion/funktion-einwilligung.json"
+  },
+  {
+   "spec": "funktion-express-funnel.spec.mjs",
+   "erwartet": 26,
+   "unerwartet": 0,
+   "uebersprungen": 0,
+   "flaky": 0,
+   "report": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/funktion/funktion-express-funnel.json"
+  },
+  {
+   "spec": "funktion-hero-kontakt.spec.mjs",
+   "erwartet": 8,
+   "unerwartet": 0,
+   "uebersprungen": 0,
+   "flaky": 0,
+   "report": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/funktion/funktion-hero-kontakt.json"
+  },
+  {
+   "spec": "funktion-konfigurator.spec.mjs",
+   "erwartet": 46,
+   "unerwartet": 0,
+   "uebersprungen": 4,
+   "flaky": 0,
+   "report": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/funktion/funktion-konfigurator.json"
+  },
+  {
+   "spec": "funktion-kontaktwege.spec.mjs",
+   "erwartet": 30,
+   "unerwartet": 1,
+   "uebersprungen": 3,
+   "flaky": 0,
+   "report": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/funktion/funktion-kontaktwege.json",
+   "wiederholung_einzeln": {
+    "-g": "Fußbereich: Festnetz",
+    "erwartet": 2,
+    "unerwartet": 0,
+    "report": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/funktion/funktion-kontaktwege-wiederholung.json"
+   }
+  },
+  {
+   "spec": "funktion-navigation.spec.mjs",
+   "erwartet": 43,
+   "unerwartet": 0,
+   "uebersprungen": 5,
+   "flaky": 0,
+   "report": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/funktion/funktion-navigation.json"
+  },
+  {
+   "spec": "funktion-preisrechner.spec.mjs",
+   "erwartet": 18,
+   "unerwartet": 0,
+   "uebersprungen": 0,
+   "flaky": 0,
+   "report": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/funktion/funktion-preisrechner.json"
+  },
+  {
+   "spec": "funktion-projektcheck.spec.mjs",
+   "erwartet": 18,
+   "unerwartet": 0,
+   "uebersprungen": 0,
+   "flaky": 0,
+   "report": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/funktion/funktion-projektcheck.json"
+  },
+  {
+   "spec": "funktion-schnellanfrage.spec.mjs",
+   "erwartet": 24,
+   "unerwartet": 0,
+   "uebersprungen": 0,
+   "flaky": 0,
+   "report": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/funktion/funktion-schnellanfrage.json"
+  },
+  {
+   "spec": "funktion-termin.spec.mjs",
+   "erwartet": 28,
+   "unerwartet": 0,
+   "uebersprungen": 0,
+   "flaky": 0,
+   "report": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/funktion/funktion-termin.json"
+  },
+  {
+   "spec": "funktion-tracking.spec.mjs",
+   "erwartet": 8,
+   "unerwartet": 0,
+   "uebersprungen": 0,
+   "flaky": 0,
+   "report": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/funktion/funktion-tracking.json"
+  },
+  {
+   "spec": "funktion-weiterleitung.spec.mjs",
+   "erwartet": 4,
+   "unerwartet": 0,
+   "uebersprungen": 0,
+   "flaky": 0,
+   "report": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/funktion/funktion-weiterleitung.json"
+  },
+  {
+   "spec": "verlegen.spec.mjs",
+   "erwartet": 26,
+   "unerwartet": 0,
+   "uebersprungen": 0,
+   "flaky": 0,
+   "report": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/funktion/verlegen.json"
+  }
+ ],
+ "e0_vergleich": {
+  "e0_gesamt": {
+   "bestanden": 290,
+   "fehlgeschlagen": 0,
+   "uebersprungen": 12,
+   "gesamt": 302,
+   "quelle": "belege/e0/STUFE-B.md (verweist auf E0-PRUEF-03/funktion.json, im Repo nicht auffindbar)"
+  },
+  "je_spec": "OFFENE FRAGE: E0-Werte je Spec nicht belegbar; archiv/…/e0/funktion/funktion.json (292 Einträge, andere Describe-Namen) passt nicht zu den heutigen Specs. Tests seit c53faf4 geändert (git diff --stat c53faf4 HEAD -- _werkstatt/werkzeuge/tests: 8 Dateien, +588/-112)."
+ },
+ "summe_ohne_tracking": {
+  "erwartet_bestanden": 319,
+  "unerwartet_erster_lauf": 1,
+  "uebersprungen": 12,
+  "hinweis": "Fehlschlag funktion-kontaktwege mobil Zeile 134 im ersten Lauf; Einzelwiederholung 2 von 2 bestanden"
+ }
+}

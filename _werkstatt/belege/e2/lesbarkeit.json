@@ -1,0 +1,110 @@
+{
+ "satz": "e2",
+ "base": "http://127.0.0.1:4311",
+ "erstellt": "2026-10-24T08:25:01.059Z",
+ "schwellen": {
+  "flesch": {
+   "erzaehl": 60,
+   "ort": 60,
+   "wissen": 50,
+   "arbeit": null
+  },
+  "satzMittelMax": 14,
+  "satzMax": 25,
+  "absatzMax": 4,
+  "titelMax": 60,
+  "beschreibungMin": 120,
+  "beschreibungMax": 155,
+  "altMax": 125
+ },
+ "zusammenfassung": {
+  "seiten": 2,
+  "gruen": 1,
+  "rot": 1,
+  "ausgenommen": 0,
+  "befunde": {
+   "status": 1
+  }
+ },
+ "seiten": [
+  {
+   "pfad": "/",
+   "art": "erzaehl",
+   "status": 200,
+   "ausgenommen": false,
+   "flesch": 78.5,
+   "satzMittel": 7.2,
+   "satzMax": 23,
+   "satzAnzahl": 65,
+   "absaetze": 21,
+   "absaetzeMehr": 0,
+   "titel": {
+    "zeichen": 56
+   },
+   "beschreibung": {
+    "zeichen": 146
+   },
+   "alt": {
+    "anzahl": 15,
+    "ohneAlt": 0,
+    "zuLang": 0
+   },
+   "zaehlung": {},
+   "glossar": {
+    "gefunden": 3,
+    "erfuellt": [
+     "abdichtung",
+     "din-18534",
+     "untergrund"
+    ],
+    "offen": []
+   },
+   "gruen": true,
+   "ergebnis": "GRÜN",
+   "befunde": [],
+   "gesperrt": 0,
+   "gesperrtArten": []
+  },
+  {
+   "pfad": "/gibt-es-nicht",
+   "art": "erzaehl",
+   "status": 404,
+   "ausgenommen": false,
+   "flesch": 75.9,
+   "satzMittel": 11,
+   "satzMax": 15,
+   "satzAnzahl": 2,
+   "absaetze": 1,
+   "absaetzeMehr": 0,
+   "titel": {
+    "zeichen": 52
+   },
+   "beschreibung": {
+    "zeichen": 144
+   },
+   "alt": {
+    "anzahl": 4,
+    "ohneAlt": 0,
+    "zuLang": 0
+   },
+   "zaehlung": {
+    "status": 1
+   },
+   "glossar": {
+    "gefunden": 0,
+    "erfuellt": [],
+    "offen": []
+   },
+   "gruen": false,
+   "ergebnis": "ROT: Status 1",
+   "befunde": [
+    {
+     "regel": "status",
+     "detail": "HTTP 404"
+    }
+   ],
+   "gesperrt": 0,
+   "gesperrtArten": []
+  }
+ ]
+}

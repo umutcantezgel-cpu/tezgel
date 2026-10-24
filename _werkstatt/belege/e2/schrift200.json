@@ -1,0 +1,85 @@
+{
+ "befehl": "node einzelbild.mjs --base http://127.0.0.1:4311 --geraete m360,m390,m430 --schrift 200 --voll",
+ "seiten": {
+  "/": [
+   {
+    "ansicht": "m360",
+    "status": 200,
+    "ueberlauf": 0,
+    "ueberlappung": 1,
+    "art": {
+     "textkreuzung": 1
+    },
+    "konsole": 0,
+    "bild": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/schrift200/start/m360-s200-voll.jpg"
+   },
+   {
+    "ansicht": "m390",
+    "status": 200,
+    "ueberlauf": 0,
+    "ueberlappung": 1,
+    "art": {
+     "textkreuzung": 1
+    },
+    "konsole": 0,
+    "bild": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/schrift200/start/m390-s200-voll.jpg"
+   },
+   {
+    "ansicht": "m430",
+    "status": 200,
+    "ueberlauf": 0,
+    "ueberlappung": 1,
+    "art": {
+     "textkreuzung": 1
+    },
+    "konsole": 0,
+    "bild": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/schrift200/start/m430-s200-voll.jpg"
+   }
+  ],
+  "/gibt-es-nicht": [
+   {
+    "ansicht": "m360",
+    "status": 404,
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "bild": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/schrift200/404/m360-s200-voll.jpg"
+   },
+   {
+    "ansicht": "m390",
+    "status": 404,
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "bild": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/schrift200/404/m390-s200-voll.jpg"
+   },
+   {
+    "ansicht": "m430",
+    "status": 404,
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "bild": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/schrift200/404/m430-s200-voll.jpg"
+   }
+  ]
+ },
+ "befund": "Startseite je Gerät 1 Textkreuzung: Rufnummernzeile „06441 /“ (Selektor div.md:col-span-2.lg:col-span-1 > a.text-tinte.underline > span.font-mono > span.whitespace-nowrap), y 31034 (m360), 29611 (m390), 28186 (m430); Sichtung der Ausschnitte: Unterstreichung berührt den Schrägstrich, kein Text abgeschnitten. Ziel 0 nicht erfüllt.",
+ "sichtung_ausschnitte": [
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/sichtung/m360-s200-ueberlappung.png",
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/sichtung/m390-s200-ueberlappung.png"
+ ],
+ "sichtung_ganzseitig": [
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/sichtung/m360-s200-mosaik-1.png",
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/sichtung/m360-s200-mosaik-2.png",
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/sichtung/m360-s200-mosaik-3.png",
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/sichtung/m360-s200-mosaik-4.png",
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/sichtung/m390-s200-mosaik-1.png",
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/sichtung/m390-s200-mosaik-2.png",
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/sichtung/m390-s200-mosaik-3.png",
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/sichtung/m390-s200-mosaik-4.png",
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/sichtung/m430-s200-mosaik-1.png",
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/sichtung/m430-s200-mosaik-2.png",
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/sichtung/m430-s200-mosaik-3.png",
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/sichtung/m430-s200-mosaik-4.png"
+ ]
+}
