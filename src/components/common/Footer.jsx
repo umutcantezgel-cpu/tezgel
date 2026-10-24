@@ -37,7 +37,10 @@ export default function Footer() {
     const { headquarters, contact, hours, authority, tax, owner, motto, business } = COMPANY_DATA;
 
     return (
-        <footer className="flaeche-tinte border-t border-nacht-fuge bg-tinte text-kalk">
+        // spätes Zeichnen (content-visibility, globals.css): der Fuß steht auf jeder Seite unter dem ersten Bildschirm; Stil und
+        // Layout seiner rund 300 Elemente erst in Sichtnähe (Spur der Startseite: lange Aufgaben 1,2 s auf 0,9 s bei
+        // vierfacher Drosselung, E3-LEIST-01)
+        <footer className="spaet-zeichnen flaeche-tinte border-t border-nacht-fuge bg-tinte text-kalk">
             {/* Zusagen, Stammdaten und Seitenindex sind eine eigene Hydrierungseinheit (Reaktion eines frühen Tipps, E-033). Die
                 untere Zeile mit #fuss-schild bleibt im Rahmen: Die Einwilligung setzt ihren Knopf per Portal dorthin, bevor eine
                 spätere Grenze hydriert wäre (sonst Abweichung und Neuaufbau des Fußes). */}
