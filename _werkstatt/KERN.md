@@ -143,6 +143,7 @@ Bezug ist eine Fliese 30 × 60 cm im Maßstab 1 cm = 3,2 px: kurze Seite **F = 9
 - Jeder Klick, Tipp, Tastendruck oder Scroll beendet sofort (Lauscher im Kopfskript, passiv, `once`). Reduziert: Einblenden in 300 ms.
 - Logotreue: Vektor ≥ 98 % deckungsgleich bei doppelter Größe, Farben exakt; sonst Ersatz-Intro „Der erste Boden“ (E-011).
 - Stand (E-018, E-019): Ersatz-Intro gebaut. Kalkblatt mit Fugenraster, Fläche 3 × 3 im Drittelverband, Original-Logo als Bild, Gleiten per FLIP (Zielmaß vom Inline-Skript nach dem Kopf), Reihen ziehen ab wie B-01. Serverkomponente `src/components/intro/Intro.tsx`, Ablauf `src/lib/intro/ablauf.ts`, Schalter, Abbruch und Grenze im Kopfskript; Ablauf als CSS in `bewegung.css` ab dem ersten Bild.
+- Stand (E-036): Fliese am Desktop mit der Breite wachsend (bis 15rem), Fuge 1/80 der Fliese je Seite. Startseite ab lg (`html.k-intro-start`): Reihe = Zeilenhöhe der H1, Fliese = zwei Reihen, Reihengrenze auf der Oberkante der H1, nur CSS vor dem ersten Bild (kein Umrechnen danach).
 
 ## K-008 Formsystem
 - Grundraster: Fugenraster aus K-005; Linien 1 px Fuge, 1 px Strich, 2 px Tinte (Fokus), 2 px Laser (Laserlinie).
@@ -232,10 +233,10 @@ Maschinenfassung `src/config/glossar.ts` (Quelle) und `regeln/glossar.json` (Pr�
 - Bearbeitung per Skript (`werkzeuge/bilder.mjs`, sharp): Ränder der Bildschirmfotos entfernen, Ausrichtung, sanfte Belichtung und Weißabgleich, Geraderichten, Zuschnitt nach Bildplatz und Schwerpunkt aus `bildinventar.csv`, nie hochskalieren (Quellen ≤ 1320 px breit), alle Metadaten entfernen, JPEG Qualität 82 als Webfassung (Next erzeugt AVIF/WebP); sprechende Namen.
 - Nicht verwenden oder wegschneiden: erkennbare Personen und Gesichter, Kind im Hintergrund, Hausnummern, Kennzeichen, Namen, fremde Firmenlogos und Markenaufdrucke. Bis zur Klärung nicht verwenden: Schiefer-Dusche mit Glaswand (wirkt wie Herstellerfoto), IMG_2577 (Bildbetrachter), Dubletten IMG_2594 und IMG_2581.
 - Einbau nur über `Bildfeld` (`next/image`): feste Maße, `sizes`, unscharfer Platzhalter; nur das Startbild lädt sofort mit hoher Priorität (`loading="eager"`, `fetchPriority="high"` statt `preload`, E-034). Alt-Text in Alltagssprache ≤ 125 Zeichen nach den Zeichenregeln, ehrlich (zum Beispiel „Sanitärmontage noch offen“), keine erfundenen Orte; dekorativ ohne Alt-Text.
-- Bildplätze: `_werkstatt/bildplaetze.md`. Wo kein passendes Foto da ist: Fliesenkomposition aus dem Formsystem, nie graue Kästen.
+- Bildplätze: `_werkstatt/bildplaetze.md`. Wo kein passendes Foto da ist: Fliesenkomposition aus dem Formsystem, nie graue Kästen. Als Zeichnung neben Text (Bereichsfliesen) mit `deutlich`: Fugen in Strich, eine rote Laserlinie oder ein roter Riss als Merkmal (E-036).
 
 ## K-013 Geräte und Budgets
-- Gerätegrößen (10) aus `HAUPTANSICHTEN.json`. Mobil eigene Komposition; kein seitliches Scrollen; Fließtext ≥ 16 px; Touchziele ≥ 44 × 44; sichere Ränder (`env(safe-area-inset-*)`); Vollbildhöhen mit `svh`/`dvh`; Kopf verdeckt keine Anker (`scroll-padding-top`); Systemschrift 200 % lesbar und bedienbar; Handy quer: Kopf und Leisten ≤ ¼ der Höhe; große Bildschirme mit begrenzter Textbreite.
+- Gerätegrößen (10) aus `HAUPTANSICHTEN.json`. Mobil eigene Komposition; kein seitliches Scrollen; Fließtext ≥ 16 px; Touchziele ≥ 44 × 44; sichere Ränder (`env(safe-area-inset-*)`); Vollbildhöhen mit `svh`/`dvh`; Kopf verdeckt keine Anker (`scroll-padding-top`); Systemschrift 200 % lesbar und bedienbar (untere Leiste unter 20em: Anrufen und Termin mit Wort, WhatsApp tritt zurück, E-036); Handy quer: Kopf und Leisten ≤ ¼ der Höhe, Variante `flach:` (Querformat, Höhe ≤ 32rem) für einen dichteren ersten Bildschirm (E-036); große Bildschirme mit begrenzter Textbreite.
 - Budgets (mobil, Median aus 3, frisches Profil, mit Intro): LCP ≤ 2,5 s · CLS ≤ 0,1 · TBT/INP ≤ 200 ms · Lighthouse mobil Leistung ≥ 90, Zugänglichkeit ≥ 95, Best Practices ≥ 95, SEO 100 · zusätzlicher Code für Bewegung (B-01, B-02, große Momente) ≤ 60 KB gzip · Startbild mobil ≤ 200 KB · Icon ≤ 1,5 KB · Zeichnung ≤ 40 KB gzip. Besserer E0-Wert gilt.
 
 ## K-014 Adressen und Suchmaschinen

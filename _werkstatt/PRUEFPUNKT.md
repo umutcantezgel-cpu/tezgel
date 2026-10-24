@@ -1,7 +1,9 @@
 # PRUEFPUNKT
 
-- Lauf „Verständlich, echt, ausgezeichnet“ · Etappe E2 (Referenz) · Stand 2026-10-24 10:01 CEST
-- Letzter grüner Commit (src): c53faf4 (src gleich main 388fa7b). HEAD 27639b6 und folgende = Zwischenstände E2 (gepusht): Startseite, Startbild und 404 nachgebessert, im Prüf-Workflow.
+- Lauf „Verständlich, echt, ausgezeichnet“ · Etappe E2 (Referenz), Tor Anlauf 2 · Stand 2026-10-24 12:11 CEST
+- HEAD ca946a7 (gepusht): E2-ORCH-08a bis 08f umgesetzt (E-036). Reinraum `$SCRATCH/reinraum-ca946a7` grün (Build, Typen, Lint, Test 114, nft sauber), Produktionsserver 4311 = ca946a7; alter Stand 4310 = `$SCRATCH/reinraum-c53faf4`. GA-Variante gelöscht (Plattenbudget), für den Tracking-Test bei Bedarf aus ca946a7 neu bauen (`NEXT_PUBLIC_GA4_ID=G-TEST000000`, Port 4313).
+- Laufend (12:11): Gesamtlauf aller Funktionsspecs gegen 4311 (`$SCRATCH/orch/pw-ca946a7/pw.json`, Lauf `lauf.txt`). Danach: verlegen.spec auf 4311, Erstes Bild 10 Geräte, Bildsatz 10 Geräte mit Überlauf und Überlappung, 200 % m360/m390, axe, Lesbarkeit `/`, Lighthouse mobil und Desktop (Ruhefenster), dann zweite Sichtabnahme E2-SICHT-2 (frischer Opus-Juror, Auftrag `$SCRATCH/orch/briefings/E2-SICHT-prompt.md`, Stand ca946a7, Befundliste aus `berichte/E2-SICHT.md` als Vorher), dann E2-TOR (Abgleich ABNAHME, Befunde als E3-Pakete).
+- Offen nach dem Tor: Startseite auf vorlagen/teile umstellen (Bereichsfliesen übernehmen), hauptziel für /kontakt und /standorte, E3-BAU-Wellen, Leistungspaket (Hebel aus E-034), Fotos kuratieren (E5), Abschnittsköpfe variieren (E3).
 - E0 abgeschlossen bis auf Lighthouse: E0-PRUEF-03 und E0-PROBE-01…10 zurück und gesichert (`pakete/*.rueckgabe.md`), Werte in LAGEBILD Abschnitt 4 und 5, ABNAHME Z-11.
 - Laufend (10:31): Workflow wf_30bc065a-3da (Tor-Material): E2-PRUEF-B auf 4311 = Reinraum 5df89bc (`$SCRATCH/reinraum-5df89bc`), Tracking auf 4313 = `$SCRATCH/reinraum-ga-5df89bc`; danach E2-PROBE-01 bis 04 und E2-DOK-01 (je zwei gleichzeitig), dann E2-SICHT (frischer Opus-Juror, Auftrag `$SCRATCH/orch/briefings/E2-SICHT-prompt.md`). Danach: Rückgaben sichern, E2-TOR (Abgleich ABNAHME, Befunde als Pakete der E3). Erledigt heute: E-028, E-030, E-031, E-032, E-033, E-034 (Leistung 89, LCP 2,9 s, TBT 270, Reaktion 180).
 - Im Zwischenstand cce868a (Orchestrator), je Paket:
