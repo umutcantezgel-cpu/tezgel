@@ -1,0 +1,123 @@
+{
+ "modus": "bildrate",
+ "seite": "/",
+ "base": "http://127.0.0.1:4311",
+ "ansicht": "m390",
+ "zeitpunkt": "2026-10-24T08:26:17.723Z",
+ "dpr": 2,
+ "cpu_drosselung": 4,
+ "gesten": {
+  "befehl": "Input.synthesizeScrollGesture",
+  "gestureSourceType": "default",
+  "geschwindigkeit_px_s": 800,
+  "folge": "oben→unten, dann unten→oben"
+ },
+ "wiederholungen": 3,
+ "bilder_gesamt": 1738,
+ "verworfen": 3,
+ "anteil_verworfen_prozent": 0.17,
+ "anteile_je_lauf": [
+  0.57,
+  0.12,
+  0.17
+ ],
+ "anteile_pipeline_je_lauf": [
+  0.11,
+  0.11,
+  0.17
+ ],
+ "loaf_anzahl": 1,
+ "loaf_summe_ms": 82,
+ "hinweis": "Median je Feld, nicht aus derselben Zeile (bilder_gesamt, verworfen, loaf_*). Kopfwert anteil_verworfen_prozent = Median der Anteile je Lauf (anteile_je_lauf).",
+ "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+ "laeufe": [
+  {
+   "bilder_gesamt": 1741,
+   "verworfen": 10,
+   "anteil_verworfen_prozent": 0.57,
+   "loaf_anzahl": 5,
+   "loaf_summe_ms": 470,
+   "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+   "zusatz": {
+    "frame_ereignisse": {
+     "praesentiert": 1731,
+     "verworfen": 10,
+     "anteil_prozent": 0.57
+    },
+    "pipeline_reporter": {
+     "praesentiert": 1750,
+     "verworfen": 2,
+     "anteil_prozent": 0.11
+    }
+   },
+   "scroll": {
+    "hoehe": 11555,
+    "nach_abwaerts": 11555,
+    "nach_aufwaerts": 0
+   },
+   "trace_vollstaendig": true,
+   "dauer_s": 39.8
+  },
+  {
+   "bilder_gesamt": 1737,
+   "verworfen": 2,
+   "anteil_verworfen_prozent": 0.12,
+   "loaf_anzahl": 0,
+   "loaf_summe_ms": 0,
+   "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+   "zusatz": {
+    "frame_ereignisse": {
+     "praesentiert": 1735,
+     "verworfen": 2,
+     "anteil_prozent": 0.12
+    },
+    "pipeline_reporter": {
+     "praesentiert": 1740,
+     "verworfen": 2,
+     "anteil_prozent": 0.11
+    }
+   },
+   "scroll": {
+    "hoehe": 11555,
+    "nach_abwaerts": 11555,
+    "nach_aufwaerts": 0
+   },
+   "trace_vollstaendig": true,
+   "dauer_s": 40.1
+  },
+  {
+   "bilder_gesamt": 1738,
+   "verworfen": 3,
+   "anteil_verworfen_prozent": 0.17,
+   "loaf_anzahl": 1,
+   "loaf_summe_ms": 82,
+   "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+   "zusatz": {
+    "frame_ereignisse": {
+     "praesentiert": 1735,
+     "verworfen": 3,
+     "anteil_prozent": 0.17
+    },
+    "pipeline_reporter": {
+     "praesentiert": 1739,
+     "verworfen": 3,
+     "anteil_prozent": 0.17
+    }
+   },
+   "scroll": {
+    "hoehe": 11555,
+    "nach_abwaerts": 11555,
+    "nach_aufwaerts": 0
+   },
+   "trace_vollstaendig": true,
+   "dauer_s": 39.9
+  }
+ ],
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "rohtrace": "nicht gespeichert (nur Kennzahlen)",
+ "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E2-PRUEF-B/bewegung-bildrate"
+}

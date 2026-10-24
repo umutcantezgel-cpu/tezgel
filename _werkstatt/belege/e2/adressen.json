@@ -1,0 +1,63 @@
+{
+ "befehl": "RELAUNCH_BASE=http://127.0.0.1:4311 node adressen.mjs --satz e2",
+ "csv": "/home/user/tezgel/_werkstatt/belege/e2/adressen-e2.csv",
+ "adressen_gesamt": 203,
+ "adressen_gesamt_e0": 202,
+ "status": {
+  "200": 169,
+  "308": 2,
+  "410": 32
+ },
+ "status_e0": {
+  "200": 168,
+  "308": 2,
+  "410": 32
+ },
+ "mit_200_oder_308": 171,
+ "mit_200_oder_308_e0": 170,
+ "e0_adressen_mit_anderem_status": [],
+ "neu_gegenueber_e0": [
+  "/preise"
+ ],
+ "kaputte_links_404_5xx_0": 0,
+ "status_410_gleich_e0": true,
+ "410_adressen": [
+  "/blog/heizkoerper-richtig-entlueften",
+  "/blog/heizungswartung-pflicht-oder-kuer",
+  "/blog/klimaanlage-reinigen-allergiker",
+  "/blog/legionellen-trinkwasser-vermeiden",
+  "/blog/smart-bad-wellness-hightech",
+  "/blog/smart-home-heizungssteuerung-nachruesten",
+  "/blog/solarpflicht-deutschland-hausbesitzer",
+  "/blog/solarthermie-vs-photovoltaik-vergleich",
+  "/blog/team-verstaerkung-gesucht-jobs",
+  "/blog/waermepumpen-foerderung-2024",
+  "/blog/waermepumpen-mythen-faktencheck",
+  "/blog/wasserschaden-vermeiden-tipps",
+  "/energie",
+  "/energie/beispiel",
+  "/energieberatung",
+  "/energieberatung/beispiel",
+  "/gewerbe",
+  "/gewerbe/beispiel",
+  "/haustechnik",
+  "/haustechnik/beispiel",
+  "/heizung",
+  "/heizung/beispiel",
+  "/lueftung",
+  "/lueftung/beispiel",
+  "/notdienst",
+  "/notdienst/beispiel",
+  "/referenzen/project-001",
+  "/referenzen/project-002",
+  "/referenzen/project-003",
+  "/referenzen/project-004",
+  "/referenzen/project-005",
+  "/referenzen/project-006"
+ ],
+ "seiten_ohne_genau_eine_h1_ausser_410": [
+  "/bad/budgetkalkulator",
+  "/blog/barrierefreies-bad-planung-zuschuesse"
+ ],
+ "titel_oder_beschreibung_oder_canonical_fehlt_ausser_410_308": []
+}

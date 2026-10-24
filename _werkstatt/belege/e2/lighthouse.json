@@ -1,0 +1,601 @@
+{
+ "seiten": {
+  "/": {
+   "mobil": {
+    "median": {
+     "perf": 89,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 3029,
+     "cls": 0,
+     "tbt": 302,
+     "fcp": 1212,
+     "si": 1828,
+     "js_kb": 192,
+     "font_kb": 72,
+     "gesamt_kb": 429,
+     "benchmark": 1496.5,
+     "lcp_element": {
+      "selector": "div.relative > figure > div.border > img.block",
+      "ausschnitt": "<img alt=\"Dusche ohne Stufe mit großen grauen Fliesen und einer Glaswand\" fetchpriority=\"high\" loading=\"eager\" width=\"1280\" height=\"1600\" decoding=\"async\" data-"
+     },
+     "spanne": {
+      "perf": [
+       82,
+       90
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       2872,
+       3318
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       225,
+       403
+      ],
+      "fcp": [
+       1062,
+       1222
+      ],
+      "si": [
+       1481,
+       2046
+      ],
+      "js_kb": [
+       192,
+       192
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       429,
+       429
+      ],
+      "benchmark": [
+       1413,
+       1586.5
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 82,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3318.017700000001,
+      "cls": 0,
+      "tbt": 402.9999999999998,
+      "fcp": 1062.0118,
+      "si": 1866.2284533216703,
+      "js_kb": 192,
+      "font_kb": 72,
+      "gesamt_kb": 429,
+      "benchmark": 1413,
+      "lcp_element": {
+       "selector": "div.relative > figure > div.border > img.block",
+       "ausschnitt": "<img alt=\"Dusche ohne Stufe mit großen grauen Fliesen und einer Glaswand\" fetchpriority=\"high\" loading=\"eager\" width=\"1280\" height=\"1600\" decoding=\"async\" data-"
+      },
+      "lcp_phasen": {
+       "ttfb": 15,
+       "ladeverzoegerung": 45,
+       "ladezeit": 33,
+       "renderverzoegerung": 214
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/0ju5bcdbyv07q.js",
+        "kb": 15.3
+       },
+       {
+        "pfad": "/_next/static/chunks/1xc1su0pmokud.js",
+        "kb": 15.1
+       },
+       {
+        "pfad": "/_next/static/chunks/0u4-_h5nbafm8.js",
+        "kb": 13.1
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/2-2026-10-24T08-30-41-062Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 90,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2873.1728999999996,
+      "cls": 0,
+      "tbt": 264.2756999999999,
+      "fcp": 1065.4486,
+      "si": 2046.482668325916,
+      "js_kb": 192,
+      "font_kb": 72,
+      "gesamt_kb": 429,
+      "benchmark": 1496.5,
+      "lcp_element": {
+       "selector": "div.relative > figure > div.border > img.block",
+       "ausschnitt": "<img alt=\"Dusche ohne Stufe mit großen grauen Fliesen und einer Glaswand\" fetchpriority=\"high\" loading=\"eager\" width=\"1280\" height=\"1600\" decoding=\"async\" data-"
+      },
+      "lcp_phasen": {
+       "ttfb": 26,
+       "ladeverzoegerung": 49,
+       "ladezeit": 29,
+       "renderverzoegerung": 195
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/0ju5bcdbyv07q.js",
+        "kb": 15.3
+       },
+       {
+        "pfad": "/_next/static/chunks/1xc1su0pmokud.js",
+        "kb": 15.1
+       },
+       {
+        "pfad": "/_next/static/chunks/0u4-_h5nbafm8.js",
+        "kb": 13.1
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/3-2026-10-24T08-30-56-247Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 90,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3113.193925,
+      "cls": 0,
+      "tbt": 225,
+      "fcp": 1214.73765,
+      "si": 1481.43779704987,
+      "js_kb": 192,
+      "font_kb": 72,
+      "gesamt_kb": 429,
+      "benchmark": 1586.5,
+      "lcp_element": {
+       "selector": "div.relative > figure > div.border > img.block",
+       "ausschnitt": "<img alt=\"Dusche ohne Stufe mit großen grauen Fliesen und einer Glaswand\" fetchpriority=\"high\" loading=\"eager\" width=\"1280\" height=\"1600\" decoding=\"async\" data-"
+      },
+      "lcp_phasen": {
+       "ttfb": 15,
+       "ladeverzoegerung": 52,
+       "ladezeit": 31,
+       "renderverzoegerung": 170
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/0ju5bcdbyv07q.js",
+        "kb": 15.3
+       },
+       {
+        "pfad": "/_next/static/chunks/1xc1su0pmokud.js",
+        "kb": 15.1
+       },
+       {
+        "pfad": "/_next/static/chunks/0u4-_h5nbafm8.js",
+        "kb": 13.1
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/4-2026-10-24T08-31-10-608Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 89,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2872.12995,
+      "cls": 0,
+      "tbt": 301.5,
+      "fcp": 1222.12995,
+      "si": 1827.8292180236863,
+      "js_kb": 192,
+      "font_kb": 72,
+      "gesamt_kb": 429,
+      "benchmark": 1419.5,
+      "lcp_element": {
+       "selector": "div.relative > figure > div.border > img.block",
+       "ausschnitt": "<img alt=\"Dusche ohne Stufe mit großen grauen Fliesen und einer Glaswand\" fetchpriority=\"high\" loading=\"eager\" width=\"1280\" height=\"1600\" decoding=\"async\" data-"
+      },
+      "lcp_phasen": {
+       "ttfb": 13,
+       "ladeverzoegerung": 49,
+       "ladezeit": 35,
+       "renderverzoegerung": 182
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/0ju5bcdbyv07q.js",
+        "kb": 15.3
+       },
+       {
+        "pfad": "/_next/static/chunks/1xc1su0pmokud.js",
+        "kb": 15.1
+       },
+       {
+        "pfad": "/_next/static/chunks/0u4-_h5nbafm8.js",
+        "kb": 13.1
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/6-2026-10-24T08-31-38-423Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 87,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3029.3360249999996,
+      "cls": 0,
+      "tbt": 316.5,
+      "fcp": 1211.8594500000002,
+      "si": 1687.661119049415,
+      "js_kb": 192,
+      "font_kb": 72,
+      "gesamt_kb": 429,
+      "benchmark": 1571,
+      "lcp_element": {
+       "selector": "div.relative > figure > div.border > img.block",
+       "ausschnitt": "<img alt=\"Dusche ohne Stufe mit großen grauen Fliesen und einer Glaswand\" fetchpriority=\"high\" loading=\"eager\" width=\"1280\" height=\"1600\" decoding=\"async\" data-"
+      },
+      "lcp_phasen": {
+       "ttfb": 12,
+       "ladeverzoegerung": 65,
+       "ladezeit": 36,
+       "renderverzoegerung": 147
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/0ju5bcdbyv07q.js",
+        "kb": 15.3
+       },
+       {
+        "pfad": "/_next/static/chunks/1xc1su0pmokud.js",
+        "kb": 15.1
+       },
+       {
+        "pfad": "/_next/static/chunks/0u4-_h5nbafm8.js",
+        "kb": 13.1
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/7-2026-10-24T08-31-52-922Z",
+      "profil_dateien": 20
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 98,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 725,
+     "cls": 0.082,
+     "tbt": 8,
+     "fcp": 335,
+     "si": 754,
+     "js_kb": 241,
+     "font_kb": 72,
+     "gesamt_kb": 589,
+     "benchmark": 1497,
+     "lcp_element": {
+      "selector": "div.relative > figure > div.border > img.block",
+      "ausschnitt": "<img alt=\"Dusche ohne Stufe mit großen grauen Fliesen und einer Glaswand\" fetchpriority=\"high\" loading=\"eager\" width=\"1280\" height=\"1600\" decoding=\"async\" data-"
+     },
+     "spanne": {
+      "perf": [
+       98,
+       98
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       719,
+       781
+      ],
+      "cls": [
+       0.082,
+       0.082
+      ],
+      "tbt": [
+       4,
+       18
+      ],
+      "fcp": [
+       315,
+       346
+      ],
+      "si": [
+       734,
+       759
+      ],
+      "js_kb": [
+       241,
+       241
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       589,
+       593
+      ],
+      "benchmark": [
+       1497,
+       1529
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 98,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 781.2781,
+      "cls": 0.08234638419642193,
+      "tbt": 18.000000000000057,
+      "fcp": 335.2781,
+      "si": 759.1382377243092,
+      "js_kb": 241,
+      "font_kb": 72,
+      "gesamt_kb": 589,
+      "benchmark": 1497,
+      "lcp_element": {
+       "selector": "div.relative > figure > div.border > img.block",
+       "ausschnitt": "<img alt=\"Dusche ohne Stufe mit großen grauen Fliesen und einer Glaswand\" fetchpriority=\"high\" loading=\"eager\" width=\"1280\" height=\"1600\" decoding=\"async\" data-"
+      },
+      "lcp_phasen": {
+       "ttfb": 24,
+       "ladeverzoegerung": 56,
+       "ladezeit": 37,
+       "renderverzoegerung": 285
+      },
+      "cls_quellen": [
+       {
+        "selector": "body.antialiased > footer.flaeche-tinte",
+        "wert": 0.0819
+       },
+       {
+        "selector": "body.antialiased > div.intro > div.intro-schild",
+        "wert": 0.0004
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/0ju5bcdbyv07q.js",
+        "kb": 15.3
+       },
+       {
+        "pfad": "/_next/static/chunks/1xc1su0pmokud.js",
+        "kb": 15.1
+       },
+       {
+        "pfad": "/_next/static/chunks/3w1eiey6jv9v6.js",
+        "kb": 14
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/2-2026-10-24T08-32-33-644Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 98,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 725.4440000000002,
+      "cls": 0.08234638419642193,
+      "tbt": 8.000000000000114,
+      "fcp": 315.29600000000005,
+      "si": 734.2511621086695,
+      "js_kb": 241,
+      "font_kb": 72,
+      "gesamt_kb": 589,
+      "benchmark": 1529,
+      "lcp_element": {
+       "selector": "div.relative > figure > div.border > img.block",
+       "ausschnitt": "<img alt=\"Dusche ohne Stufe mit großen grauen Fliesen und einer Glaswand\" fetchpriority=\"high\" loading=\"eager\" width=\"1280\" height=\"1600\" decoding=\"async\" data-"
+      },
+      "lcp_phasen": {
+       "ttfb": 29,
+       "ladeverzoegerung": 38,
+       "ladezeit": 44,
+       "renderverzoegerung": 348
+      },
+      "cls_quellen": [
+       {
+        "selector": "body.antialiased > footer.flaeche-tinte",
+        "wert": 0.0819
+       },
+       {
+        "selector": "body.antialiased > div.intro > div.intro-schild",
+        "wert": 0.0004
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/0ju5bcdbyv07q.js",
+        "kb": 15.3
+       },
+       {
+        "pfad": "/_next/static/chunks/1xc1su0pmokud.js",
+        "kb": 15.1
+       },
+       {
+        "pfad": "/_next/static/chunks/3w1eiey6jv9v6.js",
+        "kb": 14
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/3-2026-10-24T08-32-50-591Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 98,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 719.4920999999999,
+      "cls": 0.08234638419642193,
+      "tbt": 4.499999999999943,
+      "fcp": 346.49209999999994,
+      "si": 754.4601644481571,
+      "js_kb": 241,
+      "font_kb": 72,
+      "gesamt_kb": 593,
+      "benchmark": 1497,
+      "lcp_element": {
+       "selector": "div.relative > figure > div.border > img.block",
+       "ausschnitt": "<img alt=\"Dusche ohne Stufe mit großen grauen Fliesen und einer Glaswand\" fetchpriority=\"high\" loading=\"eager\" width=\"1280\" height=\"1600\" decoding=\"async\" data-"
+      },
+      "lcp_phasen": {
+       "ttfb": 28,
+       "ladeverzoegerung": 50,
+       "ladezeit": 34,
+       "renderverzoegerung": 350
+      },
+      "cls_quellen": [
+       {
+        "selector": "body.antialiased > footer.flaeche-tinte",
+        "wert": 0.0819
+       },
+       {
+        "selector": "body.antialiased > div.intro > div.intro-schild",
+        "wert": 0.0004
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/0ju5bcdbyv07q.js",
+        "kb": 15.3
+       },
+       {
+        "pfad": "/_next/static/chunks/1xc1su0pmokud.js",
+        "kb": 15.1
+       },
+       {
+        "pfad": "/_next/static/chunks/3w1eiey6jv9v6.js",
+        "kb": 14
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/4-2026-10-24T08-33-08-572Z",
+      "profil_dateien": 20
+     }
+    ]
+   }
+  }
+ },
+ "satz": "e2",
+ "base": "http://127.0.0.1:4311",
+ "laeufe": 3,
+ "bedingungen": "lokal next start (komprimiert), Erstbesuch mit Banner, Dritt-Hosts blockiert, Lighthouse-Standard-Drosselung (mobil: simuliert 4× CPU, Slow 4G; Desktop-Preset), frisches Chrome-Profil je Lauf, Aufwärmlauf, Median aus 3, Benchmark-Band ±15 %",
+ "benchmark_band": 0.15,
+ "benchmark_referenz": 1497
+}
