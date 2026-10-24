@@ -1,0 +1,20 @@
+{
+  "kennung": "weg",
+  "paket": "E3-GRAF-02",
+  "kern": "v3.3",
+  "zweck": "Orientierung: Vom Anruf bis zur letzten Fuge",
+  "ausloeser": "scroll",
+  "register_ts": { "ausloeser": "scroll" },
+  "technik": "CSS animation-timeline: je Wegstück (.weg-strecke) eine view-timeline --weg-strecke für sein rotes Stück; die Marke über view() des Elements selbst",
+  "dauer_kurve": "linear an Scroll; rotes Stück cover 40vh bis cover calc(100% - 60vh) (Spitze auf 60 % der Bildschirmhöhe, Stücke stoßen aneinander); Marke cover 40vh bis cover 44vh",
+  "keyframes": ["leitachse-ziehen", "szene-setzen"],
+  "eigenschaften": ["scale", "opacity"],
+  "elemente": { "data-motion": "Wurzel des Bausteins (div)", "animiert": [".weg-rot", ".weg-marke-an"] },
+  "startzustand": "nur unter html.k-bewegung:not(.k-notaus), @supports (animation-timeline: view()) and (animation-range-end: cover calc(100% - 60vh)), @media screen and (prefers-reduced-motion: no-preference)",
+  "reduziert": "Linie voll, alle Stationen gesetzt (kein Startzustand, keine Animation)",
+  "ersatzpfad": "ohne JavaScript, ohne animation-timeline, Notaus, Druck, erzwungene Farben: Endzustand wie reduziert",
+  "wo": ["/bad/badsanierung"],
+  "schlitz": "momente.ablauf",
+  "baustein": "src/components/momente/weg/Weg.tsx",
+  "budget": { "client_js_kb": 0, "css_kb_gzip": 0.4, "svg": "keine neue Zeichnung (Fugenkreuz)" }
+}
