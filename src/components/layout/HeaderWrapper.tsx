@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { Suspense, useState } from 'react';
 import Header from '@/components/common/Header';
 import MobileMenu from '@/components/common/MobileMenu';
 
@@ -12,7 +12,10 @@ export function HeaderWrapper() {
     return (
         <>
             <Header isMobileMenuOpen={isMobileMenuOpen} />
-            <MobileMenu isOpen={isMobileMenuOpen} onToggle={setIsMobileMenuOpen} />
+            {/* eigene Hydrierungseinheit (E-033): das Blatt ist zu und wird erst nach einem Tipp gebraucht */}
+            <Suspense>
+                <MobileMenu isOpen={isMobileMenuOpen} onToggle={setIsMobileMenuOpen} />
+            </Suspense>
         </>
     );
 }
