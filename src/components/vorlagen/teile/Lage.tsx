@@ -1,5 +1,5 @@
 // Vorlagen · 2 Ihre Lage (KERN v3 K-003 Nr. 2, K-009; E-025): die Lage der Kundschaft in ihren Worten. Wahlweise als
-// Absätze oder als Fliesen mit Link wie auf der Startseite (Foto oder Fliesenkomposition und Satz, aneinander an der Fuge;
+// Absätze, als Wege-Zeilen mit Link (wie die Bereiche in „Was wir tun“) oder als Fliesen mit Link wie auf der Startseite (Foto oder Fliesenkomposition und Satz, aneinander an der Fuge;
 // ab lg zwei Streifen, der rechte um ein Drittel versetzt, der eine Versatz dieses Bildschirms, K-005). Bei großer
 // Systemschrift steht das Bild als Streifen über dem Satz und der Pfeil darunter (Container-Abfrage in rem, Runden 2 und
 // 3). Bilder im Link sind dekorativ (alt=""), der Satz ist der Name des Links. Serverkomponente.
@@ -12,6 +12,7 @@ import Fliesenkomposition from '@/components/kern/Fliesenkomposition';
 import Textmarken from '@/components/kern/Textmarken';
 import { ARBEITEN } from '@/config/arbeiten';
 import type { BildOderMotiv, LageInhalt } from '../inhalt';
+import { Bereichszeilen } from './Tun';
 
 type Fliese = { satz: string; href: string } & BildOderMotiv;
 
@@ -83,6 +84,11 @@ export default function Lage({ inhalt, einleitung }: { inhalt: LageInhalt; einle
       {fliesen.length > 0 && (
         <div className={clsx(inhalt.absaetze?.length && 'mt-12')}>
           <LageFliesen fliesen={fliesen} />
+        </div>
+      )}
+      {inhalt.wege && inhalt.wege.length > 0 && (
+        <div className={clsx((inhalt.absaetze?.length || fliesen.length) && 'mt-12')}>
+          <Bereichszeilen bereiche={inhalt.wege} />
         </div>
       )}
     </Abschnitt>

@@ -17,9 +17,11 @@ export function Bereichszeilen({ bereiche }: { bereiche: NonNullable<TunInhalt['
       {bereiche.map((b) => (
         <li key={b.href} className="border-b border-fuge">
           <Link href={b.href} data-motion="zustand" className="group flex min-h-16 items-center gap-4 py-4 text-tinte lg:gap-6 lg:py-6">
-            <span aria-hidden="true" className="hidden size-16 shrink-0 border border-fuge @xs:block">
-              <Fliesenkomposition motiv={b.motiv} ausschnitt={48} fuellen />
-            </span>
+            {b.motiv && (
+              <span aria-hidden="true" className="hidden size-16 shrink-0 border border-fuge @xs:block">
+                <Fliesenkomposition motiv={b.motiv} ausschnitt={48} fuellen />
+              </span>
+            )}
             <span className="min-w-0 flex-1">
               <span className="block font-anzeige text-fs-5 font-extrabold hyphens-none underline decoration-transparent decoration-2 underline-offset-8 transition-colors dauer-1 group-hover:decoration-laser">
                 {b.name}

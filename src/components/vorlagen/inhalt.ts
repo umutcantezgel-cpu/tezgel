@@ -34,6 +34,16 @@ export interface LageInhalt {
   titel: string;
   absaetze?: Markentext[];
   fliesen?: ({ satz: string; href: string } & BildOderMotiv)[];
+  /** Wege als Zeilen mit Link und Satz (z. B. die Unterseiten eines Bereichs), Muster optional */
+  wege?: Zeile[];
+}
+
+/** Zeile mit Link: Name, Satz und wahlweise ein Verlegemuster als Bildzeichen */
+export interface Zeile {
+  name: string;
+  satz?: Markentext;
+  href: string;
+  motiv?: Kompositionsmotiv;
 }
 
 /** 3 · Was wir tun */
@@ -41,7 +51,7 @@ export interface TunInhalt {
   titel: string;
   einleitung?: Markentext;
   /** Bereiche oder Unterseiten als Zeilen mit Verlegemuster und Link */
-  bereiche?: { name: string; satz?: Markentext; href: string; motiv: Kompositionsmotiv }[];
+  bereiche?: Zeile[];
   /** Aussagen als Fliesen an der Fuge (eine Aussage je Fliese) */
   punkte?: Markentext[];
   /** Absatz nach den Punkten (z. B. Norm, Zuschuss) */
