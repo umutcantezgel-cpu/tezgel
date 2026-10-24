@@ -70,5 +70,7 @@
  "E2-PRUEF-TESTS": "erledigt (E-028, 129/0/5)",
  "E2-PRUEF-A1": "erledigt (E-032)",
  "E2-PRUEF-A2": "erledigt (E-032, Lesbarkeit /bad und /leistungen folgen mit E3-BAU)",
- "E2-PRUEF-A3": "erledigt (E-032, 404-Befunde waren Werkzeugbefunde, behoben)"
+ "E2-PRUEF-A3": "erledigt (E-032, 404-Befunde waren Werkzeugbefunde, behoben)",
+ "E2-PRUEF-00": "erledigt (E-034)",
+ "E2-ORCH-00": "erledigt mit Rest (E-033, E-034: Leistung 89, LCP 2,9 s; weitere Hebel als Paket)"
 }

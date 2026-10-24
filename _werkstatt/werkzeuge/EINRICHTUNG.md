@@ -143,3 +143,9 @@ Der Entwicklungsserver (Turbopack, `next dev` auf 4320) übernimmt Inhaltsänder
     _werkstatt/werkzeuge/dev-server.sh stop && rm -rf .next/dev && _werkstatt/werkzeuge/dev-server.sh start
     for u in $(curl -s http://127.0.0.1:4320/ | grep -o '/_next/static/chunks/[^"]*\.css' | sort -u); do curl -s "http://127.0.0.1:4320$u" | grep -c '<Marke aus der Änderung>'; done
 
+
+## Produktionsserver vor Messreihen (E-034)
+Der Bildoptimierer von `next start` kann nach vielen Läufen mit abgebrochenen Anfragen hängen: ungecachte Breiten von `/_next/image` antworten nicht, das `load`-Ereignis kommt nie (Werkzeuge melden „waitForLoadState: Timeout“). Vor jeder Messreihe neu starten und prüfen:
+
+    PORT=4311 bash _werkstatt/werkzeuge/server.sh stop; PORT=4311 REINRAUM_DIR=$SCRATCH/reinraum-<sha> bash _werkstatt/werkzeuge/server.sh start <sha>
+    curl -s -o /dev/null -m 15 -w '%{http_code} %{time_total}\n' -H 'Accept: image/avif,image/webp,*/*' 'http://127.0.0.1:4311/_next/image?url=%2Fimages%2Farbeiten%2Fbad%2Fhelles-bad-glasdusche-holzoptik.jpg&w=1080&q=75'
