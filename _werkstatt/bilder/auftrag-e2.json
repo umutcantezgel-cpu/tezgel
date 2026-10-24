@@ -726,5 +726,23 @@
     ],
     "alt": "Treppenstufen mit beigen Fliesen und hellen Profilkanten",
     "korrektur": false
+  },
+  {
+    "id": "start-dusche-boden",
+    "original": "IMG_2578.PNG",
+    "raum": "dusche",
+    "name": "dusche-ohne-stufe-boden-graue-fliesen",
+    "format": "4:3",
+    "schwerpunkt": {
+      "x": 50,
+      "y": 80
+    },
+    "breiten": [
+      640,
+      960,
+      1280
+    ],
+    "alt": "Boden einer Dusche ohne Stufe: große graue Fliesen laufen ohne Kante unter der Glaswand durch",
+    "korrektur": true
   }
 ]

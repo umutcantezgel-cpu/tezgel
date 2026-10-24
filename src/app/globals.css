@@ -56,9 +56,11 @@
   --text-fs-6: clamp(2rem, 1.5rem + 2.2vw, 3.5rem);
   --text-fs-6--line-height: 1.1;
   --text-fs-6--letter-spacing: -0.015em;
-  /* Display: am Desktop wie bisher (rund 94 px bei 1.440 px), mobil 37 px; der rem-Anteil ist klein, damit große
-     Systemschrift (200 %) die H1 auf 64 px statt 88 px hebt und Ort und Hauptknopf nicht ganz verdrängt (Sichtprüfung E2) */
-  --text-fs-7: clamp(2rem, 1rem + 5.4vw, 6.5rem);
+  /* Display: mobil 37 px; der rem-Anteil ist klein, damit große Systemschrift (200 %) die H1 auf 64 px statt 88 px hebt und
+     Ort und Hauptknopf nicht ganz verdrängt (Sichtprüfung E2). Obergrenze 92 px dort, wo der Satzspiegel (82rem plus Rand)
+     aufhört zu wachsen: darüber wuchs die Schrift weiter, die Spalte nicht, und die H1 der Startseite brach auf d1920 und
+     d2560 in sechs statt vier Zeilen (E2-SICHT-2 Befund 2, E3-START-01) */
+  --text-fs-7: clamp(2rem, 1rem + 5.4vw, 5.75rem);
   /* ≥ Inhaltshöhe der Archivo (Ascender 878 + Descender 210 = 1,088 em): Zeilen der H1 berühren sich nie */
   --text-fs-7--line-height: 1.1;
   --text-fs-7--letter-spacing: -0.015em;

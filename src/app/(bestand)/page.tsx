@@ -1,5 +1,5 @@
 // Startseite (KERN v3 K-009, Seitenformel; Text _werkstatt/texte/REF-start.md, E2-ORCH-06): die Erzählseite, an der
-// sich alle anderen messen. Sechs Abschnitte in fester Folge an einer Laserlinie (Leitachse): 1 Worum es geht (H1, Ort,
+// sich alle anderen messen. Sechs Abschnitte in fester Folge, ab dem zweiten an einer Laserlinie (Leitachse): 1 Worum es geht (H1, Ort,
 // Hauptknopf, Anruf, WhatsApp, Startbild), 2 Ihre Lage (sechs Fliesen), 3 Was wir tun, 4 So läuft es ab, 5 Beleg
 // (Fotos, Stimmen, Orte), 6 Nächster Schritt (das eine Formular, #termin). Preisrechner und Express-Anfrage stehen nicht
 // mehr hier, sondern auf ihren übrigen Seiten (E-012, LAGEBILD F-02, F-03); alle Hauptknöpfe dieser Seite führen zu #termin.
@@ -30,8 +30,11 @@ export const metadata: Metadata = createMetadata({
 export default function HomePage() {
     return (
         <Seitenformel>
+            {/* der Einstieg trägt sein eigenes Rot (Waage und Lot, sig-kreuzlinie); die Leitachse beginnt an seinem Fuß, wo das
+                Lot des Einstiegs endet, und ihr rotes Stück wächst erst ab dort (vorher stand ab lg bei scrollY 0 ein roter
+                Stummel unter dem Kopf neben Waage und Lot, E2-SICHT-2 Befund 3, E3-START-02) */}
+            <StartEinstieg />
             <Leitachse>
-                <StartEinstieg />
                 <Suspense fallback={<div aria-hidden="true" className="min-h-dvh" />}>
                     <Lagefliesen />
                     <WasWirTun />

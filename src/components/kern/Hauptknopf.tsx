@@ -28,11 +28,17 @@ export default function Hauptknopf({ href = HAUPTAKTION.ziel, children = HAUPTAK
     'data-motion': 'druck',
     className: knopfKlassen('haupt', clsx(breit && 'w-full sm:w-auto', className)),
   };
+  // Der Pfeil hängt am letzten Wort: Bricht die Beschriftung um (große Systemschrift), steht er hinter der letzten Zeile statt
+  // allein am rechten Rand des Knopfs (E2-SICHT-2 Befund 10, E3-START-05). Ein Flex-Kind, Abstand wie gap-2.
+  const schnitt = children.lastIndexOf(' ') + 1;
   const inhalt = (
-    <>
-      <span>{zusammen(children)}</span>
-      <Icon name="pfeil-rechts" groesse={5} />
-    </>
+    <span>
+      {schnitt > 0 && zusammen(children.slice(0, schnitt))}
+      <span className="whitespace-nowrap">
+        {children.slice(schnitt)}
+        <Icon name="pfeil-rechts" groesse={5} className="ml-2 align-middle" />
+      </span>
+    </span>
   );
   // Anker derselben Seite (#termin, #anfrage) als einfacher Link: Der Browser springt weich (scroll-behavior) und setzt den
   // Fokus-Startpunkt, ohne Router-Navigation im Klick (Reaktion, E-033); Seitenwechsel bleiben bei next/link (B-01).

@@ -80,8 +80,9 @@ export default function Footer() {
                             &bdquo;{motto}&ldquo;
                         </blockquote>
 
-                        {/* Schriftfeld: Stammdaten in Feldern an der Fuge */}
-                        <address className="grid grid-cols-1 gap-px border border-nacht-fuge bg-nacht-fuge not-italic sm:grid-cols-2">
+                        {/* Schriftfeld: Stammdaten in Feldern an der Fuge; als Container, damit die Rufnummer bei großer Systemschrift
+                            Vorwahl und Nummer sauber untereinander setzt (unter 18rem Breite, Rufnummer.tsx, E3-START-05) */}
+                        <address className="@container grid grid-cols-1 gap-px border border-nacht-fuge bg-nacht-fuge not-italic sm:grid-cols-2">
                             <div className="bg-tinte p-4 sm:col-span-2">
                                 <span className={etikett}>Anschrift</span>
                                 <span className="mt-1 block text-fs-2">{headquarters.street}, {headquarters.postalCode} {headquarters.city}</span>

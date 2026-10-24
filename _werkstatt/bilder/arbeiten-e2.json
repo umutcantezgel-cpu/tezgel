@@ -9,6 +9,15 @@
     "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADwAwCdASoQABQAPu1kqU2ppaQiMAgBMB2JZQDE2CIe0qrzm1L6xiiAAP6XiC6lElYtj+AeFxetxmHBwvEPYqKdpXYsoMsKavqLsUzp/uvkdwpEQ5grETgvJD1NPIAA"
   },
   {
+    "id": "start-dusche-boden",
+    "src": "/images/arbeiten/dusche/dusche-ohne-stufe-boden-graue-fliesen.jpg",
+    "breite": 1280,
+    "hoehe": 960,
+    "alt": "Boden einer Dusche ohne Stufe: große graue Fliesen laufen ohne Kante unter der Glaswand durch",
+    "raum": "dusche",
+    "blurDataURL": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADQAQCdASoQAAwAA4BaJZwAAiyff8DEAADNmQ+doJdgRRanEGD0bT886NJJMdqA3ptWdpSZcSgGAAAA"
+  },
+  {
     "id": "lage-dusche",
     "src": "/images/arbeiten/dusche/dusche-ohne-stufe-sitzbank-mosaik.jpg",
     "breite": 800,

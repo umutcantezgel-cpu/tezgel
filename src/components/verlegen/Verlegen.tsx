@@ -39,6 +39,8 @@ let steuerung: Steuerung | null = null;
 let eigenerPopstate = false;
 /** Adresse der gerade angezeigten Seite; bei popstate zeigt location schon das Ziel. */
 let angezeigt = '';
+/** Der laufende Wechsel kommt aus dem Verlauf (Zurück, Vor). */
+let ausVerlauf = false;
 
 // Auf Modulebene, also vor dem popstate-Lauscher des App Routers (useEffect): sichert die Reihenfolge auch in
 // Firefox vor 116, das Lauscher am Ziel nach Registrierung statt nach Phase ordnet (Gutachten E0-GUT-01, Frage 3).
@@ -257,6 +259,13 @@ function merkeGewechselt(): void {
  *  die Flucht des Plans auf anderen Seiten verspätet. Eine Änderung an html, während der Boden schließt. */
 function ohneStartbild(): void {
   document.documentElement.classList.remove('k-startbild', 'k-intro-start');
+}
+
+/** Zurück und Vor (Verlauf): Die Bewegungen des Einstiegs (SIG-1, Flucht, Plan beim Laden) stehen im Endzustand, wie die
+ *  Scrollstellung, statt bei jeder Rückkehr nach dem Abziehen noch einmal 1,3 s zu wachsen (E2-SICHT-2 Befund 12,
+ *  E3-START-04; bewegung.css html.k-verlauf). Ein Vorwärtswechsel nimmt die Klasse vor dem neuen Einstieg wieder weg. */
+function verlauf(an: boolean): void {
+  document.documentElement.classList.toggle('k-verlauf', an);
 }
 
 function sperre(an: boolean): void {
@@ -607,6 +616,7 @@ export default function Verlegen() {
         e.preventDefault();
         merkeScroll(adresse());
         eigenerWechsel = true;
+        verlauf(false);
         morph(a);
         return;
       }
@@ -614,6 +624,7 @@ export default function Verlegen() {
       e.preventDefault();
       if (lage.zustand !== 'ruhe' || angefordert) return; // Doppelklick: kein zweiter Wechsel
       angefordert = true;
+      verlauf(false);
       const ziel = new URL(a.href);
       router.prefetch(ziel.pathname + ziel.search);
       merkeScroll(adresse());
@@ -642,11 +653,15 @@ export default function Verlegen() {
         if (morphOffen) {
           morphOffen = false;
           beendeUebergang();
+          ausVerlauf = true;
+          verlauf(true);
           return false;
         }
         const state = e.state as { __NA?: boolean } | null;
         // Ohne Next-Zustand (z. B. Sprunglink #main-content) oder bei gleichem Pfad: nichts tun.
         if (!state?.__NA || location.pathname === pfadRef.current) return false;
+        ausVerlauf = true;
+        verlauf(true);
         if (ZURUECK === 'sicher') {
           if (lage.zustand !== 'ruhe') return false;
           senden.current({ typ: 'start-liegend', richtung: 'zurueck' });
@@ -694,6 +709,10 @@ export default function Verlegen() {
     if (pfad === pfadRef.current) return;
     pfadRef.current = pfad;
     angezeigt = adresse();
+    // ein Wechsel, der weder aus dem Verlauf noch über den Klick-Lauscher kam (z. B. router.push nach einem Formular), läuft
+    // mit Bewegung; die Klasse fällt dann erst hier weg, die Bewegungen starten einen Takt später
+    if (!ausVerlauf) verlauf(false);
+    ausVerlauf = false;
     if (eigenerWechsel) {
       // nach dem Plan-Morph: Fokus auf die H1 wie nach jedem Wechsel (Scroll 0 setzt Next selbst)
       eigenerWechsel = false;

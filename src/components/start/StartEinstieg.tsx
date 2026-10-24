@@ -1,10 +1,11 @@
 // Startseite · 1 Worum es geht (KERN v3 K-006, K-009; Text _werkstatt/texte/REF-start.md; E-037): erster Bildschirm als
 // Planblatt wie im alten Stand, mit den Texten des neuen. Links H1 (vier feste Zeilen, rücken in die Flucht: sig-flucht), Ort,
-// Hauptknopf zum Formular #termin, Anruf, ab xl WhatsApp, Vorspann; rechts der Verlegeplan Bad, an seiner Achse geschnitten.
-// Die Schnittkante ist die rote Waage über die ganze Breite; sie wächst mit dem Lot des Plans aus dem Kreuzpunkt und knickt
-// links ins Lot zur Leitachse (sig-kreuzlinie, gesamt 1,52 s). Unter der Waage steht das Startfoto zwischen den Wänden des
-// Plans (planblatt-wand), es legt sich frei, sobald es im Blick ist (großer Moment startbild). Mobil eine Spalte: Text, dann
-// der ganze Plan (rückt beim Eintritt in die Flucht), dann das Foto; das Lot wächst im Seitenrand neben dem Text.
+// Hauptknopf zum Formular #termin, Anruf, ab xl WhatsApp, Vorspann; rechts die Bewertungszeile als Kennzeile über dem
+// Verlegeplan Bad, an seiner Achse geschnitten. Die Schnittkante ist die rote Waage über die ganze Breite; sie wächst mit dem
+// Lot des Plans aus dem Kreuzpunkt und knickt links ins Lot zur Leitachse (sig-kreuzlinie, gesamt 1,52 s). Unter der Waage
+// steht ab lg der Boden der Dusche im Querformat zwischen den Wänden des Plans (planblatt-wand): aus der Zeichnung wird der
+// echte Boden. Mobil eine Spalte: Text, dann der ganze Plan (rückt beim Eintritt in die Flucht), dann das hohe Startfoto, das
+// sich freilegt, sobald es im Blick ist (großer Moment startbild); das Lot wächst im Seitenrand neben dem Text.
 // Die fünf Pflichtelemente des ersten Bildschirms tragen data-erstes-bild (Logo im Kopf). Serverkomponente.
 import type { CSSProperties } from 'react';
 import clsx from 'clsx';
@@ -13,6 +14,7 @@ import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
 import Hauptknopf from '@/components/kern/Hauptknopf';
 import Verlegeplan, { wandEinzug } from '@/components/kern/Verlegeplan';
+import Bildfeld from '@/components/kern/Bildfeld';
 import Rufnummer from '@/components/kern/Rufnummer';
 import { zusammen } from '@/components/kern/zusammen';
 import { knopfKlassen, seitenKlassen } from '@/components/kern/stile';
@@ -50,7 +52,8 @@ export function Bewertungszeile({ stand = false, geteilt = false, className }: {
 }
 
 // Plan des Einstiegs (wie im alten Stand) und die H1 in festen Zeilen (Wortlaut REF-start, höchstens 15 Zeichen je Zeile,
-// damit keine Zeile in fs-7 ab lg umbricht; die Zeilen sind Block-Kinder, sonst wirkt die Flucht nicht)
+// damit keine Zeile in fs-7 ab lg umbricht: fs-7 wächst nur, solange der Satzspiegel wächst, E3-START-01; die Zeilen sind
+// Block-Kinder, sonst wirkt die Flucht nicht)
 const PLAN = 'bad';
 const TITEL_ZEILEN = ['Wir verlegen', 'Fliesen in Bad,', 'Küche, Flur und', 'auf dem Balkon.'];
 
@@ -68,16 +71,19 @@ export default function StartEinstieg() {
       <div className={`${seitenKlassen} relative grid grid-cols-4 gap-y-12 pt-24 pb-16 flach:pt-16 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12 lg:gap-y-0 lg:pt-32 lg:pb-24`}>
         {/* Textspalte: mobil ein Block (Abstände wie gesetzt, kein Rasterabstand zwischen H1 und Ort), ab lg zwei Rasterzellen */}
         <div className="relative col-span-4 md:col-span-8 lg:contents">
-          {/* mobil: das rote Lot wächst im Seitenrand neben dem Text (Achse 8 bzw. 16 px vor der Textkante, ACHSE_LAGE) */}
-          <div aria-hidden="true" data-motion="sig-kreuzlinie" className="pointer-events-none absolute inset-y-0 -left-2 md:-left-4 lg:hidden">
+          {/* mobil: das rote Lot wächst im Seitenrand neben dem Text (Achse 8 bzw. 16 px vor der Textkante, ACHSE_LAGE); unter md
+              beginnt es eine Zeile höher am Fugenkreuz */}
+          <div aria-hidden="true" data-motion="sig-kreuzlinie" className="pointer-events-none absolute inset-y-0 -left-2 max-md:-top-4 md:-left-4 lg:hidden">
             <span className="kreuzlinie-lot" />
           </div>
           {/* Container: unter 20 rem Spaltenbreite (nur bei großer Systemschrift, P1 mit 200 %) entfällt die Firmensitz-Zeile, die
               H1 steht eine Stufe kleiner und fließt als ein Satz (fs-6 und fs-7 treffen dort beide ihr Minimum) */}
           <div className="@container relative lg:col-span-6 lg:row-start-1 lg:self-start lg:pb-4">
             {/* Fugenkreuz als Anschlag auf der Achse, mit dem Firmensitz in Mono (Oberkante der H1 = pt-32 + diese Zeile + mt-4:
-                daran richtet das Intro seine Reihen aus, bewegung.css html.k-intro-start) */}
-            <Fugenkreuz className="pointer-events-none absolute top-1 -left-2 size-3 -translate-x-1/2 text-tinte md:-left-4" />
+                daran richtet das Intro seine Reihen aus, bewegung.css html.k-intro-start). Unter md steht die Achse nur 8 px vor
+                der Textkante: dort sitzt das Kreuz eine Zeile höher am Anfang des Lots, statt den ersten Buchstaben zu berühren
+                (m360 und 200 %, E2-SICHT-2 Befund 10) */}
+            <Fugenkreuz className="pointer-events-none absolute top-1 -left-2 size-3 -translate-x-1/2 text-tinte max-md:-top-4 max-md:-translate-y-1/2 md:-left-4" />
             <p className="font-mono text-fs-1 text-tinte-2 flach:hidden @max-xs:hidden">Firmensitz Aßlar</p>
             <h1 id="start-titel" data-erstes-bild="ueberschrift" data-motion="sig-flucht" className="mt-4 text-fs-7 text-tinte flach:mt-0 flach:text-fs-6 @max-xs:mt-0 @max-xs:text-fs-5">
               {TITEL_ZEILEN.map((zeile, i) => (
@@ -94,17 +100,20 @@ export default function StartEinstieg() {
             <p data-erstes-bild="ort" className="mt-6 font-text text-fs-4 text-balance text-tinte flach:mt-4 lg:mt-0">
               Fliesenleger Deniz Tezgel aus Aßlar, für Wetzlar und die Orte rundherum.
             </p>
-            {/* unter xl folgen Hauptknopf und Telefon direkt auf Überschrift und Ort, der Vorspann danach (K-006; bei großer
-                Systemschrift stand der Knopf sonst erst nach fast zwei Bildschirmen; auf t1024 lagen die Knöpfe an der Falz,
-                Sichtabnahme E2, Befund 10) */}
+            {/* auf jeder Breite folgen Hauptknopf und Telefon direkt auf Überschrift und Ort, der Vorspann erklärt danach den
+                Termin (K-006; bei großer Systemschrift stand der Knopf sonst erst nach fast zwei Bildschirmen, auf t1024 und d1280
+                an der Falz, Sichtabnahme E2 Befund 10, E2-SICHT-2 Befund 6) */}
             <div className="flex flex-col">
-              <p className="mt-4 max-w-mass font-text text-fs-3 text-pretty text-tinte-2 max-xl:order-1 max-xl:mt-8">
+              <p className="order-1 mt-8 max-w-mass font-text text-fs-3 text-pretty text-tinte-2">
                 Deniz Tezgel kommt selbst zu Ihnen, schaut sich alles an und sagt Ihnen, was zu tun ist. Danach verlegt er mit
                 seinem Team Fliese für Fliese.
               </p>
-              <div className="mt-8 flex flex-col gap-3 flach:mt-6 sm:flex-row sm:flex-wrap sm:items-center">
+              {/* Container für die Rufnummer: bei großer Systemschrift Vorwahl über der Nummer (Rufnummer.tsx). Reicht die Zeile
+                  nicht für Anruf und WhatsApp nebeneinander (d1280), rückt WhatsApp in die nächste Zeile, statt dass beide
+                  Beschriftungen umbrechen */}
+              <div className="@container mt-8 flex flex-col gap-3 flach:mt-6 sm:flex-row sm:flex-wrap sm:items-center">
                 <Hauptknopf href="#termin" erstesBild breit />
-                <div className="flex flex-col gap-3 sm:flex-row">
+                <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                   <a
                     href={`tel:${contact.phoneLink}`}
                     data-erstes-bild="kontakt"
@@ -135,27 +144,36 @@ export default function StartEinstieg() {
             </div>
           </div>
         </div>
-        {/* Plan: ab lg rechts oben, an der Achse geschnitten, die Schnittkante liegt auf der Waage; das Lot des Plans wächst mit
-            der Waage aus dem Kreuzpunkt, die Fugen rücken beim Laden in die Flucht. Mobil der ganze Plan ohne Achse, bündig
-            mit der Textkante, er rückt beim Eintritt in die Flucht (sig-plan zeigen) */}
-        <div className="col-span-4 md:col-span-6 lg:col-span-6 lg:col-start-7 lg:row-start-1 lg:self-end">
-          <div className="plan-buendig lg:hidden" style={wandAussen}>
-            <Verlegeplan plan={PLAN} ohneAchse bemassung={false} flucht="zeigen" />
+        {/* Plan mit Kennzeile: ab lg rechts, an der Achse geschnitten, die Schnittkante liegt auf der Waage; die Bewertungszeile
+            steht direkt über seiner Maßkette (vorher oben rechts mit 240 bis 500 px Lücke zum Plan, E2-SICHT-2 Befund 2). Das
+            Lot des Plans wächst mit der Waage aus dem Kreuzpunkt, die Fugen rücken beim Laden in die Flucht. Unter lg ist die
+            Hülle aufgelöst (contents): der ganze Plan ohne Achse, ab md wie das Foto rechtsbündig an der Textkante (Kanten von
+            Plan und Foto fluchten, E2-SICHT-2 Befund 11), er rückt beim Eintritt in die Flucht; die Bewertungszeile rückt per
+            order ans Ende, unter das Foto */}
+        <div className="contents lg:col-span-6 lg:col-start-7 lg:row-start-1 lg:flex lg:flex-col lg:gap-6 lg:self-end">
+          <div className="col-span-4 max-lg:order-1 md:col-span-6 md:col-start-3" style={wand}>
+            <Bewertungszeile geteilt className="planblatt-wand font-text text-fs-2 text-tinte-2 hyphens-none max-lg:-mt-8" />
           </div>
-          <div data-motion="sig-kreuzlinie" className="hidden lg:block">
-            <Verlegeplan plan={PLAN} schnitt flucht="laden" />
+          <div className="col-span-4 md:col-span-6 md:col-start-3">
+            <div className="plan-buendig lg:hidden" style={wandAussen}>
+              <Verlegeplan plan={PLAN} ohneAchse bemassung={false} flucht="zeigen" />
+            </div>
+            <div data-motion="sig-kreuzlinie" className="hidden lg:block">
+              <Verlegeplan plan={PLAN} schnitt flucht="laden" />
+            </div>
           </div>
         </div>
-        {/* Foto unter der Waage, ab lg von Wand zu Wand des Plans; md rechtsbündig an der Textkante (Runde 3) */}
+        {/* Foto unter der Waage. Unter lg das hohe Startfoto mit seinem großen Moment, ab md rechtsbündig an der Textkante
+            (Runde 3). Ab lg von Wand zu Wand des Plans der Boden derselben Dusche im Querformat (eigener Zuschnitt, K-012): so
+            hoch wie die Textspalte daneben, der Einstieg bleibt kurz (vorher 4:5 mit 400 px Leere unter den Knöpfen,
+            E2-SICHT-2 Befund 6). Das jeweils verborgene Bild lädt nicht (verzögertes Laden, display: none) */}
         <div className="col-span-4 md:col-span-6 md:col-start-3 lg:col-span-6 lg:col-start-7 lg:row-start-2" style={wand}>
           <div className="planblatt-wand lg:pt-8">
-            <Startbild sizes="(min-width: 1312px) 520px, (min-width: 1024px) 40vw, (min-width: 768px) 75vw, 100vw" />
+            <div className="lg:hidden">
+              <Startbild sizes="(min-width: 768px) 75vw, 100vw" />
+            </div>
+            <Bildfeld arbeit="start-dusche-boden" sizes="(min-width: 1312px) 520px, 40vw" className="hidden lg:block" />
           </div>
-        </div>
-        {/* Bewertungszeile: ab lg oben rechts über dem Plan, auf der Höhe des Firmensitzes, wie die Kennzeile des alten
-            Planblatts (füllt die Fläche über dem Plan); mobil direkt unter dem Foto */}
-        <div className="col-span-4 md:col-span-6 md:col-start-3 lg:col-span-6 lg:col-start-7 lg:row-start-1 lg:self-start" style={wand}>
-          <Bewertungszeile geteilt className="planblatt-wand font-text text-fs-2 text-tinte-2 hyphens-none max-lg:-mt-8" />
         </div>
         {/* ab lg: die Waage als Schnittkante über die ganze Breite (wächst aus dem Kreuzpunkt mit dem Lot des Plans) und das
             Lot nach dem Knick an der Achse bis zum Fuß des Einstiegs, wo die Leitachse übernimmt */}

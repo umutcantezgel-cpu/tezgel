@@ -391,15 +391,22 @@ html.k-notaus::view-transition-new(*) {
   container-type: size;
   pointer-events: none;
   /* am Desktop mit der Breite wachsend (etwa acht Fliesen je Reihe bei 1440 px wie B-01, Sichtabnahme E2, Befund 6); auf der
-     Startseite ab lg Reihe und Fliese nach der Zeilenhöhe der H1 (unten, html.k-intro-start) */
-  --intro-fliese: clamp(6rem, 24vw, min(15rem, max(9rem, 12.5vw)));
+     Startseite ab lg Reihe und Fliese nach der Zeilenhöhe der H1 (unten, html.k-intro-start). Die Untergrenze 6rem höchstens
+     28vw: bei großer Systemschrift (200 %) war die Fläche sonst breiter als das Handy und das Logo links angeschnitten
+     (E2-SICHT-2 Befund 1, E3-START-03); bei 100 % gilt weiter 6rem */
+  --intro-fliese: clamp(min(6rem, 28vw), 24vw, min(15rem, max(9rem, 12.5vw)));
   --intro-reihe: calc(var(--intro-fliese) / 2);
   --intro-oben: calc(47cqh - var(--intro-reihe) * 1.5);
 }
 /* ganze Pixel, damit zwischen den Reihen keine Haarlinien entstehen (wie B-01) */
 @supports (width: round(1px, 1px)) {
+  /* jede Reihe endet rechts auf einer Fuge, also mit einer ganzen Fliese: die abziehende Kante ist eine Fliesenkante, keine
+     Schnittlinie mitten durch eine Fliese (Fugen bei 50cqw − Fliese · (1,5 + Versatz) + n · Fliese) */
+  .intro-reihe {
+    --intro-breite: calc(50cqw - var(--intro-fliese) * (1.5 + var(--v)) + round(up, calc(50cqw + var(--intro-fliese) * (2.5 + var(--v))), var(--intro-fliese)));
+  }
   .intro {
-    --intro-fliese: round(clamp(6rem, 24vw, min(15rem, max(9rem, 12.5vw))), 2px);
+    --intro-fliese: round(clamp(min(6rem, 28vw), 24vw, min(15rem, max(9rem, 12.5vw))), 2px);
     --intro-oben: round(calc(47cqh - var(--intro-reihe) * 1.5), 1px);
   }
   /* Startseite ab lg (Sichtabnahme E2, Befund 6): eine Reihe so hoch wie eine Zeile der H1 (fs-7), eine Reihengrenze auf der
@@ -419,10 +426,14 @@ html.k-notaus::view-transition-new(*) {
   position: absolute;
   left: 0;
   top: calc(var(--intro-oben) + var(--k) * var(--intro-reihe));
-  width: calc(100cqw + var(--intro-fliese));
+  /* Breite: ohne round() ganzer Bildschirm plus eine Fliese, mit round() bis zur nächsten Fuge (oben) */
+  width: var(--intro-breite, calc(100cqw + var(--intro-fliese)));
   /* 1 px Überlappung: die nächste Reihe liegt darüber und zieht ihre Fuge selbst */
   height: calc(var(--intro-reihe) + 1px);
   background-color: var(--color-kalk);
+  /* die Reihe liegt als Streifen gesetzter Fliesen auf der Seite: beim Abziehen zeigt ihre Kante einen Schatten wie die Fliesen
+     von B-01, statt als harte Maske über die Seite zu wischen (E2-SICHT-2 Befund 4, E3-START-03) */
+  box-shadow: var(--shadow-gesetzt);
   background-image:
     linear-gradient(to right, var(--color-fuge) 1px, transparent 1px),
     linear-gradient(var(--color-fuge) 1px, transparent 1px);
@@ -438,15 +449,17 @@ html.k-notaus::view-transition-new(*) {
   height: calc(var(--intro-reihe) + 1px);
   overflow: hidden;
 }
-/* Fliese wie B-01: Fugenfarbe als halbe Fuge rundum, darin die Fliese mit einem Hauch Glanz; die Fuge wächst mit der Fliese
-   (1/80, mindestens 1 px je Seite), damit die Fläche am Desktop als verlegter Boden lesbar ist (Sichtabnahme E2, Befund 6) */
+/* Fliese wie B-01: halbe Fuge rundum, darin die Fliese mit einem Hauch Glanz; die Fuge wächst mit der Fliese (1/80,
+   mindestens 1 px je Seite), damit die Fläche am Desktop als verlegter Boden lesbar ist (Sichtabnahme E2, Befund 6). Fuge in
+   Strich wie die Zeichnungen „deutlich“: Weiß auf Kalk (1,08 : 1) mit Fuge in Fugengrau war als Fläche kaum zu sehen
+   (E2-SICHT-2 Befund 5, E3-START-03) */
 .intro-fliese {
   position: absolute;
   top: 0;
   left: calc(var(--x) * var(--intro-fliese));
   width: var(--intro-fliese);
   height: var(--intro-reihe);
-  background-color: var(--color-fuge);
+  background-color: var(--color-strich);
 }
 .intro-fliese::before,
 .intro-fliese::after {
@@ -495,7 +508,7 @@ html.k-notaus::view-transition-new(*) {
 }
 @keyframes intro-ziehen {
   to {
-    translate: calc(-100cqw - var(--intro-fliese)) 0;
+    translate: calc(var(--intro-breite, calc(100cqw + var(--intro-fliese))) * -1) 0;
   }
 }
 /* Zeiger: in der deckenden Hälfte fängt die Schicht ab (ein Tipp beendet nur das Intro), ab dem Freilegen geht ein Tipp
@@ -901,6 +914,19 @@ html.k-bewegung.k-intro-start [data-motion="sig-flucht"] > :nth-child(4) {
 }
 html.k-bewegung.k-intro-start:not(.k-notaus) [data-motion="sig-kreuzlinie"] [data-motion="sig-plan"][data-flucht="laden"] .plan-reihenteil {
   animation-delay: calc(var(--intro-gesamt) * 0.5 + var(--dauer-2));
+}
+
+/* Zurück und Vor (html.k-verlauf aus B-01, E3-START-04): Waage, Lote, Flucht der H1 und der Plan beim Laden stehen im
+   Endzustand wie die Scrollstellung, statt nach dem Abziehen der Fliesen noch einmal zu wachsen (E2-SICHT-2 Befund 12).
+   !important wie bei Druck und forced-colors: die Laufregeln oben sind teils spezifischer (:not(.k-notaus)). */
+html.k-verlauf [data-motion="sig-kreuzlinie"] .kreuzlinie-lot,
+html.k-verlauf [data-motion="sig-kreuzlinie"] .kreuzlinie-waage,
+html.k-verlauf [data-motion="sig-kreuzlinie"] .plan-achse,
+html.k-verlauf [data-motion="sig-plan"][data-flucht="laden"] .plan-achse-lot,
+html.k-verlauf [data-motion="sig-plan"][data-flucht="laden"] .plan-achse-waage,
+html.k-verlauf [data-motion="sig-plan"][data-flucht="laden"] .plan-reihenteil,
+html.k-verlauf [data-motion="sig-flucht"] > * {
+  animation: none !important;
 }
 
 /* sig-flucht (SIG-1) – die Zeilen der H1 rücken 12 px in die Flucht, nacheinander (je Zeile zwei Staffelstufen),

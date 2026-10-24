@@ -371,6 +371,28 @@ test.describe('Bewegung an (Wechsel mit Fliesen)', () => {
     expect.soft(await zustand(page)).toBe('ruhe');
   });
 
+  test('(14) Zurück und Vor nach /: Einstieg im Endzustand (k-verlauf), Vorwärtswechsel nach / wieder mit Bewegung (E3-START-04)', async ({ page }) => {
+    // Bewegungen des Einstiegs: Waage und Lote (sig-kreuzlinie), Flucht der H1 (sig-flucht); getAnimations zählt auch
+    // beendete Animationen mit Füllung, „keine“ heißt also: nie gestartet (animation: none)
+    const sig = () => page.evaluate(() => document.getAnimations().filter((a) => a.effect?.target?.closest?.('[data-motion="sig-kreuzlinie"], [data-motion="sig-flucht"]')).length);
+    await oeffne(page, '/');
+    await beobachte(page);
+    expect.soft(await sig(), 'beim Laden laufen Waage, Lot und Flucht').toBeGreaterThan(0);
+    const link = page.locator('#main-content a[href^="/bad/"]').filter({ visible: true }).first();
+    await link.scrollIntoViewIfNeeded();
+    const ziel = await link.getAttribute('href');
+    await wechsel(page, () => link.click(), ziel);
+    await expect(page.locator('html')).not.toHaveClass(/k-verlauf/);
+    await wechsel(page, () => page.goBack(), '/');
+    await expect(page.locator('html')).toHaveClass(/k-verlauf/);
+    expect.soft(await sig(), 'nach Zurück stehen Waage, Lot und Flucht im Endzustand').toBe(0);
+    await wechsel(page, () => page.goForward(), ziel);
+    const logo = page.locator('header a[href="/"]').filter({ visible: true }).first();
+    await wechsel(page, () => logo.click(), '/');
+    await expect(page.locator('html')).not.toHaveClass(/k-verlauf/);
+    expect.soft(await sig(), 'Vorwärtswechsel nach /: Bewegung wie beim Laden').toBeGreaterThan(0);
+  });
+
   test('(13) Layoutverschiebung: Summe ohne hadRecentInput zwischen Klick und ruhe = 0', async ({ page }) => {
     await oeffne(page);
     const link = linkZu(page, ZIEL);
