@@ -149,9 +149,9 @@ test('Intro 9: jede Eingabe beendet sofort (passiv, once), Ende der Schlussanima
   for (const l of namen) assert.deepEqual(l.opt, { passive: true, once: true, capture: true });
   namen.find((l) => l.name === 'pointerdown').fn();
   assert.ok(!u.klassen.has('k-intro'), 'Tippen beendet');
-  assert.ok(u.stil.has('--intro-x'), 'Aufräumen erst nach dem nächsten Bild');
-  u.bilder.forEach((fn) => fn());
-  assert.ok(!u.stil.has('--intro-x'));
+  // Die Zielwerte liegen an der Logo-Fläche, nicht an html (E-034): das Ende fasst den Stil von html nicht an
+  assert.equal(u.stil.get('--intro-x'), '1px', 'html-Stil unberührt');
+  assert.equal(u.bilder.length, 0, 'kein Aufräumen im nächsten Bild nötig');
 
   const v = umgebung();
   const animEnde = v.lauscher.find((l) => l.name === 'animationend').fn;
@@ -172,21 +172,24 @@ test('Intro 9: jede Eingabe beendet sofort (passiv, once), Ende der Schlussanima
   assert.ok(!x.klassen.has('k-intro'));
 });
 
-/** Zielmessung mit nachgebauten Rechtecken. */
+/** Zielmessung mit nachgebauten Rechtecken; liefert die Werte an der Logo-Fläche, html darf nichts bekommen. */
 function miss(kIntro, schild, kopf) {
   const stil = new Map();
+  const htmlStil = new Map();
   const doc = {
-    documentElement: { classList: { contains: () => kIntro }, style: { setProperty: (n, v) => stil.set(n, v) } },
+    documentElement: { classList: { contains: () => kIntro }, style: { setProperty: (n, v) => htmlStil.set(n, v) } },
     querySelector: (sel) => {
       const r = sel.includes('header') ? kopf : schild;
-      return r && { getBoundingClientRect: () => r };
+      if (!r) return null;
+      return sel.includes('header') ? { getBoundingClientRect: () => r } : { getBoundingClientRect: () => r, style: { setProperty: (n, v) => stil.set(n, v) } };
     },
   };
   new Function('document', INTRO_ZIEL)(doc);
+  assert.equal(htmlStil.size, 0, 'nichts an html (E-034)');
   return stil;
 }
 
-test('Intro 10: Zielmessung legt Versatz der Mitten und Maßstab an html, ohne Intro oder Maß nichts', () => {
+test('Intro 10: Zielmessung legt Versatz der Mitten und Maßstab an die Logo-Fläche, ohne Intro oder Maß nichts', () => {
   const stil = miss(true, { left: 80, top: 400, width: 230, height: 72 }, { left: 16, top: 8, width: 153.6, height: 48 });
   assert.equal(stil.get('--intro-x'), `${16 + 76.8 - (80 + 115)}px`);
   assert.equal(stil.get('--intro-y'), `${8 + 24 - (400 + 36)}px`);
