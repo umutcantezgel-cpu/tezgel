@@ -31,9 +31,10 @@ export const feldKlassen =
 export const hilfeKlassen = 'mt-2 font-text text-fs-2 text-tinte-2';
 /** Fehlertext (mit Fehler-Icon und role="alert") */
 export const fehlerKlassen = 'mt-2 flex items-start gap-2 font-text text-fs-2 text-laser-tief';
-/** Auswahlknopf in Gruppen (aria-pressed bzw. Radio) */
+/** Auswahlknopf in Gruppen (aria-pressed bzw. Radio). Gewählt: doppelt so starker Rand in Tinte und halbfett auf Fliese,
+ *  nicht als Tinte-Fläche – die bleibt dem Haupt- und Absendeknopf (K-003 Nr. 5, Sichtprüfung E2); nie nur über Farbe. */
 export const wahlKlassen =
-  'inline-flex min-h-11 items-center justify-center rounded-none border border-strich bg-fliese px-4 py-3 text-center font-text text-fs-2 text-tinte hover:border-tinte aria-pressed:border-tinte aria-pressed:bg-tinte aria-pressed:text-kalk aria-checked:border-tinte aria-checked:bg-tinte aria-checked:text-kalk';
+  'inline-flex min-h-11 items-center justify-center rounded-none border border-strich bg-fliese px-4 py-3 text-center font-text text-fs-2 text-tinte hover:border-tinte aria-pressed:border-tinte aria-pressed:font-semibold aria-pressed:ring-1 aria-pressed:ring-inset aria-pressed:ring-tinte aria-checked:border-tinte aria-checked:font-semibold aria-checked:ring-1 aria-checked:ring-inset aria-checked:ring-tinte';
 /** Kontrollkästchen */
 export const kontrollKlassen = 'mt-1 size-5 shrink-0 rounded-r1 border border-strich accent-tinte';
 /** Mono-Etikett ohne Farbe (für Flächen mit eigener Textfarbe, z. B. Tinte) */

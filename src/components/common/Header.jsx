@@ -20,13 +20,15 @@ const isSectionActive = (pathname, link) =>
 // Logo unverändert (UNANTASTBAR); Unterzeile als Mono-Etikett.
 export function BrandMark({ compact = false, sublineClassName = 'hidden lg:block xl:hidden 2xl:block' }) {
     return (
-        <span className="flex items-center gap-3">
+        <span className="flex min-w-0 items-center gap-3">
+            {/* Maße im Seitenverhältnis der Datei (3,2 : 1); max-w-full + object-contain: bei großer Systemschrift wird das
+                Logo kleiner statt den Menü-Schalter aus dem Bild zu schieben (Form und Proportion bleiben, G8) */}
             <Image
                 src="/images/logo/tezgel-logo.webp"
                 alt="Fliesenverlegung Tezgel"
-                width={140}
-                height={44}
-                className="h-12 w-auto shrink-0 object-contain @7xl:h-11 2xl:h-12"
+                width={160}
+                height={50}
+                className="h-12 w-auto max-w-full shrink object-contain @7xl:h-11"
                 data-erstes-bild="logo"
                 priority
             />
@@ -111,7 +113,7 @@ export default function Header({ isMobileMenuOpen }) {
         >
             {/* Kopfhöhe 64 px, im Querformat am Handy 48 px (Kopf und Leisten höchstens ein Viertel der Höhe, K-013) */}
             <div className={clsx(seitenKlassen, 'kopf-zeile flex h-16 items-center justify-between gap-6 @7xl:gap-3 2xl:gap-6')}>
-                <Link href="/" className="shrink-0" aria-label="Zur Startseite von Fliesenverlegung Tezgel">
+                <Link href="/" className="min-w-0 shrink" aria-label="Zur Startseite von Fliesenverlegung Tezgel">
                     <BrandMark sublineClassName="hidden @5xl:@max-7xl:block" />
                 </Link>
 

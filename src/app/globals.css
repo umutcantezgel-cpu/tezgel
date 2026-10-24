@@ -53,7 +53,9 @@
   --text-fs-6: clamp(2rem, 1.5rem + 2.2vw, 3.5rem);
   --text-fs-6--line-height: 1.1;
   --text-fs-6--letter-spacing: -0.015em;
-  --text-fs-7: clamp(2.75rem, 1.4rem + 5vw, 6.5rem);
+  /* Display: am Desktop wie bisher (rund 94 px bei 1.440 px), mobil 37 px; der rem-Anteil ist klein, damit große
+     Systemschrift (200 %) die H1 auf 64 px statt 88 px hebt und Ort und Hauptknopf nicht ganz verdrängt (Sichtprüfung E2) */
+  --text-fs-7: clamp(2rem, 1rem + 5.4vw, 6.5rem);
   /* ≥ Inhaltshöhe der Archivo (Ascender 878 + Descender 210 = 1,088 em): Zeilen der H1 berühren sich nie */
   --text-fs-7--line-height: 1.1;
   --text-fs-7--letter-spacing: -0.015em;
@@ -245,6 +247,14 @@
     text-wrap: pretty;
     hyphens: auto;
     -webkit-hyphens: auto;
+    /* nur lange Wörter trennen, je Teil mindestens vier Zeichen (kein „da-mit“, „wie-der“; Sichtprüfung E2) */
+    hyphenate-limit-chars: 10 4 4;
+  }
+  /* Linknamen in Navigation und Fuß nie trennen */
+  nav a,
+  footer a {
+    hyphens: manual;
+    -webkit-hyphens: manual;
   }
 
   ::selection {
@@ -388,6 +398,22 @@
       flex-direction: row;
       gap: calc(var(--spacing) * 2);
       padding-block: 0;
+    }
+  }
+  /* Große Systemschrift (K-013, P1 mit 200 %): Ist die untere Leiste schmaler als 20 em ihrer eigenen Schriftgröße (bei
+     100 % also unter 320 px, bei 200 % unter 640 px), stehen nur die Zeichen da; die Namen bleiben für Screenreader
+     (aria-label) und als verborgener Text. So passen alle vier Felder in die Breite (Sichtprüfung E2). */
+  [data-leiste] {
+    container-type: inline-size;
+  }
+  @container (width < 20em) {
+    [data-leiste] .leiste-text {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
     }
   }
 }

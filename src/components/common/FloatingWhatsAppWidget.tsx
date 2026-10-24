@@ -30,7 +30,7 @@ export default function FloatingWhatsAppWidget() {
     <button
       type="button"
       id="whatsapp-floating-btn"
-      aria-label="WhatsApp-Nachricht an Fliesenverlegung Tezgel senden"
+      aria-label="Nachricht per WhatsApp an Fliesenverlegung Tezgel senden"
       onClick={triggerWhatsAppAction}
       className="hidden size-11 shrink-0 items-center justify-center border border-strich bg-fliese text-tinte transition-colors dauer-1 ease-setzen hover:border-tinte lg:inline-flex"
       data-motion="druck"

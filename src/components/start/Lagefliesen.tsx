@@ -15,12 +15,13 @@ import { ARBEITEN, type ArbeitId } from '@/config/arbeiten';
 type Lage = { satz: string; href: string } & ({ bild: ArbeitId; motiv?: never } | { motiv: Kompositionsmotiv; bild?: never });
 
 const LAGEN: Lage[] = [
-  { satz: 'Die Badewanne soll raus. Ich möchte eine Dusche ohne Stufe.', href: '/bad/barrierefreies-bad', bild: 'lage-dusche' },
-  { satz: 'Das ganze Bad ist alt und soll neu werden.', href: '/bad/badsanierung', bild: 'lage-bad' },
+  // Fotos anders als in der Galerie „So sieht unsere Arbeit aus.“, damit kein Bild doppelt erscheint (Sichtprüfung E2)
+  { satz: 'Die Badewanne soll raus. Ich möchte eine Dusche ohne Stufe.', href: '/bad/barrierefreies-bad', bild: 'bereich-dusche-streifen-sitzbank' },
+  { satz: 'Das ganze Bad ist alt und soll neu werden.', href: '/bad/badsanierung', bild: 'bad-einstieg' },
   { satz: 'Im Neubau sollen Böden und Wände gefliest werden.', href: '/fliesen/neubau', motiv: 'halbverband' },
   { satz: 'Eine Fliese ist gesprungen, oder die Fugen sind alt.', href: '/fliesenreparatur', motiv: 'riss' },
   { satz: 'Auf dem Balkon bleibt nach dem Regen Wasser stehen.', href: '/balkon-terrasse', bild: 'lage-balkon' },
-  { satz: 'Die Treppe vor dem Haus ist kaputt.', href: '/treppen/aussentreppe', bild: 'lage-treppe' },
+  { satz: 'Die Treppe vor dem Haus ist kaputt.', href: '/treppen/aussentreppe', bild: 'kontakt-eingang' },
 ];
 
 function Bild({ lage }: { lage: Lage }) {
@@ -31,7 +32,7 @@ function Bild({ lage }: { lage: Lage }) {
       src={b.src}
       alt=""
       fill
-      sizes="(min-width: 1024px) 16vw, 96px"
+      sizes="(min-width: 1024px) 16vw, (min-width: 768px) 25vw, 96px"
       placeholder="blur"
       blurDataURL={b.blur}
       className="object-cover"
@@ -49,7 +50,7 @@ export default function Lagefliesen() {
       einleitung={<p>Wählen Sie, was am besten passt. Sie kommen direkt zu den Bildern und Antworten für Ihre Lage.</p>}
       className="lg:pb-32"
     >
-      <ul className="grid gap-px border border-fuge bg-fuge lg:grid-flow-col lg:grid-cols-2 lg:grid-rows-3 lg:gap-0 lg:border-0 lg:bg-transparent">
+      <ul className="grid gap-px border border-fuge bg-fuge md:grid-cols-2 lg:grid-flow-col lg:grid-rows-3 lg:gap-0 lg:border-0 lg:bg-transparent">
         {LAGEN.map((lage, i) => (
           <li
             key={lage.href}
@@ -66,7 +67,8 @@ export default function Lagefliesen() {
               data-motion="zustand"
               className="group grid h-full grid-cols-4 text-tinte transition-colors dauer-1 ease-setzen hover:bg-kalk lg:grid-cols-3"
             >
-              <span aria-hidden="true" className="relative col-span-1 aspect-square overflow-hidden border-r border-fuge">
+              {/* mobil füllt das Bild die ganze Höhe der Fliese (mindestens 96 px), ab lg quadratisch */}
+              <span aria-hidden="true" className="relative col-span-1 min-h-24 overflow-hidden border-r border-fuge lg:aspect-square lg:min-h-0">
                 <Bild lage={lage} />
               </span>
               <span className="col-span-3 flex items-start justify-between gap-3 p-4 lg:col-span-2 lg:p-8">

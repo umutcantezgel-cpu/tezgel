@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import BannerPlatz from '@/components/common/BannerPlatz';
 import SprungHalter from '@/components/common/SprungHalter';
-import FussHauptknopf from '@/components/common/FussHauptknopf';
+import FussGruppe from '@/components/common/FussGruppe';
 import { seitenKlassen } from '@/components/kern/stile';
 import { COMPANY_DATA } from '@/config/company';
 import { footerGruppen, footerLegalLinks } from '@/config/navigation';
@@ -21,7 +21,8 @@ const GUARANTEES = [
     { title: 'Termin vor Ort', text: 'für Sie kostenfrei' }
 ];
 
-const etikett = 'font-mono text-fs-1 text-nacht-2';
+// Feldnamen in Archivo, Mono nur für Nummern und Zahlen (K-006, Sichtprüfung E2)
+const etikett = 'font-text text-fs-1 font-semibold text-nacht-2';
 const fussLink = 'text-kalk underline decoration-nacht-fuge underline-offset-4 transition-colors dauer-1 ease-setzen hover:decoration-kalk';
 
 // Fuß (KERN v3 K-009): Tinte-Fläche; oben belegte Fakten an der Fuge, links das Schriftfeld des Betriebs
@@ -52,7 +53,6 @@ export default function Footer() {
                             </li>
                         ))}
                     </ul>
-                    <FussHauptknopf />
                 </div>
             </div>
 
@@ -148,8 +148,7 @@ export default function Footer() {
 
                 <div id="seitenindex" className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-7 xl:grid-cols-4 xl:gap-4">
                     {LINK_COLUMNS.map((column) => (
-                        <nav key={column.title} aria-label={column.title}>
-                            <p className={clsx(etikett, 'border-b border-nacht-fuge pb-2')}>{column.title}</p>
+                        <FussGruppe key={column.title} titel={column.title} kopfKlassen={etikett}>
                             <ul className="mt-3 flex flex-col gap-2 text-fs-2">
                                 {column.links.map((item) => (
                                     <li key={item.path + item.name}>
@@ -163,7 +162,7 @@ export default function Footer() {
                                     </li>
                                 ))}
                             </ul>
-                        </nav>
+                        </FussGruppe>
                     ))}
                 </div>
             </div>

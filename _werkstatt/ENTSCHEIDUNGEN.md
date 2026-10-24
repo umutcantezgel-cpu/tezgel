@@ -113,3 +113,18 @@ Pakete E0-PRUEF-01, -02a bis -02d und die unabhängige Abnahme E0-PRUEF-02-PA si
 - **Befund:** `data-zustand` stand nie auf `bedeckt`, `warten` oder `abbruch`, weil nur einzelne Aktionen ihn setzten. **Änderung:** Er folgt bei jedem Schritt dem Automaten (eine Quelle in `senden`).
 - **Frage „Sperre während des Wechsels“:** `inert` fällt zu Beginn des Weiterziehens, weil der Fokus sonst nicht auf die H1 der neuen Seite kann; Zeiger fängt die Schicht weiter ab, bis sie in Ruhe ist. So gelesen erfüllt das K-007 (Klicks abgefangen, Tastatur unberührt).
 - **Zurück-Weg:** „aufschub“ bleibt (Plan-Weg a). Nach der Änderung besteht `werkzeuge/tests/verlegen.spec.mjs` 26 von 26 auf Chromium (Lauf 5 des Orchestrators gegen 4320, mobil und Desktop), darunter Zurück mit Scroll 400 ± 2 px und Vor. Firefox und Safari sind hier nicht prüfbar (M-15); der Schalter `ZURUECK` in `Verlegen.tsx` bleibt der Rückfall. Zeiten gegen den Produktionsbau misst Stufe A im Reinraum (Dev-Server: 1.377 bis 1.420 ms vor, nicht maßgeblich).
+
+## E-021 · Sichtprüfung der Startseite, Runde 1 (24.10.2026, Workflow wf_9b16c1a1-86a, unabhängige Prüferin)
+- **Urteil Runde 1:** Verständlichkeit 6, Hierarchie 7, Komposition 5, Typografie 6, Bild 7, Eigenständigkeit 4, Handwerk 6 (Ziel ≥ 8, keine Kategorie < 7). 19 Befunde, davon 3 hoch.
+- **Übernommen (Orchestrator):**
+  - Laserlinie: Das rote Stück hing am Zeitstrahl des ganzen Dokuments und lag nach wenigen Prozent über dem Bildschirm. Jetzt `view-timeline` am Lot mit Bereich `contain`: Die Spitze wandert beim Lesen vom oberen zum unteren Rand und steht immer im Bild. Mobil steht das Lot bei 8 px.
+  - Große Systemschrift (P1): Kopf-Logo darf schrumpfen (`object-contain`, Proportion bleibt), Menü-Schalter bleibt im Bild; untere Leiste zeigt unter 20 em Breite nur Zeichen (Containerabfrage, Namen bleiben); `fs-7` mit kleinem rem-Anteil (Desktop unverändert rund 94 px, mobil 37 px, bei 200 % 64 px statt 88 px).
+  - Satz über 25 Wörter (Abdichtung) in zwei Sätze; Trennung nur langer Wörter (`hyphenate-limit-chars: 10 4 4`), Links in Navigation und Fuß nie getrennt.
+  - Gleichförmige Dreierkästen: Ablauf als Schrittfolge an der roten Linie, Schritt 2 um Stufe 16 versetzt; Kundenstimmen als eine große und zwei kleinere Stimmen an Fugen.
+  - Lage-Fliesen: mobil Bild über die ganze Höhe, ab md zweispaltig; drei Fotos getauscht, damit kein Bild der Galerie doppelt erscheint.
+  - Formular: gewählte Auswahl als Fliese mit doppeltem Tinte-Rand statt Tinte-Fläche (alle Formulare, `wahlKlassen`); Kopfzeile in Archivo, „Rückruf innerhalb von 24 Stunden“ (sinngleich, M-07); auf `/` ohne zweiten Vorspann; Anruf, WhatsApp und Zeiten ab lg in der Kopfspalte (Abschnitt `unterKopf`).
+  - Fuß: Hauptknopf im Zusageband entfernt (sprang auf `/` direkt unter das Formular zurück, dreifacher Hauptknopf auf der 404); Seitenindex mobil in aufklappbaren Gruppen (ohne JavaScript offen); Feldnamen in Archivo.
+  - Mobilmenü passt auf 360 × 740: Öffnungszeiten und Rechtliches aus dem Blattfuß (stehen im Fuß der Seite), Einträge enger.
+  - Einstieg: WhatsApp-Knopf erst ab sm (mobil in der Leiste), Telefon mit sichtbarem „Anrufen:“; Startbild ab md an der Textkante.
+  - 404 ohne Mono-Etikett, „(Fehler 404)“ im Satz, Zeichnung mit vier Fliesen je Reihe. Ortslinks über die ganze Zeile (Trefffläche).
+- **Nicht übernommen:** Untere Leiste erst nach dem Einstieg einblenden (K-009 hält sie als feste Ebene; stattdessen weniger Doppelungen im Einstieg). Zusageband auf `/` ausblenden (gilt seitenweit; Doppelung mit „Was wir tun“ hingenommen). Einwilligungsbanner verdeckt beim Erstbesuch Teile des ersten Bildschirms: unantastbar (G8), Fall für MENSCHEN.md (M-18).

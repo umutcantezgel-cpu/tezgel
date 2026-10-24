@@ -16,7 +16,7 @@ import { hauptziel } from "@/config/navigation";
 // ist der Platz des Widerruf-Schilds der Einwilligung (#leiste-schild): die
 // Einwilligungs-Komponente hängt ihren Knopf dort ein, sobald sie geladen ist – so verdeckt kein schwebender Knopf Inhalt.
 const feld =
-  "flex min-h-12 flex-1 flex-col items-center justify-center gap-1 px-2 py-2 font-text text-fs-1 font-semibold transition-colors dauer-1 ease-setzen";
+  "flex min-h-12 min-w-0 flex-1 flex-col items-center justify-center gap-1 px-2 py-2 font-text text-fs-1 font-semibold transition-colors dauer-1 ease-setzen";
 
 export default function MobileBottomBar() {
   const pathname = usePathname() || "";
@@ -50,7 +50,7 @@ export default function MobileBottomBar() {
           data-motion="druck"
         >
           <Icon name="telefon" groesse={5} />
-          <span>Anrufen</span>
+          <span className="leiste-text">Anrufen</span>
         </a>
 
         <a
@@ -68,7 +68,7 @@ export default function MobileBottomBar() {
           data-motion="druck"
         >
           <WhatsAppLogo className="size-5" />
-          <span>WhatsApp</span>
+          <span className="leiste-text">WhatsApp</span>
         </a>
 
         <Link
@@ -81,7 +81,7 @@ export default function MobileBottomBar() {
           data-motion="druck"
         >
           <Icon name="kalender" groesse={5} />
-          <span>Termin</span>
+          <span className="leiste-text">Termin</span>
         </Link>
       </div>
     </aside>

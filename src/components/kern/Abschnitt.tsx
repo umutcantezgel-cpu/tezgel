@@ -16,6 +16,9 @@ export interface AbschnittProps {
   nummer?: string;
   titel?: ReactNode;
   einleitung?: ReactNode;
+  /** nur mit kopf="seitlich": Block unter dem Kopf (ab lg in der Kopfspalte, mobil nach dem Inhalt), z. B. Anruf neben
+   *  einem Formular, das mobil direkt auf die Überschrift folgen soll */
+  unterKopf?: ReactNode;
   art?: 'erzaehl' | 'arbeit';
   flaeche?: 'kalk' | 'fliese' | 'tinte';
   kopf?: 'gestapelt' | 'seitlich';
@@ -33,7 +36,7 @@ export interface AbschnittProps {
   'aria-label'?: string;
 }
 
-export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleitung, art = 'erzaehl', flaeche = 'kalk', kopf = 'gestapelt', breite = 'seite', auftritt = false, leitachse = false, spaet = false, formel, className, children, ...rest }: AbschnittProps) {
+export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleitung, unterKopf, art = 'erzaehl', flaeche = 'kalk', kopf = 'gestapelt', breite = 'seite', auftritt = false, leitachse = false, spaet = false, formel, className, children, ...rest }: AbschnittProps) {
   const hId = titelId ?? (id ? `${id}-titel` : undefined);
   const tinte = flaeche === 'tinte';
   const kopfInhalt = (titel || etikett) && (
@@ -78,7 +81,8 @@ export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleit
         {kopf === 'seitlich' ? (
           <div className="grid grid-cols-4 gap-y-12 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12">
             {kopfInhalt}
-            <div className="col-span-4 md:col-span-8" data-motion={auftritt ? 'auftritt' : undefined}>{children}</div>
+            <div className={clsx('col-span-4 md:col-span-8', unterKopf && 'lg:row-span-2')} data-motion={auftritt ? 'auftritt' : undefined}>{children}</div>
+            {unterKopf && <div className="col-span-4 md:col-span-8 lg:col-span-4">{unterKopf}</div>}
           </div>
         ) : (
           <>

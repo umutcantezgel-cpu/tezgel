@@ -62,18 +62,20 @@ export default function StartEinstieg() {
                 href={`tel:${contact.phoneLink}`}
                 data-erstes-bild="kontakt"
                 data-motion="druck"
-                aria-label={`Anrufen: ${contact.phone}`}
                 className={knopfKlassen('neben', 'w-full px-4 sm:w-auto')}
               >
                 <Icon name="telefon" groesse={5} />
-                <span className="font-mono text-fs-2">{contact.phone}</span>
+                <span>
+                  Anrufen: <span className="font-mono whitespace-nowrap">{contact.phone}</span>
+                </span>
               </a>
               <a
                 href={buildWhatsAppUrl(contact.whatsappNumber, kontextNachricht('/'))}
                 target="_blank"
                 rel="noopener noreferrer"
                 data-motion="druck"
-                className={knopfKlassen('neben', 'w-full px-4 sm:w-auto')}
+                // mobil trägt die untere Leiste WhatsApp; hier erst ab sm (weniger doppelte Bedienflächen, Sichtprüfung E2)
+                className={knopfKlassen('neben', 'px-4 max-sm:hidden')}
               >
                 <WhatsAppLogo className="size-5" />
                 <span>Nachricht per WhatsApp</span>
@@ -81,7 +83,7 @@ export default function StartEinstieg() {
             </div>
           </div>
         </div>
-        <div className="col-span-4 md:col-span-6 md:col-start-2 lg:col-span-5 lg:col-start-8">
+        <div className="col-span-4 md:col-span-6 lg:col-span-5 lg:col-start-8">
           <Startbild sizes="(min-width: 1024px) 40vw, (min-width: 768px) 75vw, 100vw" />
           <Bewertungszeile className="mt-4 font-text text-fs-2 text-tinte-2" />
         </div>

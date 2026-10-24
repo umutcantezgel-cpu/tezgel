@@ -93,23 +93,26 @@ export default function HeroContactForm({ titel = true }: { titel?: boolean } = 
         <div className="border border-strich bg-fliese p-6 text-left lg:p-8">
             {/* Kopf des Formulars: Schriftfeld-Zeile */}
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-fuge pb-4">
-                <span className={etikettKlassen}>
+                <span className="inline-flex items-center gap-2 font-text text-fs-2 text-tinte-2">
                     <Fugenkreuz className="size-3 text-strich" />
-                    Direktanfrage an Deniz Tezgel
+                    Anfrage direkt an Deniz Tezgel
                 </span>
-                <span className="flex items-center gap-2 font-mono text-fs-1 text-tinte">
+                {/* eigene Zusage des Formulars, sinngleich ausgeschrieben (K-015, M-07) */}
+                <span className="flex items-center gap-2 font-text text-fs-2 text-tinte">
                     <Icon name="uhr" groesse={4} />
-                    Rückruf &lt; 24h
+                    Rückruf innerhalb von 24 Stunden
                 </span>
             </div>
             {titel && (
-                <p className="mt-6 font-anzeige text-fs-5 font-semibold text-balance text-tinte">
-                    Kostenfreien Termin vor Ort anfragen
-                </p>
+                <>
+                    <p className="mt-6 font-anzeige text-fs-5 font-semibold text-balance text-tinte">
+                        Kostenfreien Termin vor Ort anfragen
+                    </p>
+                    <p className="mt-2 text-fs-2 text-tinte-2">
+                        Sagen Sie uns kurz, worum es geht. Deniz Tezgel meldet sich persönlich bei Ihnen.
+                    </p>
+                </>
             )}
-            <p className={titel ? 'mt-2 text-fs-2 text-tinte-2' : 'mt-6 text-fs-2 text-tinte-2'}>
-                Sagen Sie uns kurz, worum es geht. Deniz Tezgel meldet sich persönlich bei Ihnen.
-            </p>
 
             {/* Fehlermeldung */}
             {errorMessage && (

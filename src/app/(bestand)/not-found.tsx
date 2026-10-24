@@ -18,9 +18,9 @@ export const metadata: Metadata = {
 // entlang, eine Fliese liegt schief daneben; in ihrem Platz sieht man das gekämmte Kleberbett. Dekorativ.
 const B = 48;
 const H = 24;
-const REIHEN = 6;
-const SPALTEN = 6;
-const LUECKE = { reihe: 2, x: 112 }; // Platz der verrutschten Fliese (Reihe 2 ist um zwei Drittel versetzt)
+const REIHEN = 5;
+const SPALTEN = 4; // vier Fliesen je Reihe, damit die verrutschte Fliese auch mobil groß genug ist
+const LUECKE = { reihe: 2, x: 64 }; // Platz der verrutschten Fliese (Reihe 2 ist um zwei Drittel versetzt: x = −32 + 2 · 48)
 
 function Boden() {
   const fliesen: { x: number; y: number }[] = [];
@@ -62,12 +62,11 @@ export default function NotFound() {
   return (
     <Einstieg
       art="arbeit"
-      etikett="Fehler 404"
       titel="Seite nicht gefunden"
       vorspann={
         <p>
-          Hier ist etwas verrutscht: Diese Seite gibt es nicht, oder sie ist umgezogen. Einer dieser drei Wege bringt Sie
-          weiter.
+          Hier ist etwas verrutscht: Diese Seite gibt es nicht, oder sie ist umgezogen (Fehler 404). Einer dieser drei Wege
+          bringt Sie weiter.
         </p>
       }
       aktionen={

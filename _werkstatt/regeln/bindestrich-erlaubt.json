@@ -1,44 +1,48 @@
 {
-  "stand": "KERN v3.0 K-010-B (24.10.2026)",
-  "woerter": [
-    {
-      "wort": "E-Mail",
-      "grund": "Rechtschreibung verlangt den Bindestrich"
-    },
-    {
-      "wort": "Gäste-WC",
-      "grund": "Rechtschreibung verlangt den Bindestrich (Abkürzung)"
-    },
-    {
-      "wort": "Lahn-Dill-Kreis",
-      "grund": "Eigenname"
-    },
-    {
-      "wort": "Marburg-Biedenkopf",
-      "grund": "Eigenname"
-    },
-    {
-      "wort": "Limburg-Weilburg",
-      "grund": "Eigenname (Landkreis)"
-    },
-    {
-      "wort": "Walk-in-Dusche",
-      "grund": "nur wo Suchbegriff der Seite (englischer Bestandteil verlangt Bindestriche); sonst „bodengleiche Dusche“"
-    },
-    {
-      "wort": "Walk-in-Duschen",
-      "grund": "wie Walk-in-Dusche"
-    },
-    {
-      "wort": "Cookie-Richtlinie",
-      "grund": "Name des Rechtstexts und seiner Adresse (G8, Rechtstexte unverändert)"
-    },
-    {
-      "wort": "Cookie-Einstellungen",
-      "grund": "feste Bedienbeschriftung der Einwilligung (G8, Verhalten unverändert); englischer Bestandteil verlangt den Bindestrich"
-    }
-  ],
-  "praefixe_mit_bindestrich_erlaubt": [
-    "E-Mail-"
-  ]
+ "stand": "KERN v3.0 K-010-B (24.10.2026)",
+ "woerter": [
+  {
+   "wort": "E-Mail",
+   "grund": "Rechtschreibung verlangt den Bindestrich"
+  },
+  {
+   "wort": "Gäste-WC",
+   "grund": "Rechtschreibung verlangt den Bindestrich (Abkürzung)"
+  },
+  {
+   "wort": "Lahn-Dill-Kreis",
+   "grund": "Eigenname"
+  },
+  {
+   "wort": "Marburg-Biedenkopf",
+   "grund": "Eigenname"
+  },
+  {
+   "wort": "Limburg-Weilburg",
+   "grund": "Eigenname (Landkreis)"
+  },
+  {
+   "wort": "Walk-in-Dusche",
+   "grund": "nur wo Suchbegriff der Seite (englischer Bestandteil verlangt Bindestriche); sonst „bodengleiche Dusche“"
+  },
+  {
+   "wort": "Walk-in-Duschen",
+   "grund": "wie Walk-in-Dusche"
+  },
+  {
+   "wort": "Cookie-Richtlinie",
+   "grund": "Name des Rechtstexts und seiner Adresse (G8, Rechtstexte unverändert)"
+  },
+  {
+   "wort": "Cookie-Einstellungen",
+   "grund": "feste Bedienbeschriftung der Einwilligung (G8, Verhalten unverändert); englischer Bestandteil verlangt den Bindestrich"
+  },
+  {
+   "wort": "USt-IdNr",
+   "grund": "amtliche Abkürzung der Umsatzsteuer-Identifikationsnummer, Pflichtangabe im Fuß"
+  }
+ ],
+ "praefixe_mit_bindestrich_erlaubt": [
+  "E-Mail-"
+ ]
 }

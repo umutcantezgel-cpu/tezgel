@@ -8,7 +8,6 @@ import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import { hauptziel, navigationLinks, primaryCta } from '@/config/navigation';
 import { COMPANY_DATA } from '@/config/company';
 import { openWhatsApp } from '@/lib/whatsapp';
-import { oeffnungszeilen } from '@/lib/oeffnungszeiten';
 import { knopfKlassen } from '@/components/kern/stile';
 import { BrandMark } from '@/components/common/Header';
 
@@ -22,6 +21,7 @@ const istOffen = (el) => {
 
 // Menü als Popover-Blatt (KERN v3 K-009): fünf Bereiche mit je einer Ebene, passt auf 360 × 740 ohne Scrollen; öffnet nativ über popovertarget, auch bevor React hydriert ist;
 // Escape und Klick daneben schließen es. React hält nur aria-expanded, das Aufklappen der Bereiche und den Fokus.
+// Fuß des Blatts: Hauptknopf, Anrufen und WhatsApp; Öffnungszeiten und Rechtliches stehen im Fuß der Seite (Platz auf 360 × 740, Sichtprüfung E2).
 export default function MobileMenu({ isOpen, onToggle }) {
     const pathname = usePathname() || '/';
     const [expandedMenu, setExpandedMenu] = useState(null);
@@ -101,7 +101,7 @@ export default function MobileMenu({ isOpen, onToggle }) {
                                                 href={link.path}
                                                 onClick={schliessen}
                                                 aria-current={istAktiv(link) ? 'page' : undefined}
-                                                className="flex min-w-0 flex-1 flex-col gap-1 py-3"
+                                                className="flex min-w-0 flex-1 flex-col py-2"
                                             >
                                                 <span className="text-fs-4 font-semibold text-tinte">{link.name}</span>
                                                 <span className="text-fs-2 text-tinte-2">{link.kurz}</span>
@@ -195,18 +195,6 @@ export default function MobileMenu({ isOpen, onToggle }) {
                             <Icon name="sprechblase" groesse={4} />
                             <span>WhatsApp</span>
                         </a>
-                    </div>
-                    <div className="mt-4 flex flex-wrap items-center justify-between gap-2 font-mono text-fs-1 text-tinte-2">
-                        <span>{oeffnungszeilen().slice(0, 2).join(' · ')}</span>
-                        <span className="flex items-center gap-2">
-                            <Link href="/impressum" onClick={schliessen} className="underline decoration-strich underline-offset-4 hover:decoration-tinte">
-                                Impressum
-                            </Link>
-                            <span aria-hidden="true">&middot;</span>
-                            <Link href="/datenschutz" onClick={schliessen} className="underline decoration-strich underline-offset-4 hover:decoration-tinte">
-                                Datenschutz
-                            </Link>
-                        </span>
                     </div>
                 </div>
             </div>

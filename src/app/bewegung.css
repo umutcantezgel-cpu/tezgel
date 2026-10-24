@@ -40,7 +40,10 @@ html.k-bewegung:not(.k-notaus) [data-motion="anriss"]:not([data-motion-stand="an
   scale: 0 1;
 }
 
-/* leitachse – Lot im Seitenfluss, rotes Stück folgt dem Lesefortschritt */
+/* leitachse – Lot im Seitenfluss, rotes Stück folgt dem Lesefortschritt. Zeitstrahl ist das Lot selbst (view-timeline,
+   Bereich contain): Sobald das Lot den Bildschirm ganz ausfüllt, wandert die rote Spitze vom oberen zum unteren Rand, so
+   steht das Rot in jeder Scrollstellung im Bild (vorher Zeitstrahl des ganzen Dokuments: die Spitze lag nach wenigen
+   Prozent über dem Bildschirm, Sichtprüfung E2 Befund 1). */
 .leitachse {
   pointer-events: none;
   position: absolute;
@@ -56,11 +59,15 @@ html.k-bewegung:not(.k-notaus) [data-motion="anriss"]:not([data-motion-stand="an
   background: var(--color-laser);
   transform-origin: top center;
 }
-@supports (animation-timeline: scroll()) {
+@supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
+    .leitachse {
+      view-timeline: --leitachse block;
+    }
     .leitachse-rot {
       animation: leitachse-ziehen linear both;
-      animation-timeline: scroll(root block);
+      animation-timeline: --leitachse;
+      animation-range: contain 0% contain 100%;
     }
   }
 }

@@ -47,6 +47,28 @@ export function Arbeiten() {
 
 const STIMMEN = ['elke-s', 'c-wolf', 'rabia-oe'];
 
+/** Eine Stimme: Sterne nur als Bild (der Name nennt die Bewertung), Wortlaut unverändert aus REVIEWS. */
+function Stimme({ s, gross }: { s: (typeof REVIEWS)[number]; gross: boolean }) {
+  return (
+    <figure className="flex h-full flex-col">
+      <span aria-hidden="true" className="flex gap-1 text-tinte">
+        {Array.from({ length: s.rating }, (_, i) => (
+          <Icon key={i} name="stern-voll" groesse={gross ? 5 : 4} />
+        ))}
+      </span>
+      <blockquote className={clsx('mt-4 font-text text-pretty text-tinte', gross ? 'text-fs-5' : 'text-fs-4')}>
+        <p>{s.text}</p>
+      </blockquote>
+      <figcaption className="mt-6 font-text text-fs-2 text-tinte-2">
+        <span className="font-semibold text-tinte">{s.author}</span> bei {s.source}
+        <span className="sr-only">, {s.rating} von 5 Sternen</span>
+      </figcaption>
+    </figure>
+  );
+}
+
+// Ab lg eine große Stimme links (sieben Spalten) und zwei kleinere rechts untereinander, getrennt durch Fugen statt
+// Kästen; mobil untereinander. So hat der Abschnitt eine eigene Form (K-003 Nr. 4, Sichtprüfung E2).
 export function Kundenstimmen() {
   // Fehlt eine Stimme in REVIEWS, bricht der Bau ab, statt sie still wegzulassen
   const stimmen = STIMMEN.map((id) => {
@@ -54,29 +76,22 @@ export function Kundenstimmen() {
     if (!r) throw new Error(`Kundenstimme ${id} fehlt in src/config/reviews.js`);
     return r;
   });
+  const [erste, ...weitere] = stimmen;
   return (
     <Abschnitt id="kundenstimmen" formel="beleg" leitachse flaeche="fliese" titel="Das sagen unsere Kunden.">
-      <ul className="grid gap-px border border-fuge bg-fuge lg:grid-cols-3">
-        {stimmen.map((s) => (
-          <li key={s.id} className="flex flex-col bg-fliese p-6 lg:p-8">
-            <figure className="flex h-full flex-col">
-              <span aria-hidden="true" className="flex gap-1 text-tinte">
-                {Array.from({ length: s.rating }, (_, i) => (
-                  <Icon key={i} name="stern-voll" groesse={4} />
-                ))}
-              </span>
-              <blockquote className="mt-4 flex-1 font-text text-fs-4 text-pretty text-tinte">
-                <p>{s.text}</p>
-              </blockquote>
-              <figcaption className="mt-6 font-text text-fs-2 text-tinte-2">
-                <span className="font-semibold text-tinte">{s.author}</span> bei {s.source}
-                <span className="sr-only">, {s.rating} von 5 Sternen</span>
-              </figcaption>
-            </figure>
-          </li>
-        ))}
-      </ul>
-      <Bewertungszeile stand className="mt-8 font-text text-fs-2 text-tinte-2" />
+      <div className="grid gap-12 border-t border-fuge pt-12 lg:grid-cols-12 lg:gap-x-12">
+        <div className="lg:col-span-7">
+          <Stimme s={erste} gross />
+        </div>
+        <ul className="flex flex-col gap-12 border-t border-fuge pt-12 lg:col-span-5 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-12">
+          {weitere.map((s, i) => (
+            <li key={s.id} className={clsx(i > 0 && 'border-t border-fuge pt-12')}>
+              <Stimme s={s} gross={false} />
+            </li>
+          ))}
+        </ul>
+      </div>
+      <Bewertungszeile stand className="mt-12 font-text text-fs-2 text-tinte-2 hyphens-none" />
     </Abschnitt>
   );
 }
@@ -101,9 +116,10 @@ export function Einsatzorte() {
             <h3 className="font-text text-fs-2 font-semibold text-tinte-2">{GRUPPE_NAME[g.zone.id]}</h3>
             <ul className="mt-4 flex flex-col">
               {g.orte.map((o) => (
-                <li key={o.slug} className="flex items-baseline justify-between gap-3 border-b border-fuge last:border-b-0">
-                  <Link href={`/standorte/${o.slug}`} data-motion="zustand" className={clsx(linkKlassen, 'flex min-h-11 items-center font-text text-fs-3')}>
-                    {o.name}
+                <li key={o.slug} className="flex items-center justify-between gap-3 border-b border-fuge last:border-b-0">
+                  {/* der Link nimmt die ganze Zeile bis zur Entfernung ein (Trefffläche ≥ 44 px auch bei kurzen Namen) */}
+                  <Link href={`/standorte/${o.slug}`} data-motion="zustand" className={clsx(linkKlassen, 'flex min-h-11 flex-1 items-center font-text text-fs-3')}>
+                    <span>{o.name}</span>
                   </Link>
                   <span className="shrink-0 font-mono text-fs-1 text-tinte-2">{o.distanceKm === 0 ? 'Firmensitz' : `ca. ${o.distanceKm} km`}</span>
                 </li>

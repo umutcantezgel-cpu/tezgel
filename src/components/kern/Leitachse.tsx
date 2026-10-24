@@ -19,7 +19,8 @@ import Laserachse from './Laserachse';
 import { seitenKlassen } from './stile';
 
 /** Lage des Lots im Seitenrahmen – gemeinsam für Einstieg, Leitachse und Abschnittsmarken */
-export const ACHSE_LAGE = 'left-1 md:left-4 lg:left-8';
+// mobil 8 px vom Rand: das Fugenkreuz der Abschnittsmarke (12 px) steht ganz im Bild, 2 px vor der Textkante (Sichtprüfung E2)
+export const ACHSE_LAGE = 'left-2 md:left-4 lg:left-8';
 
 export default function Leitachse({ children, gezogen = true, className }: { children: ReactNode; gezogen?: boolean; className?: string }) {
   return (
