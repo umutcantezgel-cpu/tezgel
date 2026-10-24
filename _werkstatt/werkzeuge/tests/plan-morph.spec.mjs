@@ -1,7 +1,7 @@
 // Ablauftest Plan-Morph (K-007 seitenwechsel, zurück nach E-037; Paket E2-ORCH-09): Auf /leistungen gleitet der Verlegeplan
 // eines Fachgewerks beim Klick auf „Fachdetails“ als View Transition (Typ plan-vor) in den Einstieg der Leistungsseite;
-// B-01 „Verlegen“ startet sie selbst statt der Fliesen. Unter lg, bei reduzierter Bewegung, beim Zurück und Vor übernimmt B-01, und
-// eine laufende View Transition endet, sobald B-01 legt. Nur gegen den Produktionsbau sinnvoll (RELAUNCH_BASE, Vorladen):
+// B-01 startet sie selbst statt des Winds (E-042). Unter lg, bei reduzierter Bewegung, beim Zurück und Vor übernimmt B-01 mit
+// dem Wind (Typ wind bzw. wind-zurueck). Nur gegen den Produktionsbau sinnvoll (RELAUNCH_BASE, Vorladen):
 // Im Entwicklungsserver ohne Vorladen kann der Morph ausbleiben.
 // Protokoll: ein Init-Skript umhüllt document.startViewTransition (Typen, Pseudo-Animationen mit Dauer), ein MutationObserver
 // schreibt die Zustände der Schicht .verlegen mit; keine festen Wartezeiten außer im Fall „Zurück während des Morphs“.
@@ -119,7 +119,7 @@ test.describe('Plan-Morph (E-037)', () => {
     expect.soft((await uebergaenge(page)).slice(vorher).some((e) => e.typen.includes('plan-vor')), 'kein Rück-Morph').toBe(false);
   });
 
-  test('M4 desktop: Zurück während des Morphs beendet die View Transition, sobald B-01 legt', async ({ page }, info) => {
+  test('M4 desktop: Zurück während des Morphs: Adresse zurück, Schicht in Ruhe, kein Morph mehr offen', async ({ page }, info) => {
     test.skip(info.project.name !== 'desktop', 'nur ab lg');
     await protokolliereUebergaenge(page);
     await oeffne(page);
@@ -130,9 +130,10 @@ test.describe('Plan-Morph (E-037)', () => {
     await page.goBack();
     await expect.poll(() => pfad(page), { timeout: 10_000 }).toBe(START);
     await expect.poll(async () => (await zustaende(page)).at(-1), { timeout: 10_000 }).toBe('ruhe');
-    const log = await page.evaluate(() => window.__verlegen.log);
-    const ab = log.findIndex((e) => e.z === 'legen' || e.z === 'bedeckt');
-    if (ab > -1) expect.soft(log.slice(ab).every((e) => !e.vtAnimationen), 'keine View-Transition-Animationen, während B-01 liegt').toBe(true);
+    // läuft beim Zurück ein Wind, dann gespiegelt; am Ende keine View-Transition-Animation mehr
+    const nachMorph = (await uebergaenge(page)).filter((e) => !e.typen.includes('plan-vor'));
+    for (const e of nachMorph) expect.soft(e.typen, 'Zurück weht gespiegelt').toEqual(['wind', 'wind-zurueck']);
+    await expect.poll(() => page.evaluate(() => document.documentElement.getAnimations({ subtree: true }).filter((a) => String(a.effect?.pseudoElement ?? '').startsWith('::view-transition')).length), { timeout: 5_000 }).toBe(0);
   });
 
   test('M9 desktop: Doppelklick auf Fachdetails ergibt genau einen Wechsel (ein neuer Verlaufseintrag)', async ({ page }, info) => {
@@ -149,7 +150,7 @@ test.describe('Plan-Morph (E-037)', () => {
     expect.soft(await zustaende(page), 'B-01 hat nicht gelegt').toEqual(['ruhe']);
   });
 
-  test('M5 mobil: Fachdetails verlegt mit B-01, kein Morph', async ({ page }, info) => {
+  test('M5 mobil: Fachdetails wechselt mit dem Wind (B-01), kein Morph', async ({ page }, info) => {
     test.skip(info.project.name !== 'mobil', 'nur unter lg');
     await protokolliereUebergaenge(page);
     await oeffne(page);
@@ -157,11 +158,12 @@ test.describe('Plan-Morph (E-037)', () => {
     await link.click();
     await expect.poll(() => pfad(page)).toBe(ZIEL);
     await expect.poll(async () => (await zustaende(page)).at(-1), { timeout: 10_000 }).toBe('ruhe');
-    expect.soft(await zustaende(page)).toContain('legen');
+    expect.soft(await zustaende(page)).toContain('wehen');
     expect.soft((await uebergaenge(page)).some((e) => e.typen.includes('plan-vor')), 'kein Typ plan-vor').toBe(false);
+    expect.soft((await uebergaenge(page)).some((e) => e.typen.includes('wind')), 'Typ wind').toBe(true);
   });
 
-  test('M6 desktop, reduzierte Bewegung: B-01 überblendet, kein Morph', async ({ page }, info) => {
+  test('M6 desktop, reduzierte Bewegung: B-01 überblendet (wind-ruhig), kein Morph', async ({ page }, info) => {
     test.skip(info.project.name !== 'desktop', 'nur ab lg');
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await protokolliereUebergaenge(page);

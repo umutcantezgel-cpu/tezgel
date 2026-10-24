@@ -2,10 +2,11 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { verlegeRaster, fliesenmass, zeitplan, ziehStrecke, wechselDauer } from '../src/lib/verlegen/raster.ts';
 import { pruefeKlick } from '../src/lib/verlegen/linkfilter.ts';
-import { schritt, RUHE, LASER_NACH, WARTEN_HOECHSTENS } from '../src/lib/verlegen/automat.ts';
+import { BAND_FLIESEN, FLATTERN_ANTEIL, WARTEN_HOECHSTENS, windBand, windKern, windMass, windWeg } from '../src/lib/verlegen/wind.ts';
 
-// Logik des Seitenwechsels B-01 „Verlegen“ gegen die Spezifikation (KERN K-007, Abschnitt B-01; E-017;
-// Auftrag Abschnitt 9). Die Erwartungen stammen aus dem Wortlaut der Spezifikation, nicht aus der Umsetzung.
+// Logik des Seitenwechsels B-01 gegen die Spezifikation (KERN K-007, Abschnitt B-01; E-017; E-042 „Wind“; Auftrag Abschnitt 9).
+// Raster und Zeitplan nutzt weiter das Intro (B-02); der Wind hat sein eigenes Band (wind.ts). Die Erwartungen stammen aus
+// dem Wortlaut der Spezifikation, nicht aus der Umsetzung.
 
 // Gerätegrößen [Breite, Höhe] aus _werkstatt/HAUPTANSICHTEN.json (Abschnitt „geraete“), hier fest eingetragen.
 const GERAETE = {
@@ -317,87 +318,82 @@ test('Linkfilter 15: eigener Übergang jetzt nicht möglich (mobil, reduziert, o
   assert.equal(pruefeKlick(klick({ ziel: 'https://tezgel.de/leistungen/bad', hier: 'https://tezgel.de/leistungen', eigenerUebergang: false })), 'verlegen');
 });
 
-// Zustandsautomat ------------------------------------------------------------
+// Wind (B-01, E-042) ------------------------------------------------------------
 
-/** Führt Ereignisse nacheinander aus; liefert Endlage, alle Aktionen und die Folge der Zustände. */
-function laufe(ereignisse, lage = RUHE) {
-  const aktionen = [];
-  const zustaende = [lage.zustand];
-  for (const e of ereignisse) {
-    const r = schritt(lage, e);
-    lage = r.lage;
-    aktionen.push(...r.aktionen);
-    zustaende.push(lage.zustand);
-  }
-  return { lage, aktionen, zustaende };
-}
-
-const START = { typ: 'start', ziel: '/bad', richtung: 'vor' };
-
-test('Automat 1: normaler Ablauf: legen, navigieren unter der Fläche, ziehen, freigeben', () => {
-  const { lage, aktionen, zustaende } = laufe([START, { typ: 'gelegt' }, { typ: 'bereit' }, { typ: 'gezogen' }]);
-  assert.deepEqual(zustaende, ['ruhe', 'legen', 'bedeckt', 'ziehen', 'ruhe']);
-  assert.deepEqual(aktionen, ['lege', 'navigiere', 'ziehe', 'freigeben']);
-  assert.equal(lage.zustand, 'ruhe');
-  assert.equal(lage.ziel, null);
-});
-
-test('Automat 2: Doppelklick (zweites start in legen) wird ohne Aktion verworfen und behält das erste Ziel', () => {
-  const { lage } = laufe([START]);
-  const zweit = schritt(lage, { typ: 'start', ziel: '/kontakt', richtung: 'vor' });
-  assert.deepEqual(zweit.aktionen, []);
-  assert.equal(zweit.lage.zustand, 'legen');
-  assert.equal(zweit.lage.ziel, '/bad');
-});
-
-test('Automat 3: ein zweiter Start wird in jedem Zustand eines laufenden Wechsels verworfen', () => {
-  const wege = {
-    bedeckt: [START, { typ: 'gelegt' }],
-    warten: [START, { typ: 'gelegt' }, { typ: 'zeit-laser' }],
-    ziehen: [START, { typ: 'gelegt' }, { typ: 'bereit' }],
-    abbruch: [START, { typ: 'gelegt' }, { typ: 'zeit-laser' }, { typ: 'zeit-ende' }],
-  };
-  for (const [zustand, ereignisse] of Object.entries(wege)) {
-    const { lage } = laufe(ereignisse);
-    assert.equal(lage.zustand, zustand, `Ausgangszustand ${zustand}`);
-    const r = schritt(lage, { typ: 'start', ziel: '/kontakt', richtung: 'vor' });
-    assert.deepEqual(r.aktionen, [], `${zustand}: zweiter Start hat eine Aktion ausgelöst`);
-    assert.equal(r.lage.zustand, zustand, `${zustand}: Zustand hat sich geändert`);
-    assert.equal(r.lage.ziel, lage.ziel, `${zustand}: Ziel wurde überschrieben`);
+test('Wind 1: Fliese 2:1 quer in ganzen Pixeln, Länge zwischen 64 und 176 px, Fuge 1 % der kurzen Seite und mindestens 2 px', () => {
+  for (const [name, [b]] of Object.entries(GERAETE)) {
+    const m = windMass(b);
+    assert.ok(Number.isInteger(m.laenge) && Number.isInteger(m.hoehe), name);
+    assert.equal(m.laenge, 2 * m.hoehe, name);
+    assert.ok(m.laenge >= 64 && m.laenge <= 176, `${name}: ${m.laenge}`);
+    assert.equal(m.fuge, Math.max(2, m.hoehe * 0.01), name);
   }
 });
 
-test('Automat 4: bereit während legen führt nach gelegt direkt zu ziehen, ohne Stopp in bedeckt', () => {
-  const { aktionen, zustaende } = laufe([START, { typ: 'bereit' }, { typ: 'gelegt' }, { typ: 'gezogen' }]);
-  assert.deepEqual(zustaende, ['ruhe', 'legen', 'legen', 'ziehen', 'ruhe']);
-  assert.ok(aktionen.includes('ziehe'), 'Fliesen werden weitergezogen');
-  assert.ok(!aktionen.includes('zeige-laser'), 'keine Laserlinie, die Seite war schon bereit');
+test('Wind 2: das Band bedeckt nie den ganzen Bildschirm (höchstens 60 % der Breite) und reicht über die ganze Höhe', () => {
+  for (const [name, [b, h]] of Object.entries(GERAETE)) {
+    const band = windBand(b, h);
+    assert.ok(band.breite <= 0.6 * b, `${name}: Band ${band.breite} px bei ${b} px`);
+    assert.ok(band.hoehe >= h, `${name}: Höhe ${band.hoehe} < ${h}`);
+    assert.equal(band.reihen.length, Math.ceil(h / band.mass.hoehe), name);
+  }
 });
 
-test('Automat 5: Wartephase: Laserlinie erscheint, verschwindet vor dem Weiterziehen, danach ziehen', () => {
-  const { aktionen, zustaende } = laufe([START, { typ: 'gelegt' }, { typ: 'zeit-laser' }, { typ: 'bereit' }, { typ: 'gezogen' }]);
-  assert.deepEqual(zustaende, ['ruhe', 'legen', 'bedeckt', 'warten', 'ziehen', 'ruhe']);
-  assert.deepEqual(aktionen, ['lege', 'navigiere', 'zeige-laser', 'verberge-laser', 'ziehe', 'freigeben']);
+test('Wind 3: Reihen im Drittelverband (Versatz 0, ⅓, ⅔ der Länge), je zwei Fliesen: das Zickzack', () => {
+  const band = windBand(1440, 900);
+  const L = band.mass.laenge;
+  for (const r of band.reihen) assert.equal(r.x - band.rand, Math.round(((r.reihe % 3) * L) / 3), `Reihe ${r.reihe}`);
+  assert.equal(BAND_FLIESEN, 2);
+  assert.equal(band.breite, 2 * band.rand + Math.round((2 * L) / 3) + 2 * L);
 });
 
-test('Automat 6: Abbruch nach zeit-ende zieht keine Fliesen und kehrt nach ausgeblendet in ruhe zurück', () => {
-  const { lage, aktionen, zustaende } = laufe([START, { typ: 'gelegt' }, { typ: 'zeit-laser' }, { typ: 'zeit-ende' }, { typ: 'ausgeblendet' }]);
-  assert.deepEqual(zustaende, ['ruhe', 'legen', 'bedeckt', 'warten', 'abbruch', 'ruhe']);
-  assert.ok(!aktionen.includes('ziehe'), 'Abbruch darf keine Fliesen ziehen');
-  assert.ok(aktionen.includes('blende-aus'));
-  assert.equal(lage.zustand, 'ruhe');
+test('Wind 4: das Flattern bleibt in seinen Grenzen (höchstens ⅛ der Länge), benachbarte Reihen lenken verschieden aus', () => {
+  const band = windBand(390, 844);
+  for (const r of band.reihen) assert.ok(Math.abs(r.auslenkung) <= band.rand, `Reihe ${r.reihe}`);
+  assert.equal(band.rand, Math.round(band.mass.laenge * FLATTERN_ANTEIL));
+  assert.ok(new Set(band.reihen.slice(0, 4).map((r) => r.auslenkung)).size >= 3);
 });
 
-test('Automat 7: Zurück und Vor beginnen liegend aus ruhe mit start-liegend', () => {
-  const erster = schritt(RUHE, { typ: 'start-liegend', richtung: 'zurueck' });
-  assert.equal(erster.lage.zustand, 'bedeckt');
-  assert.deepEqual(erster.aktionen, ['liege']);
-  const { aktionen, zustaende } = laufe([{ typ: 'start-liegend', richtung: 'zurueck' }, { typ: 'bereit' }, { typ: 'gezogen' }]);
-  assert.deepEqual(zustaende, ['ruhe', 'bedeckt', 'ziehen', 'ruhe']);
-  assert.deepEqual(aktionen, ['liege', 'ziehe', 'freigeben']);
+test('Wind 5: die Naht liegt im Kern, den jede Reihe in jeder Auslenkung bedeckt (alte und neue Seite stoßen nie offen aneinander)', () => {
+  for (const [name, [b, h]] of Object.entries(GERAETE)) {
+    const band = windBand(b, h);
+    const kern = windKern(band);
+    assert.ok(kern.von < band.naht && band.naht < kern.bis, `${name}: Kern ${kern.von}–${kern.bis}, Naht ${band.naht}`);
+  }
 });
 
-test('Automat 8: Laserlinie, sobald der Boden liegt (E-036), Wartezeit höchstens 3000 ms', () => {
-  assert.equal(LASER_NACH, 0);
-  assert.equal(WARTEN_HOECHSTENS, 3000);
+test('Wind 6: vor: Band kommt ganz von rechts und geht ganz nach links; neue Seite anfangs unsichtbar, am Ende ganz sichtbar', () => {
+  for (const [name, [b, h]] of Object.entries(GERAETE)) {
+    const band = windBand(b, h);
+    const w = windWeg(band, b, 'vor');
+    assert.equal(w.band.von, b, name);
+    assert.equal(w.band.bis, -band.breite, name);
+    assert.equal(w.naht.seite, 'links', name);
+    assert.ok(w.naht.von >= b, `${name}: inset links am Anfang ${w.naht.von}`);
+    assert.ok(w.naht.bis <= 0, `${name}: inset links am Ende ${w.naht.bis}`);
+    // Naht und Band laufen gleich: Abstand konstant (gleiche Dauer und Kurve)
+    assert.equal(w.naht.von - w.band.von, w.naht.bis - w.band.bis, name);
+  }
+});
+
+test('Wind 7: zurück gespiegelt: Band von links nach rechts, neue Seite links der Naht, anfangs unsichtbar, am Ende ganz', () => {
+  for (const [name, [b, h]] of Object.entries(GERAETE)) {
+    const band = windBand(b, h);
+    const w = windWeg(band, b, 'zurueck');
+    assert.equal(w.band.von, -band.breite, name);
+    assert.equal(w.band.bis, b, name);
+    assert.equal(w.naht.seite, 'rechts', name);
+    assert.ok(w.naht.von >= b, `${name}: inset rechts am Anfang ${w.naht.von}`);
+    assert.ok(w.naht.bis <= 0, `${name}: inset rechts am Ende ${w.naht.bis}`);
+    // Lage der Naht von links = Breite − inset rechts = Band + Naht im Band
+    assert.equal(b - w.naht.von, w.band.von + band.naht, name);
+    assert.equal(b - w.naht.bis, w.band.bis + band.naht, name);
+  }
+});
+
+test('Wind 8: Dauer wie bisher aus den Tokens (1200, 900, Zurück 70 %), Warten auf die neue Seite höchstens 2500 ms', () => {
+  assert.equal(wechselDauer(1200, 900, false, 'vor'), 1200);
+  assert.equal(wechselDauer(1200, 900, true, 'vor'), 900);
+  assert.equal(wechselDauer(1200, 900, true, 'zurueck'), 630);
+  assert.equal(WARTEN_HOECHSTENS, 2500);
 });

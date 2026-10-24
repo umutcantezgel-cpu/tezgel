@@ -1,7 +1,10 @@
-// Ablauftest B-01 „Verlegen“ (KERN K-007, E-010, E-017), Paket E2-PRUEF-04. Prüft Zustandsfolge (data-zustand),
-// Adresse, Fokus, Scroll, Sperre (inert), Ausnahmen, Zurück und Vor, reduzierte Bewegung und Layoutverschiebung.
-// Keine Wartezeiten: Zustände protokolliert ein MutationObserver im Dokument, abgefragt wird nur der Zustand.
-// Projekte mobil (390 px) und desktop (1440 px) aus playwright.config.mjs. Server: RELAUNCH_BASE (127.0.0.1:4320).
+// Ablauftest B-01 „Wind“ (KERN K-007; E-042, Entscheidung des Auftraggebers; vorher „Verlegen“ mit ganz bedeckendem Boden,
+// E-010, E-017). Ein Band aus Fliesen weht als View Transition über die Seite: alte Seite davor, neue dahinter. Geprüft:
+// Zustandsfolge der Schicht (data-zustand: ruhe → warten → wehen → ruhe), Typ der View Transition (wind, wind-zurueck,
+// wind-ruhig), die Animationen der Gruppen (Band wehen, neue Seite aufdecken), Adresse, Fokus, Scroll, Doppelklick,
+// Ausnahmen, Zurück und Vor, reduzierte Bewegung, Browser ohne View Transitions und Layoutverschiebung.
+// Keine Wartezeiten: Zustände protokolliert ein MutationObserver, View Transitions ein Init-Skript um startViewTransition.
+// Projekte mobil (390 px) und desktop (1440 px) aus playwright.config.mjs. Server: RELAUNCH_BASE.
 // Gegenprobe: VERLEGEN_GEGENPROBE=1 setzt in Fall (1) data-kein-verlegen am genutzten Link; Fall (1) muss dann scheitern.
 import { test, expect, bedienbar } from './fixtures.mjs';
 import { installSperre, setzeEinwilligung } from '../lib.mjs';
@@ -10,7 +13,7 @@ const START = '/bad';
 const ZIEL = '/bad/badsanierung';
 /** Ziele: Aufwärmen und Link für den Zurück-Fall (muss bei 400 px Scroll im Sichtfeld liegen). */
 const ZIELE = ['/bad/badsanierung', '/bad/barrierefreies-bad', '/bad/fliesen', '/bad/bad-aus-einer-hand', '/bad/musterbaeder', '/bad/projekt-check', '/bad/badplaner'];
-const VOLL = ['legen', 'bedeckt', 'ziehen', 'ruhe'];
+const VOLL = ['warten', 'wehen', 'ruhe'];
 const GEGENPROBE = process.env.VERLEGEN_GEGENPROBE === '1';
 
 // Aufwärmen: Der Entwicklungsserver kompiliert beim ersten Aufruf; jede Zielseite einmal direkt aufrufen.
@@ -20,7 +23,7 @@ test.beforeAll(async ({ browser }) => {
   await installSperre(ctx);
   await setzeEinwilligung(ctx, 'abgelehnt', base);
   const seite = await ctx.newPage();
-  for (const p of [START, ...ZIELE]) await seite.goto(p, { waitUntil: 'load' });
+  for (const p of [START, ...ZIELE, '/']) await seite.goto(p, { waitUntil: 'load' });
   await ctx.close();
 });
 
@@ -28,6 +31,7 @@ const pfad = (page) => page.evaluate(() => location.pathname + location.search);
 const zustand = (page) => page.evaluate(() => document.querySelector('.verlegen')?.dataset.zustand ?? null);
 const log = (page) => page.evaluate(() => window.__verlegen.log);
 const laenge = (page) => page.evaluate(() => window.__verlegen.log.length);
+const uebergaenge = (page) => page.evaluate(() => window.__vt);
 const linkZu = (page, ziel) => page.locator(`#main-content a[href="${ziel}"]`).filter({ visible: true }).first();
 
 /** Zustandsfolge ab Index `ab`, aufeinanderfolgende Doppelte zusammengefasst. */
@@ -35,8 +39,7 @@ function folge(l, ab) {
   const z = l.slice(ab).map((e) => e.z);
   return z.filter((x, i) => i === 0 || x !== z[i - 1]);
 }
-const ohneWarten = (f) => f.filter((z) => z !== 'warten');
-/** Dauer von „legen“ bis zum letzten Eintrag (ruhe), in ms. */
+/** Dauer vom ersten Eintrag ab `ab` (Klick) bis zum letzten (ruhe), in ms. */
 function dauer(l, ab) {
   const e = l.slice(ab);
   return e[e.length - 1].t - e[0].t;
@@ -47,33 +50,57 @@ function median(a) {
   return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
 }
 
-/** Seite öffnen und bis zur Hydrierung warten: html.k-modul (Bewegungsmodul) und die Schicht als Client-Komponente. */
-async function oeffne(page, ziel = START) {
+/** Vor jedem Laden: startViewTransition protokollieren (Typen; nach ready die Pseudo-Animationen mit Namen und Dauer). */
+async function protokolliereUebergaenge(page, { ohne = false } = {}) {
+  await page.addInitScript((ohne) => {
+    window.__vt = [];
+    if (ohne) {
+      // Browser ohne View Transitions (Rückfall): die Methode fehlt
+      delete Document.prototype.startViewTransition;
+      return;
+    }
+    const ursprung = Document.prototype.startViewTransition;
+    if (!ursprung) return;
+    Document.prototype.startViewTransition = function (arg) {
+      const typen = arg && typeof arg === 'object' && arg.types ? [...arg.types] : [];
+      const vt = ursprung.call(this, arg);
+      const eintrag = { t: performance.now(), typen, animationen: [], uebersprungen: false };
+      window.__vt.push(eintrag);
+      vt.ready
+        .then(() => {
+          eintrag.animationen = document.documentElement
+            .getAnimations({ subtree: true })
+            .filter((a) => a.effect?.pseudoElement)
+            .map((a) => ({ pseudo: a.effect.pseudoElement, name: a.animationName ?? '', dauer: Number(a.effect.getTiming().duration) || 0 }));
+        })
+        .catch(() => {
+          eintrag.uebersprungen = true;
+        });
+      return vt;
+    };
+  }, ohne);
+}
+
+/** Seite öffnen und bis zur Hydrierung warten (html.k-modul nur bei erlaubter Bewegung), Schicht als Client-Komponente. */
+async function oeffne(page, ziel = START, { reduziert = false } = {}) {
   await page.goto(ziel);
-  await expect(page.locator('html')).toHaveClass(/k-modul/);
+  if (!reduziert) await expect(page.locator('html')).toHaveClass(/k-modul/);
   await bedienbar(page.locator('.verlegen'));
 }
 
-/** Protokoll je Schichtzustand: Zeit, Scroll, Adresse, Deckkraft der Blende, Fliesen, inert, Fokus, Klicks, Layoutverschiebung. */
+/** Protokoll je Schichtzustand: Zeit, Scroll, Adresse, Band (sichtbar, Name), Variablen des Winds, Fokus; Klicks; Verschiebungen. */
 async function beobachte(page) {
   await page.evaluate(() => {
     const schicht = document.querySelector('.verlegen');
-    const blende = document.querySelector('.verlegen-blende');
-    const inertStand = () => ({
-      header: !!document.querySelector('body header')?.inert,
-      main: !!document.getElementById('main-content')?.inert,
-      footer: !!document.querySelector('body footer')?.inert,
-      alle: document.querySelectorAll('[inert]').length,
-    });
+    const band = document.querySelector('.verlegen-band');
     const aufnahme = (z) => ({
       z,
       t: performance.now(),
       scroll: window.scrollY,
       pfad: location.pathname + location.search,
-      blende: Number(getComputedStyle(blende).opacity),
-      fliesen: document.querySelectorAll('.verlegen-fliese').length,
-      animFliesen: document.getAnimations().filter((a) => a.effect?.target?.closest?.('.verlegen-fliese')).length,
-      inert: inertStand(),
+      bandSichtbar: getComputedStyle(band).display !== 'none',
+      bandName: band.style.getPropertyValue('view-transition-name'),
+      windDauer: document.documentElement.style.getPropertyValue('--wind-dauer'),
       fokusH1: !!document.activeElement?.matches?.('#main-content h1'),
     });
     const v = (window.__verlegen = { log: [], klicks: [], ls: [], ist: schicht.dataset.zustand });
@@ -88,7 +115,7 @@ async function beobachte(page) {
       'click',
       (e) => {
         const a = e.target.closest?.('a');
-        v.klicks.push({ href: a?.getAttribute('href') ?? null, schicht: !!e.target.closest?.('.verlegen'), verhindert: e.defaultPrevented });
+        v.klicks.push({ href: a?.getAttribute('href') ?? null, verhindert: e.defaultPrevented });
       },
       true,
     );
@@ -118,13 +145,14 @@ async function wechsel(page, aktion, ziel) {
   return ab;
 }
 
-/** Kein Wechsel: Der Klick kam an, Verlegen hat ihn nicht übernommen, Zustand bleibt ruhe, kein Eintrag im Protokoll. */
-async function ohneWechsel(page, href, ab) {
+/** Kein Wechsel: Der Klick kam an, B-01 hat ihn nicht übernommen, Zustand bleibt ruhe, keine View Transition. */
+async function ohneWechsel(page, href, ab, vtAb) {
   const k = (await page.evaluate(() => window.__verlegen.klicks)).at(-1);
   expect.soft(k.href, 'letzter Klick traf den Link').toBe(href);
-  expect.soft(k.verhindert, 'Verlegen hat den Klick nicht übernommen').toBe(false);
+  expect.soft(k.verhindert, 'B-01 hat den Klick nicht übernommen').toBe(false);
   expect.soft(await laenge(page), 'kein Eintrag im Zustandsprotokoll').toBe(ab);
   expect.soft(await zustand(page)).toBe('ruhe');
+  expect.soft((await uebergaenge(page)).length, 'keine View Transition').toBe(vtAb);
 }
 
 /** Nächster interner Link im Inhalt, der bei 400 px Scroll vollständig im Sichtfeld liegt. */
@@ -144,34 +172,45 @@ async function linkImSichtfeld(page) {
   return treffer;
 }
 
-test.describe('Bewegung an (Wechsel mit Fliesen)', () => {
-  // Die Konfiguration setzt reducedMotion: reduce. Ohne Überschreibung gäbe es keine Fliesen und kein html.k-modul.
-  // Die Option aus test.use wirkte im Lauf nicht zuverlässig (matchMedia meldete reduce nicht), daher zusätzlich
-  // page.emulateMedia vor jeder Seite: die Bedingung steht im Test und nicht nur in der Konfiguration.
+/** Die Animationen eines Winds: Band (Gruppe wind) weht, neue Seite (new(root)) deckt auf, alte Seite steht. */
+function pruefeWindAnimationen(eintrag, richtung) {
+  const name = (pseudo) => eintrag.animationen.filter((a) => a.pseudo === pseudo).map((a) => a.name);
+  expect.soft(name('::view-transition-group(wind)'), 'Band weht').toContain('wind-wehen');
+  expect.soft(name('::view-transition-new(root)'), 'neue Seite deckt auf').toContain(richtung === 'vor' ? 'wind-aufdecken' : 'wind-aufdecken-zurueck');
+  expect.soft(name('::view-transition-old(root)'), 'alte Seite steht (kein Überblenden)').toEqual([]);
+  const band = eintrag.animationen.find((a) => a.pseudo === '::view-transition-group(wind)');
+  expect.soft(band?.dauer ?? 0, 'Dauer des Winds aus den Tokens (1200, 900, Zurück 70 %)').toBeGreaterThanOrEqual(600);
+}
+
+test.describe('Bewegung an (Wind)', () => {
+  // Die Konfiguration setzt reducedMotion: reduce. Ohne Überschreibung gäbe es keinen Wind und kein html.k-modul.
   test.use({ reducedMotion: 'no-preference' });
   test.beforeEach(async ({ page }) => {
     await page.emulateMedia({ reducedMotion: 'no-preference' });
+    await protokolliereUebergaenge(page);
   });
 
-  test('(1) Klick auf internen Link: Zustandsfolge, Adresse, Fokus H1, Scroll 0, danach ruhe ohne inert', async ({ page }) => {
+  test('(1) Klick auf internen Link: warten, wehen, ruhe; Typ wind; Band weht, neue Seite deckt auf; Adresse, Fokus H1, Scroll 0', async ({ page }) => {
     await oeffne(page);
     const link = linkZu(page, ZIEL);
     await bedienbar(link);
     await beobachte(page);
     if (GEGENPROBE) await link.evaluate((el) => el.setAttribute('data-kein-verlegen', ''));
+    const vtAb = (await uebergaenge(page)).length;
     const ab = await wechsel(page, () => link.click(), ZIEL);
     const l = await log(page);
-    expect.soft(ohneWarten(folge(l, ab))).toEqual(VOLL);
-    for (const e of l.slice(ab).filter((e) => e.z === 'legen' || e.z === 'bedeckt')) {
-      expect.soft(e.inert, `inert während ${e.z}`).toMatchObject({ header: true, main: true, footer: true });
-    }
+    expect.soft(folge(l, ab)).toEqual(VOLL);
+    const wehen = l.slice(ab).find((e) => e.z === 'wehen');
+    expect.soft(wehen?.bandSichtbar, 'Band sichtbar beim Wehen').toBe(true);
+    expect.soft(wehen?.bandName, 'Band als eigene Gruppe').toBe('wind');
+    const vt = (await uebergaenge(page)).slice(vtAb);
+    expect.soft(vt.map((e) => e.typen), 'genau ein Wind').toEqual([['wind']]);
+    if (vt[0]) pruefeWindAnimationen(vt[0], 'vor');
     const ende = l[l.length - 1];
     expect.soft(ende.scroll, 'Scroll bei ruhe').toBe(0);
-    // Sperre gelöst: header, main, footer wieder offen. Zusätzlich darf nichts inert geblieben sein: Die Zahl der
-    // [inert]-Elemente entspricht dem Stand vor dem Klick (vor dem Klick sind die eingeklappten Akkordeon-Panels der
-    // Navigation inert, das ist Ausgangsstand und kein Verlegen-Effekt).
-    expect.soft(ende.inert, 'header, main, footer bei ruhe offen').toMatchObject({ header: false, main: false, footer: false });
-    expect.soft(ende.inert.alle, 'keine zusätzlichen inert-Elemente nach dem Wechsel').toBe(l[0].inert.alle);
+    expect.soft(ende.bandSichtbar, 'Band nach dem Wind verborgen').toBe(false);
+    expect.soft(ende.bandName, 'Band ohne Namen nach dem Wind').toBe('');
+    expect.soft(ende.windDauer, 'Variablen des Winds aufgeräumt').toBe('');
     await expect.soft(page.locator('#main-content h1')).toBeFocused();
   });
 
@@ -182,12 +221,15 @@ test.describe('Bewegung an (Wechsel mit Fliesen)', () => {
     await beobachte(page);
     const vor = [];
     const zurueck = [];
+    const bisWehen = [];
     const folgen = [];
     for (let i = 0; i < 5; i++) {
       const ab = await wechsel(page, () => link.click(), ZIEL);
       let l = await log(page);
       folgen.push({ richtung: 'vor', folge: folge(l, ab) });
       vor.push(dauer(l, ab));
+      const w = l.slice(ab).find((e) => e.z === 'wehen');
+      if (w) bisWehen.push(w.t - l[ab].t);
       const ab2 = await wechsel(page, () => page.goBack(), START);
       l = await log(page);
       folgen.push({ richtung: 'zurueck', folge: folge(l, ab2) });
@@ -199,74 +241,44 @@ test.describe('Bewegung an (Wechsel mit Fliesen)', () => {
       zurueckMs: zurueck.map(r),
       medianVorMs: r(median(vor)),
       medianZurueckMs: r(median(zurueck)),
+      medianKlickBisWehenMs: bisWehen.length ? r(median(bisWehen)) : null,
       folgen: folgen.map((f) => `${f.richtung}: ${f.folge.join(' → ')}`),
     };
-    await testInfo.attach('messung-verlegen.json', { body: JSON.stringify(bericht, null, 2), contentType: 'application/json' });
-    for (const f of folgen) expect.soft(ohneWarten(f.folge), `Folge ${f.richtung}`).toEqual(VOLL);
+    await testInfo.attach('messung-wind.json', { body: JSON.stringify(bericht, null, 2), contentType: 'application/json' });
+    for (const f of folgen) expect.soft(f.folge, `Folge ${f.richtung}`).toEqual(VOLL);
   });
 
-  test('(3) während legen: header, #main-content und footer inert, ein Klick auf die Mitte trifft die Schicht', async ({ page }) => {
+  test('(3) während des Winds fängt die Schicht der View Transition Klicks ab: ein Klick in die Mitte navigiert nicht', async ({ page }) => {
     await oeffne(page);
     const link = linkZu(page, ZIEL);
     await bedienbar(link);
     await beobachte(page);
     const ab = await laenge(page);
-    // Der Belag startet nach dem nächsten gemalten Bild, nicht im Klick selbst (Reaktion, E-031): Gezählt werden die Bilder
-    // (requestAnimationFrame) vom Klick bis „legen“; erlaubt sind höchstens drei (das Bild nach dem Klick, das Bild mit dem
-    // Start und eines Spielraum für ein langes Bild auf belastetem Rechner). Millisekunden schwanken hier zu stark (67 bis 163 ms).
-    await page.evaluate(() => {
-      window.__bilderBisLegen = -1;
-      document.addEventListener('click', () => {
-        let bilder = 0;
-        const zaehle = () => {
-          if (document.querySelector('.verlegen').dataset.zustand === 'legen') { window.__bilderBisLegen = bilder; return; }
-          bilder += 1;
-          if (bilder < 60) requestAnimationFrame(zaehle);
-        };
-        requestAnimationFrame(zaehle);
-      }, { capture: true, once: true });
-    });
+    const hist = await page.evaluate(() => history.length);
     await link.click();
-    await page.waitForFunction(() => window.__bilderBisLegen >= 0, null, { timeout: 3000 });
-    expect.soft(await page.evaluate(() => window.__bilderBisLegen), 'Bilder vom Klick bis legen').toBeLessThanOrEqual(3);
-    const mitte = await page.evaluate(() => {
-      const x = Math.round(window.innerWidth / 2);
-      const y = Math.round(window.innerHeight / 2);
-      const el = document.elementFromPoint(x, y);
-      return {
-        x,
-        y,
-        zustand: document.querySelector('.verlegen').dataset.zustand,
-        header: !!document.querySelector('body header')?.inert,
-        main: !!document.getElementById('main-content')?.inert,
-        footer: !!document.querySelector('body footer')?.inert,
-        trifft: !!el?.closest('.verlegen'),
-      };
-    });
-    expect.soft(mitte.zustand, 'Zustand während des Legens').toBe('legen');
-    expect.soft([mitte.header, mitte.main, mitte.footer], 'inert header, main, footer').toEqual([true, true, true]);
-    expect.soft(mitte.trifft, 'Element in der Mitte gehört zur Schicht').toBe(true);
-    await page.mouse.click(mitte.x, mitte.y);
-    const k = (await page.evaluate(() => window.__verlegen.klicks)).at(-1);
-    expect.soft(k.schicht, 'Klick auf die Mitte traf die Schicht').toBe(true);
-    await expect.poll(() => pfad(page)).toBe(ZIEL);
+    await page.waitForFunction(() => document.querySelector('.verlegen').dataset.zustand === 'wehen', null, { timeout: 10_000, polling: 'raf' });
+    const vp = page.viewportSize();
+    await page.mouse.click(Math.round(vp.width / 2), Math.round(vp.height / 2));
     await warteAufRuhe(page, ab);
-    expect.soft(ohneWarten(folge(await log(page), ab))).toEqual(VOLL);
+    expect.soft(await pfad(page), 'Adresse bleibt das Ziel des ersten Klicks').toBe(ZIEL);
+    expect.soft((await page.evaluate(() => history.length)) - hist, 'genau ein neuer Verlaufseintrag').toBe(1);
+    expect.soft(folge(await log(page), ab)).toEqual(VOLL);
   });
 
-  test('(4) Doppelklick: genau ein Wechsel, history.length + 1', async ({ page }) => {
+  test('(4) Doppelklick: genau ein Wechsel, ein Wind, history.length + 1', async ({ page }) => {
     await oeffne(page);
     const link = linkZu(page, ZIEL);
     await bedienbar(link);
     await beobachte(page);
+    const vtAb = (await uebergaenge(page)).length;
     const hist = await page.evaluate(() => history.length);
     const ab = await laenge(page);
     await link.dblclick();
     await expect.poll(() => pfad(page)).toBe(ZIEL);
     await warteAufRuhe(page, ab);
-    const zuwachs = (await page.evaluate(() => history.length)) - hist;
-    expect.soft(zuwachs, 'history.length-Zuwachs').toBe(1);
-    expect.soft(ohneWarten(folge(await log(page), ab))).toEqual(VOLL);
+    expect.soft((await page.evaluate(() => history.length)) - hist, 'history.length-Zuwachs').toBe(1);
+    expect.soft((await uebergaenge(page)).slice(vtAb).length, 'ein Wind').toBe(1);
+    expect.soft(folge(await log(page), ab)).toEqual(VOLL);
   });
 
   test('(5) tel:-Link: kein Wechsel', async ({ page }) => {
@@ -276,37 +288,38 @@ test.describe('Bewegung an (Wechsel mit Fliesen)', () => {
     await beobachte(page);
     const href = await link.getAttribute('href');
     const ab = await laenge(page);
+    const vtAb = (await uebergaenge(page)).length;
     await link.click();
-    await ohneWechsel(page, href, ab);
+    await ohneWechsel(page, href, ab, vtAb);
     expect.soft(await pfad(page)).toBe(START);
   });
 
   test('(6) externer Link: kein Wechsel', async ({ page }) => {
     await oeffne(page);
     // Auf /bad tragen alle externen Links target="_blank" (Grund „target“). Damit der Grund „extern“ geprüft wird,
-    // entfernt der Test dieses Attribut am Link (nur im Testlauf, nicht im Quelltext).
+    // entfernt der Test dieses Attribut am Link (nur im Testlauf, nicht im Quelltext); die Sperre fängt die Anfrage ab.
     const link = page.locator('#main-content a[href^="https://"]').filter({ visible: true }).first();
     await bedienbar(link);
     await link.evaluate((el) => el.removeAttribute('target'));
     await beobachte(page);
     const href = await link.getAttribute('href');
     const ab = await laenge(page);
+    const vtAb = (await uebergaenge(page)).length;
     await link.click();
-    await ohneWechsel(page, href, ab);
-    expect.soft(await pfad(page)).toBe(START);
+    await ohneWechsel(page, href, ab, vtAb);
   });
 
   test('(7) Anker derselben Seite: kein Wechsel', async ({ page }) => {
     await oeffne(page);
-    // Sprunglink #main-content: auf /bad das einzige Ankerziel, das auf beiden Projekten vorhanden ist (sichtbar erst im
-    // Fokus). Der Cookie-Anker in der Fußzeile gibt es nur mobil (lg:hidden). Aktiviert per Tastatur (Enter), wie ein Nutzer.
+    // Sprunglink #main-content (sichtbar erst im Fokus), aktiviert per Tastatur (Enter), wie ein Nutzer
     const link = page.locator('a[href="#main-content"]').first();
     await link.focus();
     await beobachte(page);
     const href = await link.getAttribute('href');
     const ab = await laenge(page);
+    const vtAb = (await uebergaenge(page)).length;
     await page.keyboard.press('Enter');
-    await ohneWechsel(page, href, ab);
+    await ohneWechsel(page, href, ab, vtAb);
     expect.soft(await pfad(page)).toBe(START);
   });
 
@@ -317,13 +330,14 @@ test.describe('Bewegung an (Wechsel mit Fliesen)', () => {
     await beobachte(page);
     const href = await link.getAttribute('href');
     const ab = await laenge(page);
+    const vtAb = (await uebergaenge(page)).length;
     const [neu] = await Promise.all([page.context().waitForEvent('page'), link.click({ modifiers: ['Control'] })]);
     await neu.close();
-    await ohneWechsel(page, href, ab);
+    await ohneWechsel(page, href, ab, vtAb);
     expect.soft(await pfad(page)).toBe(START);
   });
 
-  test('(9) data-kein-verlegen am Link: normale Navigation, kein Wechsel', async ({ page }) => {
+  test('(9) data-kein-verlegen am Link: normale Navigation, kein Wind', async ({ page }) => {
     await oeffne(page);
     const link = linkZu(page, ZIEL);
     await bedienbar(link);
@@ -331,16 +345,17 @@ test.describe('Bewegung an (Wechsel mit Fliesen)', () => {
     await beobachte(page);
     const href = await link.getAttribute('href');
     const ab = await laenge(page);
+    const vtAb = (await uebergaenge(page)).length;
     await link.click();
     await expect.poll(() => pfad(page)).toBe(ZIEL);
     const k = (await page.evaluate(() => window.__verlegen.klicks)).at(-1);
     expect.soft(k.href).toBe(href);
-    expect.soft(k.verhindert, 'Verlegen hat den Klick nicht übernommen').toBe(false);
+    expect.soft(k.verhindert, 'B-01 hat den Klick nicht übernommen').toBe(false);
     expect.soft(await laenge(page), 'kein Eintrag im Zustandsprotokoll').toBe(ab);
-    expect.soft(await zustand(page)).toBe('ruhe');
+    expect.soft((await uebergaenge(page)).slice(vtAb).filter((e) => e.typen.includes('wind')).length, 'kein Wind').toBe(0);
   });
 
-  test('(10) Zurück nach einem Wechsel: Schicht verlässt ruhe, Adresse zurück, Scroll wie vor dem Klick', async ({ page }) => {
+  test('(10) Zurück nach einem Wechsel: Wind gespiegelt (wind-zurueck), Adresse zurück, Scroll wie vor dem Klick', async ({ page }) => {
     await oeffne(page);
     await page.evaluate(() => window.scrollTo({ top: 400, behavior: 'instant' }));
     await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThanOrEqual(398);
@@ -351,11 +366,15 @@ test.describe('Bewegung an (Wechsel mit Fliesen)', () => {
     const ab = await wechsel(page, () => link.click(), ziel);
     const vor = (await log(page))[ab];
     expect.soft(Math.abs(vor.scroll - 400), 'Scroll vor dem Klick (400 px ± 2)').toBeLessThanOrEqual(2);
-    expect.soft(ohneWarten(folge(await log(page), ab))).toEqual(VOLL);
+    const vtAb = (await uebergaenge(page)).length;
     const ab2 = await wechsel(page, () => page.goBack(), START);
     const l = await log(page);
-    expect.soft(ohneWarten(folge(l, ab2)), 'Folge Zurück').toEqual(VOLL);
+    expect.soft(folge(l, ab2), 'Folge Zurück').toEqual(VOLL);
+    const vt = (await uebergaenge(page)).slice(vtAb);
+    expect.soft(vt.map((e) => e.typen), 'ein Wind zurück').toEqual([['wind', 'wind-zurueck']]);
+    if (vt[0]) pruefeWindAnimationen(vt[0], 'zurueck');
     expect.soft(Math.abs(l[l.length - 1].scroll - vor.scroll), 'Scroll nach Zurück gegen Scroll vor dem Klick (± 2 px)').toBeLessThanOrEqual(2);
+    await expect.soft(page.locator('#main-content h1')).toBeFocused();
   });
 
   test('(11) Vor nach Zurück: Adresse wieder vorne, Zustandsfolge vollständig', async ({ page }) => {
@@ -366,7 +385,7 @@ test.describe('Bewegung an (Wechsel mit Fliesen)', () => {
     await wechsel(page, () => link.click(), ZIEL);
     await wechsel(page, () => page.goBack(), START);
     const ab = await wechsel(page, () => page.goForward(), ZIEL);
-    expect.soft(ohneWarten(folge(await log(page), ab))).toEqual(VOLL);
+    expect.soft(folge(await log(page), ab)).toEqual(VOLL);
     expect.soft(await pfad(page)).toBe(ZIEL);
     expect.soft(await zustand(page)).toBe('ruhe');
   });
@@ -413,24 +432,55 @@ test.describe('Bewegung an (Wechsel mit Fliesen)', () => {
   });
 });
 
+test.describe('Ohne View Transitions im Browser', () => {
+  test.use({ reducedMotion: 'no-preference' });
+  test.beforeEach(async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'no-preference' });
+    await protokolliereUebergaenge(page, { ohne: true });
+  });
+
+  test('(15) Rückfall: Klick und Zurück wechseln normal, Fokus auf der H1, Scroll nach Zurück wie vor dem Klick', async ({ page }) => {
+    await oeffne(page);
+    await page.evaluate(() => window.scrollTo({ top: 400, behavior: 'instant' }));
+    const ziel = await linkImSichtfeld(page);
+    const link = linkZu(page, ziel);
+    await bedienbar(link);
+    await beobachte(page);
+    const vorScroll = await page.evaluate(() => window.scrollY);
+    await link.click();
+    await expect.poll(() => pfad(page)).toBe(ziel);
+    await expect.soft(page.locator('#main-content h1')).toBeFocused();
+    expect.soft(await zustand(page), 'Schicht bleibt in Ruhe').toBe('ruhe');
+    await page.goBack();
+    await expect.poll(() => pfad(page)).toBe(START);
+    await expect.poll(() => page.evaluate(() => window.scrollY), { message: 'Scroll nach Zurück (± 2 px)' }).toBeGreaterThanOrEqual(vorScroll - 2);
+    expect.soft(Math.abs((await page.evaluate(() => window.scrollY)) - vorScroll)).toBeLessThanOrEqual(2);
+  });
+});
+
 test.describe('Reduzierte Bewegung', () => {
   test.use({ reducedMotion: 'reduce' });
   test.beforeEach(async ({ page }) => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
+    await protokolliereUebergaenge(page);
   });
 
-  test('(12) reduzierte Bewegung: Wechsel vollständig, Überblendung über .verlegen-blende, keine Fliesen-Animation', async ({ page }) => {
-    await page.goto(START);
+  test('(12) reduzierte Bewegung: Überblendung (Typ wind-ruhig, 150 ms), kein Band, Fokus H1, Scroll 0', async ({ page }) => {
+    await oeffne(page, START, { reduziert: true });
     const link = linkZu(page, ZIEL);
     await bedienbar(link);
-    // Unter reduce setzt das Bewegungsmodul html.k-modul nicht (kein k-bewegung, also kein Modul).
+    // Unter reduce setzt das Kopfskript kein k-bewegung (also auch kein Bewegungsmodul)
     expect.soft(await page.evaluate(() => document.documentElement.classList.contains('k-bewegung')), 'kein k-bewegung').toBe(false);
     await beobachte(page);
+    const vtAb = (await uebergaenge(page)).length;
     const ab = await wechsel(page, () => link.click(), ZIEL);
     const l = await log(page);
-    expect.soft(ohneWarten(folge(l, ab)), 'Zustandsfolge').toEqual(VOLL);
-    expect.soft(Math.max(...l.slice(ab).map((e) => e.blende)), 'Deckkraft der Blende während des Wechsels').toBeGreaterThan(0);
-    expect.soft(Math.max(...l.map((e) => e.animFliesen)), 'laufende Animationen auf .verlegen-fliese').toBe(0);
+    expect.soft(folge(l, ab), 'Zustandsfolge').toEqual(VOLL);
+    expect.soft(l.slice(ab).some((e) => e.bandSichtbar), 'kein Band').toBe(false);
+    const vt = (await uebergaenge(page)).slice(vtAb);
+    expect.soft(vt.map((e) => e.typen), 'Überblendung').toEqual([['wind-ruhig']]);
+    const gruppe = vt[0]?.animationen.find((a) => a.pseudo === '::view-transition-group(root)' || a.pseudo === '::view-transition-new(root)');
+    expect.soft(gruppe?.dauer ?? 150, 'Dauer der Überblendung').toBeLessThanOrEqual(150);
     expect.soft(l[l.length - 1].scroll, 'Scroll bei ruhe').toBe(0);
     await expect.soft(page.locator('#main-content h1')).toBeFocused();
   });

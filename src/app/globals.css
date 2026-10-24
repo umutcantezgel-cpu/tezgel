@@ -92,6 +92,8 @@
   --ease-weg: cubic-bezier(0.32, 0, 0.67, 0);
   /* v3: schnell ankommen, ohne Überschwingen (Fliese unter dem Gummihammer) */
   --ease-hammer: cubic-bezier(0.3, 0.9, 0.35, 1);
+  /* Wind (B-01, E-042): setzt zügig ein, weht gleichmäßig durch und läuft weich aus */
+  --ease-wind: cubic-bezier(0.45, 0.05, 0.3, 1);
   /* Seitenwechsel B-01 und Intro B-02: Gesamtdauern, nur aus diesen Variablen lesen (K-005) */
   --verlegen-gesamt: 1200ms;
   --verlegen-gesamt-folge: 900ms;

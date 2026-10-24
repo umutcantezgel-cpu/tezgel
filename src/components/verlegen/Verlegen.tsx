@@ -1,32 +1,22 @@
 'use client';
 
-// Seitenwechsel B-01 „Verlegen“ (KERN K-007, Technik E-010): Fliesen 2:1 quer im Drittelverband legen sich von rechts
-// über die Seite, darunter wechselt die Seite, dann zieht der Belag nach links ab. Eine feste Schicht (z-60) außerhalb von
-// main, nur transform und opacity über WAAPI; die Fliesen entstehen erst beim ersten Wechsel (DOM und TBT der Erstansicht).
+// Seitenwechsel B-01 „Wind“ (KERN K-007; E-042, Entscheidung des Auftraggebers; vorher „Verlegen“ mit ganz bedeckendem Boden):
+// Ein Band aus Fliesen 2:1 quer im Drittelverband weht wie ein Windstoß von rechts nach links über die Seite. Vor dem Band
+// steht noch die alte Seite, hinter ihm ist schon die neue zu sehen; der Bildschirm ist nie ganz bedeckt. Technik: eine View
+// Transition (Typ „wind“). Die alte Seite steht als eingefrorenes Bild, die neue ist live und wird per Clip hinter der Naht
+// aufgedeckt, die immer unter dem Band liegt; das Band ist eine eigene Gruppe darüber und flattert leicht (bewegung.css).
 // Klicks fängt ein Lauscher in der Capture-Phase ab (next/link prüft danach e.defaultPrevented und navigiert nicht selbst),
-// dann folgt router.push in startTransition. Zurück und Vor: gespiegelt mit 70 % der Dauer, Weg nach ZURUECK.
+// dann folgt router.push in startTransition, während das Bild steht. Zurück und Vor im Browser: gespiegelt (Typ
+// „wind-zurueck“, 70 % der Dauer), das popstate-Ereignis wird angehalten und in der Aktualisierung neu abgeschickt.
+// Reduzierte Bewegung: Überblendung 150 ms (Typ „wind-ruhig“). Ohne View Transitions im Browser: normaler Wechsel.
 import { startTransition, useEffect, useRef } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { pruefeKlick } from '@/lib/verlegen/linkfilter';
-import { LASER_NACH, RUHE, WARTEN_HOECHSTENS, schritt, type Aktion, type Ereignis, type Lage } from '@/lib/verlegen/automat';
-import {
-  FLUG_ANTEIL,
-  GROESSE_FLUG,
-  verlegeRaster,
-  wechselDauer,
-  zeitplan,
-  ziehStrecke,
-  type Fliese,
-  type Mass,
-  type Takt,
-} from '@/lib/verlegen/raster';
+import { wechselDauer, type Richtung } from '@/lib/verlegen/raster';
+import { WARTEN_HOECHSTENS, windBand, windWeg, type WindBand, type WindZustand } from '@/lib/verlegen/wind';
 
-/**
- * aufschub: Der Capture-Lauscher hält popstate an, verlegt gespiegelt und schickt das Ereignis mit dem aktuellen
- * history.state neu ab (Scroll merkt die Schicht selbst). sicher: Der Boden liegt sofort, das Ereignis läuft
- * unverzögert weiter, danach zieht der Belag gespiegelt ab. Entscheidung per Test in E2 (ENTSCHEIDUNGEN.md).
- */
-const ZURUECK: 'aufschub' | 'sicher' = 'aufschub';
+/** Zurück und Vor: Der Capture-Lauscher hält popstate an und schickt das Ereignis in der Aktualisierung der View Transition mit
+ *  dem aktuellen history.state neu ab; die Scrollstellung merkt die Schicht selbst (E-020, E-042). */
 const SPEICHER_GEWECHSELT = 'tezgel-verlegt';
 const SPEICHER_SCROLL = 'tezgel-verlegt-scroll';
 
@@ -56,7 +46,7 @@ if (typeof window !== 'undefined') {
       },
       true,
     );
-    if (ZURUECK === 'aufschub' && 'scrollRestoration' in history) history.scrollRestoration = 'manual';
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   }
 }
 
@@ -79,7 +69,7 @@ function lies(name: string): string {
 
 /** Alle Tokens des Wechsels auf einmal lesen (beim Einhängen im Leerlauf, nie zwischen zwei Schreibzugriffen). */
 function liesVorab(): void {
-  for (const name of ['--verlegen-gesamt', '--verlegen-gesamt-folge', '--verlegen-ruhig', '--ease-hammer', '--ease-laser', '--dauer-1', '--dauer-5']) lies(name);
+  for (const name of ['--verlegen-gesamt', '--verlegen-gesamt-folge']) lies(name);
 }
 
 /** Feine Körnung der Fliese (KERN B-01: SVG-Rauschen als Hintergrund der Fliese, ≤ 1 KB; zurück nach E-037). */
@@ -127,16 +117,6 @@ function bereiteKoernung(schicht: HTMLElement): () => void {
   };
 }
 
-/** Erst nach dem nächsten gemalten Bild ausführen: Das Bild nach dem Klick bleibt billig (Reaktion), die Arbeit folgt danach,
- *  mit Vorrang vor Hintergrundaufgaben wie dem Vorladen der Zielseite (scheduler.postTask, sonst setTimeout). */
-function nachDemMalen(f: () => void): void {
-  const planer = (globalThis as { scheduler?: { postTask?: (f: () => void, o: { priority: string }) => Promise<unknown> } }).scheduler;
-  requestAnimationFrame(() => {
-    if (planer?.postTask) void planer.postTask(f, { priority: 'user-blocking' });
-    else window.setTimeout(f, 0);
-  });
-}
-
 /** Dauer aus einer CSS-Variablen in ms (NaN, wenn sie fehlt); der Minifier schreibt 1200ms als 1.2s, deshalb zählt die Einheit. */
 function ms(name: string): number {
   const roh = lies(name);
@@ -145,13 +125,8 @@ function ms(name: string): number {
 }
 
 /** Gesamtdauer dieses Wechsels aus den Tokens (K-005); NaN, wenn die Tokens fehlen. */
-function gesamtdauer(richtung: 'vor' | 'zurueck'): number {
+function gesamtdauer(richtung: Richtung): number {
   return wechselDauer(ms('--verlegen-gesamt'), ms('--verlegen-gesamt-folge'), schonGewechselt(), richtung);
-}
-
-/** Reduzierte Bewegung: Überblendung `--verlegen-ruhig` (150 ms), je zur Hälfte hinein und hinaus. */
-function halbeBlende(): number {
-  return ms('--verlegen-ruhig') / 2;
 }
 
 function bewegungErlaubt(): boolean {
@@ -161,7 +136,7 @@ function bewegungErlaubt(): boolean {
 
 // Plan-Morph (K-007 seitenwechsel, zurück nach E-037): Links mit data-uebergang="plan-vor" und data-uebergang-plan="<id>"
 // führen zu einer Seite, deren Plan (data-plan-uebergang="<id>") derselbe ist wie der im Feld der Übersicht. Ist der Morph
-// möglich, startet B-01 statt der Fliesen selbst eine View Transition (Typ „plan-vor“): Plan im alten Bild benennen,
+// möglich, startet B-01 statt des Winds eine View Transition (Typ „plan-vor“): Plan im alten Bild benennen,
 // navigieren, warten bis die neue Seite steht, Plan im neuen Bild benennen; der Browser lässt ihn gleiten. Über Reacts
 // <ViewTransition> fand React das Paar nicht, weil Next 16 die alte Seite verborgen stehen lässt statt sie abzubauen (auch im
 // Live-Stand glitt der Plan deshalb nicht). Beide Übergänge laufen nie gleichzeitig.
@@ -198,8 +173,7 @@ function benenne(el: HTMLElement | null | undefined, plan: string | null): void 
   el.style.setProperty('view-transition-class', plan ? 'plan-morph' : '');
 }
 
-/** Eine laufende View Transition sofort beenden (der Wechsel im DOM bleibt, nur die Animation entfällt): Sonst lägen
- *  benannte Gruppen (Plan, Kopf) über der Schicht von B-01. */
+/** Eine laufende View Transition sofort beenden (der Wechsel im DOM bleibt, nur die Animation entfällt). */
 function beendeUebergang(): void {
   try {
     aktiverUebergang()?.skipTransition();
@@ -214,6 +188,9 @@ function beendeUebergang(): void {
 
 /** true, solange ein Klick mit eigenem Übergang navigiert (Fokus auf die H1 nach dem Morph, wie bei B-01) */
 let eigenerWechsel = false;
+/** Wechsel ohne View Transition (Browser ohne Unterstützung): Fokus auf die H1 und bei Zurück und Vor die gemerkte
+ *  Scrollstellung übernimmt der Pfad-Effekt, sobald die neue Seite steht */
+let ohneWind: 'vor' | 'zurueck' | null = null;
 
 function adresse(): string {
   return location.pathname + location.search;
@@ -268,11 +245,6 @@ function verlauf(an: boolean): void {
   document.documentElement.classList.toggle('k-verlauf', an);
 }
 
-function sperre(an: boolean): void {
-  const ziele = [document.querySelector('body header'), document.getElementById('main-content'), document.querySelector('body footer')];
-  for (const el of ziele) if (el) (el as HTMLElement).inert = an;
-}
-
 function fokussiereUeberschrift(): void {
   const h1 = document.querySelector<HTMLElement>('#main-content h1');
   if (!h1) return;
@@ -280,267 +252,183 @@ function fokussiereUeberschrift(): void {
   h1.focus({ preventScroll: true });
 }
 
-interface Belag {
-  breite: number;
-  hoehe: number;
-  mass: Mass;
-  fliesen: Fliese[];
-  elemente: HTMLElement[];
+/** Sichtbare H1 im Inhalt (Next 16 lässt besuchte Seiten verborgen stehen, ihre H1 hat dann keine Rechtecke). */
+function sichtbareUeberschrift(): HTMLElement | null {
+  return [...document.querySelectorAll<HTMLElement>('#main-content h1')].find((h) => h.getClientRects().length > 0) ?? null;
 }
 
-/** Baut den Belag für die aktuelle Ansicht (nur bei neuer Größe neu). */
-function baueBelag(boden: HTMLElement, alt: Belag | null): Belag {
-  const breite = window.innerWidth;
-  const hoehe = window.innerHeight;
-  if (alt && alt.breite === breite && alt.hoehe === hoehe) return alt;
-  const { mass, fliesen } = verlegeRaster(breite, hoehe);
-  const elemente = fliesen.map((f) => {
-    const el = document.createElement('div');
-    el.className = 'verlegen-fliese';
-    el.style.width = `${mass.laenge}px`;
-    el.style.height = `${mass.hoehe}px`;
-    el.style.translate = `${f.x}px ${f.y}px`;
-    el.style.setProperty('--fuge', `${mass.fuge / 2}px`);
-    el.innerHTML =
-      '<span class="verlegen-schatten-flug"></span><span class="verlegen-oberflaeche"><span class="verlegen-glanz"></span></span>';
-    return el;
+/** View Transitions mit Typen kann dieser Browser (sonst wechselt die Seite ohne Wind). */
+function windMoeglich(): boolean {
+  return (
+    typeof (document as Document & { startViewTransition?: unknown }).startViewTransition === 'function' &&
+    typeof CSS !== 'undefined' &&
+    CSS.supports('selector(:active-view-transition-type(wind))')
+  );
+}
+
+/** Werte des Winds als Variablen an html (bewegung.css liest sie in den Keyframes der Gruppen), oder entfernen. */
+function setzeWindWerte(werte: Record<string, string> | null): void {
+  const stil = document.documentElement.style;
+  for (const name of ['--wind-dauer', '--wind-band-von', '--wind-band-bis', '--wind-naht-von', '--wind-naht-bis']) {
+    if (werte?.[name] !== undefined) stil.setProperty(name, werte[name]);
+    else stil.removeProperty(name);
+  }
+}
+
+/** Baut die Fliesen des Bands (nur bei neuer Größe neu): Reihen mit je zwei Fliesen, versetzt im Drittelverband. */
+function baueBand(element: HTMLElement, alt: (WindBand & { fuer: string }) | null): WindBand & { fuer: string } {
+  const fuer = `${window.innerWidth}x${window.innerHeight}`;
+  if (alt && alt.fuer === fuer) return alt;
+  const band = windBand(window.innerWidth, window.innerHeight);
+  const { mass } = band;
+  element.style.width = `${band.breite}px`;
+  element.style.height = `${band.hoehe}px`;
+  const reihen = band.reihen.map((r) => {
+    const reihe = document.createElement('div');
+    reihe.className = 'verlegen-reihe';
+    // Lage über left und top: translate gehört dem Flattern (bewegung.css wind-flattern)
+    reihe.style.left = `${r.x}px`;
+    reihe.style.top = `${r.y}px`;
+    reihe.style.width = `${2 * mass.laenge}px`;
+    reihe.style.height = `${mass.hoehe}px`;
+    reihe.style.setProperty('--wind-auslenkung', `${r.auslenkung}px`);
+    for (let k = 0; k < 2; k++) {
+      const fliese = document.createElement('div');
+      fliese.className = 'verlegen-fliese';
+      fliese.style.width = `${mass.laenge}px`;
+      fliese.style.height = `${mass.hoehe}px`;
+      fliese.style.translate = `${k * mass.laenge}px 0`;
+      fliese.style.setProperty('--fuge', `${mass.fuge / 2}px`);
+      fliese.innerHTML =
+        '<span class="verlegen-schatten-flug"></span><span class="verlegen-oberflaeche"><span class="verlegen-glanz"></span></span>';
+      reihe.append(fliese);
+    }
+    return reihe;
   });
-  boden.replaceChildren(...elemente);
-  return { breite, hoehe, mass, fliesen, elemente };
+  element.replaceChildren(...reihen);
+  return { ...band, fuer };
 }
 
-function warte(animationen: Animation[]): Promise<void> {
-  return Promise.all(animationen.map((a) => a.finished.catch(() => undefined))).then(() => undefined);
-}
-
-function beende(animationen: Animation[]): void {
-  for (const a of animationen) a.cancel();
-  animationen.length = 0;
-}
+type Wind = { skipTransition: () => void; finished: Promise<unknown>; ready: Promise<unknown> };
 
 export default function Verlegen() {
   const router = useRouter();
   const pfad = usePathname();
   const schichtRef = useRef<HTMLDivElement>(null);
-  const bodenRef = useRef<HTMLDivElement>(null);
-  const laserRef = useRef<HTMLDivElement>(null);
-  const blendeRef = useRef<HTMLDivElement>(null);
+  const bandRef = useRef<HTMLDivElement>(null);
   const pfadRef = useRef(pfad);
-  const senden = useRef<(e: Ereignis) => void>(() => undefined);
 
   useEffect(() => {
     const schicht = schichtRef.current;
-    const boden = bodenRef.current;
-    const laser = laserRef.current;
-    const blende = blendeRef.current;
-    if (!schicht || !boden || !laser || !blende) return;
+    const bandElement = bandRef.current;
+    if (!schicht || !bandElement) return;
 
-    let lage: Lage = RUHE;
-    let belag: Belag | null = null;
-    let takte: Takt[] = [];
-    let ruhig = false;
-    let gesamt = Number.NaN;
-    let zurueckAusAufschub = false;
-    const laufend: Animation[] = [];
-    const uhren: number[] = [];
-    let laserLauf: Animation | null = null;
-    let angefordert = false;
+    let zustand: WindZustand = 'ruhe';
+    let band: (WindBand & { fuer: string }) | null = null;
+    let windLauf: Wind | null = null;
 
-    const stelle = (z: string) => {
+    const stelle = (z: WindZustand) => {
+      zustand = z;
       schicht.dataset.zustand = z;
     };
-    const stoppeUhren = () => {
-      for (const u of uhren) window.clearTimeout(u);
-      uhren.length = 0;
+
+    const zeigeBand = (an: boolean) => {
+      if (an) {
+        bandElement.dataset.sichtbar = '';
+        bandElement.style.setProperty('view-transition-name', 'wind');
+      } else {
+        delete bandElement.dataset.sichtbar;
+        delete bandElement.dataset.wehen;
+        bandElement.style.removeProperty('view-transition-name');
+      }
     };
 
-    const lege = () => {
-      beendeUebergang();
-      gesamt = gesamtdauer(lage.richtung);
-      ruhig = !bewegungErlaubt() || !Number.isFinite(gesamt);
+    /**
+     * Ein Wechsel mit Wind. `navigiere` löst den Wechsel aus (router.push oder das angehaltene popstate), `nachher` stellt die
+     * Scrollstellung der neuen Seite ein, bevor ihr Bild entsteht. Während der Aktualisierung ruht das Rendern; gewartet wird
+     * mit setTimeout, bis die neue Seite mit ihrer H1 steht (höchstens WARTEN_HOECHSTENS).
+     */
+    const wehe = (richtung: Richtung, navigiere: () => void, nachher: () => void) => {
+      ohneStartbild();
+      const dauer = gesamtdauer(richtung);
       merkeGewechselt();
-      ohneStartbild();
-      sperre(true);
-      if (ruhig) {
-        laufend.push(blende.animate([{ opacity: 0 }, { opacity: 1 }], { duration: halbeBlende(), fill: 'forwards' }));
-        void warte(laufend).then(() => senden.current({ typ: 'gelegt' }));
+      if (!windMoeglich()) {
+        ohneWind = richtung;
+        navigiere();
         return;
       }
-      belag = baueBelag(boden, belag);
-      takte = zeitplan(belag.fliesen, belag.mass, belag.breite, gesamt, lage.richtung);
-      const flug = belag.mass.laenge * FLUG_ANTEIL * (lage.richtung === 'vor' ? 1 : -1);
-      const kurve = lies('--ease-hammer') || 'ease-out';
-      belag.elemente.forEach((el, i) => {
-        const t = takte[i];
-        el.style.zIndex = String(t.ebene);
-        const zeit = { delay: t.legenBeginn, duration: t.legenDauer, easing: kurve, fill: 'both' as const };
-        laufend.push(
-          el.animate(
-            [
-              { opacity: 0, transform: `translateX(${flug}px) scale(${GROESSE_FLUG})` },
-              { opacity: 1, offset: 0.3 },
-              { opacity: 1, transform: 'none' },
-            ],
-            zeit,
-          ),
-          (el.children[0] as HTMLElement).animate([{ opacity: 1 }, { opacity: 0 }], zeit),
-        );
-      });
-      void warte(laufend).then(() => senden.current({ typ: 'gelegt' }));
-    };
-
-    const liege = () => {
-      beendeUebergang();
-      gesamt = gesamtdauer(lage.richtung);
-      ruhig = !bewegungErlaubt() || !Number.isFinite(gesamt);
-      ohneStartbild();
-      sperre(true);
-      if (ruhig) {
-        blende.style.opacity = '1';
+      const ruhig = !bewegungErlaubt() || !Number.isFinite(dauer);
+      if (!ruhig) {
+        band = baueBand(bandElement, band);
+        const weg = windWeg(band, window.innerWidth, richtung);
+        setzeWindWerte({
+          '--wind-dauer': `${Math.round(dauer)}ms`,
+          '--wind-band-von': `${weg.band.von}px`,
+          '--wind-band-bis': `${weg.band.bis}px`,
+          '--wind-naht-von': `${weg.naht.von}px`,
+          '--wind-naht-bis': `${weg.naht.bis}px`,
+        });
+      }
+      const alteUeberschrift = sichtbareUeberschrift();
+      stelle('warten');
+      const d = document as Document & { startViewTransition: (o: { update: () => Promise<void>; types: string[] }) => Wind };
+      let lauf: Wind;
+      try {
+        lauf = d.startViewTransition({
+          types: ruhig ? ['wind-ruhig'] : richtung === 'vor' ? ['wind'] : ['wind', 'wind-zurueck'],
+          update: () =>
+            new Promise<void>((fertig) => {
+              if (!ruhig) zeigeBand(true);
+              navigiere();
+              const bis = performance.now() + WARTEN_HOECHSTENS;
+              const pruefe = () => {
+                const neu = sichtbareUeberschrift();
+                if ((neu && neu !== alteUeberschrift) || performance.now() > bis) {
+                  nachher();
+                  fertig();
+                } else window.setTimeout(pruefe, 16);
+              };
+              pruefe();
+            }),
+        });
+      } catch {
+        // der Browser verweigert die View Transition (z. B. verborgenes Dokument): normaler Wechsel
+        stelle('ruhe');
+        setzeWindWerte(null);
+        ohneWind = richtung;
+        navigiere();
         return;
       }
-      belag = baueBelag(boden, belag);
-      takte = zeitplan(belag.fliesen, belag.mass, belag.breite, gesamt, lage.richtung);
-      belag.elemente.forEach((el, i) => {
-        el.style.zIndex = String(takte[i].ebene);
-        el.style.opacity = '1';
-        (el.children[0] as HTMLElement).style.opacity = '0';
-      });
-    };
-
-    const ziehe = () => {
-      stoppeUhren();
-      // Neue Seite liegt darunter: Scroll an den Anfang (oder gemerkte Stelle bei Zurück), Fokus auf die H1.
-      if (zurueckAusAufschub) window.scrollTo({ top: gemerkterScroll(), left: 0, behavior: 'instant' });
-      else if (!location.hash && lage.richtung === 'vor') window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-      zurueckAusAufschub = false;
-      // inert fällt hier, weil der Fokus sonst nicht auf die H1 der neuen Seite kann; Zeiger fängt die Schicht weiter ab,
-      // bis sie in Ruhe ist (data-zustand ≠ ruhe, Antwort auf E2-PRUEF-04 Frage 1).
-      sperre(false);
-      fokussiereUeberschrift();
-      const fertig = () => senden.current({ typ: 'gezogen' });
-      if (ruhig || !belag) {
-        verbergeLaser();
-        const von = Number(getComputedStyle(blende).opacity) || 1;
-        beende(laufend);
-        laufend.push(blende.animate([{ opacity: von }, { opacity: 0 }], { duration: halbeBlende(), fill: 'forwards' }));
-        void warte(laufend).then(fertig);
-        return;
-      }
-      const strecke = ziehStrecke(belag.mass, belag.breite) * (lage.richtung === 'vor' ? -1 : 1);
-      // linear wie die Reihen des Intros: mit ease-weg bewegten sich die Fliesen die ersten rund 200 ms kaum, und der Boden
-      // wirkte nach dem Legen still (Sichtabnahme E2, Befund 1; E-036)
-      const kurve = 'linear';
-      const neu: Animation[] = [];
-      belag.elemente.forEach((el, i) => {
-        const t = takte[i];
-        neu.push(
-          el.animate([{ opacity: 1, transform: 'none' }, { opacity: 1, transform: `translateX(${strecke}px)` }], {
-            delay: t.ziehenBeginn,
-            duration: t.ziehenDauer,
-            easing: kurve,
-            fill: 'both',
-          }),
-        );
-      });
-      beende(laufend);
-      laufend.push(...neu);
-      // Laserlinie erst aus, wenn das Abziehen wirklich läuft (Start nach dem Rastern der neuen Seite, E-036)
-      void (neu[0]?.ready ?? Promise.resolve()).then(verbergeLaser, verbergeLaser);
-      void warte(laufend).then(fertig);
-    };
-
-    const zeigeLaser = () => {
-      laser.style.opacity = '1';
-      laserLauf = laser.animate([{ transform: 'translateY(0)' }, { transform: `translateY(${window.innerHeight}px)` }], {
-        duration: ms('--dauer-5'),
-        iterations: Infinity,
-        direction: 'alternate',
-        easing: lies('--ease-laser') || 'ease-in-out',
-      });
-    };
-    // weich aus (Übergang in bewegung.css), die Wanderung endet erst danach, damit die Linie nicht springt
-    const verbergeLaser = () => {
-      laser.style.opacity = '0';
-      const lauf = laserLauf;
-      laserLauf = null;
-      if (lauf) window.setTimeout(() => lauf.cancel(), ms('--dauer-1'));
-    };
-
-    const freigeben = () => {
-      stoppeUhren();
-      beende(laufend);
-      verbergeLaser();
-      if (belag) for (const el of belag.elemente) el.style.opacity = '0';
-      blende.style.opacity = '0';
-      sperre(false);
-      stelle('ruhe');
-    };
-
-    const navigiere = () => {
-      const ziel = lage.ziel;
-      if (!ziel) return;
-      startTransition(() => router.push(ziel));
-      // React startet eine View Transition auch bei B-01-Wechseln, die eine <ViewTransition> ein- oder aushängen (Plan-Morph
-      // auf /leistungen): unter dem Boden sofort beenden, solange er liegt (höchstens bis zum Ende des Wartens)
-      const bis = performance.now() + WARTEN_HOECHSTENS;
-      const wache = () => {
-        if (aktiverUebergang()) beendeUebergang();
-        if (performance.now() < bis && (lage.zustand === 'legen' || lage.zustand === 'bedeckt' || lage.zustand === 'warten')) {
-          requestAnimationFrame(wache);
-        }
-      };
-      requestAnimationFrame(wache);
-    };
-
-    const starteWarten = () => {
-      uhren.push(
-        window.setTimeout(() => senden.current({ typ: 'zeit-laser' }), LASER_NACH),
-        window.setTimeout(() => senden.current({ typ: 'zeit-ende' }), WARTEN_HOECHSTENS),
+      windLauf = lauf;
+      void lauf.ready.then(
+        () => {
+          if (windLauf !== lauf) return;
+          stelle('wehen');
+          // das Flattern der Reihen beginnt mit dem Wind, nicht schon beim Erscheinen des Bands
+          bandElement.dataset.wehen = '';
+        },
+        () => undefined,
       );
+      void lauf.finished
+        .catch(() => undefined)
+        .finally(() => {
+          if (windLauf !== lauf) return;
+          windLauf = null;
+          zeigeBand(false);
+          setzeWindWerte(null);
+          stelle('ruhe');
+          fokussiereUeberschrift();
+        });
     };
 
-    const ausfuehren = (aktion: Aktion) => {
-      switch (aktion) {
-        case 'lege':
-          return lege();
-        case 'liege':
-          liege();
-          return starteWarten();
-        case 'navigiere':
-          navigiere();
-          return starteWarten();
-        case 'zeige-laser':
-          return zeigeLaser();
-        case 'verberge-laser':
-          // beim Übergang zum Abziehen übernimmt ziehe() das Ausblenden, sobald die Fliesen sich bewegen
-          if (lage.zustand === 'ziehen') return;
-          return verbergeLaser();
-        case 'ziehe':
-          return ziehe();
-        case 'blende-aus': {
-          // Seite braucht länger als 3 s: Boden weg, die Navigation läuft normal weiter.
-          stoppeUhren();
-          beende(laufend);
-          sperre(false);
-          const teile = [schicht.animate([{ opacity: 1 }, { opacity: 0 }], { duration: ms('--dauer-1'), fill: 'forwards' })];
-          void warte(teile).then(() => {
-            for (const a of teile) a.cancel();
-            senden.current({ typ: 'ausgeblendet' });
-          });
-          return;
-        }
-        case 'freigeben':
-          return freigeben();
+    /** Ein laufender Wind endet sofort (der Wechsel im DOM bleibt). */
+    const beendeWind = () => {
+      if (!windLauf) return;
+      try {
+        windLauf.skipTransition();
+      } catch {
+        // schon beendet
       }
-    };
-
-    // data-zustand folgt bei jedem Schritt dem Automaten (auch bedeckt, warten, abbruch; Befund E2-PRUEF-04), vor den Aktionen.
-    senden.current = (e) => {
-      const { lage: neu, aktionen } = schritt(lage, e);
-      lage = neu;
-      if (schicht.dataset.zustand !== lage.zustand) stelle(lage.zustand);
-      for (const a of aktionen) ausfuehren(a);
     };
 
     // Plan-Morph: Plan im alten Bild benennen, navigieren, warten bis die neue Seite mit ihrem Plan steht (während der
@@ -605,39 +493,35 @@ export default function Verlegen() {
         target: a.getAttribute('target'),
         download: a.hasAttribute('download'),
         keinVerlegen: a.closest('[data-kein-verlegen]') !== null,
-        eigenerUebergang: a.closest('[data-uebergang]') !== null && lage.zustand === 'ruhe' && !angefordert && !morphOffen && uebergangMoeglich(),
+        eigenerUebergang: a.closest('[data-uebergang]') !== null && zustand === 'ruhe' && !morphOffen && uebergangMoeglich(),
       });
-      // Der Morph wartet noch auf die neue Seite (das Bild steht still): ein zweiter interner Klick ruht, wie ein Doppelklick
-      if (morphOffen && grund === 'verlegen') {
-        e.preventDefault();
-        return;
-      }
+      if (grund !== 'verlegen' && grund !== 'eigener-uebergang') return;
+      e.preventDefault();
+      // Während das Bild auf die neue Seite wartet (Wind oder Morph), ruht ein zweiter Klick wie ein Doppelklick; weht der Wind
+      // schon, endet er sofort und der neue Wechsel beginnt
+      if (zustand === 'warten' || morphOffen) return;
+      if (zustand === 'wehen') beendeWind();
+      merkeScroll(adresse());
+      verlauf(false);
       if (grund === 'eigener-uebergang') {
-        e.preventDefault();
-        merkeScroll(adresse());
         eigenerWechsel = true;
-        verlauf(false);
         morph(a);
         return;
       }
-      if (grund !== 'verlegen') return;
-      e.preventDefault();
-      if (lage.zustand !== 'ruhe' || angefordert) return; // Doppelklick: kein zweiter Wechsel
-      angefordert = true;
-      verlauf(false);
       const ziel = new URL(a.href);
+      const href = ziel.pathname + ziel.search + ziel.hash;
       router.prefetch(ziel.pathname + ziel.search);
-      merkeScroll(adresse());
       pfadRef.current = location.pathname;
-      // Der Klick selbst tut nur das Nötigste; Belag, Sperre und Animationen entstehen nach dem nächsten Bild (E-031).
-      nachDemMalen(() => {
-        angefordert = false;
-        senden.current({ typ: 'start', ziel: ziel.pathname + ziel.search + ziel.hash, richtung: 'vor' });
-      });
+      wehe(
+        'vor',
+        () => startTransition(() => router.push(href)),
+        () => {
+          if (!ziel.hash) window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        },
+      );
     };
 
     const neuAbschicken = () => {
-      zurueckAusAufschub = true;
       eigenerPopstate = true;
       try {
         window.dispatchEvent(new PopStateEvent('popstate', { state: history.state }));
@@ -662,21 +546,15 @@ export default function Verlegen() {
         if (!state?.__NA || location.pathname === pfadRef.current) return false;
         ausVerlauf = true;
         verlauf(true);
-        if (ZURUECK === 'sicher') {
-          if (lage.zustand !== 'ruhe') return false;
-          senden.current({ typ: 'start-liegend', richtung: 'zurueck' });
+        // Wartet ein Wind noch auf seine Seite, geht das Ereignis an Next (verwirft die offene Navigation); weht er schon, endet
+        // er sofort, und Zurück weht neu
+        if (zustand === 'warten') {
+          beendeWind();
           return false;
         }
-        if (lage.zustand === 'legen' || lage.zustand === 'bedeckt' || lage.zustand === 'warten') return true; // folgt beim Neuabschicken
-        if (lage.zustand !== 'ruhe') return false;
+        if (zustand === 'wehen') beendeWind();
         merkeScroll(angezeigt);
-        senden.current({ typ: 'start', ziel: '', richtung: 'zurueck' });
-        void warte(laufend).then(() => {
-          if (lage.zustand === 'bedeckt') {
-            neuAbschicken();
-            starteWarten();
-          }
-        });
+        wehe('zurueck', neuAbschicken, () => window.scrollTo({ top: gemerkterScroll(), left: 0, behavior: 'instant' }));
         return true;
       },
     };
@@ -698,13 +576,15 @@ export default function Verlegen() {
       else window.clearTimeout(leerlauf);
       koernungAus();
       steuerung = null;
-      freigeben();
+      beendeWind();
+      zeigeBand(false);
+      setzeWindWerte(null);
+      stelle('ruhe');
     };
   }, [router]);
 
-  // Neue Seite ist da: nach zwei Bildern (Layout und Malen der neuen Seite) und sobald der Hauptfaden frei ist, zieht der
-  // Belag ab. Ohne die Ruhe startete das Abziehen, während die neue Seite noch rechnete, und der Boden lag sichtbar still
-  // (Sichtabnahme E2, Befund 1 und 2; E-036). Bis dahin zeigt die Laserlinie das Warten; spätestens nach 400 ms geht es los.
+  // Neue Seite ist da: Adresse merken, k-verlauf nur nach Zurück und Vor; nach dem Plan-Morph Fokus auf die H1 (nach dem Wind
+  // übernimmt das der Wind selbst, sobald er fertig ist)
   useEffect(() => {
     if (pfad === pfadRef.current) return;
     pfadRef.current = pfad;
@@ -718,27 +598,16 @@ export default function Verlegen() {
       eigenerWechsel = false;
       void (aktiverUebergang()?.finished ?? Promise.resolve()).finally(fokussiereUeberschrift);
     }
-    let zweites = 0;
-    let ruhe = 0;
-    const melden = () => senden.current({ typ: 'bereit' });
-    const erstes = requestAnimationFrame(() => {
-      zweites = requestAnimationFrame(() => {
-        ruhe = window.requestIdleCallback ? window.requestIdleCallback(melden, { timeout: 400 }) : window.setTimeout(melden, 0);
-      });
-    });
-    return () => {
-      cancelAnimationFrame(erstes);
-      cancelAnimationFrame(zweites);
-      if (window.cancelIdleCallback) window.cancelIdleCallback(ruhe);
-      else window.clearTimeout(ruhe);
-    };
+    if (ohneWind) {
+      if (ohneWind === 'zurueck') window.scrollTo({ top: gemerkterScroll(), left: 0, behavior: 'instant' });
+      ohneWind = null;
+      fokussiereUeberschrift();
+    }
   }, [pfad]);
 
   return (
     <div ref={schichtRef} className="verlegen" data-zustand="ruhe" aria-hidden="true">
-      <div ref={bodenRef} className="verlegen-boden" />
-      <div ref={laserRef} className="verlegen-laser" />
-      <div ref={blendeRef} className="verlegen-blende" />
+      <div ref={bandRef} className="verlegen-band" />
     </div>
   );
 }
