@@ -1,0 +1,8 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { WAND, FORMATE, START, wandbild, wertAusZeiger, wertText } from '../src/components/momente/formatregler/geometrie.ts';
+test('Formatregler 1: kleine Fliesen im Kreuzverband mit einem Passstreifen unten', () => { const k = wandbild('klein'); assert.deepEqual(k.senkrecht, [60, 120, 180, 240, 300]); assert.deepEqual(k.waagrecht, [60, 120, 180, 240]); assert.deepEqual(k.passstuecke, [[0, 240, 360, 20]]); assert.equal(k.meter, 27.4); });
+test('Formatregler 2: drei große Fliesen füllen die Wand mit zwei Fugen, rechts der Mitte steht eine', () => { const g = wandbild('gross'); assert.deepEqual(g.senkrecht, [120, 240]); assert.deepEqual(g.waagrecht, []); assert.deepEqual(g.passstuecke, []); assert.equal(g.meter, 5.2); assert.ok(g.senkrecht.some((x) => x > WAND.b / 2)); assert.equal(FORMATE.gross.h, WAND.h); });
+test('Formatregler 3: große Fliesen haben weniger Fugen', () => { assert.ok(wandbild('klein').meter > 5 * wandbild('gross').meter); });
+test('Formatregler 4: Zeigerlage begrenzt und gerundet', () => { assert.equal(wertAusZeiger(150, 100, 200), 25); assert.equal(wertAusZeiger(160, 100, 200), 30); assert.equal(wertAusZeiger(50, 100, 200), 0); assert.equal(wertAusZeiger(400, 100, 200), 100); assert.equal(wertAusZeiger(150, 100, 0), null); });
+test('Formatregler 5: Start in der Mitte, Ansage ohne Gedankenstrich', () => { assert.equal(START, 50); assert.equal(wertText(0), 'Ganze Wand mit großen Fliesen'); assert.equal(wertText(100), 'Ganze Wand mit kleinen Fliesen'); assert.equal(wertText(50), 'Links 50 Prozent kleine Fliesen, rechts große Fliesen'); for (const w of [0, 1, 50, 99, 100]) assert.ok(!/[–—]| - /.test(wertText(w))); });
