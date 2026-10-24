@@ -1,4 +1,4 @@
-// Seitenwechsel B-01 „Verlegen“ (KERN K-007): Fliesenraster und Zeitplan, reine Logik ohne DOM.
+// Seitenwechsel B-01 „Verlegen“ (KERN K-007, E-043): Fliesenraster und Zeitpläne, reine Logik ohne DOM.
 // Fliese 2:1 quer im Drittelverband (Halbverband als Alternative), Fuge 1 % der kurzen Seite, mindestens 2 px.
 // Etwa 3 Fliesen je Reihe bei 390 px, 8 bei 1440 px, höchstens 80 gleichzeitig.
 
@@ -156,5 +156,83 @@ export function ziehStrecke(mass: Mass, breite: number): number {
 /** Dauer eines Wechsels: erster einer Sitzung, folgende, Zurück und Vor mit 70 %. */
 export function wechselDauer(erster: number, folge: number, schonGewechselt: boolean, richtung: Richtung): number {
   const basis = schonGewechselt ? folge : erster;
-  return richtung === 'zurueck' ? basis * ANTEIL_ZURUECK : basis;
+  return richtung === 'zurueck' ? Math.round(basis * ANTEIL_ZURUECK) : basis;
+}
+
+// B-01 Fliese für Fliese (E-043, Auftraggeber) --------------------------------------------------------------------------
+// Seit E-043 legt B-01 die ganze Ansicht Fliese für Fliese und nimmt die Fliesen einzeln wieder ab (stueckplan). Der
+// zeitplan oben (Verlegen und reihenweises Weiterziehen, E-017) bleibt die Grundlage von Intro (B-02) und Startbild.
+
+/** Anteile der Gesamtdauer: Belegen die erste Hälfte, Abnehmen die zweite; das Warten auf die neue Seite kommt dazu. */
+export const STUECK_ANTEIL_LEGEN = 0.5;
+export const STUECK_ANTEIL_ABNEHMEN = 0.5;
+/** Legen: Die Fliese schwebt etwas größer über ihrem Platz, ein kurzes Stück zur Startkante hin, und setzt hart auf (tak). */
+export const AUFSETZEN_FLUG = 0.12;
+export const AUFSETZEN_GROESSE = 1.12;
+/** Abnehmen: Die Fliese weicht in den Hintergrund zurück (wird kleiner und verschwindet). */
+export const GROESSE_HINTERGRUND = 0.6;
+
+export interface Stuecktakt {
+  /** Beginn des Legens ab Phasenbeginn (ms) */
+  legenBeginn: number;
+  legenDauer: number;
+  /** Beginn des Abnehmens ab Phasenbeginn (ms) */
+  abnehmenBeginn: number;
+  abnehmenDauer: number;
+  /** Stapelreihenfolge: später gelegt liegt oben (die Fliese im Flug wirft ihren Schatten auf die gelegten) */
+  ebene: number;
+}
+
+/** Abstand einer Fliese von der Startkante in Fliesenlängen (vor: rechte Kante, zurueck: linke Kante; überstehende < 0). */
+function abstandStueck(f: Fliese, breite: number, laenge: number, richtung: Richtung): number {
+  return (richtung === 'vor' ? breite - (f.x + laenge) : f.x) / laenge;
+}
+
+/** Anteil der Phase, den eine einzelne Fliese braucht; der Rest ist der Takt zwischen den Fliesen (tak, tak, tak). */
+export const ANTEIL_FLIESE_LEGEN = 0.25;
+export const ANTEIL_FLIESE_ABNEHMEN = 0.3;
+/**
+ * Nachlauf der untersten Reihe gegenüber der obersten, in Fliesenlängen: Innerhalb einer Spalte folgen die Reihen von oben
+ * nach unten aufeinander, die Kante läuft leicht schräg.
+ */
+export const REIHEN_NACHLAUF = 1.5;
+
+/** Stückwert einer Fliese (Reihenfolge): Spalte ab der Startkante (stetig, der Verband ergibt das Zickzack) plus der
+ *  Nachlauf ihrer Reihe. */
+function stueckwert(f: Fliese, mass: Mass, breite: number, reihen: number, richtung: Richtung): number {
+  return abstandStueck(f, breite, mass.laenge, richtung) + (REIHEN_NACHLAUF * f.reihe) / Math.max(1, reihen - 1);
+}
+
+/**
+ * Stückplan je Fliese für eine Gesamtdauer (E-043, Auftraggeber): Die ganze Ansicht wird Fliese für Fliese belegt, von der
+ * Startkante her (vor: rechts, zurueck: links). Die Reihenfolge folgt dem Stückwert, die Fliesen setzen im gleichen Abstand
+ * nacheinander ein (tak, tak, tak), keine zwei im selben Augenblick. Liegt alles, wechselt darunter die Seite; dann werden
+ * die Fliesen in derselben Reihenfolge einzeln abgenommen und weichen in den Hintergrund zurück, die neue Seite erscheint
+ * von der Startkante her. Später gelegte Fliesen liegen oben: Im Flug werfen sie ihren Schatten auf die schon gelegten.
+ */
+export function stueckplan(fliesen: Fliese[], mass: Mass, breite: number, gesamt: number, richtung: Richtung): Stuecktakt[] {
+  const legenPhase = gesamt * STUECK_ANTEIL_LEGEN;
+  const abnehmenPhase = gesamt * STUECK_ANTEIL_ABNEHMEN;
+  const legenDauer = legenPhase * ANTEIL_FLIESE_LEGEN;
+  const abnehmenDauer = abnehmenPhase * ANTEIL_FLIESE_ABNEHMEN;
+  const reihen = fliesen.reduce((n, f) => Math.max(n, f.reihe + 1), 0);
+  const werte = fliesen.map((f) => stueckwert(f, mass, breite, reihen, richtung));
+  // gleicher Stückwert (Zufall des Verbands): die obere Reihe zuerst
+  const reihenfolge = werte
+    .map((w, i) => [w, i] as const)
+    .sort((a, b) => a[0] - b[0] || fliesen[a[1]].reihe - fliesen[b[1]].reihe || a[1] - b[1]);
+  const rang = new Array<number>(fliesen.length);
+  reihenfolge.forEach(([, i], r) => {
+    rang[i] = r;
+  });
+  const schritte = Math.max(1, fliesen.length - 1);
+  const legenTakt = (legenPhase - legenDauer) / schritte;
+  const abnehmenTakt = (abnehmenPhase - abnehmenDauer) / schritte;
+  return rang.map((r) => ({
+    legenBeginn: r * legenTakt,
+    legenDauer,
+    abnehmenBeginn: r * abnehmenTakt,
+    abnehmenDauer,
+    ebene: r + 1,
+  }));
 }

@@ -99,7 +99,7 @@ export const BESTAND_METADATA: Metadata = {
 };
 
 export const BESTAND_VIEWPORT: Viewport = {
-  themeColor: '#F5F4F0', // = --color-kalk (Metadaten verlangen einen Farbwert)
+  themeColor: '#F4F4F5', // = --color-kalk (Metadaten verlangen einen Farbwert)
   colorScheme: 'light',
 };
 

@@ -20,7 +20,9 @@
   --color-white: #fff;
 
   /* Farbe – Neutrale auf 228°, ein Akzent (Laser = Logo-Rot) */
-  --color-kalk: #F5F4F0;
+  /* Kalk neutral (E-043, Auftraggeber: kein Gelb): vorher #F5F4F0 lag als einziger Grundton auf Gelb (OKLCH-Farbton 95°)
+     und wirkte neben den weißen Fliesen gelblich; Kontraste unverändert (Tinte-2 8,2 : 1) */
+  --color-kalk: #F4F4F5;
   --color-fliese: #FFFFFF;
   --color-fuge: #DDDEE2;
   --color-strich: #818698;
@@ -92,11 +94,12 @@
   --ease-weg: cubic-bezier(0.32, 0, 0.67, 0);
   /* v3: schnell ankommen, ohne Überschwingen (Fliese unter dem Gummihammer) */
   --ease-hammer: cubic-bezier(0.3, 0.9, 0.35, 1);
-  /* Wind (B-01, E-042): setzt zügig ein, weht gleichmäßig durch und läuft weich aus */
-  --ease-wind: cubic-bezier(0.45, 0.05, 0.3, 1);
+  /* B-01 Legen (E-043): die Fliese schwebt kurz und setzt mit voller Geschwindigkeit auf, ohne Federn (tak) */
+  --ease-aufsetzen: cubic-bezier(0.5, 0, 0.75, 0);
   /* Seitenwechsel B-01 und Intro B-02: Gesamtdauern, nur aus diesen Variablen lesen (K-005) */
-  --verlegen-gesamt: 1200ms;
-  --verlegen-gesamt-folge: 900ms;
+  /* B-01 Belegen plus Abnehmen (E-043, Auftraggeber: Fliese für Fliese): erster Wechsel 1,8 s, danach 1,4 s */
+  --verlegen-gesamt: 1800ms;
+  --verlegen-gesamt-folge: 1400ms;
   /* reduzierte Bewegung: Überblendung statt Fliesen (Auftrag Abschnitt 9) */
   --verlegen-ruhig: 150ms;
   --intro-gesamt: 1600ms;

@@ -253,10 +253,10 @@ html.k-bewegung .laden-fuge::after {
   to { translate: 340% 0; }
 }
 
-/* verlegen (B-01 „Wind“, KERN v3 K-007, E-042) – Seitenwechsel: Ein Band aus Fliesen 2:1 quer im Drittelverband weht über
-   die Seite, vor ihm die alte (eingefrorenes Bild der View Transition), hinter ihm schon die neue (live, per Clip aufgedeckt).
-   Die Schicht ist fest und für Screenreader verborgen; sie trägt nur das Band, das in der Aktualisierung erscheint und als
-   eigene Gruppe „wind“ über der Seite liegt. Jede Fliese trägt ihre halbe Fuge selbst (Rand in Fugenfarbe). */
+/* verlegen (B-01, KERN v3 K-007, Ablauf E-043) – Seitenwechsel: Fliese für Fliese von rechts über die ganze Seite gelegt,
+   dann einzeln abgenommen. Eine feste Schicht über allem, für Screenreader verborgen, nur während des Wechsels sichtbar und
+   klickdicht. Jede Fliese trägt ihre halbe Fuge selbst (Rand in Fugenfarbe), so ist die Fuge
+   zwischen zwei gelegten Fliesen ganz und die Seite scheint nie durch. Bewegt werden nur transform und opacity (WAAPI). */
 .verlegen {
   position: fixed;
   inset: 0;
@@ -268,52 +268,38 @@ html.k-bewegung .laden-fuge::after {
 }
 .verlegen:not([data-zustand="ruhe"]) {
   visibility: visible;
+  pointer-events: auto;
 }
-.verlegen-band {
+.verlegen-boden {
   position: absolute;
-  left: 0;
-  top: 0;
-  display: none;
-  /* eigener Stapelkontext: die Flugschatten der Fliesen bleiben im Band */
+  inset: 0;
+  /* eigener Stapelkontext: die z-index der Fliesen bleiben im Boden, die Laserlinie liegt darüber (Sichtabnahme E2,
+     Befund 1: im Wartezustand 0 rote Bildpunkte, E-036) */
   isolation: isolate;
-}
-.verlegen-band[data-sichtbar] {
-  display: block;
-}
-.verlegen-reihe {
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-/* Flattern: jede Reihe lenkt in der Welle über die Höhe aus und schwingt einmal durch, während das Band weht (Werte aus
-   wind.ts, Beginn mit dem Wind über data-wehen); das Zickzack läuft so wie Stoff im Wind */
-.verlegen-band[data-wehen] .verlegen-reihe {
-  animation: wind-flattern var(--wind-dauer, 0ms) var(--ease-wind) both;
-}
-@keyframes wind-flattern {
-  from { translate: var(--wind-auslenkung, 0px) 0; }
-  to { translate: calc(var(--wind-auslenkung, 0px) * -1) 0; }
 }
 .verlegen-fliese {
   position: absolute;
   left: 0;
   top: 0;
+  opacity: 0;
   background-color: var(--color-fuge);
+  will-change: transform, opacity;
 }
 .verlegen-fliese > span {
   position: absolute;
   inset: 0;
 }
-/* im Wind fliegen die Fliesen: ihr Flugschatten liegt auf der Seite darunter */
 .verlegen-schatten-flug {
   box-shadow: var(--shadow-flug);
+  opacity: 0;
 }
 .verlegen-fliese > .verlegen-oberflaeche {
   inset: var(--fuge);
   background-color: var(--color-fliese);
   /* feine Körnung (SVG-Rauschen in Tinte, ≤ 1 KB, KERN B-01; zurück nach E-037): einmal im Leerlauf zu einer Kachel
      gerastert und als --verlegen-koernung an die Schicht gesetzt (Verlegen.tsx), die Fliesen kacheln nur das fertige Bild
-     statt feTurbulence je Fliese (E-036) */
+     statt feTurbulence je Fliese (E-036). Der kleine Schatten der gesetzten Fliese liegt fest an der Oberfläche; nur der
+     Flugschatten blendet aus (E-036). */
   background-image: var(--verlegen-koernung, none);
   background-size: 96px 96px;
   box-shadow: var(--shadow-gesetzt);
@@ -323,65 +309,37 @@ html.k-bewegung .laden-fuge::after {
   inset: 0;
   background-image: linear-gradient(120deg, var(--color-fliese-glanz), transparent 40%);
 }
+/* Wartephase: eine Linie wandert ruhig über den stillen Boden (höchstens 3 s, Steuerung in der Komponente); neutral in
+   Strich statt Laserrot, der ganze Seitenwechsel bleibt ohne Farbe (E-043, Auftraggeber) */
+.verlegen-laser {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background-color: var(--color-strich);
+  opacity: 0;
+  transition: opacity var(--dauer-1) var(--ease-setzen);
+}
+/* Reduzierte Bewegung: Überblendung über eine Kalkfläche statt Fliesen */
+.verlegen-blende {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-kalk);
+  opacity: 0;
+}
 @media print {
   .verlegen {
     display: none;
   }
 }
 
-/* Wind als View Transition: Die alte Seite steht als Bild (keine Animation, kein Überblenden), die neue liegt darüber und wird
-   hinter der Naht aufgedeckt (Clip, Werte aus wind.ts als Variablen an html); das Band gleitet als Gruppe „wind“ mit derselben
-   Dauer und Kurve, die Naht liegt also immer unter ihm. Vor: von rechts nach links; zurück (Typ wind-zurueck): gespiegelt.
-   Während des Winds fängt die Schicht der View Transition Klicks ab (wie der alte Boden): ein Klick träfe sonst die neue
-   Seite unter dem Bild der alten. */
-:root:active-view-transition-type(wind)::view-transition {
-  pointer-events: auto;
-}
-:root:active-view-transition-type(wind)::view-transition-group(root) {
-  animation: none;
-}
-:root:active-view-transition-type(wind)::view-transition-old(root) {
-  animation: none;
-  mix-blend-mode: normal;
-}
-:root:active-view-transition-type(wind)::view-transition-new(root) {
-  animation: wind-aufdecken var(--wind-dauer) var(--ease-wind) both;
-  mix-blend-mode: normal;
-}
-:root:active-view-transition-type(wind-zurueck)::view-transition-new(root) {
-  animation-name: wind-aufdecken-zurueck;
-}
-::view-transition-group(wind) {
-  z-index: 50;
-  animation: wind-wehen var(--wind-dauer) var(--ease-wind) both;
-}
-::view-transition-old(wind) {
-  display: none;
-}
-::view-transition-new(wind) {
-  animation: none;
-}
-@keyframes wind-wehen {
-  from { translate: var(--wind-band-von) 0; }
-  to { translate: var(--wind-band-bis) 0; }
-}
-@keyframes wind-aufdecken {
-  from { clip-path: inset(0 0 0 var(--wind-naht-von)); }
-  to { clip-path: inset(0 0 0 var(--wind-naht-bis)); }
-}
-@keyframes wind-aufdecken-zurueck {
-  from { clip-path: inset(0 var(--wind-naht-von) 0 0); }
-  to { clip-path: inset(0 var(--wind-naht-bis) 0 0); }
-}
-/* Reduzierte Bewegung und Notaus: Überblendung 150 ms statt Wind (Typ wind-ruhig, das Band erscheint gar nicht) */
-:root:active-view-transition-type(wind-ruhig)::view-transition-group(root) {
-  animation-duration: var(--verlegen-ruhig);
-}
-
 /* seitenwechsel (K-007, zurück nach E-037) – Plan-Morph /leistungen → /leistungen/[id]: derselbe Verlegeplan gleitet in
    dauer-4 · ease-setzen vom Feld der Übersicht in den Einstieg der Leistungsseite, die übrige Seite überblendet in dauer-2,
-   der Kopf steht still (wie im Live-Stand). Alles hängt am Übergangstyp plan-vor, damit der Wind von B-01 (Typ wind) nichts
-   davon erbt. Unter lg, bei reduzierter Bewegung und im Notaus ohne Animation; dort übernimmt B-01 den Link. */
+   der Kopf steht still (wie im Live-Stand). Alles hängt am Übergangstyp plan-vor, damit Transitionen, die React bei
+   B-01-Wechseln startet, nichts Benanntes (vor allem den Kopf) über die Schicht von B-01 heben; B-01 beendet sie ohnehin
+   sofort (Verlegen.tsx). Unter lg, bei reduzierter Bewegung und im Notaus ohne Animation; dort übernimmt B-01 den Link. */
 ::view-transition {
   pointer-events: none;
 }
@@ -407,9 +365,9 @@ html.k-bewegung .laden-fuge::after {
   animation-timing-function: var(--ease-setzen);
 }
 @media (width < 64rem), (prefers-reduced-motion: reduce) {
-  :root:active-view-transition-type(plan-vor)::view-transition-group(*),
-  :root:active-view-transition-type(plan-vor)::view-transition-old(*),
-  :root:active-view-transition-type(plan-vor)::view-transition-new(*) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
     animation: none !important;
   }
 }
