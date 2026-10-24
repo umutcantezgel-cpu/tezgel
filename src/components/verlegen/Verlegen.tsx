@@ -1,10 +1,12 @@
 'use client';
 
-// Seitenwechsel B-01 „Verlegen“ (KERN K-007, Technik E-010, Ablauf E-043): Fliesen 2:1 quer im Drittelverband werden
-// Fliese für Fliese von rechts nach links über die ganze Seite gelegt, jede setzt einzeln auf (tak, tak, tak); darunter
-// wechselt die Seite, dann werden die Fliesen in derselben Richtung einzeln abgenommen und weichen in den Hintergrund
-// zurück. Eine feste Schicht (z-60) außerhalb von main, nur transform und opacity über WAAPI; die Fliesen entstehen erst
-// beim ersten Wechsel (DOM und TBT der Erstansicht).
+// Seitenwechsel B-01 „Verlegen“ (KERN K-007, Technik E-010, Ablauf E-043, Fassung v3 E-047): große Fliesen 2:1 quer im
+// Drittelverband werden Fliese für Fliese von rechts nach links über die ganze Seite gelegt, jede setzt einzeln auf; liegt
+// der Boden, klatscht mittig das Logo der Firma auf die Wand und steht nach einem Klick mindestens 450 ms; darunter wechselt
+// die Seite, dann werden die Fliesen in derselben Richtung einzeln abgenommen und weichen in den Hintergrund zurück, das Logo
+// geht mit den ersten. Eine feste Schicht (z-60) außerhalb von main, nur transform und opacity über WAAPI; Fliesen und
+// Logo-Bild kommen erst beim ersten Wechsel in die Schicht (DOM, TBT und LCP der Erstansicht), das Bild wird vorher im
+// Leerlauf geladen.
 // Klicks fängt ein Lauscher in der Capture-Phase ab (next/link prüft danach e.defaultPrevented und navigiert nicht selbst),
 // dann folgt router.push in startTransition. Zurück und Vor: gespiegelt mit 70 % der Dauer, Weg nach ZURUECK.
 import { startTransition, useEffect, useRef } from 'react';
@@ -15,6 +17,11 @@ import {
   AUFSETZEN_FLUG,
   AUFSETZEN_GROESSE,
   GROESSE_HINTERGRUND,
+  LOGO_AUFKLATSCHEN,
+  LOGO_GROESSE_START,
+  LOGO_WEG,
+  logoHalt,
+  logoMass,
   stueckplan,
   verlegeRaster,
   wechselDauer,
@@ -22,6 +29,7 @@ import {
   type Mass,
   type Stuecktakt,
 } from '@/lib/verlegen/raster';
+import { INTRO_LOGO } from '@/lib/intro/ablauf';
 
 /**
  * aufschub: Der Capture-Lauscher hält popstate an, verlegt gespiegelt und schickt das Ereignis mit dem aktuellen
@@ -133,6 +141,22 @@ function bereiteKoernung(schicht: HTMLElement): () => void {
     aus = true;
     if (url) URL.revokeObjectURL(url);
   };
+}
+
+/** Logo auf der Wand (E-047): dieselbe Datei wie im Kopf (`/images/logo/tezgel-logo.webp`, UNANTASTBAR, G8), über den
+ *  Bildoptimierer in der Dateibreite 640 px, genau die Adresse des Intros (beim ersten Besuch schon im Speicher). Das Bild
+ *  entsteht im Leerlauf nach dem Einhängen außerhalb des Dokuments und wird dort geladen und dekodiert; in die Schicht kommt
+ *  es erst beim ersten Wechsel, also nach der ersten Eingabe (kein LCP-Kandidat der Erstansicht). decoding sync: Beim
+ *  Aufklatschen malt der Browser das fertige Bild im selben Bild, statt eine Lücke zu zeigen. */
+function neuesLogoBild(): HTMLImageElement {
+  const bild = new Image(640, 200);
+  bild.alt = '';
+  bild.decoding = 'sync';
+  bild.draggable = false;
+  bild.className = 'verlegen-logo-bild';
+  bild.src = INTRO_LOGO;
+  void bild.decode().catch(() => undefined);
+  return bild;
 }
 
 /** Erst nach dem nächsten gemalten Bild ausführen: Das Bild nach dem Klick bleibt billig (Reaktion), die Arbeit folgt danach,
@@ -366,6 +390,7 @@ export default function Verlegen() {
   const bodenRef = useRef<HTMLDivElement>(null);
   const laserRef = useRef<HTMLDivElement>(null);
   const blendeRef = useRef<HTMLDivElement>(null);
+  const logoRef = useRef<HTMLDivElement>(null);
   const pfadRef = useRef(pfad);
   const senden = useRef<(e: Ereignis) => void>(() => undefined);
 
@@ -374,7 +399,8 @@ export default function Verlegen() {
     const boden = bodenRef.current;
     const laser = laserRef.current;
     const blende = blendeRef.current;
-    if (!schicht || !boden || !laser || !blende) return;
+    const logo = logoRef.current;
+    if (!schicht || !boden || !laser || !blende || !logo) return;
 
     let lage: Lage = RUHE;
     let belag: Belag | null = null;
@@ -385,6 +411,11 @@ export default function Verlegen() {
     const laufend: Animation[] = [];
     const uhren: number[] = [];
     let laserLauf: Animation | null = null;
+    /** Logo-Bild (im Leerlauf vorgeladen), seine Animationen (Aufklatschen, Einblenden, Ausblenden) und die Nummer des Halts:
+     *  Eine Uhr eines früheren Wechsels darf den Halt des laufenden nicht beenden. */
+    let logoBild: HTMLImageElement | null = null;
+    const logoLauf: Animation[] = [];
+    let logoNummer = 0;
     let angefordert = false;
     let sofortAus: () => void = () => undefined;
     /** Die Navigation führt auf den Pfad, der schon angezeigt wird (z. B. die Seite kam nach einem Abbruch doch noch, oder
@@ -404,6 +435,71 @@ export default function Verlegen() {
       uhren.length = 0;
     };
 
+    // Logo auf der Wand: Bild bereitstellen (falls der Klick vor dem Leerlauf kam), mittig in ganzen Pixeln platzieren und in
+    // die Schicht hängen (beim ersten Wechsel, die Fliesen brauchen danach noch die halbe Dauer, das Bild ist dann längst da).
+    const bereiteLogo = (): HTMLImageElement => {
+      logoBild ??= neuesLogoBild();
+      return logoBild;
+    };
+    const platziereLogo = (): HTMLImageElement => {
+      const bild = bereiteLogo();
+      const m = logoMass(window.innerWidth, window.innerHeight);
+      logo.style.left = `${m.x}px`;
+      logo.style.top = `${m.y}px`;
+      logo.style.width = `${m.breite}px`;
+      logo.style.height = `${m.hoehe}px`;
+      if (bild.parentNode !== logo) logo.replaceChildren(bild);
+      return bild;
+    };
+    // Aufklatschen: etwas größer und durchsichtig, dann deckend in voller Größe, hart wie eine gesetzte Fliese (ease-aufsetzen,
+    // ohne Nachfedern). Reduzierte Bewegung: Das Logo kam schon mit der Blende (lege), hier nichts. Ist das Bild noch nicht da
+    // (sehr langsame Verbindung), klatscht es auf, sobald es geladen ist, solange der Boden noch liegt.
+    const zeigeLogo = () => {
+      if (ruhig) return;
+      const bild = platziereLogo();
+      const klatsche = () => {
+        logoLauf.push(
+          bild.animate(
+            [
+              { opacity: 0, transform: `scale(${LOGO_GROESSE_START})`, easing: lies('--ease-aufsetzen') || 'ease-in' },
+              { opacity: 1, offset: 0.35 },
+              { opacity: 1, transform: 'none' },
+            ],
+            { duration: LOGO_AUFKLATSCHEN, fill: 'forwards' },
+          ),
+        );
+      };
+      if (bild.complete && bild.naturalWidth > 0) return klatsche();
+      const spaeter = () => {
+        if ((lage.zustand === 'bedeckt' || lage.zustand === 'warten') && logoLauf.length === 0) klatsche();
+      };
+      bild.addEventListener('load', spaeter, { once: true });
+    };
+    // Mindestzeit nach einem Klick: Aufklatschen plus Stehen, gezählt ab dem ersten Bild des Aufklatschens; dann meldet die Uhr
+    // „logo-gestanden“ (Zurück und Vor haben keinen Halt, Automat).
+    const halteLogo = () => {
+      const nummer = ++logoNummer;
+      const start = logoLauf[logoLauf.length - 1]?.ready ?? Promise.resolve();
+      void start
+        .catch(() => undefined)
+        .then(() => {
+          if (nummer !== logoNummer) return;
+          const gestanden = () => {
+            if (nummer === logoNummer) senden.current({ typ: 'logo-gestanden' });
+          };
+          uhren.push(window.setTimeout(gestanden, logoHalt(ruhig)));
+        });
+    };
+    // Beim Abnehmen geht das Logo mit den ersten Fliesen (Deckkraft am Behälter, das Aufklatschen am Bild läuft ungestört
+    // zu Ende); gleichmäßig, damit es sichtbar mit ihnen beginnt (ease-weg hielt es die ersten Bilder fast voll, Sichtprüfung
+    // der Videos); reduziert mit der Blende.
+    const nimmLogoAb = (): Animation =>
+      logo.animate([{ opacity: 1 }, { opacity: 0 }], {
+        duration: ruhig ? halbeBlende() : LOGO_WEG,
+        easing: 'linear',
+        fill: 'forwards',
+      });
+
     const lege = () => {
       beendeUebergang();
       gesamt = gesamtdauer(lage.richtung);
@@ -412,10 +508,13 @@ export default function Verlegen() {
       ohneStartbild();
       sperre(true);
       if (ruhig) {
+        // Reduzierte Bewegung: Überblendung über die Kalkfläche, das Logo blendet mit ihr ein (ohne Aufklatschen)
         laufend.push(blende.animate([{ opacity: 0 }, { opacity: 1 }], { duration: halbeBlende(), fill: 'forwards' }));
+        logoLauf.push(platziereLogo().animate([{ opacity: 0 }, { opacity: 1 }], { duration: halbeBlende(), fill: 'forwards' }));
         void warte(laufend).then(() => senden.current({ typ: 'gelegt' }));
         return;
       }
+      platziereLogo();
       belag = baueBelag(boden, belag);
       takte = stueckplan(belag.fliesen, belag.mass, belag.breite, gesamt, lage.richtung);
       // Jede Fliese schwebt etwas größer über ihrem Platz, ein kurzes Stück zur Startkante hin, mit Flugschatten auf den
@@ -447,6 +546,7 @@ export default function Verlegen() {
       ruhig = !bewegungErlaubt() || !Number.isFinite(gesamt);
       ohneStartbild();
       sperre(true);
+      platziereLogo().style.opacity = '1';
       if (ruhig) {
         blende.style.opacity = '1';
         return;
@@ -476,6 +576,7 @@ export default function Verlegen() {
         const von = Number(getComputedStyle(blende).opacity) || 1;
         beende(laufend);
         laufend.push(blende.animate([{ opacity: von }, { opacity: 0 }], { duration: halbeBlende(), fill: 'forwards' }));
+        logoLauf.push(nimmLogoAb());
         void warte(laufend).then(fertig);
         return;
       }
@@ -499,6 +600,8 @@ export default function Verlegen() {
           ),
         );
       });
+      // das Logo geht mit den ersten abgenommenen Fliesen (gleicher Start im selben Bild)
+      logoLauf.push(nimmLogoAb());
       beende(laufend);
       laufend.push(...neu);
       // Wartelinie erst aus, wenn das Abnehmen wirklich läuft (Start nach dem Rastern der neuen Seite, E-036)
@@ -534,6 +637,9 @@ export default function Verlegen() {
       verbergeLaser();
       if (belag) for (const el of belag.elemente) el.style.opacity = '0';
       blende.style.opacity = '0';
+      logoNummer++;
+      beende(logoLauf);
+      if (logoBild) logoBild.style.opacity = '';
       sperre(false);
       stelle('ruhe');
     };
@@ -570,6 +676,10 @@ export default function Verlegen() {
         case 'liege':
           liege();
           return starteWarten();
+        case 'zeige-logo':
+          return zeigeLogo();
+        case 'halte-logo':
+          return halteLogo();
         case 'navigiere':
           navigiere();
           return starteWarten();
@@ -758,6 +868,8 @@ export default function Verlegen() {
           verlauf(true);
           auftrag++;
           zurueckAusAufschub = true;
+          // Zurück und Vor ohne Mindestzeit des Logos; ein schon gemerktes „bereit“ gehörte zur alten Navigation
+          senden.current({ typ: 'neuer-auftrag' });
           if (gleich) bereitOhnePfadwechsel();
           return false;
         }
@@ -794,6 +906,7 @@ export default function Verlegen() {
     const vorab = () => {
       liesVorab();
       koernungAus = bereiteKoernung(schicht);
+      bereiteLogo();
     };
     const leerlauf = window.requestIdleCallback ? window.requestIdleCallback(vorab) : window.setTimeout(vorab, 1);
     const speichernVorVerlassen = () => merkeScroll(adresse());
@@ -843,6 +956,7 @@ export default function Verlegen() {
       <div ref={bodenRef} className="verlegen-boden" />
       <div ref={laserRef} className="verlegen-laser" />
       <div ref={blendeRef} className="verlegen-blende" />
+      <div ref={logoRef} className="verlegen-logo" />
     </div>
   );
 }

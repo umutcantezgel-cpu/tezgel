@@ -1,6 +1,7 @@
-// Seitenwechsel B-01 „Verlegen“ (KERN K-007, E-043): Fliesenraster und Zeitpläne, reine Logik ohne DOM.
-// Fliese 2:1 quer im Drittelverband (Halbverband als Alternative), Fuge 1 % der kurzen Seite, mindestens 2 px.
-// Etwa 3 Fliesen je Reihe bei 390 px, 8 bei 1440 px, höchstens 80 gleichzeitig.
+// Seitenwechsel B-01 „Verlegen“ (KERN K-007, E-043, Fassung v3 nach E-047): Fliesenraster, Zeitpläne und Logo auf der
+// Wand, reine Logik ohne DOM. Fliese 2:1 quer im Drittelverband (Halbverband als Alternative), Fuge 1 % der kurzen Seite,
+// mindestens 2 px. Große, ruhige Fliesen (Auftraggeber: „nicht so verpixelt“): sichtbar 3 je Reihe bei 390 px, 6 bis 7 bei
+// 1440 px, höchstens 80 gleichzeitig.
 
 export type Verband = 'drittel' | 'halb';
 /** vor: Verlegekante von rechts nach links (Klick) · zurueck: gespiegelt (Zurück und Vor im Browser). */
@@ -43,10 +44,16 @@ export const ANTEIL_ZURUECK = 0.7;
 export const FLUG_ANTEIL = 0.25;
 export const GROESSE_FLUG = 1.06;
 
-/** Fliesen je Reihe: 3 bei 390 px, 8 bei 1440 px, dazwischen linear, außerhalb begrenzt. */
+/** Fliesenlängen je Reihe (Breite durch Länge) bei 390 px und bei 1440 px (E-047: größere Fliesen, ruhigere Fugen). Im
+ *  Drittelverband ragen die Reihen über den Rand; sichtbar sind damit 3 Fliesen je Reihe bei 390 px und 6 bis 7 bei 1440 px
+ *  (vorher 3 bis 4 und 8 bis 9). */
+export const JE_REIHE_SCHMAL = 2.25;
+export const JE_REIHE_BREIT = 6;
+
+/** Fliesenlängen je Reihe: 2,25 bei 390 px, 6 bei 1440 px, dazwischen linear, außerhalb begrenzt (2 bis 6). */
 export function fliesenJeReihe(breite: number): number {
-  const n = 3 + ((breite - 390) * 5) / 1050;
-  return Math.min(8, Math.max(2.5, n));
+  const n = JE_REIHE_SCHMAL + ((breite - 390) * (JE_REIHE_BREIT - JE_REIHE_SCHMAL)) / 1050;
+  return Math.min(JE_REIHE_BREIT, Math.max(2, n));
 }
 
 /** Stufe des Versatzes einer Reihe: 0, 1, 2 im Drittelverband, 0, 1 im Halbverband (auch für Reihen über der ersten). */
@@ -153,15 +160,23 @@ export function ziehStrecke(mass: Mass, breite: number): number {
   return breite + mass.laenge;
 }
 
+/** Gesamtdauer eines Wechsels (Belegen plus Abnehmen; Warten und Logo-Halt kommen dazu): 2400 ms beim ersten Wechsel einer
+ *  Sitzung, 1800 ms ab dem zweiten (E-047, Auftraggeber: „die Animation muss nicht so schnell gehen“; vorher 1800/1400 ms).
+ *  Laufzeitquelle sind die Tokens --verlegen-gesamt und --verlegen-gesamt-folge (K-005); die Tests halten beide gleich. */
+export const GESAMT_ERSTER = 2400;
+export const GESAMT_FOLGE = 1800;
+
 /** Dauer eines Wechsels: erster einer Sitzung, folgende, Zurück und Vor mit 70 %. */
 export function wechselDauer(erster: number, folge: number, schonGewechselt: boolean, richtung: Richtung): number {
   const basis = schonGewechselt ? folge : erster;
   return richtung === 'zurueck' ? Math.round(basis * ANTEIL_ZURUECK) : basis;
 }
 
-// B-01 Fliese für Fliese (E-043, Auftraggeber) --------------------------------------------------------------------------
+// B-01 Fliese für Fliese (E-043, Auftraggeber; Fassung v3 nach E-047) ----------------------------------------------------
 // Seit E-043 legt B-01 die ganze Ansicht Fliese für Fliese und nimmt die Fliesen einzeln wieder ab (stueckplan). Der
 // zeitplan oben (Verlegen und reihenweises Weiterziehen, E-017) bleibt die Grundlage von Intro (B-02) und Startbild.
+// v3 (E-047): größere Fliesen, längere Dauer, jede Fliese beginnt allein im gleichen Takt (keine Welle), und sobald der
+// Boden liegt, klatscht das Logo auf die Wand (unten).
 
 /** Anteile der Gesamtdauer: Belegen die erste Hälfte, Abnehmen die zweite; das Warten auf die neue Seite kommt dazu. */
 export const STUECK_ANTEIL_LEGEN = 0.5;
@@ -198,42 +213,99 @@ export function stueckSpalten(fliesen: Fliese[], mass: Mass, breite: number, ric
   return abstand.map((a) => Math.floor(a - kleinster + 1e-6));
 }
 
-/** Kaskade in einer Spalte: Die Fliesen setzen von oben nach unten nacheinander auf, verteilt über diesen Anteil des Schlags. */
-export const KASKADE_ANTEIL = 0.5;
-/** Flugdauer je Fliese beim Legen in Schlägen: Eine Spalte ist gelandet, wenn die übernächste beginnt (tak, tak, tak). */
-export const FLUG_SCHLAEGE = 1;
+/** Kaskade in einer Spalte: Die Fliesen setzen von oben nach unten nacheinander auf, verteilt über den ganzen Schlag; die
+ *  erste Fliese der nächsten Spalte folgt im selben Abstand auf die letzte. So beginnt jede Fliese allein und alle im gleichen
+ *  Takt von der Startkante her (v3, E-047: „wirklich Stück für Stück“; vorher über den halben Schlag, die Spalte las sich als
+ *  Welle). */
+export const KASKADE_ANTEIL = 1;
+/** Flugdauer je Fliese beim Legen in Schlägen: Eine Fliese ist gelandet, wenn die nächste Spalte zur Hälfte begonnen hat; in
+ *  der Luft sind so höchstens etwa halb so viele Fliesen, wie eine Spalte hat (v3; vorher ein ganzer Schlag, bis zu 13). */
+export const FLUG_SCHLAEGE = 0.5;
 /** Dauer des Zurückweichens je Fliese beim Abnehmen in Schlägen. */
 export const WEICHEN_SCHLAEGE = 1.5;
 
 /**
- * Stückplan je Fliese für eine Gesamtdauer (E-043, Auftraggeber): Die ganze Ansicht wird Fliese für Fliese belegt, von der
- * Startkante her (vor: rechts, zurueck: links), Spalte für Spalte im gleichen Schlag; in jeder Spalte setzen die Fliesen
- * von oben nach unten nacheinander auf. Bei bis zu 80 Fliesen in der halben Gesamtdauer kann nicht jede Fliese einen
- * eigenen hörbaren Schlag haben (das wären 5 bis 10 ms je Fliese, eine Welle); so bekommt jede Spalte ihren Schlag und
- * jede Fliese ihr eigenes Aufsetzen. Liegt alles, wechselt darunter die Seite; dann werden die Fliesen in derselben
- * Reihenfolge einzeln abgenommen und weichen in den Hintergrund zurück. Später gelegte Fliesen liegen oben: Im Flug werfen
- * sie ihren Schatten auf die schon gelegten.
+ * Stückplan je Fliese für eine Gesamtdauer (E-043, Auftraggeber; v3 E-047): Die ganze Ansicht wird Fliese für Fliese belegt,
+ * von der Startkante her (vor: rechts, zurueck: links), Spalte für Spalte im gleichen Schlag; in jeder Spalte setzen die
+ * Fliesen von oben nach unten nacheinander auf, gleichmäßig über den ganzen Schlag verteilt, so dass zwischen zwei Fliesen
+ * immer derselbe Abstand liegt und keine zwei zugleich beginnen. Liegt alles, wechselt darunter die Seite (und das Logo
+ * klatscht auf die Wand); dann werden die Fliesen in derselben Reihenfolge einzeln abgenommen und weichen in den
+ * Hintergrund zurück. Später gelegte Fliesen liegen oben: Im Flug werfen sie ihren Schatten auf die schon gelegten.
  */
 export function stueckplan(fliesen: Fliese[], mass: Mass, breite: number, gesamt: number, richtung: Richtung): Stuecktakt[] {
   const legenPhase = gesamt * STUECK_ANTEIL_LEGEN;
   const abnehmenPhase = gesamt * STUECK_ANTEIL_ABNEHMEN;
   const spalten = stueckSpalten(fliesen, mass, breite, richtung);
-  const letzteSpalte = Math.max(0, ...spalten);
-  const letzteReihe = Math.max(1, ...fliesen.map((f) => f.reihe));
-  // Phase = letzte Spalte · Schlag + Kaskade + Flug der letzten Fliese, alles in Schlägen
-  const legenSchlag = legenPhase / (letzteSpalte + KASKADE_ANTEIL + FLUG_SCHLAEGE);
-  const abnehmenSchlag = abnehmenPhase / (letzteSpalte + KASKADE_ANTEIL + WEICHEN_SCHLAEGE);
-  const versatz = (i: number) => spalten[i] + (KASKADE_ANTEIL * fliesen[i].reihe) / letzteReihe;
-  const reihenfolge = fliesen.map((_, i) => i).sort((a, b) => versatz(a) - versatz(b) || a - b);
+  const reihen = Math.max(0, ...fliesen.map((f) => f.reihe)) + 1;
+  // Versatz in Schlägen: Spalte plus Platz in der Kaskade (Reihe r von R beginnt bei r/R des Schlags)
+  const versatz = fliesen.map((f, i) => spalten[i] + (KASKADE_ANTEIL * f.reihe) / reihen);
+  const letzter = Math.max(0, ...versatz);
+  // Phase = Versatz der letzten Fliese + ihr Flug (bzw. ihr Zurückweichen), alles in Schlägen
+  const legenSchlag = legenPhase / (letzter + FLUG_SCHLAEGE);
+  const abnehmenSchlag = abnehmenPhase / (letzter + WEICHEN_SCHLAEGE);
+  const reihenfolge = fliesen.map((_, i) => i).sort((a, b) => versatz[a] - versatz[b] || a - b);
   const ebene = new Array<number>(fliesen.length);
   reihenfolge.forEach((i, rang) => {
     ebene[i] = rang + 1;
   });
   return fliesen.map((_, i) => ({
-    legenBeginn: versatz(i) * legenSchlag,
+    legenBeginn: versatz[i] * legenSchlag,
     legenDauer: FLUG_SCHLAEGE * legenSchlag,
-    abnehmenBeginn: versatz(i) * abnehmenSchlag,
+    abnehmenBeginn: versatz[i] * abnehmenSchlag,
     abnehmenDauer: WEICHEN_SCHLAEGE * abnehmenSchlag,
     ebene: ebene[i],
   }));
+}
+
+// Logo auf der Wand (v3, E-047; Auftraggeber: „Fliesenleger Tezgel mit dem Logo auf die Wand geklatscht“) ---------------
+// Sobald der Boden liegt, klatscht mittig das Logo der Firma auf die Wand, dieselbe Datei wie im Kopf (Form, Farbe und
+// Proportion unverändert, G8; nur skaliert). Die Farbe des Seitenwechsels kommt allein aus dem Logo, die Fliesen bleiben
+// neutral. Beim Abnehmen geht es mit den ersten Fliesen.
+
+/** Aufklatschen: etwas größer und durchsichtig, nach 220 ms deckend in voller Größe auf der Wand (ease-aufsetzen, ohne
+ *  Nachfedern; nur transform und opacity). */
+export const LOGO_GROESSE_START = 1.15;
+export const LOGO_AUFKLATSCHEN = 220;
+/** Danach steht das Logo mindestens so lange, auch wenn die neue Seite früher bereit ist (nur nach einem Klick; Zurück und
+ *  Vor ohne Mindestzeit). */
+export const LOGO_STEHEN = 450;
+/** Beim Abnehmen blendet das Logo mit den ersten Fliesen aus. */
+export const LOGO_WEG = 200;
+/** Seitenverhältnis der Logo-Datei (640 × 200 px). */
+export const LOGO_SEITENVERHAELTNIS = 3.2;
+/** Logobreite: 76 % der Ansicht (mobil), auf breiten Ansichten ein Drittel, mindestens 480 px; höchstens die Dateibreite
+ *  (640 px, nie hochgerechnet bei einfacher Pixeldichte) und so, dass es höchstens 30 % der Höhe einnimmt (Telefon quer). */
+export const LOGO_ANTEIL_BREITE = 0.76;
+export const LOGO_BREITE_GROSS = 480;
+export const LOGO_BREITE_HOECHSTENS = 640;
+export const LOGO_ANTEIL_HOEHE = 0.3;
+/** Raster der Logogröße: je 32 px Breite 10 px Höhe (3,2 : 1), so sind Breite und Höhe ganze Pixel (scharf, unverzerrt). */
+const LOGO_SCHRITT_BREITE = 32;
+const LOGO_SCHRITT_HOEHE = 10;
+
+export interface Logomass {
+  x: number;
+  y: number;
+  breite: number;
+  hoehe: number;
+}
+
+/** Lage und Größe des Logos in einer Ansicht: mittig, ganze Pixel, Seitenverhältnis genau 3,2. */
+export function logoMass(breite: number, hoehe: number): Logomass {
+  const ziel = Math.min(
+    breite * LOGO_ANTEIL_BREITE,
+    Math.max(breite / 3, LOGO_BREITE_GROSS),
+    LOGO_BREITE_HOECHSTENS,
+    hoehe * LOGO_ANTEIL_HOEHE * LOGO_SEITENVERHAELTNIS,
+  );
+  const schritte = Math.max(1, Math.floor(ziel / LOGO_SCHRITT_BREITE));
+  const b = schritte * LOGO_SCHRITT_BREITE;
+  const h = schritte * LOGO_SCHRITT_HOEHE;
+  return { x: Math.round((breite - b) / 2), y: Math.round((hoehe - h) / 2), breite: b, hoehe: h };
+}
+
+/** Mindestzeit vom Liegen des Bodens bis zum Abnehmen nach einem Klick (ms): Aufklatschen plus Stehen. Bei reduzierter
+ *  Bewegung ist das Logo schon mit der Blende eingeblendet und steht nur. */
+export function logoHalt(ruhig: boolean): number {
+  return (ruhig ? 0 : LOGO_AUFKLATSCHEN) + LOGO_STEHEN;
 }

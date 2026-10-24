@@ -1,13 +1,31 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { verlegeRaster, fliesenmass, zeitplan, ziehStrecke, stueckplan, wechselDauer } from '../src/lib/verlegen/raster.ts';
+import {
+  verlegeRaster,
+  fliesenmass,
+  zeitplan,
+  ziehStrecke,
+  stueckplan,
+  wechselDauer,
+  GESAMT_ERSTER,
+  GESAMT_FOLGE,
+  logoMass,
+  logoHalt,
+  LOGO_GROESSE_START,
+  LOGO_AUFKLATSCHEN,
+  LOGO_STEHEN,
+  LOGO_WEG,
+} from '../src/lib/verlegen/raster.ts';
 import { pruefeKlick } from '../src/lib/verlegen/linkfilter.ts';
 import { schritt, RUHE, LASER_NACH, WARTEN_HOECHSTENS } from '../src/lib/verlegen/automat.ts';
 
-// Logik des Seitenwechsels B-01 „Verlegen“ gegen die Spezifikation (KERN K-007, Abschnitt B-01; E-017, E-043;
+// Logik des Seitenwechsels B-01 „Verlegen“ gegen die Spezifikation (KERN K-007, Abschnitt B-01; E-017, E-043, E-047;
 // Auftrag Abschnitt 9; Ablauf nach Wunsch des Auftraggebers: die ganze Seite Fliese für Fliese von rechts nach links
-// belegen, dann die Fliesen in derselben Richtung einzeln wieder abnehmen). Die Erwartungen stammen aus dem Wortlaut der Spezifikation, nicht aus der Umsetzung.
+// belegen, dann die Fliesen in derselben Richtung einzeln wieder abnehmen). Fassung v3 (E-047, Auftraggeber: „nicht so
+// verpixelt“, Logo auf die Wand geklatscht, „wirklich Stück für Stück“, „muss nicht so schnell gehen“): größere Fliesen,
+// 2,4 s und 1,8 s, jede Fliese beginnt allein, Logo-Phase mit Mindestzeit. Die Erwartungen stammen aus dem Wortlaut der
+// Spezifikation, nicht aus der Umsetzung.
 
 // Gerätegrößen [Breite, Höhe] aus _werkstatt/HAUPTANSICHTEN.json (Abschnitt „geraete“), hier fest eingetragen.
 const GERAETE = {
@@ -98,13 +116,38 @@ test('Raster 6: Drittelverband: Reihen r, r+1, r+2 versetzt um 0, ⅓, ⅔ der L
   }
 });
 
-test('Raster 7: etwa 3 Fliesen je Reihe bei 390 px, etwa 8 bei 1440 px (Breite durch Fliesenlänge)', () => {
-  const schmal = verlegeRaster(390, 844).mass;
-  const breit = verlegeRaster(1440, 900).mass;
-  const jeReiheSchmal = 390 / schmal.laenge;
-  const jeReiheBreit = 1440 / breit.laenge;
-  assert.ok(jeReiheSchmal >= 2.5 && jeReiheSchmal <= 3.5, `390 px: ${jeReiheSchmal.toFixed(2)} Fliesen je Reihe`);
-  assert.ok(jeReiheBreit >= 6.5 && jeReiheBreit <= 8.5, `1440 px: ${jeReiheBreit.toFixed(2)} Fliesen je Reihe`);
+/** Fliesen, die in einer Reihe der Ansicht zu sehen sind (ganz oder angeschnitten), je Reihe. */
+function sichtbarJeReihe(breite, hoehe) {
+  const { mass, fliesen } = verlegeRaster(breite, hoehe);
+  const reihen = new Map();
+  for (const f of fliesen) {
+    if (f.x < breite && f.x + mass.laenge > 0 && f.y < hoehe) reihen.set(f.reihe, (reihen.get(f.reihe) ?? 0) + 1);
+  }
+  return [...reihen.values()];
+}
+const mittel = (a) => a.reduce((s, x) => s + x, 0) / a.length;
+
+test('Raster 7: große Fliesen (E-047): sichtbar etwa 3 je Reihe bei 390 px und 6 bis 7 bei 1440 px', () => {
+  const schmal = sichtbarJeReihe(390, 844);
+  const breit = sichtbarJeReihe(1440, 900);
+  assert.ok(mittel(schmal) >= 2.5 && mittel(schmal) <= 3.5 && Math.max(...schmal) <= 4, `390 px: ${schmal.join(', ')} je Reihe`);
+  assert.ok(mittel(breit) >= 6 && mittel(breit) <= 7 && Math.min(...breit) >= 6 && Math.max(...breit) <= 7, `1440 px: ${breit.join(', ')} je Reihe`);
+});
+
+test('Raster 8: deutlich weniger Fliesen als in E-043 (3 Fliesenlängen je Reihe bei 390 px, 8 bei 1440 px; 48 und 72 Fliesen)', () => {
+  const schmal = verlegeRaster(390, 844);
+  const breit = verlegeRaster(1440, 900);
+  assert.ok(390 / schmal.mass.laenge <= 2.5, `390 px: ${(390 / schmal.mass.laenge).toFixed(2)} Fliesenlängen je Reihe`);
+  assert.ok(1440 / breit.mass.laenge <= 6.5, `1440 px: ${(1440 / breit.mass.laenge).toFixed(2)} Fliesenlängen je Reihe`);
+  assert.ok(schmal.fliesen.length <= 0.75 * 48, `390 px: ${schmal.fliesen.length} Fliesen`);
+  assert.ok(breit.fliesen.length <= 0.8 * 72, `1440 px: ${breit.fliesen.length} Fliesen`);
+});
+
+test('Raster 9: Fuge schmal: auf allen Geräten höchstens 2,5 px (bei großen Fliesen bleibt sie fein)', () => {
+  for (const [name, [breite, hoehe]] of Object.entries(GERAETE)) {
+    const { mass } = verlegeRaster(breite, hoehe);
+    assert.ok(mass.fuge <= 2.5, `${name}: Fuge ${mass.fuge} px`);
+  }
 });
 
 // Zeitplan -------------------------------------------------------------------
@@ -225,13 +268,14 @@ test('Zeitplan 7 (Intro, Startbild): Reihen setzen nach ihrer Versatzstufe ein, 
 // Stückplan (B-01, E-043) ------------------------------------------------------------------------------------------------
 // Wunsch des Auftraggebers: Die ganze Seite wird Stück für Stück gefliest, von rechts nach links, jede Fliese einzeln
 // animiert (tak, tak, tak); am Ende werden die Fliesen von rechts nach links Stück für Stück wieder abgenommen und
-// verschwinden im Hintergrund; komplett neutral. Gewählte Dauer: 1,8 s, danach 1,4 s (Belegen plus Abnehmen).
+// verschwinden im Hintergrund; komplett neutral. Gewählte Dauer seit E-047: 2,4 s, danach 1,8 s (Belegen plus Abnehmen;
+// vorher 1,8 s und 1,4 s), Zurück und Vor 70 %.
 
 /** Alle Kombinationen aus Gerät, Gesamtdauer (ms) und Richtung: vor (Klick) und zurueck (Zurück und Vor). */
 function alleFaelle(fn) {
   for (const [name, [breite, hoehe]] of Object.entries(GERAETE)) {
     const { mass, fliesen } = verlegeRaster(breite, hoehe);
-    for (const gesamt of [1800, 1400, 1260, 980]) {
+    for (const gesamt of [2400, 1800, 1680, 1260]) {
       for (const richtung of ['vor', 'zurueck']) {
         const takte = stueckplan(fliesen, mass, breite, gesamt, richtung);
         fn({ name, breite, mass, fliesen, takte, gesamt, richtung, spalten: spaltenVon(fliesen, mass, breite, richtung), fall: `${name}, ${richtung}, ${gesamt} ms` });
@@ -346,14 +390,16 @@ test('Stückplan 7: später gelegte Fliesen liegen höher (Flugschatten auf den 
   });
 });
 
-test('Stückplan 8: Dauer des Wechsels (Belegen plus Abnehmen, E-043): 1800 ms beim ersten, 1400 ms ab dem zweiten, Zurück 70 % davon, so auch in den Tokens', () => {
-  assert.equal(wechselDauer(1800, 1400, false, 'vor'), 1800);
-  assert.equal(wechselDauer(1800, 1400, true, 'vor'), 1400);
-  assert.equal(wechselDauer(1800, 1400, false, 'zurueck'), 1260);
-  assert.equal(wechselDauer(1800, 1400, true, 'zurueck'), 980);
+test('Stückplan 8: Dauer des Wechsels (Belegen plus Abnehmen, E-047): 2400 ms beim ersten, 1800 ms ab dem zweiten, Zurück 70 % davon, so auch in Konstanten und Tokens', () => {
+  assert.equal(GESAMT_ERSTER, 2400);
+  assert.equal(GESAMT_FOLGE, 1800);
+  assert.equal(wechselDauer(GESAMT_ERSTER, GESAMT_FOLGE, false, 'vor'), 2400);
+  assert.equal(wechselDauer(GESAMT_ERSTER, GESAMT_FOLGE, true, 'vor'), 1800);
+  assert.equal(wechselDauer(GESAMT_ERSTER, GESAMT_FOLGE, false, 'zurueck'), 1680);
+  assert.equal(wechselDauer(GESAMT_ERSTER, GESAMT_FOLGE, true, 'zurueck'), 1260);
   const css = readFileSync(new URL('../src/app/globals.css', import.meta.url), 'utf8');
-  assert.match(css, /--verlegen-gesamt:\s*1800ms;/);
-  assert.match(css, /--verlegen-gesamt-folge:\s*1400ms;/);
+  assert.match(css, new RegExp(`--verlegen-gesamt:\\s*${GESAMT_ERSTER}ms;`));
+  assert.match(css, new RegExp(`--verlegen-gesamt-folge:\\s*${GESAMT_FOLGE}ms;`));
 });
 
 /** Buntheit (OKLCH-Chroma) einer Hex-Farbe. */
@@ -380,6 +426,26 @@ test('Stückplan 9: neutral: Kalk unbunt (Buntheit unter 0,003), Fliese und Fuge
   const bewegung = readFileSync(new URL('../src/app/bewegung.css', import.meta.url), 'utf8');
   const linie = bewegung.match(/\.verlegen-laser\s*\{[^}]*\}/)?.[0] ?? '';
   assert.match(linie, /background-color:\s*var\(--color-strich\)/);
+});
+
+test('Stückplan 10: wirklich Stück für Stück (E-047): jede Fliese beginnt allein, mindestens 10 ms nach der vorigen, in gleichem Takt; höchstens 6 Fliesen zugleich in der Luft (keine Welle)', () => {
+  alleFaelle(({ fall, takte, spalten }) => {
+    const anfaenge = takte.map((t) => t.legenBeginn).sort((a, b) => a - b);
+    const abstaende = anfaenge.slice(1).map((a, i) => a - anfaenge[i]);
+    const kleinster = Math.min(...abstaende);
+    assert.ok(kleinster >= 10, `${fall}: zwei Fliesen beginnen ${kleinster.toFixed(1)} ms nacheinander`);
+    // gleicher Takt: jeder Abstand ist ein ganzes Vielfaches des kleinsten (Lücken nur, wo am Rand einer Spalte Reihen fehlen)
+    for (const a of abstaende) {
+      const vielfaches = a / kleinster;
+      assert.ok(Math.abs(vielfaches - Math.round(vielfaches)) < 1e-6, `${fall}: Abstand ${a.toFixed(2)} ms ist kein Vielfaches von ${kleinster.toFixed(2)} ms`);
+    }
+    // in einer vollen Spalte (eine Fliese je Reihe) liegen die Fliesen im kleinsten Abstand, auch von Spalte zu Spalte
+    assert.ok(abstaende.filter((a) => Math.abs(a - kleinster) < 1e-6).length >= 0.6 * abstaende.length, `${fall}: Takt ungleichmäßig`);
+    let luft = 0;
+    for (const s of anfaenge) luft = Math.max(luft, takte.filter((t) => t.legenBeginn <= s && t.legenBeginn + t.legenDauer > s).length);
+    assert.ok(luft <= 6, `${fall}: ${luft} Fliesen zugleich in der Luft`);
+    assert.ok(new Set(spalten).size >= 3, `${fall}: weniger als drei Spalten`);
+  });
 });
 
 // Linkfilter -----------------------------------------------------------------
@@ -492,12 +558,17 @@ function laufe(ereignisse, lage = RUHE) {
 
 const START = { typ: 'start', ziel: '/bad', richtung: 'vor' };
 
-test('Automat 1: normaler Ablauf: legen, navigieren unter der Fläche, abnehmen, freigeben', () => {
-  const { lage, aktionen, zustaende } = laufe([START, { typ: 'gelegt' }, { typ: 'bereit' }, { typ: 'abgenommen' }]);
-  assert.deepEqual(zustaende, ['ruhe', 'legen', 'bedeckt', 'abnehmen', 'ruhe']);
-  assert.deepEqual(aktionen, ['lege', 'navigiere', 'nimm-ab', 'freigeben']);
+const GELEGT = { typ: 'gelegt' };
+const BEREIT = { typ: 'bereit' };
+const GESTANDEN = { typ: 'logo-gestanden' };
+
+test('Automat 1: normaler Ablauf: legen, Logo klatscht auf, navigieren unter der Fläche, Logo steht, abnehmen, freigeben', () => {
+  const { lage, aktionen, zustaende } = laufe([START, GELEGT, BEREIT, GESTANDEN, { typ: 'abgenommen' }]);
+  assert.deepEqual(zustaende, ['ruhe', 'legen', 'bedeckt', 'bedeckt', 'abnehmen', 'ruhe']);
+  assert.deepEqual(aktionen, ['lege', 'zeige-logo', 'navigiere', 'halte-logo', 'nimm-ab', 'freigeben']);
   assert.equal(lage.zustand, 'ruhe');
   assert.equal(lage.ziel, null);
+  assert.equal(lage.halt, 'aus');
 });
 
 test('Automat 2: Doppelklick (zweites start in legen) wird ohne Aktion verworfen und behält das erste Ziel', () => {
@@ -510,10 +581,10 @@ test('Automat 2: Doppelklick (zweites start in legen) wird ohne Aktion verworfen
 
 test('Automat 3: ein zweiter Start wird in jedem Zustand eines laufenden Wechsels verworfen', () => {
   const wege = {
-    bedeckt: [START, { typ: 'gelegt' }],
-    warten: [START, { typ: 'gelegt' }, { typ: 'zeit-laser' }],
-    abnehmen: [START, { typ: 'gelegt' }, { typ: 'bereit' }],
-    abbruch: [START, { typ: 'gelegt' }, { typ: 'zeit-laser' }, { typ: 'zeit-ende' }],
+    bedeckt: [START, GELEGT],
+    warten: [START, GELEGT, GESTANDEN],
+    abnehmen: [START, GELEGT, BEREIT, GESTANDEN],
+    abbruch: [START, GELEGT, GESTANDEN, { typ: 'zeit-ende' }],
   };
   for (const [zustand, ereignisse] of Object.entries(wege)) {
     const { lage } = laufe(ereignisse);
@@ -526,19 +597,19 @@ test('Automat 3: ein zweiter Start wird in jedem Zustand eines laufenden Wechsel
 });
 
 test('Automat 4: ein bereit während legen stammt von einem früheren Wechsel und wird verworfen; navigiert wird erst, wenn der Boden liegt (Prüfung E-043)', () => {
-  const { aktionen, zustaende } = laufe([START, { typ: 'bereit' }, { typ: 'gelegt' }, { typ: 'bereit' }, { typ: 'abgenommen' }]);
-  assert.deepEqual(zustaende, ['ruhe', 'legen', 'legen', 'bedeckt', 'abnehmen', 'ruhe']);
-  assert.deepEqual(aktionen, ['lege', 'navigiere', 'nimm-ab', 'freigeben']);
+  const { aktionen, zustaende } = laufe([START, BEREIT, GELEGT, BEREIT, GESTANDEN, { typ: 'abgenommen' }]);
+  assert.deepEqual(zustaende, ['ruhe', 'legen', 'legen', 'bedeckt', 'bedeckt', 'abnehmen', 'ruhe']);
+  assert.deepEqual(aktionen, ['lege', 'zeige-logo', 'navigiere', 'halte-logo', 'nimm-ab', 'freigeben']);
 });
 
-test('Automat 5: Wartephase: Laserlinie erscheint, verschwindet vor dem Abnehmen, danach abnehmen', () => {
-  const { aktionen, zustaende } = laufe([START, { typ: 'gelegt' }, { typ: 'zeit-laser' }, { typ: 'bereit' }, { typ: 'abgenommen' }]);
-  assert.deepEqual(zustaende, ['ruhe', 'legen', 'bedeckt', 'warten', 'abnehmen', 'ruhe']);
-  assert.deepEqual(aktionen, ['lege', 'navigiere', 'zeige-laser', 'verberge-laser', 'nimm-ab', 'freigeben']);
+test('Automat 5: Wartephase: fehlt die Seite noch, wenn das Logo gestanden hat, erscheint die Laserlinie, verschwindet vor dem Abnehmen, danach abnehmen', () => {
+  const { aktionen, zustaende } = laufe([START, GELEGT, { typ: 'zeit-laser' }, GESTANDEN, BEREIT, { typ: 'abgenommen' }]);
+  assert.deepEqual(zustaende, ['ruhe', 'legen', 'bedeckt', 'bedeckt', 'warten', 'abnehmen', 'ruhe']);
+  assert.deepEqual(aktionen, ['lege', 'zeige-logo', 'navigiere', 'halte-logo', 'zeige-laser', 'verberge-laser', 'nimm-ab', 'freigeben']);
 });
 
 test('Automat 6: Abbruch nach zeit-ende nimmt keine Fliesen ab und kehrt nach ausgeblendet in ruhe zurück', () => {
-  const { lage, aktionen, zustaende } = laufe([START, { typ: 'gelegt' }, { typ: 'zeit-laser' }, { typ: 'zeit-ende' }, { typ: 'ausgeblendet' }]);
+  const { lage, aktionen, zustaende } = laufe([START, GELEGT, GESTANDEN, { typ: 'zeit-ende' }, { typ: 'ausgeblendet' }]);
   assert.deepEqual(zustaende, ['ruhe', 'legen', 'bedeckt', 'warten', 'abbruch', 'ruhe']);
   assert.ok(!aktionen.includes('nimm-ab'), 'Abbruch darf keine Fliesen abnehmen');
   assert.ok(aktionen.includes('blende-aus'));
@@ -554,15 +625,15 @@ test('Automat 7: Zurück und Vor beginnen liegend aus ruhe mit start-liegend', (
   assert.deepEqual(aktionen, ['liege', 'nimm-ab', 'freigeben']);
 });
 
-test('Automat 8: Laserlinie, sobald der Boden liegt (E-036), Wartezeit höchstens 3000 ms', () => {
+test('Automat 8: Laserlinie, sobald der Boden liegt und kein Logo-Halt läuft (E-036), Wartezeit höchstens 3000 ms', () => {
   assert.equal(LASER_NACH, 0);
   assert.equal(WARTEN_HOECHSTENS, 3000);
 });
 
 test('Automat 9: Zurück aus ruhe (Ziel leer): nach dem Legen wird das angehaltene popstate nachgereicht, nicht navigiert', () => {
-  const { aktionen, zustaende } = laufe([{ typ: 'start', ziel: '', richtung: 'zurueck' }, { typ: 'gelegt' }, { typ: 'bereit' }, { typ: 'abgenommen' }]);
+  const { aktionen, zustaende } = laufe([{ typ: 'start', ziel: '', richtung: 'zurueck' }, GELEGT, BEREIT, { typ: 'abgenommen' }]);
   assert.deepEqual(zustaende, ['ruhe', 'legen', 'bedeckt', 'abnehmen', 'ruhe']);
-  assert.deepEqual(aktionen, ['lege', 'reiche-nach', 'nimm-ab', 'freigeben']);
+  assert.deepEqual(aktionen, ['lege', 'zeige-logo', 'reiche-nach', 'nimm-ab', 'freigeben']);
 });
 
 test('Automat 10: Zurück im Browser während des Legens eines Klicks (umkehr): statt router.push wird das popstate nachgereicht, der Verlauf bleibt ganz (Prüfung E-043)', () => {
@@ -570,16 +641,16 @@ test('Automat 10: Zurück im Browser während des Legens eines Klicks (umkehr): 
   assert.equal(lage.zustand, 'legen');
   assert.equal(lage.ziel, '');
   assert.deepEqual(aktionen, ['lege']);
-  const weiter = schritt(lage, { typ: 'gelegt' });
-  assert.deepEqual(weiter.aktionen, ['reiche-nach']);
+  const weiter = schritt(lage, GELEGT);
+  assert.deepEqual(weiter.aktionen, ['zeige-logo', 'reiche-nach']);
   assert.ok(!weiter.aktionen.includes('navigiere'), 'kein router.push zum alten Ziel');
 });
 
 test('Automat 11: umkehr wirkt nur beim Legen; in bedeckt, warten und abnehmen ändert es nichts (dort übernimmt Next das Ereignis)', () => {
   const wege = {
-    bedeckt: [START, { typ: 'gelegt' }],
-    warten: [START, { typ: 'gelegt' }, { typ: 'zeit-laser' }],
-    abnehmen: [START, { typ: 'gelegt' }, { typ: 'bereit' }],
+    bedeckt: [START, GELEGT],
+    warten: [START, GELEGT, GESTANDEN],
+    abnehmen: [START, GELEGT, BEREIT, GESTANDEN],
   };
   for (const [zustand, ereignisse] of Object.entries(wege)) {
     const { lage } = laufe(ereignisse);
@@ -587,4 +658,128 @@ test('Automat 11: umkehr wirkt nur beim Legen; in bedeckt, warten und abnehmen �
     assert.deepEqual(r.aktionen, [], zustand);
     assert.deepEqual(r.lage, lage, zustand);
   }
+});
+
+// Logo auf der Wand (E-047) ------------------------------------------------------------------------------------------
+// Wunsch des Auftraggebers: „Beim Übergang soll Fliesenleger Tezgel mit dem Logo (dem Maskottchen) auf die Wand geklatscht
+// werden.“ Auftrag: sobald der Boden liegt, mittig, Form, Farbe und Proportion unverändert (nur skaliert); aufklatschen von
+// etwa 1,15 und durchsichtig auf 1 und deckend in etwa 220 ms, ohne Nachfedern; steht mindestens 450 ms, auch wenn die neue
+// Seite früher bereit ist; Zurück und Vor ohne Mindestzeit; geht mit den ersten abgenommenen Fliesen (200 ms).
+
+test('Logo 1: mittig in jeder Ansicht, ganze Pixel, Seitenverhältnis genau wie die Datei (640 × 200), nie über Dateibreite, ganz im Bild', () => {
+  for (const [name, [breite, hoehe]] of Object.entries(GERAETE)) {
+    const m = logoMass(breite, hoehe);
+    for (const k of ['x', 'y', 'breite', 'hoehe']) assert.ok(Number.isInteger(m[k]), `${name}: ${k} = ${m[k]} nicht ganzzahlig`);
+    assert.equal(m.breite * 200, m.hoehe * 640, `${name}: ${m.breite} × ${m.hoehe} verzerrt`);
+    assert.ok(Math.abs(m.x + m.breite / 2 - breite / 2) <= 0.5, `${name}: waagrecht nicht mittig`);
+    assert.ok(Math.abs(m.y + m.hoehe / 2 - hoehe / 2) <= 0.5, `${name}: senkrecht nicht mittig`);
+    assert.ok(m.x >= 0 && m.y >= 0 && m.breite <= 640, `${name}: ragt aus dem Bild oder über die Dateibreite`);
+    assert.ok(m.hoehe <= 0.3 * hoehe + 1e-9, `${name}: höher als 30 % der Ansicht`);
+  }
+});
+
+test('Logo 2: groß genug zum Lesen: mobil mindestens 60 % der Breite, sonst mindestens 352 px breit', () => {
+  for (const [name, [breite, hoehe]] of Object.entries(GERAETE)) {
+    const m = logoMass(breite, hoehe);
+    if (breite < 600) assert.ok(m.breite >= 0.6 * breite, `${name}: ${m.breite} px bei ${breite} px Breite`);
+    else assert.ok(m.breite >= 352, `${name}: ${m.breite} px`);
+  }
+});
+
+test('Logo 3: Bewegung und Zeiten: von 1,15 auf 1 in rund 220 ms, Mindestzeit 450 ms danach, weg in 200 ms; reduziert nur stehen', () => {
+  assert.ok(LOGO_GROESSE_START >= 1.1 && LOGO_GROESSE_START <= 1.2, `Startgröße ${LOGO_GROESSE_START}`);
+  assert.ok(LOGO_AUFKLATSCHEN >= 180 && LOGO_AUFKLATSCHEN <= 260, `Aufklatschen ${LOGO_AUFKLATSCHEN} ms`);
+  assert.ok(LOGO_STEHEN >= 450, `Stehen ${LOGO_STEHEN} ms`);
+  assert.equal(LOGO_WEG, 200);
+  assert.equal(logoHalt(false), LOGO_AUFKLATSCHEN + LOGO_STEHEN);
+  assert.equal(logoHalt(true), LOGO_STEHEN);
+});
+
+test('Logo 4: sobald der Boden nach einem Klick liegt, klatscht das Logo auf und der Halt beginnt; ein frühes bereit wird gemerkt und erst nach dem Stehen eingelöst', () => {
+  const nachGelegt = laufe([START, GELEGT]);
+  assert.equal(nachGelegt.lage.zustand, 'bedeckt');
+  assert.equal(nachGelegt.lage.halt, 'steht');
+  assert.deepEqual(nachGelegt.aktionen, ['lege', 'zeige-logo', 'navigiere', 'halte-logo']);
+  const frueh = schritt(nachGelegt.lage, BEREIT);
+  assert.deepEqual(frueh.aktionen, [], 'kein Abnehmen, solange das Logo stehen muss');
+  assert.equal(frueh.lage.zustand, 'bedeckt');
+  assert.equal(frueh.lage.halt, 'bereit');
+  const danach = schritt(frueh.lage, GESTANDEN);
+  assert.equal(danach.lage.zustand, 'abnehmen');
+  assert.deepEqual(danach.aktionen, ['nimm-ab']);
+  assert.equal(danach.lage.halt, 'aus');
+});
+
+test('Logo 5: während das Logo steht, keine Wartelinie (das Stehen ist kein Warten); fehlt danach die Seite, kommt sie', () => {
+  const { lage } = laufe([START, GELEGT]);
+  const laser = schritt(lage, { typ: 'zeit-laser' });
+  assert.deepEqual(laser.aktionen, []);
+  assert.equal(laser.lage.zustand, 'bedeckt');
+  const gestanden = schritt(laser.lage, GESTANDEN);
+  assert.equal(gestanden.lage.zustand, 'warten');
+  assert.deepEqual(gestanden.aktionen, ['zeige-laser']);
+});
+
+test('Logo 6: Zurück und Vor ohne Mindestzeit: aus dem Verlauf (Ziel leer) und nach umkehr klatscht das Logo auf, abgenommen wird beim ersten bereit', () => {
+  const verlauf = laufe([{ typ: 'start', ziel: '', richtung: 'zurueck' }, GELEGT]);
+  assert.equal(verlauf.lage.halt, 'aus');
+  assert.ok(verlauf.aktionen.includes('zeige-logo') && !verlauf.aktionen.includes('halte-logo'));
+  assert.deepEqual(schritt(verlauf.lage, BEREIT).aktionen, ['nimm-ab']);
+  const umkehr = laufe([START, { typ: 'umkehr' }, GELEGT]);
+  assert.equal(umkehr.lage.halt, 'aus');
+  assert.ok(!umkehr.aktionen.includes('halte-logo'));
+  assert.deepEqual(schritt(umkehr.lage, BEREIT).aktionen, ['nimm-ab']);
+});
+
+test('Logo 7: Zurück oder Vor, während das Logo steht (neuer-auftrag): der Halt endet, ein gemerktes bereit verfällt, abgenommen wird erst beim bereit der neuen Navigation', () => {
+  const { lage } = laufe([START, GELEGT, BEREIT]);
+  assert.equal(lage.halt, 'bereit');
+  const neu = schritt(lage, { typ: 'neuer-auftrag' });
+  assert.equal(neu.lage.zustand, 'warten');
+  assert.equal(neu.lage.halt, 'aus');
+  assert.deepEqual(neu.aktionen, ['zeige-laser']);
+  const spaet = schritt(neu.lage, GESTANDEN);
+  assert.deepEqual(spaet.aktionen, [], 'die Uhr des alten Halts nimmt nichts ab');
+  assert.equal(spaet.lage.zustand, 'warten');
+  const bereit = schritt(spaet.lage, BEREIT);
+  assert.equal(bereit.lage.zustand, 'abnehmen');
+  assert.deepEqual(bereit.aktionen, ['verberge-laser', 'nimm-ab']);
+});
+
+test('Logo 8: logo-gestanden und neuer-auftrag ändern außerhalb des Halts nichts (ruhe, legen, warten, abnehmen, abbruch, bedeckt aus dem Verlauf)', () => {
+  const wege = {
+    ruhe: [],
+    legen: [START],
+    warten: [START, GELEGT, GESTANDEN],
+    abnehmen: [START, GELEGT, BEREIT, GESTANDEN],
+    abbruch: [START, GELEGT, GESTANDEN, { typ: 'zeit-ende' }],
+    'bedeckt aus dem Verlauf': [{ typ: 'start', ziel: '', richtung: 'zurueck' }, GELEGT],
+  };
+  for (const [name, ereignisse] of Object.entries(wege)) {
+    const { lage } = laufe(ereignisse);
+    for (const e of [GESTANDEN, { typ: 'neuer-auftrag' }]) {
+      const r = schritt(lage, e);
+      assert.deepEqual(r.aktionen, [], `${name}: ${e.typ} löst eine Aktion aus`);
+      assert.deepEqual(r.lage, lage, `${name}: ${e.typ} ändert die Lage`);
+    }
+  }
+});
+
+test('Logo 9: Abbruch nach 3 s auch während des Halts (die Schicht blendet mit dem Logo aus)', () => {
+  const { lage, aktionen, zustaende } = laufe([START, GELEGT, { typ: 'zeit-ende' }, { typ: 'ausgeblendet' }]);
+  assert.deepEqual(zustaende, ['ruhe', 'legen', 'bedeckt', 'abbruch', 'ruhe']);
+  assert.ok(aktionen.includes('blende-aus') && !aktionen.includes('nimm-ab'));
+  assert.equal(lage.halt, 'aus');
+});
+
+test('Logo 10: die Farbe kommt allein aus dem Logo: der B-01-Block in bewegung.css nutzt nur die neutralen Farben (kalk, fliese, fliese-glanz, fuge, strich, Schatten in tinte), keine festen Farbwerte', () => {
+  const css = readFileSync(new URL('../src/app/bewegung.css', import.meta.url), 'utf8');
+  const anfang = css.indexOf('/* verlegen (B-01');
+  const ende = css.indexOf('/* seitenwechsel', anfang);
+  assert.ok(anfang >= 0 && ende > anfang, 'B-01-Block in bewegung.css');
+  const block = css.slice(anfang, ende).replace(/\/\*[\s\S]*?\*\//g, '');
+  const farben = new Set([...block.matchAll(/--color-([a-z0-9-]+)/g)].map((m) => m[1]));
+  for (const f of farben) assert.ok(['kalk', 'fliese', 'fliese-glanz', 'fuge', 'strich', 'tinte'].includes(f), `Farbe ${f} im Seitenwechsel`);
+  assert.doesNotMatch(block, /#[0-9a-f]{3,8}\b|rgb\(|hsl\(|oklch\(/i, 'feste Farbwerte im Seitenwechsel');
+  assert.match(block, /\.verlegen-logo\s*\{/, 'Logo-Behälter in der Schicht');
 });

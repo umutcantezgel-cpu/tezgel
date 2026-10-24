@@ -98,8 +98,8 @@
   --ease-aufsetzen: cubic-bezier(0.5, 0, 0.75, 0);
   /* Seitenwechsel B-01 und Intro B-02: Gesamtdauern, nur aus diesen Variablen lesen (K-005) */
   /* B-01 Belegen plus Abnehmen (E-043, Auftraggeber: Fliese für Fliese): erster Wechsel 1,8 s, danach 1,4 s */
-  --verlegen-gesamt: 1800ms;
-  --verlegen-gesamt-folge: 1400ms;
+  --verlegen-gesamt: 2400ms; /* E-047: langsamer, 2,4 s */
+  --verlegen-gesamt-folge: 1800ms; /* E-047: 1,8 s */
   /* reduzierte Bewegung: Überblendung statt Fliesen (Auftrag Abschnitt 9) */
   --verlegen-ruhig: 150ms;
   --intro-gesamt: 1600ms;

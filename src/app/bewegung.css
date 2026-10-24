@@ -480,10 +480,12 @@ html.k-bewegung .laden-fuge::after {
   to { translate: 340% 0; }
 }
 
-/* verlegen (B-01, KERN v3 K-007, Ablauf E-043) – Seitenwechsel: Fliese für Fliese von rechts über die ganze Seite gelegt,
-   dann einzeln abgenommen. Eine feste Schicht über allem, für Screenreader verborgen, nur während des Wechsels sichtbar und
+/* verlegen (B-01, KERN v3 K-007, Ablauf E-043, Fassung v3 E-047) – Seitenwechsel: große Fliesen Fliese für Fliese von
+   rechts über die ganze Seite gelegt, dann klatscht mittig das Logo auf die Wand, dann werden die Fliesen einzeln
+   abgenommen. Eine feste Schicht über allem, für Screenreader verborgen, nur während des Wechsels sichtbar und
    klickdicht. Jede Fliese trägt ihre halbe Fuge selbst (Rand in Fugenfarbe), so ist die Fuge
-   zwischen zwei gelegten Fliesen ganz und die Seite scheint nie durch. Bewegt werden nur transform und opacity (WAAPI). */
+   zwischen zwei gelegten Fliesen ganz und die Seite scheint nie durch. Bewegt werden nur transform und opacity (WAAPI).
+   Neutral wie bisher (Kalk, Fliese, Fuge); die einzige Farbe bringt das Logo (E-047). */
 .verlegen {
   position: fixed;
   inset: 0;
@@ -526,10 +528,12 @@ html.k-bewegung .laden-fuge::after {
   /* feine Körnung (SVG-Rauschen in Tinte, ≤ 1 KB, KERN B-01; zurück nach E-037): einmal im Leerlauf zu einer Kachel
      gerastert und als --verlegen-koernung an die Schicht gesetzt (Verlegen.tsx), die Fliesen kacheln nur das fertige Bild
      statt feTurbulence je Fliese (E-036). Der kleine Schatten der gesetzten Fliese liegt fest an der Oberfläche; nur der
-     Flugschatten blendet aus (E-036). */
+     Flugschatten blendet aus (E-036). Fuge schmal und weich (E-047, „nicht so verpixelt“): Kanten leicht gerundet, der
+     Schatten der gesetzten Fliese nur als Hauch in Tinte (statt shadow-gesetzt, das an der Unterkante eine dunkle Linie zog). */
   background-image: var(--verlegen-koernung, none);
   background-size: 96px 96px;
-  box-shadow: var(--shadow-gesetzt);
+  border-radius: var(--radius-r1);
+  box-shadow: 0 0 1px color-mix(in srgb, var(--color-tinte) 10%, transparent);
 }
 .verlegen-glanz {
   position: absolute;
@@ -555,6 +559,23 @@ html.k-bewegung .laden-fuge::after {
   inset: 0;
   background-color: var(--color-kalk);
   opacity: 0;
+}
+/* Logo auf der Wand (E-047): mittig über Fliesen, Wartelinie und Blende; Lage und Größe in ganzen Pixeln setzt die
+   Komponente (logoMass, Seitenverhältnis 3,2 wie die Datei, nur skaliert, G8). Das Bild selbst kommt erst beim ersten Wechsel
+   hinein; es klatscht auf (transform und opacity am Bild), der Behälter blendet beim Abnehmen aus. */
+.verlegen-logo {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+}
+.verlegen-logo-bild {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  user-select: none;
+  will-change: transform, opacity;
 }
 @media print {
   .verlegen {
