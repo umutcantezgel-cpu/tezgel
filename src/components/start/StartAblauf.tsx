@@ -3,9 +3,12 @@
 // um ein Drittel der langen Fliesenseite tiefer (Stufe 16, der Versatz dieses Bildschirms), sodass die Linie wie eine
 // versetzte Reihe springt; mobil senkrecht links vom Text, genau auf dem Lot der Laserlinie (die Leitachse steht dort
 // links im Seitenrand, darum rückt die Liste um den Abstand Rand bis Lot nach links). Je Schritt ein Fugenkreuz am Anfang der Linie, die Nummer in
-// Mono (Zahl), ohne Kästen, damit der Abschnitt anders gebaut ist als Lage, Stimmen und Orte. Serverkomponente.
+// Mono (Zahl), ohne Kästen, damit der Abschnitt anders gebaut ist als Lage, Stimmen und Orte. Darunter, abgesetzt durch eine
+// Fuge, die drei Belege aus dem Faktenblatt (K-015), die vorher in „Was wir tun“ standen (Sichtabnahme E2, Befund 8): ab lg in
+// drei Spalten wie die Schritte, mobil untereinander, je mit Fugenkreuz, ohne Kästen. Serverkomponente.
 import clsx from 'clsx';
 import Abschnitt from '@/components/kern/Abschnitt';
+import Fachwort from '@/components/kern/Fachwort';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 
 const SCHRITTE = [
@@ -46,6 +49,24 @@ export default function StartAblauf() {
           );
         })}
       </ol>
+      <ul className="mt-4 grid gap-6 border-t border-fuge pt-8 lg:mt-24 lg:grid-cols-3 lg:gap-12">
+        <li className="flex gap-3">
+          <Fugenkreuz className="mt-2 size-3 shrink-0 text-tinte" />
+          <p className="font-text text-fs-3 text-tinte">Seit 2008 sind wir bei der Handwerkskammer Wiesbaden eingetragen.</p>
+        </li>
+        <li className="flex gap-3">
+          <Fugenkreuz className="mt-2 size-3 shrink-0 text-tinte" />
+          <p className="font-text text-fs-3 text-tinte">
+            {/* zwei Sätze, jedes Fachwort mit seiner Erklärung am Satzende (höchstens 25 Wörter je Satz, K-010) */}
+            Im Bad kommt vor dem Verlegen eine <Fachwort id="abdichtung">Abdichtung</Fachwort>. Dabei halten wir uns
+            an <Fachwort id="din-18534">DIN 18534</Fachwort>.
+          </p>
+        </li>
+        <li className="flex gap-3">
+          <Fugenkreuz className="mt-2 size-3 shrink-0 text-tinte" />
+          <p className="font-text text-fs-3 text-tinte">Wohnen Sie während der Arbeiten im Haus, schützen wir Ihre Räume vor Staub.</p>
+        </li>
+      </ul>
     </Abschnitt>
   );
 }

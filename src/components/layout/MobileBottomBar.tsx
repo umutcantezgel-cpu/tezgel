@@ -60,6 +60,7 @@ export default function MobileBottomBar() {
           className={`${feld} bg-kalk text-tinte hover:bg-fliese`}
           aria-label="Nachricht per WhatsApp"
           data-motion="druck"
+          data-leiste-feld="whatsapp"
         >
           <WhatsAppLogo className="size-5" />
           <span className="leiste-text">WhatsApp</span>

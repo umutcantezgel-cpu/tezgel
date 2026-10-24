@@ -32,8 +32,10 @@ const LASER_ABSTAND = 8;
 
 /** `fuellen`: füllt die Höhe des Bildplatzes (Zuschnitt per slice) statt der Höhe aus dem Format, z. B. in einer Fliese mit Text.
  *  `ausschnitt`: zeigt nur diese Breite der Zeichnung (Einheiten von 120, gleiches Format), mittig bzw. um den Riss, damit
- *  ein kleines Muster wenige große Fliesen mit sichtbarer Fuge zeigt statt vieler winziger. */
-export default function Fliesenkomposition({ motiv, format = '1:1', fuellen = false, ausschnitt = B, className }: { motiv: Kompositionsmotiv; format?: '1:1' | '4:5' | '3:2' | '16:9'; fuellen?: boolean; ausschnitt?: number; className?: string }) {
+ *  ein kleines Muster wenige große Fliesen mit sichtbarer Fuge zeigt statt vieler winziger.
+ *  `deutlich`: Fugen in Strich statt Fuge (≥ 3:1 gegen Fliese) und ein rotes Merkmal wie in der Zeichnung der 404: bei den
+ *  Verbänden die Laserlinie auf der Fuge nahe der Mitte, beim Riss der Riss selbst (Sichtabnahme E2, Befund 12). */
+export default function Fliesenkomposition({ motiv, format = '1:1', fuellen = false, ausschnitt = B, deutlich = false, className }: { motiv: Kompositionsmotiv; format?: '1:1' | '4:5' | '3:2' | '16:9'; fuellen?: boolean; ausschnitt?: number; deutlich?: boolean; className?: string }) {
   const [fb, fh] = format.split(':').map(Number);
   const H = Math.round((B * fh) / fb);
   const aw = Math.min(ausschnitt, B);
@@ -50,8 +52,11 @@ export default function Fliesenkomposition({ motiv, format = '1:1', fuellen = fa
   const id = `fk${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`;
   const fisch = motiv === 'fischgraet';
   const kante = motiv === 'verlegekante';
+  // Laserlinie auf der waagrechten Fuge, die der Mitte am nächsten liegt (Reihenhöhe 24 bei Kreuzfuge, sonst 12)
+  const reihe = motiv === 'kreuzfuge' ? 24 : 12;
+  const laserY = deutlich && !fisch && !kante && motiv !== 'riss' ? Math.round(mitte.y / reihe) * reihe : null;
   return (
-    <svg viewBox={`${ax} ${ay} ${aw} ${ah}`} aria-hidden="true" focusable="false" className={clsx('block w-full bg-fuge', fuellen ? 'h-full' : 'h-auto', className)} preserveAspectRatio="xMidYMid slice">
+    <svg viewBox={`${ax} ${ay} ${aw} ${ah}`} aria-hidden="true" focusable="false" className={clsx('block w-full', deutlich ? 'bg-strich' : 'bg-fuge', fuellen ? 'h-full' : 'h-auto', className)} preserveAspectRatio="xMidYMid slice">
       {fisch ? (
         <g className="fill-fliese">
           {Array.from({ length: Math.ceil(H / 12) + 2 }, (_, r) =>
@@ -81,7 +86,8 @@ export default function Fliesenkomposition({ motiv, format = '1:1', fuellen = fa
           <line x1={KANTE + LASER_ABSTAND} y1={0} x2={KANTE + LASER_ABSTAND} y2={H} className="stroke-laser" strokeWidth="2" vectorEffect="non-scaling-stroke" />
         </>
       )}
-      {motiv === 'riss' && <path d="M53 30 L58 38 L55 43 L61 52" className="fill-none stroke-tinte-2" strokeWidth="0.8" strokeLinecap="round" strokeLinejoin="round" />}
+      {motiv === 'riss' && <path d="M53 30 L58 38 L55 43 L61 52" className={clsx('fill-none', deutlich ? 'stroke-laser' : 'stroke-tinte-2')} strokeWidth="0.8" strokeLinecap="round" strokeLinejoin="round" />}
+      {laserY !== null && <line x1={ax} y1={laserY} x2={ax + aw} y2={laserY} className="stroke-laser" strokeWidth="2" vectorEffect="non-scaling-stroke" />}
     </svg>
   );
 }

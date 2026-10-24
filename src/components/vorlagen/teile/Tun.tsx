@@ -6,7 +6,7 @@ import type { ReactNode } from 'react';
 import Link from 'next/link';
 import Icon from '@/components/icons/Icon';
 import Abschnitt from '@/components/kern/Abschnitt';
-import Fliesenkomposition from '@/components/kern/Fliesenkomposition';
+import Fliesenkomposition, { type Kompositionsmotiv } from '@/components/kern/Fliesenkomposition';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Textmarken from '@/components/kern/Textmarken';
 import type { TunInhalt } from '../inhalt';
@@ -37,6 +37,34 @@ export function Bereichszeilen({ bereiche }: { bereiche: NonNullable<TunInhalt['
         </li>
       ))}
     </ul>
+  );
+}
+
+/** Bereiche als Fliesen mit Zeichnung (Startseite, Sichtabnahme E2, Befunde 8 und 12): zwei Spalten an der Fuge, oben ein
+ *  Verlegemuster im Format 16:9 mit Fugen in Strich und roter Laserlinie, darunter der Name und der Pfeil. So ist der Abschnitt
+ *  anders gebaut als die Zeilen der Lage davor. Schmal (große Systemschrift, unter 20 rem) eine Spalte ohne Zeichnung; lange
+ *  Namen dürfen dort trennen (sonst ragte „Badsanierung“ bei 200 % über den Rand). */
+export function Bereichsfliesen({ bereiche }: { bereiche: { name: string; href: string; motiv: Kompositionsmotiv }[] }) {
+  return (
+    <div className="@container">
+      <ul className="grid grid-cols-1 gap-px border border-fuge bg-fuge @xs:grid-cols-2">
+        {bereiche.map((b) => (
+          <li key={b.href} className="bg-fliese">
+            <Link href={b.href} data-motion="zustand" className="group flex h-full flex-col text-tinte">
+              <span aria-hidden="true" className="hidden aspect-video overflow-hidden border-b border-fuge @xs:block">
+                <Fliesenkomposition motiv={b.motiv} format="16:9" ausschnitt={96} fuellen deutlich />
+              </span>
+              <span className="flex flex-1 items-start gap-3 p-4 lg:p-6">
+                <span className="min-w-0 flex-1 font-text text-fs-3 font-semibold hyphens-auto underline decoration-transparent decoration-2 underline-offset-4 transition-colors dauer-1 group-hover:decoration-laser lg:font-anzeige lg:text-fs-4 lg:font-extrabold">
+                  {b.name}
+                </span>
+                <Icon name="pfeil-rechts" groesse={5} className="mt-1 shrink-0 text-tinte-2 transition-colors dauer-1 group-hover:text-tinte" />
+              </span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
