@@ -4,6 +4,7 @@
 // Sichtprüfung E2). Rechts (ab lg) bzw. darunter das Einstiegsbild als einziges preload der Seite, auf md rechtsbündig
 // eingerückt. Die Pflichtelemente des ersten Bildschirms tragen data-erstes-bild (Logo im Kopf). Serverkomponente.
 import type { ReactNode } from 'react';
+import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
 import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
 import Bildfeld from '@/components/kern/Bildfeld';
@@ -31,22 +32,24 @@ export interface EinstiegProps {
   unterBild?: ReactNode;
   /** Ziel des Hauptknopfs: `/kontakt`, auf der Startseite das Formular `#termin` */
   hauptziel?: string;
+  /** Arbeitsseite (K-009: ruhig, dicht, schnell): weniger Raum, H1 eine Stufe kleiner, ohne Bildspalte */
+  kompakt?: boolean;
 }
 
-export default function Einstieg({ pfad, brotkrumen, titel, ort, vorspann, bild, unterBild, hauptziel = '/kontakt' }: EinstiegProps) {
+export default function Einstieg({ pfad, brotkrumen, titel, ort, vorspann, bild, unterBild, hauptziel = '/kontakt', kompakt = false }: EinstiegProps) {
   const { contact } = COMPANY_DATA;
   const titelId = 'seite-titel';
   return (
     <section aria-labelledby={titelId} data-formel="worum" className="relative">
       {/* oben Platz für den festen Kopf (64 px) */}
-      <div className={`${seitenKlassen} grid grid-cols-4 gap-y-12 pt-24 pb-16 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12 lg:pt-32 lg:pb-24`}>
+      <div className={clsx(seitenKlassen, 'grid grid-cols-4 gap-y-12 pt-24 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12', kompakt ? 'pb-12 lg:pt-32 lg:pb-16' : 'pb-16 lg:pt-32 lg:pb-24')}>
         <div className="col-span-4 md:col-span-8 lg:col-span-7 lg:self-center">
           {brotkrumen && brotkrumen.length > 1 && <Brotkrumen wege={brotkrumen} className="mb-6" />}
           <h1
             id={titelId}
             tabIndex={-1}
             data-erstes-bild="ueberschrift"
-            className={`${titel.length > LANGER_TITEL ? 'text-fs-6' : 'text-fs-7'} text-balance text-tinte outline-none`}
+            className={clsx(kompakt || titel.length > LANGER_TITEL ? 'text-fs-6' : 'text-fs-7', 'text-balance text-tinte outline-none')}
           >
             {titel}
           </h1>
@@ -80,7 +83,7 @@ export default function Einstieg({ pfad, brotkrumen, titel, ort, vorspann, bild,
             </div>
           </div>
         </div>
-        {bild && (
+        {bild && !kompakt && (
           <div className="col-span-4 md:col-span-6 md:col-start-3 lg:col-span-5 lg:col-start-8">
             {typeof bild === 'string' ? <Bildfeld arbeit={bild as ArbeitId} lcp sizes="(min-width: 1024px) 40vw, (min-width: 768px) 75vw, 100vw" /> : bild}
             {unterBild}
