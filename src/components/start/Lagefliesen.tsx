@@ -51,11 +51,13 @@ export default function Lagefliesen() {
       id="ihre-lage"
       formel="lage"
       leitachse
+      spaet
       titel="Was möchten Sie ändern?"
       einleitung={<p>Wählen Sie, was am besten passt. Sie kommen direkt zu den Bildern und Antworten für Ihre Lage.</p>}
-      className="lg:pb-32"
+      className="lg:pb-16"
     >
-      <div className="relative">
+      {/* lg:mb-16 hält den versetzten Streifen und das untere Passstück im Fluss: spätes Zeichnen beschneidet, was überragt */}
+      <div className="relative lg:mb-16">
         <ul className="grid gap-px border border-fuge bg-fuge md:grid-cols-2 lg:grid-flow-col lg:grid-rows-3 lg:gap-0 lg:border-0 lg:bg-transparent">
           {LAGEN.map((lage, i) => (
             <li

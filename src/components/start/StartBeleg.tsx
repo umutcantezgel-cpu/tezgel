@@ -30,7 +30,7 @@ const FOTOS: { id: ArbeitId; unterschrift: string }[] = [
 
 export function Arbeiten() {
   return (
-    <Abschnitt id="unsere-arbeiten" formel="beleg" leitachse titel="So sieht unsere Arbeit aus.">
+    <Abschnitt id="unsere-arbeiten" formel="beleg" leitachse spaet titel="So sieht unsere Arbeit aus.">
       {/* zweispaltig erst, wenn eine Spalte mindestens 20 rem hat (große Systemschrift: ein Foto über die volle Breite) */}
       <div className="@container">
         {/* zweispaltig ab 20 rem (Telefon bei normaler Schrift), einspaltig nur bei großer Systemschrift (Runde 4) */}
@@ -100,7 +100,7 @@ export function Kundenstimmen() {
   });
   const [erste, ...weitere] = stimmen;
   return (
-    <Abschnitt id="kundenstimmen" formel="beleg" leitachse flaeche="fliese" titel="Das sagen unsere Kunden.">
+    <Abschnitt id="kundenstimmen" formel="beleg" leitachse spaet flaeche="fliese" titel="Das sagen unsere Kunden.">
       {/* ab lg steht die Kennzeile direkt unter der großen Stimme und beide mittig neben den zwei kleineren (vorher stand die
           Kennzeile am Fuß der Spalte, dazwischen ein Loch; Sichtabnahme E2, Befund 6), mobil am Ende (Runde 4) */}
       <div className="grid gap-12 border-t border-fuge pt-12 lg:grid-cols-12 lg:gap-x-12">
@@ -210,6 +210,7 @@ export function Einsatzorte() {
       id="einsatzgebiet"
       formel="beleg"
       leitachse
+      spaet
       titel="Hier sind wir für Sie unterwegs."
       einleitung={<p>Unser Betrieb sitzt in Aßlar. Wir arbeiten in Wetzlar, Gießen, Herborn und den Orten rundherum.</p>}
     >

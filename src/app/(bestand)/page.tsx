@@ -8,7 +8,9 @@
 // Abschnitt INP). Eine Grenze statt sieben: React lagert jede große Grenze aus und setzt sie per Skript an ihren Platz, jede
 // davon kostet eine Verschiebung mit Layout (Blockierzeit, E-034). Die Inhalte warten auf nichts; bis React die ausgelagerte
 // Grenze eingesetzt hat, hält ein Platzhalter von einer Bildschirmhöhe den Fuß unter dem ersten Bildschirm (sonst stand er
-// dort kurz und sprang dann weg: CLS 0,07 am Desktop, E-036).
+// dort kurz und sprang dann weg: CLS 0,07 am Desktop, E-036). Die Abschnitte nach dem Einstieg zeichnen spät (`spaet`,
+// content-visibility): Stil und Layout erst in Sichtnähe, sonst rechnete das Einsetzen der Grenze das Layout der ganzen Seite
+// in einer langen Aufgabe (E3-LEIST-01); das Formular #termin ist Sprungziel und zeichnet sofort.
 import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import Leitachse from '@/components/kern/Leitachse';

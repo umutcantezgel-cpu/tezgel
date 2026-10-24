@@ -29,7 +29,7 @@ const SCHRITTE = [
 
 export default function StartAblauf() {
   return (
-    <Abschnitt id="ablauf" formel="ablauf" leitachse flaeche="fliese" titel="So kommen Sie zu Ihrem neuen Boden." className="lg:pb-32">
+    <Abschnitt id="ablauf" formel="ablauf" leitachse spaet flaeche="fliese" titel="So kommen Sie zu Ihrem neuen Boden." className="lg:pb-32">
       <ol className="-ml-2 grid md:-ml-4 lg:ml-0 lg:grid-cols-3">
         {SCHRITTE.map((s, i) => {
           const letzter = i === SCHRITTE.length - 1;

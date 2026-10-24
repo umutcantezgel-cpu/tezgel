@@ -23,6 +23,7 @@ export default function WasWirTun() {
       id="was-wir-tun"
       formel="tun"
       leitachse
+      spaet
       kopf="seitlich"
       titel="Wir kümmern uns um alles, was mit Fliesen zu tun hat."
       einleitung={
