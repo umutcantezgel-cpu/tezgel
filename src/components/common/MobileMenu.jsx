@@ -10,6 +10,7 @@ import { COMPANY_DATA } from '@/config/company';
 import { openWhatsApp } from '@/lib/whatsapp';
 import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
 import { knopfKlassen } from '@/components/kern/stile';
+import { zusammen } from '@/components/kern/zusammen';
 import { BrandMark } from '@/components/common/Header';
 
 const istOffen = (el) => {
@@ -168,7 +169,7 @@ export default function MobileMenu({ isOpen, onToggle }) {
 
                 <div className="shrink-0 border-t border-fuge bg-fliese p-4">
                     <Link href={hauptziel(pathname)} onClick={schliessen} className={knopfKlassen('haupt', 'w-full')} data-motion="druck" data-hauptknopf="">
-                        {primaryCta.name}
+                        {zusammen(primaryCta.name)}
                         <Icon name="pfeil-rechts" groesse={4} />
                     </Link>
                     {/* nebeneinander nur, wenn beide Knöpfe ihre Wörter fassen (Container-Abfrage in rem, große Systemschrift) */}

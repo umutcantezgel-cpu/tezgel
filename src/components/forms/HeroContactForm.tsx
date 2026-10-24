@@ -12,6 +12,7 @@ import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Knopf from '@/components/kern/Knopf';
 import { etikettKlassen, feldKlassen, fehlerKlassen, labelKlassen, linkKlassen, pflichtKlassen, wahlKlassen } from '@/components/kern/stile';
+import { zusammen } from '@/components/kern/zusammen';
 import { PROJECT_OPTIONS, useHeroKontakt } from '@/lib/formulare/useHeroKontakt';
 
 export default function HeroContactForm({ titel = true }: { titel?: boolean } = {}) {
@@ -106,7 +107,7 @@ export default function HeroContactForm({ titel = true }: { titel?: boolean } = 
             {titel && (
                 <>
                     <p className="mt-6 font-anzeige text-fs-5 font-semibold text-balance text-tinte">
-                        Kostenfreien Termin vor Ort anfragen
+                        {zusammen('Kostenfreien Termin vor Ort anfragen')}
                     </p>
                     <p className="mt-2 text-fs-2 text-tinte-2">
                         Sagen Sie uns kurz, worum es geht. Deniz Tezgel meldet sich persönlich bei Ihnen.
@@ -255,7 +256,7 @@ export default function HeroContactForm({ titel = true }: { titel?: boolean } = 
                 {/* Absenden */}
                 <div className="flex flex-col gap-4">
                     <Knopf type="submit" laedt={status === 'submitting'} ladeText="Wird gesendet …" icon="pfeil-rechts" className="w-full">
-                        Termin vor Ort anfragen
+                        {zusammen('Termin vor Ort anfragen')}
                     </Knopf>
 
                     <div className="flex flex-wrap items-center justify-between gap-2 text-fs-2 text-tinte-2">

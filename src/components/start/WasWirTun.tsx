@@ -63,8 +63,8 @@ export default function WasWirTun() {
           <Fugenkreuz className="mt-2 size-3 shrink-0 text-tinte" />
           <p className="font-text text-fs-3 text-tinte">
             {/* zwei Sätze, jedes Fachwort mit seiner Erklärung am Satzende (höchstens 25 Wörter je Satz, K-010) */}
-            Gegen Wasser hilft eine <Fachwort id="abdichtung">Abdichtung</Fachwort>. Wir machen sie nach{' '}
-            <Fachwort id="din-18534">DIN 18534</Fachwort>.
+            Im Bad kommt vor dem Verlegen eine <Fachwort id="abdichtung">Abdichtung</Fachwort>. Dabei halten wir uns
+            an <Fachwort id="din-18534">DIN 18534</Fachwort>.
           </p>
         </li>
         <li className="flex gap-3 bg-fliese p-6">

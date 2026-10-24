@@ -9,6 +9,7 @@ import Icon from '@/components/icons/Icon';
 import { hauptziel, navigationLinks, ohneLeiste, primaryCta } from '@/config/navigation';
 import { COMPANY_DATA } from '@/config/company';
 import { knopfKlassen, seitenKlassen } from '@/components/kern/stile';
+import { zusammen } from '@/components/kern/zusammen';
 import FloatingWhatsAppWidget from '@/components/common/FloatingWhatsAppWidget';
 
 const isActivePath = (pathname, path) =>
@@ -232,7 +233,7 @@ export default function Header({ isMobileMenuOpen }) {
                         data-hauptknopf=""
                         data-erstes-bild="hauptknopf"
                     >
-                        {primaryCta.name}
+                        {zusammen(primaryCta.name)}
                     </Link>
                     <button
                         type="button"

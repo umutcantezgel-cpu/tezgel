@@ -5,6 +5,7 @@ import Link from 'next/link';
 import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
 import { knopfKlassen } from './stile';
+import { zusammen } from './zusammen';
 
 export const HAUPTAKTION = { text: 'Termin vor Ort anfragen', ziel: '/kontakt' } as const;
 
@@ -29,7 +30,7 @@ export default function Hauptknopf({ href = HAUPTAKTION.ziel, children = HAUPTAK
       data-motion="druck"
       className={knopfKlassen('haupt', clsx(breit && 'w-full sm:w-auto', className))}
     >
-      <span>{children}</span>
+      <span>{zusammen(children)}</span>
       <Icon name="pfeil-rechts" groesse={5} />
     </Link>
   );

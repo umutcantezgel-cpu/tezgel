@@ -11,6 +11,7 @@ import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
 import HeroContactForm from '@/components/forms/HeroContactForm';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Rufnummer from '@/components/kern/Rufnummer';
+import { zusammen } from '@/components/kern/zusammen';
 import { linkKlassen } from '@/components/kern/stile';
 import { COMPANY_DATA } from '@/config/company';
 import { oeffnungszeilen } from '@/lib/oeffnungszeiten';
@@ -25,7 +26,7 @@ export default function TerminAnfrage() {
       leitachse
       flaeche="fliese"
       kopf="seitlich"
-      titel="Termin vor Ort anfragen"
+      titel={zusammen('Termin vor Ort anfragen')}
       unterKopf={
         <div className="grid gap-6 border-t border-fuge pt-6 md:grid-cols-2 lg:mt-4 lg:grid-cols-1">
           {/* die Rufnummer über die volle Breite, Schreiben und Zeiten darunter nebeneinander (ab lg untereinander) */}
