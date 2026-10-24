@@ -1,9 +1,9 @@
 # PRUEFPUNKT
 
-- Lauf „Verständlich, echt, ausgezeichnet“ · Etappe E2 (Referenz) · Stand 2026-10-24 07:00 CEST
+- Lauf „Verständlich, echt, ausgezeichnet“ · Etappe E2 (Referenz) · Stand 2026-10-24 07:42 CEST
 - Letzter grüner Commit (src): c53faf4 (src gleich main 388fa7b). HEAD 27639b6 und folgende = Zwischenstände E2 (gepusht): Startseite, Startbild und 404 nachgebessert, im Prüf-Workflow.
 - E0 abgeschlossen bis auf Lighthouse: E0-PRUEF-03 und E0-PROBE-01…10 zurück und gesichert (`pakete/*.rueckgabe.md`), Werte in LAGEBILD Abschnitt 4 und 5, ABNAHME Z-11.
-- Laufend (07:00): Gesamtlauf aller Funktionsspecs (340 Tests) auf Stand `$SCRATCH/E2-PRUEF-A-WELLE/stand.txt`, Bericht `pw.json` daneben (E-029, `pruefe-a.sh` wertet mit `PRUEFE_A_WELLENLAUF` aus). Danach Workflow Stufe A (E2-PRUEF-A1 bis A3, Briefings mit Nachtrag), dann Reinraum und Produktionsserver 4311, INP des Ankerknopfs, E2-PRUEF-00, E2-PRUEF-B, Probeläufe, E2-DOK-01, E2-SICHT, E2-TOR. Erledigt: E2-PRUEF-TESTS (E-028, 98a5c3a), E3-Texte (E-027), Startseite Runde 4 (E-026), Vorlagen E3-ORCH-01a bis d.
+- Laufend (07:42): Workflow Stufe A (wf_465d4634-607, E2-PRUEF-A1 bis A3 nacheinander, Funktionstests aus `$SCRATCH/E2-PRUEF-A-WELLE/berichte`) und Reinraum-Bau von 4479016 (Log `$SCRATCH/orch/reinraum-4479016.log`). Danach: Produktionsserver 4311 (`PORT=4311 REINRAUM_DIR=$SCRATCH/reinraum-4479016 server.sh start 4479016`), INP des Ankerknopfs (`reaktion.mjs`), E2-PRUEF-00 (LCP-Spur), E2-ORCH-00, E2-PRUEF-B (Briefing fertig; Tracking-Bau auf 4313), E2-PROBE-01 bis 04, E2-DOK-01, E2-SICHT (Entwurf `$SCRATCH/orch/briefings/E2-SICHT-prompt.md`), E2-TOR. Erledigt heute: E2-PRUEF-TESTS (E-028), Gesamtlauf 309/11/20 mit Befund F-10 am Desktop, behoben (E-030, 4479016).
 - Im Zwischenstand cce868a (Orchestrator), je Paket:
   - E2-ORCH-01 Tokens (`globals.css`), E2-ORCH-01b Register (`register.ts`, `test/bewegung.test.mjs`, `_werkstatt/register.json`, `werte-regeln.json`).
   - E2-FIX-01a bis c (GoogleReviewsBadge, FinalCTA, LocalDominanceMap, llms.txt, schema.ts, standorte/[stadt]).
