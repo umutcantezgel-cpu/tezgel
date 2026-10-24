@@ -134,6 +134,9 @@ test.describe('F-15 Telefon und E-Mail', () => {
   test('/bad Fußbereich: Festnetz, E-Mail und WhatsApp sind verlinkt', async ({ page }) => {
     await page.goto('/bad');
     const fuss = page.getByRole('contentinfo');
+    // Der obere Teil des Fußes ist eine eigene Suspense-Grenze (E-033): Er steht im HTML, React deckt ihn aber erst nach dem
+    // Laden auf (gebündelt, wartet auf Bilder in der Grenze). Warten, bis er im Fuß steht; geprüft wird dasselbe wie vorher.
+    await expect(fuss.locator('a[href^="tel:"]').first()).toBeAttached();
     const tel = (await hrefs(fuss.locator('a[href^="tel:"]'))).map(telZiel);
     const mail = await hrefs(fuss.locator('a[href^="mailto:"]'));
     const wa = (await hrefs(fuss.locator('a[href*="whatsapp.com"], a[href*="wa.me"]'))).map(waZiel);
