@@ -32,7 +32,7 @@ Quelle: `_relaunch/FUNKTIONSLISTE.md` (F-01…F-19), Tests in `_werkstatt/werkze
 
 | Nr | Funktion | Orte heute | Orte nach dem Lauf | Test |
 |---|---|---|---|---|
-| F-01 | HeroContactForm (Name, Telefon, Ziel `general`) | `/` Einstieg | `/kontakt` oben, `/` unten (`#termin`) | funktion-hero-kontakt |
+| F-01 | HeroContactForm (Name, Telefon, Ziel `general`) | `/` Einstieg | `/` unten (`#termin`), ab E3 auch `/kontakt` oben | funktion-hero-kontakt |
 | F-02 | Preisrechner | `/`, `/preise`, `/leistungen`, `/leistungen/[id]`, `/faq` | ohne `/`, sonst gleich, als Hilfe | funktion-preisrechner |
 | F-03 | Express-Anfrage (3 Schritte) | `/#express-anfrage`, `/kontakt`, `/leistungen`, `/foerderung` | ohne `/`; `/kontakt` als Hilfe unter dem Hauptweg | funktion-express-funnel |
 | F-04 | Badanfrage | `/bad` und 7 Bad-Seiten | gleich | funktion-badanfrage |
@@ -43,14 +43,14 @@ Quelle: `_relaunch/FUNKTIONSLISTE.md` (F-01…F-19), Tests in `_werkstatt/werkze
 | F-09 | Schnellanfrage mit Honigtopf | Ortsseiten, Leistung × Ort | gleich | funktion-schnellanfrage |
 | F-10 | WhatsApp-Links und Widget | global | gleich | funktion-kontaktwege |
 | F-11 | Einwilligung | global | unverändert (G8) | funktion-einwilligung |
-| F-12 | Karten hinter Einwilligung | `/`, `/standorte`, `/kontakt` | `/ueber-uns`, `/standorte`, `/kontakt`; auf `/` gezeichnete Karte ohne Anfrage | funktion-einwilligung |
+| F-12 | Karten hinter Einwilligung | `/`, `/standorte`, `/kontakt` | `/standorte`, `/kontakt`, ab E3 auch `/ueber-uns`; auf `/` keine Karte (Orte als Liste mit Maßkette), also keine Anfrage an Karten-Hosts | funktion-einwilligung |
 | F-13 | Navigation (Mega-Menü, Mobilmenü, Sprunglink) | global | neue Navigation K-009, eine Aufklappebene | funktion-navigation |
-| F-14 | FAQ-Akkordeon | `/`, `/faq` und weitere | gleich | funktion-navigation |
+| F-14 | FAQ-Akkordeon | `/`, `/faq` und weitere | ohne `/` (Startseite nach Seitenformel, E-012), sonst gleich | funktion-navigation |
 | F-15 | Telefon und E-Mail | global | gleich | funktion-kontaktwege |
 | F-16 | Blog-Werkzeuge | `/blog`, `/blog/[slug]` | gleich | funktion-navigation |
 | F-17 | 404 | beliebig | neue 404 mit drei Wegen | funktion-navigation |
 | F-18 | Login (deaktiviert) | `/login` | gleich | funktion-navigation |
-| F-19 | Bewertungs-Karussell | `/` | gleich oder als ruhige Stimmenreihe, Wortlaut unverändert | funktion-navigation |
+| F-19 | Bewertungs-Karussell | `/` | als ruhige Stimmenreihe (drei Stimmen, c-wolf groß), Wortlaut unverändert | funktion-navigation |
 | F-20 | Weiterleitungen 308 und 410 | `next.config.ts`, `wege.ts` | gleich, dazu neue 308 aus E5-BAU-01 | funktion-weiterleitung |
 
 Altfehler aus dem Vorlauf (bleiben, MENSCHEN.md): Konfigurator 2 Fälle `fixme`; Kartenplatzhalter mobil vom Info-Kasten überdeckt; Knopf „Cookie-Einstellungen“ im Kartenplatzhalter öffnet den Banner nicht (M-12).
