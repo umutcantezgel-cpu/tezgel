@@ -154,3 +154,10 @@ Pakete E0-PRUEF-01, -02a bis -02d und die unabhängige Abnahme E0-PRUEF-02-PA si
   - Silbentrennung erst ab 12 Zeichen mit Teilen ab 5 (`hyphenate-limit-chars: 12 5 5`), Kennzeile und Bildunterschriften der Fläche ohne Trennung.
   - Startbild auf md rechtsbündig an der Textkante (zwei von acht Spalten eingerückt).
 - **Nicht übernommen:** axe `target-size` im Menü-Zustand (Werkzeugbefund: axe wertet die untere Leiste unter dem Popover-Blatt als Verdeckung; im Bild und per Trefferpunkt-Test liegt das Menü oben, Prüferin Runde 3 bestätigt). Platzhaltertexte bleiben (passen jetzt bei 200 %).
+
+## E-024 · E3-Texte vor dem Tor E2 (24.10.2026)
+- **Ziel:** Haiku-Plätze nutzen, während Prüfrunden der Startseite laufen, ohne die Prüfungen zu stören.
+- **Wege:** (a) Texte erst nach E2-TOR (Plan 1.2); (b) Texte E3-TEXT-01 bis 09 mit Lektorat jetzt, Bau erst nach dem Tor; (c) auch die Seiten jetzt bauen.
+- **Bewertung:** Texte hängen nur an Referenztexten, K-009 bis K-011 und K-015, die stehen; sie brauchen keine Rechenleistung und berühren `src` nicht. Bauen (c) würde die Prüfstände der laufenden Runden verändern.
+- **Entscheidung:** (b). Neues Werkzeug `werkzeuge/textpruefung.mjs` (Positivprobe `tests-logik/textpruefung-probe.md`) prüft Texte ohne Browser mit der Logik von `lesbarkeit.mjs`; die vier Referenztexte sind damit GRÜN (zwei Glossarlücken und zwei Beispielkennungen behoben). Die Ortstexte E3-TEXT-ORTE-1 und -2 entfallen als Texterpakete: Das Muster `REF-ort-wetzlar.md` ist bis auf Name, Region und Entfernung gleich; die Vorlage `OrtsSeite` setzt die Texte aus `cities.ts` (Prüfung der Längen je Ort im Test), siehe E3-ORCH-01c.
+- **Umkehrprobe:** Ändert das Tor E2 Ton oder Schreibregeln, gehen die Texte in ein zweites Lektorat (je Text wenige Minuten).
