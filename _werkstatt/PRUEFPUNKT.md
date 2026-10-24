@@ -1,9 +1,9 @@
 # PRUEFPUNKT
 
-- Lauf „Verständlich, echt, ausgezeichnet“ · Etappe E2 (Referenz) · Stand 2026-10-24 08:44 CEST
+- Lauf „Verständlich, echt, ausgezeichnet“ · Etappe E2 (Referenz) · Stand 2026-10-24 10:01 CEST
 - Letzter grüner Commit (src): c53faf4 (src gleich main 388fa7b). HEAD 27639b6 und folgende = Zwischenstände E2 (gepusht): Startseite, Startbild und 404 nachgebessert, im Prüf-Workflow.
 - E0 abgeschlossen bis auf Lighthouse: E0-PRUEF-03 und E0-PROBE-01…10 zurück und gesichert (`pakete/*.rueckgabe.md`), Werte in LAGEBILD Abschnitt 4 und 5, ABNAHME Z-11.
-- Laufend (08:44): E2-PRUEF-00 (LCP-Spur auf 4311 = Reinraum 13c1b3a, `$SCRATCH/reinraum-13c1b3a`). Danach: E2-ORCH-00 (LCP beheben, falls nötig), Tracking-Bau auf 4313 (`REINRAUM_DIR=$SCRATCH/reinraum-ga-<sha> NEXT_PUBLIC_GA4_ID=G-TEST000000 reinraum.sh`, EINRICHTUNG), E2-PRUEF-B, E2-PROBE-01 bis 04, E2-DOK-01, E2-SICHT (Entwurf `$SCRATCH/orch/briefings/E2-SICHT-prompt.md`), E2-TOR. Erledigt heute: E2-PRUEF-TESTS (E-028), Gesamtlauf und F-10 (E-030), Stufe A (E-032), Reaktion (E-031, E-033: Hauptknopf 180 ms, Menü 144, Link 92, Eingabe 64).
+- Laufend (10:01): Workflow wf_30bc065a-3da (Tor-Material): E2-PRUEF-B auf 4311 = Reinraum 5df89bc (`$SCRATCH/reinraum-5df89bc`), Tracking auf 4313 = `$SCRATCH/reinraum-ga-5df89bc`; danach E2-PROBE-01 bis 04 und E2-DOK-01 (je zwei gleichzeitig), dann E2-SICHT (frischer Opus-Juror, Auftrag `$SCRATCH/orch/briefings/E2-SICHT-prompt.md`). Danach: Rückgaben sichern, E2-TOR (Abgleich ABNAHME, Befunde als Pakete der E3). Erledigt heute: E-028, E-030, E-031, E-032, E-033, E-034 (Leistung 89, LCP 2,9 s, TBT 270, Reaktion 180).
 - Im Zwischenstand cce868a (Orchestrator), je Paket:
   - E2-ORCH-01 Tokens (`globals.css`), E2-ORCH-01b Register (`register.ts`, `test/bewegung.test.mjs`, `_werkstatt/register.json`, `werte-regeln.json`).
   - E2-FIX-01a bis c (GoogleReviewsBadge, FinalCTA, LocalDominanceMap, llms.txt, schema.ts, standorte/[stadt]).
