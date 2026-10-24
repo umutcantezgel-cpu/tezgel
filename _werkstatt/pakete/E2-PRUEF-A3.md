@@ -40,6 +40,13 @@ Führe für jedes Paket der Welle E2-W3 die Stufe A aus (Typprüfung und Linter 
 - Umgebung in jeder Shell: `export SCRATCH=/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad`, `export PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers`, `export CHROME_PATH=/opt/pw-browsers/chromium`.
 - Höchstens ein Lauf von `pruefe-a.sh` gleichzeitig (der Rechner hat vier Kerne).
 
+## Nachtrag des Orchestrators (24.10.2026, E-029), gilt vor Abschnitt 8 und 9
+- Die Funktionstests liefen einmal für alle drei Wellen auf demselben Quellstand (Commit `98a5c3a`; Bericht `$SCRATCH/E2-PRUEF-A-WELLE/pw.json`, Log `$SCRATCH/E2-PRUEF-A-WELLE/pw.log`). Prüfe zuerst, dass `git -C /home/user/tezgel diff --stat 98a5c3a HEAD -- src test` leer ist; sonst brich ab und melde das als OFFENE FRAGE.
+- Setze vor jeden Lauf von `pruefe-a.sh` die Variable `PRUEFE_A_WELLENLAUF=$SCRATCH/E2-PRUEF-A-WELLE/pw.json` (z. B. `PRUEFE_A_WELLENLAUF=$SCRATCH/E2-PRUEF-A-WELLE/pw.json ./pruefe-a.sh E2-PRUEF-A3-1 …`). Das Werkzeug wertet dann die zugeordneten Specs aus diesem Bericht aus, statt sie neu laufen zu lassen.
+- Den zweiten Lauf aus Abschnitt 6 machst du nur für Tests, die im Wellenbericht rot sind: `cd /home/user/tezgel/_werkstatt/werkzeuge && RELAUNCH_BASE=http://127.0.0.1:4320 timeout 590 npx playwright test tests/<spec> --workers=1 --reporter=line -g "<Testname>"`.
+- Jeden Befehl im Vordergrund ausführen, nie im Hintergrund (Bash-Zeitlimit 600000 ms). Ein Hintergrundlauf endet mit deinem Zug und liefert nichts.
+- Positivprobe zusätzlich zu Abschnitt 9: `PRUEFE_A_WELLENLAUF=/gibt-es-nicht.json ./pruefe-a.sh E2-PRUEF-A3-PROBE2 src/components/forms/HeroContactForm.tsx -- /` muss bei „Funktionstests“ ROT melden.
+
 ## 8. Schritte
 1. Lies den Kopf von `pruefe-a.sh`, `test-zuordnung.json` und die Dateien der Pakete (nur lesen).
 2. `npm test` in `/home/user/tezgel` einmal für die ganze Welle; Ergebnis (Zahl bestanden und gescheitert) notieren.

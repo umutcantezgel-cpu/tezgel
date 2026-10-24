@@ -190,3 +190,9 @@ Pakete E0-PRUEF-01, -02a bis -02d und die unabhängige Abnahme E0-PRUEF-02-PA si
 - **Gegenproben** (Wert verfälscht, Lauf rot, zurück): Karte mit nie erreichtem Host 4 rot, `/ueber-uns` 2 rot, `/leistungen/bad` 2 rot, `/preise` 2 rot; Dateien danach gleich der richtigen Fassung (cmp). Die Zwei-Klick-Schleife auf `/standorte` und `/kontakt` ist durch die Kartenprobe mitbelegt.
 - **Schlusslauf** der fünf Specs gegen 4320: 129 bestanden, 0 gescheitert, 5 übersprungen (E0-Bestand); vorher 100, 25, 5. Beleg `belege/e2/funktionsspecs-schlusslauf.txt`.
 - **Noch offen (Hinweise der Gegenprüfung):** `ruhe()` fängt das networkidle-Limit ab, Negativprüfungen sind zeitlich schwächer als ihr Name (bleibt, bis eine bessere Ruhebedingung da ist); `FEATURED_REVIEW_IDS` in `reviews.js` ist unbenutzt (Aufräumen mit dem Umbau der Startseite auf die Vorlagen).
+
+## E-029 · Funktionstests einmal je Welle (24.10.2026, Stufe A E2, Orchestrator)
+- **Ziel:** Stufe A für die Wellen E2-W1 bis W3 mit den zugeordneten Funktionstests, ohne dieselben Specs auf demselben Quellstand mehrfach laufen zu lassen. Fünf Pakete greifen über `globals.css`, `bewegung.css`, `_dokument.tsx` und `stile.ts` auf „ALLE“ (340 Tests, etwa 15 Minuten je Lauf bei vier Kernen).
+- **Wege:** (a) jedes Paket lässt seine Specs selbst laufen (fünfmal derselbe Gesamtlauf); (b) ein Gesamtlauf je Welle, `pruefe-a.sh` wertet die zugeordneten Specs aus dessen JSON-Bericht aus (`PRUEFE_A_WELLENLAUF`); (c) Stufe A ohne Funktionstests.
+- **Entscheidung:** (b). Voraussetzung ist derselbe Quellstand (`git diff <stand> HEAD -- src test` leer, im Briefing als Abbruchbedingung). Ein Spec ohne Ergebnis im Bericht zählt rot. Positivprobe: Bericht, den es nicht gibt, ergibt ROT.
+- **Umkehrprobe:** Ändert sich der Quellstand zwischen Gesamtlauf und Paketprüfung, gilt (a) für die geänderten Pakete.

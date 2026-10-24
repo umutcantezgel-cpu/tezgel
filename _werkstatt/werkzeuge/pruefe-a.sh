@@ -9,6 +9,7 @@
 # Ergebnis: stdout und $SCRATCH/<Kennung>/pruefe-a.txt. Exit 1 bei Fehlern in eigenen Dateien (tsc, eslint), bei
 #   fehlgeschlagenem Test oder bei Bildfehlern (HTTP ≠ 200). Die Textstufe wirkt nicht auf den Exit-Code.
 # Nur die Testzuordnung anzeigen: PRUEFE_A_NUR_SPECS=1 pruefe-a.sh <Kennung> <Datei…>
+# Specs nicht neu laufen lassen, sondern aus dem Wellenlauf auswerten (E-029): PRUEFE_A_WELLENLAUF=<pw.json oder Ordner>
 # Testbasis statt _werkstatt/belege/e0 (nur für Prüfläufe): PRUEFE_A_BASIS_ORDNER=<Ordner mit texte-index.json und texte/>
 set -uo pipefail
 export PLAYWRIGHT_BROWSERS_PATH="${PLAYWRIGHT_BROWSERS_PATH:-/opt/pw-browsers}"
@@ -108,6 +109,25 @@ else
 fi
 if [ -z "$TEST_INFO" ] && [ ${#SPECS[@]} -eq 0 ]; then
   TEST_STATE=ÜBERSPRUNGEN; TEST_SEK=0; TEST_INFO="keine Zuordnung für diese Dateien"
+elif [ -z "$TEST_INFO" ] && [ -n "${PRUEFE_A_WELLENLAUF:-}" ]; then
+  # Wellenlauf (E-029): alle Pakete einer Welle stehen auf demselben Stand, die Specs laufen einmal je Welle. Ausgewertet
+  # werden nur die zugeordneten Specs aus dem JSON-Bericht des Wellenlaufs (Datei oder Ordner mit *.json).
+  TEST_SEK=0
+  read -r ERW UNERW FLAKY FEHLEND < <(node -e '
+    const fs = require("node:fs"), path = require("node:path");
+    const [quelle, ...specs] = process.argv.slice(1);
+    const dateien = fs.statSync(quelle).isDirectory() ? fs.readdirSync(quelle).filter((f) => f.endsWith(".json")).map((f) => path.join(quelle, f)) : [quelle];
+    const z = { expected: 0, unexpected: 0, flaky: 0 }; const gesehen = new Set();
+    const lauf = (suite, datei) => {
+      const f = suite.file ?? datei;
+      for (const sp of suite.specs ?? []) for (const t of sp.tests ?? []) if (specs.includes(path.basename(f))) { gesehen.add(path.basename(f)); if (t.status in z) z[t.status]++; }
+      for (const s of suite.suites ?? []) lauf(s, f);
+    };
+    for (const d of dateien) for (const s of JSON.parse(fs.readFileSync(d, "utf8")).suites ?? []) lauf(s, s.file);
+    console.log(z.expected, z.unexpected, z.flaky, specs.filter((s) => !gesehen.has(s)).length);
+  ' "$PRUEFE_A_WELLENLAUF" "${SPECS[@]}" 2>/dev/null || echo "-1 -1 -1 -1")
+  if [ "$UNERW" -eq 0 ] && [ "$ERW" -gt 0 ] && [ "$FEHLEND" -eq 0 ]; then TEST_STATE=GRÜN; else TEST_STATE=ROT; fi
+  TEST_INFO="Specs ${SPECS[*]} aus Wellenlauf $PRUEFE_A_WELLENLAUF · erwartet $ERW · unerwartet $UNERW · flaky $FLAKY · ohne Ergebnis $FEHLEND"
 elif [ -z "$TEST_INFO" ]; then
   (cd "$WERKZEUGE" && RELAUNCH_BASE="$DEV" RELAUNCH_OUTPUT="$OUT/pw" RELAUNCH_REPORT="$OUT/pw.json" PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers npx playwright test "${SPECS[@]}" --workers=1) > "$OUT/pw.log" 2>&1
   PW_RC=$?
