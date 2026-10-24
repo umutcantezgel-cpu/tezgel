@@ -22,8 +22,8 @@
 
 ## 3 · Was wir tun
 - H2: `Das machen wir in {stadt}.`
-- Vier Zeilen mit Link auf die Leistung im Ort (`/leistungen/{id}/{stadt}`): `Badsanierung und Dusche` · `Böden und Wände` · `Balkon und Terrasse` · `[[untergrund|Untergrund]] und [[abdichtung|Abdichtung]]`
-- Satz: `Wir dichten nach [[din-18534|DIN 18534]] ab. So kommt kein Wasser in Wand und Boden.`
+- Einleitung: `Wir prüfen zuerst den [[untergrund|Untergrund]]. Im Bad und auf dem Balkon kommt eine [[abdichtung|Abdichtung]] nach [[din-18534|DIN 18534]] unter die Fliesen.` (Fachwörter hier, nicht in den Linknamen: die Glossarklammer gehört in den Fließtext, E-025)
+- Vier Zeilen mit Link auf die Leistung im Ort (`/leistungen/{id}/{stadt}`): `Badsanierung und Dusche` · `Böden und Wände` · `Balkon und Terrasse` · `Untergrund und Abdichtung`
 
 ## 4 · So läuft es ab
 - Drei Schritte wie auf der Startseite (gleicher Text), ohne Ortsbezug.
