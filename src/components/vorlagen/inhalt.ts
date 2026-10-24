@@ -63,6 +63,8 @@ export interface BelegInhalt {
   zweierbild?: { titel: string; bilder: [{ bild: ArbeitId; unterschrift: string }, { bild: ArbeitId; unterschrift: string }] };
   /** Kennungen aus REVIEWS, Wortlaut unverändert (G8) */
   stimmen?: string[];
+  /** Satz unter den Fotos (z. B. seit wann etwas Standard ist) */
+  satz?: Markentext;
   verweis?: Verweis;
 }
 
@@ -71,6 +73,8 @@ export interface SchrittInhalt {
   titel: string;
   satz: Markentext;
   hilfen?: (Verweis & { satz: Markentext })[];
+  /** verwandte Seiten (Wissensseiten), Namen dürfen Textmarken tragen */
+  verwandte?: Verweis[];
 }
 
 export interface ErzaehlInhalt {
@@ -80,6 +84,30 @@ export interface ErzaehlInhalt {
   worum: WorumInhalt;
   lage: LageInhalt;
   tun: TunInhalt;
+  ablauf: AblaufInhalt;
+  beleg: BelegInhalt;
+  schritt: SchrittInhalt;
+}
+
+/** Ein Block der Wissensseite in „Was wir tun“: Überschrift und wahlweise Absatz, Karten, Liste, Tabelle, Zeichnung */
+export interface Wissensblock {
+  titel: string;
+  absatz?: Markentext;
+  /** Arten oder Möglichkeiten nebeneinander (Kopfzeile ohne Doppelpunkt, ein Satz) */
+  karten?: { kopf: string; satz: Markentext }[];
+  /** Punkte als Fliesen an der Fuge */
+  liste?: Markentext[];
+  tabelle?: { name: string; kopf: string[]; zeilen: string[][] };
+  /** Kennung einer ruhigen Zeichnung, die die Seite über `zeichnungen` liefert */
+  zeichnung?: string;
+}
+
+export interface WissenInhalt {
+  pfad: string;
+  meta: { titel: string; beschreibung: string };
+  worum: WorumInhalt;
+  lage: LageInhalt;
+  wissen: Wissensblock[];
   ablauf: AblaufInhalt;
   beleg: BelegInhalt;
   schritt: SchrittInhalt;

@@ -1,7 +1,8 @@
 // Vorlagen · 6 Nächster Schritt (KERN v3 K-004, K-009, E-012; E-025): die eine Hauptaktion der Seite. Kopf seitlich:
 // links Überschrift und Satz, rechts der Hauptknopf „Termin vor Ort anfragen“ (→ /kontakt, dasselbe Ziel wie im Einstieg),
 // darunter die Rufnummer groß wie im Termin-Abschnitt der Startseite und WhatsApp. Hilfen (Werkzeuge der Seite) folgen
-// als ruhige Liste und konkurrieren nicht mit dem Hauptknopf. Fläche Fliese als Abschluss vor dem Fuß. Serverkomponente.
+// als ruhige Liste und konkurrieren nicht mit dem Hauptknopf; Wissensseiten nennen verwandte Seiten („Mehr zum Thema“).
+// Fläche Fliese als Abschluss vor dem Fuß. Serverkomponente.
 import Link from 'next/link';
 import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
@@ -56,6 +57,23 @@ export default function Schritt({ inhalt, pfad }: { inhalt: SchrittInhalt; pfad:
             </a>
           </div>
         </div>
+        {inhalt.verwandte && inhalt.verwandte.length > 0 && (
+          <div className="w-full border-t border-fuge pt-6">
+            <h3 className="font-text text-fs-3 font-semibold text-tinte">Mehr zum Thema</h3>
+            <ul className="mt-2">
+              {inhalt.verwandte.map((v) => (
+                <li key={v.href} className="border-b border-fuge last:border-b-0">
+                  <Link href={v.href} data-motion="zustand" className={clsx(linkKlassen, 'inline-flex min-h-11 items-center gap-2 py-2 font-text text-fs-3')}>
+                    <span>
+                      <Textmarken text={v.name} />
+                    </span>
+                    <Icon name="pfeil-rechts" groesse={4} className="shrink-0" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
         {inhalt.hilfen && inhalt.hilfen.length > 0 && (
           <div className="w-full border-t border-fuge pt-6">
             <h3 className="font-text text-fs-3 font-semibold text-tinte">Hilfen</h3>

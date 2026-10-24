@@ -7,6 +7,7 @@ import Link from 'next/link';
 import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
 import Abschnitt from '@/components/kern/Abschnitt';
+import Textmarken from '@/components/kern/Textmarken';
 import { linkKlassen } from '@/components/kern/stile';
 import type { BelegInhalt } from '../inhalt';
 import Fotos from './Fotos';
@@ -16,7 +17,12 @@ export default function Beleg({ inhalt, moment, stimmenTitel = 'Das sagen unsere
   return (
     <>
       <Abschnitt id="unsere-arbeiten" formel="beleg" leitachse titel={inhalt.titel}>
-        {inhalt.fotos.length > 0 && <Fotos fotos={inhalt.fotos} spalten={inhalt.fotos.length % 3 === 0 ? 3 : 2} />}
+        {inhalt.fotos.length > 0 && <Fotos fotos={inhalt.fotos} spalten={inhalt.fotos.length === 1 ? 1 : inhalt.fotos.length % 3 === 0 ? 3 : 2} />}
+        {inhalt.satz && (
+          <p className="mt-8 max-w-mass font-text text-fs-4 text-pretty text-tinte">
+            <Textmarken text={inhalt.satz} />
+          </p>
+        )}
         {inhalt.zweierbild && (
           <figure className="mt-16">
             <figcaption className="font-anzeige text-fs-5 font-extrabold text-tinte">{inhalt.zweierbild.titel}</figcaption>
