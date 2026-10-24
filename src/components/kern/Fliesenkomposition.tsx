@@ -15,10 +15,20 @@ function reihen(versatz: (r: number) => number, laenge: number, hoehe: number, h
   return fl;
 }
 
-/** `fuellen`: füllt die Höhe des Bildplatzes (Zuschnitt per slice) statt der Höhe aus dem Format, z. B. in einer Fliese mit Text. */
-export default function Fliesenkomposition({ motiv, format = '1:1', fuellen = false, className }: { motiv: Kompositionsmotiv; format?: '1:1' | '4:5' | '3:2' | '16:9'; fuellen?: boolean; className?: string }) {
+// Mitte des Risses (Motiv „riss“), damit ein Ausschnitt ihn zeigt
+const RISS_MITTE = { x: 57, y: 41 };
+
+/** `fuellen`: füllt die Höhe des Bildplatzes (Zuschnitt per slice) statt der Höhe aus dem Format, z. B. in einer Fliese mit Text.
+ *  `ausschnitt`: zeigt nur diese Breite der Zeichnung (Einheiten von 120, gleiches Format), mittig bzw. um den Riss, damit
+ *  ein kleines Muster wenige große Fliesen mit sichtbarer Fuge zeigt statt vieler winziger. */
+export default function Fliesenkomposition({ motiv, format = '1:1', fuellen = false, ausschnitt = B, className }: { motiv: Kompositionsmotiv; format?: '1:1' | '4:5' | '3:2' | '16:9'; fuellen?: boolean; ausschnitt?: number; className?: string }) {
   const [fb, fh] = format.split(':').map(Number);
   const H = Math.round((B * fh) / fb);
+  const aw = Math.min(ausschnitt, B);
+  const ah = Math.round((aw * fh) / fb);
+  const mitte = motiv === 'riss' ? RISS_MITTE : { x: B / 2, y: H / 2 };
+  const ax = Math.min(Math.max(mitte.x - aw / 2, 0), B - aw);
+  const ay = Math.min(Math.max(mitte.y - ah / 2, 0), H - ah);
   const fliesen =
     motiv === 'kreuzfuge' || motiv === 'riss'
       ? reihen(() => 0, 24, 24, H)
@@ -27,7 +37,7 @@ export default function Fliesenkomposition({ motiv, format = '1:1', fuellen = fa
         : reihen((r) => (r % 3) * 8, 24, 12, H);
   const fisch = motiv === 'fischgraet';
   return (
-    <svg viewBox={`0 0 ${B} ${H}`} aria-hidden="true" focusable="false" className={clsx('block w-full bg-fuge', fuellen ? 'h-full' : 'h-auto', className)} preserveAspectRatio="xMidYMid slice">
+    <svg viewBox={`${ax} ${ay} ${aw} ${ah}`} aria-hidden="true" focusable="false" className={clsx('block w-full bg-fuge', fuellen ? 'h-full' : 'h-auto', className)} preserveAspectRatio="xMidYMid slice">
       {fisch ? (
         <g className="fill-fliese">
           {Array.from({ length: Math.ceil(H / 12) + 2 }, (_, r) =>

@@ -15,7 +15,9 @@ interface FachwortProps {
 
 export default function Fachwort({ id, children, erklaert = true }: FachwortProps) {
   const eintrag = GLOSSAR[id];
-  const wort = children ?? eintrag.begriffe[0];
+  // Normnummern bleiben beisammen („DIN 18534“ bricht nicht vor der Zahl um); lange Einzelwörter dürfen weiter trennen
+  const roh = children ?? eintrag.begriffe[0];
+  const wort = typeof roh === 'string' ? roh.replace(/ (?=\d)/g, '\u00a0') : roh;
   if (!erklaert) return <>{wort}</>;
   return (
     <>

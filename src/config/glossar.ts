@@ -17,8 +17,8 @@ export const GLOSSAR = {
   },
   "din-18534": {
     begriffe: ["DIN 18534"],
-    erklaerung: "Die Regel für Abdichtungen in Bad und Dusche. So kommt kein Wasser in die Wände.",
-    klammer: "die Regel für Abdichtungen in Bad und Dusche; so kommt kein Wasser in die Wände",
+    erklaerung: "Die Regel für Abdichtungen in Bad und Dusche.",
+    klammer: "die Regel für Abdichtungen in Bad und Dusche",
   },
   "din-18040": {
     begriffe: ["DIN 18040"],

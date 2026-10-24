@@ -16,8 +16,8 @@ export interface AbschnittProps {
   nummer?: string;
   titel?: ReactNode;
   einleitung?: ReactNode;
-  /** nur mit kopf="seitlich": Block unter dem Kopf (ab lg in der Kopfspalte, mobil nach dem Inhalt), z. B. Anruf neben
-   *  einem Formular, das mobil direkt auf die Überschrift folgen soll */
+  /** nur mit kopf="seitlich": Block unter dem Kopf (ab lg in der Kopfspalte direkt unter der Einleitung, mobil nach dem
+   *  Inhalt), z. B. Anruf neben einem Formular, das mobil direkt auf die Überschrift folgen soll */
   unterKopf?: ReactNode;
   art?: 'erzaehl' | 'arbeit';
   flaeche?: 'kalk' | 'fliese' | 'tinte';
@@ -80,9 +80,23 @@ export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleit
       <div className={clsx(seitenKlassen, breite === 'mass' && 'max-w-mass', spaet && 'spaet-zeichnen')}>
         {kopf === 'seitlich' ? (
           <div className="grid grid-cols-4 gap-y-12 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12">
-            {kopfInhalt}
-            <div className={clsx('col-span-4 md:col-span-8', unterKopf && 'lg:row-span-2')} data-motion={auftritt ? 'auftritt' : undefined}>{children}</div>
-            {unterKopf && <div className="col-span-4 md:col-span-8 lg:col-span-4">{unterKopf}</div>}
+            {unterKopf ? (
+              // Mit Block unter dem Kopf: ab lg stehen Kopf und Block in einer Spalte untereinander (der Block folgt direkt
+              // auf die Einleitung, auch wenn der Inhalt rechts viel höher ist); mobil löst sich die Spalte auf
+              // (display: contents), und die Reihenfolge Kopf, Inhalt, Block entsteht über `order`.
+              <>
+                <div className="contents lg:col-span-4 lg:block">
+                  {kopfInhalt}
+                  <div className="order-3 col-span-4 md:col-span-8 lg:mt-12">{unterKopf}</div>
+                </div>
+                <div className="order-2 col-span-4 md:col-span-8 lg:order-none" data-motion={auftritt ? 'auftritt' : undefined}>{children}</div>
+              </>
+            ) : (
+              <>
+                {kopfInhalt}
+                <div className="col-span-4 md:col-span-8" data-motion={auftritt ? 'auftritt' : undefined}>{children}</div>
+              </>
+            )}
           </div>
         ) : (
           <>
