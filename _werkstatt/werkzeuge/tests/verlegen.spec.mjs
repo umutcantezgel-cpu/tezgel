@@ -471,46 +471,70 @@ test.describe('Bewegung an (Wechsel mit Fliesen)', () => {
     return text;
   }
 
-  /** Zweiter Wechsel nach ZIEL: Klick auf einen weiteren internen Link, Zurück im Browser, sobald die Schicht `zustaende`
-   *  erreicht (mit `eingehaengt`: erst wenn die neue Seite unter dem Boden schon steht, Adresse = Ziel); danach ruhe,
-   *  Adresse und Inhalt müssen zusammenpassen. */
+  /**
+   * Zweiter Wechsel nach ZIEL: Klick auf einen weiteren internen Link, Zurück im Browser im selben Bild, in dem die Schicht
+   * einen der `zustaende` erreicht (mit `eingehaengt`: erst wenn die neue Seite unter dem Boden steht, Adresse = Ziel).
+   * Danach: Adresse und Inhalt passen, Zurück hat gewirkt (Ziel oder Start, je nachdem, ob die neue Seite schon im Verlauf
+   * stand), kein Abbruch, Wechsel vor Ablauf der 3 s fertig, Scroll wie beim Verlassen, Fokus auf der H1 (Prüfung E-043).
+   */
   async function zurueckIn(page, browser, zustaende, eingehaengt = false) {
     await oeffne(page);
     await beobachte(page);
-    await wechsel(page, () => linkZu(page, ZIEL).click(), ZIEL);
+    const ab0 = await wechsel(page, () => linkZu(page, ZIEL).click(), ZIEL);
+    const scrollStart = (await log(page))[ab0 + 1]?.scroll ?? 0;
     const weiter = await page.evaluate((ziele) => {
       const hier = location.pathname;
       return ziele.find((z) => z !== hier && [...document.querySelectorAll(`#main-content a[href="${z}"]`)].some((el) => el.getClientRects().length > 0)) ?? null;
     }, ['/bad/barrierefreies-bad', '/bad/fliesen', '/bad/bad-aus-einer-hand', '/bad/musterbaeder', '/kontakt', '/bad']);
     expect(weiter, 'weiterer interner Link auf der Zielseite').not.toBeNull();
+    await page.locator(`#main-content a[href="${weiter}"]`).filter({ visible: true }).first().scrollIntoViewIfNeeded();
+    const scrollZiel = await page.evaluate(() => window.scrollY);
     const ab = await laenge(page);
-    const link = page.locator(`#main-content a[href="${weiter}"]`).filter({ visible: true }).first();
-    await link.scrollIntoViewIfNeeded();
-    await link.click();
-    await page.waitForFunction(
-      ([z, w, e]) => z.includes(document.querySelector('.verlegen')?.dataset.zustand) && (!e || location.pathname === w),
-      [zustaende, weiter, eingehaengt],
-      { polling: 'raf', timeout: 10_000 },
+    // Klick und Zurück im Browser selbst: Erkennen und history.back() im selben Bild, ohne Rundreise
+    const vor = await page.evaluate(
+      ([href, z, e]) =>
+        new Promise((fertig) => {
+          [...document.querySelectorAll(`#main-content a[href="${href}"]`)].find((el) => el.getClientRects().length > 0).click();
+          const t0 = performance.now();
+          const bild = () => {
+            const zustand = document.querySelector('.verlegen')?.dataset.zustand;
+            if (z.includes(zustand) && (!e || location.pathname === href)) {
+              const info = { zustand, pfad: location.pathname, t: performance.now() };
+              history.back();
+              fertig(info);
+            } else if (performance.now() - t0 > 8000) fertig(null);
+            else requestAnimationFrame(bild);
+          };
+          bild();
+        }),
+      [weiter, zustaende, eingehaengt],
     );
-    const bei = await zustand(page);
-    await page.evaluate(() => history.back());
+    expect(vor, `Zustand ${zustaende.join('/')} erreicht`).not.toBeNull();
     await warteAufRuhe(page, ab);
     await page.waitForTimeout(300);
+    const l = (await log(page)).slice(ab);
+    const fall = `Zurück in ${vor.zustand} (Adresse beim Zurück ${vor.pfad})`;
+    expect.soft(l.map((e) => e.z), `${fall}: kein Abbruch`).not.toContain('abbruch');
+    expect.soft(l.map((e) => e.z), `${fall}: Fliesen abgenommen`).toContain('abnehmen');
+    expect.soft(l[l.length - 1].t - vor.t, `${fall}: fertig vor Ablauf der 3 s`).toBeLessThan(3000);
     const adresse = await pfad(page);
+    const erwartet = vor.pfad === weiter ? ZIEL : START;
+    expect.soft(adresse, `${fall}: Zurück wirkt`).toBe(erwartet);
     const h1 = (await page.locator('#main-content h1').first().textContent())?.trim() ?? '';
-    expect.soft(h1, `Zurück in ${bei}: Inhalt passt zur Adresse ${adresse}`).toBe(await h1Von(browser, adresse));
+    expect.soft(h1, `${fall}: Inhalt passt zur Adresse ${adresse}`).toBe(await h1Von(browser, adresse));
+    const sollScroll = erwartet === ZIEL ? scrollZiel : scrollStart;
+    expect.soft(Math.abs((await page.evaluate(() => window.scrollY)) - sollScroll), `${fall}: Scroll wie beim Verlassen (${sollScroll} ± 2)`).toBeLessThanOrEqual(2);
+    await expect.soft(page.locator('#main-content h1'), `${fall}: Fokus auf der H1`).toBeFocused();
     expect.soft(await zustand(page)).toBe('ruhe');
-    return { bei, adresse, weiter };
+    return { ...vor, adresse, weiter };
   }
 
-  test('(17) Zurück im Browser, während der Boden liegt und die neue Seite geladen wird (bedeckt, warten): Adresse und Inhalt passen zusammen (Prüfung E-043)', async ({ page, browser }) => {
+  test('(17) Zurück im Browser, während der Boden liegt und die neue Seite geladen wird (bedeckt, warten), vor und nach dem Einhängen der neuen Seite (Prüfung E-043)', async ({ page, browser }) => {
     await zurueckIn(page, browser, ['bedeckt', 'warten']);
-    // die neue Seite steht schon unter dem Boden, gemeldet ist sie noch nicht (Befund der Prüfung: Inhalt der Zielseite
-    // unter der Adresse der verlassenen)
     await zurueckIn(page, browser, ['bedeckt', 'warten'], true);
   });
 
-  test('(18) Zurück im Browser, während der Boden gelegt wird: Zurück wirkt, Adresse und Inhalt passen, Vor führt wieder auf die verlassene Seite (Prüfung E-043)', async ({ page, browser }) => {
+  test('(18) Zurück im Browser, während der Boden gelegt wird: Zurück wirkt, Vor führt wieder auf die verlassene Seite (Prüfung E-043)', async ({ page, browser }) => {
     const { adresse } = await zurueckIn(page, browser, ['legen']);
     expect.soft(adresse, 'Zurück aus der Zielseite führt auf die Startseite des Falls').toBe(START);
     const ab = await laenge(page);
@@ -519,6 +543,66 @@ test.describe('Bewegung an (Wechsel mit Fliesen)', () => {
     await warteAufRuhe(page, ab);
     const h1 = (await page.locator('#main-content h1').first().textContent())?.trim() ?? '';
     expect.soft(h1, 'Vor zeigt die verlassene Seite').toBe(await h1Von(browser, ZIEL));
+  });
+
+  test('(20) Zurück im Browser, während die Fliesen abgenommen werden: Adresse, Inhalt, Scroll und Fokus (Prüfung E-043)', async ({ page, browser }) => {
+    const { adresse } = await zurueckIn(page, browser, ['abnehmen']);
+    expect.soft(adresse).toBe(ZIEL);
+  });
+
+  test('(21) Abbruch, dann derselbe Link noch einmal; die erste Seite kommt während des Legens an: kein zweiter Abbruch, der Boden geht ab (Prüfung E-043)', async ({ page }) => {
+    let freigabe;
+    const tor = new Promise((r) => (freigabe = r));
+    await page.route('**/*', async (route) => {
+      const url = new URL(route.request().url());
+      if (url.pathname.replace(/\/+$/, '') === ZIEL && url.searchParams.has('_rsc')) await tor;
+      await route.continue().catch(() => undefined);
+    });
+    await oeffne(page);
+    await beobachte(page);
+    const link = linkZu(page, ZIEL);
+    await bedienbar(link);
+    const ab = await laenge(page);
+    await link.click();
+    await expect.poll(async () => (await log(page)).slice(ab).map((e) => e.z).join(' '), { timeout: 15_000 }).toContain('abbruch');
+    await warteAufRuhe(page, ab);
+    expect.soft(await pfad(page), 'nach dem Abbruch noch auf der Startseite').toBe(START);
+    const ab2 = await laenge(page);
+    await link.click();
+    await page.waitForFunction(() => document.querySelector('.verlegen')?.dataset.zustand === 'legen', null, { polling: 'raf', timeout: 5000 });
+    freigabe();
+    await warteAufRuhe(page, ab2);
+    const l = (await log(page)).slice(ab2);
+    expect.soft(l.map((e) => e.z), 'zweiter Wechsel ohne Abbruch').not.toContain('abbruch');
+    expect.soft(l.map((e) => e.z), 'Fliesen abgenommen').toContain('abnehmen');
+    expect.soft(l[l.length - 1].t - l[0].t, 'zweiter Wechsel vor Ablauf der 3 s fertig').toBeLessThan(3000);
+    expect.soft(await pfad(page)).toBe(ZIEL);
+    await expect.soft(page.locator('#main-content h1')).toBeFocused();
+  });
+
+  test('(22) Anker derselben Seite, dann Wechsel, dann Zurück: Adresse und Inhalt der Seite mit dem Anker (Prüfung E-043)', async ({ page, browser }) => {
+    await oeffne(page, '/');
+    await beobachte(page);
+    const anker = page.locator('#main-content a[href^="#"]').filter({ visible: true }).first();
+    const ziel = await anker.getAttribute('href');
+    await anker.click();
+    await expect.poll(() => page.evaluate(() => location.hash)).toBe(ziel);
+    // nächster sichtbarer interner Link einer anderen Seite (Scrollen legt keinen Verlaufseintrag an)
+    const weiter = await page.evaluate(() =>
+      [...document.querySelectorAll('#main-content a[href^="/"]')]
+        .find((el) => el.getClientRects().length > 0 && !/^\/(#|$)/.test(el.getAttribute('href')))
+        ?.getAttribute('href') ?? null,
+    );
+    expect(weiter, 'interner Link einer anderen Seite').not.toBeNull();
+    await page.locator(`#main-content a[href="${weiter}"]`).filter({ visible: true }).first().scrollIntoViewIfNeeded();
+    await wechsel(page, () => page.locator(`#main-content a[href="${weiter}"]`).filter({ visible: true }).first().click(), weiter);
+    const ab = await laenge(page);
+    await page.evaluate(() => history.back());
+    await expect.poll(() => pfad(page), { timeout: 10_000 }).toBe('/');
+    await warteAufRuhe(page, ab);
+    await page.waitForTimeout(300);
+    const h1 = (await page.locator('#main-content h1').first().textContent())?.trim() ?? '';
+    expect.soft(h1, 'Inhalt der Startseite unter der Adresse /' + ziel).toBe(await h1Von(browser, '/'));
   });
 
   test('(19) Abbruch nach 3 s (Zielseite antwortet nicht): der Boden blendet aus statt in einem Bild zu verschwinden, danach erscheint die Seite', async ({ page }) => {

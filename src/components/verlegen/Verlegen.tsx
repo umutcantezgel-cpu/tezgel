@@ -227,6 +227,39 @@ function adresse(): string {
   return location.pathname + location.search;
 }
 
+function gleicherPfad(a: string, b: string): boolean {
+  const ohne = (p: string) => p.replace(/\/+$/, '') || '/';
+  return ohne(a) === ohne(b);
+}
+
+/** Meldet „bereit“ nach zwei Bildern (Layout und Malen der neuen Seite) und sobald der Hauptfaden frei ist, höchstens nach
+ *  400 ms (E-036), aber nur, wenn seither keine neuere Navigation abgeschickt wurde (Prüfung E-043). Gibt den Abbruch zurück. */
+function spaeterBereit(nummer: number, melden: () => void): () => void {
+  let zweites = 0;
+  let ruhe = 0;
+  const pruefe = () => {
+    if (nummer === auftrag) melden();
+  };
+  const erstes = requestAnimationFrame(() => {
+    zweites = requestAnimationFrame(() => {
+      ruhe = window.requestIdleCallback ? window.requestIdleCallback(pruefe, { timeout: 400 }) : window.setTimeout(pruefe, 0);
+    });
+  });
+  return () => {
+    cancelAnimationFrame(erstes);
+    cancelAnimationFrame(zweites);
+    if (window.cancelIdleCallback) window.cancelIdleCallback(ruhe);
+    else window.clearTimeout(ruhe);
+  };
+}
+
+/** Zustand des zuletzt gesehenen Verlaufseintrags von Next (__NA und Baum der angezeigten Seite). */
+let nextZustand: { __NA?: boolean } | null = null;
+function merkeNextZustand(): void {
+  const z = history.state as { __NA?: boolean } | null;
+  if (z?.__NA) nextZustand = z;
+}
+
 function merkeScroll(fuer: string): void {
   try {
     const alle = JSON.parse(sessionStorage.getItem(SPEICHER_SCROLL) ?? '{}') as Record<string, number>;
@@ -353,6 +386,15 @@ export default function Verlegen() {
     const uhren: number[] = [];
     let laserLauf: Animation | null = null;
     let angefordert = false;
+    let sofortAus: () => void = () => undefined;
+    /** Die Navigation führt auf den Pfad, der schon angezeigt wird (z. B. die Seite kam nach einem Abbruch doch noch, oder
+     *  Zurück auf einen Eintrag desselben Pfads): Es gibt keinen Pfadwechsel und damit kein „bereit“ aus dem Pfad-Effekt;
+     *  darum hier selbst melden (Prüfung E-043). */
+    const bereitOhnePfadwechsel = () => {
+      ausVerlauf = false;
+      sofortAus();
+      sofortAus = spaeterBereit(auftrag, () => senden.current({ typ: 'bereit' }));
+    };
 
     const stelle = (z: string) => {
       schicht.dataset.zustand = z;
@@ -485,6 +527,9 @@ export default function Verlegen() {
 
     const freigeben = () => {
       stoppeUhren();
+      zurueckAusAufschub = false;
+      sofortAus();
+      sofortAus = () => undefined;
       beende(laufend);
       verbergeLaser();
       if (belag) for (const el of belag.elemente) el.style.opacity = '0';
@@ -498,6 +543,7 @@ export default function Verlegen() {
       if (!ziel) return;
       auftrag++;
       startTransition(() => router.push(ziel));
+      if (gleicherPfad(new URL(ziel, location.href).pathname, pfadRef.current)) bereitOhnePfadwechsel();
       // React startet eine View Transition auch bei B-01-Wechseln, die eine <ViewTransition> ein- oder aushängen (Plan-Morph
       // auf /leistungen): unter dem Boden sofort beenden, solange er liegt (höchstens bis zum Ende des Wartens)
       const bis = performance.now() + WARTEN_HOECHSTENS;
@@ -616,6 +662,8 @@ export default function Verlegen() {
     const klick = (e: MouseEvent) => {
       const a = (e.target as Element | null)?.closest?.('a[href]') as HTMLAnchorElement | null;
       if (!a) return;
+      // Zustand der angezeigten Seite merken, bevor ein Anker derselben Seite einen Eintrag ohne Zustand anlegt (stempeln)
+      merkeNextZustand();
       const grund = pruefeKlick({
         taste: e.button,
         zusatztaste: e.metaKey || e.ctrlKey || e.shiftKey || e.altKey,
@@ -661,61 +709,87 @@ export default function Verlegen() {
     const neuAbschicken = () => {
       zurueckAusAufschub = true;
       auftrag++;
+      const schonDa = gleicherPfad(location.pathname, pfadRef.current);
       eigenerPopstate = true;
       try {
         window.dispatchEvent(new PopStateEvent('popstate', { state: history.state }));
       } finally {
         eigenerPopstate = false;
       }
+      if (schonDa) bereitOhnePfadwechsel();
     };
 
     steuerung = {
       popstate: (e) => {
+        merkeNextZustand();
         // Zurück, während der Morph noch auf die neue Seite wartet: Next soll es sehen (verwirft die offene Navigation),
-        // der Morph endet ohne Gleiten
+        // der Morph endet ohne Gleiten; Scroll und Fokus der Seite aus dem Verlauf setzt der Pfad-Effekt
         if (morphOffen) {
           morphOffen = false;
           beendeUebergang();
           ausVerlauf = true;
           verlauf(true);
+          if (!gleicherPfad(location.pathname, pfadRef.current)) verlaufOhneBoden = true;
           return false;
         }
         const state = e.state as { __NA?: boolean } | null;
-        // Ohne Next-Zustand (z. B. Sprunglink #main-content) oder bei gleichem Pfad: nichts tun.
-        if (!state?.__NA || location.pathname === pfadRef.current) return false;
-        ausVerlauf = true;
-        verlauf(true);
+        // Ohne Next-Zustand: nichts tun (Anker derselben Seite bekommen ihn beim hashchange, siehe stempeln).
+        if (!state?.__NA) return false;
+        const gleich = gleicherPfad(location.pathname, pfadRef.current);
         if (ZURUECK === 'sicher') {
-          if (lage.zustand !== 'ruhe') return false;
+          if (lage.zustand !== 'ruhe' || gleich) return false;
+          ausVerlauf = true;
+          verlauf(true);
           senden.current({ typ: 'start-liegend', richtung: 'zurueck' });
           return false;
         }
         // Boden wird noch gelegt, navigiert ist noch nicht: das Ereignis wartet und wird nachgereicht, sobald der Boden liegt
         // (aus einem Vorwärtswechsel wird ein Wechsel aus dem Verlauf, kein router.push mehr; Prüfung E-043)
         if (lage.zustand === 'legen') {
+          ausVerlauf = true;
+          verlauf(true);
           senden.current({ typ: 'umkehr' });
           return true;
         }
         // Boden liegt, die Navigation läuft schon: Next übernimmt das Ereignis (verwirft die offene Navigation), der Boden
         // wartet auf die Seite aus dem Verlauf und deckt sie mit ihrer gemerkten Scrollstellung auf
         if (lage.zustand === 'bedeckt' || lage.zustand === 'warten') {
+          ausVerlauf = true;
+          verlauf(true);
           auftrag++;
           zurueckAusAufschub = true;
+          if (gleich) bereitOhnePfadwechsel();
           return false;
         }
+        // gleicher Pfad in Ruhe, beim Abnehmen oder nach dem Abbruch: Next allein (Anker, dieselbe Seite)
+        if (gleich) return false;
+        ausVerlauf = true;
+        verlauf(true);
+        merkeScroll(angezeigt);
         // Fliesen werden schon abgenommen (oder blenden nach dem Abbruch aus): ohne Boden an Next, Scroll und Fokus danach
         if (lage.zustand !== 'ruhe') {
-          merkeScroll(angezeigt);
           verlaufOhneBoden = true;
           return false;
         }
-        merkeScroll(angezeigt);
         senden.current({ typ: 'start', ziel: '', richtung: 'zurueck' });
         return true;
       },
     };
 
+    // Ein Anker derselben Seite (Hauptknopf #termin, Sprunglink, Sprungindex) legt einen Verlaufseintrag ohne Zustand an; Next
+    // überginge ihn beim Zurück von einer anderen Seite (Adresse wechselt, Inhalt bleibt). Darum bekommt er den Zustand der
+    // angezeigten Seite (dieselbe Seite, also derselbe Baum); mit __NA reicht Nexts replaceState ihn unverändert durch.
+    const stempeln = () => {
+      const z = history.state as { __NA?: boolean } | null;
+      if (z?.__NA) {
+        nextZustand = z;
+        return;
+      }
+      if (nextZustand) history.replaceState({ ...nextZustand }, '', location.href);
+    };
+
     angezeigt = adresse();
+    merkeNextZustand();
     let koernungAus: () => void = () => undefined;
     const vorab = () => {
       liesVorab();
@@ -725,9 +799,11 @@ export default function Verlegen() {
     const speichernVorVerlassen = () => merkeScroll(adresse());
     document.addEventListener('click', klick, true);
     window.addEventListener('pagehide', speichernVorVerlassen);
+    window.addEventListener('hashchange', stempeln);
     return () => {
       document.removeEventListener('click', klick, true);
       window.removeEventListener('pagehide', speichernVorVerlassen);
+      window.removeEventListener('hashchange', stempeln);
       if (window.cancelIdleCallback) window.cancelIdleCallback(leerlauf);
       else window.clearTimeout(leerlauf);
       koernungAus();
@@ -739,7 +815,7 @@ export default function Verlegen() {
   // Neue Seite ist da: nach zwei Bildern (Layout und Malen der neuen Seite) und sobald der Hauptfaden frei ist, werden die
   // Fliesen abgenommen. Ohne die Ruhe startete das Abnehmen, während die neue Seite noch rechnete, und der Boden lag sichtbar still
   // (Sichtabnahme E2, Befund 1 und 2; E-036). Bis dahin zeigt die Wartelinie das Warten; spätestens nach 400 ms geht es los.
-  // Gemeldet wird nur, wenn die Seite nach der zuletzt abgeschickten Navigation erschien (auftrag, Prüfung E-043).
+  // Gemeldet wird nur, wenn die Seite nach der zuletzt abgeschickten Navigation erschien (auftrag, spaeterBereit, E-043).
   useEffect(() => {
     if (pfad === pfadRef.current) return;
     pfadRef.current = pfad;
@@ -758,23 +834,8 @@ export default function Verlegen() {
       window.scrollTo({ top: gemerkterScroll(), left: 0, behavior: 'instant' });
       fokussiereUeberschrift();
     }
-    let zweites = 0;
-    let ruhe = 0;
-    const meiner = auftrag;
-    const melden = () => {
-      if (meiner === auftrag) senden.current({ typ: 'bereit' });
-    };
-    const erstes = requestAnimationFrame(() => {
-      zweites = requestAnimationFrame(() => {
-        ruhe = window.requestIdleCallback ? window.requestIdleCallback(melden, { timeout: 400 }) : window.setTimeout(melden, 0);
-      });
-    });
-    return () => {
-      cancelAnimationFrame(erstes);
-      cancelAnimationFrame(zweites);
-      if (window.cancelIdleCallback) window.cancelIdleCallback(ruhe);
-      else window.clearTimeout(ruhe);
-    };
+    merkeNextZustand();
+    return spaeterBereit(auftrag, () => senden.current({ typ: 'bereit' }));
   }, [pfad]);
 
   return (

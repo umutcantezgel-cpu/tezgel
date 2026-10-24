@@ -314,6 +314,11 @@ test('Stückplan 5: jede Fliese einzeln: in einer Spalte von oben nach unten nac
       if (uebernaechste !== undefined) {
         assert.ok(ende(takte[i], 'legen') <= uebernaechste + 1e-9, `${fall}: Fliese in Spalte ${spalten[i]} fliegt noch, wenn Spalte ${spalten[i] + 2} beginnt`);
       }
+      // auch das Abnehmen einzeln: jede Fliese ist weg, bevor Spalte k + 3 abgenommen wird
+      const ab3 = takte.filter((_, j) => spalten[j] === spalten[i] + 3).map((t) => t.abnehmenBeginn);
+      if (ab3.length) {
+        assert.ok(ende(takte[i], 'abnehmen') <= Math.min(...ab3) + 1e-9, `${fall}: Fliese in Spalte ${spalten[i]} weicht noch, wenn Spalte ${spalten[i] + 3} abgenommen wird`);
+      }
     }
   });
 });
@@ -363,11 +368,13 @@ function buntheit(hex) {
   return Math.hypot(1.9779984951 * l - 2.428592205 * m + 0.4505937099 * s, 0.0259040371 * l + 0.7827717662 * m - 0.808675766 * s);
 }
 
-test('Stückplan 9: komplett neutral: Grundton Kalk ohne Farbe (Buntheit unter 0,003), themeColor gleich Kalk, Wartelinie im Seitenwechsel nicht in Laserrot', () => {
+test('Stückplan 9: neutral: Kalk unbunt (Buntheit unter 0,003), Fliese und Fuge unter 0,01, themeColor gleich Kalk, Wartelinie im Seitenwechsel in strich statt Laserrot', () => {
   const css = readFileSync(new URL('../src/app/globals.css', import.meta.url), 'utf8');
-  const kalk = css.match(/--color-kalk:\s*(#[0-9A-Fa-f]{6});/)?.[1];
+  const farbe = (name) => css.match(new RegExp(`--color-${name}:\\s*(#[0-9A-Fa-f]{6});`))?.[1];
+  const kalk = farbe('kalk');
   assert.ok(kalk, 'Kalk in globals.css');
   assert.ok(buntheit(kalk) < 0.003, `Kalk ${kalk}: Buntheit ${buntheit(kalk).toFixed(4)}`);
+  for (const name of ['fliese', 'fuge']) assert.ok(buntheit(farbe(name)) < 0.01, `${name} ${farbe(name)}: Buntheit ${buntheit(farbe(name)).toFixed(4)}`);
   const dokument = readFileSync(new URL('../src/app/(bestand)/_dokument.tsx', import.meta.url), 'utf8');
   assert.equal(dokument.match(/themeColor:\s*'(#[0-9A-Fa-f]{6})'/)?.[1].toUpperCase(), kalk.toUpperCase());
   const bewegung = readFileSync(new URL('../src/app/bewegung.css', import.meta.url), 'utf8');
