@@ -26,7 +26,7 @@
   - all: `Alle Artikel`
   - bad: `Bad und Dusche`
   - fliesen: `Fliesen und Material`
-  - untergrund: `[[untergrund|Untergrund]] und Abdichtung`
+  - untergrund: `Untergrund und Abdichtung`
   - aussen: `Balkon und Terrasse`
   - pflege: `Pflege und Wert erhalten`
   - ratgeber: `Ratgeber und Kosten`

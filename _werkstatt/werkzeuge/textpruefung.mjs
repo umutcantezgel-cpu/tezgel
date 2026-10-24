@@ -46,7 +46,9 @@ function stueckeAusMarkdown(md) {
     if (meta) { stuecke.push({ text: meta[2], art: meta[1] === 'Titel' ? 'meta-titel' : 'meta-beschreibung', abschnitt }); continue; }
     if (/^meta$/i.test(abschnitt)) continue; // H1 der Meta-Liste steht in Abschnitt 1 noch einmal
     const etikett = (/^\s*(?:-|\d+\.)\s*([^`:]*?):?\s*`/.exec(zeile)?.[1] ?? '').trim();
-    if (/^(Brotkrumen|Hauptknopf|Knopf|Kontakt|Link|Links|Knöpfe)\b/i.test(etikett)) continue;
+    if (/^(Brotkrumen|Hauptknopf|Knopf|Kontakt|Link|Links|Knöpfe|Verwandte)\b/i.test(etikett)) continue;
+    // Etikett nur aus einer Kennung („- bad:“, „- untergrund:“): Name eines Bedienelements (Filter, Reiter), kein Fließtext
+    if (/^[a-z0-9-]+$/.test(etikett)) continue;
     const ueberschrift = /^(H[1-6]|Kopfzeile|Überschrift)\b/i.test(etikett);
     const istAbsatz = /^Absatz\b/i.test(etikett);
     const segmente = [...zeile.matchAll(/`([^`]+)`/g)].map((m) => m[1].trim());

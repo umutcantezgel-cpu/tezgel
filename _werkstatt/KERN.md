@@ -272,7 +272,10 @@ Maschinenfassung `src/config/glossar.ts` (Quelle) und `regeln/glossar.json` (Pr�
 | F-24 | Instagram-Profil `fliesenverlegung_tezgel` | `company.js:113` |
 | F-25 | Barrierefreies Bad: Planung nach DIN 18040-2; Zuschuss der Pflegekasse ab Pflegegrad 1 bis 4.180 € je Person, bei zwei Personen mit Pflegegrad bis 8.360 € (sinngleich) | `src/app/(bestand)/bad/barrierefreies-bad/page.jsx:27-28`, `:50`, `:91` |
 | F-26 | Landkreis je Ort (Feld `region`): zum Beispiel Wetzlar im Lahn-Dill-Kreis, Gießen im Landkreis Gießen | `src/config/cities.ts:16`, `:24` und folgende |
+| F-27 | Bodengleiche Dusche mit Gefälle zum Ablauf (ohne Zahl) | `src/app/(bestand)/bad/page.jsx:46` |
+| F-28 | Bezeichnung „Fachbetrieb“ („Eingetragener Fachbetrieb der HWK Wiesbaden“); Region „Mittelhessen“ | `src/config/company.js:61`, `:84` |
 - **Versprechen mit rechtlicher Bindung** (bleiben sinngleich, nie verschärft, Bestätigung M-07): verbindlicher Festpreis bzw. Festpreisangebot · Rückruf „innerhalb von 24 Stunden“ (HeroContactForm, Schnellanfrage, FinalCTA, Ortsseiten) gegen „binnen 24 bis 48 Stunden“ (Konfigurator, Express-Anfrage, Projektcheck) · Staubschutz-Garantie · „Feste Zusagen für Baustart und Fertigstellung“ · kostenfreier Termin vor Ort · „100 % unverbindlich“. Regel bis zur Antwort: jedes Formular behält seine eigene Zusage; neue Texte nennen keine Frist, sondern „Deniz Tezgel ruft Sie zurück“.
+- **Allgemeines Fachwissen** (E-027): Wie ein Material aussieht, wofür ein Verlegemuster passt, wozu eine Schicht dient, darf auf Wissens- und Erzählseiten stehen, ohne Zahl und ohne Zusage. Zahlen, Zusagen und Aussagen über den Betrieb nur aus diesem Faktenblatt.
 - **Nicht verwenden** (nicht belegt): Meisterbrief oder „Meisterbetrieb“, Zahl der Mitarbeitenden, „über 15 Jahre“, Zertifikate, Partnerstatus der Marken, Projektorte zu Fotos, Dauer einer Badsanierung.
 
 ## Markierte Annahmen

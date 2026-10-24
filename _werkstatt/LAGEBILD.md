@@ -43,7 +43,7 @@ Quelle: `_relaunch/FUNKTIONSLISTE.md` (F-01…F-19), Tests in `_werkstatt/werkze
 | F-09 | Schnellanfrage mit Honigtopf | Ortsseiten, Leistung × Ort | gleich | funktion-schnellanfrage |
 | F-10 | WhatsApp-Links und Widget | global | gleich | funktion-kontaktwege |
 | F-11 | Einwilligung | global | unverändert (G8) | funktion-einwilligung |
-| F-12 | Karten hinter Einwilligung | `/`, `/standorte`, `/kontakt` | `/standorte`, `/kontakt`, ab E3 auch `/ueber-uns`; auf `/` keine Karte (Orte als Liste mit Maßkette), also keine Anfrage an Karten-Hosts | funktion-einwilligung |
+| F-12 | Karten hinter Einwilligung | `/`, `/standorte`, `/kontakt` | `/standorte`, `/kontakt`; auf `/` keine Karte (Orte als Liste mit Maßkette) und auf `/ueber-uns` die gezeichnete Karte (E-027), dort also keine Anfrage an Karten-Hosts | funktion-einwilligung |
 | F-13 | Navigation (Mega-Menü, Mobilmenü, Sprunglink) | global | neue Navigation K-009, eine Aufklappebene | funktion-navigation |
 | F-14 | FAQ-Akkordeon | `/`, `/faq` und weitere | ohne `/` (Startseite nach Seitenformel, E-012), sonst gleich | funktion-navigation |
 | F-15 | Telefon und E-Mail | global | gleich | funktion-kontaktwege |
