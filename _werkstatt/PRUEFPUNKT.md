@@ -1,9 +1,9 @@
 # PRUEFPUNKT
 
-- Lauf „Verständlich, echt, ausgezeichnet“ · Etappe E3, Welle E3-W0 (Befunde des Tors E2 an der Startseite) · Stand 2026-10-24 14:44 CEST
+- Lauf „Verständlich, echt, ausgezeichnet“ · Etappe E3, Welle E3-W0 abgeschlossen, als Nächstes E3-W1 · Stand 2026-10-24 16:00 CEST
 - Tor E2 abgeschlossen nach zwei Anläufen (E-038, `berichte/E2-SICHT-2.md`): Ansichtswert 7,14, Z-04 auf `/` offener Punkt in PLAN.md, `/` ist das Muster. Pakete E3-START-01 bis 08, E3-LEIST-01, E3-PRUEF-W0 in PLAN.md (Welle E3-W0), danach E3-W1 (Vorlagen tragen die SVG-Bewegungen nach E-037, Startseite auf vorlagen/teile umstellen, hauptziel für /kontakt und /standorte).
-- Server: Produktionsbau 4311 = Reinraum 564ff56 (`$SCRATCH/reinraum-564ff56`), alter Stand 4310 = `$SCRATCH/reinraum-c53faf4`, Entwicklungsserver 4320. Material Anlauf 2 in `$SCRATCH/E2-SICHT-2/` (Juror, Faktenprüfung fakten-0/1/2/5, Messskripte).
-- Laufend (14:44): E3-START-01 bis 08 gebaut und gepusht (4324bd7, 11cc38d; E-039, E-040). Als Nächstes E3-LEIST-01 (Reinraum von HEAD, Lighthouse mobil Median aus 3, Hebel aus E-034, Blockierzeit der SVG-Bewegungen), dann E3-PRUEF-W0 (Erstes Bild 10 Geräte, 200 %, axe, Lesbarkeit, Specs Intro, Verlegen, Plan-Morph im Produktionsbau). Danach E3-W1: Vorlagen tragen die SVG-Bewegungen (E-037), Startseite auf vorlagen/teile.
+- Server: Produktionsbau 4311 = Reinraum e7dd3ee (`$SCRATCH/reinraum-e7dd3ee`), alter Stand 4310 = `$SCRATCH/reinraum-c53faf4` (wird gerade neu gebaut, Log `$SCRATCH/orch/reinraum-c53faf4.log`), Entwicklungsserver 4320 gestoppt (bei Bedarf `dev-server.sh start`). Vor Funktionsprüfungen und nach Lighthouse den Produktionsserver neu starten (Logo 256 px prüfen, EINRICHTUNG).
+- Laufend (16:00): E3-W0 fertig (E-039 bis E-041, belege/e3/W0.md). Als Nächstes E3-W1: (1) Vorlagen tragen die SVG-Bewegungen nach E-037 (sig-kreuzlinie, sig-flucht, sig-plan im Einstieg der Vorlage; einzugsband, szene-ablauf, fugenband wo passend), (2) Startseite auf vorlagen/teile umstellen ohne sichtbare Änderung (Bildvergleich vorher/nachher), (3) hauptziel für /kontakt und /standorte, (4) E3-BAU-Wellen nach PLAN.
 - Werkzeuge: `einzelbild.mjs` und `probelauf.mjs` setzen die 200-%-Schrift jetzt ab dem ersten Byte (E-038).
 
 - E0 abgeschlossen bis auf Lighthouse: E0-PRUEF-03 und E0-PROBE-01…10 zurück und gesichert (`pakete/*.rueckgabe.md`), Werte in LAGEBILD Abschnitt 4 und 5, ABNAHME Z-11.

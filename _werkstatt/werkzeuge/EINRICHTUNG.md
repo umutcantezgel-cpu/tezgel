@@ -151,3 +151,6 @@ Der Bildoptimierer von `next start` kann nach vielen Läufen mit abgebrochenen A
 
     PORT=4311 bash _werkstatt/werkzeuge/server.sh stop; PORT=4311 REINRAUM_DIR=$SCRATCH/reinraum-<sha> bash _werkstatt/werkzeuge/server.sh start <sha>
     curl -s -o /dev/null -m 15 -w '%{http_code} %{time_total}\n' -H 'Accept: image/avif,image/webp,*/*' 'http://127.0.0.1:4311/_next/image?url=%2Fimages%2Farbeiten%2Fbad%2Fhelles-bad-glasdusche-holzoptik.jpg&w=1080&q=75'
+    curl -s -o /dev/null -m 10 -w 'logo %{http_code} %{time_total}\n' -H 'Accept: image/avif,image/webp,*/*' 'http://127.0.0.1:4311/_next/image?url=%2Fimages%2Flogo%2Ftezgel-logo.webp&w=256&q=75'
+
+Auch schon gecachte Breiten können hängen (E-041: nach zehn Lighthouse-Läufen antwortete das Kopf-Logo in 256 px nicht mehr, 384 px sofort; alle 354 Funktionsprüfungen liefen danach in Zeitüberschreitung). Darum vor jedem Lauf der Funktionsprüfungen und nach jeder Lighthouse-Reihe neu starten und das Logo mitprüfen; Funktionsprüfungen nie direkt nach Lighthouse ohne Neustart.
