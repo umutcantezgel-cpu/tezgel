@@ -2,7 +2,9 @@
 // Konsolenfehlern, ueberlauf() und ueberlappung() je Ansicht.
 // Nutzung: node einzelbild.mjs [--base URL] --seite /kontakt [--ansichten m390,d1440 | --geraete alle|liste] [--ziel DIR]
 //          [--scroll 0|<px>|#anker] [--voll] [--einwilligung abgelehnt|erstbesuch|alle]
-//          [--bewegung reduce|no-preference] [--warte ms]
+//          [--bewegung reduce|no-preference] [--warte ms] [--schrift 200]
+// --schrift: Systemschrift in Prozent über ein eigenes <style> mit !important vor jedem Laden (wie SCHRIFT_INIT in
+//           probelauf.mjs; ein Inline-Stil an <html> überschreibt die Hydrierung, E-023). Dateiname <ansicht>-s<pct>.jpg.
 // Standard: --base aus lib.mjs (BASE, 4310), --ansichten m390,t768,d1440, --scroll 0, Ziel
 //           _werkstatt/cache/einzelbild/<seiten-slug>/. Dateiname <ansicht>.jpg, bei --voll <ansicht>-voll.jpg (ganze Seite).
 // Ausgabe: Bildpfade auf stdout, Zusammenfassung auf stderr. Exit 1, wenn eine Ansicht nicht 200 liefert
@@ -28,6 +30,12 @@ const scroll = arg('scroll', '0');
 if (scroll !== '0' && !scroll.startsWith('#') && !Number.isFinite(Number(scroll))) { console.error('--scroll: 0, <px> oder #anker'); process.exit(2); }
 const einwilligung = arg('einwilligung', 'abgelehnt');
 const bewegung = arg('bewegung', 'reduce');
+const schrift = arg('schrift', null);
+if (schrift !== null && !/^\d{2,3}$/.test(schrift)) { console.error(`--schrift ungültig: ${schrift}`); process.exit(2); }
+const SCHRIFT_INIT = (pct) => {
+  const add = () => { const st = document.createElement('style'); st.setAttribute('data-einzelbild-schrift', ''); st.textContent = `html { font-size: ${pct}% !important; }`; (document.head || document.documentElement).appendChild(st); };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', add); else add();
+};
 const warte = Number(arg('warte', '0'));
 const voll = flag('voll');
 const ziel = ensureDir(arg('ziel') ? path.resolve(arg('ziel')) : path.join(RELAUNCH, 'cache', 'einzelbild', slug(seite)));
@@ -58,11 +66,12 @@ for (const a of ansichten) {
   const protokoll = [];
   await installSperre(context, { protokoll });
   await setzeEinwilligung(context, einwilligung, base);
+  if (schrift) await context.addInitScript(SCHRIFT_INIT, Number(schrift));
   const page = await context.newPage();
   const konsole = [];
   page.on('console', (m) => { if (m.type() === 'error') konsole.push(m.text().slice(0, 300)); });
   page.on('pageerror', (e) => konsole.push(`pageerror: ${String(e.message).slice(0, 300)}`));
-  const r = { ansicht: a, seite, status: null, datei: null, anker: null, konsole, ueberlauf: [], ueberlappung: [], ueberlappungGesamt: 0, ueberlappungNachArt: {}, fehler: null };
+  const r = { ansicht: a, seite, schrift: schrift ? Number(schrift) : 100, status: null, datei: null, anker: null, konsole, ueberlauf: [], ueberlappung: [], ueberlappungGesamt: 0, ueberlappungNachArt: {}, fehler: null };
   try {
     const resp = await page.goto(base + seite, { waitUntil: 'domcontentloaded', timeout: 45000 });
     r.status = resp?.status() ?? null;
@@ -76,7 +85,7 @@ for (const a of ansichten) {
     r.ueberlappung = zahl.befunde;
     r.ueberlappungGesamt = zahl.gesamt;
     r.ueberlappungNachArt = zahl.nachArt;
-    const datei = path.join(ziel, voll ? `${a}-voll.jpg` : `${a}.jpg`);
+    const datei = path.join(ziel, `${a}${schrift ? `-s${schrift}` : ''}${voll ? '-voll' : ''}.jpg`);
     if (voll) {
       // Ganzseitenbild: spätes Zeichnen (content-visibility: auto, E-022) aufheben, sonst bleiben Abschnitte außerhalb des
       // Bildschirms leer, die beim Scrollen gezeichnet werden
