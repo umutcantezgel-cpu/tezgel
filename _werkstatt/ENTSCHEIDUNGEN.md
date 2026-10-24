@@ -128,3 +128,15 @@ Pakete E0-PRUEF-01, -02a bis -02d und die unabhängige Abnahme E0-PRUEF-02-PA si
   - Einstieg: WhatsApp-Knopf erst ab sm (mobil in der Leiste), Telefon mit sichtbarem „Anrufen:“; Startbild ab md an der Textkante.
   - 404 ohne Mono-Etikett, „(Fehler 404)“ im Satz, Zeichnung mit vier Fliesen je Reihe. Ortslinks über die ganze Zeile (Trefffläche).
 - **Nicht übernommen:** Untere Leiste erst nach dem Einstieg einblenden (K-009 hält sie als feste Ebene; stattdessen weniger Doppelungen im Einstieg). Zusageband auf `/` ausblenden (gilt seitenweit; Doppelung mit „Was wir tun“ hingenommen). Einwilligungsbanner verdeckt beim Erstbesuch Teile des ersten Bildschirms: unantastbar (G8), Fall für MENSCHEN.md (M-18).
+
+## E-022 · Sichtprüfung der Startseite, Runde 2 (24.10.2026, Workflow wf_919b1170-cfe, unabhängige Prüferin)
+- **Urteil Runde 2:** Verständlichkeit 7, Hierarchie 7, Komposition 7, Typografie 7, Bild 7, Eigenständigkeit 6, Handwerk 6. 16 neue Befunde (2 hoch, alle bei 200 % Systemschrift), 5 Befunde der Runde 1 teilweise offen. Rückgaben: `pakete/E2-PRUEF-START-2-{W,R,SICHT}.rueckgabe.md`.
+- **Übernommen (Orchestrator, Commits 8052766 bis 39eda73 und Folgecommit):**
+  - 200 %: Kundenstimmen mit `wrap-break-word` (Wortlaut mit fehlenden Leerzeichen bleibt unverändert, G8), große Stimme jetzt C. W. in fs-4; Formular-Auswahl per Container-Abfrage einspaltig, weniger Innenabstand; Telefonknopf mit Baustein `Rufnummer` (Umbruch nur nach dem Schrägstrich); Lage-Fliesen und Bereichszeilen per Container-Abfrage (unter 20 rem Bild als Streifen, Muster entfällt); Menüfuß einspaltig unter `@3xs`; untere Leiste behält „Termin“ als Wort.
+  - Einstieg mobil: Hauptknopf und Telefon direkt nach H1 und Ort, Vorspann danach (`order`); WhatsApp im Einstieg erst ab lg.
+  - Doppelte Bedienflächen: Kopf zeigt Telefon und Hauptknopf erst ab lg, darunter trägt die Leiste beides (`ohneLeiste()` in `navigation.js`: auf den vier Abläufen ohne Leiste bleiben sie im Kopf).
+  - Eigenständigkeit: Verlegemuster aus dem Formsystem statt Strichsymbolen in „Was wir tun“ (`Fliesenkomposition` mit `ausschnitt`); Orte mit Maßkette je Entfernungsbereich und zwei Spalten; Termin-Abschnitt mit großer Rufnummer; Schrittlinie mobil auf dem Lot der Laserlinie.
+  - Abschnitt `unterKopf`: ab lg in einer Spalte mit dem Kopf (folgt direkt der Einleitung), mobil per `display: contents` und `order`.
+  - Texte: Abdichtungsbeleg in zwei Sätzen nach dem Ablauf („Im Bad kommt vor dem Verlegen eine Abdichtung …“, „Dabei halten wir uns an DIN 18534 …“), DIN-18534-Erklärung ohne Wiederholung, Normnummer ungetrennt; „vor Ort“ bricht nicht um (Span mit `nowrap`, Wortlaut unverändert); „Inh.“ und „HWK“ ausgeschrieben; Mono nur noch für Zahlen.
+  - 404: Hauptknopf zuerst, Startseite und Anrufen darunter in einer Reihe.
+- **Nicht nachstellbar:** axe `target-size` im Menüfuß (Runde 2, 14 Knoten) tritt am aktuellen Stand weder mit Banner noch mit reduzierter Bewegung auf; Runde 3 prüft erneut.
