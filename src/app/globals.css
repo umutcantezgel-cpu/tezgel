@@ -220,6 +220,23 @@
   body:has(.menue-blatt:popover-open) {
     overflow: hidden;
   }
+  /* Bei offenem Menü hat die untere Leiste keine Aufgabe (das Blatt trägt Hauptknopf, Anruf und WhatsApp); ausgeblendet
+     liegt sie auch nicht mehr scheinbar über dem Fuß des Blatts (axe kennt die oberste Ebene des Popovers nicht, Runde 4) */
+  body:has(.menue-blatt:popover-open) [data-leiste] {
+    visibility: hidden;
+  }
+  /* Hinweis „Weitere Einträge darunter“ im Mobilmenü nur, solange die Liste nach unten weiterscrollt (Runde 4) */
+  .menue-liste {
+    container-type: scroll-state;
+  }
+  .menue-weiter {
+    display: none;
+  }
+  @container scroll-state(scrollable: bottom) {
+    .menue-weiter {
+      display: flex;
+    }
+  }
 
   /* Überschriften: Archivo in Anzeigebreite; Silben nur an gesetzten Fugenstellen (&shy;) */
   h1, h2, h3, h4, h5, h6 {
@@ -235,8 +252,10 @@
     hyphens: manual;
   }
 
-  /* Textschnitt innerhalb einer Überschrift (z. B. Unterzeile der H1): normale Breite und Abstände */
-  :is(h1, h2, h3, h4, h5, h6) .font-text {
+  /* Textschnitt in oder als Überschrift (Unterzeile der H1, Gruppenköpfe wie „Bis 10 km ab Aßlar“): normale Breite und
+     Abstände, damit in einer Spalte nicht zwei Breiten nebeneinanderstehen (Runde 4) */
+  :is(h1, h2, h3, h4, h5, h6) .font-text,
+  :is(h1, h2, h3, h4, h5, h6).font-text {
     font-stretch: 100%;
     letter-spacing: normal;
     word-spacing: normal;
@@ -250,6 +269,12 @@
     /* nur lange Wörter trennen (ab 12 Zeichen), je Teil mindestens fünf Zeichen: kein „da-mit“, „Unter-grund“,
        „Bewer-tungen“ (Sichtprüfung E2, Runden 1 und 3) */
     hyphenate-limit-chars: 12 5 5;
+  }
+  /* Zitate nie trennen (Wortlaut der Kundenstimmen, G8; der Absatz im Zitat erbt sonst die Trennung von p, Runde 4) */
+  blockquote,
+  blockquote p {
+    hyphens: manual;
+    -webkit-hyphens: manual;
   }
   /* Linknamen in Navigation und Fuß nie trennen */
   nav a,

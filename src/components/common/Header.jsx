@@ -18,7 +18,9 @@ const isActivePath = (pathname, path) =>
 const isSectionActive = (pathname, link) =>
     isActivePath(pathname, link.path) || (link.items || []).some((item) => isActivePath(pathname, item.path));
 
-// Logo unverändert (UNANTASTBAR); Unterzeile als Mono-Etikett.
+// Logo unverändert (UNANTASTBAR); Unterzeile im Textschnitt (K-006: Mono nur für Zahlen). Bei großer Systemschrift
+// (Kopf schmaler als 20 rem) eine kleinere Höhenstufe, damit Breite und Höhe gemeinsam schrumpfen und der Menü-Schalter
+// im Bild bleibt (Runde 4: sonst wurde nur die Breite gestaucht).
 export function BrandMark({ compact = false, sublineClassName = 'hidden lg:block xl:hidden 2xl:block' }) {
     return (
         <span className="flex min-w-0 items-center gap-3">
@@ -29,12 +31,12 @@ export function BrandMark({ compact = false, sublineClassName = 'hidden lg:block
                 alt="Fliesenverlegung Tezgel"
                 width={160}
                 height={50}
-                className="h-12 w-auto max-w-full shrink object-contain @7xl:h-11"
+                className="h-12 w-auto max-w-full shrink object-contain @7xl:h-11 @max-xs:h-6"
                 data-erstes-bild="logo"
                 priority
             />
             {!compact && (
-                <span className={`${sublineClassName} border-l border-fuge pl-3 font-mono text-fs-1 text-tinte-2`}>
+                <span className={`${sublineClassName} border-l border-fuge pl-3 font-text text-fs-1 text-tinte-2`}>
                     Fachbetrieb<br />Aßlar &middot; Wetzlar
                 </span>
             )}

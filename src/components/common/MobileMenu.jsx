@@ -92,7 +92,8 @@ export default function MobileMenu({ isOpen, onToggle }) {
                     </button>
                 </div>
 
-                <div className="flex-1 overflow-y-auto px-4 py-6">
+                {/* unter 20 rem Blattbreite (große Systemschrift) weniger Raum, damit alle fünf Bereiche im ersten Bild stehen */}
+                <div className="menue-liste flex-1 overflow-y-auto px-4 py-6 @max-xs:py-2">
                     <nav aria-label="Bereiche">
                         <ul className="border-t border-fuge">
                             {navigationLinks.map((link, index) => {
@@ -106,9 +107,9 @@ export default function MobileMenu({ isOpen, onToggle }) {
                                                 href={link.path}
                                                 onClick={schliessen}
                                                 aria-current={istAktiv(link) ? 'page' : undefined}
-                                                className="flex min-w-0 flex-1 flex-col py-2"
+                                                className="flex min-w-0 flex-1 flex-col py-2 @max-xs:py-1"
                                             >
-                                                <span className="text-fs-4 font-semibold text-tinte">{link.name}</span>
+                                                <span className="text-fs-4 font-semibold text-tinte @max-xs:text-fs-3">{link.name}</span>
                                                 <span className="hidden text-fs-2 text-tinte-2 @xs:block">{link.kurz}</span>
                                             </Link>
                                             {link.items.length > 0 && (
@@ -198,12 +199,19 @@ export default function MobileMenu({ isOpen, onToggle }) {
                             </a>
                         </div>
                     </div>
+                    {/* Zeigt an, dass die Liste weitergeht, solange darunter noch etwas kommt (große Systemschrift auf
+                        schmalen Telefonen: dort passen nicht alle Bereiche ins erste Bild; Runde 4). Sichtbar nur per
+                        CSS-Abfrage scroll-state in globals.css; ohne Unterstützung bleibt sie verborgen. */}
+                    <p aria-hidden="true" className="menue-weiter sticky bottom-0 -mx-4 items-center gap-2 border-t border-fuge bg-kalk px-4 py-1 font-text text-fs-1 text-tinte-2">
+                        <Icon name="winkel-unten" groesse={4} />
+                        Mehr darunter
+                    </p>
                 </div>
 
-                <div className="shrink-0 border-t border-fuge bg-fliese p-4">
-                    <Link href={hauptziel(pathname)} onClick={schliessen} className={knopfKlassen('haupt', 'w-full')} data-motion="druck" data-hauptknopf="">
+                <div className="shrink-0 border-t border-fuge bg-fliese p-4 @max-xs:p-2">
+                    <Link href={hauptziel(pathname)} onClick={schliessen} className={knopfKlassen('haupt', 'w-full @max-xs:px-4 @max-xs:py-2')} data-motion="druck" data-hauptknopf="">
                         {zusammen(primaryCta.name)}
-                        <Icon name="pfeil-rechts" groesse={4} />
+                        <Icon name="pfeil-rechts" groesse={4} className="@max-xs:hidden" />
                     </Link>
                 </div>
             </div>
