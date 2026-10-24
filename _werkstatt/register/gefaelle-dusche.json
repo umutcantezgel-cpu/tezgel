@@ -1,0 +1,22 @@
+{
+  "kennung": "gefaelle-dusche",
+  "paket": "E3-GRAF-03",
+  "kern": "3.4",
+  "zweck": "Zusammenhang: Wasser läuft zum Ablauf",
+  "ausloeser": "sicht",
+  "schwelle": 0.4,
+  "dauer": "Tropfen dauer-5 (1200 ms) linear, einmal; Pfeile je dauer-2 · ease-setzen, Beginn bei 0,05 / 0,32 / 0,58 von dauer-5; gesamt 1200 ms",
+  "eigenschaften": ["translate", "opacity"],
+  "reduziert": "Pfeile statisch, kein Tropfen (Endzustand sofort)",
+  "ersatzpfad": "ohne JavaScript, reduziert, Notaus, Druck, erzwungene Farben, Zurück und Vor (html.k-verlauf): Pfeile stehen, kein Tropfen",
+  "wo": ["/bad/barrierefreies-bad"],
+  "schlitz": "momente.tun (ErzaehlSeite)",
+  "baustein": "src/components/momente/gefaelle-dusche/GefaelleDusche.tsx",
+  "data_motion": "figure[data-motion=\"gefaelle-dusche\"]",
+  "animiert": [".gefaelle-tropfen", ".gefaelle-pfeil"],
+  "keyframes": ["gefaelle-tropfen", "gefaelle-pfeil"],
+  "register_ts": "'gefaelle-dusche': { ausloeser: 'sicht', schwelle: 0.4 },",
+  "bewegung_mjs": "'gefaelle-dusche': 'scroll'",
+  "test": "test/gefaelle-dusche.test.mjs",
+  "budget": { "js_gzip_kb": 0, "css_gzip_kb": 1.0, "svg_html_gzip_kb": 1.0 }
+}
