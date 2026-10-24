@@ -4,13 +4,11 @@
 // Nummer in Mono. Ein großer Moment (z. B. der Weg einer Badsanierung) kann die Schritte ersetzen; darunter ein Hinweis mit
 // Verweis. Serverkomponente.
 import type { ReactNode } from 'react';
-import Link from 'next/link';
 import clsx from 'clsx';
-import Icon from '@/components/icons/Icon';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Textmarken from '@/components/kern/Textmarken';
-import { linkKlassen } from '@/components/kern/stile';
+import WeiterLink from '@/components/kern/WeiterLink';
 import type { AblaufInhalt } from '../inhalt';
 
 // Spalten ab lg je Schrittzahl (Klassen fest im Quelltext)
@@ -52,12 +50,7 @@ export default function Ablauf({ inhalt, moment }: { inhalt: AblaufInhalt; momen
           <p className="font-text text-fs-3 text-tinte">
             <Textmarken text={inhalt.hinweis.text} />
           </p>
-          {inhalt.hinweis.verweis && (
-            <Link href={inhalt.hinweis.verweis.href} data-motion="zustand" className={clsx(linkKlassen, 'mt-2 inline-flex min-h-11 items-center gap-2 font-semibold text-fs-3')}>
-              {inhalt.hinweis.verweis.name}
-              <Icon name="pfeil-rechts" groesse={5} />
-            </Link>
-          )}
+          {inhalt.hinweis.verweis && <WeiterLink href={inhalt.hinweis.verweis.href} className="mt-2">{inhalt.hinweis.verweis.name}</WeiterLink>}
         </div>
       )}
     </Abschnitt>

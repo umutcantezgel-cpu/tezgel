@@ -25,19 +25,21 @@ export default function Schritt({ inhalt, pfad }: { inhalt: SchrittInhalt; pfad:
       leitachse
       flaeche="fliese"
       kopf="seitlich"
+      ziel
       titel={inhalt.titel}
       einleitung={<p><Textmarken text={inhalt.satz} /></p>}
     >
       <div className="flex flex-col items-start gap-8">
         <Hauptknopf breit />
-        <div className="grid w-full gap-6 border-t border-fuge pt-6 md:grid-cols-2">
+        {/* Container-Abfrage: unter 20 rem Hörer über der großen Nummer (Runde 4) */}
+        <div className="@container grid w-full gap-6 border-t border-fuge pt-6 md:grid-cols-2">
           <div>
             <p className="font-text text-fs-3 text-tinte">Lieber anrufen?</p>
             <a
               href={`tel:${contact.phoneLink}`}
               data-motion="zustand"
               aria-label={`Anrufen: ${contact.phone}`}
-              className={`${linkKlassen} mt-2 inline-flex min-h-11 items-center gap-3 text-fs-5 text-tinte lg:text-fs-4`}
+              className={`${linkKlassen} mt-2 inline-flex min-h-11 items-center gap-3 text-fs-5 text-tinte lg:text-fs-4 @max-xs:flex-col @max-xs:items-start @max-xs:gap-1`}
             >
               <Icon name="telefon" groesse={6} className="shrink-0" />
               <Rufnummer nummer={contact.phone} />

@@ -3,12 +3,9 @@
 // Arbeiten. Fotos und Stimmen stehen in zwei Abschnitten (beide data-formel="beleg"), damit jeder seine eigene Form hat
 // wie auf der Startseite. Platz für einen großen Moment (z. B. Galerie mit Filter, Karte). Serverkomponente.
 import type { ReactNode } from 'react';
-import Link from 'next/link';
-import clsx from 'clsx';
-import Icon from '@/components/icons/Icon';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Textmarken from '@/components/kern/Textmarken';
-import { linkKlassen } from '@/components/kern/stile';
+import WeiterLink from '@/components/kern/WeiterLink';
 import type { BelegInhalt } from '../inhalt';
 import Fotos from './Fotos';
 import Stimmen from './Stimmen';
@@ -34,10 +31,7 @@ export default function Beleg({ inhalt, moment, stimmenTitel = 'Das sagen unsere
         {moment && <div className="mt-16">{moment}</div>}
         {inhalt.verweis && (
           <p className="mt-12">
-            <Link href={inhalt.verweis.href} data-motion="zustand" className={clsx(linkKlassen, 'inline-flex min-h-11 items-center gap-2 font-semibold text-fs-3')}>
-              {inhalt.verweis.name}
-              <Icon name="pfeil-rechts" groesse={5} />
-            </Link>
+            <WeiterLink href={inhalt.verweis.href}>{inhalt.verweis.name}</WeiterLink>
           </p>
         )}
       </Abschnitt>
