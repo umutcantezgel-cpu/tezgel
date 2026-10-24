@@ -1,4 +1,4 @@
-# KERN · Lauf „Verständlich, echt, ausgezeichnet“ · Version 3.0
+# KERN · Lauf „Verständlich, echt, ausgezeichnet“ · Version 3.2
 
 Stand 24.10.2026, E1. Quelle der Wahrheit für alle Pakete. Hervorgegangen aus KERN v2 „Verlegeplan“ (`archiv/2026-10-werkstatt/KERN.md`): Werte und Bausteine von v2 gelten weiter, soweit dieser Kern sie nicht ändert. Über dem Kern stehen Grenzen und Leitplanken, Bestand und Adressen, Verständlichkeit, Zugänglichkeit und Leistung und die Abnahmeliste (Auftrag Abschnitt 4). **[A]** = Annahme (offen in MENSCHEN.md). Jedes Paket nennt die Kern-Version, gegen die es gebaut wurde.
 
@@ -109,7 +109,7 @@ Bezug ist eine Fliese 30 × 60 cm im Maßstab 1 cm = 3,2 px: kurze Seite **F = 9
 
 | Kennung | Zweck | Auslöser | Dauer · Kurve | Reduziert | Wo |
 |---|---|---|---|---|---|
-| **`verlegen`** (B-01) | Zusammenhang: Seitenwechsel | Klick auf internen Link; Zurück und Vor gespiegelt mit 70 % | gesamt 1200 ms (erster) bzw. 900 ms (folgende): Verlegen ~45 % je Fliese `ease-hammer`, Wechsel, Weiterziehen ~40 % linear wie die Reihen des Intros (E-036) | Überblendung 150 ms | global |
+| **`verlegen`** (B-01 „Wind“, E-042) | Zusammenhang: Seitenwechsel | Klick auf internen Link; Zurück und Vor gespiegelt mit 70 % | gesamt 1200 ms (erster) bzw. 900 ms (folgende): Band aus Fliesen weht `ease-wind` über die Seite, alte Seite davor, neue dahinter (View Transition Typ wind) | Überblendung 150 ms | global |
 | **`intro`** (B-02) | Charakter: Logo zeichnet sich; bis zur Vektordatei Ersatz „Der erste Boden“ (E-018, E-019) | erster Besuch je Browser | Ersatz: Fläche 3 × 3 legt sich 80–624 ms (`ease-hammer`), Logo setzt sich 448–752 ms (`ease-setzen`), deckend bis 800 ms, Logo gleitet 800–1400 ms (`ease-setzen`), Reihen ziehen 800–1504 ms linear ab; alles Anteile von `--intro-gesamt` (1600 ms), Grenze 2200 ms | Kopf-Logo blendet in `dauer-2` ein, keine Schicht | jede Erstseite |
 | `startbild` | Charakter: Startbild legt sich frei | Sichtbarkeit (IO 40 %, E-037), nur unter lg und ohne Intro; ab lg steht das Foto unter der Waage sofort frei | `dauer-4`, Fliesen ziehen im Drittelverband linear ab (E-036), Staffel ≤ 8 Spalten | Bild sofort sichtbar | `/` |
 | `sig-kreuzlinie` (SIG-1, E-037) | Charakter: rote Waage und Lot wachsen aus dem Kreuzpunkt am Lot des Plans, die Waage knickt links ins Lot zur Leitachse; mobil wächst das Lot neben dem Text | Laden (CSS ab dem ersten Bild), mit Intro ab dem Freilegen (`--intro-gesamt` · 0,5) | `dauer-5` linear, Knick-Lot `dauer-2` danach, gesamt 1,52 s | Linien voll | `/` (Planblatt) |
@@ -134,13 +134,14 @@ Bezug ist eine Fliese 30 × 60 cm im Maßstab 1 cm = 3,2 px: kurze Seite **F = 9
 - Nicht mehr entfallen (E-037, Entscheidung des Auftraggebers): `seitenwechsel` (Plan-Morph), `sig-plan`, `sig-kreuzlinie`, `sig-flucht`, `szene-ablauf`, `einzugsband`, `fugenband` sind fester Teil des Systems. Keine Seite wird auf eine Vorlage umgestellt, bevor die Vorlage sie trägt; nichts davon wird ohne Rückfrage entfernt. B-01 lässt Links mit `data-uebergang` durch, wenn ihr eigener Übergang möglich ist; beide laufen nie gleichzeitig (B-01 beendet eine laufende View Transition, sobald es legt).
 - Große Momente: je Erzählseite genau einer je Bildschirm (Tabelle oben); Arbeitsseiten keine. Auf `/` ist SIG-1 (Kreuzlinie mit Flucht und Plan) der Moment des ersten Bildschirms, `startbild` der Moment beim Eintritt des Fotos (unter lg).
 
-### B-01 „Verlegen“ (Pflicht, Technik nach E-006 und E-010)
-- Fliese 2:1 quer, Drittelverband (jede Reihe um ein Drittel der Länge versetzt, Muster alle drei Reihen), Fuge 1 % der kurzen Seite, mindestens 2 px, Fugenfarbe `fuge`; Oberfläche `fliese` mit feiner Struktur (SVG-Rauschen als Hintergrund der Fliese, ≤ 1 KB) und Glanzebene `fliese-glanz`; etwa 3 Fliesen je Reihe bei 390 px, 8 bei 1440 px, höchstens 80 gleichzeitig.
-- Verlegen: Verlegekante wandert von rechts nach links; jede Fliese kommt mit kurzem Flug (≤ ¼ Fliesenlänge) von rechts unter der gelegten Kante hervor, Größe 1,06 → 1,0, Schatten `shadow-flug` → `shadow-gesetzt` (zwei Ebenen, Deckkraft), kein Nachfedern, innerhalb der Spalte nach dem Versatz gestaffelt; keine Fliese überfliegt eine gelegte.
-- Wechsel: Seite wechselt unter der geschlossenen Fläche; Scroll oben, Fokus auf der H1, Titel über Nexts Routen-Ansager. Ist die Seite nicht bereit: Laserlinie wandert ruhig über den Boden, höchstens 3 s, danach Wechsel ohne Fliesen.
-- Weiterziehen: Spalten ziehen nach links aus dem Bild, linke Spalte zuerst, gleiche Kurve, also kein Überholen; die neue Seite erscheint von rechts nach links.
+### B-01 „Wind“ (Pflicht; seit E-042 auf Wunsch des Auftraggebers, vorher „Verlegen“ mit ganz bedeckendem Boden, E-006, E-010)
+- Bild: Ein Band aus Fliesen 2:1 quer im Drittelverband weht wie ein Windstoß über die Seite. Vor dem Band steht noch die alte Seite, hinter ihm ist schon die neue zu sehen; der Bildschirm ist nie ganz bedeckt (Band höchstens 60 % der Breite). Je Reihe zwei Fliesen, die Reihen um ⅓ und ⅔ der Länge versetzt: Ihre Enden ergeben das Zickzack. Die Reihen flattern leicht (Welle über die Höhe, höchstens ⅛ der Fliesenlänge) und schwingen einmal durch, während das Band weht.
+- Fliese: Fuge 1 % der kurzen Seite, mindestens 2 px, Fugenfarbe `fuge`; Oberfläche `fliese` mit feiner Körnung (SVG-Rauschen, einmal zur Kachel gerastert) und Glanzebene `fliese-glanz`; im Wind mit Flugschatten `shadow-flug`. Länge 5,5 Fliesen je Breite bei 390 px, 9 bei 1440 px, 64 bis 176 px.
+- Ablauf: Klick auf internen Link → das Bild steht (Erfassen der alten Seite), die neue Seite lädt dahinter (höchstens 2,5 s) → das Band weht von rechts nach links, die neue Seite wird an seiner Rückseite aufgedeckt (Naht immer unter dem Band) → Fokus auf der H1, Titel über Nexts Routen-Ansager. Zurück und Vor im Browser: gespiegelt, von links nach rechts, Scrollstellung wie beim Verlassen.
+- Takt: gesamt 1200 ms beim ersten Wechsel einer Sitzung, 900 ms ab dem zweiten, Zurück und Vor 70 %; Kurve `ease-wind` (setzt zügig ein, weht gleichmäßig, läuft weich aus).
+- Technik: View Transition mit Typ `wind` bzw. `wind-zurueck`; alte Seite als Bild ohne Animation, neue Seite mit `clip-path: inset()` aufgedeckt, Band als eigene Gruppe `wind` darüber (`translate`); Werte aus `src/lib/verlegen/wind.ts` als Variablen an `html`. Der Plan-Morph (Typ `plan-vor`) bleibt daneben bestehen; beide laufen nie gleichzeitig.
 - Nie bei erstem Laden, Ankern derselben Seite, externen Links, `tel:`, `mailto:`, WhatsApp, Downloads, neuem Tab (Zusatztasten, `target`), Formularen, Links mit `data-kein-verlegen`; Doppelklicks lösen keinen zweiten Wechsel aus.
-- Zugänglichkeit: Schicht `aria-hidden`, während des Wechsels fängt sie Klicks ab, `header`, `main` und `footer` sind `inert`; Tastatur unberührt; reduzierte Bewegung: Überblendung 150 ms.
+- Zugänglichkeit: Schicht `aria-hidden`; während des Winds fängt die Schicht der View Transition Klicks ab; Tastatur unberührt; reduzierte Bewegung und Notaus: Überblendung 150 ms (Typ `wind-ruhig`, kein Band); Browser ohne View Transitions: normaler Wechsel, Fokus auf der H1, Scrollstellung bei Zurück.
 
 ### B-02 „Logo zeichnet sich“ (Pflicht)
 - Nur beim ersten Besuch je Browser (Speicher `localStorage`, Schlüssel `tezgel-intro`, im Fehlerfall kein Intro); Klasse `k-intro` an `html` durch das Kopfskript vor dem ersten Bild.
@@ -288,5 +289,6 @@ Maschinenfassung `src/config/glossar.ts` (Quelle) und `regeln/glossar.json` (Pr�
 F-07, F-09, F-14, F-20 und die Versprechen bis zur Antwort (MENSCHEN.md); Herkunft einzelner Fotos (M-08).
 
 ## Änderungsprotokoll
+- v3.2 (24.10.2026, E-042): B-01 als „Wind“ (Entscheidung des Auftraggebers): Band aus Fliesen weht über die Seite, alte Seite davor, neue dahinter; Token `ease-wind`.
 - v3.1 (24.10.2026, E-037): SVG-Bewegungen aus v2 und Plan-Morph zurück (Entscheidung des Auftraggebers), Planblatt im Einstieg von `/`, Plan-Vignetten in den Bereichsfliesen, Rauschtextur der Fliesen in B-01 (einmal gerastert), startbild über Sichtbarkeit.
 - v3.0 (23.10.2026, E1): neue Leitidee „Klar verlegt“ aus dem Auftrag „Verständlich, echt, ausgezeichnet“; Personen P1 bis P5 mit Aufgaben A1 bis A6; Prinzipien neu; Fliesenskala als Lesart der v2-Abstände; Schatten-, Ebenen-, Dauer- und Kurvenstufen ergänzt; Register mit B-01, B-02 und neun großen Momenten, sieben v2-Einträge entfallen; Navigation mit fünf Hauptpunkten; Seitenarten und Seitenformel; Schreibregeln, K-010-B, K-010-F, Glossar; Bildregeln; Faktenblatt.
