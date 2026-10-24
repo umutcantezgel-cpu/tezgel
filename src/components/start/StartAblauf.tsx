@@ -1,7 +1,8 @@
 // Startseite · 4 So läuft es ab (KERN v3 K-003 Nr. 5, K-005, K-009; Text REF-start): drei Schritte an der Laserlinie.
-// Die rote Linie führt durch die Schrittfolge (K-003 Nr. 5): ab lg waagrecht über den drei Spalten, der mittlere Schritt
-// um ein Drittel der langen Fliesenseite tiefer (Stufe 16, der Versatz dieses Bildschirms), sodass die Linie wie eine
-// versetzte Reihe springt; mobil senkrecht links vom Text, genau auf dem Lot der Laserlinie (die Leitachse steht dort
+// Die rote Linie führt durch die Schrittfolge (K-003 Nr. 5): ab lg als fallende Treppe über den drei Spalten, jeder Schritt
+// um ein Drittel der langen Fliesenseite tiefer als der vorige (Stufe 16, der Versatz dieses Bildschirms), dazwischen eine
+// rote Setzstufe; so liest sich die Folge 01, 02, 03 (vorher stand nur 02 tiefer und wirkte wie ein Versatzfehler,
+// E2-SICHT-2 Befund 7). Mobil senkrecht links vom Text, genau auf dem Lot der Laserlinie (die Leitachse steht dort
 // links im Seitenrand, darum rückt die Liste um den Abstand Rand bis Lot nach links). Je Schritt ein Fugenkreuz am Anfang der Linie, die Nummer in
 // Mono (Zahl), ohne Kästen, damit der Abschnitt anders gebaut ist als Lage, Stimmen und Orte. Darunter, abgesetzt durch eine
 // Fuge, die drei Belege aus dem Faktenblatt (K-015), die vorher in „Was wir tun“ standen (Sichtabnahme E2, Befund 8): ab lg in
@@ -39,8 +40,11 @@ export default function StartAblauf() {
                 'relative border-l-2 pb-12 pl-8 lg:border-t-2 lg:border-l-0 lg:pt-8 lg:pr-12 lg:pb-0 lg:pl-0',
                 letzter ? 'border-l-transparent lg:border-t-laser' : 'border-laser',
                 i === 1 && 'lg:mt-16',
+                i === 2 && 'lg:mt-32',
               )}
             >
+              {/* Setzstufe ab lg: vom Ende der vorigen Linie senkrecht herab zum Anfang dieser */}
+              {i > 0 && <span aria-hidden="true" className="absolute bottom-full left-0 hidden h-16 -translate-x-1/2 border-l-2 border-laser lg:block" />}
               <Fugenkreuz className="absolute top-1 left-0 size-3 -translate-x-1/2 text-tinte lg:top-0 lg:-translate-y-1/2" />
               <p className="font-mono text-fs-4 text-tinte-2">{String(i + 1).padStart(2, '0')}</p>
               <h3 className="mt-2 font-anzeige text-fs-5 font-extrabold text-tinte">{s.titel}</h3>

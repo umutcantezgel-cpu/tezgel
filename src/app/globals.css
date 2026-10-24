@@ -24,7 +24,8 @@
   --color-fliese: #FFFFFF;
   --color-fuge: #DDDEE2;
   --color-strich: #818698;
-  --color-tinte-2: #4B5067;
+  /* Nebentext: 8,2 : 1 auf Kalk, 9,0 : 1 auf Fliese (vorher #4B5067 mit 7,2 : 1 wirkte im Satz blass, E2-SICHT-2 Typografie, E-040) */
+  --color-tinte-2: #43485F;
   --color-tinte: #0A1129;
   --color-laser: #D82020;
   --color-laser-tief: #A8171C;
@@ -345,6 +346,12 @@
     .planblatt-wand {
       margin-inline: var(--wand, 0);
     }
+  }
+  /* Passstück eines versetzten Felds (Lage-Fliesen ab lg, E-040): schraffiert unter 45° wie die Passstücke der
+     Plan-Zeichnungen (schraffur() in kern/vignetten/zeichnen.tsx), Strich mit 12 px Abstand: neben Fotos leichter als dichter */
+  .passstueck {
+    background-color: var(--color-fliese);
+    background-image: repeating-linear-gradient(135deg, var(--color-strich) 0 1px, transparent 1px calc(var(--spacing) * 3));
   }
   /* Plan bündig mit der Textkante (unter lg): die Zeichnung ragt um ihren Rand nach außen, damit die Wand an der
      Inhaltskante steht (--wand-aussen = Rand / (1 − 2 · Rand) des Zeichnungsanteils, E3-NACH-01) */

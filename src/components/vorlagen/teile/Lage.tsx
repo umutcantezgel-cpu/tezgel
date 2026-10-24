@@ -1,6 +1,7 @@
 // Vorlagen · 2 Ihre Lage (KERN v3 K-003 Nr. 2, K-009; E-025): die Lage der Kundschaft in ihren Worten. Wahlweise als
 // Absätze, als Wege-Zeilen mit Link (wie die Bereiche in „Was wir tun“) oder als Fliesen mit Link wie auf der Startseite (Foto oder Fliesenkomposition und Satz, aneinander an der Fuge;
-// ab lg zwei Streifen, der rechte um ein Drittel versetzt, der eine Versatz dieses Bildschirms, K-005). Bei großer
+// ab lg zwei Streifen, der rechte um ein Drittel versetzt, der eine Versatz dieses Bildschirms, K-005; oben rechts und unten
+// links je ein schraffiertes Passstück wie in den Plan-Zeichnungen, damit das Feld ein Rechteck ist, E-040). Bei großer
 // Systemschrift steht das Bild als Streifen über dem Satz und der Pfeil darunter (Container-Abfrage in rem, Runden 2 und
 // 3). Bilder im Link sind dekorativ (alt=""), der Satz ist der Name des Links. Serverkomponente.
 import Link from 'next/link';
@@ -26,39 +27,53 @@ function Bild({ fliese }: { fliese: Fliese }) {
   return <Image src={b.src} alt="" fill sizes="(min-width: 1024px) 16vw, (min-width: 768px) 25vw, 33vw" placeholder="blur" blurDataURL={b.blur} className="object-cover" />;
 }
 
+/** ab lg: die zwei Passstücke des versetzten Felds (über dem rechten, unter dem linken Streifen), dekorativ; die Hülle der
+ *  Liste ist `relative` (E2-SICHT-2 Befund 8: vorher endeten die Spalten ungleich) */
+export function Passstuecke() {
+  return (
+    <>
+      <div aria-hidden="true" className="passstueck pointer-events-none absolute top-0 right-0 left-1/2 -ml-px hidden h-16 border-x border-t border-fuge lg:block" />
+      <div aria-hidden="true" className="passstueck pointer-events-none absolute top-full right-1/2 left-0 hidden h-16 border-x border-b border-fuge lg:block" />
+    </>
+  );
+}
+
 export function LageFliesen({ fliesen }: { fliesen: Fliese[] }) {
   const proStreifen = Math.ceil(fliesen.length / 2);
   return (
-    <ul className={clsx('grid gap-px border border-fuge bg-fuge md:grid-cols-2 lg:grid-flow-col lg:gap-0 lg:border-0 lg:bg-transparent', STREIFEN_ZEILEN[proStreifen])}>
-      {fliesen.map((f, i) => (
-        <li
-          key={f.href}
-          className={clsx(
-            '@container bg-fliese lg:border-x lg:border-b lg:border-fuge',
-            i % proStreifen === 0 && 'lg:border-t',
-            // rechter Streifen: um ein Drittel versetzt, die Fuge zum linken Streifen liegt übereinander (1 px)
-            i >= proStreifen && 'lg:-ml-px lg:translate-y-16',
-          )}
-        >
-          <Link
-            href={f.href}
-            data-motion="zustand"
-            className="group grid h-full grid-cols-1 text-tinte transition-colors dauer-1 ease-setzen hover:bg-kalk @xs:grid-cols-4 @xs:lg:grid-cols-3"
+    <div className="relative">
+      <ul className={clsx('grid gap-px border border-fuge bg-fuge md:grid-cols-2 lg:grid-flow-col lg:gap-0 lg:border-0 lg:bg-transparent', STREIFEN_ZEILEN[proStreifen])}>
+        {fliesen.map((f, i) => (
+          <li
+            key={f.href}
+            className={clsx(
+              '@container bg-fliese lg:border-x lg:border-b lg:border-fuge',
+              i % proStreifen === 0 && 'lg:border-t',
+              // rechter Streifen: um ein Drittel versetzt, die Fuge zum linken Streifen liegt übereinander (1 px)
+              i >= proStreifen && 'lg:-ml-px lg:translate-y-16',
+            )}
           >
-            <span
-              aria-hidden="true"
-              className="relative h-24 overflow-hidden border-b border-fuge @xs:col-span-1 @xs:h-auto @xs:min-h-24 @xs:border-r @xs:border-b-0 @xs:lg:aspect-square @xs:lg:min-h-0"
+            <Link
+              href={f.href}
+              data-motion="zustand"
+              className="group grid h-full grid-cols-1 text-tinte transition-colors dauer-1 ease-setzen hover:bg-kalk @xs:grid-cols-4 @xs:lg:grid-cols-3"
             >
-              <Bild fliese={f} />
-            </span>
-            <span className="flex min-w-0 flex-col gap-2 p-3 @xs:col-span-3 @xs:flex-row @xs:items-start @xs:justify-between @xs:gap-3 @xs:p-4 lg:p-8 @xs:lg:col-span-2">
-              <span className="font-text text-fs-4 font-semibold text-pretty hyphens-none">{f.satz}</span>
-              <Icon name="pfeil-rechts" groesse={5} className="shrink-0 self-end text-tinte-2 transition-colors dauer-1 group-hover:text-tinte @xs:mt-1 @xs:self-auto" />
-            </span>
-          </Link>
-        </li>
-      ))}
-    </ul>
+              <span
+                aria-hidden="true"
+                className="relative h-24 overflow-hidden border-b border-fuge @xs:col-span-1 @xs:h-auto @xs:min-h-24 @xs:border-r @xs:border-b-0 @xs:lg:aspect-square @xs:lg:min-h-0"
+              >
+                <Bild fliese={f} />
+              </span>
+              <span className="flex min-w-0 flex-col gap-2 p-3 @xs:col-span-3 @xs:flex-row @xs:items-start @xs:justify-between @xs:gap-3 @xs:p-4 lg:p-8 @xs:lg:col-span-2">
+                <span className="font-text text-fs-4 font-semibold text-pretty hyphens-none">{f.satz}</span>
+                <Icon name="pfeil-rechts" groesse={5} className="shrink-0 self-end text-tinte-2 transition-colors dauer-1 group-hover:text-tinte @xs:mt-1 @xs:self-auto" />
+              </span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+      {fliesen.length > 1 && <Passstuecke />}
+    </div>
   );
 }
 

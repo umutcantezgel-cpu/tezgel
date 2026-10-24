@@ -58,7 +58,7 @@ Alle Werte als Tokens in `globals.css`; neue Werte nur als Stufe einer Skala.
 | `fliese` | #FFFFFF | Felder, Formulare, Fliesen im Seitenwechsel |
 | `fuge` | #DDDEE2 | Fugen, Trennlinien (nur Deko, 1,22:1) |
 | `strich` | #818698 | Ränder von Bedienelementen, Grafik (≥ 3:1) |
-| `tinte-2` | #4B5067 | Nebentext (7,22:1 auf Kalk) |
+| `tinte-2` | #43485F | Nebentext (8,19:1 auf Kalk, 9,01:1 auf Fliese; vorher #4B5067 mit 7,22:1, E-040) |
 | `tinte` | #0A1129 | Text, Hauptknopf, Fokus |
 | `laser` | #D82020 | Laserlinie, Grafik, große Schrift (4,60:1 auf Kalk) |
 | `laser-tief` | #A8171C | Rot als Text, Fehler (6,80:1) |

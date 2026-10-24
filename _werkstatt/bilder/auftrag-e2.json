@@ -96,6 +96,29 @@
     "korrektur": false
   },
   {
+    "id": "lage-neubau",
+    "original": "IMG_2602.PNG",
+    "raum": "bad",
+    "name": "bad-im-bau-boden-frisch-verlegt-quadrat",
+    "format": "1:1",
+    "schwerpunkt": {
+      "x": 30,
+      "y": 50
+    },
+    "ausschnitt": {
+      "links": 0,
+      "oben": 33.5,
+      "rechts": 27.5,
+      "unten": 33.5
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Bad während der Arbeit: Wanne, weiße Wandfliesen und frisch verlegter Boden",
+    "korrektur": true
+  },
+  {
     "id": "start-galerie-1",
     "original": "IMG_2582.PNG",
     "raum": "dusche",

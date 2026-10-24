@@ -73,7 +73,8 @@ export function Bereichsfliesen({ bereiche }: { bereiche: Bereich[] }) {
                 )
               )}
               <span className="flex flex-1 items-start gap-3 p-4 lg:p-6">
-                <span className="min-w-0 flex-1 font-text text-fs-3 font-semibold hyphens-auto underline decoration-transparent decoration-2 underline-offset-4 transition-colors dauer-1 group-hover:decoration-laser lg:font-anzeige lg:text-fs-4 lg:font-extrabold">
+                {/* gesetzt wie die Sätze der Lage-Fliesen (gleiche Ebene, ein Schnitt; E2-SICHT-2 Typografie) */}
+                <span className="min-w-0 flex-1 font-text text-fs-4 font-semibold text-pretty hyphens-auto underline decoration-transparent decoration-2 underline-offset-4 transition-colors dauer-1 group-hover:decoration-laser">
                   {b.name}
                 </span>
                 <Icon name="pfeil-rechts" groesse={5} className="mt-1 shrink-0 text-tinte-2 transition-colors dauer-1 group-hover:text-tinte" />

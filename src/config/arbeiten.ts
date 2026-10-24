@@ -73,6 +73,14 @@ export const ARBEITEN = {
     raum: "treppe",
     blur: "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADwAQCdASoQABAAA4BaJYwCdAEPWK23MagA/gVKVCQQe4n4NUhK7BCaez6qhbXoTGh3MWUDwHxfPy0QdrOaoE3YGAAAAA==",
   },
+  "lage-neubau": {
+    src: "/images/arbeiten/bad/bad-im-bau-boden-frisch-verlegt-quadrat.jpg",
+    breite: 800,
+    hoehe: 800,
+    alt: "Bad während der Arbeit: Wanne, weiße Wandfliesen und frisch verlegter Boden",
+    raum: "bad",
+    blur: "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADQAQCdASoQABAAA4BaJZQAAmaLhroEAAD30NDI/VGkJilarcSw7vtcuxBZc0giagOfpPbIPlpVfAp4HfQHk7oYfpSq9iQsLJo92mgD8gFwAA==",
+  },
   "start-galerie-1": {
     src: "/images/arbeiten/dusche/galerie-dusche-sitzbank-mosaik.jpg",
     breite: 800,

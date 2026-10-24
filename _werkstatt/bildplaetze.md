@@ -11,7 +11,7 @@ Spalten: **ID** · Seite und Platz · Format (Breite : Höhe) · Original · Zus
 | start-dusche-boden | Einstieg ab lg, unter der Waage zwischen den Wänden des Plans (E3-START-01, E-039) | 4:3 | IMG_2578 | unterster Ausschnitt: Boden mit Fugen läuft ohne Kante unter der Glaswand durch (Kern der Aussage für P1) | Boden einer Dusche ohne Stufe: große graue Fliesen laufen ohne Kante unter der Glaswand durch | `(min-width: 1312px) 520px, 40vw` | nein (nicht im ersten Bildschirm) |
 | lage-dusche | Fliese „Wanne raus, Dusche ohne Stufe“ | 1:1 | IMG_2582 | Sitzbank und Mosaik mittig | Dusche ohne Stufe mit Sitzbank und türkisen Mosaikfliesen | `(min-width: 1024px) 16vw, 50vw` | nein |
 | lage-bad | Fliese „Das ganze Bad soll neu werden“ | 1:1 | IMG_2610 | Wanne und Boden | Badewanne mit dunkler Verkleidung und hellen Wandfliesen | wie oben | nein |
-| lage-neubau | Fliese „Im Neubau Böden und Wände fliesen“ | 1:1 | — | kein passendes Foto: Fliesenkomposition „Halbverband“ | (dekorativ) | — | — |
+| lage-neubau | Startseite, Lage „Im Neubau sollen Böden und Wände gefliest werden.“ (E3-START-06, E-040) | 1:1 | IMG_2602 | links unten: Wanne, Wandfliesen, frisch verlegter Boden mit Nivellierlaschen; rechts die Montageplatte mit Herstellerzeichen weggeschnitten | Bad während der Arbeit: Wanne, weiße Wandfliesen und frisch verlegter Boden | `(min-width: 1024px) 16vw, (min-width: 768px) 25vw, 33vw` | nein |
 | lage-reparatur | Fliese „Fliese gesprungen, Fugen alt“ | 1:1 | — | kein Foto: Fliesenkomposition „eine Fliese mit Riss“ | (dekorativ) | — | — |
 | lage-balkon | Fliese „Wasser auf dem Balkon“ | 1:1 | IMG_2545 | rechts der Säule: Fliesen mit Geländer, Schwerpunkt 62 % / 62 %; Säule links und Schatten unten links weg (E2-BILD-01) | Balkon mit großen hellgrauen Fliesen | wie oben | nein |
 | lage-treppe | Fliese „Treppe vor dem Haus kaputt“ | 1:1 | IMG_2525 | Stufen mittig, Tuch rechts weg | Außentreppe mit terrakottafarbenen Fliesen und hellen Kanten | wie oben | nein |
@@ -88,4 +88,4 @@ Spalten: **ID** · Seite und Platz · Format (Breite : Höhe) · Original · Zus
 | og-start | Vorschaubild für alle Seiten ohne eigenes | 1200 × 630 | IMG_2578 | Querausschnitt aus der Dusche (Glaswand und Fliesenfugen), ohne Hochskalieren (Quelle 1320 px breit) | Bodengleiche Dusche mit großen grauen Fliesen | — | — |
 
 ## Ohne Foto (Fliesenkompositionen aus dem Formsystem, K-008)
-`lage-neubau`, `lage-reparatur`, `leistungen-wohnen`, 404, Platzhalter für Seiten ohne passendes Foto (Küche, Flur, Wohnräume, Naturstein innen, Treppenhaus). Nie graue Kästen, nie „Bild folgt“.
+`lage-reparatur` (die Zeichnung zeigt den Schaden: ein Riss, das ausgetauschte Stück; seit E-040 einzige Zeichnung im Lage-Raster), `leistungen-wohnen`, 404, Platzhalter für Seiten ohne passendes Foto (Küche, Flur, Wohnräume, Naturstein innen, Treppenhaus). Nie graue Kästen, nie „Bild folgt“.
