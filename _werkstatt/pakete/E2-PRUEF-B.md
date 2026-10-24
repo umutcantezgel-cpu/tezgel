@@ -10,7 +10,7 @@ Du bist **Prüfer**: Du richtest Werkzeuge ein, führst die Prüfungen deiner St
 Markiere Unsicheres als OFFENE FRAGE statt zu raten und erfülle nur deinen Auftrag.
 
 ## 3. Aufgabe in einem Satz
-Miss auf dem Produktionsbau des neuen Stands (Port 4311, Commit `{STAND}`) alle Prüfungen der Stufe B für die Startseite `/` und stelle sie den Ausgangswerten E0 gegenüber.
+Miss auf dem Produktionsbau des neuen Stands (Port 4311, Commit `5df89bc`) alle Prüfungen der Stufe B für die Startseite `/` und stelle sie den Ausgangswerten E0 gegenüber.
 
 ## 4. Das Projekt in fünf Sätzen
 1. tezgel.de ist die Website von Fliesenverlegung Tezgel, dem Fliesenlegerbetrieb von Deniz Tezgel in der Hohwardstraße 14, 35614 Aßlar; sie ist mit Next.js 16.3.6, React 19 und Tailwind 4 gebaut und wird über Vercel ausgeliefert.
@@ -22,7 +22,7 @@ Miss auf dem Produktionsbau des neuen Stands (Port 4311, Commit `{STAND}`) alle 
 ## 5. Kern-Auszug
 - Z-02 bis Z-09 (`_werkstatt/ABNAHME.md`). Budgets mobil (K-013), Median aus mindestens drei Läufen: LCP ≤ 2,5 s, CLS ≤ 0,1, Reaktion (INP) ≤ 200 ms, Lighthouse mobil Leistung ≥ 90, Zugänglichkeit ≥ 95, Best Practices ≥ 95, SEO 100; E0 gilt, wenn besser. Ausgangswerte: `_werkstatt/belege/e0/STUFE-B.md` und `_werkstatt/belege/e0/lighthouse.json`.
 - Geräte (K-013, `_werkstatt/HAUPTANSICHTEN.json`): m360, m390, m430, q844, t768, t1024, d1280, d1440, d1920, d2560. Große Systemschrift: 200 % auf m360, m390, m430 (`einzelbild.mjs --schrift 200`, eigenes `<style>` mit `!important`, E-023).
-- Server: 4311 = Reinraum-Bau von `{STAND}` (neuer Stand), 4313 = derselbe Stand mit Platzhalter-Analysekennung nur für `funktion-tracking.spec.mjs` (`RELAUNCH_TRACKING=1`), 4310 = alter Stand (nur Vergleich). Ergebnis des Reinraum-Baus: `_werkstatt/cache/reinraum-{STAND}/ergebnis.txt`.
+- Server: 4311 = Reinraum-Bau von `5df89bc` (neuer Stand), 4313 = derselbe Stand mit Platzhalter-Analysekennung nur für `funktion-tracking.spec.mjs` (`RELAUNCH_TRACKING=1`), 4310 = alter Stand (nur Vergleich). Ergebnis des Reinraum-Baus: `_werkstatt/cache/reinraum-5df89bc/ergebnis.txt`.
 - Erster Besuch zeigt das Intro „Der erste Boden“; die Werkzeuge setzen den Intro-Speicher, außer `lighthouse.mjs` (frisches Profil je Lauf, also immer mit Intro).
 - Unantastbar (melden, falls verändert; kein Befund gegen die Seite): Logo, Rechtstexte, Firmendaten, Wortlaut der Kundenstimmen, Cookie-Einwilligung, Pflichtfelder und Empfänger der Formulare.
 
@@ -40,7 +40,7 @@ Jede Zahl stammt aus einem Werkzeuglauf mit Pfad. Funktionstests: erwartet ≥ E
 
 ## 8. Schritte
 Alle Befehle aus `/home/user/tezgel/_werkstatt/werkzeuge`, Ausgaben nach `$SCRATCH/E2-PRUEF-B/`, außer wo ein Belegpfad genannt ist. Zuerst `curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:4311/` (200) und `…:4311/gibt-es-nicht` (404).
-1. **Bestand:** `cat /home/user/tezgel/_werkstatt/cache/reinraum-{STAND}/ergebnis.txt` übernehmen. `npm test` in `/home/user/tezgel` (Zahl bestanden und gescheitert). Dann jede Spec einzeln: `RELAUNCH_BASE=http://127.0.0.1:4311 RELAUNCH_OUTPUT=$SCRATCH/E2-PRUEF-B/pw RELAUNCH_REPORT=$SCRATCH/E2-PRUEF-B/funktion/<spec>.json timeout 590 npx playwright test tests/<spec> --workers=1` für alle `tests/funktion-*.spec.mjs` außer `funktion-tracking.spec.mjs` und für `tests/verlegen.spec.mjs`; danach `RELAUNCH_BASE=http://127.0.0.1:4313 RELAUNCH_TRACKING=1 … tests/funktion-tracking.spec.mjs`. Je Spec erwartet, unerwartet, übersprungen; einen Fehlschlag einmal einzeln wiederholen und beide Ausgaben nennen. Zusammenfassung nach `_werkstatt/belege/e2/funktion.json`.
+1. **Bestand:** `cat /home/user/tezgel/_werkstatt/cache/reinraum-5df89bc/ergebnis.txt` übernehmen. `npm test` in `/home/user/tezgel` (Zahl bestanden und gescheitert). Dann jede Spec einzeln: `RELAUNCH_BASE=http://127.0.0.1:4311 RELAUNCH_OUTPUT=$SCRATCH/E2-PRUEF-B/pw RELAUNCH_REPORT=$SCRATCH/E2-PRUEF-B/funktion/<spec>.json timeout 590 npx playwright test tests/<spec> --workers=1` für alle `tests/funktion-*.spec.mjs` außer `funktion-tracking.spec.mjs` und für `tests/verlegen.spec.mjs`; danach `RELAUNCH_BASE=http://127.0.0.1:4313 RELAUNCH_TRACKING=1 … tests/funktion-tracking.spec.mjs`. Je Spec erwartet, unerwartet, übersprungen; einen Fehlschlag einmal einzeln wiederholen und beide Ausgaben nennen. Zusammenfassung nach `_werkstatt/belege/e2/funktion.json`.
 2. **Bildsatz:** `node bildsatz.mjs --satz e2 --seiten /,/gibt-es-nicht --geraete alle --base http://127.0.0.1:4311 --ziel $SCRATCH/E2-PRUEF-B/bildsatz`; Kennzahlen je Seite und Gerät nach `_werkstatt/belege/e2/bildsatz.json`.
 3. **Konsole und große Schrift:** `node einzelbild.mjs --base http://127.0.0.1:4311 --seite / --geraete alle --ziel $SCRATCH/E2-PRUEF-B/einzel/start` (Konsole je Gerät), dann `node einzelbild.mjs --base http://127.0.0.1:4311 --seite / --geraete m360,m390,m430 --schrift 200 --voll --ziel $SCRATCH/E2-PRUEF-B/schrift200/start`, dasselbe für `/gibt-es-nicht`. Kennzahlen nach `_werkstatt/belege/e2/schrift200.json`. Sieh die drei ganzseitigen Bilder von `/` mit dem Read-Werkzeug in Ausschnitten an und melde nur, was sichtbar abgeschnitten, überdeckt oder leer ist, mit Bildpfad.
 4. **Erstes Bild:** `RELAUNCH_BASE=http://127.0.0.1:4311 node erstesbild.mjs --satz e2 --seiten / --geraete alle --ziel /home/user/tezgel/_werkstatt/belege/e2`.
