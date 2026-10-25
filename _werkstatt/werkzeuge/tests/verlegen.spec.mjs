@@ -3,6 +3,8 @@
 // Ablauf Fliese für Fliese (E-043: von rechts belegen, in derselben Richtung einzeln abnehmen) und das Logo auf der Wand
 // (E-047, Fall 23; reduziert in Fall 12). Gegenprüfung E3-B01: Bildlaufleiste sichtbar (23b), Logo bei Zurück und Vor (24),
 // Fokus nach dem Abbruch (19b), Tastatur im Abnehmen (25), Drehen beim Legen (26), Anker auf einer anderen Seite (27).
+// E3-B01-FIX-2: Abbruch aus dem Verlauf (19c), Seite kurz vor Ablauf (19d), Höhe wächst beim Legen wenig (28), Enter im
+// Abnehmen und dann Zurück (29).
 // Keine Wartezeiten: Zustände protokolliert ein MutationObserver im Dokument, abgefragt wird nur der Zustand.
 // Projekte mobil (390 px) und desktop (1440 px) aus playwright.config.mjs. Server: RELAUNCH_BASE (127.0.0.1:4320).
 // Gegenprobe: VERLEGEN_GEGENPROBE=1 setzt in Fall (1) data-kein-verlegen am genutzten Link; Fall (1) muss dann scheitern.
@@ -187,7 +189,9 @@ async function linkImSichtfeld(page) {
 }
 
 /** Nimmt je Bild ab dem Verlassen von ruhe bis zurück in ruhe auf: Zustand, Deckkraft und Größe des Logos, Lage des Bilds,
- *  Fläche der Schicht (die Ansicht ohne Bildlaufleiste, Gegenprüfung E3-B01, Befund 2) und Breite der Bildlaufleiste. */
+ *  Fläche der Schicht (die Ansicht ohne Bildlaufleiste, Gegenprüfung E3-B01, Befund 2) und Breite der Bildlaufleiste; dazu
+ *  die Bildzeit (document.timeline.currentTime) und beim Abnehmen die Startzeiten der Animationen von Fliesen und Logo auf
+ *  derselben Zeitachse (Messung unabhängig von der Verspätung der Abtastung, E3-B01-FIX-2). */
 async function logoAufnahme(page) {
   await page.evaluate(() => {
     const v = (window.__logo = []);
@@ -201,8 +205,17 @@ async function logoAufnahme(page) {
         const m = s && s.transform !== 'none' ? new DOMMatrixReadOnly(s.transform) : null;
         const r = bild?.getBoundingClientRect();
         const flaeche = schicht.getBoundingClientRect();
+        // beim Abnehmen: Startzeit der Fliesen (die Leg-Animationen sind dann beendet) und Start und Ende des Ausblendens am
+        // Behälter des Logos, sobald der Browser sie gestartet hat (vorher ist startTime null)
+        const animationen = z === 'abnehmen' ? document.getAnimations().filter((a) => a.startTime !== null) : [];
+        const fliese = animationen.find((a) => a.effect?.target?.classList?.contains('verlegen-fliese'));
+        const logoWeg = animationen.find((a) => a.effect?.target === behaelter);
         v.push({
           t: performance.now(),
+          tl: Number(document.timeline.currentTime),
+          fliesenStart: fliese ? Number(fliese.startTime) : null,
+          logoStart: logoWeg ? Number(logoWeg.startTime) : null,
+          logoEnde: logoWeg ? Number(logoWeg.startTime) + Number(logoWeg.effect.getComputedTiming().endTime) : null,
           z,
           deckt: bild ? Number(s.opacity) * Number(getComputedStyle(behaelter).opacity) : 0,
           groesse: m ? Math.hypot(m.a, m.b) : 1,
@@ -266,24 +279,87 @@ async function pruefeLogo(page) {
   expect(weg, 'Logo geht wieder').toBeTruthy();
   expect.soft(weg.t - f.t, `Logo steht mindestens ${LOGO_STEHEN} ms deckend (${protokoll})`).toBeGreaterThanOrEqual(LOGO_STEHEN - BILD);
   expect.soft(weg.z, 'Logo geht erst mit dem Abnehmen').toBe('abnehmen');
-  // geht mit den ersten abgenommenen Fliesen: spätestens 200 ms (und ein Bild) nach dem Beginn des Abnehmens ganz weg
-  const abnehmen = b.find((e) => e.z === 'abnehmen');
-  const fort = b.find((e) => e.z === 'abnehmen' && e.deckt < 0.01);
-  expect(fort, 'Logo beim Abnehmen ganz weg').toBeTruthy();
-  expect.soft(fort.t - abnehmen.t, `Logo weg ${LOGO_WEG} ms nach Beginn des Abnehmens (± 2 Bilder)`).toBeLessThanOrEqual(LOGO_WEG + 2 * BILD);
+  // geht mit den ersten abgenommenen Fliesen: spätestens 200 ms nach dem Beginn des Abnehmens ganz weg. Gemessen auf der
+  // Zeitachse des Dokuments statt an der Wanduhr der Abtastung (performance.now() im rAF-Rückruf): Unter Last kommt der Rückruf
+  // ein langes Bild später, gemessen wurden 240,2 und 254,3 ms bei 200 ms Ausblenden, ohne dass das Logo länger stand.
+  // Dieselbe Aussage, ohne Spielraum für die Abtastung: Beginn ist die Startzeit der ersten abgenommenen Fliese; das
+  // Ausblenden des Logos startet im selben Bild (± 1 Bild) und endet spätestens 200 ms nach dem Beginn (+ 1 Bild); und jedes
+  // abgetastete Bild, dessen Bildzeit danach liegt, zeigt das Logo ohne Deckkraft (die Deckkraft ist die gemalte, nicht die
+  // geplante). Vorher erlaubte die Prüfung 2 Bilder.
+  const zeiten = b.find((e) => e.z === 'abnehmen' && e.fliesenStart !== null && e.logoStart !== null);
+  expect(zeiten, `Startzeiten von Fliesen und Logo beim Abnehmen (${protokoll})`).toBeTruthy();
+  const beginn = zeiten.fliesenStart;
+  expect.soft(Math.abs(zeiten.logoStart - beginn), 'Logo beginnt mit der ersten abgenommenen Fliese (± 1 Bild)').toBeLessThanOrEqual(BILD);
+  expect.soft(zeiten.logoEnde - beginn, `Logo weg ${LOGO_WEG} ms nach Beginn des Abnehmens (+ 1 Bild)`).toBeLessThanOrEqual(LOGO_WEG + BILD);
+  const danach = b.filter((e) => e.z === 'abnehmen' && e.tl >= zeiten.logoEnde);
+  expect(danach.length, `Bilder nach dem Ende des Ausblendens abgetastet (${protokoll})`).toBeGreaterThan(0);
+  expect.soft(Math.max(...danach.map((e) => e.deckt)), 'nach dem Ende des Ausblendens ist das Logo ganz weg').toBeLessThan(0.01);
   expect.soft(b.at(-1).deckt, 'in ruhe kein Logo').toBe(0);
   expect.soft(await pfad(page)).toBe(ZIEL);
   return b;
 }
 
-/** Ein langsames Ziel: Antworten auf ZIEL (RSC, auch das Vorladen) kommen erst nach 4,5 s, der Wechsel bricht nach 3 s ab. */
-async function langsamesZiel(page) {
+/** Ein langsames Ziel: Antworten auf `ziel` (RSC, auch das Vorladen) kommen erst nach 4,5 s, der Wechsel bricht nach 3 s ab. */
+async function langsamesZiel(page, ziel = ZIEL) {
   await page.route('**/*', async (route) => {
     const url = new URL(route.request().url());
-    if (url.pathname.replace(/\/+$/, '') === ZIEL && url.searchParams.has('_rsc')) await new Promise((r) => setTimeout(r, 4500));
+    if (url.pathname.replace(/\/+$/, '') === ziel && url.searchParams.has('_rsc')) await new Promise((r) => setTimeout(r, 4500));
     await route.continue().catch(() => undefined);
   });
 }
+
+/** Wartet je Bild, bis der Boden liegt, und zählt Punkte der Schicht im Raster von 37 px (dazu die Ecken), die keine deckende
+ *  Fliese trifft; dazu die Lage des Logo-Behälters. bisGedeckt: weiter abfragen, solange der Boden liegt, aber (noch) nicht
+ *  deckt, bis er deckt oder abgenommen wird; sonst gilt das erste Bild nach dem Legen. */
+function bodenDeckung(page, bisGedeckt) {
+  return page
+    .waitForFunction(
+      (bisGedeckt) => {
+        const s = document.querySelector('.verlegen');
+        const z = s.dataset.zustand;
+        if (z === 'legen') return false;
+        const r = s.getBoundingClientRect();
+        const punkte = [[r.width - 1, 1], [1, r.height - 1], [r.width - 1, r.height - 1]];
+        for (let y = 1; y < r.height; y += 37) for (let x = 1; x < r.width; x += 37) punkte.push([x, y]);
+        const offen = punkte.filter(
+          ([x, y]) =>
+            !document.elementsFromPoint(x, y).some((el) => {
+              const f = el.closest('.verlegen-fliese');
+              return !!f && Number(getComputedStyle(f).opacity) > 0.99;
+            }),
+        );
+        const l = s.querySelector('.verlegen-logo').getBoundingClientRect();
+        const ergebnis = { z, ansicht: [r.width, r.height], punkte: punkte.length, offen: offen.length, erster: offen[0] ?? null, logo: { x: l.left, y: l.top, b: l.width, h: l.height } };
+        if (bisGedeckt && (z === 'bedeckt' || z === 'warten') && offen.length > 0) return false;
+        return ergebnis;
+      },
+      bisGedeckt,
+      { polling: 'raf', timeout: 10_000 },
+    )
+    .then((h) => h.jsonValue());
+}
+
+/** Während des Abnehmens: Fokus auf einen Link der neuen Seite (wie nach Tab von der H1) und den Stand im Augenblick seines
+ *  Klicks merken (window.__enter). Gibt das Ziel des Links zurück. */
+function linkImAbnehmen(page) {
+  return page.evaluate((ziele) => {
+    const el = ziele.map((z) => [...document.querySelectorAll(`#main-content a[href="${z}"]`)].find((a) => a.getClientRects().length > 0)).find(Boolean);
+    if (!el) return null;
+    el.focus({ preventScroll: true });
+    const schicht = document.querySelector('.verlegen');
+    document.addEventListener(
+      'click',
+      (e) => {
+        window.__enter = { z: schicht.dataset.zustand, detail: e.detail, href: e.target.closest?.('a')?.getAttribute('href') ?? null };
+      },
+      { capture: true, once: true },
+    );
+    return el.getAttribute('href');
+  }, ['/bad/barrierefreies-bad', '/bad/fliesen', '/bad/bad-aus-einer-hand', '/bad/musterbaeder', '/kontakt', '/bad']);
+}
+
+const imZustand = (page, z, timeout = 10_000) =>
+  page.waitForFunction((z) => document.querySelector('.verlegen')?.dataset.zustand === z, z, { polling: 'raf', timeout });
 
 test.describe('Bewegung an (Wechsel mit Fliesen)', () => {
   // Die Konfiguration setzt reducedMotion: reduce. Ohne Überschreibung gäbe es keine Fliesen und kein html.k-modul.
@@ -779,22 +855,8 @@ test.describe('Bewegung an (Wechsel mit Fliesen)', () => {
     await beobachte(page);
     const ab = await laenge(page);
     await link.click();
-    await page.waitForFunction(() => document.querySelector('.verlegen')?.dataset.zustand === 'abnehmen', null, { polling: 'raf', timeout: 10_000 });
-    // Fokus auf einen Link der neuen Seite (wie nach Tab von der H1) und den Stand im Augenblick des Klicks merken
-    const weiter = await page.evaluate((ziele) => {
-      const el = ziele.map((z) => [...document.querySelectorAll(`#main-content a[href="${z}"]`)].find((a) => a.getClientRects().length > 0)).find(Boolean);
-      if (!el) return null;
-      el.focus({ preventScroll: true });
-      const schicht = document.querySelector('.verlegen');
-      document.addEventListener(
-        'click',
-        (e) => {
-          window.__enter = { z: schicht.dataset.zustand, detail: e.detail, href: e.target.closest?.('a')?.getAttribute('href') ?? null };
-        },
-        { capture: true, once: true },
-      );
-      return el.getAttribute('href');
-    }, ['/bad/barrierefreies-bad', '/bad/fliesen', '/bad/bad-aus-einer-hand', '/bad/musterbaeder', '/kontakt', '/bad']);
+    await imZustand(page, 'abnehmen');
+    const weiter = await linkImAbnehmen(page);
     expect(weiter, 'interner Link auf der neuen Seite').not.toBeNull();
     await page.keyboard.press('Enter');
     expect(await page.evaluate(() => window.__enter), 'Enter kam als Klick der Tastatur an, während abgenommen wurde').toEqual({ z: 'abnehmen', detail: 0, href: weiter });
@@ -812,35 +874,9 @@ test.describe('Bewegung an (Wechsel mit Fliesen)', () => {
     const ab = await laenge(page);
     const vorher = page.viewportSize();
     await link.click();
-    await page.waitForFunction(() => document.querySelector('.verlegen')?.dataset.zustand === 'legen', null, { polling: 'raf', timeout: 5000 });
+    await imZustand(page, 'legen', 5000);
     await page.setViewportSize({ width: vorher.height, height: vorher.width });
-    // je Bild, sobald der Boden liegt: Punkte der Schicht im Raster von 37 px (dazu die Ecken), die keine deckende Fliese trifft
-    const stand = await page
-      .waitForFunction(
-        () => {
-          const s = document.querySelector('.verlegen');
-          const z = s.dataset.zustand;
-          if (z === 'legen') return false;
-          const r = s.getBoundingClientRect();
-          const punkte = [[r.width - 1, 1], [1, r.height - 1], [r.width - 1, r.height - 1]];
-          for (let y = 1; y < r.height; y += 37) for (let x = 1; x < r.width; x += 37) punkte.push([x, y]);
-          const offen = punkte.filter(
-            ([x, y]) =>
-              !document.elementsFromPoint(x, y).some((el) => {
-                const f = el.closest('.verlegen-fliese');
-                return !!f && Number(getComputedStyle(f).opacity) > 0.99;
-              }),
-          );
-          const l = s.querySelector('.verlegen-logo').getBoundingClientRect();
-          const ergebnis = { z, ansicht: [r.width, r.height], punkte: punkte.length, offen: offen.length, erster: offen[0] ?? null, logo: { x: l.left, y: l.top, b: l.width, h: l.height } };
-          // liegt der Boden, aber deckt (noch) nicht: weiter abfragen, bis er deckt oder abgenommen wird
-          if ((z === 'bedeckt' || z === 'warten') && offen.length > 0) return false;
-          return ergebnis;
-        },
-        null,
-        { polling: 'raf', timeout: 10_000 },
-      )
-      .then((h) => h.jsonValue());
+    const stand = await bodenDeckung(page, true);
     expect.soft(stand.ansicht, 'Schicht hat die neue Größe').toEqual([vorher.height, vorher.width]);
     expect.soft(['bedeckt', 'warten'], `Boden deckt, solange er liegt (${JSON.stringify(stand)})`).toContain(stand.z);
     expect.soft(stand.offen, `nicht gedeckte Punkte (${JSON.stringify(stand)})`).toBe(0);
@@ -931,6 +967,186 @@ test.describe('Bewegung an (Wechsel mit Fliesen)', () => {
     await warteAufRuhe(page, ab);
     await expect.poll(() => pfad(page), { timeout: 10_000 }).toBe(ZIEL);
     await expect(page.locator('#main-content h1')).toBeFocused();
+  });
+
+  test('(19c) Abbruch aus dem Verlauf: Zurück auf eine Seite, die erst nach 4,5 s kommt; kommt sie doch, steht sie an der gemerkten Stelle, Fokus auf ihrer H1 (Gegenprüfung E3-B01, Befund 3)', async ({ page, browser }) => {
+    const h1Start = await h1Von(browser, START);
+    await oeffne(page);
+    await page.evaluate(() => window.scrollTo({ top: 400, behavior: 'instant' }));
+    await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThanOrEqual(398);
+    const { ziel, scroll } = await linkImSichtfeld(page);
+    expect(scroll, 'Scroll vor dem Klick mindestens 400 px').toBeGreaterThanOrEqual(398);
+    const link = linkZu(page, ziel);
+    await bedienbar(link);
+    await beobachte(page);
+    await wechsel(page, () => link.click(), ziel);
+    // Neu laden leert den Speicher des Routers: Zurück stellt dann eine RSC-Anfrage für START (sonst kommt die Seite aus dem
+    // Speicher sofort). Gemessen (Sonde E3-B01-FIX-2): Zurück bleibt auch nach dem Neuladen ein popstate im selben Dokument,
+    // danach GET /bad?_rsc=…
+    await page.reload();
+    await expect(page.locator('html')).toHaveClass(/k-modul/);
+    await bedienbar(page.locator('.verlegen'));
+    await beobachte(page);
+    await langsamesZiel(page, START);
+    const ab = await laenge(page);
+    await page.evaluate(() => history.back());
+    await expect.poll(async () => (await log(page)).slice(ab).map((e) => e.z).join(' '), { timeout: 15_000 }).toContain('abbruch');
+    // die Adresse zeigt START schon beim popstate; die Seite selbst kommt mit der Antwort
+    const h1 = () => page.evaluate(() => document.querySelector('#main-content h1')?.textContent?.trim() ?? '');
+    await expect.poll(h1, { timeout: 15_000 }).toBe(h1Start);
+    await warteAufRuhe(page, ab);
+    const l = (await log(page)).slice(ab);
+    expect.soft(l.map((e) => e.z), 'Abbruch statt Abnehmen').not.toContain('abnehmen');
+    expect.soft(await pfad(page)).toBe(START);
+    expect.soft(Math.abs((await page.evaluate(() => window.scrollY)) - scroll), `Scroll an der gemerkten Stelle (${scroll} px ± 2)`).toBeLessThanOrEqual(2);
+    await expect(page.locator('#main-content h1')).toBeFocused();
+  });
+
+  // (19d) Versatz der Antwort nach „bedeckt“ (zeit-ende kommt 3000 ms nach „bedeckt“, die Uhr startet mit navigiere im selben
+  // Schritt). Damit „bereit“ erst nach zeit-ende käme, ist der Hauptfaden nach dem Einhängen beschäftigt (eine Kette kurzer
+  // Aufgaben, wie Bilder und Skripte einer neuen Seite): requestIdleCallback in spaeterBereit läuft dann erst nach seiner Frist,
+  // „bereit“ also frühestens 2 Bilder + 400 ms nach dem Einhängen. Gemessen (E3-B01-FIX-2, je 5 Läufe mobil und desktop,
+  // Versatz 2650 ms): eingehängt 161 bis 269 ms nach der Freigabe (2811 bis 2919 ms nach „bedeckt“), Abbruch bei 3005 bis
+  // 3131 ms. Mit 2550 ms liegt das Einhängen bei etwa 2710 bis 2820 ms: rund 200 ms vor zeit-ende, „bereit“ frühestens bei
+  // etwa 3140 ms, also nach zeit-ende. Ohne die beschäftigte Kette kam „bereit“ rund 40 bis 100 ms nach dem Einhängen, vor
+  // zeit-ende: kein Abbruch. Der Fall prüft selbst, dass die Seite vor dem Abbruch eingehängt war (sonst scheitert er laut).
+  const VERSATZ_KNAPP = 2550;
+
+  test('(19d) Seite kommt kurz vor Ablauf der 3 s, „bereit“ käme erst danach: Abbruch, Fokus auf der H1 der schon eingehängten Seite (Gegenprüfung E3-B01-FIX, seiteDa)', async ({ page, browser }, testInfo) => {
+    const h1Ziel = await h1Von(browser, ZIEL);
+    let freigabe;
+    const tor = new Promise((r) => (freigabe = r));
+    // der Server rechnet die Antwort sofort (route.fetch), ausgeliefert wird sie erst nach der Freigabe: so hängt der Zeitpunkt
+    // des Einhängens nur noch an Übertragung und Rendern im Browser, nicht am Rechnen des Entwicklungsservers
+    await page.route('**/*', async (route) => {
+      const url = new URL(route.request().url());
+      if (url.pathname.replace(/\/+$/, '') === ZIEL && url.searchParams.has('_rsc')) {
+        const antwort = await route.fetch().catch(() => null);
+        await tor;
+        if (antwort) await route.fulfill({ response: antwort }).catch(() => undefined);
+        else await route.continue().catch(() => undefined);
+        return;
+      }
+      await route.continue().catch(() => undefined);
+    });
+    await oeffne(page);
+    await beobachte(page);
+    const link = linkZu(page, ZIEL);
+    await bedienbar(link);
+    await page.evaluate((ziel) => {
+      const schicht = document.querySelector('.verlegen');
+      const v = (window.__knapp = { bedeckt: null, da: null, abbruch: null, abnehmen: null });
+      new MutationObserver(() => {
+        const z = schicht.dataset.zustand;
+        if (z in v && v[z] === null) v[z] = performance.now();
+      }).observe(schicht, { attributes: true, attributeFilter: ['data-zustand'] });
+      // Einhängen: Adresse und Inhalt wechseln im selben Schritt (der Pfad-Effekt läuft darin); der Beobachter meldet sich gleich
+      // danach. Ab dann die Kette kurzer Aufgaben, bis der Wechsel entschieden ist (höchstens 1,5 s): keine Leerlaufzeit, Uhren
+      // und Bilder laufen weiter.
+      new MutationObserver(() => {
+        if (v.da !== null || location.pathname !== ziel) return;
+        v.da = performance.now();
+        const kanal = new MessageChannel();
+        const bis = v.da + 1500;
+        kanal.port1.onmessage = () => {
+          const z = schicht.dataset.zustand;
+          if (performance.now() < bis && (z === 'bedeckt' || z === 'warten')) kanal.port2.postMessage(0);
+        };
+        kanal.port2.postMessage(0);
+      }).observe(document.getElementById('main-content'), { childList: true, subtree: true });
+    }, ZIEL);
+    const ab = await laenge(page);
+    await link.click();
+    await page.waitForFunction((versatz) => window.__knapp.bedeckt !== null && performance.now() - window.__knapp.bedeckt >= versatz, VERSATZ_KNAPP, { polling: 'raf', timeout: 10_000 });
+    freigabe();
+    await warteAufRuhe(page, ab);
+    await expect.poll(() => pfad(page), { timeout: 10_000 }).toBe(ZIEL);
+    const k = await page.evaluate(() => window.__knapp);
+    const relativ = Object.fromEntries(Object.entries(k).map(([n, t]) => [n, t === null ? null : Math.round(t - k.bedeckt)]));
+    await testInfo.attach('knapp.json', { body: JSON.stringify({ versatz: VERSATZ_KNAPP, abBedeckt: relativ }, null, 2), contentType: 'application/json' });
+    console.log(`(19d) ${testInfo.project.name}: ms ab bedeckt ${JSON.stringify(relativ)}`);
+    // der Fall prüft nur, was er prüfen soll: eingehängt vor dem Abbruch, und abgebrochen statt abgenommen
+    expect(k.abbruch, `Abbruch eingetreten (${JSON.stringify(relativ)})`).not.toBeNull();
+    expect(k.da, `Seite vor dem Abbruch eingehängt (${JSON.stringify(relativ)})`).not.toBeNull();
+    expect(k.da, `Seite vor dem Abbruch eingehängt (${JSON.stringify(relativ)})`).toBeLessThan(k.abbruch);
+    expect.soft(k.abnehmen, 'nicht abgenommen').toBeNull();
+    expect.soft((await page.locator('#main-content h1').first().textContent())?.trim(), 'Inhalt von ZIEL').toBe(h1Ziel);
+    await expect(page.locator('#main-content h1')).toBeFocused();
+  });
+
+  test('(28) Höhe wächst beim Legen wenig (Adressleiste fährt ein): die Fliesen legen weiter statt in einem Bild zu liegen, danach deckt der Boden ganz (Gegenprüfung E3-B01-FIX)', async ({ page }) => {
+    await oeffne(page);
+    const link = linkZu(page, ZIEL);
+    await bedienbar(link);
+    await beobachte(page);
+    const ab = await laenge(page);
+    const vorher = page.viewportSize();
+    // 390 × 844 → 390 × 900, 1440 × 900 → 1440 × 960
+    const neu = { width: vorher.width, height: vorher.height + (vorher.width < 600 ? 56 : 60) };
+    await link.click();
+    await imZustand(page, 'legen', 5000);
+    await page.setViewportSize(neu);
+    // zwei Bilder nach der Größenänderung (resize läuft im Bild vor den rAF-Rückrufen): Zustand, Fläche, laufende Leg-Animationen
+    const direkt = await page.evaluate(
+      () =>
+        new Promise((fertig) =>
+          requestAnimationFrame(() =>
+            requestAnimationFrame(() => {
+              const s = document.querySelector('.verlegen');
+              const r = s.getBoundingClientRect();
+              const fliesen = [...document.querySelectorAll('.verlegen-fliese')];
+              fertig({
+                z: s.dataset.zustand,
+                ansicht: [r.width, r.height],
+                laufend: document.getAnimations().filter((a) => a.playState === 'running' && a.effect?.target?.closest?.('.verlegen-fliese')).length,
+                gelegt: fliesen.filter((el) => Number(getComputedStyle(el).opacity) > 0.99).length,
+                fliesen: fliesen.length,
+              });
+            }),
+          ),
+        ),
+    );
+    expect(direkt.ansicht, 'Schicht hat die neue Größe').toEqual([neu.width, neu.height]);
+    expect(direkt.z, `Größe geändert, während gelegt wird (${JSON.stringify(direkt)})`).toBe('legen');
+    expect.soft(direkt.laufend, `Leg-Animationen laufen weiter (${JSON.stringify(direkt)})`).toBeGreaterThan(0);
+    expect.soft(direkt.gelegt, `kein Rest in einem Bild: noch nicht alle Fliesen liegen (${JSON.stringify(direkt)})`).toBeLessThan(direkt.fliesen);
+    // das erste Bild nach dem Legen deckt schon die ganze neue Ansicht
+    const stand = await bodenDeckung(page, false);
+    expect.soft(['bedeckt', 'warten'], `Boden liegt (${JSON.stringify(stand)})`).toContain(stand.z);
+    expect.soft(stand.ansicht, 'Fläche der Schicht').toEqual([neu.width, neu.height]);
+    expect.soft(stand.offen, `nicht gedeckte Punkte im ersten Bild nach dem Legen (${JSON.stringify(stand)})`).toBe(0);
+    await warteAufRuhe(page, ab);
+    expect.soft(ohneWarten(folge(await log(page), ab))).toEqual(VOLL);
+    expect.soft(await pfad(page)).toBe(ZIEL);
+  });
+
+  test('(29) Enter im Abnehmen auf einen Link, dann sofort Zurück: der Lauf endet auf der Seite des Zurück, kein zweiter Fliesenwechsel (Gegenprüfung E3-B01-FIX)', async ({ page, browser }) => {
+    const h1Start = await h1Von(browser, START);
+    await oeffne(page);
+    const link = linkZu(page, ZIEL);
+    await bedienbar(link);
+    await beobachte(page);
+    const ab = await laenge(page);
+    await link.click();
+    await imZustand(page, 'abnehmen');
+    const weiter = await linkImAbnehmen(page);
+    expect(weiter, 'interner Link auf der neuen Seite').not.toBeNull();
+    // Zustand beim popstate merken (Lauscher nach dem der Schicht; im Abnehmen hält sie das Ereignis nicht an)
+    await page.evaluate(() => {
+      const schicht = document.querySelector('.verlegen');
+      window.addEventListener('popstate', () => (window.__zurueck ??= { z: schicht.dataset.zustand }), { capture: true });
+    });
+    await page.keyboard.press('Enter');
+    await page.evaluate(() => history.back());
+    expect(await page.evaluate(() => window.__enter), 'Enter kam als Klick der Tastatur an, während abgenommen wurde').toEqual({ z: 'abnehmen', detail: 0, href: weiter });
+    await expect.poll(() => page.evaluate(() => window.__zurueck?.z ?? null), { message: 'Zurück kam, während abgenommen wurde' }).toBe('abnehmen');
+    await warteAufRuhe(page, ab);
+    // kein zweiter Wechsel: ein vorgemerkter Link begänne ein Bild nach freigeben; das Protokoll bleibt eine Weile stehen
+    await page.waitForTimeout(800);
+    expect.soft(ohneWarten(folge(await log(page), ab)), 'genau ein Fliesenwechsel').toEqual(VOLL);
+    expect.soft(await pfad(page), 'Seite des Zurück').toBe(START);
+    expect.soft((await page.locator('#main-content h1').first().textContent())?.trim(), 'Inhalt von START').toBe(h1Start);
+    await expect.soft(page.locator('#main-content h1')).toBeFocused();
   });
 });
 
