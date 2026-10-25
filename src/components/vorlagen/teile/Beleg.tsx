@@ -29,7 +29,13 @@ export default function Beleg({ inhalt, moment, zweiter, stimmenTitel = 'Das sag
   return (
     <>
       <Abschnitt id="unsere-arbeiten" formel="beleg" leitachse spaet mitte titel={inhalt.titel}>
-        {inhalt.fotos.length === 1 && <Fotos fotos={inhalt.fotos} spalten={1} />}
+        {/* ein einzelnes Foto wie die Fotos der Reihe: Glasfläche mit Name und Weg zur Leistungsseite, ohne Unterschrift darunter
+            (K-016, Zusatz Regel 4; Gegenprüfung Welle 2), mittig in der Lesebreite */}
+        {inhalt.fotos.length === 1 && (
+          <div className="mx-auto w-full max-w-mass">
+            <Glasbild arbeit={inhalt.fotos[0].bild} name={inhalt.fotos[0].unterschrift} href={inhalt.fotos[0].href} sizes="(min-width: 768px) 66ch, 100vw" />
+          </div>
+        )}
         {inhalt.fotos.length > 1 && (
           <Karussell art="reihe" name="Fotos" karte="w-full md:w-1/2 lg:w-1/3">
             {inhalt.fotos.map((f) => (
@@ -38,7 +44,7 @@ export default function Beleg({ inhalt, moment, zweiter, stimmenTitel = 'Das sag
           </Karussell>
         )}
         {inhalt.satz && (
-          <p className="mt-8 max-w-mass font-text text-fs-4 text-pretty text-tinte">
+          <p className="mx-auto mt-8 max-w-mass text-center font-text text-fs-4 text-pretty text-tinte">
             <Textmarken text={inhalt.satz} />
           </p>
         )}

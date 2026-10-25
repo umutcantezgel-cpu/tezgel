@@ -15,7 +15,10 @@ export interface DirectContactCardProps {
 
 const etikett = 'block font-mono text-fs-1 text-tinte-2';
 
-function Weg({ href, icon, label, wert, extern }: { href: string; icon: IconName; label: string; wert: string; extern?: boolean }) {
+/** tel:-Ziel ohne Leerzeichen (RFC 3966); die Nummer selbst bleibt unverändert (G8) */
+const telLink = (nummer: string) => `tel:${nummer.replace(/\s/g, '')}`;
+
+function Weg({ href, icon, label, wert, extern, text = false }: { href: string; icon: IconName; label: string; wert: string; extern?: boolean; text?: boolean }) {
   return (
     <a
       href={href}
@@ -26,7 +29,7 @@ function Weg({ href, icon, label, wert, extern }: { href: string; icon: IconName
         <Icon name={icon} groesse={5} className="text-tinte-2" />
         <span>
           <span className={etikett}>{label}</span>
-          <span className="mt-1 block font-mono text-fs-3 underline decoration-transparent underline-offset-4 group-hover:decoration-tinte">{wert}</span>
+          <span className={clsx('mt-1 block text-fs-3 underline decoration-transparent underline-offset-4 group-hover:decoration-tinte', text ? 'font-text font-semibold' : 'font-mono')}>{wert}</span>
         </span>
       </span>
       <Icon name={extern ? 'link-extern' : 'pfeil-rechts'} groesse={5} className="text-tinte-2" />
@@ -34,13 +37,14 @@ function Weg({ href, icon, label, wert, extern }: { href: string; icon: IconName
   );
 }
 
-/** Kontaktwege: Telefon, Mobil und WhatsApp, E-Mail, Öffnungszeiten, Adresse */
+/** Kontaktwege: Telefon, Mobil (Anruf), Nachricht per WhatsApp, E-Mail, Öffnungszeiten, Adresse */
 export function DirectContactCard({ className = '' }: DirectContactCardProps) {
   return (
     <div className={clsx('border border-fuge bg-fliese p-6 text-tinte sm:p-8', className)}>
       <div className="border-t border-strich">
-        <Weg href={`tel:${SITE_CONFIG.contact.telephone}`} icon="telefon" label="Telefon" wert={SITE_CONFIG.contact.telephoneFormatted} />
-        <Weg href={SITE_CONFIG.contact.whatsappLink} icon="sprechblase" label="Mobil und WhatsApp" wert={SITE_CONFIG.contact.mobileFormatted} extern />
+        <Weg href={telLink(SITE_CONFIG.contact.telephone)} icon="telefon" label="Telefon" wert={SITE_CONFIG.contact.telephoneFormatted} />
+        <Weg href={telLink(SITE_CONFIG.contact.mobile)} icon="telefon" label="Mobil" wert={SITE_CONFIG.contact.mobileFormatted} />
+        <Weg href={SITE_CONFIG.contact.whatsappLink} icon="sprechblase" label="WhatsApp" wert="Nachricht per WhatsApp" extern text />
         <Weg href={`mailto:${SITE_CONFIG.contact.email}`} icon="mail" label="E-Mail" wert={SITE_CONFIG.contact.email} />
 
         <div className="flex items-start gap-4 border-b border-fuge py-4">

@@ -72,7 +72,9 @@ export function hauptziel(pathname) {
     const pfad = pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname;
     if (pfad === '/') return '#termin';
     if (pfad === '/kontakt') return '#express-anfrage';
-    if (/^\/standorte\/[^/]+$/.test(pfad)) return '#anfrage';
+    const ort = /^\/standorte\/([^/]+)$/.exec(pfad);
+    // nur Orte mit Ortsseite (CITIES); eine unbekannte Adresse zeigt die 404-Seite ohne #anfrage (Gegenprüfung Welle 2)
+    if (ort && CITIES.some((c) => c.slug === ort[1])) return '#anfrage';
     return primaryCta.path;
 }
 

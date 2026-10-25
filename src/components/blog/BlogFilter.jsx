@@ -65,7 +65,7 @@ export default function BlogFilter({ anrisse = {} }) {
   };
 
   return (
-    <div className="mx-auto max-w-mass">
+    <div className="mx-auto w-full max-w-mass">
       <div className="min-w-0">
 
         {/* Suche (sichtbar beschriftet) und Kategorien; mobil eine querlaufende Zeile bis an den Bildrand (die erste
