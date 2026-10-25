@@ -18,6 +18,7 @@ import Knopf from '@/components/kern/Knopf';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import { Feldraster, Feld } from '@/components/kern/Feldraster';
 import { Schritte } from '@/components/vorlagen/teile/Ablauf';
+import Fachwort from '@/components/kern/Fachwort';
 
 // Rechner nachgeladen wie auf der Startseite (Tempo, E4-NACH-17); ohne JavaScript bleibt der Platzhalter mit Anruf,
 // WhatsApp und E-Mail stehen (R-01b)
@@ -34,7 +35,7 @@ export const metadata = createMetadata({
 
 // Die drei Schritte wie auf den Orts- und Hauptansichten (Termin kostenfrei: K-015 F-12)
 const ABLAUF = [
-  { titel: 'Termin bei Ihnen vor Ort', text: 'Deniz Tezgel kommt zu Ihnen. Er schaut sich den Raum genau an und prüft den [[untergrund|Untergrund]]. Dieser Termin ist für Sie kostenfrei.' },
+  { titel: 'Termin bei Ihnen vor Ort', text: 'Deniz Tezgel kommt zu Ihnen. Er schaut sich den Raum genau an und prüft den Untergrund. Dieser Termin ist für Sie kostenfrei.' },
   { titel: 'Planen und auswählen', text: 'Sie suchen mit uns Fliesen, ihre Größe und die Farbe der Fugen aus. Danach bekommen Sie ein Angebot mit festem Preis.' },
   { titel: 'Verlegen und übergeben', text: 'Wir verlegen sauber und übergeben den Raum besenrein. Zum Schluss gehen wir alles gemeinsam durch.' },
 ];
@@ -60,7 +61,7 @@ export default function PreisePage() {
         titel={<>Kosten &amp; Preise auf Anfrage – Verbindliche Festpreise</>}
         vorspann={
           <p>
-            Jedes Fliesen- und Badprojekt ist ein Unikat mit individuellen Untergründen, Raummaßen und Gestaltungswünschen. Bei {siteConfig.company.name} erhalten Sie nach einem kostenfreien Vor-Ort-Aufmaß ein detailliertes und verbindliches Festpreisangebot – garantiert ohne versteckte Nebenkosten.
+            Jedes Fliesen- und Badprojekt ist ein Unikat mit individuellen <Fachwort id="untergrund">Untergründen</Fachwort>, Raummaßen und Gestaltungswünschen. Bei {siteConfig.company.name} erhalten Sie nach einem kostenfreien Vor-Ort-Aufmaß ein detailliertes und verbindliches Festpreisangebot – garantiert ohne versteckte Nebenkosten.
           </p>
         }
         aktionen={
