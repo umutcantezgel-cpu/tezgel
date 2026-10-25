@@ -113,11 +113,12 @@ function sanitizeDescription(raw: string): string {
 
   // If too short (< 120 chars), append standard trust CTA to reach 120-155 chars
   if (desc.length < 120) {
-    const pad = ' Jetzt unverbindlich beraten lassen & kostenfreies Vor-Ort-Aufmaß anfragen!';
+    // Alltagssprache nach K-010 („Termin bei Ihnen vor Ort“ statt „Vor-Ort-Aufmaß“, ohne Ausrufezeichen; E-049)
+    const pad = ' Der Termin bei Ihnen vor Ort ist kostenfrei. Rufen Sie uns an oder schreiben Sie uns.';
     if (desc.length + pad.length <= 155) {
       desc = `${desc}${pad}`;
     } else {
-      const shortPad = ' Kostenfreies Aufmaß & Festpreisangebot anfragen.';
+      const shortPad = ' Der Termin bei Ihnen vor Ort ist kostenfrei.';
       if (desc.length + shortPad.length <= 155) {
         desc = `${desc}${shortPad}`;
       }
