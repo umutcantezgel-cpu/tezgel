@@ -1,4 +1,4 @@
-// Über uns · Unternehmensgeschichte (KERN v2, S-02): Serverkomponente ohne Bewegungsbibliothek und ohne Fremd-Icons;
+// Über uns · Unternehmensgeschichte (KERN v2, S-02; Kopf mittig nach K-016): Serverkomponente ohne Bewegungsbibliothek und ohne Fremd-Icons;
 // nur auf /ueber-uns eingebunden. Kopf wie `Abschnitt` (Mono-Etikett mit Fugenkreuz, H2 `company-history-heading`, Einleitung).
 // Zeitleiste als ruhige Fuge: eine durchgehende Linie in Strich (`fugenband-linie`), mobil links, ab md bei einem Viertel
 // der Breite; je Eintrag eine Jahresmarke mit Fugenkreuz auf der Linie (`fugenband-marke`), das Jahr in Mono links der
@@ -19,9 +19,10 @@ export default function CompanyHistory() {
       titelId="company-history-heading"
       etikett={<>Gegründet {business.establishmentYear} in {headquarters.city} &middot; {authority.shortName}</>}
       titel="Unsere Unternehmensgeschichte"
+      mitte
       einleitung={
         <p>
-          Von der Betriebsgründung in {headquarters.city} bis zum Fliesen-Fachbetrieb für ganz Mittelhessen: So hat sich {legalName} unter {owner.fullName} entwickelt.
+          Von der Betriebsgründung in {headquarters.city} bis zum Fliesenfachbetrieb für ganz Mittelhessen: So hat sich {legalName} unter {owner.fullName} entwickelt.
         </p>
       }
       auftritt

@@ -1,8 +1,8 @@
 // Zeitband (KERN K-008; E4-NACH-01): die Firmengeschichte als gezeichneter Belag im Planblatt von /ueber-uns.
 // Jeder Zeitraum zwischen zwei Jahren der Zeitleiste (`historyTimeline`) ist ein Belagstück, seine Breite folgt der Zahl
 // der Jahre; das Fugenbild zeigt, was die Zeitleiste über den Zeitraum sagt: bis 2014 kleinformatige Fliesen im
-// Kreuzverband, ab 2014 fugenarme Großformate („Fokus auf fugenarme Großformate“), ab 2019 zusätzlich das umlaufende
-// Dichtband („Verbundabdichtung nach DIN 18534 als Standard“). An jeder Fuge steht das Jahr in Mono, am Ende „Heute“.
+// Kreuzverband, ab 2014 fugenarme Großformate („Große Fliesen mit wenig Fugen“), ab 2019 zusätzlich das umlaufende
+// Dichtband („Abdichtung nach DIN 18534 als Standard“). An jeder Fuge steht das Jahr in Mono, am Ende „Heute“.
 // Keine erfundenen Werte – nur die Jahre der Konfiguration und das Baujahr der Seite für „Heute“. Dekorativ.
 import type { CSSProperties } from 'react';
 import { historyTimeline } from '@/config/company';

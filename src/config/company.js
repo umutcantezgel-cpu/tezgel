@@ -228,18 +228,18 @@ export const historyTimeline = [
     },
     {
         year: "2014",
-        title: "Fokus auf fugenarme Großformate",
-        description: "Investition in spezialisierte Schneid- und Vakuumhebetechnik für millimetergenaue XXL-Fliesenformate."
+        title: "Große Fliesen mit wenig Fugen",
+        description: "Neue Werkzeuge zum Schneiden und Anheben großer Fliesen: So liegen auch sehr große Fliesen millimetergenau."
     },
     {
         year: "2019",
-        title: "Verbundabdichtung nach DIN 18534 als Standard",
-        description: "Normgerechte Abdichtungssysteme für bodengleiche Walk-In-Duschen und Feuchträume."
+        title: "Abdichtung nach DIN 18534 als Standard",
+        description: "Abdichtung nach Norm für bodengleiche Duschen und Feuchträume."
     },
     {
         year: "Heute",
-        title: "Ihr Fliesen-Fachbetrieb in Mittelhessen",
-        description: "Fester Partner für private Bauherren und anspruchsvolle Sanierungsobjekte in Aßlar, Wetzlar und ganz Hessen."
+        title: "Ihr Fliesenfachbetrieb in Mittelhessen",
+        description: "Fester Partner für private Bauherren und anspruchsvolle Sanierungen in Aßlar, Wetzlar und ganz Hessen."
     }
 ];
 

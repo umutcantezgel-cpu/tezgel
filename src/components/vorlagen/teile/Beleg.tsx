@@ -63,7 +63,16 @@ export default function Beleg({ inhalt, moment, zweiter, stimmenTitel = 'Das sag
         </Abschnitt>
       )}
       {inhalt.stimmen && inhalt.stimmen.length > 0 && (
-        <Abschnitt id="kundenstimmen" formel="beleg" leitachse spaet flaeche="fliese" mitte titel={stimmenTitel}>
+        <Abschnitt
+          id="kundenstimmen"
+          formel="beleg"
+          leitachse
+          spaet
+          flaeche="fliese"
+          mitte
+          titel={inhalt.stimmenTitel ?? stimmenTitel}
+          einleitung={inhalt.stimmenEinleitung ? <p><Textmarken text={inhalt.stimmenEinleitung} /></p> : undefined}
+        >
           <Stimmen ids={inhalt.stimmen} form={inhalt.stimmenGross ? 'gross' : 'klein'} />
         </Abschnitt>
       )}

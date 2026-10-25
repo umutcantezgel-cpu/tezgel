@@ -103,6 +103,9 @@ export interface BelegInhalt {
   /** Kundenstimmen groß (Startseite, Über uns, Unsere Arbeiten: drei Karten ab lg); sonst das kleine Karussell jeder Seite
    *  (vier Karten ab lg, eine Stufe kleinere Schrift; K-016, E-047) */
   stimmenGross?: boolean;
+  /** Überschrift und Satz über den Kundenstimmen, wenn der Seitentext eigene hat (Standard „Das sagen unsere Kunden.“) */
+  stimmenTitel?: string;
+  stimmenEinleitung?: Markentext;
   /** Satz unter den Fotos (z. B. seit wann etwas Standard ist) */
   satz?: Markentext;
   verweis?: Verweis;

@@ -48,7 +48,7 @@ export interface EinsatzkarteProps {
   beschriftet?: readonly string[];
   /** Ort der aktuellen Stadtseite: Punkt gefüllt und beschriftet, in der Liste mit Fugenkreuz und aria-current */
   aktuell?: string;
-  /** Liste der Orte neben der Zeichnung (Standard: an) */
+  /** Liste der Orte unter der Zeichnung (Standard: an; K-016: nicht daneben) */
   liste?: boolean;
   /** Weg unter der Liste, z. B. „Alle Orte ansehen“ nach /standorte */
   verweis?: { name: string; href: string };
@@ -103,11 +103,14 @@ export default function Einsatzkarte({ unterschrift, beschriftet, aktuell, liste
   );
   return (
     <figure className={clsx('border border-fuge bg-fliese', className)}>
-      {unterschrift && <figcaption className="border-b border-fuge p-4 font-text text-fs-4 text-pretty text-tinte lg:px-8 lg:py-6">{unterschrift}</figcaption>}
+      {unterschrift && <figcaption className="border-b border-fuge p-4 text-center font-text text-fs-4 text-pretty text-tinte lg:px-8 lg:py-6">{unterschrift}</figcaption>}
       {liste ? (
-        <div className="grid md:grid-cols-8 lg:grid-cols-12">
-          <div className="border-b border-fuge md:col-span-5 md:border-r md:border-b-0 lg:col-span-7">{zeichnung}</div>
-          <div className="flex flex-col gap-6 p-4 md:col-span-3 lg:col-span-5 lg:p-8">
+        // K-016 (Abnahme E3-BAU-08): Zeichnung mittig, die Liste der Orte darunter in einer schmalen Spalte statt daneben
+        <div>
+          <div className="border-b border-fuge">
+            <div className="mx-auto w-full max-w-md lg:w-1/2 lg:max-w-full">{zeichnung}</div>
+          </div>
+          <div className="mx-auto flex max-w-mass flex-col gap-6 p-4 lg:p-8">
             <ul className="flex flex-col gap-2 font-text text-fs-2 text-tinte">
               <li className="flex items-center gap-2">
                 <Fugenkreuz className="size-3 text-laser" />
