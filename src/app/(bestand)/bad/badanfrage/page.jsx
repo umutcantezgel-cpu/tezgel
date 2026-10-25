@@ -8,21 +8,38 @@ import Abschnitt from '@/components/kern/Abschnitt';
 import Rueckfrage from '@/components/kern/Rueckfrage';
 import QualityPromise from '@/components/sections/QualityPromise';
 import { createMetadata } from '@/lib/metadata';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 
 // Anfrageweg nachladen wie auf der Startseite (TEMPO, Z-08 / E-025)
 const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFunnel'), {
     loading: () => <FormularPlatzhalter />,
 });
 
-export const metadata = createMetadata({
-    title: 'Badsanierung Angebot anfordern | Tezgel Wetzlar',
-    description: 'Unverbindliche Badanfrage an Fliesenverlegung Tezgel: Beschreiben Sie Ihr Projekt für ein individuelles Festpreisangebot in Wetzlar & Aßlar. Jetzt anfragen!',
+const TITEL = 'Badsanierung Angebot anfordern | Tezgel Wetzlar';
+const BESCHREIBUNG = 'Unverbindliche Badanfrage an Fliesenverlegung Tezgel: Beschreiben Sie Ihr Projekt für ein individuelles Festpreisangebot in Wetzlar & Aßlar. Jetzt anfragen!';
+
+const METADATEN = createMetadata({
+    title: TITEL,
+    description: BESCHREIBUNG,
     path: '/bad/badanfrage'
 });
+
+export const metadata = METADATEN;
 
 export default function BadanfragePage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/bad/badanfrage"
+                titel={METADATEN.title.absolute}
+                beschreibung={METADATEN.description}
+                brotkrumen={[
+                    { name: 'Start', href: '/' },
+                    { name: 'Bad', href: '/bad' },
+                    { name: 'Badsanierung Angebot anfordern bei Tezgel Wetzlar' },
+                ]}
+            />
+
             {/* 1. EINSTIEG: Kennzeile, H1, Vorspann */}
             <Einstieg
                 art="arbeit"

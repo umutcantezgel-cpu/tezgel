@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzhalter';
 import ErzaehlSeite from '@/components/vorlagen/ErzaehlSeite';
 import { createMetadata } from '@/lib/metadata';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 import { BADSANIERUNG } from '@/inhalte/bad-badsanierung';
 
 // Anfrageformular nachladen wie auf der Startseite und in der Familienreferenz (TEMPO, Z-08 / E-025)
@@ -12,11 +13,13 @@ const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFu
     loading: () => <FormularPlatzhalter />,
 });
 
-export const metadata = createMetadata({
+const METADATEN = createMetadata({
     title: BADSANIERUNG.meta.titel,
     description: BADSANIERUNG.meta.beschreibung,
     path: '/bad/badsanierung'
 });
+
+export const metadata = METADATEN;
 
 // Werkzeug der Seite (Bestand: Abschnitt `anfrage`, aria-label „Badanfrage“): der Funnel allein. Die Rückfrage-Spalte des
 // Bestands (Ansprechpartner, Sitz) entfällt: K-016 verlangt einen Strang je Bildschirm, und der Sitz ist ein Firmendatum.
@@ -29,5 +32,15 @@ const ANFRAGE = {
 };
 
 export default function BadsanierungPage() {
-    return <ErzaehlSeite inhalt={BADSANIERUNG} werkzeug={ANFRAGE} />;
+    return (
+        <>
+            <SeitenDaten
+                pfad="/bad/badsanierung"
+                titel={METADATEN.title.absolute}
+                beschreibung={METADATEN.description}
+                brotkrumen={BADSANIERUNG.worum.brotkrumen}
+            />
+            <ErzaehlSeite inhalt={BADSANIERUNG} werkzeug={ANFRAGE} />
+        </>
+    );
 }

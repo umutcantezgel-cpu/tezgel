@@ -16,17 +16,23 @@ import Rueckfrage from '@/components/kern/Rueckfrage';
 import Schrittfolge from '@/components/kern/Schrittfolge';
 import { seitenKlassen } from '@/components/kern/stile';
 import { createMetadata } from '@/lib/metadata';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 
 // Anfrageweg nachladen wie auf der Startseite (TEMPO, Z-08 / E-025)
 const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFunnel'), {
     loading: () => <FormularPlatzhalter />,
 });
 
-export const metadata = createMetadata({
-    title: 'Badplaner: Bad online planen | Fliesenverlegung Tezgel',
-    description: 'Planen Sie Ihr Bad online: Raumgröße, Fliesen & Ausstattung wählen. Fliesenverlegung Tezgel berät Sie mit kostenfreiem Vor-Ort-Aufmaß in Wetzlar & Aßlar!',
+const TITEL = 'Badplaner: Bad online planen | Fliesenverlegung Tezgel';
+const BESCHREIBUNG = 'Planen Sie Ihr Bad online: Raumgröße, Fliesen & Ausstattung wählen. Fliesenverlegung Tezgel berät Sie mit kostenfreiem Vor-Ort-Aufmaß in Wetzlar & Aßlar!';
+
+const METADATEN = createMetadata({
+    title: TITEL,
+    description: BESCHREIBUNG,
     path: '/bad/badplaner'
 });
+
+export const metadata = METADATEN;
 
 const PLANNING_STEPS = [
     { num: '01', title: 'Raummaße & Anschlüsse erfassen', desc: 'Messen Sie Länge, Breite und Raumhöhe aus und notieren Sie die Positionen von Türen, Fenstern, Heizkörpern und Rohrleitungsanschlüssen.' },
@@ -43,6 +49,17 @@ const NEXT_STEPS = [
 export default function BadplanerPage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/bad/badplaner"
+                titel={METADATEN.title.absolute}
+                beschreibung={METADATEN.description}
+                brotkrumen={[
+                    { name: 'Start', href: '/' },
+                    { name: 'Bad', href: '/bad' },
+                    { name: 'Badplaner: Bad online planen mit Fliesenverlegung Tezgel' },
+                ]}
+            />
+
             {/* 1. EINSTIEG: Kennzeile, H1 mit bisheriger ID, Vorspann, Knöpfe; kein Plan, keine Randzeichnung */}
             <section aria-labelledby="badplaner-heading">
                 <Einstieg

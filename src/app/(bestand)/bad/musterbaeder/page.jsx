@@ -7,6 +7,7 @@ import clsx from 'clsx';
 import { MUSTERBAEDER } from '@/config/musterbaeder';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 import Icon from '@/components/icons/Icon';
 import Einstieg from '@/components/kern/Einstieg';
 import Abschnitt from '@/components/kern/Abschnitt';
@@ -18,15 +19,31 @@ import Verlegeplan from '@/components/kern/Verlegeplan';
 import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
 
-export const metadata = createMetadata({
-    title: 'Musterbäder & Badideen Wetzlar | Badsanierung Tezgel',
-    description: 'Inspiration für Ihr neues Bad: Musterbäder von 4,6 bis 15,9 m² mit Großformatfliesen, Walk-In Duschen & Markenkomponenten. Fachbetrieb Tezgel in Wetzlar!',
+const TITEL = 'Musterbäder & Badideen Wetzlar | Badsanierung Tezgel';
+const BESCHREIBUNG = 'Inspiration für Ihr neues Bad: Musterbäder von 4,6 bis 15,9 m² mit Großformatfliesen, Walk-In Duschen & Markenkomponenten. Fachbetrieb Tezgel in Wetzlar!';
+
+const METADATEN = createMetadata({
+    title: TITEL,
+    description: BESCHREIBUNG,
     path: '/bad/musterbaeder'
 });
+
+export const metadata = METADATEN;
 
 export default function MusterbaederPage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/bad/musterbaeder"
+                titel={METADATEN.title.absolute}
+                beschreibung={METADATEN.description}
+                brotkrumen={[
+                    { name: 'Start', href: '/' },
+                    { name: 'Bad', href: '/bad' },
+                    { name: 'Musterbäder & Badideen Wetzlar: Badsanierung Tezgel' },
+                ]}
+            />
+
             {/* 1. EINSTIEG: Etikett, H1 auf der Achse, Vorspann, Knöpfe; rechts das Planblatt „bad“ */}
             <section aria-labelledby="musterbaeder-heading">
                 <Einstieg

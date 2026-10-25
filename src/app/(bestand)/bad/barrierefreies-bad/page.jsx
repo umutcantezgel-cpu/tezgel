@@ -7,6 +7,7 @@ import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzh
 import GefaelleDusche from '@/components/momente/gefaelle-dusche/GefaelleDusche';
 import ErzaehlSeite from '@/components/vorlagen/ErzaehlSeite';
 import { createMetadata } from '@/lib/metadata';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 import { BARRIEREFREIES_BAD } from '@/inhalte/barrierefreies-bad';
 
 // Badanfrage nachladen wie auf der Referenzseite (TEMPO, Z-08 / E-025)
@@ -14,27 +15,37 @@ const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFu
     loading: () => <FormularPlatzhalter />,
 });
 
-export const metadata = createMetadata({
+const METADATEN = createMetadata({
     title: BARRIEREFREIES_BAD.meta.titel,
     description: BARRIEREFREIES_BAD.meta.beschreibung,
     path: '/bad/barrierefreies-bad',
 });
 
+export const metadata = METADATEN;
+
 export default function BarrierefreiesBadPage() {
     return (
-        <ErzaehlSeite
-            inhalt={BARRIEREFREIES_BAD}
-            momente={{ tun: <GefaelleDusche /> }}
-            werkzeug={{
-                id: 'anfrage',
-                titel: 'Badanfrage',
-                flaeche: 'fliese',
-                inhalt: (
-                    <div className="mx-auto max-w-mass">
-                        <BadanfrageFunnel />
-                    </div>
-                ),
-            }}
-        />
+        <>
+            <SeitenDaten
+                pfad="/bad/barrierefreies-bad"
+                titel={METADATEN.title.absolute}
+                beschreibung={METADATEN.description}
+                brotkrumen={BARRIEREFREIES_BAD.worum.brotkrumen}
+            />
+            <ErzaehlSeite
+                inhalt={BARRIEREFREIES_BAD}
+                momente={{ tun: <GefaelleDusche /> }}
+                werkzeug={{
+                    id: 'anfrage',
+                    titel: 'Badanfrage',
+                    flaeche: 'fliese',
+                    inhalt: (
+                        <div className="mx-auto max-w-mass">
+                            <BadanfrageFunnel />
+                        </div>
+                    ),
+                }}
+            />
+        </>
     );
 }

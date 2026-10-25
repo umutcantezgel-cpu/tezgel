@@ -8,6 +8,7 @@ import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzh
 import { COMPANY_DATA, processSteps } from '@/config/company';
 import { REVIEWS } from '@/config/reviews';
 import { createMetadata } from '@/lib/metadata';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 import Icon from '@/components/icons/Icon';
 import Einstieg from '@/components/kern/Einstieg';
 import Abschnitt from '@/components/kern/Abschnitt';
@@ -24,11 +25,16 @@ const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFu
     loading: () => <FormularPlatzhalter />,
 });
 
-export const metadata = createMetadata({
-    title: 'Badfliesen & XXL-Großformate | Fliesenleger Tezgel',
-    description: 'Badfliesen & XXL-Großformate fugenarm verlegen in Wetzlar & Aßlar: Feinsteinzeug, Mosaik & DIN 18534 Abdichtung. Jetzt unverbindlich beraten lassen!',
+const TITEL = 'Badfliesen & XXL-Großformate | Fliesenleger Tezgel';
+const BESCHREIBUNG = 'Badfliesen & XXL-Großformate fugenarm verlegen in Wetzlar & Aßlar: Feinsteinzeug, Mosaik & DIN 18534 Abdichtung. Jetzt unverbindlich beraten lassen!';
+
+const METADATEN = createMetadata({
+    title: TITEL,
+    description: BESCHREIBUNG,
     path: '/bad/fliesen'
 });
+
+export const metadata = METADATEN;
 
 const TILE_FEATURES = [
     { title: 'XXL-Großformatfliesen', desc: 'Fliesen bis 120 x 278 cm für moderne, fugenarme Wandflächen mit minimalem Pflegeaufwand und großzügiger Raumwirkung.' },
@@ -44,6 +50,17 @@ export default function FliesenPage() {
 
     return (
         <>
+            <SeitenDaten
+                pfad="/bad/fliesen"
+                titel={METADATEN.title.absolute}
+                beschreibung={METADATEN.description}
+                brotkrumen={[
+                    { name: 'Start', href: '/' },
+                    { name: 'Bad', href: '/bad' },
+                    { name: 'Perfekte Fliesenverlegung für Ihr neues Badezimmer' },
+                ]}
+            />
+
             {/* 1. EINSTIEG: Kennzeile, H1 auf der Achse, Vorspann, Knöpfe; rechts das Planblatt „grossformat“ */}
             <section aria-labelledby="fliesen-heading">
                 <Einstieg

@@ -18,11 +18,21 @@ import Knopf from '@/components/kern/Knopf';
 import Rueckfrage from '@/components/kern/Rueckfrage';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 
 // Badanfrage nachladen wie auf der Familienreferenz (TEMPO, Z-08 / E-025)
 const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFunnel'), {
     loading: () => <FormularPlatzhalter />,
 });
+
+// Metadaten je Musterbad; die Seite nimmt Titel und Beschreibung für die strukturierten Daten (SeitenDaten) von hier
+function musterbadMetadaten(bath, slug) {
+    return createMetadata({
+        title: `Musterbad ${bath.title} – Komplettbad & Badsanierung | Tezgel`,
+        description: `Musterbad ${bath.title}: ${bath.headline}. Ausstattungsliste, Markenkomponenten & transparente Festpreise von Fachbetrieb Tezgel aus Aßlar.`,
+        path: `/bad/musterbaeder/${slug}`
+    });
+}
 
 export async function generateStaticParams() {
     return MUSTERBAEDER.map((b) => ({
@@ -41,14 +51,7 @@ export async function generateMetadata({ params }) {
         });
     }
 
-    const title = `Musterbad ${bath.title} – Komplettbad & Badsanierung | Tezgel`;
-    const description = `Musterbad ${bath.title}: ${bath.headline}. Ausstattungsliste, Markenkomponenten & transparente Festpreise von Fachbetrieb Tezgel aus Aßlar.`;
-
-    return createMetadata({
-        title,
-        description,
-        path: `/bad/musterbaeder/${slug}`
-    });
+    return musterbadMetadaten(bath, slug);
 }
 
 export default async function MusterbadDetailPage({ params }) {
@@ -59,12 +62,25 @@ export default async function MusterbadDetailPage({ params }) {
         notFound();
     }
 
+    const metadaten = musterbadMetadaten(bath, slug);
+
     // Bei ungerader Zahl der Ausstattungsgruppen belegt die letzte Gruppe beide Spalten (keine graue Restzelle)
     const gruppen = bath.components.length;
     const letzteBreit = gruppen % 2 === 1;
 
     return (
         <>
+            <SeitenDaten
+                pfad={`/bad/musterbaeder/${slug}`}
+                titel={metadaten.title.absolute}
+                beschreibung={metadaten.description}
+                brotkrumen={[
+                    { name: 'Start', href: '/' },
+                    { name: 'Bad', href: '/bad' },
+                    { name: `Musterbad ${bath.title} – Komplettbad & Badsanierung` },
+                ]}
+            />
+
             {/* 1. EINSTIEG: Rücklink und Maße im Etikett, H1 auf der Achse, Vorspann, Festpreis-Merkmal; rechts der Plan */}
             <section aria-labelledby="musterbad-heading">
                 <Einstieg

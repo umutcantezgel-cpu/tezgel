@@ -12,16 +12,33 @@ import Rueckfrage from '@/components/kern/Rueckfrage';
 import BadProjektCheck from '@/components/funnels/BadProjektCheck';
 import QualityPromise from '@/components/sections/QualityPromise';
 import { createMetadata } from '@/lib/metadata';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 
-export const metadata = createMetadata({
-    title: 'Bad-Projektcheck: Badsanierung prüfen | Tezgel Wetzlar',
-    description: 'Bad-Projektcheck in 2 Minuten: Kostenfreie Machbarkeitsprüfung & Festpreisangebot für Ihre Badsanierung in Wetzlar & Aßlar. Jetzt online starten!',
+const TITEL = 'Bad-Projektcheck: Badsanierung prüfen | Tezgel Wetzlar';
+const BESCHREIBUNG = 'Bad-Projektcheck in 2 Minuten: Kostenfreie Machbarkeitsprüfung & Festpreisangebot für Ihre Badsanierung in Wetzlar & Aßlar. Jetzt online starten!';
+
+const METADATEN = createMetadata({
+    title: TITEL,
+    description: BESCHREIBUNG,
     path: '/bad/projekt-check'
 });
+
+export const metadata = METADATEN;
 
 export default function BadProjektCheckPage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/bad/projekt-check"
+                titel={METADATEN.title.absolute}
+                beschreibung={METADATEN.description}
+                brotkrumen={[
+                    { name: 'Start', href: '/' },
+                    { name: 'Bad', href: '/bad' },
+                    { name: 'Bad-Projektcheck: Badsanierung online prüfen bei Tezgel Wetzlar' },
+                ]}
+            />
+
             {/* 1. EINSTIEG: Kennzeile, H1, Vorspann */}
             <Einstieg
                 art="arbeit"

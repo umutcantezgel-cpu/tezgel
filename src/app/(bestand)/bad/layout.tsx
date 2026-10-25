@@ -1,38 +1,6 @@
+// Strukturierte Daten stehen je Seite (Baustein SeitenDaten, E3-SEO-JSONLD-1), nicht mehr im Layout: es vererbt keine mehr.
 import React from 'react';
-import { buildGraph, buildBreadcrumbNode, buildWebPageNode, buildServiceNode, SITE_URL } from '@/lib/schema';
-import JsonLd from '@/components/seo/JsonLd';
-import { BAD } from '@/inhalte/bad';
-
-const pageUrl = `${SITE_URL}/bad`;
-const breadcrumbs = [
-  { name: 'Home', path: '/' },
-  { name: 'Bad & Badsanierung', path: '/bad' },
-];
-
-const badSchema = buildGraph([
-  buildWebPageNode({
-    url: pageUrl,
-    // wie Titel und Beschreibung der Seite (Abnahme E3-BAU-01)
-    name: BAD.meta.titel,
-    description: BAD.meta.beschreibung,
-    breadcrumbItems: breadcrumbs,
-  }),
-  buildBreadcrumbNode(breadcrumbs, pageUrl),
-  buildServiceNode({
-    name: 'Badsanierung & Badmodernisierung',
-    serviceType: 'Badsanierung, Walk-In Duschen & Barrierefreie Bäder',
-    description:
-      'Fachmännische Badsanierung aus einer Hand in Aßlar, Wetzlar und Mittelhessen: Barrierefreie Bäder, bodengleiche Duschen, Großformatfliesen und Verbundabdichtung.',
-    url: pageUrl,
-    areaServed: 'Aßlar, Wetzlar & Mittelhessen',
-  }),
-]);
 
 export default function BadLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-      <JsonLd schema={badSchema} />
-      {children}
-    </>
-  );
+  return <>{children}</>;
 }

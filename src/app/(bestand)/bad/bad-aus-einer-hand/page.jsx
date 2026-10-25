@@ -18,17 +18,23 @@ import Knopf from '@/components/kern/Knopf';
 import Rueckfrage from '@/components/kern/Rueckfrage';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 
 // Anfrageformular nachladen wie auf der Startseite und in der Familienreferenz (TEMPO, Z-08 / E-025)
 const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFunnel'), {
     loading: () => <FormularPlatzhalter />,
 });
 
-export const metadata = createMetadata({
-    title: 'Bad aus einer Hand Wetzlar & Aßlar | Tezgel Badsanierung',
-    description: 'Bad aus einer Hand in Wetzlar & Aßlar: Alle Gewerke koordiniert, ein Ansprechpartner & garantierter Festpreis. Jetzt kostenfreies Vor-Ort-Aufmaß sichern!',
+const TITEL = 'Bad aus einer Hand Wetzlar & Aßlar | Tezgel Badsanierung';
+const BESCHREIBUNG = 'Bad aus einer Hand in Wetzlar & Aßlar: Alle Gewerke koordiniert, ein Ansprechpartner & garantierter Festpreis. Jetzt kostenfreies Vor-Ort-Aufmaß sichern!';
+
+const METADATEN = createMetadata({
+    title: TITEL,
+    description: BESCHREIBUNG,
     path: '/bad/bad-aus-einer-hand'
 });
+
+export const metadata = METADATEN;
 
 export default function BadAusEinerHandPage() {
     const google = RATING_SUMMARY.google;
@@ -43,6 +49,17 @@ export default function BadAusEinerHandPage() {
 
     return (
         <>
+            <SeitenDaten
+                pfad="/bad/bad-aus-einer-hand"
+                titel={METADATEN.title.absolute}
+                beschreibung={METADATEN.description}
+                brotkrumen={[
+                    { name: 'Start', href: '/' },
+                    { name: 'Bad', href: '/bad' },
+                    { name: 'Bad aus einer Hand: Ein Ansprechpartner. Ein Festpreis. Null Stress.' },
+                ]}
+            />
+
             {/* 1. EINSTIEG: Kennzeile, H1 auf der Achse, Vorspann, Knöpfe; rechts der Plan ohne Bemaßung */}
             <section aria-labelledby="einer-hand-heading">
                 <Einstieg
