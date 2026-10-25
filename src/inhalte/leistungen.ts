@@ -79,5 +79,6 @@ export const LEISTUNGSPLAENE: Leistungsplan[] = [
   },
 ];
 
-/** Satz zum Preisrechner aus dem nächsten Schritt; er steht als Einleitung über dem Rechner (#kosten-rechner) */
-export const RECHNER_SATZ = 'Als Hilfe gibt es den Preisrechner. Er nennt einen Richtpreis, also einen ungefähren Preis. Ein festes Angebot ist das noch nicht.';
+/** Einleitung über der Projektanfrage (#kosten-rechner, Komponente PricingCalculator). Das Werkzeug nennt keinen Preis
+ * (Bestand: „Preise individuell auf Anfrage“); der frühere Satz „Er nennt einen Richtpreis“ war falsch (Abnahme E3-BAU-04). */
+export const RECHNER_SATZ = 'Wählen Sie aus, was Sie planen und wie groß die Fläche ungefähr ist. Pauschale Preise nennen wir im Netz nicht. Nach dem Termin bei Ihnen vor Ort bekommen Sie ein Angebot mit festem Preis.';

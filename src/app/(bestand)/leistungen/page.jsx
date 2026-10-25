@@ -4,7 +4,7 @@
 // bleiben, E-037; Kennungen #gewerke, #bad, #wohnen, #aussen, #untergrund wie im Bestand), darunter der große Moment
 // `formatregler`; der Ablauf mit den Planständen der Szene (SzeneAblauf ruhig, E-037); im nächsten Schritt die
 // Express-Anfrage (TezgelAnfrageFunnel, Überschrift #express-anfrage, Logik, Pflichtfelder und Empfänger unverändert, G8);
-// danach der Preisrechner (#kosten-rechner). Strukturierte Daten (WebPage, Brotkrumen, OfferCatalog) wie im Bestand.
+// danach die Projektanfrage des Preisrechners (#kosten-rechner, nennt keinen Preis). Strukturierte Daten (WebPage, Brotkrumen, OfferCatalog) wie im Bestand.
 import dynamic from 'next/dynamic';
 import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzhalter';
 import { SERVICES } from '@/config/services';
@@ -91,7 +91,7 @@ export default function ServiceHubPage() {
         }}
         formular={<TezgelAnfrageFunnel />}
         formularId="express-anfrage"
-        werkzeug={{ id: 'kosten-rechner', titelId: 'rechner-heading', titel: 'Richtpreis berechnen', einleitung: RECHNER_SATZ, inhalt: <PricingCalculator /> }}
+        werkzeug={{ id: 'kosten-rechner', titelId: 'rechner-heading', titel: 'Oder beschreiben Sie Ihr Vorhaben genauer.', einleitung: RECHNER_SATZ, inhalt: <PricingCalculator /> }}
       />
     </>
   );

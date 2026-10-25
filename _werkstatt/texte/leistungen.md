@@ -54,6 +54,6 @@
 - H2: `Sprechen Sie mit uns über Ihr Vorhaben.`
 - Satz: `Nennen Sie uns Ihren Namen und Ihre Telefonnummer. Deniz Tezgel ruft Sie zurück und macht einen Termin mit Ihnen aus.`
 - Hauptknopf: `Termin vor Ort anfragen` → `/kontakt` · Kontakt: `Anrufen: {{COMPANY_DATA.contact.phone}}` · `Nachricht per WhatsApp` (derselbe Hauptknopf wie in Abschnitt 1, K-004)
-- Absatz: `Als Hilfe gibt es den Preisrechner. Er nennt einen Richtpreis, also einen ungefähren Preis. Ein festes Angebot ist das noch nicht.`
-- Link: `Richtpreis berechnen` → `#kosten-rechner`
+- Absatz: `Wählen Sie aus, was Sie planen und wie groß die Fläche ungefähr ist. Pauschale Preise nennen wir im Netz nicht. Nach dem Termin bei Ihnen vor Ort bekommen Sie ein Angebot mit festem Preis.` (berichtigt: das Werkzeug nennt keinen Preis, Bestand „Preise individuell auf Anfrage“)
+- Überschrift des Werkzeugs: `Oder beschreiben Sie Ihr Vorhaben genauer.` → `#kosten-rechner`
 - Link: `Anfrage in drei Schritten` → `#express-anfrage`

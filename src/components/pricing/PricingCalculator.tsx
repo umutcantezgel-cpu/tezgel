@@ -1,7 +1,7 @@
 "use client";
 
-// Projektanfrage auf der Startseite (E2-ORCH-08): links die Angaben als Felder an der Fuge, rechts Zusammenfassung
-// und Kontakt als Schriftfeld auf Tinte. Logik, Nutzlast, IDs, Knopfnamen und Texte unverändert (Test funktion-preisrechner);
+// Projektanfrage (E2-ORCH-08; K-016 „Ruhe“): oben die Angaben als Felder an der Fuge, darunter Zusammenfassung und
+// Kontakt als Schriftfeld auf Tinte, auf jeder Breite untereinander in der Lesebreite (kein zweiter Strang daneben). Logik, Nutzlast, IDs, Knopfnamen und Texte unverändert (Test funktion-preisrechner);
 // das pulsierende Absende-Element (HeartbeatCTA) entfällt – Bewegung nur nach Register.
 // Zustände, Prüfung und Absenden kommen aus usePreisrechner (P3-00l, eine Logik für Bestand und Kern); dort startet die
 // Einwilligung leer (Fairness, E-014).
@@ -78,9 +78,9 @@ export default function PricingCalculator() {
   } = usePreisrechner();
 
   return (
-    <div className="grid grid-cols-1 border border-strich lg:grid-cols-5">
-      {/* ── Linke Spalte: Angaben zu Vorhaben und Situation ── */}
-      <div className="flex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12">
+    <div className="mx-auto grid w-full max-w-mass grid-cols-1 border border-strich">
+      {/* ── Oben: Angaben zu Vorhaben und Situation ── */}
+      <div className="flex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:p-12">
         {/* Phasen */}
         {/* Tor S-01/03: Die Phasen ragten schon bei 375 px 15 px in den Innenrand (320 px: 70 px). Unter sm entfallen die
             Trennlinien (eine Zeile bis 375 px); Umbruch nur noch bei 320 px und erhöhtem Textabstand. */}
@@ -146,7 +146,7 @@ export default function PricingCalculator() {
           <p id="calc-flaeche" className={labelKlassen}>
             2. Geschätzte Grundfläche:
           </p>
-          <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
+          <div className="mt-4 grid grid-cols-2 gap-2">
             {Object.values(ROOM_SIZES).map((size) => {
               const isSelected = roomSize === size.id && !customArea;
               return (
@@ -243,9 +243,9 @@ export default function PricingCalculator() {
         </div>
       </div>
 
-      {/* ── Rechte Spalte: Zusammenfassung und Kontakt (Schriftfeld auf Tinte über die volle Höhe; der Absenden-Knopf
-          steht direkt unter der Einwilligung) ── */}
-      <div className="flaeche-tinte flex flex-col bg-tinte p-6 text-kalk sm:p-8 lg:col-span-2 lg:p-12">
+      {/* ── Darunter: Zusammenfassung und Kontakt (Schriftfeld auf Tinte; der Absenden-Knopf steht direkt unter der
+          Einwilligung) ── */}
+      <div className="flaeche-tinte flex flex-col bg-tinte p-6 text-kalk sm:p-8 lg:p-12">
         {status === "success" ? (
           /* Erfolgsansicht nach Absenden */
           <div className="my-auto flex flex-col gap-6" role="status">
