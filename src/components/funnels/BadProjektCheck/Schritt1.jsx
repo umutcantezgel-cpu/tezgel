@@ -10,7 +10,7 @@ export default function Schritt1({ sqm, changeSqm, sqmLabel }) {
         <div className="min-w-0">
             <div className="flex flex-wrap items-center justify-between gap-3">
                 <label htmlFor="budget-sqm" className={labelKlassen}>
-                    <span className={nummerClass}>1.</span> Badezimmer-Größe in Quadratmetern:
+                    <span className={nummerClass}>1.</span> Größe des Badezimmers in Quadratmetern:
                 </label>
                 <span className="whitespace-nowrap border border-fuge bg-kalk px-3 py-1 font-mono text-fs-4 tabular-nums text-tinte">
                     {sqmLabel}{NBSP}m²

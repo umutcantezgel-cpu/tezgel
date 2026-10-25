@@ -1,6 +1,7 @@
 import Icon from '@/components/icons/Icon';
 import { labelKlassen } from '@/components/kern/stile';
 import { EXTRA_OPTIONS } from '@/lib/formulare/useProjektCheck';
+import { anzeige } from '@/lib/formulare/anzeige';
 import { extraClass, markeClass, nummerClass } from './stile';
 
 // 4. Wunschausstattung und Extras (E-011: aus BadProjektCheck.jsx verschoben). Darstellung KERN v2 (Q-02): Mehrfachauswahl
@@ -28,7 +29,7 @@ export default function Schritt4({ selectedOptions, toggleOption }) {
                             <span className={markeClass(isSelected)}>
                                 {isSelected && <Icon name="haken" groesse={4} />}
                             </span>
-                            <span className="min-w-0 break-words">{opt.label}</span>
+                            <span className="min-w-0 break-words">{anzeige(opt.label)}</span>
                         </button>
                     );
                 })}

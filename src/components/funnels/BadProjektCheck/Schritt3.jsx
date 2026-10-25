@@ -1,5 +1,6 @@
 import { labelKlassen } from '@/components/kern/stile';
 import { TIER_OPTIONS } from '@/lib/formulare/useProjektCheck';
+import { anzeige } from '@/lib/formulare/anzeige';
 import { einfachClass, nummerClass } from './stile';
 
 // 3. Ausstattungsniveau (E-011: aus BadProjektCheck.jsx verschoben). Darstellung KERN v2 (Q-02): Auswahl mit wahlKlassen
@@ -25,7 +26,7 @@ export default function Schritt3({ tier, setTier }) {
                         >
                             <span className="flex min-w-0 flex-col gap-1 break-words">
                                 <span className="block font-semibold">{t.label}</span>
-                                <span className="block text-fs-1">{t.desc}</span>
+                                <span className="block text-fs-1">{anzeige(t.desc)}</span>
                             </span>
                         </button>
                     );

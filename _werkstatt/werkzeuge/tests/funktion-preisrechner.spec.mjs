@@ -113,10 +113,11 @@ test.describe('PricingCalculator (/preise)', () => {
   test('anderes Gewerk mit Fläche, Zeitraum, Vorarbeiten und Freitext: inquiryType "general", Details in notes, Erfolg', async ({ page, anfragen }) => {
     await page.goto('/preise');
     const rechner = rechnerVon(page);
-    await klicken(rechner.getByRole('button', { name: 'Balkon, Terrasse & Außen' }));
-    await klicken(rechner.getByRole('button', { name: 'Großraum / Wohnbereich' }));
+    // Knöpfe tragen die Anzeigefassung (anzeige.ts, E-057); die Nutzlast unten erwartet weiter die Werte
+    await klicken(rechner.getByRole('button', { name: 'Balkon, Terrasse und draußen' }));
+    await klicken(rechner.getByRole('button', { name: 'Großer Raum oder Wohnbereich' }));
     await klicken(rechner.getByRole('button', { name: 'Staubschutz im bewohnten Wohnbereich' }));
-    await klicken(rechner.getByRole('button', { name: 'Altfliesen entfernen & entsorgen' }));
+    await klicken(rechner.getByRole('button', { name: 'Alte Fliesen entfernen und entsorgen' }));
     await rechner.locator('#situation-notes').fill('Alte Terrassenplatten, Gefälle unklar');
     await page.locator('#calc-timing').selectOption('Schnellstmöglich');
     await kontaktAusfuellen(page);

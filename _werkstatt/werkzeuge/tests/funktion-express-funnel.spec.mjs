@@ -37,11 +37,12 @@ test.describe('TezgelAnfrageFunnel (F-03, /kontakt)', () => {
     await weiterZu(page, 2).click();
     await expect(schrittAnzeige(page, 2)).toBeVisible();
     await expect(page.locator('[aria-label="Fortschritt"] [aria-current="step"]')).toHaveText('2');
-    await flaeche(page, '35 - 75 m²').click();
+    // angezeigt wird die Spanne mit „bis“ (anzeige.ts, E-057); gesendet wird weiter „35 - 75 m²“
+    await flaeche(page, '35 bis 75 m²').click();
     await weiterZu(page, 3).click();
     await expect(schrittAnzeige(page, 3)).toBeVisible();
     await expect(page.getByText(/Projekt: Balkon & Terrasse/)).toBeVisible();
-    await expect(page.getByText(/Umfang: 35 - 75 m²/)).toBeVisible();
+    await expect(page.getByText(/Umfang: 35 bis 75 m²/)).toBeVisible();
 
     await page.getByRole('button', { name: 'Zurück zu Schritt 2', exact: true }).click();
     await expect(schrittAnzeige(page, 2)).toBeVisible();
@@ -51,7 +52,7 @@ test.describe('TezgelAnfrageFunnel (F-03, /kontakt)', () => {
 
     await weiterZu(page, 2).click();
     await weiterZu(page, 3).click();
-    await expect(page.getByText(/Umfang: 35 - 75 m²/)).toBeVisible();
+    await expect(page.getByText(/Umfang: 35 bis 75 m²/)).toBeVisible();
     await page.getByRole('button', { name: 'Ändern', exact: true }).click();
     await expect(schrittAnzeige(page, 2)).toBeVisible();
   });

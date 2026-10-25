@@ -8,6 +8,7 @@ import Hinweis from '@/components/kern/Hinweis';
 import Knopf from '@/components/kern/Knopf';
 import { etikettKlassen, knopfKlassen, labelKlassen, linkKlassen } from '@/components/kern/stile';
 import { COMPANY_DATA } from '@/config/company';
+import { anzeige } from '@/lib/formulare/anzeige';
 import { NBSP, inputClass, pflichtClass } from './stile';
 
 // Badgröße über beide Spalten (der Messwert, in Mono), Umfang und Ausstattung nebeneinander, Wünsche über beide Spalten.
@@ -58,7 +59,7 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                         ['Badgröße', `ca. ${sqmLabel}${NBSP}m²`],
                         ['Umfang', scopeLabel],
                         ['Ausstattung', tierLabel],
-                        ['Wünsche', extras.join(', ') || 'Keine Extras gewählt']
+                        ['Wünsche', extras.map(anzeige).join(', ') || 'Keine Extras gewählt']
                     ].map(([term, value]) => (
                         <div key={term} className={clsx('min-w-0 bg-fliese p-4', BREIT[term])}>
                             <dt className="font-mono text-fs-1 text-tinte-2">{term}</dt>

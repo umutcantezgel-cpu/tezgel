@@ -103,7 +103,8 @@ Ausgangswerte E0 trägt der Orchestrator nach E0-PRUEF-03 und E0-PROBE-01…10 e
 - U-05 Screenreader: kein VoiceOver oder TalkBack. Ersatz: Barrierefreiheitsbaum aus Playwright, Prüfung von Titelansage (Routen-Ansager von Next) und Fokus auf H1.
 
 ## Ausnahmen (höchstens zwei, keine für Z-02, Z-11, Z-14)
-- keine
+- **A-1 · Z-12, „Traumbad“** in der H1 von `/bad/badsanierung` („Ihr neues Traumbad zum Festpreis.“): Wortlaut des Auftraggebers aus der Durchsicht der Live-Seite (E-047, E-048). Die Floskelprüfung meldet ihn weiter; die Regel bleibt.
+- **A-2 · Z-12, „Perfektion“** in der H1 der Startseite („Perfektion auf jedem Quadratmeter.“): Wortlaut des Auftraggebers aus derselben Durchsicht (E-047 Teil B, E-057). Die Floskelprüfung meldet ihn weiter; die Regel bleibt. Damit sind beide Ausnahmen vergeben.
 
 ## Prüfmatrix (welche Stufe belegt was)
 | Kriterium | Stufe A je Paket | Stufe B je Etappe | Stufe C Abschluss |

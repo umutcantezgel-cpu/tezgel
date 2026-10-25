@@ -1,5 +1,5 @@
 {
- "stand": "KERN v3.0 K-010-B (24.10.2026)",
+ "stand": "KERN v3.0 K-010-B (24.10.2026); Normbezeichnung DIN 18040-2 (E-057, 25.10.2026)",
  "woerter": [
   {
    "wort": "E-Mail",
@@ -40,6 +40,10 @@
   {
    "wort": "USt-IdNr",
    "grund": "amtliche Abkürzung der Umsatzsteuer-Identifikationsnummer, Pflichtangabe im Fuß"
+  },
+  {
+   "wort": "18040-2",
+   "grund": "Normbezeichnung „DIN 18040-2“ (Eigenname der Norm für barrierefreies Bauen, K-015 F-25; E-057)"
   }
  ],
  "praefixe_mit_bindestrich_erlaubt": [

@@ -51,7 +51,7 @@ export default function BadProjektCheck() {
                 <div className="flex flex-wrap items-center justify-between gap-2 border-b border-fuge pb-4">
                     <span className={etikettKlassen}>
                         <Fugenkreuz className="size-3 text-strich" />
-                        Bad-Projektcheck
+                        Projektcheck fürs Bad
                     </span>
                     <span className="hidden font-mono text-fs-1 text-tinte @lg:inline-flex">
                         Festpreis nach dem Termin bei Ihnen vor Ort

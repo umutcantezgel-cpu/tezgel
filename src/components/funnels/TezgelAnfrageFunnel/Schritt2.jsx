@@ -1,6 +1,7 @@
 import Icon from '@/components/icons/Icon';
 import { hilfeKlassen, knopfKlassen, labelKlassen } from '@/components/kern/stile';
 import { AREA_OPTIONS, TIMING_OPTIONS } from '@/lib/formulare/useAnfrageFunnel';
+import { anzeige } from '@/lib/formulare/anzeige';
 import { inputClass, optionClass } from './stile';
 
 // Schritt 2: Fläche, Zeitraum und Ort (E2-ORCH-08: Darstellung nach KERN; Texte, Namen und Verhalten unverändert).
@@ -21,7 +22,7 @@ export default function Schritt2({ setStep, selectedArea, selectArea, customArea
                   className={optionClass}
                   data-motion="zustand"
                 >
-                  {opt}
+                  {anzeige(opt)}
                 </button>
               ))}
             </div>
@@ -52,7 +53,7 @@ export default function Schritt2({ setStep, selectedArea, selectArea, customArea
                   className={optionClass}
                   data-motion="zustand"
                 >
-                  {opt}
+                  {anzeige(opt)}
                 </button>
               ))}
             </div>

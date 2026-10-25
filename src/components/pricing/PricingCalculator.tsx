@@ -20,6 +20,7 @@ import Knopf from "@/components/kern/Knopf";
 import { etikettForm, etikettKlassen, feldKlassen, labelKlassen } from "@/components/kern/stile";
 import { siteConfig } from "@/lib/config";
 import { usePreisrechner } from "@/lib/formulare/usePreisrechner";
+import { anzeige } from "@/lib/formulare/anzeige";
 
 const SERVICE_PLAENE: Record<CraftServiceType, PlanName> = {
   bad: "bad",
@@ -128,12 +129,12 @@ export default function PricingCalculator() {
                   </span>
                   <span className="min-w-0 flex-1">
                     <span className="flex flex-wrap items-start justify-between gap-x-2 gap-y-1">
-                      <span className="block min-w-0 text-fs-2 font-semibold">{srv.title}</span>
+                      <span className="block min-w-0 text-fs-2 font-semibold">{anzeige(srv.title)}</span>
                       {srv.badge && (
-                        <span className="hidden whitespace-nowrap font-text text-fs-1 sm:inline-block">{srv.badge}</span>
+                        <span className="hidden whitespace-nowrap font-text text-fs-1 sm:inline-block">{anzeige(srv.badge)}</span>
                       )}
                     </span>
-                    <span className="mt-1 block text-fs-1">{srv.subtitle}</span>
+                    <span className="mt-1 block text-fs-1">{anzeige(srv.subtitle)}</span>
                   </span>
                 </button>
               );
@@ -158,8 +159,8 @@ export default function PricingCalculator() {
                   className={stufeKlassen}
                   data-motion="zustand"
                 >
-                  <span className="block w-full text-fs-2 font-semibold">{size.label}</span>
-                  <span className="block w-full font-mono text-fs-1">{size.areaText}</span>
+                  <span className="block w-full text-fs-2 font-semibold">{anzeige(size.label)}</span>
+                  <span className="block w-full font-mono text-fs-1">{anzeige(size.areaText)}</span>
                 </button>
               );
             })}
@@ -213,8 +214,8 @@ export default function PricingCalculator() {
                     {isChecked && <Icon name="haken" groesse={4} />}
                   </span>
                   <span>
-                    <span className="block text-fs-2 font-semibold">{opt.label}</span>
-                    <span className="mt-1 block text-fs-1 text-tinte-2">{opt.description}</span>
+                    <span className="block text-fs-2 font-semibold">{anzeige(opt.label)}</span>
+                    <span className="mt-1 block text-fs-1 text-tinte-2">{anzeige(opt.description)}</span>
                   </span>
                 </button>
               );
@@ -297,12 +298,12 @@ export default function PricingCalculator() {
               <dl className="mt-6 border-t border-nacht-fuge text-fs-2">
                 <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3">
                   <dt className="text-nacht-2">Projekt:</dt>
-                  <dd className="text-right font-semibold text-kalk">{selectedService.title}</dd>
+                  <dd className="text-right font-semibold text-kalk">{anzeige(selectedService.title)}</dd>
                 </div>
                 <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3">
                   <dt className="text-nacht-2">Fläche:</dt>
                   <dd className="text-right font-mono text-kalk">
-                    {customArea.trim() ? `${customArea.trim()} m²` : selectedSize.areaText}
+                    {customArea.trim() ? `${customArea.trim()} m²` : anzeige(selectedSize.areaText)}
                   </dd>
                 </div>
                 <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3">
@@ -426,7 +427,7 @@ export default function PricingCalculator() {
                       >
                         {TIMING_OPTIONS.map((t) => (
                           <option key={t} value={t}>
-                            {t}
+                            {anzeige(t)}
                           </option>
                         ))}
                       </select>

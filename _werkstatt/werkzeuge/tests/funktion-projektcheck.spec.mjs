@@ -15,7 +15,7 @@ const WHATSAPP_NUMMER = '491726728504';
 const wurzel = (page, seite) => (seite === '/bad' ? page.locator('#projekt-check') : page);
 
 // Bedienelemente über Labels, Rollen und sichtbare Texte (keine Gestaltungsklassen).
-const groesse = (w) => w.getByLabel(/^1\. Badezimmer-Größe in Quadratmetern/);
+const groesse = (w) => w.getByLabel(/^1\. Größe des Badezimmers in Quadratmetern/);
 const anfordern = (w) => w.getByRole('button', { name: 'Angebot mit Festpreis anfordern', exact: true });
 const name = (w) => w.getByLabel('Ihr Name', { exact: true });
 const telefon = (w) => w.getByLabel('Ihre Telefonnummer', { exact: true });
@@ -43,12 +43,12 @@ async function konfiguriere(w) {
   await expect(w.getByText('3,5 m²', { exact: true })).toBeVisible();
   await w.getByRole('button', { name: /^Wanne zu Dusche/ }).click();
   await w.getByRole('button', { name: /^Exklusiv/ }).click();
-  await w.getByRole('button', { name: 'LED-Lichtspiegel', exact: true }).click();
-  await w.getByRole('button', { name: 'Badewanne / Komfortwanne', exact: true }).click();
+  await w.getByRole('button', { name: 'Spiegel mit Licht', exact: true }).click();
+  await w.getByRole('button', { name: 'Badewanne oder Komfortwanne', exact: true }).click();
   await expect(w.getByRole('button', { name: /^Wanne zu Dusche/ })).toHaveAttribute('aria-pressed', 'true');
   await expect(w.getByRole('button', { name: /^Exklusiv/ })).toHaveAttribute('aria-pressed', 'true');
-  await expect(w.getByRole('button', { name: 'LED-Lichtspiegel', exact: true })).toHaveAttribute('aria-pressed', 'false');
-  await expect(w.getByRole('button', { name: 'Badewanne / Komfortwanne', exact: true })).toHaveAttribute('aria-pressed', 'true');
+  await expect(w.getByRole('button', { name: 'Spiegel mit Licht', exact: true })).toHaveAttribute('aria-pressed', 'false');
+  await expect(w.getByRole('button', { name: 'Badewanne oder Komfortwanne', exact: true })).toHaveAttribute('aria-pressed', 'true');
 }
 
 // Kontaktformular öffnen und ausfüllen.

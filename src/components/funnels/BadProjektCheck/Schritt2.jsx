@@ -1,5 +1,6 @@
 import { labelKlassen } from '@/components/kern/stile';
 import { SCOPE_OPTIONS } from '@/lib/formulare/useProjektCheck';
+import { anzeige } from '@/lib/formulare/anzeige';
 import { einfachClass, nummerClass } from './stile';
 
 // 2. Sanierungsumfang (E-011: aus BadProjektCheck.jsx verschoben). Darstellung KERN v2 (Q-02): Auswahl mit wahlKlassen
@@ -25,7 +26,7 @@ export default function Schritt2({ sanitaryScope, setSanitaryScope }) {
                         >
                             <span className="flex min-w-0 flex-col gap-1 break-words">
                                 <span className="block font-semibold">{scope.label}</span>
-                                <span className="block text-fs-1">{scope.desc}</span>
+                                <span className="block text-fs-1">{anzeige(scope.desc)}</span>
                             </span>
                         </button>
                     );

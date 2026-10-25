@@ -54,7 +54,7 @@ export const START: ErzaehlInhalt = {
     schritte: [
       {
         titel: 'Termin bei Ihnen vor Ort',
-        text: 'Deniz Tezgel kommt zu Ihnen. Er schaut sich den Raum genau an und prüft den Untergrund. Dieser Termin ist für Sie kostenfrei.',
+        text: 'Deniz Tezgel kommt zu Ihnen. Er schaut sich den Raum genau an und prüft den [[untergrund|Untergrund]]. Dieser Termin ist für Sie kostenfrei.',
       },
       {
         titel: 'Planen und auswählen',

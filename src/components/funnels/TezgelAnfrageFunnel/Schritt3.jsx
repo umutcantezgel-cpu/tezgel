@@ -3,6 +3,7 @@ import Icon from '@/components/icons/Icon';
 import Knopf from '@/components/kern/Knopf';
 import { knopfKlassen, labelKlassen, linkKlassen, pflichtKlassen } from '@/components/kern/stile';
 import { inputClass } from './stile';
+import { anzeige } from '@/lib/formulare/anzeige';
 
 // Schritt 3: Kontaktdaten und Absenden (E2-ORCH-08: Darstellung nach KERN; Texte, Namen und Verhalten unverändert).
 export default function Schritt3({ setStep, name, setName, phone, setPhone, email, setEmail, notes, setNotes, honeypot, setHoneypot, status, errorMessage, projectTitle, finalArea, locationText, handleWhatsAppDirect, handleOnlineSubmit }) {
@@ -42,7 +43,7 @@ export default function Schritt3({ setStep, name, setName, phone, setPhone, emai
 
           <div className="flex flex-wrap items-center justify-between gap-2 border border-fuge bg-kalk p-4 text-fs-2 text-tinte">
             <span>
-              <strong className="font-mono font-normal text-tinte-2">Projekt:</strong> {projectTitle} &middot; <strong className="font-mono font-normal text-tinte-2">Umfang:</strong> {finalArea} &middot;{' '}
+              <strong className="font-mono font-normal text-tinte-2">Projekt:</strong> {projectTitle} &middot; <strong className="font-mono font-normal text-tinte-2">Umfang:</strong> {anzeige(finalArea)} &middot;{' '}
               <strong className="font-mono font-normal text-tinte-2">Ort:</strong> {locationText}
             </span>
             <button
