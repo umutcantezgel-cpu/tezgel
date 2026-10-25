@@ -310,7 +310,7 @@ export default function PricingCalculator() {
                 </div>
                 <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3 @max-3xs:flex-wrap">
                   <dt className="text-nacht-2">Termin bei Ihnen vor Ort:</dt>
-                  <dd className="text-right font-mono text-kalk">0 € (Kostenfrei)</dd>
+                  <dd className="min-w-0 text-right font-mono text-kalk hyphens-auto wrap-break-word">0 € (Kostenfrei)</dd>
                 </div>
                 <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3 @max-3xs:flex-wrap">
                   <dt className="text-nacht-2">Angebot:</dt>
@@ -467,7 +467,7 @@ export default function PricingCalculator() {
 
               <div>
                 <span className="block font-mono text-fs-1 text-nacht-2">Oder bei dringenden Fragen direkt anrufen:</span>
-                <Knopf href={siteConfig.contact.phone.link} variante="neben" iconLinks="telefon" className="mt-2 w-full wrap-anywhere @max-3xs:px-4">
+                <Knopf href={siteConfig.contact.phone.link} variante="neben" iconLinks="telefon" className="mt-2 w-full wrap-anywhere @max-3xs:flex-col @max-3xs:px-2">
                   <Rufnummer nummer={siteConfig.contact.phone.formatted} />
                 </Knopf>
               </div>

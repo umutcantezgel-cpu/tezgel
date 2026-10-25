@@ -345,7 +345,7 @@ export function LeadQuickForm({
             <span aria-hidden="true" className="hidden font-mono text-fs-1 text-tinte-2 sm:inline">
               &middot;
             </span>
-            <span className={etikettKlassen}>
+            <span className={`${etikettKlassen} hyphens-auto wrap-break-word`}>
               <Icon name="telefon" groesse={4} />
               Kostenfreie Erstberatung
             </span>

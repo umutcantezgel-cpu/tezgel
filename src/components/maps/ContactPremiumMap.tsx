@@ -105,22 +105,26 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
             />
           </div>
 
-          {/* Filterzeile: vier gleich breite Spalten im 1-px-Raster (Strich), eine Zeile auch bei 390 px */}
-          <div className="grid grid-cols-4 divide-x divide-strich border border-strich">
-            {ENTFERNUNGEN.map((f) => (
-              <button
-                key={f.label}
-                type="button"
-                aria-pressed={distanceFilter === f.val}
-                onClick={() => setDistanceFilter(f.val)}
-                className="min-h-11 bg-fliese px-2 py-3 text-center font-text text-fs-2 text-tinte hover:bg-kalk aria-pressed:bg-tinte aria-pressed:text-kalk"
-              >
-                {f.label}
-              </button>
-            ))}
+          {/* Filterzeile: vier gleich breite Spalten im 1-px-Raster (Strich), eine Zeile auch bei 390 px; bei großer Schrift
+              (Platz unter 16 rem) zwei Spalten */}
+          <div className="@container">
+            <div className="grid grid-cols-2 gap-px border border-strich bg-strich @3xs:grid-cols-4">
+              {ENTFERNUNGEN.map((f) => (
+                <button
+                  key={f.label}
+                  type="button"
+                  aria-pressed={distanceFilter === f.val}
+                  onClick={() => setDistanceFilter(f.val)}
+                  className="min-h-11 bg-fliese px-2 py-3 text-center font-text text-fs-2 text-tinte hover:bg-kalk aria-pressed:bg-tinte aria-pressed:text-kalk"
+                >
+                  {f.label}
+                </button>
+              ))}
+            </div>
           </div>
 
-          {/* genau fünf Zeilen à 44 px + Fugen (max-h-56): keine angeschnittene Zeile */}
+          {/* genau fünf Zeilen à 44 px + Fugen (max-h-56): keine angeschnittene Zeile; bei großer Schrift brechen lange Ortsnamen
+              um, statt mit Auslassungszeichen abgeschnitten zu werden (Tor E3) */}
           <ul className="max-h-56 overflow-y-auto border border-fuge bg-fliese">
             {filteredCities.map((city) => {
               const isSelected = selectedSlug === city.slug;
@@ -130,11 +134,11 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
                     type="button"
                     aria-pressed={isSelected}
                     onClick={() => handleSelectCity(city.slug)}
-                    className="flex h-11 w-full items-center justify-between gap-3 px-3 text-left font-text text-fs-2 text-tinte hover:bg-kalk aria-pressed:bg-tinte aria-pressed:text-kalk"
+                    className="flex min-h-11 w-full flex-wrap items-center justify-between gap-x-3 px-3 py-2 text-left font-text text-fs-2 text-tinte hover:bg-kalk aria-pressed:bg-tinte aria-pressed:text-kalk"
                   >
                     <span className="flex min-w-0 items-center gap-2">
                       <Icon name="ort" groesse={4} />
-                      <span className="truncate">{city.name}</span>
+                      <span className="min-w-0 wrap-break-word">{city.name}</span>
                     </span>
                     <span className="shrink-0 font-mono text-fs-1">
                       {city.distanceKm === 0 ? "angrenzend" : `ca. ${city.distanceKm} km`}
@@ -149,9 +153,9 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
         <div className="border-t border-fuge pt-4">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <span className="font-text text-fs-3 font-semibold text-tinte">{currentHub.name}</span>
-            <span className={etikettKlassen}>
+            <span className={`${etikettKlassen} min-w-0`}>
               <Icon name="uhr" groesse={4} />
-              <span>{currentHub.driveTimeText}</span>
+              <span className="min-w-0 hyphens-auto wrap-break-word">{currentHub.driveTimeText}</span>
             </span>
           </div>
 

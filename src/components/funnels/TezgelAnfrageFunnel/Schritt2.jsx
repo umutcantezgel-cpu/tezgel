@@ -8,11 +8,11 @@ import { inputClass, optionClass } from './stile';
 export default function Schritt2({ setStep, selectedArea, selectArea, customArea, setCustomArea, timing, setTiming, location, setLocation }) {
     return (
         <div className="flex flex-col gap-8">
-          <div>
+          <div className="@container">
             <span id="funnel-area-heading" className={labelKlassen}>
               Ungefähre Fläche in Quadratmetern
             </span>
-            <div role="group" aria-labelledby="funnel-area-heading" className="@container mt-2 grid grid-cols-1 gap-2 @3xs:grid-cols-2 sm:grid-cols-4">
+            <div role="group" aria-labelledby="funnel-area-heading" className="mt-2 grid grid-cols-1 gap-2 @3xs:grid-cols-2 sm:grid-cols-4">
               {AREA_OPTIONS.map((opt) => (
                 <button
                   type="button"
@@ -40,7 +40,7 @@ export default function Schritt2({ setStep, selectedArea, selectArea, customArea
           </div>
 
           <div>
-            <span id="funnel-timing-heading" className={labelKlassen}>
+            <span id="funnel-timing-heading" className={`${labelKlassen} hyphens-auto wrap-break-word`}>
               Gewünschter Ausführungszeitraum
             </span>
             <div role="group" aria-labelledby="funnel-timing-heading" className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-3">
@@ -90,7 +90,7 @@ export default function Schritt2({ setStep, selectedArea, selectArea, customArea
             <button
               type="button"
               onClick={() => setStep(3)}
-              className={knopfKlassen('haupt', 'w-full sm:w-auto')}
+              className={knopfKlassen('haupt', 'w-full hyphens-auto wrap-break-word sm:w-auto')}
               data-motion="druck"
             >
               Weiter zu Schritt 3: Kontaktdaten

@@ -24,16 +24,16 @@ function Weg({ href, icon, label, wert, extern, text = false }: { href: string; 
     <a
       href={href}
       {...(extern ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-      className="group flex min-h-11 items-center justify-between gap-4 border-b border-fuge py-4 text-tinte"
+      className="group flex min-h-11 items-center justify-between gap-4 border-b border-fuge py-4 text-tinte @max-3xs:gap-2"
     >
-      <span className="flex min-w-0 items-center gap-4">
+      <span className="flex min-w-0 items-center gap-4 @max-3xs:flex-col @max-3xs:items-start @max-3xs:gap-2">
         <Icon name={icon} groesse={5} className="shrink-0 text-tinte-2" />
-        <span className="min-w-0">
+        <span className="min-w-0 @max-3xs:w-full">
           <span className={etikett}>{label}</span>
           <span className={clsx('mt-1 block text-fs-3 underline decoration-transparent underline-offset-4 group-hover:decoration-tinte wrap-break-word', text ? 'font-text font-semibold' : 'font-mono')}>{wert}</span>
         </span>
       </span>
-      <Icon name={extern ? 'link-extern' : 'pfeil-rechts'} groesse={5} className="shrink-0 text-tinte-2" />
+      <Icon name={extern ? 'link-extern' : 'pfeil-rechts'} groesse={5} className="shrink-0 text-tinte-2 @max-3xs:hidden" />
     </a>
   );
 }

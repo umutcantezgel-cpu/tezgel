@@ -23,9 +23,10 @@ export const nummerClass = 'font-mono font-normal text-tinte-2';
 export const kachelClass = `${wahlKlassen} h-full w-full min-w-0`;
 export const kachelInhaltClass = 'flex w-full min-w-0 flex-col gap-1 self-start py-1 text-left wrap-break-word';
 
-/** Wunschausstattung (aria-pressed): wahlKlassen, Zeichen und Text links */
-export const ausstattungClass = `${wahlKlassen} w-full`;
-export const ausstattungInhaltClass = 'flex w-full items-center gap-2 text-left';
+/** Wunschausstattung (aria-pressed): wahlKlassen, Zeichen und Text links; bei großer Schrift schrumpft das Feld mit der Spalte,
+ *  lange Wörter trennen nach Silben (lang="de") */
+export const ausstattungClass = `${wahlKlassen} w-full min-w-0`;
+export const ausstattungInhaltClass = 'flex w-full min-w-0 items-center gap-2 text-left hyphens-auto wrap-break-word';
 
 /** Fehlermeldung über den Sendeknöpfen (K-005: Rahmen + Versatz-Zeichen + Text): umlaufend 1 px Strich (aus A),
  *  Kantenstrich links in Laser und Kalk-Grund (aus B); Rot nur an Kante und Zeichen, kein rundum roter Rahmen */
