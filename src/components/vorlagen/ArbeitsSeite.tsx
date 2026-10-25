@@ -36,7 +36,8 @@ export interface ArbeitsSeiteProps {
 }
 
 /** Werkzeug der Seite nach dem nächsten Schritt (E-012: unter dem Hauptweg, nicht konkurrierend; Funktion wie im Bestand,
- *  F-02, F-04): eigener Abschnitt mit der Kennung aus dem Bestand */
+ *  F-02, F-04): eigener Abschnitt mit der Kennung aus dem Bestand. Kopf seit K-016 (E-047) mittig über dem Werkzeug statt
+ *  seitlich daneben; `kopf: 'seitlich'` nur noch, wo das Werkzeug selbst schmal ist. */
 export function Werkzeug({ werkzeug }: { werkzeug: Arbeitsabschnitt }) {
   return (
     <Abschnitt
@@ -45,7 +46,8 @@ export function Werkzeug({ werkzeug }: { werkzeug: Arbeitsabschnitt }) {
       art="arbeit"
       leitachse
       flaeche={werkzeug.flaeche ?? 'kalk'}
-      kopf={werkzeug.kopf ?? 'seitlich'}
+      kopf={werkzeug.kopf ?? 'gestapelt'}
+      mitte={werkzeug.kopf !== 'seitlich'}
       titel={werkzeug.titel}
       einleitung={werkzeug.einleitung ? <p><Textmarken text={werkzeug.einleitung} /></p> : undefined}
       unterKopf={werkzeug.unterKopf}
@@ -67,7 +69,8 @@ export default function ArbeitsSeite({ pfad, brotkrumen, titel, ort, vorspann, h
           art="arbeit"
           leitachse
           flaeche={a.flaeche ?? (i % 2 === 0 ? 'fliese' : 'kalk')}
-          kopf={a.kopf ?? 'seitlich'}
+          kopf={a.kopf ?? 'gestapelt'}
+          mitte={a.kopf !== 'seitlich'}
           titel={a.titel}
           einleitung={a.einleitung ? <p><Textmarken text={a.einleitung} /></p> : undefined}
           unterKopf={a.unterKopf}
