@@ -26,7 +26,7 @@ import { linkKlassen } from '@/components/kern/stile';
 import SeitenDaten from '@/components/seo/SeitenDaten';
 
 export const metadata = createMetadata({
-    title: 'DIN 18534 Verbundabdichtung: Bad & Dusche | Tezgel',
+    title: 'DIN 18534 Verbundabdichtung für Bad und Dusche | Tezgel',
     description:
         'DIN 18534 Verbundabdichtung für Bad & Dusche: Wassereinwirkungsklassen W0-I bis W3-I, Dichtbänder & Rohrmanschetten. Normgerecht ausgeführt von Tezgel.',
     path: '/untergrund-abdichtung/din-18534'
@@ -145,7 +145,7 @@ export default function Din18534Page() {
         <>
             <SeitenDaten
                 pfad="/untergrund-abdichtung/din-18534"
-                titel="DIN 18534 Verbundabdichtung: Bad & Dusche | Tezgel"
+                titel="DIN 18534 Verbundabdichtung für Bad und Dusche | Tezgel"
                 beschreibung="DIN 18534 Verbundabdichtung für Bad & Dusche: Wassereinwirkungsklassen W0-I bis W3-I, Dichtbänder & Rohrmanschetten. Normgerecht ausgeführt von Tezgel."
                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Untergrund und Abdichtung', href: '/untergrund-abdichtung' }, { name: 'Verbundabdichtung nach DIN 18534: dicht unter der Fliese' }]}
             />

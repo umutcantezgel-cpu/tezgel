@@ -29,7 +29,7 @@ const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKo
 });
 
 export const metadata = createMetadata({
-    title: 'Fliesen-Verlegemuster: Fischgrät & Verbände | Tezgel',
+    title: 'Verlegemuster für Fliesen, Fischgrät & Verbände | Tezgel',
     description:
         'Fliesen-Verlegemuster im Überblick: Kreuzfuge, Halbverband, Fischgrät & Diagonalverlegung. Verschnitt, Wirkung & Fachberatung von Fliesenleger Tezgel.',
     path: '/fliesen/verlegemuster'
@@ -214,7 +214,7 @@ export default function VerlegemusterPage() {
         <>
             <SeitenDaten
                 pfad="/fliesen/verlegemuster"
-                titel="Fliesen-Verlegemuster: Fischgrät & Verbände | Tezgel"
+                titel="Verlegemuster für Fliesen, Fischgrät & Verbände | Tezgel"
                 beschreibung="Fliesen-Verlegemuster im Überblick: Kreuzfuge, Halbverband, Fischgrät & Diagonalverlegung. Verschnitt, Wirkung & Fachberatung von Fliesenleger Tezgel."
                 brotkrumen={[
                     { name: 'Start', href: '/' },

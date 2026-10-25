@@ -123,7 +123,7 @@ const breadcrumbs = [
 const schadensGraph = buildGraph([
     buildWebPageNode({
         url: PAGE_URL,
-        name: 'Fliesenschäden analysieren: Risse & Feuchte | Tezgel',
+        name: 'Fliesenschäden analysieren bei Rissen & Feuchte | Tezgel',
         description:
             'Gerissene Fliesen, Hohlstellen oder feuchte Fugen? Kostenfreie Schadensanalyse vor Ort in Wetzlar & Aßlar. Fliesenleger-Fachbetrieb Tezgel berät Sie!',
         breadcrumbItems: breadcrumbs

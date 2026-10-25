@@ -25,7 +25,7 @@ import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
 import SeitenDaten from '@/components/seo/SeitenDaten';
 
 export const metadata = createMetadata({
-    title: 'Altfliesen überkleben: Wann es fachgerecht geht | Tezgel',
+    title: 'Altfliesen überkleben, wann es fachgerecht geht | Tezgel',
     description:
         'Altfliesen überkleben (Überfliesen): Prüfkriterien, Haftbrücke, Aufbauhöhen & wann Rückbau besser ist. Fachbetrieb Tezgel in Aßlar & Wetzlar.',
     path: '/untergrund-abdichtung/fliesen-auf-fliesen'
@@ -139,7 +139,7 @@ export default function FliesenAufFliesenPage() {
         <>
             <SeitenDaten
                 pfad="/untergrund-abdichtung/fliesen-auf-fliesen"
-                titel="Altfliesen überkleben: Wann es fachgerecht geht | Tezgel"
+                titel="Altfliesen überkleben, wann es fachgerecht geht | Tezgel"
                 beschreibung="Altfliesen überkleben (Überfliesen): Prüfkriterien, Haftbrücke, Aufbauhöhen & wann Rückbau besser ist. Fachbetrieb Tezgel in Aßlar & Wetzlar."
                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Untergrund und Abdichtung', href: '/untergrund-abdichtung' }, { name: 'Altfliesen überkleben: Wann es fachgerecht geht bei Tezgel' }]}
             />

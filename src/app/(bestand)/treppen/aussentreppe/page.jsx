@@ -27,7 +27,7 @@ import { linkKlassen } from '@/components/kern/stile';
 import SeitenDaten from '@/components/seo/SeitenDaten';
 
 export const metadata = createMetadata({
-    title: 'Außentreppe fliesen: frostsicher & rutschfest | Tezgel',
+    title: 'Außentreppe fliesen, frostsicher & rutschfest | Tezgel',
     description:
         'Außentreppe frostsicher fliesen & sanieren: rutschhemmende Platten, Gefälleausbildung & Abdichtung. Fliesenleger-Fachbetrieb Tezgel in Wetzlar & Aßlar.',
     path: '/treppen/aussentreppe'
@@ -143,7 +143,7 @@ export default function AussentreppePage() {
         <>
             <SeitenDaten
                 pfad="/treppen/aussentreppe"
-                titel="Außentreppe fliesen: frostsicher & rutschfest | Tezgel"
+                titel="Außentreppe fliesen, frostsicher & rutschfest | Tezgel"
                 beschreibung="Außentreppe frostsicher fliesen & sanieren: rutschhemmende Platten, Gefälleausbildung & Abdichtung. Fliesenleger-Fachbetrieb Tezgel in Wetzlar & Aßlar."
                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Treppen', href: '/treppen' }, { name: 'Außentreppe fliesen: frostsicher & rutschfest bei Tezgel' }]}
             />

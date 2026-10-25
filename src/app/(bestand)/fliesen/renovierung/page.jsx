@@ -31,7 +31,7 @@ const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKo
 });
 
 export const metadata = createMetadata({
-    title: 'Fliesen Renovierung: Alte Fliesen erneuern | Tezgel',
+    title: 'Fliesenrenovierung, alte Fliesen erneuern | Tezgel',
     description:
         'Fliesenboden im bewohnten Bestand fachgerecht renovieren & erneuern: Ablauf, Staubschutz & Etappenplanung vom Fliesenleger-Fachbetrieb Tezgel in Hessen.',
     path: '/fliesen/renovierung'
@@ -94,7 +94,7 @@ export default function RenovierungPage() {
         <>
             <SeitenDaten
                 pfad="/fliesen/renovierung"
-                titel="Fliesen Renovierung: Alte Fliesen erneuern | Tezgel"
+                titel="Fliesenrenovierung, alte Fliesen erneuern | Tezgel"
                 beschreibung="Fliesenboden im bewohnten Bestand fachgerecht renovieren & erneuern: Ablauf, Staubschutz & Etappenplanung vom Fliesenleger-Fachbetrieb Tezgel in Hessen."
                 brotkrumen={[
                     { name: 'Start', href: '/' },

@@ -26,7 +26,7 @@ import { linkKlassen } from '@/components/kern/stile';
 import SeitenDaten from '@/components/seo/SeitenDaten';
 
 export const metadata = createMetadata({
-    title: 'Treppenhaus sanieren: Fliesen & Naturstein | Tezgel',
+    title: 'Treppenhaus sanieren mit Fliesen & Naturstein | Tezgel',
     description:
         'Treppenhaus im MFH neu fliesen & sanieren: trittsichere Beläge, abschnittsweises Arbeiten im bewohnten Haus & Hausverwaltungs-Service. Tezgel Fachbetrieb.',
     path: '/treppen/treppenhaus'
@@ -111,7 +111,7 @@ export default function TreppenhausPage() {
         <>
             <SeitenDaten
                 pfad="/treppen/treppenhaus"
-                titel="Treppenhaus sanieren: Fliesen & Naturstein | Tezgel"
+                titel="Treppenhaus sanieren mit Fliesen & Naturstein | Tezgel"
                 beschreibung="Treppenhaus im MFH neu fliesen & sanieren: trittsichere Beläge, abschnittsweises Arbeiten im bewohnten Haus & Hausverwaltungs-Service. Tezgel Fachbetrieb."
                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Treppen', href: '/treppen' }, { name: 'Treppenhaus sanieren: neue Beläge im Mehrfamilienhaus' }]}
             />

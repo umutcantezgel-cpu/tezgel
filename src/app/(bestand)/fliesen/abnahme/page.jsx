@@ -21,7 +21,7 @@ import Verlegeplan from '@/components/kern/Verlegeplan';
 import { linkKlassen } from '@/components/kern/stile';
 
 export const metadata = createMetadata({
-    title: 'Fliesenarbeiten abnehmen: Checkliste & Normen | Tezgel',
+    title: 'Fliesenarbeiten abnehmen, Checkliste & Normen | Tezgel',
     description:
         'Checkliste für die Abnahme von Fliesenarbeiten: Ebenheit nach DIN 18202, Fugenbild, Hohlstellen & Toleranzen erklärt vom Fachbetrieb Tezgel aus Aßlar.',
     path: '/fliesen/abnahme'
@@ -108,7 +108,7 @@ export default function AbnahmePage() {
         <>
             <SeitenDaten
                 pfad="/fliesen/abnahme"
-                titel="Fliesenarbeiten abnehmen: Checkliste & Normen | Tezgel"
+                titel="Fliesenarbeiten abnehmen, Checkliste & Normen | Tezgel"
                 beschreibung="Checkliste für die Abnahme von Fliesenarbeiten: Ebenheit nach DIN 18202, Fugenbild, Hohlstellen & Toleranzen erklärt vom Fachbetrieb Tezgel aus Aßlar."
                 brotkrumen={[
                     { name: 'Start', href: '/' },

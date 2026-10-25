@@ -30,7 +30,7 @@ const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKo
 });
 
 export const metadata = createMetadata({
-    title: 'Verlegetechnik Fliesen: Dünnbett & Kleber | Tezgel',
+    title: 'Verlegetechnik für Fliesen, Dünnbett & Kleber | Tezgel',
     description:
         'Verlegetechniken für Fliesen nach DIN 18157: Dünnbett, Mittelbett, Buttering-Floating & Kleberklassen erklärt vom Fachbetrieb Tezgel aus Aßlar & Wetzlar.',
     path: '/fliesen/verlegetechnik'
@@ -93,7 +93,7 @@ export default function VerlegetechnikPage() {
         <>
             <SeitenDaten
                 pfad="/fliesen/verlegetechnik"
-                titel="Verlegetechnik Fliesen: Dünnbett & Kleber | Tezgel"
+                titel="Verlegetechnik für Fliesen, Dünnbett & Kleber | Tezgel"
                 beschreibung="Verlegetechniken für Fliesen nach DIN 18157: Dünnbett, Mittelbett, Buttering-Floating & Kleberklassen erklärt vom Fachbetrieb Tezgel aus Aßlar & Wetzlar."
                 brotkrumen={[
                     { name: 'Start', href: '/' },

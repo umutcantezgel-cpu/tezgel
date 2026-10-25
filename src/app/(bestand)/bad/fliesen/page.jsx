@@ -25,7 +25,7 @@ const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFu
     loading: () => <FormularPlatzhalter />,
 });
 
-const TITEL = 'Badfliesen & XXL-Großformate | Fliesenleger Tezgel';
+const TITEL = 'Badfliesen & große Fliesen | Fliesenverlegung Tezgel';
 const BESCHREIBUNG = 'Badfliesen & XXL-Großformate fugenarm verlegen in Wetzlar & Aßlar: Feinsteinzeug, Mosaik & DIN 18534 Abdichtung. Jetzt unverbindlich beraten lassen!';
 
 const METADATEN = createMetadata({

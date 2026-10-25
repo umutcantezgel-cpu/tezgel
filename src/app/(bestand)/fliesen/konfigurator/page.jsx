@@ -23,7 +23,7 @@ const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKo
 });
 
 export const metadata = createMetadata({
-    title: 'Fliesen-Konfigurator & Bedarfsrechner | Tezgel',
+    title: 'Fliesenkonfigurator und Bedarfsrechner | Tezgel',
     description:
         'Fliesen online konfigurieren: Raum, Untergrund, Format & Fläche wählen und unverbindliche Preisschätzung erhalten. Fliesenverlegung Tezgel in Hessen.',
     path: '/fliesen/konfigurator'
@@ -111,7 +111,7 @@ export default function FliesenKonfiguratorPage() {
         <>
             <SeitenDaten
                 pfad="/fliesen/konfigurator"
-                titel="Fliesen-Konfigurator & Bedarfsrechner | Tezgel"
+                titel="Fliesenkonfigurator und Bedarfsrechner | Tezgel"
                 beschreibung="Fliesen online konfigurieren: Raum, Untergrund, Format & Fläche wählen und unverbindliche Preisschätzung erhalten. Fliesenverlegung Tezgel in Hessen."
                 brotkrumen={[
                     { name: 'Start', href: '/' },

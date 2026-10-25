@@ -22,7 +22,7 @@ import Verlegeplan from '@/components/kern/Verlegeplan';
 import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
 import SeitenDaten from '@/components/seo/SeitenDaten';
 
-const TITEL = 'Unser Team | Fliesenleger-Fachbetrieb Tezgel Aßlar';
+const TITEL = 'Unser Team | Fachbetrieb für Fliesen Tezgel Aßlar';
 const BESCHREIBUNG = 'Das Team von Fliesenverlegung Tezgel: Inhaber Deniz Tezgel und qualifizierte Fliesenleger für Fliesen- & Badprojekte in Aßlar, Wetzlar & ganz Hessen.';
 
 export const metadata = createMetadata({

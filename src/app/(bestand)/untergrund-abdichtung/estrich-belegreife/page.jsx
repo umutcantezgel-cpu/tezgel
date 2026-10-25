@@ -26,7 +26,7 @@ import { linkKlassen } from '@/components/kern/stile';
 import SeitenDaten from '@/components/seo/SeitenDaten';
 
 export const metadata = createMetadata({
-    title: 'Estrich-Belegreife & CM-Messung vor dem Fliesen | Tezgel',
+    title: 'Estrich auf Belegreife prüfen vor dem Fliesen | Tezgel',
     description:
         'Estrich-Belegreife zuverlässig prüfen: CM-Messung, Richtwerte je Estrichart & Feuchtigkeitsmessung vor dem Fliesen verlegen. Fachbetrieb Tezgel in Hessen.',
     path: '/untergrund-abdichtung/estrich-belegreife'
@@ -127,7 +127,7 @@ export default function EstrichBelegreifePage() {
         <>
             <SeitenDaten
                 pfad="/untergrund-abdichtung/estrich-belegreife"
-                titel="Estrich-Belegreife & CM-Messung vor dem Fliesen | Tezgel"
+                titel="Estrich auf Belegreife prüfen vor dem Fliesen | Tezgel"
                 beschreibung="Estrich-Belegreife zuverlässig prüfen: CM-Messung, Richtwerte je Estrichart & Feuchtigkeitsmessung vor dem Fliesen verlegen. Fachbetrieb Tezgel in Hessen."
                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Untergrund und Abdichtung', href: '/untergrund-abdichtung' }, { name: 'Estrich prüfen: Belegreife und Restfeuchte vor dem Fliesen' }]}
             />

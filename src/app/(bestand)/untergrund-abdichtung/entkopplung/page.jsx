@@ -24,7 +24,7 @@ import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
 import SeitenDaten from '@/components/seo/SeitenDaten';
 
 export const metadata = createMetadata({
-    title: 'Fliesen auf Holzboden verlegen: Entkopplung | Tezgel',
+    title: 'Fliesen auf Holzboden verlegen mit Entkopplung | Tezgel',
     description:
         'Fliesen auf Holzdielen, Mischuntergründen & gerissenem Estrich sicher verlegen: Entkopplungsmatten & Rissverharzung erklärt vom Fachbetrieb Tezgel.',
     path: '/untergrund-abdichtung/entkopplung'
@@ -125,7 +125,7 @@ export default function EntkopplungPage() {
         <>
             <SeitenDaten
                 pfad="/untergrund-abdichtung/entkopplung"
-                titel="Fliesen auf Holzboden verlegen: Entkopplung | Tezgel"
+                titel="Fliesen auf Holzboden verlegen mit Entkopplung | Tezgel"
                 beschreibung="Fliesen auf Holzdielen, Mischuntergründen & gerissenem Estrich sicher verlegen: Entkopplungsmatten & Rissverharzung erklärt vom Fachbetrieb Tezgel."
                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Untergrund und Abdichtung', href: '/untergrund-abdichtung' }, { name: 'Fliesen auf Holzboden verlegen: Entkopplung bei Tezgel' }]}
             />

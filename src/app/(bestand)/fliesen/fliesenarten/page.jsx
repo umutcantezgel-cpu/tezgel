@@ -30,7 +30,7 @@ const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKo
 });
 
 export const metadata = createMetadata({
-    title: 'Fliesenarten im Vergleich: Feinsteinzeug & Co. | Tezgel',
+    title: 'Fliesenarten im Vergleich mit Feinsteinzeug | Tezgel',
     description:
         'Fliesenarten im Vergleich: Feinsteinzeug, Steinzeug & Steingut. Wasseraufnahme, Frostsicherheit & Abriebklassen erklärt vom Fachbetrieb Tezgel aus Aßlar.',
     path: '/fliesen/fliesenarten'
@@ -129,7 +129,7 @@ export default function FliesenartenPage() {
         <>
             <SeitenDaten
                 pfad="/fliesen/fliesenarten"
-                titel="Fliesenarten im Vergleich: Feinsteinzeug & Co. | Tezgel"
+                titel="Fliesenarten im Vergleich mit Feinsteinzeug | Tezgel"
                 beschreibung="Fliesenarten im Vergleich: Feinsteinzeug, Steinzeug & Steingut. Wasseraufnahme, Frostsicherheit & Abriebklassen erklärt vom Fachbetrieb Tezgel aus Aßlar."
                 brotkrumen={[
                     { name: 'Start', href: '/' },

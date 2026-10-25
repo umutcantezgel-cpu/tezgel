@@ -28,7 +28,7 @@ const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFu
 // Metadaten je Musterbad; die Seite nimmt Titel und Beschreibung für die strukturierten Daten (SeitenDaten) von hier
 function musterbadMetadaten(bath, slug) {
     return createMetadata({
-        title: `Musterbad ${bath.title} – Komplettbad & Badsanierung | Tezgel`,
+        title: `Musterbad ${bath.title.split('-')[0]} mit ${bath.size.split(' ')[0]} m² | Badsanierung Tezgel`,
         description: `Musterbad ${bath.title}: ${bath.headline}. Ausstattungsliste, Markenkomponenten & transparente Festpreise von Fachbetrieb Tezgel aus Aßlar.`,
         path: `/bad/musterbaeder/${slug}`
     });
@@ -79,7 +79,7 @@ export default async function MusterbadDetailPage({ params }) {
                     { name: 'Bad', href: '/bad' },
                     // Ebene der Übersicht mit ihrem Namen im Menü (navigation.js)
                     { name: 'Ideen nach Badgröße', href: '/bad/musterbaeder' },
-                    { name: `Musterbad ${bath.title} – Komplettbad & Badsanierung` },
+                    { name: `Musterbad ${bath.title.split('-')[0]} mit ${bath.size.split(' ')[0]} m² | Badsanierung Tezgel` },
                 ]}
             />
 

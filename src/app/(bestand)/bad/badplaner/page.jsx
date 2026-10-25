@@ -23,7 +23,7 @@ const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFu
     loading: () => <FormularPlatzhalter />,
 });
 
-const TITEL = 'Badplaner: Bad online planen | Fliesenverlegung Tezgel';
+const TITEL = 'Badplaner zum Bad online planen | Fliesenverlegung Tezgel';
 const BESCHREIBUNG = 'Planen Sie Ihr Bad online: Raumgröße, Fliesen & Ausstattung wählen. Fliesenverlegung Tezgel berät Sie mit kostenfreiem Vor-Ort-Aufmaß in Wetzlar & Aßlar!';
 
 const METADATEN = createMetadata({
