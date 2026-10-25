@@ -1,0 +1,12 @@
+diff -ruN '--exclude=node_modules' '--exclude=.next' '--exclude=*.tsbuildinfo' '--exclude=next-env.d.ts' a/src/app/(bestand)/_dokument.tsx v2/src/app/(bestand)/_dokument.tsx
+--- a/src/app/(bestand)/_dokument.tsx	2026-10-25 20:19:26.000000000 +0000
++++ b/src/app/(bestand)/_dokument.tsx	2026-10-25 21:00:06.770383372 +0000
+@@ -24,6 +24,8 @@
+   variable: '--font-archivo',
+   display: 'swap',
+   weight: '400 800',
++  // E4-L2 V2: ohne Vorladen (Teilmenge mit vorhandenen Werkzeugen nicht möglich)
++  preload: false,
+   adjustFontFallback: false,
+   declarations: [{ prop: 'font-stretch', value: '74% 100%' }],
+ });

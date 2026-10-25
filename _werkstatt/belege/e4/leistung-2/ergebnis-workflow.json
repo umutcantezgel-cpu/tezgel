@@ -1,0 +1,544 @@
+{
+ "versuche": {
+  "versuche": [
+   {
+    "kennung": "V0",
+    "aenderung": "Basis: Kopie von 5ef34982 unverändert, mit npx next build gebaut (Vergleichswert derselben Sitzung). Weil die Streuung groß war, gibt es 5 Reihen: drei Reihen mit 4 Seiten, zwei zusätzliche Kontrollreihen nur für wetzlar.",
+    "dateien": [],
+    "build_ok": true,
+    "messwerte": [
+     {
+      "seite": "/bad",
+      "lcp_median": 3460,
+      "lcp_spanne": "2864–3471 (n=9)",
+      "leistung": 91,
+      "tbt": 117,
+      "lcp_element": "div.mx-auto > figure > div.border > img.block",
+      "lcp_beobachtet": 227
+     },
+     {
+      "seite": "/bad/badsanierung",
+      "lcp_median": 3146,
+      "lcp_spanne": "2863–3393 (n=9)",
+      "leistung": 91,
+      "tbt": 120,
+      "lcp_element": "div.mx-auto > figure > div.border > img.block",
+      "lcp_beobachtet": 199
+     },
+     {
+      "seite": "/fliesen",
+      "lcp_median": 3293,
+      "lcp_spanne": "2861–3655 (n=9)",
+      "leistung": 91,
+      "tbt": 89,
+      "lcp_element": "div.relative > section.relative > div.mx-auto > p.mt-8",
+      "lcp_beobachtet": 223
+     },
+     {
+      "seite": "/standorte/wetzlar",
+      "lcp_median": 4485,
+      "lcp_spanne": "4458–4614 (n=15)",
+      "leistung": 81,
+      "tbt": 171,
+      "lcp_element": "div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block",
+      "lcp_beobachtet": 843
+     }
+    ],
+    "abstand_zu_v0": "Bezug. Die erste Reihe allein ergab 3134/2865/3291/4475, die zweite 3463/3388/3293/4597: derselbe Build liegt je nach Reihe bis zu 520 ms auseinander. Die Werte der Seiten mit Bild oder Text als LCP fallen in drei Klassen, je Seite um ~2865, ~3150 und ~3460 ms (/bad). Die Zerlegung des simulierten LCP (Lantern-Graph, 7 Läufe auf /bad) zeigt den Grund. Die Klasse hängt nur davon ab, ob React DOM (075_…, 71 KB) und die Next-Laufzeit (3nex…, 45 KB) zu dem Teil des Graphen gehören, der vor dem LCP fertig sein muss. Das ist dann der Fall, wenn ihre Auswertung vor dem beobachteten Malen des LCP beginnt (Wettlauf bei ~200–300 ms). Sonst ist die Simulation durch die Bandbreite begrenzt: Dokument ~910 ms, danach alle Anfragen, die vor dem beobachteten LCP fertig sind (Schrift 58 KB, CSS 21 KB, Logos, Sprite, Plex Mono 15 KB, die kleinen Skriptstücke ~87 KB). Auf wetzlar ist der Banner-Text das LCP-Element (beobachtet ~840 ms, 400-ms-Zeitgeber nach dem Einhängen, G8). Dort zählen auch React DOM, die Laufzeit und rund 150 KB RSC-Vorabrufe der sichtbaren Links.",
+    "aendert_verhalten": false,
+    "nebenwirkungen": "keine (Basis). Benchmark immer innerhalb des Bands. Bildprobe jedes Mal 200 (0,03–0,14 s).",
+    "rohberichte": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e4-leist-2/lh/e4l2-v0{,-w2,-w3,-w4,-w5}/ (lighthouse.json + raw/*.report.json); Lantern-Zerlegung: …/e4-leist-2/lantern-v0-bad.txt, lantern-v0-bad-6x.txt, lantern-v0-fliesen.txt, lantern-v0-standorte_wetzlar.txt; Klassen: …/e4-leist-2/klassen.txt; Zusammenfassung: …/e4-leist-2/zusammenfassung.json"
+   },
+   {
+    "kennung": "V1",
+    "aenderung": "next.config.ts: experimental.inlineCss: true (CSS als <style> im Dokument statt <link>).",
+    "dateien": [
+     "next.config.ts"
+    ],
+    "build_ok": true,
+    "messwerte": [
+     {
+      "seite": "/bad",
+      "lcp_median": 3380,
+      "lcp_spanne": "3228–3468 (n=3)",
+      "leistung": 90,
+      "tbt": 148,
+      "lcp_element": "div.mx-auto > figure > div.border > img.block",
+      "lcp_beobachtet": 215
+     },
+     {
+      "seite": "/bad/badsanierung",
+      "lcp_median": 3377,
+      "lcp_spanne": "3316–3551 (n=3)",
+      "leistung": 89,
+      "tbt": 161,
+      "lcp_element": "div.mx-auto > figure > div.border > img.block",
+      "lcp_beobachtet": 243
+     },
+     {
+      "seite": "/fliesen",
+      "lcp_median": 3446,
+      "lcp_spanne": "3012–3450 (n=3)",
+      "leistung": 89,
+      "tbt": 193,
+      "lcp_element": "div.relative > section.relative > div.mx-auto > p.mt-8",
+      "lcp_beobachtet": 235
+     },
+     {
+      "seite": "/standorte/wetzlar",
+      "lcp_median": 4673,
+      "lcp_spanne": "4605–4681 (n=3)",
+      "leistung": 80,
+      "tbt": 195,
+      "lcp_element": "div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block",
+      "lcp_beobachtet": 821
+     }
+    ],
+    "abstand_zu_v0": "Schlechter oder gleich. Gegen die erste V0-Reihe derselben Zeit: +246 / +512 / +155 / +198 ms. Gegen V0 gesamt: −80 / +231 / +153 / +188 ms. Grund: Das Dokument wächst komprimiert von 51,5 auf 90,9 KB (/bad; wetzlar 44,4 → 84,1 KB), und alle Folgeanfragen hängen am Ende des Dokuments. Die eingesparte CSS-Anfrage (20 KB) wiegt das nicht auf. TBT steigt um 30–100 ms.",
+    "aendert_verhalten": false,
+    "nebenwirkungen": "Das CSS (114 KB roh) steht auf jeder Seite neu im HTML und lässt sich nicht mehr cachen (Folgeseiten und wiederkehrende Besucher laden es jedes Mal). Darstellung unverändert.",
+    "rohberichte": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e4-leist-2/lh/e4l2-v1/"
+   },
+   {
+    "kennung": "V2",
+    "aenderung": "Schrift: Eine Teilmenge war mit den vorhandenen Werkzeugen nicht möglich (fontTools/brotli fehlen als Python-Module, es gibt keinen Scratchpad-venv; opentype.js 2.0 in werkzeuge/node_modules kann WOFF2 nicht entpacken und keine gvar-Achsen schreiben). Deshalb die Ersatzvariante: Archivo ohne Vorladen (localFont preload: false in _dokument.tsx). Größe unverändert 57,7 KB (woff2 im Repo; 57,9 KB übertragen).",
+    "dateien": [
+     "src/app/(bestand)/_dokument.tsx"
+    ],
+    "build_ok": true,
+    "messwerte": [
+     {
+      "seite": "/bad",
+      "lcp_median": 3314,
+      "lcp_spanne": "3309–3386 (n=3)",
+      "leistung": 91,
+      "tbt": 109,
+      "lcp_element": "div.mx-auto > figure > div.border > img.block",
+      "lcp_beobachtet": 225
+     },
+     {
+      "seite": "/bad/badsanierung",
+      "lcp_median": 3238,
+      "lcp_spanne": "2939–3240 (n=3)",
+      "leistung": 92,
+      "tbt": 116,
+      "lcp_element": "div.mx-auto > figure > div.border > img.block",
+      "lcp_beobachtet": 212
+     },
+     {
+      "seite": "/fliesen",
+      "lcp_median": 3434,
+      "lcp_spanne": "3431–3446 (n=3)",
+      "leistung": 91,
+      "tbt": 71,
+      "lcp_element": "div.relative > section.relative > div.mx-auto > p.mt-8",
+      "lcp_beobachtet": 247
+     },
+     {
+      "seite": "/standorte/wetzlar",
+      "lcp_median": 4516,
+      "lcp_spanne": "4515–4602 (n=3)",
+      "leistung": 84,
+      "tbt": 71,
+      "lcp_element": "div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block",
+      "lcp_beobachtet": 871
+     }
+    ],
+    "abstand_zu_v0": "Kein belastbarer Gewinn. Gegen die erste V0-Reihe: +180 / +373 / +143 / +41 ms. Gegen V0 gesamt: −146 / +92 / +141 / +31 ms. Die Schrift wird nun erst nach dem CSS angefragt (Priorität VeryHigh) und ist weiter vor dem LCP fertig, bleibt also im Graphen und startet in der Simulation nur später.",
+    "aendert_verhalten": false,
+    "nebenwirkungen": "Sichtbar: Archivo kommt später an, die Ersatzschrift steht länger und der Wechsel (swap) geschieht später. Keine Größenänderung.",
+    "rohberichte": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e4-leist-2/lh/e4l2-v2/"
+   },
+   {
+    "kennung": "V3",
+    "aenderung": "Bildfeld.tsx: Für lcp gibt es keinen unscharfen Platzhalter mehr: placeholder={bild.blur && !lcp ? 'blur' : 'empty'}, blurDataURL={lcp ? undefined : bild.blur}.",
+    "dateien": [
+     "src/components/kern/Bildfeld.tsx"
+    ],
+    "build_ok": true,
+    "messwerte": [
+     {
+      "seite": "/bad",
+      "lcp_median": 3168,
+      "lcp_spanne": "2788–3466 (n=6)",
+      "leistung": 92,
+      "tbt": 124,
+      "lcp_element": "div.mx-auto > figure > div.border > img.block",
+      "lcp_beobachtet": 258
+     },
+     {
+      "seite": "/bad/badsanierung",
+      "lcp_median": 3208,
+      "lcp_spanne": "2856–3393 (n=6)",
+      "leistung": 92,
+      "tbt": 130,
+      "lcp_element": "div.mx-auto > figure > div.border > img.block",
+      "lcp_beobachtet": 213
+     },
+     {
+      "seite": "/fliesen",
+      "lcp_median": 3016,
+      "lcp_spanne": "2859–3077 (n=3)",
+      "leistung": 94,
+      "tbt": 79,
+      "lcp_element": "div.relative > section.relative > div.mx-auto > p.mt-8",
+      "lcp_beobachtet": 216
+     },
+     {
+      "seite": "/standorte/wetzlar",
+      "lcp_median": 4577,
+      "lcp_spanne": "4451–4758 (n=6)",
+      "leistung": 82,
+      "tbt": 171,
+      "lcp_element": "div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block",
+      "lcp_beobachtet": 867
+     }
+    ],
+    "abstand_zu_v0": "Keine messbare Wirkung. Gegen V0 gesamt: −292 / +62 / −277 / +92 ms, aber innerhalb derselben Klasse gleich (/bad hoch 3465 gegen 3453, badsanierung hoch 3392 gegen 3391). Die Mediane spiegeln nur die Verteilung der Klassen. Das Dokument wird um 0,7 KB komprimiert kleiner (/bad 50,9 KB).",
+    "aendert_verhalten": false,
+    "nebenwirkungen": "Sichtbar: Das LCP-Foto zeigt bis zum Laden die leere Fläche bg-fliese statt der Unschärfe. Benchmark: Die erste Reihe hatte die Referenz 1937 (Ausreißer), 4 Läufe lagen außerhalb des Bands; sie ist als e4l2-v3-erstlauf-benchmark aufbewahrt und wurde wiederholt. In der Wiederholung lagen auf badsanierung 3 Läufe außerhalb des Bands (Referenz 1999). Beide Reihen sind im Pool enthalten und markiert.",
+    "rohberichte": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e4-leist-2/lh/e4l2-v3{,-erstlauf-benchmark,-w2}/"
+   },
+   {
+    "kennung": "V4",
+    "aenderung": "Inseln später laden. (a) Seitenwechsel B-01: In _dokument.tsx steht <VerlegenSpaeter /> statt <Verlegen />. Neue Hülle src/components/verlegen/VerlegenSpaeter.tsx: import('./Verlegen') bei der ersten Bewegung mit Zeiger, Finger, Taste, Mausrad, Scrollen oder Fokus, sonst im Leerlauf nach load (Zeitlimit 2 s). (b) Karussell: Der bisherige Inhalt zieht unverändert nach src/components/kern/KarussellInnen.tsx um. Die neue Hülle src/components/kern/Karussell.tsx lädt ihn per React.lazy in Suspense: Das Server-HTML bleibt gleich, der Code kommt bei der Hydrierung und nicht mehr mit den Skripten im Kopf. WhatsApp nicht verschoben: Der Knopf ist ein <button> im sichtbaren Kopf und wäre länger tot. Formulare nicht verschoben (G8). Zuordnung im Briefing korrigiert: 3zdo8nxdsm6rl ist auf /bad das Funnel-Stück (BadProjektCheck, BadanfrageFunnel), nicht WhatsApp.",
+    "dateien": [
+     "src/app/(bestand)/_dokument.tsx",
+     "src/components/verlegen/VerlegenSpaeter.tsx",
+     "src/components/kern/Karussell.tsx",
+     "src/components/kern/KarussellInnen.tsx"
+    ],
+    "build_ok": true,
+    "messwerte": [
+     {
+      "seite": "/bad",
+      "lcp_median": 3046,
+      "lcp_spanne": "2860–3449 (n=6)",
+      "leistung": 94,
+      "tbt": 99,
+      "lcp_element": "div.mx-auto > figure > div.border > img.block",
+      "lcp_beobachtet": 205
+     },
+     {
+      "seite": "/bad/badsanierung",
+      "lcp_median": 3185,
+      "lcp_spanne": "2859–3318 (n=6)",
+      "leistung": 92,
+      "tbt": 117,
+      "lcp_element": "div.mx-auto > figure > div.border > img.block",
+      "lcp_beobachtet": 214
+     },
+     {
+      "seite": "/fliesen",
+      "lcp_median": 3294,
+      "lcp_spanne": "2714–3744 (n=6)",
+      "leistung": 91,
+      "tbt": 134,
+      "lcp_element": "div.relative > section.relative > div.mx-auto > p.mt-8",
+      "lcp_beobachtet": 242
+     },
+     {
+      "seite": "/standorte/wetzlar",
+      "lcp_median": 4677,
+      "lcp_spanne": "4575–4759 (n=6)",
+      "leistung": 82,
+      "tbt": 151,
+      "lcp_element": "div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block",
+      "lcp_beobachtet": 851
+     }
+    ],
+    "abstand_zu_v0": "Mediane: −414 / +39 / +1 / +192 ms. In derselben Klasse: /bad hoch −35, badsanierung hoch −76, fliesen uneinheitlich (die Spanne ist 1000 ms breit). Die Skripte im Kopf werden um 9,1 KB komprimiert kleiner (/bad 187,4 → 178,3 KB; Stück mit Header und Verlegen 17,5 → 11,3 KB), das Dokument um 0,76 KB. Wetzlar ist schlechter (+192 ms, n=6). Die Lantern-Zerlegung zeigt ein zusätzliches frühes Stück (1d464…, 5 KB, die Karussell-Hülle), das bei der Hydrierung vor dem Banner-LCP angefragt wird. Auf wetzlar zählt ohnehin alles bis ~850 ms; Aufteilen kostet dort nur Anfragen.",
+    "aendert_verhalten": false,
+    "nebenwirkungen": "G8 nicht berührt; Banner gleich (Erscheinen 1,24–1,39 s nach goto in V6 gegen 1,33–1,37 s in V0, Playwright). Für Nutzer: (a) Ein Linkklick vor dem Laden des Verlegen-Stücks (vor der ersten Bewegung oder vor Leerlauf nach load) wechselt die Seite ohne die Fliesen-Animation. Danach läuft B-01 normal (geprüft mobil und Desktop: legen → bedeckt → abnehmen → ruhe, keine Konsolen- oder Hydrierungsfehler). Der popstate-Lauscher auf Modulebene wird erst mit dem Stück registriert, also nach dem Lauscher des App Routers; die im Code genannte Absicherung für Firefox vor 116 greift dann nicht mehr. (b) Karussell (Fuß-Band, Stimmen, Fotos): Bis zur Hydrierung des Stücks steht das Server-HTML ohne Bedienung. Danach Anhalten/Weiterlaufen geprüft. Größe: 1 zusätzliche Datei je Insel.",
+    "rohberichte": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e4-leist-2/lh/e4l2-v4{,-w2}/"
+   },
+   {
+    "kennung": "V4a (Zusatz, Teil von V4)",
+    "aenderung": "Nur Teil (a) von V4: VerlegenSpaeter.tsx plus der Austausch in _dokument.tsx, ohne Karussell-Hülle. Zusätzlich gemessen, weil die Karussell-Hülle auf wetzlar eine zusätzliche frühe Anfrage erzeugt.",
+    "dateien": [
+     "src/app/(bestand)/_dokument.tsx",
+     "src/components/verlegen/VerlegenSpaeter.tsx"
+    ],
+    "build_ok": true,
+    "messwerte": [
+     {
+      "seite": "/bad",
+      "lcp_median": 3389,
+      "lcp_spanne": "2942–3431 (n=6)",
+      "leistung": 91,
+      "tbt": 96,
+      "lcp_element": "div.mx-auto > figure > div.border > img.block",
+      "lcp_beobachtet": 220
+     },
+     {
+      "seite": "/bad/badsanierung",
+      "lcp_median": 3312,
+      "lcp_spanne": "2860–3314 (n=6)",
+      "leistung": 92,
+      "tbt": 106,
+      "lcp_element": "div.mx-auto > figure > div.border > img.block",
+      "lcp_beobachtet": 197
+     },
+     {
+      "seite": "/fliesen",
+      "lcp_median": 2946,
+      "lcp_spanne": "2936–3467 (n=6)",
+      "leistung": 94,
+      "tbt": 75,
+      "lcp_element": "div.relative > section.relative > div.mx-auto > p.mt-8",
+      "lcp_beobachtet": 231
+     },
+     {
+      "seite": "/standorte/wetzlar",
+      "lcp_median": 4604,
+      "lcp_spanne": "4523–4671 (n=6)",
+      "leistung": 83,
+      "tbt": 121,
+      "lcp_element": "div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block",
+      "lcp_beobachtet": 785
+     }
+    ],
+    "abstand_zu_v0": "Mediane: −71 / +166 / −347 / +119 ms. In derselben Klasse: /bad hoch 3397 gegen 3453 (−56), badsanierung hoch 3312 gegen 3391 (−79), fliesen hoch 3462 gegen 3484 (−22). Skripte im Kopf −7,8 KB komprimiert. TBT ist auf allen Seiten niedriger (96/106/75/121 gegen 117/120/89/171).",
+    "aendert_verhalten": false,
+    "nebenwirkungen": "Wie V4 (a): Ein Klick vor dem Laden des Stücks wechselt ohne Fliesen-Animation; die popstate-Reihenfolge gilt für Firefox vor 116 nicht mehr. Karussell unverändert.",
+    "rohberichte": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e4-leist-2/lh/e4l2-v4a{,-w2}/"
+   },
+   {
+    "kennung": "V4c (ändert Verhalten, nur gemessen)",
+    "aenderung": "ClientWidgets.tsx: CookieConsent per import() im Effekt nach der Hydrierung statt über next/dynamic (das das Stück mit den Skripten im Kopf vorlädt).",
+    "dateien": [
+     "src/components/layout/ClientWidgets.tsx"
+    ],
+    "build_ok": true,
+    "messwerte": [
+     {
+      "seite": "/bad",
+      "lcp_median": 3464,
+      "lcp_spanne": "3134–3505 (n=3)",
+      "leistung": 90,
+      "tbt": 134,
+      "lcp_element": "div.mx-auto > figure > div.border > img.block",
+      "lcp_beobachtet": 229
+     },
+     {
+      "seite": "/bad/badsanierung",
+      "lcp_median": 2866,
+      "lcp_spanne": "2865–3391 (n=3)",
+      "leistung": 92,
+      "tbt": 160,
+      "lcp_element": "div.mx-auto > figure > div.border > img.block",
+      "lcp_beobachtet": 213
+     },
+     {
+      "seite": "/fliesen",
+      "lcp_median": 3438,
+      "lcp_spanne": "2791–3440 (n=3)",
+      "leistung": 91,
+      "tbt": 82,
+      "lcp_element": "div.relative > section.relative > div.mx-auto > p.mt-8",
+      "lcp_beobachtet": 232
+     },
+     {
+      "seite": "/standorte/wetzlar",
+      "lcp_median": 4449,
+      "lcp_spanne": "4447–4597 (n=3)",
+      "leistung": 82,
+      "tbt": 147,
+      "lcp_element": "div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block",
+      "lcp_beobachtet": 818
+     }
+    ],
+    "abstand_zu_v0": "Mediane: +4 / −280 / +145 / −36 ms (n=3), innerhalb der Streuung, kein belastbarer Gewinn.",
+    "aendert_verhalten": true,
+    "nebenwirkungen": "G8: Der Banner erscheint um die Ladezeit seines Stücks später (lokal wenige ms, mobil eine weitere Anfrage). Deshalb nur gemessen und nicht in V6.",
+    "rohberichte": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e4-leist-2/lh/e4l2-v4c/"
+   },
+   {
+    "kennung": "V5",
+    "aenderung": "Größte Posten im Dokument per Abtragsschätzung (gzip): Klassenketten 12,3 KB von 51,6 KB (/bad, HTML plus RSC), RSC-Daten zusammen 23,9 KB, Inline-SVG 4,3 KB, JSON-LD 2,0 KB, Hauptnavigation 1,9 KB, Menüblatt 1,7 KB (Popover, muss im HTML stehen). Die teuerste einzelne Klassenkette ist der Link im Seitenindex des Fußes: 158-mal je Seite (HTML plus RSC), 26 KB roh. Änderung: neue Utility fuss-index-link (@apply derselben Kette) in globals.css, Footer.jsx nutzt sie.",
+    "dateien": [
+     "src/app/globals.css",
+     "src/components/common/Footer.jsx"
+    ],
+    "build_ok": true,
+    "messwerte": [
+     {
+      "seite": "/bad",
+      "lcp_median": 3466,
+      "lcp_spanne": "3465–3466 (n=3)",
+      "leistung": 91,
+      "tbt": 96,
+      "lcp_element": "div.mx-auto > figure > div.border > img.block",
+      "lcp_beobachtet": 194
+     },
+     {
+      "seite": "/bad/badsanierung",
+      "lcp_median": 3300,
+      "lcp_spanne": "2871–3388 (n=3)",
+      "leistung": 91,
+      "tbt": 129,
+      "lcp_element": "div.mx-auto > figure > div.border > img.block",
+      "lcp_beobachtet": 208
+     },
+     {
+      "seite": "/fliesen",
+      "lcp_median": 3023,
+      "lcp_spanne": "2863–3642 (n=3)",
+      "leistung": 94,
+      "tbt": 65,
+      "lcp_element": "div.relative > section.relative > div.mx-auto > p.mt-8",
+      "lcp_beobachtet": 224
+     },
+     {
+      "seite": "/standorte/wetzlar",
+      "lcp_median": 4634,
+      "lcp_spanne": "4601–4676 (n=6)",
+      "leistung": 81,
+      "tbt": 183,
+      "lcp_element": "div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block",
+      "lcp_beobachtet": 834
+     }
+    ],
+    "abstand_zu_v0": "Keine messbare Wirkung: +6 / +154 / −270 / +149 ms (Rauschen). Das Dokument wird nur 0,4–0,9 KB komprimiert kleiner (/bad 51,6 → 50,7 KB), das CSS +80 B. Gzip komprimiert wiederholte Ketten ohnehin gut. Selbst die 40 teuersten Ketten zusammen brächten nur 2,8–3,9 KB.",
+    "aendert_verhalten": false,
+    "nebenwirkungen": "Darstellung gleich: Die erzeugte Regel enthält dieselben Werte, hover wie vorher in @media (hover:hover). Prüfungen, die die lange Klassenkette suchen, würden sie nicht mehr finden.",
+    "rohberichte": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e4-leist-2/lh/e4l2-v5{,-w2}/; Abtragsschätzung: …/e4l2-werkzeug/ablation.cjs"
+   },
+   {
+    "kennung": "V6",
+    "aenderung": "Kombination von V3, V4 und V5 (V4c ausgeschlossen, weil es das Verhalten ändert; V1 und V2 ausgeschlossen, weil sie schlechter sind). Gebaut, als die Wirkung von V3 und V5 noch offen war; nach Auswertung bringen beide nichts.",
+    "dateien": [
+     "src/app/(bestand)/_dokument.tsx",
+     "src/components/verlegen/VerlegenSpaeter.tsx",
+     "src/components/kern/Karussell.tsx",
+     "src/components/kern/KarussellInnen.tsx",
+     "src/components/kern/Bildfeld.tsx",
+     "src/app/globals.css",
+     "src/components/common/Footer.jsx"
+    ],
+    "build_ok": true,
+    "messwerte": [
+     {
+      "seite": "/bad",
+      "lcp_median": 3384,
+      "lcp_spanne": "2935–3389 (n=9)",
+      "leistung": 92,
+      "tbt": 107,
+      "lcp_element": "div.mx-auto > figure > div.border > img.block",
+      "lcp_beobachtet": 207
+     },
+     {
+      "seite": "/bad/badsanierung",
+      "lcp_median": 3298,
+      "lcp_spanne": "2861–3321 (n=9)",
+      "leistung": 90,
+      "tbt": 157,
+      "lcp_element": "div.mx-auto > figure > div.border > img.block",
+      "lcp_beobachtet": 226
+     },
+     {
+      "seite": "/fliesen",
+      "lcp_median": 3308,
+      "lcp_spanne": "2793–3458 (n=9)",
+      "leistung": 92,
+      "tbt": 132,
+      "lcp_element": "div.relative > section.relative > div.mx-auto > p.mt-8",
+      "lcp_beobachtet": 256
+     },
+     {
+      "seite": "/standorte/wetzlar",
+      "lcp_median": 4609,
+      "lcp_spanne": "4581–4737 (n=9)",
+      "leistung": 82,
+      "tbt": 132,
+      "lcp_element": "div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block",
+      "lcp_beobachtet": 821
+     }
+    ],
+    "abstand_zu_v0": "Mediane (je n=9): −76 / +152 / +15 / +124 ms. In derselben Klasse: /bad hoch 3387 gegen 3453 (−66), badsanierung hoch 3316 gegen 3391 (−75), fliesen hoch 3390 gegen 3484 (−94); die tiefe Klasse ist gleich (~2860–2940). Auf wetzlar schlechter (+124, n=9 gegen 15). Keine Seite erreicht 2.500 ms. Das Budget wird nur in der tiefen Klasse annähernd erreicht, und die hängt vom Wettlauf ab, nicht von den Änderungen.",
+    "aendert_verhalten": false,
+    "nebenwirkungen": "Summe der Nebenwirkungen von V3 (sichtbar: kein Unschärfe-Platzhalter am LCP-Foto), V4 (Klick vor dem Laden ohne B-01; popstate-Reihenfolge Firefox < 116; Karussell erst nach Stück-Ladung bedienbar) und V5. Funktion mit Playwright geprüft (mobil und Desktop): B-01 läuft, Karussell-Pause schaltet, Banner unverändert, keine Konsolenfehler. ESLint auf den geänderten Dateien sauber. Größe: Dokument /bad −2,2 KB, wetzlar −1,5 KB komprimiert; Skripte im Kopf −9,1 KB.",
+    "rohberichte": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e4-leist-2/lh/e4l2-v6{,-w2,-w3}/; Funktion: …/e4-leist-2/funktion-v0.json, funktion-v6.json; Diff: …/e4-leist-2/diffs/v6.diff"
+   }
+  ],
+  "empfehlung": "Keine der gemessenen Änderungen bringt eine Seite unter 2.500 ms oder senkt die Mediane belastbar. Der simulierte LCP springt bei unverändertem Build um 300–600 ms. Der Grund ist, ob React DOM (71 KB) und die Next-Laufzeit (45 KB) vor dem beobachteten Malen des LCP ausgewertet werden (Wettlauf bei ~200–300 ms; Lantern-Zerlegung in lantern-v0-bad-6x.txt). Daneben sind alle Byte-Änderungen klein.\n\n1. V1 (inlineCss) und V2 (Schrift ohne Vorladen) nicht umsetzen. V1 vergrößert das Dokument um ~39 KB komprimiert und ist auf allen vier Seiten schlechter oder gleich. V2 bringt keinen Gewinn und zeigt die Ersatzschrift länger.\n2. V3 und V5 bringen nichts Messbares. V3 ändert zudem sichtbar den Platzhalter des LCP-Fotos. Beide nicht als LCP-Maßnahme übernehmen.\n3. Einziger Kandidat mit Wirkung ist V4a: B-01 Verlegen nach load oder bei der ersten Bewegung laden. Das spart 7,8 KB komprimiert an Skripten im Kopf, senkt den Wert innerhalb derselben Klasse um 20–80 ms auf den Seiten mit Bild oder Text als LCP und senkt die TBT überall. Auf wetzlar liegt er +119 ms höher, teils unerklärt, weil dort alle Builds über V0 lagen. Er steht als empfehlung.diff bereit, ausdrücklich nur unter Vorbehalt: Übernehmen nur, wenn der zweite Prüfer den Effekt nachmisst und die Nebenwirkung annimmt (ein Klick vor dem Laden wechselt ohne Fliesen-Animation; die popstate-Absicherung für Firefox < 116 entfällt).\n4. Die Karussell-Hülle aus V4 und V6 nicht übernehmen: eine zusätzliche frühe Anfrage, auf wetzlar schlechter.\n5. V4c (Banner-Stück nach der Hydrierung) ändert das Verhalten (G8) und bringt nichts Messbares.\n\nFür einen echten Sprung braucht es eine andere Stelle (siehe offene Fragen): den Hauptthread vor dem ersten Malen entlasten, damit das LCP-Bild sicher vor der Auswertung von React DOM und Laufzeit erscheint. Auf wetzlar ist es das Banner-LCP mit den RSC-Vorabrufen davor. Kopien, Diffs und Werkzeuge liegen unter /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e4-leist-2/ (diffs/, lh/, klassen.txt, zusammenfassung.json) und …/scratchpad/e4l2-werkzeug/ (mess.sh, lantern.mjs, spur2.mjs, funktion.mjs, pool.mjs, final.mjs). Im Repository wurde nichts geändert, Server 4311 und 4320 nicht angefasst.",
+  "empfehlung_diff": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e4-leist-2/empfehlung.diff",
+  "offene_fragen": [
+   "Wettlauf: Soll ein Versuch den Hauptthread vor dem ersten Malen entlasten? Ziel wäre, dass das LCP-Bild sicher vor der Auswertung von React DOM und Next-Laufzeit malt; das würde die Klasse um ~2.860 ms stabil machen. Beobachtet: Der erste Parse-Task enthält beim Erstbesuch über INTRO_ZIEL (getBoundingClientRect) ~37 ms erzwungenes Layout, dazu kommen ~150–160 KB Inline-RSC. Das Intro gehört zum Design, deshalb hier nicht verändert.",
+   "/standorte/wetzlar: Das LCP-Element ist der Banner-Text (400 ms nach dem Einhängen, G8), beobachtet bei ~840 ms. Davor stehen laut Lantern-Zerlegung rund 150 KB RSC-Vorabrufe der sichtbaren Links (/, /standorte, /standorte/*), React DOM und die Laufzeit im Graphen. Soll ein Versuch messen, ob Links erst nach dem Banner oder bei einer Absicht vorabgerufen werden? Das ändert das Navigationsverhalten, betrifft aber nicht G8; Next 16 bietet dafür nur prefetch je Link.",
+   "Schrift-Teilmenge: Dürfen fontTools und brotli in einem Scratchpad-venv angelegt werden (so wie glyphen.mjs es beschreibt)? Ohne sie ist eine Teilmenge mit erhaltenen Achsen nicht möglich; opentype.js 2.0 kann WOFF2 nicht entpacken. Erwartbar wären rund −30 KB, also ~−160 ms in der Simulation.",
+   "Unerklärter Versatz auf wetzlar: V0 liegt dort im Mittel bei 4.518 ms (n=15). Alle anderen Builds liegen 30–190 ms höher, auch V2, V3 und V5, die Skripte und Banner nicht berühren. Der zweite Prüfer sollte wetzlar abwechselnd gegen einen frisch gebauten V0 messen.",
+   "Briefing-Zuordnung der Stücke: 3zdo8nxdsm6rl ist auf /bad das Funnel-Stück (BadProjektCheck/BadanfrageFunnel, 12 KB komprimiert), nicht WhatsApp. 0itv1… enthält neben dem Karussell auch den next/image-Client und company.js. 1-5grn… enthält CookieConsent samt cities.ts und lib/config.ts. Ein späteres Hydrieren der Funnel wäre auf /bad der größte seitenbezogene Posten, berührt aber Formulare (G8) und wurde deshalb nicht gemessen.",
+   "Mit nur 3 Läufen trennt das Messwerkzeug Effekte unter ~300 ms nicht sicher, weil die Werte in Klassen springen. Für die Nachmessung empfehle ich mindestens 9 Läufe je Seite und den Vergleich innerhalb der Klassen (siehe klassen.txt)."
+  ]
+ },
+ "nachmessung": {
+  "basis": [
+   {
+    "seite": "/bad",
+    "lcp_median": 3460,
+    "leistung": 91
+   },
+   {
+    "seite": "/bad/badsanierung",
+    "lcp_median": 3387,
+    "leistung": 91
+   },
+   {
+    "seite": "/fliesen",
+    "lcp_median": 3023,
+    "leistung": 94
+   },
+   {
+    "seite": "/standorte/wetzlar",
+    "lcp_median": 4611,
+    "leistung": 82
+   },
+   {
+    "seite": "/",
+    "lcp_median": 3384,
+    "leistung": 91
+   },
+   {
+    "seite": "/blog",
+    "lcp_median": 3743,
+    "leistung": 88
+   }
+  ],
+  "empfehlung": [
+   {
+    "seite": "/bad",
+    "lcp_median": 3388,
+    "leistung": 91
+   },
+   {
+    "seite": "/bad/badsanierung",
+    "lcp_median": 3309,
+    "leistung": 90
+   },
+   {
+    "seite": "/fliesen",
+    "lcp_median": 2936,
+    "leistung": 94
+   },
+   {
+    "seite": "/standorte/wetzlar",
+    "lcp_median": 4662,
+    "leistung": 82
+   },
+   {
+    "seite": "/",
+    "lcp_median": 3313,
+    "leistung": 92
+   },
+   {
+    "seite": "/blog",
+    "lcp_median": 3736,
+    "leistung": 88
+   }
+  ],
+  "bestaetigt": false,
+  "abweichungen": "Not confirmed. On two of the three pages with an image as LCP, the median drops by less than the spread of the base. All pages are still above 2,500 ms.\n\nSetup: two fresh copies of reinraum-5ef34982, at e4-leist-2/pruef/a (base) and e4-leist-2/pruef/b (base plus empfehlung.diff, applied with patch -p1 without errors). Both builds started from an empty .next and finished with exit 0. Lighthouse mobile, 3 counted runs per page, one after the other on 4313. Image probe before each series returned 200 (0.13 s and 0.12 s). No benchmark deviation; benchmark reference 2498.5 for a and 2507.5 for b.\n\nLCP per run, base -> recommendation:\n- /bad: [3459, 3460, 3463] -> [2938, 3388, 3672]. Median -72 ms. The base spread is only 4 ms, so this formally exceeds it, but the recommendation's own spread is 734 ms.\n- /bad/badsanierung: [3135, 3387, 3390] -> [2861, 3309, 3314]. Median -78 ms, below the base spread of 255 ms.\n- /: [2863, 3384, 3388] -> [2863, 3313, 3316]. Median -71 ms, below the base spread of 525 ms.\n- /fliesen (text LCP): [2858, 3023, 3429] -> [2793, 2936, 3727]. Median -87 ms, below the base spread of 571 ms.\n- /standorte/wetzlar (banner LCP): [4604, 4611, 4759] -> [4636, 4662, 4678]. Median +51 ms.\n- /blog (text LCP): [3443, 3743, 3832] -> [3391, 3736, 3907]. Median -7 ms.\n\nOn the image-LCP pages the drop of 70–80 ms within the same LCP class has the same direction and size the experimenter reported (20–80 ms), but it is smaller than the run-to-run noise. Wetzlar is again higher, as the experimenter also saw.\n\nTwo claims did not hold up:\n1. \"Lowers TBT everywhere\": TBT medians base -> recommendation were /bad 95 -> 111, /bad/badsanierung 136 -> 168, / 95 -> 109, /fliesen 91 -> 83, wetzlar 125 -> 113, /blog 146 -> 136. TBT went up on the three image pages.\n2. Fewer script bytes: total js_kb in the report is about 3 KB higher (for example /bad 244 -> 247 KB), because the Verlegen chunk loaded after the load event still falls inside the Lighthouse trace. The scripts in the document head do get smaller.\n\nRaw reports: e4-leist-2/lh/e4l2-pruef-a/ and e4-leist-2/lh/e4l2-pruef-b/ (lighthouse.json plus raw/). Logs: e4-leist-2/pruef/lh-e4l2-pruef-a.log and lh-e4l2-pruef-b.log. Measurement script: e4-leist-2/pruef/mess.sh. All paths are under /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/.\n\nThe repository is unchanged (git status empty). Servers 4311 and 4320 were not touched, and 4313 is free again. The copies pruef/a and pruef/b are still there, about 1.4 GB each.",
+  "darstellung_geprueft": "Rendering stays the same, and the consent banner on a first visit appears as before.\n\nSetup: Playwright from _werkstatt/werkzeuge/node_modules/@playwright/test/index.mjs with installSperre from lib.mjs, chromium.launch with executablePath /opt/pw-browsers/chromium. Six pages at 390 px (mobile, touch) and 1440 px. Each case used a fresh context without consent, so the banner was visible.\n\nScreenshots: one of the first screen and one full page (after scrolling through, reduced motion), compared pixel by pixel with pixelmatch.\n- Base: e4-leist-2/pruef/vor/ and, as a second base run, e4-leist-2/pruef/vor2/\n- Recommendation: e4-leist-2/nach/\n- Script: e4-leist-2/pruef/dar.mjs (comparison script vergleich.mjs in the same folder)\n\nResult:\n- All 12 first-screen images are pixel-identical between base and recommendation.\n- 11 of 12 full-page images are identical in each comparison.\n- The remaining differences (bad__badsanierung-1440-voll and bad-1440-voll, a shifted section in the middle of the page) also appear between the two base runs. Each one matches one of the base runs, so it is noise in the full-page screenshot, not an effect of the change.\n\nConsent banner (normal motion, first visit):\n- It appears on every page in both builds, at 1050–1160 ms (base) and 1052–1132 ms (recommendation) after navigation.\n- Text, button and link labels, and position and size are identical.\n- No consent cookies are set before a choice is made, and there were no page errors.\n\nThe Verlegen layer (.verlegen) is present in the recommendation after load and after 2.5 s. Clicking a link before the load event (no tile animation) was not tested."
+ }
+}

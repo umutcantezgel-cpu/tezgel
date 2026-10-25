@@ -1,0 +1,71 @@
+diff --git a/src/app/(bestand)/_dokument.tsx b/src/app/(bestand)/_dokument.tsx
+index 48432b3..b466b04 100644
+--- a/src/app/(bestand)/_dokument.tsx
++++ b/src/app/(bestand)/_dokument.tsx
+@@ -13,7 +13,7 @@ import { ErrorBoundary } from '@/components/providers/ErrorBoundary';
+ import { buildRootGraph, SITE_URL } from '@/lib/schema';
+ import JsonLd from '@/components/seo/JsonLd';
+ import BewegungsWaechter from '@/components/kern/BewegungsWaechter';
+-import Verlegen from '@/components/verlegen/Verlegen';
++import VerlegenSpaeter from '@/components/verlegen/VerlegenSpaeter';
+ import Intro from '@/components/intro/Intro';
+ import { INTRO_ZIEL, KOPFSKRIPT } from '@/lib/motion/kopfskript';
+ 
+@@ -141,7 +141,7 @@ export default function BestandDokument({
+           <ClientWidgets />
+           <BewegungsWaechter />
+           {/* Seitenwechsel B-01 „Verlegen“: feste Schicht außerhalb von main (KERN K-007, E-010) */}
+-          <Verlegen />
++          <VerlegenSpaeter />
+         </ErrorBoundary>
+       </body>
+     </html>
+diff --git a/src/components/verlegen/VerlegenSpaeter.tsx b/src/components/verlegen/VerlegenSpaeter.tsx
+new file mode 100644
+index 0000000..9e717d0
+--- /dev/null
++++ b/src/components/verlegen/VerlegenSpaeter.tsx
+@@ -0,0 +1,43 @@
++'use client';
++// E4-L2 V4: Seitenwechsel B-01 nach dem ersten Bild laden. Das Stück mit Verlegen kommt bei der ersten Zeige-, Tipp-,
++// Tasten- oder Scrollbewegung oder im Leerlauf nach dem Ereignis load (spätestens 2 s danach), nicht mit den Skripten im Kopf.
++// Bis dahin navigieren Links ohne Verlegen (normaler Seitenwechsel von Next).
++import { useEffect, useState, type ComponentType } from 'react';
++
++const ANLAESSE = ['pointerdown', 'pointermove', 'touchstart', 'keydown', 'wheel', 'scroll', 'focusin'] as const;
++
++export default function VerlegenSpaeter() {
++  const [Verlegen, setVerlegen] = useState<ComponentType | null>(null);
++  useEffect(() => {
++    let aus = false;
++    let geholt = false;
++    let leerlauf: number | undefined;
++    const weg = () => {
++      ANLAESSE.forEach((n) => window.removeEventListener(n, laden, true));
++      window.removeEventListener('load', nachLoad);
++      if (leerlauf !== undefined) {
++        if (window.cancelIdleCallback) window.cancelIdleCallback(leerlauf);
++        else window.clearTimeout(leerlauf);
++      }
++    };
++    function laden() {
++      if (geholt) return;
++      geholt = true;
++      weg();
++      import('./Verlegen').then((m) => {
++        if (!aus) setVerlegen(() => m.default);
++      });
++    }
++    function nachLoad() {
++      leerlauf = window.requestIdleCallback ? window.requestIdleCallback(laden, { timeout: 2000 }) : window.setTimeout(laden, 200);
++    }
++    ANLAESSE.forEach((n) => window.addEventListener(n, laden, { capture: true, passive: true }));
++    if (document.readyState === 'complete') nachLoad();
++    else window.addEventListener('load', nachLoad);
++    return () => {
++      aus = true;
++      weg();
++    };
++  }, []);
++  return Verlegen ? <Verlegen /> : null;
++}

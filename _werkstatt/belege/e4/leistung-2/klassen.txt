@@ -1,0 +1,40 @@
+== /bad
+v0   n  9 Median 3460 Mittel 3303 | tief 1 2864 | mittel 2 3072 | hoch 6 3453
+v1   n  3 Median 3380 Mittel 3359 | tief 0 - | mittel 1 3228 | hoch 2 3424
+v2   n  3 Median 3314 Mittel 3336 | tief 0 - | mittel 0 - | hoch 3 3336
+v3   n  6 Median 3168 Mittel 3177 | tief 1 2788 | mittel 3 3114 | hoch 2 3465
+v4   n  6 Median 3045.5 Mittel 3121 | tief 3 2912 | mittel 1 3150 | hoch 2 3418
+v4a  n  6 Median 3388.5 Mittel 3321 | tief 1 2942 | mittel 0 - | hoch 5 3397
+v4c  n  3 Median 3464 Mittel 3368 | tief 0 - | mittel 1 3134 | hoch 2 3485
+v5   n  3 Median 3466 Mittel 3466 | tief 0 - | mittel 0 - | hoch 3 3466
+v6   n  9 Median 3384 Mittel 3212 | tief 3 2939 | mittel 1 3158 | hoch 5 3387
+== /bad/badsanierung
+v0   n  9 Median 3146 Mittel 3128 | tief 3 2864 | mittel 3 3131 | hoch 3 3391
+v1   n  3 Median 3377 Mittel 3415 | tief 0 - | mittel 0 - | hoch 3 3415
+v2   n  3 Median 3238 Mittel 3139 | tief 1 2939 | mittel 2 3239 | hoch 0 -
+v3   n  6 Median 3208 Mittel 3153 | tief 2 2860 | mittel 2 3208 | hoch 2 3392
+v4   n  6 Median 3185 Mittel 3153 | tief 1 2859 | mittel 2 3057 | hoch 3 3315
+v4a  n  6 Median 3311.5 Mittel 3231 | tief 1 2860 | mittel 1 3279 | hoch 4 3312
+v4c  n  3 Median 2866 Mittel 3041 | tief 2 2866 | mittel 0 - | hoch 1 3391
+v5   n  3 Median 3300 Mittel 3186 | tief 1 2871 | mittel 0 - | hoch 2 3344
+v6   n  9 Median 3298 Mittel 3183 | tief 2 2865 | mittel 3 3218 | hoch 4 3316
+== /fliesen
+v0   n  9 Median 3293 Mittel 3260 | tief 2 2903 | mittel 3 3199 | hoch 4 3484
+v1   n  3 Median 3446 Mittel 3303 | tief 0 - | mittel 1 3012 | hoch 2 3448
+v2   n  3 Median 3434 Mittel 3437 | tief 0 - | mittel 0 - | hoch 3 3437
+v3   n  3 Median 3016 Mittel 2984 | tief 1 2859 | mittel 2 3047 | hoch 0 -
+v4   n  6 Median 3293.5 Mittel 3239 | tief 2 2828 | mittel 1 3150 | hoch 3 3543
+v4a  n  6 Median 2946 Mittel 3115 | tief 4 2941 | mittel 0 - | hoch 2 3462
+v4c  n  3 Median 3438 Mittel 3223 | tief 1 2791 | mittel 0 - | hoch 2 3439
+v5   n  3 Median 3023 Mittel 3176 | tief 1 2863 | mittel 1 3023 | hoch 1 3642
+v6   n  9 Median 3308 Mittel 3166 | tief 3 2844 | mittel 1 3015 | hoch 5 3390
+== /standorte/wetzlar
+v0   n 15 Median 4485 Mittel 4518 | tief 0 - | mittel 0 - | hoch 15 4518
+v1   n  3 Median 4673 Mittel 4653 | tief 0 - | mittel 0 - | hoch 3 4653
+v2   n  3 Median 4516 Mittel 4544 | tief 0 - | mittel 0 - | hoch 3 4544
+v3   n  6 Median 4577 Mittel 4593 | tief 0 - | mittel 0 - | hoch 6 4593
+v4   n  6 Median 4676.5 Mittel 4682 | tief 0 - | mittel 0 - | hoch 6 4682
+v4a  n  6 Median 4604 Mittel 4600 | tief 0 - | mittel 0 - | hoch 6 4600
+v4c  n  3 Median 4449 Mittel 4498 | tief 0 - | mittel 0 - | hoch 3 4498
+v5   n  6 Median 4634 Mittel 4634 | tief 0 - | mittel 0 - | hoch 6 4634
+v6   n  9 Median 4609 Mittel 4643 | tief 0 - | mittel 0 - | hoch 9 4643

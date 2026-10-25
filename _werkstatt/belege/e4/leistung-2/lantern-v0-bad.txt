@@ -1,0 +1,48 @@
+LCP lantern 2873 perf 95 obsLCP 233
+--- optimistisch: 2873 ms, Knoten 21
+0	912	912	NET VeryHigh Document 52.1KB /bad
+912	2873	1962	NET High Font 57.9KB /_next/static/media/archivo_variabel.p.21nkmm9o4tyha.woff2
+912	1373	462	NET High Image 6.4KB /_next/image?url=%2Fimages%2Flogo%2Ftezgel-logo.webp&w=384&q=75
+912	1973	1062	NET High Image 22.9KB /_next/image?url=%2Fimages%2Farbeiten%2Fbad%2Fhelles-bad-glasdusche-ho
+912	1673	762	NET VeryHigh Stylesheet 21.1KB /_next/static/chunks/2kgxsu-0h-kxb.css
+912	1523	612	NET High Image 10.1KB /_next/image?url=%2Fimages%2Flogo%2Ftezgel-logo.webp&w=640&q=75
+912	1223	312	NET Low Other 3.2KB /_next/static/media/sprite.10gwz0aht2iml.svg
+912	1023	111	CPU obs 27.9ms urls= DocumentLoader::CommitNavigation:23.6,DocumentLoader::StartLoadingResponse:21.8,DocumentLoader::CreateParserPostCommit:21.7,LocalWindowProxy::Initialize:10.8
+1023	1028	5	CPU obs 1.3ms urls= ParseHTML:1.3,HTMLDocumentParser::DocumentElementAvailable:0.0,ScheduleStyleRecalculation:0.0,HTMLDocumentParser::MaybeFetchQueuedPreloads:0.0
+1028	1029	1	CPU obs 0.5ms urls= Layout:0.2,UpdateLayoutTree:0.2
+1029	1046	17	CPU obs 8.5ms urls= Paint:3.3,Layerize:2.4,Commit:1.2,PaintImage:0.7
+1223	1385	162	NET Low Script 3.9KB /_next/static/chunks/0jvhpaew_uadu.js
+1373	1835	462	NET Low Script 10.1KB /_next/static/chunks/0tw52dyqegn2g.js
+1385	1696	312	NET Low Script 5.4KB /_next/static/chunks/turbopack-1sqqgndd0areb.js
+1523	1835	312	NET Low Script 5.2KB /_next/static/chunks/3fntmmi971322.js
+1673	2285	612	NET VeryHigh Font 14.6KB /_next/static/media/plex_mono_400.2ik00rb7vgrlh.woff2
+1696	1858	162	NET Low Script 1.8KB /_next/static/chunks/3cw_qu1xvr9bw.js
+1835	2446	612	NET Low Script 14.4KB /_next/static/chunks/0itv1-u6qedx3.js
+1835	2446	612	NET Low Script 14.4KB /_next/static/chunks/1-5grn2xc2q9p.js
+1858	2619	762	NET Low Script 18.7KB /_next/static/chunks/0bs2finwcac7f.js
+1973	2585	612	NET Low Script 13.5KB /_next/static/chunks/3zdo8nxdsm6rl.js
+--- pessimistisch: 2873 ms, Knoten 24
+0	912	912	NET VeryHigh Document 52.1KB /bad
+912	2873	1962	NET High Font 57.9KB /_next/static/media/archivo_variabel.p.21nkmm9o4tyha.woff2
+912	1373	462	NET High Image 6.4KB /_next/image?url=%2Fimages%2Flogo%2Ftezgel-logo.webp&w=384&q=75
+912	1973	1062	NET High Image 22.9KB /_next/image?url=%2Fimages%2Farbeiten%2Fbad%2Fhelles-bad-glasdusche-ho
+912	1673	762	NET VeryHigh Stylesheet 21.1KB /_next/static/chunks/2kgxsu-0h-kxb.css
+912	1523	612	NET High Image 10.1KB /_next/image?url=%2Fimages%2Flogo%2Ftezgel-logo.webp&w=640&q=75
+912	1223	312	NET Low Other 3.2KB /_next/static/media/sprite.10gwz0aht2iml.svg
+912	914	2	NET Low Image 0.0KB data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/
+912	1023	111	CPU obs 27.9ms urls= DocumentLoader::CommitNavigation:23.6,DocumentLoader::StartLoadingResponse:21.8,DocumentLoader::CreateParserPostCommit:21.7,LocalWindowProxy::Initialize:10.8
+1023	1028	5	CPU obs 1.3ms urls= ParseHTML:1.3,HTMLDocumentParser::DocumentElementAvailable:0.0,ScheduleStyleRecalculation:0.0,HTMLDocumentParser::MaybeFetchQueuedPreloads:0.0
+1028	1029	1	CPU obs 0.5ms urls= Layout:0.2,UpdateLayoutTree:0.2
+1029	1118	89	CPU obs 44.4ms urls=/bad ParseHTML:41.2,EvaluateScript:37.2,ScriptCompiled:36.9,v8.run:36.9
+1118	1135	17	CPU obs 8.5ms urls= Paint:3.3,Layerize:2.4,Commit:1.2,PaintImage:0.7
+1135	1184	49	CPU obs 24.3ms urls= UpdateLayoutTree:6.4,Layout:5.8,Paint:1.5,FireAnimationFrame:0.8
+1223	1385	162	NET Low Script 3.9KB /_next/static/chunks/0jvhpaew_uadu.js
+1373	1835	462	NET Low Script 10.1KB /_next/static/chunks/0tw52dyqegn2g.js
+1385	1696	312	NET Low Script 5.4KB /_next/static/chunks/turbopack-1sqqgndd0areb.js
+1523	1835	312	NET Low Script 5.2KB /_next/static/chunks/3fntmmi971322.js
+1673	2285	612	NET VeryHigh Font 14.6KB /_next/static/media/plex_mono_400.2ik00rb7vgrlh.woff2
+1696	1858	162	NET Low Script 1.8KB /_next/static/chunks/3cw_qu1xvr9bw.js
+1835	2446	612	NET Low Script 14.4KB /_next/static/chunks/0itv1-u6qedx3.js
+1835	2446	612	NET Low Script 14.4KB /_next/static/chunks/1-5grn2xc2q9p.js
+1858	2619	762	NET Low Script 18.7KB /_next/static/chunks/0bs2finwcac7f.js
+1973	2585	612	NET Low Script 13.5KB /_next/static/chunks/3zdo8nxdsm6rl.js

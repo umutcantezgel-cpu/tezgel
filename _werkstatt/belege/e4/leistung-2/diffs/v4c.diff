@@ -1,0 +1,30 @@
+diff -ruN '--exclude=node_modules' '--exclude=.next' '--exclude=*.tsbuildinfo' '--exclude=next-env.d.ts' a/src/components/layout/ClientWidgets.tsx v4c/src/components/layout/ClientWidgets.tsx
+--- a/src/components/layout/ClientWidgets.tsx	2026-10-25 20:19:26.000000000 +0000
++++ b/src/components/layout/ClientWidgets.tsx	2026-10-25 21:18:51.777666857 +0000
+@@ -1,11 +1,20 @@
+ "use client";
+ 
+-import dynamic from 'next/dynamic';
++import { useEffect, useState, type ComponentType } from 'react';
+ 
+-const CookieConsent = dynamic(() => import('@/components/common/CookieConsent'), { ssr: false });
+-
+-// Einwilligungsbanner (KERN K-009). Der WhatsApp-Knopf sitzt seit E3-NACH-06 im Kopf (vorher hier im Leerlauf geladen);
+-// der Wasser-Cursor ist entfallen (E-008).
++// Einwilligungsbanner (KERN K-009). E4-L2 V4c (ändert Verhalten, nur Messung): Das Stück des Banners wird erst nach der
++// Hydrierung geholt (import im Effekt statt next/dynamic, das es mit den Skripten im Kopf vorlädt); der Banner erscheint
++// dadurch um die Ladezeit dieses Stücks später.
+ export function ClientWidgets() {
+-  return <CookieConsent />;
++  const [Banner, setBanner] = useState<ComponentType | null>(null);
++  useEffect(() => {
++    let aus = false;
++    import('@/components/common/CookieConsent').then((m) => {
++      if (!aus) setBanner(() => m.default);
++    });
++    return () => {
++      aus = true;
++    };
++  }, []);
++  return Banner ? <Banner /> : null;
+ }

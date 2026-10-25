@@ -1,0 +1,30 @@
+diff --git a/src/app/globals.css b/src/app/globals.css
+index 85612c2..d41e981 100644
+--- a/src/app/globals.css
++++ b/src/app/globals.css
+@@ -142,6 +142,12 @@
+   --dauer: --value(--dauer-*);
+ }
+ 
++/* E4-L2 V5: Link im Seitenindex des Fußes als eine Klasse (dieselbe Kette wie vorher in Footer.jsx). Die Kette stand je Seite
++   rund 80-mal im HTML und noch einmal in den RSC-Daten; die Darstellung bleibt gleich. */
++@utility fuss-index-link {
++  @apply inline-block max-w-full py-1 text-kalk underline decoration-transparent underline-offset-4 wrap-break-word transition-colors dauer-1 ease-setzen hover:decoration-kalk;
++}
++
+ /* Ersatzschriften mit Metrik-Anpassung (gemessen an Liberation Sans/Mono = Arial/Courier-Metrik, E-010) */
+ @font-face {
+   font-family: "Archivo Ersatz";
+diff --git a/src/components/common/Footer.jsx b/src/components/common/Footer.jsx
+index 6ed22f8..fe16ec4 100755
+--- a/src/components/common/Footer.jsx
++++ b/src/components/common/Footer.jsx
+@@ -178,7 +178,7 @@ export default function Footer() {
+                                         <li key={item.path + item.name}>
+                                             <Link
+                                                 href={item.path}
+-                                                className="inline-block max-w-full py-1 text-kalk underline decoration-transparent underline-offset-4 wrap-break-word transition-colors dauer-1 ease-setzen hover:decoration-kalk"
++                                                className="fuss-index-link"
+                                                 data-motion="zustand"
+                                             >
+                                                 {item.name}

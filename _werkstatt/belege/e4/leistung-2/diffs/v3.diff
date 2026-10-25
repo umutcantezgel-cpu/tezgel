@@ -1,0 +1,15 @@
+diff --git a/src/components/kern/Bildfeld.tsx b/src/components/kern/Bildfeld.tsx
+index bded5e7..625ddfc 100644
+--- a/src/components/kern/Bildfeld.tsx
++++ b/src/components/kern/Bildfeld.tsx
+@@ -66,8 +66,8 @@ export default function Bildfeld(props: BildfeldProps) {
+           sizes={sizes ?? GROESSEN[spalten]}
+           loading={lcp ? 'eager' : undefined}
+           fetchPriority={lcp ? 'high' : undefined}
+-          placeholder={bild.blur ? 'blur' : 'empty'}
+-          blurDataURL={bild.blur}
++          placeholder={bild.blur && !lcp ? 'blur' : 'empty'}
++          blurDataURL={lcp ? undefined : bild.blur}
+           className="block h-auto w-full"
+         />
+       </div>

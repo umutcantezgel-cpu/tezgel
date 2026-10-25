@@ -1,0 +1,11 @@
+--- a/next.config.ts	2026-10-25 20:19:26.000000000 +0000
++++ b/next.config.ts	2026-10-25 21:00:06.748582813 +0000
+@@ -28,6 +28,8 @@
+     // E-015: kein app/layout.tsx, das lebende Root-Layout liegt in der Gruppe (bestand) → 404 für unbekannte Adressen
+     // über app/global-not-found.tsx
+     globalNotFound: true,
++    // E4-L2 V1: CSS im Dokument statt <link>
++    inlineCss: true,
+   },
+   turbopack: {
+     resolveAlias: {

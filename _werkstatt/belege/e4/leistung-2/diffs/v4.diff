@@ -1,0 +1,474 @@
+diff --git a/src/app/(bestand)/_dokument.tsx b/src/app/(bestand)/_dokument.tsx
+index 48432b3..b466b04 100644
+--- a/src/app/(bestand)/_dokument.tsx
++++ b/src/app/(bestand)/_dokument.tsx
+@@ -13,7 +13,7 @@ import { ErrorBoundary } from '@/components/providers/ErrorBoundary';
+ import { buildRootGraph, SITE_URL } from '@/lib/schema';
+ import JsonLd from '@/components/seo/JsonLd';
+ import BewegungsWaechter from '@/components/kern/BewegungsWaechter';
+-import Verlegen from '@/components/verlegen/Verlegen';
++import VerlegenSpaeter from '@/components/verlegen/VerlegenSpaeter';
+ import Intro from '@/components/intro/Intro';
+ import { INTRO_ZIEL, KOPFSKRIPT } from '@/lib/motion/kopfskript';
+ 
+@@ -141,7 +141,7 @@ export default function BestandDokument({
+           <ClientWidgets />
+           <BewegungsWaechter />
+           {/* Seitenwechsel B-01 „Verlegen“: feste Schicht außerhalb von main (KERN K-007, E-010) */}
+-          <Verlegen />
++          <VerlegenSpaeter />
+         </ErrorBoundary>
+       </body>
+     </html>
+diff --git a/src/components/kern/Karussell.tsx b/src/components/kern/Karussell.tsx
+index 22a3af6..bb6d586 100644
+--- a/src/components/kern/Karussell.tsx
++++ b/src/components/kern/Karussell.tsx
+@@ -1,191 +1,17 @@
+ 'use client';
+-// Karussell (KERN v3.6 K-016 „Ruhe“, E-047): langsam, gut strukturiert, läuft von rechts nach links. Zwei Arten:
+-// - band: ein endloses Laufband (Qualifikationen im Fuß). Der Inhalt steht zweimal hintereinander, die zweite Fassung ist
+-//   für Screenreader und Tastatur verborgen; das Band rückt per CSS um die halbe Länge (bewegung.css, Block karussell).
+-// - reihe: Karten nebeneinander mit Einrasten beim Wischen (Kundenstimmen, Fotos). Mit Selbstlauf rückt die Reihe alle
+-//   `takt` ms um eine Karte weiter und springt am Ende an den Anfang.
+-// Beide halten an, solange die Maus darüber steht oder der Fokus darin liegt, und haben einen Knopf zum Anhalten (WCAG 2.2.2:
+-// Bewegung über 5 s); nach einer Berührung bleibt der Selbstlauf aus. Ohne JavaScript, bei reduzierter Bewegung, bei
+-// erzwungenen Farben und im Notaus läuft nichts von selbst: das Band steht als umbrechende Liste (nichts abgeschnitten), die
+-// Reihe wird nur von Hand gewischt. Bewegt wird nur translate (Band) bzw. die Scrollposition (Reihe).
+-import { Children, useEffect, useRef, useState, useSyncExternalStore, type FocusEvent, type PointerEvent, type ReactNode } from 'react';
+-import clsx from 'clsx';
+-import Icon from '@/components/icons/Icon';
++// E4-L2 V4: Hülle des Karussells. Der Code (KarussellInnen) liegt in einem eigenen Stück und wird erst bei der Hydrierung
++// geholt, nicht mit den Skripten im Kopf; bis dahin steht das Server-HTML unverändert (Suspense hält die Grenze dehydriert).
++import { lazy, Suspense } from 'react';
++import type { KarussellProps } from './KarussellInnen';
+ 
+-const ohneAbo = () => () => {};
+-function useImBrowser() {
+-  return useSyncExternalStore(ohneAbo, () => true, () => false);
+-}
+-
+-// Ruhe gewünscht: reduzierte Bewegung, erzwungene Farben (dort steht das Band, bewegung.css), ohne Startklasse oder im Notaus
+-const RUHIG_MEDIEN = ['(prefers-reduced-motion: reduce)', '(forced-colors: active)'];
+-function useRuhigGewuenscht() {
+-  return useSyncExternalStore(
+-    (melden) => {
+-      const medien = RUHIG_MEDIEN.map((q) => window.matchMedia(q));
+-      medien.forEach((m) => m.addEventListener('change', melden));
+-      return () => medien.forEach((m) => m.removeEventListener('change', melden));
+-    },
+-    () => RUHIG_MEDIEN.some((q) => window.matchMedia(q).matches) || !document.documentElement.classList.contains('k-bewegung') || document.documentElement.classList.contains('k-notaus'),
+-    () => true,
+-  );
+-}
+-
+-// Farben je Fläche vollständig getrennt: in einer gemeinsamen Grundklasse gewönne sonst die helle Farbe (gleiche Utility)
+-const knopfGrund =
+-  'inline-flex size-11 items-center justify-center border transition-colors dauer-1 ease-setzen focus-visible:outline-2 focus-visible:outline-offset-2';
+-const knopfHell = 'border-fuge bg-fliese text-tinte hover:border-tinte focus-visible:outline-tinte';
+-const knopfDunkel = 'border-nacht-fuge bg-tinte text-kalk hover:border-kalk focus-visible:outline-kalk';
+-const knopf = clsx(knopfGrund, knopfHell);
+-
+-// Wechselnder Name statt aria-pressed (wie der Knopf zum Anhalten im APG-Karussell). Er liegt über der Spur: die verschobene
+-// Spur bildet eine eigene Ebene und läge sonst in der Malreihenfolge über ihm, abgeschnitten, aber für Prüfwerkzeuge verdeckend
+-// (Lighthouse target-size, E-061).
+-function PauseKnopf({ angehalten, umschalten, dunkel = false }: { angehalten: boolean; umschalten: () => void; dunkel?: boolean }) {
+-  return (
+-    <button type="button" onClick={umschalten} className={clsx(knopfGrund, 'relative z-10', dunkel ? knopfDunkel : knopfHell)}>
+-      <Icon name={angehalten ? 'abspielen' : 'pause'} groesse={4} />
+-      <span className="sr-only">{angehalten ? 'Weiterlaufen lassen' : 'Anhalten'}</span>
+-    </button>
+-  );
+-}
+-
+-export interface KarussellProps {
+-  art: 'band' | 'reihe';
+-  /** Name der Region für Screenreader */
+-  name: string;
+-  children: ReactNode;
+-  /** reihe: Breite je Karte (Klassen), z. B. „w-full md:w-1/2 lg:w-1/3“; Teiler der Breite, damit keine Karte angeschnitten ist */
+-  karte?: string;
+-  /** reihe: von selbst weiterrücken (nur mit erlaubter Bewegung) */
+-  selbstlauf?: boolean;
+-  /** reihe: Abstand zwischen zwei Schritten in ms (langsam, Standard 8 s) */
+-  takt?: number;
+-  /** band: auf dunkler Fläche (Fuß) */
+-  dunkel?: boolean;
+-  className?: string;
+-}
+-
+-export default function Karussell({ art, name, children, karte = 'w-full md:w-1/2 lg:w-1/3', selbstlauf = false, takt = 8000, dunkel = false, className }: KarussellProps) {
+-  const imBrowser = useImBrowser();
+-  const ruhig = useRuhigGewuenscht();
+-  const [angehalten, setAngehalten] = useState(false);
+-  const [darueber, setDarueber] = useState(false);
+-  // Reihe: passen alle Karten nebeneinander, gibt es nichts zu blättern (Knöpfe unsichtbar, kein Selbstlauf)
+-  const [ueberlauf, setUeberlauf] = useState(false);
+-  const spur = useRef<HTMLUListElement>(null);
+-  const teile = Children.toArray(children);
+-
+-  useEffect(() => {
+-    const el = spur.current;
+-    if (art !== 'reihe' || !el) return;
+-    const messen = () => setUeberlauf(el.scrollWidth > el.clientWidth + 1);
+-    messen();
+-    const beobachter = new ResizeObserver(messen);
+-    beobachter.observe(el);
+-    return () => beobachter.disconnect();
+-  }, [art]);
+-
+-  // Reihe: Selbstlauf, solange nichts dagegen spricht (Maus, Fokus, Knopf, Berührung, verborgener Tab, reduzierte Bewegung).
+-  // Gerückt wird nur, wenn die Reihe zumindest zur Hälfte im Fenster steht und niedriger ist als das Fenster: ist sie höher
+-  // (große Schrift), liest man gerade Zeile für Zeile, und der Knopf zum Anhalten stünde außer Sicht.
+-  useEffect(() => {
+-    if (art !== 'reihe' || !selbstlauf || ruhig || angehalten || darueber || !ueberlauf) return;
+-    const id = window.setInterval(() => {
+-      const el = spur.current;
+-      if (!el || document.visibilityState !== 'visible') return;
+-      const lage = el.getBoundingClientRect();
+-      const sichtbar = Math.min(lage.bottom, window.innerHeight) - Math.max(lage.top, 0);
+-      if (lage.height > window.innerHeight || sichtbar < lage.height / 2) return;
+-      const schritt = (el.firstElementChild as HTMLElement | null)?.getBoundingClientRect().width ?? el.clientWidth;
+-      const amEnde = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
+-      el.scrollTo({ left: amEnde ? 0 : el.scrollLeft + schritt, behavior: 'smooth' });
+-    }, takt);
+-    return () => window.clearInterval(id);
+-  }, [art, selbstlauf, ruhig, angehalten, darueber, ueberlauf, takt]);
+-
+-  const rucken = (richtung: 1 | -1) => {
+-    const el = spur.current;
+-    if (!el) return;
+-    const schritt = (el.firstElementChild as HTMLElement | null)?.getBoundingClientRect().width ?? el.clientWidth;
+-    el.scrollBy({ left: richtung * schritt, behavior: ruhig ? 'auto' : 'smooth' });
+-  };
+-
+-  // Berührung (Finger, Stift) auf Spur oder Pfeilen: ab dann bleibt der Selbstlauf aus; ohne Maus gibt es kein Verlassen,
+-  // das ihn wieder anstößt. Nicht am Knopf zum Anhalten, der schaltet selbst um.
+-  const beruehrt = (e: PointerEvent<HTMLElement>) => {
+-    if (e.pointerType !== 'mouse') setAngehalten(true);
+-  };
+-
+-  const halten = {
+-    onPointerEnter: () => setDarueber(true),
+-    onPointerLeave: () => setDarueber(false),
+-    onFocus: () => setDarueber(true),
+-    onBlur: (e: FocusEvent<HTMLElement>) => {
+-      if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setDarueber(false);
+-    },
+-  };
++export type { KarussellProps };
+ 
+-  if (art === 'band') {
+-    return (
+-      <section aria-roledescription="Karussell" aria-label={name} className={clsx('flex items-center gap-4', className)}>
+-        <div className="karussell-band min-w-0 flex-1" data-motion="karussell" data-angehalten={angehalten || undefined} onPointerDown={beruehrt} {...halten}>
+-          <div className="karussell-band-spur">
+-            <ul className="karussell-band-teil">
+-              {teile.map((t, i) => (
+-                <li key={i} className="shrink-0">
+-                  {t}
+-                </li>
+-              ))}
+-            </ul>
+-            {/* zweite Fassung nur fürs Auge: lückenloses Weiterlaufen */}
+-            <ul className="karussell-band-teil karussell-band-kopie" aria-hidden="true" inert>
+-              {teile.map((t, i) => (
+-                <li key={i} className="shrink-0">
+-                  {t}
+-                </li>
+-              ))}
+-            </ul>
+-          </div>
+-        </div>
+-        {imBrowser && !ruhig && <PauseKnopf angehalten={angehalten} umschalten={() => setAngehalten((a) => !a)} dunkel={dunkel} />}
+-      </section>
+-    );
+-  }
++const Innen = lazy(() => import('./KarussellInnen'));
+ 
+-  const bedienbar = imBrowser && ueberlauf;
++export default function Karussell(props: KarussellProps) {
+   return (
+-    <section aria-roledescription="Karussell" aria-label={name} className={className} {...halten}>
+-      {/* Abstand innen statt gap: die Karten füllen die Breite genau, jede sichtbare Karte steht ganz im Bild (nie angeschnitten, E-047) */}
+-      {/* Die Spur ist selbst per Tastatur erreichbar (Pfeiltasten wischen), auch wenn die Karten keine Links haben; pt-1 hält
+-          den Fokusrahmen der Karten innerhalb der Clipkante. Die Folie ist ein inneres div, damit die Liste Liste bleibt. */}
+-      <ul
+-        ref={spur}
+-        tabIndex={0}
+-        onPointerDown={beruehrt}
+-        data-motion="karussell"
+-        className="karussell-reihe -mx-3 flex snap-x snap-mandatory overflow-x-auto pt-1 pb-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tinte"
+-      >
+-        {teile.map((t, i) => (
+-          <li key={i} className={clsx('shrink-0 snap-start px-3', karte)}>
+-            <div role="group" aria-roledescription="Folie" aria-label={`${i + 1} von ${teile.length}`} className="h-full">
+-              {t}
+-            </div>
+-          </li>
+-        ))}
+-      </ul>
+-      {/* Platz der Knöpfe steht von Anfang an (auch ohne JavaScript), damit nichts springt, wenn sie erscheinen */}
+-      <div aria-hidden={bedienbar ? undefined : true} className={clsx('mt-6 flex items-center justify-center gap-3', !bedienbar && 'invisible')}>
+-        <button type="button" onClick={() => rucken(-1)} onPointerDown={beruehrt} className={knopf}>
+-          <Icon name="pfeil-links" groesse={4} />
+-          <span className="sr-only">Zurück</span>
+-        </button>
+-        {selbstlauf && !ruhig && <PauseKnopf angehalten={angehalten} umschalten={() => setAngehalten((a) => !a)} />}
+-        <button type="button" onClick={() => rucken(1)} onPointerDown={beruehrt} className={knopf}>
+-          <Icon name="pfeil-rechts" groesse={4} />
+-          <span className="sr-only">Weiter</span>
+-        </button>
+-      </div>
+-    </section>
++    <Suspense fallback={null}>
++      <Innen {...props} />
++    </Suspense>
+   );
+ }
+diff --git a/src/components/kern/KarussellInnen.tsx b/src/components/kern/KarussellInnen.tsx
+new file mode 100644
+index 0000000..22a3af6
+--- /dev/null
++++ b/src/components/kern/KarussellInnen.tsx
+@@ -0,0 +1,191 @@
++'use client';
++// Karussell (KERN v3.6 K-016 „Ruhe“, E-047): langsam, gut strukturiert, läuft von rechts nach links. Zwei Arten:
++// - band: ein endloses Laufband (Qualifikationen im Fuß). Der Inhalt steht zweimal hintereinander, die zweite Fassung ist
++//   für Screenreader und Tastatur verborgen; das Band rückt per CSS um die halbe Länge (bewegung.css, Block karussell).
++// - reihe: Karten nebeneinander mit Einrasten beim Wischen (Kundenstimmen, Fotos). Mit Selbstlauf rückt die Reihe alle
++//   `takt` ms um eine Karte weiter und springt am Ende an den Anfang.
++// Beide halten an, solange die Maus darüber steht oder der Fokus darin liegt, und haben einen Knopf zum Anhalten (WCAG 2.2.2:
++// Bewegung über 5 s); nach einer Berührung bleibt der Selbstlauf aus. Ohne JavaScript, bei reduzierter Bewegung, bei
++// erzwungenen Farben und im Notaus läuft nichts von selbst: das Band steht als umbrechende Liste (nichts abgeschnitten), die
++// Reihe wird nur von Hand gewischt. Bewegt wird nur translate (Band) bzw. die Scrollposition (Reihe).
++import { Children, useEffect, useRef, useState, useSyncExternalStore, type FocusEvent, type PointerEvent, type ReactNode } from 'react';
++import clsx from 'clsx';
++import Icon from '@/components/icons/Icon';
++
++const ohneAbo = () => () => {};
++function useImBrowser() {
++  return useSyncExternalStore(ohneAbo, () => true, () => false);
++}
++
++// Ruhe gewünscht: reduzierte Bewegung, erzwungene Farben (dort steht das Band, bewegung.css), ohne Startklasse oder im Notaus
++const RUHIG_MEDIEN = ['(prefers-reduced-motion: reduce)', '(forced-colors: active)'];
++function useRuhigGewuenscht() {
++  return useSyncExternalStore(
++    (melden) => {
++      const medien = RUHIG_MEDIEN.map((q) => window.matchMedia(q));
++      medien.forEach((m) => m.addEventListener('change', melden));
++      return () => medien.forEach((m) => m.removeEventListener('change', melden));
++    },
++    () => RUHIG_MEDIEN.some((q) => window.matchMedia(q).matches) || !document.documentElement.classList.contains('k-bewegung') || document.documentElement.classList.contains('k-notaus'),
++    () => true,
++  );
++}
++
++// Farben je Fläche vollständig getrennt: in einer gemeinsamen Grundklasse gewönne sonst die helle Farbe (gleiche Utility)
++const knopfGrund =
++  'inline-flex size-11 items-center justify-center border transition-colors dauer-1 ease-setzen focus-visible:outline-2 focus-visible:outline-offset-2';
++const knopfHell = 'border-fuge bg-fliese text-tinte hover:border-tinte focus-visible:outline-tinte';
++const knopfDunkel = 'border-nacht-fuge bg-tinte text-kalk hover:border-kalk focus-visible:outline-kalk';
++const knopf = clsx(knopfGrund, knopfHell);
++
++// Wechselnder Name statt aria-pressed (wie der Knopf zum Anhalten im APG-Karussell). Er liegt über der Spur: die verschobene
++// Spur bildet eine eigene Ebene und läge sonst in der Malreihenfolge über ihm, abgeschnitten, aber für Prüfwerkzeuge verdeckend
++// (Lighthouse target-size, E-061).
++function PauseKnopf({ angehalten, umschalten, dunkel = false }: { angehalten: boolean; umschalten: () => void; dunkel?: boolean }) {
++  return (
++    <button type="button" onClick={umschalten} className={clsx(knopfGrund, 'relative z-10', dunkel ? knopfDunkel : knopfHell)}>
++      <Icon name={angehalten ? 'abspielen' : 'pause'} groesse={4} />
++      <span className="sr-only">{angehalten ? 'Weiterlaufen lassen' : 'Anhalten'}</span>
++    </button>
++  );
++}
++
++export interface KarussellProps {
++  art: 'band' | 'reihe';
++  /** Name der Region für Screenreader */
++  name: string;
++  children: ReactNode;
++  /** reihe: Breite je Karte (Klassen), z. B. „w-full md:w-1/2 lg:w-1/3“; Teiler der Breite, damit keine Karte angeschnitten ist */
++  karte?: string;
++  /** reihe: von selbst weiterrücken (nur mit erlaubter Bewegung) */
++  selbstlauf?: boolean;
++  /** reihe: Abstand zwischen zwei Schritten in ms (langsam, Standard 8 s) */
++  takt?: number;
++  /** band: auf dunkler Fläche (Fuß) */
++  dunkel?: boolean;
++  className?: string;
++}
++
++export default function Karussell({ art, name, children, karte = 'w-full md:w-1/2 lg:w-1/3', selbstlauf = false, takt = 8000, dunkel = false, className }: KarussellProps) {
++  const imBrowser = useImBrowser();
++  const ruhig = useRuhigGewuenscht();
++  const [angehalten, setAngehalten] = useState(false);
++  const [darueber, setDarueber] = useState(false);
++  // Reihe: passen alle Karten nebeneinander, gibt es nichts zu blättern (Knöpfe unsichtbar, kein Selbstlauf)
++  const [ueberlauf, setUeberlauf] = useState(false);
++  const spur = useRef<HTMLUListElement>(null);
++  const teile = Children.toArray(children);
++
++  useEffect(() => {
++    const el = spur.current;
++    if (art !== 'reihe' || !el) return;
++    const messen = () => setUeberlauf(el.scrollWidth > el.clientWidth + 1);
++    messen();
++    const beobachter = new ResizeObserver(messen);
++    beobachter.observe(el);
++    return () => beobachter.disconnect();
++  }, [art]);
++
++  // Reihe: Selbstlauf, solange nichts dagegen spricht (Maus, Fokus, Knopf, Berührung, verborgener Tab, reduzierte Bewegung).
++  // Gerückt wird nur, wenn die Reihe zumindest zur Hälfte im Fenster steht und niedriger ist als das Fenster: ist sie höher
++  // (große Schrift), liest man gerade Zeile für Zeile, und der Knopf zum Anhalten stünde außer Sicht.
++  useEffect(() => {
++    if (art !== 'reihe' || !selbstlauf || ruhig || angehalten || darueber || !ueberlauf) return;
++    const id = window.setInterval(() => {
++      const el = spur.current;
++      if (!el || document.visibilityState !== 'visible') return;
++      const lage = el.getBoundingClientRect();
++      const sichtbar = Math.min(lage.bottom, window.innerHeight) - Math.max(lage.top, 0);
++      if (lage.height > window.innerHeight || sichtbar < lage.height / 2) return;
++      const schritt = (el.firstElementChild as HTMLElement | null)?.getBoundingClientRect().width ?? el.clientWidth;
++      const amEnde = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
++      el.scrollTo({ left: amEnde ? 0 : el.scrollLeft + schritt, behavior: 'smooth' });
++    }, takt);
++    return () => window.clearInterval(id);
++  }, [art, selbstlauf, ruhig, angehalten, darueber, ueberlauf, takt]);
++
++  const rucken = (richtung: 1 | -1) => {
++    const el = spur.current;
++    if (!el) return;
++    const schritt = (el.firstElementChild as HTMLElement | null)?.getBoundingClientRect().width ?? el.clientWidth;
++    el.scrollBy({ left: richtung * schritt, behavior: ruhig ? 'auto' : 'smooth' });
++  };
++
++  // Berührung (Finger, Stift) auf Spur oder Pfeilen: ab dann bleibt der Selbstlauf aus; ohne Maus gibt es kein Verlassen,
++  // das ihn wieder anstößt. Nicht am Knopf zum Anhalten, der schaltet selbst um.
++  const beruehrt = (e: PointerEvent<HTMLElement>) => {
++    if (e.pointerType !== 'mouse') setAngehalten(true);
++  };
++
++  const halten = {
++    onPointerEnter: () => setDarueber(true),
++    onPointerLeave: () => setDarueber(false),
++    onFocus: () => setDarueber(true),
++    onBlur: (e: FocusEvent<HTMLElement>) => {
++      if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setDarueber(false);
++    },
++  };
++
++  if (art === 'band') {
++    return (
++      <section aria-roledescription="Karussell" aria-label={name} className={clsx('flex items-center gap-4', className)}>
++        <div className="karussell-band min-w-0 flex-1" data-motion="karussell" data-angehalten={angehalten || undefined} onPointerDown={beruehrt} {...halten}>
++          <div className="karussell-band-spur">
++            <ul className="karussell-band-teil">
++              {teile.map((t, i) => (
++                <li key={i} className="shrink-0">
++                  {t}
++                </li>
++              ))}
++            </ul>
++            {/* zweite Fassung nur fürs Auge: lückenloses Weiterlaufen */}
++            <ul className="karussell-band-teil karussell-band-kopie" aria-hidden="true" inert>
++              {teile.map((t, i) => (
++                <li key={i} className="shrink-0">
++                  {t}
++                </li>
++              ))}
++            </ul>
++          </div>
++        </div>
++        {imBrowser && !ruhig && <PauseKnopf angehalten={angehalten} umschalten={() => setAngehalten((a) => !a)} dunkel={dunkel} />}
++      </section>
++    );
++  }
++
++  const bedienbar = imBrowser && ueberlauf;
++  return (
++    <section aria-roledescription="Karussell" aria-label={name} className={className} {...halten}>
++      {/* Abstand innen statt gap: die Karten füllen die Breite genau, jede sichtbare Karte steht ganz im Bild (nie angeschnitten, E-047) */}
++      {/* Die Spur ist selbst per Tastatur erreichbar (Pfeiltasten wischen), auch wenn die Karten keine Links haben; pt-1 hält
++          den Fokusrahmen der Karten innerhalb der Clipkante. Die Folie ist ein inneres div, damit die Liste Liste bleibt. */}
++      <ul
++        ref={spur}
++        tabIndex={0}
++        onPointerDown={beruehrt}
++        data-motion="karussell"
++        className="karussell-reihe -mx-3 flex snap-x snap-mandatory overflow-x-auto pt-1 pb-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tinte"
++      >
++        {teile.map((t, i) => (
++          <li key={i} className={clsx('shrink-0 snap-start px-3', karte)}>
++            <div role="group" aria-roledescription="Folie" aria-label={`${i + 1} von ${teile.length}`} className="h-full">
++              {t}
++            </div>
++          </li>
++        ))}
++      </ul>
++      {/* Platz der Knöpfe steht von Anfang an (auch ohne JavaScript), damit nichts springt, wenn sie erscheinen */}
++      <div aria-hidden={bedienbar ? undefined : true} className={clsx('mt-6 flex items-center justify-center gap-3', !bedienbar && 'invisible')}>
++        <button type="button" onClick={() => rucken(-1)} onPointerDown={beruehrt} className={knopf}>
++          <Icon name="pfeil-links" groesse={4} />
++          <span className="sr-only">Zurück</span>
++        </button>
++        {selbstlauf && !ruhig && <PauseKnopf angehalten={angehalten} umschalten={() => setAngehalten((a) => !a)} />}
++        <button type="button" onClick={() => rucken(1)} onPointerDown={beruehrt} className={knopf}>
++          <Icon name="pfeil-rechts" groesse={4} />
++          <span className="sr-only">Weiter</span>
++        </button>
++      </div>
++    </section>
++  );
++}
+diff --git a/src/components/verlegen/VerlegenSpaeter.tsx b/src/components/verlegen/VerlegenSpaeter.tsx
+new file mode 100644
+index 0000000..9e717d0
+--- /dev/null
++++ b/src/components/verlegen/VerlegenSpaeter.tsx
+@@ -0,0 +1,43 @@
++'use client';
++// E4-L2 V4: Seitenwechsel B-01 nach dem ersten Bild laden. Das Stück mit Verlegen kommt bei der ersten Zeige-, Tipp-,
++// Tasten- oder Scrollbewegung oder im Leerlauf nach dem Ereignis load (spätestens 2 s danach), nicht mit den Skripten im Kopf.
++// Bis dahin navigieren Links ohne Verlegen (normaler Seitenwechsel von Next).
++import { useEffect, useState, type ComponentType } from 'react';
++
++const ANLAESSE = ['pointerdown', 'pointermove', 'touchstart', 'keydown', 'wheel', 'scroll', 'focusin'] as const;
++
++export default function VerlegenSpaeter() {
++  const [Verlegen, setVerlegen] = useState<ComponentType | null>(null);
++  useEffect(() => {
++    let aus = false;
++    let geholt = false;
++    let leerlauf: number | undefined;
++    const weg = () => {
++      ANLAESSE.forEach((n) => window.removeEventListener(n, laden, true));
++      window.removeEventListener('load', nachLoad);
++      if (leerlauf !== undefined) {
++        if (window.cancelIdleCallback) window.cancelIdleCallback(leerlauf);
++        else window.clearTimeout(leerlauf);
++      }
++    };
++    function laden() {
++      if (geholt) return;
++      geholt = true;
++      weg();
++      import('./Verlegen').then((m) => {
++        if (!aus) setVerlegen(() => m.default);
++      });
++    }
++    function nachLoad() {
++      leerlauf = window.requestIdleCallback ? window.requestIdleCallback(laden, { timeout: 2000 }) : window.setTimeout(laden, 200);
++    }
++    ANLAESSE.forEach((n) => window.addEventListener(n, laden, { capture: true, passive: true }));
++    if (document.readyState === 'complete') nachLoad();
++    else window.addEventListener('load', nachLoad);
++    return () => {
++      aus = true;
++      weg();
++    };
++  }, []);
++  return Verlegen ? <Verlegen /> : null;
++}

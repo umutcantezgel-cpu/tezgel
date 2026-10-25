@@ -1,0 +1,452 @@
+{
+ "v0": {
+  "/bad": {
+   "n": 9,
+   "lcp_median": 3460,
+   "spanne": "2864–3471",
+   "perf": 91,
+   "tbt": 117,
+   "el": "div.mx-auto > figure > div.border > img.block",
+   "obs": 227,
+   "obs_n": 9,
+   "bench": 0,
+   "reihen": "e4l2-v0,e4l2-v0-w2,e4l2-v0-w3"
+  },
+  "/bad/badsanierung": {
+   "n": 9,
+   "lcp_median": 3146,
+   "spanne": "2863–3393",
+   "perf": 91,
+   "tbt": 120,
+   "el": "div.mx-auto > figure > div.border > img.block",
+   "obs": 199,
+   "obs_n": 9,
+   "bench": 0,
+   "reihen": "e4l2-v0,e4l2-v0-w2,e4l2-v0-w3"
+  },
+  "/fliesen": {
+   "n": 9,
+   "lcp_median": 3293,
+   "spanne": "2861–3655",
+   "perf": 91,
+   "tbt": 89,
+   "el": "div.relative > section.relative > div.mx-auto > p.mt-8",
+   "obs": 223,
+   "obs_n": 9,
+   "bench": 0,
+   "reihen": "e4l2-v0,e4l2-v0-w2,e4l2-v0-w3"
+  },
+  "/standorte/wetzlar": {
+   "n": 15,
+   "lcp_median": 4485,
+   "spanne": "4458–4614",
+   "perf": 81,
+   "tbt": 171,
+   "el": "div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block",
+   "obs": 843,
+   "obs_n": 15,
+   "bench": 0,
+   "reihen": "e4l2-v0,e4l2-v0-w2,e4l2-v0-w3,e4l2-v0-w4,e4l2-v0-w5"
+  }
+ },
+ "v1": {
+  "/bad": {
+   "n": 3,
+   "lcp_median": 3380,
+   "spanne": "3228–3468",
+   "perf": 90,
+   "tbt": 148,
+   "el": "div.mx-auto > figure > div.border > img.block",
+   "obs": 215,
+   "obs_n": 3,
+   "bench": 0,
+   "reihen": "e4l2-v1"
+  },
+  "/bad/badsanierung": {
+   "n": 3,
+   "lcp_median": 3377,
+   "spanne": "3316–3551",
+   "perf": 89,
+   "tbt": 161,
+   "el": "div.mx-auto > figure > div.border > img.block",
+   "obs": 243,
+   "obs_n": 3,
+   "bench": 0,
+   "reihen": "e4l2-v1"
+  },
+  "/fliesen": {
+   "n": 3,
+   "lcp_median": 3446,
+   "spanne": "3012–3450",
+   "perf": 89,
+   "tbt": 193,
+   "el": "div.relative > section.relative > div.mx-auto > p.mt-8",
+   "obs": 235,
+   "obs_n": 3,
+   "bench": 0,
+   "reihen": "e4l2-v1"
+  },
+  "/standorte/wetzlar": {
+   "n": 3,
+   "lcp_median": 4673,
+   "spanne": "4605–4681",
+   "perf": 80,
+   "tbt": 195,
+   "el": "div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block",
+   "obs": 821,
+   "obs_n": 3,
+   "bench": 0,
+   "reihen": "e4l2-v1"
+  }
+ },
+ "v2": {
+  "/bad": {
+   "n": 3,
+   "lcp_median": 3314,
+   "spanne": "3309–3386",
+   "perf": 91,
+   "tbt": 109,
+   "el": "div.mx-auto > figure > div.border > img.block",
+   "obs": 225,
+   "obs_n": 3,
+   "bench": 0,
+   "reihen": "e4l2-v2"
+  },
+  "/bad/badsanierung": {
+   "n": 3,
+   "lcp_median": 3238,
+   "spanne": "2939–3240",
+   "perf": 92,
+   "tbt": 116,
+   "el": "div.mx-auto > figure > div.border > img.block",
+   "obs": 212,
+   "obs_n": 3,
+   "bench": 0,
+   "reihen": "e4l2-v2"
+  },
+  "/fliesen": {
+   "n": 3,
+   "lcp_median": 3434,
+   "spanne": "3431–3446",
+   "perf": 91,
+   "tbt": 71,
+   "el": "div.relative > section.relative > div.mx-auto > p.mt-8",
+   "obs": 247,
+   "obs_n": 3,
+   "bench": 0,
+   "reihen": "e4l2-v2"
+  },
+  "/standorte/wetzlar": {
+   "n": 3,
+   "lcp_median": 4516,
+   "spanne": "4515–4602",
+   "perf": 84,
+   "tbt": 71,
+   "el": "div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block",
+   "obs": 871,
+   "obs_n": 3,
+   "bench": 0,
+   "reihen": "e4l2-v2"
+  }
+ },
+ "v3": {
+  "/bad": {
+   "n": 6,
+   "lcp_median": 3168,
+   "spanne": "2788–3466",
+   "perf": 92,
+   "tbt": 124,
+   "el": "div.mx-auto > figure > div.border > img.block",
+   "obs": 258,
+   "obs_n": 6,
+   "bench": 2,
+   "reihen": "e4l2-v3,e4l2-v3-erstlauf-benchmark"
+  },
+  "/bad/badsanierung": {
+   "n": 6,
+   "lcp_median": 3208,
+   "spanne": "2856–3393",
+   "perf": 92,
+   "tbt": 130,
+   "el": "div.mx-auto > figure > div.border > img.block",
+   "obs": 213,
+   "obs_n": 6,
+   "bench": 3,
+   "reihen": "e4l2-v3,e4l2-v3-erstlauf-benchmark"
+  },
+  "/fliesen": {
+   "n": 3,
+   "lcp_median": 3016,
+   "spanne": "2859–3077",
+   "perf": 94,
+   "tbt": 79,
+   "el": "div.relative > section.relative > div.mx-auto > p.mt-8",
+   "obs": 216,
+   "obs_n": 3,
+   "bench": 0,
+   "reihen": "e4l2-v3"
+  },
+  "/standorte/wetzlar": {
+   "n": 6,
+   "lcp_median": 4577,
+   "spanne": "4451–4758",
+   "perf": 82,
+   "tbt": 171,
+   "el": "div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block",
+   "obs": 867,
+   "obs_n": 6,
+   "bench": 0,
+   "reihen": "e4l2-v3,e4l2-v3-w2"
+  }
+ },
+ "v4": {
+  "/bad": {
+   "n": 6,
+   "lcp_median": 3046,
+   "spanne": "2860–3449",
+   "perf": 94,
+   "tbt": 99,
+   "el": "div.mx-auto > figure > div.border > img.block",
+   "obs": 205,
+   "obs_n": 6,
+   "bench": 0,
+   "reihen": "e4l2-v4,e4l2-v4-w2"
+  },
+  "/bad/badsanierung": {
+   "n": 6,
+   "lcp_median": 3185,
+   "spanne": "2859–3318",
+   "perf": 92,
+   "tbt": 117,
+   "el": "div.mx-auto > figure > div.border > img.block",
+   "obs": 214,
+   "obs_n": 6,
+   "bench": 0,
+   "reihen": "e4l2-v4,e4l2-v4-w2"
+  },
+  "/fliesen": {
+   "n": 6,
+   "lcp_median": 3294,
+   "spanne": "2714–3744",
+   "perf": 91,
+   "tbt": 134,
+   "el": "div.relative > section.relative > div.mx-auto > p.mt-8",
+   "obs": 242,
+   "obs_n": 6,
+   "bench": 0,
+   "reihen": "e4l2-v4,e4l2-v4-w2"
+  },
+  "/standorte/wetzlar": {
+   "n": 6,
+   "lcp_median": 4677,
+   "spanne": "4575–4759",
+   "perf": 82,
+   "tbt": 151,
+   "el": "div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block",
+   "obs": 851,
+   "obs_n": 6,
+   "bench": 0,
+   "reihen": "e4l2-v4,e4l2-v4-w2"
+  }
+ },
+ "v4a": {
+  "/bad": {
+   "n": 6,
+   "lcp_median": 3389,
+   "spanne": "2942–3431",
+   "perf": 91,
+   "tbt": 96,
+   "el": "div.mx-auto > figure > div.border > img.block",
+   "obs": 220,
+   "obs_n": 6,
+   "bench": 0,
+   "reihen": "e4l2-v4a,e4l2-v4a-w2"
+  },
+  "/bad/badsanierung": {
+   "n": 6,
+   "lcp_median": 3312,
+   "spanne": "2860–3314",
+   "perf": 92,
+   "tbt": 106,
+   "el": "div.mx-auto > figure > div.border > img.block",
+   "obs": 197,
+   "obs_n": 6,
+   "bench": 0,
+   "reihen": "e4l2-v4a,e4l2-v4a-w2"
+  },
+  "/fliesen": {
+   "n": 6,
+   "lcp_median": 2946,
+   "spanne": "2936–3467",
+   "perf": 94,
+   "tbt": 75,
+   "el": "div.relative > section.relative > div.mx-auto > p.mt-8",
+   "obs": 231,
+   "obs_n": 6,
+   "bench": 0,
+   "reihen": "e4l2-v4a,e4l2-v4a-w2"
+  },
+  "/standorte/wetzlar": {
+   "n": 6,
+   "lcp_median": 4604,
+   "spanne": "4523–4671",
+   "perf": 83,
+   "tbt": 121,
+   "el": "div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block",
+   "obs": 785,
+   "obs_n": 6,
+   "bench": 0,
+   "reihen": "e4l2-v4a,e4l2-v4a-w2"
+  }
+ },
+ "v4c": {
+  "/bad": {
+   "n": 3,
+   "lcp_median": 3464,
+   "spanne": "3134–3505",
+   "perf": 90,
+   "tbt": 134,
+   "el": "div.mx-auto > figure > div.border > img.block",
+   "obs": 229,
+   "obs_n": 3,
+   "bench": 0,
+   "reihen": "e4l2-v4c"
+  },
+  "/bad/badsanierung": {
+   "n": 3,
+   "lcp_median": 2866,
+   "spanne": "2865–3391",
+   "perf": 92,
+   "tbt": 160,
+   "el": "div.mx-auto > figure > div.border > img.block",
+   "obs": 213,
+   "obs_n": 3,
+   "bench": 0,
+   "reihen": "e4l2-v4c"
+  },
+  "/fliesen": {
+   "n": 3,
+   "lcp_median": 3438,
+   "spanne": "2791–3440",
+   "perf": 91,
+   "tbt": 82,
+   "el": "div.relative > section.relative > div.mx-auto > p.mt-8",
+   "obs": 232,
+   "obs_n": 3,
+   "bench": 0,
+   "reihen": "e4l2-v4c"
+  },
+  "/standorte/wetzlar": {
+   "n": 3,
+   "lcp_median": 4449,
+   "spanne": "4447–4597",
+   "perf": 82,
+   "tbt": 147,
+   "el": "div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block",
+   "obs": 818,
+   "obs_n": 3,
+   "bench": 0,
+   "reihen": "e4l2-v4c"
+  }
+ },
+ "v5": {
+  "/bad": {
+   "n": 3,
+   "lcp_median": 3466,
+   "spanne": "3465–3466",
+   "perf": 91,
+   "tbt": 96,
+   "el": "div.mx-auto > figure > div.border > img.block",
+   "obs": 194,
+   "obs_n": 3,
+   "bench": 0,
+   "reihen": "e4l2-v5"
+  },
+  "/bad/badsanierung": {
+   "n": 3,
+   "lcp_median": 3300,
+   "spanne": "2871–3388",
+   "perf": 91,
+   "tbt": 129,
+   "el": "div.mx-auto > figure > div.border > img.block",
+   "obs": 208,
+   "obs_n": 3,
+   "bench": 0,
+   "reihen": "e4l2-v5"
+  },
+  "/fliesen": {
+   "n": 3,
+   "lcp_median": 3023,
+   "spanne": "2863–3642",
+   "perf": 94,
+   "tbt": 65,
+   "el": "div.relative > section.relative > div.mx-auto > p.mt-8",
+   "obs": 224,
+   "obs_n": 3,
+   "bench": 0,
+   "reihen": "e4l2-v5"
+  },
+  "/standorte/wetzlar": {
+   "n": 6,
+   "lcp_median": 4634,
+   "spanne": "4601–4676",
+   "perf": 81,
+   "tbt": 183,
+   "el": "div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block",
+   "obs": 834,
+   "obs_n": 6,
+   "bench": 0,
+   "reihen": "e4l2-v5,e4l2-v5-w2"
+  }
+ },
+ "v6": {
+  "/bad": {
+   "n": 9,
+   "lcp_median": 3384,
+   "spanne": "2935–3389",
+   "perf": 92,
+   "tbt": 107,
+   "el": "div.mx-auto > figure > div.border > img.block",
+   "obs": 207,
+   "obs_n": 9,
+   "bench": 0,
+   "reihen": "e4l2-v6,e4l2-v6-w2,e4l2-v6-w3"
+  },
+  "/bad/badsanierung": {
+   "n": 9,
+   "lcp_median": 3298,
+   "spanne": "2861–3321",
+   "perf": 90,
+   "tbt": 157,
+   "el": "div.mx-auto > figure > div.border > img.block",
+   "obs": 226,
+   "obs_n": 9,
+   "bench": 0,
+   "reihen": "e4l2-v6,e4l2-v6-w2,e4l2-v6-w3"
+  },
+  "/fliesen": {
+   "n": 9,
+   "lcp_median": 3308,
+   "spanne": "2793–3458",
+   "perf": 92,
+   "tbt": 132,
+   "el": "div.relative > section.relative > div.mx-auto > p.mt-8",
+   "obs": 256,
+   "obs_n": 9,
+   "bench": 0,
+   "reihen": "e4l2-v6,e4l2-v6-w2,e4l2-v6-w3"
+  },
+  "/standorte/wetzlar": {
+   "n": 9,
+   "lcp_median": 4609,
+   "spanne": "4581–4737",
+   "perf": 82,
+   "tbt": 132,
+   "el": "div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block",
+   "obs": 821,
+   "obs_n": 9,
+   "bench": 0,
+   "reihen": "e4l2-v6,e4l2-v6-w2,e4l2-v6-w3"
+  }
+ }
+}
