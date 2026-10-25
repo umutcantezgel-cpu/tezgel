@@ -12,7 +12,7 @@
 - Brotkrumen: `Start › Bad`
 - Ort: `Für Aßlar, Wetzlar und Umgebung.`
 - H1: `Aus Ihrem alten Bad wird ein neues, das Sie gern nutzen.`
-- Vorspann: `Vielleicht ist Ihr Bad in die Jahre gekommen, und Sie wissen nicht, wo Sie anfangen sollen. Wir bauen es für Sie um, Schritt für Schritt. Ob große Fliesen oder eine [[bodengleiche-dusche|bodengleiche Dusche]] zu Ihrem Bad passen, besprechen wir mit Ihnen.`
+- Vorspann: `Vielleicht ist Ihr Bad in die Jahre gekommen, und Sie wissen nicht, wo Sie anfangen sollen. Wir bauen es für Sie um, Schritt für Schritt. Passen große Fliesen zu Ihrem Bad? Oder eine [[bodengleiche-dusche|bodengleiche Dusche]]? Das besprechen wir mit Ihnen.`
 - Hauptknopf: `Termin vor Ort anfragen` → `/kontakt` · Kontakt: `Anrufen: {{COMPANY_DATA.contact.phone}}` (derselbe Hauptknopf wie in Abschnitt 6, K-004)
 - Bild: `{Bild: bad-einstieg}` Alt: `Helles Bad mit Glasdusche, WC an der Wand, Holzoptik am Boden und Waschtisch`
 
@@ -29,10 +29,10 @@
 ## 3 · Was wir tun
 - H2: `Wir arbeiten Schicht für Schicht.`
 - Vier Fliesen (eine Aussage je Fliese):
-  1. `Zuerst prüfen wir den [[untergrund|Untergrund]] und machen ihn bereit für die neuen Schichten.`
+  1. `Zuerst prüfen wir den [[untergrund|Untergrund]]. Dann machen wir ihn bereit für die neuen Schichten.`
   2. `Der Duschboden bekommt ein leichtes [[gefaelle|Gefälle]].`
   3. `Auf dem Untergrund kommt eine [[abdichtung|Abdichtung]].`
-  4. `Im Bad verlegen wir rutschfeste Fliesen, je nach Raum mit [[rutschhemmung|Rutschhemmung R10 oder R11]].` (F-22)
+  4. `Im Bad verlegen wir rutschfeste Fliesen. Je nach Raum haben sie die [[rutschhemmung|Rutschhemmung R10 oder R11]].` (F-22)
 - Großer Moment `schichten`: Zeichnung ohne Foto, von unten nach oben. Unterschrift: `So ist eine Fläche im Bad aufgebaut, von unten nach oben.`
   1. `Untergrund` · `Darauf wird alles aufgebaut.`
   2. `Abdichtung` · `Die Abdichtung liegt zwischen Untergrund und Kleber.`
@@ -47,7 +47,7 @@
   1. `Termin bei Ihnen vor Ort` · `Deniz Tezgel schaut sich Ihr Bad genau an und prüft Boden und Wände. Der Termin ist kostenfrei.` (F-02, F-12)
   2. `Planen und auswählen` · `Sie wählen mit uns Fliesen und Ausstattung aus. Danach bekommen Sie ein Festpreisangebot. Das heißt: Der Preis steht fest.` (K-015, Versprechen)
   3. `Umbauen und übergeben` · `Wir schützen Ihre Wohnung vor Staub und übergeben Ihnen das Bad sauber gefegt. Am Ende gehen wir es gemeinsam mit Ihnen durch.` (F-17, F-11)
-- Hinweis Zuschuss: `Haben Sie einen Pflegegrad? Dann kann die Pflegekasse beim [[barrierefrei|barrierefreien]] Umbau bis zu 4.180 € je Person dazugeben.` Link: `Mehr zum Zuschuss` → `/foerderung` (F-23, F-25)
+- Hinweis Zuschuss: `Haben Sie einen Pflegegrad? Dann kann die Pflegekasse bis zu 4.180 € je Person dazugeben. Das gilt für einen [[barrierefrei|barrierefreien]] Umbau.` Link: `Mehr zum Zuschuss` → `/foerderung` (F-23, F-25)
 
 ## 5 · Beleg
 - H2: `Bäder, die wir gebaut haben.`

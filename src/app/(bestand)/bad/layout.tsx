@@ -1,6 +1,7 @@
 import React from 'react';
 import { buildGraph, buildBreadcrumbNode, buildWebPageNode, buildServiceNode, SITE_URL } from '@/lib/schema';
 import JsonLd from '@/components/seo/JsonLd';
+import { BAD } from '@/inhalte/bad';
 
 const pageUrl = `${SITE_URL}/bad`;
 const breadcrumbs = [
@@ -11,9 +12,9 @@ const breadcrumbs = [
 const badSchema = buildGraph([
   buildWebPageNode({
     url: pageUrl,
-    name: 'Badsanierung Wetzlar & Aßlar | Fachbetrieb Tezgel',
-    description:
-      'Schlüsselfertige Badsanierung in Wetzlar & Aßlar: barrierefreie Walk-In Duschen, XXL-Fliesen & DIN 18534 Abdichtung. Jetzt Festpreisangebot anfragen!',
+    // wie Titel und Beschreibung der Seite (Abnahme E3-BAU-01)
+    name: BAD.meta.titel,
+    description: BAD.meta.beschreibung,
     breadcrumbItems: breadcrumbs,
   }),
   buildBreadcrumbNode(breadcrumbs, pageUrl),

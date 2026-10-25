@@ -5,7 +5,7 @@
 import type { ErzaehlInhalt } from '@/components/vorlagen/inhalt';
 
 const VORSPANN =
-  'Vielleicht ist Ihr Bad in die Jahre gekommen, und Sie wissen nicht, wo Sie anfangen sollen. Wir bauen es für Sie um, Schritt für Schritt. Ob große Fliesen oder eine [[bodengleiche-dusche|bodengleiche Dusche]] zu Ihrem Bad passen, besprechen wir mit Ihnen.';
+  'Vielleicht ist Ihr Bad in die Jahre gekommen, und Sie wissen nicht, wo Sie anfangen sollen. Wir bauen es für Sie um, Schritt für Schritt. Passen große Fliesen zu Ihrem Bad? Oder eine [[bodengleiche-dusche|bodengleiche Dusche]]? Das besprechen wir mit Ihnen.';
 
 export const BAD: ErzaehlInhalt = {
   pfad: '/bad',
@@ -48,10 +48,10 @@ export const BAD: ErzaehlInhalt = {
     // Vorspann der Textdatei (Regel 2): so bleibt er für Suchmaschinen auf der Seite
     einleitung: VORSPANN,
     punkte: [
-      'Zuerst prüfen wir den [[untergrund|Untergrund]] und machen ihn bereit für die neuen Schichten.',
+      'Zuerst prüfen wir den [[untergrund|Untergrund]]. Dann machen wir ihn bereit für die neuen Schichten.',
       'Der Duschboden bekommt ein leichtes [[gefaelle|Gefälle]].',
       'Auf dem Untergrund kommt eine [[abdichtung|Abdichtung]].',
-      'Im Bad verlegen wir rutschfeste Fliesen, je nach Raum mit [[rutschhemmung|Rutschhemmung R10 oder R11]].',
+      'Im Bad verlegen wir rutschfeste Fliesen. Je nach Raum haben sie die [[rutschhemmung|Rutschhemmung R10 oder R11]].',
     ],
     // ohne den Satz zur Handwerkskammer (Regel 3)
     absatz: 'Seit 2019 arbeiten wir bei der Abdichtung standardmäßig nach [[din-18534|DIN 18534]].',
@@ -73,7 +73,7 @@ export const BAD: ErzaehlInhalt = {
       },
     ],
     hinweis: {
-      text: 'Haben Sie einen Pflegegrad? Dann kann die Pflegekasse beim [[barrierefrei|barrierefreien]] Umbau bis zu 4.180 € je Person dazugeben.',
+      text: 'Haben Sie einen Pflegegrad? Dann kann die Pflegekasse bis zu 4.180 € je Person dazugeben. Das gilt für einen [[barrierefrei|barrierefreien]] Umbau.',
       verweis: { name: 'Mehr zum Zuschuss', href: '/foerderung' },
     },
   },
@@ -96,6 +96,8 @@ export const BAD: ErzaehlInhalt = {
     hilfen: [
       { name: 'Badanfrage', href: '/bad/badanfrage', satz: 'Schreiben Sie uns, was Sie sich für Ihr Bad wünschen.' },
       { name: 'Projektcheck', href: '/bad/projekt-check', satz: 'Mit wenigen Fragen sehen Sie online, was bei Ihrem Bad möglich ist.' },
+      // bleibt verlinkt wie im Bestand (Abnahme E3-BAU-01; die Seite steht auch im Menü)
+      { name: 'Badplaner', href: '/bad/badplaner' },
     ],
   },
 };
