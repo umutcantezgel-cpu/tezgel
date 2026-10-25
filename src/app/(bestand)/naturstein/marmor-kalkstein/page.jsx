@@ -25,6 +25,7 @@ import Merkliste from '@/components/kern/Merkliste';
 import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 
 export const metadata = createMetadata({
     title: 'Marmor & Travertin verlegen lassen | Fliesen Tezgel',
@@ -117,6 +118,12 @@ const TEXT = 'max-w-mass space-y-4 font-text text-fs-3 text-tinte-2';
 export default function MarmorKalksteinPage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/naturstein/marmor-kalkstein"
+                titel="Marmor & Travertin verlegen lassen | Fliesen Tezgel"
+                beschreibung="Marmor, Travertin & Kalkstein fachgerecht verlegen lassen: verfärbungsfreie Kleber, Imprägnierung & Schutz. Fachbetrieb Tezgel in Aßlar & Wetzlar."
+                brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Naturstein', href: '/naturstein' }, { name: 'Marmor, Travertin und Kalkstein: edle Natursteine richtig verlegen' }]}
+            />
             {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt „naturstein“ */}
             <section aria-labelledby="marmor-heading">
                 <Einstieg

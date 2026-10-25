@@ -23,6 +23,7 @@ import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import Schrittfolge from '@/components/kern/Schrittfolge';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import { linkKlassen } from '@/components/kern/stile';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 
 export const metadata = createMetadata({
     title: 'Treppenhaus sanieren: Fliesen & Naturstein | Tezgel',
@@ -108,6 +109,12 @@ const FUGENTEXT_TEXT = 'mt-4 max-w-mass font-text text-fs-3 text-tinte-2';
 export default function TreppenhausPage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/treppen/treppenhaus"
+                titel="Treppenhaus sanieren: Fliesen & Naturstein | Tezgel"
+                beschreibung="Treppenhaus im MFH neu fliesen & sanieren: trittsichere Beläge, abschnittsweises Arbeiten im bewohnten Haus & Hausverwaltungs-Service. Tezgel Fachbetrieb."
+                brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Treppen', href: '/treppen' }, { name: 'Treppenhaus sanieren: neue Beläge im Mehrfamilienhaus' }]}
+            />
             {/* 1. EINSTIEG: Kennzeile, H1 an der Laserachse, Vorspann, Knopf und Telefon; rechts das Planblatt „treppe“ */}
             <section aria-labelledby="treppenhaus-heading">
                 <Einstieg

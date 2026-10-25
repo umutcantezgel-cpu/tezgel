@@ -22,6 +22,7 @@ import Merkliste from '@/components/kern/Merkliste';
 import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 
 export const metadata = createMetadata({
     title: 'Altfliesen überkleben: Wann es fachgerecht geht | Tezgel',
@@ -136,6 +137,12 @@ function Punkte({ eintraege, marke = 'kreuz', className }) {
 export default function FliesenAufFliesenPage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/untergrund-abdichtung/fliesen-auf-fliesen"
+                titel="Altfliesen überkleben: Wann es fachgerecht geht | Tezgel"
+                beschreibung="Altfliesen überkleben (Überfliesen): Prüfkriterien, Haftbrücke, Aufbauhöhen & wann Rückbau besser ist. Fachbetrieb Tezgel in Aßlar & Wetzlar."
+                brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Untergrund und Abdichtung', href: '/untergrund-abdichtung' }, { name: 'Altfliesen überkleben: Wann es fachgerecht geht bei Tezgel' }]}
+            />
             {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt mit dem Plan „reparatur“ */}
             <section aria-labelledby="ueberfliesen-heading">
                 <Einstieg

@@ -21,6 +21,7 @@ import Knopf from '@/components/kern/Knopf';
 import Leitachse from '@/components/kern/Leitachse';
 import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import Verlegeplan from '@/components/kern/Verlegeplan';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 
 const APPRENTICESHIP_TITLE = 'Fliesen-, Platten- und Mosaikleger (m/w/d)';
 
@@ -41,6 +42,12 @@ export default function AusbildungPage() {
 
     return (
         <>
+            <SeitenDaten
+                pfad="/karriere/ausbildung"
+                titel="Ausbildung Fliesenleger (m/w/d) | Fachbetrieb Tezgel"
+                beschreibung="Ausbildung zum Fliesenleger (m/w/d) in Aßlar & Wetzlar bei Tezgel: solides Handwerk, modernste Verlegetechnik & starkes Team. Jetzt unkompliziert bewerben!"
+                brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Arbeiten bei uns', href: '/karriere' }, { name: 'Ausbildung zum Fliesen-, Platten- und Mosaikleger (m/w/d)' }]}
+            />
             {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann; rechts das Planblatt „fugen“ */}
             <Einstieg
                 art="erzaehl"

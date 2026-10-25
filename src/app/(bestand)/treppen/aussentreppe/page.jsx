@@ -24,6 +24,7 @@ import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import Schrittfolge from '@/components/kern/Schrittfolge';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import { linkKlassen } from '@/components/kern/stile';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 
 export const metadata = createMetadata({
     title: 'Außentreppe fliesen: frostsicher & rutschfest | Tezgel',
@@ -140,6 +141,12 @@ function FugenListe({ eintraege, className }) {
 export default function AussentreppePage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/treppen/aussentreppe"
+                titel="Außentreppe fliesen: frostsicher & rutschfest | Tezgel"
+                beschreibung="Außentreppe frostsicher fliesen & sanieren: rutschhemmende Platten, Gefälleausbildung & Abdichtung. Fliesenleger-Fachbetrieb Tezgel in Wetzlar & Aßlar."
+                brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Treppen', href: '/treppen' }, { name: 'Außentreppe fliesen: frostsicher & rutschfest bei Tezgel' }]}
+            />
             {/* 1. EINSTIEG: Kennzeile, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt „treppe“ */}
             <section aria-labelledby="aussentreppe-heading">
                 <Einstieg

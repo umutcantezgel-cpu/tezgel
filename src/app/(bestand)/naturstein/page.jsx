@@ -7,7 +7,7 @@
 // 5. Verlegung (Fliese): Schrittfolge, ab lg als Reihe · 6. Imprägnierung und Pflege (Kalk): Kopf seitlich mit Warnhinweis,
 // Pflegeregeln als Liste an der Fuge · 7. Beratung und Aufmaß (Fliese): drei Wege, darunter die weiterführenden Ratgeber.
 // Wortlaut, Überschriften, Links, IDs und Lesefolge wie im Bestand. Kein Auftritt und kein großer Moment.
-// Metadaten und Daten unverändert; JSON-LD im layout.tsx der Route.
+// Metadaten und Daten unverändert; JSON-LD setzt die Seite selbst (SeitenDaten).
 import Link from 'next/link';
 import clsx from 'clsx';
 import { COMPANY_DATA } from '@/config/company';
@@ -29,6 +29,8 @@ import Schrittfolge from '@/components/kern/Schrittfolge';
 import Tabelle from '@/components/kern/Tabelle';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
+import SeitenDaten from '@/components/seo/SeitenDaten';
+import { buildServiceNode, SITE_URL } from '@/lib/schema';
 
 export const metadata = createMetadata({
     title: 'Naturstein verlegen Wetzlar & Aßlar | Granit · Tezgel',
@@ -177,6 +179,22 @@ function Punkt({ children }) {
 export default function NatursteinPage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/naturstein"
+                titel="Naturstein verlegen Wetzlar & Aßlar | Granit · Tezgel"
+                beschreibung="Naturstein fachgerecht verlegen in Wetzlar & Aßlar: Granit, Marmor, Kalkstein, Travertin & Schiefer. Verfärbungsfreie Verklebung. Aufmaß vor Ort kostenfrei!"
+                brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Naturstein- und Granitverlegung vom Fachbetrieb' }]}
+                weitere={[
+                    buildServiceNode({
+                        name: 'Natursteinverlegung & Veredelung',
+                        serviceType: 'Granit-, Marmor-, Kalkstein- & Schieferverlegung',
+                        description:
+                            'Fachgerechte Verlegung von Natursteinbelägen in Aßlar, Wetzlar und Hessen: Verfärbungsfreie Verklebung, passende Fugenmörtel und Oberflächenschutz.',
+                        url: `${SITE_URL}/naturstein`,
+                        areaServed: 'Aßlar, Wetzlar & Mittelhessen',
+                    }),
+                ]}
+            />
             {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt „naturstein“ */}
             <section aria-labelledby="naturstein-heading">
                 <Einstieg

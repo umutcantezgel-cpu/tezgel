@@ -1,6 +1,7 @@
 import { posts } from '@/config/posts';
 import { COMPANY_DATA } from '@/config/company';
 import { buildGraph, buildArticleNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
+import { createMetadata } from '@/lib/metadata';
 import JsonLd from '@/components/seo/JsonLd';
 
 export function generateStaticParams() {
@@ -65,17 +66,20 @@ export default async function Layout({ children, params }) {
   let postSchemaGraph = null;
   if (post) {
     const pageUrl = `${SITE_URL}/blog/${post.slug}`;
+    // Brotkrumen und WebPage wie die Seite (E3-SEO-JSONLD): Titel und Beschreibung aus demselben createMetadata-Aufruf wie
+    // generateMetadata in page.jsx, Namen wie sichtbar („Start“, „Ratgeber“)
     const breadcrumbs = [
-      { name: 'Home', path: '/' },
-      { name: 'Blog', path: '/blog' },
+      { name: 'Start', path: '/' },
+      { name: 'Ratgeber', path: '/blog' },
       { name: post.title, path: `/blog/${post.slug}` },
     ];
+    const seite = createMetadata({ title: post.title, description: post.excerpt, path: `/blog/${post.slug}` });
 
     postSchemaGraph = buildGraph([
       buildWebPageNode({
         url: pageUrl,
-        name: `${post.title} | ${COMPANY_DATA.legalName}`,
-        description: post.excerpt || post.title,
+        name: seite.title.absolute,
+        description: seite.description,
         breadcrumbItems: breadcrumbs,
       }),
       buildBreadcrumbNode(breadcrumbs, pageUrl),

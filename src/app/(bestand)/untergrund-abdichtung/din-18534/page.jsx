@@ -23,6 +23,7 @@ import Schrittfolge from '@/components/kern/Schrittfolge';
 import Tabelle from '@/components/kern/Tabelle';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import { linkKlassen } from '@/components/kern/stile';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 
 export const metadata = createMetadata({
     title: 'DIN 18534 Verbundabdichtung: Bad & Dusche | Tezgel',
@@ -142,6 +143,12 @@ const READ_MORE = [
 export default function Din18534Page() {
     return (
         <>
+            <SeitenDaten
+                pfad="/untergrund-abdichtung/din-18534"
+                titel="DIN 18534 Verbundabdichtung: Bad & Dusche | Tezgel"
+                beschreibung="DIN 18534 Verbundabdichtung für Bad & Dusche: Wassereinwirkungsklassen W0-I bis W3-I, Dichtbänder & Rohrmanschetten. Normgerecht ausgeführt von Tezgel."
+                brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Untergrund und Abdichtung', href: '/untergrund-abdichtung' }, { name: 'Verbundabdichtung nach DIN 18534: dicht unter der Fliese' }]}
+            />
             {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt „abdichtung“ ohne Achse */}
             <section aria-labelledby="din-heading">
                 <Einstieg

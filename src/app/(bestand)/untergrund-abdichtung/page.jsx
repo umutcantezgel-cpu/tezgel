@@ -22,6 +22,8 @@ import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import Schrittfolge from '@/components/kern/Schrittfolge';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import { linkKlassen, seitenKlassen } from '@/components/kern/stile';
+import SeitenDaten from '@/components/seo/SeitenDaten';
+import { buildServiceNode, SITE_URL } from '@/lib/schema';
 
 export const metadata = createMetadata({
     title: 'Untergrund & Abdichtung für Fliesen | Fachbetrieb Tezgel',
@@ -141,6 +143,22 @@ const NAME =
 export default function UntergrundAbdichtungPage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/untergrund-abdichtung"
+                titel="Untergrund & Abdichtung für Fliesen | Fachbetrieb Tezgel"
+                beschreibung="Untergrundvorbereitung & DIN 18534 Verbundabdichtung für Fliesen in Wetzlar & Aßlar: Estrichprüfung, Entkopplung & Gefälleausgleich. Jetzt beraten lassen!"
+                brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Untergrund und Abdichtung: das Fundament jedes Fliesenbelags' }]}
+                weitere={[
+                    buildServiceNode({
+                        name: 'Untergrundvorbereitung & DIN 18534 Verbundabdichtung',
+                        serviceType: 'Estrichprüfung, Gefälleausgleich, Entkopplung & Verbundabdichtung',
+                        description:
+                            'Normgerechte Untergrundvorbereitung und DIN 18534 Verbundabdichtung im Sanitär- und Außenbereich in Aßlar, Wetzlar und Hessen.',
+                        url: `${SITE_URL}/untergrund-abdichtung`,
+                        areaServed: 'Aßlar, Wetzlar & Mittelhessen',
+                    }),
+                ]}
+            />
             {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt „untergrund“ ohne Achse */}
             <section aria-labelledby="untergrund-heading">
                 <Einstieg

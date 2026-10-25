@@ -26,6 +26,7 @@ import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import Schrittfolge from '@/components/kern/Schrittfolge';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import { linkKlassen } from '@/components/kern/stile';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 
 export const metadata = createMetadata({
     title: 'Balkonsanierung Wetzlar & Aßlar | Abdichtung · Tezgel',
@@ -121,6 +122,12 @@ function Fachthema({ titelId, titel, children }) {
 export default function BalkonsanierungPage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/balkon-terrasse/balkonsanierung"
+                titel="Balkonsanierung Wetzlar & Aßlar | Abdichtung · Tezgel"
+                beschreibung="Balkonsanierung in Wetzlar & Aßlar: Fachgerechte Abdichtung, Gefälleerstellung & neuer Fliesenbelag vom Fachbetrieb. Jetzt Festpreisangebot anfragen!"
+                brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Balkon und Terrasse', href: '/balkon-terrasse' }, { name: 'Balkon sanieren: vom undichten Altbelag zur dauerhaften Lösung' }]}
+            />
             {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt „balkon“ */}
             <section aria-labelledby="balkonsanierung-heading">
                 <Einstieg

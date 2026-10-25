@@ -21,6 +21,7 @@ import Merkliste from '@/components/kern/Merkliste';
 import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 
 export const metadata = createMetadata({
     title: 'Fliesen auf Holzboden verlegen: Entkopplung | Tezgel',
@@ -122,6 +123,12 @@ function Punkte({ eintraege, marke = 'kreuz', className }) {
 export default function EntkopplungPage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/untergrund-abdichtung/entkopplung"
+                titel="Fliesen auf Holzboden verlegen: Entkopplung | Tezgel"
+                beschreibung="Fliesen auf Holzdielen, Mischuntergründen & gerissenem Estrich sicher verlegen: Entkopplungsmatten & Rissverharzung erklärt vom Fachbetrieb Tezgel."
+                brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Untergrund und Abdichtung', href: '/untergrund-abdichtung' }, { name: 'Fliesen auf Holzboden verlegen: Entkopplung bei Tezgel' }]}
+            />
             {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt mit dem Plan „untergrund“ */}
             <section aria-labelledby="entkopplung-heading">
                 <Einstieg

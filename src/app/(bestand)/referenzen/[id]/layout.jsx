@@ -1,6 +1,7 @@
 import { PORTFOLIO_PROJECTS, isPlaceholderProject } from '@/config/projects';
 import { buildGraph, buildProjectNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
 import JsonLd from '@/components/seo/JsonLd';
+import { createMetadata } from '@/lib/metadata';
 
 export function generateStaticParams() {
   return PORTFOLIO_PROJECTS.map((project) => ({
@@ -81,18 +82,21 @@ export default async function Layout({ children, params }) {
   let projectSchemaGraph = null;
   if (project) {
     const pageUrl = `${SITE_URL}/referenzen/${project.id}`;
+    // Brotkrumen und WebPage wie die Seite (E3-SEO-JSONLD): Titel und Beschreibung aus demselben createMetadata-Aufruf wie
+    // generateMetadata in page.jsx, Namen wie sichtbar („Start“)
     const breadcrumbs = [
-      { name: 'Home', path: '/' },
+      { name: 'Start', path: '/' },
       { name: 'Referenzen', path: '/referenzen' },
       { name: project.title, path: `/referenzen/${project.id}` },
     ];
+    const seite = createMetadata({ title: project.title, description: project.description, path: `/referenzen/${project.id}` });
     const primaryImage = project.images?.find((img) => img.type === 'after')?.url || project.images?.[0]?.url;
 
     projectSchemaGraph = buildGraph([
       buildWebPageNode({
         url: pageUrl,
-        name: `${getMetaTitle(project)} | Fliesenverlegung Tezgel`,
-        description: project.description,
+        name: seite.title.absolute,
+        description: seite.description,
         breadcrumbItems: breadcrumbs,
       }),
       buildBreadcrumbNode(breadcrumbs, pageUrl),

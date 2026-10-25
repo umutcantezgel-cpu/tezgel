@@ -22,6 +22,7 @@ import Leitachse, { ACHSE_LAGE } from '@/components/kern/Leitachse';
 import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import { linkKlassen, seitenKlassen } from '@/components/kern/stile';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 
 export const metadata = createMetadata({
     title: 'Terrassenplatten auf Stelzlagern verlegen | Tezgel',
@@ -110,6 +111,12 @@ const UNTERSTRICH = 'decoration-1 underline-offset-4 decoration-tinte pointer-fi
 export default function StelzlagerPage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/balkon-terrasse/stelzlager"
+                titel="Terrassenplatten auf Stelzlagern verlegen | Tezgel"
+                beschreibung="Terrassenplatten auf Stelzlagern verlegen lassen: höhenverstellbar, frostsicher & drainagefähig. Fachbetrieb Tezgel in Wetzlar & Aßlar. Jetzt anfragen!"
+                brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Balkon und Terrasse', href: '/balkon-terrasse' }, { name: 'Terrassenplatten auf Stelzlagern verlegen mit Tezgel' }]}
+            />
             {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt mit dem Plan „aussen“ */}
             <section aria-labelledby="stelzlager-heading">
                 <Einstieg

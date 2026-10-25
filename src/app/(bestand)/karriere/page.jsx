@@ -7,9 +7,9 @@
 // Fuge – Ort als Mono-Etikett, Titel, Text, rechts „Jetzt bewerben“ als Nebenknopf (Kalk) · 4. Häufige Fragen zur
 // Bewerbung, Kopf seitlich: Frage und Antwort an der Fuge, darunter die drei Wege Telefon, WhatsApp, E-Mail (Fliese).
 // Danach das Qualitätsversprechen (Kalk).
-// Wortlaut, Links und Lesefolge wie im Bestand; die erste Stelle und die Fragen spiegeln das JSON-LD in ./layout.tsx.
+// Wortlaut, Links und Lesefolge wie im Bestand; die erste Stelle und die Fragen stehen zugleich als JSON-LD dieser Seite.
 // Serverkomponente. Kein Auftritt und kein großer Moment; `spaet` auf allen Abschnitten unter dem ersten Bildschirm
-// (keine Sprungziele, keine Formulare). Metadaten und JSON-LD bleiben in ./layout.tsx.
+// (keine Sprungziele, keine Formulare). Metadaten bleiben in ./layout.tsx.
 import { COMPANY_DATA } from '@/config/company';
 import Icon from '@/components/icons/Icon';
 import QualityPromise from '@/components/sections/QualityPromise';
@@ -23,6 +23,8 @@ import Leitachse from '@/components/kern/Leitachse';
 import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import { etikettKlassen } from '@/components/kern/stile';
+import SeitenDaten from '@/components/seo/SeitenDaten';
+import { buildFaqNode, buildJobPostingNode, SITE_URL } from '@/lib/schema';
 
 const { contact, authority, headquarters, business } = COMPANY_DATA;
 
@@ -34,7 +36,7 @@ const HIGHLIGHTS = [
     { icon: 'ort', title: 'Regionale Baustellen', desc: `Unsere Projekte liegen in ${headquarters.city}, Wetzlar, Gießen und Mittelhessen – für Großprojekte auch in ganz Hessen.` }
 ];
 
-// The first entry is mirrored as JobPosting JSON-LD in ./layout.tsx.
+// The first entry is also the JobPosting data (KARRIERE_STELLE).
 const JOBS = [
     {
         title: 'Fliesenleger (m/w/d) – Geselle oder erfahrene Fachkraft',
@@ -54,7 +56,7 @@ const JOBS = [
     }
 ];
 
-// Keep in sync with the FAQPage JSON-LD in ./layout.tsx (same questions & answers).
+// The same questions and answers are the FAQPage data of this page.
 const KARRIERE_FAQS = [
     {
         q: 'Wie läuft der Bewerbungsprozess ab?',
@@ -72,9 +74,30 @@ const KARRIERE_FAQS = [
 
 const applyHref = (title) => `mailto:${contact.email}?subject=${encodeURIComponent(`Bewerbung ${title}`)}`;
 
+// Strukturierte Daten dieser Seite (bisher im layout.tsx): die erste Stelle als JobPosting, die Fragen als FAQPage
+const KARRIERE_STELLE = {
+    // Titel wie die sichtbare Stellenanzeige (E3-SEO-JSONLD)
+    title: 'Fliesenleger (m/w/d) – Geselle oder erfahrene Fachkraft',
+    description:
+        'Verlegung von Fliesen, Platten und Naturstein in Bädern, Wohnbereichen sowie auf Balkonen und Terrassen – von der Untergrundvorbereitung über die DIN-18534-Verbundabdichtung bis zur fugenarmen XXL-Großformatverlegung.'
+};
+
 export default function KarrierePage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/karriere"
+                titel="Fliesenleger Jobs Wetzlar & Aßlar | Karriere Tezgel"
+                beschreibung={`Fliesenleger (m/w/d) gesucht! Jobs bei Fliesenverlegung Tezgel in ${headquarters.city} & Wetzlar: faire Bezahlung, modernes Werkzeug & gutes Team. Jetzt bewerben!`}
+                brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Fliesenleger Jobs & Karriere bei Tezgel in Wetzlar & Aßlar' }]}
+                weitere={[
+                    buildJobPostingNode(KARRIERE_STELLE, `${SITE_URL}/karriere`),
+                    buildFaqNode(
+                        KARRIERE_FAQS.map((f) => ({ question: f.q, answer: f.a })),
+                        `${SITE_URL}/karriere`
+                    ),
+                ]}
+            />
             {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, die zwei Bewerbungswege; rechts das Planblatt „grossformat“ */}
             <Einstieg
                 art="erzaehl"

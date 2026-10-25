@@ -22,6 +22,7 @@ import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import Tabelle from '@/components/kern/Tabelle';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import { linkKlassen } from '@/components/kern/stile';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 
 export const metadata = createMetadata({
     title: 'Untergrund ausgleichen & Gefälle herstellen | Tezgel',
@@ -113,6 +114,12 @@ const READ_MORE = [
 export default function AusgleichGefaellePage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/untergrund-abdichtung/ausgleich-gefaelle"
+                titel="Untergrund ausgleichen & Gefälle herstellen | Tezgel"
+                beschreibung="Unebene Böden & Wände vor dem Fliesen ausgleichen: Ebenheit nach DIN 18202, Spachtelung & Gefälleausbildung zu Abläufen. Fachbetrieb Tezgel in Hessen."
+                brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Untergrund und Abdichtung', href: '/untergrund-abdichtung' }, { name: 'Untergrund ausgleichen und Gefälle herstellen: eben verlegen, Wasser gezielt ableiten' }]}
+            />
             {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt mit dem Plan „abdichtung“ */}
             <section aria-labelledby="ausgleich-heading">
                 <Einstieg

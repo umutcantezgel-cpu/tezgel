@@ -23,6 +23,7 @@ import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import Tabelle from '@/components/kern/Tabelle';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import { linkKlassen } from '@/components/kern/stile';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 
 export const metadata = createMetadata({
     title: 'Innentreppe fliesen lassen | Stufen & Kanten · Tezgel',
@@ -111,6 +112,12 @@ export default function InnentreppePage() {
 
     return (
         <>
+            <SeitenDaten
+                pfad="/treppen/innentreppe"
+                titel="Innentreppe fliesen lassen | Stufen & Kanten · Tezgel"
+                beschreibung="Innentreppe im Haus fliesen lassen: Stufen aus Feinsteinzeug oder Naturstein, Gehrungskanten & Sockel. Fachbetrieb Tezgel – Jetzt Angebot anfragen!"
+                brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Treppen', href: '/treppen' }, { name: 'Innentreppe fliesen: Stufen, Setzstufen und Sockel aus einem Guss' }]}
+            />
             {/* 1. EINSTIEG: Kennzeile, H1 an der Laserachse, Vorspann, zwei Knöpfe, Hinweis zur Voraussetzung; rechts das Planblatt */}
             <section aria-labelledby="innentreppe-heading">
                 <Einstieg

@@ -25,6 +25,7 @@ import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import Tabelle from '@/components/kern/Tabelle';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import { etikettKlassen, linkKlassen, seitenKlassen } from '@/components/kern/stile';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 
 export const metadata = createMetadata({
     title: 'Terrassenplatten verlegen lassen | Fliesen Tezgel',
@@ -118,6 +119,12 @@ const UNTERSTRICH = 'decoration-1 underline-offset-4 decoration-tinte pointer-fi
 export default function TerrassenplattenPage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/balkon-terrasse/terrassenplatten"
+                titel="Terrassenplatten verlegen lassen | Fliesen Tezgel"
+                beschreibung="Terrassenplatten aus Keramik oder Naturstein fachgerecht verlegen lassen: frostsicher, rutschfest & langlebig. Fachbetrieb Tezgel – Jetzt Aufmaß anfragen!"
+                brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Balkon und Terrasse', href: '/balkon-terrasse' }, { name: 'Terrassenplatten richtig wählen: Material, Stärke und Oberfläche' }]}
+            />
             {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt mit dem Plan „aussen“ */}
             <section aria-labelledby="terrassenplatten-heading">
                 <Einstieg

@@ -24,6 +24,7 @@ import Merkliste from '@/components/kern/Merkliste';
 import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 
 export const metadata = createMetadata({
     title: 'Granit & Schiefer verlegen lassen | Fliesen Tezgel',
@@ -83,6 +84,12 @@ const FELD_TEXT = 'max-w-mass space-y-3 font-text text-fs-3 text-tinte-2';
 export default function GranitPage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/naturstein/granit"
+                titel="Granit & Schiefer verlegen lassen | Fliesen Tezgel"
+                beschreibung="Granit- & Schieferbeläge für Boden, Treppe und Außenbereich fachgerecht verlegen lassen: passende Kleber & Imprägnierung. Fachbetrieb Tezgel in Hessen."
+                brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Naturstein', href: '/naturstein' }, { name: 'Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen' }]}
+            />
             {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt „naturstein“ */}
             <section aria-labelledby="granit-heading">
                 <Einstieg

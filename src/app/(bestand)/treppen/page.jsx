@@ -25,6 +25,8 @@ import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import Schrittfolge from '@/components/kern/Schrittfolge';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
+import SeitenDaten from '@/components/seo/SeitenDaten';
+import { buildServiceNode, SITE_URL } from '@/lib/schema';
 
 export const metadata = createMetadata({
     title: 'Treppe fliesen & sanieren Wetzlar | Fachbetrieb Tezgel',
@@ -127,6 +129,22 @@ function FugenListe({ eintraege, className }) {
 export default function TreppenPage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/treppen"
+                titel="Treppe fliesen & sanieren Wetzlar | Fachbetrieb Tezgel"
+                beschreibung="Treppe fliesen & sanieren in Wetzlar & Aßlar: Innentreppen, Außentreppen & Treppenhäuser mit Fliesen oder Naturstein belegen. Jetzt Angebot anfragen!"
+                brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Treppen neu belegen: Welche Lösung passt zu Ihrer Treppe?' }]}
+                weitere={[
+                    buildServiceNode({
+                        name: 'Treppenverlegung & Treppensanierung',
+                        serviceType: 'Innentreppen, Außentreppen & Treppenhäuser',
+                        description:
+                            'Fachbetrieb für Treppenbeläge in Aßlar, Wetzlar und Mittelhessen: Rutschfeste Fliesen, Kantenprofile, Setz- und Trittstufen und Entkopplung.',
+                        url: `${SITE_URL}/treppen`,
+                        areaServed: 'Aßlar, Wetzlar & Mittelhessen',
+                    }),
+                ]}
+            />
             {/* 1. EINSTIEG: Kennzeile, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt „treppe“ */}
             <section aria-labelledby="treppen-heading">
                 <Einstieg

@@ -3,13 +3,15 @@
 // `momente.beleg`, der Vorher-Nachher-Regler als eigener Abschnitt in `momente.belegZwei` (wie im Schaufenster). Die
 // Bewertungen mit Themenfilter (ReviewsSection, Anker #bewertungen, Bestand) folgen im Platz `nachBeleg`: nach den Fotos,
 // vor dem nächsten Schritt (Abnahme E3-BAU-07); sie bringen ihren Kopf selbst mit, darum nicht im Platz `werkzeug`.
-// Strukturierte Daten (JSON-LD) bleiben in `layout.tsx` der Route.
+// Strukturierte Daten (JSON-LD) setzt die Seite selbst (SeitenDaten).
 import ErzaehlSeite from '@/components/vorlagen/ErzaehlSeite';
 import GalerieFilter from '@/components/momente/galerie-filter/GalerieFilter';
 import VorherNachher from '@/components/momente/vorher-nachher/VorherNachher';
 import ReviewsSection from '@/components/sections/ReviewsSection';
 import { REFERENZEN } from '@/inhalte/referenzen';
 import { createMetadata } from '@/lib/metadata';
+import SeitenDaten from '@/components/seo/SeitenDaten';
+import { ORG_ID, SITE_URL } from '@/lib/schema';
 
 export const metadata = createMetadata({
     title: REFERENZEN.meta.titel,
@@ -19,24 +21,41 @@ export const metadata = createMetadata({
 
 export default function ReferenzenPage() {
     return (
-        <ErzaehlSeite
-            inhalt={REFERENZEN}
-            momente={{
-                beleg: <GalerieFilter />,
-                belegZwei: {
-                    id: 'vorher-nachher',
-                    titel: 'Eine Außentreppe, vorher und nachher.',
-                    moment: (
-                        <VorherNachher
-                            vorher="kontakt-eingang"
-                            nachher="start-galerie-5"
-                            titelId="vorher-nachher-titel"
-                            unterschrift="Schieben Sie den Regler hin und her. So sehen Sie den Unterschied."
-                        />
-                    ),
-                },
-            }}
-            nachBeleg={<ReviewsSection leitachse />}
-        />
+        <>
+            <SeitenDaten
+                pfad="/referenzen"
+                titel={REFERENZEN.meta.titel}
+                beschreibung={REFERENZEN.meta.beschreibung}
+                brotkrumen={REFERENZEN.worum.brotkrumen}
+                weitere={[
+                    {
+                        '@type': 'CollectionPage',
+                        '@id': `${SITE_URL}/referenzen#collection`,
+                        name: 'Fliesenverlegung Tezgel – Referenzen & Kundenbewertungen',
+                        description: 'Echte Kundenstimmen aus Aßlar, Wetzlar und Mittelhessen sowie typische Leistungsbeispiele.',
+                        publisher: { '@id': ORG_ID },
+                    },
+                ]}
+            />
+            <ErzaehlSeite
+                inhalt={REFERENZEN}
+                momente={{
+                    beleg: <GalerieFilter />,
+                    belegZwei: {
+                        id: 'vorher-nachher',
+                        titel: 'Eine Außentreppe, vorher und nachher.',
+                        moment: (
+                            <VorherNachher
+                                vorher="kontakt-eingang"
+                                nachher="start-galerie-5"
+                                titelId="vorher-nachher-titel"
+                                unterschrift="Schieben Sie den Regler hin und her. So sehen Sie den Unterschied."
+                            />
+                        ),
+                    },
+                }}
+                nachBeleg={<ReviewsSection leitachse />}
+            />
+        </>
     );
 }

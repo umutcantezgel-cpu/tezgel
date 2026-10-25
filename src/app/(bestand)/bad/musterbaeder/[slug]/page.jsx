@@ -77,6 +77,8 @@ export default async function MusterbadDetailPage({ params }) {
                 brotkrumen={[
                     { name: 'Start', href: '/' },
                     { name: 'Bad', href: '/bad' },
+                    // Ebene der Übersicht mit ihrem Namen im Menü (navigation.js)
+                    { name: 'Ideen nach Badgröße', href: '/bad/musterbaeder' },
                     { name: `Musterbad ${bath.title} – Komplettbad & Badsanierung` },
                 ]}
             />

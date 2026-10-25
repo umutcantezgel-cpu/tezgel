@@ -23,6 +23,7 @@ import Schrittfolge from '@/components/kern/Schrittfolge';
 import Tabelle from '@/components/kern/Tabelle';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import { linkKlassen } from '@/components/kern/stile';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 
 export const metadata = createMetadata({
     title: 'Estrich-Belegreife & CM-Messung vor dem Fliesen | Tezgel',
@@ -124,6 +125,12 @@ const READ_MORE = [
 export default function EstrichBelegreifePage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/untergrund-abdichtung/estrich-belegreife"
+                titel="Estrich-Belegreife & CM-Messung vor dem Fliesen | Tezgel"
+                beschreibung="Estrich-Belegreife zuverlässig prüfen: CM-Messung, Richtwerte je Estrichart & Feuchtigkeitsmessung vor dem Fliesen verlegen. Fachbetrieb Tezgel in Hessen."
+                brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Untergrund und Abdichtung', href: '/untergrund-abdichtung' }, { name: 'Estrich prüfen: Belegreife und Restfeuchte vor dem Fliesen' }]}
+            />
             {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt mit dem Plan „untergrund“ */}
             <section aria-labelledby="estrich-heading">
                 <Einstieg
