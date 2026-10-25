@@ -7,6 +7,8 @@
 // Schrägstrich; vorher hing „06441 /“ am Zeilenende (E2-SICHT-2 Befund 10, E3-START-05). Einzelne schmale Felder nicht als
 // Container markieren: am Desktop sind sie schmaler als 18rem, obwohl die Nummer hineinpasst.
 // Ohne Container ändert sich nichts. Der Textinhalt bleibt „06441 / 44 83 567“ (Vorleser, Prüfungen).
+// Zeilenhöhe `leading-snug`: bricht die Nummer in zwei Zeilen, überschneiden sich die Schriftflächen der Mono (Höhe rund
+// 1,3 em) bei der knappen Zeilenhöhe der großen Grade nicht mehr (Überlappungsprüfung Z-09, E-061).
 import clsx from 'clsx';
 import { COMPANY_DATA } from '@/config/company';
 
@@ -19,7 +21,7 @@ export default function Rufnummer({ nummer = COMPANY_DATA.contact.phone, classNa
   const [vorwahl, rest] = rufnummerTeile(nummer);
   const strich = rest && vorwahl.endsWith('/');
   return (
-    <span className={clsx('font-mono', className)}>
+    <span className={clsx('font-mono leading-snug', className)}>
       <span className="whitespace-nowrap @max-2xs:block">
         {strich ? vorwahl.slice(0, -1).trimEnd() : vorwahl}
         {strich && <span className="@max-2xs:hidden"> /</span>}

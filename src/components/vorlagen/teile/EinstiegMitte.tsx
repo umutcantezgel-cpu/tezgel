@@ -13,6 +13,7 @@ import Bildfeld from '@/components/kern/Bildfeld';
 import Brotkrumen, { type Krume } from '@/components/kern/Brotkrumen';
 import Hauptknopf from '@/components/kern/Hauptknopf';
 import Rufnummer from '@/components/kern/Rufnummer';
+import WeiterLink from '@/components/kern/WeiterLink';
 import { knopfKlassen, seitenKlassen } from '@/components/kern/stile';
 import { COMPANY_DATA } from '@/config/company';
 import type { ArbeitId } from '@/config/arbeiten';
@@ -29,9 +30,15 @@ export interface EinstiegMitteProps {
   /** Foto vollständig (Kennung) oder eigener Bildplatz (Startbild mit Moment) */
   bild: ArbeitId | ReactNode;
   bewertung?: boolean;
+  /** Anker der Einsatzorte auf derselben Seite (Startseite): Link unter der Ortszeile, „arbeitet er in meinem Ort?“ (A6) */
+  orteAnker?: string;
 }
 
-export default function EinstiegMitte({ pfad, brotkrumen, titelZeilen, ort, hauptziel, bild, bewertung = false }: EinstiegMitteProps) {
+/** Erster Schritt und Kosten in einem Satz unter den Knöpfen (Aufgabe A5, Probeläufe E3: Ablauf und kostenfreier Termin erst
+ *  nach vielem Scrollen; E-062). Termin kostenfrei: K-015 F-12; Angebot mit festem Preis wie im Ablauf jeder Seite. */
+const ERSTER_SCHRITT = 'Deniz Tezgel kommt kostenfrei zu Ihnen und schaut sich alles an. Danach bekommen Sie ein Angebot mit festem Preis.';
+
+export default function EinstiegMitte({ pfad, brotkrumen, titelZeilen, ort, hauptziel, bild, bewertung = false, orteAnker }: EinstiegMitteProps) {
   const { contact } = COMPANY_DATA;
   return (
     <section aria-labelledby="seite-titel" data-formel="worum" className="relative">
@@ -48,6 +55,11 @@ export default function EinstiegMitte({ pfad, brotkrumen, titelZeilen, ort, haup
         <p data-erstes-bild="ort" className="mt-6 max-w-mass font-text text-fs-4 text-balance text-tinte-2 flach:mt-3">
           {ort}
         </p>
+        {orteAnker && (
+          <p className="mt-3 flach:hidden">
+            <WeiterLink href={`#${orteAnker}`}>Alle Orte, in denen wir arbeiten</WeiterLink>
+          </p>
+        )}
         <div className="@container mt-12 flex w-full flex-col items-center gap-3 flach:mt-6 sm:flex-row sm:flex-wrap sm:justify-center">
           <Hauptknopf href={hauptziel} erstesBild breit />
           <a href={`tel:${contact.phoneLink}`} data-erstes-bild="kontakt" data-motion="druck" className={knopfKlassen('neben', 'w-full px-4 sm:w-auto')}>
@@ -67,6 +79,7 @@ export default function EinstiegMitte({ pfad, brotkrumen, titelZeilen, ort, haup
             <span>Nachricht per WhatsApp</span>
           </a>
         </div>
+        <p className="mt-8 max-w-mass font-text text-fs-3 text-pretty text-tinte-2 flach:hidden">{ERSTER_SCHRITT}</p>
         {bewertung && <Bewertungszeile className="mt-8 font-text text-fs-2 text-tinte-2 hyphens-none" />}
       </div>
       {/* Foto vollständig, mittig; am Desktop so groß, dass es wirkt, ohne die Seite zu sprengen */}

@@ -67,7 +67,10 @@ const MIT_PROBE = CSS.includes('.muster-fisch');
 test('Verband 7: Fischgrät-Ebene und Beschreibungen in bewegung.css (Übergänge nur unter html.k-bewegung)', { skip: !MIT_PROBE && 'CSS der Musterprobe noch nicht in bewegung.css übernommen' }, () => {
   assert.ok(CSS.includes('.verband:has([data-verband-wahl="fisch"]:checked) .muster-fisch'));
   assert.ok(CSS.includes(`translate: -${PLATTE.b / 4}px 0`));
-  assert.ok(CSS.includes('transition: opacity var(--dauer-3) var(--ease-setzen), translate var(--dauer-3) var(--ease-setzen)'));
+  // E-062: die gewählte Ebene setzt erst, wenn die gehende weg ist (Verzögerung dauer-1), nie zwei Raster zugleich
+  assert.ok(CSS.includes('transition: opacity var(--dauer-3) var(--ease-setzen) var(--dauer-1), translate var(--dauer-3) var(--ease-setzen) var(--dauer-1)'));
+  assert.ok(CSS.includes('transition: opacity var(--dauer-3) var(--ease-setzen) var(--dauer-1);'), 'Reihen setzen nach dem Gehen der Fischgrät-Ebene');
+  assert.ok(CSS.includes('transition: opacity var(--dauer-1) var(--ease-weg), translate var(--dauer-1) var(--ease-weg)'), 'Fischgrät geht ohne Verzögerung');
   for (const [, sel, rumpf] of CSS.matchAll(/([^{}]+)\{([^{}]*)\}/g)) {
     if (!sel.includes('muster-') || !rumpf.includes('transition') || rumpf.includes('none')) continue;
     assert.ok(sel.includes('html.k-bewegung'), `Übergang ohne Startklasse: ${sel.trim()}`);

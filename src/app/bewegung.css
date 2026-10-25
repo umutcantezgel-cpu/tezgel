@@ -177,7 +177,8 @@ html.k-bewegung:not(.k-notaus) [data-motion="anriss"]:not([data-motion-stand="an
 }
 /* verband · Musterprobe /fliesen (E3-GRAF-06): vier Muster; Fischgrät als eigene Ebene, Beschreibung je Muster. Zustände
    gelten ohne Startklasse (auch ohne JavaScript, reduziert sofort); nur Übergänge und der Anlauf der Fischgrät-Ebene hängen
-   an html.k-bewegung. Die Ebene, die geht, geht in dauer-1 · weg, die gewählte legt sich in dauer-3 · setzen. Fokus auf dem
+   an html.k-bewegung. Die Ebene, die geht, geht in dauer-1 · weg, erst danach legt sich die gewählte in dauer-3 · setzen
+   (Verzögerung dauer-1: nie zwei Raster zugleich, E3-SICHT, E-062). Fokus auf dem
    gewählten (tintefarbenen) Feld in Kalk, sonst wäre der Rahmen unsichtbar (gilt auch für den VerbandUmschalter). */
 .verband-wahl:has(input:checked:focus-visible) {
   outline-color: var(--color-kalk);
@@ -206,7 +207,7 @@ html.k-bewegung:not(.k-notaus) [data-motion="anriss"]:not([data-motion-stand="an
     translate: -20px 0;
   }
   html.k-bewegung .verband .muster-reihen {
-    transition: opacity var(--dauer-3) var(--ease-setzen);
+    transition: opacity var(--dauer-3) var(--ease-setzen) var(--dauer-1);
   }
   html.k-bewegung .verband:has([data-verband-wahl="fisch"]:checked) .muster-reihen {
     transition: opacity var(--dauer-1) var(--ease-weg);
@@ -215,7 +216,7 @@ html.k-bewegung:not(.k-notaus) [data-motion="anriss"]:not([data-motion-stand="an
     transition: opacity var(--dauer-1) var(--ease-weg), translate var(--dauer-1) var(--ease-weg);
   }
   html.k-bewegung .verband:has([data-verband-wahl="fisch"]:checked) .muster-fisch {
-    transition: opacity var(--dauer-3) var(--ease-setzen), translate var(--dauer-3) var(--ease-setzen);
+    transition: opacity var(--dauer-3) var(--ease-setzen) var(--dauer-1), translate var(--dauer-3) var(--ease-setzen) var(--dauer-1);
   }
 }
 @supports not selector(:has(*)) {
