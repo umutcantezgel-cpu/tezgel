@@ -29,7 +29,7 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
             {hasAreaRooms && (
                 <div className="flex flex-col gap-8">
                     <OptionGroup
-                        legend="Fliesenformat:"
+                        legend="Größe der Fliesen:"
                         options={FORMAT_OPTIONS}
                         value={data.format}
                         muster="format"
@@ -73,7 +73,7 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
                             </div>
                             <div>
                                 <label htmlFor="fk-skirting" className={labelClass}>
-                                    Sockel in laufenden Metern <span className={zusatzClass}>(optional)</span>
+                                    Sockel in Metern <span className={zusatzClass}>(optional)</span>
                                 </label>
                                 <input
                                     id="fk-skirting"
@@ -118,7 +118,7 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
 
                     <div className="grid grid-cols-1 gap-8 @xl:grid-cols-2 @xl:gap-6">
                         <OptionGroup
-                            legend="Lage:"
+                            legend="Wo liegt die Treppe?"
                             options={[{ id: 'innen', label: 'Innentreppe' }, { id: 'aussen', label: 'Außentreppe' }]}
                             value={data.stairLocation}
                             muster="paar"
@@ -149,7 +149,7 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
                                 onChange={(id) => update({ stairCovering: id })}
                             />
                             <OptionGroup
-                                legend="Setzstufen (senkrechte Flächen) belegen?"
+                                legend="Sollen auch die senkrechten Flächen der Stufen belegt werden?"
                                 options={YES_NO}
                                 value={data.risersOn}
                                 muster="paar"
@@ -248,9 +248,9 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
                             )}
                         </div>
                         <p id="fk-stairs-help" className={absatzHintClass}>
-                            Eine Treppe mit n Steigungen hat n Setzstufen und in der Regel n − 1 Trittstufen – der oberste
-                            Auftritt ist meist der Boden des Obergeschosses. Soll dieser Austritt mit belegt werden, tragen Sie
-                            die Zahl der Trittstufen einfach selbst ein.
+                            Eine Treppe mit n Steigungen hat n Setzstufen und meist n − 1 Trittstufen. Der oberste Tritt ist meist
+                            schon der Boden des Obergeschosses. Soll dieser Boden mit belegt werden, tragen Sie die Zahl der
+                            Trittstufen selbst ein.
                         </p>
                     </fieldset>
 
@@ -259,9 +259,9 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
                             <Icon name="info" groesse={5} className="mt-px" />
                             <span>
                                 <span className="sr-only">Hinweis: </span>
-                                Blockstufen sind eine massive Bauart (meist Naturstein oder Betonwerkstein), die auf Fundament
-                                bzw. Mörtelbett versetzt wird – kein Belag auf eine bestehende Treppe. Stückzahl und Maße klären wir
-                                beim Aufmaß.
+                                Blockstufen sind eine massive Bauart, meist aus Naturstein oder Betonwerkstein. Sie werden auf ein
+                                Fundament gesetzt. Sie sind kein Belag für eine bestehende Treppe. Stückzahl und Maße klären wir
+                                beim Termin vor Ort.
                             </span>
                         </p>
                     )}

@@ -14,7 +14,7 @@ export default function Erfolg({ name, email, referenceId, projectTitle, finalAr
             </span>
             {referenceId && (
               <span className="border border-fuge bg-kalk px-2 py-1 font-mono text-fs-1 text-tinte">
-                Vorgangs-Nr.: {referenceId}
+                Vorgangsnummer: {referenceId}
               </span>
             )}
           </div>
@@ -34,14 +34,14 @@ export default function Erfolg({ name, email, referenceId, projectTitle, finalAr
               Nächste Schritte:
             </div>
             <p className="mt-2">
-              1. Unser Team prüft Ihre Angaben und den geschätzten Material- &amp; Zeitaufwand.<br />
-              2. Herr Tezgel meldet sich binnen <strong className="font-semibold text-tinte">24 bis 48 Stunden</strong> telefonisch zur Terminabstimmung des kostenfreien Aufmaßes.
+              1. Unser Team prüft Ihre Angaben und schätzt den Aufwand für Material und Zeit.<br />
+              2. Herr Tezgel meldet sich binnen <strong className="font-semibold text-tinte">24 bis 48 Stunden</strong> telefonisch und vereinbart den kostenfreien Termin bei Ihnen vor Ort.
             </p>
           </div>
 
           <figure className="mt-8 border-l-2 border-tinte pl-6">
             <blockquote className="text-fs-3 text-tinte">&bdquo;{COMPANY_DATA.motto}&ldquo;</blockquote>
-            <figcaption className="mt-2 font-mono text-fs-1 text-tinte-2">— {COMPANY_DATA.owner.fullName}, Fachbetrieb Aßlar</figcaption>
+            <figcaption className="mt-2 font-mono text-fs-1 text-tinte-2">{COMPANY_DATA.owner.fullName}, Fachbetrieb Aßlar</figcaption>
           </figure>
 
           <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">

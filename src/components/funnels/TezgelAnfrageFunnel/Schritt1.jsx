@@ -48,7 +48,7 @@ export default function Schritt1({ setStep, projectType, setProjectType }) {
               className={knopfKlassen('haupt', 'w-full sm:w-auto')}
               data-motion="druck"
             >
-              Weiter zu Schritt 2: Fläche &amp; Ort
+              Weiter zu Schritt 2: Fläche und Ort
               <Icon name="pfeil-rechts" groesse={5} />
             </button>
           </div>

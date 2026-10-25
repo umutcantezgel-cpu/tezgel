@@ -98,7 +98,7 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
                         <div className="flex flex-wrap items-center justify-between gap-4">
                             <span className={etikettKlassen}>
                                 <Fugenkreuz className="size-3 text-strich" />
-                                Fliesen-Konfigurator
+                                Konfigurator für Fliesen
                             </span>
                             <ol className="flex flex-wrap items-center gap-2" aria-label="Fortschritt">
                                 {STEPS.map((item, idx) => {

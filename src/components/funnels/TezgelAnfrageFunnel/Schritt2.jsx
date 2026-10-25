@@ -31,7 +31,7 @@ export default function Schritt2({ setStep, selectedArea, selectArea, customArea
             <input
               id="funnel-custom-area"
               type="text"
-              placeholder="Oder genaue m²-Zahl eingeben (z. B. 24 m²)"
+              placeholder="Oder genaue Zahl eingeben, z. B. 24 m²"
               value={customArea}
               onChange={(e) => setCustomArea(e.target.value)}
               className={inputClass}
@@ -60,12 +60,12 @@ export default function Schritt2({ setStep, selectedArea, selectArea, customArea
 
           <div>
             <label htmlFor="funnel-location" className={labelKlassen}>
-              Einsatzort / Postleitzahl
+              Ort oder Postleitzahl
             </label>
             <input
               id="funnel-location"
               type="text"
-              placeholder="z. B. 35614 Aßlar, 35578 Wetzlar oder Nachbarort"
+              placeholder="z. B. 35614 Aßlar, 35578 Wetzlar oder ein Nachbarort"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
               className={inputClass}

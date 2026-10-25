@@ -20,7 +20,7 @@ export default function WhatsAppGeoeffnet({ data, setSentVia }) {
                 </p>
                 <p className="mt-4 max-w-mass font-text text-fs-3 text-tinte-2">
                     Ihre Anfrage ist vorbereitet, aber noch nicht verschickt. Senden Sie die Nachricht in{' '}
-                    WhatsApp ab. Fotos von Raum, Untergrund oder Treppe
+                    WhatsApp ab. Fotos vom Raum, vom Boden oder von der Treppe
                     können Sie gern per WhatsApp nachsenden. Auf dieser Website wird nichts gespeichert.
                 </p>
 
@@ -29,7 +29,7 @@ export default function WhatsAppGeoeffnet({ data, setSentVia }) {
                 </div>
 
                 <p className="mt-8 max-w-mass font-text text-fs-3 font-semibold text-tinte">
-                    Das verbindliche Festpreisangebot folgt nach dem kostenfreien Vor-Ort-Aufmaß durch {COMPANY_DATA.owner.fullName}.
+                    Das verbindliche Festpreisangebot folgt nach dem kostenfreien Termin bei Ihnen vor Ort durch {COMPANY_DATA.owner.fullName}.
                 </p>
 
                 <div className="mt-6 flex flex-col items-stretch gap-3 @xl:flex-row @xl:items-center">

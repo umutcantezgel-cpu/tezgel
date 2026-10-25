@@ -22,7 +22,7 @@ export default function FormularPlatzhalter() {
   const { contact } = COMPANY_DATA;
   return (
     <div className="@container py-12">
-      <p className="font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>
+      <p className="font-mono text-fs-1 text-tinte-2">Formular wird geladen …</p>
       <Schriftfeld
         spalten={1}
         className="mt-4 @2xl:grid-cols-3"
@@ -36,7 +36,7 @@ export default function FormularPlatzhalter() {
             ),
           },
           {
-            etikett: 'Mobil & WhatsApp',
+            etikett: 'Mobil und WhatsApp',
             wert: (
               <a href={contact.whatsappLink} target="_blank" rel="noopener noreferrer" className={clsx(WEG, 'font-mono')}>
                 {contact.mobile}

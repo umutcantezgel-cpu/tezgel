@@ -45,7 +45,7 @@ export default function Schritt4({ data, update, goToStep, handleSubmit, isSubmi
                         required
                         minLength={6}
                         autoComplete="tel"
-                        placeholder="Für die Rücksprache zum Aufmaß"
+                        placeholder="Für Rückfragen zu Ihrem Vorhaben"
                         value={data.phone}
                         onChange={(e) => update({ phone: e.target.value })}
                         className={inputClass}
@@ -66,7 +66,7 @@ export default function Schritt4({ data, update, goToStep, handleSubmit, isSubmi
                     />
                 </div>
                 <div>
-                    <label htmlFor="fk-zip" className={labelClass}>PLZ &amp; Ort des Projekts</label>
+                    <label htmlFor="fk-zip" className={labelClass}>PLZ und Ort des Projekts</label>
                     <input
                         id="fk-zip"
                         type="text"
@@ -94,7 +94,7 @@ export default function Schritt4({ data, update, goToStep, handleSubmit, isSubmi
                 <textarea
                     id="fk-notes"
                     rows={3}
-                    placeholder="z. B. Raummaße, Wunschfliese, Besonderheiten am Untergrund …"
+                    placeholder="z. B. Raummaße, Wunschfliese, Besonderheiten am Boden …"
                     value={data.notes}
                     onChange={(e) => update({ notes: e.target.value })}
                     className={`${inputClass} resize-none`}
@@ -136,7 +136,7 @@ export default function Schritt4({ data, update, goToStep, handleSubmit, isSubmi
                     >
                         {isSubmitting ? (
                             <span className="flex flex-col items-center gap-2">
-                                <span>Wird übertragen …</span>
+                                <span>Wird gesendet …</span>
                                 <span className="laden-fuge w-16" data-motion="laden" aria-hidden="true" />
                             </span>
                         ) : (
@@ -161,7 +161,7 @@ export default function Schritt4({ data, update, goToStep, handleSubmit, isSubmi
                 <p className="flex max-w-mass items-start gap-2 font-text text-fs-1 text-tinte-2">
                     <Icon name="schloss" groesse={4} className="mt-px" />
                     <span>
-                        Bei Online-Absendung erhalten Sie unmittelbar eine schriftliche Zusammenfassung per E-Mail. Bei Auswahl von WhatsApp öffnet sich WhatsApp mit Ihren vorbereiteten Angaben.
+                        Wenn Sie online absenden, erhalten Sie sofort eine schriftliche Zusammenfassung per E-Mail. Wenn Sie per WhatsApp senden, öffnet sich WhatsApp mit Ihren vorbereiteten Angaben.
                     </span>
                 </p>
             </div>

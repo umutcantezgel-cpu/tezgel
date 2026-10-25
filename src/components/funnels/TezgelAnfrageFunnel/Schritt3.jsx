@@ -26,7 +26,7 @@ export default function Schritt3({ setStep, name, setName, phone, setPhone, emai
               <div>
                 <strong className="font-semibold text-laser-tief">Fehler beim Absenden:</strong> {errorMessage}
                 <div className="mt-1">
-                  Sie können die Anfrage alternativ direkt per{' '}
+                  Sie können die Anfrage auch direkt per{' '}
                   <button
                     type="button"
                     onClick={handleWhatsAppDirect}
@@ -81,7 +81,7 @@ export default function Schritt3({ setStep, name, setName, phone, setPhone, emai
                 required
                 autoComplete="tel"
                 minLength={6}
-                placeholder="Für die Rücksprache zum Aufmaß"
+                placeholder="Für Rückfragen zu Ihrem Vorhaben"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 className={inputClass}
@@ -91,7 +91,7 @@ export default function Schritt3({ setStep, name, setName, phone, setPhone, emai
 
           <div>
             <label htmlFor="funnel-email" className={labelKlassen}>
-              E-Mail-Adresse <span className="font-normal text-tinte-2">(für die Eingangsbestätigung)</span>
+              E-Mail-Adresse <span className="font-normal text-tinte-2">(für eine Bestätigung per E-Mail)</span>
             </label>
             <input
               id="funnel-email"
@@ -106,12 +106,12 @@ export default function Schritt3({ setStep, name, setName, phone, setPhone, emai
 
           <div>
             <label htmlFor="funnel-notes" className={labelKlassen}>
-              Projekt-Details / Wünsche (optional)
+              Angaben zum Projekt und Wünsche (optional)
             </label>
             <textarea
               id="funnel-notes"
               rows={3}
-              placeholder="z. B. Altbelag vorhanden, bodengleiche Dusche gewünscht, Fliesenformat ca. 60 x 120 cm …"
+              placeholder="z. B. Altbelag vorhanden, bodengleiche Dusche gewünscht, Fliesengröße ca. 60 x 120 cm …"
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
               className={`${inputClass} resize-none`}
@@ -120,7 +120,7 @@ export default function Schritt3({ setStep, name, setName, phone, setPhone, emai
 
           <div className="flex flex-col gap-4 border-t border-fuge pt-6">
             <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
-              <Knopf type="submit" laedt={status === 'submitting'} ladeText="Anfrage wird sicher übertragen..." icon="pfeil-rechts" className="w-full sm:flex-1">
+              <Knopf type="submit" laedt={status === 'submitting'} ladeText="Wird gesendet …" icon="pfeil-rechts" className="w-full sm:flex-1">
                 Anfrage verbindlich absenden
               </Knopf>
               <Knopf variante="neben" onClick={handleWhatsAppDirect} iconLinks="sprechblase" className="w-full sm:w-auto">

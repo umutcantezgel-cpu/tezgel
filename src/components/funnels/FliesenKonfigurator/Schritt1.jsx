@@ -22,7 +22,7 @@ export default function Schritt1({ data, update }) {
     return (
         <div className="flex flex-col gap-6">
             <OptionGroup
-                legend="Raum und Einsatzbereich (Mehrfachauswahl)"
+                legend="Welche Räume oder Bereiche? Mehrere sind möglich."
                 legendClassName="sr-only"
                 options={ROOM_OPTIONS}
                 value={data.rooms}
@@ -37,9 +37,9 @@ export default function Schritt1({ data, update }) {
                     <Icon name="info" groesse={5} className="mt-px" />
                     <p>
                         <span className="sr-only">Hinweis: </span>
-                        Für Bad, Dusche und Gäste-WC gibt es eigene Werkzeuge: den{' '}
+                        Für Bad, Dusche und Gäste-WC gibt es eigene Hilfen: den{' '}
                         <Link href="/bad/badplaner" className={linkClass}>Badplaner</Link> und den{' '}
-                        <Link href="/bad/projekt-check" className={linkClass}>Bad-Projektcheck</Link>. Sie können das Bad
+                        <Link href="/bad/projekt-check" className={linkClass}>Projektcheck fürs Bad</Link>. Sie können das Bad
                         hier trotzdem mit angeben, etwa wenn es Teil eines größeren Projekts ist.
                     </p>
                 </div>

@@ -44,19 +44,19 @@ export default function ResultSummary({ data }) {
                 <ul className="flex max-w-mass flex-col gap-2 font-text text-fs-2 text-tinte-2">
                     {area && area.valid && (
                         <li>
-                            <strong className="font-semibold text-tinte">Fläche:</strong> <span className="whitespace-nowrap font-mono">{fmt(area.net)} m²</span> netto. Mit einem Verschnitt von
-                            ca. <span className="whitespace-nowrap font-mono">{area.pattern.min}–{area.pattern.max} %</span> ({area.pattern.label}) ergibt sich ein Richtwert von{' '}
+                            <strong className="font-semibold text-tinte">Fläche:</strong> <span className="whitespace-nowrap font-mono">{fmt(area.net)} m²</span> netto. Mit Verschnitt (Reste beim Zuschneiden) von
+                            ca. <span className="whitespace-nowrap font-mono">{area.pattern.min} bis {area.pattern.max} %</span> ({area.pattern.label}) ergibt sich ein Richtwert von{' '}
                             <strong className="font-mono font-normal text-tinte">ca. <span className="whitespace-nowrap">{fmt(area.low)}–{fmt(area.high)} m²</span></strong>.
                         </li>
                     )}
                     {area && !area.valid && (
                         <li>
-                            <strong className="font-semibold text-tinte">Fläche:</strong> Noch keine m²-Angabe – die Fläche wird beim Aufmaß ermittelt.
+                            <strong className="font-semibold text-tinte">Fläche:</strong> Noch keine Angabe in m². Die Fläche ermitteln wir beim Termin vor Ort.
                         </li>
                     )}
                     {area && area.skirting && (
                         <li>
-                            <strong className="font-semibold text-tinte">Sockel:</strong> ca. <span className="whitespace-nowrap font-mono">{fmt(area.skirting)}</span> laufende Meter (separat, ohne Zuschlag).
+                            <strong className="font-semibold text-tinte">Sockel:</strong> ca. <span className="whitespace-nowrap font-mono">{fmt(area.skirting)}</span> Meter (separat, ohne Zuschlag).
                         </li>
                     )}
                     {stairs && stairs.valid && (
@@ -64,7 +64,7 @@ export default function ResultSummary({ data }) {
                             <strong className="font-semibold text-tinte">Treppe (netto):</strong> Trittstufen <span className="whitespace-nowrap font-mono">{fmt(stairs.treadArea, 2)} m²</span>
                             {stairs.withRisers && <> + Setzstufen <span className="whitespace-nowrap font-mono">{fmt(stairs.riserArea, 2)} m²</span></>} ={' '}
                             <strong className="whitespace-nowrap font-mono font-normal text-tinte">{fmt(stairs.total, 2)} m²</strong>. Bei Treppen nennen wir
-                            bewusst keinen Verschnittzuschlag, weil er stark von Format und Stufenmaß abhängt.
+                            bewusst keinen Zuschlag für Verschnitt, weil der stark von Format und Größe der Stufen abhängt.
                         </li>
                     )}
                     {stairs && !stairs.valid && (
@@ -75,7 +75,7 @@ export default function ResultSummary({ data }) {
                 </ul>
                 <p className="max-w-mass border-t border-fuge pt-4 font-text text-fs-1 text-tinte-2">
                     Alle Mengen sind reine Orientierungswerte. Die tatsächliche Menge ermittelt {COMPANY_DATA.owner.fullName} beim
-                    kostenfreien Vor-Ort-Aufmaß – dort werden auch Treppensockel, Anschlüsse und Zuschnitte festgelegt.
+                    kostenfreien Termin bei Ihnen vor Ort. Dort werden auch Treppensockel, Anschlüsse und Zuschnitte festgelegt.
                 </p>
             </div>
 

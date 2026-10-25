@@ -8,7 +8,7 @@ export default function Schritt2({ data, update }) {
     return (
         <div className="flex flex-col gap-12">
             <OptionGroup
-                legend="Untergrund bzw. Bestand (Mehrfachauswahl):"
+                legend="Was liegt jetzt am Boden? Mehrere Antworten sind möglich:"
                 hint="Bei mehreren Räumen alles auswählen, was vorkommt."
                 options={SUBSTRATE_OPTIONS}
                 value={data.substrates}
@@ -28,14 +28,14 @@ export default function Schritt2({ data, update }) {
                 onChange={(id) => update({ floorHeating: id })}
             />
             <OptionGroup
-                legend="Muss ein Altbelag zurückgebaut werden?"
+                legend="Muss der alte Belag herausgenommen werden?"
                 options={YES_NO_UNSURE}
                 value={data.removal}
                 muster="dreier"
                 onChange={(id) => update({ removal: id })}
             />
             <OptionGroup
-                legend="Liegt die Fläche in einem Nassbereich (z. B. Duschbereich, Hauswirtschaftsraum mit Bodenablauf)?"
+                legend="Liegt die Fläche in einem Bereich mit viel Wasser (z. B. Duschbereich, Hauswirtschaftsraum mit Bodenablauf)?"
                 options={YES_NO}
                 value={data.wetArea}
                 muster="paar"

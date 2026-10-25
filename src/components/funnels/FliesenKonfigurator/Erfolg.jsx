@@ -21,7 +21,7 @@ export default function Erfolg({ data, referenceId, handleNewRequest }) {
                     </span>
                     {referenceId && (
                         <span className="border border-fuge bg-kalk px-2 py-1 font-mono text-fs-1 text-tinte">
-                            Vorgangs-Nr.: {referenceId}
+                            Vorgangsnummer: {referenceId}
                         </span>
                     )}
                 </div>
@@ -47,8 +47,8 @@ export default function Erfolg({ data, referenceId, handleNewRequest }) {
                     </div>
                     <p className="mt-2 max-w-mass">
                         1. Inhaber Deniz Tezgel prüft Ihre Raum- und Materialangaben sowie Machbarkeit und Vorarbeiten.<br />
-                        2. Wir melden uns binnen <strong className="font-semibold text-tinte">24 bis 48 Stunden</strong> telefonisch zur Vorab-Klärung und Terminabsprache.<br />
-                        3. Kostenfreies Aufmaß vor Ort für Ihr verbindliches Festpreisangebot.
+                        2. Wir melden uns binnen <strong className="font-semibold text-tinte">24 bis 48 Stunden</strong> telefonisch, um vorab alles zu klären und den Termin abzusprechen.<br />
+                        3. Kostenfreier Termin bei Ihnen vor Ort für Ihr verbindliches Festpreisangebot.
                     </p>
                 </div>
 
