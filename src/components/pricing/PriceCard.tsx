@@ -44,7 +44,7 @@ export default function PriceCard({
   description,
   features,
   isPopular = false,
-  ctaText = "Vor-Ort-Aufmaß anfordern",
+  ctaText = "Termin vor Ort anfragen",
   ctaHref = "/kontakt#express-anfrage",
   als = "div",
   className,

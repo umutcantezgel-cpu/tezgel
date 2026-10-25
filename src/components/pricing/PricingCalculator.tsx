@@ -84,10 +84,10 @@ export default function PricingCalculator() {
         {/* Phasen */}
         {/* Tor S-01/03: Die Phasen ragten schon bei 375 px 15 px in den Innenrand (320 px: 70 px). Unter sm entfallen die
             Trennlinien (eine Zeile bis 375 px); Umbruch nur noch bei 320 px und erhöhtem Textabstand. */}
-        <ol className="flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte" aria-label="Phasen der Anfrage">
+        <ol className="flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte" aria-label="Schritte der Anfrage">
           <li className="flex items-center gap-2">
             <span className="inline-flex size-6 items-center justify-center bg-tinte text-kalk">1</span>
-            <span>Gewerk</span>
+            <span>Projekt</span>
           </li>
           <li aria-hidden="true" className="hidden h-px flex-1 bg-fuge sm:block" />
           <li className="flex items-center gap-2">
@@ -144,7 +144,7 @@ export default function PricingCalculator() {
         {/* 2. Fläche */}
         <div role="group" aria-labelledby="calc-flaeche">
           <p id="calc-flaeche" className={labelKlassen}>
-            2. Geschätzte Grundfläche:
+            2. Wie groß ist die Fläche ungefähr?
           </p>
           <div className="mt-4 grid grid-cols-2 gap-2">
             {Object.values(ROOM_SIZES).map((size) => {
@@ -167,7 +167,7 @@ export default function PricingCalculator() {
 
           <div className="mt-4 flex flex-wrap items-center gap-3">
             <label htmlFor="calc-custom-area" className="text-fs-2 text-tinte-2">
-              Oder genaue Quadratmeterzahl bekannt:
+              Oder Sie kennen die Quadratmeter genau:
             </label>
             <span className="flex items-center gap-2">
               <input
@@ -176,7 +176,7 @@ export default function PricingCalculator() {
                 type="text"
                 autoComplete="off"
                 placeholder="z. B. 18"
-                aria-label="Quadratmeterzahl manuell eingeben"
+                aria-label="Quadratmeter eingeben"
                 value={customArea}
                 onChange={(e) => setCustomArea(e.target.value)}
                 className={zahlFeldKlassen}
@@ -191,7 +191,7 @@ export default function PricingCalculator() {
         {/* 3. Rahmenbedingungen */}
         <div role="group" aria-labelledby="calc-rahmen">
           <p id="calc-rahmen" className={labelKlassen}>
-            3. Rahmenbedingungen &amp; Vorarbeiten:
+            3. Was trifft bei Ihnen zu?
           </p>
           <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
             {SITUATION_OPTIONS.map((opt) => {
@@ -226,7 +226,7 @@ export default function PricingCalculator() {
         <div>
           <div className="flex flex-wrap items-center justify-between gap-2">
             <label htmlFor="situation-notes" className={labelKlassen}>
-              4. Schildern Sie kurz Ihre Situation &amp; Ihr Vorhaben:
+              4. Beschreiben Sie kurz Ihre Lage und Ihr Vorhaben:
             </label>
             <span className={etikettKlassen}>Sehr hilfreich für Rückfragen</span>
           </div>
@@ -237,7 +237,7 @@ export default function PricingCalculator() {
             rows={4}
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
-            placeholder="Beschreiben Sie hier Ihre Ausgangslage: z. B. Zustand des Untergrunds, alte Fliesen vorhanden, Neubau oder bewohnter Bestand, besondere Vorstellungen wie Nischen oder barrierefreie Dusche, zeitliche Wünsche..."
+            placeholder="Zum Beispiel: Sind noch alte Fliesen da? Wie ist der Untergrund? Ist es ein Neubau, oder wird dort schon gewohnt? Gibt es Wünsche, etwa Nischen oder eine Dusche ohne Stufe? Und wann soll es losgehen?"
             className={`${feldKlassen} resize-y`}
           />
         </div>
@@ -259,7 +259,7 @@ export default function PricingCalculator() {
             </p>
 
             <p className="text-fs-2 text-nacht-2">
-              Vielen Dank, <strong className="font-semibold text-kalk">{name}</strong>! Ihre Situationsbeschreibung und Kontaktdaten
+              Vielen Dank, <strong className="font-semibold text-kalk">{name}</strong>! Ihre Angaben und Kontaktdaten
               sind direkt bei Herrn Deniz Tezgel eingegangen.
             </p>
 
@@ -267,11 +267,11 @@ export default function PricingCalculator() {
               <p className="font-semibold text-kalk">So geht es weiter:</p>
               <p className="mt-2">1. Deniz Tezgel prüft Ihre Angaben persönlich.</p>
               <p className="mt-1">2. Sie erhalten zeitnah einen Anruf oder eine Nachricht zur Abstimmung.</p>
-              <p className="mt-1">3. Kostenfreies Vor-Ort-Aufmaß &amp; verbindliches Festpreisangebot.</p>
+              <p className="mt-1">3. Kostenfreier Termin bei Ihnen vor Ort und danach ein verbindliches Festpreisangebot.</p>
             </div>
 
             <Knopf variante="hell" onClick={handleReset} className="w-full">
-              Weitere Projektanfrage senden
+              Weitere Anfrage senden
             </Knopf>
           </div>
         ) : (
@@ -288,15 +288,15 @@ export default function PricingCalculator() {
               </p>
 
               <p className="mt-3 text-fs-2 text-nacht-2">
-                Wir zeigen keine pauschalen Scheinpreise im Netz. Jedes Bauvorhaben ist einzigartig.
-                Beschreiben Sie Ihr Vorhaben – wir melden uns für ein kostenfreies Vor-Ort-Aufmaß
-                und Ihr verlässliches Festpreisangebot.
+                Wir zeigen keine pauschalen Scheinpreise im Netz. Jedes Vorhaben ist anders.
+                Beschreiben Sie Ihr Vorhaben kurz. Wir melden uns für einen kostenfreien Termin
+                bei Ihnen vor Ort. Danach bekommen Sie ein verbindliches Festpreisangebot.
               </p>
 
               {/* Projekt-Zusammenfassung */}
               <dl className="mt-6 border-t border-nacht-fuge text-fs-2">
                 <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3">
-                  <dt className="text-nacht-2">Gewerk:</dt>
+                  <dt className="text-nacht-2">Projekt:</dt>
                   <dd className="text-right font-semibold text-kalk">{selectedService.title}</dd>
                 </div>
                 <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3">
@@ -306,7 +306,7 @@ export default function PricingCalculator() {
                   </dd>
                 </div>
                 <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3">
-                  <dt className="text-nacht-2">Vor-Ort-Aufmaß:</dt>
+                  <dt className="text-nacht-2">Termin bei Ihnen vor Ort:</dt>
                   <dd className="text-right font-mono text-kalk">0 € (Kostenfrei)</dd>
                 </div>
                 <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3">
@@ -397,7 +397,7 @@ export default function PricingCalculator() {
                 <div className="grid grid-cols-1 gap-4">
                   <div>
                     <label htmlFor="calc-location" className={labelHell}>
-                      Einsatzort / PLZ
+                      Ort oder Postleitzahl
                     </label>
                     <input
                       id="calc-location"
@@ -406,7 +406,7 @@ export default function PricingCalculator() {
                       autoComplete="address-level2"
                       value={location}
                       onChange={(e) => setLocation(e.target.value)}
-                      placeholder="z. B. Aßlar, Wetzlar..."
+                      placeholder="z. B. Aßlar oder Wetzlar"
                       className={feldKlassen}
                     />
                   </div>
@@ -457,8 +457,8 @@ export default function PricingCalculator() {
 
             {/* Absenden und Anruf */}
             <div className="flex flex-col gap-4 border-t border-nacht-fuge pt-6">
-              <Knopf type="submit" variante="hell" laedt={status === "submitting"} ladeText="Anfrage wird übertragen..." icon="pfeil-rechts" className="w-full">
-                Unverbindliche Anfrage absenden
+              <Knopf type="submit" variante="hell" laedt={status === "submitting"} ladeText="Wird gesendet …" icon="pfeil-rechts" className="w-full">
+                Unverbindliche Anfrage senden
               </Knopf>
 
               <div>
