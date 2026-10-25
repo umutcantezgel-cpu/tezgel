@@ -12,7 +12,7 @@
 - Brotkrumen: `Start › Fliesen und Verlegung`
 - Ort: `Fliesenverlegung Tezgel aus Aßlar`
 - H1: `Ratgeber zur Fliesenverlegung, einfach erklärt`
-- Vorspann: `Sie möchten Fliesen verlegen lassen und wissen nicht, worauf es ankommt? Wir erklären das Fachwissen in einfachen Worten: Material und Größe, etwa [[feinsteinzeug|Feinsteinzeug]] oder [[grossformat|Großformate]], dazu Holzoptik und Verlegetechniken. Der Fachbetrieb Tezgel aus Aßlar in Hessen zeigt Ihnen, wie Fliesen richtig verlegt werden.`
+- Vorspann: `Sie möchten Fliesen verlegen lassen und wissen nicht, worauf es ankommt? Wir erklären das Fachwissen in einfachen Worten: Material und Größe, etwa [[feinsteinzeug|Feinsteinzeug]]. Oder [[grossformat|Großformate]], dazu Holzoptik und Verlegetechniken. Der Fachbetrieb Tezgel aus Aßlar in Hessen zeigt Ihnen, wie Fliesen richtig verlegt werden.`
 - Hauptknopf: `Termin vor Ort anfragen` → `/kontakt`
 - Kontakt: `Anrufen: {{COMPANY_DATA.contact.phone}}`
 
