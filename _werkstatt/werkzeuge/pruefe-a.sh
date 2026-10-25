@@ -51,7 +51,8 @@ spec_liste() {
       if (!trifft) continue;
       for (const s of e.specs) {
         if (s === "ALLE") alle.forEach((x) => aus.add(x));
-        else if (alle.includes(s)) aus.add(s);
+        // ausdrücklich zugeordnete Specs dürfen auch außerhalb von ALLE liegen (z. B. plan-morph.spec.mjs), sofern es sie gibt (E-057)
+        else if (alle.includes(s) || fs.existsSync(`${testDir}/${s}`)) aus.add(s);
         else { console.error(`unbekannte Spec in test-zuordnung.json: ${s}`); process.exit(2); }
       }
     }
