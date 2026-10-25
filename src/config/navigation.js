@@ -65,10 +65,15 @@ export const navigationLinks = [
 /** Die eine Hauptaktion jeder Seite (K-004): Beschriftung und Ziel überall gleich. */
 export const primaryCta = { name: 'Termin vor Ort anfragen', path: '/kontakt' };
 
-/** Ziel der Hauptaktion auf einer Seite: auf der Startseite ihr eigenes Formular (#termin), sonst /kontakt. So tragen
- *  alle Hauptknöpfe einer Seite (Kopf, Menü, Leiste, Inhalt) dasselbe Ziel (K-004, Z-11). */
+/** Ziel der Hauptaktion auf einer Seite: auf Seiten mit eigenem Anfrageformular dieses Formular (Startseite #termin,
+ *  /kontakt #express-anfrage, Ortsseiten #anfrage wie ORT_ANKER in OrtsSeite), sonst /kontakt. So tragen alle Hauptknöpfe
+ *  einer Seite (Kopf, Menü, Leiste, Inhalt) dasselbe Ziel (K-004, Z-11; E3-W1 Schritt 11, Abnahme E3-BAU-09 und -10). */
 export function hauptziel(pathname) {
-    return pathname === '/' ? '#termin' : primaryCta.path;
+    const pfad = pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname;
+    if (pfad === '/') return '#termin';
+    if (pfad === '/kontakt') return '#express-anfrage';
+    if (/^\/standorte\/[^/]+$/.test(pfad)) return '#anfrage';
+    return primaryCta.path;
 }
 
 /** Abläufe, auf denen die untere Leiste ausgeblendet ist (sie verdeckte sonst Schritte); dort behält der Kopf Telefon

@@ -4,9 +4,12 @@
 // Anfrage) mit ihren Kennungen und Ankern. Die Props der Vorlage stehen hier als Daten; die Inhalte der Abschnitte (Funktionen
 // des Bestands) setzt die Seite `src/app/(bestand)/kontakt/page.jsx`. Öffnungszeiten und Rufnummern kommen aus den Daten
 // (COMPANY_DATA, M-03), nicht aus dem Text.
+// Abnahme (Orchestrator, Zusatz E3-BAU-K016 Abschnitt 4): Der Hauptweg ist die Anfrage des Bestands (TezgelAnfrageFunnel,
+// Anker #express-anfrage) unter der Überschrift „Termin vor Ort anfragen“; ein zweites Formular (HeroContactForm) gab es
+// hier im Bestand nicht. Die Hilfen entfallen damit (die Anfrage ist der Hauptweg, der Kalender hat seinen Abschnitt).
 import type { ArbeitId } from '@/config/arbeiten';
 import type { Krume } from '@/components/kern/Brotkrumen';
-import type { Markentext, Zeile } from '@/components/vorlagen/inhalt';
+import type { Markentext } from '@/components/vorlagen/inhalt';
 import type { Arbeitsabschnitt } from '@/components/vorlagen/ArbeitsSeite';
 
 /** Abschnitt als Daten: die Funktion des Bestands (`inhalt`) setzt die Seite je `id` */
@@ -21,14 +24,12 @@ export interface KontaktInhalt {
   /** Satz zum Ort (Pflichtelement des ersten Bildschirms, K-009) */
   ort: string;
   vorspann: Markentext;
-  /** Ziel aller Hauptknöpfe: der Abschnitt „Termin vor Ort anfragen“ auf dieser Seite */
+  /** Ziel aller Hauptknöpfe: der Abschnitt „Termin vor Ort anfragen“ auf dieser Seite (#express-anfrage, wie `hauptziel`) */
   hauptziel: string;
   /** Abschnitte in der Folge der Textdatei */
   abschnitte: KontaktAbschnitt[];
   /** Bild des Abschnitts „Lieber anrufen oder schreiben?“ */
   bild: ArbeitId;
-  /** Hilfen nach dem Hauptweg: zwei Wege zu den Werkzeugen der Seite */
-  hilfen: Zeile[];
   ablauf: {
     schritte: { titel: string; text: Markentext }[];
     absatz: Markentext;
@@ -47,13 +48,14 @@ export const KONTAKT: KontaktInhalt = {
   ort: 'Fliesenleger Deniz Tezgel aus Aßlar in Hessen, für Wetzlar und die Orte rundherum.',
   vorspann:
     'Wollen Sie Ihre Badewanne gegen eine Dusche ohne Stufe tauschen oder einen Boden neu verlegen lassen? Dann genügt ein Anruf oder eine kurze Nachricht. Der Termin bei Ihnen vor Ort ist für Sie kostenfrei, und wir beraten Sie dabei persönlich.',
-  hauptziel: '#termin',
+  hauptziel: '#express-anfrage',
   abschnitte: [
     {
-      id: 'termin',
+      id: 'express-anfrage',
+      titelId: 'express-anfrage-heading',
       titel: 'Termin vor Ort anfragen',
       einleitung:
-        'Wählen Sie Ihr Vorhaben, dann tragen Sie Ihren Namen und Ihre Telefonnummer ein. Deniz Tezgel ruft Sie zurück und macht einen Termin mit Ihnen aus.',
+        'Wählen Sie Ihr Vorhaben und sagen Sie uns, wo und wann. Dann tragen Sie Ihren Namen und Ihre Telefonnummer ein. Deniz Tezgel meldet sich bei Ihnen und macht einen Termin mit Ihnen aus.',
       flaeche: 'fliese',
     },
     {
@@ -74,20 +76,6 @@ export const KONTAKT: KontaktInhalt = {
       flaeche: 'fliese',
     },
     {
-      id: 'hilfen',
-      titel: 'Hilfen, wenn Sie vorher planen möchten.',
-      einleitung:
-        'Diese beiden Hilfen können Sie nutzen, müssen Sie aber nicht. Beide führen zu einem Termin bei Ihnen vor Ort.',
-      flaeche: 'kalk',
-    },
-    {
-      id: 'express-anfrage',
-      titelId: 'express-anfrage-heading',
-      titel: 'Anfrage in drei Schritten',
-      einleitung: 'Sie beschreiben Ihr Vorhaben Schritt für Schritt.',
-      flaeche: 'fliese',
-    },
-    {
       id: 'termin-buchen',
       titelId: 'termin-buchen-heading',
       titel: 'Termin im Kalender',
@@ -102,10 +90,6 @@ export const KONTAKT: KontaktInhalt = {
     },
   ],
   bild: 'kontakt-eingang',
-  hilfen: [
-    { name: 'Anfrage in drei Schritten', satz: 'Sie beschreiben Ihr Vorhaben Schritt für Schritt.', href: '#express-anfrage' },
-    { name: 'Termin im Kalender', satz: 'Wählen Sie direkt einen freien Tag und eine Uhrzeit.', href: '/kontakt#termin-buchen' },
-  ],
   ablauf: {
     schritte: [
       {

@@ -1,6 +1,6 @@
 # kontakt · Seitentext `/kontakt` (Arbeitsseite)
 
-> Format wie `REF-start.md`, für die Arbeitsseite nach K-009 mit fünf Abschnitten (ohne „6 · Nächster Schritt“). Zeilen mit „→“, „data-…“ und Klammerhinweisen sind Bauhinweise, kein Seitentext. Firmendaten nur als `{{COMPANY_DATA…}}`. Öffnungszeiten nach M-03 als Text: „Samstag nach Vereinbarung“. Das Formular bleibt wie im Bestand (HeroContactForm), seine Zusage steht im Formular selbst.
+> Format wie `REF-start.md`, für die Arbeitsseite nach K-009 mit fünf Abschnitten (ohne „6 · Nächster Schritt“). Zeilen mit „→“, „data-…“ und Klammerhinweisen sind Bauhinweise, kein Seitentext. Firmendaten nur als `{{COMPANY_DATA…}}`. Öffnungszeiten nach M-03 aus den Tageswerten: „Sa nach Vereinbarung“. Abnahme E3-BAU-09 (Orchestrator, Texthoheit): Das Formular ist die Anfrage des Bestands (TezgelAnfrageFunnel, #express-anfrage); ein HeroContactForm gab es auf `/kontakt` im Bestand nicht. Die Hilfen (Abschnitt 4) entfallen deshalb, der Kalender hat seinen eigenen Abschnitt.
 
 ## Meta
 - Titel (54 Zeichen): `Kontakt und Termin vor Ort | Fliesenleger Tezgel Aßlar`
@@ -12,12 +12,12 @@
 - Ort (data-erstes-bild="ort"): `Fliesenleger Deniz Tezgel aus Aßlar in Hessen, für Wetzlar und die Orte rundherum.`
 - H1 (data-erstes-bild="ueberschrift"): `Nehmen Sie Kontakt auf. Wir kommen für einen Termin zu Ihnen.`
 - Vorspann: `Wollen Sie Ihre Badewanne gegen eine Dusche ohne Stufe tauschen oder einen Boden neu verlegen lassen? Dann genügt ein Anruf oder eine kurze Nachricht. Der Termin bei Ihnen vor Ort ist für Sie kostenfrei, und wir beraten Sie dabei persönlich.`
-- Hauptknopf (data-hauptknopf, data-erstes-bild="hauptknopf"): `Termin vor Ort anfragen` → `#termin` (zeigt auf das Formular unter Abschnitt 2)
+- Hauptknopf (data-hauptknopf, data-erstes-bild="hauptknopf"): `Termin vor Ort anfragen` → #express-anfrage (zeigt auf das Formular unter Abschnitt 2; Kopf, Menü und Leiste ebenso, `hauptziel`)
 - Kontakt (data-erstes-bild="kontakt"): `Anrufen: {{COMPANY_DATA.contact.phone}}` · `Nachricht per WhatsApp`
 
 ## 2 · Termin vor Ort anfragen
-- H2 (id `termin`): `Termin vor Ort anfragen`
-- Satz: `Wählen Sie Ihr Vorhaben, dann tragen Sie Ihren Namen und Ihre Telefonnummer ein. Deniz Tezgel ruft Sie zurück und macht einen Termin mit Ihnen aus.` (Formular HeroContactForm unverändert: Pflichtfelder Name und Telefon; die Zusage im Formular bleibt wörtlich, M-07)
+- H2 (id express-anfrage-heading, Abschnitt #express-anfrage): `Termin vor Ort anfragen`
+- Satz: `Wählen Sie Ihr Vorhaben und sagen Sie uns, wo und wann. Dann tragen Sie Ihren Namen und Ihre Telefonnummer ein. Deniz Tezgel meldet sich bei Ihnen und macht einen Termin mit Ihnen aus.` (Formular TezgelAnfrageFunnel unverändert: drei Schritte Vorhaben, Fläche und Ort, Kontaktdaten; Pflichtfelder Name und Telefon; die Zusage im Formular bleibt wörtlich, M-07)
 
 ## 3 · Andere Wege
 - H2: `Lieber anrufen oder schreiben?`
@@ -28,14 +28,11 @@
 - Satz: `Seit 2008 sind wir als Handwerksbetrieb bei der Handwerkskammer Wiesbaden eingetragen.` (K-015 F-05, F-06)
 - Einsatzgebiet: `Wir arbeiten in Aßlar, Wetzlar, Gießen, Herborn und Dillenburg.` (K-015 F-09)
 - Anfahrt: `Den Weg zu uns zeigt eine Karte. Sie erscheint, wenn Sie auf „Karte laden & zustimmen“ klicken.` (Karte hinter Einwilligung, Funktion F-12; Knopftext aus `MapConsentGate.tsx`; Einwilligung unverändert, Funktion F-11)
-- Öffnungszeiten: `Öffnungszeiten: Montag bis Donnerstag 7:30 bis 18 Uhr, Freitag 7:30 bis 17 Uhr, Samstag nach Vereinbarung.` (K-015 F-07; Freitag 17 Uhr wie im Bestand company.js:125, M-03 offen: company.js:128 sagt 18 Uhr)
-- Bild: `{Bild: kontakt-eingang}` Alt: `Hauseingang mit Podest und beigen Fliesen` (kleines Bild neben den Kontaktwegen; Alt-Text aus `bildplaetze.md`, Motiv nicht gegengesichtet, siehe OFFENE FRAGEN)
+- Öffnungszeiten: Etikett `Öffnungszeiten`, Zeilen aus den Tageswerten (oeffnungszeilen): `Mo bis Do 7:30 bis 18 Uhr` · `Fr 7:30 bis 17 Uhr` · `Sa nach Vereinbarung` (K-015 F-07; wie im Fuß, M-03 offen: company.js:128 sagt 18 Uhr)
+- Bild: `{Bild: kontakt-eingang}` Alt: `Treppenstufen mit beigen Fliesen und hellen Profilkanten` (Alt-Text aus `arbeiten.ts`, gegengesichtet: das Foto zeigt Stufen; unter den Kontaktwegen)
 
 ## 4 · Hilfen
-- H2: `Hilfen, wenn Sie vorher planen möchten.`
-- Satz: `Diese beiden Hilfen können Sie nutzen, müssen Sie aber nicht. Beide führen zu einem Termin bei Ihnen vor Ort.`
-1. `Anfrage in drei Schritten` · `Sie beschreiben Ihr Vorhaben Schritt für Schritt.` (Nebenknopf, Link #express-anfrage, Funktion F-03; der Name Express-Anfrage steht nicht im Text, weil K-010-B ihn nicht erlaubt, siehe OFFENE FRAGEN)
-2. `Termin im Kalender` · `Wählen Sie direkt einen freien Tag und eine Uhrzeit.` (Link `/kontakt#termin-buchen`, Funktion F-07)
+- Entfällt (Abnahme E3-BAU-09): Die Anfrage in drei Schritten ist der Hauptweg (Abschnitt 2), der Kalender steht als eigener Abschnitt mit H2 `Termin im Kalender` (id termin-buchen-heading, Abschnitt #termin-buchen) und dem Satz `Wählen Sie direkt einen freien Tag und eine Uhrzeit.` (Funktion F-07).
 
 ## 5 · Was nach Ihrer Anfrage passiert
 - H2: `Was nach Ihrer Anfrage passiert.`

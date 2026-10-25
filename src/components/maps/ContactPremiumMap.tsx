@@ -78,9 +78,9 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
   }, []);
 
   return (
-    <div className={clsx("flex w-full flex-col border border-fuge bg-fliese lg:flex-row", className)}>
-      {/* Links: Standort, Suche, Stadtliste, Kurzprofil des gewählten Ortes */}
-      <div className="flex w-full shrink-0 flex-col justify-between gap-6 border-b border-fuge bg-kalk p-4 sm:p-6 lg:w-2/5 lg:border-b-0 lg:border-r">
+    <div className={clsx("flex w-full flex-col border border-fuge bg-fliese", className)}>
+      {/* Oben: Standort, Suche, Stadtliste, Kurzprofil des gewählten Ortes (K-016: auf jeder Breite über der Karte) */}
+      <div className="flex w-full shrink-0 flex-col justify-between gap-6 border-b border-fuge bg-kalk p-4 sm:p-6">
         <div className="flex flex-col gap-4">
           <p className={etikettKlassen}>
             <Icon name="ort" groesse={4} />
@@ -180,10 +180,10 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
         </div>
       </div>
 
-      {/* Rechts: Kartenfläche hinter Einwilligung */}
+      {/* Darunter: Kartenfläche hinter Einwilligung */}
       {/* Platzhalter folgt dem Inhalt (E4-NACH-12/-17, E3-SICHT-ARB Befunde 7, 10): mobil Text und Zonen ohne Leerfeld,
-          ab md mindestens KARTE_HOEHE, ab lg so hoch wie die Ortsliste; die geladene Karte steht auf KARTE_HOEHE */}
-      <div className="relative w-full lg:h-auto lg:min-w-0 lg:flex-1">
+          ab md mindestens KARTE_HOEHE; die geladene Karte steht auf KARTE_HOEHE */}
+      <div className="relative w-full">
         <MapConsentGate
           src={embedUrl}
           title={`Google Maps Ansicht ${currentHub.name}`}

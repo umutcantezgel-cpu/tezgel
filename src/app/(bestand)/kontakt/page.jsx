@@ -1,23 +1,14 @@
 // Kontakt (E3-BAU-09, KERN v3.6, Zusatz E3-BAU-K016): Arbeitsseite auf der Vorlage ArbeitsSeite. Inhalt und Metadaten stehen
 // als Daten in `src/inhalte/kontakt.ts`; die Seite setzt je Abschnitt die Funktionen des Bestands (Formular, Karte, Kalender,
-// Anfrage, Kontaktkarte, regionaler Kontakt) mit ihren Kennungen und Ankern. Strukturierte Daten (JsonLd) stehen im Layout
+// Kontaktkarte) mit ihren Kennungen und Ankern. Hauptweg ist die Anfrage des Bestands (#express-anfrage, Abnahme E3-BAU-09). Strukturierte Daten (JsonLd) stehen im Layout
 // `src/app/(bestand)/kontakt/layout.tsx` und bleiben dort.
 import dynamic from 'next/dynamic';
 import ArbeitsSeite from '@/components/vorlagen/ArbeitsSeite';
-import { Oeffnungszeiten } from '@/components/vorlagen/teile/Schritt';
-import { Bereichszeilen } from '@/components/vorlagen/teile/Tun';
 import { Schritte } from '@/components/vorlagen/teile/Ablauf';
 import TezgelAnfrageFunnel from '@/components/funnels/TezgelAnfrageFunnel';
-import HeroContactForm from '@/components/forms/HeroContactForm';
 import DirectContactCard from '@/components/contact/DirectContactCard';
-import LocationContact from '@/components/locations/LocationContact';
 import Bildfeld from '@/components/kern/Bildfeld';
-import Knopf from '@/components/kern/Knopf';
-import Rufnummer from '@/components/kern/Rufnummer';
 import Textmarken from '@/components/kern/Textmarken';
-import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
-import { COMPANY_DATA } from '@/config/company';
-import { buildWhatsAppUrl, kontextNachricht } from '@/lib/whatsapp';
 import { createMetadata } from '@/lib/metadata';
 import { KONTAKT } from '@/inhalte/kontakt';
 
@@ -32,51 +23,32 @@ export const metadata = createMetadata({
   path: '/kontakt',
 });
 
-// Inhalte der Abschnitte: die Funktionen des Bestands, je Kennung des Abschnitts
+// Inhalte der Abschnitte: die Funktionen des Bestands, je Kennung des Abschnitts. Werkzeuge allein und mittig in der
+// Lesebreite, alles untereinander (K-016); Karte mit Ortsliste untereinander (ContactPremiumMap, ab jetzt auf jeder Breite).
 const INHALT = {
-  // Formular (Kennung `termin`, Überschrift des Abschnitts; Pflichtfelder und Empfänger unverändert, G8). Darunter Anruf,
-  // WhatsApp und Zeiten wie im Termin-Abschnitt der Startseite, untereinander (K-016).
-  termin: (
-    <>
-      <div className="mx-auto w-full max-w-mass">
-        <HeroContactForm titel={false} />
-      </div>
-      <div className="mx-auto mt-12 max-w-mass">
-        <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon">
-          Anrufen: <Rufnummer nummer={COMPANY_DATA.contact.phone} />
-        </Knopf>
-        <Knopf
-          href={buildWhatsAppUrl(COMPANY_DATA.contact.whatsappNumber, kontextNachricht(KONTAKT.pfad))}
-          extern
-          variante="neben"
-          vorne={<WhatsAppLogo className="size-5 shrink-0" />}
-        >
-          Nachricht per WhatsApp
-        </Knopf>
-        <Oeffnungszeiten />
-      </div>
-    </>
+  // Hauptweg: die Anfrage des Bestands (TezgelAnfrageFunnel, Kennung `express-anfrage`; Pflichtfelder und Empfänger
+  // unverändert, G8). Abnahme: kein zweites Formular daneben oder davor (HeroContactForm gab es hier im Bestand nicht).
+  'express-anfrage': (
+    <div className="mx-auto max-w-mass">
+      <TezgelAnfrageFunnel />
+    </div>
   ),
-  // Kontaktwege mit Firmendaten (Bestand: DirectContactCard) und das Bild der Textdatei
+  // Kontaktwege mit Firmendaten (Bestand: DirectContactCard, Öffnungszeiten aus den Tageswerten, M-03) und das Bild
   'andere-wege': (
-    <>
+    <div className="mx-auto max-w-mass">
       <DirectContactCard />
-      <div className="mx-auto mt-12 max-w-mass">
+      <div className="mt-12">
         <Bildfeld arbeit={KONTAKT.bild} spalten="halb" />
       </div>
-    </>
+    </div>
   ),
-  // Karte hinter der Einwilligung (Bestand: ContactPremiumMap, Kennung `standort-anfahrt`) und regionaler Kontakt
+  // Karte hinter der Einwilligung (Bestand: ContactPremiumMap, Kennung `standort-anfahrt`). Der regionale Kontakt
+  // (LocationContact) entfällt hier: Anruf und WhatsApp stehen schon in den Kontaktwegen darüber (Zusatz 6.5).
   'standort-anfahrt': (
-    <>
+    <div className="mx-auto max-w-mass">
       <ContactPremiumMap />
-      <LocationContact eingebettet cityName="Aßlar, Wetzlar & Mittelhessen" />
-    </>
+    </div>
   ),
-  // Hilfen nach dem Hauptweg: Links zu den beiden Werkzeugen unten
-  hilfen: <Bereichszeilen bereiche={KONTAKT.hilfen} />,
-  // Anfrage (Bestand: TezgelAnfrageFunnel, Kennung `express-anfrage`)
-  'express-anfrage': <TezgelAnfrageFunnel />,
   // Terminwahl (Bestand: BookingCalendar, Kennung `termin-buchen`)
   'termin-buchen': <BookingCalendar initialServiceType="Kostenfreies Vor-Ort-Aufmaß & Schadensanalyse" />,
   // So läuft es ab: drei Schritte und der Absatz zu Staub und Ansprechpartner
