@@ -20,7 +20,7 @@ Lege den Bildsatz des Stands der Etappe E3 für die zwölf Hauptansichten und `/
 5. Firmendaten, Rechtstexte und Kundenstimmen bleiben unverändert; der Bildsatz zeigt sie nur.
 
 ## 5. Kern-Auszug
-- Vorher-Bilder: `_werkstatt/bilder/e0/<slug>/<geraet>.jpg` (erster Bildschirm), Slug wie `lib.mjs` (`/` → `start`, `/bad/badsanierung` → `bad__badsanierung`); sieh dir drei davon an, bevor du beginnst.
+- Vorher-Bilder: `_werkstatt/bilder/e0/<slug>/<geraet>.jpg` (erster Bildschirm), Slug wie die Ordner dort (`/` → `start`, `/bad/badsanierung` → `bad-badsanierung`, `/standorte/wetzlar` → `standorte-wetzlar`); dieselben Slugs gelten für `_werkstatt/cache/bilder/e3/`. Sieh dir drei davon an, bevor du beginnst.
 - Server: 4311 = Produktionsbau des Stands aus dem Auftrag; Einwilligung „abgelehnt“, reduzierte Bewegung wie in E0 (Standard von `bildsatz.mjs`).
 - Bilder höchstens 1440 px breit, JPEG Qualität 60, ohne Metadaten.
 
