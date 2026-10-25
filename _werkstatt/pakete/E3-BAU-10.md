@@ -1,7 +1,7 @@
 # E3-BAU-10
 
 ## 1. Kopfzeile
-E3-BAU-10 · Rolle Baumeister · Modell Haiku 5.5 · Stufe 2 · Kern-Version v3.0 · Schreibrechte (exakt): `src/app/(bestand)/standorte/[stadt]/page.tsx`, `$SCRATCH/E3-BAU-10/**` · Umfang: Seite `/standorte/[stadt]` auf die Vorlage `OrtsSeite` umstellen, Text wörtlich aus `_werkstatt/texte/REF-ort-wetzlar.md`
+E3-BAU-10 · Rolle Baumeister · Modell Haiku 5.5 · Stufe 2 · Kern-Version v3.6 · Schreibrechte (exakt): `src/app/(bestand)/standorte/[stadt]/page.tsx`, `$SCRATCH/E3-BAU-10/**` · Umfang: Seite `/standorte/[stadt]` auf die Vorlage `OrtsSeite` umstellen, Text wörtlich aus `_werkstatt/texte/REF-ort-wetzlar.md`
 
 ## 2. Rollenbriefing
 Du bist **Baumeister**: Du baust eine Seite nach einer fertigen Vorlage und einem fertigen Text, ohne eigene Gestaltung.
@@ -21,6 +21,7 @@ Stelle `src/app/(bestand)/standorte/[stadt]/page.tsx` auf die Vorlage `src/compo
 
 
 ## 5. Kern-Auszug
+- **Zuerst:** `_werkstatt/pakete/E3-BAU-K016.md` ganz lesen (K-016 „Ruhe“, E-047, Entscheidungen zu dieser Seite in Abschnitt 4, Prüfungen in Abschnitt 5). Der Zusatz geht diesem Briefing vor.
 - Bauart der Vorlagen: `_werkstatt/ENTSCHEIDUNGEN.md` Abschnitt E-025 lesen. Inhaltsmodell mit Kommentaren: `src/components/vorlagen/inhalt.ts`. Vorlage: `src/components/vorlagen/OrtsSeite.tsx` (Kommentar am Anfang), Bausteine unter `src/components/vorlagen/teile/`. Beispiel einer fertigen Inhaltsdatei: `src/inhalte/barrierefreies-bad.ts`; Beispiel einer Seite mit Vorlage: `src/app/(bestand)/werkstatt-schaufenster/erzaehlseite/page.dev.tsx`.
 - Text: `_werkstatt/texte/REF-ort-wetzlar.md`. Texte in Backticks übernimmst du wörtlich mit ihren Textmarken `[[id|Wort]]`; `{Bild: id}` wird ein `ArbeitId`-Wert, `{Stimme: id}` ein Eintrag in `beleg.stimmen`, `{{COMPANY_DATA…}}` setzt die Vorlage selbst (nicht übernehmen). Bauhinweise in Klammern sind kein Seitentext.
 - Hauptknöpfe, Anruf, WhatsApp, Seitenformel, Leitachse und Brotkrumen-Navigation setzt die Vorlage; die Seite schreibt keine eigenen Knöpfe.
