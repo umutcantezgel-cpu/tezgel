@@ -156,21 +156,21 @@ test('Raster 9: Fuge schmal: auf allen Geräten höchstens 2,5 px (bei großen F
 
 test('Raster 10: deckung: der Drittelverband ragt über den Rand, die Deckung reicht auf allen zehn Gerätegrößen mindestens bis zur Ansicht; ohne Fliesen 0 × 0', () => {
   for (const [name, [breite, hoehe]] of Object.entries(GERAETE)) {
-    const d = deckung(verlegeRaster(breite, hoehe).fliesen);
+    const { mass, fliesen } = verlegeRaster(breite, hoehe);
+    const d = deckung(fliesen, mass.fuge);
     assert.ok(d.breite >= breite, `${name}: Deckung ${d.breite} px schmaler als die Ansicht (${breite} px)`);
     assert.ok(d.hoehe >= hoehe, `${name}: Deckung ${d.hoehe} px niedriger als die Ansicht (${hoehe} px)`);
   }
-  assert.deepEqual(deckung([]), { breite: 0, hoehe: 0 });
+  assert.deepEqual(deckung([], 0), { breite: 0, hoehe: 0 });
 });
 
-// Befund E3-B01-FIX-2 (offen, Orchestrator): deckung() nimmt als Breite das Ende der längsten Reihe; im Drittelverband endet
-// jede dritte Reihe früher (1440 × 900: Reihe 0 bei 1440 px, deckung meldet 1598 px). Wird das Fenster beim Legen auf
-// 1500 px verbreitert, wird nicht neu verlegt, und in jeder dritten Reihe bleibt rechts ein Streifen von 60 px offen. Der Fall
-// steht als todo, bis raster.ts korrigiert ist (Breite = kleinstes Reihenende); danach das todo entfernen.
-test('Raster 11: deckung meint die Fläche, die wirklich gedeckt ist: jeder Punkt innerhalb liegt auf einer Fliese (Fuge eingeschlossen)', { todo: 'deckung() in raster.ts: Breite als kleinstes Reihenende statt größtes (Befund E3-B01-FIX-2)' }, () => {
+// Befund E3-B01-FIX-2 (F1, behoben): deckung() nahm als Breite das Ende der längsten Reihe; im Drittelverband endet jede
+// dritte Reihe früher (1440 × 900: Reihe 0 bei 1440 px, deckung meldete 1598 px). Wurde das Fenster beim Legen auf 1500 px
+// verbreitert, wurde nicht neu verlegt, und in jeder dritten Reihe blieb rechts ein Streifen von 60 px offen.
+test('Raster 11: deckung meint die Fläche, die wirklich gedeckt ist: jeder Punkt innerhalb liegt auf einer Fliese (Fuge eingeschlossen)', () => {
   for (const [name, [breite, hoehe]] of Object.entries(GERAETE)) {
     const { mass, fliesen } = verlegeRaster(breite, hoehe);
-    const d = deckung(fliesen);
+    const d = deckung(fliesen, mass.fuge);
     const fehlend = [];
     for (const py of gitterpunkte(Math.floor(d.hoehe))) {
       for (const px of gitterpunkte(Math.floor(d.breite))) {

@@ -636,7 +636,7 @@ export default function Verlegen() {
       const alt = ansicht;
       const neu = miss();
       if (neu.breite === alt.breite && neu.hoehe === alt.hoehe) return;
-      const gedeckt = belag ? deckung(belag.fliesen) : null;
+      const gedeckt = belag ? deckung(belag.fliesen, belag.mass.fuge) : null;
       if (!ruhig && belag && gedeckt && (neu.breite > gedeckt.breite || neu.hoehe > gedeckt.hoehe)) {
         if (lage.zustand === 'legen') nachLegenNeu = true;
         else {
@@ -755,6 +755,10 @@ export default function Verlegen() {
     const navigiere = () => {
       const ziel = lage.ziel;
       if (!ziel) return;
+      // ein neuer Klick überholt ein Zurück oder Vor, dessen Seite nie kam (Abbruch): sonst hielte verlaufZiel den Pfad-Effekt
+      // für jede folgende Seite an, bis eine Navigation genau diesen Pfad trifft (Befund E3-B01-FIX-2, F2)
+      ausVerlauf = false;
+      verlaufZiel = null;
       auftrag++;
       startTransition(() => router.push(ziel));
       if (gleicherPfad(new URL(ziel, location.href).pathname, pfadRef.current)) bereitOhnePfadwechsel();
@@ -838,6 +842,8 @@ export default function Verlegen() {
     // Aktualisierung ruht das Rendern, darum setTimeout statt requestAnimationFrame), Plan im neuen Bild benennen.
     const morph = (a: HTMLAnchorElement) => {
       nachAbbruch = null;
+      ausVerlauf = false;
+      verlaufZiel = null;
       const plan = a.dataset.uebergangPlan ?? '';
       const ziel = new URL(a.href);
       const zielPfad = ziel.pathname.replace(/\/+$/, '');

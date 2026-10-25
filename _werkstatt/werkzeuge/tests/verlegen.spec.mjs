@@ -210,9 +210,12 @@ async function logoAufnahme(page) {
         const animationen = z === 'abnehmen' ? document.getAnimations().filter((a) => a.startTime !== null) : [];
         const fliese = animationen.find((a) => a.effect?.target?.classList?.contains('verlegen-fliese'));
         const logoWeg = animationen.find((a) => a.effect?.target === behaelter);
+        // Ende des Aufklatschens (Animation mit transform am Bild), sobald sie gestartet ist
+        const klatsch = bild?.getAnimations().find((a) => a.startTime !== null && a.effect.getKeyframes().some((k) => k.transform && k.transform !== 'none'));
         v.push({
           t: performance.now(),
           tl: Number(document.timeline.currentTime),
+          klatschEnde: klatsch ? Number(klatsch.startTime) + Number(klatsch.effect.getComputedTiming().endTime) : null,
           fliesenStart: fliese ? Number(fliese.startTime) : null,
           logoStart: logoWeg ? Number(logoWeg.startTime) : null,
           logoEnde: logoWeg ? Number(logoWeg.startTime) + Number(logoWeg.effect.getComputedTiming().endTime) : null,
@@ -273,21 +276,28 @@ async function pruefeLogo(page) {
   expect.soft(f.natur, 'Bilddatei in 640 × 200 (nicht kleiner als angezeigt bei einfacher Pixeldichte)').toEqual([640, 200]);
   expect.soft(f.box.b, 'Logo nicht breiter als die Datei').toBeLessThanOrEqual(640);
   expect.soft(f.box.b, 'Logo groß genug (mobil 60 % der Breite, sonst 352 px)').toBeGreaterThanOrEqual(breite < 600 ? 0.6 * breite : 352);
-  // Mindestzeit: vom ersten deckenden Bild bis zum ersten Bild, in dem es wieder schwächer wird
+  // Zeiten auf der Zeitachse des Dokuments (Startzeiten der Animationen, Bildzeit document.timeline.currentTime) statt an der
+  // Wanduhr der Abtastung (performance.now() im rAF-Rückruf): Unter Last kommt der Rückruf ein langes Bild später; gemessen
+  // wurden 240,2 und 254,3 ms bei 200 ms Ausblenden und 424,9 ms bei 450 ms Stehen (erstes deckendes Bild 62 ms zu spät
+  // abgetastet), ohne dass das Logo anders lief. Die Aussagen bleiben dieselben, ohne Spielraum für die Abtastung; die
+  // abgetasteten Bilder müssen dazu passen (gemalte Deckkraft, nicht nur die geplante).
+  const zeiten = b.find((e) => e.z === 'abnehmen' && e.fliesenStart !== null && e.logoStart !== null);
+  expect(zeiten, `Startzeiten von Fliesen und Logo beim Abnehmen (${protokoll})`).toBeTruthy();
+  // Mindestzeit: vom Ende des Aufklatschens bis zum Beginn des Ausblendens mindestens 450 ms (− 1 Bild wie bisher), und jedes
+  // abgetastete Bild dazwischen zeigt das Logo deckend in voller Größe
+  const klatschEnde = b.find((e) => e.klatschEnde !== null)?.klatschEnde ?? null;
+  expect(klatschEnde, `Aufklatschen gestartet (${protokoll})`).not.toBeNull();
+  expect.soft(zeiten.logoStart - klatschEnde, `Logo steht mindestens ${LOGO_STEHEN} ms deckend (${protokoll})`).toBeGreaterThanOrEqual(LOGO_STEHEN - BILD);
+  const stehend = b.filter((e) => e.tl >= klatschEnde && e.tl < zeiten.logoStart);
+  expect.soft(stehend.length, 'Bilder, in denen das Logo steht').toBeGreaterThan(0);
+  expect.soft(stehend.filter((e) => !(e.deckt > 0.99 && Math.abs(e.groesse - 1) < 0.001)).map((e) => `${e.z} ${Math.round(e.tl)} ${e.deckt.toFixed(2)}`), 'Logo steht deckend in voller Größe').toEqual([]);
   const iVoll = b.indexOf(f);
   const weg = b.slice(iVoll).find((e) => e.deckt < 0.99);
   expect(weg, 'Logo geht wieder').toBeTruthy();
-  expect.soft(weg.t - f.t, `Logo steht mindestens ${LOGO_STEHEN} ms deckend (${protokoll})`).toBeGreaterThanOrEqual(LOGO_STEHEN - BILD);
   expect.soft(weg.z, 'Logo geht erst mit dem Abnehmen').toBe('abnehmen');
-  // geht mit den ersten abgenommenen Fliesen: spätestens 200 ms nach dem Beginn des Abnehmens ganz weg. Gemessen auf der
-  // Zeitachse des Dokuments statt an der Wanduhr der Abtastung (performance.now() im rAF-Rückruf): Unter Last kommt der Rückruf
-  // ein langes Bild später, gemessen wurden 240,2 und 254,3 ms bei 200 ms Ausblenden, ohne dass das Logo länger stand.
-  // Dieselbe Aussage, ohne Spielraum für die Abtastung: Beginn ist die Startzeit der ersten abgenommenen Fliese; das
-  // Ausblenden des Logos startet im selben Bild (± 1 Bild) und endet spätestens 200 ms nach dem Beginn (+ 1 Bild); und jedes
-  // abgetastete Bild, dessen Bildzeit danach liegt, zeigt das Logo ohne Deckkraft (die Deckkraft ist die gemalte, nicht die
-  // geplante). Vorher erlaubte die Prüfung 2 Bilder.
-  const zeiten = b.find((e) => e.z === 'abnehmen' && e.fliesenStart !== null && e.logoStart !== null);
-  expect(zeiten, `Startzeiten von Fliesen und Logo beim Abnehmen (${protokoll})`).toBeTruthy();
+  // geht mit den ersten abgenommenen Fliesen: Beginn ist die Startzeit der ersten abgenommenen Fliese; das Ausblenden des Logos
+  // startet im selben Bild (± 1 Bild) und endet spätestens 200 ms nach dem Beginn (+ 1 Bild; vorher 2 Bilder an der Wanduhr);
+  // jedes abgetastete Bild danach zeigt das Logo ohne Deckkraft
   const beginn = zeiten.fliesenStart;
   expect.soft(Math.abs(zeiten.logoStart - beginn), 'Logo beginnt mit der ersten abgenommenen Fliese (± 1 Bild)').toBeLessThanOrEqual(BILD);
   expect.soft(zeiten.logoEnde - beginn, `Logo weg ${LOGO_WEG} ms nach Beginn des Abnehmens (+ 1 Bild)`).toBeLessThanOrEqual(LOGO_WEG + BILD);
@@ -300,10 +310,10 @@ async function pruefeLogo(page) {
 }
 
 /** Ein langsames Ziel: Antworten auf `ziel` (RSC, auch das Vorladen) kommen erst nach 4,5 s, der Wechsel bricht nach 3 s ab. */
-async function langsamesZiel(page, ziel = ZIEL) {
+async function langsamesZiel(page, ziel = ZIEL, ms = 4500) {
   await page.route('**/*', async (route) => {
     const url = new URL(route.request().url());
-    if (url.pathname.replace(/\/+$/, '') === ziel && url.searchParams.has('_rsc')) await new Promise((r) => setTimeout(r, 4500));
+    if (url.pathname.replace(/\/+$/, '') === ziel && url.searchParams.has('_rsc')) await new Promise((r) => setTimeout(r, ms));
     await route.continue().catch(() => undefined);
   });
 }
@@ -1147,6 +1157,63 @@ test.describe('Bewegung an (Wechsel mit Fliesen)', () => {
     expect.soft(await pfad(page), 'Seite des Zurück').toBe(START);
     expect.soft((await page.locator('#main-content h1').first().textContent())?.trim(), 'Inhalt von START').toBe(h1Start);
     await expect.soft(page.locator('#main-content h1')).toBeFocused();
+  });
+
+  test('(30) Abbruch aus dem Verlauf, die Seite kommt nicht, dann ein Klick: der Wechsel läuft ganz durch, Fokus auf der H1 der neuen Seite (Befund E3-B01-FIX-2, F2)', async ({ page }) => {
+    await oeffne(page);
+    const link = linkZu(page, ZIEL);
+    await bedienbar(link);
+    await beobachte(page);
+    await wechsel(page, () => link.click(), ZIEL);
+    // wie (19c): nach dem Neuladen stellt Zurück eine RSC-Anfrage für START; hier antwortet START bis zum Ende des Falls nicht
+    await page.reload();
+    await expect(page.locator('html')).toHaveClass(/k-modul/);
+    await bedienbar(page.locator('.verlegen'));
+    await beobachte(page);
+    await langsamesZiel(page, START, 60_000);
+    const ab = await laenge(page);
+    await page.evaluate(() => history.back());
+    await expect.poll(async () => (await log(page)).slice(ab).map((e) => e.z).join(' '), { timeout: 15_000 }).toContain('abbruch');
+    await warteAufRuhe(page, ab);
+    // angezeigt bleibt ZIEL (die Adresse zeigt START): ein sichtbarer Link dieser Seite, der weder auf START noch auf ZIEL führt
+    const weiter = await page.evaluate(
+      ([start, ziel]) =>
+        [...document.querySelectorAll('#main-content a[href^="/"]')]
+          .find((a) => {
+            const h = a.getAttribute('href');
+            return a.getClientRects().length > 0 && !h.includes('#') && !h.includes('?') && h !== start && h !== ziel;
+          })
+          ?.getAttribute('href') ?? null,
+      [START, ZIEL],
+    );
+    expect(weiter, 'interner Link auf der angezeigten Seite').not.toBeNull();
+    const ab2 = await laenge(page);
+    await linkZu(page, weiter).click();
+    await expect.poll(() => pfad(page)).toBe(weiter);
+    await warteAufRuhe(page, ab2);
+    expect.soft(ohneWarten(folge(await log(page), ab2)), 'voller Wechsel ohne Abbruch').toEqual(VOLL);
+    await expect.soft(page.locator('#main-content h1')).toBeFocused();
+    await page.unrouteAll({ behavior: 'ignoreErrors' });
+  });
+
+  test('(31) Breite wächst beim Legen um 60 px: im ersten Bild nach dem Legen deckt der Boden die ganze neue Ansicht, auch in den kürzeren Reihen des Drittelverbands (Befund E3-B01-FIX-2, F1)', async ({ page }) => {
+    await oeffne(page);
+    const link = linkZu(page, ZIEL);
+    await bedienbar(link);
+    await beobachte(page);
+    const ab = await laenge(page);
+    const vorher = page.viewportSize();
+    // 390 × 844 → 450 × 844, 1440 × 900 → 1500 × 900
+    const neu = { width: vorher.width + 60, height: vorher.height };
+    await link.click();
+    await imZustand(page, 'legen', 5000);
+    await page.setViewportSize(neu);
+    const stand = await bodenDeckung(page, false);
+    expect.soft(['bedeckt', 'warten'], `Boden liegt (${JSON.stringify(stand)})`).toContain(stand.z);
+    expect.soft(stand.ansicht, 'Fläche der Schicht').toEqual([neu.width, neu.height]);
+    expect.soft(stand.offen, `nicht gedeckte Punkte im ersten Bild nach dem Legen (${JSON.stringify(stand)})`).toBe(0);
+    await warteAufRuhe(page, ab);
+    expect.soft(await pfad(page)).toBe(ZIEL);
   });
 });
 

@@ -307,16 +307,20 @@ export function logoMass(breite: number, hoehe: number): Logomass {
   return { x: Math.round((breite - b) / 2 + (0.5 - LOGO_INHALT_MITTE) * b), y: Math.round((hoehe - h) / 2), breite: b, hoehe: h };
 }
 
-/** Fläche, die die Fliesen wirklich decken (rechte und untere Kante der äußersten Fliesen): Im Drittelverband ragen die
- *  Reihen über die Ansicht hinaus, ein Belag deckt also oft mehr als die Ansicht, für die er gebaut wurde. Wächst die Ansicht
- *  nur in diesen Überstand (Adressleiste fährt ein), muss nicht neu verlegt werden (Gegenprüfung E3-B01-FIX). */
-export function deckung(fliesen: readonly Fliese[]): { breite: number; hoehe: number } {
-  let breite = 0;
+/** Fläche, die die Fliesen wirklich decken (rechte Kante der kürzesten Reihe, untere Kante der untersten Fliese): Im
+ *  Drittelverband ragen die Reihen über die Ansicht hinaus, ein Belag deckt also oft mehr als die Ansicht, für die er gebaut
+ *  wurde. Wächst die Ansicht nur in diesen Überstand (Adressleiste fährt ein), muss nicht neu verlegt werden (Gegenprüfung
+ *  E3-B01-FIX). Die Reihen enden versetzt, jede dritte früher: Maß ist darum das kleinste Reihenende, nicht das größte
+ *  (Befund E3-B01-FIX-2, F1: bei 1440 × 900 sonst 1598 statt 1440 px, ein verbreitertes Fenster blieb rechts offen). Die
+ *  Fuge hinter der letzten Fliese einer Reihe und unter der untersten Reihe gehört zum Belag wie jede andere Fuge. */
+export function deckung(fliesen: readonly Fliese[], fuge: number): { breite: number; hoehe: number } {
+  const reihenEnde = new Map<number, number>();
   let hoehe = 0;
   for (const f of fliesen) {
-    breite = Math.max(breite, f.x + f.breite);
-    hoehe = Math.max(hoehe, f.y + f.hoehe);
+    reihenEnde.set(f.y, Math.max(reihenEnde.get(f.y) ?? -Infinity, f.x + f.breite + fuge));
+    hoehe = Math.max(hoehe, f.y + f.hoehe + fuge);
   }
+  const breite = reihenEnde.size ? Math.min(...reihenEnde.values()) : 0;
   return { breite, hoehe };
 }
 
