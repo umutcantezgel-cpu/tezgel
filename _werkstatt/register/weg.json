@@ -13,7 +13,8 @@
   "startzustand": "nur unter html.k-bewegung:not(.k-notaus), @supports (animation-timeline: view()) and (animation-range-end: cover calc(100% - 60vh)), @media screen and (prefers-reduced-motion: no-preference)",
   "reduziert": "Linie voll, alle Stationen gesetzt (kein Startzustand, keine Animation)",
   "ersatzpfad": "ohne JavaScript, ohne animation-timeline, Notaus, Druck, erzwungene Farben: Endzustand wie reduziert",
-  "wo": ["/bad/badsanierung"],
+  "wo": [],
+  "wo_hinweis": "vorerst auf keiner Seite (E-048: für K-016 zu unruhig, /bad/badsanierung zeigt die Schritte als 3 + 3); gebaut, im Schaufenster",
   "schlitz": "momente.ablauf",
   "baustein": "src/components/momente/weg/Weg.tsx",
   "budget": { "client_js_kb": 0, "css_kb_gzip": 0.4, "svg": "keine neue Zeichnung (Fugenkreuz)" }

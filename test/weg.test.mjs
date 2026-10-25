@@ -12,7 +12,8 @@ test('Weg 1: Registereintrag als Datei', () => {
   assert.equal(e.kennung, 'weg');
   assert.equal(e.ausloeser, 'scroll');
   assert.deepEqual(e.register_ts, { ausloeser: 'scroll' });
-  assert.deepEqual(e.wo, ['/bad/badsanierung']);
+  // vorerst auf keiner Seite (E-048: /bad/badsanierung zeigt die Schritte als 3 + 3), gebaut und im Schaufenster
+  assert.deepEqual(e.wo, []);
   assert.equal(e.schlitz, 'momente.ablauf');
   assert.deepEqual([...e.keyframes].sort(), ['leitachse-ziehen', 'szene-setzen']);
   assert.deepEqual([...e.eigenschaften].sort(), ['opacity', 'scale']);
