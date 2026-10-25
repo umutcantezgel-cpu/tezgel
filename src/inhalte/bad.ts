@@ -5,7 +5,7 @@
 import type { ErzaehlInhalt } from '@/components/vorlagen/inhalt';
 
 const VORSPANN =
-  'Vielleicht ist Ihr Bad in die Jahre gekommen, und Sie wissen nicht, wo Sie anfangen sollen. Wir bauen es für Sie um, Schritt für Schritt. Passen große Fliesen zu Ihrem Bad? Oder eine [[bodengleiche-dusche|bodengleiche Dusche]]? Das besprechen wir mit Ihnen.';
+  'Vielleicht ist Ihr Bad in die Jahre gekommen, und Sie wissen nicht, wo Sie anfangen sollen. Wir bauen es für Sie um, Schritt für Schritt. Passen große Fliesen oder eine [[bodengleiche-dusche|bodengleiche Dusche]] zu Ihrem Bad? Das besprechen wir mit Ihnen.';
 
 export const BAD: ErzaehlInhalt = {
   pfad: '/bad',

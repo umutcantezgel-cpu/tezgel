@@ -12,7 +12,7 @@
 - Brotkrumen: `Start › Bad`
 - Ort: `Für Aßlar, Wetzlar und Umgebung.`
 - H1: `Aus Ihrem alten Bad wird ein neues, das Sie gern nutzen.`
-- Vorspann: `Vielleicht ist Ihr Bad in die Jahre gekommen, und Sie wissen nicht, wo Sie anfangen sollen. Wir bauen es für Sie um, Schritt für Schritt. Passen große Fliesen zu Ihrem Bad? Oder eine [[bodengleiche-dusche|bodengleiche Dusche]]? Das besprechen wir mit Ihnen.`
+- Vorspann: `Vielleicht ist Ihr Bad in die Jahre gekommen, und Sie wissen nicht, wo Sie anfangen sollen. Wir bauen es für Sie um, Schritt für Schritt. Passen große Fliesen oder eine [[bodengleiche-dusche|bodengleiche Dusche]] zu Ihrem Bad? Das besprechen wir mit Ihnen.`
 - Hauptknopf: `Termin vor Ort anfragen` → `/kontakt` · Kontakt: `Anrufen: {{COMPANY_DATA.contact.phone}}` (derselbe Hauptknopf wie in Abschnitt 6, K-004)
 - Bild: `{Bild: bad-einstieg}` Alt: `Helles Bad mit Glasdusche, WC an der Wand, Holzoptik am Boden und Waschtisch`
 

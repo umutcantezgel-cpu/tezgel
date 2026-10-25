@@ -3,8 +3,10 @@
 // entfällt (Regel 3, „Seit 2008 …“), die Stimme der Textdatei steht im Beleg. Einstieg mit dem Verlegeplan der Bestandsseite
 // (Planblatt, E-037, „wohnen“ wie das Verband-Schema der Bestandsseite). Der große Moment `verband` steht im Wissensblock
 // „Alles beginnt mit dem Boden.“ (Schlitz `zeichnungen`); die beiden Absätze dieses Blocks stehen in einem Absatz, weil
-// der Block nur einen Text trägt. Die fünf Zeilen „Formate und Technik“ stehen als Wege in „Ihre Lage“, weil Wissensblöcke
-// keine Links tragen (OFFENE FRAGE). Vorlage: WissensSeite (E-025).
+// der Block nur einen Text trägt. Die fünf Zeilen „Formate und Technik“ stehen nach der Zeichnung im selben Block (`wege`,
+// Abnahme E3-BAU-05: Platz wie in der Textdatei, nach der ersten markierten Nennung von „Untergrund“). Die Kennzeile unter
+// der Stimme setzt der Baustein Stimmen aus den Daten; der Beleg trägt die Überschrift wie auf /leistungen.
+// Vorlage: WissensSeite (E-025).
 import type { WissenInhalt } from '@/components/vorlagen/inhalt';
 
 const VORSPANN =
@@ -56,6 +58,22 @@ export const FLIESEN: WissenInhalt = {
         'Zuerst prüfen wir den [[untergrund|Untergrund]]. Ist er eben und trocken genug, verlegen wir die Fliesen sauber, mit passenden Fugen und Übergängen. Wie die Fliesen angeordnet sind, bestimmt, wie eine Fläche wirkt. Hier sind vier Muster zum Ausprobieren.',
       // großer Moment: die vier Verlegemuster mit ihren Sätzen und den zwei Fotos (Schlitz `zeichnungen.verband`)
       zeichnung: 'verband',
+      // Formate und Technik (Textdatei Abschnitt 3), je ein Satz mit Link
+      wege: [
+        { name: 'Großformate verlegen', href: '/fliesen/grossformat', satz: 'Je größer die Fliese, desto ebener muss der Untergrund sein.' },
+        { name: 'Fliesen in Holzoptik', href: '/fliesen/holzoptik', satz: 'Sie sehen aus wie Holzdielen, sind aber Fliesen.' },
+        { name: 'Fliesenarten im Vergleich', href: '/fliesen/fliesenarten', satz: 'Wir zeigen, welche Fliese für welchen Raum taugt.' },
+        {
+          name: 'Verlegetechnik',
+          href: '/fliesen/verlegetechnik',
+          satz: 'Ein dauerhafter Boden entsteht, wenn Kleber und Fugen zusammenpassen.',
+        },
+        {
+          name: 'Muster, Fugen und Kanten',
+          href: '/fliesen/verlegemuster',
+          satz: 'Dort zeigen wir, wie die Fugen verlaufen und wie Ecken und Kanten sauber enden.',
+        },
+      ],
     },
   ],
   ablauf: {
@@ -76,47 +94,30 @@ export const FLIESEN: WissenInhalt = {
         text: 'Wir verlegen die Fliesen und gehen am Ende gemeinsam alles mit Ihnen durch.',
       },
     ],
-    // Link aus der Textdatei: „Gute Fliesenarbeit prüfen“ als Verweis, der Satz davor
+    // Link aus der Textdatei: „Gute Fliesenarbeit prüfen“ als Verweis, der Satz davor (Abnahme: Satz steht für sich)
     hinweis: {
-      text: 'Hier erfahren Sie, woran Sie sie erkennen.',
+      text: 'Woran Sie gute Fliesenarbeit erkennen, erfahren Sie hier.',
       verweis: { name: 'Gute Fliesenarbeit prüfen', href: '/fliesen/abnahme' },
     },
   },
   beleg: {
-    // die Textdatei hat für den Beleg keine Überschrift (OFFENE FRAGE); ohne Überschrift, ohne erfundenen Text
-    titel: '',
+    // Überschrift wie auf /leistungen (Abnahme, Texthoheit: die Textdatei hatte keine)
+    titel: 'So sieht unsere Arbeit aus.',
     // Unterschrift: Wörter aus dem Alt-Text der Textdatei, auf sechs Wörter gekürzt (Regel 4)
     fotos: [{ bild: 'start-galerie-1', unterschrift: 'Dusche mit Sitzbank und Mosaikfliesen', href: '/bad/barrierefreies-bad' }],
     satz: 'Seit 2014 ist das Verlegen großer Fliesen ein Schwerpunkt bei uns.',
-    // Stimme der Textdatei (G8: Wortlaut unverändert). Die Kennzeile der Textdatei steht unter der Überschrift, weil die
-    // Vorlage bei einer einzelnen Stimme keine Bewertungszeile unter dem Zitat setzt (OFFENE FRAGE)
+    // Stimme der Textdatei (G8: Wortlaut unverändert); die Kennzeile mit Stand setzt der Baustein Stimmen darunter
     stimmen: ['rabia-oe'],
-    stimmenEinleitung: '5,0 von 5 Sternen · 27 Bewertungen bei Google · Stand September 2026',
   },
   schritt: {
     titel: 'Haben Sie Fragen zu Ihrem Raum?',
     satz: 'Nennen Sie uns Ihren Namen und Ihre Telefonnummer. Deniz Tezgel ruft Sie zurück und macht einen Termin mit Ihnen aus.',
-    // Hilfen: zuerst der Konfigurator (Abschnitt 6 der Textdatei), dann die fünf Zeilen „Formate und Technik“ aus
-    // Abschnitt 3. Sie stehen hier, weil Wissensblöcke keine Links tragen und die Zeilen vor dem ersten Wissensblock
-    // den Begriff „Untergrund“ ohne Marke nennen würden (OFFENE FRAGE).
+    // Hilfe: der Konfigurator (Abschnitt 6 der Textdatei); die Zeilen „Formate und Technik“ stehen im Wissensblock
     hilfen: [
       {
         name: 'Projekt im Konfigurator vorbereiten',
         href: '/fliesen/konfigurator',
         satz: 'Hier wählen Sie Raum, Untergrund, Fliesengröße und Fläche.',
-      },
-      { name: 'Großformate verlegen', href: '/fliesen/grossformat', satz: 'Je größer die Fliese, desto ebener muss der Untergrund sein.' },
-      { name: 'Fliesen in Holzoptik', href: '/fliesen/holzoptik', satz: 'Sie sehen aus wie Holzdielen, sind aber Fliesen.' },
-      { name: 'Fliesenarten im Vergleich', href: '/fliesen/fliesenarten', satz: 'Wir zeigen, welche Fliese für welchen Raum taugt.' },
-      {
-        name: 'Verlegetechnik',
-        href: '/fliesen/verlegetechnik',
-        satz: 'Ein dauerhafter Boden entsteht, wenn Kleber und Fugen zusammenpassen.',
-      },
-      {
-        name: 'Muster, Fugen und Kanten',
-        href: '/fliesen/verlegemuster',
-        satz: 'Dort zeigen wir, wie die Fugen verlaufen und wie Ecken und Kanten sauber enden.',
       },
     ],
     verwandte: [

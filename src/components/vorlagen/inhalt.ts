@@ -146,6 +146,8 @@ export interface Wissensblock {
   tabelle?: { name: string; kopf: string[]; zeilen: string[][] };
   /** Kennung einer ruhigen Zeichnung, die die Seite über `zeichnungen` liefert */
   zeichnung?: string;
+  /** Zeilen mit Link nach der Zeichnung (z. B. „Formate und Technik“ auf /fliesen), wie die Wege in „Ihre Lage“ */
+  wege?: Zeile[];
 }
 
 export interface WissenInhalt {

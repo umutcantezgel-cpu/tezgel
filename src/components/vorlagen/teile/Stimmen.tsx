@@ -67,9 +67,12 @@ export default function Stimmen({ ids, form = 'gross' }: { ids: string[]; form?:
   const [erste] = stimmen;
   if (!erste) return null;
   if (stimmen.length === 1) {
+    // auch unter der einzelnen Stimme die Kennzeile mit Stand aus den Daten (Abnahme E3-BAU-05/11: sonst stand sie als
+    // fester Text im Inhalt)
     return (
       <div className="mx-auto max-w-mass">
         <Stimme s={erste} gross />
+        <Bewertungszeile stand className="mt-8 font-text text-fs-2 text-tinte-2 hyphens-none" />
       </div>
     );
   }

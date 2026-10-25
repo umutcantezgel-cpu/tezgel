@@ -1,13 +1,15 @@
-// Vorlagen · 3 Was wir tun auf Wissensseiten (KERN v3 K-009, K-011; E-025): ruhig erklärend, Block für Block. Je Block
-// eine Überschrift (H2, eigener Abschnitt an der Laserlinie) und wahlweise ein Absatz, Karten (Arten oder Möglichkeiten
-// nebeneinander an der Fuge), eine Liste als Fliesen, eine Tabelle (Baustein Tabelle) und eine ruhige Zeichnung, die die
-// Seite liefert. Alle Blöcke gehören zum Teil „Was wir tun“ der Seitenformel (data-formel="tun"). Serverkomponente.
+// Vorlagen · 3 Was wir tun auf Wissensseiten (KERN v3 K-009, K-011; E-025; K-016 „Ruhe“): ruhig erklärend, Block für
+// Block. Je Block eine Überschrift (H2, eigener Abschnitt an der Laserlinie, Kopf mittig über dem Inhalt statt seitlich:
+// sonst stünden Text links und Zeichnung rechts zugleich, Abnahme E3-BAU-05) und wahlweise ein Absatz, Karten (Arten oder
+// Möglichkeiten nebeneinander an der Fuge), eine Liste als Fliesen, eine Tabelle (Baustein Tabelle), eine ruhige Zeichnung,
+// die die Seite liefert, und Zeilen mit Link (`wege`). Alle Blöcke gehören zum Teil „Was wir tun“ der Seitenformel
+// (data-formel="tun"). Serverkomponente.
 import type { ReactNode } from 'react';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Tabelle from '@/components/kern/Tabelle';
 import Textmarken from '@/components/kern/Textmarken';
 import type { Wissensblock } from '../inhalt';
-import { Punktfliesen } from './Tun';
+import { Bereichszeilen, Punktfliesen } from './Tun';
 
 function Karten({ karten }: { karten: NonNullable<Wissensblock['karten']> }) {
   return (
@@ -26,12 +28,17 @@ function Karten({ karten }: { karten: NonNullable<Wissensblock['karten']> }) {
 
 export function Block({ block, nummer, zeichnung }: { block: Wissensblock; nummer: number; zeichnung?: ReactNode }) {
   return (
-    <Abschnitt id={`wissen-${nummer}`} formel="tun" leitachse spaet kopf="seitlich" titel={block.titel} einleitung={block.absatz ? <p><Textmarken text={block.absatz} /></p> : undefined}>
+    <Abschnitt id={`wissen-${nummer}`} formel="tun" leitachse spaet mitte titel={block.titel} einleitung={block.absatz ? <p><Textmarken text={block.absatz} /></p> : undefined}>
       <div className="flex flex-col gap-12">
         {block.karten && block.karten.length > 0 && <Karten karten={block.karten} />}
         {block.liste && block.liste.length > 0 && <Punktfliesen punkte={block.liste.map((p) => <Textmarken key={p} text={p} />)} />}
         {block.tabelle && <Tabelle name={block.tabelle.name} kopf={block.tabelle.kopf} zeilen={block.tabelle.zeilen} />}
         {zeichnung}
+        {block.wege && block.wege.length > 0 && (
+          <div className="mx-auto w-full max-w-mass">
+            <Bereichszeilen bereiche={block.wege} />
+          </div>
+        )}
       </div>
     </Abschnitt>
   );

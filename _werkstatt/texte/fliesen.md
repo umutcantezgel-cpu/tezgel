@@ -51,13 +51,14 @@
   1. `Termin bei Ihnen vor Ort` · `Wir messen Ihren Raum aus und sehen uns den Boden an. Dieser Termin ist kostenfrei.`
   2. `Material und Fugen wählen` · `Wir wählen mit Ihnen Fliesen, Kleber und Fugen aus. Danach erhalten Sie ein Angebot mit festem Preis.`
   3. `Verlegen und zum Schluss prüfen` · `Wir verlegen die Fliesen und gehen am Ende gemeinsam alles mit Ihnen durch.`
-- Link: `Gute Fliesenarbeit prüfen: Hier erfahren Sie, woran Sie sie erkennen.` → `/fliesen/abnahme`
+- Satz: `Woran Sie gute Fliesenarbeit erkennen, erfahren Sie hier.` · Link: `Gute Fliesenarbeit prüfen` → `/fliesen/abnahme` (Abnahme E3-BAU-05: der Satz steht für sich, der Link darunter)
 
 ## 5 · Beleg
+- H2: `So sieht unsere Arbeit aus.` (Abnahme E3-BAU-05, wie auf `/leistungen`)
 - Foto `{Bild: start-galerie-1}` Alt: `Dusche mit Sitzbank und Mosaikfliesen am Boden und an der Bank`
 - Satz: `Seit 2014 ist das Verlegen großer Fliesen ein Schwerpunkt bei uns. Seit 2008 sind wir bei der Handwerkskammer Wiesbaden eingetragen.`
 - Stimme `{Stimme: rabia-oe}` Quelle: `Google`
-- Kennzeile: `5,0 von 5 Sternen · 27 Bewertungen bei Google · Stand September 2026`
+- Kennzeile: `5,0 von 5 Sternen · 27 Bewertungen bei Google · Stand September 2026` (unter der Stimme, aus `RATING_SUMMARY`)
 
 ## 6 · Nächster Schritt
 - H2: `Haben Sie Fragen zu Ihrem Raum?`

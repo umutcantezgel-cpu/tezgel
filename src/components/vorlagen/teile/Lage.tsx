@@ -54,7 +54,7 @@ export default function Lage({ inhalt }: { inhalt: LageInhalt }) {
       )}
       {fliesen.length > 0 && <LageFliesen fliesen={fliesen} className={clsx(inhalt.absaetze?.length && 'mt-12')} />}
       {inhalt.wege && inhalt.wege.length > 0 && (
-        <div className={clsx((inhalt.absaetze?.length || fliesen.length) && 'mt-12')}>
+        <div className={clsx('mx-auto max-w-mass', (inhalt.absaetze?.length || fliesen.length) && 'mt-12')}>
           <Bereichszeilen bereiche={inhalt.wege} />
         </div>
       )}

@@ -14,8 +14,8 @@ export interface Foto {
 export default function Fotos({ fotos, spalten = 3 }: { fotos: Foto[]; spalten?: 1 | 2 | 3 }) {
   return (
     <div className="@container">
-      {/* ein einzelnes Foto steht in der Breite einer Textspalte, nicht über die ganze Seite */}
-      <ul className={clsx('grid grid-cols-1 gap-px border border-fuge bg-fuge', spalten === 1 ? 'max-w-mass' : '@2xl:grid-cols-2', spalten === 3 && '@5xl:grid-cols-3')}>
+      {/* ein einzelnes Foto steht mittig in der Breite einer Textspalte, nicht über die ganze Seite (K-016) */}
+      <ul className={clsx('grid grid-cols-1 gap-px border border-fuge bg-fuge', spalten === 1 ? 'mx-auto max-w-mass' : '@2xl:grid-cols-2', spalten === 3 && '@5xl:grid-cols-3')}>
         {fotos.map((f) => (
           <li key={f.bild} className="bg-kalk">
             <Bildfeld
