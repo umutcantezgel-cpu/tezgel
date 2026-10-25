@@ -1,4 +1,4 @@
-// Blog-Artikel: Duschrinne oder Punktablauf? Die Entwässerung der bodengleichen Dusche
+// Blog-Artikel: Duschrinne oder Punktablauf, welche Lösung passt?
 
 const post = {
     "id": "7",

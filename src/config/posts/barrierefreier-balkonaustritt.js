@@ -1,4 +1,4 @@
-// Blog-Artikel: Barrierefreier Balkonaustritt: Wie niedrig darf die Türschwelle sein?
+// Blog-Artikel: Wie niedrig ist ein barrierefreier Balkonaustritt?
 
 const post = {
     "id": "5",

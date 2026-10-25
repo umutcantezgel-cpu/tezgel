@@ -1,4 +1,4 @@
-// Blog-Artikel: Wandnischen in Dusche und Bad: planen, abdichten, beleuchten
+// Blog-Artikel: So planen Sie Wandnischen in Dusche und Bad
 
 const post = {
     "id": "6",

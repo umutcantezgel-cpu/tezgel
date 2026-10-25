@@ -1,4 +1,4 @@
-// Blog-Artikel: Rutschfeste Fliesen: Welche R-Klasse ist wo sinnvoll?
+// Blog-Artikel: Welche rutschfesten Fliesen passen wohin?
 
 const post = {
     "id": "10",

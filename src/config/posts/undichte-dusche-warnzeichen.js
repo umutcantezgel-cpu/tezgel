@@ -1,4 +1,4 @@
-// Blog-Artikel: Undichte Dusche? 5 Warnzeichen für Feuchte hinter Fliesen
+// Blog-Artikel: Woran erkennt man eine undichte Dusche?
 // Themen-Owner: Warnzeichen für Feuchtigkeit hinter Fliesen.
 
 const post = {

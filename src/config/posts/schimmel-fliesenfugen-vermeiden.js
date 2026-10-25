@@ -1,4 +1,4 @@
-// Blog-Artikel: Schimmel in Fliesenfugen vermeiden: Ursachen und Vorbeugung
+// Blog-Artikel: Wie Sie Schimmel in Fliesenfugen vermeiden
 
 const post = {
     "id": "8",

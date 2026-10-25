@@ -1,4 +1,4 @@
-// Blog-Artikel: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)
+// Blog-Artikel: Wir suchen einen Fliesenleger (m/w/d) als Geselle
 // Kurze Ankündigung – die vollständige Stellenausschreibung steht auf /karriere.
 
 import { COMPANY_DATA } from '@/config/company';

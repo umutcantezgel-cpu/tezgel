@@ -1,4 +1,4 @@
-// Blog-Artikel: Feinsteinzeug oder Naturstein? Der ehrliche Vergleich
+// Blog-Artikel: Feinsteinzeug oder Naturstein, was passt wohin?
 // Themen-Owner: Vergleich Keramik vs. Naturstein.
 
 const post = {

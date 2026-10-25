@@ -1,4 +1,4 @@
-// Blog-Artikel: Fliesen richtig reinigen: Pflicht und Kür der Fliesenpflege
+// Blog-Artikel: Wie Sie Fliesen richtig reinigen und pflegen
 // Themen-Owner: allgemeine Reinigung von Fliesen und Fugen.
 
 const post = {

@@ -1,4 +1,4 @@
-// Blog-Artikel: Handwerkerbonus: Fliesenarbeiten von der Steuer absetzen
+// Blog-Artikel: Was bringt der Handwerkerbonus bei Fliesen?
 // Allgemeine Steuerinformation (Stand: Veröffentlichungsdatum) – keine Steuerberatung.
 
 const post = {
