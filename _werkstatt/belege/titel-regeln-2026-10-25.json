@@ -1,0 +1,257 @@
+{
+ "stand": "2026-10-25, Sitemap 163, nach E-054; „&“ in Titeln erlaubt",
+ "titel": [
+  {
+   "pfad": "/bad",
+   "titel": "Badsanierung in Aßlar & Wetzlar | Fliesenverlegung Tezgel",
+   "gruende": [
+    "doppelt"
+   ]
+  },
+  {
+   "pfad": "/bad/badsanierung",
+   "titel": "Badsanierung in Aßlar & Wetzlar | Fliesenverlegung Tezgel",
+   "gruende": [
+    "doppelt"
+   ]
+  },
+  {
+   "pfad": "/bad/fliesen",
+   "titel": "Badfliesen & XXL-Großformate | Fliesenleger Tezgel",
+   "gruende": [
+    "Bindestrich:XXL-Großformate"
+   ]
+  },
+  {
+   "pfad": "/bad/badplaner",
+   "titel": "Badplaner: Bad online planen | Fliesenverlegung Tezgel",
+   "gruende": [
+    "Doppelpunkt"
+   ]
+  },
+  {
+   "pfad": "/bad/projekt-check",
+   "titel": "Bad-Projektcheck: Badsanierung prüfen | Tezgel Wetzlar",
+   "gruende": [
+    "Doppelpunkt",
+    "Bindestrich:Bad-Projektcheck"
+   ]
+  },
+  {
+   "pfad": "/faq",
+   "titel": "FAQ: Häufige Fragen zu Fliesen & Bad | Tezgel",
+   "gruende": [
+    "Doppelpunkt"
+   ]
+  },
+  {
+   "pfad": "/foerderung",
+   "titel": "Förderung barrierefreies Bad: Zuschüsse | Tezgel",
+   "gruende": [
+    "Doppelpunkt"
+   ]
+  },
+  {
+   "pfad": "/team",
+   "titel": "Unser Team | Fliesenleger-Fachbetrieb Tezgel Aßlar",
+   "gruende": [
+    "Bindestrich:Fliesenleger-Fachbetrieb"
+   ]
+  },
+  {
+   "pfad": "/bad/musterbaeder/basic-bad-4_6",
+   "titel": "Musterbad Basic-Bad 4,6 ㎡ – Komplettbad & Badsanierung",
+   "gruende": [
+    "Strich",
+    "Bindestrich:Basic-Bad"
+   ]
+  },
+  {
+   "pfad": "/bad/musterbaeder/basic-bad-7",
+   "titel": "Musterbad Basic-Bad 7,0 ㎡ – Komplettbad & Badsanierung",
+   "gruende": [
+    "Strich",
+    "Bindestrich:Basic-Bad"
+   ]
+  },
+  {
+   "pfad": "/bad/musterbaeder/basic-bad-8_2",
+   "titel": "Musterbad Basic-Bad 8,2 ㎡ – Komplettbad & Badsanierung",
+   "gruende": [
+    "Strich",
+    "Bindestrich:Basic-Bad"
+   ]
+  },
+  {
+   "pfad": "/bad/musterbaeder/basic-bad-15_9",
+   "titel": "Musterbad Basic-Bad 15,9 ㎡ – Komplettbad & Badsanierung",
+   "gruende": [
+    "Strich",
+    "Bindestrich:Basic-Bad"
+   ]
+  },
+  {
+   "pfad": "/bad/musterbaeder/premium-bad-4_6",
+   "titel": "Musterbad Komfort-Bad 4,6 ㎡ – Komplettbad & Badsanierung",
+   "gruende": [
+    "Strich",
+    "Bindestrich:Komfort-Bad"
+   ]
+  },
+  {
+   "pfad": "/bad/musterbaeder/premium-bad-7",
+   "titel": "Musterbad Premium-Bad 7,0 ㎡ – Komplettbad & Badsanierung",
+   "gruende": [
+    "Strich",
+    "Bindestrich:Premium-Bad"
+   ]
+  },
+  {
+   "pfad": "/bad/musterbaeder/premium-bad-8_2",
+   "titel": "Musterbad Premium-Bad 8,2 ㎡ – Komplettbad & Badsanierung",
+   "gruende": [
+    "Strich",
+    "Bindestrich:Premium-Bad"
+   ]
+  },
+  {
+   "pfad": "/bad/musterbaeder/premium-bad-15_9",
+   "titel": "Musterbad Komfort-Bad 15,9 ㎡ – Komplettbad & Badsanierung",
+   "gruende": [
+    "Strich",
+    "Bindestrich:Komfort-Bad"
+   ]
+  },
+  {
+   "pfad": "/bad/musterbaeder/luxus-bad-4_6",
+   "titel": "Musterbad Luxus-Bad 4,6 ㎡ – Komplettbad & Badsanierung",
+   "gruende": [
+    "Strich",
+    "Bindestrich:Luxus-Bad"
+   ]
+  },
+  {
+   "pfad": "/bad/musterbaeder/luxus-bad-7",
+   "titel": "Musterbad Luxus-Bad 7,0 ㎡ – Komplettbad & Badsanierung",
+   "gruende": [
+    "Strich",
+    "Bindestrich:Luxus-Bad"
+   ]
+  },
+  {
+   "pfad": "/bad/musterbaeder/luxus-bad-8_2",
+   "titel": "Musterbad Luxus-Bad 8,2 ㎡ – Komplettbad & Badsanierung",
+   "gruende": [
+    "Strich",
+    "Bindestrich:Luxus-Bad"
+   ]
+  },
+  {
+   "pfad": "/bad/musterbaeder/luxus-bad-15_9",
+   "titel": "Musterbad Luxus-Bad 15,9 ㎡ – Komplettbad & Badsanierung",
+   "gruende": [
+    "Strich",
+    "Bindestrich:Luxus-Bad"
+   ]
+  },
+  {
+   "pfad": "/fliesen/fliesenarten",
+   "titel": "Fliesenarten im Vergleich: Feinsteinzeug & Co. | Tezgel",
+   "gruende": [
+    "Doppelpunkt"
+   ]
+  },
+  {
+   "pfad": "/fliesen/verlegemuster",
+   "titel": "Fliesen-Verlegemuster: Fischgrät & Verbände | Tezgel",
+   "gruende": [
+    "Doppelpunkt",
+    "Bindestrich:Fliesen-Verlegemuster"
+   ]
+  },
+  {
+   "pfad": "/fliesen/verlegetechnik",
+   "titel": "Verlegetechnik Fliesen: Dünnbett & Kleber | Tezgel",
+   "gruende": [
+    "Doppelpunkt"
+   ]
+  },
+  {
+   "pfad": "/fliesen/renovierung",
+   "titel": "Fliesen Renovierung: Alte Fliesen erneuern | Tezgel",
+   "gruende": [
+    "Doppelpunkt"
+   ]
+  },
+  {
+   "pfad": "/fliesen/abnahme",
+   "titel": "Fliesenarbeiten abnehmen: Checkliste & Normen | Tezgel",
+   "gruende": [
+    "Doppelpunkt"
+   ]
+  },
+  {
+   "pfad": "/fliesen/konfigurator",
+   "titel": "Fliesen-Konfigurator & Bedarfsrechner | Tezgel",
+   "gruende": [
+    "Bindestrich:Fliesen-Konfigurator"
+   ]
+  },
+  {
+   "pfad": "/untergrund-abdichtung/din-18534",
+   "titel": "DIN 18534 Verbundabdichtung: Bad & Dusche | Tezgel",
+   "gruende": [
+    "Doppelpunkt"
+   ]
+  },
+  {
+   "pfad": "/untergrund-abdichtung/estrich-belegreife",
+   "titel": "Estrich-Belegreife & CM-Messung vor dem Fliesen | Tezgel",
+   "gruende": [
+    "Bindestrich:Estrich-Belegreife/CM-Messung"
+   ]
+  },
+  {
+   "pfad": "/untergrund-abdichtung/fliesen-auf-fliesen",
+   "titel": "Altfliesen überkleben: Wann es fachgerecht geht | Tezgel",
+   "gruende": [
+    "Doppelpunkt"
+   ]
+  },
+  {
+   "pfad": "/untergrund-abdichtung/entkopplung",
+   "titel": "Fliesen auf Holzboden verlegen: Entkopplung | Tezgel",
+   "gruende": [
+    "Doppelpunkt"
+   ]
+  },
+  {
+   "pfad": "/treppen/treppenhaus",
+   "titel": "Treppenhaus sanieren: Fliesen & Naturstein | Tezgel",
+   "gruende": [
+    "Doppelpunkt"
+   ]
+  },
+  {
+   "pfad": "/treppen/aussentreppe",
+   "titel": "Außentreppe fliesen: frostsicher & rutschfest | Tezgel",
+   "gruende": [
+    "Doppelpunkt"
+   ]
+  },
+  {
+   "pfad": "/schadensanalyse",
+   "titel": "Fliesenschäden analysieren: Risse & Feuchte | Tezgel",
+   "gruende": [
+    "Doppelpunkt"
+   ]
+  },
+  {
+   "pfad": "/referenzen/barrierefreies-duschbad",
+   "titel": "Barrierefreies Duschbad mit bodengleicher Walk-In-Dusche",
+   "gruende": [
+    "Bindestrich:Walk-In-Dusche"
+   ]
+  }
+ ]
+}
