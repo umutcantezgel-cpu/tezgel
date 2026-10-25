@@ -31,6 +31,7 @@ import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import Einzugsband from '@/components/kern/Einzugsband';
 import Schriftfeld from '@/components/kern/Schriftfeld';
 import { linkKlassen } from '@/components/kern/stile';
+import { seitenBeschreibung } from '@/lib/beschreibung';
 
 export const metadata = createMetadata({
   title: 'Fliesenleger Standorte & Einsatzgebiete | Tezgel',
@@ -56,7 +57,8 @@ const standorteGraph = buildGraph([
     '@type': 'CollectionPage',
     '@id': `${pageUrl}#collection`,
     name: 'Fliesenverlegung Tezgel – Standorte & Einsatzgebiete',
-    description: 'Fachbetrieb für Fliesen-, Platten- und Mosaikverlegung, Badsanierung und Verbundabdichtung in Mittelhessen.',
+    // dieselbe Beschreibung wie Metadaten und WebPage (lib/beschreibung.ts, E-054)
+    description: seitenBeschreibung('/standorte', 'Übersicht aller Städte und Gemeinden, in denen Fliesenverlegung Tezgel aus Aßlar Fliesen verlegt und Bäder saniert.'),
     publisher: { '@id': ORG_ID },
   },
 ]);
