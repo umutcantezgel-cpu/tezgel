@@ -84,6 +84,16 @@ Spalten: **ID** · Seite und Platz · Format (Breite : Höhe) · Original · Zus
 | fliesenleger-gesucht-geselle-meister | IMG_2547 | Mitarbeiter klebt Dichtband an einem Balkon, von hinten |
 - Ersetzt das Generatorbild `gaeste-bad.png` und alle Verweise auf `public/images/bad/*` in Artikeln, Leistungen und Musterbädern (E-013).
 
+## Stimmungsbilder (KI, nur vorbereitet; E-047, Entscheidung des Auftraggebers „Nur Stimmungsbilder“)
+Regeln: nur dort, wo kein echtes Foto die Aussage trägt; nie unter „Unsere Arbeiten“, bei Referenzen, im Beleg oder als Vorher/Nachher. Alt-Text beschreibt das Motiv, ohne eigene Arbeit zu behaupten; in den Metadaten der Datei und in `arbeiten.ts` (Feld `quelle: 'ki'`, folgt mit dem ersten Bild) als erzeugt gekennzeichnet. Format wie der Platz, Webfassung wie K-012. Ein Generator ist noch nicht angebunden (MENSCHEN); bis dahin bleiben die Plätze leer bzw. bei den Fliesenkompositionen.
+
+| ID | Platz | Format | Bildbeschreibung (Prompt, deutsch) | Alt-Text | Vorrang |
+|---|---|---|---|---|---|
+| stimmung-boeden-waende | `/leistungen`, Bereich „Böden und Wände“ (heute Fliesenkomposition) | 4:5 | Heller, ruhiger Wohnraum mit großformatigen hellgrauen Bodenfliesen 60 × 120 cm, feine graue Fugen, weiches Tageslicht von links, wenige Möbel, keine Personen, keine Schrift, kein Logo, fotorealistisch, Blick leicht von oben | Wohnraum mit großen hellgrauen Bodenfliesen im Tageslicht | nein |
+| stimmung-untergrund | `/leistungen`, Bereich „Untergrund und Abdichtung“ | 4:5 | Nahaufnahme einer frisch gestrichenen grauen Flüssigabdichtung auf Estrich in einer Dusche, Dichtband in der Ecke, sauber, Baustellenlicht, keine Personen, keine Markennamen, fotorealistisch | Graue Abdichtung mit Dichtband in der Ecke einer Dusche | nein |
+| stimmung-ratgeber | `/fliesen` und `/blog`, Einstieg (heute ohne Foto) | 4:3 | Aufgeräumter Tisch mit drei Fliesenmustern in Weiß, Grau und Holzoptik, Zollstock und Bleistift, helles Tageslicht, ruhiger heller Hintergrund, keine Personen, keine Schrift, fotorealistisch | Drei Fliesenmuster mit Zollstock und Bleistift auf einem Tisch | nein |
+| stimmung-kontakt | `/kontakt`, unter dem Einstieg (heute ohne Foto) | 16:9 | Hand mit Zollstock misst einen hellen Fliesenboden in einem Bad, Ausschnitt ohne Gesicht, warmes Licht, fotorealistisch, keine Schrift | Hand misst mit einem Zollstock einen hellen Fliesenboden | nein |
+
 ## Teilen-Bild (OG)
 | og-start | Vorschaubild für alle Seiten ohne eigenes | 1200 × 630 | IMG_2578 | Querausschnitt aus der Dusche (Glaswand und Fliesenfugen), ohne Hochskalieren (Quelle 1320 px breit) | Bodengleiche Dusche mit großen grauen Fliesen | — | — |
 
