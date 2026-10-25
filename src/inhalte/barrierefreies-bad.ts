@@ -1,6 +1,7 @@
 // Inhalt `/bad/barrierefreies-bad` (Erzählseite) aus dem Referenztext `_werkstatt/texte/REF-bereich-barrierefreies-bad.md`
-// (wörtlich, Textmarken unverändert). Bildunterschriften nach den Alt-Texten in `src/config/arbeiten.ts`. Fakten: K-015
-// F-21, F-22, F-23, F-25. Vorlage: ErzaehlSeite.
+// (wörtlich, Textmarken unverändert). Bildunterschriften nach den Alt-Texten in `src/config/arbeiten.ts`, auf höchstens sechs
+// Wörter gekürzt (K-016, Regel 4). Einstieg mittig mit H1 in zwei Zeilen (K-016, Regel 1). Fakten: K-015 F-21, F-22, F-23, F-25.
+// Vorlage: ErzaehlSeite.
 import type { ErzaehlInhalt } from '@/components/vorlagen/inhalt';
 
 export const BARRIEREFREIES_BAD: ErzaehlInhalt = {
@@ -17,6 +18,9 @@ export const BARRIEREFREIES_BAD: ErzaehlInhalt = {
     vorspann:
       'Wir bauen Ihre Badewanne aus und eine [[bodengleiche-dusche|bodengleiche Dusche]] ein. So steigen Sie sicher hinein, heute und auch später.',
     bild: 'bereich-dusche-sitzbank',
+    einstieg: 'mitte',
+    titelZeilen: ['Ein barrierefreies Bad', 'mit Dusche ohne Stufe'],
+    bewertung: true,
   },
   lage: {
     titel: 'Der Schritt über den Wannenrand wird schwer.',
@@ -27,6 +31,8 @@ export const BARRIEREFREIES_BAD: ErzaehlInhalt = {
   },
   tun: {
     titel: 'So wird aus der Wanne eine sichere Dusche.',
+    einleitung:
+      'Wir bauen Ihre Badewanne aus und eine [[bodengleiche-dusche|bodengleiche Dusche]] ein. So steigen Sie sicher hinein, heute und auch später.',
     punkte: [
       'Wir bauen die alte Wanne aus und bereiten den Boden vor.',
       'Der Duschboden bekommt ein leichtes [[gefaelle|Gefälle]] zum Ablauf.',
@@ -50,9 +56,10 @@ export const BARRIEREFREIES_BAD: ErzaehlInhalt = {
   beleg: {
     titel: 'Duschen ohne Stufe, die wir gebaut haben.',
     fotos: [
-      { bild: 'start-dusche', unterschrift: 'Dusche ohne Stufe mit großen grauen Fliesen und Glaswand' },
-      { bild: 'bereich-dusche-streifen-sitzbank', unterschrift: 'Dusche ohne Stufe mit dunklem Streifen und gefliester Sitzbank' },
-      { bild: 'bereich-wanne-mit-tuer', unterschrift: 'Wanne mit Tür am Rand, daneben eine Dusche' },
+      { bild: 'start-dusche', unterschrift: 'Dusche ohne Stufe mit großen Fliesen', href: '/bad/barrierefreies-bad' },
+      { bild: 'bereich-dusche-sitzbank', unterschrift: 'Dusche ohne Stufe mit Sitzbank', href: '/bad/barrierefreies-bad' },
+      { bild: 'bereich-dusche-streifen-sitzbank', unterschrift: 'Dusche ohne Stufe mit gefliester Sitzbank', href: '/bad/barrierefreies-bad' },
+      { bild: 'bereich-wanne-mit-tuer', unterschrift: 'Wanne mit Tür, daneben eine Dusche', href: '/bad/badsanierung' },
     ],
     zweierbild: {
       titel: 'So entsteht eine Dusche ohne Stufe',
@@ -61,8 +68,8 @@ export const BARRIEREFREIES_BAD: ErzaehlInhalt = {
         { bild: 'entstehung-dusche-2', unterschrift: 'Die Fugen sind fertig. Das Wasser läuft zum Ablauf in der Mitte.' },
       ],
     },
-    stimmen: ['ute-t'],
-    verweis: { name: 'Alle Arbeiten ansehen', href: '/referenzen' },
+    stimmen: ['ute-t', 'elke-s', 'peter-p', 'k-d'],
+    verweis: { name: 'Alle Arbeiten ansehen', href: '/referenzen?raum=dusche' },
   },
   schritt: {
     titel: 'Sprechen Sie mit uns über Ihr neues Bad.',
