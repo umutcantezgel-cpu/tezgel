@@ -14,7 +14,7 @@
 - H1: `Ihr altes Bad wird neu zum Festpreis`
 - Vorspann: `Badsanierung in Aßlar und Wetzlar: Wir bauen Ihr Bad Stück für Stück zum Komplettbad um. Deniz Tezgel erklärt Ihnen in einfachen Worten, was zu tun ist.`
 - Hauptknopf: `Termin vor Ort anfragen` → `/kontakt` · Kontakt: `Anrufen: {{COMPANY_DATA.contact.phone}}` (derselbe Hauptknopf wie in Abschnitt 6, K-009)
-- Bild: `{Bild: sanierung-einstieg}` Alt: `Bad mit freistehender ovaler Badewanne und beigen Fliesen in Steinoptik`
+- Bild: `{Bild: badsanierung-einstieg}` Alt: `Badewanne mit blau-beigen Ornamentfliesen und heller Wandnische` (E4-W0-BILDER)
 
 ## 2 · Ihre Lage
 - H2: `Ihr Bad passt nicht mehr, und Sie wissen nicht, wo Sie anfangen sollen.`
@@ -48,10 +48,10 @@
 
 ## 5 · Beleg
 - H2: `So sehen fertige Bäder aus, und so sprechen unsere Kunden darüber.`
-- Bild: `{Bild: start-dusche}` Alt: `Dusche ohne Stufe mit großen grauen Fliesen und einer Glaswand`
-- Bild: `{Bild: bad-einstieg}` Alt: `Helles Bad mit Glasdusche, WC an der Wand, Holzoptik am Boden und Waschtisch`
-- Bild: `{Bild: bad-beleg-4}` Alt: `Bodengleiche Dusche mit Mosaik an der Wand, Handbrause und WC an der Wand`
-- Zweierbild `So entsteht eine Dusche ohne Stufe`: `{Bild: entstehung-dusche-1}` Unterschrift: `Dusche im Bau: große Fliesen liegen, damit sie auf einer Höhe sind.` und `{Bild: entstehung-dusche-2}` Unterschrift: `Dusche im Bau: Fliesen sind schräg zum Ablauf geschnitten, die Nische ist noch offen.`
+- Bild: `{Bild: badsanierung-beleg-1}` Alt: `Badewanne mit gestreifter dunkler Verkleidung und Wand-WC` Unterschrift: `Badewanne mit gestreifter Verkleidung`
+- Bild: `{Bild: badsanierung-beleg-2}` Alt: `Badewanne mit dunkler Verkleidung, daneben eine Dusche mit Mosaikboden und Glaswand` Unterschrift: `Badewanne und Dusche mit Mosaikboden`
+- Zweierbild `So sieht ein Bad im Bau aus`: `{Bild: badsanierung-zweier-1}` Unterschrift: `Wandfliesen in Metalloptik, Nische in der Mitte` und `{Bild: badsanierung-zweier-2}` Unterschrift: `Boden in Schieferoptik, die Nische ist noch offen`
+- (E4-W0-BILDER: kein Foto steht auf einer anderen Hauptansicht; die Duschen im Bau zeigt `/bad/barrierefreies-bad`)
 - Stimme: `{Stimme: c-wolf}` (wörtlich aus `REVIEWS`, Thema Bad)
 - Link: `Alle Bewertungen` → `/referenzen`
 

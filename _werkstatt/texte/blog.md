@@ -53,7 +53,7 @@
 
 ## 5 · Beleg
 - H2: `Aus unserer Praxis.` (E-061: Abschnittstitel je Seite)
-- Foto `{Bild: start-galerie-1}` Alt: `Dusche ohne Stufe mit Sitzbank und Mosaikfliesen am Boden und an der Bank`
+- Foto `{Bild: blog-beleg}` Alt: `Duschnische mit weißen Wandfliesen und einer Rinne im dunklen Boden, die Armatur fehlt noch` Unterschrift: `Duschnische mit Rinne im Boden` → `/untergrund-abdichtung` (E4-W0-BILDER)
 - Satz: `Seit 2019 ist die Abdichtung nach [[din-18534|DIN 18534]] bei uns Standard. Seit 2008 sind wir als Handwerksbetrieb bei der Handwerkskammer Wiesbaden eingetragen.`
 - Stimme `{Stimme: c-wolf}` Quelle: `Google`
 - Kennzeile: `5,0 von 5 Sternen · 27 Bewertungen bei Google · Stand September 2026` (unter der Stimme, aus `RATING_SUMMARY`)

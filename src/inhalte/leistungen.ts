@@ -21,7 +21,7 @@ export const LEISTUNGEN: ErzaehlInhalt = {
     ort: 'Für Aßlar, Wetzlar und Umgebung.',
     vorspann: 'Sie haben ein Bad, einen Boden oder einen Balkon, der nicht mehr passt. Hier sehen Sie, was wir tun: von der Badsanierung bis zur Terrasse, dazu Böden und Naturstein.',
     // große Fliesen ohne Kante unter der Glaswand: zeigt, worum es auf der Seite geht (Formatregler weiter unten)
-    bild: 'start-dusche-boden',
+    bild: 'leistungen-einstieg',
     bewertung: true,
   },
   lage: {
@@ -46,8 +46,9 @@ export const LEISTUNGEN: ErzaehlInhalt = {
   },
   beleg: {
     titel: 'Fertige Arbeiten von uns.',
+    // Übersicht: die drei Fotos stehen auch auf ihrer Leistungsseite (Bad, Balkon, Über uns), sonst keines doppelt (E4-W0-BILDER)
     fotos: [
-      { bild: 'leistungen-bad', unterschrift: 'Bad mit neuer Badewanne', href: '/bad/badsanierung' },
+      { bild: 'bad-beleg-1', unterschrift: 'Bad mit neuer Badewanne', href: '/bad/badsanierung' },
       { bild: 'leistungen-balkon', unterschrift: 'Balkon mit neuen Fliesen', href: '/balkon-terrasse' },
       { bild: 'leistungen-untergrund', unterschrift: 'Abdichtung auf dem Balkon', href: '/untergrund-abdichtung' },
     ],

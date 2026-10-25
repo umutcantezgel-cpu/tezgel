@@ -17,7 +17,7 @@ export const BARRIEREFREIES_BAD: ErzaehlInhalt = {
     ort: 'Für Aßlar, Wetzlar und Umgebung.',
     vorspann:
       'Wir bauen Ihre Badewanne aus und eine [[bodengleiche-dusche|bodengleiche Dusche]] ein. So steigen Sie sicher hinein, heute und auch später.',
-    bild: 'bereich-dusche-sitzbank',
+    bild: 'barrierefrei-einstieg',
     einstieg: 'mitte',
     titelZeilen: ['Ein barrierefreies Bad', 'mit Dusche ohne Stufe'],
     bewertung: true,
@@ -55,12 +55,12 @@ export const BARRIEREFREIES_BAD: ErzaehlInhalt = {
     },
   },
   beleg: {
-    titel: 'Duschen ohne Stufe, die wir gebaut haben.',
+    // Überschrift nach den Fotos (E4-W0-BILDER): sie zeigen eine Dusche mit Eckbank und eine Wanne mit Tür, keine Behauptung
+    // „ohne Stufe“, die das Foto nicht belegt; kein Foto steht auf einer anderen Hauptansicht
+    titel: 'Duschen und Wannen, die wir gebaut haben.',
     fotos: [
-      { bild: 'start-dusche', unterschrift: 'Dusche ohne Stufe mit großen Fliesen', href: '/bad/barrierefreies-bad' },
-      { bild: 'bereich-dusche-sitzbank', unterschrift: 'Dusche ohne Stufe mit Sitzbank', href: '/bad/barrierefreies-bad' },
-      { bild: 'bereich-dusche-streifen-sitzbank', unterschrift: 'Dusche ohne Stufe mit gefliester Sitzbank', href: '/bad/barrierefreies-bad' },
-      { bild: 'bereich-wanne-mit-tuer', unterschrift: 'Wanne mit Tür, daneben eine Dusche', href: '/bad/barrierefreies-bad' },
+      { bild: 'barrierefrei-beleg-1', unterschrift: 'Dusche mit Mosaikboden und Eckbank', href: '/bad/barrierefreies-bad' },
+      { bild: 'barrierefrei-beleg-2', unterschrift: 'Wanne mit Tür zum leichten Einsteigen', href: '/bad/barrierefreies-bad' },
     ],
     zweierbild: {
       titel: 'So entsteht eine Dusche ohne Stufe',

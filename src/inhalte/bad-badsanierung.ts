@@ -24,7 +24,7 @@ export const BADSANIERUNG: ErzaehlInhalt = {
     titelZeilen: ['Ihr neues Traumbad', 'zum Festpreis.'],
     ort: 'Für Aßlar, Wetzlar und Umgebung.',
     vorspann: VORSPANN,
-    bild: 'sanierung-einstieg',
+    bild: 'badsanierung-einstieg',
     bewertung: true,
   },
   lage: {
@@ -69,18 +69,17 @@ export const BADSANIERUNG: ErzaehlInhalt = {
     // Fotos mit Name auf der Glasfläche (Zusatz Regel 4); die drei Fotos der Arbeit beim Weg (Textdatei Abschnitt 4) stehen
     // hinter den fertigen Bädern (Abschnitt 5). Die Namen sind je höchstens sechs Wörter aus Textdatei oder Alt-Text.
     fotos: [
-      { bild: 'start-dusche', unterschrift: 'Dusche ohne Stufe mit Glaswand', href: '/bad/barrierefreies-bad' },
-      { bild: 'bad-einstieg', unterschrift: 'Helles Bad mit Glasdusche', href: '/bad/badsanierung' },
-      { bild: 'bad-beleg-4', unterschrift: 'Bodengleiche Dusche mit Mosaik', href: '/bad/barrierefreies-bad' },
+      { bild: 'badsanierung-beleg-1', unterschrift: 'Badewanne mit gestreifter Verkleidung', href: '/bad/badsanierung' },
+      { bild: 'badsanierung-beleg-2', unterschrift: 'Badewanne und Dusche mit Mosaikboden', href: '/bad/badsanierung' },
       { bild: 'sanierung-weg-1', unterschrift: 'Beige Wandfliesen bis halbhoch', href: '/bad/badsanierung' },
       { bild: 'sanierung-weg-2', unterschrift: 'Offene Decke und dunkle Holzoptik', href: '/bad/badsanierung' },
       { bild: 'sanierung-weg-3', unterschrift: 'Brauner Boden im Duschbereich', href: '/bad/badsanierung' },
     ],
     zweierbild: {
-      titel: 'So sieht eine Dusche im Bau aus',
+      titel: 'So sieht ein Bad im Bau aus',
       bilder: [
-        { bild: 'entstehung-dusche-1', unterschrift: 'große Fliesen liegen auf einer Höhe' },
-        { bild: 'entstehung-dusche-2', unterschrift: 'Fliesen schräg zum Ablauf geschnitten' },
+        { bild: 'badsanierung-zweier-1', unterschrift: 'Wandfliesen in Metalloptik, Nische in der Mitte' },
+        { bild: 'badsanierung-zweier-2', unterschrift: 'Boden in Schieferoptik, die Nische ist noch offen' },
       ],
     },
     // Wortlaut unverändert aus REVIEWS (G8): die Stimme der Textdatei zuerst, dann vier weitere zum Thema Bad

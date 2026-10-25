@@ -23,7 +23,7 @@ export const BALKON_TERRASSE: ErzaehlInhalt = {
     titelZeilen: ['Ein neuer Belag für', 'Balkon und Terrasse'],
     ort: 'Für Aßlar, Wetzlar und Umgebung.',
     vorspann: VORSPANN,
-    bild: 'balkon-einstieg',
+    bild: 'balkon-einstieg-hell',
     bewertung: true,
   },
   lage: {
@@ -72,10 +72,9 @@ export const BALKON_TERRASSE: ErzaehlInhalt = {
   beleg: {
     titel: 'Balkone und Terrassen, die wir verlegt haben.',
     fotos: [
-      { bild: 'balkon-beleg-1', unterschrift: 'Balkon mit anthrazitfarbenen Fliesen', href: '/balkon-terrasse' },
+      { bild: 'balkon-beleg-anthrazit', unterschrift: 'Balkon mit anthrazitfarbenen Fliesen', href: '/balkon-terrasse' },
       { bild: 'balkon-beleg-2', unterschrift: 'Balkon mit rosébraunen Fliesen', href: '/balkon-terrasse' },
-      { bild: 'balkon-beleg-3', unterschrift: 'Terrasse mit rustikalen Fliesen in Erdtönen', href: '/balkon-terrasse' },
-      { bild: 'balkon-beleg-4', unterschrift: 'Terrasse mit hellgrauen Platten', href: '/balkon-terrasse' },
+      { bild: 'balkon-beleg-aluprofil', unterschrift: 'Terrassenkante mit hellem Aluprofil', href: '/balkon-terrasse' },
       // die Überschrift des Einzelbilds aus der Textdatei ist sein Name auf der Glasfläche (Abnahme E3-BAU-06)
       { bild: 'balkon-stelzlager', unterschrift: 'So legen wir Platten auf Stelzlagern', href: '/balkon-terrasse/stelzlager' },
     ],

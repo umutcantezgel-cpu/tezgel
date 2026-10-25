@@ -15,7 +15,7 @@
 - Vorspann: `Diese Referenzen, also fertige Arbeiten, zeigen Bäder, Terrassen, Treppen und [[grossformat|Großformate]]. Dazu kommen die Bewertungen unserer Kunden mit 5,0 Sternen bei Google.`
 - Hauptknopf: `Termin vor Ort anfragen` → `/kontakt` · Kontakt: `Anrufen: {{COMPANY_DATA.contact.phone}}` · `Nachricht per WhatsApp` (derselbe Hauptknopf wie in Abschnitt 6, K-009)
 - Link: `Zu den Bewertungen` → `#bewertungen`
-- Bild: `{Bild: bad-einstieg}` Alt: `Helles Bad mit Glasdusche, Holzoptik am Boden und Waschtisch`
+- Bild: `{Bild: referenzen-einstieg}` Alt: `Bad mit Fliesen in Marmoroptik, Regendusche und Wand-WC mit weißer Betätigungsplatte` (E4-W0-BILDER)
 
 ## 2 · Ihre Lage
 - H2: `Bevor Sie einen Handwerker holen, möchten Sie wissen, wie er arbeitet.`

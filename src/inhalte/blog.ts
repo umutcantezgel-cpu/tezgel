@@ -62,7 +62,7 @@ export const BLOG: WissenInhalt = {
     // Überschrift wie auf /leistungen und /fliesen (Abnahme, Texthoheit: die Textdatei hatte keine)
     titel: 'Aus unserer Praxis.',
     // Unterschrift: Wörter aus dem Alt-Text der Textdatei, auf höchstens sechs Wörter gekürzt (Regel 4)
-    fotos: [{ bild: 'start-galerie-1', unterschrift: 'Dusche ohne Stufe mit Sitzbank', href: '/bad/barrierefreies-bad' }],
+    fotos: [{ bild: 'blog-beleg', unterschrift: 'Duschnische mit Rinne im Boden', href: '/untergrund-abdichtung' }],
     // Satz der Textdatei ohne den Satz zur Handwerkskammer (Regel 3)
     satz: 'Seit 2019 ist die Abdichtung nach [[din-18534|DIN 18534]] bei uns Standard.',
     // Stimme der Textdatei (G8: Wortlaut unverändert); die Kennzeile mit Stand setzt der Baustein Stimmen aus RATING_SUMMARY

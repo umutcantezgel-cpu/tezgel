@@ -24,7 +24,7 @@
 - H2: `Vier Bereiche, vom Bad bis unter die Fliesen.`
 - Absatz: `Deniz Tezgel betreut Sie persönlich. Er ist Ihr fester Ansprechpartner von der ersten Skizze bis zur fertigen Arbeit.`
 1. `Bad` · `Wir bauen Ihr Bad um. Statt der Wanne kommt eine [[bodengleiche-dusche|bodengleiche Dusche]].`
-   - Bild: `{Bild: leistungen-bad}` (Kopfbild Bad, Alttext aus arbeiten-e2.json)
+   - Bild: `{Bild: bad-beleg-1}` (Kopfbild Bad, Alttext aus arbeiten-e2.json; E4-W0-BILDER: dasselbe Foto wie auf `/bad`, die Übersicht darf es zeigen)
    - Link: `Mehr zum Bad` → `/leistungen/bad`
 2. `Böden und Wände` · `Wir verlegen Fliesen auf Böden und an Wänden, dazu große Fliesen und Naturstein. Das gilt für Wohnräume, Küchen, Treppen und den Neubau. Auch Reparaturen an Fliesen gehören dazu.`
    - (Kein Foto: hier steht die Fliesenkomposition, ohne Unterschrift.)

@@ -25,7 +25,7 @@ test('Galerie 2: jedes Foto aus ARBEITEN, Format 4 : 5, jede Bilddatei einmal, o
   }
   const dateien = ids.map((id) => ARBEITEN[id].src);
   assert.equal(new Set(dateien).size, dateien.length, 'Bilddatei doppelt');
-  assert.ok(!dateien.includes(ARBEITEN['bad-einstieg'].src), 'Einstiegsbild der Seite steht nicht in der Galerie');
+  assert.ok(!dateien.includes(ARBEITEN['referenzen-einstieg'].src), 'Einstiegsbild der Seite steht nicht in der Galerie');
 });
 
 test('Galerie 3: jede Gruppe hat Fotos, die Zahlen gehen auf', () => {

@@ -14,7 +14,7 @@
 - H1: `Ein barrierefreies Bad mit Dusche ohne Stufe`
 - Vorspann: `Wir bauen Ihre Badewanne aus und eine [[bodengleiche-dusche|bodengleiche Dusche]] ein. So steigen Sie sicher hinein, heute und auch später.`
 - Hauptknopf: `Termin vor Ort anfragen` → `/kontakt` · Kontakt: `Anrufen: {{COMPANY_DATA.contact.phone}}` (derselbe Hauptknopf wie in Abschnitt 6, K-009)
-- Bild: `{Bild: bereich-dusche-sitzbank}` Alt: `Dusche ohne Stufe mit Sitzbank und kleinen Mosaikfliesen`
+- Bild: `{Bild: barrierefrei-einstieg}` Alt: `Begehbare Dusche mit weißen Metrofliesen, Handbrause und gemustertem Boden` (E4-W0-BILDER)
 
 ## 2 · Ihre Lage
 - H2: `Der Schritt über den Wannenrand wird schwer.`
@@ -40,8 +40,8 @@
 - Hinweis Zuschuss (sinngleich aus dem Bestand, F-23, F-25): `Haben Sie einen Pflegegrad? Dann kann die Pflegekasse bis zu 4.180 € je Person dazugeben. Haben zwei Personen im Haushalt einen Pflegegrad, sind es bis zu 8.360 €.` Link: `Mehr zum Zuschuss` → `/foerderung`
 
 ## 5 · Beleg
-- H2: `Duschen ohne Stufe, die wir gebaut haben.`
-- Vier Fotos: `{Bild: start-dusche}`, `{Bild: bereich-dusche-sitzbank}`, `{Bild: bereich-dusche-streifen-sitzbank}`, `{Bild: bereich-wanne-mit-tuer}`; dazu das Zweierbild `So entsteht eine Dusche ohne Stufe` mit `{Bild: entstehung-dusche-1}` (`Die großen Fliesen liegen, das Gefälle ist geschnitten.`) und `{Bild: entstehung-dusche-2}` (`Die Fugen sind fertig. Das Wasser läuft zum Ablauf in der Mitte.`).
+- H2: `Duschen und Wannen, die wir gebaut haben.` (E4-W0-BILDER: die Fotos belegen „ohne Stufe“ nicht)
+- Zwei Fotos: `{Bild: barrierefrei-beleg-1}` `Dusche mit Mosaikboden und Eckbank`, `{Bild: barrierefrei-beleg-2}` `Wanne mit Tür zum leichten Einsteigen`; dazu das Zweierbild `So entsteht eine Dusche ohne Stufe` mit `{Bild: entstehung-dusche-1}` (`Die großen Fliesen liegen, das Gefälle ist geschnitten.`) und `{Bild: entstehung-dusche-2}` (`Die Fugen sind fertig. Das Wasser läuft zum Ablauf in der Mitte.`).
 - Eine Stimme wörtlich aus `REVIEWS` zum Thema Bad.
 - Link: `Alle Arbeiten ansehen` → `/referenzen?raum=dusche`
 

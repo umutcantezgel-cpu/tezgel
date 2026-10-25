@@ -1,0 +1,643 @@
+[
+  {
+    "id": "start-lage-dusche",
+    "original": "IMG_2608.PNG",
+    "raum": "dusche",
+    "name": "dusche-weisse-grossformat-dunkler-streifen-quadrat",
+    "format": "1:1",
+    "schwerpunkt": {
+      "x": 65.9091,
+      "y": 35.007
+    },
+    "ausschnitt": {
+      "links": 31.8182,
+      "oben": 19.3166,
+      "rechts": 0.0,
+      "unten": 49.3026
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Bodengleiche Dusche mit weißen Großformatfliesen und einem dunklen Fliesenstreifen",
+    "korrektur": true
+  },
+  {
+    "id": "start-lage-bad",
+    "original": "IMG_2590.PNG",
+    "raum": "bad",
+    "name": "eckbadewanne-graue-verkleidung-quadrat",
+    "format": "1:1",
+    "schwerpunkt": {
+      "x": 50.0,
+      "y": 50.0
+    },
+    "ausschnitt": {
+      "links": 12.5,
+      "oben": 32.7406,
+      "rechts": 12.5,
+      "unten": 32.7406
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Eckbadewanne mit grauer Verkleidung und hellen Wandfliesen",
+    "korrektur": true
+  },
+  {
+    "id": "start-lage-neubau",
+    "original": "IMG_2602.PNG",
+    "raum": "bad",
+    "name": "bad-im-bau-wanne-boden-frisch-verlegt-quadrat",
+    "format": "1:1",
+    "schwerpunkt": {
+      "x": 34.0909,
+      "y": 48.431
+    },
+    "ausschnitt": {
+      "links": 0.0,
+      "oben": 32.7406,
+      "rechts": 31.8182,
+      "unten": 35.8787
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Bad im Bau: Wanne mit dunkler Verkleidung, weiße Wandfliesen und frisch verlegter Boden mit Nivellierklemmen",
+    "korrektur": true
+  },
+  {
+    "id": "start-lage-balkon",
+    "original": "IMG_2545.PNG",
+    "raum": "balkon-und-terrasse",
+    "name": "balkon-hellgraue-grossformat-quadrat",
+    "format": "1:1",
+    "schwerpunkt": {
+      "x": 71.2121,
+      "y": 32.5662
+    },
+    "ausschnitt": {
+      "links": 42.4242,
+      "oben": 19.3166,
+      "rechts": 0.0,
+      "unten": 54.1841
+    },
+    "breiten": [
+      480,
+      760
+    ],
+    "alt": "Balkon mit hellgrauen Großformatfliesen und weißem Geländer",
+    "korrektur": true
+  },
+  {
+    "id": "start-lage-treppe",
+    "original": "IMG_2524.PNG",
+    "raum": "treppe",
+    "name": "hauseingang-beige-fliesen-stufen-quadrat",
+    "format": "1:1",
+    "schwerpunkt": {
+      "x": 43.5606,
+      "y": 44.4561
+    },
+    "ausschnitt": {
+      "links": 0.0,
+      "oben": 24.4073,
+      "rechts": 12.8788,
+      "unten": 35.4951
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Hauseingang mit beigen Fliesen auf Stufen und Podest, davor eine Fußmatte",
+    "korrektur": true
+  },
+  {
+    "id": "start-beleg-bad",
+    "original": "IMG_2610.PNG",
+    "raum": "bad",
+    "name": "badewanne-dunkles-mosaik-fenster",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 50.0,
+      "y": 50.0
+    },
+    "ausschnitt": {
+      "links": 20.0,
+      "oben": 32.7406,
+      "rechts": 20.0,
+      "unten": 32.7406
+    },
+    "breiten": [
+      480,
+      792
+    ],
+    "alt": "Badewanne mit dunklen Mosaikfliesen und blauem Plissee am Fenster",
+    "korrektur": true
+  },
+  {
+    "id": "start-beleg-dusche",
+    "original": "IMG_2553.PNG",
+    "raum": "dusche",
+    "name": "dusche-glastuer-mosaikband",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 50.0,
+      "y": 49.6862
+    },
+    "ausschnitt": {
+      "links": 0.0,
+      "oben": 20.9205,
+      "rechts": 0.0,
+      "unten": 21.5481
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Dusche mit Glastür, Mosaikband an der Wand und Chromgriff",
+    "korrektur": true
+  },
+  {
+    "id": "start-beleg-treppe",
+    "original": "IMG_2529.PNG",
+    "raum": "treppe",
+    "name": "aussentreppe-anthrazit-handlauf",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 59.0909,
+      "y": 42.8522
+    },
+    "ausschnitt": {
+      "links": 18.1818,
+      "oben": 19.3166,
+      "rechts": 0.0,
+      "unten": 33.6123
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Außentreppe mit anthrazitfarbenen Fliesen und Handlauf bis zur weißen Haustür",
+    "korrektur": true
+  },
+  {
+    "id": "start-beleg-terrasse",
+    "original": "IMG_2532.PNG",
+    "raum": "balkon-und-terrasse",
+    "name": "terrasse-blaugraue-fliesen-glastuer",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 36.3636,
+      "y": 41.841
+    },
+    "ausschnitt": {
+      "links": 0.0,
+      "oben": 20.9205,
+      "rechts": 27.2727,
+      "unten": 37.2385
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Terrasse mit blaugrauen Fliesen vor einer Glastür mit Holzrahmen",
+    "korrektur": true
+  },
+  {
+    "id": "leistungen-einstieg",
+    "original": "IMG_2548.PNG",
+    "raum": "dusche",
+    "name": "dusche-led-leisten-sitzbank-mosaik",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 50.0,
+      "y": 48.0823
+    },
+    "ausschnitt": {
+      "links": 0.0,
+      "oben": 19.3166,
+      "rechts": 0.0,
+      "unten": 23.152
+    },
+    "breiten": [
+      640,
+      960,
+      1280
+    ],
+    "alt": "Dusche mit zwei Lichtleisten an der Wand, gefliester Sitzbank und Mosaikboden",
+    "korrektur": true
+  },
+  {
+    "id": "fliesen-beleg",
+    "original": "IMG_2600.PNG",
+    "raum": "dusche",
+    "name": "dusche-grosse-beige-fliesen-flache-duschflaeche",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 50.0,
+      "y": 48.0823
+    },
+    "ausschnitt": {
+      "links": 0.0,
+      "oben": 19.3166,
+      "rechts": 0.0,
+      "unten": 23.152
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Dusche mit großen beigen Fliesen, flacher weißer Duschfläche und einer Holztür am Ende",
+    "korrektur": true
+  },
+  {
+    "id": "blog-beleg",
+    "original": "IMG_2583.PNG",
+    "raum": "dusche",
+    "name": "duschnische-weisse-fliesen-rinne",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 50.0,
+      "y": 48.152
+    },
+    "ausschnitt": {
+      "links": 0.0,
+      "oben": 19.3863,
+      "rechts": 0.0,
+      "unten": 23.0823
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Duschnische mit weißen Wandfliesen und einer Rinne im dunklen Boden, die Armatur fehlt noch",
+    "korrektur": true
+  },
+  {
+    "id": "badsanierung-einstieg",
+    "original": "IMG_2606.PNG",
+    "raum": "bad",
+    "name": "badewanne-ornamentfliesen-nische",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 62.1212,
+      "y": 42.7127
+    },
+    "ausschnitt": {
+      "links": 24.2424,
+      "oben": 20.9205,
+      "rechts": 0.0,
+      "unten": 35.4951
+    },
+    "breiten": [
+      640,
+      960
+    ],
+    "alt": "Badewanne mit blau-beigen Ornamentfliesen und heller Wandnische",
+    "korrektur": true
+  },
+  {
+    "id": "badsanierung-beleg-1",
+    "original": "IMG_2580.PNG",
+    "raum": "bad",
+    "name": "badewanne-gestreifte-verkleidung-wand-wc",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 50.0,
+      "y": 50.0
+    },
+    "ausschnitt": {
+      "links": 20.0,
+      "oben": 32.7406,
+      "rechts": 20.0,
+      "unten": 32.7406
+    },
+    "breiten": [
+      480,
+      792
+    ],
+    "alt": "Badewanne mit gestreifter dunkler Verkleidung und Wand-WC",
+    "korrektur": true
+  },
+  {
+    "id": "badsanierung-beleg-2",
+    "original": "IMG_2605.PNG",
+    "raum": "bad",
+    "name": "badewanne-dusche-mosaikboden-glaswand",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 50.0,
+      "y": 50.0
+    },
+    "ausschnitt": {
+      "links": 20.0,
+      "oben": 32.7406,
+      "rechts": 20.0,
+      "unten": 32.7406
+    },
+    "breiten": [
+      480,
+      792
+    ],
+    "alt": "Badewanne mit dunkler Verkleidung, daneben eine Dusche mit Mosaikboden und Glaswand",
+    "korrektur": true
+  },
+  {
+    "id": "badsanierung-zweier-1",
+    "original": "IMG_2557.PNG",
+    "raum": "dusche",
+    "name": "dusche-im-bau-metalloptik-nische",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 50.0,
+      "y": 48.0823
+    },
+    "ausschnitt": {
+      "links": 0.0,
+      "oben": 19.3166,
+      "rechts": 0.0,
+      "unten": 23.152
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Dusche im Bau: dunkle Wandfliesen in Metalloptik, Nische in der Mitte, Duschwanne eingebaut",
+    "korrektur": true
+  },
+  {
+    "id": "badsanierung-zweier-2",
+    "original": "IMG_2560.PNG",
+    "raum": "bad",
+    "name": "bad-im-bau-schieferoptik-boden",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 70.0,
+      "y": 50.0
+    },
+    "ausschnitt": {
+      "links": 40.0,
+      "oben": 32.7406,
+      "rechts": 0.0,
+      "unten": 32.7406
+    },
+    "breiten": [
+      480,
+      792
+    ],
+    "alt": "Bad im Bau: dunkle Bodenfliesen in Schieferoptik, helle Wände, die Nische ist noch offen",
+    "korrektur": true
+  },
+  {
+    "id": "barrierefrei-einstieg",
+    "original": "IMG_2566.PNG",
+    "raum": "dusche",
+    "name": "begehbare-dusche-metrofliesen-musterboden",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 50.0,
+      "y": 35.7392
+    },
+    "ausschnitt": {
+      "links": 0.0,
+      "oben": 6.9735,
+      "rechts": 0.0,
+      "unten": 35.4951
+    },
+    "breiten": [
+      640,
+      960,
+      1280
+    ],
+    "alt": "Begehbare Dusche mit weißen Metrofliesen, Handbrause und gemustertem Boden",
+    "korrektur": true
+  },
+  {
+    "id": "barrierefrei-beleg-1",
+    "original": "IMG_2595.PNG",
+    "raum": "dusche",
+    "name": "dusche-mosaikboden-eckbank",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 50.0,
+      "y": 48.0823
+    },
+    "ausschnitt": {
+      "links": 0.0,
+      "oben": 19.3166,
+      "rechts": 0.0,
+      "unten": 23.152
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Dusche mit Mosaikboden in Schwarz, Weiß und Grau und gefliester Eckbank",
+    "korrektur": true
+  },
+  {
+    "id": "barrierefrei-beleg-2",
+    "original": "IMG_2567.PNG",
+    "raum": "bad",
+    "name": "einstiegswanne-tuer-regendusche",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 37.8788,
+      "y": 46.1994
+    },
+    "ausschnitt": {
+      "links": 0.0,
+      "oben": 24.4073,
+      "rechts": 24.2424,
+      "unten": 32.0084
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Badewanne mit Tür zum leichten Einsteigen, daneben eine Regendusche vor hellen Wandfliesen",
+    "korrektur": true
+  },
+  {
+    "id": "referenzen-einstieg",
+    "original": "IMG_2562.PNG",
+    "raum": "bad",
+    "name": "bad-marmoroptik-regendusche-wand-wc",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 50.0,
+      "y": 48.0823
+    },
+    "ausschnitt": {
+      "links": 0.0,
+      "oben": 19.3166,
+      "rechts": 0.0,
+      "unten": 23.152
+    },
+    "breiten": [
+      640,
+      960,
+      1280
+    ],
+    "alt": "Bad mit Fliesen in Marmoroptik, Regendusche und Wand-WC mit weißer Betätigungsplatte",
+    "korrektur": true
+  },
+  {
+    "id": "balkon-einstieg-hell",
+    "original": "IMG_2533.PNG",
+    "raum": "balkon-und-terrasse",
+    "name": "terrasse-hellgraue-platten-weisses-gelaender",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 50.0,
+      "y": 53.5914
+    },
+    "ausschnitt": {
+      "links": 3.0303,
+      "oben": 26.569,
+      "rechts": 3.0303,
+      "unten": 19.3863
+    },
+    "breiten": [
+      640,
+      960,
+      1240
+    ],
+    "alt": "Terrasse mit großen hellgrauen Platten, einer weißen Stütze und weißem Geländer",
+    "korrektur": true
+  },
+  {
+    "id": "balkon-beleg-anthrazit",
+    "original": "IMG_2544.PNG",
+    "raum": "balkon-und-terrasse",
+    "name": "balkon-anthrazit-fliesen-rollladen",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 34.0909,
+      "y": 28.7134
+    },
+    "ausschnitt": {
+      "links": 0.0,
+      "oben": 9.1004,
+      "rechts": 31.8182,
+      "unten": 51.6736
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Balkon mit anthrazitfarbenen Fliesen am Haus, daneben ein Fenster mit Rollladen",
+    "korrektur": true
+  },
+  {
+    "id": "balkon-beleg-aluprofil",
+    "original": "IMG_2535.PNG",
+    "raum": "balkon-und-terrasse",
+    "name": "terrassenkante-graue-platten-glastuer",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 32.9545,
+      "y": 38.2845
+    },
+    "ausschnitt": {
+      "links": 0.0,
+      "oben": 19.3166,
+      "rechts": 34.0909,
+      "unten": 42.7476
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Terrassenkante mit grauen Platten und hellem Aluprofil, dahinter eine Glastür",
+    "korrektur": true
+  },
+  {
+    "id": "ort-terrasse-erdtoene",
+    "original": "IMG_2539.PNG",
+    "raum": "balkon-und-terrasse",
+    "name": "terrasse-rustikale-fliesen-erdtoene",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 50.0,
+      "y": 48.0823
+    },
+    "ausschnitt": {
+      "links": 0.0,
+      "oben": 19.3166,
+      "rechts": 0.0,
+      "unten": 23.152
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Terrasse mit rustikalen Fliesen in Erdtönen und einem Pflanzbeet am Rand",
+    "korrektur": true
+  },
+  {
+    "id": "ort-gaeste-wc",
+    "original": "IMG_2572.PNG",
+    "raum": "bad",
+    "name": "gaeste-wc-metrofliesen-bidet",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 50.0,
+      "y": 48.0823
+    },
+    "ausschnitt": {
+      "links": 0.0,
+      "oben": 19.3166,
+      "rechts": 0.0,
+      "unten": 23.152
+    },
+    "breiten": [
+      480,
+      800
+    ],
+    "alt": "Gäste-WC mit Wand-WC, Bidet und weißen Metrofliesen an der Wand",
+    "korrektur": true
+  },
+  {
+    "id": "ueber-einstieg",
+    "original": "IMG_2547.PNG",
+    "raum": "balkon-und-terrasse",
+    "name": "ueber-uns-mitarbeiter-dichtband-balkon",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 42,
+      "y": 44
+    },
+    "breiten": [
+      640,
+      960,
+      1280
+    ],
+    "alt": "Mitarbeiter von Fliesenverlegung Tezgel kniet auf dem Balkon, blaues Dichtband läuft an den Rändern entlang",
+    "korrektur": true
+  },
+  {
+    "id": "bad-beleg-2",
+    "original": "IMG_2599.PNG",
+    "raum": "bad",
+    "name": "landhausbad-wanne-holzregal",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 45,
+      "y": 45
+    },
+    "ausschnitt": {
+      "oben": 35,
+      "unten": 35
+    },
+    "breiten": [
+      480,
+      688
+    ],
+    "alt": "Landhausbad mit Wanne unter weißen Fliesen und einem Holzregal",
+    "korrektur": false
+  }
+]

@@ -28,12 +28,12 @@ export const START: ErzaehlInhalt = {
     // Fotos anders als in der Galerie „So sieht unsere Arbeit aus.“, damit kein Bild doppelt erscheint (Sichtprüfung E2); nur
     // der Schaden ist gezeichnet, dafür gibt es kein Foto (E-040)
     fliesen: [
-      { satz: 'Die Badewanne soll raus. Ich möchte eine Dusche ohne Stufe.', href: '/bad/barrierefreies-bad', bild: 'bereich-dusche-streifen-sitzbank' },
-      { satz: 'Das ganze Bad ist alt und soll neu werden.', href: '/bad/badsanierung', bild: 'bad-einstieg' },
-      { satz: 'Im Neubau sollen Böden und Wände gefliest werden.', href: '/fliesen/neubau', bild: 'lage-neubau' },
+      { satz: 'Die Badewanne soll raus. Ich möchte eine Dusche ohne Stufe.', href: '/bad/barrierefreies-bad', bild: 'start-lage-dusche' },
+      { satz: 'Das ganze Bad ist alt und soll neu werden.', href: '/bad/badsanierung', bild: 'start-lage-bad' },
+      { satz: 'Im Neubau sollen Böden und Wände gefliest werden.', href: '/fliesen/neubau', bild: 'start-lage-neubau' },
       { satz: 'Eine Fliese ist gesprungen, oder die Fugen sind alt.', href: '/fliesenreparatur', motiv: 'riss' },
-      { satz: 'Auf dem Balkon bleibt nach dem Regen Wasser stehen.', href: '/balkon-terrasse', bild: 'lage-balkon' },
-      { satz: 'Die Treppe vor dem Haus ist kaputt.', href: '/treppen/aussentreppe', bild: 'kontakt-eingang' },
+      { satz: 'Auf dem Balkon bleibt nach dem Regen Wasser stehen.', href: '/balkon-terrasse', bild: 'start-lage-balkon' },
+      { satz: 'Die Treppe vor dem Haus ist kaputt.', href: '/treppen/aussentreppe', bild: 'start-lage-treppe' },
     ],
   },
   tun: {
@@ -69,14 +69,14 @@ export const START: ErzaehlInhalt = {
   },
   beleg: {
     titel: 'So sieht unsere Arbeit aus.',
-    // sechs echte Fotos, je Raum eins, vollständig; der Name steht auf der Glasfläche und führt zur passenden Leistung (E-047)
+    // fünf echte Fotos fertiger Arbeiten, vollständig, keines auf einer anderen Hauptansicht (E4-W0-BILDER); der Name steht
+    // auf der Glasfläche, sagt nur, was zu sehen ist, und führt zur passenden Leistung (E-047)
     fotos: [
-      { bild: 'start-galerie-1', unterschrift: 'Dusche ohne Stufe', href: '/bad/barrierefreies-bad' },
-      { bild: 'start-galerie-2', unterschrift: 'Neues Bad mit Badewanne', href: '/bad/badsanierung' },
-      { bild: 'start-galerie-3', unterschrift: 'Balkon mit neuen Fliesen', href: '/balkon-terrasse' },
-      { bild: 'start-galerie-4', unterschrift: 'Terrasse mit großen Platten', href: '/balkon-terrasse' },
-      { bild: 'start-galerie-5', unterschrift: 'Außentreppe', href: '/treppen/aussentreppe' },
-      { bild: 'start-galerie-6', unterschrift: 'Balkon abdichten', href: '/balkon-terrasse' },
+      { bild: 'start-galerie-1', unterschrift: 'Dusche mit Sitzbank und Mosaik', href: '/bad/barrierefreies-bad' },
+      { bild: 'start-beleg-bad', unterschrift: 'Badewanne mit dunklem Mosaik', href: '/bad/badsanierung' },
+      { bild: 'start-beleg-dusche', unterschrift: 'Dusche mit Glastür und Mosaik', href: '/bad' },
+      { bild: 'start-beleg-terrasse', unterschrift: 'Terrasse mit blaugrauen Fliesen', href: '/balkon-terrasse' },
+      { bild: 'start-beleg-treppe', unterschrift: 'Außentreppe in Anthrazit', href: '/treppen/aussentreppe' },
     ],
     verweis: { name: 'Alle Arbeiten ansehen', href: '/referenzen' },
     // Wortlaut aller Stimmen unverändert aus REVIEWS (G8)

@@ -42,7 +42,7 @@ export const REFERENZEN: ErzaehlInhalt = {
     ort: 'Fliesenleger Deniz Tezgel aus Aßlar, für Wetzlar und Mittelhessen.',
     // im mittigen Einstieg nicht gezeigt; der Vorspann steht als `tun.einleitung` auf der Seite (Regel 2)
     vorspann: VORSPANN,
-    bild: 'bad-einstieg',
+    bild: 'referenzen-einstieg',
     bewertung: true,
   },
   lage: {

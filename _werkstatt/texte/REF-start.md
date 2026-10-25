@@ -51,7 +51,7 @@
 
 ## 5 · Beleg
 - H2: `So sieht unsere Arbeit aus.`
-- Sechs Fotos aus der Galerie (je Raum eins: Dusche, Bad, Balkon, Terrasse, Treppe, Baustelle), jedes mit kurzer Unterschrift, zum Beispiel `{Bild: start-galerie-1}` `Dusche mit Sitzbank und Mosaik`.
+- Fünf Fotos fertiger Arbeiten (Dusche, Bad, Dusche, Terrasse, Treppe), keines auf einer anderen Hauptansicht (E4-W0-BILDER), jedes mit kurzer Unterschrift: `{Bild: start-galerie-1}` `Dusche mit Sitzbank und Mosaik`, `{Bild: start-beleg-bad}` `Badewanne mit dunklem Mosaik`, `{Bild: start-beleg-dusche}` `Dusche mit Glastür und Mosaik`, `{Bild: start-beleg-terrasse}` `Terrasse mit blaugrauen Fliesen`, `{Bild: start-beleg-treppe}` `Außentreppe in Anthrazit`.
 - Link: `Alle Arbeiten ansehen` → `/referenzen`
 - H2: `Das sagen unsere Kunden.`
 - Drei Stimmen wörtlich aus `REVIEWS` (Elke S., C. W., Rabia Ö.), gekürzt nur mit „…“, Quelle `Google`.

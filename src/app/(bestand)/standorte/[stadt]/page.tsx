@@ -22,12 +22,12 @@ import { ortsInhalt, type Ortsinhalt } from '@/inhalte/orte';
 
 /** Fotos der Ortsseite (K-016, Regel 4): Ziel der Leistungsseite und Name auf der Glasfläche (Wörter aus `galerie.ts`, höchstens sechs) */
 const FOTOS: Record<string, { unterschrift: string; href: string }> = {
-  'start-galerie-1': { unterschrift: 'Dusche ohne Stufe mit Sitzbank', href: '/bad/barrierefreies-bad' },
-  'start-galerie-2': { unterschrift: 'Badewanne mit dunklen Mosaikfliesen', href: '/bad/badsanierung' },
-  'start-galerie-3': { unterschrift: 'Balkon mit dunklen Fliesen', href: '/balkon-terrasse' },
-  'start-galerie-4': { unterschrift: 'Terrasse mit großen hellgrauen Platten', href: '/balkon-terrasse' },
+  'ort-gaeste-wc': { unterschrift: 'Gäste-WC mit weißen Metrofliesen', href: '/bad' },
+  'start-galerie-1': { unterschrift: 'Dusche mit Sitzbank und Mosaik', href: '/bad/barrierefreies-bad' },
   'start-galerie-5': { unterschrift: 'Außentreppe mit Fliesen in Terrakotta', href: '/treppen' },
-  'start-galerie-6': { unterschrift: 'Balkonboden vor dem Verlegen', href: '/balkon-terrasse' },
+  'start-beleg-bad': { unterschrift: 'Badewanne mit dunklen Mosaikfliesen', href: '/bad/badsanierung' },
+  'ort-terrasse-erdtoene': { unterschrift: 'Terrasse mit Fliesen in Erdtönen', href: '/balkon-terrasse' },
+  'start-galerie-3': { unterschrift: 'Balkon mit dunklen Fliesen', href: '/balkon-terrasse' },
 };
 
 /** Weitere Kundenstimmen aus REVIEWS (K-016, Regel 5): Bad, Treppe, Boden, Balkon; die Stimme des Ortes steht zuerst */

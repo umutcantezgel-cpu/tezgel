@@ -14,7 +14,7 @@
 - H1: `Ein neuer Belag für Balkon und Terrasse`
 - Vorspann: `Draußen kommt es auf mehr an als auf die Fliese. Wir verlegen Platten auf Balkon und Terrasse, auch auf [[stelzlager|Stelzlagern]]. Wir erklären Ihnen in einfachen Worten, welcher Aufbau zu Ihrer Fläche passt.` (F-08)
 - Hauptknopf: `Termin vor Ort anfragen` → `/kontakt` · Kontakt: `Anrufen: {{COMPANY_DATA.contact.phone}}` (derselbe Hauptknopf wie in Abschnitt 6, K-009)
-- Bild: `{Bild: balkon-einstieg}` Alt: `Terrassenkante mit grauen Platten und hellem Aluprofil, davor Kies`
+- Bild: `{Bild: balkon-einstieg-hell}` Alt: `Terrasse mit großen hellgrauen Platten, einer weißen Stütze und weißem Geländer` (E4-W0-BILDER: das hellste fertige Foto)
 
 ## 2 · Ihre Lage
 - H2: `Draußen leidet der Belag unter Regen und Frost.`
@@ -44,7 +44,7 @@
 
 ## 5 · Beleg
 - H2: `Balkone und Terrassen, die wir verlegt haben.`
-- Vier Fotos: `{Bild: balkon-beleg-1}`, `{Bild: balkon-beleg-2}`, `{Bild: balkon-beleg-3}`, `{Bild: balkon-beleg-4}`.
+- Drei Fotos (E4-W0-BILDER): `{Bild: balkon-beleg-anthrazit}` `Balkon mit anthrazitfarbenen Fliesen`, `{Bild: balkon-beleg-2}` `Balkon mit rosébraunen Fliesen`, `{Bild: balkon-beleg-aluprofil}` `Terrassenkante mit hellem Aluprofil`.
 - Einzelbild `So legen wir Platten auf Stelzlagern` mit `{Bild: balkon-stelzlager}` (`Große Platten werden auf Stelzlagern verlegt.`)
 - Eine Stimme wörtlich aus `REVIEWS` zum Thema Balkon: `{Stimme: hasan-oe}`
 - Link: `Alle Arbeiten ansehen` → `/referenzen?raum=balkon-und-terrasse#unsere-arbeiten`

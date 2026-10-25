@@ -9,60 +9,6 @@
     "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADwAwCdASoQABQAPu1kqU2ppaQiMAgBMB2JZQDE2CIe0qrzm1L6xiiAAP6XiC6lElYtj+AeFxetxmHBwvEPYqKdpXYsoMsKavqLsUzp/uvkdwpEQ5grETgvJD1NPIAA"
   },
   {
-    "id": "start-dusche-boden",
-    "src": "/images/arbeiten/dusche/dusche-ohne-stufe-boden-graue-fliesen.jpg",
-    "breite": 1280,
-    "hoehe": 960,
-    "alt": "Boden einer Dusche ohne Stufe: große graue Fliesen laufen ohne Kante unter der Glaswand durch",
-    "raum": "dusche",
-    "blurDataURL": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADQAQCdASoQAAwAA4BaJZwAAiyff8DEAADNmQ+doJdgRRanEGD0bT886NJJMdqA3ptWdpSZcSgGAAAA"
-  },
-  {
-    "id": "lage-dusche",
-    "src": "/images/arbeiten/dusche/dusche-ohne-stufe-sitzbank-mosaik.jpg",
-    "breite": 800,
-    "hoehe": 800,
-    "alt": "Dusche ohne Stufe mit Sitzbank und türkisen Mosaikfliesen",
-    "raum": "dusche",
-    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADwAQCdASoQABAAA4BaJZwAAfl4H3smRqAA+VHc35x7vCArV0op+Am/rJF0eLBKhcW6ztYwz0GD/iKbIaB6Mrws8bLcDuJgAAA="
-  },
-  {
-    "id": "lage-bad",
-    "src": "/images/arbeiten/bad/badewanne-dunkle-verkleidung-quadrat.jpg",
-    "breite": 800,
-    "hoehe": 800,
-    "alt": "Badewanne mit dunkler Verkleidung und hellen Wandfliesen",
-    "raum": "bad",
-    "blurDataURL": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADwAQCdASoQABAAA4BaJQBOgMX6Zv/Z5kAA/m0vXLd1fT75IF8xjpNtMvbMZI4jZp6DOr2aemh5i0RbM85RNYuZFrz17bOUr1LSogwfy3pwvbUz7gigAVgDg9D8xTEsAAA="
-  },
-  {
-    "id": "lage-balkon",
-    "src": "/images/arbeiten/balkon-und-terrasse/balkon-grosse-hellgraue-fliesen.jpg",
-    "breite": 480,
-    "hoehe": 480,
-    "alt": "Balkon mit großen hellgrauen Fliesen",
-    "raum": "balkon-und-terrasse",
-    "blurDataURL": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADQAQCdASoQABAAA4BaJaQAAtpB59CegAD+01T7fTUK9Npn/ffL5OYeRiFwqyHoR4IxKlQIcAAAAA=="
-  },
-  {
-    "id": "lage-treppe",
-    "src": "/images/arbeiten/treppe/aussentreppe-terrakotta-quadrat.jpg",
-    "breite": 800,
-    "hoehe": 800,
-    "alt": "Außentreppe mit terrakottafarbenen Fliesen und hellen Kanten",
-    "raum": "treppe",
-    "blurDataURL": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADwAQCdASoQABAAA4BaJYwCdAEPWK23MagA/gVKVCQQe4n4NUhK7BCaez6qhbXoTGh3MWUDwHxfPy0QdrOaoE3YGAAAAA=="
-  },
-  {
-    "id": "lage-neubau",
-    "src": "/images/arbeiten/bad/bad-im-bau-boden-frisch-verlegt-quadrat.jpg",
-    "breite": 800,
-    "hoehe": 800,
-    "alt": "Bad während der Arbeit: Wanne, weiße Wandfliesen und frisch verlegter Boden",
-    "raum": "bad",
-    "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADQAQCdASoQABAAA4BaJZQAAmaLhroEAAD30NDI/VGkJilarcSw7vtcuxBZc0giagOfpPbIPlpVfAp4HfQHk7oYfpSq9iQsLJo92mgD8gFwAA=="
-  },
-  {
     "id": "start-galerie-1",
     "src": "/images/arbeiten/dusche/galerie-dusche-sitzbank-mosaik.jpg",
     "breite": 800,
@@ -70,15 +16,6 @@
     "alt": "Dusche ohne Stufe mit Sitzbank und Mosaikfliesen am Boden und an der Bank",
     "raum": "dusche",
     "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAABQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JZwAAMPHlnRF68AD8KEdh3EDqpi34reNZBkLfbyNkTTXLxYQwdzB6GvTC/46zaRnCG/3nLjaXYLgf5SbHEMo1cZBwAA=="
-  },
-  {
-    "id": "start-galerie-2",
-    "src": "/images/arbeiten/bad/badewanne-dunkle-verkleidung-hochformat.jpg",
-    "breite": 480,
-    "hoehe": 600,
-    "alt": "Badewanne mit dunkler Mosaikverkleidung und Fenster mit blauem Plissee",
-    "raum": "bad",
-    "blurDataURL": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAAAQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JYwCdACB4p+f1TSH2vLefAAD+62hhrT7LOmAzQ1tmSIcrC3u2M3Zls0xi2hUz1c4+XCE5///eql30NXnP25Q+Y+J9jkYaTQYWhXr9UUcEs8fwSoDjYGO11o9bAAAA"
   },
   {
     "id": "start-galerie-3",
@@ -137,8 +74,8 @@
   {
     "id": "bad-beleg-2",
     "src": "/images/arbeiten/bad/landhausbad-wanne-holzregal.jpg",
-    "breite": 480,
-    "hoehe": 600,
+    "breite": 688,
+    "hoehe": 860,
     "alt": "Landhausbad mit Wanne unter weißen Fliesen und einem Holzregal",
     "raum": "bad",
     "blurDataURL": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAAAQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JYwCdMoAB986/n8SYDEVkgAD3CXER3sOQHllw9d2tyQm7tOIN9v8PVOCrgjnvj+TpyreTdUoIfSanbM4CrcIlpV8YCstCHFoUb/dJEGU51MylxqQ9/WTwRU9ESxojAwAAAA=="
@@ -160,15 +97,6 @@
     "alt": "Bodengleiche Dusche mit Mosaik an der Wand, Handbrause und WC an der Wand",
     "raum": "bad",
     "blurDataURL": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADQAwCdASoQABQAPu1iqk2ppaQiMAgBMB2JZwAASixRgmGDsxsQbwAA/e6N6aFbvRcWoGIaV45t9A7JdC6ENFuU4mGP2/FT6/500mnsUxM25uZwFFR2cxn4z38ZHOMx+3IpQAAA"
-  },
-  {
-    "id": "sanierung-einstieg",
-    "src": "/images/arbeiten/bad/freistehende-wanne-steinoptik.jpg",
-    "breite": 640,
-    "hoehe": 800,
-    "alt": "Bad mit freistehender ovaler Badewanne und beigen Fliesen in Steinoptik",
-    "raum": "bad",
-    "blurDataURL": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAADwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JYwCw7CPNCEBsviLn7IZAAP7rfg9CcZfpwhZE5xHkCgvijZ4IKgXzy3NuoZ4dDUPvFw9cxAF8lzwBolLjhSStUpKoB/BRj/lLSJdhtQAAAA=="
   },
   {
     "id": "sanierung-weg-1",
@@ -198,15 +126,6 @@
     "blurDataURL": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JYwC7ACLAk5+D26Vi4+gAAP5zOv56HjYnWCqlC6uCn9yROwab6d6Ld661zE/am1t1qsyff3o1u1qEstQmY7id1B1bKRV+ii+ZMZ8RwAA="
   },
   {
-    "id": "bereich-dusche-sitzbank",
-    "src": "/images/arbeiten/dusche/barrierefrei-dusche-sitzbank-mosaik.jpg",
-    "breite": 1280,
-    "hoehe": 1600,
-    "alt": "Dusche ohne Stufe mit Sitzbank und kleinen Mosaikfliesen",
-    "raum": "dusche",
-    "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAABQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JZwAAMPHlnRF68AD8KEdh3EDqpi34reNZBkLfbyNkTTXLxYQwdzB6GvTC/46zaRnCG/3nLjaXYLgf5SbHEMo1cZBwAA=="
-  },
-  {
     "id": "bereich-dusche-streifen-sitzbank",
     "src": "/images/arbeiten/dusche/dusche-dunkler-streifen-sitzbank.jpg",
     "breite": 800,
@@ -214,15 +133,6 @@
     "alt": "Bodengleiche Dusche mit dunklem Fliesenstreifen an der Wand und gefliester Sitzbank",
     "raum": "dusche",
     "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAACwAwCdASoQABQAPu1iqk2ppaQiMAgBMB2JaQDMHBiGC26QqYv4QAD2Zi4kkAP/eYxqr1HUdqyvvVnaVfv8IPI3kcUQMR6q3Ft98ywAhbk/CPI9Miymdr/JxlvgQAAA"
-  },
-  {
-    "id": "bereich-wanne-mit-tuer",
-    "src": "/images/arbeiten/bad/einstiegswanne-mit-tuer.jpg",
-    "breite": 800,
-    "hoehe": 1000,
-    "alt": "Einstiegswanne mit Tür am Rand, daneben eine Dusche mit großen hellen Wandfliesen",
-    "raum": "bad",
-    "blurDataURL": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAQBACdASoQABQAPu1iqk2ppaQiMAgBMB2JZQAAWo9vs1c76BPyHir1oAD84dE6eIk/cV7KFbQGR0q7mdfqCEVJLZwGEXLivAtnLTZKU2ZAvisr4i+fBZg/aMBJ/xBLKoAEpJ0ZwAA="
   },
   {
     "id": "entstehung-dusche-1",
@@ -241,15 +151,6 @@
     "alt": "Dusche im Bau: Fliesen sind schräg zum Ablauf geschnitten, die Nische ist noch offen",
     "raum": "dusche",
     "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAACQAwCdASoQABQAPu1kqk4ppaQiMAgBMB2JYwCsABDrx1KNzMKAAMm6ATSfIfPIdkyFQD/ss0Bo+aKoyqNHu3GEsGs9DgwK8M2IYADVIm2AAA=="
-  },
-  {
-    "id": "leistungen-bad",
-    "src": "/images/arbeiten/bad/badewanne-dunkle-verkleidung-hochformat.jpg",
-    "breite": 480,
-    "hoehe": 600,
-    "alt": "Badewanne mit dunkler Mosaikverkleidung und Fenster mit blauem Plissee",
-    "raum": "bad",
-    "blurDataURL": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAAAQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JYwCdACB4p+f1TSH2vLefAAD+62hhrT7LOmAzQ1tmSIcrC3u2M3Zls0xi2hUz1c4+XCE5///eql30NXnP25Q+Y+J9jkYaTQYWhXr9UUcEs8fwSoDjYGO11o9bAAAA"
   },
   {
     "id": "leistungen-balkon",
@@ -288,24 +189,6 @@
     "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JaQAAXuwQTTP+mJWkRAD+7WuOS9LfeXBR7XVxwkKQQes0dCNB5fyxgvjEufhwAAA="
   },
   {
-    "id": "balkon-einstieg",
-    "src": "/images/arbeiten/balkon-und-terrasse/terrasse-aluprofil-plattenkante.jpg",
-    "breite": 640,
-    "hoehe": 800,
-    "alt": "Terrassenkante mit grauen Platten und hellem Aluprofil, davor Kies",
-    "raum": "balkon-und-terrasse",
-    "blurDataURL": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAAAQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JZwC/OBt0au0Tli/osrvCAAD+o3BfiW8+nCF1ETwWZCf5kJ+MAYtIgcvIC1KfBXzDbQMEN8cMqDLFILwA2W89rD6dRTTfh0sw9QvbG+ZtYJ7Ta41/FDJ2fkD7VNLRcGXvQPPjVajYgmh1+zDBAMJZAAA="
-  },
-  {
-    "id": "balkon-beleg-1",
-    "src": "/images/arbeiten/balkon-und-terrasse/balkon-anthrazit-fliesen-versetzt.jpg",
-    "breite": 800,
-    "hoehe": 1000,
-    "alt": "Balkon mit anthrazitfarbenen Fliesen im versetzten Verband",
-    "raum": "balkon-und-terrasse",
-    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JaQAAXuwQTTP+mJWkRAD+7WuOS9LfeXBR7XVxwkKQQes0dCNB5fyxgvjEufhwAAA="
-  },
-  {
     "id": "balkon-beleg-2",
     "src": "/images/arbeiten/balkon-und-terrasse/balkon-rosebraune-fliesen.jpg",
     "breite": 800,
@@ -324,15 +207,6 @@
     "blurDataURL": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAACwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JZQC06B4UBniolp67gAD5XP9bqJ2IxC5Yvi8Qv7q9694KoQ4BSiWgAAA="
   },
   {
-    "id": "balkon-beleg-4",
-    "src": "/images/arbeiten/balkon-und-terrasse/terrasse-hellgraue-platten-stuetze.jpg",
-    "breite": 800,
-    "hoehe": 1000,
-    "alt": "Terrasse mit hellgrauen Platten, einer Stütze in der Mitte und einem Geländer am Rand",
-    "raum": "balkon-und-terrasse",
-    "blurDataURL": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAAAQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JYwC/OB9E65wFNpcRlwJmUAD41X23fpzL3c0azidOx5UClMefx9yLkfdoMh6oxyVsH+mz32+BkqZGvSOkc/gOEl/c/xiUzf14wAAA"
-  },
-  {
     "id": "balkon-stelzlager",
     "src": "/images/arbeiten/balkon-und-terrasse/platten-auf-stelzlagern.jpg",
     "breite": 800,
@@ -343,12 +217,12 @@
   },
   {
     "id": "ueber-einstieg",
-    "src": "/images/arbeiten/balkon-und-terrasse/ueber-uns-dichtband-balkon.jpg",
-    "breite": 640,
-    "hoehe": 800,
+    "src": "/images/arbeiten/balkon-und-terrasse/ueber-uns-mitarbeiter-dichtband-balkon.jpg",
+    "breite": 1280,
+    "hoehe": 1600,
     "alt": "Mitarbeiter von Fliesenverlegung Tezgel kniet auf dem Balkon, blaues Dichtband läuft an den Rändern entlang",
     "raum": "balkon-und-terrasse",
-    "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADQAwCdASoQABQAPu1iqU2ppaQiMAgBMB2JZwAASobkfRisAkpt4EAA/uqVUQ24kvlIiGeenHesxnrISvj4ZUNE7rVymB0Re/mA9uxkBYSJYk/TESQ6+Yu+BsYE1wAA"
+    "blurDataURL": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAADQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JYwC2yBgqu5vrGrI1Z1gA/tYF2WfwThmntTvWuhzoe8Li7+ZXxMW8A2TE6r8Mwy1C3a6uVAkSuvAugFpJSnzjyu05IVeIJ/HnRWGpuLMQHQAA"
   },
   {
     "id": "kontakt-eingang",
@@ -376,5 +250,239 @@
     "alt": "Dieselbe Außentreppe nachher: Stufen mit terrakottafarbenen Fliesen und hellen Kanten",
     "raum": "treppe",
     "blurDataURL": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAADwAwCdASoQAB8APtFUo0uoJKMhsAgBABoJZQCdMoABq99MnOzpfpAAAP7miZrYHPAIU1QFzTFGCZlPR0u24ifs2gNjjqAhV94GXyj8jjy+t0+cIz+RD7eDrBTmcO72cm7CskDOgVvoTCQPy6Xd5ye1a9BUUosnXmCBQyiR2Jppn8devLm6ZtBXd/OBAJlwADFx6AAA"
+  },
+  {
+    "id": "start-lage-dusche",
+    "src": "/images/arbeiten/dusche/dusche-weisse-grossformat-dunkler-streifen-quadrat.jpg",
+    "breite": 800,
+    "hoehe": 800,
+    "alt": "Bodengleiche Dusche mit weißen Großformatfliesen und einem dunklen Fliesenstreifen",
+    "raum": "dusche",
+    "blurDataURL": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAACQAQCdASoQABAAA4BaJaQAAbfMIgAA/ttduunmP+r/p4mYWTsFMAHl7hjp2AOl+awynk1MjaSSXSFGIAA="
+  },
+  {
+    "id": "start-lage-bad",
+    "src": "/images/arbeiten/bad/eckbadewanne-graue-verkleidung-quadrat.jpg",
+    "breite": 800,
+    "hoehe": 800,
+    "alt": "Eckbadewanne mit grauer Verkleidung und hellen Wandfliesen",
+    "raum": "bad",
+    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACwAQCdASoQABAAA4BaJZQCdAEWYgoAAP7oTMDWtL/O7KCGI5iSzKpKwU/Tbuhs84J7t8VcnOfDM54g1nCVEXQNHC47I8QOqJwAAA=="
+  },
+  {
+    "id": "start-lage-neubau",
+    "src": "/images/arbeiten/bad/bad-im-bau-wanne-boden-frisch-verlegt-quadrat.jpg",
+    "breite": 800,
+    "hoehe": 800,
+    "alt": "Bad im Bau: Wanne mit dunkler Verkleidung, weiße Wandfliesen und frisch verlegter Boden mit Nivellierklemmen",
+    "raum": "bad",
+    "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADwAQCdASoQABAAA4BaJZQAAsaQrf4vbQAA99woapoZtvFhwTs9vpfKLg3WS2CmNdFyKW0tSU0eTDPWwyoZxUL05ufMuroL4ZknAiMt0KEWGs4D8gFwAA=="
+  },
+  {
+    "id": "start-lage-balkon",
+    "src": "/images/arbeiten/balkon-und-terrasse/balkon-hellgraue-grossformat-quadrat.jpg",
+    "breite": 760,
+    "hoehe": 760,
+    "alt": "Balkon mit hellgrauen Großformatfliesen und weißem Geländer",
+    "raum": "balkon-und-terrasse",
+    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAwAgCdASoQABAAA4BaJZQAD5AvrIbjyfK8QAD+8upr7uGvUFScohxGV63ytD5Q4VixHCMiUqrPiyc+SvZMf2qDU6iC+7OnXo06na7oSIop6LYtDO33rWiQAAA="
+  },
+  {
+    "id": "start-lage-treppe",
+    "src": "/images/arbeiten/treppe/hauseingang-beige-fliesen-stufen-quadrat.jpg",
+    "breite": 800,
+    "hoehe": 800,
+    "alt": "Hauseingang mit beigen Fliesen auf Stufen und Podest, davor eine Fußmatte",
+    "raum": "treppe",
+    "blurDataURL": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAACwAQCdASoQABAAA4BaJQBYdhFINxMAAP7QU5lpVwUzx89QEjiO7Ji/18RzMEeACDwowWovlFa2ckWuawlGFgAA"
+  },
+  {
+    "id": "start-beleg-bad",
+    "src": "/images/arbeiten/bad/badewanne-dunkles-mosaik-fenster.jpg",
+    "breite": 792,
+    "hoehe": 990,
+    "alt": "Badewanne mit dunklen Mosaikfliesen und blauem Plissee am Fenster",
+    "raum": "bad",
+    "blurDataURL": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAADwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JZQCdABuViBOf7YNbfFHAAP7oe/KTl2WehGTxqGRhmwQ+TOLYWnB5Qxa9iSJgGOSYscnrg/nJBZcrnTXB2LeZGKjyPIN5EQ26bntPsGrZZexUFjyCWWNDeinKYjWAAAA="
+  },
+  {
+    "id": "start-beleg-dusche",
+    "src": "/images/arbeiten/dusche/dusche-glastuer-mosaikband.jpg",
+    "breite": 800,
+    "hoehe": 1000,
+    "alt": "Dusche mit Glastür, Mosaikband an der Wand und Chromgriff",
+    "raum": "dusche",
+    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADQAwCdASoQABQAPu1iqk4ppaQiMAgBMB2JZQDE2Biy0jAmUoc3E4AA/kIx7VO4gjUSC6F8rxO0VPg/fs8j3SqOcCJo2Q3WcGrZ8bZaWE8e4Gw5VcJ3pvsDAAA="
+  },
+  {
+    "id": "start-beleg-treppe",
+    "src": "/images/arbeiten/treppe/aussentreppe-anthrazit-handlauf.jpg",
+    "breite": 800,
+    "hoehe": 1000,
+    "alt": "Außentreppe mit anthrazitfarbenen Fliesen und Handlauf bis zur weißen Haustür",
+    "raum": "treppe",
+    "blurDataURL": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAACwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JYwAASfRpTW/sPOEw8AD+lQ2ONxC9Y0BK7D7T6ycew7WLkZUk3HnFenkyqS2FROh60mtzb8rF3sxL9731dOXfjNsCOeWrcgHIRl+Ni+dC4gIAAAA="
+  },
+  {
+    "id": "start-beleg-terrasse",
+    "src": "/images/arbeiten/balkon-und-terrasse/terrasse-blaugraue-fliesen-glastuer.jpg",
+    "breite": 800,
+    "hoehe": 1000,
+    "alt": "Terrasse mit blaugrauen Fliesen vor einer Glastür mit Holzrahmen",
+    "raum": "balkon-und-terrasse",
+    "blurDataURL": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAAAQBACdASoQABQAPu1iqU2ppaQiMAgBMB2JQBOgA8NnbWy4wqeEn/5XgADOMXb66qGEGemy/C90gcRw33fhsjNM/NOi7HMQ6CzHeRl/qSbbJtg9QZ2Be5oG2jkrR7UvxwY4bfOjqAXjH3KyiwEfFjytHYPddKnVaIHtxEhRItBm1iNZNW1mAA=="
+  },
+  {
+    "id": "leistungen-einstieg",
+    "src": "/images/arbeiten/dusche/dusche-led-leisten-sitzbank-mosaik.jpg",
+    "breite": 1280,
+    "hoehe": 1600,
+    "alt": "Dusche mit zwei Lichtleisten an der Wand, gefliester Sitzbank und Mosaikboden",
+    "raum": "dusche",
+    "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JZwDA3fwAkkh3XMxa8gAA/WZlGoqomuUYVLdpWWzhrfmp8UZ+yq1BzkUhYpQwbxqPzcvgAAA="
+  },
+  {
+    "id": "fliesen-beleg",
+    "src": "/images/arbeiten/dusche/dusche-grosse-beige-fliesen-flache-duschflaeche.jpg",
+    "breite": 800,
+    "hoehe": 1000,
+    "alt": "Dusche mit großen beigen Fliesen, flacher weißer Duschfläche und einer Holztür am Ende",
+    "raum": "dusche",
+    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAACwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JZQCdMoABo1mOL7d76ADwGZKXv2HaaF/PXIonuy6NWOG48hNdlzAvwpKlcgOO4lZ+LZB/Yt+p0ACM2OGMYw0AAAA="
+  },
+  {
+    "id": "blog-beleg",
+    "src": "/images/arbeiten/dusche/duschnische-weisse-fliesen-rinne.jpg",
+    "breite": 800,
+    "hoehe": 1000,
+    "alt": "Duschnische mit weißen Wandfliesen und einer Rinne im dunklen Boden, die Armatur fehlt noch",
+    "raum": "dusche",
+    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACQAwCdASoQABQAPu1Ct1apoqakGAEwHYlpAAEOBOG6fYABKrkAAP5nGsXrvknqqK+FxPllOBUzjSWPg6LVSxS5+CMBWsd+gAAAAA=="
+  },
+  {
+    "id": "badsanierung-einstieg",
+    "src": "/images/arbeiten/bad/badewanne-ornamentfliesen-nische.jpg",
+    "breite": 960,
+    "hoehe": 1200,
+    "alt": "Badewanne mit blau-beigen Ornamentfliesen und heller Wandnische",
+    "raum": "bad",
+    "blurDataURL": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAABwAwCdASoQABQAPu1qrU8ppiQiMAgBMB2JaQAAUiWkNOWltgAA/ovc+lnU83H2MWjP+pIis6DiErXTcZBGPLO/AAA="
+  },
+  {
+    "id": "badsanierung-beleg-1",
+    "src": "/images/arbeiten/bad/badewanne-gestreifte-verkleidung-wand-wc.jpg",
+    "breite": 792,
+    "hoehe": 990,
+    "alt": "Badewanne mit gestreifter dunkler Verkleidung und Wand-WC",
+    "raum": "bad",
+    "blurDataURL": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAABQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JZwAAUksMnJmYgAD+1aBJxhv8g9hyBvh9FypluKMEOD5NzM6NrIS5H1rJ8cnag+6Noj//2Yu8hIljPfKWcJMVxXn/vAAAAAA="
+  },
+  {
+    "id": "badsanierung-beleg-2",
+    "src": "/images/arbeiten/bad/badewanne-dusche-mosaikboden-glaswand.jpg",
+    "breite": 792,
+    "hoehe": 990,
+    "alt": "Badewanne mit dunkler Verkleidung, daneben eine Dusche mit Mosaikboden und Glaswand",
+    "raum": "bad",
+    "blurDataURL": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAACQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JaQAAV+flGjzx6jsAAP7x4KM7fyLT68cMYUFm/qVPD/WEeqZJBzQVfVAM9GYEHC/eWNUwkosi/QJhuOqW+fMerR/NzV1kKPIAAAAA"
+  },
+  {
+    "id": "badsanierung-zweier-1",
+    "src": "/images/arbeiten/dusche/dusche-im-bau-metalloptik-nische.jpg",
+    "breite": 800,
+    "hoehe": 1000,
+    "alt": "Dusche im Bau: dunkle Wandfliesen in Metalloptik, Nische in der Mitte, Duschwanne eingebaut",
+    "raum": "dusche",
+    "blurDataURL": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAACwAwCdASoQABQAPu1iqk2ppaQiMAgBMB2JZQCw7BiY7ElTt9rp6ADOPg3uFDRUHrqK9++wb8uRHpRsRA+zbnjRzhfV/DGsf/LbfnDppEleoD9W3s1iyNTYbf3UVv31WaNp/pZgw/VQgAAA"
+  },
+  {
+    "id": "badsanierung-zweier-2",
+    "src": "/images/arbeiten/bad/bad-im-bau-schieferoptik-boden.jpg",
+    "breite": 792,
+    "hoehe": 990,
+    "alt": "Bad im Bau: dunkle Bodenfliesen in Schieferoptik, helle Wände, die Nische ist noch offen",
+    "raum": "bad",
+    "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JZwBU4AVNjYbzlkXj0GUOAAD9Y75LV6VtmxXr0esbrKVK5guaD0eOHBP32mvZn24I/FYyonUcTi8zOinF/AhlR17u2NthewAAAA=="
+  },
+  {
+    "id": "barrierefrei-einstieg",
+    "src": "/images/arbeiten/dusche/begehbare-dusche-metrofliesen-musterboden.jpg",
+    "breite": 1280,
+    "hoehe": 1600,
+    "alt": "Begehbare Dusche mit weißen Metrofliesen, Handbrause und gemustertem Boden",
+    "raum": "dusche",
+    "blurDataURL": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAABwAwCdASoQABQAPu1yrU+pp6QiMAgBMB2JaQAAQk8LIp1/SLAA/oxpWuLxGZIWCLuaqY5b2Fpq3RNX2CVxjrQA4AA="
+  },
+  {
+    "id": "barrierefrei-beleg-1",
+    "src": "/images/arbeiten/dusche/dusche-mosaikboden-eckbank.jpg",
+    "breite": 800,
+    "hoehe": 1000,
+    "alt": "Dusche mit Mosaikboden in Schwarz, Weiß und Grau und gefliester Eckbank",
+    "raum": "dusche",
+    "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAQBACdASoQABQAPu1kqk4ppaQiMAgBMB2JZwAAXBXVh5sDj8FQYrSAgAD80sIJy8yd6pKVXy7BFDcedAh8Xe7FwDzX+TQIexVaq7QeMpAAAA=="
+  },
+  {
+    "id": "barrierefrei-beleg-2",
+    "src": "/images/arbeiten/bad/einstiegswanne-tuer-regendusche.jpg",
+    "breite": 800,
+    "hoehe": 1000,
+    "alt": "Badewanne mit Tür zum leichten Einsteigen, daneben eine Regendusche vor hellen Wandfliesen",
+    "raum": "bad",
+    "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAABwAwCdASoQABQAPu1iqU2ppaQiMAgBMB2JZQAAOfj7ANKnngAA1pPo5RVSj+OYspBmGxqLwkd3A+DXqTSfb2vJc9IiKjey6Rh4CpofIumIe9ui5Wj5R28MQQa1ol/2NyQAAA=="
+  },
+  {
+    "id": "referenzen-einstieg",
+    "src": "/images/arbeiten/bad/bad-marmoroptik-regendusche-wand-wc.jpg",
+    "breite": 1280,
+    "hoehe": 1600,
+    "alt": "Bad mit Fliesen in Marmoroptik, Regendusche und Wand-WC mit weißer Betätigungsplatte",
+    "raum": "bad",
+    "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAACwAwCdASoQABQAPu1mq04ppaQiMAgBMB2JZwDDNBkzvXuMvxC9cADKKMQGey5XCzmju4+pH/EddOW7WUQ2rnIauUiFuszgFHnsn9VcXO/5Fmt/OYAAAA=="
+  },
+  {
+    "id": "balkon-einstieg-hell",
+    "src": "/images/arbeiten/balkon-und-terrasse/terrasse-hellgraue-platten-weisses-gelaender.jpg",
+    "breite": 1240,
+    "hoehe": 1550,
+    "alt": "Terrasse mit großen hellgrauen Platten, einer weißen Stütze und weißem Geländer",
+    "raum": "balkon-und-terrasse",
+    "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JYwC06CEsg33Uwdz6JgAA/Oin4YQmMr6pe1AFOvxjjyG9RLcCN2MuIV0DvMHzCsRhfurDZMX8k/fYf9/j8Ev3tUP63MhpNgAAAA=="
+  },
+  {
+    "id": "balkon-beleg-anthrazit",
+    "src": "/images/arbeiten/balkon-und-terrasse/balkon-anthrazit-fliesen-rollladen.jpg",
+    "breite": 800,
+    "hoehe": 1000,
+    "alt": "Balkon mit anthrazitfarbenen Fliesen am Haus, daneben ein Fenster mit Rollladen",
+    "raum": "balkon-und-terrasse",
+    "blurDataURL": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAACQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JZQAAWyU4AAskAo1AAP7Y7iWJZby1dg55PvkB94+hdWyB9PRDpXVwJ32X27UcBZfgqMvar/W1/X/ABsQtYZdutQfg2+OX9g5hhdngHOUe2iN2m1CgG+EhpMYAAA=="
+  },
+  {
+    "id": "balkon-beleg-aluprofil",
+    "src": "/images/arbeiten/balkon-und-terrasse/terrassenkante-graue-platten-glastuer.jpg",
+    "breite": 800,
+    "hoehe": 1000,
+    "alt": "Terrassenkante mit grauen Platten und hellem Aluprofil, dahinter eine Glastür",
+    "raum": "balkon-und-terrasse",
+    "blurDataURL": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAACwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JZQDFE/9yAXgArVpptwX6f1RSyrLAAP7My8qVuIEjUYvd5gU07sERF9B1kgCSruUQ5mKFzuYxxARnpq6HhluTiRi97auj+JJBQOvKKSjM7ghTt5yl7DE8rzQ2YBh9guQzibT/yHcnAMyhiJUAAA=="
+  },
+  {
+    "id": "ort-terrasse-erdtoene",
+    "src": "/images/arbeiten/balkon-und-terrasse/terrasse-rustikale-fliesen-erdtoene.jpg",
+    "breite": 800,
+    "hoehe": 1000,
+    "alt": "Terrasse mit rustikalen Fliesen in Erdtönen und einem Pflanzbeet am Rand",
+    "raum": "balkon-und-terrasse",
+    "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAACwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JZQCsAB6U57LdKeSbOAD+v4catzI+5hsgPJYMRtzH/l2rOywtGjsWjRn5/yH56f08dkunsphSAAAA"
+  },
+  {
+    "id": "ort-gaeste-wc",
+    "src": "/images/arbeiten/bad/gaeste-wc-metrofliesen-bidet.jpg",
+    "breite": 800,
+    "hoehe": 1000,
+    "alt": "Gäste-WC mit Wand-WC, Bidet und weißen Metrofliesen an der Wand",
+    "raum": "bad",
+    "blurDataURL": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAADwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JZQCdABJeR0Rqdaa7ijsAAP5L/k9mTuJiFyEnq5dKdScd6tvwXwO6XeAr9H+41CZe5d+tTBf+WYFJJ05R6PZl82d7O2mkQVIp2lk7OzUdsK9PNIVXb+U2NpowSYlzy6Ki+AAA"
   }
 ]
