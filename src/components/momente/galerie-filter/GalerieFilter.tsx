@@ -1,13 +1,14 @@
 // Großer Moment `galerie-filter` (KERN v3.4 K-007, /referenzen, E3-GRAF-08): Galerie „Unsere Arbeiten“ mit Filter nach Raum.
-// Serverkomponente: baut je Foto das Bildfeld (next/image mit festen Maßen, Platzhalter, verzögertes Laden; verborgene Fotos
-// laden erst, wenn sie gezeigt werden) und gibt die fertigen Knoten an die Insel GalerieWahl, die nur auswählt. Platz:
-// Schlitz momente.beleg der ErzaehlSeite, direkt unter der H2 „Unsere Arbeiten in Bildern.“ (#unsere-arbeiten).
-import Bildfeld from '@/components/kern/Bildfeld';
+// Serverkomponente: baut je Foto das Glasbild (vollständig, Name und Link zur Leistung auf der Glasfläche, K-016; next/image
+// mit festen Maßen, Platzhalter, verzögertes Laden; verborgene Fotos laden erst, wenn sie gezeigt werden) und gibt die
+// fertigen Knoten an die Insel GalerieWahl, die nur auswählt. Platz: Schlitz momente.beleg der ErzaehlSeite, direkt unter
+// der H2 „Unsere Arbeiten in Bildern.“ (#unsere-arbeiten).
+import Glasbild from '@/components/kern/Glasbild';
 import GalerieWahl from './GalerieWahl';
-import { GALERIE, SATZ } from './daten';
+import { GALERIE, GRUPPEN, SATZ } from './daten';
 
-/** sizes wie die Galerie der Startseite (_werkstatt/bildplaetze.md, start-galerie): drei Spalten ab lg, sonst zwei */
-const GROESSEN = '(min-width: 1024px) 30vw, 50vw';
+/** sizes zu den Spalten der Galerie: drei ab etwa 1024 px, zwei ab etwa 700 px, darunter eine (K-016: je Foto groß) */
+const GROESSEN = '(min-width: 1024px) 30vw, (min-width: 700px) 45vw, 100vw';
 
 export default function GalerieFilter({ satz = SATZ }: { satz?: string }) {
   return (
@@ -16,7 +17,8 @@ export default function GalerieFilter({ satz = SATZ }: { satz?: string }) {
       fotos={GALERIE.map((f) => ({
         bild: f.bild,
         gruppe: f.gruppe,
-        knoten: <Bildfeld arbeit={f.bild} sizes={GROESSEN} beschriftung={f.unterschrift} flaeche />,
+        // ohne Unterschrift darunter: Name und Weg zur Leistung auf der Glasfläche (K-016, E-047)
+        knoten: <Glasbild arbeit={f.bild} name={f.unterschrift} href={GRUPPEN.find((g) => g.id === f.gruppe)?.href} sizes={GROESSEN} />,
       }))}
     />
   );

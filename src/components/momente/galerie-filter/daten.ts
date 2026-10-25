@@ -19,6 +19,8 @@ export interface Gruppe {
   icon: IconName;
   /** Satzende der Statuszeile („Sie sehen 7 Fotos aus dem Bad.“); leer bei „Alle Fotos“ */
   zusatz: string;
+  /** Leistungsseite zu den Fotos dieser Gruppe (Link auf der Glasfläche, K-016, E-047); ohne: nur der Name */
+  href?: string;
 }
 
 export interface GalerieFoto {
@@ -32,11 +34,11 @@ export const SATZ = 'Wählen Sie einen Raum. Dann sehen Sie nur die Fotos aus di
 
 export const GRUPPEN: Gruppe[] = [
   { id: 'alle', name: 'Alle Fotos', icon: 'fliese', zusatz: '' },
-  { id: 'bad', name: 'Bad', icon: 'bad', zusatz: 'aus dem Bad' },
-  { id: 'dusche', name: 'Dusche', icon: 'dusche-rinne', zusatz: 'von Duschen' },
-  { id: 'balkon-und-terrasse', name: 'Balkon und Terrasse', icon: 'balkon', zusatz: 'von Balkon und Terrasse' },
-  { id: 'treppe-und-eingang', name: 'Treppe und Eingang', icon: 'treppe', zusatz: 'von Treppe und Eingang' },
-  { id: 'so-arbeiten-wir', name: 'So arbeiten wir', icon: 'reparatur', zusatz: 'von unserer Arbeit auf der Baustelle' },
+  { id: 'bad', name: 'Bad', icon: 'bad', zusatz: 'aus dem Bad', href: '/bad/badsanierung' },
+  { id: 'dusche', name: 'Dusche', icon: 'dusche-rinne', zusatz: 'von Duschen', href: '/bad/barrierefreies-bad' },
+  { id: 'balkon-und-terrasse', name: 'Balkon und Terrasse', icon: 'balkon', zusatz: 'von Balkon und Terrasse', href: '/balkon-terrasse' },
+  { id: 'treppe-und-eingang', name: 'Treppe und Eingang', icon: 'treppe', zusatz: 'von Treppe und Eingang', href: '/treppen' },
+  { id: 'so-arbeiten-wir', name: 'So arbeiten wir', icon: 'reparatur', zusatz: 'von unserer Arbeit auf der Baustelle', href: '/ueber-uns' },
 ];
 
 export const GALERIE: GalerieFoto[] = [

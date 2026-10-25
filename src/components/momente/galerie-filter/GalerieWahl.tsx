@@ -60,13 +60,13 @@ export default function GalerieWahl({ fotos, satz }: { fotos: GalerieWahlFoto[];
             );
           })}
         </div>
-        <p role="status" className="mt-6 font-text text-fs-2 text-tinte-2">
+        <p role="status" className="mt-6 text-center font-text text-fs-2 text-tinte-2">
           {ansage(stand.wahl, anzahl(stand.wahl, fotos))}
         </p>
       </div>
-      {/* 1 Spalte, ab 20 rem 2, ab 64 rem 3 (wie teile/Fotos; große Systemschrift: eine Spalte) */}
+      {/* 1 Spalte, ab 42 rem 2, ab 64 rem 3: je Foto groß statt gequetscht (K-016, E-047; große Systemschrift: eine Spalte) */}
       <div className="@container mt-6">
-        <ul className="grid grid-cols-1 border-t border-l border-fuge @xs:grid-cols-2 @5xl:grid-cols-3">
+        <ul className="grid grid-cols-1 border-t border-l border-fuge @2xl:grid-cols-2 @5xl:grid-cols-3">
           {fotos.map((f, i) => {
             const s = stufe[i];
             const neu = typeof s === 'number';

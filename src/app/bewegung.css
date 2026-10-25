@@ -264,11 +264,13 @@ html.k-bewegung:not(.k-notaus) [data-motion="anriss"]:not([data-motion-stand="an
   inset-inline-start: -1px;
   border-inline-start: 2px solid var(--color-tinte);
 }
+/* Griff bleibt ganz im Bild: in der Mitte mittig auf der Linie, an den Rändern rückt er neben sie (rechts bei 0 %, links
+   bei 100 %; Prozent der eigenen Breite im selben Anteil wie die Linie) */
 .formatregler-griff {
   position: absolute;
   top: 50%;
   left: 0;
-  translate: -50% -50%;
+  translate: calc(var(--formatregler-teil) * -1) -50%;
 }
 .formatregler-flaeche {
   fill: var(--color-fliese);
