@@ -38,7 +38,7 @@ export default function GefaelleDusche() {
         </Planrahmen>
       </div>
       <figcaption className="mt-4 font-text text-fs-3 text-pretty text-tinte-2">
-        <p>Das Wasser läuft von selbst zum Ablauf. In echt ist die Neigung so klein, dass man sie kaum sieht.</p>
+        <p>Das Wasser läuft von selbst zum Ablauf.</p>
       </figcaption>
     </figure>
   );

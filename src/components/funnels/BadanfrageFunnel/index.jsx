@@ -85,7 +85,7 @@ export default function BadanfrageFunnel() {
                         </span>
                     </div>
                     <h2 className="mt-6 text-fs-5 text-tinte">
-                        Planen Sie Ihr Traumbad mit dem Fachbetrieb aus Aßlar
+                        Planen Sie Ihr neues Bad mit uns.
                     </h2>
 
                     {/* Fortschritt: erledigt = Haken, aktuell = Tinte, offen = Nummer in Tinte-2 */}
