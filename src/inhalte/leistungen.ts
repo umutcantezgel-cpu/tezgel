@@ -74,7 +74,7 @@ export const LEISTUNGSPLAENE: Leistungsplan[] = [
   {
     id: 'untergrund',
     name: 'Untergrund und Abdichtung',
-    satz: 'Das ist die Arbeit unter dem Belag, die man später nicht mehr sieht. Wir gleichen den [[untergrund|Untergrund]] aus. Darauf kommt eine [[abdichtung|Abdichtung]] nach [[din-18534|DIN 18534]].',
+    satz: 'Das ist die Arbeit unter dem Belag, die man später nicht mehr sieht. Wir gleichen den [[untergrund|Untergrund]] aus. Darauf kommt eine [[abdichtung|Abdichtung]]. Sie richtet sich nach der [[din-18534|DIN 18534]].',
     link: 'Mehr zu Untergrund und Abdichtung',
   },
 ];

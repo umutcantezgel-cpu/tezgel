@@ -32,7 +32,7 @@
 3. `Balkon und Terrasse` · `Wir sanieren Balkone und Terrassen, auch auf [[stelzlager|Stelzlagern]].`
    - Bild: `{Bild: leistungen-balkon}` (Kopfbild Balkon, Alttext aus arbeiten-e2.json)
    - Link: `Mehr zu Balkon und Terrasse` → `/leistungen/aussen`
-4. `Untergrund und Abdichtung` · `Das ist die Arbeit unter dem Belag, die man später nicht mehr sieht. Wir gleichen den [[untergrund|Untergrund]] aus. Darauf kommt eine [[abdichtung|Abdichtung]] nach [[din-18534|DIN 18534]].`
+4. `Untergrund und Abdichtung` · `Das ist die Arbeit unter dem Belag, die man später nicht mehr sieht. Wir gleichen den [[untergrund|Untergrund]] aus. Darauf kommt eine [[abdichtung|Abdichtung]]. Sie richtet sich nach der [[din-18534|DIN 18534]].`
    - Bild: `{Bild: leistungen-untergrund}` (Kopfbild Untergrund und Abdichtung, Alttext aus arbeiten-e2.json)
    - Link: `Mehr zu Untergrund und Abdichtung` → `/leistungen/untergrund`
 - Großer Moment `formatregler` (Regler mit Zeiger und Tastatur): Links steht eine `Kleine Fliese`, rechts eine `Große Fliese, bis 120 × 260 cm`. Unterschrift: `Große Fliesen haben weniger Fugen.`
