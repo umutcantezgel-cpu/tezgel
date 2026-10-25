@@ -82,6 +82,7 @@ export const START: ErzaehlInhalt = {
     // Wortlaut aller Stimmen unverändert aus REVIEWS (G8)
     // als Karussell mit gleich großen Karten (E-047)
     stimmen: ['c-wolf', 'rabia-oe', 'elke-s', 'hasan-oe', 'ute-t', 'peter-p', 'christian-d', 'sara-j'],
+    stimmenGross: true,
     orte: {
       titel: 'Hier sind wir für Sie unterwegs.',
       einleitung: 'Unser Betrieb sitzt in Aßlar. Wir arbeiten in Wetzlar, Gießen, Herborn und den Orten rundherum.',

@@ -100,6 +100,9 @@ export interface BelegInhalt {
   zweierbild?: { titel: string; bilder: [{ bild: ArbeitId; unterschrift: string }, { bild: ArbeitId; unterschrift: string }] };
   /** Kennungen aus REVIEWS, Wortlaut unverändert (G8) */
   stimmen?: string[];
+  /** Kundenstimmen groß (Startseite, Über uns, Unsere Arbeiten: drei Karten ab lg); sonst das kleine Karussell jeder Seite
+   *  (vier Karten ab lg, eine Stufe kleinere Schrift; K-016, E-047) */
+  stimmenGross?: boolean;
   /** Satz unter den Fotos (z. B. seit wann etwas Standard ist) */
   satz?: Markentext;
   verweis?: Verweis;
