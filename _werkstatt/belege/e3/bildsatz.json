@@ -1,0 +1,834 @@
+{
+ "pruefung": "Bildsatz (Überlauf, Überlappung, Konsole) je Seite und Gerät",
+ "werkzeug": "bildsatz.mjs --satz e3 --seiten ... --geraete alle, in vier Gruppen",
+ "base": "http://127.0.0.1:4311",
+ "quellen": [
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E3-PRUEF-B/bildsatz/g1/bildsatz.json",
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E3-PRUEF-B/bildsatz/g2/bildsatz.json",
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E3-PRUEF-B/bildsatz/g3/bildsatz.json",
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E3-PRUEF-B/bildsatz/g4/bildsatz.json"
+ ],
+ "kontrollseite": "/gibt-es-nicht (Kontrolle, HTTP 404 erwartet, Konsolenmeldung 404 erwartet; nicht in den Summen)",
+ "e0": "Überlauf je Seite: 2 auf d1280 (Budget 0); Überlappung 0; Konsole 0",
+ "budget": "Überlauf 0 und Überlappung 0 je Seite und Gerät",
+ "summe": {
+  "aufnahmen": 1360,
+  "ueberlauf_ansichten": 0,
+  "ueberlauf_befunde": 0,
+  "ueberlappung_ansichten": 16,
+  "ueberlappung_befunde": 32,
+  "konsole_ansichten": 0,
+  "konsole_meldungen": 0,
+  "nicht200": 0,
+  "seiten_ausgewertet": 12,
+  "ansichten_gesamt": 120
+ },
+ "seiten": {
+  "/": {
+   "d1280": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d1440": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d1920": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d2560": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m360": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m390": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m430": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "q844": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "t1024": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "t768": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   }
+  },
+  "/bad": {
+   "d1280": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d1440": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d1920": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d2560": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m360": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m390": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m430": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "q844": {
+    "ueberlauf": 0,
+    "ueberlappung": 2,
+    "konsole": 0,
+    "status": 200
+   },
+   "t1024": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "t768": {
+    "ueberlauf": 0,
+    "ueberlappung": 2,
+    "konsole": 0,
+    "status": 200
+   }
+  },
+  "/bad/badsanierung": {
+   "d1280": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d1440": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d1920": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d2560": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m360": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m390": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m430": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "q844": {
+    "ueberlauf": 0,
+    "ueberlappung": 2,
+    "konsole": 0,
+    "status": 200
+   },
+   "t1024": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "t768": {
+    "ueberlauf": 0,
+    "ueberlappung": 2,
+    "konsole": 0,
+    "status": 200
+   }
+  },
+  "/bad/barrierefreies-bad": {
+   "d1280": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d1440": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d1920": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d2560": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m360": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m390": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m430": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "q844": {
+    "ueberlauf": 0,
+    "ueberlappung": 2,
+    "konsole": 0,
+    "status": 200
+   },
+   "t1024": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "t768": {
+    "ueberlauf": 0,
+    "ueberlappung": 2,
+    "konsole": 0,
+    "status": 200
+   }
+  },
+  "/fliesen": {
+   "d1280": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d1440": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d1920": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d2560": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m360": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m390": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m430": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "q844": {
+    "ueberlauf": 0,
+    "ueberlappung": 2,
+    "konsole": 0,
+    "status": 200
+   },
+   "t1024": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "t768": {
+    "ueberlauf": 0,
+    "ueberlappung": 2,
+    "konsole": 0,
+    "status": 200
+   }
+  },
+  "/leistungen": {
+   "d1280": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d1440": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d1920": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d2560": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m360": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m390": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m430": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "q844": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "t1024": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "t768": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   }
+  },
+  "/balkon-terrasse": {
+   "d1280": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d1440": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d1920": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d2560": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m360": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m390": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m430": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "q844": {
+    "ueberlauf": 0,
+    "ueberlappung": 2,
+    "konsole": 0,
+    "status": 200
+   },
+   "t1024": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "t768": {
+    "ueberlauf": 0,
+    "ueberlappung": 2,
+    "konsole": 0,
+    "status": 200
+   }
+  },
+  "/referenzen": {
+   "d1280": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d1440": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d1920": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d2560": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m360": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m390": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m430": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "q844": {
+    "ueberlauf": 0,
+    "ueberlappung": 2,
+    "konsole": 0,
+    "status": 200
+   },
+   "t1024": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "t768": {
+    "ueberlauf": 0,
+    "ueberlappung": 2,
+    "konsole": 0,
+    "status": 200
+   }
+  },
+  "/ueber-uns": {
+   "d1280": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d1440": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d1920": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d2560": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m360": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m390": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m430": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "q844": {
+    "ueberlauf": 0,
+    "ueberlappung": 2,
+    "konsole": 0,
+    "status": 200
+   },
+   "t1024": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "t768": {
+    "ueberlauf": 0,
+    "ueberlappung": 2,
+    "konsole": 0,
+    "status": 200
+   }
+  },
+  "/blog": {
+   "d1280": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d1440": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d1920": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d2560": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m360": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m390": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m430": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "q844": {
+    "ueberlauf": 0,
+    "ueberlappung": 2,
+    "konsole": 0,
+    "status": 200
+   },
+   "t1024": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "t768": {
+    "ueberlauf": 0,
+    "ueberlappung": 2,
+    "konsole": 0,
+    "status": 200
+   }
+  },
+  "/gibt-es-nicht": {
+   "d1280": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 1,
+    "status": 404
+   },
+   "d1440": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 1,
+    "status": 404
+   },
+   "d1920": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 1,
+    "status": 404
+   },
+   "d2560": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 1,
+    "status": 404
+   },
+   "m360": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 2,
+    "status": 404
+   },
+   "m390": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 2,
+    "status": 404
+   },
+   "m430": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 2,
+    "status": 404
+   },
+   "q844": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 2,
+    "status": 404
+   },
+   "t1024": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 1,
+    "status": 404
+   },
+   "t768": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 2,
+    "status": 404
+   }
+  },
+  "/kontakt": {
+   "d1280": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d1440": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d1920": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d2560": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m360": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m390": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m430": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "q844": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "t1024": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "t768": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   }
+  },
+  "/standorte/wetzlar": {
+   "d1280": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d1440": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d1920": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "d2560": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m360": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m390": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "m430": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "q844": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "t1024": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   },
+   "t768": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200
+   }
+  }
+ }
+}

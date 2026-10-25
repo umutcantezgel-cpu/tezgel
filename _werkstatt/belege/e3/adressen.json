@@ -1,0 +1,194 @@
+{
+  "satz": "e3",
+  "werkzeug": "adressen.mjs",
+  "basis": "http://127.0.0.1:4311",
+  "stand": "2026-10-25T11:31:53.702Z",
+  "adressen_gesamt": 205,
+  "je_status": {
+    "200": 171,
+    "308": 2,
+    "410": 32
+  },
+  "quelle": {
+    "sitemap": 163,
+    "link": 8,
+    "weiterleitung": 2,
+    "wege": 25,
+    "wege-platzhalter": 7
+  },
+  "kaputte_links": 0,
+  "entfernt_410_links": 0,
+  "seiten_status_200": 171,
+  "h1_nicht_genau_eine": [],
+  "titel_fehlt_oder_ueber_60": [],
+  "beschreibung_ausserhalb_120_155": [],
+  "canonical_abweichend": [
+    {
+      "adresse": "/referenzen?raum=balkon-und-terrasse",
+      "canonical": "https://www.tezgel.de/referenzen"
+    },
+    {
+      "adresse": "/referenzen?raum=dusche",
+      "canonical": "https://www.tezgel.de/referenzen"
+    }
+  ],
+  "jsonld_ungueltig": [],
+  "indexierbar_nicht_in_sitemap": [
+    {
+      "adresse": "/preise",
+      "robots": "index, follow"
+    },
+    {
+      "adresse": "/referenzen?raum=balkon-und-terrasse",
+      "robots": "index, follow"
+    },
+    {
+      "adresse": "/referenzen?raum=dusche",
+      "robots": "index, follow"
+    }
+  ],
+  "noindex_nicht_in_sitemap": [
+    "/agb",
+    "/cookie-richtlinie",
+    "/datenschutz",
+    "/impressum",
+    "/widerruf"
+  ],
+  "links_extern_ungeprueft": [
+    "/barrierefreiheit → /",
+    "/cookie-richtlinie → /"
+  ],
+  "hauptansichten": [
+    {
+      "adresse": "/",
+      "status": "200",
+      "h1_anzahl": "1",
+      "canonical_ok": "ja",
+      "jsonld_gueltig": "ja",
+      "in_sitemap": "ja"
+    },
+    {
+      "adresse": "/bad",
+      "status": "200",
+      "h1_anzahl": "1",
+      "canonical_ok": "ja",
+      "jsonld_gueltig": "ja",
+      "in_sitemap": "ja"
+    },
+    {
+      "adresse": "/bad/badsanierung",
+      "status": "200",
+      "h1_anzahl": "1",
+      "canonical_ok": "ja",
+      "jsonld_gueltig": "ja",
+      "in_sitemap": "ja"
+    },
+    {
+      "adresse": "/bad/barrierefreies-bad",
+      "status": "200",
+      "h1_anzahl": "1",
+      "canonical_ok": "ja",
+      "jsonld_gueltig": "ja",
+      "in_sitemap": "ja"
+    },
+    {
+      "adresse": "/leistungen",
+      "status": "200",
+      "h1_anzahl": "1",
+      "canonical_ok": "ja",
+      "jsonld_gueltig": "ja",
+      "in_sitemap": "ja"
+    },
+    {
+      "adresse": "/fliesen",
+      "status": "200",
+      "h1_anzahl": "1",
+      "canonical_ok": "ja",
+      "jsonld_gueltig": "ja",
+      "in_sitemap": "ja"
+    },
+    {
+      "adresse": "/balkon-terrasse",
+      "status": "200",
+      "h1_anzahl": "1",
+      "canonical_ok": "ja",
+      "jsonld_gueltig": "ja",
+      "in_sitemap": "ja"
+    },
+    {
+      "adresse": "/referenzen",
+      "status": "200",
+      "h1_anzahl": "1",
+      "canonical_ok": "ja",
+      "jsonld_gueltig": "ja",
+      "in_sitemap": "ja"
+    },
+    {
+      "adresse": "/ueber-uns",
+      "status": "200",
+      "h1_anzahl": "1",
+      "canonical_ok": "ja",
+      "jsonld_gueltig": "ja",
+      "in_sitemap": "ja"
+    },
+    {
+      "adresse": "/kontakt",
+      "status": "200",
+      "h1_anzahl": "1",
+      "canonical_ok": "ja",
+      "jsonld_gueltig": "ja",
+      "in_sitemap": "ja"
+    },
+    {
+      "adresse": "/standorte/wetzlar",
+      "status": "200",
+      "h1_anzahl": "1",
+      "canonical_ok": "ja",
+      "jsonld_gueltig": "ja",
+      "in_sitemap": "ja"
+    },
+    {
+      "adresse": "/blog",
+      "status": "200",
+      "h1_anzahl": "1",
+      "canonical_ok": "ja",
+      "jsonld_gueltig": "ja",
+      "in_sitemap": "ja"
+    }
+  ],
+  "e0_vergleich": {
+    "e0_adressen": 202,
+    "e0_je_status": {
+      "200": 168,
+      "308": 2,
+      "410": 32
+    },
+    "e0_in_e3_vorhanden": 202,
+    "status_abweichungen": [],
+    "ziel_abweichungen": [],
+    "verschwunden": [],
+    "neu_gegenueber_e0": [
+      {
+        "adresse": "/preise",
+        "status": "200",
+        "robots": "index, follow",
+        "in_sitemap": "nein",
+        "quelle": "link"
+      },
+      {
+        "adresse": "/referenzen?raum=balkon-und-terrasse",
+        "status": "200",
+        "robots": "index, follow",
+        "in_sitemap": "nein",
+        "quelle": "link"
+      },
+      {
+        "adresse": "/referenzen?raum=dusche",
+        "status": "200",
+        "robots": "index, follow",
+        "in_sitemap": "nein",
+        "quelle": "link"
+      }
+    ]
+  }
+}

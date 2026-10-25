@@ -1,0 +1,222 @@
+{
+  "satz": "e3",
+  "werkzeug": "bewegung.mjs",
+  "basis": "http://127.0.0.1:4311",
+  "E0_referenz": "belege/e0/STUFE-B.md Abschnitt 7: Bewegungsbefunde 0 je Seite",
+  "reduziert": [
+    {
+      "seite": "/",
+      "ansicht": "m390",
+      "bewegungsbefunde": 0,
+      "geprueft": 201,
+      "unsichtbar": 11,
+      "hover_fehler": 0,
+      "tab_schritte": 30,
+      "fokus_verschieden": 22
+    },
+    {
+      "seite": "/bad",
+      "ansicht": "m390",
+      "bewegungsbefunde": 0,
+      "geprueft": 208,
+      "unsichtbar": 9,
+      "hover_fehler": 0,
+      "tab_schritte": 30,
+      "fokus_verschieden": 11
+    },
+    {
+      "seite": "/bad/badsanierung",
+      "ansicht": "m390",
+      "bewegungsbefunde": 0,
+      "geprueft": 179,
+      "unsichtbar": 11,
+      "hover_fehler": 0,
+      "tab_schritte": 30,
+      "fokus_verschieden": 16
+    },
+    {
+      "seite": "/bad/barrierefreies-bad",
+      "ansicht": "m390",
+      "bewegungsbefunde": 0,
+      "geprueft": 177,
+      "unsichtbar": 9,
+      "hover_fehler": 0,
+      "tab_schritte": 30,
+      "fokus_verschieden": 16
+    },
+    {
+      "seite": "/leistungen",
+      "ansicht": "m390",
+      "bewegungsbefunde": 0,
+      "geprueft": 201,
+      "unsichtbar": 8,
+      "hover_fehler": 0,
+      "tab_schritte": 30,
+      "fokus_verschieden": 11
+    },
+    {
+      "seite": "/fliesen",
+      "ansicht": "m390",
+      "bewegungsbefunde": 0,
+      "geprueft": 181,
+      "unsichtbar": 7,
+      "hover_fehler": 0,
+      "tab_schritte": 30,
+      "fokus_verschieden": 16
+    },
+    {
+      "seite": "/balkon-terrasse",
+      "ansicht": "m390",
+      "bewegungsbefunde": 0,
+      "geprueft": 179,
+      "unsichtbar": 10,
+      "hover_fehler": 0,
+      "tab_schritte": 30,
+      "fokus_verschieden": 19
+    },
+    {
+      "seite": "/referenzen",
+      "ansicht": "m390",
+      "bewegungsbefunde": 0,
+      "geprueft": 225,
+      "unsichtbar": 6,
+      "hover_fehler": 0,
+      "tab_schritte": 30,
+      "fokus_verschieden": 9
+    },
+    {
+      "seite": "/ueber-uns",
+      "ansicht": "m390",
+      "bewegungsbefunde": 0,
+      "geprueft": 189,
+      "unsichtbar": 6,
+      "hover_fehler": 0,
+      "tab_schritte": 30,
+      "fokus_verschieden": 20
+    },
+    {
+      "seite": "/kontakt",
+      "ansicht": "m390",
+      "bewegungsbefunde": 0,
+      "geprueft": 219,
+      "unsichtbar": 6,
+      "hover_fehler": 0,
+      "tab_schritte": 30,
+      "fokus_verschieden": 4
+    },
+    {
+      "seite": "/standorte/wetzlar",
+      "ansicht": "m390",
+      "bewegungsbefunde": 0,
+      "geprueft": 178,
+      "unsichtbar": 8,
+      "hover_fehler": 0,
+      "tab_schritte": 30,
+      "fokus_verschieden": 25
+    },
+    {
+      "seite": "/blog",
+      "ansicht": "m390",
+      "bewegungsbefunde": 0,
+      "geprueft": 193,
+      "unsichtbar": 6,
+      "hover_fehler": 0,
+      "tab_schritte": 30,
+      "fokus_verschieden": 22
+    }
+  ],
+  "register": {
+    "seite": "/",
+    "ansicht": "m390",
+    "gefundene_kennungen": [
+      "aufklappen",
+      "druck",
+      "karussell",
+      "leitachse",
+      "sig-flucht",
+      "startbild",
+      "zustand"
+    ],
+    "unbekannt": []
+  },
+  "einzelbilder": [
+    {
+      "kennung": "gefaelle-dusche",
+      "seite": "/bad/barrierefreies-bad",
+      "ansicht": "m390",
+      "bilder_gesamt": 5,
+      "meldung": "1 Kennungen, 177 Elemente auf /bad/barrierefreies-bad.",
+      "kennungen": [
+        "gefaelle-dusche: 5 Bilder, Modus zeit, Dauer 1200 ms"
+      ]
+    },
+    {
+      "kennung": "gefaelle-balkon",
+      "seite": "/balkon-terrasse",
+      "ansicht": "m390",
+      "bilder_gesamt": 5,
+      "meldung": "1 Kennungen, 179 Elemente auf /balkon-terrasse.",
+      "kennungen": [
+        "gefaelle-balkon: 5 Bilder, Modus zeit, Dauer 1364 ms"
+      ]
+    },
+    {
+      "kennung": "verband",
+      "seite": "/fliesen",
+      "ansicht": "m390",
+      "bilder_gesamt": 15,
+      "meldung": "1 Kennungen, 181 Elemente auf /fliesen.",
+      "kennungen": [
+        "verband: 15 Bilder, Modus echtzeit, Dauer 600 ms · verband: Bilder 1–3 sind Echtzeit-Abtastungen nach dem Klick (ms_nach_klick), keine Zeitpunkte 25/50/75 %. In dieser Umgebung folgt das Bild bei translate-Übergängen weder JS-Pause noch CDP-Seek (getestet); der Übergang steht nach etwa 150 ms zu rund 85 % im Bild"
+      ]
+    },
+    {
+      "kennung": "karte",
+      "seite": "/ueber-uns",
+      "ansicht": "m390",
+      "bilder_gesamt": 5,
+      "meldung": "1 Kennungen, 189 Elemente auf /ueber-uns.",
+      "kennungen": [
+        "karte: 5 Bilder, Modus zeit, Dauer 1100 ms"
+      ]
+    },
+    {
+      "kennung": "verlegen",
+      "seite": "/",
+      "ansicht": "m390",
+      "bilder_gesamt": 0,
+      "meldung": "Kennung verlegen kommt auf / nicht vor.",
+      "kennungen": []
+    }
+  ],
+  "bildrate": [
+    {
+      "seite": "/",
+      "ansicht": "m390",
+      "wiederholungen": 3,
+      "bilder_gesamt": 1534,
+      "verworfen": 3,
+      "anteil_verworfen_prozent_median": 0.2,
+      "anteile_je_lauf": [
+        0.2,
+        0.2,
+        0.33
+      ],
+      "loaf_anzahl": 1
+    },
+    {
+      "seite": "/referenzen",
+      "ansicht": "m390",
+      "wiederholungen": 3,
+      "bilder_gesamt": 3068,
+      "verworfen": 25,
+      "anteil_verworfen_prozent_median": 0.81,
+      "anteile_je_lauf": [
+        2.1,
+        0.81,
+        0.2
+      ],
+      "loaf_anzahl": 3
+    }
+  ]
+}

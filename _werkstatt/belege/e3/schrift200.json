@@ -1,0 +1,306 @@
+{
+ "pruefung": "Schrift 200 Prozent, Überlauf und Überlappung je Seite und Gerät (m360, m390, m430), Ganzseitenbilder",
+ "werkzeug": "einzelbild.mjs --geraete m360,m390,m430 --schrift 200 --voll",
+ "base": "http://127.0.0.1:4311",
+ "quellen": [
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E3-PRUEF-B/schrift200/bad/einzelbild.json",
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E3-PRUEF-B/schrift200/bad-badsanierung/einzelbild.json",
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E3-PRUEF-B/schrift200/bad-barrierefreies/einzelbild.json",
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E3-PRUEF-B/schrift200/balkon-terrasse/einzelbild.json",
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E3-PRUEF-B/schrift200/blog/einzelbild.json",
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E3-PRUEF-B/schrift200/fliesen/einzelbild.json",
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E3-PRUEF-B/schrift200/kontakt/einzelbild.json",
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E3-PRUEF-B/schrift200/leistungen/einzelbild.json",
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E3-PRUEF-B/schrift200/referenzen/einzelbild.json",
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E3-PRUEF-B/schrift200/standorte-wetzlar/einzelbild.json",
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E3-PRUEF-B/schrift200/start/einzelbild.json",
+  "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/E3-PRUEF-B/schrift200/ueber-uns/einzelbild.json"
+ ],
+ "e0": "nicht gemessen in E0 (E0 kennt Schrift 200 nicht)",
+ "budget": "Überlauf 0 und Überlappung 0 je Seite und Gerät",
+ "summe": {
+  "ueberlauf_befunde": 73,
+  "ueberlappung_befunde": 31,
+  "ansichten_mit_ueberlauf": 12,
+  "ansichten_mit_ueberlappung": 27,
+  "ansichten_gesamt": 36
+ },
+ "seiten": {
+  "/": {
+   "m360": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/start/m360-s200-voll.jpg"
+   },
+   "m390": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/start/m390-s200-voll.jpg"
+   },
+   "m430": {
+    "ueberlauf": 0,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/start/m430-s200-voll.jpg"
+   }
+  },
+  "/bad": {
+   "m360": {
+    "ueberlauf": 2,
+    "ueberlappung": 3,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/bad/m360-s200-voll.jpg"
+   },
+   "m390": {
+    "ueberlauf": 1,
+    "ueberlappung": 2,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/bad/m390-s200-voll.jpg"
+   },
+   "m430": {
+    "ueberlauf": 0,
+    "ueberlappung": 2,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/bad/m430-s200-voll.jpg"
+   }
+  },
+  "/bad/badsanierung": {
+   "m360": {
+    "ueberlauf": 0,
+    "ueberlappung": 1,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/bad-badsanierung/m360-s200-voll.jpg"
+   },
+   "m390": {
+    "ueberlauf": 0,
+    "ueberlappung": 1,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/bad-badsanierung/m390-s200-voll.jpg"
+   },
+   "m430": {
+    "ueberlauf": 0,
+    "ueberlappung": 1,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/bad-badsanierung/m430-s200-voll.jpg"
+   }
+  },
+  "/bad/barrierefreies-bad": {
+   "m360": {
+    "ueberlauf": 0,
+    "ueberlappung": 1,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/bad-barrierefreies/m360-s200-voll.jpg"
+   },
+   "m390": {
+    "ueberlauf": 0,
+    "ueberlappung": 1,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/bad-barrierefreies/m390-s200-voll.jpg"
+   },
+   "m430": {
+    "ueberlauf": 0,
+    "ueberlappung": 1,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/bad-barrierefreies/m430-s200-voll.jpg"
+   }
+  },
+  "/leistungen": {
+   "m360": {
+    "ueberlauf": 18,
+    "ueberlappung": 1,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/leistungen/m360-s200-voll.jpg"
+   },
+   "m390": {
+    "ueberlauf": 7,
+    "ueberlappung": 1,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/leistungen/m390-s200-voll.jpg"
+   },
+   "m430": {
+    "ueberlauf": 0,
+    "ueberlappung": 1,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/leistungen/m430-s200-voll.jpg"
+   }
+  },
+  "/fliesen": {
+   "m360": {
+    "ueberlauf": 0,
+    "ueberlappung": 1,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/fliesen/m360-s200-voll.jpg"
+   },
+   "m390": {
+    "ueberlauf": 0,
+    "ueberlappung": 1,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/fliesen/m390-s200-voll.jpg"
+   },
+   "m430": {
+    "ueberlauf": 0,
+    "ueberlappung": 1,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/fliesen/m430-s200-voll.jpg"
+   }
+  },
+  "/balkon-terrasse": {
+   "m360": {
+    "ueberlauf": 0,
+    "ueberlappung": 1,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/balkon-terrasse/m360-s200-voll.jpg"
+   },
+   "m390": {
+    "ueberlauf": 0,
+    "ueberlappung": 1,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/balkon-terrasse/m390-s200-voll.jpg"
+   },
+   "m430": {
+    "ueberlauf": 0,
+    "ueberlappung": 1,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/balkon-terrasse/m430-s200-voll.jpg"
+   }
+  },
+  "/referenzen": {
+   "m360": {
+    "ueberlauf": 0,
+    "ueberlappung": 1,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/referenzen/m360-s200-voll.jpg"
+   },
+   "m390": {
+    "ueberlauf": 0,
+    "ueberlappung": 1,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/referenzen/m390-s200-voll.jpg"
+   },
+   "m430": {
+    "ueberlauf": 0,
+    "ueberlappung": 1,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/referenzen/m430-s200-voll.jpg"
+   }
+  },
+  "/ueber-uns": {
+   "m360": {
+    "ueberlauf": 0,
+    "ueberlappung": 1,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/ueber-uns/m360-s200-voll.jpg"
+   },
+   "m390": {
+    "ueberlauf": 0,
+    "ueberlappung": 1,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/ueber-uns/m390-s200-voll.jpg"
+   },
+   "m430": {
+    "ueberlauf": 0,
+    "ueberlappung": 1,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/ueber-uns/m430-s200-voll.jpg"
+   }
+  },
+  "/kontakt": {
+   "m360": {
+    "ueberlauf": 22,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/kontakt/m360-s200-voll.jpg"
+   },
+   "m390": {
+    "ueberlauf": 9,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/kontakt/m390-s200-voll.jpg"
+   },
+   "m430": {
+    "ueberlauf": 6,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/kontakt/m430-s200-voll.jpg"
+   }
+  },
+  "/standorte/wetzlar": {
+   "m360": {
+    "ueberlauf": 2,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/standorte-wetzlar/m360-s200-voll.jpg"
+   },
+   "m390": {
+    "ueberlauf": 2,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/standorte-wetzlar/m390-s200-voll.jpg"
+   },
+   "m430": {
+    "ueberlauf": 2,
+    "ueberlappung": 0,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/standorte-wetzlar/m430-s200-voll.jpg"
+   }
+  },
+  "/blog": {
+   "m360": {
+    "ueberlauf": 1,
+    "ueberlappung": 1,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/blog/m360-s200-voll.jpg"
+   },
+   "m390": {
+    "ueberlauf": 1,
+    "ueberlappung": 1,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/blog/m390-s200-voll.jpg"
+   },
+   "m430": {
+    "ueberlauf": 0,
+    "ueberlappung": 1,
+    "konsole": 0,
+    "status": 200,
+    "bild": "schrift200/blog/m430-s200-voll.jpg"
+   }
+  }
+ }
+}
