@@ -1,8 +1,9 @@
-// Vorlagen · 1 Worum es geht (KERN v3 K-006, K-009; E-025): erster Bildschirm jeder Erzähl-, Wissens- und Ortsseite,
-// gebaut wie der Einstieg der Startseite. Links an der Laserlinie Brotkrumen, H1, Ort, Hauptknopf, Anruf (WhatsApp erst ab
-// lg, darunter trägt die untere Leiste ihn) und Vorspann; mobil folgt der Vorspann nach Knopf und Anruf (große Systemschrift,
-// Sichtprüfung E2). Rechts (ab lg) bzw. darunter das Einstiegsbild als einziges preload der Seite, auf md rechtsbündig
-// eingerückt. Die Pflichtelemente des ersten Bildschirms tragen data-erstes-bild (Logo im Kopf). Serverkomponente.
+// Vorlagen · 1 Worum es geht (KERN v3 K-006, K-009; E-025; K-016 „Ruhe“, E-047): erster Bildschirm jeder Wissens-, Orts- und
+// Arbeitsseite (und der Erzählseiten ohne Planblatt oder mittigen Einstieg). Ruhig und mittig wie der Einstieg der
+// Startseite, kein zweiter Strang daneben: Brotkrumen, H1, Ort, Hauptknopf, Anruf (WhatsApp erst ab lg, darunter trägt die
+// untere Leiste ihn), dann der Vorspann (nach den Knöpfen, damit sie auch bei großer Systemschrift im ersten Bildschirm
+// stehen); darunter das Einstiegsbild vollständig als einziges preload der Seite (bzw. der Schlitz, z. B. das Einzugsband
+// der Ortsseite). Die Pflichtelemente des ersten Bildschirms tragen data-erstes-bild (Logo im Kopf). Serverkomponente.
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
@@ -42,54 +43,51 @@ export default function Einstieg({ pfad, brotkrumen, titel, ort, vorspann, bild,
   return (
     <section aria-labelledby={titelId} data-formel="worum" className="relative">
       {/* oben Platz für den festen Kopf (64 px) */}
-      <div className={clsx(seitenKlassen, 'grid grid-cols-4 gap-y-12 pt-24 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12', kompakt ? 'pb-12 lg:pt-32 lg:pb-16' : 'pb-16 lg:pt-32 lg:pb-24')}>
-        <div className="col-span-4 md:col-span-8 lg:col-span-7 lg:self-center">
-          {brotkrumen && brotkrumen.length > 1 && <Brotkrumen wege={brotkrumen} className="mb-6" />}
-          <h1
-            id={titelId}
-            tabIndex={-1}
-            data-erstes-bild="ueberschrift"
-            className={clsx(kompakt || titel.length > LANGER_TITEL ? 'text-fs-6' : 'text-fs-7', 'text-balance text-tinte outline-none')}
+      <div className={clsx(seitenKlassen, 'flex flex-col items-center pt-24 text-center lg:pt-32', kompakt ? 'pb-12 lg:pb-16' : 'pb-16 lg:pb-24')}>
+        {brotkrumen && brotkrumen.length > 1 && <Brotkrumen wege={brotkrumen} className="mb-6" />}
+        <h1
+          id={titelId}
+          tabIndex={-1}
+          data-erstes-bild="ueberschrift"
+          className={clsx(!kompakt && titel.length > LANGER_TITEL ? 'text-fs-5' : 'text-fs-6', 'max-w-mass text-balance text-tinte outline-none')}
+        >
+          {titel}
+        </h1>
+        <p data-erstes-bild="ort" className="mt-6 max-w-mass font-text text-fs-4 text-balance text-tinte-2">
+          {ort}
+        </p>
+        <div className="mt-8 flex w-full flex-col items-center gap-3 sm:flex-row sm:flex-wrap sm:justify-center">
+          <Hauptknopf href={hauptziel} erstesBild breit />
+          <a href={`tel:${contact.phoneLink}`} data-erstes-bild="kontakt" data-motion="druck" className={knopfKlassen('neben', 'w-full px-4 sm:w-auto')}>
+            <Icon name="telefon" groesse={5} className="shrink-0" />
+            <span className="min-w-0">
+              Anrufen: <Rufnummer nummer={contact.phone} />
+            </span>
+          </a>
+          <a
+            href={buildWhatsAppUrl(contact.whatsappNumber, kontextNachricht(pfad))}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-motion="druck"
+            className={knopfKlassen('neben', 'px-4 max-lg:hidden')}
           >
-            {titel}
-          </h1>
-          <p data-erstes-bild="ort" className="mt-6 font-text text-fs-4 text-tinte">
-            {ort}
-          </p>
-          <div className="flex flex-col">
-            <p className="mt-4 max-w-mass font-text text-fs-3 text-pretty text-tinte-2 max-sm:order-1 max-sm:mt-8">
-              <Textmarken text={vorspann} />
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-              <Hauptknopf href={hauptziel} erstesBild breit />
-              <div className="flex flex-col gap-3 sm:flex-row">
-                <a href={`tel:${contact.phoneLink}`} data-erstes-bild="kontakt" data-motion="druck" className={knopfKlassen('neben', 'w-full px-4 sm:w-auto')}>
-                  <Icon name="telefon" groesse={5} className="shrink-0" />
-                  <span className="min-w-0">
-                    Anrufen: <Rufnummer nummer={contact.phone} />
-                  </span>
-                </a>
-                <a
-                  href={buildWhatsAppUrl(contact.whatsappNumber, kontextNachricht(pfad))}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-motion="druck"
-                  className={knopfKlassen('neben', 'px-4 max-lg:hidden')}
-                >
-                  <WhatsAppLogo className="size-5 shrink-0" />
-                  <span>Nachricht per WhatsApp</span>
-                </a>
-              </div>
-            </div>
-          </div>
+            <WhatsAppLogo className="size-5 shrink-0" />
+            <span>Nachricht per WhatsApp</span>
+          </a>
         </div>
-        {bild && !kompakt && (
-          <div className="col-span-4 md:col-span-6 md:col-start-3 lg:col-span-5 lg:col-start-8">
-            {typeof bild === 'string' ? <Bildfeld arbeit={bild as ArbeitId} lcp sizes="(min-width: 1024px) 40vw, (min-width: 768px) 75vw, 100vw" /> : bild}
+        <p className="mt-8 max-w-mass font-text text-fs-3 text-pretty text-tinte-2">
+          <Textmarken text={vorspann} />
+        </p>
+      </div>
+      {bild && !kompakt && (
+        <div className={clsx(seitenKlassen, 'pb-16 lg:pb-24')}>
+          {/* vollständig, mittig; am Desktop so groß, dass es wirkt, ohne die Seite zu sprengen (wie auf der Startseite) */}
+          <div className="mx-auto w-full max-w-md lg:w-1/2 lg:max-w-full">
+            {typeof bild === 'string' ? <Bildfeld arbeit={bild as ArbeitId} lcp sizes="(min-width: 1024px) 50vw, (min-width: 640px) 28rem, 100vw" /> : bild}
             {unterBild}
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </section>
   );
 }
