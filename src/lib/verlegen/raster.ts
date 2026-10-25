@@ -307,6 +307,19 @@ export function logoMass(breite: number, hoehe: number): Logomass {
   return { x: Math.round((breite - b) / 2 + (0.5 - LOGO_INHALT_MITTE) * b), y: Math.round((hoehe - h) / 2), breite: b, hoehe: h };
 }
 
+/** Fläche, die die Fliesen wirklich decken (rechte und untere Kante der äußersten Fliesen): Im Drittelverband ragen die
+ *  Reihen über die Ansicht hinaus, ein Belag deckt also oft mehr als die Ansicht, für die er gebaut wurde. Wächst die Ansicht
+ *  nur in diesen Überstand (Adressleiste fährt ein), muss nicht neu verlegt werden (Gegenprüfung E3-B01-FIX). */
+export function deckung(fliesen: readonly Fliese[]): { breite: number; hoehe: number } {
+  let breite = 0;
+  let hoehe = 0;
+  for (const f of fliesen) {
+    breite = Math.max(breite, f.x + f.breite);
+    hoehe = Math.max(hoehe, f.y + f.hoehe);
+  }
+  return { breite, hoehe };
+}
+
 /** Halt bei Zurück und Vor (ms): keine Mindestzeit, aber das Aufklatschen läuft zu Ende, statt nach 0,2 s mit dem Abnehmen
  *  zu verblassen (Gegenprüfung E3-B01, Befund 1). Bei reduzierter Bewegung ist das Logo schon mit der Blende eingeblendet. */
 export function logoHaltVerlauf(ruhig: boolean): number {

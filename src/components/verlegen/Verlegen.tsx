@@ -17,6 +17,7 @@ import {
   AUFSETZEN_FLUG,
   AUFSETZEN_GROESSE,
   GROESSE_HINTERGRUND,
+  deckung,
   LOGO_AUFKLATSCHEN,
   LOGO_GROESSE_START,
   LOGO_WEG,
@@ -52,6 +53,10 @@ let eigenerPopstate = false;
 let angezeigt = '';
 /** Der laufende Wechsel kommt aus dem Verlauf (Zurück, Vor). */
 let ausVerlauf = false;
+/** Pfad, zu dem dieses Zurück oder Vor führt: Hängt React vorher noch die Seite der überholten Klick-Navigation ein (Zurück kam
+ *  zwischen ihrer Antwort und dem Einhängen), verbraucht dieses Einhängen weder ausVerlauf noch ein „bereit“ (Gegenprüfung
+ *  E3-B01-FIX, Befund 6). */
+let verlaufZiel: string | null = null;
 /** Nummer der zuletzt abgeschickten Navigation (router.push, nachgereichtes oder durchgelassenes popstate): Ein „bereit“
  *  zählt nur, wenn die neue Seite nach genau dieser Navigation erschien; ältere (Plan-Morph, Abbruch) verfallen. */
 let auftrag = 0;
@@ -61,6 +66,12 @@ let verlaufOhneBoden = false;
 /** Der Boden blendete nach 3 s aus (Abbruch), die Navigation lief weiter: Kommt die Seite doch noch, setzt der Pfad-Effekt den
  *  Fokus, bei Zurück und Vor auch die gemerkte Scrollstellung (Gegenprüfung E3-B01, Befund 3); null: kein Abbruch offen. */
 let nachAbbruch: 'vor' | 'verlauf' | null = null;
+/** Nummer der Navigation, deren Seite schon angezeigt wird (Pfad-Effekt, gleicher Pfad): Kam die Seite schon vor dem Abbruch,
+ *  setzt blende-aus Fokus und Scroll selbst, denn ein weiterer Pfadwechsel kommt nicht (Gegenprüfung E3-B01-FIX). */
+let seiteDa = 0;
+/** Höhenänderung, ab der das Logo neu in die Mitte rückt (px): Die Adressleiste mobil fährt um weniger ein und aus; das Logo
+ *  sprang sonst beim Aufklatschen um ihre halbe Höhe (Gegenprüfung E3-B01-FIX). Breite und Drehen versetzen es immer. */
+const LOGO_RUHE_HOEHE = 120;
 
 // Auf Modulebene, also vor dem popstate-Lauscher des App Routers (useEffect): sichert die Reihenfolge auch in
 // Firefox vor 116, das Lauscher am Ziel nach Registrierung statt nach Phase ordnet (Gutachten E0-GUT-01, Frage 3).
@@ -437,6 +448,8 @@ export default function Verlegen() {
     const logoLauf: Animation[] = [];
     let logoNummer = 0;
     let angefordert = false;
+    /** Die Ansicht wuchs beim Legen über die Deckung hinaus: Neu verlegt wird erst, wenn die laufenden Fliesen liegen. */
+    let nachLegenNeu = false;
     /** Link, den die Tastatur während des Abnehmens wählte: Der Wechsel dorthin beginnt, sobald die Schicht frei ist. */
     let vorgemerkt: URL | null = null;
     let sofortAus: () => void = () => undefined;
@@ -445,6 +458,8 @@ export default function Verlegen() {
      *  darum hier selbst melden (Prüfung E-043). */
     const bereitOhnePfadwechsel = () => {
       ausVerlauf = false;
+      verlaufZiel = null;
+      seiteDa = auftrag;
       sofortAus();
       sofortAus = spaeterBereit(auftrag, () => senden.current({ typ: 'bereit' }));
     };
@@ -544,6 +559,7 @@ export default function Verlegen() {
     const lege = () => {
       miss();
       nachAbbruch = null;
+      nachLegenNeu = false;
       beendeUebergang();
       gesamt = gesamtdauer(lage.richtung);
       ruhig = !bewegungErlaubt() || !Number.isFinite(gesamt);
@@ -580,7 +596,16 @@ export default function Verlegen() {
           (el.children[0] as HTMLElement).animate([{ opacity: 1, easing: kurve }, { opacity: 0 }], zeit),
         );
       });
-      void warte(laufend).then(() => senden.current({ typ: 'gelegt' }));
+      void warte(laufend).then(() => {
+        // wuchs die Ansicht beim Legen über die Deckung hinaus, deckt der Boden jetzt ohne Bewegung ganz (wie in liege())
+        if (nachLegenNeu && belag) {
+          nachLegenNeu = false;
+          belag = baueBelag(boden, belag, ansicht);
+          takte = stueckplan(belag.fliesen, belag.mass, belag.breite, gesamt, lage.richtung);
+          deckeAlle();
+        }
+        senden.current({ typ: 'gelegt' });
+      });
     };
 
     const liege = () => {
@@ -601,21 +626,27 @@ export default function Verlegen() {
       deckeAlle();
     };
 
-    // Drehen oder Größenänderung, solange der Boden gelegt wird oder liegt (Gegenprüfung E3-B01, Befund 5): Das Logo rückt in
-    // die neue Mitte; ist die Ansicht über den Belag hinaus gewachsen, wird neu verlegt, sonst deckte der Boden nicht. Die
-    // laufenden Leg-Animationen enden dann, alle Fliesen liegen sofort (wie in liege()), „gelegt“ folgt gleich.
+    // Drehen oder Größenänderung, solange der Boden gelegt wird oder liegt (Gegenprüfung E3-B01, Befund 5; E3-B01-FIX): Neu
+    // verlegt wird nur, wenn die Ansicht über die Fläche hinauswächst, die die Fliesen wirklich decken (die Reihen ragen im
+    // Drittelverband über den Rand; die Adressleiste mobil bleibt darin). Beim Legen werden die laufenden Fliesen nie
+    // abgebrochen, sonst läge der Rest in einem Bild: der Neubau folgt, sobald sie liegen. Liegt der Boden schon, deckt er sofort
+    // ganz (wie in liege()). Das Logo rückt nur bei neuer Breite, beim Drehen oder großer Höhenänderung in die neue Mitte.
     const neuVermessen = () => {
       if (lage.zustand !== 'legen' && lage.zustand !== 'bedeckt' && lage.zustand !== 'warten') return;
       const alt = ansicht;
       const neu = miss();
       if (neu.breite === alt.breite && neu.hoehe === alt.hoehe) return;
-      if (!ruhig && belag && (neu.breite > belag.breite || neu.hoehe > belag.hoehe)) {
-        beende(laufend);
-        belag = baueBelag(boden, belag, neu);
-        takte = stueckplan(belag.fliesen, belag.mass, belag.breite, gesamt, lage.richtung);
-        deckeAlle();
+      const gedeckt = belag ? deckung(belag.fliesen) : null;
+      if (!ruhig && belag && gedeckt && (neu.breite > gedeckt.breite || neu.hoehe > gedeckt.hoehe)) {
+        if (lage.zustand === 'legen') nachLegenNeu = true;
+        else {
+          belag = baueBelag(boden, belag, neu);
+          takte = stueckplan(belag.fliesen, belag.mass, belag.breite, gesamt, lage.richtung);
+          deckeAlle();
+        }
       }
-      platziereLogo();
+      const gedreht = neu.breite > neu.hoehe !== alt.breite > alt.hoehe;
+      if (neu.breite !== alt.breite || gedreht || Math.abs(neu.hoehe - alt.hoehe) > LOGO_RUHE_HOEHE) platziereLogo();
     };
 
     const nimmAb = () => {
@@ -715,9 +746,10 @@ export default function Verlegen() {
       sperre(false);
       stelle('ruhe');
       // ein Link, den die Tastatur während des Abnehmens wählte: jetzt dorthin wechseln
+      // (nicht, wenn er inzwischen auf die angezeigte Seite zeigt: nie Fliesen auf derselben Seite)
       const nachgeholt = vorgemerkt;
       vorgemerkt = null;
-      if (nachgeholt && !angefordert) starteVor(nachgeholt);
+      if (nachgeholt && !angefordert && !gleicherPfad(nachgeholt.pathname, location.pathname)) starteVor(nachgeholt);
     };
 
     const navigiere = () => {
@@ -773,10 +805,15 @@ export default function Verlegen() {
         case 'blende-aus': {
           // Seite braucht länger als 3 s: Boden blendet weg, die Navigation läuft normal weiter. Die Fliesen bleiben liegen,
           // bis die Schicht unsichtbar ist (freigeben beendet sie), sonst verschwände der Boden in einem Bild. Fokus (und aus
-          // dem Verlauf den Scroll) setzt der Pfad-Effekt, wenn die Seite doch noch kommt.
+          // dem Verlauf den Scroll) setzt der Pfad-Effekt, wenn die Seite doch noch kommt; steht sie schon da (kam kurz vor
+          // Ablauf, „bereit“ wartete noch auf Ruhe), hier sofort (Gegenprüfung E3-B01-FIX).
           stoppeUhren();
           sperre(false);
-          nachAbbruch = zurueckAusAufschub ? 'verlauf' : 'vor';
+          if (seiteDa === auftrag) {
+            if (zurueckAusAufschub) window.scrollTo({ top: gemerkterScroll(), left: 0, behavior: 'instant' });
+            zurueckAusAufschub = false;
+            fokussiereUeberschrift();
+          } else nachAbbruch = zurueckAusAufschub ? 'verlauf' : 'vor';
           const teile = [schicht.animate([{ opacity: 1 }, { opacity: 0 }], { duration: ms('--dauer-1'), fill: 'forwards' })];
           void warte(teile).then(() => {
             senden.current({ typ: 'ausgeblendet' });
@@ -800,6 +837,7 @@ export default function Verlegen() {
     // Plan-Morph: Plan im alten Bild benennen, navigieren, warten bis die neue Seite mit ihrem Plan steht (während der
     // Aktualisierung ruht das Rendern, darum setTimeout statt requestAnimationFrame), Plan im neuen Bild benennen.
     const morph = (a: HTMLAnchorElement) => {
+      nachAbbruch = null;
       const plan = a.dataset.uebergangPlan ?? '';
       const ziel = new URL(a.href);
       const zielPfad = ziel.pathname.replace(/\/+$/, '');
@@ -903,15 +941,25 @@ export default function Verlegen() {
       if (schonDa) bereitOhnePfadwechsel();
     };
 
+    const ausDemVerlauf = () => {
+      ausVerlauf = true;
+      verlaufZiel = location.pathname;
+    };
+
     steuerung = {
       popstate: (e) => {
         merkeNextZustand();
+        // Jedes Zurück oder Vor ersetzt einen beim Abnehmen vorgemerkten Link und einen offenen Abbruch: sonst führte freigeben()
+        // nach dem Zurück doch noch zum vorgemerkten Link, und der Pfad-Effekt scrollte einen späteren Wechsel auf eine
+        // gemerkte Stelle (Gegenprüfung E3-B01-FIX)
+        vorgemerkt = null;
+        nachAbbruch = null;
         // Zurück, während der Morph noch auf die neue Seite wartet: Next soll es sehen (verwirft die offene Navigation),
         // der Morph endet ohne Gleiten; Scroll und Fokus der Seite aus dem Verlauf setzt der Pfad-Effekt
         if (morphOffen) {
           morphOffen = false;
           beendeUebergang();
-          ausVerlauf = true;
+          ausDemVerlauf();
           verlauf(true);
           if (!gleicherPfad(location.pathname, pfadRef.current)) verlaufOhneBoden = true;
           return false;
@@ -922,7 +970,7 @@ export default function Verlegen() {
         const gleich = gleicherPfad(location.pathname, pfadRef.current);
         if (ZURUECK === 'sicher') {
           if (lage.zustand !== 'ruhe' || gleich) return false;
-          ausVerlauf = true;
+          ausDemVerlauf();
           verlauf(true);
           senden.current({ typ: 'start-liegend', richtung: 'zurueck' });
           return false;
@@ -930,7 +978,7 @@ export default function Verlegen() {
         // Boden wird noch gelegt, navigiert ist noch nicht: das Ereignis wartet und wird nachgereicht, sobald der Boden liegt
         // (aus einem Vorwärtswechsel wird ein Wechsel aus dem Verlauf, kein router.push mehr; Prüfung E-043)
         if (lage.zustand === 'legen') {
-          ausVerlauf = true;
+          ausDemVerlauf();
           verlauf(true);
           senden.current({ typ: 'umkehr' });
           return true;
@@ -938,7 +986,7 @@ export default function Verlegen() {
         // Boden liegt, die Navigation läuft schon: Next übernimmt das Ereignis (verwirft die offene Navigation), der Boden
         // wartet auf die Seite aus dem Verlauf und deckt sie mit ihrer gemerkten Scrollstellung auf
         if (lage.zustand === 'bedeckt' || lage.zustand === 'warten') {
-          ausVerlauf = true;
+          ausDemVerlauf();
           verlauf(true);
           auftrag++;
           zurueckAusAufschub = true;
@@ -949,7 +997,7 @@ export default function Verlegen() {
         }
         // gleicher Pfad in Ruhe, beim Abnehmen oder nach dem Abbruch: Next allein (Anker, dieselbe Seite)
         if (gleich) return false;
-        ausVerlauf = true;
+        ausDemVerlauf();
         verlauf(true);
         merkeScroll(angezeigt);
         // Fliesen werden schon abgenommen (oder blenden nach dem Abbruch aus): ohne Boden an Next, Scroll und Fokus danach
@@ -1013,6 +1061,10 @@ export default function Verlegen() {
     if (pfad === pfadRef.current) return;
     pfadRef.current = pfad;
     angezeigt = adresse();
+    // Seite der überholten Klick-Navigation, eingehängt nach einem Zurück, aber vor dessen Seite: nichts verbrauchen
+    if (ausVerlauf && verlaufZiel !== null && !gleicherPfad(pfad, verlaufZiel)) return;
+    verlaufZiel = null;
+    seiteDa = auftrag;
     // ein Wechsel, der weder aus dem Verlauf noch über den Klick-Lauscher kam (z. B. router.push nach einem Formular), läuft
     // mit Bewegung; die Klasse fällt dann erst hier weg, die Bewegungen starten einen Takt später
     if (!ausVerlauf) verlauf(false);

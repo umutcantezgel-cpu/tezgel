@@ -506,6 +506,9 @@ html.k-bewegung .laden-fuge::after {
 .verlegen:not([data-zustand="ruhe"]) {
   visibility: visible;
   pointer-events: auto;
+  /* ein Wisch über den Boden scrollt die Seite darunter nicht (sonst führe mobil die Adressleiste ein, Gegenprüfung E3-B01-FIX) */
+  touch-action: none;
+  overscroll-behavior: contain;
 }
 .verlegen-boden {
   position: absolute;
