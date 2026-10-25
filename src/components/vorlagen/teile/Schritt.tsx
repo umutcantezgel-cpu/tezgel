@@ -190,9 +190,11 @@ export default function Schritt({ inhalt, pfad, formular, titelId = 'anfrage', z
                       {h.name}
                       <Icon name="pfeil-rechts" groesse={4} />
                     </span>
-                    <span className="mt-1 font-text text-fs-2 text-tinte-2">
-                      <Textmarken text={h.satz} />
-                    </span>
+                    {h.satz && (
+                      <span className="mt-1 font-text text-fs-2 text-tinte-2">
+                        <Textmarken text={h.satz} />
+                      </span>
+                    )}
                   </Link>
                 </li>
               ))}

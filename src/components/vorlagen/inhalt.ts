@@ -114,7 +114,8 @@ export interface BelegInhalt {
 export interface SchrittInhalt {
   titel: string;
   satz: Markentext;
-  hilfen?: (Verweis & { satz: Markentext })[];
+  /** Hilfen mit wahlweise einem Satz darunter (manche Seitentexte nennen nur den Namen) */
+  hilfen?: (Verweis & { satz?: Markentext })[];
   /** verwandte Seiten (Wissensseiten), Namen dürfen Textmarken tragen */
   verwandte?: Verweis[];
 }
