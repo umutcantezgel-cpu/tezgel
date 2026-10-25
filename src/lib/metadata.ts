@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/schema';
+import { META_BESCHREIBUNGEN } from '@/inhalte/meta';
 
 const BASE_URL = SITE_URL;
 const SITE_NAME = 'Fliesenverlegung Tezgel';
@@ -149,7 +150,8 @@ export interface MetadataOptions {
 export function generatePageMetadata(options: MetadataOptions): Metadata {
   const canonicalUrl = `${BASE_URL}${options.path === '/' ? '' : options.path}`;
   const fullTitle = sanitizeTitle(options.title);
-  const fullDesc = sanitizeDescription(options.description);
+  // eigene Beschreibung zur Adresse vor der übergebenen (E3-SEO-META: Daten über 155 Zeichen würden mit „...“ gekürzt)
+  const fullDesc = sanitizeDescription(META_BESCHREIBUNGEN[options.path] ?? options.description);
 
   const shouldIndex = options.robots?.index !== undefined ? options.robots.index : true;
   const shouldFollow = options.robots?.follow !== undefined ? options.robots.follow : true;

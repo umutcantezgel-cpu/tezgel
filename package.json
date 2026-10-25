@@ -10,7 +10,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "node --experimental-strip-types --loader ./test/resolver.mjs --test test/email-pipeline.test.mjs test/titleLength.test.mjs test/bewegung.test.mjs test/plaene.test.mjs test/einzugszonen.test.mjs test/wege.test.mjs test/verlegen.test.mjs test/intro.test.mjs test/glossar.test.mjs test/oeffnungszeiten.test.mjs test/textmarken.test.mjs test/orte.test.mjs test/schichten.test.mjs test/weg.test.mjs test/gefaelle-dusche.test.mjs test/gefaelle-balkon.test.mjs test/formatregler.test.mjs test/verband.test.mjs test/vorher-nachher.test.mjs test/galerie-filter.test.mjs test/karte.test.mjs test/navigation.test.mjs",
+    "test": "node --experimental-strip-types --loader ./test/resolver.mjs --test test/email-pipeline.test.mjs test/titleLength.test.mjs test/bewegung.test.mjs test/plaene.test.mjs test/einzugszonen.test.mjs test/wege.test.mjs test/verlegen.test.mjs test/intro.test.mjs test/glossar.test.mjs test/oeffnungszeiten.test.mjs test/textmarken.test.mjs test/orte.test.mjs test/schichten.test.mjs test/weg.test.mjs test/gefaelle-dusche.test.mjs test/gefaelle-balkon.test.mjs test/formatregler.test.mjs test/verband.test.mjs test/vorher-nachher.test.mjs test/galerie-filter.test.mjs test/karte.test.mjs test/navigation.test.mjs test/meta.test.mjs",
     "qa:graph": "node scripts/qa/check-graph.mjs",
     "typecheck": "tsc --noEmit",
     "indexnow": "node scripts/submit-indexnow.mjs"

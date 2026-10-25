@@ -6,6 +6,7 @@
 import JsonLd from './JsonLd';
 import type { Krume } from '@/components/kern/Brotkrumen';
 import { buildBreadcrumbNode, buildGraph, buildWebPageNode, SITE_URL, type SchemaNode } from '@/lib/schema';
+import { META_BESCHREIBUNGEN } from '@/inhalte/meta';
 
 export interface SeitenDatenProps {
   /** Adresse der Seite, z. B. `/bad/badsanierung` */
@@ -31,7 +32,8 @@ export default function SeitenDaten({ pfad, titel, beschreibung, brotkrumen, wei
   return (
     <JsonLd
       schema={buildGraph([
-        buildWebPageNode({ url, name: titel, description: beschreibung, breadcrumbItems: items }),
+        // dieselbe Beschreibung wie in den Metadaten: eigener Eintrag zur Adresse vor der übergebenen (E3-SEO-META)
+        buildWebPageNode({ url, name: titel, description: META_BESCHREIBUNGEN[pfad] ?? beschreibung, breadcrumbItems: items }),
         buildBreadcrumbNode(items, url),
         ...weitere,
       ])}
