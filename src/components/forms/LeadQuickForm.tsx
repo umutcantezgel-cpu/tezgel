@@ -170,6 +170,9 @@ export function LeadQuickForm({
           {subheading && <p className="mt-2 max-w-mass text-fs-2 text-tinte-2">{subheading}</p>}
         </div>
       )}
+      {/* ohne eigene Überschrift (die Vorlage trägt sie, Ortsseiten): die Zusage steht trotzdem über den Feldern (M-07,
+          Abnahme E3-BAU-10) */}
+      {!heading && subheading && <p className="mb-6 max-w-mass text-fs-2 text-tinte-2">{subheading}</p>}
 
       <form onSubmit={absenden} className="flex flex-col gap-6">
         {/* HONEYPOT - Hidden from real visitors and assistive tech */}

@@ -138,13 +138,13 @@ export default async function StandortPage({
         karte={<Einzugsband aktuell={city.slug} form="stapel" />}
         formular={
           // heading leer: die Vorlage trägt die Überschrift; ohne leere Angabe setzte LeadQuickForm ihre eigene Kopfzeile.
-          // Unterzeile wie im Bestand; LeadQuickForm zeigt sie nur zusammen mit einer Überschrift (OFFENE FRAGE im Bericht)
+          // Zusage wie im Bestand (M-07), mit Punkt statt Gedankenstrich (K-010); LeadQuickForm zeigt sie auch ohne Überschrift
           <LeadQuickForm
             variant="card"
             sourceTag={`standort-${city.slug}`}
             titelId="stadt-schnellanfrage-titel"
             heading=""
-            subheading="Tragen Sie Ihre Kontaktdaten ein – Fachbetriebsleiter Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich."
+            subheading="Tragen Sie Ihre Kontaktdaten ein. Fachbetriebsleiter Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich."
           />
         }
       />
