@@ -28,7 +28,7 @@
   2. `Der Boden bekommt ein leichtes [[gefaelle|Gefälle]]. Der Einstieg bleibt dabei eben, ohne Stufe.`
   3. `Wir bauen eine [[abdichtung|Verbundabdichtung]] ein. Sie richtet sich nach der [[din-18534|DIN 18534]]. Das ist bei uns seit 2019 Standard.`
   4. `Wir verlegen Fliesen mit [[rutschhemmung|Rutschhemmung R10 oder R11]], je nach Raum.`
-- Absatz: `Zu unseren Leistungen gehören [[barrierefrei|barrierefreie]] Bäder mit bodengleichen Duschen und das Verlegen von [[grossformat|Großformaten]].`
+- Absatz: `Wir bauen [[barrierefrei|barrierefreie]] Bäder mit bodengleichen Duschen. Wir verlegen auch [[grossformat|Großformate]].`
 - Absatz: `Wenn Sie ein Bad ohne Stufen wünschen, planen wir nach [[din-18040|DIN 18040]]. So bleibt Ihr Bad auch später gut nutzbar.`
 
 ## 4 · So läuft es ab

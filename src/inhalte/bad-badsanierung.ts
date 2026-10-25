@@ -44,7 +44,7 @@ export const BADSANIERUNG: ErzaehlInhalt = {
       'Wir verlegen Fliesen mit [[rutschhemmung|Rutschhemmung R10 oder R11]], je nach Raum.',
     ],
     absatz:
-      'Zu unseren Leistungen gehören [[barrierefrei|barrierefreie]] Bäder mit bodengleichen Duschen und das Verlegen von [[grossformat|Großformaten]]. Wenn Sie ein Bad ohne Stufen wünschen, planen wir nach [[din-18040|DIN 18040]]. So bleibt Ihr Bad auch später gut nutzbar.',
+      'Wir bauen [[barrierefrei|barrierefreie]] Bäder mit bodengleichen Duschen. Wir verlegen auch [[grossformat|Großformate]]. Wenn Sie ein Bad ohne Stufen wünschen, planen wir nach [[din-18040|DIN 18040]]. So bleibt Ihr Bad auch später gut nutzbar.',
   },
   ablauf: {
     titel: 'So kommen Sie zu Ihrem neuen Bad.',
@@ -92,8 +92,8 @@ export const BADSANIERUNG: ErzaehlInhalt = {
     satz: 'Sagen Sie uns, welches Bad Sie sich wünschen. Den Rest besprechen wir gemeinsam.',
     // Hilfen ohne Satz in der Textdatei; das Feld `satz` ist im Typ Pflicht, daher leer (OFFENE FRAGE)
     hilfen: [
-      { name: 'Angebot anfordern', href: '/bad/badanfrage', satz: '' },
-      { name: 'Projektcheck starten', href: '/bad/projekt-check', satz: '' },
+      { name: 'Angebot anfordern', href: '/bad/badanfrage' },
+      { name: 'Projektcheck starten', href: '/bad/projekt-check' },
     ],
   },
 };
