@@ -26,7 +26,7 @@
 - Vier Fliesen (eine Aussage je Fliese):
   1. `Wir bauen die alte Wanne aus und bereiten den Boden vor.`
   2. `Der Duschboden bekommt ein leichtes [[gefaelle|Gefälle]] zum Ablauf.`
-  3. `Unter die Fliesen kommt eine [[abdichtung|Abdichtung]] nach [[din-18534|DIN 18534]].`
+  3. `Unter die Fliesen kommt eine [[abdichtung|Abdichtung]]. Sie richtet sich nach der [[din-18534|DIN 18534]].`
   4. `Wir verlegen Fliesen mit [[rutschhemmung|Rutschhemmung R10 oder R11]], je nach Raum.`
 - Absatz: `Wir planen nach [[din-18040|DIN 18040]]. So bleibt Ihr Bad auch später gut nutzbar.` (F-25; die Erklärung der Norm nennt Stufen und Platz zum Bewegen schon, Textprüfung E3)
 - Großer Moment `gefaelle-dusche`: Zeichnung des Duschbodens; ein Tropfen läuft über das Gefälle zum Ablauf. Unterschrift: `Das Wasser läuft von selbst zum Ablauf.`
@@ -37,7 +37,7 @@
   1. `Termin bei Ihnen vor Ort` · `Deniz Tezgel schaut sich Ihr Bad genau an und prüft Boden und Wände. Der Termin ist kostenfrei.`
   2. `Planen und auswählen` · `Sie wählen Fliesen und Dusche aus. Sie bekommen ein Angebot mit festem Preis.`
   3. `Umbauen und übergeben` · `Wir bauen um und schützen Ihre Wohnung dabei vor Staub. Zum Schluss gehen wir alles gemeinsam durch.`
-- Hinweis Zuschuss (sinngleich aus dem Bestand, F-23, F-25): `Haben Sie einen Pflegegrad? Dann kann die Pflegekasse bis zu 4.180 € je Person dazugeben.` Link: `Mehr zum Zuschuss` → `/foerderung`
+- Hinweis Zuschuss (sinngleich aus dem Bestand, F-23, F-25): `Haben Sie einen Pflegegrad? Dann kann die Pflegekasse bis zu 4.180 € je Person dazugeben. Haben zwei Personen im Haushalt einen Pflegegrad, sind es bis zu 8.360 €.` Link: `Mehr zum Zuschuss` → `/foerderung`
 
 ## 5 · Beleg
 - H2: `Duschen ohne Stufe, die wir gebaut haben.`

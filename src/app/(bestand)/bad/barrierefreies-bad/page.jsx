@@ -1,10 +1,9 @@
 // Barrierefreies Bad (E3-BAU-03, Vorlage ErzaehlSeite, E-025, K-016 „Ruhe“, E-047): die Seite setzt Vorlage, Inhalt und
 // Metadaten aus `src/inhalte/barrierefreies-bad.ts`. Schlitz `momente.tun`: der große Moment `gefaelle-dusche`. Schlitz
-// `werkzeug`: die Badanfrage (Kennung `anfrage` wie im Bestand) mit der Rückfrage im Raster aus 8 und 4 Spalten; der Funnel
-// wird nachgeladen (TEMPO, Z-08 / E-025).
+// `werkzeug`: die Badanfrage (Kennung `anfrage` wie im Bestand) mittig, ohne Rückfrage daneben (K-016, Abnahme E3-BAU-03);
+// der Funnel wird nachgeladen (TEMPO, Z-08 / E-025).
 import dynamic from 'next/dynamic';
 import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzhalter';
-import Rueckfrage from '@/components/kern/Rueckfrage';
 import GefaelleDusche from '@/components/momente/gefaelle-dusche/GefaelleDusche';
 import ErzaehlSeite from '@/components/vorlagen/ErzaehlSeite';
 import { createMetadata } from '@/lib/metadata';
@@ -31,13 +30,8 @@ export default function BarrierefreiesBadPage() {
                 titel: 'Badanfrage',
                 flaeche: 'fliese',
                 inhalt: (
-                    <div className="grid gap-y-12 lg:grid-cols-12 lg:gap-x-12">
-                        <div className="min-w-0 lg:col-span-8">
-                            <BadanfrageFunnel />
-                        </div>
-                        <div className="lg:col-span-4">
-                            <Rueckfrage />
-                        </div>
+                    <div className="mx-auto max-w-mass">
+                        <BadanfrageFunnel />
                     </div>
                 ),
             }}

@@ -36,7 +36,7 @@ export const BARRIEREFREIES_BAD: ErzaehlInhalt = {
     punkte: [
       'Wir bauen die alte Wanne aus und bereiten den Boden vor.',
       'Der Duschboden bekommt ein leichtes [[gefaelle|Gefälle]] zum Ablauf.',
-      'Unter die Fliesen kommt eine [[abdichtung|Abdichtung]] nach [[din-18534|DIN 18534]].',
+      'Unter die Fliesen kommt eine [[abdichtung|Abdichtung]]. Sie richtet sich nach der [[din-18534|DIN 18534]].',
       'Wir verlegen Fliesen mit [[rutschhemmung|Rutschhemmung R10 oder R11]], je nach Raum.',
     ],
     absatz: 'Wir planen nach [[din-18040|DIN 18040]]. So bleibt Ihr Bad auch später gut nutzbar.',
@@ -49,7 +49,8 @@ export const BARRIEREFREIES_BAD: ErzaehlInhalt = {
       { titel: 'Umbauen und übergeben', text: 'Wir bauen um und schützen Ihre Wohnung dabei vor Staub. Zum Schluss gehen wir alles gemeinsam durch.' },
     ],
     hinweis: {
-      text: 'Haben Sie einen Pflegegrad? Dann kann die Pflegekasse bis zu 4.180 € je Person dazugeben.',
+      // zweiter Satz aus dem alten Zuschuss-Abschnitt (F-25, sinngleich; Abnahme E3-BAU-03)
+      text: 'Haben Sie einen Pflegegrad? Dann kann die Pflegekasse bis zu 4.180 € je Person dazugeben. Haben zwei Personen im Haushalt einen Pflegegrad, sind es bis zu 8.360 €.',
       verweis: { name: 'Mehr zum Zuschuss', href: '/foerderung' },
     },
   },
@@ -59,7 +60,7 @@ export const BARRIEREFREIES_BAD: ErzaehlInhalt = {
       { bild: 'start-dusche', unterschrift: 'Dusche ohne Stufe mit großen Fliesen', href: '/bad/barrierefreies-bad' },
       { bild: 'bereich-dusche-sitzbank', unterschrift: 'Dusche ohne Stufe mit Sitzbank', href: '/bad/barrierefreies-bad' },
       { bild: 'bereich-dusche-streifen-sitzbank', unterschrift: 'Dusche ohne Stufe mit gefliester Sitzbank', href: '/bad/barrierefreies-bad' },
-      { bild: 'bereich-wanne-mit-tuer', unterschrift: 'Wanne mit Tür, daneben eine Dusche', href: '/bad/badsanierung' },
+      { bild: 'bereich-wanne-mit-tuer', unterschrift: 'Wanne mit Tür, daneben eine Dusche', href: '/bad/barrierefreies-bad' },
     ],
     zweierbild: {
       titel: 'So entsteht eine Dusche ohne Stufe',
@@ -69,7 +70,8 @@ export const BARRIEREFREIES_BAD: ErzaehlInhalt = {
       ],
     },
     stimmen: ['ute-t', 'elke-s', 'peter-p', 'k-d'],
-    verweis: { name: 'Alle Arbeiten ansehen', href: '/referenzen?raum=dusche' },
+    // öffnet die Galerie auf /referenzen mit der Auswahl „Dusche“ (GalerieWahl liest ?raum=)
+    verweis: { name: 'Alle Arbeiten ansehen', href: '/referenzen?raum=dusche#unsere-arbeiten' },
   },
   schritt: {
     titel: 'Sprechen Sie mit uns über Ihr neues Bad.',
