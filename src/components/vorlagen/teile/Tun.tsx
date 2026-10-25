@@ -139,7 +139,7 @@ export default function Tun({ inhalt, moment }: { inhalt: TunInhalt; moment?: Re
         </div>
       )}
       {inhalt.absatz && (
-        <p className="mt-8 max-w-mass font-text text-fs-3 text-pretty text-tinte">
+        <p className="mx-auto mt-8 max-w-mass font-text text-fs-3 text-pretty text-tinte">
           <Textmarken text={inhalt.absatz} />
         </p>
       )}
