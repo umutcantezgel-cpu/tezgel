@@ -9,7 +9,7 @@ export default function Schritt3({ tier, setTier }) {
     return (
         <fieldset className="min-w-0">
             <legend className={labelKlassen}>
-                <span className={nummerClass}>3.</span> Ausstattungsniveau:
+                <span className={nummerClass}>3.</span> Wie hochwertig soll das Bad werden?
             </legend>
             <div className="mt-3 grid grid-cols-1 gap-2 @lg:grid-cols-3">
                 {TIER_OPTIONS.map((t) => {

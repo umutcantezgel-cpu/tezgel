@@ -11,7 +11,7 @@ export default function Schritt4({ selectedOptions, toggleOption }) {
     return (
         <fieldset className="min-w-0">
             <legend className={labelKlassen}>
-                <span className={nummerClass}>4.</span> Wunschausstattung &amp; Extras:
+                <span className={nummerClass}>4.</span> Welche Extras wünschen Sie?
             </legend>
             <div className="mt-3 grid grid-cols-1 gap-2 @md:grid-cols-2">
                 {EXTRA_OPTIONS.map((opt) => {

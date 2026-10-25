@@ -67,8 +67,8 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                     ))}
                 </dl>
                 <p className="text-fs-2 text-tinte-2">
-                    Jedes Bad ist anders: Untergrund, Leitungswege und Materialwahl entscheiden über den Aufwand. Den
-                    verbindlichen Festpreis erhalten Sie deshalb nach dem kostenfreien Vor-Ort-Aufmaß.
+                    Jedes Bad ist anders. Der Aufwand hängt davon ab, was unter den Fliesen liegt, wo die Leitungen verlaufen und welches Material Sie wählen. Den
+                    verbindlichen Festpreis erhalten Sie deshalb nach dem kostenfreien Termin bei Ihnen vor Ort.
                 </p>
 
                 {/* Verweis auf das passende Musterbad */}
@@ -76,10 +76,10 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                     <p className="flex flex-wrap items-center justify-between gap-x-3 font-semibold">
                         <span>
                             <span className="sr-only">Hinweis: </span>
-                            Musterbad-Vergleich:
+                            Musterbäder zum Vergleich:
                         </span>
                         <Link href="/bad/musterbaeder" className={`${linkKlassen} inline-flex min-h-11 items-center gap-1`}>
-                            Katalog
+                            Alle ansehen
                             <Icon name="pfeil-rechts" groesse={4} />
                         </Link>
                     </p>
@@ -92,10 +92,10 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                 </div>
 
                 {/* Zuschuss-Hinweis */}
-                <Hinweis titel={<><span className="sr-only">Hinweis: </span>Bis zu 4.180 € Pflegekassen-Zuschuss</>}>
+                <Hinweis titel={<><span className="sr-only">Hinweis: </span>Bis zu 4.180 € Zuschuss der Pflegekasse</>}>
                     Bei Pflegegrad für barrierefreie Bäder nach <span className="whitespace-nowrap font-mono">DIN{NBSP}18040-2</span>.{' '}
                     <Link href="/bad/barrierefreies-bad" className={linkKlassen}>
-                        Details zum barrierefreien Bad &amp; Zuschüssen
+                        Details zum barrierefreien Bad und zu Zuschüssen
                     </Link>
                 </Hinweis>
             </div>
@@ -127,7 +127,7 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                             )}
                         </div>
                         <p className="mt-4">
-                            Vielen Dank, <strong className="font-semibold text-tinte">{leadData.name}</strong>! Ihre Projektangaben für ca. <span className="whitespace-nowrap font-mono text-tinte">{sqmLabel}{NBSP}m²</span> ({scopeLabel}) sind direkt bei Herrn Deniz Tezgel eingegangen.
+                            Vielen Dank, <strong className="font-semibold text-tinte">{leadData.name}</strong>! Ihre Angaben für ca. <span className="whitespace-nowrap font-mono text-tinte">{sqmLabel}{NBSP}m²</span> ({scopeLabel}) sind direkt bei Herrn Deniz Tezgel eingegangen.
                             {leadData.email && (
                                 <span className="mt-3 flex items-start gap-2 border-l-2 border-tinte pl-4 text-tinte">
                                     <Icon name="mail" groesse={4} className="mt-1" />
@@ -142,8 +142,8 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                                 <Icon name="uhr" groesse={4} />
                                 Nächste Schritte:
                             </strong>
-                            <p className="mt-2">1. Herr Tezgel prüft Ihre Angaben &amp; Materialbedarf.</p>
-                            <p className="mt-1">2. Rückruf binnen 24–48 Std. zur Vor-Ort-Aufmaß-Abstimmung.</p>
+                            <p className="mt-2">1. Herr Tezgel prüft Ihre Angaben und welches Material Sie brauchen.</p>
+                            <p className="mt-1">2. Rückruf binnen 24 bis 48 Stunden, um den Termin bei Ihnen vor Ort abzustimmen.</p>
                         </div>
                         <div className="mt-4">
                             <Knopf variante="text" onClick={handleNewRequest}>
@@ -159,11 +159,11 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                             WhatsApp wurde geöffnet
                         </p>
                         <p className="mt-3">
-                            Bitte senden Sie die vorbereitete Nachricht mit Ihren Angaben dort ab – erst dann erreicht sie uns.
+                            Bitte senden Sie die vorbereitete Nachricht mit Ihren Angaben dort ab. Erst dann erreicht sie uns.
                         </p>
                         <div className="mt-4">
                             <Knopf variante="text" onClick={() => setSentVia(null)}>
-                                Erneut senden oder Kanal wechseln
+                                Noch einmal senden oder anders anfragen
                             </Knopf>
                         </div>
                     </div>
@@ -217,7 +217,7 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                                 id="budget-lead-email"
                                 type="email"
                                 autoComplete="email"
-                                placeholder="Ihre E-Mail-Adresse (optional für Bestätigung)"
+                                placeholder="ihre-adresse@beispiel.de"
                                 value={leadData.email}
                                 onChange={(e) => setLeadData({ ...leadData, email: e.target.value })}
                                 className={inputClass}
@@ -236,7 +236,7 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                             >
                                 {isSubmitting ? (
                                     <span className="flex flex-col items-center gap-2">
-                                        <span>Wird übertragen …</span>
+                                        <span>Wird gesendet …</span>
                                         <span className="laden-fuge w-16" data-motion="laden" aria-hidden="true" />
                                     </span>
                                 ) : (
@@ -277,7 +277,7 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                     className="w-full text-center"
                 >
                     {/* Nummer bricht nur als Ganzes um (mobil zweite Zeile), nie mitten in den Ziffern */}
-                    Sofort anrufen: <span className="whitespace-nowrap font-mono font-normal">{COMPANY_DATA.contact.phone}</span>
+                    Anrufen: <span className="whitespace-nowrap font-mono font-normal">{COMPANY_DATA.contact.phone}</span>
                 </Knopf>
             </div>
         </div>

@@ -16,14 +16,14 @@ export default function WhatsAppGeoeffnet({ handleBackFromWhatsApp, calculatedSq
                 WhatsApp geöffnet
             </span>
             <h3 className="mt-6 text-fs-5 text-tinte" tabIndex={-1} data-fokusziel>
-                Fast geschafft – Nachricht jetzt absenden
+                Fast geschafft. Senden Sie die Nachricht jetzt ab.
             </h3>
             <p className="mt-4 max-w-mass text-fs-3 text-tinte-2">
-                Ihre Badanfrage ({calculatedSqm} m² &middot; {scopeTitle}) ist in WhatsApp vorbereitet. Senden Sie die Nachricht einfach ab – {COMPANY_DATA.owner.fullName} meldet sich umgehend bei Ihnen.
+                Ihre Badanfrage ({calculatedSqm} m² &middot; {scopeTitle}) ist in WhatsApp vorbereitet. Senden Sie die Nachricht einfach ab. {COMPANY_DATA.owner.fullName} meldet sich umgehend bei Ihnen.
             </p>
             <div className="mt-8 flex flex-col items-stretch gap-3 @2xl:flex-row @2xl:items-center">
                 <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} iconLinks="telefon">
-                    Direkt anrufen: <span className="whitespace-nowrap font-mono">{COMPANY_DATA.contact.phone}</span>
+                    Anrufen: <span className="whitespace-nowrap font-mono">{COMPANY_DATA.contact.phone}</span>
                 </Knopf>
                 <Knopf variante="neben" onClick={handleBackFromWhatsApp}>
                     Zurück

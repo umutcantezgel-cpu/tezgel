@@ -54,15 +54,15 @@ export default function BadProjektCheck() {
                         Bad-Projektcheck
                     </span>
                     <span className="hidden font-mono text-fs-1 text-tinte @lg:inline-flex">
-                        Festpreis nach Vor-Ort-Aufmaß
+                        Festpreis nach dem Termin bei Ihnen vor Ort
                     </span>
                 </div>
                 <h2 className="mt-6 text-fs-5 text-tinte">
-                    Ihr Badprojekt in vier Schritten beschreiben
+                    Beschreiben Sie Ihr Bad in vier Schritten
                 </h2>
                 <p className="mt-2 max-w-mass text-fs-2 text-tinte-2">
-                    Wählen Sie Größe, Umfang, Ausstattungsniveau und Wünsche – wir erhalten eine strukturierte Anfrage und
-                    melden uns für einen kostenfreien Aufmaßtermin in Aßlar, Wetzlar und Mittelhessen.
+                    Wählen Sie Größe, Umfang, Ausstattung und Wünsche. Ihre Angaben kommen geordnet bei uns an. Wir
+                    melden uns für einen kostenfreien Termin bei Ihnen vor Ort in Aßlar, Wetzlar und Mittelhessen.
                 </p>
             </div>
 

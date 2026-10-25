@@ -8,7 +8,7 @@ export default function Schritt2({ formData, setFormData }) {
     return (
         <div className="flex flex-col gap-6">
             <p id="badanfrage-frage-2" className={frageClass} tabIndex={-1} data-fokusziel>
-                <span className={nummerClass}>2.</span> Welcher Sanierungsumfang ist geplant?
+                <span className={nummerClass}>2.</span> Was soll im Bad gemacht werden?
             </p>
             <div role="group" aria-labelledby="badanfrage-frage-2" className="grid grid-cols-1 gap-2 @xl:grid-cols-2 @6xl:grid-cols-4">
                 {SCOPES.map((sc) => (

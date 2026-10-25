@@ -17,11 +17,11 @@ export default function Schritt5({ setStep, status, errorMessage, formData, setF
         <form onSubmit={handleOnlineSubmit} className="flex flex-col gap-6">
             <div>
                 <p className={frageClass} tabIndex={-1} data-fokusziel>
-                    <span className={nummerClass}>5.</span> Kontaktdaten &amp; Versand Ihrer Anfrage
+                    <span className={nummerClass}>5.</span> Ihre Kontaktdaten und Absenden
                 </p>
                 <p className="mt-2 max-w-mass text-fs-2 text-tinte-2">
-                    Senden Sie Ihre Badanfrage direkt online an {COMPANY_DATA.owner.fullName} oder nutzen Sie WhatsApp. Keine
-                    Weitergabe an Dritte.
+                    Senden Sie Ihre Anfrage direkt online an {COMPANY_DATA.owner.fullName} oder nutzen Sie WhatsApp. Wir geben Ihre Angaben nicht
+                    an Dritte weiter.
                 </p>
             </div>
 
@@ -65,7 +65,7 @@ export default function Schritt5({ setStep, status, errorMessage, formData, setF
                         required
                         minLength={6}
                         autoComplete="tel"
-                        placeholder="Für die Rücksprache zum Aufmaß"
+                        placeholder="Für Rückfragen zu Ihrem Bad"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         className={inputClass}
@@ -102,7 +102,7 @@ export default function Schritt5({ setStep, status, errorMessage, formData, setF
             </div>
 
             <div>
-                <label htmlFor="badanfrage-zip" className={labelKlassen}>PLZ &amp; Ort des Bauvorhabens</label>
+                <label htmlFor="badanfrage-zip" className={labelKlassen}>PLZ &amp; Ort, wo das Bad ist</label>
                 <input
                     id="badanfrage-zip"
                     type="text"
@@ -121,7 +121,7 @@ export default function Schritt5({ setStep, status, errorMessage, formData, setF
                 <textarea
                     id="badanfrage-notes"
                     rows={3}
-                    placeholder="z. B. Pflegegrad vorhanden, Nischenlösung gewünscht, Altbau-Besonderheiten …"
+                    placeholder="z. B. Pflegegrad vorhanden, Nische gewünscht, Besonderheiten im Altbau …"
                     value={formData.notes}
                     onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                     className={`${inputClass} resize-none`}
@@ -140,14 +140,14 @@ export default function Schritt5({ setStep, status, errorMessage, formData, setF
                 )}
 
                 <p role="status" className="sr-only">
-                    {status === 'submitting' ? 'Übermittle Anfrage an Fachbetrieb …' : ''}
+                    {status === 'submitting' ? 'Wird gesendet …' : ''}
                 </p>
 
                 <div className="flex flex-col items-stretch gap-3 @2xl:flex-row @2xl:items-center">
                     <Knopf
                         type="submit"
                         laedt={status === 'submitting'}
-                        ladeText="Übermittle Anfrage an Fachbetrieb …"
+                        ladeText="Wird gesendet …"
                         icon="pfeil-rechts"
                         className="w-full @2xl:flex-1"
                     >
@@ -160,15 +160,15 @@ export default function Schritt5({ setStep, status, errorMessage, formData, setF
                         vorne={<WhatsAppLogo className="size-5 shrink-0" />}
                         className="w-full @2xl:w-auto"
                     >
-                        Per WhatsApp
+                        Nachricht per WhatsApp
                     </Knopf>
                 </div>
 
                 <p className="flex items-start gap-2 text-fs-1 text-tinte-2">
                     <Icon name="schloss" groesse={4} className="mt-px" />
                     <span>
-                        Ihre Angaben werden vertraulich zur Angebotserstellung genutzt. Beim optionalen Versand per WhatsApp gelten
-                        zusätzlich die Richtlinien von WhatsApp. Mehr in unserer{' '}
+                        Wir nutzen Ihre Angaben vertraulich, um Ihr Angebot zu erstellen. Wenn Sie per WhatsApp senden, gelten
+                        zusätzlich die Richtlinien von WhatsApp. Mehr dazu in unserer{' '}
                         <Link href="/datenschutz" className={linkKlassen}>
                             Datenschutzerklärung
                         </Link>

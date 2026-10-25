@@ -12,7 +12,7 @@ export default function Schritt4({ formData, setFormData, toggleFeature }) {
     return (
         <div className="flex flex-col gap-6">
             <p id="badanfrage-frage-4" className={frageClass} tabIndex={-1} data-fokusziel>
-                <span className={nummerClass}>4.</span> Qualitätskategorie &amp; gewünschte Elemente
+                <span className={nummerClass}>4.</span> Welche Qualität und welche Ausstattung wünschen Sie?
             </p>
 
             <div role="group" aria-labelledby="badanfrage-frage-4" className="grid grid-cols-1 gap-2 @2xl:grid-cols-3">
@@ -34,7 +34,7 @@ export default function Schritt4({ formData, setFormData, toggleFeature }) {
             </div>
 
             <fieldset className="pt-2">
-                <legend className={labelKlassen}>Wunschausstattung auswählen</legend>
+                <legend className={labelKlassen}>Ausstattung auswählen (mehrere möglich)</legend>
                 <div className="mt-2 grid grid-cols-1 gap-2 @md:grid-cols-2 @4xl:grid-cols-3">
                     {FEATURES.map((item) => {
                         const isSelected = formData.features.includes(item.id);

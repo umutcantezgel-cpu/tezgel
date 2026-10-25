@@ -9,7 +9,7 @@ export default function Schritt3({ formData, setFormData, calculatedSqm }) {
     return (
         <div className="flex flex-col gap-6">
             <p className={frageClass} tabIndex={-1} data-fokusziel>
-                <span className={nummerClass}>3.</span> Ungefähre Raummaße Ihres Badezimmers
+                <span className={nummerClass}>3.</span> Wie groß ist Ihr Badezimmer ungefähr?
             </p>
             <div className="grid grid-cols-2 gap-4 @3xl:grid-cols-4">
                 <div>
@@ -54,7 +54,7 @@ export default function Schritt3({ formData, setFormData, calculatedSqm }) {
             </div>
 
             <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border border-fuge bg-kalk px-4 py-3">
-                <span className="text-fs-2 font-semibold text-tinte">Berechnete Grundfläche:</span>
+                <span className="text-fs-2 font-semibold text-tinte">Grundfläche (Länge mal Breite):</span>
                 <span className="font-mono text-fs-4 text-tinte tabular-nums" aria-live="polite">{calculatedSqm} m²</span>
             </div>
         </div>

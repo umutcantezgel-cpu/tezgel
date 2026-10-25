@@ -9,7 +9,7 @@ export default function Schritt2({ sanitaryScope, setSanitaryScope }) {
     return (
         <fieldset className="min-w-0">
             <legend className={labelKlassen}>
-                <span className={nummerClass}>2.</span> Sanierungsumfang:
+                <span className={nummerClass}>2.</span> Was soll gemacht werden?
             </legend>
             <div className="mt-3 grid grid-cols-1 gap-2 @lg:grid-cols-3">
                 {SCOPE_OPTIONS.map((scope) => {
