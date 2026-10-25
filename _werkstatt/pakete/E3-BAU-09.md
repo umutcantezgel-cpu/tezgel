@@ -1,7 +1,7 @@
 # E3-BAU-09
 
 ## 1. Kopfzeile
-E3-BAU-09 · Rolle Baumeister · Modell Haiku 5.5 · Stufe 2 · Kern-Version v3.6 · Schreibrechte (exakt): `src/inhalte/kontakt.ts`, `src/app/(bestand)/kontakt/page.jsx`, `$SCRATCH/E3-BAU-09/**` · Umfang: Seite `/kontakt` auf die Vorlage `ArbeitsSeite` umstellen, Text wörtlich aus `_werkstatt/texte/kontakt.md`
+E3-BAU-09 · Rolle Baumeister · Modell Haiku 5.5 · Stufe 2 · Kern-Version v3.6 · Schreibrechte (exakt): `src/inhalte/kontakt.ts`, `src/app/(bestand)/kontakt/page.jsx`, `$SCRATCH/E3-BAU-09/**`, `src/app/(bestand)/kontakt/layout.tsx` (nur name und description nach Zusatz 6.6), `_werkstatt/texte/kontakt.md` (nur Satzteilungen nach Zusatz 6.2) · Umfang: Seite `/kontakt` auf die Vorlage `ArbeitsSeite` umstellen, Text wörtlich aus `_werkstatt/texte/kontakt.md`
 
 ## 2. Rollenbriefing
 Du bist **Baumeister**: Du baust eine Seite nach einer fertigen Vorlage und einem fertigen Text, ohne eigene Gestaltung.

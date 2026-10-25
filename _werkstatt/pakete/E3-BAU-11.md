@@ -1,7 +1,7 @@
 # E3-BAU-11
 
 ## 1. Kopfzeile
-E3-BAU-11 · Rolle Baumeister · Modell Haiku 5.5 · Stufe 2 · Kern-Version v3.6 · Schreibrechte (exakt): `src/inhalte/blog.ts`, `src/app/(bestand)/blog/page.jsx`, `$SCRATCH/E3-BAU-11/**` · Umfang: Seite `/blog` auf die Vorlage `WissensSeite` umstellen, Text wörtlich aus `_werkstatt/texte/blog.md`
+E3-BAU-11 · Rolle Baumeister · Modell Haiku 5.5 · Stufe 2 · Kern-Version v3.6 · Schreibrechte (exakt): `src/inhalte/blog.ts`, `src/app/(bestand)/blog/page.jsx`, `$SCRATCH/E3-BAU-11/**`, `src/app/(bestand)/blog/layout.tsx` (nur name und description nach Zusatz 6.6), `_werkstatt/texte/blog.md` (nur Satzteilungen nach Zusatz 6.2) · Umfang: Seite `/blog` auf die Vorlage `WissensSeite` umstellen, Text wörtlich aus `_werkstatt/texte/blog.md`
 
 ## 2. Rollenbriefing
 Du bist **Baumeister**: Du baust eine Seite nach einer fertigen Vorlage und einem fertigen Text, ohne eigene Gestaltung.

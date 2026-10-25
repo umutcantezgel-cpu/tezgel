@@ -1,7 +1,7 @@
 # E3-BAU-10
 
 ## 1. Kopfzeile
-E3-BAU-10 · Rolle Baumeister · Modell Haiku 5.5 · Stufe 2 · Kern-Version v3.6 · Schreibrechte (exakt): `src/app/(bestand)/standorte/[stadt]/page.tsx`, `$SCRATCH/E3-BAU-10/**` · Umfang: Seite `/standorte/[stadt]` auf die Vorlage `OrtsSeite` umstellen, Text wörtlich aus `_werkstatt/texte/REF-ort-wetzlar.md`
+E3-BAU-10 · Rolle Baumeister · Modell Haiku 5.5 · Stufe 2 · Kern-Version v3.6 · Schreibrechte (exakt): `src/app/(bestand)/standorte/[stadt]/page.tsx`, `$SCRATCH/E3-BAU-10/**`, `src/app/(bestand)/standorte/layout.tsx` (nur name und description nach Zusatz 6.6), `_werkstatt/texte/REF-ort-wetzlar.md` (nur Satzteilungen nach Zusatz 6.2) · Umfang: Seite `/standorte/[stadt]` auf die Vorlage `OrtsSeite` umstellen, Text wörtlich aus `_werkstatt/texte/REF-ort-wetzlar.md`
 
 ## 2. Rollenbriefing
 Du bist **Baumeister**: Du baust eine Seite nach einer fertigen Vorlage und einem fertigen Text, ohne eigene Gestaltung.

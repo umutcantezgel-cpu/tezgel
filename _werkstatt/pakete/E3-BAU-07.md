@@ -1,7 +1,7 @@
 # E3-BAU-07
 
 ## 1. Kopfzeile
-E3-BAU-07 · Rolle Baumeister · Modell Haiku 5.5 · Stufe 2 · Kern-Version v3.6 · Schreibrechte (exakt): `src/inhalte/referenzen.ts`, `src/app/(bestand)/referenzen/page.jsx`, `$SCRATCH/E3-BAU-07/**` · Umfang: Seite `/referenzen` auf die Vorlage `ErzaehlSeite` umstellen, Text wörtlich aus `_werkstatt/texte/referenzen.md`
+E3-BAU-07 · Rolle Baumeister · Modell Haiku 5.5 · Stufe 2 · Kern-Version v3.6 · Schreibrechte (exakt): `src/inhalte/referenzen.ts`, `src/app/(bestand)/referenzen/page.jsx`, `$SCRATCH/E3-BAU-07/**`, `src/app/(bestand)/referenzen/layout.tsx` (nur name und description nach Zusatz 6.6), `_werkstatt/texte/referenzen.md` (nur Satzteilungen nach Zusatz 6.2) · Umfang: Seite `/referenzen` auf die Vorlage `ErzaehlSeite` umstellen, Text wörtlich aus `_werkstatt/texte/referenzen.md`
 
 ## 2. Rollenbriefing
 Du bist **Baumeister**: Du baust eine Seite nach einer fertigen Vorlage und einem fertigen Text, ohne eigene Gestaltung.

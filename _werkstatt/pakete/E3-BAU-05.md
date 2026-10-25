@@ -1,7 +1,7 @@
 # E3-BAU-05
 
 ## 1. Kopfzeile
-E3-BAU-05 · Rolle Baumeister · Modell Haiku 5.5 · Stufe 2 · Kern-Version v3.6 · Schreibrechte (exakt): `src/inhalte/fliesen.ts`, `src/app/(bestand)/fliesen/page.jsx`, `$SCRATCH/E3-BAU-05/**` · Umfang: Seite `/fliesen` auf die Vorlage `WissensSeite` umstellen, Text wörtlich aus `_werkstatt/texte/fliesen.md`
+E3-BAU-05 · Rolle Baumeister · Modell Haiku 5.5 · Stufe 2 · Kern-Version v3.6 · Schreibrechte (exakt): `src/inhalte/fliesen.ts`, `src/app/(bestand)/fliesen/page.jsx`, `$SCRATCH/E3-BAU-05/**`, `src/app/(bestand)/fliesen/layout.tsx` (nur name und description nach Zusatz 6.6), `_werkstatt/texte/fliesen.md` (nur Satzteilungen nach Zusatz 6.2) · Umfang: Seite `/fliesen` auf die Vorlage `WissensSeite` umstellen, Text wörtlich aus `_werkstatt/texte/fliesen.md`
 
 ## 2. Rollenbriefing
 Du bist **Baumeister**: Du baust eine Seite nach einer fertigen Vorlage und einem fertigen Text, ohne eigene Gestaltung.
