@@ -1,6 +1,7 @@
 import { createMetadata } from '@/lib/metadata';
 import { buildGraph, buildBreadcrumbNode, buildWebPageNode, SITE_URL, ORG_ID } from '@/lib/schema';
 import JsonLd from '@/components/seo/JsonLd';
+import { REFERENZEN } from '@/inhalte/referenzen';
 
 export const metadata = createMetadata({
   title: 'Referenzen & Bewertungen | Fliesenleger Tezgel ★ 5,0',
@@ -17,9 +18,9 @@ const breadcrumbs = [
 const referenzenSchema = buildGraph([
   buildWebPageNode({
     url: pageUrl,
-    name: 'Referenzen & Kundenbewertungen | Fliesenverlegung Tezgel',
-    description:
-      'Kundenbewertungen und typische Leistungsbeispiele des Fliesenleger-Fachbetriebs Fliesenverlegung Tezgel aus Aßlar.',
+    // wie Titel und Beschreibung der Seite (Zusatz E3-BAU-07, Regel 6.6)
+    name: REFERENZEN.meta.titel,
+    description: REFERENZEN.meta.beschreibung,
     breadcrumbItems: breadcrumbs,
   }),
   buildBreadcrumbNode(breadcrumbs, pageUrl),

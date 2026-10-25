@@ -32,7 +32,7 @@
 - Absatz: `Dazu gehören auch [[barrierefrei|barrierefreie]] Bäder, zum Beispiel mit einer Dusche ohne Stufe.`
 - Drei Belege aus dem Faktenblatt (je ein Satz, kein Etikett):
   - `Seit 2008 sind wir bei der Handwerkskammer Wiesbaden eingetragen.`
-  - `Seit 2019 ist die [[abdichtung|Abdichtung]] nach [[din-18534|DIN 18534]] bei uns Standard.`
+  - `Seit 2019 ist die [[abdichtung|Abdichtung]] bei uns Standard. Wir arbeiten nach [[din-18534|DIN 18534]].`
   - `Wohnen Sie während der Arbeiten im Haus, schützen wir Ihre Räume vor Staub.`
 
 ## 4 · So läuft es ab
