@@ -4,7 +4,7 @@ import { COMPANY_DATA } from '@/config/company';
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
-  title: 'FAQ zu Fliesen, Bad & Kosten | Fliesenverlegung Tezgel',
+  title: 'Häufige Fragen zu Fliesen, Bad & Kosten | Tezgel',
   description: 'Häufige Fragen zu Fliesenverlegung, Badsanierung, Preisen & DIN 18534 Abdichtung beantwortet vom Fliesenleger-Fachbetrieb Tezgel in Aßlar & Wetzlar.',
   path: '/faq',
 });
