@@ -8,8 +8,6 @@ const post = {
     "excerpt": "Beide Materialien sind hochwertig und langlebig, unterscheiden sich aber bei Optik, Pflege, Empfindlichkeit und Verlegung. Der Vergleich hilft bei der Wahl für Boden, Bad, Treppe und Terrasse.",
     "category": "fliesen",
     "author": "Fliesenverlegung Tezgel",
-    "date": "24. September 2026",
-    "publishedAt": "2026-09-24T08:00:00+02:00",
     "readTime": "5 Min.",
     "image": "/images/bad/bad-glastuer.webp",
     "featured": false,

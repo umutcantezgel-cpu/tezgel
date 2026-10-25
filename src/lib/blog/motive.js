@@ -6,11 +6,8 @@
 export const KATEGORIE_MOTIV = {
     bad: { plan: 'bad', zeichen: 'bad' },
     fliesen: { plan: 'naturstein', zeichen: 'naturstein' },
-    untergrund: { plan: 'abdichtung', zeichen: 'abdichtung' },
     aussen: { plan: 'balkon', zeichen: 'balkon' },
-    pflege: { plan: 'fugen', zeichen: 'reparatur' },
     ratgeber: { plan: 'wohnen', zeichen: 'dokument' },
-    news: { plan: 'grossformat', zeichen: 'kalender' },
 };
 
 /** Plan je Beitrag (Slug): jede Vorschau zeigt ihr Thema */

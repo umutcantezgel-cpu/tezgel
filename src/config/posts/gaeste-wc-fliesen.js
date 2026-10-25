@@ -7,8 +7,6 @@ const post = {
     "excerpt": "Wenige Quadratmeter, viele Details: Welche Formate, Fugenbilder und Fliesenhöhen ein Gäste-WC größer wirken lassen und wie Vorwand, Handwaschbecken und Anschlüsse sauber gefliest werden.",
     "category": "bad",
     "author": "Fliesenverlegung Tezgel",
-    "date": "24. September 2026",
-    "publishedAt": "2026-09-24T08:00:00+02:00",
     "readTime": "4 Min.",
     "image": "/images/bad/gaeste-bad.png",
     "featured": false,

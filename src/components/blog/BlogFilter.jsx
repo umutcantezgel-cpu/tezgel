@@ -75,7 +75,7 @@ export default function BlogFilter({ anrisse = {} }) {
             <Suchfeld
               id="blog-suche"
               beschriftung="Ratgeber durchsuchen"
-              platzhalter="Ratgeber durchsuchen..."
+              platzhalter="Suchen"
               wert={eingabe}
               setzen={suchen}
               feldRef={suche}

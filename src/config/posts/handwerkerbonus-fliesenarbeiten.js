@@ -1,5 +1,5 @@
 // Blog-Artikel: Was bringt der Handwerkerbonus bei Fliesen?
-// Allgemeine Steuerinformation (Stand: Veröffentlichungsdatum) – keine Steuerberatung.
+// Allgemeine Steuerinformation (Stand: September 2026, Anlage des Artikels) – keine Steuerberatung.
 
 const post = {
     "id": "1",
@@ -8,8 +8,6 @@ const post = {
     "excerpt": "Für Renovierungen im selbst genutzten Zuhause gewährt das Finanzamt eine Steuerermäßigung auf die Arbeitskosten. Was bei Fliesenarbeiten zählt, wo die Grenzen liegen und wie die Rechnung aussehen muss.",
     "category": "ratgeber",
     "author": "Fliesenverlegung Tezgel",
-    "date": "24. September 2026",
-    "publishedAt": "2026-09-24T08:00:00+02:00",
     "readTime": "5 Min.",
     "image": "/images/bad/bad-holz-waschtisch.webp",
     "featured": true,
@@ -22,7 +20,7 @@ const post = {
     ],
     "content": `Ein neues Bad, ein frisch gefliester Flur oder die Sanierung des Balkonbelags: Wer im eigenen Zuhause renoviert, kann einen Teil der Handwerkerkosten direkt von der Einkommensteuer abziehen. Der sogenannte Handwerkerbonus ist eine der einfachsten Steuererleichterungen für Privathaushalte – vorausgesetzt, Rechnung und Zahlung stimmen. Dieser Beitrag fasst die Grundregeln für Fliesenarbeiten zusammen.
 
-> **Wichtiger Hinweis:** Dieser Artikel gibt eine allgemeine Übersicht nach dem Gesetzesstand zum Veröffentlichungsdatum. Er ersetzt keine Steuerberatung. Ob und in welcher Höhe Sie die Ermäßigung in Ihrem Fall erhalten, klären Sie bitte mit Ihrer Steuerberatung oder einem Lohnsteuerhilfeverein.
+> **Wichtiger Hinweis:** Dieser Artikel gibt eine allgemeine Übersicht nach dem Gesetzesstand im September 2026. Er ersetzt keine Steuerberatung. Ob und in welcher Höhe Sie die Ermäßigung in Ihrem Fall erhalten, klären Sie bitte mit Ihrer Steuerberatung oder einem Lohnsteuerhilfeverein.
 
 ## Was ist der Handwerkerbonus?
 

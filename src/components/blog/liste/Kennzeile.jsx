@@ -22,7 +22,8 @@ export function Angabe({ zeichen, children, className = '' }) {
     );
 }
 
-/** Datum maschinenlesbar: <time> mit dem Tag aus `publishedAt` (ISO), sichtbar der Wortlaut aus `date` */
+/** Datum maschinenlesbar: <time> mit dem Tag aus `publishedAt` (ISO), sichtbar der Wortlaut aus `date`. Seit E4-W0-BLOG (E-062)
+ *  tragen die Beiträge kein Datum (alle hatten den Tag ihrer Anlage); mit echten Daten (M-27) erscheint es wieder. */
 export function Datum({ post }) {
     if (!post.date) return null;
     const iso = typeof post.publishedAt === 'string' ? post.publishedAt.slice(0, 10) : undefined;

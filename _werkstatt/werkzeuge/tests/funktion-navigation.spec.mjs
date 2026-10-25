@@ -372,8 +372,9 @@ test.describe('Blog-Übersicht (/blog)', () => {
     await page.goto('/blog');
     await expect(karten(page).first()).toBeVisible();
     const gesamt = await karten(page).count();
-    // Name der Kategorie nach dem Seitentext (Abnahme E3-BAU-11: „und“ statt „&“, src/config/blog.js); Prüfung gleich streng
-    const kategorie = page.getByRole('button', { name: 'Pflege und Wert erhalten', exact: true });
+    // Name der Kategorie nach dem Seitentext (Abnahme E3-BAU-11: „und“ statt „&“, src/config/blog.js; seit E-062 vier Themen,
+    // der Pflegeartikel gehört zu „Fliesen und Pflege“); Prüfung gleich streng
+    const kategorie = page.getByRole('button', { name: 'Fliesen und Pflege', exact: true });
     await kategorie.click();
     await expect(kategorie).toHaveAttribute('aria-pressed', 'true');
     await expect(page.locator(`h3 a[href="${ARTIKEL}"]`)).toBeVisible();

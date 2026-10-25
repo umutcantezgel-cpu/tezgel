@@ -7,8 +7,6 @@ const post = {
     "excerpt": "Glatte, harte Böden bieten Hausstaubmilben wenig Lebensraum und lassen sich feucht wischen. Was Fliesen für Allergiker-Haushalte interessant macht und worauf Sie bei Fugen und Pflege achten sollten.",
     "category": "fliesen",
     "author": "Fliesenverlegung Tezgel",
-    "date": "24. September 2026",
-    "publishedAt": "2026-09-24T08:00:00+02:00",
     "readTime": "4 Min.",
     "image": "/images/bad/bad-glastuer.webp",
     "featured": false,

@@ -40,7 +40,7 @@ export default function Leitfaden({ post, lesezeit, anriss }) {
                 </div>
 
                 <div className="min-w-0 basis-full">
-                    <h2 className="text-fs-5 text-tinte">
+                    <h2 className="text-fs-5 text-tinte hyphens-auto">
                         <Link
                             href={`/blog/${post.slug}`}
                             data-motion="zustand"
@@ -56,7 +56,7 @@ export default function Leitfaden({ post, lesezeit, anriss }) {
                     </p>
 
                     <span className="mt-4 flex items-center gap-2 border-t border-fuge pt-4 font-text text-fs-2 font-semibold text-tinte">
-                        Vollständigen Leitfaden lesen
+                        <span className="underline decoration-strich underline-offset-4">Vollständigen Leitfaden lesen</span>
                         <Icon name="pfeil-rechts" groesse={5} />
                     </span>
                 </div>

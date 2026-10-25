@@ -17,7 +17,6 @@ const artikel = posts.slice(0, 5).map((p) => ({
   titel: p.title,
   anriss: p.excerpt,
   kategorie: categories.find((c) => c.id === p.category)?.name,
-  datum: p.date,
   lesezeit: p.readTime,
 }));
 

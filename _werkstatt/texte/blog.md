@@ -5,13 +5,13 @@
 ## Meta
 - Titel (56 Zeichen): `Fliesenratgeber für Badsanierung und Abdichtung | Tezgel`
 - Beschreibung (146 Zeichen): `Ratgeber und Praxiswissen vom Fliesenlegerfachbetrieb Tezgel aus Aßlar: Badsanierung, Fliesenverlegung und Abdichtung gegen Wasser nach DIN 18534.`
-- H1: `Fliesenratgeber für Badsanierung, Fliesenverlegung und Abdichtung`
+- H1: `Wir erklären Bad, Fliesen und Abdichtung.` (E-061/E-062: kurz, als Satz, in Hauptansichtsgröße; „Fliesenratgeber“ bleibt im Titel)
 - Suchbegriffe aus E0: Fliesen-Ratgeber, Badsanierung, Fliesenverlegung, DIN 18534, Abdichtung, Praxiswissen, Ratgeber, Fliesenleger-Fachbetrieb, Aßlar.
 
 ## 1 · Worum es geht
 - Brotkrumen: `Start › Ratgeber`
 - Ort: `Fliesenverlegung Tezgel aus Aßlar`
-- H1: `Fliesenratgeber für Badsanierung, Fliesenverlegung und Abdichtung`
+- H1: `Wir erklären Bad, Fliesen und Abdichtung.`
 - Vorspann: `Hier erklären wir Badsanierung und Fliesenverlegung in einfachen Worten, aus der Praxis unseres Fachbetriebs in Aßlar. Dazu gehört die [[abdichtung|Abdichtung]] im Bad.`
 - Hauptknopf: `Termin vor Ort anfragen` → `/kontakt`
 - Kontakt: `Anrufen: {{COMPANY_DATA.contact.phone}}`
@@ -22,16 +22,14 @@
 - Absatz: `Wie muss der [[untergrund|Untergrund]] sein? Was muss abgedichtet werden, und was kostet das? Hier finden Sie Antworten.` (Abnahme E3-BAU-11: erste Nennung von „Untergrund“ mit Erklärung, vor der Artikelliste)
 
 ## 3 · Was wir tun
-- H2: `Wir erklären jedes Thema einzeln.`
+- H2: `Alle Artikel auf einen Blick.` (E-061)
 - Absatz: `Jeder Artikel gehört zu einem Thema. Sie wählen ein Thema oder geben einen Begriff in die Suche ein.` (direkt darunter die Artikelliste mit Suche und Themen, Abnahme E3-BAU-11)
   - all: `Alle Artikel`
-  - bad: `Bad und Dusche` (Namen gelten so auch in `src/config/blog.js`, Abnahme E3-BAU-11)
-  - fliesen: `Fliesen und Material`
-  - untergrund: `Untergrund und Abdichtung`
+  - bad: `Bad und Dusche` (Namen gelten so auch in `src/config/blog.js`; seit E-062 vier Themen)
+  - fliesen: `Fliesen und Pflege`
   - aussen: `Balkon und Terrasse`
-  - pflege: `Pflege und Wert erhalten`
-  - ratgeber: `Ratgeber und Kosten`
-  - news: `Neuigkeiten`
+  - ratgeber: `Ratgeber und Neuigkeiten`
+  - Suchfeld: Beschriftung `Ratgeber durchsuchen`, Platzhalter `Suchen` (E-062)
 - Artikel handwerkerbonus-fliesenarbeiten: `Wer im eigenen Zuhause renoviert, kann einen Teil der Handwerkerkosten von der Steuer absetzen. Wir erklären, was bei Fliesenarbeiten zählt und worauf es bei der Rechnung ankommt.`
 - Artikel undichte-dusche-warnzeichen: `Woran erkennen Sie Feuchtigkeit hinter den Fliesen? Wir zeigen Warnzeichen wie dunkle Fugen, lose Fliesen oder einen muffigen Geruch und sagen, wie Sie richtig reagieren.`
 - Artikel feinsteinzeug-oder-naturstein-vergleich: `Welcher Belag passt besser, [[feinsteinzeug|Feinsteinzeug]] oder Naturstein? Wir vergleichen Optik, Pflege und Verlegung für Boden, Bad, Treppe und Terrasse.`
@@ -54,7 +52,7 @@
   3. `Verlegen und übergeben` · `Wir verlegen sauber und gehen am Ende alles gemeinsam mit Ihnen durch.`
 
 ## 5 · Beleg
-- H2: `So sieht unsere Arbeit aus.` (Abnahme E3-BAU-11, wie auf `/leistungen`)
+- H2: `Aus unserer Praxis.` (E-061: Abschnittstitel je Seite)
 - Foto `{Bild: start-galerie-1}` Alt: `Dusche ohne Stufe mit Sitzbank und Mosaikfliesen am Boden und an der Bank`
 - Satz: `Seit 2019 ist die Abdichtung nach [[din-18534|DIN 18534]] bei uns Standard. Seit 2008 sind wir als Handwerksbetrieb bei der Handwerkskammer Wiesbaden eingetragen.`
 - Stimme `{Stimme: c-wolf}` Quelle: `Google`

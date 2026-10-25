@@ -56,7 +56,7 @@ const BlogCard = ({ post, lesezeit, anriss }) => {
                 </Kennzeile>
 
                 <div className="min-w-0 basis-full md:mt-2">
-                    <h3 className="text-fs-4 text-tinte">
+                    <h3 className="text-fs-4 text-tinte hyphens-auto">
                         <Link
                             href={`/blog/${post.slug}`}
                             data-motion="zustand"
@@ -71,7 +71,7 @@ const BlogCard = ({ post, lesezeit, anriss }) => {
                     </p>
 
                     <span className="mt-4 flex items-center gap-2 font-text text-fs-2 font-semibold text-tinte">
-                        Artikel lesen
+                        <span className="underline decoration-strich underline-offset-4">Artikel lesen</span>
                         <Icon name="pfeil-rechts" groesse={5} />
                     </span>
                 </div>

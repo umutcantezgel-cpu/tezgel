@@ -7,8 +7,6 @@ const post = {
     "excerpt": "R9 bis R13, A bis C: die Rutschhemmungsklassen nach DIN EN 16165 verständlich erklärt. Wo sie Pflicht sind, was im Privathaus empfehlenswert ist und warum rutschfest nicht schwer zu reinigen sein muss.",
     "category": "fliesen",
     "author": "Fliesenverlegung Tezgel",
-    "date": "24. September 2026",
-    "publishedAt": "2026-09-24T08:00:00+02:00",
     "readTime": "5 Min.",
     "image": "/images/bad/walk-in-dusche.webp",
     "featured": false,
