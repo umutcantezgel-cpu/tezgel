@@ -1,0 +1,37 @@
+== v0 n1 22:47:13
+Bildprobe v0: 200 0.027940
+  mobil: perf 91 [90–94] · LCP 3433 ms [3008–3469] · TBT 124 ms [83–134] · CLS 0 [0–0] · LCP-Element div.mx-auto > figure > div.border > img.block
+  mobil: perf 95 [95–95] · LCP 2865 ms [2863–2872] · TBT 98 ms [94–106] · CLS 0 [0–0] · LCP-Element div.mx-auto > figure > div.border > img.block
+  mobil: perf 94 [94–94] · LCP 3013 ms [3010–3070] · TBT 78 ms [64–79] · CLS 0 [0–0] · LCP-Element div.relative > section.relative > div.mx-auto > p.mt-8
+  mobil: perf 80 [80–81] · LCP 4615 ms [4527–4643] · TBT 205 ms [194–215] · CLS 0 [0–0] · LCP-Element div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block
+== v1 n1 22:50:16
+Bildprobe v1: 200 0.139888
+  mobil: perf 93 [91–93] · LCP 3014 ms [2939–3015] · TBT 154 ms [111–200] · CLS 0 [0–0] · LCP-Element div.mx-auto > figure > div.border > img.block
+  mobil: perf 92 [89–94] · LCP 3158 ms [2933–3393] · TBT 132 ms [126–196] · CLS 0 [0–0] · LCP-Element div.mx-auto > figure > div.border > img.block
+  mobil: perf 91 [90–95] · LCP 3072 ms [2859–3281] · TBT 171 ms [114–192] · CLS 0 [0–0] · LCP-Element div.relative > section.relative > div.mx-auto > p.mt-8
+  mobil: perf 78 [77–79] · LCP 4678 ms [4670–4750] · TBT 261 ms [209–308] · CLS 0 [0–0] · LCP-Element div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block
+== v0 n2 22:53:26
+Bildprobe v0: 200 0.025677
+  mobil: perf 92 [90–92] · LCP 3157 ms [3008–3462] · TBT 143 ms [137–176] · CLS 0 [0–0] · LCP-Element div.mx-auto > figure > div.border > img.block
+  mobil: perf 91 [91–91] · LCP 3387 ms [3385–3392] · TBT 115 ms [108–118] · CLS 0 [0–0] · LCP-Element div.mx-auto > figure > div.border > img.block
+  mobil: perf 91 [90–94] · LCP 3422 ms [3073–3460] · TBT 98 ms [83–111] · CLS 0 [0–0] · LCP-Element div.relative > section.relative > div.mx-auto > p.mt-8
+  mobil: perf 82 [81–83] · LCP 4533 ms [4457–4605] · TBT 153 ms [140–191] · CLS 0 [0–0] · LCP-Element div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block
+== v1 n2 22:58:00
+Bildprobe v1: 200 0.029262
+  mobil: perf 90 [89–91] · LCP 3448 ms [3380–3449] · TBT 151 ms [96–177] · CLS 0 [0–0] · LCP-Element div.mx-auto > figure > div.border > img.block
+  mobil: perf 92 [91–94] · LCP 3138 ms [2934–3311] · TBT 130 ms [116–137] · CLS 0 [0–0] · LCP-Element div.mx-auto > figure > div.border > img.block
+  mobil: perf 93 [89–95] · LCP 3010 ms [2858–3304] · TBT 142 ms [79–207] · CLS 0 [0–0] · LCP-Element div.relative > section.relative > div.mx-auto > p.mt-8
+  mobil: perf 80 [80–81] · LCP 4752 ms [4675–4758] · TBT 182 ms [155–187] · CLS 0 [0–0] · LCP-Element div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block
+== v0 n3 23:01:04
+Bildprobe v0: 200 0.026479
+  mobil: perf 94 [94–95] · LCP 3009 ms [2865–3010] · TBT 114 ms [107–119] · CLS 0 [0–0] · LCP-Element div.mx-auto > figure > div.border > img.block
+  mobil: perf 91 [91–94] · LCP 3387 ms [2867–3389] · TBT 114 ms [102–119] · CLS 0 [0–0] · LCP-Element div.mx-auto > figure > div.border > img.block
+  mobil: perf 93 [88–95] · LCP 3237 ms [2860–3432] · TBT 91 ms [61–202] · CLS 0 [0–0] · LCP-Element div.relative > section.relative > div.mx-auto > p.mt-8
+  mobil: perf 81 [79–82] · LCP 4654 ms [4533–4659] · TBT 205 ms [149–244] · CLS 0 [0–0] · LCP-Element div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block
+== v1 n3 23:04:06
+Bildprobe v1: 200 0.028044
+  mobil: perf 90 [89–92] · LCP 3458 ms [3212–3473] · TBT 124 ms [109–176] · CLS 0 [0–0] · LCP-Element div.mx-auto > figure > div.border > img.block
+  mobil: perf 89 [87–93] · LCP 3376 ms [2932–3378] · TBT 175 ms [141–258] · CLS 0 [0–0] · LCP-Element div.mx-auto > figure > div.border > img.block
+  mobil: perf 89 [87–93] · LCP 3542 ms [3069–3599] · TBT 147 ms [134–198] · CLS 0 [0–0] · LCP-Element div.relative > section.relative > div.mx-auto > p.mt-8
+  mobil: perf 80 [79–82] · LCP 4673 ms [4665–4687] · TBT 199 ms [121–220] · CLS 0 [0–0] · LCP-Element div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block
+ENDE 23:07:10

@@ -495,3 +495,40 @@ Pakete E0-PRUEF-01, -02a bis -02d und die unabhängige Abnahme E0-PRUEF-02-PA si
 - **Verworfen:** IMG_2559 (Baustellenradio, Schrift am Fenster), IMG_2585 (Estrich, kein Bad mit Wanne), IMG_2593 (Montageelement), IMG_2607 (Wanne ohne Armatur), IMG_2579 (Installationsbox), IMG_2584 (Badteppich, falscher Alt-Text), IMG_2536 als Einstieg (dunkel, bemooster Sichtschutz).
 - **Offen:** `/fliesen` Verband zeigt weiter zwei Fotos (IMG_2544, IMG_2563 Baustelle); die Fliesenkompositionen als Ersatz kommen nur nach Rückfrage (echte Fotos gehen vor, K-012). Die Galerie bei 200 % Schrift (Teil der PLAN-Zeile) folgt mit der Browserprüfung. Bildplatzliste: `_werkstatt/bildplaetze.md`, Fassung 2.
 - **Prüfung:** Typprüfung, Linter der geänderten Dateien und `npm test` (210 von 210) grün. Die Webfassungen entstanden in 8 s mit niedrigster Priorität und einem Rechenkern, während die Versuchsreihe E4-W0-LEISTUNG-2 zwischen zwei Messungen stand. Die Browserprüfung der Seiten folgt nach der Messreihe.
+
+## E-064 · E4-W0-LEISTUNG-2: Versuchsreihe zum simulierten LCP ohne Gewinn, nichts übernommen; V1 und Wetzlar sauber nachgemessen (25.10.2026, Orchestrator)
+- **Versuchsreihe** (wf_8cd70d56-c1f, Briefing `pakete/E4-W0-LEISTUNG-2.md`, nur Kopien von 5ef34982, Port 4313):
+  - V1 CSS im Dokument, V2 Schrift ohne Vorladen (eine Teilmenge ging mit den vorhandenen Werkzeugen nicht), V3 LCP-Foto ohne Platzhalter, V4 und V4a Inseln später, V4c Banner-Stück später (ändert Verhalten, nur gemessen), V5 kleineres Dokument, V6 Kombination.
+  - Keine Änderung bringt eine Seite unter 2.500 ms oder senkt die Mediane belastbar.
+  - Einziger Kandidat war V4a (Seitenwechsel B-01 erst nach `load` oder bei der ersten Bewegung laden).
+- **Unabhängige Nachmessung** (frische Kopien A und B): Sie bestätigt V4a nicht.
+  - Auf den Seiten mit Bild als LCP −70 bis −80 ms. Das ist kleiner als die Streuung der Basis.
+  - Auf `/standorte/wetzlar` +51 ms.
+  - TBT steigt auf den drei Seiten mit Bild als LCP.
+  - Die Skripte insgesamt werden nicht kleiner, das nachgeladene Stück fällt noch in die Messung.
+  - Darstellung pixelgleich, der Banner unverändert.
+  - Entscheidung: nicht übernommen, weil der Nutzen nicht belegt ist und die Nebenwirkung bleibt (ein Klick vor dem Laden wechselt ohne Fliesen).
+- **V1 sauber nachgemessen** (Zusage an den Auftraggeber nach der gestörten ersten Messung; Kopie neu gebaut, abwechselnd mit V0, je 9 Läufe, ohne andere Last, `belege/e4/leistung-2/nachmessung-v1.log`):
+
+  | Seite | V0 Mittel | V1 Mittel | Differenz |
+  |---|---|---|---|
+  | `/bad` | 3.158 ms | 3.265 ms | +107 |
+  | `/bad/badsanierung` | 3.156 ms | 3.173 ms | +17; die tiefe Klasse rückt von 2.865 auf 2.933 |
+  | `/fliesen` | 3.175 ms | 3.177 ms | ±0 |
+  | `/standorte/wetzlar` | 4.581 ms | 4.701 ms | +120; jeder V1-Lauf über dem V0-Median |
+
+  - TBT überall +27 bis +65 ms.
+  - Grund: Das Dokument wächst um rund 39 KB komprimiert, und das CSS lässt sich nicht mehr cachen.
+  - Entscheidung: V1 wird nicht umgesetzt.
+- **`/standorte/wetzlar` neu gemessen** (statt der gestörten Messung aus E4-W0-LEISTUNG-1): Stand 5ef34982 hat 4.485 ms (n=15, Versuchsleiter) und 4.605 ms (n=9, eigene Reihe).
+  - LCP-Element ist der Text des Einwilligungsbanners (er erscheint 400 ms nach dem Einhängen, G8), beobachtet bei rund 840 ms.
+  - Davor stehen im Graphen React DOM, die Next-Laufzeit und rund 150 KB RSC-Vorabrufe der sichtbaren Links.
+- **Was die Reihe erklärt** (Lantern-Zerlegung, `belege/e4/leistung-2/`):
+  - Der simulierte LCP springt bei gleichem Build zwischen drei Klassen (auf `/bad` rund 2.865, 3.150 und 3.460 ms). Er liegt in der hohen Klasse, wenn React DOM und Laufzeit vor dem beobachteten Malen des LCP ausgewertet werden.
+  - In der tiefen Klasse begrenzt nur die Bandbreite: Dokument rund 910 ms, danach alle vor dem LCP angefragten Dateien, auf `/bad` rund 224 KB, etwa 9 ms je KB.
+  - Das Budget 2.500 ms verlangt in der tiefen Klasse rund 45 KB weniger vor dem LCP.
+- **Folge:**
+  - Z-08 bleibt nicht bestanden.
+  - Nächster Schritt ist E4-W0-LEISTUNG-3 (`pakete/E4-W0-LEISTUNG-3.md`): Bytes vor dem LCP senken ohne Verhaltensänderung. Kandidaten sind das Logo in zweiter Größe, schmalere Importe in den frühen Skriptstücken und Archivo als Teilmenge mit beiden Achsen. Die Schrift-Teilmenge ist jetzt möglich, weil fonttools und brotli im Scratchpad-venv wieder bereitstehen, wie in E0.
+  - Reihenfolge: erst die Browserprüfung der Welle am Reinraum, dann LEISTUNG-3, damit sich Messungen und Prüfungen nicht gegenseitig stören.
+
