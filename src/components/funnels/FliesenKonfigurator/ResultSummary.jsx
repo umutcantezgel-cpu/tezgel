@@ -64,7 +64,7 @@ export default function ResultSummary({ data }) {
                             <strong className="font-semibold text-tinte">Treppe (netto):</strong> Trittstufen <span className="whitespace-nowrap font-mono">{fmt(stairs.treadArea, 2)} m²</span>
                             {stairs.withRisers && <> + Setzstufen <span className="whitespace-nowrap font-mono">{fmt(stairs.riserArea, 2)} m²</span></>} ={' '}
                             <strong className="whitespace-nowrap font-mono font-normal text-tinte">{fmt(stairs.total, 2)} m²</strong>. Bei Treppen nennen wir
-                            bewusst keinen Zuschlag für Verschnitt, weil der stark von Format und Größe der Stufen abhängt.
+                            bewusst keinen Zuschlag für Verschnitt, weil der stark von Format und Maß der Stufen abhängt.
                         </li>
                     )}
                     {stairs && !stairs.valid && (

@@ -260,7 +260,7 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
                             <span>
                                 <span className="sr-only">Hinweis: </span>
                                 Blockstufen sind eine massive Bauart, meist aus Naturstein oder Betonwerkstein. Sie werden auf ein
-                                Fundament gesetzt. Sie sind kein Belag für eine bestehende Treppe. Stückzahl und Maße klären wir
+                                Fundament oder in ein Mörtelbett gesetzt. Sie sind kein Belag für eine bestehende Treppe. Stückzahl und Maße klären wir
                                 beim Termin vor Ort.
                             </span>
                         </p>

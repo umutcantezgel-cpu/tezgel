@@ -185,7 +185,8 @@ test.describe('Termin-Formular (F-08) auf /termin', () => {
       await page.locator('#termin-phone').fill(`0170 ${String(Date.now()).slice(-7)}`);
       await termin(page).getByRole('checkbox').check();
       await termin(page).getByRole('button', { name: /Termin online anfragen/ }).click();
-      const ref = page.getByText(/Vorgangs-Nr\.: TEZ-\d{2}-[A-Z0-9]+/);
+      // ein Wort für die Nummer in allen Formularen (E3-WERKZEUG-TEXTE, „Vorgangsnummer“ statt „Vorgangs-Nr.“); gleich streng
+      const ref = page.getByText(/Vorgangsnummer: TEZ-\d{2}-[A-Z0-9]+/);
       await expect(ref).toBeVisible();
       const id = (await ref.textContent()).match(/TEZ-\d{2}-[A-Z0-9]+/)[0];
       expect(istEchteReferenz(id)).toBe(true);

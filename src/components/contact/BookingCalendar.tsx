@@ -2,7 +2,7 @@
 
 // Terminkalender (E2-ORCH-09, Arbeitsansicht): Tage und Zeitfenster als Auswahlfelder an der Fuge, Formular mit
 // verknüpften Labels. Logik aus useTerminKalender (F-07, gemeinsam mit der Kern-Ansicht): Tage erst im Browser und je
-// Kalender festgehalten (V-02, P4-05d). Nutzlast, Texte und getestete Namen unverändert.
+// Kalender festgehalten (V-02, P4-05d). Nutzlast und getestete Namen unverändert.
 import React from 'react';
 import Link from 'next/link';
 import Icon from '@/components/icons/Icon';
@@ -17,6 +17,14 @@ export interface BookingCalendarProps {
   initialServiceType?: string;
   onBookingConfirmed?: (data: { date: string; timeSlot: string; name: string; phone: string }) => void;
 }
+
+// Anzeige der Leistung in Alltagssprache (E3-WERKZEUG-TEXTE); gesendet wird weiter `initialServiceType` unverändert
+// (Nutzlast, Mail an den Betrieb, funktion-termin.spec.mjs).
+const LEISTUNG_ANZEIGE: Record<string, string> = {
+  'Kostenfreies Vor-Ort-Aufmaß & Schadensanalyse': 'Wir messen aus und sehen uns Schäden an',
+  'Kostenfreies Vor-Ort-Aufmaß & Beratung': 'Wir messen aus und beraten Sie',
+};
+const anzeigeLeistung = (leistung: string) => LEISTUNG_ANZEIGE[leistung] ?? leistung;
 
 /**
  * 2-Step Self-Hosted Appointment Booking Calendar
@@ -60,7 +68,7 @@ export function BookingCalendar({
         </p>
         <div className="mt-6 border-t border-fuge pt-6 font-mono text-fs-2 text-tinte">
           <div className="font-text font-semibold">Termindetails:</div>
-          <div className="mt-2">&bull; Leistung: {initialServiceType}</div>
+          <div className="mt-2">&bull; Leistung: {anzeigeLeistung(initialServiceType)}</div>
           <div>&bull; Datum und Zeit: {formattedDate}, ca. {selectedTime} Uhr</div>
           {contactData.zipCity && <div>&bull; Ort: {contactData.zipCity}</div>}
           {referenceId && <div>&bull; Vorgangsnummer: <span className="border border-fuge bg-kalk px-2 py-1">{referenceId}</span></div>}
@@ -82,7 +90,7 @@ export function BookingCalendar({
             <span>Kostenfrei bei Ihnen vor Ort</span>
           </span>
           <h3 className="mt-3 text-fs-5 text-tinte">
-            {initialServiceType}
+            {anzeigeLeistung(initialServiceType)}
           </h3>
           <p className="mt-2 text-fs-2 text-tinte-2">
             Inhaber Deniz Tezgel berät Sie persönlich und misst bei Ihnen vor Ort.
@@ -260,11 +268,11 @@ export function BookingCalendar({
                 className="mt-1 size-5 shrink-0 cursor-pointer rounded-r1 border border-strich accent-tinte"
               />
               <label htmlFor="booking-consent" className="cursor-pointer text-fs-2 text-tinte-2">
-                Ich bin einverstanden, dass wir mich zur Terminabstimmung kontaktieren. Mehr dazu in der{' '}
+                Ich stimme der Kontaktaufnahme zur Terminabstimmung gemäß{' '}
                 <Link href="/datenschutz" className={linkKlassen}>
                   Datenschutzerklärung
-                </Link>
-                .
+                </Link>{' '}
+                zu.
               </label>
             </div>
 

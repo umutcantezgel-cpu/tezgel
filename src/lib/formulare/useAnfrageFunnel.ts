@@ -15,35 +15,35 @@ export const PROJECT_TYPES = [
   {
     id: 'bad',
     title: 'Bad & Wellness',
-    subtitle: 'Walk-In-Dusche, Großformate, Ablagenischen',
+    subtitle: 'Bodengleiche Dusche, große Fliesen, Nischen für Ablagen',
     icon: Droplets,
     badge: 'Sehr beliebt'
   },
   {
     id: 'wohnen',
     title: 'Wohnbereich & Neubau',
-    subtitle: 'Feinsteinzeug, Küche, Diele & Flure',
+    subtitle: 'Küche, Flur und Wohnräume',
     icon: Sparkles,
     badge: 'Großformat'
   },
   {
     id: 'balkon',
     title: 'Balkon & Terrasse',
-    subtitle: '2-cm-Keramikplatten auf Stelzlagern',
+    subtitle: 'Frostfeste Platten für draußen',
     icon: Sun,
     badge: 'Frostsicher'
   },
   {
     id: 'treppe',
     title: 'Treppen & Naturstein',
-    subtitle: 'Granit, Naturstein & Treppenstufen',
+    subtitle: 'Stufen mit Fliesen, Granit oder Naturstein',
     icon: Layers,
     badge: 'Präzision'
   },
   {
     id: 'untergrund',
     title: 'Untergrund & Abdichtung',
-    subtitle: 'Estrichausgleich & DIN 18534 Verbundabdichtung',
+    subtitle: 'Boden ausgleichen, Bad abdichten (DIN 18534)',
     icon: ShieldCheck,
     badge: 'DIN-Norm'
   }

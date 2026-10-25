@@ -100,7 +100,7 @@ export default function TerminPage() {
                                     </span>
                                     {referenceId && (
                                         <span className="border border-fuge bg-kalk px-2 py-1 font-mono text-fs-1 text-tinte">
-                                            Vorgangs-Nr.: {referenceId}
+                                            Vorgangsnummer: {referenceId}
                                         </span>
                                     )}
                                 </div>

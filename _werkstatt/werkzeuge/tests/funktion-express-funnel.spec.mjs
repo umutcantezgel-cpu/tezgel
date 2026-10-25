@@ -9,7 +9,8 @@ const SEITE = '/kontakt';
 const ORTE = ['/kontakt', '/leistungen', '/foerderung', '/leistungen/bad'];
 
 // Bedienelemente (Rollen, sichtbare Texte, IDs der Felder).
-const SCHRITT_TITEL = { 1: 'Welches Projekt planen Sie?', 2: 'Fläche, Zeitraum & Ort', 3: 'Kontaktdaten & Absenden' };
+// Schritttitel in Alltagssprache (E3-WERKZEUG-TEXTE, „und“ statt „&“); weiter exakt geprüft
+const SCHRITT_TITEL = { 1: 'Welches Projekt planen Sie?', 2: 'Fläche, Zeitraum und Ort', 3: 'Ihre Kontaktdaten' };
 const schrittAnzeige = (page, n) => page.getByText(`Schritt ${n}: ${SCHRITT_TITEL[n]}`, { exact: true });
 const weiterZu = (page, n) => page.getByRole('button', { name: new RegExp(`^Weiter zu Schritt ${n}:`) });
 const projekt = (page, titel) => page.getByRole('button', { name: new RegExp(titel) });

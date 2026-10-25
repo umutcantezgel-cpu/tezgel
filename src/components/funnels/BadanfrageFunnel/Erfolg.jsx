@@ -23,7 +23,7 @@ export default function Erfolg({ handleNewRequest, referenceId, formData, calcul
                 </span>
                 {referenceId && (
                     <span className="border border-fuge bg-kalk px-2 py-1 font-mono text-fs-1 text-tinte">
-                        Ihre Nummer: {referenceId}
+                        Vorgangsnummer: {referenceId}
                     </span>
                 )}
             </div>

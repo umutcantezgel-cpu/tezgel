@@ -88,8 +88,8 @@ export const CITY_HUB_DATA: Record<string, CityHubMetadata> = {
       const d = calculateEstimatedDriveTime(0);
       return { driveTimeMinutes: d.minutes, driveTimeText: d.text };
     })(),
-    services: ["Badsanierung", "Großformatfliesen", "Fliesenreparatur", "Balkon & Terrasse"],
-    tagline: "Firmensitz & Meister-Erfahrung – schnellste Reaktionszeit für Ihr Projekt.",
+    services: ["Badsanierung", "Große Fliesen", "Fliesenreparatur", "Balkon und Terrasse"],
+    tagline: "Hier in Aßlar ist unser Betrieb. Von hier aus fahren wir zu Ihnen.",
   },
   wetzlar: {
     slug: "wetzlar",
@@ -100,8 +100,8 @@ export const CITY_HUB_DATA: Record<string, CityHubMetadata> = {
       const d = calculateEstimatedDriveTime(5);
       return { driveTimeMinutes: d.minutes, driveTimeText: d.text };
     })(),
-    services: ["Komplettbäder", "Barrierefreie Duschen", "XXL-Großformat", "Treppensanierung"],
-    tagline: "Täglich auf Baustellen in Wetzlar & Stadtteilen für anspruchsvolle Fliesenarbeiten.",
+    services: ["Badsanierung", "Bodengleiche Duschen", "Große Fliesen", "Treppen"],
+    tagline: "Wetzlar liegt gleich neben Aßlar. Wir sind schnell bei Ihnen.",
   },
   giessen: {
     slug: "giessen",
@@ -112,8 +112,8 @@ export const CITY_HUB_DATA: Record<string, CityHubMetadata> = {
       const d = calculateEstimatedDriveTime(25);
       return { driveTimeMinutes: d.minutes, driveTimeText: d.text };
     })(),
-    services: ["Badsanierung schlüsselfertig", "Wohnraumfliesen", "Stelzlager-Terrassen", "Naturstein"],
-    tagline: "Zuverlässiger Fachbetrieb für Gießen, Kleinlinden, Wieseck & Umgebung.",
+    services: ["Badsanierung", "Fliesen im Wohnraum", "Terrassen auf Stelzlagern", "Naturstein"],
+    tagline: "Wir arbeiten in Gießen und in den Stadtteilen, zum Beispiel in Kleinlinden und Wieseck.",
   },
   marburg: {
     slug: "marburg",
@@ -124,8 +124,8 @@ export const CITY_HUB_DATA: Record<string, CityHubMetadata> = {
       const d = calculateEstimatedDriveTime(40);
       return { driveTimeMinutes: d.minutes, driveTimeText: d.text };
     })(),
-    services: ["Fugenlose Bäder", "DIN 18534 Abdichtung", "Terrassenbeläge", "Altbausanierung"],
-    tagline: "Komplettservice für Marburg & Landkreis Marburg-Biedenkopf mit Festpreisgarantie.",
+    services: ["Badsanierung", "Abdichtung im Bad", "Terrassen", "Sanierung im Altbau"],
+    tagline: "Auch in Marburg und im Landkreis Marburg-Biedenkopf sind wir für Sie da.",
   },
   limburg: {
     slug: "limburg",
@@ -136,8 +136,8 @@ export const CITY_HUB_DATA: Record<string, CityHubMetadata> = {
       const d = calculateEstimatedDriveTime(35);
       return { driveTimeMinutes: d.minutes, driveTimeText: d.text };
     })(),
-    services: ["Bäder aus einer Hand", "Walk-In-Duschen", "Großformate", "Balkonsanierung"],
-    tagline: "Höchste Verlegepräzision für Limburg, Weilburg und das Lahntal.",
+    services: ["Bäder aus einer Hand", "Bodengleiche Duschen", "Große Fliesen", "Balkone"],
+    tagline: "Wir arbeiten auch in Limburg, in Weilburg und im Lahntal.",
   },
   "bad-nauheim": {
     slug: "bad-nauheim",
@@ -148,8 +148,8 @@ export const CITY_HUB_DATA: Record<string, CityHubMetadata> = {
       const d = calculateEstimatedDriveTime(40);
       return { driveTimeMinutes: d.minutes, driveTimeText: d.text };
     })(),
-    services: ["Designbäder", "Naturstein & Marmor", "Feinsteinzeug", "Terrassenplatten"],
-    tagline: "Premium-Fliesenverlegung in Bad Nauheim und der Wetterau.",
+    services: ["Badsanierung", "Naturstein und Marmor", "Feinsteinzeug", "Terrassenplatten"],
+    tagline: "Wir arbeiten auch in Bad Nauheim und in der Wetterau.",
   },
   friedberg: {
     slug: "friedberg",
@@ -160,8 +160,8 @@ export const CITY_HUB_DATA: Record<string, CityHubMetadata> = {
       const d = calculateEstimatedDriveTime(45);
       return { driveTimeMinutes: d.minutes, driveTimeText: d.text };
     })(),
-    services: ["Badsanierung", "Neubau-Fliesenarbeiten", "Estrich-Vorbereitung", "Treppenbeläge"],
-    tagline: "Termintreue & saubere Ausführung mit Staubschutz in Friedberg.",
+    services: ["Badsanierung", "Fliesen im Neubau", "Untergrund vorbereiten", "Treppen"],
+    tagline: "Auch in Friedberg schützen wir bewohnte Räume vor Staub.",
   },
   butzbach: {
     slug: "butzbach",
@@ -172,8 +172,8 @@ export const CITY_HUB_DATA: Record<string, CityHubMetadata> = {
       const d = calculateEstimatedDriveTime(35);
       return { driveTimeMinutes: d.minutes, driveTimeText: d.text };
     })(),
-    services: ["Küche & Wohnbereich", "Bäder modernisieren", "Fugensanierung", "Terrassen"],
-    tagline: "Ihr regionaler Fliesenleger-Fachbetrieb für Butzbach & Umgebung.",
+    services: ["Küche und Wohnbereich", "Bäder erneuern", "Fugen erneuern", "Terrassen"],
+    tagline: "Wir sind auch in Butzbach und Umgebung für Sie da.",
   },
   herborn: {
     slug: "herborn",
@@ -184,8 +184,8 @@ export const CITY_HUB_DATA: Record<string, CityHubMetadata> = {
       const d = calculateEstimatedDriveTime(20);
       return { driveTimeMinutes: d.minutes, driveTimeText: d.text };
     })(),
-    services: ["Komplettbäder", "Großformatverlegung", "Verbundabdichtung", "Balkone"],
-    tagline: "Kurze Anfahrtswege für Herborn, Sinn, Merkenbach & Dilltal.",
+    services: ["Badsanierung", "Große Fliesen", "Abdichtung unter den Fliesen", "Balkone"],
+    tagline: "Wir arbeiten in Herborn, Sinn, Merkenbach und im Dilltal.",
   },
   dillenburg: {
     slug: "dillenburg",
@@ -196,8 +196,8 @@ export const CITY_HUB_DATA: Record<string, CityHubMetadata> = {
       const d = calculateEstimatedDriveTime(25);
       return { driveTimeMinutes: d.minutes, driveTimeText: d.text };
     })(),
-    services: ["Barrierefreie Bäder", "Treppensanierung", "Fliesenreparatur", "Außentreppen"],
-    tagline: "Fachgerechte Verlegung nach DIN 18534 in Dillenburg & Umgebung.",
+    services: ["Barrierefreie Bäder", "Treppen im Haus", "Fliesenreparatur", "Außentreppen"],
+    tagline: "In Dillenburg dichten wir Bäder nach der Norm für Bäder ab (DIN 18534).",
   },
   haiger: {
     slug: "haiger",
@@ -208,8 +208,8 @@ export const CITY_HUB_DATA: Record<string, CityHubMetadata> = {
       const d = calculateEstimatedDriveTime(30);
       return { driveTimeMinutes: d.minutes, driveTimeText: d.text };
     })(),
-    services: ["Badsanierung", "Wohnflächen", "Balkonplatten", "Reparaturservice"],
-    tagline: "Zuverlässiger Partner für Fliesen- & Sanierungsarbeiten in Haiger.",
+    services: ["Badsanierung", "Wohnräume", "Balkonplatten", "Reparaturen"],
+    tagline: "Wir übernehmen in Haiger Fliesenarbeiten und Sanierungen.",
   },
   braunfels: {
     slug: "braunfels",
@@ -220,8 +220,8 @@ export const CITY_HUB_DATA: Record<string, CityHubMetadata> = {
       const d = calculateEstimatedDriveTime(10);
       return { driveTimeMinutes: d.minutes, driveTimeText: d.text };
     })(),
-    services: ["Badsanierung", "Großformat", "Naturstein", "Terrassensanierung"],
-    tagline: "Direkte Nachbarschaft zu Aßlar – schnell vor Ort für persönliches Aufmaß.",
+    services: ["Badsanierung", "Große Fliesen", "Naturstein", "Terrassen"],
+    tagline: "Braunfels liegt nah bei Aßlar. Zum Termin vor Ort sind wir schnell bei Ihnen.",
   },
   solms: {
     slug: "solms",
@@ -232,8 +232,8 @@ export const CITY_HUB_DATA: Record<string, CityHubMetadata> = {
       const d = calculateEstimatedDriveTime(8);
       return { driveTimeMinutes: d.minutes, driveTimeText: d.text };
     })(),
-    services: ["Komplettbäder", "Bodenfliesen", "Fliesenreparatur", "Stelzlager"],
-    tagline: "In wenigen Minuten vor Ort für Ihr Bauvorhaben in Solms, Burgsolms & Oberbiel.",
+    services: ["Badsanierung", "Bodenfliesen", "Fliesenreparatur", "Terrassen auf Stelzlagern"],
+    tagline: "Wir sind schnell bei Ihnen in Solms, Burgsolms und Oberbiel.",
   },
 };
 

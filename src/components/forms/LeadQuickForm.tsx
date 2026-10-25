@@ -286,7 +286,7 @@ export function LeadQuickForm({
             className={clsx(kontrollKlassen, einwilligungFehlt && 'outline-2 outline-offset-2 outline-laser-tief focus-visible:outline-tinte')}
           />
           <label htmlFor={`consent-${sourceTag}`} className="cursor-pointer text-fs-2 text-tinte">
-            Ich bin einverstanden, dass meine Daten zur Kontaktaufnahme verarbeitet werden. Mehr dazu in der{' '}
+            Ich willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. Hinweise in der{' '}
             <Link href="/datenschutz" className={clsx(linkKlassen, 'py-1')}>
               Datenschutzerklärung
             </Link>

@@ -72,7 +72,7 @@ export function ServiceKurzprofil({ selectedSlug }: { selectedSlug: string }) {
         <div className="flex max-w-mass flex-col gap-3">
           <div className="flex flex-wrap items-center gap-3">
             <span className={etikettKlassen}>
-              {currentCity.distanceKm === 0 ? "Firmensitz & Meister-Erfahrung" : `Einsatzgebiet ${currentCity.name}`}
+              {currentCity.distanceKm === 0 ? "Firmensitz" : `Einsatzgebiet ${currentCity.name}`}
             </span>
             <span className={etikettKlassen}>
               <Icon name="uhr" groesse={4} />
@@ -101,7 +101,7 @@ export function ServiceKurzprofil({ selectedSlug }: { selectedSlug: string }) {
 
         <div className="flex shrink-0 flex-col gap-3 sm:flex-row lg:flex-col">
           <a href="/kontakt#express-anfrage" className={knopfKlassen("haupt", "w-full sm:w-auto")} data-motion="druck">
-            <span>Kostenloses Vor-Ort-Aufmaß</span>
+            <span>Termin vor Ort anfragen</span>
             <Icon name="pfeil-rechts" groesse={4} />
           </a>
 

@@ -1,4 +1,4 @@
-STATUS · Branch claude/tezgel-website-redesign-iqxt8z · Etappe E3/E5 · Welle E3-W2 (Werkzeugtexte, strukturierte Daten) · Pflicht 68/418 laut PLAN (Zeilen der Wellen E3-BAU, E3-GRAF, E3-RUHE, B-01 werden beim Tor E3 nachgetragen) · Kür 0/8 · Kriterien 0/14 (Abnahme am Tor) · Ausnahmen 1 (Traumbad, E-048) · Bestand grün (Funktionssuite 304/26/0, npm test 201/201) · Nächster Schritt: Abnahme E3-WERKZEUG-TEXTE und E3-SEO-JSONLD, dann E3-BLOG-TITEL und Reinraum
+STATUS · Branch claude/tezgel-website-redesign-iqxt8z · Etappe E3/E5 · Welle E3-W2 abgenommen (Werkzeugtexte E-051, strukturierte Daten E-050) · Pflicht 70/418 laut PLAN (Zeilen der Wellen E3-BAU, E3-GRAF, E3-RUHE, B-01 werden beim Tor E3 nachgetragen) · Kür 0/8 · Kriterien 0/14 (Abnahme am Tor) · Ausnahmen 1 (Traumbad, E-048) · Bestand grün (npm test 201/201, Funktionsspecs der Formulare grün) · Nächster Schritt: E3-SEO-META und E3-BLOG-TITEL, dann Reinraum und Funktionssuite gegen den Produktionsbau
 
 # STATUS · Lauf „Verständlich, echt, ausgezeichnet“
 
