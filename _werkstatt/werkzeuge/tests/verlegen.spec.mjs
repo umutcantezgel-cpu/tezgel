@@ -1,10 +1,12 @@
 // Ablauftest B-01 „Verlegen“ (KERN K-007, E-010, E-017, E-043, E-047), Paket E2-PRUEF-04. Prüft Zustandsfolge (data-zustand),
 // Adresse, Fokus, Scroll, Sperre (inert), Ausnahmen, Zurück und Vor, reduzierte Bewegung und Layoutverschiebung, dazu den
 // Ablauf Fliese für Fliese (E-043: von rechts belegen, in derselben Richtung einzeln abnehmen) und das Logo auf der Wand
-// (E-047, Fall 23; reduziert in Fall 12).
+// (E-047, Fall 23; reduziert in Fall 12). Gegenprüfung E3-B01: Bildlaufleiste sichtbar (23b), Logo bei Zurück und Vor (24),
+// Fokus nach dem Abbruch (19b), Tastatur im Abnehmen (25), Drehen beim Legen (26), Anker auf einer anderen Seite (27).
 // Keine Wartezeiten: Zustände protokolliert ein MutationObserver im Dokument, abgefragt wird nur der Zustand.
 // Projekte mobil (390 px) und desktop (1440 px) aus playwright.config.mjs. Server: RELAUNCH_BASE (127.0.0.1:4320).
 // Gegenprobe: VERLEGEN_GEGENPROBE=1 setzt in Fall (1) data-kein-verlegen am genutzten Link; Fall (1) muss dann scheitern.
+import { chromium } from '@playwright/test';
 import { test, expect, bedienbar } from './fixtures.mjs';
 import { installSperre, setzeEinwilligung } from '../lib.mjs';
 
@@ -150,21 +152,137 @@ async function ohneWechsel(page, href, ab) {
   expect.soft(await zustand(page)).toBe('ruhe');
 }
 
-/** Nächster interner Link im Inhalt, der bei 400 px Scroll vollständig im Sichtfeld liegt. */
+/** Nächster interner Link im Inhalt, der bei 400 px Scroll vollständig im Sichtfeld liegt. Liegt dort keiner (der Aufbau der
+ *  Seite hat sich geändert), rückt der erste sichtbare Link aus ZIELE unterhalb von 400 px in die Mitte der Ansicht; die
+ *  Scrollstellung bleibt damit über 400 px, die Wiederherstellung wird weiter geprüft. Liefert Link und Scrollstellung. */
 async function linkImSichtfeld(page) {
-  const treffer = await page.evaluate((kandidaten) => {
-    const h = window.innerHeight;
-    return (
-      kandidaten.find((k) =>
-        [...document.querySelectorAll(`#main-content a[href="${k}"]`)].some((el) => {
-          const r = el.getBoundingClientRect();
-          return el.getClientRects().length > 0 && r.top >= 0 && r.bottom <= h;
-        }),
-      ) ?? null
-    );
-  }, ZIELE);
-  expect(treffer, 'interner Link im Sichtfeld bei 400 px').not.toBeNull();
-  return treffer;
+  const imBild = () =>
+    page.evaluate((kandidaten) => {
+      const h = window.innerHeight;
+      return (
+        kandidaten.find((k) =>
+          [...document.querySelectorAll(`#main-content a[href="${k}"]`)].some((el) => {
+            const r = el.getBoundingClientRect();
+            return el.getClientRects().length > 0 && r.top >= 0 && r.bottom <= h;
+          }),
+        ) ?? null
+      );
+    }, ZIELE);
+  let treffer = await imBild();
+  if (!treffer) {
+    const tiefer = await page.evaluate((kandidaten) => {
+      for (const k of kandidaten) {
+        const el = [...document.querySelectorAll(`#main-content a[href="${k}"]`)].find((a) => a.getClientRects().length > 0 && a.getBoundingClientRect().top > 0);
+        if (el) {
+          el.scrollIntoView({ block: 'center', behavior: 'instant' });
+          return k;
+        }
+      }
+      return null;
+    }, ZIELE);
+    if (tiefer) treffer = await imBild();
+  }
+  expect(treffer, 'interner Link im Sichtfeld bei 400 px oder darunter').not.toBeNull();
+  return { ziel: treffer, scroll: await page.evaluate(() => window.scrollY) };
+}
+
+/** Nimmt je Bild ab dem Verlassen von ruhe bis zurück in ruhe auf: Zustand, Deckkraft und Größe des Logos, Lage des Bilds,
+ *  Fläche der Schicht (die Ansicht ohne Bildlaufleiste, Gegenprüfung E3-B01, Befund 2) und Breite der Bildlaufleiste. */
+async function logoAufnahme(page) {
+  await page.evaluate(() => {
+    const v = (window.__logo = []);
+    const schicht = document.querySelector('.verlegen');
+    const behaelter = document.querySelector('.verlegen-logo');
+    const bild1 = () => {
+      const z = schicht.dataset.zustand;
+      if (z !== 'ruhe' || v.length) {
+        const bild = behaelter.querySelector('img');
+        const s = bild ? getComputedStyle(bild) : null;
+        const m = s && s.transform !== 'none' ? new DOMMatrixReadOnly(s.transform) : null;
+        const r = bild?.getBoundingClientRect();
+        const flaeche = schicht.getBoundingClientRect();
+        v.push({
+          t: performance.now(),
+          z,
+          deckt: bild ? Number(s.opacity) * Number(getComputedStyle(behaelter).opacity) : 0,
+          groesse: m ? Math.hypot(m.a, m.b) : 1,
+          geladen: !!bild && bild.complete && bild.naturalWidth > 0,
+          natur: bild ? [bild.naturalWidth, bild.naturalHeight] : null,
+          box: r ? { x: r.left, y: r.top, b: r.width, h: r.height } : null,
+          ansicht: [flaeche.width, flaeche.height],
+          leiste: window.innerWidth - document.documentElement.clientWidth,
+        });
+      }
+      if (!(v.length > 1 && z === 'ruhe')) requestAnimationFrame(bild1);
+    };
+    requestAnimationFrame(bild1);
+  });
+}
+
+/** Aufnahme des Logos, sobald die Schicht wieder in ruhe ist. */
+async function logoProtokoll(page) {
+  await expect.poll(() => page.evaluate(() => window.__logo.length > 1 && window.__logo.at(-1).z === 'ruhe')).toBe(true);
+  return page.evaluate(() => window.__logo);
+}
+const logoKurz = (b) => b.map((e) => `${e.z} ${Math.round(e.t)} ${e.deckt.toFixed(2)} ${e.groesse.toFixed(3)}`).join(' | ');
+
+/** Fall (23): Klick auf START nach ZIEL, das Logo auf der Wand gegen E-047; mittig gemessen an der Fläche der Schicht. */
+async function pruefeLogo(page) {
+  await oeffne(page);
+  const link = linkZu(page, ZIEL);
+  await bedienbar(link);
+  expect.soft(await page.locator('.verlegen img').count(), 'vor dem ersten Wechsel kein Bild in der Schicht (kein LCP-Kandidat)').toBe(0);
+  await beobachte(page);
+  const ab = await laenge(page);
+  await logoAufnahme(page);
+  await link.click();
+  await warteAufRuhe(page, ab);
+  const b = await logoProtokoll(page);
+  const protokoll = logoKurz(b);
+  const legen = b.filter((e) => e.z === 'legen');
+  expect.soft(Math.max(0, ...legen.map((e) => e.deckt)), 'beim Legen ist noch kein Logo zu sehen').toBeLessThan(0.01);
+  const erstesBedeckt = b.find((e) => e.z === 'bedeckt');
+  expect(erstesBedeckt, 'Zustand bedeckt erreicht').toBeTruthy();
+  expect.soft(erstesBedeckt.geladen, 'Logo-Bild geladen, sobald der Boden liegt').toBe(true);
+  // Aufklatschen: von größer und durchsichtig auf 1 und deckend
+  expect.soft(b.some((e) => e.z === 'bedeckt' && e.deckt > 0.01 && e.groesse > 1.01), `Logo kommt größer an (${protokoll})`).toBe(true);
+  const voll = b.filter((e) => (e.z === 'bedeckt' || e.z === 'warten') && e.deckt > 0.99 && Math.abs(e.groesse - 1) < 0.001);
+  expect(voll.length, `Logo deckend in voller Größe (${protokoll})`).toBeGreaterThan(0);
+  expect.soft(voll.some((e) => e.z === 'bedeckt'), 'Logo sichtbar in bedeckt').toBe(true);
+  const f = voll[0];
+  // Fläche der Schicht, nicht innerWidth: bei sichtbarer Bildlaufleiste ist die Ansicht um deren Breite schmaler
+  const [breite, hoehe] = f.ansicht;
+  // für das Auge mittig: die Mitte des sichtbaren Inhalts der Datei (12 bis 587 von 640 px, LOGO_INHALT_MITTE in raster.ts)
+  expect.soft(Math.abs(f.box.x + f.box.b * ((12 + 587) / 2 / 640) - breite / 2), `waagrecht mittig für das Auge (± 1 px, Fläche ${breite} px, Leiste ${f.leiste} px)`).toBeLessThanOrEqual(1);
+  expect.soft(Math.abs(f.box.y + f.box.h / 2 - hoehe / 2), 'senkrecht mittig (± 1 px)').toBeLessThanOrEqual(1);
+  expect.soft(Math.abs(f.box.b / f.box.h - 3.2), `unverzerrt wie die Datei 640 × 200 (${f.box.b} × ${f.box.h})`).toBeLessThan(0.02);
+  expect.soft(Number.isInteger(f.box.x) && Number.isInteger(f.box.y) && Number.isInteger(f.box.b), `ganze Pixel (${JSON.stringify(f.box)})`).toBe(true);
+  expect.soft(f.natur, 'Bilddatei in 640 × 200 (nicht kleiner als angezeigt bei einfacher Pixeldichte)').toEqual([640, 200]);
+  expect.soft(f.box.b, 'Logo nicht breiter als die Datei').toBeLessThanOrEqual(640);
+  expect.soft(f.box.b, 'Logo groß genug (mobil 60 % der Breite, sonst 352 px)').toBeGreaterThanOrEqual(breite < 600 ? 0.6 * breite : 352);
+  // Mindestzeit: vom ersten deckenden Bild bis zum ersten Bild, in dem es wieder schwächer wird
+  const iVoll = b.indexOf(f);
+  const weg = b.slice(iVoll).find((e) => e.deckt < 0.99);
+  expect(weg, 'Logo geht wieder').toBeTruthy();
+  expect.soft(weg.t - f.t, `Logo steht mindestens ${LOGO_STEHEN} ms deckend (${protokoll})`).toBeGreaterThanOrEqual(LOGO_STEHEN - BILD);
+  expect.soft(weg.z, 'Logo geht erst mit dem Abnehmen').toBe('abnehmen');
+  // geht mit den ersten abgenommenen Fliesen: spätestens 200 ms (und ein Bild) nach dem Beginn des Abnehmens ganz weg
+  const abnehmen = b.find((e) => e.z === 'abnehmen');
+  const fort = b.find((e) => e.z === 'abnehmen' && e.deckt < 0.01);
+  expect(fort, 'Logo beim Abnehmen ganz weg').toBeTruthy();
+  expect.soft(fort.t - abnehmen.t, `Logo weg ${LOGO_WEG} ms nach Beginn des Abnehmens (± 2 Bilder)`).toBeLessThanOrEqual(LOGO_WEG + 2 * BILD);
+  expect.soft(b.at(-1).deckt, 'in ruhe kein Logo').toBe(0);
+  expect.soft(await pfad(page)).toBe(ZIEL);
+  return b;
+}
+
+/** Ein langsames Ziel: Antworten auf ZIEL (RSC, auch das Vorladen) kommen erst nach 4,5 s, der Wechsel bricht nach 3 s ab. */
+async function langsamesZiel(page) {
+  await page.route('**/*', async (route) => {
+    const url = new URL(route.request().url());
+    if (url.pathname.replace(/\/+$/, '') === ZIEL && url.searchParams.has('_rsc')) await new Promise((r) => setTimeout(r, 4500));
+    await route.continue().catch(() => undefined);
+  });
 }
 
 test.describe('Bewegung an (Wechsel mit Fliesen)', () => {
@@ -414,13 +532,14 @@ test.describe('Bewegung an (Wechsel mit Fliesen)', () => {
     await oeffne(page);
     await page.evaluate(() => window.scrollTo({ top: 400, behavior: 'instant' }));
     await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThanOrEqual(398);
-    const ziel = await linkImSichtfeld(page);
+    const { ziel, scroll } = await linkImSichtfeld(page);
+    expect.soft(scroll, 'Scroll vor dem Klick mindestens 400 px').toBeGreaterThanOrEqual(398);
     const link = linkZu(page, ziel);
     await bedienbar(link);
     await beobachte(page);
     const ab = await wechsel(page, () => link.click(), ziel);
     const vor = (await log(page))[ab];
-    expect.soft(Math.abs(vor.scroll - 400), 'Scroll vor dem Klick (400 px ± 2)').toBeLessThanOrEqual(2);
+    expect.soft(Math.abs(vor.scroll - scroll), `Scroll vor dem Klick (${scroll} px ± 2)`).toBeLessThanOrEqual(2);
     expect.soft(ohneWarten(folge(await log(page), ab))).toEqual(VOLL);
     const ab2 = await wechsel(page, () => page.goBack(), START);
     const l = await log(page);
@@ -546,6 +665,8 @@ test.describe('Bewegung an (Wechsel mit Fliesen)', () => {
     const sollScroll = erwartet === ZIEL ? scrollZiel : scrollStart;
     expect.soft(Math.abs((await page.evaluate(() => window.scrollY)) - sollScroll), `${fall}: Scroll wie beim Verlassen (${sollScroll} ± 2)`).toBeLessThanOrEqual(2);
     await expect.soft(page.locator('#main-content h1'), `${fall}: Fokus auf der H1`).toBeFocused();
+    // Einstieg der Seite aus dem Verlauf im Endzustand (Gegenprüfung E3-B01, Befund 6: ausVerlauf darf nicht verloren gehen)
+    await expect.soft(page.locator('html'), `${fall}: k-verlauf`).toHaveClass(/k-verlauf/);
     expect.soft(await zustand(page)).toBe('ruhe');
     return { ...vor, adresse, weiter };
   }
@@ -627,87 +748,145 @@ test.describe('Bewegung an (Wechsel mit Fliesen)', () => {
   });
 
   test('(23) Logo auf der Wand (E-047): erst wenn der Boden liegt, mittig, geladen, unverzerrt, klatscht von größer auf, steht in bedeckt mindestens 450 ms deckend und geht mit dem Abnehmen; vor dem ersten Wechsel kein Bild in der Schicht', async ({ page }) => {
+    await pruefeLogo(page);
+  });
+
+  test('(24) Zurück und Vor: das Logo klatscht ganz auf (deckend in voller Größe), bevor abgenommen wird, statt nach 0,2 s halb aufgeklatscht zu verblassen (Gegenprüfung E3-B01, Befund 1)', async ({ page }) => {
+    await oeffne(page);
+    await beobachte(page);
+    await wechsel(page, () => linkZu(page, ZIEL).click(), ZIEL);
+    for (const [richtung, aktion, ziel] of [
+      ['Zurück', () => page.goBack(), START],
+      ['Vor', () => page.goForward(), ZIEL],
+    ]) {
+      await logoAufnahme(page);
+      const ab = await wechsel(page, aktion, ziel);
+      const b = await logoProtokoll(page);
+      const iVoll = b.findIndex((e) => e.deckt > 0.99 && Math.abs(e.groesse - 1) < 0.001);
+      const iAb = b.findIndex((e) => e.z === 'abnehmen');
+      expect.soft(iVoll, `${richtung}: Logo deckend in voller Größe (${logoKurz(b)})`).toBeGreaterThanOrEqual(0);
+      expect.soft(iAb, `${richtung}: Fliesen abgenommen`).toBeGreaterThan(0);
+      // im ersten Bild des Abnehmens hat das Ausblenden des Logos gerade erst begonnen (Deckkraft noch 1)
+      expect.soft(iVoll >= 0 && iVoll <= iAb, `${richtung}: ganz aufgeklatscht, bevor es mit den Fliesen geht (${logoKurz(b)})`).toBe(true);
+      expect.soft(ohneWarten(folge(await log(page), ab)), `${richtung}: Folge`).toEqual(VOLL);
+    }
+  });
+
+  test('(25) Tastatur während des Abnehmens: Enter auf einem Link der neuen Seite wird vorgemerkt, der Wechsel dorthin folgt, sobald die Schicht frei ist (Gegenprüfung E3-B01, Befund 4)', async ({ page }) => {
     await oeffne(page);
     const link = linkZu(page, ZIEL);
     await bedienbar(link);
-    expect.soft(await page.locator('.verlegen img').count(), 'vor dem ersten Wechsel kein Bild in der Schicht (kein LCP-Kandidat)').toBe(0);
     await beobachte(page);
     const ab = await laenge(page);
-    // je Bild ab dem Verlassen von ruhe bis zurück in ruhe: Zustand, Deckkraft und Größe des Logos, Lage des Bilds
-    await page.evaluate(() => {
-      const v = (window.__logo = []);
-      const schicht = document.querySelector('.verlegen');
-      const behaelter = document.querySelector('.verlegen-logo');
-      const bild1 = () => {
-        const z = schicht.dataset.zustand;
-        if (z !== 'ruhe' || v.length) {
-          const bild = behaelter.querySelector('img');
-          const s = bild ? getComputedStyle(bild) : null;
-          const m = s && s.transform !== 'none' ? new DOMMatrixReadOnly(s.transform) : null;
-          const r = bild?.getBoundingClientRect();
-          v.push({
-            t: performance.now(),
-            z,
-            deckt: bild ? Number(s.opacity) * Number(getComputedStyle(behaelter).opacity) : 0,
-            groesse: m ? Math.hypot(m.a, m.b) : 1,
-            geladen: !!bild && bild.complete && bild.naturalWidth > 0,
-            natur: bild ? [bild.naturalWidth, bild.naturalHeight] : null,
-            box: r ? { x: r.left, y: r.top, b: r.width, h: r.height } : null,
-            ansicht: [window.innerWidth, window.innerHeight],
-          });
-        }
-        if (!(v.length > 1 && z === 'ruhe')) requestAnimationFrame(bild1);
-      };
-      requestAnimationFrame(bild1);
-    });
     await link.click();
+    await page.waitForFunction(() => document.querySelector('.verlegen')?.dataset.zustand === 'abnehmen', null, { polling: 'raf', timeout: 10_000 });
+    // Fokus auf einen Link der neuen Seite (wie nach Tab von der H1) und den Stand im Augenblick des Klicks merken
+    const weiter = await page.evaluate((ziele) => {
+      const el = ziele.map((z) => [...document.querySelectorAll(`#main-content a[href="${z}"]`)].find((a) => a.getClientRects().length > 0)).find(Boolean);
+      if (!el) return null;
+      el.focus({ preventScroll: true });
+      const schicht = document.querySelector('.verlegen');
+      document.addEventListener(
+        'click',
+        (e) => {
+          window.__enter = { z: schicht.dataset.zustand, detail: e.detail, href: e.target.closest?.('a')?.getAttribute('href') ?? null };
+        },
+        { capture: true, once: true },
+      );
+      return el.getAttribute('href');
+    }, ['/bad/barrierefreies-bad', '/bad/fliesen', '/bad/bad-aus-einer-hand', '/bad/musterbaeder', '/kontakt', '/bad']);
+    expect(weiter, 'interner Link auf der neuen Seite').not.toBeNull();
+    await page.keyboard.press('Enter');
+    expect(await page.evaluate(() => window.__enter), 'Enter kam als Klick der Tastatur an, während abgenommen wurde').toEqual({ z: 'abnehmen', detail: 0, href: weiter });
+    await expect.poll(() => pfad(page), { timeout: 15_000 }).toBe(weiter);
+    await warteAufRuhe(page, (await laenge(page)) - 1);
+    expect.soft(ohneWarten(folge(await log(page), ab)), 'zwei vollständige Wechsel').toEqual([...VOLL, ...VOLL]);
+    await expect.soft(page.locator('#main-content h1')).toBeFocused();
+  });
+
+  test('(26) Drehen während des Legens: der Boden deckt danach die ganze neue Ansicht, das Logo steht in ihrer Mitte (Gegenprüfung E3-B01, Befund 5)', async ({ page }) => {
+    await oeffne(page);
+    const link = linkZu(page, ZIEL);
+    await bedienbar(link);
+    await beobachte(page);
+    const ab = await laenge(page);
+    const vorher = page.viewportSize();
+    await link.click();
+    await page.waitForFunction(() => document.querySelector('.verlegen')?.dataset.zustand === 'legen', null, { polling: 'raf', timeout: 5000 });
+    await page.setViewportSize({ width: vorher.height, height: vorher.width });
+    // je Bild, sobald der Boden liegt: Punkte der Schicht im Raster von 37 px (dazu die Ecken), die keine deckende Fliese trifft
+    const stand = await page
+      .waitForFunction(
+        () => {
+          const s = document.querySelector('.verlegen');
+          const z = s.dataset.zustand;
+          if (z === 'legen') return false;
+          const r = s.getBoundingClientRect();
+          const punkte = [[r.width - 1, 1], [1, r.height - 1], [r.width - 1, r.height - 1]];
+          for (let y = 1; y < r.height; y += 37) for (let x = 1; x < r.width; x += 37) punkte.push([x, y]);
+          const offen = punkte.filter(
+            ([x, y]) =>
+              !document.elementsFromPoint(x, y).some((el) => {
+                const f = el.closest('.verlegen-fliese');
+                return !!f && Number(getComputedStyle(f).opacity) > 0.99;
+              }),
+          );
+          const l = s.querySelector('.verlegen-logo').getBoundingClientRect();
+          const ergebnis = { z, ansicht: [r.width, r.height], punkte: punkte.length, offen: offen.length, erster: offen[0] ?? null, logo: { x: l.left, y: l.top, b: l.width, h: l.height } };
+          // liegt der Boden, aber deckt (noch) nicht: weiter abfragen, bis er deckt oder abgenommen wird
+          if ((z === 'bedeckt' || z === 'warten') && offen.length > 0) return false;
+          return ergebnis;
+        },
+        null,
+        { polling: 'raf', timeout: 10_000 },
+      )
+      .then((h) => h.jsonValue());
+    expect.soft(stand.ansicht, 'Schicht hat die neue Größe').toEqual([vorher.height, vorher.width]);
+    expect.soft(['bedeckt', 'warten'], `Boden deckt, solange er liegt (${JSON.stringify(stand)})`).toContain(stand.z);
+    expect.soft(stand.offen, `nicht gedeckte Punkte (${JSON.stringify(stand)})`).toBe(0);
+    const [breite, hoehe] = stand.ansicht;
+    expect.soft(Math.abs(stand.logo.x + stand.logo.b * ((12 + 587) / 2 / 640) - breite / 2), `Logo waagrecht mittig in der neuen Ansicht (${JSON.stringify(stand.logo)})`).toBeLessThanOrEqual(1);
+    expect.soft(Math.abs(stand.logo.y + stand.logo.h / 2 - hoehe / 2), 'Logo senkrecht mittig in der neuen Ansicht').toBeLessThanOrEqual(1);
     await warteAufRuhe(page, ab);
-    await expect.poll(() => page.evaluate(() => window.__logo.at(-1)?.z)).toBe('ruhe');
-    const b = await page.evaluate(() => window.__logo);
-    const kurz = (e) => `${e.z} ${Math.round(e.t)} ${e.deckt.toFixed(2)} ${e.groesse.toFixed(3)}`;
-    const protokoll = b.map(kurz).join(' | ');
-    const legen = b.filter((e) => e.z === 'legen');
-    expect.soft(Math.max(0, ...legen.map((e) => e.deckt)), 'beim Legen ist noch kein Logo zu sehen').toBeLessThan(0.01);
-    const erstesBedeckt = b.find((e) => e.z === 'bedeckt');
-    expect(erstesBedeckt, 'Zustand bedeckt erreicht').toBeTruthy();
-    expect.soft(erstesBedeckt.geladen, 'Logo-Bild geladen, sobald der Boden liegt').toBe(true);
-    // Aufklatschen: von größer und durchsichtig auf 1 und deckend
-    expect.soft(b.some((e) => e.z === 'bedeckt' && e.deckt > 0.01 && e.groesse > 1.01), `Logo kommt größer an (${protokoll})`).toBe(true);
-    const voll = b.filter((e) => (e.z === 'bedeckt' || e.z === 'warten') && e.deckt > 0.99 && Math.abs(e.groesse - 1) < 0.001);
-    expect(voll.length, `Logo deckend in voller Größe (${protokoll})`).toBeGreaterThan(0);
-    expect.soft(voll.some((e) => e.z === 'bedeckt'), 'Logo sichtbar in bedeckt').toBe(true);
-    const f = voll[0];
-    const [breite, hoehe] = f.ansicht;
-    // für das Auge mittig: die Mitte des sichtbaren Inhalts der Datei (12 bis 587 von 640 px, LOGO_INHALT_MITTE in raster.ts)
-    expect.soft(Math.abs(f.box.x + f.box.b * ((12 + 587) / 2 / 640) - breite / 2), 'waagrecht mittig für das Auge (± 1 px)').toBeLessThanOrEqual(1);
-    expect.soft(Math.abs(f.box.y + f.box.h / 2 - hoehe / 2), 'senkrecht mittig (± 1 px)').toBeLessThanOrEqual(1);
-    expect.soft(Math.abs(f.box.b / f.box.h - 3.2), `unverzerrt wie die Datei 640 × 200 (${f.box.b} × ${f.box.h})`).toBeLessThan(0.02);
-    expect.soft(Number.isInteger(f.box.x) && Number.isInteger(f.box.y) && Number.isInteger(f.box.b), `ganze Pixel (${JSON.stringify(f.box)})`).toBe(true);
-    expect.soft(f.natur, 'Bilddatei in 640 × 200 (nicht kleiner als angezeigt bei einfacher Pixeldichte)').toEqual([640, 200]);
-    expect.soft(f.box.b, 'Logo nicht breiter als die Datei').toBeLessThanOrEqual(640);
-    expect.soft(f.box.b, 'Logo groß genug (mobil 60 % der Breite, sonst 352 px)').toBeGreaterThanOrEqual(breite < 600 ? 0.6 * breite : 352);
-    // Mindestzeit: vom ersten deckenden Bild bis zum ersten Bild, in dem es wieder schwächer wird
-    const iVoll = b.indexOf(f);
-    const weg = b.slice(iVoll).find((e) => e.deckt < 0.99);
-    expect(weg, 'Logo geht wieder').toBeTruthy();
-    expect.soft(weg.t - f.t, `Logo steht mindestens ${LOGO_STEHEN} ms deckend (${protokoll})`).toBeGreaterThanOrEqual(LOGO_STEHEN - BILD);
-    expect.soft(weg.z, 'Logo geht erst mit dem Abnehmen').toBe('abnehmen');
-    // geht mit den ersten abgenommenen Fliesen: spätestens 200 ms (und ein Bild) nach dem Beginn des Abnehmens ganz weg
-    const abnehmen = b.find((e) => e.z === 'abnehmen');
-    const fort = b.find((e) => e.z === 'abnehmen' && e.deckt < 0.01);
-    expect(fort, 'Logo beim Abnehmen ganz weg').toBeTruthy();
-    expect.soft(fort.t - abnehmen.t, `Logo weg ${LOGO_WEG} ms nach Beginn des Abnehmens (± 2 Bilder)`).toBeLessThanOrEqual(LOGO_WEG + 2 * BILD);
-    expect.soft(b.at(-1).deckt, 'in ruhe kein Logo').toBe(0);
+    expect.soft(ohneWarten(folge(await log(page), ab))).toEqual(VOLL);
     expect.soft(await pfad(page)).toBe(ZIEL);
+  });
+
+  test('(27) Link mit Anker auf eine andere Seite (/standorte → /kontakt#express-anfrage): Ansicht und Fokus am Ankerziel, der erste Tab geht von dort weiter (Gegenprüfung E3-B01, Befund 7)', async ({ page }) => {
+    await page.goto('/kontakt'); // aufwärmen: der Entwicklungsserver kompiliert beim ersten Aufruf
+    await oeffne(page, '/standorte');
+    const link = page.locator('#main-content a[href="/kontakt#express-anfrage"]').filter({ visible: true }).first();
+    await bedienbar(link);
+    await link.scrollIntoViewIfNeeded();
+    await beobachte(page);
+    const ab = await wechsel(page, () => link.click(), '/kontakt');
+    expect.soft(ohneWarten(folge(await log(page), ab))).toEqual(VOLL);
+    const stand = await page.evaluate(() => {
+      const ziel = document.getElementById('express-anfrage');
+      const aktiv = document.activeElement;
+      const r = ziel?.getBoundingClientRect();
+      return {
+        hash: location.hash,
+        imZiel: !!ziel && !!aktiv && (aktiv === ziel || ziel.contains(aktiv)),
+        aktiv: aktiv ? aktiv.tagName + (aktiv.id ? `#${aktiv.id}` : '') : null,
+        sichtbar: !!r && r.top < window.innerHeight && r.bottom > 0,
+      };
+    });
+    expect.soft(stand.hash).toBe('#express-anfrage');
+    expect.soft(stand.sichtbar, 'Ansicht am Ankerziel').toBe(true);
+    expect.soft(stand.imZiel, `Fokus im Ankerziel statt auf der H1 (${stand.aktiv})`).toBe(true);
+    await page.keyboard.press('Tab');
+    const nachTab = await page.evaluate(() => {
+      const ziel = document.getElementById('express-anfrage');
+      const aktiv = document.activeElement;
+      return { weiter: !!ziel && !!aktiv && !!(ziel.compareDocumentPosition(aktiv) & Node.DOCUMENT_POSITION_FOLLOWING), aktiv: aktiv?.outerHTML.slice(0, 80) ?? null };
+    });
+    expect.soft(nachTab.weiter, `erster Tab im Ankerziel oder dahinter, nicht zurück an den Anfang (${nachTab.aktiv})`).toBe(true);
   });
 
   test('(19) Abbruch nach 3 s (Zielseite antwortet nicht): der Boden blendet aus statt in einem Bild zu verschwinden, danach erscheint die Seite', async ({ page }) => {
     // vor dem Laden: auch das Vorladen des Links im Sichtfeld wartet, die Navigation hängt also sicher länger als 3 s
-    await page.route('**/*', async (route) => {
-      const url = new URL(route.request().url());
-      if (url.pathname.replace(/\/+$/, '') === ZIEL && url.searchParams.has('_rsc')) await new Promise((r) => setTimeout(r, 4500));
-      await route.continue().catch(() => undefined);
-    });
+    await langsamesZiel(page);
     await oeffne(page);
     await beobachte(page);
     const ab = await laenge(page);
@@ -738,6 +917,48 @@ test.describe('Bewegung an (Wechsel mit Fliesen)', () => {
     expect.soft(imAbbruch.some((e) => e.schicht > 0.05 && e.schicht < 0.95), 'Schicht blendet über Zwischenwerte aus').toBe(true);
     expect.soft(Math.min(...imAbbruch.map((e) => e.fliesen)), 'Fliesen liegen, solange die Schicht ausblendet').toBeGreaterThan(0);
     await expect.poll(() => pfad(page), { timeout: 10_000 }).toBe(ZIEL);
+  });
+
+  test('(19b) Abbruch nach 3 s, dann kommt die Seite doch: Fokus auf ihrer H1 statt auf body (Gegenprüfung E3-B01, Befund 3)', async ({ page }) => {
+    await langsamesZiel(page);
+    await oeffne(page);
+    await beobachte(page);
+    const ab = await laenge(page);
+    const link = linkZu(page, ZIEL);
+    await bedienbar(link);
+    await link.click();
+    await expect.poll(async () => (await log(page)).slice(ab).map((e) => e.z).join(' '), { timeout: 15_000 }).toContain('abbruch');
+    await warteAufRuhe(page, ab);
+    await expect.poll(() => pfad(page), { timeout: 10_000 }).toBe(ZIEL);
+    await expect(page.locator('#main-content h1')).toBeFocused();
+  });
+});
+
+// Sichtbare Bildlaufleiste (Gegenprüfung E3-B01, Befund 2): Playwright blendet sie sonst aus (--hide-scrollbars), dann fiele
+// ein Logo, das nach innerWidth statt nach der Fläche der Schicht mittig steht, nicht auf. launchOptions gelten je Worker und
+// sind in einem describe nicht erlaubt, darum ein eigener Browser ohne den Schalter, mit Anfragesperre wie die Fixtures.
+test.describe('Bildlaufleiste sichtbar', () => {
+  test('(23b) Logo mittig in der Fläche der Schicht, auch mit sichtbarer Bildlaufleiste', async ({}, testInfo) => {
+    test.skip(testInfo.project.name === 'mobil', 'mobil liegt die Bildlaufleiste über dem Inhalt (keine Breite)');
+    const base = process.env.RELAUNCH_BASE || 'http://127.0.0.1:4310';
+    const browser = await chromium.launch({ executablePath: process.env.CHROME_PATH || undefined, ignoreDefaultArgs: ['--hide-scrollbars'] });
+    try {
+      const ctx = await browser.newContext({
+        baseURL: base,
+        locale: 'de-DE',
+        timezoneId: 'Europe/Berlin',
+        viewport: testInfo.project.use.viewport,
+        reducedMotion: 'no-preference',
+      });
+      await installSperre(ctx);
+      await setzeEinwilligung(ctx, 'abgelehnt', base);
+      const page = await ctx.newPage();
+      await page.emulateMedia({ reducedMotion: 'no-preference' });
+      const b = await pruefeLogo(page);
+      expect(b[0].leiste, 'Bildlaufleiste sichtbar (Breite in px)').toBeGreaterThan(0);
+    } finally {
+      await browser.close();
+    }
   });
 });
 

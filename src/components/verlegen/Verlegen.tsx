@@ -9,7 +9,7 @@
 // Leerlauf geladen.
 // Klicks fängt ein Lauscher in der Capture-Phase ab (next/link prüft danach e.defaultPrevented und navigiert nicht selbst),
 // dann folgt router.push in startTransition. Zurück und Vor: gespiegelt mit 70 % der Dauer, Weg nach ZURUECK.
-import { startTransition, useEffect, useRef } from 'react';
+import { startTransition, useEffect, useLayoutEffect, useRef } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { pruefeKlick } from '@/lib/verlegen/linkfilter';
 import { LASER_NACH, RUHE, WARTEN_HOECHSTENS, schritt, type Aktion, type Ereignis, type Lage } from '@/lib/verlegen/automat';
@@ -21,6 +21,7 @@ import {
   LOGO_GROESSE_START,
   LOGO_WEG,
   logoHalt,
+  logoHaltVerlauf,
   logoMass,
   stueckplan,
   verlegeRaster,
@@ -57,6 +58,9 @@ let auftrag = 0;
 /** Zurück oder Vor kam, während die Fliesen schon abgenommen wurden: das Ereignis lief ohne Boden an Next, Scroll und Fokus
  *  setzt der Pfad-Effekt. */
 let verlaufOhneBoden = false;
+/** Der Boden blendete nach 3 s aus (Abbruch), die Navigation lief weiter: Kommt die Seite doch noch, setzt der Pfad-Effekt den
+ *  Fokus, bei Zurück und Vor auch die gemerkte Scrollstellung (Gegenprüfung E3-B01, Befund 3); null: kein Abbruch offen. */
+let nachAbbruch: 'vor' | 'verlauf' | null = null;
 
 // Auf Modulebene, also vor dem popstate-Lauscher des App Routers (useEffect): sichert die Reihenfolge auch in
 // Firefox vor 116, das Lauscher am Ziel nach Registrierung statt nach Phase ordnet (Gutachten E0-GUT-01, Frage 3).
@@ -338,25 +342,40 @@ function sperre(an: boolean): void {
   for (const el of ziele) if (el) (el as HTMLElement).inert = an;
 }
 
-function fokussiereUeberschrift(): void {
-  const h1 = document.querySelector<HTMLElement>('#main-content h1');
-  if (!h1) return;
-  if (!h1.hasAttribute('tabindex')) h1.setAttribute('tabindex', '-1');
-  h1.focus({ preventScroll: true });
+/** Element zum Anker der Adresse (#id), falls es auf der Seite steht. */
+function ankerziel(): HTMLElement | null {
+  if (location.hash.length < 2) return null;
+  try {
+    return document.getElementById(decodeURIComponent(location.hash.slice(1)));
+  } catch {
+    return null; // fehlerhaft kodierter Anker
+  }
 }
 
-interface Belag {
+/** Fokus auf die neue Seite: auf das Ankerziel, wenn die Adresse eines nennt (die Ansicht steht dort, der erste Tab geht von
+ *  dort weiter statt von der H1 ganz oben; Gegenprüfung E3-B01, Befund 7), sonst auf die H1. Ohne Scroll; nicht fokussierbare
+ *  Ziele bekommen tabindex -1 (Links und Felder behalten ihren Platz in der Tab-Folge). */
+function fokussiereUeberschrift(): void {
+  const ziel = ankerziel() ?? document.querySelector<HTMLElement>('#main-content h1');
+  if (!ziel) return;
+  if (ziel.tabIndex < 0 && !ziel.hasAttribute('tabindex')) ziel.setAttribute('tabindex', '-1');
+  ziel.focus({ preventScroll: true });
+}
+
+/** Fläche der festen Schicht in px: die Ansicht ohne Bildlaufleiste (innerWidth zählt eine sichtbare Leiste mit). */
+interface Ansicht {
   breite: number;
   hoehe: number;
+}
+
+interface Belag extends Ansicht {
   mass: Mass;
   fliesen: Fliese[];
   elemente: HTMLElement[];
 }
 
-/** Baut den Belag für die aktuelle Ansicht (nur bei neuer Größe neu). */
-function baueBelag(boden: HTMLElement, alt: Belag | null): Belag {
-  const breite = window.innerWidth;
-  const hoehe = window.innerHeight;
+/** Baut den Belag für eine Ansicht (nur bei neuer Größe neu). */
+function baueBelag(boden: HTMLElement, alt: Belag | null, { breite, hoehe }: Ansicht): Belag {
   if (alt && alt.breite === breite && alt.hoehe === hoehe) return alt;
   const { mass, fliesen } = verlegeRaster(breite, hoehe);
   const elemente = fliesen.map((f) => {
@@ -403,6 +422,7 @@ export default function Verlegen() {
     if (!schicht || !boden || !laser || !blende || !logo) return;
 
     let lage: Lage = RUHE;
+    let ansicht: Ansicht = { breite: 0, hoehe: 0 };
     let belag: Belag | null = null;
     let takte: Stuecktakt[] = [];
     let ruhig = false;
@@ -417,6 +437,8 @@ export default function Verlegen() {
     const logoLauf: Animation[] = [];
     let logoNummer = 0;
     let angefordert = false;
+    /** Link, den die Tastatur während des Abnehmens wählte: Der Wechsel dorthin beginnt, sobald die Schicht frei ist. */
+    let vorgemerkt: URL | null = null;
     let sofortAus: () => void = () => undefined;
     /** Die Navigation führt auf den Pfad, der schon angezeigt wird (z. B. die Seite kam nach einem Abbruch doch noch, oder
      *  Zurück auf einen Eintrag desselben Pfads): Es gibt keinen Pfadwechsel und damit kein „bereit“ aus dem Pfad-Effekt;
@@ -434,6 +456,13 @@ export default function Verlegen() {
       for (const u of uhren) window.clearTimeout(u);
       uhren.length = 0;
     };
+    // Fliesen und Logo richten sich nach der Fläche der Schicht, nicht nach innerWidth: Bei sichtbarer Bildlaufleiste stand
+    // das Logo sonst um ihre halbe Breite rechts der Mitte (Gegenprüfung E3-B01, Befund 2). Gelesen zu Beginn des Wechsels,
+    // vor dessen Schreibzugriffen (kein erzwungenes Layout), und bei jeder Größenänderung.
+    const miss = (): Ansicht => {
+      ansicht = { breite: schicht.clientWidth, hoehe: schicht.clientHeight };
+      return ansicht;
+    };
 
     // Logo auf der Wand: Bild bereitstellen (falls der Klick vor dem Leerlauf kam), mittig in ganzen Pixeln platzieren und in
     // die Schicht hängen (beim ersten Wechsel, die Fliesen brauchen danach noch die halbe Dauer, das Bild ist dann längst da).
@@ -443,7 +472,7 @@ export default function Verlegen() {
     };
     const platziereLogo = (): HTMLImageElement => {
       const bild = bereiteLogo();
-      const m = logoMass(window.innerWidth, window.innerHeight);
+      const m = logoMass(ansicht.breite, ansicht.hoehe);
       logo.style.left = `${m.x}px`;
       logo.style.top = `${m.y}px`;
       logo.style.width = `${m.breite}px`;
@@ -475,10 +504,12 @@ export default function Verlegen() {
       };
       bild.addEventListener('load', spaeter, { once: true });
     };
-    // Mindestzeit nach einem Klick: Aufklatschen plus Stehen, gezählt ab dem ersten Bild des Aufklatschens; dann meldet die Uhr
-    // „logo-gestanden“ (Zurück und Vor haben keinen Halt, Automat).
+    // Halt, gezählt ab dem ersten Bild des Aufklatschens; dann meldet die Uhr „logo-gestanden“. Nach einem Klick die
+    // Mindestzeit (Aufklatschen plus Stehen), aus dem Verlauf (Zurück und Vor, Ziel leer) nur das Aufklatschen: Es läuft zu
+    // Ende, bevor abgenommen wird (Automat).
     const halteLogo = () => {
       const nummer = ++logoNummer;
+      const frist = lage.ziel ? logoHalt(ruhig) : logoHaltVerlauf(ruhig);
       const start = logoLauf[logoLauf.length - 1]?.ready ?? Promise.resolve();
       void start
         .catch(() => undefined)
@@ -487,7 +518,7 @@ export default function Verlegen() {
           const gestanden = () => {
             if (nummer === logoNummer) senden.current({ typ: 'logo-gestanden' });
           };
-          uhren.push(window.setTimeout(gestanden, logoHalt(ruhig)));
+          uhren.push(window.setTimeout(gestanden, frist));
         });
     };
     // Beim Abnehmen geht das Logo mit den ersten Fliesen (Deckkraft am Behälter, das Aufklatschen am Bild läuft ungestört
@@ -500,7 +531,19 @@ export default function Verlegen() {
         fill: 'forwards',
       });
 
+    // Alle Fliesen liegen deckend, ohne Flugschatten (Boden liegt sofort bzw. nach einer Größenänderung neu verlegt).
+    const deckeAlle = () => {
+      if (!belag) return;
+      belag.elemente.forEach((el, i) => {
+        el.style.zIndex = String(takte[i].ebene);
+        el.style.opacity = '1';
+        (el.children[0] as HTMLElement).style.opacity = '0';
+      });
+    };
+
     const lege = () => {
+      miss();
+      nachAbbruch = null;
       beendeUebergang();
       gesamt = gesamtdauer(lage.richtung);
       ruhig = !bewegungErlaubt() || !Number.isFinite(gesamt);
@@ -515,7 +558,7 @@ export default function Verlegen() {
         return;
       }
       platziereLogo();
-      belag = baueBelag(boden, belag);
+      belag = baueBelag(boden, belag, ansicht);
       takte = stueckplan(belag.fliesen, belag.mass, belag.breite, gesamt, lage.richtung);
       // Jede Fliese schwebt etwas größer über ihrem Platz, ein kurzes Stück zur Startkante hin, mit Flugschatten auf den
       // schon gelegten, und setzt dann hart auf (Kurve endet mit voller Geschwindigkeit, ohne Federn): tak.
@@ -541,6 +584,8 @@ export default function Verlegen() {
     };
 
     const liege = () => {
+      miss();
+      nachAbbruch = null;
       beendeUebergang();
       gesamt = gesamtdauer(lage.richtung);
       ruhig = !bewegungErlaubt() || !Number.isFinite(gesamt);
@@ -551,18 +596,31 @@ export default function Verlegen() {
         blende.style.opacity = '1';
         return;
       }
-      belag = baueBelag(boden, belag);
+      belag = baueBelag(boden, belag, ansicht);
       takte = stueckplan(belag.fliesen, belag.mass, belag.breite, gesamt, lage.richtung);
-      belag.elemente.forEach((el, i) => {
-        el.style.zIndex = String(takte[i].ebene);
-        el.style.opacity = '1';
-        (el.children[0] as HTMLElement).style.opacity = '0';
-      });
+      deckeAlle();
+    };
+
+    // Drehen oder Größenänderung, solange der Boden gelegt wird oder liegt (Gegenprüfung E3-B01, Befund 5): Das Logo rückt in
+    // die neue Mitte; ist die Ansicht über den Belag hinaus gewachsen, wird neu verlegt, sonst deckte der Boden nicht. Die
+    // laufenden Leg-Animationen enden dann, alle Fliesen liegen sofort (wie in liege()), „gelegt“ folgt gleich.
+    const neuVermessen = () => {
+      if (lage.zustand !== 'legen' && lage.zustand !== 'bedeckt' && lage.zustand !== 'warten') return;
+      const alt = ansicht;
+      const neu = miss();
+      if (neu.breite === alt.breite && neu.hoehe === alt.hoehe) return;
+      if (!ruhig && belag && (neu.breite > belag.breite || neu.hoehe > belag.hoehe)) {
+        beende(laufend);
+        belag = baueBelag(boden, belag, neu);
+        takte = stueckplan(belag.fliesen, belag.mass, belag.breite, gesamt, lage.richtung);
+        deckeAlle();
+      }
+      platziereLogo();
     };
 
     const nimmAb = () => {
       stoppeUhren();
-      // Neue Seite liegt darunter: Scroll an den Anfang (oder gemerkte Stelle bei Zurück), Fokus auf die H1.
+      // Neue Seite liegt darunter: Scroll an den Anfang (oder gemerkte Stelle bei Zurück), Fokus auf die H1 (oder das Ankerziel).
       if (zurueckAusAufschub) window.scrollTo({ top: gemerkterScroll(), left: 0, behavior: 'instant' });
       else if (!location.hash && lage.richtung === 'vor') window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
       zurueckAusAufschub = false;
@@ -613,7 +671,7 @@ export default function Verlegen() {
       // reduzierte Bewegung und Notaus: keine wandernde Linie, die Blende allein zeigt den Wechsel
       if (ruhig) return;
       laser.style.opacity = '1';
-      laserLauf = laser.animate([{ transform: 'translateY(0)' }, { transform: `translateY(${window.innerHeight}px)` }], {
+      laserLauf = laser.animate([{ transform: 'translateY(0)' }, { transform: `translateY(${ansicht.hoehe}px)` }], {
         duration: ms('--dauer-5'),
         iterations: Infinity,
         direction: 'alternate',
@@ -626,6 +684,20 @@ export default function Verlegen() {
       const lauf = laserLauf;
       laserLauf = null;
       if (lauf) window.setTimeout(() => lauf.cancel(), ms('--dauer-1'));
+    };
+
+    // Wechsel nach einem Klick (oder einem vorgemerkten Link): Hier geschieht nur das Nötigste; Belag, Sperre und Animationen
+    // entstehen nach dem nächsten Bild (E-031).
+    const starteVor = (ziel: URL) => {
+      angefordert = true;
+      verlauf(false);
+      router.prefetch(ziel.pathname + ziel.search);
+      merkeScroll(adresse());
+      pfadRef.current = location.pathname;
+      nachDemMalen(() => {
+        angefordert = false;
+        senden.current({ typ: 'start', ziel: ziel.pathname + ziel.search + ziel.hash, richtung: 'vor' });
+      });
     };
 
     const freigeben = () => {
@@ -642,6 +714,10 @@ export default function Verlegen() {
       if (logoBild) logoBild.style.opacity = '';
       sperre(false);
       stelle('ruhe');
+      // ein Link, den die Tastatur während des Abnehmens wählte: jetzt dorthin wechseln
+      const nachgeholt = vorgemerkt;
+      vorgemerkt = null;
+      if (nachgeholt && !angefordert) starteVor(nachgeholt);
     };
 
     const navigiere = () => {
@@ -696,9 +772,11 @@ export default function Verlegen() {
           return nimmAb();
         case 'blende-aus': {
           // Seite braucht länger als 3 s: Boden blendet weg, die Navigation läuft normal weiter. Die Fliesen bleiben liegen,
-          // bis die Schicht unsichtbar ist (freigeben beendet sie), sonst verschwände der Boden in einem Bild.
+          // bis die Schicht unsichtbar ist (freigeben beendet sie), sonst verschwände der Boden in einem Bild. Fokus (und aus
+          // dem Verlauf den Scroll) setzt der Pfad-Effekt, wenn die Seite doch noch kommt.
           stoppeUhren();
           sperre(false);
+          nachAbbruch = zurueckAusAufschub ? 'verlauf' : 'vor';
           const teile = [schicht.animate([{ opacity: 1 }, { opacity: 0 }], { duration: ms('--dauer-1'), fill: 'forwards' })];
           void warte(teile).then(() => {
             senden.current({ typ: 'ausgeblendet' });
@@ -800,18 +878,14 @@ export default function Verlegen() {
       }
       if (grund !== 'verlegen') return;
       e.preventDefault();
+      // Tastatur während des Abnehmens (inert ist schon gefallen, Enter auf einem Link der neuen Seite; Zeiger treffen die
+      // Schicht): nicht verschlucken, sondern vormerken, der Wechsel beginnt in freigeben (Gegenprüfung E3-B01, Befund 4)
+      if (lage.zustand === 'abnehmen' && e.detail === 0) {
+        vorgemerkt = new URL(a.href);
+        return;
+      }
       if (lage.zustand !== 'ruhe' || angefordert) return; // Doppelklick: kein zweiter Wechsel
-      angefordert = true;
-      verlauf(false);
-      const ziel = new URL(a.href);
-      router.prefetch(ziel.pathname + ziel.search);
-      merkeScroll(adresse());
-      pfadRef.current = location.pathname;
-      // Der Klick selbst tut nur das Nötigste; Belag, Sperre und Animationen entstehen nach dem nächsten Bild (E-031).
-      nachDemMalen(() => {
-        angefordert = false;
-        senden.current({ typ: 'start', ziel: ziel.pathname + ziel.search + ziel.hash, richtung: 'vor' });
-      });
+      starteVor(new URL(a.href));
     };
 
     // Das angehaltene popstate geht mit dem aktuellen history.state an Next (der Browser steht schon auf dem Ziel). Die Nummer
@@ -913,14 +987,17 @@ export default function Verlegen() {
     document.addEventListener('click', klick, true);
     window.addEventListener('pagehide', speichernVorVerlassen);
     window.addEventListener('hashchange', stempeln);
+    window.addEventListener('resize', neuVermessen);
     return () => {
       document.removeEventListener('click', klick, true);
       window.removeEventListener('pagehide', speichernVorVerlassen);
       window.removeEventListener('hashchange', stempeln);
+      window.removeEventListener('resize', neuVermessen);
       if (window.cancelIdleCallback) window.cancelIdleCallback(leerlauf);
       else window.clearTimeout(leerlauf);
       koernungAus();
       steuerung = null;
+      vorgemerkt = null;
       freigeben();
     };
   }, [router]);
@@ -929,7 +1006,10 @@ export default function Verlegen() {
   // Fliesen abgenommen. Ohne die Ruhe startete das Abnehmen, während die neue Seite noch rechnete, und der Boden lag sichtbar still
   // (Sichtabnahme E2, Befund 1 und 2; E-036). Bis dahin zeigt die Wartelinie das Warten; spätestens nach 400 ms geht es los.
   // Gemeldet wird nur, wenn die Seite nach der zuletzt abgeschickten Navigation erschien (auftrag, spaeterBereit, E-043).
-  useEffect(() => {
+  // Layout-Effekt: Er läuft im selben Task wie das Einhängen der neuen Seite, kein popstate kommt dazwischen. Als passiver
+  // Effekt konnte Zurück genau beim Eintreffen der Klick-Navigation den alten Pfad als „gleich“ sehen und ausVerlauf verbrauchen,
+  // danach fehlte k-verlauf (Gegenprüfung E3-B01, Befund 6). React 19 warnt beim Rendern auf dem Server nicht mehr.
+  useLayoutEffect(() => {
     if (pfad === pfadRef.current) return;
     pfadRef.current = pfad;
     angezeigt = adresse();
@@ -942,9 +1022,11 @@ export default function Verlegen() {
       eigenerWechsel = false;
       void (aktiverUebergang()?.finished ?? Promise.resolve()).finally(fokussiereUeberschrift);
     }
-    if (verlaufOhneBoden) {
+    // Seite kam ohne Boden (Zurück während des Abnehmens) oder nach dem Abbruch: Scroll (aus dem Verlauf) und Fokus hier
+    if (verlaufOhneBoden || nachAbbruch) {
+      if (verlaufOhneBoden || nachAbbruch === 'verlauf') window.scrollTo({ top: gemerkterScroll(), left: 0, behavior: 'instant' });
       verlaufOhneBoden = false;
-      window.scrollTo({ top: gemerkterScroll(), left: 0, behavior: 'instant' });
+      nachAbbruch = null;
       fokussiereUeberschrift();
     }
     merkeNextZustand();

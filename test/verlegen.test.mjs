@@ -12,6 +12,7 @@ import {
   GESAMT_FOLGE,
   logoMass,
   logoHalt,
+  logoHaltVerlauf,
   LOGO_GROESSE_START,
   LOGO_AUFKLATSCHEN,
   LOGO_STEHEN,
@@ -630,9 +631,9 @@ test('Automat 8: Laserlinie, sobald der Boden liegt und kein Logo-Halt läuft (E
 });
 
 test('Automat 9: Zurück aus ruhe (Ziel leer): nach dem Legen wird das angehaltene popstate nachgereicht, nicht navigiert', () => {
-  const { aktionen, zustaende } = laufe([{ typ: 'start', ziel: '', richtung: 'zurueck' }, GELEGT, BEREIT, { typ: 'abgenommen' }]);
-  assert.deepEqual(zustaende, ['ruhe', 'legen', 'bedeckt', 'abnehmen', 'ruhe']);
-  assert.deepEqual(aktionen, ['lege', 'zeige-logo', 'reiche-nach', 'nimm-ab', 'freigeben']);
+  const { aktionen, zustaende } = laufe([{ typ: 'start', ziel: '', richtung: 'zurueck' }, GELEGT, BEREIT, GESTANDEN, { typ: 'abgenommen' }]);
+  assert.deepEqual(zustaende, ['ruhe', 'legen', 'bedeckt', 'bedeckt', 'abnehmen', 'ruhe']);
+  assert.deepEqual(aktionen, ['lege', 'zeige-logo', 'reiche-nach', 'halte-logo', 'nimm-ab', 'freigeben']);
 });
 
 test('Automat 10: Zurück im Browser während des Legens eines Klicks (umkehr): statt router.push wird das popstate nachgereicht, der Verlauf bleibt ganz (Prüfung E-043)', () => {
@@ -641,7 +642,7 @@ test('Automat 10: Zurück im Browser während des Legens eines Klicks (umkehr): 
   assert.equal(lage.ziel, '');
   assert.deepEqual(aktionen, ['lege']);
   const weiter = schritt(lage, GELEGT);
-  assert.deepEqual(weiter.aktionen, ['zeige-logo', 'reiche-nach']);
+  assert.deepEqual(weiter.aktionen, ['zeige-logo', 'reiche-nach', 'halte-logo']);
   assert.ok(!weiter.aktionen.includes('navigiere'), 'kein router.push zum alten Ziel');
 });
 
@@ -663,7 +664,9 @@ test('Automat 11: umkehr wirkt nur beim Legen; in bedeckt, warten und abnehmen �
 // Wunsch des Auftraggebers: „Beim Übergang soll Fliesenleger Tezgel mit dem Logo (dem Maskottchen) auf die Wand geklatscht
 // werden.“ Auftrag: sobald der Boden liegt, mittig, Form, Farbe und Proportion unverändert (nur skaliert); aufklatschen von
 // etwa 1,15 und durchsichtig auf 1 und deckend in etwa 220 ms, ohne Nachfedern; steht mindestens 450 ms, auch wenn die neue
-// Seite früher bereit ist; Zurück und Vor ohne Mindestzeit; geht mit den ersten abgenommenen Fliesen (200 ms).
+// Seite früher bereit ist; Zurück und Vor ohne Mindestzeit; geht mit den ersten abgenommenen Fliesen (200 ms). Gegenprüfung
+// E3-B01 (Befund 1): Auch bei Zurück und Vor klatscht das Logo ganz auf, bevor abgenommen wird (sonst verblasste es nach
+// 0,2 s halb aufgeklatscht, ein Aufblitzen).
 
 test('Logo 1: mittig in jeder Ansicht, ganze Pixel, Seitenverhältnis genau wie die Datei (640 × 200), nie über Dateibreite, ganz im Bild', () => {
   for (const [name, [breite, hoehe]] of Object.entries(GERAETE)) {
@@ -693,6 +696,9 @@ test('Logo 3: Bewegung und Zeiten: von 1,15 auf 1 in rund 220 ms, Mindestzeit 45
   assert.equal(LOGO_WEG, 200);
   assert.equal(logoHalt(false), LOGO_AUFKLATSCHEN + LOGO_STEHEN);
   assert.equal(logoHalt(true), LOGO_STEHEN);
+  // Zurück und Vor: keine Mindestzeit, nur das Aufklatschen läuft zu Ende; reduziert kam das Logo mit der Blende
+  assert.equal(logoHaltVerlauf(false), LOGO_AUFKLATSCHEN);
+  assert.equal(logoHaltVerlauf(true), 0);
 });
 
 test('Logo 4: sobald der Boden nach einem Klick liegt, klatscht das Logo auf und der Halt beginnt; ein frühes bereit wird gemerkt und erst nach dem Stehen eingelöst', () => {
@@ -720,15 +726,28 @@ test('Logo 5: während das Logo steht, keine Wartelinie (das Stehen ist kein War
   assert.deepEqual(gestanden.aktionen, ['zeige-laser']);
 });
 
-test('Logo 6: Zurück und Vor ohne Mindestzeit: aus dem Verlauf (Ziel leer) und nach umkehr klatscht das Logo auf, abgenommen wird beim ersten bereit', () => {
-  const verlauf = laufe([{ typ: 'start', ziel: '', richtung: 'zurueck' }, GELEGT]);
-  assert.equal(verlauf.lage.halt, 'aus');
-  assert.ok(verlauf.aktionen.includes('zeige-logo') && !verlauf.aktionen.includes('halte-logo'));
-  assert.deepEqual(schritt(verlauf.lage, BEREIT).aktionen, ['nimm-ab']);
-  const umkehr = laufe([START, { typ: 'umkehr' }, GELEGT]);
-  assert.equal(umkehr.lage.halt, 'aus');
-  assert.ok(!umkehr.aktionen.includes('halte-logo'));
-  assert.deepEqual(schritt(umkehr.lage, BEREIT).aktionen, ['nimm-ab']);
+test('Logo 6: Zurück und Vor ohne Mindestzeit, aber ganz aufgeklatscht: aus dem Verlauf (Ziel leer) und nach umkehr hält das Logo bis zum Ende des Aufklatschens; ein frühes bereit wartet darauf, danach sofort abnehmen', () => {
+  for (const [name, ereignisse] of Object.entries({
+    verlauf: [{ typ: 'start', ziel: '', richtung: 'zurueck' }, GELEGT],
+    umkehr: [START, { typ: 'umkehr' }, GELEGT],
+  })) {
+    const { lage, aktionen } = laufe(ereignisse);
+    assert.equal(lage.zustand, 'bedeckt', name);
+    assert.equal(lage.halt, 'steht', `${name}: Halt bis zum Ende des Aufklatschens`);
+    assert.deepEqual(aktionen.slice(-3), ['zeige-logo', 'reiche-nach', 'halte-logo'], name);
+    assert.ok(!aktionen.includes('navigiere'), `${name}: kein router.push`);
+    const frueh = schritt(lage, BEREIT);
+    assert.deepEqual(frueh.aktionen, [], `${name}: kein Abnehmen mitten im Aufklatschen`);
+    assert.equal(frueh.lage.halt, 'bereit', name);
+    const fertig = schritt(frueh.lage, GESTANDEN);
+    assert.equal(fertig.lage.zustand, 'abnehmen', name);
+    assert.deepEqual(fertig.aktionen, ['nimm-ab'], name);
+    // fehlt die Seite, wenn das Logo aufgeklatscht ist, kommt die Wartelinie; abgenommen wird beim bereit
+    const spaet = schritt(lage, GESTANDEN);
+    assert.equal(spaet.lage.zustand, 'warten', name);
+    assert.deepEqual(spaet.aktionen, ['zeige-laser'], name);
+    assert.deepEqual(schritt(spaet.lage, BEREIT).aktionen, ['verberge-laser', 'nimm-ab'], name);
+  }
 });
 
 test('Logo 7: Zurück oder Vor, während das Logo steht (neuer-auftrag): der Halt endet, ein gemerktes bereit verfällt, abgenommen wird erst beim bereit der neuen Navigation', () => {
@@ -746,14 +765,14 @@ test('Logo 7: Zurück oder Vor, während das Logo steht (neuer-auftrag): der Hal
   assert.deepEqual(bereit.aktionen, ['verberge-laser', 'nimm-ab']);
 });
 
-test('Logo 8: logo-gestanden und neuer-auftrag ändern außerhalb des Halts nichts (ruhe, legen, warten, abnehmen, abbruch, bedeckt aus dem Verlauf)', () => {
+test('Logo 8: logo-gestanden und neuer-auftrag ändern außerhalb des Halts nichts (ruhe, legen, warten, abnehmen, abbruch, bedeckt liegend)', () => {
   const wege = {
     ruhe: [],
     legen: [START],
     warten: [START, GELEGT, GESTANDEN],
     abnehmen: [START, GELEGT, BEREIT, GESTANDEN],
     abbruch: [START, GELEGT, GESTANDEN, { typ: 'zeit-ende' }],
-    'bedeckt aus dem Verlauf': [{ typ: 'start', ziel: '', richtung: 'zurueck' }, GELEGT],
+    'bedeckt liegend (start-liegend)': [{ typ: 'start-liegend', richtung: 'zurueck' }],
   };
   for (const [name, ereignisse] of Object.entries(wege)) {
     const { lage } = laufe(ereignisse);

@@ -307,8 +307,14 @@ export function logoMass(breite: number, hoehe: number): Logomass {
   return { x: Math.round((breite - b) / 2 + (0.5 - LOGO_INHALT_MITTE) * b), y: Math.round((hoehe - h) / 2), breite: b, hoehe: h };
 }
 
+/** Halt bei Zurück und Vor (ms): keine Mindestzeit, aber das Aufklatschen läuft zu Ende, statt nach 0,2 s mit dem Abnehmen
+ *  zu verblassen (Gegenprüfung E3-B01, Befund 1). Bei reduzierter Bewegung ist das Logo schon mit der Blende eingeblendet. */
+export function logoHaltVerlauf(ruhig: boolean): number {
+  return ruhig ? 0 : LOGO_AUFKLATSCHEN;
+}
+
 /** Mindestzeit vom Liegen des Bodens bis zum Abnehmen nach einem Klick (ms): Aufklatschen plus Stehen. Bei reduzierter
  *  Bewegung ist das Logo schon mit der Blende eingeblendet und steht nur. */
 export function logoHalt(ruhig: boolean): number {
-  return (ruhig ? 0 : LOGO_AUFKLATSCHEN) + LOGO_STEHEN;
+  return logoHaltVerlauf(ruhig) + LOGO_STEHEN;
 }

@@ -6,8 +6,10 @@
 // Logo auf der Wand (v3, E-047): Sobald der Boden liegt, klatscht das Logo auf (zeige-logo). Nach einem Klick muss es danach
 // eine Mindestzeit stehen (Halt, die Komponente meldet „logo-gestanden“); ein „bereit“ in dieser Zeit wird gemerkt und erst
 // mit dem Ende des Halts eingelöst. Die Wartelinie erscheint erst, wenn der Halt vorbei ist und die Seite noch fehlt (das
-// stehende Logo ist kein Warten). Zurück und Vor haben keinen Halt; eine neue Navigation, während der Boden liegt
-// („neuer-auftrag“), beendet ihn und verwirft ein gemerktes „bereit“ (es gehörte zur alten Navigation).
+// stehende Logo ist kein Warten). Zurück und Vor haben keine Mindestzeit, ihr Halt dauert nur, bis das Aufklatschen zu Ende
+// ist (die Komponente wählt die Dauer nach dem Ziel; sonst verblasste das Logo nach 0,2 s halb aufgeklatscht, Gegenprüfung
+// E3-B01, Befund 1); eine neue Navigation, während der Boden liegt („neuer-auftrag“), beendet den Halt und verwirft ein
+// gemerktes „bereit“ (es gehörte zur alten Navigation).
 import type { Richtung } from './raster';
 
 export type Zustand = 'ruhe' | 'legen' | 'bedeckt' | 'warten' | 'abnehmen' | 'abbruch';
@@ -24,7 +26,7 @@ export type Ereignis =
   | { typ: 'umkehr' }
   | { typ: 'gelegt' }
   | { typ: 'bereit' }
-  /** Das Logo hat nach dem Aufklatschen seine Mindestzeit gestanden. */
+  /** Das Logo hat nach dem Aufklatschen seine Mindestzeit gestanden (aus dem Verlauf: ist fertig aufgeklatscht). */
   | { typ: 'logo-gestanden' }
   /** Zurück oder Vor, während der Boden liegt (bedeckt, warten): Next übernimmt, eine neue Navigation läuft. */
   | { typ: 'neuer-auftrag' }
@@ -65,10 +67,11 @@ export const LASER_NACH = 0;
 export const WARTEN_HOECHSTENS = 3000;
 
 /** Aktionen, sobald der Boden liegt: das Logo klatscht auf; dann navigieren, das angehaltene popstate nachreichen oder
- *  (liegend) nichts; nach einem Klick (Ziel ist eine Adresse) steht das Logo eine Mindestzeit (halte-logo). */
+ *  (liegend) nichts; danach hält das Logo (halte-logo): nach einem Klick (Ziel ist eine Adresse) eine Mindestzeit, aus dem
+ *  Verlauf (Ziel leer) bis zum Ende des Aufklatschens. */
 function wennGelegt(lage: Lage): Aktion[] {
   if (lage.ziel === null) return ['zeige-logo'];
-  return lage.ziel ? ['zeige-logo', 'navigiere', 'halte-logo'] : ['zeige-logo', 'reiche-nach'];
+  return lage.ziel ? ['zeige-logo', 'navigiere', 'halte-logo'] : ['zeige-logo', 'reiche-nach', 'halte-logo'];
 }
 
 export function schritt(lage: Lage, e: Ereignis): { lage: Lage; aktionen: Aktion[] } {
@@ -85,7 +88,7 @@ export function schritt(lage: Lage, e: Ereignis): { lage: Lage; aktionen: Aktion
     case 'legen':
       if (e.typ === 'umkehr') return { lage: { ...lage, ziel: '' }, aktionen: [] };
       if (e.typ === 'gelegt') {
-        return { lage: { ...lage, zustand: 'bedeckt', halt: lage.ziel ? 'steht' : 'aus' }, aktionen: wennGelegt(lage) };
+        return { lage: { ...lage, zustand: 'bedeckt', halt: lage.ziel !== null ? 'steht' : 'aus' }, aktionen: wennGelegt(lage) };
       }
       return bleib;
     case 'bedeckt':
