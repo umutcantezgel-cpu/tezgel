@@ -69,8 +69,8 @@ export default function Karussell({ art, name, children, karte = 'w-full md:w-1/
   const ruhig = useRuhigGewuenscht();
   const [angehalten, setAngehalten] = useState(false);
   const [darueber, setDarueber] = useState(false);
-  // Reihe: passen alle Karten nebeneinander, gibt es nichts zu blättern (keine Knöpfe, kein Selbstlauf)
-  const [ueberlauf, setUeberlauf] = useState(true);
+  // Reihe: passen alle Karten nebeneinander, gibt es nichts zu blättern (Knöpfe unsichtbar, kein Selbstlauf)
+  const [ueberlauf, setUeberlauf] = useState(false);
   const spur = useRef<HTMLUListElement>(null);
   const teile = Children.toArray(children);
 
@@ -151,6 +151,7 @@ export default function Karussell({ art, name, children, karte = 'w-full md:w-1/
     );
   }
 
+  const bedienbar = imBrowser && ueberlauf;
   return (
     <section aria-roledescription="Karussell" aria-label={name} className={className} {...halten}>
       {/* Abstand innen statt gap: die Karten füllen die Breite genau, jede sichtbare Karte steht ganz im Bild (nie angeschnitten, E-047) */}
@@ -171,19 +172,18 @@ export default function Karussell({ art, name, children, karte = 'w-full md:w-1/
           </li>
         ))}
       </ul>
-      {imBrowser && ueberlauf && (
-        <div className="mt-6 flex items-center justify-center gap-3">
-          <button type="button" onClick={() => rucken(-1)} onPointerDown={beruehrt} className={knopf}>
-            <Icon name="pfeil-links" groesse={4} />
-            <span className="sr-only">Zurück</span>
-          </button>
-          {selbstlauf && !ruhig && <PauseKnopf angehalten={angehalten} umschalten={() => setAngehalten((a) => !a)} />}
-          <button type="button" onClick={() => rucken(1)} onPointerDown={beruehrt} className={knopf}>
-            <Icon name="pfeil-rechts" groesse={4} />
-            <span className="sr-only">Weiter</span>
-          </button>
-        </div>
-      )}
+      {/* Platz der Knöpfe steht von Anfang an (auch ohne JavaScript), damit nichts springt, wenn sie erscheinen */}
+      <div aria-hidden={bedienbar ? undefined : true} className={clsx('mt-6 flex items-center justify-center gap-3', !bedienbar && 'invisible')}>
+        <button type="button" onClick={() => rucken(-1)} onPointerDown={beruehrt} className={knopf}>
+          <Icon name="pfeil-links" groesse={4} />
+          <span className="sr-only">Zurück</span>
+        </button>
+        {selbstlauf && !ruhig && <PauseKnopf angehalten={angehalten} umschalten={() => setAngehalten((a) => !a)} />}
+        <button type="button" onClick={() => rucken(1)} onPointerDown={beruehrt} className={knopf}>
+          <Icon name="pfeil-rechts" groesse={4} />
+          <span className="sr-only">Weiter</span>
+        </button>
+      </div>
     </section>
   );
 }

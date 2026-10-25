@@ -44,9 +44,12 @@ export interface ErzaehlSeiteProps {
   einstiegBild?: ReactNode;
   /** Anfrageformular im nächsten Schritt (vorhandene Logik als Insel, Pflichtfelder und Empfänger unverändert, G8) */
   formular?: ReactNode;
+  /** Kennung der Überschrift über dem Formular, wenn sie ein Sprungziel des Bestands ist (z. B. `express-anfrage`); sonst
+   *  aus dem Hauptziel der Seite */
+  formularId?: string;
 }
 
-export default function ErzaehlSeite({ inhalt, momente, werkzeug, einstiegBild, formular }: ErzaehlSeiteProps) {
+export default function ErzaehlSeite({ inhalt, momente, werkzeug, einstiegBild, formular, formularId }: ErzaehlSeiteProps) {
   const { worum } = inhalt;
   const ziel = hauptziel(inhalt.pfad);
   const rest = (
@@ -59,7 +62,7 @@ export default function ErzaehlSeite({ inhalt, momente, werkzeug, einstiegBild, 
         inhalt={inhalt.schritt}
         pfad={inhalt.pfad}
         formular={formular}
-        titelId={ziel.startsWith('#') ? ziel.slice(1) : undefined}
+        titelId={formularId ?? (ziel.startsWith('#') ? ziel.slice(1) : undefined)}
         zusatz={formular ? <Oeffnungszeiten /> : undefined}
       />
       {werkzeug && <Werkzeug werkzeug={werkzeug} />}

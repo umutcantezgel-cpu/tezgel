@@ -30,7 +30,9 @@ export default function Formatregler() {
   };
   return (
     <div className="@container">
-      <figure data-motion="formatregler" className="formatregler grid w-full max-w-md grid-cols-1 gap-6 text-tinte @2xl:max-w-full @2xl:grid-cols-2 @2xl:gap-x-12">
+      {/* K-016 (E-047): der Satz über der Wand, mittig, kein zweiter Strang daneben; die Wand mittig, am Desktop halb so breit */}
+      <figure data-motion="formatregler" className="formatregler mx-auto flex w-full max-w-md flex-col gap-6 text-tinte @2xl:max-w-full @2xl:w-1/2">
+        <figcaption className="text-center font-text text-fs-4 font-semibold text-pretty">Große Fliesen haben weniger Fugen.</figcaption>
         {/* Namen stehen über der Wand, links über den kleinen, rechts über den großen Fliesen (die Pfeile zeigen dorthin) */}
         <div>
           <div className="mb-4 grid grid-cols-1 gap-4 @xs:grid-cols-2">
@@ -64,7 +66,6 @@ export default function Formatregler() {
             <input id={reglerId} type="range" min={0} max={100} step={1} value={wert} aria-valuetext={wertText(wert)} onChange={(e) => setWert(Number(e.target.value))} className="mt-2 block h-11 w-full cursor-pointer accent-tinte" />
           </div>
         </div>
-        <figcaption className="font-text text-fs-4 font-semibold text-pretty @2xl:self-center">Große Fliesen haben weniger Fugen.</figcaption>
       </figure>
     </div>
   );
