@@ -23,6 +23,9 @@ const MUSTER = {
 export default function OptionGroup({ legend, legendClassName = legendClass, options, value, onChange, multi = false, muster = 'liste', zeichen, hint }) {
     const m = MUSTER[muster];
     const letztes = options.length % 2 === 1 ? options.length - 1 : -1;
+    // Schmale Karte (große Schrift, Gruppe unter 16 rem, bei 100 % nie unterschritten): Symbol und Haken in einer Zeile, der Text darunter über die volle Breite
+    const schmal = m.kompakt ? '' : '@max-3xs:flex-wrap @max-3xs:gap-2 @max-3xs:p-3';
+    const textSchmal = m.kompakt ? '' : '@max-3xs:order-last @max-3xs:basis-full';
     return (
         <div className="@container min-w-0">
             <fieldset className="m-0 min-w-0 border-0 p-0">
@@ -38,10 +41,10 @@ export default function OptionGroup({ legend, legendClassName = legendClass, opt
                                 type="button"
                                 aria-pressed={selected}
                                 onClick={() => onChange(o.id)}
-                                className={`${feldClass(selected, m.kompakt)} ${i === letztes ? m.letztes : ''}`}
+                                className={`${feldClass(selected, m.kompakt)} ${schmal} ${i === letztes ? m.letztes : ''}`}
                             >
                                 {fach && <Icon name={fach} groesse={6} className="mt-1" />}
-                                <span className="flex min-w-0 flex-1 flex-col">
+                                <span className={`flex min-w-0 flex-1 flex-col wrap-break-word ${textSchmal}`}>
                                     <span className="block text-fs-3 font-semibold">{o.label ?? o.title}</span>
                                     {o.desc && <span className={`mt-1 block text-fs-2 ${nebenClass(selected)}`}>{o.desc}</span>}
                                 </span>

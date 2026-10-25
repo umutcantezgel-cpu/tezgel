@@ -16,7 +16,7 @@ const PROJEKT_SPANNE = ['lg:col-span-2', 'lg:col-span-2', 'lg:col-span-2', 'lg:c
 export default function Schritt1({ setStep, projectType, setProjectType }) {
     return (
         <div className="flex flex-col gap-8">
-          <div className="grid grid-cols-1 gap-px border border-fuge bg-fuge sm:grid-cols-2 lg:grid-cols-6">
+          <div className="@container grid grid-cols-1 gap-px border border-fuge bg-fuge sm:grid-cols-2 lg:grid-cols-6">
             {PROJECT_TYPES.map((pt, idx) => {
               const isSelected = projectType === pt.id;
               return (
@@ -29,11 +29,11 @@ export default function Schritt1({ setStep, projectType, setProjectType }) {
                   data-motion="zustand"
                 >
                   {/* Mobil eine Zeile: Fachzeichen links, Text rechts. Ab sm Kachel: Fachzeichen oben, Text unten. */}
-                  <span className="flex flex-1 items-center gap-4 sm:flex-col sm:items-start sm:justify-between sm:gap-6">
+                  <span className="flex min-w-0 flex-1 items-center gap-4 @max-3xs:flex-col @max-3xs:items-stretch sm:flex-col sm:items-start sm:justify-between sm:gap-6">
                     <Icon name={PROJEKT_ICONS[pt.id] || 'fliese'} groesse={5} className="sm:size-6" />
-                    <span>
-                      <span className="block text-fs-3 font-semibold">{pt.title}</span>
-                      <span className="mt-1 block text-fs-1">{pt.subtitle}</span>
+                    <span className="min-w-0">
+                      <span className="block text-fs-3 font-semibold @max-3xs:hyphens-auto wrap-break-word">{pt.title}</span>
+                      <span className="mt-1 block text-fs-1 @max-3xs:hyphens-auto wrap-break-word">{pt.subtitle}</span>
                     </span>
                   </span>
                 </button>

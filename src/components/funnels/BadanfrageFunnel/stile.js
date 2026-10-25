@@ -18,9 +18,10 @@ export const frageClass = 'font-text text-fs-4 font-semibold text-tinte';
 export const nummerClass = 'font-mono font-normal text-tinte-2';
 
 /** Auswahlkachel mit Titel und Beschreibung (aria-pressed): wahlKlassen über die volle Rasterzelle,
- *  der Inhalt steht links oben (self-start hebt die Mitte von wahlKlassen für das Kind auf) */
-export const kachelClass = `${wahlKlassen} h-full w-full`;
-export const kachelInhaltClass = 'flex w-full flex-col gap-1 self-start py-1 text-left';
+ *  der Inhalt steht links oben (self-start hebt die Mitte von wahlKlassen für das Kind auf). min-w-0: die Kachel
+ *  schrumpft mit der Spalte statt über den Rand zu ragen; wrap-break-word: lange Wörter (Komposita) brechen bei großer Schrift */
+export const kachelClass = `${wahlKlassen} h-full w-full min-w-0`;
+export const kachelInhaltClass = 'flex w-full min-w-0 flex-col gap-1 self-start py-1 text-left wrap-break-word';
 
 /** Wunschausstattung (aria-pressed): wahlKlassen, Zeichen und Text links */
 export const ausstattungClass = `${wahlKlassen} w-full`;

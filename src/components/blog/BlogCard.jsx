@@ -38,7 +38,7 @@ const BlogCard = ({ post, lesezeit, anriss }) => {
     return (
         <article
             data-motion="zustand"
-            className="relative flex flex-wrap items-center gap-4 border-b border-fuge py-6 transition-colors dauer-1 ease-setzen hover:border-strich focus-within:border-strich md:flex-nowrap md:items-start md:gap-6 md:px-6 md:py-8 md:hover:bg-fliese md:focus-within:bg-fliese lg:gap-8 lg:px-8"
+            className="@container wrap-break-word relative flex flex-wrap items-center gap-4 border-b border-fuge py-6 transition-colors dauer-1 ease-setzen hover:border-strich focus-within:border-strich md:flex-nowrap md:items-start md:gap-6 md:px-6 md:py-8 md:hover:bg-fliese md:focus-within:bg-fliese lg:gap-8 lg:px-8"
         >
             <Themenmotiv
                 post={post}
@@ -47,7 +47,7 @@ const BlogCard = ({ post, lesezeit, anriss }) => {
 
             {/* Telefon: Kennzeile neben der Zeichnung, der Rest in einer eigenen Zeile; ab md eine Spalte rechts */}
             <div className="contents md:block md:min-w-0 md:flex-1">
-                <Kennzeile className="flex-1">
+                <Kennzeile className="flex-1 @max-xs:basis-full">
                     <Angabe zeichen={zeichenFuer(post.category)} className="text-tinte">
                         {categoryData?.name || post.category}
                     </Angabe>

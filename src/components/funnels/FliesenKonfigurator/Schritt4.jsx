@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Icon from '@/components/icons/Icon';
 import Hinweis from '@/components/kern/Hinweis';
+import PflichtHinweis from '@/components/kern/PflichtHinweis';
 import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
 import { kontrollKlassen, knopfKlassen, pflichtKlassen } from '@/components/kern/stile';
 import { TIMING_OPTIONS } from '@/lib/formulare/useFliesenKonfigurator';
@@ -18,6 +19,8 @@ export default function Schritt4({ data, update, goToStep, handleSubmit, isSubmi
     return (
         <form onSubmit={handleSubmit} className="flex flex-col gap-8">
             <ResultSummary data={data} />
+
+            <PflichtHinweis />
 
             <div className="grid grid-cols-1 gap-6 @xl:grid-cols-2 @xl:gap-4">
                 <div>

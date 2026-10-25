@@ -157,7 +157,7 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
 
           <p className="mt-2 font-text text-fs-2 text-tinte-2">{currentHub.tagline}</p>
 
-          <div className="mt-4 flex gap-3">
+          <div className="mt-4 flex flex-wrap gap-3">
             <a
               href={directionsUrl}
               target="_blank"

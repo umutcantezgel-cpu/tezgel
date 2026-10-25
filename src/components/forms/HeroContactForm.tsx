@@ -11,6 +11,7 @@ import Icon from '@/components/icons/Icon';
 import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Knopf from '@/components/kern/Knopf';
+import PflichtHinweis from '@/components/kern/PflichtHinweis';
 import { etikettKlassen, feldKlassen, fehlerKlassen, labelKlassen, linkKlassen, pflichtKlassen, wahlKlassen } from '@/components/kern/stile';
 import { zusammen } from '@/components/kern/zusammen';
 import { PROJECT_OPTIONS, useHeroKontakt } from '@/lib/formulare/useHeroKontakt';
@@ -153,6 +154,8 @@ export default function HeroContactForm({ titel = true }: { titel?: boolean } = 
                         })}
                     </div></div>
                 </div>
+
+                <PflichtHinweis />
 
                 {/* 2. Kontaktdaten */}
                 <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">

@@ -19,7 +19,7 @@ export default function Leitfaden({ post, lesezeit, anriss }) {
     return (
         <article
             data-motion="zustand"
-            className="relative flex flex-wrap items-center gap-4 border border-fuge bg-fliese p-4 transition-colors dauer-1 ease-setzen hover:border-strich md:gap-6 md:p-6"
+            className="@container wrap-break-word relative flex flex-wrap items-center gap-4 border border-fuge bg-fliese p-4 transition-colors dauer-1 ease-setzen hover:border-strich md:gap-6 md:p-6"
         >
             <Themenmotiv
                 post={post}
@@ -28,7 +28,7 @@ export default function Leitfaden({ post, lesezeit, anriss }) {
 
             {/* Telefon: Etikett und Kennzeile neben der Zeichnung, Titel und Auszug darunter; ab md eine Spalte rechts */}
             <div className="contents">
-                <div className="flex min-w-0 flex-1 flex-col gap-3 md:flex-none md:gap-4">
+                <div className="flex min-w-0 flex-1 flex-col gap-3 @max-xs:basis-full md:flex-none md:gap-4">
                     <p className={etikettKlassen}>
                         <Fugenkreuz className="size-3 shrink-0 text-strich" />
                         Empfohlener Leitfaden

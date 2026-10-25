@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Icon from '@/components/icons/Icon';
 import Knopf from '@/components/kern/Knopf';
+import PflichtHinweis from '@/components/kern/PflichtHinweis';
 import { labelKlassen, linkKlassen, pflichtKlassen } from '@/components/kern/stile';
 import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
 import { COMPANY_DATA } from '@/config/company';
@@ -38,6 +39,8 @@ export default function Schritt5({ setStep, status, errorMessage, formData, setF
                     autoComplete="off"
                 />
             </div>
+
+            <PflichtHinweis />
 
             <div className="grid grid-cols-1 gap-6 @3xl:grid-cols-2 @3xl:gap-4">
                 <div>

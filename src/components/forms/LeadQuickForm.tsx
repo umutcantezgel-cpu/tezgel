@@ -20,6 +20,8 @@ import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import { etikettKlassen, feldKlassen, knopfKlassen, kontrollKlassen, labelKlassen, linkKlassen } from '@/components/kern/stile';
+import PflichtHinweis from '@/components/kern/PflichtHinweis';
+import Rufnummer from '@/components/kern/Rufnummer';
 import { COMPANY_DATA } from '@/config/company';
 import { useSchnellanfrage } from '@/lib/formulare/useSchnellanfrage';
 
@@ -144,8 +146,8 @@ export function LeadQuickForm({
     teile.length === 2 ? (
       <>
         {teile[0]}
-        <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="font-semibold whitespace-nowrap underline underline-offset-4">
-          {telefon}
+        <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="font-semibold underline underline-offset-4">
+          <Rufnummer nummer={telefon} />
         </a>
         {teile[1]}
       </>
@@ -154,7 +156,7 @@ export function LeadQuickForm({
     );
 
   return (
-    <div className={clsx(HUELLE[variant], className)}>
+    <div className={clsx('@container', HUELLE[variant], className)}>
       {heading && (
         // Kopf: Etikett als Schriftfeld-Zeile, Titel und Einleitung, Fuge zum Feldblock
         <div className="mb-6 border-b border-fuge pb-6">
@@ -187,6 +189,8 @@ export function LeadQuickForm({
             onChange={(e) => setFormData({ ...formData, websiteUrl: e.target.value })}
           />
         </div>
+
+        <PflichtHinweis />
 
         <div className="grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-2">
           <div>
@@ -285,7 +289,7 @@ export function LeadQuickForm({
             onChange={(e) => setFormData({ ...formData, privacyConsent: e.target.checked })}
             className={clsx(kontrollKlassen, einwilligungFehlt && 'outline-2 outline-offset-2 outline-laser-tief focus-visible:outline-tinte')}
           />
-          <label htmlFor={`consent-${sourceTag}`} className="cursor-pointer text-fs-2 text-tinte">
+          <label htmlFor={`consent-${sourceTag}`} className="min-w-0 cursor-pointer text-fs-2 text-tinte @max-3xs:hyphens-auto wrap-break-word">
             Ich willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. Hinweise in der{' '}
             <Link href="/datenschutz" className={clsx(linkKlassen, 'py-1')}>
               Datenschutzerklärung
@@ -316,7 +320,7 @@ export function LeadQuickForm({
             ref={absendenRef}
             type="submit"
             aria-busy={laedt || undefined}
-            className={knopfKlassen('haupt', clsx('w-full', LADEN))}
+            className={knopfKlassen('haupt', clsx('w-full @max-3xs:hyphens-auto wrap-break-word @max-3xs:px-4 @max-3xs:flex-wrap', LADEN))}
             data-motion="druck"
           >
             {laedt ? (

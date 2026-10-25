@@ -28,12 +28,13 @@ export default function Schritt1({ sqm, changeSqm, sqmLabel }) {
                 className="mt-4 block h-11 w-full cursor-pointer accent-tinte"
             />
             {/* Marken: zwei Spalten, vier nebeneinander ab 36 rem Schrittspalte; wird es eng, steht die Bezeichnung als Ganzes in
-                der zweiten Zeile (nie „(Gäste-“ / „WC)“) */}
-            <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1 font-mono text-fs-1 tabular-nums text-tinte-2 @xl:grid-cols-4">
+                der zweiten Zeile (nie „(Gäste-“ / „WC)“). Bei großer Systemschrift (Bausteinbreite unter 16 rem) untereinander,
+                linksbündig: eine Zelle ist dort schmaler als „(Gäste-WC)“ */}
+            <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1 font-mono text-fs-1 tabular-nums text-tinte-2 @max-3xs/projekt:grid-cols-1 @xl:grid-cols-4">
                 <span>3,5{NBSP}m² <span className="whitespace-nowrap">(Gäste-WC)</span></span>
-                <span className="text-right @xl:text-center">8,2{NBSP}m² <span className="whitespace-nowrap">(Standard)</span></span>
+                <span className="text-right @max-3xs/projekt:text-left @xl:text-center">8,2{NBSP}m² <span className="whitespace-nowrap">(Standard)</span></span>
                 <span className="@xl:text-center">15,9{NBSP}m² <span className="whitespace-nowrap">(Komfort)</span></span>
-                <span className="text-right">25{NBSP}m² <span className="whitespace-nowrap">(Spa)</span></span>
+                <span className="text-right @max-3xs/projekt:text-left">25{NBSP}m² <span className="whitespace-nowrap">(Spa)</span></span>
             </div>
         </div>
     );

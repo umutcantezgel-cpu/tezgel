@@ -26,6 +26,7 @@ export default function CompanyHistory() {
         </p>
       }
       auftritt
+      className="wrap-break-word"
     >
       <div className="relative">
         {/* Die Fuge: eine Linie über alle Einträge (mobil links, ab md an der Grenze Jahr | Text bei 1/4) */}

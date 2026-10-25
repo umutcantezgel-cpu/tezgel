@@ -45,7 +45,7 @@ export default function BadProjektCheck() {
     } = useProjektCheck();
 
     return (
-        <div className="@container border border-strich bg-fliese">
+        <div className="@container/projekt border border-strich bg-fliese">
             {/* Kopf: Schriftfeld-Zeile mit Etiketten, darunter Titel und Einleitung */}
             <div className="border-b border-fuge p-6 @lg:p-8 @5xl:p-12">
                 <div className="flex flex-wrap items-center justify-between gap-2 border-b border-fuge pb-4">

@@ -9,6 +9,8 @@ import Icon from '@/components/icons/Icon';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Knopf from '@/components/kern/Knopf';
 import { etikettKlassen, feldKlassen, labelKlassen, linkKlassen, pflichtKlassen, wahlKlassen } from '@/components/kern/stile';
+import PflichtHinweis from '@/components/kern/PflichtHinweis';
+import Rufnummer from '@/components/kern/Rufnummer';
 import { COMPANY_DATA } from '@/config/company';
 import { AVAILABLE_SLOTS, useTerminKalender } from '@/lib/formulare/useTerminKalender';
 
@@ -81,7 +83,7 @@ export function BookingCalendar({
   }
 
   return (
-    <div className={`border border-strich bg-fliese p-6 sm:p-8 lg:p-12 ${className}`}>
+    <div className={`@container border border-strich bg-fliese p-6 sm:p-8 lg:p-12 ${className}`}>
       {/* Kopf */}
       <div className="mb-8 flex flex-wrap items-start justify-between gap-4 border-b border-fuge pb-6">
         <div>
@@ -118,12 +120,12 @@ export function BookingCalendar({
             {availableDays.length === 0 && (
               <p className="py-6 text-fs-2 text-tinte-2">
                 Die freien Termine erscheinen, sobald die Seite fertig geladen ist. Sie erreichen uns telefonisch unter{' '}
-                <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className={`${linkKlassen} font-mono`}>{COMPANY_DATA.contact.phone}</a>.
+                <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className={linkKlassen}><Rufnummer nummer={COMPANY_DATA.contact.phone} /></a>.
               </p>
             )}
             {availableDays.map((day) => (
               <div key={day.dateStr} role="group" aria-label={`${day.weekday}, ${day.displayDate}`} className="border-b border-fuge py-4">
-                <div className="mb-3 flex min-h-8 items-center justify-between gap-2">
+                <div className="mb-3 flex min-h-8 items-center justify-between gap-2 @max-3xs:flex-wrap">
                   <span className="font-mono text-fs-2 text-tinte">
                     {day.weekday}, {day.displayDate}
                   </span>
@@ -134,7 +136,7 @@ export function BookingCalendar({
                   )}
                 </div>
 
-                <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-5">
+                <div className="grid grid-cols-1 gap-2 @3xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-5">
                   {AVAILABLE_SLOTS.map((slot) => {
                     const isTaken = bookedSlots.includes(`${day.dateStr}_${slot.time}`);
                     return (
@@ -176,6 +178,8 @@ export function BookingCalendar({
                 onChange={(e) => setContactData({ ...contactData, websiteUrl: e.target.value })}
               />
             </div>
+
+            <PflichtHinweis />
 
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-4">
               <div>

@@ -66,7 +66,7 @@ export default function BlogFilter({ anrisse = {} }) {
 
   return (
     <div className="mx-auto w-full max-w-mass">
-      <div className="min-w-0">
+      <div className="@container min-w-0">
 
         {/* Suche (sichtbar beschriftet) und Kategorien; mobil eine querlaufende Zeile bis an den Bildrand (die erste
             Schaltfläche steht auf dem Seitenrand, 16 px), ab sm umbrechend und mittig */}
@@ -83,7 +83,7 @@ export default function BlogFilter({ anrisse = {} }) {
           </div>
 
           {visibleCategories.length > 0 && (
-            <div role="group" aria-label="Kategorien" className="-mx-4 flex snap-x scroll-px-4 gap-2 overflow-x-auto px-4 py-1 sm:mx-0 sm:flex-wrap sm:justify-center sm:overflow-visible sm:px-0">
+            <div role="group" aria-label="Kategorien" className="-mx-4 flex snap-x scroll-px-4 gap-2 overflow-x-auto px-4 py-1 sm:mx-0 sm:flex-wrap sm:justify-center sm:overflow-visible sm:px-0 @max-xs:mx-0 @max-xs:flex-wrap @max-xs:justify-center @max-xs:overflow-visible @max-xs:px-0">
               {[{ id: 'all', name: 'Alle Artikel' }, ...visibleCategories].map((category) => {
                 const gedrueckt = activeCategory === category.id;
                 const zeichen = zeichenFuer(category.id);
@@ -94,7 +94,7 @@ export default function BlogFilter({ anrisse = {} }) {
                     onClick={() => setActiveCategory(category.id)}
                     onFocus={insBild}
                     aria-pressed={gedrueckt}
-                    className={`${wahlKlassen} shrink-0 snap-start gap-2`}
+                    className={`${wahlKlassen} shrink-0 @max-xs:shrink snap-start gap-2`}
                   >
                     {/* genau ein Zeichen: gedrückt das Fugenkreuz, sonst das Kategoriesymbol */}
                     {gedrueckt ? <Fugenkreuz className="size-3 shrink-0" /> : zeichen && <Icon name={zeichen} groesse={4} />}

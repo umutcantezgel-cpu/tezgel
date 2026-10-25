@@ -92,7 +92,7 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
     return (
         <div className="@container">
             <div className="border border-strich bg-fliese">
-                <div className={`grid grid-cols-1 gap-6 p-6 @xl:p-8 @4xl:p-12 ${ergebnisSpalte ? '@5xl:grid-cols-3 @5xl:gap-x-12' : ''}`}>
+                <div className={`grid grid-cols-1 gap-6 p-6 @max-xs:p-4 @xl:p-8 @4xl:p-12 ${ergebnisSpalte ? '@5xl:grid-cols-3 @5xl:gap-x-12' : ''}`}>
                     {/* Kopf: Etikett, Fortschritt (Kästchen), „Schritt n von 4“ sichtbar in Mono (einmal), Überschrift */}
                     <div className={`min-w-0 ${ergebnisSpalte ? '@5xl:col-span-2' : ''}`}>
                         <div className="flex flex-wrap items-center justify-between gap-4">

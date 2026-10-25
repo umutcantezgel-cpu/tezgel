@@ -1,5 +1,6 @@
 import Icon from '@/components/icons/Icon';
 import Knopf from '@/components/kern/Knopf';
+import Rufnummer from '@/components/kern/Rufnummer';
 import { etikettKlassen } from '@/components/kern/stile';
 import { COMPANY_DATA } from '@/config/company';
 import { labelOf, ROOM_OPTIONS } from '@/lib/formulare/useFliesenKonfigurator';
@@ -58,7 +59,7 @@ export default function Erfolg({ data, referenceId, handleNewRequest }) {
 
                 <div className="mt-8 flex flex-col items-stretch gap-3 @xl:flex-row @xl:items-center">
                     <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} iconLinks="telefon" className="text-center">
-                        Direkt anrufen: <span className="whitespace-nowrap font-mono">{COMPANY_DATA.contact.phone}</span>
+                        Direkt anrufen: <Rufnummer />
                     </Knopf>
                     <Knopf variante="neben" onClick={handleNewRequest}>
                         Neue Konfiguration starten

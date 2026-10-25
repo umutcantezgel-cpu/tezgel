@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Icon from '@/components/icons/Icon';
 import Knopf from '@/components/kern/Knopf';
 import { knopfKlassen, labelKlassen, linkKlassen, pflichtKlassen } from '@/components/kern/stile';
+import PflichtHinweis from '@/components/kern/PflichtHinweis';
 import { inputClass } from './stile';
 import { anzeige } from '@/lib/formulare/anzeige';
 
@@ -55,6 +56,8 @@ export default function Schritt3({ setStep, name, setName, phone, setPhone, emai
               Ändern
             </button>
           </div>
+
+          <PflichtHinweis />
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-4">
             <div>

@@ -18,6 +18,8 @@ import type { PlanName } from "@/lib/plaene/vorgaben";
 import Fugenkreuz from "@/components/kern/Fugenkreuz";
 import Knopf from "@/components/kern/Knopf";
 import { etikettForm, etikettKlassen, feldKlassen, labelKlassen } from "@/components/kern/stile";
+import PflichtHinweis from "@/components/kern/PflichtHinweis";
+import Rufnummer from "@/components/kern/Rufnummer";
 import { siteConfig } from "@/lib/config";
 import { usePreisrechner } from "@/lib/formulare/usePreisrechner";
 import { anzeige } from "@/lib/formulare/anzeige";
@@ -35,10 +37,10 @@ const SERVICE_PLAENE: Record<CraftServiceType, PlanName> = {
 const labelHell = "block font-text text-fs-2 font-semibold text-kalk";
 /** Auswahlfeld mit Titel und Unterzeile (aria-pressed) */
 const optionKlassen =
-  "flex w-full items-start gap-3 border border-strich bg-fliese p-4 text-left text-tinte hover:border-tinte aria-pressed:border-tinte aria-pressed:bg-tinte aria-pressed:text-kalk";
+  "flex w-full items-start gap-3 border border-strich bg-fliese p-4 text-left text-tinte hover:border-tinte aria-pressed:border-tinte aria-pressed:bg-tinte aria-pressed:text-kalk @max-3xs:flex-col @max-3xs:items-stretch";
 /** Flächenstufe (aria-pressed), zentriert */
 const stufeKlassen =
-  "flex w-full flex-col items-center gap-1 border border-strich bg-fliese p-4 text-center text-tinte hover:border-tinte aria-pressed:border-tinte aria-pressed:bg-tinte aria-pressed:text-kalk";
+  "flex w-full flex-col items-center gap-1 border border-strich bg-fliese p-4 @max-3xs:px-3 text-center text-tinte hover:border-tinte aria-pressed:border-tinte aria-pressed:bg-tinte aria-pressed:text-kalk";
 /** kleines Zahlenfeld neben dem Label */
 const zahlFeldKlassen =
   "block w-24 min-h-11 rounded-r1 border border-strich bg-fliese px-4 py-3 font-text text-fs-3 text-tinte placeholder:text-tinte-2 hover:border-tinte focus-visible:border-tinte";
@@ -103,7 +105,7 @@ export default function PricingCalculator() {
         </ol>
 
         {/* 1. Gewerk */}
-        <div role="group" aria-labelledby="calc-gewerk">
+        <div role="group" aria-labelledby="calc-gewerk" className="@container">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <p id="calc-gewerk" className={labelKlassen}>
               1. Welches Projekt planen Sie?
@@ -129,12 +131,12 @@ export default function PricingCalculator() {
                   </span>
                   <span className="min-w-0 flex-1">
                     <span className="flex flex-wrap items-start justify-between gap-x-2 gap-y-1">
-                      <span className="block min-w-0 text-fs-2 font-semibold">{anzeige(srv.title)}</span>
+                      <span className="block min-w-0 text-fs-2 font-semibold @max-3xs:hyphens-auto wrap-break-word">{anzeige(srv.title)}</span>
                       {srv.badge && (
                         <span className="hidden whitespace-nowrap font-text text-fs-1 sm:inline-block">{anzeige(srv.badge)}</span>
                       )}
                     </span>
-                    <span className="mt-1 block text-fs-1">{anzeige(srv.subtitle)}</span>
+                    <span className="mt-1 block text-fs-1 @max-3xs:hyphens-auto wrap-break-word">{anzeige(srv.subtitle)}</span>
                   </span>
                 </button>
               );
@@ -143,11 +145,11 @@ export default function PricingCalculator() {
         </div>
 
         {/* 2. Fläche */}
-        <div role="group" aria-labelledby="calc-flaeche">
+        <div role="group" aria-labelledby="calc-flaeche" className="@container">
           <p id="calc-flaeche" className={labelKlassen}>
             2. Wie groß ist die Fläche ungefähr?
           </p>
-          <div className="mt-4 grid grid-cols-2 gap-2">
+          <div className="mt-4 grid grid-cols-1 gap-2 @3xs:grid-cols-2">
             {Object.values(ROOM_SIZES).map((size) => {
               const isSelected = roomSize === size.id && !customArea;
               return (
@@ -159,7 +161,7 @@ export default function PricingCalculator() {
                   className={stufeKlassen}
                   data-motion="zustand"
                 >
-                  <span className="block w-full text-fs-2 font-semibold">{anzeige(size.label)}</span>
+                  <span className="block w-full text-fs-2 font-semibold @max-3xs:hyphens-auto wrap-break-word">{anzeige(size.label)}</span>
                   <span className="block w-full font-mono text-fs-1">{anzeige(size.areaText)}</span>
                 </button>
               );
@@ -190,7 +192,7 @@ export default function PricingCalculator() {
         </div>
 
         {/* 3. Rahmenbedingungen */}
-        <div role="group" aria-labelledby="calc-rahmen">
+        <div role="group" aria-labelledby="calc-rahmen" className="@container">
           <p id="calc-rahmen" className={labelKlassen}>
             3. Was trifft bei Ihnen zu?
           </p>
@@ -203,7 +205,7 @@ export default function PricingCalculator() {
                   type="button"
                   aria-pressed={isChecked}
                   onClick={() => toggleFeature(opt.id)}
-                  className="flex items-start gap-3 border border-strich bg-fliese p-3 text-left text-tinte hover:border-tinte aria-pressed:border-tinte"
+                  className="flex items-start gap-3 border border-strich bg-fliese p-3 text-left text-tinte hover:border-tinte aria-pressed:border-tinte @max-3xs:flex-col @max-3xs:items-stretch"
                   data-motion="zustand"
                 >
                   <span
@@ -213,9 +215,9 @@ export default function PricingCalculator() {
                   >
                     {isChecked && <Icon name="haken" groesse={4} />}
                   </span>
-                  <span>
-                    <span className="block text-fs-2 font-semibold">{anzeige(opt.label)}</span>
-                    <span className="mt-1 block text-fs-1 text-tinte-2">{anzeige(opt.description)}</span>
+                  <span className="min-w-0">
+                    <span className="block text-fs-2 font-semibold @max-3xs:hyphens-auto wrap-break-word">{anzeige(opt.label)}</span>
+                    <span className="mt-1 block text-fs-1 text-tinte-2 @max-3xs:hyphens-auto wrap-break-word">{anzeige(opt.description)}</span>
                   </span>
                 </button>
               );
@@ -246,7 +248,7 @@ export default function PricingCalculator() {
 
       {/* ── Darunter: Zusammenfassung und Kontakt (Schriftfeld auf Tinte; der Absenden-Knopf steht direkt unter der
           Einwilligung) ── */}
-      <div className="flaeche-tinte flex flex-col bg-tinte p-6 text-kalk sm:p-8 lg:p-12">
+      <div className="@container flaeche-tinte flex flex-col bg-tinte p-6 text-kalk sm:p-8 lg:p-12">
         {status === "success" ? (
           /* Erfolgsansicht nach Absenden */
           <div className="my-auto flex flex-col gap-6" role="status">
@@ -296,23 +298,23 @@ export default function PricingCalculator() {
 
               {/* Projekt-Zusammenfassung */}
               <dl className="mt-6 border-t border-nacht-fuge text-fs-2">
-                <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3">
+                <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3 @max-3xs:flex-wrap">
                   <dt className="text-nacht-2">Projekt:</dt>
-                  <dd className="text-right font-semibold text-kalk">{anzeige(selectedService.title)}</dd>
+                  <dd className="text-right font-semibold text-kalk @max-3xs:hyphens-auto wrap-break-word">{anzeige(selectedService.title)}</dd>
                 </div>
-                <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3">
+                <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3 @max-3xs:flex-wrap">
                   <dt className="text-nacht-2">Fläche:</dt>
-                  <dd className="text-right font-mono text-kalk">
+                  <dd className="text-right font-mono text-kalk wrap-break-word">
                     {customArea.trim() ? `${customArea.trim()} m²` : anzeige(selectedSize.areaText)}
                   </dd>
                 </div>
-                <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3">
+                <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3 @max-3xs:flex-wrap">
                   <dt className="text-nacht-2">Termin bei Ihnen vor Ort:</dt>
                   <dd className="text-right font-mono text-kalk">0 € (Kostenfrei)</dd>
                 </div>
-                <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3">
+                <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3 @max-3xs:flex-wrap">
                   <dt className="text-nacht-2">Angebot:</dt>
-                  <dd className="text-right font-semibold text-kalk">Verbindlicher Festpreis</dd>
+                  <dd className="text-right font-semibold text-kalk @max-3xs:hyphens-auto wrap-break-word">Verbindlicher Festpreis</dd>
                 </div>
               </dl>
 
@@ -343,6 +345,7 @@ export default function PricingCalculator() {
 
               {/* Kontaktdaten */}
               <div className="mt-6 flex flex-col gap-4">
+                <PflichtHinweis dunkel />
                 <div>
                   <label htmlFor="calc-name" className={labelHell}>
                     Ihr Name <span className="ml-1 font-mono text-fs-1 text-nacht-2">*</span>
@@ -448,7 +451,7 @@ export default function PricingCalculator() {
                     onChange={(e) => setPrivacyAccepted(e.target.checked)}
                     className="mt-1 size-5 shrink-0 rounded-r1 accent-kalk"
                   />
-                  <span>
+                  <span className="min-w-0 @max-3xs:hyphens-auto wrap-break-word">
                     Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Beantwortung meiner
                     Anfrage verarbeitet werden.
                   </span>
@@ -458,14 +461,14 @@ export default function PricingCalculator() {
 
             {/* Absenden und Anruf */}
             <div className="flex flex-col gap-4 border-t border-nacht-fuge pt-6">
-              <Knopf type="submit" variante="hell" laedt={status === "submitting"} ladeText="Wird gesendet …" icon="pfeil-rechts" className="w-full">
+              <Knopf type="submit" variante="hell" laedt={status === "submitting"} ladeText="Wird gesendet …" icon="pfeil-rechts" className="w-full @max-3xs:hyphens-auto wrap-break-word @max-3xs:px-4 @max-3xs:flex-wrap">
                 Unverbindliche Anfrage senden
               </Knopf>
 
               <div>
                 <span className="block font-mono text-fs-1 text-nacht-2">Oder bei dringenden Fragen direkt anrufen:</span>
-                <Knopf href={siteConfig.contact.phone.link} variante="neben" iconLinks="telefon" className="mt-2 w-full">
-                  {siteConfig.contact.phone.formatted}
+                <Knopf href={siteConfig.contact.phone.link} variante="neben" iconLinks="telefon" className="mt-2 w-full wrap-anywhere @max-3xs:px-4">
+                  <Rufnummer nummer={siteConfig.contact.phone.formatted} />
                 </Knopf>
               </div>
             </div>

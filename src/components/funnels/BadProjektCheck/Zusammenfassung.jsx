@@ -6,6 +6,8 @@ import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Hinweis from '@/components/kern/Hinweis';
 import Knopf from '@/components/kern/Knopf';
+import PflichtHinweis from '@/components/kern/PflichtHinweis';
+import Rufnummer from '@/components/kern/Rufnummer';
 import { etikettKlassen, knopfKlassen, labelKlassen, linkKlassen } from '@/components/kern/stile';
 import { COMPANY_DATA } from '@/config/company';
 import { anzeige } from '@/lib/formulare/anzeige';
@@ -92,9 +94,13 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                     </p>
                 </div>
 
-                {/* Zuschuss-Hinweis */}
-                <Hinweis titel={<><span className="sr-only">Hinweis: </span>Bis zu 4.180 € Zuschuss der Pflegekasse</>}>
-                    Bei Pflegegrad für barrierefreie Bäder nach <span className="whitespace-nowrap font-mono">DIN{NBSP}18040-2</span>.{' '}
+                {/* Zuschuss-Hinweis. Bei großer Systemschrift steht das Symbol über dem Text (Zeile umbrechen, Innenabstand kleiner),
+                    lange Wörter brechen in der Spalte um */}
+                <Hinweis
+                    className="wrap-break-word @max-3xs:flex-wrap @max-3xs:gap-2 @max-3xs:p-4"
+                    titel={<><span className="sr-only">Hinweis: </span>Bis zu 4.180 € Zuschuss der Pflegekasse</>}
+                >
+                    Bei Pflegegrad für barrierefreie Bäder nach <span className="font-mono">DIN{NBSP}18040-2</span>.{' '}
                     <Link href="/bad/barrierefreies-bad" className={linkKlassen}>
                         Details zum barrierefreien Bad und zu Zuschüssen
                     </Link>
@@ -178,9 +184,10 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                             </div>
                         )}
 
+                        <PflichtHinweis />
                         <div>
-                            <div className="flex items-baseline">
-                                <label htmlFor="budget-lead-name" className={labelKlassen}>Ihr Name</label>
+                            <div className="flex flex-wrap items-baseline">
+                                <label htmlFor="budget-lead-name" className={`${labelKlassen} min-w-0 wrap-break-word`}>Ihr Name</label>
                                 <span aria-hidden="true" className={pflichtClass}>*</span>
                             </div>
                             <input
@@ -196,8 +203,8 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                             />
                         </div>
                         <div>
-                            <div className="flex items-baseline">
-                                <label htmlFor="budget-lead-phone" className={labelKlassen}>Ihre Telefonnummer</label>
+                            <div className="flex flex-wrap items-baseline">
+                                <label htmlFor="budget-lead-phone" className={`${labelKlassen} min-w-0 wrap-break-word`}>Ihre Telefonnummer</label>
                                 <span aria-hidden="true" className={pflichtClass}>*</span>
                             </div>
                             <input
@@ -275,10 +282,11 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                     href={`tel:${COMPANY_DATA.contact.phoneLink}`}
                     variante="neben"
                     iconLinks="telefon"
-                    className="w-full text-center"
+                    className="w-full text-center @max-2xs:flex-wrap"
                 >
-                    {/* Nummer bricht nur als Ganzes um (mobil zweite Zeile), nie mitten in den Ziffern */}
-                    Anrufen: <span className="whitespace-nowrap font-mono font-normal">{COMPANY_DATA.contact.phone}</span>
+                    {/* Nummer im Baustein Rufnummer: bricht nur nach dem Schrägstrich um, bei großer Systemschrift in zwei Zeilen;
+                        dort steht das Symbol über dem Text (flex-wrap, Spalte unter 18 rem wie beim Baustein) */}
+                    Anrufen: <Rufnummer className="font-normal" />
                 </Knopf>
             </div>
         </div>

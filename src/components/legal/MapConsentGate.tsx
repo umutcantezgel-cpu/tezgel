@@ -52,7 +52,7 @@ export function MapConsentGate({
   // ab md wächst sie nicht unter `height`, und sie wächst mit der Vorschau, wenn die nicht mehr hineinpasst.
   // Die Fuge liegt als Umriss innen (kein Rand): ein Rand würde die Höhe um 2 px über die der geladenen Karte heben (CLS).
   // h-full: in einem gestreckten Elternteil (Kartenspalte ab lg) füllt der Platzhalter die Spalte; sonst folgt er dem Inhalt.
-  const rahmenInhalt = clsx("relative grid h-full w-full overflow-hidden bg-fliese outline outline-1 -outline-offset-1 outline-fuge", className);
+  const rahmenInhalt = clsx("relative grid grid-cols-1 h-full w-full overflow-hidden bg-fliese outline outline-1 -outline-offset-1 outline-fuge", className);
   const rahmenStil = {
     "--karten-hoehe": typeof height === "number" ? `${height}px` : height,
   } as CSSProperties;
