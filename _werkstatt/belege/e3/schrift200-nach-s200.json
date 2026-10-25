@@ -1,0 +1,77 @@
+{
+ "stand": "e64b4adb",
+ "werkzeug": "einzelbild.mjs --schrift 200 --voll --geraete m360,m390,m430",
+ "basis": "http://127.0.0.1:4311",
+ "seiten": {
+  "bad-badsanierung": {
+   "ueberlauf": 0,
+   "ueberlappung": 3,
+   "konsole": 0
+  },
+  "bad-barrierefreies-bad": {
+   "ueberlauf": 0,
+   "ueberlappung": 3,
+   "konsole": 0
+  },
+  "bad": {
+   "ueberlauf": 0,
+   "ueberlappung": 3,
+   "konsole": 0
+  },
+  "balkon-terrasse": {
+   "ueberlauf": 0,
+   "ueberlappung": 3,
+   "konsole": 0
+  },
+  "blog": {
+   "ueberlauf": 0,
+   "ueberlappung": 3,
+   "konsole": 0
+  },
+  "fliesen": {
+   "ueberlauf": 0,
+   "ueberlappung": 3,
+   "konsole": 0
+  },
+  "kontakt": {
+   "ueberlauf": 0,
+   "ueberlappung": 0,
+   "konsole": 0
+  },
+  "leistungen": {
+   "ueberlauf": 0,
+   "ueberlappung": 0,
+   "konsole": 0
+  },
+  "referenzen": {
+   "ueberlauf": 0,
+   "ueberlappung": 3,
+   "konsole": 0
+  },
+  "standorte-wetzlar": {
+   "ueberlauf": 0,
+   "ueberlappung": 0,
+   "konsole": 0
+  },
+  "start": {
+   "ueberlauf": 0,
+   "ueberlappung": 0,
+   "konsole": 0
+  },
+  "ueber-uns": {
+   "ueberlauf": 0,
+   "ueberlappung": 3,
+   "konsole": 0
+  }
+ },
+ "summe": {
+  "ueberlauf": 0,
+  "ueberlappung": 24,
+  "konsole": 0
+ },
+ "vorher_e3_pruef_b1": {
+  "ueberlauf": 73,
+  "ueberlappung": 31
+ },
+ "hinweis": "Restliche Überlappungen sind die Werkzeugmeldung „06441“ (Vorwahl und Nummer der Rufnummer als zwei Blockzeilen, Zeilenkästen überschneiden sich um 7 px, sichtbar nichts überdeckt; offene Frage 1 aus E3-PRUEF-B-1)."
+}
