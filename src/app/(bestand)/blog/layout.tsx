@@ -2,6 +2,7 @@ import { createMetadata } from '@/lib/metadata';
 import { buildGraph, buildBreadcrumbNode, buildWebPageNode, SITE_URL, ORG_ID } from '@/lib/schema';
 import JsonLd from '@/components/seo/JsonLd';
 import { ContentProvider } from '@/contexts/ContentContext';
+import { BLOG } from '@/inhalte/blog';
 
 export const metadata = createMetadata({
   title: 'Fliesen-Ratgeber & Badsanierung Tipps | Tezgel',
@@ -18,9 +19,9 @@ const breadcrumbs = [
 const blogSchema = buildGraph([
   buildWebPageNode({
     url: pageUrl,
-    name: 'Ratgeber & Blog | Fliesenverlegung Tezgel',
-    description:
-      'Fachartikel rund um Badsanierung, Fliesen und Abdichtung vom Fliesenleger-Fachbetrieb in Aßlar.',
+    // wie Titel und Beschreibung der Seite (Zusatz E3-BAU-K016, Regel 6)
+    name: BLOG.meta.titel,
+    description: BLOG.meta.beschreibung,
     breadcrumbItems: breadcrumbs,
   }),
   buildBreadcrumbNode(breadcrumbs, pageUrl),
