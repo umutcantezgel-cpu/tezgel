@@ -126,7 +126,13 @@ export async function generateMetadata({
     ? `${displayName} in ${city.name} | Tezgel`
     : `${displayName} in ${city.name} | Fliesen Tezgel`;
   
-  const description = `${displayName} in ${city.name}: Fachgerechte Verlegung & Sanierung. ${distanceLabel(city)}. Jetzt Vor-Ort-Aufmaß & Festpreisangebot anfragen!`;
+  const kurznamen: Record<string, string> = {
+    bad: 'Badsanierung',
+    wohnen: 'Fliesen im Wohnbereich',
+    aussen: 'Balkon und Terrasse',
+    untergrund: 'Untergrund und Abdichtung',
+  };
+  const description = `${kurznamen[service.id] ?? displayName} in ${city.name}: Leistungen, Ablauf und Festpreis vom Fachbetrieb Tezgel. Der Termin bei Ihnen vor Ort ist kostenfrei.`;
 
   return createMetadata({
     title,
