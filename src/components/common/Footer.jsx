@@ -21,7 +21,8 @@ const LINK_COLUMNS = footerGruppen;
 const GUARANTEES = [
     { title: 'Vor Ort in Aßlar, Wetzlar und Umgebung', text: 'Deniz Tezgel kommt selbst zu Ihnen' },
     { title: 'Eingetragen bei der Handwerkskammer', text: COMPANY_DATA.authority.name },
-    { title: 'Abdichtung nach der Norm für Bäder', text: 'DIN 18534, bei uns Standard seit 2019' },
+    // führt zur Wissensseite der Norm (E3-NORMEN, K-016: Fachtext auf eigenen Seiten statt im Laufband)
+    { title: 'Abdichtung nach der Norm für Bäder', text: 'DIN 18534, bei uns Standard seit 2019', href: '/untergrund-abdichtung/din-18534' },
     { title: 'Staubschutz', text: 'wenn Sie während der Arbeiten im Haus wohnen' },
     { title: 'Termin bei Ihnen vor Ort', text: 'für Sie kostenfrei' }
 ];
@@ -52,11 +53,17 @@ export default function Footer() {
                 <div className="border-b border-nacht-fuge">
                     <div className={clsx(seitenKlassen, 'py-6')}>
                         <Karussell art="band" name="Was Sie von uns erwarten können" dunkel>
-                            {GUARANTEES.map(({ title, text }) => (
+                            {GUARANTEES.map(({ title, text, href }) => (
                                 <p key={title} className="flex items-start gap-3 text-fs-2">
                                     <Fugenkreuz className="mt-1 size-4 shrink-0 text-nacht-2" />
                                     <span>
-                                        <span className="font-semibold text-kalk">{title}</span>
+                                        {href ? (
+                                            <Link href={href} data-motion="zustand" className="font-semibold text-kalk underline decoration-nacht-2 underline-offset-4 hover:decoration-kalk focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-kalk">
+                                                {title}
+                                            </Link>
+                                        ) : (
+                                            <span className="font-semibold text-kalk">{title}</span>
+                                        )}
                                         <span className="text-nacht-2"> · {text}</span>
                                     </span>
                                 </p>
