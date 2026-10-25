@@ -5,8 +5,23 @@
 // vor den Schritten, wie `inhalt.ts` ihn für den festen Ansprechpartner vorsieht. Die Galerie mit Filter (`momente.beleg`)
 // und der Vorher-Nachher-Regler (`momente.belegZwei`) kommen in der Seite, nicht hier; `beleg.fotos` bleibt leer.
 // Die Bewertungen mit Themenfilter (ReviewsSection) stehen unter der Vorlage in der Seite, nicht in `beleg.stimmen`.
+// Abnahme (Orchestrator): Die Beispiele aus PORTFOLIO_PROJECTS (Bestand: Liste „Leistungsbeispiele“, je ein Link auf
+// /referenzen/<id>) stehen als „Mehr zum Thema“ im nächsten Schritt, damit die Seiten nicht nur über die Sitemap erreichbar
+// sind. Die Namen sagen, was die Seiten sind: Leistungsumfang eines solchen Auftrags (Projektdokumentation in Vorbereitung),
+// in Alltagssprache ohne Glossarwort im Link (E-027).
 // Vorlage: ErzaehlSeite.
 import type { ErzaehlInhalt } from '@/components/vorlagen/inhalt';
+import { PORTFOLIO_PROJECTS } from '@/config/projects';
+
+/** Namen der Beispielseiten (/referenzen/<id>); fehlt eine Kennung, steht der Titel aus den Daten */
+const BEISPIELE: Record<string, string> = {
+  'badsanierung-grossformat': 'Was zu einer kompletten Badsanierung mit großen Fliesen gehört',
+  'einfamilienhaus-komplett': 'Was zu Fliesen im ganzen Einfamilienhaus gehört',
+  'treppenanlage-wohnhaus': 'Was zu einer Treppe mit Fliesen oder Naturstein gehört',
+  'wohnbereich-fussbodenheizung': 'Was zu einem Fliesenboden auf Fußbodenheizung gehört',
+  'barrierefreies-duschbad': 'Was zu einem Duschbad ohne Stufe gehört',
+  'balkon-stelzlager': 'Was zu einem Balkon mit neuen Platten gehört',
+};
 
 const VORSPANN =
   'Diese Referenzen, also fertige Arbeiten, zeigen Bäder, Terrassen, Treppen und [[grossformat|Großformate]]. Dazu kommen die Bewertungen unserer Kunden mit 5,0 Sternen bei Google.';
@@ -82,5 +97,6 @@ export const REFERENZEN: ErzaehlInhalt = {
     titel: 'Sprechen Sie mit uns über Ihr Vorhaben.',
     satz:
       'Schreiben Sie uns Ihren Namen und Ihre Telefonnummer. Deniz Tezgel ruft Sie zurück und macht einen Termin mit Ihnen aus.',
+    verwandte: PORTFOLIO_PROJECTS.map((p: { id: string; title: string }) => ({ name: BEISPIELE[p.id] ?? p.title, href: `/referenzen/${p.id}` })),
   },
 };

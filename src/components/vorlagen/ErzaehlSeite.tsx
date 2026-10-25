@@ -40,6 +40,9 @@ export interface ErzaehlSeiteProps {
   momente?: { tun?: ReactNode; ablauf?: ReactNode; beleg?: ReactNode; belegZwei?: ZweiterBeleg };
   /** Werkzeug der Seite (Badanfrage, Preisrechner …) nach dem nächsten Schritt, Kennung wie im Bestand */
   werkzeug?: Arbeitsabschnitt;
+  /** eigener Abschnitt nach dem Beleg und vor dem nächsten Schritt, der seinen Kopf selbst mitbringt (z. B. die Bewertungen
+   *  mit Themenfilter auf /referenzen, Abnahme E3-BAU-07: Belege vor der Bitte um einen Termin) */
+  nachBeleg?: ReactNode;
   /** eigener Bildplatz für das hohe Foto im Planblatt (Startseite: das Startbild mit seinem großen Moment) */
   einstiegBild?: ReactNode;
   /** Anfrageformular im nächsten Schritt (vorhandene Logik als Insel, Pflichtfelder und Empfänger unverändert, G8) */
@@ -49,7 +52,7 @@ export interface ErzaehlSeiteProps {
   formularId?: string;
 }
 
-export default function ErzaehlSeite({ inhalt, momente, werkzeug, einstiegBild, formular, formularId }: ErzaehlSeiteProps) {
+export default function ErzaehlSeite({ inhalt, momente, werkzeug, nachBeleg, einstiegBild, formular, formularId }: ErzaehlSeiteProps) {
   const { worum } = inhalt;
   const ziel = hauptziel(inhalt.pfad);
   const rest = (
@@ -58,6 +61,7 @@ export default function ErzaehlSeite({ inhalt, momente, werkzeug, einstiegBild, 
       <Tun inhalt={inhalt.tun} moment={momente?.tun} />
       <Ablauf inhalt={inhalt.ablauf} moment={momente?.ablauf} />
       <Beleg inhalt={inhalt.beleg} moment={momente?.beleg} zweiter={momente?.belegZwei} />
+      {nachBeleg}
       <Schritt
         inhalt={inhalt.schritt}
         pfad={inhalt.pfad}

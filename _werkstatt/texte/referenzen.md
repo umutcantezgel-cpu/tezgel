@@ -63,3 +63,4 @@
 - H2: `Sprechen Sie mit uns über Ihr Vorhaben.`
 - Satz: `Schreiben Sie uns Ihren Namen und Ihre Telefonnummer. Deniz Tezgel ruft Sie zurück und macht einen Termin mit Ihnen aus.`
 - Hauptknopf: `Termin vor Ort anfragen` → `/kontakt` · `Anrufen: {{COMPANY_DATA.contact.phone}}` · `Nachricht per WhatsApp`
+- Mehr zum Thema (Abnahme E3-BAU-07: die Beispielseiten des Bestands, je ein Link auf `/referenzen/<id>`): `Was zu einer kompletten Badsanierung mit großen Fliesen gehört` · `Was zu Fliesen im ganzen Einfamilienhaus gehört` · `Was zu einer Treppe mit Fliesen oder Naturstein gehört` · `Was zu einem Fliesenboden auf Fußbodenheizung gehört` · `Was zu einem Duschbad ohne Stufe gehört` · `Was zu einem Balkon mit neuen Platten gehört`

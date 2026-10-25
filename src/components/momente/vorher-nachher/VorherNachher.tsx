@@ -4,7 +4,8 @@
 // Tastatur, direkt) verschiebt das Lot. Beide Fotos über Bildfeld (K-012) mit gleichen Maßen (Bildplätze ref-vorher und
 // ref-nachher). Bewegt wird nur translate über --teilung (bewegung.css, Abschnitt vorher-nachher), ohne Übergang; reduziert
 // gleich. Ohne JavaScript steht das Lot in der Mitte, beide Fotos stehen dann ganz darunter (noscript). Die Überschrift ist
-// die H2 des Abschnitts (titelId), der Regler trägt ihren Namen. Serverkomponente; nur der Regler ist eine Insel.
+// die H2 des Abschnitts (titelId), der Regler trägt ihren Namen. Mittig unter der Überschrift (K-016, Abnahme E3-BAU-07).
+// Serverkomponente; nur der Regler ist eine Insel.
 import { useId } from 'react';
 import Bildfeld from '@/components/kern/Bildfeld';
 import Fotos from '@/components/vorlagen/teile/Fotos';
@@ -29,8 +30,8 @@ export default function VorherNachher({ vorher, nachher, titelId, unterschrift }
   const uid = useId().replace(/[^a-zA-Z0-9-]/g, '');
   const hinweisId = `vn-${uid}-hinweis`;
   return (
-    <div className="grid grid-cols-4 md:grid-cols-8 lg:gap-x-12">
-      <div className="col-span-4 md:col-span-6 lg:col-span-5">
+    <div className="flex justify-center">
+      <div className="w-full max-w-md lg:max-w-mass">
         <figure>
           <div className="vn-buehne relative overflow-hidden border border-fuge bg-fliese" data-motion="vorher-nachher">
             <div className="vn-fenster absolute inset-0 overflow-hidden">

@@ -1,22 +1,23 @@
 "use client";
-// Bewertungen auf /referenzen (KERN v2, S-23; Muster bis E2: Startseite „Kundenstimmen“, früher src/components/start/Stimmen.tsx; heute Stimmen in src/components/vorlagen/teile/Stimmen.tsx, E-044).
-// Kopf zweispaltig: links Etikett mit Fugenkreuz, H2 und Einleitung, rechts Google und Trustlocal als Maß in Mono mit
-// „Stand“. Darunter der Themenfilter (Insel mit Zustand: Auswahlknöpfe mit aria-pressed) und die Stimmen als Feldraster an
-// der Fuge. Jede Stimme ist eine Kundenstimme (K-009): Sterne als Gruppe mit role="img" und Namen, Zitat wörtlich in der
-// Grundschrift, Name und Quelle in Mono an einer Fuge. Genau ein Anriss je Ansicht: das Schlüsselwort (aus @/lib/stimmen)
-// der ersten Stimme der gewählten Gruppe – sonst stünden bis zu 16 rote Striche in einem Bildschirm (K-003 Nr. 2).
-// Das letzte Feld füllt seine Zeile (keine grauen Restzellen bei 16, 7, 5, 4 oder 3 Stimmen).
-// Sprungziel #bewertungen (Link „Bewertungen lesen“ und /referenzen#bewertungen): kein `spaet`, kein eigener Versatz.
-// Wortlaut, IDs (bewertungen, reviews-heading), Gruppenname und aria-pressed wie im Bestand.
-import { useEffect, useMemo, useRef, useState } from 'react';
+// Bewertungen auf /referenzen (KERN v2, S-23; Abnahme E3-BAU-07 nach K-016 „Ruhe“ und dem Seitentext
+// `_werkstatt/texte/referenzen.md` Abschnitt 5). Kopf mittig untereinander: H2, Satz und Absatz der Textdatei (vorher zweispaltig
+// mit den Bewertungen als Maß rechts daneben, ein zweiter Strang). Darunter der Themenfilter (Insel mit Zustand:
+// Auswahlknöpfe mit aria-pressed, Zahl je Thema) und die Stimmen der gewählten Gruppe als langsames, großes Karussell mit
+// gleich großen Karten (K-016: „groß auf Über uns und Unsere Arbeiten“, vorher ein Raster mit bis zu 16 Feldern). Jede Stimme
+// ist eine Kundenstimme (K-009): Sterne als Gruppe mit role="img" und Namen, Zitat wörtlich, Name und Quelle an einer Fuge.
+// Zum Schluss die Kennzeile mit Stand, der Satz zu Trustlocal und das Motto. Werte aus RATING_SUMMARY und Wortlaut der
+// Stimmen unverändert (G8). Sprungziel #bewertungen (/referenzen#bewertungen): kein `spaet`, kein eigener Versatz.
+// IDs (bewertungen, reviews-heading), Gruppenname und aria-pressed wie im Bestand.
+import { useState } from 'react';
 import clsx from 'clsx';
 import { REVIEWS, RATING_SUMMARY } from '@/config/reviews';
-import { STIMMEN, teileAnriss } from '@/lib/stimmen';
-import { beobachte } from '@/lib/motion/bewegung';
+import { COMPANY_DATA } from '@/config/company';
 import Icon from '@/components/icons/Icon';
+import Bewertungszeile from '@/components/kern/Bewertungszeile';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Karussell from '@/components/kern/Karussell';
 import { ACHSE_LAGE } from '@/components/kern/Leitachse';
-import { etikettKlassen, seitenKlassen, wahlKlassen } from '@/components/kern/stile';
+import { seitenKlassen, wahlKlassen } from '@/components/kern/stile';
 
 // Topic groups derived from the `topic` values in config/reviews.js
 // (keyword match, so new reviews are sorted in automatically).
@@ -28,56 +29,20 @@ const TOPIC_FILTERS = [
     { id: 'qualitaet', label: 'Qualität & Sauberkeit', match: (topic) => /Qualität|Sauberkeit|Preis/.test(topic) }
 ];
 
-function Stars({ count = 5 }) {
-    return (
-        <span className="flex items-center gap-1 text-tinte" aria-hidden="true">
-            {Array.from({ length: count }, (_, i) => (
-                <Icon key={i} name="stern-voll" groesse={4} />
-            ))}
-        </span>
-    );
-}
-
-/** Letztes Feld füllt die Zeile: ab md zwei, ab lg drei Spalten (wörtliche Klassen für Tailwind) */
-function restKlassen(index, anzahl) {
-    if (index !== anzahl - 1) return undefined;
-    const md = anzahl % 2 === 1;
-    const lg = anzahl % 3;
-    return clsx(md && 'md:col-span-2', lg === 1 && 'lg:col-span-3', lg === 2 && 'lg:col-span-2', lg === 0 && md && 'lg:col-span-1');
-}
-
-/** Zitat mit genau einem Anriss (nur bei der ersten Stimme der Ansicht); ohne Schlüsselwort unverändert */
-function Zitat({ review, mitAnriss }) {
-    const teile = mitAnriss ? teileAnriss(review.text, STIMMEN[review.id]?.anriss) : null;
-    return (
-        <p>
-            „{teile ? <>{teile[0]}<mark data-motion="anriss">{teile[1]}</mark>{teile[2]}</> : review.text}“
-        </p>
-    );
-}
+/** Zahl in deutscher Schreibweise („9,6“) */
+const zahl = (wert) => String(wert).replace('.', ',');
 
 export default function ReviewsSection({ leitachse = false }) {
     const [selectedTopic, setSelectedTopic] = useState('all');
-    const { google, trustlocal, asOf } = RATING_SUMMARY;
-    const listeRef = useRef(null);
-
-    const filters = useMemo(
-        () =>
-            TOPIC_FILTERS.map((filter) => ({
-                ...filter,
-                count: REVIEWS.filter((review) => filter.match(review.topic)).length
-            })).filter((filter) => filter.count > 0),
-        []
-    );
+    const { trustlocal } = RATING_SUMMARY;
+    const filters = TOPIC_FILTERS.map((filter) => ({
+        ...filter,
+        count: REVIEWS.filter((review) => filter.match(review.topic)).length
+    })).filter((filter) => filter.count > 0);
 
     const activeFilter = filters.find((filter) => filter.id === selectedTopic) || filters[0];
     const filteredReviews = REVIEWS.filter((review) => activeFilter.match(review.topic));
-
-    // Nach einem Themenwechsel steht der Anriss an einer neu gezeichneten Stimme: dem Bewegungsmodul melden (K-007),
-    // sonst bliebe sein Strich bei erlaubter Bewegung unsichtbar. Ohne Bewegung tut beobachte() nichts.
-    useEffect(() => {
-        if (listeRef.current) beobachte(listeRef.current);
-    }, [selectedTopic]);
+    const quellen = [...new Set(REVIEWS.map((review) => review.source))];
 
     return (
         <section className="relative py-16 lg:py-24" id="bewertungen" aria-labelledby="reviews-heading">
@@ -91,50 +56,20 @@ export default function ReviewsSection({ leitachse = false }) {
             )}
 
             <div className={seitenKlassen}>
-                {/* Kopf: links Etikett, H2 und Einleitung; rechts die Bewertungen als Maß */}
-                <div className="grid grid-cols-4 gap-y-12 md:grid-cols-8 lg:grid-cols-12 lg:items-end lg:gap-x-12">
-                    <div className="col-span-4 md:col-span-8 lg:col-span-7">
-                        <p className={clsx(etikettKlassen, 'mb-4')}>
-                            <Fugenkreuz className="size-3 shrink-0 text-strich" />
-                            Echte Kundenstimmen
-                        </p>
-                        <h2 id="reviews-heading" className="text-fs-6 text-tinte">
-                            Was unsere Kunden in Mittelhessen sagen
-                        </h2>
-                        <p className="mt-6 max-w-mass font-text text-fs-3 text-tinte-2">
-                            Wörtliche Auszüge aus öffentlichen Rezensionen – zu Badsanierungen, Balkonen, Treppen und
-                            kompletten Häusern.
-                        </p>
-                    </div>
-
-                    <div className="col-span-4 md:col-span-8 lg:col-span-5">
-                        <div className="grid grid-cols-1 border-l border-t border-fuge sm:grid-cols-2">
-                            <div className="flex flex-col gap-2 border-b border-r border-fuge bg-fliese p-4 lg:p-6">
-                                <p className="font-mono text-fs-5 text-tinte">{google.displayRating}</p>
-                                <Stars count={Math.round(google.rating)} />
-                                <p className="font-text text-fs-2 font-semibold text-tinte">
-                                    {google.source}: {google.displayRating} von {google.maxRating}
-                                </p>
-                                <p className="font-mono text-fs-1 text-tinte-2">
-                                    aus {google.count} {google.label}
-                                </p>
-                            </div>
-                            <div className="flex flex-col gap-2 border-b border-r border-fuge bg-fliese p-4 lg:p-6">
-                                <p className="font-mono text-fs-5 text-tinte">{trustlocal.displayRating.split('/')[0]}</p>
-                                <p className="font-text text-fs-2 font-semibold text-tinte">
-                                    {trustlocal.source}: {trustlocal.displayRating}
-                                </p>
-                                <p className="font-mono text-fs-1 text-tinte-2">
-                                    aus {trustlocal.count} {trustlocal.label}
-                                </p>
-                            </div>
-                        </div>
-                        <p className="mt-3 font-mono text-fs-1 text-tinte-2">Stand: {asOf}</p>
-                    </div>
+                {/* Kopf mittig untereinander (K-016), Wortlaut aus der Textdatei; Zahl und Quelle aus den Daten */}
+                <div className="mx-auto max-w-mass text-center text-balance">
+                    <h2 id="reviews-heading" className="text-fs-6 text-tinte">
+                        Was unsere Kunden wörtlich geschrieben haben.
+                    </h2>
+                    <p className="mt-6 font-text text-fs-3 text-tinte-2">Wählen Sie ein Thema, zum Beispiel das Bad.</p>
+                    <p className="mt-4 font-text text-fs-3 text-tinte-2">
+                        Hier stehen {REVIEWS.length} Stimmen aus unseren Bewertungen bei {quellen.join(' und ')}, wörtlich übernommen.
+                        Wo ein Text gekürzt ist, steht „…“.
+                    </p>
                 </div>
 
                 {/* Themenfilter: Auswahlknöpfe (aria-pressed), Zahl in Mono */}
-                <div className="mt-16 flex flex-wrap gap-2" role="group" aria-label="Bewertungen nach Thema filtern">
+                <div className="mt-12 flex flex-wrap justify-center gap-2" role="group" aria-label="Bewertungen nach Thema filtern">
                     {filters.map((filter) => {
                         const isActive = filter.id === activeFilter.id;
                         return (
@@ -155,30 +90,41 @@ export default function ReviewsSection({ leitachse = false }) {
                     })}
                 </div>
 
-                {/* Stimmen als Feldraster an der Fuge */}
-                <ul ref={listeRef} className="mt-8 grid grid-cols-1 gap-px border border-fuge bg-fuge md:grid-cols-2 lg:grid-cols-3">
-                    {filteredReviews.map((review, index) => (
-                        <li key={review.id} className={clsx('flex flex-col bg-fliese p-6 lg:p-8', restKlassen(index, filteredReviews.length))}>
-                            <figure className="flex flex-1 flex-col">
+                {/* Stimmen der Gruppe als großes Karussell; ein neues Thema beginnt wieder bei der ersten Karte */}
+                <div className="mt-8">
+                    <Karussell key={activeFilter.id} art="reihe" name="Bewertungen" selbstlauf>
+                        {filteredReviews.map((review) => (
+                            <figure key={review.id} className="flex h-full flex-col border border-fuge bg-fliese p-6 lg:p-8">
                                 {/* role="img": aria-label an einem span ist ohne Rolle unzulässig (axe aria-prohibited-attr) */}
                                 <span role="img" className="flex items-center gap-1 text-tinte" aria-label={`${review.rating} von 5 Sternen`}>
                                     {Array.from({ length: review.rating }, (_, i) => (
                                         <Icon key={i} name="stern-voll" groesse={4} />
                                     ))}
                                 </span>
-                                <blockquote className="mt-4 max-w-mass flex-1 font-text text-fs-3 text-tinte">
-                                    <Zitat review={review} mitAnriss={index === 0} />
+                                <blockquote className="mt-4 min-w-0 flex-1 font-text text-fs-3 text-pretty wrap-break-word text-tinte hyphens-none">
+                                    <p>„{review.text}“</p>
                                 </blockquote>
                                 <figcaption className="mt-6 flex flex-col gap-1 border-t border-fuge pt-4">
                                     <span className="font-text text-fs-2 font-semibold text-tinte">{review.author}</span>
-                                    <span className="font-mono text-fs-1 text-tinte-2">
-                                        {review.source}-Rezension &middot; {review.topic}
-                                    </span>
+                                    <span className="font-text text-fs-2 text-tinte-2">bei {review.source}</span>
                                 </figcaption>
                             </figure>
-                        </li>
-                    ))}
-                </ul>
+                        ))}
+                    </Karussell>
+                </div>
+
+                {/* Kennzeile, Trustlocal und Motto (Textdatei Abschnitt 5), mittig */}
+                <div className="mx-auto mt-12 max-w-mass text-center">
+                    <Bewertungszeile stand className="font-text text-fs-2 text-tinte-2 hyphens-none" />
+                    <p className="mt-4 font-text text-fs-3 text-tinte-2">
+                        Auf {trustlocal.source} haben wir {zahl(trustlocal.rating)} von {trustlocal.maxRating} Punkten aus {trustlocal.count} Bewertungen.
+                    </p>
+                    <figure className="mt-12">
+                        <blockquote className="font-anzeige text-fs-5 font-extrabold text-balance text-tinte">
+                            <p>„{COMPANY_DATA.motto}“</p>
+                        </blockquote>
+                    </figure>
+                </div>
             </div>
         </section>
     );
