@@ -2,7 +2,6 @@
 import { useRef, useState } from 'react';
 import { useBlogListe } from '@/lib/formulare/useBlogListe';
 import BlogCard, { zeichenFuer } from '@/components/blog/BlogCard';
-import BlogSidebar from '@/components/blog/BlogSidebar';
 import Leitfaden from '@/components/blog/liste/Leitfaden';
 import Suchfeld, { SUCHBEREICH_NAME } from '@/components/blog/liste/Suchfeld';
 import Icon from '@/components/icons/Icon';
@@ -10,11 +9,12 @@ import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Knopf from '@/components/kern/Knopf';
 import { etikettKlassen, wahlKlassen } from '@/components/kern/stile';
 
-// Filter-Insel der Ratgeber-Liste /blog (F-03, Fusion E-039; Grundgerüst A, Semantik und Robustheit aus B): Hook und
-// das davon abhängige Markup. Folge im DOM: Seitenleiste (ab lg, im Raster rechts) · Suche und Kategorien (unter lg) ·
-// Statusregion · Leitfaden · Beiträge als Zeilen an der Fuge. So stehen Suche und Filter in jeder Breite vor den Beiträgen,
-// die sie steuern (Tab- und Lesefolge, kein tabindex). Je Breite ist genau ein Suchfeld und eine Knopfgruppe im
-// Barrierebaum (die andere Fassung ist display:none); beide teilen einen Zustand.
+// Filter-Insel der Ratgeber-Liste /blog (F-03, Fusion E-039; Grundgerüst A, Semantik und Robustheit aus B; Abnahme E3-BAU-11
+// nach K-016): Hook und das davon abhängige Markup in einer Spalte in der Lesebreite, auf jeder Breite gleich: Suche und
+// Kategorien · Statusregion · Leitfaden · Beiträge als Zeilen an der Fuge. Die Seitenleiste rechts neben der Liste (ein
+// zweiter Strang, mit Firmendaten) entfällt. Suche und Filter stehen vor den Beiträgen, die sie steuern (Tab- und
+// Lesefolge, kein tabindex). `anrisse`: Anrisse aus dem Seitentext je Beitrag (Schlüssel slug, mit Textmarken); ohne
+// Eintrag zeigt die Zeile den Auszug aus den Beitragsdaten.
 //
 // Suche: Das Feld zeigt die Eingabe, gefiltert wird mit dem getrimmten Begriff (die Logik in useBlogListe bleibt gleich).
 // Statusregion (role="status", immer vorhanden, im Ruhezustand leer): bei aktivem Filter die Trefferzahl in Mono, im
@@ -24,7 +24,7 @@ import { etikettKlassen, wahlKlassen } from '@/components/kern/stile';
 /** Sichtbares Element aus einer Liste von Refs (das Suchfeld der aktuellen Breite) */
 const sichtbar = (refs) => refs.map((r) => r.current).find((el) => el && el.getClientRects().length > 0);
 
-export default function BlogFilter() {
+export default function BlogFilter({ anrisse = {} }) {
   const {
     activeCategory,
     setActiveCategory,
@@ -46,12 +46,11 @@ export default function BlogFilter() {
     setSearchQuery(wert.trim());
   };
 
-  const sucheMobil = useRef(null);
-  const sucheDesktop = useRef(null);
+  const suche = useRef(null);
   const zuruecksetzen = () => {
     resetFilters();
     setEingabe('');
-    sichtbar([sucheMobil, sucheDesktop])?.focus();
+    sichtbar([suche])?.focus();
   };
 
   const gefiltert = activeCategory !== 'all' || searchQuery !== '';
@@ -66,39 +65,26 @@ export default function BlogFilter() {
   };
 
   return (
-    <div className="grid grid-cols-4 gap-y-12 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12">
+    <div className="mx-auto max-w-mass">
+      <div className="min-w-0">
 
-      {/* Seitenleiste (ab lg): im DOM vor der Liste, im Raster rechts; volle Zeilenhöhe, damit der klebende Block darin
-          ab xl unter dem Kopf mitläuft */}
-      <div className="hidden lg:col-span-4 lg:col-start-9 lg:row-start-1 lg:block">
-        <BlogSidebar
-          activeCategory={activeCategory}
-          setActiveCategory={setActiveCategory}
-          searchQuery={eingabe}
-          setSearchQuery={suchen}
-          suchfeldRef={sucheDesktop}
-        />
-      </div>
-
-      <div className="col-span-4 min-w-0 md:col-span-8 lg:col-span-8 lg:col-start-1 lg:row-start-1">
-
-        {/* Suche (sichtbar beschriftet) und Kategorien als querlaufende Zeile (mobil und Tablett); die Zeile reicht bis
-            an den Bildrand, die erste Schaltfläche steht auf dem Seitenrand (16 px) */}
-        <div className="mb-6 flex flex-col gap-4 border-b border-fuge pb-6 lg:hidden">
+        {/* Suche (sichtbar beschriftet) und Kategorien; mobil eine querlaufende Zeile bis an den Bildrand (die erste
+            Schaltfläche steht auf dem Seitenrand, 16 px), ab sm umbrechend und mittig */}
+        <div className="mb-6 flex flex-col gap-4 border-b border-fuge pb-6">
           <div role="search" aria-label={SUCHBEREICH_NAME}>
             <Suchfeld
-              id="blog-suche-mobil"
+              id="blog-suche"
               beschriftung="Ratgeber durchsuchen"
               platzhalter="Ratgeber durchsuchen..."
               wert={eingabe}
               setzen={suchen}
-              feldRef={sucheMobil}
+              feldRef={suche}
             />
           </div>
 
           {visibleCategories.length > 0 && (
-            <div role="group" aria-label="Kategorien" className="-mx-4 flex snap-x scroll-px-4 gap-2 overflow-x-auto px-4 py-1">
-              {[{ id: 'all', name: 'Alle Themen' }, ...visibleCategories].map((category) => {
+            <div role="group" aria-label="Kategorien" className="-mx-4 flex snap-x scroll-px-4 gap-2 overflow-x-auto px-4 py-1 sm:mx-0 sm:flex-wrap sm:justify-center sm:overflow-visible sm:px-0">
+              {[{ id: 'all', name: 'Alle Artikel' }, ...visibleCategories].map((category) => {
                 const gedrueckt = activeCategory === category.id;
                 const zeichen = zeichenFuer(category.id);
                 return (
@@ -141,7 +127,7 @@ export default function BlogFilter() {
         {/* Hervorgehobener Beitrag (nur ohne Filter und Suche) */}
         {showFeatured && (
           <div className="mb-8 md:mb-12">
-            <Leitfaden post={featuredPost} lesezeit={getReadTime(featuredPost)} />
+            <Leitfaden post={featuredPost} lesezeit={getReadTime(featuredPost)} anriss={anrisse[featuredPost.slug]} />
           </div>
         )}
 
@@ -150,7 +136,7 @@ export default function BlogFilter() {
           <ul className="border-t border-fuge">
             {gridPosts.map((post) => (
               <li key={post.id}>
-                <BlogCard post={post} lesezeit={getReadTime(post)} />
+                <BlogCard post={post} lesezeit={getReadTime(post)} anriss={anrisse[post.slug]} />
               </li>
             ))}
           </ul>

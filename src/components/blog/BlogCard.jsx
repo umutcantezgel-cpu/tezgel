@@ -4,6 +4,7 @@ import { useContent } from '@/contexts/ContentContext';
 import Icon from '@/components/icons/Icon';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import Kennzeile, { Angabe, Datum } from '@/components/blog/liste/Kennzeile';
+import Textmarken from '@/components/kern/Textmarken';
 import { planFuer, zeichenFuer } from '@/lib/blog/motive';
 
 // Themenmotive aus einer Quelle (src/lib/blog/motive.js); zeichenFuer bleibt hier erreichbar (Filter, Seitenleiste)
@@ -28,8 +29,9 @@ export function Themenmotiv({ post, className }) {
  * (Fliese, Unterkante Strich).
  * Telefon: Zeichnung (96 px) und Kennzeile nebeneinander, Titel, Auszug und Weg darunter über die volle Breite;
  * ab md die Zeichnung (128 px) links, alles Übrige in der Spalte daneben. Der Auszug steht voll (kein line-clamp).
+ * `anriss`: Anriss aus dem Seitentext (mit Textmarken, /blog); sonst der Auszug aus den Beitragsdaten.
  */
-const BlogCard = ({ post, lesezeit }) => {
+const BlogCard = ({ post, lesezeit, anriss }) => {
     const { blogCategories = [] } = useContent();
     const categoryData = (blogCategories || []).find(c => c.id === post.category);
 
@@ -65,7 +67,7 @@ const BlogCard = ({ post, lesezeit }) => {
                     </h3>
 
                     <p className="mt-2 max-w-mass font-text text-fs-3 text-tinte-2">
-                        {post.excerpt}
+                        {anriss ? <Textmarken text={anriss} /> : post.excerpt}
                     </p>
 
                     <span className="mt-4 flex items-center gap-2 font-text text-fs-2 font-semibold text-tinte">

@@ -5,28 +5,29 @@ import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import { etikettKlassen } from '@/components/kern/stile';
 import { Themenmotiv } from '@/components/blog/BlogCard';
 import Kennzeile, { Angabe, Datum } from '@/components/blog/liste/Kennzeile';
+import Textmarken from '@/components/kern/Textmarken';
 
 /**
  * Hervorgehobener Leitfaden über der Liste (F-03, Fusion E-039): Kasten und Zeichnung aus A, Technik aus B.
  * Einziger Link ist der Titel in der H2 (kurzer Linkname), per ::after über den ganzen Kasten gestreckt; „Vollständigen
  * Leitfaden lesen“ ist Teil dieser Fläche. Der Fokusring liegt wie in A um den ganzen Kasten: am ::after (2 px Tinte,
  * Abstand 2 px), am Text selbst kein Ring, nur die Unterstreichung.
- * Telefon: Zeichnung (96 px) neben Etikett und Kennzeile, Titel und Auszug darunter über die volle Breite; ab md zwei
- * Spalten (Zeichnung links, Text rechts). Der Auszug steht voll (kein line-clamp).
+ * Auf jeder Breite: Zeichnung (96 px, ab md 128 px) neben Etikett und Kennzeile, Titel und Auszug darunter über die volle
+ * Breite (Abnahme E3-BAU-11: die Liste steht in der Lesebreite, zwei Spalten wären dort zu schmal). Der Auszug steht voll.
  */
-export default function Leitfaden({ post, lesezeit }) {
+export default function Leitfaden({ post, lesezeit, anriss }) {
     return (
         <article
             data-motion="zustand"
-            className="relative flex flex-wrap items-center gap-4 border border-fuge bg-fliese p-4 transition-colors dauer-1 ease-setzen hover:border-strich md:grid md:grid-cols-2 md:items-stretch md:gap-0 md:p-0"
+            className="relative flex flex-wrap items-center gap-4 border border-fuge bg-fliese p-4 transition-colors dauer-1 ease-setzen hover:border-strich md:gap-6 md:p-6"
         >
             <Themenmotiv
                 post={post}
-                className="size-24 shrink-0 border border-fuge bg-fliese md:size-auto md:border-0 md:border-r"
+                className="size-24 shrink-0 border border-fuge bg-fliese md:size-32"
             />
 
             {/* Telefon: Etikett und Kennzeile neben der Zeichnung, Titel und Auszug darunter; ab md eine Spalte rechts */}
-            <div className="contents md:flex md:min-w-0 md:flex-col md:gap-4 md:p-8">
+            <div className="contents">
                 <div className="flex min-w-0 flex-1 flex-col gap-3 md:flex-none md:gap-4">
                     <p className={etikettKlassen}>
                         <Fugenkreuz className="size-3 shrink-0 text-strich" />
@@ -49,8 +50,9 @@ export default function Leitfaden({ post, lesezeit }) {
                         </Link>
                     </h2>
 
+                    {/* Anriss aus dem Seitentext (mit Textmarken), sonst der Auszug aus den Beitragsdaten */}
                     <p className="mt-4 max-w-mass font-text text-fs-3 text-tinte-2">
-                        {post.excerpt}
+                        {anriss ? <Textmarken text={anriss} /> : post.excerpt}
                     </p>
 
                     <span className="mt-4 flex items-center gap-2 border-t border-fuge pt-4 font-text text-fs-2 font-semibold text-tinte">
