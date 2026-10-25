@@ -17,6 +17,7 @@ import Abschnitt from '@/components/kern/Abschnitt';
 import Knopf from '@/components/kern/Knopf';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import { Feldraster, Feld } from '@/components/kern/Feldraster';
+import { Schritte } from '@/components/vorlagen/teile/Ablauf';
 
 // Rechner nachgeladen wie auf der Startseite (Tempo, E4-NACH-17); ohne JavaScript bleibt der Platzhalter mit Anruf,
 // WhatsApp und E-Mail stehen (R-01b)
@@ -30,6 +31,13 @@ export const metadata = createMetadata({
     "Preise für Fliesenverlegung, XXL-Fliesen & Badsanierung in Wetzlar & Aßlar auf Anfrage. Schildern Sie Ihr Vorhaben für ein verbindliches Festpreisangebot!",
   path: "/preise"
 });
+
+// Die drei Schritte wie auf den Orts- und Hauptansichten (Termin kostenfrei: K-015 F-12)
+const ABLAUF = [
+  { titel: 'Termin bei Ihnen vor Ort', text: 'Deniz Tezgel kommt zu Ihnen. Er schaut sich den Raum genau an und prüft den [[untergrund|Untergrund]]. Dieser Termin ist für Sie kostenfrei.' },
+  { titel: 'Planen und auswählen', text: 'Sie suchen mit uns Fliesen, ihre Größe und die Farbe der Fugen aus. Danach bekommen Sie ein Angebot mit festem Preis.' },
+  { titel: 'Verlegen und übergeben', text: 'Wir verlegen sauber und übergeben den Raum besenrein. Zum Schluss gehen wir alles gemeinsam durch.' },
+];
 
 export default function PreisePage() {
   return (
@@ -74,6 +82,12 @@ export default function PreisePage() {
           </>
         }
       />
+
+      {/* 1b. ABLAUF direkt unter dem Einstieg (E4-W0-WEGE, E-062): Das Menü „Ablauf und Kosten“ führt hierher; Ablauf und
+          kostenfreier Termin standen bisher erst weit unten (Probeläufe E3, Aufgabe A5). Treppe wie auf den Hauptansichten. */}
+      <Abschnitt art="arbeit" id="ablauf" titel="So läuft es ab.">
+        <Schritte schritte={ABLAUF} />
+      </Abschnitt>
 
       {/* 2. LEISTUNGSPAKETE als Feldraster: vier Felder, ab lg in einer Reihe; Preise in Mono */}
       <Abschnitt
