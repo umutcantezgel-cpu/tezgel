@@ -3,7 +3,7 @@
 const post = {
     "id": "10",
     "slug": "rutschfeste-fliesen-r-klassen",
-    "title": "Rutschfeste Fliesen: Welche R-Klasse ist wo sinnvoll?",
+    "title": "Welche rutschfesten Fliesen passen wohin?",
     "excerpt": "R9 bis R13, A bis C: die Rutschhemmungsklassen nach DIN EN 16165 verständlich erklärt. Wo sie Pflicht sind, was im Privathaus empfehlenswert ist und warum rutschfest nicht schwer zu reinigen sein muss.",
     "category": "fliesen",
     "author": "Fliesenverlegung Tezgel",

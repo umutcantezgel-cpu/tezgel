@@ -3,7 +3,7 @@
 const post = {
     "id": "7",
     "slug": "duschrinne-oder-punktablauf",
-    "title": "Duschrinne oder Punktablauf? Die Entwässerung der bodengleichen Dusche",
+    "title": "Duschrinne oder Punktablauf, welche Lösung passt?",
     "excerpt": "Die Wahl des Ablaufs bestimmt Gefälle, Fliesenzuschnitt und Optik der Walk-In-Dusche. Duschrinne, Punkt- und Wandablauf im Vergleich, mit Blick auf Großformate, Abdichtung und Reinigung.",
     "category": "bad",
     "author": "Fliesenverlegung Tezgel",

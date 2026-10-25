@@ -4,7 +4,7 @@
 const post = {
     "id": "2",
     "slug": "undichte-dusche-warnzeichen",
-    "title": "Undichte Dusche? 5 Warnzeichen für Feuchte hinter Fliesen",
+    "title": "Woran erkennt man eine undichte Dusche?",
     "excerpt": "Dunkle Fugen, lose Fliesen, muffiger Geruch: Diese fünf Anzeichen deuten auf Feuchtigkeit hinter den Fliesen hin. So reagieren Sie richtig, bevor der Schaden wächst.",
     "category": "untergrund",
     "author": "Fliesenverlegung Tezgel",

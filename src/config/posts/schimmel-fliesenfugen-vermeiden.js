@@ -3,7 +3,7 @@
 const post = {
     "id": "8",
     "slug": "schimmel-fliesenfugen-vermeiden",
-    "title": "Schimmel in Fliesenfugen vermeiden: Ursachen und Vorbeugung",
+    "title": "Wie Sie Schimmel in Fliesenfugen vermeiden",
     "excerpt": "Schwarze Punkte in Fugen und Silikon sind lästig und manchmal ein Warnsignal. Wie Schimmel entsteht, wie Sie vorbeugen und wann eine Fuge erneuert werden sollte.",
     "category": "pflege",
     "author": "Fliesenverlegung Tezgel",

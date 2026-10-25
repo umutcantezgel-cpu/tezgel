@@ -3,7 +3,7 @@
 const post = {
     "id": "12",
     "slug": "gaeste-wc-fliesen",
-    "title": "Gäste-WC fliesen: So wirkt der kleine Raum größer",
+    "title": "Gäste-WC fliesen lassen den Raum größer wirken",
     "excerpt": "Wenige Quadratmeter, viele Details: Welche Formate, Fugenbilder und Fliesenhöhen ein Gäste-WC größer wirken lassen und wie Vorwand, Handwaschbecken und Anschlüsse sauber gefliest werden.",
     "category": "bad",
     "author": "Fliesenverlegung Tezgel",

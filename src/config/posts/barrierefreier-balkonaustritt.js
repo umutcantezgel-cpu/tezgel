@@ -3,7 +3,7 @@
 const post = {
     "id": "5",
     "slug": "barrierefreier-balkonaustritt",
-    "title": "Barrierefreier Balkonaustritt: Wie niedrig darf die Türschwelle sein?",
+    "title": "Wie niedrig ist ein barrierefreier Balkonaustritt?",
     "excerpt": "Stolperfrei auf den Balkon – und trotzdem dicht? Warum die Schwelle an der Balkontür ein Abdichtungsdetail ist, welche Regeln gelten und wie niedrige Übergänge sauber geplant werden.",
     "category": "aussen",
     "author": "Fliesenverlegung Tezgel",

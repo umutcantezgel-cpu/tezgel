@@ -3,7 +3,7 @@
 const post = {
     "id": "9",
     "slug": "fliesen-fuer-allergiker",
-    "title": "Fliesen für Allergiker: Warum harte Böden entlasten können",
+    "title": "Sind Fliesen für Allergiker eine Option?",
     "excerpt": "Glatte, harte Böden bieten Hausstaubmilben wenig Lebensraum und lassen sich feucht wischen. Was Fliesen für Allergiker-Haushalte interessant macht und worauf Sie bei Fugen und Pflege achten sollten.",
     "category": "fliesen",
     "author": "Fliesenverlegung Tezgel",

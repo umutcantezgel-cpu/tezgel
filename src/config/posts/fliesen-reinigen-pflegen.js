@@ -4,7 +4,7 @@
 const post = {
     "id": "4",
     "slug": "fliesen-reinigen-pflegen",
-    "title": "Fliesen richtig reinigen: Pflicht und Kür der Fliesenpflege",
+    "title": "Wie Sie Fliesen richtig reinigen und pflegen",
     "excerpt": "Mit dem passenden Reiniger bleiben Fliesen und Fugen lange schön. Welche Mittel geeignet sind, was Sie vermeiden sollten und wann eine Grundreinigung sinnvoll ist.",
     "category": "pflege",
     "author": "Fliesenverlegung Tezgel",

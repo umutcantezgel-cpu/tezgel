@@ -3,7 +3,7 @@
 const post = {
     "id": "6",
     "slug": "wandnischen-dusche-planen",
-    "title": "Wandnischen in Dusche und Bad: planen, abdichten, beleuchten",
+    "title": "So planen Sie Wandnischen in Dusche und Bad",
     "excerpt": "Eine geflieste Ablagenische ersetzt Duschregal und Korb, wenn sie gut geplant ist. Worauf es bei Position, Abdichtung, Kanten und indirekter Beleuchtung ankommt.",
     "category": "bad",
     "author": "Fliesenverlegung Tezgel",

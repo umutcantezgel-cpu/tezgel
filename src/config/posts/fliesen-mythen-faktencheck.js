@@ -3,7 +3,7 @@
 const post = {
     "id": "11",
     "slug": "fliesen-mythen-faktencheck",
-    "title": "5 Mythen über Fliesenböden im Faktencheck",
+    "title": "Fünf Irrtümer über Fliesenböden im Faktencheck",
     "excerpt": "Fliesen sind kalt, die Fugen immer schmutzig, und Großformate passen nur in große Räume? Wir prüfen fünf verbreitete Vorurteile und zeigen, was moderne Beläge aus Feinsteinzeug wirklich leisten.",
     "category": "ratgeber",
     "author": "Fliesenverlegung Tezgel",

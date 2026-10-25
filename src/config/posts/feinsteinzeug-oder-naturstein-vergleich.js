@@ -4,7 +4,7 @@
 const post = {
     "id": "3",
     "slug": "feinsteinzeug-oder-naturstein-vergleich",
-    "title": "Feinsteinzeug oder Naturstein? Der ehrliche Vergleich",
+    "title": "Feinsteinzeug oder Naturstein, was passt wohin?",
     "excerpt": "Beide Materialien sind hochwertig und langlebig, unterscheiden sich aber bei Optik, Pflege, Empfindlichkeit und Verlegung. Der Vergleich hilft bei der Wahl für Boden, Bad, Treppe und Terrasse.",
     "category": "fliesen",
     "author": "Fliesenverlegung Tezgel",

@@ -4,7 +4,7 @@
 const post = {
     "id": "1",
     "slug": "handwerkerbonus-fliesenarbeiten",
-    "title": "Handwerkerbonus: Fliesenarbeiten von der Steuer absetzen",
+    "title": "Was bringt der Handwerkerbonus bei Fliesen?",
     "excerpt": "Für Renovierungen im selbst genutzten Zuhause gewährt das Finanzamt eine Steuerermäßigung auf die Arbeitskosten. Was bei Fliesenarbeiten zählt, wo die Grenzen liegen und wie die Rechnung aussehen muss.",
     "category": "ratgeber",
     "author": "Fliesenverlegung Tezgel",
