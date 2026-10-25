@@ -1,0 +1,101 @@
+// Inhalt `/bad` (Erzählseite, Bereich Bad, E3-BAU-01) aus `_werkstatt/texte/bad.md`: Texte wörtlich mit ihren Textmarken,
+// Bauhinweise in Klammern und „→“ nicht übernommen. Nach dem Zusatz E3-BAU-K016 (Regeln 1 bis 6, Abschnitt 4): mittiger
+// Einstieg, Vorspann als `tun.einleitung`, Firmendaten-Satz zur Handwerkskammer entfällt, Bildunterschriften gekürzt aus
+// dem Text, Stimmen mit der Stimme der Textdatei zuerst. Vorlage: ErzaehlSeite (E-025).
+import type { ErzaehlInhalt } from '@/components/vorlagen/inhalt';
+
+const VORSPANN =
+  'Vielleicht ist Ihr Bad in die Jahre gekommen, und Sie wissen nicht, wo Sie anfangen sollen. Wir bauen es für Sie um, Schritt für Schritt. Ob große Fliesen oder eine [[bodengleiche-dusche|bodengleiche Dusche]] zu Ihrem Bad passen, besprechen wir mit Ihnen.';
+
+export const BAD: ErzaehlInhalt = {
+  pfad: '/bad',
+  meta: {
+    titel: 'Badsanierung in Aßlar & Wetzlar | Fliesenverlegung Tezgel',
+    beschreibung:
+      'Badsanierung in Aßlar und Wetzlar: altes Bad umbauen, große Fliesen verlegen, Abdichtung nach DIN 18534. Festpreisangebot, Termin vor Ort kostenfrei.',
+  },
+  worum: {
+    brotkrumen: [{ name: 'Start', href: '/' }, { name: 'Bad' }],
+    // mittig (K-016): die H1 steht in zwei Zeilen; ihre Teile ergeben zusammen die H1 aus dem Text
+    einstieg: 'mitte',
+    titelZeilen: ['Aus Ihrem alten Bad wird ein neues,', 'das Sie gern nutzen.'],
+    titel: 'Aus Ihrem alten Bad wird ein neues, das Sie gern nutzen.',
+    ort: 'Für Aßlar, Wetzlar und Umgebung.',
+    // im mittigen Einstieg nicht gezeigt; der Vorspann steht als `tun.einleitung` auf der Seite (Regel 2)
+    vorspann: VORSPANN,
+    bild: 'bad-einstieg',
+    bewertung: true,
+  },
+  lage: {
+    titel: 'Was soll in Ihrem Bad anders werden?',
+    absaetze: [
+      'Vielleicht fällt Ihnen der Einstieg in die Wanne schwer. Vielleicht sind die Fliesen alt und die Fugen schwarz geworden. Wählen Sie, was am besten passt.',
+    ],
+    wege: [
+      { name: 'Bad komplett erneuern', satz: 'Wir bauen das alte Bad aus und richten es ganz neu ein.', href: '/bad/badsanierung' },
+      { name: 'Dusche statt Wanne', satz: 'Die Wanne geht raus, eine Dusche ohne Stufe kommt hinein.', href: '/bad/barrierefreies-bad' },
+      { name: 'Große Fliesen im Bad', satz: 'Große Fliesen mit wenigen Fugen, die wir gerade und sauber verlegen.', href: '/bad/fliesen' },
+      {
+        name: 'Alles aus einer Hand',
+        satz: 'Deniz Tezgel bleibt Ihr fester Ansprechpartner, von der ersten Skizze bis zum fertigen Bad.',
+        href: '/bad/bad-aus-einer-hand',
+      },
+      { name: 'Ideen nach Badgröße', satz: 'Hier sehen Sie, wie Bäder verschiedener Größe aussehen können.', href: '/bad/musterbaeder' },
+    ],
+  },
+  tun: {
+    titel: 'Wir arbeiten Schicht für Schicht.',
+    // Vorspann der Textdatei (Regel 2): so bleibt er für Suchmaschinen auf der Seite
+    einleitung: VORSPANN,
+    punkte: [
+      'Zuerst prüfen wir den [[untergrund|Untergrund]] und machen ihn bereit für die neuen Schichten.',
+      'Der Duschboden bekommt ein leichtes [[gefaelle|Gefälle]].',
+      'Auf dem Untergrund kommt eine [[abdichtung|Abdichtung]].',
+      'Im Bad verlegen wir rutschfeste Fliesen, je nach Raum mit [[rutschhemmung|Rutschhemmung R10 oder R11]].',
+    ],
+    // ohne den Satz zur Handwerkskammer (Regel 3)
+    absatz: 'Seit 2019 arbeiten wir bei der Abdichtung standardmäßig nach [[din-18534|DIN 18534]].',
+  },
+  ablauf: {
+    titel: 'So läuft Ihre Badsanierung ab.',
+    schritte: [
+      {
+        titel: 'Termin bei Ihnen vor Ort',
+        text: 'Deniz Tezgel schaut sich Ihr Bad genau an und prüft Boden und Wände. Der Termin ist kostenfrei.',
+      },
+      {
+        titel: 'Planen und auswählen',
+        text: 'Sie wählen mit uns Fliesen und Ausstattung aus. Danach bekommen Sie ein Festpreisangebot. Das heißt: Der Preis steht fest.',
+      },
+      {
+        titel: 'Umbauen und übergeben',
+        text: 'Wir schützen Ihre Wohnung vor Staub und übergeben Ihnen das Bad sauber gefegt. Am Ende gehen wir es gemeinsam mit Ihnen durch.',
+      },
+    ],
+    hinweis: {
+      text: 'Haben Sie einen Pflegegrad? Dann kann die Pflegekasse beim [[barrierefrei|barrierefreien]] Umbau bis zu 4.180 € je Person dazugeben.',
+      verweis: { name: 'Mehr zum Zuschuss', href: '/foerderung' },
+    },
+  },
+  beleg: {
+    titel: 'Bäder, die wir gebaut haben.',
+    // Unterschriften: Wörter aus dem Text, höchstens sechs, ohne Punkt (Regel 4); Wege nach Leistung
+    fotos: [
+      { bild: 'bad-beleg-1', unterschrift: 'Badewanne mit weißen Fliesen', href: '/bad/badsanierung' },
+      { bild: 'bad-beleg-2', unterschrift: 'Wanne unter weißen Fliesen', href: '/bad/badsanierung' },
+      { bild: 'bad-beleg-3', unterschrift: 'Doppelwaschtisch aus dunklem Holz', href: '/bad/badsanierung' },
+      { bild: 'bad-beleg-4', unterschrift: 'Bodengleiche Dusche mit Mosaik', href: '/bad/barrierefreies-bad' },
+    ],
+    // Stimme der Textdatei zuerst, dann Stimmen aus REVIEWS zum Thema Bad (Regel 5, G8: Wortlaut unverändert)
+    stimmen: ['peter-p', 'elke-s', 'c-wolf', 'ute-t', 'k-d'],
+    verweis: { name: 'Alle Arbeiten ansehen', href: '/referenzen' },
+  },
+  schritt: {
+    titel: 'Sprechen Sie mit uns über Ihr neues Bad.',
+    satz: 'Rufen Sie an oder fragen Sie einen Termin an. Dann besprechen wir den nächsten Schritt gemeinsam.',
+    hilfen: [
+      { name: 'Badanfrage', href: '/bad/badanfrage', satz: 'Schreiben Sie uns, was Sie sich für Ihr Bad wünschen.' },
+      { name: 'Projektcheck', href: '/bad/projekt-check', satz: 'Mit wenigen Fragen sehen Sie online, was bei Ihrem Bad möglich ist.' },
+    ],
+  },
+};
