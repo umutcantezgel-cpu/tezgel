@@ -25,12 +25,6 @@ export interface KontaktInhalt {
   hauptziel: string;
   /** Abschnitte in der Folge der Textdatei */
   abschnitte: KontaktAbschnitt[];
-  /** Satz zur Handwerkskammer (Firmendaten, Regel 3 gilt auf dieser Seite nicht) */
-  handwerkskammer: Markentext;
-  /** Satz zum Einsatzgebiet */
-  einsatzgebiet: Markentext;
-  /** Satz zum Weg zur Karte (Karte hinter der Einwilligung) */
-  anfahrt: Markentext;
   /** Bild des Abschnitts „Lieber anrufen oder schreiben?“ */
   bild: ArbeitId;
   /** Hilfen nach dem Hauptweg: zwei Wege zu den Werkzeugen der Seite */
@@ -65,6 +59,9 @@ export const KONTAKT: KontaktInhalt = {
     {
       id: 'andere-wege',
       titel: 'Lieber anrufen oder schreiben?',
+      // Firmendaten erlaubt (Zusatz Regel 3 gilt auf dieser Seite nicht); Satz zur Handwerkskammer und Einsatzgebiet der Textdatei
+      einleitung:
+        'Seit 2008 sind wir als Handwerksbetrieb bei der Handwerkskammer Wiesbaden eingetragen. Wir arbeiten in Aßlar, Wetzlar, Gießen, Herborn und Dillenburg.',
       flaeche: 'kalk',
     },
     {
@@ -72,7 +69,8 @@ export const KONTAKT: KontaktInhalt = {
       titelId: 'standort-anfahrt-heading',
       // ohne Überschrift im Text: die heutige Überschrift ohne Werbewort (Briefing, Abschnitt 5)
       titel: 'Unser Einsatzgebiet in Mittelhessen',
-      einleitung: 'Zentrale in der Hohwardstraße 14, 35614 Aßlar – wählen Sie Ihre Stadt für Fahrtzeiten und Infos.',
+      // Satz zum Weg zur Karte (Karte hinter der Einwilligung, Funktion F-12)
+      einleitung: 'Den Weg zu uns zeigt eine Karte. Sie erscheint, wenn Sie auf „Karte laden & zustimmen“ klicken.',
       flaeche: 'fliese',
     },
     {
@@ -103,9 +101,6 @@ export const KONTAKT: KontaktInhalt = {
       flaeche: 'fliese',
     },
   ],
-  handwerkskammer: 'Seit 2008 sind wir als Handwerksbetrieb bei der Handwerkskammer Wiesbaden eingetragen.',
-  einsatzgebiet: 'Wir arbeiten in Aßlar, Wetzlar, Gießen, Herborn und Dillenburg.',
-  anfahrt: 'Den Weg zu uns zeigt eine Karte. Sie erscheint, wenn Sie auf „Karte laden & zustimmen“ klicken.',
   bild: 'kontakt-eingang',
   hilfen: [
     { name: 'Anfrage in drei Schritten', satz: 'Sie beschreiben Ihr Vorhaben Schritt für Schritt.', href: '#express-anfrage' },

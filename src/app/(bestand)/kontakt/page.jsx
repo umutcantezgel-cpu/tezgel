@@ -57,16 +57,10 @@ const INHALT = {
       </div>
     </>
   ),
-  // Kontaktwege mit Firmendaten (Bestand: DirectContactCard), Satz zur Handwerkskammer, Einsatzgebiet und Bild
+  // Kontaktwege mit Firmendaten (Bestand: DirectContactCard) und das Bild der Textdatei
   'andere-wege': (
     <>
       <DirectContactCard />
-      <div className="mx-auto mt-12 max-w-mass text-fs-3 text-tinte-2">
-        <p>
-          <Textmarken text={KONTAKT.handwerkskammer} />
-        </p>
-        <p>{KONTAKT.einsatzgebiet}</p>
-      </div>
       <div className="mx-auto mt-12 max-w-mass">
         <Bildfeld arbeit={KONTAKT.bild} spalten="halb" />
       </div>
@@ -75,9 +69,6 @@ const INHALT = {
   // Karte hinter der Einwilligung (Bestand: ContactPremiumMap, Kennung `standort-anfahrt`) und regionaler Kontakt
   'standort-anfahrt': (
     <>
-      <div className="mx-auto max-w-mass text-fs-3 text-tinte-2">
-        <p>{KONTAKT.anfahrt}</p>
-      </div>
       <ContactPremiumMap />
       <LocationContact eingebettet cityName="Aßlar, Wetzlar & Mittelhessen" />
     </>
