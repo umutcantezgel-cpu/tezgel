@@ -306,3 +306,20 @@ test('13. PricingCalculator: Transformed Comprehensive Contact Form submission v
   assert.equal(validation.data?.notes?.includes('Altes Badezimmer aus den 80ern'), true);
 });
 
+
+test('13b. PricingCalculator ohne eigene Wahl (E-062): ohne Fläche und ohne Situationen gültig, ohne Name nicht', () => {
+  const payload = {
+    inquiryType: 'bad',
+    projectTitle: 'Badsanierung & Walk-In Dusche',
+    projectType: 'bad',
+    contact: { name: 'Erika Musterfrau', phone: '0160 98765432', location: 'Aßlar / Wetzlar / Hessen' },
+    timing: 'In den nächsten 1 - 3 Monaten',
+    notes: '--- PROJEKTDETAILS ---\nGewerk: Badsanierung & Walk-In Dusche\nFläche / Umfang: keine Angabe\nObjektart: Bestandsimmobilie / Sanierung\nZeitrahmen: In den nächsten 1 - 3 Monaten\nBesonderheiten: Keine besonderen Zusatzoptionen angewählt',
+    _t: Date.now() - 5000
+  };
+  const validation = validateInquiryPayload(payload);
+  assert.equal(validation.success, true);
+  assert.equal(validation.data?.area, undefined);
+  const ohneName = validateInquiryPayload({ ...payload, contact: { ...payload.contact, name: '' } });
+  assert.equal(ohneName.success, false);
+});

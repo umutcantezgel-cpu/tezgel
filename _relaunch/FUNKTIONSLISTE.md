@@ -6,7 +6,7 @@ Jede Funktion bekommt einen Test ihrer Kernaufgabe in `_relaunch/werkzeuge/tests
 |---|---|---|---|---|---|
 | F-01 | HeroContactForm | `/` | Pflichtfelder blockieren; gültig → POST `general` mit Kontakt; Erfolg mit Referenz | funktion-hero-kontakt | ✔ grün (6/6) |
 | F-02 | PricingCalculator (ohne Preise) | `/preise`, `/leistungen/[id]`, `/faq` (auf `/leistungen` seit E-062 nur ein Link zu `/preise#anfrage`) | Auswahl → POST `bad`/`general`, Details in `notes`; ohne Vorauswahl von Fläche und Situationen (E-062); Erfolg | funktion-preisrechner | ✔ grün (16/16) |
-| F-03 | TezgelAnfrageFunnel (3 Schritte) | `/#express-anfrage`, `/kontakt`, `/leistungen`, `/foerderung` | Schritte vor/zurück, Validierung, POST `general`; WhatsApp-Alternative | funktion-express-funnel | ✔ grün (26/26) |
+| F-03 | TezgelAnfrageFunnel (3 Schritte) | `/kontakt`, `/leistungen`, `/leistungen/[id]`, `/foerderung` (auf `/` das Startformular F-01) | Schritte vor/zurück, Validierung, POST `general`; WhatsApp-Alternative | funktion-express-funnel | ✔ grün (26/26) |
 | F-04 | BadanfrageFunnel | `/bad` + 7 Bad-Seiten | Schritte, POST `bad` mit `badDetails` | funktion-badanfrage | ✔ grün (14/14) |
 | F-05 | BadProjektCheck | `/bad/projekt-check`, `/bad` | POST `projekt_check` mit `projektCheckDetails`; WhatsApp-Knopf | funktion-projektcheck | ✔ grün (18/18) |
 | F-06 | FliesenKonfigurator (4 Schritte) | `/fliesen/konfigurator`, `/fliesen/*` | Materialrichtwert (m² + Verschnitt) korrekt; POST `fliesen` | funktion-konfigurator | ✔ grün (46/46) · 2 Fälle `fixme` je Ansicht = Altfehler (OFFENE FRAGE, siehe Rückgabe P0-TEST-05) |

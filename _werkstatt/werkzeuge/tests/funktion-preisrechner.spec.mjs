@@ -186,3 +186,15 @@ test.describe('PricingCalculator (/faq)', () => {
     expect(anfragen[0].notes).toContain('Gewerk: Badsanierung & Walk-In Dusche');
   });
 });
+
+// E4-W0-LEISTUNGEN (E-062): auf /leistungen steht kein zweites Formular mehr, nur der Weg zur Projektanfrage auf /preise
+test.describe('/leistungen: ein Anfrageweg', () => {
+  test('kein Preisrechner auf /leistungen, der Link „Vorhaben genauer beschreiben“ führt zu /preise#anfrage mit dem Rechner', async ({ page }) => {
+    await page.goto('/leistungen');
+    await expect(page.locator('#calc-name')).toHaveCount(0);
+    const link = page.getByRole('link', { name: 'Vorhaben genauer beschreiben' });
+    await expect(link).toHaveAttribute('href', '/preise#anfrage');
+    await page.goto('/preise#anfrage');
+    await expect(page.locator('#calc-name')).toBeVisible();
+  });
+});

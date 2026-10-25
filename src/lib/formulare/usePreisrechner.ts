@@ -1,5 +1,5 @@
 // Logik der Projektanfrage im Preisrechner (F-02, PricingCalculator) – wörtlich aus der Komponente verschoben (P3-00l).
-// Ohne Markup; Bestand und Kern-Ansicht nutzen denselben Hook. Ohne vorab gewählte Fläche und ohne vorab angehakte Situationen
+// Ohne Markup (PricingCalculator auf /preise, /leistungen/[id] und /faq). Ohne vorab gewählte Fläche und ohne vorab angehakte Situationen
 // (E4-W0-LEISTUNGEN, E3-SICHT): wer nichts wählt, sendet keine Fläche; Pflichtfelder und Empfänger unverändert (G8).
 import React, { useState } from "react";
 import {

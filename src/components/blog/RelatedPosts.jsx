@@ -95,7 +95,7 @@ const RelatedPosts = ({ currentPost, allPosts = [], categories = [], limit = 3 }
 
                                 {/* Read More */}
                                 <p className="mt-4 inline-flex items-center gap-2 font-text text-fs-2 font-semibold text-tinte">
-                                    Artikel lesen
+                                    <span className="underline decoration-strich underline-offset-4">Artikel lesen</span>
                                     <Icon name="pfeil-rechts" groesse={4} />
                                 </p>
                             </div>
