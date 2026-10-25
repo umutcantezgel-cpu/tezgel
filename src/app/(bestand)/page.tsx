@@ -10,6 +10,7 @@ import Startbild from '@/components/start/Startbild';
 import ErzaehlSeite from '@/components/vorlagen/ErzaehlSeite';
 import { START } from '@/inhalte/start';
 import { createMetadata } from '@/lib/metadata';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 
 export const metadata: Metadata = createMetadata({
     title: START.meta.titel,
@@ -18,5 +19,10 @@ export const metadata: Metadata = createMetadata({
 });
 
 export default function HomePage() {
-    return <ErzaehlSeite inhalt={START} einstiegBild={<Startbild sizes="(min-width: 1024px) 40vw, (min-width: 640px) 28rem, 100vw" />} formular={<HeroContactForm titel={false} />} />;
+    return (
+        <>
+            <SeitenDaten pfad="/" titel={START.meta.titel} beschreibung={START.meta.beschreibung} brotkrumen={[{ name: 'Start' }]} />
+            <ErzaehlSeite inhalt={START} einstiegBild={<Startbild sizes="(min-width: 1024px) 40vw, (min-width: 640px) 28rem, 100vw" />} formular={<HeroContactForm titel={false} />} />
+        </>
+    );
 }

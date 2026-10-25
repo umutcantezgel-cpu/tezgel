@@ -15,10 +15,14 @@ import Einstieg from '@/components/kern/Einstieg';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Knopf from '@/components/kern/Knopf';
 import { linkKlassen } from '@/components/kern/stile';
+import SeitenDaten from '@/components/seo/SeitenDaten';
+
+const TITEL = 'Downloads & Infomaterial | Fliesenverlegung Tezgel';
+const BESCHREIBUNG = 'Infomaterial & Checklisten rund um Fliesenverlegung, Badsanierung & Fördermittel vom Fachbetrieb Tezgel in Aßlar & Wetzlar. Jetzt online informieren!';
 
 export const metadata = createMetadata({
-    title: 'Downloads & Infomaterial | Fliesenverlegung Tezgel',
-    description: 'Infomaterial & Checklisten rund um Fliesenverlegung, Badsanierung & Fördermittel vom Fachbetrieb Tezgel in Aßlar & Wetzlar. Jetzt online informieren!',
+    title: TITEL,
+    description: BESCHREIBUNG,
     path: '/downloads'
 });
 
@@ -36,6 +40,12 @@ export default function DownloadsPage() {
 
     return (
         <>
+            <SeitenDaten
+                pfad="/downloads"
+                titel={TITEL}
+                beschreibung={BESCHREIBUNG}
+                brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Downloads & Infomaterial' }]}
+            />
             {/* 1. EINSTIEG: Kennzeile (vormals Badge), H1, Vorspann; rechts (mobil darunter) die Unterlagen auf Anfrage */}
             <Einstieg
                 art="arbeit"

@@ -18,10 +18,14 @@ import Knopf from '@/components/kern/Knopf';
 import Leitachse from '@/components/kern/Leitachse';
 import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import Verlegeplan from '@/components/kern/Verlegeplan';
+import SeitenDaten from '@/components/seo/SeitenDaten';
+
+const TITEL = 'Materialpartner & Verlegesysteme | Tezgel Fachbetrieb';
+const BESCHREIBUNG = 'Hochwertige Verlegewerkstoffe & Fliesenmarken bei Tezgel: Schlüter-Systems, Ardex, Sopro, PCI, Marazzi & Villeroy & Boch. Höchste Qualität für Ihr Projekt!';
 
 export const metadata = createMetadata({
-    title: 'Materialpartner & Verlegesysteme | Tezgel Fachbetrieb',
-    description: 'Hochwertige Verlegewerkstoffe & Fliesenmarken bei Tezgel: Schlüter-Systems, Ardex, Sopro, PCI, Marazzi & Villeroy & Boch. Höchste Qualität für Ihr Projekt!',
+    title: TITEL,
+    description: BESCHREIBUNG,
     path: '/partner'
 });
 
@@ -42,6 +46,12 @@ const zeichenFuer = (kategorie) => ZEICHEN.find(([stichwort]) => kategorie.toLow
 export default function PartnerPage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/partner"
+                titel={TITEL}
+                beschreibung={BESCHREIBUNG}
+                brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Materialpartner & Verlegesysteme: Tezgel Fachbetrieb' }]}
+            />
             {/* 1. EINSTIEG: Kennzeile, H1 an der Laserachse, Vorspann; rechts das Planblatt „untergrund“ */}
             <Einstieg
                 art="erzaehl"

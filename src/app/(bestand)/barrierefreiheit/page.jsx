@@ -4,15 +4,19 @@
 import React from 'react';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 import Einstieg from '@/components/kern/Einstieg';
 import Knopf from '@/components/kern/Knopf';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Icon from '@/components/icons/Icon';
 import { linkKlassen, seitenKlassen } from '@/components/kern/stile';
 
+const TITEL = 'Erklärung zur Barrierefreiheit | Fliesen Tezgel';
+const BESCHREIBUNG = 'Erklärung zur digitalen Barrierefreiheit der Fliesenverlegung Tezgel gemäß Barrierefreiheitsstärkungsgesetz (BFSG) und europäischen Standards EN 301 549.';
+
 export const metadata = createMetadata({
-    title: 'Erklärung zur Barrierefreiheit | Fliesen Tezgel',
-    description: 'Erklärung zur digitalen Barrierefreiheit der Fliesenverlegung Tezgel gemäß Barrierefreiheitsstärkungsgesetz (BFSG) und europäischen Standards EN 301 549.',
+    title: TITEL,
+    description: BESCHREIBUNG,
     path: '/barrierefreiheit'
 });
 
@@ -36,6 +40,12 @@ function Massnahme({ children }) {
 export default function BarrierefreiheitPage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/barrierefreiheit"
+                titel={TITEL}
+                beschreibung={BESCHREIBUNG}
+                brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Erklärung zur Barrierefreiheit' }]}
+            />
             <Einstieg
                 art="arbeit"
                 etikett={<>Barrierefreiheitsstärkungsgesetz (BFSG) &middot; EN 301 549 / WCAG 2.1 AA</>}

@@ -17,10 +17,14 @@ import Knopf from '@/components/kern/Knopf';
 import Leitachse from '@/components/kern/Leitachse';
 import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import Verlegeplan from '@/components/kern/Verlegeplan';
+import SeitenDaten from '@/components/seo/SeitenDaten';
+
+const TITEL = 'Unternehmen & Qualitätsversprechen | Tezgel Fachbetrieb';
+const BESCHREIBUNG = 'Fliesenverlegung Tezgel aus Aßlar: Fachbetrieb der HWK seit 2008. Firmengeschichte, Inhaber Deniz Tezgel & unser Qualitätsversprechen für Hessen.';
 
 export const metadata = createMetadata({
-    title: 'Unternehmen & Qualitätsversprechen | Tezgel Fachbetrieb',
-    description: 'Fliesenverlegung Tezgel aus Aßlar: Fachbetrieb der HWK seit 2008. Firmengeschichte, Inhaber Deniz Tezgel & unser Qualitätsversprechen für Hessen.',
+    title: TITEL,
+    description: BESCHREIBUNG,
     path: '/unternehmen'
 });
 
@@ -29,6 +33,12 @@ export default function UnternehmenPage() {
 
     return (
         <>
+            <SeitenDaten
+                pfad="/unternehmen"
+                titel={TITEL}
+                beschreibung={BESCHREIBUNG}
+                brotkrumen={[{ name: 'Start', href: '/' }, { name: `${legalName}: Unternehmen & Qualität` }]}
+            />
             {/* 1. EINSTIEG: Kennzeile, H1 an der Laserachse, Vorspann; rechts das Planblatt „wohnen“ */}
             <Einstieg
                 art="erzaehl"

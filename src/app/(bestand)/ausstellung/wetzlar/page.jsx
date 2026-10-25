@@ -21,10 +21,14 @@ import Icon from '@/components/icons/Icon';
 import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
 import { etikettKlassen, linkKlassen, seitenKlassen } from '@/components/kern/stile';
 import { createMetadata } from '@/lib/metadata';
+import SeitenDaten from '@/components/seo/SeitenDaten';
+
+const TITEL = 'Fliesenberatung in Wetzlar | Fliesenverlegung Tezgel';
+const BESCHREIBUNG = 'Persönliche Fliesenberatung für Wetzlar: Formate, Oberflächen & Fugenbild abstimmen mit Fachbetriebsleiter Deniz Tezgel. Jetzt Termin vereinbaren!';
 
 export const metadata = createMetadata({
-    title: 'Fliesenberatung in Wetzlar | Fliesenverlegung Tezgel',
-    description: 'Persönliche Fliesenberatung für Wetzlar: Formate, Oberflächen & Fugenbild abstimmen mit Fachbetriebsleiter Deniz Tezgel. Jetzt Termin vereinbaren!',
+    title: TITEL,
+    description: BESCHREIBUNG,
     path: '/ausstellung/wetzlar'
 });
 
@@ -65,6 +69,12 @@ export default function AusstellungWetzlarPage() {
 
     return (
         <>
+            <SeitenDaten
+                pfad="/ausstellung/wetzlar"
+                titel={TITEL}
+                beschreibung={BESCHREIBUNG}
+                brotkrumen={[{ name: 'Start', href: '/' }, { name: `Fliesenberatung & Materialauswahl in ${cityName}` }]}
+            />
             {/* 1. EINSTIEG: Kennzeile (vormals Badge), H1, Vorspann; Anfrage als Hauptknopf, WhatsApp und Telefon als Nebenknöpfe */}
             <Einstieg
                 art="arbeit"
