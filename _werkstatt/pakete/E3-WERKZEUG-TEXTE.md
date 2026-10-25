@@ -1,10 +1,11 @@
 # E3-WERKZEUG-TEXTE
 
 ## 1. Kopfzeile
-E3-WERKZEUG-TEXTE-1 bis -3 · Rolle Lektor · Modell Haiku 5.5 · Stufe 2 · Kern-Version v3.6 · Schreibrechte (exakt, je Teilpaket):
+E3-WERKZEUG-TEXTE-1 bis -4 · Rolle Lektor · Modell Haiku 5.5 · Stufe 2 · Kern-Version v3.6 · Schreibrechte (exakt, je Teilpaket):
 - **-1:** `src/components/funnels/BadProjektCheck/**`, `src/components/funnels/BadanfrageFunnel/**`, `$SCRATCH/E3-WERKZEUG-TEXTE-1/**`
 - **-2:** `src/components/funnels/TezgelAnfrageFunnel/**` (ohne `logik.ts`), `src/components/funnels/FliesenKonfigurator/**`, `$SCRATCH/E3-WERKZEUG-TEXTE-2/**`
 - **-3:** `src/components/pricing/PricingCalculator.tsx`, `src/components/pricing/PriceCard.tsx`, `$SCRATCH/E3-WERKZEUG-TEXTE-3/**`
+- **-4 (E-049):** `src/components/contact/BookingCalendar.*`, `src/components/maps/ContactPremiumMap.tsx`, `src/components/forms/LeadQuickForm.tsx`, `$SCRATCH/E3-WERKZEUG-TEXTE-4/**`. Die Kalender-Überschrift „Kostenfreies Vor-Ort-Aufmaß & Schadensanalyse“ prüft `funktion-termin.spec.mjs` wörtlich: nicht ändern, unter BLEIBT WEGEN PRÜFUNG mit Vorschlag nennen (der Orchestrator passt Text und Prüfung gemeinsam an).
 
 In diesen Dateien änderst du **nur sichtbare Texte**: Textknoten in JSX und Zeichenketten, die als Überschrift, Hinweis, Beschriftung, Platzhalter, Fehlermeldung, Erfolgsmeldung, `aria-label` oder `title` erscheinen. Umfang: die Texte der eingebetteten Werkzeuge in Alltagssprache bringen (K-010), ohne Verhalten, Nutzlast, Pflichtfelder oder Empfänger zu ändern (G8).
 
@@ -42,7 +43,7 @@ Bring jeden sichtbaren Text deiner Dateien auf die Schreibregeln K-010 (kurze S�
 - `lesbarkeit.mjs` auf den Seiten deines Teilpakets: keine Befunde mehr aus deinen Dateien (Befunde aus Seitentexten oder unantastbaren Listen nur notieren).
 
 ## 7. Grenzen
-- Nur die Dateien unter „Schreibrechte“ deines Teilpakets ändern; zwei andere Lektoren arbeiten gleichzeitig an den anderen Teilpaketen. Fremde geänderte Dateien in `git status` sind normal und bleiben unberührt.
+- Nur die Dateien unter „Schreibrechte“ deines Teilpakets ändern; drei andere Lektoren arbeiten gleichzeitig an den anderen Teilpaketen. Fremde geänderte Dateien in `git status` sind normal und bleiben unberührt.
 - Nie committen, nie pushen, nie `git checkout`, `reset`, `stash` oder `clean`. Keine `.env*`-Dateien lesen oder zitieren. Kommentare im Code nicht umschreiben (nur sichtbare Texte).
 - Server 4320 nur nutzen, nie starten, beenden oder neu starten; kein `next build`. Browser nur über `installSperre()` aus `_werkstatt/werkzeuge/lib.mjs`; keine echten Formularsendungen (die Funktionsprüfungen fangen sie selbst ab).
 - Umgebung in jeder Shell: `cd /home/user/tezgel && export SCRATCH=/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad RELAUNCH_BASE=http://127.0.0.1:4320 RELAUNCH_SCRATCH=$SCRATCH PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers CHROME_PATH=/opt/pw-browsers/chromium-1243/chrome-linux64/chrome`.
@@ -56,6 +57,7 @@ Bring jeden sichtbaren Text deiner Dateien auf die Schreibregeln K-010 (kurze S�
    - **-1:** `cd _werkstatt/werkzeuge && npx playwright test -c playwright.config.mjs funktion-projektcheck.spec.mjs funktion-badanfrage.spec.mjs --workers=1 --reporter=line`; Seiten für Lesbarkeit und Bild: `/bad` (Projektcheck und Badanfrage), `/bad/badanfrage`.
    - **-2:** `… funktion-express-funnel.spec.mjs funktion-konfigurator.spec.mjs …`; Seiten: `/leistungen` (Express-Anfrage), `/fliesen/konfigurator`.
    - **-3:** `… funktion-preisrechner.spec.mjs …`; Seiten: `/leistungen` (Preisrechner), `/leistungen/bad`.
+   - **-4:** `… funktion-termin.spec.mjs funktion-kontaktwege.spec.mjs funktion-schnellanfrage.spec.mjs funktion-einwilligung.spec.mjs …`; Seiten: `/kontakt` (Kalender, Karte), `/standorte/wetzlar` (Schnellanfrage).
    - Ein roter Fall: einmal einzeln wiederholen (`-g '<Name>'`) und beide Ergebnisse nennen. War er schon vor deiner Änderung rot, gilt er nicht als deiner (Nachweis: Lauf vor der ersten Änderung).
    - `node _werkstatt/werkzeuge/lesbarkeit.mjs --satz <Teilpaket> --seiten <Seiten kommagetrennt> --ziel $SCRATCH/<Teilpaket>/lesbarkeit`.
    - `node _werkstatt/werkzeuge/einzelbild.mjs --seite <erste Seite> --ansichten m390 --voll --ziel $SCRATCH/<Teilpaket>/bild` und das Bild ansehen (Read): kein abgeschnittener oder überlaufender Text im Werkzeug.
