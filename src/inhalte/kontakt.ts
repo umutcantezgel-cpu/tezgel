@@ -1,0 +1,132 @@
+// Inhalt `/kontakt` (Arbeitsseite, E3-BAU-09) aus `_werkstatt/texte/kontakt.md`: Texte wörtlich mit ihren Textmarken,
+// Bauhinweise in Klammern und „→“ nicht übernommen. Vorlage: ArbeitsSeite (E-025). Nach dem Zusatz E3-BAU-K016: Firmendaten
+// erlaubt (Regel 3 gilt hier nicht), Abschnitte in der Folge der Textdatei, Werkzeuge des Bestands (Formular, Kalender, Karte,
+// Anfrage) mit ihren Kennungen und Ankern. Die Props der Vorlage stehen hier als Daten; die Inhalte der Abschnitte (Funktionen
+// des Bestands) setzt die Seite `src/app/(bestand)/kontakt/page.jsx`. Öffnungszeiten und Rufnummern kommen aus den Daten
+// (COMPANY_DATA, M-03), nicht aus dem Text.
+import type { ArbeitId } from '@/config/arbeiten';
+import type { Krume } from '@/components/kern/Brotkrumen';
+import type { Markentext, Zeile } from '@/components/vorlagen/inhalt';
+import type { Arbeitsabschnitt } from '@/components/vorlagen/ArbeitsSeite';
+
+/** Abschnitt als Daten: die Funktion des Bestands (`inhalt`) setzt die Seite je `id` */
+export type KontaktAbschnitt = Omit<Arbeitsabschnitt, 'inhalt' | 'unterKopf'>;
+
+export interface KontaktInhalt {
+  pfad: string;
+  meta: { titel: string; beschreibung: string };
+  brotkrumen: Krume[];
+  /** H1 (wörtlich aus der Textdatei) */
+  titel: string;
+  /** Satz zum Ort (Pflichtelement des ersten Bildschirms, K-009) */
+  ort: string;
+  vorspann: Markentext;
+  /** Ziel aller Hauptknöpfe: der Abschnitt „Termin vor Ort anfragen“ auf dieser Seite */
+  hauptziel: string;
+  /** Abschnitte in der Folge der Textdatei */
+  abschnitte: KontaktAbschnitt[];
+  /** Satz zur Handwerkskammer (Firmendaten, Regel 3 gilt auf dieser Seite nicht) */
+  handwerkskammer: Markentext;
+  /** Satz zum Einsatzgebiet */
+  einsatzgebiet: Markentext;
+  /** Satz zum Weg zur Karte (Karte hinter der Einwilligung) */
+  anfahrt: Markentext;
+  /** Bild des Abschnitts „Lieber anrufen oder schreiben?“ */
+  bild: ArbeitId;
+  /** Hilfen nach dem Hauptweg: zwei Wege zu den Werkzeugen der Seite */
+  hilfen: Zeile[];
+  ablauf: {
+    schritte: { titel: string; text: Markentext }[];
+    absatz: Markentext;
+  };
+}
+
+export const KONTAKT: KontaktInhalt = {
+  pfad: '/kontakt',
+  meta: {
+    titel: 'Kontakt und Termin vor Ort | Fliesenleger Tezgel Aßlar',
+    beschreibung:
+      'Fliesenleger Tezgel in Aßlar: Anruf, WhatsApp oder Anfrage. Der Termin vor Ort ist kostenfrei. Persönliche Beratung und Festpreis für Wetzlar und Hessen.',
+  },
+  brotkrumen: [{ name: 'Start', href: '/' }, { name: 'Kontakt' }],
+  titel: 'Nehmen Sie Kontakt auf. Wir kommen für einen Termin zu Ihnen.',
+  ort: 'Fliesenleger Deniz Tezgel aus Aßlar in Hessen, für Wetzlar und die Orte rundherum.',
+  vorspann:
+    'Wollen Sie Ihre Badewanne gegen eine Dusche ohne Stufe tauschen oder einen Boden neu verlegen lassen? Dann genügt ein Anruf oder eine kurze Nachricht. Der Termin bei Ihnen vor Ort ist für Sie kostenfrei, und wir beraten Sie dabei persönlich.',
+  hauptziel: '#termin',
+  abschnitte: [
+    {
+      id: 'termin',
+      titel: 'Termin vor Ort anfragen',
+      einleitung:
+        'Wählen Sie Ihr Vorhaben, dann tragen Sie Ihren Namen und Ihre Telefonnummer ein. Deniz Tezgel ruft Sie zurück und macht einen Termin mit Ihnen aus.',
+      flaeche: 'fliese',
+    },
+    {
+      id: 'andere-wege',
+      titel: 'Lieber anrufen oder schreiben?',
+      flaeche: 'kalk',
+    },
+    {
+      id: 'standort-anfahrt',
+      titelId: 'standort-anfahrt-heading',
+      // ohne Überschrift im Text: die heutige Überschrift ohne Werbewort (Briefing, Abschnitt 5)
+      titel: 'Unser Einsatzgebiet in Mittelhessen',
+      einleitung: 'Zentrale in der Hohwardstraße 14, 35614 Aßlar – wählen Sie Ihre Stadt für Fahrtzeiten und Infos.',
+      flaeche: 'fliese',
+    },
+    {
+      id: 'hilfen',
+      titel: 'Hilfen, wenn Sie vorher planen möchten.',
+      einleitung:
+        'Diese beiden Hilfen können Sie nutzen, müssen Sie aber nicht. Beide führen zu einem Termin bei Ihnen vor Ort.',
+      flaeche: 'kalk',
+    },
+    {
+      id: 'express-anfrage',
+      titelId: 'express-anfrage-heading',
+      titel: 'Anfrage in drei Schritten',
+      einleitung: 'Sie beschreiben Ihr Vorhaben Schritt für Schritt.',
+      flaeche: 'fliese',
+    },
+    {
+      id: 'termin-buchen',
+      titelId: 'termin-buchen-heading',
+      titel: 'Termin im Kalender',
+      einleitung: 'Wählen Sie direkt einen freien Tag und eine Uhrzeit.',
+      flaeche: 'kalk',
+    },
+    {
+      id: 'was-nach-anfrage',
+      titel: 'Was nach Ihrer Anfrage passiert.',
+      einleitung: 'So läuft es in drei Schritten ab.',
+      flaeche: 'fliese',
+    },
+  ],
+  handwerkskammer: 'Seit 2008 sind wir als Handwerksbetrieb bei der Handwerkskammer Wiesbaden eingetragen.',
+  einsatzgebiet: 'Wir arbeiten in Aßlar, Wetzlar, Gießen, Herborn und Dillenburg.',
+  anfahrt: 'Den Weg zu uns zeigt eine Karte. Sie erscheint, wenn Sie auf „Karte laden & zustimmen“ klicken.',
+  bild: 'kontakt-eingang',
+  hilfen: [
+    { name: 'Anfrage in drei Schritten', satz: 'Sie beschreiben Ihr Vorhaben Schritt für Schritt.', href: '#express-anfrage' },
+    { name: 'Termin im Kalender', satz: 'Wählen Sie direkt einen freien Tag und eine Uhrzeit.', href: '/kontakt#termin-buchen' },
+  ],
+  ablauf: {
+    schritte: [
+      {
+        titel: 'Termin bei Ihnen vor Ort',
+        text: 'Deniz Tezgel kommt zu Ihnen. Er schaut sich den Raum genau an und prüft den [[untergrund|Untergrund]].',
+      },
+      {
+        titel: 'Planen und auswählen',
+        text: 'Sie suchen mit uns die Fliesen aus, dazu die Größe und die Farbe der Fugen. Danach bekommen Sie ein Angebot mit festem Preis.',
+      },
+      {
+        titel: 'Verlegen und übergeben',
+        text: 'Wir verlegen die Fliesen und übergeben Ihnen den Raum sauber gefegt. Zum Schluss gehen wir alles gemeinsam durch.',
+      },
+    ],
+    absatz:
+      'Wohnen Sie während der Arbeiten im Haus, schützen wir Ihre Räume vor Staub. Deniz Tezgel bleibt in allen drei Schritten Ihr fester Ansprechpartner.',
+  },
+};

@@ -1,6 +1,7 @@
 import { createMetadata } from '@/lib/metadata';
 import { buildGraph, buildContactPageNode, buildBreadcrumbNode, SITE_URL } from '@/lib/schema';
 import JsonLd from '@/components/seo/JsonLd';
+import { KONTAKT } from '@/inhalte/kontakt';
 
 export const metadata = createMetadata({
   title: 'Kontakt & Vor-Ort-Aufmaß | Fliesenleger Tezgel Aßlar',
@@ -17,9 +18,9 @@ const breadcrumbs = [
 const contactSchema = buildGraph([
   buildContactPageNode({
     url: pageUrl,
-    name: 'Kontakt aufnehmen | Fliesenverlegung Tezgel',
-    description:
-      'Kontakt zum Fliesenleger-Fachbetrieb Fliesenverlegung Tezgel in Aßlar – für Fliesenverlegung, Badsanierung und Verbundabdichtung in Wetzlar und Mittelhessen.',
+    // wie Titel und Beschreibung der Seite (Zusatz E3-BAU-K016, Regel 6; Abnahme E3-BAU-09)
+    name: KONTAKT.meta.titel,
+    description: KONTAKT.meta.beschreibung,
   }),
   buildBreadcrumbNode(breadcrumbs, pageUrl),
 ]);
