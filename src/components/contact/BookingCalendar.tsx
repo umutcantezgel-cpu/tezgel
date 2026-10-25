@@ -136,7 +136,7 @@ export function BookingCalendar({
                   )}
                 </div>
 
-                <div className="grid grid-cols-1 gap-2 @3xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-5">
+                <div className="grid grid-cols-2 gap-2 @max-3xs:grid-cols-1 sm:grid-cols-3 md:grid-cols-5">
                   {AVAILABLE_SLOTS.map((slot) => {
                     const isTaken = bookedSlots.includes(`${day.dateStr}_${slot.time}`);
                     return (

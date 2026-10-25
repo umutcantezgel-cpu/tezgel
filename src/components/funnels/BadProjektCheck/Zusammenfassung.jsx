@@ -51,8 +51,8 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
     return (
         <div className="@container flex min-w-0 flex-col justify-between gap-8 border-t border-fuge bg-kalk p-6 @lg:p-8 @5xl:col-span-5 @5xl:border-l @5xl:border-t-0 @5xl:p-12">
             <div className="flex flex-col gap-6">
-                <span className={etikettKlassen}>
-                    <Fugenkreuz className="size-3 text-strich" />
+                <span className={`${etikettKlassen} min-w-0 hyphens-auto wrap-break-word`}>
+                    <Fugenkreuz className="size-3 shrink-0 text-strich" />
                     Ihre Zusammenfassung
                 </span>
 
@@ -64,7 +64,7 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                         ['Wünsche', extras.map(anzeige).join(', ') || 'Keine Extras gewählt']
                     ].map(([term, value]) => (
                         <div key={term} className={clsx('min-w-0 bg-fliese p-4', BREIT[term])}>
-                            <dt className="font-mono text-fs-1 text-tinte-2">{term}</dt>
+                            <dt className="font-mono text-fs-1 text-tinte-2 hyphens-auto">{term}</dt>
                             <dd className={clsx('mt-1 break-words text-tinte', term === 'Badgröße' ? 'font-mono text-fs-3' : 'text-fs-2 font-semibold')}>{value}</dd>
                         </div>
                     ))}
@@ -77,7 +77,7 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                 {/* Verweis auf das passende Musterbad */}
                 <div className="border border-fuge bg-fliese p-4 text-fs-2 text-tinte">
                     <p className="flex flex-wrap items-center justify-between gap-x-3 font-semibold">
-                        <span>
+                        <span className="min-w-0 hyphens-auto wrap-break-word">
                             <span className="sr-only">Hinweis: </span>
                             Musterbäder zum Vergleich:
                         </span>
@@ -86,7 +86,7 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                             <Icon name="pfeil-rechts" groesse={4} />
                         </Link>
                     </p>
-                    <p className="text-tinte-2">
+                    <p className="text-tinte-2 wrap-break-word">
                         Passend:{' '}
                         <Link href={`/bad/musterbaeder/${matchingBath.slug}`} className={`${linkKlassen} font-semibold`}>
                             {mitEinheit(matchingBath.label)}

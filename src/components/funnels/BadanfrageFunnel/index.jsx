@@ -77,7 +77,7 @@ export default function BadanfrageFunnel() {
                             {/* Kreuz an der ersten Zeile, auch wenn das Etikett mobil umbricht */}
                             <Fugenkreuz className="mt-1 size-3 self-start text-strich" />
                             <span>
-                                Badanfrage &middot; <span className="whitespace-nowrap">Schritt {step} von {TOTAL_STEPS}</span>
+                                Badanfrage &middot; <span>Schritt {step} von {TOTAL_STEPS}</span>
                             </span>
                         </span>
                         <span className={etikettKlassen}>

@@ -12,7 +12,7 @@ export default function Schritt2({ setStep, selectedArea, selectArea, customArea
             <span id="funnel-area-heading" className={labelKlassen}>
               Ungefähre Fläche in Quadratmetern
             </span>
-            <div role="group" aria-labelledby="funnel-area-heading" className="mt-2 grid grid-cols-1 gap-2 @3xs:grid-cols-2 sm:grid-cols-4">
+            <div role="group" aria-labelledby="funnel-area-heading" className="mt-2 grid grid-cols-2 gap-2 @max-3xs:grid-cols-1 sm:grid-cols-4">
               {AREA_OPTIONS.map((opt) => (
                 <button
                   type="button"

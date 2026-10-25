@@ -202,18 +202,21 @@ Alle Pakete außer `KUER-*` sind Pflicht, nach Wirkung sortiert (Rahmen und Star
 | E3-BAU-10 | Seite `/standorte/[stadt]` nach Vorlage `OrtsSeite`, Text aus `_werkstatt/texte/REF-ort-wetzlar.md`, Bilder nach `_werkstatt/bildplaetze.md` | Baumeister | Haiku | 2 | `src/app/(bestand)/standorte/[stadt]/page.tsx`, `src/components/seiten/standorte-stadt/**` | E3-ORCH-02b, E3-ORCH-01c, E3-GRAF-09, E3-ORCH-02d | Z-04, Z-09, Z-11, Z-13 | E3-W3 | abgenommen (E-049, Welle 2) |
 | E3-BAU-11 | Seite `/blog` nach Vorlage `WissensSeite`, Text aus `_werkstatt/texte/blog.md`, Bilder nach `_werkstatt/bildplaetze.md` | Baumeister | Haiku | 2 | `src/app/(bestand)/blog/page.jsx`, `src/components/seiten/blog/**` | E3-LEKT-09, E3-ORCH-01b, E3-ORCH-02d | Z-04, Z-09, Z-11, Z-13 | E3-W3 | abgenommen (E-049, Welle 2) |
 | E3-PRUEF-A3 | Stufe A je Paket der Welle E3-W3 (Typprüfung und Linter der geänderten Dateien, betroffene Tests, Zeichen und Lesbarkeit geänderter Seiten, ein Bild mobil und Desktop), ein Ergebnis je Paket, unabhängig | Prüfer | Haiku | 1 | `$SCRATCH/E3-PRUEF-A3/**` | E3-BAU-01, E3-BAU-02, E3-BAU-03, E3-BAU-04, E3-BAU-05, E3-BAU-06, E3-BAU-07, E3-BAU-08, E3-BAU-09, E3-BAU-10, E3-BAU-11 | Z-02, Z-09, Z-12 | E3-W3 | offen |
-| E3-PRUEF-B | Stufe B der 12 Hauptansichten | Prüfer | Haiku | 1 | `_werkstatt/belege/e3/**` | E3-PRUEF-A3 | Z-02 bis Z-09 | E3-Tor | offen |
-| E3-PROBE-01 | Probelauf P1 auf m390, A1 bis A6 | Probeläufer | Haiku | 1 | `_werkstatt/cache/probelauf/e3/P1-m390-*/**` | E3-PRUEF-B | Z-11 | E3-Tor | offen |
-| E3-PROBE-02 | Probelauf P1 auf d1440, A1 bis A6 | Probeläufer | Haiku | 1 | `_werkstatt/cache/probelauf/e3/P1-d1440-*/**` | E3-PRUEF-B | Z-11 | E3-Tor | offen |
-| E3-PROBE-03 | Probelauf P2 auf t768, A1 bis A6 | Probeläufer | Haiku | 1 | `_werkstatt/cache/probelauf/e3/P2-t768-*/**` | E3-PRUEF-B | Z-11 | E3-Tor | offen |
-| E3-PROBE-04 | Probelauf P2 auf d1440, A1 bis A6 | Probeläufer | Haiku | 1 | `_werkstatt/cache/probelauf/e3/P2-d1440-*/**` | E3-PRUEF-B | Z-11 | E3-Tor | offen |
-| E3-PROBE-05 | Probelauf P3 auf m360, A1 bis A6 | Probeläufer | Haiku | 1 | `_werkstatt/cache/probelauf/e3/P3-m360-*/**` | E3-PRUEF-B | Z-11 | E3-Tor | offen |
-| E3-PROBE-06 | Probelauf P3 auf d1440, A1 bis A6 | Probeläufer | Haiku | 1 | `_werkstatt/cache/probelauf/e3/P3-d1440-*/**` | E3-PRUEF-B | Z-11 | E3-Tor | offen |
-| E3-PROBE-07 | Probelauf P4 auf d1280, A1 bis A6 | Probeläufer | Haiku | 1 | `_werkstatt/cache/probelauf/e3/P4-d1280-*/**` | E3-PRUEF-B | Z-11 | E3-Tor | offen |
-| E3-PROBE-08 | Probelauf P4 auf m390, A1 bis A6 | Probeläufer | Haiku | 1 | `_werkstatt/cache/probelauf/e3/P4-m390-*/**` | E3-PRUEF-B | Z-11 | E3-Tor | offen |
-| E3-PROBE-09 | Probelauf P5 auf m390, A1 bis A6 | Probeläufer | Haiku | 1 | `_werkstatt/cache/probelauf/e3/P5-m390-*/**` | E3-PRUEF-B | Z-11 | E3-Tor | offen |
-| E3-PROBE-10 | Probelauf P5 auf d1440, A1 bis A6 | Probeläufer | Haiku | 1 | `_werkstatt/cache/probelauf/e3/P5-d1440-*/**` | E3-PRUEF-B | Z-11 | E3-Tor | offen |
-| E3-DOK-01 | Bildsatz der Hauptansichten nach `_werkstatt/cache/bilder/e3/` für die Sichtabnahme | Dokumentar | Haiku | 1 | `_werkstatt/cache/bilder/e3/**` | E3-PRUEF-B | Z-04 | E3-Tor | offen |
+| E3-PRUEF-B | Stufe B der 12 Hauptansichten | Prüfer | Haiku | 1 | `_werkstatt/belege/e3/**` | E3-PRUEF-A3 | Z-02 bis Z-09 | E3-Tor | Teile -1 und -2 erledigt (E-059), Teil -3 offen |
+| E3-PROBE-01 | Probelauf P1 auf m390, A1 bis A6 | Probeläufer | Haiku | 1 | `_werkstatt/cache/probelauf/e3/P1-m390-*/**` | E3-PRUEF-B | Z-11 | E3-Tor | erledigt (E-059) |
+| E3-PROBE-02 | Probelauf P1 auf d1440, A1 bis A6 | Probeläufer | Haiku | 1 | `_werkstatt/cache/probelauf/e3/P1-d1440-*/**` | E3-PRUEF-B | Z-11 | E3-Tor | erledigt (E-059) |
+| E3-PROBE-03 | Probelauf P2 auf t768, A1 bis A6 | Probeläufer | Haiku | 1 | `_werkstatt/cache/probelauf/e3/P2-t768-*/**` | E3-PRUEF-B | Z-11 | E3-Tor | erledigt (E-059) |
+| E3-PROBE-04 | Probelauf P2 auf d1440, A1 bis A6 | Probeläufer | Haiku | 1 | `_werkstatt/cache/probelauf/e3/P2-d1440-*/**` | E3-PRUEF-B | Z-11 | E3-Tor | erledigt (E-059) |
+| E3-PROBE-05 | Probelauf P3 auf m360, A1 bis A6 | Probeläufer | Haiku | 1 | `_werkstatt/cache/probelauf/e3/P3-m360-*/**` | E3-PRUEF-B | Z-11 | E3-Tor | erledigt (E-059) |
+| E3-PROBE-06 | Probelauf P3 auf d1440, A1 bis A6 | Probeläufer | Haiku | 1 | `_werkstatt/cache/probelauf/e3/P3-d1440-*/**` | E3-PRUEF-B | Z-11 | E3-Tor | erledigt (E-059) |
+| E3-PROBE-07 | Probelauf P4 auf d1280, A1 bis A6 | Probeläufer | Haiku | 1 | `_werkstatt/cache/probelauf/e3/P4-d1280-*/**` | E3-PRUEF-B | Z-11 | E3-Tor | erledigt (E-059) |
+| E3-PROBE-08 | Probelauf P4 auf m390, A1 bis A6 | Probeläufer | Haiku | 1 | `_werkstatt/cache/probelauf/e3/P4-m390-*/**` | E3-PRUEF-B | Z-11 | E3-Tor | erledigt (E-059) |
+| E3-PROBE-09 | Probelauf P5 auf m390, A1 bis A6 | Probeläufer | Haiku | 1 | `_werkstatt/cache/probelauf/e3/P5-m390-*/**` | E3-PRUEF-B | Z-11 | E3-Tor | erledigt (E-059) |
+| E3-PROBE-10 | Probelauf P5 auf d1440, A1 bis A6 | Probeläufer | Haiku | 1 | `_werkstatt/cache/probelauf/e3/P5-d1440-*/**` | E3-PRUEF-B | Z-11 | E3-Tor | erledigt (E-059) |
+| E3-DOK-01 | Bildsatz der Hauptansichten nach `_werkstatt/cache/bilder/e3/` für die Sichtabnahme | Dokumentar | Haiku | 1 | `_werkstatt/cache/bilder/e3/**` | E3-PRUEF-B | Z-04 | E3-Tor | erledigt (E-059; Formulare bei 200 % nach E3-S200 neu aufnehmen) |
+| E3-S200-A | Projektcheck und Badanfrage bei 200 % Schrift, Pflichthinweis | Baumeister | Haiku | 2 | `src/components/funnels/BadProjektCheck/**`, `src/components/funnels/BadanfrageFunnel/**` | E3-PRUEF-B | Z-04, Z-13 | E3-Tor | abgenommen (E-059 Nachtrag) |
+| E3-S200-B | Preisrechner, Express-Anfrage, Kontakt, Karte, Terminkalender, Schnellanfrage bei 200 %, Pflichthinweis | Baumeister | Haiku | 2 | siehe Briefing `pakete/E3-S200-B.md` | E3-PRUEF-B | Z-04, Z-13 | E3-Tor | abgenommen (E-059 Nachtrag) |
+| E3-S200-C | Blogliste, Zeitleiste und Zitat, Konfigurator bei 200 %, Pflichthinweis | Baumeister | Haiku | 2 | siehe Briefing `pakete/E3-S200-C.md` | E3-PRUEF-B | Z-04, Z-13 | E3-Tor | abgenommen (E-059 Nachtrag) |
 | E3-SICHT | Sichtabnahme der Hauptansichten nach Rubrik (Orchestrator am Bildsatz) | Orchestrator | Opus | 3 | `_werkstatt/berichte/E3-SICHT.md` | E3-DOK-01 | Z-04 | E3-Tor | offen |
 | E3-TOR | Etappentor E3: Abgleich mit ABNAHME.md (L3, L7), Befunde werden Pakete der nächsten Etappe, höchstens zwei Anläufe | Orchestrator | Opus | 3 | `_werkstatt/PLAN.md`, `_werkstatt/ABNAHME.md`, `_werkstatt/STATUS.md` | E3-PRUEF-B, E3-PROBE-01, E3-PROBE-02, E3-PROBE-03, E3-PROBE-04, E3-PROBE-05, E3-PROBE-06, E3-PROBE-07, E3-PROBE-08, E3-PROBE-09, E3-PROBE-10, E3-SICHT | Z-01 bis Z-14 | E3-Tor | offen |
 
