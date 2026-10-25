@@ -74,18 +74,22 @@ export default function Footer() {
 
                 <div className={clsx(seitenKlassen, 'grid grid-cols-1 gap-12 py-16 lg:grid-cols-12 lg:gap-8')}>
                     <div className="flex flex-col gap-6 lg:col-span-5">
-                        <Link href="/" className="inline-block self-start" aria-label="Zur Startseite von Fliesenverlegung Tezgel">
-                            <Image
-                                src="/images/logo/tezgel-logo-dark.webp"
-                                alt="Fliesenverlegung Tezgel"
-                                width={220}
-                                height={68}
-                                className="h-12 w-auto shrink-0 object-contain sm:h-16"
-                            />
+                        {/* Die Zeile mit dem Inhaber steht neben dem Link, nicht darin: sichtbarer Text und Name des Links stimmen
+                            überein (WCAG 2.5.3, Lighthouse label-content-name-mismatch, E-061) */}
+                        <div className="self-start">
+                            <Link href="/" className="block w-fit" aria-label="Zur Startseite von Fliesenverlegung Tezgel">
+                                <Image
+                                    src="/images/logo/tezgel-logo-dark.webp"
+                                    alt="Fliesenverlegung Tezgel"
+                                    width={220}
+                                    height={68}
+                                    className="h-12 w-auto shrink-0 object-contain sm:h-16"
+                                />
+                            </Link>
                             <span className={clsx(etikett, 'mt-3 block')}>
                                 Inhaber {owner.fullName} &middot; Fachbetrieb Aßlar / Wetzlar
                             </span>
-                        </Link>
+                        </div>
 
                         <blockquote className="border-l-2 border-laser pl-4 text-fs-3 text-kalk">
                             &bdquo;{motto}&ldquo;

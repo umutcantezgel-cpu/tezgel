@@ -2,7 +2,7 @@
 // die H1 eine Stufe kleiner als im Planblatt (fs-6, ihre Zeilen rücken in die Flucht: sig-flucht), darunter in einer Zeile,
 // was der Betrieb macht und wo (zugleich der Ort des ersten Bildschirms), der Hauptknopf, Anruf und ab xl WhatsApp, die
 // Bewertungszeile. Danach das Foto vollständig in seinem eigenen Seitenverhältnis, nie angeschnitten (Startseite: das
-// Startbild mit seinem großen Moment). Die fünf Pflichtelemente des ersten Bildschirms tragen data-erstes-bild (Logo im
+// Startbild mit seinem großen Moment). Das Foto ist das LCP-Element der Seite und lädt darum sofort mit hoher Priorität (E-061). Die fünf Pflichtelemente des ersten Bildschirms tragen data-erstes-bild (Logo im
 // Kopf). Die Oberkante der H1 (pt-24, ab lg pt-32) braucht das Intro der Startseite (bewegung.css, html.k-intro-start).
 // Serverkomponente.
 import type { ReactNode } from 'react';
@@ -72,7 +72,7 @@ export default function EinstiegMitte({ pfad, brotkrumen, titelZeilen, ort, haup
       {/* Foto vollständig, mittig; am Desktop so groß, dass es wirkt, ohne die Seite zu sprengen */}
       <div className={`${seitenKlassen} pt-12 pb-16 lg:pt-16 lg:pb-24`}>
         <div className="mx-auto w-full max-w-md lg:w-2/5 lg:max-w-full">
-          {typeof bild === 'string' ? <Bildfeld arbeit={bild as ArbeitId} sizes="(min-width: 1024px) 40vw, (min-width: 640px) 28rem, 100vw" /> : bild}
+          {typeof bild === 'string' ? <Bildfeld arbeit={bild as ArbeitId} lcp sizes="(min-width: 1024px) 40vw, (min-width: 640px) 28rem, 100vw" /> : bild}
         </div>
       </div>
     </section>

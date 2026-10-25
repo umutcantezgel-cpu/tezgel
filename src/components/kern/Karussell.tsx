@@ -38,10 +38,12 @@ const knopfHell = 'border-fuge bg-fliese text-tinte hover:border-tinte focus-vis
 const knopfDunkel = 'border-nacht-fuge bg-tinte text-kalk hover:border-kalk focus-visible:outline-kalk';
 const knopf = clsx(knopfGrund, knopfHell);
 
-// Wechselnder Name statt aria-pressed (wie der Knopf zum Anhalten im APG-Karussell)
+// Wechselnder Name statt aria-pressed (wie der Knopf zum Anhalten im APG-Karussell). Er liegt über der Spur: die verschobene
+// Spur bildet eine eigene Ebene und läge sonst in der Malreihenfolge über ihm, abgeschnitten, aber für Prüfwerkzeuge verdeckend
+// (Lighthouse target-size, E-061).
 function PauseKnopf({ angehalten, umschalten, dunkel = false }: { angehalten: boolean; umschalten: () => void; dunkel?: boolean }) {
   return (
-    <button type="button" onClick={umschalten} className={clsx(knopfGrund, dunkel ? knopfDunkel : knopfHell)}>
+    <button type="button" onClick={umschalten} className={clsx(knopfGrund, 'relative z-10', dunkel ? knopfDunkel : knopfHell)}>
       <Icon name={angehalten ? 'abspielen' : 'pause'} groesse={4} />
       <span className="sr-only">{angehalten ? 'Weiterlaufen lassen' : 'Anhalten'}</span>
     </button>
