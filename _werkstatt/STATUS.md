@@ -1,4 +1,4 @@
-STATUS · Branch claude/tezgel-website-redesign-iqxt8z · Etappe E0/E1 abgeschlossen bis auf Ausgangswerte, E2 Vorarbeit · Welle E2-W1 (vorgezogen) · Pflicht 21/398 · Kür 0/8 · Kriterien 0/14 · Ausnahmen 0 · Bestand grün (src-Änderungen im Arbeitsbaum, nicht committet) · Nächster Schritt: Ausgangswerte fertig, dann Lighthouse E0-PRUEF-03L und erster src-Commit (E2-W1)
+STATUS · Branch claude/tezgel-website-redesign-iqxt8z · Etappe E3/E5 · Welle E3-W2 (Werkzeugtexte, strukturierte Daten) · Pflicht 68/418 laut PLAN (Zeilen der Wellen E3-BAU, E3-GRAF, E3-RUHE, B-01 werden beim Tor E3 nachgetragen) · Kür 0/8 · Kriterien 0/14 (Abnahme am Tor) · Ausnahmen 1 (Traumbad, E-048) · Bestand grün (Funktionssuite 304/26/0, npm test 201/201) · Nächster Schritt: Abnahme E3-WERKZEUG-TEXTE und E3-SEO-JSONLD, dann E3-BLOG-TITEL und Reinraum
 
 # STATUS · Lauf „Verständlich, echt, ausgezeichnet“
 

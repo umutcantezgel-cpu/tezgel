@@ -1,5 +1,22 @@
 # Bericht · Lauf „Verständlich, echt, ausgezeichnet“
 
+## Morgenbericht · Sonntag, 25. Oktober 2026
+
+1. Fertig: Die Seite ist nach deiner Rückmeldung ruhiger: Überschrift mittig, Bilder vollständig, Kundenstimmen als langsames Karussell (`_werkstatt/bilder/bericht/2026-10-25/1-startseite-desktop.jpg`).
+2. Fertig: Alle zehn Hauptseiten sind neu gebaut, unabhängig geprüft und nachgebessert: Bad, Badsanierung („Ihr neues Traumbad zum Festpreis.“), barrierefreies Bad, Balkon und Terrasse, Leistungen, Fliesen, Referenzen, Kontakt, Ortsseiten und Ratgeber (`2-leistungen-karten-desktop.jpg`, `4-referenzen-bewertungen-desktop.jpg`).
+3. Fertig: Kontakt hat nur noch ein Anfrageformular, die Mobilnummer ruft an, die Öffnungszeiten widersprechen sich nicht mehr (`3-kontakt-handy.jpg`). Im Ratgeber steht die Artikelliste direkt unter ihrer Erklärung (`5-ratgeber-handy.jpg`).
+4. Fertig: Der Seitenwechsel legt die Fliesen langsamer und zeigt euer Logo auf der fertigen Wand; zwei Fehler sind behoben, alle 66 Prüfungen dazu bestehen (`6-seitenwechsel-logo-desktop.jpg`).
+5. Berichtigt: Auf „Leistungen“ stand, der Rechner nenne einen ungefähren Preis. Er nimmt aber nur die Angaben auf; das steht jetzt so da.
+6. Kosten: Vercel baut den Arbeitsstand seit gestern nicht mehr bei jedem Speichern (zuletzt geprüft heute Nacht).
+7. Stand: Alle 304 Prüfungen der Funktionen bestehen, auf den geprüften Seiten gibt es keine ernsten Hürden für Menschen mit Einschränkungen, und die Seitentexte lesen sich leicht. Offen sind alte Texte in Formularen und Rechnern. Die 14 Kriterien werden am Schluss am fertigen Bau abgenommen.
+8. Als Nächstes (läuft gerade): Formular- und Rechnertexte in einfacher Sprache und die Angaben für Suchmaschinen je Seite; danach die Titel der Ratgeber-Artikel, der Gesamtbau mit Messung der Ladezeit und die Schlussprüfung.
+9. Bitte prüfe oder entscheide (Einzelheiten in `_werkstatt/MENSCHEN.md`):
+   - Sollen die gezeichneten Fliesenpläne auf den Bad- und Balkonseiten wiederkommen? (M-19)
+   - Möchtest du den Weg der Badsanierung als gezeichnete Strecke sehen statt als 3 + 3 Schritte? (M-20)
+   - Der Kalender bietet samstags Termine bis 16:30 Uhr an, die Öffnungszeiten sagen „Sa nach Vereinbarung“: Was gilt? (M-21)
+   - Gefallen dir die neue Startseite und der Seitenwechsel mit Logo (Videos von gestern)?
+   - Noch offen: Freitag bis 17 oder 18 Uhr (M-03), größte Fliese (M-06), Herkunft einzelner Fotos (M-08).
+
 ## Morgenbericht · Samstag, 24. Oktober 2026
 
 1. Fertig: Die neue Startseite steht und ist viermal unabhängig geprüft; die letzte Bewertung liegt bei knapp 8 von 10, das Ziel ist 8. Bilder: `_werkstatt/bilder/bericht/2026-10-24/1-startseite-desktop.jpg`, `2-startseite-handy.jpg`.
