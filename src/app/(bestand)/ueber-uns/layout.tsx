@@ -2,8 +2,9 @@ import { createMetadata } from '@/lib/metadata';
 import { buildGraph, buildAboutPageNode, buildBreadcrumbNode, SITE_URL } from '@/lib/schema';
 import { COMPANY_DATA } from '@/config/company';
 import JsonLd from '@/components/seo/JsonLd';
+import { UEBER_UNS } from '@/inhalte/ueber-uns';
 
-const { legalName, owner, headquarters, authority, business } = COMPANY_DATA;
+const { owner, headquarters, authority, business } = COMPANY_DATA;
 
 export const metadata = createMetadata({
   title: 'Über uns | Fliesenleger-Fachbetrieb Tezgel Aßlar',
@@ -20,9 +21,9 @@ const breadcrumbs = [
 const aboutSchema = buildGraph([
   buildAboutPageNode({
     url: pageUrl,
-    name: `Über ${legalName} – Ihr Fliesen-Fachbetrieb in ${headquarters.city}`,
-    description:
-      `Lernen Sie ${legalName} und Inhaber ${owner.fullName} kennen. ${authority.certification} für Fliesen-, Platten- und Mosaikverlegung, Naturstein und Badsanierung in ${headquarters.city} und Mittelhessen.`,
+    // wie Titel und Beschreibung der Seite (Abnahme E3-BAU-08)
+    name: UEBER_UNS.meta.titel,
+    description: UEBER_UNS.meta.beschreibung,
   }),
   buildBreadcrumbNode(breadcrumbs, pageUrl),
 ]);

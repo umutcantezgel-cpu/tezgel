@@ -4,6 +4,7 @@
 // nicht). Bild des Einstiegs: `ueber-einstieg`. Karte (großer Moment `karte`) und Kundenstimmen kommen über Vorlage und Seite.
 // Vorlage: ErzaehlSeite. Fakten: K-015 F-01, F-02, F-05, F-06, F-09, F-19, F-14.
 import type { ErzaehlInhalt } from '@/components/vorlagen/inhalt';
+import { COMPANY_DATA } from '@/config/company';
 
 const VORSPANN =
   'Wir sind Fliesenverlegung Tezgel aus Aßlar. Deniz Tezgel, der Inhaber, kommt selbst zu Ihnen, schaut sich alles an und sagt Ihnen, was zu tun ist. Danach verlegt er mit seinem Team Fliese für Fliese.';
@@ -11,7 +12,7 @@ const VORSPANN =
 export const UEBER_UNS: ErzaehlInhalt = {
   pfad: '/ueber-uns',
   meta: {
-    titel: 'Über uns | Fliesenleger-Fachbetrieb Tezgel in Aßlar',
+    titel: 'Über uns | Fliesenlegerbetrieb Tezgel in Aßlar',
     beschreibung:
       'Fliesenverlegung Tezgel in Aßlar seit 2008, eingetragen bei der Handwerkskammer Wiesbaden. Inhaber Deniz Tezgel kommt selbst zu Ihnen, auch nach Wetzlar.',
   },
@@ -47,7 +48,7 @@ export const UEBER_UNS: ErzaehlInhalt = {
     punkte: [
       'Seit 2008 gibt es unseren Betrieb in Aßlar. Eingetragen sind wir bei der Handwerkskammer Wiesbaden. Wir verlegen Fliesen, Platten und Mosaik, im Neubau und in bewohnten Räumen.',
       'Seit 2014 liegt unser Schwerpunkt auf großen Fliesen, denn sie haben weniger Fugen. Seit 2019 ist die [[abdichtung|Abdichtung]] bei uns Standard. Wir arbeiten dabei nach [[din-18534|DIN 18534]].',
-      'Für Ihre Sicherheit verlegen wir Fliesen mit [[rutschhemmung|Rutschhemmung R10 und R11]], je nach Raum.',
+      'Für Ihre Sicherheit verlegen wir rutschfeste Fliesen. Je nach Raum haben sie die [[rutschhemmung|Rutschhemmung R10 und R11]].',
     ],
     absatz:
       'Möchten Sie vorher in Ruhe über Fliesen sprechen? Dafür gibt es Fliesenberatung in Wetzlar und Gießen, nach Terminvereinbarung.',
@@ -68,10 +69,12 @@ export const UEBER_UNS: ErzaehlInhalt = {
     ],
   },
   beleg: {
-    titel: 'Das sagen unsere Kunden.',
+    // Abnahme E3-BAU-08: die Karte steht im ersten Abschnitt der Vorlage unter eigener Überschrift (wie auf der Startseite),
+    // die Stimmen mit Überschrift, Satz und Motto der Textdatei im zweiten; so steht „Das sagen unsere Kunden.“ nur einmal
+    titel: 'Hier sind wir für Sie unterwegs.',
     fotos: [],
-    // Intro und Motto der Textdatei in einem Satz: die Vorlage stellt den Satz vor Stimmen und Karte
-    satz:
+    stimmenTitel: 'Das sagen unsere Kunden.',
+    stimmenEinleitung:
       'Was Kunden über unsere Arbeit schreiben, lesen Sie hier. Die Sätze stehen so, wie sie geschrieben wurden. Unser Motto: „Die Zufriedenheit unserer Kunden ist die beste Reklame für uns.“',
     // die beiden Stimmen der Textdatei zuerst, dann drei weitere aus REVIEWS, deren Wortlaut zum Betrieb passt (Regel 5)
     stimmen: ['christian-s', 'ute-t', 'thorsten-a', 'christian-d', 'k-d'],
@@ -82,6 +85,8 @@ export const UEBER_UNS: ErzaehlInhalt = {
     titel: 'Bitten Sie um einen Termin vor Ort.',
     satz:
       'Schreiben Sie uns Ihren Namen und Ihre Telefonnummer. Deniz Tezgel ruft Sie zurück und macht einen Termin mit Ihnen aus. Sie wissen noch nicht, was Sie ändern möchten? Dann rufen Sie einfach an.',
+    // Anfahrt zur Werkstatt wie im Bestand (Kartenlink, Abnahme E3-BAU-08; Firmendaten sind auf dieser Seite erlaubt)
+    hilfen: [{ name: `Anfahrt: ${COMPANY_DATA.headquarters.street}, ${COMPANY_DATA.headquarters.city}`, href: COMPANY_DATA.headquarters.mapsUrl }],
     verwandte: [
       { name: 'Fliesenberatung in Wetzlar', href: '/ausstellung/wetzlar' },
       { name: 'Fliesenberatung in Gießen', href: '/ausstellung/giessen' },

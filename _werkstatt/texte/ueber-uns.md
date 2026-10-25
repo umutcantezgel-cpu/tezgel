@@ -3,7 +3,7 @@
 > Muster: `_werkstatt/texte/REF-bereich-barrierefreies-bad.md`. Kern-Version 3.0. Prüfstein ist P1: 72 Jahre, Handy, große Schrift. Sie will wissen, wer zu ihr kommt und wie sie einen Termin bekommt. Zeilen mit „→“ und Klammerhinweise sind Bauhinweise, kein Seitentext.
 
 ## Meta
-- Titel (51 Zeichen): `Über uns | Fliesenleger-Fachbetrieb Tezgel in Aßlar`
+- Titel (51 Zeichen): `Über uns | Fliesenlegerbetrieb Tezgel in Aßlar`
 - Beschreibung (153 Zeichen): `Fliesenverlegung Tezgel in Aßlar seit 2008, eingetragen bei der Handwerkskammer Wiesbaden. Inhaber Deniz Tezgel kommt selbst zu Ihnen, auch nach Wetzlar.`
 - H1: `Ihr Fliesenleger aus Aßlar kommt persönlich zu Ihnen.`
 - Suchbegriffe aus E0: Über uns, Fliesenleger Fachbetrieb Tezgel, Aßlar, Wetzlar, Hessen, Fliesenverlegung Tezgel, HWK Wiesbaden, seit 2008, Inhaber Deniz Tezgel, Fliesen und Bad.
@@ -25,7 +25,7 @@
 - H2: `Wir verlegen Fliesen im Bad, im Haus und auf dem Balkon.`
 - Absatz: `Seit 2008 gibt es unseren Betrieb in Aßlar. Eingetragen sind wir bei der Handwerkskammer Wiesbaden. Wir verlegen Fliesen, Platten und Mosaik, im Neubau und in bewohnten Räumen.`
 - Absatz: `Seit 2014 liegt unser Schwerpunkt auf großen Fliesen, denn sie haben weniger Fugen. Seit 2019 ist die [[abdichtung|Abdichtung]] bei uns Standard. Wir arbeiten dabei nach [[din-18534|DIN 18534]].`
-- Absatz: `Für Ihre Sicherheit verlegen wir Fliesen mit [[rutschhemmung|Rutschhemmung R10 und R11]], je nach Raum.`
+- Absatz: `Für Ihre Sicherheit verlegen wir rutschfeste Fliesen. Je nach Raum haben sie die [[rutschhemmung|Rutschhemmung R10 und R11]].`
 - Bereiche (je eine Zeile, Link):
   - `Badsanierung und [[bodengleiche-dusche|bodengleiche Duschen]] statt Wanne` → `/bad`
   - `Böden und Wände in Küche und Wohnräumen` → `/leistungen/wohnen`
