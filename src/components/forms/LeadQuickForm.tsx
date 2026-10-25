@@ -59,8 +59,8 @@ const LADEN = 'aria-busy:pointer-events-none aria-busy:border-strich aria-busy:b
 export function LeadQuickForm({
   variant = 'card',
   sourceTag = 'schnellanfrage-leistungsseite',
-  heading = 'Kostenfreies Vor-Ort-Aufmaß anfragen',
-  subheading = 'In 60 Sekunden ausgefüllt. Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich bei Ihnen.',
+  heading = 'Einen kostenfreien Termin bei Ihnen vor Ort anfragen',
+  subheading = 'Das geht in 60 Sekunden. Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich bei Ihnen.',
   submitLabel = 'Unverbindliches Angebot anfordern',
   onSuccess,
   className = '',
@@ -161,7 +161,7 @@ export function LeadQuickForm({
           <div className="border-b border-fuge pb-4">
             <span className={etikettKlassen}>
               <Fugenkreuz className="size-3 text-strich" />
-              <span>Kostenloses Vor-Ort-Aufmaß</span>
+              <span>Kostenfrei bei Ihnen vor Ort</span>
             </span>
           </div>
           <p id={titelId} className="mt-6 font-anzeige text-fs-5 font-semibold text-balance text-tinte">
@@ -229,7 +229,7 @@ export function LeadQuickForm({
 
           <div>
             <label htmlFor={feldId('email')} className={labelKlassen}>
-              E-Mail Adresse <span className={ZUSATZ}>(optional)</span>
+              E-Mail-Adresse <span className={ZUSATZ}>(optional)</span>
             </label>
             <input
               id={feldId('email')}
@@ -244,7 +244,7 @@ export function LeadQuickForm({
 
           <div>
             <label htmlFor={feldId('ort')} className={labelKlassen}>
-              PLZ / Wohnort <span className={ZUSATZ}>(optional)</span>
+              PLZ und Wohnort <span className={ZUSATZ}>(optional)</span>
             </label>
             <input
               id={feldId('ort')}
@@ -260,12 +260,12 @@ export function LeadQuickForm({
 
         <div>
           <label htmlFor={feldId('notiz')} className={labelKlassen}>
-            Ihr Projekt / Anmerkungen <span className={ZUSATZ}>(optional)</span>
+            Ihr Projekt in wenigen Worten <span className={ZUSATZ}>(optional)</span>
           </label>
           <textarea
             id={feldId('notiz')}
             rows={3}
-            placeholder="z. B. Komplettbadsanierung ca. 12 m², barrierefreie Dusche, Baustart ab Mai..."
+            placeholder="z. B. ganzes Bad neu, ca. 12 m², barrierefreie Dusche, Baustart ab Mai …"
             value={formData.notes}
             onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
             className={clsx(feldKlassen, 'resize-none')}
@@ -286,7 +286,7 @@ export function LeadQuickForm({
             className={clsx(kontrollKlassen, einwilligungFehlt && 'outline-2 outline-offset-2 outline-laser-tief focus-visible:outline-tinte')}
           />
           <label htmlFor={`consent-${sourceTag}`} className="cursor-pointer text-fs-2 text-tinte">
-            Ich willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. Hinweise in der{' '}
+            Ich bin einverstanden, dass meine Daten zur Kontaktaufnahme verarbeitet werden. Mehr dazu in der{' '}
             <Link href="/datenschutz" className={clsx(linkKlassen, 'py-1')}>
               Datenschutzerklärung
             </Link>
@@ -321,7 +321,7 @@ export function LeadQuickForm({
           >
             {laedt ? (
               <span className="flex flex-col items-center gap-2">
-                <span>Wird gesendet...</span>
+                <span>Wird gesendet …</span>
                 <span className="laden-fuge w-16" data-motion="laden" aria-hidden="true" />
               </span>
             ) : (
@@ -336,7 +336,7 @@ export function LeadQuickForm({
           <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-4">
             <span className={etikettKlassen}>
               <Icon name="schloss" groesse={4} />
-              100% DSGVO-konform
+              100% konform mit der DSGVO
             </span>
             <span aria-hidden="true" className="hidden font-mono text-fs-1 text-tinte-2 sm:inline">
               &middot;

@@ -51,7 +51,7 @@ export function BookingCalendar({
       <div className={`border border-strich bg-fliese p-6 sm:p-8 lg:p-12 ${className}`} role="status">
         <span className={etikettKlassen}>
           <Icon name="haken" groesse={4} className="text-abnahme" />
-          <span>Kostenloses Vor-Ort-Aufmaß</span>
+          <span>Kostenfrei bei Ihnen vor Ort</span>
         </span>
         <h3 className="mt-6 text-fs-5 text-tinte">Terminanfrage bestätigt!</h3>
         <p className="mt-3 max-w-mass text-fs-3 text-tinte-2">
@@ -61,12 +61,12 @@ export function BookingCalendar({
         <div className="mt-6 border-t border-fuge pt-6 font-mono text-fs-2 text-tinte">
           <div className="font-text font-semibold">Termindetails:</div>
           <div className="mt-2">&bull; Leistung: {initialServiceType}</div>
-          <div>&bull; Datum &amp; Zeit: {formattedDate}, ca. {selectedTime} Uhr</div>
+          <div>&bull; Datum und Zeit: {formattedDate}, ca. {selectedTime} Uhr</div>
           {contactData.zipCity && <div>&bull; Ort: {contactData.zipCity}</div>}
           {referenceId && <div>&bull; Vorgangsnummer: <span className="border border-fuge bg-kalk px-2 py-1">{referenceId}</span></div>}
         </div>
         <p className="mt-6 text-fs-2 text-tinte-2">
-          Inhaber Deniz Tezgel setzt sich vorab kurz telefonisch mit Ihnen in Verbindung, um eventuelle Besonderheiten abzustimmen.
+          Inhaber Deniz Tezgel ruft Sie vorab kurz an, um mögliche Besonderheiten abzustimmen.
         </p>
       </div>
     );
@@ -79,19 +79,19 @@ export function BookingCalendar({
         <div>
           <span className={etikettKlassen}>
             <Fugenkreuz className="size-3 text-strich" />
-            <span>Kostenloses Vor-Ort-Aufmaß</span>
+            <span>Kostenfrei bei Ihnen vor Ort</span>
           </span>
           <h3 className="mt-3 text-fs-5 text-tinte">
             {initialServiceType}
           </h3>
           <p className="mt-2 text-fs-2 text-tinte-2">
-            Persönliche Beratung &amp; Messung vor Ort durch Inhaber Deniz Tezgel
+            Inhaber Deniz Tezgel berät Sie persönlich und misst bei Ihnen vor Ort.
           </p>
         </div>
 
         {step === 2 && (
           <Knopf variante="text" onClick={() => setStep(1)} iconLinks="pfeil-links">
-            Anderen Tag/Slot wählen
+            Anderen Tag oder andere Uhrzeit wählen
           </Knopf>
         )}
       </div>
@@ -101,7 +101,7 @@ export function BookingCalendar({
         <div>
           <p className="mb-4 flex items-center gap-2 font-mono text-fs-1 text-tinte">
             <Icon name="kalender" groesse={4} />
-            <span>Schritt 1: Verfügbaren Tag &amp; Uhrzeit wählen</span>
+            <span>Schritt 1: Einen freien Tag und eine Uhrzeit wählen</span>
           </p>
 
           {/* Höhe = ganze Tageszeilen (Zeile 237 px auf dem Handy, 181 px ab 640, 125 px ab 768; +1 px Rahmen oben):
@@ -109,7 +109,7 @@ export function BookingCalendar({
           <div className="max-h-119 overflow-y-auto border-t border-fuge sm:max-h-91 md:max-h-94" tabIndex={0} role="region" aria-label="Verfügbare Termine">
             {availableDays.length === 0 && (
               <p className="py-6 text-fs-2 text-tinte-2">
-                Die freien Termine erscheinen, sobald die Seite vollständig geladen ist. Telefonisch erreichen Sie uns unter{' '}
+                Die freien Termine erscheinen, sobald die Seite fertig geladen ist. Sie erreichen uns telefonisch unter{' '}
                 <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className={`${linkKlassen} font-mono`}>{COMPANY_DATA.contact.phone}</a>.
               </p>
             )}
@@ -121,7 +121,7 @@ export function BookingCalendar({
                   </span>
                   {day.isSaturday && (
                     <span className={etikettKlassen}>
-                      Samstag (Aufmaßtermin)
+                      Samstag (Termin bei Ihnen vor Ort)
                     </span>
                   )}
                 </div>
@@ -206,7 +206,7 @@ export function BookingCalendar({
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-4">
               <div>
                 <label htmlFor="booking-email" className={labelKlassen}>
-                  E-Mail Adresse <span className="font-normal text-tinte-2">(optional)</span>
+                  E-Mail-Adresse <span className="font-normal text-tinte-2">(optional)</span>
                 </label>
                 <input
                   id="booking-email"
@@ -221,7 +221,7 @@ export function BookingCalendar({
 
               <div>
                 <label htmlFor="booking-zip" className={labelKlassen}>
-                  Einsatzort / PLZ <span className="font-normal text-tinte-2">(optional)</span>
+                  PLZ und Ort <span className="font-normal text-tinte-2">(optional)</span>
                 </label>
                 <input
                   id="booking-zip"
@@ -237,7 +237,7 @@ export function BookingCalendar({
 
             <div>
               <label htmlFor="booking-notes" className={labelKlassen}>
-                Projekt-Kurzbeschreibung <span className="font-normal text-tinte-2">(optional)</span>
+                Ihr Projekt in wenigen Worten <span className="font-normal text-tinte-2">(optional)</span>
               </label>
               <textarea
                 id="booking-notes"
@@ -260,11 +260,11 @@ export function BookingCalendar({
                 className="mt-1 size-5 shrink-0 cursor-pointer rounded-r1 border border-strich accent-tinte"
               />
               <label htmlFor="booking-consent" className="cursor-pointer text-fs-2 text-tinte-2">
-                Ich stimme der Kontaktaufnahme zur Terminabstimmung gemäß{' '}
+                Ich bin einverstanden, dass wir mich zur Terminabstimmung kontaktieren. Mehr dazu in der{' '}
                 <Link href="/datenschutz" className={linkKlassen}>
                   Datenschutzerklärung
-                </Link>{' '}
-                zu.
+                </Link>
+                .
               </label>
             </div>
 
@@ -275,19 +275,19 @@ export function BookingCalendar({
               </p>
             )}
 
-            <Knopf type="submit" laedt={loading} ladeText="Termin wird reserviert..." iconLinks="haken" className="w-full">
+            <Knopf type="submit" laedt={loading} ladeText="Wird gesendet …" iconLinks="haken" className="w-full">
               Verbindlichen Vor-Ort-Termin anfragen
             </Knopf>
 
             <div className="flex flex-wrap items-center justify-center gap-4 font-mono text-fs-1 text-tinte-2">
               <span className="flex items-center gap-2">
                 <Icon name="schloss" groesse={4} />
-                100% kostenfrei &amp; unverbindlich
+                100% kostenfrei und unverbindlich
               </span>
               <span>&middot;</span>
               <span className="flex items-center gap-2">
                 <Fugenkreuz className="size-3 text-tinte" />
-                Aufmaß &amp; Festpreisberatung
+                Messung vor Ort und Festpreisberatung
               </span>
             </div>
           </form>

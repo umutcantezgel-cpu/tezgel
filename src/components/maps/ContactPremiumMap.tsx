@@ -84,11 +84,11 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
         <div className="flex flex-col gap-4">
           <p className={etikettKlassen}>
             <Icon name="ort" groesse={4} />
-            <span>Standort & Einsatzradius</span>
+            <span>Standort und Einsatzgebiet</span>
           </p>
           <h3 className="font-text text-fs-4 font-semibold text-tinte">Mittelhessen vor Ort</h3>
           <p className="font-text text-fs-2 text-tinte-2">
-            Firmensitz Aßlar – täglicher Einsatz in Wetzlar, Gießen & Lahn-Dill.
+            Firmensitz in Aßlar. Wir arbeiten täglich in Wetzlar, Gießen und im Lahn-Dill-Kreis.
           </p>
 
           <div className="relative">
@@ -97,8 +97,8 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
             </div>
             <input
               type="text"
-              aria-label="Stadt oder Kreis filtern"
-              placeholder="Stadt oder Kreis filtern..."
+              aria-label="Stadt oder Kreis suchen"
+              placeholder="Stadt oder Kreis suchen …"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className={clsx(feldKlassen, "pl-12")}
@@ -186,7 +186,7 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
       <div className="relative w-full">
         <MapConsentGate
           src={embedUrl}
-          title={`Google Maps Ansicht ${currentHub.name}`}
+          title={`Karte von ${currentHub.name} bei Google Maps`}
           height={KARTE_HOEHE}
           className="w-full"
           vorschau={<Einzugsband kompakt />}
@@ -208,7 +208,7 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
                   <ContactCameraController targetCoords={targetCoords} />
 
                   {/* Firmensitz */}
-                  <AdvancedMarker position={TEZGEL_HQ_COORDS} title="Fliesenverlegung Tezgel HQ Aßlar">
+                  <AdvancedMarker position={TEZGEL_HQ_COORDS} title="Firmensitz Fliesenverlegung Tezgel in Aßlar">
                     <Pin
                       background="var(--color-laser)"
                       borderColor="var(--color-fliese)"
