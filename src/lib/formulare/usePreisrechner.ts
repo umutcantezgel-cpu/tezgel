@@ -1,5 +1,6 @@
 // Logik der Projektanfrage im Preisrechner (F-02, PricingCalculator) – wörtlich aus der Komponente verschoben (P3-00l).
-// Ohne Markup; Bestand und Kern-Ansicht nutzen denselben Hook.
+// Ohne Markup; Bestand und Kern-Ansicht nutzen denselben Hook. Ohne vorab gewählte Fläche und ohne vorab angehakte Situationen
+// (E4-W0-LEISTUNGEN, E3-SICHT): wer nichts wählt, sendet keine Fläche; Pflichtfelder und Empfänger unverändert (G8).
 import React, { useState } from "react";
 import {
   CRAFT_SERVICES,
@@ -16,12 +17,9 @@ type FormStatus = "idle" | "submitting" | "success" | "error";
 export function usePreisrechner() {
   // 1. Projekt- & Situationsangaben
   const [serviceType, setServiceType] = useState<CraftServiceType>("bad");
-  const [roomSize, setRoomSize] = useState<RoomSizeType>("medium");
+  const [roomSize, setRoomSize] = useState<RoomSizeType | null>(null);
   const [customArea, setCustomArea] = useState<string>("");
-  const [selectedFeatures, setSelectedFeatures] = useState<string[]>([
-    "untergrund",
-    "staubschutz",
-  ]);
+  const [selectedFeatures, setSelectedFeatures] = useState<string[]>([]);
   const [propertyType] = useState<string>("bestand");
   const [timing, setTiming] = useState<string>("In den nächsten 1 - 3 Monaten");
   const [notes, setNotes] = useState<string>("");
@@ -42,7 +40,7 @@ export function usePreisrechner() {
   const [referenceId, setReferenceId] = useState<string>("");
 
   const selectedService = CRAFT_SERVICES[serviceType] || CRAFT_SERVICES.bad;
-  const selectedSize = ROOM_SIZES[roomSize] || ROOM_SIZES.medium;
+  const selectedSize = roomSize ? ROOM_SIZES[roomSize] : null;
 
   const toggleFeature = (id: string) => {
     triggerHaptic("light");
@@ -82,14 +80,14 @@ export function usePreisrechner() {
       PROPERTY_TYPES.find((p) => p.id === propertyType)?.label || propertyType;
 
     const areaDescription = customArea.trim()
-      ? `${customArea.trim()} m² (Kategorie: ${selectedSize.label})`
-      : selectedSize.areaText;
+      ? `${customArea.trim()} m²${selectedSize ? ` (Kategorie: ${selectedSize.label})` : ""}`
+      : selectedSize?.areaText ?? "";
 
     const fullSituationDescription = [
       notes.trim() ? `SITUATIONSSCHILDERUNG DES KUNDEN:\n${notes.trim()}\n` : "",
       `--- PROJEKTDETAILS ---`,
       `Gewerk: ${selectedService.title}`,
-      `Fläche / Umfang: ${areaDescription}`,
+      `Fläche / Umfang: ${areaDescription || "keine Angabe"}`,
       `Objektart: ${propertyLabel}`,
       `Zeitrahmen: ${timing}`,
       featureLabels.length > 0
@@ -105,7 +103,7 @@ export function usePreisrechner() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           inquiryType: serviceType === "bad" ? "bad" : "general",
-          projectTitle: `${selectedService.title} (${selectedSize.label})`,
+          projectTitle: selectedSize ? `${selectedService.title} (${selectedSize.label})` : selectedService.title,
           projectType: serviceType,
           contact: {
             name: name.trim(),
@@ -113,7 +111,7 @@ export function usePreisrechner() {
             email: email.trim() || undefined,
             location: location.trim() || "Aßlar / Wetzlar / Hessen",
           },
-          area: areaDescription,
+          area: areaDescription || undefined,
           timing: timing,
           notes: fullSituationDescription,
           honeypot: honeypot || undefined,

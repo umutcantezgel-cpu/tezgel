@@ -1,12 +1,14 @@
 // F-11 Einwilligung (Banner, Schaltflächen, #cookie-settings, Widerruf) und F-12 Karten hinter Einwilligung.
 // Prüft Verhalten: gespeicherter Zustand (Cookie tezgel_consent_status), Anfragen an Karten-Hosts (Protokoll, art 'fremd'),
-// Platzhalter vor und geladene Karte nach Einwilligung. Auf / und /ueber-uns steht keine Karte (E2, LAGEBILD F-12): dort
-// wird nur geprüft, dass keine Anfrage an Karten-Hosts geht. Keine Gestaltungsklassen, keine festen Wartezeiten.
+// Platzhalter vor und geladene Karte nach Einwilligung. Auf /, /ueber-uns und /kontakt steht keine eingebettete Karte (E2,
+// LAGEBILD F-12; /kontakt seit E4-W0-KONTAKT, E-062, mit der gezeichneten Einsatzkarte): dort wird geprüft, dass keine
+// Anfrage an Karten-Hosts geht. Keine Gestaltungsklassen, keine festen Wartezeiten.
 import { test, expect } from './fixtures.mjs';
 
 const ORTE = ['/', '/standorte', '/kontakt'];
-// Orte mit Karte hinter Einwilligung (F-12); auf / gibt es keine Karte mehr.
-const KARTEN_ORTE = ['/standorte', '/kontakt'];
+// Orte mit Karte hinter Einwilligung (F-12); auf / und /kontakt gibt es keine eingebettete Karte mehr (E-062).
+const KARTEN_ORTE = ['/standorte'];
+const EINSATZKARTE = /Gezeichnete Karte des Einsatzgebiets/;
 const COOKIE = 'tezgel_consent_status';
 const KARTEN_HOST = /maps\.googleapis\.com|maps\.gstatic\.com|openstreetmap\.org|google\.(com|de)\/maps/;
 const LADE_KNOPF = 'Karte laden & zustimmen';
@@ -123,11 +125,21 @@ test.describe('Karten hinter Einwilligung (F-12)', () => {
   test.describe('Erstbesuch (keine Entscheidung)', () => {
     test.use({ einwilligung: 'erstbesuch' });
 
-    test('/kontakt: vor jeder Entscheidung Platzhalter statt Karte und keine Anfrage an Karten-Hosts', async ({ page, protokoll }) => {
+    test('/standorte: vor jeder Entscheidung Platzhalter statt Karte und keine Anfrage an Karten-Hosts', async ({ page, protokoll }) => {
+      await page.goto('/standorte');
+      await expect(banner(page)).toBeVisible();
+      const knopf = await ladeKnopf(page, '/standorte');
+      await expect(knopf).toBeVisible();
+      await ruhe(page);
+      expect(kartenAnfragen(protokoll)).toHaveLength(0);
+    });
+
+    test('/kontakt: gezeichnete Einsatzkarte statt eingebetteter Karte, keine Anfrage an Karten-Hosts', async ({ page, protokoll }) => {
       await page.goto('/kontakt');
       await expect(banner(page)).toBeVisible();
-      const knopf = await ladeKnopf(page, '/kontakt');
-      await expect(knopf).toBeVisible();
+      await expect(page.getByRole('img', { name: EINSATZKARTE })).toHaveCount(1);
+      await expect(page.getByRole('button', { name: LADE_KNOPF })).toHaveCount(0);
+      await expect(page.locator('iframe[src*="openstreetmap.org"], iframe[src*="google.com/maps"]')).toHaveCount(0);
       await ruhe(page);
       expect(kartenAnfragen(protokoll)).toHaveLength(0);
     });
@@ -171,19 +183,26 @@ test.describe('Karten hinter Einwilligung (F-12)', () => {
       await expect.poll(() => kartenAnfragen(protokoll).length).toBeGreaterThan(0);
     });
 
-    test('/kontakt: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host)', async ({ page, context, protokoll }) => {
+    test('/kontakt: keine eingebettete Karte und keine Anfrage an Karten-Hosts (Einsatzkarte als Zeichnung)', async ({ page, protokoll }) => {
       await page.goto('/kontakt');
-      const knopf = await ladeKnopf(page, '/kontakt');
-      await knopf.click();
-      await expect.poll(() => lesEinwilligung(context)).toMatchObject({ marketing: true });
-      await expect(page.getByRole('button', { name: LADE_KNOPF })).toHaveCount(0);
-      await expect.poll(() => kartenAnfragen(protokoll).length).toBeGreaterThan(0);
+      await expect(page.getByRole('img', { name: EINSATZKARTE })).toHaveCount(1);
+      await expect(page.locator('iframe[src*="openstreetmap.org"], iframe[src*="google.com/maps"]')).toHaveCount(0);
+      await ruhe(page);
+      expect(kartenAnfragen(protokoll)).toHaveLength(0);
     });
 
   });
 
   test.describe('mit Marketing-Einwilligung (alle)', () => {
     test.use({ einwilligung: 'alle' });
+
+    test('/kontakt: auch mit Einwilligung keine Anfrage an Karten-Hosts (Route planen ist nur ein Link)', async ({ page, protokoll }) => {
+      await page.goto('/kontakt');
+      await expect(page.getByRole('img', { name: EINSATZKARTE })).toHaveCount(1);
+      await expect(page.getByRole('link', { name: /Route planen/ })).toHaveAttribute('href', /^https:\/\/maps\.google\.[a-z]+\//);
+      await ruhe(page);
+      expect(kartenAnfragen(protokoll)).toHaveLength(0);
+    });
 
     test('/standorte: Karte ohne Platzhalter, Anfrage an Karten-Host', async ({ page, protokoll }) => {
       await page.goto('/standorte');

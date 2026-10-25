@@ -1256,7 +1256,7 @@ html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"] .einzugsband-zone:nth
   }
 }
 
-/* karte (K-007, /ueber-uns und /standorte; E3-GRAF-09) – Einsatzkarte: beim Eintritt (Sicht 0,4, data-motion-stand vom
+/* karte (K-007, /ueber-uns und /kontakt seit E-062; E3-GRAF-09) – Einsatzkarte: beim Eintritt (Sicht 0,4, data-motion-stand vom
    Bewegungsmodul) legen sich die Ringe um Aßlar von innen nach außen an ihren Platz (scale 0,6 → 1 mit Deckkraft, dauer-3 ·
    setzen; 25 km fünf Staffelstufen nach 10 km); die Punkte jeder Zone erscheinen mit ihrem Ring (Deckkraft dauer-2), die
    Orte über 25 km zuletzt; gesamt 1,1 s. Aßlar, Achsen, Raster und alle Beschriftungen stehen ab dem ersten Bild.

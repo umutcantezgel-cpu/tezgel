@@ -1,13 +1,13 @@
 // Inhalt `/kontakt` (Arbeitsseite, E3-BAU-09) aus `_werkstatt/texte/kontakt.md`: Texte wörtlich mit ihren Textmarken,
 // Bauhinweise in Klammern und „→“ nicht übernommen. Vorlage: ArbeitsSeite (E-025). Nach dem Zusatz E3-BAU-K016: Firmendaten
 // erlaubt (Regel 3 gilt hier nicht), Abschnitte in der Folge der Textdatei, Werkzeuge des Bestands (Formular, Kalender, Karte,
-// Anfrage) mit ihren Kennungen und Ankern. Die Props der Vorlage stehen hier als Daten; die Inhalte der Abschnitte (Funktionen
+// Anfrage) mit ihren Kennungen und Ankern. E4-W0-KONTAKT (E-062): drei Gedanken und der Ablauf: Anfrage, Kontaktwege,
+// Einsatzkarte (statt Google-Karte mit Ortssuche), was nach der Anfrage passiert; der Kalender steht nur noch auf `/termin`. Die Props der Vorlage stehen hier als Daten; die Inhalte der Abschnitte (Funktionen
 // des Bestands) setzt die Seite `src/app/(bestand)/kontakt/page.jsx`. Öffnungszeiten und Rufnummern kommen aus den Daten
 // (COMPANY_DATA, M-03), nicht aus dem Text.
 // Abnahme (Orchestrator, Zusatz E3-BAU-K016 Abschnitt 4): Der Hauptweg ist die Anfrage des Bestands (TezgelAnfrageFunnel,
 // Anker #express-anfrage) unter der Überschrift „Termin vor Ort anfragen“; ein zweites Formular (HeroContactForm) gab es
 // hier im Bestand nicht. Die Hilfen entfallen damit (die Anfrage ist der Hauptweg, der Kalender hat seinen Abschnitt).
-import type { ArbeitId } from '@/config/arbeiten';
 import type { Krume } from '@/components/kern/Brotkrumen';
 import type { Markentext } from '@/components/vorlagen/inhalt';
 import type { Arbeitsabschnitt } from '@/components/vorlagen/ArbeitsSeite';
@@ -28,8 +28,6 @@ export interface KontaktInhalt {
   hauptziel: string;
   /** Abschnitte in der Folge der Textdatei */
   abschnitte: KontaktAbschnitt[];
-  /** Bild des Abschnitts „Lieber anrufen oder schreiben?“ */
-  bild: ArbeitId;
   ablauf: {
     schritte: { titel: string; text: Markentext }[];
     absatz: Markentext;
@@ -71,25 +69,18 @@ export const KONTAKT: KontaktInhalt = {
       titelId: 'standort-anfahrt-heading',
       // ohne Überschrift im Text: die heutige Überschrift ohne Werbewort (Briefing, Abschnitt 5)
       titel: 'Unser Einsatzgebiet in Mittelhessen',
-      // Satz zum Weg zur Karte (Karte hinter der Einwilligung, Funktion F-12)
-      einleitung: 'Den Weg zu uns zeigt eine Karte. Sie erscheint, wenn Sie auf „Karte laden & zustimmen“ klicken.',
+      // Einsatzkarte als Zeichnung (keine Anfrage an fremde Server, keine Einwilligung nötig); die Google-Karte mit
+      // Einwilligung bleibt auf /standorte (F-12)
+      einleitung: 'Von Aßlar aus kommen wir zu Ihnen nach Hause.',
       flaeche: 'fliese',
-    },
-    {
-      id: 'termin-buchen',
-      titelId: 'termin-buchen-heading',
-      titel: 'Termin im Kalender',
-      einleitung: 'Wählen Sie direkt einen freien Tag und eine Uhrzeit.',
-      flaeche: 'kalk',
     },
     {
       id: 'was-nach-anfrage',
       titel: 'Was nach Ihrer Anfrage passiert.',
       einleitung: 'So läuft es in drei Schritten ab.',
-      flaeche: 'fliese',
+      flaeche: 'kalk',
     },
   ],
-  bild: 'kontakt-eingang',
   ablauf: {
     schritte: [
       {

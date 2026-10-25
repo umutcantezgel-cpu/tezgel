@@ -1,4 +1,5 @@
-// Funktionstests F-07 (BookingCalendar auf /termin und /kontakt#termin-buchen) und F-08 (Termin-Formular auf /termin).
+// Funktionstests F-07 (BookingCalendar auf /termin; seit E4-W0-KONTAKT, E-062, nicht mehr auf /kontakt, dort ein Link zum
+// Kalender) und F-08 (Termin-Formular auf /termin).
 // Prüft Verhalten: Blockieren bei fehlenden Pflichtangaben, gesendete Nutzlast (Fixture `anfragen`), Erfolgszustand mit Referenz.
 // Der Kalender zeigt Tage ab morgen (relativ zu heute): Datum und Slot werden aus der Auswahl gelesen, nicht fest vorgegeben.
 // Bekannter Ausgangsfehler (Datum/Uhrzeit des Kalenders erreichen die Mail nicht): hier nicht als Soll festgeschrieben,
@@ -7,7 +8,6 @@ import { test, expect, warteBotSchwelle, istEchteReferenz, bedienbar } from './f
 
 const ORTE_KALENDER = [
   { ort: '/termin', url: '/termin', serviceType: 'Kostenfreies Vor-Ort-Aufmaß & Beratung' },
-  { ort: '/kontakt#termin-buchen', url: '/kontakt#termin-buchen', serviceType: 'Kostenfreies Vor-Ort-Aufmaß & Schadensanalyse' },
 ];
 
 // Heutiges Datum in Europe/Berlin als YYYY-MM-DD (Kalender rechnet in derselben Zeitzone).
@@ -199,19 +199,32 @@ test.describe('Termin-Formular (F-08) auf /termin', () => {
 // Hydrierungsfehler (#418). Abnahme: Uhr des Browsers einen Tag nach heute (also sicher nach dem Build-Tag) –
 // keine Hydrierungsmeldung, und der erste angebotene Tag ist der Werktag nach dem Besuchstag.
 test.describe('V-02 Kalender rechnet mit dem Besuchstag', () => {
-  test('/kontakt#termin-buchen mit Uhr auf heute + 1: kein Hydrierungsfehler, erster Tag = Besuchstag + 1 (ohne Sonntag)', async ({ page }) => {
+  test('/termin mit Uhr auf heute + 1: kein Hydrierungsfehler, erster Tag = Besuchstag + 1 (ohne Sonntag)', async ({ page }) => {
     const meldungen = [];
     page.on('console', (m) => { if (m.type() === 'error') meldungen.push(m.text()); });
     page.on('pageerror', (e) => meldungen.push(String(e)));
     const [y, m, d] = heute().split('-').map(Number);
     // 12:00 Uhr Berliner Zeit am Folgetag (Mittag vermeidet Tagesgrenzen durch Zeitzonen)
     await page.clock.install({ time: new Date(Date.UTC(y, m - 1, d + 1, 10, 0, 0)) });
-    await page.goto('/kontakt#termin-buchen');
+    await page.goto('/termin');
     const ersterTag = page.getByRole('region', { name: 'Verfügbare Termine' }).getByRole('group').first();
     await expect(ersterTag.getByRole('button', { name: '08:30 Uhr', exact: true })).toBeVisible();
     let erwartet = isoInTagen(2);
     if (new Date(`${erwartet}T12:00:00Z`).getUTCDay() === 0) erwartet = isoInTagen(3);
     await expect(ersterTag).toHaveAttribute('aria-label', new RegExp(`${alsAnzeige(erwartet).replace(/\./g, '\\.')}$`));
     expect(meldungen.filter((t) => /418|hydrat/i.test(t))).toEqual([]);
+  });
+});
+
+// ---------- /kontakt führt zum Kalender (E4-W0-KONTAKT, E-062) ----------
+test.describe('Kalender von /kontakt erreichbar', () => {
+  test('/kontakt: kein Kalender auf der Seite, der Link „Freien Termin im Kalender wählen“ führt zu /termin mit Kalender', async ({ page }) => {
+    await page.goto('/kontakt');
+    await expect(page.getByRole('region', { name: 'Verfügbare Termine' })).toHaveCount(0);
+    const link = page.getByRole('link', { name: 'Freien Termin im Kalender wählen' });
+    await expect(link).toHaveAttribute('href', '/termin');
+    await link.click();
+    await expect(page).toHaveURL(/\/termin$/);
+    await expect(page.getByRole('region', { name: 'Verfügbare Termine' })).toBeVisible();
   });
 });

@@ -79,6 +79,6 @@ export const LEISTUNGSPLAENE: Leistungsplan[] = [
   },
 ];
 
-/** Einleitung über der Projektanfrage (#kosten-rechner, Komponente PricingCalculator). Das Werkzeug nennt keinen Preis
- * (Bestand: „Preise individuell auf Anfrage“); der frühere Satz „Er nennt einen Richtpreis“ war falsch (Abnahme E3-BAU-04). */
-export const RECHNER_SATZ = 'Wählen Sie aus, was Sie planen und wie groß die Fläche ungefähr ist. Pauschale Preise nennen wir im Netz nicht. Nach dem Termin bei Ihnen vor Ort bekommen Sie ein Angebot mit festem Preis.';
+/** Einleitung über dem Weg zur ausführlichen Projektanfrage auf /preise (#anfrage, Komponente PricingCalculator). Seit
+ * E4-W0-LEISTUNGEN steht auf /leistungen nur noch ein Formular (die Express-Anfrage); die Projektanfrage nennt keinen Preis. */
+export const RECHNER_SATZ = 'Auf der Seite Preise beschreiben Sie Schritt für Schritt, was Sie planen. Nach dem Termin bei Ihnen vor Ort bekommen Sie ein Angebot mit festem Preis.';

@@ -132,9 +132,6 @@ export default function PricingCalculator() {
                   <span className="min-w-0 flex-1">
                     <span className="flex flex-wrap items-start justify-between gap-x-2 gap-y-1">
                       <span className="block min-w-0 text-fs-2 font-semibold @max-3xs:hyphens-auto wrap-break-word">{anzeige(srv.title)}</span>
-                      {srv.badge && (
-                        <span className="hidden whitespace-nowrap font-text text-fs-1 sm:inline-block">{anzeige(srv.badge)}</span>
-                      )}
                     </span>
                     <span className="mt-1 block text-fs-1 @max-3xs:hyphens-auto wrap-break-word">{anzeige(srv.subtitle)}</span>
                   </span>
@@ -231,7 +228,6 @@ export default function PricingCalculator() {
             <label htmlFor="situation-notes" className={labelKlassen}>
               4. Beschreiben Sie kurz Ihre Lage und Ihr Vorhaben:
             </label>
-            <span className={etikettKlassen}>Sehr hilfreich für Rückfragen</span>
           </div>
           <textarea
             id="situation-notes"
@@ -291,8 +287,7 @@ export default function PricingCalculator() {
               </p>
 
               <p className="mt-3 text-fs-2 text-nacht-2">
-                Wir zeigen keine pauschalen Scheinpreise im Netz. Jedes Vorhaben ist anders.
-                Beschreiben Sie Ihr Vorhaben kurz. Wir melden uns für einen kostenfreien Termin
+                Jedes Vorhaben ist anders. Beschreiben Sie Ihr Vorhaben kurz. Wir melden uns für einen kostenfreien Termin
                 bei Ihnen vor Ort. Danach bekommen Sie ein verbindliches Festpreisangebot.
               </p>
 
@@ -305,7 +300,7 @@ export default function PricingCalculator() {
                 <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3 @max-3xs:flex-wrap">
                   <dt className="text-nacht-2">Fläche:</dt>
                   <dd className="text-right font-mono text-kalk wrap-break-word">
-                    {customArea.trim() ? `${customArea.trim()} m²` : anzeige(selectedSize.areaText)}
+                    {customArea.trim() ? `${customArea.trim()} m²` : selectedSize ? anzeige(selectedSize.areaText) : 'noch keine Angabe'}
                   </dd>
                 </div>
                 <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3 @max-3xs:flex-wrap">

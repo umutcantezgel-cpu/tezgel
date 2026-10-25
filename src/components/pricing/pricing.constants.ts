@@ -19,7 +19,6 @@ export interface CraftServiceOption {
   id: CraftServiceType;
   title: string;
   subtitle: string;
-  badge?: string;
   focusPoints?: string[];
 }
 
@@ -41,42 +40,36 @@ export const CRAFT_SERVICES: Record<CraftServiceType, CraftServiceOption> = {
     id: 'bad',
     title: 'Badsanierung & Walk-In Dusche',
     subtitle: 'Wand & Boden, Gefälle, Nischen & Komplettbad',
-    badge: 'Sehr gefragt',
     focusPoints: ['Normgerechte Verbundabdichtung', 'Bodengleiche Walk-In-Dusche', 'Ablagenischen & Gehrungsschnitt']
   },
   grossformat: {
     id: 'grossformat',
     title: 'XXL-Großformat (ab 120 cm)',
     subtitle: 'Fugenarme Fliesen, Vakuumheber & Kalibrierung',
-    badge: 'Spezialgebiet',
     focusPoints: ['Fliesenformate bis 120x260 cm', 'Exaktes Nivelliersystem', 'Millimetergenaue Verlegeachsen']
   },
   wohnbereich: {
     id: 'wohnbereich',
     title: 'Wohnraum, Flur & Küche',
     subtitle: 'Feinsteinzeug, Holzoptik & durchgehende Fugen',
-    badge: 'Klassiker',
     focusPoints: ['Robuste Feinsteinzeug-Beläge', 'Moderne Großformate', 'Schwellenlose Übergänge']
   },
   balkon: {
     id: 'balkon',
     title: 'Balkon, Terrasse & Außen',
     subtitle: 'Frostsichere 2-cm-Keramik, Stelzlager & Gefälle',
-    badge: 'Außenbereich',
     focusPoints: ['2-cm-Außenkeramik auf Stelzlagern', 'Hinterlüftet & frostsicher', 'Optimaler Wasserablauf']
   },
   abdichtung: {
     id: 'abdichtung',
     title: 'DIN 18534 Abdichtung & Estrich',
     subtitle: 'Verbundabdichtung, Dichtbänder & Nivellierung',
-    badge: 'Zertifiziert',
     focusPoints: ['Normgerechte Nassraum-Abdichtung', 'Untergrundausgleich & Spachtelung', 'Dauerhafter Feuchteschutz']
   },
   reparatur: {
     id: 'reparatur',
     title: 'Reparatur & Schadensbeseitigung',
     subtitle: 'Fliesentausch, Silikonfugen & Ursachenprüfung',
-    badge: 'Schnellhilfe',
     focusPoints: ['Gezielter Einzelfliesen-Austausch', 'Sanierung elastischer Fugen', 'Vor-Ort-Schadensanalyse']
   }
 };

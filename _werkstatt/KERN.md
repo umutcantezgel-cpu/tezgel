@@ -124,7 +124,7 @@ Bezug ist eine Fliese 30 × 60 cm im Maßstab 1 cm = 3,2 px: kurze Seite **F = 9
 | `formatregler` | Rückmeldung: kleine Fliese gegen große Fliese bis 120 × 260 (Wand quer, ohne Zahlen, E-045) | Regler (Zeiger und Tastatur) | direkt, ohne Verzögerung | gleich | `/leistungen` |
 | `verband` | Rückmeldung: Verlegemuster wechselt (vier Muster, Fischgrät als eigene Ebene) | Auswahl (Radiogruppe, ohne JS) | gewählte Ebene `dauer-3` · `ease-setzen`, gehende `dauer-1` · `ease-weg` | Sofortzustand | `/fliesen` |
 | `vorher-nachher` | Rückmeldung: Vorher gegen Nachher (Lot in Tinte, eigener Abschnitt mit H2, E-045) | Regler (Zeiger und Tastatur) | direkt | gleich | `/referenzen` |
-| `karte` | Orientierung: Einsatzgebiet ab Aßlar | Sichtbarkeit (IO 40 %) | Ringe `dauer-3` · `ease-setzen` von innen nach außen, Punkte je Zone `dauer-2` | Endzustand; Zurück/Vor Endzustand | `/ueber-uns` (auf `/standorte` nur nach Rückfrage, E-037) |
+| `karte` | Orientierung: Einsatzgebiet ab Aßlar | Sichtbarkeit (IO 40 %) | Ringe `dauer-3` · `ease-setzen` von innen nach außen, Punkte je Zone `dauer-2` | Endzustand; Zurück/Vor Endzustand | `/ueber-uns` und `/kontakt` (ohne Liste, seit E-062); auf `/standorte` nur nach Rückfrage (E-037); auf `/` bleiben die Einsatzorte (K-016) |
 | `galerie-filter` | Rückmeldung: Bilder nach Raum | Auswahl (Knöpfe mit `aria-pressed`) | `dauer-2` · `ease-setzen` Überblendung in Lesefolge, Staffel höchstens 8 Stufen | Sofortzustand | `/referenzen` |
 | `leitachse` | Orientierung: Lesefortschritt | Scroll (scroll-timeline) | linear | Grundschicht, nichts gezogen | Erzählseiten (aus v2) |
 | `auftritt` | Hierarchie: Abschnitt rückt 8 px ein | IO 20 % | `dauer-3` · `ease-setzen` | Überblendung | Erzählseiten (aus v2) |

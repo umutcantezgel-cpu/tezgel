@@ -11,7 +11,7 @@ import { SERVICES } from '@/config/services';
 import { buildGraph, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
 import { createMetadata } from '@/lib/metadata';
 import JsonLd from '@/components/seo/JsonLd';
-import { PricingCalculator } from '@/components/pricing/PricingCalculator';
+import WeiterLink from '@/components/kern/WeiterLink';
 import SzeneAblauf from '@/components/kern/SzeneAblauf';
 import Leistungsplaene from '@/components/leistungen/Leistungsplaene';
 import Formatregler from '@/components/momente/formatregler/Formatregler';
@@ -91,7 +91,18 @@ export default function ServiceHubPage() {
         }}
         formular={<TezgelAnfrageFunnel />}
         formularId="express-anfrage"
-        werkzeug={{ id: 'kosten-rechner', titelId: 'rechner-heading', titel: 'Oder beschreiben Sie Ihr Vorhaben genauer.', einleitung: RECHNER_SATZ, inhalt: <PricingCalculator /> }}
+        // ein Anfrageweg auf der Seite (E4-W0-LEISTUNGEN, E3-SICHT): die ausführliche Projektanfrage steht auf /preise, hier
+        // nur der Weg dorthin
+        werkzeug={{
+          id: 'genauer',
+          titel: 'Sie möchten mehr erzählen?',
+          einleitung: RECHNER_SATZ,
+          inhalt: (
+            <p className="text-center">
+              <WeiterLink href="/preise#anfrage">Vorhaben genauer beschreiben</WeiterLink>
+            </p>
+          ),
+        }}
       />
     </>
   );

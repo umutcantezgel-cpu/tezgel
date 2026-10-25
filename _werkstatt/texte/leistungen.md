@@ -54,6 +54,6 @@
 - H2: `Sprechen Sie mit uns über Ihr Vorhaben.`
 - Satz: `Nennen Sie uns Ihren Namen und Ihre Telefonnummer. Deniz Tezgel ruft Sie zurück und macht einen Termin mit Ihnen aus.`
 - Hauptknopf: `Termin vor Ort anfragen` → `/kontakt` · Kontakt: `Anrufen: {{COMPANY_DATA.contact.phone}}` · `Nachricht per WhatsApp` (derselbe Hauptknopf wie in Abschnitt 1, K-004)
-- Absatz: `Wählen Sie aus, was Sie planen und wie groß die Fläche ungefähr ist. Pauschale Preise nennen wir im Netz nicht. Nach dem Termin bei Ihnen vor Ort bekommen Sie ein Angebot mit festem Preis.` (berichtigt: das Werkzeug nennt keinen Preis, Bestand „Preise individuell auf Anfrage“)
-- Überschrift des Werkzeugs: `Oder beschreiben Sie Ihr Vorhaben genauer.` → `#kosten-rechner`
+- Absatz (E4-W0-LEISTUNGEN, E-062): `Auf der Seite Preise beschreiben Sie Schritt für Schritt, was Sie planen. Nach dem Termin bei Ihnen vor Ort bekommen Sie ein Angebot mit festem Preis.`
+- Überschrift: `Sie möchten mehr erzählen?` (Abschnitt #genauer); Link `Vorhaben genauer beschreiben` → `/preise#anfrage` (die Projektanfrage steht nur noch auf `/preise`, ein Formular je Seite)
 - Link: `Anfrage in drei Schritten` → `#express-anfrage`

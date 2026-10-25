@@ -87,8 +87,15 @@ test.describe('PricingCalculator (/preise)', () => {
     expect(anfragen).toHaveLength(0);
   });
 
-  test('Vorauswahl Bad: sendet inquiryType "bad" mit Projektdetails in notes, Erfolg mit Referenz (Attrappe)', async ({ page, anfragen }) => {
+  test('ohne eigene Wahl: Bad als Gewerk, keine Fläche und keine Situation gesendet, keine Werbeetiketten, Erfolg mit Referenz (Attrappe)', async ({ page, anfragen }) => {
+    // E4-W0-LEISTUNGEN (E3-SICHT): keine vorab gewählte Fläche, keine vorab angehakten Situationen, keine Etiketten wie
+    // „Sehr gefragt“; Pflichtfelder (Name, Telefon, Einwilligung) und Empfänger unverändert (G8)
     await page.goto('/preise');
+    const rechner = rechnerVon(page);
+    for (const etikett of ['Sehr gefragt', 'Spezialgebiet', 'Klassiker', 'Zertifiziert', 'Nach Norm', 'Schnellhilfe', 'Sehr hilfreich für Rückfragen', 'Scheinpreise']) {
+      await expect(rechner.getByText(etikett)).toHaveCount(0);
+    }
+    await expect(rechner.locator('button[aria-pressed="true"]')).toHaveCount(1);
     await kontaktAusfuellen(page);
     await haken(page.locator('#calc-privacy'));
     await klicken(absendenKnopf(page));
@@ -97,16 +104,16 @@ test.describe('PricingCalculator (/preise)', () => {
     expect(anfragen[0]).toMatchObject({
       inquiryType: 'bad',
       projectType: 'bad',
-      projectTitle: 'Badsanierung & Walk-In Dusche (Standard-Raum / Bad)',
-      area: 'ca. 10 - 25 m²',
+      projectTitle: 'Badsanierung & Walk-In Dusche',
       timing: 'In den nächsten 1 - 3 Monaten',
       contact: { name: 'Prüf Person', phone: '0170 0000000', location: 'Aßlar / Wetzlar / Hessen' },
     });
+    expect(anfragen[0].area).toBeUndefined();
     expect(anfragen[0].contact.email).toBeUndefined();
     expect(anfragen[0].notes).toContain('Gewerk: Badsanierung & Walk-In Dusche');
-    expect(anfragen[0].notes).toContain('Fläche / Umfang: ca. 10 - 25 m²');
+    expect(anfragen[0].notes).toContain('Fläche / Umfang: keine Angabe');
     expect(anfragen[0].notes).toContain('Zeitrahmen: In den nächsten 1 - 3 Monaten');
-    expect(anfragen[0].notes).toContain('- Untergrundausgleich / Estrich nötig');
+    expect(anfragen[0].notes).toContain('Besonderheiten: Keine besonderen Zusatzoptionen angewählt');
     expect(typeof anfragen[0]._t).toBe('number');
   });
 
@@ -116,6 +123,9 @@ test.describe('PricingCalculator (/preise)', () => {
     // Knöpfe tragen die Anzeigefassung (anzeige.ts, E-057); die Nutzlast unten erwartet weiter die Werte
     await klicken(rechner.getByRole('button', { name: 'Balkon, Terrasse und draußen' }));
     await klicken(rechner.getByRole('button', { name: 'Großer Raum oder Wohnbereich' }));
+    // Staubschutz an und wieder aus (Umschalten), Altfliesen an
+    await klicken(rechner.getByRole('button', { name: 'Staubschutz im bewohnten Wohnbereich' }));
+    await expect(rechner.getByRole('button', { name: 'Staubschutz im bewohnten Wohnbereich' })).toHaveAttribute('aria-pressed', 'true');
     await klicken(rechner.getByRole('button', { name: 'Staubschutz im bewohnten Wohnbereich' }));
     await klicken(rechner.getByRole('button', { name: 'Alte Fliesen entfernen und entsorgen' }));
     await rechner.locator('#situation-notes').fill('Alte Terrassenplatten, Gefälle unklar');

@@ -27,12 +27,12 @@
 - Adresse unseres Betriebs: `{{COMPANY_DATA.address.fullAddress}}` (K-015 F-03)
 - Satz: `Seit 2008 sind wir als Handwerksbetrieb bei der Handwerkskammer Wiesbaden eingetragen.` (K-015 F-05, F-06)
 - Einsatzgebiet: `Wir arbeiten in Aßlar, Wetzlar, Gießen, Herborn und Dillenburg.` (K-015 F-09)
-- Anfahrt: `Den Weg zu uns zeigt eine Karte. Sie erscheint, wenn Sie auf „Karte laden & zustimmen“ klicken.` (Karte hinter Einwilligung, Funktion F-12; Knopftext aus `MapConsentGate.tsx`; Einwilligung unverändert, Funktion F-11)
+- Anfahrt (E4-W0-KONTAKT, E-062): `Von Aßlar aus kommen wir zu Ihnen nach Hause.` Darunter die gezeichnete Einsatzkarte mit der Zeile `Die Ringe zeigen 10 und 25 km ab Aßlar.`, der Knopf `Route planen` (Kartenlink des Bestands, ohne Einbettung) und der Link `Alle Orte ansehen` → `/standorte`. Die Google-Karte mit Einwilligung (F-12) steht nur noch auf `/standorte`.
 - Öffnungszeiten: Etikett `Öffnungszeiten`, Zeilen aus den Tageswerten (oeffnungszeilen): `Mo bis Do 7:30 bis 18 Uhr` · `Fr 7:30 bis 17 Uhr` · `Sa nach Vereinbarung` (K-015 F-07; wie im Fuß, M-03 offen: company.js:128 sagt 18 Uhr)
-- Bild: `{Bild: kontakt-eingang}` Alt: `Treppenstufen mit beigen Fliesen und hellen Profilkanten` (Alt-Text aus `arbeiten.ts`, gegengesichtet: das Foto zeigt Stufen; unter den Kontaktwegen)
+- Bild: entfällt (E-062, das Treppenfoto hatte keinen Bezug zum Kontakt; E3-SICHT).
 
 ## 4 · Hilfen
-- Entfällt (Abnahme E3-BAU-09): Die Anfrage in drei Schritten ist der Hauptweg (Abschnitt 2), der Kalender steht als eigener Abschnitt mit H2 `Termin im Kalender` (id termin-buchen-heading, Abschnitt #termin-buchen) und dem Satz `Wählen Sie direkt einen freien Tag und eine Uhrzeit.` (Funktion F-07).
+- Entfällt (Abnahme E3-BAU-09): Die Anfrage in drei Schritten ist der Hauptweg (Abschnitt 2). Der Kalender steht seit E-062 nur noch auf `/termin`; unter der Anfrage der Link `Freien Termin im Kalender wählen` → `/termin` (Funktion F-07).
 
 ## 5 · Was nach Ihrer Anfrage passiert
 - H2: `Was nach Ihrer Anfrage passiert.`
