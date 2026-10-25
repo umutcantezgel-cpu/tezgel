@@ -1,0 +1,466 @@
+{
+ "stand": "2026-10-25, Entwicklungsserver, Sitemap 163 Adressen, nach E-053",
+ "regelverstoss": [
+  {
+   "pfad": "/bad/fliesen",
+   "titel": "Badfliesen & XXL-Großformate | Fliesenleger Tezgel",
+   "beschreibung": "Badfliesen & XXL-Großformate fugenarm verlegen in Wetzlar & Aßlar: Feinsteinzeug, Mosaik & DIN 18534 Abdichtung. Jetzt unverbindlich beraten lassen!",
+   "laenge": 148,
+   "gruende": [
+    "&",
+    "Ausrufezeichen"
+   ]
+  },
+  {
+   "pfad": "/bad/bad-aus-einer-hand",
+   "titel": "Bad aus einer Hand Wetzlar & Aßlar | Tezgel Badsanierung",
+   "beschreibung": "Bad aus einer Hand in Wetzlar & Aßlar: Alle Gewerke koordiniert, ein Ansprechpartner & garantierter Festpreis. Jetzt kostenfreies Vor-Ort-Aufmaß sichern!",
+   "laenge": 153,
+   "gruende": [
+    "&",
+    "Ausrufezeichen",
+    "Vor-Ort-Aufmaß",
+    "Zusage verschärft"
+   ]
+  },
+  {
+   "pfad": "/bad/musterbaeder",
+   "titel": "Musterbäder & Badideen Wetzlar | Badsanierung Tezgel",
+   "beschreibung": "Inspiration für Ihr neues Bad: Musterbäder von 4,6 bis 15,9 m² mit Großformatfliesen, Walk-In Duschen & Markenkomponenten. Fachbetrieb Tezgel in Wetzlar!",
+   "laenge": 153,
+   "gruende": [
+    "&",
+    "Ausrufezeichen"
+   ]
+  },
+  {
+   "pfad": "/bad/badplaner",
+   "titel": "Badplaner: Bad online planen | Fliesenverlegung Tezgel",
+   "beschreibung": "Planen Sie Ihr Bad online: Raumgröße, Fliesen & Ausstattung wählen. Fliesenverlegung Tezgel berät Sie mit kostenfreiem Vor-Ort-Aufmaß in Wetzlar & Aßlar!",
+   "laenge": 153,
+   "gruende": [
+    "&",
+    "Ausrufezeichen",
+    "Vor-Ort-Aufmaß"
+   ]
+  },
+  {
+   "pfad": "/bad/projekt-check",
+   "titel": "Bad-Projektcheck: Badsanierung prüfen | Tezgel Wetzlar",
+   "beschreibung": "Bad-Projektcheck in 2 Minuten: Kostenfreie Machbarkeitsprüfung & Festpreisangebot für Ihre Badsanierung in Wetzlar & Aßlar. Jetzt online starten!",
+   "laenge": 145,
+   "gruende": [
+    "&",
+    "Ausrufezeichen"
+   ]
+  },
+  {
+   "pfad": "/standorte",
+   "titel": "Fliesenleger Standorte & Einsatzgebiete | Tezgel",
+   "beschreibung": "Fliesenleger-Fachbetrieb Tezgel aus Aßlar: Fliesenverlegung & Badsanierung in Wetzlar, Gießen, Herborn & Lahn-Dill-Kreis. Jetzt Vor-Ort-Aufmaß anfragen!",
+   "laenge": 152,
+   "gruende": [
+    "&",
+    "Ausrufezeichen",
+    "Vor-Ort-Aufmaß"
+   ]
+  },
+  {
+   "pfad": "/ausstellung/wetzlar",
+   "titel": "Fliesenberatung in Wetzlar | Fliesenverlegung Tezgel",
+   "beschreibung": "Persönliche Fliesenberatung für Wetzlar: Formate, Oberflächen & Fugenbild abstimmen mit Fachbetriebsleiter Deniz Tezgel. Jetzt Termin vereinbaren!",
+   "laenge": 146,
+   "gruende": [
+    "&",
+    "Ausrufezeichen"
+   ]
+  },
+  {
+   "pfad": "/ausstellung/giessen",
+   "titel": "Fliesenberatung in Gießen | Fliesenverlegung Tezgel",
+   "beschreibung": "Persönliche Fliesenberatung für Gießen: Formate, Oberflächen & Fugenbild abstimmen mit Fachbetriebsleiter Deniz Tezgel. Jetzt Termin vereinbaren!",
+   "laenge": 145,
+   "gruende": [
+    "&",
+    "Ausrufezeichen"
+   ]
+  },
+  {
+   "pfad": "/faq",
+   "titel": "FAQ: Häufige Fragen zu Fliesen & Bad | Tezgel",
+   "beschreibung": "Häufige Fragen zu Fliesenverlegung, Badsanierung, Preisen & DIN 18534 Abdichtung beantwortet vom Fliesenleger-Fachbetrieb Tezgel in Aßlar & Wetzlar.",
+   "laenge": 148,
+   "gruende": [
+    "&"
+   ]
+  },
+  {
+   "pfad": "/beratung",
+   "titel": "Kostenlose Fliesenberatung Wetzlar | Fachbetrieb Tezgel",
+   "beschreibung": "Kostenlose Fliesenberatung & Aufmaß: Badsanierung, XXL-Fliesen & Terrassen in Wetzlar & Aßlar. Fliesenleger Tezgel berät persönlich und unverbindlich!",
+   "laenge": 150,
+   "gruende": [
+    "&",
+    "Ausrufezeichen"
+   ]
+  },
+  {
+   "pfad": "/downloads",
+   "titel": "Downloads & Infomaterial | Fliesenverlegung Tezgel",
+   "beschreibung": "Infomaterial & Checklisten rund um Fliesenverlegung, Badsanierung & Fördermittel vom Fachbetrieb Tezgel in Aßlar & Wetzlar. Jetzt online informieren!",
+   "laenge": 149,
+   "gruende": [
+    "&",
+    "Ausrufezeichen"
+   ]
+  },
+  {
+   "pfad": "/unternehmen",
+   "titel": "Unternehmen & Qualitätsversprechen | Tezgel Fachbetrieb",
+   "beschreibung": "Fliesenverlegung Tezgel aus Aßlar: Fachbetrieb der HWK seit 2008. Firmengeschichte, Inhaber Deniz Tezgel & unser Qualitätsversprechen für Hessen.",
+   "laenge": 145,
+   "gruende": [
+    "&"
+   ]
+  },
+  {
+   "pfad": "/team",
+   "titel": "Unser Team | Fliesenleger-Fachbetrieb Tezgel Aßlar",
+   "beschreibung": "Das Team von Fliesenverlegung Tezgel: Inhaber Deniz Tezgel und qualifizierte Fliesenleger für Fliesen- & Badprojekte in Aßlar, Wetzlar & ganz Hessen.",
+   "laenge": 149,
+   "gruende": [
+    "&"
+   ]
+  },
+  {
+   "pfad": "/partner",
+   "titel": "Materialpartner & Verlegesysteme | Tezgel Fachbetrieb",
+   "beschreibung": "Hochwertige Verlegewerkstoffe & Fliesenmarken bei Tezgel: Schlüter-Systems, Ardex, Sopro, PCI, Marazzi & Villeroy & Boch. Höchste Qualität für Ihr Projekt!",
+   "laenge": 155,
+   "gruende": [
+    "&",
+    "Ausrufezeichen"
+   ]
+  },
+  {
+   "pfad": "/karriere",
+   "titel": "Fliesenleger Jobs Wetzlar & Aßlar | Karriere Tezgel",
+   "beschreibung": "Fliesenleger (m/w/d) gesucht! Jobs bei Fliesenverlegung Tezgel in Aßlar & Wetzlar: faire Bezahlung, modernes Werkzeug & gutes Team. Jetzt bewerben!",
+   "laenge": 147,
+   "gruende": [
+    "&",
+    "Ausrufezeichen"
+   ]
+  },
+  {
+   "pfad": "/karriere/ausbildung",
+   "titel": "Ausbildung Fliesenleger (m/w/d) | Fachbetrieb Tezgel",
+   "beschreibung": "Ausbildung zum Fliesenleger (m/w/d) in Aßlar & Wetzlar bei Tezgel: solides Handwerk, modernste Verlegetechnik & starkes Team. Jetzt unkompliziert bewerben!",
+   "laenge": 155,
+   "gruende": [
+    "&",
+    "Ausrufezeichen"
+   ]
+  },
+  {
+   "pfad": "/termin",
+   "titel": "Termin vereinbaren | Fliesenleger Tezgel Wetzlar",
+   "beschreibung": "Termin bei Fliesenleger Tezgel in Aßlar: Wunschthema wählen & Terminanfrage für Vor-Ort-Aufmaß in Wetzlar & Hessen direkt online oder per WhatsApp senden.",
+   "laenge": 154,
+   "gruende": [
+    "&",
+    "Vor-Ort-Aufmaß"
+   ]
+  },
+  {
+   "pfad": "/fliesen/grossformat",
+   "titel": "Großformatfliesen verlegen lassen | Fliesen Tezgel",
+   "beschreibung": "XXL-Großformatfliesen & fugenlose Platten fachgerecht verlegen lassen: perfekte Untergrundvorbereitung & Handling. Fachbetrieb Tezgel in Wetzlar & Aßlar!",
+   "laenge": 153,
+   "gruende": [
+    "&",
+    "Ausrufezeichen"
+   ]
+  },
+  {
+   "pfad": "/fliesen/holzoptik",
+   "titel": "Fliesen in Holzoptik verlegen | Fliesenleger Tezgel",
+   "beschreibung": "Holzoptik-Fliesen aus Feinsteinzeug verlegen lassen: warme Holzoptik, feuchteresistent & ideal für Fußbodenheizung. Fachbetrieb Tezgel – Jetzt anfragen!",
+   "laenge": 152,
+   "gruende": [
+    "Gedankenstrich",
+    "&",
+    "Ausrufezeichen"
+   ]
+  },
+  {
+   "pfad": "/fliesen/fliesenarten",
+   "titel": "Fliesenarten im Vergleich: Feinsteinzeug & Co. | Tezgel",
+   "beschreibung": "Fliesenarten im Vergleich: Feinsteinzeug, Steinzeug & Steingut. Wasseraufnahme, Frostsicherheit & Abriebklassen erklärt vom Fachbetrieb Tezgel aus Aßlar.",
+   "laenge": 153,
+   "gruende": [
+    "&"
+   ]
+  },
+  {
+   "pfad": "/fliesen/kueche",
+   "titel": "Küchenfliesen verlegen Wetzlar | Fliesenleger Tezgel",
+   "beschreibung": "Küchenfliesen & Fliesenspiegel verlegen in Wetzlar & Aßlar: strapazierfähige Böden, Großformate & pflegeleichte Fugen. Jetzt unverbindlich beraten lassen!",
+   "laenge": 154,
+   "gruende": [
+    "&",
+    "Ausrufezeichen"
+   ]
+  },
+  {
+   "pfad": "/fliesen/flur-diele",
+   "titel": "Flur & Diele fliesen lassen | Fliesenleger Tezgel",
+   "beschreibung": "Flur & Eingangsbereich fliesen lassen: strapazierfähige Formate, Verlegerichtung, Rutschhemmung & Schmutzfangzonen. Fachbetrieb Tezgel – Jetzt anfragen!",
+   "laenge": 152,
+   "gruende": [
+    "Gedankenstrich",
+    "&",
+    "Ausrufezeichen"
+   ]
+  },
+  {
+   "pfad": "/fliesen/verlegemuster",
+   "titel": "Fliesen-Verlegemuster: Fischgrät & Verbände | Tezgel",
+   "beschreibung": "Fliesen-Verlegemuster im Überblick: Kreuzfuge, Halbverband, Fischgrät & Diagonalverlegung. Verschnitt, Wirkung & Fachberatung von Fliesenleger Tezgel.",
+   "laenge": 150,
+   "gruende": [
+    "&"
+   ]
+  },
+  {
+   "pfad": "/fliesen/verlegetechnik",
+   "titel": "Verlegetechnik Fliesen: Dünnbett & Kleber | Tezgel",
+   "beschreibung": "Verlegetechniken für Fliesen nach DIN 18157: Dünnbett, Mittelbett, Buttering-Floating & Kleberklassen erklärt vom Fachbetrieb Tezgel aus Aßlar & Wetzlar.",
+   "laenge": 153,
+   "gruende": [
+    "&"
+   ]
+  },
+  {
+   "pfad": "/fliesen/renovierung",
+   "titel": "Fliesen Renovierung: Alte Fliesen erneuern | Tezgel",
+   "beschreibung": "Fliesenboden im bewohnten Bestand fachgerecht renovieren & erneuern: Ablauf, Staubschutz & Etappenplanung vom Fliesenleger-Fachbetrieb Tezgel in Hessen.",
+   "laenge": 152,
+   "gruende": [
+    "&"
+   ]
+  },
+  {
+   "pfad": "/fliesen/neubau",
+   "titel": "Fliesen im Neubau verlegen lassen | Fliesen Tezgel",
+   "beschreibung": "Fliesenleger für Neubau-Projekte in Wetzlar & Aßlar: Termintreue, Belegreifeprüfung, Bemusterung & Schnittstellenkoordination. Jetzt Angebot anfragen!",
+   "laenge": 150,
+   "gruende": [
+    "&",
+    "Ausrufezeichen"
+   ]
+  },
+  {
+   "pfad": "/fliesen/fugensanierung",
+   "titel": "Fugensanierung & Silikonfugen erneuern | Tezgel",
+   "beschreibung": "Fugensanierung in Wetzlar & Aßlar: Schimmelige Silikonfugen & bröselnde Zementfugen fachgerecht austauschen und dauerhaft abdichten. Jetzt anfragen!",
+   "laenge": 148,
+   "gruende": [
+    "&",
+    "Ausrufezeichen"
+   ]
+  },
+  {
+   "pfad": "/fliesen/abnahme",
+   "titel": "Fliesenarbeiten abnehmen: Checkliste & Normen | Tezgel",
+   "beschreibung": "Checkliste für die Abnahme von Fliesenarbeiten: Ebenheit nach DIN 18202, Fugenbild, Hohlstellen & Toleranzen erklärt vom Fachbetrieb Tezgel aus Aßlar.",
+   "laenge": 150,
+   "gruende": [
+    "&"
+   ]
+  },
+  {
+   "pfad": "/fliesen/festpreisangebot",
+   "titel": "Fliesenleger Festpreisangebot | Fachbetrieb Tezgel",
+   "beschreibung": "Transparentes Festpreisangebot für Fliesenarbeiten: Aufmaß, Material & Verlegung ohne versteckte Kosten. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!",
+   "laenge": 148,
+   "gruende": [
+    "&",
+    "Ausrufezeichen",
+    "Vor-Ort-Aufmaß"
+   ]
+  },
+  {
+   "pfad": "/fliesen/konfigurator",
+   "titel": "Fliesen-Konfigurator & Bedarfsrechner | Tezgel",
+   "beschreibung": "Fliesen online konfigurieren: Raum, Untergrund, Format & Fläche wählen und unverbindliche Preisschätzung erhalten. Fliesenverlegung Tezgel in Hessen.",
+   "laenge": 149,
+   "gruende": [
+    "&"
+   ]
+  },
+  {
+   "pfad": "/untergrund-abdichtung",
+   "titel": "Untergrund & Abdichtung für Fliesen | Fachbetrieb Tezgel",
+   "beschreibung": "Untergrundvorbereitung & DIN 18534 Verbundabdichtung für Fliesen in Wetzlar & Aßlar: Estrichprüfung, Entkopplung & Gefälleausgleich. Jetzt beraten lassen!",
+   "laenge": 154,
+   "gruende": [
+    "&",
+    "Ausrufezeichen"
+   ]
+  },
+  {
+   "pfad": "/untergrund-abdichtung/din-18534",
+   "titel": "DIN 18534 Verbundabdichtung: Bad & Dusche | Tezgel",
+   "beschreibung": "DIN 18534 Verbundabdichtung für Bad & Dusche: Wassereinwirkungsklassen W0-I bis W3-I, Dichtbänder & Rohrmanschetten. Normgerecht ausgeführt von Tezgel.",
+   "laenge": 151,
+   "gruende": [
+    "&"
+   ]
+  },
+  {
+   "pfad": "/untergrund-abdichtung/estrich-belegreife",
+   "titel": "Estrich-Belegreife & CM-Messung vor dem Fliesen | Tezgel",
+   "beschreibung": "Estrich-Belegreife zuverlässig prüfen: CM-Messung, Richtwerte je Estrichart & Feuchtigkeitsmessung vor dem Fliesen verlegen. Fachbetrieb Tezgel in Hessen.",
+   "laenge": 154,
+   "gruende": [
+    "&"
+   ]
+  },
+  {
+   "pfad": "/untergrund-abdichtung/fliesen-auf-fliesen",
+   "titel": "Altfliesen überkleben: Wann es fachgerecht geht | Tezgel",
+   "beschreibung": "Altfliesen überkleben (Überfliesen): Prüfkriterien, Haftbrücke, Aufbauhöhen & wann Rückbau besser ist. Fachbetrieb Tezgel in Aßlar & Wetzlar.",
+   "laenge": 141,
+   "gruende": [
+    "&"
+   ]
+  },
+  {
+   "pfad": "/untergrund-abdichtung/entkopplung",
+   "titel": "Fliesen auf Holzboden verlegen: Entkopplung | Tezgel",
+   "beschreibung": "Fliesen auf Holzdielen, Mischuntergründen & gerissenem Estrich sicher verlegen: Entkopplungsmatten & Rissverharzung erklärt vom Fachbetrieb Tezgel.",
+   "laenge": 147,
+   "gruende": [
+    "&"
+   ]
+  },
+  {
+   "pfad": "/untergrund-abdichtung/ausgleich-gefaelle",
+   "titel": "Untergrund ausgleichen & Gefälle herstellen | Tezgel",
+   "beschreibung": "Unebene Böden & Wände vor dem Fliesen ausgleichen: Ebenheit nach DIN 18202, Spachtelung & Gefälleausbildung zu Abläufen. Fachbetrieb Tezgel in Hessen.",
+   "laenge": 150,
+   "gruende": [
+    "&"
+   ]
+  },
+  {
+   "pfad": "/balkon-terrasse/stelzlager",
+   "titel": "Terrassenplatten auf Stelzlagern verlegen | Tezgel",
+   "beschreibung": "Terrassenplatten auf Stelzlagern verlegen lassen: höhenverstellbar, frostsicher & drainagefähig. Fachbetrieb Tezgel in Wetzlar & Aßlar. Jetzt anfragen!",
+   "laenge": 151,
+   "gruende": [
+    "&",
+    "Ausrufezeichen"
+   ]
+  },
+  {
+   "pfad": "/balkon-terrasse/balkonsanierung",
+   "titel": "Balkonsanierung Wetzlar & Aßlar | Abdichtung · Tezgel",
+   "beschreibung": "Balkonsanierung in Wetzlar & Aßlar: Fachgerechte Abdichtung, Gefälleerstellung & neuer Fliesenbelag vom Fachbetrieb. Jetzt Festpreisangebot anfragen!",
+   "laenge": 149,
+   "gruende": [
+    "&",
+    "Ausrufezeichen"
+   ]
+  },
+  {
+   "pfad": "/balkon-terrasse/terrassenplatten",
+   "titel": "Terrassenplatten verlegen lassen | Fliesen Tezgel",
+   "beschreibung": "Terrassenplatten aus Keramik oder Naturstein fachgerecht verlegen lassen: frostsicher, rutschfest & langlebig. Fachbetrieb Tezgel – Jetzt Aufmaß anfragen!",
+   "laenge": 154,
+   "gruende": [
+    "Gedankenstrich",
+    "&",
+    "Ausrufezeichen"
+   ]
+  },
+  {
+   "pfad": "/naturstein/granit",
+   "titel": "Granit & Schiefer verlegen lassen | Fliesen Tezgel",
+   "beschreibung": "Granit- & Schieferbeläge für Boden, Treppe und Außenbereich fachgerecht verlegen lassen: passende Kleber & Imprägnierung. Fachbetrieb Tezgel in Hessen.",
+   "laenge": 151,
+   "gruende": [
+    "&"
+   ]
+  },
+  {
+   "pfad": "/naturstein/marmor-kalkstein",
+   "titel": "Marmor & Travertin verlegen lassen | Fliesen Tezgel",
+   "beschreibung": "Marmor, Travertin & Kalkstein fachgerecht verlegen lassen: verfärbungsfreie Kleber, Imprägnierung & Schutz. Fachbetrieb Tezgel in Aßlar & Wetzlar.",
+   "laenge": 146,
+   "gruende": [
+    "&"
+   ]
+  },
+  {
+   "pfad": "/treppen",
+   "titel": "Treppe fliesen & sanieren Wetzlar | Fachbetrieb Tezgel",
+   "beschreibung": "Treppe fliesen & sanieren in Wetzlar & Aßlar: Innentreppen, Außentreppen & Treppenhäuser mit Fliesen oder Naturstein belegen. Jetzt Angebot anfragen!",
+   "laenge": 149,
+   "gruende": [
+    "&",
+    "Ausrufezeichen"
+   ]
+  },
+  {
+   "pfad": "/treppen/innentreppe",
+   "titel": "Innentreppe fliesen lassen | Stufen & Kanten · Tezgel",
+   "beschreibung": "Innentreppe im Haus fliesen lassen: Stufen aus Feinsteinzeug oder Naturstein, Gehrungskanten & Sockel. Fachbetrieb Tezgel – Jetzt Angebot anfragen!",
+   "laenge": 147,
+   "gruende": [
+    "Gedankenstrich",
+    "&",
+    "Ausrufezeichen"
+   ]
+  },
+  {
+   "pfad": "/treppen/treppenhaus",
+   "titel": "Treppenhaus sanieren: Fliesen & Naturstein | Tezgel",
+   "beschreibung": "Treppenhaus im MFH neu fliesen & sanieren: trittsichere Beläge, abschnittsweises Arbeiten im bewohnten Haus & Hausverwaltungs-Service. Tezgel Fachbetrieb.",
+   "laenge": 154,
+   "gruende": [
+    "&"
+   ]
+  },
+  {
+   "pfad": "/treppen/aussentreppe",
+   "titel": "Außentreppe fliesen: frostsicher & rutschfest | Tezgel",
+   "beschreibung": "Außentreppe frostsicher fliesen & sanieren: rutschhemmende Platten, Gefälleausbildung & Abdichtung. Fliesenleger-Fachbetrieb Tezgel in Wetzlar & Aßlar.",
+   "laenge": 151,
+   "gruende": [
+    "&"
+   ]
+  },
+  {
+   "pfad": "/schadensanalyse",
+   "titel": "Fliesenschäden analysieren: Risse & Feuchte | Tezgel",
+   "beschreibung": "Gerissene Fliesen, Hohlstellen oder feuchte Fugen? Kostenfreie Schadensanalyse vor Ort in Wetzlar & Aßlar. Fliesenleger-Fachbetrieb Tezgel berät Sie!",
+   "laenge": 149,
+   "gruende": [
+    "&",
+    "Ausrufezeichen"
+   ]
+  },
+  {
+   "pfad": "/fliesenreparatur",
+   "titel": "Fliesenreparatur Wetzlar & Aßlar | Fliesen Tezgel",
+   "beschreibung": "Professionelle Fliesenreparatur in Wetzlar & Aßlar: einzelne Fliesen austauschen, Bohrlöcher verschließen & Fugen sanieren. Schneller Vor-Ort-Service!",
+   "laenge": 150,
+   "gruende": [
+    "&",
+    "Ausrufezeichen"
+   ]
+  }
+ ]
+}

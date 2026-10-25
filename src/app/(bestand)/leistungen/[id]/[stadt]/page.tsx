@@ -104,6 +104,18 @@ export function generateStaticParams() {
   return params;
 }
 
+// Meta-Beschreibung der Ortsseite (E3-SEO-META, E-053): Suchbegriff des Bereichs, Ort, kostenfreier Termin; 120 bis 155
+// Zeichen für alle 13 Orte. Dieselbe Beschreibung trägt die WebPage der strukturierten Daten.
+const KURZNAMEN: Record<string, string> = {
+  bad: 'Badsanierung',
+  wohnen: 'Fliesenverlegung im Wohnraum',
+  aussen: 'Balkonsanierung und Terrassen',
+  untergrund: 'Untergrund und Abdichtung',
+};
+function metaBeschreibung(service: { id: string; name: string }, ort: string): string {
+  return `${KURZNAMEN[service.id] ?? service.name} in ${ort}: Leistungen, Ablauf und Festpreis vom Fachbetrieb Tezgel. Der Termin bei Ihnen vor Ort ist kostenfrei.`;
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -126,13 +138,7 @@ export async function generateMetadata({
     ? `${displayName} in ${city.name} | Tezgel`
     : `${displayName} in ${city.name} | Fliesen Tezgel`;
   
-  const kurznamen: Record<string, string> = {
-    bad: 'Badsanierung',
-    wohnen: 'Fliesen im Wohnbereich',
-    aussen: 'Balkon und Terrasse',
-    untergrund: 'Untergrund und Abdichtung',
-  };
-  const description = `${kurznamen[service.id] ?? displayName} in ${city.name}: Leistungen, Ablauf und Festpreis vom Fachbetrieb Tezgel. Der Termin bei Ihnen vor Ort ist kostenfrei.`;
+  const description = metaBeschreibung(service, city.name);
 
   return createMetadata({
     title,
@@ -178,7 +184,7 @@ export default async function ServiceCityPage({
     buildWebPageNode({
       url: pageUrl,
       name: `${displayName} in ${city.name} | Fliesenverlegung Tezgel`,
-      description: `${service.shortDescription} – fachgerecht ausgeführt in ${city.name} und Umgebung.`,
+      description: metaBeschreibung(service, city.name),
       breadcrumbItems: breadcrumbs,
     }),
     buildBreadcrumbNode(breadcrumbs, pageUrl),

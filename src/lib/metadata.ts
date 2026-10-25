@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/schema';
-import { META_BESCHREIBUNGEN } from '@/inhalte/meta';
+import { seitenBeschreibung } from '@/lib/beschreibung';
 
 const BASE_URL = SITE_URL;
 const SITE_NAME = 'Fliesenverlegung Tezgel';
@@ -109,33 +109,6 @@ function sanitizeTitle(raw: string): string {
   return candidate;
 }
 
-function sanitizeDescription(raw: string): string {
-  let desc = raw.trim().replace(/\s+/g, ' ');
-
-  // If too short (< 120 chars), append standard trust CTA to reach 120-155 chars
-  if (desc.length < 120) {
-    // Alltagssprache nach K-010 („Termin bei Ihnen vor Ort“ statt „Vor-Ort-Aufmaß“, ohne Ausrufezeichen; E-049)
-    const pad = ' Der Termin bei Ihnen vor Ort ist kostenfrei. Rufen Sie uns an oder schreiben Sie uns.';
-    if (desc.length + pad.length <= 155) {
-      desc = `${desc}${pad}`;
-    } else {
-      const shortPad = ' Der Termin bei Ihnen vor Ort ist kostenfrei.';
-      if (desc.length + shortPad.length <= 155) {
-        desc = `${desc}${shortPad}`;
-      }
-    }
-  }
-
-  // If too long (> 155 chars), trim cleanly at word boundary
-  if (desc.length > 155) {
-    const cut = desc.slice(0, 151);
-    const lastSpace = cut.lastIndexOf(' ');
-    desc = `${(lastSpace > 110 ? cut.slice(0, lastSpace) : cut).trim()}...`;
-  }
-
-  return desc;
-}
-
 export interface MetadataOptions {
   title: string;
   description: string;
@@ -150,8 +123,8 @@ export interface MetadataOptions {
 export function generatePageMetadata(options: MetadataOptions): Metadata {
   const canonicalUrl = `${BASE_URL}${options.path === '/' ? '' : options.path}`;
   const fullTitle = sanitizeTitle(options.title);
-  // eigene Beschreibung zur Adresse vor der übergebenen (E3-SEO-META: Daten über 155 Zeichen würden mit „...“ gekürzt)
-  const fullDesc = sanitizeDescription(META_BESCHREIBUNGEN[options.path] ?? options.description);
+  // eigene Beschreibung zur Adresse vor der übergebenen, auf 120 bis 155 Zeichen gebracht (lib/beschreibung.ts, E3-SEO-META)
+  const fullDesc = seitenBeschreibung(options.path, options.description);
 
   const shouldIndex = options.robots?.index !== undefined ? options.robots.index : true;
   const shouldFollow = options.robots?.follow !== undefined ? options.robots.follow : true;

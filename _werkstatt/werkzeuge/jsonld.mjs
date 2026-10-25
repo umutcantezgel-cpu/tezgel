@@ -10,6 +10,7 @@
 //    url oder @id auf U (ohne #…); keiner zeigt auf eine andere Adresse (geerbte Knoten eines Ordner-Layouts).
 // 3. Genau eine BreadcrumbList; ihr letztes Element zeigt auf U.
 // 4. Kein @id doppelt mit verschiedenem Inhalt (zwei Blöcke für dieselbe Seite).
+// 5. Die Beschreibung des eigenen Seitenknotens gleicht der Meta-Beschreibung der Seite (E3-SEO-META, E-053), sofern beide da sind.
 // Ergebnis: Tabelle auf der Konsole und jsonld.json im Ziel; Exit 1, wenn eine Seite rot ist.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -78,6 +79,13 @@ async function pruefe(pfad) {
   const eigene = seiten.filter((k) => ohneFragment(k.url ?? k['@id']) === ohneFragment(u));
   const fremde = seiten.filter((k) => ohneFragment(k.url ?? k['@id']) !== ohneFragment(u));
   if (eigene.length === 0) befunde.push('kein Seitenknoten (WebPage …) für diese Adresse');
+  const ent = (x) => x.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#x27;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+  const meta = ent((/<meta name="description" content="([^"]*)"/.exec(html) || [])[1] ?? '');
+  for (const k of eigene) {
+    if (meta && typeof k.description === 'string' && k.description !== meta) {
+      befunde.push(`Beschreibung des Seitenknotens weicht von der Meta-Beschreibung ab: „${k.description.slice(0, 60)}…“`);
+    }
+  }
   for (const k of fremde) befunde.push(`Seitenknoten einer anderen Adresse: ${typ(k).join('/')} ${k.url ?? k['@id']}`);
   const kruemel = knoten.filter((k) => typ(k).includes('BreadcrumbList'));
   if (kruemel.length !== 1) befunde.push(`${kruemel.length} BreadcrumbList (genau eine erwartet)`);

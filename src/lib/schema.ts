@@ -3,6 +3,7 @@
  * Uses interconnected canonical @id URIs and standard @graph notation.
  */
 import { RATING_SUMMARY, REVIEWS } from '@/config/reviews';
+import { pfadAus, seitenBeschreibung } from '@/lib/beschreibung';
 
 /** Kundenstimmen in den strukturierten Daten (Auswahl wie im Bestand). */
 const SCHEMA_STIMMEN = ['elke-s', 'c-wolf', 'rabia-oe'];
@@ -354,7 +355,8 @@ export function buildWebPageNode(options: {
     '@id': `${options.url}#webpage`,
     url: options.url,
     name: options.name,
-    description: options.description,
+    // dieselbe Beschreibung wie in den Metadaten der Seite (lib/beschreibung.ts, E-053)
+    description: seitenBeschreibung(pfadAus(options.url), options.description),
     inLanguage: options.inLanguage || 'de-DE',
     isPartOf: { '@id': WEBSITE_ID },
     breadcrumb: options.breadcrumbItems
@@ -376,7 +378,8 @@ export function buildAboutPageNode(options: {
     '@id': `${options.url}#aboutpage`,
     url: options.url,
     name: options.name,
-    description: options.description,
+    // dieselbe Beschreibung wie in den Metadaten der Seite (lib/beschreibung.ts, E-053)
+    description: seitenBeschreibung(pfadAus(options.url), options.description),
     isPartOf: { '@id': WEBSITE_ID },
     about: { '@id': ORG_ID },
     mainEntity: { '@id': ORG_ID },
@@ -396,7 +399,8 @@ export function buildContactPageNode(options: {
     '@id': `${options.url}#contactpage`,
     url: options.url,
     name: options.name,
-    description: options.description,
+    // dieselbe Beschreibung wie in den Metadaten der Seite (lib/beschreibung.ts, E-053)
+    description: seitenBeschreibung(pfadAus(options.url), options.description),
     isPartOf: { '@id': WEBSITE_ID },
     mainEntity: { '@id': LOCAL_BUSINESS_ID },
   };
