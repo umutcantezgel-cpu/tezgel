@@ -53,8 +53,8 @@ Spalten: **ID** · Seite und Platz · Format (Breite : Höhe) · Original · Zus
 ## `/referenzen` (Galerie „Unsere Arbeiten“)
 - Alle Bilder aus `bildinventar.csv` mit Eignung Galerie, Seitenbild oder Detail und Qualität A oder B, außer: IMG_2561 (Herkunft offen, M-08), IMG_2577 (M-08), IMG_2594 und IMG_2581 (Dubletten), IMG_2530 und IMG_2531 (Autohaus-Name, nur wenn sauber wegschneidbar), IMG_2538 (Kind), IMG_2543 (Gesicht, nur wenn wegschneidbar), C-Bilder und „ungeeignet“.
 - Format 4:5 einheitlich (Raster), Filter nach Raum: Bad · Dusche · Balkon und Terrasse · Treppe und Eingang · So arbeiten wir (Während und Vorher).
-| ref-vorher | Vorher-Nachher-Regler links | 4:5 | IMG_2527 | auf IMG_2525 ausrichten (gleicher Blick, Geraderichten und Zuschnitt erlaubt) | Vorher: Außentreppe aus ausgebessertem Beton | `(min-width: 1024px) 40vw, 100vw` | nein |
-| ref-nachher | Vorher-Nachher-Regler rechts | 4:5 | IMG_2525 | wie oben | Nachher: Außentreppe mit terrakottafarbenen Fliesen | wie oben | nein |
+| ref-vorher | Vorher-Nachher-Regler links | eigenes, 900 × 1752 (K-016, E-052) | IMG_2527 | auf IMG_2525 ausrichten (gleicher Blick, Geraderichten und Zuschnitt erlaubt) | Vorher: Außentreppe aus ausgebessertem Beton | `(min-width: 1024px) 40vw, 100vw` | nein |
+| ref-nachher | Vorher-Nachher-Regler rechts | eigenes, 900 × 1752 (K-016, E-052) | IMG_2525 | wie oben | Nachher: Außentreppe mit terrakottafarbenen Fliesen | wie oben | nein |
 
 ## `/ueber-uns`
 | ueber-einstieg | Einstieg „So arbeiten wir“ | 4:5 | IMG_2547 | Person nur von hinten, Pullover mit Tezgel-Logo sichtbar, kein Gesicht | Mitarbeiter von Fliesenverlegung Tezgel klebt Dichtband an den Anschlüssen eines Balkons | wie `bad-einstieg` | nein |

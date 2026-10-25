@@ -25,8 +25,8 @@ export default function SchaufensterVorherNachher() {
           titel: 'Eine Außentreppe, vorher und nachher.',
           moment: (
             <VorherNachher
-              vorher="kontakt-eingang"
-              nachher="start-galerie-5"
+              vorher="ref-vorher"
+              nachher="ref-nachher"
               titelId="vorher-nachher-titel"
               unterschrift="Schieben Sie den Regler hin und her. So sehen Sie den Unterschied."
             />

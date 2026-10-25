@@ -120,6 +120,11 @@ html.k-bewegung:not(.k-notaus) [data-motion="anriss"]:not([data-motion-stand="an
 .vn-buehne {
   --teilung: 50;
 }
+/* Höhe: das ganze Foto steht in einem Bildschirm (K-016, Bilder vollständig); die Breite folgt dem Seitenverhältnis der Fotos
+   (--vn-seite = Breite / Höhe, setzt VorherNachher aus ARBEITEN), höchstens so breit wie der Rahmen. */
+.vn-hoehe {
+  max-width: calc(80svh * var(--vn-seite, 0.8));
+}
 .vn-fenster {
   translate: calc((var(--teilung) - 100) * 1%) 0;
 }

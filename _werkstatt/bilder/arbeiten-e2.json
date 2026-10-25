@@ -358,5 +358,23 @@
     "alt": "Treppenstufen mit beigen Fliesen und hellen Profilkanten",
     "raum": "treppe",
     "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAACQAwCdASoQABQAPu1Ct1apoqakGAEwHYljAJ0AGqxYUsPp7WQAAPcmyLGGza+OfJ7Fiofi7mEwmi/hasL8JN1QqDtmTgTtuD50TkBpVUpSAAAA"
+  },
+  {
+    "id": "ref-vorher",
+    "src": "/images/arbeiten/treppe/aussentreppe-vorher-beton.jpg",
+    "breite": 900,
+    "hoehe": 1752,
+    "alt": "Die Außentreppe vorher: Stufen aus ausgebessertem Beton mit hellen Flecken",
+    "raum": "treppe",
+    "blurDataURL": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAAAQBACdASoQAB8APtFWpEuoJKOhsAgBABoJZwDCgB6W9sk5ft/MKs/6yAD+8OaZkTdW47/vIm2tz7GFyoEDuD8wEEEFJsiTXpZeJjsfzSEzIos3HDCbTAbzMazmyijNnHs53Zb68WNkUuZanPhT2FpfDn3zcBEyPEAfgCt1mQAerCAA"
+  },
+  {
+    "id": "ref-nachher",
+    "src": "/images/arbeiten/treppe/aussentreppe-nachher-terrakotta.jpg",
+    "breite": 900,
+    "hoehe": 1752,
+    "alt": "Dieselbe Außentreppe nachher: Stufen mit terrakottafarbenen Fliesen und hellen Kanten",
+    "raum": "treppe",
+    "blurDataURL": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAADwAwCdASoQAB8APtFUo0uoJKMhsAgBABoJZQCdMoABq99MnOzpfpAAAP7miZrYHPAIU1QFzTFGCZlPR0u24ifs2gNjjqAhV94GXyj8jjy+t0+cIz+RD7eDrBTmcO72cm7CskDOgVvoTCQPy6Xd5ye1a9BUUosnXmCBQyiR2Jppn8devLm6ZtBXd/OBAJlwADFx6AAA"
   }
 ]
