@@ -131,8 +131,11 @@ export default function CookieConsent() {
                 </div>
               )}
 
-              {/* Action Buttons: "Ablehnen" ist gleichwertig zu "Akzeptieren" (gleiche Form, gleiche Größe) */}
-              <div className="mt-4 grid grid-cols-2 gap-2">
+              {/* Action Buttons: "Ablehnen" ist gleichwertig zu "Akzeptieren" (gleiche Form, gleiche Größe). Bei großer
+                  Systemschrift ist der Banner höher als sein Platz und scrollt in sich; die Knopfreihe klebt dann an seinem
+                  unteren Rand, damit alle drei Wahlen ohne Suchen im Bild stehen (Tor E3, Probelauf P1; Text, Knöpfe und
+                  Verhalten unverändert, G8). Passt alles hinein, ändert sich nichts. */}
+              <div className="sticky bottom-0 mt-4 grid grid-cols-2 gap-2 bg-fliese">
                 <button type="button" onClick={handleAcceptAll} className={knopfKlassen("haupt", "px-3")} data-motion="druck">
                   Alle akzeptieren
                 </button>

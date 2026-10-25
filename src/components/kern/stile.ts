@@ -21,7 +21,8 @@ export function knopfKlassen(variante: KnopfVariante = 'haupt', className?: stri
 
 /** Beschriftung über dem Feld */
 export const labelKlassen = 'block font-text text-fs-2 font-semibold text-tinte';
-/** Pflichtmarke hinter dem Label (Text „Pflichtfeld“ für Screenreader ergänzen). Nicht rot: Rot nur für Achse, Anriss,
+/** Pflichtmarke hinter dem Label; das Formular erklärt sie einmal mit `kern/PflichtHinweis` (Vorleser hören „erforderlich“
+ *  über required). Nicht rot: Rot nur für Achse, Anriss,
  *  Fokus-Akzent und Fehlerzeichen (K-003 Nr. 2) – sonst stehen Sternchen und Fehlerrand als zwei Rot im Bildschirm (R-01a) */
 export const pflichtKlassen = 'ml-1 font-mono text-fs-1 text-tinte-2';
 /** Eingabe, Auswahl, Textbereich */

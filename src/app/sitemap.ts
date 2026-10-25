@@ -55,6 +55,7 @@ const STATIC_ROUTES: Array<[path: string, changeFrequency: ChangeFrequency, prio
   ['/karriere/ausbildung', 'monthly', 0.5],
   ['/kontakt', 'monthly', 0.9],
   ['/termin', 'monthly', 0.8],
+  ['/preise', 'monthly', 0.8],
 
   // Barrierefreiheit (indexable legal page)
   ['/barrierefreiheit', 'yearly', 0.2],

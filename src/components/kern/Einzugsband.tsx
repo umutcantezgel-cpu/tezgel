@@ -1,5 +1,7 @@
 // Einzugsband (KERN K-007 einzugsband): das Einzugsgebiet als Fugenband in drei Zonen (≤ 10 / ≤ 25 / ≤ 50 km,
-// Breiten 3 : 3 : 4 ab md (K-007: 2 : 3 : 5 – dort wurden Ortsnamen der Zone ≤ 10 km gekürzt, E3-NACH-05),
+// Breiten 3 : 3 : 4 ab 42 rem Breite des Platzes (K-007: 2 : 3 : 5 – dort wurden Ortsnamen der Zone ≤ 10 km gekürzt,
+// E3-NACH-05; nach der Breite des Platzes statt des Bildschirms, damit bei großer Systemschrift die Zonen untereinander
+// stehen und Ortsnamen nicht mitten im Wort brechen, Tor E3),
 // am linken Rand das rote Lot des Firmensitzes Aßlar; Entfernungen ab Aßlar (E3-ORCH-03). Je Zone die Orte – als Linkliste die
 // Hauptform; das Band ordnet nur (kein Maßstab: die Entfernungen der Konfiguration sind gerundete Angaben).
 // `kompakt`: ruhige Vorschau ohne Links und ohne Bewegung (z. B. im Kartenplatzhalter vor der Einwilligung).
@@ -14,7 +16,7 @@ import { CITIES } from '@/config/cities';
 import { CITY_HUB_DATA } from '@/lib/maps/getMapEmbedUrl';
 import { gruppiereNachZone, mitEntfernungAbSitz } from '@/lib/einzugszonen';
 
-const BREITE: Record<string, string> = { nah: 'md:col-span-3', mittel: 'md:col-span-3', weit: 'md:col-span-4' };
+const BREITE: Record<string, string> = { nah: '@2xl:col-span-3', mittel: '@2xl:col-span-3', weit: '@2xl:col-span-4' };
 
 // Entfernung ab dem Firmensitz (wie die Ortsliste der Karte): der Sitz selbst heißt „Firmensitz“ (Bestandswortlaut)
 const entfernung = (km: number) => (km === 0 ? 'Firmensitz' : `ca. ${km} km`);
@@ -32,14 +34,14 @@ export default function Einzugsband({ aktuell, kompakt = false, form = 'band', c
   const stapel = form === 'stapel';
   const gruppen = gruppiereNachZone(mitEntfernungAbSitz(CITIES, CITY_HUB_DATA));
   return (
-    <div className={clsx('einzugsband relative', className)} data-motion={kompakt ? undefined : 'einzugsband'}>
+    <div className={clsx('einzugsband relative @container', className)} data-motion={kompakt ? undefined : 'einzugsband'}>
       <p className={clsx(etikettKlassen, kompakt ? 'mb-1' : 'mb-4')}>
         <Fugenkreuz className="size-3 text-laser" />
         <span className="text-tinte">Firmensitz Aßlar</span>
       </p>
       {/* Lot des Firmensitzes: rot nur, wo es der einzige rote Blickfang ist; im Planblatt neben der Laserachse des
           Einstiegs in Tinte (ein Rot je Bildschirm, E3-SICHT-ERZ Befund 26) – die Firmensitz-Marke bleibt rot */}
-      <ol className={clsx('grid grid-cols-1 border-l-2', stapel ? 'border-tinte' : 'border-laser md:grid-cols-10')}>
+      <ol className={clsx('grid grid-cols-1 border-l-2', stapel ? 'border-tinte' : 'border-laser @2xl:grid-cols-10')}>
         {gruppen.map(({ zone, orte }) => (
           <li key={zone.id} className={clsx('einzugsband-zone relative border-b border-r border-fuge bg-fliese', !stapel && BREITE[zone.id])}>
             {/* Kante der Zone: zieht sich beim Laden von links auf, Zone für Zone (bewegung.css); der Text steht ab dem ersten
@@ -56,7 +58,7 @@ export default function Einzugsband({ aktuell, kompakt = false, form = 'band', c
                     <>
                       <span className="flex min-w-0 items-center gap-2">
                         {ist && <Fugenkreuz className="size-3 text-laser" />}
-                        <span className={clsx('min-w-0 wrap-break-word hyphens-auto', ist && 'font-semibold')}>{o.name}</span>
+                        <span className={clsx('min-w-0 wrap-break-word', ist && 'font-semibold')}>{o.name}</span>
                       </span>
                       <span className="ml-auto shrink-0 font-mono text-fs-1 text-tinte-2">{entfernung(o.distanceKm)}</span>
                     </>
