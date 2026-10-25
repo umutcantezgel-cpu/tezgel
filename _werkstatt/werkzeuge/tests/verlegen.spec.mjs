@@ -992,12 +992,13 @@ test.describe('Bewegung an (Wechsel mit Fliesen)', () => {
     await wechsel(page, () => link.click(), ziel);
     // Neu laden leert den Speicher des Routers: Zurück stellt dann eine RSC-Anfrage für START (sonst kommt die Seite aus dem
     // Speicher sofort). Gemessen (Sonde E3-B01-FIX-2): Zurück bleibt auch nach dem Neuladen ein popstate im selben Dokument,
-    // danach GET /bad?_rsc=…
+    // danach GET /bad?_rsc=… Im Produktionsbau lädt der Router START nach dem Neuladen schon vorab (Prefetch des Links auf
+    // START, Sonde E-055); darum wird START vor dem Neuladen verlangsamt, sonst käme die Seite aus dem Vorabladen sofort.
+    await langsamesZiel(page, START);
     await page.reload();
     await expect(page.locator('html')).toHaveClass(/k-modul/);
     await bedienbar(page.locator('.verlegen'));
     await beobachte(page);
-    await langsamesZiel(page, START);
     const ab = await laenge(page);
     await page.evaluate(() => history.back());
     await expect.poll(async () => (await log(page)).slice(ab).map((e) => e.z).join(' '), { timeout: 15_000 }).toContain('abbruch');
@@ -1166,11 +1167,12 @@ test.describe('Bewegung an (Wechsel mit Fliesen)', () => {
     await beobachte(page);
     await wechsel(page, () => link.click(), ZIEL);
     // wie (19c): nach dem Neuladen stellt Zurück eine RSC-Anfrage für START; hier antwortet START bis zum Ende des Falls nicht
+    // (vor dem Neuladen verlangsamt, damit auch das Vorabladen im Produktionsbau nicht antwortet, Sonde E-055)
+    await langsamesZiel(page, START, 60_000);
     await page.reload();
     await expect(page.locator('html')).toHaveClass(/k-modul/);
     await bedienbar(page.locator('.verlegen'));
     await beobachte(page);
-    await langsamesZiel(page, START, 60_000);
     const ab = await laenge(page);
     await page.evaluate(() => history.back());
     await expect.poll(async () => (await log(page)).slice(ab).map((e) => e.z).join(' '), { timeout: 15_000 }).toContain('abbruch');
