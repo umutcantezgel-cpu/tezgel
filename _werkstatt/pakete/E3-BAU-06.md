@@ -1,7 +1,7 @@
 # E3-BAU-06
 
 ## 1. Kopfzeile
-E3-BAU-06 · Rolle Baumeister · Modell Haiku 5.5 · Stufe 2 · Kern-Version v3.0 · Schreibrechte (exakt): `src/inhalte/balkon-terrasse.ts`, `src/app/(bestand)/balkon-terrasse/page.jsx`, `$SCRATCH/E3-BAU-06/**` · Umfang: Seite `/balkon-terrasse` auf die Vorlage `ErzaehlSeite` umstellen, Text wörtlich aus `_werkstatt/texte/balkon-terrasse.md`
+E3-BAU-06 · Rolle Baumeister · Modell Haiku 5.5 · Stufe 2 · Kern-Version v3.6 · Schreibrechte (exakt): `src/inhalte/balkon-terrasse.ts`, `src/app/(bestand)/balkon-terrasse/page.jsx`, `$SCRATCH/E3-BAU-06/**` · Umfang: Seite `/balkon-terrasse` auf die Vorlage `ErzaehlSeite` umstellen, Text wörtlich aus `_werkstatt/texte/balkon-terrasse.md`
 
 ## 2. Rollenbriefing
 Du bist **Baumeister**: Du baust eine Seite nach einer fertigen Vorlage und einem fertigen Text, ohne eigene Gestaltung.
@@ -21,6 +21,7 @@ Stelle `src/app/(bestand)/balkon-terrasse/page.jsx` auf die Vorlage `src/compone
 
 
 ## 5. Kern-Auszug
+- **Zuerst:** `_werkstatt/pakete/E3-BAU-K016.md` ganz lesen (K-016 „Ruhe“, E-047, Entscheidungen zu dieser Seite in Abschnitt 4, Prüfungen in Abschnitt 5). Der Zusatz geht diesem Briefing vor.
 - Bauart der Vorlagen: `_werkstatt/ENTSCHEIDUNGEN.md` Abschnitt E-025 lesen. Inhaltsmodell mit Kommentaren: `src/components/vorlagen/inhalt.ts`. Vorlage: `src/components/vorlagen/ErzaehlSeite.tsx` (Kommentar am Anfang), Bausteine unter `src/components/vorlagen/teile/`. Beispiel einer fertigen Inhaltsdatei: `src/inhalte/barrierefreies-bad.ts`; Beispiel einer Seite mit Vorlage: `src/app/(bestand)/werkstatt-schaufenster/erzaehlseite/page.dev.tsx`.
 - Text: `_werkstatt/texte/balkon-terrasse.md`. Texte in Backticks übernimmst du wörtlich mit ihren Textmarken `[[id|Wort]]`; `{Bild: id}` wird ein `ArbeitId`-Wert, `{Stimme: id}` ein Eintrag in `beleg.stimmen`, `{{COMPANY_DATA…}}` setzt die Vorlage selbst (nicht übernehmen). Bauhinweise in Klammern sind kein Seitentext.
 - Hauptknöpfe, Anruf, WhatsApp, Seitenformel, Leitachse und Brotkrumen-Navigation setzt die Vorlage; die Seite schreibt keine eigenen Knöpfe.
@@ -38,7 +39,7 @@ Stelle `src/app/(bestand)/balkon-terrasse/page.jsx` auf die Vorlage `src/compone
 - Nur die Dateien unter „Schreibrechte“ ändern oder anlegen; alles andere nur lesen. Fehler oder Wünsche an gemeinsamen Dateien (Vorlagen, Bausteine, Navigation, Konfiguration, Tests) unter GEMEINSAME DATEIEN melden, nie selbst ändern.
 - Nie committen, nie pushen, nie `git checkout`, `reset`, `stash` oder `clean` im Repo. Keine `.env*`-Dateien lesen oder zitieren. Dateien des Bestands nicht löschen (unbenutzte Komponenten nur melden).
 - Server 4310 und 4320 nur nutzen, nie starten, beenden oder neu starten; kein `next build`. Browser nur über `installSperre()` aus `_werkstatt/werkzeuge/lib.mjs`; keine echten Formularsendungen.
-- Umgebung in jeder Shell: `export SCRATCH=/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad`, `export PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers`, `export CHROME_PATH=/opt/pw-browsers/chromium`.
+- Umgebung in jeder Shell: `export SCRATCH=/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad`, `export PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers`, `export CHROME_PATH=/opt/pw-browsers/chromium-1243/chrome-linux64/chrome`.
 
 ## 8. Schritte
 1. Lies E-025, `inhalt.ts`, die Vorlage, die Beispiele und die Textdatei ganz; lies die Bestandsseite `src/app/(bestand)/balkon-terrasse/page.jsx` und notiere unter `$SCRATCH/E3-BAU-06/bestand.md`: Metadaten, strukturierte Daten, eingebettete Funktionen mit Kennungen und Ankern, Importe.
