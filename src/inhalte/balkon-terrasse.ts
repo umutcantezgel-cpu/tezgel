@@ -33,9 +33,11 @@ export const BALKON_TERRASSE: ErzaehlInhalt = {
       'Am besten sehen wir uns das gemeinsam an. Dann wissen Sie, woran es liegt und was zu tun ist.',
     ],
     wege: [
-      { name: 'Balkon erneuern: Was wir tun, wenn der alte Belag undicht ist.', href: '/balkon-terrasse/balkonsanierung' },
-      { name: 'Terrassenplatten: Welches Material und welche Stärke zu Ihrer Terrasse passen.', href: '/balkon-terrasse/terrassenplatten' },
-      { name: 'Platten auf Stelzlagern: Die Verlegung im Einzelnen.', href: '/balkon-terrasse/stelzlager' },
+      // Name und Satz getrennt (Abnahme E3-BAU-06); „Stelzen“ im Namen, das Fachwort mit Erklärung im Satz (Glossar: erste
+      // Nennung erklärt, K-011)
+      { name: 'Balkon erneuern', satz: 'Was wir tun, wenn der alte Belag undicht ist.', href: '/balkon-terrasse/balkonsanierung' },
+      { name: 'Terrassenplatten', satz: 'Welches Material und welche Stärke zu Ihrer Terrasse passen.', href: '/balkon-terrasse/terrassenplatten' },
+      { name: 'Platten auf Stelzen', satz: 'So verlegen wir Platten auf [[stelzlager|Stelzlagern]], Schritt für Schritt.', href: '/balkon-terrasse/stelzlager' },
     ],
   },
   tun: {
@@ -46,7 +48,7 @@ export const BALKON_TERRASSE: ErzaehlInhalt = {
       'Das Wasser läuft ab. Der Belag bekommt ein [[gefaelle|Gefälle]] von mindestens 1,5 bis 2 %.',
       'Platten auf Stelzlagern. Ob Stelzlager zu Ihrer Fläche passen, prüfen wir vor Ort, bevor wir einen Belag planen.',
       'Die richtige Oberfläche. Wir verlegen Platten mit [[rutschhemmung|Rutschhemmung R10 oder R11]], je nach Raum.',
-      'Der Aufbau darunter. Auch der [[untergrund|Untergrund]] und die [[abdichtung|Abdichtung]] gehören zu unseren Leistungen.',
+      'Der Aufbau darunter. Auch der [[untergrund|Untergrund]] gehört zu unseren Leistungen. Ebenso die [[abdichtung|Abdichtung]].',
     ],
   },
   ablauf: {
@@ -74,13 +76,13 @@ export const BALKON_TERRASSE: ErzaehlInhalt = {
       { bild: 'balkon-beleg-2', unterschrift: 'Balkon mit rosébraunen Fliesen', href: '/balkon-terrasse' },
       { bild: 'balkon-beleg-3', unterschrift: 'Terrasse mit rustikalen Fliesen in Erdtönen', href: '/balkon-terrasse' },
       { bild: 'balkon-beleg-4', unterschrift: 'Terrasse mit hellgrauen Platten', href: '/balkon-terrasse' },
-      { bild: 'balkon-stelzlager', unterschrift: 'Große Platten werden auf Stelzlagern verlegt', href: '/balkon-terrasse' },
+      // die Überschrift des Einzelbilds aus der Textdatei ist sein Name auf der Glasfläche (Abnahme E3-BAU-06)
+      { bild: 'balkon-stelzlager', unterschrift: 'So legen wir Platten auf Stelzlagern', href: '/balkon-terrasse/stelzlager' },
     ],
-    // Überschrift des Einzelbilds aus der Textdatei (die Vorlage hat dafür keinen Platz, siehe OFFENE FRAGEN)
-    satz: 'So legen wir Platten auf Stelzlagern',
     // Stimme der Textdatei zuerst, dann vier weitere aus src/config/reviews.js (Thema Balkon, Fliesen verlegen, Boden, Haus)
     stimmen: ['hasan-oe', 'rabia-oe', 'erik-s', 'kathrin-w', 'sara-j'],
-    verweis: { name: 'Alle Arbeiten ansehen', href: '/referenzen?raum=balkon-und-terrasse' },
+    // öffnet die Galerie auf /referenzen mit der Auswahl „Balkon und Terrasse“ (GalerieWahl liest ?raum=)
+    verweis: { name: 'Alle Arbeiten ansehen', href: '/referenzen?raum=balkon-und-terrasse#unsere-arbeiten' },
   },
   schritt: {
     titel: 'Sprechen Sie mit uns über Ihren Balkon oder Ihre Terrasse.',

@@ -21,9 +21,9 @@
 - Absatz: `Vielleicht stehen nach einem Regen Pfützen auf Ihrem Balkon, oder Platten wackeln. Sie wissen nicht, ob der Belag noch hält.`
 - Absatz: `Am besten sehen wir uns das gemeinsam an. Dann wissen Sie, woran es liegt und was zu tun ist.`
 - Lage (je ein Satz, mit Link):
-  - `Balkon erneuern: Was wir tun, wenn der alte Belag undicht ist.` → `/balkon-terrasse/balkonsanierung`
-  - `Terrassenplatten: Welches Material und welche Stärke zu Ihrer Terrasse passen.` → `/balkon-terrasse/terrassenplatten`
-  - `Platten auf Stelzlagern: Die Verlegung im Einzelnen.` → `/balkon-terrasse/stelzlager`
+  - `Balkon erneuern` · `Was wir tun, wenn der alte Belag undicht ist.` → `/balkon-terrasse/balkonsanierung`
+  - `Terrassenplatten` · `Welches Material und welche Stärke zu Ihrer Terrasse passen.` → `/balkon-terrasse/terrassenplatten`
+  - `Platten auf Stelzen` · `So verlegen wir Platten auf [[stelzlager|Stelzlagern]], Schritt für Schritt.` → `/balkon-terrasse/stelzlager`
 
 ## 3 · Was wir tun
 - H2: `Erst die Fläche prüfen, dann die Platten verlegen.`
@@ -31,7 +31,7 @@
   1. `Das Wasser läuft ab` · `Der Belag bekommt ein [[gefaelle|Gefälle]] von mindestens 1,5 bis 2 %.` (F-21)
   2. `Platten auf Stelzlagern` · `Ob Stelzlager zu Ihrer Fläche passen, prüfen wir vor Ort, bevor wir einen Belag planen.` (F-11)
   3. `Die richtige Oberfläche` · `Wir verlegen Platten mit [[rutschhemmung|Rutschhemmung R10 oder R11]], je nach Raum.` (F-22)
-  4. `Der Aufbau darunter` · `Auch der [[untergrund|Untergrund]] und die [[abdichtung|Abdichtung]] gehören zu unseren Leistungen.` (F-08)
+  4. `Der Aufbau darunter` · `Auch der [[untergrund|Untergrund]] gehört zu unseren Leistungen. Ebenso die [[abdichtung|Abdichtung]].` (F-08)
 - Großer Moment `gefaelle-balkon`: Zeichnung eines Balkons, ein Regentropfen läuft über das Gefälle ab. Unterschrift: `Der Regen läuft vom Balkon ab.`
 
 ## 4 · So läuft es ab
@@ -47,7 +47,7 @@
 - Vier Fotos: `{Bild: balkon-beleg-1}`, `{Bild: balkon-beleg-2}`, `{Bild: balkon-beleg-3}`, `{Bild: balkon-beleg-4}`.
 - Einzelbild `So legen wir Platten auf Stelzlagern` mit `{Bild: balkon-stelzlager}` (`Große Platten werden auf Stelzlagern verlegt.`)
 - Eine Stimme wörtlich aus `REVIEWS` zum Thema Balkon: `{Stimme: hasan-oe}`
-- Link: `Alle Arbeiten ansehen` → `/referenzen?raum=balkon-und-terrasse`
+- Link: `Alle Arbeiten ansehen` → `/referenzen?raum=balkon-und-terrasse#unsere-arbeiten`
 - Weiterlesen: `Leistung Außenbereiche` → `/leistungen/aussen` · `Leistung Untergrund und Abdichtung` → `/leistungen/untergrund` · `Balkonaustritt ohne Stufe` → `/blog/barrierefreier-balkonaustritt` · `Häufige Fragen` → `/faq`
 
 ## 6 · Nächster Schritt
