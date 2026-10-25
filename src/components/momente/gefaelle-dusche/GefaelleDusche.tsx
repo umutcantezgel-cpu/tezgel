@@ -16,7 +16,7 @@ export const ZEICHNUNG_NAME =
 
 export default function GefaelleDusche() {
   return (
-    <figure data-motion="gefaelle-dusche" className="max-w-mass text-tinte">
+    <figure data-motion="gefaelle-dusche" className="mx-auto max-w-mass text-tinte">
       <div role="img" aria-label={ZEICHNUNG_NAME} className="border border-fuge bg-fliese p-4 lg:p-6">
         <Planrahmen viewBox={VIEWBOX}>
           <g className="text-strich">

@@ -25,7 +25,7 @@ type Stil = CSSProperties & Record<`--${string}`, number>;
 
 export default function GefaelleBalkon({ className }: { className?: string }) {
   return (
-    <figure className={clsx('max-w-mass text-tinte', className)}>
+    <figure className={clsx('mx-auto max-w-mass text-tinte', className)}>
       <div data-motion="gefaelle-balkon" className="border border-fuge bg-fliese p-4 lg:p-6">
         <Planrahmen viewBox={VIEWBOX}>
           <g className="text-strich">

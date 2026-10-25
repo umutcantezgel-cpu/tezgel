@@ -4,9 +4,10 @@
 // Raumzeichen), darunter die Statuszeile (role="status") und die Fotos als verlegte Fläche. Die Fotos kommen fertig vom
 // Server (Bildfeld als Knoten); die Insel setzt nur hidden und die Marke data-galerie-neu mit der Staffelstufe. Neue Fotos
 // blenden in dauer-2 ein, Stück für Stück (CSS in bewegung.css), wegfallende gehen sofort. Ohne JavaScript stehen alle
-// Fotos; Satz, Knöpfe und Statuszeile sind dann verborgen (noscript:hidden). Rand je Foto statt Fugen-Hintergrund: Nach dem
+// Fotos; Satz, Knöpfe und Statuszeile sind dann verborgen (noscript:hidden). Eine Auswahl in der Adresse (`?raum=`) gilt,
+// bis man selbst wählt. Rand je Foto statt Fugen-Hintergrund: Nach dem
 // Filtern stehen keine grauen Restfelder, die Fläche endet wie ein Boden mitten im Verlegen.
-import { useId, useState, type CSSProperties, type ReactNode } from 'react';
+import { useId, useState, useSyncExternalStore, type CSSProperties, type ReactNode } from 'react';
 import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
@@ -27,10 +28,20 @@ interface Stand {
   vorher: Wahl | null;
 }
 
+const ohneAbo = () => () => {};
+/** Auswahl aus der Adresse (`?raum=dusche`), z. B. vom Link „Alle Arbeiten ansehen“ einer Leistungsseite (E3-BAU) */
+function raumAusAdresse(): Wahl | null {
+  const raum = new URLSearchParams(window.location.search).get('raum');
+  return GRUPPEN.find((g) => g.id === raum)?.id ?? null;
+}
+
 export default function GalerieWahl({ fotos, satz }: { fotos: GalerieWahlFoto[]; satz: string }) {
   const satzId = useId();
-  const [stand, setStand] = useState<Stand>({ wahl: 'alle', vorher: null });
-  const waehlen = (wahl: Wahl) => setStand((s) => (s.wahl === wahl ? s : { wahl, vorher: s.wahl }));
+  // bis zur ersten eigenen Wahl gilt die Auswahl aus der Adresse (auf dem Server und beim Hydrieren „Alle Fotos“)
+  const ausAdresse = useSyncExternalStore(ohneAbo, raumAusAdresse, () => null);
+  const [gewaehlt, setGewaehlt] = useState<Stand | null>(null);
+  const stand: Stand = gewaehlt ?? { wahl: ausAdresse && anzahl(ausAdresse, fotos) > 0 ? ausAdresse : 'alle', vorher: null };
+  const waehlen = (wahl: Wahl) => setGewaehlt(stand.wahl === wahl ? stand : { wahl, vorher: stand.wahl });
   const gruppen = GRUPPEN.filter((g) => anzahl(g.id, fotos) > 0);
   const stufe = stufen(fotos, stand.wahl, stand.vorher);
 
