@@ -54,7 +54,7 @@ export const UEBER_UNS: ErzaehlInhalt = {
       'Möchten Sie vorher in Ruhe über Fliesen sprechen? Dafür gibt es Fliesenberatung in Wetzlar und Gießen, nach Terminvereinbarung.',
   },
   ablauf: {
-    titel: 'So läuft Ihr Auftrag ab.',
+    titel: 'So arbeiten wir mit Ihnen.',
     einleitung: 'Ein Auftrag läuft bei uns in drei Schritten ab. Jeden Schritt erklären wir Ihnen vorher.',
     schritte: [
       { titel: 'Termin bei Ihnen vor Ort', text: 'Deniz Tezgel prüft Boden und Wände genau. Dieser Termin ist für Sie kostenfrei.' },
@@ -71,7 +71,7 @@ export const UEBER_UNS: ErzaehlInhalt = {
   beleg: {
     // Abnahme E3-BAU-08: die Karte steht im ersten Abschnitt der Vorlage unter eigener Überschrift (wie auf der Startseite),
     // die Stimmen mit Überschrift, Satz und Motto der Textdatei im zweiten; so steht „Das sagen unsere Kunden.“ nur einmal
-    titel: 'Hier sind wir für Sie unterwegs.',
+    titel: 'Von Aßlar aus fahren wir zu Ihnen.',
     fotos: [],
     stimmenTitel: 'Das sagen unsere Kunden.',
     stimmenEinleitung:

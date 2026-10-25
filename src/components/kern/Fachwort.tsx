@@ -1,5 +1,6 @@
 // Baustein „Fachwort“ (KERN v3 K-011, K-004): Ein Fachwort steht beim ersten Vorkommen je Seite mit seiner Alltagserklärung
-// direkt dabei, in Klammern und ruhigerer Farbe. Nichts muss aufgeklappt oder gesucht werden (Prüfstein P1).
+// direkt dabei, in Klammern, in Größe und Farbe des Satzes (E-061: graue Klammern unterbrachen den Lesefluss). Nichts muss
+// aufgeklappt oder gesucht werden (Prüfstein P1).
 // Auszeichnung für die Prüfung: <dfn data-glossar="id"> und <span data-erklaert="id"> (werkzeuge/lesbarkeit.mjs).
 // Bei späterem Vorkommen auf derselben Seite `erklaert={false}`: dann nur das Wort, ohne Auszeichnung als Definition.
 import type { ReactNode } from 'react';
@@ -24,7 +25,7 @@ export default function Fachwort({ id, children, erklaert = true }: FachwortProp
       <dfn data-glossar={id} className="font-semibold not-italic text-tinte underline decoration-fuge decoration-1 underline-offset-4">
         {wort}
       </dfn>{' '}
-      <span data-erklaert={id} className="text-tinte-2">
+      <span data-erklaert={id}>
         ({eintrag.klammer})
       </span>
     </>

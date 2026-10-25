@@ -18,7 +18,7 @@ export default function CompanyHistory() {
     <Abschnitt
       titelId="company-history-heading"
       etikett={<>Gegründet {business.establishmentYear} in {headquarters.city} &middot; {authority.shortName}</>}
-      titel="Unsere Unternehmensgeschichte"
+      titel="So sind wir gewachsen."
       mitte
       einleitung={
         <p>

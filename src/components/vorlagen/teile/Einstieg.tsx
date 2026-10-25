@@ -41,15 +41,16 @@ export default function Einstieg({ pfad, brotkrumen, titel, ort, vorspann, bild,
   const { contact } = COMPANY_DATA;
   const titelId = 'seite-titel';
   return (
-    <section aria-labelledby={titelId} data-formel="worum" className="relative">
-      {/* oben Platz für den festen Kopf (64 px) */}
+    <section aria-labelledby={titelId} data-formel="worum" className="@container relative">
+      {/* oben Platz für den festen Kopf (h-16); bei großer Systemschrift am Handy (unter 16 rem Breite) steht die H1 eine Stufe
+          kleiner, damit der Hauptknopf über der unteren Leiste steht (E3-SICHT, E-061) */}
       <div className={clsx(seitenKlassen, 'flex flex-col items-center pt-24 text-center lg:pt-32', kompakt ? 'pb-12 lg:pb-16' : 'pb-16 lg:pb-24')}>
         {brotkrumen && brotkrumen.length > 1 && <Brotkrumen wege={brotkrumen} className="mb-6" />}
         <h1
           id={titelId}
           tabIndex={-1}
           data-erstes-bild="ueberschrift"
-          className={clsx(!kompakt && titel.length > LANGER_TITEL ? 'text-fs-5' : 'text-fs-6', 'max-w-mass text-balance text-tinte outline-none')}
+          className={clsx(!kompakt && titel.length > LANGER_TITEL ? 'text-fs-5' : 'text-fs-6', 'max-w-mass text-balance text-tinte outline-none @max-3xs:text-fs-5')}
         >
           {titel}
         </h1>

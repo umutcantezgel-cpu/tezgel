@@ -70,7 +70,7 @@ export const REFERENZEN: ErzaehlInhalt = {
     absatz: 'Dazu gehören auch [[barrierefrei|barrierefreie]] Bäder, zum Beispiel mit einer Dusche ohne Stufe.',
   },
   ablauf: {
-    titel: 'So läuft Ihr Auftrag ab.',
+    titel: 'So entstehen diese Arbeiten.',
     // Satz nach den Schritten im Text, hier als Einleitung vor den Schritten (siehe Kopf der Datei)
     einleitung: 'Deniz Tezgel ist Ihr fester Ansprechpartner, von der ersten Skizze bis zum fertigen Raum.',
     schritte: [
@@ -94,7 +94,7 @@ export const REFERENZEN: ErzaehlInhalt = {
     fotos: [],
   },
   schritt: {
-    titel: 'Sprechen Sie mit uns über Ihr Vorhaben.',
+    titel: 'Wünschen Sie sich so ein Ergebnis?',
     satz:
       'Schreiben Sie uns Ihren Namen und Ihre Telefonnummer. Deniz Tezgel ruft Sie zurück und macht einen Termin mit Ihnen aus.',
     verwandte: PORTFOLIO_PROJECTS.map((p: { id: string; title: string }) => ({ name: BEISPIELE[p.id] ?? p.title, href: `/referenzen/${p.id}` })),

@@ -21,8 +21,8 @@ export const FLIESEN: WissenInhalt = {
   },
   worum: {
     brotkrumen: [{ name: 'Start', href: '/' }, { name: 'Fliesen und Verlegung' }],
-    // H1 aus Abschnitt 1 der Textdatei (der Meta-Eintrag nennt eine andere Fassung, siehe OFFENE FRAGE)
-    titel: 'Ratgeber zur Fliesenverlegung, einfach erklärt',
+    // H1 als Aussage des Betriebs in Hauptansichtsgröße, kurz genug für den ersten Bildschirm bei 200 % (E3-SICHT, E-061)
+    titel: 'So verlegen wir Fliesen, einfach erklärt.',
     ort: 'Fliesenverlegung Tezgel aus Aßlar',
     vorspann: VORSPANN,
     // Verlegeplan im Einstieg (E-037, E-044: Wissensseiten mit Plan „zeigen“)
@@ -77,7 +77,7 @@ export const FLIESEN: WissenInhalt = {
     },
   ],
   ablauf: {
-    titel: 'So läuft es bei uns ab.',
+    titel: 'Vom ersten Anruf bis zur letzten Fuge.',
     einleitung:
       'Deniz Tezgel ist von der ersten Skizze bis zum Schluss Ihr fester Ansprechpartner. Der Ablauf hat drei Schritte.',
     schritte: [
@@ -102,7 +102,7 @@ export const FLIESEN: WissenInhalt = {
   },
   beleg: {
     // Überschrift wie auf /leistungen (Abnahme, Texthoheit: die Textdatei hatte keine)
-    titel: 'So sieht unsere Arbeit aus.',
+    titel: 'Fliesen, die wir verlegt haben.',
     // Unterschrift: Wörter aus dem Alt-Text der Textdatei, auf sechs Wörter gekürzt (Regel 4)
     fotos: [{ bild: 'start-galerie-1', unterschrift: 'Dusche mit Sitzbank und Mosaikfliesen', href: '/bad/barrierefreies-bad' }],
     satz: 'Seit 2014 ist das Verlegen großer Fliesen ein Schwerpunkt bei uns.',

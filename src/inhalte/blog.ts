@@ -18,7 +18,7 @@ export const BLOG: WissenInhalt = {
   },
   worum: {
     brotkrumen: [{ name: 'Start', href: '/' }, { name: 'Ratgeber' }],
-    titel: 'Fliesenratgeber für Badsanierung, Fliesenverlegung und Abdichtung',
+    titel: 'Wir erklären Bad, Fliesen und Abdichtung.',
     ort: 'Fliesenverlegung Tezgel aus Aßlar',
     vorspann: VORSPANN,
   },
@@ -35,7 +35,7 @@ export const BLOG: WissenInhalt = {
   // erklärt (Schlitz `zeichnungen.artikel`), statt als Werkzeug nach dem nächsten Schritt am Seitenende
   wissen: [
     {
-      titel: 'Wir erklären jedes Thema einzeln.',
+      titel: 'Alle Artikel auf einen Blick.',
       absatz: 'Jeder Artikel gehört zu einem Thema. Sie wählen ein Thema oder geben einen Begriff in die Suche ein.',
       zeichnung: 'artikel',
     },
@@ -60,7 +60,7 @@ export const BLOG: WissenInhalt = {
   },
   beleg: {
     // Überschrift wie auf /leistungen und /fliesen (Abnahme, Texthoheit: die Textdatei hatte keine)
-    titel: 'So sieht unsere Arbeit aus.',
+    titel: 'Aus unserer Praxis.',
     // Unterschrift: Wörter aus dem Alt-Text der Textdatei, auf höchstens sechs Wörter gekürzt (Regel 4)
     fotos: [{ bild: 'start-galerie-1', unterschrift: 'Dusche ohne Stufe mit Sitzbank', href: '/bad/barrierefreies-bad' }],
     // Satz der Textdatei ohne den Satz zur Handwerkskammer (Regel 3)

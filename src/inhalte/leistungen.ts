@@ -45,7 +45,7 @@ export const LEISTUNGEN: ErzaehlInhalt = {
     ],
   },
   beleg: {
-    titel: 'So sieht unsere Arbeit aus.',
+    titel: 'Fertige Arbeiten von uns.',
     fotos: [
       { bild: 'leistungen-bad', unterschrift: 'Bad mit neuer Badewanne', href: '/bad/badsanierung' },
       { bild: 'leistungen-balkon', unterschrift: 'Balkon mit neuen Fliesen', href: '/balkon-terrasse' },

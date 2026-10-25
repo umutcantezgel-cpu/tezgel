@@ -77,7 +77,7 @@ export const BADSANIERUNG: ErzaehlInhalt = {
       { bild: 'sanierung-weg-3', unterschrift: 'Brauner Boden im Duschbereich', href: '/bad/badsanierung' },
     ],
     zweierbild: {
-      titel: 'So entsteht eine Dusche ohne Stufe',
+      titel: 'So sieht eine Dusche im Bau aus',
       bilder: [
         { bild: 'entstehung-dusche-1', unterschrift: 'große Fliesen liegen auf einer Höhe' },
         { bild: 'entstehung-dusche-2', unterschrift: 'Fliesen schräg zum Ablauf geschnitten' },
@@ -88,7 +88,7 @@ export const BADSANIERUNG: ErzaehlInhalt = {
     verweis: { name: 'Alle Bewertungen', href: '/referenzen' },
   },
   schritt: {
-    titel: 'Sprechen Sie mit uns über Ihr neues Bad.',
+    titel: 'Sprechen wir über Ihre Badsanierung.',
     satz: 'Sagen Sie uns, welches Bad Sie sich wünschen. Den Rest besprechen wir gemeinsam.',
     // Hilfen ohne Satz in der Textdatei; das Feld `satz` ist im Typ Pflicht, daher leer (OFFENE FRAGE)
     hilfen: [

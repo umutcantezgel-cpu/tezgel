@@ -60,7 +60,7 @@ export function ortsInhalt(stadt: CityData, kmAbSitz: number, index: number): Or
       bereiche: leistungen,
     },
     ablauf: {
-      titel: 'So kommen Sie zu Ihrem neuen Boden.',
+      titel: `So kommen Sie in ${name} zu Ihrem neuen Boden.`,
       schritte: [
         { titel: 'Termin bei Ihnen vor Ort', text: 'Deniz Tezgel kommt zu Ihnen. Er schaut sich den Raum genau an und prüft den Untergrund. Dieser Termin ist für Sie kostenfrei.' },
         { titel: 'Planen und auswählen', text: 'Sie suchen mit uns Fliesen, ihre Größe und die Farbe der Fugen aus. Danach bekommen Sie ein Angebot mit festem Preis.' },
@@ -68,7 +68,7 @@ export function ortsInhalt(stadt: CityData, kmAbSitz: number, index: number): Or
       ],
     },
     beleg: {
-      titel: 'So sieht unsere Arbeit aus.',
+      titel: `So arbeiten wir in ${name} und Umgebung.`,
       fotos,
       stimmen: [STIMMEN[index % STIMMEN.length]],
       verweis: { name: 'Alle Arbeiten ansehen', href: '/referenzen' },

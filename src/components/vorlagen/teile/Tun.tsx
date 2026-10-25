@@ -92,7 +92,7 @@ export function Bereichsfliesen({ bereiche }: { bereiche: Bereich[] }) {
 
 export function Punktfliesen({ punkte }: { punkte: ReactNode[] }) {
   return (
-    <div className="@container">
+    <div className="@container mx-auto max-w-mass">
       <ul className="grid gap-px border border-fuge bg-fuge">
         {punkte.map((p, i) => (
           <li key={i} className="flex flex-col gap-2 bg-fliese p-3 @xs:flex-row @xs:gap-3 @xs:p-6">

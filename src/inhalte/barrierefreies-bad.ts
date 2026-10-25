@@ -74,7 +74,7 @@ export const BARRIEREFREIES_BAD: ErzaehlInhalt = {
     verweis: { name: 'Alle Arbeiten ansehen', href: '/referenzen?raum=dusche#unsere-arbeiten' },
   },
   schritt: {
-    titel: 'Sprechen Sie mit uns über Ihr neues Bad.',
+    titel: 'Sprechen Sie mit uns über Ihre Dusche ohne Stufe.',
     satz: 'Rufen Sie an oder fragen Sie einen Termin an. Deniz Tezgel kommt zu Ihnen und berät Sie.',
   },
 };

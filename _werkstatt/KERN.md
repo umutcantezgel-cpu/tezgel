@@ -187,7 +187,7 @@ Bezug ist eine Fliese 30 × 60 cm im Maßstab 1 cm = 3,2 px: kurze Seite **F = 9
 - **Mikrotexte:** Hauptknopf „Termin vor Ort anfragen“; Telefon „Anrufen: 06441 / 44 83 567“; WhatsApp „Nachricht per WhatsApp“; Absenden „Anfrage senden“ (bestehender Text bleibt, wenn Tests ihn prüfen); Laden „Wird gesendet …“; Erfolg aus dem Bestand.
 
 ## K-011 Glossar (Alltagserklärung ≤ 15 Wörter)
-Maschinenfassung `src/config/glossar.ts` (Quelle) und `regeln/glossar.json` (Prüfung). Erklärung steht beim ersten Vorkommen je Seite direkt dabei.
+Maschinenfassung `src/config/glossar.ts` (Quelle) und `regeln/glossar.json` (Prüfung). Erklärung steht beim ersten Vorkommen je Seite direkt dabei. Sie steht in Klammern in Größe und Farbe des Satzes (Baustein `kern/Fachwort`; E-061: graue Klammern unterbrachen den Lesefluss).
 
 | Begriff | Erklärung |
 |---|---|

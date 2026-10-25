@@ -63,7 +63,7 @@ export function LeadQuickForm({
   sourceTag = 'schnellanfrage-leistungsseite',
   heading = 'Einen kostenfreien Termin bei Ihnen vor Ort anfragen',
   subheading = 'Das geht in 60 Sekunden. Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich bei Ihnen.',
-  submitLabel = 'Unverbindliches Angebot anfordern',
+  submitLabel = 'Termin vor Ort anfragen',
   onSuccess,
   className = '',
   titelId,
