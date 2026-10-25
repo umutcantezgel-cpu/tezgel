@@ -4,7 +4,8 @@
 // Raumzeichen), darunter die Statuszeile (role="status") und die Fotos als verlegte Fläche. Die Fotos kommen fertig vom
 // Server (Bildfeld als Knoten); die Insel setzt nur hidden und die Marke data-galerie-neu mit der Staffelstufe. Neue Fotos
 // blenden in dauer-2 ein, Stück für Stück (CSS in bewegung.css), wegfallende gehen sofort. Ohne JavaScript stehen alle
-// Fotos; Satz, Knöpfe und Statuszeile sind dann verborgen (noscript:hidden). Eine Auswahl in der Adresse (`?raum=`) gilt,
+// Fotos; Satz, Knöpfe und Statuszeile sind dann verborgen (noscript:hidden), im Druck ebenso (print:hidden: auf Papier
+// gibt es nichts zu wählen, gedruckt werden die gezeigten Fotos). Eine Auswahl in der Adresse (`?raum=`) gilt,
 // bis man selbst wählt. Rand je Foto statt Fugen-Hintergrund: Nach dem
 // Filtern stehen keine grauen Restfelder, die Fläche endet wie ein Boden mitten im Verlegen.
 import { useId, useState, useSyncExternalStore, type CSSProperties, type ReactNode } from 'react';
@@ -47,8 +48,8 @@ export default function GalerieWahl({ fotos, satz }: { fotos: GalerieWahlFoto[];
 
   return (
     <div>
-      {/* Bedienung: ohne JavaScript verborgen (die Knöpfe täten nichts), dann stehen alle Fotos */}
-      <div className="noscript:hidden">
+      {/* Bedienung: ohne JavaScript verborgen (die Knöpfe täten nichts), dann stehen alle Fotos; im Druck verborgen */}
+      <div className="noscript:hidden print:hidden">
         {/* mittig unter dem mittigen Kopf des Belegs (K-016, E-047) */}
         <p id={satzId} className="mx-auto max-w-mass text-center font-text text-fs-3 text-pretty text-tinte">
           {satz}

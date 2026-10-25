@@ -40,7 +40,8 @@ export default function Intro() {
           )}
         </div>
       ))}
-      <div className="intro-schild" style={takt(ABLAUF.gleiten.beginn, ABLAUF.gleiten.dauer) as Stil}>
+      {/* INTRO_ZIEL (lib/motion/kopfskript.ts) setzt --intro-x, --intro-y und --intro-s vor der Hydrierung: erwartete Abweichung */}
+      <div className="intro-schild" suppressHydrationWarning style={takt(ABLAUF.gleiten.beginn, ABLAUF.gleiten.dauer) as Stil}>
         <Image
           className="intro-logo"
           src={INTRO_LOGO}

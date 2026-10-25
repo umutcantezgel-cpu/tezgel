@@ -330,6 +330,34 @@
       animation-iteration-count: 1 !important;
     }
   }
+
+  /* Ohne JavaScript ist alles sichtbar (K-007; E3-GRAF-PRUEF GP-02, E-058). React lagert große Suspense-Grenzen aus: Ihr
+     Inhalt steht als <div hidden id="S:n"> am Ende von <body>, ein Inline-Skript setzt ihn an den Platz seiner Vorlage
+     (Hydrierungseinheiten aus E-033 und E-034). Ohne Skript bliebe so alles nach dem Einstieg verborgen. <body> ist ein
+     Flex-Stapel; der Inhalt der Seite (Grenze aus Abschnitten) rückt per order hinter <main>, der Inhalt des Fußes
+     (Grenze mit dem Seitenindex) vor <footer> und trägt dessen Fläche. Navigation, Menüblatt und nachgeladene Formulare
+     bleiben verborgen: Sie wirken nur mit Skript, an ihrem Platz steht der Platzhalter mit Anruf, WhatsApp und E-Mail
+     (R-01b). !important und die höhere Spezifität schlagen [hidden] aus der Grundschicht von Tailwind. */
+  @media (scripting: none) {
+    body > div[hidden][id^="S:"]:has(> section),
+    body > div[hidden][id^="S:"]:has(#seitenindex) {
+      display: block !important;
+    }
+    body > div[id^="S:"]:has(> section) {
+      order: 1;
+    }
+    body > div[id^="S:"]:has(#seitenindex) {
+      order: 2;
+      background-color: var(--color-tinte);
+      color: var(--color-kalk);
+    }
+    body > div[id^="S:"]:has(#seitenindex) :focus-visible {
+      outline-color: var(--color-kalk);
+    }
+    body > footer {
+      order: 3;
+    }
+  }
 }
 
 @layer components {

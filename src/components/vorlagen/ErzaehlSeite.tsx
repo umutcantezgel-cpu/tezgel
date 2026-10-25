@@ -13,7 +13,8 @@
 //   „Streaming“, Abschnitt INP). Eine Grenze statt sieben: React lagert jede große Grenze aus und setzt sie per Skript an
 //   ihren Platz, jede davon kostet eine Verschiebung mit Layout (Blockierzeit, E-034). Die Inhalte warten auf nichts; bis
 //   React die ausgelagerte Grenze eingesetzt hat, hält ein Platzhalter von einer Bildschirmhöhe den Fuß unter dem ersten
-//   Bildschirm (sonst stand er dort kurz und sprang dann weg: CLS 0,07 am Desktop, E-036).
+//   Bildschirm (sonst stand er dort kurz und sprang dann weg: CLS 0,07 am Desktop, E-036). Ohne JavaScript entfällt der
+//   Platzhalter, und globals.css rückt den ausgelagerten Inhalt hinter <main> (E-058).
 // - Die Abschnitte nach dem Einstieg zeichnen spät (content-visibility): Stil und Layout erst in Sichtnähe, sonst rechnete
 //   das Einsetzen der Grenze das Layout der ganzen Seite in einer langen Aufgabe (E3-LEIST-01); der nächste Schritt ist
 //   Sprungziel und zeichnet sofort.
@@ -56,7 +57,7 @@ export default function ErzaehlSeite({ inhalt, momente, werkzeug, nachBeleg, ein
   const { worum } = inhalt;
   const ziel = hauptziel(inhalt.pfad);
   const rest = (
-    <Suspense fallback={<div aria-hidden="true" className="min-h-dvh" />}>
+    <Suspense fallback={<div aria-hidden="true" className="min-h-dvh noscript:hidden" />}>
       <Lage inhalt={inhalt.lage} />
       <Tun inhalt={inhalt.tun} moment={momente?.tun} />
       <Ablauf inhalt={inhalt.ablauf} moment={momente?.ablauf} />

@@ -3,10 +3,11 @@
 // Wand links mit kleinen, rechts mit großen Fliesen (bis 120 × 260 cm, F-20); die Zeichnung zeigt, wie viel weniger Fugen große
 // Fliesen haben (ohne Zahlen, E-045). Der Regler schiebt
 // die Trennlinie direkt, ohne Übergang (Rückmeldung; reduziert gleich). Bedienung: nativer Schieberegler (Pfeile, Bild auf/ab,
-// Pos1, Ende; Screenreader mit Ansage) und Zeiger auf der Wand (Maus klicken und ziehen; Finger waagrecht ziehen oder tippen,
-// senkrecht scrollt die Seite weiter). Bewegt wird nur translate über --formatregler-teil (CSS in bewegung.css).
-// Ohne JavaScript steht die Linie in der Mitte, beide Formate sind zu sehen; der Regler ist unsichtbar,
-// sein Platz bleibt (kein Layoutsprung). Texte aus _werkstatt/texte/leistungen.md.
+// Pos1, Ende; Screenreader mit Ansage) und Zeiger auf der Wand (Maus klicken und ziehen; Finger erst nach 8 px waagrecht
+// oder beim Tippen wie beim Regler von vorher-nachher, senkrecht scrollt die Seite weiter und die Linie bleibt). Bewegt wird
+// nur translate über --formatregler-teil (CSS in bewegung.css). Ohne JavaScript steht die Linie in der Mitte, beide Formate
+// sind zu sehen; Regler und Griff sind unsichtbar (kein toter Griff), ihr Platz bleibt (kein Layoutsprung). Im Druck fehlen
+// beide. Texte aus _werkstatt/texte/leistungen.md.
 import { useId, useRef, useState, useSyncExternalStore, type CSSProperties, type PointerEvent as Zeigerereignis } from 'react';
 import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
@@ -16,12 +17,19 @@ import { START, wertAusZeiger, wertText } from './geometrie';
 const ohneAbo = () => () => {};
 const NBSP = String.fromCharCode(160);
 const GROSS_NAME = `Große Fliese, bis 120${NBSP}×${NBSP}260${NBSP}cm`;
+const SCHWELLE_FINGER = 8;
+
+interface Zug {
+  id: number;
+  x: number;
+  gezogen: boolean;
+}
 
 export default function Formatregler() {
   const [wert, setWert] = useState(START);
   // true nach der Hydrierung, auf dem Server und ohne JavaScript false (Muster aus common/FussGruppe.tsx)
   const bereit = useSyncExternalStore(ohneAbo, () => true, () => false);
-  const zeiger = useRef<number | null>(null);
+  const zug = useRef<Zug | null>(null);
   const reglerId = `formatregler-${useId().replace(/[^a-zA-Z0-9-]/g, '')}`;
   const ausZeiger = (e: Zeigerereignis<HTMLDivElement>) => {
     const r = e.currentTarget.getBoundingClientRect();
@@ -45,20 +53,25 @@ export default function Formatregler() {
             className={clsx('formatregler-bild touch-pan-y select-none', bereit && 'cursor-ew-resize')}
             style={{ '--formatregler-teil': `${wert}%` } as CSSProperties}
             onPointerDown={(e) => {
-              if (e.button !== 0) return;
-              zeiger.current = e.pointerId;
+              if (!e.isPrimary || e.button !== 0) return;
               e.currentTarget.setPointerCapture(e.pointerId);
-              // Maus springt sofort; Finger erst beim Ziehen oder Tippen, damit Scrollen die Linie nicht versetzt
+              // Maus springt sofort; Finger erst nach der Schwelle oder beim Tippen, damit Scrollen die Linie nicht versetzt
+              zug.current = { id: e.pointerId, x: e.clientX, gezogen: e.pointerType === 'mouse' };
               if (e.pointerType === 'mouse') ausZeiger(e);
             }}
-            onPointerMove={(e) => { if (zeiger.current === e.pointerId) ausZeiger(e); }}
-            onPointerUp={(e) => { if (zeiger.current !== e.pointerId) return; ausZeiger(e); zeiger.current = null; }}
-            onPointerCancel={() => { zeiger.current = null; }}
+            onPointerMove={(e) => {
+              const z = zug.current;
+              if (!z || z.id !== e.pointerId) return;
+              if (!z.gezogen && Math.abs(e.clientX - z.x) >= SCHWELLE_FINGER) z.gezogen = true;
+              if (z.gezogen) ausZeiger(e);
+            }}
+            onPointerUp={(e) => { if (zug.current?.id !== e.pointerId) return; ausZeiger(e); zug.current = null; }}
+            onPointerCancel={() => { zug.current = null; }}
           >
             <Wand format="klein" />
             <div className="formatregler-gross" aria-hidden="true"><div><Wand format="gross" /></div></div>
             <div className="formatregler-trenner" aria-hidden="true">
-              <span className="formatregler-griff flex size-11 items-center justify-center border border-tinte bg-fliese"><Icon name="pfeil-links" groesse={4} /><Icon name="pfeil-rechts" groesse={4} /></span>
+              <span className={clsx('formatregler-griff flex size-11 items-center justify-center border border-tinte bg-fliese print:hidden', !bereit && 'invisible')}><Icon name="pfeil-links" groesse={4} /><Icon name="pfeil-rechts" groesse={4} /></span>
             </div>
           </div>
           <div className={clsx('formatregler-regler mt-6', !bereit && 'invisible')}>

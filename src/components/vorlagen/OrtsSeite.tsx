@@ -36,7 +36,7 @@ export default function OrtsSeite({ inhalt, formular, nachbarn, karte }: OrtsSei
     <Seitenformel>
       <Leitachse>
         <Einstieg pfad={inhalt.pfad} brotkrumen={worum.brotkrumen} titel={worum.titel} ort={worum.ort} vorspann={worum.vorspann} bild={karte} hauptziel={`#${ORT_ANKER}`} />
-        <Suspense fallback={<div aria-hidden="true" className="min-h-dvh" />}>
+        <Suspense fallback={<div aria-hidden="true" className="min-h-dvh noscript:hidden" />}>
           <Lage inhalt={inhalt.lage} />
           <Tun inhalt={inhalt.tun} />
           <Ablauf inhalt={inhalt.ablauf} />

@@ -33,7 +33,7 @@ export default function WissensSeite({ inhalt, zeichnungen, werkzeug }: WissensS
     <Seitenformel>
       <Leitachse>
         <Einstieg pfad={inhalt.pfad} brotkrumen={worum.brotkrumen} titel={worum.titel} ort={worum.ort} vorspann={worum.vorspann} bild={bild} hauptziel={hauptziel(inhalt.pfad)} />
-        <Suspense fallback={<div aria-hidden="true" className="min-h-dvh" />}>
+        <Suspense fallback={<div aria-hidden="true" className="min-h-dvh noscript:hidden" />}>
           <Lage inhalt={inhalt.lage} />
           <Wissen bloecke={inhalt.wissen} zeichnungen={zeichnungen} />
           <Ablauf inhalt={inhalt.ablauf} />

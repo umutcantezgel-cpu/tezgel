@@ -364,9 +364,17 @@ html.k-bewegung:not(.k-notaus) [data-motion="galerie-filter"][data-galerie-neu] 
 
 /* glasbild (K-016, E-047) – Foto ohne Unterschrift; mit Link dunkelt beim Darüberfahren oder mit dem Fokus eine Glasfläche
    das Bild ab und zeigt Name und Weg (dauer-2 · setzen, nur opacity). Ohne Maus (Touch) und ohne Link steht der Name immer
-   unten auf einem Verlauf. Erzwungene Farben: das Foto bleibt frei, nur der Text steht auf Canvas. */
-.glasbild-flaeche {
-  background: linear-gradient(to top, color-mix(in srgb, var(--color-tinte) 72%, transparent), transparent 55%);
+   unten auf einem Verlauf. Der Verlauf hängt am Textblock (oben ein Auslauf von 12 Einheiten), damit jede Zeile auch bei
+   großer Systemschrift auf mindestens 64 % Tinte steht (Kalk darauf über Weiß 5,1 : 1). Erzwungene Farben: das Foto bleibt
+   frei, nur der Text steht auf Canvas. */
+.glasbild-text {
+  padding-top: calc(var(--spacing) * 12);
+  background: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--color-tinte) 72%, transparent),
+    color-mix(in srgb, var(--color-tinte) 64%, transparent) calc(100% - var(--spacing) * 12),
+    transparent
+  );
 }
 @media (hover: hover) {
   a.glasbild .glasbild-flaeche {
@@ -382,12 +390,13 @@ html.k-bewegung:not(.k-notaus) [data-motion="galerie-filter"][data-galerie-neu] 
 }
 @media (forced-colors: active) {
   .glasbild-flaeche,
-  a.glasbild .glasbild-flaeche {
+  a.glasbild .glasbild-flaeche,
+  .glasbild-text {
     opacity: 1;
     background: none;
     backdrop-filter: none;
   }
-  .glasbild-flaeche > span {
+  .glasbild-text > span {
     align-self: flex-start;
     background: Canvas;
     color: CanvasText;
