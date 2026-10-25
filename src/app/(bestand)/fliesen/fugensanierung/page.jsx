@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { COMPANY_DATA } from '@/config/company';
 import { REVIEWS } from '@/config/reviews';
 import { createMetadata } from '@/lib/metadata';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 import Icon from '@/components/icons/Icon';
 import QualityPromise from '@/components/sections/QualityPromise';
 import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
@@ -71,6 +72,16 @@ export default function FugensanierungPage() {
 
     return (
         <>
+            <SeitenDaten
+                pfad="/fliesen/fugensanierung"
+                titel="Fugensanierung & Silikonfugen erneuern | Tezgel"
+                beschreibung="Fugensanierung in Wetzlar & Aßlar: Schimmelige Silikonfugen & bröselnde Zementfugen fachgerecht austauschen und dauerhaft abdichten. Jetzt anfragen!"
+                brotkrumen={[
+                    { name: 'Start', href: '/' },
+                    { name: 'Fliesen und Verlegung', href: '/fliesen' },
+                    { name: 'Fugensanierung: Silikon- und Zementfugen fachgerecht erneuern' },
+                ]}
+            />
             {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt „fugen“ ohne Achse */}
             <section aria-labelledby="fugen-heading">
                 <Einstieg

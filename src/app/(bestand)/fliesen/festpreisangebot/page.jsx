@@ -9,6 +9,7 @@ import dynamic from 'next/dynamic';
 import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzhalter';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 import Icon from '@/components/icons/Icon';
 import QualityPromise from '@/components/sections/QualityPromise';
 import Abschnitt from '@/components/kern/Abschnitt';
@@ -78,6 +79,16 @@ const CROSS_LINKS = [
 export default function FestpreisangebotPage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/fliesen/festpreisangebot"
+                titel="Fliesenleger Festpreisangebot | Fachbetrieb Tezgel"
+                beschreibung="Transparentes Festpreisangebot für Fliesenarbeiten: Aufmaß, Material & Verlegung ohne versteckte Kosten. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!"
+                brotkrumen={[
+                    { name: 'Start', href: '/' },
+                    { name: 'Fliesen und Verlegung', href: '/fliesen' },
+                    { name: 'Festpreisangebot für Fliesenarbeiten: was den Aufwand bestimmt' },
+                ]}
+            />
             {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, Knöpfe; rechts das Planblatt „wohnen“ */}
             <section aria-labelledby="festpreis-heading">
                 <Einstieg

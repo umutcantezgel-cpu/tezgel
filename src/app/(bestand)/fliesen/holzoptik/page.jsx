@@ -9,6 +9,7 @@ import dynamic from 'next/dynamic';
 import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzhalter';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 import QualityPromise from '@/components/sections/QualityPromise';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Einstieg from '@/components/kern/Einstieg';
@@ -75,6 +76,16 @@ const WEITERLESEN = [
 export default function HolzoptikPage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/fliesen/holzoptik"
+                titel="Fliesen in Holzoptik verlegen | Fliesenleger Tezgel"
+                beschreibung="Holzoptik-Fliesen aus Feinsteinzeug verlegen lassen: warme Holzoptik, feuchteresistent & ideal für Fußbodenheizung. Fachbetrieb Tezgel – Jetzt anfragen!"
+                brotkrumen={[
+                    { name: 'Start', href: '/' },
+                    { name: 'Fliesen und Verlegung', href: '/fliesen' },
+                    { name: 'Fliesen in Holzoptik: Dielenlook mit keramischer Robustheit' },
+                ]}
+            />
             {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts der Plan „wohnen“ im Planblatt */}
             <section aria-labelledby="holzoptik-heading">
                 <Einstieg

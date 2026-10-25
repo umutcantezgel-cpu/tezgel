@@ -8,6 +8,7 @@ import dynamic from 'next/dynamic';
 import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzhalter';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 import QualityPromise from '@/components/sections/QualityPromise';
 import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
 import Abschnitt from '@/components/kern/Abschnitt';
@@ -211,6 +212,16 @@ const WEITERLESEN = [
 export default function VerlegemusterPage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/fliesen/verlegemuster"
+                titel="Fliesen-Verlegemuster: Fischgrät & Verbände | Tezgel"
+                beschreibung="Fliesen-Verlegemuster im Überblick: Kreuzfuge, Halbverband, Fischgrät & Diagonalverlegung. Verschnitt, Wirkung & Fachberatung von Fliesenleger Tezgel."
+                brotkrumen={[
+                    { name: 'Start', href: '/' },
+                    { name: 'Fliesen und Verlegung', href: '/fliesen' },
+                    { name: 'Fliesen-Verlegemuster: Fischgrät & Verbände bei Tezgel' },
+                ]}
+            />
             {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt mit dem Verband-Umschalter */}
             <Einstieg
                 art="erzaehl"

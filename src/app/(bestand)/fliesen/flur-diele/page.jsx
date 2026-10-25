@@ -10,6 +10,7 @@ import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzh
 import clsx from 'clsx';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 import Icon from '@/components/icons/Icon';
 import QualityPromise from '@/components/sections/QualityPromise';
 import Abschnitt from '@/components/kern/Abschnitt';
@@ -75,6 +76,16 @@ const CROSS_LINKS = [
 export default function FlurDielePage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/fliesen/flur-diele"
+                titel="Flur & Diele fliesen lassen | Fliesenleger Tezgel"
+                beschreibung="Flur & Eingangsbereich fliesen lassen: strapazierfähige Formate, Verlegerichtung, Rutschhemmung & Schmutzfangzonen. Fachbetrieb Tezgel – Jetzt anfragen!"
+                brotkrumen={[
+                    { name: 'Start', href: '/' },
+                    { name: 'Fliesen und Verlegung', href: '/fliesen' },
+                    { name: 'Flur und Diele fliesen: robust vom Eingang bis in den Wohnbereich' },
+                ]}
+            />
             {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt „wohnen“ ohne Achse */}
             <section aria-labelledby="flur-heading">
                 <Einstieg

@@ -9,6 +9,7 @@ import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzh
 import clsx from 'clsx';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 import Icon from '@/components/icons/Icon';
 import QualityPromise from '@/components/sections/QualityPromise';
 import Abschnitt from '@/components/kern/Abschnitt';
@@ -110,6 +111,16 @@ function Karte({ id, ebene: Ebene = 'h3', titel, children }) {
 export default function NeubauPage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/fliesen/neubau"
+                titel="Fliesen im Neubau verlegen lassen | Fliesen Tezgel"
+                beschreibung="Fliesenleger für Neubau-Projekte in Wetzlar & Aßlar: Termintreue, Belegreifeprüfung, Bemusterung & Schnittstellenkoordination. Jetzt Angebot anfragen!"
+                brotkrumen={[
+                    { name: 'Start', href: '/' },
+                    { name: 'Fliesen und Verlegung', href: '/fliesen' },
+                    { name: 'Fliesen im Neubau verlegen lassen mit Fliesen Tezgel' },
+                ]}
+            />
             {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt mit dem Plan „untergrund“ */}
             <Einstieg
                 art="erzaehl"

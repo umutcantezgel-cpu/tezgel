@@ -9,6 +9,7 @@ import dynamic from 'next/dynamic';
 import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzhalter';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 import QualityPromise from '@/components/sections/QualityPromise';
 import Icon from '@/components/icons/Icon';
 import Abschnitt from '@/components/kern/Abschnitt';
@@ -91,6 +92,16 @@ const CROSS_LINKS = [
 export default function RenovierungPage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/fliesen/renovierung"
+                titel="Fliesen Renovierung: Alte Fliesen erneuern | Tezgel"
+                beschreibung="Fliesenboden im bewohnten Bestand fachgerecht renovieren & erneuern: Ablauf, Staubschutz & Etappenplanung vom Fliesenleger-Fachbetrieb Tezgel in Hessen."
+                brotkrumen={[
+                    { name: 'Start', href: '/' },
+                    { name: 'Fliesen und Verlegung', href: '/fliesen' },
+                    { name: 'Fliesenboden im Bestand erneuern: Ablauf im bewohnten Haus' },
+                ]}
+            />
             {/* 1. EINSTIEG: Kennzeile, H1 auf der Achse, Vorspann, Knöpfe; rechts das Planblatt mit dem Plan „reparatur“ */}
             <section aria-labelledby="renovierung-heading">
                 <Einstieg

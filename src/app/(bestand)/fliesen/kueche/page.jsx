@@ -9,6 +9,7 @@ import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzh
 import { COMPANY_DATA } from '@/config/company';
 import { REVIEWS } from '@/config/reviews';
 import { createMetadata } from '@/lib/metadata';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 import QualityPromise from '@/components/sections/QualityPromise';
 import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
 import Abschnitt from '@/components/kern/Abschnitt';
@@ -85,6 +86,16 @@ export default function KuechePage() {
 
     return (
         <>
+            <SeitenDaten
+                pfad="/fliesen/kueche"
+                titel="Küchenfliesen verlegen Wetzlar | Fliesenleger Tezgel"
+                beschreibung="Küchenfliesen & Fliesenspiegel verlegen in Wetzlar & Aßlar: strapazierfähige Böden, Großformate & pflegeleichte Fugen. Jetzt unverbindlich beraten lassen!"
+                brotkrumen={[
+                    { name: 'Start', href: '/' },
+                    { name: 'Fliesen und Verlegung', href: '/fliesen' },
+                    { name: 'Küchenfliesen verlegen in Wetzlar mit Fliesenleger Tezgel' },
+                ]}
+            />
             {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt mit dem Plan „wohnen“ */}
             <Einstieg
                 art="erzaehl"

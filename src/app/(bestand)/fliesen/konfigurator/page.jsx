@@ -9,6 +9,7 @@ import Icon from '@/components/icons/Icon';
 import QualityPromise from '@/components/sections/QualityPromise';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 import Einstieg from '@/components/kern/Einstieg';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Knopf from '@/components/kern/Knopf';
@@ -108,6 +109,16 @@ const RELATED_LINKS = [
 export default function FliesenKonfiguratorPage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/fliesen/konfigurator"
+                titel="Fliesen-Konfigurator & Bedarfsrechner | Tezgel"
+                beschreibung="Fliesen online konfigurieren: Raum, Untergrund, Format & Fläche wählen und unverbindliche Preisschätzung erhalten. Fliesenverlegung Tezgel in Hessen."
+                brotkrumen={[
+                    { name: 'Start', href: '/' },
+                    { name: 'Fliesen und Verlegung', href: '/fliesen' },
+                    { name: 'Fliesen-Konfigurator & Bedarfsrechner von Tezgel' },
+                ]}
+            />
             {/* 1. Einstieg: kompakter Kopf (H1 text-fs-6), Aktionen und der Hinweis auf die Badseiten */}
             <Einstieg
                 art="arbeit"

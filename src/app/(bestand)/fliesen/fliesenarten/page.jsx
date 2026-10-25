@@ -9,6 +9,7 @@ import dynamic from 'next/dynamic';
 import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzhalter';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
 import QualityPromise from '@/components/sections/QualityPromise';
 import Abschnitt from '@/components/kern/Abschnitt';
@@ -126,6 +127,16 @@ const WEITERLESEN = [
 export default function FliesenartenPage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/fliesen/fliesenarten"
+                titel="Fliesenarten im Vergleich: Feinsteinzeug & Co. | Tezgel"
+                beschreibung="Fliesenarten im Vergleich: Feinsteinzeug, Steinzeug & Steingut. Wasseraufnahme, Frostsicherheit & Abriebklassen erklärt vom Fachbetrieb Tezgel aus Aßlar."
+                brotkrumen={[
+                    { name: 'Start', href: '/' },
+                    { name: 'Fliesen und Verlegung', href: '/fliesen' },
+                    { name: 'Feinsteinzeug, Steinzeug, Steingut: Fliesenarten und ihre Eigenschaften' },
+                ]}
+            />
             {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, Knöpfe; rechts das Planblatt „naturstein“ */}
             <section aria-labelledby="fliesenarten-heading">
                 <Einstieg

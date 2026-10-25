@@ -9,6 +9,7 @@ import dynamic from 'next/dynamic';
 import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzhalter';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 import QualityPromise from '@/components/sections/QualityPromise';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Einstieg from '@/components/kern/Einstieg';
@@ -90,6 +91,16 @@ const CROSS_LINKS = [
 export default function VerlegetechnikPage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/fliesen/verlegetechnik"
+                titel="Verlegetechnik Fliesen: Dünnbett & Kleber | Tezgel"
+                beschreibung="Verlegetechniken für Fliesen nach DIN 18157: Dünnbett, Mittelbett, Buttering-Floating & Kleberklassen erklärt vom Fachbetrieb Tezgel aus Aßlar & Wetzlar."
+                brotkrumen={[
+                    { name: 'Start', href: '/' },
+                    { name: 'Fliesen und Verlegung', href: '/fliesen' },
+                    { name: 'Verlegetechnik und Werkstoffe: Kleber, Bettung und Fugenmörtel' },
+                ]}
+            />
             {/* 1. EINSTIEG: Kennzeile, H1 auf der Achse, Vorspann, Knöpfe; rechts das Planblatt mit dem Plan „fugen“ */}
             <section aria-labelledby="verlegetechnik-heading">
                 <Einstieg

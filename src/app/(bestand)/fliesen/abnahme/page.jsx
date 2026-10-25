@@ -7,6 +7,7 @@
 import Link from 'next/link';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 import QualityPromise from '@/components/sections/QualityPromise';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Einstieg from '@/components/kern/Einstieg';
@@ -105,6 +106,16 @@ const CROSS_LINKS = [
 export default function AbnahmePage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/fliesen/abnahme"
+                titel="Fliesenarbeiten abnehmen: Checkliste & Normen | Tezgel"
+                beschreibung="Checkliste für die Abnahme von Fliesenarbeiten: Ebenheit nach DIN 18202, Fugenbild, Hohlstellen & Toleranzen erklärt vom Fachbetrieb Tezgel aus Aßlar."
+                brotkrumen={[
+                    { name: 'Start', href: '/' },
+                    { name: 'Fliesen und Verlegung', href: '/fliesen' },
+                    { name: 'Fliesenarbeiten abnehmen: Checkliste & Normen bei Tezgel' },
+                ]}
+            />
             {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt mit dem Fugenbild */}
             <section aria-labelledby="abnahme-heading">
                 <Einstieg

@@ -8,6 +8,7 @@ import dynamic from 'next/dynamic';
 import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzhalter';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 import Icon from '@/components/icons/Icon';
 import QualityPromise from '@/components/sections/QualityPromise';
 import Abschnitt from '@/components/kern/Abschnitt';
@@ -118,6 +119,16 @@ const WEITERLESEN = [
 export default function GrossformatPage() {
     return (
         <>
+            <SeitenDaten
+                pfad="/fliesen/grossformat"
+                titel="Großformatfliesen verlegen lassen | Fliesen Tezgel"
+                beschreibung="XXL-Großformatfliesen & fugenlose Platten fachgerecht verlegen lassen: perfekte Untergrundvorbereitung & Handling. Fachbetrieb Tezgel in Wetzlar & Aßlar!"
+                brotkrumen={[
+                    { name: 'Start', href: '/' },
+                    { name: 'Fliesen und Verlegung', href: '/fliesen' },
+                    { name: 'Großformatfliesen verlegen: fugenarm, planeben, präzise' },
+                ]}
+            />
             {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts der Plan „grossformat“ im Planblatt */}
             <section aria-labelledby="grossformat-heading">
                 <Einstieg
