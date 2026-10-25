@@ -2,10 +2,10 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { CITIES, type CityData } from '@/config/cities';
 import { CITY_HUB_DATA } from '@/lib/maps/getMapEmbedUrl';
-import { buildGraph, buildCityLocalBusinessNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
+import { buildCityLocalBusinessNode } from '@/lib/schema';
 import { findCityConfig, getCityLandingPageSchema } from '@/lib/schemaPyramid';
 import { createMetadata } from '@/lib/metadata';
-import JsonLd from '@/components/seo/JsonLd';
+import SeitenDaten from '@/components/seo/SeitenDaten';
 import Einzugsband from '@/components/kern/Einzugsband';
 // Schnellformular direkt eingebunden (F-07, Gutachten u7): Es steht so im ausgelieferten HTML und ist ohne JavaScript
 // sichtbar (K-004), statt in einem verborgenen Streaming-Container hinter „Anfrageformular wird geladen...“.
@@ -16,7 +16,8 @@ import { ortsInhalt, type Ortsinhalt } from '@/inhalte/orte';
 // Standortseite `/standorte/[stadt]` (E3-BAU-10, KERN v3.6, Zusatz E3-BAU-K016): Ortsseite auf der Vorlage `OrtsSeite`.
 // Der Inhalt kommt aus `ortsInhalt()` (`src/inhalte/orte.ts`, Muster `_werkstatt/texte/REF-ort-wetzlar.md`), die Metadaten
 // aus dem Inhalt. Schlitz `karte`: das Einzugsband am eigenen Ort; `formular`: die Schnellanfrage der Ortsseiten (F-09,
-// Quelle `standort-{slug}`); `nachbarn`: die fünf nächsten Orte. Strukturierte Daten (cityGraph), `generateStaticParams`
+// Quelle `standort-{slug}`); `nachbarn`: die fünf nächsten Orte. Strukturierte Daten über `SeitenDaten` mit Titel, Beschreibung
+// und Brotkrumen aus dem Inhalt (E-053, vorher eigener Text im Seitenknoten), die Ortsknoten als `weitere`; `generateStaticParams`
 // und `generateMetadata` bleiben.
 
 /** Fotos der Ortsseite (K-016, Regel 4): Ziel der Leistungsseite und Name auf der Glasfläche (Wörter aus `galerie.ts`, höchstens sechs) */
@@ -97,13 +98,7 @@ export default async function StandortPage({
   const city = CITIES.find((c) => c.slug === stadt);
   if (!city) notFound();
 
-  const pageUrl = `${SITE_URL}/standorte/${city.slug}`;
-  const breadcrumbs = [
-    { name: 'Home', path: '/' },
-    { name: 'Standorte', path: '/standorte' },
-    { name: city.name, path: pageUrl },
-  ];
-
+  const inhalt = inhaltFuer(city);
   const cityConfig = findCityConfig(city.slug);
   const cityTierNodes = cityConfig
     ? getCityLandingPageSchema(cityConfig)['@graph']
@@ -116,24 +111,20 @@ export default async function StandortPage({
         }),
       ];
 
-  const cityGraph = buildGraph([
-    buildWebPageNode({
-      url: pageUrl,
-      name: `Fliesenverlegung & Badsanierung in ${city.name} | Fliesenverlegung Tezgel`,
-      description: `Fachbetrieb für Fliesenverlegung, Badsanierung und DIN 18534 Verbundabdichtung in ${city.name}. Kostenfreies Vor-Ort-Aufmaß & Festpreisangebot.`,
-      breadcrumbItems: breadcrumbs,
-    }),
-    buildBreadcrumbNode(breadcrumbs, pageUrl),
-    ...cityTierNodes,
-  ]);
 
   const nachbarn = getNearbyCities(city.slug, 5).map((n) => ({ name: n.name, href: `/standorte/${n.slug}` }));
 
   return (
     <>
-      <JsonLd schema={cityGraph} />
+      <SeitenDaten
+        pfad={`/standorte/${city.slug}`}
+        titel={inhalt.meta.titel}
+        beschreibung={inhalt.meta.beschreibung}
+        brotkrumen={inhalt.worum.brotkrumen}
+        weitere={cityTierNodes}
+      />
       <OrtsSeite
-        inhalt={inhaltFuer(city)}
+        inhalt={inhalt}
         nachbarn={nachbarn}
         karte={<Einzugsband aktuell={city.slug} form="stapel" />}
         formular={

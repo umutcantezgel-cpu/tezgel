@@ -12,6 +12,7 @@ import { REFERENZEN } from '@/inhalte/referenzen';
 import { createMetadata } from '@/lib/metadata';
 import SeitenDaten from '@/components/seo/SeitenDaten';
 import { ORG_ID, SITE_URL } from '@/lib/schema';
+import { seitenBeschreibung } from '@/lib/beschreibung';
 
 export const metadata = createMetadata({
     title: REFERENZEN.meta.titel,
@@ -31,8 +32,10 @@ export default function ReferenzenPage() {
                     {
                         '@type': 'CollectionPage',
                         '@id': `${SITE_URL}/referenzen#collection`,
-                        name: 'Fliesenverlegung Tezgel – Referenzen & Kundenbewertungen',
-                        description: 'Echte Kundenstimmen aus Aßlar, Wetzlar und Mittelhessen sowie typische Leistungsbeispiele.',
+                        url: `${SITE_URL}/referenzen`,
+                        name: REFERENZEN.meta.titel,
+                        // dieselbe Beschreibung wie Metadaten und WebPage (lib/beschreibung.ts, E-053)
+                        description: seitenBeschreibung('/referenzen', REFERENZEN.meta.beschreibung),
                         publisher: { '@id': ORG_ID },
                     },
                 ]}
