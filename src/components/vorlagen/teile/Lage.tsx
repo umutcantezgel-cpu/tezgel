@@ -44,7 +44,7 @@ export default function Lage({ inhalt }: { inhalt: LageInhalt }) {
       einleitung={inhalt.einleitung ? <p><Textmarken text={inhalt.einleitung} /></p> : undefined}
     >
       {inhalt.absaetze && inhalt.absaetze.length > 0 && (
-        <div className="max-w-mass space-y-4 font-text text-fs-4 text-pretty text-tinte">
+        <div className="mx-auto max-w-mass space-y-4 font-text text-fs-4 text-pretty text-tinte">
           {inhalt.absaetze.map((a) => (
             <p key={a}>
               <Textmarken text={a} />

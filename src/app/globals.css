@@ -103,6 +103,8 @@
   --verlegen-gesamt-folge: 1800ms;
   /* reduzierte Bewegung: Überblendung statt Fliesen (Auftrag Abschnitt 9) */
   --verlegen-ruhig: 150ms;
+  /* Laufband im Fuß (K-016, E-047): ein Durchlauf der Inhalte, langsam genug zum Mitlesen */
+  --band-durchlauf: 60s;
   --intro-gesamt: 1600ms;
 }
 

@@ -328,12 +328,22 @@ test.describe('Stimmen auf / (F-19; seit E-047 langsames Karussell mit gleich gr
       await expect.poll(() => reihe.evaluate((ul) => ul.scrollLeft), { timeout: 9000 }).toBeGreaterThan(x0 + 10);
       const halt = region(page).getByRole('button', { name: 'Anhalten', exact: true });
       await halt.click();
-      await expect(region(page).getByRole('button', { name: 'Weiterlaufen lassen', exact: true })).toHaveAttribute('aria-pressed', 'true');
+      // wechselnder Name statt aria-pressed (wie im APG-Karussell, Befund der Gegenprüfung E3-RUHE-01)
+      await expect(region(page).getByRole('button', { name: 'Weiterlaufen lassen', exact: true })).toBeVisible();
       await page.mouse.move(1, 1);
       await page.waitForTimeout(1500);
       const x1 = await reihe.evaluate((ul) => ul.scrollLeft);
       await page.waitForTimeout(9000);
       expect(await reihe.evaluate((ul) => ul.scrollLeft), 'angehalten bleibt die Reihe stehen').toBe(x1);
+    });
+
+    test('eine Berührung der Reihe hält den Selbstlauf dauerhaft an (Touch hat kein Verlassen)', async ({ page }) => {
+      await page.emulateMedia({ reducedMotion: 'no-preference' });
+      await page.goto('/');
+      await region(page).scrollIntoViewIfNeeded();
+      await expect(region(page).getByRole('button', { name: 'Anhalten', exact: true })).toBeVisible();
+      await region(page).locator('ul').dispatchEvent('pointerdown', { pointerType: 'touch', bubbles: true });
+      await expect(region(page).getByRole('button', { name: 'Weiterlaufen lassen', exact: true })).toBeVisible();
     });
   });
 });

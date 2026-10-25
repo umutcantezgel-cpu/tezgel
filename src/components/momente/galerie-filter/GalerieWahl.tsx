@@ -38,10 +38,11 @@ export default function GalerieWahl({ fotos, satz }: { fotos: GalerieWahlFoto[];
     <div>
       {/* Bedienung: ohne JavaScript verborgen (die Knöpfe täten nichts), dann stehen alle Fotos */}
       <div className="noscript:hidden">
-        <p id={satzId} className="max-w-mass font-text text-fs-3 text-pretty text-tinte">
+        {/* mittig unter dem mittigen Kopf des Belegs (K-016, E-047) */}
+        <p id={satzId} className="mx-auto max-w-mass text-center font-text text-fs-3 text-pretty text-tinte">
           {satz}
         </p>
-        <div role="group" aria-labelledby={satzId} className="mt-6 flex flex-wrap gap-2">
+        <div role="group" aria-labelledby={satzId} className="mt-6 flex flex-wrap justify-center gap-2">
           {gruppen.map((g) => {
             const gedrueckt = g.id === stand.wahl;
             return (

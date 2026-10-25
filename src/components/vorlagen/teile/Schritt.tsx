@@ -1,5 +1,5 @@
-// Vorlagen · 6 Nächster Schritt (KERN v3 K-004, K-009, E-012; E-025): die eine Hauptaktion der Seite. Kopf seitlich:
-// links Überschrift und Satz, rechts der Hauptknopf „Termin vor Ort anfragen“ (→ /kontakt, dasselbe Ziel wie im Einstieg),
+// Vorlagen · 6 Nächster Schritt (KERN v3 K-004, K-009, E-012; E-025; K-016, E-047): die eine Hauptaktion der Seite. Mittig
+// untereinander: Überschrift und Satz, der Hauptknopf „Termin vor Ort anfragen“ (→ /kontakt, dasselbe Ziel wie im Einstieg),
 // darunter die Rufnummer groß wie im Termin-Abschnitt der Startseite und WhatsApp. Hilfen (Werkzeuge der Seite) folgen
 // als ruhige Liste und konkurrieren nicht mit dem Hauptknopf; Wissensseiten nennen verwandte Seiten („Mehr zum Thema“).
 // Fläche Fliese als Abschluss vor dem Fuß. Variante mit Formular (Startseite #termin, Ortsseite #anfrage; E-044, E-047): Kopf
@@ -127,15 +127,15 @@ export default function Schritt({ inhalt, pfad, formular, titelId = 'anfrage', z
       formel="schritt"
       leitachse
       flaeche="fliese"
-      kopf="seitlich"
-      ziel
+      mitte
       titel={inhalt.titel}
       einleitung={<p><Textmarken text={inhalt.satz} /></p>}
     >
-      <div className="flex flex-col items-start gap-8">
+      {/* ruhig (K-016, E-047): alles mittig untereinander statt Kopf links und Knöpfe rechts zugleich */}
+      <div className="mx-auto flex max-w-mass flex-col items-center gap-8">
         <Hauptknopf breit />
         {/* Container-Abfrage: unter 20 rem Hörer über der großen Nummer (Runde 4) */}
-        <div className="@container grid w-full gap-6 border-t border-fuge pt-6 md:grid-cols-2">
+        <div className="@container grid w-full gap-6 border-t border-fuge pt-6 text-center md:grid-cols-2 md:text-left">
           <div>
             <p className="font-text text-fs-3 text-tinte">Lieber anrufen?</p>
             <a

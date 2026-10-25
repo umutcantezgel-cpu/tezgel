@@ -55,7 +55,7 @@ export default function Footer() {
                             {GUARANTEES.map(({ title, text }) => (
                                 <p key={title} className="flex items-start gap-3 text-fs-2">
                                     <Fugenkreuz className="mt-1 size-4 shrink-0 text-nacht-2" />
-                                    <span className="whitespace-nowrap">
+                                    <span>
                                         <span className="font-semibold text-kalk">{title}</span>
                                         <span className="text-nacht-2"> · {text}</span>
                                     </span>

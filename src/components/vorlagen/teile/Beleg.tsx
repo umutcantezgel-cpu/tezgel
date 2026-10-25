@@ -31,7 +31,7 @@ export default function Beleg({ inhalt, moment, zweiter, stimmenTitel = 'Das sag
       <Abschnitt id="unsere-arbeiten" formel="beleg" leitachse spaet mitte titel={inhalt.titel}>
         {inhalt.fotos.length === 1 && <Fotos fotos={inhalt.fotos} spalten={1} />}
         {inhalt.fotos.length > 1 && (
-          <Karussell art="reihe" name={inhalt.titel} karte="w-full md:w-1/2 lg:w-1/3">
+          <Karussell art="reihe" name="Fotos" karte="w-full md:w-1/2 lg:w-1/3">
             {inhalt.fotos.map((f) => (
               <Glasbild key={f.bild} arbeit={f.bild} name={f.unterschrift} href={f.href} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
             ))}
@@ -58,7 +58,7 @@ export default function Beleg({ inhalt, moment, zweiter, stimmenTitel = 'Das sag
         )}
       </Abschnitt>
       {zweiter && (
-        <Abschnitt id={zweiter.id} formel="beleg" leitachse spaet kopf="seitlich" titel={zweiter.titel}>
+        <Abschnitt id={zweiter.id} formel="beleg" leitachse spaet mitte titel={zweiter.titel}>
           {zweiter.moment}
         </Abschnitt>
       )}

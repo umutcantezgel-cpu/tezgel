@@ -303,22 +303,18 @@ html.k-bewegung:not(.k-notaus) [data-motion="galerie-filter"][data-galerie-neu] 
 }
 
 /* karussell (K-016 „Ruhe“, E-047) – langsam, von rechts nach links. Band: der Inhalt steht zweimal, die Spur rückt linear um
-   die halbe Länge (eine Fassung) und beginnt von vorn; 60 s je Durchlauf. Hält an, solange Maus oder Fokus darin sind oder
-   der Knopf es anhält. Ohne Startklasse (ohne JavaScript), reduziert, im Notaus und im Druck steht eine wischbare Reihe
-   ohne Kopie. Reihe: Einrasten beim Wischen, Selbstlauf im Baustein (Scrollposition), hier nur die Leiste ohne Rand. Nur
-   translate. */
-.karussell-band {
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-.karussell-band-spur {
-  display: flex;
-  width: max-content;
-}
+   die halbe Länge (eine Fassung) und beginnt von vorn (--band-durchlauf je Durchlauf). Hält an, solange Maus oder Fokus darin
+   sind oder der Knopf es anhält. Ohne Startklasse (ohne JavaScript), reduziert, im Notaus, im Druck und bei erzwungenen
+   Farben steht eine umbrechende Liste ohne Kopie: nichts abgeschnitten, nichts verborgen. Reihe: Einrasten beim Wischen,
+   Selbstlauf im Baustein (Scrollposition), hier nur die Leiste ohne Rand. Nur translate. */
 .karussell-band-teil {
   display: flex;
-  gap: calc(var(--spacing) * 12);
-  padding-inline-end: calc(var(--spacing) * 12);
+  flex-wrap: wrap;
+  column-gap: calc(var(--spacing) * 12);
+  row-gap: calc(var(--spacing) * 3);
+}
+.karussell-band-teil > li {
+  max-width: 100%;
 }
 .karussell-band-kopie {
   display: none;
@@ -328,15 +324,25 @@ html.k-bewegung:not(.k-notaus) [data-motion="galerie-filter"][data-galerie-neu] 
     translate: -50% 0;
   }
 }
-@media screen and (prefers-reduced-motion: no-preference) {
+@media screen and (prefers-reduced-motion: no-preference) and (forced-colors: none) {
   html.k-bewegung:not(.k-notaus) .karussell-band {
     overflow: hidden;
   }
+  html.k-bewegung:not(.k-notaus) .karussell-band-spur {
+    display: flex;
+    width: max-content;
+    animation: karussell-laufen var(--band-durchlauf) linear infinite;
+  }
+  html.k-bewegung:not(.k-notaus) .karussell-band-teil {
+    flex-wrap: nowrap;
+    padding-inline-end: calc(var(--spacing) * 12);
+  }
+  html.k-bewegung:not(.k-notaus) .karussell-band-teil > li {
+    max-width: none;
+    white-space: nowrap;
+  }
   html.k-bewegung:not(.k-notaus) .karussell-band-kopie {
     display: flex;
-  }
-  html.k-bewegung:not(.k-notaus) .karussell-band-spur {
-    animation: karussell-laufen 60s linear infinite;
   }
   html.k-bewegung:not(.k-notaus) .karussell-band:hover .karussell-band-spur,
   html.k-bewegung:not(.k-notaus) .karussell-band:focus-within .karussell-band-spur,
@@ -348,37 +354,37 @@ html.k-bewegung:not(.k-notaus) [data-motion="galerie-filter"][data-galerie-neu] 
   scrollbar-width: thin;
   scroll-padding-inline: 0;
 }
-@media print, (forced-colors: active) {
-  .karussell-band-spur {
-    animation: none !important;
-  }
-  .karussell-band-kopie {
-    display: none !important;
-  }
-}
 
-/* glasbild (K-016, E-047) – Foto ohne Unterschrift; beim Darüberfahren oder mit dem Fokus dunkelt eine Glasfläche das Bild ab
-   und zeigt Name und Link (dauer-2 · setzen, nur opacity). Ohne Maus (Touch) steht der Name immer unten auf einem Verlauf. */
+/* glasbild (K-016, E-047) – Foto ohne Unterschrift; mit Link dunkelt beim Darüberfahren oder mit dem Fokus eine Glasfläche
+   das Bild ab und zeigt Name und Weg (dauer-2 · setzen, nur opacity). Ohne Maus (Touch) und ohne Link steht der Name immer
+   unten auf einem Verlauf. Erzwungene Farben: das Foto bleibt frei, nur der Text steht auf Canvas. */
 .glasbild-flaeche {
   background: linear-gradient(to top, color-mix(in srgb, var(--color-tinte) 72%, transparent), transparent 55%);
 }
 @media (hover: hover) {
-  .glasbild-flaeche {
+  a.glasbild .glasbild-flaeche {
     opacity: 0;
     background: color-mix(in srgb, var(--color-tinte) 45%, transparent);
     backdrop-filter: blur(6px);
     transition: opacity var(--dauer-2) var(--ease-setzen);
   }
-  .glasbild:hover .glasbild-flaeche,
-  .glasbild:focus-visible .glasbild-flaeche {
+  a.glasbild:hover .glasbild-flaeche,
+  a.glasbild:focus-visible .glasbild-flaeche {
     opacity: 1;
   }
 }
 @media (forced-colors: active) {
-  .glasbild-flaeche {
+  .glasbild-flaeche,
+  a.glasbild .glasbild-flaeche {
     opacity: 1;
-    background: Canvas;
+    background: none;
     backdrop-filter: none;
+  }
+  .glasbild-flaeche > span {
+    align-self: flex-start;
+    background: Canvas;
+    color: CanvasText;
+    padding-inline: calc(var(--spacing) * 1);
   }
 }
 
