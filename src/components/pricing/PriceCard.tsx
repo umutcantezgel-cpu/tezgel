@@ -7,11 +7,15 @@
 // Fluchten: Im Raster der Seite (Feldraster) spannt jedes Feld fünf Zeilen und übernimmt sie als Subgrid – Etikett, Titel,
 // Preis, Merkmale und Knopf stehen in einer Reihe von Feldern auf denselben Linien. Ohne umgebendes Raster stapelt das
 // Feld einfach. Server-Komponente.
+// E4-W1-FORMULARE (F5): Texte bleiben Zeichenketten. Ein Glossarbegriff steht im Text als [[id|Wort]] und wird hier zum
+// Baustein Fachwort (beim ersten Vorkommen auf der Seite mit Alltagserklärung); Bindestrichwörter sind aufgelöst.
 import clsx from "clsx";
-import type { ReactNode } from "react";
+import { Fragment, type ReactNode } from "react";
+import Fachwort from "@/components/kern/Fachwort";
 import Fugenkreuz from "@/components/kern/Fugenkreuz";
 import Knopf from "@/components/kern/Knopf";
 import { etikettKlassen } from "@/components/kern/stile";
+import type { GlossarId } from "@/config/glossar";
 
 interface PriceCardProps {
   title: string;
@@ -28,13 +32,28 @@ interface PriceCardProps {
 }
 
 // Maße, Normen, Klassen: Formate („60x60 cm“), Plattenstärke („2 cm“), DIN-Normen, Rutschhemmung, Kleberklassen
-const MASS = /(\d+x\d+ cm|\d+ cm|DIN \d+|R\d+\b|S1\/S2|C2-TE)/;
+const MASS = /(\d+x\d+ cm|\d+ cm|DIN \d+|R\d+\b|S1\/S2|C2 TE)/;
+// Glossarbaustein im Text: [[id|Wort]]
+const BAUSTEIN = /(\[\[[a-z0-9-]+\|[^\]]+\]\])/;
 
 /** Text mit Maßen in Mono, eine Stufe kleiner wie die Mengen im Rechner (Wortlaut unverändert, die Maße brechen nicht in sich um) */
 function mitMassen(text: string): ReactNode {
   return text
     .split(MASS)
     .map((teil, i) => (i % 2 === 1 ? <span key={i} className="whitespace-nowrap font-mono text-fs-1">{teil}</span> : teil));
+}
+
+/** Text mit Glossarbausteinen [[id|Wort]] (Fachwort) und Maßen in Mono */
+function mitBausteinen(text: string): ReactNode {
+  return text.split(BAUSTEIN).map((teil, i) => {
+    const baustein = /^\[\[([a-z0-9-]+)\|([^\]]+)\]\]$/.exec(teil);
+    if (!baustein) return <Fragment key={i}>{mitMassen(teil)}</Fragment>;
+    return (
+      <Fachwort key={i} id={baustein[1] as GlossarId}>
+        {baustein[2]}
+      </Fachwort>
+    );
+  });
 }
 
 export default function PriceCard({
@@ -65,7 +84,7 @@ export default function PriceCard({
       {/* 2 · Titel und Beschreibung */}
       <div>
         <p className="font-anzeige text-fs-4 font-semibold text-tinte">{title}</p>
-        <p className="mt-2 font-text text-fs-2 text-pretty text-tinte-2">{mitMassen(description)}</p>
+        <p className="mt-2 font-text text-fs-2 text-pretty text-tinte-2">{mitBausteinen(description)}</p>
       </div>
 
       {/* 3 · Preis in Mono an der Fuge */}
@@ -81,14 +100,15 @@ export default function PriceCard({
         {features.map((feature, i) => (
           <li key={i} className="flex items-start gap-3">
             <Fugenkreuz className="mt-2 size-3 shrink-0 text-strich" />
-            <span className="min-w-0">{mitMassen(feature)}</span>
+            <span className="min-w-0">{mitBausteinen(feature)}</span>
           </li>
         ))}
       </ul>
 
       {/* 5 · ein Weg */}
       <div className="mt-8 flex items-end">
-        <Knopf href={ctaHref} variante={isPopular ? "haupt" : "neben"} className="w-full">
+        {/* Lange Wörter wie „Großformat“ trennen sich im Knopf erst ab 10 Zeichen, wenn die Breite bei großer Schrift nicht reicht */}
+        <Knopf href={ctaHref} variante={isPopular ? "haupt" : "neben"} className="w-full [hyphenate-limit-chars:10_4_4]">
           {ctaText}
         </Knopf>
       </div>

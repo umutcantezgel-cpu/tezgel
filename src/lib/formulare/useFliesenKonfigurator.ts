@@ -1,7 +1,8 @@
 // Logik des Fliesen-Konfigurators (F-06, FliesenKonfigurator) – wörtlich aus der Komponente verschoben (P4-05b, Vorbild
-// P4-05a/P3-00l). Ohne Markup; Bestand und Kern-Ansicht nutzen denselben Hook. Keine Logikänderung (G9): auch die
-// bekannten Lücken (kein Honeypot, kein `_t`; „Weiß nicht“ als Fußbodenheizung „Nein“; Vorgabe 20 m² auch ohne Fläche)
-// bleiben, wie sie sind. Ergänzt sind nur Typangaben, die zur Laufzeit wegfallen.
+// P4-05a/P3-00l). Ohne Markup; Bestand und Kern-Ansicht nutzen denselben Hook. Ergänzt sind nur Typangaben, die zur
+// Laufzeit wegfallen. E4-W1 (F3, G8): Ohne Vorgabe der Seite ist nichts vorausgewählt; ungewählte Angaben heißen „Keine
+// Angabe“ und gehen nur mit, wenn sie gewählt wurden. Die Lücken „Weiß nicht“ als „Nein“ und die Vorgabe 20 m² sind damit
+// behoben. Offen bleiben kein Honeypot und kein `_t`.
 import React, { useRef, useState } from 'react';
 import { COMPANY_DATA } from '@/config/company';
 import { openWhatsApp } from '@/lib/whatsapp';

@@ -14,9 +14,10 @@ const PROJEKT_ICONS = { bad: 'bad', wohnen: 'fliese', balkon: 'balkon', treppe: 
 const PROJEKT_SPANNE = ['lg:col-span-2', 'lg:col-span-2', 'lg:col-span-2', 'lg:col-span-3', 'sm:col-span-2 lg:col-span-3'];
 
 export default function Schritt1({ setStep, projectType, setProjectType }) {
+    // @container auf der ganzen Spalte: die Knopfzeile unten liegt sonst außerhalb jeder Containerabfrage (E4-W1, F4)
     return (
-        <div className="flex flex-col gap-8">
-          <div className="@container grid grid-cols-1 gap-px border border-fuge bg-fuge sm:grid-cols-2 lg:grid-cols-6">
+        <div className="@container flex flex-col gap-8">
+          <div className="grid grid-cols-1 gap-px border border-fuge bg-fuge sm:grid-cols-2 lg:grid-cols-6">
             {PROJECT_TYPES.map((pt, idx) => {
               const isSelected = projectType === pt.id;
               return (
@@ -41,15 +42,19 @@ export default function Schritt1({ setStep, projectType, setProjectType }) {
             })}
           </div>
 
-          <div className="flex justify-end border-t border-fuge pt-6">
+          {/* Bei großer Schrift reicht die Knopfzeile bis an den Kartenrand (-mx-4 = Innenabstand der Karte): der Weiter-Knopf
+              behält so Platz für drei Zeilen Text und den Pfeil am letzten Wort (E4-W1, F4) */}
+          <div className="flex justify-end border-t border-fuge pt-6 @max-3xs:-mx-4">
             <button
               type="button"
               onClick={() => setStep(2)}
               className={knopfKlassen('haupt', 'w-full sm:w-auto')}
               data-motion="druck"
             >
-              Weiter zu Schritt 2: Fläche und Ort
-              <Icon name="pfeil-rechts" groesse={5} />
+              {/* Text und Pfeil in einem Block: der Pfeil sitzt hinter dem letzten Wort, nicht mittig zur ganzen Textspalte */}
+              <span className="hyphens-auto wrap-break-word">
+                Weiter zu Schritt&nbsp;2: Fläche und Ort&nbsp;<Icon name="pfeil-rechts" groesse={5} className="inline-block align-[-0.2em]" />
+              </span>
             </button>
           </div>
         </div>

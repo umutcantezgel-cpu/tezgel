@@ -53,14 +53,18 @@ export const AREA_OPTIONS = ['Bis 15 m²', '15 - 35 m²', '35 - 75 m²', 'Über 
 
 export const TIMING_OPTIONS = ['Schnellstmöglich', 'In 1 - 3 Monaten', 'In mehr als 3 Monaten / Flexibel'];
 
+/** Anzeige eines ungewählten Feldes in Zusammenfassung und Nachricht (E4-W1, F4: keine Vorauswahl) */
+export const KEINE_ANGABE = 'keine Angabe';
+
 type SubmissionStatus = 'idle' | 'submitting' | 'success' | 'error' | 'whatsapp_opened';
 
 export function useAnfrageFunnel() {
   const [step, setStep] = useState(1);
-  const [projectType, setProjectType] = useState('bad');
-  const [selectedArea, setSelectedArea] = useState('15 - 35 m²');
+  // Keine Vorauswahl beim Laden (E4-W1, F4): gewählt wird nur, was die Besucherin selbst antippt.
+  const [projectType, setProjectType] = useState('');
+  const [selectedArea, setSelectedArea] = useState('');
   const [customArea, setCustomArea] = useState('');
-  const [timing, setTiming] = useState('In 1 - 3 Monaten');
+  const [timing, setTiming] = useState('');
   const [location, setLocation] = useState('');
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -72,19 +76,21 @@ export function useAnfrageFunnel() {
   const [errorMessage, setErrorMessage] = useState('');
   const [referenceId, setReferenceId] = useState('');
 
-  const projectTitle = PROJECT_TYPES.find((p) => p.id === projectType)?.title ?? projectType;
-  const finalArea = customArea ? `${customArea.replace(/\s*m²$/i, '')} m²` : selectedArea;
-  const locationText = location || 'Aßlar / Wetzlar / Hessen';
+  // Leer, wenn nichts gewählt oder eingetragen ist; Anzeige und Nachricht setzen dafür „keine Angabe“ ein
+  const projectTitle = PROJECT_TYPES.find((p) => p.id === projectType)?.title ?? '';
+  const eigeneFlaeche = customArea.trim();
+  const finalArea = eigeneFlaeche ? `${eigeneFlaeche.replace(/\s*m²$/i, '')} m²` : selectedArea;
+  const locationText = location.trim();
 
   const getWhatsAppMessage = () =>
     `Hallo Herr Tezgel,\nich interessiere mich für eine fachgerechte Fliesenverlegung:\n\n` +
-    `📌 Projekt: ${projectTitle}\n` +
-    `📐 Fläche: ca. ${finalArea}\n` +
-    `📍 Ort: ${locationText}\n` +
-    `⏱️ Gewünschter Zeitraum: ${timing}\n\n` +
+    `📌 Projekt: ${projectTitle || KEINE_ANGABE}\n` +
+    `📐 Fläche: ${finalArea ? `ca. ${finalArea}` : KEINE_ANGABE}\n` +
+    `📍 Ort: ${locationText || KEINE_ANGABE}\n` +
+    `⏱️ Gewünschter Zeitraum: ${timing || KEINE_ANGABE}\n\n` +
     `👤 Name: ${name}\n` +
     `📞 Telefon: ${phone}\n` +
-    `✉️ E-Mail: ${email || 'Nicht angegeben'}\n` +
+    `✉️ E-Mail: ${email || KEINE_ANGABE}\n` +
     (notes ? `📝 Anmerkungen: ${notes}\n\n` : '\n') +
     `Bitte melden Sie sich bezüglich eines unverbindlichen Vor-Ort-Aufmaßes. Vielen Dank!`;
 
@@ -109,18 +115,19 @@ export function useAnfrageFunnel() {
       const response = await fetch('/api/anfrage', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        // Ungewählte Felder fehlen in der Nutzlast (JSON.stringify lässt undefined weg); die Anfrage enthält nur Gewähltes.
         body: JSON.stringify({
           inquiryType: 'general',
-          projectType,
-          projectTitle,
+          projectType: projectType || undefined,
+          projectTitle: projectTitle || undefined,
           contact: {
             name,
             phone,
             email: email || undefined,
-            location: locationText
+            location: locationText || undefined
           },
-          area: finalArea,
-          timing,
+          area: finalArea || undefined,
+          timing: timing || undefined,
           notes: notes || undefined,
           honeypot: honeypot || undefined,
           _t: formInitTime

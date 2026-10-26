@@ -2,6 +2,7 @@ import Icon from '@/components/icons/Icon';
 import Knopf from '@/components/kern/Knopf';
 import { etikettKlassen } from '@/components/kern/stile';
 import { COMPANY_DATA } from '@/config/company';
+import { anzeige } from '@/lib/formulare/anzeige';
 
 // Erfolgsansicht nach dem Absenden (E2-ORCH-08: Darstellung nach KERN; Texte und Verhalten unverändert, ohne Emoji).
 export default function Erfolg({ name, email, referenceId, projectTitle, finalArea, locationText, handleNewRequest }) {
@@ -20,7 +21,8 @@ export default function Erfolg({ name, email, referenceId, projectTitle, finalAr
           </div>
           <p className="mt-6 font-anzeige text-fs-6 font-semibold text-tinte">Vielen Dank, {name}!</p>
           <p className="mt-4 max-w-mass text-fs-3 text-tinte-2">
-            Ihre Anfrage für <strong className="font-semibold text-tinte">{projectTitle}</strong> ({finalArea}) in <strong className="font-semibold text-tinte">{locationText}</strong> ist erfolgreich bei Fliesenverlegung Tezgel eingegangen.
+            {/* Nur die gewählten Angaben stehen im Satz (E4-W1, F4: keine Vorauswahl) */}
+            Ihre Anfrage{projectTitle && <> für <strong className="font-semibold text-tinte">{projectTitle}</strong></>}{finalArea && <> ({anzeige(finalArea)})</>}{locationText && <> in <strong className="font-semibold text-tinte">{locationText}</strong></>} ist erfolgreich bei Fliesenverlegung Tezgel eingegangen.
             {email && (
               <span className="mt-3 block border-l-2 border-tinte pl-4 text-fs-2 text-tinte">
                 Eine ausführliche Bestätigung mit allen Angaben wurde an <em>{email}</em> gesendet.

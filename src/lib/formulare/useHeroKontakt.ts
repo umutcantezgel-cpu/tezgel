@@ -12,7 +12,8 @@ export const PROJECT_OPTIONS = [
 ];
 
 export function useHeroKontakt() {
-    const [projectType, setProjectType] = useState('bad');
+    // Keine Vorauswahl beim Laden (E4-W1, F4): gewählt wird nur, was die Besucherin antippt.
+    const [projectType, setProjectType] = useState('');
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
@@ -30,7 +31,7 @@ export function useHeroKontakt() {
     const getWhatsAppText = () => {
         return (
             `Hallo Herr Tezgel,\n` +
-            `ich interessiere mich für: ${projectTitle}.\n` +
+            (selectedOption ? `ich interessiere mich für: ${projectTitle}.\n` : '') +
             (location ? `Ort / Region: ${location}\n` : '') +
             (name ? `Mein Name: ${name}\n` : '') +
             (phone ? `Telefon: ${phone}\n` : '') +
@@ -60,8 +61,9 @@ export function useHeroKontakt() {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     inquiryType: 'general',
-                    projectType,
-                    projectTitle,
+                    // ungewähltes Vorhaben fehlt in der Nutzlast (undefined entfällt beim Versand)
+                    projectType: projectType || undefined,
+                    projectTitle: selectedOption ? projectTitle : undefined,
                     contact: {
                         name: name.trim(),
                         phone: phone.trim(),

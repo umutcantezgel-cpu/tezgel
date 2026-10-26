@@ -5,6 +5,9 @@
 // das pulsierende Absende-Element (HeartbeatCTA) entfällt – Bewegung nur nach Register.
 // Zustände, Prüfung und Absenden kommen aus usePreisrechner (P3-00l, eine Logik für Bestand und Kern); dort startet die
 // Einwilligung leer (Fairness, E-014).
+// E4-W1-FORMULARE (F5): kein Gewerk und kein Zeitraum vorab gewählt; „noch keine Angabe“ in der Zusammenfassung;
+// Zahl und m² bleiben zusammen; Fehlertext rückt ins Bild.
+import { useEffect, useRef } from "react";
 import {
   CRAFT_SERVICES,
   ROOM_SIZES,
@@ -45,6 +48,12 @@ const stufeKlassen =
 const zahlFeldKlassen =
   "block w-24 min-h-11 rounded-r1 border border-strich bg-fliese px-4 py-3 font-text text-fs-3 text-tinte placeholder:text-tinte-2 hover:border-tinte focus-visible:border-tinte";
 
+/** Zeitraum-Karte auf der Tinte-Fläche (aria-pressed): Text bricht um und wird nie abgeschnitten */
+const zeitKlassen =
+  "block w-full border border-nacht-fuge p-3 text-left font-text text-fs-2 text-kalk hover:border-kalk aria-pressed:border-kalk aria-pressed:bg-kalk aria-pressed:font-semibold aria-pressed:text-tinte @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]";
+/** Zahl und Einheit bleiben in einer Zeile (geschütztes Leerzeichen vor m²) */
+const einheit = (text: string) => text.replace(/(\d) m²/g, "$1 m²");
+
 export default function PricingCalculator() {
   const {
     serviceType,
@@ -79,6 +88,12 @@ export default function PricingCalculator() {
     selectService,
     selectRoomSize,
   } = usePreisrechner();
+
+  // Die Fehlerzeile steht in der Zusammenfassung, das Absenden unten: die Zeile in die Bildmitte holen.
+  const fehlerRef = useRef<HTMLParagraphElement>(null);
+  useEffect(() => {
+    if (errorMessage) fehlerRef.current?.scrollIntoView({ block: "center" });
+  }, [errorMessage]);
 
   return (
     <div className="mx-auto grid w-full max-w-mass grid-cols-1 border border-strich">
@@ -131,9 +146,9 @@ export default function PricingCalculator() {
                   </span>
                   <span className="min-w-0 flex-1">
                     <span className="flex flex-wrap items-start justify-between gap-x-2 gap-y-1">
-                      <span className="block min-w-0 text-fs-2 font-semibold @max-3xs:hyphens-auto wrap-break-word">{anzeige(srv.title)}</span>
+                      <span className="block min-w-0 text-fs-2 font-semibold @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]">{anzeige(srv.title)}</span>
                     </span>
-                    <span className="mt-1 block text-fs-1 @max-3xs:hyphens-auto wrap-break-word">{anzeige(srv.subtitle)}</span>
+                    <span className="mt-1 block text-fs-1 @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]">{anzeige(srv.subtitle)}</span>
                   </span>
                 </button>
               );
@@ -158,8 +173,8 @@ export default function PricingCalculator() {
                   className={stufeKlassen}
                   data-motion="zustand"
                 >
-                  <span className="block w-full text-fs-2 font-semibold @max-3xs:hyphens-auto wrap-break-word">{anzeige(size.label)}</span>
-                  <span className="block w-full font-mono text-fs-1">{anzeige(size.areaText)}</span>
+                  <span className="block w-full text-fs-2 font-semibold @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]">{anzeige(size.label)}</span>
+                  <span className="block w-full font-mono text-fs-1">{einheit(anzeige(size.areaText))}</span>
                 </button>
               );
             })}
@@ -213,8 +228,8 @@ export default function PricingCalculator() {
                     {isChecked && <Icon name="haken" groesse={4} />}
                   </span>
                   <span className="min-w-0">
-                    <span className="block text-fs-2 font-semibold @max-3xs:hyphens-auto wrap-break-word">{anzeige(opt.label)}</span>
-                    <span className="mt-1 block text-fs-1 text-tinte-2 @max-3xs:hyphens-auto wrap-break-word">{anzeige(opt.description)}</span>
+                    <span className="block text-fs-2 font-semibold @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]">{anzeige(opt.label)}</span>
+                    <span className="mt-1 block text-fs-1 text-tinte-2 @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]">{anzeige(opt.description)}</span>
                   </span>
                 </button>
               );
@@ -233,10 +248,10 @@ export default function PricingCalculator() {
             id="situation-notes"
             name="notes"
             autoComplete="off"
-            rows={4}
+            rows={6}
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
-            placeholder="Zum Beispiel: Sind noch alte Fliesen da? Wie ist der Untergrund? Ist es ein Neubau, oder wird dort schon gewohnt? Gibt es Wünsche, etwa Nischen oder eine Dusche ohne Stufe? Und wann soll es losgehen?"
+            placeholder="Zum Beispiel: Alte Fliesen? Neubau?"
             className={`${feldKlassen} resize-y`}
           />
         </div>
@@ -295,12 +310,12 @@ export default function PricingCalculator() {
               <dl className="mt-6 border-t border-nacht-fuge text-fs-2">
                 <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3 @max-3xs:flex-wrap">
                   <dt className="text-nacht-2">Projekt:</dt>
-                  <dd className="text-right font-semibold text-kalk @max-3xs:hyphens-auto wrap-break-word">{anzeige(selectedService.title)}</dd>
+                  <dd className="text-right font-semibold text-kalk @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]">{selectedService ? anzeige(selectedService.title) : "noch keine Angabe"}</dd>
                 </div>
                 <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3 @max-3xs:flex-wrap">
                   <dt className="text-nacht-2">Fläche:</dt>
                   <dd className="text-right font-mono text-kalk wrap-break-word">
-                    {customArea.trim() ? `${customArea.trim()} m²` : selectedSize ? anzeige(selectedSize.areaText) : 'noch keine Angabe'}
+                    {customArea.trim() ? einheit(`${customArea.trim()} m²`) : selectedSize ? einheit(anzeige(selectedSize.areaText)) : 'noch keine Angabe'}
                   </dd>
                 </div>
                 <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3 @max-3xs:flex-wrap">
@@ -309,13 +324,13 @@ export default function PricingCalculator() {
                 </div>
                 <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3 @max-3xs:flex-wrap">
                   <dt className="text-nacht-2">Angebot:</dt>
-                  <dd className="text-right font-semibold text-kalk @max-3xs:hyphens-auto wrap-break-word">Verbindlicher Festpreis</dd>
+                  <dd className="text-right font-semibold text-kalk @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]">Verbindlicher Festpreis</dd>
                 </div>
               </dl>
 
               {/* Fehleranzeige */}
               {errorMessage && (
-                <p className="mt-6 flex items-start gap-2 border-l-2 border-laser bg-fliese p-3 text-fs-2 text-laser-tief" role="alert">
+                <p ref={fehlerRef} className="mt-6 flex items-start gap-2 border-l-2 border-laser bg-fliese p-3 text-fs-2 text-laser-tief" role="alert">
                   <Icon name="fehler" groesse={4} className="mt-1 shrink-0" />
                   <span>{errorMessage}</span>
                 </p>
@@ -410,28 +425,28 @@ export default function PricingCalculator() {
                     />
                   </div>
 
-                  <div>
-                    <label htmlFor="calc-timing" className={labelHell}>
+                  {/* Zeitraum als Auswahlkarten (wie die Fläche): ohne Vorauswahl, nicht Pflicht; der Text bricht um, statt im
+                      Auswahlfeld abgeschnitten zu werden. Erneutes Antippen hebt die Wahl wieder auf (keine Angabe). */}
+                  <div role="group" aria-labelledby="calc-timing-label" className="@container">
+                    <p id="calc-timing-label" className={labelHell}>
                       Gewünschter Zeitraum
-                    </label>
-                    <div className="relative">
-                      <select
-                        id="calc-timing"
-                        name="timing"
-                        aria-label="Gewünschter Zeitraum"
-                        value={timing}
-                        onChange={(e) => setTiming(e.target.value)}
-                        className={`${feldKlassen} appearance-none pr-12`}
-                      >
-                        {TIMING_OPTIONS.map((t) => (
-                          <option key={t} value={t}>
+                    </p>
+                    <div className="mt-3 grid grid-cols-1 gap-2">
+                      {TIMING_OPTIONS.map((t) => {
+                        const isSelected = timing === t;
+                        return (
+                          <button
+                            key={t}
+                            type="button"
+                            aria-pressed={isSelected}
+                            onClick={() => setTiming(isSelected ? "" : t)}
+                            className={zeitKlassen}
+                            data-motion="zustand"
+                          >
                             {anzeige(t)}
-                          </option>
-                        ))}
-                      </select>
-                      <span className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
-                        <Icon name="winkel-unten" groesse={5} className="text-tinte" />
-                      </span>
+                          </button>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
@@ -446,7 +461,7 @@ export default function PricingCalculator() {
                     onChange={(e) => setPrivacyAccepted(e.target.checked)}
                     className="mt-1 size-5 shrink-0 rounded-r1 accent-kalk"
                   />
-                  <span className="min-w-0 @max-3xs:hyphens-auto wrap-break-word">
+                  <span className="min-w-0 @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]">
                     Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Beantwortung meiner
                     Anfrage verarbeitet werden.
                   </span>
@@ -456,7 +471,7 @@ export default function PricingCalculator() {
 
             {/* Absenden und Anruf */}
             <div className="flex flex-col gap-4 border-t border-nacht-fuge pt-6">
-              <Knopf type="submit" variante="hell" laedt={status === "submitting"} ladeText="Wird gesendet …" icon="pfeil-rechts" className="w-full @max-3xs:hyphens-auto wrap-break-word @max-3xs:px-4 @max-3xs:flex-wrap">
+              <Knopf type="submit" variante="hell" laedt={status === "submitting"} ladeText="Wird gesendet …" icon="pfeil-rechts" className="w-full @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4] @max-3xs:px-4 @max-3xs:flex-wrap">
                 Unverbindliche Anfrage senden
               </Knopf>
 

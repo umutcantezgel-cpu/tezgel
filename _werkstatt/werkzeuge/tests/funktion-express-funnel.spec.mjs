@@ -104,7 +104,7 @@ test.describe('TezgelAnfrageFunnel (F-03, /kontakt)', () => {
   });
 
   for (const ort of ORTE) {
-    test(`Gutfall auf ${ort}: POST general mit Standardauswahl, Erfolg mit Referenz`, async ({ page, anfragen }) => {
+    test(`Gutfall auf ${ort} ohne Wahl: POST general nur mit Kontakt, Erfolg mit Referenz`, async ({ page, anfragen }) => {
       await page.goto(ort);
       await zuSchritt3(page);
       await kontaktEintragen(page);
@@ -112,19 +112,51 @@ test.describe('TezgelAnfrageFunnel (F-03, /kontakt)', () => {
       await expect(page.getByText('Vielen Dank, Prüf Person!')).toBeVisible();
       await expect(page.getByText('TEZ-26-TEST')).toBeVisible();
       expect(anfragen).toHaveLength(1);
+      // E4-W1 (F4): keine Vorauswahl mehr. Ungewählte Angaben fehlen in der Nutzlast, Kontakt bleibt.
       expect(anfragen[0]).toMatchObject({
         inquiryType: 'general',
-        projectType: 'bad',
-        projectTitle: 'Bad & Wellness',
-        area: '15 - 35 m²',
-        timing: 'In 1 - 3 Monaten',
-        contact: { name: 'Prüf Person', phone: '0170 0000000', location: 'Aßlar / Wetzlar / Hessen' },
+        contact: { name: 'Prüf Person', phone: '0170 0000000' },
       });
-      expect(anfragen[0]).not.toHaveProperty('notes');
+      for (const feld of ['projectType', 'projectTitle', 'area', 'timing', 'notes']) expect(anfragen[0]).not.toHaveProperty(feld);
+      expect(anfragen[0].contact).not.toHaveProperty('location');
       expect(anfragen[0].contact).not.toHaveProperty('email');
       expect(typeof anfragen[0]._t).toBe('number');
     });
   }
+
+  test('keine Vorauswahl beim Laden: nichts ist gewählt, die Zusammenfassung nennt „keine Angabe“', async ({ page }) => {
+    await page.goto(SEITE);
+    for (const titel of ['Bad & Wellness', 'Wohnbereich & Neubau', 'Balkon & Terrasse', 'Treppen & Naturstein', 'Untergrund & Abdichtung']) {
+      await expect(projekt(page, titel)).toHaveAttribute('aria-pressed', 'false');
+    }
+    await weiterZu(page, 2).click();
+    for (const text of ['Bis 15 m²', '15 bis 35 m²', '35 bis 75 m²', 'Über 75 m²']) {
+      await expect(flaeche(page, text)).toHaveAttribute('aria-pressed', 'false');
+    }
+    for (const text of ['Schnellstmöglich', 'In 1 bis 3 Monaten', 'In mehr als 3 Monaten oder noch offen']) {
+      await expect(zeitraum(page, text)).toHaveAttribute('aria-pressed', 'false');
+    }
+    await expect(page.locator('#funnel-location')).toHaveValue('');
+    await weiterZu(page, 3).click();
+    await expect(page.getByText('Projekt: keine Angabe')).toBeVisible();
+    await expect(page.getByText('Umfang: keine Angabe')).toBeVisible();
+    await expect(page.getByText('Ort: keine Angabe')).toBeVisible();
+  });
+
+  test('WhatsApp ohne Wahl: die Nachricht nennt die offenen Angaben als „keine Angabe“, kein Versand', async ({ page, anfragen }) => {
+    await page.goto(SEITE);
+    await zuSchritt3(page);
+    await kontaktEintragen(page);
+    const waAnfrage = page.waitForRequest((r) => r.url().startsWith('https://api.whatsapp.com/send'), { timeout: 10_000 });
+    await whatsappDirekt(page).click();
+    const text = new URL((await waAnfrage).url()).searchParams.get('text') ?? '';
+    expect(text).toContain('Projekt: keine Angabe');
+    expect(text).toContain('Fläche: keine Angabe');
+    expect(text).toContain('Ort: keine Angabe');
+    expect(text).toContain('Gewünschter Zeitraum: keine Angabe');
+    expect(text).toContain('Name: Prüf Person');
+    expect(anfragen).toHaveLength(0);
+  });
 
   test('Gutfall mit allen Angaben: Projekt, Fläche, Zeitraum, Ort, Kontakt und Notiz landen in der Nutzlast', async ({ page, anfragen }) => {
     await page.goto(SEITE);

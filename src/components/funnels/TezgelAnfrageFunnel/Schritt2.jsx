@@ -6,9 +6,10 @@ import { inputClass, optionClass } from './stile';
 
 // Schritt 2: Fläche, Zeitraum und Ort (E2-ORCH-08: Darstellung nach KERN; Texte, Namen und Verhalten unverändert).
 export default function Schritt2({ setStep, selectedArea, selectArea, customArea, setCustomArea, timing, setTiming, location, setLocation }) {
+    // @container auf der ganzen Spalte, damit die Knopfzeile unten die schmalen Stufen erreicht (E4-W1, F4)
     return (
-        <div className="flex flex-col gap-8">
-          <div className="@container">
+        <div className="@container flex flex-col gap-8">
+          <div>
             <span id="funnel-area-heading" className={labelKlassen}>
               Ungefähre Fläche in Quadratmetern
             </span>
@@ -77,11 +78,12 @@ export default function Schritt2({ setStep, selectedArea, selectArea, customArea
           {/* Knopffolge (R-01b nach Gutachten u4, Rezept 2; WCAG 1.3.2/2.4.3): sichtbar = DOM- und Tab-Folge, kein
               flex-col-reverse. Ab sm eine Zeile: „Zurück“ links, „Weiter“ rechts; darunter gestapelt in DOM-Folge
               („Zurück“ über „Weiter“ in voller Breite). */}
-          <div className="flex flex-col items-stretch gap-4 border-t border-fuge pt-6 sm:flex-row sm:items-center sm:justify-between">
+          {/* Bei großer Schrift bis an den Kartenrand (-mx-4, wie Schritt 1); „Zurück“ rückt dafür wieder an den Textrand (ml-4) */}
+          <div className="flex flex-col items-stretch gap-4 border-t border-fuge pt-6 @max-3xs:-mx-4 sm:flex-row sm:items-center sm:justify-between">
             <button
               type="button"
               onClick={() => setStep(1)}
-              className={knopfKlassen('text', 'self-start sm:self-auto')}
+              className={knopfKlassen('text', 'self-start @max-3xs:ml-4 sm:self-auto')}
               data-motion="druck"
             >
               <Icon name="pfeil-links" groesse={5} />
@@ -93,8 +95,10 @@ export default function Schritt2({ setStep, selectedArea, selectArea, customArea
               className={knopfKlassen('haupt', 'w-full hyphens-auto wrap-break-word sm:w-auto')}
               data-motion="druck"
             >
-              Weiter zu Schritt 3: Kontaktdaten
-              <Icon name="pfeil-rechts" groesse={5} />
+              {/* Text und Pfeil in einem Block: der Pfeil sitzt hinter dem letzten Wort (E4-W1, F4) */}
+              <span className="hyphens-auto wrap-break-word">
+                Weiter zu Schritt&nbsp;3: Kontaktdaten&nbsp;<Icon name="pfeil-rechts" groesse={5} className="inline-block align-[-0.2em]" />
+              </span>
             </button>
           </div>
         </div>

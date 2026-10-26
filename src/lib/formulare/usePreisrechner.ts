@@ -1,6 +1,8 @@
 // Logik der Projektanfrage im Preisrechner (F-02, PricingCalculator) – wörtlich aus der Komponente verschoben (P3-00l).
 // Ohne Markup (PricingCalculator auf /preise, /leistungen/[id] und /faq). Ohne vorab gewählte Fläche und ohne vorab angehakte Situationen
 // (E4-W0-LEISTUNGEN, E3-SICHT): wer nichts wählt, sendet keine Fläche; Pflichtfelder und Empfänger unverändert (G8).
+// E4-W1-FORMULARE (F5): auch ohne Vorauswahl beim Gewerk und beim Zeitraum. Das Gewerk ist sichtbar als Pflicht markiert
+// („Auswahl erforderlich“), darum prüft das Absenden es; der Zeitraum ist nicht Pflicht und wird als „keine Angabe“ gesendet.
 import React, { useState } from "react";
 import {
   CRAFT_SERVICES,
@@ -16,12 +18,13 @@ type FormStatus = "idle" | "submitting" | "success" | "error";
 
 export function usePreisrechner() {
   // 1. Projekt- & Situationsangaben
-  const [serviceType, setServiceType] = useState<CraftServiceType>("bad");
+  const [serviceType, setServiceType] = useState<CraftServiceType | null>(null);
   const [roomSize, setRoomSize] = useState<RoomSizeType | null>(null);
   const [customArea, setCustomArea] = useState<string>("");
   const [selectedFeatures, setSelectedFeatures] = useState<string[]>([]);
   const [propertyType] = useState<string>("bestand");
-  const [timing, setTiming] = useState<string>("In den nächsten 1 - 3 Monaten");
+  // Kein Zeitraum vorab gewählt: leer heißt „keine Angabe“ (nicht Pflicht)
+  const [timing, setTiming] = useState<string>("");
   const [notes, setNotes] = useState<string>("");
 
   // 2. Kontaktdaten
@@ -39,7 +42,7 @@ export function usePreisrechner() {
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [referenceId, setReferenceId] = useState<string>("");
 
-  const selectedService = CRAFT_SERVICES[serviceType] || CRAFT_SERVICES.bad;
+  const selectedService = serviceType ? CRAFT_SERVICES[serviceType] : null;
   const selectedSize = roomSize ? ROOM_SIZES[roomSize] : null;
 
   const toggleFeature = (id: string) => {
@@ -68,6 +71,12 @@ export function usePreisrechner() {
       return;
     }
 
+    // Das Gewerk ist sichtbar als Pflicht markiert: die Besucherin wählt es selbst.
+    if (!serviceType || !selectedService) {
+      setErrorMessage("Bitte wählen Sie zuerst aus, welches Projekt Sie planen.");
+      return;
+    }
+
     setErrorMessage("");
     setStatus("submitting");
 
@@ -89,7 +98,7 @@ export function usePreisrechner() {
       `Gewerk: ${selectedService.title}`,
       `Fläche / Umfang: ${areaDescription || "keine Angabe"}`,
       `Objektart: ${propertyLabel}`,
-      `Zeitrahmen: ${timing}`,
+      `Zeitrahmen: ${timing || "keine Angabe"}`,
       featureLabels.length > 0
         ? `Besonderheiten / Vorarbeiten:\n- ${featureLabels.join("\n- ")}`
         : "Besonderheiten: Keine besonderen Zusatzoptionen angewählt",
@@ -112,7 +121,7 @@ export function usePreisrechner() {
             location: location.trim() || "Aßlar / Wetzlar / Hessen",
           },
           area: areaDescription || undefined,
-          timing: timing,
+          timing: timing || undefined,
           notes: fullSituationDescription,
           honeypot: honeypot || undefined,
           _t: formInitTime,

@@ -5,11 +5,13 @@ import { knopfKlassen, labelKlassen, linkKlassen, pflichtKlassen } from '@/compo
 import PflichtHinweis from '@/components/kern/PflichtHinweis';
 import { inputClass } from './stile';
 import { anzeige } from '@/lib/formulare/anzeige';
+import { KEINE_ANGABE } from '@/lib/formulare/useAnfrageFunnel';
 
 // Schritt 3: Kontaktdaten und Absenden (E2-ORCH-08: Darstellung nach KERN; Texte, Namen und Verhalten unverändert).
 export default function Schritt3({ setStep, name, setName, phone, setPhone, email, setEmail, notes, setNotes, honeypot, setHoneypot, status, errorMessage, projectTitle, finalArea, locationText, handleWhatsAppDirect, handleOnlineSubmit }) {
     return (
-        <form onSubmit={handleOnlineSubmit} className="flex flex-col gap-8">
+        // @container: die Knopfzeile der Absende-Stufe liegt im Bereich der Containerabfragen (E4-W1, F4)
+        <form onSubmit={handleOnlineSubmit} className="@container flex flex-col gap-8">
           {/* Honeypot for spam bots */}
           <input
             type="text"
@@ -44,8 +46,8 @@ export default function Schritt3({ setStep, name, setName, phone, setPhone, emai
 
           <div className="flex flex-wrap items-center justify-between gap-2 border border-fuge bg-kalk p-4 text-fs-2 text-tinte">
             <span>
-              <strong className="font-mono font-normal text-tinte-2">Projekt:</strong> {projectTitle} &middot; <strong className="font-mono font-normal text-tinte-2">Umfang:</strong> {anzeige(finalArea)} &middot;{' '}
-              <strong className="font-mono font-normal text-tinte-2">Ort:</strong> {locationText}
+              <strong className="font-mono font-normal text-tinte-2">Projekt:</strong> {projectTitle || KEINE_ANGABE} &middot; <strong className="font-mono font-normal text-tinte-2">Umfang:</strong> {finalArea ? anzeige(finalArea) : KEINE_ANGABE} &middot;{' '}
+              <strong className="font-mono font-normal text-tinte-2">Ort:</strong> {locationText || KEINE_ANGABE}
             </span>
             <button
               type="button"
