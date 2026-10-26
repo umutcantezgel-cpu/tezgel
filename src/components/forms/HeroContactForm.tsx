@@ -110,7 +110,7 @@ export default function HeroContactForm({ titel = true }: { titel?: boolean } = 
                 {/* eigene Zusage des Formulars, sinngleich ausgeschrieben (K-015, M-07) */}
                 <span className="font-text text-fs-2 text-tinte">
                     <Icon name="uhr" groesse={4} className="mr-2 align-text-bottom" />
-                    Rückruf innerhalb von 24 Stunden
+                    {zusammen('Rückruf innerhalb von 24 Stunden')}
                 </span>
             </div>
             {titel && (
@@ -165,7 +165,7 @@ export default function HeroContactForm({ titel = true }: { titel?: boolean } = 
                 <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
                     <div>
                         <label htmlFor="hero-name" className={labelKlassen}>
-                            Name <span className={pflichtKlassen}>*</span>
+                            Name<span className={pflichtKlassen}>{'\u00a0'}*</span>
                         </label>
                         <input
                             id="hero-name"
@@ -182,7 +182,7 @@ export default function HeroContactForm({ titel = true }: { titel?: boolean } = 
 
                     <div>
                         <label htmlFor="hero-phone" className={labelKlassen}>
-                            Telefonnummer <span className={pflichtKlassen}>*</span>
+                            Telefonnummer<span className={pflichtKlassen}>{'\u00a0'}*</span>
                         </label>
                         <input
                             id="hero-phone"

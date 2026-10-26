@@ -67,7 +67,7 @@ export default function Schritt3({ setStep, name, setName, phone, setPhone, emai
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-4">
             <div>
               <label htmlFor="funnel-name" className={labelKlassen}>
-                Ihr Name <span className={pflichtKlassen}>*</span>
+                Ihr Name<span className={pflichtKlassen}>{'\u00a0'}*</span>
               </label>
               <input
                 id="funnel-name"
@@ -82,7 +82,7 @@ export default function Schritt3({ setStep, name, setName, phone, setPhone, emai
             </div>
             <div>
               <label htmlFor="funnel-phone" className={labelKlassen}>
-                Telefon- oder Mobilnummer <span className={pflichtKlassen}>*</span>
+                Telefon- oder Mobilnummer<span className={pflichtKlassen}>{'\u00a0'}*</span>
               </label>
               <input
                 id="funnel-phone"

@@ -96,7 +96,7 @@ export default function BlogFilter({ anrisse = {} }) {
                     onClick={() => setActiveCategory(category.id)}
                     onFocus={insBild}
                     aria-pressed={gedrueckt}
-                    className={`${wahlKlassen} shrink-0 @max-xs:w-full @max-xs:shrink snap-start gap-2`}
+                    className={`${wahlKlassen} shrink-0 @max-xs:w-full @max-xs:shrink @max-xs:justify-start @max-xs:text-left snap-start gap-2`}
                   >
                     {/* genau ein Zeichen: gedrückt das Fugenkreuz, sonst das Kategoriesymbol */}
                     {gedrueckt ? <Fugenkreuz className="size-3 shrink-0" /> : zeichen && <Icon name={zeichen} groesse={4} />}

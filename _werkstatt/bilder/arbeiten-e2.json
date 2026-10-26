@@ -91,12 +91,12 @@
   },
   {
     "id": "bad-beleg-4",
-    "src": "/images/arbeiten/bad/bodengleiche-dusche-mosaikstreifen-ausschnitt.jpg",
+    "src": "/images/arbeiten/bad/bodengleiche-dusche-mosaikstreifen-hoch.jpg",
     "breite": 900,
     "hoehe": 1125,
     "alt": "Bodengleiche Dusche mit dunklem Mosaikstreifen an der Wand, Handbrause und Mosaikboden",
     "raum": "bad",
-    "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAABwAwCdASoQABQAPu1qrU8ppiQiMAgBMB2JZwABFauaZVKB25gA/ompkXrph+8XCPYM9b0eNFToAySTJHwMfKvdHIxb+EUi4IYOTSbET/AAAA=="
+    "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACwAwCdASoQABQAPu1yrU+pp6QiMAgBMB2JZwABDYUHIPs4NE4/wAD+SKGbpqR4ehAjCGSXMa5hkzXz4TaRozDrflKDpdnrXQGij0bUIAA="
   },
   {
     "id": "sanierung-weg-1",
@@ -172,12 +172,12 @@
   },
   {
     "id": "fliesen-fischgraet",
-    "src": "/images/arbeiten/bad/gruene-fliesen-fischgraet-ausschnitt.jpg",
-    "breite": 564,
-    "hoehe": 376,
+    "src": "/images/arbeiten/bad/gruene-fliesen-fischgraet-geschaerft.jpg",
+    "breite": 630,
+    "hoehe": 420,
     "alt": "Ausschnitt einer Wand mit grünen Rechteckfliesen im Fischgrätmuster",
     "raum": "bad",
-    "blurDataURL": "data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAABQAQCdASoQAAsAA4BaJaQAAVpwAP6g3ohS51Gv10KJfWYNO6BgAA=="
+    "blurDataURL": "data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAADQAQCdASoQAAsAA4BaJaQAAfauustRwAD+nwDpc/77Q/FmOrr/ISdAAAA="
   },
   {
     "id": "fliesen-halbverband",
@@ -340,15 +340,6 @@
     "alt": "Dusche mit zwei Lichtleisten an der Wand, gefliester Sitzbank und Mosaikboden",
     "raum": "dusche",
     "blurDataURL": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACQAwCdASoQABQAPu1iqU2ppaQiMAgBMB2JZwDG9Bhv41tZl3tAAP1nr235WDHWnV1POBeUsEcbIVCgPaDfqCe4mOpoAA=="
-  },
-  {
-    "id": "fliesen-beleg",
-    "src": "/images/arbeiten/dusche/dusche-grosse-beige-fliesen-mitte.jpg",
-    "breite": 900,
-    "hoehe": 1125,
-    "alt": "Dusche mit großen beigen Fliesen an Wand und Boden, flacher weißer Duschfläche und einer Holztür",
-    "raum": "dusche",
-    "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAACwAwCdASoQABQAPu1iqU2ppaQiMAgBMB2JZQCdACLqlC7TSxEEwAD9doEorHyze51UQncDwcZME0Jx8YW7Yxg6qriI1GVWE5JdJnSGS0rXYAAA"
   },
   {
     "id": "badsanierung-einstieg",

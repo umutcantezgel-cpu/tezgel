@@ -5,7 +5,8 @@
 // (doppelte Wortabstände, Überlauf bei großer Schrift; Runde 3).
 import type { ReactNode } from 'react';
 
-const GRUPPEN = [/vor Ort/, /\d+ km/, /\d+ Bewertungen/, /\d+ Sternen/];
+// Runde 2 der Browserprüfung E4-W1: Normnummer („DIN / 18534“), Zahl mit Einheit („24 / Stunden“) und Maße („120 × 260 cm“) ebenso
+const GRUPPEN = [/vor Ort/, /\d+ km/, /\d+ Bewertungen/, /\d+ Sternen/, /DIN \d+/, /\d+ Stunden/, /\d+ × \d+ cm/];
 
 function teile(text: string): ReactNode[] {
   let erster: RegExpExecArray | null = null;
@@ -26,4 +27,27 @@ function teile(text: string): ReactNode[] {
 
 export function zusammen(text: string): ReactNode {
   return <span>{teile(text)}</span>;
+}
+
+// Zitate im Wortlaut (G8) setzen nach einem Satzzeichen manchmal kein Leerzeichen („empfehlen.Handwerklich“). Damit die
+// Zeile dort umbrechen darf statt mitten im Wort, steht nach Satzzeichen vor einem Großbuchstaben eine Umbruchstelle
+// (<wbr>). Der Text selbst bleibt Zeichen für Zeichen gleich (Browserprüfung E4-W1, Runde 2).
+export function umbruchNachSatzzeichen(text: string): ReactNode {
+  const teile = text.split(/(?<=[.!?,;:])(?=[A-ZÄÖÜ])/);
+  if (teile.length < 2) return text;
+  return teile.flatMap((teil, i) => (i === 0 ? [teil] : [<wbr key={i} />, teil]));
+}
+
+// Kachel- und Kartentitel bei großer Schrift: „&“ hängt am Wort davor, und lange Zusammensetzungen trennen an ihrer Fuge
+// („Einfamilien-haus“ statt „Einfamili-enhaus“). Nur Anzeige; der Wert in Nutzlast und Mail bleibt unverändert
+// (Browserprüfung E4-W1, Runde 2).
+const FUGEN: Record<string, string> = {
+  Einfamilienhaus: 'Einfamilien­haus',
+  Mehrfamilienhaus: 'Mehrfamilien­haus',
+};
+
+export function kachelTitel(text: string): ReactNode {
+  const fuge = FUGEN[text];
+  if (fuge) return <span className="hyphens-manual">{fuge}</span>;
+  return text.replace(/ & /g, ' & ');
 }

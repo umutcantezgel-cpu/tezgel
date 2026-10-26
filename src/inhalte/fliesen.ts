@@ -104,7 +104,8 @@ export const FLIESEN: WissenInhalt = {
     // Überschrift wie auf /leistungen (Abnahme, Texthoheit: die Textdatei hatte keine)
     titel: 'Fliesen, die wir verlegt haben.',
     // Unterschrift: Wörter aus dem Alt-Text der Textdatei, auf sechs Wörter gekürzt (Regel 4)
-    fotos: [{ bild: 'fliesen-beleg', unterschrift: 'Dusche mit großen beigen Fliesen', href: '/fliesen/grossformat' }],
+    // fertige Dusche statt Rohbau (Browserprüfung E4-W1, Runde 2: das frühere Foto zeigte offene Anschlüsse und Ablauf)
+    fotos: [{ bild: 'start-dusche', unterschrift: 'Dusche mit großen grauen Fliesen', href: '/fliesen/grossformat' }],
     satz: 'Seit 2014 ist das Verlegen großer Fliesen ein Schwerpunkt bei uns.',
     // Stimme der Textdatei (G8: Wortlaut unverändert); die Kennzeile mit Stand setzt der Baustein Stimmen darunter
     stimmen: ['rabia-oe'],

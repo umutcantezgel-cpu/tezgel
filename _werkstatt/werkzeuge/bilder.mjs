@@ -242,6 +242,9 @@ export function auftragNormalisieren(liste) {
       if (a.alt.length > ALT_MAX) throw new Error(`alt hat ${a.alt.length} Zeichen (höchstens ${ALT_MAX})`);
       const korrektur = a.korrektur ?? true;
       if (typeof korrektur !== 'boolean') throw new Error('korrektur muss true oder false sein');
+      // optional: leichtes Nachschärfen weicher Ausschnitte (Sigma 0,5 bis 2; Browserprüfung E4-W1, Runde 2)
+      const schaerfen = a.schaerfen ?? 0;
+      if (typeof schaerfen !== 'number' || schaerfen < 0 || schaerfen > 2) throw new Error('schaerfen: Zahl von 0 bis 2');
       ergebnis.push({
         id,
         original,
@@ -253,6 +256,7 @@ export function auftragNormalisieren(liste) {
         breiten: [...new Set(breiten)].sort((p, q) => p - q),
         alt: a.alt,
         korrektur,
+        schaerfen,
       });
     } catch (e) {
       fehler.push(`${kopf}: ${e.message}`);
@@ -332,7 +336,9 @@ async function bearbeite(a, ziel) {
   const stamm = dateiname(a.raum, a.name);
   const ausgaben = [];
   for (const bw of wunsch) {
-    const { data, info } = await sharp(basis, raw).resize({ width: bw }).toColourspace('srgb')
+    let kette = sharp(basis, raw).resize({ width: bw });
+    if (a.schaerfen) kette = kette.sharpen({ sigma: a.schaerfen });
+    const { data, info } = await kette.toColourspace('srgb')
       .jpeg({ quality: JPEG_QUALITAET, progressive: true, mozjpeg: true })
       .toBuffer({ resolveWithObject: true });
     const datei = path.join(ziel, `${stamm}-${bw}.jpg`);

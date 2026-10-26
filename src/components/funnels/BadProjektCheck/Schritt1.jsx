@@ -33,7 +33,8 @@ export default function Schritt1({ sqm, sqmGewaehlt, changeSqm, sqmLabel }) {
                 value={sqm}
                 aria-valuetext={sqmGewaehlt ? `${sqmLabel} m²` : 'noch keine Angabe'}
                 onChange={(e) => changeSqm(e.target.value)}
-                className="mt-4 block h-11 w-full cursor-pointer accent-tinte"
+                // ohne Wahl in Grau statt Tinte: der Griff steht nur, weil ein Regler einen Wert braucht (Browserprüfung E4-W1, Runde 2)
+                className={`mt-4 block h-11 w-full cursor-pointer ${sqmGewaehlt ? 'accent-tinte' : 'accent-tinte-2'}`}
             />
             <ul className="mt-2 flex flex-col gap-1 font-mono text-fs-1 tabular-nums text-tinte-2 @lg:flex-row @lg:flex-wrap @lg:gap-x-6">
                 <li>3,5{NBSP}m² <span className="whitespace-nowrap">(Gäste-WC)</span></li>

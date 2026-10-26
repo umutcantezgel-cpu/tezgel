@@ -25,7 +25,7 @@ export default function Schritt4({ data, update, goToStep, handleSubmit, isSubmi
             <div className="grid grid-cols-1 gap-6 @xl:grid-cols-2 @xl:gap-4">
                 <div>
                     <label htmlFor="fk-name" className={labelClass}>
-                        Name <span className={pflichtKlassen}>*</span>
+                        Name<span className={pflichtKlassen}>{'\u00a0'}*</span>
                     </label>
                     <input
                         id="fk-name"
@@ -40,7 +40,7 @@ export default function Schritt4({ data, update, goToStep, handleSubmit, isSubmi
                 </div>
                 <div>
                     <label htmlFor="fk-phone" className={labelClass}>
-                        Telefon- oder Mobilnummer <span className={pflichtKlassen}>*</span>
+                        Telefon- oder Mobilnummer<span className={pflichtKlassen}>{'\u00a0'}*</span>
                     </label>
                     <input
                         id="fk-phone"

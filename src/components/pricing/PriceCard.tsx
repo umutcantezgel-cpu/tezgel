@@ -100,7 +100,7 @@ export default function PriceCard({
         {features.map((feature, i) => (
           <li key={i} className="flex items-start gap-3">
             <Fugenkreuz className="mt-2 size-3 shrink-0 text-strich" />
-            <span className="min-w-0">{mitBausteinen(feature)}</span>
+            <span className="min-w-0 hyphens-auto wrap-break-word">{mitBausteinen(feature)}</span>
           </li>
         ))}
       </ul>

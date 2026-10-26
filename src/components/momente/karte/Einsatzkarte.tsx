@@ -111,7 +111,8 @@ export default function Einsatzkarte({ unterschrift, beschriftet, aktuell, liste
         {/* Firmensitz: Fugenkreuz im Kreuzpunkt der Achsen, das einzige Rot der Zeichnung */}
         <path d={ASSLAR} stroke="none" className="fill-current text-laser" />
       </Planrahmen>
-      <span aria-hidden="true" className="karte-marke -translate-x-1/2 -translate-y-full pb-4 text-center lg:pb-6" style={lage(0, 0)}>
+      {/* bei großer Schrift ohne Namen: er lag dort auf dem inneren Ring; die Legende nennt den Firmensitz (Browserprüfung E4-W1, Runde 2) */}
+      <span aria-hidden="true" className="karte-marke -translate-x-1/2 -translate-y-full pb-4 text-center lg:pb-6 @max-3xs:hidden" style={lage(0, 0)}>
         <span className="block bg-fliese px-1 font-text text-fs-2 font-semibold whitespace-nowrap text-tinte">Aßlar</span>
       </span>
       {RINGE_KM.map((km) => (

@@ -48,9 +48,16 @@ const stufeKlassen =
 const zahlFeldKlassen =
   "block w-24 min-w-0 min-h-11 rounded-r1 border border-strich bg-fliese px-4 py-3 font-text text-fs-3 text-tinte placeholder:text-tinte-2 hover:border-tinte focus-visible:border-tinte";
 
+/** Leere Angabe in der Zusammenfassung: überall gleich gesetzt (Textschrift, normal, Nacht-Grau), egal ob der Wert sonst
+ *  in Mono oder halbfett steht; der Rand der Zeitraum-Karten in Nacht-Grau hat über 3 : 1 Kontrast zur Tinte (WCAG 1.4.11;
+ *  Browserprüfung E4-W1, Runde 2) */
+function OhneAngabe() {
+  return <span className="font-text font-normal text-nacht-2">noch keine Angabe</span>;
+}
+
 /** Zeitraum-Karte auf der Tinte-Fläche (aria-pressed): Text bricht um und wird nie abgeschnitten */
 const zeitKlassen =
-  "block w-full border border-nacht-fuge p-3 text-left font-text text-fs-2 text-kalk hover:border-kalk aria-pressed:border-kalk aria-pressed:bg-kalk aria-pressed:font-semibold aria-pressed:text-tinte @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]";
+  "block w-full border border-nacht-2 p-3 text-left font-text text-fs-2 text-kalk hover:border-kalk aria-pressed:border-kalk aria-pressed:bg-kalk aria-pressed:font-semibold aria-pressed:text-tinte @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]";
 /** Zahl und Einheit bleiben in einer Zeile (geschütztes Leerzeichen vor m²) */
 const einheit = (text: string) => text.replace(/(\d) m²/g, "$1 m²");
 
@@ -312,12 +319,12 @@ export default function PricingCalculator() {
               <dl className="mt-6 border-t border-nacht-fuge text-fs-2">
                 <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3 @max-3xs:flex-wrap">
                   <dt className="text-nacht-2">Projekt:</dt>
-                  <dd className="text-right font-semibold text-kalk @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]">{selectedService ? anzeige(selectedService.title) : "noch keine Angabe"}</dd>
+                  <dd className="text-right font-semibold text-kalk @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]">{selectedService ? anzeige(selectedService.title) : <OhneAngabe />}</dd>
                 </div>
                 <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3 @max-3xs:flex-wrap">
                   <dt className="text-nacht-2">Fläche:</dt>
                   <dd className="text-right font-mono text-kalk wrap-break-word">
-                    {customArea.trim() ? einheit(`${customArea.trim()} m²`) : selectedSize ? einheit(anzeige(selectedSize.areaText)) : 'noch keine Angabe'}
+                    {customArea.trim() ? einheit(`${customArea.trim()} m²`) : selectedSize ? einheit(anzeige(selectedSize.areaText)) : <OhneAngabe />}
                   </dd>
                 </div>
                 <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3 @max-3xs:flex-wrap">

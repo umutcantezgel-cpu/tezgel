@@ -396,6 +396,23 @@ html.k-bewegung:not(.k-notaus) [data-motion="galerie-filter"][data-galerie-neu] 
     opacity: 1;
   }
 }
+/* Ohne Maus und in schmaler Kachel (bei großer Systemschrift: Kachel schmaler als 20 rem) steht der Name unter dem Foto
+   auf Tinte statt darauf: drei große Zeilen mit Verlauf deckten sonst gut die Hälfte des Fotos ab (Browserprüfung E4-W1,
+   Runde 2). Mit Maus bleibt die Glasfläche wie oben. */
+.glasbild {
+  container-type: inline-size;
+}
+@media (hover: none) {
+  @container (max-width: 20rem) {
+    .glasbild-flaeche {
+      grid-row-start: 2;
+    }
+    .glasbild-text {
+      padding-top: calc(var(--spacing) * 3);
+      background: var(--color-tinte);
+    }
+  }
+}
 @media (forced-colors: active) {
   .glasbild-flaeche,
   a.glasbild .glasbild-flaeche,

@@ -1,5 +1,6 @@
 import { OBJECT_TYPES } from '@/lib/formulare/useBadanfrage';
 import { frageClass, kachelClass, kachelInhaltClass, nummerClass } from './stile';
+import { kachelTitel } from '@/components/kern/zusammen';
 
 // Schritt 1: Objekttyp (Q-01: Darstellung nach KERN v2 wie die Express-Anfrage; Texte, Namen und Verhalten unverändert).
 // Die Schrittfrage benennt die Gruppe der Auswahlknöpfe (role="group" + aria-labelledby, neu) und nimmt nach einem
@@ -21,7 +22,7 @@ export default function Schritt1({ formData, setFormData }) {
                         data-motion="zustand"
                     >
                         <span className={kachelInhaltClass}>
-                            <span className="block text-fs-3 font-semibold">{obj.title}</span>
+                            <span className="block text-fs-3 font-semibold">{kachelTitel(obj.title)}</span>
                             <span className="block text-fs-1">{obj.desc}</span>
                         </span>
                     </button>

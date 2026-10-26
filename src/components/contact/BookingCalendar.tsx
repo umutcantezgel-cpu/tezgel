@@ -184,7 +184,7 @@ export function BookingCalendar({
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-4">
               <div>
                 <label htmlFor="booking-name" className={labelKlassen}>
-                  Ihr Name <span className={pflichtKlassen}>*</span>
+                  Ihr Name<span className={pflichtKlassen}>{'\u00a0'}*</span>
                 </label>
                 <input
                   id="booking-name"
@@ -200,7 +200,7 @@ export function BookingCalendar({
 
               <div>
                 <label htmlFor="booking-phone" className={labelKlassen}>
-                  Telefonnummer <span className={pflichtKlassen}>*</span>
+                  Telefonnummer<span className={pflichtKlassen}>{'\u00a0'}*</span>
                 </label>
                 <input
                   id="booking-phone"

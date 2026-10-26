@@ -62,7 +62,8 @@ export function DirectContactCard({ className = '' }: DirectContactCardProps) {
         <Weg href={SITE_CONFIG.contact.whatsappLink} icon="sprechblase" label="WhatsApp" wert="Nachricht per WhatsApp" extern text />
         <Weg href={`mailto:${SITE_CONFIG.contact.email}`} icon="mail" label="E-Mail" wert={<Adresse email={SITE_CONFIG.contact.email} />} text />
 
-        <div className="flex items-start gap-4 border-b border-fuge py-4">
+        {/* bei großer Schrift Zeichen über dem Text wie in den Wegen darüber: der Text behält die ganze Breite (Browserprüfung E4-W1, Runde 2) */}
+        <div className="flex items-start gap-4 border-b border-fuge py-4 @max-3xs:flex-col @max-3xs:gap-2">
           <Icon name="uhr" groesse={5} className="mt-1 shrink-0 text-tinte-2" />
           <div className="min-w-0">
             <span className={etikett}>Öffnungszeiten</span>
@@ -74,7 +75,7 @@ export function DirectContactCard({ className = '' }: DirectContactCardProps) {
           </div>
         </div>
 
-        <div className="flex items-start gap-4 py-4">
+        <div className="flex items-start gap-4 py-4 @max-3xs:flex-col @max-3xs:gap-2">
           <Icon name="ort" groesse={5} className="mt-1 shrink-0 text-tinte-2" />
           <div className="min-w-0">
             <span className={etikett}>Adresse unseres Betriebs</span>

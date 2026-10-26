@@ -2,6 +2,7 @@ import Icon from '@/components/icons/Icon';
 import { knopfKlassen } from '@/components/kern/stile';
 import { PROJECT_TYPES } from '@/lib/formulare/useAnfrageFunnel';
 import { projektClass } from './stile';
+import { kachelTitel } from '@/components/kern/zusammen';
 
 // Schritt 1: Projekt (E2-ORCH-08: Darstellung nach KERN; Texte, Namen und Verhalten unverändert).
 // Je Gewerk ein Fachzeichen der Icon-Familie (E3-NACH-05, Befund 18); dekorativ, ohne Beschriftung.
@@ -33,7 +34,7 @@ export default function Schritt1({ setStep, projectType, setProjectType }) {
                   <span className="flex min-w-0 flex-1 items-center gap-4 @max-3xs:flex-col @max-3xs:items-stretch sm:flex-col sm:items-start sm:justify-between sm:gap-6">
                     <Icon name={PROJEKT_ICONS[pt.id] || 'fliese'} groesse={5} className="sm:size-6" />
                     <span className="min-w-0">
-                      <span className="block text-fs-3 font-semibold @max-3xs:hyphens-auto wrap-break-word">{pt.title}</span>
+                      <span className="block text-fs-3 font-semibold @max-3xs:hyphens-auto wrap-break-word">{kachelTitel(pt.title)}</span>
                       <span className="mt-1 block text-fs-1 @max-3xs:hyphens-auto wrap-break-word">{pt.subtitle}</span>
                     </span>
                   </span>

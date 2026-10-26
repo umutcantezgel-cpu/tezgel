@@ -19,11 +19,14 @@ export function LageFliesen({ fliesen, className }: { fliesen: Fliese[]; classNa
     <ul className={clsx('grid border-t border-fuge md:grid-cols-2 md:gap-x-12', className)}>
       {fliesen.map((f) => (
         <li key={f.href} className="border-b border-fuge">
-          <Link href={f.href} data-motion="zustand" className="group flex min-h-16 items-center justify-between gap-6 py-6 text-tinte">
+          <Link href={f.href} data-motion="zustand" className="group flex min-h-16 items-start justify-between gap-6 py-6 text-tinte">
             <span className="font-text text-fs-4 font-semibold text-pretty hyphens-none underline decoration-transparent decoration-2 underline-offset-8 transition-colors dauer-1 group-hover:decoration-laser">
               {f.satz}
             </span>
-            <Icon name="pfeil-rechts" groesse={5} className="shrink-0 text-tinte-2 transition-colors dauer-1 group-hover:text-tinte" />
+            {/* Pfeil an der ersten Zeile: in einer Zeile der Liste stehen die Pfeile gleich hoch, ob der Satz ein- oder zweizeilig ist (Browserprüfung E4-W1, Runde 2) */}
+            <span className="flex h-[1lh] shrink-0 items-center font-text text-fs-4">
+              <Icon name="pfeil-rechts" groesse={5} className="text-tinte-2 transition-colors dauer-1 group-hover:text-tinte" />
+            </span>
           </Link>
         </li>
       ))}

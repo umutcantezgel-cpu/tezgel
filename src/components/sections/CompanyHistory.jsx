@@ -10,6 +10,7 @@
 import { COMPANY_DATA, historyTimeline } from '@/config/company';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import { zusammen } from '@/components/kern/zusammen';
 
 export default function CompanyHistory() {
   const { business, headquarters, authority, owner, legalName, motto } = COMPANY_DATA;
@@ -17,7 +18,7 @@ export default function CompanyHistory() {
   return (
     <Abschnitt
       titelId="company-history-heading"
-      etikett={<>Gegründet {business.establishmentYear} in {headquarters.city} &middot; {authority.shortName}</>}
+      etikett={<>Gegründet {business.establishmentYear} in {headquarters.city}&nbsp;&middot; {authority.shortName}</>}
       // Trennstelle im Titel (Überschriften trennen nur an gesetzten Fugenstellen): bei großer Schrift „gewach-“ / „sen.“ statt
       // „gewachse“ / „n.“ (Browserprüfung E4-W0, E-065)
       titel={'So sind wir gewach\u00adsen.'}
@@ -50,7 +51,7 @@ export default function CompanyHistory() {
               <div className="mt-2 md:col-span-9 md:mt-0 md:pl-8 lg:col-span-7 lg:pl-12">
                 {/* schmal (große Schrift) eine Stufe kleiner und mit Silbentrennung: die Spalte neben der Fuge ist dort nur rund
                     260 px breit, „Betriebsgründung“ und „Fliesenfachbetrieb“ brachen sonst mitten im Wort (E-065) */}
-                <h3 className="text-fs-5 text-tinte hyphens-auto @max-3xs:text-fs-4">{eintrag.title}</h3>
+                <h3 className="text-fs-5 text-tinte hyphens-auto @max-3xs:text-fs-4">{zusammen(eintrag.title)}</h3>
                 <p className="mt-4 max-w-mass text-fs-3 text-tinte-2 @max-3xs:text-fs-2">{eintrag.description}</p>
               </div>
             </li>

@@ -86,6 +86,45 @@ export default function Karussell({ art, name, children, karte = 'w-full md:w-1/
     return () => beobachter.disconnect();
   }, [art]);
 
+  // Reihe unter sm: Die Karten stehen oben (items-start), die Spur folgt der Höhe der sichtbaren Karte. Sonst bliebe unter
+  // einer kurzen Karte die Höhe der längsten als Lücke vor den Pfeilen (bei großer Schrift über 200 px; Browserprüfung E4-W1,
+  // Runde 2). Gemessen wird nach dem Wischen und wenn sich eine Karte in der Größe ändert; beobachtet werden nur die Karten,
+  // nicht die Spur selbst (keine Rückkopplung). Ab sm stehen die Karten gestreckt nebeneinander, dort bleibt die Höhe frei.
+  useEffect(() => {
+    const el = spur.current;
+    if (art !== 'reihe' || !el) return;
+    const breit = window.matchMedia('(min-width: 40rem)');
+    const anpassen = () => {
+      const karten = Array.from(el.children) as HTMLElement[];
+      if (breit.matches || karten.length < 2) {
+        el.style.height = '';
+        return;
+      }
+      const links = el.getBoundingClientRect().left;
+      const abstand = (k: HTMLElement) => Math.abs(k.getBoundingClientRect().left - links);
+      const aktiv = karten.reduce((a, k) => (abstand(k) < abstand(a) ? k : a));
+      const stil = getComputedStyle(el);
+      el.style.height = `${aktiv.offsetHeight + parseFloat(stil.paddingTop) + parseFloat(stil.paddingBottom)}px`;
+    };
+    anpassen();
+    let zeit = 0;
+    const nachRollen = () => {
+      window.clearTimeout(zeit);
+      zeit = window.setTimeout(anpassen, 120);
+    };
+    el.addEventListener('scroll', nachRollen, { passive: true });
+    const beobachter = new ResizeObserver(nachRollen);
+    Array.from(el.children).forEach((k) => beobachter.observe(k));
+    breit.addEventListener('change', anpassen);
+    return () => {
+      window.clearTimeout(zeit);
+      el.removeEventListener('scroll', nachRollen);
+      beobachter.disconnect();
+      breit.removeEventListener('change', anpassen);
+      el.style.height = '';
+    };
+  }, [art]);
+
   // Reihe: Selbstlauf, solange nichts dagegen spricht (Maus, Fokus, Knopf, Berührung, verborgener Tab, reduzierte Bewegung).
   // Gerückt wird nur, wenn die Reihe zumindest zur Hälfte im Fenster steht und niedriger ist als das Fenster: ist sie höher
   // (große Schrift), liest man gerade Zeile für Zeile, und der Knopf zum Anhalten stünde außer Sicht.
@@ -166,7 +205,7 @@ export default function Karussell({ art, name, children, karte = 'w-full md:w-1/
         tabIndex={0}
         onPointerDown={beruehrt}
         data-motion="karussell"
-        className="karussell-reihe -mx-3 flex snap-x snap-mandatory items-start overflow-x-auto pt-1 pb-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tinte sm:items-stretch"
+        className="karussell-reihe -mx-3 flex snap-x snap-mandatory items-start overflow-x-auto overflow-y-hidden pt-1 pb-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tinte sm:items-stretch"
       >
         {teile.map((t, i) => (
           <li key={i} className={clsx('shrink-0 snap-start px-3', karte)}>

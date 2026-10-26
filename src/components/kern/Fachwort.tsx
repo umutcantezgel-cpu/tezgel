@@ -5,6 +5,7 @@
 // Bei späterem Vorkommen auf derselben Seite `erklaert={false}`: dann nur das Wort, ohne Auszeichnung als Definition.
 import type { ReactNode } from 'react';
 import { GLOSSAR, type GlossarId } from '@/config/glossar';
+import { zusammen } from '@/components/kern/zusammen';
 
 interface FachwortProps {
   id: GlossarId;
@@ -26,7 +27,7 @@ export default function Fachwort({ id, children, erklaert = true }: FachwortProp
         {wort}
       </dfn>{' '}
       <span data-erklaert={id}>
-        ({eintrag.klammer})
+        ({zusammen(eintrag.klammer)})
       </span>
     </>
   );

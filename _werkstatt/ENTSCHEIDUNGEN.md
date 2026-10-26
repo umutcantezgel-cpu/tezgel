@@ -581,6 +581,19 @@ Pakete E0-PRUEF-01, -02a bis -02d und die unabhängige Abnahme E0-PRUEF-02-PA si
     - Bleibt (gering): Die Kundenmail nennt den Block mit den Konfigurator-Angaben „Ihre Anmerkung an unser Team“; der Preisrechner schickt seine Projektdetails schon seit dem Bestand so, und der Block beginnt mit „Angaben aus dem Fliesen-Konfigurator:“.
     - Bleibt ungeprüft per Spec: Der Rückfall „keine Angabe“ in der Route; die Attrappen der Specs umgehen die Route, und die Unit-Tests importieren sie nicht.
   - Gemeinsam mit dem Projektcheck bleibt: Das Gewerk im Preisrechner ist sichtbar als „Auswahl erforderlich“ markiert und bleibt Pflicht. Ohne Wahl erscheint jetzt der Fehlertext, statt still „Badsanierung“ zu senden.
+- **Browserprüfung Runde 2** am Reinraum f5dc56e5 (wf_55b75509-44c): Funktionssuite 393 bestanden, 0 rot; Lesbarkeit grün bis auf A-1 und A-2. Von 70 Befunden aus Runde 1 gelten 63 als behoben. 52 Befunde bestätigt (4 mittel, 48 gering, keiner widerlegt). Behoben in E4-W1-SICHT-F:
+  - Fuß, Zeitleiste, Startseiten-Formular und Erklärungen halten Wortgruppen zusammen: „· DIN 18534“, „24 Stunden“, „120 × 260 cm“ (Baustein `zusammen`).
+  - Zitate dürfen nach Satzzeichen ohne Leerzeichen umbrechen (`<wbr>`, Wortlaut unverändert).
+  - Ortsliste im Einzugsband sichtbar unterstrichen; das Fugenkreuz heißt nur „Firmensitz“, die aktuelle Stadt sagt „Sie sind hier“.
+  - Pflichtsternchen hängt am Wort; Kacheltitel trennen an der Fuge („Einfamilien-haus“) und halten „&“ am Wort.
+  - Karussell: Unter sm folgt die Spur der sichtbaren Karte, keine Lücke mehr vor den Pfeilen.
+  - Glasbild: Ohne Maus und in schmaler Kachel steht der Name unter dem Foto statt darauf.
+  - Knöpfe mit Zeichen vorn stapeln bei großer Schrift Zeichen über Text; das WhatsApp-Logo schrumpft nicht mehr auf null.
+  - `/preise`: Zeitraum-Karten mit Rand über 3 : 1 Kontrast, Überschriften der Zusagen und Merkmale trennen, „noch keine Angabe“ einheitlich.
+  - Projektcheck: Regler ohne Wahl in Grau; Extras nur bei großer Schrift mit Kästchen über dem Text.
+  - Fotos: Fischgrät und Dusche mit Mosaikstreifen neu zugeschnitten und leicht geschärft; `/fliesen` zeigt eine fertige Dusche statt des Rohbaus; Galerie mit 24 Fotos, Baustelle als Block am Ende.
+  - Kontaktkarte, Einsatzkarte und Lage-Liste: Zeichen über dem Text bei großer Schrift, kein Name auf dem Ring, Pfeile an der ersten Zeile.
+  - Bleibt (gering): Am Desktop ist der Fuß links unter dem Kontaktblock kürzer als die Linkspalten; das ist das Schriftfeld des Betriebs, kein Bruch.
 - **Nicht geändert:**
   - H1 „Perfektion auf jedem Quadratmeter.“ und „Ihr neues Traumbad zum Festpreis.“ (Ausnahmen A-1 und A-2).
   - Cookie-Hinweis und Schloss-Zeichen der unteren Leiste (G8, Rückfrage M-28).

@@ -18,6 +18,7 @@ import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Karussell from '@/components/kern/Karussell';
 import { ACHSE_LAGE } from '@/components/kern/Leitachse';
 import { seitenKlassen, wahlKlassen } from '@/components/kern/stile';
+import { umbruchNachSatzzeichen } from '@/components/kern/zusammen';
 
 // Topic groups derived from the `topic` values in config/reviews.js
 // (keyword match, so new reviews are sorted in automatically).
@@ -102,7 +103,7 @@ export default function ReviewsSection({ leitachse = false }) {
                                     ))}
                                 </span>
                                 <blockquote className="mt-4 min-w-0 flex-1 font-text text-fs-3 text-pretty wrap-break-word text-tinte">
-                                    <p>„{review.text}“</p>
+                                    <p>„{umbruchNachSatzzeichen(review.text)}“</p>
                                 </blockquote>
                                 <figcaption className="mt-6 flex flex-col gap-1 border-t border-fuge pt-4">
                                     <span className="font-text text-fs-2 font-semibold text-tinte">{review.author}</span>

@@ -45,7 +45,7 @@ export default function Schritt5({ setStep, status, errorMessage, formData, setF
             <div className="grid grid-cols-1 gap-6 @3xl:grid-cols-2 @3xl:gap-4">
                 <div>
                     <label htmlFor="badanfrage-name" className={labelKlassen}>
-                        Vor- &amp; Nachname <span className={pflichtKlassen}>*</span>
+                        Vor- &amp; Nachname<span className={pflichtKlassen}>{'\u00a0'}*</span>
                     </label>
                     <input
                         id="badanfrage-name"
@@ -60,7 +60,7 @@ export default function Schritt5({ setStep, status, errorMessage, formData, setF
                 </div>
                 <div>
                     <label htmlFor="badanfrage-phone" className={labelKlassen}>
-                        Telefonnummer für Rückfragen <span className={pflichtKlassen}>*</span>
+                        Telefonnummer für Rückfragen<span className={pflichtKlassen}>{'\u00a0'}*</span>
                     </label>
                     <input
                         id="badanfrage-phone"

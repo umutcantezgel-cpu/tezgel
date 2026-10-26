@@ -55,7 +55,7 @@
 
 ## 5 · Beleg
 - H2: `So sieht unsere Arbeit aus.` (Abnahme E3-BAU-05, wie auf `/leistungen`)
-- Foto `{Bild: fliesen-beleg}` Alt: `Dusche mit großen beigen Fliesen, flacher weißer Duschfläche und einer Holztür am Ende` Unterschrift: `Dusche mit großen beigen Fliesen` → `/fliesen/grossformat` (E4-W0-BILDER)
+- Foto `{Bild: start-dusche}` Alt: `Dusche ohne Stufe mit großen grauen Fliesen und einer Glaswand` Unterschrift: `Dusche mit großen grauen Fliesen` → `/fliesen/grossformat` (E4-W1-SICHT-F: das frühere Foto zeigte die Dusche im Rohbau)
 - Satz: `Seit 2014 ist das Verlegen großer Fliesen ein Schwerpunkt bei uns. Seit 2008 sind wir bei der Handwerkskammer Wiesbaden eingetragen.`
 - Stimme `{Stimme: rabia-oe}` Quelle: `Google`
 - Kennzeile: `5,0 von 5 Sternen · 27 Bewertungen bei Google · Stand September 2026` (unter der Stimme, aus `RATING_SUMMARY`)

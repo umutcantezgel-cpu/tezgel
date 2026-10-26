@@ -29,7 +29,9 @@ export default function Knopf(props: AlsLink | AlsKnopf) {
       {icon && <Icon name={icon} groesse={5} />}
     </>
   );
-  const klassen = knopfKlassen(variante, className);
+  // Zeichen vorn (Hörer, Sprechblase): bei großer Schrift über dem Text statt allein am linken Rand, wenn der Text umbricht
+  // (Browserprüfung E4-W1, Runde 2)
+  const klassen = knopfKlassen(variante, iconLinks ? `@max-3xs:flex-col @max-3xs:gap-1 ${className ?? ''}`.trim() : className);
   if (props.href !== undefined) {
     const { href, extern } = props;
     const roh = extern || /^(tel:|mailto:|https?:)/.test(href);

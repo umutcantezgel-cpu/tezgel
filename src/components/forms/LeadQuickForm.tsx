@@ -195,7 +195,7 @@ export function LeadQuickForm({
         <div className="grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-2">
           <div>
             <label htmlFor={feldId('name')} className={labelKlassen}>
-              Ihr Name <span className={PFLICHT}>*</span>
+              Ihr Name<span className={PFLICHT}>{'\u00a0'}*</span>
             </label>
             <input
               ref={nameRef}
@@ -214,7 +214,7 @@ export function LeadQuickForm({
 
           <div>
             <label htmlFor={feldId('telefon')} className={labelKlassen}>
-              Telefonnummer <span className={PFLICHT}>*</span>
+              Telefonnummer<span className={PFLICHT}>{'\u00a0'}*</span>
             </label>
             <input
               ref={telefonRef}

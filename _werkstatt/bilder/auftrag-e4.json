@@ -231,30 +231,6 @@
     "korrektur": true
   },
   {
-    "id": "fliesen-beleg",
-    "original": "IMG_2600.PNG",
-    "raum": "dusche",
-    "name": "dusche-grosse-beige-fliesen-mitte",
-    "format": "4:5",
-    "schwerpunkt": {
-      "x": 41.6667,
-      "y": 47.507
-    },
-    "ausschnitt": {
-      "links": 7.5758,
-      "oben": 27.894,
-      "rechts": 24.2424,
-      "unten": 32.8801
-    },
-    "breiten": [
-      480,
-      800,
-      900
-    ],
-    "alt": "Dusche mit großen beigen Fliesen an Wand und Boden, flacher weißer Duschfläche und einer Holztür",
-    "korrektur": true
-  },
-  {
     "id": "badsanierung-einstieg",
     "original": "IMG_2606.PNG",
     "raum": "bad",
@@ -622,40 +598,41 @@
     "id": "fliesen-fischgraet",
     "original": "IMG_2563.PNG",
     "raum": "bad",
-    "name": "gruene-fliesen-fischgraet-ausschnitt",
+    "name": "gruene-fliesen-fischgraet-geschaerft",
     "format": "3:2",
     "schwerpunkt": {
-      "x": 59.2424,
-      "y": 70.8856
+      "x": 59.0152,
+      "y": 72.8731
     },
     "ausschnitt": {
-      "links": 37.8788,
-      "oben": 64.3305,
-      "rechts": 19.3939,
-      "unten": 22.5593
+      "links": 35.1515,
+      "oben": 65.5509,
+      "rechts": 17.1212,
+      "unten": 19.8047
     },
     "breiten": [
       480,
-      564
+      630
     ],
     "alt": "Ausschnitt einer Wand mit grünen Rechteckfliesen im Fischgrätmuster",
-    "korrektur": true
+    "korrektur": true,
+    "schaerfen": 1.0
   },
   {
     "id": "bad-beleg-4",
     "original": "IMG_2603.PNG",
     "raum": "bad",
-    "name": "bodengleiche-dusche-mosaikstreifen-ausschnitt",
+    "name": "bodengleiche-dusche-mosaikstreifen-hoch",
     "format": "4:5",
     "schwerpunkt": {
-      "x": 65.9091,
-      "y": 39.1388
+      "x": 64.4697,
+      "y": 36.785
     },
     "ausschnitt": {
-      "links": 31.8182,
-      "oben": 19.5258,
+      "links": 28.9394,
+      "oben": 16.3877,
       "rechts": 0.0,
-      "unten": 41.2483
+      "unten": 42.8173
     },
     "breiten": [
       480,
@@ -663,6 +640,7 @@
       900
     ],
     "alt": "Bodengleiche Dusche mit dunklem Mosaikstreifen an der Wand, Handbrause und Mosaikboden",
-    "korrektur": true
+    "korrektur": true,
+    "schaerfen": 0.8
   }
 ]

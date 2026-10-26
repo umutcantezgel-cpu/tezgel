@@ -12,6 +12,7 @@ import { footerGruppen, footerLegalLinks } from '@/config/navigation';
 import { oeffnungszeilen } from '@/lib/oeffnungszeiten';
 import Rufnummer from '@/components/kern/Rufnummer';
 import Karussell from '@/components/kern/Karussell';
+import { zusammen } from '@/components/kern/zusammen';
 
 const LINK_COLUMNS = footerGruppen;
 
@@ -64,7 +65,8 @@ export default function Footer() {
                                         ) : (
                                             <span className="font-semibold text-kalk">{title}</span>
                                         )}
-                                        <span className="text-nacht-2"> · {text}</span>
+                                        {/* Mittelpunkt hängt am Wort davor, die Normnummer bleibt beisammen (Browserprüfung E4-W1, Runde 2) */}
+                                        <span className="text-nacht-2">{'\u00a0· '}{zusammen(text)}</span>
                                     </span>
                                 </p>
                             ))}

@@ -188,21 +188,21 @@ export default function PreisePage() {
       <Abschnitt art="arbeit" spaet>
         <Feldraster spalten={3}>
           <Feld>
-            <h3 className="text-fs-4 text-tinte">Kostenfreies Aufmaß vor Ort</h3>
+            <h3 className="text-fs-4 text-tinte hyphens-auto">Kostenfreies Aufmaß vor Ort</h3>
             <p className="mt-2 text-fs-2 text-tinte-2">
               Vor jedem Angebot begutachtet Inhaber {siteConfig.company.owner.fullName} Ihre Räume persönlich, prüft Boden und Wände und nimmt exakte Maße.
             </p>
           </Feld>
 
           <Feld>
-            <h3 className="text-fs-4 text-tinte">Verbindliche Festpreisgarantie</h3>
+            <h3 className="text-fs-4 text-tinte hyphens-auto">Verbindliche Festpreisgarantie</h3>
             <p className="mt-2 text-fs-2 text-tinte-2">
               Der vereinbarte Preis ist garantiert. Es gibt bei uns keine nachträglichen Überraschungen oder unklare Stundenlohnabrechnungen.
             </p>
           </Feld>
 
           <Feld spanne={2} className="lg:col-span-1">
-            <h3 className="text-fs-4 text-tinte">DIN &amp; Gewährleistung</h3>
+            <h3 className="text-fs-4 text-tinte hyphens-auto">DIN&nbsp;&amp; Gewährleistung</h3>
             <p className="mt-2 text-fs-2 text-tinte-2">
               Volle 5 Jahre Gewährleistung nach VOB auf alle Verlege- und Abdichtungsarbeiten nach den strengen Richtlinien der Handwerkskammer Wiesbaden.
             </p>

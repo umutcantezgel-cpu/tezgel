@@ -55,9 +55,13 @@ export default function Leitfaden({ post, lesezeit, anriss }) {
                         {anriss ? <Textmarken text={anriss} /> : post.excerpt}
                     </p>
 
-                    <span className="mt-4 flex items-center gap-2 border-t border-fuge pt-4 font-text text-fs-2 font-semibold text-tinte">
-                        <span className="underline decoration-strich underline-offset-4">Vollständigen Leitfaden lesen</span>
-                        <Icon name="pfeil-rechts" groesse={5} />
+                    {/* Pfeil hängt am letzten Wort, auch wenn die Zeile bei großer Schrift umbricht (Browserprüfung E4-W1, Runde 2) */}
+                    <span className="mt-4 block border-t border-fuge pt-4 font-text text-fs-2 font-semibold text-tinte">
+                        <span className="underline decoration-strich underline-offset-4">Vollständigen Leitfaden</span>{' '}
+                        <span className="whitespace-nowrap">
+                            <span className="underline decoration-strich underline-offset-4">lesen</span>
+                            <Icon name="pfeil-rechts" groesse={5} className="ml-2 inline-block align-text-bottom" />
+                        </span>
                     </span>
                 </div>
             </div>

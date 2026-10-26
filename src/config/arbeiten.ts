@@ -106,12 +106,12 @@ export const ARBEITEN = {
     blur: "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAAAQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JYwCdABk6uprp5fy3qEzlWAD+rbczj/SjVdVfelqzqBJ2q/4V8UrGB8KlM08mJMHqh1AX9MvKiTaUhagTg542EaFP+F9WuK1/VzYHh3IEELLnhxsfzBrJZXsrZW8Ubsdkmynvz6c+b2LdPLUFzivl6OlwpIQM3GAAAA==",
   },
   "bad-beleg-4": {
-    src: "/images/arbeiten/bad/bodengleiche-dusche-mosaikstreifen-ausschnitt.jpg",
+    src: "/images/arbeiten/bad/bodengleiche-dusche-mosaikstreifen-hoch.jpg",
     breite: 900,
     hoehe: 1125,
     alt: "Bodengleiche Dusche mit dunklem Mosaikstreifen an der Wand, Handbrause und Mosaikboden",
     raum: "bad",
-    blur: "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAABwAwCdASoQABQAPu1qrU8ppiQiMAgBMB2JZwABFauaZVKB25gA/ompkXrph+8XCPYM9b0eNFToAySTJHwMfKvdHIxb+EUi4IYOTSbET/AAAA==",
+    blur: "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACwAwCdASoQABQAPu1yrU+pp6QiMAgBMB2JZwABDYUHIPs4NE4/wAD+SKGbpqR4ehAjCGSXMa5hkzXz4TaRozDrflKDpdnrXQGij0bUIAA=",
   },
   "sanierung-weg-1": {
     src: "/images/arbeiten/bad/bad-waehrend-arbeit-beige-wand.jpg",
@@ -178,12 +178,12 @@ export const ARBEITEN = {
     blur: "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAAAwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JYwC2yCMDcgnKXnzX/XMXxUAA/uB6Zkjm/lix+b8W8RiH3nYe0qFq+387EkezeMyjqnvuSFbLx3Cs+pTRZLapV/msYSta0mAV6D/fkugHQAAA",
   },
   "fliesen-fischgraet": {
-    src: "/images/arbeiten/bad/gruene-fliesen-fischgraet-ausschnitt.jpg",
-    breite: 564,
-    hoehe: 376,
+    src: "/images/arbeiten/bad/gruene-fliesen-fischgraet-geschaerft.jpg",
+    breite: 630,
+    hoehe: 420,
     alt: "Ausschnitt einer Wand mit grünen Rechteckfliesen im Fischgrätmuster",
     raum: "bad",
-    blur: "data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAABQAQCdASoQAAsAA4BaJaQAAVpwAP6g3ohS51Gv10KJfWYNO6BgAA==",
+    blur: "data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAADQAQCdASoQAAsAA4BaJaQAAfauustRwAD+nwDpc/77Q/FmOrr/ISdAAAA=",
   },
   "fliesen-halbverband": {
     src: "/images/arbeiten/balkon-und-terrasse/balkon-anthrazit-halbverband-ausschnitt.jpg",
@@ -328,14 +328,6 @@ export const ARBEITEN = {
     alt: "Dusche mit zwei Lichtleisten an der Wand, gefliester Sitzbank und Mosaikboden",
     raum: "dusche",
     blur: "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACQAwCdASoQABQAPu1iqU2ppaQiMAgBMB2JZwDG9Bhv41tZl3tAAP1nr235WDHWnV1POBeUsEcbIVCgPaDfqCe4mOpoAA==",
-  },
-  "fliesen-beleg": {
-    src: "/images/arbeiten/dusche/dusche-grosse-beige-fliesen-mitte.jpg",
-    breite: 900,
-    hoehe: 1125,
-    alt: "Dusche mit großen beigen Fliesen an Wand und Boden, flacher weißer Duschfläche und einer Holztür",
-    raum: "dusche",
-    blur: "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAACwAwCdASoQABQAPu1iqU2ppaQiMAgBMB2JZQCdACLqlC7TSxEEwAD9doEorHyze51UQncDwcZME0Jx8YW7Yxg6qriI1GVWE5JdJnSGS0rXYAAA",
   },
   "badsanierung-einstieg": {
     src: "/images/arbeiten/bad/badewanne-ornamentfliesen-nische.jpg",

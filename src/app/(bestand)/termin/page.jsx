@@ -190,7 +190,7 @@ export default function TerminPage() {
                                         <form onSubmit={handleSubmit} className={clsx(FELD, 'flex flex-col gap-6')}>
                                             <div>
                                                 <label htmlFor="termin-topic" className={labelKlassen}>
-                                                    1. Welches Thema möchten Sie besprechen? <span className={pflichtKlassen}>*</span>
+                                                    1. Welches Thema möchten Sie besprechen?<span className={pflichtKlassen}>{'\u00a0'}*</span>
                                                 </label>
                                                 <div className="relative">
                                                     <select
@@ -252,7 +252,7 @@ export default function TerminPage() {
                                             <div className="grid grid-cols-1 gap-6 border-t border-fuge pt-6 md:grid-cols-2 md:gap-4">
                                                 <div>
                                                     <label htmlFor="termin-name" className={labelKlassen}>
-                                                        Name, Vorname <span className={pflichtKlassen}>*</span>
+                                                        Name, Vorname<span className={pflichtKlassen}>{'\u00a0'}*</span>
                                                     </label>
                                                     <input
                                                         id="termin-name"
@@ -268,7 +268,7 @@ export default function TerminPage() {
                                                 </div>
                                                 <div>
                                                     <label htmlFor="termin-phone" className={labelKlassen}>
-                                                        Telefonnummer <span className={pflichtKlassen}>*</span>
+                                                        Telefonnummer<span className={pflichtKlassen}>{'\u00a0'}*</span>
                                                     </label>
                                                     <input
                                                         id="termin-phone"

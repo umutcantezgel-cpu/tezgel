@@ -56,9 +56,19 @@ export default function Einzugsband({ aktuell, kompakt = false, form = 'band', c
                   const ist = o.slug === aktuell;
                   const inhalt = (
                     <>
-                      <span className="flex min-w-0 items-center gap-2">
-                        {ist && <Fugenkreuz className="size-3 text-laser" />}
-                        <span className={clsx('min-w-0 wrap-break-word', ist && 'font-semibold')}>{o.name}</span>
+                      {/* Das Fugenkreuz heißt nur „Firmensitz“ (wie in der Kopfzeile); die aktuelle Stadt steht fett mit „Sie sind
+                          hier“. Die übrigen Orte sind als Links unterstrichen, auch ohne Maus (Browserprüfung E4-W1, Runde 2) */}
+                      <span className="flex min-w-0 flex-wrap items-center gap-x-2">
+                        {o.distanceKm === 0 && <Fugenkreuz className="size-3 text-laser" />}
+                        <span
+                          className={clsx(
+                            'min-w-0 wrap-break-word',
+                            ist ? 'font-semibold' : !kompakt && 'underline decoration-fuge decoration-1 underline-offset-4 group-hover:decoration-tinte',
+                          )}
+                        >
+                          {o.name}
+                        </span>
+                        {ist && !kompakt && <span className="font-mono text-fs-1 text-tinte-2">Sie sind hier</span>}
                       </span>
                       <span className="ml-auto shrink-0 font-mono text-fs-1 text-tinte-2">{entfernung(o.distanceKm)}</span>
                     </>
@@ -71,7 +81,7 @@ export default function Einzugsband({ aktuell, kompakt = false, form = 'band', c
                         <Link
                           href={`/standorte/${o.slug}`}
                           aria-current={ist ? 'page' : undefined}
-                          className="flex min-h-11 flex-wrap items-center justify-between gap-x-3 py-2 font-text text-fs-2 text-tinte underline decoration-transparent underline-offset-4 hover:decoration-tinte"
+                          className="group flex min-h-11 flex-wrap items-center justify-between gap-x-3 py-2 font-text text-fs-2 text-tinte"
                         >
                           {inhalt}
                         </Link>
