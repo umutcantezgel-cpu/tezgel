@@ -602,7 +602,7 @@ Pakete E0-PRUEF-01, -02a bis -02d und die unabhängige Abnahme E0-PRUEF-02-PA si
   - Ortslisten (Einsatzkarte und Einzugsband): bei großer Schrift steht die Entfernung in jeder Zeile unter dem Ort.
   - Feldnamen trennen bei großer Schrift, das Pflichtsternchen ragt nicht mehr über die Spalte.
   - Galerie: Die Dusche mit Sitzbank zeigt Rohranschlüsse ohne Armatur und steht jetzt im Block von der Baustelle („Dusche fertig gefliest, die Armaturen kommen noch“).
-  - `/balkon-terrasse`: „Stelzlager“ wird nur noch einmal erklärt.
+  - `/balkon-terrasse`: „Stelzlager“ wird nur noch einmal erklärt, beim Weg „Platten auf Stelzen“ (erste Nennung im Seitenfluss, K-011); der Vorspann darunter nennt das Wort ohne Marke. Zuerst hatte ich die falsche Marke entfernt, die Lesbarkeitsprüfung der Runde 4 meldete das Wort als unerklärt; korrigiert vor der Bewertung.
   - Bleibt (gering): Fuß links am Desktop (Schriftfeld, wie Runde 2); Daumen des Projektcheck-Reglers (Browser-Standard, Kontrast erfüllt); „barrie-refrei“ in einer Kundenstimme (Wortlaut G8, Trennung des Browsers); Zeitleiste auf `/ueber-uns` schmaler als der Fließtext (Satzspiegel); Fischgrät-Foto mit dunkler Ecke oben links und die breitere Balkon-Karte auf `/preise` (Sicht, kein Bruch).
 - **Nicht geändert:**
   - H1 „Perfektion auf jedem Quadratmeter.“ und „Ihr neues Traumbad zum Festpreis.“ (Ausnahmen A-1 und A-2).

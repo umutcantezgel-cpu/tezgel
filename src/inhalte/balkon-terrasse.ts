@@ -6,7 +6,7 @@
 import type { ErzaehlInhalt } from '@/components/vorlagen/inhalt';
 
 const VORSPANN =
-  'Draußen kommt es auf mehr an als auf die Fliese. Wir verlegen Platten auf Balkon und Terrasse, auch auf [[stelzlager|Stelzlagern]]. Wir erklären Ihnen in einfachen Worten, welcher Aufbau zu Ihrer Fläche passt.';
+  'Draußen kommt es auf mehr an als auf die Fliese. Wir verlegen Platten auf Balkon und Terrasse, auch auf Stelzlagern. Wir erklären Ihnen in einfachen Worten, welcher Aufbau zu Ihrer Fläche passt.';
 
 export const BALKON_TERRASSE: ErzaehlInhalt = {
   pfad: '/balkon-terrasse',
@@ -34,10 +34,10 @@ export const BALKON_TERRASSE: ErzaehlInhalt = {
     ],
     wege: [
       // Name und Satz getrennt (Abnahme E3-BAU-06); „Stelzen“ im Namen, das Fachwort mit Erklärung im Satz (Glossar: erste
-      // Nennung erklärt, K-011)
+      // Nennung erklärt, K-011); der Vorspann darunter nennt das Wort ohne zweite Erklärung (Browserprüfung E4-W1, Runde 3)
       { name: 'Balkon erneuern', satz: 'Was wir tun, wenn der alte Belag undicht ist.', href: '/balkon-terrasse/balkonsanierung' },
       { name: 'Terrassenplatten', satz: 'Welches Material und welche Stärke zu Ihrer Terrasse passen.', href: '/balkon-terrasse/terrassenplatten' },
-      { name: 'Platten auf Stelzen', satz: 'So verlegen wir Platten auf Stelzlagern, Schritt für Schritt.', href: '/balkon-terrasse/stelzlager' },
+      { name: 'Platten auf Stelzen', satz: 'So verlegen wir Platten auf [[stelzlager|Stelzlagern]], Schritt für Schritt.', href: '/balkon-terrasse/stelzlager' },
     ],
   },
   tun: {

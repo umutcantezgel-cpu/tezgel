@@ -12,7 +12,7 @@
 - Brotkrumen: `Start › Balkon und Terrasse`
 - Ort: `Für Aßlar, Wetzlar und Umgebung.` (F-03, F-09)
 - H1: `Ein neuer Belag für Balkon und Terrasse`
-- Vorspann: `Draußen kommt es auf mehr an als auf die Fliese. Wir verlegen Platten auf Balkon und Terrasse, auch auf [[stelzlager|Stelzlagern]]. Wir erklären Ihnen in einfachen Worten, welcher Aufbau zu Ihrer Fläche passt.` (F-08)
+- Vorspann: `Draußen kommt es auf mehr an als auf die Fliese. Wir verlegen Platten auf Balkon und Terrasse, auch auf Stelzlagern. Wir erklären Ihnen in einfachen Worten, welcher Aufbau zu Ihrer Fläche passt.` (F-08; ohne Textmarke, weil der Vorspann als Einleitung von „Was wir tun“ nach dem Weg „Platten auf Stelzen“ steht, der das Wort schon erklärt: Browserprüfung E4-W1, Runde 3)
 - Hauptknopf: `Termin vor Ort anfragen` → `/kontakt` · Kontakt: `Anrufen: {{COMPANY_DATA.contact.phone}}` (derselbe Hauptknopf wie in Abschnitt 6, K-009)
 - Bild: `{Bild: balkon-einstieg-hell}` Alt: `Terrasse mit großen hellgrauen Platten, einer weißen Stütze und weißem Geländer` (E4-W0-BILDER: das hellste fertige Foto)
 
