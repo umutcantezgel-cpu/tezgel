@@ -1,6 +1,7 @@
-// Logik des Bad-Projektchecks (F-05, BadProjektCheck) – wörtlich aus der Komponente verschoben (P4-05a, Vorbild P3-00l).
-// Ohne Markup; Bestand und Kern-Ansicht nutzen denselben Hook. Keine Logikänderung (G9): auch die bekannten Lücken
-// (kein Honeypot, kein `_t`, Startwert 8,2 m² außerhalb des Reglerrasters; intern I-18) bleiben, wie sie sind.
+// Logik des Bad-Projektchecks (F-05, BadProjektCheck) – aus der Komponente verschoben (P4-05a, Vorbild P3-00l).
+// Ohne Markup. Seit E4-W1 (F2, E-065) ohne Vorauswahl: Bereich, Ausstattung und Extras sind beim Laden leer, die Fläche gilt
+// erst, wenn die Besucherin den Regler bewegt hat. Nutzlast und Nachricht enthalten nur, was gewählt wurde.
+// Bekannte Lücken bleiben (kein Honeypot, kein `_t`). Der Startwert 8 m² liegt jetzt auf dem Reglerraster (vorher 8,2, intern I-18).
 import React, { useState } from 'react';
 import { COMPANY_DATA } from '@/config/company';
 import { openWhatsApp } from '@/lib/whatsapp';
@@ -31,15 +32,13 @@ export const EXTRA_OPTIONS = [
 type SentVia = 'whatsapp' | 'online' | null;
 
 export function useProjektCheck() {
-    const [sqm, setSqm] = useState(8.2);
-    const [tier, setTier] = useState('premium');
-    const [sanitaryScope, setSanitaryScope] = useState('komplett');
-    const [selectedOptions, setSelectedOptions] = useState([
-        'walkin',
-        'led-spiegel',
-        'design-heizkoerper',
-        'fliesen'
-    ]);
+    // Startwert auf dem Raster; gezählt wird er erst, wenn der Regler bewegt wurde (sqmGewaehlt).
+    const [sqm, setSqm] = useState(8);
+    const [sqmGewaehlt, setSqmGewaehlt] = useState(false);
+    // Ohne Vorauswahl: Ausstattung, Umfang und Extras sind beim Laden leer.
+    const [tier, setTier] = useState<string | null>(null);
+    const [sanitaryScope, setSanitaryScope] = useState<string | null>(null);
+    const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
     const [contactOpen, setContactOpen] = useState(false);
     const [leadData, setLeadData] = useState({ name: '', phone: '', email: '' });
     const [sentVia, setSentVia] = useState<SentVia>(null); // 'whatsapp' | 'online'
@@ -54,20 +53,27 @@ export function useProjektCheck() {
     };
 
     const sqmLabel = sqm.toLocaleString('de-DE');
-    const scopeLabel = SCOPE_OPTIONS.find((s) => s.id === sanitaryScope)?.label ?? sanitaryScope;
-    const tierLabel = TIER_OPTIONS.find((t) => t.id === tier)?.label ?? tier;
+    const scopeLabel = SCOPE_OPTIONS.find((s) => s.id === sanitaryScope)?.label ?? null;
+    const tierLabel = TIER_OPTIONS.find((t) => t.id === tier)?.label ?? null;
     const extras = EXTRA_OPTIONS.filter((o) => selectedOptions.includes(o.id)).map((o) => o.label);
-    const matchingBath = sqm <= 9
-        ? { label: 'Kompaktbad 8,2 m²', slug: 'basic-bad-8_2' }
-        : { label: 'Komfort-Bad 15,9 m²', slug: 'premium-bad-15_9' };
+    // Das passende Musterbad richtet sich nach der Größe; ohne gewählte Größe gibt es noch keins.
+    const matchingBath = !sqmGewaehlt
+        ? null
+        : sqm <= 9
+            ? { label: 'Kompaktbad 8,2 m²', slug: 'basic-bad-8_2' }
+            : { label: 'Komfort-Bad 15,9 m²', slug: 'premium-bad-15_9' };
 
     const getLeadMessage = () => {
+        // Nur gewählte Angaben; Name, Telefon und E-Mail stehen immer.
+        const angaben = [
+            sqmGewaehlt ? `Badgröße: ca. ${sqmLabel} m²` : null,
+            scopeLabel ? `Sanierungsumfang: ${scopeLabel}` : null,
+            tierLabel ? `Ausstattungsniveau: ${tierLabel}` : null,
+            extras.length > 0 ? `Wunschausstattung: ${extras.join(', ')}` : null
+        ].filter((zeile): zeile is string => zeile !== null);
         return (
             `Hallo Herr ${COMPANY_DATA.owner.lastName},\nich habe den Bad-Projektcheck genutzt und bitte um ein Festpreisangebot:\n\n` +
-            `Badgröße: ca. ${sqmLabel} m²\n` +
-            `Sanierungsumfang: ${scopeLabel}\n` +
-            `Ausstattungsniveau: ${tierLabel}\n` +
-            `Wunschausstattung: ${extras.join(', ') || 'Keine Extras gewählt'}\n\n` +
+            (angaben.length > 0 ? `${angaben.join('\n')}\n\n` : '') +
             `Name: ${leadData.name}\n` +
             `Telefon: ${leadData.phone}\n` +
             `E-Mail: ${leadData.email || 'Nicht angegeben'}\n\n` +
@@ -101,21 +107,22 @@ export function useProjektCheck() {
                 body: JSON.stringify({
                     inquiryType: 'projekt_check',
                     projectType: 'bad',
-                    projectTitle: `Bad-Projektcheck (ca. ${sqmLabel} m²)`,
+                    projectTitle: sqmGewaehlt ? `Bad-Projektcheck (ca. ${sqmLabel} m²)` : 'Bad-Projektcheck',
                     contact: {
                         name: leadData.name,
                         phone: leadData.phone,
                         email: leadData.email || undefined
                     },
+                    // Nicht gewählte Angaben fehlen in der Nutzlast (undefined entfällt beim Senden).
                     projektCheckDetails: {
-                        sqm: sqmLabel,
-                        scope: sanitaryScope,
-                        scopeLabel,
-                        tier,
-                        tierLabel,
+                        sqm: sqmGewaehlt ? sqmLabel : undefined,
+                        scope: sanitaryScope ?? undefined,
+                        scopeLabel: scopeLabel ?? undefined,
+                        tier: tier ?? undefined,
+                        tierLabel: tierLabel ?? undefined,
                         extras
                     },
-                    area: `ca. ${sqmLabel} m²`,
+                    area: sqmGewaehlt ? `ca. ${sqmLabel} m²` : undefined,
                     timing: 'Nach Aufmaß'
                 })
             });
@@ -138,9 +145,10 @@ export function useProjektCheck() {
         }
     };
 
-    // Bisher inline am Regler (onChange): Wert als Zahl übernehmen.
+    // Bisher inline am Regler (onChange): Wert als Zahl übernehmen; ab jetzt gilt die Größe als gewählt.
     const changeSqm = (value: string) => {
         setSqm(parseFloat(value));
+        setSqmGewaehlt(true);
     };
 
     // Bisher inline am Knopf „Erneut anfragen oder anpassen“ (Erfolgsansicht online).
@@ -151,6 +159,7 @@ export function useProjektCheck() {
 
     return {
         sqm,
+        sqmGewaehlt,
         changeSqm,
         tier,
         setTier,

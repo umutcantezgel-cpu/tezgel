@@ -19,6 +19,7 @@ import Zusammenfassung from './Zusammenfassung';
 export default function BadProjektCheck() {
     const {
         sqm,
+        sqmGewaehlt,
         changeSqm,
         tier,
         setTier,
@@ -69,14 +70,14 @@ export default function BadProjektCheck() {
             <div className="grid grid-cols-1 @5xl:grid-cols-12">
                 {/* Angaben 1–4 (links 7 Spalten); eigene Containerbreite für die Raster der Schritte */}
                 <div className="@container flex min-w-0 flex-col gap-12 p-6 @lg:p-8 @5xl:col-span-7 @5xl:p-12">
-                    <Schritt1 sqm={sqm} changeSqm={changeSqm} sqmLabel={sqmLabel} />
+                    <Schritt1 sqm={sqm} sqmGewaehlt={sqmGewaehlt} changeSqm={changeSqm} sqmLabel={sqmLabel} />
                     <Schritt2 sanitaryScope={sanitaryScope} setSanitaryScope={setSanitaryScope} />
                     <Schritt3 tier={tier} setTier={setTier} />
                     <Schritt4 selectedOptions={selectedOptions} toggleOption={toggleOption} />
                 </div>
 
                 <Zusammenfassung
-                    sqmLabel={sqmLabel} scopeLabel={scopeLabel} tierLabel={tierLabel} extras={extras} matchingBath={matchingBath}
+                    sqmLabel={sqmLabel} sqmGewaehlt={sqmGewaehlt} scopeLabel={scopeLabel} tierLabel={tierLabel} extras={extras} matchingBath={matchingBath}
                     contactOpen={contactOpen} setContactOpen={setContactOpen}
                     sentVia={sentVia} setSentVia={setSentVia} referenceId={referenceId} handleNewRequest={handleNewRequest}
                     leadData={leadData} setLeadData={setLeadData}
