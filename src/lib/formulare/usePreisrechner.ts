@@ -3,12 +3,12 @@
 // (E4-W0-LEISTUNGEN, E3-SICHT): wer nichts wählt, sendet keine Fläche; Pflichtfelder und Empfänger unverändert (G8).
 // E4-W1-FORMULARE (F5): auch ohne Vorauswahl beim Gewerk und beim Zeitraum. Das Gewerk ist sichtbar als Pflicht markiert
 // („Auswahl erforderlich“), darum prüft das Absenden es; der Zeitraum ist nicht Pflicht und wird als „keine Angabe“ gesendet.
+// Gegenprüfung E4-W1: keine Objektart (der Rechner fragt sie nicht ab) und kein Standardort in der Anfrage (M-24).
 import React, { useState } from "react";
 import {
   CRAFT_SERVICES,
   ROOM_SIZES,
   SITUATION_OPTIONS,
-  PROPERTY_TYPES,
   type CraftServiceType,
   type RoomSizeType,
 } from "@/components/pricing/pricing.constants";
@@ -22,7 +22,6 @@ export function usePreisrechner() {
   const [roomSize, setRoomSize] = useState<RoomSizeType | null>(null);
   const [customArea, setCustomArea] = useState<string>("");
   const [selectedFeatures, setSelectedFeatures] = useState<string[]>([]);
-  const [propertyType] = useState<string>("bestand");
   // Kein Zeitraum vorab gewählt: leer heißt „keine Angabe“ (nicht Pflicht)
   const [timing, setTiming] = useState<string>("");
   const [notes, setNotes] = useState<string>("");
@@ -85,9 +84,6 @@ export function usePreisrechner() {
       .map((fId) => SITUATION_OPTIONS.find((opt) => opt.id === fId)?.label)
       .filter(Boolean);
 
-    const propertyLabel =
-      PROPERTY_TYPES.find((p) => p.id === propertyType)?.label || propertyType;
-
     const areaDescription = customArea.trim()
       ? `${customArea.trim()} m²${selectedSize ? ` (Kategorie: ${selectedSize.label})` : ""}`
       : selectedSize?.areaText ?? "";
@@ -97,7 +93,6 @@ export function usePreisrechner() {
       `--- PROJEKTDETAILS ---`,
       `Gewerk: ${selectedService.title}`,
       `Fläche / Umfang: ${areaDescription || "keine Angabe"}`,
-      `Objektart: ${propertyLabel}`,
       `Zeitrahmen: ${timing || "keine Angabe"}`,
       featureLabels.length > 0
         ? `Besonderheiten / Vorarbeiten:\n- ${featureLabels.join("\n- ")}`
@@ -118,7 +113,8 @@ export function usePreisrechner() {
             name: name.trim(),
             phone: phone.trim(),
             email: email.trim() || undefined,
-            location: location.trim() || "Aßlar / Wetzlar / Hessen",
+            // ohne Ort kein Standardort; der Server setzt „keine Angabe“ (Gegenprüfung E4-W1, M-24)
+            location: location.trim() || undefined,
           },
           area: areaDescription || undefined,
           timing: timing || undefined,

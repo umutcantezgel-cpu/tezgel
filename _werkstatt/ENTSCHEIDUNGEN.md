@@ -572,6 +572,14 @@ Pakete E0-PRUEF-01, -02a bis -02d und die unabhängige Abnahme E0-PRUEF-02-PA si
     - Keine Werte, die niemand gewählt hat: Fehlt der Ort, setzt der Server „keine Angabe“ statt „Aßlar / Wetzlar / Hessen“. Das Startseiten-Formular schickt ohne Wahl kein Vorhaben, keine Fläche und keinen Zeitraum mehr. Empfänger und Betreffpräfix bleiben (G8).
     - „Anfrage verbindlich absenden“ heißt „Anfrage absenden“; die Anfrage ist kostenlos und unverbindlich, und das Wort „verbindlich“ hätte P1 verunsichert.
     - `/preise`: Absende-Knopf bei 200 % in zwei Zeilen (weniger Innenabstand nur bei großer Schrift). Der Satz zur Pflegekasse lautet „Bei Umbauten im Bad für mehr Barrierefreiheit gewährt die Pflegekasse zudem bis zu 4.180 € Zuschuss pro pflegebedürftiger Person.“ Betrag, Kasse und Bezug bleiben; gefördert wird der Umbau, nicht das Bad. Der frühere Satz „Bei barrierefreien Bädern …“ hätte das Fachwort ohne Erklärung gebraucht.
+  - Code-Gegenprüfung wf_8b4cfaf5-de3 (drei Blickrichtungen, je Befund drei Widerleger) fand weitere Werte, die niemand gewählt hat. Behoben:
+    - Preisrechner ohne Standardort und ohne die feste Zeile „Objektart: Bestandsimmobilie“.
+    - Projektcheck ohne festen Zeitraum „Nach Aufmaß“.
+    - Holzoptik setzt nur das Material, nicht mehr Dielenformat und Verband.
+    - Konfigurator: Die Notiz wird nie gekürzt, nur die Zusammenfassung; die Sockellänge geht mit.
+    - Die Specs prüfen das jetzt ausdrücklich: Ort, Objektart und Zeitraum fehlen; Abwählen in Badanfrage, Projektcheck und Preisrechner; Treppe ohne Vorauswahl; Holzoptik nur Material; Vorhaben auf der Startseite; Anmerkungen des Konfigurators Zeile für Zeile.
+    - Bleibt (gering): Die Kundenmail nennt den Block mit den Konfigurator-Angaben „Ihre Anmerkung an unser Team“; der Preisrechner schickt seine Projektdetails schon seit dem Bestand so, und der Block beginnt mit „Angaben aus dem Fliesen-Konfigurator:“.
+    - Bleibt ungeprüft per Spec: Der Rückfall „keine Angabe“ in der Route; die Attrappen der Specs umgehen die Route, und die Unit-Tests importieren sie nicht.
   - Gemeinsam mit dem Projektcheck bleibt: Das Gewerk im Preisrechner ist sichtbar als „Auswahl erforderlich“ markiert und bleibt Pflicht. Ohne Wahl erscheint jetzt der Fehlertext, statt still „Badsanierung“ zu senden.
 - **Nicht geändert:**
   - H1 „Perfektion auf jedem Quadratmeter.“ und „Ihr neues Traumbad zum Festpreis.“ (Ausnahmen A-1 und A-2).

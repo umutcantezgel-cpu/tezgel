@@ -402,13 +402,10 @@ export function useFliesenKonfigurator({ area, substrate, format, material, floo
         const presetSubstrates = (Array.isArray(substrate) ? substrate : substrate ? [substrate] : []).filter((s) =>
             SUBSTRATE_OPTIONS.some((o) => o.id === s)
         );
-        // G8: Ohne Vorgabe der Seite ist nichts gewählt (leer). Vorgaben der Seite (Props) bleiben als Voreinstellung.
+        // G8: Ohne Vorgabe der Seite ist nichts gewählt (leer). Vorgaben der Seite (Props) bleiben als Voreinstellung; daraus
+        // wird nichts abgeleitet (Gegenprüfung E4-W1: Holzoptik setzt weder Dielenformat noch Verband, M-24).
         const presetMaterial = MATERIAL_OPTIONS.some((o) => o.id === material) ? material : '';
-        const presetFormat = FORMAT_OPTIONS.some((o) => o.id === format)
-            ? format
-            : presetMaterial === 'holzoptik'
-                ? 'dielen'
-                : '';
+        const presetFormat = FORMAT_OPTIONS.some((o) => o.id === format) ? format : '';
         return {
             rooms: presetRooms,
             substrates: presetSubstrates,
@@ -418,7 +415,7 @@ export function useFliesenKonfigurator({ area, substrate, format, material, floo
             // `as string` nur für den Typprüfer: `some(…)` sichert, dass ein vorgegebener Wert existiert.
             format: presetFormat as string,
             material: presetMaterial as string,
-            pattern: presetMaterial === 'holzoptik' ? 'verband' : '',
+            pattern: '',
             area: '',
             skirting: '',
             stairLocation: '',
@@ -508,11 +505,18 @@ export function useFliesenKonfigurator({ area, substrate, format, material, floo
         const removalLabel = data.removal === 'ja' ? 'Ja, Altbelag entfernen' : data.removal === 'nein' ? 'Nein, nicht erforderlich' : data.removal === 'unklar' ? 'Unklar / vor Ort prüfen' : 'Keine Angabe';
         const underfloorHeatingLabel = data.floorHeating === 'ja' ? 'Ja, vorhanden/geplant' : wahlOf(YES_NO_UNSURE, data.floorHeating);
         // Alle Angaben auch im Online-Versand (Abnahme E4-W1, F3): Nassbereich, Muster, Sockel und Treppe haben im Mail-Schema
-        // kein eigenes Feld. Die Zusammenfassung steht deshalb hinter der Notiz in den Anmerkungen; die Grenze des Servers
-        // (2.000 Zeichen) kürzt nur die Zusammenfassung, nie die Notiz.
-        const angaben = ['Angaben aus dem Fliesen-Konfigurator:', ...buildSummaryLines(data).map(([k, v]) => `${k}: ${v}`)].join('\n');
+        // kein eigenes Feld. Die Zusammenfassung steht deshalb hinter der Notiz in den Anmerkungen. Die Notiz geht immer ganz
+        // mit (ist sie allein zu lang, meldet der Server das wie bisher); gekürzt wird nur die Zusammenfassung auf die Grenze
+        // des Servers von 2.000 Zeichen.
+        const sockel = data.skirting?.trim();
+        const angaben = [
+            'Angaben aus dem Fliesen-Konfigurator:',
+            ...buildSummaryLines(data).map(([k, v]) => `${k}: ${v}`),
+            ...(sockel ? [`Sockel: ${sockel} m`] : [])
+        ].join('\n');
         const notiz = data.notes?.trim();
-        const anmerkungen = (notiz ? `${notiz}\n\n${angaben}` : angaben).slice(0, 2000);
+        const platz = 2000 - (notiz ? notiz.length + 2 : 0);
+        const anmerkungen = notiz ? (platz > 0 ? `${notiz}\n\n${angaben.slice(0, platz)}` : notiz) : angaben.slice(0, 2000);
 
         try {
             const res = await fetch('/api/anfrage', {

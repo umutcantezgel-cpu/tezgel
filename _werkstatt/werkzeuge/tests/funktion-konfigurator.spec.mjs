@@ -61,7 +61,7 @@ async function treppeMasse(page) {
 
 // Gutfall-Kette: Küche + Flur, Zementestrich, Belag wird nicht entfernt, Großformat, Feinsteinzeug, Kreuzfuge, 24,5 m²,
 // Zeitraum „In 1 – 3 Monaten“ → Schritt 4. Alles, was in der Kette gebraucht wird, wählt die Besucherin selbst (keine Vorauswahl).
-async function bisSchritt4Gutfall(page, { fussbodenheizung = null } = {}) {
+async function bisSchritt4Gutfall(page, { fussbodenheizung = null, sockel = null } = {}) {
   await page.goto(SEITE);
   await raum(page, 'Küche').click();
   await raum(page, 'Flur & Diele').click();
@@ -76,6 +76,7 @@ async function bisSchritt4Gutfall(page, { fussbodenheizung = null } = {}) {
   await gruppe(page, 'Material bzw. Optik:').getByRole('button', { name: 'Feinsteinzeug / Keramik', exact: true }).click();
   await gruppe(page, 'Verlegemuster:').getByRole('button', { name: 'Kreuzfuge', exact: true }).click();
   await page.getByLabel('Zu belegende Fläche in m²').fill('24,5');
+  if (sockel) await page.getByLabel(/^Sockel in Metern/).fill(sockel);
   await page.getByRole('button', { name: 'Zur Zusammenfassung' }).click();
   await expect(schritt(page, 4)).toBeVisible();
   await gruppe(page, 'Gewünschter Zeitraum:').getByRole('button', { name: 'In 1 – 3 Monaten', exact: true }).click();
@@ -155,7 +156,7 @@ test.describe('FliesenKonfigurator (/fliesen/konfigurator)', () => {
   });
 
   test('Gutfall online: POST /api/anfrage mit inquiryType „fliesen“, Richtwert-Eingaben und Erfolg mit Referenz', async ({ page, anfragen }) => {
-    await bisSchritt4Gutfall(page);
+    await bisSchritt4Gutfall(page, { sockel: '12' });
     await kontaktAusfuellen(page);
     await onlineSenden(page).click();
     await expect(page.getByText('Konfiguration erfolgreich übermittelt')).toBeVisible();
@@ -164,16 +165,28 @@ test.describe('FliesenKonfigurator (/fliesen/konfigurator)', () => {
     // Richtwert 24,5 m² Kreuzfuge (5–10 %) = ca. 25,7–27 m²
     await expect(page.getByText('ca. 25,7–27 m²')).toBeVisible();
     expect(anfragen).toHaveLength(1);
-    // Angaben ohne eigenes Mail-Feld kommen über die Anmerkungen an (Abnahme E4-W1, F3)
-    for (const zeile of ['Nassbereich: ', 'Verlegemuster: ', 'Format: ']) expect(anfragen[0].notes).toContain(zeile);
+    // Angaben ohne eigenes Mail-Feld kommen über die Anmerkungen an (Abnahme E4-W1, F3): Notiz zuerst, dann jede Angabe mit
+    // ihrem Wert, Ungewähltes als „Keine Angabe“, zuletzt der Sockel (Gegenprüfung E4-W1: exakt statt nur Etiketten)
+    expect(anfragen[0].notes).toBe([
+      'Testnotiz Konfigurator',
+      '',
+      'Angaben aus dem Fliesen-Konfigurator:',
+      'Bereich: Küche, Flur & Diele',
+      'Untergrund: Neuer Zementestrich',
+      'Fußbodenheizung: Keine Angabe',
+      'Rückbau Altbelag: Nein',
+      'Nassbereich: Keine Angabe',
+      'Format: Großformat',
+      'Material: Feinsteinzeug / Keramik',
+      'Verlegemuster: Kreuzfuge',
+      'Sockel: 12 m',
+    ].join('\n'));
     expect(anfragen[0]).toMatchObject({
       inquiryType: 'fliesen',
       projectType: 'fliesen',
       projectTitle: 'Fliesen-Konfiguration (Küche, Flur & Diele)',
       timing: 'In 1 – 3 Monaten',
       area: '24,5 m²',
-      // Notiz zuerst, danach alle Angaben der Zusammenfassung (Abnahme E4-W1, F3)
-      notes: expect.stringMatching(/^Testnotiz Konfigurator\n\nAngaben aus dem Fliesen-Konfigurator:\n/),
       contact: { name: 'Prüf Person', phone: '0170 0000000', email: 'pruef@example.de', zipCity: 'Aßlar', location: 'Aßlar' },
       fliesenDetails: {
         rooms: ['kueche', 'flur'],
@@ -234,6 +247,35 @@ test.describe('FliesenKonfigurator (/fliesen/konfigurator)', () => {
     await expect(gedrueckt).toHaveCount(0);
     await expect(page.getByText('Keine Angabe').first()).toBeVisible();
     await expect(page.getByText('Fläche: Noch keine Angabe in m²')).toBeVisible();
+  });
+
+  // Gegenprüfung E4-W1: auch der Treppenweg hat keine Vorauswahl (Lage, Form, Bauart, Belag, Setzstufen, Sockel)
+  test('Keine Vorauswahl auf dem Treppenweg: in Schritt 2 und 3 ist nichts gedrückt', async ({ page }) => {
+    await page.goto(SEITE);
+    const gedrueckt = page.locator('fieldset button[aria-pressed="true"]');
+    await raum(page, 'Treppe').click();
+    await expect(gedrueckt).toHaveCount(1);
+    await weiter(page, 2).click();
+    await expect(schritt(page, 2)).toBeVisible();
+    await expect(gedrueckt).toHaveCount(0);
+    await weiter(page, 3).click();
+    await expect(schritt(page, 3)).toBeVisible();
+    await expect(gruppe(page, 'Sollen auch die senkrechten Flächen der Stufen belegt werden?')).toBeVisible();
+    await expect(gedrueckt).toHaveCount(0);
+  });
+
+  // Gegenprüfung E4-W1: Die Seite Holzoptik gibt nur das Material vor; Format und Muster wählt die Besucherin selbst
+  test('/fliesen/holzoptik: nur das Material der Seite ist gewählt, Format und Verlegemuster nicht', async ({ page }) => {
+    await page.goto('/fliesen/holzoptik');
+    await raum(page, 'Küche').click();
+    await weiter(page, 2).click();
+    await expect(schritt(page, 2)).toBeVisible();
+    await weiter(page, 3).click();
+    await expect(schritt(page, 3)).toBeVisible();
+    await expect(gruppe(page, 'Material bzw. Optik:').getByRole('button', { name: 'Feinsteinzeug in Holzoptik', exact: true })).toHaveAttribute('aria-pressed', 'true');
+    await expect(gruppe(page, 'Verlegemuster:').locator('button[aria-pressed="true"]')).toHaveCount(0);
+    await expect(page.getByRole('button', { name: /^Dielenformat/ })).toHaveAttribute('aria-pressed', 'false');
+    await expect(page.locator('fieldset button[aria-pressed="true"]')).toHaveCount(1);
   });
 
   // Befund (Ausgangsstand): „Weiß nicht“ (Voreinstellung) wurde als „Nein“ übermittelt. Jetzt wird nur gesendet, was gewählt wurde.

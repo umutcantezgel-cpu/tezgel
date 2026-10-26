@@ -42,6 +42,23 @@ test.describe('HeroContactForm (/)', () => {
     expect(typeof anfragen[0]._t).toBe('number');
   });
 
+  // Gegenprüfung E4-W1: ein gewähltes Vorhaben kommt an, und der Erfolg nennt es
+  test('mit Vorhaben: projectType und projectTitle in der Nutzlast, der Erfolg nennt das Vorhaben', async ({ page, anfragen }) => {
+    await page.goto('/#termin');
+    const form = page.locator('form').filter({ has: page.locator('#hero-name') });
+    const bad = form.getByRole('button', { name: 'Badsanierung', exact: true });
+    await bad.click();
+    await expect(bad).toHaveAttribute('aria-pressed', 'true');
+    await page.locator('#hero-name').fill('Prüf Person');
+    await page.locator('#hero-phone').fill('0170 0000000');
+    await form.locator('button[type="submit"]').click();
+    await expect(page.getByText('TEZ-26-TEST')).toBeVisible();
+    expect(anfragen).toHaveLength(1);
+    expect(anfragen[0]).toMatchObject({ inquiryType: 'general', projectType: 'bad', projectTitle: 'Badsanierung', contact: { name: 'Prüf Person', phone: '0170 0000000' } });
+    expect(anfragen[0].contact.location).toBeUndefined();
+    await expect(page.getByText(/Ihre Anfrage für\s+Badsanierung\s+ist direkt bei Herrn Deniz Tezgel eingegangen\./)).toBeVisible();
+  });
+
   test.describe('echte Route (Mock-Modus ohne Resend-Schlüssel)', () => {
     test.use({ echteRoute: true });
     test('Server nimmt an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)', async ({ page }) => {

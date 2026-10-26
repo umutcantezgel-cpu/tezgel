@@ -45,6 +45,12 @@ async function konfiguriere(w) {
   await w.getByRole('button', { name: /^Exklusiv/ }).click();
   await w.getByRole('button', { name: 'Spiegel mit Licht', exact: true }).click();
   await w.getByRole('button', { name: 'Badewanne oder Komfortwanne', exact: true }).click();
+  // Abwählen (Gegenprüfung E4-W1): Fußbodenheizung an und wieder aus; sie fehlt danach in der Nutzlast (extras unten exakt)
+  const heizung = w.getByRole('button', { name: 'Fußbodenheizung', exact: true });
+  await heizung.click();
+  await expect(heizung).toHaveAttribute('aria-pressed', 'true');
+  await heizung.click();
+  await expect(heizung).toHaveAttribute('aria-pressed', 'false');
   await expect(w.getByRole('button', { name: /^Wanne zu Dusche/ })).toHaveAttribute('aria-pressed', 'true');
   await expect(w.getByRole('button', { name: /^Exklusiv/ })).toHaveAttribute('aria-pressed', 'true');
   await expect(w.getByRole('button', { name: 'Spiegel mit Licht', exact: true })).toHaveAttribute('aria-pressed', 'true');
@@ -116,8 +122,9 @@ test.describe('BadProjektCheck (/bad/projekt-check)', () => {
       projectTitle: 'Bad-Projektcheck',
       contact: { name: 'Prüf Person', phone: '0170 0000000' },
       projektCheckDetails: { extras: [] },
-      timing: 'Nach Aufmaß',
     });
+    // kein Zeitraum, den niemand gewählt hat (Gegenprüfung E4-W1, M-24)
+    expect(anfragen[0].timing).toBeUndefined();
     // Keine Vorauswahl: Größe, Umfang und Ausstattung fehlen in der Nutzlast, es gibt keine Fläche.
     expect(anfragen[0].projektCheckDetails.sqm).toBeUndefined();
     expect(anfragen[0].projektCheckDetails.scope).toBeUndefined();
@@ -184,8 +191,8 @@ test.describe('BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten', () =>
           extras: ['Badewanne / Komfortwanne', 'LED-Lichtspiegel'],
         },
         area: 'ca. 3,5 m²',
-        timing: 'Nach Aufmaß',
       });
+      expect(anfragen[0].timing).toBeUndefined();
     });
 
     test(`${seite}: WhatsApp-Knopf öffnet WhatsApp mit den Projektdaten, sendet keine Anfrage an die Route`, async ({ page, anfragen }) => {

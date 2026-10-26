@@ -122,8 +122,8 @@ export function useProjektCheck() {
                         tierLabel: tierLabel ?? undefined,
                         extras
                     },
-                    area: sqmGewaehlt ? `ca. ${sqmLabel} m²` : undefined,
-                    timing: 'Nach Aufmaß'
+                    // kein Zeitraum: der Projektcheck fragt ihn nicht ab (Gegenprüfung E4-W1, M-24)
+                    area: sqmGewaehlt ? `ca. ${sqmLabel} m²` : undefined
                 })
             });
 

@@ -109,6 +109,13 @@ test.describe('PricingCalculator (/preise)', () => {
     await klicken(rechner.getByRole('button', { name: 'Badsanierung und bodengleiche Dusche' }));
     await expect(rechner.getByRole('button', { name: 'Badsanierung und bodengleiche Dusche' })).toHaveAttribute('aria-pressed', 'true');
     await expect(rechner.locator('button[aria-pressed="true"]')).toHaveCount(1);
+    // Zeitraum: ein zweiter Tipp nimmt die Wahl zurück, danach geht kein Zeitraum mit (Gegenprüfung E4-W1)
+    const sofort = rechner.getByRole('button', { name: 'Schnellstmöglich' });
+    await klicken(sofort);
+    await expect(sofort).toHaveAttribute('aria-pressed', 'true');
+    await klicken(sofort);
+    await expect(sofort).toHaveAttribute('aria-pressed', 'false');
+    await expect(rechner.locator('button[aria-pressed="true"]')).toHaveCount(1);
     await kontaktAusfuellen(page);
     await haken(page.locator('#calc-privacy'));
     await klicken(absendenKnopf(page));
@@ -118,8 +125,11 @@ test.describe('PricingCalculator (/preise)', () => {
       inquiryType: 'bad',
       projectType: 'bad',
       projectTitle: 'Badsanierung & Walk-In Dusche',
-      contact: { name: 'Prüf Person', phone: '0170 0000000', location: 'Aßlar / Wetzlar / Hessen' },
+      contact: { name: 'Prüf Person', phone: '0170 0000000' },
     });
+    // kein Standardort und keine Objektart, die niemand gewählt hat (Gegenprüfung E4-W1, M-24)
+    expect(anfragen[0].contact.location).toBeUndefined();
+    expect(anfragen[0].notes).not.toContain('Objektart');
     expect(anfragen[0].timing).toBeUndefined();
     expect(anfragen[0].area).toBeUndefined();
     expect(anfragen[0].contact.email).toBeUndefined();

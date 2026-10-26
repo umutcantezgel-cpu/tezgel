@@ -106,13 +106,26 @@ test.describe('BadanfrageFunnel (/bad/badanfrage)', () => {
     await weiter(page, 3).click();
     await page.getByLabel('Länge (m)', { exact: true }).fill('2.5');
     await page.getByLabel('Breite (m)', { exact: true }).fill('4');
-    // Personen als Auswahlkarten (Abnahme E4-W1, F1): Tipp auf die Karte statt Auswahlliste
-    await page.getByRole('button', { name: '3 - 4 Personen (Familie)', exact: true }).click();
+    // Personen als Auswahlkarten (Abnahme E4-W1, F1): Tipp auf die Karte statt Auswahlliste; ein zweiter Tipp nimmt die
+    // Wahl zurück (Gegenprüfung E4-W1), ein dritter wählt wieder
+    const familie = page.getByRole('button', { name: '3 - 4 Personen (Familie)', exact: true });
+    await familie.click();
+    await expect(familie).toHaveAttribute('aria-pressed', 'true');
+    await familie.click();
+    await expect(familie).toHaveAttribute('aria-pressed', 'false');
+    await familie.click();
+    await expect(familie).toHaveAttribute('aria-pressed', 'true');
     await weiter(page, 4).click();
     await option(page, 'Luxus').click();
     // Ohne Vorauswahl (E4-W1): die Ausstattung wird vom Besucher angeklickt, in dieser Reihenfolge.
     await page.getByRole('button', { name: 'Bodengleiche Walk-In-Dusche', exact: true }).click();
     await page.getByRole('button', { name: 'Badewanne', exact: true }).click();
+    // Abwählen: Spiegel an und wieder aus; er fehlt danach in features und featureLabels (unten exakt)
+    const spiegel = page.getByRole('button', { name: 'LED-Lichtspiegel', exact: true });
+    await spiegel.click();
+    await expect(spiegel).toHaveAttribute('aria-pressed', 'true');
+    await spiegel.click();
+    await expect(spiegel).toHaveAttribute('aria-pressed', 'false');
     await weiter(page, 5).click();
     await expect(schritt(page, 5)).toBeVisible();
     await feld.name(page).fill('Prüf Person');
@@ -193,9 +206,12 @@ test.describe('BadanfrageFunnel (/bad/badanfrage)', () => {
       projectTitle: 'Badsanierung',
       badDetails: { features: [] },
     });
-    for (const k of ['scope', 'tier', 'propertyType', 'persons', 'length', 'width', 'sqm']) {
+    for (const k of ['scope', 'scopeLabel', 'tier', 'tierLabel', 'propertyType', 'propertyTypeLabel', 'persons', 'personsLabel', 'length', 'width', 'sqm']) {
       expect(anfragen[0].badDetails[k]).toBeUndefined();
     }
+    // auch oben in der Nutzlast nichts Ungewähltes (Gegenprüfung E4-W1)
+    expect(anfragen[0].timing).toBeUndefined();
+    expect(anfragen[0].area).toBeUndefined();
     expect(anfragen[0].contact.email).toBeUndefined();
     expect(anfragen[0].contact.street).toBeUndefined();
     expect(anfragen[0].contact.location).toBeUndefined();
