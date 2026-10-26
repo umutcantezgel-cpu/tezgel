@@ -12,7 +12,7 @@ export const KATEGORIE_MOTIV = {
 
 /** Plan je Beitrag (Slug): jede Vorschau zeigt ihr Thema */
 export const BEITRAG_MOTIV = {
-    'handwerkerbonus-fliesenarbeiten': 'wohnen',
+    'handwerkerbonus-fliesenarbeiten': 'aussen',
     'undichte-dusche-warnzeichen': 'reparatur',
     'feinsteinzeug-oder-naturstein-vergleich': 'naturstein',
     'fliesen-fuer-allergiker': 'grossformat',
@@ -21,7 +21,7 @@ export const BEITRAG_MOTIV = {
     'fliesenleger-gesucht-geselle-meister': 'untergrund',
     'gaeste-wc-fliesen': 'bad',
     'rutschfeste-fliesen-r-klassen': 'treppe',
-    'schimmel-fliesenfugen-vermeiden': 'fugen',
+    'schimmel-fliesenfugen-vermeiden': 'wohnen',
     'duschrinne-oder-punktablauf': 'abdichtung',
     'wandnischen-dusche-planen': 'badsanierung',
     'barrierefreier-balkonaustritt': 'balkon',

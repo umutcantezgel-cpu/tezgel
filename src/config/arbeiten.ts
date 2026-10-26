@@ -106,12 +106,12 @@ export const ARBEITEN = {
     blur: "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAAAQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JYwCdABk6uprp5fy3qEzlWAD+rbczj/SjVdVfelqzqBJ2q/4V8UrGB8KlM08mJMHqh1AX9MvKiTaUhagTg542EaFP+F9WuK1/VzYHh3IEELLnhxsfzBrJZXsrZW8Ubsdkmynvz6c+b2LdPLUFzivl6OlwpIQM3GAAAA==",
   },
   "bad-beleg-4": {
-    src: "/images/arbeiten/bad/dusche-mosaikstreifen-handbrause.jpg",
-    breite: 800,
-    hoehe: 1000,
-    alt: "Bodengleiche Dusche mit Mosaik an der Wand, Handbrause und WC an der Wand",
+    src: "/images/arbeiten/bad/bodengleiche-dusche-mosaikstreifen-ausschnitt.jpg",
+    breite: 900,
+    hoehe: 1125,
+    alt: "Bodengleiche Dusche mit dunklem Mosaikstreifen an der Wand, Handbrause und Mosaikboden",
     raum: "bad",
-    blur: "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADQAwCdASoQABQAPu1iqk2ppaQiMAgBMB2JZwAASixRgmGDsxsQbwAA/e6N6aFbvRcWoGIaV45t9A7JdC6ENFuU4mGP2/FT6/500mnsUxM25uZwFFR2cxn4z38ZHOMx+3IpQAAA",
+    blur: "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAABwAwCdASoQABQAPu1qrU8ppiQiMAgBMB2JZwABFauaZVKB25gA/ompkXrph+8XCPYM9b0eNFToAySTJHwMfKvdHIxb+EUi4IYOTSbET/AAAA==",
   },
   "sanierung-weg-1": {
     src: "/images/arbeiten/bad/bad-waehrend-arbeit-beige-wand.jpg",

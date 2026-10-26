@@ -640,5 +640,29 @@
     ],
     "alt": "Ausschnitt einer Wand mit grünen Rechteckfliesen im Fischgrätmuster",
     "korrektur": true
+  },
+  {
+    "id": "bad-beleg-4",
+    "original": "IMG_2603.PNG",
+    "raum": "bad",
+    "name": "bodengleiche-dusche-mosaikstreifen-ausschnitt",
+    "format": "4:5",
+    "schwerpunkt": {
+      "x": 65.9091,
+      "y": 39.1388
+    },
+    "ausschnitt": {
+      "links": 31.8182,
+      "oben": 19.5258,
+      "rechts": 0.0,
+      "unten": 41.2483
+    },
+    "breiten": [
+      480,
+      800,
+      900
+    ],
+    "alt": "Bodengleiche Dusche mit dunklem Mosaikstreifen an der Wand, Handbrause und Mosaikboden",
+    "korrektur": true
   }
 ]

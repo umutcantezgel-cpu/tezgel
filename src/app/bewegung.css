@@ -380,7 +380,12 @@ html.k-bewegung:not(.k-notaus) [data-motion="galerie-filter"][data-galerie-neu] 
   );
 }
 @media (hover: hover) {
+  /* Mit Maus ist die Fläche verborgen, bis man darüberfährt: dann zählt allein das Foto für die Höhe der Kachel (contain:
+     size), sonst blieb bei großer Systemschrift unter jedem Foto eine leere Fläche (Galerie /referenzen, Browserprüfung
+     E4-W0, E-065). Ohne Maus steht der Name immer da und darf die Kachel weiter verlängern. */
   a.glasbild .glasbild-flaeche {
+    contain: size;
+    overflow: hidden;
     opacity: 0;
     background: color-mix(in srgb, var(--color-tinte) 45%, transparent);
     backdrop-filter: blur(6px);

@@ -82,6 +82,8 @@ export default function BlogFilter({ anrisse = {} }) {
             />
           </div>
 
+          {/* schmal (große Schrift) stehen die Themen untereinander, alle gleich breit: vorher sprang „Alle Artikel“ als
+              einziger kurzer Knopf aus der Flucht (Browserprüfung E4-W0, E-065) */}
           {visibleCategories.length > 0 && (
             <div role="group" aria-label="Kategorien" className="-mx-4 flex snap-x scroll-px-4 gap-2 overflow-x-auto px-4 py-1 sm:mx-0 sm:flex-wrap sm:justify-center sm:overflow-visible sm:px-0 @max-xs:mx-0 @max-xs:flex-wrap @max-xs:justify-center @max-xs:overflow-visible @max-xs:px-0">
               {[{ id: 'all', name: 'Alle Artikel' }, ...visibleCategories].map((category) => {
@@ -94,7 +96,7 @@ export default function BlogFilter({ anrisse = {} }) {
                     onClick={() => setActiveCategory(category.id)}
                     onFocus={insBild}
                     aria-pressed={gedrueckt}
-                    className={`${wahlKlassen} shrink-0 @max-xs:shrink snap-start gap-2`}
+                    className={`${wahlKlassen} shrink-0 @max-xs:w-full @max-xs:shrink snap-start gap-2`}
                   >
                     {/* genau ein Zeichen: gedrückt das Fugenkreuz, sonst das Kategoriesymbol */}
                     {gedrueckt ? <Fugenkreuz className="size-3 shrink-0" /> : zeichen && <Icon name={zeichen} groesse={4} />}

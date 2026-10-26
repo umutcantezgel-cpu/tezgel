@@ -48,7 +48,8 @@ const INHALT = {
   'standort-anfahrt': (
     <div className="mx-auto max-w-mass">
       <Einsatzkarte liste={false} />
-      <div className="mt-8 flex flex-col items-start gap-6">
+      {/* Container: bei großer Schrift greift der schmale Innenabstand der Knöpfe (kern/stile), „Route planen“ bleibt einzeilig (E-065) */}
+      <div className="@container mt-8 flex flex-col items-start gap-6">
         <Knopf href={COMPANY_DATA.headquarters.mapsUrl} extern variante="neben" icon="pfeil-rechts">
           Route planen
         </Knopf>

@@ -12,7 +12,7 @@
 - Brotkrumen: `Start › Referenzen`
 - Ort: `Fliesenleger Deniz Tezgel aus Aßlar, für Wetzlar und Mittelhessen.`
 - H1: `Das sagen unsere Kunden, und so sieht unsere Arbeit aus.`
-- Vorspann: `Diese Referenzen, also fertige Arbeiten, zeigen Bäder, Terrassen, Treppen und [[grossformat|Großformate]]. Dazu kommen die Bewertungen unserer Kunden mit 5,0 Sternen bei Google.`
+- Vorspann: `Hier sehen Sie Bäder, Terrassen, Treppen und [[grossformat|Großformate]], die wir gebaut haben, und unter „So arbeiten wir“ Fotos von unseren Baustellen. Dazu kommen die Bewertungen unserer Kunden mit 5,0 Sternen bei Google.`
 - Hauptknopf: `Termin vor Ort anfragen` → `/kontakt` · Kontakt: `Anrufen: {{COMPANY_DATA.contact.phone}}` · `Nachricht per WhatsApp` (derselbe Hauptknopf wie in Abschnitt 6, K-009)
 - Link: `Zu den Bewertungen` → `#bewertungen`
 - Bild: `{Bild: referenzen-einstieg}` Alt: `Bad mit Fliesen in Marmoroptik, Regendusche und einem WC an der Wand mit weißer Betätigungsplatte` (E4-W0-BILDER)

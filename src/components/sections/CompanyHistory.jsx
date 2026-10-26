@@ -18,7 +18,9 @@ export default function CompanyHistory() {
     <Abschnitt
       titelId="company-history-heading"
       etikett={<>Gegründet {business.establishmentYear} in {headquarters.city} &middot; {authority.shortName}</>}
-      titel="So sind wir gewachsen."
+      // Trennstelle im Titel (Überschriften trennen nur an gesetzten Fugenstellen): bei großer Schrift „gewach-“ / „sen.“ statt
+      // „gewachse“ / „n.“ (Browserprüfung E4-W0, E-065)
+      titel={'So sind wir gewach\u00adsen.'}
       mitte
       einleitung={
         <p>
@@ -28,7 +30,7 @@ export default function CompanyHistory() {
       auftritt
       className="wrap-break-word"
     >
-      <div className="relative">
+      <div className="@container relative">
         {/* Die Fuge: eine Linie über alle Einträge (mobil links, ab md an der Grenze Jahr | Text bei 1/4) */}
         <span aria-hidden="true" className="fugenband-linie pointer-events-none absolute inset-y-0 left-2 border-l border-strich md:left-1/4" />
 
@@ -46,8 +48,10 @@ export default function CompanyHistory() {
                 {eintrag.year}
               </p>
               <div className="mt-2 md:col-span-9 md:mt-0 md:pl-8 lg:col-span-7 lg:pl-12">
-                <h3 className="text-fs-5 text-tinte">{eintrag.title}</h3>
-                <p className="mt-4 max-w-mass text-fs-3 text-tinte-2">{eintrag.description}</p>
+                {/* schmal (große Schrift) eine Stufe kleiner und mit Silbentrennung: die Spalte neben der Fuge ist dort nur rund
+                    260 px breit, „Betriebsgründung“ und „Fliesenfachbetrieb“ brachen sonst mitten im Wort (E-065) */}
+                <h3 className="text-fs-5 text-tinte hyphens-auto @max-3xs:text-fs-4">{eintrag.title}</h3>
+                <p className="mt-4 max-w-mass text-fs-3 text-tinte-2 @max-3xs:text-fs-2">{eintrag.description}</p>
               </div>
             </li>
           ))}

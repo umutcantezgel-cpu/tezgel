@@ -25,7 +25,9 @@ export default function Leistungsplaene({ bereiche }: { bereiche: Leistungsplan[
       {bereiche.map((b) => (
         <li key={b.id}>
           <article id={b.id} aria-labelledby={`${b.id}-titel`} data-motion="sig-plan" className="sig-plan-ziel flex h-full flex-col border border-fuge bg-fliese p-6 lg:p-8">
-            <div className="flex items-center border border-fuge bg-kalk p-6" data-plan-uebergang={b.id}>
+            {/* feste Fläche 4 : 3 für jeden Plan: die Pläne haben eigene Seitenverhältnisse, ohne feste Fläche standen die
+                Überschriften nebeneinanderliegender Karten bis zu 50 px versetzt (Browserprüfung E4-W0, E-065) */}
+            <div className="flex aspect-4/3 items-center border border-fuge bg-kalk p-6" data-plan-uebergang={b.id}>
               <Verlegeplan plan={b.id} ohneAchse bemassung={false} />
             </div>
             <h3 id={`${b.id}-titel`} className="mt-6 font-anzeige text-fs-5 font-extrabold text-tinte">
@@ -41,10 +43,15 @@ export default function Leistungsplaene({ bereiche }: { bereiche: Leistungsplan[
               data-motion="zustand"
               className="group mt-auto inline-flex min-h-12 items-center gap-2 pt-6 font-text text-fs-3 font-semibold text-tinte"
             >
+              {/* letztes Wort und Pfeil ungeteilt: bricht der Linktext um, folgt der Pfeil dem Wort, statt allein am Kartenrand
+                  zu stehen (E-065) */}
               <span className="min-w-0 underline decoration-strich decoration-1 underline-offset-4 pointer-fine:group-hover:decoration-tinte pointer-fine:group-hover:decoration-2">
-                {b.link}
+                {b.link.slice(0, b.link.lastIndexOf(' ') + 1)}
+                <span className="whitespace-nowrap">
+                  {b.link.slice(b.link.lastIndexOf(' ') + 1)}
+                  <Icon name="pfeil-rechts" groesse={5} className="ml-2 inline-block align-text-bottom" />
+                </span>
               </span>
-              <Icon name="pfeil-rechts" groesse={5} className="shrink-0" />
             </Link>
           </article>
         </li>

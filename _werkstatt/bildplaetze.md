@@ -150,3 +150,4 @@ Geht den Zeilen oben vor. Ziel: kein Foto doppelt auf den zwölf Hauptansichten 
 - `/blog` ohne Foto im Beleg.
 - Alt-Texte ohne Bindestrichwörter („WC an der Wand“, „blauen und beigen“).
 - `/fliesen` Verband: `fliesen-halbverband` (IMG_2544, x 100, y 1650, 951 × 634, 3:2) und `fliesen-fischgraet` (IMG_2563, x 500, y 1845, 564 × 376, 3:2) als Ausschnitte nur des Musters; die Baustelle (offene Nische, Stutzen, Kappen) und das Gerüst liegen außerhalb. Die Rückfrage zu Fliesenkompositionen entfällt damit.
+- `bad-beleg-4` neu zugeschnitten (IMG_2603, x 420, y 560, 900 × 1125): die offene Öffnung der Betätigungsplatte über dem WC und das WC liegen außerhalb; zu sehen sind Dusche, Mosaikstreifen, Rinne und Mosaikboden (E-065).
