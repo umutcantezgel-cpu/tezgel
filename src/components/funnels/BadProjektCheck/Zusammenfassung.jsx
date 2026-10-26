@@ -33,7 +33,10 @@ const mitEinheit = (text) => text.replace(/ m²/g, `${NBSP}m²`);
 // - Fokus nach Zustandswechsel: „Angebot … anfordern“ und beide Rückwege → erstes Feld; Erfolg und WhatsApp → Statusbox;
 //   Serverfehler → Fehlermeldung (tabIndex -1). Bisher fiel der Fokus auf body (auslösender Knopf entfernt bzw. gesperrt).
 // - geschütztes Leerzeichen vor „m²“ und in „DIN 18040-2“
-export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extras, matchingBath, contactOpen, setContactOpen, sentVia, setSentVia, referenceId, handleNewRequest, leadData, setLeadData, isSubmitting, errorMessage, handleLeadSubmit }) {
+// E4-W1 (F2, E-065): ohne Vorauswahl. Ungewählte Angaben stehen als „noch keine Angabe“; das passende Musterbad erscheint erst
+// mit der gewählten Größe, davor steht ein Satz, was fehlt. Schmal weniger Innenabstand; Knopftexte stehen nicht mehr Wort für
+// Wort untereinander (der Pfeil oder das Symbol steht dann darüber).
+export default function Zusammenfassung({ sqmLabel, sqmGewaehlt, scopeLabel, tierLabel, extras, matchingBath, contactOpen, setContactOpen, sentVia, setSentVia, referenceId, handleNewRequest, leadData, setLeadData, isSubmitting, errorMessage, handleLeadSubmit }) {
     const nameRef = useRef(null);
     const statusRef = useRef(null);
     const fehlerRef = useRef(null);
@@ -48,8 +51,16 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
         else if (contactOpen && !sentVia && (!alt.contactOpen || alt.sentVia)) nameRef.current?.focus();
     }, [contactOpen, sentVia, errorMessage]);
 
+    // Werte der Zusammenfassung: null heißt ungewählt (dann „noch keine Angabe“)
+    const werte = [
+        ['Badgröße', sqmGewaehlt ? `ca. ${sqmLabel}${NBSP}m²` : null],
+        ['Umfang', scopeLabel],
+        ['Ausstattung', tierLabel],
+        ['Wünsche', extras.length > 0 ? extras.map(anzeige).join(', ') : null]
+    ];
+
     return (
-        <div className="@container flex min-w-0 flex-col justify-between gap-8 border-t border-fuge bg-kalk p-6 @lg:p-8 @5xl:col-span-5 @5xl:border-l @5xl:border-t-0 @5xl:p-12">
+        <div className="@container flex min-w-0 flex-col justify-between gap-8 border-t border-fuge bg-kalk p-6 @lg:p-8 @5xl:col-span-5 @5xl:border-l @5xl:border-t-0 @5xl:p-12 @max-3xs/projekt:p-4">
             <div className="flex flex-col gap-6">
                 <span className={`${etikettKlassen} min-w-0 hyphens-auto wrap-break-word`}>
                     <Fugenkreuz className="size-3 shrink-0 text-strich" />
@@ -57,27 +68,32 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                 </span>
 
                 <dl aria-live="polite" className="grid grid-cols-1 gap-px border border-fuge bg-fuge @sm:grid-cols-2">
-                    {[
-                        ['Badgröße', `ca. ${sqmLabel}${NBSP}m²`],
-                        ['Umfang', scopeLabel],
-                        ['Ausstattung', tierLabel],
-                        ['Wünsche', extras.map(anzeige).join(', ') || 'Keine Extras gewählt']
-                    ].map(([term, value]) => (
-                        <div key={term} className={clsx('min-w-0 bg-fliese p-4', BREIT[term])}>
-                            <dt className="font-mono text-fs-1 text-tinte-2 hyphens-auto">{term}</dt>
-                            <dd className={clsx('mt-1 break-words text-tinte', term === 'Badgröße' ? 'font-mono text-fs-3' : 'text-fs-2 font-semibold')}>{value}</dd>
-                        </div>
-                    ))}
+                    {werte.map(([term, value]) => {
+                        const leer = value === null;
+                        return (
+                            <div key={term} className={clsx('min-w-0 bg-fliese p-4 @max-3xs:p-3', BREIT[term])}>
+                                <dt className="font-mono text-fs-1 text-tinte-2 hyphens-auto">{term}</dt>
+                                <dd
+                                    className={clsx(
+                                        'mt-1 break-words',
+                                        leer ? 'text-fs-2 text-tinte-2' : clsx('text-tinte', term === 'Badgröße' ? 'font-mono text-fs-3' : 'text-fs-2 font-semibold')
+                                    )}
+                                >
+                                    {leer ? 'noch keine Angabe' : value}
+                                </dd>
+                            </div>
+                        );
+                    })}
                 </dl>
                 <p className="text-fs-2 text-tinte-2">
                     Jedes Bad ist anders. Der Aufwand hängt davon ab, was unter den Fliesen liegt, wo die Leitungen verlaufen und welches Material Sie wählen. Den
                     verbindlichen Festpreis erhalten Sie deshalb nach dem kostenfreien Termin bei Ihnen vor Ort.
                 </p>
 
-                {/* Verweis auf das passende Musterbad */}
+                {/* Verweis auf das passende Musterbad; das passende erscheint erst mit der gewählten Größe */}
                 <div className="border border-fuge bg-fliese p-4 text-fs-2 text-tinte">
-                    <p className="flex flex-wrap items-center justify-between gap-x-3 font-semibold">
-                        <span className="min-w-0 hyphens-auto wrap-break-word">
+                    <p className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2 font-semibold">
+                        <span className="hyphens-auto wrap-break-word">
                             <span className="sr-only">Hinweis: </span>
                             Musterbäder zum Vergleich:
                         </span>
@@ -86,21 +102,25 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                             <Icon name="pfeil-rechts" groesse={4} />
                         </Link>
                     </p>
-                    <p className="text-tinte-2 wrap-break-word">
-                        Passend:{' '}
-                        <Link href={`/bad/musterbaeder/${matchingBath.slug}`} className={`${linkKlassen} font-semibold`}>
-                            {mitEinheit(matchingBath.label)}
-                        </Link>
-                    </p>
+                    {matchingBath ? (
+                        <p className="text-tinte-2 hyphens-auto wrap-break-word">
+                            Passend:{' '}
+                            <Link href={`/bad/musterbaeder/${matchingBath.slug}`} className={`${linkKlassen} font-semibold`}>
+                                {mitEinheit(matchingBath.label)}
+                            </Link>
+                        </p>
+                    ) : (
+                        <p className="text-tinte-2 hyphens-auto wrap-break-word">Für das passende Musterbad fehlt noch die Größe des Bads.</p>
+                    )}
                 </div>
 
                 {/* Zuschuss-Hinweis. Bei großer Systemschrift steht das Symbol über dem Text (Zeile umbrechen, Innenabstand kleiner),
-                    lange Wörter brechen in der Spalte um */}
+                    lange Wörter brechen in der Spalte um; „DIN 18040-2“ bleibt in einer Zeile */}
                 <Hinweis
-                    className="wrap-break-word @max-3xs:flex-wrap @max-3xs:gap-2 @max-3xs:p-4"
+                    className="wrap-break-word @max-3xs:flex-wrap @max-3xs:gap-2 @max-3xs:p-3"
                     titel={<><span className="sr-only">Hinweis: </span>Bis zu 4.180 € Zuschuss der Pflegekasse</>}
                 >
-                    Bei Pflegegrad für barrierefreie Bäder nach <span className="font-mono">DIN{NBSP}18040-2</span>.{' '}
+                    Bei Pflegegrad für barrierefreie Bäder nach <span className="whitespace-nowrap font-mono">DIN{NBSP}18040-2</span>.{' '}
                     <Link href="/bad/barrierefreies-bad" className={linkKlassen}>
                         Details zum barrierefreien Bad und zu Zuschüssen
                     </Link>
@@ -113,7 +133,7 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                     <Knopf
                         onClick={() => setContactOpen(true)}
                         icon="pfeil-rechts"
-                        className="w-full"
+                        className="w-full @max-3xs:flex-col-reverse"
                     >
                         Angebot mit Festpreis anfordern
                     </Knopf>
@@ -134,7 +154,9 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                             )}
                         </div>
                         <p className="mt-4">
-                            Vielen Dank, <strong className="font-semibold text-tinte">{leadData.name}</strong>! Ihre Angaben für ca. <span className="whitespace-nowrap font-mono text-tinte">{sqmLabel}{NBSP}m²</span> ({scopeLabel}) sind direkt bei Herrn Deniz Tezgel eingegangen.
+                            Vielen Dank, <strong className="font-semibold text-tinte">{leadData.name}</strong>! Ihre Angaben{sqmGewaehlt && (
+                                <> für ca. <span className="whitespace-nowrap font-mono text-tinte">{sqmLabel}{NBSP}m²</span></>
+                            )}{scopeLabel && <> ({scopeLabel})</>} sind direkt bei Herrn Deniz Tezgel eingegangen.
                             {leadData.email && (
                                 <span className="mt-3 flex items-start gap-2 border-l-2 border-tinte pl-4 text-tinte">
                                     <Icon name="mail" groesse={4} className="mt-1" />
@@ -239,7 +261,7 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                                 value="online"
                                 disabled={isSubmitting}
                                 aria-busy={isSubmitting || undefined}
-                                className={knopfKlassen('haupt', 'w-full')}
+                                className={knopfKlassen('haupt', 'w-full @max-3xs:flex-col-reverse')}
                                 data-motion="druck"
                             >
                                 {isSubmitting ? (
@@ -259,7 +281,7 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                                 name="channel"
                                 value="whatsapp"
                                 disabled={isSubmitting}
-                                className={knopfKlassen('neben', 'w-full')}
+                                className={knopfKlassen('neben', 'w-full @max-3xs:flex-col')}
                                 data-motion="druck"
                             >
                                 <WhatsAppLogo className="size-5 shrink-0" />
