@@ -118,7 +118,8 @@ export async function POST(request: NextRequest) {
         name: validData.contact.name,
         phone: validData.contact.phone,
         email: validData.contact.email || undefined,
-        location: validData.contact.location || validData.contact.zipCity || 'Aßlar / Wetzlar / Hessen',
+        // ohne Ortsangabe kein erfundener Ort in Team- und Kundenmail (Abnahme E4-W1, M-24): „keine Angabe“
+        location: validData.contact.location || validData.contact.zipCity || 'keine Angabe',
         zipCity: validData.contact.zipCity || validData.contact.location || undefined,
         street: validData.contact.street || undefined
       },

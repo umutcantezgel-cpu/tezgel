@@ -7,6 +7,9 @@ import { inputClass } from './stile';
 import { anzeige } from '@/lib/formulare/anzeige';
 import { KEINE_ANGABE } from '@/lib/formulare/useAnfrageFunnel';
 
+// In der Zusammenfassung bleibt „keine Angabe“ bei großer Schrift in einer Zeile (Abnahme E4-W1, F4)
+const OHNE_ANGABE = KEINE_ANGABE.replace(' ', '\u00a0');
+
 // Schritt 3: Kontaktdaten und Absenden (E2-ORCH-08: Darstellung nach KERN; Texte, Namen und Verhalten unverändert).
 export default function Schritt3({ setStep, name, setName, phone, setPhone, email, setEmail, notes, setNotes, honeypot, setHoneypot, status, errorMessage, projectTitle, finalArea, locationText, handleWhatsAppDirect, handleOnlineSubmit }) {
     return (
@@ -46,8 +49,8 @@ export default function Schritt3({ setStep, name, setName, phone, setPhone, emai
 
           <div className="flex flex-wrap items-center justify-between gap-2 border border-fuge bg-kalk p-4 text-fs-2 text-tinte">
             <span>
-              <strong className="font-mono font-normal text-tinte-2">Projekt:</strong> {projectTitle || KEINE_ANGABE} &middot; <strong className="font-mono font-normal text-tinte-2">Umfang:</strong> {finalArea ? anzeige(finalArea) : KEINE_ANGABE} &middot;{' '}
-              <strong className="font-mono font-normal text-tinte-2">Ort:</strong> {locationText || KEINE_ANGABE}
+              <strong className="font-mono font-normal text-tinte-2">Projekt:</strong> {projectTitle || OHNE_ANGABE} &middot; <strong className="font-mono font-normal text-tinte-2">Umfang:</strong> {finalArea ? anzeige(finalArea) : OHNE_ANGABE} &middot;{' '}
+              <strong className="font-mono font-normal text-tinte-2">Ort:</strong> {locationText || OHNE_ANGABE}
             </span>
             <button
               type="button"
@@ -127,7 +130,7 @@ export default function Schritt3({ setStep, name, setName, phone, setPhone, emai
           <div className="flex flex-col gap-4 border-t border-fuge pt-6">
             <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
               <Knopf type="submit" laedt={status === 'submitting'} ladeText="Wird gesendet …" icon="pfeil-rechts" className="w-full sm:flex-1">
-                Anfrage verbindlich absenden
+                Anfrage absenden
               </Knopf>
               <Knopf variante="neben" onClick={handleWhatsAppDirect} iconLinks="sprechblase" className="w-full sm:w-auto">
                 Direkt per WhatsApp

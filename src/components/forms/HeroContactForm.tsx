@@ -61,7 +61,11 @@ export default function HeroContactForm({ titel = true }: { titel?: boolean } = 
                     Vielen Dank, {name}!
                 </p>
                 <p className="mt-3 text-fs-2 text-tinte-2">
-                    Ihre Anfrage für <strong className="font-semibold text-tinte">{projectTitle}</strong> ist direkt bei Herrn Deniz Tezgel eingegangen.
+                    {projectTitle ? (
+                        <>Ihre Anfrage für <strong className="font-semibold text-tinte">{projectTitle}</strong> ist direkt bei Herrn Deniz Tezgel eingegangen.</>
+                    ) : (
+                        'Ihre Anfrage ist direkt bei Herrn Deniz Tezgel eingegangen.'
+                    )}
                 </p>
                 {email && (
                     <p className="mt-3 border-l-2 border-tinte pl-4 text-fs-2 text-tinte">

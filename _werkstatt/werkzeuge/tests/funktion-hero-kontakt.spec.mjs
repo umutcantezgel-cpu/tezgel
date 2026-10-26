@@ -36,6 +36,9 @@ test.describe('HeroContactForm (/)', () => {
     await expect(page.getByText('TEZ-26-TEST')).toBeVisible();
     expect(anfragen).toHaveLength(1);
     expect(anfragen[0]).toMatchObject({ inquiryType: 'general', contact: { name: 'Prüf Person', phone: '0170 0000000', location: 'Wetzlar' } });
+    // ohne Wahl kein Vorhaben, keine Fläche, kein Zeitraum (Abnahme E4-W1, F4); der Erfolg nennt kein Vorhaben
+    for (const feld of ['projectType', 'projectTitle', 'area', 'timing']) expect(anfragen[0]).not.toHaveProperty(feld);
+    await expect(page.getByText('Ihre Anfrage ist direkt bei Herrn Deniz Tezgel eingegangen.')).toBeVisible();
     expect(typeof anfragen[0]._t).toBe('number');
   });
 

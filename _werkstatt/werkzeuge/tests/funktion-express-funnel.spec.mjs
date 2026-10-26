@@ -16,7 +16,8 @@ const weiterZu = (page, n) => page.getByRole('button', { name: new RegExp(`^Weit
 const projekt = (page, titel) => page.getByRole('button', { name: new RegExp(titel) });
 const flaeche = (page, text) => page.getByRole('group', { name: 'Ungefähre Fläche in Quadratmetern' }).getByRole('button', { name: text, exact: true });
 const zeitraum = (page, text) => page.getByRole('group', { name: 'Gewünschter Ausführungszeitraum' }).getByRole('button', { name: text, exact: true });
-const absenden = (page) => page.getByRole('button', { name: 'Anfrage verbindlich absenden', exact: true });
+// „verbindlich“ entfällt: die Anfrage ist kostenlos und unverbindlich (Abnahme E4-W1, F4)
+const absenden = (page) => page.getByRole('button', { name: 'Anfrage absenden', exact: true });
 const whatsappDirekt = (page) => page.getByRole('button', { name: 'Direkt per WhatsApp', exact: true });
 
 async function zuSchritt3(page) {

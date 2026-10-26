@@ -26,7 +26,8 @@ export function useHeroKontakt() {
     const [errorMessage, setErrorMessage] = useState('');
 
     const selectedOption = PROJECT_OPTIONS.find((opt) => opt.id === projectType);
-    const projectTitle = selectedOption ? selectedOption.label : 'Fliesenarbeiten';
+    // ohne Wahl kein Vorhaben: Erfolg und Nachricht nennen keins (Abnahme E4-W1, F4)
+    const projectTitle = selectedOption ? selectedOption.label : '';
 
     const getWhatsAppText = () => {
         return (
@@ -68,10 +69,9 @@ export function useHeroKontakt() {
                         name: name.trim(),
                         phone: phone.trim(),
                         email: email.trim() || undefined,
-                        location: location.trim() || 'Aßlar / Wetzlar / Hessen'
+                        location: location.trim() || undefined
                     },
-                    area: 'Wird vor Ort ermittelt',
-                    timing: 'Schnellstmöglich',
+                    // Fläche und Zeitraum fragt dieses Formular nicht ab; es schickt keine Werte, die niemand gewählt hat (Abnahme E4-W1)
                     notes: notes.trim() || undefined,
                     honeypot: honeypot || undefined,
                     _t: formInitTime

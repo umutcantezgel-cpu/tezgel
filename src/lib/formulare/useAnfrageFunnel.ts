@@ -43,7 +43,7 @@ export const PROJECT_TYPES = [
   {
     id: 'untergrund',
     title: 'Untergrund & Abdichtung',
-    subtitle: 'Boden ausgleichen, Bad abdichten (DIN 18534)',
+    subtitle: 'Boden ausgleichen, Bad abdichten (DIN\u00a018534)',
     icon: ShieldCheck,
     badge: 'DIN-Norm'
   }
