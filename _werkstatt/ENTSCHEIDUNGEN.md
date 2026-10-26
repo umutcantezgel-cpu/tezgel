@@ -556,6 +556,13 @@ Pakete E0-PRUEF-01, -02a bis -02d und die unabhängige Abnahme E0-PRUEF-02-PA si
   - Verband auf `/fliesen`: Halbverband und Fischgrät als Ausschnitte nur des Musters. Die Rückfrage zu Fliesenkompositionen entfällt.
   - Einsatzkarte mit Legende (eigene Zeichen für Firmensitz, Orte, Ringe), auch ohne Ortsliste. Bei großer Schrift keine Ringmaße über den Punkten.
   - `/ueber-uns` ohne verwaisten Weg unter der Karte.
+- **Behoben nach der vollständigen Widerlegung** (290d812c):
+  - `/referenzen`: Die verborgene Glasfläche der Galerie zählt bei großer Schrift nicht mehr zur Höhe, also keine leeren Flächen unter den Fotos. Der Vorspann nennt die Baustellenfotos unter „So arbeiten wir“.
+  - Dusche mit Mosaikstreifen neu zugeschnitten (IMG_2603): ohne offene Öffnung über dem WC, neuer Dateiname wegen des Bildcaches.
+  - `/ueber-uns`: Überschrift mit Trennstelle; die Zeitleiste ist schmal kleiner gesetzt und trennt lange Wörter.
+  - `/leistungen`: Planflächen der Karten gleich hoch, der Pfeil hängt am letzten Wort.
+  - `/blog`: Themenknöpfe schmal gleich breit. Zwei Ratgeber mit doppeltem Plan haben jetzt eigene Pläne (Handwerkerbonus außen, Schimmel in Fugen wohnen).
+  - `/kontakt`: „Route planen“ bleibt bei großer Schrift in einer Zeile.
 - **Formulare** (Paket E4-W1-FORMULARE, Briefing `pakete/E4-W1-FORMULARE.md`, wf_26f4aa3e-0be):
   - Badanfrage, Projektcheck, Konfigurator, Anfrage in drei Schritten, Preisrechner und `/preise` bei 200 % ohne Wortbrüche und Ein-Wort-Knöpfe.
   - Vorauswahlen entfallen, ohne neues Pflichtfeld: Ohne Wahl geht „keine Angabe“ mit; Pflicht bleibt nur, was sichtbar als Pflicht markiert ist (M-24, Nachtrag).
