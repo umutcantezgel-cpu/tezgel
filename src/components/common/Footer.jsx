@@ -170,9 +170,11 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    <div id="seitenindex" className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-7 xl:grid-cols-4 xl:gap-4">
+                    {/* Spaltensatz statt Raster: die Gruppen fließen untereinander weiter, statt dass die zweite Reihe erst unter der
+                        längsten Gruppe der ersten beginnt (Loch unter „Bad“, Browserprüfung E4-W0, E-065) */}
+                    <div id="seitenindex" className="gap-x-8 sm:columns-2 lg:col-span-7 xl:columns-3">
                         {LINK_COLUMNS.map((column) => (
-                            <FussGruppe key={column.title} titel={column.title} kopfKlassen={etikett}>
+                            <FussGruppe key={column.title} titel={column.title} kopfKlassen={etikett} className="mb-8 break-inside-avoid">
                                 <ul className="mt-3 flex flex-col gap-2 text-fs-2">
                                     {column.links.map((item) => (
                                         <li key={item.path + item.name}>

@@ -213,6 +213,9 @@
        `hidden` als Rückfall, bei offenem Menü die Sperre darunter. <body> selbst beschneidet dadurch nicht mehr. */
     overflow-x: clip;
     min-height: 100vh;
+    /* Trennregel der Seite für jedes Element mit hyphens: auto (erbt): nur Wörter ab 12 Zeichen, je Teil mindestens fünf
+       (Knöpfe, Auswahlkarten, Adressen; vorher nur Fließtext, E-065) */
+    hyphenate-limit-chars: 12 5 5;
   }
 
   /* Waagerecht beschneiden die beiden Flächen im Fluss, Inhalt und Fuß (N-01b). So erreicht kein Überstand den Viewport,

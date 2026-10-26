@@ -20,13 +20,13 @@ function useMobil(): boolean {
   return useSyncExternalStore(abonniere, () => window.matchMedia(MOBIL).matches, () => false);
 }
 
-export default function FussGruppe({ titel, kopfKlassen, children }: { titel: string; kopfKlassen: string; children: ReactNode }) {
+export default function FussGruppe({ titel, kopfKlassen, className, children }: { titel: string; kopfKlassen: string; className?: string; children: ReactNode }) {
   const mobil = useMobil();
   const [gewaehlt, setGewaehlt] = useState<boolean | null>(null);
   const offen = gewaehlt ?? !mobil;
   const id = useId();
   return (
-    <nav aria-label={titel}>
+    <nav aria-label={titel} className={className}>
       <p className={clsx(kopfKlassen, 'border-b border-nacht-fuge pb-2 max-sm:hidden')}>{titel}</p>
       <button
         type="button"

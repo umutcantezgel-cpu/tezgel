@@ -313,11 +313,12 @@ html.k-bewegung:not(.k-notaus) [data-motion="galerie-filter"][data-galerie-neu] 
 /* karussell (K-016 „Ruhe“, E-047) – langsam, von rechts nach links. Band: der Inhalt steht zweimal, die Spur rückt linear um
    die halbe Länge (eine Fassung) und beginnt von vorn (--band-durchlauf je Durchlauf). Hält an, solange Maus oder Fokus darin
    sind oder der Knopf es anhält. Ohne Startklasse (ohne JavaScript), reduziert, im Notaus, im Druck und bei erzwungenen
-   Farben steht eine umbrechende Liste ohne Kopie: nichts abgeschnitten, nichts verborgen. Reihe: Einrasten beim Wischen,
+   Farben steht eine umbrechende Liste ohne Kopie: nichts abgeschnitten, nichts verborgen; als Raster mit gleich breiten
+   Spalten, damit Zeichen und Texte untereinander fluchten (Browserprüfung E4-W0, E-065). Reihe: Einrasten beim Wischen,
    Selbstlauf im Baustein (Scrollposition), hier nur die Leiste ohne Rand. Nur translate. */
 .karussell-band-teil {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
   column-gap: calc(var(--spacing) * 12);
   row-gap: calc(var(--spacing) * 3);
 }
@@ -342,6 +343,7 @@ html.k-bewegung:not(.k-notaus) [data-motion="galerie-filter"][data-galerie-neu] 
     animation: karussell-laufen var(--band-durchlauf) linear infinite;
   }
   html.k-bewegung:not(.k-notaus) .karussell-band-teil {
+    display: flex;
     flex-wrap: nowrap;
     padding-inline-end: calc(var(--spacing) * 12);
   }
