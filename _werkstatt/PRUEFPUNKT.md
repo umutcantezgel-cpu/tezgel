@@ -1,5 +1,13 @@
 # PRUEFPUNKT
 
+- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · Etappe E0-Ergänzung · Stand 2026-10-26 22:40 MEZ
+- Nächster exakter Schritt: (1) Runde 5 der Browserprüfung des Vorlaufs auswerten (Workflow wf_7f3987b4-6e4, Ziel `$SCRATCH/e4w1-browser-5`; bestätigte hoch/mittel beheben, Rest als Befund nach E1). (2) E0-Ergänzung als Workflow mit Haiku: Kontingent-Werkzeug `werkzeuge/kontingent.mjs` mit Kalibrierung am Limit-Ereignis 18:30 UTC; Kundschafter Stack (neueste stabile Versionen, Node-LTS, Leitfäden, Codemods), Bewegung/Übergänge/Scrollen/Cursor/SVG gegen Abschnitt 8, Designsystem gegen Abschnitt 7, Verluste seit dem Vorlauf. (3) E1: KERN v4 mit Brückentabelle, UPGRADE.md, PLAN 2, ABNAHME 2 (Z-01 bis Z-13), L0.
+- Letzter grüner Commit: 7ceb5e41 (Reinraum grün, Funktionssuite 393/0, npm test 210/210).
+- Laufende Pakete: keine des neuen Laufs; Workflow wf_7f3987b4-6e4 (Vorlauf, nur lesend).
+- Tempomat: keine Quelle; halbe Haiku-Plätze (2) bis zur Kalibrierung.
+
+## Vorlauf „Verständlich, echt, ausgezeichnet“
+
 - Lauf „Verständlich, echt, ausgezeichnet“ · Etappe E3 (Tor Anlauf 1 nicht bestanden, E-061), Welle E4-W0 · Kurswechsel E-047 (K-016 „Ruhe“), Welle E3-BAU-1 und 2 abgenommen und gegengeprüft, E3-SEO-JSONLD abgenommen · Stand 2026-10-26 22:31 MEZ
 - Tor E2 abgeschlossen nach zwei Anläufen (E-038, `berichte/E2-SICHT-2.md`): Ansichtswert 7,14, Z-04 auf `/` offener Punkt in PLAN.md, `/` ist das Muster. Pakete E3-START-01 bis 08, E3-LEIST-01, E3-PRUEF-W0 in PLAN.md (Welle E3-W0), danach E3-W1 (Vorlagen tragen die SVG-Bewegungen nach E-037, Startseite auf vorlagen/teile umstellen, hauptziel für /kontakt und /standorte).
 - Server: Entwicklungsserver 4320 (dev-server.sh), Produktionsbau 4311 = Reinraum 3e7c493 (`$SCRATCH/reinraum-3e7c493`); 4310 gestoppt (bei Bedarf `$SCRATCH/reinraum-c53faf4` neu starten), Entwicklungsserver 4320 gestoppt. Vor Funktionsprüfungen und nach Lighthouse den Produktionsserver neu starten (Logo 256 px prüfen, EINRICHTUNG). `RELAUNCH_SCRATCH` ausdrücklich auf den Scratchpad e3298496 setzen (nach dem Neustart des Arbeiters gibt es einen zweiten, leeren).

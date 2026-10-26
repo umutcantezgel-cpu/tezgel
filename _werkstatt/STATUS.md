@@ -1,6 +1,38 @@
-STATUS · Branch claude/tezgel-website-redesign-iqxt8z · Etappe E3/E5 · Wellen E3-W2 und E3-W3 abgenommen (Werkzeugtexte E-051, Vorher-Nachher E-052, Meta, Titel und strukturierte Daten E-053 bis E-055: 163/163) · Pflicht 75/418 laut PLAN (Zeilen der Wellen E3-BAU, E3-GRAF, E3-RUHE, B-01 werden beim Tor E3 nachgetragen) · Kür 0/8 · Kriterien 0/14 (Abnahme am Tor) · Ausnahmen 1 (Traumbad, E-048) · Bestand grün (Reinraum 2673f4c9, Funktionssuite gegen Produktionsbau 371/27/0, npm test 206/206) · Nächster Schritt: E3-BAU-REST (sichtbare Texte der übrigen Seiten), Stufe A Gruppe 3, E3-NORMEN, Lighthouse
+STATUS · Branch claude/tezgel-website-redesign-iqxt8z · Etappe E0/E5 (Übergang zum Lauf „Universal Motion“, E-066) · Welle Ü-1 · Pflicht 0/offen (PLAN 2 folgt in E1) · Kür 0/offen · Kriterien 0/13 · Ausnahmen 0 · Bestand grün (Reinraum 7ceb5e41, Funktionssuite 393/0, npm test 210/210) · Fenster ?/95 % (keine Kontingentquelle; Schätzung nach Kalibrierung, Werkzeug folgt) · Woche ? % · Tempomat Halten (halbe Plätze: 2) · Nächster Schritt: E0-Ergänzung (Kontingent-Werkzeug, Stack-Kundschaft, Bewegung/Scrollen/Cursor/SVG und Designsystem gegen Abschnitt 7 und 8), Runde 5 der Browserprüfung abschließen
 
-# STATUS · Lauf „Verständlich, echt, ausgezeichnet“
+# STATUS · Lauf „Universal Motion“ (ab 26.10.2026, 22:40 MEZ)
+
+## VORHABEN in drei eigenen Sätzen
+1. tezgel.de läuft auf dem neuesten stabilen Stand von Node, Next.js, React, TypeScript, Tailwind und den übrigen direkten Abhängigkeiten, ohne dass eine Funktion, Adresse oder Darstellung verloren geht.
+2. Auf dem verständlichen, echten Bestand des Vorlaufs wird die Seite ein eigenständiges, lebendiges Gesamtwerk: Seitenübergänge, Eingang, Scrollen, Cursor und SVG-Grafik folgen einer Leitidee aus dem Fliesenhandwerk und antworten auf jede Geste, ohne die 72-jährige Kundin am Handy zu überfordern.
+3. Jede Bewegung hat einen Zweck, eine ruhige Fassung und einen Schalter; die Seite bleibt schnell, zugänglich und bei 200 % Schrift lesbar.
+
+## Einstellungen und Annahmen (leere Felder = Standardwert, Abschnitt 0)
+- UMGEBUNG: Cloud (`CLAUDE_CODE_REMOTE=true`), Repository `/home/user/tezgel`, flüchtig: nur Committetes und Gepushtes bleibt.
+- ARBEITSBRANCH: `claude/tezgel-website-redesign-iqxt8z` (Branch der Sitzung; früherer Lauf mit PRUEFPUNKT → Wiederaufnahme mit Übergang, E-066) · PUSH: nur dorthin, je Welle und stündlich · VERÖFFENTLICHUNG: nie (Vercel baut den Arbeitsbranch nicht, `vercel.json`, E-047).
+- SCHWERPUNKT alles · BEREICH ganzes Projekt · AUSBAU maximal, soweit die Zielgruppe es trägt (Annahme: Ruhe-Prinzip K-016 des Vorlaufs und die 72-jährige Kundin begrenzen Effekte) · FREIGABE nein · LAUFZEIT bis Pflicht und Kür erfüllt.
+- MARKE UND ZIELGRUPPE (abgeleitet, Annahme): Fliesenverlegung Tezgel, Meisterbetrieb von Deniz Tezgel in Aßlar, Bad, Böden, Balkon und Treppen im Umkreis von Wetzlar; Kundschaft vor allem ältere Eigentümerinnen und Eigentümer, die einen verlässlichen Handwerker für einen Termin vor Ort suchen.
+- GESCHMACK (abgeleitet aus Rückmeldungen des Auftraggebers im Vorlauf, Annahme): Ruhe statt Effektfeuer (E-047), Seitenwechsel „Fliese für Fliese“ mit Logo auf der Wand (E-043, E3-B01-LOGO), die alten SVG-Bewegungen bleiben (E-037), Kundenstimmen als langsames Karussell; keine Hausschrift außer dem Bestand.
+- BEKANNTE VERLUSTE: keine genannt; Verlustprüfung des Vorlaufs (LAGEBILD, Element-Pässe) gilt und wird gegen die Historie seither ergänzt.
+- UNANTASTBAR (Standard plus Bestand des Vorlaufs, Annahme): Logo in Form, Proportion und Farbe · Inhalte der Rechtstexte · Geschäftslogik, Pflichtfelder und Empfänger der Anfrageformulare, Schnittstelle `/api/anfrage` · Firmendaten · Wortlaut der Kundenstimmen und Bewertungszahlen · Cookie-Einwilligung und ihr Verhalten · alle bestehenden Adressen · H1-Wortlaut A-1 „Perfektion auf jedem Quadratmeter.“ und A-2 „Ihr neues Traumbad zum Festpreis.“
+- STACK-UPGRADE aktuell · TEXTE: Mikrotexte direkt, übrige Texte als Vorschlag in `TEXTVORSCHLAEGE.md` (die Texte des Vorlaufs sind abgenommen und gelten als Bestand).
+- KONTINGENT-ZIEL 99 · KONTINGENT-QUELLE `~/.claude/kontingent.json` fehlt → Meldung oder Schätzung; Kalibrierpunkt: Limit-Ereignis 26.10.2026, Zurücksetzen 18:30 UTC (13 Agenten fielen aus).
+- ORCHESTRATOR Opus 5.5 · ARBEITSMODELL Haiku 5.5 · HAIKU-PLÄTZE Cloud 4, bis zur Kalibrierung 2.
+- GERÄTEGRÖSSEN: 390 × 844 · 768 × 1024 · 1440 × 900 · 1920 × 1080 (Pflicht); die zehn Größen des Vorlaufs bleiben für Darstellungsprüfungen verfügbar.
+- HAUPTANSICHTEN: die zwölf aus E0 des Vorlaufs (`HAUPTANSICHTEN.json`), unverändert.
+- BUDGETS: Standard aus Abschnitt 0; wo der Vorlauf strenger war, gilt der strengere Wert.
+- BERICHTE: Morgenbericht 07:00 Europe/Berlin in `BERICHT.md`, du-Anrede.
+
+## Einrichtung
+Siehe `werkzeuge/EINRICHTUNG.md`. Server: Entwicklung 4320 (`dev-server.sh start`), Produktionsbau 4311 (`PORT=4311 REINRAUM_DIR=$SCRATCH/reinraum-<sha> server.sh start <sha>`), Reinraum `reinraum.sh <sha>`.
+
+## Protokoll Universal Motion (stündlich, unten anfügen)
+- 2026-10-26 22:40 MEZ · Neuer Auftrag „Universal Motion“ übernommen (E-066): Auftrag gesichert, der alte archiviert, Arbeitsnotiz für neue Sitzungen gesetzt. Die laufende fünfte Browserprüfung des Vorlaufs wird zu Ende geführt; ihre Ergebnisse sind der Ausgangsstand. Als Nächstes: Werkzeug für das Nutzungskontingent, Bestandsaufnahme der Technik und der Bewegung, dann der neue Plan.
+
+
+# Vorlauf · Lauf „Verständlich, echt, ausgezeichnet“ (23. bis 26.10.2026, archiviert: `archiv/AUFTRAG-verstaendlich-echt-ausgezeichnet.md`)
+
+Letzte Statuszeile des Vorlaufs: STATUS · Branch claude/tezgel-website-redesign-iqxt8z · Etappe E3/E5 · Wellen E3-W2 und E3-W3 abgenommen (Werkzeugtexte E-051, Vorher-Nachher E-052, Meta, Titel und strukturierte Daten E-053 bis E-055: 163/163) · Pflicht 75/418 laut PLAN (Zeilen der Wellen E3-BAU, E3-GRAF, E3-RUHE, B-01 werden beim Tor E3 nachgetragen) · Kür 0/8 · Kriterien 0/14 (Abnahme am Tor) · Ausnahmen 1 (Traumbad, E-048) · Bestand grün (Reinraum 2673f4c9, Funktionssuite gegen Produktionsbau 371/27/0, npm test 206/206) · Nächster Schritt: E3-BAU-REST (sichtbare Texte der übrigen Seiten), Stufe A Gruppe 3, E3-NORMEN, Lighthouse
 
 ## Auftrag in drei eigenen Sätzen
 1. tezgel.de wird so umgebaut, dass jeder Laie, zuerst eine 72-jährige Kundin am Handy, ohne Hilfe versteht, was Fliesenverlegung Tezgel macht, wo der Betrieb arbeitet und wie man einen Termin vor Ort bekommt.

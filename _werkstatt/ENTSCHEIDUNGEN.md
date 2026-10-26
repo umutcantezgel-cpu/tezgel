@@ -617,3 +617,17 @@ Pakete E0-PRUEF-01, -02a bis -02d und die unabhängige Abnahme E0-PRUEF-02-PA si
   - H1 „Perfektion auf jedem Quadratmeter.“ und „Ihr neues Traumbad zum Festpreis.“ (Ausnahmen A-1 und A-2).
   - Cookie-Hinweis und Schloss-Zeichen der unteren Leiste (G8, Rückfrage M-28).
 
+## E-066 · Neuer Auftrag „Universal Motion“ übernimmt den Lauf (26.10.2026, 22:40 MEZ, Orchestrator, Denkprotokoll)
+- **Ziel:** Den neuen Master-Auftrag „Universal Motion“ (Stack-Upgrade, Gestaltung und Bewegung auf Auszeichnungsniveau, Steuerung nach Kontingent) aufnehmen, ohne den abgenommenen Bestand des Vorlaufs „Verständlich, echt, ausgezeichnet“ oder die laufende Arbeit zu verlieren.
+- **Drei Wege:**
+  1. Neustart bei E0 nach Abschnitt 11 Schritt 2: alles neu erkunden, neues Lagebild, neue Ausgangswerte. Wirft drei Tage belegter Erkundung, Werkzeuge und Ausgangswerte weg und kostet ein ganzes Kontingentfenster ohne sichtbares Ergebnis.
+  2. Den alten Plan weiterführen und den neuen Auftrag als Zusatz behandeln. Verfehlt die Pflichten des neuen Auftrags: KERN mit K-001 bis K-013, ABNAHME Z-01 bis Z-13, UPGRADE.md, KONTINGENT.md, Tempomat, Stack-Upgrade vor der Gestaltung.
+  3. Übernahme nach Startregel 1 und L5 mit Übergang: Der Arbeitsbranch ist ein früherer Lauf mit PRUEFPUNKT. Was E0 des neuen Auftrags verlangt und schon belegt ist, gilt als Bestand: Werkzeuge, Hauptansichten, Ausgangswerte E0, Funktionsliste, Verlustprüfung mit Element-Pässen, Lagebild. Fehlende Teile ergänzt eine kurze E0-Welle: Kontingent-Werkzeug, Stack-Kundschaft mit neuesten stabilen Versionen und Leitfäden, Bewegung, Übergänge, Scrollen, Cursor und SVG gegen Abschnitt 8, Designsystem gegen die Skalenregeln aus Abschnitt 7, Verluste seit dem Vorlauf. Danach plant E1 einmal neu: KERN v4, PLAN 2, ABNAHME 2, UPGRADE.md.
+- **Bewertung:** Weg 3 erfüllt den Nordstern („auf dem Bestand, ohne Neuanfang“), alle Pflichtdateien des neuen Auftrags und kostet am wenigsten Kontingent. Weg 1 verschwendet Kontingent, Weg 2 verfehlt Kriterien.
+- **Umkehrprobe:** Fehlt einer übernommenen Grundlage etwas, das der neue Auftrag verlangt, merkt es die L0-Prüfung des neuen Plans. Dann wird nur die Lücke nacherhoben, nicht der Rest.
+- **Folgen zweiter Ordnung:**
+  - Kennungen: Der KERN des Vorlaufs nutzt K-001 bis K-016 mit teils anderer Bedeutung als der neue Auftrag, zum Beispiel K-010 Schreibregeln oder K-016 Ruhe. Code-Kommentare zitieren die alten Kennungen. KERN v4 führt die neue Gliederung und eine Brückentabelle alt → neu, damit kein Verweis ins Leere läuft.
+  - Abnahmen: Die Abnahmekriterien des Vorlaufs (Z-01 bis Z-14) gehen in die neuen Z-01 bis Z-13 über; der Vorlauf hatte Lesbarkeit und Adressen als eigene Kriterien. Sie bleiben als Teil von Z-02 Bestand und Z-11 Darstellung erhalten.
+  - Texte: Die Texte des Vorlaufs sind mit dem Auftraggeber abgestimmt und gelten als Bestand. Neue Texte außer Mikrotexten kommen nur als Vorschlag in `TEXTVORSCHLAEGE.md`.
+  - Ruhe: Die Rückmeldung des Auftraggebers „Ruhe“ (E-047) und die Zielgruppe begrenzen den AUSBAU „maximal“. Bewegung wird antwortend und erzählend, nicht laut; der Bewegungsschalter ist Pflicht.
+- **Laufende Arbeit:** Die fünfte Browserprüfung des Vorlaufs (wf_7f3987b4-6e4) läuft zu Ende. Bestätigte Befunde der Schwere hoch oder mittel behebe ich noch; die übrigen gehen als Befunde in E1 ein.
