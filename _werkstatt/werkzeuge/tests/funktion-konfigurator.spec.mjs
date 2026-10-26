@@ -164,13 +164,16 @@ test.describe('FliesenKonfigurator (/fliesen/konfigurator)', () => {
     // Richtwert 24,5 m² Kreuzfuge (5–10 %) = ca. 25,7–27 m²
     await expect(page.getByText('ca. 25,7–27 m²')).toBeVisible();
     expect(anfragen).toHaveLength(1);
+    // Angaben ohne eigenes Mail-Feld kommen über die Anmerkungen an (Abnahme E4-W1, F3)
+    for (const zeile of ['Nassbereich: ', 'Verlegemuster: ', 'Format: ']) expect(anfragen[0].notes).toContain(zeile);
     expect(anfragen[0]).toMatchObject({
       inquiryType: 'fliesen',
       projectType: 'fliesen',
       projectTitle: 'Fliesen-Konfiguration (Küche, Flur & Diele)',
       timing: 'In 1 – 3 Monaten',
       area: '24,5 m²',
-      notes: 'Testnotiz Konfigurator',
+      // Notiz zuerst, danach alle Angaben der Zusammenfassung (Abnahme E4-W1, F3)
+      notes: expect.stringMatching(/^Testnotiz Konfigurator\n\nAngaben aus dem Fliesen-Konfigurator:\n/),
       contact: { name: 'Prüf Person', phone: '0170 0000000', email: 'pruef@example.de', zipCity: 'Aßlar', location: 'Aßlar' },
       fliesenDetails: {
         rooms: ['kueche', 'flur'],

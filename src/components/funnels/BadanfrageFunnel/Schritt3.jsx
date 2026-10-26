@@ -1,11 +1,13 @@
 import { labelKlassen } from '@/components/kern/stile';
 import { PERSON_OPTIONS } from '@/lib/formulare/useBadanfrage';
-import { frageClass, inputClass, nummerClass, zahlClass } from './stile';
+import { ausstattungClass, ausstattungInhaltClass, frageClass, nummerClass, zahlClass } from './stile';
 
 // Schritt 3: Raummaße (Q-01: Darstellung nach KERN v2; Texte, IDs und Verhalten unverändert).
 // Länge und Breite nebeneinander, Personen darunter (ab breitem Behälter in einer Zeile); Grundfläche als Mono-Kennwert.
 // Die Schrittfrage ist Fokusziel beim Zustandswechsel (F-04, tabIndex -1, siehe index).
 // E4-W1 (F1): ohne Vorauswahl. Die Maße sind leer, die Grundfläche steht als „keine Angabe“, bis Länge und Breite stehen.
+// Personen als Auswahlkarten statt Auswahlliste (Abnahme E4-W1, F1): Bei 200 % Schrift schnitt die Liste „Bitte auswählen“ ab;
+// Karten brechen um. Ein zweiter Tipp nimmt die Wahl zurück (wie „Bitte auswählen“ in der Liste), das Feld bleibt ohne Pflicht.
 export default function Schritt3({ formData, setFormData, flaecheText }) {
     return (
         <div className="flex flex-col gap-6">
@@ -39,20 +41,26 @@ export default function Schritt3({ formData, setFormData, flaecheText }) {
                         className={zahlClass}
                     />
                 </div>
-                <div className="col-span-2">
-                    <label htmlFor="badanfrage-persons" className={labelKlassen}>Personen im Haushalt</label>
-                    <select
-                        id="badanfrage-persons"
-                        value={formData.persons}
-                        onChange={(e) => setFormData({ ...formData, persons: e.target.value })}
-                        className={inputClass}
-                    >
-                        <option value="">Bitte auswählen</option>
-                        {PERSON_OPTIONS.map((opt) => (
-                            <option key={opt.value} value={opt.value}>{opt.label}</option>
-                        ))}
-                    </select>
-                </div>
+                <fieldset className="col-span-2 min-w-0">
+                    <legend className={labelKlassen}>Personen im Haushalt</legend>
+                    <div className="mt-2 grid grid-cols-2 gap-2 @max-3xs:grid-cols-1">
+                        {PERSON_OPTIONS.map((opt) => {
+                            const gewaehlt = formData.persons === opt.value;
+                            return (
+                                <button
+                                    key={opt.value}
+                                    type="button"
+                                    aria-pressed={gewaehlt}
+                                    onClick={() => setFormData({ ...formData, persons: gewaehlt ? '' : opt.value })}
+                                    className={ausstattungClass}
+                                    data-motion="zustand"
+                                >
+                                    <span className={ausstattungInhaltClass}>{opt.label}</span>
+                                </button>
+                            );
+                        })}
+                    </div>
+                </fieldset>
             </div>
 
             <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border border-fuge bg-kalk px-4 py-3">

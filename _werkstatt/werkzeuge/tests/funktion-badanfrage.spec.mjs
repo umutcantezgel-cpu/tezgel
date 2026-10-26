@@ -106,7 +106,8 @@ test.describe('BadanfrageFunnel (/bad/badanfrage)', () => {
     await weiter(page, 3).click();
     await page.getByLabel('Länge (m)', { exact: true }).fill('2.5');
     await page.getByLabel('Breite (m)', { exact: true }).fill('4');
-    await page.getByLabel('Personen im Haushalt', { exact: true }).selectOption('3-4');
+    // Personen als Auswahlkarten (Abnahme E4-W1, F1): Tipp auf die Karte statt Auswahlliste
+    await page.getByRole('button', { name: '3 - 4 Personen (Familie)', exact: true }).click();
     await weiter(page, 4).click();
     await option(page, 'Luxus').click();
     // Ohne Vorauswahl (E4-W1): die Ausstattung wird vom Besucher angeklickt, in dieser Reihenfolge.
@@ -166,7 +167,9 @@ test.describe('BadanfrageFunnel (/bad/badanfrage)', () => {
     await weiter(page, 3).click();
     await expect(page.getByLabel('Länge (m)', { exact: true })).toHaveValue('');
     await expect(page.getByLabel('Breite (m)', { exact: true })).toHaveValue('');
-    await expect(page.getByLabel('Personen im Haushalt', { exact: true })).toHaveValue('');
+    // Personen: keine Karte gedrückt
+    await expect(gewaehlt).toHaveCount(0);
+    await expect(page.getByRole('group', { name: 'Personen im Haushalt' }).getByRole('button')).toHaveCount(4);
     await expect(page.getByText('keine Angabe', { exact: true })).toBeVisible();
     await weiter(page, 4).click();
     await expect(gewaehlt).toHaveCount(0);

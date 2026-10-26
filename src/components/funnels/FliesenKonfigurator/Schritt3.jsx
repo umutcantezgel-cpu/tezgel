@@ -95,6 +95,7 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
                                 max="150"
                                 step="1"
                                 value={reglerWert(data.area)}
+                                aria-valuetext={data.area ? `${data.area} m²` : 'noch keine Angabe'}
                                 onChange={(e) => update({ area: e.target.value })}
                                 className="block min-h-11 w-full cursor-pointer accent-tinte"
                             />

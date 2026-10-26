@@ -507,6 +507,12 @@ export function useFliesenKonfigurator({ area, substrate, format, material, floo
         const tileTypeLabel = [wahlOf(MATERIAL_OPTIONS, data.material), formatLabel].filter(Boolean).join(' ');
         const removalLabel = data.removal === 'ja' ? 'Ja, Altbelag entfernen' : data.removal === 'nein' ? 'Nein, nicht erforderlich' : data.removal === 'unklar' ? 'Unklar / vor Ort prüfen' : 'Keine Angabe';
         const underfloorHeatingLabel = data.floorHeating === 'ja' ? 'Ja, vorhanden/geplant' : wahlOf(YES_NO_UNSURE, data.floorHeating);
+        // Alle Angaben auch im Online-Versand (Abnahme E4-W1, F3): Nassbereich, Muster, Sockel und Treppe haben im Mail-Schema
+        // kein eigenes Feld. Die Zusammenfassung steht deshalb hinter der Notiz in den Anmerkungen; die Grenze des Servers
+        // (2.000 Zeichen) kürzt nur die Zusammenfassung, nie die Notiz.
+        const angaben = ['Angaben aus dem Fliesen-Konfigurator:', ...buildSummaryLines(data).map(([k, v]) => `${k}: ${v}`)].join('\n');
+        const notiz = data.notes?.trim();
+        const anmerkungen = (notiz ? `${notiz}\n\n${angaben}` : angaben).slice(0, 2000);
 
         try {
             const res = await fetch('/api/anfrage', {
@@ -521,7 +527,8 @@ export function useFliesenKonfigurator({ area, substrate, format, material, floo
                         phone: data.phone,
                         email: data.email || undefined,
                         zipCity: data.zipCity || undefined,
-                        location: data.zipCity || 'Aßlar / Wetzlar'
+                        // ohne Ort kein Standardort: der Server setzt „keine Angabe“ (Abnahme E4-W1)
+                        location: data.zipCity || undefined
                     },
                     fliesenDetails: {
                         rooms: data.rooms,
@@ -540,7 +547,7 @@ export function useFliesenKonfigurator({ area, substrate, format, material, floo
                     },
                     timing: data.timing || undefined,
                     area: data.area ? `${data.area} m²` : undefined,
-                    notes: data.notes || undefined
+                    notes: anmerkungen
                 })
             });
 

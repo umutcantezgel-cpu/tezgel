@@ -35,7 +35,7 @@ export default function Erfolg({ data, referenceId, handleNewRequest }) {
                         <span className="mt-3 flex items-start gap-2 border-l-2 border-tinte pl-4 text-fs-2 text-tinte">
                             <Icon name="mail" groesse={4} className="mt-1" />
                             <span>
-                                Eine ausführliche Bestätigung mit allen Angaben und Materialschätzungen wurde an <em>{data.email}</em> gesendet.
+                                Eine Bestätigung mit Ihren Angaben wurde an <em>{data.email}</em> gesendet.
                             </span>
                         </span>
                     )}
