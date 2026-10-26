@@ -33,7 +33,7 @@ const PricingCalculator = dynamic(() => import('@/components/pricing/PricingCalc
 export const metadata = createMetadata({
   title: "Fliesenleger Preise auf Anfrage | Festpreisangebote · Tezgel",
   description:
-    "Preise für Fliesenverlegung, XXL Fliesen & Badsanierung in Wetzlar & Aßlar auf Anfrage. Schildern Sie Ihr Vorhaben für ein verbindliches Festpreisangebot!",
+    "Preise für Fliesenverlegung, große Fliesen & Badsanierung in Wetzlar & Aßlar auf Anfrage. Schildern Sie Ihr Vorhaben für ein verbindliches Festpreisangebot!",
   path: "/preise"
 });
 
@@ -148,7 +148,7 @@ export default function PreisePage() {
             title="Badsanierung"
             price="Auf Anfrage"
             priceSubtitle="Individuelles Angebot"
-            description="Komplettes Badezimmer mit [[din-18534|DIN 18534]] und Duschgefälle."
+            description="Komplettes Badezimmer, abgedichtet nach [[din-18534|DIN 18534]], mit Duschgefälle."
             features={[
               "Normgerechte [[abdichtung|Abdichtung]]",
               "Dusche ohne Stufe, mit richtig geneigtem Boden",
@@ -224,7 +224,7 @@ export default function PreisePage() {
         <div className="hyphens-auto">
           <FAQAccordion
             question="Wie setzen sich die Gesamtkosten einer Fliesenverlegung zusammen?"
-            answer="Die Kosten setzen sich aus fünf Teilen zusammen. Erstens die Vorbereitung der Flächen mit Prüfen, Schleifen, Grundieren und Ausgleichen. Zweitens die Abdichtung im Bad nach DIN 18534, drittens Verlegung und Kleber je nach Format. Viertens das Verfugen mit Anschlussfugen aus Silikon, fünftens ggf. Zuschnitt- und Profilzulagen."
+            answer="Die Kosten setzen sich aus fünf Teilen zusammen. Erstens die Vorbereitung der Flächen mit Prüfen, Schleifen, Grundieren und Ausgleichen. Zweitens die Abdichtung im Bad nach DIN 18534, drittens Verlegung und Kleber je nach Format. Viertens das Verfugen mit Anschlussfugen aus Silikon und fünftens, wenn nötig, Zulagen für Zuschnitt und Profile."
           />
           <FAQAccordion
             question="Warum sind Großformate teurer in der Verlegung?"
@@ -236,7 +236,7 @@ export default function PreisePage() {
           />
           <FAQAccordion
             question="Gibt es staatliche Fördermöglichkeiten oder Steuererleichterungen?"
-            answer="Ja! 20 % der reinen Arbeitskosten des Handwerks (bis zu 1.200 € pro Jahr) können Sie direkt von der Einkommensteuer absetzen. Bei Umbauten für mehr Barrierefreiheit gewährt die Pflegekasse zudem bis zu 4.180 € Zuschuss pro pflegebedürftiger Person."
+            answer="Ja! 20 % der reinen Arbeitskosten des Handwerks (bis zu 1.200 € pro Jahr) können Sie direkt von der Einkommensteuer absetzen. Bei Umbauten im Bad für mehr Barrierefreiheit gewährt die Pflegekasse zudem bis zu 4.180 € Zuschuss pro pflegebedürftiger Person."
           />
         </div>
       </Abschnitt>

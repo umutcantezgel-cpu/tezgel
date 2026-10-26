@@ -46,7 +46,7 @@ const stufeKlassen =
   "flex w-full flex-col items-center gap-1 border border-strich bg-fliese p-4 @max-3xs:px-3 text-center text-tinte hover:border-tinte aria-pressed:border-tinte aria-pressed:bg-tinte aria-pressed:text-kalk";
 /** kleines Zahlenfeld neben dem Label */
 const zahlFeldKlassen =
-  "block w-24 min-h-11 rounded-r1 border border-strich bg-fliese px-4 py-3 font-text text-fs-3 text-tinte placeholder:text-tinte-2 hover:border-tinte focus-visible:border-tinte";
+  "block w-24 min-w-0 min-h-11 rounded-r1 border border-strich bg-fliese px-4 py-3 font-text text-fs-3 text-tinte placeholder:text-tinte-2 hover:border-tinte focus-visible:border-tinte";
 
 /** Zeitraum-Karte auf der Tinte-Fläche (aria-pressed): Text bricht um und wird nie abgeschnitten */
 const zeitKlassen =
@@ -96,9 +96,11 @@ export default function PricingCalculator() {
   }, [errorMessage]);
 
   return (
-    <div className="mx-auto grid w-full max-w-mass grid-cols-1 border border-strich">
+    // @container: bei großer Systemschrift (Breite unter 20 rem) weniger Innenabstand, damit Knöpfe und Felder Platz für
+    // ganze Wortgruppen haben (Abnahme E4-W1, F5); bei 100 % Schrift unverändert
+    <div className="@container mx-auto grid w-full max-w-mass grid-cols-1 border border-strich">
       {/* ── Oben: Angaben zu Vorhaben und Situation ── */}
-      <div className="flex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:p-12">
+      <div className="flex flex-col gap-12 bg-fliese p-6 @max-xs:p-3 sm:p-8 lg:p-12">
         {/* Phasen */}
         {/* Tor S-01/03: Die Phasen ragten schon bei 375 px 15 px in den Innenrand (320 px: 70 px). Unter sm entfallen die
             Trennlinien (eine Zeile bis 375 px); Umbruch nur noch bei 320 px und erhöhtem Textabstand. */}
@@ -259,7 +261,7 @@ export default function PricingCalculator() {
 
       {/* ── Darunter: Zusammenfassung und Kontakt (Schriftfeld auf Tinte; der Absenden-Knopf steht direkt unter der
           Einwilligung) ── */}
-      <div className="@container flaeche-tinte flex flex-col bg-tinte p-6 text-kalk sm:p-8 lg:p-12">
+      <div className="@container flaeche-tinte flex flex-col bg-tinte p-6 @max-xs:p-3 text-kalk sm:p-8 lg:p-12">
         {status === "success" ? (
           /* Erfolgsansicht nach Absenden */
           <div className="my-auto flex flex-col gap-6" role="status">
@@ -471,7 +473,7 @@ export default function PricingCalculator() {
 
             {/* Absenden und Anruf */}
             <div className="flex flex-col gap-4 border-t border-nacht-fuge pt-6">
-              <Knopf type="submit" variante="hell" laedt={status === "submitting"} ladeText="Wird gesendet …" icon="pfeil-rechts" className="w-full @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4] @max-3xs:px-4 @max-3xs:flex-wrap">
+              <Knopf type="submit" variante="hell" laedt={status === "submitting"} ladeText="Wird gesendet …" icon="pfeil-rechts" className="w-full @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4] @max-3xs:px-2! @max-3xs:flex-wrap @max-3xs:[&>svg]:hidden!">
                 Unverbindliche Anfrage senden
               </Knopf>
 
