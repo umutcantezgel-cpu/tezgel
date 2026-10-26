@@ -62,7 +62,7 @@ export default function EinstiegMitte({ pfad, brotkrumen, titelZeilen, ort, haup
         )}
         <div className="@container mt-12 flex w-full flex-col items-center gap-3 flach:mt-6 sm:flex-row sm:flex-wrap sm:justify-center">
           <Hauptknopf href={hauptziel} erstesBild breit />
-          <a href={`tel:${contact.phoneLink}`} data-erstes-bild="kontakt" data-motion="druck" className={knopfKlassen('neben', 'w-full px-4 sm:w-auto')}>
+          <a href={`tel:${contact.phoneLink}`} data-erstes-bild="kontakt" data-motion="druck" className={knopfKlassen('neben', 'w-full px-4 sm:w-auto @max-3xs:flex-col @max-3xs:gap-1')}>
             <Icon name="telefon" groesse={5} className="shrink-0" />
             <span className="min-w-0">
               Anrufen: <Rufnummer nummer={contact.phone} className="inline-block" />

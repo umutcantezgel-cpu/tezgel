@@ -24,8 +24,10 @@ export interface GlasbildProps {
 const FOTO = 'col-start-1 row-start-1 self-start';
 
 export default function Glasbild({ arbeit, name, href, linkText = 'Ansehen', sizes }: GlasbildProps) {
+  // Lage im Raster (Zelle des Fotos, ohne Maus in schmaler Kachel darunter) steht in bewegung.css, Block glasbild: eine
+  // Tailwind-Klasse wie row-start-1 gewönne dort über die Regel (Ebene utilities vor components)
   const flaeche = (
-    <span aria-hidden={href ? undefined : true} className="glasbild-flaeche pointer-events-none col-start-1 row-start-1 flex flex-col justify-end text-kalk">
+    <span aria-hidden={href ? undefined : true} className="glasbild-flaeche pointer-events-none flex flex-col justify-end text-kalk">
       <span className="glasbild-text flex flex-col px-4 pb-4 lg:px-6 lg:pb-6">
         <span className="font-text text-fs-4 font-semibold text-pretty">{name}</span>
         {href && (

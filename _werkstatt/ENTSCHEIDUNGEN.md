@@ -594,6 +594,16 @@ Pakete E0-PRUEF-01, -02a bis -02d und die unabhängige Abnahme E0-PRUEF-02-PA si
   - Fotos: Fischgrät und Dusche mit Mosaikstreifen neu zugeschnitten und leicht geschärft; `/fliesen` zeigt eine fertige Dusche statt des Rohbaus; Galerie mit 24 Fotos, Baustelle als Block am Ende.
   - Kontaktkarte, Einsatzkarte und Lage-Liste: Zeichen über dem Text bei großer Schrift, kein Name auf dem Ring, Pfeile an der ersten Zeile.
   - Bleibt (gering): Am Desktop ist der Fuß links unter dem Kontaktblock kürzer als die Linkspalten; das ist das Schriftfeld des Betriebs, kein Bruch.
+- **Browserprüfung Runde 3** am Reinraum 1368e43e (wf_6270c19b-88c): Funktionssuite 393 bestanden, 0 rot; Lesbarkeit grün bis auf A-1 und A-2. Bestätigt: 2 hoch und 3 mittel, alle dieselbe Ursache (Glasbild: der Name stand ohne Maus bei 200 % weiter auf dem Foto, weil `row-start-1` als Tailwind-Klasse in der Ebene utilities über der Regel in `bewegung.css` lag), dazu etwa 26 gering. Behoben in E4-W1-SICHT-G:
+  - Glasbild: Lage im Raster steht nur noch in `bewegung.css` (`.glasbild-flaeche`); ohne Maus in schmaler Kachel steht der Name unter dem Foto, mit Maus und bei 100 % wie bisher (im Browser gemessen).
+  - Kacheltitel sagen „und“ statt „&“ (Anzeige; der Wert in Nutzlast und Mail bleibt „&“), Preisrechner hält „vor Ort“ und „0 €“ zusammen.
+  - Einstieg: Anrufknopf stapelt bei großer Schrift Zeichen über Text; Kontaktkarte: Hausnummer bleibt bei der Straße, Wege bei großer Schrift unterstrichen.
+  - „Mehr zum Thema“: der Pfeil hängt am letzten Wort, „Einfamilienhaus“ trennt an der Fuge (`mitFugen`); Leitfaden-Link mit einer durchgehenden Unterstreichung.
+  - Ortslisten (Einsatzkarte und Einzugsband): bei großer Schrift steht die Entfernung in jeder Zeile unter dem Ort.
+  - Feldnamen trennen bei großer Schrift, das Pflichtsternchen ragt nicht mehr über die Spalte.
+  - Galerie: Die Dusche mit Sitzbank zeigt Rohranschlüsse ohne Armatur und steht jetzt im Block von der Baustelle („Dusche fertig gefliest, die Armaturen kommen noch“).
+  - `/balkon-terrasse`: „Stelzlager“ wird nur noch einmal erklärt.
+  - Bleibt (gering): Fuß links am Desktop (Schriftfeld, wie Runde 2); Daumen des Projektcheck-Reglers (Browser-Standard, Kontrast erfüllt); „barrie-refrei“ in einer Kundenstimme (Wortlaut G8, Trennung des Browsers); Zeitleiste auf `/ueber-uns` schmaler als der Fließtext (Satzspiegel); Fischgrät-Foto mit dunkler Ecke oben links und die breitere Balkon-Karte auf `/preise` (Sicht, kein Bruch).
 - **Nicht geändert:**
   - H1 „Perfektion auf jedem Quadratmeter.“ und „Ihr neues Traumbad zum Festpreis.“ (Ausnahmen A-1 und A-2).
   - Cookie-Hinweis und Schloss-Zeichen der unteren Leiste (G8, Rückfrage M-28).

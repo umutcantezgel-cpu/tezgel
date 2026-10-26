@@ -13,7 +13,9 @@ const ORTE = ['/kontakt', '/leistungen', '/foerderung', '/leistungen/bad'];
 const SCHRITT_TITEL = { 1: 'Welches Projekt planen Sie?', 2: 'Fläche, Zeitraum und Ort', 3: 'Ihre Kontaktdaten' };
 const schrittAnzeige = (page, n) => page.getByText(`Schritt ${n}: ${SCHRITT_TITEL[n]}`, { exact: true });
 const weiterZu = (page, n) => page.getByRole('button', { name: new RegExp(`^Weiter zu Schritt ${n}:`) });
-const projekt = (page, titel) => page.getByRole('button', { name: new RegExp(titel) });
+// nur die Projektkarten (Umschalter mit aria-pressed): seit sie „und“ statt „&“ zeigen (Browserprüfung E4-W1, Runde 3), heißt
+// der Menüknopf „Balkon und Terrasse“ gleich
+const projekt = (page, titel) => page.locator('button[aria-pressed]').filter({ hasText: titel });
 const flaeche = (page, text) => page.getByRole('group', { name: 'Ungefähre Fläche in Quadratmetern' }).getByRole('button', { name: text, exact: true });
 const zeitraum = (page, text) => page.getByRole('group', { name: 'Gewünschter Ausführungszeitraum' }).getByRole('button', { name: text, exact: true });
 // „verbindlich“ entfällt: die Anfrage ist kostenlos und unverbindlich (Abnahme E4-W1, F4)
@@ -34,7 +36,7 @@ test.describe('TezgelAnfrageFunnel (F-03, /kontakt)', () => {
   test('Schritte vor und zurück: Auswahl bleibt erhalten, „Ändern“ führt zu Schritt 2', async ({ page }) => {
     await page.goto(SEITE);
     await expect(schrittAnzeige(page, 1)).toBeVisible();
-    await projekt(page, 'Balkon & Terrasse').click();
+    await projekt(page, 'Balkon und Terrasse').click();
     await weiterZu(page, 2).click();
     await expect(schrittAnzeige(page, 2)).toBeVisible();
     await expect(page.locator('[aria-label="Fortschritt"] [aria-current="step"]')).toHaveText('2');
@@ -49,7 +51,7 @@ test.describe('TezgelAnfrageFunnel (F-03, /kontakt)', () => {
     await expect(schrittAnzeige(page, 2)).toBeVisible();
     await page.getByRole('button', { name: 'Zurück', exact: true }).click();
     await expect(schrittAnzeige(page, 1)).toBeVisible();
-    await expect(projekt(page, 'Balkon & Terrasse')).toHaveAttribute('aria-pressed', 'true');
+    await expect(projekt(page, 'Balkon und Terrasse')).toHaveAttribute('aria-pressed', 'true');
 
     await weiterZu(page, 2).click();
     await weiterZu(page, 3).click();
@@ -127,7 +129,8 @@ test.describe('TezgelAnfrageFunnel (F-03, /kontakt)', () => {
 
   test('keine Vorauswahl beim Laden: nichts ist gewählt, die Zusammenfassung nennt „keine Angabe“', async ({ page }) => {
     await page.goto(SEITE);
-    for (const titel of ['Bad & Wellness', 'Wohnbereich & Neubau', 'Balkon & Terrasse', 'Treppen & Naturstein', 'Untergrund & Abdichtung']) {
+    // Kacheltitel zeigen „und“ statt „&“ (Browserprüfung E4-W1, Runde 3); gesendet wird weiter der Wert mit „&“
+    for (const titel of ['Bad und Wellness', 'Wohnbereich und Neubau', 'Balkon und Terrasse', 'Treppen und Naturstein', 'Untergrund und Abdichtung']) {
       await expect(projekt(page, titel)).toHaveAttribute('aria-pressed', 'false');
     }
     await weiterZu(page, 2).click();
@@ -161,7 +164,7 @@ test.describe('TezgelAnfrageFunnel (F-03, /kontakt)', () => {
 
   test('Gutfall mit allen Angaben: Projekt, Fläche, Zeitraum, Ort, Kontakt und Notiz landen in der Nutzlast', async ({ page, anfragen }) => {
     await page.goto(SEITE);
-    await projekt(page, 'Balkon & Terrasse').click();
+    await projekt(page, 'Balkon und Terrasse').click();
     await weiterZu(page, 2).click();
     await page.locator('#funnel-custom-area').fill('24');
     await zeitraum(page, 'Schnellstmöglich').click();
@@ -186,7 +189,7 @@ test.describe('TezgelAnfrageFunnel (F-03, /kontakt)', () => {
 
   test('WhatsApp-Alternative mit gültigen Angaben: Ziel mit vorbelegtem Text, Zustand „WhatsApp geöffnet“, kein Versand', async ({ page, anfragen }) => {
     await page.goto(SEITE);
-    await projekt(page, 'Balkon & Terrasse').click();
+    await projekt(page, 'Balkon und Terrasse').click();
     await weiterZu(page, 2).click();
     await page.locator('#funnel-custom-area').fill('24');
     await zeitraum(page, 'Schnellstmöglich').click();

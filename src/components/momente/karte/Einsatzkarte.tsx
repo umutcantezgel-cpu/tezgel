@@ -144,11 +144,12 @@ export default function Einsatzkarte({ unterschrift, beschriftet, aktuell, liste
             {GRUPPEN.filter((g) => g.orte.length > 0).map(({ zone, orte }) => (
               <div key={zone.id}>
                 <h3 className="font-text text-fs-2 font-semibold text-tinte-2">{zusammen(GRUPPE_NAME[zone.id])}</h3>
-                <ul className="mt-2 flex flex-col border-t border-fuge">
+                <ul className="@container mt-2 flex flex-col border-t border-fuge">
                   {orte.map((o) => {
                     const ist = o.slug === aktuell;
+                    // bei großer Schrift steht die Entfernung immer unter dem Ort, nicht mal daneben, mal darunter (Browserprüfung E4-W1, Runde 3)
                     return (
-                      <li key={o.slug} className="flex flex-wrap items-center justify-between gap-x-3 border-b border-fuge">
+                      <li key={o.slug} className="flex flex-wrap items-center justify-between gap-x-3 border-b border-fuge @max-3xs:flex-col @max-3xs:items-start @max-3xs:pb-2">
                         <Link
                           href={`/standorte/${o.slug}`}
                           aria-current={ist ? 'page' : undefined}

@@ -37,7 +37,7 @@ export const BALKON_TERRASSE: ErzaehlInhalt = {
       // Nennung erklärt, K-011)
       { name: 'Balkon erneuern', satz: 'Was wir tun, wenn der alte Belag undicht ist.', href: '/balkon-terrasse/balkonsanierung' },
       { name: 'Terrassenplatten', satz: 'Welches Material und welche Stärke zu Ihrer Terrasse passen.', href: '/balkon-terrasse/terrassenplatten' },
-      { name: 'Platten auf Stelzen', satz: 'So verlegen wir Platten auf [[stelzlager|Stelzlagern]], Schritt für Schritt.', href: '/balkon-terrasse/stelzlager' },
+      { name: 'Platten auf Stelzen', satz: 'So verlegen wir Platten auf Stelzlagern, Schritt für Schritt.', href: '/balkon-terrasse/stelzlager' },
     ],
   },
   tun: {

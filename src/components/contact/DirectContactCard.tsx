@@ -44,7 +44,7 @@ function Weg({ href, icon, label, wert, extern, text = false }: { href: string; 
         <Icon name={icon} groesse={5} className="shrink-0 text-tinte-2" />
         <span className="min-w-0 @max-3xs:w-full">
           <span className={etikett}>{label}</span>
-          <span className={clsx('mt-1 block text-fs-3 underline decoration-transparent underline-offset-4 group-hover:decoration-tinte wrap-break-word', text ? 'font-text font-semibold' : 'font-mono')}>{wert}</span>
+          <span className={clsx('mt-1 block text-fs-3 underline decoration-transparent underline-offset-4 group-hover:decoration-tinte @max-3xs:decoration-fuge wrap-break-word', text ? 'font-text font-semibold' : 'font-mono')}>{wert}</span>
         </span>
       </span>
       <Icon name={extern ? 'link-extern' : 'pfeil-rechts'} groesse={5} className="shrink-0 text-tinte-2 @max-3xs:hidden" />
@@ -79,7 +79,10 @@ export function DirectContactCard({ className = '' }: DirectContactCardProps) {
           <Icon name="ort" groesse={5} className="mt-1 shrink-0 text-tinte-2" />
           <div className="min-w-0">
             <span className={etikett}>Adresse unseres Betriebs</span>
-            <div className="mt-1 font-text text-fs-2 text-tinte hyphens-auto wrap-break-word">{SITE_CONFIG.headquarters.streetAddress}</div>
+            <div className="mt-1 font-text text-fs-2 text-tinte hyphens-auto wrap-break-word">
+              {/* Hausnummer bleibt bei der Straße (Anzeige; die Firmendaten bleiben unverändert, G8) */}
+              {SITE_CONFIG.headquarters.streetAddress.replace(/ (\d+\s*\w?)$/, '\u00a0$1')}
+            </div>
             <div className="font-text text-fs-2 text-tinte hyphens-auto wrap-break-word">
               {SITE_CONFIG.headquarters.postalCode} {SITE_CONFIG.headquarters.addressLocality}
             </div>

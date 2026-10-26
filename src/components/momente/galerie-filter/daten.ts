@@ -43,7 +43,8 @@ export const GRUPPEN: Gruppe[] = [
 
 // Browserprüfung E4-W1, Runde 2: fertige Räume zuerst (abwechselnd nach Gruppe), die Fotos von der Baustelle als eigener
 // Block am Ende, damit „Alle Fotos“ nicht Baustelle und fertige Räume mischt; 24 Fotos, damit Zwei- und Dreierraster
-// ohne Loch enden (Gäste-WC dazu).
+// ohne Loch enden (Gäste-WC dazu). Runde 3: die Dusche mit Sitzbank zeigt noch Rohranschlüsse ohne Armatur und steht
+// deshalb als erstes Foto im Block von der Baustelle.
 export const GALERIE: GalerieFoto[] = [
   { bild: 'start-dusche', gruppe: 'dusche', unterschrift: 'Dusche ohne Stufe mit großen grauen Fliesen' },
   { bild: 'start-beleg-bad', gruppe: 'bad', unterschrift: 'Badewanne mit dunklen Mosaikfliesen' },
@@ -53,7 +54,6 @@ export const GALERIE: GalerieFoto[] = [
   { bild: 'bad-beleg-3', gruppe: 'bad', unterschrift: 'Doppelwaschtisch aus dunklem Holz mit goldenem Spiegel' },
   { bild: 'start-galerie-4', gruppe: 'balkon-und-terrasse', unterschrift: 'Terrasse mit großen hellgrauen Platten' },
   { bild: 'kontakt-eingang', gruppe: 'treppe-und-eingang', unterschrift: 'Stufen am Eingang mit beigen Fliesen und hellen Kanten' },
-  { bild: 'bereich-dusche-streifen-sitzbank', gruppe: 'dusche', unterschrift: 'Dusche mit dunklem Streifen und gefliester Sitzbank' },
   { bild: 'badsanierung-einstieg', gruppe: 'bad', unterschrift: 'Badewanne mit blauen und beigen Ornamentfliesen' },
   { bild: 'balkon-beleg-2', gruppe: 'balkon-und-terrasse', unterschrift: 'Balkon mit rosébraunen Fliesen und Geländer' },
   { bild: 'bad-beleg-4', gruppe: 'dusche', unterschrift: 'Dusche mit Mosaikstreifen an der Wand' },
@@ -62,6 +62,7 @@ export const GALERIE: GalerieFoto[] = [
   { bild: 'ort-gaeste-wc', gruppe: 'bad', unterschrift: 'Gäste-WC mit weißen Metrofliesen' },
   { bild: 'balkon-beleg-aluprofil', gruppe: 'balkon-und-terrasse', unterschrift: 'Graue Terrassenplatten mit heller Kante aus Metall' },
   { bild: 'bad-beleg-2', gruppe: 'bad', unterschrift: 'Bad im Landhausstil mit Wanne und Holzregal' },
+  { bild: 'bereich-dusche-streifen-sitzbank', gruppe: 'so-arbeiten-wir', unterschrift: 'Dusche fertig gefliest, die Armaturen kommen noch' },
   { bild: 'entstehung-dusche-2', gruppe: 'so-arbeiten-wir', unterschrift: 'Die Fliesen sind schräg zum Ablauf geschnitten, so läuft das Wasser gut ab' },
   { bild: 'sanierung-weg-1', gruppe: 'so-arbeiten-wir', unterschrift: 'Bad während der Arbeit, die Wand ist halb gefliest' },
   { bild: 'start-galerie-6', gruppe: 'so-arbeiten-wir', unterschrift: 'Balkonboden vor dem Verlegen: ein blaues Band dichtet die Ränder ab' },

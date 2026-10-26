@@ -402,6 +402,10 @@ html.k-bewegung:not(.k-notaus) [data-motion="galerie-filter"][data-galerie-neu] 
 .glasbild {
   container-type: inline-size;
 }
+.glasbild-flaeche {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
 @media (hover: none) {
   @container (max-width: 20rem) {
     .glasbild-flaeche {

@@ -22,7 +22,8 @@ export function knopfKlassen(variante: KnopfVariante = 'haupt', className?: stri
 }
 
 /** Beschriftung über dem Feld */
-export const labelKlassen = 'block font-text text-fs-2 font-semibold text-tinte';
+// hyphens-auto: lange Feldnamen trennen bei großer Schrift, statt samt Pflichtsternchen über die Spalte zu ragen (Runde 3)
+export const labelKlassen = 'block font-text text-fs-2 font-semibold text-tinte hyphens-auto';
 /** Pflichtmarke hinter dem Label; das Formular erklärt sie einmal mit `kern/PflichtHinweis` (Vorleser hören „erforderlich“
  *  über required). Nicht rot: Rot nur für Achse, Anriss,
  *  Fokus-Akzent und Fehlerzeichen (K-003 Nr. 2) – sonst stehen Sternchen und Fehlerrand als zwei Rot im Bildschirm (R-01a) */

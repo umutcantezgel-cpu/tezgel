@@ -16,7 +16,7 @@ import Hauptknopf from '@/components/kern/Hauptknopf';
 import Rufnummer from '@/components/kern/Rufnummer';
 import Textmarken from '@/components/kern/Textmarken';
 import { linkKlassen } from '@/components/kern/stile';
-import { zusammen } from '@/components/kern/zusammen';
+import { mitFugen, zusammen } from '@/components/kern/zusammen';
 import { COMPANY_DATA } from '@/config/company';
 import { oeffnungszeilen } from '@/lib/oeffnungszeiten';
 import { buildWhatsAppUrl, kontextNachricht } from '@/lib/whatsapp';
@@ -119,6 +119,31 @@ export interface SchrittProps {
   zusatz?: ReactNode;
 }
 
+/** Linkname mit Pfeil am letzten Wort: bricht der Name bei großer Schrift um, folgt der Pfeil dem letzten Wort, statt am
+ *  rechten Rand zu stehen (Browserprüfung E4-W1, Runde 3). Namen mit Textmarken bleiben ungeteilt. */
+function MitPfeil({ text }: { text: string }) {
+  const pfeil = <Icon name="pfeil-rechts" groesse={4} className="ml-2 inline-block align-text-bottom" />;
+  const ende = text.lastIndexOf(' ');
+  if (text.includes('[[')) {
+    return (
+      <>
+        <Textmarken text={text} />
+        {pfeil}
+      </>
+    );
+  }
+  if (ende < 0) return <span className="whitespace-nowrap">{mitFugen(text)}{pfeil}</span>;
+  return (
+    <>
+      {mitFugen(text.slice(0, ende))}{' '}
+      <span className="whitespace-nowrap">
+        {text.slice(ende + 1)}
+        {pfeil}
+      </span>
+    </>
+  );
+}
+
 export default function Schritt({ inhalt, pfad, formular, titelId = 'anfrage', zusatz }: SchrittProps) {
   if (formular) return <FormularSchritt inhalt={inhalt} pfad={pfad} formular={formular} titelId={titelId} zusatz={zusatz} />;
   const { contact } = COMPANY_DATA;
@@ -170,11 +195,8 @@ export default function Schritt({ inhalt, pfad, formular, titelId = 'anfrage', z
             <ul className="mt-2">
               {inhalt.verwandte.map((v) => (
                 <li key={v.href} className="border-b border-fuge last:border-b-0">
-                  <Link href={v.href} data-motion="zustand" className={clsx(linkKlassen, 'inline-flex min-h-11 items-center gap-2 py-2 font-text text-fs-3')}>
-                    <span>
-                      <Textmarken text={v.name} />
-                    </span>
-                    <Icon name="pfeil-rechts" groesse={4} className="shrink-0" />
+                  <Link href={v.href} data-motion="zustand" className={clsx(linkKlassen, 'inline-block min-h-11 py-2 font-text text-fs-3')}>
+                    <MitPfeil text={v.name} />
                   </Link>
                 </li>
               ))}

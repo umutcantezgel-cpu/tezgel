@@ -38,16 +38,27 @@ export function umbruchNachSatzzeichen(text: string): ReactNode {
   return teile.flatMap((teil, i) => (i === 0 ? [teil] : [<wbr key={i} />, teil]));
 }
 
-// Kachel- und Kartentitel bei großer Schrift: „&“ hängt am Wort davor, und lange Zusammensetzungen trennen an ihrer Fuge
-// („Einfamilien-haus“ statt „Einfamili-enhaus“). Nur Anzeige; der Wert in Nutzlast und Mail bleibt unverändert
-// (Browserprüfung E4-W1, Runde 2).
+// Kachel- und Kartentitel bei großer Schrift: „&“ steht als „und“ da (wie anzeige() in den übrigen Formularen; ein an das
+// Wort gebundenes „&“ ergab in Runde 3 zu lange Einheiten, die mitten im Wort brachen), und lange Zusammensetzungen trennen
+// an ihrer Fuge („Einfamilien-haus“ statt „Einfamili-enhaus“). Nur Anzeige; der Wert in Nutzlast und Mail bleibt unverändert
+// (Browserprüfung E4-W1, Runden 2 und 3).
 const FUGEN: Record<string, string> = {
   Einfamilienhaus: 'Einfamilien­haus',
   Mehrfamilienhaus: 'Mehrfamilien­haus',
 };
 
+const FUGEN_MUSTER = new RegExp(`(${Object.keys(FUGEN).join('|')})`);
+
+/** Fließtext mit Wörtern aus FUGEN (etwa im Weiter-Link „… im ganzen Einfamilienhaus gehört“): diese trennen nur an ihrer
+ *  Fuge, der übrige Text wie gewohnt (Browserprüfung E4-W1, Runde 3) */
+export function mitFugen(text: string): ReactNode {
+  const teile = text.split(FUGEN_MUSTER);
+  if (teile.length === 1) return text;
+  return teile.map((t, i) => (i % 2 ? <span key={i} className="hyphens-manual">{FUGEN[t]}</span> : t));
+}
+
 export function kachelTitel(text: string): ReactNode {
   const fuge = FUGEN[text];
   if (fuge) return <span className="hyphens-manual">{fuge}</span>;
-  return text.replace(/ & /g, ' & ');
+  return text.replace(/ & /g, ' und ');
 }

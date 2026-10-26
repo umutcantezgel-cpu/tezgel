@@ -70,18 +70,20 @@ export default function Einzugsband({ aktuell, kompakt = false, form = 'band', c
                         </span>
                         {ist && !kompakt && <span className="font-mono text-fs-1 text-tinte-2">Sie sind hier</span>}
                       </span>
-                      <span className="ml-auto shrink-0 font-mono text-fs-1 text-tinte-2">{entfernung(o.distanceKm)}</span>
+                      <span className="ml-auto shrink-0 font-mono text-fs-1 text-tinte-2 @max-3xs:ml-0">{entfernung(o.distanceKm)}</span>
                     </>
                   );
+                  // bei großer Schrift steht die Entfernung in jeder Zeile unter dem Ort, nicht je nach Namenslänge mal daneben
+                  // (wie in der Ortsliste der Einsatzkarte, Browserprüfung E4-W1, Runde 3)
                   return (
                     <li key={o.slug} className={clsx(!kompakt && 'border-t border-fuge first:border-t-0', stapel && !kompakt && 'sm:nth-2:border-t-0')}>
                       {kompakt ? (
-                        <span className="flex flex-wrap items-center justify-between gap-x-3 font-text text-fs-1 text-tinte">{inhalt}</span>
+                        <span className="flex flex-wrap items-center justify-between gap-x-3 font-text text-fs-1 text-tinte @max-3xs:flex-col @max-3xs:items-start">{inhalt}</span>
                       ) : (
                         <Link
                           href={`/standorte/${o.slug}`}
                           aria-current={ist ? 'page' : undefined}
-                          className="group flex min-h-11 flex-wrap items-center justify-between gap-x-3 py-2 font-text text-fs-2 text-tinte"
+                          className="group flex min-h-11 flex-wrap items-center justify-between gap-x-3 py-2 font-text text-fs-2 text-tinte @max-3xs:flex-col @max-3xs:items-start"
                         >
                           {inhalt}
                         </Link>

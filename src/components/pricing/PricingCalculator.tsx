@@ -26,6 +26,7 @@ import Rufnummer from "@/components/kern/Rufnummer";
 import { siteConfig } from "@/lib/config";
 import { usePreisrechner } from "@/lib/formulare/usePreisrechner";
 import { anzeige } from "@/lib/formulare/anzeige";
+import { zusammen } from "@/components/kern/zusammen";
 
 const SERVICE_PLAENE: Record<CraftServiceType, PlanName> = {
   bad: "bad",
@@ -155,7 +156,7 @@ export default function PricingCalculator() {
                   </span>
                   <span className="min-w-0 flex-1">
                     <span className="flex flex-wrap items-start justify-between gap-x-2 gap-y-1">
-                      <span className="block min-w-0 text-fs-2 font-semibold @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]">{anzeige(srv.title)}</span>
+                      <span className="block min-w-0 text-fs-2 font-semibold @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]">{zusammen(anzeige(srv.title))}</span>
                     </span>
                     <span className="mt-1 block text-fs-1 @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]">{anzeige(srv.subtitle)}</span>
                   </span>
@@ -328,8 +329,8 @@ export default function PricingCalculator() {
                   </dd>
                 </div>
                 <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3 @max-3xs:flex-wrap">
-                  <dt className="text-nacht-2">Termin bei Ihnen vor Ort:</dt>
-                  <dd className="min-w-0 text-right font-mono text-kalk hyphens-auto wrap-break-word">0 € (Kostenfrei)</dd>
+                  <dt className="text-nacht-2">{zusammen("Termin bei Ihnen vor Ort:")}</dt>
+                  <dd className="min-w-0 text-right font-mono text-kalk hyphens-auto wrap-break-word">0{"\u00a0"}€ (Kostenfrei)</dd>
                 </div>
                 <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3 @max-3xs:flex-wrap">
                   <dt className="text-nacht-2">Angebot:</dt>
