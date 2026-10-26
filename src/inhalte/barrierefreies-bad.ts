@@ -55,12 +55,13 @@ export const BARRIEREFREIES_BAD: ErzaehlInhalt = {
     },
   },
   beleg: {
-    // Überschrift nach den Fotos (E4-W0-BILDER): sie zeigen eine Dusche mit Eckbank und eine Wanne mit Tür, keine Behauptung
-    // „ohne Stufe“, die das Foto nicht belegt; kein Foto steht auf einer anderen Hauptansicht
-    titel: 'Duschen und Wannen, die wir gebaut haben.',
+    // Überschrift nach den Fotos (E4-W0-BILDER, E-065): zwei fertige Duschen; „ohne Stufe“ behauptet nur die Unterschrift des
+    // Fotos, das es zeigt. Die Wanne mit Tür trug noch Herstelleraufkleber und Klebeband und ist entfallen; die bodengleiche
+    // Dusche kommt von /bad hierher, kein Foto steht auf einer anderen Hauptansicht
+    titel: 'Duschen, die wir gebaut haben.',
     fotos: [
-      { bild: 'barrierefrei-beleg-1', unterschrift: 'Dusche mit Mosaikboden und Eckbank', href: '/bad/barrierefreies-bad' },
-      { bild: 'barrierefrei-beleg-2', unterschrift: 'Wanne mit Tür zum leichten Einsteigen', href: '/bad/barrierefreies-bad' },
+      { bild: 'barrierefrei-beleg-1', unterschrift: 'Dusche mit Mosaikboden und Eckbank' },
+      { bild: 'bad-beleg-4', unterschrift: 'Bodengleiche Dusche mit Mosaik' },
     ],
     zweierbild: {
       titel: 'So entsteht eine Dusche ohne Stufe',

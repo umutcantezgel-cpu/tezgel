@@ -84,7 +84,6 @@ export const BAD: ErzaehlInhalt = {
       { bild: 'bad-beleg-1', unterschrift: 'Badewanne mit weißen Fliesen', href: '/bad/badsanierung' },
       { bild: 'bad-beleg-2', unterschrift: 'Wanne unter weißen Fliesen', href: '/bad/badsanierung' },
       { bild: 'bad-beleg-3', unterschrift: 'Doppelwaschtisch aus dunklem Holz', href: '/bad/badsanierung' },
-      { bild: 'bad-beleg-4', unterschrift: 'Bodengleiche Dusche mit Mosaik', href: '/bad/barrierefreies-bad' },
     ],
     // Stimme der Textdatei zuerst, dann Stimmen aus REVIEWS zum Thema Bad (Regel 5, G8: Wortlaut unverändert)
     stimmen: ['peter-p', 'elke-s', 'c-wolf', 'ute-t', 'k-d'],

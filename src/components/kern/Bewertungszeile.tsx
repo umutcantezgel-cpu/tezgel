@@ -18,14 +18,15 @@ export default function Bewertungszeile({ stand = false, geteilt = false, classN
         ))}
       </span>{' '}
       <span className="font-semibold text-tinte">{zusammen(`${g.displayRating} von ${g.maxRating} Sternen`)}</span>
-      {/* der Mittelpunkt hängt per geschütztem Leerzeichen am Folgewort, nie allein am Zeilenende (Sichtabnahme E2, Befund 14) */}
-      <span aria-hidden="true" className={clsx(geteilt && '@max-md:hidden')}> ·{' '}</span>
+      {/* der Mittelpunkt hängt per geschütztem Leerzeichen am Wort davor, umbrechen darf die Zeile nur danach: keine Zeile
+          beginnt mit „·“ (Browserprüfung E4-W0, E-065), und allein am Zeilenende steht er nie (Sichtabnahme E2, Befund 14) */}
+      <span aria-hidden="true" className={clsx(geteilt && '@max-md:hidden')}>{' · '}</span>
       <span className="sr-only">, </span>
       {/* Zahl und Nomen bleiben beisammen (Runde 4) */}
       <span className={clsx(geteilt && '@max-md:block')}>{zusammen(`${g.count} Bewertungen bei Google`)}</span>
       {stand && (
         <>
-          <span aria-hidden="true"> ·{' '}</span>
+          <span aria-hidden="true">{' · '}</span>
           <span className="sr-only">, </span>
           <span>Stand {RATING_SUMMARY.asOf}</span>
         </>

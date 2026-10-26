@@ -40,7 +40,7 @@ export default function OrtsSeite({ inhalt, formular, nachbarn, karte }: OrtsSei
           <Lage inhalt={inhalt.lage} />
           <Tun inhalt={inhalt.tun} />
           <Ablauf inhalt={inhalt.ablauf} />
-          <Beleg inhalt={inhalt.beleg} />
+          <Beleg inhalt={inhalt.beleg} pfad={inhalt.pfad} />
           <Schritt inhalt={inhalt.schritt} pfad={inhalt.pfad} formular={formular} titelId={ORT_ANKER} zusatz={<Nachbarorte nachbarn={nachbarn} />} />
         </Suspense>
       </Leitachse>

@@ -37,7 +37,7 @@ export default function WissensSeite({ inhalt, zeichnungen, werkzeug }: WissensS
           <Lage inhalt={inhalt.lage} />
           <Wissen bloecke={inhalt.wissen} zeichnungen={zeichnungen} />
           <Ablauf inhalt={inhalt.ablauf} />
-          <Beleg inhalt={inhalt.beleg} />
+          <Beleg inhalt={inhalt.beleg} pfad={inhalt.pfad} />
           <Schritt inhalt={inhalt.schritt} pfad={inhalt.pfad} />
           {werkzeug && <Werkzeug werkzeug={werkzeug} />}
         </Suspense>

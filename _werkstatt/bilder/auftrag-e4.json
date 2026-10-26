@@ -210,22 +210,22 @@
     "id": "leistungen-einstieg",
     "original": "IMG_2548.PNG",
     "raum": "dusche",
-    "name": "dusche-led-leisten-sitzbank-mosaik",
+    "name": "dusche-led-leisten-sitzbank-mosaik-ohne-rand",
     "format": "4:5",
     "schwerpunkt": {
-      "x": 50.0,
-      "y": 48.0823
+      "x": 43.1818,
+      "y": 44.1597
     },
     "ausschnitt": {
       "links": 0.0,
       "oben": 19.3166,
-      "rechts": 0.0,
-      "unten": 23.152
+      "rechts": 13.6364,
+      "unten": 30.9972
     },
     "breiten": [
       640,
       960,
-      1280
+      1140
     ],
     "alt": "Dusche mit zwei Lichtleisten an der Wand, gefliester Sitzbank und Mosaikboden",
     "korrektur": true
@@ -234,46 +234,24 @@
     "id": "fliesen-beleg",
     "original": "IMG_2600.PNG",
     "raum": "dusche",
-    "name": "dusche-grosse-beige-fliesen-flache-duschflaeche",
+    "name": "dusche-grosse-beige-fliesen-mitte",
     "format": "4:5",
     "schwerpunkt": {
-      "x": 50.0,
-      "y": 48.0823
+      "x": 41.6667,
+      "y": 47.507
     },
     "ausschnitt": {
-      "links": 0.0,
-      "oben": 19.3166,
-      "rechts": 0.0,
-      "unten": 23.152
+      "links": 7.5758,
+      "oben": 27.894,
+      "rechts": 24.2424,
+      "unten": 32.8801
     },
     "breiten": [
       480,
-      800
+      800,
+      900
     ],
-    "alt": "Dusche mit großen beigen Fliesen, flacher weißer Duschfläche und einer Holztür am Ende",
-    "korrektur": true
-  },
-  {
-    "id": "blog-beleg",
-    "original": "IMG_2583.PNG",
-    "raum": "dusche",
-    "name": "duschnische-weisse-fliesen-rinne",
-    "format": "4:5",
-    "schwerpunkt": {
-      "x": 50.0,
-      "y": 48.152
-    },
-    "ausschnitt": {
-      "links": 0.0,
-      "oben": 19.3863,
-      "rechts": 0.0,
-      "unten": 23.0823
-    },
-    "breiten": [
-      480,
-      800
-    ],
-    "alt": "Duschnische mit weißen Wandfliesen und einer Rinne im dunklen Boden, die Armatur fehlt noch",
+    "alt": "Dusche mit großen beigen Fliesen an Wand und Boden, flacher weißer Duschfläche und einer Holztür",
     "korrektur": true
   },
   {
@@ -296,7 +274,7 @@
       640,
       960
     ],
-    "alt": "Badewanne mit blau-beigen Ornamentfliesen und heller Wandnische",
+    "alt": "Badewanne mit blauen und beigen Ornamentfliesen und heller Wandnische",
     "korrektur": true
   },
   {
@@ -319,7 +297,7 @@
       480,
       792
     ],
-    "alt": "Badewanne mit gestreifter dunkler Verkleidung und Wand-WC",
+    "alt": "Badewanne mit gestreifter dunkler Verkleidung, daneben ein WC an der Wand",
     "korrektur": true
   },
   {
@@ -439,29 +417,6 @@
     "korrektur": true
   },
   {
-    "id": "barrierefrei-beleg-2",
-    "original": "IMG_2567.PNG",
-    "raum": "bad",
-    "name": "einstiegswanne-tuer-regendusche",
-    "format": "4:5",
-    "schwerpunkt": {
-      "x": 37.8788,
-      "y": 46.1994
-    },
-    "ausschnitt": {
-      "links": 0.0,
-      "oben": 24.4073,
-      "rechts": 24.2424,
-      "unten": 32.0084
-    },
-    "breiten": [
-      480,
-      800
-    ],
-    "alt": "Badewanne mit Tür zum leichten Einsteigen, daneben eine Regendusche vor hellen Wandfliesen",
-    "korrektur": true
-  },
-  {
     "id": "referenzen-einstieg",
     "original": "IMG_2562.PNG",
     "raum": "bad",
@@ -482,7 +437,7 @@
       960,
       1280
     ],
-    "alt": "Bad mit Fliesen in Marmoroptik, Regendusche und Wand-WC mit weißer Betätigungsplatte",
+    "alt": "Bad mit Fliesen in Marmoroptik, Regendusche und einem WC an der Wand mit weißer Betätigungsplatte",
     "korrektur": true
   },
   {
@@ -598,7 +553,7 @@
       480,
       800
     ],
-    "alt": "Gäste-WC mit Wand-WC, Bidet und weißen Metrofliesen an der Wand",
+    "alt": "Gäste-WC mit WC und Bidet an der Wand vor weißen Metrofliesen",
     "korrektur": true
   },
   {

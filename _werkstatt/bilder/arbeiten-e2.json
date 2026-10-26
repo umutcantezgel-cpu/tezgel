@@ -334,37 +334,28 @@
   },
   {
     "id": "leistungen-einstieg",
-    "src": "/images/arbeiten/dusche/dusche-led-leisten-sitzbank-mosaik.jpg",
-    "breite": 1280,
-    "hoehe": 1600,
+    "src": "/images/arbeiten/dusche/dusche-led-leisten-sitzbank-mosaik-ohne-rand.jpg",
+    "breite": 1140,
+    "hoehe": 1425,
     "alt": "Dusche mit zwei Lichtleisten an der Wand, gefliester Sitzbank und Mosaikboden",
     "raum": "dusche",
-    "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JZwDA3fwAkkh3XMxa8gAA/WZlGoqomuUYVLdpWWzhrfmp8UZ+yq1BzkUhYpQwbxqPzcvgAAA="
+    "blurDataURL": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACQAwCdASoQABQAPu1iqU2ppaQiMAgBMB2JZwDG9Bhv41tZl3tAAP1nr235WDHWnV1POBeUsEcbIVCgPaDfqCe4mOpoAA=="
   },
   {
     "id": "fliesen-beleg",
-    "src": "/images/arbeiten/dusche/dusche-grosse-beige-fliesen-flache-duschflaeche.jpg",
-    "breite": 800,
-    "hoehe": 1000,
-    "alt": "Dusche mit großen beigen Fliesen, flacher weißer Duschfläche und einer Holztür am Ende",
+    "src": "/images/arbeiten/dusche/dusche-grosse-beige-fliesen-mitte.jpg",
+    "breite": 900,
+    "hoehe": 1125,
+    "alt": "Dusche mit großen beigen Fliesen an Wand und Boden, flacher weißer Duschfläche und einer Holztür",
     "raum": "dusche",
-    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAACwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JZQCdMoABo1mOL7d76ADwGZKXv2HaaF/PXIonuy6NWOG48hNdlzAvwpKlcgOO4lZ+LZB/Yt+p0ACM2OGMYw0AAAA="
-  },
-  {
-    "id": "blog-beleg",
-    "src": "/images/arbeiten/dusche/duschnische-weisse-fliesen-rinne.jpg",
-    "breite": 800,
-    "hoehe": 1000,
-    "alt": "Duschnische mit weißen Wandfliesen und einer Rinne im dunklen Boden, die Armatur fehlt noch",
-    "raum": "dusche",
-    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACQAwCdASoQABQAPu1Ct1apoqakGAEwHYlpAAEOBOG6fYABKrkAAP5nGsXrvknqqK+FxPllOBUzjSWPg6LVSxS5+CMBWsd+gAAAAA=="
+    "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAACwAwCdASoQABQAPu1iqU2ppaQiMAgBMB2JZQCdACLqlC7TSxEEwAD9doEorHyze51UQncDwcZME0Jx8YW7Yxg6qriI1GVWE5JdJnSGS0rXYAAA"
   },
   {
     "id": "badsanierung-einstieg",
     "src": "/images/arbeiten/bad/badewanne-ornamentfliesen-nische.jpg",
     "breite": 960,
     "hoehe": 1200,
-    "alt": "Badewanne mit blau-beigen Ornamentfliesen und heller Wandnische",
+    "alt": "Badewanne mit blauen und beigen Ornamentfliesen und heller Wandnische",
     "raum": "bad",
     "blurDataURL": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAABwAwCdASoQABQAPu1qrU8ppiQiMAgBMB2JaQAAUiWkNOWltgAA/ovc+lnU83H2MWjP+pIis6DiErXTcZBGPLO/AAA="
   },
@@ -373,7 +364,7 @@
     "src": "/images/arbeiten/bad/badewanne-gestreifte-verkleidung-wand-wc.jpg",
     "breite": 792,
     "hoehe": 990,
-    "alt": "Badewanne mit gestreifter dunkler Verkleidung und Wand-WC",
+    "alt": "Badewanne mit gestreifter dunkler Verkleidung, daneben ein WC an der Wand",
     "raum": "bad",
     "blurDataURL": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAABQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JZwAAUksMnJmYgAD+1aBJxhv8g9hyBvh9FypluKMEOD5NzM6NrIS5H1rJ8cnag+6Noj//2Yu8hIljPfKWcJMVxXn/vAAAAAA="
   },
@@ -423,20 +414,11 @@
     "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAQBACdASoQABQAPu1kqk4ppaQiMAgBMB2JZwAAXBXVh5sDj8FQYrSAgAD80sIJy8yd6pKVXy7BFDcedAh8Xe7FwDzX+TQIexVaq7QeMpAAAA=="
   },
   {
-    "id": "barrierefrei-beleg-2",
-    "src": "/images/arbeiten/bad/einstiegswanne-tuer-regendusche.jpg",
-    "breite": 800,
-    "hoehe": 1000,
-    "alt": "Badewanne mit Tür zum leichten Einsteigen, daneben eine Regendusche vor hellen Wandfliesen",
-    "raum": "bad",
-    "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAABwAwCdASoQABQAPu1iqU2ppaQiMAgBMB2JZQAAOfj7ANKnngAA1pPo5RVSj+OYspBmGxqLwkd3A+DXqTSfb2vJc9IiKjey6Rh4CpofIumIe9ui5Wj5R28MQQa1ol/2NyQAAA=="
-  },
-  {
     "id": "referenzen-einstieg",
     "src": "/images/arbeiten/bad/bad-marmoroptik-regendusche-wand-wc.jpg",
     "breite": 1280,
     "hoehe": 1600,
-    "alt": "Bad mit Fliesen in Marmoroptik, Regendusche und Wand-WC mit weißer Betätigungsplatte",
+    "alt": "Bad mit Fliesen in Marmoroptik, Regendusche und einem WC an der Wand mit weißer Betätigungsplatte",
     "raum": "bad",
     "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAACwAwCdASoQABQAPu1mq04ppaQiMAgBMB2JZwDDNBkzvXuMvxC9cADKKMQGey5XCzmju4+pH/EddOW7WUQ2rnIauUiFuszgFHnsn9VcXO/5Fmt/OYAAAA=="
   },
@@ -481,7 +463,7 @@
     "src": "/images/arbeiten/bad/gaeste-wc-metrofliesen-bidet.jpg",
     "breite": 800,
     "hoehe": 1000,
-    "alt": "Gäste-WC mit Wand-WC, Bidet und weißen Metrofliesen an der Wand",
+    "alt": "Gäste-WC mit WC und Bidet an der Wand vor weißen Metrofliesen",
     "raum": "bad",
     "blurDataURL": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAADwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JZQCdABJeR0Rqdaa7ijsAAP5L/k9mTuJiFyEnq5dKdScd6tvwXwO6XeAr9H+41CZe5d+tTBf+WYFJJ05R6PZl82d7O2mkQVIp2lk7OzUdsK9PNIVXb+U2NpowSYlzy6Ki+AAA"
   }

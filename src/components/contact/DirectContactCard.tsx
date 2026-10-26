@@ -1,6 +1,6 @@
 // Direkter Kontakt (E2-ORCH-09, hell seit E3-NACH-04; Abnahme E3-BAU-09 nach K-010 und K-016): die Wege zu Deniz Tezgel als
 // Zeilen an der Fuge, Etikett über dem Wert, Rufnummern in Mono, alles andere in Textschrift (E4-W0-KONTAKT: Mono nur für
-// Ziffernfolgen wie die Rufnummer, E3-SICHT). Ohne eigenes Etikett, eigene Überschrift und Werbesatz: die
+// Ziffernfolgen wie die Rufnummer, E3-SICHT). Straße mit Silbentrennung, E-Mail mit Umbruch nach dem @ (E-065). Ohne eigenes Etikett, eigene Überschrift und Werbesatz: die
 // Überschrift „Lieber anrufen oder schreiben?“ setzt der Abschnitt der Seite. Etiketten wie in `_werkstatt/texte/kontakt.md`.
 // Öffnungszeiten aus den Tageswerten (`oeffnungszeilen`, M-03: „Sa nach Vereinbarung“ wie im Fuß, kein Widerspruch auf der
 // Seite). Serverkomponente; Rufnummern, Adresse und Ziele unverändert (SITE_CONFIG, G8).
@@ -16,6 +16,19 @@ export interface DirectContactCardProps {
 }
 
 const etikett = 'block font-mono text-fs-1 text-tinte-2 @max-3xs:hyphens-auto wrap-break-word';
+
+/** E-Mail mit Umbruchstelle nach dem @: bei großer Systemschrift „info@“ und „tezgel.de“ untereinander statt „info@tezgel.d“
+ *  und „e“ (Browserprüfung E4-W0, E-065); die Adresse selbst bleibt unverändert (G8) */
+function Adresse({ email }: { email: string }) {
+  const at = email.indexOf('@') + 1;
+  return (
+    <>
+      {email.slice(0, at)}
+      <wbr />
+      {email.slice(at)}
+    </>
+  );
+}
 
 /** tel:-Ziel ohne Leerzeichen (RFC 3966); die Nummer selbst bleibt unverändert (G8) */
 const telLink = (nummer: string) => `tel:${nummer.replace(/\s/g, '')}`;
@@ -47,7 +60,7 @@ export function DirectContactCard({ className = '' }: DirectContactCardProps) {
         <Weg href={telLink(SITE_CONFIG.contact.telephone)} icon="telefon" label="Telefon" wert={<Rufnummer nummer={SITE_CONFIG.contact.telephoneFormatted} />} />
         <Weg href={telLink(SITE_CONFIG.contact.mobile)} icon="telefon" label="Mobil" wert={<Rufnummer nummer={SITE_CONFIG.contact.mobileFormatted} />} />
         <Weg href={SITE_CONFIG.contact.whatsappLink} icon="sprechblase" label="WhatsApp" wert="Nachricht per WhatsApp" extern text />
-        <Weg href={`mailto:${SITE_CONFIG.contact.email}`} icon="mail" label="E-Mail" wert={SITE_CONFIG.contact.email} text />
+        <Weg href={`mailto:${SITE_CONFIG.contact.email}`} icon="mail" label="E-Mail" wert={<Adresse email={SITE_CONFIG.contact.email} />} text />
 
         <div className="flex items-start gap-4 border-b border-fuge py-4">
           <Icon name="uhr" groesse={5} className="mt-1 shrink-0 text-tinte-2" />
@@ -65,8 +78,8 @@ export function DirectContactCard({ className = '' }: DirectContactCardProps) {
           <Icon name="ort" groesse={5} className="mt-1 shrink-0 text-tinte-2" />
           <div className="min-w-0">
             <span className={etikett}>Adresse unseres Betriebs</span>
-            <div className="mt-1 font-text text-fs-2 text-tinte wrap-break-word">{SITE_CONFIG.headquarters.streetAddress}</div>
-            <div className="font-text text-fs-2 text-tinte wrap-break-word">
+            <div className="mt-1 font-text text-fs-2 text-tinte hyphens-auto wrap-break-word">{SITE_CONFIG.headquarters.streetAddress}</div>
+            <div className="font-text text-fs-2 text-tinte hyphens-auto wrap-break-word">
               {SITE_CONFIG.headquarters.postalCode} {SITE_CONFIG.headquarters.addressLocality}
             </div>
           </div>

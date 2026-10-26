@@ -45,7 +45,8 @@ export const LEISTUNGEN: ErzaehlInhalt = {
     ],
   },
   beleg: {
-    titel: 'Fertige Arbeiten von uns.',
+    // „fertig“ entfällt (E-065): das dritte Foto zeigt die Abdichtung vor dem Verlegen
+    titel: 'Drei Arbeiten von uns.',
     // Übersicht: die drei Fotos stehen auch auf ihrer Leistungsseite (Bad, Balkon, Über uns), sonst keines doppelt (E4-W0-BILDER)
     fotos: [
       { bild: 'bad-beleg-1', unterschrift: 'Bad mit neuer Badewanne', href: '/bad/badsanierung' },

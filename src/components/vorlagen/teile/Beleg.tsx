@@ -24,8 +24,13 @@ export interface ZweiterBeleg {
   moment: ReactNode;
 }
 
-export default function Beleg({ inhalt, moment, zweiter, stimmenTitel = 'Das sagen unsere Kunden.' }: { inhalt: BelegInhalt; moment?: ReactNode; zweiter?: ZweiterBeleg; stimmenTitel?: string }) {
+export default function Beleg({ inhalt, pfad, moment, zweiter, stimmenTitel = 'Das sagen unsere Kunden.' }: { inhalt: BelegInhalt; pfad?: string; moment?: ReactNode; zweiter?: ZweiterBeleg; stimmenTitel?: string }) {
   const davor = inhalt.fotos.length > 0 || Boolean(inhalt.satz) || Boolean(inhalt.zweierbild);
+  // Ein Foto führt nur dann weiter, wenn sein Ziel eine andere Seite ist: ein Link auf die Seite, auf der man steht, lädt sie
+  // bloß neu (Browserprüfung E4-W0, E-065)
+  const ziel = (href?: string) => (href && href !== pfad ? href : undefined);
+  // zwei Fotos ab md in zwei Spalten statt zwei von drei Plätzen (sonst bleibt rechts ein Loch im Raster, E-065)
+  const karte = inhalt.fotos.length === 2 ? 'w-full md:w-1/2' : 'w-full md:w-1/2 lg:w-1/3';
   return (
     <>
       <Abschnitt id="unsere-arbeiten" formel="beleg" leitachse spaet mitte titel={inhalt.titel}>
@@ -33,13 +38,13 @@ export default function Beleg({ inhalt, moment, zweiter, stimmenTitel = 'Das sag
             (K-016, Zusatz Regel 4; Gegenprüfung Welle 2), mittig in der Lesebreite */}
         {inhalt.fotos.length === 1 && (
           <div className="mx-auto w-full max-w-mass">
-            <Glasbild arbeit={inhalt.fotos[0].bild} name={inhalt.fotos[0].unterschrift} href={inhalt.fotos[0].href} sizes="(min-width: 768px) 66ch, 100vw" />
+            <Glasbild arbeit={inhalt.fotos[0].bild} name={inhalt.fotos[0].unterschrift} href={ziel(inhalt.fotos[0].href)} sizes="(min-width: 768px) 66ch, 100vw" />
           </div>
         )}
         {inhalt.fotos.length > 1 && (
-          <Karussell art="reihe" name="Fotos" karte="w-full md:w-1/2 lg:w-1/3">
+          <Karussell art="reihe" name="Fotos" karte={karte}>
             {inhalt.fotos.map((f) => (
-              <Glasbild key={f.bild} arbeit={f.bild} name={f.unterschrift} href={f.href} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
+              <Glasbild key={f.bild} arbeit={f.bild} name={f.unterschrift} href={ziel(f.href)} sizes={inhalt.fotos.length === 2 ? '(min-width: 768px) 50vw, 100vw' : '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw'} />
             ))}
           </Karussell>
         )}

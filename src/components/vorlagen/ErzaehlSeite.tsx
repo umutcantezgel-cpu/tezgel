@@ -61,7 +61,7 @@ export default function ErzaehlSeite({ inhalt, momente, werkzeug, nachBeleg, ein
       <Lage inhalt={inhalt.lage} />
       <Tun inhalt={inhalt.tun} moment={momente?.tun} />
       <Ablauf inhalt={inhalt.ablauf} moment={momente?.ablauf} />
-      <Beleg inhalt={inhalt.beleg} moment={momente?.beleg} zweiter={momente?.belegZwei} />
+      <Beleg inhalt={inhalt.beleg} pfad={inhalt.pfad} moment={momente?.beleg} zweiter={momente?.belegZwei} />
       {nachBeleg}
       <Schritt
         inhalt={inhalt.schritt}

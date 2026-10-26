@@ -47,8 +47,8 @@ export function Stimme({ s, gross, klein = false }: { s: Bewertung; gross: boole
         ))}
       </span>
       {/* wrap-break-word: der Wortlaut enthält Stellen ohne Leerzeichen („empfehlen.Handwerklich“), die bei großer
-          Systemschrift sonst über den Rand laufen; keine Silbentrennung im Zitat */}
-      <blockquote className={clsx('mt-4 min-w-0 font-text text-pretty wrap-break-word text-tinte hyphens-none', gross ? 'text-fs-4 font-semibold lg:text-fs-5' : klein ? 'text-fs-2' : 'text-fs-3')}>
+          Systemschrift sonst über den Rand laufen; lange Wörter trennt der Browser mit Strich (globals.css, E-065) */}
+      <blockquote className={clsx('mt-4 min-w-0 font-text text-pretty wrap-break-word text-tinte', gross ? 'text-fs-4 font-semibold lg:text-fs-5' : klein ? 'text-fs-2' : 'text-fs-3')}>
         <p>{gross ? markiert(s.text, MARKIERUNG[s.id]) : s.text}</p>
       </blockquote>
       <figcaption className="mt-6 font-text text-fs-2 text-tinte-2">

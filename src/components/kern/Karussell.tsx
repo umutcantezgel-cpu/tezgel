@@ -157,6 +157,8 @@ export default function Karussell({ art, name, children, karte = 'w-full md:w-1/
   return (
     <section aria-roledescription="Karussell" aria-label={name} className={className} {...halten}>
       {/* Abstand innen statt gap: die Karten füllen die Breite genau, jede sichtbare Karte steht ganz im Bild (nie angeschnitten, E-047) */}
+      {/* Gleich hohe Karten erst ab sm, wenn mehrere nebeneinanderstehen; einzeln (Handy, große Schrift) ist jede Karte so hoch
+          wie ihr Inhalt, statt unter einer kurzen Stimme eine halbe Karte leer zu lassen (Browserprüfung E4-W0, E-065) */}
       {/* Die Spur ist selbst per Tastatur erreichbar (Pfeiltasten wischen), auch wenn die Karten keine Links haben; pt-1 hält
           den Fokusrahmen der Karten innerhalb der Clipkante. Die Folie ist ein inneres div, damit die Liste Liste bleibt. */}
       <ul
@@ -164,7 +166,7 @@ export default function Karussell({ art, name, children, karte = 'w-full md:w-1/
         tabIndex={0}
         onPointerDown={beruehrt}
         data-motion="karussell"
-        className="karussell-reihe -mx-3 flex snap-x snap-mandatory overflow-x-auto pt-1 pb-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tinte"
+        className="karussell-reihe -mx-3 flex snap-x snap-mandatory items-start overflow-x-auto pt-1 pb-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tinte sm:items-stretch"
       >
         {teile.map((t, i) => (
           <li key={i} className={clsx('shrink-0 snap-start px-3', karte)}>

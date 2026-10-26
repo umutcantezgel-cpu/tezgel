@@ -55,7 +55,7 @@
   1. `{Bild: bad-beleg-1}` · `Badewanne mit weißen Fliesen und einer Lichtlinie am Rand.`
   2. `{Bild: bad-beleg-2}` · `Wanne unter weißen Fliesen, dazu ein Holzregal.`
   3. `{Bild: bad-beleg-3}` · `Doppelwaschtisch aus dunklem Holz mit Goldspiegel.`
-  4. `{Bild: bad-beleg-4}` · `Bodengleiche Dusche mit Mosaik an der Wand und Handbrause.`
+  (Foto 4 steht seit E-065 auf `/bad/barrierefreies-bad`, kein Foto doppelt auf den Hauptansichten.)
 - Stimme: `{Stimme: peter-p}` · Quelle: `Google`
 - Link: `Alle Arbeiten ansehen` → `/referenzen`
 

@@ -139,9 +139,12 @@ export default function Tun({ inhalt, moment }: { inhalt: TunInhalt; moment?: Re
         </div>
       )}
       {inhalt.absatz && (
-        <p className="mx-auto mt-8 max-w-mass font-text text-fs-3 text-pretty text-tinte">
-          <Textmarken text={inhalt.absatz} />
-        </p>
+        // Satzspiegel in der Grundschrift, damit der Absatz mit den Fliesen darüber fluchtet (max-w-mass misst in ch, E-065)
+        <div className="mx-auto mt-8 max-w-mass">
+          <p className="font-text text-fs-3 text-pretty text-tinte">
+            <Textmarken text={inhalt.absatz} />
+          </p>
+        </div>
       )}
       {inhalt.unterKopf && (
         <div className="mt-16">

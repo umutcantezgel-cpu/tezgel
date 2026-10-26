@@ -101,7 +101,7 @@ export default function ReviewsSection({ leitachse = false }) {
                                         <Icon key={i} name="stern-voll" groesse={4} />
                                     ))}
                                 </span>
-                                <blockquote className="mt-4 min-w-0 flex-1 font-text text-fs-3 text-pretty wrap-break-word text-tinte hyphens-none">
+                                <blockquote className="mt-4 min-w-0 flex-1 font-text text-fs-3 text-pretty wrap-break-word text-tinte">
                                     <p>„{review.text}“</p>
                                 </blockquote>
                                 <figcaption className="mt-6 flex flex-col gap-1 border-t border-fuge pt-4">

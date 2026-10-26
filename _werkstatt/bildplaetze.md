@@ -118,8 +118,8 @@ Geht den Zeilen oben vor. Ziel: kein Foto doppelt auf den zwölf Hauptansichten 
 | `/` | Beleg 4 | start-beleg-terrasse | IMG_2532 | 4:5, x 0, y 600, 960 × 1200 | Terrasse mit blaugrauen Fliesen vor einer Glastür mit Holzrahmen | Fallrohr rechts weg |
 | `/` | Beleg 5 | start-beleg-treppe | IMG_2529 | 4:5, x 240, y 554, 1080 × 1350 | Außentreppe mit anthrazitfarbenen Fliesen und Handlauf bis zur weißen Haustür | Fahrzeug links weg |
 | `/bad` | Einstieg, Beleg 1 bis 4 | bad-einstieg | – | – | aus `arbeiten.ts` | unverändert; bad-beleg-2 neu in 688 px |
-| `/bad/badsanierung` | Einstieg | badsanierung-einstieg | IMG_2606 | 4:5, x 320, y 600, 1000 × 1250 | Badewanne mit blau-beigen Ornamentfliesen und heller Wandnische | Schutzkappen links weg |
-| `/bad/badsanierung` | Beleg 1 | badsanierung-beleg-1 | IMG_2580 | 4:5, x 264, y 939, 792 × 990 | Badewanne mit gestreifter dunkler Verkleidung und Wand-WC |  |
+| `/bad/badsanierung` | Einstieg | badsanierung-einstieg | IMG_2606 | 4:5, x 320, y 600, 1000 × 1250 | Badewanne mit blauen und beigen Ornamentfliesen und heller Wandnische | Schutzkappen links weg |
+| `/bad/badsanierung` | Beleg 1 | badsanierung-beleg-1 | IMG_2580 | 4:5, x 264, y 939, 792 × 990 | Badewanne mit gestreifter dunkler Verkleidung, daneben ein WC an der Wand |  |
 | `/bad/badsanierung` | Beleg 2 | badsanierung-beleg-2 | IMG_2605 | 4:5, x 264, y 939, 792 × 990 | Badewanne mit dunkler Verkleidung, daneben eine Dusche mit Mosaikboden und Glaswand |  |
 | `/bad/badsanierung` | Zweierbild links | badsanierung-zweier-1 | IMG_2557 | 4:5, x 0, y 554, 1320 × 1650 | Dusche im Bau: dunkle Wandfliesen in Metalloptik, Nische in der Mitte, Duschwanne eingebaut | Baustelle im Zweierbild zulässig |
 | `/bad/badsanierung` | Zweierbild rechts | badsanierung-zweier-2 | IMG_2560 | 4:5, x 528, y 939, 792 × 990 | Bad im Bau: dunkle Bodenfliesen in Schieferoptik, helle Wände, die Nische ist noch offen | Eimer links weg |
@@ -132,12 +132,20 @@ Geht den Zeilen oben vor. Ziel: kein Foto doppelt auf den zwölf Hauptansichten 
 | `/balkon-terrasse` | Einstieg | balkon-einstieg-hell | IMG_2533 | 4:5, x 40, y 762, 1240 × 1550 | Terrasse mit großen hellgrauen Platten, einer weißen Stütze und weißem Geländer | Nachbardächer oben weg |
 | `/balkon-terrasse` | Beleg 1 | balkon-beleg-anthrazit | IMG_2544 | 4:5, x 0, y 261, 900 × 1125 | Balkon mit anthrazitfarbenen Fliesen am Haus, daneben ein Fenster mit Rollladen | Gerüst rechts weg |
 | `/balkon-terrasse` | Beleg 3 | balkon-beleg-aluprofil | IMG_2535 | 4:5, x 0, y 554, 870 × 1088 | Terrassenkante mit grauen Platten und hellem Aluprofil, dahinter eine Glastür | rostiges Rohr rechts weg |
-| `/referenzen` | Einstieg | referenzen-einstieg | IMG_2562 | 4:5, x 0, y 554, 1320 × 1650 | Bad mit Fliesen in Marmoroptik, Regendusche und Wand-WC mit weißer Betätigungsplatte |  |
+| `/referenzen` | Einstieg | referenzen-einstieg | IMG_2562 | 4:5, x 0, y 554, 1320 × 1650 | Bad mit Fliesen in Marmoroptik, Regendusche und einem WC an der Wand mit weißer Betätigungsplatte |  |
 | `/ueber-uns` | Einstieg | ueber-einstieg | IMG_2547 | 4:5, Schwerpunkt 42 % / 44 % | Mitarbeiter von Fliesenverlegung Tezgel kniet auf dem Balkon, blaues Dichtband läuft an den Rändern entlang | neu in 1280 px; Aufdruck auf dem Pullover ist das eigene Firmenzeichen |
-| `/standorte/wetzlar` | Foto 1 (GALERIE_START 0) | ort-gaeste-wc | IMG_2572 | 4:5, x 0, y 554, 1320 × 1650 | Gäste-WC mit Wand-WC, Bidet und weißen Metrofliesen an der Wand |  |
+| `/standorte/wetzlar` | Foto 1 (GALERIE_START 0) | ort-gaeste-wc | IMG_2572 | 4:5, x 0, y 554, 1320 × 1650 | Gäste-WC mit WC und Bidet an der Wand vor weißen Metrofliesen |  |
 | `/standorte/wetzlar` | Foto 3 (GALERIE_START 4) | ort-terrasse-erdtoene | IMG_2539 | 4:5, x 0, y 554, 1320 × 1650 | Terrasse mit rustikalen Fliesen in Erdtönen und einem Pflanzbeet am Rand |  |
 
 - `/standorte/wetzlar` Foto 2 ist `start-galerie-5` (Außentreppe in Terrakotta, dasselbe Original wie „nachher“ auf `/referenzen`, anderer Zuschnitt).
 - Entfallen (nicht mehr benutzt, Dateien gelöscht): lage-dusche, lage-bad, lage-balkon, lage-treppe, lage-neubau, start-galerie-2, start-dusche-boden, sanierung-einstieg, bereich-dusche-sitzbank, bereich-wanne-mit-tuer, balkon-einstieg, balkon-beleg-1, balkon-beleg-4, leistungen-bad.
 - Verworfen nach Gegenprüfung und eigener Sichtung (Baustellenreste, Herstellerschrift, falsches Motiv): IMG_2559, IMG_2585, IMG_2593, IMG_2607, IMG_2579, IMG_2584, IMG_2536 als Einstieg.
 - Offen: `/fliesen` Verband zeigt weiter IMG_2544 (Balkon) und IMG_2563 (Baustelle, grünes Fischgrät); Ersatz durch Fliesenkompositionen nur nach Rückfrage (echte Fotos gehen vor, K-012).
+
+### Nachtrag Fassung 2 · E-065 (Browserprüfung E4-W0)
+- `leistungen-einstieg` neu zugeschnitten (IMG_2548, x 0, y 554, 1140 × 1425): Eckschutzschiene, Holzplatte und Rohrstutzen am rechten Rand weg.
+- `fliesen-beleg` enger zugeschnitten (IMG_2600, x 100, y 800, 900 × 1125): weniger Verzerrung vom Weitwinkel.
+- `barrierefrei-beleg-2` (Wanne mit Tür, Herstelleraufkleber und Klebeband) und `blog-beleg` (Duschnische ohne Armatur) entfallen, ihre Dateien sind gelöscht.
+- `/bad/barrierefreies-bad` Beleg: `barrierefrei-beleg-1` und `bad-beleg-4` (bodengleiche Dusche, vorher auf `/bad`); `/bad` zeigt `bad-beleg-1` bis `-3`.
+- `/blog` ohne Foto im Beleg.
+- Alt-Texte ohne Bindestrichwörter („WC an der Wand“, „blauen und beigen“).

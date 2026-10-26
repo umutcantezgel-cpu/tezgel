@@ -284,12 +284,9 @@
        „Bewer-tungen“ (Sichtprüfung E2, Runden 1 und 3) */
     hyphenate-limit-chars: 12 5 5;
   }
-  /* Zitate nie trennen (Wortlaut der Kundenstimmen, G8; der Absatz im Zitat erbt sonst die Trennung von p, Runde 4) */
-  blockquote,
-  blockquote p {
-    hyphens: manual;
-    -webkit-hyphens: manual;
-  }
+  /* Zitate trennen wie Fließtext nur lange Wörter (ab 12 Zeichen) mit Strich. Ohne Trennung brach die Zeile bei großer
+     Systemschrift mitten im Wort („ordnungsgem|äß“, „Inhabergeführt|es“) oder setzte ein Komma an den Zeilenanfang
+     (Browserprüfung E4-W0, E-065); der Wortlaut der Kundenstimmen bleibt Zeichen für Zeichen gleich (G8) */
   /* Linknamen in Navigation und Fuß nie trennen */
   nav a,
   footer a {

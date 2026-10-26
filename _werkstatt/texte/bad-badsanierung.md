@@ -14,7 +14,7 @@
 - H1: `Ihr altes Bad wird neu zum Festpreis`
 - Vorspann: `Badsanierung in Aßlar und Wetzlar: Wir bauen Ihr Bad Stück für Stück zum Komplettbad um. Deniz Tezgel erklärt Ihnen in einfachen Worten, was zu tun ist.`
 - Hauptknopf: `Termin vor Ort anfragen` → `/kontakt` · Kontakt: `Anrufen: {{COMPANY_DATA.contact.phone}}` (derselbe Hauptknopf wie in Abschnitt 6, K-009)
-- Bild: `{Bild: badsanierung-einstieg}` Alt: `Badewanne mit blau-beigen Ornamentfliesen und heller Wandnische` (E4-W0-BILDER)
+- Bild: `{Bild: badsanierung-einstieg}` Alt: `Badewanne mit blauen und beigen Ornamentfliesen und heller Wandnische` (E4-W0-BILDER)
 
 ## 2 · Ihre Lage
 - H2: `Ihr Bad passt nicht mehr, und Sie wissen nicht, wo Sie anfangen sollen.`
@@ -47,13 +47,13 @@
   - Bild: `{Bild: sanierung-weg-3}` Alt: `Bad während der Arbeit: brauner Boden im Duschbereich, WC vor einer braunen Wand, Decke im Ausbau` Unterschrift: `Bad während der Arbeit: brauner Boden im Duschbereich, Decke im Ausbau.`
 
 ## 5 · Beleg
-- H2: `So sehen fertige Bäder aus, und so sprechen unsere Kunden darüber.`
-- Bild: `{Bild: badsanierung-beleg-1}` Alt: `Badewanne mit gestreifter dunkler Verkleidung und Wand-WC` Unterschrift: `Badewanne mit gestreifter Verkleidung`
+- H2: `So sehen unsere Bäder aus, fertig und während der Arbeit.` (E-065: die Reihe zeigt auch Bäder während der Arbeit; die Stimmen stehen im eigenen Abschnitt)
+- Bild: `{Bild: badsanierung-beleg-1}` Alt: `Badewanne mit gestreifter dunkler Verkleidung, daneben ein WC an der Wand` Unterschrift: `Badewanne mit gestreifter Verkleidung`
 - Bild: `{Bild: badsanierung-beleg-2}` Alt: `Badewanne mit dunkler Verkleidung, daneben eine Dusche mit Mosaikboden und Glaswand` Unterschrift: `Badewanne und Dusche mit Mosaikboden`
 - Zweierbild `So sieht ein Bad im Bau aus`: `{Bild: badsanierung-zweier-1}` Unterschrift: `Wandfliesen in Metalloptik, Nische in der Mitte` und `{Bild: badsanierung-zweier-2}` Unterschrift: `Boden in Schieferoptik, die Nische ist noch offen`
 - (E4-W0-BILDER: kein Foto steht auf einer anderen Hauptansicht; die Duschen im Bau zeigt `/bad/barrierefreies-bad`)
 - Stimme: `{Stimme: c-wolf}` (wörtlich aus `REVIEWS`, Thema Bad)
-- Link: `Alle Bewertungen` → `/referenzen`
+- Link: `Alle Arbeiten ansehen` → `/referenzen` (E-065)
 
 ## 6 · Nächster Schritt
 - H2: `Sprechen Sie mit uns über Ihr neues Bad.`

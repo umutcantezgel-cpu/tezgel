@@ -40,8 +40,8 @@
 - Hinweis Zuschuss (sinngleich aus dem Bestand, F-23, F-25): `Haben Sie einen Pflegegrad? Dann kann die Pflegekasse bis zu 4.180 € je Person dazugeben. Haben zwei Personen im Haushalt einen Pflegegrad, sind es bis zu 8.360 €.` Link: `Mehr zum Zuschuss` → `/foerderung`
 
 ## 5 · Beleg
-- H2: `Duschen und Wannen, die wir gebaut haben.` (E4-W0-BILDER: die Fotos belegen „ohne Stufe“ nicht)
-- Zwei Fotos: `{Bild: barrierefrei-beleg-1}` `Dusche mit Mosaikboden und Eckbank`, `{Bild: barrierefrei-beleg-2}` `Wanne mit Tür zum leichten Einsteigen`; dazu das Zweierbild `So entsteht eine Dusche ohne Stufe` mit `{Bild: entstehung-dusche-1}` (`Die großen Fliesen liegen, das Gefälle ist geschnitten.`) und `{Bild: entstehung-dusche-2}` (`Die Fugen sind fertig. Das Wasser läuft zum Ablauf in der Mitte.`).
+- H2: `Duschen, die wir gebaut haben.` (E4-W0-BILDER, E-065)
+- Zwei Fotos: `{Bild: barrierefrei-beleg-1}` `Dusche mit Mosaikboden und Eckbank`, `{Bild: bad-beleg-4}` `Bodengleiche Dusche mit Mosaik` (die Wanne mit Tür trug noch Aufkleber und Klebeband, E-065); dazu das Zweierbild `So entsteht eine Dusche ohne Stufe` mit `{Bild: entstehung-dusche-1}` (`Die großen Fliesen liegen, das Gefälle ist geschnitten.`) und `{Bild: entstehung-dusche-2}` (`Die Fugen sind fertig. Das Wasser läuft zum Ablauf in der Mitte.`).
 - Eine Stimme wörtlich aus `REVIEWS` zum Thema Bad.
 - Link: `Alle Arbeiten ansehen` → `/referenzen?raum=dusche`
 

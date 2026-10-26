@@ -74,7 +74,8 @@ function FormularSchritt({ inhalt, pfad, formular, titelId, zusatz }: { inhalt: 
       }
     >
       <div className="mx-auto w-full max-w-mass">{formular}</div>
-      {/* Container-Abfrage: unter 20 rem steht der Hörer über der großen Nummer, damit sie nicht über den Rand läuft (Runde 4) */}
+      {/* Container-Abfrage: unter 20 rem steht der Hörer über der großen Nummer, damit sie nicht über den Rand läuft (Runde 4);
+          das WhatsApp-Zeichen steht dann ebenso mittig über seinem Text (Browserprüfung E4-W0, E-065) */}
       <div className="@container mx-auto mt-12 grid max-w-mass gap-8 border-t border-fuge pt-8 text-center md:grid-cols-2 md:text-left">
         <div>
           <p className="font-text text-fs-3 text-tinte">Lieber anrufen?</p>
@@ -95,7 +96,7 @@ function FormularSchritt({ inhalt, pfad, formular, titelId, zusatz }: { inhalt: 
             target="_blank"
             rel="noopener noreferrer"
             data-motion="zustand"
-            className={`${linkKlassen} mt-2 inline-flex min-h-11 items-center gap-2 font-text text-fs-3`}
+            className={`${linkKlassen} mt-2 inline-flex min-h-11 items-center gap-2 font-text text-fs-3 @max-xs:flex-col @max-xs:gap-1`}
           >
             <WhatsAppLogo className="size-5" />
             Nachricht per WhatsApp
@@ -134,7 +135,8 @@ export default function Schritt({ inhalt, pfad, formular, titelId = 'anfrage', z
       {/* ruhig (K-016, E-047): alles mittig untereinander statt Kopf links und Knöpfe rechts zugleich */}
       <div className="mx-auto flex max-w-mass flex-col items-center gap-8">
         <Hauptknopf breit />
-        {/* Container-Abfrage: unter 20 rem Hörer über der großen Nummer (Runde 4) */}
+        {/* Container-Abfrage: unter 20 rem Hörer über der großen Nummer (Runde 4), mittig wie die Nummer; ebenso das
+            WhatsApp-Zeichen über seinem Text, sobald der umbricht (Browserprüfung E4-W0, E-065) */}
         <div className="@container grid w-full gap-6 border-t border-fuge pt-6 text-center md:grid-cols-2 md:text-left">
           <div>
             <p className="font-text text-fs-3 text-tinte">Lieber anrufen?</p>
@@ -142,7 +144,7 @@ export default function Schritt({ inhalt, pfad, formular, titelId = 'anfrage', z
               href={`tel:${contact.phoneLink}`}
               data-motion="zustand"
               aria-label={`Anrufen: ${contact.phone}`}
-              className={`${linkKlassen} mt-2 inline-flex min-h-11 items-center gap-3 text-fs-5 text-tinte lg:text-fs-4 @max-xs:flex-col @max-xs:items-start @max-xs:gap-1`}
+              className={`${linkKlassen} mt-2 inline-flex min-h-11 items-center gap-3 text-fs-5 text-tinte lg:text-fs-4 @max-xs:flex-col @max-xs:gap-1`}
             >
               <Icon name="telefon" groesse={6} className="shrink-0" />
               <Rufnummer nummer={contact.phone} />
@@ -155,7 +157,7 @@ export default function Schritt({ inhalt, pfad, formular, titelId = 'anfrage', z
               target="_blank"
               rel="noopener noreferrer"
               data-motion="zustand"
-              className={`${linkKlassen} mt-2 inline-flex min-h-11 items-center gap-2 font-text text-fs-3`}
+              className={`${linkKlassen} mt-2 inline-flex min-h-11 items-center gap-2 font-text text-fs-3 @max-xs:flex-col @max-xs:gap-1`}
             >
               <WhatsAppLogo className="size-5 shrink-0" />
               Nachricht per WhatsApp

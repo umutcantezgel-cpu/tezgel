@@ -65,7 +65,9 @@ export const BADSANIERUNG: ErzaehlInhalt = {
     ],
   },
   beleg: {
-    titel: 'So sehen fertige Bäder aus, und so sprechen unsere Kunden darüber.',
+    // Überschrift nach dem, was die Reihe zeigt (Browserprüfung E4-W0, E-065): zwei fertige Bäder und drei Bäder während der
+    // Arbeit; die Kundenstimmen stehen im eigenen Abschnitt „Das sagen unsere Kunden.“ darunter
+    titel: 'So sehen unsere Bäder aus, fertig und während der Arbeit.',
     // Fotos mit Name auf der Glasfläche (Zusatz Regel 4); die drei Fotos der Arbeit beim Weg (Textdatei Abschnitt 4) stehen
     // hinter den fertigen Bädern (Abschnitt 5). Die Namen sind je höchstens sechs Wörter aus Textdatei oder Alt-Text.
     fotos: [
@@ -84,7 +86,8 @@ export const BADSANIERUNG: ErzaehlInhalt = {
     },
     // Wortlaut unverändert aus REVIEWS (G8): die Stimme der Textdatei zuerst, dann vier weitere zum Thema Bad
     stimmen: ['c-wolf', 'ute-t', 'peter-p', 'elke-s', 'k-d'],
-    verweis: { name: 'Alle Bewertungen', href: '/referenzen' },
+    // der Weg unter den Fotos führt zu allen Arbeiten; zu den Bewertungen führt die Kennzeile unter den Stimmen
+    verweis: { name: 'Alle Arbeiten ansehen', href: '/referenzen' },
   },
   schritt: {
     titel: 'Sprechen wir über Ihre Badsanierung.',

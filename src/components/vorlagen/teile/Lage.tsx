@@ -44,12 +44,16 @@ export default function Lage({ inhalt }: { inhalt: LageInhalt }) {
       einleitung={inhalt.einleitung ? <p><Textmarken text={inhalt.einleitung} /></p> : undefined}
     >
       {inhalt.absaetze && inhalt.absaetze.length > 0 && (
-        <div className="mx-auto max-w-mass space-y-4 font-text text-fs-4 text-pretty text-tinte">
-          {inhalt.absaetze.map((a) => (
-            <p key={a}>
-              <Textmarken text={a} />
-            </p>
-          ))}
+        // Satzspiegel in der Grundschrift: max-w-mass misst in ch der eigenen Schrift; mit text-fs-4 am selben Element stand der
+        // Absatz rund 300 px breiter als die Zeilen darunter (Browserprüfung E4-W0, E-065). So fluchten beide Kanten.
+        <div className="mx-auto max-w-mass">
+          <div className="space-y-4 font-text text-fs-4 text-pretty text-tinte">
+            {inhalt.absaetze.map((a) => (
+              <p key={a}>
+                <Textmarken text={a} />
+              </p>
+            ))}
+          </div>
         </div>
       )}
       {fliesen.length > 0 && <LageFliesen fliesen={fliesen} className={clsx(inhalt.absaetze?.length && 'mt-12')} />}
