@@ -25,7 +25,7 @@ const BEISPIELE: Record<string, string> = {
 
 const VORSPANN =
   // die Galerie zeigt unter „So arbeiten wir“ auch Baustellen; der Vorspann sagt das, statt „fertige Arbeiten“ zu versprechen (E-065)
-  'Hier sehen Sie Bäder, Terrassen, Treppen und [[grossformat|Großformate]], die wir gebaut haben, und unter „So arbeiten wir“ Fotos von unseren Baustellen. Dazu kommen die Bewertungen unserer Kunden mit 5,0 Sternen bei Google.';
+  'Hier sehen Sie Bäder, Terrassen, Treppen und [[grossformat|Großformate]], die wir gebaut haben. Unter „So arbeiten wir“ finden Sie Fotos von unseren Baustellen. Dazu kommen die Bewertungen unserer Kunden mit 5,0 Sternen bei Google.';
 
 export const REFERENZEN: ErzaehlInhalt = {
   pfad: '/referenzen',
