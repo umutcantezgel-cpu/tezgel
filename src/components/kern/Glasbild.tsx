@@ -7,6 +7,7 @@
 import Link from 'next/link';
 import Icon from '@/components/icons/Icon';
 import Bildfeld from '@/components/kern/Bildfeld';
+import { mitFugen } from '@/components/kern/zusammen';
 import type { ArbeitId } from '@/config/arbeiten';
 
 export interface GlasbildProps {
@@ -29,7 +30,7 @@ export default function Glasbild({ arbeit, name, href, linkText = 'Ansehen', siz
   const flaeche = (
     <span aria-hidden={href ? undefined : true} className="glasbild-flaeche pointer-events-none flex flex-col justify-end text-kalk">
       <span className="glasbild-text flex flex-col px-4 pb-4 lg:px-6 lg:pb-6">
-        <span className="font-text text-fs-4 font-semibold text-pretty">{name}</span>
+        <span className="font-text text-fs-4 font-semibold text-pretty">{mitFugen(name)}</span>
         {href && (
           <span className="mt-2 inline-flex items-center gap-2 font-text text-fs-2">
             {linkText}

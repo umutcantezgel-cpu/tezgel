@@ -45,6 +45,11 @@ export function umbruchNachSatzzeichen(text: string): ReactNode {
 const FUGEN: Record<string, string> = {
   Einfamilienhaus: 'Einfamilien­haus',
   Mehrfamilienhaus: 'Mehrfamilien­haus',
+  // Runde 4: Weiter-Link, Galerie-Namen und /preise trennten diese mitten im Wortteil („Badsa-nierung“, „Terras-senplatten“)
+  Badsanierung: 'Bad­sanierung',
+  Terrassenplatten: 'Terrassen­platten',
+  Festpreisgarantie: 'Festpreis­garantie',
+  Reaktionszeit: 'Reaktions­zeit',
 };
 
 const FUGEN_MUSTER = new RegExp(`(${Object.keys(FUGEN).join('|')})`);

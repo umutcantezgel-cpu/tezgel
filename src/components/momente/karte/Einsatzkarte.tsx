@@ -147,14 +147,16 @@ export default function Einsatzkarte({ unterschrift, beschriftet, aktuell, liste
                 <ul className="@container mt-2 flex flex-col border-t border-fuge">
                   {orte.map((o) => {
                     const ist = o.slug === aktuell;
-                    // bei großer Schrift steht die Entfernung immer unter dem Ort, nicht mal daneben, mal darunter (Browserprüfung E4-W1, Runde 3)
+                    // bei großer Schrift steht die Entfernung immer unter dem Ort, nicht mal daneben, mal darunter (Browserprüfung E4-W1, Runde 3);
+                    // dort ohne Mindesthöhe mit Abstand oben, damit ein- und zweizeilige Namen gleich weit unter der Linie stehen (Runde 4;
+                    // eine Zeile ist bei großer Schrift ohnehin höher als 44 px)
                     return (
                       <li key={o.slug} className="flex flex-wrap items-center justify-between gap-x-3 border-b border-fuge @max-3xs:flex-col @max-3xs:items-start @max-3xs:pb-2">
                         <Link
                           href={`/standorte/${o.slug}`}
                           aria-current={ist ? 'page' : undefined}
                           data-motion="zustand"
-                          className={clsx(linkKlassen, 'flex min-h-11 flex-1 items-center gap-2 font-text text-fs-3 hyphens-none', ist && 'font-semibold')}
+                          className={clsx(linkKlassen, 'flex min-h-11 flex-1 items-center gap-2 font-text text-fs-3 hyphens-none @max-3xs:min-h-0 @max-3xs:pt-2', ist && 'font-semibold')}
                         >
                           {ist && <Fugenkreuz className="size-3 text-tinte" />}
                           <span>{o.name}</span>

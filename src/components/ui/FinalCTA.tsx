@@ -3,6 +3,7 @@ import Icon from "@/components/icons/Icon";
 import Knopf from "@/components/kern/Knopf";
 import { knopfKlassen, seitenKlassen } from "@/components/kern/stile";
 import Laserachse from "@/components/kern/Laserachse";
+import { mitFugen } from "@/components/kern/zusammen";
 import { ACHSE_LAGE } from "@/components/kern/Leitachse";
 import { siteConfig } from "@/lib/config";
 import { RATING_SUMMARY } from "@/config/reviews";
@@ -78,7 +79,8 @@ export default function FinalCTA({
               <h2 id="final-cta-heading" className="font-anzeige text-fs-6 text-tinte">
                 {headline}
               </h2>
-              <p className="font-text text-fs-2 text-tinte-2">{subtitle}</p>
+              {/* Zusammensetzungen trennen an der Fuge („Reaktions-zeit“; Browserprüfung E4-W1, Runde 4) */}
+              <p className="font-text text-fs-2 text-tinte-2">{mitFugen(subtitle)}</p>
               <ul className="flex flex-col border-t border-fuge">
                 {benefits.map((benefit, i) => (
                   <li key={i} className="flex items-start gap-3 border-b border-fuge py-3 font-text text-fs-3 text-tinte">

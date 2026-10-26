@@ -26,7 +26,9 @@ export default function Hauptknopf({ href = HAUPTAKTION.ziel, children = HAUPTAK
     'data-hauptknopf': '',
     'data-erstes-bild': erstesBild ? 'hauptknopf' : undefined,
     'data-motion': 'druck',
-    className: knopfKlassen('haupt', clsx(breit && 'w-full sm:w-auto', className)),
+    // text-center: bricht die Beschriftung um, stehen beide Zeilen mittig wie im Einstieg, auch in linksbündigen Abschnitten
+    // (Browserprüfung E4-W1, Runde 4)
+    className: knopfKlassen('haupt', clsx('text-center', breit && 'w-full sm:w-auto', className)),
   };
   // Der Pfeil hängt am letzten Wort: Bricht die Beschriftung um (große Systemschrift), steht er hinter der letzten Zeile statt
   // allein am rechten Rand des Knopfs (E2-SICHT-2 Befund 10, E3-START-05). Ein Flex-Kind, Abstand wie gap-2.

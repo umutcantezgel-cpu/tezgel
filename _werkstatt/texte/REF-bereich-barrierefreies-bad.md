@@ -25,7 +25,7 @@
 - H2: `So wird aus der Wanne eine sichere Dusche.`
 - Vier Fliesen (eine Aussage je Fliese):
   1. `Wir bauen die alte Wanne aus und bereiten den Boden vor.`
-  2. `Der Duschboden bekommt ein leichtes [[gefaelle|Gefälle]] zum Ablauf.`
+  2. `Der Duschboden bekommt ein leichtes [[gefaelle|Gefälle]].` (Runde 4 der Browserprüfung E4-W1: „zum Ablauf“ entfällt, die Erklärung von Gefälle endet schon damit)
   3. `Unter die Fliesen kommt eine [[abdichtung|Abdichtung]]. Sie richtet sich nach der [[din-18534|DIN 18534]].`
   4. `Wir verlegen Fliesen mit [[rutschhemmung|Rutschhemmung R10 oder R11]], je nach Raum.`
 - Absatz: `Wir planen nach [[din-18040|DIN 18040]]. So bleibt Ihr Bad auch später gut nutzbar.` (F-25; die Erklärung der Norm nennt Stufen und Platz zum Bewegen schon, Textprüfung E3)

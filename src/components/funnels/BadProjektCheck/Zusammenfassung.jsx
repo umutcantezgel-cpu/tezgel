@@ -97,9 +97,13 @@ export default function Zusammenfassung({ sqmLabel, sqmGewaehlt, scopeLabel, tie
                             <span className="sr-only">Hinweis: </span>
                             Musterbäder zum Vergleich:
                         </span>
-                        <Link href="/bad/musterbaeder" className={`${linkKlassen} inline-flex min-h-11 items-center gap-1`}>
-                            Alle ansehen
-                            <Icon name="pfeil-rechts" groesse={4} />
+                        {/* Pfeil am letzten Wort: bricht der Link bei großer Schrift um, steht er nicht allein am Rand (Runde 4) */}
+                        <Link href="/bad/musterbaeder" className={`${linkKlassen} inline-block min-h-11 py-2`}>
+                            Alle{' '}
+                            <span className="whitespace-nowrap">
+                                ansehen
+                                <Icon name="pfeil-rechts" groesse={4} className="ml-1 inline-block align-text-bottom" />
+                            </span>
                         </Link>
                     </p>
                     {matchingBath ? (

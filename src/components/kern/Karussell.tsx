@@ -87,8 +87,8 @@ export default function Karussell({ art, name, children, karte = 'w-full md:w-1/
   }, [art]);
 
   // Reihe unter sm: Die Karten stehen oben (items-start), die Spur folgt der Höhe der sichtbaren Karte. Sonst bliebe unter
-  // einer kurzen Karte die Höhe der längsten als Lücke vor den Pfeilen (bei großer Schrift über 200 px; Browserprüfung E4-W1,
-  // Runde 2). Gemessen wird nach dem Wischen und wenn sich eine Karte in der Größe ändert; beobachtet werden nur die Karten,
+  // einer kurzen Karte die Höhe der längsten als Lücke (bei großer Schrift über 200 px; Browserprüfung E4-W1, Runde 2); die
+  // Knöpfe stehen dort über der Spur und bewegen sich nicht mit (Runde 4). Gemessen wird nach dem Wischen und wenn sich eine Karte in der Größe ändert; beobachtet werden nur die Karten,
   // nicht die Spur selbst (keine Rückkopplung). Ab sm stehen die Karten gestreckt nebeneinander, dort bleibt die Höhe frei.
   useEffect(() => {
     const el = spur.current;
@@ -194,7 +194,7 @@ export default function Karussell({ art, name, children, karte = 'w-full md:w-1/
 
   const bedienbar = imBrowser && ueberlauf;
   return (
-    <section aria-roledescription="Karussell" aria-label={name} className={className} {...halten}>
+    <section aria-roledescription="Karussell" aria-label={name} className={clsx('flex flex-col', className)} {...halten}>
       {/* Abstand innen statt gap: die Karten füllen die Breite genau, jede sichtbare Karte steht ganz im Bild (nie angeschnitten, E-047) */}
       {/* Gleich hohe Karten erst ab sm, wenn mehrere nebeneinanderstehen; einzeln (Handy, große Schrift) ist jede Karte so hoch
           wie ihr Inhalt, statt unter einer kurzen Stimme eine halbe Karte leer zu lassen (Browserprüfung E4-W0, E-065) */}
@@ -215,8 +215,10 @@ export default function Karussell({ art, name, children, karte = 'w-full md:w-1/
           </li>
         ))}
       </ul>
-      {/* Platz der Knöpfe steht von Anfang an (auch ohne JavaScript), damit nichts springt, wenn sie erscheinen */}
-      <div aria-hidden={bedienbar ? undefined : true} className={clsx('mt-6 flex items-center justify-center gap-3', !bedienbar && 'invisible')}>
+      {/* Platz der Knöpfe steht von Anfang an (auch ohne JavaScript), damit nichts springt, wenn sie erscheinen. Unter sm stehen
+          sie über den Karten: Die Spur folgt dort der Höhe der sichtbaren Karte, Knöpfe darunter sprängen beim Blättern mit, und
+          ein zweites Tippen ginge ins Leere (Browserprüfung E4-W1, Runde 4). Die Reihenfolge im DOM bleibt. */}
+      <div aria-hidden={bedienbar ? undefined : true} className={clsx('flex items-center justify-center gap-3 max-sm:order-first max-sm:mb-4 sm:mt-6', !bedienbar && 'invisible')}>
         <button type="button" onClick={() => rucken(-1)} onPointerDown={beruehrt} className={knopf}>
           <Icon name="pfeil-links" groesse={4} />
           <span className="sr-only">Zurück</span>

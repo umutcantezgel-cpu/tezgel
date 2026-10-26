@@ -210,9 +210,9 @@ export default function Schritt({ inhalt, pfad, formular, titelId = 'anfrage', z
               {inhalt.hilfen.map((h) => (
                 <li key={h.href} className="border-b border-fuge last:border-b-0">
                   <Link href={h.href} data-motion="zustand" className={clsx(linkKlassen, 'flex min-h-11 flex-col items-start py-3 no-underline')}>
-                    <span className="inline-flex items-center gap-2 font-semibold text-fs-3 underline decoration-fuge underline-offset-4">
-                      {h.name}
-                      <Icon name="pfeil-rechts" groesse={4} />
+                    {/* Pfeil am letzten Wort wie bei „Mehr zum Thema“ (Browserprüfung E4-W1, Runde 4) */}
+                    <span className="font-semibold text-fs-3 underline decoration-fuge underline-offset-4">
+                      <MitPfeil text={h.name} />
                     </span>
                     {h.satz && (
                       <span className="mt-1 font-text text-fs-2 text-tinte-2">

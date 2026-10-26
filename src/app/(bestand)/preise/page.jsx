@@ -23,6 +23,7 @@ import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import { Feldraster, Feld } from '@/components/kern/Feldraster';
 import { Schritte } from '@/components/vorlagen/teile/Ablauf';
 import Fachwort from '@/components/kern/Fachwort';
+import { mitFugen } from '@/components/kern/zusammen';
 
 // Rechner nachgeladen wie auf der Startseite (Tempo, E4-NACH-17); ohne JavaScript bleibt der Platzhalter mit Anruf,
 // WhatsApp und E-Mail stehen (R-01b)
@@ -58,7 +59,7 @@ export default function PreisePage() {
             </span>
             <span className="inline-flex items-center gap-2">
               <Fugenkreuz className="size-3 shrink-0 text-strich" />
-              Verbindliche Festpreisgarantie
+              <span>Verbindliche {mitFugen('Festpreisgarantie')}</span>
             </span>
           </>
         }
@@ -195,7 +196,8 @@ export default function PreisePage() {
           </Feld>
 
           <Feld>
-            <h3 className="text-fs-4 text-tinte hyphens-auto">Verbindliche Festpreisgarantie</h3>
+            {/* trennt an der Fuge „Festpreis-garantie“ statt „Festpreisga-rantie“ (Browserprüfung E4-W1, Runde 4) */}
+            <h3 className="text-fs-4 text-tinte hyphens-auto">Verbindliche {mitFugen('Festpreisgarantie')}</h3>
             <p className="mt-2 text-fs-2 text-tinte-2">
               Der vereinbarte Preis ist garantiert. Es gibt bei uns keine nachträglichen Überraschungen oder unklare Stundenlohnabrechnungen.
             </p>

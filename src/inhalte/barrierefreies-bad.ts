@@ -35,7 +35,7 @@ export const BARRIEREFREIES_BAD: ErzaehlInhalt = {
       'Wir bauen Ihre Badewanne aus und eine [[bodengleiche-dusche|bodengleiche Dusche]] ein. So steigen Sie sicher hinein, heute und auch später.',
     punkte: [
       'Wir bauen die alte Wanne aus und bereiten den Boden vor.',
-      'Der Duschboden bekommt ein leichtes [[gefaelle|Gefälle]] zum Ablauf.',
+      'Der Duschboden bekommt ein leichtes [[gefaelle|Gefälle]].',
       'Unter die Fliesen kommt eine [[abdichtung|Abdichtung]]. Sie richtet sich nach der [[din-18534|DIN 18534]].',
       'Wir verlegen Fliesen mit [[rutschhemmung|Rutschhemmung R10 oder R11]], je nach Raum.',
     ],

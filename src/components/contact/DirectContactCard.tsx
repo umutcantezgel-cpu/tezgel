@@ -8,6 +8,7 @@ import React, { type ReactNode } from 'react';
 import clsx from 'clsx';
 import Icon, { type IconName } from '@/components/icons/Icon';
 import Rufnummer from '@/components/kern/Rufnummer';
+import { strasse } from '@/lib/anschrift';
 import { oeffnungszeilen } from '@/lib/oeffnungszeiten';
 import { SITE_CONFIG } from '@/shared/config/site';
 
@@ -65,7 +66,7 @@ export function DirectContactCard({ className = '' }: DirectContactCardProps) {
         {/* bei großer Schrift Zeichen über dem Text wie in den Wegen darüber: der Text behält die ganze Breite (Browserprüfung E4-W1, Runde 2) */}
         <div className="flex items-start gap-4 border-b border-fuge py-4 @max-3xs:flex-col @max-3xs:gap-2">
           <Icon name="uhr" groesse={5} className="mt-1 shrink-0 text-tinte-2" />
-          <div className="min-w-0">
+          <div className="min-w-0 @max-3xs:w-full">
             <span className={etikett}>Öffnungszeiten</span>
             <ul className="mt-1 font-text text-fs-2 text-tinte wrap-break-word">
               {oeffnungszeilen().map((z) => (
@@ -77,11 +78,13 @@ export function DirectContactCard({ className = '' }: DirectContactCardProps) {
 
         <div className="flex items-start gap-4 py-4 @max-3xs:flex-col @max-3xs:gap-2">
           <Icon name="ort" groesse={5} className="mt-1 shrink-0 text-tinte-2" />
-          <div className="min-w-0">
+          {/* volle Breite wie die Wege darüber: sonst nimmt die Spalte die Breite von „Hohwardstraße 14“ an und ragt über die
+              Linien (Browserprüfung E4-W1, Runde 4) */}
+          <div className="min-w-0 @max-3xs:w-full">
             <span className={etikett}>Adresse unseres Betriebs</span>
             <div className="mt-1 font-text text-fs-2 text-tinte hyphens-auto wrap-break-word">
-              {/* Hausnummer bleibt bei der Straße (Anzeige; die Firmendaten bleiben unverändert, G8) */}
-              {SITE_CONFIG.headquarters.streetAddress.replace(/ (\d+\s*\w?)$/, '\u00a0$1')}
+              {/* Hausnummer bleibt bei der Straße, Trennstelle vor „straße“ (Anzeige; die Firmendaten bleiben unverändert, G8) */}
+              {strasse(SITE_CONFIG.headquarters.streetAddress)}
             </div>
             <div className="font-text text-fs-2 text-tinte hyphens-auto wrap-break-word">
               {SITE_CONFIG.headquarters.postalCode} {SITE_CONFIG.headquarters.addressLocality}

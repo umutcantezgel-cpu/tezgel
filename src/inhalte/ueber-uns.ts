@@ -5,6 +5,7 @@
 // Vorlage: ErzaehlSeite. Fakten: K-015 F-01, F-02, F-05, F-06, F-09, F-19, F-14.
 import type { ErzaehlInhalt } from '@/components/vorlagen/inhalt';
 import { COMPANY_DATA } from '@/config/company';
+import { strasse } from '@/lib/anschrift';
 
 const VORSPANN =
   'Wir sind Fliesenverlegung Tezgel aus Aßlar. Deniz Tezgel, der Inhaber, kommt selbst zu Ihnen, schaut sich alles an und sagt Ihnen, was zu tun ist. Danach verlegt er mit seinem Team Fliese für Fliese.';
@@ -86,8 +87,9 @@ export const UEBER_UNS: ErzaehlInhalt = {
     titel: 'Bitten Sie um einen Termin vor Ort.',
     satz:
       'Schreiben Sie uns Ihren Namen und Ihre Telefonnummer. Deniz Tezgel ruft Sie zurück und macht einen Termin mit Ihnen aus. Sie wissen noch nicht, was Sie ändern möchten? Dann rufen Sie einfach an.',
-    // Anfahrt zur Werkstatt wie im Bestand (Kartenlink, Abnahme E3-BAU-08; Firmendaten sind auf dieser Seite erlaubt)
-    hilfen: [{ name: `Anfahrt: ${COMPANY_DATA.headquarters.street}, ${COMPANY_DATA.headquarters.city}`, href: COMPANY_DATA.headquarters.mapsUrl }],
+    // Anfahrt zur Werkstatt wie im Bestand (Kartenlink, Abnahme E3-BAU-08; Firmendaten sind auf dieser Seite erlaubt). Die
+    // Hausnummer bleibt bei der Straße (nur Anzeige, die Firmendaten bleiben unverändert; Browserprüfung E4-W1, Runde 4)
+    hilfen: [{ name: `Anfahrt: ${strasse(COMPANY_DATA.headquarters.street)}, ${COMPANY_DATA.headquarters.city}`, href: COMPANY_DATA.headquarters.mapsUrl }],
     verwandte: [
       { name: 'Fliesenberatung in Wetzlar', href: '/ausstellung/wetzlar' },
       { name: 'Fliesenberatung in Gießen', href: '/ausstellung/giessen' },
