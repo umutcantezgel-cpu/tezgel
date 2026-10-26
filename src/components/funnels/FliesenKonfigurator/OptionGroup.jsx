@@ -15,9 +15,10 @@ const MUSTER = {
     format: { raster: 'grid-cols-1 @md:grid-cols-2 @4xl:grid-cols-5', letztes: '@md:col-span-2 @4xl:col-span-1' },
     // drei längere Optionen (Zeitraum): einspaltig, ab 36 rem nebeneinander
     drei: { raster: 'grid-cols-1 @xl:grid-cols-3', letztes: '' },
-    // kurze Paare und Dreier (Ja/Nein, Innen/Außen, Ja/Nein/Weiß nicht): immer nebeneinander (B)
-    paar: { raster: 'grid-cols-2', letztes: '', kompakt: true },
-    dreier: { raster: 'grid-cols-3', letztes: '', kompakt: true }
+    // kurze Paare und Dreier (Ja/Nein, Innen/Außen, Ja/Nein/Weiß nicht): nebeneinander (B); unter 16 rem Gruppenbreite
+    // (200 % Schrift) untereinander, sonst bricht „Weiß nicht“ Buchstabe für Buchstabe um
+    paar: { raster: 'grid-cols-2 @max-3xs:grid-cols-1', letztes: '', kompakt: true },
+    dreier: { raster: 'grid-cols-3 @max-3xs:grid-cols-1', letztes: '', kompakt: true }
 };
 
 export default function OptionGroup({ legend, legendClassName = legendClass, options, value, onChange, multi = false, muster = 'liste', zeichen, hint }) {
@@ -29,7 +30,7 @@ export default function OptionGroup({ legend, legendClassName = legendClass, opt
     return (
         <div className="@container min-w-0">
             <fieldset className="m-0 min-w-0 border-0 p-0">
-                <legend className={legendClassName}>{legend}</legend>
+                <legend className={`${legendClassName} wrap-break-word hyphens-auto`}>{legend}</legend>
                 {hint && <p className={hintClass}>{hint}</p>}
                 <div className={`mt-2 ${rasterClass} ${m.raster}`}>
                     {options.map((o, i) => {
@@ -44,7 +45,8 @@ export default function OptionGroup({ legend, legendClassName = legendClass, opt
                                 className={`${feldClass(selected, m.kompakt)} ${schmal} ${i === letztes ? m.letztes : ''}`}
                             >
                                 {fach && <Icon name={fach} groesse={6} className="mt-1" />}
-                                <span className={`flex min-w-0 flex-1 flex-col wrap-break-word ${textSchmal}`}>
+                                {/* Trennung ab 4 Zeichen je Teil, nur hier: „Feinsteinzeug“ (13 Zeichen) braucht „Feinstein-zeug“ (Grenze 5 im Körper) */}
+                                <span className={`flex min-w-0 flex-1 flex-col wrap-break-word hyphens-auto [hyphenate-limit-chars:12_4_4] ${textSchmal}`}>
                                     <span className="block text-fs-3 font-semibold">{o.label ?? o.title}</span>
                                     {o.desc && <span className={`mt-1 block text-fs-2 ${nebenClass(selected)}`}>{o.desc}</span>}
                                 </span>

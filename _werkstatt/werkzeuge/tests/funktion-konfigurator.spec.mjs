@@ -50,14 +50,26 @@ async function kontaktAusfuellen(page, { mitEinwilligung = true } = {}) {
   if (mitEinwilligung) await page.getByRole('checkbox', { name: /einverstanden/ }).check();
 }
 
-// Gutfall-Kette: Küche + Flur, Zementestrich, Großformat, Feinsteinzeug, Kreuzfuge, 24,5 m² → Schritt 4.
-async function bisSchritt4Gutfall(page) {
+// Treppe mit Stufenmaßen (14 Steigungen, 100 × 30 cm Trittstufen, 100 × 18 cm Setzstufen) und Setzstufen belegt.
+async function treppeMasse(page) {
+  await gruppe(page, 'Sollen auch die senkrechten Flächen der Stufen belegt werden?').getByRole('button', { name: 'Ja', exact: true }).click();
+  await page.getByLabel('Anzahl Steigungen').fill('14');
+  await page.getByLabel('Laufbreite (cm)').fill('100');
+  await page.getByLabel('Auftrittstiefe inkl. Überstand (cm)').fill('30');
+  await page.getByLabel('Steigungshöhe (cm)').fill('18');
+}
+
+// Gutfall-Kette: Küche + Flur, Zementestrich, Belag wird nicht entfernt, Großformat, Feinsteinzeug, Kreuzfuge, 24,5 m²,
+// Zeitraum „In 1 – 3 Monaten“ → Schritt 4. Alles, was in der Kette gebraucht wird, wählt die Besucherin selbst (keine Vorauswahl).
+async function bisSchritt4Gutfall(page, { fussbodenheizung = null } = {}) {
   await page.goto(SEITE);
   await raum(page, 'Küche').click();
   await raum(page, 'Flur & Diele').click();
   await weiter(page, 2).click();
   await expect(schritt(page, 2)).toBeVisible();
   await page.getByRole('button', { name: 'Neuer Zementestrich', exact: true }).click();
+  if (fussbodenheizung) await gruppe(page, 'Ist eine Fußbodenheizung vorhanden oder geplant?').getByRole('button', { name: fussbodenheizung, exact: true }).click();
+  await gruppe(page, 'Muss der alte Belag herausgenommen werden?').getByRole('button', { name: 'Nein', exact: true }).click();
   await weiter(page, 3).click();
   await expect(schritt(page, 3)).toBeVisible();
   await page.getByRole('button', { name: /^Großformat/ }).click();
@@ -66,6 +78,7 @@ async function bisSchritt4Gutfall(page) {
   await page.getByLabel('Zu belegende Fläche in m²').fill('24,5');
   await page.getByRole('button', { name: 'Zur Zusammenfassung' }).click();
   await expect(schritt(page, 4)).toBeVisible();
+  await gruppe(page, 'Gewünschter Zeitraum:').getByRole('button', { name: 'In 1 – 3 Monaten', exact: true }).click();
 }
 
 test.describe('FliesenKonfigurator (/fliesen/konfigurator)', () => {
@@ -88,19 +101,13 @@ test.describe('FliesenKonfigurator (/fliesen/konfigurator)', () => {
   test('Schritt 3: Treppe mit Stufenmaßen → Treppen-Richtwert (Trittstufen + Setzstufen)', async ({ page }) => {
     // 14 Steigungen → 13 Trittstufen à 100 × 30 cm = 3,90 m²; 14 Setzstufen à 100 × 18 cm = 2,52 m²; Summe 6,42 m²
     await zuSchritt3(page, 'Treppe');
-    await page.getByLabel('Anzahl Steigungen').fill('14');
-    await page.getByLabel('Laufbreite (cm)').fill('100');
-    await page.getByLabel('Auftrittstiefe inkl. Überstand (cm)').fill('30');
-    await page.getByLabel('Steigungshöhe (cm)').fill('18');
+    await treppeMasse(page);
     await expect(vorschau(page)).toContainText('6,42 m² netto (ohne Verschnitt)');
   });
 
   test('Schritt 3: Blockstufen → keine m²-Menge im Richtwert', async ({ page }) => {
     await zuSchritt3(page, 'Treppe');
-    await page.getByLabel('Anzahl Steigungen').fill('14');
-    await page.getByLabel('Laufbreite (cm)').fill('100');
-    await page.getByLabel('Auftrittstiefe inkl. Überstand (cm)').fill('30');
-    await page.getByLabel('Steigungshöhe (cm)').fill('18');
+    await treppeMasse(page);
     await expect(vorschau(page)).toContainText('6,42 m² netto');
     await page.getByRole('button', { name: /^Blockstufen/ }).click();
     await expect(vorschau(page)).toContainText('Menge nach Stufenmaßen bzw. beim Aufmaß');
@@ -205,35 +212,71 @@ test.describe('FliesenKonfigurator (/fliesen/konfigurator)', () => {
     expect(anfragen[0]).toMatchObject({ inquiryType: 'fliesen', fliesenDetails: { rooms: ['treppe'] } });
   });
 
-  // Ausgangsstand-Befund (per Probe am Versand belegt): Die Antwort „Weiß nicht“ (Voreinstellung)
-  // wird als underfloorHeatingLabel „Nein“ übermittelt (Code: `floorHeating === 'ja' ? … : 'Nein'`).
-  test.fixme(
-    'Fußbodenheizung „Weiß nicht“ wird im Versand nicht als „Nein“ gemeldet',
-    { annotation: { type: 'fixme', description: 'Ausgangsstand: underfloorHeatingLabel ist für „unklar“ (Weiß nicht) „Nein“. Siehe OFFENE FRAGEN.' } },
-    async ({ page, anfragen }) => {
-      await bisSchritt4Gutfall(page);
-      await kontaktAusfuellen(page);
-      await onlineSenden(page).click();
-      await expect(page.getByText('Konfiguration erfolgreich übermittelt')).toBeVisible();
-      expect(anfragen[0].fliesenDetails.underfloorHeating).toBe('unklar');
-      expect(anfragen[0].fliesenDetails.underfloorHeatingLabel).not.toBe('Nein');
-    }
-  );
+  // Keine Vorauswahl (G8): Beim Laden und in jedem Schritt ist außer dem selbst gewählten Bereich nichts gedrückt.
+  test('Keine Vorauswahl: nur der selbst gewählte Bereich ist gedrückt, Zusammenfassung nennt „Keine Angabe“', async ({ page }) => {
+    await page.goto(SEITE);
+    const gedrueckt = page.locator('fieldset button[aria-pressed="true"]');
+    await expect(gedrueckt).toHaveCount(0);
+    await raum(page, 'Küche').click();
+    await expect(gedrueckt).toHaveCount(1);
+    await weiter(page, 2).click();
+    await expect(schritt(page, 2)).toBeVisible();
+    await expect(gedrueckt).toHaveCount(0);
+    await weiter(page, 3).click();
+    await expect(schritt(page, 3)).toBeVisible();
+    await expect(gedrueckt).toHaveCount(0);
+    await expect(vorschau(page)).toContainText('Fläche in Schritt 3 eingeben.');
+    await page.getByRole('button', { name: 'Zur Zusammenfassung' }).click();
+    await expect(schritt(page, 4)).toBeVisible();
+    await expect(gedrueckt).toHaveCount(0);
+    await expect(page.getByText('Keine Angabe').first()).toBeVisible();
+    await expect(page.getByText('Fläche: Noch keine Angabe in m²')).toBeVisible();
+  });
 
-  // Ausgangsstand-Befund (per Probe belegt): Ohne m²-Angabe (reine Treppe) geht die Vorgabe „20“ als Fläche
-  // raus (`area: '20 m²'`, `sqm: '20'`), Treppendaten fehlen in der Nutzlast.
+  // Befund (Ausgangsstand): „Weiß nicht“ (Voreinstellung) wurde als „Nein“ übermittelt. Jetzt wird nur gesendet, was gewählt wurde.
+  test('Fußbodenheizung „Weiß nicht“ wird im Versand als „Weiß nicht“ gemeldet', async ({ page, anfragen }) => {
+    await bisSchritt4Gutfall(page, { fussbodenheizung: 'Weiß nicht' });
+    await kontaktAusfuellen(page);
+    await onlineSenden(page).click();
+    await expect(page.getByText('Konfiguration erfolgreich übermittelt')).toBeVisible();
+    expect(anfragen[0].fliesenDetails.underfloorHeating).toBe('unklar');
+    expect(anfragen[0].fliesenDetails.underfloorHeatingLabel).toBe('Weiß nicht');
+  });
+
+  test('Fußbodenheizung ohne Wahl wird im Versand als „Keine Angabe“ gemeldet', async ({ page, anfragen }) => {
+    await bisSchritt4Gutfall(page);
+    await kontaktAusfuellen(page);
+    await onlineSenden(page).click();
+    await expect(page.getByText('Konfiguration erfolgreich übermittelt')).toBeVisible();
+    expect(anfragen[0].fliesenDetails.underfloorHeating).toBeUndefined();
+    expect(anfragen[0].fliesenDetails.underfloorHeatingLabel).toBe('Keine Angabe');
+  });
+
+  // Befund (Ausgangsstand): Ohne m²-Angabe (reine Treppe) ging die Vorgabe „20“ als Fläche raus.
+  test('Nur Treppe: keine erfundene Fläche (Vorgabe 20 m²) in der Nutzlast', async ({ page, anfragen }) => {
+    await zuSchritt3(page, 'Treppe');
+    await page.getByRole('button', { name: 'Zur Zusammenfassung' }).click();
+    await expect(schritt(page, 4)).toBeVisible();
+    await kontaktAusfuellen(page);
+    await onlineSenden(page).click();
+    await expect(page.getByText('Konfiguration erfolgreich übermittelt')).toBeVisible();
+    expect(anfragen[0].area).toBeUndefined();
+    expect(anfragen[0].fliesenDetails.sqm).toBeUndefined();
+  });
+
+  // Offen (nicht F3-Befund): Treppendaten (Stufen, Maße) fehlen in der Online-Nutzlast; die Angaben gehen nur in die Nachricht.
   test.fixme(
-    'Nur Treppe: keine erfundene Fläche (Vorgabe 20 m²) in der Nutzlast',
-    { annotation: { type: 'fixme', description: 'Ausgangsstand: Ohne Flächenangabe wird die Vorgabe 20 m² als Fläche gesendet; Treppendaten fehlen. Siehe OFFENE FRAGEN.' } },
+    'Nur Treppe: Treppendaten (Stufen, Maße) gehen in der Online-Nutzlast mit',
+    { annotation: { type: 'fixme', description: 'Ausgangsstand: fliesenDetails enthält keine Stufen- oder Maßangaben. Siehe OFFENE FRAGEN.' } },
     async ({ page, anfragen }) => {
       await zuSchritt3(page, 'Treppe');
+      await treppeMasse(page);
       await page.getByRole('button', { name: 'Zur Zusammenfassung' }).click();
       await expect(schritt(page, 4)).toBeVisible();
       await kontaktAusfuellen(page);
       await onlineSenden(page).click();
       await expect(page.getByText('Konfiguration erfolgreich übermittelt')).toBeVisible();
-      expect(anfragen[0].area).not.toBe('20 m²');
-      expect(anfragen[0].fliesenDetails.sqm).toBeUndefined();
+      expect(Object.keys(anfragen[0].fliesenDetails).some((k) => /stufe|treppe|stair/i.test(k))).toBe(true);
     }
   );
 

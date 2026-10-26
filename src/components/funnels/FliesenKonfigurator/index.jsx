@@ -100,7 +100,8 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
                                 <Fugenkreuz className="size-3 text-strich" />
                                 Konfigurator für Fliesen
                             </span>
-                            <ol className="flex flex-wrap items-center gap-2" aria-label="Fortschritt">
+                            {/* Unter 16 rem Behälterbreite (200 % Schrift) zwei mal zwei statt einer Zeile mit „4“ allein */}
+                            <ol className="flex flex-wrap items-center gap-2 @max-3xs:grid @max-3xs:grid-cols-2" aria-label="Fortschritt">
                                 {STEPS.map((item, idx) => {
                                     const s = idx + 1;
                                     return (
@@ -238,8 +239,9 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
                                     className={knopfKlassen('haupt', 'w-full @xl:ml-auto @xl:w-auto')}
                                     data-motion="druck"
                                 >
-                                    {step === 3 ? 'Zur Zusammenfassung' : `Weiter zu Schritt ${step + 1}`}
-                                    <Icon name="pfeil-rechts" groesse={5} />
+                                    {step === 3 ? 'Zur Zusammenfassung' : `Weiter zu Schritt ${step + 1}`}
+                                    {/* Unter 16 rem Behälterbreite (200 % Schrift) entfällt der Pfeil, sonst braucht der Text drei Zeilen; der Text sagt den Weg selbst */}
+                                    <Icon name="pfeil-rechts" groesse={5} className="@max-3xs:hidden" />
                                 </button>
                             </div>
                         )}

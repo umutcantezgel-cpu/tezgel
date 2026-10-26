@@ -30,11 +30,11 @@ export default function BadanfrageFunnel() {
         formData,
         setFormData,
         toggleFeature,
-        calculatedSqm,
+        flaecheText,
         objectTitle,
         scopeTitle,
         tierTitle,
-        featureLabels,
+        featureText,
         addressText,
         handleWhatsApp,
         handleOnlineSubmit,
@@ -64,9 +64,9 @@ export default function BadanfrageFunnel() {
 
     let inhalt;
     if (status === 'success') {
-        inhalt = <Erfolg handleNewRequest={handleNewRequest} referenceId={referenceId} formData={formData} calculatedSqm={calculatedSqm} objectTitle={objectTitle} scopeTitle={scopeTitle} tierTitle={tierTitle} featureLabels={featureLabels} addressText={addressText} />;
+        inhalt = <Erfolg handleNewRequest={handleNewRequest} referenceId={referenceId} formData={formData} flaecheText={flaecheText} objectTitle={objectTitle} scopeTitle={scopeTitle} tierTitle={tierTitle} featureText={featureText} addressText={addressText} />;
     } else if (status === 'whatsapp_opened') {
-        inhalt = <WhatsAppGeoeffnet handleBackFromWhatsApp={handleBackFromWhatsApp} calculatedSqm={calculatedSqm} scopeTitle={scopeTitle} />;
+        inhalt = <WhatsAppGeoeffnet handleBackFromWhatsApp={handleBackFromWhatsApp} />;
     } else {
         inhalt = (
             <div className={feldClass}>
@@ -77,7 +77,7 @@ export default function BadanfrageFunnel() {
                             {/* Kreuz an der ersten Zeile, auch wenn das Etikett mobil umbricht */}
                             <Fugenkreuz className="mt-1 size-3 self-start text-strich" />
                             <span>
-                                Badanfrage &middot; <span>Schritt {step} von {TOTAL_STEPS}</span>
+                                Badanfrage &middot; <span><span className="whitespace-nowrap">Schritt {step}</span> <span className="whitespace-nowrap">von {TOTAL_STEPS}</span></span>
                             </span>
                         </span>
                         <span className={etikettKlassen}>
@@ -106,7 +106,7 @@ export default function BadanfrageFunnel() {
                 {/* Inhalt des Schritts */}
                 {step === 1 && <Schritt1 formData={formData} setFormData={setFormData} />}
                 {step === 2 && <Schritt2 formData={formData} setFormData={setFormData} />}
-                {step === 3 && <Schritt3 formData={formData} setFormData={setFormData} calculatedSqm={calculatedSqm} />}
+                {step === 3 && <Schritt3 formData={formData} setFormData={setFormData} flaecheText={flaecheText} />}
                 {step === 4 && <Schritt4 formData={formData} setFormData={setFormData} toggleFeature={toggleFeature} />}
                 {step === 5 && (
                     <Schritt5
@@ -128,8 +128,9 @@ export default function BadanfrageFunnel() {
                                 Zurück
                             </Knopf>
                         )}
+                        {/* Die Ziffer bleibt bei „Schritt“ (E4-W1, F1): „Schritt N“ bricht nicht */}
                         <Knopf onClick={() => setStep(step + 1)} icon="pfeil-rechts" className="w-full @md:w-auto">
-                            Weiter zu Schritt {step + 1}
+                            Weiter zu <span className="whitespace-nowrap">Schritt {step + 1}</span>
                         </Knopf>
                     </div>
                 )}

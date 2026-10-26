@@ -5,7 +5,8 @@ import { frageClass, inputClass, nummerClass, zahlClass } from './stile';
 // Schritt 3: Raummaße (Q-01: Darstellung nach KERN v2; Texte, IDs und Verhalten unverändert).
 // Länge und Breite nebeneinander, Personen darunter (ab breitem Behälter in einer Zeile); Grundfläche als Mono-Kennwert.
 // Die Schrittfrage ist Fokusziel beim Zustandswechsel (F-04, tabIndex -1, siehe index).
-export default function Schritt3({ formData, setFormData, calculatedSqm }) {
+// E4-W1 (F1): ohne Vorauswahl. Die Maße sind leer, die Grundfläche steht als „keine Angabe“, bis Länge und Breite stehen.
+export default function Schritt3({ formData, setFormData, flaecheText }) {
     return (
         <div className="flex flex-col gap-6">
             <p className={frageClass} tabIndex={-1} data-fokusziel>
@@ -46,6 +47,7 @@ export default function Schritt3({ formData, setFormData, calculatedSqm }) {
                         onChange={(e) => setFormData({ ...formData, persons: e.target.value })}
                         className={inputClass}
                     >
+                        <option value="">Bitte auswählen</option>
                         {PERSON_OPTIONS.map((opt) => (
                             <option key={opt.value} value={opt.value}>{opt.label}</option>
                         ))}
@@ -55,7 +57,7 @@ export default function Schritt3({ formData, setFormData, calculatedSqm }) {
 
             <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border border-fuge bg-kalk px-4 py-3">
                 <span className="text-fs-2 font-semibold text-tinte">Grundfläche (Länge mal Breite):</span>
-                <span className="font-mono text-fs-4 text-tinte tabular-nums" aria-live="polite">{calculatedSqm} m²</span>
+                <span className="font-mono text-fs-4 text-tinte tabular-nums" aria-live="polite">{flaecheText}</span>
             </div>
         </div>
     );

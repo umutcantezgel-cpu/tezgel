@@ -8,7 +8,7 @@ import { feldClass } from './stile';
 // und Verhalten unverändert). Markenzeichen nur als Logo (K-005), keine grüne Fläche.
 // Fusion F-04: Die Überschrift nimmt nach dem Öffnen den Fokus auf (tabIndex -1, siehe index); der Behälter der
 // Container-Abfragen ist die Wurzel in index.
-export default function WhatsAppGeoeffnet({ handleBackFromWhatsApp, calculatedSqm, scopeTitle }) {
+export default function WhatsAppGeoeffnet({ handleBackFromWhatsApp }) {
     return (
         <div className={feldClass} role="status">
             <span className={etikettKlassen}>
@@ -19,11 +19,11 @@ export default function WhatsAppGeoeffnet({ handleBackFromWhatsApp, calculatedSq
                 Fast geschafft. Senden Sie die Nachricht jetzt ab.
             </h3>
             <p className="mt-4 max-w-mass text-fs-3 text-tinte-2">
-                Ihre Badanfrage ({calculatedSqm} m² &middot; {scopeTitle}) ist in WhatsApp vorbereitet. Senden Sie die Nachricht einfach ab. {COMPANY_DATA.owner.fullName} meldet sich umgehend bei Ihnen.
+                Ihre Badanfrage ist in WhatsApp vorbereitet. Senden Sie die Nachricht einfach ab. {COMPANY_DATA.owner.fullName} meldet sich umgehend bei Ihnen.
             </p>
             <div className="mt-8 flex flex-col items-stretch gap-3 @2xl:flex-row @2xl:items-center">
                 <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} iconLinks="telefon">
-                    Anrufen: <span className="whitespace-nowrap font-mono">{COMPANY_DATA.contact.phone}</span>
+                    Anrufen: <span className="font-mono">{COMPANY_DATA.contact.phone}</span>
                 </Knopf>
                 <Knopf variante="neben" onClick={handleBackFromWhatsApp}>
                     Zurück

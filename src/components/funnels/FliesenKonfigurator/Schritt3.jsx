@@ -1,5 +1,5 @@
 import Icon from '@/components/icons/Icon';
-import { FORMAT_OPTIONS, MATERIAL_OPTIONS, PATTERN_OPTIONS, STAIR_COVERING_OPTIONS, STAIR_TYPE_OPTIONS, YES_NO, parseNumber } from '@/lib/formulare/useFliesenKonfigurator';
+import { FORMAT_OPTIONS, MATERIAL_OPTIONS, PATTERN_OPTIONS, STAIR_COVERING_OPTIONS, STAIR_TYPE_OPTIONS, YES_NO, reglerWert } from '@/lib/formulare/useFliesenKonfigurator';
 import { absatzHintClass, labelClass, legendClass, merkClass, zahlClass, zusatzClass } from './stile';
 import OptionGroup from './OptionGroup';
 
@@ -94,7 +94,7 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
                                 min="1"
                                 max="150"
                                 step="1"
-                                value={Math.min(Math.max(Math.round(parseNumber(data.area)) || 1, 1), 150)}
+                                value={reglerWert(data.area)}
                                 onChange={(e) => update({ area: e.target.value })}
                                 className="block min-h-11 w-full cursor-pointer accent-tinte"
                             />

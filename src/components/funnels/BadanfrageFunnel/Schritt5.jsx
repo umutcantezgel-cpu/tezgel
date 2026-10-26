@@ -152,7 +152,7 @@ export default function Schritt5({ setStep, status, errorMessage, formData, setF
                         laedt={status === 'submitting'}
                         ladeText="Wird gesendet …"
                         icon="pfeil-rechts"
-                        className="w-full @2xl:flex-1"
+                        className="w-full @2xl:flex-1 @max-3xs:px-2! @max-3xs:[&>svg]:hidden!"
                     >
                         Badanfrage jetzt absenden (Online)
                     </Knopf>
@@ -161,7 +161,7 @@ export default function Schritt5({ setStep, status, errorMessage, formData, setF
                         onClick={handleWhatsApp}
                         deaktiviert={status === 'submitting'}
                         vorne={<WhatsAppLogo className="size-5 shrink-0" />}
-                        className="w-full @2xl:w-auto"
+                        className="w-full @2xl:w-auto @max-3xs:px-2! @max-3xs:[&>svg]:hidden!"
                     >
                         Nachricht per WhatsApp
                     </Knopf>

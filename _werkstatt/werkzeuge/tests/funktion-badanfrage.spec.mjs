@@ -109,8 +109,9 @@ test.describe('BadanfrageFunnel (/bad/badanfrage)', () => {
     await page.getByLabel('Personen im Haushalt', { exact: true }).selectOption('3-4');
     await weiter(page, 4).click();
     await option(page, 'Luxus').click();
+    // Ohne Vorauswahl (E4-W1): die Ausstattung wird vom Besucher angeklickt, in dieser Reihenfolge.
+    await page.getByRole('button', { name: 'Bodengleiche Walk-In-Dusche', exact: true }).click();
     await page.getByRole('button', { name: 'Badewanne', exact: true }).click();
-    await page.getByRole('button', { name: 'LED-Lichtspiegel', exact: true }).click();
     await weiter(page, 5).click();
     await expect(schritt(page, 5)).toBeVisible();
     await feld.name(page).fill('Prüf Person');
@@ -155,7 +156,26 @@ test.describe('BadanfrageFunnel (/bad/badanfrage)', () => {
     });
   });
 
-  test('Gutfall nur Pflichtangaben: Standardauswahl wird gesendet, optionale Felder fehlen', async ({ page, anfragen }) => {
+  test('keine Vorauswahl beim Laden: nichts gewählt, Maße leer, Fläche „keine Angabe“, Weiter bleibt frei', async ({ page, anfragen }) => {
+    await page.goto(SEITE);
+    const gewaehlt = page.locator('[data-baustein="badanfrage"] [aria-pressed="true"]');
+    await expect(schritt(page, 1)).toBeVisible();
+    await expect(gewaehlt).toHaveCount(0);
+    await weiter(page, 2).click();
+    await expect(gewaehlt).toHaveCount(0);
+    await weiter(page, 3).click();
+    await expect(page.getByLabel('Länge (m)', { exact: true })).toHaveValue('');
+    await expect(page.getByLabel('Breite (m)', { exact: true })).toHaveValue('');
+    await expect(page.getByLabel('Personen im Haushalt', { exact: true })).toHaveValue('');
+    await expect(page.getByText('keine Angabe', { exact: true })).toBeVisible();
+    await weiter(page, 4).click();
+    await expect(gewaehlt).toHaveCount(0);
+    await weiter(page, 5).click();
+    await expect(schritt(page, 5)).toBeVisible();
+    expect(anfragen).toHaveLength(0);
+  });
+
+  test('Gutfall nur Pflichtangaben: ohne Auswahl wird gesendet, ungewählte Angaben fehlen', async ({ page, anfragen }) => {
     await page.goto(SEITE);
     await bisSchritt(page, 5);
     await feld.name(page).fill('Prüf Person');
@@ -163,22 +183,19 @@ test.describe('BadanfrageFunnel (/bad/badanfrage)', () => {
     await absenden(page).click();
     await expect(page.getByText('Badanfrage erfolgreich übermittelt')).toBeVisible();
     await expect(page.getByText('TEZ-26-TEST')).toBeVisible();
+    await expect(page.locator('[data-baustein="badanfrage"] p', { hasText: 'Ausstattung:' })).toContainText('keine Angabe');
     expect(anfragen).toHaveLength(1);
     expect(anfragen[0]).toMatchObject({
       inquiryType: 'bad',
-      badDetails: {
-        scope: 'komplett',
-        tier: 'premium',
-        propertyType: 'efh',
-        persons: '2',
-        length: '3.0',
-        width: '2.5',
-        sqm: '7.5',
-        features: ['walkin', 'led-spiegel'],
-      },
+      projectTitle: 'Badsanierung',
+      badDetails: { features: [] },
     });
+    for (const k of ['scope', 'tier', 'propertyType', 'persons', 'length', 'width', 'sqm']) {
+      expect(anfragen[0].badDetails[k]).toBeUndefined();
+    }
     expect(anfragen[0].contact.email).toBeUndefined();
     expect(anfragen[0].contact.street).toBeUndefined();
+    expect(anfragen[0].contact.location).toBeUndefined();
     expect(anfragen[0].notes).toBeUndefined();
   });
 

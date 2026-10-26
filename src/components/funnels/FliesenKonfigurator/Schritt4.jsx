@@ -113,7 +113,7 @@ export default function Schritt4({ data, update, goToStep, handleSubmit, isSubmi
                     onChange={(e) => update({ privacyConsent: e.target.checked })}
                     className={kontrollKlassen}
                 />
-                <span>
+                <span className="min-w-0 wrap-break-word hyphens-auto">
                     Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verwendet werden. Details in der{' '}
                     <Link href="/datenschutz" className={linkClass}>Datenschutzerklärung</Link>.{' '}
                     <span className={pflichtKlassen}>*</span>
@@ -177,7 +177,7 @@ export default function Schritt4({ data, update, goToStep, handleSubmit, isSubmi
                     data-motion="druck"
                 >
                     <Icon name="pfeil-links" groesse={5} />
-                    Zurück zu Schritt 3
+                    Zurück zu Schritt&nbsp;3
                 </button>
             </div>
         </form>

@@ -11,7 +11,7 @@ import { linkClass } from './stile';
 // Rechnung, Zeilen und Wortlaut aus dem Hook bzw. wie im Bestand; Überschriften h4.
 // Spalten nach Behälterbreite: Projekt und Materialbedarf ab 56 rem nebeneinander, die Prüfliste darunter über beide.
 const FELD = 'flex min-w-0 flex-col gap-4 p-4 @xl:p-6';
-const KOPF = 'flex items-center gap-2 text-fs-4 text-tinte';
+const KOPF = 'flex items-center gap-2 text-fs-4 text-tinte wrap-break-word hyphens-auto';
 
 export default function ResultSummary({ data }) {
     const summary = buildSummaryLines(data);
@@ -29,8 +29,8 @@ export default function ResultSummary({ data }) {
                 <dl className="border-t border-fuge">
                     {summary.map(([k, v]) => (
                         <div key={k} className="flex flex-col gap-1 border-b border-fuge py-2 @xl:flex-row @xl:items-baseline @xl:gap-4">
-                            <dt className="font-mono text-fs-1 text-tinte-2 @xl:w-2/5 @xl:shrink-0">{k}</dt>
-                            <dd className="min-w-0 flex-1 font-text text-fs-2 text-tinte">{v}</dd>
+                            <dt className="wrap-break-word hyphens-auto font-mono text-fs-1 text-tinte-2 @xl:w-2/5 @xl:shrink-0">{k}</dt>
+                            <dd className="min-w-0 flex-1 wrap-break-word hyphens-auto font-text text-fs-2 text-tinte">{v}</dd>
                         </div>
                     ))}
                 </dl>

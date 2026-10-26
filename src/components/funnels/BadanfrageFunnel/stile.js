@@ -10,8 +10,9 @@ export const inputClass = feldKlassen;
 /** Maße in Mono mit festen Ziffernbreiten (K-006: Messbares in Mono); sonst wie feldKlassen */
 export const zahlClass = `${feldKlassen.replace('font-text', 'font-mono')} tabular-nums`;
 
-/** Behälter: Rahmen Strich, Fläche Fliese, kein Abheben; Innenabstand nach Behälterbreite (wie die Express-Anfrage) */
-export const feldClass = 'border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12';
+/** Behälter: Rahmen Strich, Fläche Fliese, kein Abheben; Innenabstand nach Behälterbreite (wie die Express-Anfrage).
+ *  Schmal (unter 16rem, bei großer Systemschrift): weniger Innenabstand, damit Kacheln und „Weiter“ Platz für Wörter haben (E4-W1, F1) */
+export const feldClass = 'border border-strich bg-fliese p-6 @max-3xs:p-4 @2xl:p-8 @3xl:p-12';
 
 /** Schrittfrage (Absatz wie im Bestand) und ihre Nummer in Mono */
 export const frageClass = 'font-text text-fs-4 font-semibold text-tinte';
@@ -21,7 +22,7 @@ export const nummerClass = 'font-mono font-normal text-tinte-2';
  *  der Inhalt steht links oben (self-start hebt die Mitte von wahlKlassen für das Kind auf). min-w-0: die Kachel
  *  schrumpft mit der Spalte statt über den Rand zu ragen; wrap-break-word: lange Wörter (Komposita) brechen bei großer Schrift */
 export const kachelClass = `${wahlKlassen} h-full w-full min-w-0`;
-export const kachelInhaltClass = 'flex w-full min-w-0 flex-col gap-1 self-start py-1 text-left wrap-break-word';
+export const kachelInhaltClass = 'flex w-full min-w-0 flex-col gap-1 self-start py-1 text-left hyphens-auto wrap-break-word';
 
 /** Wunschausstattung (aria-pressed): wahlKlassen, Zeichen und Text links; bei großer Schrift schrumpft das Feld mit der Spalte,
  *  lange Wörter trennen nach Silben (lang="de") */

@@ -13,7 +13,8 @@ import { feldClass } from './stile';
 // Container-Abfragen ist die Wurzel in index.
 const etikett = 'block font-mono font-normal text-tinte-2 @xl:inline';
 
-export default function Erfolg({ handleNewRequest, referenceId, formData, calculatedSqm, objectTitle, scopeTitle, tierTitle, featureLabels, addressText }) {
+// E4-W1 (F1): Angaben ohne Wahl stehen als „keine Angabe“ in der Zusammenfassung; die Fläche steht in einer eigenen Zeile.
+export default function Erfolg({ handleNewRequest, referenceId, formData, flaecheText, objectTitle, scopeTitle, tierTitle, featureText, addressText }) {
     return (
         <div className={feldClass} role="status">
             <div className="flex flex-wrap items-center gap-3">
@@ -31,7 +32,7 @@ export default function Erfolg({ handleNewRequest, referenceId, formData, calcul
                 Vielen Dank, {formData.name}!
             </p>
             <p className="mt-4 max-w-mass text-fs-3 text-tinte-2">
-                Ihre Badanfrage ({calculatedSqm} m² &middot; {scopeTitle}) ist bei Fliesenverlegung Tezgel eingegangen.
+                Ihre Badanfrage ist bei Fliesenverlegung Tezgel eingegangen.
                 {formData.email && (
                     <span className="mt-3 flex items-start gap-2 border-l-2 border-tinte pl-4 text-fs-2 text-tinte">
                         <Icon name="mail" groesse={4} className="mt-1" />
@@ -50,18 +51,19 @@ export default function Erfolg({ handleNewRequest, referenceId, formData, calcul
                 <div className="mt-3 divide-y divide-fuge border-t border-fuge">
                     <p className="py-2"><strong className={etikett}>Kontakt:</strong> {formData.name} &middot; <span className="font-mono">{formData.phone}</span></p>
                     <p className="py-2"><strong className={etikett}>Ort:</strong> {addressText}</p>
-                    <p className="py-2"><strong className={etikett}>Projekt:</strong> {objectTitle} &middot; Stufe: {tierTitle} &middot; <span className="font-mono">{calculatedSqm} m²</span></p>
-                    {featureLabels.length > 0 && (
-                        <p className="py-2"><strong className={etikett}>Ausstattung:</strong> {featureLabels.join(', ')}</p>
-                    )}
+                    <p className="py-2"><strong className={etikett}>Immobilie:</strong> {objectTitle}</p>
+                    <p className="py-2"><strong className={etikett}>Umfang:</strong> {scopeTitle}</p>
+                    <p className="py-2"><strong className={etikett}>Stufe:</strong> {tierTitle}</p>
+                    <p className="py-2"><strong className={etikett}>Fläche:</strong> <span className="font-mono">{flaecheText}</span></p>
+                    <p className="py-2"><strong className={etikett}>Ausstattung:</strong> {featureText}</p>
                 </div>
             </div>
 
             <div className="mt-8 flex flex-col items-stretch gap-3 @2xl:flex-row @2xl:items-center">
                 <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} iconLinks="telefon">
-                    Anrufen: <span className="whitespace-nowrap font-mono">{COMPANY_DATA.contact.phone}</span>
+                    Anrufen: <span className="font-mono">{COMPANY_DATA.contact.phone}</span>
                 </Knopf>
-                <Knopf variante="neben" onClick={handleNewRequest}>
+                <Knopf variante="neben" onClick={handleNewRequest} className="@max-3xs:px-1!">
                     Neue Badanfrage starten
                 </Knopf>
             </div>

@@ -37,7 +37,7 @@ async function zaehleAnfragen(page) {
 }
 const anfrageAufrufe = (page) => page.evaluate(() => window.__anfrageAufrufe ?? 0);
 
-// Auswahl abweichend vom Standard: 3,5 m², Wanne zu Dusche, Exklusiv, LED-Lichtspiegel ab, Badewanne an.
+// Auswahl ohne Vorauswahl (E4-W1, F2): 3,5 m², Wanne zu Dusche, Exklusiv, Spiegel mit Licht und Badewanne, alles von Hand gewählt.
 async function konfiguriere(w) {
   await groesse(w).press('Home');
   await expect(w.getByText('3,5 m²', { exact: true })).toBeVisible();
@@ -47,7 +47,7 @@ async function konfiguriere(w) {
   await w.getByRole('button', { name: 'Badewanne oder Komfortwanne', exact: true }).click();
   await expect(w.getByRole('button', { name: /^Wanne zu Dusche/ })).toHaveAttribute('aria-pressed', 'true');
   await expect(w.getByRole('button', { name: /^Exklusiv/ })).toHaveAttribute('aria-pressed', 'true');
-  await expect(w.getByRole('button', { name: 'Spiegel mit Licht', exact: true })).toHaveAttribute('aria-pressed', 'false');
+  await expect(w.getByRole('button', { name: 'Spiegel mit Licht', exact: true })).toHaveAttribute('aria-pressed', 'true');
   await expect(w.getByRole('button', { name: 'Badewanne oder Komfortwanne', exact: true })).toHaveAttribute('aria-pressed', 'true');
 }
 
@@ -102,7 +102,7 @@ test.describe('BadProjektCheck (/bad/projekt-check)', () => {
     expect(anfragen).toHaveLength(0);
   });
 
-  test('nur Pflichtangaben: Standardauswahl wird ohne E-Mail gesendet, keine Bestätigungs-E-Mail angekündigt', async ({ page, anfragen }) => {
+  test('nur Pflichtangaben: ohne Auswahl wird nur der Kontakt gesendet, ohne E-Mail, keine Bestätigungs-E-Mail angekündigt', async ({ page, anfragen }) => {
     await page.goto('/bad/projekt-check');
     const w = wurzel(page, '/bad/projekt-check');
     await kontaktAusfuellen(w, { mitEmail: false });
@@ -113,21 +113,32 @@ test.describe('BadProjektCheck (/bad/projekt-check)', () => {
     expect(anfragen[0]).toMatchObject({
       inquiryType: 'projekt_check',
       projectType: 'bad',
-      projectTitle: 'Bad-Projektcheck (ca. 8,2 m²)',
+      projectTitle: 'Bad-Projektcheck',
       contact: { name: 'Prüf Person', phone: '0170 0000000' },
-      projektCheckDetails: {
-        sqm: '8,2',
-        scope: 'komplett',
-        scopeLabel: 'Komplettbad',
-        tier: 'premium',
-        tierLabel: 'Gehoben',
-        extras: ['Bodengleiche Walk-In-Dusche', 'Design-Heizkörper', 'LED-Lichtspiegel', 'Großformat-Fliesenverlegung'],
-      },
-      area: 'ca. 8,2 m²',
+      projektCheckDetails: { extras: [] },
       timing: 'Nach Aufmaß',
     });
+    // Keine Vorauswahl: Größe, Umfang und Ausstattung fehlen in der Nutzlast, es gibt keine Fläche.
+    expect(anfragen[0].projektCheckDetails.sqm).toBeUndefined();
+    expect(anfragen[0].projektCheckDetails.scope).toBeUndefined();
+    expect(anfragen[0].projektCheckDetails.tier).toBeUndefined();
+    expect(anfragen[0].area).toBeUndefined();
     expect(anfragen[0].contact.email).toBeUndefined();
     await expect(w.getByText('pruef@example.de', { exact: true })).toHaveCount(0);
+  });
+
+  test('beim Laden ist nichts gewählt: Größe, Umfang, Ausstattung und Extras; Zusammenfassung nennt „noch keine Angabe“', async ({ page }) => {
+    await page.goto('/bad/projekt-check');
+    const w = wurzel(page, '/bad/projekt-check');
+    await expect(w.getByText('noch keine Angabe').first()).toBeVisible();
+    for (const knopf of [/^Komplettbad/, /^Teilsanierung/, /^Wanne zu Dusche/, /^Solide/, /^Gehoben/, /^Exklusiv/]) {
+      await expect(w.getByRole('button', { name: knopf })).toHaveAttribute('aria-pressed', 'false');
+    }
+    await expect(w.getByRole('button', { name: 'Spiegel mit Licht', exact: true })).toHaveAttribute('aria-pressed', 'false');
+    await expect(w.getByRole('button', { name: /^Bodengleiche Dusche/ })).toHaveAttribute('aria-pressed', 'false');
+    // Das passende Musterbad fehlt, solange die Größe nicht gewählt ist; ein Satz sagt, was fehlt.
+    await expect(w.getByText('Für das passende Musterbad fehlt noch die Größe des Bads.')).toBeVisible();
+    await expect(w.getByText(/^Passend:/)).toHaveCount(0);
   });
 
   test.describe('echte Route (Mock-Modus ohne Resend-Schlüssel)', () => {
@@ -170,7 +181,7 @@ test.describe('BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten', () =>
           scopeLabel: 'Wanne zu Dusche',
           tier: 'luxus',
           tierLabel: 'Exklusiv',
-          extras: ['Bodengleiche Walk-In-Dusche', 'Badewanne / Komfortwanne', 'Design-Heizkörper', 'Großformat-Fliesenverlegung'],
+          extras: ['Badewanne / Komfortwanne', 'LED-Lichtspiegel'],
         },
         area: 'ca. 3,5 m²',
         timing: 'Nach Aufmaß',
@@ -193,7 +204,7 @@ test.describe('BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten', () =>
       expect(text).toContain('Badgröße: ca. 3,5 m²');
       expect(text).toContain('Sanierungsumfang: Wanne zu Dusche');
       expect(text).toContain('Ausstattungsniveau: Exklusiv');
-      expect(text).toContain('Wunschausstattung: Bodengleiche Walk-In-Dusche, Badewanne / Komfortwanne, Design-Heizkörper, Großformat-Fliesenverlegung');
+      expect(text).toContain('Wunschausstattung: Badewanne / Komfortwanne, LED-Lichtspiegel');
       expect(text).toContain('Name: Prüf Person');
       expect(text).toContain('Telefon: 0170 0000000');
       expect(text).toContain('E-Mail: Nicht angegeben');

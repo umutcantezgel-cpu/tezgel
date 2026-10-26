@@ -1,5 +1,20 @@
 # Bericht · Lauf „Verständlich, echt, ausgezeichnet“
 
+## Morgenbericht · Montag, 26. Oktober 2026
+
+1. Fertig: Auf main liegt seit gestern Abend der neue Stand, Vercel hat ihn veröffentlicht (auf deine Anweisung). Seitdem wird nur auf dem Arbeitsstand gebaut, ohne neuen Deploy.
+2. Fertig: Die Fotos sind neu verteilt. Kein Foto steht mehr auf zwei Hauptseiten, Baustellenfotos nur noch dort, wo es um die Arbeit geht, die Texte unter den Fotos sagen nur, was zu sehen ist (`_werkstatt/bilder/bericht/2026-10-26/1-balkon-einstieg-desktop.jpg`, `2-startseite-fotos-desktop.jpg`, `4-badsanierung-handy.jpg`).
+3. Fertig: Die Karte auf „Kontakt“ erklärt jetzt ihre Zeichen: Firmensitz, Orte, Ringe (`3-kontakt-karte-legende-desktop.jpg`).
+4. Fertig: Bei doppelt großer Schrift reißen Kundenstimmen, Adresse und Knöpfe keine Wörter mehr mittendrin auseinander (`5-kundenstimmen-grosse-schrift-handy.jpg`); der Fuß hat keine Lücken mehr.
+5. Geprüft: Alle 369 Prüfungen der Funktionen bestehen. Wir haben sieben Wege ausprobiert, das erste große Bild am Handy schneller zu zeigen; keiner bringt genug. Der nächste Versuch: weniger Daten vor dem ersten Bild.
+6. Stand der 14 Kriterien: Die Zwischenprüfung ist im ersten Anlauf nicht bestanden. Offen sind vor allem die Gestaltung (Ziel 8 von 10) und die Ladezeit am Handy (Ziel 2,5 Sekunden, heute 2,9 bis 4,6).
+7. Läuft gerade: fünf Formulare werden umgebaut, damit sie bei großer Schrift gut lesbar sind und nichts mehr vorausgewählt ist, ohne ein neues Pflichtfeld.
+8. Als Nächstes: Formulare abnehmen, alles neu bauen und prüfen, den Ladezeit-Versuch machen, dann die zweite Gestaltungsprüfung mit frischen Bildern.
+9. Bitte prüfe oder entscheide (Einzelheiten in `_werkstatt/MENSCHEN.md`):
+   - Wer im Formular nichts wählt, schickt „keine Angabe“ statt „Badsanierung“. Passt das so? (M-24)
+   - Darf unter das Schloss-Zeichen in der Leiste am Handy das Wort „Cookies“? (M-28)
+   - Noch offen: Einzugsgebiet ganz Hessen (M-04), Fragen M-18 bis M-27, Videos.
+
 ## Morgenbericht · Sonntag, 25. Oktober 2026
 
 1. Fertig: Die Seite ist nach deiner Rückmeldung ruhiger: Überschrift mittig, Bilder vollständig, Kundenstimmen als langsames Karussell (`_werkstatt/bilder/bericht/2026-10-25/1-startseite-desktop.jpg`).

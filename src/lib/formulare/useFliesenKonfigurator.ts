@@ -49,9 +49,9 @@ export const YES_NO = [
 ];
 
 export const FORMAT_OPTIONS = [
-    { id: 'standard', title: 'Standardformat', desc: 'bis ca. 60 cm Kantenlänge' },
-    { id: 'gross', title: 'Großformat', desc: 'z. B. 60 × 120 cm' },
-    { id: 'xxl', title: 'XXL-Format', desc: 'ab 120 × 120 cm, bis 120 × 278 cm' },
+    { id: 'standard', title: 'Standardformat', desc: 'bis ca. 60 cm Kantenlänge' },
+    { id: 'gross', title: 'Großformat', desc: 'z. B. 60 × 120 cm' },
+    { id: 'xxl', title: 'XXL-Format', desc: 'ab 120 × 120 cm, bis 120 × 278 cm' },
     { id: 'dielen', title: 'Dielenformat', desc: 'lange, schmale Formate, z. B. Holzoptik' },
     { id: 'offen', title: 'Noch offen', desc: 'Wir beraten Sie gern' }
 ];
@@ -158,6 +158,12 @@ export type TreppenRechnung = { rises: number; risers: number; treads: number; w
 
 export const labelOf = (list: Option[], id: string) => list.find((o) => o.id === id)?.label ?? list.find((o) => o.id === id)?.title ?? id;
 
+/** Antwort in Zusammenfassung und Nachricht: ohne Wahl (leer) steht „Keine Angabe“ (G8). */
+export const wahlOf = (list: Option[], id: string) => (id ? labelOf(list, id) : 'Keine Angabe');
+
+/** Startwert des Reglers (m²), solange noch keine Fläche eingegeben oder bewegt wurde; das Feld selbst bleibt leer (G8). */
+export const REGLER_START = 20;
+
 export const parseNumber = (value: string | number | null | undefined) => {
     if (value === '' || value === null || value === undefined) return NaN;
     const n = Number(String(value).replace(',', '.').trim());
@@ -178,6 +184,12 @@ export const fmt = (n: number, digits = 1) => {
 };
 
 export const toggleInList = (list: string[], id: string) => (list.includes(id) ? list.filter((x) => x !== id) : [...list, id]);
+
+/** Stellung des Flächenreglers (1–150 m²); ohne eingegebene Fläche steht er auf dem Startwert. */
+export const reglerWert = (area: string) => {
+    const n = parseNumber(area);
+    return Number.isFinite(n) ? Math.min(Math.max(Math.round(n), 1), 150) : REGLER_START;
+};
 
 // ---------------------------------------------------------------------------
 // Calculations
@@ -284,7 +296,7 @@ export function buildChecklist(data: FliesenDaten) {
         add('Treppe: gleichmäßige Steigungshöhen sind für die Trittsicherheit entscheidend.', '/treppen', 'Treppen neu belegen');
         if (data.stairLocation === 'aussen') {
             add('Außentreppe: frostsicherer Aufbau, Gefälle und rutschhemmende Oberfläche einplanen.', '/treppen/aussentreppe', 'Außentreppe & Eingang');
-        } else {
+        } else if (data.stairLocation === 'innen') {
             add('Stufenkanten sauber ausbilden – z. B. mit Gehrungskante oder Kantenprofil.', '/treppen/innentreppe', 'Innentreppe fliesen');
         }
     }
@@ -294,25 +306,26 @@ export function buildChecklist(data: FliesenDaten) {
 export function buildSummaryLines(data: FliesenDaten) {
     const lines = [];
     const rooms = data.rooms.map((id) => labelOf(ROOM_OPTIONS, id)).join(', ');
-    lines.push(['Bereich', rooms || 'Nicht angegeben']);
-    lines.push(['Untergrund', data.substrates.length ? data.substrates.map((id) => labelOf(SUBSTRATE_OPTIONS, id)).join(', ') : 'Nicht angegeben']);
-    lines.push(['Fußbodenheizung', labelOf(YES_NO_UNSURE, data.floorHeating)]);
-    lines.push(['Rückbau Altbelag', labelOf(YES_NO_UNSURE, data.removal)]);
-    lines.push(['Nassbereich', labelOf(YES_NO, data.wetArea)]);
+    lines.push(['Bereich', rooms || 'Keine Angabe']);
+    lines.push(['Untergrund', data.substrates.length ? data.substrates.map((id) => labelOf(SUBSTRATE_OPTIONS, id)).join(', ') : 'Keine Angabe']);
+    lines.push(['Fußbodenheizung', wahlOf(YES_NO_UNSURE, data.floorHeating)]);
+    lines.push(['Rückbau Altbelag', wahlOf(YES_NO_UNSURE, data.removal)]);
+    lines.push(['Nassbereich', wahlOf(YES_NO, data.wetArea)]);
     const hasArea = data.rooms.some((r) => AREA_ROOMS.includes(r));
     if (hasArea) {
-        lines.push(['Format', labelOf(FORMAT_OPTIONS, data.format)]);
-        lines.push(['Material', labelOf(MATERIAL_OPTIONS, data.material)]);
-        lines.push(['Verlegemuster', labelOf(PATTERN_OPTIONS, data.pattern)]);
+        lines.push(['Format', wahlOf(FORMAT_OPTIONS, data.format)]);
+        lines.push(['Material', wahlOf(MATERIAL_OPTIONS, data.material)]);
+        lines.push(['Verlegemuster', wahlOf(PATTERN_OPTIONS, data.pattern)]);
     }
     if (data.rooms.includes('treppe')) {
-        const type = labelOf(STAIR_TYPE_OPTIONS, data.stairType);
-        lines.push([
-            'Treppe',
-            `${data.stairLocation === 'aussen' ? 'außen' : 'innen'}, ${data.stairShape === 'gewendelt' ? 'gewendelt' : 'gerade'}, Bauart: ${type}`
-        ]);
+        const form = [
+            data.stairLocation ? (data.stairLocation === 'aussen' ? 'außen' : 'innen') : null,
+            data.stairShape ? (data.stairShape === 'gewendelt' ? 'gewendelt' : 'gerade') : null,
+            data.stairType ? `Bauart: ${labelOf(STAIR_TYPE_OPTIONS, data.stairType)}` : null
+        ].filter(Boolean);
+        lines.push(['Treppe', form.length ? form.join(', ') : 'Keine Angabe']);
         if (data.stairType !== 'blockstufen') {
-            lines.push(['Treppenbelag', labelOf(STAIR_COVERING_OPTIONS, data.stairCovering)]);
+            lines.push(['Treppenbelag', wahlOf(STAIR_COVERING_OPTIONS, data.stairCovering)]);
         }
         // `as TreppenRechnung` nur für den Typprüfer: mit Treppe liefert calculateStairs nie null.
         const stairs = calculateStairs(data) as TreppenRechnung;
@@ -320,7 +333,8 @@ export function buildSummaryLines(data: FliesenDaten) {
             const parts = [`${stairs.rises} Steigungen`];
             if (Number.isFinite(stairs.treads)) parts.push(`${stairs.treads} Trittstufen`);
             if (stairs.withRisers && Number.isFinite(stairs.risers)) parts.push(`${stairs.risers} Setzstufen belegen`);
-            if (!stairs.withRisers && data.stairType !== 'blockstufen') parts.push('Setzstufen nicht belegen');
+            if (data.stairType !== 'blockstufen' && data.risersOn === 'nein') parts.push('Setzstufen nicht belegen');
+            if (data.stairType !== 'blockstufen' && data.risersOn === '') parts.push('Setzstufen keine Angabe');
             lines.push(['Stufen', parts.join(', ')]);
         }
         const dims = [];
@@ -328,7 +342,7 @@ export function buildSummaryLines(data: FliesenDaten) {
         if (data.treadDepth) dims.push(`Auftritt inkl. Überstand ${data.treadDepth} cm`);
         if (data.riserHeight) dims.push(`Steigungshöhe ${data.riserHeight} cm`);
         if (dims.length) lines.push(['Stufenmaße', dims.join(', ')]);
-        lines.push(['Treppensockel', labelOf(YES_NO, data.stairSkirting)]);
+        lines.push(['Treppensockel', wahlOf(YES_NO, data.stairSkirting)]);
     }
     return lines;
 }
@@ -350,8 +364,9 @@ export function buildQuantityLines(data: FliesenDaten) {
     if (stairs) {
         if (stairs.valid) {
             const riserPart = stairs.withRisers ? ` + Setzstufen ${fmt(stairs.riserArea, 2)} m²` : '';
+            const offen = !stairs.withRisers && data.risersOn === '' && data.stairType !== 'blockstufen' ? '; Setzstufen noch keine Angabe' : '';
             lines.push(
-                `Treppe netto: Trittstufen ${fmt(stairs.treadArea, 2)} m²${riserPart} = ${fmt(stairs.total, 2)} m² (ohne Verschnitt)`
+                `Treppe netto: Trittstufen ${fmt(stairs.treadArea, 2)} m²${riserPart} = ${fmt(stairs.total, 2)} m² (ohne Verschnitt)${offen}`
             );
         } else {
             lines.push(`Treppe: Menge beim Aufmaß (${stairs.reason})`);
@@ -386,41 +401,42 @@ export function useFliesenKonfigurator({ area, substrate, format, material, floo
         const presetSubstrates = (Array.isArray(substrate) ? substrate : substrate ? [substrate] : []).filter((s) =>
             SUBSTRATE_OPTIONS.some((o) => o.id === s)
         );
-        const presetMaterial = MATERIAL_OPTIONS.some((o) => o.id === material) ? material : 'offen';
+        // G8: Ohne Vorgabe der Seite ist nichts gewählt (leer). Vorgaben der Seite (Props) bleiben als Voreinstellung.
+        const presetMaterial = MATERIAL_OPTIONS.some((o) => o.id === material) ? material : '';
         const presetFormat = FORMAT_OPTIONS.some((o) => o.id === format)
             ? format
             : presetMaterial === 'holzoptik'
                 ? 'dielen'
-                : 'offen';
+                : '';
         return {
             rooms: presetRooms,
             substrates: presetSubstrates,
-            floorHeating: floorHeating === true ? 'ja' : floorHeating === false ? 'nein' : 'unklar',
-            removal: presetSubstrates.includes('altfliesen') ? 'unklar' : 'nein',
-            wetArea: 'nein',
+            floorHeating: floorHeating === true ? 'ja' : floorHeating === false ? 'nein' : '',
+            removal: '',
+            wetArea: '',
             // `as string` nur für den Typprüfer: `some(…)` sichert, dass ein vorgegebener Wert existiert.
             format: presetFormat as string,
             material: presetMaterial as string,
-            pattern: presetMaterial === 'holzoptik' ? 'verband' : 'offen',
-            area: '20',
+            pattern: presetMaterial === 'holzoptik' ? 'verband' : '',
+            area: '',
             skirting: '',
-            stairLocation: 'innen',
-            stairShape: 'gerade',
-            stairType: 'massiv',
-            stairCovering: 'offen',
+            stairLocation: '',
+            stairShape: '',
+            stairType: '',
+            stairCovering: '',
             stairRises: '',
-            risersOn: 'ja',
+            risersOn: '',
             risersCount: '',
             treadsCount: '',
             stairWidth: '',
             treadDepth: '',
             riserHeight: '',
-            stairSkirting: 'ja',
+            stairSkirting: '',
             name: '',
             phone: '',
             email: '',
             zipCity: '',
-            timing: TIMING_OPTIONS[1],
+            timing: '',
             notes: '',
             privacyConsent: false
         };
@@ -451,12 +467,12 @@ export function useFliesenKonfigurator({ area, substrate, format, material, floo
             'Materialbedarf (Richtwert, unverbindlich):',
             ...quantities.map((q) => `- ${q}`),
             '',
-            `Ort: ${data.zipCity || 'Nicht angegeben'}`,
-            `Gewünschter Zeitraum: ${data.timing}`,
+            `Ort: ${data.zipCity || 'Keine Angabe'}`,
+            `Gewünschter Zeitraum: ${data.timing || 'Keine Angabe'}`,
             '',
             `Name: ${data.name}`,
             `Telefon: ${data.phone}`,
-            `E-Mail: ${data.email || 'Nicht angegeben'}`,
+            `E-Mail: ${data.email || 'Keine Angabe'}`,
             ...(data.notes ? ['', `Notiz: ${data.notes}`] : []),
             '',
             'Bitte melden Sie sich wegen eines kostenfreien Vor-Ort-Aufmaßes. Vielen Dank!'
@@ -486,6 +502,10 @@ export function useFliesenKonfigurator({ area, substrate, format, material, floo
         const roomsText = data.rooms.map((id) => labelOf(ROOM_OPTIONS, id)).join(', ') || 'Fliesenprojekt';
         const roomLabels = data.rooms.map((id) => labelOf(ROOM_OPTIONS, id));
         const substrateLabels = (data.substrates || []).map((id) => labelOf(SUBSTRATE_OPTIONS, id));
+        const formatLabel = data.format ? `(${labelOf(FORMAT_OPTIONS, data.format)})` : '';
+        const tileTypeLabel = [wahlOf(MATERIAL_OPTIONS, data.material), formatLabel].filter(Boolean).join(' ');
+        const removalLabel = data.removal === 'ja' ? 'Ja, Altbelag entfernen' : data.removal === 'nein' ? 'Nein, nicht erforderlich' : data.removal === 'unklar' ? 'Unklar / vor Ort prüfen' : 'Keine Angabe';
+        const underfloorHeatingLabel = data.floorHeating === 'ja' ? 'Ja, vorhanden/geplant' : wahlOf(YES_NO_UNSURE, data.floorHeating);
 
         try {
             const res = await fetch('/api/anfrage', {
@@ -506,19 +526,19 @@ export function useFliesenKonfigurator({ area, substrate, format, material, floo
                         rooms: data.rooms,
                         roomLabels,
                         sqm: data.area || undefined,
-                        substrate: data.substrates?.join(', '),
-                        substrateLabel: substrateLabels.join(', ') || 'Nicht angegeben',
-                        tileType: data.material,
-                        tileTypeLabel: `${labelOf(MATERIAL_OPTIONS, data.material)} (${labelOf(FORMAT_OPTIONS, data.format)})`,
-                        removal: data.removal,
-                        removalLabel: data.removal === 'ja' ? 'Ja, Altbelag entfernen' : data.removal === 'nein' ? 'Nein, nicht erforderlich' : 'Unklar / vor Ort prüfen',
-                        underfloorHeating: data.floorHeating,
-                        underfloorHeatingLabel: data.floorHeating === 'ja' ? 'Ja, vorhanden/geplant' : 'Nein',
-                        timing: data.timing,
-                        timingLabel: data.timing
+                        substrate: data.substrates?.join(', ') || undefined,
+                        substrateLabel: substrateLabels.join(', ') || 'Keine Angabe',
+                        tileType: data.material || undefined,
+                        tileTypeLabel,
+                        removal: data.removal || undefined,
+                        removalLabel,
+                        underfloorHeating: data.floorHeating || undefined,
+                        underfloorHeatingLabel,
+                        timing: data.timing || undefined,
+                        timingLabel: data.timing || 'Keine Angabe'
                     },
-                    timing: data.timing,
-                    area: `${data.area || '20'} m²`,
+                    timing: data.timing || undefined,
+                    area: data.area ? `${data.area} m²` : undefined,
                     notes: data.notes || undefined
                 })
             });
@@ -553,7 +573,7 @@ export function useFliesenKonfigurator({ area, substrate, format, material, floo
     };
 
     // Bisher inline am Flächen-Schieberegler (Schritt 3, value): Eingabe auf ganze m² zwischen 1 und 150 begrenzt.
-    const areaRangeValue = Math.min(Math.max(Math.round(parseNumber(data.area)) || 1, 1), 150);
+    const areaRangeValue = reglerWert(data.area);
 
     // Bisher in der Erfolgsansicht (online) berechnet: Bereiche als Text.
     const roomsText = data.rooms.map((id) => labelOf(ROOM_OPTIONS, id)).join(', ') || 'Fliesenprojekt';
