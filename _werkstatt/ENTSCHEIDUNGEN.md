@@ -532,3 +532,34 @@ Pakete E0-PRUEF-01, -02a bis -02d und die unabhängige Abnahme E0-PRUEF-02-PA si
   - Nächster Schritt ist E4-W0-LEISTUNG-3 (`pakete/E4-W0-LEISTUNG-3.md`): Bytes vor dem LCP senken ohne Verhaltensänderung. Kandidaten sind das Logo in zweiter Größe, schmalere Importe in den frühen Skriptstücken und Archivo als Teilmenge mit beiden Achsen. Die Schrift-Teilmenge ist jetzt möglich, weil fonttools und brotli im Scratchpad-venv wieder bereitstehen, wie in E0.
   - Reihenfolge: erst die Browserprüfung der Welle am Reinraum, dann LEISTUNG-3, damit sich Messungen und Prüfungen nicht gegenseitig stören.
 
+## E-065 · Browserprüfung der Welle E4-W0 und Welle E4-W1-SICHT (26.10.2026, Orchestrator)
+- **Prüfung** am Reinraum cc7af669 (wf_e84975af-42f, Ablage `$SCRATCH/e4w0-browser`):
+  - Funktionssuite 369 bestanden, 0 rot, 27 übersprungen.
+  - Einzelbilder der 13 geänderten Seiten (m390 und d1440 bei 100 %, m390 bei 200 %) ohne Überlauf, Überlappung und Konsolenfehler.
+  - Lesbarkeit: rot nur durch die Ausnahmen A-1 und A-2 (Wortlaut des Auftraggebers), Bindestrichwörter in Alt-Texten und `/preise`.
+  - Sichtprüfung: je Seite ein Juror, je Befund ein Widerleger. 84 Befunde. Die Widerleger brachen beim ersten Lauf am Sitzungslimit ab und wurden mit resumeFromRunId zu Ende geführt.
+- **Behoben, gemeinsame Bausteine** (17b20927, 861b961a):
+  - Bewertungszeile: der Mittelpunkt hängt am Wort davor, keine Zeile beginnt mit „·“.
+  - Zitate trennen lange Wörter mit Strich (ab 12 Zeichen). Bisher brachen sie mitten im Wort oder setzten ein Komma an den Zeilenanfang. Das Trennverbot im Zitat aus Runde 4 entfällt; der Wortlaut bleibt Zeichen für Zeichen gleich (G8).
+  - Weiter-Link hält letztes Wort und Pfeil zusammen.
+  - Hörer und WhatsApp-Zeichen stehen schmal mittig über dem Text.
+  - E-Mail bricht nach dem @, die Straße wird getrennt.
+  - Absätze in Lage und Tun fluchten mit den Listen. `max-w-mass` misst in ch der eigenen Schrift; ein Absatz in fs-4 stand rund 300 px breiter.
+  - Einzelne Karussellkarten ohne leere Fläche. Zwei Fotos im Beleg in zwei Spalten, kein Link auf die eigene Seite.
+  - Seitenindex im Fuß als Spaltensatz, das Laufband im Ruhezustand als Raster.
+  - Knöpfe und Auswahlkarten trennen lange Wörter und haben schmal weniger Innenabstand. Felder behalten rechts Platz für Pfeil und Lupe. Trennregel 12/5/5 für die ganze Seite.
+- **Behoben, Fotos und Texte** (17b20927, ad4ec1db):
+  - Einstieg `/leistungen` ohne Eckschiene neu zugeschnitten, Beleg `/fliesen` enger zugeschnitten (weniger Weitwinkel).
+  - Wanne mit Herstelleraufkleber und Duschnische ohne Armatur entfallen. `/bad/barrierefreies-bad` zeigt zwei Duschen, `/blog` kein Foto.
+  - Überschriften nach dem, was die Fotos zeigen: „So sehen unsere Bäder aus, fertig und während der Arbeit.“, „Duschen, die wir gebaut haben.“, „Drei Arbeiten von uns.“
+  - Alt-Texte ohne Bindestrichwörter.
+  - Verband auf `/fliesen`: Halbverband und Fischgrät als Ausschnitte nur des Musters. Die Rückfrage zu Fliesenkompositionen entfällt.
+  - Einsatzkarte mit Legende (eigene Zeichen für Firmensitz, Orte, Ringe), auch ohne Ortsliste. Bei großer Schrift keine Ringmaße über den Punkten.
+  - `/ueber-uns` ohne verwaisten Weg unter der Karte.
+- **Formulare** (Paket E4-W1-FORMULARE, Briefing `pakete/E4-W1-FORMULARE.md`, wf_26f4aa3e-0be):
+  - Badanfrage, Projektcheck, Konfigurator, Anfrage in drei Schritten, Preisrechner und `/preise` bei 200 % ohne Wortbrüche und Ein-Wort-Knöpfe.
+  - Vorauswahlen entfallen, ohne neues Pflichtfeld: Ohne Wahl geht „keine Angabe“ mit; Pflicht bleibt nur, was sichtbar als Pflicht markiert ist (M-24, Nachtrag).
+- **Nicht geändert:**
+  - H1 „Perfektion auf jedem Quadratmeter.“ und „Ihr neues Traumbad zum Festpreis.“ (Ausnahmen A-1 und A-2).
+  - Cookie-Hinweis und Schloss-Zeichen der unteren Leiste (G8, Rückfrage M-28).
+

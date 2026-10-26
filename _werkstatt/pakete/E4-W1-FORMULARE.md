@@ -15,9 +15,12 @@ Herkunft: Browserprüfung der Welle E4-W0 am Reinraum cc7af669 (wf_e84975af-42f,
 ## Regeln für alle Pakete
 - Nur die Dateien des eigenen Pakets ändern (Liste je Paket). Die Spec des eigenen Formulars unter `_werkstatt/werkzeuge/tests/` gehört zum Paket. Gemeinsame Dateien (`src/components/kern/**`, `src/app/globals.css`, `bewegung.css`, `src/config/**`, `src/lib/email/**`, Testkonfiguration) nicht anfassen; wenn sie nötig wären, im Bericht vorschlagen.
 - G8:
-  - Pflichtfelder und Empfänger der Formulare bleiben unverändert.
-  - Was Pflicht ist, bestimmt die Validierung im Formular (Sternchen, `required`, Fehlertexte) und serverseitig `src/lib/email/validation.ts`. Serverseitig ist nur der Kontakt Pflicht, alle Details sind optional.
-  - Ein Feld ohne Vorauswahl bleibt so Pflicht oder frei wie vorher. War es Pflicht, muss die Besucherin jetzt selbst wählen: Der Weiter-Knopf zeigt dann wie bei jedem Pflichtfeld den Fehlertext, statt still die Vorauswahl zu schicken.
+  - Pflichtfelder und Empfänger der Formulare bleiben unverändert. Es entsteht kein neues Pflichtfeld (MENSCHEN M-24).
+  - Serverseitig (`src/lib/email/validation.ts`) ist nur der Kontakt Pflicht, alle Details sind optional; daran ändert sich nichts.
+  - Für jedes Feld, dessen Vorauswahl entfällt:
+    - Ist es sichtbar als Pflicht markiert (Sternchen, „erforderlich“, `required`), muss die Besucherin selbst wählen. Der Weiter-Knopf zeigt dann den Fehlertext des Feldes.
+    - Ist es nicht als Pflicht markiert, geht es ohne Wahl weiter. Der Weiter-Knopf ist nicht gesperrt, Zusammenfassung und Nachricht nennen das Feld „keine Angabe“ oder lassen es weg.
+    - Im Zweifel ist ein Feld nicht Pflicht.
 - G5: keine echten Sendungen; die Specs fangen Ziele ab.
 - G7: keine Prüfung lockern; eine Spec, die die alte Vorauswahl erwartet, wird auf das neue Verhalten umgeschrieben, nicht übersprungen.
 - Texte in Alltagssprache (K-010): kurz, ohne Gedankenstrich, ohne Bindestrichwörter, wo es geht. Neue Texte versprechen keine Fristen (M-07).
@@ -49,7 +52,7 @@ Herkunft: Browserprüfung der Welle E4-W0 am Reinraum cc7af669 (wf_e84975af-42f,
 - Befunde:
   1. Schritt 1, Kacheln „Um welche Art von Immobilie …“: „Einfamilie|nhaus“, „Eigentum|swohnun|g“, „Mehrfamil|ienhaus“, „Hausverwaltu|ng“ ohne Strich. Ursache: `kachelInhaltClass` mit `wrap-break-word` ohne Trennung, schmale Spalte. Ziel: Trennung mit Strich (`hyphens-auto`). Bei schmalem Container eine Spalte und weniger Innenabstand der Kachel, wenn nötig.
   2. Knopf „Weiter zu Schritt 2“ auf vier Zeilen, die „2“ allein. Ziel: höchstens zwei Zeilen, nie eine Ziffer allein (geschütztes Leerzeichen zwischen „Schritt“ und Zahl).
-  3. „Einfamilienhaus“ ist beim Laden gewählt (`objectType: 'efh'` in `useBadanfrage.ts`). Ziel: keine Vorauswahl. Pflicht bleibt Pflicht (siehe Regeln). Die Zusammenfassung und die Nachricht nennen ungewählte freie Felder „keine Angabe“.
+  3. „Einfamilienhaus“ ist beim Laden gewählt (`objectType: 'efh'` in `useBadanfrage.ts`). Ziel: keine Vorauswahl nach den Regeln oben (kein neues Pflichtfeld: ohne Sternchen geht es ohne Wahl weiter). Die Zusammenfassung und die Nachricht nennen ungewählte freie Felder „keine Angabe“.
 
 ### F2 · Projektcheck fürs Bad (BadProjektCheck)
 - Seite: `/bad`.
@@ -88,7 +91,7 @@ Herkunft: Browserprüfung der Welle E4-W0 am Reinraum cc7af669 (wf_e84975af-42f,
   - Spec `tests/funktion-express-funnel.spec.mjs`
 - Befunde:
   1. Knopf „Weiter zu Schritt 2: Fläche und Ort“ bei 200 % in sieben Zeilen, ein Wort je Zeile, der Pfeil hängt mittendrin. Ursache: Rand der Seite, Kartenrahmen und Innenabstand lassen nur rund 228 px bzw. 110 px. Ziel: höchstens drei Zeilen, Pfeil hinter dem letzten Wort oder darüber, Text als Satz lesbar.
-  2. Kachel „Bad & Wellness“ ist beim Laden gewählt (`useState('bad')`). Ziel: keine Vorauswahl, wie F1 Punkt 3.
+  2. Kachel „Bad & Wellness“ ist beim Laden gewählt (`useState('bad')`). Ziel: keine Vorauswahl, wie F1 Punkt 3. Das Feld ist nicht als Pflicht markiert (MENSCHEN M-24), also geht es ohne Wahl weiter, und die Anfrage nennt das Thema „keine Angabe“.
 
 ### F5 · Preisrechner und Seite `/preise`
 - Seite: `/preise`.
