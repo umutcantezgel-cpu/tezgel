@@ -566,6 +566,13 @@ Pakete E0-PRUEF-01, -02a bis -02d und die unabhängige Abnahme E0-PRUEF-02-PA si
 - **Formulare** (Paket E4-W1-FORMULARE, Briefing `pakete/E4-W1-FORMULARE.md`, wf_26f4aa3e-0be):
   - Badanfrage, Projektcheck, Konfigurator, Anfrage in drei Schritten, Preisrechner und `/preise` bei 200 % ohne Wortbrüche und Ein-Wort-Knöpfe.
   - Vorauswahlen entfallen, ohne neues Pflichtfeld: Ohne Wahl geht „keine Angabe“ mit; Pflicht bleibt nur, was sichtbar als Pflicht markiert ist (M-24, Nachtrag).
+  - Nachprüfung je Paket durch einen unabhängigen Prüfer: F2 bestanden; F1, F3, F4 und F5 mit Mängeln der Schwere mittel. Der Orchestrator hat sie nachgearbeitet (b4492f71, c67a206d, 531a6feb):
+    - Badanfrage: „Personen im Haushalt“ als Auswahlkarten; die Liste schnitt bei 200 % „Bitte auswählen“ ab.
+    - Konfigurator: Nassbereich, Muster, Sockel und Treppe gingen online nie mit (schon vor der Welle). Sie stehen jetzt in den Anmerkungen hinter der Notiz. Die Erfolgsansicht verspricht keine Materialschätzung mehr.
+    - Keine Werte, die niemand gewählt hat: Fehlt der Ort, setzt der Server „keine Angabe“ statt „Aßlar / Wetzlar / Hessen“. Das Startseiten-Formular schickt ohne Wahl kein Vorhaben, keine Fläche und keinen Zeitraum mehr. Empfänger und Betreffpräfix bleiben (G8).
+    - „Anfrage verbindlich absenden“ heißt „Anfrage absenden“; die Anfrage ist kostenlos und unverbindlich, und das Wort „verbindlich“ hätte P1 verunsichert.
+    - `/preise`: Absende-Knopf bei 200 % in zwei Zeilen (weniger Innenabstand nur bei großer Schrift). Der Satz zur Pflegekasse lautet „Bei Umbauten im Bad für mehr Barrierefreiheit gewährt die Pflegekasse zudem bis zu 4.180 € Zuschuss pro pflegebedürftiger Person.“ Betrag, Kasse und Bezug bleiben; gefördert wird der Umbau, nicht das Bad. Der frühere Satz „Bei barrierefreien Bädern …“ hätte das Fachwort ohne Erklärung gebraucht.
+  - Gemeinsam mit dem Projektcheck bleibt: Das Gewerk im Preisrechner ist sichtbar als „Auswahl erforderlich“ markiert und bleibt Pflicht. Ohne Wahl erscheint jetzt der Fehlertext, statt still „Badsanierung“ zu senden.
 - **Nicht geändert:**
   - H1 „Perfektion auf jedem Quadratmeter.“ und „Ihr neues Traumbad zum Festpreis.“ (Ausnahmen A-1 und A-2).
   - Cookie-Hinweis und Schloss-Zeichen der unteren Leiste (G8, Rückfrage M-28).
