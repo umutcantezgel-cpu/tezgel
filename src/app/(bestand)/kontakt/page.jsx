@@ -47,7 +47,7 @@ const INHALT = {
   // ohne eingebettete Karte und ohne Einwilligung.
   'standort-anfahrt': (
     <div className="mx-auto max-w-mass">
-      <Einsatzkarte unterschrift="Die Ringe zeigen 10 und 25 km ab Aßlar." liste={false} />
+      <Einsatzkarte liste={false} />
       <div className="mt-8 flex flex-col items-start gap-6">
         <Knopf href={COMPANY_DATA.headquarters.mapsUrl} extern variante="neben" icon="pfeil-rechts">
           Route planen

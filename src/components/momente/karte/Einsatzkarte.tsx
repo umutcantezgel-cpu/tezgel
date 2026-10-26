@@ -5,8 +5,9 @@
 // Bewegung (bewegung.css, Block „karte“): beim Eintritt (Sicht 0,4) legen sich die Ringe von innen nach außen an ihren Platz, die
 // Punkte jeder Zone erscheinen mit ihrem Ring. Aßlar, Achsen, Raster und alle Beschriftungen stehen ab dem ersten Bild;
 // reduziert, ohne JavaScript und im Druck steht die Karte fertig. Beschriftungen in HTML (wachsen mit der Systemschrift), Lage
-// über --x und --y (Klasse karte-marke, globals.css); unter 16rem Flächenbreite (große Schrift) bleiben nur Aßlar und die Ringe.
-// Serverkomponente.
+// über --x und --y (Klasse karte-marke, globals.css); unter 16rem Flächenbreite (große Schrift) bleiben nur Aßlar und die
+// Zeichnung, Namen und Ringmaße entfallen (sie verdeckten dort Punkte). Die Legende unter der Zeichnung erklärt Firmensitz,
+// Punkte und Ringe mit eigenen Zeichen, auch ohne Ortsliste (/kontakt, Browserprüfung E4-W0, E-065). Serverkomponente.
 import type { CSSProperties } from 'react';
 import Link from 'next/link';
 import clsx from 'clsx';
@@ -55,6 +56,33 @@ export interface EinsatzkarteProps {
   className?: string;
 }
 
+/** Legende mit je eigenem Zeichen: das Ringzeichen (zwei Kreise) ist ein anderes als die Ortspunkte, sonst hielt man die
+ *  kleinen leeren Kreise der Zeichnung für die „Ringe“ (Browserprüfung E4-W0, E-065) */
+function Legende() {
+  return (
+    <ul className="flex flex-col gap-2 font-text text-fs-2 text-tinte">
+      <li className="flex items-center gap-3">
+        <Fugenkreuz className="size-4 shrink-0 text-laser" />
+        <span>Firmensitz Aßlar</span>
+      </li>
+      <li className="flex items-center gap-3">
+        <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" className="size-4 shrink-0 text-tinte" stroke="currentColor" strokeWidth="1.5">
+          <circle cx="4.5" cy="8" r="3" className="fill-current" vectorEffect="non-scaling-stroke" />
+          <circle cx="12" cy="8" r="2.5" className="fill-fliese" vectorEffect="non-scaling-stroke" />
+        </svg>
+        <span>Jeder Punkt ist ein Ort, in dem wir arbeiten.</span>
+      </li>
+      <li className="flex items-center gap-3">
+        <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" className="size-4 shrink-0 text-tinte-2" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <circle cx="8" cy="8" r="7" vectorEffect="non-scaling-stroke" />
+          <circle cx="8" cy="8" r="3.5" vectorEffect="non-scaling-stroke" />
+        </svg>
+        <span>Die Ringe zeigen 10 und 25 km ab Aßlar.</span>
+      </li>
+    </ul>
+  );
+}
+
 export default function Einsatzkarte({ unterschrift, beschriftet, aktuell, liste = true, verweis, className }: EinsatzkarteProps) {
   const namen = new Set<string>([...(beschriftet ?? (aktuell ? [] : STANDARD_BESCHRIFTET)), ...(aktuell ? [aktuell] : [])]);
   const zeichnung = (
@@ -87,7 +115,7 @@ export default function Einsatzkarte({ unterschrift, beschriftet, aktuell, liste
         <span className="block bg-fliese px-1 font-text text-fs-2 font-semibold whitespace-nowrap text-tinte">Aßlar</span>
       </span>
       {RINGE_KM.map((km) => (
-        <span key={km} aria-hidden="true" className="karte-marke -translate-1/2" style={lage(0, radius(km))}>
+        <span key={km} aria-hidden="true" className="karte-marke -translate-1/2 @max-3xs:hidden" style={lage(0, radius(km))}>
           <span className="block bg-fliese px-1 font-mono text-fs-1 whitespace-nowrap text-tinte-2">{`${km} km`}</span>
         </span>
       ))}
@@ -111,18 +139,7 @@ export default function Einsatzkarte({ unterschrift, beschriftet, aktuell, liste
             <div className="mx-auto w-full max-w-md lg:w-1/2 lg:max-w-full">{zeichnung}</div>
           </div>
           <div className="mx-auto flex max-w-mass flex-col gap-6 p-4 lg:p-8">
-            <ul className="flex flex-col gap-2 font-text text-fs-2 text-tinte">
-              <li className="flex items-center gap-2">
-                <Fugenkreuz className="size-3 text-laser" />
-                <span>Firmensitz Aßlar</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false" className="size-3 shrink-0 text-tinte-2" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <circle cx="6" cy="6" r="5" vectorEffect="non-scaling-stroke" />
-                </svg>
-                <span>Die Ringe zeigen 10 und 25 km ab Aßlar.</span>
-              </li>
-            </ul>
+            <Legende />
             {GRUPPEN.filter((g) => g.orte.length > 0).map(({ zone, orte }) => (
               <div key={zone.id}>
                 <h3 className="font-text text-fs-2 font-semibold text-tinte-2">{zusammen(GRUPPE_NAME[zone.id])}</h3>
@@ -156,7 +173,14 @@ export default function Einsatzkarte({ unterschrift, beschriftet, aktuell, liste
           </div>
         </div>
       ) : (
-        zeichnung
+        <div>
+          <div className="border-b border-fuge">
+            <div className="mx-auto w-full max-w-md lg:w-1/2 lg:max-w-full">{zeichnung}</div>
+          </div>
+          <div className="mx-auto max-w-mass p-4 lg:p-8">
+            <Legende />
+          </div>
+        </div>
       )}
     </figure>
   );

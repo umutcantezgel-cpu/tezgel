@@ -27,7 +27,7 @@
 - Adresse unseres Betriebs: `{{COMPANY_DATA.address.fullAddress}}` (K-015 F-03)
 - Satz: `Seit 2008 sind wir als Handwerksbetrieb bei der Handwerkskammer Wiesbaden eingetragen.` (K-015 F-05, F-06)
 - Einsatzgebiet: `Wir arbeiten in Aßlar, Wetzlar, Gießen, Herborn und Dillenburg.` (K-015 F-09)
-- Anfahrt (E4-W0-KONTAKT, E-062): `Von Aßlar aus kommen wir zu Ihnen nach Hause.` Darunter die gezeichnete Einsatzkarte mit der Zeile `Die Ringe zeigen 10 und 25 km ab Aßlar.`, der Knopf `Route planen` (Kartenlink des Bestands, ohne Einbettung) und der Link `Alle Orte ansehen` → `/standorte`. Die Google-Karte mit Einwilligung (F-12) steht nur noch auf `/standorte`.
+- Anfahrt (E4-W0-KONTAKT, E-062): `Von Aßlar aus kommen wir zu Ihnen nach Hause.` Darunter die gezeichnete Einsatzkarte mit Legende (E-065: `Firmensitz Aßlar`, `Jeder Punkt ist ein Ort, in dem wir arbeiten.`, `Die Ringe zeigen 10 und 25 km ab Aßlar.`), der Knopf `Route planen` (Kartenlink des Bestands, ohne Einbettung) und der Link `Alle Orte ansehen` → `/standorte`. Die Google-Karte mit Einwilligung (F-12) steht nur noch auf `/standorte`.
 - Öffnungszeiten: Etikett `Öffnungszeiten`, Zeilen aus den Tageswerten (oeffnungszeilen): `Mo bis Do 7:30 bis 18 Uhr` · `Fr 7:30 bis 17 Uhr` · `Sa nach Vereinbarung` (K-015 F-07; wie im Fuß, M-03 offen: company.js:128 sagt 18 Uhr)
 - Bild: entfällt (E-062, das Treppenfoto hatte keinen Bezug zum Kontakt; E3-SICHT).
 

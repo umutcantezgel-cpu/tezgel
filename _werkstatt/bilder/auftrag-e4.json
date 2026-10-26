@@ -594,5 +594,51 @@
     ],
     "alt": "Landhausbad mit Wanne unter weißen Fliesen und einem Holzregal",
     "korrektur": false
+  },
+  {
+    "id": "fliesen-halbverband",
+    "original": "IMG_2544.PNG",
+    "raum": "balkon-und-terrasse",
+    "name": "balkon-anthrazit-halbverband-ausschnitt",
+    "format": "3:2",
+    "schwerpunkt": {
+      "x": 43.5985,
+      "y": 68.5844
+    },
+    "ausschnitt": {
+      "links": 7.5758,
+      "oben": 57.5314,
+      "rechts": 20.3788,
+      "unten": 20.3626
+    },
+    "breiten": [
+      480,
+      951
+    ],
+    "alt": "Ausschnitt eines Balkonbodens mit anthrazitfarbenen Rechteckfliesen, jede Reihe um eine halbe Fliese versetzt",
+    "korrektur": true
+  },
+  {
+    "id": "fliesen-fischgraet",
+    "original": "IMG_2563.PNG",
+    "raum": "bad",
+    "name": "gruene-fliesen-fischgraet-ausschnitt",
+    "format": "3:2",
+    "schwerpunkt": {
+      "x": 59.2424,
+      "y": 70.8856
+    },
+    "ausschnitt": {
+      "links": 37.8788,
+      "oben": 64.3305,
+      "rechts": 19.3939,
+      "unten": 22.5593
+    },
+    "breiten": [
+      480,
+      564
+    ],
+    "alt": "Ausschnitt einer Wand mit grünen Rechteckfliesen im Fischgrätmuster",
+    "korrektur": true
   }
 ]

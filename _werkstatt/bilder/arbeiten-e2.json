@@ -172,21 +172,21 @@
   },
   {
     "id": "fliesen-fischgraet",
-    "src": "/images/arbeiten/bad/fischgraet-gruene-fliesen-nische.jpg",
-    "breite": 800,
-    "hoehe": 1000,
-    "alt": "Grüne Fliesen im Fischgrätmuster an einer Wand mit großer Nische",
+    "src": "/images/arbeiten/bad/gruene-fliesen-fischgraet-ausschnitt.jpg",
+    "breite": 564,
+    "hoehe": 376,
+    "alt": "Ausschnitt einer Wand mit grünen Rechteckfliesen im Fischgrätmuster",
     "raum": "bad",
-    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADQAwCdASoQABQAPu1iqk2ppaQiMAgBMB2JZwDE2BhvbQqPAJR79AAA/tp8j2GwIxKbefswLbHA1jdAuOf/wDI3pCNrM68dgJjh+x6Nxxzo6CBxsGvTjloAAAA="
+    "blurDataURL": "data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAABQAQCdASoQAAsAA4BaJaQAAVpwAP6g3ohS51Gv10KJfWYNO6BgAA=="
   },
   {
     "id": "fliesen-halbverband",
-    "src": "/images/arbeiten/balkon-und-terrasse/balkon-anthrazit-fliesen-versetzt.jpg",
-    "breite": 800,
-    "hoehe": 1000,
-    "alt": "Balkon mit dunklen Rechteckfliesen, die versetzt verlegt sind",
+    "src": "/images/arbeiten/balkon-und-terrasse/balkon-anthrazit-halbverband-ausschnitt.jpg",
+    "breite": 951,
+    "hoehe": 634,
+    "alt": "Ausschnitt eines Balkonbodens mit anthrazitfarbenen Rechteckfliesen, jede Reihe um eine halbe Fliese versetzt",
     "raum": "balkon-und-terrasse",
-    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JaQAAXuwQTTP+mJWkRAD+7WuOS9LfeXBR7XVxwkKQQes0dCNB5fyxgvjEufhwAAA="
+    "blurDataURL": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAABwAQCdASoQAAsAA4BaJaQAAOqGAADNUoCUFr/u2KBl3XjdH0mCldeWK8AAAA=="
   },
   {
     "id": "balkon-beleg-2",

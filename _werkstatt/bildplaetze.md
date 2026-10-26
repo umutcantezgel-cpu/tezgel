@@ -149,3 +149,4 @@ Geht den Zeilen oben vor. Ziel: kein Foto doppelt auf den zwölf Hauptansichten 
 - `/bad/barrierefreies-bad` Beleg: `barrierefrei-beleg-1` und `bad-beleg-4` (bodengleiche Dusche, vorher auf `/bad`); `/bad` zeigt `bad-beleg-1` bis `-3`.
 - `/blog` ohne Foto im Beleg.
 - Alt-Texte ohne Bindestrichwörter („WC an der Wand“, „blauen und beigen“).
+- `/fliesen` Verband: `fliesen-halbverband` (IMG_2544, x 100, y 1650, 951 × 634, 3:2) und `fliesen-fischgraet` (IMG_2563, x 500, y 1845, 564 × 376, 3:2) als Ausschnitte nur des Musters; die Baustelle (offene Nische, Stutzen, Kappen) und das Gerüst liegen außerhalb. Die Rückfrage zu Fliesenkompositionen entfällt damit.

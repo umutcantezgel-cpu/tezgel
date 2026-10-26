@@ -51,7 +51,7 @@
 - Kennzeile: `5,0 von 5 Sternen · 27 Bewertungen bei Google · Stand September 2026`
 - Absatz (Motto): `Unser Motto: „Die Zufriedenheit unserer Kunden ist die beste Reklame für uns.“`
 - Großer Moment `karte`: Einsatzkarte mit Aßlar in der Mitte (Zeichnung, kein Foto). Unterschrift: `Von Aßlar aus arbeiten wir in Wetzlar, Gießen und Herborn.`
-- Link: `Alle Orte ansehen` → `/standorte` · Link: `Alle Arbeiten ansehen` → `/referenzen`
+- Link: `Alle Orte ansehen` → `/standorte` (der Link „Alle Arbeiten ansehen“ entfällt, E-065: ohne Fotos darüber stand er ohne Bezug)
 
 ## 6 · Nächster Schritt
 - H2: `Bitten Sie um einen Termin vor Ort.`

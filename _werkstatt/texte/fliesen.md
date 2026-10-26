@@ -33,10 +33,10 @@
 - Absatz: `Wie die Fliesen angeordnet sind, bestimmt, wie eine Fläche wirkt. Hier sind vier Muster zum Ausprobieren.`
   - `Kreuzfuge: Die Fugen laufen gerade durch, in Reihen und Spalten wie ein Gitter. Gut passt das in Räume mit klaren Linien.`
   - `Halbverband: Jede zweite Reihe ist um eine halbe Fliese versetzt. Gut passt das in Wohnräume und auf den Balkon.`
-    - Foto `{Bild: fliesen-halbverband}` Alt: `Balkon mit dunklen Rechteckfliesen, die versetzt verlegt sind`
+    - Foto `{Bild: fliesen-halbverband}` Alt: `Ausschnitt eines Balkonbodens mit anthrazitfarbenen Rechteckfliesen, jede Reihe um eine halbe Fliese versetzt` (E-065: Ausschnitt 3:2 ohne Gerüst)
   - `Drittelverband: Jede Reihe ist um ein Drittel einer Fliese versetzt. Gut passt das zu großen Fliesen, die ruhig wirken sollen.`
   - `Fischgrät: Rechteckige Fliesen liegen im rechten Winkel zueinander, wie beim Holzparkett. Gut passt das an eine Wand mit Nische.`
-    - Foto `{Bild: fliesen-fischgraet}` Alt: `Grüne Fliesen im Fischgrätmuster an einer Wand mit großer Nische`
+    - Foto `{Bild: fliesen-fischgraet}` Alt: `Ausschnitt einer Wand mit grünen Rechteckfliesen im Fischgrätmuster` (E-065: Ausschnitt 3:2 unter den Anschlüssen, ohne offene Nische und Stutzen)
 - Formate und Technik (je ein Satz, mit Link):
   - `Großformate verlegen: Je größer die Fliese, desto ebener muss der Untergrund sein.` → `/fliesen/grossformat`
   - `Fliesen in Holzoptik: Sie sehen aus wie Holzdielen, sind aber Fliesen.` → `/fliesen/holzoptik`

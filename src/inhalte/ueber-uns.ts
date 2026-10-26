@@ -79,7 +79,8 @@ export const UEBER_UNS: ErzaehlInhalt = {
     // die beiden Stimmen der Textdatei zuerst, dann drei weitere aus REVIEWS, deren Wortlaut zum Betrieb passt (Regel 5)
     stimmen: ['christian-s', 'ute-t', 'thorsten-a', 'christian-d', 'k-d'],
     stimmenGross: true,
-    verweis: { name: 'Alle Arbeiten ansehen', href: '/referenzen' },
+    // kein Weg „Alle Arbeiten ansehen“ unter der Karte (E-065): ohne Fotos darüber stand er ohne Bezug; die Karte führt mit
+    // „Alle Orte ansehen“ weiter
   },
   schritt: {
     titel: 'Bitten Sie um einen Termin vor Ort.',
