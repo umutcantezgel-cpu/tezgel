@@ -29,7 +29,7 @@ export default function Schritt4({ selectedOptions, toggleOption }) {
                             <span className={markeClass(isSelected)}>
                                 {isSelected && <Icon name="haken" groesse={4} />}
                             </span>
-                            <span className="min-w-0 break-words">{anzeige(opt.label)}</span>
+                            <span className="min-w-0 hyphens-auto break-words">{anzeige(opt.label)}</span>
                         </button>
                     );
                 })}

@@ -10,9 +10,11 @@ export const nummerClass = 'mr-1 inline-flex size-6 items-center justify-center 
  *  umbrechen, statt über die Knopfkante zu ragen (F-05, Gutachten u5 Stolperstein Zoom) */
 export const einfachClass = `${wahlKlassen} min-w-0`;
 
-/** Mehrfachauswahl der Extras (aria-pressed): Ankreuzmarke wie „Rahmenbedingungen“ im Preisrechner, gewählt = Rahmen Tinte */
+/** Mehrfachauswahl der Extras (aria-pressed): Ankreuzmarke wie „Rahmenbedingungen“ im Preisrechner, gewählt = Rahmen Tinte.
+ *  E4-W1 (F2, E-065): schmal (Schrittspalte unter 20 rem) steht die Ankreuzmarke über dem Text, weniger Innenabstand, und
+ *  lange Wörter trennen sich mit Strich, statt mitten im Wort umzubrechen */
 export const extraClass =
-    'flex min-h-11 w-full min-w-0 items-center gap-3 border border-strich bg-fliese px-4 py-3 text-left font-text text-fs-2 font-semibold text-tinte hover:border-tinte aria-pressed:border-tinte';
+    'flex min-h-11 w-full min-w-0 items-center gap-3 border border-strich bg-fliese px-4 py-3 text-left font-text text-fs-2 font-semibold text-tinte hyphens-auto @max-xs:flex-col @max-xs:items-start @max-xs:gap-2 @max-xs:px-3 hover:border-tinte aria-pressed:border-tinte';
 
 /** Ankreuzmarke einer Extra-Auswahl: gewählt Tinte-Fläche mit Haken, sonst Strich-Rahmen */
 export const markeClass = (gewaehlt) =>
