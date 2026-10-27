@@ -97,6 +97,8 @@ async function aufnahmen(browser, base, geraet, seite) {
     await durchscrollen(page);
     await bereit(page);
     const hoehe = await page.evaluate(() => document.documentElement.scrollHeight);
+    // gebrochene Höhe: zeigt, wie nah die Seite an einer Rundungsgrenze liegt (1-px-Kipp /bad/barrierefreies-bad d1440, E-076)
+    const hoeheGenau = await page.evaluate(() => document.documentElement.getBoundingClientRect().height);
     const anzahl = Math.min(maxAusschnitte, Math.ceil(hoehe / v.height));
     const bilder = [];
     for (let k = 0; k < anzahl; k++) {
@@ -104,7 +106,7 @@ async function aufnahmen(browser, base, geraet, seite) {
       await rahmenAbwarten(page);
       bilder.push(await page.screenshot({ type: 'png', animations: 'disabled', caret: 'hide' }));
     }
-    return { status, hoehe, bilder, gesamt: Math.ceil(hoehe / v.height), vh: v.height };
+    return { status, hoehe, hoeheGenau, bilder, gesamt: Math.ceil(hoehe / v.height), vh: v.height };
   } finally {
     await context.close().catch(() => {}); // Schließfehler überdeckt sonst die eigentliche Ursache
   }
@@ -154,6 +156,7 @@ async function vergleichePaar(browser, seite, geraet) {
     ergebnis.status_vorher = a.status; ergebnis.status_nachher = n.status;
     ergebnis.hoehe_vorher = a.hoehe; ergebnis.hoehe_nachher = n.hoehe;
     ergebnis.hoehe_abweichend = a.hoehe !== n.hoehe;
+    ergebnis.hoehe_genau_vorher = a.hoeheGenau; ergebnis.hoehe_genau_nachher = n.hoeheGenau;
     const gemeinsam = Math.min(a.bilder.length, n.bilder.length);
     const dir = path.join(ziel, geraet, slug(seite));
     raeumeAlteDiffs(dir);
@@ -203,16 +206,23 @@ async function verbundenerBrowser() {
   }
   return neustart;
 }
+// Ein Paar darf den Lauf nicht anhalten: nach einem Absturz von Chromium hing der Wiederholungsversuch ohne Ende (UM-E2-B, Lauf hoehe-tausch-1).
+const PAAR_ZEITLIMIT_MS = 300_000;
+function mitZeitlimit(versprechen, { seite, geraet }) {
+  let uhr;
+  const zeit = new Promise((r) => { uhr = setTimeout(() => r({ seite, geraet, fehler: `Zeitüberschreitung nach ${PAAR_ZEITLIMIT_MS / 1000} s`, abweichend: true, summe_abweichend: 0, ausschnitte: [], wiederholt: false }), PAAR_ZEITLIMIT_MS); });
+  return Promise.race([versprechen, zeit]).finally(() => clearTimeout(uhr));
+}
 try {
   browser = await starteBrowser();
   let naechste = 0;
   const arbeiter = async () => {
     while (naechste < aufgaben.length) {
       const j = naechste++;
-      let p = await vergleichePaar(await verbundenerBrowser(), aufgaben[j].seite, aufgaben[j].geraet);
+      let p = await mitZeitlimit(vergleichePaar(await verbundenerBrowser(), aufgaben[j].seite, aufgaben[j].geraet), aufgaben[j]);
       if (p.fehler && !browser.isConnected()) {
         const erster = p.fehler;
-        p = await vergleichePaar(await verbundenerBrowser(), aufgaben[j].seite, aufgaben[j].geraet);
+        p = await mitZeitlimit(vergleichePaar(await verbundenerBrowser(), aufgaben[j].seite, aufgaben[j].geraet), aufgaben[j]);
         p.wiederholt = true;
         p.fehler_erster_versuch = erster;
       }
