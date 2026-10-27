@@ -1,208 +1,213 @@
 {
- "_kommentar": "Quelle: KERN v1, wird mit v2 angepasst. Erste Fassung nach Briefing E0-PRUEF-02d; der Orchestrator pflegt die Datei. Abweichung zum Briefing: schrift und kurven folgen dem Theme in src/app/globals.css und KERN v2 (font-text, font-anzeige, font-mono; ease-setzen, ease-laser, ease-weg, ease-linear). KERN v3 (E2-ORCH-01b): Farbe fliese-glanz, Kurve hammer; Schatten shadow-gesetzt und shadow-flug, Dauern --verlegen-gesamt, --verlegen-gesamt-folge, --verlegen-ruhig, --intro-gesamt nur als CSS-Variablen. KERN v4 (UM-E3-DS, E-075): Farbstufen in OKLCH (kalk-100/97/90/75, tinte-62/41/33/19, laser-95/57/47, abnahme-95/47) und Bedeutungen (fehler, fehler-flaeche, erfolg, erfolg-flaeche, rand, fokus); Dauern dauer-0 bis dauer-5; Kurven setzen, laser, weg, aufsetzen, linear, hammer (Alias von setzen).",
- "farben": [
-  "kalk",
-  "fliese",
-  "fliese-glanz",
-  "fuge",
-  "strich",
-  "tinte",
-  "tinte-2",
-  "laser",
-  "laser-tief",
-  "abnahme",
-  "nacht-2",
-  "nacht-fuge",
-  "kalk-100",
-  "kalk-97",
-  "kalk-90",
-  "kalk-75",
-  "tinte-62",
-  "tinte-41",
-  "tinte-33",
-  "tinte-19",
-  "laser-95",
-  "laser-57",
-  "laser-47",
-  "abnahme-95",
-  "abnahme-47",
-  "fehler",
-  "fehler-flaeche",
-  "erfolg",
-  "erfolg-flaeche",
-  "rand",
-  "fokus",
-  "white",
-  "transparent",
-  "current",
-  "inherit"
- ],
- "abstaende": {
-  "praefixe": [
-   "p",
-   "px",
-   "py",
-   "pt",
-   "pr",
-   "pb",
-   "pl",
-   "ps",
-   "pe",
-   "m",
-   "mx",
-   "my",
-   "mt",
-   "mr",
-   "mb",
-   "ml",
-   "ms",
-   "me",
-   "gap",
-   "gap-x",
-   "gap-y",
-   "space-x",
-   "space-y",
-   "inset",
-   "inset-x",
-   "inset-y",
-   "top",
-   "right",
-   "bottom",
-   "left",
-   "translate-x",
-   "translate-y",
-   "scroll-mt",
-   "scroll-pt"
+  "_kommentar": "Quelle: KERN v1, wird mit v2 angepasst. Erste Fassung nach Briefing E0-PRUEF-02d; der Orchestrator pflegt die Datei. Abweichung zum Briefing: schrift und kurven folgen dem Theme in src/app/globals.css und KERN v2 (font-text, font-anzeige, font-mono; ease-setzen, ease-laser, ease-weg, ease-linear). KERN v3 (E2-ORCH-01b): Farbe fliese-glanz, Kurve hammer; Schatten shadow-gesetzt und shadow-flug, Dauern --verlegen-gesamt, --verlegen-gesamt-folge, --verlegen-ruhig, --intro-gesamt nur als CSS-Variablen. KERN v4 (UM-E3-DS, E-075): Farbstufen in OKLCH (kalk-100/97/90/75, tinte-62/41/33/19, laser-95/57/47, abnahme-95/47) und Bedeutungen (fehler, fehler-flaeche, erfolg, erfolg-flaeche, rand, fokus); Dauern dauer-0 bis dauer-5; Kurven setzen, laser, weg, aufsetzen, linear, hammer (Alias von setzen).",
+  "farben": [
+    "kalk",
+    "fliese",
+    "fliese-glanz",
+    "fuge",
+    "strich",
+    "tinte",
+    "tinte-2",
+    "laser",
+    "laser-tief",
+    "abnahme",
+    "nacht-2",
+    "nacht-fuge",
+    "kalk-100",
+    "kalk-97",
+    "kalk-90",
+    "kalk-75",
+    "tinte-62",
+    "tinte-41",
+    "tinte-33",
+    "tinte-19",
+    "laser-95",
+    "laser-57",
+    "laser-47",
+    "abnahme-95",
+    "abnahme-47",
+    "fehler",
+    "fehler-flaeche",
+    "erfolg",
+    "erfolg-flaeche",
+    "rand",
+    "fokus",
+    "white",
+    "transparent",
+    "current",
+    "inherit"
   ],
-  "stufen": [
-   "0",
-   "px",
-   "1",
-   "2",
-   "3",
-   "4",
-   "6",
-   "8",
-   "12",
-   "16",
-   "24",
-   "32"
-  ]
- },
- "groessen": {
-  "praefixe": [
-   "w",
-   "h",
-   "size",
-   "min-w",
-   "min-h",
-   "max-w"
+  "abstaende": {
+    "praefixe": [
+      "p",
+      "px",
+      "py",
+      "pt",
+      "pr",
+      "pb",
+      "pl",
+      "ps",
+      "pe",
+      "m",
+      "mx",
+      "my",
+      "mt",
+      "mr",
+      "mb",
+      "ml",
+      "ms",
+      "me",
+      "gap",
+      "gap-x",
+      "gap-y",
+      "space-x",
+      "space-y",
+      "inset",
+      "inset-x",
+      "inset-y",
+      "top",
+      "right",
+      "bottom",
+      "left",
+      "translate-x",
+      "translate-y",
+      "scroll-mt",
+      "scroll-pt"
+    ],
+    "stufen": [
+      "0",
+      "px",
+      "1",
+      "2",
+      "3",
+      "4",
+      "6",
+      "8",
+      "12",
+      "16",
+      "24",
+      "32"
+    ]
+  },
+  "groessen": {
+    "praefixe": [
+      "w",
+      "h",
+      "size",
+      "min-w",
+      "min-h",
+      "max-w"
+    ],
+    "stufen": [
+      "4",
+      "5",
+      "6",
+      "11",
+      "full",
+      "auto",
+      "screen",
+      "fit",
+      "min",
+      "max",
+      "px",
+      "0",
+      "1/2",
+      "1/3",
+      "2/3",
+      "1/4",
+      "3/4",
+      "1",
+      "2",
+      "3",
+      "8",
+      "12",
+      "16",
+      "24",
+      "32",
+      "4/5",
+      "1/5",
+      "2/5",
+      "3/5",
+      "dvh",
+      "svh",
+      "lvh"
+    ],
+    "benannt": [
+      "seite",
+      "mass",
+      "md"
+    ]
+  },
+  "schrift": [
+    "text-fs-1",
+    "text-fs-2",
+    "text-fs-3",
+    "text-fs-4",
+    "text-fs-5",
+    "text-fs-6",
+    "text-fs-7",
+    "font-anzeige",
+    "font-text",
+    "font-mono"
   ],
-  "stufen": [
-   "4",
-   "5",
-   "6",
-   "11",
-   "full",
-   "auto",
-   "screen",
-   "fit",
-   "min",
-   "max",
-   "px",
-   "0",
-   "1/2",
-   "1/3",
-   "2/3",
-   "1/4",
-   "3/4",
-   "1",
-   "2",
-   "3",
-   "8",
-   "12",
-   "16",
-   "24",
-   "32",
-   "4/5",
-   "1/5",
-   "2/5",
-   "3/5",
-   "dvh",
-   "svh",
-   "lvh"
+  "dauern": [
+    "dauer-0",
+    "dauer-1",
+    "dauer-2",
+    "dauer-3",
+    "dauer-4",
+    "dauer-5"
   ],
-  "benannt": [
-   "seite",
-   "mass",
-   "md"
-  ]
- },
- "schrift": [
-  "text-fs-1",
-  "text-fs-2",
-  "text-fs-3",
-  "text-fs-4",
-  "text-fs-5",
-  "text-fs-6",
-  "text-fs-7",
-  "font-anzeige",
-  "font-text",
-  "font-mono"
- ],
- "dauern": [
-  "dauer-0",
-  "dauer-1",
-  "dauer-2",
-  "dauer-3",
-  "dauer-4",
-  "dauer-5"
- ],
- "kurven": [
-  "setzen",
-  "laser",
-  "weg",
-  "aufsetzen",
-  "linear",
-  "hammer"
- ],
- "radien": [
-  "rounded-none",
-  "rounded-r1"
- ],
- "ausnahmen": {
-  "dateien": [
-   "src/lib/email/**",
-   "src/components/ui/GoogleIcon.tsx",
-   "src/components/ui/WhatsAppLogo.tsx",
-   "**/opengraph-image.*",
-   "src/app/(bestand)/werkstatt-schaufenster/**"
+  "kurven": [
+    "setzen",
+    "laser",
+    "weg",
+    "aufsetzen",
+    "linear",
+    "hammer"
   ],
-  "svg_pfaddaten": [
-   "d",
-   "points"
+  "radien": [
+    "rounded-none",
+    "rounded-r1"
   ],
-  "zeilen": [
-   {
-    "datei": "src/app/(bestand)/_dokument.tsx",
-    "muster": "themeColor",
-    "grund": "Metadaten verlangen einen Farbwert (= --color-kalk)"
-   },
-   {
-    "datei": "src/app/globals.css",
-    "muster": "0.01ms",
-    "grund": "Übergangsregel reduzierte Bewegung bis E6"
-   },
-   {
-    "datei": "src/app/bewegung.css",
-    "muster": "0s !important",
-    "grund": "reduzierte Bewegung: Seitenwechsel ohne Dauer (Sofortzustand, K-007)"
-   },
-   {
-    "datei": "src/components/common/SprungHalter.tsx",
-    "muster": "const DAUER = 4000",
-    "grund": "Haltefenster nach Ankersprung, JS-Zeitgeber, keine Bewegungsdauer"
-   }
-  ]
- }
+  "ausnahmen": {
+    "dateien": [
+      "src/lib/email/**",
+      "src/components/ui/GoogleIcon.tsx",
+      "src/components/ui/WhatsAppLogo.tsx",
+      "**/opengraph-image.*",
+      "src/app/(bestand)/werkstatt-schaufenster/**"
+    ],
+    "svg_pfaddaten": [
+      "d",
+      "points"
+    ],
+    "zeilen": [
+      {
+        "datei": "src/app/(bestand)/_dokument.tsx",
+        "muster": "themeColor",
+        "grund": "Metadaten verlangen einen Farbwert (= --color-kalk)"
+      },
+      {
+        "datei": "src/app/globals.css",
+        "muster": "0.01ms",
+        "grund": "Übergangsregel reduzierte Bewegung bis E6"
+      },
+      {
+        "datei": "src/app/bewegung.css",
+        "muster": "0s !important",
+        "grund": "reduzierte Bewegung: Seitenwechsel ohne Dauer (Sofortzustand, K-007)"
+      },
+      {
+        "datei": "src/components/common/SprungHalter.tsx",
+        "muster": "const DAUER = 4000",
+        "grund": "Haltefenster nach Ankersprung, JS-Zeitgeber, keine Bewegungsdauer"
+      },
+      {
+        "datei": "src/lib/ladeschwelle.ts",
+        "muster": "LADE_MINDESTDAUER_MS = 500",
+        "grund": "Ladeschwelle K-010 (300 ms Verzögerung, 500 ms Mindestdauer), JS-Zeitgeber, keine Bewegungsdauer (UM-E3-ZUST-M)"
+      }
+    ]
+  }
 }
