@@ -24,7 +24,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
-import { BASE, SCRATCH, RELAUNCH, REPO, WERKZEUGE, ANSICHTEN, assertLocal, installSperre, setzeEinwilligung, ensureDir, versteckeDevOverlay } from './lib.mjs';
+import { BASE, SCRATCH, RELAUNCH, REPO, WERKZEUGE, ANSICHTEN, assertLocal, installSperre, setzeEinwilligung, ensureDir, versteckeDevOverlay, serverStand } from './lib.mjs';
 
 const arg = (k, d) => { const i = process.argv.indexOf(`--${k}`); return i > -1 ? process.argv[i + 1] : d; };
 const flag = (k) => process.argv.includes(`--${k}`);
@@ -332,7 +332,7 @@ const bedingungen = {
   einwilligung: 'abgelehnt', intro: 'gesehen (Speicher tezgel-intro gesetzt)', hydriert: 'Element mit __reactProps$ vorhanden',
   eingabe: 'antippen (tap, Touch-Emulation); Eingabefeld: 5 Zeichen „Hallo“, kein Absenden',
   messung: 'größter duration-Wert der Ereignisse mit interactionId > 0 im Zeitfenster der Handlung; Median je Handlung über die Läufe; Seitenwert = höchster Median',
-  handlungen: HANDLUNGEN, commit, arbeitsbaum, chromium: browser.version(), basisadresse: base,
+  handlungen: HANDLUNGEN, commit, arbeitsbaum, server_stand: serverStand(base), chromium: browser.version(), basisadresse: base,
 };
 
 try {

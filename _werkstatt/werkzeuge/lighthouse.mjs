@@ -19,7 +19,7 @@ import lighthouse from 'lighthouse';
 import * as chromeLauncher from 'chrome-launcher';
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, assertLocal, grundmenge, slug, ensureDir, RELAUNCH, GESPERRTE_HOSTS, SCRATCH } from './lib.mjs';
+import { BASE, assertLocal, grundmenge, slug, ensureDir, RELAUNCH, GESPERRTE_HOSTS, SCRATCH, serverStand } from './lib.mjs';
 
 const arg = (k, d) => { const i = process.argv.indexOf(`--${k}`); return i > -1 ? process.argv[i + 1] : d; };
 const base = arg('base', BASE);
@@ -205,6 +205,8 @@ for (const s of seiten) {
   if (e.mobil && e.desktop) console.log(`${s}: mobil ${e.mobil.median.perf} (LCP ${e.mobil.median.lcp} ms, TBT ${e.mobil.median.tbt}, CLS ${e.mobil.median.cls}) · desktop ${e.desktop.median.perf}`);
 }
 ergebnis.benchmark_referenz = referenz;
+ergebnis.basisadresse = base;
+ergebnis.server_stand = serverStand(base);
 const out = ensureDir(path.join(BELEGE, satz));
 fs.writeFileSync(path.join(out, 'lighthouse.json'), JSON.stringify(ergebnis, null, 1));
 console.log(`\nErgebnis: ${path.join(out, 'lighthouse.json')} · Benchmark-Referenz ${referenz?.toFixed(1)}`);

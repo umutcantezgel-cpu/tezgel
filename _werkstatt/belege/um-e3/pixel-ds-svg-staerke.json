@@ -1,0 +1,112 @@
+[
+ {
+  "paar": "/referenzen:m390:18",
+  "abweichend": 743,
+  "max_kanal": 1,
+  "verteilung": {
+   "1": 743
+  },
+  "elemente": [
+   "128,65 <img class=\"block h-auto w-full\"> bg=rgba(0, 0, 0, 0) bgimg=none color=rgba(0, 0, 0, 0) op=1",
+   "193,346 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "197,367 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "194,404 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "194,436 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "197,471 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "197,506 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "193,540 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "194,581 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "194,616 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "173,654 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "194,729 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1"
+  ]
+ },
+ {
+  "paar": "/referenzen:t768:9",
+  "abweichend": 1697,
+  "max_kanal": 1,
+  "verteilung": {
+   "1": 1697
+  },
+  "elemente": [
+   "674,65 <img class=\"block h-auto w-full\"> bg=rgba(0, 0, 0, 0) bgimg=none color=rgba(0, 0, 0, 0) op=1",
+   "385,328 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "383,378 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "382,426 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "383,473 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "385,524 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "386,578 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "383,636 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "383,731 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "382,786 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "386,843 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "383,903 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1"
+  ]
+ },
+ {
+  "paar": "/referenzen:d1920:8",
+  "abweichend": 1287,
+  "max_kanal": 1,
+  "verteilung": {
+   "1": 1287
+  },
+  "elemente": [
+   "957,375 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "957,431 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "960,481 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "957,523 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "960,572 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "961,625 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "960,675 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "960,742 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "957,835 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "960,897 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "960,956 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1",
+   "957,1022 <div class=\"vn-zone absolute inset-0 z-10 cursor-ew-resize touch-pan-y touch-pinch-zoom sele\"> bg=rgba(0, 0, 0, 0) bgimg=none color=lab(5.45408 3.36231 -17.2093) op=1"
+  ]
+ },
+ {
+  "paar": "/balkon-terrasse:d1920:5",
+  "abweichend": 800,
+  "max_kanal": 1,
+  "verteilung": {
+   "1": 800
+  },
+  "elemente": [
+   "513,155 <img class=\"block h-auto w-full\"> bg=rgba(0, 0, 0, 0) bgimg=none color=rgba(0, 0, 0, 0) op=1",
+   "825,184 <img class=\"block h-auto w-full\"> bg=rgba(0, 0, 0, 0) bgimg=none color=rgba(0, 0, 0, 0) op=1",
+   "587,194 <img class=\"block h-auto w-full\"> bg=rgba(0, 0, 0, 0) bgimg=none color=rgba(0, 0, 0, 0) op=1",
+   "1306,201 <img class=\"block h-auto w-full\"> bg=rgba(0, 0, 0, 0) bgimg=none color=rgba(0, 0, 0, 0) op=1",
+   "912,211 <img class=\"block h-auto w-full\"> bg=rgba(0, 0, 0, 0) bgimg=none color=rgba(0, 0, 0, 0) op=1",
+   "678,227 <img class=\"block h-auto w-full\"> bg=rgba(0, 0, 0, 0) bgimg=none color=rgba(0, 0, 0, 0) op=1",
+   "684,235 <img class=\"block h-auto w-full\"> bg=rgba(0, 0, 0, 0) bgimg=none color=rgba(0, 0, 0, 0) op=1",
+   "423,247 <img class=\"block h-auto w-full\"> bg=rgba(0, 0, 0, 0) bgimg=none color=rgba(0, 0, 0, 0) op=1",
+   "1113,259 <img class=\"block h-auto w-full\"> bg=rgba(0, 0, 0, 0) bgimg=none color=rgba(0, 0, 0, 0) op=1",
+   "798,269 <img class=\"block h-auto w-full\"> bg=rgba(0, 0, 0, 0) bgimg=none color=rgba(0, 0, 0, 0) op=1",
+   "852,276 <img class=\"block h-auto w-full\"> bg=rgba(0, 0, 0, 0) bgimg=none color=rgba(0, 0, 0, 0) op=1",
+   "1380,285 <img class=\"block h-auto w-full\"> bg=rgba(0, 0, 0, 0) bgimg=none color=rgba(0, 0, 0, 0) op=1"
+  ]
+ },
+ {
+  "paar": "/bad/barrierefreies-bad:d1440:5",
+  "abweichend": 315,
+  "max_kanal": 1,
+  "verteilung": {
+   "1": 315
+  },
+  "elemente": [
+   "309,823 <img class=\"block h-auto w-full\"> bg=rgba(0, 0, 0, 0) bgimg=none color=rgba(0, 0, 0, 0) op=1",
+   "334,841 <img class=\"block h-auto w-full\"> bg=rgba(0, 0, 0, 0) bgimg=none color=rgba(0, 0, 0, 0) op=1",
+   "277,846 <img class=\"block h-auto w-full\"> bg=rgba(0, 0, 0, 0) bgimg=none color=rgba(0, 0, 0, 0) op=1",
+   "1237,853 <img class=\"block h-auto w-full\"> bg=rgba(0, 0, 0, 0) bgimg=none color=rgba(0, 0, 0, 0) op=1",
+   "211,861 <img class=\"block h-auto w-full\"> bg=rgba(0, 0, 0, 0) bgimg=none color=rgba(0, 0, 0, 0) op=1",
+   "415,866 <img class=\"block h-auto w-full\"> bg=rgba(0, 0, 0, 0) bgimg=none color=rgba(0, 0, 0, 0) op=1",
+   "638,869 <img class=\"block h-auto w-full\"> bg=rgba(0, 0, 0, 0) bgimg=none color=rgba(0, 0, 0, 0) op=1",
+   "802,876 <img class=\"block h-auto w-full\"> bg=rgba(0, 0, 0, 0) bgimg=none color=rgba(0, 0, 0, 0) op=1",
+   "666,882 <img class=\"block h-auto w-full\"> bg=rgba(0, 0, 0, 0) bgimg=none color=rgba(0, 0, 0, 0) op=1",
+   "1196,886 <img class=\"block h-auto w-full\"> bg=rgba(0, 0, 0, 0) bgimg=none color=rgba(0, 0, 0, 0) op=1",
+   "1054,890 <img class=\"block h-auto w-full\"> bg=rgba(0, 0, 0, 0) bgimg=none color=rgba(0, 0, 0, 0) op=1",
+   "1276,894 <img class=\"block h-auto w-full\"> bg=rgba(0, 0, 0, 0) bgimg=none color=rgba(0, 0, 0, 0) op=1"
+  ]
+ }
+]

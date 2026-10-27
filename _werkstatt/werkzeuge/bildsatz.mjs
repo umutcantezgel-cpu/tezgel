@@ -13,7 +13,7 @@
 import { chromium } from '@playwright/test';
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, assertLocal, ANSICHTEN, GERAETE_ALLE, geraeteWahl, installSperre, installErsatzpfad, setzeEinwilligung, durchscrollen, bereit, slug, ensureDir, ueberlauf, versteckeDevOverlay, RELAUNCH } from './lib.mjs';
+import { BASE, assertLocal, ANSICHTEN, GERAETE_ALLE, geraeteWahl, installSperre, installErsatzpfad, setzeEinwilligung, durchscrollen, bereit, slug, ensureDir, ueberlauf, versteckeDevOverlay, RELAUNCH, serverStand } from './lib.mjs';
 import { ueberlappungMitZahl } from './ueberlappung.mjs';
 
 const arg = (k, d) => { const i = process.argv.indexOf(`--${k}`); return i > -1 ? process.argv[i + 1] : d; };
@@ -142,6 +142,7 @@ const zusammenfassung = {
 const bericht = {
   satz,
   base,
+  server_stand: serverStand(base),
   ziel,
   protokoll: { einwilligung: EINWILLIGUNG, bewegung: ERSATZPFAD ? 'no-preference' : 'reduce', ersatzpfad: ERSATZPFAD, animationen_zeitlimit_ms: ERSATZPFAD ? ZEITLIMIT_ANIMATIONEN_MS : null, dpr: 1, ansichten: geraete, max_ausschnitte: MAX_AUSSCHNITTE, qualitaet: 70 },
   seiten,

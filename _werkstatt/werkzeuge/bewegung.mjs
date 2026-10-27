@@ -19,7 +19,7 @@ import { chromium } from '@playwright/test';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { BASE, RELAUNCH, ANSICHTEN_AUSBAU, assertLocal, installSperre, setzeEinwilligung, durchscrollen, bereit, slug, ensureDir } from './lib.mjs';
+import { BASE, RELAUNCH, ANSICHTEN_AUSBAU, assertLocal, installSperre, setzeEinwilligung, durchscrollen, bereit, slug, ensureDir, serverStand } from './lib.mjs';
 
 export const MODI = ['einzelbilder', 'bildrate', 'register', 'reduziert'];
 
@@ -1073,6 +1073,8 @@ export async function laufe({ modus, seite = '/', base = BASE, ansicht = 'm390',
   }
   if (kennung && modus !== 'einzelbilder') ergebnis.hinweis = '--kennung wirkt nur im Modus einzelbilder';
   ergebnis.verzeichnis = verzeichnis;
+  ergebnis.basisadresse = base;
+  ergebnis.server_stand = serverStand(base);
   const datei = path.join(verzeichnis, 'ergebnis.json');
   fs.writeFileSync(datei, JSON.stringify(ergebnis, null, 1));
   return { ergebnis, datei };

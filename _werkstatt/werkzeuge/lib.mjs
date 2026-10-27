@@ -26,6 +26,19 @@ export const SCRATCH = (() => {
   return ordner[0];
 })();
 
+/** Gemessener Stand hinter einer Basisadresse: server.sh schreibt das Reinraum-Verzeichnis nach $SCRATCH/server-<Port>.dir
+ *  (Name reinraum-<commit>). Belege nennen diesen Stand neben dem HEAD des Repositorys, der davon abweichen kann (UM-E2-B, E-076). */
+export function serverStand(base = BASE) {
+  const port = new URL(base).port || '80';
+  try {
+    const verzeichnis = fs.readFileSync(path.join(SCRATCH, `server-${port}.dir`), 'utf8').trim();
+    const treffer = path.basename(verzeichnis).match(/^reinraum-([0-9a-f]{7,40})$/);
+    return { port, verzeichnis, commit: treffer ? treffer[1] : null };
+  } catch {
+    return { port, verzeichnis: null, commit: null }; // kein Produktionsserver aus server.sh (z. B. Entwicklungsserver)
+  }
+}
+
 // Chrome für Playwright und Lighthouse: CHROME_PATH, sonst das neueste /opt/pw-browsers/chromium-*/chrome-linux*/chrome.
 // Playwright 1.56.1 erwartet chromium-1194, der Host hat nur neuere Fassungen (EINRICHTUNG.md). Gesetzt wird nur, was fehlt.
 export const CHROME = (() => {

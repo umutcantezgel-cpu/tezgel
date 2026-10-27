@@ -104,9 +104,10 @@ export default function CookieConsent() {
                   <Link
                     href="/datenschutz"
                     className={clsx(linkKlassen, "inline-flex items-center gap-1 font-semibold")}
-                    aria-label="Datenschutzerklärung von Fliesenverlegung Tezgel lesen"
                   >
-                    Datenschutz
+                    {/* Name beginnt mit dem sichtbaren Wort (WCAG 2.5.3, axe 4.14 label-content-name-mismatch, E-076);
+                        der Zusatz bleibt für Screenreader */}
+                    Datenschutz<span className="sr-only">: Erklärung von Fliesenverlegung Tezgel lesen</span>
                     <Icon name="link-extern" groesse={4} />
                   </Link>
                   {" · "}

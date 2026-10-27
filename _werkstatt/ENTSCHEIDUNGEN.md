@@ -889,4 +889,9 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
 - **Stufe A:**
   - typecheck, lint, `npm test` 216/216, Reinraum f526adf2 (Build, Typen, Linter, Tests, Graph Exit 0, nft sauber).
   - `werte.mjs` (Regeldatei v4) über die fünf geänderten Quelldateien gegen 6caeeb9c: 0 Befunde (`belege/um-e3/werte-ds-svg.json`).
-  - Pixelvergleich gegen 4314 (Schwelle 0): PIXEL-2.
+  - Pixelvergleich gegen 4314, Schwelle 0, 48 Paare (`belege/um-e3/pixel-ds-svg.json`; Erstlauf `pixel-ds-svg-erstlauf.json`):
+    - Summe der abweichenden Pixel von 791.526 auf 25.464 gesunken (−97 %). 42 Paare tragen einzelne Pixel, 0 Fehler.
+    - Seitenhöhen gleich, außer `/bad/barrierefreies-bad` d1440 (10.706 gegen 10.705). Das ist die bekannte Höhenstelle aus UM-E2-B (E-076), nicht neu.
+    - Der Höhenunterschied von 99 px auf `/referenzen` m390 im Erstlauf entstand unter Last (Suite und Prüfer liefen parallel). Einzeln gemessen sind beide Stände 21.204 px hoch, im Zweitlauf ebenso.
+  - Stärke der Abweichung je Ausschnitt: auf den größten fünf und acht weiteren höchstens 1 von 255 je Kanal (`pixel-ds-svg-staerke.json`). Die Abweichungen liegen auf Bildflächen unter Verläufen, an der Vorher-Nachher-Zone, an Schraffuren und am Fugenraster; Ursache 2 oben.
+  - Proben und Rechenweg liegen unter `belege/um-e3/proben/`.

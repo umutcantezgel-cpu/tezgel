@@ -25,7 +25,7 @@ import { PNG } from 'pngjs';
 import pixelmatch from 'pixelmatch';
 import fs from 'node:fs';
 import path from 'node:path';
-import { RELAUNCH, ANSICHTEN, geraeteWahl, installSperre, setzeEinwilligung, durchscrollen, bereit, slug, ensureDir, assertLocal, versteckeDevOverlay } from './lib.mjs';
+import { RELAUNCH, ANSICHTEN, geraeteWahl, installSperre, setzeEinwilligung, durchscrollen, bereit, slug, ensureDir, assertLocal, versteckeDevOverlay, serverStand } from './lib.mjs';
 
 const arg = (k, d) => { const i = process.argv.indexOf(`--${k}`); return i > -1 && process.argv[i + 1] !== undefined ? process.argv[i + 1] : d; };
 const flag = (k) => process.argv.includes(`--${k}`);
@@ -240,6 +240,8 @@ const ausgabe = {
   satz,
   vorher: vorherBase,
   nachher: nachherBase,
+  stand_vorher: serverStand(vorherBase),
+  stand_nachher: serverStand(nachherBase),
   seiten,
   geraete,
   schwelle,
