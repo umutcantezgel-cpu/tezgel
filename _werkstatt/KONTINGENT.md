@@ -46,3 +46,13 @@ Uhrzeit · Fenster Verbrauch, Soll, Ziel · Woche Verbrauch, Spielraum · belegt
   - Neues Fenster 14:31–19:31 UTC: 16,5 % um 14:40 UTC (Soll 3 %), Bremse. Messungen laufen als Skript ohne Agenten.
 - 2026-10-27 16:57 MEZ · Fenster 33,9 % (Soll 27,2 %, Ziel für die Planung 85 %) 14:31–19:31 UTC · Woche ? · Plätze 0 Haiku (zwei Auswertungen fertig), Suite läuft · Bremse (knapp über Soll)
 - 2026-10-27 18:15 MEZ ·  · Plätze 1 Haiku (LCP-K) · Bremse beachtet: ZUST-M eigene Arbeit, eine Messreihe nach der anderen
+- 2026-10-27 20:35 MEZ · **Drittes Limit-Ereignis, Kalibrierpunkt.** (Berichtigung der Zeile „18:15 MEZ“: richtig 17:45 MEZ, Fensterwert fehlte, weil das Werkzeug nach dem Neustart über 3 min las.)
+  - Gegen 16:46 UTC brach der Haiku-Kundschafter LCP-K mit „You've hit your session limit · resets 7:30pm (UTC)“ ab. Die Schätzung lag um 15:56 UTC bei 33,9 %, der Faktor 2,929 war also wieder zu niedrig.
+  - Kalibrierung: Fenster 14:30–19:30 UTC = 100 % (Faktor folgt in der nächsten Zeile).
+  - Z-12: Kalibrierpunkt ohne Messwert. Das Limit lag nicht im Endspurt.
+  - Arbeitshypothese zur Ursache: Die Schätzung rechnet in USD. Jeder Werkzeugaufruf des Orchestrators liest den sehr großen Gesprächskontext neu (Cache-Lesen, günstig in USD, teuer im Limit). Die Fehlschätzung wächst mit der Gesprächslänge.
+  - Lehre (L6):
+    - Eigene Werkzeugaufrufe bündeln, wenige große Schritte.
+    - Planungsziel 60, bis ein Fenster ohne Limit endet.
+    - Arbeit mit eigenem kleinem Kontext an frische Haiku-Agenten.
+    - Messungen als Skripte.

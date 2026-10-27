@@ -1,6 +1,6 @@
 # PRUEFPUNKT
 
-- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · **Etappe E3, Welle E3-W1** · Stand 2026-10-27 18:15 MEZ
+- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · **Etappe E3, Welle E3-W1** · Stand 2026-10-27 20:35 MEZ (nach drittem Limit 16:46–19:30 UTC und Neustart)
 - E2 abgeschlossen nach zwei Anläufen (E-076, Berichte `berichte/UM-E2-B.md`, `UM-E2-B2.md`):
   - Z-02, Z-03, Z-06, Z-07, Z-09 und Z-11 auf Etappenstufe erfüllt.
   - Offener Punkt Z-10: TBT mobil → UM-E3-TBT.
@@ -10,10 +10,10 @@
   1. UM-E3-ZUST-M (Orchestrator): Ladeschwelle 300/500 ms als Logik mit Test in Knopf; Auswahlknopf deaktiviert; Kontrollkästchen Hover, deaktiviert, 20 px.
   2. Läuft: UM-E3-LCP-K (Haiku, Briefing `pakete/UM-E3-LCP-K.md`, nur Rohberichte lesen). Danach UM-E3-TBT (nur Bericht; Messung mit wechselnder Reihenfolge E0/HEAD/HEAD/E0, nur als Skript, nie neben anderen Läufen).
   3. Danach E3-W2 UM-E3-MOD.
-- Server: 4311 = 7ceb5e41 (E0), 4315 = f5544581, 4316 = 51355ef7 (HEAD). 4314 aus (bei Bedarf `reinraum-6caeeb9c`).
+- Server: 4311 = 7ceb5e41 (E0), 4316 = 51355ef7 (HEAD); 4314 und 4315 aus (Reinräume `reinraum-6caeeb9c`, `reinraum-f5544581` im Scratchpad).
 - Messregeln (E-076): Messungen als Skript, nie über einen Agenten. Lighthouse allein auf dem Rechner. Suite im Tor zweimal (`RELAUNCH_BEWEGUNG=an`). axe mit `--zustaende` prüft alle Größen.
 - Routinen: WEITER trig_013KjQUDqdr7LRnFeCaw9XWY (stündlich :30 UTC), Morgenbericht trig_01B6mPcvup5LmNmrzX4LFrJP (06:52 Europe/Berlin); alte Morgenbericht-Routine trig_01SJHduJbvG5gR7bm8jATK24 abgeschaltet.
-- Tempomat: Faktor 2,929 %/USD (zweites Limit 27.10., Kalibrierpunkt). Planungsziel 85, bis zwei Fenster ohne Limit enden. Fenster 14:31–19:31 UTC.
+- Tempomat: drittes Limit 27.10. (Kalibrierpunkt 14:30–19:30 UTC). Planungsziel 60, bis ein Fenster ohne Limit endet; eigene Aufrufe bündeln. Fenster 19:30–00:30 UTC.
 
 ## Vorlauf „Verständlich, echt, ausgezeichnet“
 
