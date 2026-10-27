@@ -170,7 +170,17 @@ async function linkImSichtfeld(page) {
         ) ?? null
       );
     }, ZIELE);
-  let treffer = await imBild();
+  // Mit Bewegung fährt Inhalt nach dem Sprung noch mit Versatz ein; ein einzelner Blick fand den Link dann teils noch
+  // außerhalb (1 von 5 Läufen mit RELAUNCH_BEWEGUNG=an). Gewartet wird, bis er ganz im Bild liegt; die Bedingung bleibt dieselbe.
+  const warteAufBild = async (versuche) => {
+    for (let i = 0; i < versuche; i++) {
+      const t = await imBild();
+      if (t) return t;
+      await page.waitForTimeout(100);
+    }
+    return null;
+  };
+  let treffer = await warteAufBild(10);
   if (!treffer) {
     const tiefer = await page.evaluate((kandidaten) => {
       for (const k of kandidaten) {
@@ -182,7 +192,7 @@ async function linkImSichtfeld(page) {
       }
       return null;
     }, ZIELE);
-    if (tiefer) treffer = await imBild();
+    if (tiefer) treffer = await warteAufBild(30);
   }
   expect(treffer, 'interner Link im Sichtfeld bei 400 px oder darunter').not.toBeNull();
   return { ziel: treffer, scroll: await page.evaluate(() => window.scrollY) };
