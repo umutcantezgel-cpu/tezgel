@@ -58,3 +58,4 @@ Uhrzeit · Fenster Verbrauch, Soll, Ziel · Woche Verbrauch, Spielraum · belegt
     - Messungen als Skripte.
   - Kalibrierung ausgeführt: Kalibrierpunkt gespeichert: Fenster 2026-10-27 14:30–2026-10-27 19:30 UTC · Kosten $16.33 · 100 % · Faktor 6.122 · Quelle limit · Stand 2026-10-27
 - 2026-10-27 21:31 MEZ · Schätzung nicht erhalten (Werkzeug über 280 s) · Plätze 0 Haiku (LCP-K fertig), Prüfkette ZUST-M als Skript · Planungsziel 60
+- 2026-10-27 22:31 MEZ · Fenster 93.4 % (Soll 38.2 %, Ziel 95 %) 2026-10-27 19:30–2026-10-28 00:30 UTC · Woche ? % · Bremse · Quelle Schätzung (Faktor 6.122, Stand 2026-10-27) · Plätze 1 Haiku (TBT-Auswertung) · Planungsziel 60, gebündelte Schritte
