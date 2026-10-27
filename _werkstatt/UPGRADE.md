@@ -8,9 +8,9 @@ Ausgangslage Audit (7ceb5e41): 4 Befunde (1 kritisch, 3 hoch), alle mit Fix. Zie
 
 | Nr | Paket | alt | neu | Art | Leitfaden | Codemod | Risiko | Paket | Status | Commit |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 1 | Node.js (Laufzeit) | 20 (`.nvmrc`, CI), engines `>=18.17.0` | aktuelle LTS am Upgradetag (heute 24.22.1; wird Node 26 vorher LTS: 26) | Major | nodejs.org Release-Seite, `dist/index.json` | – | mittel: `npm test` braucht ≥ 22.6, Next 16 ≥ 20.9 | UM-E2-U01 (Orchestrator) | offen | – |
-| 2 | npm (Paketmanager) | 10.9.4, kein `packageManager` | zur LTS gebündelte Version, als `packageManager` festgehalten | Major | docs.npmjs.com | – | niedrig | UM-E2-U01 | offen | – |
-| 3 | @types/node | ^20 (20.19.41) | Linie der gewählten LTS (24.x) | Major | – | – | mittel: Typen von `fs`, `stream` | UM-E2-U01 | offen | – |
+| 1 | Node.js (Laufzeit) | 20 (`.nvmrc`, CI), engines `>=18.17.0` | aktuelle LTS am Upgradetag (heute 24.22.1; wird Node 26 vorher LTS: 26) | Major | nodejs.org Release-Seite, `dist/index.json` | – | mittel: `npm test` braucht ≥ 22.6, Next 16 ≥ 20.9 | UM-E2-U01 (Orchestrator) | umgesetzt: 24.22.1 „Krypton“ (Node 26.12.1 am 27.10. noch nicht LTS; Prüfung erneut in E2-B und E5-C), `.nvmrc` 24, `engines` `24.x`, CI `'24'` | U01 |
+| 2 | npm (Paketmanager) | 10.9.4, kein `packageManager` | zur LTS gebündelte Version, als `packageManager` festgehalten | Major | docs.npmjs.com | – | niedrig; neu: Install-Skripte von Abhängigkeiten gesperrt, Freigabe über `allowScripts` | UM-E2-U01 | umgesetzt: 11.19.1, `packageManager` `npm@11.19.1`, `allowScripts` nur `unrs-resolver@1.12.2` (Skript gelesen: prüft die mitgelieferte native Bindung) | U01 |
+| 3 | @types/node | ^20 (20.19.41) | Linie der gewählten LTS (24.x) | Major | – | – | mittel: Typen von `fs`, `stream` | UM-E2-U01 | umgesetzt: ^24 (24.19.2), `tsc` ohne Befund | U01 |
 | 4 | typescript | ^5 (5.9.3) | 6.0.x (neueste mit typescript-eslint kompatible); 7.0.2 blockiert. Anlauf 1: Peer-Befund in UM-E0-STACK; Anlauf 2: Installation von 7.x ohne `--legacy-peer-deps` in U02, Ergebnis hier | Major | typescriptlang.org Release Notes 6.0 | `ts5to6` (experimentell, nur nach Prüfung) | hoch: 7.x außerhalb des Peer-Bereichs von typescript-eslint 8.72.1 (< 6.1.0) | UM-E2-U02 (Orchestrator) | offen | – |
 | 5 | next | 16.3.6 | 16.4.3 | Minor (Sicherheit, kritisch) | `node_modules/next/dist/docs/01-app/02-guides/upgrading/`, Release-Notizen 16.4 | `npx @next/codemod upgrade minor` (nur falls nötig) | hoch: eigene `webpack`-Konfiguration, `experimental.globalNotFound`, `imageSizes` ohne 16 | UM-E2-U03 (Orchestrator) | offen | – |
 | 6 | react, react-dom | 19.2.4 | 19.3.1 | Minor | react.dev/blog (19.3) | – | niedrig; stabile `ViewTransition` | UM-E2-U03 | offen | – |
@@ -36,7 +36,7 @@ Zählung: 32 direkte Abhängigkeiten (21 Projekt, 11 Werkzeuge) plus Laufzeit un
 
 ## Mitziehen
 - Laufzeitversion einheitlich: `.nvmrc`, `package.json` (`engines`, `packageManager`), `.github/workflows/security.yml`, `README.md`, `werkzeuge/EINRICHTUNG.md`.
-- Testskript `package.json:13`: `--loader` ist veraltet; Umstellung auf `--import` mit `register()`, wenn die neue Laufzeit warnt.
+- Testskript: `--loader` ist veraltet (Node 24 warnt). Umgestellt auf `node --import ./test/register-hooks.mjs --test …` mit `register()`. `--experimental-strip-types` entfällt, weil Node 24 Typen von sich aus entfernt. Der Lade-Hook in `test/resolver.mjs` setzt das Modulformat der Projektquellen fest (keine Warnung `MODULE_TYPELESS_PACKAGE_JSON`). Ergebnis: `npm test` 210 von 210 ohne Warnung (U01).
 - `next.config.ts`: `experimental.globalNotFound` prüfen (Denkprotokoll, wenn weiterhin experimentell); eigene `webpack`-Konfiguration gegen den Standardbau mit Turbopack prüfen; `images.imageSizes` gegen die Bildgrößen in `Bildfeld` und `Intro`.
 - `node_modules` mit dem Lockfile in Einklang bringen (`npm ci`; zusätzliche Pakete @emnapi/*, @img/sharp-wasm32 und weitere).
 - Paket-Audit: null hohe oder kritische Befunde mit Fix; die CI-Stufe `npm audit --audit-level=high` wird wieder grün.

@@ -22,6 +22,20 @@ Pfadregel (ersetzt die festen Sitzungspfade): `RELAUNCH_SCRATCH`, sonst `SCRATCH
 
 Nach jedem neuen Commit gilt eine neue `SHA`: Schritt 6 und Schritt 7 dann erneut ausführen.
 
+## Schritt 0 · Laufzeit (Node-LTS, UM-E2-U01)
+
+Das Projekt läuft auf Node 24.x (aktuelle LTS, `.nvmrc`, `engines` in `package.json`) mit npm 11.19.1 (`packageManager`). Der Container bringt Node 22 mit; die LTS kommt deshalb ins Scratchpad:
+
+    mkdir -p "$SCRATCH/node-lts" && cd "$SCRATCH/node-lts"
+    curl -fsSLO https://nodejs.org/dist/v24.22.1/node-v24.22.1-linux-x64.tar.xz
+    curl -fsSL https://nodejs.org/dist/v24.22.1/SHASUMS256.txt | grep ' node-v24.22.1-linux-x64.tar.xz$' | sha256sum -c -
+    tar -xJf node-v24.22.1-linux-x64.tar.xz && ln -sfn node-v24.22.1-linux-x64 aktuell
+    export PATH="$SCRATCH/node-lts/aktuell/bin:$PATH" && node -v && npm -v
+
+Erwartet: `v24.22.1` und `11.19.1`. `scratch.sh` stellt `node-lts/aktuell` an den Anfang von `PATH`, sobald es existiert; Reinraum, Server und Entwicklungsserver laufen dann auf der LTS. Vor jeder neuen LTS (zum Beispiel Node 26) prüfen: `curl -s https://nodejs.org/dist/index.json`, Feld `lts`.
+
+npm 11.19 sperrt Install-Skripte von Abhängigkeiten, die nicht in `allowScripts` (`package.json`) stehen. Freigegeben ist nur `unrs-resolver@1.12.2` (prüft die mitgelieferte native Bindung, UM-E2-U01). Meldet `npm install` weitere Pakete, erst das Skript lesen, dann `npm install-scripts approve <paket>` oder `deny`.
+
 ## Schritt 1 · Repo-Abhängigkeiten (Repo-Wurzel)
 
     node --version
@@ -112,7 +126,7 @@ Stand E0-PRUEF-01: angelegt (vorher kein Eintrag vorhanden).
 - `next dev` schreibt beim Start den Block `nextjs-agent-rules` in `AGENTS.md` um (Diff: 5 Zeilen ergänzt, 1 entfernt). Das ist eine Änderung an einer versionierten Datei. E0 hat `AGENTS.md` nach dem Start mit `git show HEAD:AGENTS.md` wiederhergestellt. Dauerhaft abstellen lässt sich das nur über `agentRules: false` in `next.config.ts` (Repo-Konfiguration, nicht von E0 geändert). Auf HEAD c53faf4 hat der Start von `next dev` `AGENTS.md` nicht verändert.
 - `next dev` legt `next-env.d.ts` in der Repo-Wurzel an. Die Datei ist gitignored, liegt aber außerhalb der Schreibliste.
 - `next dev` (4320) und `next build` teilen sich `.next` in der Repo-Wurzel. Solange der Dev-Server läuft, dort kein `next build` ausführen. Der Reinraum baut in einer eigenen Kopie und ist davon nicht betroffen.
-- `npm test` des Projekts braucht Node ≥ 22.6 (hier v22.22.0).
+- `npm test` des Projekts braucht Node ≥ 22.6; seit UM-E2-U01 läuft es auf Node 24.22.1 (Schritt 0).
 - Playwright ohne `PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers` findet keinen Browser. Playwright 1.56.1 erwartet `chromium-1194`, der Host hat nur `chromium-1243`; gelöst über die Ermittlung in `lib.mjs` (`CHROME`); eine gesetzte Variable `CHROME_PATH` geht vor.
 - Rauchprobe (nur dieser eine Test, nicht die ganze Suite): Testfall 3 je Projekt schickt einen POST an `/api/anfrage` des lokalen Servers (Option `echteRoute`). Der Testname nennt den Mock-Modus ohne Resend-Schlüssel. Vor einer Wiederholung bestätigen, dass der Server so läuft.
 

@@ -15,3 +15,11 @@ if [ -z "${SCRATCH:-}" ] || [ ! -d "$SCRATCH" ]; then
 fi
 export SCRATCH
 export RELAUNCH_SCRATCH="$SCRATCH"
+# Laufzeit des Projekts (`.nvmrc`, UM-E2-U01): Liegt die LTS im Scratchpad unter node-lts/aktuell
+# (EINRICHTUNG Schritt 0), gilt sie für alle Skripte, die diese Datei einbinden (Reinraum, Server).
+if [ -x "$SCRATCH/node-lts/aktuell/bin/node" ]; then
+  case ":$PATH:" in
+    *":$SCRATCH/node-lts/aktuell/bin:"*) ;;
+    *) export PATH="$SCRATCH/node-lts/aktuell/bin:$PATH" ;;
+  esac
+fi
