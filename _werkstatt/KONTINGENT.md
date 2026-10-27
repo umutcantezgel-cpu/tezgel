@@ -35,3 +35,4 @@ Uhrzeit · Fenster Verbrauch, Soll, Ziel · Woche Verbrauch, Spielraum · belegt
   - Z-12: Das ist ein Kalibrierpunkt ohne Messwert; ein solches Limit-Ereignis ist erlaubt.
   - Folge: Tempomat mit 2,461 %/USD; Kapazität im PLAN (≈ 48 USD je Fenster zu 95 %) sinkt auf ≈ 38,6 USD; Neuberechnung am Etappentor E2.
 - 2026-10-27 11:00 MEZ · Fenster 25,3 % (Soll 8,3 %, Ziel 95 %), Fenster 09:32–14:32 UTC (Kette ab dem Kalibrierpunkt 09:30, Werkzeug korrigiert) · Woche ? · Plätze 0 Haiku, Gegenprobe der Specs läuft · Bremse: wenige gebündelte Schritte, keine neuen Agenten bis zur Soll-Linie · Quelle Schätzung (Faktor 2,461)
+- 2026-10-27 11:31 MEZ · Fenster 32.0 % (Soll 18.6 %, Ziel 95 %) 2026-10-27 09:32–2026-10-27 14:32 UTC · Woche ? % · Bremse · Quelle Schätzung (Faktor 2.461, Stand 2026-10-27) · Plätze 0 Haiku, Nachprüfung der Specs läuft

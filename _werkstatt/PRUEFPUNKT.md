@@ -1,18 +1,17 @@
 # PRUEFPUNKT
 
-- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · Etappe E2, Welle E2-W4 (Tor) · Stand 2026-10-27 08:31 MEZ
+- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · Etappe E2, Welle E2-W4 (Tor) · Stand 2026-10-27 11:31 MEZ (nach Limit 08:30–09:30 UTC, L5)
 - Erledigt in E2:
   - UM-E2-SVGO (eee7cc37), UM-E2-U01 Node 24.22.1 (d4ecfac9), UM-E2-U02 TypeScript 6.0.3 (54ec7ac8).
   - UM-E2-PX (67ab6710, E-070), UM-E2-U03 (a6c1bd54, 0d37880e), U04 (91615baa, E-071), U05 (f1bed29f, e117a149, E-072), U06 (E-073), U07 (9ecbec98, 28be7043, 6caeeb9c, E-074).
 - Nächster exakter Schritt:
-  1. E2-B-Messreihe (`$SCRATCH/um-e2-b/messen.sh`, Hintergrund, Server 4314 = 6caeeb9c) bis Lighthouse abwarten. Danach `belege/um-e2/*` committen.
-     - Fehlt eine Teilmessung, das Skript erneut starten: fertige Schritte überspringt es über `logs/*.ok`.
-  2. Die 1-px-Höhenabweichung `/bad/barrierefreies-bad` d1440 klären. Sie tritt im vollen Lauf dreimal auf, im Einzellauf nie. Gebrochene Höhe über `getBoundingClientRect` auf 4311 und 4314 messen.
-  3. UM-E2-B auswerten lassen: Haiku-Prüfer vergleicht alle Werte mit E0 (`belege/um-e0/`) und schreibt `berichte/UM-E2-B.md`. Dann das Tor entscheiden, E-0xx.
-  4. UM-E3-DS: Zwischenstand d. h. bauen (Stufe A), Pixelvergleich gegen 4314 (Erwartung 0, gleiche Farben), abnehmen.
-  5. UM-E3-SVG (Haiku läuft): abnehmen, Config-Änderungen übertragen, Weiterleitungen der Logo-SVGs in `next.config.ts`, `lucide-react` deinstallieren.
+  1. Nachprüfung (Hintergrund) abwarten: sechs Specs auf 4311 und 4314 nach der Werkzeugkorrektur (ZWISCHENSTAND „Nacharbeit Prüfwerkzeug“; Logs `$SCRATCH/um-e2-b/gegenprobe/fix-*.log`). Erwartet: grün auf beiden.
+  2. Volle Suite auf 4314 (`RELAUNCH_BASE=http://127.0.0.1:4314 npx playwright test --workers=2`, Bericht `belege/um-e2/suite-2.json`). Erwartet 393/0/25.
+  3. 1-px-Höhe `/bad/barrierefreies-bad` d1440 klären.
+  4. Auswertung UM-E2-B (Haiku-Prüfer gegen E0), Tor entscheiden (E-076: Playwright-Werkzeugursache, Korrektur, Belege).
+  5. UM-E3-DS und UM-E3-SVG: `npm uninstall lucide-react`, Stufe A, Reinraum, Pixelvergleich gegen 4314, Abnahme E-075.
 - Server:
-  - 4311 = 7ceb5e41 (E0, Node 22), 4313 = a6c1bd54 (U03), 4314 = 6caeeb9c (E2-Endstand, Messreihe). 4312 ist gestoppt.
+  - 4311 = 7ceb5e41 (E0), 4313 = a6c1bd54 (U03), 4314 = 6caeeb9c (E2-Endstand); nach dem Neustart der Umgebung um 09:5x UTC neu gestartet.
   - Reinraum-Ordner im Scratchpad; scratch.sh nutzt `node-lts/aktuell`.
 - Laufende Pakete: UM-E3-SVG (Haiku, Briefing `pakete/UM-E3-SVG.md`). Bei Abbruch: seine Schreibrechte auf den letzten Commit zurücksetzen und neu starten (L5).
 - Routinen:
