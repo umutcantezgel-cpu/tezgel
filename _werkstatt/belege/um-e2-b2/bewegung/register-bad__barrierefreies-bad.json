@@ -1,0 +1,73 @@
+{
+ "modus": "register",
+ "seite": "/bad/barrierefreies-bad",
+ "base": "http://127.0.0.1:4315",
+ "ansicht": "m390",
+ "zeitpunkt": "2026-10-27T15:12:33.014Z",
+ "schritte": {
+  "hover_geprueft": 20,
+  "hover_fehler": 0,
+  "hover_fehler_beispiel": null,
+  "hover_ausserhalb_uebersprungen": 0,
+  "tab_schritte": 30,
+  "fokus_verschieden": 16
+ },
+ "data_motion_elemente": 173,
+ "gefundene_kennungen": [
+  "aufklappen",
+  "druck",
+  "gefaelle-dusche",
+  "karussell",
+  "leitachse",
+  "sig-flucht",
+  "zustand"
+ ],
+ "unbekannt": [],
+ "registriert_nicht_im_dom": [
+  "verlegen",
+  "seitenwechsel",
+  "intro",
+  "startbild",
+  "verband",
+  "anriss",
+  "auftritt",
+  "notiert",
+  "laden",
+  "sig-kreuzlinie",
+  "szene-ablauf",
+  "sig-plan",
+  "einzugsband",
+  "fugenband",
+  "schichten",
+  "weg",
+  "gefaelle-balkon",
+  "formatregler",
+  "vorher-nachher",
+  "karte",
+  "galerie-filter"
+ ],
+ "ohne_register": [
+  {
+   "art": "transition",
+   "sel": "button.inline-flex.size-11",
+   "eigenschaften": [
+    "outline-color"
+   ],
+   "anzahl": 2
+  }
+ ],
+ "mit_register_eintraege": 9,
+ "erfasste_eintraege": 10,
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/um-e2-b2/bewegung/register-bad__barrierefreies-bad",
+ "basisadresse": "http://127.0.0.1:4315",
+ "server_stand": {
+  "port": "4315",
+  "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/reinraum-f5544581",
+  "commit": "f5544581"
+ }
+}

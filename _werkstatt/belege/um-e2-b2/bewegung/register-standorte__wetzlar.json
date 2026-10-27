@@ -1,0 +1,73 @@
+{
+ "modus": "register",
+ "seite": "/standorte/wetzlar",
+ "base": "http://127.0.0.1:4315",
+ "ansicht": "m390",
+ "zeitpunkt": "2026-10-27T15:17:18.952Z",
+ "schritte": {
+  "hover_geprueft": 20,
+  "hover_fehler": 0,
+  "hover_fehler_beispiel": null,
+  "hover_ausserhalb_uebersprungen": 0,
+  "tab_schritte": 30,
+  "fokus_verschieden": 24
+ },
+ "data_motion_elemente": 178,
+ "gefundene_kennungen": [
+  "aufklappen",
+  "druck",
+  "einzugsband",
+  "karussell",
+  "leitachse",
+  "zustand"
+ ],
+ "unbekannt": [],
+ "registriert_nicht_im_dom": [
+  "verlegen",
+  "seitenwechsel",
+  "intro",
+  "startbild",
+  "verband",
+  "anriss",
+  "auftritt",
+  "notiert",
+  "laden",
+  "sig-kreuzlinie",
+  "sig-flucht",
+  "szene-ablauf",
+  "sig-plan",
+  "fugenband",
+  "schichten",
+  "weg",
+  "gefaelle-dusche",
+  "gefaelle-balkon",
+  "formatregler",
+  "vorher-nachher",
+  "karte",
+  "galerie-filter"
+ ],
+ "ohne_register": [
+  {
+   "art": "transition",
+   "sel": "button.inline-flex.size-11",
+   "eigenschaften": [
+    "outline-color"
+   ],
+   "anzahl": 10
+  }
+ ],
+ "mit_register_eintraege": 4,
+ "erfasste_eintraege": 5,
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/um-e2-b2/bewegung/register-standorte__wetzlar",
+ "basisadresse": "http://127.0.0.1:4315",
+ "server_stand": {
+  "port": "4315",
+  "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/reinraum-f5544581",
+  "commit": "f5544581"
+ }
+}

@@ -76,8 +76,11 @@ export default function MobileMenu({ isOpen, onToggle }) {
                 Hauptpunkte, damit alle fünf Namen im ersten Bild stehen (Sichtprüfung E2 Runde 3) */}
             <div className="@container flex h-full flex-col border-l border-fuge">
                 <div className="flex h-16 shrink-0 items-center justify-between gap-3 border-b border-fuge px-4">
-                    <Link href="/" onClick={schliessen} aria-label="Zur Startseite von Fliesenverlegung Tezgel">
+                    {/* Name aus Logo-Alternativtext und sichtbarer Zeile wie im Kopf (E-074): ab sm steht die Unterzeile im Bild,
+                        ein aria-label ohne sie verletzt WCAG 2.5.3 (axe 4.14, Menü bei t768, q844, t1024; E-076) */}
+                    <Link href="/" onClick={schliessen}>
                         <BrandMark sublineClassName="hidden sm:block" />
+                        <span className="sr-only">, zur Startseite</span>
                     </Link>
                     <button
                         ref={closeButtonRef}

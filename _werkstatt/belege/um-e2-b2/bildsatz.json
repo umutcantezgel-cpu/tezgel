@@ -1,0 +1,9990 @@
+{
+ "satz": "um-e2-b2",
+ "base": "http://127.0.0.1:4315",
+ "server_stand": {
+  "port": "4315",
+  "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/reinraum-f5544581",
+  "commit": "f5544581"
+ },
+ "ziel": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/um-e2-b2/bildsatz",
+ "protokoll": {
+  "einwilligung": "abgelehnt",
+  "bewegung": "reduce",
+  "ersatzpfad": false,
+  "animationen_zeitlimit_ms": null,
+  "dpr": 1,
+  "ansichten": [
+   "m360",
+   "m390",
+   "m430",
+   "q844",
+   "t768",
+   "t1024",
+   "d1280",
+   "d1440",
+   "d1920",
+   "d2560"
+  ],
+  "max_ausschnitte": 12,
+  "qualitaet": 70
+ },
+ "seiten": [
+  "/",
+  "/bad",
+  "/bad/badsanierung",
+  "/bad/barrierefreies-bad",
+  "/leistungen",
+  "/fliesen",
+  "/balkon-terrasse",
+  "/referenzen",
+  "/ueber-uns",
+  "/kontakt",
+  "/standorte/wetzlar",
+  "/blog"
+ ],
+ "zusammenfassung": {
+  "aufnahmen": 1334,
+  "fehler": 0,
+  "nicht200": 0,
+  "ueberlauf": {
+   "ansichten": 0,
+   "befunde": 0
+  },
+  "ueberlappung": {
+   "ansichten": 0,
+   "befunde": 0,
+   "nachArt": {}
+  },
+  "konsole": {
+   "ansichten": 0,
+   "meldungen": 0
+  },
+  "animationen": null
+ },
+ "ergebnisse": [
+  {
+   "ansicht": "d1280",
+   "seite": "/",
+   "status": 200,
+   "hoehe": 9635,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1280/start/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 800,
+     "y_wirksam": 800,
+     "datei": "d1280/start/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1600,
+     "y_wirksam": 1600,
+     "datei": "d1280/start/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2400,
+     "y_wirksam": 2400,
+     "datei": "d1280/start/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3200,
+     "y_wirksam": 3200,
+     "datei": "d1280/start/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4000,
+     "y_wirksam": 4000,
+     "datei": "d1280/start/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4800,
+     "y_wirksam": 4800,
+     "datei": "d1280/start/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5600,
+     "y_wirksam": 5600,
+     "datei": "d1280/start/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6400,
+     "y_wirksam": 6400,
+     "datei": "d1280/start/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d1280/start/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 8000,
+     "y_wirksam": 8000,
+     "datei": "d1280/start/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8800,
+     "y_wirksam": 8800,
+     "datei": "d1280/start/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1280",
+   "seite": "/bad",
+   "status": 200,
+   "hoehe": 13438,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1280/bad/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 800,
+     "y_wirksam": 800,
+     "datei": "d1280/bad/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1600,
+     "y_wirksam": 1600,
+     "datei": "d1280/bad/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2400,
+     "y_wirksam": 2400,
+     "datei": "d1280/bad/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3200,
+     "y_wirksam": 3200,
+     "datei": "d1280/bad/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4000,
+     "y_wirksam": 4000,
+     "datei": "d1280/bad/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4800,
+     "y_wirksam": 4800,
+     "datei": "d1280/bad/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5600,
+     "y_wirksam": 5600,
+     "datei": "d1280/bad/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6400,
+     "y_wirksam": 6400,
+     "datei": "d1280/bad/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d1280/bad/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 8000,
+     "y_wirksam": 8000,
+     "datei": "d1280/bad/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8800,
+     "y_wirksam": 8800,
+     "datei": "d1280/bad/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1280",
+   "seite": "/bad/badsanierung",
+   "status": 200,
+   "hoehe": 10785,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1280/bad__badsanierung/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 800,
+     "y_wirksam": 800,
+     "datei": "d1280/bad__badsanierung/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1600,
+     "y_wirksam": 1600,
+     "datei": "d1280/bad__badsanierung/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2400,
+     "y_wirksam": 2400,
+     "datei": "d1280/bad__badsanierung/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3200,
+     "y_wirksam": 3200,
+     "datei": "d1280/bad__badsanierung/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4000,
+     "y_wirksam": 4000,
+     "datei": "d1280/bad__badsanierung/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4800,
+     "y_wirksam": 4800,
+     "datei": "d1280/bad__badsanierung/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5600,
+     "y_wirksam": 5600,
+     "datei": "d1280/bad__badsanierung/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6400,
+     "y_wirksam": 6400,
+     "datei": "d1280/bad__badsanierung/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d1280/bad__badsanierung/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 8000,
+     "y_wirksam": 8000,
+     "datei": "d1280/bad__badsanierung/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8800,
+     "y_wirksam": 8800,
+     "datei": "d1280/bad__badsanierung/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1280",
+   "seite": "/bad/barrierefreies-bad",
+   "status": 200,
+   "hoehe": 10612,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1280/bad__barrierefreies-bad/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 800,
+     "y_wirksam": 800,
+     "datei": "d1280/bad__barrierefreies-bad/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1600,
+     "y_wirksam": 1600,
+     "datei": "d1280/bad__barrierefreies-bad/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2400,
+     "y_wirksam": 2400,
+     "datei": "d1280/bad__barrierefreies-bad/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3200,
+     "y_wirksam": 3200,
+     "datei": "d1280/bad__barrierefreies-bad/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4000,
+     "y_wirksam": 4000,
+     "datei": "d1280/bad__barrierefreies-bad/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4800,
+     "y_wirksam": 4800,
+     "datei": "d1280/bad__barrierefreies-bad/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5600,
+     "y_wirksam": 5600,
+     "datei": "d1280/bad__barrierefreies-bad/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6400,
+     "y_wirksam": 6400,
+     "datei": "d1280/bad__barrierefreies-bad/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d1280/bad__barrierefreies-bad/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 8000,
+     "y_wirksam": 8000,
+     "datei": "d1280/bad__barrierefreies-bad/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8800,
+     "y_wirksam": 8800,
+     "datei": "d1280/bad__barrierefreies-bad/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1280",
+   "seite": "/balkon-terrasse",
+   "status": 200,
+   "hoehe": 9506,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1280/balkon-terrasse/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 800,
+     "y_wirksam": 800,
+     "datei": "d1280/balkon-terrasse/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1600,
+     "y_wirksam": 1600,
+     "datei": "d1280/balkon-terrasse/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2400,
+     "y_wirksam": 2400,
+     "datei": "d1280/balkon-terrasse/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3200,
+     "y_wirksam": 3200,
+     "datei": "d1280/balkon-terrasse/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4000,
+     "y_wirksam": 4000,
+     "datei": "d1280/balkon-terrasse/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4800,
+     "y_wirksam": 4800,
+     "datei": "d1280/balkon-terrasse/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5600,
+     "y_wirksam": 5600,
+     "datei": "d1280/balkon-terrasse/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6400,
+     "y_wirksam": 6400,
+     "datei": "d1280/balkon-terrasse/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d1280/balkon-terrasse/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 8000,
+     "y_wirksam": 8000,
+     "datei": "d1280/balkon-terrasse/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8800,
+     "y_wirksam": 8706,
+     "datei": "d1280/balkon-terrasse/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1280",
+   "seite": "/blog",
+   "status": 200,
+   "hoehe": 11309,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1280/blog/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 800,
+     "y_wirksam": 800,
+     "datei": "d1280/blog/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1600,
+     "y_wirksam": 1600,
+     "datei": "d1280/blog/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2400,
+     "y_wirksam": 2400,
+     "datei": "d1280/blog/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3200,
+     "y_wirksam": 3200,
+     "datei": "d1280/blog/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4000,
+     "y_wirksam": 4000,
+     "datei": "d1280/blog/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4800,
+     "y_wirksam": 4800,
+     "datei": "d1280/blog/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5600,
+     "y_wirksam": 5600,
+     "datei": "d1280/blog/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6400,
+     "y_wirksam": 6400,
+     "datei": "d1280/blog/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d1280/blog/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 8000,
+     "y_wirksam": 8000,
+     "datei": "d1280/blog/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8800,
+     "y_wirksam": 8800,
+     "datei": "d1280/blog/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1280",
+   "seite": "/fliesen",
+   "status": 200,
+   "hoehe": 12158,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1280/fliesen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 800,
+     "y_wirksam": 800,
+     "datei": "d1280/fliesen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1600,
+     "y_wirksam": 1600,
+     "datei": "d1280/fliesen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2400,
+     "y_wirksam": 2400,
+     "datei": "d1280/fliesen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3200,
+     "y_wirksam": 3200,
+     "datei": "d1280/fliesen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4000,
+     "y_wirksam": 4000,
+     "datei": "d1280/fliesen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4800,
+     "y_wirksam": 4800,
+     "datei": "d1280/fliesen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5600,
+     "y_wirksam": 5600,
+     "datei": "d1280/fliesen/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6400,
+     "y_wirksam": 6400,
+     "datei": "d1280/fliesen/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d1280/fliesen/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 8000,
+     "y_wirksam": 8000,
+     "datei": "d1280/fliesen/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8800,
+     "y_wirksam": 8800,
+     "datei": "d1280/fliesen/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1280",
+   "seite": "/kontakt",
+   "status": 200,
+   "hoehe": 6367,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1280/kontakt/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 800,
+     "y_wirksam": 800,
+     "datei": "d1280/kontakt/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1600,
+     "y_wirksam": 1600,
+     "datei": "d1280/kontakt/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2400,
+     "y_wirksam": 2400,
+     "datei": "d1280/kontakt/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3200,
+     "y_wirksam": 3200,
+     "datei": "d1280/kontakt/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4000,
+     "y_wirksam": 4000,
+     "datei": "d1280/kontakt/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4800,
+     "y_wirksam": 4800,
+     "datei": "d1280/kontakt/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5600,
+     "y_wirksam": 5567,
+     "datei": "d1280/kontakt/07.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1280",
+   "seite": "/leistungen",
+   "status": 200,
+   "hoehe": 11158,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1280/leistungen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 800,
+     "y_wirksam": 800,
+     "datei": "d1280/leistungen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1600,
+     "y_wirksam": 1600,
+     "datei": "d1280/leistungen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2400,
+     "y_wirksam": 2400,
+     "datei": "d1280/leistungen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3200,
+     "y_wirksam": 3200,
+     "datei": "d1280/leistungen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4000,
+     "y_wirksam": 4000,
+     "datei": "d1280/leistungen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4800,
+     "y_wirksam": 4800,
+     "datei": "d1280/leistungen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5600,
+     "y_wirksam": 5600,
+     "datei": "d1280/leistungen/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6400,
+     "y_wirksam": 6400,
+     "datei": "d1280/leistungen/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d1280/leistungen/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 8000,
+     "y_wirksam": 8000,
+     "datei": "d1280/leistungen/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8800,
+     "y_wirksam": 8800,
+     "datei": "d1280/leistungen/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1280",
+   "seite": "/referenzen",
+   "status": 200,
+   "hoehe": 13883,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1280/referenzen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 800,
+     "y_wirksam": 800,
+     "datei": "d1280/referenzen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1600,
+     "y_wirksam": 1600,
+     "datei": "d1280/referenzen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2400,
+     "y_wirksam": 2400,
+     "datei": "d1280/referenzen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3200,
+     "y_wirksam": 3200,
+     "datei": "d1280/referenzen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4000,
+     "y_wirksam": 4000,
+     "datei": "d1280/referenzen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4800,
+     "y_wirksam": 4800,
+     "datei": "d1280/referenzen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5600,
+     "y_wirksam": 5600,
+     "datei": "d1280/referenzen/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6400,
+     "y_wirksam": 6400,
+     "datei": "d1280/referenzen/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d1280/referenzen/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 8000,
+     "y_wirksam": 8000,
+     "datei": "d1280/referenzen/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8800,
+     "y_wirksam": 8800,
+     "datei": "d1280/referenzen/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1280",
+   "seite": "/standorte/wetzlar",
+   "status": 200,
+   "hoehe": 8556,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1280/standorte__wetzlar/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 800,
+     "y_wirksam": 800,
+     "datei": "d1280/standorte__wetzlar/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1600,
+     "y_wirksam": 1600,
+     "datei": "d1280/standorte__wetzlar/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2400,
+     "y_wirksam": 2400,
+     "datei": "d1280/standorte__wetzlar/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3200,
+     "y_wirksam": 3200,
+     "datei": "d1280/standorte__wetzlar/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4000,
+     "y_wirksam": 4000,
+     "datei": "d1280/standorte__wetzlar/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4800,
+     "y_wirksam": 4800,
+     "datei": "d1280/standorte__wetzlar/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5600,
+     "y_wirksam": 5600,
+     "datei": "d1280/standorte__wetzlar/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6400,
+     "y_wirksam": 6400,
+     "datei": "d1280/standorte__wetzlar/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d1280/standorte__wetzlar/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 8000,
+     "y_wirksam": 7756,
+     "datei": "d1280/standorte__wetzlar/10.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1280",
+   "seite": "/ueber-uns",
+   "status": 200,
+   "hoehe": 11801,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1280/ueber-uns/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 800,
+     "y_wirksam": 800,
+     "datei": "d1280/ueber-uns/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1600,
+     "y_wirksam": 1600,
+     "datei": "d1280/ueber-uns/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2400,
+     "y_wirksam": 2400,
+     "datei": "d1280/ueber-uns/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3200,
+     "y_wirksam": 3200,
+     "datei": "d1280/ueber-uns/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4000,
+     "y_wirksam": 4000,
+     "datei": "d1280/ueber-uns/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4800,
+     "y_wirksam": 4800,
+     "datei": "d1280/ueber-uns/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5600,
+     "y_wirksam": 5600,
+     "datei": "d1280/ueber-uns/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6400,
+     "y_wirksam": 6400,
+     "datei": "d1280/ueber-uns/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d1280/ueber-uns/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 8000,
+     "y_wirksam": 8000,
+     "datei": "d1280/ueber-uns/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8800,
+     "y_wirksam": 8800,
+     "datei": "d1280/ueber-uns/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1440",
+   "seite": "/",
+   "status": 200,
+   "hoehe": 9757,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1440/start/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 900,
+     "y_wirksam": 900,
+     "datei": "d1440/start/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1800,
+     "y_wirksam": 1800,
+     "datei": "d1440/start/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2700,
+     "y_wirksam": 2700,
+     "datei": "d1440/start/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3600,
+     "y_wirksam": 3600,
+     "datei": "d1440/start/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4500,
+     "y_wirksam": 4500,
+     "datei": "d1440/start/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5400,
+     "y_wirksam": 5400,
+     "datei": "d1440/start/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 6300,
+     "y_wirksam": 6300,
+     "datei": "d1440/start/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d1440/start/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 8100,
+     "y_wirksam": 8100,
+     "datei": "d1440/start/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 9000,
+     "y_wirksam": 8857,
+     "datei": "d1440/start/10.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1440",
+   "seite": "/bad",
+   "status": 200,
+   "hoehe": 13624,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1440/bad/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 900,
+     "y_wirksam": 900,
+     "datei": "d1440/bad/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1800,
+     "y_wirksam": 1800,
+     "datei": "d1440/bad/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2700,
+     "y_wirksam": 2700,
+     "datei": "d1440/bad/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3600,
+     "y_wirksam": 3600,
+     "datei": "d1440/bad/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4500,
+     "y_wirksam": 4500,
+     "datei": "d1440/bad/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5400,
+     "y_wirksam": 5400,
+     "datei": "d1440/bad/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 6300,
+     "y_wirksam": 6300,
+     "datei": "d1440/bad/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d1440/bad/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 8100,
+     "y_wirksam": 8100,
+     "datei": "d1440/bad/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 9000,
+     "y_wirksam": 9000,
+     "datei": "d1440/bad/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 9900,
+     "y_wirksam": 9900,
+     "datei": "d1440/bad/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1440",
+   "seite": "/bad/badsanierung",
+   "status": 200,
+   "hoehe": 10945,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1440/bad__badsanierung/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 900,
+     "y_wirksam": 900,
+     "datei": "d1440/bad__badsanierung/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1800,
+     "y_wirksam": 1800,
+     "datei": "d1440/bad__badsanierung/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2700,
+     "y_wirksam": 2700,
+     "datei": "d1440/bad__badsanierung/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3600,
+     "y_wirksam": 3600,
+     "datei": "d1440/bad__badsanierung/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4500,
+     "y_wirksam": 4500,
+     "datei": "d1440/bad__badsanierung/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5400,
+     "y_wirksam": 5400,
+     "datei": "d1440/bad__badsanierung/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 6300,
+     "y_wirksam": 6300,
+     "datei": "d1440/bad__badsanierung/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d1440/bad__badsanierung/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 8100,
+     "y_wirksam": 8100,
+     "datei": "d1440/bad__badsanierung/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 9000,
+     "y_wirksam": 9000,
+     "datei": "d1440/bad__badsanierung/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 9900,
+     "y_wirksam": 9900,
+     "datei": "d1440/bad__badsanierung/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1440",
+   "seite": "/bad/barrierefreies-bad",
+   "status": 200,
+   "hoehe": 10706,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1440/bad__barrierefreies-bad/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 900,
+     "y_wirksam": 900,
+     "datei": "d1440/bad__barrierefreies-bad/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1800,
+     "y_wirksam": 1800,
+     "datei": "d1440/bad__barrierefreies-bad/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2700,
+     "y_wirksam": 2700,
+     "datei": "d1440/bad__barrierefreies-bad/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3600,
+     "y_wirksam": 3600,
+     "datei": "d1440/bad__barrierefreies-bad/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4500,
+     "y_wirksam": 4500,
+     "datei": "d1440/bad__barrierefreies-bad/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5400,
+     "y_wirksam": 5400,
+     "datei": "d1440/bad__barrierefreies-bad/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 6300,
+     "y_wirksam": 6300,
+     "datei": "d1440/bad__barrierefreies-bad/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d1440/bad__barrierefreies-bad/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 8100,
+     "y_wirksam": 8100,
+     "datei": "d1440/bad__barrierefreies-bad/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 9000,
+     "y_wirksam": 9000,
+     "datei": "d1440/bad__barrierefreies-bad/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 9900,
+     "y_wirksam": 9806,
+     "datei": "d1440/bad__barrierefreies-bad/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1440",
+   "seite": "/balkon-terrasse",
+   "status": 200,
+   "hoehe": 9552,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1440/balkon-terrasse/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 900,
+     "y_wirksam": 900,
+     "datei": "d1440/balkon-terrasse/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1800,
+     "y_wirksam": 1800,
+     "datei": "d1440/balkon-terrasse/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2700,
+     "y_wirksam": 2700,
+     "datei": "d1440/balkon-terrasse/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3600,
+     "y_wirksam": 3600,
+     "datei": "d1440/balkon-terrasse/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4500,
+     "y_wirksam": 4500,
+     "datei": "d1440/balkon-terrasse/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5400,
+     "y_wirksam": 5400,
+     "datei": "d1440/balkon-terrasse/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 6300,
+     "y_wirksam": 6300,
+     "datei": "d1440/balkon-terrasse/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d1440/balkon-terrasse/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 8100,
+     "y_wirksam": 8100,
+     "datei": "d1440/balkon-terrasse/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 9000,
+     "y_wirksam": 8652,
+     "datei": "d1440/balkon-terrasse/10.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1440",
+   "seite": "/blog",
+   "status": 200,
+   "hoehe": 11353,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1440/blog/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 900,
+     "y_wirksam": 900,
+     "datei": "d1440/blog/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1800,
+     "y_wirksam": 1800,
+     "datei": "d1440/blog/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2700,
+     "y_wirksam": 2700,
+     "datei": "d1440/blog/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3600,
+     "y_wirksam": 3600,
+     "datei": "d1440/blog/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4500,
+     "y_wirksam": 4500,
+     "datei": "d1440/blog/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5400,
+     "y_wirksam": 5400,
+     "datei": "d1440/blog/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 6300,
+     "y_wirksam": 6300,
+     "datei": "d1440/blog/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d1440/blog/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 8100,
+     "y_wirksam": 8100,
+     "datei": "d1440/blog/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 9000,
+     "y_wirksam": 9000,
+     "datei": "d1440/blog/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 9900,
+     "y_wirksam": 9900,
+     "datei": "d1440/blog/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1440",
+   "seite": "/fliesen",
+   "status": 200,
+   "hoehe": 12321,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1440/fliesen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 900,
+     "y_wirksam": 900,
+     "datei": "d1440/fliesen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1800,
+     "y_wirksam": 1800,
+     "datei": "d1440/fliesen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2700,
+     "y_wirksam": 2700,
+     "datei": "d1440/fliesen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3600,
+     "y_wirksam": 3600,
+     "datei": "d1440/fliesen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4500,
+     "y_wirksam": 4500,
+     "datei": "d1440/fliesen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5400,
+     "y_wirksam": 5400,
+     "datei": "d1440/fliesen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 6300,
+     "y_wirksam": 6300,
+     "datei": "d1440/fliesen/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d1440/fliesen/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 8100,
+     "y_wirksam": 8100,
+     "datei": "d1440/fliesen/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 9000,
+     "y_wirksam": 9000,
+     "datei": "d1440/fliesen/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 9900,
+     "y_wirksam": 9900,
+     "datei": "d1440/fliesen/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1440",
+   "seite": "/kontakt",
+   "status": 200,
+   "hoehe": 6340,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1440/kontakt/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 900,
+     "y_wirksam": 900,
+     "datei": "d1440/kontakt/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1800,
+     "y_wirksam": 1800,
+     "datei": "d1440/kontakt/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2700,
+     "y_wirksam": 2700,
+     "datei": "d1440/kontakt/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3600,
+     "y_wirksam": 3600,
+     "datei": "d1440/kontakt/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4500,
+     "y_wirksam": 4500,
+     "datei": "d1440/kontakt/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5400,
+     "y_wirksam": 5400,
+     "datei": "d1440/kontakt/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 6300,
+     "y_wirksam": 5440,
+     "datei": "d1440/kontakt/07.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1440",
+   "seite": "/leistungen",
+   "status": 200,
+   "hoehe": 11297,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1440/leistungen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 900,
+     "y_wirksam": 900,
+     "datei": "d1440/leistungen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1800,
+     "y_wirksam": 1800,
+     "datei": "d1440/leistungen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2700,
+     "y_wirksam": 2700,
+     "datei": "d1440/leistungen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3600,
+     "y_wirksam": 3600,
+     "datei": "d1440/leistungen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4500,
+     "y_wirksam": 4500,
+     "datei": "d1440/leistungen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5400,
+     "y_wirksam": 5400,
+     "datei": "d1440/leistungen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 6300,
+     "y_wirksam": 6300,
+     "datei": "d1440/leistungen/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d1440/leistungen/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 8100,
+     "y_wirksam": 8100,
+     "datei": "d1440/leistungen/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 9000,
+     "y_wirksam": 9000,
+     "datei": "d1440/leistungen/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 9900,
+     "y_wirksam": 9900,
+     "datei": "d1440/leistungen/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1440",
+   "seite": "/referenzen",
+   "status": 200,
+   "hoehe": 14143,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1440/referenzen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 900,
+     "y_wirksam": 900,
+     "datei": "d1440/referenzen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1800,
+     "y_wirksam": 1800,
+     "datei": "d1440/referenzen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2700,
+     "y_wirksam": 2700,
+     "datei": "d1440/referenzen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3600,
+     "y_wirksam": 3600,
+     "datei": "d1440/referenzen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4500,
+     "y_wirksam": 4500,
+     "datei": "d1440/referenzen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5400,
+     "y_wirksam": 5400,
+     "datei": "d1440/referenzen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 6300,
+     "y_wirksam": 6300,
+     "datei": "d1440/referenzen/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d1440/referenzen/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 8100,
+     "y_wirksam": 8100,
+     "datei": "d1440/referenzen/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 9000,
+     "y_wirksam": 9000,
+     "datei": "d1440/referenzen/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 9900,
+     "y_wirksam": 9900,
+     "datei": "d1440/referenzen/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1440",
+   "seite": "/standorte/wetzlar",
+   "status": 200,
+   "hoehe": 8590,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1440/standorte__wetzlar/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 900,
+     "y_wirksam": 900,
+     "datei": "d1440/standorte__wetzlar/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1800,
+     "y_wirksam": 1800,
+     "datei": "d1440/standorte__wetzlar/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2700,
+     "y_wirksam": 2700,
+     "datei": "d1440/standorte__wetzlar/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3600,
+     "y_wirksam": 3600,
+     "datei": "d1440/standorte__wetzlar/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4500,
+     "y_wirksam": 4500,
+     "datei": "d1440/standorte__wetzlar/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5400,
+     "y_wirksam": 5400,
+     "datei": "d1440/standorte__wetzlar/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 6300,
+     "y_wirksam": 6300,
+     "datei": "d1440/standorte__wetzlar/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d1440/standorte__wetzlar/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 8100,
+     "y_wirksam": 7690,
+     "datei": "d1440/standorte__wetzlar/09.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1440",
+   "seite": "/ueber-uns",
+   "status": 200,
+   "hoehe": 11895,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1440/ueber-uns/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 900,
+     "y_wirksam": 900,
+     "datei": "d1440/ueber-uns/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1800,
+     "y_wirksam": 1800,
+     "datei": "d1440/ueber-uns/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2700,
+     "y_wirksam": 2700,
+     "datei": "d1440/ueber-uns/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3600,
+     "y_wirksam": 3600,
+     "datei": "d1440/ueber-uns/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4500,
+     "y_wirksam": 4500,
+     "datei": "d1440/ueber-uns/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5400,
+     "y_wirksam": 5400,
+     "datei": "d1440/ueber-uns/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 6300,
+     "y_wirksam": 6300,
+     "datei": "d1440/ueber-uns/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d1440/ueber-uns/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 8100,
+     "y_wirksam": 8100,
+     "datei": "d1440/ueber-uns/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 9000,
+     "y_wirksam": 9000,
+     "datei": "d1440/ueber-uns/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 9900,
+     "y_wirksam": 9900,
+     "datei": "d1440/ueber-uns/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1920",
+   "seite": "/",
+   "status": 200,
+   "hoehe": 9762,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1920/start/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1080,
+     "y_wirksam": 1080,
+     "datei": "d1920/start/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2160,
+     "y_wirksam": 2160,
+     "datei": "d1920/start/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 3240,
+     "y_wirksam": 3240,
+     "datei": "d1920/start/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 4320,
+     "y_wirksam": 4320,
+     "datei": "d1920/start/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 5400,
+     "y_wirksam": 5400,
+     "datei": "d1920/start/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 6480,
+     "y_wirksam": 6480,
+     "datei": "d1920/start/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 7560,
+     "y_wirksam": 7560,
+     "datei": "d1920/start/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 8640,
+     "y_wirksam": 8640,
+     "datei": "d1920/start/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 9720,
+     "y_wirksam": 8682,
+     "datei": "d1920/start/09.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1920",
+   "seite": "/bad",
+   "status": 200,
+   "hoehe": 13629,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1920/bad/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1080,
+     "y_wirksam": 1080,
+     "datei": "d1920/bad/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2160,
+     "y_wirksam": 2160,
+     "datei": "d1920/bad/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 3240,
+     "y_wirksam": 3240,
+     "datei": "d1920/bad/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 4320,
+     "y_wirksam": 4320,
+     "datei": "d1920/bad/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 5400,
+     "y_wirksam": 5400,
+     "datei": "d1920/bad/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 6480,
+     "y_wirksam": 6480,
+     "datei": "d1920/bad/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 7560,
+     "y_wirksam": 7560,
+     "datei": "d1920/bad/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 8640,
+     "y_wirksam": 8640,
+     "datei": "d1920/bad/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 9720,
+     "y_wirksam": 9720,
+     "datei": "d1920/bad/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 10800,
+     "y_wirksam": 10800,
+     "datei": "d1920/bad/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 11880,
+     "y_wirksam": 11880,
+     "datei": "d1920/bad/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1920",
+   "seite": "/bad/badsanierung",
+   "status": 200,
+   "hoehe": 10951,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1920/bad__badsanierung/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1080,
+     "y_wirksam": 1080,
+     "datei": "d1920/bad__badsanierung/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2160,
+     "y_wirksam": 2160,
+     "datei": "d1920/bad__badsanierung/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 3240,
+     "y_wirksam": 3240,
+     "datei": "d1920/bad__badsanierung/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 4320,
+     "y_wirksam": 4320,
+     "datei": "d1920/bad__badsanierung/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 5400,
+     "y_wirksam": 5400,
+     "datei": "d1920/bad__badsanierung/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 6480,
+     "y_wirksam": 6480,
+     "datei": "d1920/bad__badsanierung/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 7560,
+     "y_wirksam": 7560,
+     "datei": "d1920/bad__badsanierung/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 8640,
+     "y_wirksam": 8640,
+     "datei": "d1920/bad__badsanierung/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 9720,
+     "y_wirksam": 9720,
+     "datei": "d1920/bad__badsanierung/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 10800,
+     "y_wirksam": 9871,
+     "datei": "d1920/bad__badsanierung/10.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1920",
+   "seite": "/bad/barrierefreies-bad",
+   "status": 200,
+   "hoehe": 10710,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1920/bad__barrierefreies-bad/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1080,
+     "y_wirksam": 1080,
+     "datei": "d1920/bad__barrierefreies-bad/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2160,
+     "y_wirksam": 2160,
+     "datei": "d1920/bad__barrierefreies-bad/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 3240,
+     "y_wirksam": 3240,
+     "datei": "d1920/bad__barrierefreies-bad/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 4320,
+     "y_wirksam": 4320,
+     "datei": "d1920/bad__barrierefreies-bad/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 5400,
+     "y_wirksam": 5400,
+     "datei": "d1920/bad__barrierefreies-bad/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 6480,
+     "y_wirksam": 6480,
+     "datei": "d1920/bad__barrierefreies-bad/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 7560,
+     "y_wirksam": 7560,
+     "datei": "d1920/bad__barrierefreies-bad/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 8640,
+     "y_wirksam": 8640,
+     "datei": "d1920/bad__barrierefreies-bad/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 9720,
+     "y_wirksam": 9630,
+     "datei": "d1920/bad__barrierefreies-bad/09.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1920",
+   "seite": "/balkon-terrasse",
+   "status": 200,
+   "hoehe": 9557,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1920/balkon-terrasse/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1080,
+     "y_wirksam": 1080,
+     "datei": "d1920/balkon-terrasse/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2160,
+     "y_wirksam": 2160,
+     "datei": "d1920/balkon-terrasse/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 3240,
+     "y_wirksam": 3240,
+     "datei": "d1920/balkon-terrasse/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 4320,
+     "y_wirksam": 4320,
+     "datei": "d1920/balkon-terrasse/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 5400,
+     "y_wirksam": 5400,
+     "datei": "d1920/balkon-terrasse/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 6480,
+     "y_wirksam": 6480,
+     "datei": "d1920/balkon-terrasse/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 7560,
+     "y_wirksam": 7560,
+     "datei": "d1920/balkon-terrasse/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 8640,
+     "y_wirksam": 8477,
+     "datei": "d1920/balkon-terrasse/08.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1920",
+   "seite": "/blog",
+   "status": 200,
+   "hoehe": 11358,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1920/blog/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1080,
+     "y_wirksam": 1080,
+     "datei": "d1920/blog/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2160,
+     "y_wirksam": 2160,
+     "datei": "d1920/blog/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 3240,
+     "y_wirksam": 3240,
+     "datei": "d1920/blog/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 4320,
+     "y_wirksam": 4320,
+     "datei": "d1920/blog/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 5400,
+     "y_wirksam": 5400,
+     "datei": "d1920/blog/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 6480,
+     "y_wirksam": 6480,
+     "datei": "d1920/blog/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 7560,
+     "y_wirksam": 7560,
+     "datei": "d1920/blog/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 8640,
+     "y_wirksam": 8640,
+     "datei": "d1920/blog/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 9720,
+     "y_wirksam": 9720,
+     "datei": "d1920/blog/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 10800,
+     "y_wirksam": 10278,
+     "datei": "d1920/blog/10.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1920",
+   "seite": "/fliesen",
+   "status": 200,
+   "hoehe": 12390,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1920/fliesen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1080,
+     "y_wirksam": 1080,
+     "datei": "d1920/fliesen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2160,
+     "y_wirksam": 2160,
+     "datei": "d1920/fliesen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 3240,
+     "y_wirksam": 3240,
+     "datei": "d1920/fliesen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 4320,
+     "y_wirksam": 4320,
+     "datei": "d1920/fliesen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 5400,
+     "y_wirksam": 5400,
+     "datei": "d1920/fliesen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 6480,
+     "y_wirksam": 6480,
+     "datei": "d1920/fliesen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 7560,
+     "y_wirksam": 7560,
+     "datei": "d1920/fliesen/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 8640,
+     "y_wirksam": 8640,
+     "datei": "d1920/fliesen/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 9720,
+     "y_wirksam": 9720,
+     "datei": "d1920/fliesen/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 10800,
+     "y_wirksam": 10800,
+     "datei": "d1920/fliesen/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 11880,
+     "y_wirksam": 11310,
+     "datei": "d1920/fliesen/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1920",
+   "seite": "/kontakt",
+   "status": 200,
+   "hoehe": 6341,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1920/kontakt/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1080,
+     "y_wirksam": 1080,
+     "datei": "d1920/kontakt/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2160,
+     "y_wirksam": 2160,
+     "datei": "d1920/kontakt/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 3240,
+     "y_wirksam": 3240,
+     "datei": "d1920/kontakt/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 4320,
+     "y_wirksam": 4320,
+     "datei": "d1920/kontakt/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 5400,
+     "y_wirksam": 5261,
+     "datei": "d1920/kontakt/05.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1920",
+   "seite": "/leistungen",
+   "status": 200,
+   "hoehe": 11302,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1920/leistungen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1080,
+     "y_wirksam": 1080,
+     "datei": "d1920/leistungen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2160,
+     "y_wirksam": 2160,
+     "datei": "d1920/leistungen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 3240,
+     "y_wirksam": 3240,
+     "datei": "d1920/leistungen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 4320,
+     "y_wirksam": 4320,
+     "datei": "d1920/leistungen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 5400,
+     "y_wirksam": 5400,
+     "datei": "d1920/leistungen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 6480,
+     "y_wirksam": 6480,
+     "datei": "d1920/leistungen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 7560,
+     "y_wirksam": 7560,
+     "datei": "d1920/leistungen/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 8640,
+     "y_wirksam": 8640,
+     "datei": "d1920/leistungen/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 9720,
+     "y_wirksam": 9720,
+     "datei": "d1920/leistungen/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 10800,
+     "y_wirksam": 10222,
+     "datei": "d1920/leistungen/10.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1920",
+   "seite": "/referenzen",
+   "status": 200,
+   "hoehe": 14294,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1920/referenzen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1080,
+     "y_wirksam": 1080,
+     "datei": "d1920/referenzen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2160,
+     "y_wirksam": 2160,
+     "datei": "d1920/referenzen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 3240,
+     "y_wirksam": 3240,
+     "datei": "d1920/referenzen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 4320,
+     "y_wirksam": 4320,
+     "datei": "d1920/referenzen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 5400,
+     "y_wirksam": 5400,
+     "datei": "d1920/referenzen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 6480,
+     "y_wirksam": 6480,
+     "datei": "d1920/referenzen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 7560,
+     "y_wirksam": 7560,
+     "datei": "d1920/referenzen/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 8640,
+     "y_wirksam": 8640,
+     "datei": "d1920/referenzen/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 9720,
+     "y_wirksam": 9720,
+     "datei": "d1920/referenzen/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 10800,
+     "y_wirksam": 10800,
+     "datei": "d1920/referenzen/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 11880,
+     "y_wirksam": 11880,
+     "datei": "d1920/referenzen/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1920",
+   "seite": "/standorte/wetzlar",
+   "status": 200,
+   "hoehe": 8594,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1920/standorte__wetzlar/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1080,
+     "y_wirksam": 1080,
+     "datei": "d1920/standorte__wetzlar/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2160,
+     "y_wirksam": 2160,
+     "datei": "d1920/standorte__wetzlar/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 3240,
+     "y_wirksam": 3240,
+     "datei": "d1920/standorte__wetzlar/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 4320,
+     "y_wirksam": 4320,
+     "datei": "d1920/standorte__wetzlar/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 5400,
+     "y_wirksam": 5400,
+     "datei": "d1920/standorte__wetzlar/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 6480,
+     "y_wirksam": 6480,
+     "datei": "d1920/standorte__wetzlar/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 7560,
+     "y_wirksam": 7514,
+     "datei": "d1920/standorte__wetzlar/07.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1920",
+   "seite": "/ueber-uns",
+   "status": 200,
+   "hoehe": 11901,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1920/ueber-uns/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1080,
+     "y_wirksam": 1080,
+     "datei": "d1920/ueber-uns/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2160,
+     "y_wirksam": 2160,
+     "datei": "d1920/ueber-uns/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 3240,
+     "y_wirksam": 3240,
+     "datei": "d1920/ueber-uns/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 4320,
+     "y_wirksam": 4320,
+     "datei": "d1920/ueber-uns/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 5400,
+     "y_wirksam": 5400,
+     "datei": "d1920/ueber-uns/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 6480,
+     "y_wirksam": 6480,
+     "datei": "d1920/ueber-uns/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 7560,
+     "y_wirksam": 7560,
+     "datei": "d1920/ueber-uns/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 8640,
+     "y_wirksam": 8640,
+     "datei": "d1920/ueber-uns/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 9720,
+     "y_wirksam": 9720,
+     "datei": "d1920/ueber-uns/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 10800,
+     "y_wirksam": 10800,
+     "datei": "d1920/ueber-uns/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 11880,
+     "y_wirksam": 10821,
+     "datei": "d1920/ueber-uns/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d2560",
+   "seite": "/",
+   "status": 200,
+   "hoehe": 9762,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d2560/start/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1440,
+     "y_wirksam": 1440,
+     "datei": "d2560/start/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2880,
+     "y_wirksam": 2880,
+     "datei": "d2560/start/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 4320,
+     "y_wirksam": 4320,
+     "datei": "d2560/start/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 5760,
+     "y_wirksam": 5760,
+     "datei": "d2560/start/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d2560/start/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 8640,
+     "y_wirksam": 8322,
+     "datei": "d2560/start/06.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d2560",
+   "seite": "/bad",
+   "status": 200,
+   "hoehe": 13629,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d2560/bad/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1440,
+     "y_wirksam": 1440,
+     "datei": "d2560/bad/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2880,
+     "y_wirksam": 2880,
+     "datei": "d2560/bad/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 4320,
+     "y_wirksam": 4320,
+     "datei": "d2560/bad/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 5760,
+     "y_wirksam": 5760,
+     "datei": "d2560/bad/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d2560/bad/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 8640,
+     "y_wirksam": 8640,
+     "datei": "d2560/bad/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 10080,
+     "y_wirksam": 10080,
+     "datei": "d2560/bad/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 11520,
+     "y_wirksam": 11520,
+     "datei": "d2560/bad/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 12960,
+     "y_wirksam": 12189,
+     "datei": "d2560/bad/09.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d2560",
+   "seite": "/bad/badsanierung",
+   "status": 200,
+   "hoehe": 10951,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d2560/bad__badsanierung/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1440,
+     "y_wirksam": 1440,
+     "datei": "d2560/bad__badsanierung/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2880,
+     "y_wirksam": 2880,
+     "datei": "d2560/bad__badsanierung/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 4320,
+     "y_wirksam": 4320,
+     "datei": "d2560/bad__badsanierung/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 5760,
+     "y_wirksam": 5760,
+     "datei": "d2560/bad__badsanierung/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d2560/bad__badsanierung/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 8640,
+     "y_wirksam": 8640,
+     "datei": "d2560/bad__badsanierung/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 10080,
+     "y_wirksam": 9511,
+     "datei": "d2560/bad__badsanierung/07.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d2560",
+   "seite": "/bad/barrierefreies-bad",
+   "status": 200,
+   "hoehe": 10710,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d2560/bad__barrierefreies-bad/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1440,
+     "y_wirksam": 1440,
+     "datei": "d2560/bad__barrierefreies-bad/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2880,
+     "y_wirksam": 2880,
+     "datei": "d2560/bad__barrierefreies-bad/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 4320,
+     "y_wirksam": 4320,
+     "datei": "d2560/bad__barrierefreies-bad/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 5760,
+     "y_wirksam": 5760,
+     "datei": "d2560/bad__barrierefreies-bad/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d2560/bad__barrierefreies-bad/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 8640,
+     "y_wirksam": 8640,
+     "datei": "d2560/bad__barrierefreies-bad/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 10080,
+     "y_wirksam": 9270,
+     "datei": "d2560/bad__barrierefreies-bad/07.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d2560",
+   "seite": "/balkon-terrasse",
+   "status": 200,
+   "hoehe": 9557,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d2560/balkon-terrasse/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1440,
+     "y_wirksam": 1440,
+     "datei": "d2560/balkon-terrasse/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2880,
+     "y_wirksam": 2880,
+     "datei": "d2560/balkon-terrasse/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 4320,
+     "y_wirksam": 4320,
+     "datei": "d2560/balkon-terrasse/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 5760,
+     "y_wirksam": 5760,
+     "datei": "d2560/balkon-terrasse/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d2560/balkon-terrasse/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 8640,
+     "y_wirksam": 8117,
+     "datei": "d2560/balkon-terrasse/06.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d2560",
+   "seite": "/blog",
+   "status": 200,
+   "hoehe": 11358,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d2560/blog/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1440,
+     "y_wirksam": 1440,
+     "datei": "d2560/blog/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2880,
+     "y_wirksam": 2880,
+     "datei": "d2560/blog/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 4320,
+     "y_wirksam": 4320,
+     "datei": "d2560/blog/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 5760,
+     "y_wirksam": 5760,
+     "datei": "d2560/blog/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d2560/blog/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 8640,
+     "y_wirksam": 8640,
+     "datei": "d2560/blog/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 10080,
+     "y_wirksam": 9918,
+     "datei": "d2560/blog/07.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d2560",
+   "seite": "/fliesen",
+   "status": 200,
+   "hoehe": 12390,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d2560/fliesen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1440,
+     "y_wirksam": 1440,
+     "datei": "d2560/fliesen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2880,
+     "y_wirksam": 2880,
+     "datei": "d2560/fliesen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 4320,
+     "y_wirksam": 4320,
+     "datei": "d2560/fliesen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 5760,
+     "y_wirksam": 5760,
+     "datei": "d2560/fliesen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d2560/fliesen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 8640,
+     "y_wirksam": 8640,
+     "datei": "d2560/fliesen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 10080,
+     "y_wirksam": 10080,
+     "datei": "d2560/fliesen/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 11520,
+     "y_wirksam": 10950,
+     "datei": "d2560/fliesen/08.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d2560",
+   "seite": "/kontakt",
+   "status": 200,
+   "hoehe": 6341,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d2560/kontakt/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1440,
+     "y_wirksam": 1440,
+     "datei": "d2560/kontakt/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2880,
+     "y_wirksam": 2880,
+     "datei": "d2560/kontakt/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 4320,
+     "y_wirksam": 4320,
+     "datei": "d2560/kontakt/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 5760,
+     "y_wirksam": 4901,
+     "datei": "d2560/kontakt/04.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d2560",
+   "seite": "/leistungen",
+   "status": 200,
+   "hoehe": 11302,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d2560/leistungen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1440,
+     "y_wirksam": 1440,
+     "datei": "d2560/leistungen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2880,
+     "y_wirksam": 2880,
+     "datei": "d2560/leistungen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 4320,
+     "y_wirksam": 4320,
+     "datei": "d2560/leistungen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 5760,
+     "y_wirksam": 5760,
+     "datei": "d2560/leistungen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d2560/leistungen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 8640,
+     "y_wirksam": 8640,
+     "datei": "d2560/leistungen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 10080,
+     "y_wirksam": 9862,
+     "datei": "d2560/leistungen/07.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d2560",
+   "seite": "/referenzen",
+   "status": 200,
+   "hoehe": 14551,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d2560/referenzen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1440,
+     "y_wirksam": 1440,
+     "datei": "d2560/referenzen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2880,
+     "y_wirksam": 2880,
+     "datei": "d2560/referenzen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 4320,
+     "y_wirksam": 4320,
+     "datei": "d2560/referenzen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 5760,
+     "y_wirksam": 5760,
+     "datei": "d2560/referenzen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d2560/referenzen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 8640,
+     "y_wirksam": 8640,
+     "datei": "d2560/referenzen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 10080,
+     "y_wirksam": 10080,
+     "datei": "d2560/referenzen/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 11520,
+     "y_wirksam": 11520,
+     "datei": "d2560/referenzen/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 12960,
+     "y_wirksam": 12960,
+     "datei": "d2560/referenzen/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 14400,
+     "y_wirksam": 13111,
+     "datei": "d2560/referenzen/10.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d2560",
+   "seite": "/standorte/wetzlar",
+   "status": 200,
+   "hoehe": 8594,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d2560/standorte__wetzlar/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1440,
+     "y_wirksam": 1440,
+     "datei": "d2560/standorte__wetzlar/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2880,
+     "y_wirksam": 2880,
+     "datei": "d2560/standorte__wetzlar/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 4320,
+     "y_wirksam": 4320,
+     "datei": "d2560/standorte__wetzlar/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 5760,
+     "y_wirksam": 5760,
+     "datei": "d2560/standorte__wetzlar/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 7200,
+     "y_wirksam": 7154,
+     "datei": "d2560/standorte__wetzlar/05.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d2560",
+   "seite": "/ueber-uns",
+   "status": 200,
+   "hoehe": 11901,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d2560/ueber-uns/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1440,
+     "y_wirksam": 1440,
+     "datei": "d2560/ueber-uns/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2880,
+     "y_wirksam": 2880,
+     "datei": "d2560/ueber-uns/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 4320,
+     "y_wirksam": 4320,
+     "datei": "d2560/ueber-uns/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 5760,
+     "y_wirksam": 5760,
+     "datei": "d2560/ueber-uns/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d2560/ueber-uns/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 8640,
+     "y_wirksam": 8640,
+     "datei": "d2560/ueber-uns/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 10080,
+     "y_wirksam": 10080,
+     "datei": "d2560/ueber-uns/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 11520,
+     "y_wirksam": 10461,
+     "datei": "d2560/ueber-uns/08.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m360",
+   "seite": "/",
+   "status": 200,
+   "hoehe": 11576,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m360/start/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 740,
+     "y_wirksam": 740,
+     "datei": "m360/start/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1480,
+     "y_wirksam": 1480,
+     "datei": "m360/start/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2220,
+     "y_wirksam": 2220,
+     "datei": "m360/start/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 2960,
+     "y_wirksam": 2960,
+     "datei": "m360/start/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 3700,
+     "y_wirksam": 3700,
+     "datei": "m360/start/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4440,
+     "y_wirksam": 4440,
+     "datei": "m360/start/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5180,
+     "y_wirksam": 5180,
+     "datei": "m360/start/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 5920,
+     "y_wirksam": 5920,
+     "datei": "m360/start/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 6660,
+     "y_wirksam": 6660,
+     "datei": "m360/start/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 7400,
+     "y_wirksam": 7400,
+     "datei": "m360/start/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8140,
+     "y_wirksam": 8140,
+     "datei": "m360/start/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m360",
+   "seite": "/bad",
+   "status": 200,
+   "hoehe": 14741,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m360/bad/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 740,
+     "y_wirksam": 740,
+     "datei": "m360/bad/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1480,
+     "y_wirksam": 1480,
+     "datei": "m360/bad/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2220,
+     "y_wirksam": 2220,
+     "datei": "m360/bad/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 2960,
+     "y_wirksam": 2960,
+     "datei": "m360/bad/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 3700,
+     "y_wirksam": 3700,
+     "datei": "m360/bad/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4440,
+     "y_wirksam": 4440,
+     "datei": "m360/bad/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5180,
+     "y_wirksam": 5180,
+     "datei": "m360/bad/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 5920,
+     "y_wirksam": 5920,
+     "datei": "m360/bad/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 6660,
+     "y_wirksam": 6660,
+     "datei": "m360/bad/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 7400,
+     "y_wirksam": 7400,
+     "datei": "m360/bad/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8140,
+     "y_wirksam": 8140,
+     "datei": "m360/bad/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m360",
+   "seite": "/bad/badsanierung",
+   "status": 200,
+   "hoehe": 11629,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m360/bad__badsanierung/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 740,
+     "y_wirksam": 740,
+     "datei": "m360/bad__badsanierung/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1480,
+     "y_wirksam": 1480,
+     "datei": "m360/bad__badsanierung/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2220,
+     "y_wirksam": 2220,
+     "datei": "m360/bad__badsanierung/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 2960,
+     "y_wirksam": 2960,
+     "datei": "m360/bad__badsanierung/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 3700,
+     "y_wirksam": 3700,
+     "datei": "m360/bad__badsanierung/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4440,
+     "y_wirksam": 4440,
+     "datei": "m360/bad__badsanierung/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5180,
+     "y_wirksam": 5180,
+     "datei": "m360/bad__badsanierung/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 5920,
+     "y_wirksam": 5920,
+     "datei": "m360/bad__badsanierung/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 6660,
+     "y_wirksam": 6660,
+     "datei": "m360/bad__badsanierung/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 7400,
+     "y_wirksam": 7400,
+     "datei": "m360/bad__badsanierung/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8140,
+     "y_wirksam": 8140,
+     "datei": "m360/bad__badsanierung/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m360",
+   "seite": "/bad/barrierefreies-bad",
+   "status": 200,
+   "hoehe": 10890,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m360/bad__barrierefreies-bad/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 740,
+     "y_wirksam": 740,
+     "datei": "m360/bad__barrierefreies-bad/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1480,
+     "y_wirksam": 1480,
+     "datei": "m360/bad__barrierefreies-bad/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2220,
+     "y_wirksam": 2220,
+     "datei": "m360/bad__barrierefreies-bad/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 2960,
+     "y_wirksam": 2960,
+     "datei": "m360/bad__barrierefreies-bad/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 3700,
+     "y_wirksam": 3700,
+     "datei": "m360/bad__barrierefreies-bad/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4440,
+     "y_wirksam": 4440,
+     "datei": "m360/bad__barrierefreies-bad/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5180,
+     "y_wirksam": 5180,
+     "datei": "m360/bad__barrierefreies-bad/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 5920,
+     "y_wirksam": 5920,
+     "datei": "m360/bad__barrierefreies-bad/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 6660,
+     "y_wirksam": 6660,
+     "datei": "m360/bad__barrierefreies-bad/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 7400,
+     "y_wirksam": 7400,
+     "datei": "m360/bad__barrierefreies-bad/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8140,
+     "y_wirksam": 8140,
+     "datei": "m360/bad__barrierefreies-bad/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m360",
+   "seite": "/balkon-terrasse",
+   "status": 200,
+   "hoehe": 9683,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m360/balkon-terrasse/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 740,
+     "y_wirksam": 740,
+     "datei": "m360/balkon-terrasse/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1480,
+     "y_wirksam": 1480,
+     "datei": "m360/balkon-terrasse/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2220,
+     "y_wirksam": 2220,
+     "datei": "m360/balkon-terrasse/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 2960,
+     "y_wirksam": 2960,
+     "datei": "m360/balkon-terrasse/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 3700,
+     "y_wirksam": 3700,
+     "datei": "m360/balkon-terrasse/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4440,
+     "y_wirksam": 4440,
+     "datei": "m360/balkon-terrasse/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5180,
+     "y_wirksam": 5180,
+     "datei": "m360/balkon-terrasse/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 5920,
+     "y_wirksam": 5920,
+     "datei": "m360/balkon-terrasse/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 6660,
+     "y_wirksam": 6660,
+     "datei": "m360/balkon-terrasse/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 7400,
+     "y_wirksam": 7400,
+     "datei": "m360/balkon-terrasse/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8140,
+     "y_wirksam": 8140,
+     "datei": "m360/balkon-terrasse/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m360",
+   "seite": "/blog",
+   "status": 200,
+   "hoehe": 12091,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m360/blog/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 740,
+     "y_wirksam": 740,
+     "datei": "m360/blog/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1480,
+     "y_wirksam": 1480,
+     "datei": "m360/blog/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2220,
+     "y_wirksam": 2220,
+     "datei": "m360/blog/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 2960,
+     "y_wirksam": 2960,
+     "datei": "m360/blog/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 3700,
+     "y_wirksam": 3700,
+     "datei": "m360/blog/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4440,
+     "y_wirksam": 4440,
+     "datei": "m360/blog/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5180,
+     "y_wirksam": 5180,
+     "datei": "m360/blog/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 5920,
+     "y_wirksam": 5920,
+     "datei": "m360/blog/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 6660,
+     "y_wirksam": 6660,
+     "datei": "m360/blog/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 7400,
+     "y_wirksam": 7400,
+     "datei": "m360/blog/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8140,
+     "y_wirksam": 8140,
+     "datei": "m360/blog/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m360",
+   "seite": "/fliesen",
+   "status": 200,
+   "hoehe": 11998,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m360/fliesen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 740,
+     "y_wirksam": 740,
+     "datei": "m360/fliesen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1480,
+     "y_wirksam": 1480,
+     "datei": "m360/fliesen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2220,
+     "y_wirksam": 2220,
+     "datei": "m360/fliesen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 2960,
+     "y_wirksam": 2960,
+     "datei": "m360/fliesen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 3700,
+     "y_wirksam": 3700,
+     "datei": "m360/fliesen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4440,
+     "y_wirksam": 4440,
+     "datei": "m360/fliesen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5180,
+     "y_wirksam": 5180,
+     "datei": "m360/fliesen/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 5920,
+     "y_wirksam": 5920,
+     "datei": "m360/fliesen/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 6660,
+     "y_wirksam": 6660,
+     "datei": "m360/fliesen/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 7400,
+     "y_wirksam": 7400,
+     "datei": "m360/fliesen/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8140,
+     "y_wirksam": 8140,
+     "datei": "m360/fliesen/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m360",
+   "seite": "/kontakt",
+   "status": 200,
+   "hoehe": 7370,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m360/kontakt/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 740,
+     "y_wirksam": 740,
+     "datei": "m360/kontakt/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1480,
+     "y_wirksam": 1480,
+     "datei": "m360/kontakt/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2220,
+     "y_wirksam": 2220,
+     "datei": "m360/kontakt/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 2960,
+     "y_wirksam": 2960,
+     "datei": "m360/kontakt/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 3700,
+     "y_wirksam": 3700,
+     "datei": "m360/kontakt/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4440,
+     "y_wirksam": 4440,
+     "datei": "m360/kontakt/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5180,
+     "y_wirksam": 5180,
+     "datei": "m360/kontakt/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 5920,
+     "y_wirksam": 5920,
+     "datei": "m360/kontakt/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 6660,
+     "y_wirksam": 6630,
+     "datei": "m360/kontakt/09.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m360",
+   "seite": "/leistungen",
+   "status": 200,
+   "hoehe": 12534,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m360/leistungen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 740,
+     "y_wirksam": 740,
+     "datei": "m360/leistungen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1480,
+     "y_wirksam": 1480,
+     "datei": "m360/leistungen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2220,
+     "y_wirksam": 2220,
+     "datei": "m360/leistungen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 2960,
+     "y_wirksam": 2960,
+     "datei": "m360/leistungen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 3700,
+     "y_wirksam": 3700,
+     "datei": "m360/leistungen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4440,
+     "y_wirksam": 4440,
+     "datei": "m360/leistungen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5180,
+     "y_wirksam": 5180,
+     "datei": "m360/leistungen/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 5920,
+     "y_wirksam": 5920,
+     "datei": "m360/leistungen/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 6660,
+     "y_wirksam": 6660,
+     "datei": "m360/leistungen/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 7400,
+     "y_wirksam": 7400,
+     "datei": "m360/leistungen/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8140,
+     "y_wirksam": 8140,
+     "datei": "m360/leistungen/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m360",
+   "seite": "/referenzen",
+   "status": 200,
+   "hoehe": 20692,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m360/referenzen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 740,
+     "y_wirksam": 740,
+     "datei": "m360/referenzen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1480,
+     "y_wirksam": 1480,
+     "datei": "m360/referenzen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2220,
+     "y_wirksam": 2220,
+     "datei": "m360/referenzen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 2960,
+     "y_wirksam": 2960,
+     "datei": "m360/referenzen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 3700,
+     "y_wirksam": 3700,
+     "datei": "m360/referenzen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4440,
+     "y_wirksam": 4440,
+     "datei": "m360/referenzen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5180,
+     "y_wirksam": 5180,
+     "datei": "m360/referenzen/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 5920,
+     "y_wirksam": 5920,
+     "datei": "m360/referenzen/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 6660,
+     "y_wirksam": 6660,
+     "datei": "m360/referenzen/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 7400,
+     "y_wirksam": 7400,
+     "datei": "m360/referenzen/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8140,
+     "y_wirksam": 8140,
+     "datei": "m360/referenzen/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m360",
+   "seite": "/standorte/wetzlar",
+   "status": 200,
+   "hoehe": 9370,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m360/standorte__wetzlar/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 740,
+     "y_wirksam": 740,
+     "datei": "m360/standorte__wetzlar/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1480,
+     "y_wirksam": 1480,
+     "datei": "m360/standorte__wetzlar/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2220,
+     "y_wirksam": 2220,
+     "datei": "m360/standorte__wetzlar/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 2960,
+     "y_wirksam": 2960,
+     "datei": "m360/standorte__wetzlar/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 3700,
+     "y_wirksam": 3700,
+     "datei": "m360/standorte__wetzlar/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4440,
+     "y_wirksam": 4440,
+     "datei": "m360/standorte__wetzlar/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5180,
+     "y_wirksam": 5180,
+     "datei": "m360/standorte__wetzlar/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 5920,
+     "y_wirksam": 5920,
+     "datei": "m360/standorte__wetzlar/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 6660,
+     "y_wirksam": 6660,
+     "datei": "m360/standorte__wetzlar/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 7400,
+     "y_wirksam": 7400,
+     "datei": "m360/standorte__wetzlar/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8140,
+     "y_wirksam": 8140,
+     "datei": "m360/standorte__wetzlar/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m360",
+   "seite": "/ueber-uns",
+   "status": 200,
+   "hoehe": 12334,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m360/ueber-uns/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 740,
+     "y_wirksam": 740,
+     "datei": "m360/ueber-uns/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1480,
+     "y_wirksam": 1480,
+     "datei": "m360/ueber-uns/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2220,
+     "y_wirksam": 2220,
+     "datei": "m360/ueber-uns/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 2960,
+     "y_wirksam": 2960,
+     "datei": "m360/ueber-uns/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 3700,
+     "y_wirksam": 3700,
+     "datei": "m360/ueber-uns/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4440,
+     "y_wirksam": 4440,
+     "datei": "m360/ueber-uns/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5180,
+     "y_wirksam": 5180,
+     "datei": "m360/ueber-uns/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 5920,
+     "y_wirksam": 5920,
+     "datei": "m360/ueber-uns/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 6660,
+     "y_wirksam": 6660,
+     "datei": "m360/ueber-uns/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 7400,
+     "y_wirksam": 7400,
+     "datei": "m360/ueber-uns/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8140,
+     "y_wirksam": 8140,
+     "datei": "m360/ueber-uns/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m390",
+   "seite": "/",
+   "status": 200,
+   "hoehe": 11457,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m390/start/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 844,
+     "y_wirksam": 844,
+     "datei": "m390/start/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1688,
+     "y_wirksam": 1688,
+     "datei": "m390/start/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2532,
+     "y_wirksam": 2532,
+     "datei": "m390/start/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3376,
+     "y_wirksam": 3376,
+     "datei": "m390/start/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4220,
+     "y_wirksam": 4220,
+     "datei": "m390/start/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5064,
+     "y_wirksam": 5064,
+     "datei": "m390/start/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5908,
+     "y_wirksam": 5908,
+     "datei": "m390/start/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6752,
+     "y_wirksam": 6752,
+     "datei": "m390/start/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 7596,
+     "y_wirksam": 7596,
+     "datei": "m390/start/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 8440,
+     "y_wirksam": 8440,
+     "datei": "m390/start/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 9284,
+     "y_wirksam": 9284,
+     "datei": "m390/start/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m390",
+   "seite": "/bad",
+   "status": 200,
+   "hoehe": 14370,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m390/bad/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 844,
+     "y_wirksam": 844,
+     "datei": "m390/bad/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1688,
+     "y_wirksam": 1688,
+     "datei": "m390/bad/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2532,
+     "y_wirksam": 2532,
+     "datei": "m390/bad/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3376,
+     "y_wirksam": 3376,
+     "datei": "m390/bad/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4220,
+     "y_wirksam": 4220,
+     "datei": "m390/bad/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5064,
+     "y_wirksam": 5064,
+     "datei": "m390/bad/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5908,
+     "y_wirksam": 5908,
+     "datei": "m390/bad/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6752,
+     "y_wirksam": 6752,
+     "datei": "m390/bad/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 7596,
+     "y_wirksam": 7596,
+     "datei": "m390/bad/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 8440,
+     "y_wirksam": 8440,
+     "datei": "m390/bad/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 9284,
+     "y_wirksam": 9284,
+     "datei": "m390/bad/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m390",
+   "seite": "/bad/badsanierung",
+   "status": 200,
+   "hoehe": 11486,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m390/bad__badsanierung/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 844,
+     "y_wirksam": 844,
+     "datei": "m390/bad__badsanierung/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1688,
+     "y_wirksam": 1688,
+     "datei": "m390/bad__badsanierung/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2532,
+     "y_wirksam": 2532,
+     "datei": "m390/bad__badsanierung/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3376,
+     "y_wirksam": 3376,
+     "datei": "m390/bad__badsanierung/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4220,
+     "y_wirksam": 4220,
+     "datei": "m390/bad__badsanierung/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5064,
+     "y_wirksam": 5064,
+     "datei": "m390/bad__badsanierung/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5908,
+     "y_wirksam": 5908,
+     "datei": "m390/bad__badsanierung/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6752,
+     "y_wirksam": 6752,
+     "datei": "m390/bad__badsanierung/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 7596,
+     "y_wirksam": 7596,
+     "datei": "m390/bad__badsanierung/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 8440,
+     "y_wirksam": 8440,
+     "datei": "m390/bad__badsanierung/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 9284,
+     "y_wirksam": 9284,
+     "datei": "m390/bad__badsanierung/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m390",
+   "seite": "/bad/barrierefreies-bad",
+   "status": 200,
+   "hoehe": 10773,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m390/bad__barrierefreies-bad/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 844,
+     "y_wirksam": 844,
+     "datei": "m390/bad__barrierefreies-bad/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1688,
+     "y_wirksam": 1688,
+     "datei": "m390/bad__barrierefreies-bad/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2532,
+     "y_wirksam": 2532,
+     "datei": "m390/bad__barrierefreies-bad/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3376,
+     "y_wirksam": 3376,
+     "datei": "m390/bad__barrierefreies-bad/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4220,
+     "y_wirksam": 4220,
+     "datei": "m390/bad__barrierefreies-bad/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5064,
+     "y_wirksam": 5064,
+     "datei": "m390/bad__barrierefreies-bad/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5908,
+     "y_wirksam": 5908,
+     "datei": "m390/bad__barrierefreies-bad/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6752,
+     "y_wirksam": 6752,
+     "datei": "m390/bad__barrierefreies-bad/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 7596,
+     "y_wirksam": 7596,
+     "datei": "m390/bad__barrierefreies-bad/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 8440,
+     "y_wirksam": 8440,
+     "datei": "m390/bad__barrierefreies-bad/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 9284,
+     "y_wirksam": 9284,
+     "datei": "m390/bad__barrierefreies-bad/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m390",
+   "seite": "/balkon-terrasse",
+   "status": 200,
+   "hoehe": 9498,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m390/balkon-terrasse/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 844,
+     "y_wirksam": 844,
+     "datei": "m390/balkon-terrasse/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1688,
+     "y_wirksam": 1688,
+     "datei": "m390/balkon-terrasse/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2532,
+     "y_wirksam": 2532,
+     "datei": "m390/balkon-terrasse/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3376,
+     "y_wirksam": 3376,
+     "datei": "m390/balkon-terrasse/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4220,
+     "y_wirksam": 4220,
+     "datei": "m390/balkon-terrasse/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5064,
+     "y_wirksam": 5064,
+     "datei": "m390/balkon-terrasse/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5908,
+     "y_wirksam": 5908,
+     "datei": "m390/balkon-terrasse/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6752,
+     "y_wirksam": 6752,
+     "datei": "m390/balkon-terrasse/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 7596,
+     "y_wirksam": 7596,
+     "datei": "m390/balkon-terrasse/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 8440,
+     "y_wirksam": 8440,
+     "datei": "m390/balkon-terrasse/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 9284,
+     "y_wirksam": 8654,
+     "datei": "m390/balkon-terrasse/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m390",
+   "seite": "/blog",
+   "status": 200,
+   "hoehe": 11686,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m390/blog/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 844,
+     "y_wirksam": 844,
+     "datei": "m390/blog/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1688,
+     "y_wirksam": 1688,
+     "datei": "m390/blog/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2532,
+     "y_wirksam": 2532,
+     "datei": "m390/blog/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3376,
+     "y_wirksam": 3376,
+     "datei": "m390/blog/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4220,
+     "y_wirksam": 4220,
+     "datei": "m390/blog/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5064,
+     "y_wirksam": 5064,
+     "datei": "m390/blog/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5908,
+     "y_wirksam": 5908,
+     "datei": "m390/blog/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6752,
+     "y_wirksam": 6752,
+     "datei": "m390/blog/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 7596,
+     "y_wirksam": 7596,
+     "datei": "m390/blog/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 8440,
+     "y_wirksam": 8440,
+     "datei": "m390/blog/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 9284,
+     "y_wirksam": 9284,
+     "datei": "m390/blog/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m390",
+   "seite": "/fliesen",
+   "status": 200,
+   "hoehe": 11802,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m390/fliesen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 844,
+     "y_wirksam": 844,
+     "datei": "m390/fliesen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1688,
+     "y_wirksam": 1688,
+     "datei": "m390/fliesen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2532,
+     "y_wirksam": 2532,
+     "datei": "m390/fliesen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3376,
+     "y_wirksam": 3376,
+     "datei": "m390/fliesen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4220,
+     "y_wirksam": 4220,
+     "datei": "m390/fliesen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5064,
+     "y_wirksam": 5064,
+     "datei": "m390/fliesen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5908,
+     "y_wirksam": 5908,
+     "datei": "m390/fliesen/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6752,
+     "y_wirksam": 6752,
+     "datei": "m390/fliesen/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 7596,
+     "y_wirksam": 7596,
+     "datei": "m390/fliesen/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 8440,
+     "y_wirksam": 8440,
+     "datei": "m390/fliesen/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 9284,
+     "y_wirksam": 9284,
+     "datei": "m390/fliesen/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m390",
+   "seite": "/kontakt",
+   "status": 200,
+   "hoehe": 7172,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m390/kontakt/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 844,
+     "y_wirksam": 844,
+     "datei": "m390/kontakt/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1688,
+     "y_wirksam": 1688,
+     "datei": "m390/kontakt/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2532,
+     "y_wirksam": 2532,
+     "datei": "m390/kontakt/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3376,
+     "y_wirksam": 3376,
+     "datei": "m390/kontakt/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4220,
+     "y_wirksam": 4220,
+     "datei": "m390/kontakt/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5064,
+     "y_wirksam": 5064,
+     "datei": "m390/kontakt/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5908,
+     "y_wirksam": 5908,
+     "datei": "m390/kontakt/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6752,
+     "y_wirksam": 6328,
+     "datei": "m390/kontakt/08.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m390",
+   "seite": "/leistungen",
+   "status": 200,
+   "hoehe": 12462,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m390/leistungen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 844,
+     "y_wirksam": 844,
+     "datei": "m390/leistungen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1688,
+     "y_wirksam": 1688,
+     "datei": "m390/leistungen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2532,
+     "y_wirksam": 2532,
+     "datei": "m390/leistungen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3376,
+     "y_wirksam": 3376,
+     "datei": "m390/leistungen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4220,
+     "y_wirksam": 4220,
+     "datei": "m390/leistungen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5064,
+     "y_wirksam": 5064,
+     "datei": "m390/leistungen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5908,
+     "y_wirksam": 5908,
+     "datei": "m390/leistungen/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6752,
+     "y_wirksam": 6752,
+     "datei": "m390/leistungen/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 7596,
+     "y_wirksam": 7596,
+     "datei": "m390/leistungen/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 8440,
+     "y_wirksam": 8440,
+     "datei": "m390/leistungen/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 9284,
+     "y_wirksam": 9284,
+     "datei": "m390/leistungen/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m390",
+   "seite": "/referenzen",
+   "status": 200,
+   "hoehe": 21204,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m390/referenzen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 844,
+     "y_wirksam": 844,
+     "datei": "m390/referenzen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1688,
+     "y_wirksam": 1688,
+     "datei": "m390/referenzen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2532,
+     "y_wirksam": 2532,
+     "datei": "m390/referenzen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3376,
+     "y_wirksam": 3376,
+     "datei": "m390/referenzen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4220,
+     "y_wirksam": 4220,
+     "datei": "m390/referenzen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5064,
+     "y_wirksam": 5064,
+     "datei": "m390/referenzen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5908,
+     "y_wirksam": 5908,
+     "datei": "m390/referenzen/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6752,
+     "y_wirksam": 6752,
+     "datei": "m390/referenzen/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 7596,
+     "y_wirksam": 7596,
+     "datei": "m390/referenzen/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 8440,
+     "y_wirksam": 8440,
+     "datei": "m390/referenzen/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 9284,
+     "y_wirksam": 9284,
+     "datei": "m390/referenzen/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m390",
+   "seite": "/standorte/wetzlar",
+   "status": 200,
+   "hoehe": 9174,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m390/standorte__wetzlar/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 844,
+     "y_wirksam": 844,
+     "datei": "m390/standorte__wetzlar/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1688,
+     "y_wirksam": 1688,
+     "datei": "m390/standorte__wetzlar/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2532,
+     "y_wirksam": 2532,
+     "datei": "m390/standorte__wetzlar/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3376,
+     "y_wirksam": 3376,
+     "datei": "m390/standorte__wetzlar/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4220,
+     "y_wirksam": 4220,
+     "datei": "m390/standorte__wetzlar/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5064,
+     "y_wirksam": 5064,
+     "datei": "m390/standorte__wetzlar/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5908,
+     "y_wirksam": 5908,
+     "datei": "m390/standorte__wetzlar/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6752,
+     "y_wirksam": 6752,
+     "datei": "m390/standorte__wetzlar/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 7596,
+     "y_wirksam": 7596,
+     "datei": "m390/standorte__wetzlar/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 8440,
+     "y_wirksam": 8330,
+     "datei": "m390/standorte__wetzlar/10.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m390",
+   "seite": "/ueber-uns",
+   "status": 200,
+   "hoehe": 11952,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m390/ueber-uns/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 844,
+     "y_wirksam": 844,
+     "datei": "m390/ueber-uns/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1688,
+     "y_wirksam": 1688,
+     "datei": "m390/ueber-uns/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2532,
+     "y_wirksam": 2532,
+     "datei": "m390/ueber-uns/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3376,
+     "y_wirksam": 3376,
+     "datei": "m390/ueber-uns/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4220,
+     "y_wirksam": 4220,
+     "datei": "m390/ueber-uns/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5064,
+     "y_wirksam": 5064,
+     "datei": "m390/ueber-uns/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5908,
+     "y_wirksam": 5908,
+     "datei": "m390/ueber-uns/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6752,
+     "y_wirksam": 6752,
+     "datei": "m390/ueber-uns/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 7596,
+     "y_wirksam": 7596,
+     "datei": "m390/ueber-uns/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 8440,
+     "y_wirksam": 8440,
+     "datei": "m390/ueber-uns/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 9284,
+     "y_wirksam": 9284,
+     "datei": "m390/ueber-uns/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m430",
+   "seite": "/",
+   "status": 200,
+   "hoehe": 11403,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m430/start/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 932,
+     "y_wirksam": 932,
+     "datei": "m430/start/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1864,
+     "y_wirksam": 1864,
+     "datei": "m430/start/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2796,
+     "y_wirksam": 2796,
+     "datei": "m430/start/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3728,
+     "y_wirksam": 3728,
+     "datei": "m430/start/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4660,
+     "y_wirksam": 4660,
+     "datei": "m430/start/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5592,
+     "y_wirksam": 5592,
+     "datei": "m430/start/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 6524,
+     "y_wirksam": 6524,
+     "datei": "m430/start/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 7456,
+     "y_wirksam": 7456,
+     "datei": "m430/start/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 8388,
+     "y_wirksam": 8388,
+     "datei": "m430/start/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 9320,
+     "y_wirksam": 9320,
+     "datei": "m430/start/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 10252,
+     "y_wirksam": 10252,
+     "datei": "m430/start/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m430",
+   "seite": "/bad",
+   "status": 200,
+   "hoehe": 14180,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m430/bad/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 932,
+     "y_wirksam": 932,
+     "datei": "m430/bad/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1864,
+     "y_wirksam": 1864,
+     "datei": "m430/bad/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2796,
+     "y_wirksam": 2796,
+     "datei": "m430/bad/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3728,
+     "y_wirksam": 3728,
+     "datei": "m430/bad/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4660,
+     "y_wirksam": 4660,
+     "datei": "m430/bad/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5592,
+     "y_wirksam": 5592,
+     "datei": "m430/bad/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 6524,
+     "y_wirksam": 6524,
+     "datei": "m430/bad/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 7456,
+     "y_wirksam": 7456,
+     "datei": "m430/bad/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 8388,
+     "y_wirksam": 8388,
+     "datei": "m430/bad/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 9320,
+     "y_wirksam": 9320,
+     "datei": "m430/bad/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 10252,
+     "y_wirksam": 10252,
+     "datei": "m430/bad/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m430",
+   "seite": "/bad/badsanierung",
+   "status": 200,
+   "hoehe": 11467,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m430/bad__badsanierung/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 932,
+     "y_wirksam": 932,
+     "datei": "m430/bad__badsanierung/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1864,
+     "y_wirksam": 1864,
+     "datei": "m430/bad__badsanierung/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2796,
+     "y_wirksam": 2796,
+     "datei": "m430/bad__badsanierung/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3728,
+     "y_wirksam": 3728,
+     "datei": "m430/bad__badsanierung/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4660,
+     "y_wirksam": 4660,
+     "datei": "m430/bad__badsanierung/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5592,
+     "y_wirksam": 5592,
+     "datei": "m430/bad__badsanierung/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 6524,
+     "y_wirksam": 6524,
+     "datei": "m430/bad__badsanierung/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 7456,
+     "y_wirksam": 7456,
+     "datei": "m430/bad__badsanierung/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 8388,
+     "y_wirksam": 8388,
+     "datei": "m430/bad__badsanierung/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 9320,
+     "y_wirksam": 9320,
+     "datei": "m430/bad__badsanierung/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 10252,
+     "y_wirksam": 10252,
+     "datei": "m430/bad__badsanierung/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m430",
+   "seite": "/bad/barrierefreies-bad",
+   "status": 200,
+   "hoehe": 10793,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m430/bad__barrierefreies-bad/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 932,
+     "y_wirksam": 932,
+     "datei": "m430/bad__barrierefreies-bad/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1864,
+     "y_wirksam": 1864,
+     "datei": "m430/bad__barrierefreies-bad/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2796,
+     "y_wirksam": 2796,
+     "datei": "m430/bad__barrierefreies-bad/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3728,
+     "y_wirksam": 3728,
+     "datei": "m430/bad__barrierefreies-bad/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4660,
+     "y_wirksam": 4660,
+     "datei": "m430/bad__barrierefreies-bad/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5592,
+     "y_wirksam": 5592,
+     "datei": "m430/bad__barrierefreies-bad/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 6524,
+     "y_wirksam": 6524,
+     "datei": "m430/bad__barrierefreies-bad/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 7456,
+     "y_wirksam": 7456,
+     "datei": "m430/bad__barrierefreies-bad/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 8388,
+     "y_wirksam": 8388,
+     "datei": "m430/bad__barrierefreies-bad/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 9320,
+     "y_wirksam": 9320,
+     "datei": "m430/bad__barrierefreies-bad/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 10252,
+     "y_wirksam": 9861,
+     "datei": "m430/bad__barrierefreies-bad/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m430",
+   "seite": "/balkon-terrasse",
+   "status": 200,
+   "hoehe": 9389,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m430/balkon-terrasse/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 932,
+     "y_wirksam": 932,
+     "datei": "m430/balkon-terrasse/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1864,
+     "y_wirksam": 1864,
+     "datei": "m430/balkon-terrasse/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2796,
+     "y_wirksam": 2796,
+     "datei": "m430/balkon-terrasse/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3728,
+     "y_wirksam": 3728,
+     "datei": "m430/balkon-terrasse/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4660,
+     "y_wirksam": 4660,
+     "datei": "m430/balkon-terrasse/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5592,
+     "y_wirksam": 5592,
+     "datei": "m430/balkon-terrasse/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 6524,
+     "y_wirksam": 6524,
+     "datei": "m430/balkon-terrasse/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 7456,
+     "y_wirksam": 7456,
+     "datei": "m430/balkon-terrasse/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 8388,
+     "y_wirksam": 8388,
+     "datei": "m430/balkon-terrasse/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 9320,
+     "y_wirksam": 8457,
+     "datei": "m430/balkon-terrasse/10.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m430",
+   "seite": "/blog",
+   "status": 200,
+   "hoehe": 11266,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m430/blog/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 932,
+     "y_wirksam": 932,
+     "datei": "m430/blog/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1864,
+     "y_wirksam": 1864,
+     "datei": "m430/blog/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2796,
+     "y_wirksam": 2796,
+     "datei": "m430/blog/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3728,
+     "y_wirksam": 3728,
+     "datei": "m430/blog/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4660,
+     "y_wirksam": 4660,
+     "datei": "m430/blog/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5592,
+     "y_wirksam": 5592,
+     "datei": "m430/blog/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 6524,
+     "y_wirksam": 6524,
+     "datei": "m430/blog/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 7456,
+     "y_wirksam": 7456,
+     "datei": "m430/blog/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 8388,
+     "y_wirksam": 8388,
+     "datei": "m430/blog/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 9320,
+     "y_wirksam": 9320,
+     "datei": "m430/blog/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 10252,
+     "y_wirksam": 10252,
+     "datei": "m430/blog/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m430",
+   "seite": "/fliesen",
+   "status": 200,
+   "hoehe": 11689,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m430/fliesen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 932,
+     "y_wirksam": 932,
+     "datei": "m430/fliesen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1864,
+     "y_wirksam": 1864,
+     "datei": "m430/fliesen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2796,
+     "y_wirksam": 2796,
+     "datei": "m430/fliesen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3728,
+     "y_wirksam": 3728,
+     "datei": "m430/fliesen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4660,
+     "y_wirksam": 4660,
+     "datei": "m430/fliesen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5592,
+     "y_wirksam": 5592,
+     "datei": "m430/fliesen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 6524,
+     "y_wirksam": 6524,
+     "datei": "m430/fliesen/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 7456,
+     "y_wirksam": 7456,
+     "datei": "m430/fliesen/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 8388,
+     "y_wirksam": 8388,
+     "datei": "m430/fliesen/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 9320,
+     "y_wirksam": 9320,
+     "datei": "m430/fliesen/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 10252,
+     "y_wirksam": 10252,
+     "datei": "m430/fliesen/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m430",
+   "seite": "/kontakt",
+   "status": 200,
+   "hoehe": 7014,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m430/kontakt/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 932,
+     "y_wirksam": 932,
+     "datei": "m430/kontakt/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1864,
+     "y_wirksam": 1864,
+     "datei": "m430/kontakt/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2796,
+     "y_wirksam": 2796,
+     "datei": "m430/kontakt/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3728,
+     "y_wirksam": 3728,
+     "datei": "m430/kontakt/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4660,
+     "y_wirksam": 4660,
+     "datei": "m430/kontakt/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5592,
+     "y_wirksam": 5592,
+     "datei": "m430/kontakt/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 6524,
+     "y_wirksam": 6082,
+     "datei": "m430/kontakt/07.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m430",
+   "seite": "/leistungen",
+   "status": 200,
+   "hoehe": 12550,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m430/leistungen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 932,
+     "y_wirksam": 932,
+     "datei": "m430/leistungen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1864,
+     "y_wirksam": 1864,
+     "datei": "m430/leistungen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2796,
+     "y_wirksam": 2796,
+     "datei": "m430/leistungen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3728,
+     "y_wirksam": 3728,
+     "datei": "m430/leistungen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4660,
+     "y_wirksam": 4660,
+     "datei": "m430/leistungen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5592,
+     "y_wirksam": 5592,
+     "datei": "m430/leistungen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 6524,
+     "y_wirksam": 6524,
+     "datei": "m430/leistungen/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 7456,
+     "y_wirksam": 7456,
+     "datei": "m430/leistungen/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 8388,
+     "y_wirksam": 8388,
+     "datei": "m430/leistungen/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 9320,
+     "y_wirksam": 9320,
+     "datei": "m430/leistungen/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 10252,
+     "y_wirksam": 10252,
+     "datei": "m430/leistungen/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m430",
+   "seite": "/referenzen",
+   "status": 200,
+   "hoehe": 22331,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m430/referenzen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 932,
+     "y_wirksam": 932,
+     "datei": "m430/referenzen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1864,
+     "y_wirksam": 1864,
+     "datei": "m430/referenzen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2796,
+     "y_wirksam": 2796,
+     "datei": "m430/referenzen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3728,
+     "y_wirksam": 3728,
+     "datei": "m430/referenzen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4660,
+     "y_wirksam": 4660,
+     "datei": "m430/referenzen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5592,
+     "y_wirksam": 5592,
+     "datei": "m430/referenzen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 6524,
+     "y_wirksam": 6524,
+     "datei": "m430/referenzen/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 7456,
+     "y_wirksam": 7456,
+     "datei": "m430/referenzen/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 8388,
+     "y_wirksam": 8388,
+     "datei": "m430/referenzen/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 9320,
+     "y_wirksam": 9320,
+     "datei": "m430/referenzen/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 10252,
+     "y_wirksam": 10252,
+     "datei": "m430/referenzen/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m430",
+   "seite": "/standorte/wetzlar",
+   "status": 200,
+   "hoehe": 9134,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m430/standorte__wetzlar/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 932,
+     "y_wirksam": 932,
+     "datei": "m430/standorte__wetzlar/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1864,
+     "y_wirksam": 1864,
+     "datei": "m430/standorte__wetzlar/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2796,
+     "y_wirksam": 2796,
+     "datei": "m430/standorte__wetzlar/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3728,
+     "y_wirksam": 3728,
+     "datei": "m430/standorte__wetzlar/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4660,
+     "y_wirksam": 4660,
+     "datei": "m430/standorte__wetzlar/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5592,
+     "y_wirksam": 5592,
+     "datei": "m430/standorte__wetzlar/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 6524,
+     "y_wirksam": 6524,
+     "datei": "m430/standorte__wetzlar/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 7456,
+     "y_wirksam": 7456,
+     "datei": "m430/standorte__wetzlar/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 8388,
+     "y_wirksam": 8202,
+     "datei": "m430/standorte__wetzlar/09.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m430",
+   "seite": "/ueber-uns",
+   "status": 200,
+   "hoehe": 11754,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m430/ueber-uns/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 932,
+     "y_wirksam": 932,
+     "datei": "m430/ueber-uns/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1864,
+     "y_wirksam": 1864,
+     "datei": "m430/ueber-uns/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2796,
+     "y_wirksam": 2796,
+     "datei": "m430/ueber-uns/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3728,
+     "y_wirksam": 3728,
+     "datei": "m430/ueber-uns/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4660,
+     "y_wirksam": 4660,
+     "datei": "m430/ueber-uns/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5592,
+     "y_wirksam": 5592,
+     "datei": "m430/ueber-uns/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 6524,
+     "y_wirksam": 6524,
+     "datei": "m430/ueber-uns/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 7456,
+     "y_wirksam": 7456,
+     "datei": "m430/ueber-uns/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 8388,
+     "y_wirksam": 8388,
+     "datei": "m430/ueber-uns/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 9320,
+     "y_wirksam": 9320,
+     "datei": "m430/ueber-uns/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 10252,
+     "y_wirksam": 10252,
+     "datei": "m430/ueber-uns/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "q844",
+   "seite": "/",
+   "status": 200,
+   "hoehe": 11017,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "q844/start/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 390,
+     "y_wirksam": 390,
+     "datei": "q844/start/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 780,
+     "y_wirksam": 780,
+     "datei": "q844/start/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 1170,
+     "y_wirksam": 1170,
+     "datei": "q844/start/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 1560,
+     "y_wirksam": 1560,
+     "datei": "q844/start/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 1950,
+     "y_wirksam": 1950,
+     "datei": "q844/start/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 2340,
+     "y_wirksam": 2340,
+     "datei": "q844/start/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 2730,
+     "y_wirksam": 2730,
+     "datei": "q844/start/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 3120,
+     "y_wirksam": 3120,
+     "datei": "q844/start/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 3510,
+     "y_wirksam": 3510,
+     "datei": "q844/start/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 3900,
+     "y_wirksam": 3900,
+     "datei": "q844/start/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 4290,
+     "y_wirksam": 4290,
+     "datei": "q844/start/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "q844",
+   "seite": "/bad",
+   "status": 200,
+   "hoehe": 13515,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "q844/bad/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 390,
+     "y_wirksam": 390,
+     "datei": "q844/bad/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 780,
+     "y_wirksam": 780,
+     "datei": "q844/bad/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 1170,
+     "y_wirksam": 1170,
+     "datei": "q844/bad/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 1560,
+     "y_wirksam": 1560,
+     "datei": "q844/bad/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 1950,
+     "y_wirksam": 1950,
+     "datei": "q844/bad/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 2340,
+     "y_wirksam": 2340,
+     "datei": "q844/bad/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 2730,
+     "y_wirksam": 2730,
+     "datei": "q844/bad/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 3120,
+     "y_wirksam": 3120,
+     "datei": "q844/bad/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 3510,
+     "y_wirksam": 3510,
+     "datei": "q844/bad/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 3900,
+     "y_wirksam": 3900,
+     "datei": "q844/bad/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 4290,
+     "y_wirksam": 4290,
+     "datei": "q844/bad/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "q844",
+   "seite": "/bad/badsanierung",
+   "status": 200,
+   "hoehe": 11223,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "q844/bad__badsanierung/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 390,
+     "y_wirksam": 390,
+     "datei": "q844/bad__badsanierung/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 780,
+     "y_wirksam": 780,
+     "datei": "q844/bad__badsanierung/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 1170,
+     "y_wirksam": 1170,
+     "datei": "q844/bad__badsanierung/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 1560,
+     "y_wirksam": 1560,
+     "datei": "q844/bad__badsanierung/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 1950,
+     "y_wirksam": 1950,
+     "datei": "q844/bad__badsanierung/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 2340,
+     "y_wirksam": 2340,
+     "datei": "q844/bad__badsanierung/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 2730,
+     "y_wirksam": 2730,
+     "datei": "q844/bad__badsanierung/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 3120,
+     "y_wirksam": 3120,
+     "datei": "q844/bad__badsanierung/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 3510,
+     "y_wirksam": 3510,
+     "datei": "q844/bad__badsanierung/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 3900,
+     "y_wirksam": 3900,
+     "datei": "q844/bad__badsanierung/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 4290,
+     "y_wirksam": 4290,
+     "datei": "q844/bad__badsanierung/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "q844",
+   "seite": "/bad/barrierefreies-bad",
+   "status": 200,
+   "hoehe": 10670,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "q844/bad__barrierefreies-bad/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 390,
+     "y_wirksam": 390,
+     "datei": "q844/bad__barrierefreies-bad/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 780,
+     "y_wirksam": 780,
+     "datei": "q844/bad__barrierefreies-bad/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 1170,
+     "y_wirksam": 1170,
+     "datei": "q844/bad__barrierefreies-bad/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 1560,
+     "y_wirksam": 1560,
+     "datei": "q844/bad__barrierefreies-bad/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 1950,
+     "y_wirksam": 1950,
+     "datei": "q844/bad__barrierefreies-bad/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 2340,
+     "y_wirksam": 2340,
+     "datei": "q844/bad__barrierefreies-bad/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 2730,
+     "y_wirksam": 2730,
+     "datei": "q844/bad__barrierefreies-bad/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 3120,
+     "y_wirksam": 3120,
+     "datei": "q844/bad__barrierefreies-bad/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 3510,
+     "y_wirksam": 3510,
+     "datei": "q844/bad__barrierefreies-bad/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 3900,
+     "y_wirksam": 3900,
+     "datei": "q844/bad__barrierefreies-bad/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 4290,
+     "y_wirksam": 4290,
+     "datei": "q844/bad__barrierefreies-bad/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "q844",
+   "seite": "/balkon-terrasse",
+   "status": 200,
+   "hoehe": 10041,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "q844/balkon-terrasse/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 390,
+     "y_wirksam": 390,
+     "datei": "q844/balkon-terrasse/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 780,
+     "y_wirksam": 780,
+     "datei": "q844/balkon-terrasse/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 1170,
+     "y_wirksam": 1170,
+     "datei": "q844/balkon-terrasse/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 1560,
+     "y_wirksam": 1560,
+     "datei": "q844/balkon-terrasse/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 1950,
+     "y_wirksam": 1950,
+     "datei": "q844/balkon-terrasse/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 2340,
+     "y_wirksam": 2340,
+     "datei": "q844/balkon-terrasse/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 2730,
+     "y_wirksam": 2730,
+     "datei": "q844/balkon-terrasse/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 3120,
+     "y_wirksam": 3120,
+     "datei": "q844/balkon-terrasse/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 3510,
+     "y_wirksam": 3510,
+     "datei": "q844/balkon-terrasse/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 3900,
+     "y_wirksam": 3900,
+     "datei": "q844/balkon-terrasse/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 4290,
+     "y_wirksam": 4290,
+     "datei": "q844/balkon-terrasse/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "q844",
+   "seite": "/blog",
+   "status": 200,
+   "hoehe": 11670,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "q844/blog/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 390,
+     "y_wirksam": 390,
+     "datei": "q844/blog/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 780,
+     "y_wirksam": 780,
+     "datei": "q844/blog/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 1170,
+     "y_wirksam": 1170,
+     "datei": "q844/blog/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 1560,
+     "y_wirksam": 1560,
+     "datei": "q844/blog/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 1950,
+     "y_wirksam": 1950,
+     "datei": "q844/blog/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 2340,
+     "y_wirksam": 2340,
+     "datei": "q844/blog/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 2730,
+     "y_wirksam": 2730,
+     "datei": "q844/blog/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 3120,
+     "y_wirksam": 3120,
+     "datei": "q844/blog/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 3510,
+     "y_wirksam": 3510,
+     "datei": "q844/blog/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 3900,
+     "y_wirksam": 3900,
+     "datei": "q844/blog/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 4290,
+     "y_wirksam": 4290,
+     "datei": "q844/blog/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "q844",
+   "seite": "/fliesen",
+   "status": 200,
+   "hoehe": 12238,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "q844/fliesen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 390,
+     "y_wirksam": 390,
+     "datei": "q844/fliesen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 780,
+     "y_wirksam": 780,
+     "datei": "q844/fliesen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 1170,
+     "y_wirksam": 1170,
+     "datei": "q844/fliesen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 1560,
+     "y_wirksam": 1560,
+     "datei": "q844/fliesen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 1950,
+     "y_wirksam": 1950,
+     "datei": "q844/fliesen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 2340,
+     "y_wirksam": 2340,
+     "datei": "q844/fliesen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 2730,
+     "y_wirksam": 2730,
+     "datei": "q844/fliesen/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 3120,
+     "y_wirksam": 3120,
+     "datei": "q844/fliesen/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 3510,
+     "y_wirksam": 3510,
+     "datei": "q844/fliesen/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 3900,
+     "y_wirksam": 3900,
+     "datei": "q844/fliesen/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 4290,
+     "y_wirksam": 4290,
+     "datei": "q844/fliesen/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "q844",
+   "seite": "/kontakt",
+   "status": 200,
+   "hoehe": 8066,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "q844/kontakt/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 390,
+     "y_wirksam": 390,
+     "datei": "q844/kontakt/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 780,
+     "y_wirksam": 780,
+     "datei": "q844/kontakt/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 1170,
+     "y_wirksam": 1170,
+     "datei": "q844/kontakt/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 1560,
+     "y_wirksam": 1560,
+     "datei": "q844/kontakt/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 1950,
+     "y_wirksam": 1950,
+     "datei": "q844/kontakt/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 2340,
+     "y_wirksam": 2340,
+     "datei": "q844/kontakt/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 2730,
+     "y_wirksam": 2730,
+     "datei": "q844/kontakt/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 3120,
+     "y_wirksam": 3120,
+     "datei": "q844/kontakt/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 3510,
+     "y_wirksam": 3510,
+     "datei": "q844/kontakt/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 3900,
+     "y_wirksam": 3900,
+     "datei": "q844/kontakt/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 4290,
+     "y_wirksam": 4290,
+     "datei": "q844/kontakt/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "q844",
+   "seite": "/leistungen",
+   "status": 200,
+   "hoehe": 12924,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "q844/leistungen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 390,
+     "y_wirksam": 390,
+     "datei": "q844/leistungen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 780,
+     "y_wirksam": 780,
+     "datei": "q844/leistungen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 1170,
+     "y_wirksam": 1170,
+     "datei": "q844/leistungen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 1560,
+     "y_wirksam": 1560,
+     "datei": "q844/leistungen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 1950,
+     "y_wirksam": 1950,
+     "datei": "q844/leistungen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 2340,
+     "y_wirksam": 2340,
+     "datei": "q844/leistungen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 2730,
+     "y_wirksam": 2730,
+     "datei": "q844/leistungen/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 3120,
+     "y_wirksam": 3120,
+     "datei": "q844/leistungen/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 3510,
+     "y_wirksam": 3510,
+     "datei": "q844/leistungen/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 3900,
+     "y_wirksam": 3900,
+     "datei": "q844/leistungen/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 4290,
+     "y_wirksam": 4290,
+     "datei": "q844/leistungen/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "q844",
+   "seite": "/referenzen",
+   "status": 200,
+   "hoehe": 16056,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "q844/referenzen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 390,
+     "y_wirksam": 390,
+     "datei": "q844/referenzen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 780,
+     "y_wirksam": 780,
+     "datei": "q844/referenzen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 1170,
+     "y_wirksam": 1170,
+     "datei": "q844/referenzen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 1560,
+     "y_wirksam": 1560,
+     "datei": "q844/referenzen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 1950,
+     "y_wirksam": 1950,
+     "datei": "q844/referenzen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 2340,
+     "y_wirksam": 2340,
+     "datei": "q844/referenzen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 2730,
+     "y_wirksam": 2730,
+     "datei": "q844/referenzen/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 3120,
+     "y_wirksam": 3120,
+     "datei": "q844/referenzen/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 3510,
+     "y_wirksam": 3510,
+     "datei": "q844/referenzen/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 3900,
+     "y_wirksam": 3900,
+     "datei": "q844/referenzen/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 4290,
+     "y_wirksam": 4290,
+     "datei": "q844/referenzen/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "q844",
+   "seite": "/standorte/wetzlar",
+   "status": 200,
+   "hoehe": 9554,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "q844/standorte__wetzlar/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 390,
+     "y_wirksam": 390,
+     "datei": "q844/standorte__wetzlar/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 780,
+     "y_wirksam": 780,
+     "datei": "q844/standorte__wetzlar/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 1170,
+     "y_wirksam": 1170,
+     "datei": "q844/standorte__wetzlar/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 1560,
+     "y_wirksam": 1560,
+     "datei": "q844/standorte__wetzlar/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 1950,
+     "y_wirksam": 1950,
+     "datei": "q844/standorte__wetzlar/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 2340,
+     "y_wirksam": 2340,
+     "datei": "q844/standorte__wetzlar/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 2730,
+     "y_wirksam": 2730,
+     "datei": "q844/standorte__wetzlar/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 3120,
+     "y_wirksam": 3120,
+     "datei": "q844/standorte__wetzlar/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 3510,
+     "y_wirksam": 3510,
+     "datei": "q844/standorte__wetzlar/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 3900,
+     "y_wirksam": 3900,
+     "datei": "q844/standorte__wetzlar/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 4290,
+     "y_wirksam": 4290,
+     "datei": "q844/standorte__wetzlar/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "q844",
+   "seite": "/ueber-uns",
+   "status": 200,
+   "hoehe": 11968,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "q844/ueber-uns/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 390,
+     "y_wirksam": 390,
+     "datei": "q844/ueber-uns/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 780,
+     "y_wirksam": 780,
+     "datei": "q844/ueber-uns/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 1170,
+     "y_wirksam": 1170,
+     "datei": "q844/ueber-uns/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 1560,
+     "y_wirksam": 1560,
+     "datei": "q844/ueber-uns/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 1950,
+     "y_wirksam": 1950,
+     "datei": "q844/ueber-uns/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 2340,
+     "y_wirksam": 2340,
+     "datei": "q844/ueber-uns/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 2730,
+     "y_wirksam": 2730,
+     "datei": "q844/ueber-uns/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 3120,
+     "y_wirksam": 3120,
+     "datei": "q844/ueber-uns/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 3510,
+     "y_wirksam": 3510,
+     "datei": "q844/ueber-uns/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 3900,
+     "y_wirksam": 3900,
+     "datei": "q844/ueber-uns/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 4290,
+     "y_wirksam": 4290,
+     "datei": "q844/ueber-uns/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "t1024",
+   "seite": "/",
+   "status": 200,
+   "hoehe": 10894,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "t1024/start/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 768,
+     "y_wirksam": 768,
+     "datei": "t1024/start/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1536,
+     "y_wirksam": 1536,
+     "datei": "t1024/start/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2304,
+     "y_wirksam": 2304,
+     "datei": "t1024/start/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3072,
+     "y_wirksam": 3072,
+     "datei": "t1024/start/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 3840,
+     "y_wirksam": 3840,
+     "datei": "t1024/start/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4608,
+     "y_wirksam": 4608,
+     "datei": "t1024/start/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5376,
+     "y_wirksam": 5376,
+     "datei": "t1024/start/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6144,
+     "y_wirksam": 6144,
+     "datei": "t1024/start/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 6912,
+     "y_wirksam": 6912,
+     "datei": "t1024/start/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 7680,
+     "y_wirksam": 7680,
+     "datei": "t1024/start/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8448,
+     "y_wirksam": 8448,
+     "datei": "t1024/start/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "t1024",
+   "seite": "/bad",
+   "status": 200,
+   "hoehe": 13859,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "t1024/bad/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 768,
+     "y_wirksam": 768,
+     "datei": "t1024/bad/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1536,
+     "y_wirksam": 1536,
+     "datei": "t1024/bad/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2304,
+     "y_wirksam": 2304,
+     "datei": "t1024/bad/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3072,
+     "y_wirksam": 3072,
+     "datei": "t1024/bad/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 3840,
+     "y_wirksam": 3840,
+     "datei": "t1024/bad/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4608,
+     "y_wirksam": 4608,
+     "datei": "t1024/bad/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5376,
+     "y_wirksam": 5376,
+     "datei": "t1024/bad/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6144,
+     "y_wirksam": 6144,
+     "datei": "t1024/bad/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 6912,
+     "y_wirksam": 6912,
+     "datei": "t1024/bad/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 7680,
+     "y_wirksam": 7680,
+     "datei": "t1024/bad/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8448,
+     "y_wirksam": 8448,
+     "datei": "t1024/bad/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "t1024",
+   "seite": "/bad/badsanierung",
+   "status": 200,
+   "hoehe": 11288,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "t1024/bad__badsanierung/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 768,
+     "y_wirksam": 768,
+     "datei": "t1024/bad__badsanierung/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1536,
+     "y_wirksam": 1536,
+     "datei": "t1024/bad__badsanierung/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2304,
+     "y_wirksam": 2304,
+     "datei": "t1024/bad__badsanierung/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3072,
+     "y_wirksam": 3072,
+     "datei": "t1024/bad__badsanierung/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 3840,
+     "y_wirksam": 3840,
+     "datei": "t1024/bad__badsanierung/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4608,
+     "y_wirksam": 4608,
+     "datei": "t1024/bad__badsanierung/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5376,
+     "y_wirksam": 5376,
+     "datei": "t1024/bad__badsanierung/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6144,
+     "y_wirksam": 6144,
+     "datei": "t1024/bad__badsanierung/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 6912,
+     "y_wirksam": 6912,
+     "datei": "t1024/bad__badsanierung/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 7680,
+     "y_wirksam": 7680,
+     "datei": "t1024/bad__badsanierung/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8448,
+     "y_wirksam": 8448,
+     "datei": "t1024/bad__badsanierung/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "t1024",
+   "seite": "/bad/barrierefreies-bad",
+   "status": 200,
+   "hoehe": 10788,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "t1024/bad__barrierefreies-bad/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 768,
+     "y_wirksam": 768,
+     "datei": "t1024/bad__barrierefreies-bad/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1536,
+     "y_wirksam": 1536,
+     "datei": "t1024/bad__barrierefreies-bad/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2304,
+     "y_wirksam": 2304,
+     "datei": "t1024/bad__barrierefreies-bad/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3072,
+     "y_wirksam": 3072,
+     "datei": "t1024/bad__barrierefreies-bad/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 3840,
+     "y_wirksam": 3840,
+     "datei": "t1024/bad__barrierefreies-bad/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4608,
+     "y_wirksam": 4608,
+     "datei": "t1024/bad__barrierefreies-bad/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5376,
+     "y_wirksam": 5376,
+     "datei": "t1024/bad__barrierefreies-bad/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6144,
+     "y_wirksam": 6144,
+     "datei": "t1024/bad__barrierefreies-bad/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 6912,
+     "y_wirksam": 6912,
+     "datei": "t1024/bad__barrierefreies-bad/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 7680,
+     "y_wirksam": 7680,
+     "datei": "t1024/bad__barrierefreies-bad/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8448,
+     "y_wirksam": 8448,
+     "datei": "t1024/bad__barrierefreies-bad/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "t1024",
+   "seite": "/balkon-terrasse",
+   "status": 200,
+   "hoehe": 9942,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "t1024/balkon-terrasse/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 768,
+     "y_wirksam": 768,
+     "datei": "t1024/balkon-terrasse/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1536,
+     "y_wirksam": 1536,
+     "datei": "t1024/balkon-terrasse/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2304,
+     "y_wirksam": 2304,
+     "datei": "t1024/balkon-terrasse/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3072,
+     "y_wirksam": 3072,
+     "datei": "t1024/balkon-terrasse/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 3840,
+     "y_wirksam": 3840,
+     "datei": "t1024/balkon-terrasse/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4608,
+     "y_wirksam": 4608,
+     "datei": "t1024/balkon-terrasse/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5376,
+     "y_wirksam": 5376,
+     "datei": "t1024/balkon-terrasse/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6144,
+     "y_wirksam": 6144,
+     "datei": "t1024/balkon-terrasse/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 6912,
+     "y_wirksam": 6912,
+     "datei": "t1024/balkon-terrasse/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 7680,
+     "y_wirksam": 7680,
+     "datei": "t1024/balkon-terrasse/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8448,
+     "y_wirksam": 8448,
+     "datei": "t1024/balkon-terrasse/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "t1024",
+   "seite": "/blog",
+   "status": 200,
+   "hoehe": 11549,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "t1024/blog/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 768,
+     "y_wirksam": 768,
+     "datei": "t1024/blog/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1536,
+     "y_wirksam": 1536,
+     "datei": "t1024/blog/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2304,
+     "y_wirksam": 2304,
+     "datei": "t1024/blog/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3072,
+     "y_wirksam": 3072,
+     "datei": "t1024/blog/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 3840,
+     "y_wirksam": 3840,
+     "datei": "t1024/blog/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4608,
+     "y_wirksam": 4608,
+     "datei": "t1024/blog/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5376,
+     "y_wirksam": 5376,
+     "datei": "t1024/blog/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6144,
+     "y_wirksam": 6144,
+     "datei": "t1024/blog/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 6912,
+     "y_wirksam": 6912,
+     "datei": "t1024/blog/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 7680,
+     "y_wirksam": 7680,
+     "datei": "t1024/blog/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8448,
+     "y_wirksam": 8448,
+     "datei": "t1024/blog/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "t1024",
+   "seite": "/fliesen",
+   "status": 200,
+   "hoehe": 12290,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "t1024/fliesen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 768,
+     "y_wirksam": 768,
+     "datei": "t1024/fliesen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1536,
+     "y_wirksam": 1536,
+     "datei": "t1024/fliesen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2304,
+     "y_wirksam": 2304,
+     "datei": "t1024/fliesen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3072,
+     "y_wirksam": 3072,
+     "datei": "t1024/fliesen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 3840,
+     "y_wirksam": 3840,
+     "datei": "t1024/fliesen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4608,
+     "y_wirksam": 4608,
+     "datei": "t1024/fliesen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5376,
+     "y_wirksam": 5376,
+     "datei": "t1024/fliesen/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6144,
+     "y_wirksam": 6144,
+     "datei": "t1024/fliesen/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 6912,
+     "y_wirksam": 6912,
+     "datei": "t1024/fliesen/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 7680,
+     "y_wirksam": 7680,
+     "datei": "t1024/fliesen/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8448,
+     "y_wirksam": 8448,
+     "datei": "t1024/fliesen/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "t1024",
+   "seite": "/kontakt",
+   "status": 200,
+   "hoehe": 7045,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "t1024/kontakt/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 768,
+     "y_wirksam": 768,
+     "datei": "t1024/kontakt/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1536,
+     "y_wirksam": 1536,
+     "datei": "t1024/kontakt/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2304,
+     "y_wirksam": 2304,
+     "datei": "t1024/kontakt/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3072,
+     "y_wirksam": 3072,
+     "datei": "t1024/kontakt/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 3840,
+     "y_wirksam": 3840,
+     "datei": "t1024/kontakt/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4608,
+     "y_wirksam": 4608,
+     "datei": "t1024/kontakt/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5376,
+     "y_wirksam": 5376,
+     "datei": "t1024/kontakt/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6144,
+     "y_wirksam": 6144,
+     "datei": "t1024/kontakt/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 6912,
+     "y_wirksam": 6277,
+     "datei": "t1024/kontakt/09.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "t1024",
+   "seite": "/leistungen",
+   "status": 200,
+   "hoehe": 11458,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "t1024/leistungen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 768,
+     "y_wirksam": 768,
+     "datei": "t1024/leistungen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1536,
+     "y_wirksam": 1536,
+     "datei": "t1024/leistungen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2304,
+     "y_wirksam": 2304,
+     "datei": "t1024/leistungen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3072,
+     "y_wirksam": 3072,
+     "datei": "t1024/leistungen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 3840,
+     "y_wirksam": 3840,
+     "datei": "t1024/leistungen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4608,
+     "y_wirksam": 4608,
+     "datei": "t1024/leistungen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5376,
+     "y_wirksam": 5376,
+     "datei": "t1024/leistungen/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6144,
+     "y_wirksam": 6144,
+     "datei": "t1024/leistungen/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 6912,
+     "y_wirksam": 6912,
+     "datei": "t1024/leistungen/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 7680,
+     "y_wirksam": 7680,
+     "datei": "t1024/leistungen/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8448,
+     "y_wirksam": 8448,
+     "datei": "t1024/leistungen/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "t1024",
+   "seite": "/referenzen",
+   "status": 200,
+   "hoehe": 17441,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "t1024/referenzen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 768,
+     "y_wirksam": 768,
+     "datei": "t1024/referenzen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1536,
+     "y_wirksam": 1536,
+     "datei": "t1024/referenzen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2304,
+     "y_wirksam": 2304,
+     "datei": "t1024/referenzen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3072,
+     "y_wirksam": 3072,
+     "datei": "t1024/referenzen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 3840,
+     "y_wirksam": 3840,
+     "datei": "t1024/referenzen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4608,
+     "y_wirksam": 4608,
+     "datei": "t1024/referenzen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5376,
+     "y_wirksam": 5376,
+     "datei": "t1024/referenzen/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6144,
+     "y_wirksam": 6144,
+     "datei": "t1024/referenzen/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 6912,
+     "y_wirksam": 6912,
+     "datei": "t1024/referenzen/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 7680,
+     "y_wirksam": 7680,
+     "datei": "t1024/referenzen/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8448,
+     "y_wirksam": 8448,
+     "datei": "t1024/referenzen/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "t1024",
+   "seite": "/standorte/wetzlar",
+   "status": 200,
+   "hoehe": 9335,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "t1024/standorte__wetzlar/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 768,
+     "y_wirksam": 768,
+     "datei": "t1024/standorte__wetzlar/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1536,
+     "y_wirksam": 1536,
+     "datei": "t1024/standorte__wetzlar/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2304,
+     "y_wirksam": 2304,
+     "datei": "t1024/standorte__wetzlar/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3072,
+     "y_wirksam": 3072,
+     "datei": "t1024/standorte__wetzlar/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 3840,
+     "y_wirksam": 3840,
+     "datei": "t1024/standorte__wetzlar/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4608,
+     "y_wirksam": 4608,
+     "datei": "t1024/standorte__wetzlar/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5376,
+     "y_wirksam": 5376,
+     "datei": "t1024/standorte__wetzlar/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6144,
+     "y_wirksam": 6144,
+     "datei": "t1024/standorte__wetzlar/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 6912,
+     "y_wirksam": 6912,
+     "datei": "t1024/standorte__wetzlar/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 7680,
+     "y_wirksam": 7680,
+     "datei": "t1024/standorte__wetzlar/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8448,
+     "y_wirksam": 8448,
+     "datei": "t1024/standorte__wetzlar/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "t1024",
+   "seite": "/ueber-uns",
+   "status": 200,
+   "hoehe": 12190,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "t1024/ueber-uns/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 768,
+     "y_wirksam": 768,
+     "datei": "t1024/ueber-uns/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1536,
+     "y_wirksam": 1536,
+     "datei": "t1024/ueber-uns/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2304,
+     "y_wirksam": 2304,
+     "datei": "t1024/ueber-uns/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3072,
+     "y_wirksam": 3072,
+     "datei": "t1024/ueber-uns/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 3840,
+     "y_wirksam": 3840,
+     "datei": "t1024/ueber-uns/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 4608,
+     "y_wirksam": 4608,
+     "datei": "t1024/ueber-uns/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5376,
+     "y_wirksam": 5376,
+     "datei": "t1024/ueber-uns/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6144,
+     "y_wirksam": 6144,
+     "datei": "t1024/ueber-uns/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 6912,
+     "y_wirksam": 6912,
+     "datei": "t1024/ueber-uns/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 7680,
+     "y_wirksam": 7680,
+     "datei": "t1024/ueber-uns/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 8448,
+     "y_wirksam": 8448,
+     "datei": "t1024/ueber-uns/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "t768",
+   "seite": "/",
+   "status": 200,
+   "hoehe": 11024,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "t768/start/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1024,
+     "y_wirksam": 1024,
+     "datei": "t768/start/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2048,
+     "y_wirksam": 2048,
+     "datei": "t768/start/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 3072,
+     "y_wirksam": 3072,
+     "datei": "t768/start/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 4096,
+     "y_wirksam": 4096,
+     "datei": "t768/start/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 5120,
+     "y_wirksam": 5120,
+     "datei": "t768/start/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 6144,
+     "y_wirksam": 6144,
+     "datei": "t768/start/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 7168,
+     "y_wirksam": 7168,
+     "datei": "t768/start/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 8192,
+     "y_wirksam": 8192,
+     "datei": "t768/start/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 9216,
+     "y_wirksam": 9216,
+     "datei": "t768/start/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 10240,
+     "y_wirksam": 10000,
+     "datei": "t768/start/10.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "t768",
+   "seite": "/bad",
+   "status": 200,
+   "hoehe": 13688,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "t768/bad/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1024,
+     "y_wirksam": 1024,
+     "datei": "t768/bad/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2048,
+     "y_wirksam": 2048,
+     "datei": "t768/bad/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 3072,
+     "y_wirksam": 3072,
+     "datei": "t768/bad/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 4096,
+     "y_wirksam": 4096,
+     "datei": "t768/bad/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 5120,
+     "y_wirksam": 5120,
+     "datei": "t768/bad/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 6144,
+     "y_wirksam": 6144,
+     "datei": "t768/bad/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 7168,
+     "y_wirksam": 7168,
+     "datei": "t768/bad/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 8192,
+     "y_wirksam": 8192,
+     "datei": "t768/bad/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 9216,
+     "y_wirksam": 9216,
+     "datei": "t768/bad/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 10240,
+     "y_wirksam": 10240,
+     "datei": "t768/bad/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 11264,
+     "y_wirksam": 11264,
+     "datei": "t768/bad/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "t768",
+   "seite": "/bad/badsanierung",
+   "status": 200,
+   "hoehe": 11346,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "t768/bad__badsanierung/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1024,
+     "y_wirksam": 1024,
+     "datei": "t768/bad__badsanierung/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2048,
+     "y_wirksam": 2048,
+     "datei": "t768/bad__badsanierung/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 3072,
+     "y_wirksam": 3072,
+     "datei": "t768/bad__badsanierung/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 4096,
+     "y_wirksam": 4096,
+     "datei": "t768/bad__badsanierung/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 5120,
+     "y_wirksam": 5120,
+     "datei": "t768/bad__badsanierung/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 6144,
+     "y_wirksam": 6144,
+     "datei": "t768/bad__badsanierung/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 7168,
+     "y_wirksam": 7168,
+     "datei": "t768/bad__badsanierung/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 8192,
+     "y_wirksam": 8192,
+     "datei": "t768/bad__badsanierung/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 9216,
+     "y_wirksam": 9216,
+     "datei": "t768/bad__badsanierung/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 10240,
+     "y_wirksam": 10240,
+     "datei": "t768/bad__badsanierung/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 11264,
+     "y_wirksam": 10322,
+     "datei": "t768/bad__badsanierung/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "t768",
+   "seite": "/bad/barrierefreies-bad",
+   "status": 200,
+   "hoehe": 10808,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "t768/bad__barrierefreies-bad/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1024,
+     "y_wirksam": 1024,
+     "datei": "t768/bad__barrierefreies-bad/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2048,
+     "y_wirksam": 2048,
+     "datei": "t768/bad__barrierefreies-bad/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 3072,
+     "y_wirksam": 3072,
+     "datei": "t768/bad__barrierefreies-bad/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 4096,
+     "y_wirksam": 4096,
+     "datei": "t768/bad__barrierefreies-bad/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 5120,
+     "y_wirksam": 5120,
+     "datei": "t768/bad__barrierefreies-bad/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 6144,
+     "y_wirksam": 6144,
+     "datei": "t768/bad__barrierefreies-bad/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 7168,
+     "y_wirksam": 7168,
+     "datei": "t768/bad__barrierefreies-bad/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 8192,
+     "y_wirksam": 8192,
+     "datei": "t768/bad__barrierefreies-bad/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 9216,
+     "y_wirksam": 9216,
+     "datei": "t768/bad__barrierefreies-bad/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 10240,
+     "y_wirksam": 9784,
+     "datei": "t768/bad__barrierefreies-bad/10.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "t768",
+   "seite": "/balkon-terrasse",
+   "status": 200,
+   "hoehe": 10191,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "t768/balkon-terrasse/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1024,
+     "y_wirksam": 1024,
+     "datei": "t768/balkon-terrasse/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2048,
+     "y_wirksam": 2048,
+     "datei": "t768/balkon-terrasse/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 3072,
+     "y_wirksam": 3072,
+     "datei": "t768/balkon-terrasse/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 4096,
+     "y_wirksam": 4096,
+     "datei": "t768/balkon-terrasse/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 5120,
+     "y_wirksam": 5120,
+     "datei": "t768/balkon-terrasse/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 6144,
+     "y_wirksam": 6144,
+     "datei": "t768/balkon-terrasse/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 7168,
+     "y_wirksam": 7168,
+     "datei": "t768/balkon-terrasse/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 8192,
+     "y_wirksam": 8192,
+     "datei": "t768/balkon-terrasse/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 9216,
+     "y_wirksam": 9167,
+     "datei": "t768/balkon-terrasse/09.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "t768",
+   "seite": "/blog",
+   "status": 200,
+   "hoehe": 11565,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "t768/blog/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1024,
+     "y_wirksam": 1024,
+     "datei": "t768/blog/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2048,
+     "y_wirksam": 2048,
+     "datei": "t768/blog/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 3072,
+     "y_wirksam": 3072,
+     "datei": "t768/blog/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 4096,
+     "y_wirksam": 4096,
+     "datei": "t768/blog/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 5120,
+     "y_wirksam": 5120,
+     "datei": "t768/blog/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 6144,
+     "y_wirksam": 6144,
+     "datei": "t768/blog/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 7168,
+     "y_wirksam": 7168,
+     "datei": "t768/blog/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 8192,
+     "y_wirksam": 8192,
+     "datei": "t768/blog/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 9216,
+     "y_wirksam": 9216,
+     "datei": "t768/blog/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 10240,
+     "y_wirksam": 10240,
+     "datei": "t768/blog/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 11264,
+     "y_wirksam": 10541,
+     "datei": "t768/blog/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "t768",
+   "seite": "/fliesen",
+   "status": 200,
+   "hoehe": 12103,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "t768/fliesen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1024,
+     "y_wirksam": 1024,
+     "datei": "t768/fliesen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2048,
+     "y_wirksam": 2048,
+     "datei": "t768/fliesen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 3072,
+     "y_wirksam": 3072,
+     "datei": "t768/fliesen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 4096,
+     "y_wirksam": 4096,
+     "datei": "t768/fliesen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 5120,
+     "y_wirksam": 5120,
+     "datei": "t768/fliesen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 6144,
+     "y_wirksam": 6144,
+     "datei": "t768/fliesen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 7168,
+     "y_wirksam": 7168,
+     "datei": "t768/fliesen/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 8192,
+     "y_wirksam": 8192,
+     "datei": "t768/fliesen/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 9216,
+     "y_wirksam": 9216,
+     "datei": "t768/fliesen/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 10240,
+     "y_wirksam": 10240,
+     "datei": "t768/fliesen/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 11264,
+     "y_wirksam": 11079,
+     "datei": "t768/fliesen/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "t768",
+   "seite": "/kontakt",
+   "status": 200,
+   "hoehe": 8029,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "t768/kontakt/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1024,
+     "y_wirksam": 1024,
+     "datei": "t768/kontakt/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2048,
+     "y_wirksam": 2048,
+     "datei": "t768/kontakt/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 3072,
+     "y_wirksam": 3072,
+     "datei": "t768/kontakt/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 4096,
+     "y_wirksam": 4096,
+     "datei": "t768/kontakt/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 5120,
+     "y_wirksam": 5120,
+     "datei": "t768/kontakt/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 6144,
+     "y_wirksam": 6144,
+     "datei": "t768/kontakt/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 7168,
+     "y_wirksam": 7005,
+     "datei": "t768/kontakt/07.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "t768",
+   "seite": "/leistungen",
+   "status": 200,
+   "hoehe": 12991,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "t768/leistungen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1024,
+     "y_wirksam": 1024,
+     "datei": "t768/leistungen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2048,
+     "y_wirksam": 2048,
+     "datei": "t768/leistungen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 3072,
+     "y_wirksam": 3072,
+     "datei": "t768/leistungen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 4096,
+     "y_wirksam": 4096,
+     "datei": "t768/leistungen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 5120,
+     "y_wirksam": 5120,
+     "datei": "t768/leistungen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 6144,
+     "y_wirksam": 6144,
+     "datei": "t768/leistungen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 7168,
+     "y_wirksam": 7168,
+     "datei": "t768/leistungen/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 8192,
+     "y_wirksam": 8192,
+     "datei": "t768/leistungen/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 9216,
+     "y_wirksam": 9216,
+     "datei": "t768/leistungen/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 10240,
+     "y_wirksam": 10240,
+     "datei": "t768/leistungen/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 11264,
+     "y_wirksam": 11264,
+     "datei": "t768/leistungen/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "t768",
+   "seite": "/referenzen",
+   "status": 200,
+   "hoehe": 16065,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "t768/referenzen/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1024,
+     "y_wirksam": 1024,
+     "datei": "t768/referenzen/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2048,
+     "y_wirksam": 2048,
+     "datei": "t768/referenzen/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 3072,
+     "y_wirksam": 3072,
+     "datei": "t768/referenzen/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 4096,
+     "y_wirksam": 4096,
+     "datei": "t768/referenzen/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 5120,
+     "y_wirksam": 5120,
+     "datei": "t768/referenzen/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 6144,
+     "y_wirksam": 6144,
+     "datei": "t768/referenzen/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 7168,
+     "y_wirksam": 7168,
+     "datei": "t768/referenzen/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 8192,
+     "y_wirksam": 8192,
+     "datei": "t768/referenzen/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 9216,
+     "y_wirksam": 9216,
+     "datei": "t768/referenzen/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 10240,
+     "y_wirksam": 10240,
+     "datei": "t768/referenzen/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 11264,
+     "y_wirksam": 11264,
+     "datei": "t768/referenzen/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "t768",
+   "seite": "/standorte/wetzlar",
+   "status": 200,
+   "hoehe": 9483,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "t768/standorte__wetzlar/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1024,
+     "y_wirksam": 1024,
+     "datei": "t768/standorte__wetzlar/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2048,
+     "y_wirksam": 2048,
+     "datei": "t768/standorte__wetzlar/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 3072,
+     "y_wirksam": 3072,
+     "datei": "t768/standorte__wetzlar/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 4096,
+     "y_wirksam": 4096,
+     "datei": "t768/standorte__wetzlar/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 5120,
+     "y_wirksam": 5120,
+     "datei": "t768/standorte__wetzlar/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 6144,
+     "y_wirksam": 6144,
+     "datei": "t768/standorte__wetzlar/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 7168,
+     "y_wirksam": 7168,
+     "datei": "t768/standorte__wetzlar/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 8192,
+     "y_wirksam": 8192,
+     "datei": "t768/standorte__wetzlar/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 9216,
+     "y_wirksam": 8459,
+     "datei": "t768/standorte__wetzlar/09.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "t768",
+   "seite": "/ueber-uns",
+   "status": 200,
+   "hoehe": 12241,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "t768/ueber-uns/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1024,
+     "y_wirksam": 1024,
+     "datei": "t768/ueber-uns/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2048,
+     "y_wirksam": 2048,
+     "datei": "t768/ueber-uns/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 3072,
+     "y_wirksam": 3072,
+     "datei": "t768/ueber-uns/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 4096,
+     "y_wirksam": 4096,
+     "datei": "t768/ueber-uns/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 5120,
+     "y_wirksam": 5120,
+     "datei": "t768/ueber-uns/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 6144,
+     "y_wirksam": 6144,
+     "datei": "t768/ueber-uns/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 7168,
+     "y_wirksam": 7168,
+     "datei": "t768/ueber-uns/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 8192,
+     "y_wirksam": 8192,
+     "datei": "t768/ueber-uns/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 9216,
+     "y_wirksam": 9216,
+     "datei": "t768/ueber-uns/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 10240,
+     "y_wirksam": 10240,
+     "datei": "t768/ueber-uns/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 11264,
+     "y_wirksam": 11217,
+     "datei": "t768/ueber-uns/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "animationen": null,
+   "fehler": null,
+   "fremd": 0
+  }
+ ]
+}
