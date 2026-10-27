@@ -119,8 +119,10 @@ export default function Header({ isMobileMenuOpen }) {
             <div className={clsx(seitenKlassen, 'kopf-zeile flex h-16 items-center justify-between gap-6 @7xl:gap-3')}>
                 {/* Logo darf nur unter @7xl schrumpfen (große Systemschrift, Menü-Schalter bleibt im Bild); mit voller Navigation
                     behält es seine Größe, die Navigation hat ab 2xl keine Zuschläge mehr (Runde 3: auf d1920 nur 74 px breit) */}
-                <Link href="/" className="min-w-0 shrink @7xl:shrink-0" aria-label="Zur Startseite von Fliesenverlegung Tezgel">
+                {/* Name aus Logo-Alternativtext und sichtbarer Zeile, ohne aria-label: Der sichtbare Text muss im Namen stehen (WCAG 2.5.3, axe 4.14) */}
+                <Link href="/" className="min-w-0 shrink @7xl:shrink-0">
                     <BrandMark sublineClassName="hidden @5xl:@max-7xl:block" />
+                    <span className="sr-only">, zur Startseite</span>
                 </Link>
 
                 {/* Navigation mit Aufklappblättern als eigene Hydrierungseinheit (E-033): unter 80 rem verborgen, ein früher Tipp auf
