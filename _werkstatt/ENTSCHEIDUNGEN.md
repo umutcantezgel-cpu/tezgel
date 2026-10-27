@@ -779,3 +779,23 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
 6. **Icon-Zahl:** 47; K-009 ist berichtigt (KERN 4.0.2).
 7. **`optimiert_bytes`:** zählt jetzt Byte statt Zeichen.
 - Außerdem stehen die Importe der Konfigurationen in `svg.mjs` jetzt im Importblock.
+
+## E-070 · Abnahme UM-E2-PX (27.10.2026, 07:15 MEZ, Orchestrator)
+
+**Prüfung:** Workflow wf_a9d8240f-b1f, Bau durch Haiku, unabhängige Gegenprüfung durch Haiku; Urteil „abnehmbar“.
+- Selbsttest A: dreimal 48 Paare (12 Hauptansichten × 4 Größen) ohne eine abweichende Pixelzahl.
+- Störungsprobe: je Paar genau 100 Pixel, Exit-Codes 0, 1 und 2 richtig.
+
+**Vor der Abnahme behoben** (Mängel „mittel“ und „gering“ der Gegenprüfung):
+1. **Abdeckung:** Das Werkzeug vergleicht jetzt die ganze Seite. Die Obergrenze von 12 Bildschirmhöhen ließ bis zur Hälfte langer Seiten ungeprüft (`/referenzen` mobil: 21.204 px Höhe, jetzt 26 statt 12 Ausschnitte).
+   - Eine Obergrenze gibt es nur noch auf Wunsch mit `--max-ausschnitte N`. Dann stehen `ungeprueft_px` je Paar und eine Zeile in der Zusammenfassung.
+   - Nachgeprüft: ganze Seite `ungeprueft_px` 0; mit `--max-ausschnitte 12` 11.076 px gemeldet.
+2. **Browserverlust:** Verliert Chromium die Verbindung, startet der Lauf den Browser neu und wiederholt das Paar einmal (`wiederholt: true`, `fehler_erster_versuch`).
+   - Gebaut, aber nicht ausgelöst: Ein gezielter Absturz ließ sich in der Umgebung nicht sauber herbeiführen.
+   - Ein zweiter Fehler bleibt ein Fehler (Exit 2).
+3. **Fehlermeldung:** Der Fehlertext steht jetzt auch auf stderr und in der Zusammenfassung.
+4. **Gleichzeitige Kontexte:** Beide Aufnahmen eines Paars enden, bevor der Worker weitermacht (`Promise.allSettled`). `--worker` wird damit eingehalten.
+
+**Festlegungen zu den offenen Fragen des Baumeisters:**
+- Eine reine Höhenabweichung macht ein Paar abweichend (bestätigt).
+- `includeAA: true` gilt: strenger als der Standard, jede Kantenabweichung zählt (bestätigt).
