@@ -1,0 +1,24 @@
+{
+ "modus": "bildrate",
+ "seite": "/balkon-terrasse",
+ "ansicht": "m390",
+ "ergebnis": "/home/user/tezgel/_werkstatt/cache/bewegung/bildrate/balkon-terrasse/ergebnis.json",
+ "wiederholungen": 3,
+ "bilder_gesamt": 1270,
+ "verworfen": 2,
+ "anteil_verworfen_prozent": 0.16,
+ "anteile_je_lauf": [
+  0.16,
+  0.47,
+  0.08
+ ],
+ "anteile_pipeline_je_lauf": [
+  0.07,
+  0.54,
+  0.15
+ ],
+ "loaf_anzahl": 1,
+ "loaf_summe_ms": 113,
+ "hinweis": "Median je Feld, nicht aus derselben Zeile (bilder_gesamt, verworfen, loaf_*). Kopfwert anteil_verworfen_prozent = Median der Anteile je Lauf (anteile_je_lauf).",
+ "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame"
+}

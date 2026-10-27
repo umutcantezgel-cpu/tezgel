@@ -1,0 +1,24 @@
+{
+ "modus": "bildrate",
+ "seite": "/bad",
+ "ansicht": "m390",
+ "ergebnis": "/home/user/tezgel/_werkstatt/cache/bewegung/bildrate/bad/ergebnis.json",
+ "wiederholungen": 3,
+ "bilder_gesamt": 2032,
+ "verworfen": 36,
+ "anteil_verworfen_prozent": 1.77,
+ "anteile_je_lauf": [
+  1.77,
+  1.53,
+  9.31
+ ],
+ "anteile_pipeline_je_lauf": [
+  0.05,
+  0.09,
+  7.49
+ ],
+ "loaf_anzahl": 3,
+ "loaf_summe_ms": 166,
+ "hinweis": "Median je Feld, nicht aus derselben Zeile (bilder_gesamt, verworfen, loaf_*). Kopfwert anteil_verworfen_prozent = Median der Anteile je Lauf (anteile_je_lauf).",
+ "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame"
+}

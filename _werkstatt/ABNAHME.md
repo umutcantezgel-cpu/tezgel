@@ -8,7 +8,7 @@ Stand 27.10.2026, E1, Fassung 2.1 (AUFTRAG.md Abschnitt 15; L0 Runde 1 eingearbe
 - Methode: Abgleich PLAN.md gegen Commits.
 - Schwelle: 100 % der Pflichtpakete erledigt und abgenommen, jede Zeile mit Commit-Kennung; Kür abgearbeitet, bis sie leer ist oder die LAUFZEIT endet.
 - Beleg: PLAN.md; Abgleich in UM-E5-BER.
-- E0: 0 von 55 Pflichtpaketen (PLAN 2.1). Stand: offen.
+- E0: 0 von 58 Pflichtpaketen (PLAN 2.2). Stand: offen.
 
 ### Z-02 Bestand
 - Methode: Prüfstufe C; Reinraum (`reinraum.sh`); Durchlauf der Funktionsliste (LAGEBILD Abschnitt 3); Adressprüfung aller 202 Adressen; Lesbarkeit der Hauptansichten; Element-Pässe aus Abschnitt 9.
@@ -38,13 +38,13 @@ Stand 27.10.2026, E1, Fassung 2.1 (AUFTRAG.md Abschnitt 15; L0 Runde 1 eingearbe
 - Methode: Register gegen DOM (`bewegung.mjs --modus register`), reduzierte Bewegung und Bewegungsschalter (`--modus reduziert`, eigener Durchlauf mit `data-bewegung="ruhig"`), Bildrate mobil bei vierfacher Drosselung (`--modus bildrate`), Long Animation Frames, Bildfolgen neuer Momente.
 - Schwelle: jede Animation mit `data-motion`-Kennung im Register; jeder Wechsel zwischen Erzählansichten mit Übergang und Rückfall; bei reduzierter Bewegung und ruhigem Schalter keine Lage- oder Größenänderung und alle Inhalte sichtbar; Bewegungsschalter und Pause-Knöpfe vorhanden; große Momente mobil bei vierfacher Drosselung mit höchstens 5 % verworfenen Bildern und ohne Long Animation Frame über 20 ms Skriptzeit aus Bewegungscode.
 - Beleg: `belege/um-e5/bewegung/`.
-- E0: Register 28 Einträge, 23 im Code; Bewegungsschalter fehlt; Bildrate und reduzierte Bewegung je Hauptansicht in `belege/um-e0/` (Messreihe). Stand: offen.
+- E0 (`belege/um-e0/bewegung/`, m390, 4× Drosselung, Median aus drei): Register 28 Einträge, 23 im Code; je Hauptansicht 0 unbekannte Kennungen, auf 11 von 12 Ansichten 1 Übergang ohne Registereintrag (`outline-color` am Karussellknopf). Bewegungsschalter fehlt. Reduzierte Bewegung: 0 Lage- oder Größenänderungen auf allen 12 Ansichten; die 6 bis 10 „unsichtbaren“ Elemente je Ansicht sind geschlossene Menüs und ausgeblendete Knöpfe (`display: none`), kein Inhalt. Verworfene Bilder beim Scrollen 0 bis 1,77 % (höchster Wert `/bad`, ein Lauf 9,31 %); Long Animation Frames je Ansicht 0 bis 3, Summe höchstens 200 ms (`/referenzen`). Stand: offen.
 
 ### Z-07 Scrollen und Cursor
 - Methode: Prüfstufe C; geskriptetes Scrollen mobil bei vierfacher Drosselung; Tastatur, Anker, Seitensuche, Zurück-Taste, Positionswiederherstellung; Cursor-Zustände mit feinem Zeiger, Touch, Tastatur und erzwungenen Farben; Reaktionszeit (`reaktion.mjs`).
 - Schwelle: höchstens 5 % verworfene Bilder; Tastatur, Anker, Seitensuche, Zurück und Wiederherstellung ohne Fehler; Cursor nur bei feinem Zeiger, Klickpunkt ohne Verzögerung, jeder Zustand im Register, ausgeblendet bei Tastatur und erzwungenen Farben; INP nicht schlechter als E0.
 - Beleg: `belege/um-e5/scroll-cursor.md`, `belege/um-e5/reaktion/`.
-- E0: kein Cursor-System; Reaktionszeit je Hauptansicht in `belege/um-e0/reaktion/reaktion.json`. Stand: offen.
+- E0: kein Cursor-System. Reaktionszeit (`belege/um-e0/reaktion/reaktion.json`, m390, 4× Drosselung, Schwelle 200 ms, höchster Median je Ansicht): `/` 608 ms (Eingabe), `/bad` 216, `/bad/badsanierung` 80, `/bad/barrierefreies-bad` 168, `/leistungen` 72, `/fliesen` 96, `/balkon-terrasse` 404 (unvollständig), `/referenzen` 304, `/ueber-uns` 456, `/kontakt` 812 (unvollständig), `/standorte/wetzlar` 584, `/blog` 744 ms. 4 bestanden, 6 nicht bestanden, 2 unvollständig. Die Einzelwerte streuen stark (zum Beispiel `/` Hauptknopf 3.184, 48 und 192 ms); verglichen wird deshalb der Median mit der Spanne der drei Läufe. Bildrate beim Scrollen siehe Z-06. Stand: offen.
 
 ### Z-08 Grafik
 - Methode: Prüfstufe C; `svg.mjs` mit den SVGO-Konfigurationen; Kennungen je Ansicht im DOM.
@@ -56,19 +56,19 @@ Stand 27.10.2026, E1, Fassung 2.1 (AUFTRAG.md Abschnitt 15; L0 Runde 1 eingearbe
 - Methode: axe nach WCAG 2.2 AA in den vier Gerätegrößen, auch mit offenem Menü und Dialog; Probeläufe A1 bis A5 nur mit Tastatur; Kontraste; Reflow 320 px, Zoom 200 %, erzwungene Farben.
 - Schwelle: null ernste oder kritische axe-Befunde auf den Hauptansichten; Hauptaufgaben nur mit Tastatur lösbar bei sichtbarem Fokus; Kontraste nach Abschnitt 7; Reflow, Zoom und erzwungene Farben ohne Verlust.
 - Beleg: `belege/um-e5/axe/`, `belege/um-e5/tastatur.md`.
-- E0: axe-Lauf in `belege/um-e0/axe/` (Messreihe). Stand: offen.
+- E0: axe 4.13 nach WCAG 2.2 AA (`belege/um-e0/axe/axe.json`): 84 Läufe (12 Hauptansichten × 4 Größen, mit Menü und Dialog), 0 Knoten mit ernsten oder kritischen Befunden. Stand: offen.
 
 ### Z-10 Leistung
 - Methode: Lighthouse mobil und Desktop als Median aus drei Läufen am Produktionsbau; Größe des Bewegungs-JavaScripts im ersten Laden.
 - Schwelle: BUDGETS auf allen Hauptansichten (K-012); keine Hauptansicht schlechter als E0 um mehr als die Spanne der drei E0-Läufe.
 - Beleg: `belege/um-e5/lighthouse/`.
-- E0: `belege/um-e0/lighthouse.json` (Messreihe, letzter Schritt). Stand: offen.
+- E0 (`belege/um-e0/lighthouse.json`, Median aus drei, Spanne in Klammern): Desktop Leistung 100 auf allen 12 Ansichten, LCP 696 bis 788 ms. Mobil Leistung `/` 92 (91–95), `/bad` 91 (91–93), `/bad/badsanierung` 90 (89–91), `/bad/barrierefreies-bad` 93 (92–94), `/leistungen` 95 (94–95), `/fliesen` 92 (92–92), `/balkon-terrasse` 91 (90–94), `/referenzen` 92 (92–95), `/ueber-uns` 92 (91–93), `/kontakt` 93 (91–93), `/standorte/wetzlar` 81 (80–82), `/blog` 87 (85–90). Mobiles LCP 2.860 bis 4.517 ms (`/standorte/wetzlar`), TBT 64 bis 171 ms, CLS 0, JavaScript 196 bis 318 KB (`/blog`). BUDGETS in E0 verfehlt: LCP mobil > 2,5 s auf allen 12 Ansichten; Leistung mobil < 90 auf `/standorte/wetzlar` und `/blog`; Reaktion > 200 ms auf 8 Ansichten (Z-07). Pakete: UM-E3-LCP-K, UM-E3-LEISTUNG, UM-E4-LEISTUNG. Stand: offen.
 
 ### Z-11 Darstellung
 - Methode: Bildsatz der Hauptansichten und der Stichprobe in den vier GERÄTEGRÖSSEN (390 × 844, 768 × 1024, 1440 × 900, 1920 × 1080), dazu 200 % Schrift und Reflow 320 px, mit Überlauf- und Überlappungsprüfung. Themen: hell (einziges Thema; kommt UM-K07, auch dunkel). Sprachen: Deutsch.
 - Schwelle: kein Überlauf, kein abgeschnittener oder überlappender Text.
 - Beleg: `belege/um-e5/bildsatz.json`.
-- E0: Bildsatz der vier Größen in `belege/um-e0/` (Messreihe); Browserprüfung Runde 5 des Vorlaufs mit 17 geringen Befunden (`belege/um-e0/runde5-befunde.json`). Stand: offen.
+- E0: Bildsatz der vier Größen (`belege/um-e0/bildsatz.json`, Bilder im Scratchpad): 534 Aufnahmen, 0 Fehler, 0 Überläufe, 0 Überlappungen, 0 Konsolenmeldungen; Browserprüfung Runde 5 des Vorlaufs mit 17 geringen Befunden (`belege/um-e0/runde5-befunde.json`). Stand: offen.
 
 ### Z-12 Kontingent
 - Methode: KONTINGENT.md.

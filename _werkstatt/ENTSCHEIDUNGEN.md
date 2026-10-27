@@ -737,3 +737,45 @@ Element-Pässe ohne Entscheidung im Vorlauf (UM-E0-VERLUSTE, Fragen 2 und 3):
   - Auch hier gibt es keine Entscheidung. Er kommt als Soll über die Ordner-Layouts zurück, wie in E0.
   - Seiten mit eigenem Service-Knoten bekommen keinen zweiten; ein Test sichert das.
   - Das ist kein Widerspruch zu E3-SEO-JSONLD („jede Seite trägt ihre eigene“): Es ist derselbe Knoten an einer gemeinsamen Stelle.
+
+## E-069 · Abschluss E1: L0 Runde 2, Ausgangswerte, Leistungslücke, Abnahme UM-E2-SVGO (27.10.2026, 06:50 MEZ, Orchestrator)
+
+**L0 Runde 2** (`berichte/UM-E1-L0-R2.md`): 12 von 15 Befunden der Runde 1 sind behoben, 3 teilweise. Dazu kamen 8 neue Befunde. Alle sind in PLAN 2.2 eingearbeitet:
+- Pfade berichtigt:
+  - `src/components/locations/RouteVisualization.tsx`
+  - die Logo-SVG unter `public/images/logo/`
+  - das Wurzel-Layout `src/app/(bestand)/layout.tsx`
+- Neue Dateien sind mit „(neu)“ markiert. In den Muster-Verweisen steht „Nr.“ statt „Zeile“.
+- Globs sind durch exakte Listen ersetzt (MOD, B01, VORL, CHOR).
+- Die Haiku-Kosten sind aus Stückpreisen gerechnet.
+- E5-C verweist vollständig auf die Spalte „Stufe C“ der Prüfmatrix.
+
+Antworten auf die offenen Fragen des Prüfers:
+- **Paketdateien:** Es gilt AUFTRAG (Dateihoheit). Paketdateien und Lockfiles schreibt der Orchestrator oder das eine laufende Upgrade-Paket; der PLAN-Kopf sagt das jetzt so.
+- **Cursor:** wird im Wurzel-Layout `src/app/(bestand)/layout.tsx` eingebunden. Ein eigenes `src/app/layout.tsx` gibt es nicht.
+- **Seitendateien:** `page.*` gehören dem Paket, das sie nennt. „Routen“ im Sinne der Dateihoheit sind Navigation, Weiterleitungen und Layouts.
+- **Z-04, Z-05, Z-08 in E2:** entfallen bewusst. E2 ändert keine Gestaltungswerte, keine SVG-Dateien des Projekts und keine Momente.
+- **EP4:** wird nicht geteilt. Nach E-068 entstehen die Knoten in vier Ordner-Layouts und `schema.ts`, also fünf Dateien in einem Orchestrator-Paket, nicht auf 47 Seiten.
+
+**Leistungslücke aus E0:** Die Ausgangsmessung zeigt, dass der Bestand die BUDGETS verfehlt:
+- LCP mobil liegt auf allen 12 Hauptansichten über 2,5 s (2,9 bis 4,5 s).
+- Die Leistung mobil liegt auf `/standorte/wetzlar` bei 81 und auf `/blog` bei 87.
+- Die Reaktion liegt auf 8 Ansichten über 200 ms.
+- Auf `/standorte/wetzlar` ist das LCP-Element der Text des Einwilligungsbanners.
+
+Weil Z-10 die BUDGETS auf allen Hauptansichten verlangt, kommen drei Pflichtpakete dazu:
+- UM-E3-LCP-K (Kundschafter)
+- UM-E3-LEISTUNG (Referenz `/`, Klasse L)
+- UM-E4-LEISTUNG (übrige Ansichten)
+
+Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 Fenster und ≈ 1,5 Tagen. Einwilligung und Logo bleiben in Inhalt und Verhalten gleich (G8). Ein früheres Zeichnen des Banners ist nur zulässig, wenn Wortlaut, Knöpfe und Wirkung gleich bleiben; darüber entscheidet E3-LEISTUNG mit Denkprotokoll.
+
+**Abnahme UM-E2-SVGO:** Der Bericht ist vollständig. Gegenprobe: alte und neue Fassung von `svg.mjs` liefern 102 von 102 gleiche Ergebnisse. Zu den offenen Fragen des Grafikers entscheide ich:
+1. **Sprite:** Die animierte Konfiguration bekommt `removeHiddenElems: false`. Sonst leert SVGO das Sprite: `<symbol>` gilt als verborgen. Nachgeprüft: 10.903 → 10.897 Byte, alle 47 Symbole bleiben.
+2. **multipass bleibt `false`:** Für das Kriterium ist es gleich, denn eine Datei, die ein Lauf nicht mehr ändert, ändert auch multipass nicht. Z-08 „Fixpunkt“ heißt: SVGO ändert die Datei nicht mehr (Spalte „optimiert“). Stand: 42 von 50 statischen Dateien, Sprite noch nicht. Die übrigen bringt UM-E3-SVG dorthin.
+3. **Budget des Sprites:** gilt je Symbol (≤ 1,5 KB). `svg.mjs` prüft das jetzt so; alle Symbole liegen bei 193 bis 345 Byte.
+4. **Logo-SVG mit eingebettetem PNG:** Die beiden Dateien (je 396 KB) bindet der Code nicht ein. UM-E3-SVG ersetzt sie durch eine echte Vektorfassung oder entfernt sie mit Vermerk (G4); das sichtbare Logo bleibt unverändert (G8).
+5. **`tezgel-mark.svg`:** ungenutzt. UM-E3-SVG entscheidet nach demselben Muster.
+6. **Icon-Zahl:** 47; K-009 ist berichtigt (KERN 4.0.2).
+7. **`optimiert_bytes`:** zählt jetzt Byte statt Zeichen.
+- Außerdem stehen die Importe der Konfigurationen in `svg.mjs` jetzt im Importblock.

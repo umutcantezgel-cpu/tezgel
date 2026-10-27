@@ -1,0 +1,60 @@
+{
+ "modus": "reduziert",
+ "seite": "/balkon-terrasse",
+ "ansicht": "m390",
+ "ergebnis": "/home/user/tezgel/_werkstatt/cache/bewegung/reduziert/balkon-terrasse/ergebnis.json",
+ "bewegungsbefunde": [],
+ "unsichtbar": [
+  {
+   "kennung": "zustand",
+   "sel": "a",
+   "gruende": [
+    "display none"
+   ]
+  },
+  {
+   "kennung": "druck",
+   "sel": "button#whatsapp-floating-btn",
+   "gruende": [
+    "display none"
+   ]
+  },
+  {
+   "kennung": "druck",
+   "sel": "a",
+   "gruende": [
+    "display none"
+   ]
+  },
+  {
+   "kennung": "aufklappen",
+   "sel": "div#mobile-menu",
+   "gruende": [
+    "display none"
+   ]
+  },
+  {
+   "kennung": "druck",
+   "sel": "a",
+   "gruende": [
+    "display none"
+   ]
+  },
+  {
+   "kennung": "zustand",
+   "sel": "button",
+   "gruende": [
+    "display none"
+   ]
+  }
+ ],
+ "geprueft": 175,
+ "schritte": {
+  "hover_geprueft": 20,
+  "hover_fehler": 0,
+  "hover_fehler_beispiel": null,
+  "hover_ausserhalb_uebersprungen": 0,
+  "tab_schritte": 30,
+  "fokus_verschieden": 17
+ }
+}

@@ -1,0 +1,24 @@
+{
+ "modus": "bildrate",
+ "seite": "/bad/barrierefreies-bad",
+ "ansicht": "m390",
+ "ergebnis": "/home/user/tezgel/_werkstatt/cache/bewegung/bildrate/bad__barrierefreies-bad/ergebnis.json",
+ "wiederholungen": 3,
+ "bilder_gesamt": 1462,
+ "verworfen": 9,
+ "anteil_verworfen_prozent": 0.79,
+ "anteile_je_lauf": [
+  0.79,
+  0,
+  0.82
+ ],
+ "anteile_pipeline_je_lauf": [
+  0.32,
+  0.07,
+  0.67
+ ],
+ "loaf_anzahl": 1,
+ "loaf_summe_ms": 153,
+ "hinweis": "Median je Feld, nicht aus derselben Zeile (bilder_gesamt, verworfen, loaf_*). Kopfwert anteil_verworfen_prozent = Median der Anteile je Lauf (anteile_je_lauf).",
+ "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame"
+}

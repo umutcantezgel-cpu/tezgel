@@ -32,7 +32,7 @@ Ausgangslage Audit (7ceb5e41): 4 Befunde (1 kritisch, 3 hoch), alle mit Fix. Zie
 | 22 | knip (Werkzeuge) | 6.41.0 | 6.43.0 | Minor | – | – | niedrig | UM-E2-U07 | offen | – |
 | 23 | lighthouse 13.5.0, opentype.js 2.0.0, pixelmatch 8.0.0, pngjs 7.0.0, potrace 2.1.8, svgo 4.1.0, @fontsource/plus-jakarta-sans 5.3.0 (Werkzeuge) | aktuell (Registry `latest` am 27.10.) | – | – | – | – | – | – | aktuell | – |
 
-Zählung: 32 direkte Abhängigkeiten (21 Projekt, 11 Werkzeuge) plus Laufzeit und Paketmanager; Zeilen 18 und 23 fassen die 12 bereits aktuellen Pakete zusammen. Vor dem Abschluss von E2 prüft UM-E2-B die Zeilen 18 und 23 erneut gegen `latest`. Diese Datei schreibt der Orchestrator (U01 bis U03 direkt; die Ergebnisse von U04 bis U07 überträgt er am Wellenende).
+Zählung: 32 direkte Abhängigkeiten (21 Projekt, 11 Werkzeuge) plus Laufzeit und Paketmanager; Nr. 18 und 23 fassen die 12 bereits aktuellen Pakete zusammen. Vor dem Abschluss von E2 prüft UM-E2-B die Nr. 18 und 23 erneut gegen `latest`. Diese Datei schreibt der Orchestrator (U01 bis U03 direkt; die Ergebnisse von U04 bis U07 überträgt er am Wellenende).
 
 ## Mitziehen
 - Laufzeitversion einheitlich: `.nvmrc`, `package.json` (`engines`, `packageManager`), `.github/workflows/security.yml`, `README.md`, `werkzeuge/EINRICHTUNG.md`.
