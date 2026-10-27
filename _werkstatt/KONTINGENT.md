@@ -56,3 +56,4 @@ Uhrzeit · Fenster Verbrauch, Soll, Ziel · Woche Verbrauch, Spielraum · belegt
     - Planungsziel 60, bis ein Fenster ohne Limit endet.
     - Arbeit mit eigenem kleinem Kontext an frische Haiku-Agenten.
     - Messungen als Skripte.
+  - Kalibrierung ausgeführt: Kalibrierpunkt gespeichert: Fenster 2026-10-27 14:30–2026-10-27 19:30 UTC · Kosten $16.33 · 100 % · Faktor 6.122 · Quelle limit · Stand 2026-10-27
