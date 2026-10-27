@@ -1,10 +1,10 @@
-# KERN · Lauf „Universal Motion“ · Version 4.0
+# KERN · Lauf „Universal Motion“ · Version 4.0.1
 
-Stand 27.10.2026, E1 (E-066, E-067). Quelle der Wahrheit für alle Pakete. Hervorgegangen aus KERN v3.6 des Vorlaufs „Verständlich, echt, ausgezeichnet“: Werte, Bausteine und Entscheidungen von v3.6 gelten weiter, soweit dieser Kern sie nicht ändert. Die alten Kennungen bleiben über die Brückentabelle am Ende gültig, damit Verweise im Code nicht ins Leere laufen. Über dem Kern stehen Grenzen und Leitplanken, Bestand, Zugänglichkeit und Leistung und die Abnahmeliste (AUFTRAG.md Abschnitt 4). **[A]** = Annahme (offen in MENSCHEN.md). Jedes Paket nennt die Kern-Version, gegen die es gebaut wurde.
+Stand 27.10.2026, E1 (E-066, E-067; 4.0.1 nach L0: Adresszahl 202 statt 170, E-068). Quelle der Wahrheit für alle Pakete. Hervorgegangen aus KERN v3.6 des Vorlaufs „Verständlich, echt, ausgezeichnet“: Werte, Bausteine und Entscheidungen von v3.6 gelten weiter, soweit dieser Kern sie nicht ändert. Die alten Kennungen bleiben über die Brückentabelle am Ende gültig, damit Verweise im Code nicht ins Leere laufen. Über dem Kern stehen Grenzen und Leitplanken, Bestand, Zugänglichkeit und Leistung und die Abnahmeliste (AUFTRAG.md Abschnitt 4). **[A]** = Annahme (offen in MENSCHEN.md). Jedes Paket nennt die Kern-Version, gegen die es gebaut wurde.
 
 ## Das Projekt in fünf Sätzen
 1. tezgel.de ist die Website von Fliesenverlegung Tezgel, dem Fliesenlegerbetrieb von Deniz Tezgel in der Hohwardstraße 14, 35614 Aßlar; sie ist mit Next.js, React und Tailwind 4 gebaut, wird über Vercel ausgeliefert und steht nach diesem Lauf auf dem neuesten stabilen Stand ihres Stacks.
-2. Die Seite hat 170 Adressen: Bad und Badsanierung, Fachthemen, 13 Ortsseiten, Ratgeber, Werkzeuge für Anfragen und Rechtstexte.
+2. Die Seite hat 202 Adressen – 168 Seiten, 2 Weiterleitungen und 32 dauerhaft entfernte –: Bad und Badsanierung, Fachthemen, 13 Ortsseiten, Ratgeber, Werkzeuge für Anfragen und Rechtstexte.
 3. Prüfstein bleibt eine 72-jährige Kundin, die am Handy ihre Wanne gegen eine bodengleiche Dusche tauschen will: Sie versteht jede Seite ohne Hilfe, und jede Bewegung ist für sie verständlich, abschaltbar und nie im Weg.
 4. Die Leitidee „Klar verlegt“ trägt den Seitenwechsel Fliese für Fliese, den Eingang an der Schnur, die rote Laserlinie als Leitfaden und das Fugenkreuz als Cursor; echte Fotos zeigen die Arbeit.
 5. Jede Adresse, jede Funktion, die Rechtstexte, Kundenstimmen und Firmendaten bleiben erhalten; die Seite bleibt schnell und zugänglich.

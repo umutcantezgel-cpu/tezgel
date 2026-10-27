@@ -23,7 +23,7 @@ Regeln für jede Zeile:
   - 20 haben eine neuere stabile Version (UPGRADE.md).
 - Ansichten:
   - 12 Hauptansichten (`HAUPTANSICHTEN.json`): 9 Erzähl- und Ortsansichten, 2 Wissensansichten, 1 Arbeitsansicht.
-  - 202 Adressen insgesamt (`adressen-e0.csv`), 93 Seitendateien.
+  - 202 Adressen insgesamt (`adressen-e0.csv`): 168 Seiten mit Status 200, 2 Weiterleitungen (308), 32 dauerhaft entfernt (410). Dazu 93 Seitendateien.
 - Komponenten:
   - Bausteine in `src/components/kern/` (rund 25).
   - Vorlagen in `src/components/vorlagen/` (4).
@@ -137,7 +137,7 @@ Spalten: Kennung · Ziel · Rolle · Modell · Stufe · Klasse · Schreibrechte 
 | UM-E2-U06 | eslint 9.39.5. Zweiter Anlauf für ESLint 10 ohne `--legacy-peer-deps`, Ergebnis belegt. Muster: UPGRADE.md Zeile 19 | Upgrader | Haiku | 2 | S | package.json, package-lock.json, eslint.config.mjs | U05 | Z-03 | offen | – |
 | UM-E2-U07 | Prüfwerkzeuge: @playwright/test 1.64.1 (Browser über `executablePath`), @axe-core/playwright 4.14.0, knip 6.43.0, sharp 0.35.5 (direkt in den Werkzeugen). Muster: UPGRADE.md Zeilen 12 und 20 bis 22 | Upgrader | Haiku | 2 | M | _werkstatt/werkzeuge/package.json, _werkstatt/werkzeuge/package-lock.json | U06 | Z-03 | offen | – |
 | UM-E2-PX | Pixelvergleich der zwölf Hauptansichten in vier Größen als Werkzeug. Muster: Aufnahme wie `werkzeuge/bildsatz.mjs`, Vergleich mit `pixelmatch` 8.0.0 (schon in den Werkzeugen). Maßstab: derselbe Bau gegen sich selbst ergibt 0 abweichende Pixel; Ausgabe JSON je Ansicht und Größe, Differenzbilder | Prüfer | Haiku | 1 | M | _werkstatt/werkzeuge/pixelvergleich.mjs, _werkstatt/berichte/UM-E2-PX.md | – | Z-03 | offen | – |
-| UM-E2-SVGO | SVGO-Konfigurationen statisch und animiert; Inventar aller SVG mit Fixpunkt-Prüfung (nur Bericht und Konfiguration) | Grafiker | Haiku | 2 | S | _werkstatt/werkzeuge/svgo-statisch.config.mjs, _werkstatt/werkzeuge/svgo-animiert.config.mjs, _werkstatt/berichte/UM-E2-SVGO.md | – | Z-08 | offen | – |
+| UM-E2-SVGO | SVGO-Konfigurationen statisch und animiert; Inventar aller SVG mit Fixpunkt-Prüfung (nur Bericht und Konfiguration) | Grafiker | Haiku | 2 | S | _werkstatt/werkzeuge/svgo-statisch.config.mjs, _werkstatt/werkzeuge/svgo-animiert.config.mjs, _werkstatt/werkzeuge/svg.mjs, _werkstatt/berichte/UM-E2-SVGO.md | – | Z-08 | offen | – |
 | UM-E2-B | Etappentor, Prüfstufe B: Build, Typen, Linter, Tests, Suite, Konsole, Bildsatz vier Größen, axe vier Größen mit Menü und Dialog, Lighthouse Median aus drei, Bildrate und reduziert, Scrollen gedrosselt; Audit. Je Wert der Vergleich mit E0 | Prüfer | Haiku | 1 | L | _werkstatt/belege/um-e2/ (ohne pixelvergleich/), _werkstatt/berichte/UM-E2-B.md | U07, PX | Z-02, Z-03; Bestand gegen E0: Z-06, Z-07, Z-09, Z-10, Z-11 | offen | – |
 
 ### E3 Referenz `/`

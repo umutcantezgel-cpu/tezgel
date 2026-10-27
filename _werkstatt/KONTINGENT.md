@@ -24,3 +24,4 @@ Uhrzeit · Fenster Verbrauch, Soll, Ziel · Woche Verbrauch, Spielraum · belegt
 - 2026-10-26 22:40 MEZ · Fenster ? (seit 18:30 UTC), Soll ?, Ziel 95 nach Kalibrierung · Woche ? · Plätze: Runde-5-Workflow (bis 13 Haiku gleichzeitig, vor dem Auftrag gestartet) · Halten mit halben Plätzen (2) für neue Pakete · Quelle: keine, Werkzeug folgt
 - 2026-10-27 05:31 MEZ · Fenster ? (Werkzeug im Bau), Ziel 95 nach Kalibrierung · Woche ? · Plätze 2 Haiku (Workflow wf_96d3a16e-a1b) plus Messreihe · Halten · Quelle: keine
 - 2026-10-27 06:05 MEZ · Fenster 29,9 % (Soll 84,9 %, Ziel 95 %), Fenster 00:31–05:31 UTC · Woche ? · Plätze: Messreihe läuft, Haiku frei · Gas · Quelle Schätzung (Faktor 1,973)
+- 2026-10-27 06:30 MEZ · Fenster 48,0 % (Soll 93,7 %, Ziel 95 %), Fenster 00:31–05:31 UTC · Woche ? · Plätze 2 Haiku (L0 Runde 2, UM-E2-SVGO) plus Messreihe · Gas · Quelle Schätzung (Faktor 1,973)

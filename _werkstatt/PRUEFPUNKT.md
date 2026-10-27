@@ -1,10 +1,21 @@
 # PRUEFPUNKT
 
-- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · Etappe E0-Ergänzung · Stand 2026-10-27 05:31 MEZ
-- Nächster exakter Schritt: Plan `/root/.claude/plans/master-auftrag-tezgel-de-streamed-token.md` (im Repo gespiegelt als E-066 und PRUEFPUNKT): (1) Runde 5 erledigt (17 gering, E-065, `$SCRATCH/e4w1-browser-5/sicht.json`). (2) Server 4311 = 7ceb5e41 und 4320 starten. (3) E0-Ergänzung als Workflow mit Haiku, 2 gleichzeitig: E0-PRUEF-K Kontingent-Werkzeug `werkzeuge/kontingent.mjs` (Kalibrierung Limit 18:30 UTC am 26.10.), E0-KUND-STACK, E0-KUND-BEWEGUNG, E0-KUND-DESIGN, E0-KUND-VERLUSTE, E0-KUND-QUALITAET, danach E0-PRUEF-B Ausgangswerte am Produktionsbau 7ceb5e41 nach `belege/um-e0/`. (4) E1: KERN v4 mit Brückentabelle, UPGRADE.md, PLAN 2, ABNAHME 2, L0. (5) E2 Upgrade.
-- Letzter grüner Commit: 7ceb5e41 (Reinraum grün, Funktionssuite 393/0, npm test 210/210).
-- Laufende Pakete: Workflow wf_96d3a16e-a1b (UM-E0-PRUEF-K, UM-E0-KUND-STACK, -BEWEGUNG, -DESIGN, -VERLUSTE, -QUALITAET; Haiku, je zwei; Berichte nach `berichte/UM-E0-*.md`; bei Abbruch mit resumeFromRunId und dem Skript unter `~/.claude/projects/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/workflows/scripts/um-e0-ergaenzung-wf_96d3a16e-a1b.js` fortsetzen). Messreihe `$SCRATCH/um-e0/messen.sh` (überspringt fertige Teile, Log `$SCRATCH/um-e0/logs/messen.log`) am Produktionsbau 4311 = 7ceb5e41 nach `belege/um-e0/`. Routinen: WEITER stündlich (trig_013KjQUDqdr7LRnFeCaw9XWY, neu formuliert), Morgenbericht 06:52 Europe/Berlin (trig_01B6mPcvup5LmNmrzX4LFrJP).
-- Tempomat: keine Quelle; halbe Haiku-Plätze (2) bis zur Kalibrierung.
+- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · Etappe E1 (L0 Runde 2), E2-W1 vorbereitet · Stand 2026-10-27 06:30 MEZ
+- Nächster exakter Schritt:
+  1. L0 Runde 2 auswerten (`berichte/UM-E1-L0-R2.md`), Befunde einarbeiten, Commit „UM-E1“. Danach ist E1 abgeschlossen.
+  2. Messreihe `$SCRATCH/um-e0/messen.sh` (Hintergrund) bis Lighthouse abwarten. Dann `belege/um-e0/` committen und die E0-Werte in ABNAHME eintragen (Z-06, Z-07, Z-09, Z-10, Z-11).
+  3. Danach UM-E2-PX starten (Briefing `pakete/UM-E2-PX.md`, Haiku) und gleichzeitig UM-E2-U01 selbst bauen:
+     - `PATH=$SCRATCH/node-lts/node-v24.22.1-linux-x64/bin:$PATH npm install` (sha256 geprüft), `@types/node` auf ^24.
+     - Prüfen: Build, tsc, eslint, `npm test`, Suite.
+     - Vorher prüfen, ob `nodejs.org/dist/index.json` Node 26 als LTS führt.
+- Letzter grüner Commit: 7ceb5e41 (Reinraum grün, Funktionssuite 393/0, npm test 210/210). Danach nur Werkstattdateien und der ZWISCHENSTAND U01 (deb73876: `.nvmrc`, engines, packageManager, CI, README).
+- Laufende Pakete:
+  - UM-E1-PRUEF-L0-R2 (Haiku, nur Bericht).
+  - UM-E2-SVGO (Haiku; Briefing `pakete/UM-E2-SVGO.md`; Schreibrechte: zwei Konfigurationen, `svg.mjs`, Bericht).
+  - Bei Abbruch: Dateien des Pakets auf den letzten Commit zurücksetzen und neu starten (L5).
+- Server: 4311 = Produktionsbau 7ceb5e41 (`$SCRATCH/reinraum-7ceb5e41`); die Messreihe nutzt ihn.
+- Routinen: WEITER trig_013KjQUDqdr7LRnFeCaw9XWY (stündlich :30 UTC), Morgenbericht trig_01B6mPcvup5LmNmrzX4LFrJP (06:52 Europe/Berlin).
+- Tempomat: Faktor 1,973 %/USD (Kalibrierpunkt 26.10. 18:30 UTC), Sicherheitsziel 95, bis zu 4 Haiku-Plätze.
 
 ## Vorlauf „Verständlich, echt, ausgezeichnet“
 
