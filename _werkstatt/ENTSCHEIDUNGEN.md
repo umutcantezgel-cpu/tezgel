@@ -895,3 +895,40 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
     - Der Höhenunterschied von 99 px auf `/referenzen` m390 im Erstlauf entstand unter Last (Suite und Prüfer liefen parallel). Einzeln gemessen sind beide Stände 21.204 px hoch, im Zweitlauf ebenso.
   - Stärke der Abweichung je Ausschnitt: auf den größten fünf und acht weiteren höchstens 1 von 255 je Kanal (`pixel-ds-svg-staerke.json`). Die Abweichungen liegen auf Bildflächen unter Verläufen, an der Vorher-Nachher-Zone, an Schraffuren und am Fugenraster; Ursache 2 oben.
   - Proben und Rechenweg liegen unter `belege/um-e3/proben/`.
+
+## E-076 · Tor E2 nach zwei Anläufen: Prüfwerkzeug nach Playwright 1.64, Nacharbeit, Ergebnis (27.10.2026, 17:30 MEZ, Orchestrator)
+- **Anlauf 1** (Messreihe am E2-Endstand 6caeeb9c, Bericht `berichte/UM-E2-B.md`): nicht bestanden. Alle vier Gegenprüfer bestätigten „nicht erfüllt“:
+  - Z-09: 24 ernste axe-Knoten am Datenschutz-Link im Einwilligungsbanner (axe 4.14 prüft „label in name“ als zusammenhängende Wortfolge, 4.13 als Teilstring).
+  - Z-10: 7 Messungen auf 5 Ansichten schlechter als die E0-Spanne (Lighthouse unter Last).
+  - Z-03: 1-px-Höhe `/bad/barrierefreies-bad` d1440 unerklärt.
+  - Rote Funktionsprüfungen, vom Werkzeug verursacht.
+- **Prüfwerkzeug nach Playwright 1.64** (5a5e3dd8; Eingrenzung mit isolierten Installationen 1.56.1 bis 1.64.1):
+  - Ab 1.64.0 bleibt eine mit 204 beantwortete Navigation offen; `click()` wartet bis zur Zeitüberschreitung (1.63.0: 20/20, 1.64.0: 12/8). Die Sperre bricht fremde Navigationen jetzt als `aborted` ab: Die Seite bleibt stehen, ohne Fehlerseite, wie beim Menschen, dessen Gerät WhatsApp öffnet. `noWaitAfter` ist wieder entfernt.
+  - Bis 1.62.1 wirkte `reducedMotion` aus der Konfiguration nicht (`matchMedia` meldete keine Reduktion). Die Suite von E0 lief also mit Bewegung; ab 1.63.0 gilt der Wert. Das Tor fährt die Suite deshalb zweimal (`RELAUNCH_BEWEGUNG=an`, EINRICHTUNG). Keine Prüfung ist gelockert; eine zweite Lage kommt hinzu.
+- **Nacharbeit:**
+  - Banner-Link: Der Name beginnt mit dem sichtbaren Wort (f5544581).
+  - axe prüft Menü und Dialog in allen Größen. Das deckte zwei alte Fehler im Handymenü auf, beide behoben:
+    - Logo-Link im Menü ohne `aria-label`, wie im Kopf (25395ee4).
+    - Seiteninhalt hinter dem offenen Menü `inert`, wie bei einem modalen Dialog (51355ef7). axe hatte verdeckten Inhalt gemessen: den Menü-Öffner bei q844 und einen Bewertungstext bei m360.
+    - Text, Verhalten und Fokusführung der Einwilligung und des Menüs sind unverändert; das Navigations-Spec ergab 47/47 in beiden Bewegungszuständen.
+  - Messwerkzeuge schreiben den Stand des Servers (`server_stand`). Der Pixelvergleich hat ein Zeitlimit je Paar und `hoehe_genau`.
+- **Anlauf 2** (Nachmessung ohne Agenten, Belege `belege/um-e2-b2/`, Auswertungen mit Gegenprüfung wf_e0aa9ea7-730 und wf_7a7ba863-e85):
+  - Z-09: axe 396 Läufe (11 Größen × 12 Hauptansichten × normal, Menü, Erstbesuch) auf 51355ef7: 0 ernste oder kritische Knoten.
+  - Z-03: Pixel E0 gegen HEAD 48 Paare, 0 Pixel, keine Höhenabweichung. Die 1-px-Stelle trat nicht mehr auf. Die Höhenprobe zeigt, dass E0 und E2 dieselbe gebrochene Höhe haben (10.705,75 px, 0,25 px über der Rundungsgrenze); der Kipp war eine Messbedingung unter Last, kein Unterschied im Layout. Audit 0 hohe, 0 kritische Befunde.
+  - Z-11: Bildsatz 10 Größen, 1.334 Aufnahmen, 0 Befunde; die 48 E0-Kombinationen sind gleich.
+  - Z-06: Register und reduziert wie E0, 0 unbekannte Kennungen, 0 Lage- oder Größenänderungen.
+  - Z-07: Reaktion 12/12 bestanden (Anlauf 1, 6caeeb9c; E0 4/12).
+  - Z-02: Suite auf 51355ef7 SUITE-3.
+  - **Z-10 bleibt offen:** Lighthouse wurde verschränkt gemessen (je Seite E0, dann HEAD).
+    - Alle 7 Leistungs- und LCP-Verletzungen aus Anlauf 1 sind entfallen.
+    - TBT mobil liegt auf `/` (+119 ms gegen Spanne 111), `/leistungen` (+43 gegen 41) und `/balkon-terrasse` (+70 gegen 62) knapp über der E0-Spanne; `/` Desktop 0 → 2 ms bei Spanne 0.
+    - Als Richtung ist TBT mobil auf mehreren Ansichten höher.
+    - Die feste Reihenfolge E0 vor HEAD kann HEAD benachteiligen; das ist nicht ausgeschlossen.
+- **Entscheidung (L3, zwei Anläufe):**
+  - Tor E2 ist abgeschlossen. Die Arbeit geht in E3 weiter.
+  - Offener Punkt in PLAN: Z-10 TBT mobil. Neues Paket UM-E3-TBT: Ursache mit wechselnder Messreihenfolge und Zuordnung der Long Tasks; danach Behebung oder belegte Zuordnung zum Stack (Next 16.4, React 19.3).
+  - Lesarten im Bericht `berichte/UM-E2-B2.md`: Spanne „um mehr als“; gerundete Mediane der Datei; Nullspanne als Verletzung gezählt.
+- **Lehren (L6):**
+  - Messungen laufen als Skript, nie über einen Agenten, der Hintergrundläufe startet und sich beendet.
+  - Ein Werkzeug-Upgrade kann Prüfbedingungen verschieben, nicht nur Befunde. Nach jedem Upgrade der Prüfwerkzeuge wird geprüft, ob die Konfiguration wirkt (Probe `matchMedia`).
+  - Lighthouse nie neben anderen Läufen.
