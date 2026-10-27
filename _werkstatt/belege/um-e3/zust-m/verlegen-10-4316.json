@@ -1,0 +1,493 @@
+{
+  "config": {
+    "argv": [
+      "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/node-lts/node-v24.22.1-linux-x64/bin/node",
+      "/home/user/tezgel/_werkstatt/werkzeuge/node_modules/.bin/playwright",
+      "test",
+      "tests/verlegen.spec.mjs",
+      "-g",
+      "\\(10\\) Zurück nach einem Wechsel",
+      "--project=mobil",
+      "--repeat-each=10",
+      "--workers=1"
+    ],
+    "configFile": "/home/user/tezgel/_werkstatt/werkzeuge/playwright.config.mjs",
+    "rootDir": "/home/user/tezgel/_werkstatt/werkzeuge/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/zust-m/t10b-4316-out",
+        "repeatEach": 10,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "mobil",
+        "name": "mobil",
+        "testDir": "/home/user/tezgel/_werkstatt/werkzeuge/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/zust-m/t10b-4316-out",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "/home/user/tezgel/_werkstatt/werkzeuge/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/zust-m/t10b-4316-out",
+        "repeatEach": 10,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "mobil",
+        "testDir": "/home/user/tezgel/_werkstatt/werkzeuge/tests",
+        "snapshotDir": "/home/user/tezgel/_werkstatt/werkzeuge/tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4316",
+          "locale": "de-DE",
+          "timezoneId": "Europe/Berlin",
+          "reducedMotion": "no-preference",
+          "trace": "off",
+          "launchOptions": {
+            "executablePath": "/opt/pw-browsers/chromium-1243/chrome-linux64/chrome"
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "isMobile": true,
+          "hasTouch": true
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "mobil"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/zust-m/t10b-4316.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "verlegen.spec.mjs",
+      "file": "verlegen.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Bewegung an (Wechsel mit Fliesen)",
+          "file": "verlegen.spec.mjs",
+          "line": 384,
+          "column": 6,
+          "specs": [
+            {
+              "title": "(10) Zurück nach einem Wechsel: Schicht verlässt ruhe, Adresse zurück, Scroll wie vor dem Klick",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7430,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-27T21:13:35.486Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "94d5ec67f15dbc790391-b7c009e8fc891bfd0f1f",
+              "file": "verlegen.spec.mjs",
+              "line": 627,
+              "column": 3
+            },
+            {
+              "title": "(10) Zurück nach einem Wechsel: Schicht verlässt ruhe, Adresse zurück, Scroll wie vor dem Klick",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7529,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-27T21:13:45.311Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "94d5ec67f15dbc790391-2ccaf49cd0137939f31e",
+              "file": "verlegen.spec.mjs",
+              "line": 627,
+              "column": 3
+            },
+            {
+              "title": "(10) Zurück nach einem Wechsel: Schicht verlässt ruhe, Adresse zurück, Scroll wie vor dem Klick",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7557,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-27T21:13:55.124Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "94d5ec67f15dbc790391-aa9b4576f0ef63012595",
+              "file": "verlegen.spec.mjs",
+              "line": 627,
+              "column": 3
+            },
+            {
+              "title": "(10) Zurück nach einem Wechsel: Schicht verlässt ruhe, Adresse zurück, Scroll wie vor dem Klick",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7335,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-27T21:14:05.126Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "94d5ec67f15dbc790391-bec491c873fcf5de3c2e",
+              "file": "verlegen.spec.mjs",
+              "line": 627,
+              "column": 3
+            },
+            {
+              "title": "(10) Zurück nach einem Wechsel: Schicht verlässt ruhe, Adresse zurück, Scroll wie vor dem Klick",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7576,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-27T21:14:14.807Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "94d5ec67f15dbc790391-4512dd7237365c76a591",
+              "file": "verlegen.spec.mjs",
+              "line": 627,
+              "column": 3
+            },
+            {
+              "title": "(10) Zurück nach einem Wechsel: Schicht verlässt ruhe, Adresse zurück, Scroll wie vor dem Klick",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7461,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-27T21:14:25.041Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "94d5ec67f15dbc790391-a061f78fd3d648ed7f96",
+              "file": "verlegen.spec.mjs",
+              "line": 627,
+              "column": 3
+            },
+            {
+              "title": "(10) Zurück nach einem Wechsel: Schicht verlässt ruhe, Adresse zurück, Scroll wie vor dem Klick",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7520,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-27T21:14:34.931Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "94d5ec67f15dbc790391-56583d3844d975874d56",
+              "file": "verlegen.spec.mjs",
+              "line": 627,
+              "column": 3
+            },
+            {
+              "title": "(10) Zurück nach einem Wechsel: Schicht verlässt ruhe, Adresse zurück, Scroll wie vor dem Klick",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7445,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-27T21:14:44.972Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "94d5ec67f15dbc790391-9460f6cb43133532a481",
+              "file": "verlegen.spec.mjs",
+              "line": 627,
+              "column": 3
+            },
+            {
+              "title": "(10) Zurück nach einem Wechsel: Schicht verlässt ruhe, Adresse zurück, Scroll wie vor dem Klick",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7567,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-27T21:14:54.926Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "94d5ec67f15dbc790391-f542e9862f949ac3247a",
+              "file": "verlegen.spec.mjs",
+              "line": 627,
+              "column": 3
+            },
+            {
+              "title": "(10) Zurück nach einem Wechsel: Schicht verlässt ruhe, Adresse zurück, Scroll wie vor dem Klick",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7541,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-27T21:15:05.163Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "94d5ec67f15dbc790391-dc27b3719dd591386421",
+              "file": "verlegen.spec.mjs",
+              "line": 627,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-27T21:13:34.727Z",
+    "duration": 99966.84999999999,
+    "expected": 10,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

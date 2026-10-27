@@ -1,0 +1,339 @@
+{
+  "werkzeug": "pixelvergleich.mjs",
+  "satz": "zust-m-nach-2",
+  "vorher": "http://127.0.0.1:4316",
+  "nachher": "http://127.0.0.1:4317",
+  "stand_vorher": {
+    "port": "4316",
+    "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/reinraum-51355ef7",
+    "commit": "51355ef7"
+  },
+  "stand_nachher": {
+    "port": "4317",
+    "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/reinraum-27d87b66",
+    "commit": "27d87b66"
+  },
+  "seiten": [
+    "/",
+    "/bad/barrierefreies-bad"
+  ],
+  "geraete": [
+    "t768",
+    "d1920"
+  ],
+  "schwelle": 0.1,
+  "include_aa": true,
+  "worker": 2,
+  "selbsttest_stoerung": false,
+  "laufzeit_min": 0.3,
+  "max_ausschnitte": null,
+  "zusammenfassung": {
+    "paare": 4,
+    "mit_abweichung": 0,
+    "summe_abweichend": 0,
+    "fehler": 0,
+    "wiederholt": 0,
+    "ungeprueft_px": 0,
+    "paare_mit_ungeprueftem_rest": 0
+  },
+  "paare": [
+    {
+      "seite": "/",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 11024,
+      "hoehe_nachher": 11024,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 11,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 9.3,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 11023.515625,
+      "hoehe_genau_nachher": 11023.515625
+    },
+    {
+      "seite": "/",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 9762,
+      "hoehe_nachher": 9762,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 10,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 8.2,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 9761.5625,
+      "hoehe_genau_nachher": 9761.5625
+    },
+    {
+      "seite": "/bad/barrierefreies-bad",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 10808,
+      "hoehe_nachher": 10808,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 11,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 7.8,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 10807.859375,
+      "hoehe_genau_nachher": 10807.859375
+    },
+    {
+      "seite": "/bad/barrierefreies-bad",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 10710,
+      "hoehe_nachher": 10710,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 10,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 8.3,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 10709.78125,
+      "hoehe_genau_nachher": 10709.78125
+    }
+  ]
+}

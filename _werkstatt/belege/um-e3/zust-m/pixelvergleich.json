@@ -1,0 +1,4084 @@
+{
+  "werkzeug": "pixelvergleich.mjs",
+  "satz": "zust-m",
+  "vorher": "http://127.0.0.1:4316",
+  "nachher": "http://127.0.0.1:4317",
+  "stand_vorher": {
+    "port": "4316",
+    "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/reinraum-51355ef7",
+    "commit": "51355ef7"
+  },
+  "stand_nachher": {
+    "port": "4317",
+    "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/reinraum-27d87b66",
+    "commit": "27d87b66"
+  },
+  "seiten": [
+    "/",
+    "/bad",
+    "/bad/badsanierung",
+    "/bad/barrierefreies-bad",
+    "/leistungen",
+    "/fliesen",
+    "/balkon-terrasse",
+    "/referenzen",
+    "/ueber-uns",
+    "/kontakt",
+    "/standorte/wetzlar",
+    "/blog"
+  ],
+  "geraete": [
+    "m390",
+    "t768",
+    "d1440",
+    "d1920"
+  ],
+  "schwelle": 0.1,
+  "include_aa": true,
+  "worker": 2,
+  "selbsttest_stoerung": false,
+  "laufzeit_min": 3.64,
+  "max_ausschnitte": null,
+  "zusammenfassung": {
+    "paare": 48,
+    "mit_abweichung": 2,
+    "summe_abweichend": 146473,
+    "fehler": 0,
+    "wiederholt": 0,
+    "ungeprueft_px": 0,
+    "paare_mit_ungeprueftem_rest": 0
+  },
+  "paare": [
+    {
+      "seite": "/",
+      "geraet": "m390",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 11457,
+      "hoehe_nachher": 11457,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 14,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 12.2,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 11456.65625,
+      "hoehe_genau_nachher": 11456.65625
+    },
+    {
+      "seite": "/",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 11024,
+      "hoehe_nachher": 11024,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 49075,
+          "anteil": 0.06240208943684896
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 16,
+          "anteil": 0.000020345052083333332
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 11,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 49091,
+      "anteil": 0.005674766771721117,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/zust-m/pixel/t768/start/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/zust-m/pixel/t768/start/diff-k04.png"
+      ],
+      "dauer_s": 11,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 11023.515625,
+      "hoehe_genau_nachher": 11023.515625
+    },
+    {
+      "seite": "/",
+      "geraet": "d1440",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 9757,
+      "hoehe_nachher": 9757,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 11,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 10.5,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 9757.265625,
+      "hoehe_genau_nachher": 9757.265625
+    },
+    {
+      "seite": "/",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 9762,
+      "hoehe_nachher": 9762,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 10,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 11.5,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 9761.5625,
+      "hoehe_genau_nachher": 9761.5625
+    },
+    {
+      "seite": "/bad",
+      "geraet": "m390",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 14370,
+      "hoehe_nachher": 14370,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 14,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 15,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 16,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 17,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 18,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 10.7,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 14369.78125,
+      "hoehe_genau_nachher": 14369.78125
+    },
+    {
+      "seite": "/bad",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 13688,
+      "hoehe_nachher": 13688,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 14,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 7.5,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 13687.953125,
+      "hoehe_genau_nachher": 13687.953125
+    },
+    {
+      "seite": "/bad",
+      "geraet": "d1440",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 13624,
+      "hoehe_nachher": 13624,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 14,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 15,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 16,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 12.1,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 13623.53125,
+      "hoehe_genau_nachher": 13623.53125
+    },
+    {
+      "seite": "/bad",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 13629,
+      "hoehe_nachher": 13629,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 13,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 9.1,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 13629.203125,
+      "hoehe_genau_nachher": 13629.203125
+    },
+    {
+      "seite": "/bad/badsanierung",
+      "geraet": "m390",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 11486,
+      "hoehe_nachher": 11486,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 14,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 9.3,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 11486.15625,
+      "hoehe_genau_nachher": 11486.15625
+    },
+    {
+      "seite": "/bad/badsanierung",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 11346,
+      "hoehe_nachher": 11346,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 12,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 6.3,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 11345.53125,
+      "hoehe_genau_nachher": 11345.53125
+    },
+    {
+      "seite": "/bad/badsanierung",
+      "geraet": "d1440",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 10945,
+      "hoehe_nachher": 10945,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 13,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 10,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 10944.75,
+      "hoehe_genau_nachher": 10944.75
+    },
+    {
+      "seite": "/bad/badsanierung",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 10951,
+      "hoehe_nachher": 10951,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 11,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 10.5,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 10950.765625,
+      "hoehe_genau_nachher": 10950.765625
+    },
+    {
+      "seite": "/bad/barrierefreies-bad",
+      "geraet": "m390",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 10773,
+      "hoehe_nachher": 10773,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 13,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 8.9,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 10773.09375,
+      "hoehe_genau_nachher": 10773.09375
+    },
+    {
+      "seite": "/bad/barrierefreies-bad",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 10808,
+      "hoehe_nachher": 10808,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 11,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 6.2,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 10807.859375,
+      "hoehe_genau_nachher": 10807.859375
+    },
+    {
+      "seite": "/bad/barrierefreies-bad",
+      "geraet": "d1440",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 10705,
+      "hoehe_nachher": 10705,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 12,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 9.5,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 10704.96875,
+      "hoehe_genau_nachher": 10704.96875
+    },
+    {
+      "seite": "/bad/barrierefreies-bad",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 10710,
+      "hoehe_nachher": 10710,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 97382,
+          "anteil": 0.046962770061728394
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 10,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 97382,
+      "anteil": 0.00469627700617284,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/zust-m/pixel/d1920/bad__barrierefreies-bad/diff-k04.png"
+      ],
+      "dauer_s": 9.9,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 10709.78125,
+      "hoehe_genau_nachher": 10709.78125
+    },
+    {
+      "seite": "/leistungen",
+      "geraet": "m390",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 12462,
+      "hoehe_nachher": 12462,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 14,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 15,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 9.1,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 12461.5625,
+      "hoehe_genau_nachher": 12461.5625
+    },
+    {
+      "seite": "/leistungen",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 12991,
+      "hoehe_nachher": 12991,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 13,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 6.5,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 12991.4375,
+      "hoehe_genau_nachher": 12991.4375
+    },
+    {
+      "seite": "/leistungen",
+      "geraet": "d1440",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 11297,
+      "hoehe_nachher": 11297,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 13,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 10.5,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 11296.96875,
+      "hoehe_genau_nachher": 11296.96875
+    },
+    {
+      "seite": "/leistungen",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 11302,
+      "hoehe_nachher": 11302,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 11,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 7.8,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 11301.78125,
+      "hoehe_genau_nachher": 11301.78125
+    },
+    {
+      "seite": "/fliesen",
+      "geraet": "m390",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 11802,
+      "hoehe_nachher": 11802,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 14,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 8.6,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 11802.40625,
+      "hoehe_genau_nachher": 11802.40625
+    },
+    {
+      "seite": "/fliesen",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 12103,
+      "hoehe_nachher": 12103,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 12,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 6,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 12103.078125,
+      "hoehe_genau_nachher": 12103.078125
+    },
+    {
+      "seite": "/fliesen",
+      "geraet": "d1440",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 12321,
+      "hoehe_nachher": 12321,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 14,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 11.1,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 12320.96875,
+      "hoehe_genau_nachher": 12320.96875
+    },
+    {
+      "seite": "/fliesen",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 12390,
+      "hoehe_nachher": 12390,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 12,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 8.7,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 12389.609375,
+      "hoehe_genau_nachher": 12389.609375
+    },
+    {
+      "seite": "/balkon-terrasse",
+      "geraet": "m390",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 9498,
+      "hoehe_nachher": 9498,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 12,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 8.2,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 9497.640625,
+      "hoehe_genau_nachher": 9497.640625
+    },
+    {
+      "seite": "/balkon-terrasse",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 10191,
+      "hoehe_nachher": 10191,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 10,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 6.1,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 10191.078125,
+      "hoehe_genau_nachher": 10191.078125
+    },
+    {
+      "seite": "/balkon-terrasse",
+      "geraet": "d1440",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 9552,
+      "hoehe_nachher": 9552,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 11,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 10,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 9551.59375,
+      "hoehe_genau_nachher": 9551.59375
+    },
+    {
+      "seite": "/balkon-terrasse",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 9557,
+      "hoehe_nachher": 9557,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 9,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 7.7,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 9557.09375,
+      "hoehe_genau_nachher": 9557.09375
+    },
+    {
+      "seite": "/referenzen",
+      "geraet": "m390",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 21204,
+      "hoehe_nachher": 21204,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 14,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 15,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 16,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 17,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 18,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 19,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 20,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 21,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 22,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 23,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 24,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 25,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 26,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 17,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 21203.53125,
+      "hoehe_genau_nachher": 21203.53125
+    },
+    {
+      "seite": "/referenzen",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 16065,
+      "hoehe_nachher": 16065,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 14,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 15,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 16,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 12.3,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 16064.984375,
+      "hoehe_genau_nachher": 16064.984375
+    },
+    {
+      "seite": "/referenzen",
+      "geraet": "d1440",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 14143,
+      "hoehe_nachher": 14143,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 14,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 15,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 16,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 15.6,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 14143.328125,
+      "hoehe_genau_nachher": 14143.328125
+    },
+    {
+      "seite": "/referenzen",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 14294,
+      "hoehe_nachher": 14294,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 14,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 15.7,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 14293.6875,
+      "hoehe_genau_nachher": 14293.6875
+    },
+    {
+      "seite": "/ueber-uns",
+      "geraet": "m390",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 11952,
+      "hoehe_nachher": 11952,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 14,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 15,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 8.3,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 11952.0625,
+      "hoehe_genau_nachher": 11952.0625
+    },
+    {
+      "seite": "/ueber-uns",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 12241,
+      "hoehe_nachher": 12241,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 12,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 7.1,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 12241.203125,
+      "hoehe_genau_nachher": 12241.203125
+    },
+    {
+      "seite": "/ueber-uns",
+      "geraet": "d1440",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 11895,
+      "hoehe_nachher": 11895,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 14,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 11.5,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 11894.59375,
+      "hoehe_genau_nachher": 11894.59375
+    },
+    {
+      "seite": "/ueber-uns",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 11901,
+      "hoehe_nachher": 11901,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 12,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 8.2,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 11901.125,
+      "hoehe_genau_nachher": 11901.125
+    },
+    {
+      "seite": "/kontakt",
+      "geraet": "m390",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 7172,
+      "hoehe_nachher": 7172,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 9,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 6.5,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 7171.609375,
+      "hoehe_genau_nachher": 7171.609375
+    },
+    {
+      "seite": "/kontakt",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 8029,
+      "hoehe_nachher": 8029,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 8,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 4.4,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 8029.21875,
+      "hoehe_genau_nachher": 8029.21875
+    },
+    {
+      "seite": "/kontakt",
+      "geraet": "d1440",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 6340,
+      "hoehe_nachher": 6340,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 8,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 6.8,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 6339.546875,
+      "hoehe_genau_nachher": 6339.546875
+    },
+    {
+      "seite": "/kontakt",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 6341,
+      "hoehe_nachher": 6341,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 6,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 4.9,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 6341.265625,
+      "hoehe_genau_nachher": 6341.265625
+    },
+    {
+      "seite": "/standorte/wetzlar",
+      "geraet": "m390",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 9174,
+      "hoehe_nachher": 9174,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 11,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 7.2,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 9173.96875,
+      "hoehe_genau_nachher": 9173.96875
+    },
+    {
+      "seite": "/standorte/wetzlar",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 9483,
+      "hoehe_nachher": 9483,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 10,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 5.7,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 9483.390625,
+      "hoehe_genau_nachher": 9483.390625
+    },
+    {
+      "seite": "/standorte/wetzlar",
+      "geraet": "d1440",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 8590,
+      "hoehe_nachher": 8590,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 10,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 9.4,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 8589.90625,
+      "hoehe_genau_nachher": 8589.90625
+    },
+    {
+      "seite": "/standorte/wetzlar",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 8594,
+      "hoehe_nachher": 8594,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 8,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 7.3,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 8593.515625,
+      "hoehe_genau_nachher": 8593.515625
+    },
+    {
+      "seite": "/blog",
+      "geraet": "m390",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 11686,
+      "hoehe_nachher": 11686,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 14,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 7.3,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 11686.171875,
+      "hoehe_genau_nachher": 11686.171875
+    },
+    {
+      "seite": "/blog",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 11565,
+      "hoehe_nachher": 11565,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 12,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 7.4,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 11565.078125,
+      "hoehe_genau_nachher": 11565.078125
+    },
+    {
+      "seite": "/blog",
+      "geraet": "d1440",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 11353,
+      "hoehe_nachher": 11353,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 13,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 8.8,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 11353.078125,
+      "hoehe_genau_nachher": 11353.078125
+    },
+    {
+      "seite": "/blog",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 11358,
+      "hoehe_nachher": 11358,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 11,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 8.4,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 11357.546875,
+      "hoehe_genau_nachher": 11357.546875
+    }
+  ]
+}

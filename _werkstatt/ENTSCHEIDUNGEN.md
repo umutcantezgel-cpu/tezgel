@@ -932,3 +932,26 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - Messungen laufen als Skript, nie über einen Agenten, der Hintergrundläufe startet und sich beendet.
   - Ein Werkzeug-Upgrade kann Prüfbedingungen verschieben, nicht nur Befunde. Nach jedem Upgrade der Prüfwerkzeuge wird geprüft, ob die Konfiguration wirkt (Probe `matchMedia`).
   - Lighthouse nie neben anderen Läufen.
+
+## E-077 · Abnahme UM-E3-ZUST-M: Zustandsmuster (27.10.2026, 22:30 MEZ, Orchestrator)
+- **Ergebnis:** drei der acht lückenhaften Bausteine aus UM-E0-DESIGN sind nach K-010 geschlossen (efac0a52, 27d87b66, 180e8ad2).
+  - **Ladeschwelle:** `src/lib/ladeschwelle.ts`, reine Logik mit injizierbarer Uhr.
+    - „Lädt“ wird erst nach 300 ms sichtbar und bleibt dann mindestens 500 ms stehen, ohne Flackern.
+    - Test `test/ladeschwelle.test.mjs` mit 7 Fällen.
+  - **Knopf:** nutzt die Schwelle über die kleine Client-Einheit `LadeInhalt`.
+    - Knopf selbst bleibt Server-tauglich, damit das JavaScript nicht wächst (TBT, E-076).
+    - Die Sperre gegen doppeltes Absenden (`disabled`, `aria-busy`) greift wie bisher sofort; Formulare, Pflichtfelder und Einwilligung sind unverändert (G8).
+  - **Auswahlknopf** (`wahlKlassen`): deaktiviert über `disabled` und `aria-disabled`.
+  - **Kontrollkästchen** (`kontrollKlassen`): Zeiger, Hover (angehakt in Tinte-2), deaktiviert. Der Kasten bleibt 20 px; Ziel ist mit dem Label die ganze Zeile, also über 24 px.
+- **Regeldatei:** Ausnahmezeile für `LADE_MINDESTDAUER_MS = 500`. Das ist ein JS-Zeitgeber mit K-010-Werten, keine Bewegungsdauer, nach demselben Muster wie `SprungHalter`. Die Datei behält ihre ursprüngliche Formatierung.
+- **Prüfung am Reinraum 27d87b66** (Belege `belege/um-e3/zust-m/`):
+  - `npm test` 223/223; Typecheck, Lint und `werte.mjs` ohne Befund.
+  - Suite: reduziert 393/0/25. Mit Bewegung 392/1/25, der eine rote Test war `verlegen.spec` (10).
+    - Er scheiterte auch ohne ZUST-M (51355ef7: 1 von 5); auf 27d87b66 bestand er 5 von 5.
+    - Ursache: Zeitschwäche im Test. Nach dem Sprung fährt mit Bewegung noch Inhalt ein, und der Test sah nur einmal hin.
+    - Behebung: Er wartet jetzt, bis ein Link ganz im Bild liegt (180e8ad2), danach 10/10 auf beiden Ständen.
+  - axe: 396 Läufe, 0 ernste Knoten.
+  - Pixel gegen 51355ef7: Im Volllauf 2 von 48 Paaren mit Bildunterschieden (`/` t768, `/bad/barrierefreies-bad` d1920). Es zeigten sich andere Fotos bei gleicher Höhe. Zweimal wiederholt ergaben dieselben Paare 0 Pixel; das war ein Ladezustand im Volllauf. Ruhezustände sind unverändert.
+- **Lehren (L6):**
+  - Prüfskripte halten das Commit-Kürzel einmal am Anfang fest. Anlauf 1 der Prüfkette suchte nach einem Commit dazwischen den falschen Reinraum.
+  - Nie `pkill -f` mit einem Muster, das in der eigenen Befehlszeile steht.
