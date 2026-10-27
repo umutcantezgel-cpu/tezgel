@@ -14,13 +14,13 @@ Stand 27.10.2026, E1, Fassung 2.1 (AUFTRAG.md Abschnitt 15; L0 Runde 1 eingearbe
 - Methode: Prüfstufe C; Reinraum (`reinraum.sh`); Durchlauf der Funktionsliste (LAGEBILD Abschnitt 3); Adressprüfung aller 202 Adressen; Lesbarkeit der Hauptansichten; Element-Pässe aus Abschnitt 9.
 - Schwelle: Build, Typprüfung, Linter und Tests mindestens so grün wie E0; keine Funktion schlechter; null neue Konsolenfehler; 202 Adressen mit dem Status aus E0 (200, 308 oder 410); Lesbarkeit grün; die H1 A-1 und A-2 sind Wortlaut des Auftraggebers und UNANTASTBAR (G8), die Lesbarkeitsprüfung nimmt sie deshalb aus. Das ist keine AUSNAHME nach L7; jedes Muss-Element zurückgeführt oder belegt zurückgestellt.
 - Beleg: `belege/um-e5/reinraum.txt`, `belege/um-e5/funktionsliste.md`, `belege/um-e5/adressen.json`, `belege/um-e5/lesbarkeit.md`.
-- E0: Reinraum 7ceb5e41 grün (Build, Typen, Linter, Tests, Graph Exit 0); `npm test` 210 von 210; Funktionssuite 393 bestanden, 0 rot, 25 übersprungen; Adressen 202 von 202 wie E0 des Vorlaufs (UM-E0-VERLUSTE); Lesbarkeit rot nur A-1, A-2; Muss-Verluste EP-1 bis EP-3 offen. Stand: offen.
+- E0: Reinraum 7ceb5e41 grün (Build, Typen, Linter, Tests, Graph Exit 0); `npm test` 210 von 210; Funktionssuite 393 bestanden, 0 rot, 25 übersprungen; Adressen 202 von 202 wie E0 des Vorlaufs (UM-E0-VERLUSTE); Lesbarkeit rot nur A-1, A-2; Muss-Verluste EP-1 bis EP-3 offen. Stand: offen; Tor E2 (E-076): Reinraum 51355ef7 grün, `npm test` 216/216, Suite 393/0/25 in beiden Bewegungszuständen (`belege/um-e2-b2/`).
 
 ### Z-03 Stack
 - Methode: UPGRADE.md und `npm audit`.
 - Schwelle: 100 % der direkten Abhängigkeiten auf der neuesten stabilen oder belegt auf der neuesten kompatiblen Version; Laufzeit auf aktueller LTS; null hohe oder kritische Befunde mit verfügbarem Fix; null Warnungen zu veralteten Schnittstellen der aktualisierten Pakete; jeder Pixelvergleich ohne unerklärte Abweichung.
 - Beleg: UPGRADE.md mit Commit-Kennungen, `belege/um-e2/audit.json`, `belege/um-e2/pixelvergleich/`.
-- E0: 20 von 32 Paketen nicht aktuell; Node 20 statt LTS 24; Audit 1 kritisch, 3 hoch. Stand: offen.
+- E0: 20 von 32 Paketen nicht aktuell; Node 20 statt LTS 24; Audit 1 kritisch, 3 hoch. Stand: offen; Tor E2 (E-076): Audit 0 hoch/kritisch, Pixelvergleich E0 gegen HEAD 48 Paare ohne Abweichung; UPGRADE 29 von 32 auf latest, 3 belegt neueste kompatible (TypeScript 7, ESLint 10 über Peers).
 
 ### Z-04 Designsystem
 - Methode: `werte.mjs` (Regeldatei v4) über die geänderten Dateien, Stichprobe der neuen Komponenten.
@@ -56,19 +56,19 @@ Stand 27.10.2026, E1, Fassung 2.1 (AUFTRAG.md Abschnitt 15; L0 Runde 1 eingearbe
 - Methode: axe nach WCAG 2.2 AA in den vier Gerätegrößen, auch mit offenem Menü und Dialog; Probeläufe A1 bis A5 nur mit Tastatur; Kontraste; Reflow 320 px, Zoom 200 %, erzwungene Farben.
 - Schwelle: null ernste oder kritische axe-Befunde auf den Hauptansichten; Hauptaufgaben nur mit Tastatur lösbar bei sichtbarem Fokus; Kontraste nach Abschnitt 7; Reflow, Zoom und erzwungene Farben ohne Verlust.
 - Beleg: `belege/um-e5/axe/`, `belege/um-e5/tastatur.md`.
-- E0: axe 4.13 nach WCAG 2.2 AA (`belege/um-e0/axe/axe.json`): 84 Läufe (12 Hauptansichten × 4 Größen, mit Menü und Dialog), 0 Knoten mit ernsten oder kritischen Befunden. Stand: offen.
+- E0: axe 4.13 nach WCAG 2.2 AA (`belege/um-e0/axe/axe.json`): 84 Läufe (12 Hauptansichten × 4 Größen, mit Menü und Dialog), 0 Knoten mit ernsten oder kritischen Befunden. Stand: offen; Tor E2 (E-076): axe 396 Läufe (11 Größen, Menü und Erstbesuch in allen) 0 ernste Knoten auf 51355ef7.
 
 ### Z-10 Leistung
 - Methode: Lighthouse mobil und Desktop als Median aus drei Läufen am Produktionsbau; Größe des Bewegungs-JavaScripts im ersten Laden.
 - Schwelle: BUDGETS auf allen Hauptansichten (K-012); keine Hauptansicht schlechter als E0 um mehr als die Spanne der drei E0-Läufe.
 - Beleg: `belege/um-e5/lighthouse/`.
-- E0 (`belege/um-e0/lighthouse.json`, Median aus drei, Spanne in Klammern): Desktop Leistung 100 auf allen 12 Ansichten, LCP 696 bis 788 ms. Mobil Leistung `/` 92 (91–95), `/bad` 91 (91–93), `/bad/badsanierung` 90 (89–91), `/bad/barrierefreies-bad` 93 (92–94), `/leistungen` 95 (94–95), `/fliesen` 92 (92–92), `/balkon-terrasse` 91 (90–94), `/referenzen` 92 (92–95), `/ueber-uns` 92 (91–93), `/kontakt` 93 (91–93), `/standorte/wetzlar` 81 (80–82), `/blog` 87 (85–90). Mobiles LCP 2.860 bis 4.517 ms (`/standorte/wetzlar`), TBT 64 bis 171 ms, CLS 0, JavaScript 196 bis 318 KB (`/blog`). BUDGETS in E0 verfehlt: LCP mobil > 2,5 s auf allen 12 Ansichten; Leistung mobil < 90 auf `/standorte/wetzlar` und `/blog`; Reaktion > 200 ms auf 8 Ansichten (Z-07). Pakete: UM-E3-LCP-K, UM-E3-LEISTUNG, UM-E4-LEISTUNG. Stand: offen.
+- E0 (`belege/um-e0/lighthouse.json`, Median aus drei, Spanne in Klammern): Desktop Leistung 100 auf allen 12 Ansichten, LCP 696 bis 788 ms. Mobil Leistung `/` 92 (91–95), `/bad` 91 (91–93), `/bad/badsanierung` 90 (89–91), `/bad/barrierefreies-bad` 93 (92–94), `/leistungen` 95 (94–95), `/fliesen` 92 (92–92), `/balkon-terrasse` 91 (90–94), `/referenzen` 92 (92–95), `/ueber-uns` 92 (91–93), `/kontakt` 93 (91–93), `/standorte/wetzlar` 81 (80–82), `/blog` 87 (85–90). Mobiles LCP 2.860 bis 4.517 ms (`/standorte/wetzlar`), TBT 64 bis 171 ms, CLS 0, JavaScript 196 bis 318 KB (`/blog`). BUDGETS in E0 verfehlt: LCP mobil > 2,5 s auf allen 12 Ansichten; Leistung mobil < 90 auf `/standorte/wetzlar` und `/blog`; Reaktion > 200 ms auf 8 Ansichten (Z-07). Pakete: UM-E3-LCP-K, UM-E3-LEISTUNG, UM-E4-LEISTUNG. Stand: offen; Tor E2 (E-076): LCP und Leistung im Rahmen der E0-Spanne; TBT mobil auf `/`, `/leistungen`, `/balkon-terrasse` 2–8 ms über der Spanne → UM-E3-TBT.
 
 ### Z-11 Darstellung
 - Methode: Bildsatz der Hauptansichten und der Stichprobe in den vier GERÄTEGRÖSSEN (390 × 844, 768 × 1024, 1440 × 900, 1920 × 1080), dazu 200 % Schrift und Reflow 320 px, mit Überlauf- und Überlappungsprüfung. Themen: hell (einziges Thema; kommt UM-K07, auch dunkel). Sprachen: Deutsch.
 - Schwelle: kein Überlauf, kein abgeschnittener oder überlappender Text.
 - Beleg: `belege/um-e5/bildsatz.json`.
-- E0: Bildsatz der vier Größen (`belege/um-e0/bildsatz.json`, Bilder im Scratchpad): 534 Aufnahmen, 0 Fehler, 0 Überläufe, 0 Überlappungen, 0 Konsolenmeldungen; Browserprüfung Runde 5 des Vorlaufs mit 17 geringen Befunden (`belege/um-e0/runde5-befunde.json`). Stand: offen.
+- E0: Bildsatz der vier Größen (`belege/um-e0/bildsatz.json`, Bilder im Scratchpad): 534 Aufnahmen, 0 Fehler, 0 Überläufe, 0 Überlappungen, 0 Konsolenmeldungen; Browserprüfung Runde 5 des Vorlaufs mit 17 geringen Befunden (`belege/um-e0/runde5-befunde.json`). Stand: offen; Tor E2 (E-076): Bildsatz 10 Größen, 1.334 Aufnahmen, 0 Befunde.
 
 ### Z-12 Kontingent
 - Methode: KONTINGENT.md.

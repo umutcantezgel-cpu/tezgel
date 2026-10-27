@@ -1,10 +1,10 @@
 {
  "satz": "um-e2-b2",
- "base": "http://127.0.0.1:4315",
+ "base": "http://127.0.0.1:4316",
  "server_stand": {
-  "port": "4315",
-  "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/reinraum-f5544581",
-  "commit": "f5544581"
+  "port": "4316",
+  "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/reinraum-51355ef7",
+  "commit": "51355ef7"
  },
  "tags": [
   "wcag2a",
@@ -15,12 +15,8 @@
  ],
  "laeufe": 396,
  "uebersprungen": 0,
- "ernst_kritisch_knoten": 50,
- "je_regel": {
-  "serious:label-content-name-mismatch": 36,
-  "serious:target-size": 12,
-  "serious:color-contrast": 2
- },
+ "ernst_kritisch_knoten": 0,
+ "je_regel": {},
  "ergebnisse": [
   {
    "seite": "/",
@@ -48,25 +44,13 @@
   },
   {
    "seite": "/",
-   "ansicht": "q844",
-   "zustand": "normal",
-   "verstoesse": []
-  },
-  {
-   "seite": "/",
    "ansicht": "t768",
    "zustand": "normal",
    "verstoesse": []
   },
   {
    "seite": "/",
-   "ansicht": "t1024",
-   "zustand": "normal",
-   "verstoesse": []
-  },
-  {
-   "seite": "/",
-   "ansicht": "d1440",
+   "ansicht": "q844",
    "zustand": "normal",
    "verstoesse": []
   },
@@ -78,6 +62,18 @@
   },
   {
    "seite": "/",
+   "ansicht": "t1024",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
    "ansicht": "d1920",
    "zustand": "normal",
    "verstoesse": []
@@ -96,12 +92,6 @@
   },
   {
    "seite": "/bad",
-   "ansicht": "m390",
-   "zustand": "normal",
-   "verstoesse": []
-  },
-  {
-   "seite": "/bad",
    "ansicht": "m360",
    "zustand": "normal",
    "verstoesse": []
@@ -109,6 +99,12 @@
   {
    "seite": "/bad",
    "ansicht": "m430",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m390",
    "zustand": "normal",
    "verstoesse": []
   },
@@ -132,12 +128,6 @@
   },
   {
    "seite": "/bad",
-   "ansicht": "d1280",
-   "zustand": "normal",
-   "verstoesse": []
-  },
-  {
-   "seite": "/bad",
    "ansicht": "d1440",
    "zustand": "normal",
    "verstoesse": []
@@ -149,14 +139,20 @@
    "verstoesse": []
   },
   {
-   "seite": "/bad/badsanierung",
-   "ansicht": "m375",
+   "seite": "/bad",
+   "ansicht": "d1280",
    "zustand": "normal",
    "verstoesse": []
   },
   {
    "seite": "/bad/badsanierung",
    "ansicht": "m360",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badsanierung",
+   "ansicht": "m375",
    "zustand": "normal",
    "verstoesse": []
   },
@@ -186,6 +182,12 @@
   },
   {
    "seite": "/bad/badsanierung",
+   "ansicht": "t1024",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badsanierung",
    "ansicht": "t768",
    "zustand": "normal",
    "verstoesse": []
@@ -198,31 +200,25 @@
   },
   {
    "seite": "/bad/badsanierung",
-   "ansicht": "t1024",
-   "zustand": "normal",
-   "verstoesse": []
-  },
-  {
-   "seite": "/bad/badsanierung",
    "ansicht": "d1440",
    "zustand": "normal",
    "verstoesse": []
   },
   {
    "seite": "/bad/badsanierung",
-   "ansicht": "d2560",
+   "ansicht": "d1920",
    "zustand": "normal",
    "verstoesse": []
   },
   {
    "seite": "/bad/badsanierung",
-   "ansicht": "d1920",
+   "ansicht": "d2560",
    "zustand": "normal",
    "verstoesse": []
   },
   {
    "seite": "/bad/barrierefreies-bad",
-   "ansicht": "m390",
+   "ansicht": "m375",
    "zustand": "normal",
    "verstoesse": []
   },
@@ -234,7 +230,13 @@
   },
   {
    "seite": "/bad/barrierefreies-bad",
-   "ansicht": "m375",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/barrierefreies-bad",
+   "ansicht": "m430",
    "zustand": "normal",
    "verstoesse": []
   },
@@ -252,7 +254,7 @@
   },
   {
    "seite": "/bad/barrierefreies-bad",
-   "ansicht": "m430",
+   "ansicht": "t1024",
    "zustand": "normal",
    "verstoesse": []
   },
@@ -270,7 +272,7 @@
   },
   {
    "seite": "/bad/barrierefreies-bad",
-   "ansicht": "t1024",
+   "ansicht": "d1920",
    "zustand": "normal",
    "verstoesse": []
   },
@@ -287,12 +289,6 @@
    "verstoesse": []
   },
   {
-   "seite": "/bad/barrierefreies-bad",
-   "ansicht": "d1920",
-   "zustand": "normal",
-   "verstoesse": []
-  },
-  {
    "seite": "/leistungen",
    "ansicht": "m360",
    "zustand": "normal",
@@ -300,13 +296,13 @@
   },
   {
    "seite": "/leistungen",
-   "ansicht": "m390",
+   "ansicht": "m430",
    "zustand": "normal",
    "verstoesse": []
   },
   {
    "seite": "/leistungen",
-   "ansicht": "m430",
+   "ansicht": "m390",
    "zustand": "normal",
    "verstoesse": []
   },
@@ -330,12 +326,6 @@
   },
   {
    "seite": "/leistungen",
-   "ansicht": "d1440",
-   "zustand": "normal",
-   "verstoesse": []
-  },
-  {
-   "seite": "/leistungen",
    "ansicht": "d1280",
    "zustand": "normal",
    "verstoesse": []
@@ -343,6 +333,18 @@
   {
    "seite": "/leistungen",
    "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d2560",
    "zustand": "normal",
    "verstoesse": []
   },
@@ -359,8 +361,8 @@
    "verstoesse": []
   },
   {
-   "seite": "/leistungen",
-   "ansicht": "d2560",
+   "seite": "/fliesen",
+   "ansicht": "m390",
    "zustand": "normal",
    "verstoesse": []
   },
@@ -372,13 +374,13 @@
   },
   {
    "seite": "/fliesen",
-   "ansicht": "m390",
+   "ansicht": "q844",
    "zustand": "normal",
    "verstoesse": []
   },
   {
    "seite": "/fliesen",
-   "ansicht": "q844",
+   "ansicht": "t768",
    "zustand": "normal",
    "verstoesse": []
   },
@@ -396,19 +398,13 @@
   },
   {
    "seite": "/fliesen",
-   "ansicht": "t768",
+   "ansicht": "d1440",
    "zustand": "normal",
    "verstoesse": []
   },
   {
    "seite": "/fliesen",
    "ansicht": "d1920",
-   "zustand": "normal",
-   "verstoesse": []
-  },
-  {
-   "seite": "/fliesen",
-   "ansicht": "d1440",
    "zustand": "normal",
    "verstoesse": []
   },
@@ -426,13 +422,13 @@
   },
   {
    "seite": "/balkon-terrasse",
-   "ansicht": "m390",
+   "ansicht": "m360",
    "zustand": "normal",
    "verstoesse": []
   },
   {
    "seite": "/balkon-terrasse",
-   "ansicht": "m360",
+   "ansicht": "m390",
    "zustand": "normal",
    "verstoesse": []
   },
@@ -444,25 +440,25 @@
   },
   {
    "seite": "/balkon-terrasse",
-   "ansicht": "t768",
-   "zustand": "normal",
-   "verstoesse": []
-  },
-  {
-   "seite": "/balkon-terrasse",
    "ansicht": "q844",
    "zustand": "normal",
    "verstoesse": []
   },
   {
    "seite": "/balkon-terrasse",
-   "ansicht": "d1280",
+   "ansicht": "t768",
    "zustand": "normal",
    "verstoesse": []
   },
   {
    "seite": "/balkon-terrasse",
    "ansicht": "t1024",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/balkon-terrasse",
+   "ansicht": "d1280",
    "zustand": "normal",
    "verstoesse": []
   },
@@ -481,6 +477,12 @@
   {
    "seite": "/referenzen",
    "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen",
+   "ansicht": "m360",
    "zustand": "normal",
    "verstoesse": []
   },
@@ -492,19 +494,13 @@
   },
   {
    "seite": "/referenzen",
-   "ansicht": "m430",
-   "zustand": "normal",
-   "verstoesse": []
-  },
-  {
-   "seite": "/referenzen",
    "ansicht": "m390",
    "zustand": "normal",
    "verstoesse": []
   },
   {
    "seite": "/referenzen",
-   "ansicht": "m360",
+   "ansicht": "m430",
    "zustand": "normal",
    "verstoesse": []
   },
@@ -516,13 +512,19 @@
   },
   {
    "seite": "/referenzen",
-   "ansicht": "t1024",
+   "ansicht": "t768",
    "zustand": "normal",
    "verstoesse": []
   },
   {
    "seite": "/referenzen",
-   "ansicht": "t768",
+   "ansicht": "d1280",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen",
+   "ansicht": "t1024",
    "zustand": "normal",
    "verstoesse": []
   },
@@ -535,24 +537,6 @@
   {
    "seite": "/referenzen",
    "ansicht": "d1920",
-   "zustand": "normal",
-   "verstoesse": []
-  },
-  {
-   "seite": "/referenzen",
-   "ansicht": "d1280",
-   "zustand": "normal",
-   "verstoesse": []
-  },
-  {
-   "seite": "/ueber-uns",
-   "ansicht": "m360",
-   "zustand": "normal",
-   "verstoesse": []
-  },
-  {
-   "seite": "/ueber-uns",
-   "ansicht": "m375",
    "zustand": "normal",
    "verstoesse": []
   },
@@ -564,7 +548,25 @@
   },
   {
    "seite": "/ueber-uns",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m360",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
    "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "t768",
    "zustand": "normal",
    "verstoesse": []
   },
@@ -582,7 +584,13 @@
   },
   {
    "seite": "/ueber-uns",
-   "ansicht": "t768",
+   "ansicht": "t1024",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "d1440",
    "zustand": "normal",
    "verstoesse": []
   },
@@ -593,20 +601,14 @@
    "verstoesse": []
   },
   {
-   "seite": "/ueber-uns",
-   "ansicht": "t1024",
+   "seite": "/kontakt",
+   "ansicht": "m375",
    "zustand": "normal",
    "verstoesse": []
   },
   {
    "seite": "/ueber-uns",
    "ansicht": "d1920",
-   "zustand": "normal",
-   "verstoesse": []
-  },
-  {
-   "seite": "/ueber-uns",
-   "ansicht": "d1440",
    "zustand": "normal",
    "verstoesse": []
   },
@@ -618,7 +620,7 @@
   },
   {
    "seite": "/kontakt",
-   "ansicht": "m375",
+   "ansicht": "m360",
    "zustand": "normal",
    "verstoesse": []
   },
@@ -630,19 +632,7 @@
   },
   {
    "seite": "/kontakt",
-   "ansicht": "m360",
-   "zustand": "normal",
-   "verstoesse": []
-  },
-  {
-   "seite": "/kontakt",
    "ansicht": "m430",
-   "zustand": "normal",
-   "verstoesse": []
-  },
-  {
-   "seite": "/kontakt",
-   "ansicht": "t768",
    "zustand": "normal",
    "verstoesse": []
   },
@@ -654,13 +644,13 @@
   },
   {
    "seite": "/kontakt",
-   "ansicht": "t1024",
+   "ansicht": "t768",
    "zustand": "normal",
    "verstoesse": []
   },
   {
    "seite": "/kontakt",
-   "ansicht": "d1440",
+   "ansicht": "t1024",
    "zustand": "normal",
    "verstoesse": []
   },
@@ -677,8 +667,8 @@
    "verstoesse": []
   },
   {
-   "seite": "/standorte/wetzlar",
-   "ansicht": "m375",
+   "seite": "/kontakt",
+   "ansicht": "d1440",
    "zustand": "normal",
    "verstoesse": []
   },
@@ -696,6 +686,12 @@
   },
   {
    "seite": "/standorte/wetzlar",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/wetzlar",
    "ansicht": "m390",
    "zustand": "normal",
    "verstoesse": []
@@ -714,13 +710,13 @@
   },
   {
    "seite": "/standorte/wetzlar",
-   "ansicht": "t1024",
+   "ansicht": "t768",
    "zustand": "normal",
    "verstoesse": []
   },
   {
    "seite": "/standorte/wetzlar",
-   "ansicht": "t768",
+   "ansicht": "t1024",
    "zustand": "normal",
    "verstoesse": []
   },
@@ -750,13 +746,13 @@
   },
   {
    "seite": "/blog",
-   "ansicht": "m360",
+   "ansicht": "m375",
    "zustand": "normal",
    "verstoesse": []
   },
   {
    "seite": "/blog",
-   "ansicht": "m375",
+   "ansicht": "m360",
    "zustand": "normal",
    "verstoesse": []
   },
@@ -769,12 +765,6 @@
   {
    "seite": "/blog",
    "ansicht": "m430",
-   "zustand": "normal",
-   "verstoesse": []
-  },
-  {
-   "seite": "/blog",
-   "ansicht": "q844",
    "zustand": "normal",
    "verstoesse": []
   },
@@ -786,7 +776,7 @@
   },
   {
    "seite": "/blog",
-   "ansicht": "d1280",
+   "ansicht": "q844",
    "zustand": "normal",
    "verstoesse": []
   },
@@ -798,6 +788,12 @@
   },
   {
    "seite": "/blog",
+   "ansicht": "d1280",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
    "ansicht": "d1440",
    "zustand": "normal",
    "verstoesse": []
@@ -809,6 +805,12 @@
    "verstoesse": []
   },
   {
+   "seite": "/",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
    "seite": "/blog",
    "ansicht": "d2560",
    "zustand": "normal",
@@ -817,19 +819,13 @@
   {
    "seite": "/",
    "ansicht": "m375",
-   "zustand": "menue",
+   "zustand": "erstbesuch",
    "verstoesse": []
   },
   {
    "seite": "/",
    "ansicht": "m360",
    "zustand": "menue",
-   "verstoesse": []
-  },
-  {
-   "seite": "/",
-   "ansicht": "m375",
-   "zustand": "erstbesuch",
    "verstoesse": []
   },
   {
@@ -866,26 +862,7 @@
    "seite": "/",
    "ansicht": "q844",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.gap-3.px-4 > a[href=\"/\"]"
-     ]
-    },
-    {
-     "id": "target-size",
-     "impact": "serious",
-     "hilfe": "All touch targets must be 24px large, or leave sufficient space",
-     "anzahl": 1,
-     "ziele": [
-      "button[popovertargetaction=\"hide\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
   },
   {
    "seite": "/",
@@ -897,17 +874,7 @@
    "seite": "/",
    "ansicht": "t768",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.gap-3.px-4 > a[href=\"/\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
   },
   {
    "seite": "/",
@@ -919,28 +886,18 @@
    "seite": "/",
    "ansicht": "t1024",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.gap-3.px-4 > a[href=\"/\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "t1024",
+   "zustand": "erstbesuch",
+   "verstoesse": []
   },
   {
    "seite": "/",
    "ansicht": "d1280",
    "zustand": "menue",
-   "verstoesse": []
-  },
-  {
-   "seite": "/",
-   "ansicht": "t1024",
-   "zustand": "erstbesuch",
    "verstoesse": []
   },
   {
@@ -969,12 +926,6 @@
   },
   {
    "seite": "/",
-   "ansicht": "d2560",
-   "zustand": "menue",
-   "verstoesse": []
-  },
-  {
-   "seite": "/",
    "ansicht": "d1920",
    "zustand": "erstbesuch",
    "verstoesse": []
@@ -982,12 +933,24 @@
   {
    "seite": "/",
    "ansicht": "d2560",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d2560",
    "zustand": "erstbesuch",
    "verstoesse": []
   },
   {
    "seite": "/bad",
    "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m360",
    "zustand": "menue",
    "verstoesse": []
   },
@@ -1000,19 +963,13 @@
   {
    "seite": "/bad",
    "ansicht": "m360",
-   "zustand": "menue",
+   "zustand": "erstbesuch",
    "verstoesse": []
   },
   {
    "seite": "/bad",
    "ansicht": "m390",
    "zustand": "menue",
-   "verstoesse": []
-  },
-  {
-   "seite": "/bad",
-   "ansicht": "m360",
-   "zustand": "erstbesuch",
    "verstoesse": []
   },
   {
@@ -1037,47 +994,18 @@
    "seite": "/bad",
    "ansicht": "q844",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.gap-3.px-4 > a[href=\"/\"]"
-     ]
-    },
-    {
-     "id": "target-size",
-     "impact": "serious",
-     "hilfe": "All touch targets must be 24px large, or leave sufficient space",
-     "anzahl": 1,
-     "ziele": [
-      "button[popovertargetaction=\"hide\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "q844",
+   "zustand": "erstbesuch",
+   "verstoesse": []
   },
   {
    "seite": "/bad",
    "ansicht": "t768",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.gap-3.px-4 > a[href=\"/\"]"
-     ]
-    }
-   ]
-  },
-  {
-   "seite": "/bad",
-   "ansicht": "q844",
-   "zustand": "erstbesuch",
    "verstoesse": []
   },
   {
@@ -1090,17 +1018,7 @@
    "seite": "/bad",
    "ansicht": "t1024",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.gap-3.px-4 > a[href=\"/\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
   },
   {
    "seite": "/bad",
@@ -1151,12 +1069,6 @@
    "verstoesse": []
   },
   {
-   "seite": "/bad/badsanierung",
-   "ansicht": "m375",
-   "zustand": "menue",
-   "verstoesse": []
-  },
-  {
    "seite": "/bad",
    "ansicht": "d2560",
    "zustand": "erstbesuch",
@@ -1165,6 +1077,12 @@
   {
    "seite": "/bad/badsanierung",
    "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badsanierung",
+   "ansicht": "m375",
    "zustand": "erstbesuch",
    "verstoesse": []
   },
@@ -1208,48 +1126,19 @@
    "seite": "/bad/badsanierung",
    "ansicht": "q844",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.gap-3.px-4 > a[href=\"/\"]"
-     ]
-    },
-    {
-     "id": "target-size",
-     "impact": "serious",
-     "hilfe": "All touch targets must be 24px large, or leave sufficient space",
-     "anzahl": 1,
-     "ziele": [
-      "button[popovertargetaction=\"hide\"]"
-     ]
-    }
-   ]
-  },
-  {
-   "seite": "/bad/badsanierung",
-   "ansicht": "q844",
-   "zustand": "erstbesuch",
    "verstoesse": []
   },
   {
    "seite": "/bad/badsanierung",
    "ansicht": "t768",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.gap-3.px-4 > a[href=\"/\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badsanierung",
+   "ansicht": "q844",
+   "zustand": "erstbesuch",
+   "verstoesse": []
   },
   {
    "seite": "/bad/badsanierung",
@@ -1261,17 +1150,7 @@
    "seite": "/bad/badsanierung",
    "ansicht": "t1024",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.gap-3.px-4 > a[href=\"/\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
   },
   {
    "seite": "/bad/badsanierung",
@@ -1359,14 +1238,14 @@
   },
   {
    "seite": "/bad/barrierefreies-bad",
-   "ansicht": "m390",
-   "zustand": "erstbesuch",
+   "ansicht": "m430",
+   "zustand": "menue",
    "verstoesse": []
   },
   {
    "seite": "/bad/barrierefreies-bad",
-   "ansicht": "m430",
-   "zustand": "menue",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
    "verstoesse": []
   },
   {
@@ -1379,26 +1258,7 @@
    "seite": "/bad/barrierefreies-bad",
    "ansicht": "q844",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.px-4.gap-3 > a[href=\"/\"]"
-     ]
-    },
-    {
-     "id": "target-size",
-     "impact": "serious",
-     "hilfe": "All touch targets must be 24px large, or leave sufficient space",
-     "anzahl": 1,
-     "ziele": [
-      "button[popovertargetaction=\"hide\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
   },
   {
    "seite": "/bad/barrierefreies-bad",
@@ -1410,33 +1270,13 @@
    "seite": "/bad/barrierefreies-bad",
    "ansicht": "t768",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.px-4.gap-3 > a[href=\"/\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
   },
   {
    "seite": "/bad/barrierefreies-bad",
    "ansicht": "t1024",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.px-4.gap-3 > a[href=\"/\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
   },
   {
    "seite": "/bad/barrierefreies-bad",
@@ -1542,33 +1382,14 @@
   },
   {
    "seite": "/leistungen",
-   "ansicht": "q844",
-   "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.px-4.gap-3 > a[href=\"/\"]"
-     ]
-    },
-    {
-     "id": "target-size",
-     "impact": "serious",
-     "hilfe": "All touch targets must be 24px large, or leave sufficient space",
-     "anzahl": 1,
-     "ziele": [
-      "button[popovertargetaction=\"hide\"]"
-     ]
-    }
-   ]
+   "ansicht": "m430",
+   "zustand": "erstbesuch",
+   "verstoesse": []
   },
   {
    "seite": "/leistungen",
-   "ansicht": "m430",
-   "zustand": "erstbesuch",
+   "ansicht": "q844",
+   "zustand": "menue",
    "verstoesse": []
   },
   {
@@ -1581,17 +1402,7 @@
    "seite": "/leistungen",
    "ansicht": "t768",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.px-4.gap-3 > a[href=\"/\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
   },
   {
    "seite": "/leistungen",
@@ -1603,17 +1414,7 @@
    "seite": "/leistungen",
    "ansicht": "t1024",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.px-4.gap-3 > a[href=\"/\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
   },
   {
    "seite": "/leistungen",
@@ -1677,6 +1478,12 @@
   },
   {
    "seite": "/fliesen",
+   "ansicht": "m360",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesen",
    "ansicht": "m375",
    "zustand": "erstbesuch",
    "verstoesse": []
@@ -1684,12 +1491,6 @@
   {
    "seite": "/fliesen",
    "ansicht": "m360",
-   "zustand": "menue",
-   "verstoesse": []
-  },
-  {
-   "seite": "/fliesen",
-   "ansicht": "m360",
    "zustand": "erstbesuch",
    "verstoesse": []
   },
@@ -1709,38 +1510,19 @@
    "seite": "/fliesen",
    "ansicht": "m430",
    "zustand": "menue",
-   "verstoesse": []
-  },
-  {
-   "seite": "/fliesen",
-   "ansicht": "m430",
-   "zustand": "erstbesuch",
    "verstoesse": []
   },
   {
    "seite": "/fliesen",
    "ansicht": "q844",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.px-4.gap-3 > a[href=\"/\"]"
-     ]
-    },
-    {
-     "id": "target-size",
-     "impact": "serious",
-     "hilfe": "All touch targets must be 24px large, or leave sufficient space",
-     "anzahl": 1,
-     "ziele": [
-      "button[popovertargetaction=\"hide\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesen",
+   "ansicht": "m430",
+   "zustand": "erstbesuch",
+   "verstoesse": []
   },
   {
    "seite": "/fliesen",
@@ -1752,17 +1534,7 @@
    "seite": "/fliesen",
    "ansicht": "t768",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.px-4.gap-3 > a[href=\"/\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
   },
   {
    "seite": "/fliesen",
@@ -1774,17 +1546,7 @@
    "seite": "/fliesen",
    "ansicht": "t1024",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.px-4.gap-3 > a[href=\"/\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
   },
   {
    "seite": "/fliesen",
@@ -1835,12 +1597,6 @@
    "verstoesse": []
   },
   {
-   "seite": "/balkon-terrasse",
-   "ansicht": "m375",
-   "zustand": "menue",
-   "verstoesse": []
-  },
-  {
    "seite": "/fliesen",
    "ansicht": "d2560",
    "zustand": "erstbesuch",
@@ -1849,13 +1605,19 @@
   {
    "seite": "/balkon-terrasse",
    "ansicht": "m375",
-   "zustand": "erstbesuch",
+   "zustand": "menue",
    "verstoesse": []
   },
   {
    "seite": "/balkon-terrasse",
    "ansicht": "m360",
    "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/balkon-terrasse",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
    "verstoesse": []
   },
   {
@@ -1892,26 +1654,7 @@
    "seite": "/balkon-terrasse",
    "ansicht": "q844",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.px-4.gap-3 > a[href=\"/\"]"
-     ]
-    },
-    {
-     "id": "target-size",
-     "impact": "serious",
-     "hilfe": "All touch targets must be 24px large, or leave sufficient space",
-     "anzahl": 1,
-     "ziele": [
-      "button[popovertargetaction=\"hide\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
   },
   {
    "seite": "/balkon-terrasse",
@@ -1923,17 +1666,7 @@
    "seite": "/balkon-terrasse",
    "ansicht": "t768",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.px-4.gap-3 > a[href=\"/\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
   },
   {
    "seite": "/balkon-terrasse",
@@ -1945,17 +1678,7 @@
    "seite": "/balkon-terrasse",
    "ansicht": "t1024",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.px-4.gap-3 > a[href=\"/\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
   },
   {
    "seite": "/balkon-terrasse",
@@ -1979,18 +1702,18 @@
    "seite": "/balkon-terrasse",
    "ansicht": "d1440",
    "zustand": "menue",
-   "verstoesse": []
-  },
-  {
-   "seite": "/balkon-terrasse",
-   "ansicht": "d1440",
-   "zustand": "erstbesuch",
    "verstoesse": []
   },
   {
    "seite": "/balkon-terrasse",
    "ansicht": "d1920",
    "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/balkon-terrasse",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
    "verstoesse": []
   },
   {
@@ -2021,18 +1744,7 @@
    "seite": "/referenzen",
    "ansicht": "m360",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "color-contrast",
-     "impact": "serious",
-     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
-     "anzahl": 2,
-     "ziele": [
-      ".mt-8.hyphens-none > span:nth-child(5) > span",
-      ".mt-8.hyphens-none > span:nth-child(5) > span > .whitespace-nowrap"
-     ]
-    }
-   ]
+   "verstoesse": []
   },
   {
    "seite": "/referenzen",
@@ -2054,6 +1766,12 @@
   },
   {
    "seite": "/referenzen",
+   "ansicht": "m430",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen",
    "ansicht": "m390",
    "zustand": "erstbesuch",
    "verstoesse": []
@@ -2061,12 +1779,6 @@
   {
    "seite": "/referenzen",
    "ansicht": "m430",
-   "zustand": "menue",
-   "verstoesse": []
-  },
-  {
-   "seite": "/referenzen",
-   "ansicht": "m430",
    "zustand": "erstbesuch",
    "verstoesse": []
   },
@@ -2074,26 +1786,7 @@
    "seite": "/referenzen",
    "ansicht": "q844",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.gap-3.justify-between > a[href=\"/\"]"
-     ]
-    },
-    {
-     "id": "target-size",
-     "impact": "serious",
-     "hilfe": "All touch targets must be 24px large, or leave sufficient space",
-     "anzahl": 1,
-     "ziele": [
-      "button[popovertargetaction=\"hide\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
   },
   {
    "seite": "/referenzen",
@@ -2105,17 +1798,7 @@
    "seite": "/referenzen",
    "ansicht": "t768",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.gap-3.justify-between > a[href=\"/\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
   },
   {
    "seite": "/referenzen",
@@ -2127,28 +1810,18 @@
    "seite": "/referenzen",
    "ansicht": "t1024",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.gap-3.justify-between > a[href=\"/\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen",
+   "ansicht": "t1024",
+   "zustand": "erstbesuch",
+   "verstoesse": []
   },
   {
    "seite": "/referenzen",
    "ansicht": "d1280",
    "zustand": "menue",
-   "verstoesse": []
-  },
-  {
-   "seite": "/referenzen",
-   "ansicht": "t1024",
-   "zustand": "erstbesuch",
    "verstoesse": []
   },
   {
@@ -2177,12 +1850,6 @@
   },
   {
    "seite": "/referenzen",
-   "ansicht": "d2560",
-   "zustand": "menue",
-   "verstoesse": []
-  },
-  {
-   "seite": "/referenzen",
    "ansicht": "d1920",
    "zustand": "erstbesuch",
    "verstoesse": []
@@ -2190,12 +1857,24 @@
   {
    "seite": "/referenzen",
    "ansicht": "d2560",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen",
+   "ansicht": "d2560",
    "zustand": "erstbesuch",
    "verstoesse": []
   },
   {
    "seite": "/ueber-uns",
    "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m360",
    "zustand": "menue",
    "verstoesse": []
   },
@@ -2208,31 +1887,25 @@
   {
    "seite": "/ueber-uns",
    "ansicht": "m360",
-   "zustand": "menue",
-   "verstoesse": []
-  },
-  {
-   "seite": "/ueber-uns",
-   "ansicht": "m390",
-   "zustand": "menue",
-   "verstoesse": []
-  },
-  {
-   "seite": "/ueber-uns",
-   "ansicht": "m360",
    "zustand": "erstbesuch",
    "verstoesse": []
   },
   {
    "seite": "/ueber-uns",
    "ansicht": "m390",
-   "zustand": "erstbesuch",
+   "zustand": "menue",
    "verstoesse": []
   },
   {
    "seite": "/ueber-uns",
    "ansicht": "m430",
    "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
    "verstoesse": []
   },
   {
@@ -2245,42 +1918,7 @@
    "seite": "/ueber-uns",
    "ansicht": "q844",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.px-4.gap-3 > a[href=\"/\"]"
-     ]
-    },
-    {
-     "id": "target-size",
-     "impact": "serious",
-     "hilfe": "All touch targets must be 24px large, or leave sufficient space",
-     "anzahl": 1,
-     "ziele": [
-      "button[popovertargetaction=\"hide\"]"
-     ]
-    }
-   ]
-  },
-  {
-   "seite": "/ueber-uns",
-   "ansicht": "t768",
-   "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.px-4.gap-3 > a[href=\"/\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
   },
   {
    "seite": "/ueber-uns",
@@ -2291,24 +1929,20 @@
   {
    "seite": "/ueber-uns",
    "ansicht": "t768",
-   "zustand": "erstbesuch",
+   "zustand": "menue",
    "verstoesse": []
   },
   {
    "seite": "/ueber-uns",
    "ansicht": "t1024",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.px-4.gap-3 > a[href=\"/\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "t768",
+   "zustand": "erstbesuch",
+   "verstoesse": []
   },
   {
    "seite": "/ueber-uns",
@@ -2355,19 +1989,25 @@
   {
    "seite": "/ueber-uns",
    "ansicht": "d2560",
-   "zustand": "menue",
-   "verstoesse": []
-  },
-  {
-   "seite": "/kontakt",
-   "ansicht": "m375",
-   "zustand": "menue",
+   "zustand": "erstbesuch",
    "verstoesse": []
   },
   {
    "seite": "/ueber-uns",
    "ansicht": "d2560",
-   "zustand": "erstbesuch",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m360",
+   "zustand": "menue",
    "verstoesse": []
   },
   {
@@ -2379,31 +2019,25 @@
   {
    "seite": "/kontakt",
    "ansicht": "m360",
-   "zustand": "menue",
-   "verstoesse": []
-  },
-  {
-   "seite": "/kontakt",
-   "ansicht": "m390",
-   "zustand": "menue",
-   "verstoesse": []
-  },
-  {
-   "seite": "/kontakt",
-   "ansicht": "m360",
    "zustand": "erstbesuch",
    "verstoesse": []
   },
   {
    "seite": "/kontakt",
    "ansicht": "m390",
-   "zustand": "erstbesuch",
+   "zustand": "menue",
    "verstoesse": []
   },
   {
    "seite": "/kontakt",
    "ansicht": "m430",
    "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
    "verstoesse": []
   },
   {
@@ -2416,26 +2050,7 @@
    "seite": "/kontakt",
    "ansicht": "q844",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.px-4.gap-3 > a[href=\"/\"]"
-     ]
-    },
-    {
-     "id": "target-size",
-     "impact": "serious",
-     "hilfe": "All touch targets must be 24px large, or leave sufficient space",
-     "anzahl": 1,
-     "ziele": [
-      "button[popovertargetaction=\"hide\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
   },
   {
    "seite": "/kontakt",
@@ -2447,17 +2062,7 @@
    "seite": "/kontakt",
    "ansicht": "t768",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.px-4.gap-3 > a[href=\"/\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
   },
   {
    "seite": "/kontakt",
@@ -2469,17 +2074,7 @@
    "seite": "/kontakt",
    "ansicht": "t1024",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.px-4.gap-3 > a[href=\"/\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
   },
   {
    "seite": "/kontakt",
@@ -2503,18 +2098,18 @@
    "seite": "/kontakt",
    "ansicht": "d1440",
    "zustand": "menue",
-   "verstoesse": []
-  },
-  {
-   "seite": "/kontakt",
-   "ansicht": "d1440",
-   "zustand": "erstbesuch",
    "verstoesse": []
   },
   {
    "seite": "/kontakt",
    "ansicht": "d1920",
    "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
    "verstoesse": []
   },
   {
@@ -2543,6 +2138,12 @@
   },
   {
    "seite": "/standorte/wetzlar",
+   "ansicht": "m360",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/wetzlar",
    "ansicht": "m375",
    "zustand": "erstbesuch",
    "verstoesse": []
@@ -2550,12 +2151,6 @@
   {
    "seite": "/standorte/wetzlar",
    "ansicht": "m360",
-   "zustand": "menue",
-   "verstoesse": []
-  },
-  {
-   "seite": "/standorte/wetzlar",
-   "ansicht": "m360",
    "zustand": "erstbesuch",
    "verstoesse": []
   },
@@ -2587,26 +2182,7 @@
    "seite": "/standorte/wetzlar",
    "ansicht": "q844",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.px-4.gap-3 > a[href=\"/\"]"
-     ]
-    },
-    {
-     "id": "target-size",
-     "impact": "serious",
-     "hilfe": "All touch targets must be 24px large, or leave sufficient space",
-     "anzahl": 1,
-     "ziele": [
-      "button[popovertargetaction=\"hide\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
   },
   {
    "seite": "/standorte/wetzlar",
@@ -2618,38 +2194,18 @@
    "seite": "/standorte/wetzlar",
    "ansicht": "t768",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.px-4.gap-3 > a[href=\"/\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "ansicht": "t768",
+   "zustand": "erstbesuch",
+   "verstoesse": []
   },
   {
    "seite": "/standorte/wetzlar",
    "ansicht": "t1024",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.px-4.gap-3 > a[href=\"/\"]"
-     ]
-    }
-   ]
-  },
-  {
-   "seite": "/standorte/wetzlar",
-   "ansicht": "t768",
-   "zustand": "erstbesuch",
    "verstoesse": []
   },
   {
@@ -2674,18 +2230,18 @@
    "seite": "/standorte/wetzlar",
    "ansicht": "d1440",
    "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
    "verstoesse": []
   },
   {
    "seite": "/standorte/wetzlar",
    "ansicht": "d1920",
    "zustand": "menue",
-   "verstoesse": []
-  },
-  {
-   "seite": "/standorte/wetzlar",
-   "ansicht": "d1440",
-   "zustand": "erstbesuch",
    "verstoesse": []
   },
   {
@@ -2698,18 +2254,18 @@
    "seite": "/standorte/wetzlar",
    "ansicht": "d2560",
    "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "ansicht": "d2560",
+   "zustand": "erstbesuch",
    "verstoesse": []
   },
   {
    "seite": "/blog",
    "ansicht": "m375",
    "zustand": "menue",
-   "verstoesse": []
-  },
-  {
-   "seite": "/standorte/wetzlar",
-   "ansicht": "d2560",
-   "zustand": "erstbesuch",
    "verstoesse": []
   },
   {
@@ -2738,14 +2294,14 @@
   },
   {
    "seite": "/blog",
-   "ansicht": "m430",
-   "zustand": "menue",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
    "verstoesse": []
   },
   {
    "seite": "/blog",
-   "ansicht": "m390",
-   "zustand": "erstbesuch",
+   "ansicht": "m430",
+   "zustand": "menue",
    "verstoesse": []
   },
   {
@@ -2758,26 +2314,7 @@
    "seite": "/blog",
    "ansicht": "q844",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.px-4.gap-3 > a[href=\"/\"]"
-     ]
-    },
-    {
-     "id": "target-size",
-     "impact": "serious",
-     "hilfe": "All touch targets must be 24px large, or leave sufficient space",
-     "anzahl": 1,
-     "ziele": [
-      "button[popovertargetaction=\"hide\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
   },
   {
    "seite": "/blog",
@@ -2789,17 +2326,7 @@
    "seite": "/blog",
    "ansicht": "t768",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.px-4.gap-3 > a[href=\"/\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
   },
   {
    "seite": "/blog",
@@ -2811,17 +2338,7 @@
    "seite": "/blog",
    "ansicht": "t1024",
    "zustand": "menue",
-   "verstoesse": [
-    {
-     "id": "label-content-name-mismatch",
-     "impact": "serious",
-     "hilfe": "Elements must have their visible text as part of their accessible name",
-     "anzahl": 1,
-     "ziele": [
-      ".h-16.px-4.gap-3 > a[href=\"/\"]"
-     ]
-    }
-   ]
+   "verstoesse": []
   },
   {
    "seite": "/blog",

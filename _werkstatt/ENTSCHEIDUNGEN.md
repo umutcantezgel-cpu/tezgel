@@ -913,12 +913,12 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
     - Text, Verhalten und Fokusführung der Einwilligung und des Menüs sind unverändert; das Navigations-Spec ergab 47/47 in beiden Bewegungszuständen.
   - Messwerkzeuge schreiben den Stand des Servers (`server_stand`). Der Pixelvergleich hat ein Zeitlimit je Paar und `hoehe_genau`.
 - **Anlauf 2** (Nachmessung ohne Agenten, Belege `belege/um-e2-b2/`, Auswertungen mit Gegenprüfung wf_e0aa9ea7-730 und wf_7a7ba863-e85):
-  - Z-09: axe 396 Läufe (11 Größen × 12 Hauptansichten × normal, Menü, Erstbesuch) auf 51355ef7: 0 ernste oder kritische Knoten.
+  - Z-09: axe 396 Läufe (11 Größen × 12 Hauptansichten × normal, Menü, Erstbesuch) auf 51355ef7: 0 ernste oder kritische Knoten (`belege/um-e2-b2/axe/axe.json`; auf f5544581 vor den Menü-Fixes 50, `axe-f5544581.json`).
   - Z-03: Pixel E0 gegen HEAD 48 Paare, 0 Pixel, keine Höhenabweichung. Die 1-px-Stelle trat nicht mehr auf. Die Höhenprobe zeigt, dass E0 und E2 dieselbe gebrochene Höhe haben (10.705,75 px, 0,25 px über der Rundungsgrenze); der Kipp war eine Messbedingung unter Last, kein Unterschied im Layout. Audit 0 hohe, 0 kritische Befunde.
   - Z-11: Bildsatz 10 Größen, 1.334 Aufnahmen, 0 Befunde; die 48 E0-Kombinationen sind gleich.
   - Z-06: Register und reduziert wie E0, 0 unbekannte Kennungen, 0 Lage- oder Größenänderungen.
   - Z-07: Reaktion 12/12 bestanden (Anlauf 1, 6caeeb9c; E0 4/12).
-  - Z-02: Suite auf 51355ef7 SUITE-3.
+  - Z-02: Suite auf 51355ef7 in beiden Bewegungszuständen 393 bestanden, 0 rot, 25 übersprungen (`belege/um-e2-b2/suite.json`, `suite-bewegung.json`). Reinraum 51355ef7 grün (Build, Typen, Linter, `npm test` 216/216, Graph). E0: 393/0/25.
   - **Z-10 bleibt offen:** Lighthouse wurde verschränkt gemessen (je Seite E0, dann HEAD).
     - Alle 7 Leistungs- und LCP-Verletzungen aus Anlauf 1 sind entfallen.
     - TBT mobil liegt auf `/` (+119 ms gegen Spanne 111), `/leistungen` (+43 gegen 41) und `/balkon-terrasse` (+70 gegen 62) knapp über der E0-Spanne; `/` Desktop 0 → 2 ms bei Spanne 0.

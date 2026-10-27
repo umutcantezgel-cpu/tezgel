@@ -1,27 +1,19 @@
 # PRUEFPUNKT
 
-- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · Etappe E2, Welle E2-W4 (Tor, Anlauf 1 nicht bestanden, Anlauf 2: Auswertung, Suite auf 51355ef7 läuft) · Stand 2026-10-27 16:57 MEZ
-- Erledigt in E2:
-  - UM-E2-SVGO (eee7cc37), U01 (d4ecfac9), U02 (54ec7ac8), PX (67ab6710), U03 (a6c1bd54, 0d37880e), U04 (91615baa), U05 (f1bed29f, e117a149), U06, U07 (9ecbec98, 28be7043, 6caeeb9c).
-  - Prüfwerkzeug nach Playwright 1.64 (5a5e3dd8): Sperre „aborted“ für fremde Navigationen; reducedMotion wirkt erst ab 1.63.0, deshalb Suite in zwei Läufen (`RELAUNCH_BEWEGUNG=an`). Suite am E2-Endstand in beiden Läufen 393/0/25 (belege/um-e2/suite-2*.json).
-  - Vorgezogen und abgenommen: UM-E3-DS und UM-E3-SVG (E-075; dc2eb85e, 11be7fde, f526adf2; 9f623415, 3d481570).
-- Tor E2, Anlauf 1 (Workflow wf_791bb9d1-81f, Bericht `berichte/UM-E2-B.md` folgt), alle vier Gegenprüfer „nicht erfüllt“:
-  - Z-09: 24 ernste axe-Knoten am Datenschutz-Link im Banner → behoben in f5544581; axe misst Menü und Dialog jetzt in allen Größen.
-  - Z-10: 7 Messungen auf 5 Ansichten über der E0-Spanne (u. a. /leistungen mobil 95 → 90; TBT / mobil 88 → 208 ms) → ruhige, verschränkte Nachmessung E0 gegen HEAD.
-  - Z-03: 1-px-Höhe /bad/barrierefreies-bad d1440 unerklärt → Messung UM-E2-B-HOEHE läuft im Workflow.
-  - Herkunft: E2-Messungen liefen gegen 4314 = reinraum-6caeeb9c (server-4314.dir, Server ab 07:43 UTC); Werkzeuge schreiben ab f5544581 `server_stand`.
-- Nächster exakter Schritt:
-  1. Erledigt: Auswertung UM-E2-B (Bericht mit Vermerk); Höhenprobe: E0 und E2 gleich gebrochen (10705,75 px, 0,25 px über der Rundungsgrenze), Kipp nicht reproduziert; vertauschter Volllauf ohne Kipp (hing an /referenzen t768 nach Chromium-Absturz → Zeitlimit je Paar, hoehe_genau im Werkzeug).
-  2. Limit gegen 13:00 UTC (Reset 14:30), Neustart der Umgebung. Workflow wf_0f8b2460-335 lieferte nichts: Der Haiku-Messer startete Lighthouse nur im Hintergrund und endete. Lighthouse 8 von 12 Seiten gesichert (ZWISCHENSTAND).
-  3. Läuft seit 14:39 UTC: Skript `$SCRATCH/um-e2-b2/lauf-rest.sh` (Log `rest.log`, Ende-Marke „=== LAUF ENDE ===“), ohne Agenten: Kalibrierung (erledigt, Faktor 2,929), Lighthouse /ueber-uns, /kontakt, /standorte/wetzlar, /blog verschränkt, axe voll, Bildsatz, Register/reduziert, Pixel. Bei Abbruch: Skript ab dem fehlenden Schritt neu starten (Lighthouse mit --zusammenfuehren).
-  4. Erledigt: Messung (Belege `belege/um-e2-b2/`), Auswertung Leistung (wf_e0aa9ea7-730: LCP/Leistung im Rahmen, TBT mobil auf /, /leistungen, /balkon-terrasse 2–8 ms über der Spanne, / Desktop TBT 0 → 2) und Bestand (wf_7a7ba863-e85: Z-11, Z-06, Z-03 Pixel erfüllt). axe voll 396 Läufe: auf f5544581 50 ernste Knoten im Menüzustand → Logo-Link im Menü (25395ee4) und Hintergrund inert (51355ef7) → 0 auf 51355ef7 (4316). Navigations-Spec 47/47 in beiden Bewegungszuständen.
-  5. Läuft: volle Suite zweimal auf 4316 = 51355ef7 (Log `$SCRATCH/um-e2-b2/menue.log`). Danach E-076 (Tor E2 nach zwei Anläufen: offene Punkte TBT und Z-10 als Paket in PLAN), ABNAHME, PLAN, UPGRADE-Berichtigungen, Bericht UM-E2-B2.
-  (alt) Workflow wf_0f8b2460-335 (Nachmessung Anlauf 2 gegen 4315 = f5544581 und 4311 = 7ceb5e41, Belege `belege/um-e2-b2/`): Lighthouse verschränkt, axe voll, Bildsatz, Register/reduziert, Pixel; danach zwei Vergleiche mit Gegenprüfung. Während des Laufs keine Last auf dem Rechner. Bei Abbruch: mit resumeFromRunId fortsetzen.
-  3. Dokumentfehler berichtigen: UPGRADE Nr. 1 und 5 (Höhenpaar), Stufe-A-Belege U01 bis U03 (nur Commit-Texte), Routenzahl (routen.txt der Reinräume vergleichen).
-  4. E-076, ABNAHME Z-02/Z-03 Stand, PLAN UM-E2-B.
-- Server: 4311 = 7ceb5e41 (E0), 4314 = 6caeeb9c (E2-Endstand), 4315 = f5544581, 4316 = 51355ef7 (HEAD); 4313 gestoppt, reinraum-a6c1bd54 und reinraum-11be7fde gelöscht.
+- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · **Etappe E3, Welle E3-W1** · Stand 2026-10-27 17:45 MEZ
+- E2 abgeschlossen nach zwei Anläufen (E-076, Berichte `berichte/UM-E2-B.md`, `UM-E2-B2.md`):
+  - Z-02, Z-03, Z-06, Z-07, Z-09 und Z-11 auf Etappenstufe erfüllt.
+  - Offener Punkt Z-10: TBT mobil → UM-E3-TBT.
+  - HEAD 51355ef7 (Menü: Logo-Link, Hintergrund inert).
+- E3 bisher: UM-E3-DS und UM-E3-SVG vorgezogen und abgenommen (E-075).
+- Nächster exakter Schritt (PLAN 2.2, E3-W1):
+  1. UM-E3-ZUST-M (Orchestrator): Ladeschwelle 300/500 ms als Logik mit Test in Knopf; Auswahlknopf deaktiviert; Kontrollkästchen Hover, deaktiviert, 20 px.
+  2. Gleichzeitig Haiku: UM-E3-LCP-K (nur Bericht) und UM-E3-TBT (nur Bericht; Messung mit wechselnder Reihenfolge E0/HEAD/HEAD/E0, nur als Skript, nie neben anderen Läufen).
+  3. Danach E3-W2 UM-E3-MOD.
+- Server: 4311 = 7ceb5e41 (E0), 4315 = f5544581, 4316 = 51355ef7 (HEAD). 4314 aus (bei Bedarf `reinraum-6caeeb9c`).
+- Messregeln (E-076): Messungen als Skript, nie über einen Agenten. Lighthouse allein auf dem Rechner. Suite im Tor zweimal (`RELAUNCH_BEWEGUNG=an`). axe mit `--zustaende` prüft alle Größen.
 - Routinen: WEITER trig_013KjQUDqdr7LRnFeCaw9XWY (stündlich :30 UTC), Morgenbericht trig_01B6mPcvup5LmNmrzX4LFrJP (06:52 Europe/Berlin); alte Morgenbericht-Routine trig_01SJHduJbvG5gR7bm8jATK24 abgeschaltet.
-- Tempomat: Faktor 2,461 %/USD, Fenster 09:32–14:32 UTC, Sicherheitsziel 95; Bremse. Lange Messungen an Haiku, eigene Schritte gebündelt.
+- Tempomat: Faktor 2,929 %/USD (zweites Limit 27.10., Kalibrierpunkt). Planungsziel 85, bis zwei Fenster ohne Limit enden. Fenster 14:31–19:31 UTC.
 
 ## Vorlauf „Verständlich, echt, ausgezeichnet“
 
