@@ -1,0 +1,121 @@
+[
+ {
+  "nr": 1,
+  "seite": "/",
+  "stelle": "Fuß, linke Hälfte unter dem Kasten mit den Kontaktdaten (Kammer, Betrieb seit, USt-IdNr.), d1440, x 112 bis 600",
+  "problem": "Unter dem Kontaktblock bleibt eine dunkle leere Fläche, rechts laufen die Linkspalten weiter. Die drei Linkspalten enden ungleich hoch. Laut E-065 bewusst so belassen (Fuß links am Desktop, Schriftfeld des Betriebs).",
+  "schwere": "gering"
+ },
+ {
+  "nr": 2,
+  "seite": "/",
+  "stelle": "„Wir kümmern uns um alles, was mit Fliesen zu tun hat.“, erste Bereichsfliese „Badsanierung und neue Dusche“, y ≈ 6 820–6 910",
+  "problem": "Bei 200 % trennt der Browser „Badsa- / nierung“. Der Strich sitzt mitten im Wortteil statt an der Fuge „Bad-sanierung“. Das ist dieselbe holprige Trennung, die auf /referenzen bestätigt wurde und die E-065 mit der Fugenliste beheben sollte. Auf der Startseite greift die Fugenliste nicht: Bereichsfliesen in src/components/vorlagen/teile/Tun.tsx (Zeile 80) setzt {b.name} mit hyphens-auto und ohne mitFugen(). Glasbild, Weiter-Link, /preise und Abschlusskasten nutzen mitFugen() schon. Bei 100 % und d1440 steht das Wort ungetrennt. Der Text ist weder abgeschnitten noch verdeckt.",
+  "schwere": "gering"
+ },
+ {
+  "nr": 3,
+  "seite": "/",
+  "stelle": "„Hier sind wir für Sie unterwegs.“, Ortsliste „Mehr als 25 km ab Aßlar“: zweizeilig „Limburg an der Lahn“ (Trennlinie y 17 828, Name y 17 858–17 943, Entfernung y 17 964–17 982) und „Friedberg (Hessen)“ (Linie y 18 297, Name y 18 327–18 412, Entfernung y 18 433–18 451). Zum Vergleich einzeilig „Butzbach“ (Linie y 17 684, Name y 17 723–17 754, Entfernung y 17 783–17 801) und „Bad Nauheim“ (Linie y 18 009, Name ab y 18 048)",
+  "problem": "Die Liste hat bei großer Schrift weiter zwei Rhythmen. Bei einzeiligen Namen liegen 39 px zwischen Trennlinie und Name und 29 px zwischen Name und Entfernung. Bei zweizeiligen Namen sind es 30 px und 21 px. Der Name rückt dort an die Linie darüber, die Entfernung sitzt dichter darunter. Der Abstand von der Entfernung zur nächsten Linie ist überall 27 px. Ursache: Die Startseite nutzt nicht die Einsatzkarte, sondern src/components/vorlagen/teile/Einsatzorte.tsx. Dort steht am Link (Zeile 72) weiter min-h-11 mit items-center (2,75 rem, bei 200 % also 88 px) und kein @max-2xs:min-h-0. Einzeilige Namen stehen deshalb mittig in 88 px (Eintrag 144 px = 88 + Entfernung + pb-2), zweizeilige füllen die Mindesthöhe aus. Der Code-Kommentar verspricht „gleicher Abstand über und unter jeder Zeile, auch bei zweizeiligen Namen“. Die Änderung aus E-065 (@max-3xs:min-h-0) steht nur in Einsatzkarte.tsx. Der Unterschied ist mit 9 bzw. 8 px etwa halb so groß wie der Befund von Runde 4 auf /ueber-uns (17 px), aber in derselben Gruppe noch sichtbar. Damit stimmt „Ortsliste gleichmäßig“ für / nicht ganz.",
+  "schwere": "gering"
+ },
+ {
+  "nr": 4,
+  "seite": "/bad",
+  "stelle": "Projektcheck fürs Bad, Schritt 1 „Größe des Badezimmers in Quadratmetern“: d1440 y ≈ 9.045–9.110, m390 y ≈ 8.590–8.640, m390 bei 200 % y ≈ 24.510–24.705",
+  "problem": "Neben der Frage steht „noch keine Angabe“. Der Regler zeigt aber schon Griff und dunkel gefüllte Spur bei etwa 8 m², als wäre eine Größe eingestellt.",
+  "schwere": "gering"
+ },
+ {
+  "nr": 5,
+  "seite": "/bad/badsanierung",
+  "stelle": "Abschluss-H2 „Sprechen wir über Ihre Badsanierung.“, dritte Zeile „Badsanierung.“, y ≈ 19840–19900",
+  "problem": "Das Wort ragt rechts über den Textrand hinaus. Live gemessen: H2-Box x 32–358, die dritte Zeile reicht von x 32 bis 377, also 19 px über die Spalte. Bis zum Fensterrand bleiben noch 13 px. Weil die Zeile am linken Rand beginnt, steht sie sichtbar schief zu den beiden mittigen Zeilen darüber. Ursache: Schritt.tsx (Zeile 157) gibt den Titel ohne mitFugen weiter, obwohl „Badsanierung“ seit E4-W1-SICHT-H in FUGEN steht. Gleicher Stand wie in Runde 4 und bisher nicht unter „bewusst geblieben“ geführt.",
+  "schwere": "gering"
+ },
+ {
+  "nr": 6,
+  "seite": "/bad/badsanierung",
+  "stelle": "Zeitleiste „So kommen Sie zu Ihrem neuen Bad.“, Schritt 03, „ein Festpreisan-/gebot“ (y ≈ 12460). Dazu Abschnitt „So wird aus Ihrer Wanne eine sichere Dusche.“, fett gesetztes Glossarwort „Verbundab-/dichtung“ (y ≈ 6830–6885)",
+  "problem": "Beide Wörter werden mit Strich getrennt, aber nicht an der Fuge, sondern im hinteren Wortteil: „Festpreisan-gebot“ statt „Festpreis-angebot“, „Verbundab-dichtung“ statt „Verbund-abdichtung“. Leserinnen mit großer Schrift stolpern über die Bruchstücke „Festpreisan“ und „Verbundab“. Es ist dieselbe Fehlerart, die E4-W1-SICHT-H für Badsanierung, Terrassenplatten, Festpreisgarantie und Reaktionszeit über FUGEN behebt. „Festpreisangebot“ und „Verbundabdichtung“ fehlen dort. Gelesen werden kann es, darum nur gering.",
+  "schwere": "gering"
+ },
+ {
+  "nr": 7,
+  "seite": "/fliesen",
+  "stelle": "Abschnitt „Alles beginnt mit dem Boden.“, Fotoreihe unter der Musterwahl, rechtes Foto „Fischgrät“: d1440 y ≈ 3862–4266 (x 720–1327), m390 y ≈ 3582–3818, m390-s200 y ≈ 10632–10848",
+  "problem": "Das Fischgrät-Foto ist weich und verwaschen. Die Fugen verschwimmen grau, Rand und Ecke unten links sind dunkler. Neben dem scharfen Halbverband-Foto fällt das am Desktop auf.",
+  "schwere": "gering"
+ },
+ {
+  "nr": 8,
+  "seite": "/ueber-uns",
+  "stelle": "Abschnitt „So sind wir gewachsen.“, Leitsatz-Karte unter der Zeitleiste, m390-s200-voll.jpg etwa y 28690–29681 (Abschnitt ab etwa y 23915)",
+  "problem": "Bei 200 % ist der ganze Abschnitt schmaler als der Rest der Seite. Die Textspalte der Leitsatz-Karte misst nur rund 160 px. Das Motto steht in neun Zeilen, und die Unterschrift trennt „Fachbe- / triebs- / leiter,“ über drei Zeilen.",
+  "schwere": "gering"
+ },
+ {
+  "nr": 9,
+  "seite": "/standorte/wetzlar",
+  "stelle": "Abschnitt „Termin in Wetzlar anfragen“, Sendeknopf „Termin vor Ort anfragen“ im Formular, etwa y 17690–17930 (Pfeil bei etwa y 17885)",
+  "problem": "Bei 200 % bricht die Beschriftung in vier Zeilen um: „Termin vor“, „Ort“, „anfragen“, und der Pfeil steht allein in der vierten Zeile statt am letzten Wort. Der Hauptknopf im Einstieg macht es inzwischen richtig („anfragen →“, live nachgesehen). Im Formular wirkt der Pfeil dagegen wie ein eigenes Element, und der Knopf wird unnötig hoch. Das ist derselbe Stand wie in Runde 4 (SICHT-Notiz), nur bestätigt.",
+  "schwere": "gering"
+ },
+ {
+  "nr": 10,
+  "seite": "/standorte/wetzlar",
+  "stelle": "Einstieg, Vorspann unter den Knöpfen: bei 200 % etwa y 1290–1340, bei 100 % etwa y 450–478",
+  "problem": "Das Wort wird mitten im Wortteil statt an der Fuge getrennt: „Badsa-nierung“ bei 200 % und „Fliesenver-legung“ bei 100 %. Bei Badsanierung wurde die Trennung an der Fuge an anderen Stellen schon eingeführt (Glasbild-Namen, /preise), hier im Vorspann der Ortsseite noch nicht. Das ist derselbe Stand wie in der SICHT-Notiz, nur bestätigt.",
+  "schwere": "gering"
+ },
+ {
+  "nr": 11,
+  "seite": "/standorte/wetzlar",
+  "stelle": "Anfrageformular „Termin in Wetzlar anfragen“ (gemeinsames Schnellformular). Bei 100 %: Einleitung etwa y 5442–5467. Bei 200 %: Einleitung etwa y 15125–15170, Einwilligungstext etwa y 17100–17580, Fußzeile des Formulars etwa y 18150–18195",
+  "problem": "Mehrere Wörter werden mitten im Wortteil statt an der Fuge getrennt. Bei 100 % und 200 %: „Fachbe-triebsleiter“. Nur bei 200 %: „Verar-beitung“, „Kontaktauf-nahme“, „Datenschutzer-klärung“ (der Link liest sich als „Datenschutzer“ + „klärung“) und „Kostenfreie Erstbe-ratung“. Der Grund bei 200 % ist der breite Innenabstand der Formularkarte: Die Textspalte ist nur etwa 228 px breit, und der Einwilligungstext läuft über zehn Zeilen. Ähnlich wie bei der Vorspann-Trennung, betrifft aber den gemeinsamen Formularbaustein und damit vermutlich weitere Seiten.",
+  "schwere": "gering"
+ },
+ {
+  "nr": 12,
+  "seite": "/standorte/wetzlar",
+  "stelle": "Abschnitt „Das sagen unsere Kunden.“, zweite Karte (Erik S.), x etwa 447–680, y etwa 4826–4851",
+  "problem": "Das Wort in Großbuchstaben wird mitten im Wort getrennt: „HERVORRA-“ steht am Ende der Zeile und „GENDE!!!“ am Anfang der nächsten. In Versalien liest sich der Bruch besonders holprig. Der Wortlaut der Kundin oder des Kunden bleibt unverändert, nur die automatische Trennung stört.",
+  "schwere": "gering"
+ },
+ {
+  "nr": 13,
+  "seite": "/preise",
+  "stelle": "Preiskarte „Balkon & Terrasse“, m390-s200-voll.jpg: Trennlinie y ≈ 14945, „Feinsteinzeug“ y ≈ 15365, Knopf „Terrasse anfragen“ y ≈ 16712–16855",
+  "problem": "Bei 200 % ist der Inhalt dieser Karte breiter als in den drei Karten darüber. Trennlinie und Knopf stehen nicht bündig mit den anderen Karten, und „Feinsteinzeug“ wird nicht getrennt.",
+  "schwere": "gering"
+ },
+ {
+  "nr": 14,
+  "seite": "/preise",
+  "stelle": "Zusammenfassung im Kasten „Unverbindliche Projektanfrage“, m390-s200-voll.jpg y ≈ 26360–27130",
+  "problem": "Bei 200 % springt die Wertespalte: Die Leerangaben „noch keine Angabe“ stehen links, „0 € (Kostenfrei)“ und „Verbindlicher Festpreis“ rechtsbündig.",
+  "schwere": "gering"
+ },
+ {
+  "nr": 15,
+  "seite": "/preise",
+  "stelle": "Trennung an ungünstiger Silbe bei 200 %: (a) „Vakuumhe-betechnik“ in der Preiskarte „Große Fliesen ab 120 cm“, m390-s200-voll.jpg y ≈ 9480–9530; (b) Überschrift „Verbindliche Festpreisgarantie“ in der Zusagen-Karte, y ≈ 31070–31190; (c) „Schnelle Reaktionszeit“ im Abschlusskasten, y ≈ 35870",
+  "problem": "Die automatische Trennung bricht innerhalb eines Wortteils statt an der Fuge der Zusammensetzung („Vakuumhe-“, „Festpreisga-“, „Reakti-“).",
+  "schwere": "gering"
+ },
+ {
+  "nr": 16,
+  "seite": "/preise",
+  "stelle": "Einstieg, erster Knopf „Projektanfrage starten“ (gefüllt), y ≈ 2065–2255 (unter dem Vorspann, über „WhatsApp Schnellkontakt“)",
+  "problem": "Bei 200 % steht die Beschriftung in drei Zeilen: „Projektan- / frage / starten“. Sie ist linksbündig (ab x ≈ 81), und der Pfeil steht allein am rechten Rand (x ≈ 275–300), auf mittlerer Höhe. Das Wort bricht im Wortteil statt an der Fuge („Projekt-anfrage“). Das ist dieselbe Art Trennung wie Befund 3, die für „Festpreisgarantie“ und „Reaktionszeit“ über die Fugenliste behoben wurde. Den losen Pfeil hat diese Runde beim Hauptknopf bewusst ans letzte Wort gehängt und die Beschriftung mittig gesetzt. Hier, beim wichtigsten Knopf der Seite (Knopf mit icon=\"pfeil-rechts\", preise/page.jsx Z. 74), bleibt beides offen. Wer mit großer Schrift liest, sieht zuerst „Projektan-“ und einen Pfeil ohne Bezug. Bei 100 % (m390-voll.jpg y ≈ 540–585, d1440-voll.jpg y ≈ 408–458) ist der Knopf einzeilig und richtig. Der Befund steht nicht in der Liste der vorigen Runde. In den maschinellen Hinweisen ist er als gering aus Runde 4 vermerkt.",
+  "schwere": "gering"
+ },
+ {
+  "nr": 17,
+  "seite": "/preise",
+  "stelle": "(1) Preiskarte „Badsanierung“, Knopf „Badsanierung anfragen“, y ≈ 14007–14197; (2) Überschrift H2 des Abschlusskastens „Planen Sie ein Fliesen- oder Badprojekt? …“, y ≈ 35140–35250",
+  "problem": "Bei 200 % trennen zwei auffällige Stellen im Wortteil statt an der Fuge. (1) Der Knopf zeigt „Badsa- / nierung / anfragen“, obwohl „Badsanierung“ in dieser Runde mit „Bad-sanierung“ in die Fugenliste (FUGEN in zusammen.tsx) aufgenommen wurde. Der Knopftext auf /preise läuft nicht über mitFugen. (2) Die große H2 zeigt „Badpro- / jekt?“. Auf /preise setzt page.jsx Z. 250 für diese H2 `[&_h2]:hyphens-auto [&_h2]:[hyphenate-limit-chars:10_4_4]`. Weil vor dem Strich mindestens vier Zeichen stehen müssen, kann der Browser nicht an der Fuge „Bad-projekt“ trennen. Beides ist dieselbe Art wie Befund 3 (b, c), die jetzt behoben ist. In der Überschrift mit fs-6 fällt „Badpro-“ besonders ins Auge. Ein Strich steht jeweils da, abgeschnitten oder überlappend ist nichts. Bei 100 % trennt keines der Wörter (m390-voll.jpg, d1440-voll.jpg).",
+  "schwere": "gering"
+ }
+]

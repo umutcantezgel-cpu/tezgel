@@ -1,18 +1,18 @@
 # ABNAHME · Definition of Done · Lauf „Universal Motion“
 
-Stand 27.10.2026, E1, Fassung 2.0 (AUFTRAG.md Abschnitt 15). Jede Zeile: Kriterium · Methode · Schwelle · Beleg · E0 · Stand. Die Abnahmeliste des Vorlaufs liegt in `archiv/ABNAHME-verstaendlich-echt-ausgezeichnet.md`; ihre Kriterien Lesbarkeit (alt Z-12) und Adressen (alt Z-14) gehen hier in Z-02 und Z-11 auf. E0 dieses Laufs ist der Produktionsbau 7ceb5e41 (`belege/um-e0/`). Kriterien sinken nie still; erledigt ist nur, was geprüft ist. ENTFÄLLT gibt es nur bei Z-03.
+Stand 27.10.2026, E1, Fassung 2.1 (AUFTRAG.md Abschnitt 15; L0 Runde 1 eingearbeitet). Jede Zeile: Kriterium · Methode · Schwelle · Beleg · E0 · Stand. Die Abnahmeliste des Vorlaufs liegt in `archiv/ABNAHME-verstaendlich-echt-ausgezeichnet.md`; ihre Kriterien Lesbarkeit (alt Z-12) und Adressen (alt Z-14) gehen hier in Z-02 und Z-11 auf. E0 dieses Laufs ist der Produktionsbau 7ceb5e41 (`belege/um-e0/`). Kriterien sinken nie still; erledigt ist nur, was geprüft ist. ENTFÄLLT gibt es nur bei Z-03.
 
 ## Kriterien
 
 ### Z-01 Plan
 - Methode: Abgleich PLAN.md gegen Commits.
 - Schwelle: 100 % der Pflichtpakete erledigt und abgenommen, jede Zeile mit Commit-Kennung; Kür abgearbeitet, bis sie leer ist oder die LAUFZEIT endet.
-- Beleg: PLAN.md.
-- E0: 0 von 48 Pflichtpaketen (PLAN 2.0). Stand: offen.
+- Beleg: PLAN.md; Abgleich in UM-E5-BER.
+- E0: 0 von 55 Pflichtpaketen (PLAN 2.1). Stand: offen.
 
 ### Z-02 Bestand
 - Methode: Prüfstufe C; Reinraum (`reinraum.sh`); Durchlauf der Funktionsliste (LAGEBILD Abschnitt 3); Adressprüfung aller 202 Adressen; Lesbarkeit der Hauptansichten; Element-Pässe aus Abschnitt 9.
-- Schwelle: Build, Typprüfung, Linter und Tests mindestens so grün wie E0; keine Funktion schlechter; null neue Konsolenfehler; 202 Adressen mit dem Status aus E0 (200, 308 oder 410); Lesbarkeit grün bis auf die Ausnahmen A-1 und A-2 (Wortlaut des Auftraggebers); jedes Muss-Element zurückgeführt oder belegt zurückgestellt.
+- Schwelle: Build, Typprüfung, Linter und Tests mindestens so grün wie E0; keine Funktion schlechter; null neue Konsolenfehler; 202 Adressen mit dem Status aus E0 (200, 308 oder 410); Lesbarkeit grün; die H1 A-1 und A-2 sind Wortlaut des Auftraggebers und UNANTASTBAR (G8), die Lesbarkeitsprüfung nimmt sie deshalb aus. Das ist keine AUSNAHME nach L7; jedes Muss-Element zurückgeführt oder belegt zurückgestellt.
 - Beleg: `belege/um-e5/reinraum.txt`, `belege/um-e5/funktionsliste.md`, `belege/um-e5/adressen.json`, `belege/um-e5/lesbarkeit.md`.
 - E0: Reinraum 7ceb5e41 grün (Build, Typen, Linter, Tests, Graph Exit 0); `npm test` 210 von 210; Funktionssuite 393 bestanden, 0 rot, 25 übersprungen; Adressen 202 von 202 wie E0 des Vorlaufs (UM-E0-VERLUSTE); Lesbarkeit rot nur A-1, A-2; Muss-Verluste EP-1 bis EP-3 offen. Stand: offen.
 
@@ -65,21 +65,21 @@ Stand 27.10.2026, E1, Fassung 2.0 (AUFTRAG.md Abschnitt 15). Jede Zeile: Kriteri
 - E0: `belege/um-e0/lighthouse.json` (Messreihe, letzter Schritt). Stand: offen.
 
 ### Z-11 Darstellung
-- Methode: Bildsatz der Hauptansichten und der Stichprobe in allen Gerätegrößen (und den zehn Größen des Vorlaufs), 200 % Schrift, mit Überlauf- und Überlappungsprüfung.
+- Methode: Bildsatz der Hauptansichten und der Stichprobe in den vier GERÄTEGRÖSSEN (390 × 844, 768 × 1024, 1440 × 900, 1920 × 1080), dazu 200 % Schrift und Reflow 320 px, mit Überlauf- und Überlappungsprüfung. Themen: hell (einziges Thema; kommt UM-K07, auch dunkel). Sprachen: Deutsch.
 - Schwelle: kein Überlauf, kein abgeschnittener oder überlappender Text.
 - Beleg: `belege/um-e5/bildsatz.json`.
-- E0: Bildsatz der vier Größen in `$SCRATCH/um-e0/bildsatz/` (Messreihe); Browserprüfung Runde 5 des Vorlaufs mit 17 geringen Befunden. Stand: offen.
+- E0: Bildsatz der vier Größen in `belege/um-e0/` (Messreihe); Browserprüfung Runde 5 des Vorlaufs mit 17 geringen Befunden (`belege/um-e0/runde5-befunde.json`). Stand: offen.
 
 ### Z-12 Kontingent
 - Methode: KONTINGENT.md.
 - Schwelle: kein Limit-Ereignis außer im Endspurt eines Fensters oder als Kalibrierpunkt ohne Messwert; jedes abgeschlossene Fenster mit Messwert endet zwischen Fensterziel minus 10 Punkte und Fensterziel, außer es fehlten bereite Pakete.
-- Beleg: KONTINGENT.md.
+- Beleg: KONTINGENT.md; Nachweis in UM-E5-KONT.
 - E0: ein Limit-Ereignis am 26.10. (vor dem Auftrag, Kalibrierpunkt). Stand: offen.
 
 ### Z-13 Übergabe
 - Methode: Endprüfung.
 - Schwelle: BERICHT.md, KERN.md, UPGRADE.md, MENSCHEN.md und die Anleitung zum Zusammenführen und Zurückrollen vollständig.
-- Beleg: die Dateien.
+- Beleg: die Dateien; die Anleitung steht in `ZUSAMMENFUEHREN.md`. Schreiber: UM-E5-BER (alle fünf), UM-E4-DOK (README, EINRICHTUNG).
 - E0: KERN v4.0, UPGRADE.md angelegt. Stand: offen.
 
 ## Umgebungsausnahmen (zählen nicht als AUSNAHME)

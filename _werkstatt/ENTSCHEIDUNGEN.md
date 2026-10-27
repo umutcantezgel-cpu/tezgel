@@ -708,3 +708,32 @@ Grundlage: Berichte `berichte/UM-E0-{STACK,BEWEGUNG,DESIGN,VERLUSTE,QUALITAET,KO
   - Zwei belegte Anläufe gehören dazu: (1) der Peer-Befund in UM-E0-STACK; (2) ein Installationsversuch ohne `--legacy-peer-deps` in E2.
   - Gelingt beides nicht, bleibt die kompatible Version mit Vermerk in MENSCHEN.md.
 - **Sicherheit zuerst:** next 16.4.3 (kritisch), zod 4.6.7, sharp 0.35.5, source-map-js. `npm audit` mit null hohen oder kritischen Befunden ist das Ziel von Z-03.
+
+## E-068 · L0 Runde 1: Plan 2.1 und Entscheidungen zu den offenen Fragen (27.10.2026, 06:30 MEZ, Orchestrator)
+Der Haiku-Prüfer (UM-E1-PRUEF-L0, `berichte/UM-E1-L0.md`) fand 15 Befunde. Alle 15 sind berechtigt und eingearbeitet (PLAN 2.1, ABNAHME 2.1, UPGRADE.md):
+- **Dateihoheit:** jede Zeile mit exakter Dateiliste. Die gemeinsamen Dateien sind im PLAN-Kopf aufgezählt. E2 bis E5 haben nummerierte Wellen, damit keine zwei gleichzeitigen Pakete dieselbe Datei schreiben.
+- **Pakete mit zwei Modellen sind geteilt:**
+  - E3-B / E3-SICHT, E4-B / E4-SICHT.
+  - E5-BER in E5-GAL (Haiku) und E5-BER (Opus).
+  - ZUST in ZUST-M (Muster, Opus) und ZUST (5 Bausteine, Haiku). Die Zahl der lückenhaften Bausteine ist 8, wie in UM-E0-DESIGN.
+  - FS in FS-K (Zuordnung), FS-FUGEN (gemeinsame Datei `zusammen.tsx`) und FS (Bau).
+- **VIDEO:** Klasse M statt S, weil es eigene Arbeit ist.
+- **Konfiguration `src/config/*`:** ist gemeinsam. SVG und NBSP melden ihren Bedarf; ich übertrage ihn am Wellenende.
+- **Z-01, Z-12, Z-13:** haben jetzt Schreiber: E5-BER (Z-01, Z-13), E5-KONT (Z-12), E4-DOK (README, EINRICHTUNG).
+- **Kapazität ohne Doppelzählung:** 55 Pakete, ≈ 230 USD, ≈ 4,8 Fenster zu 95 %, ≈ 46 Pakete je Tag, ≈ 1,4 Tage.
+- **Quelle der Runde-5-Befunde:** gesichert in `belege/um-e0/runde5-befunde.json`.
+- **Abhängigkeiten:** U03 und E2-B hängen von PX ab. Der Linkfilter mit Ansichtsart gehört zu B01.
+- **sharp:** im Projekt über U05, in den Werkzeugen über U07. Die Zeilen 18 und 23 tragen Versionen. TypeScript 7 und ESLint 10 haben je zwei Anläufe.
+
+Antworten auf die offenen Fragen des Prüfers:
+- **Node-Ziel:** die LTS am Upgradetag nach `nodejs.org/dist/index.json`. Heute ist das 24.22.1. Führt der Index 26 beim Abschluss von U01 als LTS, gilt 26 (E-067-6).
+- **A-1 und A-2:** Die beiden H1 sind Wortlaut des Auftraggebers und UNANTASTBAR (G8). Die Lesbarkeitsprüfung nimmt sie aus. Das ist keine AUSNAHME nach L7, also auch kein Verstoß gegen „keine Ausnahme für Z-02“.
+- **Z-11:** gilt in den vier GERÄTEGRÖSSEN der Einstellungen plus 200 % Schrift und Reflow 320 px. Die zehn Größen des Vorlaufs entfallen als Pflicht. Themen: hell; dunkel nur mit UM-K07. Sprachen: Deutsch.
+- **Kopfskript:** Der Bewegungsschalter muss vor dem ersten Bild gesetzt sein. Darum schreibt MOD `_dokument.tsx` und `src/lib/motion/kopfskript.ts`. EIN nutzt das Kopfskript nur über `Intro.tsx`. SCROLL ergänzt danach in derselben Datei die Speculation Rules. Alles ist Orchestrator-Arbeit nacheinander.
+
+Element-Pässe ohne Entscheidung im Vorlauf (UM-E0-VERLUSTE, Fragen 2 und 3):
+- **EP-1 bis EP-3:** In ENTSCHEIDUNGEN.md steht keine bewusste Entfernung. Sie gelten als übersehen und kommen als Muss zurück (EP1 bis EP3). Garantiewörter mit rechtlicher Bindung bleiben sinngleich (M-07, MENSCHEN M-23).
+- **EP-4 (Service-Knoten auf 47 Seiten):**
+  - Auch hier gibt es keine Entscheidung. Er kommt als Soll über die Ordner-Layouts zurück, wie in E0.
+  - Seiten mit eigenem Service-Knoten bekommen keinen zweiten; ein Test sichert das.
+  - Das ist kein Widerspruch zu E3-SEO-JSONLD („jede Seite trägt ihre eigene“): Es ist derselbe Knoten an einer gemeinsamen Stelle.
