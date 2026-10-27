@@ -16,6 +16,9 @@ const nextConfig: NextConfig = {
     return [
       { source: '/bad/budgetkalkulator', destination: '/bad/projekt-check', permanent: true },
       { source: '/blog/barrierefreies-bad-planung-zuschuesse', destination: '/bad/barrierefreies-bad', permanent: true },
+      // Logo-SVGs mit eingebettetem PNG (je 396 KB, nirgends eingebunden) entfernt; die Adressen führen auf dasselbe Bild als PNG (UM-E3-SVG, E-075)
+      { source: '/images/logo/tezgel-logo.svg', destination: '/images/logo/tezgel-logo.png', permanent: true },
+      { source: '/images/logo/tezgel-logo-dark.svg', destination: '/images/logo/tezgel-logo-dark.png', permanent: true },
     ];
   },
   images: {

@@ -1,7 +1,7 @@
 // OFFICIAL COMPANY DATA - FLIESENVERLEGUNG TEZGEL
 // Master Data Hub for Aßlar, Wetzlar, Mittelhessen & Hessen
 
-import { Award, Heart, Clock, Sparkles, ShieldCheck, Ruler } from 'lucide-react';
+// Icon-Werte: Namen der eigenen Icon-Familie oder null (entfällt), K-009 und UM-E3-SVG; die Texte sind unverändert
 
 export const COMPANY_DATA = {
     // Legal Information
@@ -134,17 +134,17 @@ export const COMPANY_DATA = {
         {
             title: "Normgerechte Verbundabdichtung (DIN 18534)",
             description: "Normgerechte Abdichtung im Verbund für Walk-In-Duschen, Nassbereiche und Terrassen. Lückenloser Schutz vor Feuchtigkeitsschäden.",
-            icon: ShieldCheck
+            icon: 'abdichtung'
         },
         {
             title: "Eingetragener HWK-Wiesbaden Fachbetrieb",
             description: "Handwerkliche Perfektion, geprüfte Standards und fachgerechte Präzision bei Großformaten, Schnittbildern und Fugenachsen.",
-            icon: Award
+            icon: null
         },
         {
             title: "Staubschutz & Sauberkeitsversprechen",
             description: "Einsatz moderner Staubschutztüren, Luftreiniger und Schutzabdeckungen. Wir hinterlassen Ihr Objekt besenrein.",
-            icon: Sparkles
+            icon: null
         }
     ],
 
@@ -186,12 +186,12 @@ export const COMPANY_DATA = {
 };
 
 export const values = [
-    { icon: Award, title: "HWK Wiesbaden Mitglied", description: "Offiziell eingetragener Fachbetrieb für Fliesen-, Platten- und Mosaikverlegung." },
-    { icon: ShieldCheck, title: "DIN 18534 Abdichtung", description: "Normgerechte Verbundabdichtung für dauerhaft dichte Nassbereiche." },
-    { icon: Sparkles, title: "Staubschutz-Garantie", description: "Saubere Baustellenführung mit Schutzvliesen und moderner Staubabsaugung." },
-    { icon: Clock, title: "Termintreue & Festpreis", description: "Verbindliche Zeitpläne und klare Kosten ohne versteckte Aufschläge." },
-    { icon: Ruler, title: "Großformat-Präzision", description: "Nivelliersystem für absolut planebene XXL-Fliesen und harmonische Fugenbilder." },
-    { icon: Heart, title: "Kundenbegeisterung", description: "„Die Zufriedenheit unserer Kunden ist die beste Reklame für uns.“" }
+    { icon: null, title: "HWK Wiesbaden Mitglied", description: "Offiziell eingetragener Fachbetrieb für Fliesen-, Platten- und Mosaikverlegung." },
+    { icon: 'abdichtung', title: "DIN 18534 Abdichtung", description: "Normgerechte Verbundabdichtung für dauerhaft dichte Nassbereiche." },
+    { icon: null, title: "Staubschutz-Garantie", description: "Saubere Baustellenführung mit Schutzvliesen und moderner Staubabsaugung." },
+    { icon: 'uhr', title: "Termintreue & Festpreis", description: "Verbindliche Zeitpläne und klare Kosten ohne versteckte Aufschläge." },
+    { icon: 'aufmass', title: "Großformat-Präzision", description: "Nivelliersystem für absolut planebene XXL-Fliesen und harmonische Fugenbilder." },
+    { icon: null, title: "Kundenbegeisterung", description: "„Die Zufriedenheit unserer Kunden ist die beste Reklame für uns.“" }
 ];
 
 export const processSteps = [

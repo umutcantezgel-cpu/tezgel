@@ -4,5 +4,6 @@
 // mit multipass: true würde jeder Lauf schon ein Fixpunkt sein und die Prüfung wäre wirkungslos.
 export default {
   multipass: false,
-  plugins: ['preset-default'],
+  // Zugänglichkeit bleibt (Z-08, E-075): role am <svg> und die Kennungen von <title>/<desc>, auf die aria-labelledby zeigt
+  plugins: [{ name: 'preset-default', params: { overrides: { removeUnknownsAndDefaults: { keepRoleAttr: true }, cleanupIds: { preserve: ['title', 'desc'] } } } }],
 };

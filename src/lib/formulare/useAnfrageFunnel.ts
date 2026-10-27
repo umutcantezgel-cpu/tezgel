@@ -1,13 +1,6 @@
 // Logik der Express-Anfrage (F-03, TezgelAnfrageFunnel) – wörtlich aus der Komponente verschoben (P3-00l).
 // Ohne Markup; Bestand und Kern-Ansicht nutzen denselben Hook.
 import React, { useState } from 'react';
-import {
-  Droplets,
-  Sparkles,
-  Sun,
-  Layers,
-  ShieldCheck
-} from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
 import { openWhatsApp } from '@/lib/whatsapp';
 
@@ -16,35 +9,35 @@ export const PROJECT_TYPES = [
     id: 'bad',
     title: 'Bad & Wellness',
     subtitle: 'Bodengleiche Dusche, große Fliesen, Nischen für Ablagen',
-    icon: Droplets,
+    icon: 'bad',
     badge: 'Sehr beliebt'
   },
   {
     id: 'wohnen',
     title: 'Wohnbereich & Neubau',
     subtitle: 'Küche, Flur und Wohnräume',
-    icon: Sparkles,
+    icon: null,
     badge: 'Großformat'
   },
   {
     id: 'balkon',
     title: 'Balkon & Terrasse',
     subtitle: 'Frostfeste Platten für draußen',
-    icon: Sun,
+    icon: 'balkon',
     badge: 'Frostsicher'
   },
   {
     id: 'treppe',
     title: 'Treppen & Naturstein',
     subtitle: 'Stufen mit Fliesen, Granit oder Naturstein',
-    icon: Layers,
+    icon: 'untergrund',
     badge: 'Präzision'
   },
   {
     id: 'untergrund',
     title: 'Untergrund & Abdichtung',
     subtitle: 'Boden ausgleichen, Bad abdichten (DIN\u00a018534)',
-    icon: ShieldCheck,
+    icon: 'abdichtung',
     badge: 'DIN-Norm'
   }
 ];
