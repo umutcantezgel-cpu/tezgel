@@ -59,3 +59,8 @@ Uhrzeit · Fenster Verbrauch, Soll, Ziel · Woche Verbrauch, Spielraum · belegt
   - Kalibrierung ausgeführt: Kalibrierpunkt gespeichert: Fenster 2026-10-27 14:30–2026-10-27 19:30 UTC · Kosten $16.33 · 100 % · Faktor 6.122 · Quelle limit · Stand 2026-10-27
 - 2026-10-27 21:31 MEZ · Schätzung nicht erhalten (Werkzeug über 280 s) · Plätze 0 Haiku (LCP-K fertig), Prüfkette ZUST-M als Skript · Planungsziel 60
 - 2026-10-27 22:31 MEZ · Fenster 93.4 % (Soll 38.2 %, Ziel 95 %) 2026-10-27 19:30–2026-10-28 00:30 UTC · Woche ? % · Bremse · Quelle Schätzung (Faktor 6.122, Stand 2026-10-27) · Plätze 1 Haiku (TBT-Auswertung) · Planungsziel 60, gebündelte Schritte
+- 2026-10-27 22:36 MEZ · **Pause bis zum Fensterwechsel.**
+  - Die Schätzung mit dem neuen Faktor 6,122 zeigt 93,4 % um 21:35 UTC (Soll 38,2 %). Bei dieser Lage käme das vierte Limit vor dem Fensterende 00:30 UTC; Z-12 erlaubt das nur im Endspurt.
+  - Deshalb ist die Haiku-Auswertung UM-E3-TBT angehalten; ihre Arbeit ist gespeichert und wird mit SendMessage fortgesetzt.
+  - Die Routine WEITER antwortet bis 00:30 UTC nur knapp.
+  - Ab 00:30 UTC: TBT-Auswertung fortsetzen, dann UM-E3-MOD.
