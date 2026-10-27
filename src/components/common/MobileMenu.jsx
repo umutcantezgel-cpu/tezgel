@@ -21,8 +21,27 @@ const istOffen = (el) => {
     }
 };
 
+// Die Routenansage von Next bleibt erreichbar (aria-live), auch wenn ein Menüpunkt die Seite wechselt
+const NIE_INERT = new Set(['SCRIPT', 'STYLE', 'TEMPLATE', 'LINK', 'META', 'NEXT-ROUTE-ANNOUNCER']);
+
+/** Bei offenem Blatt ist der Rest der Seite inert (E-076): Tastatur und Bildschirmleser bleiben im Blatt wie bei einem
+ *  modalen Dialog; auf schmalen Bildschirmen deckt das Blatt die Seite ohnehin ganz ab. Gesperrt werden die Geschwister
+ *  entlang des Wegs vom Blatt bis body; gelöst werden nur Elemente, die das Menü selbst gesperrt hat. */
+function sperreHintergrund(blatt, gesperrt) {
+    for (const el of gesperrt.splice(0)) el.inert = false;
+    if (!blatt) return;
+    for (let e = blatt; e.parentElement && e !== document.body; e = e.parentElement) {
+        for (const g of e.parentElement.children) {
+            if (g === e || g.inert || NIE_INERT.has(g.tagName)) continue;
+            g.inert = true;
+            gesperrt.push(g);
+        }
+    }
+}
+
 // Menü als Popover-Blatt (KERN v3 K-009): fünf Bereiche mit je einer Ebene, passt auf 360 × 740 ohne Scrollen; öffnet nativ über popovertarget, auch bevor React hydriert ist;
-// Escape und Klick daneben schließen es. React hält nur aria-expanded, das Aufklappen der Bereiche und den Fokus.
+// Escape und Klick daneben schließen es. React hält nur aria-expanded, das Aufklappen der Bereiche, den Fokus und die
+// Sperre des Hintergrunds (inert, E-076).
 // Fuß des Blatts: nur der Hauptknopf; Anrufen und WhatsApp am Ende der Liste; Öffnungszeiten und Rechtliches stehen im Fuß
 // der Seite (Platz auf 360 × 740 und bei großer Systemschrift, Sichtprüfung E2 Runden 1 bis 3).
 export default function MobileMenu({ isOpen, onToggle }) {
@@ -34,11 +53,27 @@ export default function MobileMenu({ isOpen, onToggle }) {
     useEffect(() => {
         const el = blattRef.current;
         if (!el) return undefined;
-        const onToggleEvent = (event) => onToggle(event.newState === 'open');
+        const gesperrt = [];
+        // Lösen vor dem Schließen: Der Browser gibt den Fokus beim Schließen an den Öffner zurück, der nicht mehr inert sein darf.
+        const onBeforeToggle = (event) => {
+            if (event.newState === 'closed') sperreHintergrund(null, gesperrt);
+        };
+        const onToggleEvent = (event) => {
+            if (event.newState === 'open') sperreHintergrund(el, gesperrt);
+            onToggle(event.newState === 'open');
+        };
+        el.addEventListener('beforetoggle', onBeforeToggle);
         el.addEventListener('toggle', onToggleEvent);
         // Vor der Hydrierung geöffnet: Zustand übernehmen.
-        if (istOffen(el)) onToggle(true);
-        return () => el.removeEventListener('toggle', onToggleEvent);
+        if (istOffen(el)) {
+            sperreHintergrund(el, gesperrt);
+            onToggle(true);
+        }
+        return () => {
+            el.removeEventListener('beforetoggle', onBeforeToggle);
+            el.removeEventListener('toggle', onToggleEvent);
+            sperreHintergrund(null, gesperrt);
+        };
     }, [onToggle]);
 
     // Jede Navigation schließt das Blatt (auch Zurück/Vor).
