@@ -1,12 +1,12 @@
-# KERN · Lauf „Verständlich, echt, ausgezeichnet“ · Version 3.6
+# KERN · Lauf „Universal Motion“ · Version 4.0
 
-Stand 24.10.2026, E1. Quelle der Wahrheit für alle Pakete. Hervorgegangen aus KERN v2 „Verlegeplan“ (`archiv/2026-10-werkstatt/KERN.md`): Werte und Bausteine von v2 gelten weiter, soweit dieser Kern sie nicht ändert. Über dem Kern stehen Grenzen und Leitplanken, Bestand und Adressen, Verständlichkeit, Zugänglichkeit und Leistung und die Abnahmeliste (Auftrag Abschnitt 4). **[A]** = Annahme (offen in MENSCHEN.md). Jedes Paket nennt die Kern-Version, gegen die es gebaut wurde.
+Stand 27.10.2026, E1 (E-066, E-067). Quelle der Wahrheit für alle Pakete. Hervorgegangen aus KERN v3.6 des Vorlaufs „Verständlich, echt, ausgezeichnet“: Werte, Bausteine und Entscheidungen von v3.6 gelten weiter, soweit dieser Kern sie nicht ändert. Die alten Kennungen bleiben über die Brückentabelle am Ende gültig, damit Verweise im Code nicht ins Leere laufen. Über dem Kern stehen Grenzen und Leitplanken, Bestand, Zugänglichkeit und Leistung und die Abnahmeliste (AUFTRAG.md Abschnitt 4). **[A]** = Annahme (offen in MENSCHEN.md). Jedes Paket nennt die Kern-Version, gegen die es gebaut wurde.
 
 ## Das Projekt in fünf Sätzen
-1. tezgel.de ist die Website von Fliesenverlegung Tezgel, dem Fliesenlegerbetrieb von Deniz Tezgel in der Hohwardstraße 14, 35614 Aßlar; sie ist mit Next.js 16.3.6, React 19 und Tailwind 4 gebaut und wird über Vercel ausgeliefert.
+1. tezgel.de ist die Website von Fliesenverlegung Tezgel, dem Fliesenlegerbetrieb von Deniz Tezgel in der Hohwardstraße 14, 35614 Aßlar; sie ist mit Next.js, React und Tailwind 4 gebaut, wird über Vercel ausgeliefert und steht nach diesem Lauf auf dem neuesten stabilen Stand ihres Stacks.
 2. Die Seite hat 170 Adressen: Bad und Badsanierung, Fachthemen, 13 Ortsseiten, Ratgeber, Werkzeuge für Anfragen und Rechtstexte.
-3. Ziel dieses Laufs ist eine Seite, die jeder Laie ohne Hilfe versteht; Prüfstein ist eine 72-jährige Kundin, die am Handy ihre Wanne gegen eine bodengleiche Dusche tauschen will.
-4. Echte Fotos, eine durchgehende Geschichte, ein Intro mit sich zeichnendem Logo und ein Seitenwechsel, bei dem sich Fliesen verlegen, heben die Gestaltung auf Award-Niveau.
+3. Prüfstein bleibt eine 72-jährige Kundin, die am Handy ihre Wanne gegen eine bodengleiche Dusche tauschen will: Sie versteht jede Seite ohne Hilfe, und jede Bewegung ist für sie verständlich, abschaltbar und nie im Weg.
+4. Die Leitidee „Klar verlegt“ trägt den Seitenwechsel Fliese für Fliese, den Eingang an der Schnur, die rote Laserlinie als Leitfaden und das Fugenkreuz als Cursor; echte Fotos zeigen die Arbeit.
 5. Jede Adresse, jede Funktion, die Rechtstexte, Kundenstimmen und Firmendaten bleiben erhalten; die Seite bleibt schnell und zugänglich.
 
 ## K-001 Leitidee
@@ -14,8 +14,9 @@ Stand 24.10.2026, E1. Quelle der Wahrheit für alle Pakete. Hervorgegangen aus K
 - Herleitung: Der Anlass des Laufs ist Unverständlichkeit. Ein Fliesenleger schafft Ordnung, indem er eins nach dem anderen legt, im Verband, an einer Schnur oder Laserlinie, und am Ende sieht jeder sofort, ob es stimmt. Genau das braucht der Kunde: eine Sache je Schritt, in fester Reihenfolge, mit einer Linie, die führt. „Klar verlegt“ heißt gleichzeitig sauber gearbeitet und verständlich dargelegt.
 - Folgen für jede Entscheidung: ein Gedanke je Block (eine Fliese); feste Reihenfolge nach der Seitenformel (Verband); Abstände aus Fliese und Fuge (Fugenraster); genau ein Versatz je Bildschirm als bewusster Bruch (Drittelverband); eine Laserlinie, die führt (Orientierung); Bewegung legt Dinge an ihren Platz und federt nie nach (Gummihammer); das Ergebnis zeigt sich in echten Fotos (fertig daliegen).
 - Austauschprobe: Eine Bäckerei hat keinen Verband, keine Fuge, kein Gefälle und keine Laserlinie; ein Steuerbüro legt keine Fliesen. Seitenwechsel „Verlegen“, Intro „Logo zeichnet sich“, Schichtaufbau, Gefälle und Verlegemuster bestehen die Probe einzeln (Register K-007).
+- Signatur-Satz aus derselben Leitidee: K-007 (E-067-1).
 
-## K-002 Personen und Hauptaufgaben
+## K-002 Marke, Zielgruppe und fünf Hauptaufgaben
 - Marke: Fliesenverlegung Tezgel, Inhaber Deniz Tezgel, Hohwardstraße 14, 35614 Aßlar; eingetragen bei der Handwerkskammer Wiesbaden seit 2008 (K-015). Gefühl: ruhige Sorgfalt, ehrliches Handwerk, persönlich.
 - Personen für Probeläufe (Auftrag Abschnitt 6), mit Ort für A6 und Standardgerät:
   - P1 Rentnerin, 72, will die Wanne durch eine bodengleiche Dusche ersetzen · Solms · m390 mit Systemschrift 200 %.
@@ -24,7 +25,8 @@ Stand 24.10.2026, E1. Quelle der Wahrheit für alle Pakete. Hervorgegangen aus K
   - P4 Hausbesitzer, auf dessen Balkon Wasser steht · Braunfels · d1280.
   - P5 Kunde mit Deutsch als Zweitsprache, will einfach einen Termin · Limburg · m390.
   - Jede Person läuft zusätzlich in der anderen Gerätegruppe (mobil ↔ d1440).
-- Hauptaufgaben: A1 in einem Satz sagen, was der Betrieb macht und wo · A2 Telefon oder WhatsApp finden · A3 einen Termin vor Ort anfragen, bis vor den Absendeknopf · A4 Bilder fertiger Arbeiten zur eigenen Lage finden · A5 verstehen, wie der Ablauf ist und ob der Termin vor Ort etwas kostet · A6 herausfinden, ob der Betrieb in einem bestimmten Ort arbeitet.
+- Zielgruppe (abgeleitet, [A]): vor allem ältere Eigentümerinnen und Eigentümer im Umkreis von Wetzlar, die einen verlässlichen Handwerker für einen Termin vor Ort suchen; daneben Familien im Neubau, Vermieter und Hausverwaltungen.
+- Fünf Hauptaufgaben (v4; die sechs Aufgaben des Vorlaufs sind zusammengelegt, `probelauf.mjs` zählt A6 weiter als Teil von A1): A1 in einem Satz sagen, was der Betrieb macht und ob er im eigenen Ort arbeitet (alt A1 und A6) · A2 Telefon oder WhatsApp finden · A3 einen Termin vor Ort anfragen, bis vor den Absendeknopf · A4 Bilder fertiger Arbeiten zur eigenen Lage finden · A5 verstehen, wie der Ablauf ist und ob der Termin vor Ort etwas kostet.
 - Werkzeug: `_werkstatt/werkzeuge/probelauf.mjs`, Protokoll `werkzeuge/PROBELAUF.md`. Hauptansichten: `HAUPTANSICHTEN.json` (fest seit E0).
 
 ## K-003 Gestaltungsprinzipien
@@ -35,6 +37,19 @@ Stand 24.10.2026, E1. Quelle der Wahrheit für alle Pakete. Hervorgegangen aus K
 5. **Eine Linie führt.** *Tun:* die rote Laserlinie trennt, führt und markiert den aktuellen Ort (Navigation, Fortschritt, Schrittfolge); Rot sonst nur für Fehler. Der Hauptknopf ist eine tintendunkle Fläche. *Lassen:* rote Flächen, Verläufe, Leuchteffekte, Orange außerhalb des Logos.
 6. **Bewegung legt, nie schwebt.** *Tun:* Dinge kommen kurz und fest an ihren Platz wie eine Fliese unter dem Gummihammer; jede Bewegung hat einen Zweck aus dem Register. *Lassen:* Federn, Schweben, Endlosschleifen, hochzählende Zahlen, Nachlauf-Cursor.
 7. **Ruhige Hand auf Arbeitsseiten.** *Tun:* Formulare dicht, beschriftet, mit allen Zuständen; ein Weg je Aufgabe; nur Rückmeldung und Zustandswechsel. *Lassen:* Inszenierung, mehrere Formulare im selben Bildschirm.
+8. **Ruhe als Haltung** (alt K-016, E-047, Wunsch des Auftraggebers nach der Durchsicht der Live-Seite): siehe die Regeln unten. *Tun:* zwischen den Höhepunkten Stille; ein Dauermotiv höchstens je Erzählansicht; jede Bewegung abschaltbar. *Lassen:* Effektfeuer, Daueranimationen, laute Auftritte auf Arbeitsansichten.
+- GESCHMACK (abgeleitet aus Rückmeldungen des Auftraggebers, [A]): Ruhe statt Effektfeuer; Seitenwechsel „Fliese für Fliese“ mit Logo auf der Wand, eher langsam; die alten SVG-Bewegungen bleiben (E-037); Kundenstimmen als langsames Karussell; keine Hausschrift außer dem Bestand.
+
+### Ruhe-Regeln (alt K-016)
+Geht K-005 und K-006 vor, wo sie sich widersprechen. Leitsatz: „Man soll genau sehen, wo man hinschaut, und nichts verwirrt.“
+- **Fläche:** ein Gedanke je Bildschirm, viel freie Fläche. Nie zwei Stränge nebeneinander (Text links und Bild oder zweiter Text rechts zugleich); Köpfe der Abschnitte mittig (`Abschnitt mitte`), außer Ablauf-Treppe und Einsatzorte (gelobt, bleiben).
+- **Einstieg:** mittig (`EinstiegMitte`): H1 in `fs-6`, darunter eine Zeile, was und wo; Hauptknopf, Anruf, WhatsApp; Bewertungszeile; dann das Foto vollständig.
+- **Text:** weniger je Seite. Fachtext für Suchmaschinen weiter unten in „Mehr erfahren“ oder auf eigenen Unterseiten (z. B. Normen), nicht neben Zeichnungen. Firmendaten (Inhaber, Kammer, Betrieb seit) nur auf `/kontakt`, `/ueber-uns` und im Fuß. Keine Versprechen, die sich nicht halten lassen („zum Festpreis“, nicht „ohne Stress“).
+- **Bilder:** immer vollständig im eigenen Seitenverhältnis, nie angeschnitten, nie aneinandergequetscht. Reihen von Fotos als Karussell, in dem jede sichtbare Karte ganz im Bild steht (Kartenbreite teilt die Zeile genau). Keine Unterschrift unter Galeriefotos: Name und Weg zur Leistung auf der Glasfläche (`Glasbild`, beim Darüberfahren; ohne Maus immer sichtbar). Jedes Bild mit eigenem Alt-Text. KI-Bilder nur als Stimmungsbilder, nie unter „Unsere Arbeiten“ oder bei Referenzen.
+- **Karussells** (`Karussell`, Register `karussell`): langsam, von rechts nach links; Laufband 60 s je Durchlauf (Qualifikationen im Fuß), Reihe mit Selbstlauf alle 8 s (Kundenstimmen, gleich große Karten). Halten bei Maus und Fokus an, Knopf zum Anhalten (WCAG 2.2.2); reduziert, ohne JavaScript und im Notaus kein Selbstlauf.
+- **Abläufe** auf einen Blick: Treppe bis vier Schritte; ab fünf Schritten Kopf und Satz mittig, darunter zwei Spalten (1 bis 3, 4 bis 6) oder eine Roadmap.
+- **Zeichnungen** bleiben, mit einem Satz, was man sieht; keine Fachwörter im Einstieg ohne Not.
+- **Seitenwechsel:** Fliesen neutral, größer, langsamer gelegt; auf der fertigen Wand Logo und Schriftzug (E3-B01-LOGO).
 
 ## K-004 Stack und Konventionen
 - Gilt aus v2 weiter (`archiv/2026-10-werkstatt/KERN.md` K-004): Next.js 16.3.6 App Router (Next liefert sein eigenes React 19.3 Canary aus), Tailwind 4.3 mit `@theme static` in `src/app/globals.css` als einziger Token-Quelle, Palette gesperrt (`--color-*: initial`), TypeScript strict mit `allowJs`, Seiten `src/app/(bestand)/**/page.(jsx|tsx)`, Daten in `src/config/*`, Telefon, Adresse und Öffnungszeiten nur aus `COMPANY_DATA`; keine Beliebigwerte, keine Hex-Werte im Code, kein Inline-`style` außer CSS-Variablen; Schriften `next/font/local`; Icons über das Sprite `src/components/icons/`; Bewegung zentral in `src/lib/motion/`; Weiterleitungen in `next.config.ts` (308), 410 über `src/proxy.ts` und `src/lib/wege.ts`.
@@ -47,6 +62,13 @@ Stand 24.10.2026, E1. Quelle der Wahrheit für alle Pakete. Hervorgegangen aus K
   - Erstes Bild: Die fünf Pflichtelemente tragen `data-erstes-bild="logo|ueberschrift|ort|hauptknopf|kontakt"`.
   - Hauptknopf: genau **eine Hauptaktion** je Seite. Alle Elemente mit `data-hauptknopf` einer Seite tragen dieselbe Beschriftung („Termin vor Ort anfragen“ oder seitengerechte Abwandlung aus K-010) und dasselbe Ziel; sie stehen im ersten Bildschirm (Kopf oder Einstieg, für „Erstes Bild“) und im Abschnitt 6 „Nächster Schritt“. Kein zweiter Knopf in Hauptform mit anderem Ziel (Prüfung in Z-11).
 - Prüfwerkzeuge: `_werkstatt/werkzeuge` (EINRICHTUNG.md), Regeln für Texte in `_werkstatt/regeln/`.
+- Stack nach dem Upgrade: Stand je Paket in `UPGRADE.md`; dieser Abschnitt wird nach E2 mit den erreichten Versionen nachgeführt.
+- Neu in v4: Bewegungsmodul mit Bewegungsschalter (`html[data-bewegung="ruhig"]`, gesetzt im Kopfskript vor dem ersten Rendern), gemeinsamer Takt `src/lib/motion/takt.ts` (eine rAF-Schleife für alle Skript-Animationen), Zeigerart aus `matchMedia('(hover: hover) and (pointer: fine)')`; Cursor `src/components/cursor/` (nur feiner Zeiger, E-067-1).
+
+### Adressen und Suchmaschinen (alt K-014)
+- Ausgangswert `adressen-e0.csv`. Jede Adresse bleibt 200 oder leitet mit 308 auf eine gleichwertige Seite (`next.config.ts`); entfernte Altadressen der Vorgängerfirma bleiben 410 (`src/lib/wege.ts`). Null kaputte interne Links.
+- Je Seite genau eine H1, Titel (über `createMetadata`, `src/lib/metadata.ts`), Beschreibung, absolutes Canonical; strukturierte Daten gültig (`src/lib/schema.ts`), Bewertungen nur aus `src/config/reviews.js` (wörtlich, eine Quelle); Sitemap vollständig (`src/app/sitemap.ts`).
+- Suchbegriffe je Seite (Titel, H1, Beschreibung aus E0) bleiben natürlich im neuen Text; Titel ≤ 60, Beschreibung 120 bis 155 (Test `test/titleLength.test.mjs` verlangt ≤ 58 und bleibt).
 
 ## K-005 Designsystem
 Alle Werte als Tokens in `globals.css`; neue Werte nur als Stufe einer Skala.
@@ -97,13 +119,39 @@ Bezug ist eine Fliese 30 × 60 cm im Maßstab 1 cm = 3,2 px: kurze Seite **F = 9
 - Neu: `--verlegen-gesamt` 1800 ms (erster Wechsel einer Sitzung) und `--verlegen-gesamt-folge` 1400 ms (seit E-043, Wahl des Auftraggebers; vorher 1200 und 900 ms); `--intro-gesamt` 1600 ms Ziel, 2200 ms Obergrenze. Werte nur aus diesen Variablen lesen.
 - Kurven: `ease-setzen` cubic-bezier(0.2, 0.8, 0.2, 1) · `ease-laser` cubic-bezier(0.7, 0, 0.2, 1) · `ease-weg` cubic-bezier(0.32, 0, 0.67, 0) (aus v2) · **neu** `ease-hammer` cubic-bezier(0.3, 0.9, 0.35, 1) (schnell ankommen, ohne Überschwingen) · `ease-aufsetzen` cubic-bezier(0.5, 0, 0.75, 0) (B-01: schweben, dann hart aufsetzen, E-043) · `ease-linear` (Fortschritt, scrollgebunden).
 
-## K-006 Typografie und Komposition
+### Ziel v4 (E-067-5, umgesetzt in E3)
+- Farben als OKLCH mit denselben gerenderten Werten; Abstufungen je Familie (tinte, kalk, laser, abnahme) nach einer Helligkeitsregel; Bedeutungs-Tokens (Fehler, Erfolg, Rand, Fokus) verweisen nur auf Stufen.
+- Dauern: sechs Stufen (`dauer-0` sofort für ruhig, `dauer-1` bis `dauer-5`); Ablauflängen (B-01, Eingang) als Vielfache dieser Stufen; `--staffel` ist ein Abstand (60 ms, höchstens acht Elemente).
+- Kurven: vier Stufen (`ease-setzen` ausklingend mit Alias `ease-hammer`, `ease-laser` wechselnd, `ease-weg` beschleunigend, `ease-aufsetzen` nur B-01); `linear` ist Plattformkurve.
+- Abstand: zwölf Stufen der Fliesenskala; `werte.mjs` prüft die Grenze (Regeldatei nachgeführt).
+- Themen: hell (Pflicht); Dunkelmodus in der Kür.
+- Bedienung: Ladeanzeige erst nach 300 ms, dann mindestens 500 ms; Touch-Ziele 44 × 44 (nie unter 24 × 24).
+
+## K-006 Typografie, Komposition und Bild
 - Familien unverändert: Archivo (Anzeige Breite 74 %, Gewicht 760; Text 400/600) und IBM Plex Mono 400. MUT: Display deutlich größer und ruhiger; Mono nur noch für Telefonnummern, Maße und Zahlen im Fließtext, nicht mehr als Etikett über jeder Überschrift (Verständlichkeit).
 - Skala `text-fs-1` bis `text-fs-7` aus v2 (fs-7 Zeilenhöhe 1,1 laut Code). Fließtext ist `text-fs-3` (17 bis 19 px), mobil nie unter 16 px; Zeilenhöhe 1,6; Zeilenlänge `max-w-mass` (66ch).
 - Satz: `text-wrap: balance` für Überschriften, `pretty` für Absätze, Silbentrennung im Fließtext; Display am längsten Wort bei 360 px geprüft.
 - Komposition: Einstieg links bündig an der Laserlinie, Foto rechts (Desktop) oder darunter (mobil, nach Hauptknopf und Telefon); auf `/` als Planblatt (E-037): Plan rechts an der Waage, Foto unter der Schnittkante, mobil Überschrift, Ort, Hauptknopf, Telefon, Vorspann, Plan, Bild; ein Blickfang je Bildschirmhöhe; Abschnitte wechseln Struktur und Dichte; je Bildschirmhöhe genau ein Versatz. Mobil ist eine eigene Reihenfolge: Überschrift, Ort, Hauptknopf, Telefon, dann Bild.
+- Mikrotypografie (v4): geschütztes Leerzeichen vor Einheiten und zwischen Zahl und Einheit („12\u00a0m²“), nicht in Kundenstimmen (G8); Zeilenmasken mit Innenabstand, damit Unterlängen und Umlautpunkte nicht abgeschnitten werden.
 
-## K-007 Bewegungssystem und Register
+### Bildregeln (alt K-012)
+- Nur echte Bilder aus `_eingang/entpackt/` (84 Originale) und dem Bestand; nie die 11 Generatorbilder aus `public/images/bad/` (E-013), nie Stock oder generierte Bilder.
+- Bearbeitung per Skript (`werkzeuge/bilder.mjs`, sharp): Ränder der Bildschirmfotos entfernen, Ausrichtung, sanfte Belichtung und Weißabgleich, Geraderichten, Zuschnitt nach Bildplatz und Schwerpunkt aus `bildinventar.csv`, nie hochskalieren (Quellen ≤ 1320 px breit), alle Metadaten entfernen, JPEG Qualität 82 als Webfassung (Next erzeugt AVIF/WebP); sprechende Namen.
+- Nicht verwenden oder wegschneiden: erkennbare Personen und Gesichter, Kind im Hintergrund, Hausnummern, Kennzeichen, Namen, fremde Firmenlogos und Markenaufdrucke. Bis zur Klärung nicht verwenden: Schiefer-Dusche mit Glaswand (wirkt wie Herstellerfoto), IMG_2577 (Bildbetrachter), Dubletten IMG_2594 und IMG_2581.
+- Einbau nur über `Bildfeld` (`next/image`): feste Maße, `sizes`, unscharfer Platzhalter; seit dem mittigen Einstieg (K-016) ist das Foto unter den Knöpfen auf allen acht Seiten mit `EinstiegMitte` und auf der Startseite das LCP-Element und lädt mit Vorrang (`lcp`, E-061; vorher E-037 und E-041 ohne Vorrang); die übrigen Einstiegsbilder ebenso (`lcp`, E-034). Alt-Text in Alltagssprache ≤ 125 Zeichen nach den Zeichenregeln, ehrlich (zum Beispiel „Sanitärmontage noch offen“), keine erfundenen Orte; dekorativ ohne Alt-Text.
+- Bildplätze: `_werkstatt/bildplaetze.md`. Wo kein passendes Foto da ist: Fliesenkomposition aus dem Formsystem, nie graue Kästen. Als Zeichnung neben Text (Bereichsfliesen) die Plan-Vignetten aus v2 (`kern/vignetten`: Bad, Wohnen, Außen, Untergrund, dazu Reparatur neu; Linien 1,5 px non-scaling, currentColor, Fugen und Schraffur in Strich, kein Rot, keine IDs; E-037); sonst Fliesenkomposition mit `deutlich` (Fugen in Strich, rote Laserlinie oder roter Riss; E-036).
+
+## K-007 Signatur-Satz (E-067-1)
+| Glied | Name | Gestalt | Wo | Ruhig |
+|---|---|---|---|---|
+| Übergangsgeste | „Fliese für Fliese“ (B-01) | Die Seite wird Fliese für Fliese von rechts belegt, das Logo steht auf der Wand, dann werden die Fliesen einzeln abgenommen (K-008 B-01); Dauer nach Wunsch des Auftraggebers | Wechsel zwischen Erzählansichten | Überblendung `dauer-2` oder Sofortwechsel |
+| Enthüllungsgeste | „Setzen“ | Ein Block kommt kurz und fest an seinen Platz (`ease-setzen`, 8 px, `dauer-3`), unter ihm zieht sich die Fuge als 1-px-Linie (`anriss`) | höchstens ein Auftritt mit Gewicht je Bildschirmhöhe, höchstens die Hälfte der Abschnitte | Sofortzustand |
+| Leitfaden-Motiv | Laserlinie | Die rote Linie führt durch alle Erzählansichten, wächst beim Scrollen mit (`leitachse`) und markiert den aktuellen Abschnitt | alle Erzählansichten | steht vollständig |
+| Cursor-Charakter | Fugenkreuz | Systemzeiger als Klickpunkt; über Fotos, Reglern und Plänen ein kleines Fugenkreuz mit Beschriftung („Ansehen“, „Ziehen“, „Vergleichen“), folgt ohne Feder | nur `(hover: hover) and (pointer: fine)` | ohne Nachlauf, Beschriftung bleibt |
+| Typografischer Moment | „An der Schnur“ | Die H1-Zeilen (`titelZeilen`) erscheinen hinter Zeilenmasken eine nach der anderen an der Laserlinie, höchstens 1,5 s mit Ort und Hauptknopf | Einstieg der Erzählansichten | Sofortzustand |
+- Arbeitsansichten (K-010) bekommen keinen Signaturmoment, nur Rückmeldung und Zustandswechsel.
+
+## K-008 Bewegungssystem und Register mit Übergängen, Scrollen und Cursor
 - Haltung: Bewegung legt Dinge an ihren Platz. Technik: nur `transform` und `opacity` (einzige Ausnahme: `stroke-dashoffset` für das Zeichnen der Logo-Kontur in B-02, weil die Kontur sich zeichnen soll). Startzustände nur unter `html.k-bewegung` (Kopfskript aus v2); ohne JavaScript ist alles sichtbar; scrollgebundene Szenen per `animation-timeline` mit Ersatzzweig = Endzustand. Reduzierte Bewegung: Überblendung `dauer-2` oder Sofortzustand. Hover nur bei `(hover: hover) and (pointer: fine)`.
 - Jedes animierte Element liegt in einem Element mit `data-motion="<Kennung>"` (am Element selbst oder am Behälter des Moments: das Bewegungsmodul setzt `data-motion-stand` am Träger des Attributs, die CSS-Regeln greifen von dort auf die Teile, v3.5); Maschinenfassung `_werkstatt/register.json`, Bauvorgabe je großem Moment in `_werkstatt/register/<kennung>.json`.
 
@@ -155,13 +203,31 @@ Bezug ist eine Fliese 30 × 60 cm im Maßstab 1 cm = 3,2 px: kurze Seite **F = 9
 - Stand (E-018, E-019): Ersatz-Intro gebaut. Kalkblatt mit Fugenraster, Fläche 3 × 3 im Drittelverband, Original-Logo als Bild, Gleiten per FLIP (Zielmaß vom Inline-Skript nach dem Kopf), Reihen ziehen ab wie B-01. Serverkomponente `src/components/intro/Intro.tsx`, Ablauf `src/lib/intro/ablauf.ts`, Schalter, Abbruch und Grenze im Kopfskript; Ablauf als CSS in `bewegung.css` ab dem ersten Bild.
 - Stand (E-036): Fliese am Desktop mit der Breite wachsend (bis 15rem), Fuge 1/80 der Fliese je Seite. Startseite ab lg (`html.k-intro-start`): Reihe = Zeilenhöhe der H1, Fliese = zwei Reihen, Reihengrenze auf der Oberkante der H1, nur CSS vor dem ersten Bild (kein Umrechnen danach).
 
-## K-008 Formsystem
+### Regeln v4 (AUFTRAG.md Abschnitt 8, E-067-2 bis E-067-4)
+- Bewegungsschalter „Bewegung: an/ruhig“ im Fuß und im Menü; Start nach `prefers-reduced-motion`, Wahl je Gerät in `localStorage`; ruhig gilt wie reduzierte Bewegung (Überblendung oder Sofortzustand, kein Parallax, kein Autoplay, kein Cursor-Nachlauf).
+- Gemeinsamer Takt für alle Skript-Animationen; passive Listener; keine Scroll-Ereignisse für Effekte (scrollgebunden nur über `animation-timeline` mit IntersectionObserver-Rückfall).
+- Eingang ohne Vorhang (E-067-4): Logo baut sich im Kopf auf, H1-Zeilen hinter Zeilenmasken, LCP-Foto vom ersten Bild an sichtbar, gesamt höchstens 1,5 s, Zeitlimit 2 s, beim Wiederkehren kürzer.
+- B-01 (E-067-3): Tippen, Klick oder Taste beendet den Übergang sofort; Navigation startet beim Klick; Arbeitsansichten (K-010) wechseln schlicht; nach dem Wechsel Fokus auf die h1; Zurück-Taste und Scrollposition wie ohne Übergang.
+- Scrollen: natives Scrollen, kein Lenis (E-067-2); `scrollbar-gutter: stable`; `overscroll-behavior: contain` für Dialoge und Menü; erster Bildschirm und Sticky-Szenen in `svh`; Sprungziele mit `scroll-margin` unter festen Leisten; lange Seiten mit `content-visibility` und reservierter Größe; Vorrendern über Speculation Rules nur für öffentliche GET-Seiten (nie Formulare, `/api`, `/login`).
+- Cursor (E-067-1): Zustände Handlung, Ansehen, Ziehen, Vergleichen, nicht verfügbar, lädt im Register; ausgeblendet beim Verlassen des Fensters, bei Tastaturbedienung und in erzwungenen Farben; Textcursor bleibt nativ; keine Mischmodi.
+- Staffel höchstens acht Elemente (Befund `karte` mit Stufen bis 13 wird angepasst).
+
+## K-009 SVG-Formsystem
 - Grundraster: Fugenraster aus K-005; Linien 1 px Fuge, 1 px Strich, 2 px Tinte (Fokus), 2 px Laser (Laserlinie).
 - Icon-Familie aus v2 (45 Icons, 24er Raster, Strich 1,5 px, Enden `square`, Ecken `miter`, `currentColor`, Sprite). Neue Icons nur in dieser Familie. Markenlogos (WhatsApp, Google) bleiben unverändert und zählen nicht zur Familie.
 - Zeichnungen (neu, alle aus Fliese, Fuge und Laserlinie): Schichtaufbau (Untergrund, Abdichtung, Kleber, Fliese, Fuge), Duschboden mit Gefälle und Ablauf, Balkon mit Gefälle, vier Verlegemuster (Kreuzfuge, Halbverband, Drittelverband, Fischgrät), Formatvergleich, Einsatzkarte (Aßlar in der Mitte, Ringe), Fliesenkomposition als Bildplatz ohne Foto, 404 (eine verrutschte Fliese).
 - Zugänglichkeit: dekorativ `aria-hidden="true" focusable="false"`; bedeutungstragend `role="img"` mit Namen; IDs je Instanz eindeutig. Budgets: Icon ≤ 1,5 KB, Zeichnung ≤ 40 KB gzip; SVGO.
+- v4: eine Icon-Familie (eigenes Sprite, Raster 24, Strich 1,5); `lucide-react` in drei Datendateien wird durch Sprite-Namen ersetzt. SVGO in zwei Konfigurationen unter `_werkstatt/werkzeuge/svgo-statisch.config.mjs` und `svgo-animiert.config.mjs`. Jede SVG-Datei ist Fixpunkt ihrer Konfiguration; keine eingebetteten Pixelbilder (die beiden ungenutzten Logo-SVG mit PNG unter `public/images/logo/` werden ersetzt oder mit Vermerk entfernt; das Logo selbst bleibt unverändert, G8).
 
-## K-009 Informationsarchitektur
+## K-010 Komponenten, Zustände und Ansichtsarten
+- Bausteine: `src/components/kern/` (Knopf, Hauptknopf, Abschnitt, Bildfeld, Glasbild, Karussell, Fachwort, Textmarken, Einzugsband, Leitachse), Vorlagen `src/components/vorlagen/` (Erzähl-, Wissens-, Orts- und Arbeitsseite), Formulare `src/components/funnels/` und `src/components/forms/`.
+- Zustände (Pflicht für jedes interaktive Element, AUFTRAG.md Abschnitt 7): Ruhe, Hover, Fokus (`focus-visible`, 2 px, 3:1), gedrückt, deaktiviert, lädt (nach 300 ms, mindestens 500 ms), Fehler, Erfolg; dazu leere Zustände und die Fehlerseite.
+- Ansichtsarten:
+  - Erzählansichten (dürfen inszenieren): `/`, `/bad`, `/bad/badsanierung`, `/bad/barrierefreies-bad`, `/leistungen`, `/balkon-terrasse`, `/referenzen`, `/ueber-uns`, `/standorte/[stadt]`, die Bereichs- und Fachseiten unter `/bad`, `/fliesen`, `/treppen`, `/naturstein`, `/untergrund-abdichtung`, `/balkon-terrasse`, `/leistungen/[id]`, `/referenzen/[id]`, `/ausstellung/*`.
+  - Wissensansichten (ruhige Erzählung, Übergangsgeste ja, große Momente nur nach Register): `/fliesen`, `/blog`, `/blog/[slug]`, `/faq`, `/foerderung`.
+  - Arbeitsansichten (ruhig, dicht, schnell; kein Signaturmoment; Wechsel schlicht, `data-kein-verlegen`): `/kontakt`, `/termin`, `/preise`, `/bad/badanfrage`, `/bad/badplaner`, `/bad/projekt-check`, `/fliesen/konfigurator`, `/login`, `/downloads`, Rechtstexte `/impressum`, `/datenschutz`, `/agb`, `/widerruf`, `/cookie-richtlinie`, `/barrierefreiheit`.
+
+### Informationsarchitektur (alt K-009)
 - **Navigation** (fünf Hauptpunkte, je höchstens eine Aufklappebene, kein Thema doppelt), bestätigt im Baumtest E1-PROBE-IA (`berichte/E1-PROBE-IA-baumtest.json`: 5 von 5 Personen ziehen sie vor, 25 von 25 Aufgaben gefunden):
   1. **Bad** → `/bad`: Bad komplett erneuern (`/bad/badsanierung`) · Dusche statt Wanne (`/bad/barrierefreies-bad`) · Große Fliesen im Bad (`/bad/fliesen`) · Alles aus einer Hand (`/bad/bad-aus-einer-hand`) · Ideen nach Badgröße (`/bad/musterbaeder`; „Beispielbäder“ wurde im Baumtest mit echten Arbeiten verwechselt)
   2. **Böden und Wände** → `/leistungen/wohnen`: Küche (`/fliesen/kueche`) · Flur und Diele (`/fliesen/flur-diele`) · Neubau (`/fliesen/neubau`) · Treppen (`/treppen`) · Naturstein (`/naturstein`) · Reparatur und Fugen (`/fliesenreparatur`)
@@ -177,7 +243,7 @@ Bezug ist eine Fliese 30 × 60 cm im Maßstab 1 cm = 3,2 px: kurze Seite **F = 9
 - **Erstes Bild:** Logo, H1, Ort, Hauptknopf, Telefon oder WhatsApp vollständig im ersten Bildschirm jeder Hauptansicht in jeder Gerätegröße; Handy quer: Kopf und Leisten ≤ ein Viertel der Höhe.
 - **Orientierung:** Brotkrumen ab der zweiten Ebene (sichtbar und als `BreadcrumbList`); 404 mit verrutschter Fliese und den Wegen Startseite, Termin anfragen, Anrufen; Fuß als vollständige, geordnete Übersicht aller Bereiche.
 
-## K-010 Ton, Erzählbogen, Schreibregeln
+## K-011 Ton und Mikrotexte
 - **Erzählbogen:** Sie haben ein Bad, einen Boden oder einen Balkon, der nicht mehr passt, und wissen nicht, wo Sie anfangen sollen. Deniz Tezgel kommt aus Aßlar zu Ihnen, schaut sich alles an, erklärt in einfachen Worten, was zu tun ist, und verlegt mit seinem Team Fliese für Fliese. Fotos fertiger Arbeiten und die Worte unserer Kunden zeigen, wie das am Ende aussieht.
 - **Ton:** Sie-Anrede, wir-Form, warm, ruhig, selbstbewusst; kurze Sätze; konkrete Dinge statt Adjektive; Zahlen nur aus K-015.
 - **Schreibregeln** (gemessen mit `werkzeuge/lesbarkeit.mjs` über die gerenderte Seite): Flesch nach Amstad ≥ 60 (Erzähl- und Ortsseiten), ≥ 50 (Wissensseiten); mittlere Satzlänge ≤ 14 Wörter; kein Satz über 25 Wörter; Absätze ≤ 4 Sätze; jedes Glossarwort beim ersten Vorkommen je Seite mit Alltagserklärung ≤ 15 Wörter (Baustein `Fachwort`), Normen nur mit ihrem Nutzen; kein Gedankenstrich und kein Bindestrich als Gedankenstrich in sichtbarem Text, Alt-Texten, Titeln, Beschreibungen und Bedienbeschriftungen; Zeitspannen mit „bis“, Maße ohne Kette; Titel ≤ 60 Zeichen, Beschreibung 120 bis 155; Suchbegriffe aus `adressen-e0.csv` bleiben natürlich im Text; Ortsseiten unterscheiden sich nur durch echte Angaben; Kundenstimmen wörtlich, gekürzt nur mit „…“. Ausgenommen: Rechtstexte und wörtliche Stimmen (`data-zitat`).
@@ -185,8 +251,15 @@ Bezug ist eine Fliese 30 × 60 cm im Maßstab 1 cm = 3,2 px: kurze Seite **F = 9
 - **K-010-F · Floskeln und KI-Spuren** (Maschinenfassung `regeln/floskeln.json`): nahtlos, ganzheitlich, maßgeschneidert, Entdecken Sie, Ihr Partner für, höchste Qualität, Perfektion, von A bis Z, rundum sorglos, nicht nur … sondern auch, erstklassig, innovativ, Traumbad; keine Dreierketten von Adjektiven, keine Überschriften „Begriff: Erklärung“, kein Stakkato („Dicht. Sauber. Termintreu.“).
 - **Ersetzungen im Bestand:** „Vor-Ort-Aufmaß“ → „Termin bei Ihnen vor Ort“ (in Knöpfen „Termin vor Ort anfragen“); „Walk-In-Dusche“ → „bodengleiche Dusche“ (außer Suchbegriff); „XXL-Fliesen“ → „große Fliesen“; „2-cm-Platten“ → „2 cm starke Platten“; „Fachgewerke“ → Bereichsnamen der Navigation.
 - **Mikrotexte:** Hauptknopf „Termin vor Ort anfragen“; Telefon „Anrufen: 06441 / 44 83 567“; WhatsApp „Nachricht per WhatsApp“; Absenden „Anfrage senden“ (bestehender Text bleibt, wenn Tests ihn prüfen); Laden „Wird gesendet …“; Erfolg aus dem Bestand.
+- v4 (AUFTRAG.md Abschnitt 0 TEXTE): Mikrotexte (Knöpfe, Beschriftungen, Hinweise, Cursor-Beschriftungen, Fehlermeldungen, Bewegungsschalter) ändere ich direkt; alle übrigen Texte nur als Vorschlag in `TEXTVORSCHLAEGE.md`. Die Texte des Vorlaufs sind abgenommen und gelten als Bestand.
 
-## K-011 Glossar (Alltagserklärung ≤ 15 Wörter)
+## K-012 Budgets
+- Gerätegrößen (10) aus `HAUPTANSICHTEN.json`. Mobil eigene Komposition; kein seitliches Scrollen; Fließtext ≥ 16 px; Touchziele ≥ 44 × 44; sichere Ränder (`env(safe-area-inset-*)`); Vollbildhöhen mit `svh`/`dvh`; Kopf verdeckt keine Anker (`scroll-padding-top`); Systemschrift 200 % lesbar und bedienbar (untere Leiste unter 20em: Anrufen und Termin mit Wort, WhatsApp tritt zurück, E-036); Handy quer: Kopf und Leisten ≤ ¼ der Höhe, Variante `flach:` (Querformat, Höhe ≤ 32rem) für einen dichteren ersten Bildschirm (E-036); große Bildschirme mit begrenzter Textbreite.
+- Budgets (mobil, Median aus 3, frisches Profil, mit Intro): LCP ≤ 2,5 s · CLS ≤ 0,1 · TBT/INP ≤ 200 ms · Lighthouse mobil Leistung ≥ 90, Zugänglichkeit ≥ 95, Best Practices ≥ 95, SEO 100 · zusätzlicher Code für Bewegung (B-01, B-02, große Momente) ≤ 60 KB gzip · Startbild mobil ≤ 200 KB · Icon ≤ 1,5 KB · Zeichnung ≤ 40 KB gzip. Besserer E0-Wert gilt.
+- v4 (AUFTRAG.md Abschnitt 0, strengerer Wert gilt): Lighthouse mobil ≥ 90 · LCP ≤ 2,5 s · CLS ≤ 0,1 · INP ≤ 200 ms · TBT ≤ 200 ms · JavaScript für Bewegung im ersten Laden ≤ 60 KB gzip, nachgeladene Szenen einer Erzählansicht zusammen ≤ 120 KB gzip · Schriften ≤ 250 KB (Bestand 71 KB) · Icon-SVG ≤ 1,5 KB je Icon · Illustrations-SVG ≤ 40 KB gzip; keine Hauptansicht schlechter als in E0 des Laufs (`belege/um-e0/`) um mehr als die Spanne der drei Läufe.
+- Gerätegrößen: 390 × 844, 768 × 1024, 1440 × 900, 1920 × 1080 (Pflicht); die zehn Größen des Vorlaufs für Darstellungsprüfungen.
+
+## K-013 Glossar (Alltagserklärung ≤ 15 Wörter)
 Maschinenfassung `src/config/glossar.ts` (Quelle) und `regeln/glossar.json` (Prüfung). Erklärung steht beim ersten Vorkommen je Seite direkt dabei. Sie steht in Klammern in Größe und Farbe des Satzes (Baustein `kern/Fachwort`; E-061: graue Klammern unterbrachen den Lesefluss).
 
 | Begriff | Erklärung |
@@ -238,34 +311,7 @@ Maschinenfassung `src/config/glossar.ts` (Quelle) und `regeln/glossar.json` (Pr�
 | Schadensanalyse | Wir suchen vor Ort die Ursache eines Schadens, bevor wir etwas reparieren. |
 | Wassereinwirkungsklasse (W0-I bis W3-I) | Gruppe einer Fläche danach, wie viel Wasser auf sie trifft, von wenig bis sehr viel. |
 
-## K-012 Bildregeln
-- Nur echte Bilder aus `_eingang/entpackt/` (84 Originale) und dem Bestand; nie die 11 Generatorbilder aus `public/images/bad/` (E-013), nie Stock oder generierte Bilder.
-- Bearbeitung per Skript (`werkzeuge/bilder.mjs`, sharp): Ränder der Bildschirmfotos entfernen, Ausrichtung, sanfte Belichtung und Weißabgleich, Geraderichten, Zuschnitt nach Bildplatz und Schwerpunkt aus `bildinventar.csv`, nie hochskalieren (Quellen ≤ 1320 px breit), alle Metadaten entfernen, JPEG Qualität 82 als Webfassung (Next erzeugt AVIF/WebP); sprechende Namen.
-- Nicht verwenden oder wegschneiden: erkennbare Personen und Gesichter, Kind im Hintergrund, Hausnummern, Kennzeichen, Namen, fremde Firmenlogos und Markenaufdrucke. Bis zur Klärung nicht verwenden: Schiefer-Dusche mit Glaswand (wirkt wie Herstellerfoto), IMG_2577 (Bildbetrachter), Dubletten IMG_2594 und IMG_2581.
-- Einbau nur über `Bildfeld` (`next/image`): feste Maße, `sizes`, unscharfer Platzhalter; seit dem mittigen Einstieg (K-016) ist das Foto unter den Knöpfen auf allen acht Seiten mit `EinstiegMitte` und auf der Startseite das LCP-Element und lädt mit Vorrang (`lcp`, E-061; vorher E-037 und E-041 ohne Vorrang); die übrigen Einstiegsbilder ebenso (`lcp`, E-034). Alt-Text in Alltagssprache ≤ 125 Zeichen nach den Zeichenregeln, ehrlich (zum Beispiel „Sanitärmontage noch offen“), keine erfundenen Orte; dekorativ ohne Alt-Text.
-- Bildplätze: `_werkstatt/bildplaetze.md`. Wo kein passendes Foto da ist: Fliesenkomposition aus dem Formsystem, nie graue Kästen. Als Zeichnung neben Text (Bereichsfliesen) die Plan-Vignetten aus v2 (`kern/vignetten`: Bad, Wohnen, Außen, Untergrund, dazu Reparatur neu; Linien 1,5 px non-scaling, currentColor, Fugen und Schraffur in Strich, kein Rot, keine IDs; E-037); sonst Fliesenkomposition mit `deutlich` (Fugen in Strich, rote Laserlinie oder roter Riss; E-036).
-
-## K-013 Geräte und Budgets
-- Gerätegrößen (10) aus `HAUPTANSICHTEN.json`. Mobil eigene Komposition; kein seitliches Scrollen; Fließtext ≥ 16 px; Touchziele ≥ 44 × 44; sichere Ränder (`env(safe-area-inset-*)`); Vollbildhöhen mit `svh`/`dvh`; Kopf verdeckt keine Anker (`scroll-padding-top`); Systemschrift 200 % lesbar und bedienbar (untere Leiste unter 20em: Anrufen und Termin mit Wort, WhatsApp tritt zurück, E-036); Handy quer: Kopf und Leisten ≤ ¼ der Höhe, Variante `flach:` (Querformat, Höhe ≤ 32rem) für einen dichteren ersten Bildschirm (E-036); große Bildschirme mit begrenzter Textbreite.
-- Budgets (mobil, Median aus 3, frisches Profil, mit Intro): LCP ≤ 2,5 s · CLS ≤ 0,1 · TBT/INP ≤ 200 ms · Lighthouse mobil Leistung ≥ 90, Zugänglichkeit ≥ 95, Best Practices ≥ 95, SEO 100 · zusätzlicher Code für Bewegung (B-01, B-02, große Momente) ≤ 60 KB gzip · Startbild mobil ≤ 200 KB · Icon ≤ 1,5 KB · Zeichnung ≤ 40 KB gzip. Besserer E0-Wert gilt.
-
-## K-014 Adressen und Suchmaschinen
-- Ausgangswert `adressen-e0.csv`. Jede Adresse bleibt 200 oder leitet mit 308 auf eine gleichwertige Seite (`next.config.ts`); entfernte Altadressen der Vorgängerfirma bleiben 410 (`src/lib/wege.ts`). Null kaputte interne Links.
-- Je Seite genau eine H1, Titel (über `createMetadata`, `src/lib/metadata.ts`), Beschreibung, absolutes Canonical; strukturierte Daten gültig (`src/lib/schema.ts`), Bewertungen nur aus `src/config/reviews.js` (wörtlich, eine Quelle); Sitemap vollständig (`src/app/sitemap.ts`).
-- Suchbegriffe je Seite (Titel, H1, Beschreibung aus E0) bleiben natürlich im neuen Text; Titel ≤ 60, Beschreibung 120 bis 155 (Test `test/titleLength.test.mjs` verlangt ≤ 58 und bleibt).
-
-## K-016 Ruhe (E-047, Auftraggeber nach der Durchsicht der Live-Seite)
-Geht K-005 und K-006 vor, wo sie sich widersprechen. Leitsatz: „Man soll genau sehen, wo man hinschaut, und nichts verwirrt.“
-- **Fläche:** ein Gedanke je Bildschirm, viel freie Fläche. Nie zwei Stränge nebeneinander (Text links und Bild oder zweiter Text rechts zugleich); Köpfe der Abschnitte mittig (`Abschnitt mitte`), außer Ablauf-Treppe und Einsatzorte (gelobt, bleiben).
-- **Einstieg:** mittig (`EinstiegMitte`): H1 in `fs-6`, darunter eine Zeile, was und wo; Hauptknopf, Anruf, WhatsApp; Bewertungszeile; dann das Foto vollständig.
-- **Text:** weniger je Seite. Fachtext für Suchmaschinen weiter unten in „Mehr erfahren“ oder auf eigenen Unterseiten (z. B. Normen), nicht neben Zeichnungen. Firmendaten (Inhaber, Kammer, Betrieb seit) nur auf `/kontakt`, `/ueber-uns` und im Fuß. Keine Versprechen, die sich nicht halten lassen („zum Festpreis“, nicht „ohne Stress“).
-- **Bilder:** immer vollständig im eigenen Seitenverhältnis, nie angeschnitten, nie aneinandergequetscht. Reihen von Fotos als Karussell, in dem jede sichtbare Karte ganz im Bild steht (Kartenbreite teilt die Zeile genau). Keine Unterschrift unter Galeriefotos: Name und Weg zur Leistung auf der Glasfläche (`Glasbild`, beim Darüberfahren; ohne Maus immer sichtbar). Jedes Bild mit eigenem Alt-Text. KI-Bilder nur als Stimmungsbilder, nie unter „Unsere Arbeiten“ oder bei Referenzen.
-- **Karussells** (`Karussell`, Register `karussell`): langsam, von rechts nach links; Laufband 60 s je Durchlauf (Qualifikationen im Fuß), Reihe mit Selbstlauf alle 8 s (Kundenstimmen, gleich große Karten). Halten bei Maus und Fokus an, Knopf zum Anhalten (WCAG 2.2.2); reduziert, ohne JavaScript und im Notaus kein Selbstlauf.
-- **Abläufe** auf einen Blick: Treppe bis vier Schritte; ab fünf Schritten Kopf und Satz mittig, darunter zwei Spalten (1 bis 3, 4 bis 6) oder eine Roadmap.
-- **Zeichnungen** bleiben, mit einem Satz, was man sieht; keine Fachwörter im Einstieg ohne Not.
-- **Seitenwechsel:** Fliesen neutral, größer, langsamer gelegt; auf der fertigen Wand Logo und Schriftzug (E3-B01-LOGO).
-
-## K-015 Faktenblatt (nur diese Fakten; Fundstellen im Code)
+## Anhang F · Faktenblatt (alt K-015; nur diese Fakten; Fundstellen im Code)
 | Nr | Fakt | Fundstelle |
 |---|---|---|
 | F-01 | Firma „Fliesenverlegung Tezgel“ | `src/config/company.js:8` |
@@ -300,8 +346,30 @@ Geht K-005 und K-006 vor, wo sie sich widersprechen. Leitsatz: „Man soll genau
 - **Allgemeines Fachwissen** (E-027): Wie ein Material aussieht, wofür ein Verlegemuster passt, wozu eine Schicht dient, darf auf Wissens- und Erzählseiten stehen, ohne Zahl und ohne Zusage. Zahlen, Zusagen und Aussagen über den Betrieb nur aus diesem Faktenblatt.
 - **Nicht verwenden** (nicht belegt): Meisterbrief oder „Meisterbetrieb“, Zahl der Mitarbeitenden, „über 15 Jahre“, Zertifikate, Partnerstatus der Marken, Projektorte zu Fotos, Dauer einer Badsanierung.
 
+## Brückentabelle der Kennungen (v3.6 → v4.0)
+| alt (v3.6, Vorlauf) | neu (v4.0) |
+|---|---|
+| K-001 Leitidee | K-001 |
+| K-002 Personen und Hauptaufgaben (A1 bis A6) | K-002 (fünf Aufgaben; A6 in A1) |
+| K-003 Gestaltungsprinzipien | K-003 |
+| K-004 Stack und Konventionen | K-004 |
+| K-005 Designsystem | K-005 |
+| K-006 Typografie und Komposition | K-006 |
+| K-007 Bewegungssystem und Register (B-01, B-02) | K-008 |
+| K-008 Formsystem | K-009 |
+| K-009 Informationsarchitektur | K-010, Unterabschnitt Informationsarchitektur |
+| K-010 Ton, Erzählbogen, Schreibregeln | K-011 |
+| K-011 Glossar | K-013 |
+| K-012 Bildregeln | K-006, Unterabschnitt Bildregeln |
+| K-013 Geräte und Budgets | K-012 |
+| K-014 Adressen und Suchmaschinen | K-004, Unterabschnitt Adressen |
+| K-015 Faktenblatt | Anhang F |
+| K-016 Ruhe | K-003 Prinzip 8 und Ruhe-Regeln |
+- Verweise in Code-Kommentaren und Werkzeugen (zum Beispiel `lesbarkeit.mjs` auf K-010 und K-011) meinen die alte Zählung; sie bleiben über diese Tabelle gültig und werden nur bei sowieso fälligen Änderungen der Datei nachgezogen.
+
 ## Markierte Annahmen
 F-07, F-09, F-14, F-20 und die Versprechen bis zur Antwort (MENSCHEN.md); Herkunft einzelner Fotos (M-08).
+- v4: Zielgruppe, GESCHMACK und UNANTASTBAR sind aus dem Vorlauf abgeleitet (STATUS.md, Abschnitt Einstellungen).
 
 ## Änderungsprotokoll
 - v3.6 (25.10.2026, E-047): K-016 Ruhe (Einstieg mittig, Bilder vollständig, Karussells, weniger Text, Firmendaten nur an drei Orten); Register `karussell`; Startseite danach umgebaut (E3-RUHE-01); Register nachgezogen nach der Gegenprüfung (Zeilen `karussell` und `glasbild`, `startbild` auf allen Breiten, SIG-1 und `sig-plan` nicht mehr auf `/`, B-01 v3: 6 bis 7 Fliesen je Reihe, Kaskade über den ganzen Schlag, Abnehmen `ease-setzen`).
@@ -311,3 +379,4 @@ F-07, F-09, F-14, F-20 und die Versprechen bis zur Antwort (MENSCHEN.md); Herkun
 - v3.2 (24.10.2026, E-042): B-01 als „Wind“ (Entscheidung des Auftraggebers): Band aus Fliesen weht über die Seite, alte Seite davor, neue dahinter; Token `ease-wind`.
 - v3.1 (24.10.2026, E-037): SVG-Bewegungen aus v2 und Plan-Morph zurück (Entscheidung des Auftraggebers), Planblatt im Einstieg von `/`, Plan-Vignetten in den Bereichsfliesen, Rauschtextur der Fliesen in B-01 (einmal gerastert), startbild über Sichtbarkeit.
 - v3.0 (23.10.2026, E1): neue Leitidee „Klar verlegt“ aus dem Auftrag „Verständlich, echt, ausgezeichnet“; Personen P1 bis P5 mit Aufgaben A1 bis A6; Prinzipien neu; Fliesenskala als Lesart der v2-Abstände; Schatten-, Ebenen-, Dauer- und Kurvenstufen ergänzt; Register mit B-01, B-02 und neun großen Momenten, sieben v2-Einträge entfallen; Navigation mit fünf Hauptpunkten; Seitenarten und Seitenformel; Schreibregeln, K-010-B, K-010-F, Glossar; Bildregeln; Faktenblatt.
+- 4.0 (27.10.2026, E1 Lauf „Universal Motion“, E-066, E-067): Gliederung nach AUFTRAG.md Abschnitt 10 mit Brückentabelle; fünf Hauptaufgaben; Ruhe als Prinzip 8; neu K-007 Signatur-Satz, K-010 Komponenten, Zustände und Ansichtsarten; Regeln v4 für Bewegung, Eingang, B-01, Scrollen, Cursor, SVG, Designsystem und Budgets.
