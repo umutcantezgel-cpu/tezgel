@@ -46,7 +46,7 @@ export const CustomerContactSchema = z.object({
   email: z
     .string()
     .max(100, 'Die E-Mail-Adresse darf maximal 100 Zeichen lang sein.')
-    .email('Bitte geben Sie eine gültige E-Mail-Adresse ein.')
+    .check(z.email('Bitte geben Sie eine gültige E-Mail-Adresse ein.'))
     .transform((val) => stripNewlines(val.toLowerCase()))
     .optional()
     .or(z.literal('')),
