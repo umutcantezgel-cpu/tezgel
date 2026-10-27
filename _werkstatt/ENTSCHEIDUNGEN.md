@@ -799,3 +799,13 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
 **Festlegungen zu den offenen Fragen des Baumeisters:**
 - Eine reine Höhenabweichung macht ein Paar abweichend (bestätigt).
 - `includeAA: true` gilt: strenger als der Standard, jede Kantenabweichung zählt (bestätigt).
+
+## E-071 · Abnahme UM-E2-U04 (27.10.2026, 07:55 MEZ, Orchestrator)
+- **Ergebnis:** tailwindcss und @tailwindcss/postcss stehen auf 4.3.3; nur das Lockfile hat sich geändert, Commit 91615baa. Stufe A ist grün (Upgrader und Gegenprüfung unabhängig). Das Changelog von 4.3.1 bis 4.3.3 ändert keine Klasse und keinen Wert, den das Projekt nutzt.
+- **Lockfile-Befund widerlegt:** Die Gegenprüfung forderte Nacharbeit, weil `@tailwindcss/oxide-wasm32-wasi` 4.3.3 `@emnapi/core`, `@emnapi/runtime` ^1.11.1 und `@emnapi/wasi-threads` ^1.2.2 verlangt, das Lockfile oben aber 1.10.0 und 1.2.1 führt. Der Befund trifft nicht zu:
+  - Die drei Pakete sind dort `bundleDependencies`; sie werden mit dem Tarball geliefert und nicht aus dem Lockfile aufgelöst.
+  - Die Einträge oben gehören zu `@unrs/resolver-binding-wasm32-wasi`, das 1.10.0 exakt verlangt.
+  - `npm update` der drei Pakete ändert nichts.
+  - Lehre (L6): Eine Kantenprüfung über das Lockfile muss `bundleDependencies` auslassen.
+- **Prüfregel `grep -c invalid`:** trifft den Paketnamen `character-reference-invalid`. Ab U05 gilt `npm ls --all 2>&1 | grep -E 'invalid:|ERR!|ERESOLVE'`.
+- **Routenzahl:** „107“ im Briefing war die Zahl der Zeilen mit Routenzeichen in der Build-Tabelle. Maßgeblich ist der Vergleich mit dem Stand davor (unverändert); ab U05 vergleicht der Prüfer die Routentabelle mit dem Stand vor dem Paket.
