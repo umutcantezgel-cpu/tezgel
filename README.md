@@ -41,8 +41,8 @@ Vollständiger High-End Relaunch für den Handwerks-Meisterbetrieb **Fliesenverl
 ## 🚀 Entwicklung & Deployment
 
 ### Voraussetzungen
-* Node.js >= 18.17.0
-* npm >= 9.0.0
+* Node.js 24 (aktuelle LTS, siehe `.nvmrc`)
+* npm 11 (mit Node 24 gebündelt, `packageManager` in `package.json`)
 
 ### Installation
 ```bash
