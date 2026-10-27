@@ -857,3 +857,36 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
      - Z-09 verlangt null ernste Befunde ohne Ausnahme; die Behebung ist deshalb Pflicht und gehört zur Etappe E2.
   4. **Commit 9ecbec98** war ein Zwischenstand des Orchestrators, gesichert für den Stop-Hook.
 - **Lehre (L6):** Ein Upgrade der Prüfwerkzeuge kann neue echte Befunde zeigen. Ab jetzt läuft nach jedem Werkzeug-Upgrade axe über alle Hauptansichten (Teil von UM-E2-B).
+
+## E-075 · Abnahme UM-E3-DS und UM-E3-SVG, vorgezogen in E2 (27.10.2026, 12:40 MEZ, Orchestrator)
+- **UM-E3-DS (Designsystem v4, eigene Arbeit):**
+  - Farben als OKLCH-Stufen je Familie: kalk 100/97/90/75, tinte 62/41/33/19, laser 95/57/47, abnahme 95/47. Der Stufenname ist die gerundete Helligkeit.
+  - Rollen (kalk, fliese, fuge, strich, tinte-2, tinte, laser, laser-tief, abnahme, nacht-2, nacht-fuge, white) und Bedeutungs-Tokens (fehler, fehler-flaeche, erfolg, erfolg-flaeche, rand, fokus) sind nur Verweise.
+  - Sechs Dauerstufen mit `dauer-0`. Ablauflängen sind Vielfache der Stufen. Vier Kurven; `ease-hammer` ist ein Alias auf `ease-setzen`.
+  - Test `test/designsystem.test.mjs`, Regeldatei `werte-regeln.json` v4, KERN 4.1 (K-005).
+- **Nacharbeit nach dem Pixelvergleich:**
+  - Der erste Vergleich (Schwelle 0) gegen 4314 fand auf 42 von 48 Paaren Abweichungen von genau einer Farbstufe (0 bis 1 von 255).
+  - Ursache 1: Die OKLCH-Werte waren gerundet (Rückrechnung bis 0,165 Stufen daneben). Volle Flächen trafen trotzdem dieselbe 8-Bit-Farbe, gemischte Farben nicht (Deckkraft, color-mix, Bildverläufe).
+  - Behoben mit vier Nachkommastellen, berechnet mit den Matrizen aus CSS Color 4. Die Rückrechnung liegt jetzt unter 0,001 Stufen; ein neuer Test prüft sie (unter 0,01) und schlägt mit den alten Werten an.
+  - Ursache 2, bleibt: Verläufe mit OKLCH-Stopps (Schraffur in `globals.css`, Fugenraster und Bildverläufe in `bewegung.css`) rendert Chromium über einen anderen Weg als Verläufe mit Hex-Stopps. Die Übergangspixel weichen um höchstens eine Stufe ab.
+  - Probe `scratchpad/um-e3-ds/probe/verlauf.mjs`: Hex gegen OKLCH 657 Pixel, höchstens 1. Mit `in srgb` immer noch 600, mit Hex und `in oklab` 369.
+  - Flächen, Text, Deckkraft, color-mix und SVG-Striche sind pixelgleich (`pipeline.mjs`: 0). 4314 gegen sich selbst: 0.
+  - Die Abweichung ist damit erklärt, nicht sichtbar und nur mit Hex-Werten zu vermeiden. Hex verbietet Z-04; sie bleibt mit diesem Vermerk.
+- **Bewusste Wertänderungen in Bewegung (E-067-5):**
+  - Die Kachelkurve des Intros (`intro-legen`) läuft auf `ease-setzen` (0.2, 0.8, 0.2, 1) statt auf der v3-Kurve `ease-hammer` (0.3, 0.9, 0.35, 1). Beide klingen aus, ohne Überschwingen.
+  - `--verlegen-ruhig` dauert 140 statt 150 ms (dauer-1).
+  - Im Bildsatz ist beides nicht sichtbar (Animationen angehalten). Die Bildfolgen von UM-E3-B prüfen es.
+- **UM-E3-SVG (Haiku, Bericht `berichte/UM-E3-SVG.md`):**
+  - Eine Icon-Familie: lucide aus `useAnfrageFunnel.ts`, `blog.js` und `company.js` entfernt. Felder tragen Sprite-Namen; gerendert hat sie keine Seite. `lucide-react` ist deinstalliert.
+  - Icons, Sprite und `tezgel-mark.svg` am SVGO-Fixpunkt; Gleichbild 53 von 53 bei 0 Pixel. `sprite.mjs` wendet die animierte Konfiguration an. Die statische behält `role` und die Kennungen von `title` und `desc`.
+- **Logo-SVGs:**
+  - `tezgel-logo.svg` und `tezgel-logo-dark.svg` sind entfernt (je 396 KB mit eingebettetem PNG, nirgends eingebunden). Ihre Adressen führen per 308 auf `tezgel-logo.png` bzw. `tezgel-logo-dark.png`.
+  - G4/G8: Ersatz ist dasselbe Logo in Form, Proportion und Farbe, 640 × 200 wie die SVGs.
+  - Beim Rastern weichen 8.046 von 128.000 Pixeln ab, weil der Schriftzug im SVG als `<text>` mit nicht eingebetteter Schrift „Plus Jakarta Sans“ stand. Er sah also je nach installierten Schriften anders aus. Das PNG ist die feste Form.
+  - Beleg: Vergleichsbild `scratchpad/logo-pruef/vergleich.png`. Wege-Test 5 prüft Seiten- und Datei-Weiterleitungen getrennt: Ziel liegt in `public`, Quelle nicht mehr.
+- **Prüfungen angepasst, ohne Lockerung:**
+  - Stückplan 9 löst Rollenverweise bis zur OKLCH-Stufe auf. Er misst die Buntheit direkt und vergleicht `themeColor` mit der gerundeten sRGB-Farbe der Stufe.
+- **Stufe A:**
+  - typecheck, lint, `npm test` 216/216, Reinraum f526adf2 (Build, Typen, Linter, Tests, Graph Exit 0, nft sauber).
+  - `werte.mjs` (Regeldatei v4) über die fünf geänderten Quelldateien gegen 6caeeb9c: 0 Befunde (`belege/um-e3/werte-ds-svg.json`).
+  - Pixelvergleich gegen 4314 (Schwelle 0): PIXEL-2.

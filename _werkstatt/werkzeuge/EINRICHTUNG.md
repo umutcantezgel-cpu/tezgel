@@ -132,6 +132,16 @@ Stand E0-PRUEF-01: angelegt (vorher kein Eintrag vorhanden).
 
     cd /home/user/tezgel/_werkstatt/werkzeuge && RELAUNCH_BASE=http://127.0.0.1:4310 RELAUNCH_OUTPUT="$SCRATCH/e0/pw-out" RELAUNCH_REPORT="$SCRATCH/e0/pw-hero.json" npx playwright test tests/funktion-hero-kontakt.spec.mjs --workers=1
 
+## Funktionssuite im Etappentor (ab Playwright 1.63, E-076)
+Die Suite läuft im Tor zweimal gegen denselben Produktionsbau; beide Läufe müssen grün sein (Stand E2: je 393 bestanden, 0 rot, 25 übersprungen):
+
+    cd /home/user/tezgel/_werkstatt/werkzeuge
+    RELAUNCH_BASE=http://127.0.0.1:<Port> RELAUNCH_REPORT="$SCRATCH/<paket>/suite.json" RELAUNCH_OUTPUT="$SCRATCH/<paket>/out" npx playwright test
+    RELAUNCH_BEWEGUNG=an RELAUNCH_BASE=http://127.0.0.1:<Port> RELAUNCH_REPORT="$SCRATCH/<paket>/suite-bewegung.json" RELAUNCH_OUTPUT="$SCRATCH/<paket>/out-bewegung" npx playwright test
+
+- Ohne Variable gilt `reducedMotion: 'reduce'` aus `playwright.config.mjs`. Mit `RELAUNCH_BEWEGUNG=an` gilt `no-preference`, also der Zustand, in dem die Suite bis Playwright 1.62 tatsächlich lief: Bis dahin wirkte die Einstellung nicht (Probe: `matchMedia('(prefers-reduced-motion: reduce)')` meldete `false`).
+- Fremde Navigationen (WhatsApp, externe Links) bricht die Sperre in `lib.mjs` als `aborted` ab. Ab Playwright 1.64.0 bleibt eine mit 204 beantwortete Navigation offen, und `click()` wartet bis zur Zeitüberschreitung. `blockedbyclient` zeigt die Chrome-Fehlerseite. Subressourcen erhalten weiter 204.
+
 ## Hinweise (Orchestrator, nach E0-PRUEF-01)
 - `next dev` (16.3) pflegt in `AGENTS.md` einen verwalteten Block (`<!-- BEGIN:nextjs-agent-rules -->`); laut `node_modules/next/dist/docs/01-app/02-guides/ai-agents.md` wird die Auffrischung mit committet (kein `agentRules: false`).
 - `.gitignore` enthält `/_werkstatt/werkzeuge/node_modules` (Symlink, daher ohne Schrägstrich).

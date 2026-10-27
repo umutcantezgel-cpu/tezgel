@@ -1,0 +1,33 @@
+{
+ "werkzeug": "werte.mjs",
+ "zeitpunkt": "2026-10-27T11:28:11.693Z",
+ "basis": "6caeeb9c",
+ "arbeitsbaum": false,
+ "regeln": "_werkstatt/werkzeuge/werte-regeln.json",
+ "dateien": [
+  "src/app/globals.css",
+  "src/components/verlegen/Verlegen.tsx",
+  "src/config/blog.js",
+  "src/config/company.js",
+  "src/lib/formulare/useAnfrageFunnel.ts"
+ ],
+ "kandidaten_vorkommen": 5,
+ "kandidaten_eindeutig": 5,
+ "stil_nicht_pruefbar": 0,
+ "laufzeit_ms": 300,
+ "zusammenfassung": {
+  "ohne_css": 0,
+  "beliebig": 0,
+  "farbe_ausserhalb": 0,
+  "abstand_ausserhalb": 0,
+  "groesse_ausserhalb": 0,
+  "schrift_ausserhalb": 0,
+  "radius_ausserhalb": 0,
+  "dauer_ausserhalb": 0,
+  "farbe_literal": 0,
+  "style_wert": 0,
+  "dauer_zahl": 0
+ },
+ "befunde": [],
+ "fehler": []
+}
