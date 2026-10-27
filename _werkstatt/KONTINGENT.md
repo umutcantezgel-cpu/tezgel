@@ -57,3 +57,4 @@ Uhrzeit · Fenster Verbrauch, Soll, Ziel · Woche Verbrauch, Spielraum · belegt
     - Arbeit mit eigenem kleinem Kontext an frische Haiku-Agenten.
     - Messungen als Skripte.
   - Kalibrierung ausgeführt: Kalibrierpunkt gespeichert: Fenster 2026-10-27 14:30–2026-10-27 19:30 UTC · Kosten $16.33 · 100 % · Faktor 6.122 · Quelle limit · Stand 2026-10-27
+- 2026-10-27 21:31 MEZ · Schätzung nicht erhalten (Werkzeug über 280 s) · Plätze 0 Haiku (LCP-K fertig), Prüfkette ZUST-M als Skript · Planungsziel 60

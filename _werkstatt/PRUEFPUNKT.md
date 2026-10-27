@@ -1,14 +1,14 @@
 # PRUEFPUNKT
 
-- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · **Etappe E3, Welle E3-W1** · Stand 2026-10-27 20:35 MEZ (nach drittem Limit 16:46–19:30 UTC und Neustart)
+- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · **Etappe E3, Welle E3-W1** · Stand 2026-10-27 20:35 MEZ (21:31 MEZ)
 - E2 abgeschlossen nach zwei Anläufen (E-076, Berichte `berichte/UM-E2-B.md`, `UM-E2-B2.md`):
   - Z-02, Z-03, Z-06, Z-07, Z-09 und Z-11 auf Etappenstufe erfüllt.
   - Offener Punkt Z-10: TBT mobil → UM-E3-TBT.
   - HEAD 51355ef7 (Menü: Logo-Link, Hintergrund inert).
 - E3 bisher: UM-E3-DS und UM-E3-SVG vorgezogen und abgenommen (E-075).
 - Nächster exakter Schritt (PLAN 2.2, E3-W1):
-  1. UM-E3-ZUST-M (Orchestrator): Ladeschwelle 300/500 ms als Logik mit Test in Knopf; Auswahlknopf deaktiviert; Kontrollkästchen Hover, deaktiviert, 20 px.
-  2. Läuft: UM-E3-LCP-K (Haiku, Briefing `pakete/UM-E3-LCP-K.md`, nur Rohberichte lesen). Danach UM-E3-TBT (nur Bericht; Messung mit wechselnder Reihenfolge E0/HEAD/HEAD/E0, nur als Skript, nie neben anderen Läufen).
+  1. UM-E3-ZUST-M (Orchestrator), gebaut in efac0a52 und 2b-Folgecommit (Regeldatei), Prüfkette läuft (`$SCRATCH/zust-m/pruefkette.log`: Reinraum, Suite zweimal, axe voll, Pixel gegen 4316); danach E-077. Inhalt: Ladeschwelle 300/500 ms als Logik mit Test in Knopf; Auswahlknopf deaktiviert; Kontrollkästchen Hover, deaktiviert, 20 px.
+  2. Erledigt: UM-E3-LCP-K (Bericht). Danach UM-E3-TBT (nur Bericht; Messung mit wechselnder Reihenfolge E0/HEAD/HEAD/E0, nur als Skript, nie neben anderen Läufen).
   3. Danach E3-W2 UM-E3-MOD.
 - Server: 4311 = 7ceb5e41 (E0), 4316 = 51355ef7 (HEAD); 4314 und 4315 aus (Reinräume `reinraum-6caeeb9c`, `reinraum-f5544581` im Scratchpad).
 - Messregeln (E-076): Messungen als Skript, nie über einen Agenten. Lighthouse allein auf dem Rechner. Suite im Tor zweimal (`RELAUNCH_BEWEGUNG=an`). axe mit `--zustaende` prüft alle Größen.
