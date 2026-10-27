@@ -1,17 +1,17 @@
 # PRUEFPUNKT
 
-- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · Etappe E2, Welle E2-W2 · Stand 2026-10-27 07:05 MEZ
+- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · Etappe E2, Welle E2-W3 · Stand 2026-10-27 07:31 MEZ
 - Erledigt in E2:
   - UM-E2-SVGO (eee7cc37), UM-E2-U01 Node 24.22.1 (d4ecfac9), UM-E2-U02 TypeScript 6.0.3 (54ec7ac8).
-  - UM-E2-U03 als ZWISCHENSTAND (a6c1bd54): next 16.4.3, react 19.3.1, Stufe A und Reinraum grün.
+  - UM-E2-PX (67ab6710, E-070), UM-E2-U03 (a6c1bd54, 0d37880e): Pixelvergleich 0 Abweichung gegen 4311.
 - Nächster exakter Schritt:
-  1. Workflow UM-E2-PX (wf_a9d8240f-b1f: Bau und Gegenprüfung, Haiku) abwarten und abnehmen. Das Werkzeug liegt als ZWISCHENSTAND im Repo.
-  2. Pixelvergleich `pixelvergleich.mjs --vorher http://127.0.0.1:4311 --nachher http://127.0.0.1:4312 --hauptansichten` (U01), dann gegen 4313 (U03). Ergebnis nach `belege/um-e2/pixelvergleich/`, jede Abweichung erklären.
-  3. Danach U03 abschließen: UPGRADE Nr. 5 bis 9 und PLAN mit Commit. Dann U04 bis U07 nacheinander (Haiku, Briefings schreiben), danach E2-B.
+  1. Workflow UM-E2-U04 (wf_78c197b3-900: Upgrade und Gegenprüfung, Haiku) abwarten, abnehmen, committen.
+  2. Danach U05, U06, U07 mit demselben Workflow-Skript (`args.kennung`). Das Briefing steht in `pakete/UM-E2-U04-U07.md`. Nach jedem Paket Commit und UPGRADE-Zeile.
+  3. Dann E2-B: Prüfstufe B und Pixelvergleich des Endstands gegen 4311. Dafür einen Reinraum von HEAD auf 4314.
 - Server:
   - 4311 = 7ceb5e41 (E0, Node 22), 4312 = d4ecfac9 (U01, Node 24), 4313 = a6c1bd54 (U03, Node 24).
   - Reinraum-Ordner im Scratchpad; scratch.sh nutzt `node-lts/aktuell`.
-- Laufende Pakete: UM-E2-PX (Workflow). Bei Abbruch: `_werkstatt/werkzeuge/pixelvergleich.mjs` auf den letzten Commit zurücksetzen und neu starten (L5).
+- Laufende Pakete: UM-E2-U04 (Workflow). Bei Abbruch: `package.json` und `package-lock.json` auf den letzten Commit zurücksetzen (`git checkout -- package.json package-lock.json`, dann `npm ci`) und neu starten (L5).
 - Routinen:
   - WEITER trig_013KjQUDqdr7LRnFeCaw9XWY (stündlich :30 UTC).
   - Morgenbericht trig_01B6mPcvup5LmNmrzX4LFrJP (06:52 Europe/Berlin).

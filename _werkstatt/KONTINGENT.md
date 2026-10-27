@@ -26,3 +26,4 @@ Uhrzeit · Fenster Verbrauch, Soll, Ziel · Woche Verbrauch, Spielraum · belegt
 - 2026-10-27 06:05 MEZ · Fenster 29,9 % (Soll 84,9 %, Ziel 95 %), Fenster 00:31–05:31 UTC · Woche ? · Plätze: Messreihe läuft, Haiku frei · Gas · Quelle Schätzung (Faktor 1,973)
 - 2026-10-27 06:30 MEZ · Fenster 48,0 % (Soll 93,7 %, Ziel 95 %), Fenster 00:31–05:31 UTC · Woche ? · Plätze 2 Haiku (L0 Runde 2, UM-E2-SVGO) plus Messreihe · Gas · Quelle Schätzung (Faktor 1,973)
 - 2026-10-27 07:00 MEZ · Fenster 16,0 % (Soll 7,8 %, Ziel 95 %), Fenster 05:31–10:31 UTC · Woche ? · Plätze 1 Haiku (Workflow PX) plus Reinraum · Bremse: keine neuen Agenten bis zur Soll-Linie, Opus-Arbeit auf Abnahmen beschränkt · Quelle Schätzung (Faktor 1,973)
+- 2026-10-27 07:31 MEZ · Fenster 26,5 % (Soll 19,0 %, Ziel 95 %), Fenster 05:31–10:31 UTC · Woche ? · Plätze 1 Haiku (U04, Workflow) · Bremse: ein Platz, keine Opus-lastige Arbeit · Quelle Schätzung (Faktor 1,973)
