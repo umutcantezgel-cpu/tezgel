@@ -809,3 +809,20 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - Lehre (L6): Eine Kantenprüfung über das Lockfile muss `bundleDependencies` auslassen.
 - **Prüfregel `grep -c invalid`:** trifft den Paketnamen `character-reference-invalid`. Ab U05 gilt `npm ls --all 2>&1 | grep -E 'invalid:|ERR!|ERESOLVE'`.
 - **Routenzahl:** „107“ im Briefing war die Zahl der Zeilen mit Routenzeichen in der Build-Tabelle. Maßgeblich ist der Vergleich mit dem Stand davor (unverändert); ab U05 vergleicht der Prüfer die Routentabelle mit dem Stand vor dem Paket.
+
+## E-072 · Abnahme UM-E2-U05 mit Nacharbeit (27.10.2026, 08:25 MEZ, Orchestrator)
+- **Ergebnis:** zod 4.6.7, resend 6.34.1, tailwind-merge 3.7.0, @types/google.maps 3.66.7, source-map-js 1.2.2 (transitiv). `npm audit`: 0 Befunde, vorher 2 hohe. Stufe A ist zweifach grün (Upgrader, Gegenprüfung, dann Orchestrator nach der Nacharbeit).
+- **Nacharbeit:** Die Gegenprüfung forderte sie aus drei Gründen.
+  1. **Verhaltensänderungen von zod ab 4.5 (angenommen):**
+     - Längengrenzen zählen Unicode-Codepunkte statt UTF-16-Einheiten. Das wirkt nur bei Emoji und ähnlichen Zeichen an der Grenze, etwa fünf Emoji gegen `max(5)`.
+     - Bei Listen über `max(20)` meldet zod den ungültigen Einzeleintrag nicht mehr zusätzlich.
+     - Annahme, Ablehnung und Daten gültiger Anfragen bleiben gleich. Betroffen sind nur Fehlertexte ohnehin abgelehnter Randfälle, die das Formular nicht erzeugen kann.
+     - Die Version ist durch den hohen Audit-Befund (zod < 4.6.6) vorgegeben; ein Ausgleich im Code würde eigene Zähllogik in die unantastbare Anfrageprüfung bringen.
+     - Entscheidung: annehmen und hier vermerken. G8 bleibt gewahrt, weil Geschäftslogik, Pflichtfelder und Empfänger unverändert sind.
+  2. **Veraltete Schnittstellen (Z-03):**
+     - `z.string().email()` in `src/lib/email/validation.ts` sowie `.url()` und zweimal `.passthrough()` in `src/schemas/validation.js` sind in zod 4.6.7 als veraltet markiert.
+     - In zod 4.6.7 sind sie reine Aliase (`email(p) = this.check(_email(ZodEmail, p))`, `passthrough() = loose()`). Ersetzt durch `.check(z.email(…))`, `.check(z.url())` und `.loose()`.
+     - Ein Vergleich alt gegen neu auf 44 Eingaben ergab identische Ergebnisse, Daten, Fehlermeldungen und Reihenfolge (`belege/um-e2/u05/`).
+     - Die CRLF-Zeilenenden von `validation.js` bleiben erhalten.
+  3. **lucide-react:** 1.62.0 ist am 27.10. um 06:14 UTC erschienen, das Briefing nannte noch 1.61.0. Nachgezogen auf `^1.62.0`; alle 12 genutzten Icons sind vorhanden. UM-E3-SVG ersetzt die Bibliothek später ganz.
+- **Lehre (L6):** Der Bericht des Upgraders nannte den Listenfall nicht. Ab jetzt verlangen Briefings bei Validierungsbibliotheken einen Vergleich alt gegen neu über alle Schemata des Projekts, nicht nur über Stichproben.
