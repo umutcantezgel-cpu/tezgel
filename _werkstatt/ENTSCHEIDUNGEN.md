@@ -632,3 +632,79 @@ Pakete E0-PRUEF-01, -02a bis -02d und die unabhängige Abnahme E0-PRUEF-02-PA si
   - Texte: Die Texte des Vorlaufs sind mit dem Auftraggeber abgestimmt und gelten als Bestand. Neue Texte außer Mikrotexten kommen nur als Vorschlag in `TEXTVORSCHLAEGE.md`.
   - Ruhe: Die Rückmeldung des Auftraggebers „Ruhe“ (E-047) und die Zielgruppe begrenzen den AUSBAU „maximal“. Bewegung wird antwortend und erzählend, nicht laut; der Bewegungsschalter ist Pflicht.
 - **Laufende Arbeit:** Die fünfte Browserprüfung des Vorlaufs (wf_7f3987b4-6e4) läuft zu Ende. Bestätigte Befunde der Schwere hoch oder mittel behebe ich noch; die übrigen gehen als Befunde in E1 ein.
+
+## E-067 · E1 „Universal Motion“: Systementscheidungen mit Denkprotokoll (27.10.2026, Orchestrator)
+Grundlage: Berichte `berichte/UM-E0-{STACK,BEWEGUNG,DESIGN,VERLUSTE,QUALITAET,KONTINGENT}.md`, KERN v3.6, Rückmeldungen des Auftraggebers im Vorlauf (E-037, E-043, E-047). Eine Richtung je Thema, keine Varianten.
+
+### E-067-1 Leitidee und Signatur-Satz
+- **Ziel:** eine Leitidee, die Schrift, Raster, Farbe, Bewegung, SVG, Übergänge und Cursor erklärt und die Austauschprobe besteht.
+- **Drei Wege:** (a) „Klar verlegt“ aus K-001 behalten und um Cursor, Eingang und Leitfaden ergänzen; (b) neue Leitidee „Werkstattlicht“ (Licht über Fliesenflächen); (c) „Maß und Lot“ (Werkzeugsprache: Wasserwaage, Lot, Laser).
+- **Bewertung:** (a) trägt den abgenommenen Bestand (Verband, Fugenraster, Laserlinie, B-01) und besteht die Austauschprobe; (b) wäre ein Neuanfang und läuft gegen „Ruhe“; (c) ist in (a) als Laserlinie schon enthalten. → **(a).**
+- **Signatur-Satz:**
+  - Übergangsgeste: **„Fliese für Fliese“** (B-01, Bestand, Wunsch des Auftraggebers).
+  - Enthüllungsgeste: **„Setzen“**. Ein Block kommt kurz und fest an seinen Platz wie eine Fliese unter dem Gummihammer; unter ihm zieht sich die Fuge als 1-px-Linie (Bestand `auftritt` und `anriss`, vereinheitlicht).
+  - Leitfaden-Motiv: **die rote Laserlinie** (`leitachse`). Sie läuft durch alle Erzählansichten, führt beim Scrollen und markiert den aktuellen Abschnitt.
+  - Cursor-Charakter: **das Fugenkreuz**. Nur bei feinem Zeiger: Der Systemzeiger bleibt der Klickpunkt ohne Verzögerung; über Fotos, Reglern und Plänen erscheint ein kleines Fugenkreuz mit einer kurzen Beschriftung („Ansehen“, „Ziehen“, „Vergleichen“). Es folgt ohne Feder, weil Ruhe gilt (E-047).
+  - Typografischer Moment: **„An der Schnur“**. Die H1-Zeilen der Erzählansichten erscheinen hinter Zeilenmasken eine nach der anderen, an der Laserlinie ausgerichtet (Bestand `sig-flucht`, ergänzt um Masken).
+- **Umkehrprobe:** Ein Fliesenbetrieb ohne Laserlinie und Verband könnte keine dieser Gesten unverändert nutzen. Eine Bäckerei oder ein Steuerbüro ebenso wenig.
+- **Folgen zweiter Ordnung:** Das Register wächst nur um Cursor, Bewegungsschalter und Zeilenmasken. Der Rest ist Vereinheitlichung des Bestands, kein Effektzuwachs (Risiko „Effektfeuerwerk“).
+
+### E-067-2 Bewegungsarchitektur und Bibliotheken
+- **Ziel:** ein zentrales Bewegungsmodul mit Schalter, gemeinsamem Takt und Zeigerart, Plattform zuerst, im Budget.
+- **Drei Wege:** (a) Bestand `src/lib/motion/` ausbauen (CSS, WAAPI, Scroll-Zeitleisten mit Rückfall, ein eigener Takt); (b) GSAP mit ScrollTrigger und SplitText; (c) Motion für React mit Lenis.
+- **Bewertung:** (a) braucht 0 KB neue Bibliothek und behält alle 28 Registereinträge. (b) und (c) brächten 30 bis 60 KB gzip und eine zweite Bewegungssprache neben dem Bestand. Zeilenmasken brauchen kein SplitText: Die Zeilen der H1 stehen als `titelZeilen` schon im Inhalt. → **(a).**
+- **Lenis:** nein. Touch bleibt ohnehin nativ. Geglättetes Mausrad verändert das Scrollgefühl für ältere Nutzer, kostet Skript und widerspricht „Ruhe“. Keine der 35 Anforderungen aus Abschnitt 8 verlangt Lenis zwingend.
+- **WebGL/WebGPU:** nein. Stufe „maximal“ erlaubt höchstens eine Szene „wenn sie die Marke zeigt“. Echte Fotos zeigen die Marke besser (K-003 „Echt zeigen“), und Leistung und Zielgruppe sprechen dagegen.
+- **Umkehrprobe:** Erreichen Sticky-Szenen oder Zeilenmasken ohne Bibliothek die Bildrate nicht (Z-06), wird die Bibliotheksfrage neu gestellt, nicht vorher.
+- **Folgen:**
+  - Bewegungsschalter „Bewegung: an/ruhig“ im Fuß und im Menü. Er startet nach `prefers-reduced-motion`, merkt sich die Wahl je Gerät (`localStorage`) und setzt vor dem ersten Rendern `html[data-bewegung="ruhig"]` im Kopfskript.
+  - Gemeinsamer Takt `src/lib/motion/takt.ts` (eine rAF-Schleife). Die 11 rAF-Nutzungen und das `setInterval` des Karussells laufen darüber.
+  - `@supports`-Weichen für `animation-timeline` mit IntersectionObserver-Rückfall bleiben.
+
+### E-067-3 Seitenübergang „Fliese für Fliese“ (B-01) nach Abschnitt 8
+- **Ziel:** die Geste des Auftraggebers behalten, aber Bedienung und Zugänglichkeit nach Abschnitt 8 erfüllen.
+- **Drei Wege:**
+  - (a) B-01 mit Dauer nach Wunsch (2400/1800 ms) behalten. Ein Tippen, Klick oder Tastendruck beendet ihn sofort, die Navigation startet beim Klick, und Arbeitsansichten wechseln schlicht.
+  - (b) B-01 auf 600 ms kürzen.
+  - (c) B-01 durch React ViewTransition mit gemeinsamen Elementen ersetzen.
+- **Bewertung:** (b) bricht den ausdrücklichen Wunsch „langsamer, ruhiger“ (E3-B01-LOGO). (c) ersetzt die Geste, für die sich der Auftraggeber entschieden hat, und braucht den experimentellen Next-Schalter `viewTransition`. → **(a).** Die Dauer ist eine Gestaltungsvorliebe des Auftraggebers; die Bedienregeln aus Abschnitt 8 sind Pflicht.
+- **Folgen:**
+  - Klicks während des Belegens werden nicht mehr verworfen, sondern beenden den Übergang.
+  - `data-kein-verlegen` gilt für alle Arbeitsansichten (Formulare, Termin, Rechner, Rechtstexte, Suche). Liste in K-010; dort kurze Überblendung über `document.startViewTransition`, wo vorhanden.
+  - Bei ruhiger Bewegung: Überblendung `dauer-2` oder Sofortwechsel.
+  - Die Dauer kommt zur Geschmacksabnahme in MENSCHEN.md (mit dem Vermerk, dass der Richtwert für Signaturabläufe 1,6 s ist).
+
+### E-067-4 Eingang: kein Vorhang mehr
+- **Ziel:** „Der erste Bildschirm steht ohne Warten“. Das LCP-Element startet nie unsichtbar; kein Intro, das Inhalt zurückhält (harter Katalogpunkt).
+- **Drei Wege:**
+  - (a) Eingang am Platz: Das Logo baut sich im Kopf auf (Endzustand exakt das Original). Die H1-Zeilen erscheinen hinter Zeilenmasken, Ort und Hauptknopf folgen, alles in höchstens 1,5 s. Das Foto ist vom ersten Bild an sichtbar und wird höchstens durch einen Fugenriss am Rand begleitet; der Startbild-Belag deckt es nicht mehr ab.
+  - (b) Das Intro behalten und kürzen.
+  - (c) Den Eingang ganz streichen.
+- **Bewertung:** (b) bleibt ein Vorhang und damit ein harter Verstoß. (c) verliert das „Logo zeichnet sich“ aus dem Wunsch des Auftraggebers. → **(a).**
+- **Folgen:** Intro-Schicht (B-02 Kalkblatt) und Startbild-Belag werden umgebaut; die Kennungen bleiben als Alias im Register. Beim Wiederkehren im selben Besuch fällt der Eingang auf Zeilenmasken ohne Logo kürzer aus. Zeitlimit 2 s im Kopfskript.
+
+### E-067-5 Designsystem nach Abschnitt 7
+- **Farben:** Alle Tokens werden als OKLCH angegeben, mit denselben gerenderten Farben (Umrechnung, kein sichtbarer Wechsel). Dazu Abstufungen je Familie: tinte, kalk, laser, abnahme mit einer Regel für die Helligkeitsschritte. Bedeutungs-Tokens (Fehler, Erfolg, Rand, Fokus) verweisen nur noch auf Stufen.
+- **Dauern:** Sechs Stufen bleiben (`dauer-1` bis `dauer-5` und `dauer-0` = sofort für ruhig). Die Ablauflängen von B-01 und Eingang werden als Vielfache der Stufen geschrieben, keine freien Werte. `--staffel` ist ein Abstand, kein Dauerwert.
+- **Kurven:** vier Stufen.
+  - `ease-setzen`: ausklingend, nimmt `ease-hammer` auf (Alias bleibt).
+  - `ease-laser`: wechselnd.
+  - `ease-weg`: beschleunigend.
+  - `ease-aufsetzen`: nur B-01.
+  - `linear` ist eine Plattformkurve.
+- **Abstand:** Die Skala bleibt (12 Stufen). Die Tailwind-Standardstufen sind nicht gesperrt, weil eine Sperre alle Hilfsklassen bräche; die Grenze prüft `werte.mjs`. Seine Regeldatei wird nachgeführt.
+- **Themen:** nur hell (Pflicht). Ein Dunkelmodus steht in der Kür, weil die Zielgruppe ihn nicht verlangt und jedes Bild neu geprüft werden müsste.
+- **Mikrotypografie:** geschütztes Leerzeichen vor Einheiten (101 Stellen, nicht in Kundenstimmen, G8). Ladeanzeige erst nach 300 ms, dann mindestens 500 ms. Fehlende Zustände an 6 von 13 Bausteinen ergänzen.
+
+### E-067-6 Stack-Ziele (Einzelheiten in UPGRADE.md)
+- **Laufzeit:** die aktuelle Node-LTS am Tag des Upgrades laut `nodejs.org/dist/index.json`; heute 24.22.1.
+  - Wird Node 26 vorher LTS, gilt 26.
+  - npm in der zur LTS gebündelten Version, festgehalten im Feld `packageManager`.
+  - `engines` auf die Mindestversion des neuen Next, `.nvmrc` und CI auf die LTS.
+  - Die Laufzeit bei Vercel stellt der Mensch um (MENSCHEN.md).
+- **Majors, die derzeit an Peer-Bereichen scheitern:**
+  - TypeScript 7 (typescript-eslint erlaubt < 6.1.0) und ESLint 10 (eslint-plugin-react, jsx-a11y und import erlauben nur ^9).
+  - Ziel ist die neueste kompatible Version: TypeScript 6.0.x, ESLint 9.39.x.
+  - Zwei belegte Anläufe gehören dazu: (1) der Peer-Befund in UM-E0-STACK; (2) ein Installationsversuch ohne `--legacy-peer-deps` in E2.
+  - Gelingt beides nicht, bleibt die kompatible Version mit Vermerk in MENSCHEN.md.
+- **Sicherheit zuerst:** next 16.4.3 (kritisch), zod 4.6.7, sharp 0.35.5, source-map-js. `npm audit` mit null hohen oder kritischen Befunden ist das Ziel von Z-03.
