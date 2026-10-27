@@ -838,3 +838,22 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - Z-03 erlaubt „belegt auf der neuesten kompatiblen Version“. Der Hinweis gehört zu genau diesem Beleg und zählt nicht als AUSNAHME.
 - **Wiederholung:** UM-E2-B und UM-E5-C prüfen erneut, ob die Plugins ESLint 10 erlauben. Wenn ja, folgt ein Nachpaket.
 - **Kleinere Berichtsfehler** (Routenzahl, nicht genannte Lockfile-Kante) sind im Bericht vermerkt.
+
+## E-074 · Abnahme UM-E2-U07 mit Nacharbeit (27.10.2026, 09:15 MEZ, Orchestrator)
+- **Ergebnis:** @playwright/test 1.64.1, @axe-core/playwright 4.14.0, knip 6.43.0 und sharp 0.35.5, alle exakt in `_werkstatt/werkzeuge/package.json`.
+  - Playwright startet mit dem vorinstallierten Chromium 1243.
+  - Werkzeugtests 11/11 und 43/43, `svg.mjs` wie vorher.
+  - Pixelvergleich-Selbstlauf: 0 Abweichung.
+- **Nacharbeit nach der Gegenprüfung:**
+  1. **Fehlender Bericht:** aus der Rückgabe übernommen. Der Upgrader hielt Berichtsdateien irrtümlich für verboten. Künftige Briefings sagen ausdrücklich: „Die Berichtsdatei unter `_werkstatt/berichte/` ist dein Schreibrecht.“
+  2. **zod 4.6.5 in den Werkzeugen** (hoch, über knip und chromium-bidi): `npm audit fix` ohne `--force` hebt auf 4.6.7.
+     - Übrig sind 5 mittlere Befunde der Kette potrace → jimp → phin sowie fast-uri.
+     - Der einzige Fix für die Kette wäre ein Abstieg auf potrace 2.1.1 mit `--force`.
+     - Z-03 betrifft nur hohe und kritische Befunde; die Kette steht als Hinweis in UPGRADE.
+  3. **Zugänglichkeitsfehler am Logo-Link:** axe-core 4.14 findet auf `/` bei 1024 px „label-content-name-mismatch“ (ernst). Mit 4.13 war der Fehler nicht sichtbar, obwohl er schon in E3 vermerkt war.
+     - Ursache: Das `aria-label` „Zur Startseite von Fliesenverlegung Tezgel“ enthält den sichtbaren Text „Fachbetrieb Aßlar · Wetzlar“ nicht (WCAG 2.5.3).
+     - Behoben in `Header.jsx`: kein `aria-label`. Der Name entsteht aus Logo-Alternativtext und sichtbarer Zeile, dazu „, zur Startseite“ nur für Screenreader.
+     - Das Logo ist unverändert (G8). Fuß und Menü zeigen am Link keinen sichtbaren Text; dort greift die Regel nicht, sie bleiben unverändert.
+     - Z-09 verlangt null ernste Befunde ohne Ausnahme; die Behebung ist deshalb Pflicht und gehört zur Etappe E2.
+  4. **Commit 9ecbec98** war ein Zwischenstand des Orchestrators, gesichert für den Stop-Hook.
+- **Lehre (L6):** Ein Upgrade der Prüfwerkzeuge kann neue echte Befunde zeigen. Ab jetzt läuft nach jedem Werkzeug-Upgrade axe über alle Hauptansichten (Teil von UM-E2-B).
