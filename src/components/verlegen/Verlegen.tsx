@@ -196,7 +196,7 @@ function gesamtdauer(richtung: 'vor' | 'zurueck'): number {
   return wechselDauer(ms('--verlegen-gesamt'), ms('--verlegen-gesamt-folge'), schonGewechselt(), richtung);
 }
 
-/** Reduzierte Bewegung: Überblendung `--verlegen-ruhig` (150 ms), je zur Hälfte hinein und hinaus. */
+/** Reduzierte Bewegung: Überblendung `--verlegen-ruhig` (140 ms = dauer-1, v4), je zur Hälfte hinein und hinaus. */
 function halbeBlende(): number {
   return ms('--verlegen-ruhig') / 2;
 }
