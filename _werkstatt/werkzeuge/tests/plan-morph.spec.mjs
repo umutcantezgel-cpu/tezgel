@@ -71,8 +71,8 @@ async function linkInsBild(page) {
 }
 
 test.describe('Plan-Morph (E-037)', () => {
-  // Die Konfiguration setzt reducedMotion: reduce; der Morph braucht Bewegung. Playwright 1.56 hat die Einstellung hier
-  // nicht angewandt, ab 1.64 gilt sie (UM-E2-B, E-076): die Bedingung steht deshalb ausdrücklich im Test (wie verlegen.spec).
+  // Die Konfiguration setzt reducedMotion: reduce; der Morph braucht Bewegung. Playwright bis 1.62 hat die Einstellung
+  // nicht angewandt, ab 1.63.0 gilt sie (UM-E2-B, E-076): die Bedingung steht deshalb ausdrücklich im Test (wie verlegen.spec).
   // M6 schaltet reduzierte Bewegung selbst ein.
   test.use({ reducedMotion: 'no-preference' });
   test.beforeEach(async ({ context, baseURL }) => {

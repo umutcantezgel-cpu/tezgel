@@ -565,7 +565,7 @@ test.describe('Bewegung an (Wechsel mit Fliesen)', () => {
     await beobachte(page);
     const href = await link.getAttribute('href');
     const ab = await laenge(page);
-    await link.click({ noWaitAfter: true }); // externe Navigation, die Sperre antwortet mit 204 (E-076)
+    await link.click();
     await ohneWechsel(page, href, ab);
     expect.soft(await pfad(page)).toBe(START);
   });

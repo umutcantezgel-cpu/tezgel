@@ -63,7 +63,7 @@ test.describe('F-10 WhatsApp-Links und Widget', () => {
       const ausloeser = test.info().project.name === 'mobil'
         ? page.getByRole('complementary', { name: 'Schnellkontakt', exact: true }).getByRole('link', { name: 'Nachricht per WhatsApp', exact: true })
         : page.locator('#whatsapp-floating-btn');
-      const ziele = await waAufrufen(page, () => ausloeser.click({ noWaitAfter: true })); // externe Navigation (E-076)
+      const ziele = await waAufrufen(page, () => ausloeser.click());
       const z = waZiel(ziele[0]);
       expect(z.passt, z.url).toBe(true);
       expect(z.nummer).toBe(WA_NUMMER);
@@ -107,7 +107,7 @@ test.describe('F-10 WhatsApp-Links und Widget', () => {
     const knopf = page
       .getByRole('complementary', { name: 'Schnellkontakt', exact: true })
       .getByRole('link', { name: 'Nachricht per WhatsApp', exact: true });
-    const ziele = await waAufrufen(page, () => knopf.click({ noWaitAfter: true })); // externe Navigation (E-076)
+    const ziele = await waAufrufen(page, () => knopf.click());
     const z = waZiel(ziele[0]);
     expect(z.passt, z.url).toBe(true);
     expect(z.nummer).toBe(WA_NUMMER);

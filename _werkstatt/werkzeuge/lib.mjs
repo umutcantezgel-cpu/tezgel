@@ -121,9 +121,10 @@ export async function installSperre(context, { protokoll = [], echteRoute = fals
     if (url.protocol === 'file:' && methode === 'GET') return route.continue();
     if (!lokal) {
       protokoll.push({ art: 'fremd', methode, url: url.origin + url.pathname });
-      // 204 auch für Navigationen weg von der Seite (WhatsApp, externe Links): die Seite bleibt stehen wie beim Menschen,
-      // dessen Gerät WhatsApp öffnet. Ein Abbruch zeigte stattdessen die Chrome-Fehlerseite. Playwright ab 1.64 wartet nach
-      // click() auf solche Navigationen; Klicks, die eine auslösen, setzen deshalb noWaitAfter (UM-E2-B, E-076).
+      // Navigationen weg von der Seite (WhatsApp, externe Links): Abbruch als „aborted“ (net::ERR_ABORTED). Die Seite bleibt
+      // stehen wie beim Menschen, dessen Gerät WhatsApp öffnet, und Playwright schließt die Navigation ab. Bis 1.63 tat das eine
+      // Antwort 204; ab 1.64.0 bleibt eine 204-Navigation in Playwright offen (E-076). „blockedbyclient“ zeigt die Fehlerseite.
+      if (req.isNavigationRequest()) return route.abort('aborted');
       return route.fulfill({ status: 204, body: '' });
     }
     if (methode === 'GET' || methode === 'HEAD' || methode === 'OPTIONS') return route.continue();

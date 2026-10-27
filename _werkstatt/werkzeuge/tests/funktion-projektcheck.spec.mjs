@@ -73,7 +73,7 @@ test.describe('BadProjektCheck (/bad/projekt-check)', () => {
     await online(page).click();
     await expect(name(page)).toBeFocused();
     expect(await name(page).evaluate((el) => !el.checkValidity())).toBe(true);
-    await whatsapp(page).click({ noWaitAfter: true }); // externe Navigation (E-076)
+    await whatsapp(page).click();
     await expect(name(page)).toBeFocused();
     await expect(page.getByText('WhatsApp wurde geöffnet')).toHaveCount(0);
     expect(protokoll.filter((e) => String(e.url ?? '').includes('api.whatsapp.com'))).toHaveLength(0);
@@ -202,7 +202,7 @@ test.describe('BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten', () =>
       await konfiguriere(w);
       await kontaktAusfuellen(w, { mitEmail: false });
       const waZiel = page.waitForRequest((r) => r.url().startsWith('https://api.whatsapp.com/send'));
-      await whatsapp(w).click({ noWaitAfter: true }); // externe Navigation (E-076)
+      await whatsapp(w).click();
       const ziel = new URL((await waZiel).url());
       expect(ziel.origin + ziel.pathname).toBe('https://api.whatsapp.com/send');
       expect(ziel.searchParams.get('phone')).toBe(WHATSAPP_NUMMER);
