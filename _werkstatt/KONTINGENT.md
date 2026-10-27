@@ -45,3 +45,4 @@ Uhrzeit · Fenster Verbrauch, Soll, Ziel · Woche Verbrauch, Spielraum · belegt
   - Lehre (L6): Bis zwei Fenster ohne Limit enden, plant der Tempomat mit Ziel 85 statt 95. Haiku-Workflows mit vielen Agenten zählen voll in das Fenster.
   - Neues Fenster 14:31–19:31 UTC: 16,5 % um 14:40 UTC (Soll 3 %), Bremse. Messungen laufen als Skript ohne Agenten.
 - 2026-10-27 16:57 MEZ · Fenster 33,9 % (Soll 27,2 %, Ziel für die Planung 85 %) 14:31–19:31 UTC · Woche ? · Plätze 0 Haiku (zwei Auswertungen fertig), Suite läuft · Bremse (knapp über Soll)
+- 2026-10-27 18:15 MEZ ·  · Plätze 1 Haiku (LCP-K) · Bremse beachtet: ZUST-M eigene Arbeit, eine Messreihe nach der anderen
