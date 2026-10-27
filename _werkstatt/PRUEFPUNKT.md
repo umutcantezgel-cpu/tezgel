@@ -1,17 +1,20 @@
 # PRUEFPUNKT
 
-- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · Etappe E2, Welle E2-W3 · Stand 2026-10-27 07:31 MEZ
+- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · Etappe E2, Welle E2-W4 (Tor) · Stand 2026-10-27 08:31 MEZ
 - Erledigt in E2:
   - UM-E2-SVGO (eee7cc37), UM-E2-U01 Node 24.22.1 (d4ecfac9), UM-E2-U02 TypeScript 6.0.3 (54ec7ac8).
-  - UM-E2-PX (67ab6710, E-070), UM-E2-U03 (a6c1bd54, 0d37880e): Pixelvergleich 0 Abweichung gegen 4311.
+  - UM-E2-PX (67ab6710, E-070), UM-E2-U03 (a6c1bd54, 0d37880e), U04 (91615baa, E-071), U05 (f1bed29f, e117a149, E-072), U06 (E-073), U07 (9ecbec98, 28be7043, 6caeeb9c, E-074).
 - Nächster exakter Schritt:
-  1. Workflow UM-E2-U04 (wf_78c197b3-900: Upgrade und Gegenprüfung, Haiku) abwarten, abnehmen, committen.
-  2. Danach U05, U06, U07 mit demselben Workflow-Skript (`args.kennung`). Das Briefing steht in `pakete/UM-E2-U04-U07.md`. Nach jedem Paket Commit und UPGRADE-Zeile.
-  3. Dann E2-B: Prüfstufe B und Pixelvergleich des Endstands gegen 4311. Dafür einen Reinraum von HEAD auf 4314.
+  1. E2-B-Messreihe (`$SCRATCH/um-e2-b/messen.sh`, Hintergrund, Server 4314 = 6caeeb9c) bis Lighthouse abwarten. Danach `belege/um-e2/*` committen.
+     - Fehlt eine Teilmessung, das Skript erneut starten: fertige Schritte überspringt es über `logs/*.ok`.
+  2. Die 1-px-Höhenabweichung `/bad/barrierefreies-bad` d1440 klären. Sie tritt im vollen Lauf dreimal auf, im Einzellauf nie. Gebrochene Höhe über `getBoundingClientRect` auf 4311 und 4314 messen.
+  3. UM-E2-B auswerten lassen: Haiku-Prüfer vergleicht alle Werte mit E0 (`belege/um-e0/`) und schreibt `berichte/UM-E2-B.md`. Dann das Tor entscheiden, E-0xx.
+  4. UM-E3-DS: Zwischenstand d. h. bauen (Stufe A), Pixelvergleich gegen 4314 (Erwartung 0, gleiche Farben), abnehmen.
+  5. UM-E3-SVG (Haiku läuft): abnehmen, Config-Änderungen übertragen, Weiterleitungen der Logo-SVGs in `next.config.ts`, `lucide-react` deinstallieren.
 - Server:
-  - 4311 = 7ceb5e41 (E0, Node 22), 4312 = d4ecfac9 (U01, Node 24), 4313 = a6c1bd54 (U03, Node 24).
+  - 4311 = 7ceb5e41 (E0, Node 22), 4313 = a6c1bd54 (U03), 4314 = 6caeeb9c (E2-Endstand, Messreihe). 4312 ist gestoppt.
   - Reinraum-Ordner im Scratchpad; scratch.sh nutzt `node-lts/aktuell`.
-- Laufende Pakete: UM-E2-U04 (Workflow). Bei Abbruch: `package.json` und `package-lock.json` auf den letzten Commit zurücksetzen (`git checkout -- package.json package-lock.json`, dann `npm ci`) und neu starten (L5).
+- Laufende Pakete: UM-E3-SVG (Haiku, Briefing `pakete/UM-E3-SVG.md`). Bei Abbruch: seine Schreibrechte auf den letzten Commit zurücksetzen und neu starten (L5).
 - Routinen:
   - WEITER trig_013KjQUDqdr7LRnFeCaw9XWY (stündlich :30 UTC).
   - Morgenbericht trig_01B6mPcvup5LmNmrzX4LFrJP (06:52 Europe/Berlin).
