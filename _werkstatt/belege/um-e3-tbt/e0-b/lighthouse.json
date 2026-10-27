@@ -463,6 +463,238 @@
      }
     ]
    }
+  },
+  "/balkon-terrasse": {
+   "mobil": {
+    "median": {
+     "perf": 92,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 3243,
+     "cls": 0,
+     "tbt": 79,
+     "fcp": 1215,
+     "si": 1767,
+     "js_kb": 206,
+     "font_kb": 72,
+     "gesamt_kb": 471,
+     "benchmark": 2403,
+     "lcp_element": {
+      "selector": "div.mx-auto > figure > div.border > img.block",
+      "ausschnitt": "<img alt=\"Terrasse mit großen hellgrauen Platten, einer weißen Stütze und weißem Gel…\" fetchpriority=\"high\" loading=\"eager\" width=\"1240\" height=\"1550\" decoding="
+     },
+     "spanne": {
+      "perf": [
+       91,
+       93
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       3200,
+       3459
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       79,
+       86
+      ],
+      "fcp": [
+       1056,
+       1218
+      ],
+      "si": [
+       1548,
+       1782
+      ],
+      "js_kb": [
+       206,
+       206
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       471,
+       471
+      ],
+      "benchmark": [
+       2366,
+       2437
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 92,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3243.0225,
+      "cls": 0,
+      "tbt": 86.00000000000023,
+      "fcp": 1218.0225,
+      "si": 1548.2462654131884,
+      "js_kb": 206,
+      "font_kb": 72,
+      "gesamt_kb": 471,
+      "benchmark": 2437,
+      "lcp_element": {
+       "selector": "div.mx-auto > figure > div.border > img.block",
+       "ausschnitt": "<img alt=\"Terrasse mit großen hellgrauen Platten, einer weißen Stütze und weißem Gel…\" fetchpriority=\"high\" loading=\"eager\" width=\"1240\" height=\"1550\" decoding="
+      },
+      "lcp_phasen": {
+       "ttfb": 17,
+       "ladeverzoegerung": 45,
+       "ladezeit": 23,
+       "renderverzoegerung": 131
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/41af06gjk2xfi.js",
+        "kb": 18.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3dmv3yt6avth_.js",
+        "kb": 16.9
+       },
+       {
+        "pfad": "/_next/static/chunks/3ffjbhd7bqh5s.js",
+        "kb": 12
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/2-2026-10-27T21-27-20-155Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 93,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3199.969725,
+      "cls": 0,
+      "tbt": 78.50000000000045,
+      "fcp": 1214.97405,
+      "si": 1781.5092053598141,
+      "js_kb": 206,
+      "font_kb": 72,
+      "gesamt_kb": 471,
+      "benchmark": 2366,
+      "lcp_element": {
+       "selector": "div.mx-auto > figure > div.border > img.block",
+       "ausschnitt": "<img alt=\"Terrasse mit großen hellgrauen Platten, einer weißen Stütze und weißem Gel…\" fetchpriority=\"high\" loading=\"eager\" width=\"1240\" height=\"1550\" decoding="
+      },
+      "lcp_phasen": {
+       "ttfb": 14,
+       "ladeverzoegerung": 26,
+       "ladezeit": 30,
+       "renderverzoegerung": 123
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/41af06gjk2xfi.js",
+        "kb": 18.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3dmv3yt6avth_.js",
+        "kb": 16.9
+       },
+       {
+        "pfad": "/_next/static/chunks/3ffjbhd7bqh5s.js",
+        "kb": 12
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/3-2026-10-27T21-27-31-115Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 91,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3459.2015999999994,
+      "cls": 0,
+      "tbt": 78.50000000000023,
+      "fcp": 1056.1344,
+      "si": 1767.4247843479443,
+      "js_kb": 206,
+      "font_kb": 72,
+      "gesamt_kb": 471,
+      "benchmark": 2403,
+      "lcp_element": {
+       "selector": "div.mx-auto > figure > div.border > img.block",
+       "ausschnitt": "<img alt=\"Terrasse mit großen hellgrauen Platten, einer weißen Stütze und weißem Gel…\" fetchpriority=\"high\" loading=\"eager\" width=\"1240\" height=\"1550\" decoding="
+      },
+      "lcp_phasen": {
+       "ttfb": 15,
+       "ladeverzoegerung": 31,
+       "ladezeit": 26,
+       "renderverzoegerung": 117
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/075_81sg-x3zl.js",
+        "kb": 71
+       },
+       {
+        "pfad": "/_next/static/chunks/3nex4q29u71w8.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/41af06gjk2xfi.js",
+        "kb": 18.7
+       },
+       {
+        "pfad": "/_next/static/chunks/3dmv3yt6avth_.js",
+        "kb": 16.9
+       },
+       {
+        "pfad": "/_next/static/chunks/3ffjbhd7bqh5s.js",
+        "kb": 12
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/4-2026-10-27T21-27-41-793Z",
+      "profil_dateien": 20
+     }
+    ]
+   }
   }
  },
  "satz": "um-e3-tbt/e0-b",
@@ -470,7 +702,7 @@
  "laeufe": 3,
  "bedingungen": "lokal next start (komprimiert), Erstbesuch mit Banner, Dritt-Hosts blockiert, Lighthouse-Standard-Drosselung (mobil: simuliert 4× CPU, Slow 4G; Desktop-Preset), frisches Chrome-Profil je Lauf, Aufwärmlauf, Median aus 3, Benchmark-Band ±15 %",
  "benchmark_band": 0.15,
- "benchmark_referenz": 2501,
+ "benchmark_referenz": 2437,
  "basisadresse": "http://127.0.0.1:4311",
  "server_stand": {
   "port": "4311",
