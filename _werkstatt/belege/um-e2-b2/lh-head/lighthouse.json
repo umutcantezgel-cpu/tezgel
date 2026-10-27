@@ -3815,6 +3815,960 @@
      }
     ]
    }
+  },
+  "/ueber-uns": {
+   "mobil": {
+    "median": {
+     "perf": 92,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 3314,
+     "cls": 0,
+     "tbt": 105,
+     "fcp": 1060,
+     "si": 1465,
+     "js_kb": 202,
+     "font_kb": 72,
+     "gesamt_kb": 453,
+     "benchmark": 2196,
+     "lcp_element": {
+      "selector": "div.mx-auto > figure > div.border > img.block",
+      "ausschnitt": "<img alt=\"Mitarbeiter von Fliesenverlegung Tezgel kniet auf dem Balkon, blaues Dicht…\" fetchpriority=\"high\" loading=\"eager\" width=\"1280\" height=\"1600\" decoding="
+     },
+     "spanne": {
+      "perf": [
+       91,
+       95
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       2873,
+       3315
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       84,
+       115
+      ],
+      "fcp": [
+       1059,
+       1223
+      ],
+      "si": [
+       1208,
+       1511
+      ],
+      "js_kb": [
+       202,
+       202
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       453,
+       453
+      ],
+      "benchmark": [
+       2106,
+       2197
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 95,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2872.90365,
+      "cls": 0,
+      "tbt": 104.99999999999977,
+      "fcp": 1222.90365,
+      "si": 1465.216311000245,
+      "js_kb": 202,
+      "font_kb": 72,
+      "gesamt_kb": 453,
+      "benchmark": 2196,
+      "lcp_element": {
+       "selector": "div.mx-auto > figure > div.border > img.block",
+       "ausschnitt": "<img alt=\"Mitarbeiter von Fliesenverlegung Tezgel kniet auf dem Balkon, blaues Dicht…\" fetchpriority=\"high\" loading=\"eager\" width=\"1280\" height=\"1600\" decoding="
+      },
+      "lcp_phasen": {
+       "ttfb": 14,
+       "ladeverzoegerung": 35,
+       "ladezeit": 28,
+       "renderverzoegerung": 165
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2tbu000sg63yb.js",
+        "kb": 71.2
+       },
+       {
+        "pfad": "/_next/static/chunks/3i7bb4yv5vlj-.js",
+        "kb": 46
+       },
+       {
+        "pfad": "/_next/static/chunks/24-1jc_itqjx3.js",
+        "kb": 24.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2scyxp_5z7np1.js",
+        "kb": 18.6
+       },
+       {
+        "pfad": "/_next/static/chunks/3msxlru53o15v.js",
+        "kb": 10.1
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/2-2026-10-27T14-43-21-177Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 92,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3314.57835,
+      "cls": 0,
+      "tbt": 83.5,
+      "fcp": 1059.7189,
+      "si": 1207.930409764544,
+      "js_kb": 202,
+      "font_kb": 72,
+      "gesamt_kb": 453,
+      "benchmark": 2106,
+      "lcp_element": {
+       "selector": "div.mx-auto > figure > div.border > img.block",
+       "ausschnitt": "<img alt=\"Mitarbeiter von Fliesenverlegung Tezgel kniet auf dem Balkon, blaues Dicht…\" fetchpriority=\"high\" loading=\"eager\" width=\"1280\" height=\"1600\" decoding="
+      },
+      "lcp_phasen": {
+       "ttfb": 21,
+       "ladeverzoegerung": 29,
+       "ladezeit": 18,
+       "renderverzoegerung": 124
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2tbu000sg63yb.js",
+        "kb": 71.2
+       },
+       {
+        "pfad": "/_next/static/chunks/3i7bb4yv5vlj-.js",
+        "kb": 46
+       },
+       {
+        "pfad": "/_next/static/chunks/24-1jc_itqjx3.js",
+        "kb": 24.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2scyxp_5z7np1.js",
+        "kb": 18.6
+       },
+       {
+        "pfad": "/_next/static/chunks/3msxlru53o15v.js",
+        "kb": 10.1
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/3-2026-10-27T14-43-31-542Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 91,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3313.989,
+      "cls": 0,
+      "tbt": 115.33699999999999,
+      "fcp": 1059.326,
+      "si": 1511.2060210324912,
+      "js_kb": 202,
+      "font_kb": 72,
+      "gesamt_kb": 453,
+      "benchmark": 2197,
+      "lcp_element": {
+       "selector": "div.mx-auto > figure > div.border > img.block",
+       "ausschnitt": "<img alt=\"Mitarbeiter von Fliesenverlegung Tezgel kniet auf dem Balkon, blaues Dicht…\" fetchpriority=\"high\" loading=\"eager\" width=\"1280\" height=\"1600\" decoding="
+      },
+      "lcp_phasen": {
+       "ttfb": 15,
+       "ladeverzoegerung": 37,
+       "ladezeit": 27,
+       "renderverzoegerung": 142
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2tbu000sg63yb.js",
+        "kb": 71.2
+       },
+       {
+        "pfad": "/_next/static/chunks/3i7bb4yv5vlj-.js",
+        "kb": 46
+       },
+       {
+        "pfad": "/_next/static/chunks/24-1jc_itqjx3.js",
+        "kb": 24.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2scyxp_5z7np1.js",
+        "kb": 18.6
+       },
+       {
+        "pfad": "/_next/static/chunks/3msxlru53o15v.js",
+        "kb": 10.1
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/4-2026-10-27T14-43-41-754Z",
+      "profil_dateien": 20
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 100,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 692,
+     "cls": 0.001,
+     "tbt": 0,
+     "fcp": 290,
+     "si": 539,
+     "js_kb": 245,
+     "font_kb": 72,
+     "gesamt_kb": 567,
+     "benchmark": 2494,
+     "lcp_element": {
+      "selector": "div.mx-auto > figure > div.border > img.block",
+      "ausschnitt": "<img alt=\"Mitarbeiter von Fliesenverlegung Tezgel kniet auf dem Balkon, blaues Dicht…\" fetchpriority=\"high\" loading=\"eager\" width=\"1280\" height=\"1600\" decoding="
+     },
+     "spanne": {
+      "perf": [
+       100,
+       100
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       684,
+       735
+      ],
+      "cls": [
+       0.001,
+       0.001
+      ],
+      "tbt": [
+       0,
+       0
+      ],
+      "fcp": [
+       287,
+       292
+      ],
+      "si": [
+       533,
+       562
+      ],
+      "js_kb": [
+       245,
+       245
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       567,
+       567
+      ],
+      "benchmark": [
+       2270.5,
+       2514
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 684.2183500000001,
+      "cls": 0.0005837924325408444,
+      "tbt": 0,
+      "fcp": 287.47890000000007,
+      "si": 538.5605807003219,
+      "js_kb": 245,
+      "font_kb": 72,
+      "gesamt_kb": 567,
+      "benchmark": 2514,
+      "lcp_element": {
+       "selector": "div.mx-auto > figure > div.border > img.block",
+       "ausschnitt": "<img alt=\"Mitarbeiter von Fliesenverlegung Tezgel kniet auf dem Balkon, blaues Dicht…\" fetchpriority=\"high\" loading=\"eager\" width=\"1280\" height=\"1600\" decoding="
+      },
+      "lcp_phasen": {
+       "ttfb": 15,
+       "ladeverzoegerung": 24,
+       "ladezeit": 28,
+       "renderverzoegerung": 172
+      },
+      "cls_quellen": [
+       {
+        "selector": "body.antialiased > div.intro > div.intro-schild",
+        "wert": 0.0006
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2tbu000sg63yb.js",
+        "kb": 71.2
+       },
+       {
+        "pfad": "/_next/static/chunks/3i7bb4yv5vlj-.js",
+        "kb": 46
+       },
+       {
+        "pfad": "/_next/static/chunks/24-1jc_itqjx3.js",
+        "kb": 24.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2scyxp_5z7np1.js",
+        "kb": 18.6
+       },
+       {
+        "pfad": "/_next/static/chunks/2unwxk43dxwz-.js",
+        "kb": 13.9
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/6-2026-10-27T14-44-02-950Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 692.13065,
+      "cls": 0.0005837924325408444,
+      "tbt": 0,
+      "fcp": 290.08709999999996,
+      "si": 561.9879785032524,
+      "js_kb": 245,
+      "font_kb": 72,
+      "gesamt_kb": 567,
+      "benchmark": 2494,
+      "lcp_element": {
+       "selector": "div.mx-auto > figure > div.border > img.block",
+       "ausschnitt": "<img alt=\"Mitarbeiter von Fliesenverlegung Tezgel kniet auf dem Balkon, blaues Dicht…\" fetchpriority=\"high\" loading=\"eager\" width=\"1280\" height=\"1600\" decoding="
+      },
+      "lcp_phasen": {
+       "ttfb": 17,
+       "ladeverzoegerung": 37,
+       "ladezeit": 25,
+       "renderverzoegerung": 170
+      },
+      "cls_quellen": [
+       {
+        "selector": "body.antialiased > div.intro > div.intro-schild",
+        "wert": 0.0006
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2tbu000sg63yb.js",
+        "kb": 71.2
+       },
+       {
+        "pfad": "/_next/static/chunks/3i7bb4yv5vlj-.js",
+        "kb": 46
+       },
+       {
+        "pfad": "/_next/static/chunks/24-1jc_itqjx3.js",
+        "kb": 24.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2scyxp_5z7np1.js",
+        "kb": 18.6
+       },
+       {
+        "pfad": "/_next/static/chunks/2unwxk43dxwz-.js",
+        "kb": 13.9
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/7-2026-10-27T14-44-15-114Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 734.9818500000001,
+      "cls": 0.0005837924325408444,
+      "tbt": 0,
+      "fcp": 291.9879,
+      "si": 533.4774911986974,
+      "js_kb": 245,
+      "font_kb": 72,
+      "gesamt_kb": 567,
+      "benchmark": 2270.5,
+      "lcp_element": {
+       "selector": "div.mx-auto > figure > div.border > img.block",
+       "ausschnitt": "<img alt=\"Mitarbeiter von Fliesenverlegung Tezgel kniet auf dem Balkon, blaues Dicht…\" fetchpriority=\"high\" loading=\"eager\" width=\"1280\" height=\"1600\" decoding="
+      },
+      "lcp_phasen": {
+       "ttfb": 16,
+       "ladeverzoegerung": 24,
+       "ladezeit": 33,
+       "renderverzoegerung": 182
+      },
+      "cls_quellen": [
+       {
+        "selector": "body.antialiased > div.intro > div.intro-schild",
+        "wert": 0.0006
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2tbu000sg63yb.js",
+        "kb": 71.2
+       },
+       {
+        "pfad": "/_next/static/chunks/3i7bb4yv5vlj-.js",
+        "kb": 46
+       },
+       {
+        "pfad": "/_next/static/chunks/24-1jc_itqjx3.js",
+        "kb": 24.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2scyxp_5z7np1.js",
+        "kb": 18.6
+       },
+       {
+        "pfad": "/_next/static/chunks/2unwxk43dxwz-.js",
+        "kb": 13.9
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/8-2026-10-27T14-44-26-448Z",
+      "profil_dateien": 20
+     }
+    ]
+   }
+  },
+  "/kontakt": {
+   "mobil": {
+    "median": {
+     "perf": 93,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 3142,
+     "cls": 0,
+     "tbt": 106,
+     "fcp": 1001,
+     "si": 1263,
+     "js_kb": 202,
+     "font_kb": 72,
+     "gesamt_kb": 409,
+     "benchmark": 2251,
+     "lcp_element": {
+      "selector": "div.relative > section.@container > div.mx-auto > p.mt-8",
+      "ausschnitt": "<p class=\"mt-8 max-w-mass font-text text-fs-3 text-pretty text-tinte-2\">"
+     },
+     "spanne": {
+      "perf": [
+       91,
+       96
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       2638,
+       3150
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       89,
+       187
+      ],
+      "fcp": [
+       909,
+       1066
+      ],
+      "si": [
+       1238,
+       1380
+      ],
+      "js_kb": [
+       202,
+       202
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       409,
+       409
+      ],
+      "benchmark": [
+       2145.5,
+       2404.5
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 96,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2638.350375,
+      "cls": 0,
+      "tbt": 88.5,
+      "fcp": 1066.02045,
+      "si": 1238.0983739999763,
+      "js_kb": 202,
+      "font_kb": 72,
+      "gesamt_kb": 409,
+      "benchmark": 2404.5,
+      "lcp_element": {
+       "selector": "div.relative > section.@container > div.mx-auto > p.mt-8",
+       "ausschnitt": "<p class=\"mt-8 max-w-mass font-text text-fs-3 text-pretty text-tinte-2\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 13,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 195
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2tbu000sg63yb.js",
+        "kb": 71.2
+       },
+       {
+        "pfad": "/_next/static/chunks/3i7bb4yv5vlj-.js",
+        "kb": 46
+       },
+       {
+        "pfad": "/_next/static/chunks/24-1jc_itqjx3.js",
+        "kb": 24.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2scyxp_5z7np1.js",
+        "kb": 18.6
+       },
+       {
+        "pfad": "/_next/static/chunks/3msxlru53o15v.js",
+        "kb": 10.1
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/2-2026-10-27T14-46-15-039Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 91,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3141.6420000000003,
+      "cls": 0,
+      "tbt": 186.7432,
+      "fcp": 908.5136,
+      "si": 1379.9042396536813,
+      "js_kb": 202,
+      "font_kb": 72,
+      "gesamt_kb": 409,
+      "benchmark": 2145.5,
+      "lcp_element": {
+       "selector": "div.relative > section.@container > div.mx-auto > p.mt-8",
+       "ausschnitt": "<p class=\"mt-8 max-w-mass font-text text-fs-3 text-pretty text-tinte-2\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 13,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 207
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2tbu000sg63yb.js",
+        "kb": 71.2
+       },
+       {
+        "pfad": "/_next/static/chunks/3i7bb4yv5vlj-.js",
+        "kb": 46
+       },
+       {
+        "pfad": "/_next/static/chunks/24-1jc_itqjx3.js",
+        "kb": 24.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2scyxp_5z7np1.js",
+        "kb": 18.6
+       },
+       {
+        "pfad": "/_next/static/chunks/3msxlru53o15v.js",
+        "kb": 10.1
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/3-2026-10-27T14-46-24-573Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 93,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3149.7801249999998,
+      "cls": 0,
+      "tbt": 106.49999999999977,
+      "fcp": 1001.4241,
+      "si": 1262.577814246798,
+      "js_kb": 202,
+      "font_kb": 72,
+      "gesamt_kb": 409,
+      "benchmark": 2251,
+      "lcp_element": {
+       "selector": "div.relative > section.@container > div.mx-auto > p.mt-8",
+       "ausschnitt": "<p class=\"mt-8 max-w-mass font-text text-fs-3 text-pretty text-tinte-2\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 12,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 198
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2tbu000sg63yb.js",
+        "kb": 71.2
+       },
+       {
+        "pfad": "/_next/static/chunks/3i7bb4yv5vlj-.js",
+        "kb": 46
+       },
+       {
+        "pfad": "/_next/static/chunks/24-1jc_itqjx3.js",
+        "kb": 24.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2scyxp_5z7np1.js",
+        "kb": 18.6
+       },
+       {
+        "pfad": "/_next/static/chunks/3msxlru53o15v.js",
+        "kb": 10.1
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/4-2026-10-27T14-46-34-202Z",
+      "profil_dateien": 20
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 100,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 709,
+     "cls": 0.001,
+     "tbt": 2,
+     "fcp": 251,
+     "si": 482,
+     "js_kb": 245,
+     "font_kb": 72,
+     "gesamt_kb": 530,
+     "benchmark": 2317.5,
+     "lcp_element": {
+      "selector": "div.relative > section.@container > div.mx-auto > h1#seite-titel",
+      "ausschnitt": "<h1 id=\"seite-titel\" tabindex=\"-1\" data-erstes-bild=\"ueberschrift\" class=\"text-fs-6 max-w-mass text-balance text-tinte outline-none @max-3xs:text-fs…\">"
+     },
+     "spanne": {
+      "perf": [
+       100,
+       100
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       685,
+       711
+      ],
+      "cls": [
+       0.001,
+       0.001
+      ],
+      "tbt": [
+       0,
+       3
+      ],
+      "fcp": [
+       247,
+       275
+      ],
+      "si": [
+       457,
+       503
+      ],
+      "js_kb": [
+       245,
+       245
+      ],
+      "font_kb": [
+       72,
+       72
+      ],
+      "gesamt_kb": [
+       530,
+       530
+      ],
+      "benchmark": [
+       2276.5,
+       2389
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 708.785125,
+      "cls": 0.0005837924325408444,
+      "tbt": 2.5,
+      "fcp": 251.0281,
+      "si": 481.98543900946675,
+      "js_kb": 245,
+      "font_kb": 72,
+      "gesamt_kb": 530,
+      "benchmark": 2389,
+      "lcp_element": {
+       "selector": "div.relative > section.@container > div.mx-auto > h1#seite-titel",
+       "ausschnitt": "<h1 id=\"seite-titel\" tabindex=\"-1\" data-erstes-bild=\"ueberschrift\" class=\"text-fs-6 max-w-mass text-balance text-tinte outline-none @max-3xs:text-fs…\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 13,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 302
+      },
+      "cls_quellen": [
+       {
+        "selector": "body.antialiased > div.intro > div.intro-schild",
+        "wert": 0.0006
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2tbu000sg63yb.js",
+        "kb": 71.2
+       },
+       {
+        "pfad": "/_next/static/chunks/3i7bb4yv5vlj-.js",
+        "kb": 46
+       },
+       {
+        "pfad": "/_next/static/chunks/24-1jc_itqjx3.js",
+        "kb": 24.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2scyxp_5z7np1.js",
+        "kb": 18.6
+       },
+       {
+        "pfad": "/_next/static/chunks/2unwxk43dxwz-.js",
+        "kb": 13.9
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/6-2026-10-27T14-46-54-513Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 685.0292,
+      "cls": 0.0005837924325408444,
+      "tbt": 2.000000000000057,
+      "fcp": 247.3528,
+      "si": 503.17534643443526,
+      "js_kb": 245,
+      "font_kb": 72,
+      "gesamt_kb": 530,
+      "benchmark": 2276.5,
+      "lcp_element": {
+       "selector": "div.relative > section.@container > div.mx-auto > h1#seite-titel",
+       "ausschnitt": "<h1 id=\"seite-titel\" tabindex=\"-1\" data-erstes-bild=\"ueberschrift\" class=\"text-fs-6 max-w-mass text-balance text-tinte outline-none @max-3xs:text-fs…\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 21,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 275
+      },
+      "cls_quellen": [
+       {
+        "selector": "body.antialiased > div.intro > div.intro-schild",
+        "wert": 0.0006
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2tbu000sg63yb.js",
+        "kb": 71.2
+       },
+       {
+        "pfad": "/_next/static/chunks/3i7bb4yv5vlj-.js",
+        "kb": 46
+       },
+       {
+        "pfad": "/_next/static/chunks/24-1jc_itqjx3.js",
+        "kb": 24.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2scyxp_5z7np1.js",
+        "kb": 18.6
+       },
+       {
+        "pfad": "/_next/static/chunks/2unwxk43dxwz-.js",
+        "kb": 13.9
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/7-2026-10-27T14-47-05-407Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 710.5512500000002,
+      "cls": 0.0005837924325408444,
+      "tbt": 0,
+      "fcp": 275.3675,
+      "si": 457.04999750573757,
+      "js_kb": 245,
+      "font_kb": 72,
+      "gesamt_kb": 530,
+      "benchmark": 2317.5,
+      "lcp_element": {
+       "selector": "div.relative > section.@container > div.mx-auto > h1#seite-titel",
+       "ausschnitt": "<h1 id=\"seite-titel\" tabindex=\"-1\" data-erstes-bild=\"ueberschrift\" class=\"text-fs-6 max-w-mass text-balance text-tinte outline-none @max-3xs:text-fs…\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 19,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 282
+      },
+      "cls_quellen": [
+       {
+        "selector": "body.antialiased > div.intro > div.intro-schild",
+        "wert": 0.0006
+       }
+      ],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2tbu000sg63yb.js",
+        "kb": 71.2
+       },
+       {
+        "pfad": "/_next/static/chunks/3i7bb4yv5vlj-.js",
+        "kb": 46
+       },
+       {
+        "pfad": "/_next/static/chunks/24-1jc_itqjx3.js",
+        "kb": 24.1
+       },
+       {
+        "pfad": "/_next/static/chunks/2scyxp_5z7np1.js",
+        "kb": 18.6
+       },
+       {
+        "pfad": "/_next/static/chunks/2unwxk43dxwz-.js",
+        "kb": 13.9
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/8-2026-10-27T14-47-16-047Z",
+      "profil_dateien": 20
+     }
+    ]
+   }
   }
  },
  "satz": "um-e2-b2/lh-head",
@@ -3822,7 +4776,7 @@
  "laeufe": 3,
  "bedingungen": "lokal next start (komprimiert), Erstbesuch mit Banner, Dritt-Hosts blockiert, Lighthouse-Standard-Drosselung (mobil: simuliert 4× CPU, Slow 4G; Desktop-Preset), frisches Chrome-Profil je Lauf, Aufwärmlauf, Median aus 3, Benchmark-Band ±15 %",
  "benchmark_band": 0.15,
- "benchmark_referenz": 2420.5,
+ "benchmark_referenz": 2404.5,
  "basisadresse": "http://127.0.0.1:4315",
  "server_stand": {
   "port": "4315",
