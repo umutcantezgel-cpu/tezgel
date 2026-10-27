@@ -21,24 +21,26 @@
 
   /* Farbe v4 (E-067-5, UM-E3-DS): OKLCH, je Familie gestuft. Regel: Der Stufenname ist die OKLCH-Helligkeit in Prozent
      (gerundet); Farbton und Buntheit bleiben in der Familie nahe beieinander. Die Werte rechnen auf genau dieselben
-     sRGB-Farben wie v3 zurück (geprüft mit Rückrechnung, kein sichtbarer Wechsel). Neue Stufen nur nach dieser Regel. */
+     sRGB-Farben wie v3 zurück (Rückrechnung nach CSS Color 4, Fehler unter 0,01 Farbstufen, test/designsystem.test.mjs).
+     Vier Nachkommastellen, weil gemischte Farben (Deckkraft, color-mix) bei gröberer Rundung um eine Stufe abweichen (E-075).
+     Neue Stufen nur nach dieser Regel. */
   /* Familie kalk (hell, Farbton 275–286°) */
   --color-kalk-100: oklch(100% 0 0);
-  --color-kalk-97: oklch(96.7% 0.0013 286.4);
-  --color-kalk-90: oklch(90.1% 0.0055 275);
-  --color-kalk-75: oklch(75.3% 0.0264 273.4);
+  --color-kalk-97: oklch(96.7434% 0.001326 286.375);
+  --color-kalk-90: oklch(90.0981% 0.00553 274.959);
+  --color-kalk-75: oklch(75.2567% 0.026359 273.389);
   /* Familie tinte (dunkel, Farbton 269–275°) */
-  --color-tinte-62: oklch(62.2% 0.0277 273.3);
-  --color-tinte-41: oklch(40.7% 0.0392 275);
-  --color-tinte-33: oklch(32.9% 0.0561 272);
-  --color-tinte-19: oklch(18.7% 0.0499 268.9);
+  --color-tinte-62: oklch(62.2012% 0.027699 273.263);
+  --color-tinte-41: oklch(40.6621% 0.039221 274.995);
+  --color-tinte-33: oklch(32.899% 0.056142 272.004);
+  --color-tinte-19: oklch(18.6546% 0.049864 268.945);
   /* Familie laser (Logo-Rot, 26–28°): Fläche hell 95, Grafik und große Schrift 57, Text 47 */
   --color-laser-95: oklch(95% 0.022 27.7);
-  --color-laser-57: oklch(56.6% 0.2154 27.7);
-  --color-laser-47: oklch(47% 0.1778 26.4);
+  --color-laser-57: oklch(56.5879% 0.215442 27.702);
+  --color-laser-47: oklch(47.0088% 0.177777 26.371);
   /* Familie abnahme (Grün, 154°): Fläche hell 95, Text und Haken 47 */
   --color-abnahme-95: oklch(95% 0.03 154.1);
-  --color-abnahme-47: oklch(46.9% 0.1032 154.1);
+  --color-abnahme-47: oklch(46.9322% 0.103239 154.146);
 
   /* Namen der Rollen (v2/v3, im Code verwendet): verweisen nur auf Stufen */
   /* Kalk neutral (E-043, Auftraggeber: kein Gelb): vorher #F5F4F0 lag als einziger Grundton auf Gelb (OKLCH-Farbton 95°) */

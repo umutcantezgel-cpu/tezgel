@@ -1,6 +1,6 @@
 # KERN · Lauf „Universal Motion“ · Version 4.0.2
 
-Stand 27.10.2026, E1 (E-066, E-067; 4.0.1 nach L0: Adresszahl 202 statt 170, E-068; 4.0.2: K-009 nach UM-E2-SVGO, E-069). Quelle der Wahrheit für alle Pakete. Hervorgegangen aus KERN v3.6 des Vorlaufs „Verständlich, echt, ausgezeichnet“: Werte, Bausteine und Entscheidungen von v3.6 gelten weiter, soweit dieser Kern sie nicht ändert. Die alten Kennungen bleiben über die Brückentabelle am Ende gültig, damit Verweise im Code nicht ins Leere laufen. Über dem Kern stehen Grenzen und Leitplanken, Bestand, Zugänglichkeit und Leistung und die Abnahmeliste (AUFTRAG.md Abschnitt 4). **[A]** = Annahme (offen in MENSCHEN.md). Jedes Paket nennt die Kern-Version, gegen die es gebaut wurde.
+Stand 27.10.2026, E1 (E-066, E-067; 4.0.1 nach L0: Adresszahl 202 statt 170, E-068; 4.0.2: K-009 nach UM-E2-SVGO, E-069; 4.1: K-005 Farben, Dauern und Kurven v4 und K-009 eine Icon-Familie nach UM-E3-DS und UM-E3-SVG, E-075). Quelle der Wahrheit für alle Pakete. Hervorgegangen aus KERN v3.6 des Vorlaufs „Verständlich, echt, ausgezeichnet“: Werte, Bausteine und Entscheidungen von v3.6 gelten weiter, soweit dieser Kern sie nicht ändert. Die alten Kennungen bleiben über die Brückentabelle am Ende gültig, damit Verweise im Code nicht ins Leere laufen. Über dem Kern stehen Grenzen und Leitplanken, Bestand, Zugänglichkeit und Leistung und die Abnahmeliste (AUFTRAG.md Abschnitt 4). **[A]** = Annahme (offen in MENSCHEN.md). Jedes Paket nennt die Kern-Version, gegen die es gebaut wurde.
 
 ## Das Projekt in fünf Sätzen
 1. tezgel.de ist die Website von Fliesenverlegung Tezgel, dem Fliesenlegerbetrieb von Deniz Tezgel in der Hohwardstraße 14, 35614 Aßlar; sie ist mit Next.js, React und Tailwind 4 gebaut, wird über Vercel ausgeliefert und steht nach diesem Lauf auf dem neuesten stabilen Stand ihres Stacks.
@@ -73,21 +73,41 @@ Geht K-005 und K-006 vor, wo sie sich widersprechen. Leitsatz: „Man soll genau
 ## K-005 Designsystem
 Alle Werte als Tokens in `globals.css`; neue Werte nur als Stufe einer Skala.
 
-### Farbe (aus v2, unverändert bis auf Ergänzungen)
-| Token | Hex | Einsatz |
+### Farbe (v4, E-075: OKLCH-Stufen mit denselben gerenderten Werten wie v3)
+Stufen je Familie, benannt nach der gerundeten Helligkeit L in Prozent. Nur diese Zeilen tragen Werte; alles andere verweist darauf. Die Stufen der v3-Farben rechnen nach CSS Color 4 auf deren sRGB-Wert zurück (Fehler unter 0,01 Farbstufen); vier Nachkommastellen sind nötig, weil gemischte Farben (Deckkraft, color-mix) bei gröberer Rundung um eine Stufe abweichen (E-075).
+
+| Stufe | OKLCH | sRGB (v3) |
 |---|---|---|
-| `kalk` | #F4F4F5 | Seitengrund (neutral, hell; seit E-043, vorher #F5F4F0 mit Farbton Gelb, OKLCH 95°) |
-| `fliese` | #FFFFFF | Felder, Formulare, Fliesen im Seitenwechsel |
-| `fuge` | #DDDEE2 | Fugen, Trennlinien (nur Deko, 1,22:1) |
-| `strich` | #818698 | Ränder von Bedienelementen, Grafik (≥ 3:1) |
-| `tinte-2` | #43485F | Nebentext (8,19:1 auf Kalk, 9,01:1 auf Fliese; vorher #4B5067 mit 7,22:1, E-040) |
-| `tinte` | #0A1129 | Text, Hauptknopf, Fokus |
-| `laser` | #D82020 | Laserlinie der Seiten (nicht im Seitenwechsel, E-043), Grafik, große Schrift (4,61:1 auf Kalk) |
-| `laser-tief` | #A8171C | Rot als Text, Fehler (6,80:1) |
-| `abnahme` | #1D6B3F | Erfolg mit Haken und Text |
-| `nacht-2` | #A9AEC0 | Text auf Tinte-Flächen |
-| `nacht-fuge` | #2B3352 | Fugen auf Tinte |
-| **neu** `fliese-glanz` | #FFFFFF bei Deckkraft 0,55 als Ebene | Hauch Glanz auf Fliesen des Seitenwechsels (eigene Ebene, nur Deckkraft) |
+| `kalk-100` | oklch(100% 0 0) | #FFFFFF |
+| `kalk-97` | oklch(96.7434% 0.001326 286.375) | #F4F4F5 |
+| `kalk-90` | oklch(90.0981% 0.00553 274.959) | #DDDEE2 |
+| `kalk-75` | oklch(75.2567% 0.026359 273.389) | #A9AEC0 |
+| `tinte-62` | oklch(62.2012% 0.027699 273.263) | #818698 |
+| `tinte-41` | oklch(40.6621% 0.039221 274.995) | #43485F |
+| `tinte-33` | oklch(32.899% 0.056142 272.004) | #2B3352 |
+| `tinte-19` | oklch(18.6546% 0.049864 268.945) | #0A1129 |
+| `laser-95` | oklch(95% 0.022 27.7) | #FDE9E6 (neu in v4, noch ungenutzt) |
+| `laser-57` | oklch(56.5879% 0.215442 27.702) | #D82020 |
+| `laser-47` | oklch(47.0088% 0.177777 26.371) | #A8171C |
+| `abnahme-95` | oklch(95% 0.03 154.1) | #E0F5E6 (neu in v4, noch ungenutzt) |
+| `abnahme-47` | oklch(46.9322% 0.103239 154.146) | #1D6B3F |
+
+| Rolle (Verweis) | Stufe | Einsatz |
+|---|---|---|
+| `kalk` | kalk-97 | Seitengrund (neutral, hell; seit E-043) |
+| `fliese`, `white` | kalk-100 | Felder, Formulare, Fliesen im Seitenwechsel |
+| `fuge` | kalk-90 | Fugen, Trennlinien (nur Deko, 1,22:1) |
+| `strich` | tinte-62 | Ränder von Bedienelementen, Grafik (≥ 3:1) |
+| `tinte-2` | tinte-41 | Nebentext (8,19:1 auf Kalk, 9,01:1 auf Fliese; E-040) |
+| `tinte` | tinte-19 | Text, Hauptknopf |
+| `laser` | laser-57 | Laserlinie der Seiten (nicht im Seitenwechsel, E-043), Grafik, große Schrift (4,61:1 auf Kalk) |
+| `laser-tief` | laser-47 | Rot als Text (6,80:1) |
+| `abnahme` | abnahme-47 | Erfolg mit Haken und Text |
+| `nacht-2` | kalk-75 | Text auf Tinte-Flächen |
+| `nacht-fuge` | tinte-33 | Fugen auf Tinte |
+| `fliese-glanz` | fliese bei Deckkraft 0,55 (color-mix) | Hauch Glanz auf Fliesen des Seitenwechsels |
+
+Bedeutungs-Tokens verweisen nur auf Stufen: `fehler` laser-47 · `fehler-flaeche` laser-95 · `erfolg` abnahme-47 · `erfolg-flaeche` abnahme-95 · `rand` tinte-62 · `fokus` tinte-19. `test/designsystem.test.mjs` prüft: jede Stufe ist OKLCH, jede Rolle und jedes Bedeutungs-Token ist ein Verweis.
 - Logo-Farben bleiben exakt im Logo (#0F172A Navy, #DC2626 Rot, Maskottchen-Farben aus dem PNG) und werden nicht als Tokens verwendet. Die nahen Tokens `tinte` und `laser` bleiben (Kontrast geprüft, Wiedererkennung über das Logo).
 - Bedeutung nie nur über Farbe.
 
@@ -114,15 +134,12 @@ Bezug ist eine Fliese 30 × 60 cm im Maßstab 1 cm = 3,2 px: kurze Seite **F = 9
 - Schatten (neu als Skala, nur als Ebenen mit Deckkraft animiert): `shadow-fuge` (Kopf, aus v2) · `shadow-gesetzt` 0 1px 2px tinte/22 % (eine gelegte Fliese) · `shadow-flug` 0 10px 24px tinte/18 % (eine Fliese im Flug). Für den Seitenwechsel.
 - Ebenen: `z-0` Inhalt · `z-10` Inhalt über Deko · `z-30` untere Leiste · `z-40` Kopf · `z-50` Dialoge, Menü, Banner · **neu** `z-60` Seitenwechsel und Intro.
 
-### Dauern und Kurven
-- `dauer-1` 140 ms Rückmeldung · `dauer-2` 320 ms Zustandswechsel · `dauer-3` 600 ms Auftritt · `dauer-4` 800 ms großer Auftritt · `dauer-5` 1200 ms großer Moment (aus v2). Staffel `--staffel` 60 ms, höchstens 8 Elemente.
-- Neu: `--verlegen-gesamt` 1800 ms (erster Wechsel einer Sitzung) und `--verlegen-gesamt-folge` 1400 ms (seit E-043, Wahl des Auftraggebers; vorher 1200 und 900 ms); `--intro-gesamt` 1600 ms Ziel, 2200 ms Obergrenze. Werte nur aus diesen Variablen lesen.
-- Kurven: `ease-setzen` cubic-bezier(0.2, 0.8, 0.2, 1) · `ease-laser` cubic-bezier(0.7, 0, 0.2, 1) · `ease-weg` cubic-bezier(0.32, 0, 0.67, 0) (aus v2) · **neu** `ease-hammer` cubic-bezier(0.3, 0.9, 0.35, 1) (schnell ankommen, ohne Überschwingen) · `ease-aufsetzen` cubic-bezier(0.5, 0, 0.75, 0) (B-01: schweben, dann hart aufsetzen, E-043) · `ease-linear` (Fortschritt, scrollgebunden).
+### Dauern und Kurven (v4, E-075)
+- Sechs Stufen: `dauer-0` 0 ms (sofort, ruhiger Bewegungsschalter) · `dauer-1` 140 ms Rückmeldung · `dauer-2` 320 ms Zustandswechsel · `dauer-3` 600 ms Auftritt · `dauer-4` 800 ms großer Auftritt · `dauer-5` 1200 ms großer Moment. `--staffel` 60 ms ist ein Abstand zwischen Auftritten, keine Dauerstufe (höchstens 8 Elemente).
+- Ablauflängen sind Vielfache der Stufen und stehen als Zahl in `globals.css`, weil `Verlegen.tsx` sie als Zeit liest: `--verlegen-gesamt` 2400 ms (2 × dauer-5, erster Wechsel einer Sitzung) · `--verlegen-gesamt-folge` 1800 ms (dauer-5 + dauer-3; beide E-047) · `--verlegen-ruhig` 140 ms (dauer-1; v3 150 ms) · `--intro-gesamt` 1600 ms (2 × dauer-4; Obergrenze 2200 ms) · `--band-durchlauf` 60 s (50 × dauer-5). Werte nur aus diesen Variablen lesen; `test/designsystem.test.mjs` prüft die Rechnung.
+- Vier Kurven: `ease-setzen` cubic-bezier(0.2, 0.8, 0.2, 1) ausklingend · `ease-laser` cubic-bezier(0.7, 0, 0.2, 1) wechselnd · `ease-weg` cubic-bezier(0.32, 0, 0.67, 0) beschleunigend · `ease-aufsetzen` cubic-bezier(0.5, 0, 0.75, 0) nur B-01 (schweben, dann hart aufsetzen, E-043). `ease-hammer` ist ein Alias auf `ease-setzen` (v3-Name); `linear` ist Plattformkurve (Fortschritt, scrollgebunden).
 
-### Ziel v4 (E-067-5, umgesetzt in E3)
-- Farben als OKLCH mit denselben gerenderten Werten; Abstufungen je Familie (tinte, kalk, laser, abnahme) nach einer Helligkeitsregel; Bedeutungs-Tokens (Fehler, Erfolg, Rand, Fokus) verweisen nur auf Stufen.
-- Dauern: sechs Stufen (`dauer-0` sofort für ruhig, `dauer-1` bis `dauer-5`); Ablauflängen (B-01, Eingang) als Vielfache dieser Stufen; `--staffel` ist ein Abstand (60 ms, höchstens acht Elemente).
-- Kurven: vier Stufen (`ease-setzen` ausklingend mit Alias `ease-hammer`, `ease-laser` wechselnd, `ease-weg` beschleunigend, `ease-aufsetzen` nur B-01); `linear` ist Plattformkurve.
+### Ziel v4 (E-067-5; Farben, Dauern und Kurven umgesetzt in UM-E3-DS, E-075)
 - Abstand: zwölf Stufen der Fliesenskala; `werte.mjs` prüft die Grenze (Regeldatei nachgeführt).
 - Themen: hell (Pflicht); Dunkelmodus in der Kür.
 - Bedienung: Ladeanzeige erst nach 300 ms, dann mindestens 500 ms; Touch-Ziele 44 × 44 (nie unter 24 × 24).
@@ -217,7 +234,7 @@ Bezug ist eine Fliese 30 × 60 cm im Maßstab 1 cm = 3,2 px: kurze Seite **F = 9
 - Icon-Familie aus v2 (47 Icons, 24er Raster, Strich 1,5 px, Enden `square`, Ecken `miter`, `currentColor`, Sprite). Neue Icons nur in dieser Familie. Markenlogos (WhatsApp, Google) bleiben unverändert und zählen nicht zur Familie.
 - Zeichnungen (neu, alle aus Fliese, Fuge und Laserlinie): Schichtaufbau (Untergrund, Abdichtung, Kleber, Fliese, Fuge), Duschboden mit Gefälle und Ablauf, Balkon mit Gefälle, vier Verlegemuster (Kreuzfuge, Halbverband, Drittelverband, Fischgrät), Formatvergleich, Einsatzkarte (Aßlar in der Mitte, Ringe), Fliesenkomposition als Bildplatz ohne Foto, 404 (eine verrutschte Fliese).
 - Zugänglichkeit: dekorativ `aria-hidden="true" focusable="false"`; bedeutungstragend `role="img"` mit Namen; IDs je Instanz eindeutig. Budgets: Icon ≤ 1,5 KB, Zeichnung ≤ 40 KB gzip; SVGO.
-- v4: eine Icon-Familie (eigenes Sprite, Raster 24, Strich 1,5); `lucide-react` in drei Datendateien wird durch Sprite-Namen ersetzt. SVGO in zwei Konfigurationen unter `_werkstatt/werkzeuge/svgo-statisch.config.mjs` und `svgo-animiert.config.mjs`. Jede SVG-Datei ist Fixpunkt ihrer Konfiguration, das heißt, SVGO ändert sie nicht mehr (Spalte „optimiert“ in `svg.mjs`). Animiert ist nur das Sprite: Die animierte Konfiguration behält `<symbol>` und alle Kennungen (`removeHiddenElems` aus), und das Icon-Budget gilt dort je Symbol (E-069); keine eingebetteten Pixelbilder (die beiden ungenutzten Logo-SVG mit PNG unter `public/images/logo/` werden ersetzt oder mit Vermerk entfernt; das Logo selbst bleibt unverändert, G8).
+- v4 (umgesetzt in UM-E3-SVG, E-075): eine Icon-Familie (eigenes Sprite, Raster 24, Strich 1,5); `lucide-react` ist entfernt, Icon-Felder in Daten tragen Sprite-Namen (`src/components/icons/zuordnung.ts`). SVGO in zwei Konfigurationen unter `_werkstatt/werkzeuge/svgo-statisch.config.mjs` (behält `role` und die Kennungen von `title` und `desc`) und `svgo-animiert.config.mjs`. Jede SVG-Datei ist Fixpunkt ihrer Konfiguration, das heißt, SVGO ändert sie nicht mehr (Spalte „optimiert“ in `svg.mjs`). Animiert ist nur das Sprite: Die animierte Konfiguration behält `<symbol>` und alle Kennungen (`removeHiddenElems` aus), `sprite.mjs` wendet sie beim Erzeugen an, und das Icon-Budget gilt dort je Symbol (E-069). Keine eingebetteten Pixelbilder: Die beiden ungenutzten Logo-SVG mit eingebettetem PNG sind entfernt, ihre Adressen führen per 308 auf `tezgel-logo.png` und `tezgel-logo-dark.png` (gleiches Logo in Form, Proportion und Farbe, G8).
 
 ## K-010 Komponenten, Zustände und Ansichtsarten
 - Bausteine: `src/components/kern/` (Knopf, Hauptknopf, Abschnitt, Bildfeld, Glasbild, Karussell, Fachwort, Textmarken, Einzugsband, Leitachse), Vorlagen `src/components/vorlagen/` (Erzähl-, Wissens-, Orts- und Arbeitsseite), Formulare `src/components/funnels/` und `src/components/forms/`.
