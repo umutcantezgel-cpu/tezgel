@@ -1,8 +1,9 @@
 // SVG-Prüfung (Z-06): SVGO-Fixpunkt, eingebettete Pixelbilder, viewBox und Budgets je Datei;
 // im Seitenmodus doppelte Kennungen und Zugänglichkeit aller Inline-SVGs je Ansicht (m390, d1440).
 // Nutzung: node svg.mjs [--dateien <svg…|Ordner>] [--seiten /a,/b] [--base URL] [--animiert] [--ziel <ordner>]
-//   Dateimodus: je SVG mit svgo optimieren (preset-default; --animiert ohne cleanupIds, removeUnknownsAndDefaults,
-//   collapseGroups, convertShapeToPath) und prüfen. Die Dateien werden nicht verändert.
+//   Dateimodus: je SVG mit svgo optimieren und prüfen. Die Dateien werden nicht verändert.
+//   Konfiguration: statisch = svgo-statisch.config.mjs; mit --animiert = svgo-animiert.config.mjs (gilt für den ganzen Lauf,
+//   es gibt keine Erkennung je Datei; statische und animierte Dateien deshalb getrennt prüfen).
 //   Seitenmodus: Playwright mit Anfragesperre aus lib.mjs; Standard-Basis ist BASE aus lib.mjs. Startet keine Server.
 // Budgets (dezimal, strenger Lesart): viewBox 24×24 → roh ≤ 1,5 KB (1500 Byte); sonst gzip ≤ 40 KB (40000 Byte).
 // Ergebnis: _werkstatt/cache/svg/<zeitstempel>.json bzw. --ziel. Exit: 0 ohne Befund, 1 mit Befund, 2 Laufzeitfehler.
@@ -17,11 +18,8 @@ import { BASE, REPO, RELAUNCH, ANSICHTEN, assertLocal, installSperre, setzeEinwi
 const KB = 1000;
 const ICON_MAX_ROH = 1.5 * KB;
 const ILLU_MAX_GZIP = 40 * KB;
-const STATISCH = { plugins: ['preset-default'] };
-// removeViewBox ist in svgo 4.1.0 nicht Teil von preset-default; ein Override dafür erzeugt nur eine Warnung und wird daher nicht gesetzt.
-const ANIMIERT = {
-  plugins: [{ name: 'preset-default', params: { overrides: { cleanupIds: false, removeUnknownsAndDefaults: false, collapseGroups: false, convertShapeToPath: false } } }],
-};
+import STATISCH from './svgo-statisch.config.mjs';
+import ANIMIERT from './svgo-animiert.config.mjs';
 const ANSICHTEN_SEITE = ['m390', 'd1440'];
 
 const relPfad = (f) => path.relative(REPO, f).split(path.sep).join('/');
