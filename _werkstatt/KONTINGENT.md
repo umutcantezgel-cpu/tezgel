@@ -28,3 +28,9 @@ Uhrzeit · Fenster Verbrauch, Soll, Ziel · Woche Verbrauch, Spielraum · belegt
 - 2026-10-27 07:00 MEZ · Fenster 16,0 % (Soll 7,8 %, Ziel 95 %), Fenster 05:31–10:31 UTC · Woche ? · Plätze 1 Haiku (Workflow PX) plus Reinraum · Bremse: keine neuen Agenten bis zur Soll-Linie, Opus-Arbeit auf Abnahmen beschränkt · Quelle Schätzung (Faktor 1,973)
 - 2026-10-27 07:31 MEZ · Fenster 26,5 % (Soll 19,0 %, Ziel 95 %), Fenster 05:31–10:31 UTC · Woche ? · Plätze 1 Haiku (U04, Workflow) · Bremse: ein Platz, keine Opus-lastige Arbeit · Quelle Schätzung (Faktor 1,973)
 - 2026-10-27 08:31 MEZ · Fenster 50,7 % (Soll 37,9 %, Ziel 95 %), Fenster 05:31–10:31 UTC · Woche ? · Plätze 1 Haiku (UM-E3-SVG) plus E2-B-Messreihe · Bremse: keine weiteren Agenten, eigene Arbeit auf Abnahmen beschränkt · Quelle Schätzung (Faktor 1,973)
+- 2026-10-27 10:50 MEZ · **Kalibrierpunkt (Limit-Ereignis, L5):** Die Sitzung meldete um 08:30 UTC „session limit · resets 9:30am (UTC)“. Der Auftraggeber hat das Limit bestätigt.
+  - Fenster 04:30–09:30 UTC = 100 %, gewichtete Kosten 40,64 USD, neuer Faktor 2,461 %/USD (vorher 1,973). Ein Fenster entspricht damit etwa 40,6 USD statt 50,7.
+  - Die Schätzung lag beim Limit bei rund 53 %. Der alte Faktor kam aus einem Fenster mit anderem Modellmix (mehr Haiku-Workflows) und war zu niedrig.
+  - Die Fensterkette lief zudem eine Stunde versetzt (05:31 statt 04:30); der neue Anker 09:30 korrigiert das.
+  - Z-12: Das ist ein Kalibrierpunkt ohne Messwert; ein solches Limit-Ereignis ist erlaubt.
+  - Folge: Tempomat mit 2,461 %/USD; Kapazität im PLAN (≈ 48 USD je Fenster zu 95 %) sinkt auf ≈ 38,6 USD; Neuberechnung am Etappentor E2.
