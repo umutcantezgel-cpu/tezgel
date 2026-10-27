@@ -138,7 +138,8 @@
   --verlegen-gesamt: 2400ms; /* 2 × dauer-5 */
   --verlegen-gesamt-folge: 1800ms; /* dauer-5 + dauer-3 */
   /* reduzierte Bewegung: Überblendung statt Fliesen (Auftrag Abschnitt 9) */
-  --verlegen-ruhig: 140ms; /* dauer-1 (v3: 150 ms, freie Zahl) */
+  /* Seitenwechsel B-01 eingefroren (Auftraggeber 27.10.: „bestehender Seitenübergang ist super, so lassen“, E-078): Wert wie E0 */
+  --verlegen-ruhig: 150ms;
   /* Laufband im Fuß (K-016, E-047): ein Durchlauf der Inhalte, langsam genug zum Mitlesen */
   --band-durchlauf: 60s; /* 50 × dauer-5 */
   --intro-gesamt: 1600ms; /* 2 × dauer-4 */

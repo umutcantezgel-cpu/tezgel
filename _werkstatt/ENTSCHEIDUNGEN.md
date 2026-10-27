@@ -955,3 +955,12 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
 - **Lehren (L6):**
   - Prüfskripte halten das Commit-Kürzel einmal am Anfang fest. Anlauf 1 der Prüfkette suchte nach einem Commit dazwischen den falschen Reinraum.
   - Nie `pkill -f` mit einem Muster, das in der eigenen Befehlszeile steht.
+
+## E-078 · Seitenwechsel B-01 bleibt, wie er ist (27.10.2026, 22:55 MEZ, Auftraggeber)
+- **Wortlaut des Auftraggebers:** „bestehender seitenübergang ist super so lassen“.
+- **Folge:**
+  - B-01 „Verlegen“ ist eingefroren: Ablauf, Fliesen, Logo und Schriftzug, Dauern (2,4 s erster, 1,8 s folgende Wechsel), Kurven und der ruhige Weg bleiben wie in E0 (7ceb5e41).
+  - Der einzige Unterschied seit E0 war `--verlegen-ruhig` (140 ms aus dem Designsystem v4, E-075). Er ist auf 150 ms zurückgesetzt; der Designsystem-Test weist ihn als eingefrorenen Wert aus.
+  - UM-E3-B01 entfällt.
+  - Andere Pakete (MOD, Bewegungsschalter, Cursor, Scrollen) binden den Übergang nur an, ohne ihn zu verändern. Der Bewegungsschalter nutzt den bestehenden ruhigen Weg.
+  - Scheitert eine Prüfung (Z-07, Z-09) am Übergang, gibt es nur einen unsichtbaren Einzelfix nach Rücksprache.

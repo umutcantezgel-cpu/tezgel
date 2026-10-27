@@ -23,7 +23,8 @@ test('Ablauflängen sind Vielfache oder Summen der Dauerstufen', () => {
   const d = (n) => ms(token(`dauer-${n}`));
   assert.equal(ms(token('verlegen-gesamt')), 2 * d(5));
   assert.equal(ms(token('verlegen-gesamt-folge')), d(5) + d(3));
-  assert.equal(ms(token('verlegen-ruhig')), d(1));
+  // B-01 eingefroren (E-078): die Überblendung bei reduzierter Bewegung bleibt bei 150 ms wie in E0, außerhalb der Stufen
+  assert.equal(ms(token('verlegen-ruhig')), 150);
   assert.equal(ms(token('intro-gesamt')), 2 * d(4));
   assert.equal(ms(token('band-durchlauf')), 50 * d(5));
 });
