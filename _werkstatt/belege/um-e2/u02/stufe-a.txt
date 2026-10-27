@@ -1,0 +1,7 @@
+node v24.22.1 npm 11.19.1
+typecheck exit 0 (4 s)
+lint exit 0 (18 s)
+test exit 0 (2 s)
+build exit 0 (14 s)
+qa:graph exit 0 (0 s)
+FERTIG
