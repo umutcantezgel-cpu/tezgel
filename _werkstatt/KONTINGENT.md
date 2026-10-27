@@ -38,3 +38,9 @@ Uhrzeit · Fenster Verbrauch, Soll, Ziel · Woche Verbrauch, Spielraum · belegt
 - 2026-10-27 11:31 MEZ · Fenster 32.0 % (Soll 18.6 %, Ziel 95 %) 2026-10-27 09:32–2026-10-27 14:32 UTC · Woche ? % · Bremse · Quelle Schätzung (Faktor 2.461, Stand 2026-10-27) · Plätze 0 Haiku, Nachprüfung der Specs läuft
 - 2026-10-27 12:45 MEZ · Fenster 76.0 % (Soll 42.0 %, Ziel 95 %) 2026-10-27 09:32–2026-10-27 14:32 UTC · Woche ? % · Bremse · Quelle Schätzung (Faktor 2.461, Stand 2026-10-27) · Plätze 2 Haiku (Workflow UM-E2-B: Höhe, Bericht) · Bremse: Nachmessung Anlauf 2 nur mit Haiku, eigene Schritte gebündelt
 - 2026-10-27 13:45 MEZ · Fenster 83.0 % (Soll 60.6 %, Ziel 95 %) 2026-10-27 09:32–2026-10-27 14:32 UTC · Woche ? % · Bremse · Quelle Schätzung (Faktor 2.461, Stand 2026-10-27) · Plätze 1 Haiku (Messer Anlauf 2) · Bremse: nur Haiku-Messung, keine eigenen Läufe
+- 2026-10-27 15:47 MEZ · **Zweites Limit-Ereignis, Kalibrierpunkt.**
+  - Gegen 13:00 UTC meldete die Sitzung „You've hit your session limit · resets 2:30pm (UTC)“. Die Schätzung zeigte um 12:43 UTC 83 %.
+  - Kalibriert: Fenster 09:30–14:30 UTC, 34,14 USD = 100 %, Faktor 2,929 %/USD (vorher 2,461).
+  - Z-12: Kalibrierpunkt ohne Messwert. Das Limit lag nicht im Endspurt; die Ursache ist der zu niedrige Faktor.
+  - Lehre (L6): Bis zwei Fenster ohne Limit enden, plant der Tempomat mit Ziel 85 statt 95. Haiku-Workflows mit vielen Agenten zählen voll in das Fenster.
+  - Neues Fenster 14:31–19:31 UTC: 16,5 % um 14:40 UTC (Soll 3 %), Bremse. Messungen laufen als Skript ohne Agenten.
