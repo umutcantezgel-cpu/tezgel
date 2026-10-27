@@ -1,123 +1,105 @@
-# ABNAHME · Definition of Done
+# ABNAHME · Definition of Done · Lauf „Universal Motion“
 
-Stand 24.10.2026, E1, Fassung 1.2 (nach Planprüfung Runde 1 und 2). Grundlage: AUFTRAG.md Abschnitt 16 (rekonstruiert, Annahme) mit den Schwellen aus Abschnitt 0 und 6 bis 11. Jede Zeile: Kriterium · Methode · Schwelle · Beleg · Ausgangswert E0 · Stand. Ein Kriterium gilt erst als erfüllt, wenn sein Beleg im Repository liegt und der Abschlussprüfer (AB-END) es bestätigt. Kriterien sinken nie still.
-
-Ausgangswerte E0 trägt der Orchestrator nach E0-PRUEF-03 und E0-PROBE-01…10 ein (`belege/e0/`). „Besser als Budget“ heißt: Der E0-Wert wird zur Schwelle.
+Stand 27.10.2026, E1, Fassung 2.0 (AUFTRAG.md Abschnitt 15). Jede Zeile: Kriterium · Methode · Schwelle · Beleg · E0 · Stand. Die Abnahmeliste des Vorlaufs liegt in `archiv/ABNAHME-verstaendlich-echt-ausgezeichnet.md`; ihre Kriterien Lesbarkeit (alt Z-12) und Adressen (alt Z-14) gehen hier in Z-02 und Z-11 auf. E0 dieses Laufs ist der Produktionsbau 7ceb5e41 (`belege/um-e0/`). Kriterien sinken nie still; erledigt ist nur, was geprüft ist. ENTFÄLLT gibt es nur bei Z-03.
 
 ## Kriterien
 
 ### Z-01 Plan
 - Methode: Abgleich PLAN.md gegen Commits.
-- Schwelle: 100 % der Pflichtpakete erledigt und abgenommen, jede Zeile mit Commit-Kennung; Kür leer (jedes Kürpaket erledigt).
+- Schwelle: 100 % der Pflichtpakete erledigt und abgenommen, jede Zeile mit Commit-Kennung; Kür abgearbeitet, bis sie leer ist oder die LAUFZEIT endet.
 - Beleg: PLAN.md.
-- E0: 0 von 398 Pflichtzeilen (PLAN.md Fassung 1.2). Stand: offen.
+- E0: 0 von 48 Pflichtpaketen (PLAN 2.0). Stand: offen.
 
-### Z-02 Bestand (keine Ausnahme)
-- Methode: Stufe C, Reinraum (`reinraum.sh`), Durchlauf der Funktionsliste aus LAGEBILD.md.
-- Schwelle: `npm run build`, `typecheck`, `lint`, `test`, `qa:graph` mit Exit 0; Zahl bestandener Tests mindestens wie E0; alle Funktionen der Liste so gut wie in E0; null neue Konsolenfehler in allen Browserläufen der Stufe C (Hauptansichten und Stichprobe).
-- Beleg: `belege/abschluss/reinraum.txt`, `belege/abschluss/funktionsliste.md`, `belege/abschluss/konsole.json`.
-- E0: Reinraum c53faf4 grün (Build, Typen, Linter, Tests, Graph Exit 0); `node --test` 37 von 37; Funktionsspecs 290 bestanden, 0 fehlgeschlagen, 12 übersprungen von 302; Konsole 0 auf den Hauptansichten (`belege/e0/STUFE-B.md`). Stand: offen.
+### Z-02 Bestand
+- Methode: Prüfstufe C; Reinraum (`reinraum.sh`); Durchlauf der Funktionsliste (LAGEBILD Abschnitt 3); Adressprüfung aller 202 Adressen; Lesbarkeit der Hauptansichten; Element-Pässe aus Abschnitt 9.
+- Schwelle: Build, Typprüfung, Linter und Tests mindestens so grün wie E0; keine Funktion schlechter; null neue Konsolenfehler; 202 Adressen mit dem Status aus E0 (200, 308 oder 410); Lesbarkeit grün bis auf die Ausnahmen A-1 und A-2 (Wortlaut des Auftraggebers); jedes Muss-Element zurückgeführt oder belegt zurückgestellt.
+- Beleg: `belege/um-e5/reinraum.txt`, `belege/um-e5/funktionsliste.md`, `belege/um-e5/adressen.json`, `belege/um-e5/lesbarkeit.md`.
+- E0: Reinraum 7ceb5e41 grün (Build, Typen, Linter, Tests, Graph Exit 0); `npm test` 210 von 210; Funktionssuite 393 bestanden, 0 rot, 25 übersprungen; Adressen 202 von 202 wie E0 des Vorlaufs (UM-E0-VERLUSTE); Lesbarkeit rot nur A-1, A-2; Muss-Verluste EP-1 bis EP-3 offen. Stand: offen.
 
-### Z-03 Designsystem
-- Methode: Suche nach Werten außerhalb der Tokens in geänderten Dateien (`werte.mjs` mit `werte-regeln.json`: Farben, Abstände, Größen, Schrift, Radien, Dauern, Tailwind-Beliebigwerte und Stilwerte; dazu `statisch.mjs` für Icon-Familien, Emojis und Platzhalter), Stichprobe von 10 neuen Komponenten durch den Prüfer.
-- Schwelle: null Treffer außer Unantastbarem (Logo, Rechtstexte) und Bildinhalten; jede neue Komponente nutzt Tokens aus K-005.
-- Beleg: `belege/abschluss/werte.json`.
-- E0: Zählung im Bestand folgt aus E0-PRUEF-03 (nur Bericht, nicht Schwelle). Stand: offen.
+### Z-03 Stack
+- Methode: UPGRADE.md und `npm audit`.
+- Schwelle: 100 % der direkten Abhängigkeiten auf der neuesten stabilen oder belegt auf der neuesten kompatiblen Version; Laufzeit auf aktueller LTS; null hohe oder kritische Befunde mit verfügbarem Fix; null Warnungen zu veralteten Schnittstellen der aktualisierten Pakete; jeder Pixelvergleich ohne unerklärte Abweichung.
+- Beleg: UPGRADE.md mit Commit-Kennungen, `belege/um-e2/audit.json`, `belege/um-e2/pixelvergleich/`.
+- E0: 20 von 32 Paketen nicht aktuell; Node 20 statt LTS 24; Audit 1 kritisch, 3 hoch. Stand: offen.
 
-### Z-04 Gestaltung
-- Methode: Endprüfung nach Award-Rubrik (AUFTRAG Abschnitt 14) durch einen frischen Opus-Unteragenten an den Nachher-Bildsätzen; blinder Vergleich: Ein Haiku-Dokumentar benennt Vorher- und Nachher-Bilder neutral und mischt sie, der Schlüssel liegt getrennt.
-- Schwelle: jede der 12 Hauptansichten mit Ansichtswert mindestens 8, keine Kategorie unter 7; im blinden Vergleich zieht der Prüfer auf jeder Hauptansicht den neuen Stand vor.
-- Beleg: `berichte/ABSCHLUSS-rubrik.md`, `bilder/abschluss/blind/` mit getrenntem Schlüssel.
-- E0: Rubrik des alten Stands aus der Sichtabnahme E0 (folgt mit LAGEBILD). Stand: offen.
+### Z-04 Designsystem
+- Methode: `werte.mjs` (Regeldatei v4) über die geänderten Dateien, Stichprobe der neuen Komponenten.
+- Schwelle: null Werte außerhalb des Designsystems in geänderten Dateien, ausgenommen UNANTASTBAR und Bildinhalte; jede neue Komponente nutzt das System; Skalen in den Grenzen aus Abschnitt 7 (Abstand ≤ 12, Schrift ≤ 10, Dauer ≤ 6, Radius, Schatten, Kurven je ≤ 4), Farben in OKLCH mit Abstufung.
+- Beleg: `belege/um-e5/werte.json`, K-005.
+- E0: Werte-Lauf über 409 Dateien 16 Befunde; Dauern 11 Werte, Kurven 5, Farben Hex (UM-E0-DESIGN). Stand: offen.
 
-### Z-05 Bewegung
-- Methode: Register K-007 gegen den Code (`bewegung.mjs` Registerabgleich), Einzelbildfolgen von B-01 und B-02, Tests `test/verlegen.test.mjs` und Intro-Schalter, Lauf mit reduzierter Bewegung, Bildratenmessung mobil bei 4-fach gedrosselter CPU.
-- Schwelle:
-  - Jede Animation steht im Register mit Zweck, Auslöser, Dauer, Kurve, Verhalten bei reduzierter Bewegung.
-  - B-01: 30 × 60 quer, Drittelverband, rechts herein, links hinaus, gesamt ≤ 1.200 ms, ab dem zweiten Wechsel ≤ 900 ms, Zurück und Vor gespiegelt mit 70 % der Dauer, Wartephase mit Laserlinie ≤ 3 s, keine Fliesen bei den Ausnahmen aus Abschnitt 9, kein zweiter Wechsel bei Doppelklick, Fokus auf H1, Titel angesagt, reduziert 150 ms Überblendung, ≤ 80 Fliesen.
-  - B-02: nur beim ersten Besuch je Browser, ≤ 2.200 ms, Abbruch durch Klick, Tipp, Taste und Scroll, reduziert 300 ms Einblenden, ohne Speicher kein Intro.
-  - Reduzierte Bewegung: keine Lage- oder Größenänderung, alle Inhalte sichtbar.
-  - Große Momente mobil mit 4-fach gedrosselter CPU: höchstens 5 % verworfene Bilder.
-- Beleg: `belege/abschluss/bewegung.json`, `bilder/abschluss/b01/`, `bilder/abschluss/b02/`.
-- E0: Register v2 mit 16 Kennungen, B-01 und B-02 fehlen. Stand: offen.
+### Z-05 Gestaltung
+- Methode: Endprüfung durch einen frischen Opus-Agenten nach der Rubrik (Abschnitt 13) an den Nachher-Bildsätzen; Blindvergleich vorher/nachher, von einem Haiku-Dokumentar neutral benannt und gemischt, Schlüssel getrennt und erst nach dem Urteil übergeben.
+- Schwelle: jede Hauptansicht ≥ 8,0, jede Erzählansicht unter ihnen ≥ 8,5, keine Kategorie unter 7,5, keine Ansicht der Stichprobe unter 7,5; im Blindvergleich auf jeder Hauptansicht der neue Stand vorgezogen.
+- Beleg: `berichte/ABSCHLUSS-rubrik.md`, `bilder/abschluss/blind/`, Schlüssel getrennt.
+- E0: Sichtabnahme des Vorlaufs (Tor E3, E-061) unter dem Ziel; Werte je Ansicht in der Sichtabnahme von E3 (UM-E3-B) als Ausgangspunkt. Stand: offen.
 
-### Z-06 Grafik
-- Methode: `svg.mjs` über alle SVG-Dateien und Hauptansichten, Sichtprüfung des Sprites, Deckungsmessung des Logo-Vektors (`werkzeuge/logo/`).
-- Schwelle: eine Icon-Familie mit einer Strichstärke; jede SVG-Datei optimiert (svgo ohne sichtbaren Verlust, keine Editor-Reste und Metadaten) und zugänglich (dekorativ mit `aria-hidden`, sonst mit Titel); keine doppelten Kennungen je Ansicht; Logo-Vektor mit mindestens 98 % Deckung bei doppelter Größe und exakten Farben, sonst Ersatz-Intro „Der erste Boden“ und Bitte in MENSCHEN.md (M-09).
-- Beleg: `belege/abschluss/svg.json`, `belege/e2/logo-deckung.json`.
-- E0: 45 Icons im Sprite, Logo-SVGs betten ein PNG ein. Stand: offen.
+### Z-06 Bewegung und Übergänge
+- Methode: Register gegen DOM (`bewegung.mjs --modus register`), reduzierte Bewegung und Bewegungsschalter (`--modus reduziert`, eigener Durchlauf mit `data-bewegung="ruhig"`), Bildrate mobil bei vierfacher Drosselung (`--modus bildrate`), Long Animation Frames, Bildfolgen neuer Momente.
+- Schwelle: jede Animation mit `data-motion`-Kennung im Register; jeder Wechsel zwischen Erzählansichten mit Übergang und Rückfall; bei reduzierter Bewegung und ruhigem Schalter keine Lage- oder Größenänderung und alle Inhalte sichtbar; Bewegungsschalter und Pause-Knöpfe vorhanden; große Momente mobil bei vierfacher Drosselung mit höchstens 5 % verworfenen Bildern und ohne Long Animation Frame über 20 ms Skriptzeit aus Bewegungscode.
+- Beleg: `belege/um-e5/bewegung/`.
+- E0: Register 28 Einträge, 23 im Code; Bewegungsschalter fehlt; Bildrate und reduzierte Bewegung je Hauptansicht in `belege/um-e0/` (Messreihe). Stand: offen.
 
-### Z-07 Zugänglichkeit
-- Methode: axe (WCAG 2.2 AA) auf allen Hauptansichten mobil und Desktop, Tastaturlauf für A1 bis A6 (`probelauf.mjs --eingabe tastatur`), Kontrastrechnung der Tokens, Bildsatz mit Systemschrift 200 %.
-- Schwelle: null ernste oder kritische Befunde; alle Hauptaufgaben A1 bis A6 am Desktop nur mit Tastatur lösbar; Fokus immer sichtbar; Text ≥ 4,5:1, große Schrift, Bedienelemente und bedeutungstragende Grafik ≥ 3:1; bei 200 % Systemschrift alles lesbar und bedienbar; Lighthouse Zugänglichkeit ≥ 95 oder E0-Wert, falls höher.
-- Beleg: `belege/abschluss/axe.json`, `belege/abschluss/tastatur.md`, `belege/abschluss/schrift200/`.
-- E0: axe 0 Befunde in allen Schweren (132 Läufe, `belege/e0/axe.json`); Tastatur und 200 % in E0-PROBE (P1). Stand: offen.
+### Z-07 Scrollen und Cursor
+- Methode: Prüfstufe C; geskriptetes Scrollen mobil bei vierfacher Drosselung; Tastatur, Anker, Seitensuche, Zurück-Taste, Positionswiederherstellung; Cursor-Zustände mit feinem Zeiger, Touch, Tastatur und erzwungenen Farben; Reaktionszeit (`reaktion.mjs`).
+- Schwelle: höchstens 5 % verworfene Bilder; Tastatur, Anker, Seitensuche, Zurück und Wiederherstellung ohne Fehler; Cursor nur bei feinem Zeiger, Klickpunkt ohne Verzögerung, jeder Zustand im Register, ausgeblendet bei Tastatur und erzwungenen Farben; INP nicht schlechter als E0.
+- Beleg: `belege/um-e5/scroll-cursor.md`, `belege/um-e5/reaktion/`.
+- E0: kein Cursor-System; Reaktionszeit je Hauptansicht in `belege/um-e0/reaktion/reaktion.json`. Stand: offen.
 
-### Z-08 Leistung
-- Methode: `lighthouse.mjs` mobil und Desktop, Median aus 3 Läufen, frisches Profil je Lauf (also mit Intro), im Ruhefenster ohne parallele Last; Reaktion (INP) per Playwright: `PerformanceObserver` vom Typ `event` (Schwelle 16 ms) auf m390 mit 4-fach gedrosselter CPU bei fünf Handlungen (Hauptknopf, Menü öffnen, Akkordeon, Eingabefeld, interner Link), höchster Wert je Seite, Median aus 3; Bundle-Messung des Bewegungscodes (`build-vergleich.mjs`); Größe der Startbild-Datei.
-- Schwelle mobil je Hauptansicht: LCP ≤ 2,5 s, CLS ≤ 0,1, Reaktion (INP aus der Playwright-Messung) ≤ 200 ms, dazu TBT ≤ 200 ms aus Lighthouse, Lighthouse Leistung ≥ 90, Zugänglichkeit ≥ 95, Best Practices ≥ 95, SEO 100; keine Hauptansicht schlechter als E0 um mehr als die Spanne ihrer drei E0-Läufe; ist ein E0-Wert besser als das Budget, gilt er. Bewegungscode zusätzlich ≤ 60 KB komprimiert. Startbild mobil ≤ 200 KB.
-- Beleg: `belege/abschluss/lighthouse/`, `belege/abschluss/bundle.json`.
-- E0 (E0-PRUEF-03L, `belege/e0/lighthouse.json`, Tabelle in `belege/e0/STUFE-B.md` Abschnitt 8): mobil Leistung 85 bis 95 (`/` 89), LCP 2.411 bis 3.472 ms (`/` 3.472), TBT 162 bis 376 ms, CLS 0, Zugänglichkeit 99 bis 100, Best Practices und SEO 100; Desktop 100. Budgets werden auf acht Seiten bei LCP und TBT verfehlt; dort gilt das Budget, nicht E0. INP-Messung ab E2 (Werkzeug `reaktion.mjs`, Paket E2-PRUEF-INP). Stand: offen.
+### Z-08 Grafik
+- Methode: Prüfstufe C; `svg.mjs` mit den SVGO-Konfigurationen; Kennungen je Ansicht im DOM.
+- Schwelle: eine Icon-Familie im Formsystem; jede SVG-Datei Fixpunkt ihrer SVGO-Konfiguration; keine doppelten Kennungen in einer Ansicht; Zugänglichkeit vollständig (dekorativ `aria-hidden`, bedeutungstragend `role="img"` mit `title`); Budgets (Icon ≤ 1,5 KB, Illustration ≤ 40 KB gzip).
+- Beleg: `belege/um-e5/svg.json`.
+- E0: 51 Dateien, 14 Befunde; zwei Familien (Sprite und lucide-react in drei Dateien); zwei Logo-SVG mit eingebettetem PNG. Stand: offen.
 
-### Z-09 Darstellung
-- Methode: `bildsatz.mjs` mit Überlaufprüfung und `ueberlappung.mjs` in allen 10 Gerätegrößen; `erstesbild.mjs` je Hauptansicht und Gerät in beiden Durchgängen (Erstbesuch, nach Einwilligung); Stichprobe 10 % der übrigen Seiten.
-- Schwelle: null seitliches Scrollen, null abgeschnittener, überlappender oder verdeckter Text; Erstes Bild (Logo, Überschrift, Ort, Hauptknopf, Telefon oder WhatsApp) vollständig sichtbar auf allen 12 Hauptansichten in allen 10 Gerätegrößen; Handy quer: Kopf und Leisten ≤ 25 % der Höhe; Fließtext mobil ≥ 16 px; Touchziele ≥ 44 × 44.
-- Beleg: `belege/abschluss/erstes-bild.json`, `belege/abschluss/bildsatz/`.
-- E0: Überlauf 24 Befunde (alle d1280); Erstes Bild 116 von 240 Fällen bestanden; Querformat Kopf und Leisten 32,4 % (`belege/e0/STUFE-B.md`, `erstes-bild.json`). Stand: offen.
+### Z-09 Zugänglichkeit (keine Ausnahme)
+- Methode: axe nach WCAG 2.2 AA in den vier Gerätegrößen, auch mit offenem Menü und Dialog; Probeläufe A1 bis A5 nur mit Tastatur; Kontraste; Reflow 320 px, Zoom 200 %, erzwungene Farben.
+- Schwelle: null ernste oder kritische axe-Befunde auf den Hauptansichten; Hauptaufgaben nur mit Tastatur lösbar bei sichtbarem Fokus; Kontraste nach Abschnitt 7; Reflow, Zoom und erzwungene Farben ohne Verlust.
+- Beleg: `belege/um-e5/axe/`, `belege/um-e5/tastatur.md`.
+- E0: axe-Lauf in `belege/um-e0/axe/` (Messreihe). Stand: offen.
 
-### Z-10 Übergabe
-- Methode: Endprüfung der Dateien.
-- Schwelle: BERICHT.md, KERN.md, MENSCHEN.md, Vorher-Nachher-Galerie (`bilder/galerie.html`), Anleitung zum Zusammenführen (Squash, `_werkstatt` und `_relaunch` vorher entfernen) und Zurückrollen vollständig und aktuell.
+### Z-10 Leistung
+- Methode: Lighthouse mobil und Desktop als Median aus drei Läufen am Produktionsbau; Größe des Bewegungs-JavaScripts im ersten Laden.
+- Schwelle: BUDGETS auf allen Hauptansichten (K-012); keine Hauptansicht schlechter als E0 um mehr als die Spanne der drei E0-Läufe.
+- Beleg: `belege/um-e5/lighthouse/`.
+- E0: `belege/um-e0/lighthouse.json` (Messreihe, letzter Schritt). Stand: offen.
+
+### Z-11 Darstellung
+- Methode: Bildsatz der Hauptansichten und der Stichprobe in allen Gerätegrößen (und den zehn Größen des Vorlaufs), 200 % Schrift, mit Überlauf- und Überlappungsprüfung.
+- Schwelle: kein Überlauf, kein abgeschnittener oder überlappender Text.
+- Beleg: `belege/um-e5/bildsatz.json`.
+- E0: Bildsatz der vier Größen in `$SCRATCH/um-e0/bildsatz/` (Messreihe); Browserprüfung Runde 5 des Vorlaufs mit 17 geringen Befunden. Stand: offen.
+
+### Z-12 Kontingent
+- Methode: KONTINGENT.md.
+- Schwelle: kein Limit-Ereignis außer im Endspurt eines Fensters oder als Kalibrierpunkt ohne Messwert; jedes abgeschlossene Fenster mit Messwert endet zwischen Fensterziel minus 10 Punkte und Fensterziel, außer es fehlten bereite Pakete.
+- Beleg: KONTINGENT.md.
+- E0: ein Limit-Ereignis am 26.10. (vor dem Auftrag, Kalibrierpunkt). Stand: offen.
+
+### Z-13 Übergabe
+- Methode: Endprüfung.
+- Schwelle: BERICHT.md, KERN.md, UPGRADE.md, MENSCHEN.md und die Anleitung zum Zusammenführen und Zurückrollen vollständig.
 - Beleg: die Dateien.
-- E0: entfällt. Stand: offen.
+- E0: KERN v4.0, UPGRADE.md angelegt. Stand: offen.
 
-### Z-11 Nutzerführung (keine Ausnahme)
-- Methode: `probelauf.mjs` mit P1 bis P5 (K-002) für A1 bis A6, je mobil und Desktop, Systemschrift 200 % für P1; Strukturprüfung der Navigation; Zählung von Hauptknöpfen (`data-hauptknopf`), Formularen der Startseite und Pflichtangaben des Hauptwegs.
-- Schwelle: alle 60 Fälle (5 Personen × 6 Aufgaben × 2 Geräte) gelöst, ohne Abbruch, je Fall höchstens so viele Schritte wie in E0; höchstens 5 Hauptpunkte, eine Aufklappebene, kein Thema doppelt, Mobilmenü ohne Scrollen auf 360 × 740; jede Seite genau eine Hauptaktion (alle `data-hauptknopf` einer Seite mit derselben Beschriftung und demselben Ziel, kein zweiter Knopf in Hauptform, K-004); Startseite höchstens ein Formular; Hauptweg höchstens 4 Pflichtangaben.
-- Beleg: `belege/abschluss/probelauf/`, `belege/abschluss/struktur.json`.
-- E0: Startseite mit 3 Formularen; Menü 5 Aufklappmenüs, 37 Ziele, 3 Ebenen. Probeläufe (E0-PROBE-01…10, Tabelle in LAGEBILD Abschnitt 5): 49 von 60 Fällen gelöst; A4 in keinem Fall (keine Fotos fertiger Arbeiten), A5 bei P1 mobil offen; Schritte je Fall als Obergrenze aus der Tabelle (gelöst: A1 0 bis 3, A2 0 bis 3, A3 4 bis 27, A5 4 bis 10, A6 2 bis 21). Stand: offen.
+## Umgebungsausnahmen (zählen nicht als AUSNAHME)
+- U-1 Echte Zielgeräte (iPhone mit Safari, Android mit Chrome, Desktop mit Firefox und Safari): Ersatz sind Emulation in Chromium und, wenn installierbar, WebKit und Firefox in Playwright; echte Geräte in MENSCHEN.md.
+- U-2 Grafikkartenpflichtige Bildraten: Ersatz ist Chromium ohne Grafikkarte mit vierfacher Prozessordrosselung (strenger als echte Geräte); Messung auf echten Geräten in MENSCHEN.md.
+- U-3 Kontingent ohne Messwert: In der Cloud fehlt `~/.claude/kontingent.json`; Ersatz ist die Schätzung von `kontingent.mjs` mit Kalibrierung an Limit-Ereignissen und Meldungen. Z-12 wird für Fenster ohne Messwert an der Schätzung gemessen, mit Vermerk.
 
-### Z-12 Texte
-- Methode: `lesbarkeit.mjs` über alle gerenderten Seiten außer Rechtstexten (Flesch nach Amstad, Satzlängen, Absätze, Striche gegen `regeln/bindestrich-erlaubt.json`, Floskeln gegen `regeln/floskeln.json`, Glossar gegen `regeln/glossar.json`, Titel und Beschreibung); Textstichprobe je Welle (10 %, mindestens 5 Seiten) durch den unabhängigen Haiku-Prüfer der Welle (`E*-PRUEF-A`), Urteil durch den Orchestrator; Faktenabgleich gegen K-015; Suchbegriffe gegen `adressen-e0.csv`.
-- Schwelle: Flesch ≥ 60 auf Erzähl- und Ortsseiten, ≥ 50 auf Wissensseiten; mittlere Satzlänge ≤ 14 Wörter; kein Satz über 25 Wörter; Absätze ≤ 4 Sätze; null Gedankenstriche und null Bindestriche außerhalb der Liste; null Floskeln; jedes Glossarwort beim ersten Vorkommen erklärt (≤ 15 Wörter); Titel ≤ 60, Beschreibung 120 bis 155 Zeichen; alle Stichproben bestanden (höchstens 10 % Regelverstöße je Welle, sonst zurück); null Fakten außerhalb K-015; Suchbegriffe je Seite erhalten; Kundenstimmen wörtlich.
-- Beleg: `belege/abschluss/lesbarkeit.json`, `berichte/*-LEKT-*.md`, `belege/abschluss/suchbegriffe.json`.
-- E0: 162 von 163 Seiten ROT (Gedankenstrich 162, Bindestrich 162, Glossar 155, Flesch 142, Floskel 135, Satzlänge 57, Absatz 4; `belege/e0/lesbarkeit.md`); im Code 830 Gedankenstriche in 217 Dateien, „Vor-Ort-Aufmaß“ 132-mal. Stand: offen.
+## Ausnahmen (höchstens zwei, keine für Z-02 und Z-09)
+- Keine.
 
-### Z-13 Bilder
-- Methode: Bildinventar gegen `bildplaetze.md`, Metadatenprüfung aller ausgelieferten Rasterbilder unter `public/**` (`bilder.mjs --pruefe`), Alt-Text-Prüfung in `lesbarkeit.mjs`, Sichtprüfung auf Personen und Kennzeichen.
-- Schwelle: jede Hauptansicht mit mindestens einem echten Bild, sofern passende Bilder da sind (sonst Fliesenkomposition mit Vermerk in `bildplaetze.md`); Startbild vorhanden; Galerie „Unsere Arbeiten“ mit Filter nach Raum; Vorher-Nachher-Regler; null Metadaten (EXIF, XMP, IPTC, GPS) in allen ausgelieferten Rasterbildern unter `public/**`; Alt-Texte ≤ 125 Zeichen nach Zeichenregeln, dekorative Bilder leer; keine erkennbaren Personen, Hausnummern, Kennzeichen, Namen oder Dokumente; keine Generatorbilder mehr in Verwendung (E-013).
-- Beleg: `bildinventar.csv`, `belege/abschluss/bilder.json`.
-- E0: keine echten Projektfotos auf der Seite, 11 Generatorbilder in Verwendung. Stand: offen.
-
-### Z-14 Adressen (keine Ausnahme)
-- Methode: `adressen.mjs` gegen `adressen-e0.csv` (alle 170 Adressen), Linkprüfung aller internen Links, Prüfung strukturierter Daten, Abgleich Sitemap.
-- Schwelle: jede Adresse aus `adressen-e0.csv`, die Abschnitt 11 meint (Sitemap und Durchlauf aller internen Links, Quellen `sitemap`, `link`, `weiterleitung`: 170 Adressen), liefert 200 oder leitet dauerhaft auf eine gleichwertige Seite; die übrigen 32 Zeilen (Quelle `wege`, Status 410 schon in E0, weder in der Sitemap noch verlinkt) bleiben unverändert 410 (E-016, Bestätigung M-16); null kaputte interne Links; je Seite genau eine H1, ein Titel, eine Beschreibung, ein absoluter Canonical; strukturierte Daten gültig (JSON-LD parst, `@context` schema.org, Pflichteigenschaften je verwendetem Typ: LocalBusiness, Organization, WebSite, WebPage, BreadcrumbList, FAQPage, Article, Service, Review); Sitemap enthält jede indexierbare Adresse.
-- Beleg: `belege/abschluss/adressen.csv`, `belege/abschluss/links.json`.
-- E0: `adressen-e0.csv` (E0-PRUEF-02c): 168 × 200, 2 × 308, 32 × 410, 0 kaputte Links, 0 Abweichungen bei H1, Titel, Beschreibung, Canonical und JSON-LD-Syntax; Video-Sitemap zeigt auf zwei fehlende Videos. Stand: offen.
-
-## Umgebungsausnahmen (zählen nicht als AUSNAHME, M-15)
-- U-01 Echte Geräte (iPhone, Android): nicht vorhanden. Ersatz: Chromium mit Geräteemulation in allen 10 Größen, Touch, Systemschrift 200 % per Textskalierung. Bitte an den Menschen: Startseite, ein Seitenwechsel und das Formular auf einem echten Handy.
-- U-02 Safari und Firefox: nicht vorhanden, nur Chromium. Ersatz: Code-Prüfung gegen bekannte Unterschiede (Reihenfolge von `popstate`-Lauschern in Firefox vor 116, WAAPI und `inert` in Safari 17), Rückfall auf Weg (b) bei B-01 dokumentiert.
-- U-03 Bildrate auf echter Grafik: nur Software-Rendering im Container. Ersatz: Messung mit 4-fach gedrosselter CPU in Chromium headless; Werte sind konservativ.
-- U-04 Echtes Mobilnetz: Ersatz: Lighthouse-Drosselung (simuliert, Standard von Lighthouse 13.5).
-- U-05 Screenreader: kein VoiceOver oder TalkBack. Ersatz: Barrierefreiheitsbaum aus Playwright, Prüfung von Titelansage (Routen-Ansager von Next) und Fokus auf H1.
-
-## Ausnahmen (höchstens zwei, keine für Z-02, Z-11, Z-14)
-- **A-1 · Z-12, „Traumbad“** in der H1 von `/bad/badsanierung` („Ihr neues Traumbad zum Festpreis.“): Wortlaut des Auftraggebers aus der Durchsicht der Live-Seite (E-047, E-048). Die Floskelprüfung meldet ihn weiter; die Regel bleibt.
-- **A-2 · Z-12, „Perfektion“** in der H1 der Startseite („Perfektion auf jedem Quadratmeter.“): Wortlaut des Auftraggebers aus derselben Durchsicht (E-047 Teil B, E-057). Die Floskelprüfung meldet ihn weiter; die Regel bleibt. Damit sind beide Ausnahmen vergeben.
-
-## Prüfmatrix (welche Stufe belegt was)
-| Kriterium | Stufe A je Paket | Stufe B je Etappe | Stufe C Abschluss |
+## Prüfmatrix
+| Kriterium | Stufe A (Paket) | Stufe B (Etappe) | Stufe C (Ende) |
 |---|---|---|---|
-| Z-02 | Typen, Linter, betroffene Tests | volle Suite, Konsole | Reinraum, Funktionsliste |
-| Z-03 | `werte.mjs` der geänderten Dateien | `werte.mjs` der Etappe | alle geänderten Dateien |
-| Z-04 | Bild mobil und Desktop | Sichtabnahme ≥ 8 | Endprüfung, blind |
-| Z-05 | Register-Eintrag | Einzelbilder neuer Momente, Bildrate | Registerabgleich, B-01, B-02 |
-| Z-06 | SVG des Pakets | SVG der Hauptansichten | alle SVG |
-| Z-07 | – | axe Hauptansichten | axe, Tastatur A1 bis A6, 200 % |
-| Z-08 | Budget des Pakets (Größe) | Lighthouse und Reaktion Hauptansichten | Lighthouse und Reaktion Hauptansichten |
-| Z-09 | Bild mobil und Desktop | 10 Größen, Erstes Bild | 10 Größen, Erstes Bild, Stichprobe |
-| Z-11 | – | Probeläufe nach Etappenplan | P1 bis P5, A1 bis A6, Tastatur |
-| Z-12 | Lesbarkeit der Seite | Lesbarkeit Hauptansichten, Stichprobe | alle Seiten |
-| Z-13 | Bildplatz des Pakets | Hauptansichten | alle Bilder, Metadaten |
-| Z-14 | Links der Seite | Linkprüfung | alle Adressen |
+| Z-02 | Typen, Linter, betroffene Tests | Build, volle Suite, Konsole | Reinraum, Funktionsliste, Adressen, Lesbarkeit |
+| Z-03 | – | Audit, Pixelvergleich (E2) | UPGRADE.md, Audit |
+| Z-04 | `werte.mjs` der geänderten Dateien | `werte.mjs` der Etappe | alle geänderten Dateien |
+| Z-05 | Bild mobil und Desktop | Sichtabnahme | Endprüfung, blind |
+| Z-06 | Registereintrag | Bildfolgen, Bildrate, reduziert | Register, Schalter, Bildrate |
+| Z-07 | – | Scrollen gedrosselt | Tastatur, Anker, Zurück, Cursor, INP |
+| Z-08 | SVG des Pakets | SVG der Hauptansichten | alle SVG |
+| Z-09 | – | axe vier Größen mit Menü und Dialog | axe, Tastatur, Reflow, Zoom, erzwungene Farben |
+| Z-10 | Budget des Pakets | Lighthouse Median aus drei | Lighthouse Median aus drei |
+| Z-11 | Bild mobil und Desktop | Bildsatz vier Größen | Bildsatz mit Stichprobe |

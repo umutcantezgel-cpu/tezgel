@@ -59,3 +59,12 @@ Bitte kurz und in eigenen Worten antworten. Bis dahin erzählt die Seite nur mit
 8. Dürfen wir zu Fotos den Ort nennen (zum Beispiel „Bad in Solms“)?
 9. Was soll ein Kunde nach dem ersten Besuch Ihrer Website unbedingt wissen?
 10. Gibt es einen Satz, den Sie Kunden immer sagen?
+
+## Lauf „Universal Motion“ (ab 27.10.2026) · Was nur du klären kannst
+Standardannahmen gelten bis zu deiner Antwort.
+- **UM-1 Laufzeit bei Vercel:** Nach dem Upgrade läuft der Stand mit der aktuellen Node-LTS (heute 24). Bitte im Vercel-Projekt unter Settings → General → Node.js Version dieselbe Version einstellen, bevor zusammengeführt wird. Annahme: bis dahin bleibt Vercel unverändert.
+- **UM-2 TypeScript 7 und ESLint 10:** Beide sind erschienen, lassen sich aber noch nicht einsetzen (TypeScript 7 ist außerhalb des Bereichs von typescript-eslint, ESLint 10 außerhalb der React-, a11y- und import-Plugins). Der Lauf nimmt die neuesten passenden Versionen (TypeScript 6.0, ESLint 9.39) und vermerkt die Lücke. Annahme: nachholen, sobald die Plugins mitziehen.
+- **UM-3 Geschmacksabnahme Bewegung:** Bitte am Ende auf echten Geräten ansehen: Seitenwechsel „Fliese für Fliese“ (bleibt in deiner gewählten Dauer, 2,4 s beim ersten und 1,8 s bei weiteren Wechseln; ein Tippen beendet ihn jetzt sofort), der neue Eingang ohne Vorhang (Logo baut sich im Kopf auf, die Überschrift erscheint Zeile für Zeile), der Fugenkreuz-Cursor am Computer und der neue Schalter „Bewegung: an/ruhig“. Annahme: so wie in KERN K-007 beschrieben.
+- **UM-4 Gerätetests:** iPhone mit Safari, Android mit Chrome, Desktop mit Firefox und Safari, jeweils auch mit „Bewegung reduzieren“. Die Cloud kann nur Chromium (und WebKit/Firefox, wenn installierbar) emulieren.
+- **UM-5 Zurückgeführte Inhalte:** Drei Inhalte des alten Auftritts fehlen ohne belegte Entscheidung und kommen in neuer Form zurück (Abschnitt 9): der Vergleich der Aufbauten auf /balkon-terrasse, der Werte-Block auf /ueber-uns und das Qualitätsversprechen. Garantie-Wörter („Staubschutz-Garantie“, „Garantierter Standard“) erscheinen erst, wenn du sie bestätigst (M-07). Annahme: ohne Garantie-Wörter.
+- **UM-6 Ausgangsstand der Originalfotos:** M-01 (Originalfotos in der Git-Historie bei öffentlichem Repository) bleibt dringend; der Lauf ändert die Historie nicht (G2).
