@@ -3,7 +3,7 @@
 - Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · Etappe E0-Ergänzung · Stand 2026-10-27 04:46 MEZ
 - Nächster exakter Schritt: Plan `/root/.claude/plans/master-auftrag-tezgel-de-streamed-token.md` (im Repo gespiegelt als E-066 und PRUEFPUNKT): (1) Runde 5 erledigt (17 gering, E-065, `$SCRATCH/e4w1-browser-5/sicht.json`). (2) Server 4311 = 7ceb5e41 und 4320 starten. (3) E0-Ergänzung als Workflow mit Haiku, 2 gleichzeitig: E0-PRUEF-K Kontingent-Werkzeug `werkzeuge/kontingent.mjs` (Kalibrierung Limit 18:30 UTC am 26.10.), E0-KUND-STACK, E0-KUND-BEWEGUNG, E0-KUND-DESIGN, E0-KUND-VERLUSTE, E0-KUND-QUALITAET, danach E0-PRUEF-B Ausgangswerte am Produktionsbau 7ceb5e41 nach `belege/um-e0/`. (4) E1: KERN v4 mit Brückentabelle, UPGRADE.md, PLAN 2, ABNAHME 2, L0. (5) E2 Upgrade.
 - Letzter grüner Commit: 7ceb5e41 (Reinraum grün, Funktionssuite 393/0, npm test 210/210).
-- Laufende Pakete: keine des neuen Laufs; Workflow wf_7f3987b4-6e4 (Vorlauf, nur lesend).
+- Laufende Pakete: Workflow wf_96d3a16e-a1b (UM-E0-PRUEF-K, UM-E0-KUND-STACK, -BEWEGUNG, -DESIGN, -VERLUSTE, -QUALITAET; Haiku, je zwei; Berichte nach `berichte/UM-E0-*.md`; bei Abbruch mit resumeFromRunId und dem Skript unter `~/.claude/projects/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/workflows/scripts/um-e0-ergaenzung-wf_96d3a16e-a1b.js` fortsetzen). Messreihe `$SCRATCH/um-e0/messen.sh` (überspringt fertige Teile, Log `$SCRATCH/um-e0/logs/messen.log`) am Produktionsbau 4311 = 7ceb5e41 nach `belege/um-e0/`. Routinen: WEITER stündlich (trig_013KjQUDqdr7LRnFeCaw9XWY, neu formuliert), Morgenbericht 06:52 Europe/Berlin (trig_01B6mPcvup5LmNmrzX4LFrJP).
 - Tempomat: keine Quelle; halbe Haiku-Plätze (2) bis zur Kalibrierung.
 
 ## Vorlauf „Verständlich, echt, ausgezeichnet“
