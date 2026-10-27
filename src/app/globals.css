@@ -10,30 +10,59 @@
 @source not "../../_werkstatt";
 
 /* ==========================================================================
-   FLIESENVERLEGUNG TEZGEL · KERN v2 – „Jede Seite ist ein Verlegeplan“
+   FLIESENVERLEGUNG TEZGEL · KERN v4 – „Klar verlegt“
    Einzige Quelle der Gestaltungswerte (K-005). Werte nie im Code wiederholen.
    ========================================================================== */
 @theme static {
   /* Tailwind-Standardpalette gesperrt: Farbklassen nur aus den KERN-Farben. white ist der Tailwind-Standardwert und
      bleibt für print:bg-white (Widerrufsformular) */
   --color-*: initial;
-  --color-white: #fff;
+  --color-white: var(--color-kalk-100);
 
-  /* Farbe – Neutrale auf 228°, ein Akzent (Laser = Logo-Rot) */
-  /* Kalk neutral (E-043, Auftraggeber: kein Gelb): vorher #F5F4F0 lag als einziger Grundton auf Gelb (OKLCH-Farbton 95°)
-     und wirkte neben den weißen Fliesen gelblich; Kontraste unverändert (Tinte-2 8,2 : 1) */
-  --color-kalk: #F4F4F5;
-  --color-fliese: #FFFFFF;
-  --color-fuge: #DDDEE2;
-  --color-strich: #818698;
-  /* Nebentext: 8,2 : 1 auf Kalk, 9,0 : 1 auf Fliese (vorher #4B5067 mit 7,2 : 1 wirkte im Satz blass, E2-SICHT-2 Typografie, E-040) */
-  --color-tinte-2: #43485F;
-  --color-tinte: #0A1129;
-  --color-laser: #D82020;
-  --color-laser-tief: #A8171C;
-  --color-abnahme: #1D6B3F;
-  --color-nacht-2: #A9AEC0;
-  --color-nacht-fuge: #2B3352;
+  /* Farbe v4 (E-067-5, UM-E3-DS): OKLCH, je Familie gestuft. Regel: Der Stufenname ist die OKLCH-Helligkeit in Prozent
+     (gerundet); Farbton und Buntheit bleiben in der Familie nahe beieinander. Die Werte rechnen auf genau dieselben
+     sRGB-Farben wie v3 zurück (geprüft mit Rückrechnung, kein sichtbarer Wechsel). Neue Stufen nur nach dieser Regel. */
+  /* Familie kalk (hell, Farbton 275–286°) */
+  --color-kalk-100: oklch(100% 0 0);
+  --color-kalk-97: oklch(96.7% 0.0013 286.4);
+  --color-kalk-90: oklch(90.1% 0.0055 275);
+  --color-kalk-75: oklch(75.3% 0.0264 273.4);
+  /* Familie tinte (dunkel, Farbton 269–275°) */
+  --color-tinte-62: oklch(62.2% 0.0277 273.3);
+  --color-tinte-41: oklch(40.7% 0.0392 275);
+  --color-tinte-33: oklch(32.9% 0.0561 272);
+  --color-tinte-19: oklch(18.7% 0.0499 268.9);
+  /* Familie laser (Logo-Rot, 26–28°): Fläche hell 95, Grafik und große Schrift 57, Text 47 */
+  --color-laser-95: oklch(95% 0.022 27.7);
+  --color-laser-57: oklch(56.6% 0.2154 27.7);
+  --color-laser-47: oklch(47% 0.1778 26.4);
+  /* Familie abnahme (Grün, 154°): Fläche hell 95, Text und Haken 47 */
+  --color-abnahme-95: oklch(95% 0.03 154.1);
+  --color-abnahme-47: oklch(46.9% 0.1032 154.1);
+
+  /* Namen der Rollen (v2/v3, im Code verwendet): verweisen nur auf Stufen */
+  /* Kalk neutral (E-043, Auftraggeber: kein Gelb): vorher #F5F4F0 lag als einziger Grundton auf Gelb (OKLCH-Farbton 95°) */
+  --color-kalk: var(--color-kalk-97);
+  --color-fliese: var(--color-kalk-100);
+  --color-fuge: var(--color-kalk-90);
+  --color-strich: var(--color-tinte-62);
+  /* Nebentext: 8,2 : 1 auf Kalk, 9,0 : 1 auf Fliese (E-040) */
+  --color-tinte-2: var(--color-tinte-41);
+  --color-tinte: var(--color-tinte-19);
+  --color-laser: var(--color-laser-57);
+  --color-laser-tief: var(--color-laser-47);
+  --color-abnahme: var(--color-abnahme-47);
+  --color-nacht-2: var(--color-kalk-75);
+  --color-nacht-fuge: var(--color-tinte-33);
+
+  /* Bedeutungs-Tokens (v4): Fehler, Erfolg, Rand, Fokus und ihre hellen Flächen; nur Verweise auf Stufen.
+     Kontraste: fehler auf fehler-flaeche 6,4 : 1, erfolg auf erfolg-flaeche 5,7 : 1, rand auf Kalk 3,3 : 1 und auf Fliese 3,6 : 1, fokus auf Kalk 17 : 1 */
+  --color-fehler: var(--color-laser-47);
+  --color-fehler-flaeche: var(--color-laser-95);
+  --color-erfolg: var(--color-abnahme-47);
+  --color-erfolg-flaeche: var(--color-abnahme-95);
+  --color-rand: var(--color-tinte-62);
+  --color-fokus: var(--color-tinte-19);
 
   /* Schrift (K-006) */
   --font-text: var(--font-archivo), "Archivo Ersatz", Arial, sans-serif;
@@ -82,30 +111,35 @@
   --shadow-gesetzt: 0 1px 2px color-mix(in srgb, var(--color-tinte) 22%, transparent);
   --shadow-flug: 0 10px 24px color-mix(in srgb, var(--color-tinte) 18%, transparent);
 
-  /* Bewegung (K-005/K-007) */
+  /* Bewegung v4 (K-005/K-008, E-067-5): sechs Dauerstufen; dauer-0 = sofort (ruhiger Bewegungsschalter) */
+  --dauer-0: 0ms;
   --dauer-1: 140ms;
   --dauer-2: 320ms;
   --dauer-3: 600ms;
   --dauer-4: 800ms;
   --dauer-5: 1200ms;
+  /* Staffel ist ein Abstand zwischen Auftritten, keine Dauerstufe (höchstens acht Elemente) */
   --staffel: 60ms;
+  /* Vier Kurven (v4): setzen ausklingend · laser wechselnd · weg beschleunigend · aufsetzen nur B-01; linear ist Plattformkurve */
   --ease-setzen: cubic-bezier(0.2, 0.8, 0.2, 1);
   --ease-laser: cubic-bezier(0.7, 0, 0.2, 1);
   --ease-weg: cubic-bezier(0.32, 0, 0.67, 0);
-  /* v3: schnell ankommen, ohne Überschwingen (Fliese unter dem Gummihammer) */
-  --ease-hammer: cubic-bezier(0.3, 0.9, 0.35, 1);
   /* B-01 Legen (E-043): die Fliese schwebt kurz und setzt mit voller Geschwindigkeit auf, ohne Federn (tak) */
   --ease-aufsetzen: cubic-bezier(0.5, 0, 0.75, 0);
+  /* v3-Name, in v4 in setzen aufgegangen (Alias) */
+  --ease-hammer: var(--ease-setzen);
   /* Seitenwechsel B-01 und Intro B-02: Gesamtdauern, nur aus diesen Variablen lesen (K-005) */
   /* B-01 Belegen plus Abnehmen (E-043, Auftraggeber: Fliese für Fliese; E-047 langsamer): erster Wechsel 2,4 s, danach 1,8 s;
      die Logo-Zeit (Aufklatschen 220 ms, Stehen 450 ms) kommt dazu und läuft mit dem Warten auf die Seite */
-  --verlegen-gesamt: 2400ms;
-  --verlegen-gesamt-folge: 1800ms;
+  /* Ablauflängen sind Vielfache der Dauerstufen (v4; die Rechnung prüft test/designsystem.test.mjs). Sie stehen als
+     Zahl da, weil Verlegen.tsx sie als Zeit liest und calc() ohne @property nicht ausrechnet. */
+  --verlegen-gesamt: 2400ms; /* 2 × dauer-5 */
+  --verlegen-gesamt-folge: 1800ms; /* dauer-5 + dauer-3 */
   /* reduzierte Bewegung: Überblendung statt Fliesen (Auftrag Abschnitt 9) */
-  --verlegen-ruhig: 150ms;
+  --verlegen-ruhig: 140ms; /* dauer-1 (v3: 150 ms, freie Zahl) */
   /* Laufband im Fuß (K-016, E-047): ein Durchlauf der Inhalte, langsam genug zum Mitlesen */
-  --band-durchlauf: 60s;
-  --intro-gesamt: 1600ms;
+  --band-durchlauf: 60s; /* 50 × dauer-5 */
+  --intro-gesamt: 1600ms; /* 2 × dauer-4 */
 }
 
 /* Bänder mit eigenem Wischen (Kundenstimmen) ohne sichtbare Leiste */
@@ -136,7 +170,7 @@
   scrollbar-width: none;
 }
 
-/* Dauer-Stufen als Utilities: dauer-1 … dauer-5 */
+/* Dauer-Stufen als Utilities: dauer-0 … dauer-5 */
 @utility dauer-* {
   transition-duration: --value(--dauer-*);
   --dauer: --value(--dauer-*);

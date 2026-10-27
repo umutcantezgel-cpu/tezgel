@@ -1,5 +1,5 @@
 {
- "_kommentar": "Quelle: KERN v1, wird mit v2 angepasst. Erste Fassung nach Briefing E0-PRUEF-02d; der Orchestrator pflegt die Datei. Abweichung zum Briefing: schrift und kurven folgen dem Theme in src/app/globals.css und KERN v2 (font-text, font-anzeige, font-mono; ease-setzen, ease-laser, ease-weg, ease-linear). KERN v3 (E2-ORCH-01b): Farbe fliese-glanz, Kurve hammer; Schatten shadow-gesetzt und shadow-flug, Dauern --verlegen-gesamt, --verlegen-gesamt-folge, --verlegen-ruhig, --intro-gesamt nur als CSS-Variablen.",
+ "_kommentar": "Quelle: KERN v1, wird mit v2 angepasst. Erste Fassung nach Briefing E0-PRUEF-02d; der Orchestrator pflegt die Datei. Abweichung zum Briefing: schrift und kurven folgen dem Theme in src/app/globals.css und KERN v2 (font-text, font-anzeige, font-mono; ease-setzen, ease-laser, ease-weg, ease-linear). KERN v3 (E2-ORCH-01b): Farbe fliese-glanz, Kurve hammer; Schatten shadow-gesetzt und shadow-flug, Dauern --verlegen-gesamt, --verlegen-gesamt-folge, --verlegen-ruhig, --intro-gesamt nur als CSS-Variablen. KERN v4 (UM-E3-DS, E-075): Farbstufen in OKLCH (kalk-100/97/90/75, tinte-62/41/33/19, laser-95/57/47, abnahme-95/47) und Bedeutungen (fehler, fehler-flaeche, erfolg, erfolg-flaeche, rand, fokus); Dauern dauer-0 bis dauer-5; Kurven setzen, laser, weg, aufsetzen, linear, hammer (Alias von setzen).",
  "farben": [
   "kalk",
   "fliese",
@@ -13,6 +13,25 @@
   "abnahme",
   "nacht-2",
   "nacht-fuge",
+  "kalk-100",
+  "kalk-97",
+  "kalk-90",
+  "kalk-75",
+  "tinte-62",
+  "tinte-41",
+  "tinte-33",
+  "tinte-19",
+  "laser-95",
+  "laser-57",
+  "laser-47",
+  "abnahme-95",
+  "abnahme-47",
+  "fehler",
+  "fehler-flaeche",
+  "erfolg",
+  "erfolg-flaeche",
+  "rand",
+  "fokus",
   "white",
   "transparent",
   "current",
@@ -132,6 +151,7 @@
   "font-mono"
  ],
  "dauern": [
+  "dauer-0",
   "dauer-1",
   "dauer-2",
   "dauer-3",
@@ -142,6 +162,7 @@
   "setzen",
   "laser",
   "weg",
+  "aufsetzen",
   "linear",
   "hammer"
  ],
