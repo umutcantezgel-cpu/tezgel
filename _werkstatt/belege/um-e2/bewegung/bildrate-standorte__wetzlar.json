@@ -1,0 +1,24 @@
+{
+ "modus": "bildrate",
+ "seite": "/standorte/wetzlar",
+ "ansicht": "m390",
+ "ergebnis": "/home/user/tezgel/_werkstatt/cache/bewegung/bildrate/standorte__wetzlar/ergebnis.json",
+ "wiederholungen": 3,
+ "bilder_gesamt": 1218,
+ "verworfen": 3,
+ "anteil_verworfen_prozent": 0.25,
+ "anteile_je_lauf": [
+  0.28,
+  0.16,
+  0.25
+ ],
+ "anteile_pipeline_je_lauf": [
+  0.09,
+  0,
+  0.24
+ ],
+ "loaf_anzahl": 1,
+ "loaf_summe_ms": 76,
+ "hinweis": "Median je Feld, nicht aus derselben Zeile (bilder_gesamt, verworfen, loaf_*). Kopfwert anteil_verworfen_prozent = Median der Anteile je Lauf (anteile_je_lauf).",
+ "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame"
+}

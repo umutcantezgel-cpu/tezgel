@@ -1,0 +1,34 @@
+{
+ "modus": "register",
+ "seite": "/standorte/wetzlar",
+ "ansicht": "m390",
+ "ergebnis": "/home/user/tezgel/_werkstatt/cache/bewegung/register/standorte__wetzlar/ergebnis.json",
+ "gefundene_kennungen": [
+  "aufklappen",
+  "druck",
+  "einzugsband",
+  "karussell",
+  "leitachse",
+  "zustand"
+ ],
+ "unbekannt": [],
+ "ohne_register_anzahl": 1,
+ "ohne_register_erste": [
+  {
+   "art": "transition",
+   "sel": "button.inline-flex.size-11",
+   "eigenschaften": [
+    "outline-color"
+   ],
+   "anzahl": 10
+  }
+ ],
+ "schritte": {
+  "hover_geprueft": 20,
+  "hover_fehler": 0,
+  "hover_fehler_beispiel": null,
+  "hover_ausserhalb_uebersprungen": 0,
+  "tab_schritte": 30,
+  "fokus_verschieden": 24
+ }
+}

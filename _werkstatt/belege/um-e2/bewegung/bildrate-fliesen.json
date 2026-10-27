@@ -1,0 +1,24 @@
+{
+ "modus": "bildrate",
+ "seite": "/fliesen",
+ "ansicht": "m390",
+ "ergebnis": "/home/user/tezgel/_werkstatt/cache/bewegung/bildrate/fliesen/ergebnis.json",
+ "wiederholungen": 3,
+ "bilder_gesamt": 1615,
+ "verworfen": 0,
+ "anteil_verworfen_prozent": 0,
+ "anteile_je_lauf": [
+  1.41,
+  0,
+  0
+ ],
+ "anteile_pipeline_je_lauf": [
+  0.65,
+  0.06,
+  0.06
+ ],
+ "loaf_anzahl": 1,
+ "loaf_summe_ms": 53,
+ "hinweis": "Median je Feld, nicht aus derselben Zeile (bilder_gesamt, verworfen, loaf_*). Kopfwert anteil_verworfen_prozent = Median der Anteile je Lauf (anteile_je_lauf).",
+ "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame"
+}

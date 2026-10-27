@@ -1,0 +1,24 @@
+{
+ "modus": "bildrate",
+ "seite": "/kontakt",
+ "ansicht": "m390",
+ "ergebnis": "/home/user/tezgel/_werkstatt/cache/bewegung/bildrate/kontakt/ergebnis.json",
+ "wiederholungen": 3,
+ "bilder_gesamt": 922,
+ "verworfen": 0,
+ "anteil_verworfen_prozent": 0,
+ "anteile_je_lauf": [
+  1.08,
+  0,
+  0
+ ],
+ "anteile_pipeline_je_lauf": [
+  0.13,
+  0.11,
+  0.11
+ ],
+ "loaf_anzahl": 1,
+ "loaf_summe_ms": 56,
+ "hinweis": "Median je Feld, nicht aus derselben Zeile (bilder_gesamt, verworfen, loaf_*). Kopfwert anteil_verworfen_prozent = Median der Anteile je Lauf (anteile_je_lauf).",
+ "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame"
+}
