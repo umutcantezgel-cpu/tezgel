@@ -433,27 +433,33 @@ test('Stückplan 8: Dauer des Wechsels (Belegen plus Abnehmen, E-047): 2400 ms b
   assert.match(css, new RegExp(`--verlegen-gesamt-folge:\\s*${GESAMT_FOLGE}ms;`));
 });
 
-/** Buntheit (OKLCH-Chroma) einer Hex-Farbe. */
-function buntheit(hex) {
-  const lin = (c) => (c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
-  const [r, g, b] = [1, 3, 5].map((i) => lin(Number.parseInt(hex.slice(i, i + 2), 16) / 255));
-  const [l, m, s] = [
-    0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b,
-    0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b,
-    0.0883024619 * r + 0.2817188376 * g + 0.6299787005 * b,
-  ].map(Math.cbrt);
-  return Math.hypot(1.9779984951 * l - 2.428592205 * m + 0.4505937099 * s, 0.0259040371 * l + 0.7827717662 * m - 0.808675766 * s);
+/** sRGB-Hex einer OKLCH-Farbe (L in Prozent, C, h in Grad), auf 8 Bit gerundet wie im Browser. */
+function oklchZuHex([l, c, h]) {
+  const [L, a, b] = [l / 100, c * Math.cos((h * Math.PI) / 180), c * Math.sin((h * Math.PI) / 180)];
+  const [x, y, z] = [L + 0.3963377774 * a + 0.2158037573 * b, L - 0.1055613458 * a - 0.0638541728 * b, L - 0.0894841775 * a - 1.291485548 * b].map((v) => v ** 3);
+  const rgb = [
+    4.0767416621 * x - 3.3077115913 * y + 0.2309699292 * z,
+    -1.2684380046 * x + 2.6097574011 * y - 0.3413193965 * z,
+    -0.0041960863 * x - 0.7034186147 * y + 1.707614701 * z,
+  ].map((v) => (v <= 0.0031308 ? 12.92 * v : 1.055 * v ** (1 / 2.4) - 0.055));
+  return `#${rgb.map((v) => Math.round(Math.min(1, Math.max(0, v)) * 255).toString(16).padStart(2, '0')).join('')}`.toUpperCase();
 }
 
 test('Stückplan 9: neutral: Kalk unbunt (Buntheit unter 0,003), Fliese und Fuge unter 0,01, themeColor gleich Kalk, Wartelinie im Seitenwechsel in strich statt Laserrot', () => {
   const css = readFileSync(new URL('../src/app/globals.css', import.meta.url), 'utf8');
-  const farbe = (name) => css.match(new RegExp(`--color-${name}:\\s*(#[0-9A-Fa-f]{6});`))?.[1];
+  // DS v4: Rollen sind Verweise auf OKLCH-Stufen (K-005); der Verweis wird bis zur Stufe aufgelöst
+  const farbe = (name) => {
+    const wert = css.match(new RegExp(`--color-${name}:\\s*([^;]+);`))?.[1].trim();
+    const verweis = wert?.match(/^var\(--color-([\w-]+)\)$/)?.[1];
+    if (verweis) return farbe(verweis);
+    return wert?.match(/^oklch\(([\d.]+)%\s+([\d.]+)\s+([\d.]+)\)$/)?.slice(1).map(Number);
+  };
   const kalk = farbe('kalk');
   assert.ok(kalk, 'Kalk in globals.css');
-  assert.ok(buntheit(kalk) < 0.003, `Kalk ${kalk}: Buntheit ${buntheit(kalk).toFixed(4)}`);
-  for (const name of ['fliese', 'fuge']) assert.ok(buntheit(farbe(name)) < 0.01, `${name} ${farbe(name)}: Buntheit ${buntheit(farbe(name)).toFixed(4)}`);
+  assert.ok(kalk[1] < 0.003, `Kalk: Buntheit ${kalk[1]}`);
+  for (const name of ['fliese', 'fuge']) assert.ok(farbe(name)[1] < 0.01, `${name}: Buntheit ${farbe(name)[1]}`);
   const dokument = readFileSync(new URL('../src/app/(bestand)/_dokument.tsx', import.meta.url), 'utf8');
-  assert.equal(dokument.match(/themeColor:\s*'(#[0-9A-Fa-f]{6})'/)?.[1].toUpperCase(), kalk.toUpperCase());
+  assert.equal(dokument.match(/themeColor:\s*'(#[0-9A-Fa-f]{6})'/)?.[1].toUpperCase(), oklchZuHex(kalk));
   const bewegung = readFileSync(new URL('../src/app/bewegung.css', import.meta.url), 'utf8');
   const linie = bewegung.match(/\.verlegen-laser\s*\{[^}]*\}/)?.[0] ?? '';
   assert.match(linie, /background-color:\s*var\(--color-strich\)/);

@@ -70,19 +70,28 @@ test('4. Wege: matcher in src/proxy.ts entspricht genau der Liste', () => {
   assert.deepEqual([...literale].sort(), [...erwartet].sort());
 });
 
-test('5. Wege: zwei dauerhafte Weiterleitungen (308) auf bestehende Seiten', async () => {
-  const wege = await nextConfig.redirects();
-  assert.deepEqual(
-    wege.map(({ source, destination, permanent }) => ({ source, destination, permanent })),
-    [
-      { source: '/bad/budgetkalkulator', destination: '/bad/projekt-check', permanent: true },
-      { source: '/blog/barrierefreies-bad-planung-zuschuesse', destination: '/bad/barrierefreies-bad', permanent: true },
-    ],
-  );
+test('5. Wege: zwei dauerhafte Weiterleitungen (308) auf bestehende Seiten, zwei auf gleichwertige Logo-Dateien (E-075)', async () => {
+  const wege = (await nextConfig.redirects()).map(({ source, destination, permanent }) => ({ source, destination, permanent }));
+  const seiten = wege.filter((w) => !w.source.startsWith('/images/'));
+  const dateien = wege.filter((w) => w.source.startsWith('/images/'));
+  assert.deepEqual(seiten, [
+    { source: '/bad/budgetkalkulator', destination: '/bad/projekt-check', permanent: true },
+    { source: '/blog/barrierefreies-bad-planung-zuschuesse', destination: '/bad/barrierefreies-bad', permanent: true },
+  ]);
+  assert.deepEqual(dateien, [
+    { source: '/images/logo/tezgel-logo.svg', destination: '/images/logo/tezgel-logo.png', permanent: true },
+    { source: '/images/logo/tezgel-logo-dark.svg', destination: '/images/logo/tezgel-logo-dark.png', permanent: true },
+  ]);
   const adressen = new Set(seitenAdressen());
-  for (const w of wege) {
+  for (const w of seiten) {
     assert.equal(adressen.has(w.destination), true, `Ziel ${w.destination} fehlt`);
     assert.equal(adressen.has(w.source), false, `Quelle ${w.source} ist noch eine Seite`);
+    assert.equal(istEntfernt(w.source), false, `Quelle ${w.source} steht auch in der 410-Liste`);
+  }
+  // Datei-Weiterleitungen: Ziel liegt in public, Quelle nicht mehr (sonst würde die Datei die Weiterleitung verdecken)
+  for (const w of dateien) {
+    assert.equal(fs.existsSync(path.resolve(process.cwd(), `public${w.destination}`)), true, `Ziel ${w.destination} fehlt in public`);
+    assert.equal(fs.existsSync(path.resolve(process.cwd(), `public${w.source}`)), false, `Quelle ${w.source} liegt noch in public`);
     assert.equal(istEntfernt(w.source), false, `Quelle ${w.source} steht auch in der 410-Liste`);
   }
 });
