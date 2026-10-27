@@ -1,4 +1,22 @@
-# Bericht · Lauf „Verständlich, echt, ausgezeichnet“
+# Bericht · Lauf „Universal Motion“
+
+## Morgenbericht · Dienstag, 27. Oktober 2026
+
+1. Neuer Auftrag übernommen: Erst bringe ich die Technik der Seite auf den neuesten Stand, dann Bewegung, Seitenwechsel, Scrollen und Cursor auf Spitzenniveau. Der Plan steht nach zwei Prüfrunden: 58 Pflichtaufgaben, geschätzt etwa anderthalb Arbeitstage (`_werkstatt/PLAN.md`).
+2. Fertig: Die Ausgangsmessung aller 12 Hauptseiten in vier Bildschirmgrößen. Kein Text läuft über, keine ernste Hürde für Menschen mit Einschränkungen, am Computer volle Punktzahl bei der Ladezeit. So sieht der Ausgangsstand aus: `_werkstatt/bilder/bericht/2026-10-27/1-ausgangsstand-startseite-handy.jpg`, `2-ausgangsstand-startseite-desktop.jpg`.
+3. Gefunden: Am Handy erscheint das große erste Bild auf allen Hauptseiten erst nach 2,9 bis 4,5 Sekunden (Ziel 2,5). Dafür gibt es jetzt drei eigene Aufgaben im Plan.
+4. Fertig: Die Seite läuft auf der aktuellen Langzeitversion von Node (24) und mit TypeScript 6; alle 210 Prüfungen bestehen ohne Warnung.
+5. Fast fertig: Next.js 16.4.3 (schließt eine kritische Sicherheitslücke) und React 19.3.1 sind eingebaut, alle Prüfungen sind grün. Es fehlt nur noch der Bildvergleich gegen den Ausgangsstand.
+6. Nicht möglich: TypeScript 7 und ESLint 10 sind erschienen, aber das Prüfwerkzeug für den Code unterstützt TypeScript 7 noch nicht. Ich habe es ausprobiert und belegt; die Lücke steht in `MENSCHEN.md` (UM-2).
+7. Stand der 13 Kriterien: noch keines ganz erfüllt, das ist zu Beginn so geplant. Die Ausgangswerte stehen in `_werkstatt/ABNAHME.md`.
+8. Kontingent der Woche: nicht messbar, weil es in der Cloud keine Anzeige dafür gibt. Das aktuelle Fenster schätze ich auf 16 %; der Tempomat bremst gerade etwas.
+9. Als Nächstes: Bildvergleich abschließen, dann Tailwind, Zod und die übrigen kleinen Pakete aktualisieren. Danach kommt die Startseite als Vorbild für die neue Bewegung.
+10. Bitte prüfe oder entscheide (Einzelheiten in `_werkstatt/MENSCHEN.md`):
+    - Vor dem Zusammenführen bei Vercel die Node-Version auf 24 stellen (UM-1).
+    - Drei Inhalte des alten Auftritts kommen zurück: der Vergleich der Aufbauten, die Werte und das Qualitätsversprechen. Die Garantie-Wörter erscheinen erst, wenn du sie bestätigst (UM-5).
+    - Weiter dringend: die Originalfotos in der Git-Historie (UM-6).
+
+## Vorlauf „Verständlich, echt, ausgezeichnet“
 
 ## Morgenbericht · Montag, 26. Oktober 2026
 
