@@ -121,6 +121,10 @@ export async function installSperre(context, { protokoll = [], echteRoute = fals
     if (url.protocol === 'file:' && methode === 'GET') return route.continue();
     if (!lokal) {
       protokoll.push({ art: 'fremd', methode, url: url.origin + url.pathname });
+      // Navigation weg von der Seite (WhatsApp, externe Links): abbrechen statt 204. Eine 204-Antwort beendet keine
+      // Navigation; Playwright ab 1.64 wartet nach click() darauf und läuft in die Zeitüberschreitung (UM-E2-B, E-076).
+      // Die Anfrage selbst bleibt für page.on('request') sichtbar. Unterressourcen bekommen weiter 204 (keine Konsolenfehler).
+      if (req.isNavigationRequest()) return route.abort('blockedbyclient');
       return route.fulfill({ status: 204, body: '' });
     }
     if (methode === 'GET' || methode === 'HEAD' || methode === 'OPTIONS') return route.continue();
