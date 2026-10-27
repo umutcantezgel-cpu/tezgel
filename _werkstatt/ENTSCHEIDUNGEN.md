@@ -826,3 +826,15 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
      - Die CRLF-Zeilenenden von `validation.js` bleiben erhalten.
   3. **lucide-react:** 1.62.0 ist am 27.10. um 06:14 UTC erschienen, das Briefing nannte noch 1.61.0. Nachgezogen auf `^1.62.0`; alle 12 genutzten Icons sind vorhanden. UM-E3-SVG ersetzt die Bibliothek später ganz.
 - **Lehre (L6):** Der Bericht des Upgraders nannte den Listenfall nicht. Ab jetzt verlangen Briefings bei Validierungsbibliotheken einen Vergleich alt gegen neu über alle Schemata des Projekts, nicht nur über Stichproben.
+
+## E-073 · Abnahme UM-E2-U06: ESLint 9.39.5 als belegt neueste kompatible Version (27.10.2026, 08:45 MEZ, Orchestrator)
+- **Ergebnis:** eslint 9.39.5 ist umgesetzt (nur Lockfile). Stufe A ist grün, Lint ohne Befund.
+- **Anlauf 2 für ESLint 10.13.0 belegt gescheitert:**
+  - npm installiert nur, indem es die Peer-Bereiche übergeht (`ERESOLVE overriding`).
+  - `npm ls` zeigt invalid für eslint-plugin-react, eslint-plugin-jsx-a11y und eslint-plugin-import (je höchstens ESLint 9). Alle drei kommen über eslint-config-next 16.4.3; ihre neuesten Versionen erlauben ESLint 10 ebenfalls nicht.
+  - Ein Override würde die Peer-Prüfung umgehen (G7). Deshalb bleibt es bei 9.39.5, mit Vermerk in MENSCHEN UM-2.
+- **Gegenprüfung forderte Nacharbeit:** Grund war der npm-Hinweis „This version is no longer supported“ an eslint 9.39.5.
+  - Das ist der Wartungsstatus der Version (dist-tag `maintenance`), keine veraltete Schnittstelle, die der Code nutzt.
+  - Z-03 erlaubt „belegt auf der neuesten kompatiblen Version“. Der Hinweis gehört zu genau diesem Beleg und zählt nicht als AUSNAHME.
+- **Wiederholung:** UM-E2-B und UM-E5-C prüfen erneut, ob die Plugins ESLint 10 erlauben. Wenn ja, folgt ein Nachpaket.
+- **Kleinere Berichtsfehler** (Routenzahl, nicht genannte Lockfile-Kante) sind im Bericht vermerkt.
