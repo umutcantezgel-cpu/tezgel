@@ -248,7 +248,8 @@ export function ladeKalibrierung(datei) {
   return d;
 }
 
-// Verbrauch ist in Prozent. Anker = erster Punkt, aktiver Faktor = letzter Punkt.
+// Verbrauch ist in Prozent. Anker = jüngster Punkt, dessen Fensterende schon vorbei ist (jedes Limit-Ereignis nennt die
+// Rücksetzzeit; die Kette davor kann sich verschoben haben); aktiver Faktor = letzter Punkt.
 export function zustand({ eintraege, punkte, messwert = null, jetzt }) {
   const sichtbar = eintraege.filter((e) => e.ts <= jetzt);
   const zeitpunkte = sichtbar.map((e) => e.ts).sort((a, b) => a - b);
@@ -273,7 +274,8 @@ export function zustand({ eintraege, punkte, messwert = null, jetzt }) {
     ziel = ZIEL_KALIBRIERT;
     quelle = 'Schätzung';
     if (punkte.length) {
-      const anker = Date.parse(punkte[0].ende);
+      const vorbei = punkte.map((p) => Date.parse(p.ende)).filter((e) => e <= jetzt);
+      const anker = vorbei.length ? Math.max(...vorbei) : Date.parse(punkte[0].ende);
       fenster = aktuellesFenster(fensterKette(anker, zeitpunkte, jetzt), jetzt);
       if (!fenster) {
         verbrauch = 0;

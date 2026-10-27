@@ -190,6 +190,18 @@ test('Zustand: Verbrauch = Kosten im Fenster mal Faktor, Soll = Ziel mal vergang
   assert.equal(K.zeile(z), 'Fenster 20.0 % (Soll 38.0 %, Ziel 95 %) 2026-10-26 18:40–2026-10-26 23:40 UTC · Woche ? % · Gas · Quelle Schätzung (Faktor 2, Stand 2026-10-26)');
 });
 
+test('Zustand: Anker ist der jüngste vergangene Kalibrierpunkt, nicht der erste (Kette neu ab dem letzten Limit)', () => {
+  const alt = { ende: '2026-10-26T18:30:00.000Z', start: '2026-10-26T13:30:00.000Z', zeit: '2026-10-26T18:30:00.000Z', prozent: 100, kosten_usd: 50, faktor: 2, quelle: 'limit', erfasst: '2026-10-27T04:00:00.000Z' };
+  const neu = { ende: '2026-10-27T09:30:00.000Z', start: '2026-10-27T04:30:00.000Z', zeit: '2026-10-27T08:30:00.000Z', prozent: 100, kosten_usd: 40, faktor: 2.5, quelle: 'limit', erfasst: '2026-10-27T09:50:00.000Z' };
+  const eintraege = [
+    { ts: ms('2026-10-27T05:31:00Z'), usd: 30, modell: 'claude-opus-5-5', datei: 'x' }, // alte Kette: Fenster ab 05:31
+    { ts: ms('2026-10-27T09:32:00Z'), usd: 4, modell: 'claude-opus-5-5', datei: 'x' }, // erste Anfrage nach dem Rücksetzen
+  ];
+  const z = K.zustand({ eintraege, punkte: [alt, neu], messwert: null, jetzt: ms('2026-10-27T10:00:00Z') });
+  assert.equal(z.fenster.start, ms('2026-10-27T09:32:00Z'));
+  near(z.verbrauch, 10); // 4 USD * 2,5 %/USD, ohne die 30 USD aus der alten Kette
+});
+
 // ---------------------------------------------------------------- Befehlszeile
 
 test('Befehlszeile: Kalibrieren, Schätzung und Tage und Agenten über einen künstlichen Protokollordner', () => {
