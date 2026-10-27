@@ -98,7 +98,7 @@ test.describe('TezgelAnfrageFunnel (F-03, /kontakt)', () => {
   test('WhatsApp ohne Name und Telefon: Hinweis statt Öffnen, kein WhatsApp-Aufruf', async ({ page, anfragen }) => {
     await page.goto(SEITE);
     await zuSchritt3(page);
-    await whatsappDirekt(page).click();
+    await whatsappDirekt(page).click({ noWaitAfter: true }); // externe Navigation (E-076)
     await expect(page.getByText('Bitte tragen Sie zumindest Ihren Namen und eine Telefonnummer ein.')).toBeVisible();
     await expect(page.getByText('WhatsApp geöffnet')).toHaveCount(0);
     const geoeffnet = await page.evaluate(() => window.__relaunchOpened);
@@ -152,7 +152,7 @@ test.describe('TezgelAnfrageFunnel (F-03, /kontakt)', () => {
     await zuSchritt3(page);
     await kontaktEintragen(page);
     const waAnfrage = page.waitForRequest((r) => r.url().startsWith('https://api.whatsapp.com/send'), { timeout: 10_000 });
-    await whatsappDirekt(page).click();
+    await whatsappDirekt(page).click({ noWaitAfter: true }); // externe Navigation (E-076)
     const text = new URL((await waAnfrage).url()).searchParams.get('text') ?? '';
     expect(text).toContain('Projekt: keine Angabe');
     expect(text).toContain('Fläche: keine Angabe');
@@ -197,7 +197,7 @@ test.describe('TezgelAnfrageFunnel (F-03, /kontakt)', () => {
     await weiterZu(page, 3).click();
     await kontaktEintragen(page);
     const waAnfrage = page.waitForRequest((r) => r.url().startsWith('https://api.whatsapp.com/send'), { timeout: 10_000 });
-    await whatsappDirekt(page).click();
+    await whatsappDirekt(page).click({ noWaitAfter: true }); // externe Navigation (E-076)
     const ziel = new URL((await waAnfrage).url());
     expect(ziel.searchParams.get('phone')).toBe('491726728504');
     const text = ziel.searchParams.get('text') ?? '';

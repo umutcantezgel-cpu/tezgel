@@ -207,7 +207,7 @@ test.describe('FliesenKonfigurator (/fliesen/konfigurator)', () => {
     await bisSchritt4Gutfall(page);
     await kontaktAusfuellen(page);
     const whatsappAnfrage = page.waitForRequest((r) => r.url().startsWith('https://api.whatsapp.com/send'));
-    await page.getByRole('button', { name: /Per WhatsApp senden/ }).click();
+    await page.getByRole('button', { name: /Per WhatsApp senden/ }).click({ noWaitAfter: true }); // externe Navigation (E-076)
     const url = new URL((await whatsappAnfrage).url());
     expect(url.searchParams.get('phone')).toBe('491726728504');
     const text = url.searchParams.get('text') ?? '';
