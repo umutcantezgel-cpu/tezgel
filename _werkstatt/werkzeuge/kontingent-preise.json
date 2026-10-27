@@ -1,0 +1,8 @@
+{
+  "_einheit": "US-Dollar je Million Token (Listenpreis)",
+  "_quelle": "Orchestrator-Vorgabe, nachgeschlagen; Felder: input, output, cache_write_5m, cache_write_1h, cache_read",
+  "claude-opus-5-5": { "input": 4, "output": 20, "cache_write_5m": 5, "cache_write_1h": 8, "cache_read": 0.2 },
+  "claude-sonnet-5-5": { "input": 2, "output": 10, "cache_write_5m": 2.5, "cache_write_1h": 4, "cache_read": 0.2 },
+  "claude-haiku-5-5": { "input": 0.1, "output": 0.5, "cache_write_5m": 0.125, "cache_write_1h": 0.2, "cache_read": 0.01 },
+  "claude-fable-5-1": { "input": 10, "output": 50, "cache_write_5m": 12.5, "cache_write_1h": 20, "cache_read": 0.25 }
+}
