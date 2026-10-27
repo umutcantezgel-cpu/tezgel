@@ -14,6 +14,8 @@ export default {
           removeUnknownsAndDefaults: false,
           collapseGroups: false,
           convertShapeToPath: false,
+          // <symbol> im Sprite gilt svgo als verborgen; ohne diesen Override leert die Konfiguration das Sprite (UM-E2-SVGO, E-069).
+          removeHiddenElems: false,
         },
       },
     },

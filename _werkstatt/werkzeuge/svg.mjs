@@ -5,7 +5,8 @@
 //   Konfiguration: statisch = svgo-statisch.config.mjs; mit --animiert = svgo-animiert.config.mjs (gilt für den ganzen Lauf,
 //   es gibt keine Erkennung je Datei; statische und animierte Dateien deshalb getrennt prüfen).
 //   Seitenmodus: Playwright mit Anfragesperre aus lib.mjs; Standard-Basis ist BASE aus lib.mjs. Startet keine Server.
-// Budgets (dezimal, strenger Lesart): viewBox 24×24 → roh ≤ 1,5 KB (1500 Byte); sonst gzip ≤ 40 KB (40000 Byte).
+// Budgets (dezimal, strenger Lesart): viewBox 24×24 → roh ≤ 1,5 KB (1500 Byte); sonst gzip ≤ 40 KB (40000 Byte);
+//   Sprite (Datei mit <symbol>): je Symbol roh ≤ 1,5 KB.
 // Ergebnis: _werkstatt/cache/svg/<zeitstempel>.json bzw. --ziel. Exit: 0 ohne Befund, 1 mit Befund, 2 Laufzeitfehler.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -14,12 +15,12 @@ import { pathToFileURL } from 'node:url';
 import { optimize } from 'svgo';
 import { chromium } from '@playwright/test';
 import { BASE, REPO, RELAUNCH, ANSICHTEN, assertLocal, installSperre, setzeEinwilligung, bereit, durchscrollen, ensureDir } from './lib.mjs';
+import STATISCH from './svgo-statisch.config.mjs';
+import ANIMIERT from './svgo-animiert.config.mjs';
 
 const KB = 1000;
 const ICON_MAX_ROH = 1.5 * KB;
 const ILLU_MAX_GZIP = 40 * KB;
-import STATISCH from './svgo-statisch.config.mjs';
-import ANIMIERT from './svgo-animiert.config.mjs';
 const ANSICHTEN_SEITE = ['m390', 'd1440'];
 
 const relPfad = (f) => path.relative(REPO, f).split(path.sep).join('/');
@@ -56,18 +57,27 @@ export function pruefeSvgText(text, { animiert = false } = {}) {
   if (!fixpunkt) befunde.push({ art: 'kein_fixpunkt', hinweis: 'zweite SVGO-Runde ändert die Datei weiter' });
   if (!entspricht) befunde.push({ art: 'nicht_optimiert', hinweis: 'Datei weicht von der SVGO-Fassung ab (ohne Leerraum, Attributreihenfolge und Standardwerte)' });
   if (pixel) befunde.push({ art: 'pixelbild', hinweis: `${pixel} eingebettete(s) Pixelbild(er): <image> bzw. data:image` });
-  if (icon24 && bytes > ICON_MAX_ROH) befunde.push({ art: 'budget_icon', hinweis: `${bytes} Byte roh, Grenze ${ICON_MAX_ROH} Byte` });
+  // Sprite: das Icon-Budget gilt je <symbol>, nicht für die Sammeldatei (E-069).
+  const symbole = text.match(/<symbol\b[\s\S]*?<\/symbol>/gi) || [];
+  if (symbole.length) {
+    for (const s of symbole) {
+      const n = Buffer.byteLength(s, 'utf8');
+      const id = (/\sid\s*=\s*["']([^"']*)["']/.exec(s) || [])[1] || '?';
+      if (n > ICON_MAX_ROH) befunde.push({ art: 'budget_icon', hinweis: `Symbol ${id}: ${n} Byte roh, Grenze ${ICON_MAX_ROH} Byte` });
+    }
+  } else if (icon24 && bytes > ICON_MAX_ROH) befunde.push({ art: 'budget_icon', hinweis: `${bytes} Byte roh, Grenze ${ICON_MAX_ROH} Byte` });
   if (!icon24 && gzip > ILLU_MAX_GZIP) befunde.push({ art: 'budget_illustration', hinweis: `${gzip} Byte gzip, Grenze ${ILLU_MAX_GZIP} Byte` });
   return {
     bytes,
     gzip,
-    optimiert_bytes: opt1.length,
+    optimiert_bytes: Buffer.byteLength(opt1, 'utf8'),
     optimiert_gzip: zlib.gzipSync(Buffer.from(opt1, 'utf8')).length,
     viewbox: vb ? vb[1] : null,
     icon24,
     fixpunkt,
     entspricht,
     pixelbilder: pixel,
+    symbole: symbole.length,
     befunde,
   };
 }
