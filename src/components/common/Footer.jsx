@@ -12,6 +12,7 @@ import { footerGruppen, footerLegalLinks } from '@/config/navigation';
 import { oeffnungszeilen } from '@/lib/oeffnungszeiten';
 import Rufnummer from '@/components/kern/Rufnummer';
 import Karussell from '@/components/kern/Karussell';
+import BewegungsSchalter from '@/components/kern/BewegungsSchalter';
 import { zusammen } from '@/components/kern/zusammen';
 
 const LINK_COLUMNS = footerGruppen;
@@ -214,6 +215,7 @@ export default function Footer() {
                             <li id="fuss-schild" />
                         </ul>
                     </nav>
+                    <BewegungsSchalter dunkel />
                     <p>
                         Webdesign und SEO:{' '}
                         <a

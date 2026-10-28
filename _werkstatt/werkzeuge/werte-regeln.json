@@ -203,7 +203,8 @@
     "muster": "const DAUER = 4000",
     "grund": "Haltefenster nach Ankersprung, JS-Zeitgeber, keine Bewegungsdauer"
    },
-   { "datei": "src/lib/ladeschwelle.ts", "muster": "LADE_MINDESTDAUER_MS = 500", "grund": "Ladeschwelle K-010 (300 ms Verzögerung, 500 ms Mindestdauer), JS-Zeitgeber, keine Bewegungsdauer (UM-E3-ZUST-M)" }
+   { "datei": "src/lib/ladeschwelle.ts", "muster": "LADE_MINDESTDAUER_MS = 500", "grund": "Ladeschwelle K-010 (300 ms Verzögerung, 500 ms Mindestdauer), JS-Zeitgeber, keine Bewegungsdauer (UM-E3-ZUST-M)" },
+   { "datei": "src/app/bewegung.css", "muster": "0.01ms !important", "grund": "Spiegel der Übergangsregel aus globals.css für den Bewegungsschalter „ruhig“: gleiche Dauer wie bei reduzierter Bewegung, damit Ende-Ereignisse wie dort feuern (UM-E3-MOD, E-080)" }
   ]
  }
 }

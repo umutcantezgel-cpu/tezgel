@@ -8,11 +8,13 @@
 //   bildrate      präsentierte und verworfene Bilder sowie Long Animation Frames bei 4× CPU-Drosselung,
 //                 Scroll-Geste oben→unten→oben, Kennzahlen je Wiederholung, Median der Anteile je Lauf als Kopfwert
 //   register      data-motion im DOM gegen _werkstatt/register.json, Animationen ohne data-motion
-//   reduziert     Animationen bei prefers-reduced-motion: reduce und Sichtbarkeit der data-motion-Elemente
+//   reduziert     Animationen bei prefers-reduced-motion: reduce und Sichtbarkeit der data-motion-Elemente;
+//                 mit --schalter ruhig stattdessen ohne Systemwunsch, aber mit Bewegungsschalter „ruhig“ (UM-E3-MOD, E-080)
 // Nutzung:
 //   node bewegung.mjs --modus einzelbilder|bildrate|register|reduziert --seite /pfad [--base URL]
 //     [--ansicht m390] [--kennung NAME] [--ziel DIR] [--wiederholungen 3] [--ausschnitt ansicht]
 //     [--anker animation|dom] [--cpu 1] [--zeitlupe 0.1]   (Lade-Momente: Anker, CPU-Drosselung, Wiedergabegeschwindigkeit)
+//     [--schalter ruhig]                                    (nur reduziert: Bewegungsschalter statt Systemeinstellung)
 // Standardziel: _werkstatt/cache/bewegung/<modus>/<slug>/ (liegt außerhalb des Repos).
 // Jeder Browserlauf: assertLocal(base), installSperre (Anfragesperre aus lib.mjs), Einwilligung „abgelehnt“.
 import { chromium } from '@playwright/test';
@@ -1009,13 +1011,20 @@ function pruefeSichtbarkeit() {
     geprueft: els.length,
     unsichtbar,
     verdeckt_durch_zustand: verdeckt,
-    klassen: { k_bewegung: dok.classList.contains('k-bewegung'), k_bereit: dok.classList.contains('k-bereit') },
+    klassen: { k_bewegung: dok.classList.contains('k-bewegung'), k_bereit: dok.classList.contains('k-bereit'), ruhig: dok.getAttribute('data-bewegung') === 'ruhig' },
   };
 }
 
-async function reduziert({ browser, base, seite, ansicht, vorbereitung, zeitpunkt }) {
+// Bewegungsschalter „ruhig“ vor dem Kopfskript in den Speicher legen (Name wie src/lib/motion/schalter.ts)
+function schalterRuhigInit() {
+  try { window.localStorage.setItem('tezgel-bewegung', 'ruhig'); } catch {}
+}
+
+async function reduziert({ browser, base, seite, ansicht, vorbereitung, zeitpunkt, schalter = null }) {
   const protokoll = [];
-  const context = await kontext(browser, { base, ansicht, reducedMotion: 'reduce', protokoll, init: [sammlerInit], vorbereitung });
+  const reducedMotion = schalter === 'ruhig' ? 'no-preference' : 'reduce';
+  const init = schalter === 'ruhig' ? [schalterRuhigInit, sammlerInit] : [sammlerInit];
+  const context = await kontext(browser, { base, ansicht, reducedMotion, protokoll, init, vorbereitung });
   try {
     const page = await context.newPage();
     await page.goto(base + seite, { waitUntil: 'domcontentloaded', timeout: 45000 });
@@ -1033,7 +1042,7 @@ async function reduziert({ browser, base, seite, ansicht, vorbereitung, zeitpunk
       .sort((a, b) => b.anzahl - a.anzahl);
     const pruef = await page.evaluate(pruefeSichtbarkeit);
     return {
-      modus: 'reduziert', seite, base, ansicht, zeitpunkt, reducedMotion: 'reduce', schritte,
+      modus: 'reduziert', seite, base, ansicht, zeitpunkt, reducedMotion, schalter, schritte,
       bewegungsbefunde,
       unsichtbar: pruef.unsichtbar,
       geprueft: pruef.geprueft,
@@ -1048,7 +1057,7 @@ async function reduziert({ browser, base, seite, ansicht, vorbereitung, zeitpunk
 }
 
 /** Öffentliche Schnittstelle: führt einen Lauf aus und schreibt ergebnis.json. */
-export async function laufe({ modus, seite = '/', base = BASE, ansicht = 'm390', kennung = null, ziel = null, wiederholungen = 3, vorbereitung = null, ausschnitt = null, anker = 'animation', cpu = LADE_CPU_RATE, zeitlupe = LADE_ZEITLUPE }) {
+export async function laufe({ modus, seite = '/', base = BASE, ansicht = 'm390', kennung = null, ziel = null, wiederholungen = 3, vorbereitung = null, ausschnitt = null, anker = 'animation', cpu = LADE_CPU_RATE, zeitlupe = LADE_ZEITLUPE, schalter = null }) {
   if (!MODI.includes(modus)) throw new Error(`--modus fehlt oder ist unbekannt (${MODI.join('|')})`);
   assertLocal(base);
   if (!seite.startsWith('/')) throw new Error('--seite beginnt mit /');
@@ -1059,6 +1068,7 @@ export async function laufe({ modus, seite = '/', base = BASE, ansicht = 'm390',
   if (!['animation', 'dom'].includes(anker)) throw new Error('--anker nur animation|dom');
   if (!(Number.isFinite(cpu) && cpu >= 1 && cpu <= 6)) throw new Error('--cpu zwischen 1 und 6');
   if (!(Number.isFinite(zeitlupe) && zeitlupe > 0 && zeitlupe <= 1)) throw new Error('--zeitlupe zwischen 0 und 1');
+  if (schalter !== null && (schalter !== 'ruhig' || modus !== 'reduziert')) throw new Error('--schalter nur ruhig und nur im Modus reduziert');
   const verzeichnis = ensureDir(ziel ? path.resolve(ziel) : path.join(RELAUNCH, 'cache', 'bewegung', modus, slug(seite)));
   const basis = { seite, base, ansicht, zeitpunkt: new Date().toISOString(), vorbereitung };
   const browser = await chromium.launch({ executablePath: process.env.CHROME_PATH || undefined });
@@ -1067,7 +1077,7 @@ export async function laufe({ modus, seite = '/', base = BASE, ansicht = 'm390',
     if (modus === 'einzelbilder') ergebnis = await einzelbilder({ browser, ...basis, kennung, verzeichnis, ganzeAnsicht: ausschnitt === 'ansicht', anker, cpu, zeitlupe });
     else if (modus === 'bildrate') ergebnis = await bildrate({ browser, ...basis, wiederholungen: Math.max(1, wiederholungen) });
     else if (modus === 'register') ergebnis = await register({ browser, ...basis });
-    else ergebnis = await reduziert({ browser, ...basis });
+    else ergebnis = await reduziert({ browser, ...basis, schalter });
   } finally {
     await browser.close();
   }
@@ -1113,6 +1123,7 @@ if (istAufruf) {
       anker: arg(argv, 'anker', 'animation'),
       cpu: Number(arg(argv, 'cpu', String(LADE_CPU_RATE))),
       zeitlupe: Number(arg(argv, 'zeitlupe', String(LADE_ZEITLUPE))),
+      schalter: arg(argv, 'schalter', null),
     });
     console.log(JSON.stringify(kurzfassung(ergebnis, datei), null, 1));
   } catch (e) {

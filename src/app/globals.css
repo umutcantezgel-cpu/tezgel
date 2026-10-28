@@ -5,6 +5,9 @@
 
 /* flaches Querformat (Handy quer, q844): dieselbe Grenze wie Kopf und untere Leiste unten (Sichtabnahme E2, Befund 11) */
 @custom-variant flach (@media (orientation: landscape) and (height <= 32rem));
+/* Bewegungsschalter „ruhig“ (UM-E3-MOD, E-080): Gegenstück zu motion-reduce/motion-safe für Utilities, die mehr als einen
+   Übergang steuern (bewegung.css spiegelt die übrigen Regeln; test/bewegungsschalter.test.mjs prüft beide). */
+@custom-variant ruhig (&:where([data-bewegung="ruhig"] *));
 /* Arbeitsbereiche sind Dokumentation – nicht in die Klassenerkennung aufnehmen. */
 @source not "../../_relaunch";
 @source not "../../_werkstatt";

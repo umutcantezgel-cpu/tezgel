@@ -9,6 +9,7 @@
 // beim Browser: Wächst die Seite, richtet er es wieder aus. Jede Eingabe (Rad, Berührung, Taste, Zeiger) beendet das
 // sofort. Rendert nichts; ohne JavaScript bleibt es beim Sprung des Browsers.
 import { useEffect } from 'react';
+import { naechstesBild } from '@/lib/motion/takt';
 
 const DAUER = 4000;
 const SUCHE = 1500;
@@ -107,9 +108,9 @@ export default function SprungHalter() {
           const z = zielAus(url.hash);
           if (z) return halten(z, true);
         }
-        if (performance.now() - t0 < SUCHE) requestAnimationFrame(warten);
+        if (performance.now() - t0 < SUCHE) naechstesBild(warten);
       };
-      requestAnimationFrame(warten);
+      naechstesBild(warten);
     };
     document.addEventListener('click', beiKlick);
 

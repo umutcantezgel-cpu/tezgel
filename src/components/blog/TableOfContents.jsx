@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState, useMemo } from 'react';
 import { etikettKlassen } from '@/components/kern/stile';
+import { naechstesBild } from '@/lib/motion/takt';
 
 const TableOfContents = ({ content }) => {
     const [activeId, setActiveId] = useState('');
@@ -20,12 +21,12 @@ const TableOfContents = ({ content }) => {
     }, [content]);
 
     useEffect(() => {
-        let frame = 0;
+        let abmelden = null;
 
         // Aktiv ist der Abschnitt, dessen Überschrift zuletzt die Kopfunterkante passiert hat. Die Kante liegt bei
         // scroll-padding-top (globals.css); dorthin springt auch der Klick aus dem Verzeichnis.
         const aktualisieren = () => {
-            frame = 0;
+            abmelden = null;
             const kante = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
             let aktiv = '';
             headings.forEach(({ id }) => {
@@ -36,7 +37,7 @@ const TableOfContents = ({ content }) => {
         };
 
         const planen = () => {
-            if (!frame) frame = window.requestAnimationFrame(aktualisieren);
+            if (!abmelden) abmelden = naechstesBild(aktualisieren);
         };
 
         planen();
@@ -46,7 +47,7 @@ const TableOfContents = ({ content }) => {
         return () => {
             window.removeEventListener('scroll', planen);
             window.removeEventListener('resize', planen);
-            window.cancelAnimationFrame(frame);
+            abmelden?.();
         };
     }, [headings]);
 

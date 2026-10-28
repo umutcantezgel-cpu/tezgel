@@ -7,7 +7,7 @@ export type KnopfVariante = 'haupt' | 'neben' | 'text' | 'hell';
 // Schmal (große Systemschrift, Container unter 16rem) weniger Innenabstand und Trennung langer Wörter mit Strich: sonst stand
 // „Weiter zu Schritt 2“ Wort für Wort untereinander (Browserprüfung E4-W0, E-065)
 const KNOPF_BASIS =
-  'inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 font-text text-fs-2 font-semibold no-underline hyphens-auto @max-3xs:px-3 transition-colors dauer-1 ease-setzen motion-safe:active:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50';
+  'inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 font-text text-fs-2 font-semibold no-underline hyphens-auto @max-3xs:px-3 transition-colors dauer-1 ease-setzen motion-safe:active:translate-y-px ruhig:active:translate-y-0! disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50';
 
 const KNOPF: Record<KnopfVariante, string> = {
   haupt: 'border border-tinte bg-tinte text-kalk hover:border-tinte-2 hover:bg-tinte-2',

@@ -12,6 +12,7 @@ import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
 import { knopfKlassen } from '@/components/kern/stile';
 import { zusammen } from '@/components/kern/zusammen';
 import { BrandMark } from '@/components/common/Header';
+import BewegungsSchalter from '@/components/kern/BewegungsSchalter';
 
 const istOffen = (el) => {
     try {
@@ -237,6 +238,7 @@ export default function MobileMenu({ isOpen, onToggle }) {
                             </a>
                         </div>
                     </div>
+                    <BewegungsSchalter className="mt-6" />
                     {/* Zeigt an, dass die Liste weitergeht, solange darunter noch etwas kommt (große Systemschrift auf
                         schmalen Telefonen: dort passen nicht alle Bereiche ins erste Bild; Runde 4). Sichtbar nur per
                         CSS-Abfrage scroll-state in globals.css; ohne Unterstützung bleibt sie verborgen. */}

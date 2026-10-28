@@ -38,7 +38,7 @@ const ReadingProgress = () => {
 
     return (
         <>
-            <div className="fixed inset-x-0 top-0 z-40 h-0 motion-reduce:hidden print:hidden">
+            <div className="fixed inset-x-0 top-0 z-40 h-0 motion-reduce:hidden ruhig:hidden print:hidden">
                 <div
                     aria-hidden="true"
                     data-motion="leitachse"

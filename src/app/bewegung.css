@@ -1491,3 +1491,41 @@ html.k-bewegung [data-motion="sig-flucht"] > :nth-child(4) {
     animation: none !important;
   }
 }
+
+/* ==========================================================================
+   Bewegungsschalter „ruhig“ (KERN v4, UM-E3-MOD, E-080): html[data-bewegung="ruhig"] aus dem Kopfskript gilt wie
+   prefers-reduced-motion: reduce. Alles, was an html.k-bewegung hängt (Startzustände, Karussell, große Momente, der ruhige
+   Weg von B-01), ist schon ruhig, weil das Kopfskript die Klasse dann nicht setzt. Hier stehen die Spiegel der Regeln, die
+   nur an der Medienabfrage hängen: Übergangsregel aus globals.css, Leitachse, Fugenband, Druck, View Transitions und
+   Intro B-02. Neue Regeln unter (prefers-reduced-motion: no-preference) ohne html.k-bewegung brauchen hier einen Spiegel
+   (test/bewegungsschalter.test.mjs prüft das).
+   ========================================================================== */
+html[data-bewegung="ruhig"] {
+  scroll-behavior: auto;
+}
+html[data-bewegung="ruhig"] *,
+html[data-bewegung="ruhig"] *::before,
+html[data-bewegung="ruhig"] *::after {
+  transition-duration: 0.01ms !important;
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+}
+html[data-bewegung="ruhig"] .leitachse-rot,
+html[data-bewegung="ruhig"] .fugenband-rot {
+  animation: none !important;
+}
+html[data-bewegung="ruhig"] [data-motion="druck"]:active {
+  translate: none;
+}
+html[data-bewegung="ruhig"]::view-transition-group(*),
+html[data-bewegung="ruhig"]::view-transition-old(*),
+html[data-bewegung="ruhig"]::view-transition-new(*) {
+  animation: none !important;
+}
+/* Intro wie bei reduzierter Bewegung: keine Schicht, das Kopf-Logo blendet ein */
+html[data-bewegung="ruhig"].k-intro .intro {
+  display: none !important;
+}
+html[data-bewegung="ruhig"].k-intro header [data-erstes-bild="logo"] {
+  animation: intro-einblenden var(--dauer-2) var(--ease-setzen) both;
+}

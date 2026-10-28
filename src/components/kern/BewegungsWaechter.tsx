@@ -4,12 +4,10 @@
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { beobachte } from '@/lib/motion/bewegung';
+import { naechstesBild } from '@/lib/motion/takt';
 
 export default function BewegungsWaechter() {
   const pfad = usePathname();
-  useEffect(() => {
-    const id = requestAnimationFrame(() => beobachte());
-    return () => cancelAnimationFrame(id);
-  }, [pfad]);
+  useEffect(() => naechstesBild(() => beobachte()), [pfad]);
   return null;
 }

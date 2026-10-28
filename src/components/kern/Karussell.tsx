@@ -11,20 +11,27 @@
 import { Children, useEffect, useRef, useState, useSyncExternalStore, type FocusEvent, type PointerEvent, type ReactNode } from 'react';
 import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
+import { BEWEGUNG_WECHSEL } from '@/lib/motion/schalter';
+import { wiederhole } from '@/lib/motion/takt';
 
 const ohneAbo = () => () => {};
 function useImBrowser() {
   return useSyncExternalStore(ohneAbo, () => true, () => false);
 }
 
-// Ruhe gewünscht: reduzierte Bewegung, erzwungene Farben (dort steht das Band, bewegung.css), ohne Startklasse oder im Notaus
+// Ruhe gewünscht: reduzierte Bewegung, erzwungene Farben (dort steht das Band, bewegung.css), ohne Startklasse (auch
+// Bewegungsschalter „ruhig“, E-080) oder im Notaus
 const RUHIG_MEDIEN = ['(prefers-reduced-motion: reduce)', '(forced-colors: active)'];
 function useRuhigGewuenscht() {
   return useSyncExternalStore(
     (melden) => {
       const medien = RUHIG_MEDIEN.map((q) => window.matchMedia(q));
       medien.forEach((m) => m.addEventListener('change', melden));
-      return () => medien.forEach((m) => m.removeEventListener('change', melden));
+      window.addEventListener(BEWEGUNG_WECHSEL, melden);
+      return () => {
+        medien.forEach((m) => m.removeEventListener('change', melden));
+        window.removeEventListener(BEWEGUNG_WECHSEL, melden);
+      };
     },
     () => RUHIG_MEDIEN.some((q) => window.matchMedia(q).matches) || !document.documentElement.classList.contains('k-bewegung') || document.documentElement.classList.contains('k-notaus'),
     () => true,
@@ -130,17 +137,16 @@ export default function Karussell({ art, name, children, karte = 'w-full md:w-1/
   // (große Schrift), liest man gerade Zeile für Zeile, und der Knopf zum Anhalten stünde außer Sicht.
   useEffect(() => {
     if (art !== 'reihe' || !selbstlauf || ruhig || angehalten || darueber || !ueberlauf) return;
-    const id = window.setInterval(() => {
+    return wiederhole(takt, () => {
       const el = spur.current;
-      if (!el || document.visibilityState !== 'visible') return;
+      if (!el) return;
       const lage = el.getBoundingClientRect();
       const sichtbar = Math.min(lage.bottom, window.innerHeight) - Math.max(lage.top, 0);
       if (lage.height > window.innerHeight || sichtbar < lage.height / 2) return;
       const schritt = (el.firstElementChild as HTMLElement | null)?.getBoundingClientRect().width ?? el.clientWidth;
       const amEnde = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
       el.scrollTo({ left: amEnde ? 0 : el.scrollLeft + schritt, behavior: 'smooth' });
-    }, takt);
-    return () => window.clearInterval(id);
+    });
   }, [art, selbstlauf, ruhig, angehalten, darueber, ueberlauf, takt]);
 
   const rucken = (richtung: 1 | -1) => {

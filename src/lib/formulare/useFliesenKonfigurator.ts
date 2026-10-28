@@ -6,6 +6,7 @@
 import React, { useRef, useState } from 'react';
 import { COMPANY_DATA } from '@/config/company';
 import { openWhatsApp } from '@/lib/whatsapp';
+import { naechstesBild } from '@/lib/motion/takt';
 
 // ---------------------------------------------------------------------------
 // Options
@@ -450,7 +451,7 @@ export function useFliesenKonfigurator({ area, substrate, format, material, floo
 
     const goToStep = (next: number) => {
         setStep(next);
-        requestAnimationFrame(() => headingRef.current?.focus());
+        naechstesBild(() => headingRef.current?.focus());
     };
 
     const buildMessage = () => {

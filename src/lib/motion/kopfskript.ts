@@ -1,5 +1,6 @@
 import { CONSENT_COOKIE_NAME, CONSENT_VERSION } from '@/lib/cookie-inventory';
 import { INTRO_GRENZE, INTRO_LOGO, SPEICHER_INTRO } from '@/lib/intro/ablauf';
+import { BEWEGUNG_ATTRIBUT, BEWEGUNG_SPEICHER } from './schalter';
 
 // Zwei Kopfskripte für zwei Dokumente. Beide setzen html.k-bewegung vor dem ersten Rendern, aber nur ohne Wunsch nach
 // reduzierter Bewegung; sie unterscheiden sich im Notaus, weil die beiden Bewegungsmodule sich verschieden melden.
@@ -19,9 +20,11 @@ import { INTRO_GRENZE, INTRO_LOGO, SPEICHER_INTRO } from '@/lib/intro/ablauf';
 // der H1 (Sichtabnahme E2, Befund 6), vor dem ersten Bild und ohne Messung (ein späteres Umrechnen ließ die Fläche springen).
 // Ohne Intro und mit erlaubter Bewegung setzt der zweite Teil html.k-startbild (großer Moment `startbild` auf `/`);
 // B-01 nimmt die Klasse beim ersten Seitenwechsel weg, damit das Startbild nur beim Laden freigelegt wird.
+// Bewegungsschalter (UM-E3-MOD, E-080): Ist „ruhig“ gewählt (localStorage), setzt es html[data-bewegung="ruhig"] und keine
+// Startklasse – wie bei reduzierter Bewegung; das Intro läuft dann wie dort (bewegung.css, Block „Bewegungsschalter“).
 const INTRO = `var mitIntro=0;try{var l=window.localStorage;if(!l.getItem(${JSON.stringify(SPEICHER_INTRO)})){l.setItem(${JSON.stringify(SPEICHER_INTRO)},'1');d.classList.add('k-intro');d.classList.add('k-intro-sig');if(location.pathname==='/')d.classList.add('k-intro-start');mitIntro=1;new Image().src=${JSON.stringify(INTRO_LOGO)};var aus=0,ende=function(){if(aus)return;aus=1;d.classList.remove('k-intro')};['pointerdown','keydown','wheel','touchstart','scroll'].forEach(function(n){window.addEventListener(n,ende,{passive:true,once:true,capture:true})});window.addEventListener('animationend',function(e){if(e.animationName==='intro-ende'||e.animationName==='intro-einblenden')ende()});setTimeout(ende,${INTRO_GRENZE})}}catch(e){}`;
 
-const BEWEGUNG_BESTAND = `try{if(!window.matchMedia||!window.matchMedia('(prefers-reduced-motion: no-preference)').matches)return;d.classList.add('k-bewegung');if(!mitIntro)d.classList.add('k-startbild');setTimeout(function(){if(!d.classList.contains('k-modul'))d.classList.add('k-notaus');},2000);}catch(e){d.classList.add('k-notaus');}`;
+const BEWEGUNG_BESTAND = `var ruhig=0;try{ruhig=window.localStorage.getItem(${JSON.stringify(BEWEGUNG_SPEICHER)})==='ruhig'}catch(e){}if(ruhig)d.setAttribute(${JSON.stringify(BEWEGUNG_ATTRIBUT)},'ruhig');try{if(ruhig||!window.matchMedia||!window.matchMedia('(prefers-reduced-motion: no-preference)').matches)return;d.classList.add('k-bewegung');if(!mitIntro)d.classList.add('k-startbild');setTimeout(function(){if(!d.classList.contains('k-modul'))d.classList.add('k-notaus');},2000);}catch(e){d.classList.add('k-notaus');}`;
 
 export const KOPFSKRIPT = `(function(){var d=document.documentElement;${INTRO}${BEWEGUNG_BESTAND}})();`;
 
