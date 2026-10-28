@@ -1,0 +1,32 @@
+=== REINRAUM 15:07:28
+exit 0
+lint 0 (22s)
+test 0 (3s)
+qa-graph 0 (0s)
+läuft: 1620c0f5 auf 4323
+4321 200
+4323 200
+=== VERLEGEN 3x 15:08:49
+
+  3 skipped
+  201 passed (13.7m)
+=== SUITE reduziert 15:22:30
+  ✓  422 [desktop] › tests/verlegen.spec.mjs:786:3 › Bewegung an (Wechsel mit Fliesen) › (20) Zurück im Browser, während die Fliesen abgenommen werden: Adresse, Inhalt, Scroll und Fokus (Prüfung E-043) (10.6s)
+
+  26 skipped
+  398 passed (10.2m)
+=== SUITE Bewegung an 15:32:45
+  ✓  424 [desktop] › tests/verlegen.spec.mjs:1266:3 › Reduzierte Bewegung › (12) reduzierte Bewegung: Wechsel vollständig, Überblendung über .verlegen-blende, keine Fliesen-Animation (2.0s)
+
+  26 skipped
+  398 passed (11.4m)
+=== PIXEL 15:44:11
+Paare: 48 · mit Abweichung: 1 · Fehler: 0 · Pixel gesamt: 0 · Laufzeit: 4.02 min
+  1. / · m390 · 0 Pixel · Anteil 0.000e+0
+  2. / · t768 · 0 Pixel · Anteil 0.000e+0
+  3. / · d1440 · 0 Pixel · Anteil 0.000e+0
+  4. / · d1920 · 0 Pixel · Anteil 0.000e+0
+  5. /bad · m390 · 0 Pixel · Anteil 0.000e+0
+=== CURSOR 15:48:13
+{"desktop_glasbild":{"stand":"an","zustand":"ansehen","text":"Ansehen"},"desktop_nach_tab":{"stand":"aus","zustand":"ansehen","text":"Ansehen"},"desktop_ausserhalb":{"stand":"aus","zustand":"ansehen","text":"Ansehen"},"desktop_fehler":[],"touch":null,"ruhig":{"stand":"an","zustand":"ansehen","text":"Ansehen"},"ruhig_transition":"1e-05s / none"}
+=== ENDE 15:48:23

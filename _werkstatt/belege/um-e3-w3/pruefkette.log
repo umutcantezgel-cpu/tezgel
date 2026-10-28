@@ -1,0 +1,57 @@
+=== REINRAUM 14:12:43
+exit 0
+lint 0 (23s)
+test 0 (3s)
+qa-graph 0 (1s)
+läuft: 5c2481e0 auf 4321
+läuft: 702dc965 auf 4322
+4321 200
+4322 200
+=== CURSOR 14:14:08
+{"desktop_glasbild":{"stand":"an","zustand":"ansehen","text":"Ansehen"},"desktop_nach_tab":{"stand":"aus","zustand":"ansehen","text":"Ansehen"},"desktop_ausserhalb":{"stand":"aus","zustand":"ansehen","text":"Ansehen"},"desktop_fehler":[],"touch":null,"ruhig":{"stand":"an","zustand":"ansehen","text":"Ansehen"},"ruhig_transition":"1e-05s / none"}
+=== SUITE reduziert 14:14:19
+    [desktop] › tests/verlegen.spec.mjs:889:3 › Bewegung an (Wechsel mit Fliesen) › (26) Drehen während des Legens: der Boden deckt danach die ganze neue Ansicht, das Logo steht in ihrer Mitte (Gegenprüfung E3-B01, Befund 5) 
+    [desktop] › tests/verlegen.spec.mjs:1098:3 › Bewegung an (Wechsel mit Fliesen) › (28) Höhe wächst beim Legen wenig (Adressleiste fährt ein): die Fliesen legen weiter statt in einem Bild zu liegen, danach deckt der Boden ganz (Gegenprüfung E3-B01-FIX) 
+    [desktop] › tests/verlegen.spec.mjs:1211:3 › Bewegung an (Wechsel mit Fliesen) › (31) Breite wächst beim Legen um 60 px: im ersten Bild nach dem Legen deckt der Boden die ganze neue Ansicht, auch in den kürzeren Reihen des Drittelverbands (Befund E3-B01-FIX-2, F1) 
+  26 skipped
+  395 passed (10.1m)
+=== SUITE Bewegung an 14:24:26
+    [desktop] › tests/verlegen.spec.mjs:889:3 › Bewegung an (Wechsel mit Fliesen) › (26) Drehen während des Legens: der Boden deckt danach die ganze neue Ansicht, das Logo steht in ihrer Mitte (Gegenprüfung E3-B01, Befund 5) 
+    [desktop] › tests/verlegen.spec.mjs:1098:3 › Bewegung an (Wechsel mit Fliesen) › (28) Höhe wächst beim Legen wenig (Adressleiste fährt ein): die Fliesen legen weiter statt in einem Bild zu liegen, danach deckt der Boden ganz (Gegenprüfung E3-B01-FIX) 
+    [desktop] › tests/verlegen.spec.mjs:1211:3 › Bewegung an (Wechsel mit Fliesen) › (31) Breite wächst beim Legen um 60 px: im ersten Bild nach dem Legen deckt der Boden die ganze neue Ansicht, auch in den kürzeren Reihen des Drittelverbands (Befund E3-B01-FIX-2, F1) 
+  26 skipped
+  395 passed (11.5m)
+=== AXE 14:35:59
+.........................................................................................................................................................
+axe: 396 Läufe · ernst/kritisch (Knoten) 0
+
+=== RUHIG/REDUZIERT 14:48:37
+ruhig / befunde 0 unsichtbar 10
+reduziert / befunde 0 unsichtbar 12
+ruhig /referenzen befunde 0 unsichtbar 6
+reduziert /referenzen befunde 0 unsichtbar 8
+ruhig /blog/fliesen-reinigen-pflegen befunde 0 unsichtbar 5
+reduziert /blog/fliesen-reinigen-pflegen befunde 0 unsichtbar 7
+=== REGISTER 14:50:56
+/ {'gefundene_kennungen': 9, 'unbekannt': 0}
+/referenzen {'gefundene_kennungen': 11, 'unbekannt': 0}
+/leistungen {'gefundene_kennungen': 11, 'unbekannt': 0}
+=== BILDRATE 14:51:51
+{'anteil_verworfen_prozent': 1.88, 'loaf_anzahl': 0, 'loaf_summe_ms': 0}
+=== PIXEL 14:54:38
+Paare: 48 · mit Abweichung: 24 · Fehler: 0 · Pixel gesamt: 22130384 · Laufzeit: 4.75 min
+  1. /referenzen · d1440 · 1558374 Pixel · Anteil 7.515e-2
+  2. /balkon-terrasse · d1440 · 851210 Pixel · Anteil 5.971e-2
+  3. /leistungen · d1440 · 969182 Pixel · Anteil 5.753e-2
+  4. / · d1440 · 811250 Pixel · Anteil 5.691e-2
+  5. /bad/badsanierung · d1440 · 950466 Pixel · Anteil 5.641e-2
+=== LIGHTHOUSE 14:59:23 (allein, vorher, nachher, nachher, vorher)
+vor-a /   mobil: perf 93 [93–95] · LCP 2944 ms [2787–2946] · TBT 137 ms [89–163] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+nach-a /   mobil: perf 93 [93–93] · LCP 2938 ms [2915–3223] · TBT 144 ms [90–155] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block · Benchmark außerhalb des Bands
+nach-b /   mobil: perf 92 [90–93] · LCP 3226 ms [2937–3234] · TBT 139 ms [121–193] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+vor-b /   mobil: perf 94 [93–95] · LCP 2967 ms [2561–3012] · TBT 143 ms [110–154] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+vor-a /blog/fliesen-reinigen-pflegen   mobil: perf 92 [91–93] · LCP 3224 ms [3018–3241] · TBT 128 ms [128–137] · CLS 0 [0–0] · LCP-Element div.mx-auto > div.mt-8 > div.col-span-4 > p.mt-8
+nach-a /blog/fliesen-reinigen-pflegen   mobil: perf 92 [91–94] · LCP 3018 ms [2115–3459] · TBT 169 ms [92–249] · CLS 0 [0–0] · LCP-Element div.mx-auto > div.mt-8 > div.col-span-4 > p.mt-8
+nach-b /blog/fliesen-reinigen-pflegen   mobil: perf 91 [91–93] · LCP 3230 ms [3027–3312] · TBT 121 ms [118–157] · CLS 0 [0–0] · LCP-Element div.mx-auto > div.mt-8 > div.col-span-4 > p.mt-8
+vor-b /blog/fliesen-reinigen-pflegen   mobil: perf 92 [91–93] · LCP 3091 ms [3020–3240] · TBT 114 ms [108–183] · CLS 0 [0–0] · LCP-Element div.mx-auto > div.mt-8 > div.col-span-4 > p.mt-8
+=== ENDE 15:06:40

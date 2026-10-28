@@ -1077,3 +1077,46 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
 - **Probe nach dem Deploy:** 16 Adressen antworten mit 200: die Hauptansichten, Impressum, Datenschutz, Sitemap und robots. Schalter und Eingang stehen im HTML.
 - **Weiter gilt:** Push nur auf den Arbeitsbranch. `main` wird nur auf neue ausdrückliche Anweisung erneut bewegt (G3).
 
+## E-084 · Cursor, Scrollen, Leitfaden und Register v4 (UM-E3-CURSOR, -SCROLL, -LEIT, -REG) abgenommen (28.10.2026, 17:05 MEZ)
+- **Gebaut:** Workflow wf_e7c87e03-3cf.
+  - Ablauf: vier Pakete nacheinander in einer Arbeitskopie, je ein Opus-Baumeister, zwei Prüfer und eine Nacharbeit.
+  - Umfang: 16 Agenten, 4,24 Mio. Tokens. Die Nacharbeit hat 17 Befunde behoben, darunter einen hohen.
+  - Der Orchestrator hat die Diffs angewendet: f846301a, f087c4c8, 752814db, 702dc965. Dazu kommt die Korrektur 1620c0f5.
+  - Notizen und Prüfergebnisse liegen in `belege/um-e3-w3/`.
+- **CURSOR (Z-07):**
+  - Fugenkreuz-Schild neben dem Systemzeiger, der Systemzeiger bleibt; sechs Zustände: Handlung, Ansehen, Ziehen, Vergleichen, gesperrt, lädt.
+  - Nur bei feinem Zeiger, nachgeladen bei der ersten Mausbewegung; Touch und reine Tastatur laden kein Cursor-Skript.
+  - Folgt ohne Nachlauf über `takt.ts`. Ausgeblendet bei Tastatur, Fensterwechsel, Finger und Stift, in erzwungenen Farben und im Druck.
+  - „Lädt“ über `erzeugeLadeschwelle`.
+  - Tests `test/cursor.test.mjs`, 11 Stück.
+  - Behobener Prüferbefund: Ein `blur`-Lauscher in der Capture-Phase hatte das Schild bei jedem Fokuswechsel ausgeblendet.
+- **SCROLL (Z-07, Z-10):**
+  - `overscroll-behavior`, `svh`, `scroll-padding-bottom`, `content-visibility` und passive Lauscher.
+  - Lesefortschritt über `animation-timeline`, mit IntersectionObserver als Rückfall.
+  - Speculation Rules nur als **prefetch**, kein prerender, damit keine Skripte oder Statistik vorab laufen.
+- **LEIT (Z-05, Z-06):** Laserlinie als Leitfaden auf `/` mit Abschnittsmarke, scrollgebunden über CSS. Ruhig und reduziert steht der Endzustand.
+- **REG (Z-06):**
+  - Register v4 mit Zweck, Stufe, reduzierter Fassung und den Cursor-Zuständen (Kennung `cursor`).
+  - `fugenband` ist entschieden. Die Staffel von `karte` hat höchstens 8 Glieder.
+  - `register.json` und `register.ts` stimmen überein (Test).
+- **Befund in Stufe A, behoben (1620c0f5):** `scrollbar-gutter: stable` aus SCROLL hielt bei klassischen Bildlaufleisten den Leistenstreifen frei.
+  - Die feste Schicht von B-01 deckte die neue Ansicht deshalb 15 px zu schmal (verlegen.spec 26, 28, 31).
+  - Am Desktop verschob sich das ganze Bild, in 24 von 48 Pixelpaaren.
+  - Weil B-01 eingefroren ist (E-078), entfällt der Streifen; die Schicht bleibt, wie sie ist.
+- **Stufe A, Reinraum 1620c0f5** (Belege `belege/um-e3-w3/`):
+  - `npm test` 248/248; Typecheck, Lint und `werte.mjs` 0.
+  - Suite in beiden Zuständen 398/0/26. verlegen.spec dreimal 201/0.
+  - Pixel gegen 5c2481e0: 48 Paare, 0 Pixel.
+  - Cursor-Probe: Glasbild zeigt „Ansehen“; Tab und Verlassen blenden aus; Touch ohne Schild; ruhig ohne Übergang; 0 Skriptfehler.
+  - Am Reinraum 702dc965, unberührt von der Korrektur:
+    - axe `--zustaende`: 396 Läufe, 0 ernste Knoten.
+    - ruhig und reduziert auf `/`, `/referenzen` und einem Ratgeber: 0 Bewegungsbefunde.
+    - Register: 0 unbekannte Kennungen.
+    - Bildrate `/`: 1,88 % verworfen, 0 LoAF.
+    - Lighthouse mobil `/` und Ratgeber: alles in der Spanne von vorher.
+- **Offen für Stufe B und Sichtabnahme** (Fragen der Baumeister in den Notizen, Auswahl in MENSCHEN UM-9):
+  - Wirkt „Ansehen“ doppelt, wenn das Glasbild den Text schon zeigt?
+  - Soll das Schild an Plänen, die kein Link sind, erscheinen?
+  - Gesperrt und lädt als Rückmeldung auf Arbeitsansichten?
+  - Firefox und WebKit (UM-4).
+

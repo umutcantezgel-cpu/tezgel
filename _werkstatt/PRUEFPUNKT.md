@@ -1,6 +1,6 @@
 # PRUEFPUNKT
 
-- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · **Etappe E3, Welle E3-W1** · Stand 2026-10-28 16:33 MEZ · **live: main = 2317dcde (E-083)** · UM-E3-W3 gebaut und angewendet (f846301a CURSOR, f087c4c8 SCROLL, 752814db LEIT, 702dc965 REG; Notizen `belege/um-e3-w3/`) · Prüfkette 702dc965: Suite 395/3/26 (verlegen.spec 26, 28, 31 durch scrollbar-gutter), axe 0, ruhig/reduziert 0, Register 0 unbekannt, Bildrate 1,88 %, Lighthouse in der Spanne, Pixel am Desktop überall (Leistenstreifen) · Korrektur 1620c0f5 (scrollbar-gutter entfernt) · **laufend: Nachlauf** `$SCRATCH/w3/pruef/nachlauf.sh` (1620c0f5 auf 4323) · danach Abnahme E-084, dann E3-LEISTUNG, E3-B, E3-SICHT, Tor E3 · Planungsziel 85
+- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · **Etappe E3, Welle E3-W1** · Stand 2026-10-28 17:05 MEZ · **live: main = 2317dcde (E-083)** · UM-E3-CURSOR, -SCROLL, -LEIT, -REG erledigt (E-084; HEAD-Bau 1620c0f5 auf 4323) · **nächstes Paket: UM-E3-LEISTUNG** (BUDGETS auf `/`: LCP mobil ≤ 2,5 s, Leistung ≥ 90, Reaktion ≤ 200 ms; Grundlage `berichte/UM-E3-LCP-K.md`), dann E3-B, E3-SICHT, Tor E3 · Planungsziel 85
 - E2 abgeschlossen nach zwei Anläufen (E-076, Berichte `berichte/UM-E2-B.md`, `UM-E2-B2.md`):
   - Z-02, Z-03, Z-06, Z-07, Z-09 und Z-11 auf Etappenstufe erfüllt.
   - Offener Punkt Z-10: TBT mobil → UM-E3-TBT.
