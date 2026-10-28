@@ -71,3 +71,8 @@ Uhrzeit · Fenster Verbrauch, Soll, Ziel · Woche Verbrauch, Spielraum · belegt
   - Ein Limit ist bis jetzt nicht erreicht. Der Faktor 6,122 schätzt also mindestens 23 % zu hoch, sobald der eigene Kontext klein bleibt und Arbeit an frische Agenten geht (L6 wirkt). Ein Kalibrierpunkt entsteht daraus nicht: Es gibt weder ein Limit noch einen Messwert.
   - Folge bis zum Fensterende 10:53 UTC: nur der laufende Workflow, die Übernahme seines Diffs und die Prüfkette als Skript. Kein neues großes Paket. Danach weiter mit Planungsziel 60.
 - 2026-10-28 10:25 MEZ · Schätzung nicht erneut erhoben (letzter Wert 122,9 % um 08:31 UTC ohne Limit) · Workflow UM-E3-ZUST fertig: 3 Agenten, 576 Tsd. Tokens, 18 min · Pause bis 10:53 UTC (Fensterende laut Werkzeug), danach Planungsziel 60
+- 2026-10-28 12:32 MEZ · **Ein Fenster endet ohne Limit:** 05:53 bis 10:53 UTC.
+  - Die Schätzung zeigte um 10:35 UTC 184,6 % (Faktor 6,122). Der Faktor schätzt seit L6 also um mindestens das 1,85-Fache zu hoch: wenig eigener Kontext, Arbeit an frische Agenten, Messungen als Skript.
+  - Ein Kalibrierpunkt entsteht nicht, weil weder ein Limit noch ein Messwert vorliegt. Die Schätzung gilt bis zur nächsten Kalibrierung nur als obere Schranke.
+  - Folge nach L6 („Planungsziel 60, bis ein Fenster ohne Limit endet“): Das Planungsziel steigt wieder auf 85.
+  - Plätze: 1 Workflow UM-E3-W3 (CURSOR fertig mit Prüfung und Nacharbeit, SCROLL läuft).
