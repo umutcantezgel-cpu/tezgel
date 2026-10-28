@@ -1,5 +1,5 @@
 import { CONSENT_COOKIE_NAME, CONSENT_VERSION } from '@/lib/cookie-inventory';
-import { INTRO_GRENZE, INTRO_LOGO, SPEICHER_INTRO } from '@/lib/intro/ablauf';
+import { EINGANG_ABBRUCH, EINGANG_GRENZE, KLASSE_EINGANG, KLASSE_WIEDERKEHR, SPEICHER_EINGANG } from '@/lib/intro/ablauf';
 import { BEWEGUNG_ATTRIBUT, BEWEGUNG_SPEICHER } from './schalter';
 
 // Zwei Kopfskripte für zwei Dokumente. Beide setzen html.k-bewegung vor dem ersten Rendern, aber nur ohne Wunsch nach
@@ -8,33 +8,22 @@ import { BEWEGUNG_ATTRIBUT, BEWEGUNG_SPEICHER } from './schalter';
 // Aktives Dokument (Gruppe (bestand), KERN v2, bewegung.css + BewegungsWaechter):
 // Meldet sich das Bewegungsmodul (html.k-modul) nicht binnen 2 s, setzt es html.k-notaus – dann gelten keine
 // Startzustände und alles ist sichtbar (KERN K-007).
-//
-// Intro B-02 (Ersatz „Der erste Boden“, E-018): Nur beim ersten Besuch je Browser setzt es html.k-intro; der Eintrag im
-// localStorage entsteht sofort, im Fehlerfall (kein Speicher, Speicher voll) gibt es kein Intro. Das Logo wird sofort geholt
-// (die Schicht lädt es sonst erst lazy; ohne Intro lädt sie nichts). Das Intro läuft als CSS ab
-// dem ersten Bild (bewegung.css), auch ohne die App. Jeder Klick, Tipp, Tastendruck oder Scroll beendet es sofort
-// (Lauscher passiv, once, setzen nur die Klasse zurück); ebenso das Ende der Schlussanimation und spätestens die Obergrenze.
-// Die Zielwerte für das Gleiten setzt das Skript nach dem Kopf an die Logo-Fläche selbst (Intro.tsx), nicht an html (E-034).
-// Mit dem Intro setzt es html.k-intro-sig: die Einstiegsbewegungen (SIG-1, Flucht des Plans) warten dann, bis das Blatt
-// freilegt, auf jeder Seite mit Planblatt (E-044). Auf der Startseite setzt es zusätzlich html.k-intro-start: bewegung.css legt dann ab lg die Reihen des Blatts auf die Zeilen
-// der H1 (Sichtabnahme E2, Befund 6), vor dem ersten Bild und ohne Messung (ein späteres Umrechnen ließ die Fläche springen).
-// Ohne Intro und mit erlaubter Bewegung setzt der zweite Teil html.k-startbild (großer Moment `startbild` auf `/`);
-// B-01 nimmt die Klasse beim ersten Seitenwechsel weg, damit das Startbild nur beim Laden freigelegt wird.
 // Bewegungsschalter (UM-E3-MOD, E-080): Ist „ruhig“ gewählt (localStorage), setzt es html[data-bewegung="ruhig"] und keine
-// Startklasse – wie bei reduzierter Bewegung; das Intro läuft dann wie dort (bewegung.css, Block „Bewegungsschalter“).
-const INTRO = `var mitIntro=0;try{var l=window.localStorage;if(!l.getItem(${JSON.stringify(SPEICHER_INTRO)})){l.setItem(${JSON.stringify(SPEICHER_INTRO)},'1');d.classList.add('k-intro');d.classList.add('k-intro-sig');if(location.pathname==='/')d.classList.add('k-intro-start');mitIntro=1;new Image().src=${JSON.stringify(INTRO_LOGO)};var aus=0,ende=function(){if(aus)return;aus=1;d.classList.remove('k-intro')};['pointerdown','keydown','wheel','touchstart','scroll'].forEach(function(n){window.addEventListener(n,ende,{passive:true,once:true,capture:true})});window.addEventListener('animationend',function(e){if(e.animationName==='intro-ende'||e.animationName==='intro-einblenden')ende()});setTimeout(ende,${INTRO_GRENZE})}}catch(e){}`;
+// Startklasse – wie bei reduzierter Bewegung; dann gibt es auch keinen Eingang.
+//
+// Eingang ohne Vorhang (E-067-4, UM-E3-EIN; ersetzt Intro B-02 und den Belag des Startbilds): Nur mit k-bewegung setzt es
+// html.k-eingang, beim ersten Aufruf im Besuch (Merker im sessionStorage, sofort gesetzt) ohne, danach mit
+// html.k-wiederkehr (nur Zeilenmasken, kürzer; ebenso, wenn der Speicher nicht lesbar ist). Der Ablauf läuft als CSS ab dem
+// ersten Bild (bewegung.css); das Skript setzt nur Klassen. Jeder Tipp, Klick, Tastendruck, Scroll oder jedes Mausrad nimmt
+// beide Klassen sofort weg (Lauscher passiv, once, capture), spätestens das Zeitlimit: danach gilt der Endzustand. Lauscher
+// und Zeitlimit stehen vor den Klassen, damit ein Fehler dort keinen Eingang ohne Ende hinterlässt; das Notaus bleibt der
+// letzte Zeitgeber. B-01 nimmt beim ersten Seitenwechsel weiter k-startbild, k-intro-start und k-intro-sig weg (E-078,
+// eingefroren); die Klassen gibt es nicht mehr, das läuft folgenlos ins Leere.
+const EINGANG = `try{var w=1;try{var s=window.sessionStorage;w=s.getItem(${JSON.stringify(SPEICHER_EINGANG)})?1:0;s.setItem(${JSON.stringify(SPEICHER_EINGANG)},'1')}catch(e){w=1}var aus=0,ende=function(){if(aus)return;aus=1;d.classList.remove(${JSON.stringify(KLASSE_EINGANG)});d.classList.remove(${JSON.stringify(KLASSE_WIEDERKEHR)})};${JSON.stringify(EINGANG_ABBRUCH)}.forEach(function(n){window.addEventListener(n,ende,{passive:true,once:true,capture:true})});setTimeout(ende,${EINGANG_GRENZE});d.classList.add(${JSON.stringify(KLASSE_EINGANG)});if(w)d.classList.add(${JSON.stringify(KLASSE_WIEDERKEHR)})}catch(e){}`;
 
-const BEWEGUNG_BESTAND = `var ruhig=0;try{ruhig=window.localStorage.getItem(${JSON.stringify(BEWEGUNG_SPEICHER)})==='ruhig'}catch(e){}if(ruhig)d.setAttribute(${JSON.stringify(BEWEGUNG_ATTRIBUT)},'ruhig');try{if(ruhig||!window.matchMedia||!window.matchMedia('(prefers-reduced-motion: no-preference)').matches)return;d.classList.add('k-bewegung');if(!mitIntro)d.classList.add('k-startbild');setTimeout(function(){if(!d.classList.contains('k-modul'))d.classList.add('k-notaus');},2000);}catch(e){d.classList.add('k-notaus');}`;
+const BEWEGUNG_BESTAND = `var ruhig=0;try{ruhig=window.localStorage.getItem(${JSON.stringify(BEWEGUNG_SPEICHER)})==='ruhig'}catch(e){}if(ruhig)d.setAttribute(${JSON.stringify(BEWEGUNG_ATTRIBUT)},'ruhig');try{if(ruhig||!window.matchMedia||!window.matchMedia('(prefers-reduced-motion: no-preference)').matches)return;d.classList.add('k-bewegung');${EINGANG}setTimeout(function(){if(!d.classList.contains('k-modul'))d.classList.add('k-notaus');},2000);}catch(e){d.classList.add('k-notaus');}`;
 
-export const KOPFSKRIPT = `(function(){var d=document.documentElement;${INTRO}${BEWEGUNG_BESTAND}})();`;
-
-/**
- * Zielwerte für das Gleiten (FLIP): läuft als Inline-Skript direkt nach dem Kopf, also vor der App, misst das Logo auf der
- * Fläche und das Kopf-Logo und legt Versatz und Maßstab als Variablen an die Logo-Fläche `.intro-schild`, die sie allein
- * nutzt: An html geerbt, zwangen sie beim Setzen und Abräumen den Stil des ganzen Dokuments neu (Blockierzeit, E-034).
- * Ohne Messung bleibt das Logo in der Mitte und verschwindet mit dem Blatt. Eingebunden in _dokument.tsx nach dem Kopf.
- */
-export const INTRO_ZIEL = `(function(){var d=document.documentElement;if(!d.classList.contains('k-intro'))return;try{var z=document.querySelector('header [data-erstes-bild="logo"]'),s=document.querySelector('.intro-schild');if(!z||!s)return;var a=s.getBoundingClientRect(),b=z.getBoundingClientRect();if(!(a.width>0&&b.width>0))return;s.style.setProperty('--intro-x',(b.left+b.width/2-a.left-a.width/2)+'px');s.style.setProperty('--intro-y',(b.top+b.height/2-a.top-a.height/2)+'px');s.style.setProperty('--intro-s',String(b.width/a.width))}catch(e){}})();`;
+export const KOPFSKRIPT = `(function(){var d=document.documentElement;${BEWEGUNG_BESTAND}})();`;
 
 // Ruhendes Dokument (Gruppe (kern), kern.css + BewegungsRegie): Inline-Kopfskript des Kern-Layouts, läuft im <head> vor dem ersten Rendern (CSP erlaubt Inline-Skripte).
 // Zwei unabhängige Teile, jeder in eigenem try – ein Fehler im einen hält den anderen nicht auf.

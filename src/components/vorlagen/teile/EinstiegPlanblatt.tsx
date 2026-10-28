@@ -6,7 +6,11 @@
 // Foto im Querformat zwischen den Wänden des Plans (planblatt-wand): aus der Zeichnung wird der echte Boden. Mobil eine
 // Spalte: Text, dann der ganze Plan (rückt beim Eintritt in die Flucht), dann das hohe Foto; das Lot wächst im Seitenrand
 // neben dem Text. Raster und Lage der Linien sind die der Startseite (`.kreuzlinie-aus-start` in bewegung.css hängt daran).
-// Die fünf Pflichtelemente des ersten Bildschirms tragen data-erstes-bild (Logo im Kopf). Serverkomponente.
+// Die fünf Pflichtelemente des ersten Bildschirms tragen data-erstes-bild (Logo im Kopf).
+// Eingang ohne Vorhang (E-067-4, bewegung.css „eingang“): Der Abschnitt ist der Behälter (data-motion="eingang"). Die Zeilen
+// der H1 steigen hinter Zeilenmasken auf und rücken dabei in die Flucht (data-motion="zeilenmaske", --zeile ist ihre
+// Nummer), Ort und Knopfzeile setzen sich. Kein Fugenriss: Die Waage liegt hier ohnehin als Schnittkante auf dem Foto.
+// Flach und schmal fließen die Zeilen als ein Satz (inline): dort keine Maske (animate-none). Serverkomponente.
 import type { CSSProperties, ReactNode } from 'react';
 import Icon from '@/components/icons/Icon';
 import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
@@ -52,7 +56,7 @@ export default function EinstiegPlanblatt({ pfad, brotkrumen, firmensitz, titelZ
   const rand = wandEinzug(plan, false);
   const wandAussen = { '--wand-aussen': `${((rand / (1 - 2 * rand)) * 100).toFixed(3)}%` } as CSSProperties;
   return (
-    <section aria-labelledby={titelId} data-formel="worum" className="relative">
+    <section aria-labelledby={titelId} data-formel="worum" data-motion="eingang" className="relative">
       {/* oben Platz für den festen Kopf (64 px, wie der Baustein Einstieg). Ab lg zwei Zeilen ohne Abstand: oben H1 und Plan
           (Schnittkante auf der Waage), unten Text und Foto. Flaches Querformat (q844): weniger Luft oben, H1 eine Stufe kleiner,
           ohne Firmensitz-Zeile, damit Hauptknopf und Telefon im ersten Bildschirm stehen (Sichtabnahme E2, Befund 11) */}
@@ -67,10 +71,9 @@ export default function EinstiegPlanblatt({ pfad, brotkrumen, firmensitz, titelZ
           {/* Container: unter 20 rem Spaltenbreite (nur bei großer Systemschrift, P1 mit 200 %) entfällt die Firmensitz-Zeile, die
               H1 steht eine Stufe kleiner und fließt als ein Satz (fs-6 und fs-7 treffen dort beide ihr Minimum) */}
           <div className="@container relative lg:col-span-6 lg:row-start-1 lg:self-start lg:pb-4">
-            {/* Fugenkreuz als Anschlag auf der Achse, mit dem Firmensitz in Mono (Oberkante der H1 = pt-32 + diese Zeile + mt-4:
-                daran richtet das Intro der Startseite seine Reihen aus, bewegung.css html.k-intro-start). Unter md steht die
-                Achse nur 8 px vor der Textkante: dort sitzt das Kreuz eine Zeile höher am Anfang des Lots, statt den ersten
-                Buchstaben zu berühren (m360 und 200 %, E2-SICHT-2 Befund 10) */}
+            {/* Fugenkreuz als Anschlag auf der Achse, mit dem Firmensitz in Mono. Unter md steht die Achse nur 8 px vor der
+                Textkante: dort sitzt das Kreuz eine Zeile höher am Anfang des Lots, statt den ersten Buchstaben zu berühren
+                (m360 und 200 %, E2-SICHT-2 Befund 10) */}
             <Fugenkreuz className="pointer-events-none absolute top-1 -left-2 size-3 -translate-x-1/2 text-tinte max-md:-top-4 max-md:-translate-y-1/2 md:-left-4" />
             {brotkrumen && brotkrumen.length > 1 ? (
               <Brotkrumen wege={brotkrumen} className="flach:hidden @max-xs:hidden" />
@@ -80,7 +83,7 @@ export default function EinstiegPlanblatt({ pfad, brotkrumen, firmensitz, titelZ
             {/* die Zeilen sind Block-Kinder, sonst wirkt die Flucht nicht; flach und schmal fließen sie als ein Satz */}
             <h1 id={titelId} data-erstes-bild="ueberschrift" data-motion="sig-flucht" className="mt-4 text-fs-7 text-tinte flach:mt-0 flach:text-fs-6 @max-xs:mt-0 @max-xs:text-fs-5">
               {titelZeilen.map((zeile, i) => (
-                <span key={zeile} className="block flach:inline @max-xs:inline">
+                <span key={zeile} data-motion="zeilenmaske" style={{ '--zeile': i } as CSSProperties} className="block flach:inline flach:animate-none @max-xs:inline @max-xs:animate-none">
                   {zeile}
                   {i < titelZeilen.length - 1 && ' '}
                 </span>
@@ -103,7 +106,7 @@ export default function EinstiegPlanblatt({ pfad, brotkrumen, firmensitz, titelZ
               {/* Container für die Rufnummer: bei großer Systemschrift Vorwahl über der Nummer (Rufnummer.tsx). Reicht die Zeile
                   nicht für Anruf und WhatsApp nebeneinander (d1280), rückt WhatsApp in die nächste Zeile, statt dass beide
                   Beschriftungen umbrechen */}
-              <div className="@container mt-8 flex flex-col gap-3 flach:mt-6 sm:flex-row sm:flex-wrap sm:items-center">
+              <div data-eingang="knoepfe" className="@container mt-8 flex flex-col gap-3 flach:mt-6 sm:flex-row sm:flex-wrap sm:items-center">
                 <Hauptknopf href={hauptziel} erstesBild breit />
                 <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                   <a

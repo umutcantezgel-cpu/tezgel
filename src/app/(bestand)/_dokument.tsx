@@ -14,8 +14,7 @@ import { buildRootGraph, SITE_URL } from '@/lib/schema';
 import JsonLd from '@/components/seo/JsonLd';
 import BewegungsWaechter from '@/components/kern/BewegungsWaechter';
 import Verlegen from '@/components/verlegen/Verlegen';
-import Intro from '@/components/intro/Intro';
-import { INTRO_ZIEL, KOPFSKRIPT } from '@/lib/motion/kopfskript';
+import { KOPFSKRIPT } from '@/lib/motion/kopfskript';
 
 // Schriften selbst gehostet (OFL 1.1, src/app/fonts/LIZENZEN.md). Archivo auf die genutzten Achsen beschnitten
 // (wdth 74–100, wght 400–800); Ersatzschriften mit Metrik-Anpassung stehen in globals.css (KERN K-006, E-010).
@@ -113,7 +112,7 @@ export default function BestandDokument({
   return (
     <html lang="de" data-scroll-behavior="smooth" suppressHydrationWarning className={`${archivo.variable} ${plexMono.variable}`}>
       <head>
-        {/* Bewegung: Startklasse vor dem ersten Rendern (KERN K-007) */}
+        {/* Bewegung: Startklassen vor dem ersten Rendern, auch für den Eingang ohne Vorhang (KERN K-007, E-067-4) */}
         <script dangerouslySetInnerHTML={{ __html: KOPFSKRIPT }} />
         <meta name="geo.region" content="DE-HE" />
         <meta name="geo.placename" content="Aßlar" />
@@ -122,15 +121,11 @@ export default function BestandDokument({
         <JsonLd schema={rootKnowledgeGraph} />
       </head>
       <body className="antialiased min-h-screen flex flex-col bg-kalk text-tinte font-text">
-        {/* Intro B-02 „Der erste Boden“: zuerst im Dokument, damit es mit dem ersten Bild steht (KERN K-007, E-018) */}
-        <Intro />
         <SkipNav />
         {/* Provider liegen an ihrem Nutzungsort (E-010): Inhalte unter /blog, Anmeldung unter /login */}
         <ErrorBoundary>
           <TrackingScripts />
           <HeaderWrapper />
-          {/* Ziel des Intro-Logos: misst Kopf-Logo und Logo auf der Fläche, bevor die App lädt */}
-          <script dangerouslySetInnerHTML={{ __html: INTRO_ZIEL }} />
           {/* Platz für die untere Leiste (bis lg) liegt im Fuß, nicht hier: sonst steht zwischen dunklem Abschluss und Fuß
               ein heller Streifen (E3-NACH-04, Sichtabnahme E2-SICHT-2 Befund 22) */}
           <main id="main-content" className="flex-1">

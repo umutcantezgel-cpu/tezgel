@@ -95,18 +95,18 @@ test('Schalter 2: Kopfskript – „ruhig“ setzt data-bewegung und keine Start
   assert.equal(r.wurzel.klassen.has('k-bewegung'), true);
 });
 
-test('Schalter 3: Wahl zur Laufzeit – „ruhig“ nimmt die Startklassen weg, „an“ setzt sie nur ohne reduzierte Bewegung', () => {
+test('Schalter 3: Wahl zur Laufzeit – „ruhig“ nimmt Startklasse und Eingang weg, „an“ setzt sie nur ohne reduzierte Bewegung', () => {
   const vorher = { window: globalThis.window, document: globalThis.document };
   try {
     const wurzel = html();
     const win = fenster();
     globalThis.window = win;
     globalThis.document = { documentElement: wurzel, querySelectorAll: () => [] };
-    wurzel.classList.add('k-bewegung', 'k-modul', 'k-startbild', 'k-intro', 'k-intro-sig', 'k-intro-start');
+    wurzel.classList.add('k-bewegung', 'k-modul', 'k-eingang', 'k-wiederkehr');
 
     waehleBewegung('ruhig');
     assert.equal(wurzel.getAttribute(BEWEGUNG_ATTRIBUT), 'ruhig');
-    for (const k of ['k-bewegung', 'k-startbild', 'k-intro', 'k-intro-sig', 'k-intro-start']) assert.equal(wurzel.klassen.has(k), false, k);
+    for (const k of ['k-bewegung', 'k-eingang', 'k-wiederkehr']) assert.equal(wurzel.klassen.has(k), false, k);
     assert.equal(win.localStorage.daten.get(BEWEGUNG_SPEICHER), 'ruhig');
     assert.deepEqual(win.ereignisse, [BEWEGUNG_WECHSEL]);
 
@@ -139,17 +139,13 @@ const OHNE_SPIEGEL_NOETIG = new Map([
   ['.menue-blatt:popover-open', 'Übergang, durch die Übergangsregel auf 0,01 ms'],
   ['.mega-blatt', 'Übergang, durch die Übergangsregel auf 0,01 ms'],
   ['.mega-blatt:not([hidden])', '@starting-style, durch die Übergangsregel sofort'],
-  ['html.k-intro .intro-fliese', 'liegt im verborgenen Intro'],
-  ['html.k-intro .intro-logo', 'liegt im verborgenen Intro'],
-  ['html.k-intro .intro-schild', 'liegt im verborgenen Intro'],
-  ['html.k-intro .intro-reihe', 'liegt im verborgenen Intro'],
 ]);
+// Intro B-02 und sein Spiegel entfallen mit dem Eingang ohne Vorhang (E-067-4, UM-E3-EIN); der Eingang hängt ganz an
+// html.k-bewegung und fällt damit unter die Regel oben (test/intro.test.mjs, Eingang 6, prüft das für jede seiner Regeln).
 const GESPIEGELT = new Map([
   ['.leitachse-rot', 'html[data-bewegung="ruhig"] .leitachse-rot'],
   ['.fugenband-rot', 'html[data-bewegung="ruhig"] .fugenband-rot'],
   ['[data-motion="druck"]:active', 'html[data-bewegung="ruhig"] [data-motion="druck"]:active'],
-  ['html.k-intro .intro', 'html[data-bewegung="ruhig"].k-intro .intro'],
-  ['html.k-intro header [data-erstes-bild="logo"]', 'html[data-bewegung="ruhig"].k-intro header [data-erstes-bild="logo"]'],
 ]);
 
 function block(css, start) {

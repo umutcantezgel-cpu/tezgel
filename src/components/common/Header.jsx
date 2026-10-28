@@ -120,7 +120,9 @@ export default function Header({ isMobileMenuOpen }) {
                 {/* Logo darf nur unter @7xl schrumpfen (große Systemschrift, Menü-Schalter bleibt im Bild); mit voller Navigation
                     behält es seine Größe, die Navigation hat ab 2xl keine Zuschläge mehr (Runde 3: auf d1920 nur 74 px breit) */}
                 {/* Name aus Logo-Alternativtext und sichtbarer Zeile, ohne aria-label: Der sichtbare Text muss im Namen stehen (WCAG 2.5.3, axe 4.14) */}
-                <Link href="/" className="min-w-0 shrink @7xl:shrink-0">
+                {/* data-motion="eingang": hier baut sich beim ersten Aufruf im Besuch das Logo auf (E-067-4, nur Maske über der
+                    unveränderten Datei, bewegung.css „eingang“); das Menüblatt zeigt dasselbe Logo ohne Aufbau */}
+                <Link href="/" className="min-w-0 shrink @7xl:shrink-0" data-motion="eingang">
                     <BrandMark sublineClassName="hidden @5xl:@max-7xl:block" />
                     <span className="sr-only">, zur Startseite</span>
                 </Link>

@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { REGISTER, KENNUNGEN, beobachteteKennungen, ladeKennungen, schwelleFuer, istRegistriert, entfallendeKennungen, SELBST } from '../src/lib/motion/register.ts';
+import fs from 'node:fs';
+import { REGISTER, KENNUNGEN, beobachteteKennungen, ladeKennungen, schwelleFuer, istRegistriert, entfallendeKennungen, SELBST, aliasKennungen, aufgeloest } from '../src/lib/motion/register.ts';
 import { KOPFSKRIPT } from '../src/lib/motion/kopfskript.ts';
 
 // Register laut Gestaltungskern v3 (K-007): neue Bewegungen nur mit Registereintrag. Die SVG-Bewegungen aus v2 sind seit
@@ -15,22 +16,42 @@ const MOMENTE_INTERAKTION = ['formatregler', 'vorher-nachher', 'galerie-filter']
 const GROSSE_MOMENTE = [...MOMENTE_SCROLL, ...MOMENTE_SICHT, ...MOMENTE_INTERAKTION];
 // Ruhe (E-047, KERN v3.6 K-016)
 const RUHE_E047 = ['karussell'];
+// Eingang ohne Vorhang (E-067-4, UM-E3-EIN): Eingang und Zeilenmasken; intro (B-02) und startbild bleiben als Alias
+const EINGANG_E067 = ['eingang', 'zeilenmaske'];
+const ALIASE_E067 = { intro: 'eingang', startbild: 'eingang' };
 
-test('Bewegung 1: Register enthält genau die Einträge von KERN v3, die SVG-Bewegungen aus v2 (E-037) und die großen Momente, keine entfällt', () => {
-  assert.deepEqual([...KENNUNGEN].sort(), [...KERN_V3, ...V2_SVG_E037, ...GROSSE_MOMENTE, ...RUHE_E047, ...ENTFALLEN_E009].sort());
+test('Bewegung 1: Register enthält genau die Einträge von KERN v3, die SVG-Bewegungen aus v2 (E-037), die großen Momente und den Eingang (E-067-4), keine entfällt', () => {
+  assert.deepEqual([...KENNUNGEN].sort(), [...KERN_V3, ...V2_SVG_E037, ...GROSSE_MOMENTE, ...RUHE_E047, ...EINGANG_E067, ...ENTFALLEN_E009].sort());
   assert.deepEqual(entfallendeKennungen().sort(), [...ENTFALLEN_E009].sort());
-  for (const k of [...KERN_V3, ...V2_SVG_E037, ...GROSSE_MOMENTE, ...RUHE_E047]) assert.ok(!REGISTER[k].entfaellt, `${k} gehört zum System`);
+  for (const k of [...KERN_V3, ...V2_SVG_E037, ...GROSSE_MOMENTE, ...RUHE_E047, ...EINGANG_E067]) assert.ok(!REGISTER[k].entfaellt, `${k} gehört zum System`);
 });
 
-test('Bewegung 1b: B-01, Plan-Morph und B-02 steuern sich selbst, das Startbild legt sich beim Eintritt frei (Sicht 0,4; E-037)', () => {
-  assert.deepEqual([...SELBST].sort(), ['intro', 'seitenwechsel', 'verlegen']);
-  assert.ok(beobachteteKennungen(true).includes('startbild') && beobachteteKennungen(false).includes('startbild'));
-  assert.equal(schwelleFuer('startbild'), 0.4);
+test('Bewegung 1b: B-01, Plan-Morph, Eingang und Zeilenmasken steuern sich selbst; intro und startbild sind Aliase des Eingangs (E-067-4)', () => {
+  assert.deepEqual([...SELBST].sort(), ['eingang', 'seitenwechsel', 'verlegen', 'zeilenmaske']);
   for (const k of SELBST) {
     assert.ok(istRegistriert(k));
     assert.ok(!ladeKennungen().includes(k));
     assert.ok(!beobachteteKennungen(true).includes(k) && !beobachteteKennungen(false).includes(k));
   }
+  assert.deepEqual(aliasKennungen().sort(), Object.keys(ALIASE_E067).sort());
+  for (const [alt, neu] of Object.entries(ALIASE_E067)) {
+    assert.ok(istRegistriert(alt), `${alt} bleibt registriert`);
+    assert.equal(REGISTER[alt].alias, neu);
+    assert.equal(aufgeloest(alt), neu);
+    assert.ok(istRegistriert(neu) && !REGISTER[neu].alias, `${neu} ist selbst kein Alias`);
+    assert.equal(REGISTER[alt].ausloeser, REGISTER[neu].ausloeser, `${alt} trägt den Auslöser von ${neu}`);
+    assert.ok(!SELBST.includes(alt), `${alt} hat keine eigene Steuerung mehr`);
+    assert.ok(!ladeKennungen().includes(alt), `${alt}: kein Ladezustand`);
+    assert.ok(!beobachteteKennungen(true).includes(alt) && !beobachteteKennungen(false).includes(alt), `${alt}: kein Beobachter`);
+  }
+  assert.equal(aufgeloest('auftritt'), 'auftritt');
+});
+
+test('Bewegung 1c: register.json führt dieselben Kennungen und Aliase wie register.ts', () => {
+  const json = JSON.parse(fs.readFileSync(new URL('../_werkstatt/register.json', import.meta.url), 'utf8'));
+  assert.deepEqual([...json.kennungen].sort(), [...KENNUNGEN].sort());
+  assert.deepEqual(json.aliase, ALIASE_E067);
+  assert.deepEqual([...json.v4].sort(), [...EINGANG_E067].sort());
 });
 
 test('Bewegung 2: sig-plan wird nur auf groben Zeigegeräten über Sichtbarkeit ausgelöst', () => {

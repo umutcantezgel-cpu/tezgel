@@ -2,7 +2,8 @@
    BEWEGUNGSREGISTER (KERN K-007) – CSS-Fassung.
    Startzustände gelten nur unter html.k-bewegung (gesetzt vom Kopfskript bei
    prefers-reduced-motion: no-preference) und nie nach html.k-notaus.
-   Animiert werden nur transform/translate/scale und opacity.
+   Animiert werden nur transform/translate/scale und opacity, im Eingang (E-067-4)
+   dazu clip-path als Maske.
    ========================================================================== */
 
 /* auftritt – Abschnitt rückt 8 px in die Flucht (IO 20 %) */
@@ -679,263 +680,118 @@ html.k-notaus::view-transition-new(*) {
   animation: none !important;
 }
 
-/* intro (B-02, Ersatz „Der erste Boden“, E-018) – erster Besuch je Browser (html.k-intro aus dem Kopfskript). Eine feste
-   Schicht über allem: ein Kalkblatt aus Reihen mit Fugenraster, in der Mitte eine Fläche 3 × 3 im Drittelverband, darauf
-   das Logo. Ablauf ab dem ersten Bild als CSS, alle Zeiten als Anteile von --intro-gesamt (--a Beginn, --d Dauer, aus
-   src/lib/intro/ablauf.ts): Fliesen legen sich von rechts (wie B-01), das Logo setzt sich, deckend bis zur Hälfte; dann
-   gleitet das Logo an den Platz des Kopf-Logos (Zielwerte vom Skript nach dem Kopf), und die Reihen ziehen starr nach
-   links ab, gestaffelt nach Versatzstufe. Am Ende tauschen Logo und Kopf-Logo an derselben Stelle. Nur transform und
-   opacity; das Blatt ist Kalk, damit der Speed Index kaum Farbunterschied sieht; kein overflow: hidden am Dokument. */
-.intro {
-  position: fixed;
-  inset: 0;
-  z-index: 60;
-  overflow: hidden;
-  contain: strict;
-  container-type: size;
-  pointer-events: none;
-  /* am Desktop mit der Breite wachsend (etwa acht Fliesen je Reihe bei 1440 px wie B-01, Sichtabnahme E2, Befund 6); auf der
-     Startseite ab lg Reihe und Fliese nach der Zeilenhöhe der H1 (unten, html.k-intro-start). Die Untergrenze 6rem höchstens
-     28vw: bei großer Systemschrift (200 %) war die Fläche sonst breiter als das Handy und das Logo links angeschnitten
-     (E2-SICHT-2 Befund 1, E3-START-03); bei 100 % gilt weiter 6rem */
-  --intro-fliese: clamp(min(6rem, 28vw), 24vw, min(15rem, max(9rem, 12.5vw)));
-  --intro-reihe: calc(var(--intro-fliese) / 2);
-  --intro-oben: calc(47cqh - var(--intro-reihe) * 1.5);
+/* eingang (E-067-4, K-007 „An der Schnur“; ersetzt intro B-02 und den Belag von startbild, beide als Alias im Register) –
+   Eingang am Platz, ohne Vorhang: Nichts deckt den ersten Bildschirm ab, das Foto (LCP) ist ab dem ersten Bild sichtbar und
+   wird nie bewegt, verdeckt oder ausgeblendet. Das Kopfskript setzt html.k-eingang nur zusammen mit html.k-bewegung (also
+   nie bei reduzierter Bewegung, „ruhig“ oder ohne JavaScript) und nimmt die Klasse bei jeder Eingabe und spätestens nach
+   2 s wieder weg; danach gilt sofort der Endzustand. Behälter sind der Logo-Link im Kopf und der Einstieg
+   (data-motion="eingang"). Erster Aufruf im Besuch:
+   - Das Logo baut sich in zwei Reihen im Drittelverband auf: eine Maske (clip-path) gibt die unveränderte Datei von links
+     frei, die untere Reihe ein Drittel einer Fliese hinter der oberen (Fliese 2 : 1 so hoch wie das Logo, Logo 3,2 : 1:
+     ein Drittel einer Fliese ist 1/9,6 der Breite). Der Endzustand ist das Original ohne Maske.
+   - Die Zeilen der H1 steigen hinter Zeilenmasken auf, eine nach der anderen (data-motion="zeilenmaske", --zeile aus der
+     Vorlage). Die Maske steht fest um die Zeile mit 0,2em Innenabstand (Unterlängen und Umlautpunkte, K-006): transform und
+     clip-path laufen im selben Schlüsselbild gegeneinander, die Zeile bleibt als Text im DOM. Im Planblatt und im mittigen
+     Einstieg läuft die Flucht (sig-flucht, translate) als erste Animation der Liste unverändert mit, mit Name und Takt wie
+     unten bei sig-flucht: Endet der Eingang, bleibt nur sie in der Liste und läuft ohne Neustart weiter (Abgleich nach
+     Namen, CSS Animations 1); mit einer eigenen Flucht im Schlüsselbild begänne sig-flucht beim Ende noch einmal.
+   - Ort und Knopfzeile setzen sich (8 px, Deckkraft, wie auftritt), über die Oberkante des Fotos zieht ein Fugenriss in
+     Strich und verblasst (nur ein Pseudoelement am Bildplatz, das Foto bleibt unberührt).
+   Wiederkehr im selben Besuch (html.k-wiederkehr): nur die Zeilenmasken, kürzer, kein Logo-Aufbau. Alle Teile laufen mit
+   Füllung backwards: Der Endzustand ist der Stil ohne Eingang, ohne Lage- oder Größenänderung. Takt nur aus Tokens;
+   test/intro.test.mjs rechnet ihn nach (voll höchstens 1,5 s, Wiederkehr kürzer). */
+[data-motion="eingang"] {
+  --eingang-logo: var(--dauer-4);
+  --eingang-zeile-beginn: var(--dauer-1);
+  --eingang-zeile-abstand: calc(var(--staffel) * 2);
+  --eingang-zeile: var(--dauer-3);
+  --eingang-ort-beginn: calc(var(--dauer-1) + var(--staffel) * 6);
+  --eingang-knoepfe-beginn: calc(var(--dauer-1) + var(--staffel) * 8);
+  --eingang-riss-beginn: var(--dauer-4);
+  --eingang-setzen: var(--dauer-3);
 }
-/* ganze Pixel, damit zwischen den Reihen keine Haarlinien entstehen (wie B-01) */
-@supports (width: round(1px, 1px)) {
-  /* jede Reihe endet rechts auf einer Fuge, also mit einer ganzen Fliese: die abziehende Kante ist eine Fliesenkante, keine
-     Schnittlinie mitten durch eine Fliese (Fugen bei 50cqw − Fliese · (1,5 + Versatz) + n · Fliese) */
-  .intro-reihe {
-    --intro-breite: calc(50cqw - var(--intro-fliese) * (1.5 + var(--v)) + round(up, calc(50cqw + var(--intro-fliese) * (2.5 + var(--v))), var(--intro-fliese)));
+html.k-wiederkehr [data-motion="eingang"] {
+  --eingang-zeile-beginn: var(--dauer-0);
+  --eingang-zeile: var(--dauer-2);
+}
+@keyframes eingang-logo {
+  from {
+    clip-path: polygon(0 0, 0 0, 0 50%, calc(100% / -9.6) 50%, calc(100% / -9.6) 100%, 0 100%);
   }
-  .intro {
-    --intro-fliese: round(clamp(min(6rem, 28vw), 24vw, min(15rem, max(9rem, 12.5vw))), 2px);
-    --intro-oben: round(calc(47cqh - var(--intro-reihe) * 1.5), 1px);
-  }
-  /* Startseite ab lg (Sichtabnahme E2, Befund 6): eine Reihe so hoch wie eine Zeile der H1 (fs-6 seit E-047), eine
-     Reihengrenze auf der Oberkante der H1, damit beim Abziehen keine Zeile mitten im Buchstaben angeschnitten wird. Oberkante
-     der H1 im mittigen Einstieg: pt-32 (vorlagen/teile/EinstiegMitte.tsx; der Kopf ist fest, der Einstieg beginnt bei 0). Die
-     Fläche bleibt nahe 47 % der Höhe: Abstand dorthin auf ganze Reihen gerundet. Fliese = zwei Reihen. */
-  @media (width >= 64rem) {
-    html.k-intro-start .intro {
-      --intro-reihe: round(calc(var(--text-fs-6) * var(--text-fs-6--line-height)), 1px);
-      --intro-fliese: calc(var(--intro-reihe) * 2);
-      --intro-h1: calc(var(--spacing) * 32);
-      --intro-oben: calc(var(--intro-h1) + round(nearest, calc(47cqh - var(--intro-reihe) * 1.5 - var(--intro-h1)), var(--intro-reihe)));
-    }
+  to {
+    clip-path: polygon(0 0, calc(100% + 100% / 9.6) 0, calc(100% + 100% / 9.6) 50%, 100% 50%, 100% 100%, 0 100%);
   }
 }
-.intro-reihe {
-  position: absolute;
-  left: 0;
-  top: calc(var(--intro-oben) + var(--k) * var(--intro-reihe));
-  /* Breite: ohne round() ganzer Bildschirm plus eine Fliese, mit round() bis zur nächsten Fuge (oben) */
-  width: var(--intro-breite, calc(100cqw + var(--intro-fliese)));
-  /* 1 px Überlappung: die nächste Reihe liegt darüber und zieht ihre Fuge selbst */
-  height: calc(var(--intro-reihe) + 1px);
-  background-color: var(--color-kalk);
-  /* die Reihe liegt als Streifen gesetzter Fliesen auf der Seite: beim Abziehen zeigt ihre Kante einen Schatten wie die Fliesen
-     von B-01, statt als harte Maske über die Seite zu wischen (E2-SICHT-2 Befund 4, E3-START-03) */
-  box-shadow: var(--shadow-gesetzt);
-  background-image:
-    linear-gradient(to right, var(--color-fuge) 1px, transparent 1px),
-    linear-gradient(var(--color-fuge) 1px, transparent 1px);
-  background-size: var(--intro-fliese) 100%, 100% 100%;
-  background-repeat: repeat-x, no-repeat;
-  background-position: calc(50cqw - var(--intro-fliese) * (1.5 + var(--v))) 0, 0 0;
+/* Weg der Zeile: ihre Höhe und 0,4em, dann liegt sie ganz unter der Maske; die Maske (Zeile ± 0,2em) steht dabei fest.
+   transform statt translate: Die Flucht (sig-flucht) bewegt dieselbe Zeile über translate, beide setzen sich zusammen. */
+@keyframes eingang-zeile {
+  from {
+    transform: translateY(calc(100% + 0.4em));
+    clip-path: inset(calc(-100% - 0.6em) -1em calc(100% + 0.2em) -1em);
+  }
+  to {
+    transform: translateY(0);
+    clip-path: inset(-0.2em -1em -0.2em -1em);
+  }
 }
-.intro-flaeche {
-  position: absolute;
-  top: 0;
-  left: calc(50cqw - var(--intro-fliese) * 1.5);
-  width: calc(var(--intro-fliese) * 3);
-  height: calc(var(--intro-reihe) + 1px);
-  overflow: hidden;
-}
-/* Fliese wie B-01: halbe Fuge rundum, darin die Fliese mit einem Hauch Glanz; die Fuge wächst mit der Fliese (1/80,
-   mindestens 1 px je Seite), damit die Fläche am Desktop als verlegter Boden lesbar ist (Sichtabnahme E2, Befund 6). Fuge in
-   Strich wie die Zeichnungen „deutlich“: Weiß auf Kalk (1,08 : 1) mit Fuge in Fugengrau war als Fläche kaum zu sehen
-   (E2-SICHT-2 Befund 5, E3-START-03) */
-.intro-fliese {
-  position: absolute;
-  top: 0;
-  left: calc(var(--x) * var(--intro-fliese));
-  width: var(--intro-fliese);
-  height: var(--intro-reihe);
-  background-color: var(--color-strich);
-}
-.intro-fliese::before,
-.intro-fliese::after {
-  content: "";
-  position: absolute;
-  inset: max(1px, calc(var(--intro-fliese) / 80));
-}
-.intro-fliese::before {
-  background-color: var(--color-fliese);
-  box-shadow: var(--shadow-gesetzt);
-}
-.intro-fliese::after {
-  background-image: linear-gradient(120deg, var(--color-fliese-glanz), transparent 40%);
-}
-/* Logo mittig auf der Fläche: 80 % ihrer Breite, Seitenverhältnis des Originals 3,2 : 1 */
-.intro-schild {
-  position: absolute;
-  left: calc(50cqw - var(--intro-fliese) * 1.2);
-  top: calc(var(--intro-oben) + var(--intro-fliese) * 0.375);
-  width: calc(var(--intro-fliese) * 2.4);
-  transform-origin: center;
-}
-.intro-logo {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-@keyframes intro-legen {
+@keyframes eingang-setzen {
   from {
     opacity: 0;
-    translate: calc(var(--intro-fliese) * var(--intro-flug)) 0;
-    scale: var(--intro-gross);
+    translate: 0 calc(var(--spacing) * 2);
   }
 }
-@keyframes intro-setzen {
+@keyframes eingang-riss {
   from {
-    opacity: 0;
-    scale: var(--intro-gross);
+    scale: 0 1;
   }
-}
-@keyframes intro-gleiten {
+  60% {
+    scale: 1 1;
+    opacity: 1;
+  }
   to {
-    translate: var(--intro-x, 0px) var(--intro-y, 0px);
-    scale: var(--intro-s, 1);
-  }
-}
-@keyframes intro-ziehen {
-  to {
-    translate: calc(var(--intro-breite, calc(100cqw + var(--intro-fliese))) * -1) 0;
-  }
-}
-/* Zeiger: in der deckenden Hälfte fängt die Schicht ab (ein Tipp beendet nur das Intro), ab dem Freilegen geht ein Tipp
-   an die sichtbare Seite durch (der Lauscher im Kopfskript beendet das Intro vorher). Am Ende verborgen. */
-@keyframes intro-ende {
-  0% {
-    pointer-events: auto;
-  }
-  50% {
-    pointer-events: none;
-  }
-  100% {
-    pointer-events: none;
-    visibility: hidden;
-  }
-}
-@keyframes intro-verdeckt {
-  from,
-  to {
-    opacity: 0;
-  }
-}
-@keyframes intro-einblenden {
-  from {
+    scale: 1 1;
     opacity: 0;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
-  html.k-intro .intro {
-    display: block !important;
-    animation: intro-ende var(--intro-gesamt) step-end forwards;
+  html.k-eingang.k-bewegung:not(.k-notaus):not(.k-wiederkehr) [data-motion="eingang"] [data-erstes-bild="logo"] {
+    animation: eingang-logo var(--eingang-logo) var(--ease-setzen) backwards;
   }
-  html.k-intro .intro-fliese {
-    animation: intro-legen calc(var(--intro-gesamt) * var(--d)) var(--ease-hammer) calc(var(--intro-gesamt) * var(--a)) both;
+  html.k-eingang.k-bewegung:not(.k-notaus) [data-motion="eingang"] [data-motion="zeilenmaske"] {
+    animation: eingang-zeile var(--eingang-zeile) var(--ease-setzen) calc(var(--eingang-zeile-beginn) + var(--eingang-zeile-abstand) * min(var(--zeile, 0), 3)) backwards;
   }
-  html.k-intro .intro-logo {
-    animation: intro-setzen calc(var(--intro-gesamt) * var(--d)) var(--ease-setzen) calc(var(--intro-gesamt) * var(--a)) both;
+  /* Flucht vorn in der Liste, wie bei sig-flucht (dauer-4, Staffel 2 je Zeile = nth-child 1 bis 4) */
+  html.k-eingang.k-bewegung:not(.k-notaus) [data-motion="eingang"] [data-motion="sig-flucht"] > [data-motion="zeilenmaske"] {
+    animation:
+      flucht-einruecken var(--dauer-4) var(--ease-setzen) calc(var(--staffel) * 2 * min(var(--zeile, 0), 3)) both,
+      eingang-zeile var(--eingang-zeile) var(--ease-setzen) calc(var(--eingang-zeile-beginn) + var(--eingang-zeile-abstand) * min(var(--zeile, 0), 3)) backwards;
   }
-  html.k-intro .intro-schild {
-    animation: intro-gleiten calc(var(--intro-gesamt) * var(--d)) var(--ease-setzen) calc(var(--intro-gesamt) * var(--a)) both;
+  html.k-eingang.k-bewegung:not(.k-notaus):not(.k-wiederkehr) [data-motion="eingang"] [data-erstes-bild="ort"] {
+    animation: eingang-setzen var(--eingang-setzen) var(--ease-setzen) var(--eingang-ort-beginn) backwards;
   }
-  html.k-intro .intro-reihe {
-    /* linear: der sichtbare Teil der Seite wächst stetig ab der Hälfte (B-02, Speed Index) */
-    animation: intro-ziehen calc(var(--intro-gesamt) * var(--d)) linear calc(var(--intro-gesamt) * var(--a)) both;
+  html.k-eingang.k-bewegung:not(.k-notaus):not(.k-wiederkehr) [data-motion="eingang"] [data-eingang="knoepfe"] {
+    animation: eingang-setzen var(--eingang-setzen) var(--ease-setzen) var(--eingang-knoepfe-beginn) backwards;
   }
-  /* Kopf-Logo bis zum Tausch verborgen (nur Deckkraft, kein Platzwechsel) */
-  html.k-intro header [data-erstes-bild="logo"] {
-    animation: intro-verdeckt var(--intro-gesamt) linear backwards;
-  }
-}
-/* Reduzierte Bewegung: keine Schicht, das Kopf-Logo blendet ein (dauer-2) */
-@media (prefers-reduced-motion: reduce) {
-  html.k-intro header [data-erstes-bild="logo"] {
-    animation: intro-einblenden var(--dauer-2) var(--ease-setzen) both;
-  }
-}
-@media print, (forced-colors: active) {
-  html.k-intro .intro {
-    display: none !important;
-  }
-  html.k-intro header [data-erstes-bild="logo"] {
-    animation: none;
-  }
-}
-
-/* startbild (K-007, E2-ORCH-06b) – das Startbild legt sich frei: über dem Foto ein Belag aus Fliesen (Fliese mit
-   Fugenraster, drei Fliesen je Reihe im Drittelverband), der beim Laden Reihe für Reihe nach links abzieht, gestaffelt nach
-   Versatzstufe (wie B-01), gesamt dauer-4 · linear (wie die Reihen des Intros; mit ease-weg lag der Belag die ersten
-   rund 200 ms sichtbar still, Sichtabnahme E2; E-036); Zeiten als Anteile (--a, --d) aus src/lib/motion/startbild.ts.
-   Nur unter html.k-startbild (Kopfskript: Bewegung erlaubt, kein Intro; der erste Seitenwechsel nimmt die Klasse weg).
-   Seit E-047 steht das Foto vollständig unter dem mittigen Einstieg und ist auf jeder Breite der eine große Moment des
-   ersten Bildschirms: es legt sich frei, sobald es zu 40 % im Blick ist (Register: Sicht, data-motion-stand="an" vom
-   Bewegungsmodul). Ohne Klasse, reduziert, ohne Modul (Notaus), im Druck und bei erzwungenen
-   Farben steht das Foto sofort frei. Nur transform. */
-.startbild-decke {
-  position: absolute;
-  inset: 1px;
-  display: none;
-  overflow: hidden;
-  contain: strict;
-  container-type: size;
-  pointer-events: none;
-  --sb-fliese: calc(100cqw / 3);
-  --sb-reihe: calc(var(--sb-fliese) / 2);
-}
-.startbild-reihe {
-  position: absolute;
-  left: 0;
-  top: calc(var(--k) * var(--sb-reihe));
-  width: calc(100cqw + var(--sb-fliese));
-  /* 1 px Überlappung: kein Durchblick zwischen den Reihen */
-  height: calc(var(--sb-reihe) + 1px);
-  background-color: var(--color-fliese);
-  background-image:
-    linear-gradient(to right, var(--color-fuge) 1px, transparent 1px),
-    linear-gradient(var(--color-fuge) 1px, transparent 1px);
-  background-size: var(--sb-fliese) 100%, 100% 100%;
-  background-repeat: repeat-x, no-repeat;
-  background-position: calc(var(--sb-fliese) * (1 - var(--v))) 0, 0 0;
-}
-@keyframes startbild-ziehen {
-  to {
-    translate: calc(-100cqw - var(--sb-fliese)) 0;
-  }
-}
-@keyframes startbild-ende {
-  to {
-    visibility: hidden;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  html.k-startbild.k-bewegung:not(.k-notaus) [data-motion="startbild"] .startbild-decke {
-    display: block;
-  }
-  html.k-startbild.k-bewegung:not(.k-notaus) [data-motion="startbild"][data-motion-stand="an"] .startbild-decke {
-    animation: startbild-ende var(--dauer-4) step-end forwards;
-  }
-  html.k-startbild.k-bewegung:not(.k-notaus) [data-motion="startbild"][data-motion-stand="an"] .startbild-reihe {
-    animation: startbild-ziehen calc(var(--dauer-4) * var(--d)) linear calc(var(--dauer-4) * var(--a)) both;
+  html.k-eingang.k-bewegung:not(.k-notaus):not(.k-wiederkehr) [data-motion="eingang"] [data-eingang="bild"]::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    height: 1px;
+    background-color: var(--color-strich);
+    transform-origin: left center;
+    pointer-events: none;
+    animation: eingang-riss var(--eingang-setzen) linear var(--eingang-riss-beginn) both;
   }
 }
 @media print, (forced-colors: active) {
-  .startbild-decke {
+  html.k-eingang [data-motion="eingang"] [data-erstes-bild="logo"],
+  html.k-eingang [data-motion="eingang"] [data-motion="zeilenmaske"],
+  html.k-eingang [data-motion="eingang"] [data-erstes-bild="ort"],
+  html.k-eingang [data-motion="eingang"] [data-eingang="knoepfe"] {
+    animation: none !important;
+  }
+  html.k-eingang [data-motion="eingang"] [data-eingang="bild"]::after {
     display: none !important;
   }
 }
@@ -1428,34 +1284,6 @@ html.k-bewegung:not(.k-notaus) [data-motion="sig-kreuzlinie"] [data-flucht="lade
   transform-origin: center bottom;
   animation: kreuzlinie-lot-wachsen var(--dauer-5) linear both;
 }
-/* Erster Besuch mit Intro (html.k-intro-sig, auf jeder Seite; E-044): SIG-1 und die Flucht des Plans beginnen erst, wenn das
-   Blatt freilegt (Hälfte von --intro-gesamt), sonst liefen sie unter dem deckenden Blatt ab. Die Geometrie der Intro-Reihen an
-   der H1 bleibt an der Startseite (html.k-intro-start, oben) */
-html.k-bewegung.k-intro-sig [data-motion="sig-kreuzlinie"] .kreuzlinie-lot,
-html.k-bewegung.k-intro-sig [data-motion="sig-kreuzlinie"] .kreuzlinie-waage,
-html.k-bewegung.k-intro-sig [data-motion="sig-kreuzlinie"] .plan-achse,
-html.k-bewegung.k-intro-sig [data-motion="sig-flucht"] > :first-child {
-  animation-delay: calc(var(--intro-gesamt) * 0.5);
-}
-html.k-bewegung.k-intro-sig:not(.k-notaus) [data-motion="sig-kreuzlinie"] [data-flucht="laden"] .plan-achse-lot {
-  animation-delay: calc(var(--intro-gesamt) * 0.5);
-}
-html.k-bewegung.k-intro-sig [data-motion="sig-kreuzlinie"] .kreuzlinie-nach-waage {
-  animation-delay: calc(var(--intro-gesamt) * 0.5 + var(--dauer-5));
-}
-html.k-bewegung.k-intro-sig [data-motion="sig-flucht"] > :nth-child(2) {
-  animation-delay: calc(var(--intro-gesamt) * 0.5 + var(--staffel) * 2);
-}
-html.k-bewegung.k-intro-sig [data-motion="sig-flucht"] > :nth-child(3) {
-  animation-delay: calc(var(--intro-gesamt) * 0.5 + var(--staffel) * 4);
-}
-html.k-bewegung.k-intro-sig [data-motion="sig-flucht"] > :nth-child(4) {
-  animation-delay: calc(var(--intro-gesamt) * 0.5 + var(--staffel) * 6);
-}
-html.k-bewegung.k-intro-sig:not(.k-notaus) [data-motion="sig-kreuzlinie"] [data-motion="sig-plan"][data-flucht="laden"] .plan-reihenteil {
-  animation-delay: calc(var(--intro-gesamt) * 0.5 + var(--dauer-2));
-}
-
 /* Zurück und Vor (html.k-verlauf aus B-01, E3-START-04): Waage, Lote, Flucht der H1 und der Plan beim Laden stehen im
    Endzustand wie die Scrollstellung, statt nach dem Abziehen der Fliesen noch einmal zu wachsen (E2-SICHT-2 Befund 12).
    !important wie bei Druck und forced-colors: die Laufregeln oben sind teils spezifischer (:not(.k-notaus)). */
@@ -1496,9 +1324,10 @@ html.k-bewegung [data-motion="sig-flucht"] > :nth-child(4) {
    Bewegungsschalter „ruhig“ (KERN v4, UM-E3-MOD, E-080): html[data-bewegung="ruhig"] aus dem Kopfskript gilt wie
    prefers-reduced-motion: reduce. Alles, was an html.k-bewegung hängt (Startzustände, Karussell, große Momente, der ruhige
    Weg von B-01), ist schon ruhig, weil das Kopfskript die Klasse dann nicht setzt. Hier stehen die Spiegel der Regeln, die
-   nur an der Medienabfrage hängen: Übergangsregel aus globals.css, Leitachse, Fugenband, Druck, View Transitions und
-   Intro B-02. Neue Regeln unter (prefers-reduced-motion: no-preference) ohne html.k-bewegung brauchen hier einen Spiegel
-   (test/bewegungsschalter.test.mjs prüft das).
+   nur an der Medienabfrage hängen: Übergangsregel aus globals.css, Leitachse, Fugenband, Druck und View Transitions. Der
+   Eingang (E-067-4) hängt ganz an html.k-bewegung und braucht keinen Spiegel; den Spiegel des Intros B-02 gibt es mit dem
+   Intro nicht mehr. Neue Regeln unter (prefers-reduced-motion: no-preference) ohne html.k-bewegung brauchen hier einen
+   Spiegel (test/bewegungsschalter.test.mjs prüft das).
    ========================================================================== */
 html[data-bewegung="ruhig"] {
   scroll-behavior: auto;
@@ -1521,11 +1350,4 @@ html[data-bewegung="ruhig"]::view-transition-group(*),
 html[data-bewegung="ruhig"]::view-transition-old(*),
 html[data-bewegung="ruhig"]::view-transition-new(*) {
   animation: none !important;
-}
-/* Intro wie bei reduzierter Bewegung: keine Schicht, das Kopf-Logo blendet ein */
-html[data-bewegung="ruhig"].k-intro .intro {
-  display: none !important;
-}
-html[data-bewegung="ruhig"].k-intro header [data-erstes-bild="logo"] {
-  animation: intro-einblenden var(--dauer-2) var(--ease-setzen) both;
 }

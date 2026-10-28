@@ -329,7 +329,7 @@ const browser = await chromium.launch({ args: ['--font-render-hinting=none'], ex
 const bedingungen = {
   geraet: GERAET, viewport: { width: ANSICHTEN[GERAET].width, height: ANSICHTEN[GERAET].height }, mobil_mit_touch: true, dpr: 1,
   cpu_drosselung: DROSSELUNG, ereignis_schwelle_ms: EREIGNIS_SCHWELLE_MS, schwelle_ms: SCHWELLE_MS, laeufe,
-  einwilligung: 'abgelehnt', intro: 'gesehen (Speicher tezgel-intro gesetzt)', hydriert: 'Element mit __reactProps$ vorhanden',
+  einwilligung: 'abgelehnt', intro: 'gesehen (Speicher tezgel-intro und tezgel-eingang gesetzt)', hydriert: 'Element mit __reactProps$ vorhanden',
   eingabe: 'antippen (tap, Touch-Emulation); Eingabefeld: 5 Zeichen „Hallo“, kein Absenden',
   messung: 'größter duration-Wert der Ereignisse mit interactionId > 0 im Zeitfenster der Handlung; Median je Handlung über die Läufe; Seitenwert = höchster Median',
   handlungen: HANDLUNGEN, commit, arbeitsbaum, server_stand: serverStand(base), chromium: browser.version(), basisadresse: base,

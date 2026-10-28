@@ -33,8 +33,8 @@ export const AUSLOESER = {
   einzugsband: 'seite', fugenband: 'scroll', leitachse: 'scroll', verband: 'wahl',
   anriss: 'scroll', auftritt: 'scroll', aufklappen: 'klick', druck: 'aktiv', zustand: 'hover+fokus',
   notiert: 'erfolg', laden: 'absenden', seitenwechsel: 'navigation',
-  // E-037: das Startbild legt sich beim Eintritt frei (Sicht 0,4), beim Durchscrollen auslösen
-  startbild: 'scroll',
+  // Eingang ohne Vorhang (UM-E3-EIN, E-067-4): läuft beim Laden; startbild und intro sind nur noch Alias von eingang
+  eingang: 'seite', zeilenmaske: 'seite', startbild: 'seite',
   // große Momente (E3-ORCH-02a): Szenen beim Durchscrollen (Sicht 0,4 oder scroll-gebunden), Regler und Auswahl folgen der Eingabe
   schichten: 'scroll', weg: 'scroll', 'gefaelle-dusche': 'scroll', 'gefaelle-balkon': 'scroll', karte: 'scroll',
   formatregler: 'regler', 'vorher-nachher': 'regler', 'galerie-filter': 'auswahl',

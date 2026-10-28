@@ -3,7 +3,11 @@
 // Startseite, kein zweiter Strang daneben: Brotkrumen, H1, Ort, Hauptknopf, Anruf (WhatsApp erst ab lg, darunter trägt die
 // untere Leiste ihn), dann der Vorspann (nach den Knöpfen, damit sie auch bei großer Systemschrift im ersten Bildschirm
 // stehen); darunter das Einstiegsbild vollständig als einziges preload der Seite (bzw. der Schlitz, z. B. das Einzugsband
-// der Ortsseite). Die Pflichtelemente des ersten Bildschirms tragen data-erstes-bild (Logo im Kopf). Serverkomponente.
+// der Ortsseite). Die Pflichtelemente des ersten Bildschirms tragen data-erstes-bild (Logo im Kopf).
+// Eingang ohne Vorhang (E-067-4, bewegung.css „eingang“), nicht in Arbeitsansichten (kompakt: kein Signaturmoment, K-007):
+// Der Abschnitt ist der Behälter (data-motion="eingang"). Die H1 hat keine festen Zeilen und steigt als ein Block hinter
+// ihrer Maske auf (data-motion="zeilenmaske"), Ort und Knopfzeile setzen sich, über die Oberkante eines Fotos zieht ein
+// Fugenriss. Das Bild selbst bewegt sich nie. Serverkomponente.
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
@@ -40,8 +44,9 @@ export interface EinstiegProps {
 export default function Einstieg({ pfad, brotkrumen, titel, ort, vorspann, bild, unterBild, hauptziel = '/kontakt', kompakt = false }: EinstiegProps) {
   const { contact } = COMPANY_DATA;
   const titelId = 'seite-titel';
+  const foto = typeof bild === 'string';
   return (
-    <section aria-labelledby={titelId} data-formel="worum" className="@container relative">
+    <section aria-labelledby={titelId} data-formel="worum" data-motion={kompakt ? undefined : 'eingang'} className="@container relative">
       {/* oben Platz für den festen Kopf (h-16); bei großer Systemschrift am Handy (unter 16 rem Breite) steht die H1 eine Stufe
           kleiner, damit der Hauptknopf über der unteren Leiste steht (E3-SICHT, E-061) */}
       <div className={clsx(seitenKlassen, 'flex flex-col items-center pt-24 text-center lg:pt-32', kompakt ? 'pb-12 lg:pb-16' : 'pb-16 lg:pb-24')}>
@@ -50,6 +55,7 @@ export default function Einstieg({ pfad, brotkrumen, titel, ort, vorspann, bild,
           id={titelId}
           tabIndex={-1}
           data-erstes-bild="ueberschrift"
+          data-motion={kompakt ? undefined : 'zeilenmaske'}
           className={clsx(!kompakt && titel.length > LANGER_TITEL ? 'text-fs-5' : 'text-fs-6', 'max-w-mass text-balance text-tinte outline-none @max-3xs:text-fs-5')}
         >
           {titel}
@@ -57,7 +63,7 @@ export default function Einstieg({ pfad, brotkrumen, titel, ort, vorspann, bild,
         <p data-erstes-bild="ort" className="mt-6 max-w-mass font-text text-fs-4 text-balance text-tinte-2">
           {ort}
         </p>
-        <div className="mt-8 flex w-full flex-col items-center gap-3 sm:flex-row sm:flex-wrap sm:justify-center">
+        <div data-eingang="knoepfe" className="mt-8 flex w-full flex-col items-center gap-3 sm:flex-row sm:flex-wrap sm:justify-center">
           <Hauptknopf href={hauptziel} erstesBild breit />
           <a href={`tel:${contact.phoneLink}`} data-erstes-bild="kontakt" data-motion="druck" className={knopfKlassen('neben', 'w-full px-4 sm:w-auto @max-3xs:flex-col @max-3xs:gap-1')}>
             <Icon name="telefon" groesse={5} className="shrink-0" />
@@ -82,9 +88,10 @@ export default function Einstieg({ pfad, brotkrumen, titel, ort, vorspann, bild,
       </div>
       {bild && !kompakt && (
         <div className={clsx(seitenKlassen, 'pb-16 lg:pb-24')}>
-          {/* vollständig, mittig; am Desktop so groß, dass es wirkt, ohne die Seite zu sprengen (wie auf der Startseite) */}
-          <div className="mx-auto w-full max-w-md lg:w-1/2 lg:max-w-full">
-            {typeof bild === 'string' ? <Bildfeld arbeit={bild as ArbeitId} lcp sizes="(min-width: 1024px) 50vw, (min-width: 640px) 28rem, 100vw" /> : bild}
+          {/* vollständig, mittig; am Desktop so groß, dass es wirkt, ohne die Seite zu sprengen (wie auf der Startseite).
+              Fugenriss im Eingang nur über einem Foto (Kennung; relative als Halt), nicht über Karte oder Plan im Bildplatz */}
+          <div data-eingang={foto ? 'bild' : undefined} className={clsx(foto && 'relative', 'mx-auto w-full max-w-md lg:w-1/2 lg:max-w-full')}>
+            {foto ? <Bildfeld arbeit={bild as ArbeitId} lcp sizes="(min-width: 1024px) 50vw, (min-width: 640px) 28rem, 100vw" /> : bild}
             {unterBild}
           </div>
         </div>

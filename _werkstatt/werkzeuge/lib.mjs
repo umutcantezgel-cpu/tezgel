@@ -113,15 +113,17 @@ export const ATTRAPPE_ANFRAGE = {
  * Anfragesperre nach G5.
  * - Fremd-Hosts: immer abgefangen (204), protokolliert.
  * - Lokal: GET/HEAD durch; POST /api/anfrage → Attrappe (außer option echteRoute); alle anderen schreibenden → abgebrochen.
- * - Intro B-02 (E-018): Prüfläufe sind standardmäßig wiederkehrende Besuche (Speicher `tezgel-intro` gesetzt, wie bei
- *   jedem Menschen nach dem ersten Besuch), damit Bilder, Funktionen und Texte den Seitenstand zeigen. Erstbesuch mit Intro:
- *   option intro: 'erstbesuch' (Probeläufe, Intro-Prüfungen); Lighthouse nutzt ohnehin ein frisches Profil.
+ * - Eingang (E-018, ab UM-E3-EIN E-067-4): Prüfläufe sind standardmäßig wiederkehrende Besuche, damit Bilder, Funktionen
+ *   und Texte den Seitenstand zeigen: `sessionStorage tezgel-eingang` (Eingang ohne Vorhang, Wiederkehr kurz) und für Stände
+ *   vor UM-E3-EIN `localStorage tezgel-intro` (Intro B-02 übersprungen). Erstbesuch mit vollem Eingang: option intro:
+ *   'erstbesuch' (Probeläufe, Eingangsprüfungen); Lighthouse nutzt ohnehin ein frisches Profil.
  *   Die Seite selbst erkennt keine Prüfwerkzeuge (G7); gesetzt wird nur der Zustand, den der Browser nach einem Besuch hat.
  */
 export async function installSperre(context, { protokoll = [], echteRoute = false, intro = 'gesehen' } = {}) {
   if (intro === 'gesehen') {
     await context.addInitScript(() => {
       try { localStorage.setItem('tezgel-intro', '1'); } catch {}
+      try { sessionStorage.setItem('tezgel-eingang', '1'); } catch {}
     });
   }
   await context.route('**/*', async (route) => {

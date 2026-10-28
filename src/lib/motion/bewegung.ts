@@ -5,6 +5,7 @@
 import { beobachteteKennungen, ladeKennungen, schwelleFuer } from './register';
 import { BEWEGUNG_ATTRIBUT, meldeWechsel, speichereWahl, systemRuhig, zeigerGrob, type Bewegungswahl } from './schalter';
 import { naechstesBild } from './takt';
+import { KLASSE_EINGANG, KLASSE_WIEDERKEHR } from '@/lib/intro/ablauf';
 
 const beobachtet = new WeakSet<Element>();
 const beobachter = new Map<number, IntersectionObserver>();
@@ -83,7 +84,7 @@ export function waehleBewegung(wahl: Bewegungswahl): void {
   speichereWahl(wahl);
   if (wahl === 'ruhig') {
     html.setAttribute(BEWEGUNG_ATTRIBUT, 'ruhig');
-    html.classList.remove('k-bewegung', 'k-startbild', 'k-intro', 'k-intro-sig', 'k-intro-start');
+    html.classList.remove('k-bewegung', KLASSE_EINGANG, KLASSE_WIEDERKEHR);
   } else {
     html.removeAttribute(BEWEGUNG_ATTRIBUT);
     if (!systemRuhig()) {

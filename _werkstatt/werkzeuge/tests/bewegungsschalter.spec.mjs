@@ -1,18 +1,10 @@
 // Funktionstest Bewegungsschalter (UM-E3-MOD, E-080): „Bewegung: an | ruhig“ im Fuß und im Menü. Prüft Zustand und Wirkung
-// (Attribut und Startklasse am Dokument, Speicher je Gerät, Sperre bei reduzierter Bewegung), nicht Aussehen. Das Intro
-// (B-02, erster Besuch) ist vorab als gesehen vermerkt, damit es nichts verdeckt.
+// (Attribut und Startklasse am Dokument, Speicher je Gerät, Sperre bei reduzierter Bewegung), nicht Aussehen. Der Eingang
+// ist wie bei jedem Prüflauf als Wiederkehr vermerkt (lib.mjs installSperre).
 import { test, expect } from './fixtures.mjs';
 
 const gruppe = (bereich) => bereich.getByRole('group', { name: 'Bewegung', exact: true });
 const knopf = (bereich, name) => gruppe(bereich).getByRole('button', { name, exact: true });
-
-test.beforeEach(async ({ context }) => {
-  await context.addInitScript(() => {
-    try {
-      window.localStorage.setItem('tezgel-intro', '1');
-    } catch {}
-  });
-});
 
 test.describe('Bewegungsschalter ohne Wunsch nach reduzierter Bewegung', () => {
   test.use({ reducedMotion: 'no-preference' });

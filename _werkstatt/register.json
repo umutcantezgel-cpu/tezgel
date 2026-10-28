@@ -1,8 +1,10 @@
 {
-  "quelle": "KERN v3.6 K-007, K-016 (25.10.2026, E-047: Ruhe, Karussell; große Momente E3-ORCH-02a), Maschinenfassung wie src/lib/motion/register.ts",
+  "quelle": "KERN v4.2 K-007, K-008 (28.10.2026, E-067-4: Eingang ohne Vorhang, UM-E3-EIN; davor v3.6 K-016, E-047: Ruhe, Karussell; große Momente E3-ORCH-02a), Maschinenfassung wie src/lib/motion/register.ts",
   "kennungen": [
     "verlegen",
     "seitenwechsel",
+    "eingang",
+    "zeilenmaske",
     "intro",
     "startbild",
     "verband",
@@ -60,8 +62,16 @@
     "galerie-filter",
     "karussell"
   ],
+  "v4": [
+    "eingang",
+    "zeilenmaske"
+  ],
+  "aliase": {
+    "intro": "eingang",
+    "startbild": "eingang"
+  },
   "entfallen_e009": [],
-  "hinweis": "`kennungen` = alles, was registriert ist (bewegung.mjs prüft dagegen). Seit E-037 (Entscheidung des Auftraggebers) sind die SVG-Bewegungen aus v2 fester Teil des Systems und der Plan-Morph (seitenwechsel) ist zurück; startbild löst seit E-037 über Sichtbarkeit aus (0,4). Die großen Momente stehen seit E3-ORCH-02a im Register (Bauvorgaben je Moment in _werkstatt/register/<kennung>.json).",
+  "hinweis": "`kennungen` = alles, was registriert ist (bewegung.mjs prüft dagegen). Seit E-037 (Entscheidung des Auftraggebers) sind die SVG-Bewegungen aus v2 fester Teil des Systems und der Plan-Morph (seitenwechsel) ist zurück; startbild löste von E-037 bis E-067-4 über Sichtbarkeit aus (0,4). Die großen Momente stehen seit E3-ORCH-02a im Register (Bauvorgaben je Moment in _werkstatt/register/<kennung>.json). Seit E-067-4 (UM-E3-EIN) gibt es keinen Vorhang mehr: eingang (Logo-Aufbau im Kopf, Ort und Knopfzeile, Fugenriss am Foto) und zeilenmaske (Zeilen der H1) laufen als CSS ab dem ersten Bild; intro (B-02) und startbild (Belag) sind Aliase von eingang, ohne eigene Bewegung und ohne Beobachter.",
   "entfernt": [],
   "zurueck": [
     {

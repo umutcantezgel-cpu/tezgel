@@ -1,116 +1,30 @@
-// Ersatz-Intro „Der erste Boden“ (B-02, E-018): Ablauf als Anteile von --intro-gesamt, reine Logik ohne DOM.
-// Auf einem Kalkblatt mit Fugenraster legt sich in der Mitte eine kleine Fläche im Drittelverband (Logik von B-01), darauf
-// erscheint das Logo; dann gleitet es an den Platz des Kopf-Logos, während das Blatt Reihe für Reihe nach links abzieht.
-// Alle Zeiten sind Anteile der Gesamtdauer, damit das Token allein den Takt bestimmt (K-005).
-import {
-  ANTEIL_LEGEN,
-  ANTEIL_ZIEHEN,
-  belegeFlaeche,
-  versatzStufe,
-  zeitplan,
-  type Mass,
-  type Verband,
-} from '@/lib/verlegen/raster';
+// Eingang ohne Vorhang (E-067-4, KERN K-007 „An der Schnur“, UM-E3-EIN): ersetzt das Intro B-02 „Der erste Boden“
+// (Kalkblatt) und den Belag des Startbilds. Nichts deckt den ersten Bildschirm ab; das Foto (LCP) ist ab dem ersten Bild
+// sichtbar. Der Ablauf ist reines CSS ab dem ersten Bild (bewegung.css, Abschnitt „eingang“, Takt nur aus Tokens); das
+// Kopfskript (lib/motion/kopfskript.ts) setzt nur Klassen an html und nimmt sie bei jeder Eingabe und spätestens an der
+// Grenze wieder weg. Hier stehen die Namen und Grenzen, die Kopfskript, CSS und Tests teilen. Reine Werte ohne DOM.
 
-/** Speicher für „schon gesehen“ (localStorage, ein Eintrag je Browser) */
-export const SPEICHER_INTRO = 'tezgel-intro';
+/** Merker „Eingang in diesem Besuch schon gesehen“ (sessionStorage, gilt je Tab-Sitzung). */
+export const SPEICHER_EINGANG = 'tezgel-eingang';
+/** v3-Name (Intro B-02, damals localStorage `tezgel-intro`): seit E-067-4 derselbe Merker, bleibt für ältere Verweise. */
+export const SPEICHER_INTRO = SPEICHER_EINGANG;
+
+/** Zeitlimit in ms ab dem Kopfskript: danach gilt sofort der Endzustand (E-067-4). */
+export const EINGANG_GRENZE = 2000;
+/** Obergrenze des ganzen Ablaufs in ms (Logo, Zeilen, Ort, Knopfzeile, Fugenriss; K-007). test/intro.test.mjs rechnet den
+ *  Takt aus bewegung.css und globals.css dagegen. */
+export const EINGANG_HOECHSTENS = 1500;
+
+/** Klassen an html: der Eingang läuft (nur zusammen mit k-bewegung) · Wiederkehr im selben Besuch (nur Zeilenmasken). */
+export const KLASSE_EINGANG = 'k-eingang';
+export const KLASSE_WIEDERKEHR = 'k-wiederkehr';
+
+/** Eingaben, die den Eingang sofort beenden (Lauscher passiv, once, capture). */
+export const EINGANG_ABBRUCH = ['pointerdown', 'keydown', 'wheel', 'touchstart', 'scroll'] as const;
 
 /** Logo-Datei (UNANTASTBAR, dieselbe wie im Kopf). */
-export const INTRO_LOGO_DATEI = '/images/logo/tezgel-logo.webp';
-/** Das Logo auf der Fläche über den Bildoptimierer in 640 px (wie das Kopf-Logo, AVIF etwa 9,5 KB statt 19,5 KB als WebP):
- *  Form und Proportion bleiben, die frühe Anfrage konkurriert weniger mit dem Startbild (E-034). Feste Adresse, damit das
- *  Kopfskript beim ersten Besuch genau die Datei holt, die das Bild danach aus dem Speicher nimmt. 640 und 75 sind in Next
- *  Standard (deviceSizes, qualities). */
-export const INTRO_LOGO = `/_next/image?url=${encodeURIComponent(INTRO_LOGO_DATEI)}&w=640&q=75`;
-
-/** Obergrenze des Intros in ms ab dem Kopfskript (KERN K-007: Ziel 1.600 ms über --intro-gesamt, Grenze 2.200 ms). */
-export const INTRO_GRENZE = 2200;
-
-/** Die Fläche: drei Fliesen breit, drei Reihen hoch. */
-export const SPALTEN = 3;
-export const REIHEN = 3;
-/** Reihen des Blatts über und unter der Fläche: decken bis 1.440 px Höhe auch bei der kleinsten Fliese (96 px). */
-export const REIHEN_AUSSEN = 14;
-
-/** Phasen: Beginn und Länge als Anteile der Gesamtdauer (1.600 ms: legen 80–624 ms, Logo 448–752 ms, deckend bis 800 ms). */
-export const PHASEN = {
-  legen: { beginn: 0.05, anteil: 0.34 },
-  logo: { beginn: 0.28, anteil: 0.19 },
-  gleiten: { beginn: 0.5, anteil: 0.375 },
-  ziehen: { beginn: 0.5, anteil: 0.44 },
-} as const;
-
-/** Rechenmaß der Fliesenlänge, durch 3 teilbar, damit jeder Versatz ganzzahlig bleibt; ausgegeben wird in Fliesenlängen. */
-const RECHENMASS = 6;
-
-export interface Phase {
-  beginn: number;
-  dauer: number;
-}
-
-export interface IntroFliese extends Phase {
-  /** linke Kante ab der linken Flächenkante, in Fliesenlängen (negativ: ragt links über) */
-  links: number;
-  reihe: number;
-  /** Stapelreihenfolge: früher gelegt liegt oben (wie B-01) */
-  ebene: number;
-}
-
-export interface IntroReihe extends Phase {
-  /** Reihe ab der ersten Flächenreihe (negativ: darüber) */
-  k: number;
-  /** Versatz der Fugen nach links, in Fliesenlängen */
-  versatz: number;
-}
-
-export interface IntroAblauf {
-  fliesen: IntroFliese[];
-  reihen: IntroReihe[];
-  logo: Phase;
-  gleiten: Phase;
-  /** Ende der deckenden Phase: ab hier wird die Seite sichtbar */
-  decken: number;
-}
-
-export function introAblauf(verband: Verband = 'drittel'): IntroAblauf {
-  const mass: Mass = { laenge: RECHENMASS, hoehe: RECHENMASS / 2, fuge: 0 };
-  const breite = SPALTEN * RECHENMASS;
-  const roh = belegeFlaeche(breite, REIHEN * mass.hoehe, mass, verband);
-  const takte = zeitplan(roh, mass, breite, 1, 'vor', verband);
-  const legen = PHASEN.legen.anteil / ANTEIL_LEGEN;
-  const ziehen = PHASEN.ziehen.anteil / ANTEIL_ZIEHEN;
-
-  const fliesen = roh.map((f, i) => ({
-    links: f.x / RECHENMASS,
-    reihe: f.reihe,
-    beginn: PHASEN.legen.beginn + takte[i].legenBeginn * legen,
-    dauer: takte[i].legenDauer * legen,
-    ebene: takte[i].ebene,
-  }));
-
-  // Weiterziehen wie B-01: jede Reihe starr, Einsatz nach ihrer Versatzstufe; die Stufen stammen aus den Flächenreihen.
-  const nachStufe = new Map<number, Phase>();
-  roh.forEach((f, i) => {
-    const s = versatzStufe(f.reihe, verband);
-    if (!nachStufe.has(s)) {
-      nachStufe.set(s, {
-        beginn: PHASEN.ziehen.beginn + takte[i].ziehenBeginn * ziehen,
-        dauer: takte[i].ziehenDauer * ziehen,
-      });
-    }
-  });
-  const stufen = verband === 'halb' ? 2 : 3;
-  const reihen: IntroReihe[] = [];
-  for (let k = -REIHEN_AUSSEN; k < REIHEN + REIHEN_AUSSEN; k++) {
-    const s = versatzStufe(k, verband);
-    reihen.push({ k, versatz: s / stufen, ...(nachStufe.get(s) as Phase) });
-  }
-
-  return {
-    fliesen,
-    reihen,
-    logo: { beginn: PHASEN.logo.beginn, dauer: PHASEN.logo.anteil },
-    gleiten: { beginn: PHASEN.gleiten.beginn, dauer: PHASEN.gleiten.anteil },
-    decken: Math.min(...reihen.map((r) => r.beginn)),
-  };
-}
+const LOGO_DATEI = '/images/logo/tezgel-logo.webp';
+/** Das Logo über den Bildoptimierer in 640 px, feste Adresse (640 und 75 sind in Next Standard). B-01 legt es auf die Wand
+ *  (Verlegen.tsx, eingefroren nach E-078, lädt es selbst im Leerlauf); bis E-067-4 holte das Kopfskript dieselbe Adresse
+ *  für das Intro vorab. Name und Wert bleiben, weil B-01 sie von hier liest. */
+export const INTRO_LOGO = `/_next/image?url=${encodeURIComponent(LOGO_DATEI)}&w=640&q=75`;
