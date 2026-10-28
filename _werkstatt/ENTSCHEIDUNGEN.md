@@ -1195,3 +1195,55 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - Einzelbilder des Seitenwechsels B-01,
   - Bilder des Cursors am Desktop.
 
+
+## E-087 · UM-E3-FIX (Nacharbeit nach Tor E3 Anlauf 1) angewandt und in Stufe A abgenommen (28.10.2026, 23:55 MEZ)
+- **Ablauf:**
+  - Workflow wf_3d01964e-e48: je Teil ein Baumeister in der Arbeitskopie `$SCRATCH/fix/baum`, zwei unabhängige Prüfer (Gestaltung, Zugänglichkeit und Leitplanken) und eine Nacharbeit.
+  - Das vierte Limit (20:30 UTC) brach Teil B ab. Der Lauf wurde mit `resumeFromRunId` fortgesetzt; Teil A kam aus dem Zwischenspeicher.
+  - Insgesamt 8 Agenten, 1,19 Mio. Tokens. Teil A hatte 9 Prüferbefunde, Teil B 11; alle bestätigten Befunde sind bis auf die drei unten genannten behoben.
+  - Angewandt mit `patch -p1`: A = c6dc40fd (19 Dateien), B = 904eb1f1 (12 Dateien).
+  - Notizen der Baumeister in `belege/um-e3-fix/notiz-teil-a.md` und `notiz-teil-b.md`.
+- **Umgesetzt:**
+  - F1: H1 auf `/` ab lg in fs-7 (d1440 92 px statt 56 px). Das Foto nimmt ab lg zwei Drittel der Spalte ein und steht ganz in einem Bildschirm. Unter der H1 liegt eine rote 1-px-Schnur; an ihrem linken Ende beginnt das Lot, das in den Leitfaden übergeht.
+  - F2: Der Eingang zieht zuerst die Schnur, dann steigen die Zeilen auf ihr auf; Dauer 1,40 s.
+  - F3: Die Leitachse steht mobil 4 px vom Rand. Kreuze stehen nur auf Trennlinien, die doppelte Marke an der Kilometerskala ist aufgelöst.
+  - F4: Galerie im Drittelverband; Kundenstimmen auf `/` als eine große Stimme je Schritt.
+  - F5: Bereichsfliesen mobil als Zeilen mit Plan-Vignette (rund 500 statt 1200 px).
+  - F6: Fuß ab lg als Schriftfeld, darunter der Seitenindex in vier Themenspalten. Die Gruppen klappen auf schmalen oder flachen Bildschirmen zu.
+  - F7: Rufnummern bleiben einzeilig.
+  - F8: Die Grundschrift wächst ab 1440 px bis höchstens 125 %.
+  - F9: Einsatzorte in der Lesefolge 10, 25, mehr als 25 km.
+  - F10: Ein Link „Alle Bewertungen bei Google lesen“ unter gekürzten Stimmen.
+- **Entscheidungen des Orchestrators zu den offenen Fragen:**
+  - Die Schnur bleibt 1 px (K-009). Der Bildsatz der Sicht ist ab jetzt verlustfrei: `bildsatz.mjs --png` (2dd6db84). JPEG q70 färbte die Schnur braun.
+  - Die Schnur liegt unter der letzten Zeile der H1; eine Linie zwischen den Zeilen würde die H1 zerteilen.
+  - Die Vorlage EinstiegMitte wirkt auf allen acht Seiten mit mittigem Einstieg. Das ist gewollt; fs-7 erhalten nur `/` und `/balkon-terrasse`.
+  - **Grundschrift bis 125 %:** bleibt. Auf d2560 dämpft sie den Browser-Zoom: Bei 200 % Zoom wächst der Fließtext um den Faktor 1,59 statt 2. WCAG 1.4.4 bleibt erfüllt (200 % Text bei etwa 300 % Zoom). Ein Umbau, bei dem nur Satzspiegel und große Stufen wachsen, berührt alle rem-Tokens; das wird nach der Sicht entschieden.
+  - **Folge der Fußspalten:** Bad mit Balkon und Terrasse | Böden und Wände | Wissen | Hilfen mit Über uns. Sie weicht von der Folge der Navigation ab. Bewusst so gewählt: Nur damit sind die Spalten ohne Leerfeld ausgeglichen, und das Leerfeld war Befund F6.
+  - Kein natives `details` im Fuß: `::details-content` fehlt in älterem Safari. FussGruppe klappt schon zu und lässt ohne JavaScript alles offen.
+  - **Ziel des Google-Links:** die Bewertungsübersicht der Suche, dieselbe Adresse wie die Plakette (`RATING_SUMMARY.google.url`). Eine Place-ID liegt nicht vor. Deshalb heißt der Link ehrlich „Alle Bewertungen …“ und steht einmal je Seite.
+- **G8:**
+  - Wortlaut der Stimmen, Bewertungszahlen, Firmenangaben, Rechtstexte, Einwilligung und alle 79 Fußlinks sind unverändert.
+  - Beleg ist der Abgleich vorher/nachher auf `/`, `/bad`, `/ueber-uns`, `/impressum` und `/datenschutz` (`belege/um-e3-fix/g8-abgleich.json`): Fußtext, Fußlinks und Zitate gleich, keine Zahl weg oder neu.
+- **Stufe A** (Prüfkette `belege/um-e3-fix/pruefkette.txt`, vorher 1d101816 auf 4324, nachher 904eb1f1 auf 4325):
+  - Repo: `npm test` 248/248, Typprüfung 0, eslint 0, `werte.mjs` über 25 Dateien 0.
+  - Reinraum grün.
+  - Funktionssuite in beiden Zuständen grün: 398 bestanden, 0 rot, 26 übersprungen.
+  - Cursor-Probe wie in E-084.
+  - Ruhig und reduziert ohne Bewegungsbefund. Register ohne unbekannte Kennung.
+  - Bildrate auf `/`: 0,34 % verworfen, 1 LoAF mit 69 ms.
+  - Pixel: 48 von 48 Paaren weichen ab, bewusst: neuer Fuß auf allen Seiten, Grundschrift ab 1440 px, Einstieg der Vorlage, Leitachse.
+  - Lighthouse mobil, Median in wechselnder Reihenfolge:
+
+| Seite | LCP vorher | LCP nachher | Leistung vorher | Leistung nachher |
+|---|---|---|---|---|
+| `/` | 2,91 s | 2,71 s | 94 | 94 bis 95 |
+| `/bad` | 3,06 bis 3,07 s | 3,00 bis 3,06 s | 92 bis 93 | 92 bis 93 |
+
+  - CLS 0 auf beiden Seiten.
+- **axe `--zustaende`: 2 ernste Knoten (target-size), ein Messartefakt und vorbestehend:**
+  - Die Meldung betrifft einen Fußlink auf `/referenzen` bei t768, normal und erstbesuch. Verdeckt wird er von Galeriebildern.
+  - Grund: Die lange Galerie steht in `spaet-zeichnen` (`content-visibility: auto`, Platzhalter 50rem). Ohne Scrollen misst axe die Galerie über dem Fuß. Übersprungene Inhalte werden weder gezeichnet noch getroffen.
+  - Gegenprobe: ohne Scrollen auch bei 1d101816 eine Meldung, nach dem Durchscrollen 0 in beiden Ständen; der Fuß rückt dann von 7632 auf 12386.
+  - Folge: Die Platzhalterhöhe für lange Abschnitte kommt in UM-E4-LEISTUNG. Das Werkzeug bleibt unverändert (G7).
+- **Weiter:** Bildsatz für Sicht Anlauf 2 (PNG; Bewegung an und reduziert, Erstbesuch, B-01, Cursor) unter `$SCRATCH/fix/sicht2`, dann UM-E3-SICHT Anlauf 2.

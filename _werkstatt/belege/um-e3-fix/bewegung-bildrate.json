@@ -1,0 +1,129 @@
+{
+ "modus": "bildrate",
+ "seite": "/",
+ "base": "http://127.0.0.1:4325",
+ "ansicht": "m390",
+ "zeitpunkt": "2026-10-28T22:33:44.018Z",
+ "dpr": 2,
+ "cpu_drosselung": 4,
+ "gesten": {
+  "befehl": "Input.synthesizeScrollGesture",
+  "gestureSourceType": "default",
+  "geschwindigkeit_px_s": 800,
+  "folge": "oben→unten, dann unten→oben"
+ },
+ "wiederholungen": 3,
+ "bilder_gesamt": 1474,
+ "verworfen": 5,
+ "anteil_verworfen_prozent": 0.34,
+ "anteile_je_lauf": [
+  0.61,
+  0.2,
+  0.34
+ ],
+ "anteile_pipeline_je_lauf": [
+  0.46,
+  0.07,
+  0.27
+ ],
+ "loaf_anzahl": 1,
+ "loaf_summe_ms": 69,
+ "hinweis": "Median je Feld, nicht aus derselben Zeile (bilder_gesamt, verworfen, loaf_*). Kopfwert anteil_verworfen_prozent = Median der Anteile je Lauf (anteile_je_lauf).",
+ "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+ "laeufe": [
+  {
+   "bilder_gesamt": 1475,
+   "verworfen": 9,
+   "anteil_verworfen_prozent": 0.61,
+   "loaf_anzahl": 5,
+   "loaf_summe_ms": 416,
+   "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+   "zusatz": {
+    "frame_ereignisse": {
+     "praesentiert": 1466,
+     "verworfen": 9,
+     "anteil_prozent": 0.61
+    },
+    "pipeline_reporter": {
+     "praesentiert": 1507,
+     "verworfen": 7,
+     "anteil_prozent": 0.46
+    }
+   },
+   "scroll": {
+    "hoehe": 12422,
+    "nach_abwaerts": 9750,
+    "nach_aufwaerts": 0
+   },
+   "trace_vollstaendig": true,
+   "dauer_s": 41
+  },
+  {
+   "bilder_gesamt": 1469,
+   "verworfen": 3,
+   "anteil_verworfen_prozent": 0.2,
+   "loaf_anzahl": 0,
+   "loaf_summe_ms": 0,
+   "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+   "zusatz": {
+    "frame_ereignisse": {
+     "praesentiert": 1466,
+     "verworfen": 3,
+     "anteil_prozent": 0.2
+    },
+    "pipeline_reporter": {
+     "praesentiert": 1501,
+     "verworfen": 1,
+     "anteil_prozent": 0.07
+    }
+   },
+   "scroll": {
+    "hoehe": 9750,
+    "nach_abwaerts": 9750,
+    "nach_aufwaerts": 0
+   },
+   "trace_vollstaendig": true,
+   "dauer_s": 31.6
+  },
+  {
+   "bilder_gesamt": 1474,
+   "verworfen": 5,
+   "anteil_verworfen_prozent": 0.34,
+   "loaf_anzahl": 1,
+   "loaf_summe_ms": 69,
+   "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+   "zusatz": {
+    "frame_ereignisse": {
+     "praesentiert": 1469,
+     "verworfen": 5,
+     "anteil_prozent": 0.34
+    },
+    "pipeline_reporter": {
+     "praesentiert": 1503,
+     "verworfen": 4,
+     "anteil_prozent": 0.27
+    }
+   },
+   "scroll": {
+    "hoehe": 9780,
+    "nach_abwaerts": 9780,
+    "nach_aufwaerts": 0
+   },
+   "trace_vollstaendig": true,
+   "dauer_s": 32.2
+  }
+ ],
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "rohtrace": "nicht gespeichert (nur Kennzahlen)",
+ "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix/pruef/bildrate",
+ "basisadresse": "http://127.0.0.1:4325",
+ "server_stand": {
+  "port": "4325",
+  "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/reinraum-904eb1f1",
+  "commit": "904eb1f1"
+ }
+}
