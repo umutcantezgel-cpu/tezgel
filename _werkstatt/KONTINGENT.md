@@ -76,3 +76,4 @@ Uhrzeit · Fenster Verbrauch, Soll, Ziel · Woche Verbrauch, Spielraum · belegt
   - Ein Kalibrierpunkt entsteht nicht, weil weder ein Limit noch ein Messwert vorliegt. Die Schätzung gilt bis zur nächsten Kalibrierung nur als obere Schranke.
   - Folge nach L6 („Planungsziel 60, bis ein Fenster ohne Limit endet“): Das Planungsziel steigt wieder auf 85.
   - Plätze: 1 Workflow UM-E3-W3 (CURSOR fertig mit Prüfung und Nacharbeit, SCROLL läuft).
+- 2026-10-28 13:43 MEZ · Schätzung nicht erhoben (nur obere Schranke, E-083-Lage unverändert) · Plätze 1 Workflow UM-E3-W3 (2 von 4 Paketen fertig, 8 Agenten) · Planungsziel 85

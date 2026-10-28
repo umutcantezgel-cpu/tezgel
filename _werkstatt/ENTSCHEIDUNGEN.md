@@ -1067,7 +1067,7 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - Fokusbilder: `glasbild-fokus-d1440.png`, `leiste-fokus-*-m390.png`.
 - **Offen für die Sichtprüfung (Stufe B):** Reicht beim Überfahren der Menüpunkte die Unterstreichung? Ist die gedrückte Farbe der hellen Leistenfelder (`fuge`) von den Trennlinien zu unterscheiden?
 
-## E-083 · Live-Schaltung des geprüften Stands auf Anweisung des Auftraggebers (28.10.2026, 12:45 MEZ)
+## E-083 · Live-Schaltung des geprüften Stands auf Anweisung des Auftraggebers (28.10.2026, 13:15 MEZ)
 - **Wortlaut des Auftraggebers:** „kannst du den aktuellen stand schonml vollständig live schalten“. Den Push hatte die Rechteprüfung der Sitzung zunächst abgelehnt („Production Deploy“); danach kam die Freigabe: „ich erlaub dir“.
 - **Ausgeführt:**
   - `main` von 55e99f3f auf 2317dcde vorgespult, ohne Force-Push.

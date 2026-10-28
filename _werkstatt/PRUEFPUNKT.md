@@ -1,6 +1,6 @@
 # PRUEFPUNKT
 
-- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · **Etappe E3, Welle E3-W1** · Stand 2026-10-28 12:47 MEZ · **live: main = 2317dcde (E-083)** · **laufend: Workflow UM-E3-W3** wf_e7c87e03-3cf (CURSOR fertig: `$SCRATCH/w3/UM-E3-CURSOR.diff`; SCROLL, LEIT, REG folgen; fällt er aus, mit resumeFromRunId fortsetzen), danach Diffs je Paket anwenden und committen, eine Prüfkette; dann E3-LEISTUNG, E3-B, E3-SICHT, Tor E3 · Planungsziel 85
+- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · **Etappe E3, Welle E3-W1** · Stand 2026-10-28 13:43 MEZ · **live: main = 2317dcde (E-083)** · **laufend: Workflow UM-E3-W3** wf_e7c87e03-3cf (CURSOR und SCROLL fertig: `$SCRATCH/w3/UM-E3-CURSOR.diff`, `UM-E3-SCROLL.diff`; LEIT läuft, REG folgt; fällt er aus, mit resumeFromRunId fortsetzen), danach Diffs je Paket anwenden und committen, eine Prüfkette; dann E3-LEISTUNG, E3-B, E3-SICHT, Tor E3 · Planungsziel 85
 - E2 abgeschlossen nach zwei Anläufen (E-076, Berichte `berichte/UM-E2-B.md`, `UM-E2-B2.md`):
   - Z-02, Z-03, Z-06, Z-07, Z-09 und Z-11 auf Etappenstufe erfüllt.
   - Offener Punkt Z-10: TBT mobil → UM-E3-TBT.
