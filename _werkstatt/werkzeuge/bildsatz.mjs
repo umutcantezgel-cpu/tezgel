@@ -1,12 +1,13 @@
 // Prüfstufe A · Bildsatz: festes Aufnahmeprotokoll für Seiten × Geräte (Standard: alle 10 GERAETE_ALLE, --geraete alle|liste), für vorher und nachher gleich.
 // Protokoll: Einwilligung abgelehnt, reducedMotion reduce (mit --ersatzpfad: no-preference), DPR 1, Dev-Overlay ausgeblendet;
 // erst durchscrollen und bereit, dann Ausschnitte an den festen Positionen k × Viewporthöhe, k = 0 … min(12, ceil(Seitenhöhe/vh)) − 1, JPEG q70.
+// --png: verlustfrei als PNG statt JPEG q70 (feine Linien wie die 1-px-Schnur behalten ihre Farbe; UM-E3-FIX, E-087).
 // Je Seite × Ansicht: Status, Konsolenfehler, ueberlauf() und ueberlappung().
 // Nutzung: node bildsatz.mjs --satz NAME (--hauptansichten | --seiten /a,/b) [--geraete alle|liste] [--base URL] [--ziel DIR] [--worker 2] [--ersatzpfad (normale Bewegung, Animationen abwarten)]
 // --ersatzpfad: Darstellung ohne Scroll-Animationen und View Transitions (Safari < 26, Firefox) per Emulation, mit normaler
 //   Bewegung (reducedMotion no-preference). Nach dem Durchscrollen wartet der Lauf, bis keine Animation mehr läuft (höchstens 5 s);
 //   die Restzahl laufender Animationen steht je Ansicht in bildsatz.json (ergebnisse[].animationen) und in der Zusammenfassung.
-// Ziel (Standard _werkstatt/cache/bildsatz/<satz>/): <ansicht>/<slug>/NN.jpg sowie bildsatz.json.
+// Ziel (Standard _werkstatt/cache/bildsatz/<satz>/): <ansicht>/<slug>/NN.jpg (mit --png NN.png) sowie bildsatz.json.
 // --hauptansichten liest _werkstatt/HAUPTANSICHTEN.json. Zusammenfassung auf stdout.
 // Exit 1, wenn eine Aufnahme scheitert oder eine Seite nicht 200 liefert.
 // Voraussetzung: PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers (wie bei den übrigen Werkzeugen).
@@ -20,7 +21,7 @@ const arg = (k, d) => { const i = process.argv.indexOf(`--${k}`); return i > -1 
 const flag = (k) => process.argv.includes(`--${k}`);
 const MAX_AUSSCHNITTE = 12;
 const EINWILLIGUNG = 'abgelehnt';
-const NUTZUNG = 'Nutzung: node bildsatz.mjs --satz NAME (--hauptansichten | --seiten /a,/b) [--geraete alle|liste] [--base URL] [--ziel DIR] [--worker 2] [--ersatzpfad (normale Bewegung, Animationen abwarten)]';
+const NUTZUNG = 'Nutzung: node bildsatz.mjs --satz NAME (--hauptansichten | --seiten /a,/b) [--geraete alle|liste] [--base URL] [--ziel DIR] [--worker 2] [--ersatzpfad (normale Bewegung, Animationen abwarten)] [--png]';
 const ZEITLIMIT_ANIMATIONEN_MS = 5000; // --ersatzpfad: höchstens so lange auf das Ende laufender Animationen warten
 
 const base = arg('base', BASE);
@@ -34,6 +35,7 @@ if (!satz || !seiten || !seiten.length) { console.error(NUTZUNG); process.exit(2
 for (const s of seiten) if (!s.startsWith('/')) { console.error(`Seite muss mit / beginnen: ${s}`); process.exit(2); }
 const ziel = ensureDir(arg('ziel') ? path.resolve(arg('ziel')) : path.join(RELAUNCH, 'cache', 'bildsatz', satz));
 const worker = Number(arg('worker', '2'));
+const PNG = flag('png'); // verlustfreie Aufnahmen statt JPEG q70
 const ERSATZPFAD = flag('ersatzpfad'); // ohne animation-timeline/View Transitions (lib.mjs installErsatzpfad)
 const geraete = geraeteWahl(arg('geraete', 'alle'));
 if (!geraete) { console.error(`${NUTZUNG}\n--geraete: alle oder Kommaliste aus ${GERAETE_ALLE.join(', ')}`); process.exit(2); }
@@ -87,8 +89,8 @@ async function bearbeite(browser, a, s) {
     for (let k = 0; k < n; k++) {
       const yWirksam = await page.evaluate((y) => { window.scrollTo({ top: y, behavior: 'instant' }); return window.scrollY; }, k * vh);
       await rahmenAbwarten(page);
-      const datei = path.join(dir, `${String(k).padStart(2, '0')}.jpg`);
-      await page.screenshot({ path: datei, type: 'jpeg', quality: 70 });
+      const datei = path.join(dir, `${String(k).padStart(2, '0')}.${PNG ? 'png' : 'jpg'}`);
+      await page.screenshot(PNG ? { path: datei, type: 'png' } : { path: datei, type: 'jpeg', quality: 70 });
       r.aufnahmen.push({ nr: k, y: k * vh, y_wirksam: yWirksam, datei: path.relative(ziel, datei) });
     }
   } catch (e) {
