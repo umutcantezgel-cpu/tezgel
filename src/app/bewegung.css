@@ -1321,6 +1321,124 @@ html.k-bewegung [data-motion="sig-flucht"] > :nth-child(4) {
 }
 
 /* ==========================================================================
+   cursor (K-007 Cursor-Charakter „Fugenkreuz“, K-008 Regeln v4, E-067-1; UM-E3-CURSOR). Der Systemzeiger bleibt der
+   Klickpunkt. Neben ihm steht über Fotos mit Weg, Reglern und Plänen ein kleines Schild: das Fugenkreuz des Formsystems
+   (wie kern/Fugenkreuz.tsx, 12 Einheiten, Arme 2) und eine Beschriftung. Register der sechs Zustände und ihrer Orte in
+   src/lib/motion/cursor.ts.
+   - Lage: Das Modul setzt translate aus dem gemeinsamen Takt, ohne Feder und ohne Nachlauf.
+   - Ebene 50, also über Inhalt, Banner und Menü und unter dem Seitenwechsel B-01 (60). pointer-events: none, aria-hidden.
+   - Nur das Modul legt das Schild an, nur bei feinem Zeiger. Ohne JavaScript, mit Finger oder Stift gibt es keins.
+   - Übergänge nur unter html.k-bewegung ohne Notaus: Einblenden dauer-1 · setzen, Druck und Drehung des Kreuzes
+     dauer-1 · setzen, „lädt“ dreht das Kreuz langsam (Vierteldrehung je dauer-5, linear; wegen der Symmetrie ohne Sprung).
+     Reduziert und „ruhig“ wechseln die Zustände sofort und das Kreuz steht; die Beschriftung bleibt. Ausblenden immer
+     sofort (Ausgang eine Stufe kürzer). transition-property: none an allen Teilen des Schilds (die Eigenschaft erbt
+     nicht) hält die Übergangsregel der ruhigen Fassung (0,01 ms) vom Schild fern. Die Drehung von „lädt“ läuft nur bei
+     sichtbarem Schild; ausgeblendet ruht der Compositor.
+   - Zustände ändern nur opacity, translate, rotate und scale, nie eine Layout-Eigenschaft (keine Layout-Verschiebung).
+   - Druck und erzwungene Farben: kein Schild.
+   ========================================================================== */
+.k-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0;
+  transition-property: none;
+  contain: layout style;
+}
+.k-cursor *,
+.k-cursor *::before,
+.k-cursor *::after {
+  transition-property: none;
+}
+.k-cursor[data-cursor-stand="an"] {
+  opacity: 1;
+}
+/* Schild rechts unter dem Zeiger, neben Pfeil und Hand. Der Abstand ist Innenabstand der Marke, rundum gleich: So misst
+   das Modul ihn mit und legt das Schild am Fensterrand auf die andere Seite (data-cursor-kante x und y). Der Wechsel
+   verschiebt die Marke um ihre eigene Größe (translate); Lage und Innenabstand im Layout bleiben, auch wenn sich die
+   Beschriftung ändert. */
+.k-cursor-marke {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: max-content;
+  padding: calc(var(--spacing) * 4);
+}
+.k-cursor[data-cursor-kante~="x"] .k-cursor-marke {
+  translate: -100% 0;
+}
+.k-cursor[data-cursor-kante~="y"] .k-cursor-marke {
+  translate: 0 -100%;
+}
+.k-cursor[data-cursor-kante~="x"][data-cursor-kante~="y"] .k-cursor-marke {
+  translate: -100% -100%;
+}
+/* Tinte mit Kalk: 17 : 1; der Rand in Kalk trennt das Schild auch von dunklen Fotos. Keine Mischmodi. */
+.k-cursor-schild {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  padding: var(--spacing) calc(var(--spacing) * 2);
+  background-color: var(--color-tinte);
+  color: var(--color-kalk);
+  outline: 1px solid var(--color-kalk);
+  font-family: var(--font-text);
+  font-size: var(--text-fs-1);
+  line-height: var(--text-fs-1--line-height);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.k-cursor-text:empty {
+  display: none;
+}
+.k-cursor-kreuz {
+  position: relative;
+  flex: none;
+  width: calc(var(--spacing) * 3);
+  height: calc(var(--spacing) * 3);
+}
+.k-cursor-kreuz::before,
+.k-cursor-kreuz::after {
+  content: "";
+  position: absolute;
+  background-color: currentColor;
+}
+.k-cursor-kreuz::before {
+  inset: 0 calc(50% - var(--spacing) / 4);
+}
+.k-cursor-kreuz::after {
+  inset: calc(50% - var(--spacing) / 4) 0;
+}
+/* nicht verfügbar: Das Kreuz steht schräg (×). gedrückt: Das Kreuz zieht sich zusammen. */
+.k-cursor[data-cursor-zustand="gesperrt"] .k-cursor-kreuz {
+  rotate: 45deg;
+}
+.k-cursor[data-cursor-gedrueckt] .k-cursor-kreuz {
+  scale: 0.75;
+}
+html.k-bewegung:not(.k-notaus) .k-cursor[data-cursor-stand="an"] {
+  transition: opacity var(--dauer-1) var(--ease-setzen);
+}
+html.k-bewegung:not(.k-notaus) .k-cursor-kreuz {
+  transition: rotate var(--dauer-1) var(--ease-setzen), scale var(--dauer-1) var(--ease-setzen);
+}
+html.k-bewegung:not(.k-notaus) .k-cursor[data-cursor-stand="an"][data-cursor-zustand="laedt"] .k-cursor-kreuz {
+  animation: cursor-laedt var(--dauer-5) linear infinite;
+}
+@keyframes cursor-laedt {
+  to {
+    rotate: 90deg;
+  }
+}
+@media print, (forced-colors: active) {
+  .k-cursor {
+    display: none;
+  }
+}
+
+/* ==========================================================================
    Bewegungsschalter „ruhig“ (KERN v4, UM-E3-MOD, E-080): html[data-bewegung="ruhig"] aus dem Kopfskript gilt wie
    prefers-reduced-motion: reduce. Alles, was an html.k-bewegung hängt (Startzustände, Karussell, große Momente, der ruhige
    Weg von B-01), ist schon ruhig, weil das Kopfskript die Klasse dann nicht setzt. Hier stehen die Spiegel der Regeln, die
