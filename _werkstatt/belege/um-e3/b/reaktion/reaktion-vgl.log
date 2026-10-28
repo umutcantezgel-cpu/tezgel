@@ -1,0 +1,10 @@
+=== SCHNELLANFRAGE 4x 18:18:12
+  ✓  96 [desktop] › tests/funktion-schnellanfrage.spec.mjs:129:5 › LeadQuickForm (/standorte/wetzlar) · Sonderfälle › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren) (2.9s)
+
+  96 passed (1.7m)
+=== REAKTION wechselnd 18:19:54
+a 4321 /                                152       160         —        88       112       160  ok
+b 4324 /                                184       216         —        96        88       216  über 200 ms
+c 4324 /                                192       184         —       112       120       192  ok
+d 4321 /                                152       208         —        96       120       208  über 200 ms
+=== ENDE 18:21:40
