@@ -1,6 +1,6 @@
 # PRUEFPUNKT
 
-- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · **Etappe E3, Welle E3-W1** · Stand 2026-10-28 10:25 MEZ · UM-E3-MOD (E-080), UM-E3-EIN (E-081) und UM-E3-ZUST (E-082) erledigt · **Tempomat-Pause bis 10:53 UTC**, danach nächstes Paket nach PLAN 2.2: UM-E3-CURSOR (Muster: Bau in Arbeitskopie als Workflow mit Prüfern, Diff an den Orchestrator, Stufe A als Skript)
+- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · **Etappe E3, Welle E3-W1** · Stand 2026-10-28 11:38 MEZ · Auftraggeber: „finalisiere alles“ = alle Pakete bis zur Endabnahme · **nächster Schritt: Workflow UM-E3-W3** (CURSOR, SCROLL, LEIT, REG nacheinander in `$SCRATCH/w3/baum`, je Baumeister, zwei Prüfer, Nacharbeit; Briefing `pakete/UM-E3-W3.md`), danach Diffs je Paket anwenden und committen, eine Prüfkette; dann E3-LEISTUNG, E3-B, E3-SICHT, Tor E3
 - E2 abgeschlossen nach zwei Anläufen (E-076, Berichte `berichte/UM-E2-B.md`, `UM-E2-B2.md`):
   - Z-02, Z-03, Z-06, Z-07, Z-09 und Z-11 auf Etappenstufe erfüllt.
   - Offener Punkt Z-10: TBT mobil → UM-E3-TBT.
