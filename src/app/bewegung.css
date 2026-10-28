@@ -4,6 +4,10 @@
    prefers-reduced-motion: no-preference) und nie nach html.k-notaus.
    Animiert werden nur transform/translate/scale und opacity, im Eingang (E-067-4)
    dazu clip-path als Maske.
+   Register v4 (UM-E3-REG): Zweck, Stufen, ruhige Fassung und Notaus je Kennung
+   stehen in src/lib/motion/register.ts (REGISTER_V4). test/bewegung.test.mjs
+   vergleicht die Staffelstufen dieser Datei mit dem Register: Eine Regel mit
+   var(--staffel) braucht ein data-motion im Selektor und den Wert im Register.
    ========================================================================== */
 
 /* auftritt – Abschnitt rückt 8 px in die Flucht (IO 20 %) */
@@ -156,8 +160,12 @@ html.k-bewegung:not(.k-notaus) [data-motion="anriss"]:not([data-motion-stand="an
   }
 }
 
-/* fugenband (K-007, /ueber-uns, E3-ORCH-05) – Lot an den Jahren der Firmengeschichte; das rote Stück wächst linear mit
-   dem Scrollen durch das Band (view-timeline). Ohne Unterstützung oder reduziert: fertig gezogen. */
+/* fugenband (K-007, E3-ORCH-05) – Lot an den Jahren der Firmengeschichte; das rote Stück wächst linear mit dem Scrollen
+   durch das Band (view-timeline). Ohne Unterstützung oder reduziert: fertig gezogen.
+   Entscheidung UM-E3-REG: zurzeit ohne Ort. Auf /ueber-uns läuft der Leitfaden (leitachse mit Abschnittsmarke) schon neben
+   der Firmengeschichte, ein zweites rotes Lot im selben Bildschirm bräche „Eine Linie führt“ (K-003 Nr. 5). Kein Element
+   trägt .fugenband oder .fugenband-rot; die Zeitleiste in CompanyHistory nutzt nur die ruhige Fuge .fugenband-linie (Strich).
+   Die Regeln bleiben bereit und werden nur nach Rückfrage entfernt (E-037); Register: REGISTER_V4.fugenband.ohneOrt. */
 .fugenband-linie {
   pointer-events: none;
   position: absolute;
@@ -1222,8 +1230,10 @@ html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"] .einzugsband-zone:nth
 
 /* karte (K-007, /ueber-uns und /kontakt seit E-062; E3-GRAF-09) – Einsatzkarte: beim Eintritt (Sicht 0,4, data-motion-stand vom
    Bewegungsmodul) legen sich die Ringe um Aßlar von innen nach außen an ihren Platz (scale 0,6 → 1 mit Deckkraft, dauer-3 ·
-   setzen; 25 km fünf Staffelstufen nach 10 km); die Punkte jeder Zone erscheinen mit ihrem Ring (Deckkraft dauer-2), die
-   Orte über 25 km zuletzt; gesamt 1,1 s. Aßlar, Achsen, Raster und alle Beschriftungen stehen ab dem ersten Bild.
+   setzen; 25 km drei Staffelstufen nach 10 km); die Punkte jeder Zone erscheinen mit ihrem Ring (Deckkraft dauer-2, nah
+   bei Stufe 2, mittel bei 5), die Orte über 25 km zuletzt bei 7; gesamt 0,78 s. Staffel höchstens acht Takte, Stufen 0 bis
+   7 (K-008 Regeln v4; UM-E3-REG, vorher Stufen bis 13 und 1,1 s). Aßlar, Achsen, Raster und alle Beschriftungen stehen ab
+   dem ersten Bild.
    Startzustände nur unter html.k-bewegung ohne Notaus; reduziert, ohne JS, nach dem Notaus, im Druck und in erzwungenen
    Farben steht die Karte fertig. Nur scale und opacity, Übergänge statt Keyframes (wie auftritt). */
 .karte-ring {
@@ -1237,16 +1247,16 @@ html.k-bewegung [data-motion="karte"] .karte-orte {
   transition: opacity var(--dauer-2) var(--ease-setzen);
 }
 html.k-bewegung [data-motion="karte"] .karte-orte[data-zone="nah"] {
-  transition-delay: calc(var(--staffel) * 4);
+  transition-delay: calc(var(--staffel) * 2);
 }
 html.k-bewegung [data-motion="karte"] .karte-ring[data-zone="mittel"] {
-  transition-delay: calc(var(--staffel) * 5);
+  transition-delay: calc(var(--staffel) * 3);
 }
 html.k-bewegung [data-motion="karte"] .karte-orte[data-zone="mittel"] {
-  transition-delay: calc(var(--staffel) * 9);
+  transition-delay: calc(var(--staffel) * 5);
 }
 html.k-bewegung [data-motion="karte"] .karte-orte[data-zone="weit"] {
-  transition-delay: calc(var(--staffel) * 13);
+  transition-delay: calc(var(--staffel) * 7);
 }
 html.k-bewegung:not(.k-notaus) [data-motion="karte"]:not([data-motion-stand="an"]) .karte-ring {
   opacity: 0;

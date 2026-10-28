@@ -1,5 +1,5 @@
 {
-  "quelle": "KERN v4.2 K-007, K-008 (28.10.2026, E-067-4: Eingang ohne Vorhang, UM-E3-EIN; davor v3.6 K-016, E-047: Ruhe, Karussell; große Momente E3-ORCH-02a), Maschinenfassung wie src/lib/motion/register.ts",
+  "quelle": "KERN v4.3 K-007, K-008 und Regeln v4 (28.10.2026, UM-E3-REG: Register v4 mit Zweck, Stufen, ruhiger Fassung, Notaus und Cursor-Zuständen; davor E-067-4 Eingang ohne Vorhang, UM-E3-EIN; v3.6 K-016, E-047; große Momente E3-ORCH-02a), Maschinenfassung wie src/lib/motion/register.ts (REGISTER und REGISTER_V4)",
   "kennungen": [
     "verlegen",
     "seitenwechsel",
@@ -30,7 +30,8 @@
     "vorher-nachher",
     "karte",
     "galerie-filter",
-    "karussell"
+    "karussell",
+    "cursor"
   ],
   "v3": [
     "verlegen",
@@ -64,14 +65,15 @@
   ],
   "v4": [
     "eingang",
-    "zeilenmaske"
+    "zeilenmaske",
+    "cursor"
   ],
   "aliase": {
     "intro": "eingang",
     "startbild": "eingang"
   },
   "entfallen_e009": [],
-  "hinweis": "`kennungen` = alles, was registriert ist (bewegung.mjs prüft dagegen). Seit E-037 (Entscheidung des Auftraggebers) sind die SVG-Bewegungen aus v2 fester Teil des Systems und der Plan-Morph (seitenwechsel) ist zurück; startbild löste von E-037 bis E-067-4 über Sichtbarkeit aus (0,4). Die großen Momente stehen seit E3-ORCH-02a im Register (Bauvorgaben je Moment in _werkstatt/register/<kennung>.json). Seit E-067-4 (UM-E3-EIN) gibt es keinen Vorhang mehr: eingang (Logo-Aufbau im Kopf, Ort und Knopfzeile, Fugenriss am Foto) und zeilenmaske (Zeilen der H1) laufen als CSS ab dem ersten Bild; intro (B-02) und startbild (Belag) sind Aliase von eingang, ohne eigene Bewegung und ohne Beobachter.",
+  "hinweis": "`kennungen` = alles, was registriert ist (bewegung.mjs prüft dagegen). Seit E-037 (Entscheidung des Auftraggebers) sind die SVG-Bewegungen aus v2 fester Teil des Systems und der Plan-Morph (seitenwechsel) ist zurück; startbild löste von E-037 bis E-067-4 über Sichtbarkeit aus (0,4). Die großen Momente stehen seit E3-ORCH-02a im Register (Bauvorgaben je Moment in _werkstatt/register/<kennung>.json). Seit E-067-4 (UM-E3-EIN) gibt es keinen Vorhang mehr: eingang (Logo-Aufbau im Kopf, Ort und Knopfzeile, Fugenriss am Foto) und zeilenmaske (Zeilen der H1) laufen als CSS ab dem ersten Bild; intro (B-02) und startbild (Belag) sind Aliase von eingang, ohne eigene Bewegung und ohne Beobachter. Seit UM-E3-CURSOR gibt es cursor (Schild neben dem Systemzeiger, nur feiner Zeiger, steuert sich selbst). Seit UM-E3-REG führt register_v4 je Kennung Zweck, Stufen (Dauer- und Kurven-Tokens, letzte Staffelstufe), die ruhige Fassung, das Notaus und die sechs Cursor-Zustände; test/bewegung.test.mjs hält beides gleich mit register.ts.",
   "entfernt": [],
   "zurueck": [
     {
@@ -79,5 +81,678 @@
       "paket": "E2-ORCH-09",
       "grund": "Entscheidung des Auftraggebers (E-037); Zusammenleben mit B-01 über data-uebergang"
     }
-  ]
+  ],
+  "register_v4": {
+    "regeln": {
+      "zwecke": [
+        "orientierung",
+        "rueckmeldung",
+        "zusammenhang",
+        "hierarchie",
+        "charakter"
+      ],
+      "dauer_tokens": [
+        "--dauer-0",
+        "--dauer-1",
+        "--dauer-2",
+        "--dauer-3",
+        "--dauer-4",
+        "--dauer-5",
+        "--verlegen-gesamt",
+        "--verlegen-gesamt-folge",
+        "--verlegen-ruhig",
+        "--band-durchlauf"
+      ],
+      "dauer_ohne_zeit": {
+        "scroll": "am Scrollweg, linear",
+        "eingabe": "folgt dem Regler direkt"
+      },
+      "kurven": [
+        "--ease-setzen",
+        "--ease-laser",
+        "--ease-weg",
+        "--ease-aufsetzen",
+        "linear"
+      ],
+      "letzte_stufe_hoechstens": 7,
+      "reduziert_arten": [
+        "sofort",
+        "ueberblendung",
+        "gleich",
+        "grundform"
+      ],
+      "notaus_arten": [
+        "endzustand",
+        "laeuft",
+        "ruhig"
+      ],
+      "aliase": "intro und startbild haben keinen eigenen Eintrag; sie lösen auf eingang auf"
+    },
+    "eintraege": {
+      "verlegen": {
+        "zweck": "zusammenhang",
+        "was": "Seitenwechsel Fliese für Fliese mit dem Logo auf der Wand (B-01, eingefroren E-078)",
+        "stufen": {
+          "dauer": [
+            "--verlegen-gesamt",
+            "--verlegen-gesamt-folge",
+            "--verlegen-ruhig",
+            "--dauer-1",
+            "--dauer-5"
+          ],
+          "kurve": [
+            "--ease-aufsetzen",
+            "--ease-setzen",
+            "--ease-laser"
+          ]
+        },
+        "reduziert": {
+          "art": "ueberblendung",
+          "text": "Überblendung über eine Kalkfläche in --verlegen-ruhig, Logo nur eingeblendet"
+        },
+        "notaus": "ruhig"
+      },
+      "seitenwechsel": {
+        "zweck": "zusammenhang",
+        "was": "Plan-Morph: derselbe Verlegeplan gleitet von /leistungen in den Einstieg der Leistungsseite",
+        "stufen": {
+          "dauer": [
+            "--dauer-2",
+            "--dauer-4"
+          ],
+          "kurve": [
+            "--ease-setzen"
+          ]
+        },
+        "reduziert": {
+          "art": "ueberblendung",
+          "text": "kein Morph; B-01 übernimmt den Link mit seiner Überblendung"
+        },
+        "notaus": "ruhig"
+      },
+      "eingang": {
+        "zweck": "charakter",
+        "was": "Eingang ohne Vorhang: Logo baut sich im Kopf auf, Ort und Knopfzeile setzen sich, Fugenriss am Foto (E-067-4)",
+        "stufen": {
+          "dauer": [
+            "--dauer-1",
+            "--dauer-3",
+            "--dauer-4"
+          ],
+          "kurve": [
+            "--ease-setzen",
+            "linear"
+          ],
+          "letzteStufe": 8
+        },
+        "reduziert": {
+          "art": "sofort",
+          "text": "kein Eingang: alles steht ab dem ersten Bild, das Foto ist nie verdeckt"
+        },
+        "notaus": "endzustand"
+      },
+      "zeilenmaske": {
+        "zweck": "hierarchie",
+        "was": "Die Zeilen der H1 steigen hinter Zeilenmasken auf, eine nach der anderen („An der Schnur“)",
+        "stufen": {
+          "dauer": [
+            "--dauer-0",
+            "--dauer-1",
+            "--dauer-2",
+            "--dauer-3"
+          ],
+          "kurve": [
+            "--ease-setzen"
+          ],
+          "letzteStufe": 6
+        },
+        "reduziert": {
+          "art": "sofort",
+          "text": "die Zeilen stehen sofort"
+        },
+        "notaus": "endzustand"
+      },
+      "verband": {
+        "zweck": "rueckmeldung",
+        "was": "Das Verlegemuster wechselt mit der Auswahl; nie zwei Raster zugleich",
+        "stufen": {
+          "dauer": [
+            "--dauer-1",
+            "--dauer-3"
+          ],
+          "kurve": [
+            "--ease-weg",
+            "--ease-setzen"
+          ]
+        },
+        "reduziert": {
+          "art": "sofort",
+          "text": "das Muster wechselt sofort"
+        },
+        "notaus": "laeuft"
+      },
+      "leitachse": {
+        "zweck": "orientierung",
+        "was": "Leitfaden: das rote Lot wächst mit dem Lesen; auf den Erzählseiten der Vorlage steht die Spitze bei 40 % mit der Abschnittsmarke (UM-E3-LEIT); dazu der Lesefortschritt der Ratgeber",
+        "stufen": {
+          "dauer": [
+            "scroll"
+          ],
+          "kurve": [
+            "linear"
+          ]
+        },
+        "reduziert": {
+          "art": "grundform",
+          "text": "Grundschicht: das graue Lot steht vollständig, kein Rot gezogen, keine Marke; der Lesefortschritt ist ausgeblendet"
+        },
+        "notaus": "laeuft",
+        "hinweis": "Im Notaus läuft das Lot mit der Marke weiter: kein Startzustand, es verbirgt nichts und braucht kein Skript (UM-E3-LEIT, Entscheidung 5). Nur der Lesefortschritt steht im Notaus bei 0."
+      },
+      "anriss": {
+        "zweck": "hierarchie",
+        "was": "Das Schlüsselwort einer Stimme wird von Hand unterstrichen",
+        "stufen": {
+          "dauer": [
+            "--dauer-4"
+          ],
+          "kurve": [
+            "--ease-setzen"
+          ]
+        },
+        "reduziert": {
+          "art": "sofort",
+          "text": "der Strich steht sofort"
+        },
+        "notaus": "endzustand"
+      },
+      "auftritt": {
+        "zweck": "hierarchie",
+        "was": "Setzen: ein Abschnitt kommt 8 px eingerückt an seinen Platz",
+        "stufen": {
+          "dauer": [
+            "--dauer-3"
+          ],
+          "kurve": [
+            "--ease-setzen"
+          ]
+        },
+        "reduziert": {
+          "art": "sofort",
+          "text": "der Abschnitt steht sofort an seinem Platz"
+        },
+        "notaus": "endzustand"
+      },
+      "aufklappen": {
+        "zweck": "rueckmeldung",
+        "was": "Menü, Mega-Menü und Akkordeon öffnen und schließen; die Höhe über Rasterzeilen",
+        "stufen": {
+          "dauer": [
+            "--dauer-1",
+            "--dauer-2"
+          ],
+          "kurve": [
+            "--ease-setzen",
+            "--ease-weg"
+          ]
+        },
+        "reduziert": {
+          "art": "sofort",
+          "text": "öffnet und schließt sofort"
+        },
+        "notaus": "laeuft"
+      },
+      "druck": {
+        "zweck": "rueckmeldung",
+        "was": "Ein Knopf gibt beim Drücken 1 px nach",
+        "stufen": {
+          "dauer": [
+            "--dauer-1"
+          ],
+          "kurve": [
+            "--ease-setzen"
+          ]
+        },
+        "reduziert": {
+          "art": "sofort",
+          "text": "kein Nachgeben, Farben wechseln sofort"
+        },
+        "notaus": "laeuft"
+      },
+      "zustand": {
+        "zweck": "rueckmeldung",
+        "was": "Farbwechsel bei Hover und Fokus; auf Fotos mit Weg die Glasfläche mit Name und Weg (glasbild)",
+        "stufen": {
+          "dauer": [
+            "--dauer-1",
+            "--dauer-2"
+          ],
+          "kurve": [
+            "--ease-setzen"
+          ]
+        },
+        "reduziert": {
+          "art": "sofort",
+          "text": "Farben und Glasfläche wechseln sofort"
+        },
+        "notaus": "laeuft"
+      },
+      "notiert": {
+        "zweck": "rueckmeldung",
+        "was": "Der Erfolgshaken zeichnet sich",
+        "stufen": {
+          "dauer": [
+            "--dauer-3"
+          ],
+          "kurve": [
+            "--ease-setzen"
+          ]
+        },
+        "reduziert": {
+          "art": "sofort",
+          "text": "der Haken steht"
+        },
+        "notaus": "laeuft"
+      },
+      "laden": {
+        "zweck": "rueckmeldung",
+        "was": "Ladeanzeige: eine Fuge läuft, ab 300 ms und mindestens 500 ms (K-010)",
+        "stufen": {
+          "dauer": [
+            "--dauer-5"
+          ],
+          "kurve": [
+            "linear"
+          ]
+        },
+        "reduziert": {
+          "art": "grundform",
+          "text": "die Fuge steht, die Anzeige und ihr Text bleiben"
+        },
+        "notaus": "laeuft"
+      },
+      "sig-kreuzlinie": {
+        "zweck": "charakter",
+        "was": "Rote Waage und Lot wachsen aus dem Kreuzpunkt am Lot des Plans (Planblatt-Einstieg)",
+        "stufen": {
+          "dauer": [
+            "--dauer-2",
+            "--dauer-5"
+          ],
+          "kurve": [
+            "linear"
+          ]
+        },
+        "reduziert": {
+          "art": "sofort",
+          "text": "beide Linien voll"
+        },
+        "notaus": "laeuft"
+      },
+      "sig-flucht": {
+        "zweck": "hierarchie",
+        "was": "Die Zeilen der H1 rücken 12 px in die Flucht",
+        "stufen": {
+          "dauer": [
+            "--dauer-4"
+          ],
+          "kurve": [
+            "--ease-setzen"
+          ],
+          "letzteStufe": 6
+        },
+        "reduziert": {
+          "art": "sofort",
+          "text": "die Zeilen stehen in der Flucht"
+        },
+        "notaus": "laeuft"
+      },
+      "szene-ablauf": {
+        "zweck": "zusammenhang",
+        "was": "So läuft es ab: Raster, Belag, Prüfmarken und Abnahme setzen sich am Scrollweg",
+        "stufen": {
+          "dauer": [
+            "scroll"
+          ],
+          "kurve": [
+            "linear"
+          ]
+        },
+        "reduziert": {
+          "art": "sofort",
+          "text": "alle drei Zustände fertig"
+        },
+        "notaus": "endzustand"
+      },
+      "sig-plan": {
+        "zweck": "orientierung",
+        "was": "Das Fugenbild des Verlegeplans rückt in die Flucht",
+        "stufen": {
+          "dauer": [
+            "--dauer-2",
+            "--dauer-3",
+            "--dauer-4"
+          ],
+          "kurve": [
+            "--ease-setzen",
+            "--ease-laser"
+          ]
+        },
+        "reduziert": {
+          "art": "sofort",
+          "text": "das Raster steht in der Flucht"
+        },
+        "notaus": "endzustand"
+      },
+      "einzugsband": {
+        "zweck": "orientierung",
+        "was": "Die Kante jeder Einsatzzone zieht sich von links auf",
+        "stufen": {
+          "dauer": [
+            "--dauer-3"
+          ],
+          "kurve": [
+            "--ease-setzen"
+          ],
+          "letzteStufe": 10
+        },
+        "reduziert": {
+          "art": "sofort",
+          "text": "die Kanten stehen voll"
+        },
+        "notaus": "endzustand"
+      },
+      "fugenband": {
+        "zweck": "orientierung",
+        "was": "Rotes Lot an den Jahren der Firmengeschichte, wächst am Scrollweg",
+        "stufen": {
+          "dauer": [
+            "scroll"
+          ],
+          "kurve": [
+            "linear"
+          ]
+        },
+        "reduziert": {
+          "art": "sofort",
+          "text": "das Lot steht fertig gezogen"
+        },
+        "notaus": "laeuft",
+        "ohneOrt": "Entscheidung UM-E3-REG: nicht eingesetzt. Auf /ueber-uns läuft der Leitfaden mit Abschnittsmarke schon neben der Firmengeschichte; ein zweites rotes Lot im selben Bildschirm bräche „Eine Linie führt“ (K-003 Nr. 5). Die Zeitleiste bleibt eine ruhige Fuge in Strich. Das CSS bleibt bereit; entfernt wird es nur nach Rückfrage (E-037)."
+      },
+      "schichten": {
+        "zweck": "zusammenhang",
+        "was": "Was unter der Fliese steckt: je Satz setzt sich eine Schicht, die Zeichnung klebt",
+        "stufen": {
+          "dauer": [
+            "scroll"
+          ],
+          "kurve": [
+            "linear"
+          ]
+        },
+        "reduziert": {
+          "art": "sofort",
+          "text": "alle Schichten sichtbar, nichts klebt"
+        },
+        "notaus": "endzustand"
+      },
+      "weg": {
+        "zweck": "orientierung",
+        "was": "Vom Anruf bis zur letzten Fuge: die Laserlinie zieht von Station zu Station",
+        "stufen": {
+          "dauer": [
+            "scroll"
+          ],
+          "kurve": [
+            "linear"
+          ]
+        },
+        "reduziert": {
+          "art": "sofort",
+          "text": "Linie voll, alle Stationen gesetzt"
+        },
+        "notaus": "endzustand",
+        "ohneOrt": "E-048: für die Ruhe-Regeln zu unruhig; gebaut, nur im Schaufenster"
+      },
+      "gefaelle-dusche": {
+        "zweck": "zusammenhang",
+        "was": "Wasser läuft über das Gefälle zum Ablauf",
+        "stufen": {
+          "dauer": [
+            "--dauer-2",
+            "--dauer-5"
+          ],
+          "kurve": [
+            "linear",
+            "--ease-setzen"
+          ]
+        },
+        "reduziert": {
+          "art": "sofort",
+          "text": "die Pfeile stehen, kein Tropfen läuft"
+        },
+        "notaus": "endzustand"
+      },
+      "gefaelle-balkon": {
+        "zweck": "zusammenhang",
+        "was": "Regen läuft vom Balkon ab",
+        "stufen": {
+          "dauer": [
+            "--dauer-2",
+            "--dauer-5"
+          ],
+          "kurve": [
+            "linear"
+          ]
+        },
+        "reduziert": {
+          "art": "sofort",
+          "text": "der Tropfen liegt in der Rinne, die Pfeile stehen"
+        },
+        "notaus": "endzustand"
+      },
+      "formatregler": {
+        "zweck": "rueckmeldung",
+        "was": "Kleine gegen große Fliese auf derselben Wand; die Teilung folgt dem Regler",
+        "stufen": {
+          "dauer": [
+            "eingabe"
+          ],
+          "kurve": []
+        },
+        "reduziert": {
+          "art": "gleich",
+          "text": "folgt dem Regler direkt"
+        },
+        "notaus": "laeuft"
+      },
+      "vorher-nachher": {
+        "zweck": "rueckmeldung",
+        "was": "Vorher gegen Nachher; das Lot folgt dem Regler",
+        "stufen": {
+          "dauer": [
+            "eingabe"
+          ],
+          "kurve": []
+        },
+        "reduziert": {
+          "art": "gleich",
+          "text": "folgt dem Regler direkt"
+        },
+        "notaus": "laeuft"
+      },
+      "karte": {
+        "zweck": "orientierung",
+        "was": "Einsatzgebiet ab Aßlar: die Ringe legen sich von innen nach außen, die Punkte jeder Zone mit ihrem Ring",
+        "stufen": {
+          "dauer": [
+            "--dauer-2",
+            "--dauer-3"
+          ],
+          "kurve": [
+            "--ease-setzen"
+          ],
+          "letzteStufe": 7
+        },
+        "reduziert": {
+          "art": "sofort",
+          "text": "die Karte steht fertig"
+        },
+        "notaus": "endzustand",
+        "hinweis": "UM-E3-REG: Staffel von Stufe 13 auf 7 (Ring 25 km bei 3, Punkte nah 2, mittel 5, weit 7); gesamt 0,78 s statt 1,1 s."
+      },
+      "galerie-filter": {
+        "zweck": "rueckmeldung",
+        "was": "Nach der Auswahl blenden die Fotos in Lesefolge ein",
+        "stufen": {
+          "dauer": [
+            "--dauer-2"
+          ],
+          "kurve": [
+            "--ease-setzen"
+          ],
+          "letzteStufe": 7
+        },
+        "reduziert": {
+          "art": "sofort",
+          "text": "die Fotos wechseln sofort"
+        },
+        "notaus": "endzustand"
+      },
+      "karussell": {
+        "zweck": "orientierung",
+        "was": "Laufband und Reihe zeigen langsam, dass mehr folgt (Ruhe, K-016); die Reihe rückt alle 8 s eine Karte weiter",
+        "stufen": {
+          "dauer": [
+            "--band-durchlauf"
+          ],
+          "kurve": [
+            "linear"
+          ]
+        },
+        "reduziert": {
+          "art": "grundform",
+          "text": "das Band steht als umbrechende Liste, die Reihe bewegt sich nur von Hand"
+        },
+        "notaus": "endzustand"
+      },
+      "cursor": {
+        "zweck": "rueckmeldung",
+        "was": "Fugenkreuz mit Beschriftung neben dem Systemzeiger, nur bei feinem Zeiger; folgt ohne Feder und ohne Nachlauf",
+        "stufen": {
+          "dauer": [
+            "--dauer-1",
+            "--dauer-5"
+          ],
+          "kurve": [
+            "--ease-setzen",
+            "linear"
+          ]
+        },
+        "reduziert": {
+          "art": "sofort",
+          "text": "Schild ohne Übergänge an derselben Stelle (Nachlauf gibt es in keiner Fassung), die Beschriftung bleibt"
+        },
+        "notaus": "ruhig",
+        "hinweis": "Ausgeblendet bei Tastatur, beim Verlassen des Fensters und in erzwungenen Farben; der Textcursor bleibt nativ; keine Mischmodi.",
+        "zustaende": {
+          "handlung": {
+            "beschriftung": "",
+            "wo": "nur mit data-cursor=\"handlung\", Text aus data-cursor-text",
+            "zweck": "rueckmeldung",
+            "stufen": {
+              "dauer": [
+                "--dauer-1"
+              ],
+              "kurve": [
+                "--ease-setzen"
+              ]
+            },
+            "ruhig": "ohne Übergang an derselben Stelle, die Beschriftung bleibt"
+          },
+          "ansehen": {
+            "beschriftung": "Ansehen",
+            "wo": "Fotos mit Weg (Glasbild) und Pläne, die in die Flucht rücken",
+            "zweck": "rueckmeldung",
+            "stufen": {
+              "dauer": [
+                "--dauer-1"
+              ],
+              "kurve": [
+                "--ease-setzen"
+              ]
+            },
+            "ruhig": "ohne Übergang an derselben Stelle, die Beschriftung bleibt"
+          },
+          "ziehen": {
+            "beschriftung": "Ziehen",
+            "wo": "Formatregler",
+            "zweck": "rueckmeldung",
+            "stufen": {
+              "dauer": [
+                "--dauer-1"
+              ],
+              "kurve": [
+                "--ease-setzen"
+              ]
+            },
+            "ruhig": "ohne Übergang an derselben Stelle, die Beschriftung bleibt"
+          },
+          "vergleichen": {
+            "beschriftung": "Vergleichen",
+            "wo": "Vorher-nachher-Regler",
+            "zweck": "rueckmeldung",
+            "stufen": {
+              "dauer": [
+                "--dauer-1"
+              ],
+              "kurve": [
+                "--ease-setzen"
+              ]
+            },
+            "ruhig": "ohne Übergang an derselben Stelle, die Beschriftung bleibt"
+          },
+          "gesperrt": {
+            "beschriftung": "Nicht verfügbar",
+            "wo": "gesperrte Bedienelemente; das Kreuz steht schräg",
+            "zweck": "rueckmeldung",
+            "stufen": {
+              "dauer": [
+                "--dauer-1"
+              ],
+              "kurve": [
+                "--ease-setzen"
+              ]
+            },
+            "ruhig": "ohne Übergang an derselben Stelle, die Beschriftung bleibt"
+          },
+          "laedt": {
+            "beschriftung": "Lädt",
+            "wo": "Bedienelemente mit aria-busy, nach 300 ms und mindestens 500 ms; das Kreuz dreht sich langsam",
+            "zweck": "rueckmeldung",
+            "stufen": {
+              "dauer": [
+                "--dauer-1",
+                "--dauer-5"
+              ],
+              "kurve": [
+                "--ease-setzen",
+                "linear"
+              ]
+            },
+            "ruhig": "das Kreuz steht still, die Beschriftung bleibt"
+          }
+        }
+      }
+    }
+  },
+  "staffel_offen": {
+    "einzugsband": "letzte Stufe 10 (Zone 2 und 3 je fünf Stufen später, gesamt 1,2 s) über der Grenze 7; nicht in der PLAN-Zeile UM-E3-REG. Vorschlag: Stufen 0, 3, 6 (gesamt 0,96 s), zwei Zeilen in bewegung.css, Bildfolge /standorte/wetzlar",
+    "eingang": "letzte Stufe 8 (Knopfzeile bei dauer-1 + 8 Stufen) über der Grenze 7; abgenommen in E-081 (voll 1,40 s). Vorschlag: Knopfzeile bei Stufe 7, 60 ms früher, oder die Grenze für den Eingang als Signaturablauf (bis 1,5 s) eigens festhalten"
+  },
+  "entscheidungen": {
+    "fugenband": "Entscheidung UM-E3-REG: nicht eingesetzt. Auf /ueber-uns läuft der Leitfaden mit Abschnittsmarke schon neben der Firmengeschichte; ein zweites rotes Lot im selben Bildschirm bräche „Eine Linie führt“ (K-003 Nr. 5). Die Zeitleiste bleibt eine ruhige Fuge in Strich. Das CSS bleibt bereit; entfernt wird es nur nach Rückfrage (E-037).",
+    "staffel-karte": "UM-E3-REG: Staffel von Stufe 13 auf 7 (Ring 25 km bei 3, Punkte nah 2, mittel 5, weit 7); gesamt 0,78 s statt 1,1 s."
+  }
 }
