@@ -77,8 +77,12 @@ export default function MobileMenu({ isOpen, onToggle }) {
         };
     }, [onToggle]);
 
-    // Jede Navigation schließt das Blatt (auch Zurück/Vor).
+    // Jede Navigation schließt das Blatt (auch Zurück/Vor) – nur ein Wechsel der Adresse, nicht das erste Einhängen: Das Blatt
+    // öffnet nativ schon vor der Hydrierung, und ein Tipp kurz nach dem Laden ginge sonst sofort wieder zu (UM-E3-EIN, Stufe A).
+    const letzterPfad = useRef(pathname);
     useEffect(() => {
+        if (letzterPfad.current === pathname) return;
+        letzterPfad.current = pathname;
         const el = blattRef.current;
         if (istOffen(el)) el.hidePopover();
     }, [pathname]);
