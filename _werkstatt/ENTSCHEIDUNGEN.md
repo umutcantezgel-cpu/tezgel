@@ -1247,3 +1247,41 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - Gegenprobe: ohne Scrollen auch bei 1d101816 eine Meldung, nach dem Durchscrollen 0 in beiden Ständen; der Fuß rückt dann von 7632 auf 12386.
   - Folge: Die Platzhalterhöhe für lange Abschnitte kommt in UM-E4-LEISTUNG. Das Werkzeug bleibt unverändert (G7).
 - **Weiter:** Bildsatz für Sicht Anlauf 2 (PNG; Bewegung an und reduziert, Erstbesuch, B-01, Cursor) unter `$SCRATCH/fix/sicht2`, dann UM-E3-SICHT Anlauf 2.
+
+## E-088 · Tor E3, Anlauf 2: Sichtabnahme `/` nicht bestanden (7,3 und 7,5 statt ≥ 8,5), Nacharbeit UM-E3-FIX2 (29.10.2026, 00:15 MEZ)
+- **Sichtabnahme (Workflow wf_83666fef-b8b):** zwei unabhängige frische Opus-Prüfer, Rubrik AUFTRAG Abschnitt 13, an 904eb1f1.
+  - Bildsatz `$SCRATCH/fix/sicht2`, verlustfrei als PNG: Bewegung an in neun Größen, reduziert in zehn, Erstbesuch, B-01 in Bildern zu 200 ms, Cursor sowie Ausschnitte in DPR 2 und 3.
+  - Belege `belege/um-e3-fix/sicht-anlauf-2.json`.
+
+| Prüfer | Design | Bedienbarkeit | Kreativität | Inhalt | Ansichtswert |
+|---|---|---|---|---|---|
+| 1 | 7,1 | 7,8 | 7,0 | 7,6 | 7,3 |
+| 2 | 7,3 | 7,9 | 7,1 | 7,6 | 7,5 |
+
+- **Gegen Anlauf 1 (6,9 und 6,7)** um 0,4 bis 0,8 besser. Gewürdigt werden:
+  - Einstieg mit starker Schrift auf der Schnur, Eingang „An der Schnur“ am Desktop;
+  - B-01 „Fliese für Fliese“;
+  - Ablauf-Treppe, Entfernungslineal, Plan-Vignetten, Lagen in Ich-Sätzen;
+  - Farb- und Formdisziplin, vollständiger ruhiger Rückfall, der Zeiger.
+- **Gemeinsame Befunde:**
+  - Hoch:
+    - Der rote Kopf der Leitachse bleibt in weißen Abschnitten ohne Linie stehen.
+    - Doppelte Kreuze an Abschnittsgrenzen und am Ursprung der Entfernungsskala.
+  - Mittel:
+    - Die Achse liegt mobil 4 px vom Rand und wirkt wie ein Rahmen.
+    - Der Eingang mobil zeigt den Vorspann vor H1 und Knöpfen.
+    - Das Startfoto zeigt am Desktop im ersten Bildschirm nur die Decke; darunter liegen 200 px Leere.
+    - Drei gleich graue, mittige Abschnitte und vier gleiche Leistungskarten stehen in Folge (K-003).
+    - Die Karten mit Zeichnung sind auf dem Tablet übergroß.
+    - Der Start hat keinen eigenen Moment, denn er nutzt dieselbe Vorlage wie `/bad`.
+  - Gering:
+    - Das Lot ist am Desktop nur 26 px lang.
+    - Die H1 ist mobil nur 30 px groß.
+    - Die linke Zelle der Stimme ist fast leer, die Stimme endet mit „…“.
+    - Die Fugen der Firmendaten im Fuß fluchten nicht.
+    - Doppelte Auswahl aus Lagen und Leistungen.
+- **Nicht umsetzbar, mit Grund:**
+  - Der Wortlaut der H1 ist Wortlaut des Auftraggebers (E-047 Teil B, Ausnahme A-2) und kommt nicht als Vorschlag in TEXTVORSCHLAEGE. Stattdessen belegt UM-E3-FIX2 N5 die Zeile sichtbar mit einer Quadratmeter-Bemaßung an der Schnur, wie Prüfer 2 vorschlägt.
+  - Schloss in der unteren Leiste: Einwilligung (G8), M-28 bleibt offen.
+  - Den Wortlaut der Stimmen kürzen: G8.
+- **Folge:** Nacharbeit UM-E3-FIX2 (Briefing `pakete/UM-E3-FIX2.md`, N1 bis N12) im selben Ablauf wie UM-E3-FIX. Die Prüfer sind diesmal Sonnet (L6). Danach Stufe A und Sicht Anlauf 3 mit demselben Bildsatzprotokoll.
