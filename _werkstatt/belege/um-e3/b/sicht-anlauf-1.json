@@ -1,0 +1,227 @@
+[
+ {
+  "design": 6.6,
+  "bedienbarkeit": 7.8,
+  "kreativitaet": 5.8,
+  "inhalt": 7.6,
+  "ansichtswert": 6.9,
+  "begruendung": {
+   "design": "6,6 – sauber und diszipliniert, aber über weite Strecken vorhersehbar. Beleg 1 (d1920/00, d1440/00): Die H1 in schmaler Archivo, dunkel wie Tinte, und die mittige Achse wirken ruhig. Das Foto unter dem Einstieg ist aber nur etwa 485 px breit, also rund ein Viertel der Breite bei 1920 px. Der erste Bildschirm besteht fast nur aus hellgrauer Fläche mit Text, ohne einen starken Blickfang. Beleg 2 (d1440/03, d2560/02): Die Ablauf-Treppe mit der roten Laserlinie, die von 01 über 02 nach 03 abtreppt, ist die stärkste Grafik der Seite und eigenständig. Die Plan-Vignetten (d1920/02: Bad mit Gefällepfeilen, Verband, Stelzen, Riss) bilden ein stimmiges Strichsystem. Die Farbe ist streng (Tinte, Grau, Weiß, Rot nur als Linie), dadurch aber auch blass, denn Hellgrau und Weiß als Abschnittsflächen sind kaum zu unterscheiden. Größte Schwäche: die gleichförmige Abschnittsfolge. Fünf von sieben Abschnitten haben einen mittigen Kopf mit Raster darunter. „So sieht unsere Arbeit aus.“ und „Das sagen unsere Kunden.“ folgen direkt aufeinander als zwei gleich gebaute Reihen aus drei gleich großen Karten (d1440/04–05; KERN K-003 Nr. 4 lässt beides ausdrücklich weg). Einen Drittelverband als Versatz je Bildschirmhöhe sieht man außerhalb der Treppe nicht. Dazu bleibt im Fuß links ein Leerfeld von etwa 600 px (d1920/08, d1440/10), und bei 2560 px wirkt die Seite wie eine kleine Insel mit nicht mitwachsender Schrift (d2560/00). Reparatur: Kundenstimmen als eine große Stimme je Schritt im langsamen Karussell statt drei Karten; ein bewusster Drittelversatz im Galerie- oder Leistungsband; das Einstiegsfoto deutlich größer; Fuß und Anzeigeschrift ab 1920 px mitwachsen lassen.",
+   "bedienbarkeit": "7,8 – klar und für die Prüfperson P1 gut machbar. Beleg 1 (m390/00, d1440/00): Im ersten Bildschirm stehen, was und wo, Hauptknopf, Anruf mit Nummer in Mono, WhatsApp und Bewertung. Mobil kommt eine feste Leiste unten dazu (Anrufen, WhatsApp, Termin), damit sind A2 und A3 je einen Tipp entfernt. Beleg 2 (d1920/01, m390/01–02): „Was möchten Sie ändern?“ bietet sechs Lagen in Ich-Form als große Zeilen mit Pfeil. Das ist eine vorbildliche Orientierung nach „Erst die Lage, dann die Lösung“. Das Formular (d1920/06, m390/09) ist beschriftet, fragt das Vorhaben mit Wahlknöpfen ab, nennt den Rückruf binnen 24 Stunden und bietet Anruf und WhatsApp als Alternative. Größte Schwäche: kleine Brüche in Lesefolge und Hierarchie. Bei t1024 stehen die Einsatzorte in der Folge „Bis 10 km“, „Mehr als 25 km“ und erst darunter „Bis 25 km“ (t1024/07–08). Die Leiste unten beginnt mobil mit einem unbeschrifteten Schloss-Symbol. Der Nebenlink „Alle Orte, in denen wir arbeiten“ steht unterstrichen vor dem Hauptknopf (d1920/00, m390/00). Bei t1024 brechen die Telefonnummern im Fuß um („06441 /“ über „44 83 567“, t1024/11). Reparatur: Ortsraster bei zwei Spalten in der Folge 10, 25, mehr als 25; das Schloss beschriften oder aus der Leiste nehmen; den Ortslink unter die Bewertung setzen; Nummern mit geschützten Leerzeichen nicht umbrechen lassen.",
+   "kreativitaet": "5,8 – die Leitidee „Klar verlegt“ ist in statischen Grafiken gut zu lesen, die Signaturmomente sind aber kaum zu spüren. Beleg 1 (d1440/03, m390/04–05): Die Treppe mit roter Laserlinie (mobil als senkrechte rote Linie) und das Entfernungslineal der Einsatzorte mit km-Marken in Mono und rotem Abschnitt (d1920/05, m390/07–08) sind handwerksspezifisch und bestehen die Austauschprobe. Beleg 2 (einzel/leitachse-d1440/0–3): Die rote Leitachse wächst beim Scrollen links im Rand mit, Fugenkreuze „+“ markieren die Abschnittsgrenzen. Größte Schwäche: Der Eingang ist nur eine Zeilenmaske an der H1 (einzel/eingang-d1440/0–4: Pixelunterschied insgesamt 1,5 %, nach etwa 230 ms fertig, Rest der Seite still). Es gibt keine Schnur, an der die Zeilen ankommen, und keine Choreografie mit Ort und Hauptknopf. Die Bilder von sig-flucht sind von denen des Eingangs nicht zu unterscheiden (gleiche Pixelwerte 1,51/0,96/0,37/0,08), eine Fluchtlinie ist nicht sichtbar. Die Leitachse ist eine 1-px-Linie 16 px links neben dem Inhalt, die man leicht übersieht. Ihr rotes Kreuz sitzt fest bei etwa 40 % der Bildschirmhöhe statt am aktuellen Abschnitt und steht am Formular verwaist im Weiß (einzel/leitachse-d1440/4). Im ruhigen Zustand ist die Linie nur grau (bildsatz, bewegung: reduce). Reparatur: Im Einstieg zuerst eine rote Schnur waagerecht unter der H1 ziehen (dauer-3), dann die Zeilen an ihr setzen, Ort und Hauptknopf folgen, alles unter 1,5 s. Die Leitachse aus dieser Schnur beginnen lassen, ihr Kreuz an den Kopf des aktuellen Abschnitts koppeln und sie am Formular mit einem Endkreuz am Hauptknopf schließen. Im ruhigen Zustand steht sie vollständig rot.",
+   "inhalt": "7,6 – ehrlich, alltagssprachlich, konkret. Beleg 1 (d1920/01, d1440/03): Die Lagen in Ich-Form („Auf dem Balkon bleibt nach dem Regen Wasser stehen.“), die Ablaufschritte mit eingebetteter Erklärung von „Untergrund“ und die klaren Zusagen „kostenfrei“ und „Angebot mit festem Preis“ sind genau richtig für die Zielgruppe. Beleg 2 (d1920/04, d1920/03): echte Kundenstimmen mit Namen und dem Vermerk „Stand September 2026“, echte Fotos fertiger Bäder. Größte Schwäche: Die H1 „Perfektion auf jedem Quadratmeter.“ ist eine austauschbare Werbezeile, die jeder Fliesenleger nutzen könnte (gegen K-003 Nr. 1 und die Ruhe-Regel „keine Versprechen, die sich nicht halten lassen“). Sie trägt A1 nicht, das leistet erst die Unterzeile. Die Kundenstimmen brechen mitten im Satz mit „…“ ab („Vom ersten Tag an lief alles absolut …“, d1440/05). Reparatur: Falls die H1 nicht vom Auftraggeber gesetzt ist, einen sachlichen Satz aus Leistung und Ort, z. B. „Fliesen und Bäder, sauber verlegt – aus Aßlar.“; Kundenstimmen am Satzende kürzen oder mit „Ganze Bewertung lesen“ öffnen."
+  },
+  "befunde": [
+   {
+    "ort": "Einstieg „An der Schnur“ (einzel/eingang-d1440/0–4, einzel/zeilenmaske-m390/0–1, einzel/sig-flucht-d1440/0–4)",
+    "geraet": "alle",
+    "schwere": "hoch",
+    "befund": "Der Signaturmoment des Einstiegs ist nur eine Zeilenmaske an der H1 (Pixelunterschied insgesamt etwa 1,5 %, nach rund 230 ms im Wesentlichen fertig). Eine Laserlinie oder Schnur, an der die Zeilen ankommen, gibt es nicht, und Ort und Hauptknopf sind nicht eingebunden. Die Bildfolge sig-flucht gleicht der des Eingangs Pixel für Pixel, eine Fluchtlinie ist nicht zu sehen.",
+    "vorschlag": "Im Einstieg zuerst eine rote Schnur waagerecht unter oder an der H1 ziehen (`anriss`, dauer-3), dann die Zeilen nacheinander an ihr setzen (ease-setzen), danach Ort und Hauptknopf, insgesamt höchstens 1,5 s. Die Schnur bleibt als ruhige Linie stehen und wird zum Anfang der Leitachse."
+   },
+   {
+    "ort": "Einstieg mit Foto (bildsatz d1920/start/00–01, d2560/start/00)",
+    "geraet": "d1440, d1920, d2560",
+    "schwere": "hoch",
+    "befund": "Der erste Bildschirm am Desktop ist fast nur hellgraue Fläche mit mittigem Text. Das echte Einstiegsfoto ist bei 1920 px nur etwa 485 px breit, also rund 25 % der Breite, und beginnt erst bei etwa 680 px Höhe. Es fehlt ein starker Blickfang auf Showcase-Niveau, bei 2560 px wirkt die Seite wie eine kleine Insel.",
+    "vorschlag": "Mittigen Einstieg nach Ruhe-Regel beibehalten, das Foto aber deutlich größer zeigen: etwa 720 bis 960 px breit im eigenen Seitenverhältnis oder ein echtes Querformat aus dem Bestand in voller Inhaltsbreite. Abstand zwischen Bewertung und Foto verkleinern, damit das Bild im ersten Bildschirm anschneidet. Anzeigeschrift und Inhaltsbreite ab 1920 px fließend mitwachsen lassen."
+   },
+   {
+    "ort": "Abschnitte „So sieht unsere Arbeit aus.“ und „Das sagen unsere Kunden.“ (bildsatz d1440/start/04–05, d1920/start/03–04)",
+    "geraet": "t1024, d1280, d1440, d1920, d2560",
+    "schwere": "mittel",
+    "befund": "Zwei gleich gebaute Abschnitte folgen direkt aufeinander, jeweils mittiger Kopf und eine Reihe aus drei gleich großen Karten mit Pfeilknöpfen darunter. Zusammen mit den vier Leistungskarten ergibt das das gleichförmige Kartenraster, das KERN K-003 Nr. 4 ausschließt. Ein Drittelversatz ist außerhalb der Ablauf-Treppe nicht sichtbar.",
+    "vorschlag": "Kundenstimmen als eine große Stimme je Schritt im langsamen Karussell (eine Fliese, ein Gedanke), Name und Sterne daneben an der Fuge. In der Galerie oder im Leistungsband einen bewussten Versatz um ein Drittel setzen, damit die Folge Struktur und Dichte wechselt."
+   },
+   {
+    "ort": "Leitachse (einzel/leitachse-d1440/0–4, bildsatz d1920/start/01–05)",
+    "geraet": "alle",
+    "schwere": "mittel",
+    "befund": "Der Leitfaden ist eine 1-px-Linie im Rand, 16 px links neben dem Inhalt, und wird leicht übersehen. Das rote Kreuz sitzt fest bei etwa 40 % der Bildschirmhöhe statt am aktuellen Abschnitt und steht am Formular verwaist im leeren Weiß (leitachse-d1440/4). Im ruhigen Zustand ist die Linie nur grau mit schwarzen Kreuzen, nicht vollständig rot (K-007: „steht vollständig“).",
+    "vorschlag": "Kreuz an den Kopf des aktuellen Abschnitts koppeln, mit kurzem waagerechtem Strich bis zur H2. Die Achse aus der Schnur des Einstiegs beginnen lassen und am Formular mit einem Endkreuz beim Hauptknopf „Anfrage senden“ schließen. Im ruhigen Zustand die Linie vollständig rot zeichnen."
+   },
+   {
+    "ort": "Einsatzorte bei zwei Spalten (bildsatz t1024/start/07–08)",
+    "geraet": "t1024, t768",
+    "schwere": "mittel",
+    "befund": "Bei zwei Spalten lautet die Lesefolge „Bis 10 km“, „Mehr als 25 km“ und erst darunter links „Bis 25 km“. Das rote Lineal springt dadurch von links nach rechts und zurück, und die Entfernungslogik bricht.",
+    "vorschlag": "Bei zwei Spalten in der Folge 10 km, 25 km, mehr als 25 km setzen (dichte Spalten mit Reihenfolge nach Spalten oder „Bis 25 km“ in Spalte 1 unter „Bis 10 km“) oder ab t1024 die dreispaltige Lineal-Ansicht des Desktops zeigen."
+   },
+   {
+    "ort": "Feste Leiste unten (bildsatz m390/start/00, m360/start/00, q844/start/00)",
+    "geraet": "m360, m390, m430, q844",
+    "schwere": "mittel",
+    "befund": "Das erste Feld der Handlungsleiste ist ein unbeschriftetes Schloss-Symbol, wohl die Cookie-Einstellungen. Neben Anrufen, WhatsApp und Termin ist es für die Prüfperson P1 rätselhaft und nimmt Platz und Aufmerksamkeit.",
+    "vorschlag": "Schloss aus der Handlungsleiste in den Fuß verlegen, wo „Cookie-Einstellungen“ schon steht, oder mindestens sichtbar beschriften. Die Leiste trägt nur die drei Hauptwege."
+   },
+   {
+    "ort": "Fuß, linke Spalte (bildsatz d1920/start/08–09, d1440/start/10)",
+    "geraet": "d1280, d1440, d1920",
+    "schwere": "mittel",
+    "befund": "Unter den Kontaktkacheln bleibt links ein dunkles Leerfeld von etwa 600 px, während rechts drei Linklisten mit rund 60 Einträgen weiterlaufen. Der Fuß wirkt dadurch unausgewogen und überladen zugleich.",
+    "vorschlag": "Linklisten auf vier gleich lange Spalten verteilen oder die Kontaktkacheln mitlaufen lassen (sticky); seltenere Ziele in „Mehr erfahren“ bündeln, damit der Fuß kürzer wird und links nicht leer bleibt."
+   },
+   {
+    "ort": "H1 des Einstiegs (bildsatz d1920/start/00, m390/start/00)",
+    "geraet": "alle",
+    "schwere": "mittel",
+    "befund": "„Perfektion auf jedem Quadratmeter.“ ist eine austauschbare Werbezeile ohne Ort und Lage. Sie besteht die Austauschprobe gegen Wettbewerber nicht und widerspricht K-003 (keine Werbezeilen) und der Ruhe-Regel (keine schwer haltbaren Versprechen). A1 trägt erst die Unterzeile.",
+    "vorschlag": "Falls nicht vom Auftraggeber vorgegeben: H1 als sachlicher Satz aus Leistung und Ort, etwa „Fliesen und Bäder, sauber verlegt – aus Aßlar.“, Unterzeile dann „Für Wetzlar, Gießen, Herborn und Umgebung“."
+   },
+   {
+    "ort": "Nebenlink im Einstieg (bildsatz d1920/start/00, m390/start/00)",
+    "geraet": "alle",
+    "schwere": "gering",
+    "befund": "Der unterstrichene Link „Alle Orte, in denen wir arbeiten →“ steht zwischen Unterzeile und Hauptknopf und konkurriert damit mobil wie am Desktop mit dem einzigen Hauptknopf.",
+    "vorschlag": "Den Link unter die Bewertungszeile oder in die Unterzeile verschieben („aus Aßlar · alle Orte“), sodass auf die Unterzeile direkt der Hauptknopf folgt."
+   },
+   {
+    "ort": "Galerie, Bildbeschriftung mobil (bildsatz m390/start/06, m430/start/05)",
+    "geraet": "m360, m390, m430",
+    "schwere": "gering",
+    "befund": "Mobil liegt die Beschriftung auf einem dunklen Verlauf über dem Foto, bei t1024 dagegen auf einer festen dunklen Fläche unter dem Foto (t1024/05). Verläufe sind nach K-003 Nr. 5 ausgeschlossen, und die Darstellung wechselt je Gerät. Die Pfeilknöpfe stehen mobil über, am Desktop unter den Fotos.",
+    "vorschlag": "Beschriftung überall als feste Tintenfläche an der Unterkante wie bei t1024 zeigen, Pfeilknöpfe auf allen Geräten an derselben Stelle (unter der Reihe)."
+   },
+   {
+    "ort": "Fuß, Telefonnummern (bildsatz t1024/start/11)",
+    "geraet": "t1024",
+    "schwere": "gering",
+    "befund": "Telefon, Mobil und Fax brechen in den schmalen Kacheln um („06441 /“ über „44 83 567“). Die Nummer zerfällt optisch.",
+    "vorschlag": "Nummern als nicht umbrechende Einheit setzen (geschützte Leerzeichen oder `white-space: nowrap`) und Kacheln bei t1024 einspaltig stapeln, falls die Breite nicht reicht."
+   },
+   {
+    "ort": "Kundenstimmen, Text (bildsatz d1440/start/05)",
+    "geraet": "alle",
+    "schwere": "gering",
+    "befund": "Die Stimmen brechen mitten im Satz mit „…“ ab („Vom ersten Tag an lief alles absolut …“, „saubere u.präzise …“). Das wirkt abgeschnitten statt gewählt.",
+    "vorschlag": "Am Satzende kürzen oder einen Link „Ganze Bewertung lesen“ anbieten, Wortlaut der Kunden sonst unverändert lassen."
+   }
+  ],
+  "staerken": [
+   "Situationseinstieg „Was möchten Sie ändern?“ mit sechs Lagen in Ich-Form als große Zeilen mit Pfeil (d1920/01, m390/01–02): beste Orientierung für die Prüfperson P1, setzt „Erst die Lage, dann die Lösung“ unmittelbar um.",
+   "Ablauf-Treppe mit roter Laserlinie, die von 01 über 02 nach 03 abtreppt, mit Fugenkreuzen an den Knicken (d1440/03, d2560/02), mobil als senkrechte rote Linie (m390/04–05): eigenständige Grafik aus der Leitidee.",
+   "Einsatzorte als Entfernungslineal mit km-Marken in IBM Plex Mono und rotem Abschnitt je Entfernungsband (d1920/05, m390/07–08): handwerksspezifisch, klar und überraschend.",
+   "Plan-Vignetten der Leistungen (Bad mit Gefällepfeilen, Wandverband, Platten auf Stelzen, gesprungene Fliese) in einem einheitlichen Strichsystem ohne Rot (d1920/02, m390/03).",
+   "Mobil feste Handlungsleiste Anrufen, WhatsApp, Termin und volle Breite für Hauptknopf und Anruf im ersten Bildschirm (m390/00): A2 und A3 je mit einem Tipp erreichbar.",
+   "Disziplinierte Palette und Formsprache: Tinte, Grau, Weiß, Rot nur als Linie; Flächen ohne Schatten stoßen mit einer Fuge aneinander, Abschnittsgrenzen tragen Fugenkreuze.",
+   "Formular klar und freundlich: Vorhaben als Wahlknöpfe, Pflichtfelder gekennzeichnet, „Rückruf innerhalb von 24 Stunden“, darunter Anruf und WhatsApp als Alternative (d1920/06–07).",
+   "Ehrliche Inhalte: kostenfreier Termin vor Ort, Angebot mit festem Preis, echte Kundenstimmen mit Name und „Stand September 2026“, echte Fotos fertiger Arbeiten."
+  ]
+ },
+ {
+  "design": 6.4,
+  "bedienbarkeit": 7.6,
+  "kreativitaet": 5.8,
+  "inhalt": 7.3,
+  "ansichtswert": 6.7,
+  "begruendung": {
+   "design": "6,4. Erster Beleg: Die Ablauf-Treppe (d1440 03, d1920 02/03, t1024 04, d2560 02) ist präzise. Die rote Laserlinie knickt an jeder Stufe um etwa 64 px nach unten, an jedem Knick sitzt ein Fugenkreuz, die Nummern stehen in Mono und die Überschriften in Archivo kondensiert. Das ist eigenständig. Zweiter Beleg: Die Einsatzorte mit Kilometerskala „Aßlar | 10 km | 25 km“ als Spaltenlineal (d1440 06, d1920 05) sowie die Plan-Vignetten mit Schraffur und Bemaßung (d1440 02, m390 03) tragen die Leitidee grafisch und sauber. Die Farbe ist streng: Tinte, Kalk und Rot nur als Linie. Größte Schwäche: Der Einstieg auf allen breiten Größen (t1024 00, d1440 00, d1920 00, d2560 00) ist ein mittiger Stapel aus H1 (rund 60 px), Unterzeile, Link, drei Knöpfen, Vorspann und Bewertungszeile. Darunter steht ein Hochformatfoto von nur etwa 485 px Breite (bei t1024 etwa 370 px) in einer großen grauen Fläche. Es gibt keinen Versatz, keine Linie und kein Raster, das wirkt wie eine Vorlage. Danach folgen gleichförmige Kartenreihen: 4 Leistungen, 3 Fotos und 3 Stimmen, jeweils unter einem mittigen Kopf (d1440 02, 04, 05). Ab d1920 hält die Qualität nicht: Der Inhalt bleibt bei etwa 1216 px, auf d2560 steht er als kleine Insel mit winzigem Kopf. Reparatur: Einstieg mit deutlich größerer H1 (fs-7), einem Querformatfoto auf Inhaltsbreite und einer sichtbaren roten Schnur, die in die Leitachse übergeht. Je Bildschirm einen echten Drittelversatz in Galerie oder Stimmen setzen.",
+   "bedienbarkeit": "7,6. Erster Beleg: Auf m390 00 stehen in einem Bildschirm H1, „Fliesenverlegung und Badsanierung aus Aßlar“, „Alle Orte“, der tintendunkle Hauptknopf, „Anrufen: 06441 / 44 83 567“, kostenloser Termin mit Festpreis und die Bewertung. Die feste Leiste unten mit Anrufen, WhatsApp und Termin erfüllt A1 bis A3 sofort. Zweiter Beleg: Die Lagen in Kundensprache sind große Zeilen mit Pfeil und klarer Trennlinie (m390 01–02, d1440 01–02). Das Formular hat große beschriftete Felder, vier Vorhaben-Kacheln, den Hinweis zu Pflichtfeldern und „Rückruf innerhalb von 24 Stunden“ (m390 09, d1440 07). Die Orientierung gibt die Leitachse mit Abschnittskreuzen. Schwächen: Links in der mobilen Aktionsleiste sitzt ein unbeschriftetes Schloss-Symbol (Cookie-Einstellungen). Zwei Wegweiser mit ähnlichen Zielen folgen direkt aufeinander (Lagen, dann vier Leistungskarten von etwa 1200 px Höhe auf m390). Der Fuß ist eine Linkwand mit rund 70 Einträgen über mehr als 2 Bildschirmhöhen. Die Telefonnummern brechen bei t1024 im Fuß um. Mobil berühren Kreuze der Leitachse den Text. Größte Schwäche mit Reparatur: Die Linkwand im Fuß auf 4 Gruppen mit höchstens 6 Links kürzen und das Schloss aus der Aktionsleiste nehmen.",
+   "kreativitaet": "5,8. Erster Beleg: Bei erlaubter Bewegung wächst die Laserlinie beim Scrollen rot mit einem roten Kopfkreuz mit und markiert Abschnittsanfänge mit schwarzen Kreuzen (leitachse-m390-2, leitachse-d1440-1 und -3). In der Ablauf-Treppe wird sie zur Stufenlinie. Das ist ein echter Leitfaden aus dem Handwerk. Zweiter Beleg: Die Kilometerskala markiert die jeweilige Zone rot (m390 07/08, t768 05), das Fugenkreuz ist über die ganze Seite als Zeichen durchgezogen. Größte Schwäche: Der erste Bildschirm, der Ort des Signaturmoments, zeigt nichts von „Klar verlegt“. Der Eingang ist ein üblicher Zeilenmasken-Aufstieg der H1 (eingang-m390-0: „Perfektion auf“ halb hinter der Maske, nach 235 ms fertig). Der Logo-Aufbau ist in den Bildern nicht erkennbar, das Logo steht schon bei 37 ms vollständig. Die Flucht von 12 px ist kaum sichtbar (sig-flucht-d1440-1 gegenüber -2 nur wenige Pixel), und „An der Schnur“ hat keine Schnur. Seitenwechsel und Cursor liegen nicht im Material und sind nicht bewertet. Die Kopie des Bildsatzes ist im Zustand „ruhig“ aufgenommen (Fuß d1440 10), dort ist die Achse nur grau. Reparatur: Die H1-Zeilen an einer sichtbaren roten Schnur aufsetzen lassen, die stehen bleibt und unten in die Leitachse übergeht.",
+   "inhalt": "7,3. Erster Beleg: Die Lagen sind konkret und in Alltagssprache („Die Badewanne soll raus. Ich möchte eine Dusche ohne Stufe.“, „Auf dem Balkon bleibt nach dem Regen Wasser stehen.“, m390 01–02). Der Ablauf erklärt Fachwörter im Satz („Untergrund (alles, was unter der Fliese liegt …)“, m390 04). Zweiter Beleg: Die Belege sind echt: Kundenstimmen mit Namen, „27 Bewertungen bei Google · Stand September 2026“, Kilometerangaben je Ort, Öffnungszeiten, Kammer und Betrieb seit 2008 nur im Fuß, echte Fotos fertiger Bäder (d1440 04). Größte Schwäche: Die H1 „Perfektion auf jedem Quadratmeter.“ und der Kopf „Wir kümmern uns um alles, was mit Fliesen zu tun hat.“ sind Werbezeilen, die jeder Fliesenleger schreiben könnte (Austauschprobe, K-003 „Werbezeilen lassen“). Die Stimmen enden mit „…“ ohne Weg zum ganzen Text (d1440 05). Reparatur: Die H1 auf Betrieb und Lage beziehen (zum Beispiel wer kommt und wohin), sofern der Satz nicht ausdrücklicher Wunsch des Auftraggebers ist, und je Stimme ein Link zur ganzen Bewertung."
+  },
+  "befunde": [
+   {
+    "ort": "Einstieg, erster Bildschirm (t1024 00/01, d1280 00, d1440 00/01, d1920 00/01, d2560 00)",
+    "geraet": "t1024, d1280, d1440, d1920, d2560",
+    "schwere": "hoch",
+    "befund": "Der Einstieg ist ein mittiger Stapel aus sieben Elementen. Die H1 ist nur etwa 60 px hoch, das Hochformatfoto rund 485 px breit (t1024 etwa 370 px) in großer grauer Fläche und beginnt erst bei etwa 680 px. Laserlinie, Raster und Versatz fehlen, der erste Bildschirm wirkt wie eine Vorlage und trägt die Leitidee nicht.",
+    "vorschlag": "Die Mitte nach der Ruhe-Regel behalten, aber die H1 ab lg auf fs-7 deutlich vergrößern. Unter dem Hauptknopf ein Querformatfoto in voller Inhaltsbreite zeigen, vollständig und im eigenen Seitenverhältnis, oder das Foto auf mindestens zwei Drittel der Spalte setzen. Eine rote 1-px-Schnur als Grundlinie unter die H1 legen, die am linken Rand in die Leitachse übergeht."
+   },
+   {
+    "ort": "Eingang (einzel/eingang-*, zeilenmaske-*, sig-flucht-*)",
+    "geraet": "m390, d1440",
+    "schwere": "mittel",
+    "befund": "Die einzige sichtbare Bewegung ist der übliche Zeilenmasken-Aufstieg der H1 (bei 0 ms halb verdeckt, bei 235 ms fertig). Das Logo steht schon bei 37 ms vollständig, ein Aufbau ist nicht zu sehen. Die Flucht von 12 px ist zwischen den Bildern kaum zu erkennen, und eine Schnur, an der die Zeilen erscheinen, fehlt. So besteht der Eingang die Austauschprobe nicht.",
+    "vorschlag": "„An der Schnur“ wörtlich umsetzen: Eine rote Linie zieht in dauer-3 durch die Grundlinie der ersten Zeile, die Zeilen setzen nacheinander mit ease-setzen darauf auf, und die Linie bleibt als Leitfaden stehen. Den Logo-Aufbau prüfen und in die ersten 400 ms legen."
+   },
+   {
+    "ort": "Leitachse am linken Rand, Abschnittsgrenzen (m390 01, 02, 04, 05; einzel/leitachse-m390-0)",
+    "geraet": "m360, m390, m430",
+    "schwere": "mittel",
+    "befund": "Linie und Kreuze liegen im 16-px-Rand. Das rote Kopfkreuz berührt den Text („+möchte eine Dusche ohne Stufe“ in leitachse-m390-0). Im Zustand „ruhig“ stehen die schwarzen Kreuze einzeln im Weißraum (m390 01 bei y=373, m390 02 bei y=505) und lesen sich wie verirrte Pluszeichen.",
+    "vorschlag": "Mobil die Achse auf etwa 4 px vom Rand legen und das Kreuz auf etwa 7 px verkleinern, mit mindestens 8 px Abstand zum Text. Abschnittskreuze nur genau auf den Trennlinien zeigen, das Kopfkreuz neben Textzeilen ausblenden."
+   },
+   {
+    "ort": "Lagen, Leistungen, Galerie, Stimmen (d1440 02, 04, 05; d1920 02–04; t1024 05/06)",
+    "geraet": "t1024, d1440, d1920, d2560",
+    "schwere": "mittel",
+    "befund": "Drei gleichförmige Kartenraster folgen aufeinander: 4 gleiche Leistungskarten, 3 gleiche Fotos und 3 gleiche Stimmenkarten, jeweils unter einem mittigen Kopf. K-003 Prinzip 4 sagt ausdrücklich, gleichförmige Kartenraster und drei gleich gebaute Abschnitte in Folge zu lassen. Der Drittelversatz je Bildschirm fehlt außerhalb der Ablauf-Treppe.",
+    "vorschlag": "In der Galerie das mittlere Foto um ein Drittel der Fliesenhöhe versetzen (der eine Versatz dieses Bildschirms). Die Stimmen als eine große Stimme mit Anriss und kleiner Reihe darunter zeigen, die Leistungen als 2 × 2 mit Vignette links und Titel rechts."
+   },
+   {
+    "ort": "„Was möchten Sie ändern?“ und „Wir kümmern uns um alles …“ (m390 01–04)",
+    "geraet": "m360, m390, m430",
+    "schwere": "mittel",
+    "befund": "Zwei Wegweiser mit sich überschneidenden Zielen stehen direkt hintereinander: sechs Lagen, dann vier Leistungskarten. Die Leistungskarten kosten mobil etwa 1200 px Scrollweg, jede ist rund 300 px hoch mit großer Vignette. Für die 72-jährige Prüfkundin ist unklar, welcher Weg der richtige ist.",
+    "vorschlag": "Die Leistungen mobil kompakt setzen (Vignette etwa 96 px links, Titel rechts, eine Zeile je Leistung) oder in die Lagenliste einfügen. Den zweiten Kopf als Übersicht kennzeichnen („Alle Leistungen auf einen Blick“)."
+   },
+   {
+    "ort": "Fuß, Linkspalten (d1440 09–10, d1920 07–09, t1024 11, m390 11)",
+    "geraet": "alle",
+    "schwere": "mittel",
+    "befund": "Die Linkwand mit rund 70 Einträgen in vier Spalten zieht sich über mehr als 2 Bildschirmhöhen. Der ruhige Abschluss geht darin unter, und die Hierarchie zwischen Kontakt und Themen geht verloren.",
+    "vorschlag": "Den Fuß auf 4 Gruppen mit höchstens 6 Links kürzen. Die vollständige Liste auf eine Seite „Alle Themen“ legen oder mobil in aufklappbare Gruppen packen (Register aufklappen)."
+   },
+   {
+    "ort": "Fuß, Kontaktgitter Telefon, Mobil und Fax (t1024 11)",
+    "geraet": "t1024",
+    "schwere": "mittel",
+    "befund": "Die Telefonnummern brechen mitten in der Nummer um: „06441 /“ in der ersten, „44 83 567“ in der zweiten Zeile, ebenso bei Mobil und Fax. Das schadet der Lesbarkeit von A2.",
+    "vorschlag": "Die Nummern mit white-space: nowrap setzen, oder das Kontaktgitter zwischen md und lg einspaltig führen."
+   },
+   {
+    "ort": "Mobile Aktionsleiste, linkes Feld (m390 00 ff., m360 00, q844 00, t768 00)",
+    "geraet": "m360, m390, m430, q844, t768",
+    "schwere": "mittel",
+    "befund": "Ein unbeschriftetes Schloss-Symbol (Cookie-Einstellungen) sitzt gleichrangig neben Anrufen, WhatsApp und Termin. Es wirkt wie Anmelden oder Sperre und lenkt von den drei Handlungen ab.",
+    "vorschlag": "Das Schloss aus der Aktionsleiste nehmen, die Cookie-Einstellungen sind im Fuß verlinkt. Die drei Handlungen auf volle Breite verteilen."
+   },
+   {
+    "ort": "Ganze Seite auf großen Bildschirmen (d1920 00–05, d2560 00–06)",
+    "geraet": "d1920, d2560",
+    "schwere": "mittel",
+    "befund": "Der Inhalt bleibt bei etwa 1216 px, Schrift, Kopf und Logo wachsen nicht mit. Auf d2560 steht die Seite als schmale Insel mit sehr kleinem Kopf (Logo rund 100 px breit), das Einstiegsfoto bleibt etwa 480 px breit. Die Qualität von d1440 hält dort nicht.",
+    "vorschlag": "Ab 1920 px Container und Schriftstufen fließend mitwachsen lassen (clamp, etwa bis 1440–1600 px Inhaltsbreite), Kopfhöhe und Logo proportional skalieren."
+   },
+   {
+    "ort": "H1 und Kopf des Leistungsblocks (m390 00/02, d1440 00/02)",
+    "geraet": "alle",
+    "schwere": "mittel",
+    "befund": "„Perfektion auf jedem Quadratmeter.“ und „Wir kümmern uns um alles, was mit Fliesen zu tun hat.“ sind austauschbare Werbezeilen. Das widerspricht K-003 („Werbezeilen lassen“, „Erst die Lage, dann die Lösung“).",
+    "vorschlag": "Falls nicht ausdrücklicher Wunsch des Auftraggebers: eine konkrete H1, die sagt, wer kommt und was er macht, zum Beispiel mit Deniz Tezgel und Aßlar. Den Kopf des Leistungsblocks sachlich benennen („Das machen wir“)."
+   },
+   {
+    "ort": "Leitachse und Kilometerskala, Desktop (d1440 06, d1920 05, einzel/leitachse-d1440-1 und -3)",
+    "geraet": "d1440, d1920",
+    "schwere": "gering",
+    "befund": "Doppelte Marken: Das Leitachsenkreuz bei x=96 und das rote Ursprungskreuz der Skala bei x=112 stehen 16 px nebeneinander. Bei erlaubter Bewegung sitzt das rote Kopfkreuz direkt links an der H2 „So kommen Sie zu“, dazu kommen die Treppenkreuze, so dass bis zu vier Kreuze in einem Bildschirm stehen.",
+    "vorschlag": "Den Ursprung der Skala genau auf die Leitachse legen, sodass ein Kreuz beides markiert. Das Kopfkreuz in Höhe von Überschriften ausblenden."
+   },
+   {
+    "ort": "Kontaktblock unter dem Formular (d1440 08, d1920 07, t1024 10)",
+    "geraet": "t1024, d1440, d1920",
+    "schwere": "gering",
+    "befund": "„Lieber anrufen?“, „Lieber schreiben?“ und „Wann Sie uns erreichen“ stehen linksbündig in der Formularspalte, die rechte Hälfte bleibt leer. Unter dem mittigen Kopf wirkt der Block unfertig.",
+    "vorschlag": "Die Zeiten unter die Telefonspalte und eine gleich hohe zweite Spalte setzen, oder den ganzen Block mittig setzen wie auf m390 10."
+   },
+   {
+    "ort": "Kundenstimmen (d1440 05, d1920 04, t1024 06)",
+    "geraet": "alle",
+    "schwere": "gering",
+    "befund": "Die Stimmen enden mit „…“ („sauber und pünktlich …“), und es gibt keinen sichtbaren Weg zum ganzen Text.",
+    "vorschlag": "Je Karte einen Link „Ganze Bewertung bei Google“ oder ein ruhiges Aufklappen (Register aufklappen) ergänzen."
+   }
+  ],
+  "staerken": [
+   "Die Ablauf-Treppe mit roter Laserlinie, Stufenknicken und Fugenkreuzen (d1440 03, d1920 02/03, t1024 04) ist unverwechselbar, präzise und zeigt die Leitidee am besten.",
+   "Einsatzorte als Kilometerlineal „Aßlar | 10 km | 25 km“ mit Spalten je Zone (d1440 06, d1920 05). Mobil bekommt jede Zone einen eigenen Skalenbalken mit roter Strecke (m390 07/08, t768 05).",
+   "Die Plan-Vignetten mit Schraffur, Bemaßung und Riss (d1440 02, m390 03, t1024 03) erklären die Leistungen grafisch statt mit Symbolfotos.",
+   "Der mobile erste Bildschirm (m390 00) folgt genau der Reihenfolge Überschrift, Ort, Hauptknopf, Telefon, Vorspann und Bewertung. Die feste Leiste mit Anrufen, WhatsApp und Termin macht A2 und A3 jederzeit erreichbar.",
+   "Die Lagen in Kundensprache als große, gut tippbare Zeilen mit Pfeil (m390 01–02) setzen das Prinzip „Erst die Lage, dann die Lösung“ vorbildlich um.",
+   "Zurückhaltendes Farbsystem: Tinte, Kalk und Rot nur als Linie. Archivo kondensiert für Köpfe und Mono nur für Nummern und Kilometer ergeben eine klare, ruhige Hierarchie.",
+   "Das Formular (m390 09, d1440 07, d1920 06) ist dicht, beschriftet und großflächig, mit Vorhaben-Kacheln und Zusage „Rückruf innerhalb von 24 Stunden“ als ruhige Arbeitsfläche ohne Inszenierung.",
+   "Bei erlaubter Bewegung wächst die Leitachse beim Scrollen rot mit Kopfkreuz (leitachse-m390-2, leitachse-d1440-1/3), ein sinnvoller Fortschrittsanzeiger ohne Effektfeuer."
+  ]
+ }
+]

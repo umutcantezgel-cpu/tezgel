@@ -1158,3 +1158,40 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - Reinraum grün, `npm test` 248/248.
   - Suite reduziert 397/1/26. Der eine rote Test war HeroContactForm „mit Vorhaben“, eine vorbestehende Zeitschwäche: 1 von 4 Läufen auch auf 1620c0f5. Die Spec wartet jetzt auf die Hydrierung (6a723d7c), danach 16/16.
 
+## E-086 · Tor E3, Anlauf 1: Sichtabnahme `/` nicht bestanden (6,7 und 6,9 statt ≥ 8,5), Nacharbeit UM-E3-FIX (28.10.2026, 19:45 MEZ)
+- **Sichtabnahme (UM-E3-SICHT, Workflow wf_6d878116-1f3):** zwei unabhängige frische Opus-Prüfer, Rubrik nach AUFTRAG Abschnitt 13, an den Bildern von UM-E3-B. Belege `belege/um-e3/b/sicht-anlauf-1.json`.
+
+| Prüfer | Design | Bedienbarkeit | Kreativität | Inhalt | Ansichtswert |
+|---|---|---|---|---|---|
+| 1 | 6,6 | 7,8 | 5,8 | 7,6 | 6,9 |
+| 2 | 6,4 | 7,6 | 5,8 | 7,3 | 6,7 |
+
+- **Prüfstufe B** bestanden mit Ausnahme A-1 (`berichte/UM-E3-B.md`). Das Tor E3 ist damit im ersten Anlauf nicht bestanden: Z-05 fehlt.
+- **Gemeinsame Befunde:**
+  - Hoch:
+    - Einstieg ab t1024: mittiger Stapel, H1 nur etwa 60 px hoch, Hochformatfoto rund 485 px breit auf großer grauer Fläche, ohne Leitidee.
+  - Mittel:
+    - Eingang zeigt „An der Schnur“ nicht. Die Bilder zeigten nur die Wiederkehr-Fassung ohne Logo-Aufbau, ein Fehler im Bildmaterial.
+    - Leitachse mobil berührt den Text; Kreuze stehen bei „ruhig“ verloren.
+    - Drei gleichförmige Kartenraster in Folge (K-003 Prinzip 4).
+    - Mobil zwei Wegweiser mit ähnlichem Ziel (Lagen und Leistungskarten, etwa 1200 px).
+    - Fuß als Linkwand über mehr als 2 Bildschirmhöhen mit leerem Feld links.
+    - Große Bildschirme: Inhalt bleibt bei 1216 px, als Insel.
+    - Einsatzorte in zwei Spalten in falscher Lesefolge.
+  - Gering:
+    - Telefonnummern brechen bei t1024 um.
+    - Stimmen enden mit „…“ ohne Weg zum ganzen Text.
+    - Doppelte Marken von Leitachse und Kilometerskala.
+- **Nicht umsetzbar, mit Grund:**
+  - Wortlaut der H1 „Perfektion auf jedem Quadratmeter.“: unantastbar (G8, A-1).
+  - Beschriftung des Schloss-Symbols: Einwilligung unantastbar; offene Frage M-28 an den Auftraggeber.
+  - Wortlaut der Kundenstimmen: bleibt unverändert, nur ein Weg zum ganzen Text kommt hinzu.
+- **Leitplanken der Nacharbeit:**
+  - E-047 Ruhe: Einstieg mittig, Bilder vollständig. Mitte behalten, aber Größe, Foto und Schnur.
+  - E-078: B-01 bleibt unverändert.
+  - E-080 Schalter, E-081 Eingang, E-084 Cursor, Leitfaden und Register.
+- **Für Anlauf 2 der Sichtabnahme gehören ins Bildmaterial:**
+  - Erstbesuch mit vollem Eingang,
+  - Einzelbilder des Seitenwechsels B-01,
+  - Bilder des Cursors am Desktop.
+
