@@ -85,3 +85,9 @@ Uhrzeit · Fenster Verbrauch, Soll, Ziel · Woche Verbrauch, Spielraum · belegt
 - 2026-10-28 18:31 MEZ · Workflow UM-E3-LEISTUNG fertig: 4 Agenten, 1,09 Mio. Tokens, 74 min · Messung als Skript · Planungsziel 85
 - 2026-10-28 19:31 MEZ · Schätzung nicht erhoben (nur obere Schranke) · Plätze 1 Workflow UM-E3-SICHT (2 Opus-Prüfer) · Planungsziel 85
 - 2026-10-28 20:31 MEZ · Schätzung nicht erhoben (nur obere Schranke) · Plätze 1 Workflow UM-E3-FIX (bis 8 Agenten, Opus) · Planungsziel 85
+- 2026-10-28 21:40 MEZ · **Viertes Limit-Ereignis, Kalibrierpunkt.** Gegen 20:3x MEZ brach der Baumeister von UM-E3-FIX Teil B ab („resets 8:30pm (UTC)“). Das Fenster endete um 20:30 UTC.
+  - Kalibrierung: Fenster 15:30–20:30 UTC = 100 %, Quelle limit (`kontingent.mjs --kalibrieren`, läuft im Hintergrund, Faktor folgt in der nächsten Zeile).
+  - Z-12: Kalibrierpunkt ohne Messwert. Das Limit kam mitten in einem Workflow mit bis zu 8 Opus-Agenten, die Schätzung war seit 13:43 MEZ nicht erhoben.
+  - Lehre (L6, ergänzt): Ein Workflow mit vielen Opus-Agenten verbraucht das Fenster schnell. Die Schätzung muss vor jedem solchen Workflow erhoben werden, und die Prüfer laufen als Sonnet, wo das Urteil es zulässt.
+  - Folge nach L6: Das Planungsziel sinkt wieder auf 60, bis ein Fenster ohne Limit endet.
+  - Plätze: 1 Workflow UM-E3-FIX (Teil A aus dem Zwischenspeicher, Teil B läuft).
