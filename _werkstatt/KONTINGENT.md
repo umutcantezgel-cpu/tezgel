@@ -84,3 +84,4 @@ Uhrzeit · Fenster Verbrauch, Soll, Ziel · Woche Verbrauch, Spielraum · belegt
 - 2026-10-28 17:31 MEZ · Schätzung nicht erhoben (nur obere Schranke) · Plätze 1 Workflow UM-E3-LEISTUNG (bis 4 Agenten) · Planungsziel 85
 - 2026-10-28 18:31 MEZ · Workflow UM-E3-LEISTUNG fertig: 4 Agenten, 1,09 Mio. Tokens, 74 min · Messung als Skript · Planungsziel 85
 - 2026-10-28 19:31 MEZ · Schätzung nicht erhoben (nur obere Schranke) · Plätze 1 Workflow UM-E3-SICHT (2 Opus-Prüfer) · Planungsziel 85
+- 2026-10-28 20:31 MEZ · Schätzung nicht erhoben (nur obere Schranke) · Plätze 1 Workflow UM-E3-FIX (bis 8 Agenten, Opus) · Planungsziel 85

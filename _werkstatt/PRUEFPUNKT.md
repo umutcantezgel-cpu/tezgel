@@ -1,6 +1,6 @@
 # PRUEFPUNKT
 
-- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · **Etappe E3, Welle E3-W1** · Stand 2026-10-28 19:31 MEZ · **live: main = 2317dcde (E-083)** · UM-E3-LEISTUNG (E-085, A-1) und UM-E3-B (Bericht `berichte/UM-E3-B.md`, bestanden mit A-1) erledigt · **laufend: UM-E3-SICHT** (Workflow wf_6d878116-1f3, zwei unabhängige Opus-Prüfer an `$SCRATCH/e3b/bildsatz` und `einzel`) · danach Tor E3 (E-086), dann E4 nach PLAN · Server: 4324 = 1d101816, 4321 = 5c2481e0, 4323 = 1620c0f5, 4311 = 7ceb5e41 · Planungsziel 85
+- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · **Etappe E3, Welle E3-W1** · Stand 2026-10-28 20:31 MEZ · **live: main = 2317dcde (E-083)** · Tor E3 Anlauf 1 nicht bestanden (E-086, Sicht 6,7/6,9) · **laufend: UM-E3-FIX** (Workflow wf_3d01964e-e48, Teil A dann B in `$SCRATCH/fix/baum`, Briefing `pakete/UM-E3-FIX.md`; fällt er aus, mit resumeFromRunId fortsetzen) · danach Diffs A und B anwenden, Stufe A als Skript, neuer Bildsatz mit Erstbesuch, B-01- und Cursor-Bildern, Sicht Anlauf 2 · Server: 4324 = 1d101816, 4311 = 7ceb5e41 · Planungsziel 85
 - E2 abgeschlossen nach zwei Anläufen (E-076, Berichte `berichte/UM-E2-B.md`, `UM-E2-B2.md`):
   - Z-02, Z-03, Z-06, Z-07, Z-09 und Z-11 auf Etappenstufe erfüllt.
   - Offener Punkt Z-10: TBT mobil → UM-E3-TBT.
