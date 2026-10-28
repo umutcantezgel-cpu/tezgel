@@ -1005,3 +1005,42 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - Pixel gegen 27d87b66: 48 von 48 Paaren weichen ab, alle nur in den letzten beiden Ausschnitten (Fuß). Grund ist die neue Schalterzeile: m390 +83,5 px, t768 +60 px, Desktop ±0. Unter reduzierter Bewegung steht der Hinweis darunter.
 - **Lehre (L6):** Mit einem Schalter, der „wie reduzierte Bewegung“ gilt, braucht jede Regel an der Medienabfrage einen Spiegel. Ohne Wächtertest geht das beim nächsten Paket verloren.
 
+## E-081 · Eingang ohne Vorhang (UM-E3-EIN) abgenommen (28.10.2026, 09:30 MEZ)
+- **Gebaut (3e99db0a, Korrektur c773a7c5):** E-067-4 Weg (a). Entwurf und Bau kamen von einem Opus-Baumeister in einer Arbeitskopie (Briefing `pakete/UM-E3-EIN.md`, Notiz `belege/um-e3-ein/`); der Orchestrator hat den Diff geprüft und angewendet.
+  - Kopfskript: `k-eingang` nur zusammen mit `k-bewegung`. Wiederkehr im selben Besuch (`sessionStorage tezgel-eingang`) setzt `k-wiederkehr`. Jede Eingabe beendet den Eingang, spätestens nach 2 s.
+  - Logo im Kopf: Maske (`clip-path`) in zwei Reihen im Drittelverband über der unveränderten Datei, 800 ms. Danach H1-Zeilenmasken, Ort, Knopfzeile und ein verblassender Fugenriss an der Oberkante des Fotos.
+  - Dauer: voll 1,40 s, Wiederkehr 0,44 bis 0,68 s, nur Zeilenmasken.
+  - Die Intro-Schicht B-02 (Kalkblatt, `Intro.tsx`, `INTRO_ZIEL`) und der Startbild-Belag (`startbild.ts`) entfallen. `intro` und `startbild` bleiben als Alias von `eingang` im Register.
+  - sig-flucht läuft beim Ende des Eingangs ohne Neustart weiter (Test Eingang 9).
+- **Annahmen bis zur Antwort (MENSCHEN UM-8):**
+  - Der Logo-Aufbau läuft auf jeder Seite beim ersten Aufruf im Besuch, wie bisher B-02.
+  - Die Zeilenmasken gelten in allen Einstiegen ohne `kompakt`, auch auf Wissens- und Ortsansichten.
+  - Bei Speicherfehler gilt die kurze Fassung.
+- **Stufe A** (Belege `belege/um-e3-ein/`):
+  - `npm test` 232/232: Intro-Tests 12 → 9, weil Kalkblatt und Belag entfallen; Bewegung +1. Kein Test gelockert, 27 Gegenproben rot.
+  - Typecheck, Lint und `werte.mjs` 0.
+  - Reinraum c773a7c5 grün. Suite in beiden Zuständen 398/0/26. axe `--zustaende` 396 Läufe mit 0 ernsten Knoten.
+  - `--schalter ruhig` auf 3 Seiten und reduziert auf 2 Seiten: 0 Bewegungsbefunde.
+  - Bildrate `/` m390, 4× Drosselung: 0,25 % verworfen, 0 Long Animation Frames.
+  - Pixel gegen 109890d2: 48 Paare, 0 Pixel Unterschied.
+  - Lighthouse mobil, Reihenfolge vorher, nachher, nachher, vorher, Mediane aus je drei Läufen:
+
+| Seite | Wert | vorher | nachher |
+|---|---|---|---|
+| `/` | Leistung | 91 / 89 | 94 / 95 |
+| `/` | TBT | 202 / 196 ms | 106 / 115 ms |
+| `/` | LCP | 2,92 / 3,31 s | 2,92 / 2,78 s |
+| `/standorte/wetzlar` | Leistung | 77 / 77 | 76 / 76 |
+| `/blog/fliesen-reinigen-pflegen` | Leistung | 92 / 91 | 92 / 92 |
+
+  - Auf den beiden letzten Seiten liegen alle Werte in der Spanne; ihr LCP-Element (Cookie-Hinweis bzw. Absatz) ist unverändert. CLS ist überall 0.
+- **Befund in Stufe A, behoben (c773a7c5):**
+  - Das Menüblatt öffnet nativ schon vor der Hydrierung. Der Pfad-Effekt in `MobileMenu.jsx` lief auch beim ersten Einhängen und schloss ein früh geöffnetes Blatt sofort wieder (Probe: 2 von 8 Läufen). Der Fehler bestand schon vorher; das neue Timing des Eingangs machte ihn sichtbar.
+  - Jetzt schließt nur ein Wechsel der Adresse das Blatt. Danach öffnete das Blatt in der Probe 8 von 8 Mal, und Schalter- und Navigationsspecs liefen dreimal ohne Fehler (156 bestanden).
+  - Die Spec `bewegungsschalter` wartet jetzt vor jedem Klick auf die Hydrierung (`bedienbar`).
+- **Werkzeuge:** `lib.mjs` setzt für Prüfläufe zusätzlich `sessionStorage tezgel-eingang` (Wiederkehr). `bewegung.mjs` kennt die Auslöser `eingang` und `zeilenmaske`.
+- **Offen für Stufe B und Tor E3:**
+  - Sichtprüfung des Logo-Aufbaus beim vollen Eingang (Erstbesuch).
+  - Zeilenmasken bei 200 % Schrift, flach (q844) und schmal.
+  - WebKit und Firefox (UM-4).
+

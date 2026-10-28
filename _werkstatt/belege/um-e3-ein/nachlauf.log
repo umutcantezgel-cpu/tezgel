@@ -1,0 +1,33 @@
+=== REINRAUM 07:43:02
+exit 0
+lint 0 (22s)
+test 0 (3s)
+qa-graph 0 (0s)
+läuft: c773a7c5 auf 4320
+4320 200
+=== MENUE-PROBE 07:44:32
+0 true [["po
+1 true [["po
+2 true [["po
+3 true [["po
+4 true [["po
+5 true [["po
+6 true [["po
+7 true [["po
+=== SPEC 10x 07:44:47
+
+  18 skipped
+  156 passed (3.4m)
+=== SUITE reduziert 07:48:14
+  ✓  424 [desktop] › tests/verlegen.spec.mjs:1266:3 › Reduzierte Bewegung › (12) reduzierte Bewegung: Wechsel vollständig, Überblendung über .verlegen-blende, keine Fliesen-Animation (2.0s)
+
+  26 skipped
+  398 passed (9.5m)
+=== SUITE Bewegung an 07:57:47
+  ✓  422 [desktop] › tests/verlegen.spec.mjs:786:3 › Bewegung an (Wechsel mit Fliesen) › (20) Zurück im Browser, während die Fliesen abgenommen werden: Adresse, Inhalt, Scroll und Fokus (Prüfung E-043) (9.8s)
+
+  26 skipped
+  398 passed (11.3m)
+=== AXE 08:09:08
+
+=== ENDE 08:21:41

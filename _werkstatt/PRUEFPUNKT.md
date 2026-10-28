@@ -1,6 +1,6 @@
 # PRUEFPUNKT
 
-- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · **Etappe E3, Welle E3-W1** · Stand 2026-10-28 08:31 MEZ · UM-E3-TBT erledigt (E-079) · UM-E3-MOD erledigt (E-080, 109890d2) · **laufend: UM-E3-EIN Stufe A** (Bau 3e99db0a angewendet und gepusht; Prüfkette `$SCRATCH/ein/pruef/pruefkette.sh`, Log `pruefkette.log`, 4318 = 109890d2 vorher, 4319 = 3e99db0a nachher; danach Einzelbilder ansehen, Abnahme E-081, KERN K-004/K-005/K-008/B-02 nachführen)
+- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · **Etappe E3, Welle E3-W1** · Stand 2026-10-28 09:30 MEZ · UM-E3-MOD (E-080) und UM-E3-EIN (E-081; 3e99db0a, c773a7c5) erledigt · **nächstes Paket: UM-E3-ZUST** (Bau in Arbeitskopie, Diff an den Orchestrator, weil Menü und untere Leiste gemeinsame Dateien sind)
 - E2 abgeschlossen nach zwei Anläufen (E-076, Berichte `berichte/UM-E2-B.md`, `UM-E2-B2.md`):
   - Z-02, Z-03, Z-06, Z-07, Z-09 und Z-11 auf Etappenstufe erfüllt.
   - Offener Punkt Z-10: TBT mobil → UM-E3-TBT.
@@ -10,8 +10,9 @@
   1. Erledigt: UM-E3-ZUST-M (E-077; efac0a52, 27d87b66, 180e8ad2, 3daa90c1). E-078: Seitenwechsel B-01 eingefroren (Auftraggeber), UM-E3-B01 entfällt.
   2. Erledigt: UM-E3-LCP-K (Bericht). UM-E3-TBT erledigt (Bericht `berichte/UM-E3-TBT.md`, E-079: Z-10 nicht belegt verschlechtert). Davor gilt für UM-E3-TBT (nur Bericht; Messung mit wechselnder Reihenfolge E0/HEAD/HEAD/E0, nur als Skript, nie neben anderen Läufen).
   3. Erledigt: E3-W2 UM-E3-MOD (E-080; Schalter im Fuß und im Menü, Gerät geht vor, Takt `takt.ts`, Wächtertest für Spiegel). Belege `belege/um-e3/mod/`.
-  4. Als Nächstes nach PLAN 2.2: UM-E3-EIN (Eingang ohne Vorhang), dann ZUST, CURSOR, SCROLL, LEIT, REG, E3-LEISTUNG, E3-B, E3-SICHT. Vor jedem Paket die PLAN-Zeile und KERN 4.2 lesen; neue Bewegung nur über `schalter.ts` und `takt.ts`, Regeln an der Medienabfrage mit Spiegel.
-- Server: 4317 = 27d87b66 (ZUST-M), 4318 = 109890d2 (MOD); 4311 = 7ceb5e41 (E0) und 4316 nach Bedarf starten (Reinräume im Scratchpad); 4314 und 4315 aus (Reinräume `reinraum-6caeeb9c`, `reinraum-f5544581` im Scratchpad).
+  4. Erledigt: UM-E3-EIN (E-081). Muster für Pakete mit gemeinsamen Dateien: Baumeister in Arbeitskopie `$SCRATCH/<paket>/baum` (Abzug von HEAD, `node_modules` verlinkt), Diff und Notiz an den Orchestrator, Anwendung und Stufe A als Skript durch den Orchestrator.
+  5. Als Nächstes nach PLAN 2.2: ZUST, CURSOR, SCROLL, LEIT, REG, E3-LEISTUNG, E3-B, E3-SICHT. Vor jedem Paket die PLAN-Zeile und KERN 4.2 lesen; neue Bewegung nur über `schalter.ts` und `takt.ts`, Regeln an der Medienabfrage mit Spiegel.
+- Server: 4318 = 109890d2 (MOD), 4319 = 3e99db0a, 4320 = c773a7c5 (HEAD-Bau); 4317 = 27d87b66 (ZUST-M); 4311 = 7ceb5e41 (E0) und 4316 nach Bedarf starten (Reinräume im Scratchpad); 4314 und 4315 aus (Reinräume `reinraum-6caeeb9c`, `reinraum-f5544581` im Scratchpad).
 - Messregeln (E-076): Messungen als Skript, nie über einen Agenten. Lighthouse allein auf dem Rechner. Suite im Tor zweimal (`RELAUNCH_BEWEGUNG=an`). axe mit `--zustaende` prüft alle Größen.
 - Routinen: WEITER trig_013KjQUDqdr7LRnFeCaw9XWY (stündlich :30 UTC), Morgenbericht trig_01B6mPcvup5LmNmrzX4LFrJP (06:52 Europe/Berlin); alte Morgenbericht-Routine trig_01SJHduJbvG5gR7bm8jATK24 abgeschaltet.
 - Tempomat: drittes Limit 27.10. (Kalibrierpunkt 14:30–19:30 UTC). Planungsziel 60, bis ein Fenster ohne Limit endet; eigene Aufrufe bündeln. Fenster 19:30–00:30 UTC.

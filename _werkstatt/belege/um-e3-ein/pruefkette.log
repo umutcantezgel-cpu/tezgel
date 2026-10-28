@@ -1,0 +1,63 @@
+=== REINRAUM 06:41:11
+exit 0
+lint 0 (21s)
+test 0 (3s)
+qa-graph 0 (0s)
+läuft: 109890d2 auf 4318
+läuft: 3e99db0a auf 4319
+4318 200
+4319 200
+=== SUITE reduziert 06:42:34
+  1 failed
+    [mobil] › tests/bewegungsschalter.spec.mjs:36:3 › Bewegungsschalter ohne Wunsch nach reduzierter Bewegung › Menü: der Schalter steht im Menüblatt und gilt für die ganze Seite 
+  26 skipped
+  397 passed (10.1m)
+=== SUITE Bewegung an 06:52:43
+  1 failed
+    [mobil] › tests/bewegungsschalter.spec.mjs:36:3 › Bewegungsschalter ohne Wunsch nach reduzierter Bewegung › Menü: der Schalter steht im Menüblatt und gilt für die ganze Seite 
+  26 skipped
+  397 passed (11.5m)
+=== AXE 07:04:17
+axe: 396 Läufe · ernst/kritisch (Knoten) 0
+
+=== RUHIG 07:16:40
+/ befunde 0 unsichtbar 10
+/leistungen befunde 0 unsichtbar 8
+/standorte/wetzlar befunde 0 unsichtbar 8
+=== REDUZIERT 07:17:47
+/ befunde 0 unsichtbar 12
+/standorte/wetzlar befunde 0 unsichtbar 10
+=== REGISTER 07:18:31
+{ "modus": "register", "seite": "/", "ansicht": "m390", "ergebnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/ein/pruef/register/_/ergebnis.json", "gefundene_kennungen": [  "aufklappen",  "druck",  "eingang",  "karussell",  "leitachse",  "sig-flucht",  "zeilenm
+
+{ "modus": "register", "seite": "/leistungen", "ansicht": "m390", "ergebnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/ein/pruef/register/_leistungen/ergebnis.json", "gefundene_kennungen": [  "aufklappen",  "druck",  "eingang",  "formatregler",  "karussell",  
+
+=== EINZELBILDER 07:19:12
+{ "modus": "einzelbilder", "seite": "/", "ansicht": "m390", "ergebnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/ein/pruef/einzel/m390/ergebnis.json", "meldung": "1 Kennungen, 208 Elemente auf /.", "bilder_gesamt": 5, "kennungen": [  "zeilenmaske: 5 Bilder, Mo
+
+{ "modus": "einzelbilder", "seite": "/", "ansicht": "d1440", "ergebnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/ein/pruef/einzel/d1440/ergebnis.json", "meldung": "1 Kennungen, 208 Elemente auf /.", "bilder_gesamt": 5, "kennungen": [  "zeilenmaske: 5 Bilder, 
+
+=== BILDRATE 07:20:12
+{ "modus": "bildrate", "seite": "/", "ansicht": "m390", "ergebnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/ein/pruef/bildrate/ergebnis.json", "wiederholungen": 3, "bilder_gesamt": 1573, "verworfen": 4, "anteil_verworfen_prozent": 0.25, "anteile_je_lauf": [  0.57,  0.25,  0.06 ], "anteile_pipeline_je_lauf": [  0.06,  0,  0.06 ], "loaf_anzahl": 0, "loaf_summ
+
+=== PIXEL 07:22:59
+Paare: 48 · mit Abweichung: 1 · Fehler: 0 · Pixel gesamt: 0 · Laufzeit: 3.89 min
+  1. / · m390 · 0 Pixel · Anteil 0.000e+0
+  2. / · t768 · 0 Pixel · Anteil 0.000e+0
+  3. / · d1440 · 0 Pixel · Anteil 0.000e+0
+  4. / · d1920 · 0 Pixel · Anteil 0.000e+0
+  5. /bad · m390 · 0 Pixel · Anteil 0.000e+0
+=== LIGHTHOUSE 07:26:53 (allein, Reihenfolge vorher, nachher, nachher, vorher)
+vor-a /   mobil: perf 91 [88–94] · LCP 2923 ms [2864–3457] · TBT 202 ms [125–238] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+nach-a /   mobil: perf 94 [93–95] · LCP 2922 ms [2785–2930] · TBT 106 ms [102–147] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+nach-b /   mobil: perf 95 [93–95] · LCP 2783 ms [2781–2910] · TBT 115 ms [114–159] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+vor-b /   mobil: perf 89 [89–92] · LCP 3313 ms [3024–3314] · TBT 196 ms [156–218] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+vor-a /standorte/wetzlar   mobil: perf 77 [76–78] · LCP 4465 ms [4459–4535] · TBT 326 ms [282–379] · CLS 0 [0–0] · LCP-Element div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block · Benchmark außerhalb des Bands
+nach-a /standorte/wetzlar   mobil: perf 76 [76–79] · LCP 4602 ms [4453–4627] · TBT 341 ms [258–369] · CLS 0 [0–0] · LCP-Element div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block
+nach-b /standorte/wetzlar   mobil: perf 76 [71–82] · LCP 4590 ms [4526–4606] · TBT 337 ms [178–497] · CLS 0 [0–0] · LCP-Element div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block
+vor-b /standorte/wetzlar   mobil: perf 77 [76–79] · LCP 4616 ms [4475–4650] · TBT 311 ms [254–324] · CLS 0 [0–0] · LCP-Element div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block
+vor-a /blog/fliesen-reinigen-pflegen   mobil: perf 92 [88–92] · LCP 3217 ms [3174–3236] · TBT 125 ms [113–257] · CLS 0 [0–0] · LCP-Element div.mx-auto > div.mt-8 > div.col-span-4 > p.mt-8
+nach-a /blog/fliesen-reinigen-pflegen   mobil: perf 92 [92–93] · LCP 3206 ms [3019–3218] · TBT 129 ms [95–137] · CLS 0 [0–0] · LCP-Element div.mx-auto > div.mt-8 > div.col-span-4 > p.mt-8
+nach-b /blog/fliesen-reinigen-pflegen   mobil: perf 92 [90–92] · LCP 3221 ms [3202–3444] · TBT 97 ms [92–120] · CLS 0 [0–0] · LCP-Element div.mx-auto > div.mt-8 > div.col-span-4 > p.mt-8
+vor-b /blog/fliesen-reinigen-pflegen   mobil: perf 91 [88–92] · LCP 3234 ms [3222–3525] · TBT 169 ms [113–177] · CLS 0 [0–0] · LCP-Element div.mx-auto > div.mt-8 > div.col-span-4 > p.mt-8
+=== ENDE 07:37:50
