@@ -964,3 +964,21 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - UM-E3-B01 entfällt.
   - Andere Pakete (MOD, Bewegungsschalter, Cursor, Scrollen) binden den Übergang nur an, ohne ihn zu verändern. Der Bewegungsschalter nutzt den bestehenden ruhigen Weg.
   - Scheitert eine Prüfung (Z-07, Z-09) am Übergang, gibt es nur einen unsichtbaren Einzelfix nach Rücksprache.
+
+## E-079 · Offener Punkt Z-10 (TBT mobil) ist nicht belegt verschlechtert (28.10.2026, 06:16 MEZ)
+- **Grundlage:** Bericht `berichte/UM-E3-TBT.md` (Haiku, nur Auswertung).
+  - 36 von 36 Lighthouse-Rohberichten, mobil.
+  - Reihenfolge E0, HEAD, HEAD, E0 je Seite, je drei Läufe (Messung f64d09e6).
+- **Ergebnis:** Der Median HEAD minus E0 liegt bei `/` bei −6,1 ms, bei `/leistungen` bei −12,8 ms und bei `/balkon-terrasse` bei +11,2 ms.
+  - Alle drei Werte liegen innerhalb der E0-Spanne (56,0, 102,7 und 31,0 ms).
+  - Permutationstest: p = 0,81, 0,99 und 0,37.
+  - Der Eindruck aus Tor E2 (+2 bis +8 ms über der Spanne) war Streuung aus einer festen Reihenfolge.
+- **Zuordnung:**
+  - Größter Posten ist react-dom mit 461 bis 578 ms Skriptzeit je Lauf; die Differenz wechselt das Vorzeichen.
+  - Gleichgerichtet ist nur der Next-Client (+8 bis +31 ms Median). Das ist klein und ohne belegte Ursache.
+  - Eigener Code und React-Core stehen nicht in `bootup-time` (Rest 5 bis 11 %).
+- **Entscheidung:**
+  - Keine Codeänderung aus diesen Daten. Z-10 ist als Punkt aus Tor E2 erledigt.
+  - Die formale Abnahme bleibt bei UM-E3-LEISTUNG und im Tor E5. Dort gilt dieselbe Methode: mehrere E0-Läufe als Spanne und wechselnde Reihenfolge.
+- **Lehre (L6):** Leistungsvergleiche nahe der Schwelle nur mit wechselnder Reihenfolge und Spanne aus beiden Ständen, nie aus einem Block.
+
