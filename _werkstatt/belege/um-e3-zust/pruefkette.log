@@ -1,0 +1,33 @@
+=== REINRAUM 08:44:16
+exit 0
+lint 0 (23s)
+test 0 (3s)
+qa-graph 0 (0s)
+läuft: c773a7c5 auf 4320
+läuft: 5c2481e0 auf 4321
+4320 200
+4321 200
+=== FOKUS 08:45:49
+ok
+=== SUITE reduziert 08:45:56
+  ✓  422 [desktop] › tests/verlegen.spec.mjs:786:3 › Bewegung an (Wechsel mit Fliesen) › (20) Zurück im Browser, während die Fliesen abgenommen werden: Adresse, Inhalt, Scroll und Fokus (Prüfung E-043) (10.6s)
+
+  26 skipped
+  398 passed (9.7m)
+=== SUITE Bewegung an 08:55:39
+  ✓  423 [desktop] › tests/verlegen.spec.mjs:786:3 › Bewegung an (Wechsel mit Fliesen) › (20) Zurück im Browser, während die Fliesen abgenommen werden: Adresse, Inhalt, Scroll und Fokus (Prüfung E-043) (10.1s)
+
+  26 skipped
+  398 passed (11.1m)
+=== AXE 09:06:47
+.............................................................................................................................................................................................................................................................
+axe: 396 Läufe · ernst/kritisch (Knoten) 0
+
+=== PIXEL 09:18:58
+Paare: 48 · mit Abweichung: 0 · Fehler: 0 · Pixel gesamt: 0 · Laufzeit: 4.01 min
+  1. / · m390 · 0 Pixel · Anteil 0.000e+0
+  2. / · t768 · 0 Pixel · Anteil 0.000e+0
+  3. / · d1440 · 0 Pixel · Anteil 0.000e+0
+  4. / · d1920 · 0 Pixel · Anteil 0.000e+0
+  5. /bad · m390 · 0 Pixel · Anteil 0.000e+0
+=== ENDE 09:22:59

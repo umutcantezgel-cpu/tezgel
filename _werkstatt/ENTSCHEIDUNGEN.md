@@ -1044,3 +1044,26 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - Zeilenmasken bei 200 % Schrift, flach (q844) und schmal.
   - WebKit und Firefox (UM-4).
 
+## E-082 · Zustände der übrigen Bausteine (UM-E3-ZUST) abgenommen (28.10.2026, 10:25 MEZ)
+- **Gebaut (5c2481e0):** Workflow wf_3cfa0b4b-718.
+  - Bau durch einen Haiku-Baumeister in der Arbeitskopie (Briefing `pakete/UM-E3-ZUST.md`).
+  - Danach zwei unabhängige Prüfer: Zustände und Zugänglichkeit, Leitplanken.
+  - Der Orchestrator hat die Befunde in der Arbeitskopie behoben und den Diff angewendet.
+- **Bausteine:**
+  - **Karussell:** Pause und Pfeile geben gedrückt 1 px nach, mit `ruhig:`-Gegenstück. Deaktiviert ist vorbereitet; kein Knopf wird deaktiviert, das Verhalten ist unverändert (G8).
+  - **Verband-Umschalter:** Hover-Umriss in Tinte, deaktiviert über `has-disabled:`.
+  - **Menü:** Beim Überfahren werden Bereichsname und Unterpunkt unterstrichen (`group-hover:`, nur feiner Zeiger), ohne Platzwechsel.
+  - **Untere Leiste:** Der Fokus liegt im Feld (Versatz −4): Tinte auf den hellen Feldern (16,98:1), Kalk auf dem Termin-Feld (16,98:1). Gedrückt über Hintergrund-Token (`fuge`, `nacht-fuge`).
+  - **Glasbild:** Beide Fokusringe liegen innerhalb des Links auf einem Pseudo-Element über der Glasfläche, außen Tinte und innen Kalk.
+- **Befunde der Prüfer, behoben vor der Übernahme:**
+  - Glasbild (mittel): Die beim Fokus aufblendende Glasfläche verdeckte den inneren Kalk-Ring (1,48:1 auf dem Glas). In der Galerie überdeckte die Nachbarkachel den äußeren Ring rechts und unten.
+  - Untere Leiste (mittel): Der Umriss außerhalb des Feldes ging an Nachbarfeld, Fuß und Fensterrand verloren; neben dem Termin-Feld stand Tinte auf Tinte. Er wiederholte außerdem nur die Grundregel.
+  - Untere Leiste (gering): `tinte-33` direkt statt der Rolle `nacht-fuge`.
+- **Stufe A am Reinraum 5c2481e0** (Belege `belege/um-e3-zust/`):
+  - `npm test` 232/232; Typecheck, Lint und `werte.mjs` 0.
+  - Suite in beiden Zuständen 398/0/26.
+  - axe `--zustaende`: 396 Läufe, 0 ernste Knoten.
+  - Pixel gegen c773a7c5: 48 Paare, 0 Pixel; die Ruhezustände sind unverändert.
+  - Fokusbilder: `glasbild-fokus-d1440.png`, `leiste-fokus-*-m390.png`.
+- **Offen für die Sichtprüfung (Stufe B):** Reicht beim Überfahren der Menüpunkte die Unterstreichung? Ist die gedrückte Farbe der hellen Leistenfelder (`fuge`) von den Trennlinien zu unterscheiden?
+
