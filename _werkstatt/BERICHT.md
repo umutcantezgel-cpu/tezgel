@@ -1,5 +1,21 @@
 # Bericht · Lauf „Universal Motion“
 
+## Morgenbericht · Mittwoch, 28. Oktober 2026
+
+1. Fertig: Die Technik ist auf dem neuesten Stand (Next.js 16.4, React 19.3, Node 24, Tailwind 4.3), ohne Sicherheitslücke. Alle 398 Funktionsprüfungen bestehen mit und ohne Bewegung, und der Bildvergleich zeigt keinen ungewollten Unterschied.
+2. Fertig: Knöpfe zeigen „Wird gesendet …“ erst, wenn es wirklich dauert (ab 0,3 Sekunden, dann mindestens 0,5 Sekunden, ohne Flackern). Auswahlknöpfe und Kontrollkästchen zeigen klar, wenn sie gerade nicht wählbar sind.
+3. Fertig: Der Seitenwechsel bleibt genau so, wie er ist, wie du es gewünscht hast. Nichts daran wurde verändert.
+4. Geprüft: Die Seite rechnet am Handy nach dem Umbau nicht langsamer als vorher. Alle Unterschiede liegen in der normalen Streuung der Messung.
+5. Gefunden: Für ein schnelleres erstes Bild am Handy gibt es drei Hebel: das große Foto früher laden, den Cookie-Hinweis auf den Ortsseiten nicht zum größten Element werden lassen und eine Stildatei verkleinern. Sie kommen in den nächsten Aufgaben.
+6. Neu, noch in der Prüfung: der Schalter „Bewegung: an | ruhig“ im Fuß und im Menü. „ruhig“ stellt die Seite still, so wie die Einstellung „Bewegung reduzieren“ am Gerät, und gilt beim nächsten Besuch weiter (`_werkstatt/bilder/bericht/2026-10-28/1-bewegungsschalter-fuss-desktop.jpg`, `2-bewegungsschalter-menue-handy.jpg`). Die Funktionsprüfungen sind schon grün.
+7. Stand der 13 Kriterien: Noch keines ist endgültig erfüllt; die Endabnahme ist für den Schluss geplant. Auf der Zwischenstufe erfüllt sind Technik, Sicherheit, Zugänglichkeit, Darstellung, Bewegung und Leistung (Z-02, Z-03, Z-06, Z-07, Z-09, Z-10, Z-11).
+8. Kontingent der Woche: In der Cloud gibt es dafür keine Anzeige. Gestern war das Limit dreimal früher erreicht als geschätzt. Ich arbeite jetzt in weniger, größeren Schritten und habe heute Nacht vier Stunden pausiert.
+9. Als Nächstes: Prüfung des Schalters abschließen, dann der neue Eingang der Startseite, der Cursor am Computer und das Scrollen.
+10. Bitte prüfe oder entscheide (Einzelheiten in `_werkstatt/MENSCHEN.md`):
+    - Neu: Soll „an“ im Schalter die Geräteeinstellung „Bewegung reduzieren“ überstimmen können? Ich nehme an: nein (UM-7).
+    - Vor dem Zusammenführen bei Vercel die Node-Version auf 24 stellen (UM-1).
+    - Garantie-Wörter bestätigen oder streichen (UM-5, M-07). Weiter dringend: die Originalfotos in der Git-Historie (UM-6).
+
 ## Morgenbericht · Dienstag, 27. Oktober 2026
 
 1. Neuer Auftrag übernommen: Erst bringe ich die Technik der Seite auf den neuesten Stand, dann Bewegung, Seitenwechsel, Scrollen und Cursor auf Spitzenniveau. Der Plan steht nach zwei Prüfrunden: 58 Pflichtaufgaben, geschätzt etwa anderthalb Arbeitstage (`_werkstatt/PLAN.md`).
