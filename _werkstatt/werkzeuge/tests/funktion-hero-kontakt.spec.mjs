@@ -47,7 +47,8 @@ test.describe('HeroContactForm (/)', () => {
     await page.goto('/#termin');
     const form = page.locator('form').filter({ has: page.locator('#hero-name') });
     const bad = form.getByRole('button', { name: 'Badsanierung', exact: true });
-    await bad.click();
+    // Erst wählen, wenn React den Knopf übernommen hat: vorher verpufft der Klick (1 von 4 Läufen, Stufe A UM-E3-LEISTUNG)
+    await (await bedienbar(bad)).click();
     await expect(bad).toHaveAttribute('aria-pressed', 'true');
     await page.locator('#hero-name').fill('Prüf Person');
     await page.locator('#hero-phone').fill('0170 0000000');
