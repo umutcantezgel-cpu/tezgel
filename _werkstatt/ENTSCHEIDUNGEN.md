@@ -982,3 +982,26 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - Die formale Abnahme bleibt bei UM-E3-LEISTUNG und im Tor E5. Dort gilt dieselbe Methode: mehrere E0-Läufe als Spanne und wechselnde Reihenfolge.
 - **Lehre (L6):** Leistungsvergleiche nahe der Schwelle nur mit wechselnder Reihenfolge und Spanne aus beiden Ständen, nie aus einem Block.
 
+## E-080 · Bewegungsschalter und gemeinsamer Takt (UM-E3-MOD) abgenommen (28.10.2026, 07:10 MEZ)
+- **Gebaut (109890d2):**
+  - `src/lib/motion/schalter.ts`: eine Stelle für reduzierte Bewegung, Wahl und Zeigerart. Die Wahl gilt je Gerät (`localStorage` `tezgel-bewegung`).
+  - Das Kopfskript setzt bei „ruhig“ vor dem ersten Bild `html[data-bewegung="ruhig"]` und keine Startklasse `k-bewegung`.
+  - Schalter `BewegungsSchalter.tsx` im Fuß (dunkel) und im Menü: Gruppe „Bewegung“ mit den Knöpfen „an“ und „ruhig“ (`aria-pressed`). Die Wahl wirkt sofort über `waehleBewegung`.
+  - `src/lib/motion/takt.ts`: eine rAF-Schleife (`naechstesBild`, `imTakt`) und `wiederhole` für Selbstläufe.
+- **Entscheidungen:**
+  - **Das Gerät geht vor.** Wünscht es reduzierte Bewegung, ist „an“ `aria-disabled` und ein Hinweis nennt den Grund. Die Bewegungs-CSS hängt an der Medienabfrage, ein „an“ würde nur halb wirken. Frage an den Auftraggeber: MENSCHEN UM-7, Annahme nein.
+  - **„ruhig“ = bestehender ruhiger Weg.** Alles, was an `k-bewegung` hängt, ist ohne Änderung ruhig: Startzustände, Karussell, große Momente und B-01 mit 150 ms Überblendung (E-078, Code von `Verlegen.tsx` unverändert).
+  - **Spiegel für die Medienabfrage.** Regeln, die nur an der Medienabfrage hängen, spiegelt der Block „Bewegungsschalter“ in `bewegung.css`: Übergangsregel 0,01 ms wie `globals.css`, Leitachse, Fugenband, Druck, View Transitions, Intro.
+  - **Variante `ruhig:`** in `globals.css` für Utilities: Druck der Knöpfe, Lesefortschritt.
+  - **Wächter.** `test/bewegungsschalter.test.mjs` (Schalter 4 und 5) schlägt an, sobald eine neue Regel ohne Spiegel entsteht. Gegenprobe: Bei entferntem Leitachsen-Spiegel wurde der Test rot.
+  - **Wechsel zu „an“.** Was schon zu sehen war, bleibt im Endzustand; erst neue Inhalte bewegen sich. Kein Flackern.
+  - **Takt.** Sechs von elf rAF-Stellen laufen über den Takt: Bewegungsmodul, Wächter, Sprunghalter (2), Inhaltsverzeichnis, Konfigurator. Das Karussell läuft über `wiederhole`. Die fünf rAF-Stellen von B-01 bleiben eingefroren (E-078).
+  - **Werteprüfung.** Ausnahmezeile für den Spiegel `0.01ms !important`, mit Begründung: gleiche Dauer wie bei reduzierter Bewegung, damit Ende-Ereignisse feuern.
+- **Prüfung am Reinraum 109890d2** (Belege `belege/um-e3/mod/`):
+  - `npm test` 234/234 (neu: takt 6, bewegungsschalter 5). Typecheck, Lint und `werte.mjs` 0.
+  - Suite in beiden Zuständen 398/0/26, mit der neuen Spec `bewegungsschalter` (Fuß, Menü, Gerät reduziert).
+  - axe `--zustaende`: 396 Läufe, 0 ernste Knoten.
+  - `bewegung.mjs --modus reduziert --schalter ruhig` auf sechs Seiten: 0 Bewegungsbefunde. Unsichtbar sind 5 bis 10 Elemente wie in E0: geschlossene Menüs, ausgeblendete Knöpfe.
+  - Pixel gegen 27d87b66: 48 von 48 Paaren weichen ab, alle nur in den letzten beiden Ausschnitten (Fuß). Grund ist die neue Schalterzeile: m390 +83,5 px, t768 +60 px, Desktop ±0. Unter reduzierter Bewegung steht der Hinweis darunter.
+- **Lehre (L6):** Mit einem Schalter, der „wie reduzierte Bewegung“ gilt, braucht jede Regel an der Medienabfrage einen Spiegel. Ohne Wächtertest geht das beim nächsten Paket verloren.
+

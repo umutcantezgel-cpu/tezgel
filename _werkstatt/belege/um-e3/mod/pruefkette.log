@@ -1,0 +1,44 @@
+=== REINRAUM 05:21:48
+exit 0
+lint 0 (19s)
+test 0 (3s)
+qa-graph 0 (0s)
+läuft: 27d87b66 auf 4317
+läuft: 109890d2 auf 4318
+4317 200
+4318 200
+=== SUITE reduziert 05:24:16
+  ✓  424 [desktop] › tests/verlegen.spec.mjs:1266:3 › Reduzierte Bewegung › (12) reduzierte Bewegung: Wechsel vollständig, Überblendung über .verlegen-blende, keine Fliesen-Animation (2.1s)
+
+  26 skipped
+  398 passed (9.7m)
+=== SUITE Bewegung an 05:34:01
+  ✓  424 [desktop] › tests/verlegen.spec.mjs:1266:3 › Reduzierte Bewegung › (12) reduzierte Bewegung: Wechsel vollständig, Überblendung über .verlegen-blende, keine Fliesen-Animation (2.6s)
+
+  26 skipped
+  398 passed (10.7m)
+=== AXE 05:44:47
+............................................................................................................................................................................................................................................................................................................................................................................................................
+axe: 396 Läufe · ernst/kritisch (Knoten) 0
+
+=== RUHIG 05:56:42
+{ "modus": "reduziert", "seite": "/", "ansicht": "m390", "ergebnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/mod/ruhig/_/ergebnis.json", "bewegungsbefunde": [], "unsichtbar": [  {   "kennung": "zustand",   "sel": "a",   "gruende": [    "display none"   ]  },  {   "kennung": "druck",   "sel": "button#whatsapp-floating-btn",   "gruende": [    "display none"  
+
+{ "modus": "reduziert", "seite": "/leistungen", "ansicht": "m390", "ergebnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/mod/ruhig/_leistungen/ergebnis.json", "bewegungsbefunde": [], "unsichtbar": [  {   "kennung": "zustand",   "sel": "a",   "gruende": [    "display none"   ]  },  {   "kennung": "druck",   "sel": "button#whatsapp-floating-btn",   "gruende": [
+
+{ "modus": "reduziert", "seite": "/ueber-uns", "ansicht": "m390", "ergebnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/mod/ruhig/_ueber-uns/ergebnis.json", "bewegungsbefunde": [], "unsichtbar": [  {   "kennung": "zustand",   "sel": "a",   "gruende": [    "display none"   ]  },  {   "kennung": "druck",   "sel": "button#whatsapp-floating-btn",   "gruende": [  
+
+{ "modus": "reduziert", "seite": "/bad/barrierefreies-bad", "ansicht": "m390", "ergebnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/mod/ruhig/_bad_barrierefreies-bad/ergebnis.json", "bewegungsbefunde": [], "unsichtbar": [  {   "kennung": "zustand",   "sel": "a",   "gruende": [    "display none"   ]  },  {   "kennung": "druck",   "sel": "button#whatsapp-float
+
+{ "modus": "reduziert", "seite": "/referenzen", "ansicht": "m390", "ergebnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/mod/ruhig/_referenzen/ergebnis.json", "bewegungsbefunde": [], "unsichtbar": [  {   "kennung": "zustand",   "sel": "a",   "gruende": [    "display none"   ]  },  {   "kennung": "druck",   "sel": "button#whatsapp-floating-btn",   "gruende": [
+
+{ "modus": "reduziert", "seite": "/blog/fliesen-reinigen-pflegen", "ansicht": "m390", "ergebnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/mod/ruhig/_blog_fliesen-reinigen-pflegen/ergebnis.json", "bewegungsbefunde": [], "unsichtbar": [  {   "kennung": "zustand",   "sel": "a",   "gruende": [    "display none"   ]  },  {   "kennung": "druck",   "sel": "button#
+
+=== PIXEL 05:58:55
+Paare: 48 · mit Abweichung: 48 · Fehler: 0 · Pixel gesamt: 1121749 · Laufzeit: 3.95 min
+  1. /kontakt · m390 · 22496 Pixel · Anteil 7.594e-3 · Höhe 7172/7255
+  2. /standorte/wetzlar · m390 · 23865 Pixel · Anteil 6.591e-3 · Höhe 9174/9258
+  3. /kontakt · t768 · 40447 Pixel · Anteil 6.429e-3 · Höhe 8029/8089
+  4. /balkon-terrasse · m390 · 22496 Pixel · Anteil 5.695e-3 · Höhe 9498/9581
+  5. /bad/barrierefreies-bad · m390 · 23865 Pixel · Anteil 5.577e-3 · Höhe 10773/10857
+=== ENDE 06:02:53
