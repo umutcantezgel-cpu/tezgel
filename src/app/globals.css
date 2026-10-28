@@ -233,9 +233,14 @@
        fokussierte oder angesprungene Elemente liegen nie unter einer festen Ebene (WCAG 2.4.11). Den offenen
        Einwilligungsbanner hält BannerPlatz frei (nur Elemente unter ihm, nicht klebende Spalten; R-01a) */
     scroll-padding-bottom: calc(var(--spacing) * 32);
+    /* Dokumenthintergrund wie Kopf und Einstieg (Kalk, KERN Regeln v4): Beim Überziehen oben erscheint kein fremder Rand */
     background-color: var(--color-kalk);
     color: var(--color-tinte);
     color-scheme: light;
+    /* Platz der Bildlaufleiste bleibt immer belegt (UM-E3-SCROLL, KERN Regeln v4): Die Seite rückt nicht seitlich, wenn die
+       Leiste kommt oder geht, etwa bei offenem Menü (Sperre über <body>). Nur an <html>: anders als overflow geht
+       scrollbar-gutter nicht von <body> auf den Viewport über. Überlagernde Leisten (Handy, macOS) belegen keinen Platz. */
+    scrollbar-gutter: stable;
   }
 
   @media (width >= 64rem) {
@@ -252,7 +257,9 @@
     /* <html> setzt kein overflow: Dann gilt das overflow von <body> für den Viewport (CSS Overflow 3) – waagerecht
        `hidden` als Rückfall, bei offenem Menü die Sperre darunter. <body> selbst beschneidet dadurch nicht mehr. */
     overflow-x: clip;
-    min-height: 100vh;
+    /* kleine Ansicht (svh, UM-E3-SCROLL): Eine kurze Seite füllt den ersten Bildschirm, ohne mobil um die Höhe der
+       Adressleiste zu scrollen; am Desktop ist svh gleich vh */
+    min-height: 100svh;
     /* Trennregel der Seite für jedes Element mit hyphens: auto (erbt): nur Wörter ab 12 Zeichen, je Teil mindestens fünf
        (Knöpfe, Auswahlkarten, Adressen; vorher nur Fließtext, E-065) */
     hyphenate-limit-chars: 12 5 5;
@@ -285,6 +292,13 @@
   /* Hinweis „Weitere Einträge darunter“ im Mobilmenü nur, solange die Liste nach unten weiterscrollt (Runde 4) */
   .menue-liste {
     container-type: scroll-state;
+    /* Menü als Dialog (UM-E3-SCROLL, KERN Regeln v4): Am Ende der Liste läuft das Scrollen nicht in die Seite darunter
+       weiter, und es federt nicht die Seite nach. */
+    overscroll-behavior: contain;
+    /* Der klebende Hinweis „Mehr darunter“ ist die feste Leiste dieser Liste: Ein Eintrag, der per Tastatur oder Sprung ins
+       Bild rollt, hält mit seinem Fokusring Abstand über ihm (WCAG 2.4.11). Zeile in fs-1 plus Innenabstand, Rand und
+       Fokusring (zusammen höchstens vier Einheiten); wächst mit der Systemschrift. */
+    scroll-padding-bottom: calc(var(--text-fs-1) * var(--text-fs-1--line-height) + var(--spacing) * 4);
   }
   .menue-weiter {
     display: none;
@@ -476,6 +490,21 @@
      utilities, damit sie den Startzustand scale-x-0 überschreibt */
   .lesefortschritt-linie {
     scale: var(--lesefortschritt, 0) 1;
+  }
+  /* Lesefortschritt ohne Scroll-Ereignis (UM-E3-SCROLL, K-008): Kennt der Browser Scroll-Zeitstrahlen, zieht CSS die Linie
+     linear am Scrollweg des Dokuments, ohne Skript; sonst setzt ReadingProgress.jsx --lesefortschritt aus einem
+     IntersectionObserver (Rückfall). Nur mit der Startklasse und ohne Notaus (Bewegungsschalter, E-080), wie die übrigen
+     Startzustände; reduziert, „ruhig“ und im Druck ist die Linie ohnehin ausgeblendet. Ohne Startklasse oder bei Notaus
+     steht sie bei 0. animation-timeline steht nach der Kurzform, die sie sonst zurücksetzt. */
+  @supports (animation-timeline: scroll()) {
+    html.k-bewegung:not(.k-notaus) .lesefortschritt-linie {
+      animation: lesefortschritt-ziehen linear both;
+      animation-timeline: scroll(root block);
+    }
+  }
+  @keyframes lesefortschritt-ziehen {
+    from { scale: 0 1; }
+    to { scale: 1 1; }
   }
   /* Laserachse (K-003 Nr. 2, K-007 leitachse, R-01a): Grundschicht in Fuge, rot nur das gezogene Stück. Im Grundzustand
      ist nichts gezogen; das Stück wächst allein über den Scroll-Zeitstrahl aus bewegung.css und nur, wenn das Kopfskript

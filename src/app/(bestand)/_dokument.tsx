@@ -97,6 +97,48 @@ export const BESTAND_METADATA: Metadata = {
   },
 };
 
+// Sofortgefühl über Speculation Rules (UM-E3-SCROLL, KERN Regeln v4, AUFTRAG 8): nur öffentliche GET-Seiten derselben
+// Herkunft. Nie Formulare und Rechner (die Arbeitsseiten, deren Inhalt das Formular oder der Rechner ist), nie /login, nie
+// /api, keine Dateien. Abruf beim Zeigen (moderate: Zeiger 200 ms über dem Link oder Drücken), nur das HTML: Beim bloßen
+// Lesen und Scrollen entsteht keine Last, und es läuft kein Skript der Zielseite. Genutzt wird der Abruf bei Wechseln als
+// ganzes Dokument, vor allem bei Klicks vor der Hydrierung; danach wechseln B-01 und Next.js innerhalb des Dokuments.
+// Bewusst kein prerender: Ein vorgerendertes Dokument führt seine Skripte aus (Hydrierung, Effekte, auch Statistik nach
+// Einwilligung) und würde nach der Hydrierung nie aktiviert, weil B-01 den Klick übernimmt. Zuschalten erst nach Messung
+// (INP, Bildrate von B-01) und mit Statistik, die auf die Aktivierung wartet (document.prerendering).
+// Muster nach URL Pattern: Ohne „?“ und „#“ im Muster gelten alle Suchparameter und Anker mit.
+const NIE_VORLADEN = [
+  '/api/*',
+  '/login{/*}?',
+  '/kontakt{/*}?',
+  '/termin{/*}?',
+  '/beratung{/*}?',
+  '/preise{/*}?',
+  '/bad/badanfrage{/*}?',
+  '/bad/badplaner{/*}?',
+  '/bad/projekt-check{/*}?',
+  '/fliesen/konfigurator{/*}?',
+  '/fliesen/festpreisangebot{/*}?',
+  '/_next/*',
+  '/images/*',
+  '/*.pdf',
+];
+const VORLADEN = JSON.stringify({
+  prefetch: [
+    {
+      source: 'document',
+      where: {
+        and: [
+          { href_matches: '/*' },
+          { not: { href_matches: NIE_VORLADEN } },
+          // Links mit Anker (oft dieselbe Seite, etwa /#ablauf auf /), Downloads und Links in ein anderes Fenster
+          { not: { selector_matches: ['[href*="#"]', '[download]', '[target]:not([target="_self"])'] } },
+        ],
+      },
+      eagerness: 'moderate',
+    },
+  ],
+});
+
 export const BESTAND_VIEWPORT: Viewport = {
   themeColor: '#F4F4F5', // = --color-kalk (Metadaten verlangen einen Farbwert)
   colorScheme: 'light',
@@ -114,13 +156,16 @@ export default function BestandDokument({
       <head>
         {/* Bewegung: Startklassen vor dem ersten Rendern, auch für den Eingang ohne Vorhang (KERN K-007, E-067-4) */}
         <script dangerouslySetInnerHTML={{ __html: KOPFSKRIPT }} />
+        {/* Abruf öffentlicher Seiten beim Zeigen (UM-E3-SCROLL); Browser ohne Speculation Rules übergehen den Block */}
+        <script type="speculationrules" dangerouslySetInnerHTML={{ __html: VORLADEN }} />
         <meta name="geo.region" content="DE-HE" />
         <meta name="geo.placename" content="Aßlar" />
         <meta name="geo.position" content="50.5900;8.4600" />
         <meta name="ICBM" content="50.5900, 8.4600" />
         <JsonLd schema={rootKnowledgeGraph} />
       </head>
-      <body className="antialiased min-h-screen flex flex-col bg-kalk text-tinte font-text">
+      {/* min-h-svh: kleine Ansicht wie in globals.css (UM-E3-SCROLL) */}
+      <body className="antialiased min-h-svh flex flex-col bg-kalk text-tinte font-text">
         <SkipNav />
         {/* Provider liegen an ihrem Nutzungsort (E-010): Inhalte unter /blog, Anmeldung unter /login */}
         <ErrorBoundary>
