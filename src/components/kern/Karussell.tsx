@@ -39,8 +39,10 @@ function useRuhigGewuenscht() {
 }
 
 // Farben je Fläche vollständig getrennt: in einer gemeinsamen Grundklasse gewönne sonst die helle Farbe (gleiche Utility)
+// Gedrückt wie KNOPF_BASIS (stile.ts): 1 px, mit ruhig:-Gegenstück. Deaktiviert (disabled oder aria-disabled) halbe Deckkraft
+// ohne Zeiger (K-010).
 const knopfGrund =
-  'inline-flex size-11 items-center justify-center border transition-colors dauer-1 ease-setzen focus-visible:outline-2 focus-visible:outline-offset-2';
+  'inline-flex size-11 items-center justify-center border transition-colors dauer-1 ease-setzen focus-visible:outline-2 focus-visible:outline-offset-2 motion-safe:active:translate-y-px ruhig:active:translate-y-0! disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50';
 const knopfHell = 'border-fuge bg-fliese text-tinte hover:border-tinte focus-visible:outline-tinte';
 const knopfDunkel = 'border-nacht-fuge bg-tinte text-kalk hover:border-kalk focus-visible:outline-kalk';
 const knopf = clsx(knopfGrund, knopfHell);
@@ -50,7 +52,7 @@ const knopf = clsx(knopfGrund, knopfHell);
 // (Lighthouse target-size, E-061).
 function PauseKnopf({ angehalten, umschalten, dunkel = false }: { angehalten: boolean; umschalten: () => void; dunkel?: boolean }) {
   return (
-    <button type="button" onClick={umschalten} className={clsx(knopfGrund, 'relative z-10', dunkel ? knopfDunkel : knopfHell)}>
+    <button type="button" onClick={umschalten} data-motion="druck" className={clsx(knopfGrund, 'relative z-10', dunkel ? knopfDunkel : knopfHell)}>
       <Icon name={angehalten ? 'abspielen' : 'pause'} groesse={4} />
       <span className="sr-only">{angehalten ? 'Weiterlaufen lassen' : 'Anhalten'}</span>
     </button>
@@ -225,12 +227,12 @@ export default function Karussell({ art, name, children, karte = 'w-full md:w-1/
           sie über den Karten: Die Spur folgt dort der Höhe der sichtbaren Karte, Knöpfe darunter sprängen beim Blättern mit, und
           ein zweites Tippen ginge ins Leere (Browserprüfung E4-W1, Runde 4). Die Reihenfolge im DOM bleibt. */}
       <div aria-hidden={bedienbar ? undefined : true} className={clsx('flex items-center justify-center gap-3 max-sm:order-first max-sm:mb-4 sm:mt-6', !bedienbar && 'invisible')}>
-        <button type="button" onClick={() => rucken(-1)} onPointerDown={beruehrt} className={knopf}>
+        <button type="button" onClick={() => rucken(-1)} onPointerDown={beruehrt} data-motion="druck" className={knopf}>
           <Icon name="pfeil-links" groesse={4} />
           <span className="sr-only">Zurück</span>
         </button>
         {selbstlauf && !ruhig && <PauseKnopf angehalten={angehalten} umschalten={() => setAngehalten((a) => !a)} />}
-        <button type="button" onClick={() => rucken(1)} onPointerDown={beruehrt} className={knopf}>
+        <button type="button" onClick={() => rucken(1)} onPointerDown={beruehrt} data-motion="druck" className={knopf}>
           <Icon name="pfeil-rechts" groesse={4} />
           <span className="sr-only">Weiter</span>
         </button>

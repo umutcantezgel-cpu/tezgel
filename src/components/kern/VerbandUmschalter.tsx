@@ -96,7 +96,7 @@ export default function VerbandUmschalter({ start = 'halb', className }: { start
         {VERBAENDE.map((v) => (
           <label
             key={v.id}
-            className="verband-wahl relative flex min-h-11 cursor-pointer items-center justify-center bg-fliese px-2 py-3 text-center font-text text-fs-1 text-tinte has-checked:bg-tinte has-checked:text-kalk sm:text-fs-2"
+            className="verband-wahl relative flex min-h-11 cursor-pointer items-center justify-center bg-fliese px-2 py-3 text-center font-text text-fs-1 text-tinte has-checked:bg-tinte has-checked:text-kalk sm:text-fs-2 hover:ring-1 hover:ring-inset hover:ring-tinte has-disabled:pointer-events-none has-disabled:opacity-50"
           >
             <input
               type="radio"

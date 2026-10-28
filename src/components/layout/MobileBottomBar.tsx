@@ -15,8 +15,11 @@ import { hauptziel, ohneLeiste } from "@/config/navigation";
 // Markenzeichen. Anrufen und Termin tragen die Markierungen für „Erstes Bild“ (K-004). Das erste Feld
 // ist der Platz des Widerruf-Schilds der Einwilligung (#leiste-schild): die
 // Einwilligungs-Komponente hängt ihren Knopf dort ein, sobald sie geladen ist – so verdeckt kein schwebender Knopf Inhalt.
+// Fokus: der Umriss liegt innerhalb des Feldes (Versatz -4), damit ihn weder Nachbarfeld, Fuß der Seite noch Fensterrand
+// verdecken; die Farbe je Fläche: Tinte auf den hellen Feldern, Kalk auf dem Termin-Feld (Prüfung UM-E3-ZUST).
+// Gedrückt: Hintergrund-Token, ohne Platzwechsel.
 const feld =
-  "flex min-h-12 min-w-0 flex-1 flex-col items-center justify-center gap-1 px-2 py-2 font-text text-fs-1 font-semibold transition-colors dauer-1 ease-setzen";
+  "flex min-h-12 min-w-0 flex-1 flex-col items-center justify-center gap-1 px-2 py-2 font-text text-fs-1 font-semibold transition-colors dauer-1 ease-setzen focus-visible:outline-2 focus-visible:-outline-offset-4";
 
 export default function MobileBottomBar() {
   const pathname = usePathname() || "";
@@ -38,7 +41,7 @@ export default function MobileBottomBar() {
         <a
           href={siteConfig.contact.phone.link}
           onClick={() => triggerHaptic("medium")}
-          className={`${feld} bg-kalk text-tinte hover:bg-fliese`}
+          className={`${feld} bg-kalk text-tinte hover:bg-fliese active:bg-fuge focus-visible:outline-tinte`}
           aria-label={`Fliesenverlegung Tezgel anrufen: ${siteConfig.contact.phone.formatted}`}
           data-erstes-bild="kontakt"
           data-motion="druck"
@@ -57,7 +60,7 @@ export default function MobileBottomBar() {
             // seitenbezogene Nachricht wie beim Desktop-Knopf (E-015)
             openWhatsApp({ phone: siteConfig.contact.whatsapp, text: kontextNachricht(pathname) });
           }}
-          className={`${feld} bg-kalk text-tinte hover:bg-fliese`}
+          className={`${feld} bg-kalk text-tinte hover:bg-fliese active:bg-fuge focus-visible:outline-tinte`}
           aria-label="Nachricht per WhatsApp"
           data-motion="druck"
           data-leiste-feld="whatsapp"
@@ -69,7 +72,7 @@ export default function MobileBottomBar() {
         <Link
           href={hauptziel(pathname)}
           onClick={() => triggerHaptic("light")}
-          className={`${feld} bg-tinte text-kalk hover:bg-tinte-2`}
+          className={`${feld} bg-tinte text-kalk hover:bg-tinte-2 active:bg-nacht-fuge focus-visible:outline-kalk`}
           aria-label="Termin vor Ort anfragen"
           data-hauptknopf=""
           data-erstes-bild="hauptknopf"

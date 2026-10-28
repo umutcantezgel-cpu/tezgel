@@ -150,9 +150,9 @@ export default function MobileMenu({ isOpen, onToggle }) {
                                                 href={link.path}
                                                 onClick={schliessen}
                                                 aria-current={istAktiv(link) ? 'page' : undefined}
-                                                className="flex min-w-0 flex-1 flex-col py-2 @max-xs:py-1"
+                                                className="group flex min-w-0 flex-1 flex-col py-2 @max-xs:py-1"
                                             >
-                                                <span className="text-fs-4 font-semibold text-tinte @max-xs:text-fs-3">{link.name}</span>
+                                                <span className="text-fs-4 font-semibold text-tinte group-hover:underline underline-offset-4 decoration-strich group-hover:decoration-tinte @max-xs:text-fs-3">{link.name}</span>
                                                 <span className="hidden text-fs-2 text-tinte-2 @xs:block">{link.kurz}</span>
                                             </Link>
                                             {link.items.length > 0 && (
@@ -190,7 +190,7 @@ export default function MobileMenu({ isOpen, onToggle }) {
                                                                                 className="group flex items-center justify-between gap-3 py-3"
                                                                             >
                                                                                 <span className="min-w-0">
-                                                                                    <span className="block text-fs-3 font-semibold text-tinte group-aria-[current=page]:text-laser-tief">{item.name}</span>
+                                                                                    <span className="block text-fs-3 font-semibold text-tinte group-hover:underline underline-offset-4 decoration-strich group-hover:decoration-tinte group-aria-[current=page]:text-laser-tief">{item.name}</span>
                                                                                     {item.desc && <span className="block text-fs-2 text-tinte-2">{item.desc}</span>}
                                                                                 </span>
                                                                                 <Icon name="pfeil-rechts" groesse={4} className="text-tinte-2" />

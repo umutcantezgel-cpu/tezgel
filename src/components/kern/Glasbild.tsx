@@ -48,8 +48,15 @@ export default function Glasbild({ arbeit, name, href, linkText = 'Ansehen', siz
       </div>
     );
   }
+  // Fokus auf dem Foto, auf jedem Grund sichtbar: beide Ringe liegen innerhalb des Links auf einem Pseudo-Element in derselben
+  // Rasterzelle, über der Glasfläche (die beim Fokus aufblendet). Außen Tinte (inset-ring), innen Kalk (Umriss, Versatz -4).
+  // So deckt weder die Glasfläche noch eine Nachbarkachel der Galerie einen Ring ab (Prüfung UM-E3-ZUST).
   return (
-    <Link href={href} data-motion="zustand" className="glasbild grid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tinte">
+    <Link
+      href={href}
+      data-motion="zustand"
+      className="glasbild grid focus-visible:outline-hidden after:pointer-events-none after:relative after:col-start-1 after:row-start-1 focus-visible:after:inset-ring-2 focus-visible:after:inset-ring-tinte focus-visible:after:outline-2 focus-visible:after:-outline-offset-4 focus-visible:after:outline-kalk"
+    >
       <Bildfeld arbeit={arbeit} sizes={sizes} flaeche className={FOTO} />
       {flaeche}
     </Link>
