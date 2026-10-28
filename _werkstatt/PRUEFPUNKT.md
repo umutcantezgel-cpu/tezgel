@@ -1,6 +1,6 @@
 # PRUEFPUNKT
 
-- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · **Etappe E3, Welle E3-W1** · Stand 2026-10-28 09:30 MEZ · UM-E3-MOD (E-080) und UM-E3-EIN (E-081; 3e99db0a, c773a7c5) erledigt · **nächstes Paket: UM-E3-ZUST** (Bau in Arbeitskopie, Diff an den Orchestrator, weil Menü und untere Leiste gemeinsame Dateien sind)
+- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · **Etappe E3, Welle E3-W1** · Stand 2026-10-28 09:30 MEZ · UM-E3-MOD (E-080) und UM-E3-EIN (E-081; 3e99db0a, c773a7c5) erledigt · **laufend: UM-E3-ZUST** (Workflow wf_3cfa0b4b-718: Haiku-Bau in `$SCRATCH/zust/baum`, zwei Prüfer; danach Diff `$SCRATCH/zust/zust.diff` mit Befunden übernehmen, Stufe A als Skript) · Tempomat: bis 10:53 UTC kein neues großes Paket
 - E2 abgeschlossen nach zwei Anläufen (E-076, Berichte `berichte/UM-E2-B.md`, `UM-E2-B2.md`):
   - Z-02, Z-03, Z-06, Z-07, Z-09 und Z-11 auf Etappenstufe erfüllt.
   - Offener Punkt Z-10: TBT mobil → UM-E3-TBT.
