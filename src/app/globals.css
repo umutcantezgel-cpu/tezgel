@@ -237,10 +237,9 @@
     background-color: var(--color-kalk);
     color: var(--color-tinte);
     color-scheme: light;
-    /* Platz der Bildlaufleiste bleibt immer belegt (UM-E3-SCROLL, KERN Regeln v4): Die Seite rückt nicht seitlich, wenn die
-       Leiste kommt oder geht, etwa bei offenem Menü (Sperre über <body>). Nur an <html>: anders als overflow geht
-       scrollbar-gutter nicht von <body> auf den Viewport über. Überlagernde Leisten (Handy, macOS) belegen keinen Platz. */
-    scrollbar-gutter: stable;
+    /* Kein scrollbar-gutter (UM-E3-SCROLL, Stufe A, E-084): Mit „stable“ blieb bei klassischen Bildlaufleisten der Streifen der
+       Leiste auch während des Seitenwechsels belegt, und die feste Schicht von B-01 deckte die neue Ansicht 15 px schmaler
+       (verlegen.spec 26, 28, 31). B-01 ist eingefroren (E-078), deshalb entfällt der Streifen statt der Schicht. */
   }
 
   @media (width >= 64rem) {
