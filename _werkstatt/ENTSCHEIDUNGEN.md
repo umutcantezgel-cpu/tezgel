@@ -1067,3 +1067,13 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - Fokusbilder: `glasbild-fokus-d1440.png`, `leiste-fokus-*-m390.png`.
 - **Offen für die Sichtprüfung (Stufe B):** Reicht beim Überfahren der Menüpunkte die Unterstreichung? Ist die gedrückte Farbe der hellen Leistenfelder (`fuge`) von den Trennlinien zu unterscheiden?
 
+## E-083 · Live-Schaltung des geprüften Stands auf Anweisung des Auftraggebers (28.10.2026, 12:45 MEZ)
+- **Wortlaut des Auftraggebers:** „kannst du den aktuellen stand schonml vollständig live schalten“. Den Push hatte die Rechteprüfung der Sitzung zunächst abgelehnt („Production Deploy“); danach kam die Freigabe: „ich erlaub dir“.
+- **Ausgeführt:**
+  - `main` von 55e99f3f auf 2317dcde vorgespult, ohne Force-Push.
+  - Vercel ist mit Node 24.x eingestellt (UM-1 erledigt). Der Produktions-Deploy war nach etwa 80 s live; www.tezgel.de meldet die Build-Kennung `2317dcde917a0bcd07053837fc64fb76b1b8d430`.
+- **Live sind:** Stack-Upgrade E2, Designsystem v4, Ladezustände und Zustände (E-077, E-082), Bewegungsschalter (E-080), Eingang ohne Vorhang (E-081). Der Seitenwechsel B-01 ist unverändert (E-078).
+- **Nicht live:** Der laufende Workflow UM-E3-W3 (CURSOR, SCROLL, LEIT, REG) liegt nur in der Arbeitskopie.
+- **Probe nach dem Deploy:** 16 Adressen antworten mit 200: die Hauptansichten, Impressum, Datenschutz, Sitemap und robots. Schalter und Eingang stehen im HTML.
+- **Weiter gilt:** Push nur auf den Arbeitsbranch. `main` wird nur auf neue ausdrückliche Anweisung erneut bewegt (G3).
+
