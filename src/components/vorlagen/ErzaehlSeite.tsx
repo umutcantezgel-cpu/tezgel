@@ -81,6 +81,7 @@ export default function ErzaehlSeite({ inhalt, momente, werkzeug, nachBeleg, ein
           pfad={inhalt.pfad}
           brotkrumen={worum.brotkrumen}
           titelZeilen={worum.titelZeilen}
+          titelGross={worum.titelGross}
           ort={worum.ort}
           hauptziel={ziel}
           bild={einstiegBild ?? worum.bild}

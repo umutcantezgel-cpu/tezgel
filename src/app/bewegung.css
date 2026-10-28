@@ -97,6 +97,9 @@ html.k-bewegung:not(.k-notaus) [data-motion="anriss"]:not([data-motion-stand="an
    Einstieg), weil Spitze und Marke dort schon im ersten Bildschirm neben dem roten Lot von Plan oder Karte stünden (ein
    Rot je Bildschirm, K-003); Arbeitsansichten (ohne Seitenformel, K-010: kein Signaturmoment) und Seiten außerhalb der
    Vorlagen. Sie behalten die Leitachse wie bisher.
+   Mittiger Einstieg (UM-E3-FIX F1): Das Lot beginnt schon an der Schnur unter der H1 (.einstieg-lot im Einstieg) und läuft
+   mit demselben Bereich, ohne Marke; reicht die Leselinie über den Fuß des Einstiegs, ist es ganz gezogen, und die
+   Leitachse übernimmt ohne Lücke. Mobil steht keine Marke (Leitachse.tsx): Sie stünde immer neben einer Textzeile.
    Technik: Die Bahn der Marke (.leitfaden-bahn) hat dieselbe Box wie das Lot und einen eigenen view-timeline. Die Marke
    ist ein Streifen in voller Höhe der Bahn, das Fugenkreuz sitzt an seiner Unterkante. Spitze (scale 0 → 1) und Marke
    (translate 0 -100% → 0, also die Unterkante von 0 bis zur Höhe der Bahn) laufen im selben Bereich am gleichen
@@ -130,14 +133,16 @@ html.k-bewegung:not(.k-notaus) [data-motion="anriss"]:not([data-motion-stand="an
 }
 @supports (animation-timeline: view()) and (animation-range-end: cover calc(100% - 40vh)) {
   @media screen and (prefers-reduced-motion: no-preference) {
-    html.k-bewegung [data-seitenformel] > [data-formel="worum"] + .leitfaden > .leitfaden-ebene .leitachse {
+    html.k-bewegung [data-seitenformel] > [data-formel="worum"] + .leitfaden > .leitfaden-ebene .leitachse,
+    html.k-bewegung [data-seitenformel] > [data-formel="worum"] > * > .einstieg-lot .leitachse {
       view-timeline-inset: 0;
     }
     html.k-bewegung [data-seitenformel] > [data-formel="worum"] + .leitfaden > .leitfaden-ebene .leitfaden-bahn {
       view-timeline: --leitfaden block;
       view-timeline-inset: 0;
     }
-    html.k-bewegung [data-seitenformel] > [data-formel="worum"] + .leitfaden > .leitfaden-ebene .leitachse-rot {
+    html.k-bewegung [data-seitenformel] > [data-formel="worum"] + .leitfaden > .leitfaden-ebene .leitachse-rot,
+    html.k-bewegung [data-seitenformel] > [data-formel="worum"] > * > .einstieg-lot .leitachse-rot {
       animation-range: cover 60vh cover calc(100% - 40vh);
     }
     html.k-bewegung [data-seitenformel] > [data-formel="worum"] + .leitfaden > .leitfaden-ebene .leitfaden-marke {
@@ -152,7 +157,8 @@ html.k-bewegung:not(.k-notaus) [data-motion="anriss"]:not([data-motion-stand="an
   to { opacity: 1; translate: 0 0; }
 }
 @media print, (forced-colors: active) {
-  [data-seitenformel] > [data-formel="worum"] + .leitfaden > .leitfaden-ebene .leitachse-rot {
+  [data-seitenformel] > [data-formel="worum"] + .leitfaden > .leitfaden-ebene .leitachse-rot,
+  [data-seitenformel] > [data-formel="worum"] > * > .einstieg-lot .leitachse-rot {
     animation: none !important;
   }
   .leitfaden-marke {
@@ -772,7 +778,10 @@ html.k-notaus::view-transition-new(*) {
    wird nie bewegt, verdeckt oder ausgeblendet. Das Kopfskript setzt html.k-eingang nur zusammen mit html.k-bewegung (also
    nie bei reduzierter Bewegung, „ruhig“ oder ohne JavaScript) und nimmt die Klasse bei jeder Eingabe und spätestens nach
    2 s wieder weg; danach gilt sofort der Endzustand. Behälter sind der Logo-Link im Kopf und der Einstieg
-   (data-motion="eingang"). Erster Aufruf im Besuch:
+   (data-motion="eingang"). Erster Aufruf im Besuch, „An der Schnur“ (K-007, UM-E3-FIX F2):
+   - Die Schnur unter der H1 (nur im mittigen Einstieg, data-eingang="schnur") zieht in dauer-3 von der Achse nach rechts
+     (scale von links, ease-laser) und bleibt als Grundlinie und Anfang des Leitfadens stehen; ihr Endzustand ist der
+     Ruhezustand. Die Zeilen der H1 beginnen, wenn sie gut zur Hälfte gezogen ist (dauer-2), und setzen sich auf ihr auf.
    - Das Logo baut sich in zwei Reihen im Drittelverband auf: eine Maske (clip-path) gibt die unveränderte Datei von links
      frei, die untere Reihe ein Drittel einer Fliese hinter der oberen (Fliese 2 : 1 so hoch wie das Logo, Logo 3,2 : 1:
      ein Drittel einer Fliese ist 1/9,6 der Breite). Der Endzustand ist das Original ohne Maske.
@@ -783,23 +792,33 @@ html.k-notaus::view-transition-new(*) {
      unten bei sig-flucht: Endet der Eingang, bleibt nur sie in der Liste und läuft ohne Neustart weiter (Abgleich nach
      Namen, CSS Animations 1); mit einer eigenen Flucht im Schlüsselbild begänne sig-flucht beim Ende noch einmal.
    - Ort und Knopfzeile setzen sich (8 px, Deckkraft, wie auftritt), über die Oberkante des Fotos zieht ein Fugenriss in
-     Strich und verblasst (nur ein Pseudoelement am Bildplatz, das Foto bleibt unberührt).
-   Wiederkehr im selben Besuch (html.k-wiederkehr): nur die Zeilenmasken, kürzer, kein Logo-Aufbau. Alle Teile laufen mit
-   Füllung backwards: Der Endzustand ist der Stil ohne Eingang, ohne Lage- oder Größenänderung. Takt nur aus Tokens;
-   test/intro.test.mjs rechnet ihn nach (voll höchstens 1,5 s, Wiederkehr kürzer). */
+     Strich und verblasst (nur ein Pseudoelement am Bildplatz, das Foto bleibt unberührt). Im mittigen Einstieg ist
+     data-eingang="knoepfe" die Hülle um alles unter dem Ort (Nebenlink, Knopfzeile, erster Schritt, Bewertung): Vor der
+     H1 steht so nichts allein im Bild (Nacharbeit A, Lesefolge Schnur, H1, Ort, Rest).
+   Wiederkehr im selben Besuch (html.k-wiederkehr): nur die Zeilenmasken, kürzer, kein Logo-Aufbau, die Schnur steht. Takt
+   voll: Logo 0–800 ms, Schnur 0–600, Zeilen 320–1040, Ort 680–1280, Knöpfe und Rest 800–1400, Fugenriss 800–1400. Alle
+   Teile laufen mit Füllung backwards: Der Endzustand ist der Stil ohne Eingang, ohne Lage- oder Größenänderung. Takt nur
+   aus Tokens; test/intro.test.mjs rechnet ihn nach (voll höchstens 1,5 s, Wiederkehr kürzer). */
 [data-motion="eingang"] {
   --eingang-logo: var(--dauer-4);
-  --eingang-zeile-beginn: var(--dauer-1);
+  --eingang-schnur: var(--dauer-3);
+  --eingang-zeile-beginn: var(--dauer-2);
   --eingang-zeile-abstand: calc(var(--staffel) * 2);
   --eingang-zeile: var(--dauer-3);
-  --eingang-ort-beginn: calc(var(--dauer-1) + var(--staffel) * 6);
-  --eingang-knoepfe-beginn: calc(var(--dauer-1) + var(--staffel) * 8);
+  --eingang-ort-beginn: calc(var(--dauer-2) + var(--staffel) * 6);
+  --eingang-knoepfe-beginn: calc(var(--dauer-2) + var(--staffel) * 8);
   --eingang-riss-beginn: var(--dauer-4);
   --eingang-setzen: var(--dauer-3);
 }
 html.k-wiederkehr [data-motion="eingang"] {
   --eingang-zeile-beginn: var(--dauer-0);
   --eingang-zeile: var(--dauer-2);
+}
+/* Schnur: zieht von der Achse nach rechts (transform-origin links an der Schnur selbst, EinstiegMitte) */
+@keyframes eingang-schnur {
+  from {
+    scale: 0 1;
+  }
 }
 @keyframes eingang-logo {
   from {
@@ -844,6 +863,9 @@ html.k-wiederkehr [data-motion="eingang"] {
   html.k-eingang.k-bewegung:not(.k-notaus):not(.k-wiederkehr) [data-motion="eingang"] [data-erstes-bild="logo"] {
     animation: eingang-logo var(--eingang-logo) var(--ease-setzen) backwards;
   }
+  html.k-eingang.k-bewegung:not(.k-notaus):not(.k-wiederkehr) [data-motion="eingang"] [data-eingang="schnur"] {
+    animation: eingang-schnur var(--eingang-schnur) var(--ease-laser) backwards;
+  }
   html.k-eingang.k-bewegung:not(.k-notaus) [data-motion="eingang"] [data-motion="zeilenmaske"] {
     animation: eingang-zeile var(--eingang-zeile) var(--ease-setzen) calc(var(--eingang-zeile-beginn) + var(--eingang-zeile-abstand) * min(var(--zeile, 0), 3)) backwards;
   }
@@ -875,7 +897,8 @@ html.k-wiederkehr [data-motion="eingang"] {
   html.k-eingang [data-motion="eingang"] [data-erstes-bild="logo"],
   html.k-eingang [data-motion="eingang"] [data-motion="zeilenmaske"],
   html.k-eingang [data-motion="eingang"] [data-erstes-bild="ort"],
-  html.k-eingang [data-motion="eingang"] [data-eingang="knoepfe"] {
+  html.k-eingang [data-motion="eingang"] [data-eingang="knoepfe"],
+  html.k-eingang [data-motion="eingang"] [data-eingang="schnur"] {
     animation: none !important;
   }
   html.k-eingang [data-motion="eingang"] [data-eingang="bild"]::after {

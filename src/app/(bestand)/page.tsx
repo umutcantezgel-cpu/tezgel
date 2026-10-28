@@ -8,6 +8,7 @@ import type { Metadata } from 'next';
 import HeroContactForm from '@/components/forms/HeroContactForm';
 import Startbild from '@/components/start/Startbild';
 import ErzaehlSeite from '@/components/vorlagen/ErzaehlSeite';
+import { EINSTIEG_MITTE_SIZES } from '@/components/vorlagen/teile/EinstiegMitte';
 import { START } from '@/inhalte/start';
 import { createMetadata } from '@/lib/metadata';
 import SeitenDaten from '@/components/seo/SeitenDaten';
@@ -22,7 +23,7 @@ export default function HomePage() {
     return (
         <>
             <SeitenDaten pfad="/" titel={START.meta.titel} beschreibung={START.meta.beschreibung} brotkrumen={[{ name: 'Start' }]} />
-            <ErzaehlSeite inhalt={START} einstiegBild={<Startbild lcp sizes="(min-width: 1024px) 40vw, (min-width: 640px) 28rem, 100vw" />} formular={<HeroContactForm titel={false} />} />
+            <ErzaehlSeite inhalt={START} einstiegBild={<Startbild lcp sizes={EINSTIEG_MITTE_SIZES} />} formular={<HeroContactForm titel={false} />} />
         </>
     );
 }

@@ -1,6 +1,6 @@
 // Großer Moment „weg“ (KERN v3.3 K-007, E3-GRAF-02) für /bad/badsanierung, Schlitz `momente.ablauf` der Erzählseite (ersetzt
 // dort die Schritte): Vom Anruf bis zur letzten Fuge als Weg mit Stationen an der roten Laserlinie. Die Linie liegt auf dem
-// Lot der Leitachse (Lage wie die Schritte der Vorlage: -ml-2 md:-ml-4) und führt durch die Fläche des Abschnitts, die die
+// Lot der Leitachse (Lage wie die Schritte der Vorlage: -ml-3 md:-ml-4, Kreuze mobil 8 px) und führt durch die Fläche des Abschnitts, die die
 // Leitachse verdeckt. Jedes Wegstück reicht von der Marke einer Station bis zur Marke der nächsten; sein rotes Stück wächst
 // scrollgebunden, und die Marke der nächsten Station setzt sich, wenn die Spitze ankommt (bewegung.css, Register `weg`).
 // Ohne JavaScript, bei reduzierter Bewegung, ohne animation-timeline, im Notaus und im Druck steht die Linie voll und alle
@@ -10,6 +10,7 @@
 // Unterschriften nur mit dem, was zu sehen ist (K-012). Texte kommen aus dem Seiteninhalt. Serverkomponente.
 import clsx from 'clsx';
 import Bildfeld from '@/components/kern/Bildfeld';
+import { KREUZ_GROESSE } from '@/components/kern/Leitachse';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Textmarken from '@/components/kern/Textmarken';
 import type { AblaufInhalt } from '@/components/vorlagen/inhalt';
@@ -30,7 +31,7 @@ export interface WegProps {
 export default function Weg({ stationen, bilder = [], bilderBei = 5 }: WegProps) {
   return (
     <div data-motion="weg" className="@container">
-      <ol className="-ml-2 md:-ml-4">
+      <ol className="-ml-3 md:-ml-4">
         {stationen.map((s, i) => {
           const letzte = i === stationen.length - 1;
           const mitBildern = bilder.length > 0 && i + 1 === bilderBei;
@@ -44,10 +45,10 @@ export default function Weg({ stationen, bilder = [], bilderBei = 5 }: WegProps)
                 </span>
               )}
               {/* Marke der Station auf der Linie: Fugenkreuz in Strich, darüber das gesetzte in Tinte */}
-              <span aria-hidden="true" className="absolute top-3 left-0 size-3 -translate-x-1/2 -translate-y-1/2 @4xl:top-6">
-                <Fugenkreuz className="absolute inset-0 size-3 text-strich" />
+              <span aria-hidden="true" className={clsx('absolute top-3 left-0 -translate-x-1/2 -translate-y-1/2 @4xl:top-6', KREUZ_GROESSE)}>
+                <Fugenkreuz className="absolute inset-0 size-full text-strich" />
                 <span className="weg-marke-an absolute inset-0 flex">
-                  <Fugenkreuz className="size-3 text-tinte" />
+                  <Fugenkreuz className="size-full text-tinte" />
                 </span>
               </span>
               <p className="font-mono text-fs-4 text-tinte-2 @4xl:col-span-1">{String(i + 1).padStart(2, '0')}</p>

@@ -172,15 +172,16 @@
       },
       "eingang": {
         "zweck": "charakter",
-        "was": "Eingang ohne Vorhang: Logo baut sich im Kopf auf, Ort und Knopfzeile setzen sich, Fugenriss am Foto (E-067-4)",
+        "was": "Eingang ohne Vorhang: Logo baut sich im Kopf auf, die Schnur unter der H1 zieht, Ort und Knopfzeile (mittig mit allem darunter) setzen sich, Fugenriss am Foto (E-067-4, UM-E3-FIX)",
         "stufen": {
           "dauer": [
-            "--dauer-1",
+            "--dauer-2",
             "--dauer-3",
             "--dauer-4"
           ],
           "kurve": [
             "--ease-setzen",
+            "--ease-laser",
             "linear"
           ],
           "letzteStufe": 8
@@ -193,11 +194,10 @@
       },
       "zeilenmaske": {
         "zweck": "hierarchie",
-        "was": "Die Zeilen der H1 steigen hinter Zeilenmasken auf, eine nach der anderen („An der Schnur“)",
+        "was": "Die Zeilen der H1 steigen hinter Zeilenmasken auf, eine nach der anderen, auf die Schnur („An der Schnur“)",
         "stufen": {
           "dauer": [
             "--dauer-0",
-            "--dauer-1",
             "--dauer-2",
             "--dauer-3"
           ],

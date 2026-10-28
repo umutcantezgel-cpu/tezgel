@@ -11,6 +11,7 @@ import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import { KREUZ_GROESSE } from '@/components/kern/Leitachse';
 import Textmarken from '@/components/kern/Textmarken';
 import WeiterLink from '@/components/kern/WeiterLink';
 import type { AblaufInhalt } from '../inhalt';
@@ -35,7 +36,8 @@ export function Schritte({ schritte, start = 0, weiter = false }: { schritte: Ab
     );
   }
   return (
-    <ol className={clsx('-ml-2 grid md:-ml-4 lg:ml-0', SPALTEN[schritte.length] ?? 'lg:grid-cols-3')}>
+    // mobil auf dem Lot (ACHSE_LAGE: 4 px vom Rand, also 12 px vor der Inhaltskante; ab md 16 px), ab lg die Treppe
+    <ol className={clsx('-ml-3 grid md:-ml-4 lg:ml-0', SPALTEN[schritte.length] ?? 'lg:grid-cols-3')}>
       {schritte.map((s, i) => {
         const letzter = i === schritte.length - 1;
         return (
@@ -49,7 +51,7 @@ export function Schritte({ schritte, start = 0, weiter = false }: { schritte: Ab
           >
             {/* Setzstufe ab lg: vom Ende der vorigen Linie senkrecht herab zum Anfang dieser */}
             {i > 0 && <span aria-hidden="true" className="absolute bottom-full left-0 hidden h-16 -translate-x-1/2 border-l-2 border-laser lg:block" />}
-            <Fugenkreuz className="absolute top-1 left-0 size-3 -translate-x-1/2 text-tinte lg:top-0 lg:-translate-y-1/2" />
+            <Fugenkreuz className={clsx('absolute top-1 left-0 -translate-x-1/2 text-tinte lg:top-0 lg:-translate-y-1/2', KREUZ_GROESSE)} />
             <p className="font-mono text-fs-4 text-tinte-2">{String(start + i + 1).padStart(2, '0')}</p>
             <h3 className="mt-2 font-anzeige text-fs-5 font-extrabold text-tinte">{s.titel}</h3>
             <p className="mt-4 max-w-mass font-text text-fs-3 text-tinte-2">

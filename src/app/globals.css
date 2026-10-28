@@ -172,6 +172,14 @@
   max-height: calc(100dvh - var(--spacing) * 32);
 }
 
+/* Foto im mittigen Einstieg ab lg (UM-E3-FIX F1, Nacharbeit A): zwei Drittel der Spalte, aber nie höher als ein Bildschirm
+   unter Kopf (16 Stufen) und Rand (8 Stufen), im eigenen Seitenverhältnis (--bild-format = Breite : Höhe, am Element aus
+   der Bilddatei). So ist das Foto auch in der Ansicht immer ganz zu sehen (E-047); zwei Drittel waren auf t1024 bis d1440
+   höher als der Bildschirm. sizes passend dazu: EINSTIEG_MITTE_SIZES in vorlagen/teile/EinstiegMitte.tsx. */
+@utility einstieg-foto {
+  width: min(calc(100% * 2 / 3), calc((100svh - var(--spacing) * 24) * var(--bild-format)));
+}
+
 @utility ohne-scrollleiste {
   scrollbar-width: none;
 }
@@ -419,6 +427,17 @@
   .karten-hoehe {
     height: var(--karten-hoehe);
   }
+  /* Fugenkreuz an der Abschnittskante im Leitfaden (Leitachse nach dem Einstieg einer Seitenformel, UM-E3-FIX F3): nur dort,
+     wo das Lot eine Trennlinie kreuzt, also an der Kante einer Fliese- oder Tintefläche (data-kante) und am Abschnitt
+     danach, dessen Oberkante dieselbe Kante ist. Vor ruhiger Kalkfläche stand es allein im Weiß und las sich wie ein
+     verirrtes Pluszeichen (Sichtabnahme E3 Anlauf 1, auch im Zustand „ruhig“). Übrige Leitachsen unverändert. */
+  [data-seitenformel] > [data-formel="worum"] + .leitfaden .abschnitt-kreuz {
+    display: none;
+  }
+  [data-seitenformel] > [data-formel="worum"] + .leitfaden [data-kante] > .abschnitt-kreuz,
+  [data-seitenformel] > [data-formel="worum"] + .leitfaden [data-kante] + section > .abschnitt-kreuz {
+    display: block;
+  }
 }
 
 /* Anzeigeschnitt für Titel ohne Überschriften-Element (Formulartitel, Kennwerte, Merkliste): schmal gesetzt wie
@@ -428,6 +447,12 @@
     font-stretch: 74%;
     letter-spacing: -0.01em;
     word-spacing: 0.06em;
+  }
+  /* Abstand der H1 zur Schnur im mittigen Einstieg (UM-E3-FIX F1, F2): ein Viertel ihrer Schriftgröße, also mehr als der
+     Überstand der Zeilenmaske unter der Zeile (0,2em, bewegung.css „eingang-zeile“). So steigen die Zeilen über der Schnur
+     auf und nie durch sie hindurch, und die Unterlängen halten auch mobil gut 8 px Abstand. */
+  .schnur-abstand {
+    padding-block-end: 0.25em;
   }
   /* Planblatt der Startseite: Das Formular setzt die Wände des geschnittenen Plans nach unten fort (--wand aus
      wandEinzug() in Verlegeplan.tsx, Anteil der Zeichnungsbreite) */

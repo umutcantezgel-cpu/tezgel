@@ -2,7 +2,11 @@
 // Einstieg, an derselben Stelle wie Lot bzw. Kreuzlinie des Einstiegs (im Seitenrand vor der Inhaltskante, mobil
 // ≥ 8 px Abstand zum Text). Grundschicht Fuge, rot nur das gezogene Stück (K-003 Nr. 2): es wächst mit dem
 // Lesefortschritt, nur bei erlaubter Bewegung; reduziert und ohne JavaScript bleibt die Achse grau (globals.css, R-01a).
-// Abschnitte mit `leitachse` setzen an ihrer Oberkante ein Fugenkreuz auf das Lot. Schneidet nie Text.
+// Abschnitte mit `leitachse` setzen an ihrer Oberkante ein Fugenkreuz auf das Lot. Schneidet nie Text. Im Leitfaden (unten)
+// steht ein Kreuz nur dort, wo das Lot eine Trennlinie kreuzt (Kante einer Fliese- oder Tintefläche, globals.css
+// „abschnitt-kreuz“, UM-E3-FIX F3): Vor ruhiger Kalkfläche las es sich wie ein verirrtes Pluszeichen.
+// Der mittige Einstieg (vorlagen/teile/EinstiegMitte) beginnt das Lot schon an seiner Schnur unter der H1; es läuft
+// ohne Lücke in diese Leitachse über.
 //
 // Leitfaden mit Abschnittsmarke (K-007 Leitfaden-Motiv, UM-E3-LEIT): Folgt die Leitachse in einer Ansicht mit
 // Seitenformel auf den Einstieg (Erzählseite mit mittigem Einstieg oder Planblatt: `/` und mit Absicht die übrigen
@@ -36,9 +40,14 @@ import Laserachse from './Laserachse';
 import { seitenKlassen } from './stile';
 
 /** Lage des Lots im Seitenrahmen – gemeinsam für Einstieg, Leitachse und die Fugenkreuze der Abschnittskanten */
-// mobil 8 px vom Rand: das Fugenkreuz an der Abschnittskante (12 px) steht ganz im Bild, 2 px vor der Textkante
-// (Sichtprüfung E2); die Abschnittsmarke hat dieselbe Größe und Lage
-export const ACHSE_LAGE = 'left-2 md:left-4 lg:left-8';
+// mobil 4 px vom Rand (UM-E3-FIX F3, Sichtabnahme E3 Anlauf 1: bei 8 px berührten Kreuz und Lot den Text): Lot und
+// Fugenkreuz (mobil 8 px, KREUZ_GROESSE) halten mindestens 8 px Abstand zur Textkante (16 px); ab md 16 px vom Rand
+// (Text ab 32 px), ab lg 32 px (Text ab 48 px), dort mit 12-px-Kreuz 10 px Abstand. Die Abschnittsmarke steht nur ab md.
+export const ACHSE_LAGE = 'left-1 md:left-4 lg:left-8';
+/** Größe eines Fugenkreuzes auf dem Lot: mobil 8 px (ganz im Bild, 8 px vor der Textkante), ab md 12 px */
+export const KREUZ_GROESSE = 'size-2 md:size-3';
+/** Schnur des mittigen Einstiegs (UM-E3-FIX F1): von der Achse bis zur gespiegelten Stelle am rechten Rand */
+export const SCHNUR_LAGE = `${ACHSE_LAGE} right-1 md:right-4 lg:right-8`;
 
 export default function Leitachse({ children, gezogen = true, className }: { children: ReactNode; gezogen?: boolean; className?: string }) {
   return (
@@ -51,8 +60,10 @@ export default function Leitachse({ children, gezogen = true, className }: { chi
               {/* Bahn der Abschnittsmarke: gleiche Box wie das Lot, Kennung leitachse (Register), Ebene z-10 über den
                   Flächen. Die Marke ist ein Streifen in voller Höhe der Bahn, das Fugenkreuz sitzt an seiner Unterkante
                   und trägt data-leitachse für die Überlappungsprüfung (es schneidet wie das Lot nie Text) */}
+              {/* Mobil keine Marke (UM-E3-FIX F3): Sie stünde auf der Leselinie immer neben einer Textzeile; dort führt
+                  allein die rote Spitze des Lots */}
               <div data-motion="leitachse" className={clsx('leitfaden-bahn z-10', ACHSE_LAGE)}>
-                <span className="leitfaden-marke">
+                <span className="leitfaden-marke max-md:hidden">
                   <span data-leitachse="" className="absolute bottom-0 left-0 size-3 translate-y-1/2">
                     <Fugenkreuz className="absolute inset-0 size-full" />
                   </span>

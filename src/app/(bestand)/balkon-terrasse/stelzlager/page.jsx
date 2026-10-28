@@ -18,7 +18,7 @@ import Abschnitt from '@/components/kern/Abschnitt';
 import Einstieg from '@/components/kern/Einstieg';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Knopf from '@/components/kern/Knopf';
-import Leitachse, { ACHSE_LAGE } from '@/components/kern/Leitachse';
+import Leitachse, { ACHSE_LAGE, KREUZ_GROESSE } from '@/components/kern/Leitachse';
 import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import { linkKlassen, seitenKlassen } from '@/components/kern/stile';
@@ -374,7 +374,7 @@ export default function StelzlagerPage() {
                 <nav aria-labelledby="stelzlager-ratgeber-heading" className="relative border-y border-fuge bg-fliese py-16 lg:py-24">
                     <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 z-10">
                         <div className={clsx(seitenKlassen, 'relative')}>
-                            <Fugenkreuz className={clsx('absolute top-0 size-3 -translate-x-1/2 -translate-y-1/2 text-tinte', ACHSE_LAGE)} />
+                            <Fugenkreuz className={clsx('absolute top-0 -translate-x-1/2 -translate-y-1/2 text-tinte', KREUZ_GROESSE, ACHSE_LAGE)} />
                         </div>
                     </div>
                     <div className={clsx(seitenKlassen, 'spaet-zeichnen')}>

@@ -16,7 +16,7 @@ import Icon from '@/components/icons/Icon';
 import Bewertungszeile from '@/components/kern/Bewertungszeile';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Karussell from '@/components/kern/Karussell';
-import { ACHSE_LAGE } from '@/components/kern/Leitachse';
+import { ACHSE_LAGE, KREUZ_GROESSE } from '@/components/kern/Leitachse';
 import { seitenKlassen, wahlKlassen } from '@/components/kern/stile';
 import { umbruchNachSatzzeichen } from '@/components/kern/zusammen';
 
@@ -48,10 +48,11 @@ export default function ReviewsSection({ leitachse = false }) {
     return (
         <section className="relative py-16 lg:py-24" id="bewertungen" aria-labelledby="reviews-heading">
             {leitachse && (
-                // Fugenkreuz auf dem Lot der Leitachse an der Oberkante (wie Abschnitt mit `leitachse`)
-                <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 z-10">
+                // Fugenkreuz auf dem Lot der Leitachse an der Oberkante (wie Abschnitt mit `leitachse`; im Leitfaden nur auf einer
+                // Trennlinie, globals.css „abschnitt-kreuz“)
+                <div aria-hidden="true" className="abschnitt-kreuz pointer-events-none absolute inset-x-0 top-0 z-10">
                     <div className={clsx(seitenKlassen, 'relative')}>
-                        <Fugenkreuz className={clsx('absolute top-0 size-3 -translate-x-1/2 -translate-y-1/2 text-tinte', ACHSE_LAGE)} />
+                        <Fugenkreuz className={clsx('absolute top-0 -translate-x-1/2 -translate-y-1/2 text-tinte', KREUZ_GROESSE, ACHSE_LAGE)} />
                     </div>
                 </div>
             )}

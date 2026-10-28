@@ -29,14 +29,17 @@ const SPALTE = ['xl:col-span-3', 'xl:col-span-4', 'xl:col-span-5'];
 const MARKE = ['Aßlar', '10 km', '25 km'];
 
 // Die Marken stehen über der Linie an ihren Teilstrichen (Aßlar am Ursprung, 10 und 25 km an den Grenzen der Spalten), wie
-// an einer Maßkette; vorher stand „10 km“ in der Spalte über „Bis 25 km ab Aßlar“ und las sich doppelt (E2-SICHT-2 Befund 9)
+// an einer Maßkette; vorher stand „10 km“ in der Spalte über „Bis 25 km ab Aßlar“ und las sich doppelt (E2-SICHT-2 Befund 9).
+// Die Linie beginnt auf der Leitachse: Ihr rotes Ursprungskreuz sitzt auf dem Lot (ab xl 16 px vor der Inhaltskante:
+// ACHSE_LAGE lg:left-8 im Rand lg:px-12), so markiert ein Kreuz Achse und Ursprung; vorher standen Achsen- und
+// Ursprungskreuz 16 px nebeneinander (UM-E3-FIX F3, Sichtabnahme E3 Anlauf 1)
 function GemeinsameKette() {
   return (
     <div aria-hidden="true" className="hidden pt-8 xl:col-span-12 xl:grid xl:grid-cols-12">
       {MARKE.map((marke, k) => (
         <span key={marke} className={clsx('relative h-4 border-l border-strich', SPALTE[k])}>
-          <span className="absolute inset-x-0 top-0 border-t border-strich" />
-          {k === 0 && <Fugenkreuz className="absolute top-0 left-0 size-3 -translate-1/2 text-laser" />}
+          <span className={clsx('absolute top-0 right-0 border-t border-strich', k === 0 ? '-left-4' : 'left-0')} />
+          {k === 0 && <Fugenkreuz className="absolute top-0 -left-4 size-3 -translate-1/2 text-laser" />}
           <span className={clsx('absolute bottom-full mb-2 font-mono text-fs-1 whitespace-nowrap text-tinte-2', k === 0 ? 'left-3' : 'left-0 -translate-x-1/2')}>{marke}</span>
         </span>
       ))}

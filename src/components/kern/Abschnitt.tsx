@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import Fugenkreuz from './Fugenkreuz';
-import { ACHSE_LAGE } from './Leitachse';
+import { ACHSE_LAGE, KREUZ_GROESSE } from './Leitachse';
 import { etikettForm, seitenKlassen } from './stile';
 import type { Formelteil } from './Seitenformel';
 
@@ -62,6 +62,9 @@ export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleit
     <section
       id={id}
       data-formel={formel}
+      // Fliese und Tinte stoßen mit einer Kante an ihre Nachbarn: dort kreuzt das Lot eine Trennlinie (Fugenkreuz im
+      // Leitfaden nur dort, globals.css „abschnitt-kreuz“, UM-E3-FIX F3)
+      data-kante={flaeche !== 'kalk' || undefined}
       aria-labelledby={titel ? hId : undefined}
       aria-label={!titel ? rest['aria-label'] : undefined}
       className={clsx(
@@ -74,10 +77,11 @@ export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleit
       )}
     >
       {leitachse && (
-        // Fugenkreuz auf dem Lot (Ebene z-10, K-005): über der Zierebene der Leitachse und über einer Nachbarfläche mit z-10
-        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 z-10">
+        // Fugenkreuz auf dem Lot (Ebene z-10, K-005): über der Zierebene der Leitachse und über einer Nachbarfläche mit z-10.
+        // abschnitt-kreuz: im Leitfaden nur auf einer Trennlinie (globals.css); mobil 8 px groß (KREUZ_GROESSE, ≥ 8 px zum Text)
+        <div aria-hidden="true" className="abschnitt-kreuz pointer-events-none absolute inset-x-0 top-0 z-10">
           <div className={clsx(seitenKlassen, 'relative')}>
-            <Fugenkreuz className={clsx('absolute top-0 size-3 -translate-x-1/2 -translate-y-1/2', ACHSE_LAGE, tinte ? 'text-nacht-2' : 'text-tinte')} />
+            <Fugenkreuz className={clsx('absolute top-0 -translate-x-1/2 -translate-y-1/2', KREUZ_GROESSE, ACHSE_LAGE, tinte ? 'text-nacht-2' : 'text-tinte')} />
           </div>
         </div>
       )}

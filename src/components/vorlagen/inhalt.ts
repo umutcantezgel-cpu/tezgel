@@ -33,6 +33,9 @@ export interface WorumInhalt {
    *  festen Zeilen (sig-flucht) und dem Plan (sig-plan); `bild` ist dann das hohe Foto unter lg, `bildGross` das Querformat */
   plan?: PlanName;
   titelZeilen?: string[];
+  /** Mittiger Einstieg: H1 ab lg eine Stufe größer (fs-7), nur auf der Startseite (UM-E3-FIX F1). Gleich gebaute Einstiege
+   *  der übrigen Seiten bleiben einheitlich bei fs-6; keine Regel nach Zeilenlänge (Nacharbeit A, Prüfer 2) */
+  titelGross?: boolean;
   firmensitz?: string;
   bildGross?: ArbeitId;
   /** Bewertungszeile als Kennzeile über dem Plan (mittig: unter den Knöpfen) */
