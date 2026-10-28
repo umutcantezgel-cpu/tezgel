@@ -1,6 +1,6 @@
 # PRUEFPUNKT
 
-- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · **Etappe E3, Welle E3-W1** · Stand 2026-10-28 07:10 MEZ · UM-E3-TBT erledigt (E-079) · UM-E3-MOD erledigt (E-080, 109890d2) · **nächstes Paket: UM-E3-EIN nach PLAN**
+- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · **Etappe E3, Welle E3-W1** · Stand 2026-10-28 07:10 MEZ · UM-E3-TBT erledigt (E-079) · UM-E3-MOD erledigt (E-080, 109890d2) · **laufend: UM-E3-EIN** (Opus-Baumeister in der Arbeitskopie `$SCRATCH/ein/baum`, Briefing `pakete/UM-E3-EIN.md`; Ergebnis `$SCRATCH/ein/ein.diff`, dann prüfen, anwenden, Stufe A als Skript)
 - E2 abgeschlossen nach zwei Anläufen (E-076, Berichte `berichte/UM-E2-B.md`, `UM-E2-B2.md`):
   - Z-02, Z-03, Z-06, Z-07, Z-09 und Z-11 auf Etappenstufe erfüllt.
   - Offener Punkt Z-10: TBT mobil → UM-E3-TBT.
