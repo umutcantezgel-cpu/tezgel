@@ -1,0 +1,67 @@
+{
+ "modus": "register",
+ "seite": "/",
+ "base": "http://127.0.0.1:4324",
+ "ansicht": "m390",
+ "zeitpunkt": "2026-10-28T18:09:08.197Z",
+ "schritte": {
+  "hover_geprueft": 20,
+  "hover_fehler": 0,
+  "hover_fehler_beispiel": null,
+  "hover_ausserhalb_uebersprungen": 0,
+  "tab_schritte": 30,
+  "fokus_verschieden": 22
+ },
+ "data_motion_elemente": 215,
+ "gefundene_kennungen": [
+  "aufklappen",
+  "druck",
+  "eingang",
+  "karussell",
+  "leitachse",
+  "sig-flucht",
+  "zeilenmaske",
+  "zustand"
+ ],
+ "unbekannt": [],
+ "registriert_nicht_im_dom": [
+  "verlegen",
+  "seitenwechsel",
+  "intro",
+  "startbild",
+  "verband",
+  "anriss",
+  "auftritt",
+  "notiert",
+  "laden",
+  "sig-kreuzlinie",
+  "szene-ablauf",
+  "sig-plan",
+  "einzugsband",
+  "fugenband",
+  "schichten",
+  "weg",
+  "gefaelle-dusche",
+  "gefaelle-balkon",
+  "formatregler",
+  "vorher-nachher",
+  "karte",
+  "galerie-filter",
+  "cursor"
+ ],
+ "ohne_register": [],
+ "mit_register_eintraege": 5,
+ "erfasste_eintraege": 5,
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e3b/bewegung/register",
+ "basisadresse": "http://127.0.0.1:4324",
+ "server_stand": {
+  "port": "4324",
+  "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/reinraum-1d101816",
+  "commit": "1d101816"
+ }
+}

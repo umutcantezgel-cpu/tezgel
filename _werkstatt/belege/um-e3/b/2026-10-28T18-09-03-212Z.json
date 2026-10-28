@@ -1,0 +1,44 @@
+{
+ "werkzeug": "svg.mjs",
+ "zeitpunkt": "2026-10-28T18:09:03.212Z",
+ "animiert": false,
+ "dateien": [],
+ "seiten": {
+  "base": "http://127.0.0.1:4324",
+  "ansichten": [
+   "m390",
+   "d1440"
+  ],
+  "ergebnisse": [
+   {
+    "seite": "/",
+    "ansicht": "d1440",
+    "status": 200,
+    "inline_svgs": 180,
+    "befunde": [],
+    "fehler": null,
+    "anfragen": {
+     "fremd": 0,
+     "blockiert": 0,
+     "anfrage_attrappe": 0
+    }
+   },
+   {
+    "seite": "/",
+    "ansicht": "m390",
+    "status": 200,
+    "inline_svgs": 180,
+    "befunde": [],
+    "fehler": null,
+    "anfragen": {
+     "fremd": 0,
+     "blockiert": 0,
+     "anfrage_attrappe": 0
+    }
+   }
+  ]
+ },
+ "befunde_gesamt": 0,
+ "befunde": [],
+ "zusammenfassung": {}
+}

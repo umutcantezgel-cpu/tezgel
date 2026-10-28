@@ -1,0 +1,712 @@
+{
+ "seiten": {
+  "/": {
+   "mobil": {
+    "median": {
+     "perf": 94,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 2709,
+     "cls": 0,
+     "tbt": 113,
+     "fcp": 1211,
+     "si": 1781,
+     "js_kb": 198,
+     "font_kb": 57,
+     "gesamt_kb": 409,
+     "benchmark": 1880,
+     "lcp_element": {
+      "selector": "div.relative > figure > div.border > img.block",
+      "ausschnitt": "<img alt=\"Dusche ohne Stufe mit großen grauen Fliesen und einer Glaswand\" fetchpriority=\"high\" loading=\"eager\" width=\"1280\" height=\"1600\" decoding=\"async\" data-"
+     },
+     "spanne": {
+      "perf": [
+       94,
+       96
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       2704,
+       2912
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       101,
+       150
+      ],
+      "fcp": [
+       1210,
+       1212
+      ],
+      "si": [
+       1369,
+       1826
+      ],
+      "js_kb": [
+       198,
+       198
+      ],
+      "font_kb": [
+       57,
+       57
+      ],
+      "gesamt_kb": [
+       409,
+       409
+      ],
+      "benchmark": [
+       1869.5,
+       1936
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 94,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2704.4705999999996,
+      "cls": 0,
+      "tbt": 150.25490000000013,
+      "fcp": 1210.4705999999999,
+      "si": 1781.2594613841325,
+      "js_kb": 198,
+      "font_kb": 57,
+      "gesamt_kb": 409,
+      "benchmark": 1880,
+      "lcp_element": {
+       "selector": "div.relative > figure > div.border > img.block",
+       "ausschnitt": "<img alt=\"Dusche ohne Stufe mit großen grauen Fliesen und einer Glaswand\" fetchpriority=\"high\" loading=\"eager\" width=\"1280\" height=\"1600\" decoding=\"async\" data-"
+      },
+      "lcp_phasen": {
+       "ttfb": 17,
+       "ladeverzoegerung": 47,
+       "ladezeit": 23,
+       "renderverzoegerung": 126
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2tbu000sg63yb.js",
+        "kb": 71.2
+       },
+       {
+        "pfad": "/_next/static/chunks/3i7bb4yv5vlj-.js",
+        "kb": 46
+       },
+       {
+        "pfad": "/_next/static/chunks/43ze2r7l6z9o7.js",
+        "kb": 24.6
+       },
+       {
+        "pfad": "/_next/static/chunks/03thh847es-9q.js",
+        "kb": 19.5
+       },
+       {
+        "pfad": "/_next/static/chunks/3msxlru53o15v.js",
+        "kb": 10.1
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/2-2026-10-28T17-23-14-517Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 94,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2911.5498,
+      "cls": 0,
+      "tbt": 112.5,
+      "fcp": 1210.5498,
+      "si": 1369.3109980343845,
+      "js_kb": 198,
+      "font_kb": 57,
+      "gesamt_kb": 409,
+      "benchmark": 1869.5,
+      "lcp_element": {
+       "selector": "div.relative > figure > div.border > img.block",
+       "ausschnitt": "<img alt=\"Dusche ohne Stufe mit großen grauen Fliesen und einer Glaswand\" fetchpriority=\"high\" loading=\"eager\" width=\"1280\" height=\"1600\" decoding=\"async\" data-"
+      },
+      "lcp_phasen": {
+       "ttfb": 13,
+       "ladeverzoegerung": 35,
+       "ladezeit": 23,
+       "renderverzoegerung": 115
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2tbu000sg63yb.js",
+        "kb": 71.2
+       },
+       {
+        "pfad": "/_next/static/chunks/3i7bb4yv5vlj-.js",
+        "kb": 46
+       },
+       {
+        "pfad": "/_next/static/chunks/43ze2r7l6z9o7.js",
+        "kb": 24.6
+       },
+       {
+        "pfad": "/_next/static/chunks/03thh847es-9q.js",
+        "kb": 19.5
+       },
+       {
+        "pfad": "/_next/static/chunks/3msxlru53o15v.js",
+        "kb": 10.1
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/3-2026-10-28T17-23-26-533Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 96,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2708.68225,
+      "cls": 0,
+      "tbt": 101.46962500000018,
+      "fcp": 1212.1822499999998,
+      "si": 1825.8640062721913,
+      "js_kb": 198,
+      "font_kb": 57,
+      "gesamt_kb": 409,
+      "benchmark": 1936,
+      "lcp_element": {
+       "selector": "div.relative > figure > div.border > img.block",
+       "ausschnitt": "<img alt=\"Dusche ohne Stufe mit großen grauen Fliesen und einer Glaswand\" fetchpriority=\"high\" loading=\"eager\" width=\"1280\" height=\"1600\" decoding=\"async\" data-"
+      },
+      "lcp_phasen": {
+       "ttfb": 19,
+       "ladeverzoegerung": 49,
+       "ladezeit": 31,
+       "renderverzoegerung": 89
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2tbu000sg63yb.js",
+        "kb": 71.2
+       },
+       {
+        "pfad": "/_next/static/chunks/3i7bb4yv5vlj-.js",
+        "kb": 46
+       },
+       {
+        "pfad": "/_next/static/chunks/43ze2r7l6z9o7.js",
+        "kb": 24.6
+       },
+       {
+        "pfad": "/_next/static/chunks/03thh847es-9q.js",
+        "kb": 19.5
+       },
+       {
+        "pfad": "/_next/static/chunks/3msxlru53o15v.js",
+        "kb": 10.1
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/5-2026-10-28T17-23-49-599Z",
+      "profil_dateien": 20
+     }
+    ]
+   }
+  },
+  "/leistungen": {
+   "mobil": {
+    "median": {
+     "perf": 94,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 2629,
+     "cls": 0,
+     "tbt": 126,
+     "fcp": 1217,
+     "si": 1579,
+     "js_kb": 218,
+     "font_kb": 57,
+     "gesamt_kb": 434,
+     "benchmark": 1929.5,
+     "lcp_element": {
+      "selector": "div.relative > figure > div.border > img.block",
+      "ausschnitt": "<img alt=\"Dusche mit zwei Lichtleisten an der Wand, gefliester Sitzbank und Mosaikbo…\" fetchpriority=\"high\" loading=\"eager\" width=\"1140\" height=\"1425\" decoding="
+     },
+     "spanne": {
+      "perf": [
+       94,
+       96
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       2628,
+       2930
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       122,
+       189
+      ],
+      "fcp": [
+       1211,
+       1218
+      ],
+      "si": [
+       1460,
+       1828
+      ],
+      "js_kb": [
+       218,
+       218
+      ],
+      "font_kb": [
+       57,
+       57
+      ],
+      "gesamt_kb": [
+       434,
+       434
+      ],
+      "benchmark": [
+       1926,
+       1961
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 96,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2629.06,
+      "cls": 0,
+      "tbt": 121.73999999999978,
+      "fcp": 1216.56,
+      "si": 1460.1837405920137,
+      "js_kb": 218,
+      "font_kb": 57,
+      "gesamt_kb": 434,
+      "benchmark": 1926,
+      "lcp_element": {
+       "selector": "div.relative > figure > div.border > img.block",
+       "ausschnitt": "<img alt=\"Dusche mit zwei Lichtleisten an der Wand, gefliester Sitzbank und Mosaikbo…\" fetchpriority=\"high\" loading=\"eager\" width=\"1140\" height=\"1425\" decoding="
+      },
+      "lcp_phasen": {
+       "ttfb": 16,
+       "ladeverzoegerung": 40,
+       "ladezeit": 26,
+       "renderverzoegerung": 112
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2tbu000sg63yb.js",
+        "kb": 71.2
+       },
+       {
+        "pfad": "/_next/static/chunks/3i7bb4yv5vlj-.js",
+        "kb": 46
+       },
+       {
+        "pfad": "/_next/static/chunks/43ze2r7l6z9o7.js",
+        "kb": 24.6
+       },
+       {
+        "pfad": "/_next/static/chunks/03thh847es-9q.js",
+        "kb": 19.5
+       },
+       {
+        "pfad": "/_next/static/chunks/43fxc6rfsrw3-.js",
+        "kb": 10.9
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/2-2026-10-28T17-26-45-388Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 94,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2627.84375,
+      "cls": 0,
+      "tbt": 189,
+      "fcp": 1211.34375,
+      "si": 1828.3802262241456,
+      "js_kb": 218,
+      "font_kb": 57,
+      "gesamt_kb": 434,
+      "benchmark": 1929.5,
+      "lcp_element": {
+       "selector": "div.relative > figure > div.border > img.block",
+       "ausschnitt": "<img alt=\"Dusche mit zwei Lichtleisten an der Wand, gefliester Sitzbank und Mosaikbo…\" fetchpriority=\"high\" loading=\"eager\" width=\"1140\" height=\"1425\" decoding="
+      },
+      "lcp_phasen": {
+       "ttfb": 17,
+       "ladeverzoegerung": 49,
+       "ladezeit": 28,
+       "renderverzoegerung": 113
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2tbu000sg63yb.js",
+        "kb": 71.2
+       },
+       {
+        "pfad": "/_next/static/chunks/3i7bb4yv5vlj-.js",
+        "kb": 46
+       },
+       {
+        "pfad": "/_next/static/chunks/43ze2r7l6z9o7.js",
+        "kb": 24.6
+       },
+       {
+        "pfad": "/_next/static/chunks/03thh847es-9q.js",
+        "kb": 19.5
+       },
+       {
+        "pfad": "/_next/static/chunks/43fxc6rfsrw3-.js",
+        "kb": 10.9
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/3-2026-10-28T17-26-56-637Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 94,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2930.1901,
+      "cls": 0,
+      "tbt": 125.50000000000045,
+      "fcp": 1217.6901,
+      "si": 1578.7492748881077,
+      "js_kb": 218,
+      "font_kb": 57,
+      "gesamt_kb": 434,
+      "benchmark": 1961,
+      "lcp_element": {
+       "selector": "div.relative > figure > div.border > img.block",
+       "ausschnitt": "<img alt=\"Dusche mit zwei Lichtleisten an der Wand, gefliester Sitzbank und Mosaikbo…\" fetchpriority=\"high\" loading=\"eager\" width=\"1140\" height=\"1425\" decoding="
+      },
+      "lcp_phasen": {
+       "ttfb": 13,
+       "ladeverzoegerung": 38,
+       "ladezeit": 22,
+       "renderverzoegerung": 140
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2tbu000sg63yb.js",
+        "kb": 71.2
+       },
+       {
+        "pfad": "/_next/static/chunks/3i7bb4yv5vlj-.js",
+        "kb": 46
+       },
+       {
+        "pfad": "/_next/static/chunks/43ze2r7l6z9o7.js",
+        "kb": 24.6
+       },
+       {
+        "pfad": "/_next/static/chunks/03thh847es-9q.js",
+        "kb": 19.5
+       },
+       {
+        "pfad": "/_next/static/chunks/43fxc6rfsrw3-.js",
+        "kb": 10.9
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/4-2026-10-28T17-27-07-919Z",
+      "profil_dateien": 20
+     }
+    ]
+   }
+  },
+  "/standorte/wetzlar": {
+   "mobil": {
+    "median": {
+     "perf": 79,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 4522,
+     "cls": 0,
+     "tbt": 265,
+     "fcp": 1216,
+     "si": 1532,
+     "js_kb": 231,
+     "font_kb": 57,
+     "gesamt_kb": 523,
+     "benchmark": 1967.5,
+     "lcp_element": {
+      "selector": "div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block",
+      "ausschnitt": "<span class=\"block\">"
+     },
+     "spanne": {
+      "perf": [
+       77,
+       81
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       4312,
+       4539
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       221,
+       311
+      ],
+      "fcp": [
+       1211,
+       1217
+      ],
+      "si": [
+       1439,
+       1594
+      ],
+      "js_kb": [
+       231,
+       231
+      ],
+      "font_kb": [
+       57,
+       57
+      ],
+      "gesamt_kb": [
+       521,
+       523
+      ],
+      "benchmark": [
+       1937.5,
+       2031
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 79,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 4522.0008,
+      "cls": 0,
+      "tbt": 265,
+      "fcp": 1211.0004,
+      "si": 1438.6076070203103,
+      "js_kb": 231,
+      "font_kb": 57,
+      "gesamt_kb": 523,
+      "benchmark": 2031,
+      "lcp_element": {
+       "selector": "div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block",
+       "ausschnitt": "<span class=\"block\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 17,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 944
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2tbu000sg63yb.js",
+        "kb": 71.2
+       },
+       {
+        "pfad": "/_next/static/chunks/3i7bb4yv5vlj-.js",
+        "kb": 46
+       },
+       {
+        "pfad": "/_next/static/chunks/43ze2r7l6z9o7.js",
+        "kb": 24.6
+       },
+       {
+        "pfad": "/_next/static/chunks/03thh847es-9q.js",
+        "kb": 19.5
+       },
+       {
+        "pfad": "/_next/static/chunks/2gsi20eqbgjgw.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/2-2026-10-28T17-30-06-300Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 77,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 4538.968199999999,
+      "cls": 0,
+      "tbt": 311,
+      "fcp": 1216.0578,
+      "si": 1593.6945587338919,
+      "js_kb": 231,
+      "font_kb": 57,
+      "gesamt_kb": 521,
+      "benchmark": 1937.5,
+      "lcp_element": {
+       "selector": "div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block",
+       "ausschnitt": "<span class=\"block\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 14,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 1043
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2tbu000sg63yb.js",
+        "kb": 71.2
+       },
+       {
+        "pfad": "/_next/static/chunks/3i7bb4yv5vlj-.js",
+        "kb": 46
+       },
+       {
+        "pfad": "/_next/static/chunks/43ze2r7l6z9o7.js",
+        "kb": 24.6
+       },
+       {
+        "pfad": "/_next/static/chunks/03thh847es-9q.js",
+        "kb": 19.5
+       },
+       {
+        "pfad": "/_next/static/chunks/2gsi20eqbgjgw.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/3-2026-10-28T17-30-17-887Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 81,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 4312.202799999999,
+      "cls": 0,
+      "tbt": 220.99999999999955,
+      "fcp": 1217.1385500000001,
+      "si": 1531.8236473089219,
+      "js_kb": 231,
+      "font_kb": 57,
+      "gesamt_kb": 523,
+      "benchmark": 1967.5,
+      "lcp_element": {
+       "selector": "div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block",
+       "ausschnitt": "<span class=\"block\">"
+      },
+      "lcp_phasen": {
+       "ttfb": 19,
+       "ladeverzoegerung": null,
+       "ladezeit": null,
+       "renderverzoegerung": 959
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2tbu000sg63yb.js",
+        "kb": 71.2
+       },
+       {
+        "pfad": "/_next/static/chunks/3i7bb4yv5vlj-.js",
+        "kb": 46
+       },
+       {
+        "pfad": "/_next/static/chunks/43ze2r7l6z9o7.js",
+        "kb": 24.6
+       },
+       {
+        "pfad": "/_next/static/chunks/03thh847es-9q.js",
+        "kb": 19.5
+       },
+       {
+        "pfad": "/_next/static/chunks/2gsi20eqbgjgw.js",
+        "kb": 17
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/4-2026-10-28T17-30-29-424Z",
+      "profil_dateien": 20
+     }
+    ]
+   }
+  }
+ },
+ "satz": "um-e3-leistung/nach-b",
+ "base": "http://127.0.0.1:4324",
+ "laeufe": 3,
+ "bedingungen": "lokal next start (komprimiert), Erstbesuch mit Banner, Dritt-Hosts blockiert, Lighthouse-Standard-Drosselung (mobil: simuliert 4× CPU, Slow 4G; Desktop-Preset), frisches Chrome-Profil je Lauf, Aufwärmlauf, Median aus 3, Benchmark-Band ±15 %",
+ "benchmark_band": 0.15,
+ "benchmark_referenz": 2031,
+ "basisadresse": "http://127.0.0.1:4324",
+ "server_stand": {
+  "port": "4324",
+  "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/reinraum-1d101816",
+  "commit": "1d101816"
+ }
+}
