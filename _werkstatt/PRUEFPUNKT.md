@@ -1,6 +1,6 @@
 # PRUEFPUNKT
 
-- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · **Etappe E3, Welle E3-W1** · Stand 2026-10-28 17:31 MEZ · **live: main = 2317dcde (E-083)** · UM-E3-CURSOR, -SCROLL, -LEIT, -REG erledigt (E-084; HEAD-Bau 1620c0f5 auf 4323) · **laufend: UM-E3-LEISTUNG** (Workflow wf_0fb75374-77d: Ursache aus Rohberichten, Bau in `$SCRATCH/leist/baum`, zwei Prüfer, Nacharbeit; danach Diff anwenden, Lighthouse als Skript gegen 1620c0f5; Ziel LCP mobil ≤ 2,5 s auf `/`), dann E3-B, E3-SICHT, Tor E3 · Planungsziel 85
+- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · **Etappe E3, Welle E3-W1** · Stand 2026-10-28 18:31 MEZ · **live: main = 2317dcde (E-083)** · UM-E3-CURSOR, -SCROLL, -LEIT, -REG erledigt (E-084; HEAD-Bau 1620c0f5 auf 4323) · **laufend: UM-E3-LEISTUNG Messung** (Schriften-Teilmenge 1d101816 angewendet; Ursache `belege/um-e3-leistung/ursache.md`; Messung `$SCRATCH/leist/mess/messung.sh`, 4323 = 1620c0f5, 4324 = 1d101816; danach Budget entscheiden: Dokumentstufe, Brotli-Messung wie Vercel oder begründete Abweichung), dann E3-B, E3-SICHT, Tor E3 · Planungsziel 85
 - E2 abgeschlossen nach zwei Anläufen (E-076, Berichte `berichte/UM-E2-B.md`, `UM-E2-B2.md`):
   - Z-02, Z-03, Z-06, Z-07, Z-09 und Z-11 auf Etappenstufe erfüllt.
   - Offener Punkt Z-10: TBT mobil → UM-E3-TBT.

@@ -82,3 +82,4 @@ Uhrzeit · Fenster Verbrauch, Soll, Ziel · Woche Verbrauch, Spielraum · belegt
   - Lehre (L6): Die Prüfketten brauchen freien Speicher in der Sitzung. Jeder Reinraum belegt mit `node_modules` und `.next` mehrere hundert MB; alte Reinräume nach der Abnahme löschen. Die Kette bricht jetzt unter 6 GB frei ab.
 - 2026-10-28 16:33 MEZ · Schätzung nicht erhoben (nur obere Schranke) · Plätze 0 Agenten, Nachlauf als Skript · Planungsziel 85
 - 2026-10-28 17:31 MEZ · Schätzung nicht erhoben (nur obere Schranke) · Plätze 1 Workflow UM-E3-LEISTUNG (bis 4 Agenten) · Planungsziel 85
+- 2026-10-28 18:31 MEZ · Workflow UM-E3-LEISTUNG fertig: 4 Agenten, 1,09 Mio. Tokens, 74 min · Messung als Skript · Planungsziel 85
