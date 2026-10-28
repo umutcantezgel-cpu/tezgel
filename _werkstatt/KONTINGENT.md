@@ -66,3 +66,4 @@ Uhrzeit · Fenster Verbrauch, Soll, Ziel · Woche Verbrauch, Spielraum · belegt
   - Ab 00:30 UTC: TBT-Auswertung fortsetzen, dann UM-E3-MOD.
 - 2026-10-28 06:16 MEZ · Schätzung nicht erhalten (Werkzeug nach dem Neustart über 400 s) · Fenster 00:30–05:30 UTC fast ungenutzt: Der Plan-Modus wartete von 00:35 bis 05:05 UTC auf Freigabe, WEITER 01:31 bis 04:31 UTC ohne Arbeit · Plätze 0 Haiku (TBT fertig) · Planungsziel 60, gebündelte Schritte
 - 2026-10-28 07:10 MEZ · Schätzung nicht erhalten (Werkzeug nach dem Neustart über 400 s, nicht erneut gestartet) · neues Fenster ab 05:30 UTC · Plätze 0 Haiku · UM-E3-MOD in wenigen großen Schritten (8 Dateien in zwei Aufrufen, Prüfkette als ein Hintergrundskript) · Planungsziel 60
+- 2026-10-28 08:31 MEZ · Schätzung nicht erhoben (Werkzeug zu langsam nach Neustart) · Fenster seit 05:30 UTC · Plätze 0 (Opus-Baumeister UM-E3-EIN fertig: 436 Tsd. Tokens, 120 Aufrufe, 33 min) · Prüfkette als Skript · Planungsziel 60

@@ -1,6 +1,6 @@
 # PRUEFPUNKT
 
-- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · **Etappe E3, Welle E3-W1** · Stand 2026-10-28 07:10 MEZ · UM-E3-TBT erledigt (E-079) · UM-E3-MOD erledigt (E-080, 109890d2) · **laufend: UM-E3-EIN** (Opus-Baumeister in der Arbeitskopie `$SCRATCH/ein/baum`, Briefing `pakete/UM-E3-EIN.md`; Ergebnis `$SCRATCH/ein/ein.diff`, dann prüfen, anwenden, Stufe A als Skript)
+- Lauf „Universal Motion“ (AUFTRAG.md, ab 26.10.2026 22:40 MEZ, E-066) · **Etappe E3, Welle E3-W1** · Stand 2026-10-28 08:31 MEZ · UM-E3-TBT erledigt (E-079) · UM-E3-MOD erledigt (E-080, 109890d2) · **laufend: UM-E3-EIN Stufe A** (Bau 3e99db0a angewendet und gepusht; Prüfkette `$SCRATCH/ein/pruef/pruefkette.sh`, Log `pruefkette.log`, 4318 = 109890d2 vorher, 4319 = 3e99db0a nachher; danach Einzelbilder ansehen, Abnahme E-081, KERN K-004/K-005/K-008/B-02 nachführen)
 - E2 abgeschlossen nach zwei Anläufen (E-076, Berichte `berichte/UM-E2-B.md`, `UM-E2-B2.md`):
   - Z-02, Z-03, Z-06, Z-07, Z-09 und Z-11 auf Etappenstufe erfüllt.
   - Offener Punkt Z-10: TBT mobil → UM-E3-TBT.
