@@ -91,3 +91,5 @@ Uhrzeit · Fenster Verbrauch, Soll, Ziel · Woche Verbrauch, Spielraum · belegt
   - Lehre (L6, ergänzt): Ein Workflow mit vielen Opus-Agenten verbraucht das Fenster schnell. Die Schätzung muss vor jedem solchen Workflow erhoben werden, und die Prüfer laufen als Sonnet, wo das Urteil es zulässt.
   - Folge nach L6: Das Planungsziel sinkt wieder auf 60, bis ein Fenster ohne Limit endet.
   - Plätze: 1 Workflow UM-E3-FIX (Teil A aus dem Zwischenspeicher, Teil B läuft).
+  - Kalibrierung ausgeführt: Kalibrierpunkt gespeichert: Fenster 2026-10-28 15:30–2026-10-28 20:30 UTC · Kosten $78.75 · 100 % · Faktor 1.27 · Quelle limit · Stand 2026-10-28
+  - Deutung: Der Faktor fällt von 6,122 auf 1,27 %/USD, weil das Fenster fast ganz aus Opus-Agenten mit kleinem eigenem Kontext bestand. Die USD-Schätzung bildet das Limit also je nach Arbeitsart sehr verschieden ab: Mein großer Kontext ist billig in USD, aber teuer im Limit; frische Agenten sind teurer in USD, aber billiger im Limit. Ab jetzt gilt der neue Faktor als Schätzung für Workflow-Fenster und 6,122 als Schranke für Fenster mit viel eigener Arbeit.
