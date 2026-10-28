@@ -124,3 +124,6 @@ Die Schriften bleiben ohne Hebel, weil kein Beleg eine LCP-Wirkung zeigt.
 - „Reaktion von Commit 3d481570“: Das Feld `commit` nennt den HEAD des Repositorys zur Messzeit. Gemessen wurde der Server 4314 aus `reinraum-6caeeb9c` (E-076, Vermerk in `berichte/UM-E2-B.md`). Seit f5544581 steht der Server-Stand in jedem Beleg (`server_stand`).
 
 === ENDE UM-E3-LCP-K · BEREIT ZUR RÜCKGABE ===
+
+## Vermerk des Orchestrators (28.10.2026, E-085)
+- `lcpLoadDelay` und `lcpLoadDuration` in Tabelle 1 und H1 sind skalierte Zeitstempel (Lighthouse `lcp-breakdown`), keine Dauern. H1 als „Ladekette des LCP-Bilds“ ist damit nicht belegt. Die Ursache des mobilen LCP steht in `belege/um-e3-leistung/ursache.md`.

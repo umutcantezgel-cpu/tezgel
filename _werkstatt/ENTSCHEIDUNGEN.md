@@ -1120,3 +1120,41 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - Gesperrt und lädt als Rückmeldung auf Arbeitsansichten?
   - Firefox und WebKit (UM-4).
 
+## E-085 · UM-E3-LEISTUNG: Schriften beschnitten, LCP mobil auf `/` 2,70 s, Ausnahme A-1 zum Budget 2,5 s (28.10.2026, 18:55 MEZ)
+- **Ursache** (belegt, `belege/um-e3-leistung/ursache.md`; Workflow wf_0fb75374-77d, Opus mit zwei Prüfern):
+  - Lighthouse rechnet den mobilen LCP simuliert (Lantern), aus dem Ende des letzten Knotens im LCP-Graphen. Das ist nicht das Ende des Fotos.
+  - Das Foto ist schon im Kopf vorgeladen, mit `fetchpriority=high`, und ist nach etwa 1,7 s fertig.
+  - Im Graphen stehen 367 KB: Skripte 194 KB, darunter React DOM 71 KB und die Next-Laufzeit 46 KB, dazu Schriften 72 KB und das Dokument 53 KB.
+  - Hebel H1 aus LCP-K beruhte auf einer falschen Lesart: `lcpLoadDelay` und `lcpLoadDuration` sind skalierte Zeitstempel, keine Dauern. Vermerk zu `berichte/UM-E3-LCP-K.md`.
+- **Umgesetzt (1d101816):** Archivo und Plex Mono als Teilmenge der genutzten Zeichen, Archivo 57,7 → 44,4 KB, Plex Mono 13,4 → 10,7 KB.
+  - Achsen, OpenType-Merkmale, Kerning und Metriken bleiben.
+  - Pixel gegen 1620c0f5: 48 Paare, 0 Pixel.
+  - Fehlende Zeichen, etwa in Namen in Formularen, setzt wie bisher die metrisch angepasste Ersatzschrift. Das Verfahren steht in `src/app/fonts/LIZENZEN.md`.
+- **Messmethode:** Neues Werkzeug `werkzeuge/brotli-proxy.mjs` komprimiert wie Vercel mit Brotli (Dokument `/` 34,9 statt 52,6 KB). Es dient als Zweitmessung. Die gzip-Messung bleibt die Methode für den Vergleich mit E0.
+- **Ergebnis Lighthouse mobil, Mediane aus je drei, wechselnde Reihenfolge:**
+  - gzip `/`:
+    - nachher 2,71 und 2,71 s, vorher (1620c0f5) 3,24 und 2,92 s;
+    - Leistung 94 und 94;
+    - CLS 0.
+  - Brotli `/`:
+    - E0 2,89 und 2,85 s, vorher 2,78 und 2,80 s, nachher 2,71 und 2,70 s;
+    - Leistung nachher 96;
+    - TBT 92 bis 105 ms.
+  - `/leistungen`: 2,63 s (gzip), 2,71 bis 2,72 s (Brotli).
+  - Reaktion `/`: 128 ms (Median, LCP-K, Tabelle 4), Schwelle 200 ms.
+- **Budget K-012 auf `/`:**
+  - Leistung ≥ 90: erfüllt, 94 bis 96.
+  - Reaktion ≤ 200 ms: erfüllt.
+  - LCP ≤ 2,5 s: nicht erfüllt, 2,70 s; gegenüber E0 rund 0,15 bis 0,2 s schneller.
+- **Ausnahme A-1** (Denkprotokoll):
+  - Unter 2,5 s käme der LCP nur, wenn React DOM und Laufzeit nicht mehr im simulierten Graphen stünden. Das hängt am Wettlauf ihrer Auswertung gegen das erste Malen und lässt sich ohne künstliche Verschiebung nicht steuern (G7).
+  - Der nächste Hebel wäre die Dokumentstufe (≤ 43,8 KB Übertragung, −150 ms im Modell). Mit Brotli liegt das Dokument schon darunter, und der Gewinn blieb aus. Das Modell überschätzt diesen Hebel also.
+  - Restmaßnahmen für UM-E4-LEISTUNG:
+    - Inline-Kopfskript vor dem Stylesheet (Parser-Halt, für echte Nutzer wirksam);
+    - App-Stück der Einwilligung (G8, nur ohne Verhaltensänderung);
+    - Bildbreite und `sizes` für m390 bei DPR 3.
+  - Die Ausnahme gilt, bis UM-E4-LEISTUNG sie aufhebt oder bestätigt.
+- **Stufe A 1d101816:**
+  - Reinraum grün, `npm test` 248/248.
+  - Suite reduziert 397/1/26. Der eine rote Test war HeroContactForm „mit Vorhaben“, eine vorbestehende Zeitschwäche: 1 von 4 Läufen auch auf 1620c0f5. Die Spec wartet jetzt auf die Hydrierung (6a723d7c), danach 16/16.
+
