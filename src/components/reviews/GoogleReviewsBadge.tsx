@@ -23,7 +23,7 @@ export default function GoogleReviewsBadge({
   const wert = rating.toFixed(1).replace(".", ",");
   return (
     <a
-      href="https://www.google.com/search?q=Fliesenverlegung+Tezgel+A%C3%9Flar+Bewertungen"
+      href={RATING_SUMMARY.google.url}
       target="_blank"
       rel="noopener noreferrer"
       title="Zu den Google Bewertungen von Fliesenverlegung Tezgel"

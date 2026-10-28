@@ -5,6 +5,18 @@
 
 /* flaches Querformat (Handy quer, q844): dieselbe Grenze wie Kopf und untere Leiste unten (Sichtabnahme E2, Befund 11) */
 @custom-variant flach (@media (orientation: landscape) and (height <= 32rem));
+/* Seitenindex im Fuß (FussGruppe, UM-E3-FIX F6): zugeklappt schmal oder flach (Handy hochkant und quer, Grenzen wie oben),
+   offen nur breit und nicht flach. Genaue Gegenstücke; FussGruppe.tsx fragt dieselbe Bedingung per matchMedia ab. */
+@custom-variant fuss-zu {
+  @media (width < 40rem), (orientation: landscape) and (height <= 32rem) {
+    @slot;
+  }
+}
+@custom-variant fuss-offen {
+  @media (width >= 40rem) and (orientation: portrait), (width >= 40rem) and (height > 32rem) {
+    @slot;
+  }
+}
 /* Bewegungsschalter „ruhig“ (UM-E3-MOD, E-080): Gegenstück zu motion-reduce/motion-safe für Utilities, die mehr als einen
    Übergang steuern (bewegung.css spiegelt die übrigen Regeln; test/bewegungsschalter.test.mjs prüft beide). */
 @custom-variant ruhig (&:where([data-bewegung="ruhig"] *));
@@ -105,6 +117,13 @@
   /* Satzspiegel */
   --container-seite: 82rem;
   --container-mass: 66ch;
+  /* Grundschrift (UM-E3-FIX F8): Schriftgröße von <html>, auf die sich alle rem-Tokens beziehen (Schriftstufen fs-1 bis fs-7,
+     Satzspiegel, Fliesenskala, Kopf). Bis 1440 px gilt die Einstellung des Browsers (100 %), darüber wächst sie fließend, bei
+     1920 px auf 112,5 %, ab 2400 px auf höchstens 125 %. So wachsen Inhaltsbreite und Schrift auf großen Bildschirmen im
+     selben Maß wie auf d1440 (d1920 Inhalt rund 1368 statt 1216 px, d2560 rund 1520 px; vorher eine kleine Insel mit
+     gleich großer Schrift, Sichtabnahme E3 Anlauf 1). Medienabfragen messen in der Ausgangsgröße: Kein Umbruchpunkt
+     verschiebt sich. Große Systemschrift und Zoom bleiben wirksam (Untergrenze 100 % der Einstellung). */
+  --grundschrift: clamp(100%, calc(100% + (100vw - 90rem) / 240), 125%);
 
   /* Hauch Glanz auf den Fliesen des Seitenwechsels, nur als eigene Ebene (KERN v3, K-005) */
   --color-fliese-glanz: color-mix(in srgb, var(--color-fliese) 55%, transparent);
@@ -231,6 +250,8 @@
 
 @layer base {
   html {
+    /* wächst ab 1440 px maßvoll mit (Token --grundschrift, UM-E3-FIX F8) */
+    font-size: var(--grundschrift);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;

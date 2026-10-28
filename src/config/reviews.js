@@ -13,7 +13,9 @@ export const RATING_SUMMARY = {
         displayRating: '5,0',
         maxRating: 5,
         count: 27,
-        label: 'Google-Rezensionen'
+        label: 'Google-Rezensionen',
+        // Weg zu den Bewertungen beim Anbieter (ganzer Wortlaut, wo REVIEWS gekürzt ist; UM-E3-FIX F10)
+        url: 'https://www.google.com/search?q=Fliesenverlegung+Tezgel+A%C3%9Flar+Bewertungen'
     },
     trustlocal: {
         source: 'Trustlocal',

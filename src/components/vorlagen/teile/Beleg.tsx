@@ -7,6 +7,7 @@
 // Stimmen (z. B. vorher-nachher auf /referenzen, E-045) und die Einsatzorte als letzter Abschnitt. Alle zeichnen spät (unter
 // dem ersten Bildschirm, E-044). Serverkomponente.
 import type { ReactNode } from 'react';
+import clsx from 'clsx';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Glasbild from '@/components/kern/Glasbild';
 import Karussell from '@/components/kern/Karussell';
@@ -31,6 +32,11 @@ export default function Beleg({ inhalt, pfad, moment, zweiter, stimmenTitel = 'D
   const ziel = (href?: string) => (href && href !== pfad ? href : undefined);
   // zwei Fotos ab md in zwei Spalten statt zwei von drei Plätzen (sonst bleibt rechts ein Loch im Raster, E-065)
   const karte = inhalt.fotos.length === 2 ? 'w-full md:w-1/2' : 'w-full md:w-1/2 lg:w-1/3';
+  // Drittelverband in der Reihe (K-003 Nr. 4, UM-E3-FIX F4): ab md (zwei Fotos im Bild) steht jedes zweite, ab lg (drei im
+  // Bild) jedes dritte Foto ab dem zweiten um 16 Stufen (64 px, ein Drittel der langen Fliesenseite) tiefer. Je zwei bzw.
+  // drei Nachbarn enthalten genau eines davon: Wie weit man auch blättert, jeder Bildschirm der Reihe trägt einen Versatz.
+  // Abstand innen statt Verschiebung: Die Spur beschneidet senkrecht, und die Knöpfe darunter rücken mit.
+  const versatz = (i: number) => (inhalt.fotosVersatz && inhalt.fotos.length > 2 ? clsx(i % 2 === 1 && 'md:pt-16', i % 3 === 1 ? 'lg:pt-16' : 'lg:pt-0') : undefined);
   return (
     <>
       <Abschnitt id="unsere-arbeiten" formel="beleg" leitachse spaet mitte titel={inhalt.titel}>
@@ -43,8 +49,10 @@ export default function Beleg({ inhalt, pfad, moment, zweiter, stimmenTitel = 'D
         )}
         {inhalt.fotos.length > 1 && (
           <Karussell art="reihe" name="Fotos" karte={karte}>
-            {inhalt.fotos.map((f) => (
-              <Glasbild key={f.bild} arbeit={f.bild} name={f.unterschrift} href={ziel(f.href)} sizes={inhalt.fotos.length === 2 ? '(min-width: 768px) 50vw, 100vw' : '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw'} />
+            {inhalt.fotos.map((f, i) => (
+              <div key={f.bild} className={versatz(i)}>
+                <Glasbild arbeit={f.bild} name={f.unterschrift} href={ziel(f.href)} sizes={inhalt.fotos.length === 2 ? '(min-width: 768px) 50vw, 100vw' : '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw'} />
+              </div>
             ))}
           </Karussell>
         )}
@@ -84,7 +92,7 @@ export default function Beleg({ inhalt, pfad, moment, zweiter, stimmenTitel = 'D
           titel={inhalt.stimmenTitel ?? stimmenTitel}
           einleitung={inhalt.stimmenEinleitung ? <p><Textmarken text={inhalt.stimmenEinleitung} /></p> : undefined}
         >
-          <Stimmen ids={inhalt.stimmen} form={inhalt.stimmenGross ? 'gross' : 'klein'} />
+          <Stimmen ids={inhalt.stimmen} form={inhalt.stimmenEinzeln ? 'einzeln' : inhalt.stimmenGross ? 'gross' : 'klein'} />
         </Abschnitt>
       )}
       {inhalt.orte && <Einsatzorte titel={inhalt.orte.titel} einleitung={inhalt.orte.einleitung} />}

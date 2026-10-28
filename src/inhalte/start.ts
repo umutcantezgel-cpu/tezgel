@@ -79,11 +79,14 @@ export const START: ErzaehlInhalt = {
       { bild: 'start-beleg-terrasse', unterschrift: 'Terrasse mit blaugrauen Fliesen', href: '/balkon-terrasse' },
       { bild: 'start-beleg-treppe', unterschrift: 'Außentreppe in Anthrazit', href: '/treppen/aussentreppe' },
     ],
+    // im Drittelverband: je Bildschirm der Reihe steht ein Foto um ein Drittel tiefer (UM-E3-FIX F4)
+    fotosVersatz: true,
     verweis: { name: 'Alle Arbeiten ansehen', href: '/referenzen' },
     // Wortlaut aller Stimmen unverändert aus REVIEWS (G8)
-    // als Karussell mit gleich großen Karten (E-047)
+    // als langsames Karussell (E-047), seit UM-E3-FIX F4 mit einer großen Stimme je Schritt statt drei Karten nebeneinander
     stimmen: ['c-wolf', 'rabia-oe', 'elke-s', 'hasan-oe', 'ute-t', 'peter-p', 'christian-d', 'sara-j'],
     stimmenGross: true,
+    stimmenEinzeln: true,
     orte: {
       titel: 'Hier sind wir für Sie unterwegs.',
       einleitung: 'Unser Betrieb sitzt in Aßlar. Wir arbeiten in Wetzlar, Gießen, Herborn und den Orten rundherum.',

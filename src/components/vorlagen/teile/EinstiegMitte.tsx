@@ -64,8 +64,12 @@ const EINSTIEG_FORMAT = 4 / 5;
 /** Bildbreiten zum Foto: unter sm volle Breite, bis lg höchstens 28 rem, ab lg wie einstieg-foto (globals.css) das Kleinste
  *  aus zwei Dritteln der Spalte (Seite 82 rem, Rand je 3 rem: 66,67vw − 4 rem, höchstens 51 rem) und der Breite, bei der
  *  das 4 : 5-Foto unter Kopf und Rand (6 rem) in den Bildschirm passt: (100vh − 6 rem) · 0,8 = 80vh − 4,8 rem. Vorher
- *  wuchs 66vw über die Seitenbreite hinaus (d1920 und d2560 luden w=1920 für 809 px). Eine Quelle für Vorlage und page.tsx. */
-export const EINSTIEG_MITTE_SIZES = '(min-width: 1024px) min(calc(66.67vw - 4rem), 51rem, calc(80vh - 4.8rem)), (min-width: 640px) 28rem, 100vw';
+ *  wuchs 66vw über die Seitenbreite hinaus (d1920 und d2560 luden w=1920 für 809 px). Eine Quelle für Vorlage und page.tsx.
+ *  Ab 1440 px wächst die Grundschrift (--grundschrift, UM-E3-FIX F8), `sizes` misst aber in der Ausgangsgröße: dort dieselbe
+ *  Rechnung mit der Grundschrift 1rem + (100vw − 90rem) / 240, höchstens 1,25rem (zwei Drittel der Spalte 50,67 Grundschrift
+ *  = 31,67rem + 21,11vw, höchstens 63,33rem; Höhe 80vh − 4,8 Grundschrift = 80vh − 3rem − 2vw). */
+export const EINSTIEG_MITTE_SIZES =
+  '(min-width: 1440px) min(calc(31.67rem + 21.11vw), 63.33rem, calc(80vh - 3rem - 2vw)), (min-width: 1024px) min(calc(66.67vw - 4rem), 51rem, calc(80vh - 4.8rem)), (min-width: 640px) 28rem, 100vw';
 
 export default function EinstiegMitte({ pfad, brotkrumen, titelZeilen, titelGross = false, ort, hauptziel, bild, bewertung = false, orteAnker }: EinstiegMitteProps) {
   const { contact } = COMPANY_DATA;

@@ -99,6 +99,9 @@ export interface BelegInhalt {
   /** Fotos vollständig; ab zwei Fotos als Reihe zum Wischen, ohne Unterschrift darunter: `unterschrift` steht als Name auf
    *  der Glasfläche, `href` führt zur passenden Leistungsseite (K-016, E-047) */
   fotos: { bild: ArbeitId; unterschrift: string; href?: string }[];
+  /** Reihe der Fotos im Drittelverband (K-003 Nr. 4): ab md steht jedes zweite, ab lg jedes dritte Foto (das mittlere der
+   *  ersten drei) um 16 Stufen tiefer, so trägt jeder Bildschirm der Reihe genau einen Versatz (Startseite, UM-E3-FIX F4) */
+  fotosVersatz?: boolean;
   /** zwei Bilder desselben Vorgangs nebeneinander (kein Regler, wenn die Blickwinkel verschieden sind) */
   zweierbild?: { titel: string; bilder: [{ bild: ArbeitId; unterschrift: string }, { bild: ArbeitId; unterschrift: string }] };
   /** Kennungen aus REVIEWS, Wortlaut unverändert (G8) */
@@ -106,6 +109,9 @@ export interface BelegInhalt {
   /** Kundenstimmen groß (Startseite, Über uns, Unsere Arbeiten: drei Karten ab lg); sonst das kleine Karussell jeder Seite
    *  (vier Karten ab lg, eine Stufe kleinere Schrift; K-016, E-047) */
   stimmenGross?: boolean;
+  /** eine große Stimme je Schritt (Startseite, UM-E3-FIX F4): das langsame Karussell zeigt auf jeder Breite eine Stimme, ab md
+   *  Sterne und Name im ersten Drittel, der Wortlaut in den zwei Dritteln dahinter an der Fuge; geht `stimmenGross` vor */
+  stimmenEinzeln?: boolean;
   /** Überschrift und Satz über den Kundenstimmen, wenn der Seitentext eigene hat (Standard „Das sagen unsere Kunden.“) */
   stimmenTitel?: string;
   stimmenEinleitung?: Markentext;

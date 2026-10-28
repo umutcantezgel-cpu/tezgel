@@ -47,8 +47,11 @@ export type Bereich = BereichFliese;
 
 /** Bereiche als Fliesen mit Zeichnung (Startseite, Sichtabnahme E2, Befunde 8 und 12; E-037): an der Fuge, oben die Zeichnung,
  *  darunter der Name und der Pfeil. So ist der Abschnitt anders gebaut als die Zeilen der Lage davor.
- *  - Plan-Vignette (E-037, Linienzeichnung 1,5 px wie im alten Stand): eine Spalte als Streifen 2:1, ab 36rem Container zwei
- *    Spalten (16:9, ab 48rem 3:2); zweispaltig am Handy liefe die Schraffur zu Brei zusammen.
+ *  - Plan-Vignette (E-037, Linienzeichnung 1,5 px wie im alten Stand): schmal (Container unter 36rem, also am Handy) eine
+ *    Zeile je Bereich, die Zeichnung als Feld von 32 Stufen links an der Fuge, Name und Pfeil rechts daneben (UM-E3-FIX F5:
+ *    vorher je Bereich ein Streifen 2:1 über dem Namen, zusammen rund 1200 px Scrollweg direkt nach den sechs Lagen; jetzt
+ *    gut ein Drittel davon, alle vier Bereiche bleiben mit Zeichnung). Ab 36rem zwei Spalten (16:9, ab 48rem 3:2),
+ *    die Zeichnung oben; zweispaltig am Handy liefe die Schraffur zu Brei zusammen.
  *  - Verlegemuster (Fliesenkomposition deutlich): ab 20rem zwei Spalten, 16:9, ab lg 3:2.
  *  Schmal (große Systemschrift, unter 20rem) eine Spalte ohne Zeichnung; lange Namen dürfen dort trennen. */
 export function Bereichsfliesen({ bereiche }: { bereiche: Bereich[] }) {
@@ -61,11 +64,15 @@ export function Bereichsfliesen({ bereiche }: { bereiche: Bereich[] }) {
           const Vignette = b.vignette ? VIGNETTEN[b.vignette] : null;
           return (
           <li key={b.href} className="border border-fuge bg-fliese">
-            <Link href={b.href} data-motion="zustand" className="group flex h-full flex-col text-tinte">
+            <Link href={b.href} data-motion="zustand" className={clsx('group flex h-full text-tinte', Vignette ? '@xl:flex-col' : 'flex-col')}>
               {Vignette ? (
+                // Die Fuge hängt an der äußeren Zelle über die ganze Höhe der Karte (in der Zeile gestreckt): Ist der Name zwei-
+                // oder dreizeilig, stößt sie trotzdem an Ober- und Unterkante; das Feld 4 : 3 steht darin mittig.
                 // min-h-0: sonst dehnt die höhere Zeichnung (Bad 1,3 : 1) das Feld über sein Seitenverhältnis hinaus
-                <span aria-hidden="true" className="hidden aspect-2/1 min-h-0 items-center justify-center overflow-hidden border-b border-fuge p-4 @xs:flex @xl:aspect-video @3xl:aspect-3/2 lg:p-6">
-                  <Vignette fuellen />
+                <span aria-hidden="true" className="hidden w-32 shrink-0 items-center border-r border-fuge @xs:flex @xl:w-auto @xl:border-r-0 @xl:border-b">
+                  <span className="flex aspect-4/3 min-h-0 w-full items-center justify-center overflow-hidden p-2 @xl:aspect-video @xl:p-4 @3xl:aspect-3/2 lg:p-6">
+                    <Vignette fuellen />
+                  </span>
                 </span>
               ) : (
                 b.motiv && (
@@ -74,12 +81,12 @@ export function Bereichsfliesen({ bereiche }: { bereiche: Bereich[] }) {
                   </span>
                 )
               )}
-              <span className="flex flex-1 items-start gap-3 p-4 lg:p-6">
+              <span className={clsx('flex min-w-0 flex-1 gap-3 p-4 lg:p-6', Vignette ? 'items-center @xl:items-start' : 'items-start')}>
                 {/* gesetzt wie die Sätze der Lage-Fliesen (gleiche Ebene, ein Schnitt; E2-SICHT-2 Typografie) */}
                 <span className="min-w-0 flex-1 font-text text-fs-4 font-semibold text-pretty hyphens-auto underline decoration-transparent decoration-2 underline-offset-4 transition-colors dauer-1 group-hover:decoration-laser">
                   {b.name}
                 </span>
-                <Icon name="pfeil-rechts" groesse={5} className="mt-1 shrink-0 text-tinte-2 transition-colors dauer-1 group-hover:text-tinte" />
+                <Icon name="pfeil-rechts" groesse={5} className={clsx('shrink-0 text-tinte-2 transition-colors dauer-1 group-hover:text-tinte', Vignette ? '@xl:mt-1' : 'mt-1')} />
               </span>
             </Link>
           </li>
