@@ -1345,3 +1345,23 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - Belege `belege/um-e3-fix2/`.
   - Offen ist nur die Bildrate: 4 % statt 0,2 %, Schwelle 5 %. Das klärt UM-E3-TAKT.
 - **Weiter:** E4 nach PLAN. W1: VORL nach TAKT (gleiche Dateien), gleichzeitig EP5, FS-K und DOK. UM-E4-START kommt in die Orchestrator-Reihe von W2.
+
+## E-091 · E4-W1: EP5, FS-K und DOK abgenommen; erfundene Standardwerte im Stellen-Schema entfernt (29.10.2026, 11:05 MEZ)
+- **Workflow wf_95834398-8bc:** drei Haiku-Bearbeiter, je eine Sonnet-Gegenprüfung; 6 Agenten, 1,17 Mio. Tokens, 20 min.
+- **EP5:** `/karriere/ausbildung` trägt ein `JobPosting` (Titel aus der H1, Beschreibung aus dem sichtbaren Text, `hiringOrganization` = Organisation, `jobLocation` als Place mit der Anschrift aus den Firmendaten).
+  - Ein `FAQPage` entfällt: Die Seite zeigt keine Fragen und Antworten. Ein Knoten ohne sichtbaren Inhalt wäre erfunden. Das ist eine Abweichung vom PLAN-Soll (Z-02, vermerkt).
+  - Kein `datePosted`: Im Bestand steht kein Datum. Für Rich Results bräuchte es eine Angabe des Inhabers → MENSCHEN UM-10.
+  - `jsonld.mjs` ist für die Seite und für `/karriere` grün (Gegenprüfung).
+- **Gefunden in der Gegenprüfung, behoben durch den Orchestrator:**
+  - `buildJobPostingNode` setzte für `/karriere` erfundene Standardwerte (`datePosted` 2024-01-01, `validThrough` 2026-12-31, `FULL_TIME`, `directApply`). Datum und Beschäftigungsart stehen jetzt nur noch mit Angabe der Stelle im Knoten; Ablaufdatum und `directApply` entfallen (G8: nichts behaupten, was der Bestand nicht trägt).
+  - `JsonLd.tsx` schreibt „<“ als `\u003c` (Next-Leitfaden json-ld.md).
+- **FS-K:** Bericht `berichte/UM-E4-FS-K.md` mit den Berichtigungen der Gegenprüfung, Grundlage für FS-FUGEN und FS:
+  - Zeilen auf HEAD;
+  - Nr. 15 mit E-065;
+  - Nr. 7, 8 und 14 nur nach Beleg.
+- **DOK:** README und EINRICHTUNG zeigen den Stand 29.10.2026.
+  - 169 Seiten; die E0-Zählung 168 kannte `/preise` nicht.
+  - KERN 4.4, Node 24, Next 16.4.3, React 19.3.1, TS 6.
+  - Abschnitt „Bewegung: entfernt, ersetzt, neu“; Plan-Morph bleibt nach E-037.
+  - Werkzeugtabelle ergänzt.
+  - Werbesprache in der Kurzbeschreibung entfernt; Ortsseiten richtig gezählt (13 und 52).

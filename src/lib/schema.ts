@@ -519,7 +519,8 @@ export function buildFaqPageNode(faqs: FaqItem[], url: string): SchemaNode {
 export const buildFaqNode = buildFaqPageNode;
 
 /**
- * Builds JobPosting entities.
+ * Builds JobPosting entities. Datum und Beschäftigungsart nur, wenn die Stelle sie angibt: keine erfundenen Standardwerte
+ * (G8, Gegenprüfung UM-E4-EP5); ein Ablaufdatum und „direkt bewerben“ stehen nicht im Bestand und entfallen.
  */
 export function buildJobPostingNode(job: JobItem, url: string): SchemaNode {
   const jobSlug = job.title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
@@ -528,9 +529,8 @@ export function buildJobPostingNode(job: JobItem, url: string): SchemaNode {
     '@id': `${url}#job-${jobSlug}`,
     title: job.title,
     description: job.description,
-    datePosted: job.datePosted || '2024-01-01',
-    validThrough: '2026-12-31T23:59:59+01:00',
-    employmentType: job.employmentType || 'FULL_TIME',
+    ...(job.datePosted ? { datePosted: job.datePosted } : {}),
+    ...(job.employmentType ? { employmentType: job.employmentType } : {}),
     hiringOrganization: { '@id': ORG_ID },
     jobLocation: {
       '@type': 'Place',
@@ -543,7 +543,6 @@ export function buildJobPostingNode(job: JobItem, url: string): SchemaNode {
         addressCountry: 'DE',
       },
     },
-    directApply: true,
   };
 }
 
