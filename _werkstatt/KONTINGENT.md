@@ -109,3 +109,4 @@ Uhrzeit · Fenster Verbrauch, Soll, Ziel · Woche Verbrauch, Spielraum · belegt
   - Lehre (L6, ergänzt): nie zwei Opus-Workflows gleichzeitig; vor jedem Workflow schätzen; Prüfer Sonnet oder Haiku. Die Schätzung um 10:16 MEZ (19,6 % für das Fenster ab 07:31 UTC) lag daneben, weil die Fenstergrenzen des Werkzeugs (Raster :31) nicht zu den echten Fenstern (:30 nach dem Limit) passen.
   - Plätze: 1 Workflow UM-E3-TAKT (Opus-Baumeister, Sonnet-Prüfer). Planungsziel 60.
 - 2026-10-29 13:35 MEZ · Kalibrierung fünftes Limit: Fenster 06:30–11:30 UTC · Kosten $66.00 · 100 % · Faktor 1,515 (vorher 1,27) · Plätze 1 Workflow UM-E3-TAKT (bau:takt läuft) · Planungsziel 60
+- 2026-10-29 14:34 MEZ · Schätzung 29,7 % (Soll 38,2, Fenster 11:31–16:31 UTC, Faktor 1,515) · Gas · Plätze 1 Workflow UM-E4-VORL (Opus-Baumeister, 2 Sonnet-Prüfer) · Planungsziel 60
