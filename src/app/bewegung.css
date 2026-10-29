@@ -81,40 +81,38 @@ html.k-bewegung:not(.k-notaus) [data-motion="anriss"]:not([data-motion-stand="an
   to { scale: 1 1; }
 }
 
-/* Leitfaden mit Abschnittsmarke (KERN K-007 Leitfaden-Motiv, UM-E3-LEIT; Register leitachse) – die Leitachse der
-   Erzählansichten, die auf den Einstieg folgt (Vorlage Erzählseite mit mittigem Einstieg oder Planblatt: `/` und mit
-   Absicht die übrigen Seiten dieser Vorlage, zurzeit sieben, K-007 „alle Erzählansichten“; Notiz UM-E3-LEIT
-   Entscheidung 2). Ihre rote Spitze steht fest auf der Leselinie, 40 % der Bildschirmhöhe von oben: Darüber ist das Lot
-   gezogen (gelesen), darunter Grundschicht (kommt noch). An der Spitze sitzt die Abschnittsmarke, ein rotes Fugenkreuz.
-   Sie steht immer im Abschnitt, der gerade gelesen wird, und trifft das Fugenkreuz an der Oberkante eines Abschnitts
-   genau dann, wenn er an die Reihe kommt; nach einem Sprung zu einem Anker liegt sie in dessen Abschnitt
-   (scroll-padding 96 px liegt über 40 %). Auf dem Bildschirm bewegt sich nichts: Linie und Marke stehen still, der
-   Inhalt läuft unter ihnen durch. Flächen (Fliese, Tinte) decken das Lot wie bisher (Gutachten u8); die Marke steht
-   über ihnen (Bahn in Ebene z-10, Leitachse.tsx), damit auch Ablauf, Kundenstimmen und Schritt markiert sind. Sie liegt
-   ganz im Seitenrand vor der Textkante (mobil 2 bis 14 px, Text ab 16 px) und unter den Fugenkreuzen der
-   Abschnittskanten (z-10, im Baum später).
-   Nicht hier: Leitachsen, die den Einstieg selbst umfassen (Wissens- und Ortsseiten, Erzählseite mit einfachem
-   Einstieg), weil Spitze und Marke dort schon im ersten Bildschirm neben dem roten Lot von Plan oder Karte stünden (ein
-   Rot je Bildschirm, K-003); Arbeitsansichten (ohne Seitenformel, K-010: kein Signaturmoment) und Seiten außerhalb der
-   Vorlagen. Sie behalten die Leitachse wie bisher.
-   Mittiger Einstieg (UM-E3-FIX F1): Das Lot beginnt schon an der Schnur unter der H1 (.einstieg-lot im Einstieg) und läuft
-   mit demselben Bereich, ohne Marke; reicht die Leselinie über den Fuß des Einstiegs, ist es ganz gezogen, und die
-   Leitachse übernimmt ohne Lücke. Mobil steht keine Marke (Leitachse.tsx): Sie stünde immer neben einer Textzeile.
-   Technik: Die Bahn der Marke (.leitfaden-bahn) hat dieselbe Box wie das Lot und einen eigenen view-timeline. Die Marke
-   ist ein Streifen in voller Höhe der Bahn, das Fugenkreuz sitzt an seiner Unterkante. Spitze (scale 0 → 1) und Marke
-   (translate 0 -100% → 0, also die Unterkante von 0 bis zur Höhe der Bahn) laufen im selben Bereich am gleichen
-   Fortschritt und liegen so in jeder Stellung aufeinander. Prozent bezieht sich auf die eigene Box und folgt jeder
-   Änderung der Höhe; eine Länge in Container-Einheiten (vorher 100cqb) hielt Chromium auf dem Compositor beim Start der
-   Animation fest, und die Bahn wächst danach (Platzhalter der Suspense-Grenze, content-visibility): Die Marke stand im
-   gemalten Bild weit über der Spitze, die Rechtecke im DOM stimmten (Prüfung UM-E3-LEIT, Befund 1). Darum hier keine
-   cq-Einheiten. Beide Zeitstrahlen ohne Inset: sonst zählte scroll-padding (oben 96 px, unten bis 128 px) mit, und die
-   Spitze wanderte über die Länge der Seite um diese Strecke nach unten. Die Marke ist nur sichtbar, solange die
-   Leselinie auf dem Lot liegt (kein fill): Sie erscheint unter dem Fugenkreuz des ersten Abschnitts und endet mit der
-   Linie. Nur scale, translate und opacity. Kein Startzustand: Der Grundzustand „keine Marke“ ist der Endzustand und
-   verbirgt nichts; darum hängt der Leitfaden wie das rote Stück nur an html.k-bewegung und läuft auch im Notaus weiter
-   (Notiz UM-E3-LEIT Entscheidung 5). Ohne JavaScript, ohne Startklasse, reduziert, „ruhig“, ohne animation-timeline
-   oder ohne Längen im Bereich, im Druck und bei erzwungenen Farben gilt der Endzustand: Lot in Grundschicht, keine
-   Marke (globals.css). */
+/* Leitfaden mit Abschnittsmarke (KERN K-007 Leitfaden-Motiv, UM-E3-LEIT; Register leitachse; seit UM-E3-FIX2 N1 je
+   Abschnitt) – die Leitachse der Erzählansichten, die auf den Einstieg folgt (Vorlage Erzählseite mit mittigem Einstieg oder
+   Planblatt: `/` und mit Absicht die übrigen Seiten dieser Vorlage, K-007 „alle Erzählansichten“). Ihre rote Spitze steht
+   fest auf der Leselinie, 40 % der Bildschirmhöhe von oben: Darüber ist das Lot gezogen (gelesen), darunter Grundschicht
+   (kommt noch). Auf dem Bildschirm bewegt sich nichts: Linie und Kopf stehen still, der Inhalt läuft unter ihnen durch.
+   Flächen (Fliese, Tinte) decken das Lot wie bisher (Gutachten u8).
+   Kopf (Abschnittsmarke, rotes Fugenkreuz auf der Spitze): Er steht nur dort, wo er auf einer gezeichneten Achse sitzt,
+   also neben dem Inhalt eines Abschnitts auf Kalk (kern/Abschnitt setzt dort eine Bahn). Auf Fliese und Tinte gibt es
+   keinen Kopf, vorher schwebte er dort allein im Weiß, neben dem Formular und neben H2 (Sichtabnahme E3 Anlauf 2). Die
+   Bahn beginnt unter Kopf und Satz des Abschnitts und endet über seinem unteren Innenabstand: nie ein Kreuz neben einer
+   Abschnittsüberschrift, nie eines nah an einem Kantenkreuz (mindestens 64 px, mobil gibt es keinen Kopf). Ein Abschnitt
+   ohne eigenen Kopf (Werkzeug-Slot mit verschachteltem Abschnitt) hat keine Bahn. Eine Pause im Inhalt (data-kopf-pause="1"
+   und "2", höchstens je eine: Raster der Einsatzorte mit dem Ursprung der Entfernungsskala und den Köpfen der Gruppen, dazu
+   die breite Gruppe von md bis xl): Der Kopf tritt zurück, bis die Leselinie 32 Stufen (128 px) unter ihrer Oberkante
+   liegt; am Ursprung steht genau ein rotes Kreuz, neben den Gruppenköpfen keines. Neben Karten auf Fliese mit Überschriften
+   im Inhalt (data-kopf-pause="ganz", höchstens eine je Abschnitt: Kartenraster der Leistungen, Einsatzkarte) tritt er auf
+   ihrer ganzen Höhe zurück, von einer Stufe 6 (24 px) über ihrer Oberkante bis eine Stufe 6 unter ihrer Unterkante, wie
+   neben Fliese-Flächen: nie ein Kreuz neben einer H3 (Nacharbeit UM-E3-FIX2).
+   Einrasten an der Fuge: Ein Kantenkreuz (abschnitt-kreuz, nur auf einer Trennlinie) wird rot, solange die Leselinie es auf
+   eine Stufe 6 (24 px) trifft (Fangbereich); in diesem Bereich steht nie ein zweites Kreuz. So markiert der Leitfaden auch
+   die weißen Abschnitte: Die Spitze taucht an der Kante unter die Fliese und kommt an der nächsten wieder hervor.
+   Technik: Die Bahn (.leitfaden-bahn, so hoch wie der Inhalt) hat einen eigenen view-timeline. Die Marke ist ein Streifen in
+   voller Höhe der Bahn, das Fugenkreuz sitzt an seiner Unterkante; Spitze und Marke laufen im selben Bereich (cover 60vh bis
+   cover 100 % − 40vh) und liegen so in jeder Stellung aufeinander (translate in %, nie in Container-Einheiten: die hielt
+   Chromium beim Start fest, Prüfung UM-E3-LEIT, Befund 1). Die Pausen geben ihren Zeitstrahl über timeline-scope an die Bahn,
+   das Kantenkreuz nutzt den des Abschnitts (.abschnitt-lot). Alle Zeitstrahlen ohne Inset: sonst zählte
+   scroll-padding mit. Nur translate und opacity, Füllung none: außerhalb ihres Bereichs ist jede Animation wirkungslos, und
+   der Grundzustand „kein Kopf, schwarze Kante“ gilt. Kein Startzustand: Er verbirgt nichts; darum hängt der Leitfaden wie
+   das rote Stück nur an html.k-bewegung und läuft auch im Notaus weiter (Notiz UM-E3-LEIT Entscheidung 5). Ohne
+   JavaScript, ohne Startklasse, reduziert, „ruhig“ (Spiegel unten), ohne animation-timeline, ohne Längen im Bereich oder
+   ohne timeline-scope, im Druck und bei erzwungenen Farben gilt der Grundzustand: Lot in Grundschicht, kein Kopf, Kanten
+   schwarz (globals.css). */
 .leitfaden-bahn {
   pointer-events: none;
   position: absolute;
@@ -131,24 +129,71 @@ html.k-bewegung:not(.k-notaus) [data-motion="anriss"]:not([data-motion-stand="an
   color: var(--color-laser);
   opacity: 0;
 }
+/* rotes Kantenkreuz über dem schwarzen (kern/Abschnitt): unsichtbar außer beim Einrasten */
+.kreuz-rot {
+  opacity: 0;
+}
 @supports (animation-timeline: view()) and (animation-range-end: cover calc(100% - 40vh)) {
   @media screen and (prefers-reduced-motion: no-preference) {
     html.k-bewegung [data-seitenformel] > [data-formel="worum"] + .leitfaden > .leitfaden-ebene .leitachse,
     html.k-bewegung [data-seitenformel] > [data-formel="worum"] > * > .einstieg-lot .leitachse {
       view-timeline-inset: 0;
     }
-    html.k-bewegung [data-seitenformel] > [data-formel="worum"] + .leitfaden > .leitfaden-ebene .leitfaden-bahn {
-      view-timeline: --leitfaden block;
-      view-timeline-inset: 0;
-    }
     html.k-bewegung [data-seitenformel] > [data-formel="worum"] + .leitfaden > .leitfaden-ebene .leitachse-rot,
     html.k-bewegung [data-seitenformel] > [data-formel="worum"] > * > .einstieg-lot .leitachse-rot {
       animation-range: cover 60vh cover calc(100% - 40vh);
     }
-    html.k-bewegung [data-seitenformel] > [data-formel="worum"] + .leitfaden > .leitfaden-ebene .leitfaden-marke {
-      animation: leitfaden-marke linear;
-      animation-timeline: --leitfaden;
-      animation-range: cover 60vh cover calc(100% - 40vh);
+  }
+}
+@supports (animation-timeline: view()) and (animation-range-end: cover calc(100% - 40vh)) and (timeline-scope: --a) {
+  @media screen and (prefers-reduced-motion: no-preference) {
+    /* Kopf je Abschnitt: Bahn neben dem Inhalt, Pause im selben Inhalt */
+    html.k-bewegung [data-seitenformel] > [data-formel="worum"] + .leitfaden .abschnitt-inhalt {
+      timeline-scope: --kopf-pause, --kopf-pause-2, --kopf-pause-ganz;
+    }
+    html.k-bewegung [data-seitenformel] > [data-formel="worum"] + .leitfaden .abschnitt-inhalt > .leitfaden-bahn {
+      view-timeline: --leitfaden block;
+      view-timeline-inset: 0;
+    }
+    html.k-bewegung [data-seitenformel] > [data-formel="worum"] + .leitfaden .abschnitt-inhalt [data-kopf-pause="1"] {
+      view-timeline: --kopf-pause block;
+      view-timeline-inset: 0;
+    }
+    html.k-bewegung [data-seitenformel] > [data-formel="worum"] + .leitfaden .abschnitt-inhalt [data-kopf-pause="2"] {
+      view-timeline: --kopf-pause-2 block;
+      view-timeline-inset: 0;
+    }
+    html.k-bewegung [data-seitenformel] > [data-formel="worum"] + .leitfaden .abschnitt-inhalt [data-kopf-pause="ganz"] {
+      view-timeline: --kopf-pause-ganz block;
+      view-timeline-inset: 0;
+    }
+    html.k-bewegung [data-seitenformel] > [data-formel="worum"] + .leitfaden .abschnitt-inhalt > .leitfaden-bahn .leitfaden-marke {
+      animation:
+        leitfaden-marke linear,
+        leitfaden-marke-aus linear,
+        leitfaden-marke-aus linear,
+        leitfaden-marke-aus linear;
+      animation-timeline: --leitfaden, --kopf-pause, --kopf-pause-2, --kopf-pause-ganz;
+      animation-range:
+        cover 60vh cover calc(100% - 40vh),
+        cover 0% cover calc(60vh + var(--spacing) * 32),
+        cover 0% cover calc(60vh + var(--spacing) * 32),
+        cover calc(60vh - var(--spacing) * 6) cover calc(100% - 40vh + var(--spacing) * 6);
+    }
+    /* Einrasten: Kantenkreuz rot, solange die Leselinie die Kante auf 24 px trifft */
+    html.k-bewegung [data-seitenformel] > [data-formel="worum"] + .leitfaden .abschnitt-lot {
+      view-timeline: --abschnitt-kante block;
+      view-timeline-inset: 0;
+    }
+    html.k-bewegung [data-seitenformel] > [data-formel="worum"] + .leitfaden .abschnitt-lot > .abschnitt-kreuz .kreuz-grund {
+      animation: leitfaden-marke-aus linear;
+      animation-timeline: --abschnitt-kante;
+      animation-range: cover calc(60vh - var(--spacing) * 6) cover calc(60vh + var(--spacing) * 6);
+    }
+    html.k-bewegung [data-seitenformel] > [data-formel="worum"] + .leitfaden .abschnitt-lot > .abschnitt-kreuz .kreuz-rot {
+      animation: leitfaden-marke-an linear;
+      animation-timeline: --abschnitt-kante;
+      animation-range: cover calc(60vh - var(--spacing) * 6) cover calc(60vh + var(--spacing) * 6);
     }
   }
 }
@@ -156,12 +201,20 @@ html.k-bewegung:not(.k-notaus) [data-motion="anriss"]:not([data-motion-stand="an
   from { opacity: 1; translate: 0 -100%; }
   to { opacity: 1; translate: 0 0; }
 }
+@keyframes leitfaden-marke-aus {
+  from, to { opacity: 0; }
+}
+@keyframes leitfaden-marke-an {
+  from, to { opacity: 1; }
+}
 @media print, (forced-colors: active) {
   [data-seitenformel] > [data-formel="worum"] + .leitfaden > .leitfaden-ebene .leitachse-rot,
-  [data-seitenformel] > [data-formel="worum"] > * > .einstieg-lot .leitachse-rot {
+  [data-seitenformel] > [data-formel="worum"] > * > .einstieg-lot .leitachse-rot,
+  .kreuz-grund {
     animation: none !important;
   }
-  .leitfaden-marke {
+  .leitfaden-marke,
+  .kreuz-rot {
     display: none;
   }
 }
@@ -778,10 +831,12 @@ html.k-notaus::view-transition-new(*) {
    wird nie bewegt, verdeckt oder ausgeblendet. Das Kopfskript setzt html.k-eingang nur zusammen mit html.k-bewegung (also
    nie bei reduzierter Bewegung, „ruhig“ oder ohne JavaScript) und nimmt die Klasse bei jeder Eingabe und spätestens nach
    2 s wieder weg; danach gilt sofort der Endzustand. Behälter sind der Logo-Link im Kopf und der Einstieg
-   (data-motion="eingang"). Erster Aufruf im Besuch, „An der Schnur“ (K-007, UM-E3-FIX F2):
-   - Die Schnur unter der H1 (nur im mittigen Einstieg, data-eingang="schnur") zieht in dauer-3 von der Achse nach rechts
-     (scale von links, ease-laser) und bleibt als Grundlinie und Anfang des Leitfadens stehen; ihr Endzustand ist der
-     Ruhezustand. Die Zeilen der H1 beginnen, wenn sie gut zur Hälfte gezogen ist (dauer-2), und setzen sich auf ihr auf.
+   (data-motion="eingang"). Erster Aufruf im Besuch, „An der Schnur“ (K-007, UM-E3-FIX F2, UM-E3-FIX2 N3, N5, N6):
+   - Die Schnur unter der H1 (nur im mittigen Einstieg, data-eingang="schnur") zieht in dauer-2 von der Achse nach rechts
+     (scale von links, ease-laser), zugleich das rote Lotstück aus demselben Kreuzpunkt nach unten bis unter die Knopfreihe
+     (data-eingang="lot"). Beide bleiben als Grundlinie und Anfang des Leitfadens stehen; ihr Endzustand ist der
+     Ruhezustand. Die erste Zeile der H1 beginnt, sobald die Schnur halb gezogen ist (dauer-1; ease-laser ist bei 46 % der
+     Zeit halb), und setzt sich auf ihr auf: Vorher zeigten 0 bis 450 ms nur eine halbe Linie über leerer Fläche.
    - Das Logo baut sich in zwei Reihen im Drittelverband auf: eine Maske (clip-path) gibt die unveränderte Datei von links
      frei, die untere Reihe ein Drittel einer Fliese hinter der oberen (Fliese 2 : 1 so hoch wie das Logo, Logo 3,2 : 1:
      ein Drittel einer Fliese ist 1/9,6 der Breite). Der Endzustand ist das Original ohne Maske.
@@ -791,22 +846,35 @@ html.k-notaus::view-transition-new(*) {
      Einstieg läuft die Flucht (sig-flucht, translate) als erste Animation der Liste unverändert mit, mit Name und Takt wie
      unten bei sig-flucht: Endet der Eingang, bleibt nur sie in der Liste und läuft ohne Neustart weiter (Abgleich nach
      Namen, CSS Animations 1); mit einer eigenen Flucht im Schlüsselbild begänne sig-flucht beim Ende noch einmal.
+   - Der Quadratmeter an der Schnur (nur /, ab lg und nicht flach): Steht die Schnur, zeichnen sich seine Kanten
+     (links hoch, oben nach rechts, rechts herab; scale am eigenen Rahmen, transform-box fill-box), dann setzen sich Fugen,
+     Maße und Zahlen (Deckkraft, data-eingang="mass").
    - Ort und Knopfzeile setzen sich (8 px, Deckkraft, wie auftritt), über die Oberkante des Fotos zieht ein Fugenriss in
-     Strich und verblasst (nur ein Pseudoelement am Bildplatz, das Foto bleibt unberührt). Im mittigen Einstieg ist
-     data-eingang="knoepfe" die Hülle um alles unter dem Ort (Nebenlink, Knopfzeile, erster Schritt, Bewertung): Vor der
-     H1 steht so nichts allein im Bild (Nacharbeit A, Lesefolge Schnur, H1, Ort, Rest).
-   Wiederkehr im selben Besuch (html.k-wiederkehr): nur die Zeilenmasken, kürzer, kein Logo-Aufbau, die Schnur steht. Takt
-   voll: Logo 0–800 ms, Schnur 0–600, Zeilen 320–1040, Ort 680–1280, Knöpfe und Rest 800–1400, Fugenriss 800–1400. Alle
-   Teile laufen mit Füllung backwards: Der Endzustand ist der Stil ohne Eingang, ohne Lage- oder Größenänderung. Takt nur
-   aus Tokens; test/intro.test.mjs rechnet ihn nach (voll höchstens 1,5 s, Wiederkehr kürzer). */
+     Strich und verblasst (nur ein Pseudoelement am Bildplatz, das Foto bleibt unberührt). Im mittigen Einstieg trägt
+     data-eingang="knoepfe" alles unter dem Ort (Orte-Link, Knopfzeile, erster Schritt, Bewertung): Vor der H1 steht so
+     nichts allein im Bild. Unter sm stehen Ort, Knöpfe, erster Schritt, Bewertung und Lotstück ab dem ersten Bild, der
+     Fugenriss entfällt (Klassen in EinstiegMitte: max-sm:animate-none, max-sm:after:hidden); dort kommen nur Schnur und
+     Zeilen herein: Schnur 0–320 ms, Zeilenmasken 140–860 ms. Die Flucht der zweiten Zeile (sig-flucht, unverändert, siehe
+     oben) läuft als Zeitstrahl bis 920 ms; ab 860 ms fehlen ihr weniger als 0,01 px (ease-setzen), sichtbar endet der
+     Eingang mobil also bei 0,86 s.
+   Wiederkehr im selben Besuch (html.k-wiederkehr): nur die Zeilenmasken, kürzer, kein Logo-Aufbau, Schnur, Lotstück und
+   Quadratmeter stehen. Takt voll: Logo 0–800 ms, Schnur und Lotstück 0–320, Zeilen 140–860, Kanten des Quadratmeters
+   320–880, Maße 680–1280, Ort 500–1100, Knöpfe und Rest 620–1220, Fugenriss 800–1400. Alle Teile laufen mit Füllung
+   backwards: Der Endzustand ist der Stil ohne Eingang, ohne Lage- oder Größenänderung. Takt nur aus Tokens;
+   test/intro.test.mjs rechnet ihn nach (voll höchstens 1,5 s, Wiederkehr kürzer). */
 [data-motion="eingang"] {
   --eingang-logo: var(--dauer-4);
-  --eingang-schnur: var(--dauer-3);
-  --eingang-zeile-beginn: var(--dauer-2);
+  --eingang-schnur: var(--dauer-2);
+  --eingang-zeile-beginn: var(--dauer-1);
   --eingang-zeile-abstand: calc(var(--staffel) * 2);
   --eingang-zeile: var(--dauer-3);
-  --eingang-ort-beginn: calc(var(--dauer-2) + var(--staffel) * 6);
-  --eingang-knoepfe-beginn: calc(var(--dauer-2) + var(--staffel) * 8);
+  --eingang-kante: var(--dauer-2);
+  --eingang-kante-links: var(--dauer-2);
+  --eingang-kante-oben: calc(var(--dauer-2) + var(--staffel) * 2);
+  --eingang-kante-rechts: calc(var(--dauer-2) + var(--staffel) * 4);
+  --eingang-mass-beginn: calc(var(--dauer-2) + var(--staffel) * 6);
+  --eingang-ort-beginn: calc(var(--dauer-1) + var(--staffel) * 6);
+  --eingang-knoepfe-beginn: calc(var(--dauer-1) + var(--staffel) * 8);
   --eingang-riss-beginn: var(--dauer-4);
   --eingang-setzen: var(--dauer-3);
 }
@@ -814,10 +882,23 @@ html.k-wiederkehr [data-motion="eingang"] {
   --eingang-zeile-beginn: var(--dauer-0);
   --eingang-zeile: var(--dauer-2);
 }
-/* Schnur: zieht von der Achse nach rechts (transform-origin links an der Schnur selbst, EinstiegMitte) */
+/* Schnur: zieht von der Achse nach rechts (transform-origin links an der Schnur selbst, EinstiegMitte); ebenso die obere
+   Kante des Quadratmeters */
 @keyframes eingang-schnur {
   from {
     scale: 0 1;
+  }
+}
+/* Lotstück und senkrechte Kanten des Quadratmeters: ziehen senkrecht (transform-origin oben bzw. unten) */
+@keyframes eingang-lot {
+  from {
+    scale: 1 0;
+  }
+}
+/* Fugen, Maße und Zahlen des Quadratmeters: nur Deckkraft */
+@keyframes eingang-mass {
+  from {
+    opacity: 0;
   }
 }
 @keyframes eingang-logo {
@@ -866,6 +947,28 @@ html.k-wiederkehr [data-motion="eingang"] {
   html.k-eingang.k-bewegung:not(.k-notaus):not(.k-wiederkehr) [data-motion="eingang"] [data-eingang="schnur"] {
     animation: eingang-schnur var(--eingang-schnur) var(--ease-laser) backwards;
   }
+  html.k-eingang.k-bewegung:not(.k-notaus):not(.k-wiederkehr) [data-motion="eingang"] [data-eingang="lot"] {
+    animation: eingang-lot var(--eingang-schnur) var(--ease-laser) backwards;
+  }
+  /* Quadratmeter: Kanten am eigenen Rahmen (fill-box), links von unten, oben von links, rechts von oben */
+  html.k-eingang.k-bewegung:not(.k-notaus):not(.k-wiederkehr) [data-motion="eingang"] [data-eingang="kante-links"] {
+    transform-box: fill-box;
+    transform-origin: bottom;
+    animation: eingang-lot var(--eingang-kante) var(--ease-laser) var(--eingang-kante-links) backwards;
+  }
+  html.k-eingang.k-bewegung:not(.k-notaus):not(.k-wiederkehr) [data-motion="eingang"] [data-eingang="kante-oben"] {
+    transform-box: fill-box;
+    transform-origin: left;
+    animation: eingang-schnur var(--eingang-kante) var(--ease-laser) var(--eingang-kante-oben) backwards;
+  }
+  html.k-eingang.k-bewegung:not(.k-notaus):not(.k-wiederkehr) [data-motion="eingang"] [data-eingang="kante-rechts"] {
+    transform-box: fill-box;
+    transform-origin: top;
+    animation: eingang-lot var(--eingang-kante) var(--ease-laser) var(--eingang-kante-rechts) backwards;
+  }
+  html.k-eingang.k-bewegung:not(.k-notaus):not(.k-wiederkehr) [data-motion="eingang"] [data-eingang="mass"] {
+    animation: eingang-mass var(--eingang-setzen) var(--ease-setzen) var(--eingang-mass-beginn) backwards;
+  }
   html.k-eingang.k-bewegung:not(.k-notaus) [data-motion="eingang"] [data-motion="zeilenmaske"] {
     animation: eingang-zeile var(--eingang-zeile) var(--ease-setzen) calc(var(--eingang-zeile-beginn) + var(--eingang-zeile-abstand) * min(var(--zeile, 0), 3)) backwards;
   }
@@ -898,7 +1001,10 @@ html.k-wiederkehr [data-motion="eingang"] {
   html.k-eingang [data-motion="eingang"] [data-motion="zeilenmaske"],
   html.k-eingang [data-motion="eingang"] [data-erstes-bild="ort"],
   html.k-eingang [data-motion="eingang"] [data-eingang="knoepfe"],
-  html.k-eingang [data-motion="eingang"] [data-eingang="schnur"] {
+  html.k-eingang [data-motion="eingang"] [data-eingang="schnur"],
+  html.k-eingang [data-motion="eingang"] [data-eingang="lot"],
+  html.k-eingang [data-motion="eingang"] [data-eingang^="kante-"],
+  html.k-eingang [data-motion="eingang"] [data-eingang="mass"] {
     animation: none !important;
   }
   html.k-eingang [data-motion="eingang"] [data-eingang="bild"]::after {
@@ -1554,8 +1660,8 @@ html.k-bewegung:not(.k-notaus) .k-cursor[data-cursor-stand="an"][data-cursor-zus
    Bewegungsschalter „ruhig“ (KERN v4, UM-E3-MOD, E-080): html[data-bewegung="ruhig"] aus dem Kopfskript gilt wie
    prefers-reduced-motion: reduce. Alles, was an html.k-bewegung hängt (Startzustände, Karussell, große Momente, der ruhige
    Weg von B-01), ist schon ruhig, weil das Kopfskript die Klasse dann nicht setzt. Hier stehen die Spiegel der Regeln, die
-   nur an der Medienabfrage hängen: Übergangsregel aus globals.css, Leitachse (die Abschnittsmarke hängt zusätzlich an
-   html.k-bewegung und steht hier nur zur Sicherheit), Fugenband, Druck und View Transitions. Der
+   nur an der Medienabfrage hängen: Übergangsregel aus globals.css, Leitachse (Abschnittsmarke und Einrasten an der Kante
+   hängen zusätzlich an html.k-bewegung und stehen hier nur zur Sicherheit), Fugenband, Druck und View Transitions. Der
    Eingang (E-067-4) hängt ganz an html.k-bewegung und braucht keinen Spiegel; den Spiegel des Intros B-02 gibt es mit dem
    Intro nicht mehr. Neue Regeln unter (prefers-reduced-motion: no-preference) ohne html.k-bewegung brauchen hier einen
    Spiegel (test/bewegungsschalter.test.mjs prüft das).
@@ -1572,6 +1678,8 @@ html[data-bewegung="ruhig"] *::after {
 }
 html[data-bewegung="ruhig"] .leitachse-rot,
 html[data-bewegung="ruhig"] .leitfaden-marke,
+html[data-bewegung="ruhig"] .kreuz-grund,
+html[data-bewegung="ruhig"] .kreuz-rot,
 html[data-bewegung="ruhig"] .fugenband-rot {
   animation: none !important;
 }

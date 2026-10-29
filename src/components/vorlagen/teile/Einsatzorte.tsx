@@ -76,7 +76,9 @@ function Ortsgruppe({ g, bereich, mehr = false }: { g: (typeof GRUPPEN)[number];
   return (
     // in einer Zeile des Rasters gleich hoch (gestreckt), so bleibt unter der kürzeren Gruppe keine Fugenfläche;
     // schmal (große Systemschrift; Schwelle 18rem, damit die erste von drei Spalten ab xl noch nebeneinander passt) steht die Entfernung unter dem Ort, Ortsnamen werden nie getrennt (Runde 3)
-    <div className={clsx('@container bg-fliese xl:border-l xl:border-strich xl:bg-transparent', breit && 'md:col-span-2', SPALTE[bereich])}>
+    // die breite Gruppe beginnt von md bis xl eine eigene Zeile: zweite Pause des Kopfs der Leitachse (data-kopf-pause="2"),
+    // damit er auch neben ihrem Kopf nicht steht (UM-E3-FIX2 N1; ab xl liegt sie in der Zeile der ersten Pause)
+    <div data-kopf-pause={breit ? '2' : undefined} className={clsx('@container bg-fliese xl:border-l xl:border-strich xl:bg-transparent', breit && 'md:col-span-2', SPALTE[bereich])}>
       <div className="p-4 @2xs:p-6 xl:pt-6 xl:pb-0">
         <h3 className="font-text text-fs-2 font-semibold text-tinte-2">{zusammen(GRUPPE_NAME[g.zone.id])}</h3>
         <Masskette bereich={bereich} breit={breit} />
@@ -127,7 +129,10 @@ export default function Einsatzorte({ titel, einleitung }: { titel: string; einl
         </p>
       }
     >
-      <div className="grid gap-px border border-fuge bg-fuge md:grid-cols-2 xl:grid-cols-12 xl:gap-0 xl:border-0 xl:bg-transparent">
+      {/* data-kopf-pause (UM-E3-FIX2 N1, bewegung.css „Leitfaden mit Abschnittsmarke“): Der Kopf der Leitachse tritt zurück, bis
+          die Leselinie 32 Stufen (128 px) unter der Oberkante liegt. So steht am Ursprung der Skala (ab xl) genau ein rotes
+          Kreuz, und neben den Köpfen der Gruppen steht keines */}
+      <div data-kopf-pause="1" className="grid gap-px border border-fuge bg-fuge md:grid-cols-2 xl:grid-cols-12 xl:gap-0 xl:border-0 xl:bg-transparent">
         <GemeinsameKette />
         {GRUPPEN.map((g, i) => (
           <Ortsgruppe key={g.zone.id} g={g} bereich={i} mehr={i === GRUPPEN.length - 1} />

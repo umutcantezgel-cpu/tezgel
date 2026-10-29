@@ -172,9 +172,10 @@
       },
       "eingang": {
         "zweck": "charakter",
-        "was": "Eingang ohne Vorhang: Logo baut sich im Kopf auf, die Schnur unter der H1 zieht, Ort und Knopfzeile (mittig mit allem darunter) setzen sich, Fugenriss am Foto (E-067-4, UM-E3-FIX)",
+        "was": "Eingang ohne Vorhang: Logo baut sich im Kopf auf, Schnur und rotes Lotstück ziehen aus dem Kreuzpunkt unter der H1, auf / zeichnet sich der Quadratmeter an der Schnur, Ort und Knopfzeile (mittig mit allem darunter) setzen sich, Fugenriss am Foto; unter sm kommen nur Schnur und Zeilen (E-067-4, UM-E3-FIX, UM-E3-FIX2)",
         "stufen": {
           "dauer": [
+            "--dauer-1",
             "--dauer-2",
             "--dauer-3",
             "--dauer-4"
@@ -188,16 +189,17 @@
         },
         "reduziert": {
           "art": "sofort",
-          "text": "kein Eingang: alles steht ab dem ersten Bild, das Foto ist nie verdeckt"
+          "text": "kein Eingang: alles steht ab dem ersten Bild, Schnur, Lotstück und Quadratmeter fertig, das Foto ist nie verdeckt"
         },
         "notaus": "endzustand"
       },
       "zeilenmaske": {
         "zweck": "hierarchie",
-        "was": "Die Zeilen der H1 steigen hinter Zeilenmasken auf, eine nach der anderen, auf die Schnur („An der Schnur“)",
+        "was": "Die Zeilen der H1 steigen hinter Zeilenmasken auf, eine nach der anderen, auf die Schnur („An der Schnur“); die erste, sobald die Schnur halb gezogen ist",
         "stufen": {
           "dauer": [
             "--dauer-0",
+            "--dauer-1",
             "--dauer-2",
             "--dauer-3"
           ],
@@ -233,7 +235,7 @@
       },
       "leitachse": {
         "zweck": "orientierung",
-        "was": "Leitfaden: das rote Lot wächst mit dem Lesen; auf den Erzählseiten der Vorlage steht die Spitze bei 40 % mit der Abschnittsmarke (UM-E3-LEIT); dazu der Lesefortschritt der Ratgeber",
+        "was": "Leitfaden: das rote Lot wächst mit dem Lesen; auf den Erzählseiten der Vorlage steht die Spitze bei 40 %, mit der Abschnittsmarke nur neben dem Inhalt der Abschnitte auf Kalk, wo das Lot gezeichnet ist, und an Kanten rastet sie ins Fugenkreuz ein (UM-E3-LEIT, UM-E3-FIX2); dazu der Lesefortschritt der Ratgeber",
         "stufen": {
           "dauer": [
             "scroll"
@@ -244,7 +246,7 @@
         },
         "reduziert": {
           "art": "grundform",
-          "text": "Grundschicht: das graue Lot steht vollständig, kein Rot gezogen, keine Marke; der Lesefortschritt ist ausgeblendet"
+          "text": "Grundschicht: das graue Lot steht vollständig, kein Rot gezogen, keine Marke, Kantenkreuze schwarz; der Lesefortschritt ist ausgeblendet"
         },
         "notaus": "laeuft",
         "hinweis": "Im Notaus läuft das Lot mit der Marke weiter: kein Startzustand, es verbirgt nichts und braucht kein Skript (UM-E3-LEIT, Entscheidung 5). Nur der Lesefortschritt steht im Notaus bei 0."
@@ -749,7 +751,7 @@
   },
   "staffel_offen": {
     "einzugsband": "letzte Stufe 10 (Zone 2 und 3 je fünf Stufen später, gesamt 1,2 s) über der Grenze 7; nicht in der PLAN-Zeile UM-E3-REG. Vorschlag: Stufen 0, 3, 6 (gesamt 0,96 s), zwei Zeilen in bewegung.css, Bildfolge /standorte/wetzlar",
-    "eingang": "letzte Stufe 8 (Knopfzeile bei dauer-1 + 8 Stufen) über der Grenze 7; abgenommen in E-081 (voll 1,40 s). Vorschlag: Knopfzeile bei Stufe 7, 60 ms früher, oder die Grenze für den Eingang als Signaturablauf (bis 1,5 s) eigens festhalten"
+    "eingang": "letzte Stufe 8 (Knopfzeile bei dauer-1 + 8 Stufen) über der Grenze 7; abgenommen in E-081, seit UM-E3-FIX2 voll 1,40 s mit Zeilen ab dauer-1 (Schnur halb gezogen). Vorschlag: Knopfzeile bei Stufe 7, 60 ms früher, oder die Grenze für den Eingang als Signaturablauf (bis 1,5 s) eigens festhalten"
   },
   "entscheidungen": {
     "fugenband": "Entscheidung UM-E3-REG: nicht eingesetzt. Auf /ueber-uns läuft der Leitfaden mit Abschnittsmarke schon neben der Firmengeschichte; ein zweites rotes Lot im selben Bildschirm bräche „Eine Linie führt“ (K-003 Nr. 5). Die Zeitleiste bleibt eine ruhige Fuge in Strich. Das CSS bleibt bereit; entfernt wird es nur nach Rückfrage (E-037).",

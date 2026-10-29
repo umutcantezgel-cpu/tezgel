@@ -1,6 +1,6 @@
 // Großer Moment „weg“ (KERN v3.3 K-007, E3-GRAF-02) für /bad/badsanierung, Schlitz `momente.ablauf` der Erzählseite (ersetzt
 // dort die Schritte): Vom Anruf bis zur letzten Fuge als Weg mit Stationen an der roten Laserlinie. Die Linie liegt auf dem
-// Lot der Leitachse (Lage wie die Schritte der Vorlage: -ml-3 md:-ml-4, Kreuze mobil 8 px) und führt durch die Fläche des Abschnitts, die die
+// Lot der Leitachse (Lage wie die Schritte der Vorlage: -ml-2 md:-ml-4, Kreuze mobil 8 px) und führt durch die Fläche des Abschnitts, die die
 // Leitachse verdeckt. Jedes Wegstück reicht von der Marke einer Station bis zur Marke der nächsten; sein rotes Stück wächst
 // scrollgebunden, und die Marke der nächsten Station setzt sich, wenn die Spitze ankommt (bewegung.css, Register `weg`).
 // Ohne JavaScript, bei reduzierter Bewegung, ohne animation-timeline, im Notaus und im Druck steht die Linie voll und alle
@@ -31,7 +31,7 @@ export interface WegProps {
 export default function Weg({ stationen, bilder = [], bilderBei = 5 }: WegProps) {
   return (
     <div data-motion="weg" className="@container">
-      <ol className="-ml-3 md:-ml-4">
+      <ol className="-ml-2 md:-ml-4">
         {stationen.map((s, i) => {
           const letzte = i === stationen.length - 1;
           const mitBildern = bilder.length > 0 && i + 1 === bilderBei;

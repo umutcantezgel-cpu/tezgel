@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import Fugenkreuz from './Fugenkreuz';
-import { ACHSE_LAGE, KREUZ_GROESSE } from './Leitachse';
+import { ACHSE_LAGE, ACHSE_VOR_SATZ, KREUZ_GROESSE } from './Leitachse';
 import { etikettForm, seitenKlassen } from './stile';
 import type { Formelteil } from './Seitenformel';
 
@@ -27,7 +27,8 @@ export interface AbschnittProps {
   breite?: 'seite' | 'mass';
   /** data-motion="auftritt" für den Inhalt (nur Erzählansichten, höchstens jeder zweite Abschnitt) */
   auftritt?: boolean;
-  /** Fugenkreuz auf der Leitachse an der Oberkante (innerhalb von <Leitachse>) */
+  /** Fugenkreuz auf der Leitachse an der Oberkante (innerhalb von <Leitachse>); im Leitfaden dazu der Kopf der Achse neben
+   *  dem Inhalt (nur Kalk, gestapelt, Satzspiegel und mit eigenem Titel oder Etikett; UM-E3-FIX2 N1) */
   leitachse?: boolean;
   /** Inhalt erst in Sichtnähe zeichnen (content-visibility, nur unterhalb des ersten Bildschirms; E3-NACH-07) */
   spaet?: boolean;
@@ -58,6 +59,12 @@ export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleit
       {einleitung && <div className={clsx('mt-6 text-fs-3', tinte ? 'text-nacht-2' : 'text-tinte-2')}>{einleitung}</div>}
     </div>
   );
+  // Kopf der Leitachse (Abschnittsmarke, UM-E3-FIX2 N1) nur dort, wo das Lot gezeichnet ist: auf Kalk (Fliese und Tinte
+  // decken es), und nur neben dem Inhalt, nie neben Kopf und Satz; seitlich stünde der Inhalt neben der H2. Nur mit eigenem
+  // Kopf: Ein Abschnitt ohne Titel und Etikett trägt einen Inhalt, der seine Überschrift selbst mitbringt (z. B. ein
+  // verschachtelter Abschnitt im Werkzeug-Slot, die Firmengeschichte auf /ueber-uns); dort begänne die Bahn über dessen H2
+  // (Nacharbeit UM-E3-FIX2: Kopf neben „So sind wir gewachsen.“)
+  const marke = Boolean(kopfInhalt) && leitachse && flaeche === 'kalk' && kopf === 'gestapelt' && breite === 'seite';
   return (
     <section
       id={id}
@@ -70,6 +77,8 @@ export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleit
       className={clsx(
         // Sprungziel ohne eigenen Versatz: allein scroll-padding-top (Kopfhöhe + 16 px) an <html> setzt es auf 96 px (R-01a)
         'relative',
+        // Zeitstrahl der Kante (Einrasten des Kopfs im Leitfaden, bewegung.css)
+        leitachse && 'abschnitt-lot',
         art === 'erzaehl' ? 'py-16 lg:py-24' : 'py-12 lg:py-16',
         flaeche === 'fliese' && 'border-y border-fuge bg-fliese',
         tinte && 'flaeche-tinte bg-tinte text-kalk',
@@ -78,10 +87,13 @@ export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleit
     >
       {leitachse && (
         // Fugenkreuz auf dem Lot (Ebene z-10, K-005): über der Zierebene der Leitachse und über einer Nachbarfläche mit z-10.
-        // abschnitt-kreuz: im Leitfaden nur auf einer Trennlinie (globals.css); mobil 8 px groß (KREUZ_GROESSE, ≥ 8 px zum Text)
+        // abschnitt-kreuz: im Leitfaden nur auf einer Trennlinie (globals.css); mobil 8 px groß (KREUZ_GROESSE, 4 px zum Text).
+        // Darüber dasselbe Kreuz in Laser: Im Leitfaden rastet der Kopf hier ein, solange die Leselinie die Kante auf 24 px
+        // trifft (kreuz-rot, bewegung.css); sonst unsichtbar
         <div aria-hidden="true" className="abschnitt-kreuz pointer-events-none absolute inset-x-0 top-0 z-10">
           <div className={clsx(seitenKlassen, 'relative')}>
-            <Fugenkreuz className={clsx('absolute top-0 -translate-x-1/2 -translate-y-1/2', KREUZ_GROESSE, ACHSE_LAGE, tinte ? 'text-nacht-2' : 'text-tinte')} />
+            <Fugenkreuz className={clsx('kreuz-grund absolute top-0 -translate-x-1/2 -translate-y-1/2', KREUZ_GROESSE, ACHSE_LAGE, tinte ? 'text-nacht-2' : 'text-tinte')} />
+            <Fugenkreuz className={clsx('kreuz-rot absolute top-0 -translate-x-1/2 -translate-y-1/2 text-laser', KREUZ_GROESSE, ACHSE_LAGE)} />
           </div>
         </div>
       )}
@@ -109,7 +121,25 @@ export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleit
         ) : (
           <>
             {kopfInhalt}
-            <div className={clsx(kopfInhalt && 'mt-12')} data-motion={auftritt ? 'auftritt' : undefined}>{children}</div>
+            {marke ? (
+              // Bahn des Kopfs (UM-E3-FIX2 N1): so hoch wie der Inhalt, auf dem Lot (8 bzw. 16 px vor der Inhaltskante). Ihr
+              // Zeitstrahl beginnt erst unter Kopf und Satz und endet vor der Unterkante: Der Kopf steht nie neben der H2 und
+              // nie nah an einem Kantenkreuz (Abstand mindestens der Innenabstand des Abschnitts). Die Marke ist ein Streifen
+              // in voller Höhe der Bahn mit dem Fugenkreuz an der Unterkante (bewegung.css „Leitfaden mit Abschnittsmarke“);
+              // außerhalb des Leitfadens ohne Wirkung. Mobil keine Marke: Sie stünde auf der Leselinie neben einer Textzeile
+              <div className={clsx('abschnitt-inhalt relative', kopfInhalt && 'mt-12')}>
+                <div aria-hidden="true" className={clsx('leitfaden-bahn z-10', ACHSE_VOR_SATZ)}>
+                  <span className="leitfaden-marke max-md:hidden">
+                    <span data-leitachse="" className="absolute bottom-0 left-0 size-3 translate-y-1/2">
+                      <Fugenkreuz className="absolute inset-0 size-full" />
+                    </span>
+                  </span>
+                </div>
+                <div data-motion={auftritt ? 'auftritt' : undefined}>{children}</div>
+              </div>
+            ) : (
+              <div className={clsx(kopfInhalt && 'mt-12')} data-motion={auftritt ? 'auftritt' : undefined}>{children}</div>
+            )}
           </>
         )}
       </div>

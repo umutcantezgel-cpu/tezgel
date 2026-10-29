@@ -36,6 +36,9 @@ export interface WorumInhalt {
   /** Mittiger Einstieg: H1 ab lg eine Stufe größer (fs-7), nur auf der Startseite (UM-E3-FIX F1). Gleich gebaute Einstiege
    *  der übrigen Seiten bleiben einheitlich bei fs-6; keine Regel nach Zeilenlänge (Nacharbeit A, Prüfer 2) */
   titelGross?: boolean;
+  /** Mittiger Einstieg: Strichzeichnung eines Quadratmeters mit Bemaßung an der Schnur, nur auf der Startseite (UM-E3-FIX2
+   *  N5; belegt die H1 „Perfektion auf jedem Quadratmeter.“) */
+  quadratmeter?: boolean;
   firmensitz?: string;
   bildGross?: ArbeitId;
   /** Bewertungszeile als Kennzeile über dem Plan (mittig: unter den Knöpfen) */

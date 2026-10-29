@@ -36,22 +36,24 @@ export function Schritte({ schritte, start = 0, weiter = false }: { schritte: Ab
     );
   }
   return (
-    // mobil auf dem Lot (ACHSE_LAGE: 4 px vom Rand, also 12 px vor der Inhaltskante; ab md 16 px), ab lg die Treppe
-    <ol className={clsx('-ml-3 grid md:-ml-4 lg:ml-0', SPALTEN[schritte.length] ?? 'lg:grid-cols-3')}>
+    // mobil auf dem Lot (ACHSE_LAGE: 8 px vom Rand, also 8 px vor der Inhaltskante; ab md 16 px), ab lg die Treppe
+    <ol className={clsx('-ml-2 grid md:-ml-4 lg:ml-0', SPALTEN[schritte.length] ?? 'lg:grid-cols-3')}>
       {schritte.map((s, i) => {
         const letzter = i === schritte.length - 1;
         return (
           <li
             key={s.titel}
             className={clsx(
-              'relative border-l-2 pb-12 pl-8 lg:border-t-2 lg:border-l-0 lg:pt-8 lg:pr-12 lg:pb-0 lg:pl-0',
+              // senkrecht: das Kreuz steht am Anfang der Linie eine halbe Stufe 12 über der Nummer, nie auf Höhe einer Textzeile
+              // (UM-E3-FIX2 N2); die Abstände zwischen den Schritten bleiben 48 px (pt-6 und pb-6)
+              'relative border-l-2 pt-6 pb-6 pl-8 lg:border-t-2 lg:border-l-0 lg:pt-8 lg:pr-12 lg:pb-0 lg:pl-0',
               letzter && !weiter ? 'border-l-transparent lg:border-t-laser' : 'border-laser',
               STUFE[i],
             )}
           >
             {/* Setzstufe ab lg: vom Ende der vorigen Linie senkrecht herab zum Anfang dieser */}
             {i > 0 && <span aria-hidden="true" className="absolute bottom-full left-0 hidden h-16 -translate-x-1/2 border-l-2 border-laser lg:block" />}
-            <Fugenkreuz className={clsx('absolute top-1 left-0 -translate-x-1/2 text-tinte lg:top-0 lg:-translate-y-1/2', KREUZ_GROESSE)} />
+            <Fugenkreuz className={clsx('absolute top-0 left-0 -translate-1/2 text-tinte', KREUZ_GROESSE)} />
             <p className="font-mono text-fs-4 text-tinte-2">{String(start + i + 1).padStart(2, '0')}</p>
             <h3 className="mt-2 font-anzeige text-fs-5 font-extrabold text-tinte">{s.titel}</h3>
             <p className="mt-4 max-w-mass font-text text-fs-3 text-tinte-2">

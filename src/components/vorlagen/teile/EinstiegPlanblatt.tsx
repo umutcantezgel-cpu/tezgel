@@ -63,18 +63,18 @@ export default function EinstiegPlanblatt({ pfad, brotkrumen, firmensitz, titelZ
       <div className={`${seitenKlassen} relative grid grid-cols-4 gap-y-12 pt-24 pb-16 flach:pt-16 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12 lg:gap-y-0 lg:pt-32 lg:pb-24`}>
         {/* Textspalte: mobil ein Block (Abstände wie gesetzt, kein Rasterabstand zwischen H1 und Ort), ab lg zwei Rasterzellen */}
         <div className="relative col-span-4 md:col-span-8 lg:contents">
-          {/* mobil: das rote Lot wächst im Seitenrand neben dem Text (Achse 12 bzw. 16 px vor der Textkante, ACHSE_LAGE); unter md
+          {/* mobil: das rote Lot wächst im Seitenrand neben dem Text (Achse 8 bzw. 16 px vor der Textkante, ACHSE_LAGE); unter md
               beginnt es eine Zeile höher am Fugenkreuz */}
-          <div aria-hidden="true" data-motion="sig-kreuzlinie" className="pointer-events-none absolute inset-y-0 -left-3 max-md:-top-4 md:-left-4 lg:hidden">
+          <div aria-hidden="true" data-motion="sig-kreuzlinie" className="pointer-events-none absolute inset-y-0 -left-2 max-md:-top-4 md:-left-4 lg:hidden">
             <span className="kreuzlinie-lot" />
           </div>
           {/* Container: unter 20 rem Spaltenbreite (nur bei großer Systemschrift, P1 mit 200 %) entfällt die Firmensitz-Zeile, die
               H1 steht eine Stufe kleiner und fließt als ein Satz (fs-6 und fs-7 treffen dort beide ihr Minimum) */}
           <div className="@container relative lg:col-span-6 lg:row-start-1 lg:self-start lg:pb-4">
-            {/* Fugenkreuz als Anschlag auf der Achse, mit dem Firmensitz in Mono. Unter md steht die Achse nur 12 px vor der
+            {/* Fugenkreuz als Anschlag auf der Achse, mit dem Firmensitz in Mono. Unter md steht die Achse nur 8 px vor der
                 Textkante: dort sitzt das Kreuz (8 px) eine Zeile höher am Anfang des Lots, statt den ersten Buchstaben zu
-                berühren (m360 und 200 %, E2-SICHT-2 Befund 10; Achse mobil 4 px vom Rand seit UM-E3-FIX F3) */}
-            <Fugenkreuz className="pointer-events-none absolute top-1 -left-3 size-2 -translate-x-1/2 text-tinte max-md:-top-4 max-md:-translate-y-1/2 md:-left-4 md:size-3" />
+                berühren (m360 und 200 %, E2-SICHT-2 Befund 10; Achse mobil 8 px vom Rand seit UM-E3-FIX2 N2) */}
+            <Fugenkreuz className="pointer-events-none absolute top-1 -left-2 size-2 -translate-x-1/2 text-tinte max-md:-top-4 max-md:-translate-y-1/2 md:-left-4 md:size-3" />
             {brotkrumen && brotkrumen.length > 1 ? (
               <Brotkrumen wege={brotkrumen} className="flach:hidden @max-xs:hidden" />
             ) : (

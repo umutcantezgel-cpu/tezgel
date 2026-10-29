@@ -3,7 +3,9 @@
 // zur Leistungsseite. Ersetzt dort die vollen Fachgewerk-Felder (Gewerk.tsx) mit Etikett, Merkmalen und zwei Knöpfen. Der
 // Link trägt den Plan-Morph wie bisher (data-uebergang="plan-vor", das Feld data-plan-uebergang, beides im Träger von
 // sig-plan): ab lg gleitet der Plan in den Einstieg der Leistungsseite; die Fugen rücken bei Maus und Fokus in die Flucht
-// (sig-plan-ziel). Kennungen der Karten wie im Bestand (#bad, #wohnen, #aussen, #untergrund), dazu #gewerke. Serverkomponente.
+// (sig-plan-ziel). Kennungen der Karten wie im Bestand (#bad, #wohnen, #aussen, #untergrund), dazu #gewerke. Neben dem
+// Raster tritt der Kopf der Leitachse zurück (data-kopf-pause="ganz", bewegung.css „Leitfaden mit Abschnittsmarke“): Er stand
+// sonst neben den H3 der Karten (Nacharbeit UM-E3-FIX2 N1). Serverkomponente.
 import Link from 'next/link';
 import Icon from '@/components/icons/Icon';
 import Textmarken from '@/components/kern/Textmarken';
@@ -21,7 +23,7 @@ export interface Leistungsplan {
 
 export default function Leistungsplaene({ bereiche }: { bereiche: Leistungsplan[] }) {
   return (
-    <ul id="gewerke" className="grid grid-cols-1 gap-8 text-left md:grid-cols-2 lg:gap-12">
+    <ul id="gewerke" data-kopf-pause="ganz" className="grid grid-cols-1 gap-8 text-left md:grid-cols-2 lg:gap-12">
       {bereiche.map((b) => (
         <li key={b.id}>
           <article id={b.id} aria-labelledby={`${b.id}-titel`} data-motion="sig-plan" className="sig-plan-ziel flex h-full flex-col border border-fuge bg-fliese p-6 lg:p-8">

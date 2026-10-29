@@ -19,6 +19,8 @@ export const START: ErzaehlInhalt = {
     titel: 'Perfektion auf jedem Quadratmeter.',
     titelZeilen: ['Perfektion auf', 'jedem Quadratmeter.'],
     titelGross: true,
+    // Strichzeichnung eines Quadratmeters mit Bemaßung an der Schnur: belegt die H1 (UM-E3-FIX2 N5)
+    quadratmeter: true,
     ort:'Fliesenverlegung und Badsanierung aus Aßlar',
     vorspann: 'Deniz Tezgel kommt selbst zu Ihnen, schaut sich alles an und sagt Ihnen, was zu tun ist. Danach verlegt er mit seinem Team Fliese für Fliese.',
     bewertung: true,

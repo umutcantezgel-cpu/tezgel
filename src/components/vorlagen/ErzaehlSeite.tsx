@@ -82,6 +82,7 @@ export default function ErzaehlSeite({ inhalt, momente, werkzeug, nachBeleg, ein
           brotkrumen={worum.brotkrumen}
           titelZeilen={worum.titelZeilen}
           titelGross={worum.titelGross}
+          quadratmeter={worum.quadratmeter}
           ort={worum.ort}
           hauptziel={ziel}
           bild={einstiegBild ?? worum.bild}

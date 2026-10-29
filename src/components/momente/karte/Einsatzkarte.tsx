@@ -7,7 +7,10 @@
 // reduziert, ohne JavaScript und im Druck steht die Karte fertig. Beschriftungen in HTML (wachsen mit der Systemschrift), Lage
 // über --x und --y (Klasse karte-marke, globals.css); unter 16rem Flächenbreite (große Schrift) bleiben nur Aßlar und die
 // Zeichnung, Namen und Ringmaße entfallen (sie verdeckten dort Punkte). Die Legende unter der Zeichnung erklärt Firmensitz,
-// Punkte und Ringe mit eigenen Zeichen, auch ohne Ortsliste (/kontakt, Browserprüfung E4-W0, E-065). Serverkomponente.
+// Punkte und Ringe mit eigenen Zeichen, auch ohne Ortsliste (/kontakt, Browserprüfung E4-W0, E-065). Im Leitfaden einer
+// Erzählseite (/ueber-uns) tritt der Kopf der Leitachse neben der ganzen Karte zurück (data-kopf-pause="ganz", bewegung.css
+// „Leitfaden mit Abschnittsmarke“): Er stand sonst neben den Gruppenköpfen (H3) der Ortsliste (Nacharbeit UM-E3-FIX2 N1);
+// anderswo ohne Wirkung. Serverkomponente.
 import type { CSSProperties } from 'react';
 import Link from 'next/link';
 import clsx from 'clsx';
@@ -131,7 +134,7 @@ export default function Einsatzkarte({ unterschrift, beschriftet, aktuell, liste
     </div>
   );
   return (
-    <figure className={clsx('border border-fuge bg-fliese', className)}>
+    <figure data-kopf-pause="ganz" className={clsx('border border-fuge bg-fliese', className)}>
       {unterschrift && <figcaption className="border-b border-fuge p-4 text-center font-text text-fs-4 text-pretty text-tinte lg:px-8 lg:py-6">{unterschrift}</figcaption>}
       {liste ? (
         // K-016 (Abnahme E3-BAU-08): Zeichnung mittig, die Liste der Orte darunter in einer schmalen Spalte statt daneben

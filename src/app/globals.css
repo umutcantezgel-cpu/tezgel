@@ -105,11 +105,15 @@
   --text-fs-6: clamp(2rem, 1.5rem + 2.2vw, 3.5rem);
   --text-fs-6--line-height: 1.1;
   --text-fs-6--letter-spacing: -0.015em;
-  /* Display: mobil 37 px; der rem-Anteil ist klein, damit große Systemschrift (200 %) die H1 auf 64 px statt 88 px hebt und
-     Ort und Hauptknopf nicht ganz verdrängt (Sichtprüfung E2). Obergrenze 92 px dort, wo der Satzspiegel (82rem plus Rand)
-     aufhört zu wachsen: darüber wuchs die Schrift weiter, die Spalte nicht, und die H1 der Startseite brach auf d1920 und
-     d2560 in sechs statt vier Zeilen (E2-SICHT-2 Befund 2, E3-START-01) */
-  --text-fs-7: clamp(2rem, 1rem + 5.4vw, 5.75rem);
+  /* Display: mobil 38 bis 41 px (m360 bis m430; UM-E3-FIX2 N7: die H1 der Startseite füllt mit „jedem Quadratmeter.“ die
+     Spalte zu rund 90 %, vorher 1rem + 5,4vw mit 35 bis 37 px); ab t1024 wie vorher (t1024 71 px, d1280 84 statt 85 px,
+     d1440 92 px). Der rem-Anteil ist klein, damit große Systemschrift (200 %) die H1 auf 64 px statt 88 px hebt und Ort und
+     Hauptknopf nicht ganz verdrängt (Sichtprüfung E2); wird die Spalte dabei schmaler als 20rem, setzt das Planblatt die H1
+     eine Stufe kleiner (@max-xs:text-fs-5), der mittige Einstieg der Startseite begrenzt nur ihre Zeilen auf die Spalte
+     (titel-spalte unten). Obergrenze 92 px dort, wo der Satzspiegel (82rem plus Rand) aufhört zu wachsen:
+     darüber wuchs die Schrift weiter, die Spalte nicht, und die H1 der Startseite brach auf d1920 und d2560 in sechs statt vier
+     Zeilen (E2-SICHT-2 Befund 2, E3-START-01) */
+  --text-fs-7: clamp(2rem, 1.25rem + 5vw, 5.75rem);
   /* ≥ Inhaltshöhe der Archivo (Ascender 878 + Descender 210 = 1,088 em): Zeilen der H1 berühren sich nie */
   --text-fs-7--line-height: 1.1;
   --text-fs-7--letter-spacing: -0.015em;
@@ -475,6 +479,14 @@
   .schnur-abstand {
     padding-block-end: 0.25em;
   }
+  /* Zeilen der H1 der Startseite (EinstiegMitte, titelGross; Nacharbeit UM-E3-FIX2 N7): Sie stehen in der Stufe der H1
+     (1em) und werden erst kleiner, wenn das längste Wort „Quadratmeter.“ (gemessen 5,37em) sonst mehr als 89 % der Spalte
+     füllte: höchstens 16,5 % der Spaltenbreite (cqi am Container des Einstiegs). So wächst die H1 mit der Systemschrift
+     (m360: 38 px bei 100 %, 40 px bei 110 %, 43 px bei 125 %, 48 px bei 150 %, 49 px bei 200 %), statt ab einer Spalte
+     unter 20rem auf fs-5 zu fallen (vorher 26 px bei 110 %). Bei 100 % greift die Grenze auf keinem Gerät. */
+  .titel-spalte > * {
+    font-size: min(1em, 16.5cqi);
+  }
   /* Planblatt der Startseite: Das Formular setzt die Wände des geschnittenen Plans nach unten fort (--wand aus
      wandEinzug() in Verlegeplan.tsx, Anteil der Zeichnungsbreite) */
   @media (width >= 64rem) {
@@ -560,6 +572,18 @@
   }
   html:not(.k-bewegung) .leitachse-rot {
     animation: none;
+  }
+  /* Lotstück des mittigen Einstiegs (UM-E3-FIX2 N3): rot von der Schnur bis unter die Knopfreihe, auf derselben Achse wie das
+     rote Stück der Laserachse (2 px, um 0,5 px nach links wie .leitachse-rot im 1-px-Lot). Teil der Figur „An der Schnur“ wie
+     die Schnur: steht in jedem Zustand, auch reduziert, ruhig und ohne JavaScript; nur sein Ziehen im Eingang ist Bewegung
+     (bewegung.css „eingang“). Unten setzt EinstiegMitte die Länge (Abstand unter der Knopfreihe). */
+  .lot-stueck {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 2px;
+    margin-inline-start: -0.5px;
+    background: var(--color-laser);
   }
   /* Ein Rot je Bildschirm (K-003): trägt das Planblatt des Einstiegs die rote Achse seines Plans, bleibt die Laserachse des
      Einstiegs ab lg Grundschicht (sonst zwei rote Lote nebeneinander, bei reduzierter Bewegung beide voll – E4-N2-02-PA) */
