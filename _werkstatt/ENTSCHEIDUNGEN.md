@@ -1365,3 +1365,37 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - Abschnitt „Bewegung: entfernt, ersetzt, neu“; Plan-Morph bleibt nach E-037.
   - Werkzeugtabelle ergänzt.
   - Werbesprache in der Kurzbeschreibung entfernt; Ortsseiten richtig gezählt (13 und 52).
+
+## E-092 · UM-E3-TAKT: Bildrate auf `/` wieder bei 0,3 % (29.10.2026, 14:32 MEZ)
+- **Ursache, belegt:** Die Kantenkreuze aus FIX2 N1 sind schuld, nicht die scroll-gebundene Leitachse.
+  - Je Kante liefen zwei Animationen (`leitfaden-marke-aus`/`-an`), Keyframes ohne Änderung, Füllung none. Auf `/` bei m390 sind das 14.
+  - Keine davon lief im Compositor (99 × `compositeFailed`). 94,5 % der Bilder hatten eine Hauptthread-Animation. Alle verworfenen Bilder waren „PRESENTED_PARTIAL“ mit Hauptthread-Animation.
+  - Abschalt-Reihe:
+
+| Abgeschaltet | verworfen |
+|---|---|
+| Kreuz-Animationen | 0,07 % |
+| Marke | 4,6 bis 9,2 % (keine Besserung) |
+
+- **Behebung (Baumeister Opus, nur `src/app/bewegung.css`):** `kante-grund` und `kante-rot` laufen mit `step-end both` über den doppelt breiten Bereich.
+  - Rot im mittleren Teil, genau der alte Fangbereich ±24 px.
+  - Anfang und Ende gleich dem Grundzustand.
+  - Danach 3,4 % Hauptthread-Bilder, so wenig wie ganz ohne Kreuz-Animationen.
+- **Messung im Wechsel** (bewegung.mjs bildrate, m390, DPR 2, CPU 4×, Median aus 3):
+
+| Messung | vorher (8bcca3c8) | nachher |
+|---|---|---|
+| Baumeister | 3,93 / 3,85 % | 0,34 / 0,07 % |
+| Gegenprüfung (Sonnet, eigene Bauten) | 3,92 / 3,99 % | 0,27 / 0,41 % |
+
+  - LoAF wie vorher.
+- **Bild und Verhalten:**
+  - Ruhezustand 46 von 46 Paaren pixelgleich.
+  - Bewegung an: N1 unverändert. Der Kopf steht nie ohne Linie, nie zwei Köpfe, Kopf und rotes Kantenkreuz nie zugleich (Gegenprüfung, Abtastung alle 8 px auf d1440 und t1024).
+  - Rest: Der Compositor rundet den Kantenwechsel um 1 px früher (m390 `/`, d1440 `/leistungen`); in Bewegung nicht sichtbar.
+  - Belege `belege/um-e3-takt/`.
+  - Mein Repo-Lauf: `npm test` 248/248, werte 0.
+- **Offen, vorbestehend, nach UM-E4-START:**
+  - Im Spiegel für erzwungene Farben verliert `.kreuz-rot { display: none }` gegen die Utility am SVG.
+  - Ein Schub von etwa 50 Hauptthread-Bildern rund 2,7 s nach Beginn der Geste, auch ohne N1.
+- **Z-06:** `/` liegt wieder deutlich unter der Schwelle von 5 %. Die volle Prüfkette läuft mit dem nächsten Paket (VORL) gegen diesen Stand.
