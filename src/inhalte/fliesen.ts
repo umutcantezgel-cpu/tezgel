@@ -110,6 +110,8 @@ export const FLIESEN: WissenInhalt = {
     // Stimme der Textdatei (G8: Wortlaut unverändert); die Kennzeile mit Stand setzt der Baustein Stimmen darunter
     stimmen: ['rabia-oe'],
   },
+  // Qualitätsversprechen (UM-E4-EP3) vor dem nächsten Schritt; Wortlaut aus COMPANY_DATA.qualityPromises
+  versprechen: {},
   schritt: {
     titel: 'Haben Sie Fragen zu Ihrem Raum?',
     satz: 'Nennen Sie uns Ihren Namen und Ihre Telefonnummer. Deniz Tezgel ruft Sie zurück und macht einen Termin mit Ihnen aus.',

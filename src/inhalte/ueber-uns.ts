@@ -3,8 +3,9 @@
 // Vorspann der Textdatei als `tun.einleitung` (Zusatz Regel 2). Firmendaten dürfen auf dieser Seite stehen (Regel 3 gilt hier
 // nicht). Bild des Einstiegs: `ueber-einstieg`. Karte (großer Moment `karte`) und Kundenstimmen kommen über Vorlage und Seite.
 // Vorlage: ErzaehlSeite. Fakten: K-015 F-01, F-02, F-05, F-06, F-09, F-19, F-14.
-import type { ErzaehlInhalt } from '@/components/vorlagen/inhalt';
-import { COMPANY_DATA } from '@/config/company';
+import type { ErzaehlInhalt, Markentext } from '@/components/vorlagen/inhalt';
+import type { Wert, WerteInhalt } from '@/components/ueber-uns/Werte';
+import { COMPANY_DATA, values } from '@/config/company';
 import { strasse } from '@/lib/anschrift';
 
 const VORSPANN =
@@ -83,6 +84,9 @@ export const UEBER_UNS: ErzaehlInhalt = {
     // kein Weg „Alle Arbeiten ansehen“ unter der Karte (E-065): ohne Fotos darüber stand er ohne Bezug; die Karte führt mit
     // „Alle Orte ansehen“ weiter
   },
+  // Qualitätsversprechen (UM-E4-EP3) vor dem nächsten Schritt; Wortlaut aus COMPANY_DATA.qualityPromises. Das Nivelliersystem
+  // erklären schon die Werte (Abschnitt der Seite nach „Was wir tun“, WERTE unten)
+  versprechen: { erklaert: ['nivelliersystem'] },
   schritt: {
     titel: 'Bitten Sie um einen Termin vor Ort.',
     satz:
@@ -95,4 +99,59 @@ export const UEBER_UNS: ErzaehlInhalt = {
       { name: 'Fliesenberatung in Gießen', href: '/ausstellung/giessen' },
     ],
   },
+};
+
+/** Werte (UM-E4-EP2, Rückführung nach UM-5): die sechs Werte des Bestands als Vertrauensliste nach „Was wir tun“ (Baustein
+ *  `components/ueber-uns/Werte`, Slot `nachTun`). Wortlaut aus `values` in `src/config/company.js` (Zeilen 188 bis 195, in E0
+ *  ausgegeben von `Werte.tsx`), beim Bau gelesen; Überschrift wie in E0. Eingetragen bei der Handwerkskammer und Abdichtung
+ *  nach DIN 18534 sind belegte Fakten (Anhang F, F-05 und F-15) und stehen groß in der ersten Reihe. Angepasst nur, wo der
+ *  Kern es verlangt (Tabelle WERTE_ANPASSUNG, je mit Grund):
+ *  - M-07 (Garantie-Wörter erst nach Bestätigung), in derselben Linie wie das Qualitätsversprechen (Punkt 4 „Kalkulation mit
+ *    festem Preis“ ohne Zusage zu Zusatzkosten, AGB § 2 Abs. 3): „Staubschutz“ statt „Staubschutz-Garantie“; Wert 4 „Termintreue
+ *    und fester Preis“ (wie „Angebot mit festem Preis“, E-027) mit „Abgestimmte Zeitpläne und klare Kosten.“ statt „Verbindliche
+ *    Zeitpläne und klare Kosten ohne versteckte Aufschläge.“ (die Zusage zu Aufschlägen entfällt wie in Punkt 4);
+ *  - K-011: „und“ statt „&“, „Präzision bei Großformaten“ statt „Großformat-Präzision“, „große Fliesen“ statt „XXL-Fliesen“,
+ *    Fachwort Nivelliersystem mit Erklärung (erstes Vorkommen auf der Seite); Trennfuge im langen Namen „Kundenbegeisterung“.
+ *  Das Motto im Wert „Kundenbegeisterung“ steht wörtlich in `values` (gleich `COMPANY_DATA.motto`, F-19).
+ *  Abdichtung und DIN 18534 erklärt schon „Was wir tun“; die Werte nennen sie ohne zweite Erklärung.
+ *  Abgleich beim Bau (wie `PUNKTE` im Qualitätsversprechen): Weicht ein Titel der Quelle ab, oder ein Satz, den die Tabelle
+ *  ersetzt (`quelleSatz`), bricht der Bau ab. So bleibt keine Antwort auf M-07 in `values` unbemerkt auf der Seite stehen.
+ *  Die Prüfung auf Garantie-Wörter macht der Baustein (`GARANTIE` aus dem Qualitätsversprechen). */
+const WERTE_ANPASSUNG: ({ quelle: string; quelleSatz?: string; name?: string; satz?: Markentext; grund?: string } & Pick<Wert, 'zeichen' | 'belegt'>)[] = [
+  { quelle: 'HWK Wiesbaden Mitglied', zeichen: 'haken', belegt: true },
+  { quelle: 'DIN 18534 Abdichtung', zeichen: 'abdichtung', belegt: true },
+  { quelle: 'Staubschutz-Garantie', name: 'Staubschutz', zeichen: 'haus', grund: 'M-07: ohne „Garantie“' },
+  {
+    quelle: 'Termintreue & Festpreis',
+    quelleSatz: 'Verbindliche Zeitpläne und klare Kosten ohne versteckte Aufschläge.',
+    name: 'Termintreue und fester Preis',
+    satz: 'Abgestimmte Zeitpläne und klare Kosten.',
+    zeichen: 'uhr',
+    grund: 'M-07 wie Punkt 4 des Qualitätsversprechens: ohne „verbindlich“, ohne Zusage zu Aufschlägen, fester Preis wie E-027; K-011 und statt &',
+  },
+  {
+    quelle: 'Großformat-Präzision',
+    quelleSatz: 'Nivelliersystem für absolut planebene XXL-Fliesen und harmonische Fugenbilder.',
+    name: 'Präzision bei Großformaten',
+    satz: '[[nivelliersystem|Nivelliersystem]] für absolut planebene große Fliesen und harmonische Fugenbilder.',
+    zeichen: 'grossformat',
+    grund: 'K-011: ohne Bindestrichwort und XXL; Glossar Nivelliersystem',
+  },
+  { quelle: 'Kundenbegeisterung', name: 'Kunden\u00adbegeisterung', zeichen: 'stern', grund: 'Trennfuge im langen Namen' },
+];
+
+export const WERTE: WerteInhalt = {
+  titel: 'Unsere Werte im Handwerk.',
+  werte: values.map((quelle: { title: string; description: string }, i: number) => {
+    const a = WERTE_ANPASSUNG[i];
+    if (
+      !a ||
+      values.length !== WERTE_ANPASSUNG.length ||
+      a.quelle !== quelle.title ||
+      (a.satz !== undefined && a.quelleSatz !== quelle.description)
+    ) {
+      throw new Error(`Werte: Quelle geändert bei Wert ${i + 1} („${quelle.title}“). Anpassung und M-07 prüfen.`);
+    }
+    return { name: a.name ?? quelle.title, satz: a.satz ?? quelle.description, zeichen: a.zeichen, belegt: a.belegt };
+  }),
 };

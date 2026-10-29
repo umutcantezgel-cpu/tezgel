@@ -3,6 +3,7 @@
 // Bausteinen der Startseite. Texte tragen die Auszeichnungen der Seitentexte (`[[id|Wort]]`, siehe `src/lib/textmarken.ts`)
 // und werden wörtlich aus `_werkstatt/texte/<seite>.md` übernommen. Bilder nur über Kennungen aus `ARBEITEN`.
 import type { ArbeitId } from '@/config/arbeiten';
+import type { GlossarId } from '@/config/glossar';
 import type { Kompositionsmotiv } from '@/components/kern/Fliesenkomposition';
 import type { Krume } from '@/components/kern/Brotkrumen';
 import type { VignettenName } from '@/components/kern/vignetten';
@@ -141,6 +142,31 @@ export interface SchrittInhalt {
   verwandte?: Verweis[];
 }
 
+/** Schnitt einer Bauweise im Vergleich (Zeichnung im Stil der Plan-Vignetten, `teile/Vergleich.tsx`) */
+export type VergleichSchnitt = 'stelzlager' | 'splittbett' | 'gebunden';
+
+/** Vergleich als eigener Abschnitt nach „Was wir tun“ (UM-E4-EP1, `/balkon-terrasse`): die Bauweisen als Spalten mit Schnitt,
+ *  die Kriterien als Zeilen, die ab lg über alle Spalten fluchten; darunter wahlweise ein Hinweis. Gehört zu „Was wir tun“ */
+export interface VergleichInhalt {
+  titel: string;
+  einleitung?: Markentext;
+  /** Zeilen in fester Folge: Kennung (Schlüssel in `werte`) und Name des Kriteriums */
+  kriterien: { id: string; name: string }[];
+  /** Spalten: Name der Bauweise, ihr Schnitt und je Kriterium der Wert (Fachtext mit Textmarken: Ein Fachwort, das hier zum
+   *  ersten Mal auf der Seite steht, trägt seine Erklärung in der Zelle, K-011) */
+  spalten: { name: string; schnitt: VergleichSchnitt; werte: Record<string, Markentext> }[];
+  /** Hinweis unter dem Vergleich: Stichwort in Fett, dann der Satz */
+  hinweis?: { stichwort: string; text: Markentext };
+}
+
+/** Qualitätsversprechen (UM-E4-EP3): die acht Punkte aus `COMPANY_DATA.qualityPromises` als eigener Abschnitt nach dem
+ *  Beleg, vor dem nächsten Schritt (`teile/Versprechen.tsx`). Fachwörter, die der Inhalt der Seite davor schon erklärt,
+ *  findet die Vorlage selbst; `erklaert` nennt dazu, was ein Abschnitt außerhalb des Inhalts erklärt (z. B. die Werte auf
+ *  /ueber-uns), damit kein Wort zweimal erklärt wird */
+export interface VersprechenInhalt {
+  erklaert?: GlossarId[];
+}
+
 export interface ErzaehlInhalt {
   /** Adresse der Seite, z. B. `/bad` */
   pfad: string;
@@ -148,8 +174,12 @@ export interface ErzaehlInhalt {
   worum: WorumInhalt;
   lage: LageInhalt;
   tun: TunInhalt;
+  /** Vergleich nach „Was wir tun“ (z. B. die Aufbauten auf /balkon-terrasse) */
+  vergleich?: VergleichInhalt;
   ablauf: AblaufInhalt;
   beleg: BelegInhalt;
+  /** Qualitätsversprechen vor dem nächsten Schritt */
+  versprechen?: VersprechenInhalt;
   schritt: SchrittInhalt;
 }
 
@@ -176,5 +206,7 @@ export interface WissenInhalt {
   wissen: Wissensblock[];
   ablauf: AblaufInhalt;
   beleg: BelegInhalt;
+  /** Qualitätsversprechen vor dem nächsten Schritt */
+  versprechen?: VersprechenInhalt;
   schritt: SchrittInhalt;
 }

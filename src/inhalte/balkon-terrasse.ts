@@ -51,6 +51,67 @@ export const BALKON_TERRASSE: ErzaehlInhalt = {
       'Der Aufbau darunter. Auch der [[untergrund|Untergrund]] gehört zu unseren Leistungen. Ebenso die [[abdichtung|Abdichtung]].',
     ],
   },
+  // Vergleich der Aufbauten (UM-E4-EP1, Rückführung nach UM-5): Wortlaut aus der Seite vor dem Relaunch, Abschnitt „Aufbauten im
+  // Vergleich: Stelzlager, Splittbett, gebunden“ mit CONSTRUCTIONS, den Zeilen der Tabelle und dem Hinweis zur Plattenstärke
+  // (eingeführt in 693ff2d6, unverändert in 5a7a7b06 vor relaunch(P0-ORCH-01) und in E0 c53faf4,
+  // `src/app/(bestand)/balkon-terrasse/page.jsx`). Angepasst nur nach K-011: Überschrift ohne „Begriff: Erklärung“ (das
+  // Stichwort der Unterseiten „Aufbauten im Vergleich“ bleibt), Komma statt Gedankenstrich, „2 cm starke Platten“ statt
+  // „2-cm-Platten“ (Ersetzung im Bestand), Punkt statt Gedankenstrich im Hinweis. Fachwörter mit Glossarerklärung beim ersten
+  // Vorkommen auf der Seite, und das liegt in den Zellen (K-011, Nacharbeit): Feinsteinzeug in „Stelzlager, Platten“ (dafür
+  // „aus Feinsteinzeug oder geeignetem Naturstein“ statt der Klammer, sonst stünde die Erklärung in einer zweiten Klammer),
+  // Mörtelbett in „Gebundene Verlegung, Aufbauhöhe“; Spalte „gebunden“ und Hinweis nennen Feinsteinzeug danach ohne Erklärung.
+  // Die Brotkrumen und Links „Aufbauten im Vergleich“ der Unterseiten zeigen wieder auf einen Vergleich.
+  vergleich: {
+    titel: 'Drei Aufbauten im Vergleich.',
+    einleitung:
+      'Alle drei Bauweisen funktionieren, wenn sie zur Fläche passen. Entscheidend sind verfügbare Aufbauhöhe, Untergrund und der Weg, den das Wasser nehmen soll.',
+    kriterien: [
+      { id: 'hoehe', name: 'Aufbauhöhe' },
+      { id: 'wasser', name: 'Entwässerung' },
+      { id: 'platten', name: 'Platten' },
+      { id: 'geeignet', name: 'Geeignet für' },
+      { id: 'revision', name: 'Revision' },
+    ],
+    spalten: [
+      {
+        name: 'Stelzlager',
+        schnitt: 'stelzlager',
+        werte: {
+          hoehe: 'Mittel bis hoch, über die Lager stufenlos einstellbar',
+          wasser: 'Wasser läuft durch offene Fugen auf die Abdichtungsebene und dort im Gefälle ab',
+          platten: '2 cm starke Platten aus [[feinsteinzeug|Feinsteinzeug]] oder geeignetem Naturstein',
+          geeignet: 'Balkon, Loggia, Dachterrasse auf tragfähiger, abgedichteter Fläche',
+          revision: 'Platten einzeln abnehmbar, Abdichtung und Abläufe bleiben zugänglich',
+        },
+      },
+      {
+        name: 'Splittbett (ungebunden)',
+        schnitt: 'splittbett',
+        werte: {
+          hoehe: 'Mittel, abhängig von Bettungsdicke und Unterbau',
+          wasser: 'Wasser versickert über Fugen und Bettung in einen wasserdurchlässigen Unterbau',
+          platten: '2 cm starke Platten oder dickere Terrassenplatten',
+          geeignet: 'Vor allem Terrassen auf Erdreich mit tragfähigem, frostsicherem Unterbau',
+          revision: 'Platten aufnehmbar, Bettung lässt sich nachrichten',
+        },
+      },
+      {
+        name: 'Gebundene Verlegung',
+        schnitt: 'gebunden',
+        werte: {
+          hoehe: 'Gering, Belag im Kleber- bzw. [[duennbett|Mörtelbett]] auf der Abdichtung',
+          wasser: 'Wasser fließt auf der Belagsoberfläche im Gefälle ab, Fugen sind geschlossen',
+          platten: 'Frostbeständiges Feinsteinzeug in üblicher Stärke möglich',
+          geeignet: 'Flächen mit knapper Aufbauhöhe, wenn Gefälle und Abdichtung darunter stimmen',
+          revision: 'Kein zerstörungsfreier Zugang zur Abdichtung',
+        },
+      },
+    ],
+    hinweis: {
+      stichwort: 'Plattenstärke',
+      text: '2 cm starke Platten sind für Stelzlager und Splittbett nötig, weil sie dort frei spannen bzw. punktuell aufliegen. Bei gebundener Verlegung trägt das Bett die Platte vollflächig. Dann genügt frostbeständiges Feinsteinzeug in üblicher Stärke.',
+    },
+  },
   ablauf: {
     titel: 'So kommen Sie zu Ihrem neuen Belag.',
     einleitung: 'Deniz Tezgel bleibt Ihr fester Ansprechpartner, von der ersten Skizze bis zur Abnahme.',
@@ -83,6 +144,8 @@ export const BALKON_TERRASSE: ErzaehlInhalt = {
     // öffnet die Galerie auf /referenzen mit der Auswahl „Balkon und Terrasse“ (GalerieWahl liest ?raum=)
     verweis: { name: 'Alle Arbeiten ansehen', href: '/referenzen?raum=balkon-und-terrasse#unsere-arbeiten' },
   },
+  // Qualitätsversprechen (UM-E4-EP3) vor dem nächsten Schritt; Wortlaut aus COMPANY_DATA.qualityPromises
+  versprechen: {},
   schritt: {
     titel: 'Sprechen Sie mit uns über Ihren Balkon oder Ihre Terrasse.',
     satz: 'Rufen Sie an oder fragen Sie einen Termin an. Deniz Tezgel ruft Sie zurück.',

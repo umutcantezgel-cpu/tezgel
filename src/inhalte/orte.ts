@@ -73,6 +73,8 @@ export function ortsInhalt(stadt: CityData, kmAbSitz: number, index: number): Or
       stimmen: [STIMMEN[index % STIMMEN.length]],
       verweis: { name: 'Alle Arbeiten ansehen', href: '/referenzen' },
     },
+    // Qualitätsversprechen (UM-E4-EP3) vor dem nächsten Schritt; Wortlaut aus COMPANY_DATA.qualityPromises
+    versprechen: {},
     schritt: {
       titel: `Termin in ${name} anfragen`,
       satz: `Schreiben Sie uns oder rufen Sie an. Wir sprechen einen Termin bei Ihnen in ${name} ab.`,

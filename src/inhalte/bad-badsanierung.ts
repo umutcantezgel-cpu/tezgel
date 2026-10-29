@@ -89,6 +89,8 @@ export const BADSANIERUNG: ErzaehlInhalt = {
     // der Weg unter den Fotos führt zu allen Arbeiten; zu den Bewertungen führt die Kennzeile unter den Stimmen
     verweis: { name: 'Alle Arbeiten ansehen', href: '/referenzen' },
   },
+  // Qualitätsversprechen (UM-E4-EP3) vor dem nächsten Schritt; Wortlaut aus COMPANY_DATA.qualityPromises
+  versprechen: {},
   schritt: {
     titel: 'Sprechen wir über Ihre Badsanierung.',
     satz: 'Sagen Sie uns, welches Bad Sie sich wünschen. Den Rest besprechen wir gemeinsam.',

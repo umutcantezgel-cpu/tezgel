@@ -7,7 +7,8 @@
 // spät, das Hauptziel kommt aus navigation.js. Der Einstieg steht vor der Leitachse und trägt sein Lot in Grundschicht
 // (UM-E4-VORL): Danach führt der Leitfaden wie auf / (Spitze auf der Leselinie, Kopf neben dem Inhalt der Abschnitte auf
 // Kalk, Einrasten an den Kanten); vorher umfasste die Leitachse den Einstieg, und ihr Rot stand als Stummel unter dem Kopf
-// neben dem roten Plan. Serverkomponente.
+// neben dem roten Plan. Das Qualitätsversprechen aus dem Inhalt (`versprechen`, UM-E4-EP3) steht als eigener Abschnitt nach
+// dem Beleg vor dem nächsten Schritt. Serverkomponente.
 import { Suspense, type ReactNode } from 'react';
 import Leitachse from '@/components/kern/Leitachse';
 import Seitenformel from '@/components/kern/Seitenformel';
@@ -19,6 +20,7 @@ import Lage from './teile/Lage';
 import Wissen from './teile/Wissen';
 import Ablauf from './teile/Ablauf';
 import Beleg from './teile/Beleg';
+import Versprechen from './teile/Versprechen';
 import Schritt from './teile/Schritt';
 import { Werkzeug, type Arbeitsabschnitt } from './ArbeitsSeite';
 
@@ -41,6 +43,9 @@ export default function WissensSeite({ inhalt, zeichnungen, werkzeug }: WissensS
           <Wissen bloecke={inhalt.wissen} zeichnungen={zeichnungen} />
           <Ablauf inhalt={inhalt.ablauf} />
           <Beleg inhalt={inhalt.beleg} pfad={inhalt.pfad} />
+          {inhalt.versprechen && (
+            <Versprechen vorher={[worum.vorspann, inhalt.lage, inhalt.wissen, inhalt.ablauf, inhalt.beleg]} erklaert={inhalt.versprechen.erklaert} />
+          )}
           <Schritt inhalt={inhalt.schritt} pfad={inhalt.pfad} />
           {werkzeug && <Werkzeug werkzeug={werkzeug} />}
         </Suspense>

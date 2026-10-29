@@ -21,6 +21,9 @@
 // - Die Abschnitte nach dem Einstieg zeichnen spät (content-visibility): Stil und Layout erst in Sichtnähe, sonst rechnete
 //   das Einsetzen der Grenze das Layout der ganzen Seite in einer langen Aufgabe (E3-LEIST-01); der nächste Schritt ist
 //   Sprungziel und zeichnet sofort.
+// - Zurückgeführte Inhalte (UM-E4-INHALT, UM-5) stehen je als eigener Abschnitt: der Vergleich aus dem Inhalt (`vergleich`) und
+//   ein Abschnitt der Seite (`nachTun`, z. B. die Werte auf /ueber-uns) nach „Was wir tun“; das Qualitätsversprechen aus dem
+//   Inhalt (`versprechen`) nach dem Beleg vor dem nächsten Schritt. Ohne diese Angaben bleibt die Seite, wie sie war (/).
 // Serverkomponente.
 import { Suspense, type ReactNode } from 'react';
 import Leitachse from '@/components/kern/Leitachse';
@@ -32,8 +35,10 @@ import EinstiegMitte from './teile/EinstiegMitte';
 import EinstiegPlanblatt from './teile/EinstiegPlanblatt';
 import Lage from './teile/Lage';
 import Tun from './teile/Tun';
+import Vergleich from './teile/Vergleich';
 import Ablauf from './teile/Ablauf';
 import Beleg, { type ZweiterBeleg } from './teile/Beleg';
+import Versprechen from './teile/Versprechen';
 import Schritt, { Oeffnungszeiten } from './teile/Schritt';
 import { Werkzeug, type Arbeitsabschnitt } from './ArbeitsSeite';
 
@@ -44,6 +49,9 @@ export interface ErzaehlSeiteProps {
   momente?: { tun?: ReactNode; ablauf?: ReactNode; beleg?: ReactNode; belegZwei?: ZweiterBeleg };
   /** Werkzeug der Seite (Badanfrage, Preisrechner …) nach dem nächsten Schritt, Kennung wie im Bestand */
   werkzeug?: Arbeitsabschnitt;
+  /** eigener Abschnitt nach „Was wir tun“ (und dem Vergleich), der seinen Kopf selbst mitbringt (z. B. die Werte auf /ueber-uns,
+   *  UM-E4-EP2); erklärt er Fachwörter, nennt der Inhalt sie in `versprechen.erklaert` */
+  nachTun?: ReactNode;
   /** eigener Abschnitt nach dem Beleg und vor dem nächsten Schritt, der seinen Kopf selbst mitbringt (z. B. die Bewertungen
    *  mit Themenfilter auf /referenzen, Abnahme E3-BAU-07: Belege vor der Bitte um einen Termin) */
   nachBeleg?: ReactNode;
@@ -56,16 +64,21 @@ export interface ErzaehlSeiteProps {
   formularId?: string;
 }
 
-export default function ErzaehlSeite({ inhalt, momente, werkzeug, nachBeleg, einstiegBild, formular, formularId }: ErzaehlSeiteProps) {
+export default function ErzaehlSeite({ inhalt, momente, werkzeug, nachTun, nachBeleg, einstiegBild, formular, formularId }: ErzaehlSeiteProps) {
   const { worum } = inhalt;
   const ziel = hauptziel(inhalt.pfad);
+  // Texte vor dem Qualitätsversprechen (der Vorspann steht im mittigen Einstieg nicht auf der Seite)
+  const vorher = [worum.einstieg === 'mitte' ? null : worum.vorspann, inhalt.lage, inhalt.tun, inhalt.vergleich, inhalt.ablauf, inhalt.beleg];
   const rest = (
     <Suspense fallback={<div aria-hidden="true" className="min-h-dvh noscript:hidden" />}>
       <Lage inhalt={inhalt.lage} />
       <Tun inhalt={inhalt.tun} moment={momente?.tun} />
+      {inhalt.vergleich && <Vergleich inhalt={inhalt.vergleich} />}
+      {nachTun}
       <Ablauf inhalt={inhalt.ablauf} moment={momente?.ablauf} />
       <Beleg inhalt={inhalt.beleg} pfad={inhalt.pfad} moment={momente?.beleg} zweiter={momente?.belegZwei} />
       {nachBeleg}
+      {inhalt.versprechen && <Versprechen vorher={vorher} erklaert={inhalt.versprechen.erklaert} />}
       <Schritt
         inhalt={inhalt.schritt}
         pfad={inhalt.pfad}

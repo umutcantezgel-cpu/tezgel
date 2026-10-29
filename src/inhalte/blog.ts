@@ -70,6 +70,8 @@ export const BLOG: WissenInhalt = {
     // Stimme der Textdatei (G8: Wortlaut unverändert); die Kennzeile mit Stand setzt der Baustein Stimmen aus RATING_SUMMARY
     stimmen: ['c-wolf'],
   },
+  // Qualitätsversprechen (UM-E4-EP3) vor dem nächsten Schritt; Wortlaut aus COMPANY_DATA.qualityPromises
+  versprechen: {},
   schritt: {
     titel: 'Haben Sie eine Frage zu Ihrem Bad?',
     satz: 'Rufen Sie uns an oder senden Sie Ihre Anfrage. Deniz Tezgel ruft Sie zurück.',
