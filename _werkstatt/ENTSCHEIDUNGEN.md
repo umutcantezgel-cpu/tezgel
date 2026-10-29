@@ -1399,3 +1399,28 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - Im Spiegel für erzwungene Farben verliert `.kreuz-rot { display: none }` gegen die Utility am SVG.
   - Ein Schub von etwa 50 Hauptthread-Bildern rund 2,7 s nach Beginn der Geste, auch ohne N1.
 - **Z-06:** `/` liegt wieder deutlich unter der Schwelle von 5 %. Die volle Prüfkette läuft mit dem nächsten Paket (VORL) gegen diesen Stand.
+
+## E-093 · UM-E4-VORL abgenommen: Vorlagen tragen Eingang, Leitfaden und Cursor-Ziele von `/` (29.10.2026, 20:52 MEZ)
+- **Inhalt** (b29dc46c, 17 Dateien; Baumeister Opus, zwei Prüfer Sonnet, Nacharbeit nach meinen Entscheidungen, Notiz `belege/um-e4-vorl/notiz.md`):
+  - Eingang mobil nur mit den H1-Zeilen auf allen Einstiegsarten. Der Vorspann ist auf `/blog`, `/fliesen` und `/standorte/wetzlar` das LCP-Element und steht deshalb ab dem ersten Bild (E-067-4 geht vor).
+  - Leitfaden auf Wissens- und Ortsseiten: Einstieg mit eigenem Lot vor der Leitachse; Pausen an Wissen-Karten und an der Blog-Liste; ArbeitsSeite ohne wachsendes Rot (`gezogen={false}`). Kantenkreuze tragen `data-motion="leitachse"`.
+  - Cursor: Das Schild über Glasbildern zeigt nur das Fugenkreuz (keine Doppelbeschriftung). „Nicht verfügbar“ und „lädt“ per Treffertest am Behälter; gesperrte Formularknöpfe behalten `pointer-events: none` (G8). Register, `register.json` und KERN K-007 nachgezogen; Test Cursor 7b.
+  - `.kreuz-rot` im Druck und bei erzwungenen Farben wirklich ausgeblendet (offener Punkt aus E-092).
+- **Prüfkette** (vorher 8bcca3c8 auf 4324, nachher b29dc46c auf 4325; Belege `belege/um-e4-vorl/`, Ablauf in `pruefkette.txt`). Die Umgebung startete während der Suite neu; die Kette lief ab den Servern weiter, ohne die schon grünen Teile zu wiederholen.
+
+| Prüfung | Ergebnis |
+|---|---|
+| Reinraum b29dc46c | grün (lint 0, test 0, qa-graph 0) |
+| G8-Abgleich (Fuß, Zitate, Zahlen auf `/`, `/bad`, `/ueber-uns`, `/impressum`, `/datenschutz`) | gleich |
+| Cursor-Probe | ok (Glasbild „ansehen“ ohne Text, ruhig ohne Bewegung) |
+| Suite reduziert | 397 grün, 1 rot, 26 übersprungen (siehe unten) |
+| Suite Bewegung an | 398 grün, 0 rot, 26 übersprungen |
+| axe `--zustaende` | 396 Läufe, 0 ernste oder kritische Knoten |
+| ruhig und reduziert (6 Seiten) | 0 Befunde |
+| Register (5 Seiten) | 0 unbekannte Kennungen |
+| Bildrate `/` | 0,14 % verworfen (vorher 0,3 %, Schwelle 5 %), LoAF 1 mit 73 ms |
+| Pixel, Ruhezustand | 48 Paare, 14 mit Abweichung, zusammen 1058 Pixel, alle gewollt |
+
+- **Das eine Rot:** B-01 (21) mobil, zweiter Wechsel 3677 ms statt unter 3400 ms. Das ist eine reine Zeitgrenze; während der Suite lagen Löschen von 9 GB und die Kontingent-Schätzung auf dem Rechner (Last 9,6 auf 4 Kernen). Gegenprobe auf ruhigem Rechner: je sechsmal gegen vorher und nachher, 12 von 12 grün. In der Suite mit Bewegung war der Test ebenfalls grün. Kein Befund an VORL; B-01 bleibt unverändert (E-078). Lehre: Während einer Suite keine schweren Nebenarbeiten (Löschen, Schätzung, Bau).
+- **Pixel:** Alle 14 Abweichungen liegen auf `/fliesen`, `/standorte/wetzlar` und `/blog` und sind je zwei Kantenkreuze zwischen zwei Kalkflächen, die nach der Nacharbeit entfallen (`pixel-diff-wetzlar-d1920-k01.png`). `/` ist pixelgleich in allen Ausschnitten. Die abweichende Seitenhöhe von `/` m390 im Bericht (13607 gegen 10838) ist ein Artefakt des späten Zeichnens: Beide Stände schwanken oben zwischen 9790 und 14019 px und sind nach dem Scrollen gleich hoch (11235 px).
+- **Damit erfüllt:** Die Vorlagen tragen Eingang, Zeilenmasken, Leitfaden und Cursor-Ziele auf dem Stand von `/` (Z-05, Z-06 auf Paketstufe). Nächster Schritt: E4-W2 (CHOR-01 bis 11 als Berichte mit Gegenprüfung, UM-E4-INHALT Teil A und B).

@@ -1,0 +1,94 @@
+# Prüfkette UM-E4-VORL (vorher 8bcca3c8 auf 4324, nachher b29dc46c auf 4325)
+
+## Erster Lauf bis zum Neustart der Umgebung
+=== REINRAUM 18:49:17
+exit 0
+lint 0 (16s)
+test 0 (2s)
+qa-graph 0 (1s)
+läuft: 8bcca3c8 auf 4324
+läuft: b29dc46c auf 4325
+4324 200
+4325 200
+=== G8 18:51:27
+/ fuss gleich · zitate gleich · zahlen weg 0 neu 0
+/bad fuss gleich · zitate gleich · zahlen weg 0 neu 0
+/ueber-uns fuss gleich · zitate gleich · zahlen weg 0 neu 0
+/impressum fuss gleich · zitate gleich · zahlen weg 0 neu 0
+/datenschutz fuss gleich · zitate gleich · zahlen weg 0 neu 0
+g8 exit 0
+=== CURSOR 18:51:50
+{"desktop_glasbild":{"stand":"an","zustand":"ansehen","text":""},"desktop_nach_tab":{"stand":"aus","zustand":"ansehen","text":""},"desktop_ausserhalb":{"stand":"aus","zustand":"ansehen","text":""},"desktop_fehler":[],"touch":null,"ruhig":{"stand":"an","zustand":"ansehen","text":""},"ruhig_transition":"1e-05s / none"}
+=== SUITE reduziert 18:51:59
+
+## Fortsetzung ab den Servern
+=== FORTSETZUNG ohne Reinraum (Neustart der Umgebung) 19:01:05
+läuft: 8bcca3c8 auf 4324
+läuft: b29dc46c auf 4325
+4324 200
+4325 200
+=== SUITE reduziert 19:02:39
+
+  1 failed
+    [mobil] › tests/verlegen.spec.mjs:791:3 › Bewegung an (Wechsel mit Fliesen) › (21) Abbruch, dann derselbe Link noch einmal; die erste Seite kommt während des Legens an: kein zweiter Abbruch, der Boden geht ab (Prüfung E-043) 
+  26 skipped
+  397 passed (13.8m)
+=== SUITE Bewegung an 19:16:38
+  ✓  424 [desktop] › tests/verlegen.spec.mjs:1266:3 › Reduzierte Bewegung › (12) reduzierte Bewegung: Wechsel vollständig, Überblendung über .verlegen-blende, keine Fliesen-Animation (2.0s)
+  ✓  422 [desktop] › tests/verlegen.spec.mjs:786:3 › Bewegung an (Wechsel mit Fliesen) › (20) Zurück im Browser, während die Fliesen abgenommen werden: Adresse, Inhalt, Scroll und Fokus (Prüfung E-043) (9.2s)
+
+  26 skipped
+  398 passed (10.2m)
+=== AXE 19:26:51
+.............................................................................................................................................................................................................................................................
+axe: 396 Läufe · ernst/kritisch (Knoten) 0
+
+
+=== RUHIG/REDUZIERT 19:37:09
+ruhig / befunde 0 unsichtbar 10
+reduziert / befunde 0 unsichtbar 12
+ruhig /bad befunde 0 unsichtbar 10
+reduziert /bad befunde 0 unsichtbar 12
+ruhig /standorte/wetzlar befunde 0 unsichtbar 10
+reduziert /standorte/wetzlar befunde 0 unsichtbar 12
+ruhig /blog befunde 0 unsichtbar 8
+reduziert /blog befunde 0 unsichtbar 10
+ruhig /fliesen befunde 0 unsichtbar 9
+reduziert /fliesen befunde 0 unsichtbar 11
+ruhig /kontakt befunde 0 unsichtbar 6
+reduziert /kontakt befunde 0 unsichtbar 8
+=== REGISTER 19:41:29
+/ {'gefundene_kennungen': 9, 'unbekannt': 0}
+/bad {'gefundene_kennungen': 10, 'unbekannt': 0}
+/standorte/wetzlar {'gefundene_kennungen': 9, 'unbekannt': 0}
+/blog {'gefundene_kennungen': 8, 'unbekannt': 0}
+/leistungen {'gefundene_kennungen': 11, 'unbekannt': 0}
+=== BILDRATE 19:42:57
+{'anteil_verworfen_prozent': 0.14, 'loaf_anzahl': 1, 'loaf_summe_ms': 73}
+=== PIXEL 19:45:35
+Paare: 48 · mit Abweichung: 14 · Fehler: 0 · Pixel gesamt: 1058 · Laufzeit: 3.77 min
+  1. /standorte/wetzlar · m390 · 56 Pixel · Anteil 1.547e-5
+  2. /standorte/wetzlar · t768 · 88 Pixel · Anteil 1.243e-5
+  3. /fliesen · m390 · 56 Pixel · Anteil 1.215e-5
+  4. /blog · m390 · 56 Pixel · Anteil 1.215e-5
+  5. /standorte/wetzlar · d1920 · 164 Pixel · Anteil 8.788e-6
+=== ENDE 19:49:22
+
+## Gegenprobe B-01 (21) mobil auf ruhigem Rechner
+=== verlegen (21) mobil gegen 4325 19:49:41 last 3.08
+  3 passed (24.9s)
+=== verlegen (21) mobil gegen 4324 19:50:07 last 2.50
+  3 passed (25.1s)
+=== verlegen (21) mobil gegen 4325 19:50:33 last 3.76
+  3 passed (27.1s)
+=== verlegen (21) mobil gegen 4324 19:51:01 last 3.96
+  3 passed (26.0s)
+bau-frei 19:51:28
+
+[exited with code 0]
+
+## Höhenprobe / m390 (oben, nach Scrollen)
+4324 oben 9790 nach Scrollen 11235
+4325 oben 14019 nach Scrollen 11235
+4324 oben 14019 nach Scrollen 11235
+4325 oben 14019 nach Scrollen 11235
