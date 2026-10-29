@@ -8,6 +8,7 @@
 // Danach das Qualitätsversprechen (Kalk).
 // Wortlaut, Links, Überschriftenebenen und Lesefolge wie im Bestand; Metadaten unverändert. Serverkomponente. Kein
 // Auftritt und kein großer Moment; `spaet` auf beiden Abschnitten unter dem Einstieg (keine Sprungziele, keine Formulare).
+// Strukturierte Daten: die Ausbildung als JobPosting, nur aus dem Bestand und den Firmendaten (siehe unten).
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
 import Icon from '@/components/icons/Icon';
@@ -22,6 +23,7 @@ import Leitachse from '@/components/kern/Leitachse';
 import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import SeitenDaten from '@/components/seo/SeitenDaten';
+import { ORG_ID, SITE_URL } from '@/lib/schema';
 
 const APPRENTICESHIP_TITLE = 'Fliesen-, Platten- und Mosaikleger (m/w/d)';
 
@@ -32,13 +34,37 @@ export const metadata = createMetadata({
 });
 
 export default function AusbildungPage() {
-    const { contact, owner, authority, headquarters } = COMPANY_DATA;
+    const { contact, owner, authority, headquarters, address } = COMPANY_DATA;
+
+    // Vorspann im Wortlaut der Seite; dieselbe Fassung steht im JobPosting unten
+    const VORSPANN = `Starte deine Ausbildung zum Fliesen-, Platten- und Mosaikleger (m/w/d) bei ${COMPANY_DATA.legalName} in ${headquarters.city}: Du möchtest ein zukunftssicheres Handwerk lernen, bei dem du täglich siehst, was du geschaffen hast? Bewirb dich unkompliziert per E-Mail, Telefon oder WhatsApp.`;
 
     const cards = [
         { title: 'Was du lernst', desc: 'Das Fliesenhandwerk in der Praxis: Untergrundvorbereitung, Abdichtung nach DIN 18534 sowie die Verlegung von Fliesen, Großformaten und Naturstein – im Bad, im Wohnbereich und auf Balkon und Terrasse.' },
         { title: 'Wo du lernst', desc: `In einem eingetragenen Fachbetrieb der ${authority.name} mit Firmensitz in ${headquarters.city} – unter Inhaber & Fachbetriebsleiter ${owner.fullName}.` },
         { title: 'Was du mitbringst', desc: 'Handwerkliches Geschick, Sorgfalt und Freude an präziser Arbeit, Teamgeist und Zuverlässigkeit.' }
     ];
+
+    // Strukturierte Daten dieser Seite: die Ausbildung als JobPosting. Nur Angaben aus dem Bestand und den Firmendaten:
+    // kein Datum (datePosted), kein Gehalt, kein Ende der Bewerbungsfrist und keine Anstellungsart stehen im Bestand.
+    const stelle = {
+        '@type': 'JobPosting',
+        '@id': `${SITE_URL}/karriere/ausbildung#job-ausbildung`,
+        title: `Ausbildung zum ${APPRENTICESHIP_TITLE}`,
+        description: [VORSPANN, ...cards.map((card) => card.desc)].join(' '),
+        hiringOrganization: { '@id': ORG_ID },
+        jobLocation: {
+            '@type': 'Place',
+            address: {
+                '@type': 'PostalAddress',
+                streetAddress: address.street,
+                postalCode: address.postalCode,
+                addressLocality: address.city,
+                addressRegion: address.state,
+                addressCountry: address.countryCode,
+            },
+        },
+    };
 
     return (
         <>
@@ -47,6 +73,7 @@ export default function AusbildungPage() {
                 titel="Ausbildung Fliesenleger (m/w/d) | Fachbetrieb Tezgel"
                 beschreibung="Ausbildung zum Fliesenleger (m/w/d) in Aßlar & Wetzlar bei Tezgel: solides Handwerk, modernste Verlegetechnik & starkes Team. Jetzt unkompliziert bewerben!"
                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Arbeiten bei uns', href: '/karriere' }, { name: 'Ausbildung zum Fliesen-, Platten- und Mosaikleger (m/w/d)' }]}
+                weitere={[stelle]}
             />
             {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann; rechts das Planblatt „fugen“ */}
             <Einstieg
@@ -58,11 +85,7 @@ export default function AusbildungPage() {
                     </>
                 }
                 titel={<>Ausbildung zum {APPRENTICESHIP_TITLE}</>}
-                vorspann={
-                    <p>
-                        Starte deine Ausbildung zum Fliesen-, Platten- und Mosaikleger (m/w/d) bei {COMPANY_DATA.legalName} in {headquarters.city}: Du möchtest ein zukunftssicheres Handwerk lernen, bei dem du täglich siehst, was du geschaffen hast? Bewirb dich unkompliziert per E-Mail, Telefon oder WhatsApp.
-                    </p>
-                }
+                vorspann={<p>{VORSPANN}</p>}
                 rand={
                     <Planblatt felder={planfelder('Ausbildung Fliesenleger (m/w/d)', 'fugen')}>
                         <Verlegeplan plan="fugen" ohneAchse bemassung={false} interaktiv />
