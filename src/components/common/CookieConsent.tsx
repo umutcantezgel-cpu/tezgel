@@ -136,16 +136,20 @@ export default function CookieConsent() {
                   Systemschrift ist der Banner höher als sein Platz und scrollt in sich; die Knopfreihe klebt dann an seinem
                   unteren Rand, damit alle drei Wahlen ohne Suchen im Bild stehen (Tor E3, Probelauf P1; Text, Knöpfe und
                   Verhalten unverändert, G8). Passt alles hinein, ändert sich nichts. */}
-              <div className="sticky bottom-0 mt-4 grid grid-cols-2 gap-2 bg-fliese">
-                <button type="button" onClick={handleAcceptAll} className={knopfKlassen("haupt", "px-3")} data-motion="druck">
-                  Alle akzeptieren
-                </button>
-                <button type="button" onClick={handleDeclineAll} className={knopfKlassen("haupt", "px-3")} data-motion="druck">
-                  Alle ablehnen
-                </button>
-                <button type="button" onClick={handleOpenSettings} className={knopfKlassen("text", "col-span-2 justify-center")}>
-                  Einstellungen
-                </button>
+              {/* Zwei Spalten erst ab 20rem Breite der Knopfreihe: Bei großer Systemschrift stehen „Alle akzeptieren“ und „Alle
+                  ablehnen“ untereinander und passen ganz in ihren Knopf (M-28, Freigabe des Auftraggebers E-089). */}
+              <div className="@container sticky bottom-0 mt-4 bg-fliese">
+                <div className="grid grid-cols-1 gap-2 @xs:grid-cols-2">
+                  <button type="button" onClick={handleAcceptAll} className={knopfKlassen("haupt", "px-3")} data-motion="druck">
+                    Alle akzeptieren
+                  </button>
+                  <button type="button" onClick={handleDeclineAll} className={knopfKlassen("haupt", "px-3")} data-motion="druck">
+                    Alle ablehnen
+                  </button>
+                  <button type="button" onClick={handleOpenSettings} className={knopfKlassen("text", "justify-center @xs:col-span-2")}>
+                    Einstellungen
+                  </button>
+                </div>
               </div>
             </div>
           ) : (
@@ -251,19 +255,21 @@ export default function CookieConsent() {
               </div>
 
               {/* Settings Action Buttons: Akzeptieren und Ablehnen gleichwertig */}
-              <div className="mt-4 grid grid-cols-2 gap-2">
-                <button type="button" onClick={handleSaveSettings} className={knopfKlassen("haupt", "col-span-2")} data-motion="druck">
-                  Auswahl speichern
-                </button>
-                <button type="button" onClick={handleAcceptAll} className={knopfKlassen("neben", "px-3")} data-motion="druck">
-                  Alle akzeptieren
-                </button>
-                <button type="button" onClick={handleDeclineAll} className={knopfKlassen("neben", "px-3")} data-motion="druck">
-                  Alle ablehnen
-                </button>
-                <button type="button" onClick={() => setShowSettings(false)} className={knopfKlassen("text", "col-span-2 justify-center")}>
-                  Zurück
-                </button>
+              <div className="@container mt-4">
+                <div className="grid grid-cols-1 gap-2 @xs:grid-cols-2">
+                  <button type="button" onClick={handleSaveSettings} className={knopfKlassen("haupt", "@xs:col-span-2")} data-motion="druck">
+                    Auswahl speichern
+                  </button>
+                  <button type="button" onClick={handleAcceptAll} className={knopfKlassen("neben", "px-3")} data-motion="druck">
+                    Alle akzeptieren
+                  </button>
+                  <button type="button" onClick={handleDeclineAll} className={knopfKlassen("neben", "px-3")} data-motion="druck">
+                    Alle ablehnen
+                  </button>
+                  <button type="button" onClick={() => setShowSettings(false)} className={knopfKlassen("text", "justify-center @xs:col-span-2")}>
+                    Zurück
+                  </button>
+                </div>
               </div>
             </div>
           )}
@@ -271,17 +277,19 @@ export default function CookieConsent() {
       )}
 
       {/* Widerruf jederzeit (Art. 7 Abs. 3 DSGVO): flacher Knopf. Unter lg im ersten Feld der unteren Leiste, ab lg und auf
-          Seiten ohne Leiste in der Rechtszeile des Fußes (eingehängt per Portal, dieselbe Logik). */}
+          Seiten ohne Leiste in der Rechtszeile des Fußes (eingehängt per Portal, dieselbe Logik). In der Leiste trägt das
+          Schloss das Wort „Cookies“ wie die Nachbarfelder ihr Wort; der Name enthält es (sichtbarer Text im Namen, M-28, E-089). */}
       {!showBanner && schildPlatz && createPortal(
         <button
           type="button"
           onClick={handleShieldClick}
-          className="flex size-full items-center justify-center text-tinte-2 hover:bg-fliese hover:text-tinte"
-          aria-label="Cookie-Einstellungen verwalten"
+          className="flex size-full flex-col items-center justify-center gap-1 px-1 font-text text-fs-1 font-semibold text-tinte-2 hover:bg-fliese hover:text-tinte"
+          aria-label="Cookies – Einstellungen verwalten"
           title="Cookie-Einstellungen öffnen"
           data-motion="zustand"
         >
           <Icon name="schloss" groesse={5} />
+          <span className="leiste-text">Cookies</span>
         </button>,
         schildPlatz,
       )}

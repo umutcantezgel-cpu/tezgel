@@ -1285,3 +1285,13 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - Schloss in der unteren Leiste: Einwilligung (G8), M-28 bleibt offen.
   - Den Wortlaut der Stimmen kürzen: G8.
 - **Folge:** Nacharbeit UM-E3-FIX2 (Briefing `pakete/UM-E3-FIX2.md`, N1 bis N12) im selben Ablauf wie UM-E3-FIX. Die Prüfer sind diesmal Sonnet (L6). Danach Stufe A und Sicht Anlauf 3 mit demselben Bildsatzprotokoll.
+
+## E-089 · Auftraggeber: M-28 freigegeben, Endstand darf am Ende live (29.10.2026, 07:50 MEZ)
+- **Wortlaut:** „Finalisiere alles und ja du darfst“. Auf Rückfrage gewählt: „M-28 Cookies-Beschriftung“ und „Am Ende live schalten“, nicht „Zwischenstände live“.
+- **Folge 1 (M-28), umgesetzt vom Orchestrator:**
+  - In der unteren Leiste trägt das Schloss das Wort „Cookies“ wie die Nachbarfelder ihr Wort. Das Feld wird 16 statt 12 Stufen breit.
+  - Der Name des Knopfs enthält das sichtbare Wort: „Cookies – Einstellungen verwalten“ (WCAG 2.5.3). Der Knopf im Fuß bleibt „Cookie-Einstellungen verwalten“.
+  - Im Cookie-Hinweis stehen die Knöpfe erst ab 20rem Breite der Knopfreihe in zwei Spalten. Bei großer Systemschrift stehen sie untereinander und ragen nicht mehr über den Knopf.
+  - Texte, Reihenfolge, Gleichwertigkeit von „Alle akzeptieren“ und „Alle ablehnen“ und das Verhalten der Einwilligung bleiben gleich (G8 mit Freigabe).
+  - Die Specs Einwilligung und Tracking erkennen beide Namen des Widerruf-Knopfs.
+- **Folge 2:** Ist der Lauf fertig und die Endabnahme bestanden, bringe ich den Endstand einmal auf main (ein Vercel-Deploy). Zwischenstände gehen nicht live.

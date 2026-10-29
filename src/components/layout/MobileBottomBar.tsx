@@ -37,7 +37,7 @@ export default function MobileBottomBar() {
       data-leiste
     >
       <div className="flex gap-px">
-        <div id="leiste-schild" className="flex w-12 shrink-0 bg-kalk" />
+        <div id="leiste-schild" className="flex w-16 shrink-0 bg-kalk" />
         <a
           href={siteConfig.contact.phone.link}
           onClick={() => triggerHaptic("medium")}
