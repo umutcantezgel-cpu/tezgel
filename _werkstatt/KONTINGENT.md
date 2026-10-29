@@ -99,3 +99,4 @@ Uhrzeit · Fenster Verbrauch, Soll, Ziel · Woche Verbrauch, Spielraum · belegt
 - 2026-10-29 00:31 MEZ · Workflow Sicht Anlauf 2 fertig: 2 Opus-Prüfer, 0,52 Mio. Tokens, 7 min · Schätzung nicht erhoben (letzte 40,6 % um 23:57 MEZ, seitdem Sicht und Start von FIX2) · Plätze 1 Workflow UM-E3-FIX2 (Baumeister Opus, Prüfer Sonnet) · Planungsziel 60
 - 2026-10-29 06:20 MEZ · Neustart der Umgebung gegen 00:45 MEZ; WEITER 00:31 bis 04:31 UTC ohne Arbeit (Plan-Modus wartete auf Freigabe) · Fenster 01:34–06:34 UTC fast ungenutzt · Schätzung läuft im Hintergrund · Plätze 1 Workflow UM-E3-FIX2 (bau:A neu, Opus) · Planungsziel 60
 - 2026-10-29 06:31 MEZ · Schätzung 4,7 % (Soll 52, Fenster 02:31–07:31 UTC, Faktor 1,27) · Gas · Plätze 1 Workflow UM-E3-FIX2 (bau:A, Opus) · Planungsziel 60
+- 2026-10-29 07:31 MEZ · Schätzung nicht erhoben (4,7 % um 06:15 MEZ, seitdem ein Opus-Baumeister) · Plätze 1 Workflow UM-E3-FIX2 (Teil A: 2 Sonnet-Prüfer) · Planungsziel 60
