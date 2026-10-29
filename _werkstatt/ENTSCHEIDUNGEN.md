@@ -1346,7 +1346,7 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - Offen ist nur die Bildrate: 4 % statt 0,2 %, Schwelle 5 %. Das klärt UM-E3-TAKT.
 - **Weiter:** E4 nach PLAN. W1: VORL nach TAKT (gleiche Dateien), gleichzeitig EP5, FS-K und DOK. UM-E4-START kommt in die Orchestrator-Reihe von W2.
 
-## E-091 · E4-W1: EP5, FS-K und DOK abgenommen; erfundene Standardwerte im Stellen-Schema entfernt (29.10.2026, 11:05 MEZ)
+## E-091 · E4-W1: EP5, FS-K und DOK abgenommen; erfundene Standardwerte im Stellen-Schema entfernt (29.10.2026, 10:47 MEZ)
 - **Workflow wf_95834398-8bc:** drei Haiku-Bearbeiter, je eine Sonnet-Gegenprüfung; 6 Agenten, 1,17 Mio. Tokens, 20 min.
 - **EP5:** `/karriere/ausbildung` trägt ein `JobPosting` (Titel aus der H1, Beschreibung aus dem sichtbaren Text, `hiringOrganization` = Organisation, `jobLocation` als Place mit der Anschrift aus den Firmendaten).
   - Ein `FAQPage` entfällt: Die Seite zeigt keine Fragen und Antworten. Ein Knoten ohne sichtbaren Inhalt wäre erfunden. Das ist eine Abweichung vom PLAN-Soll (Z-02, vermerkt).
