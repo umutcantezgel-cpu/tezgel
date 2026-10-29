@@ -1296,3 +1296,52 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - Die Specs Einwilligung und Tracking erkennen beide Namen des Widerruf-Knopfs.
 - **Folge 2:** Ist der Lauf fertig und die Endabnahme bestanden, bringe ich den Endstand einmal auf main (ein Vercel-Deploy). Zwischenstände gehen nicht live.
 - **Bestätigt am 29.10.2026 um 08:40 MEZ:** „Kannst du alles live schalten sobald du fertig bist“. Nach der Endabnahme kommt der Endstand ohne weitere Rückfrage einmal auf main. Vorher prüfe ich: Reinraum, Suite und axe grün, Arbeitsbranch gepusht, Zusammenführung als Fast-Forward oder Merge ohne Konflikt.
+
+## E-090 · Tor E3, Anlauf 3: Sicht `/` 7,5 und 7,6; Tor nach L3 mit offenem Punkt Z-05 geschlossen (29.10.2026, 10:45 MEZ)
+- **Sichtabnahme (Workflow wf_dd4fa133-05e):** zwei frische Opus-Prüfer, PNG-Bildsatz `$SCRATCH/fix2/sicht3` an 8bcca3c8 mit M-28. Belege `belege/um-e3-fix2/sicht-anlauf-3.json`.
+
+| Prüfer | Design | Bedienbarkeit | Kreativität | Inhalt | Ansichtswert |
+|---|---|---|---|---|---|
+| 1 | 7,2 | 7,9 | 7,4 | 7,8 | 7,5 |
+| 2 | 7,2 | 8,0 | 7,6 | 8,0 | 7,6 |
+
+- **Verlauf:**
+
+| Anlauf | Entscheidung | Ansichtswerte |
+|---|---|---|
+| 1 | E-086 | 6,9 und 6,7 |
+| 2 | E-088 | 7,3 und 7,5 |
+| 3 | E-090 | 7,5 und 7,6 |
+
+  Der Zuwachs wird kleiner. Gewürdigt werden:
+  - Einstieg mit Maßquadrat;
+  - Grafiksystem aus Plan, Treppe und Lineal;
+  - B-01;
+  - Lagen in Ich-Sätzen;
+  - Ton und Echtheit der Texte.
+- **Regel L3:** Höchstens zwei Anläufe je Etappentor, danach geht die Arbeit weiter und die Lücke steht als offener Punkt in PLAN.md. Anlauf 3 war einer zu viel; vermerkt.
+  - Das Tor E3 ist geschlossen: Z-05 für `/` ist offener Punkt.
+  - Prüfstufe B für `/` ist bestanden (E-085 mit A-1, E-087, Prüfkette FIX2).
+  - Die Befunde werden Paket UM-E4-START; E4-SICHT bewertet `/` erneut.
+- **Gemeinsame Befunde:**
+  - Erster Bildschirm ohne Arbeit: mobil gar kein Foto, am Desktop ein schmales Hochformat unter der Falz.
+  - Leitfaden ohne Präsenz: 1 px, mobil am Rand.
+  - Gleichförmige Bänder mit mittiger H2.
+  - Zwei Auswahllisten in Folge.
+  - Galerie-Namen auf t1024 als dunkle Blöcke.
+  - Stimme endet mit „…“.
+  - Prüfer 2 (hoch): Die H1 schwebt 26 bis 44 px über der Schnur, das Maßquadrat steht weit rechts neben „Quadratmeter.“.
+- **„Cookies“ in der Leiste:** Beide Prüfer hätten das Feld lieber nicht in der Leiste. Es ist aber auf Wunsch des Auftraggebers so (M-28, E-089) und der Widerruf muss erreichbar bleiben (G8). Es bleibt.
+  - In UM-E4-START kommt: auf q844 einzeilig, kein Aufpoppen während des Eingangs.
+  - Das „Flackern“ in den Einzelbildern ist eine Folge der Aufnahmemethode (je Bild eine frische Seite), kein Flackern auf einer Seite: Der Knopf erscheint nach der Hydrierung.
+- **Messartefakt im Bildsatz:** Die Überlappungsprüfung meldet „leitachse durch Cookies“ auf mobilen Breiten. Die feste, deckende Leiste liegt über der Achse; die Pixelprobe bei m360 zeigt an x = 8 nur den Leistengrund und den Buchstaben „C“. Das Werkzeug bleibt unverändert (G7).
+- **UM-E3-FIX2 abgenommen (Stufe A):**
+  - Suite 398/0/26 in beiden Zuständen.
+  - axe 0.
+  - G8 gleich auf fünf Seiten.
+  - Register ohne Unbekannte.
+  - LCP `/` mobil 2,71 bis 2,91 s wie vorher.
+  - Pixel: 48 bewusste Abweichungen.
+  - Belege `belege/um-e3-fix2/`.
+  - Offen ist nur die Bildrate: 4 % statt 0,2 %, Schwelle 5 %. Das klärt UM-E3-TAKT.
+- **Weiter:** E4 nach PLAN. W1: VORL nach TAKT (gleiche Dateien), gleichzeitig EP5, FS-K und DOK. UM-E4-START kommt in die Orchestrator-Reihe von W2.

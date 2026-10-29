@@ -1,0 +1,195 @@
+{
+ "workflow": "wf_dd4fa133-05e",
+ "stand": "8bcca3c8 (mit M-28 561c7e43)",
+ "bilder": "$SCRATCH/fix2/sicht3",
+ "pruefer": [
+  {
+   "design": 7.2,
+   "bedienbarkeit": 7.9,
+   "kreativitaet": 7.4,
+   "inhalt": 7.8,
+   "ansichtswert": 7.5,
+   "begruendung": {
+    "design": "7,2: eigenständig und sauber, die Ruhe kippt aber stellenweise ins Vorhersehbare. Beleg 1 (bewegt/d1440/start/00.png, detail/d1440-dpr2-erster-bildschirm.png): Die schmale Archivo-Anzeige „Perfektion auf jedem Quadratmeter.“ steht mittig auf der Schnur. Rechts daneben sitzt das 100 × 100 cm-Maßquadrat mit seiner Unterkante genau auf der Linie, das Lot hängt bei x=96, 16 px vor der Satzkante. Das ist präzise Typografie mit einem eigenen grafischen Witz. Beleg 2 (bewegt/d1440/start/02–03.png, d1920 03): Die Planzeichnungen mit Schraffur, die Ablauf-Treppe mit roter Stufenlinie und Fugenkreuzen und das Entfernungslineal Aßlar · 10 km · 25 km bei den Einsatzorten bilden ein durchgehendes, handwerksspezifisches Grafiksystem, das sich nicht gegen einen Wettbewerber austauschen lässt. Dagegen stehen: Die Abschnitte wechseln vorhersehbar zwischen grauen und weißen Bändern, meist mit einer mittigen H2 über einspaltigem Inhalt. Farbe kommt außer im Logo praktisch nicht vor. Fotos sind klein gesetzt: Das Startfoto ist bei 1440 nur 642 px breit und hochkant, die Gartenfugen des Bodens liegen unter der Falz. Die Galerie zeigt Handyfotos mit wechselndem Weißabgleich. Größte Schwäche: Der erste Bildschirm zeigt auf keinem Gerät die eigentliche Arbeit vollständig. Am Handy fehlt das Foto ganz, am Desktop sieht man Decke und Regenbrause statt Fliesen. Reparatur: Am Handy Vorspann und Bewertung wie am Desktop unter das Foto setzen. Ab lg ein echtes Querformat-Foto mit sichtbarem Boden auf etwa zwei Drittel der Breite verwenden.",
+    "bedienbarkeit": "7,9: sehr klar für die Zielgruppe, mit einigen vermeidbaren Reibungen. Beleg 1 (bewegt/m390/start/01–02.png, d1440 01–02): „Was möchten Sie ändern?“ führt mit fünf Alltagssätzen samt Pfeil, von „Die Badewanne soll raus …“ bis „Die Treppe vor dem Haus ist kaputt.“, direkt zur eigenen Lage. Das ist vorbildliche Orientierung für P1 bis P5. Beleg 2 (bewegt/m390/start/00, 08–09.png, d1440 00, 07–08): Hauptknopf in Tinte, die Telefonnummer gesperrt in Mono und WhatsApp sind im Einstieg, im Kopf und in der festen Leiste immer erreichbar. Das Formular ist dicht, beschriftet und bietet „Lieber anrufen? / Lieber schreiben?“ samt Zeiten an. Der Fuß ist mobil zu Akkordeons gefaltet. Abzüge: „Cookies“ belegt den ersten Platz der Aktionsleiste neben Anrufen, WhatsApp und Termin, auf q844 sogar mit umbrechender Beschriftung. Die mobile Seite ist 14 Bildschirmhöhen lang, und das erste Foto erscheint erst nach dem Scrollen. Auf t1024 verdecken dunkle Namensblöcke ein Viertel jedes Galeriefotos. Größte Schwäche: die Cookie-Schaltfläche in der Aktionsleiste. Reparatur: Sie nur im Fuß führen, wo „Cookie-Einstellungen“ schon steht, und die drei Handlungen gleich breit machen.",
+    "kreativitaet": "7,4: Leitidee schlüssig, Höhepunkt stark, der Rest leise bis blass. Beleg 1 (b01/d1440/bilder/b01-02 bis b01-16, b01/m390): Bei „Fliese für Fliese“ belegen weiße Fliesen im Drittelverband die Seite einzeln von rechts mit Flugschatten. Auf der geschlossenen Wand steht das Logo, danach werden die Fliesen abgenommen und die Bad-Seite liegt frei. Das ist unverwechselbar und das, was man anderen zeigt (eingefroren, ohne Änderungsvorschlag). Beleg 2 (erstbesuch/d1440-eingang-0150 bis 1000, m390-eingang-0000 bis 0600): Beim Eingang „An der Schnur“ zieht sich die Schnur, die H1-Zeilen steigen hinter Masken auf, und das Maßquadrat zeichnet sich. Am Desktop ist alles nach etwa 1,0 s fertig, mobil nach etwa 0,6 s, und mobil sind die Knöpfe ab 0 ms bedienbar. Dazu kommen der Versatz um ein Drittel in der Galerie (d1440 04) und das Fugenkreuz am Zeiger („+ Ansehen“). Abzüge: Die Bewegungen auf der Seite selbst sind gängige Masken- und Einrück-Auftritte. Der Leitfaden ist als 1-px-Linie mit Kreuzen am Rand (mobil bei x=8) fast unsichtbar und markiert den aktuellen Abschnitt kaum lesbar. Größte Schwäche: Die Laserlinie, das Leitmotiv der Marke, hat das geringste visuelle Gewicht auf der Seite. Reparatur: Den aktiven roten Abschnitt mobil und bei DPR 1 auf 2 px setzen und das Lot auf die Satzkante (16 px) statt den Rand legen. Das Fugenkreuz des aktuellen Abschnitts wird rot, sobald der Strich es erreicht.",
+    "inhalt": "7,8: klar, echt und im richtigen Ton. Beleg 1 (bewegt/m390/start/00.png): „Deniz Tezgel kommt kostenfrei zu Ihnen und schaut sich alles an. Danach bekommen Sie ein Angebot mit festem Preis.“ Dazu die Ablaufschritte 01–03 in Alltagssprache mit Fachwort-Erklärung („Untergrund (alles, was unter der Fliese liegt …)“, d1440 03). Das ist ehrlich, konkret und persönlich. Beleg 2 (d1440 05–06): eine echte Google-Stimme mit Stand „September 2026“, 5,0 aus 27 Bewertungen und Entfernungen in km je Ort. Abzüge: Die H1 „Perfektion auf jedem Quadratmeter.“ ist eine austauschbare Werbezeile. Erst das Maßquadrat macht sie konkret, und mobil fehlt es. Die Kundenstimme bricht mitten im Satz mit „…“ ab. Die Galeriefotos sind in Schärfe und Farbe uneinheitlich. Größte Schwäche: die abgeschnittene Kundenstimme. Reparatur: eine Stimme wählen, die mit einem Satzende schließt, oder den ganzen Satz zeigen."
+   },
+   "befunde": [
+    {
+     "ort": "Einstieg mobil, erster Bildschirm (Foto beginnt bei y≈733 hinter der Aktionsleiste)",
+     "geraet": "m390, m360 (ebenso /bad mobil)",
+     "schwere": "mittel",
+     "befund": "Der erste Handy-Bildschirm zeigt nur Text auf Grau: H1, Ort, Link, zwei Knöpfe, Vorspann und Bewertung. Von der Arbeit ist nichts zu sehen, obwohl die Seite einen Fliesenleger vorstellt. Am Desktop steht derselbe Vorspann erst unter dem Foto.",
+     "vorschlag": "Mobil dieselbe Reihenfolge wie am Desktop verwenden: H1, Ort, Hauptknopf, Telefon, dann das Foto, danach Vorspann und Bewertung (entspricht K-006 „Mobil … dann Bild“). Dazu die Lücke von etwa 60 px zwischen „Alle Orte …“ und dem Hauptknopf auf eine Fugenstufe verkleinern. So kommt das obere Drittel des Fotos in den ersten Bildschirm.",
+     "bild": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/sicht3/bewegt/m390/start/00.png"
+    },
+    {
+     "ort": "Einstieg Desktop, Startfoto unter den Knöpfen",
+     "geraet": "d1440, d1920, d1280",
+     "schwere": "mittel",
+     "befund": "Das Startfoto ist hochkant und nur etwa 45 % der Breite groß (642 px bei 1440). Die Falz schneidet es bei Decke und Regenbrause, die gefliesten Flächen und der Boden kommen erst im zweiten Bildschirm. Links und rechts bleiben große leere graue Flanken.",
+     "vorschlag": "Ab lg ein echtes Querformat aus den 84 Originalen zeigen, auf dem Boden und Wand vollständig zu sehen sind, als Bildauswahl je Breite und vollständig im eigenen Seitenverhältnis. Es sollte etwa zwei Drittel der Containerbreite einnehmen und die ganze Arbeit im ersten Bildschirm zeigen.",
+     "bild": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/sicht3/bewegt/d1440/start/00.png"
+    },
+    {
+     "ort": "Feste Aktionsleiste unten, erstes Feld „Cookies“",
+     "geraet": "m360, m390, q844, t768",
+     "schwere": "mittel",
+     "befund": "Ein Schloss mit „Cookies“ belegt den ersten Platz neben Anrufen, WhatsApp und Termin. Für P1 ist das eine unverständliche Handlung an bester Stelle, und die Felder sind ungleich breit (64 px gegen 110 bzw. 234 px). Auf q844 bricht die Beschriftung unter das Symbol, während die anderen Felder einzeilig sind.",
+     "vorschlag": "Die Cookie-Schaltfläche aus der Aktionsleiste nehmen. „Cookie-Einstellungen“ steht bereits im Fuß. Danach Anrufen, WhatsApp und Termin in drei gleich breiten Feldern zeigen.",
+     "bild": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/sicht3/bewegt/q844/start/00.png"
+    },
+    {
+     "ort": "„So sieht unsere Arbeit aus.“, Namensflächen der Galeriekarten",
+     "geraet": "t1024",
+     "schwere": "mittel",
+     "befund": "Der Name liegt hier auf einem deckenden Tintenblock (rgb 10,17,41, etwa 135 px hoch, harte Kante) über dem unteren Viertel jedes Fotos. Die Böden, also die eigentliche Arbeit, sind verdeckt, und die Galerie wirkt wie drei dunkle Klötze. m390 zeigt dagegen einen Verlauf, d1440 den Namen nur beim Darüberfahren.",
+     "vorschlag": "Auf allen Geräten ohne Hover denselben kurzen Verlauf wie mobil verwenden, höchstens zwei Zeilen hoch, so dass der Boden sichtbar bleibt. Alternativ den Namen unter das Bild in die Fuge setzen.",
+     "bild": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/sicht3/bewegt/t1024/start/05.png"
+    },
+    {
+     "ort": "Leitfaden (Schnur, Lot und Leitachse mit Fugenkreuzen), ganze Seite",
+     "geraet": "m390, m360, d1440 (DPR 1)",
+     "schwere": "mittel",
+     "befund": "Die rote Laserlinie ist 1 px stark und mobil bei x=8 direkt am Bildschirmrand gesetzt. Die Kreuze an den Abschnittsfugen wirken dort wie Schnittmarken, und der rote Teil endet in jedem Bild ohne erkennbaren Bezug bei etwa 40 % der Höhe. Neben der Anzeige mit Gewicht 760 hat das Leitmotiv der Marke das geringste Gewicht der Seite und markiert den aktuellen Abschnitt kaum.",
+     "vorschlag": "Den aktiven roten Abschnitt mobil und bei DPR 1 auf 2 px setzen und das Lot auf die Satzkante (16 px) legen. Das Fugenkreuz des aktuellen Abschnitts färbt sich rot, sobald der Strich es erreicht („Lot trifft Fuge“). Die ruhige Fassung bleibt unverändert.",
+     "bild": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/sicht3/bewegt/m390/start/01.png"
+    },
+    {
+     "ort": "Abschnittsfolge der ganzen Seite",
+     "geraet": "d1440, d1920, t1024",
+     "schwere": "gering",
+     "befund": "Graue und weiße Bänder wechseln gleichförmig, und viermal folgt dieselbe Bauform aus mittiger H2 und einspaltigem Inhalt (Lage, Arbeit, Kunden, Termin). Die Kopfausrichtung springt zwischen mittig und links: „Wir kümmern uns um alles …“ steht links, obwohl die Ruhe-Regeln das nur für Ablauf und Einsatzorte vorsehen. Den Versatz um ein Drittel haben nur Galerie und Treppe.",
+     "vorschlag": "„Wir kümmern uns …“ mittig setzen wie die Regel verlangt. Bei den Kundenstimmen die Karte bewusst um ein Drittel versetzen, damit je Bildschirmhöhe genau ein Versatz sichtbar wird und der Wechsel von Band zu Band weniger schematisch wirkt.",
+     "bild": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/sicht3/bewegt/d1440/start/02.png"
+    },
+    {
+     "ort": "„Das sagen unsere Kunden.“, Zitat",
+     "geraet": "alle (d1440, t1024, m390)",
+     "schwere": "gering",
+     "befund": "Die Kundenstimme bricht mitten im Satz mit „… ordnungsgemäß, sauber und pünktlich …“ ab und wirkt abgeschnitten. Das schwächt die Echtheit genau an der Stelle, die Vertrauen schaffen soll.",
+     "vorschlag": "Eine Stimme oder einen Ausschnitt wählen, der mit einem Satzende schließt, oder den ganzen Satz zeigen. Die Hervorhebung bleibt dabei auf dem Schlüsselwort.",
+     "bild": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/sicht3/bewegt/d1440/start/05.png"
+    },
+    {
+     "ort": "H1 im Einstieg",
+     "geraet": "m390, m360, q844, t768",
+     "schwere": "gering",
+     "befund": "„Perfektion auf jedem Quadratmeter.“ ist ohne das Maßquadrat eine austauschbare Werbezeile. Am Desktop macht das Quadrat 100 × 100 cm sie konkret, auf allen Geräten unter lg fehlt es. Auf t768 hat die H1 zudem fast Handygröße (etwa 40 px) und wirkt auf der Fläche klein.",
+     "vorschlag": "Das Maßquadrat mobil klein über das rechte Ende der Schnur setzen, damit das Wortspiel überall trägt. Ab md die Anzeige eine Stufe größer setzen.",
+     "bild": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/sicht3/bewegt/t768/start/00.png"
+    },
+    {
+     "ort": "Eigener Zeiger über einem Foto mit Glasfläche",
+     "geraet": "d1440",
+     "schwere": "gering",
+     "befund": "Das Fugenkreuz mit „+ Ansehen“ steht direkt unter dem „Ansehen →“ der Glasfläche. Dieselbe Handlung ist doppelt beschriftet.",
+     "vorschlag": "Solange der Zeiger seine Beschriftung zeigt, das „Ansehen →“ der Glasfläche ausblenden und nur den Namen stehen lassen. Für Tastatur und Touch bleibt der Link sichtbar.",
+     "bild": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/sicht3/cursor/cursor-glasbild-d1440.png"
+    }
+   ],
+   "staerken": [
+    "B-01 „Fliese für Fliese“: Weiße Fliesen werden im Drittelverband einzeln von rechts gelegt, auf der geschlossenen Wand steht das Logo, dann werden sie abgenommen. Das ist ein unverwechselbarer, markeneigener Höhepunkt auf Desktop und Handy (b01/d1440, b01/m390).",
+    "Lage vor Lösung: „Was möchten Sie ändern?“ mit fünf Alltagssätzen führt die 72-jährige Kundin ohne Fachwort in ihre Lage.",
+    "Durchgehendes Grafiksystem aus dem Handwerk: 1-m²-Maßquadrat auf der Schnur, Planzeichnungen mit Schraffur, Ablauf-Treppe mit roter Stufenlinie und Fugenkreuzen, Entfernungslineal Aßlar · 10 · 25 km.",
+    "Typografie mit Haltung: schmale Archivo-Anzeige, Telefonnummern und Entfernungen gesperrt in Plex Mono, klare Hierarchie, von 360 bis 2560 px ohne Bruch gehalten.",
+    "Eingang „An der Schnur“: kurz (Desktop etwa 1,0 s, mobil etwa 0,6 s), ohne Vorhang, Knöpfe mobil ab dem ersten Bild bedienbar. Die Fassung mit reduzierter Bewegung ist vollständig (bildsatz m390, d1440).",
+    "Kontaktwege überall greifbar: Kopf, feste Leiste, Formular mit Anruf- und WhatsApp-Alternative und Zeiten. Der Fuß ist mobil sauber zu Akkordeons gefaltet.",
+    "Echter, warmer Ton mit Belegen: kostenfreier Termin, fester Preis, echte Google-Stimme mit Stand, ehrliche Entfernungen je Ort."
+   ],
+   "bis_85": "Für 8,5 fehlen vier Dinge. (1) Der erste Bildschirm muss auf jedem Gerät die Arbeit zeigen: mobil das Foto direkt nach Hauptknopf und Telefon, am Desktop ein großes Querformat mit sichtbarem Boden statt eines schmalen Hochformats unter der Falz. (2) Der Leitfaden braucht Präsenz: Die rote Linie muss auf DPR 1 und mobil lesbar sein, an der Satzkante liegen und den aktuellen Abschnitt sichtbar markieren. Erst dann trägt die Seite selbst, nicht nur B-01, die Leitidee über die ganze Länge. (3) Die Seite braucht mehr Bildgewicht und weniger Schema: genau ein bewusster Versatz um ein Drittel je Bildschirmhöhe statt gleichförmiger grau-weißer Bänder mit mittiger H2, eine größere Galerie und einheitliche Namensflächen (t1024 ohne Tintenblöcke). (4) Kleine Reibungen sollten weg: „Cookies“ raus aus der Aktionsleiste, eine Kundenstimme ohne Abbruch mitten im Satz, das Maßquadrat auch mobil und keine doppelte „Ansehen“-Beschriftung."
+  },
+  {
+   "design": 7.2,
+   "bedienbarkeit": 8,
+   "kreativitaet": 7.6,
+   "inhalt": 8,
+   "ansichtswert": 7.6,
+   "begruendung": {
+    "design": "7,2: eigenständig, an einzelnen Stellen generisch. Beleg 1: Die Typografie hat Charakter. Die schmale, schwere Archivo trägt H1 und H2, Plex Mono setzt Maße, Telefonnummern und Kilometer („100 cm“, „ca. 25 km“). Zusammen wirkt das wie ein Planblatt (bewegt/d1920/start/00.png, 06.png). Beleg 2: Die Farbe ist diszipliniert (Tinte, Kalkgrau, Rot nur als Linie). Abschnittswechsel sind als durchgehende Haarfuge mit Fugenkreuz auf der Leitachse gesetzt (bewegt/d1440/start/01.png, 02.png, 03.png). Die Plan-Vignetten mit Schraffur und Riss (bewegt/d1920/start/02.png, 03.png) und die Treppe mit roter Stufenlinie (03.png) sind präzise Grafik. Größte Schwäche ist der erste Bildschirm am Desktop. Er ist ein mittiger Standard-Stapel aus H1, Zeile, drei Knöpfen und Foto. Das Foto ist klein (643 px bei d1440, 777 px bei d1920), steht zwischen großen leeren Grauflächen und wird von der Falz geschnitten. Schnur, Lot und 1-m²-Maß sitzen als Haarlinien am Rand und greifen nicht in den Satz ein. Dazu kommen generische Muster: Leistungskarten mit viel Weiß, ein Formularkasten und eine Linkwand im Fuß über gut eine Bildschirmhöhe (bewegt/d1920/start/09.png). Reparatur: siehe Befund 1 (H1 auf die Schnur, Maß an „Quadratmeter.“, Foto in das Planblatt einbinden).",
+    "bedienbarkeit": "8,0: sehr klar für die Prüfperson P1. Beleg 1: „Was möchten Sie ändern?“ führt mit Sätzen in Kundensprache („Die Badewanne soll raus. Ich möchte eine Dusche ohne Stufe.“) direkt zur eigenen Lage (bewegt/d1920/start/01.png, bewegt/m390/start/01.png). Beleg 2: Die Handlungen sind immer greifbar. Am Desktop zeigt der feste Kopf Telefon, WhatsApp und Hauptknopf. Mobil gibt es die Leiste Anrufen/WhatsApp/Termin, der Einstieg hat Hauptknopf und Anrufnummer, das Formular ist kurz mit vier Vorhaben und „Rückruf innerhalb von 24 Stunden“ (bewegt/m390/start/00.png, 08.png). Ablauf in 3 Schritten mit „kostenfrei“. Abzüge: Zwei Auswahllisten folgen direkt aufeinander und haben sich überschneidende Ziele (Lagen, dann Leistungen). Das kostet mobil etwa zwei Bildschirmhöhen bis zum ersten Beleg. Außerdem steht „Cookies“ an erster Stelle der Handlungsleiste und flackert beim Erstbesuch. Größte Schwäche: die doppelte Auswahl. Reparatur in Befund 3.",
+    "kreativitaet": "7,6: Die Leitidee ist schlüssig, die Signatur auf der Startseite aber zu leise. Beleg 1: Der Eingang ist eine echte Choreografie mit Sinn. Das Lot steht bei 0 ms, die Schnur zieht bei 150 ms von links. Die H1-Zeilen steigen ab 300 bis 450 ms hinter Masken auf, das 1-m²-Maß zeichnet sich bei 450 bis 800 ms, Ort und Knöpfe setzen bei 600 bis 800 ms. Das Foto ist vom ersten Bild an da (erstbesuch/d1440-eingang-0000 bis 0800.png). Beleg 2: Der Seitenwechsel B-01 legt eine neutrale Fliesenwand mit aufklatschendem Logo. Die neue Seite empfängt mit derselben Schnur, die Geste ist also unverwechselbar und seitenübergreifend (b01/d1440/bilder/b01-06 bis b01-17). Dazu kommen der Fugenkreuz-Cursor „+ Ansehen“ (cursor/cursor-glasbild-d1440.png) und die Entfernungsskala mit roten Bereichsbalken (bewegt/m390/start/07.png). Größte Schwäche: Der typografische Moment „An der Schnur“ landet nicht auf der Schnur. Die Grundlinie der H1 steht etwa 44 px darüber (detail/d1440-dpr2-schnur-und-lot.png), und das Maß hängt abseits. Nach dem Eingang ist auf der Seite kein weiterer Moment mit Gewicht belegt, nur die Leitachse zieht mit. Reparatur in Befund 1 und 2.",
+    "inhalt": "8,0: klar, echt, ortsnah. Beleg 1: Die Texte sind konkret und ehrlich: „Deniz Tezgel kommt kostenfrei zu Ihnen … Angebot mit festem Preis“. Die Bewertungen nennen Quelle und Stand (5,0, 27 Bewertungen, Stand September 2026), und es gibt einen Link zu Google (bewegt/d1920/start/01.png, 05.png). Beleg 2: Die Einsatzorte stehen mit echten Entfernungen ab dem Firmensitz Aßlar (bewegt/d1920/start/06.png). Alle Fotos sind echte Arbeiten (bewegt/d1920/start/04.png). Größte Schwäche: Die H1 „Perfektion auf jedem Quadratmeter.“ ist ein Anspruch, den jedes Gewerk erheben kann. Die Seite belegt ihn nirgends aus der Nähe: Das Startfoto zeigt eine Dusche aus Distanz, kein Fugenbild. Reparatur: das Maß an die H1 binden und ein echtes Nahfoto einer Fuge oder Kante als Beleg neben das Startfoto stellen (Befund 1, 4)."
+   },
+   "befunde": [
+    {
+     "ort": "Erster Bildschirm: H1, Schnur, Lot, 1-m²-Maß",
+     "geraet": "d1440, d1920, d2560 (abgeschwächt t1024, m390)",
+     "schwere": "hoch",
+     "befund": "Die Leitidee „An der Schnur“ ist nur angedeutet. Die Grundlinie der zweiten H1-Zeile steht bei d1440 etwa 44 px über der Schnur, die Unterlängen etwa 26 px darüber. Der Satz schwebt also über der Linie statt an ihr. Das 1-m²-Maß steht 250 bis 300 px rechts neben „Quadratmeter.“ am Rand, und das Lot sitzt etwa 600 px links vom mittigen Satz. Bei DPR 1 lesen sich Schnur und Lot als dunkle Haarlinien. Das Ergebnis ist ein mittiger Standard-Stapel mit Dekor an den Rändern. Das Wortspiel Quadratmeter/Maß wird nicht auf einen Blick gelesen.",
+     "vorschlag": "Die Grundlinie der zweiten H1-Zeile genau auf die Schnur setzen, so dass die Unterlängen von j und Q die Schnur kreuzen wie Fliesen an der Schnur. Das 1-m²-Maß direkt hinter „Quadratmeter.“ auf die Schnur stellen, Höhe etwa zwei Zeilenhöhen der H1. Das Lot nicht an den Knöpfen enden lassen, sondern bis zur Oberkante des Fotos führen und dort mit einem Fugenkreuz schließen, damit der erste Bildschirm ein geschlossenes Planblatt wird. Bei DPR 1 eine Schnurstärke von 1,5 bis 2 px prüfen, damit das Rot als Rot ankommt. Die mittige Anordnung (K-016) bleibt dabei erhalten.",
+     "bild": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/sicht3/detail/d1440-dpr2-erster-bildschirm.png"
+    },
+    {
+     "ort": "Startfoto unter den Knöpfen",
+     "geraet": "d1440, d1920, d2560",
+     "schwere": "mittel",
+     "befund": "Das Startfoto ist schmal und mittig (643 px von 1216 px Spalte bei d1440, 777 von 1368 px bei d1920). Links und rechts bleiben je 280 bis 300 px leeres Grau, und die Falz schneidet das Foto auf allen Desktops etwa in der Mitte. Es steht ohne Bezug zum Raster aus Lot, Schnur und Fugenkreuz und wirkt bei DPR 2 weich. Für einen Auftritt, der „Perfektion“ verspricht, fehlt der Beweis aus der Nähe.",
+     "vorschlag": "Das Foto in das Planblatt einhängen: Oberkante auf eine Fuge zum Lot-Ende, die linke Kante in eine Flucht mit dem Ort-Satz. Daneben im Drittelverband ein zweites echtes Foto als Nahaufnahme von Fuge, Kante oder Gefälle setzen, als Paar „ganz und nah“, beide vollständig ohne Anschnitt und nicht hochskaliert. Falls im Eingang kein passendes Nahfoto liegt, als Annahme in MENSCHEN.md vermerken.",
+     "bild": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/sicht3/bewegt/d1920/start/00.png"
+    },
+    {
+     "ort": "„Was möchten Sie ändern?“ und „Wir kümmern uns um alles“",
+     "geraet": "alle, am stärksten m390",
+     "schwere": "mittel",
+     "befund": "Zwei Auswahllisten folgen direkt aufeinander und haben sich überschneidende Ziele: sechs Lagen, dann vier Leistungskarten. Die Wanne führt zu „Badsanierung und neue Dusche“, die gesprungene Fliese zu „Reparatur“, der Balkon zu „Balkon“. Mobil kostet das etwa zwei Bildschirmhöhen bis zum Ablauf und den Arbeiten. Für P1 heißt das zweimal dieselbe Entscheidung. Der zweite Block ist zudem ein gleichförmiges Kartenraster mit viel Weiß.",
+     "vorschlag": "Auf eine Auswahl zusammenführen: Die Plan-Vignetten wandern in die Zeilen der Lagen-Liste (je Lage ihre Zeichnung links, Satz und Pfeil rechts). Der Block „Wir kümmern uns um alles“ wird zu einer Zeile mit Leistungs-Links unter der Liste oder rückt hinter die Arbeiten. So kommt der Beleg (Ablauf, Fotos) eine Bildschirmhöhe früher.",
+     "bild": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/sicht3/bewegt/m390/start/02.png"
+    },
+    {
+     "ort": "Mitte der Seite: Treppe „So kommen Sie zu Ihrem neuen Boden“, Arbeiten, Einsatzorte",
+     "geraet": "alle mit Bewegung",
+     "schwere": "mittel",
+     "befund": "Nach dem Eingang ist auf der Startseite kein weiterer Moment mit Gewicht belegt. Einzelbilder gibt es nur für zeilenmaske, sig-flucht und leitachse. Die rote Stufenlinie der Treppe, der Versatz der Galerie und die Entfernungsskala stehen in allen Bildern still. Die Seite erzählt beim Scrollen damit nur über die dünne Leitachse am Rand. Lebendig im Sinne von Abschnitt 3.4 ist sie zwischen Eingang und Fuß kaum.",
+     "vorschlag": "Einen ruhigen, einmaligen Moment mit Gewicht in die Mitte legen: die Laserlinie der Treppe beim Eintritt Stufe für Stufe anreißen (IO 40 %, je Stufe dauer-3, ease-setzen; die Fugenkreuze setzen, wenn die Linie sie erreicht). Reduziert und im Ersatzzweig steht die Linie voll. Das bleibt der einzige Auftritt in dieser Bildschirmhöhe und passt zu „Bewegung legt“.",
+     "bild": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/sicht3/bewegt/d1920/start/03.png"
+    },
+    {
+     "ort": "Mobile Handlungsleiste, Feld „Cookies“",
+     "geraet": "m390 (Erstbesuch); auch m360, q844, t768",
+     "schwere": "mittel",
+     "befund": "Beim Erstbesuch flackert der Knopf „Cookies“ in der Leiste: Er ist bei 150, 300, 450 und 1200 ms sichtbar, bei 0, 600, 800, 1000 und 1500 ms leer. Das zieht das Auge während des Schnur-Eingangs nach unten und widerspricht der Ruhe. Außerdem belegt ein Verwaltungsknopf den ersten Platz der Leiste, die nur Hauptaufgaben tragen sollte.",
+     "vorschlag": "Das Feld vom ersten Bild an stabil darstellen, ohne Ein- und Ausblenden. Besser ist es, die Cookie-Einstellungen nur im Fuß und im Menü zu führen, wo sie schon stehen. Ist der Platz rechtlich nötig, das Feld als reines Schloss-Symbol mit Beschriftung für Hilfsmittel ans Ende der Leiste setzen.",
+     "bild": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/pruefer-start/cookies-flacker.png"
+    },
+    {
+     "ort": "Einstieg mobil: zwischen „Alle Orte, in denen wir arbeiten“ und Hauptknopf",
+     "geraet": "m390, m360, t768",
+     "schwere": "gering",
+     "befund": "Zwischen Ortslink und Hauptknopf klafft ein Loch von etwa 60 px. Zwischen Ortszeile und Link sind es nur etwa 30 px. Der Einstieg zerfällt dadurch in zwei Gruppen, und das Startfoto rutscht mobil fast ganz unter die Falz (nur ein 50-px-Streifen sichtbar).",
+     "vorschlag": "Den Abstand auf dieselbe Stufe der Fliesenskala setzen wie zwischen Ortszeile und Link. Die gewonnene Höhe holt den oberen Rand des Fotos sichtbar in den ersten Bildschirm.",
+     "bild": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/sicht3/detail/m390-dpr3-erster-bildschirm.png"
+    },
+    {
+     "ort": "Galerie „So sieht unsere Arbeit aus.“",
+     "geraet": "t1024",
+     "schwere": "gering",
+     "befund": "Auf dem Tablet stehen die Bildnamen als drei schwere, tintendunkle Blöcke von etwa 138 px unter den Fotos, durch den Versatz treppenförmig. Sie wirken wie Knöpfe und dominieren den ruhigen Abschnitt. Mobil ist derselbe Name ein Verlauf auf dem Foto, am Desktop ein Glas beim Darüberfahren. Die drei Fassungen passen nicht zusammen.",
+     "vorschlag": "Auf Touch-Tablets dieselbe Lösung wie mobil (Name unten auf einem Verlauf) oder eine leichte Zeile in Tinte auf Kalk unter dem Foto, ohne Vollfläche.",
+     "bild": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/sicht3/bewegt/t1024/start/05.png"
+    },
+    {
+     "ort": "Mobile Handlungsleiste im Querformat",
+     "geraet": "q844",
+     "schwere": "gering",
+     "befund": "Das Feld „Cookies“ stapelt Symbol und Text, alle anderen Felder stehen in einer Zeile. Der Text sitzt ohne Innenabstand an der Unterkante. Bei 390 px Höhe nehmen Kopf und Leiste zusammen etwa ein Viertel des Bildschirms ein.",
+     "vorschlag": "Alle Felder gleich aufbauen (Symbol und Text in einer Zeile) oder das Feld wie in Befund 5 auslagern. Im Querformat die Leiste auf die Höhe des Kopfes begrenzen.",
+     "bild": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/pruefer-start/q844-leiste.png"
+    }
+   ],
+   "staerken": [
+    "Der Eingang ist als Verlegevorgang choreografiert und dauert etwa 800 ms. Das Lot steht zuerst, die Schnur zieht von links, die H1-Zeilen steigen hinter Masken auf, das 1-m²-Maß zeichnet sich, zuletzt setzen Ort und Knöpfe. Das Foto ist vom ersten Bild an sichtbar (erstbesuch/d1440-eingang-0000 bis 0800.png).",
+    "B-01 „Fliese für Fliese“ ist eine unverwechselbare Übergangsgeste. Eine neutrale Fliesenwand mit Logo entsteht, die neue Seite empfängt mit derselben Schnur, und die Leitidee trägt so über die Seitengrenze (b01/d1440/bilder/b01-06 bis b01-17, b01/m390/bilder).",
+    "Abschnittswechsel sind als durchgehende Haarfuge mit Fugenkreuz auf der Leitachse gesetzt, ein präzises, markeneigenes Detail statt eines beliebigen Trenners (bewegt/d1440/start/01.png bis 07.png).",
+    "Die Treppe „So kommen Sie zu Ihrem neuen Boden“ zeigt den Ablauf als rote Laserlinie, die von Stufe zu Stufe mit Fugenkreuzen absteigt (bewegt/d1920/start/03.png).",
+    "Die Einsatzorte stehen als Entfernungsskala ab Aßlar mit Spalten nach Kilometern. Mobil zeigen rote Bereichsbalken je Zone den Ausschnitt der Skala (bewegt/d1920/start/06.png, bewegt/m390/start/07.png).",
+    "Kundensprache statt Leistungskatalog: Die Lagen-Liste beginnt bei der Situation der Kundin („Auf dem Balkon bleibt nach dem Regen Wasser stehen.“), wie K-003 Prinzip 2 verlangt (bewegt/d1920/start/01.png, 02.png).",
+    "Typografisches System mit Haltung: schmale, schwere Archivo für Überschriften, Plex Mono für Maße, Nummern und Kilometer. Die rote Anriss-Unterstreichung in der Kundenstimme hebt „ordnungsgemäß, sauber und pünktlich“ hervor (bewegt/d1920/start/05.png).",
+    "Handlungen sind auf jedem Gerät sofort greifbar: am Desktop der feste Kopf mit Telefon, WhatsApp und Hauptknopf, mobil die Leiste Anrufen/WhatsApp/Termin, dazu ein kurzes Formular mit Rückrufzusage (bewegt/d1440/start/00.png, bewegt/m390/start/08.png).",
+    "Bei reduzierter Bewegung bleibt die Komposition vollständig, nur ohne Ablauf: Schnur, Lot, Maß und Treppe stehen im Endzustand (bildsatz/d1440/start/00.png, 03.png; bildsatz/m390/start/00.png)."
+   ],
+   "bis_85": "1. Der erste Bildschirm muss die Leitidee auf einen Blick zeigen: die H1 sitzt auf der Schnur, das 1-m²-Maß steht direkt an „Quadratmeter.“, das Lot reicht bis zum Foto, und das Foto ist in das Planblatt eingehängt. Ein echtes Nahfoto einer Fuge oder Kante belegt die „Perfektion“. Dafür etwa +0,6 Design und +0,4 Kreativität. 2. Eine einzige Einstiegsauswahl statt zweier Listen nacheinander, die Vignetten wandern in die Lagen-Zeilen (+0,3 Bedienbarkeit). 3. Ein ruhiger, einmaliger Moment mit Gewicht in der Seitenmitte, zum Beispiel die Treppe, die ihre Laserlinie Stufe für Stufe anreißt (+0,4 Kreativität). 4. Die mobile Handlungsleiste stabil, ohne Flackern und ohne „Cookies“ an erster Stelle; das Loch im mobilen Einstieg schließen (+0,2 Bedienbarkeit)."
+  }
+ ]
+}
