@@ -1,6 +1,6 @@
 # UM-E4-INHALT · EP1 bis EP4, VIDEO, FS-FUGEN · Rolle Baumeister (Arbeitskopie) · Modell Opus · Kern-Version 4.4
 
-Gilt für zwei Teile nacheinander in derselben Arbeitskopie: Teil A (EP1, EP2, EP3) und Teil B (EP4, VIDEO, FS-FUGEN). Die PLAN-Zeilen in `_werkstatt/PLAN.md` (UM-E4-EP1 bis EP4, VIDEO, FS-FUGEN) nennen Ziel und Dateien; lies sie.
+Gilt für zwei Teile: Teil A (EP1, EP2, EP3; erledigt, E-094) und Teil B (EP4, VIDEO, FS-FUGEN). Teil B läuft in einer neuen Arbeitskopie von HEAD (`…/inhalt/baum-b`, Vergleich `…/inhalt/vor-B`), Server auf Port 4430, Prüfer 4431 und 4432; wo unten `baum` steht, gilt für Teil B `baum-b`. Die PLAN-Zeilen in `_werkstatt/PLAN.md` (UM-E4-EP1 bis EP4, VIDEO, FS-FUGEN) nennen Ziel und Dateien; lies sie.
 
 ## Teil A · Rückführungen (Muss, UM-5)
 - **EP1 · `/balkon-terrasse`:** Vergleich der Aufbauten.
@@ -19,10 +19,9 @@ Gilt für zwei Teile nacheinander in derselben Arbeitskopie: Teil A (EP1, EP2, E
   - Zielwert 113 Seiten mit Typ Service wie in E0; Zählung mit `_werkstatt/werkzeuge/jsonld.mjs`.
   - Muster: `buildServiceNode` in `src/lib/schema.ts`; keine erfundenen Werte (E-091).
 - **VIDEO:** `src/app/video-sitemap.xml/route.ts` verweist auf eine fehlende Datei. Den Eintrag entfernen und mit Vermerk begründen (G4).
-- **FS-FUGEN:** Trennfugen nach `_werkstatt/berichte/UM-E4-FS-K.md`, Nr. 2, 5, 6, 10, 11, 15 (b, c nur nach Messung bei 200 %), 16 und 17.
+- **FS-FUGEN:** Trennfugen nach `_werkstatt/berichte/UM-E4-FS-K.md`, Nr. 5, 10, 11, 15 (b, c nur nach Messung bei 200 %), 16 und 17. Nr. 2, 6 und 12 (Tun, Ablauf, Stimmen) übernimmt UM-E4-START, damit die beiden Pakete keine Datei teilen; `Tun.tsx`, `Ablauf.tsx` und `Stimmen.tsx` fasst Teil B nicht an. `zusammen.tsx` teilen sich beide: Teil B ergänzt nur die Wörter seiner Nummern, am Ende der Liste `FUGEN`.
   - Wörter in `FUGEN` (`src/components/kern/zusammen.tsx`) und Einbindung über `mitFugen` an den genannten Stellen.
   - Nr. 15 (a) „Vakuumhebetechnik“ bleibt nach E-065 offen.
-  - Nr. 12 (Versalwort im Zitat) über CSS, ohne Wortlaut zu ändern.
 
 ## Nicht ändern
 - Wortlaut der Kundenstimmen, Einwilligung, Rechtstexte, Firmendaten, Formulare, H1 A-1/A-2 (G8).
