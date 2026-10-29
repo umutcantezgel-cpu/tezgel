@@ -111,3 +111,6 @@ Uhrzeit · Fenster Verbrauch, Soll, Ziel · Woche Verbrauch, Spielraum · belegt
 - 2026-10-29 13:35 MEZ · Kalibrierung fünftes Limit: Fenster 06:30–11:30 UTC · Kosten $66.00 · 100 % · Faktor 1,515 (vorher 1,27) · Plätze 1 Workflow UM-E3-TAKT (bau:takt läuft) · Planungsziel 60
 - 2026-10-29 14:34 MEZ · Schätzung 29,7 % (Soll 38,2, Fenster 11:31–16:31 UTC, Faktor 1,515) · Gas · Plätze 1 Workflow UM-E4-VORL (Opus-Baumeister, 2 Sonnet-Prüfer) · Planungsziel 60
 - 2026-10-29 15:04 MEZ · Schätzung nicht erhoben (29,7 % um 13:4x MEZ) · Plätze 1 Workflow UM-E4-VORL (bau läuft) · Speicher 4,0 GB frei (Baukopien des Baumeisters) · Planungsziel 60
+- 2026-10-29 18:13 MEZ · **Sechstes Limit-Ereignis.** Die Nacharbeit von UM-E4-VORL brach ab („resets 4:30pm UTC“). Das Fenster endete um 16:30 UTC; die Schätzung um 13:4x MEZ stand bei 29,7 % mit Faktor 1,515. Der VORL-Workflow (Opus-Baumeister mit 1,6 Mio. Tokens) verbrauchte das Fenster allein.
+  - Kalibrierung folgt im Hintergrund.
+  - Plätze: 1 Workflow (VORL-Nacharbeit). Planungsziel 60.
