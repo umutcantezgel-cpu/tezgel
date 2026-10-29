@@ -110,3 +110,4 @@ Uhrzeit · Fenster Verbrauch, Soll, Ziel · Woche Verbrauch, Spielraum · belegt
   - Plätze: 1 Workflow UM-E3-TAKT (Opus-Baumeister, Sonnet-Prüfer). Planungsziel 60.
 - 2026-10-29 13:35 MEZ · Kalibrierung fünftes Limit: Fenster 06:30–11:30 UTC · Kosten $66.00 · 100 % · Faktor 1,515 (vorher 1,27) · Plätze 1 Workflow UM-E3-TAKT (bau:takt läuft) · Planungsziel 60
 - 2026-10-29 14:34 MEZ · Schätzung 29,7 % (Soll 38,2, Fenster 11:31–16:31 UTC, Faktor 1,515) · Gas · Plätze 1 Workflow UM-E4-VORL (Opus-Baumeister, 2 Sonnet-Prüfer) · Planungsziel 60
+- 2026-10-29 15:04 MEZ · Schätzung nicht erhoben (29,7 % um 13:4x MEZ) · Plätze 1 Workflow UM-E4-VORL (bau läuft) · Speicher 4,0 GB frei (Baukopien des Baumeisters) · Planungsziel 60
