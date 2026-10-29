@@ -101,7 +101,7 @@ const STEPS = [
 ];
 
 const FURTHER_READING = [
-    { label: 'Aufbauten im Vergleich: Balkon & Terrasse', href: '/balkon-terrasse' },
+    { label: 'Aufbauten im Vergleich: Balkon & Terrasse', href: '/balkon-terrasse#vergleich' },
     { label: 'Platten auf Stelzlagern', href: '/balkon-terrasse/stelzlager' },
     { label: 'Leistung: Untergrund & Abdichtung', href: '/leistungen/untergrund' },
     { label: 'Persönliche Beratung', href: '/beratung' }

@@ -69,7 +69,7 @@ async function extrahiere(page) {
     const main = document.querySelector('main');
     // Fließtext: sichtbare p und li in main ohne Ausnahmen; li, die ein p enthalten, zählen nicht (Text nur einmal).
     const fliess = main
-      ? [...main.querySelectorAll('p, li')].filter((el) => !el.closest(AUS) && !el.querySelector('p, li') && sichtbar(el))
+      ? [...main.querySelectorAll('p, li, dd')].filter((el) => !el.closest(AUS) && !el.querySelector('p, li, dd') && sichtbar(el))
       : [];
     // Textknoten des Fließtexts mit Glossar-Auszeichnung (dfn[data-glossar]); Erklärungen gehören nicht zum Fließtext.
     const knoten = [];

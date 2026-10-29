@@ -91,7 +91,7 @@ const LIMITS = [
 ];
 
 const FURTHER_READING = [
-    { label: 'Aufbauten im Vergleich: Balkon & Terrasse', href: '/balkon-terrasse' },
+    { label: 'Aufbauten im Vergleich: Balkon & Terrasse', href: '/balkon-terrasse#vergleich' },
     { label: 'Balkonsanierung: Gefälle, Abdichtung, Randabschluss', href: '/balkon-terrasse/balkonsanierung' },
     { label: 'Barrierefreier Balkonaustritt', href: '/blog/barrierefreier-balkonaustritt' },
     { label: 'Leistung: Außenbereiche & Balkone', href: '/leistungen/aussen' }

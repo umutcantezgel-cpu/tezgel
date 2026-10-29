@@ -101,7 +101,7 @@ const JOINTS = [
 ];
 
 const FURTHER_READING = [
-    { label: 'Aufbauten im Vergleich: Balkon & Terrasse', href: '/balkon-terrasse' },
+    { label: 'Aufbauten im Vergleich: Balkon & Terrasse', href: '/balkon-terrasse#vergleich' },
     { label: 'Feinsteinzeug oder Naturstein? Der Vergleich', href: '/blog/feinsteinzeug-oder-naturstein-vergleich' },
     { label: 'Rutschfeste Fliesen: Welche R-Klasse wo?', href: '/blog/rutschfeste-fliesen-r-klassen' },
     { label: 'Leistung: Außenbereiche & Balkone', href: '/leistungen/aussen' }
