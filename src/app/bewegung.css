@@ -106,13 +106,17 @@ html.k-bewegung:not(.k-notaus) [data-motion="anriss"]:not([data-motion-stand="an
    voller Höhe der Bahn, das Fugenkreuz sitzt an seiner Unterkante; Spitze und Marke laufen im selben Bereich (cover 60vh bis
    cover 100 % − 40vh) und liegen so in jeder Stellung aufeinander (translate in %, nie in Container-Einheiten: die hielt
    Chromium beim Start fest, Prüfung UM-E3-LEIT, Befund 1). Die Pausen geben ihren Zeitstrahl über timeline-scope an die Bahn,
-   das Kantenkreuz nutzt den des Abschnitts (.abschnitt-lot). Alle Zeitstrahlen ohne Inset: sonst zählte
-   scroll-padding mit. Nur translate und opacity, Füllung none: außerhalb ihres Bereichs ist jede Animation wirkungslos, und
-   der Grundzustand „kein Kopf, schwarze Kante“ gilt. Kein Startzustand: Er verbirgt nichts; darum hängt der Leitfaden wie
-   das rote Stück nur an html.k-bewegung und läuft auch im Notaus weiter (Notiz UM-E3-LEIT Entscheidung 5). Ohne
-   JavaScript, ohne Startklasse, reduziert, „ruhig“ (Spiegel unten), ohne animation-timeline, ohne Längen im Bereich oder
-   ohne timeline-scope, im Druck und bei erzwungenen Farben gilt der Grundzustand: Lot in Grundschicht, kein Kopf, Kanten
-   schwarz (globals.css). */
+   das Kantenkreuz nutzt den des Abschnitts (.abschnitt-lot). Alle Zeitstrahlen ohne Inset: sonst zählte scroll-padding
+   mit. Nur translate und opacity. Marke: Füllung none, außerhalb ihres Bereichs ist jede Animation wirkungslos, und der
+   Grundzustand „kein Kopf, schwarze Kante“ gilt. Kantenkreuze (UM-E3-TAKT): Füllung both über einen doppelt so breiten
+   Bereich, der Wechsel steht in Stufen-Keyframes (Fangbereich = mittlere Hälfte), Anfang und Ende sind der Grundzustand.
+   Mit Füllung none und gleichbleibenden Keyframes lagen ihre 14 Animationen (sieben Kanten auf /) fast immer vor ihrem
+   Bereich, liefen nicht im Compositor und hielten Chromium in jedem Bild eine Hauptthread-Animation; jedes verspätete
+   Hauptthread-Bild galt dann als verworfen (m390, CPU 4×: rund 4 statt 0,2 %). Kein Startzustand: Er verbirgt nichts;
+   darum hängt der Leitfaden wie das rote Stück nur an html.k-bewegung und läuft auch im Notaus weiter (Notiz UM-E3-LEIT
+   Entscheidung 5). Ohne JavaScript, ohne Startklasse, reduziert, „ruhig“ (Spiegel unten), ohne animation-timeline, ohne
+   Längen im Bereich oder ohne timeline-scope, im Druck und bei erzwungenen Farben gilt der Grundzustand: Lot in
+   Grundschicht, kein Kopf, Kanten schwarz (globals.css). */
 .leitfaden-bahn {
   pointer-events: none;
   position: absolute;
@@ -180,20 +184,22 @@ html.k-bewegung:not(.k-notaus) [data-motion="anriss"]:not([data-motion-stand="an
         cover 0% cover calc(60vh + var(--spacing) * 32),
         cover calc(60vh - var(--spacing) * 6) cover calc(100% - 40vh + var(--spacing) * 6);
     }
-    /* Einrasten: Kantenkreuz rot, solange die Leselinie die Kante auf 24 px trifft */
+    /* Einrasten: Kantenkreuz rot, solange die Leselinie die Kante auf 24 px trifft. Bereich ± 12 Stufen (96 px), der
+       Fangbereich ± 6 Stufen ist seine mittlere Hälfte (25 bis unter 75 %, Keyframes kante-grund und kante-rot in Stufen);
+       Füllung both, damit die Animationen im Compositor laufen (UM-E3-TAKT) */
     html.k-bewegung [data-seitenformel] > [data-formel="worum"] + .leitfaden .abschnitt-lot {
       view-timeline: --abschnitt-kante block;
       view-timeline-inset: 0;
     }
     html.k-bewegung [data-seitenformel] > [data-formel="worum"] + .leitfaden .abschnitt-lot > .abschnitt-kreuz .kreuz-grund {
-      animation: leitfaden-marke-aus linear;
+      animation: kante-grund step-end both;
       animation-timeline: --abschnitt-kante;
-      animation-range: cover calc(60vh - var(--spacing) * 6) cover calc(60vh + var(--spacing) * 6);
+      animation-range: cover calc(60vh - var(--spacing) * 12) cover calc(60vh + var(--spacing) * 12);
     }
     html.k-bewegung [data-seitenformel] > [data-formel="worum"] + .leitfaden .abschnitt-lot > .abschnitt-kreuz .kreuz-rot {
-      animation: leitfaden-marke-an linear;
+      animation: kante-rot step-end both;
       animation-timeline: --abschnitt-kante;
-      animation-range: cover calc(60vh - var(--spacing) * 6) cover calc(60vh + var(--spacing) * 6);
+      animation-range: cover calc(60vh - var(--spacing) * 12) cover calc(60vh + var(--spacing) * 12);
     }
   }
 }
@@ -204,8 +210,15 @@ html.k-bewegung:not(.k-notaus) [data-motion="anriss"]:not([data-motion-stand="an
 @keyframes leitfaden-marke-aus {
   from, to { opacity: 0; }
 }
-@keyframes leitfaden-marke-an {
-  from, to { opacity: 1; }
+/* Kantenkreuz mit step-end: schwarz außer im Fangbereich [25 %, 75 %), rot nur dort (wie zuvor Füllung none über
+   [Anfang, Ende) des Fangbereichs); Anfang und Ende gleichen dem Grundzustand (schwarz 1, rot 0) */
+@keyframes kante-grund {
+  0%, 75%, 100% { opacity: 1; }
+  25% { opacity: 0; }
+}
+@keyframes kante-rot {
+  0%, 75%, 100% { opacity: 0; }
+  25% { opacity: 1; }
 }
 @media print, (forced-colors: active) {
   [data-seitenformel] > [data-formel="worum"] + .leitfaden > .leitfaden-ebene .leitachse-rot,
