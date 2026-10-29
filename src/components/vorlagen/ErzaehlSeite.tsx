@@ -88,6 +88,7 @@ export default function ErzaehlSeite({ inhalt, momente, werkzeug, nachBeleg, ein
           bild={einstiegBild ?? worum.bild}
           bewertung={worum.bewertung}
           orteAnker={inhalt.beleg.orte ? 'einsatzgebiet' : undefined}
+          fugeUnten={inhalt.lage.aufFliese}
         />
         <Leitachse>{rest}</Leitachse>
       </Seitenformel>

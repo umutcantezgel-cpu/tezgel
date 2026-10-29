@@ -202,10 +202,14 @@ export default function Footer() {
                         </div>
 
                         {/* zweispaltig nur, wenn die Kästen ihre Werte fassen (Container-Abfrage in rem, große Systemschrift); ab 42rem
-                            in einer Zeile unter den Feldern */}
+                            in einer Zeile unter den Feldern, auf denselben Fugen wie die Felder darüber (UM-E3-FIX2 N12: vorher in
+                            Vierteln, Kammer über zwei, die Fugen lagen neben denen der Felder). Dieselben Stufen wie die Felder: unter
+                            28rem einspaltig (Handy), ab 28rem zwei Spalten mit Kammer über beide, ab 42rem drei Spalten, je Angabe eine.
+                            Vorher teilte die untere Zeile schon ab 20rem, ihre Mittelfuge hatte über den einspaltigen Feldern kein
+                            Gegenstück. Angaben und Reihenfolge wie bisher (G8) */}
                         <div className="@container lg:col-span-9 lg:col-start-4">
-                            <dl className="grid grid-cols-1 gap-px border border-nacht-fuge bg-nacht-fuge @xs:grid-cols-2 @2xl:grid-cols-4">
-                                <div className="bg-tinte p-4 @xs:col-span-2">
+                            <dl className="grid grid-cols-1 gap-px border border-nacht-fuge bg-nacht-fuge @md:grid-cols-2 @2xl:grid-cols-3">
+                                <div className="bg-tinte p-4 @md:col-span-2 @2xl:col-span-1">
                                     <dt className={etikett}>Kammer</dt>
                                     <dd className="mt-1 text-fs-2">{authority.name}</dd>
                                 </div>

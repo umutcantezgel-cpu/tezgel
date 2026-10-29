@@ -8,6 +8,9 @@
 // Fuge (Versatz um ein Drittel der Spaltenbreite, K-005). So folgen auf die Fotoreihe keine zweiten drei gleichen Karten.
 // Ist eine gezeigte Google-Stimme gekürzt (endet wie bei Google mit „…“), führt einmal unter den Stimmen an der Kennzeile ein
 // Link zu allen Bewertungen beim Anbieter, dort steht der ganze Text (UM-E3-FIX F10); der Wortlaut bleibt unverändert (G8).
+// In der Form „einzeln“ steht die Kennzeile mit dem Link direkt unter der Karte an der Kante des Wortlauts, im Bild vor den
+// Knöpfen, im DOM wie bisher dahinter (Karussell nachSpur; UM-E3-FIX2 N11: vorher unter den Knöpfen, rund 150 px unter der
+// Stimme), und ab 56rem stehen Sterne und Name im ersten Viertel statt im ersten Drittel: Die Zelle war am Desktop fast leer.
 // Serverkomponente, das Karussell ist eine Insel.
 import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
@@ -104,14 +107,18 @@ export function Stimme({ s, gross, klein = false }: { s: Bewertung; gross: boole
 }
 
 /** Eine große Stimme je Schritt (Form „einzeln“): schmal Sterne und Name über dem Wortlaut, ab 36rem Breite der Stimme links
- *  im ersten Drittel an der Fuge, der Wortlaut in den zwei Dritteln dahinter. Sterne und Name stehen vorn, im Bild wie für den
- *  Vorleser. Die Breite misst als Container in rem (wächst mit großer Systemschrift): Das Drittel fasst die fünf Sterne samt
- *  Innenabstand ab knapp 34rem (Sterne 7,25rem, Innenabstand zweimal 2rem); vorher teilte md nach der Bildschirmbreite, bei 200 % ragte der fünfte
- *  Stern auf t768 bis t1024 über die Fuge in den Wortlaut (Prüfung Teil B). */
-function EinzelStimme({ s }: { s: Bewertung }) {
+ *  im ersten Drittel an der Fuge, der Wortlaut in den zwei Dritteln dahinter, ab 56rem im ersten Viertel und in drei
+ *  Vierteln (UM-E3-FIX2 N11: Die Zelle mit Sternen und Namen war am Desktop fast leer; der Wortlaut läuft breiter, die Karte
+ *  wird niedriger). Unten in der Zelle steht die Nummer der Stimme in Mono („01 / 08“, nur fürs Auge, die Folie nennt sie
+ *  dem Vorleser). Sterne und Name stehen vorn, im Bild wie für den Vorleser. Die Breite misst als Container in rem (wächst
+ *  mit großer Systemschrift): Das Drittel fasst die fünf Sterne samt Innenabstand ab knapp 34rem (Sterne 7,25rem,
+ *  Innenabstand zweimal 2rem), das Viertel ab 53rem (zweimal 3rem); vorher teilte md nach der Bildschirmbreite, bei 200 %
+ *  ragte der fünfte Stern auf t768 bis t1024 über die Fuge in den Wortlaut (Prüfung Teil B). */
+function EinzelStimme({ s, nummer, anzahl }: { s: Bewertung; nummer: number; anzahl: number }) {
+  const zwei = (n: number) => String(n).padStart(2, '0');
   return (
     <div className="@container h-full">
-      <figure className="grid h-full grid-cols-1 border border-fuge bg-kalk @xl:grid-cols-3">
+      <figure className="grid h-full grid-cols-1 border border-fuge bg-kalk @xl:grid-cols-3 @4xl:grid-cols-4">
         <figcaption className="flex flex-col gap-4 border-b border-fuge p-6 font-text text-fs-2 text-tinte-2 @xl:border-r @xl:border-b-0 @xl:p-8 @4xl:p-12">
           <Sterne s={s} groesse={5} />
           <span>
@@ -119,13 +126,32 @@ function EinzelStimme({ s }: { s: Bewertung }) {
             bei {s.source}
             <span className="sr-only">, {s.rating} von 5 Sternen</span>
           </span>
+          <span aria-hidden="true" className="mt-auto hidden pt-4 font-mono text-fs-3 text-tinte-2 @xl:block">
+            {zwei(nummer)} / {zwei(anzahl)}
+          </span>
         </figcaption>
-        <div className="min-w-0 p-6 @xl:col-span-2 @xl:p-8 @4xl:p-12">
+        <div className="min-w-0 p-6 @xl:col-span-2 @xl:p-8 @4xl:col-span-3 @4xl:p-12">
           <blockquote className="font-text text-fs-4 font-semibold text-pretty wrap-break-word text-tinte lg:text-fs-5 lg:leading-snug">
             <p>{markiert(s.text, MARKIERUNG[s.id])}</p>
           </blockquote>
         </div>
       </figure>
+    </div>
+  );
+}
+
+/** Kennzeile der Form „einzeln“ direkt unter der Karte (UM-E3-FIX2 N11): Bewertung mit Stand und der Link zu allen
+ *  Bewertungen, an der Kante des Wortlauts (dasselbe Raster wie die Karte, ab 36rem nach dem ersten Drittel, ab 56rem nach dem
+ *  ersten Viertel) */
+function KennzeileEinzeln({ stimmen }: { stimmen: Bewertung[] }) {
+  return (
+    <div className="@container">
+      <div className="grid grid-cols-1 @xl:grid-cols-3 @4xl:grid-cols-4">
+        <div className="px-6 @xl:col-span-2 @xl:col-start-2 @xl:px-8 @4xl:col-span-3 @4xl:col-start-2 @4xl:px-12">
+          <Bewertungszeile stand className="font-text text-fs-2 text-tinte-2 hyphens-none" />
+          <AlleBewertungen stimmen={stimmen} />
+        </div>
+      </div>
     </div>
   );
 }
@@ -149,12 +175,13 @@ export default function Stimmen({ ids, form = 'gross' }: { ids: string[]; form?:
       </div>
     );
   }
+  const einzeln = form === 'einzeln';
   return (
     <div>
-      <Karussell art="reihe" name="Kundenstimmen" selbstlauf karte={KARTE[form]}>
-        {stimmen.map((s) =>
-          form === 'einzeln' ? (
-            <EinzelStimme key={s.id} s={s} />
+      <Karussell art="reihe" name="Kundenstimmen" selbstlauf karte={KARTE[form]} nachSpur={einzeln ? <KennzeileEinzeln stimmen={stimmen} /> : undefined}>
+        {stimmen.map((s, i) =>
+          einzeln ? (
+            <EinzelStimme key={s.id} s={s} nummer={i + 1} anzahl={stimmen.length} />
           ) : (
             <div key={s.id} className={clsx('h-full border border-fuge bg-kalk p-6', form === 'gross' && 'lg:p-8')}>
               <Stimme s={s} gross={false} klein={form === 'klein'} />
@@ -162,8 +189,12 @@ export default function Stimmen({ ids, form = 'gross' }: { ids: string[]; form?:
           ),
         )}
       </Karussell>
-      <Bewertungszeile stand className="mt-8 text-center font-text text-fs-2 text-tinte-2 hyphens-none" />
-      <AlleBewertungen stimmen={stimmen} className="mt-1 text-center" />
+      {!einzeln && (
+        <>
+          <Bewertungszeile stand className="mt-8 text-center font-text text-fs-2 text-tinte-2 hyphens-none" />
+          <AlleBewertungen stimmen={stimmen} className="mt-1 text-center" />
+        </>
+      )}
     </div>
   );
 }

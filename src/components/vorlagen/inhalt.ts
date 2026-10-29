@@ -51,6 +51,9 @@ export interface WorumInhalt {
 /** 2 · Ihre Lage: Absätze in der Stimme der Kundschaft, wahlweise Fliesen mit Link (wie auf der Startseite) */
 export interface LageInhalt {
   titel: string;
+  /** Abschnitt auf Fliese (weiß) statt Kalk, mit Fuge und Kantenkreuz an Ober- und Unterkante (Startseite, UM-E3-FIX2 N8):
+   *  Die Grenze zum Einstieg wird sichtbar, und die Flächen wechseln ab da Abschnitt für Abschnitt */
+  aufFliese?: boolean;
   einleitung?: Markentext;
   absaetze?: Markentext[];
   fliesen?: ({ satz: string; href: string } & BildOderMotiv)[];
@@ -72,10 +75,13 @@ export type BereichFliese = { name: string; href: string } & ({ motiv: Kompositi
 /** 3 · Was wir tun */
 export interface TunInhalt {
   titel: string;
+  /** Kopf linksbündig an der Laserlinie statt mittig (Startseite, UM-E3-FIX2 N9) */
+  anDerLinie?: boolean;
   einleitung?: Markentext;
   /** Bereiche oder Unterseiten als Zeilen mit Verlegemuster und Link */
   bereiche?: Zeile[];
-  /** Bereiche als Fliesen mit Zeichnung (statt Zeilen) */
+  /** Bereiche als Fliesen mit Zeichnung (statt Zeilen); mit Plan-Vignetten als ungleiches Raster im Drittelverband, der erste
+   *  Bereich groß (UM-E3-FIX2 N9) */
   bereichsfliesen?: BereichFliese[];
   /** erklärende Zeichnung unter dem Kopf (ab lg in der Kopfspalte, mobil nach dem Inhalt) mit Bildunterschrift */
   unterKopf?: { vignette: VignettenName; unterschrift: Markentext };

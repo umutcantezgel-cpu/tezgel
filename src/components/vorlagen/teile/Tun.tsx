@@ -1,7 +1,8 @@
 // Vorlagen · 3 Was wir tun (KERN v3 K-009, K-011, K-012; E-025; K-016 „Ruhe“, E-047): gebaut wie „Was wir tun“ der Startseite.
-// Kopf mittig über dem Inhalt mit einem Satz (kein Theorietext neben den Zeichnungen, E-047); Bereiche oder Unterseiten als Zeilen an der Fuge mit einem Verlegemuster aus dem Formsystem statt eines
+// Kopf mittig über dem Inhalt mit einem Satz (kein Theorietext neben den Zeichnungen, E-047), wahlweise linksbündig an der
+// Laserlinie (Startseite, UM-E3-FIX2 N9: vorher drei mittige Köpfe in Folge); Bereiche oder Unterseiten als Zeilen an der Fuge mit einem Verlegemuster aus dem Formsystem statt eines
 // Strichsymbols (unter 20 rem Zeilenbreite entfällt das Muster); Aussagen als Fliesen an der Fuge (bei großer Schrift das
-// Fugenkreuz über dem Satz); oder Bereiche als Fliesen mit Plan-Vignette (Startseite, E-037); danach ein Absatz und der Platz
+// Fugenkreuz über dem Satz); oder Bereiche als Plan-Fliesen im Drittelverband (Startseite, E-037, UM-E3-FIX2 N9); danach ein Absatz und der Platz
 // für den großen Moment der Seite. Wahlweise eine erklärende Zeichnung mit Bildunterschrift nach dem Inhalt. Der Abschnitt zeichnet spät (unter dem ersten Bildschirm, E-044). Serverkomponente.
 import type { ReactNode } from 'react';
 import Link from 'next/link';
@@ -45,53 +46,97 @@ export function Bereichszeilen({ bereiche }: { bereiche: NonNullable<TunInhalt['
 
 export type Bereich = BereichFliese;
 
-/** Bereiche als Fliesen mit Zeichnung (Startseite, Sichtabnahme E2, Befunde 8 und 12; E-037): an der Fuge, oben die Zeichnung,
- *  darunter der Name und der Pfeil. So ist der Abschnitt anders gebaut als die Zeilen der Lage davor.
- *  - Plan-Vignette (E-037, Linienzeichnung 1,5 px wie im alten Stand): schmal (Container unter 36rem, also am Handy) eine
- *    Zeile je Bereich, die Zeichnung als Feld von 32 Stufen links an der Fuge, Name und Pfeil rechts daneben (UM-E3-FIX F5:
- *    vorher je Bereich ein Streifen 2:1 über dem Namen, zusammen rund 1200 px Scrollweg direkt nach den sechs Lagen; jetzt
- *    gut ein Drittel davon, alle vier Bereiche bleiben mit Zeichnung). Ab 36rem zwei Spalten (16:9, ab 48rem 3:2),
- *    die Zeichnung oben; zweispaltig am Handy liefe die Schraffur zu Brei zusammen.
- *  - Verlegemuster (Fliesenkomposition deutlich): ab 20rem zwei Spalten, 16:9, ab lg 3:2.
- *  Schmal (große Systemschrift, unter 20rem) eine Spalte ohne Zeichnung; lange Namen dürfen dort trennen. */
-export function Bereichsfliesen({ bereiche }: { bereiche: Bereich[] }) {
-  const mitVignetten = bereiche.some((b) => b.vignette);
+/** Zeichnung eines Bereichs im eigenen Feld: Plan-Vignette (Linienzeichnung 1,5 px wie im alten Stand, E-037) oder
+ *  Verlegemuster, ganz und mittig (fuellen) */
+function BereichZeichnung({ b }: { b: Bereich }) {
+  const Vignette = b.vignette ? VIGNETTEN[b.vignette] : null;
+  if (Vignette) return <Vignette fuellen />;
+  return b.motiv ? <Fliesenkomposition motiv={b.motiv} ausschnitt={48} fuellen /> : null;
+}
+
+/** Bereiche als Plan-Fliesen (Startseite, E-037; UM-E3-FIX2 N9 und N10): ein ungleiches Raster im Drittelverband statt vier
+ *  gleicher Karten (K-003). Jede Fliese steht an der Fuge, die Zeichnung an der Fuge daneben bzw. darüber, dann Name und Pfeil.
+ *  - Querkarte (Container unter 36rem, Handy): je Bereich eine Zeile, die Zeichnung als Feld von 32 Stufen links, Name und
+ *    Pfeil rechts (UM-E3-FIX F5).
+ *  - 36 bis 64rem (Tablet hochkant und quer, t768 bis t1024, q844): dieselben Querkarten in zwei Spalten. Vorher 2 × 2 mit
+ *    rund 300 px hohen Zeichnungen; der Block füllte anderthalb Bildschirme, auf q844 war eine Karte höher als der Bildschirm
+ *    (Sichtabnahme E3 Anlauf 2).
+ *  - ab 64rem (d1280 bis d2560): drei Spalten. Der erste Bereich (Bad, der Kern des Betriebs) steht als große Fliese über
+ *    zwei Drittel und drei Reihen mit großer Zeichnung, die übrigen drei als Querkarten (Zeichnung zwei Fünftel breit) im letzten
+ *    Drittel, drei gleich hohe Reihen (die höchste Querkarte gibt das Maß): Ihre Fugen teilen die große Fliese genau in
+ *    Drittel. Die Zeichnung der großen Fliese steht absolut in ihrem Feld und hat keine eigene Höhe: Die Reihen bemessen sich
+ *    nach den Querkarten.
+ *  Nachrangig nach den Lagen davor (N10): Die Namen stehen eine Stufe unter den Sätzen der Lage, nur der große Bereich ab
+ *  64rem in derselben Stufe. Unter 20rem (große Systemschrift) ohne Zeichnung; lange Namen dürfen dort trennen. */
+function Planfliesen({ bereiche }: { bereiche: Bereich[] }) {
   return (
     <div className="@container">
-      {/* einzelne Fliesen mit Luft dazwischen statt aneinandergesetzt (E-047: nicht gequetscht); ab 64rem vier nebeneinander */}
-      <ul className={clsx('grid grid-cols-1 gap-6 lg:gap-8', mitVignetten ? '@xl:grid-cols-2 @5xl:grid-cols-4' : '@xs:grid-cols-2')}>
-        {bereiche.map((b) => {
-          const Vignette = b.vignette ? VIGNETTEN[b.vignette] : null;
+      <ul className="grid grid-cols-1 gap-4 @xl:grid-cols-2 @xl:gap-6 @5xl:grid-cols-3 @5xl:grid-rows-3 @5xl:gap-8">
+        {bereiche.map((b, i) => {
+          const gross = i === 0;
           return (
-          <li key={b.href} className="border border-fuge bg-fliese">
-            <Link href={b.href} data-motion="zustand" className={clsx('group flex h-full text-tinte', Vignette ? '@xl:flex-col' : 'flex-col')}>
-              {Vignette ? (
-                // Die Fuge hängt an der äußeren Zelle über die ganze Höhe der Karte (in der Zeile gestreckt): Ist der Name zwei-
-                // oder dreizeilig, stößt sie trotzdem an Ober- und Unterkante; das Feld 4 : 3 steht darin mittig.
-                // min-h-0: sonst dehnt die höhere Zeichnung (Bad 1,3 : 1) das Feld über sein Seitenverhältnis hinaus
-                <span aria-hidden="true" className="hidden w-32 shrink-0 items-center border-r border-fuge @xs:flex @xl:w-auto @xl:border-r-0 @xl:border-b">
-                  <span className="flex aspect-4/3 min-h-0 w-full items-center justify-center overflow-hidden p-2 @xl:aspect-video @xl:p-4 @3xl:aspect-3/2 lg:p-6">
-                    <Vignette fuellen />
+            <li key={b.href} className={clsx('border border-fuge bg-fliese', gross && '@5xl:col-span-2 @5xl:row-span-3')}>
+              <Link href={b.href} data-motion="zustand" className={clsx('group flex h-full text-tinte', gross && '@5xl:flex-col')}>
+                {/* Die Fuge hängt an der äußeren Zelle über die ganze Höhe der Karte: Ist der Name zwei- oder dreizeilig, stößt sie
+                    trotzdem an Ober- und Unterkante; das Feld 4 : 3 steht darin mittig */}
+                <span
+                  aria-hidden="true"
+                  className={clsx(
+                    'hidden w-32 shrink-0 items-center border-r border-fuge @xs:flex',
+                    gross ? '@5xl:relative @5xl:min-h-32 @5xl:w-auto @5xl:flex-1 @5xl:border-r-0 @5xl:border-b' : '@5xl:w-2/5',
+                  )}
+                >
+                  <span className={clsx('flex aspect-4/3 w-full items-center justify-center overflow-hidden p-2', gross && '@5xl:absolute @5xl:inset-0 @5xl:aspect-auto @5xl:p-8')}>
+                    <BereichZeichnung b={b} />
                   </span>
                 </span>
-              ) : (
-                b.motiv && (
-                  <span aria-hidden="true" className="hidden aspect-video overflow-hidden border-b border-fuge @xs:block lg:aspect-3/2">
-                    <Fliesenkomposition motiv={b.motiv} format="16:9" ausschnitt={96} fuellen deutlich />
+                <span className={clsx('flex min-w-0 flex-1 items-center gap-3 p-4', gross && '@5xl:flex-none @5xl:p-6')}>
+                  <span
+                    className={clsx(
+                      'min-w-0 flex-1 font-text text-fs-3 font-semibold text-pretty hyphens-auto underline decoration-transparent decoration-2 underline-offset-4 transition-colors dauer-1 group-hover:decoration-laser',
+                      gross && '@5xl:text-fs-4',
+                    )}
+                  >
+                    {b.name}
                   </span>
-                )
+                  <Icon name="pfeil-rechts" groesse={5} className="shrink-0 text-tinte-2 transition-colors dauer-1 group-hover:text-tinte" />
+                </span>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+}
+
+/** Bereiche als Fliesen mit Zeichnung (Startseite, Sichtabnahme E2, Befunde 8 und 12; E-037): mit Plan-Vignetten als Plan-Fliesen
+ *  im Drittelverband (oben). Nur mit Verlegemustern (Fliesenkomposition deutlich): ab 20rem zwei Spalten, die Zeichnung 16:9
+ *  über dem Namen, ab lg 3:2; schmal (große Systemschrift, unter 20rem) eine Spalte ohne Zeichnung. */
+export function Bereichsfliesen({ bereiche }: { bereiche: Bereich[] }) {
+  if (bereiche.some((b) => b.vignette)) return <Planfliesen bereiche={bereiche} />;
+  return (
+    <div className="@container">
+      {/* einzelne Fliesen mit Luft dazwischen statt aneinandergesetzt (E-047: nicht gequetscht) */}
+      <ul className="grid grid-cols-1 gap-6 @xs:grid-cols-2 lg:gap-8">
+        {bereiche.map((b) => (
+          <li key={b.href} className="border border-fuge bg-fliese">
+            <Link href={b.href} data-motion="zustand" className="group flex h-full flex-col text-tinte">
+              {b.motiv && (
+                <span aria-hidden="true" className="hidden aspect-video overflow-hidden border-b border-fuge @xs:block lg:aspect-3/2">
+                  <Fliesenkomposition motiv={b.motiv} format="16:9" ausschnitt={96} fuellen deutlich />
+                </span>
               )}
-              <span className={clsx('flex min-w-0 flex-1 gap-3 p-4 lg:p-6', Vignette ? 'items-center @xl:items-start' : 'items-start')}>
+              <span className="flex min-w-0 flex-1 items-start gap-3 p-4 lg:p-6">
                 {/* gesetzt wie die Sätze der Lage-Fliesen (gleiche Ebene, ein Schnitt; E2-SICHT-2 Typografie) */}
                 <span className="min-w-0 flex-1 font-text text-fs-4 font-semibold text-pretty hyphens-auto underline decoration-transparent decoration-2 underline-offset-4 transition-colors dauer-1 group-hover:decoration-laser">
                   {b.name}
                 </span>
-                <Icon name="pfeil-rechts" groesse={5} className={clsx('shrink-0 text-tinte-2 transition-colors dauer-1 group-hover:text-tinte', Vignette ? '@xl:mt-1' : 'mt-1')} />
+                <Icon name="pfeil-rechts" groesse={5} className="mt-1 shrink-0 text-tinte-2 transition-colors dauer-1 group-hover:text-tinte" />
               </span>
             </Link>
           </li>
-          );
-        })}
+        ))}
       </ul>
     </div>
   );
@@ -134,7 +179,7 @@ export default function Tun({ inhalt, moment }: { inhalt: TunInhalt; moment?: Re
       formel="tun"
       leitachse
       spaet
-      mitte
+      mitte={!inhalt.anDerLinie}
       titel={inhalt.titel}
       einleitung={inhalt.einleitung ? <p><Textmarken text={inhalt.einleitung} /></p> : undefined}
     >

@@ -72,10 +72,14 @@ export interface KarussellProps {
   takt?: number;
   /** band: auf dunkler Fläche (Fuß) */
   dunkel?: boolean;
+  /** reihe: steht im Bild direkt unter der Spur, ab sm vor den Knöpfen (schmal stehen die Knöpfe über der Spur), z. B. die
+   *  Kennzeile mit dem Link zu allen Bewertungen nah an der Stimme (UM-E3-FIX2 N11). Im DOM folgt er den Knöpfen (Fokusfolge
+   *  siehe dort). Hält den Selbstlauf an wie die Spur, solange Maus oder Fokus darin sind */
+  nachSpur?: ReactNode;
   className?: string;
 }
 
-export default function Karussell({ art, name, children, karte = 'w-full md:w-1/2 lg:w-1/3', selbstlauf = false, takt = 8000, dunkel = false, className }: KarussellProps) {
+export default function Karussell({ art, name, children, karte = 'w-full md:w-1/2 lg:w-1/3', selbstlauf = false, takt = 8000, dunkel = false, nachSpur, className }: KarussellProps) {
   const imBrowser = useImBrowser();
   const ruhig = useRuhigGewuenscht();
   const [angehalten, setAngehalten] = useState(false);
@@ -225,8 +229,12 @@ export default function Karussell({ art, name, children, karte = 'w-full md:w-1/
       </ul>
       {/* Platz der Knöpfe steht von Anfang an (auch ohne JavaScript), damit nichts springt, wenn sie erscheinen. Unter sm stehen
           sie über den Karten: Die Spur folgt dort der Höhe der sichtbaren Karte, Knöpfe darunter sprängen beim Blättern mit, und
-          ein zweites Tippen ginge ins Leere (Browserprüfung E4-W1, Runde 4). Die Reihenfolge im DOM bleibt. */}
-      <div aria-hidden={bedienbar ? undefined : true} className={clsx('flex items-center justify-center gap-3 max-sm:order-first max-sm:mb-4 sm:mt-6', !bedienbar && 'invisible')}>
+          ein zweites Tippen ginge ins Leere (Browserprüfung E4-W1, Runde 4). Die Reihenfolge im DOM bleibt: Spur, Knöpfe, dann
+          nachSpur, auf jeder Breite dieselbe Fokus- und Lesefolge wie zuvor mit der Kennzeile unter dem Karussell. Ab sm rücken die
+          Knöpfe per order im Bild hinter nachSpur; dort weichen nur die Nachbarn Knöpfe und nachSpur um einen Schritt ab. Stünde
+          nachSpur im DOM vor den Knöpfen, sprünge der Fokus unter sm von nachSpur unter der Karte zurück zu den Knöpfen über ihr
+          (Gegenprüfung UM-E3-FIX2 Teil B, WCAG 2.4.3). */}
+      <div aria-hidden={bedienbar ? undefined : true} className={clsx('flex items-center justify-center gap-3 max-sm:order-first max-sm:mb-4 sm:order-last sm:mt-6', !bedienbar && 'invisible')}>
         <button type="button" onClick={() => rucken(-1)} onPointerDown={beruehrt} data-motion="druck" className={knopf}>
           <Icon name="pfeil-links" groesse={4} />
           <span className="sr-only">Zurück</span>
@@ -237,6 +245,7 @@ export default function Karussell({ art, name, children, karte = 'w-full md:w-1/
           <span className="sr-only">Weiter</span>
         </button>
       </div>
+      {nachSpur}
     </section>
   );
 }

@@ -26,6 +26,8 @@ export const START: ErzaehlInhalt = {
     bewertung: true,
   },
   lage: {
+    // auf Fliese: sichtbare Grenze nach dem Einstieg, die Flächen wechseln ab hier (UM-E3-FIX2 N8)
+    aufFliese: true,
     titel: 'Was möchten Sie ändern?',
     einleitung: 'Wählen Sie, was am besten passt. Sie kommen direkt zu den Bildern und Antworten für Ihre Lage.',
     // Fotos anders als in der Galerie „So sieht unsere Arbeit aus.“, damit kein Bild doppelt erscheint (Sichtprüfung E2); nur
@@ -41,10 +43,12 @@ export const START: ErzaehlInhalt = {
   },
   tun: {
     titel: 'Wir kümmern uns um alles, was mit Fliesen zu tun hat.',
+    // linksbündig an der Laserlinie, die Bereiche als ungleiches Raster im Drittelverband (UM-E3-FIX2 N9)
+    anDerLinie: true,
     // ein Satz statt Theorie neben den Zeichnungen (E-047); der Satz stand vorher als H1
     einleitung: 'Wir verlegen Fliesen in Bad, Küche, Flur und auf dem Balkon.',
     // vier Bereiche als Fliesen mit den Plan-Vignetten des alten Stands (Bad, Wohnen, Außen; Reparatur neu in derselben
-    // Zeichensprache, E-037)
+    // Zeichensprache, E-037); ab 64rem Bad als große Fliese, die übrigen schmal daneben (UM-E3-FIX2 N9)
     bereichsfliesen: [
       { name: 'Badsanierung und neue Dusche', href: '/bad', vignette: 'bad' },
       { name: 'Böden und Wände in Haus und Wohnung', href: '/leistungen/wohnen', vignette: 'wohnen' },

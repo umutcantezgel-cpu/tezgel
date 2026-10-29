@@ -11,7 +11,8 @@
 // (Reihenfolge per order, der Quelltext und damit Vorlese- und Tabfolge bleiben wie mobil: Ort, Knöpfe, erster Schritt,
 // Bewertung, Foto; zwischen Knöpfen und Bewertung liegt nichts Fokussierbares). So beginnt das Foto auf d1440 rund 160 px
 // höher, und im ersten Bildschirm steht die Fliesenarbeit. Unter dem Einstieg bleibt eine Fliesenstufe (24 = F) bis zur
-// nächsten Überschrift (vorher rund 200 px Leere unter dem Foto). Mobil und Tablet hochkant bleibt alles, wie es war.
+// nächsten Überschrift (vorher rund 200 px Leere unter dem Foto); folgt ein Abschnitt auf Fliese (fugeUnten, Startseite,
+// UM-E3-FIX2 N8), eine Stufe 16 bis zur Fuge und eine Stufe 16 dahinter. Mobil und Tablet hochkant bleibt alles, wie es war.
 // Schnur und Lot (UM-E3-FIX F1, KERN K-007 „An der Schnur“ und Laserlinie): Unter der H1 liegt als Grundlinie eine rote
 // 1-px-Schnur von der Achse bis zur gespiegelten Stelle rechts. An ihrem linken Ende beginnt das Lot der Leitachse und läuft
 // im Seitenrand am Einstieg hinunter, ohne Lücke in die Leitachse der Seite (ErzaehlSeite). Das Lot ist der Leitfaden
@@ -72,6 +73,10 @@ export interface EinstiegMitteProps {
   bewertung?: boolean;
   /** Anker der Einsatzorte auf derselben Seite (Startseite): Link unter der Ortszeile, „arbeitet er in meinem Ort?“ (A6) */
   orteAnker?: string;
+  /** Der nächste Abschnitt steht auf Fliese (Startseite, LageInhalt.aufFliese, UM-E3-FIX2 N8): ab lg bleibt unter der
+   *  Bewertungszeile eine Stufe 16 Kalk bis zur Fuge. Innen gesetzt, damit das Lot des Einstiegs bis an die Fuge reicht (ein
+   *  Außenabstand am Abschnitt danach fiele aus der Leitachse heraus, dort stünde eine Lücke im Lot) */
+  fugeUnten?: boolean;
 }
 
 /** Erster Schritt und Kosten in einem Satz unter den Knöpfen (Aufgabe A5, Probeläufe E3: Ablauf und kostenfreier Termin erst
@@ -91,7 +96,7 @@ const EINSTIEG_FORMAT = 4 / 5;
 export const EINSTIEG_MITTE_SIZES =
   '(min-width: 1440px) min(calc(31.67rem + 21.11vw), 63.33rem, calc(80vh - 3rem - 2vw)), (min-width: 1024px) min(calc(66.67vw - 4rem), 51rem, calc(80vh - 4.8rem)), (min-width: 640px) 28rem, 100vw';
 
-export default function EinstiegMitte({ pfad, brotkrumen, titelZeilen, titelGross = false, quadratmeter = false, ort, hauptziel, bild, bewertung = false, orteAnker }: EinstiegMitteProps) {
+export default function EinstiegMitte({ pfad, brotkrumen, titelZeilen, titelGross = false, quadratmeter = false, ort, hauptziel, bild, bewertung = false, orteAnker, fugeUnten = false }: EinstiegMitteProps) {
   const { contact } = COMPANY_DATA;
   const format = typeof bild === 'string' ? ARBEITEN[bild as ArbeitId].breite / ARBEITEN[bild as ArbeitId].hoehe : EINSTIEG_FORMAT;
   return (
@@ -120,7 +125,7 @@ export default function EinstiegMitte({ pfad, brotkrumen, titelZeilen, titelGros
           </div>
         </div>
         {/* Spalte: Ort und Knöpfe, erster Schritt mit Bewertung, Foto; ab lg rücken erster Schritt und Bewertung unter das Foto */}
-        <div className="relative flex flex-col">
+        <div className={clsx('relative flex flex-col', fugeUnten && 'lg:pb-16')}>
           <div className={`${seitenKlassen} relative flex flex-col items-center pt-6 text-center flach:pt-3`}>
             {/* rotes Lot von der Schnur bis unter die Knopfreihe (UM-E3-FIX2 N3), auf derselben Achse wie das Lot der Zierebene */}
             <span aria-hidden="true" data-eingang="lot" data-leitachse="" className={clsx('lot-stueck -bottom-4 origin-top max-sm:animate-none', ACHSE_LAGE)} />

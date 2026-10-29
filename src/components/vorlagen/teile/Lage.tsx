@@ -1,8 +1,12 @@
 // Vorlagen · 2 Ihre Lage (KERN v3 K-003 Nr. 2, K-009; E-025; K-016 „Ruhe“, E-047): die Lage der Kundschaft in ihren Worten.
 // Wahlweise als Absätze, als Wege-Zeilen mit Link (wie die Bereiche in „Was wir tun“) oder als Auswahl wie auf der
 // Startseite: große Zeilen mit Satz und Pfeil an einer Fuge, ab md in zwei Spalten, ohne Fotos (Bilder werden nie
-// angeschnitten; ein Foto je Wahl wäre zu viel auf einem Bildschirm, E-047). Kopf mittig. Der Abschnitt zeichnet spät
-// (content-visibility, unter dem ersten Bildschirm, E3-LEIST-01). Serverkomponente.
+// angeschnitten; ein Foto je Wahl wäre zu viel auf einem Bildschirm, E-047). Kopf mittig. Wahlweise auf Fliese (Startseite,
+// UM-E3-FIX2 N8): Einstieg, Lage und „Was wir tun“ lagen auf derselben Kalkfläche mit drei mittigen Köpfen, die Grenzen waren
+// nicht zu sehen. Weiß mit Fuge und Kantenkreuz setzt den Bruch nach dem Einstieg, danach wechseln die Flächen Abschnitt für
+// Abschnitt. Ab lg setzt der Einstieg eine Stufe 16 Kalk unter seine Bewertungszeile (EinstiegMitte fugeUnten), und der Kopf
+// beginnt eine Stufe 16 unter der Fuge. Der Abschnitt zeichnet spät (content-visibility, unter dem ersten Bildschirm,
+// E3-LEIST-01). Serverkomponente.
 import Link from 'next/link';
 import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
@@ -23,9 +27,12 @@ export function LageFliesen({ fliesen, className }: { fliesen: Fliese[]; classNa
             <span className="font-text text-fs-4 font-semibold text-pretty hyphens-none underline decoration-transparent decoration-2 underline-offset-8 transition-colors dauer-1 group-hover:decoration-laser">
               {f.satz}
             </span>
-            {/* Pfeil an der ersten Zeile: in einer Zeile der Liste stehen die Pfeile gleich hoch, ob der Satz ein- oder zweizeilig ist (Browserprüfung E4-W1, Runde 2) */}
-            <span className="flex h-[1lh] shrink-0 items-center font-text text-fs-4">
-              <Icon name="pfeil-rechts" groesse={5} className="text-tinte-2 transition-colors dauer-1 group-hover:text-tinte" />
+            {/* Pfeil an der ersten Zeile: in einer Zeile der Liste stehen die Pfeile gleich hoch, ob der Satz ein- oder zweizeilig ist (Browserprüfung E4-W1, Runde 2).
+                Die Höhe einer Zeile gibt ein unsichtbares Leerzeichen derselben Stufe in derselben Rasterzelle vor, der Pfeil steht darin mittig
+                (vorher h-[1lh], ein Beliebigwert außerhalb der Tokens; UM-E3-FIX2, werte.mjs) */}
+            <span className="grid shrink-0 items-center font-text text-fs-4">
+              <span className="invisible col-start-1 row-start-1">{'\u00a0'}</span>
+              <Icon name="pfeil-rechts" groesse={5} className="col-start-1 row-start-1 text-tinte-2 transition-colors dauer-1 group-hover:text-tinte" />
             </span>
           </Link>
         </li>
@@ -43,6 +50,8 @@ export default function Lage({ inhalt }: { inhalt: LageInhalt }) {
       leitachse
       spaet
       mitte
+      flaeche={inhalt.aufFliese ? 'fliese' : 'kalk'}
+      className={inhalt.aufFliese ? 'lg:pt-16' : undefined}
       titel={inhalt.titel}
       einleitung={inhalt.einleitung ? <p><Textmarken text={inhalt.einleitung} /></p> : undefined}
     >
