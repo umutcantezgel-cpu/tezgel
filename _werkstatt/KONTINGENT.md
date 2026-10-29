@@ -114,3 +114,4 @@ Uhrzeit · Fenster Verbrauch, Soll, Ziel · Woche Verbrauch, Spielraum · belegt
 - 2026-10-29 18:13 MEZ · **Sechstes Limit-Ereignis.** Die Nacharbeit von UM-E4-VORL brach ab („resets 4:30pm UTC“). Das Fenster endete um 16:30 UTC; die Schätzung um 13:4x MEZ stand bei 29,7 % mit Faktor 1,515. Der VORL-Workflow (Opus-Baumeister mit 1,6 Mio. Tokens) verbrauchte das Fenster allein.
   - Kalibrierung folgt im Hintergrund.
   - Plätze: 1 Workflow (VORL-Nacharbeit). Planungsziel 60.
+- 2026-10-29 19:49 MEZ · Kalibrierpunkt sechstes Limit: Fenster 11:30–16:30 UTC · Kosten $78.80 · 100 % · Faktor 1,269 · Workflow VORL fertig (4 Agenten, 1,96 Mio. Tokens) · Plätze 0 Agenten, Prüfkette als Skript · Planungsziel 60
