@@ -1,5 +1,18 @@
 # Bericht · Lauf „Universal Motion“
 
+## Morgenbericht · Donnerstag, 29. Oktober 2026
+
+1. Live seit gestern 13:15 (auf deine Anweisung): der geprüfte Stand mit Schalter „Bewegung: an | ruhig“, neuem Eingang ohne Vorhang, Cursor am Computer und den Zuständen der Bausteine. Seitdem wird nur auf dem Arbeitsstand gebaut.
+2. Fertig, noch nicht live: die Startseite nach zwei Sichtprüfungen überarbeitet. Die Überschrift ist am Computer fast doppelt so groß und steht auf einer roten Schnur, die beim ersten Besuch zuerst gezogen wird. Das Foto hat mehr Gewicht, der Fuß ist geordnet, große Bildschirme wirken nicht mehr leer (`_werkstatt/bilder/bericht/2026-10-29/1-erster-bildschirm-desktop.jpg`, `2-erster-bildschirm-handy.jpg`, `3-eingang-an-der-schnur-600ms-desktop.jpg`, `4-kundenstimme-einzeln-desktop.jpg`, `5-fuss-desktop.jpg`).
+3. Geprüft: Alle 398 Funktionsprüfungen bestehen mit und ohne Bewegung. Firmenangaben, Kundenstimmen, Bewertungszahlen und alle Links im Fuß sind nachweislich unverändert. Die Startseite lädt am Handy in 2,7 statt 2,9 Sekunden.
+4. Sichtprüfung der Startseite: Zwei unabhängige Prüfer gaben 7,3 und 7,5 von 10 (vorher 6,7 und 6,9, Ziel 8,5). Gelobt werden Schrift, Eingang, Seitenwechsel und Zeichnungen. Bemängelt werden vor allem ein rotes Kreuz der Leitlinie, das ohne Linie stehen bleibt, der erste Bildschirm am Computer (nur Zimmerdecke zu sehen) und zu gleichförmige Abschnitte. Die dritte Überarbeitung läuft; neu ist eine kleine Quadratmeter-Bemaßung an der Schnur, die deine Überschrift sichtbar belegt.
+5. Stand der 13 Kriterien: Auf der Zwischenstufe erfüllt sind Technik, Sicherheit, Bewegung, Zugänglichkeit, Darstellung und Leistung (Z-02, Z-03, Z-06, Z-07, Z-09, Z-10 mit der bekannten Ausnahme bei der Ladezeit am Handy, Z-11). Es fehlt vor allem die Sichtprüfung (Z-05).
+6. Kontingent der Woche: In der Cloud ohne Anzeige. Gestern war das Limit einmal erreicht; die Schätzung ist neu eingestellt. Heute Nacht ruhte die Arbeit von 01:30 bis 06:15, weil die Umgebung neu startete und eine Freigabe ausstand.
+7. Als Nächstes: dritte Überarbeitung fertig bauen und prüfen, dann dritte Sichtprüfung. Danach folgen die übrigen Seiten (Etappe E4).
+8. Bitte prüfe oder entscheide (Einzelheiten in `_werkstatt/MENSCHEN.md`):
+    - Darf unter das Schloss in der Handy-Leiste das Wort „Cookies“ (M-28)? Annahme: bleibt wie es ist.
+    - Gefallen dir Eingang und Cursor (UM-8, UM-9)? Garantie-Wörter bestätigen oder streichen (UM-5). Weiter dringend: die Originalfotos in der Git-Historie (UM-6).
+
 ## Morgenbericht · Mittwoch, 28. Oktober 2026
 
 1. Fertig: Die Technik ist auf dem neuesten Stand (Next.js 16.4, React 19.3, Node 24, Tailwind 4.3), ohne Sicherheitslücke. Alle 398 Funktionsprüfungen bestehen mit und ohne Bewegung, und der Bildvergleich zeigt keinen ungewollten Unterschied.
