@@ -183,3 +183,4 @@ Siehe `werkzeuge/EINRICHTUNG.md` (wird in E0-PRUEF-01 aktualisiert).
 - 2026-10-29 13:35 MEZ · Die Behebung der Bildrate wird gerade abgesichert: wiederholte Messungen im Wechsel alter und neuer Stand, danach misst ein zweiter Prüfer unabhängig nach.
 - 2026-10-29 14:34 MEZ · Die Bildrate beim Scrollen ist wieder gut (0,3 % verlorene Bilder statt 4 %); Ursache waren zwei unnötig teure Animationen je Kreuz der Leitlinie. Jetzt bekommen alle übrigen Seitenvorlagen denselben Eingang, dieselbe Leitlinie und dieselben Cursor-Hinweise wie die Startseite.
 - 2026-10-29 15:04 MEZ · Der Baumeister überträgt Eingang, Leitlinie und Cursor-Hinweise der Startseite auf die übrigen Seitenvorlagen; danach prüfen zwei Prüfer.
+- 2026-10-29 15:43 MEZ · Unverändert: Die Übertragung von Eingang, Leitlinie und Cursor-Hinweisen auf die übrigen Seitenvorlagen läuft.
