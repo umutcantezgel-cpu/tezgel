@@ -103,3 +103,4 @@ Uhrzeit · Fenster Verbrauch, Soll, Ziel · Woche Verbrauch, Spielraum · belegt
 - 2026-10-29 08:31 MEZ · Schätzung läuft im Hintergrund (Fenster ab 07:31 UTC neu) · Plätze 1 Workflow UM-E3-FIX2 (bau:B, Opus) · Planungsziel 60
 - 2026-10-29 09:31 MEZ · Fenster 02:31–07:31 UTC endete bei 65,9 % (Schätzung, Faktor 1,27; Workflow UM-E3-FIX2: 8 Agenten, 2,64 Mio. Tokens, 2 h 45 min) · neues Fenster ab 07:31 UTC · Plätze 0 Agenten, Prüfkette als Skript · Planungsziel 60
 - 2026-10-29 10:20 MEZ · Schätzung 19,6 % (Soll 33,1, Fenster 07:31–12:31 UTC, Faktor 1,27) · Gas · Plätze 2 Workflows: UM-E3-SICHT Anlauf 3 (2 Opus), UM-E3-TAKT (Opus-Baumeister, Sonnet-Prüfer) · Planungsziel 60
+- 2026-10-29 10:31 MEZ · Workflow Sicht Anlauf 3 fertig (2 Opus, 0,52 Mio. Tokens, 9 min) · Schätzung nicht erhoben (19,6 % um 10:16 MEZ) · Plätze 2 Workflows: UM-E3-TAKT (Opus), E4-W1 (3 Haiku + 3 Sonnet) · Planungsziel 60

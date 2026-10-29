@@ -1295,9 +1295,9 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - Texte, Reihenfolge, Gleichwertigkeit von „Alle akzeptieren“ und „Alle ablehnen“ und das Verhalten der Einwilligung bleiben gleich (G8 mit Freigabe).
   - Die Specs Einwilligung und Tracking erkennen beide Namen des Widerruf-Knopfs.
 - **Folge 2:** Ist der Lauf fertig und die Endabnahme bestanden, bringe ich den Endstand einmal auf main (ein Vercel-Deploy). Zwischenstände gehen nicht live.
-- **Bestätigt am 29.10.2026 um 08:40 MEZ:** „Kannst du alles live schalten sobald du fertig bist“. Nach der Endabnahme kommt der Endstand ohne weitere Rückfrage einmal auf main. Vorher prüfe ich: Reinraum, Suite und axe grün, Arbeitsbranch gepusht, Zusammenführung als Fast-Forward oder Merge ohne Konflikt.
+- **Bestätigt am 29.10.2026 um 09:02 MEZ:** „Kannst du alles live schalten sobald du fertig bist“. Nach der Endabnahme kommt der Endstand ohne weitere Rückfrage einmal auf main. Vorher prüfe ich: Reinraum, Suite und axe grün, Arbeitsbranch gepusht, Zusammenführung als Fast-Forward oder Merge ohne Konflikt.
 
-## E-090 · Tor E3, Anlauf 3: Sicht `/` 7,5 und 7,6; Tor nach L3 mit offenem Punkt Z-05 geschlossen (29.10.2026, 10:45 MEZ)
+## E-090 · Tor E3, Anlauf 3: Sicht `/` 7,5 und 7,6; Tor nach L3 mit offenem Punkt Z-05 geschlossen (29.10.2026, 10:26 MEZ)
 - **Sichtabnahme (Workflow wf_dd4fa133-05e):** zwei frische Opus-Prüfer, PNG-Bildsatz `$SCRATCH/fix2/sicht3` an 8bcca3c8 mit M-28. Belege `belege/um-e3-fix2/sicht-anlauf-3.json`.
 
 | Prüfer | Design | Bedienbarkeit | Kreativität | Inhalt | Ansichtswert |
