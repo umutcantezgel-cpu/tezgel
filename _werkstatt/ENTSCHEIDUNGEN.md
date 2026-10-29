@@ -1295,3 +1295,4 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - Texte, Reihenfolge, Gleichwertigkeit von „Alle akzeptieren“ und „Alle ablehnen“ und das Verhalten der Einwilligung bleiben gleich (G8 mit Freigabe).
   - Die Specs Einwilligung und Tracking erkennen beide Namen des Widerruf-Knopfs.
 - **Folge 2:** Ist der Lauf fertig und die Endabnahme bestanden, bringe ich den Endstand einmal auf main (ein Vercel-Deploy). Zwischenstände gehen nicht live.
+- **Bestätigt am 29.10.2026 um 08:40 MEZ:** „Kannst du alles live schalten sobald du fertig bist“. Nach der Endabnahme kommt der Endstand ohne weitere Rückfrage einmal auf main. Vorher prüfe ich: Reinraum, Suite und axe grün, Arbeitsbranch gepusht, Zusammenführung als Fast-Forward oder Merge ohne Konflikt.
