@@ -1,0 +1,357 @@
+{
+ "satz": "inhalt-a",
+ "base": "http://127.0.0.1:4325",
+ "erstellt": "2026-10-29T22:15:10.119Z",
+ "schwellen": {
+  "flesch": {
+   "erzaehl": 60,
+   "ort": 60,
+   "wissen": 50,
+   "arbeit": null
+  },
+  "satzMittelMax": 14,
+  "satzMax": 25,
+  "absatzMax": 4,
+  "titelMax": 60,
+  "beschreibungMin": 120,
+  "beschreibungMax": 155,
+  "altMax": 125
+ },
+ "zusammenfassung": {
+  "seiten": 6,
+  "gruen": 0,
+  "rot": 6,
+  "ausgenommen": 0,
+  "befunde": {
+   "gedankenstrich": 6,
+   "floskel": 1
+  }
+ },
+ "seiten": [
+  {
+   "pfad": "/balkon-terrasse",
+   "art": "erzaehl",
+   "status": 200,
+   "ausgenommen": false,
+   "flesch": 60.5,
+   "satzMittel": 9.3,
+   "satzMax": 25,
+   "satzAnzahl": 84,
+   "absaetze": 49,
+   "absaetzeMehr": 0,
+   "titel": {
+    "zeichen": 57
+   },
+   "beschreibung": {
+    "zeichen": 145
+   },
+   "alt": {
+    "anzahl": 8,
+    "ohneAlt": 0,
+    "zuLang": 0
+   },
+   "zaehlung": {
+    "gedankenstrich": 1
+   },
+   "glossar": {
+    "gefunden": 11,
+    "erfuellt": [
+     "abdichtung",
+     "c2te-s1",
+     "stelzlager",
+     "rutschhemmung",
+     "nivelliersystem",
+     "untergrund",
+     "gefaelle",
+     "feinsteinzeug",
+     "dichtband",
+     "duennbett",
+     "ueberzaehne"
+    ],
+    "offen": []
+   },
+   "gruen": false,
+   "ergebnis": "ROT: Gedankenstrich 1",
+   "befunde": [
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in aria-label",
+     "ausschnitt": "Cookies – Einstellungen verwalten"
+    }
+   ],
+   "gesperrt": 0,
+   "gesperrtArten": []
+  },
+  {
+   "pfad": "/ueber-uns",
+   "art": "erzaehl",
+   "status": 200,
+   "ausgenommen": false,
+   "flesch": 64.9,
+   "satzMittel": 8.4,
+   "satzMax": 25,
+   "satzAnzahl": 98,
+   "absaetze": 49,
+   "absaetzeMehr": 0,
+   "titel": {
+    "zeichen": 46
+   },
+   "beschreibung": {
+    "zeichen": 153
+   },
+   "alt": {
+    "anzahl": 4,
+    "ohneAlt": 0,
+    "zuLang": 0
+   },
+   "zaehlung": {
+    "gedankenstrich": 1
+   },
+   "glossar": {
+    "gefunden": 9,
+    "erfuellt": [
+     "abdichtung",
+     "din-18534",
+     "bodengleiche-dusche",
+     "c2te-s1",
+     "rutschhemmung",
+     "nivelliersystem",
+     "untergrund",
+     "dichtband",
+     "ueberzaehne"
+    ],
+    "offen": []
+   },
+   "gruen": false,
+   "ergebnis": "ROT: Gedankenstrich 1",
+   "befunde": [
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in aria-label",
+     "ausschnitt": "Cookies – Einstellungen verwalten"
+    }
+   ],
+   "gesperrt": 0,
+   "gesperrtArten": []
+  },
+  {
+   "pfad": "/bad/badsanierung",
+   "art": "erzaehl",
+   "status": 200,
+   "ausgenommen": false,
+   "flesch": 66.1,
+   "satzMittel": 10.2,
+   "satzMax": 25,
+   "satzAnzahl": 62,
+   "absaetze": 39,
+   "absaetzeMehr": 0,
+   "titel": {
+    "zeichen": 57
+   },
+   "beschreibung": {
+    "zeichen": 136
+   },
+   "alt": {
+    "anzahl": 11,
+    "ohneAlt": 0,
+    "zuLang": 0
+   },
+   "zaehlung": {
+    "gedankenstrich": 1,
+    "floskel": 1
+   },
+   "glossar": {
+    "gefunden": 13,
+    "erfuellt": [
+     "abdichtung",
+     "din-18534",
+     "din-18040",
+     "barrierefrei",
+     "bodengleiche-dusche",
+     "c2te-s1",
+     "rutschhemmung",
+     "nivelliersystem",
+     "untergrund",
+     "gefaelle",
+     "grossformat",
+     "dichtband",
+     "ueberzaehne"
+    ],
+    "offen": []
+   },
+   "gruen": false,
+   "ergebnis": "ROT: Gedankenstrich 1, Floskel 1",
+   "befunde": [
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in aria-label",
+     "ausschnitt": "Cookies – Einstellungen verwalten"
+    },
+    {
+     "regel": "floskel",
+     "detail": "„Traumbad“ in sichtbarer Text",
+     "ausschnitt": "Bad › Badsanierung Ihr neues Traumbad zum Festpreis. Für Aßlar, We"
+    }
+   ],
+   "gesperrt": 0,
+   "gesperrtArten": []
+  },
+  {
+   "pfad": "/fliesen",
+   "art": "wissen",
+   "status": 200,
+   "ausgenommen": false,
+   "flesch": 60.9,
+   "satzMittel": 9.7,
+   "satzMax": 25,
+   "satzAnzahl": 67,
+   "absaetze": 33,
+   "absaetzeMehr": 0,
+   "titel": {
+    "zeichen": 54
+   },
+   "beschreibung": {
+    "zeichen": 154
+   },
+   "alt": {
+    "anzahl": 6,
+    "ohneAlt": 0,
+    "zuLang": 0
+   },
+   "zaehlung": {
+    "gedankenstrich": 1
+   },
+   "glossar": {
+    "gefunden": 8,
+    "erfuellt": [
+     "c2te-s1",
+     "nivelliersystem",
+     "untergrund",
+     "estrich",
+     "feinsteinzeug",
+     "grossformat",
+     "dichtband",
+     "ueberzaehne"
+    ],
+    "offen": []
+   },
+   "gruen": false,
+   "ergebnis": "ROT: Gedankenstrich 1",
+   "befunde": [
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in aria-label",
+     "ausschnitt": "Cookies – Einstellungen verwalten"
+    }
+   ],
+   "gesperrt": 0,
+   "gesperrtArten": []
+  },
+  {
+   "pfad": "/standorte/wetzlar",
+   "art": "ort",
+   "status": 200,
+   "ausgenommen": false,
+   "flesch": 66.5,
+   "satzMittel": 7,
+   "satzMax": 25,
+   "satzAnzahl": 66,
+   "absaetze": 30,
+   "absaetzeMehr": 0,
+   "titel": {
+    "zeichen": 49
+   },
+   "beschreibung": {
+    "zeichen": 131
+   },
+   "alt": {
+    "anzahl": 6,
+    "ohneAlt": 0,
+    "zuLang": 0
+   },
+   "zaehlung": {
+    "gedankenstrich": 1
+   },
+   "glossar": {
+    "gefunden": 7,
+    "erfuellt": [
+     "abdichtung",
+     "din-18534",
+     "c2te-s1",
+     "nivelliersystem",
+     "untergrund",
+     "dichtband",
+     "ueberzaehne"
+    ],
+    "offen": []
+   },
+   "gruen": false,
+   "ergebnis": "ROT: Gedankenstrich 1",
+   "befunde": [
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in aria-label",
+     "ausschnitt": "Cookies – Einstellungen verwalten"
+    }
+   ],
+   "gesperrt": 0,
+   "gesperrtArten": []
+  },
+  {
+   "pfad": "/blog",
+   "art": "wissen",
+   "status": 200,
+   "ausgenommen": false,
+   "flesch": 63.3,
+   "satzMittel": 9.4,
+   "satzMax": 25,
+   "satzAnzahl": 83,
+   "absaetze": 53,
+   "absaetzeMehr": 0,
+   "titel": {
+    "zeichen": 56
+   },
+   "beschreibung": {
+    "zeichen": 146
+   },
+   "alt": {
+    "anzahl": 3,
+    "ohneAlt": 0,
+    "zuLang": 0
+   },
+   "zaehlung": {
+    "gedankenstrich": 1
+   },
+   "glossar": {
+    "gefunden": 13,
+    "erfuellt": [
+     "abdichtung",
+     "din-18534",
+     "bodengleiche-dusche",
+     "c2te-s1",
+     "rutschhemmung",
+     "nivelliersystem",
+     "untergrund",
+     "feinsteinzeug",
+     "dichtband",
+     "duschrinne",
+     "punktablauf",
+     "vorwand",
+     "ueberzaehne"
+    ],
+    "offen": []
+   },
+   "gruen": false,
+   "ergebnis": "ROT: Gedankenstrich 1",
+   "befunde": [
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in aria-label",
+     "ausschnitt": "Cookies – Einstellungen verwalten"
+    }
+   ],
+   "gesperrt": 0,
+   "gesperrtArten": []
+  }
+ ]
+}

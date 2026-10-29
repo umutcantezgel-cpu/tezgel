@@ -1,0 +1,200 @@
+{
+  "base": "http://127.0.0.1:4325",
+  "ergebnisse": [
+    {
+      "pfad": "/",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/balkon-terrasse",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/balkon-terrasse/stelzlager",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/balkon-terrasse/terrassenplatten",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/balkon-terrasse/balkonsanierung",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/ueber-uns",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "AboutPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/bad/badsanierung",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/fliesen",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/standorte/wetzlar",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "City"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/blog",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Blog"
+      ],
+      "befunde": []
+    }
+  ],
+  "uebersprungen": []
+}

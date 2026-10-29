@@ -1,0 +1,82 @@
+=== REINRAUM 21:30:47
+exit 0
+lint 0 (20s)
+test 0 (3s)
+qa-graph 0 (0s)
+läuft: b29dc46c auf 4324
+läuft: 0a0b1ba2 auf 4325
+4324 200
+4325 200
+=== G8 21:32:13
+/ fuss gleich · zitate gleich · zahlen weg 0 neu 0
+/bad fuss gleich · zitate gleich · zahlen weg 0 neu 0
+/ueber-uns fuss gleich · zitate gleich · zahlen weg 0 neu 0
+/impressum fuss gleich · zitate gleich · zahlen weg 0 neu 0
+/datenschutz fuss gleich · zitate gleich · zahlen weg 0 neu 0
+g8 exit 0
+=== SUITE reduziert 21:32:28 last 2.65
+  ✓  423 [desktop] › tests/verlegen.spec.mjs:1236:3 › Bildlaufleiste sichtbar › (23b) Logo mittig in der Fläche der Schicht, auch mit sichtbarer Bildlaufleiste (5.5s)
+  ✓  424 [desktop] › tests/verlegen.spec.mjs:1266:3 › Reduzierte Bewegung › (12) reduzierte Bewegung: Wechsel vollständig, Überblendung über .verlegen-blende, keine Fliesen-Animation (1.9s)
+
+  26 skipped
+  398 passed (8.7m)
+=== SUITE Bewegung an 21:41:09 last 4.01
+  ✓  423 [desktop] › tests/verlegen.spec.mjs:1236:3 › Bildlaufleiste sichtbar › (23b) Logo mittig in der Fläche der Schicht, auch mit sichtbarer Bildlaufleiste (5.7s)
+  ✓  424 [desktop] › tests/verlegen.spec.mjs:1266:3 › Reduzierte Bewegung › (12) reduzierte Bewegung: Wechsel vollständig, Überblendung über .verlegen-blende, keine Fliesen-Animation (2.0s)
+
+  26 skipped
+  398 passed (11.7m)
+=== BILDRATE 21:52:51
+{'anteil_verworfen_prozent': 0.07, 'loaf_anzahl': 0, 'loaf_summe_ms': 0}
+=== BAU-FREI für CHOR-FIX 21:55:30
+=== AXE 21:55:30
+.............................................................................................................................................................................................................................................................
+axe: 396 Läufe · ernst/kritisch (Knoten) 0
+
+
+=== RUHIG/REDUZIERT 22:07:50
+ruhig / befunde 0 unsichtbar 10
+reduziert / befunde 0 unsichtbar 12
+ruhig /balkon-terrasse befunde 0 unsichtbar 8
+reduziert /balkon-terrasse befunde 0 unsichtbar 10
+ruhig /ueber-uns befunde 0 unsichtbar 8
+reduziert /ueber-uns befunde 0 unsichtbar 10
+ruhig /bad/badsanierung befunde 0 unsichtbar 8
+reduziert /bad/badsanierung befunde 0 unsichtbar 10
+ruhig /fliesen befunde 0 unsichtbar 9
+reduziert /fliesen befunde 0 unsichtbar 11
+ruhig /standorte/wetzlar befunde 0 unsichtbar 10
+reduziert /standorte/wetzlar befunde 0 unsichtbar 12
+ruhig /blog befunde 0 unsichtbar 8
+reduziert /blog befunde 0 unsichtbar 10
+=== REGISTER 22:12:54
+/ {'gefundene_kennungen': 9, 'unbekannt': 0, 'ohne_register_anzahl': 2}
+/balkon-terrasse {'gefundene_kennungen': 10, 'unbekannt': 0, 'ohne_register_anzahl': 2}
+/ueber-uns {'gefundene_kennungen': 11, 'unbekannt': 0, 'ohne_register_anzahl': 2}
+/bad/badsanierung {'gefundene_kennungen': 9, 'unbekannt': 0, 'ohne_register_anzahl': 2}
+/fliesen {'gefundene_kennungen': 10, 'unbekannt': 0, 'ohne_register_anzahl': 2}
+/standorte/wetzlar {'gefundene_kennungen': 9, 'unbekannt': 0, 'ohne_register_anzahl': 2}
+/blog {'gefundene_kennungen': 8, 'unbekannt': 0, 'ohne_register_anzahl': 2}
+=== JSONLD 22:15:00
+GRÜN /
+GRÜN /balkon-terrasse
+GRÜN /balkon-terrasse/stelzlager
+GRÜN /balkon-terrasse/terrassenplatten
+GRÜN /balkon-terrasse/balkonsanierung
+GRÜN /ueber-uns
+GRÜN /bad/badsanierung
+GRÜN /fliesen
+GRÜN /standorte/wetzlar
+GRÜN /blog
+Seiten 10 · GRÜN 10 · ROT 0 · Ziel /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/inhalt/pruef/jsonld
+=== LESBARKEIT 22:15:00
+......
+Seiten 6 · GRÜN 0 · ROT 6 · ausgenommen 0 · Ziel /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/inhalt/pruef/lesbarkeit
+=== PIXEL 22:15:10
+Paare: 48 · mit Abweichung: 26 · Fehler: 0 · Pixel gesamt: 49243829 · Laufzeit: 3.89 min
+  1. /balkon-terrasse · t768 · 2734461 Pixel · Anteil 3.477e-1 · Höhe 9669/14093
+  2. /balkon-terrasse · m390 · 1206783 Pixel · Anteil 3.055e-1 · Höhe 9496/14303
+  3. /balkon-terrasse · d1440 · 4096907 Pixel · Anteil 2.874e-1 · Höhe 9507/12225
+  4. /balkon-terrasse · d1920 · 5450168 Pixel · Anteil 2.628e-1 · Höhe 10763/13821
+  5. /ueber-uns · m390 · 1245448 Pixel · Anteil 2.522e-1 · Höhe 11951/14919
+=== ENDE 22:19:03

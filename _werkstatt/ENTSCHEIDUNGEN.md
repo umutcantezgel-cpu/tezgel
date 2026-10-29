@@ -1424,3 +1424,27 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
 - **Das eine Rot:** B-01 (21) mobil, zweiter Wechsel 3677 ms statt unter 3400 ms. Das ist eine reine Zeitgrenze; während der Suite lagen Löschen von 9 GB und die Kontingent-Schätzung auf dem Rechner (Last 9,6 auf 4 Kernen). Gegenprobe auf ruhigem Rechner: je sechsmal gegen vorher und nachher, 12 von 12 grün. In der Suite mit Bewegung war der Test ebenfalls grün. Kein Befund an VORL; B-01 bleibt unverändert (E-078). Lehre: Während einer Suite keine schweren Nebenarbeiten (Löschen, Schätzung, Bau).
 - **Pixel:** Alle 14 Abweichungen liegen auf `/fliesen`, `/standorte/wetzlar` und `/blog` und sind je zwei Kantenkreuze zwischen zwei Kalkflächen, die nach der Nacharbeit entfallen (`pixel-diff-wetzlar-d1920-k01.png`). `/` ist pixelgleich in allen Ausschnitten. Die abweichende Seitenhöhe von `/` m390 im Bericht (13607 gegen 10838) ist ein Artefakt des späten Zeichnens: Beide Stände schwanken oben zwischen 9790 und 14019 px und sind nach dem Scrollen gleich hoch (11235 px).
 - **Damit erfüllt:** Die Vorlagen tragen Eingang, Zeilenmasken, Leitfaden und Cursor-Ziele auf dem Stand von `/` (Z-05, Z-06 auf Paketstufe). Nächster Schritt: E4-W2 (CHOR-01 bis 11 als Berichte mit Gegenprüfung, UM-E4-INHALT Teil A und B).
+
+## E-094 · UM-E4-INHALT Teil A abgenommen: Vergleich, Werte und Qualitätsversprechen sind zurück (29.10.2026, 23:19 MEZ)
+- **Inhalt** (a90c680a, Nachtrag 0a0b1ba2; Baumeister Opus, zwei Prüfer Sonnet, neun Befunde, alle bestätigt und behoben; Notiz und Prüferbefunde in `belege/um-e4-inhalt-a/`):
+  - EP1 `/balkon-terrasse`: „Drei Aufbauten im Vergleich“ als Vorlagen-Teil `Vergleich.tsx`. Wortlaut aus 5a7a7b06 bzw. E0 c53faf4, nur K-011-Ersetzungen; Schnitte im Stil der Plan-Vignetten, Kriterien als Beschreibungsliste, die ab lg quer fluchtet. Die drei Unterseiten verlinken auf `#vergleich`.
+  - EP2 `/ueber-uns`: Werte-Block mit Vertrauensliste (HWK, DIN 18534). Der Wortlaut wird beim Bau aus `values` in `company.js` gelesen; Abweichungen stehen mit Grund im Code, sonst bricht der Bau ab.
+  - EP3 Qualitätsversprechen auf `/bad/badsanierung`, `/fliesen`, `/balkon-terrasse`, `/ueber-uns`, `/standorte/[stadt]` (alle 13) und `/blog`, Wortlaut aus `COMPANY_DATA.qualityPromises` mit demselben Abgleich.
+  - M-07 (Garantie-Wörter) bleibt offen: sinngleiche Formulierungen ohne Garantie-Versprechen, auch die Zusage „ohne Zusatzkosten“ entfällt einheitlich; nach einer Antwort sind `ANPASSUNG` und `WERTE_ANPASSUNG` nachzuführen.
+- **Prüfkette** (vorher b29dc46c auf 4324, nachher 0a0b1ba2 auf 4325; Belege `belege/um-e4-inhalt-a/`):
+
+| Prüfung | Ergebnis |
+|---|---|
+| Reinraum 0a0b1ba2 | grün (lint 0, test 0, qa-graph 0) |
+| G8-Abgleich (Fuß, Zitate, Zahlen) | gleich, auch auf `/ueber-uns` |
+| Suite reduziert / Bewegung an | 398 / 0 / 26 und 398 / 0 / 26 |
+| Bildrate `/` | 0,07 % verworfen, kein LoAF |
+| axe `--zustaende` | 396 Läufe, 0 ernste oder kritische Knoten |
+| ruhig und reduziert (7 Seiten) | 0 Befunde |
+| Register (7 Seiten) | 0 unbekannte Kennungen; die 2 Animationen ohne Register sind die vorbestehende Leitfaden-Marke (CHOR-FIX, Entscheidung 1) |
+| JSON-LD (10 Seiten) | 10 grün |
+| Lesbarkeit (6 Seiten) | Glossar überall erfüllt; rot nur der Gedankenstrich im Namen des Cookie-Knopfs (aus M-28, behoben in 41a751c8) und „Traumbad“ in der geschützten H1 (A-2) |
+| Pixel, Ruhezustand | 26 von 48 Paaren abweichend, alle auf den sechs Seiten mit neuen Abschnitten (gewollt); `/`, `/bad`, `/leistungen`, `/referenzen`, `/kontakt` gleich; ein Ausschnitt `/bad/barrierefreies-bad` d1920 ist ein Dekodier-Artefakt an der Oberkante eines Fotos |
+
+- **Offene Fragen an den Auftraggeber (MENSCHEN, Textvorschläge):** „Revision“ im Vergleich ohne Erklärung (Vorschlag „Später zugänglich“); Plattenstärke „2 cm“ im Vergleich gegen E-027 (Wortlaut der Quelle hat Vorrang, EP1 ist Muss); das Motto steht auf `/ueber-uns` nun dreimal; auf `/fliesen` erklärt nur die H3 „Verbundabdichtung“ und „DIN 18534“. Keine davon hält die Abnahme auf.
+- **Folge:** CHOR-FIX baut auf diesem Stand (Flächenfolge mit den neuen Abschnitten). Danach INHALT Teil B.
