@@ -186,3 +186,4 @@ Siehe `werkzeuge/EINRICHTUNG.md` (wird in E0-PRUEF-01 aktualisiert).
 - 2026-10-29 15:43 MEZ · Unverändert: Die Übertragung von Eingang, Leitlinie und Cursor-Hinweisen auf die übrigen Seitenvorlagen läuft.
 - 2026-10-29 18:13 MEZ · Nach einer weiteren Pause wegen des Nutzungslimits geht es weiter. Die Übertragung von Eingang, Leitlinie und Cursor-Hinweisen auf die übrigen Seitenvorlagen ist gebaut und geprüft; die letzten Hinweise der Prüfer werden gerade eingearbeitet.
 - 2026-10-29 19:49 MEZ · Alle Seitenvorlagen haben jetzt denselben Eingang, dieselbe Leitlinie und dieselben Cursor-Hinweise wie die Startseite; der Cursor zeigt nun auch „nicht verfügbar“ und „lädt“. Die Gesamtprüfung läuft.
+- 2026-10-29 20:01 MEZ · Die Umgebung ist während der Gesamtprüfung neu gestartet. Die Prüfung läuft ab dem Start der Testserver weiter; die schon bestandenen Teile (sauberer Neubau, unantastbare Inhalte unverändert, Cursor) werden nicht wiederholt.
