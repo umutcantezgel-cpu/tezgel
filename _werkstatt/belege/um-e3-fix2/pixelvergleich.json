@@ -1,0 +1,4667 @@
+{
+  "werkzeug": "pixelvergleich.mjs",
+  "satz": "fix2",
+  "vorher": "http://127.0.0.1:4324",
+  "nachher": "http://127.0.0.1:4325",
+  "stand_vorher": {
+    "port": "4324",
+    "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/reinraum-904eb1f1",
+    "commit": "904eb1f1"
+  },
+  "stand_nachher": {
+    "port": "4325",
+    "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/reinraum-8bcca3c8",
+    "commit": "8bcca3c8"
+  },
+  "seiten": [
+    "/",
+    "/bad",
+    "/bad/badsanierung",
+    "/bad/barrierefreies-bad",
+    "/leistungen",
+    "/fliesen",
+    "/balkon-terrasse",
+    "/referenzen",
+    "/ueber-uns",
+    "/kontakt",
+    "/standorte/wetzlar",
+    "/blog"
+  ],
+  "geraete": [
+    "m390",
+    "t768",
+    "d1440",
+    "d1920"
+  ],
+  "schwelle": 0.1,
+  "include_aa": true,
+  "worker": 2,
+  "selbsttest_stoerung": false,
+  "laufzeit_min": 4.62,
+  "max_ausschnitte": null,
+  "zusammenfassung": {
+    "paare": 48,
+    "mit_abweichung": 48,
+    "summe_abweichend": 42866292,
+    "fehler": 0,
+    "wiederholt": 0,
+    "ungeprueft_px": 0,
+    "paare_mit_ungeprueftem_rest": 0
+  },
+  "paare": [
+    {
+      "seite": "/",
+      "geraet": "m390",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 10831,
+      "hoehe_nachher": 10838,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 63153,
+          "anteil": 0.19186110098432374
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 43850,
+          "anteil": 0.13321788795722445
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 49096,
+          "anteil": 0.1491554259326771
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 45304,
+          "anteil": 0.13763519261149593
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 38745,
+          "anteil": 0.11770871308786
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 98571,
+          "anteil": 0.2994622675902297
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 47047,
+          "anteil": 0.1429304897314376
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 29583,
+          "anteil": 0.08987422530076558
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 39724,
+          "anteil": 0.12068295054077044
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 56853,
+          "anteil": 0.17272147283995626
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 71340,
+          "anteil": 0.2167335034633613
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 24739,
+          "anteil": 0.07515797788309636
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        }
+      ],
+      "ausschnitte_gesamt": 13,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 610536,
+      "anteil": 0.14267926750609944,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/start/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/start/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/start/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/start/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/start/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/start/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/start/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/start/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/start/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/start/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/start/diff-k10.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/start/diff-k11.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/start/diff-k12.png"
+      ],
+      "dauer_s": 11.7,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 10830.859375,
+      "hoehe_genau_nachher": 10837.953125
+    },
+    {
+      "seite": "/",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 10575,
+      "hoehe_nachher": 10247,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 3056,
+          "anteil": 0.0038859049479166665
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 29851,
+          "anteil": 0.03795750935872396
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 99174,
+          "anteil": 0.12610626220703125
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 374975,
+          "anteil": 0.4768053690592448
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 138613,
+          "anteil": 0.17625554402669272
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 63686,
+          "anteil": 0.08098093668619792
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 82145,
+          "anteil": 0.10445276896158855
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 332112,
+          "anteil": 0.42230224609375
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 66435,
+          "anteil": 0.08447647094726562
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 62307,
+          "anteil": 0.07922744750976562
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 5733,
+          "anteil": 0.007289886474609375
+        }
+      ],
+      "ausschnitte_gesamt": 11,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 1258087,
+      "anteil": 0.14543094057025333,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/start/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/start/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/start/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/start/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/start/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/start/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/start/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/start/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/start/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/start/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/start/diff-k10.png"
+      ],
+      "dauer_s": 10.6,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 10574.5625,
+      "hoehe_genau_nachher": 10246.75
+    },
+    {
+      "seite": "/",
+      "geraet": "d1440",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 9969,
+      "hoehe_nachher": 9877,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 251673,
+          "anteil": 0.19419212962962962
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 230980,
+          "anteil": 0.1782253086419753
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 122641,
+          "anteil": 0.0946304012345679
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 85071,
+          "anteil": 0.0656412037037037
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 85233,
+          "anteil": 0.0657662037037037
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 71636,
+          "anteil": 0.055274691358024694
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 64409,
+          "anteil": 0.0496983024691358
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 60679,
+          "anteil": 0.04682021604938272
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 99184,
+          "anteil": 0.07653086419753087
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 148699,
+          "anteil": 0.11473688271604938
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 102646,
+          "anteil": 0.07920216049382717
+        }
+      ],
+      "ausschnitte_gesamt": 12,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 1322851,
+      "anteil": 0.0927925785634119,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/start/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/start/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/start/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/start/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/start/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/start/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/start/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/start/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/start/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/start/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/start/diff-k10.png"
+      ],
+      "dauer_s": 12.9,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 9968.59375,
+      "hoehe_genau_nachher": 9876.5
+    },
+    {
+      "seite": "/",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 11281,
+      "hoehe_nachher": 11177,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 362517,
+          "anteil": 0.17482494212962962
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 321547,
+          "anteil": 0.15506703317901235
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 165795,
+          "anteil": 0.07995515046296296
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 109465,
+          "anteil": 0.052789834104938274
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 136067,
+          "anteil": 0.06561873070987655
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 97985,
+          "anteil": 0.04725356867283951
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 78155,
+          "anteil": 0.0376904899691358
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 111131,
+          "anteil": 0.05359326774691358
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 311844,
+          "anteil": 0.1503877314814815
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 141644,
+          "anteil": 0.0683082561728395
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 66558,
+          "anteil": 0.03209780092592593
+        }
+      ],
+      "ausschnitte_gesamt": 11,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 1902708,
+      "anteil": 0.08341698232323232,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/start/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/start/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/start/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/start/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/start/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/start/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/start/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/start/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/start/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/start/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/start/diff-k10.png"
+      ],
+      "dauer_s": 15.2,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 11281.15625,
+      "hoehe_genau_nachher": 11176.5
+    },
+    {
+      "seite": "/bad",
+      "geraet": "m390",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 14289,
+      "hoehe_nachher": 14369,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 2995,
+          "anteil": 0.009098918459108032
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 15215,
+          "anteil": 0.04622372098675416
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 21693,
+          "anteil": 0.06590411957710536
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 14,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 15,
+          "pixel_abweichend": 3264,
+          "anteil": 0.00991615020051039
+        },
+        {
+          "k": 16,
+          "pixel_abweichend": 32135,
+          "anteil": 0.09762729371734111
+        }
+      ],
+      "ausschnitte_gesamt": 18,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 105806,
+      "anteil": 0.01890837997612461,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad/diff-k10.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad/diff-k11.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad/diff-k12.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad/diff-k13.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad/diff-k14.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad/diff-k15.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad/diff-k16.png"
+      ],
+      "dauer_s": 15,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 14288.71875,
+      "hoehe_genau_nachher": 14368.515625
+    },
+    {
+      "seite": "/bad",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 13142,
+      "hoehe_nachher": 13166,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 2942,
+          "anteil": 0.0037409464518229165
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 51655,
+          "anteil": 0.06568272908528645
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 13051,
+          "anteil": 0.016595204671223957
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 68059,
+          "anteil": 0.08654149373372395
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 5733,
+          "anteil": 0.007289886474609375
+        }
+      ],
+      "ausschnitte_gesamt": 13,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 162256,
+      "anteil": 0.015870705629006412,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad/diff-k10.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad/diff-k11.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad/diff-k12.png"
+      ],
+      "dauer_s": 9.2,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 13142.21875,
+      "hoehe_genau_nachher": 13166.3125
+    },
+    {
+      "seite": "/bad",
+      "geraet": "d1440",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 13666,
+      "hoehe_nachher": 13578,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 185821,
+          "anteil": 0.1433804012345679
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 225428,
+          "anteil": 0.17394135802469135
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 67675,
+          "anteil": 0.05221836419753086
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 109184,
+          "anteil": 0.08424691358024691
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 71391,
+          "anteil": 0.05508564814814815
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 50776,
+          "anteil": 0.03917901234567901
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 94685,
+          "anteil": 0.07305941358024691
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 403099,
+          "anteil": 0.3110331790123457
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 113666,
+          "anteil": 0.08770524691358025
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 67897,
+          "anteil": 0.05238966049382716
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 71457,
+          "anteil": 0.055136574074074074
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 60062,
+          "anteil": 0.046344135802469134
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 120791,
+          "anteil": 0.09320293209876543
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 219373,
+          "anteil": 0.1692692901234568
+        },
+        {
+          "k": 14,
+          "pixel_abweichend": 110955,
+          "anteil": 0.08561342592592593
+        },
+        {
+          "k": 15,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 16,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 1972260,
+      "anteil": 0.09511284722222223,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad/diff-k10.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad/diff-k11.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad/diff-k12.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad/diff-k13.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad/diff-k14.png"
+      ],
+      "dauer_s": 13.4,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 13666.484375,
+      "hoehe_genau_nachher": 13578.484375
+    },
+    {
+      "seite": "/bad",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 15436,
+      "hoehe_nachher": 15337,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 275502,
+          "anteil": 0.1328616898148148
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 304161,
+          "anteil": 0.14668258101851853
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 100300,
+          "anteil": 0.04836998456790124
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 128632,
+          "anteil": 0.06203317901234568
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 85848,
+          "anteil": 0.041400462962962965
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 118465,
+          "anteil": 0.05713011188271605
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 393818,
+          "anteil": 0.18991994598765433
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 295645,
+          "anteil": 0.1425757137345679
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 118110,
+          "anteil": 0.056958912037037034
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 88213,
+          "anteil": 0.04254099151234568
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 70164,
+          "anteil": 0.03383680555555556
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 150856,
+          "anteil": 0.07275077160493827
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 315451,
+          "anteil": 0.15212721836419754
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 141390,
+          "anteil": 0.06818576388888889
+        },
+        {
+          "k": 14,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 15,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 2586555,
+      "anteil": 0.08315827546296296,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad/diff-k10.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad/diff-k11.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad/diff-k12.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad/diff-k13.png"
+      ],
+      "dauer_s": 18.6,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 15435.921875,
+      "hoehe_genau_nachher": 15336.921875
+    },
+    {
+      "seite": "/bad/badsanierung",
+      "geraet": "m390",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 11378,
+      "hoehe_nachher": 11485,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 2995,
+          "anteil": 0.009098918459108032
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 43432,
+          "anteil": 0.13194798882002673
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 38858,
+          "anteil": 0.11805201117997327
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 94997,
+          "anteil": 0.28860432616356785
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 68428,
+          "anteil": 0.20788674200996476
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 42477,
+          "anteil": 0.1290466642362377
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 43205,
+          "anteil": 0.13125835459958682
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 47484,
+          "anteil": 0.14425811155668974
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 38054,
+          "anteil": 0.11560943006440637
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 26359,
+          "anteil": 0.08007959654879086
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        }
+      ],
+      "ausschnitte_gesamt": 14,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 456457,
+      "anteil": 0.09905234970400847,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad__badsanierung/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad__badsanierung/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad__badsanierung/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad__badsanierung/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad__badsanierung/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad__badsanierung/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad__badsanierung/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad__badsanierung/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad__badsanierung/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad__badsanierung/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad__badsanierung/diff-k10.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad__badsanierung/diff-k11.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad__badsanierung/diff-k12.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad__badsanierung/diff-k13.png"
+      ],
+      "dauer_s": 12.6,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 11377.75,
+      "hoehe_genau_nachher": 11484.890625
+    },
+    {
+      "seite": "/bad/badsanierung",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 10800,
+      "hoehe_nachher": 10824,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 2942,
+          "anteil": 0.0037409464518229165
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 69499,
+          "anteil": 0.08837254842122395
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 36753,
+          "anteil": 0.046733856201171875
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 61667,
+          "anteil": 0.0784136454264323
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 5733,
+          "anteil": 0.007289886474609375
+        }
+      ],
+      "ausschnitte_gesamt": 11,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 192206,
+      "anteil": 0.022218415231415718,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad__badsanierung/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad__badsanierung/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad__badsanierung/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad__badsanierung/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad__badsanierung/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad__badsanierung/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad__badsanierung/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad__badsanierung/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad__badsanierung/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad__badsanierung/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad__badsanierung/diff-k10.png"
+      ],
+      "dauer_s": 8.4,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 10799.796875,
+      "hoehe_genau_nachher": 10823.890625
+    },
+    {
+      "seite": "/bad/badsanierung",
+      "geraet": "d1440",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 10988,
+      "hoehe_nachher": 10900,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 115111,
+          "anteil": 0.08882021604938271
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 208265,
+          "anteil": 0.1606983024691358
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 92114,
+          "anteil": 0.07107561728395062
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 95699,
+          "anteil": 0.07384182098765432
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 98074,
+          "anteil": 0.07567438271604938
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 283756,
+          "anteil": 0.21894753086419752
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 437663,
+          "anteil": 0.33770293209876545
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 221727,
+          "anteil": 0.17108564814814814
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 89995,
+          "anteil": 0.06944058641975309
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 90754,
+          "anteil": 0.07002623456790123
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 216243,
+          "anteil": 0.16685416666666666
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 107858,
+          "anteil": 0.08322376543209876
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 13,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 2057259,
+      "anteil": 0.12210701566951566,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad__badsanierung/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad__badsanierung/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad__badsanierung/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad__badsanierung/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad__badsanierung/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad__badsanierung/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad__badsanierung/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad__badsanierung/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad__badsanierung/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad__badsanierung/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad__badsanierung/diff-k10.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad__badsanierung/diff-k11.png"
+      ],
+      "dauer_s": 13.8,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 10988.09375,
+      "hoehe_genau_nachher": 10899.703125
+    },
+    {
+      "seite": "/bad/badsanierung",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 12429,
+      "hoehe_nachher": 12330,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 161925,
+          "anteil": 0.07808883101851852
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 289814,
+          "anteil": 0.1397636959876543
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 132273,
+          "anteil": 0.0637890625
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 119270,
+          "anteil": 0.05751832561728395
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 127766,
+          "anteil": 0.06161554783950617
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 608020,
+          "anteil": 0.29321952160493825
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 533938,
+          "anteil": 0.2574932484567901
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 124888,
+          "anteil": 0.06022762345679012
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 109425,
+          "anteil": 0.05277054398148148
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 340011,
+          "anteil": 0.16397135416666667
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 146820,
+          "anteil": 0.07080439814814815
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 12,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 2694150,
+      "anteil": 0.10827184606481481,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad__badsanierung/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad__badsanierung/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad__badsanierung/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad__badsanierung/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad__badsanierung/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad__badsanierung/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad__badsanierung/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad__badsanierung/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad__badsanierung/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad__badsanierung/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad__badsanierung/diff-k10.png"
+      ],
+      "dauer_s": 16.8,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 12428.8125,
+      "hoehe_genau_nachher": 12329.8125
+    },
+    {
+      "seite": "/bad/barrierefreies-bad",
+      "geraet": "m390",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 10692,
+      "hoehe_nachher": 10772,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 2995,
+          "anteil": 0.009098918459108032
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 32886,
+          "anteil": 0.09990885891359826
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 8358,
+          "anteil": 0.025391906671527523
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        }
+      ],
+      "ausschnitte_gesamt": 13,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 69681,
+      "anteil": 0.016284107798872655,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad__barrierefreies-bad/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad__barrierefreies-bad/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad__barrierefreies-bad/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad__barrierefreies-bad/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad__barrierefreies-bad/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad__barrierefreies-bad/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad__barrierefreies-bad/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad__barrierefreies-bad/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad__barrierefreies-bad/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad__barrierefreies-bad/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad__barrierefreies-bad/diff-k10.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad__barrierefreies-bad/diff-k11.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/bad__barrierefreies-bad/diff-k12.png"
+      ],
+      "dauer_s": 11.2,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 10692.03125,
+      "hoehe_genau_nachher": 10771.828125
+    },
+    {
+      "seite": "/bad/barrierefreies-bad",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 10262,
+      "hoehe_nachher": 10286,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 2942,
+          "anteil": 0.0037409464518229165
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 46333,
+          "anteil": 0.05891545613606771
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 4136,
+          "anteil": 0.005259195963541667
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 67979,
+          "anteil": 0.0864397684733073
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 65781,
+          "anteil": 0.08364486694335938
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 5733,
+          "anteil": 0.007289886474609375
+        }
+      ],
+      "ausschnitte_gesamt": 11,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 205914,
+      "anteil": 0.023803017356178978,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad__barrierefreies-bad/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad__barrierefreies-bad/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad__barrierefreies-bad/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad__barrierefreies-bad/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad__barrierefreies-bad/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad__barrierefreies-bad/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad__barrierefreies-bad/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad__barrierefreies-bad/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad__barrierefreies-bad/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad__barrierefreies-bad/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/bad__barrierefreies-bad/diff-k10.png"
+      ],
+      "dauer_s": 8.8,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 10262.125,
+      "hoehe_genau_nachher": 10286.21875
+    },
+    {
+      "seite": "/bad/barrierefreies-bad",
+      "geraet": "d1440",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 10748,
+      "hoehe_nachher": 10659,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 90571,
+          "anteil": 0.06988503086419753
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 158921,
+          "anteil": 0.12262422839506174
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 91038,
+          "anteil": 0.07024537037037037
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 74870,
+          "anteil": 0.057770061728395064
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 89816,
+          "anteil": 0.06930246913580247
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 331119,
+          "anteil": 0.25549305555555557
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 252417,
+          "anteil": 0.1947662037037037
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 200537,
+          "anteil": 0.15473533950617285
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 99400,
+          "anteil": 0.07669753086419753
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 207679,
+          "anteil": 0.16024614197530865
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 102330,
+          "anteil": 0.07895833333333334
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 12,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 1698698,
+      "anteil": 0.1092269804526749,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad__barrierefreies-bad/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad__barrierefreies-bad/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad__barrierefreies-bad/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad__barrierefreies-bad/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad__barrierefreies-bad/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad__barrierefreies-bad/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad__barrierefreies-bad/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad__barrierefreies-bad/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad__barrierefreies-bad/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad__barrierefreies-bad/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/bad__barrierefreies-bad/diff-k10.png"
+      ],
+      "dauer_s": 11.1,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 10747.84375,
+      "hoehe_genau_nachher": 10659.0625
+    },
+    {
+      "seite": "/bad/barrierefreies-bad",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 12158,
+      "hoehe_nachher": 12059,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 124178,
+          "anteil": 0.0598852237654321
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 216384,
+          "anteil": 0.10435185185185185
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 125658,
+          "anteil": 0.060598958333333335
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 95709,
+          "anteil": 0.04615596064814815
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 193403,
+          "anteil": 0.0932691936728395
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 518533,
+          "anteil": 0.25006413966049384
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 255642,
+          "anteil": 0.12328414351851852
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 145791,
+          "anteil": 0.07030815972222222
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 125133,
+          "anteil": 0.060345775462962964
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 315392,
+          "anteil": 0.15209876543209877
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 144507,
+          "anteil": 0.06968894675925925
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 12,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 2260330,
+      "anteil": 0.0908375932355967,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad__barrierefreies-bad/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad__barrierefreies-bad/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad__barrierefreies-bad/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad__barrierefreies-bad/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad__barrierefreies-bad/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad__barrierefreies-bad/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad__barrierefreies-bad/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad__barrierefreies-bad/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad__barrierefreies-bad/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad__barrierefreies-bad/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/bad__barrierefreies-bad/diff-k10.png"
+      ],
+      "dauer_s": 15,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 12157.84375,
+      "hoehe_genau_nachher": 12058.84375
+    },
+    {
+      "seite": "/leistungen",
+      "geraet": "m390",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 12381,
+      "hoehe_nachher": 12460,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 2995,
+          "anteil": 0.009098918459108032
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 2567,
+          "anteil": 0.007798638959776401
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 8273,
+          "anteil": 0.025133673593389232
+        },
+        {
+          "k": 14,
+          "pixel_abweichend": 19295,
+          "anteil": 0.05861890873739215
+        }
+      ],
+      "ausschnitte_gesamt": 15,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 61059,
+      "anteil": 0.012366630210232106,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/leistungen/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/leistungen/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/leistungen/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/leistungen/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/leistungen/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/leistungen/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/leistungen/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/leistungen/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/leistungen/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/leistungen/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/leistungen/diff-k10.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/leistungen/diff-k11.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/leistungen/diff-k12.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/leistungen/diff-k13.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/leistungen/diff-k14.png"
+      ],
+      "dauer_s": 10.6,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 12380.5,
+      "hoehe_genau_nachher": 12460.296875
+    },
+    {
+      "seite": "/leistungen",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 12446,
+      "hoehe_nachher": 12470,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 2942,
+          "anteil": 0.0037409464518229165
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 65428,
+          "anteil": 0.08319600423177083
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 63042,
+          "anteil": 0.08016204833984375
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 5733,
+          "anteil": 0.007289886474609375
+        }
+      ],
+      "ausschnitte_gesamt": 13,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 160563,
+      "anteil": 0.015705108642578125,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/leistungen/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/leistungen/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/leistungen/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/leistungen/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/leistungen/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/leistungen/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/leistungen/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/leistungen/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/leistungen/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/leistungen/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/leistungen/diff-k10.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/leistungen/diff-k11.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/leistungen/diff-k12.png"
+      ],
+      "dauer_s": 8.6,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 12445.703125,
+      "hoehe_genau_nachher": 12469.796875
+    },
+    {
+      "seite": "/leistungen",
+      "geraet": "d1440",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 11340,
+      "hoehe_nachher": 11252,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 92397,
+          "anteil": 0.07129398148148149
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 167431,
+          "anteil": 0.1291905864197531
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 92085,
+          "anteil": 0.07105324074074074
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 102933,
+          "anteil": 0.07942361111111111
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 85930,
+          "anteil": 0.06630401234567901
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 80803,
+          "anteil": 0.0623479938271605
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 278205,
+          "anteil": 0.21466435185185184
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 225751,
+          "anteil": 0.17419058641975307
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 80323,
+          "anteil": 0.06197762345679012
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 78667,
+          "anteil": 0.06069984567901235
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 200356,
+          "anteil": 0.15459567901234567
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 114850,
+          "anteil": 0.08861882716049382
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 13,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 1599731,
+      "anteil": 0.09495079534662867,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/leistungen/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/leistungen/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/leistungen/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/leistungen/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/leistungen/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/leistungen/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/leistungen/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/leistungen/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/leistungen/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/leistungen/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/leistungen/diff-k10.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/leistungen/diff-k11.png"
+      ],
+      "dauer_s": 13.2,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 11339.921875,
+      "hoehe_genau_nachher": 11251.921875
+    },
+    {
+      "seite": "/leistungen",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 12825,
+      "hoehe_nachher": 12726,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 127137,
+          "anteil": 0.061312210648148145
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 225041,
+          "anteil": 0.10852671682098765
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 119473,
+          "anteil": 0.05761622299382716
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 151964,
+          "anteil": 0.07328510802469136
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 69465,
+          "anteil": 0.03349971064814815
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 145729,
+          "anteil": 0.0702782600308642
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 531624,
+          "anteil": 0.2563773148148148
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 120718,
+          "anteil": 0.05821662808641975
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 102566,
+          "anteil": 0.049462770061728396
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 198639,
+          "anteil": 0.09579427083333333
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 141012,
+          "anteil": 0.06800347222222222
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 12,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 1933368,
+      "anteil": 0.0776977237654321,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/leistungen/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/leistungen/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/leistungen/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/leistungen/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/leistungen/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/leistungen/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/leistungen/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/leistungen/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/leistungen/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/leistungen/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/leistungen/diff-k10.png"
+      ],
+      "dauer_s": 15.1,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 12825.3125,
+      "hoehe_genau_nachher": 12726.3125
+    },
+    {
+      "seite": "/fliesen",
+      "geraet": "m390",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 11713,
+      "hoehe_nachher": 11793,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 9445,
+          "anteil": 0.02869425203548426
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 27198,
+          "anteil": 0.08262850893182647
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 3467,
+          "anteil": 0.010532871551828898
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        }
+      ],
+      "ausschnitte_gesamt": 14,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 68171,
+      "anteil": 0.014793283335937364,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/fliesen/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/fliesen/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/fliesen/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/fliesen/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/fliesen/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/fliesen/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/fliesen/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/fliesen/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/fliesen/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/fliesen/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/fliesen/diff-k10.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/fliesen/diff-k11.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/fliesen/diff-k12.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/fliesen/diff-k13.png"
+      ],
+      "dauer_s": 10.4,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 11713.203125,
+      "hoehe_genau_nachher": 11793
+    },
+    {
+      "seite": "/fliesen",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 11547,
+      "hoehe_nachher": 11571,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 48341,
+          "anteil": 0.06146876017252604
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 58400,
+          "anteil": 0.07425944010416667
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 62809,
+          "anteil": 0.0798657735188802
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 5733,
+          "anteil": 0.007289886474609375
+        }
+      ],
+      "ausschnitte_gesamt": 12,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 196099,
+      "anteil": 0.020779397752549913,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/fliesen/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/fliesen/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/fliesen/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/fliesen/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/fliesen/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/fliesen/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/fliesen/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/fliesen/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/fliesen/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/fliesen/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/fliesen/diff-k10.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/fliesen/diff-k11.png"
+      ],
+      "dauer_s": 7.6,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 11547.125,
+      "hoehe_genau_nachher": 11571.21875
+    },
+    {
+      "seite": "/fliesen",
+      "geraet": "d1440",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 12270,
+      "hoehe_nachher": 12270,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 3439,
+          "anteil": 0.0026535493827160492
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 14,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 3439,
+      "anteil": 0.00018953924162257496,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/fliesen/diff-k12.png"
+      ],
+      "dauer_s": 10.5,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 12269.59375,
+      "hoehe_genau_nachher": 12269.59375
+    },
+    {
+      "seite": "/fliesen",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 13873,
+      "hoehe_nachher": 13873,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 4224,
+          "anteil": 0.002037037037037037
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 13,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 4224,
+      "anteil": 0.0001566951566951567,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/fliesen/diff-k11.png"
+      ],
+      "dauer_s": 11.4,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 13872.671875,
+      "hoehe_genau_nachher": 13872.671875
+    },
+    {
+      "seite": "/balkon-terrasse",
+      "geraet": "m390",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 9417,
+      "hoehe_nachher": 9496,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 2995,
+          "anteil": 0.009098918459108032
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 5405,
+          "anteil": 0.016420585733381943
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 30408,
+          "anteil": 0.09238060517681371
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 26426,
+          "anteil": 0.08028314497508811
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 19295,
+          "anteil": 0.05861890873739215
+        }
+      ],
+      "ausschnitte_gesamt": 12,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 102334,
+      "anteil": 0.025907866488435207,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/balkon-terrasse/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/balkon-terrasse/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/balkon-terrasse/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/balkon-terrasse/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/balkon-terrasse/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/balkon-terrasse/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/balkon-terrasse/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/balkon-terrasse/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/balkon-terrasse/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/balkon-terrasse/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/balkon-terrasse/diff-k10.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/balkon-terrasse/diff-k11.png"
+      ],
+      "dauer_s": 8,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 9416.578125,
+      "hoehe_genau_nachher": 9496.375
+    },
+    {
+      "seite": "/balkon-terrasse",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 9645,
+      "hoehe_nachher": 9669,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 2942,
+          "anteil": 0.0037409464518229165
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 21746,
+          "anteil": 0.027651468912760418
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 19530,
+          "anteil": 0.02483367919921875
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 47092,
+          "anteil": 0.059880574544270836
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 54416,
+          "anteil": 0.06919352213541667
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 5733,
+          "anteil": 0.007289886474609375
+        }
+      ],
+      "ausschnitte_gesamt": 10,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 161867,
+      "anteil": 0.02058245340983073,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/balkon-terrasse/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/balkon-terrasse/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/balkon-terrasse/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/balkon-terrasse/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/balkon-terrasse/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/balkon-terrasse/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/balkon-terrasse/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/balkon-terrasse/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/balkon-terrasse/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/balkon-terrasse/diff-k09.png"
+      ],
+      "dauer_s": 6.9,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 9645.34375,
+      "hoehe_genau_nachher": 9669.4375
+    },
+    {
+      "seite": "/balkon-terrasse",
+      "geraet": "d1440",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 9595,
+      "hoehe_nachher": 9507,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 208455,
+          "anteil": 0.1608449074074074
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 224676,
+          "anteil": 0.1733611111111111
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 81684,
+          "anteil": 0.06302777777777778
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 87199,
+          "anteil": 0.06728317901234568
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 86741,
+          "anteil": 0.06692978395061729
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 248510,
+          "anteil": 0.19175154320987653
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 338162,
+          "anteil": 0.26092746913580245
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 95437,
+          "anteil": 0.07363966049382716
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 203003,
+          "anteil": 0.1566381172839506
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 112483,
+          "anteil": 0.08679243827160493
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 11,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 1686350,
+      "anteil": 0.11829054433221099,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/balkon-terrasse/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/balkon-terrasse/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/balkon-terrasse/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/balkon-terrasse/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/balkon-terrasse/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/balkon-terrasse/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/balkon-terrasse/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/balkon-terrasse/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/balkon-terrasse/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/balkon-terrasse/diff-k09.png"
+      ],
+      "dauer_s": 9.5,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 9594.546875,
+      "hoehe_genau_nachher": 9506.546875
+    },
+    {
+      "seite": "/balkon-terrasse",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 10862,
+      "hoehe_nachher": 10763,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 307146,
+          "anteil": 0.14812210648148147
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 302053,
+          "anteil": 0.1456659915123457
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 119402,
+          "anteil": 0.057581983024691356
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 112726,
+          "anteil": 0.05436246141975309
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 133256,
+          "anteil": 0.06426311728395062
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 543060,
+          "anteil": 0.26189236111111114
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 134432,
+          "anteil": 0.06483024691358025
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 133849,
+          "anteil": 0.06454909336419754
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 303305,
+          "anteil": 0.1462697723765432
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 146805,
+          "anteil": 0.07079716435185185
+        }
+      ],
+      "ausschnitte_gesamt": 11,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 2236034,
+      "anteil": 0.10783342978395062,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/balkon-terrasse/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/balkon-terrasse/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/balkon-terrasse/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/balkon-terrasse/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/balkon-terrasse/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/balkon-terrasse/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/balkon-terrasse/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/balkon-terrasse/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/balkon-terrasse/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/balkon-terrasse/diff-k09.png"
+      ],
+      "dauer_s": 14.1,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 10861.828125,
+      "hoehe_genau_nachher": 10762.828125
+    },
+    {
+      "seite": "/referenzen",
+      "geraet": "m390",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 21044,
+      "hoehe_nachher": 21151,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 3055,
+          "anteil": 0.009281200631911532
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 43167,
+          "anteil": 0.13114290922347793
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 72198,
+          "anteil": 0.21934013853445133
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 92507,
+          "anteil": 0.2810396159922226
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 98376,
+          "anteil": 0.2988698505286183
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 106581,
+          "anteil": 0.3237969376594969
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 68334,
+          "anteil": 0.20760116660590594
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 73001,
+          "anteil": 0.22177968161380485
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 105706,
+          "anteil": 0.3211386559727792
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 113164,
+          "anteil": 0.34379633005225424
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 112339,
+          "anteil": 0.3412899501762061
+        },
+        {
+          "k": 14,
+          "pixel_abweichend": 70913,
+          "anteil": 0.21543626200024305
+        },
+        {
+          "k": 15,
+          "pixel_abweichend": 107521,
+          "anteil": 0.32665269170008504
+        },
+        {
+          "k": 16,
+          "pixel_abweichend": 94046,
+          "anteil": 0.2857151537246324
+        },
+        {
+          "k": 17,
+          "pixel_abweichend": 126517,
+          "anteil": 0.3843632276096731
+        },
+        {
+          "k": 18,
+          "pixel_abweichend": 111264,
+          "anteil": 0.33802406124681006
+        },
+        {
+          "k": 19,
+          "pixel_abweichend": 56893,
+          "anteil": 0.17284299428849192
+        },
+        {
+          "k": 20,
+          "pixel_abweichend": 32664,
+          "anteil": 0.0992344148742253
+        },
+        {
+          "k": 21,
+          "pixel_abweichend": 58384,
+          "anteil": 0.1773727062826589
+        },
+        {
+          "k": 22,
+          "pixel_abweichend": 59532,
+          "anteil": 0.18086037185563253
+        },
+        {
+          "k": 23,
+          "pixel_abweichend": 25521,
+          "anteil": 0.07753372220196865
+        },
+        {
+          "k": 24,
+          "pixel_abweichend": 33579,
+          "anteil": 0.10201421800947867
+        }
+      ],
+      "ausschnitte_gesamt": 26,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 1672899,
+      "anteil": 0.20329310973386802,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/referenzen/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/referenzen/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/referenzen/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/referenzen/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/referenzen/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/referenzen/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/referenzen/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/referenzen/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/referenzen/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/referenzen/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/referenzen/diff-k10.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/referenzen/diff-k11.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/referenzen/diff-k12.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/referenzen/diff-k13.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/referenzen/diff-k14.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/referenzen/diff-k15.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/referenzen/diff-k16.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/referenzen/diff-k17.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/referenzen/diff-k18.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/referenzen/diff-k19.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/referenzen/diff-k20.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/referenzen/diff-k21.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/referenzen/diff-k22.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/referenzen/diff-k23.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/referenzen/diff-k24.png"
+      ],
+      "dauer_s": 19.5,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 21043.875,
+      "hoehe_genau_nachher": 21151.015625
+    },
+    {
+      "seite": "/referenzen",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 15467,
+      "hoehe_nachher": 15491,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 2942,
+          "anteil": 0.0037409464518229165
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 2746,
+          "anteil": 0.0034917195638020835
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 37115,
+          "anteil": 0.04719416300455729
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 64259,
+          "anteil": 0.0817095438639323
+        },
+        {
+          "k": 14,
+          "pixel_abweichend": 64692,
+          "anteil": 0.0822601318359375
+        },
+        {
+          "k": 15,
+          "pixel_abweichend": 5733,
+          "anteil": 0.007289886474609375
+        }
+      ],
+      "ausschnitte_gesamt": 16,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 203507,
+      "anteil": 0.016173283259073894,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/referenzen/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/referenzen/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/referenzen/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/referenzen/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/referenzen/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/referenzen/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/referenzen/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/referenzen/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/referenzen/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/referenzen/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/referenzen/diff-k10.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/referenzen/diff-k11.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/referenzen/diff-k12.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/referenzen/diff-k13.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/referenzen/diff-k14.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/referenzen/diff-k15.png"
+      ],
+      "dauer_s": 16.1,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 15467.234375,
+      "hoehe_genau_nachher": 15491.328125
+    },
+    {
+      "seite": "/referenzen",
+      "geraet": "d1440",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 14133,
+      "hoehe_nachher": 14045,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 140950,
+          "anteil": 0.10875771604938271
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 232291,
+          "anteil": 0.17923688271604937
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 81862,
+          "anteil": 0.06316512345679012
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 82758,
+          "anteil": 0.06385648148148149
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 96330,
+          "anteil": 0.0743287037037037
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 569570,
+          "anteil": 0.439483024691358
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 518857,
+          "anteil": 0.4003526234567901
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 508525,
+          "anteil": 0.3923804012345679
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 398548,
+          "anteil": 0.30752160493827163
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 506133,
+          "anteil": 0.39053472222222224
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 182835,
+          "anteil": 0.14107638888888888
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 123234,
+          "anteil": 0.09508796296296296
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 89490,
+          "anteil": 0.06905092592592593
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 211817,
+          "anteil": 0.16343904320987654
+        },
+        {
+          "k": 14,
+          "pixel_abweichend": 111319,
+          "anteil": 0.08589429012345678
+        },
+        {
+          "k": 15,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 16,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 3854519,
+      "anteil": 0.18588536844135803,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/referenzen/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/referenzen/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/referenzen/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/referenzen/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/referenzen/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/referenzen/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/referenzen/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/referenzen/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/referenzen/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/referenzen/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/referenzen/diff-k10.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/referenzen/diff-k11.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/referenzen/diff-k12.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/referenzen/diff-k13.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/referenzen/diff-k14.png"
+      ],
+      "dauer_s": 16.7,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 14132.546875,
+      "hoehe_genau_nachher": 14044.546875
+    },
+    {
+      "seite": "/referenzen",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 16023,
+      "hoehe_nachher": 15924,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 201946,
+          "anteil": 0.09738908179012346
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 313551,
+          "anteil": 0.1512109375
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 115703,
+          "anteil": 0.05579812885802469
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 112146,
+          "anteil": 0.05408275462962963
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 272795,
+          "anteil": 0.13155623070987654
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 778468,
+          "anteil": 0.37541859567901237
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 594110,
+          "anteil": 0.28651138117283953
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 616947,
+          "anteil": 0.2975245949074074
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 706040,
+          "anteil": 0.3404899691358025
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 322855,
+          "anteil": 0.1556978202160494
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 192889,
+          "anteil": 0.09302131558641975
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 117684,
+          "anteil": 0.05675347222222222
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 317194,
+          "anteil": 0.15296778549382717
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 137685,
+          "anteil": 0.0663990162037037
+        },
+        {
+          "k": 14,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 15,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 4800013,
+      "anteil": 0.1543214056069959,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/referenzen/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/referenzen/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/referenzen/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/referenzen/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/referenzen/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/referenzen/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/referenzen/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/referenzen/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/referenzen/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/referenzen/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/referenzen/diff-k10.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/referenzen/diff-k11.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/referenzen/diff-k12.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/referenzen/diff-k13.png"
+      ],
+      "dauer_s": 22.9,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 16023.34375,
+      "hoehe_genau_nachher": 15924.34375
+    },
+    {
+      "seite": "/ueber-uns",
+      "geraet": "m390",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 11871,
+      "hoehe_nachher": 11951,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 3055,
+          "anteil": 0.009281200631911532
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 25928,
+          "anteil": 0.07877020294081906
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 13623,
+          "anteil": 0.041387167335034634
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 31089,
+          "anteil": 0.09444950783813343
+        },
+        {
+          "k": 14,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        }
+      ],
+      "ausschnitte_gesamt": 15,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 101668,
+      "anteil": 0.020591404382873577,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/ueber-uns/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/ueber-uns/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/ueber-uns/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/ueber-uns/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/ueber-uns/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/ueber-uns/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/ueber-uns/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/ueber-uns/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/ueber-uns/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/ueber-uns/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/ueber-uns/diff-k10.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/ueber-uns/diff-k11.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/ueber-uns/diff-k12.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/ueber-uns/diff-k13.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/ueber-uns/diff-k14.png"
+      ],
+      "dauer_s": 14.1,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 11871,
+      "hoehe_genau_nachher": 11950.796875
+    },
+    {
+      "seite": "/ueber-uns",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 11695,
+      "hoehe_nachher": 11720,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 2942,
+          "anteil": 0.0037409464518229165
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 51099,
+          "anteil": 0.06497573852539062
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 47000,
+          "anteil": 0.059763590494791664
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 54749,
+          "anteil": 0.06961695353190105
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 28076,
+          "anteil": 0.035700480143229164
+        }
+      ],
+      "ausschnitte_gesamt": 12,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 202080,
+      "anteil": 0.021413167317708332,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/ueber-uns/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/ueber-uns/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/ueber-uns/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/ueber-uns/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/ueber-uns/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/ueber-uns/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/ueber-uns/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/ueber-uns/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/ueber-uns/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/ueber-uns/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/ueber-uns/diff-k10.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/ueber-uns/diff-k11.png"
+      ],
+      "dauer_s": 7.9,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 11695.46875,
+      "hoehe_genau_nachher": 11719.5625
+    },
+    {
+      "seite": "/ueber-uns",
+      "geraet": "d1440",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 11937,
+      "hoehe_nachher": 11849,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 205874,
+          "anteil": 0.1588533950617284
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 208065,
+          "anteil": 0.16054398148148147
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 109262,
+          "anteil": 0.0843070987654321
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 92746,
+          "anteil": 0.07156327160493828
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 96529,
+          "anteil": 0.07448225308641976
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 66619,
+          "anteil": 0.051403549382716046
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 47128,
+          "anteil": 0.0363641975308642
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 99081,
+          "anteil": 0.07645138888888889
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 94027,
+          "anteil": 0.0725516975308642
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 60401,
+          "anteil": 0.04660570987654321
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 136175,
+          "anteil": 0.10507330246913581
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 201248,
+          "anteil": 0.15528395061728395
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 110476,
+          "anteil": 0.08524382716049382
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 14,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 1527631,
+      "anteil": 0.08419483024691359,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/ueber-uns/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/ueber-uns/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/ueber-uns/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/ueber-uns/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/ueber-uns/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/ueber-uns/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/ueber-uns/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/ueber-uns/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/ueber-uns/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/ueber-uns/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/ueber-uns/diff-k10.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/ueber-uns/diff-k11.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/ueber-uns/diff-k12.png"
+      ],
+      "dauer_s": 11.6,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 11936.6875,
+      "hoehe_genau_nachher": 11848.6875
+    },
+    {
+      "seite": "/ueber-uns",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 13496,
+      "hoehe_nachher": 13397,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 303208,
+          "anteil": 0.1462229938271605
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 282603,
+          "anteil": 0.1362861689814815
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 137171,
+          "anteil": 0.06615113811728394
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 117577,
+          "anteil": 0.05670187114197531
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 133336,
+          "anteil": 0.06430169753086419
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 60773,
+          "anteil": 0.029307966820987654
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 53436,
+          "anteil": 0.025769675925925925
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 127416,
+          "anteil": 0.061446759259259257
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 107361,
+          "anteil": 0.051775173611111114
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 145070,
+          "anteil": 0.06996045524691358
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 326216,
+          "anteil": 0.15731867283950618
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 147341,
+          "anteil": 0.07105565200617284
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 13,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 1941508,
+      "anteil": 0.07202294040835708,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/ueber-uns/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/ueber-uns/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/ueber-uns/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/ueber-uns/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/ueber-uns/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/ueber-uns/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/ueber-uns/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/ueber-uns/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/ueber-uns/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/ueber-uns/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/ueber-uns/diff-k10.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/ueber-uns/diff-k11.png"
+      ],
+      "dauer_s": 13.5,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 13496.21875,
+      "hoehe_genau_nachher": 13397.21875
+    },
+    {
+      "seite": "/kontakt",
+      "geraet": "m390",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 7004,
+      "hoehe_nachher": 7111,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 19215,
+          "anteil": 0.05837586584032082
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 59168,
+          "anteil": 0.17975452667395794
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 28902,
+          "anteil": 0.08780532263944586
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 26268,
+          "anteil": 0.07980313525337222
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        }
+      ],
+      "ausschnitte_gesamt": 9,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 146340,
+      "anteil": 0.04939846882974845,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/kontakt/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/kontakt/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/kontakt/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/kontakt/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/kontakt/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/kontakt/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/kontakt/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/kontakt/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/kontakt/diff-k08.png"
+      ],
+      "dauer_s": 9.4,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 7003.8125,
+      "hoehe_genau_nachher": 7110.953125
+    },
+    {
+      "seite": "/kontakt",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 7421,
+      "hoehe_nachher": 7445,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 22381,
+          "anteil": 0.028458913167317707
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 21781,
+          "anteil": 0.027695973714192707
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 60833,
+          "anteil": 0.07735315958658855
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 61732,
+          "anteil": 0.07849629720052083
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 5733,
+          "anteil": 0.007289886474609375
+        }
+      ],
+      "ausschnitte_gesamt": 8,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 180266,
+      "anteil": 0.028652509053548176,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/kontakt/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/kontakt/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/kontakt/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/kontakt/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/kontakt/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/kontakt/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/kontakt/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/kontakt/diff-k07.png"
+      ],
+      "dauer_s": 5.2,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 7421.171875,
+      "hoehe_genau_nachher": 7445.265625
+    },
+    {
+      "seite": "/kontakt",
+      "geraet": "d1440",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 6235,
+      "hoehe_nachher": 6235,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 3439,
+          "anteil": 0.0026535493827160492
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 7,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 3439,
+      "anteil": 0.00037907848324514993,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/kontakt/diff-k05.png"
+      ],
+      "dauer_s": 5.9,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 6235.375,
+      "hoehe_genau_nachher": 6235.375
+    },
+    {
+      "seite": "/kontakt",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 7011,
+      "hoehe_nachher": 7011,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 4224,
+          "anteil": 0.002037037037037037
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 7,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 4224,
+      "anteil": 0.000291005291005291,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/kontakt/diff-k05.png"
+      ],
+      "dauer_s": 6.1,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 7011.328125,
+      "hoehe_genau_nachher": 7011.328125
+    },
+    {
+      "seite": "/standorte/wetzlar",
+      "geraet": "m390",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 9085,
+      "hoehe_nachher": 9165,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 23701,
+          "anteil": 0.07200449629359582
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 15239,
+          "anteil": 0.04629663385587556
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 5716,
+          "anteil": 0.017365414995746748
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        }
+      ],
+      "ausschnitte_gesamt": 11,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 65080,
+      "anteil": 0.017974126978866314,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/standorte__wetzlar/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/standorte__wetzlar/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/standorte__wetzlar/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/standorte__wetzlar/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/standorte__wetzlar/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/standorte__wetzlar/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/standorte__wetzlar/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/standorte__wetzlar/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/standorte__wetzlar/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/standorte__wetzlar/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/standorte__wetzlar/diff-k10.png"
+      ],
+      "dauer_s": 6.3,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 9084.765625,
+      "hoehe_genau_nachher": 9164.5625
+    },
+    {
+      "seite": "/standorte/wetzlar",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 8927,
+      "hoehe_nachher": 8952,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 38780,
+          "anteil": 0.049311319986979164
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 22149,
+          "anteil": 0.028163909912109375
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 65916,
+          "anteil": 0.0838165283203125
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 28076,
+          "anteil": 0.035700480143229164
+        }
+      ],
+      "ausschnitte_gesamt": 9,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 167931,
+      "anteil": 0.023726145426432293,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/standorte__wetzlar/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/standorte__wetzlar/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/standorte__wetzlar/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/standorte__wetzlar/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/standorte__wetzlar/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/standorte__wetzlar/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/standorte__wetzlar/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/standorte__wetzlar/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/standorte__wetzlar/diff-k08.png"
+      ],
+      "dauer_s": 7,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 8927.4375,
+      "hoehe_genau_nachher": 8951.53125
+    },
+    {
+      "seite": "/standorte/wetzlar",
+      "geraet": "d1440",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 8539,
+      "hoehe_nachher": 8539,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 3407,
+          "anteil": 0.002628858024691358
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 10,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 3407,
+      "anteil": 0.0002628858024691358,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/standorte__wetzlar/diff-k08.png"
+      ],
+      "dauer_s": 8.5,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 8538.53125,
+      "hoehe_genau_nachher": 8538.53125
+    },
+    {
+      "seite": "/standorte/wetzlar",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 9603,
+      "hoehe_nachher": 9603,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 4224,
+          "anteil": 0.002037037037037037
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 9,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 4224,
+      "anteil": 0.00022633744855967078,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/standorte__wetzlar/diff-k07.png"
+      ],
+      "dauer_s": 9.8,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 9603.484375,
+      "hoehe_genau_nachher": 9603.484375
+    },
+    {
+      "seite": "/blog",
+      "geraet": "m390",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 11597,
+      "hoehe_nachher": 11677,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 34023,
+          "anteil": 0.10336310608822458
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 2575,
+          "anteil": 0.007822943249483533
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 5998,
+          "anteil": 0.018222141207923197
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 2531,
+          "anteil": 0.007689269656094301
+        }
+      ],
+      "ausschnitte_gesamt": 14,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 70569,
+      "anteil": 0.015313655538774023,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/blog/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/blog/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/blog/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/blog/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/blog/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/blog/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/blog/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/blog/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/blog/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/blog/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/blog/diff-k10.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/blog/diff-k11.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/blog/diff-k12.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/m390/blog/diff-k13.png"
+      ],
+      "dauer_s": 9.4,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 11596.96875,
+      "hoehe_genau_nachher": 11676.765625
+    },
+    {
+      "seite": "/blog",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 11009,
+      "hoehe_nachher": 11033,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 16299,
+          "anteil": 0.020725250244140625
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 16692,
+          "anteil": 0.0212249755859375
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 2602,
+          "anteil": 0.0033086140950520835
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 20189,
+          "anteil": 0.025671641031901043
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 65806,
+          "anteil": 0.08367665608723958
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 5733,
+          "anteil": 0.007289886474609375
+        }
+      ],
+      "ausschnitte_gesamt": 11,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 140331,
+      "anteil": 0.016221826726740055,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/blog/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/blog/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/blog/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/blog/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/blog/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/blog/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/blog/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/blog/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/blog/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/blog/diff-k09.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/t768/blog/diff-k10.png"
+      ],
+      "dauer_s": 8.3,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 11009.125,
+      "hoehe_genau_nachher": 11033.21875
+    },
+    {
+      "seite": "/blog",
+      "geraet": "d1440",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 11302,
+      "hoehe_nachher": 11302,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 3439,
+          "anteil": 0.0026535493827160492
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 13,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 3439,
+      "anteil": 0.00020411918328584996,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1440/blog/diff-k11.png"
+      ],
+      "dauer_s": 10.3,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 11301.703125,
+      "hoehe_genau_nachher": 11301.703125
+    },
+    {
+      "seite": "/blog",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 12713,
+      "hoehe_nachher": 12713,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 4224,
+          "anteil": 0.002037037037037037
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 12,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 4224,
+      "anteil": 0.00016975308641975308,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/fix2/pruef/pixel/d1920/blog/diff-k10.png"
+      ],
+      "dauer_s": 10.5,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 12712.515625,
+      "hoehe_genau_nachher": 12712.515625
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+=== REINRAUM 08:05:08
+exit 0
+lint 0 (20s)
+test 0 (3s)
+qa-graph 0 (0s)
+läuft: 904eb1f1 auf 4324
+läuft: 8bcca3c8 auf 4325
+4324 200
+4325 200
+=== G8 08:08:06
+/ fuss gleich · zitate gleich · zahlen weg 0 neu 0
+/bad fuss gleich · zitate gleich · zahlen weg 0 neu 0
+/ueber-uns fuss gleich · zitate gleich · zahlen weg 0 neu 0
+/impressum fuss gleich · zitate gleich · zahlen weg 0 neu 0
+/datenschutz fuss gleich · zitate gleich · zahlen weg 0 neu 0
+g8 exit 0
+=== M-28 08:08:30
+abgelehnt 100 {"knoepfe":[],"leiste":{"name":"Cookies – Einstellungen verwalten","text":"Cookies","w":64,"sw":64}}
+erstbesuch 100 {"knoepfe":[{"t":"Alle akzeptieren","w":173,"sw":173,"x":16},{"t":"Alle ablehnen","w":173,"sw":173,"x":199}],"leiste":null}
+erstbesuch 200 {"knoepfe":[{"t":"Alle akzeptieren","w":324,"sw":324,"x":32},{"t":"Alle ablehnen","w":324,"sw":324,"x":32}],"leiste":null}
+=== CURSOR 08:08:39
+{"desktop_glasbild":{"stand":"an","zustand":"ansehen","text":"Ansehen"},"desktop_nach_tab":{"stand":"aus","zustand":"ansehen","text":"Ansehen"},"desktop_ausserhalb":{"stand":"aus","zustand":"ansehen","text":"Ansehen"},"desktop_fehler":[],"touch":null,"ruhig":{"stand":"an","zustand":"ansehen","text":"Ansehen"},"ruhig_transition":"1e-05s / none"}
+=== SUITE reduziert 08:08:49
+  ✓  424 [desktop] › tests/verlegen.spec.mjs:1266:3 › Reduzierte Bewegung › (12) reduzierte Bewegung: Wechsel vollständig, Überblendung über .verlegen-blende, keine Fliesen-Animation (1.5s)
+  ✓  422 [desktop] › tests/verlegen.spec.mjs:786:3 › Bewegung an (Wechsel mit Fliesen) › (20) Zurück im Browser, während die Fliesen abgenommen werden: Adresse, Inhalt, Scroll und Fokus (Prüfung E-043) (9.8s)
+
+  26 skipped
+  398 passed (9.1m)
+=== SUITE Bewegung an 08:17:56
+  ✓  424 [desktop] › tests/verlegen.spec.mjs:1266:3 › Reduzierte Bewegung › (12) reduzierte Bewegung: Wechsel vollständig, Überblendung über .verlegen-blende, keine Fliesen-Animation (2.0s)
+  ✓  422 [desktop] › tests/verlegen.spec.mjs:786:3 › Bewegung an (Wechsel mit Fliesen) › (20) Zurück im Browser, während die Fliesen abgenommen werden: Adresse, Inhalt, Scroll und Fokus (Prüfung E-043) (9.1s)
+
+  26 skipped
+  398 passed (10.4m)
+=== AXE 08:28:20
+.............................................................................................................................................................................................................................................................
+axe: 396 Läufe · ernst/kritisch (Knoten) 0
+
+
+=== RUHIG/REDUZIERT 08:39:39
+ruhig / befunde 0 unsichtbar 10
+reduziert / befunde 0 unsichtbar 12
+ruhig /bad befunde 0 unsichtbar 8
+reduziert /bad befunde 0 unsichtbar 10
+ruhig /referenzen befunde 0 unsichtbar 6
+reduziert /referenzen befunde 0 unsichtbar 8
+ruhig /blog/fliesen-reinigen-pflegen befunde 0 unsichtbar 5
+reduziert /blog/fliesen-reinigen-pflegen befunde 0 unsichtbar 7
+=== REGISTER 08:42:37
+/ {'gefundene_kennungen': 9, 'unbekannt': 0}
+/bad {'gefundene_kennungen': 10, 'unbekannt': 0}
+/referenzen {'gefundene_kennungen': 11, 'unbekannt': 0}
+/leistungen {'gefundene_kennungen': 11, 'unbekannt': 0}
+=== BILDRATE 08:43:49
+{'anteil_verworfen_prozent': 4.3, 'loaf_anzahl': 0, 'loaf_summe_ms': 0}
+=== PIXEL 08:46:29
+Paare: 48 · mit Abweichung: 48 · Fehler: 0 · Pixel gesamt: 42866292 · Laufzeit: 4.62 min
+  1. /referenzen · m390 · 1672899 Pixel · Anteil 2.033e-1 · Höhe 21044/21151
+  2. /referenzen · d1440 · 3854519 Pixel · Anteil 1.859e-1 · Höhe 14133/14045
+  3. /referenzen · d1920 · 4800013 Pixel · Anteil 1.543e-1 · Höhe 16023/15924
+  4. / · t768 · 1258087 Pixel · Anteil 1.454e-1 · Höhe 10575/10247
+  5. / · m390 · 610536 Pixel · Anteil 1.427e-1 · Höhe 10831/10838
+=== LIGHTHOUSE 08:51:08 (allein, vorher, nachher, nachher, vorher)
+vor-a /   mobil: perf 95 [94–96] · LCP 2905 ms [2701–2917] · TBT 96 ms [79–98] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+nach-a /   mobil: perf 96 [94–96] · LCP 2709 ms [2687–2909] · TBT 101 ms [101–113] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+nach-b /   mobil: perf 95 [94–95] · LCP 2908 ms [2696–3066] · TBT 91 ms [88–118] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+vor-b /   mobil: perf 93 [93–95] · LCP 2914 ms [2693–3071] · TBT 119 ms [91–206] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+vor-a /bad   mobil: perf 94 [93–95] · LCP 2840 ms [2786–2979] · TBT 96 ms [85–175] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+nach-a /bad   mobil: perf 95 [92–95] · LCP 2791 ms [2782–3057] · TBT 104 ms [103–140] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+nach-b /bad   mobil: perf 93 [93–95] · LCP 3062 ms [2786–3214] · TBT 100 ms [83–117] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+vor-b /bad   mobil: perf 93 [92–95] · LCP 3070 ms [2783–3224] · TBT 103 ms [96–104] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+=== ENDE 08:58:14
