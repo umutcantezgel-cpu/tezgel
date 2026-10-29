@@ -10,7 +10,10 @@
 // Eingang ohne Vorhang (E-067-4, bewegung.css „eingang“): Der Abschnitt ist der Behälter (data-motion="eingang"). Die Zeilen
 // der H1 steigen hinter Zeilenmasken auf und rücken dabei in die Flucht (data-motion="zeilenmaske", --zeile ist ihre
 // Nummer), Ort und Knopfzeile setzen sich. Kein Fugenriss: Die Waage liegt hier ohnehin als Schnittkante auf dem Foto.
-// Flach und schmal fließen die Zeilen als ein Satz (inline): dort keine Maske (animate-none). Serverkomponente.
+// Flach und schmal fließen die Zeilen als ein Satz (inline): dort keine Maske (animate-none). Unter sm (Handy) kommen nur die
+// Zeilen herein, wie im mittigen Einstieg (UM-E3-FIX2 N6, UM-E4-VORL): Ort und Knopfzeile stehen ab dem ersten Bild
+// (max-sm:animate-none); das Lot der Kreuzlinie wächst weiter neben dem Text, es ist der Signaturmoment dieses Einstiegs.
+// Der Vorspann steht auf jeder Breite ab dem ersten Bild (möglicher LCP-Kandidat, E-067-4). Serverkomponente.
 import type { CSSProperties, ReactNode } from 'react';
 import Icon from '@/components/icons/Icon';
 import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
@@ -93,7 +96,7 @@ export default function EinstiegPlanblatt({ pfad, brotkrumen, firmensitz, titelZ
           {/* ab lg klebt der Text unter der Waage, damit neben dem höheren Foto keine leere Spalte steht (wie im alten Stand) */}
           <div className="lg:sticky lg:top-24 lg:col-span-6 lg:row-start-2 lg:self-start lg:pt-8">
             {/* balance: keine Schusterzeile („Orte rundherum.“ allein, Sichtabnahme E2, Befund 14) */}
-            <p data-erstes-bild="ort" className="mt-6 font-text text-fs-4 text-balance text-tinte flach:mt-4 lg:mt-0">
+            <p data-erstes-bild="ort" className="mt-6 font-text text-fs-4 text-balance text-tinte flach:mt-4 max-sm:animate-none lg:mt-0">
               {ort}
             </p>
             {/* auf jeder Breite folgen Hauptknopf und Telefon direkt auf Überschrift und Ort, der Vorspann erklärt danach den
@@ -106,7 +109,7 @@ export default function EinstiegPlanblatt({ pfad, brotkrumen, firmensitz, titelZ
               {/* Container für die Rufnummer: bei großer Systemschrift Vorwahl über der Nummer (Rufnummer.tsx). Reicht die Zeile
                   nicht für Anruf und WhatsApp nebeneinander (d1280), rückt WhatsApp in die nächste Zeile, statt dass beide
                   Beschriftungen umbrechen */}
-              <div data-eingang="knoepfe" className="@container mt-8 flex flex-col gap-3 flach:mt-6 sm:flex-row sm:flex-wrap sm:items-center">
+              <div data-eingang="knoepfe" className="@container mt-8 flex flex-col gap-3 flach:mt-6 max-sm:animate-none sm:flex-row sm:flex-wrap sm:items-center">
                 <Hauptknopf href={hauptziel} erstesBild breit />
                 <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                   <a

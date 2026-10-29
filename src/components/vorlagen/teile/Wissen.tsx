@@ -3,7 +3,8 @@
 // sonst stünden Text links und Zeichnung rechts zugleich, Abnahme E3-BAU-05) und wahlweise ein Absatz, Karten (Arten oder
 // Möglichkeiten nebeneinander an der Fuge), eine Liste als Fliesen, eine Tabelle (Baustein Tabelle), eine ruhige Zeichnung,
 // die die Seite liefert, und Zeilen mit Link (`wege`). Alle Blöcke gehören zum Teil „Was wir tun“ der Seitenformel
-// (data-formel="tun"). Serverkomponente.
+// (data-formel="tun"). Jeder Block ist ein Abschnitt auf Kalk mit eigenem Kopf: Im Leitfaden (UM-E4-VORL) steht der Kopf der
+// Leitachse neben seinem Inhalt, neben Karten tritt er zurück. Serverkomponente.
 import type { ReactNode } from 'react';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Tabelle from '@/components/kern/Tabelle';
@@ -11,9 +12,13 @@ import Textmarken from '@/components/kern/Textmarken';
 import type { Wissensblock } from '../inhalt';
 import { Bereichszeilen, Punktfliesen } from './Tun';
 
+// Karten auf Fliese mit H3: Daneben tritt der Kopf des Leitfadens auf ihrer ganzen Höhe zurück (data-kopf-pause="ganz",
+// bewegung.css „Leitfaden mit Abschnittsmarke“, wie das Kartenraster der Leistungen; UM-E4-VORL): nie ein Kreuz neben einer H3.
+// Höchstens eine Pause „ganz“ je Abschnitt: Ein Block mit Karten trägt keine Zeichnung mit eigener Pause (z. B. BlogFilter).
+// Zurzeit nutzt kein Inhalt Karten; geprüft mit einem vorübergehenden Schaufenster (Notiz UM-E4-VORL).
 function Karten({ karten }: { karten: NonNullable<Wissensblock['karten']> }) {
   return (
-    <ul className="@container grid gap-px border border-fuge bg-fuge md:grid-cols-3">
+    <ul data-kopf-pause="ganz" className="@container grid gap-px border border-fuge bg-fuge md:grid-cols-3">
       {karten.map((k) => (
         <li key={k.kopf} className="bg-fliese p-4 @xs:p-6">
           <h3 className="font-anzeige text-fs-5 font-extrabold text-tinte hyphens-none">{k.kopf}</h3>

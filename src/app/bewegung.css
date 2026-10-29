@@ -226,9 +226,13 @@ html.k-bewegung:not(.k-notaus) [data-motion="anriss"]:not([data-motion-stand="an
   .kreuz-grund {
     animation: none !important;
   }
-  .leitfaden-marke,
-  .kreuz-rot {
+  .leitfaden-marke {
     display: none;
+  }
+  /* !important: Das Fugenkreuz trägt die Utility inline-block, und die Ebene utilities schlägt diese Regel; ohne stand das
+     rote Kreuz weiter im Baum, und kante-rot lief unter erzwungenen Farben und im Druck (Prüfung UM-E4-VORL) */
+  .kreuz-rot {
+    display: none !important;
   }
 }
 

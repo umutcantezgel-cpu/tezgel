@@ -4,7 +4,10 @@
 // Zeichnungen der Seite kommen über `zeichnungen` (Kennung im Block). Mit Plan steht im Einstieg statt des Fotos der
 // Verlegeplan, der sich beim Zeigen in die Flucht rückt (sig-plan „zeigen“; Wissensseiten tragen nur diese Bewegung des
 // Planblatts, E-044). Rahmen wie die Erzählseite: alles nach dem Einstieg ist eine Suspense-Grenze, die Abschnitte zeichnen
-// spät, das Hauptziel kommt aus navigation.js. Serverkomponente.
+// spät, das Hauptziel kommt aus navigation.js. Der Einstieg steht vor der Leitachse und trägt sein Lot in Grundschicht
+// (UM-E4-VORL): Danach führt der Leitfaden wie auf / (Spitze auf der Leselinie, Kopf neben dem Inhalt der Abschnitte auf
+// Kalk, Einrasten an den Kanten); vorher umfasste die Leitachse den Einstieg, und ihr Rot stand als Stummel unter dem Kopf
+// neben dem roten Plan. Serverkomponente.
 import { Suspense, type ReactNode } from 'react';
 import Leitachse from '@/components/kern/Leitachse';
 import Seitenformel from '@/components/kern/Seitenformel';
@@ -31,8 +34,8 @@ export default function WissensSeite({ inhalt, zeichnungen, werkzeug }: WissensS
   const bild = worum.plan ? <Verlegeplan plan={worum.plan} flucht="zeigen" /> : worum.bild;
   return (
     <Seitenformel>
+      <Einstieg pfad={inhalt.pfad} brotkrumen={worum.brotkrumen} titel={worum.titel} ort={worum.ort} vorspann={worum.vorspann} bild={bild} hauptziel={hauptziel(inhalt.pfad)} lot />
       <Leitachse>
-        <Einstieg pfad={inhalt.pfad} brotkrumen={worum.brotkrumen} titel={worum.titel} ort={worum.ort} vorspann={worum.vorspann} bild={bild} hauptziel={hauptziel(inhalt.pfad)} />
         <Suspense fallback={<div aria-hidden="true" className="min-h-dvh noscript:hidden" />}>
           <Lage inhalt={inhalt.lage} />
           <Wissen bloecke={inhalt.wissen} zeichnungen={zeichnungen} />

@@ -18,9 +18,10 @@
 // neben Karten mit H3 (data-kopf-pause) steht er nie, in einem Abschnitt ohne eigenen Kopf gar nicht; an einer Kante
 // rastet er ein: Ihr Fugenkreuz wird rot, solange die Leselinie es auf eine Stufe 6 (24 px) trifft. So steht nie ein
 // zweites Kreuz näher als 24 px. Nur CSS (bewegung.css „Leitfaden mit Abschnittsmarke“). Ohne Bewegung, ohne Unterstützung,
-// im Druck und bei erzwungenen Farben gibt es weder Kopf noch Einrasten. Leitachsen, die den Einstieg umfassen (Wissens- und
-// Ortsseiten), Arbeitsansichten (K-010) und Seiten außerhalb der Vorlagen zeigen beides nicht; die Klassen `leitfaden`
-// und `leitfaden-ebene` sind die Haken dafür.
+// im Druck und bei erzwungenen Farben gibt es weder Kopf noch Einrasten. Seit UM-E4-VORL stehen auch die Wissens- und
+// Ortsseiten und die Erzählseite mit einfachem Einstieg so (der Einstieg vor der Leitachse, mit eigenem Lot in Grundschicht,
+// vorlagen/teile/Einstieg `lot`). Arbeitsansichten (K-010, `gezogen={false}`) und Seiten außerhalb der Vorlagen zeigen
+// beides nicht; die Klassen `leitfaden` und `leitfaden-ebene` sind die Haken dafür.
 //
 // Ebenen (K-005, R-01a): Die Zierebene liegt unter dem Inhalt – ohne z-index vor dem Inhalt; der Inhalt steht in einer
 // positionierten Hülle ohne eigenen Stapelkontext und malt in Baumreihenfolge darüber. Flächen (Fliese, Tinte, Bänder)

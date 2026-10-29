@@ -3,7 +3,11 @@
 // bewegung.css, Block glasbild); ohne Maus steht der Name immer unten auf einem Verlauf. Der Alt-Text kommt aus dem
 // Bildplatz (arbeiten.ts), der Name ist der sichtbare Text des Links. Foto und Fläche liegen in derselben Rasterzelle:
 // Ist der Name bei großer Systemschrift höher als das Foto, wächst die Kachel nach unten mit, statt ihn über die
-// Fotokante zu schieben; der Verlauf hängt am Text und steht so immer hinter ihm. Serverkomponente.
+// Fotokante zu schieben; der Verlauf hängt am Text und steht so immer hinter ihm.
+// Zeiger (Cursor-Zustand „ansehen“, src/lib/motion/cursor.ts): Über einem Foto mit Weg zeigt das Schild nur das Fugenkreuz,
+// ohne Wort (data-cursor-text=""). Die Glasfläche sagt „Ansehen →“ schon direkt darunter; vorher stand dieselbe Handlung
+// doppelt da (Sichtabnahme E3 Anlauf 3, Prüfer 1, gering; Entscheidung UM-E4-VORL). Das Wort bleibt so an einer Stelle, die
+// Maus, Tastatur und Touch gleich sehen, und das Kreuz zeigt weiter an, dass das Foto ein Ziel ist. Serverkomponente.
 import Link from 'next/link';
 import Icon from '@/components/icons/Icon';
 import Bildfeld from '@/components/kern/Bildfeld';
@@ -55,6 +59,8 @@ export default function Glasbild({ arbeit, name, href, linkText = 'Ansehen', siz
     <Link
       href={href}
       data-motion="zustand"
+      data-cursor="ansehen"
+      data-cursor-text=""
       className="glasbild grid focus-visible:outline-hidden after:pointer-events-none after:relative after:col-start-1 after:row-start-1 focus-visible:after:inset-ring-2 focus-visible:after:inset-ring-tinte focus-visible:after:outline-2 focus-visible:after:-outline-offset-4 focus-visible:after:outline-kalk"
     >
       <Bildfeld arbeit={arbeit} sizes={sizes} flaeche className={FOTO} />

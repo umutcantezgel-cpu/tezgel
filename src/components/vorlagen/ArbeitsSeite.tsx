@@ -2,7 +2,12 @@
 // Preise, Unterlagen und die Werkzeuge. Kompakter Einstieg (H1, Ort, Vorspann, Hauptknopf zum Formular der Seite oder zu
 // `/kontakt`, Anruf), danach benannte Abschnitte mit den vorhandenen Funktionen als Inhalt (Formulare, Kalender, Karte
 // hinter Einwilligung). Kennungen und Anker der Abschnitte bleiben wie im Bestand (Tests und Links). Keine Seitenformel:
-// Arbeitsseiten erzählen nicht (K-009). Serverkomponente mit den Inseln der Funktionen.
+// Arbeitsseiten erzählen nicht (K-009). Kein Signaturmoment (K-007, K-010): kein Eingang mit Zeilenmaske (Einstieg kompakt,
+// nur das Logo baut sich im Kopf auf) und kein Leitfaden. Die Leitachse steht in Grundschicht mit den Fugenkreuzen der
+// Abschnitte, ohne gezogenes Rot (gezogen={false}, R-02a; UM-E4-VORL nach der Übergabe aus UM-E3-LEIT: vorher wuchs das Rot
+// mit dem Scrollen wie auf den Erzählseiten von v2, und bei scrollY 0 stand ein roter Stummel unter dem Kopf). Rückmeldung
+// bleibt an den Bedienelementen und am Cursor-Schild („Nicht verfügbar“, „Lädt“ über den Treffertest in
+// src/lib/motion/cursor.ts). Serverkomponente mit den Inseln der Funktionen.
 import type { ReactNode } from 'react';
 import Leitachse from '@/components/kern/Leitachse';
 import Abschnitt from '@/components/kern/Abschnitt';
@@ -59,7 +64,7 @@ export function Werkzeug({ werkzeug }: { werkzeug: Arbeitsabschnitt }) {
 
 export default function ArbeitsSeite({ pfad, brotkrumen, titel, ort, vorspann, hauptziel, abschnitte }: ArbeitsSeiteProps) {
   return (
-    <Leitachse>
+    <Leitachse gezogen={false}>
       <Einstieg pfad={pfad} brotkrumen={brotkrumen} titel={titel} ort={ort} vorspann={vorspann} hauptziel={hauptziel} kompakt />
       {abschnitte.map((a, i) => (
         <Abschnitt

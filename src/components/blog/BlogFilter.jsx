@@ -20,6 +20,10 @@ import { etikettKlassen, wahlKlassen } from '@/components/kern/stile';
 // Statusregion (role="status", immer vorhanden, im Ruhezustand leer): bei aktivem Filter die Trefferzahl in Mono, im
 // Leerzustand die Meldung samt „Filter zurücksetzen“ (Hauptknopf, A; Strich-Rahmen, B). Nach dem Zurücksetzen steht der
 // Fokus im sichtbaren Suchfeld statt auf <body>.
+// Leitfaden (UM-E4-VORL): Die Liste steht im Wissensblock der Vorlage Wissensseite, also im Leitfaden wie auf /. Ihre Beiträge
+// tragen Überschriften (H2 des Leitfadens, H3 je Zeile), davor stehen Suche und Kategorien: Neben der ganzen Insel tritt der
+// Kopf der Leitachse zurück (data-kopf-pause="ganz", bewegung.css „Leitfaden mit Abschnittsmarke“, wie das Kartenraster der
+// Leistungen und die Einsatzkarte), nie ein Kreuz neben einer Überschrift oder dem Suchfeld.
 
 /** Sichtbares Element aus einer Liste von Refs (das Suchfeld der aktuellen Breite) */
 const sichtbar = (refs) => refs.map((r) => r.current).find((el) => el && el.getClientRects().length > 0);
@@ -65,7 +69,7 @@ export default function BlogFilter({ anrisse = {} }) {
   };
 
   return (
-    <div className="mx-auto w-full max-w-mass">
+    <div data-kopf-pause="ganz" className="mx-auto w-full max-w-mass">
       <div className="@container min-w-0">
 
         {/* Suche (sichtbar beschriftet) und Kategorien; mobil eine querlaufende Zeile bis an den Bildrand (die erste

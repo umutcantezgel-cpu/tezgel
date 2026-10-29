@@ -10,9 +10,11 @@ import {
   CURSOR_REGISTER,
   CURSOR_ZUSTAENDE,
   CURSOR_KANDIDATEN,
+  CURSOR_SPERRE,
   START_STAND,
   TEXTFELD,
   anzeige,
+  getroffen,
   kante,
   weiter,
   zielZustand,
@@ -195,6 +197,11 @@ test('Cursor 6: gedrückt nur sichtbar und nur bis zur nächsten Taste, zum Verl
   assert.equal(weiter(an, { art: 'taste' }).gedrueckt, false);
   assert.equal(weiter(an, { art: 'verlassen' }).gedrueckt, false);
   assert.equal(anzeige(weiter(an, ziel(null))).gedrueckt, false, 'ohne Schild kein Druck');
+  // ein gesperrtes oder ladendes Element gibt nicht nach (ohne Zeigerereignisse nie :active): das Schild auch nicht (UM-E4-VORL)
+  const gesperrt = nach(maus(10, 10), ziel('gesperrt'), { art: 'druck', an: true });
+  assert.deepEqual(anzeige(gesperrt), { sichtbar: true, zustand: 'gesperrt', text: 'Nicht verfügbar', gedrueckt: false });
+  const laedt = nach(maus(10, 10), ziel('laedt'), { art: 'laden', sichtbar: true }, { art: 'druck', an: true });
+  assert.deepEqual(anzeige(laedt), { sichtbar: true, zustand: 'laedt', text: 'Lädt', gedrueckt: false });
 });
 
 test('Cursor 7: „lädt“ folgt der Ladeschwelle (K-010): erst nach 300 ms, dann mindestens 500 ms', () => {
@@ -248,6 +255,31 @@ test('Cursor 7: „lädt“ folgt der Ladeschwelle (K-010): erst nach 300 ms, da
   assert.equal(anzeige(s).sichtbar, false);
 });
 
+test('Cursor 7b: Treffertest – gesperrte und ladende Knöpfe ohne Zeigerereignisse werden im Behälter gefunden (UM-E4-VORL)', () => {
+  // genau die Selektoren von „lädt“ und „nicht verfügbar“ aus dem Register
+  assert.deepEqual(teile(CURSOR_SPERRE), [...R.laedt.wo, ...R.gesperrt.wo]);
+  const rahmen = (left, top, right, bottom) => ({ getBoundingClientRect: () => ({ left, top, right, bottom }) });
+  const weiterKnopf = rahmen(100, 200, 260, 244);
+  const zurueck = rahmen(0, 200, 90, 244);
+  const versteckt = rahmen(0, 0, 0, 0);
+  assert.equal(getroffen([zurueck, weiterKnopf], 150, 220), weiterKnopf);
+  assert.equal(getroffen([zurueck, weiterKnopf], 10, 220), zurueck);
+  assert.equal(getroffen([zurueck, weiterKnopf], 95, 220), null, 'Lücke zwischen den Knöpfen: der Behälter');
+  assert.equal(getroffen([weiterKnopf], 260, 220), null, 'rechte Kante gehört nicht dazu');
+  assert.equal(getroffen([weiterKnopf], 100, 200), weiterKnopf, 'linke obere Ecke gehört dazu');
+  assert.equal(getroffen([versteckt], 0, 0), null, 'ausgeblendet: kein Rahmen, nie getroffen');
+  assert.equal(getroffen([], 150, 220), null);
+  // im Modul: Über- und Bewegungsereignisse gehen durch den Treffertest, der Behälter wird beobachtet und abgemeldet
+  const q = lies('src/lib/motion/cursor.ts');
+  assert.match(q, /const ueber = \(e: PointerEvent\) => nimmBehaelter\(e\.target, e\.clientX, e\.clientY\);/);
+  assert.match(q, /nimmBehaelter\(e\.target, e\.clientX, e\.clientY\);\n  \};/);
+  assert.match(q, /behaelter\.querySelectorAll\(CURSOR_SPERRE\)/);
+  assert.match(q, /nimmZiel\(\(sperren\.length \? getroffen\(sperren, x, y\) : null\) \?\? behaelter\)/);
+  assert.match(q, /inhalt\.disconnect\(\);\n\s+masse\.disconnect\(\);/, 'stopp() meldet den Beobachter des Behälters ab');
+  // die Knöpfe selbst bleiben unverändert: gesperrt und ladend ohne Zeigerereignisse (Formulare G8, Designsystem)
+  assert.match(lies('src/components/kern/stile.ts'), / disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none/);
+});
+
 test('Cursor 8: am Fensterrand wechselt das Schild die Seite (Maße der Marke mit Abstand, ohne Layout pro Bild)', () => {
   assert.equal(kante(100, 100, 120, 40, 1440, 900), '');
   assert.equal(kante(1400, 100, 120, 40, 1440, 900), 'x');
@@ -262,7 +294,12 @@ test('Cursor 9: Modul – gemeinsamer Takt, passive Lauscher, kein Scroll-Lausch
   assert.doesNotMatch(code, /requestAnimationFrame/, 'nur über takt.ts');
   assert.match(code, /import \{ naechstesBild \} from '\.\/takt'/);
   assert.match(code, /import \{ erzeugeLadeschwelle, type Ladeschwelle \} from '@\/lib\/ladeschwelle'/, 'Ladeschwelle wiederverwendet');
-  assert.doesNotMatch(code, /getBoundingClientRect|offsetWidth|offsetHeight|getComputedStyle|elementFromPoint/, 'kein Layout-Lesen');
+  // kein Layout-Lesen außer im Treffertest für gesperrte und ladende Knöpfe (getroffen: beim Zeigerereignis, nie pro Bild)
+  const treffertest = code.match(/\nexport function getroffen[\s\S]*?\n\}\n/)?.[0] ?? '';
+  assert.match(treffertest, /el\.getBoundingClientRect\(\)/, 'Treffertest liest den Rahmen');
+  assert.doesNotMatch(code.replace(treffertest, ''), /\.(getBoundingClientRect|getClientRects|elementsFromPoint|elementFromPoint)\(|\.offset(Width|Height|Top|Left)\b|getComputedStyle\(/, 'kein Layout-Lesen');
+  const zeichne = code.match(/const zeichne = \(\) => \{[\s\S]*?\n {2}\};/)?.[0] ?? '';
+  assert.ok(zeichne.length > 0 && !/getroffen|treffer\(/.test(zeichne), 'pro Bild kein Treffertest');
   assert.doesNotMatch(code, /'scroll'|'wheel'|'touchmove'/, 'keine Scroll-Ereignisse');
   assert.doesNotMatch(code, /mix-blend|mixBlend/, 'keine Mischmodi');
   const lauscher = [...code.matchAll(/(\w+)\.addEventListener\('([a-z]+)', (\w+)(?:, ([^)]+))?\)/g)];

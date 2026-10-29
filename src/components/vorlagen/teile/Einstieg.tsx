@@ -7,7 +7,16 @@
 // Eingang ohne Vorhang (E-067-4, bewegung.css „eingang“), nicht in Arbeitsansichten (kompakt: kein Signaturmoment, K-007):
 // Der Abschnitt ist der Behälter (data-motion="eingang"). Die H1 hat keine festen Zeilen und steigt als ein Block hinter
 // ihrer Maske auf (data-motion="zeilenmaske"), Ort und Knopfzeile setzen sich, über die Oberkante eines Fotos zieht ein
-// Fugenriss. Das Bild selbst bewegt sich nie. Serverkomponente.
+// Fugenriss. Das Bild selbst bewegt sich nie. Unter sm (Handy) kommt nur die H1 herein, wie im mittigen Einstieg (UM-E3-FIX2
+// N6, UM-E4-VORL): Ort und Knopfzeile stehen ab dem ersten Bild (max-sm:animate-none), der Fugenriss entfällt; mobil endet
+// der Eingang so bei 0,74 s statt 1,22 s. Der Vorspann steht auf jeder Breite ab dem ersten Bild: Er ist auf den Wissens- und
+// Ortsseiten das LCP-Element (gemessen m390 bis d1920, UM-E4-VORL), und LCP-Kandidaten starten nie unsichtbar (E-067-4).
+// Lot (UM-E4-VORL, Leitfaden wie auf /): Steht der Einstieg in einer Seitenformel vor der Leitachse (Wissens- und
+// Ortsseiten, Erzählseite mit einfachem Einstieg), trägt er sein eigenes Lot in Grundschicht an derselben Stelle wie die
+// Leitachse danach (`lot`, wie Leitachse mit gezogen={false}, R-02a). Es läuft ohne Lücke in den Leitfaden über; rot wird
+// erst das Lot nach dem Einstieg, so steht im ersten Bildschirm kein zweites Rot neben Karte oder Plan (K-003). Die Zierebene
+// liegt unter dem Inhalt, der Inhalt in einer positionierten Hülle ohne eigenen Stapelkontext (wie in kern/Leitachse).
+// Serverkomponente.
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
@@ -15,6 +24,7 @@ import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
 import Bildfeld from '@/components/kern/Bildfeld';
 import Brotkrumen, { type Krume } from '@/components/kern/Brotkrumen';
 import Hauptknopf from '@/components/kern/Hauptknopf';
+import { ACHSE_LAGE } from '@/components/kern/Leitachse';
 import Rufnummer from '@/components/kern/Rufnummer';
 import Textmarken from '@/components/kern/Textmarken';
 import { knopfKlassen, seitenKlassen } from '@/components/kern/stile';
@@ -39,14 +49,16 @@ export interface EinstiegProps {
   hauptziel?: string;
   /** Arbeitsseite (K-009: ruhig, dicht, schnell): weniger Raum, H1 eine Stufe kleiner, ohne Bildspalte */
   kompakt?: boolean;
+  /** eigenes Lot in Grundschicht: Der Einstieg steht in der Seitenformel vor der Leitachse (Leitfaden, UM-E4-VORL) */
+  lot?: boolean;
 }
 
-export default function Einstieg({ pfad, brotkrumen, titel, ort, vorspann, bild, unterBild, hauptziel = '/kontakt', kompakt = false }: EinstiegProps) {
+export default function Einstieg({ pfad, brotkrumen, titel, ort, vorspann, bild, unterBild, hauptziel = '/kontakt', kompakt = false, lot = false }: EinstiegProps) {
   const { contact } = COMPANY_DATA;
   const titelId = 'seite-titel';
   const foto = typeof bild === 'string';
-  return (
-    <section aria-labelledby={titelId} data-formel="worum" data-motion={kompakt ? undefined : 'eingang'} className="@container relative">
+  const inhalt = (
+    <>
       {/* oben Platz für den festen Kopf (h-16); bei großer Systemschrift am Handy (unter 16 rem Breite) steht die H1 eine Stufe
           kleiner, damit der Hauptknopf über der unteren Leiste steht (E3-SICHT, E-061) */}
       <div className={clsx(seitenKlassen, 'flex flex-col items-center pt-24 text-center lg:pt-32', kompakt ? 'pb-12 lg:pb-16' : 'pb-16 lg:pb-24')}>
@@ -60,10 +72,10 @@ export default function Einstieg({ pfad, brotkrumen, titel, ort, vorspann, bild,
         >
           {titel}
         </h1>
-        <p data-erstes-bild="ort" className="mt-6 max-w-mass font-text text-fs-4 text-balance text-tinte-2">
+        <p data-erstes-bild="ort" className="mt-6 max-w-mass font-text text-fs-4 text-balance text-tinte-2 max-sm:animate-none">
           {ort}
         </p>
-        <div data-eingang="knoepfe" className="mt-8 flex w-full flex-col items-center gap-3 sm:flex-row sm:flex-wrap sm:justify-center">
+        <div data-eingang="knoepfe" className="mt-8 flex w-full flex-col items-center gap-3 max-sm:animate-none sm:flex-row sm:flex-wrap sm:justify-center">
           <Hauptknopf href={hauptziel} erstesBild breit />
           <a href={`tel:${contact.phoneLink}`} data-erstes-bild="kontakt" data-motion="druck" className={knopfKlassen('neben', 'w-full px-4 sm:w-auto @max-3xs:flex-col @max-3xs:gap-1')}>
             <Icon name="telefon" groesse={5} className="shrink-0" />
@@ -82,6 +94,7 @@ export default function Einstieg({ pfad, brotkrumen, titel, ort, vorspann, bild,
             <span>Nachricht per WhatsApp</span>
           </a>
         </div>
+        {/* ohne data-eingang: das LCP-Element der Wissens- und Ortsseiten (E-067-4, siehe oben) */}
         <p className="mt-8 max-w-mass font-text text-fs-3 text-pretty text-tinte-2">
           <Textmarken text={vorspann} />
         </p>
@@ -89,12 +102,30 @@ export default function Einstieg({ pfad, brotkrumen, titel, ort, vorspann, bild,
       {bild && !kompakt && (
         <div className={clsx(seitenKlassen, 'pb-16 lg:pb-24')}>
           {/* vollständig, mittig; am Desktop so groß, dass es wirkt, ohne die Seite zu sprengen (wie auf der Startseite).
-              Fugenriss im Eingang nur über einem Foto (Kennung; relative als Halt), nicht über Karte oder Plan im Bildplatz */}
-          <div data-eingang={foto ? 'bild' : undefined} className={clsx(foto && 'relative', 'mx-auto w-full max-w-md lg:w-1/2 lg:max-w-full')}>
+              Fugenriss im Eingang nur über einem Foto (Kennung; relative als Halt), nicht über Karte oder Plan im Bildplatz;
+              unter sm entfällt er (max-sm:after:hidden, wie im mittigen Einstieg) */}
+          <div data-eingang={foto ? 'bild' : undefined} className={clsx(foto && 'relative max-sm:after:hidden', 'mx-auto w-full max-w-md lg:w-1/2 lg:max-w-full')}>
             {foto ? <Bildfeld arbeit={bild as ArbeitId} lcp sizes="(min-width: 1024px) 50vw, (min-width: 640px) 28rem, 100vw" /> : bild}
             {unterBild}
           </div>
         </div>
+      )}
+    </>
+  );
+  return (
+    <section aria-labelledby={titelId} data-formel="worum" data-motion={kompakt ? undefined : 'eingang'} className="@container relative">
+      {lot ? (
+        <>
+          {/* Zierebene: Lot in Grundschicht an der Stelle der Leitachse (data-leitachse für die Überlappungsprüfung) */}
+          <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+            <div className={clsx(seitenKlassen, 'relative h-full')}>
+              <div data-leitachse="" className={clsx('leitachse', ACHSE_LAGE)} />
+            </div>
+          </div>
+          <div className="relative">{inhalt}</div>
+        </>
+      ) : (
+        inhalt
       )}
     </section>
   );

@@ -412,7 +412,7 @@ export const REGISTER_V4: Record<string, V4Eintrag> = {
     hinweis: 'Ausgeblendet bei Tastatur, beim Verlassen des Fensters und in erzwungenen Farben; der Textcursor bleibt nativ; keine Mischmodi.',
     zustaende: {
       handlung: { beschriftung: '', wo: 'nur mit data-cursor="handlung", Text aus data-cursor-text', zweck: 'rueckmeldung', stufen: CURSOR_STUFEN, ruhig: CURSOR_RUHIG },
-      ansehen: { beschriftung: 'Ansehen', wo: 'Fotos mit Weg (Glasbild) und Pläne, die in die Flucht rücken', zweck: 'rueckmeldung', stufen: CURSOR_STUFEN, ruhig: CURSOR_RUHIG },
+      ansehen: { beschriftung: 'Ansehen', wo: 'Fotos mit Weg (Glasbild: dort nur das Fugenkreuz ohne Wort, die Glasfläche sagt „Ansehen →“) und Pläne, die in die Flucht rücken', zweck: 'rueckmeldung', stufen: CURSOR_STUFEN, ruhig: CURSOR_RUHIG },
       ziehen: { beschriftung: 'Ziehen', wo: 'Formatregler', zweck: 'rueckmeldung', stufen: CURSOR_STUFEN, ruhig: CURSOR_RUHIG },
       vergleichen: { beschriftung: 'Vergleichen', wo: 'Vorher-nachher-Regler', zweck: 'rueckmeldung', stufen: CURSOR_STUFEN, ruhig: CURSOR_RUHIG },
       gesperrt: { beschriftung: 'Nicht verfügbar', wo: 'gesperrte Bedienelemente; das Kreuz steht schräg', zweck: 'rueckmeldung', stufen: CURSOR_STUFEN, ruhig: CURSOR_RUHIG },

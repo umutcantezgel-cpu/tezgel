@@ -8,6 +8,9 @@
 //   beginnt an seinem Fuß, wo das Lot des Einstiegs endet, und ihr rotes Stück wächst erst ab dort (vorher stand ab lg bei
 //   scrollY 0 ein roter Stummel unter dem Kopf neben Waage und Lot, E2-SICHT-2 Befund 3, E3-START-02). Ohne Plan steht der
 //   Einstieg an der Laserlinie.
+// - Jeder Einstieg steht vor der Leitachse (seit UM-E4-VORL auch der einfache): So greift der Leitfaden wie auf / (Spitze
+//   auf der Leselinie, Kopf nur auf gezeichneter Achse, Einrasten an den Kanten; bewegung.css „Leitfaden mit
+//   Abschnittsmarke“). Der einfache Einstieg trägt sein Lot selbst, in Grundschicht.
 // - Alles nach dem Einstieg ist eine Suspense-Grenze, also eine eigene Hydrierungseinheit: Ein früher Tipp im ersten
 //   Bildschirm erzwingt nur den Rahmen und den Einstieg, nicht die ganze Seite in einem Zug (Reaktion, E-033; Next-Doku
 //   „Streaming“, Abschnitt INP). Eine Grenze statt sieben: React lagert jede große Grenze aus und setzt sie per Skript an
@@ -114,12 +117,11 @@ export default function ErzaehlSeite({ inhalt, momente, werkzeug, nachBeleg, ein
       </Seitenformel>
     );
   }
+  // einfacher Einstieg: steht wie die beiden anderen vor der Leitachse und trägt sein Lot in Grundschicht (UM-E4-VORL)
   return (
     <Seitenformel>
-      <Leitachse>
-        <Einstieg pfad={inhalt.pfad} brotkrumen={worum.brotkrumen} titel={worum.titel} ort={worum.ort} vorspann={worum.vorspann} bild={worum.bild} hauptziel={ziel} />
-        {rest}
-      </Leitachse>
+      <Einstieg pfad={inhalt.pfad} brotkrumen={worum.brotkrumen} titel={worum.titel} ort={worum.ort} vorspann={worum.vorspann} bild={worum.bild} hauptziel={ziel} lot />
+      <Leitachse>{rest}</Leitachse>
     </Seitenformel>
   );
 }

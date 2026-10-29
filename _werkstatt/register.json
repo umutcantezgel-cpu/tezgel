@@ -675,7 +675,7 @@
           },
           "ansehen": {
             "beschriftung": "Ansehen",
-            "wo": "Fotos mit Weg (Glasbild) und Pläne, die in die Flucht rücken",
+            "wo": "Fotos mit Weg (Glasbild: dort nur das Fugenkreuz ohne Wort, die Glasfläche sagt „Ansehen →“) und Pläne, die in die Flucht rücken",
             "zweck": "rueckmeldung",
             "stufen": {
               "dauer": [

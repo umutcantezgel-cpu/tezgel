@@ -1,8 +1,10 @@
 // Fugenkreuz-Cursor (KERN K-007 „Cursor-Charakter“, K-008 Regeln v4, E-067-1; UM-E3-CURSOR). Der Systemzeiger bleibt der
 // Klickpunkt ohne Verzögerung. Daneben steht über Fotos mit Weg, Reglern und Plänen ein kleines Schild mit dem Fugenkreuz
-// des Formsystems und einer Beschriftung. Es folgt ohne Feder und ohne Nachlauf, in beiden Fassungen der Bewegung: Die Lage
-// kommt aus dem letzten Zeigerereignis und wird im nächsten Bild des gemeinsamen Takts gesetzt (translate). Pro Bild liest
-// das Modul kein Layout; die Größe des Schilds meldet ein ResizeObserver, die Fenstergröße das resize-Ereignis.
+// des Formsystems und einer Beschriftung; über einem Foto mit Glasfläche (Glasbild) nur das Kreuz, die Glasfläche sagt
+// „Ansehen →“ schon selbst (data-cursor-text="", UM-E4-VORL). Es folgt ohne Feder und ohne Nachlauf, in beiden Fassungen
+// der Bewegung: Die Lage kommt aus dem letzten Zeigerereignis und wird im nächsten Bild des gemeinsamen Takts gesetzt
+// (translate). Pro Bild liest das Modul kein Layout; die Größe des Schilds meldet ein ResizeObserver, die Fenstergröße das
+// resize-Ereignis. Layout liest es nur im Treffertest für gesperrte und ladende Knöpfe (getroffen, siehe dort).
 // Die ruhige Fassung (reduziert, Bewegungsschalter „ruhig“) nimmt nur die Übergänge weg; die hängen in bewegung.css an
 // html.k-bewegung. Die Beschriftung bleibt.
 //
@@ -11,6 +13,7 @@
 //     selbst wählen: data-cursor="<zustand>" (oder "aus"), dazu wahlweise data-cursor-text.
 //   - zielZustand: Zustand des Elements unter dem Zeiger. Es gilt das nächste passende Element von innen nach außen.
 //     Textfelder bleiben nativ, ohne Schild. Ladend geht vor gesperrt, gesperrt vor eigener Wahl, eigene Wahl vor den Orten.
+//   - getroffen: Treffertest für gesperrte und ladende Bedienelemente ohne Zeigerereignisse (pointer-events: none).
 //   - weiter und anzeige: Zustandsmaschine ohne DOM (test/cursor.test.mjs).
 //   - starteCursor: legt das Schild an und hört auf Zeiger, Tastatur, Fenster und erzwungene Farben. Alle Lauscher sind
 //     passiv; es gibt keinen Scroll-Lauscher. Cursor.tsx lädt das Modul erst bei der ersten Mausbewegung nach der
@@ -19,7 +22,8 @@
 // Verlassen des Fensters, bei Fenster ohne Fokus und verborgenem Tab, nach Finger oder Stift und in erzwungenen Farben.
 // Mischmodi gibt es nicht.
 // „lädt“ folgt der Ladeschwelle (K-010): Es erscheint erst nach 300 ms und bleibt mindestens 500 ms, solange der Zeiger auf
-// dem ladenden Element bleibt.
+// dem ladenden Element bleibt. Über einem gesperrten oder ladenden Element gibt das Schild beim Drücken nicht nach (das Element
+// selbst auch nicht).
 import { erzeugeLadeschwelle, type Ladeschwelle } from '@/lib/ladeschwelle';
 import { naechstesBild } from './takt';
 
@@ -76,7 +80,8 @@ const EINBLENDEN = 'Einblenden und Druck dauer-1 · setzen, Ausblenden sofort';
 /**
  * Register der Cursor-Zustände (K-007, Regeln v4: Handlung, Ansehen, Ziehen, Vergleichen, nicht verfügbar, lädt).
  * Orte nach K-007 „über Fotos, Reglern und Plänen“: Fotos mit Weg zur Leistung (Glasbild), Pläne, die beim Darüberfahren
- * in die Flucht rücken (sig-plan), der Formatregler und der Vorher-nachher-Regler. Gesperrt und ladend gelten an jedem
+ * in die Flucht rücken (sig-plan), der Formatregler und der Vorher-nachher-Regler. Das Glasbild wählt „ansehen“ selbst, mit
+ * leerer Beschriftung (nur das Fugenkreuz; seine Glasfläche trägt das Wort, UM-E4-VORL). Gesperrt und ladend gelten an jedem
  * Bedienelement, weil der Systemzeiger dort nichts dazu sagt. Handlung hat keinen festen Ort: Ein Element wählt sie mit
  * data-cursor="handlung" und nennt die Handlung in data-cursor-text.
  */
@@ -117,6 +122,9 @@ const ORTE: readonly CursorZustand[] = ['vergleichen', 'ziehen', 'ansehen', 'han
 const selektor = (z: CursorZustand) => CURSOR_REGISTER[z].wo.join(', ');
 /** Alles, was über den Zustand entscheiden kann; closest() findet damit das nächste solche Element */
 export const CURSOR_KANDIDATEN = [TEXTFELD, '[data-cursor]', ...CURSOR_ZUSTAENDE.map(selektor).filter(Boolean)].join(', ');
+
+/** Gesperrte und ladende Bedienelemente (Treffertest) */
+export const CURSOR_SPERRE = [selektor('laedt'), selektor('gesperrt')].join(', ');
 
 export function istZustand(wert: string | null): wert is CursorZustand {
   return wert !== null && (CURSOR_ZUSTAENDE as readonly string[]).includes(wert);
@@ -161,6 +169,27 @@ export function zielZustand(ziel: unknown): CursorZiel | null {
   for (let el = ziel.closest(CURSOR_KANDIDATEN); el; el = el.parentElement?.closest(CURSOR_KANDIDATEN) ?? null) {
     const z = einordnen(el);
     if (z !== undefined) return z;
+  }
+  return null;
+}
+
+/** Rahmen eines Elements im Fenster (im Test nachgebaut) */
+export interface TrefferElement {
+  getBoundingClientRect(): { left: number; top: number; right: number; bottom: number };
+}
+
+/**
+ * Treffertest (E-084, UM-E4-VORL). Gesperrte und ladende Knöpfe nehmen im Designsystem und in den Formularen keine
+ * Zeigerereignisse an (pointer-events: none an disabled, aria-disabled und aria-busy, kern/stile.ts); der Zeiger trifft dann
+ * ihren Behälter, und „Nicht verfügbar“ und „Lädt“ kämen nie. Darum prüft das Modul die gesperrten und ladenden Elemente im
+ * getroffenen Behälter: Es gilt das erste, in dessen Rahmen die Zeigerlage liegt. Ein ausgeblendetes Element hat keinen
+ * Rahmen und wird nie getroffen. Das ist die einzige Stelle, an der das Modul Layout liest: beim Zeigerereignis, nicht pro
+ * Bild, und nur, wenn der Behälter solche Elemente enthält. Die Knöpfe selbst bleiben, wie sie sind.
+ */
+export function getroffen<T extends TrefferElement>(sperren: readonly T[], x: number, y: number): T | null {
+  for (const el of sperren) {
+    const r = el.getBoundingClientRect();
+    if (x >= r.left && x < r.right && y >= r.top && y < r.bottom) return el;
   }
   return null;
 }
@@ -265,7 +294,8 @@ export function anzeige(stand: CursorStand): CursorAnzeige {
     sichtbar,
     zustand,
     text: stand.ladeSichtbar ? CURSOR_REGISTER.laedt.text : stand.text,
-    gedrueckt: stand.gedrueckt,
+    // Ein gesperrtes oder ladendes Element gibt nicht nach (ohne Zeigerereignisse wird es nie :active), das Schild auch nicht
+    gedrueckt: stand.gedrueckt && zustand !== 'gesperrt' && zustand !== 'laedt',
   };
 }
 
@@ -300,7 +330,8 @@ export interface CursorStart {
 
 /** Tasten, die allein nichts bedienen (Strg-Klick, Umschalt-Klick): Sie blenden das Schild nicht aus. */
 const NUR_ZUSATZ = new Set(['Shift', 'Control', 'Alt', 'AltGraph', 'Meta', 'CapsLock', 'Fn']);
-const BEOBACHTETE_ATTRIBUTE = ['aria-busy', 'disabled', 'aria-disabled', 'data-cursor', 'data-cursor-text'];
+const SPERR_ATTRIBUTE = ['aria-busy', 'disabled', 'aria-disabled'];
+const BEOBACHTETE_ATTRIBUTE = [...SPERR_ATTRIBUTE, 'data-cursor', 'data-cursor-text'];
 const MEDIUM_FARBEN = '(forced-colors: active)';
 
 let laufend: CursorSteuerung | null = null;
@@ -397,10 +428,37 @@ export function starteCursor(start?: CursorStart): CursorSteuerung {
     pruefeZiel();
   };
 
-  const ueber = (e: PointerEvent) => nimmZiel(e.target);
+  // Treffertest (getroffen): der getroffene Behälter und seine gesperrten oder ladenden Elemente. Neu gesammelt, wenn der
+  // Behälter wechselt oder sich in ihm etwas ändert; dafür beobachtet ein eigener Beobachter nur den Behälter.
+  let behaelter: EventTarget | null = null;
+  let sperren: Element[] = [];
+  let sperrenAlt = false;
+  const treffer = (x: number, y: number) => {
+    if (sperrenAlt) {
+      sperrenAlt = false;
+      sperren = behaelter instanceof Element ? Array.from(behaelter.querySelectorAll(CURSOR_SPERRE)) : [];
+    }
+    nimmZiel((sperren.length ? getroffen(sperren, x, y) : null) ?? behaelter);
+  };
+  // Der Zeiger steht still, und unter ihm wird ein Knopf gesperrt, lädt oder wird frei: gleich neu zuordnen
+  const inhalt = new MutationObserver(() => {
+    sperrenAlt = true;
+    if (stand.bekannt) treffer(stand.x, stand.y);
+  });
+  const nimmBehaelter = (t: EventTarget | null, x: number, y: number) => {
+    if (t !== behaelter) {
+      behaelter = t;
+      sperrenAlt = true;
+      inhalt.disconnect();
+      if (t instanceof Element) inhalt.observe(t, { subtree: true, childList: true, attributes: true, attributeFilter: SPERR_ATTRIBUTE });
+    }
+    treffer(x, y);
+  };
+
+  const ueber = (e: PointerEvent) => nimmBehaelter(e.target, e.clientX, e.clientY);
   const bewegt = (e: PointerEvent) => {
     melde({ art: 'zeiger', x: e.clientX, y: e.clientY, typ: e.pointerType });
-    nimmZiel(e.target);
+    nimmBehaelter(e.target, e.clientX, e.clientY);
   };
   const runter = (e: PointerEvent) => {
     melde({ art: 'zeiger', x: e.clientX, y: e.clientY, typ: e.pointerType });
@@ -458,7 +516,7 @@ export function starteCursor(start?: CursorStart): CursorSteuerung {
 
   if (start) {
     melde({ art: 'zeiger', x: start.x, y: start.y, typ: 'mouse' });
-    nimmZiel(start.ziel);
+    nimmBehaelter(start.ziel, start.x, start.y);
   }
 
   const steuerung: CursorSteuerung = {
@@ -476,6 +534,7 @@ export function starteCursor(start?: CursorStart): CursorSteuerung {
       window.removeEventListener('resize', groesse, passiv);
       farbenAbfrage?.removeEventListener?.('change', farben);
       attribute.disconnect();
+      inhalt.disconnect();
       masse.disconnect();
       lade?.schwelle.beende();
       lade = null;

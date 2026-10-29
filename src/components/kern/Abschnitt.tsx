@@ -89,8 +89,9 @@ export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleit
         // Fugenkreuz auf dem Lot (Ebene z-10, K-005): über der Zierebene der Leitachse und über einer Nachbarfläche mit z-10.
         // abschnitt-kreuz: im Leitfaden nur auf einer Trennlinie (globals.css); mobil 8 px groß (KREUZ_GROESSE, 4 px zum Text).
         // Darüber dasselbe Kreuz in Laser: Im Leitfaden rastet der Kopf hier ein, solange die Leselinie die Kante auf 24 px
-        // trifft (kreuz-rot, bewegung.css); sonst unsichtbar
-        <div aria-hidden="true" className="abschnitt-kreuz pointer-events-none absolute inset-x-0 top-0 z-10">
+        // trifft (kreuz-rot, bewegung.css); sonst unsichtbar. Das Einrasten gehört zur Kennung leitachse (Register v4), darum
+        // data-motion="leitachse" (ohne eigene Regel daran; bewegung.mjs ordnet die Kreuz-Animationen so zu, UM-E4-VORL)
+        <div aria-hidden="true" data-motion="leitachse" className="abschnitt-kreuz pointer-events-none absolute inset-x-0 top-0 z-10">
           <div className={clsx(seitenKlassen, 'relative')}>
             <Fugenkreuz className={clsx('kreuz-grund absolute top-0 -translate-x-1/2 -translate-y-1/2', KREUZ_GROESSE, ACHSE_LAGE, tinte ? 'text-nacht-2' : 'text-tinte')} />
             <Fugenkreuz className={clsx('kreuz-rot absolute top-0 -translate-x-1/2 -translate-y-1/2 text-laser', KREUZ_GROESSE, ACHSE_LAGE)} />
