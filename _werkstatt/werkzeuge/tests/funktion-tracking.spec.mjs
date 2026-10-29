@@ -16,9 +16,9 @@ const GTAG = /googletagmanager\.com\/gtag\/js/;
 // Bedienelemente über Rolle und Name, wie in funktion-einwilligung.spec.mjs.
 const banner = (page) => page.getByRole('dialog', { name: /Cookie-Einwilligungsbanner/ });
 const schalter = (page, name) => banner(page).getByRole('button', { name, exact: true });
-// Widerruf-Knopf: in der Leiste „Cookies – Einstellungen verwalten“ (sichtbares Wort im Namen, M-28, E-089), im Fuß
+// Widerruf-Knopf: in der Leiste „Cookies: Einstellungen verwalten“ (sichtbares Wort im Namen, M-28, E-089; Doppelpunkt statt Gedankenstrich nach K-011), im Fuß
 // „Cookie-Einstellungen verwalten“; der jeweils verborgene liegt außerhalb des Barrierefreiheitsbaums.
-const schild = (page) => page.getByRole('button', { name: /^(Cookie-Einstellungen|Cookies – Einstellungen) verwalten$/ });
+const schild = (page) => page.getByRole('button', { name: /^(Cookie-Einstellungen|Cookies: Einstellungen) verwalten$/ });
 
 // Gespeicherten Zustand lesen: der Cookie-Wert ist URL-kodiertes JSON.
 async function lesEinwilligung(context) {

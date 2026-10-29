@@ -284,7 +284,7 @@ export default function CookieConsent() {
           type="button"
           onClick={handleShieldClick}
           className="flex size-full flex-col items-center justify-center gap-1 px-1 font-text text-fs-1 font-semibold text-tinte-2 hover:bg-fliese hover:text-tinte"
-          aria-label="Cookies – Einstellungen verwalten"
+          aria-label="Cookies: Einstellungen verwalten"
           title="Cookie-Einstellungen öffnen"
           data-motion="zustand"
         >

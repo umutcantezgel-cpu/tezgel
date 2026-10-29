@@ -16,9 +16,9 @@ const LADE_KNOPF = 'Karte laden & zustimmen';
 // Bedienelemente über Rolle, Name und sichtbaren Text.
 const banner = (page) => page.getByRole('dialog', { name: /Cookie-Einwilligungsbanner/ });
 const schalter = (page, name) => banner(page).getByRole('button', { name, exact: true });
-// Widerruf-Knopf: in der Leiste „Cookies – Einstellungen verwalten“ (sichtbares Wort im Namen, M-28, E-089), im Fuß
+// Widerruf-Knopf: in der Leiste „Cookies: Einstellungen verwalten“ (sichtbares Wort im Namen, M-28, E-089; Doppelpunkt statt Gedankenstrich nach K-011), im Fuß
 // „Cookie-Einstellungen verwalten“; der jeweils verborgene liegt außerhalb des Barrierefreiheitsbaums.
-const schild = (page) => page.getByRole('button', { name: /^(Cookie-Einstellungen|Cookies – Einstellungen) verwalten$/ });
+const schild = (page) => page.getByRole('button', { name: /^(Cookie-Einstellungen|Cookies: Einstellungen) verwalten$/ });
 const standortKarte = (page) =>
   page.locator('section').filter({ has: page.getByRole('heading', { name: 'Unser Hauptstandort in Aßlar', exact: true }) });
 
