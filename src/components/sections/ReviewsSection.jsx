@@ -46,13 +46,16 @@ export default function ReviewsSection({ leitachse = false }) {
     const quellen = [...new Set(REVIEWS.map((review) => review.source))];
 
     return (
-        <section className="relative py-16 lg:py-24" id="bewertungen" aria-labelledby="reviews-heading">
+        <section className={clsx('relative py-16 lg:py-24', leitachse && 'abschnitt-lot')} id="bewertungen" aria-labelledby="reviews-heading">
             {leitachse && (
-                // Fugenkreuz auf dem Lot der Leitachse an der Oberkante (wie Abschnitt mit `leitachse`; im Leitfaden nur auf einer
-                // Trennlinie, globals.css „abschnitt-kreuz“)
-                <div aria-hidden="true" className="abschnitt-kreuz pointer-events-none absolute inset-x-0 top-0 z-10">
+                // Fugenkreuz auf dem Lot der Leitachse an der Oberkante, gebaut wie in kern/Abschnitt: im Leitfaden nur auf einer
+                // Trennlinie (globals.css „abschnitt-kreuz“), darüber dasselbe Kreuz in Laser zum Einrasten (kreuz-rot, Zeitstrahl
+                // abschnitt-lot, Kennung leitachse). Seit Vorher-Nachher davor auf Fliese steht (UM-E4-CHOR-FIX) ist diese Kante
+                // eine Trennlinie; vorher war das Kreuz hier nie zu sehen
+                <div aria-hidden="true" data-motion="leitachse" className="abschnitt-kreuz pointer-events-none absolute inset-x-0 top-0 z-10">
                     <div className={clsx(seitenKlassen, 'relative')}>
-                        <Fugenkreuz className={clsx('absolute top-0 -translate-x-1/2 -translate-y-1/2 text-tinte', KREUZ_GROESSE, ACHSE_LAGE)} />
+                        <Fugenkreuz className={clsx('kreuz-grund absolute top-0 -translate-x-1/2 -translate-y-1/2 text-tinte', KREUZ_GROESSE, ACHSE_LAGE)} />
+                        <Fugenkreuz className={clsx('kreuz-rot absolute top-0 -translate-x-1/2 -translate-y-1/2 text-laser', KREUZ_GROESSE, ACHSE_LAGE)} />
                     </div>
                 </div>
             )}

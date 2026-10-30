@@ -23,6 +23,8 @@ export const BARRIEREFREIES_BAD: ErzaehlInhalt = {
     bewertung: true,
   },
   lage: {
+    // auf Fliese wie auf /: sichtbare Grenze nach dem Einstieg, die Flächen wechseln ab hier (UM-E3-FIX2 N8, UM-E4-CHOR-FIX)
+    aufFliese: true,
     titel: 'Der Schritt über den Wannenrand wird schwer.',
     absaetze: [
       'Viele Menschen merken es irgendwann: Das Einsteigen in die Wanne kostet Kraft. Sie möchten sicher duschen, ohne zu stolpern. Vielleicht denken Sie auch schon an einen Rollator.',
@@ -71,6 +73,9 @@ export const BARRIEREFREIES_BAD: ErzaehlInhalt = {
       ],
     },
     stimmen: ['ute-t', 'elke-s', 'peter-p', 'k-d'],
+    // Stimmen auf Kalk (UM-E4-CHOR-FIX, nur die Fläche): sonst stünden Stimmen, nächster Schritt und Badanfrage als drei
+    // Abschnitte auf Fliese in Folge; die Badanfrage bleibt auf Fliese (auf Kalk stünde die Abschnittsmarke neben dem Formular)
+    stimmenAufKalk: true,
     // öffnet die Galerie auf /referenzen mit der Auswahl „Dusche“ (GalerieWahl liest ?raum=)
     verweis: { name: 'Alle Arbeiten ansehen', href: '/referenzen?raum=dusche#unsere-arbeiten' },
   },

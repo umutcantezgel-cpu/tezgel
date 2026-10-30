@@ -27,6 +27,8 @@ export const BALKON_TERRASSE: ErzaehlInhalt = {
     bewertung: true,
   },
   lage: {
+    // auf Fliese wie auf /: sichtbare Grenze nach dem Einstieg, die Flächen wechseln ab hier (UM-E3-FIX2 N8, UM-E4-CHOR-FIX)
+    aufFliese: true,
     titel: 'Draußen leidet der Belag unter Regen und Frost.',
     absaetze: [
       'Vielleicht stehen nach einem Regen Pfützen auf Ihrem Balkon, oder Platten wackeln. Sie wissen nicht, ob der Belag noch hält.',
@@ -139,6 +141,8 @@ export const BALKON_TERRASSE: ErzaehlInhalt = {
       // die Überschrift des Einzelbilds aus der Textdatei ist sein Name auf der Glasfläche (Abnahme E3-BAU-06)
       { bild: 'balkon-stelzlager', unterschrift: 'So legen wir Platten auf Stelzlagern', href: '/balkon-terrasse/stelzlager' },
     ],
+    // Drittelverband in der Reihe wie auf / (K-003 Nr. 4, UM-E4-CHOR-FIX): je Bildschirm der Reihe ein Versatz
+    fotosVersatz: true,
     // Stimme der Textdatei zuerst, dann vier weitere aus src/config/reviews.js (Thema Balkon, Fliesen verlegen, Boden, Haus)
     stimmen: ['hasan-oe', 'rabia-oe', 'erik-s', 'kathrin-w', 'sara-j'],
     // öffnet die Galerie auf /referenzen mit der Auswahl „Balkon und Terrasse“ (GalerieWahl liest ?raum=)

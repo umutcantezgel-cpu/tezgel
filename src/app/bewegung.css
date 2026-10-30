@@ -1087,6 +1087,13 @@ html.k-bewegung .sig-plan-ziel .plan-reihenteil {
   html.k-bewegung:not(.k-notaus) [data-motion="sig-plan"]:not([data-flucht="laden"]):not([data-motion-stand="an"]) .plan-reihenteil {
     translate: calc(var(--plan-versatz) * var(--richtung, 1)) 0;
   }
+  /* Reihe gleicher Karten (data-plan-reihe, die vier Bereiche auf /leistungen; UM-E4-CHOR-FIX): auf Touch ein Auftritt je
+     Reihe statt einer je Karte (K-007: höchstens ein Auftritt mit Gewicht je Bildschirmhöhe; mobil lösten zwei Karten in
+     einer Bildschirmhöhe aus). Kommt der erste Plan in Sicht (IO 40 % wie bisher), rücken alle Pläne der Reihe in die Flucht;
+     die übrigen stehen dort, wenn sie ins Bild kommen. Ohne :has() wie bisher je Karte; am Desktop (Hover) unverändert. */
+  html.k-bewegung:not(.k-notaus) [data-plan-reihe]:has([data-motion="sig-plan"][data-motion-stand="an"]) [data-motion="sig-plan"]:not([data-flucht="laden"]) .plan-reihenteil {
+    translate: none;
+  }
 }
 @keyframes plan-flucht {
   from { translate: calc(var(--plan-versatz) * var(--richtung, 1)) 0; }

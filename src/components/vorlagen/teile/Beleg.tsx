@@ -23,6 +23,9 @@ export interface ZweiterBeleg {
   id: string;
   titel: string;
   moment: ReactNode;
+  /** Fläche des Abschnitts (Standard Kalk); Fliese setzt den Bruch zwischen Fotos und dem, was folgt (UM-E4-CHOR-FIX,
+   *  /referenzen: Galerie, Vorher-Nachher und Bewertungen lagen sonst rund 7 000 px auf Kalk) */
+  flaeche?: 'kalk' | 'fliese';
 }
 
 export default function Beleg({ inhalt, pfad, moment, zweiter, stimmenTitel = 'Das sagen unsere Kunden.' }: { inhalt: BelegInhalt; pfad?: string; moment?: ReactNode; zweiter?: ZweiterBeleg; stimmenTitel?: string }) {
@@ -62,7 +65,11 @@ export default function Beleg({ inhalt, pfad, moment, zweiter, stimmenTitel = 'D
           </p>
         )}
         {inhalt.zweierbild && (
-          <figure className="mt-16">
+          // Bildunterschrift wie eine H3 über zwei Fotos: Daneben tritt der Kopf des Leitfadens auf der ganzen Höhe zurück
+          // (data-kopf-pause="ganz", bewegung.css „Leitfaden mit Abschnittsmarke“, wie die Einsatzkarte; UM-E4-CHOR-FIX): nie
+          // ein Kreuz neben einer Überschrift. Höchstens eine Pause „ganz“ je Abschnitt: Seiten mit Zweierbild haben hier
+          // keinen Moment mit eigener Pause (Einsatzkarte, Galerie)
+          <figure data-kopf-pause="ganz" className="mt-16">
             <figcaption className="font-anzeige text-fs-5 font-extrabold text-tinte">{inhalt.zweierbild.titel}</figcaption>
             <div className="mt-6">
               <Fotos fotos={inhalt.zweierbild.bilder} spalten={2} />
@@ -77,7 +84,7 @@ export default function Beleg({ inhalt, pfad, moment, zweiter, stimmenTitel = 'D
         )}
       </Abschnitt>
       {zweiter && (
-        <Abschnitt id={zweiter.id} formel="beleg" leitachse spaet mitte titel={zweiter.titel}>
+        <Abschnitt id={zweiter.id} formel="beleg" leitachse spaet flaeche={zweiter.flaeche} mitte titel={zweiter.titel}>
           {zweiter.moment}
         </Abschnitt>
       )}
@@ -87,7 +94,7 @@ export default function Beleg({ inhalt, pfad, moment, zweiter, stimmenTitel = 'D
           formel="beleg"
           leitachse
           spaet
-          flaeche="fliese"
+          flaeche={inhalt.stimmenAufKalk ? 'kalk' : 'fliese'}
           mitte
           titel={inhalt.stimmenTitel ?? stimmenTitel}
           einleitung={inhalt.stimmenEinleitung ? <p><Textmarken text={inhalt.stimmenEinleitung} /></p> : undefined}

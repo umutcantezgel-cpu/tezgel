@@ -48,8 +48,10 @@ export default function GalerieWahl({ fotos, satz }: { fotos: GalerieWahlFoto[];
 
   return (
     <div>
-      {/* Bedienung: ohne JavaScript verborgen (die Knöpfe täten nichts), dann stehen alle Fotos; im Druck verborgen */}
-      <div className="noscript:hidden print:hidden">
+      {/* Bedienung: ohne JavaScript verborgen (die Knöpfe täten nichts), dann stehen alle Fotos; im Druck verborgen. Neben Satz,
+          Knöpfen und Statuszeile tritt der Kopf des Leitfadens auf ihrer ganzen Höhe zurück (data-kopf-pause="ganz", bewegung.css
+          „Leitfaden mit Abschnittsmarke“, wie die Filter-Insel des Blogs; UM-E4-CHOR-FIX); neben den Fotos steht er wieder */}
+      <div data-kopf-pause="ganz" className="noscript:hidden print:hidden">
         {/* mittig unter dem mittigen Kopf des Belegs (K-016, E-047) */}
         <p id={satzId} className="mx-auto max-w-mass text-center font-text text-fs-3 text-pretty text-tinte">
           {satz}

@@ -47,6 +47,9 @@ export default function ReferenzenPage() {
                     belegZwei: {
                         id: 'vorher-nachher',
                         titel: 'Eine Außentreppe, vorher und nachher.',
+                        // auf Fliese (UM-E4-CHOR-FIX, nur die Fläche): Galerie, Vorher-Nachher und Bewertungen lagen sonst rund
+                        // 7 000 px auf Kalk; so folgen Kalk, Fliese, Kalk und der nächste Schritt auf Fliese
+                        flaeche: 'fliese',
                         moment: (
                             <VorherNachher
                                 vorher="ref-vorher"

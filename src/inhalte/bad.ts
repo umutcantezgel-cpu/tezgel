@@ -27,6 +27,9 @@ export const BAD: ErzaehlInhalt = {
     bewertung: true,
   },
   lage: {
+    // auf Fliese wie auf /: sichtbare Grenze nach dem Einstieg, die Flächen wechseln ab hier (UM-E3-FIX2 N8, UM-E4-CHOR-FIX);
+    // sonst lagen Einstieg, Lage und „Was wir tun“ als drei Abschnitte auf Kalk in Folge
+    aufFliese: true,
     titel: 'Was soll in Ihrem Bad anders werden?',
     absaetze: [
       'Vielleicht fällt Ihnen der Einstieg in die Wanne schwer. Vielleicht sind die Fliesen alt und die Fugen schwarz geworden. Wählen Sie, was am besten passt.',
@@ -87,6 +90,9 @@ export const BAD: ErzaehlInhalt = {
     ],
     // Stimme der Textdatei zuerst, dann Stimmen aus REVIEWS zum Thema Bad (Regel 5, G8: Wortlaut unverändert)
     stimmen: ['peter-p', 'elke-s', 'c-wolf', 'ute-t', 'k-d'],
+    // Stimmen auf Kalk (UM-E4-CHOR-FIX, nur die Fläche): sonst stünden Stimmen, nächster Schritt und Anfragewege als drei
+    // Abschnitte auf Fliese in Folge; die Anfragewege mit Projektcheck und Badanfrage bleiben auf Fliese (Formulare nie auf Kalk)
+    stimmenAufKalk: true,
     verweis: { name: 'Alle Arbeiten ansehen', href: '/referenzen' },
   },
   schritt: {

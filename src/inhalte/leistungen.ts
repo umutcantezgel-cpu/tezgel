@@ -25,6 +25,9 @@ export const LEISTUNGEN: ErzaehlInhalt = {
     bewertung: true,
   },
   lage: {
+    // auf Fliese wie auf /: sichtbare Grenze nach dem Einstieg, die Flächen wechseln ab hier (UM-E3-FIX2 N8, UM-E4-CHOR-FIX);
+    // sonst lagen Einstieg, Lage und „Was wir tun“ als drei Abschnitte auf Kalk in Folge
+    aufFliese: true,
     titel: 'Vielleicht ist Ihr Bad oder Ihr Boden zu alt geworden.',
     einleitung: 'Sie haben ein Bad, einen Boden oder einen Balkon, der nicht mehr passt. Hier sehen Sie, was wir tun: von der Badsanierung bis zur Terrasse, dazu Böden und Naturstein.',
     absaetze: [
@@ -53,6 +56,8 @@ export const LEISTUNGEN: ErzaehlInhalt = {
       { bild: 'leistungen-balkon', unterschrift: 'Balkon mit neuen Fliesen', href: '/balkon-terrasse' },
       { bild: 'leistungen-untergrund', unterschrift: 'Abdichtung auf dem Balkon', href: '/untergrund-abdichtung' },
     ],
+    // Drittelverband in der Reihe wie auf / (K-003 Nr. 4, UM-E4-CHOR-FIX): je Bildschirm der Reihe ein Versatz
+    fotosVersatz: true,
     // c-wolf aus dem Seitentext zuerst, dazu Stimmen zu Bad, Böden und Balkon
     stimmen: ['c-wolf', 'rabia-oe', 'hasan-oe', 'elke-s', 'peter-p'],
     verweis: { name: 'Alle Arbeiten ansehen', href: '/referenzen' },

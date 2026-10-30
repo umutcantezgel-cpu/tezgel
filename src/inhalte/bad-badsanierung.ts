@@ -28,6 +28,8 @@ export const BADSANIERUNG: ErzaehlInhalt = {
     bewertung: true,
   },
   lage: {
+    // auf Fliese wie auf /: sichtbare Grenze nach dem Einstieg, die Flächen wechseln ab hier (UM-E3-FIX2 N8, UM-E4-CHOR-FIX)
+    aufFliese: true,
     titel: 'Ihr Bad passt nicht mehr, und Sie wissen nicht, wo Sie anfangen sollen.',
     absaetze: [
       'Vielleicht steigen Sie nicht mehr gern in die Wanne. Vielleicht ist der Boden glatt geworden, oder das Bad sieht einfach alt aus.',
@@ -77,6 +79,8 @@ export const BADSANIERUNG: ErzaehlInhalt = {
       { bild: 'sanierung-weg-2', unterschrift: 'Offene Decke und dunkle Holzoptik', href: '/bad/badsanierung' },
       { bild: 'sanierung-weg-3', unterschrift: 'Brauner Boden im Duschbereich', href: '/bad/badsanierung' },
     ],
+    // Drittelverband in der Reihe wie auf / (K-003 Nr. 4, UM-E4-CHOR-FIX): je Bildschirm der Reihe ein Versatz
+    fotosVersatz: true,
     zweierbild: {
       titel: 'So sieht ein Bad im Bau aus',
       bilder: [

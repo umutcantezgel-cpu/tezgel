@@ -67,7 +67,10 @@ export default function VerbandProbe({ start = 'kreuz', fotos = true, className 
   const name = `muster-${uid}`;
   return (
     <div className={clsx('flex flex-col gap-12', className)}>
-      <fieldset className="verband m-0 min-w-0 border-0 p-0" data-motion="verband">
+      {/* Musterwahl (Radiogruppe): Daneben tritt der Kopf des Leitfadens auf ihrer ganzen Höhe zurück, von der Legende bis zur
+          Beschreibung (data-kopf-pause="ganz", bewegung.css „Leitfaden mit Abschnittsmarke“; UM-E4-CHOR-FIX): nie ein Kreuz
+          neben einem Formular. Neben den Fotos darunter steht er wieder */}
+      <fieldset className="verband m-0 min-w-0 border-0 p-0" data-motion="verband" data-kopf-pause="ganz">
         <legend className="muster-legende mb-4 font-text text-fs-3 font-semibold text-tinte">Wählen Sie ein Muster</legend>
         {/* mit :has(): die Wahl steht über der Zeichnung wie Reiter, die Zeichnung antwortet darunter */}
         <div className="verband-bewegt">

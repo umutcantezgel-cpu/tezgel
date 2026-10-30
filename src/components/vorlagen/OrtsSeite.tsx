@@ -7,8 +7,10 @@
 // Bestandsseite auf diese Vorlage). Im Einstieg trägt der Schlitz `karte` das Einzugsband (statt SIG-1: ein großer Moment je
 // Bildschirm, E-044). Rahmen wie die Erzählseite (eine Suspense-Grenze nach dem Einstieg, spätes Zeichnen). Der Einstieg
 // steht vor der Leitachse und trägt sein Lot in Grundschicht (UM-E4-VORL): Danach führt der Leitfaden wie auf /, und im
-// ersten Bildschirm steht kein zweites Rot neben dem Einzugsband (K-003). Das Qualitätsversprechen aus dem Inhalt
-// (`versprechen`, UM-E4-EP3) steht als eigener Abschnitt nach dem Beleg vor dem nächsten Schritt. Serverkomponente.
+// ersten Bildschirm steht kein zweites Rot neben dem Einzugsband (K-003). Steht die Lage auf Fliese (`lage.aufFliese`, wie
+// auf /), setzt der Einstieg ab lg eine Stufe 16 Kalk bis zur Fuge (`fugeUnten`, wie die Wissensvorlage; UM-E4-CHOR-FIX). Das
+// Qualitätsversprechen aus dem Inhalt (`versprechen`, UM-E4-EP3) steht als eigener Abschnitt nach dem Beleg vor dem nächsten
+// Schritt. Serverkomponente.
 import { Suspense, type ReactNode } from 'react';
 import Leitachse from '@/components/kern/Leitachse';
 import Seitenformel from '@/components/kern/Seitenformel';
@@ -38,7 +40,7 @@ export default function OrtsSeite({ inhalt, formular, nachbarn, karte }: OrtsSei
   const { worum } = inhalt;
   return (
     <Seitenformel>
-      <Einstieg pfad={inhalt.pfad} brotkrumen={worum.brotkrumen} titel={worum.titel} ort={worum.ort} vorspann={worum.vorspann} bild={karte} hauptziel={`#${ORT_ANKER}`} lot />
+      <Einstieg pfad={inhalt.pfad} brotkrumen={worum.brotkrumen} titel={worum.titel} ort={worum.ort} vorspann={worum.vorspann} bild={karte} hauptziel={`#${ORT_ANKER}`} lot fugeUnten={inhalt.lage.aufFliese} />
       <Leitachse>
         <Suspense fallback={<div aria-hidden="true" className="min-h-dvh noscript:hidden" />}>
           <Lage inhalt={inhalt.lage} />

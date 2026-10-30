@@ -46,6 +46,8 @@ export function ortsInhalt(stadt: CityData, kmAbSitz: number, index: number): Or
       vorspann: `Wir machen Badsanierung und Fliesenverlegung in ${name}. Balkone machen wir dicht.`,
     },
     lage: {
+      // wie auf / (UM-E4-CHOR-FIX): Lage auf Fliese, „Was wir tun“ an der Linie; so wechseln die Flächen ab dem Einstieg
+      aufFliese: true,
       titel: `Sie suchen einen Fliesenleger in ${name}?`,
       absaetze: [
         `Ja, wir arbeiten in ${name} und im ${stadt.region}.`,
@@ -53,6 +55,7 @@ export function ortsInhalt(stadt: CityData, kmAbSitz: number, index: number): Or
       ],
     },
     tun: {
+      anDerLinie: true,
       titel: `Das machen wir in ${name}.`,
       // Fachwörter in der Einleitung (erstes Vorkommen im Fließtext), die Linknamen der Zeilen bleiben schlicht
       einleitung:

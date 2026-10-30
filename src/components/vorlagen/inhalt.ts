@@ -122,6 +122,10 @@ export interface BelegInhalt {
   /** eine große Stimme je Schritt (Startseite, UM-E3-FIX F4): das langsame Karussell zeigt auf jeder Breite eine Stimme, ab md
    *  Sterne und Name im ersten Drittel, der Wortlaut in den zwei Dritteln dahinter an der Fuge; geht `stimmenGross` vor */
   stimmenEinzeln?: boolean;
+  /** Kundenstimmen auf Kalk statt auf Fliese, nur die Fläche (UM-E4-CHOR-FIX): wenn danach nächster Schritt und Werkzeug auf
+   *  Fliese folgen und sonst drei gleiche Flächen in Folge stünden (K-003 Nr. 4). Das Werkzeug mit Formular bleibt auf
+   *  Fliese: Auf Kalk stünde die Abschnittsmarke neben dem Formular */
+  stimmenAufKalk?: boolean;
   /** Überschrift und Satz über den Kundenstimmen, wenn der Seitentext eigene hat (Standard „Das sagen unsere Kunden.“) */
   stimmenTitel?: string;
   stimmenEinleitung?: Markentext;

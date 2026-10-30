@@ -51,17 +51,24 @@ export interface EinstiegProps {
   kompakt?: boolean;
   /** eigenes Lot in Grundschicht: Der Einstieg steht in der Seitenformel vor der Leitachse (Leitfaden, UM-E4-VORL) */
   lot?: boolean;
+  /** Der nächste Abschnitt steht auf Fliese (LageInhalt.aufFliese, wie EinstiegMitte, UM-E4-CHOR-FIX): ab lg bleibt unter dem
+   *  letzten Block eine Stufe 16 Kalk bis zur Fuge statt einer Stufe 24 (dahinter eine Stufe 16 bis zum Kopf der Lage). Innen
+   *  gesetzt, damit das Lot des Einstiegs bis an die Fuge reicht */
+  fugeUnten?: boolean;
 }
 
-export default function Einstieg({ pfad, brotkrumen, titel, ort, vorspann, bild, unterBild, hauptziel = '/kontakt', kompakt = false, lot = false }: EinstiegProps) {
+export default function Einstieg({ pfad, brotkrumen, titel, ort, vorspann, bild, unterBild, hauptziel = '/kontakt', kompakt = false, lot = false, fugeUnten = false }: EinstiegProps) {
   const { contact } = COMPANY_DATA;
   const titelId = 'seite-titel';
   const foto = typeof bild === 'string';
+  const mitBild = Boolean(bild) && !kompakt;
+  // Abstand unter dem letzten Block: ab lg eine Stufe 24, vor einer Fuge eine Stufe 16 (fugeUnten)
+  const unten = clsx('pb-16', fugeUnten ? 'lg:pb-16' : 'lg:pb-24');
   const inhalt = (
     <>
       {/* oben Platz für den festen Kopf (h-16); bei großer Systemschrift am Handy (unter 16 rem Breite) steht die H1 eine Stufe
           kleiner, damit der Hauptknopf über der unteren Leiste steht (E3-SICHT, E-061) */}
-      <div className={clsx(seitenKlassen, 'flex flex-col items-center pt-24 text-center lg:pt-32', kompakt ? 'pb-12 lg:pb-16' : 'pb-16 lg:pb-24')}>
+      <div className={clsx(seitenKlassen, 'flex flex-col items-center pt-24 text-center lg:pt-32', kompakt ? 'pb-12 lg:pb-16' : mitBild ? 'pb-16 lg:pb-24' : unten)}>
         {brotkrumen && brotkrumen.length > 1 && <Brotkrumen wege={brotkrumen} className="mb-6" />}
         <h1
           id={titelId}
@@ -99,8 +106,8 @@ export default function Einstieg({ pfad, brotkrumen, titel, ort, vorspann, bild,
           <Textmarken text={vorspann} />
         </p>
       </div>
-      {bild && !kompakt && (
-        <div className={clsx(seitenKlassen, 'pb-16 lg:pb-24')}>
+      {mitBild && (
+        <div className={clsx(seitenKlassen, unten)}>
           {/* vollständig, mittig; am Desktop so groß, dass es wirkt, ohne die Seite zu sprengen (wie auf der Startseite).
               Fugenriss im Eingang nur über einem Foto (Kennung; relative als Halt), nicht über Karte oder Plan im Bildplatz;
               unter sm entfällt er (max-sm:after:hidden, wie im mittigen Einstieg) */}

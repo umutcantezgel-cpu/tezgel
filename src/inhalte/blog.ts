@@ -23,6 +23,9 @@ export const BLOG: WissenInhalt = {
     vorspann: VORSPANN,
   },
   lage: {
+    // auf Fliese wie auf / (UM-E4-CHOR-FIX): sichtbare Grenze nach dem Einstieg; danach steht die Artikelliste auf Kalk, und
+    // die Flächen wechseln Abschnitt für Abschnitt (vorher lagen Einstieg, Lage und Liste gut sieben Bildschirme auf Kalk)
+    aufFliese: true,
     titel: 'Vieles rund ums Bad ist schwer zu verstehen.',
     absaetze: [
       'Sie möchten Ihre Wanne gegen eine [[bodengleiche-dusche|bodengleiche Dusche]] tauschen? Dann stellen sich viele Fragen.',

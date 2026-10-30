@@ -47,6 +47,9 @@ export const REFERENZEN: ErzaehlInhalt = {
     bewertung: true,
   },
   lage: {
+    // auf Fliese wie auf /: sichtbare Grenze nach dem Einstieg, die Flächen wechseln ab hier (UM-E3-FIX2 N8, UM-E4-CHOR-FIX);
+    // sonst lagen Einstieg, Lage und „Was wir tun“ als drei Abschnitte auf Kalk in Folge
+    aufFliese: true,
     titel: 'Bevor Sie einen Handwerker holen, möchten Sie wissen, wie er arbeitet.',
     absaetze: ['Ein neues Bad oder ein neuer Balkon bleiben viele Jahre. Da wollen Sie sicher sein, dass die Arbeit stimmt.'],
   },

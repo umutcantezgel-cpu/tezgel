@@ -29,6 +29,8 @@ export const UEBER_UNS: ErzaehlInhalt = {
     bewertung: true,
   },
   lage: {
+    // auf Fliese wie auf /: sichtbare Grenze nach dem Einstieg, die Flächen wechseln ab hier (UM-E3-FIX2 N8, UM-E4-CHOR-FIX)
+    aufFliese: true,
     titel: 'Wer kommt in Ihr Haus?',
     absaetze: [
       'Vielleicht stehen Sie vor einer Frage. Das Bad ist alt, eine Fliese ist gesprungen oder der Balkon hält kein Wasser mehr. Ein neues Bad ist eine große Sache. Dann wollen Sie wissen, wer kommt und was er tut.',

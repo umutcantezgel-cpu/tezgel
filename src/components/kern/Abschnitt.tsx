@@ -127,9 +127,11 @@ export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleit
               // Zeitstrahl beginnt erst unter Kopf und Satz und endet vor der Unterkante: Der Kopf steht nie neben der H2 und
               // nie nah an einem Kantenkreuz (Abstand mindestens der Innenabstand des Abschnitts). Die Marke ist ein Streifen
               // in voller Höhe der Bahn mit dem Fugenkreuz an der Unterkante (bewegung.css „Leitfaden mit Abschnittsmarke“);
-              // außerhalb des Leitfadens ohne Wirkung. Mobil keine Marke: Sie stünde auf der Leselinie neben einer Textzeile
+              // außerhalb des Leitfadens ohne Wirkung. Mobil keine Marke: Sie stünde auf der Leselinie neben einer Textzeile.
+              // Die Marke gehört zur Kennung leitachse (Register v4, K-008): data-motion am Behälter, nicht an der Marke selbst
+              // (sie ist im Grundzustand unsichtbar; ohne eigene Regel daran, wie am Kantenkreuz oben; UM-E4-CHOR-FIX)
               <div className={clsx('abschnitt-inhalt relative', kopfInhalt && 'mt-12')}>
-                <div aria-hidden="true" className={clsx('leitfaden-bahn z-10', ACHSE_VOR_SATZ)}>
+                <div aria-hidden="true" data-motion="leitachse" className={clsx('leitfaden-bahn z-10', ACHSE_VOR_SATZ)}>
                   <span className="leitfaden-marke max-md:hidden">
                     <span data-leitachse="" className="absolute bottom-0 left-0 size-3 translate-y-1/2">
                       <Fugenkreuz className="absolute inset-0 size-full" />

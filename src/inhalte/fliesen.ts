@@ -29,6 +29,8 @@ export const FLIESEN: WissenInhalt = {
     plan: 'wohnen',
   },
   lage: {
+    // auf Fliese wie auf / (UM-E4-CHOR-FIX): Einstieg, Lage und der Wissensblock lagen sonst als drei Abschnitte auf Kalk in Folge
+    aufFliese: true,
     titel: 'Jeder Raum braucht einen anderen Boden.',
     absaetze: [
       'Ein Bad, eine Küche und ein Flur haben unterschiedliche Aufgaben. Ob Sie neu bauen, im bewohnten Haus renovieren oder nur die Fugen erneuern lassen, hängt vom Raum ab.',

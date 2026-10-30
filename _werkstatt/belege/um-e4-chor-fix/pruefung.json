@@ -1,0 +1,167 @@
+{
+ "bau": {
+  "npm_test": "249 Tests, 249 bestanden, 0 fehlgeschlagen (log/npm-test.log, Endstand)",
+  "tsc": "npx tsc --noEmit mit der vom Bau erzeugten, vorübergehenden next-env.d.ts: Exit 0, danach next-env.d.ts gelöscht (log/tsc.log)",
+  "eslint": "npx eslint: Exit 0, keine Meldung (log/eslint.log)",
+  "werte": "werte.mjs --arbeitsbaum --dateien <21 geänderte Dateien>: 0 Befunde (log/werte.log, mess/werte/). Aufgerufen aus baum/_werkstatt/werkzeuge (gleich HEAD), damit die repo-relativen Ausnahmen von werte-regeln.json greifen. Mit absoluten Pfaden in die Arbeitskopie meldet das Werkzeug sonst die zwei vorhandenen 0.01ms im Ruhig-Spiegel von bewegung.css (Z. 1699 f.). Die sind nicht aus diesem Paket und in den Regeln ausgenommen.",
+  "register": "bewegung.mjs gegen den Produktionsbau 4410 auf 11 Seiten (/, /bad, /bad/badsanierung, /bad/barrierefreies-bad, /ueber-uns, /balkon-terrasse, /standorte/wetzlar, /blog, /fliesen, /leistungen, /referenzen):\n- register d1440 und m390: unbekannt 0, ohne_register 0 überall. Vorher d1440 je 2 Gruppen an span.leitfaden-marke.\n- reduziert d1440/m390: 0 Bewegungsbefunde. „Unsichtbar“ nur in Klassen, die es vorher schon gab: Menü, mobile Leiste, Cursor, Karussellknöpfe und Kantenkreuze, die vor Kalk nicht gezeigt werden. Zahlen vorher/nachher z. B. / 14/14, badsanierung 14/12, barrierefreies-bad 18/17, /bad 16/17.\n- ruhig m390: 0 Befunde. Ruhig d1440: je 4 Befunde an Kopfnavigation und Mega-Menü, vorher genauso (nicht Teil dieses Pakets).\n- Ruhezustand von /: pixelvergleich.mjs 4419 gegen 4410, m390/t1024/d1440 ganze Seite, 0 Pixel Abweichung.\n- Überlauf m360, q844 und m390 bei 200 % Schrift: auf allen 10 geänderten Seiten keiner.\n- Kopf-Abtastung d1440 (11 Seiten) und t1024 (4 Seiten): kein Kopf neben Überschrift, Bildunterschrift, Musterwahl, Galerie-Bedienung oder Formular.",
+  "diff_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/UM-E4-CHOR-FIX.diff",
+  "dateien": [
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/UM-E4-CHOR-FIX.diff",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/UM-E4-CHOR-FIX.notiz.md",
+   "src/components/kern/Abschnitt.tsx",
+   "src/app/bewegung.css",
+   "src/components/vorlagen/inhalt.ts",
+   "src/components/vorlagen/WissensSeite.tsx",
+   "src/components/vorlagen/OrtsSeite.tsx",
+   "src/components/vorlagen/teile/Einstieg.tsx",
+   "src/components/vorlagen/teile/Beleg.tsx",
+   "src/components/momente/verband/VerbandProbe.tsx",
+   "src/components/momente/galerie-filter/GalerieWahl.tsx",
+   "src/components/leistungen/Leistungsplaene.tsx",
+   "src/components/sections/ReviewsSection.jsx",
+   "src/app/(bestand)/referenzen/page.jsx",
+   "src/inhalte/bad-badsanierung.ts",
+   "src/inhalte/barrierefreies-bad.ts",
+   "src/inhalte/bad.ts",
+   "src/inhalte/ueber-uns.ts",
+   "src/inhalte/balkon-terrasse.ts",
+   "src/inhalte/orte.ts",
+   "src/inhalte/blog.ts",
+   "src/inhalte/fliesen.ts",
+   "src/inhalte/leistungen.ts"
+  ],
+  "umgesetzt": [
+   "1 Register: data-motion=\"leitachse\" am Behälter .leitfaden-bahn in Abschnitt.tsx, nicht an der Marke. register d1440 ohne_register von 2 auf 0 auf allen 11 Seiten; / pixelgleich (0 px).",
+   "2 Flächenfolge:\n- aufFliese: true im Block lage von bad-badsanierung, barrierefreies-bad, ueber-uns, balkon-terrasse, orte (alle 13 Ortsseiten) und blog.\n- anDerLinie: true in orte.tun.\n- /fliesen hatte Einstieg, Lage und Wissen auf Kalk (gemessen), daher dort ebenfalls aufFliese.\n- WissensSeite reicht lage.aufFliese als fugeUnten an den Einstieg weiter. Der einfache Einstieg kennt dafür neu fugeUnten: ab lg Stufe 16 statt 24 bis zur Fuge, ohne die Angabe unverändert.\n- OrtsSeite reicht es ebenso weiter, weil sie denselben Einstieg nutzt.\n- Gemessene Folge d1440, z. B. badsanierung von K K K F K F K F F auf K F K F K F K F F. Auf allen Seiten des Punkts gibt es keine drei gleichen Flächen in Folge mehr.\n- Längste Strecke ohne Bruch: badsanierung 3,72→1,96, ueber-uns 4,06→2,32, balkon 4,56→2,13, wetzlar 3,07→1,60, fliesen 5,74→2,92, blog 7,40→5,96 Bildschirme.",
+   "3 Ende der Bad-Seiten, nach Punkt 2 gemessen:\n- badsanierung (Versprechen K dazwischen) und /blog: keine Änderung.\n- barrierefreies-bad: Stimmen auf Kalk über die neue Option BelegInhalt.stimmenAufKalk (inhalt.ts, Beleg.tsx), nur die Fläche.\n- /bad: Regel wörtlich angewandt, ebenfalls Stimmen auf Kalk (siehe offene Fragen).\n- Anfrage und Anfragewege bleiben auf Fliese.",
+   "4 Fotoversatz: fotosVersatz: true in bad-badsanierung (5 Fotos), leistungen (3) und balkon-terrasse (4). Gemessen ist jeweils das mittlere Foto 64 px tiefer. barrierefreies-bad (2 Fotos): Beleg.tsx unverändert, der Bruch dort ist der Flächenwechsel nach Punkt 2.",
+   "5 Kopf-Pausen: data-kopf-pause=\"ganz\" an drei Stellen:\n- am fieldset der Musterwahl (VerbandProbe.tsx),\n- an der figure des Zweierbilds (Beleg.tsx),\n- an der Hülle von Satz, Knöpfen und Statuszeile (GalerieWahl.tsx).\nVorher stand der Kopf daneben: badsanierung 5292–5352, barrierefreies-bad 5208–5268, fliesen 2564–3464, referenzen 4068–4228. Nachher bei 4-px-Abtastung kein Befund.",
+   "6 /leistungen Ablauf: Ablauf kennt die Treppe, aber /leistungen übergibt SzeneAblauf aus page.jsx, nicht aus leistungen.ts. Wechseln hieße page.jsx ändern und szene-ablauf von /leistungen nehmen; das geht nach K-008/E-037 nur mit Rückfrage. Daher SzeneAblauf unverändert; der Bruch kommt aus dem Fotoversatz (5993/6057/5993).",
+   "7 Plan-Auftritte auf Touch: ul#gewerke trägt data-plan-reihe. Neue Regel in bewegung.css (nur hover:none/pointer:coarse): Sobald ein Plan der Reihe data-motion-stand=an hat, stehen alle in der Flucht (:has()).\n- Kennung und Register sind unverändert, Desktop-Hover je Karte gleich (gemessen).\n- m390: vorher 4 Auftritte im Bild, dreimal zwei in einer Bildschirmhöhe; nachher 1.\n- t1024: nur noch die erste Reihe.\n- data-motion an ul#gewerke verworfen: die Liste ist mobil rund 2200 px hoch, 40 % Sicht wären nie erreicht.",
+   "8 /referenzen:\n- ZweiterBeleg.flaeche, in page.jsx Vorher-Nachher auf Fliese. Neue Folge: Galerie K, VN F, Bewertungen K, Schritt F.\n- Die Oberkante der Bewertungen ist damit eine Trennlinie. Ihr Kantenkreuz in ReviewsSection.jsx ist jetzt wie in Abschnitt gebaut (kreuz-grund und kreuz-rot, abschnitt-lot, data-motion=leitachse) und rastet nachweislich rot ein.\n- Wortlaut und Zahlen unverändert.",
+   "9 /blog: Liste nicht geteilt. Der Bruch entsteht über Punkt 2; die längste Strecke ist jetzt nur noch die Liste (5364 px).",
+   "10 /kontakt: keine Änderung."
+  ],
+  "bilder": [
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/bilder/nach/blaetter/d1440_einstieg_lage.png",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/bilder/nach/blaetter/d1440_punkte_3_4_8.png",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/bilder/kopf-vor/d1440/bad__badsanierung/zweierbild_5311.png",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/bilder/kopf-nach/d1440/bad__badsanierung/zweierbild_5409.png",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/bilder/kopf-nach/d1440/bad__badsanierung/sammlung_5301.png",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/bilder/kopf-nach/d1440/bad__badsanierung/sammlung_5316.png",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/bilder/kopf-vor/d1440/bad__barrierefreies-bad/zweierbild_5226.png",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/bilder/kopf-nach/d1440/bad__barrierefreies-bad/zweierbild_5260.png",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/bilder/kopf-vor/d1440/fliesen/musterwahl_2624.png",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/bilder/kopf-nach/d1440/fliesen/musterwahl_2562.png",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/bilder/kopf-nach/d1440/fliesen/musterwahl_3352.png",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/bilder/kopf-vor/d1440/referenzen/galerie_4126.png",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/bilder/kopf-nach/d1440/referenzen/galerie_4126.png",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/bilder/kopf-nach/d1440/referenzen/sammlung_4100.png",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/bilder/nach/kante/referenzen_bewertungen_kante_d1440.png",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/bilder/nach/d1440/bad__barrierefreies-bad/07.png",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/bilder/nach/d1440/bad/07.png",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/bilder/nach/d1440/bad__badsanierung/05.png",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/bilder/nach/d1440/leistungen/06.png",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/bilder/nach/d1440/balkon-terrasse/07.png",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/bilder/nach/d1440/referenzen/10.png",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/bilder/nach/blaetter/m390_leistungen_01-08.png",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/bilder/nach/blaetter/m390_badsanierung_00-07.png",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/bilder/nach/blaetter/m390_wetzlar_00-07.png",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/bilder/nach/blaetter/t1024_ueber-uns_00-05.png",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/bilder/nach/blaetter/t1024_referenzen_08-13.png",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/bilder/nach/blaetter/d1440_leistungen_02-07.png",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/bilder/nach (alle Bildschirme je Seite: {d1440,t1024,m390}/<seite>/NN.png)"
+  ],
+  "offene_fragen": [
+   "/bad, /leistungen, /referenzen: Einstieg, Lage und Tun liegen weiter als drei Abschnitte auf Kalk (d1440 ohne Bruch 0 bis 5038 / 4817 / 3416 px). Die Seiten stehen nicht in der Liste von Punkt 2, daher nicht gesetzt. Möglich wäre je eine Zeile aufFliese: true in bad.ts, leistungen.ts und referenzen.ts.",
+   "/bad: Punkt 3 ist wörtlich angewandt (Stimmen auf Kalk, weil Stimmen, Schritt und Anfragewege auf Fliese standen). Ist /bad nicht gemeint, ist eine Zeile in bad.ts zurückzunehmen.",
+   "/bad/barrierefreies-bad: Stimmen auf Kalk (Punkt 3) und zwei Fotos ohne Versatz (Punkt 4) ergeben 3011 px (3,35 Bildschirme) Kalk ohne Bruch. Ein Bruch dort bräuchte eine Änderung an Beleg.tsx oder eine andere Fläche.",
+   "/referenzen: Die Galerie selbst bleibt 4528 px ohne Versatz; CHOR-07 schlug dafür einen Versatz in der Galerie vor (nicht im Briefing). /blog: Die Liste bleibt 5364 px ohne Bruch (Punkt 9, bewusst).",
+   "K-008, Zeile sig-plan: Nachtragen, dass eine Reihe mit data-plan-reihe auf Touch ein Auftritt ist? Kennung unverändert, register.json daher nicht angefasst.",
+   "ReviewsSection.jsx (Bestand) ist über die reine Fläche hinaus angepasst: Das Kantenkreuz rastet jetzt ein. Die neue Trennlinie nach Vorher-Nachher auf Fliese hätte sonst das einzige Kreuz ohne Einrasten gezeigt. Wortlaut und Zahlen sind unberührt."
+  ]
+ },
+ "pruefungen": [
+  {
+   "befunde": [
+    {
+     "datei": "src/inhalte/bad.ts, src/inhalte/leistungen.ts, src/inhalte/referenzen.ts (jeweils Block lage)",
+     "zeile": "bad.ts 29, leistungen.ts 27, referenzen.ts 49",
+     "schwere": "mittel",
+     "befund": "Entscheidung 2 nennt als Ziel je Seite keine drei gleich gebauten Abschnitte in Folge. Auf drei der elf gemessenen Seiten liegen Einstieg, Lage und Was wir tun weiter als drei Kalkflächen in Folge, ohne Fuge, Kante oder Versatz. Der Baumeister hat sie nicht gesetzt (Notiz, offene Frage 1), weil die Punkt-2-Liste sie nicht nennt. Das Briefing verlangt aber die Messung je Seite und das Ziel danach.",
+     "beleg": "Eigene Messung d1440, Produktionsbau von baum auf Port 4411, spätes Zeichnen auf sichtbar gesetzt (Skript pruef-A-0-skript/folge.mjs, Log pruef-A-0-log/folge-d1440.txt und folge-m390.txt). /bad: K K K F K K F F, Strecke 0 bis 5038 px = 5,60 Bildschirme ohne Flächenwechsel. /leistungen: K K K F K F F K, 0 bis 4817 px = 5,35 Bildschirme. /referenzen: K K K F K F K F, 0 bis 3416 px = 3,80 Bildschirme. Auf m390 dieselbe Folge, dort meldet das Skript ebenfalls drei Kalk in Folge. Gegenprobe in meiner eigenen Kopie mit aufFliese: true in den drei lage-Blöcken: /bad K F K F K K F F, /leistungen K F K F K F F K, /referenzen K F K F K F K F, jeweils keine drei in Folge (pruef-A-0-mess/folge-vorschlag-d1440.json). /leistungen längste Strecke 5,35 auf 3,07 Bildschirme, /referenzen Anfangsstrecke 3,80 auf 1,6. Bild der Kante mit Kreuz ohne Auffälligkeit: pruef-A-0-mess/bilder-vorschlag/leistungen_d1440_01150.png.",
+     "vorschlag": "aufFliese: true im Block lage von bad.ts, leistungen.ts und referenzen.ts setzen, wie in den fünf genannten Dateien. Einstieg (EinstiegMitte) reicht fugeUnten schon über ErzaehlSeite durch, die Wortlaute bleiben unberührt. Danach Register und Kopfabtastung auf den drei Seiten wiederholen."
+    },
+    {
+     "datei": "src/inhalte/barrierefreies-bad.ts, src/components/vorlagen/teile/Beleg.tsx",
+     "zeile": "barrierefreies-bad.ts 78 (stimmenAufKalk), Beleg.tsx 97 (flaeche der Kundenstimmen)",
+     "schwere": "gering",
+     "befund": "Auf /bad/barrierefreies-bad löst Punkt 3 (Stimmen auf Kalk) die drei Fliesen in Folge auf, verlängert aber die Kalkstrecke ohne Bruch: Fotoreihe mit zwei Fotos auf gleicher Oberkante, Zweierbild und Stimmen stehen als eine Kalkfläche ohne Kante dazwischen. Das Ziel ein bewusster Bruch je Desktop-Bildschirm ist dort nur teilweise erreicht. Die Notiz nennt das als offene Frage 3.",
+     "beleg": "d1440: Beleg unsere-arbeiten 4447 bis 6679 px, Stimmen 6679 bis 7458 px, beide Kalk, zusammen 3011 px = 3,35 Bildschirme (mit natürlichen Höhen der Stimmen bis 3,58). Nach Punkt 2 allein war die Kalkstrecke 2232 px = 2,48 Bildschirme. Fotooberkanten 4717 und 4717 (kein Versatz bei zwei Fotos, pruef-A-0-mess/versatz). Bild mit rund 250 px Kalk ohne Linie zwischen Alle Arbeiten ansehen und Das sagen unsere Kunden: pruef-A-0-mess/bilder/bad__barrierefreies-bad_d1440_06300.png. Schritt hat keine wählbare Fläche (Schritt.tsx, flaeche fest fliese).",
+     "vorschlag": "Entscheidung beim Orchestrator: entweder Drittelversatz auch bei zwei Fotos (zweites Foto ab md um 64 px tiefer, Änderung in Beleg.tsx, vom Briefing bisher ausgeschlossen) oder eine wählbare Fläche für den Schritt ohne Formular. Sonst die 3,35 Bildschirme als bekannte Ausnahme in KERN vermerken."
+    },
+    {
+     "datei": "src/app/(bestand)/referenzen/page.jsx, src/components/momente/galerie-filter/GalerieFilter.tsx",
+     "zeile": "page.jsx 47 bis 60",
+     "schwere": "gering",
+     "befund": "Nach Punkt 8 folgen Kalk, Fliese, Kalk, Fliese wie verlangt. Die Galerie selbst bleibt aber eine einzige Kalkfläche mit 24 Fotos in drei bündigen Spalten ohne Bruch. Das Briefing schließt diese Strecke nicht ein (Notiz, offene Frage 4). /blog hat die längste Strecke ebenfalls in der Artikelliste, dort bewusst nach Entscheidung 9.",
+     "beleg": "d1440: /referenzen unsere-arbeiten 4221 bis 8749 px = 4528 px = 5,03 Bildschirme ohne Flächenwechsel und ohne Versatz. Zum Vergleich /blog Liste 1235 bis 6599 px = 5,96 Bildschirme (Entscheidung 9, gewollt). Meine Zahlen stimmen mit der Tabelle der Notiz überein.",
+     "vorschlag": "Nur zur Kenntnis, solange der Orchestrator die Galerie als Werkzeug (K-016) gelten lässt. Wenn ein Bruch gewollt ist: Versatz je Zeile in der Galerie (CHOR-07-Vorschlag) in einem eigenen Paket."
+    },
+    {
+     "datei": "src/components/momente/formatregler/Formatregler (Moment im Abschnitt was-wir-tun auf /leistungen)",
+     "zeile": "nicht zeilengenau; Treffer bei Scroll 4276 bis 4360 (d1440)",
+     "schwere": "gering",
+     "befund": "Vorbestehend und nicht Teil dieses Diffs: Auf /leistungen steht der Kopf des Leitfadens neben Beschriftung und Regler (input range) des Formatreglers. Das ist dieselbe Art wie CHOR-05 #0 (Kopf neben einem Bedienelement), steht aber nicht in der Sammlung. Der Baumeister zählt Regler außerhalb von Formularen bewusst nicht (Regel aus UM-E4-VORL).",
+     "beleg": "Eigene Abtastung Schritt 4 px, d1440: /leistungen label Schieben Sie den Regler nach links 4276 bis 4316, input range 4320 bis 4360 (pruef-A-0-log/kopf-leistungen-d1440.txt). Am Stand vor dem Diff identisch (pruef-A-0-mess/vor-kopf-leistungen.json), also kein neuer Bruch. Ähnlich vorbestehend: Bildunterschriften der Gefälle- und Schichtenmomente in Was wir tun, z. B. /balkon-terrasse 3464 bis 3680, /bad 3368 bis 3412.",
+     "vorschlag": "Nur zur Kenntnis. Wenn Regler wie die Musterwahl gelten sollen, braucht der Block eine eigene Pause. Eine zweite Pause ganz im selben Abschnitt vermeiden: ul#gewerke trägt dort schon die einzige, und bewegung.css sieht höchstens eine je Abschnitt vor."
+    }
+   ],
+   "gesamturteil": "Die zehn Entscheidungen sind im Diff umgesetzt und wirken, bis auf eine Lücke bei der Flächenfolge (Befund 1, mittel). Das Paket ist freigabefähig, sobald diese drei Einzeiler gesetzt sind. Eigene Messung auf Port 4411 mit einem Produktionsbau einer Kopie von baum. Die Diff-Datei entspricht vor gegen baum (21 Dateien).\n\nWas ich bestätigen kann:\n- Register: bewegung.mjs register meldet auf den elf Seiten bei d1440 und m390 sowie auf vier Seiten bei t1024 keine Animation ohne Kennung. Der Wert war vorher 2 je Seite.\n- Reduziert d1440 und m390 und ruhig m390 haben keine Bewegungsbefunde. Ruhig d1440 zeigt die vier schon vorher vorhandenen Befunde an Kopfnavigation und Mega-Menü, auf / identisch.\n- Seite /: im Ruhezustand pixelgleich. Ich habe vor und baum nacheinander auf Port 4411 aufgenommen (reduced motion, Einwilligung abgelehnt, ganze Seite). Ergebnis: 0 abweichende Pixel in 37 Ausschnitten bei m390, t1024 und d1440.\n- Flächenfolge d1440 und m390 stimmt mit der Tabelle der Notiz überein. Gemessene Folgen:\n  - /bad/badsanierung K F K F K F K F F\n  - /bad/barrierefreies-bad K F K F K K F F\n  - /ueber-uns K F K F F K F K F K\n  - /balkon-terrasse K F K F F K F K F\n  - /blog K F K F K F K F\n  - /fliesen K F K F K F K F K\n  - /referenzen K K K F K F K F, also nur Galerie, Vorher-Nachher, Bewertungen, Schritt wie verlangt\n  - Alle 13 Ortsseiten K F K F K F K F\n- Kopf-Pausen: Die vier Fälle der Sammlung sind behoben. Verglichen mit dem Stand vor dem Diff in derselben Abtastung (Schritt 4 px) steht der Kopf nicht mehr neben:\n  - dem Zweierbild auf /bad/badsanierung (vorher 5292 bis 5352) und /bad/barrierefreies-bad (vorher 5208 bis 5264)\n  - der Musterwahl auf /fliesen (vorher Legende, Beschriftung, Beschreibung)\n  - Satz, Knöpfen und Statuszeile der Galerie auf /referenzen (vorher 4068 bis 4228)\n  Bilder bei 4120 und 4230 sowie 5301 bestätigen das. Auch bei t1024 gibt es dort keine Treffer. Keine Seite hat zwei Pausen ganz im selben Abschnitt. Zwei Kreuze unter 24 px gibt es nirgends.\n- Fotoversatz: das zweite Foto steht 64 px tiefer auf /bad/badsanierung (5 Fotos), /leistungen (3) und /balkon-terrasse (4), auch bei t1024.\n- Plan-Auftritte auf /leistungen bei Touch: Vorher gab es auf m390 vier Auftritte im Abstand von 560 bis 600 px, auf t1024 zwei Auftritte. Nachher ist es je ein Auftritt (m390 bei Scroll 1480, t1024 bei 1680), die übrigen Karten rücken im selben Zug in die Flucht.\n- Überlauf: 84 Läufe (14 Seiten, m360, q844, t1024, d1440, dazu m390 und q844 mit Schrift 200 %) ohne Überlauf.\n- Neue Kantenkreuze: das Kreuz an der Oberkante der Bewertungen auf /referenzen und die Kreuze an den neuen Lage-Fugen sitzen an der Kante. Ein neuer Bruch durch eine Marke neben einem Formular entsteht nicht. Neu ist nur, dass der Kopf auf /bad und /bad/barrierefreies-bad neben den Stimmenkarten steht. Dort trifft er weder Überschrift noch Formular.\n- Dass Punkt 6 (/leistungen, zwei Kartenraster) bei SzeneAblauf bleibt und der Bruch aus dem Fotoversatz kommt, ist begründet und im Code nachvollziehbar. Das Treppen-Ablauf-Element wäre nur über page.jsx erreichbar.\n\nDie Befunde 2 bis 4 sind gering. Sie sind in der Notiz zum Teil als offene Fragen genannt (2 und 3) oder liegen vor dem Diff (4).\n\nAufgeräumt: Server auf Port 4411 beendet, node_modules und .next in pruef-A-0 gelöscht. baum, vor und das Repository habe ich nicht verändert."
+  },
+  {
+   "befunde": [
+    {
+     "datei": "src/app/bewegung.css (Zeile 1090 bis 1096) mit src/lib/motion/register.ts (Zeile 318 bis 324) und _werkstatt/KERN.md (K-008, Zeile sig-plan)",
+     "zeile": "bewegung.css 1090-1096",
+     "schwere": "gering",
+     "befund": "Auf Touch ist die Plankarten-Reihe auf /leistungen jetzt ein Auftritt (neue :has()-Regel mit dem neuen Datenattribut data-plan-reihe). Die Registerprosa nennt weiter nur \"auf Touch IO 40 %\" je Karte. Das Attribut ist nirgends beschrieben. Die Kennung sig-plan bleibt gleich, daher ist nach Briefing Punkt 7 kein Eintrag in register.json nötig. Die Beschreibung im KERN läuft dem Verhalten aber hinterher. Die Notiz führt das selbst als offene Frage 6 auf.",
+     "beleg": "Eigene Messung mit Playwright, m390 mit Touch, plan.mjs: Vor dem Scrollen sind alle vier .plan-reihenteil versetzt (-21, -28, -21, -17,5 px). Sobald die erste Karte data-motion-stand=an trägt, stehen alle vier bei translate none, auch die drei ohne Stand. m390 reduziert: durchgehend none. d1440: alle vier bleiben versetzt, Hover unverändert. Der Spiegel stimmt also, nur die Prosa fehlt. register.ts 318-324 und die K-008-Zeile nennen keine Reihe.",
+     "vorschlag": "Der Orchestrator trägt in der K-008-Zeile sig-plan einen Halbsatz nach, zum Beispiel: \"Reihe mit data-plan-reihe (/leistungen): auf Touch ein Auftritt je Reihe\". register.ts und register.json bleiben unverändert, wie im Briefing vorgesehen."
+    },
+    {
+     "datei": "src/components/sections/ReviewsSection.jsx",
+     "zeile": "49-60",
+     "schwere": "gering",
+     "befund": "Briefing Punkt 8 verlangt \"nur die Fläche des Abschnitts in page.jsx\". Der Diff ändert zusätzlich die Bestandskomponente ReviewsSection: Das Kantenkreuz bekommt die Bauweise von kern/Abschnitt (Klassen abschnitt-lot, kreuz-grund und kreuz-rot, data-motion=\"leitachse\"). Das ist die Folge der neuen Trennlinie über den Bewertungen und eine Abweichung vom Briefingumfang. Ein Leitplankenverstoß ist es nicht: Wortlaut, Bewertungszahlen, Stimmen und Sterne bleiben unverändert (G8), die Kreuze sind aria-hidden und rein dekorativ. Die Notiz führt die Abweichung als offene Frage 7 auf.",
+     "beleg": "Diff-Zeilen 102-126: Es ändern sich nur className und das Kreuz-Markup. Eigene Messung mit kante2.mjs auf /referenzen d1440 (Leselinie 360 px): rot=1 bei Kante -12 bis +12 px, rot=0 bei -30 und +30 px und weiter weg. Das ist der gleiche Fangbereich wie bei kern/Abschnitt. Die Kante ist über [data-kante] + section sichtbar (display block, vorher-nachher trägt data-kante). Bild: pruef-A-1-bilder/referenzen_bewertungen_kante_leselinie.png. In reduziert und ruhig: 0 Bewegungsbefunde, in forced-colors gilt display none für .kreuz-rot. axe: 0 Verstöße.",
+     "vorschlag": "Die Abweichung bewusst annehmen und in der Abnahme vermerken. Ohne sie stünde auf der neuen Trennlinie ein Kantenkreuz ohne Einrasten, das als einziges Kreuz der Seite anders reagiert."
+    }
+   ],
+   "gesamturteil": "Der Diff ist aus der Linse Leitplanken und Zugänglichkeit unbedenklich. Es gibt keinen Befund mit Schwere hoch oder mittel. Die zwei geringen Punkte sind keine Verstöße, sondern Nachträge für den Orchestrator.\n\nUnantastbares und B-01:\n- Der Diff berührt keinen Wortlaut. In den Inhaltsdateien ändern sich nur Flaggen (aufFliese, anDerLinie, fotosVersatz, stimmenAufKalk) und Kommentare.\n- Beide H1 mit Ausnahme sind im Browser unverändert: A-1 \\\"Ihr neues Traumbad zum Festpreis.\\\" auf /bad/badsanierung und A-2 \\\"Perfektion auf jedem Quadratmeter.\\\" auf /.\n- Logo, Einwilligung, Rechtstexte, Firmendaten, Formulare, Kundenstimmen-Wortlaut, Bewertungszahlen und Adressen sind nicht in den 21 Dateien.\n- B-01 ist nicht berührt: Verlegen.tsx, lib/verlegen und _dokument.tsx fehlen im Diff.\n- Formulare stehen nach dem Umbau nie auf Kalk. Die Anfrage-Abschnitte bleiben auf Fliese. Auf /blog steht der Blogfilter weiter auf Kalk. Das war vorher schon so und ist durch die Pause \\\"ganz\\\" abgedeckt.\n\nEigene Prüfläufe in der Arbeitskopie und in meiner Kopie pruef-A-1 (Port 4412):\n- npm test: 249 von 249 bestanden.\n- eslint: Exit 0.\n- tsc --noEmit: Exit 0.\n- werte.mjs über die 21 geänderten Dateien: 0 Befunde (Ausgabe in eigenen Ordner).\n- axe (wcag2a bis wcag22aa): 22 Läufe (11 Seiten, m390 und d1440), 0 Verstöße, auch bei Kontrast.\n- Text auf Kalk gerechnet: tinte 17,0:1, tinte-2 8,2:1.\n- Überschriftenfolge auf allen 12 Seiten ohne Sprung.\n- Browserkonsole auf 11 Seiten, d1440 und m390: keine Meldung.\n- Der Diff passt sauber auf HEAD 5541657e (git apply --check, Exit 0).\n\nBewegung:\n- bewegung.mjs register, 11 Seiten, d1440 und m390: unbekannt 0, ohne Register 0.\n- reduziert: 0 Bewegungsbefunde. Meine Zahlen stimmen mit der Notiz überein, zum Beispiel / 14 und 12 unsichtbar, geprüft 225 und 224.\n- ruhig m390: 0 Befunde.\n- ruhig d1440: auf jeder Seite 4 Befunde (svg rotate und #kopf-blatt translate in Kopfnavigation und Mega-Menü). Sie stehen identisch auf der kaum berührten Seite / und liegen nicht im Diff. Vorbestehend, kein Befund dieses Pakets.\n- Kantenkreuz der Bewertungen: Es nutzt die vorhandenen Keyframes kante-grund und kante-rot mit echtem Wechsel. Neue Keyframes entstehen im Diff nicht, E-092 ist eingehalten.\n- Die neue :has()-Regel steht unter html.k-bewegung:not(.k-notaus). Reduziert und ruhig bleiben ohne Versatz, Desktop bleibt unverändert, Touch zeigt eine Reihe als einen Auftritt.\n- Je Abschnitt steht höchstens eine Pause \\\"ganz\\\" (12 Seiten per DOM geprüft). Die Annahme der Notiz stimmt.\n- Zur Bildrate habe ich einen Stichprobenwert auf m390 mit CPU 4x gemessen. / liegt bei 0,07 %, /bad/barrierefreies-bad bei 0 %, /referenzen bei 2,66 %, also unter der Schwelle von 5 %. Eine Vorher-Messung fehlt, deshalb kann ich /referenzen nicht dem Diff zuordnen. Die Seite ist bildlastig (24 Fotos).\n\nAufräumen:\n- Server 4412 per PID beendet, node_modules und .next in pruef-A-1 gelöscht.\n- baum, vor und das Repository blieben unverändert."
+  }
+ ],
+ "nacharbeit": {
+  "behoben": [
+   "Mittel, Flächenfolge auf /bad, /leistungen und /referenzen: Den Befund habe ich nachgemessen; die alte Folge war bei d1440 und m390 je K K K am Anfang (log/flaechen-nach-*.txt). Behoben mit aufFliese: true im Block lage von src/inhalte/bad.ts, src/inhalte/leistungen.ts und src/inhalte/referenzen.ts, mit demselben Kommentar wie in den übrigen Dateien. Alle drei Seiten nutzen EinstiegMitte, und ErzaehlSeite reicht fugeUnten schon durch. Kein Wortlaut berührt.",
+   "Folge nachher (d1440 und m390): /bad K F K F K K F F (Stimmen bleiben auf Kalk nach Punkt 3), /leistungen K F K F K F F K, /referenzen K F K F K F K F. Auf keiner der elf Seiten stehen noch drei gleiche Flächen in Folge.",
+   "Längste Strecke ohne Bruch bei d1440: /bad von 5,60 auf 4,41 Bildschirme. Der Rest ist Schritt plus Anfragewege mit Formular, beide auf Fliese; das war schon vorher so. /leistungen von 5,35 auf 3,07. /referenzen bleibt bei 5,03 wegen der Galerie. Belege: log/flaechen-nach2-{d1440,m390}.txt und mess/flaechen-nach2-*.json; die übrigen acht Seiten sind unverändert.",
+   "Kopfabtastung mit Schritt 4 px auf den drei Seiten, d1440 und t1024: 0 Befunde (log/kopf-nach2.txt, mess/kopf2/). In ihre-lage steht kein Kopf mehr, weil die Lage jetzt auf Fliese liegt.",
+   "Bilder: chorfix/bilder/nach2/d1440/{bad,leistungen,referenzen}/einstieg_lage_1000.png, chorfix/bilder/nach2/m390/{bad,leistungen,referenzen}/einstieg_lage_800.png, chorfix/bilder/nach2/d1440/bad/lage_tun_2250.png und chorfix/bilder/nach2/d1440/leistungen/lage_tun_1700.png (alle unter /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/).",
+   "Notiz /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/UM-E4-CHOR-FIX.notiz.md ergänzt: Punkt 2, Tabelle der Flächenfolge, die längsten Strecken, offene Frage 1 als erledigt, Liste der geänderten Dateien und ein neuer Abschnitt Nacharbeit mit Prüfzahlen."
+  ],
+  "nicht_behoben": [
+   "Gering, /bad/barrierefreies-bad mit 3,35 Bildschirmen Kalk: nachgemessen und bestätigt (3011 px ab 4447 bei d1440). Nicht geändert, weil Briefing Punkt 4 eine Änderung an Beleg.tsx für zwei Fotos ausdrücklich ausschließt. Eine wählbare Fläche für den Schritt ginge über das Briefing hinaus. Die Entscheidung liegt beim Orchestrator: Versatz bei zwei Fotos, Fläche des Schritts oder ein Vermerk in KERN. Steht als offene Frage 3 in der Notiz.",
+   "Gering, /referenzen mit der Galerie als 5,03 Bildschirmen ohne Bruch (d1440, m390 13,31): bestätigt. Nicht geändert, weil die Galerie nicht im Briefing steht und als Werkzeug nach K-016 gilt. Ein Versatz je Zeile wäre ein eigenes Paket. Steht als offene Frage 4 in der Notiz.",
+   "Gering, Kopf neben dem Formatregler auf /leistungen: Der Befund ist vorbestehend und nicht Teil des Diffs; der Prüfer belegt den gleichen Stand vor dem Diff. Regler außerhalb von Formularen zählen nach der Regel aus UM-E4-VORL nicht. Eine zweite Pause ganz im Abschnitt was-wir-tun ist nicht möglich, weil ul#gewerke dort schon die einzige trägt. Nur zur Kenntnis.",
+   "Gering, sig-plan und data-plan-reihe in KERN K-008: Der Satz, das Attribut sei nirgends beschrieben, trifft nur zum Teil zu. Es ist im Kommentar des Blocks sig-plan in bewegung.css und im Dateikopf von Leistungsplaene.tsx beschrieben. Die Kennung bleibt gleich, daher bleiben register.ts und register.json nach Punkt 7 unverändert. Den Halbsatz in KERN K-008 trägt der Orchestrator ein, denn KERN schreibt nur er; ein Vorschlag steht in der Notiz (offene Frage 6).",
+   "Gering, ReviewsSection.jsx über die reine Fläche hinaus: Keine Codeänderung nötig. Der Prüfer bestätigt selbst, dass kein Leitplankenverstoß vorliegt und Fangbereich, forced-colors und axe in Ordnung sind; sein Vorschlag ist, die Abweichung anzunehmen. Sie ist in der Notiz vermerkt (offene Frage 7) und soll in der Abnahme festgehalten werden."
+  ],
+  "npm_test": "249 Tests, 249 bestanden, 0 fehlgeschlagen, Exit 0 (chorfix/log/npm-test-2.log)",
+  "tsc": "npx tsc --noEmit mit vorübergehender next-env.d.ts aus Bau 3: Exit 0, keine Meldung (chorfix/log/tsc-2.log); next-env.d.ts und tsconfig.tsbuildinfo danach gelöscht",
+  "eslint": "npx eslint: Exit 0, keine Meldung (chorfix/log/eslint-2.log)",
+  "werte": "werte.mjs --arbeitsbaum --dateien mit 22 geänderten Dateien: 0 Befunde (chorfix/log/werte-2.log, chorfix/mess/werte/2026-10-30T00-52-38-980Z.json). bewegung.mjs auf /, /bad, /leistungen und /referenzen (chorfix/mess/bewegung-nach2/): register d1440 und m390 mit 0 unbekannt und 0 ohne Register; reduziert d1440 und m390 mit 0 Bewegungsbefunden. Ruhig: m390 0 Befunde, d1440 je 4 an Kopfnavigation und Mega-Menü, vorbestehend wie vorher. Unsichtbar auf den drei Seiten je 2 weniger, weil die Kantenkreuze der Lage jetzt gezeigt werden. Kein Überlauf bei m360, q844 und bei m390 mit Schrift 200 %. Bau 3 mit echter node_modules-Kopie; danach Server über die eigene PID-Datei beendet, .next und die Kopie gelöscht, node_modules wieder als Verweis.",
+  "diff_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/UM-E4-CHOR-FIX.diff"
+ }
+}

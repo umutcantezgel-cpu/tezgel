@@ -7,8 +7,9 @@
 // spät, das Hauptziel kommt aus navigation.js. Der Einstieg steht vor der Leitachse und trägt sein Lot in Grundschicht
 // (UM-E4-VORL): Danach führt der Leitfaden wie auf / (Spitze auf der Leselinie, Kopf neben dem Inhalt der Abschnitte auf
 // Kalk, Einrasten an den Kanten); vorher umfasste die Leitachse den Einstieg, und ihr Rot stand als Stummel unter dem Kopf
-// neben dem roten Plan. Das Qualitätsversprechen aus dem Inhalt (`versprechen`, UM-E4-EP3) steht als eigener Abschnitt nach
-// dem Beleg vor dem nächsten Schritt. Serverkomponente.
+// neben dem roten Plan. Steht die Lage auf Fliese (`lage.aufFliese`, wie auf /), setzt der Einstieg ab lg eine Stufe 16
+// Kalk bis zur Fuge (`fugeUnten`, wie die Erzählvorlage; UM-E4-CHOR-FIX). Das Qualitätsversprechen aus dem Inhalt
+// (`versprechen`, UM-E4-EP3) steht als eigener Abschnitt nach dem Beleg vor dem nächsten Schritt. Serverkomponente.
 import { Suspense, type ReactNode } from 'react';
 import Leitachse from '@/components/kern/Leitachse';
 import Seitenformel from '@/components/kern/Seitenformel';
@@ -36,7 +37,7 @@ export default function WissensSeite({ inhalt, zeichnungen, werkzeug }: WissensS
   const bild = worum.plan ? <Verlegeplan plan={worum.plan} flucht="zeigen" /> : worum.bild;
   return (
     <Seitenformel>
-      <Einstieg pfad={inhalt.pfad} brotkrumen={worum.brotkrumen} titel={worum.titel} ort={worum.ort} vorspann={worum.vorspann} bild={bild} hauptziel={hauptziel(inhalt.pfad)} lot />
+      <Einstieg pfad={inhalt.pfad} brotkrumen={worum.brotkrumen} titel={worum.titel} ort={worum.ort} vorspann={worum.vorspann} bild={bild} hauptziel={hauptziel(inhalt.pfad)} lot fugeUnten={inhalt.lage.aufFliese} />
       <Leitachse>
         <Suspense fallback={<div aria-hidden="true" className="min-h-dvh noscript:hidden" />}>
           <Lage inhalt={inhalt.lage} />
