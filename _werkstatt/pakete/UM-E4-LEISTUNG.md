@@ -61,7 +61,7 @@ Kein Inhalt fällt weg. Einwilligung, Tracking-Verhalten, Logo und `/api/anfrage
 - Am Ende:
   - `cd …/leist4 && diff -ruN --exclude=node_modules --exclude=.next --exclude=cache --exclude=next-env.d.ts --exclude=tsconfig.tsbuildinfo vor baum > UM-E4-LEISTUNG.diff`
   - Notiz `UM-E4-LEISTUNG.notiz.md` mit Ursachen, Maßnahmen, Denkprotokollen, Prüfzahlen und Erwartung je Ansicht.
-- Bauen: eine echte Kopie `node_modules_echt` für Turbopack, danach Verweis zurück und `.next` löschen. Speicher ist knapp.
+- Bauen: Turbopack folgt dem Verweis `node_modules` nicht aus dem Projekt heraus. Für den Bau den Verweis durch eine echte Kopie mit dem Namen `node_modules` ersetzen (eine Kopie unter anderem Namen behandelt Turbopack als Projektcode, Hinweis aus UM-E4-NBSP), danach Verweis zurück und `.next` löschen. Speicher ist knapp.
 - Kein Lighthouse und keine Zeitmessung durch Agenten (E-076). Das Messen macht der Orchestrator danach als Skript, allein auf dem Rechner, im Wechsel vorher und nachher.
   - Gib eine nachprüfbare Erwartung je Ansicht an.
   - Prüfe selbst nur, was nicht von der Last abhängt: Zahl und Größe der Stylesheets und Skripte je Hauptansicht im ausgelieferten HTML eines eigenen Baus (`npx next start -p 4460 -H 127.0.0.1`, per Prozessgruppe beenden), Dokumentgröße, Vorladehinweise.
