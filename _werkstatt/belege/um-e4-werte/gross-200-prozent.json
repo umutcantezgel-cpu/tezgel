@@ -1,0 +1,44 @@
+[
+ {
+  "seite": "/preise",
+  "breite": 360,
+  "elemente_mit_eigenem_wert": 89,
+  "werte_gleich": true,
+  "bild_bytegleich": true
+ },
+ {
+  "seite": "/fliesen/kueche",
+  "breite": 360,
+  "elemente_mit_eigenem_wert": 21,
+  "werte_gleich": true,
+  "bild_bytegleich": true
+ },
+ {
+  "seite": "/fliesen/flur-diele",
+  "breite": 360,
+  "elemente_mit_eigenem_wert": 21,
+  "werte_gleich": true,
+  "bild_bytegleich": true
+ },
+ {
+  "seite": "/preise",
+  "breite": 390,
+  "elemente_mit_eigenem_wert": 89,
+  "werte_gleich": true,
+  "bild_bytegleich": true
+ },
+ {
+  "seite": "/fliesen/kueche",
+  "breite": 390,
+  "elemente_mit_eigenem_wert": 21,
+  "werte_gleich": true,
+  "bild_bytegleich": true
+ },
+ {
+  "seite": "/fliesen/flur-diele",
+  "breite": 390,
+  "elemente_mit_eigenem_wert": 21,
+  "werte_gleich": true,
+  "bild_bytegleich": true
+ }
+]

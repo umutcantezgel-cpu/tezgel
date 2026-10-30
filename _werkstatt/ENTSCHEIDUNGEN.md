@@ -1667,3 +1667,14 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - Hydrierungsfehler #418 auf `/blog`, wenn Überschreibungen aus localStorage vor dem Laden stehen (nur Verwaltung; auf 9c98aa9a gleich) → UM-E5-C.
   - Platzhalterhöhe von `spaet-zeichnen` (50rem, E-087): kein Beleg für eine Budgetwirkung (CLS 0), axe-Messartefakt → bleibt offener Punkt für E4-SICHT.
 - **Folge:** PLAN-Zeile UM-E4-LEISTUNG erledigt. E4-W4: UM-E4-B (Prüfstufe B der Etappe, Skript `S/e4b/e4b.sh`, Bericht `berichte/UM-E4-B.md`), danach UM-E4-SICHT.
+
+## E-102 · UM-E4-WERTE abgenommen: Silbentrennung als Utilities, Werte der Etappe E4 0 Befunde (30.10.2026, 22:02 MEZ)
+- **Anlass:** UM-E4-B, `werte.mjs --basis 552a9f53` (alle Dateien der Etappe E4) meldete 11 Beliebigwerte `[hyphenate-limit-chars:…]` in `preise/page.jsx`, `PriceCard.tsx` und `PricingCalculator.tsx`. Sie stammen aus dem Vorlauf (E4-W1-FORMULARE, d193cd2f) und standen in E-096 als vorhandener Befund. Z-04 verlangt null Werte außerhalb des Designsystems in geänderten Dateien; die Dateien sind in E4 geändert (FS).
+- **Umsetzung (4d2d3fef):** drei Utilities in `globals.css` mit denselben Werten, `trennen-ab-10` (10 4 4), `trennen-ab-11` (11 4 4) und `trennen-ab-12` (12 4 4). Ersetzt sind die 11 gemeldeten Stellen, dazu eine ungemeldete in einer Klassenkonstante des Rechners und eine im Konfigurator (`OptionGroup.jsx`).
+- **Prüfung** (vorher e222f6d3 auf 4325, nachher 4d2d3fef auf 4324; Belege `belege/um-e4-werte/`):
+  - Reinraum grün (lint 0, test 0, qa-graph 0), `npm test` 261/261, 0 übersprungen.
+  - `werte.mjs` über die fünf Dateien 0 Befunde; über alle 99 Dateien der Etappe E4 0 Befunde (vorher 11).
+  - Ausgeliefertes CSS: je eine Regel mit demselben Wert statt der Beliebigklasse, auch `[&_h2]:trennen-ab-10 h2`.
+  - Pixel: 48 Paare der Hauptansichten und 20 Paare (`/preise`, zwei Konfiguratorseiten, Projekt-Check, Termin), 0 Pixel.
+  - 200 % Schrift bei 360 und 390 px auf `/preise` und zwei Konfiguratorseiten: berechnetes `hyphenate-limit-chars` aller Elemente gleich, Bildschirmfotos bytegleich (`gross-200-prozent.json`).
+- **Folge:** Der Vermerk aus E-096 („bleibt als vorhandener Befund“) ist erledigt. UM-E4-B weiter auf 4d2d3fef: Teil 2 (Bildsatz, Bildfolgen, Erstbesuch) und eine Zuordnung der Long Animation Frames zu Skripten (das Bildratenwerkzeug zählt nur Dauern, Lücke seit UM-E2-B).
