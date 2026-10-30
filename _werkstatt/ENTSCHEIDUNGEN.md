@@ -1536,3 +1536,17 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - lange Handyseite;
   - Flucht der Fotokante auf t1024.
 - **Folge:** E4-W2 ist abgeschlossen. E4-W3 läuft: NBSP und FS (wf_b29483d7-655), danach UM-E4-LEISTUNG allein mit Lighthouse.
+
+## E-098 · Zwischenstand live auf Wunsch des Auftraggebers: main = 78c37647 (30.10.2026, 12:05 MEZ)
+- **Anweisung des Auftraggebers** (30.10., „Push schon mal alles, was du hast, auf Main für ein Redeploy bei Vessel und arbeite danach weiter“): ein Zwischenstand auf main, vor der Endabnahme. E-089 (Endstand einmal auf main) bleibt daneben bestehen.
+- **Ausgeführt:** `git push origin 78c37647:refs/heads/main` als Fast-Forward von 2317dcde, nicht erzwungen, 97 Commits.
+  - Der Code entspricht f34c103b: Danach kamen nur noch Dateien unter `_werkstatt/`.
+  - f34c103b ist mit der Prüfkette aus E-097 geprüft: Reinraum, Suiten 398/0/26 in beiden Zuständen, axe 0, Strukturdaten 113/113.
+- **Vercel:** Der Produktions-Deploy `dpl_BXjzhrZtvReZnucWBsAeTmSV8Hjp` startete aus der Git-Anbindung (nur gelesen über die Vercel-Schnittstelle). Zustand im Nachtrag.
+- **Bekannt offen im Zwischenstand:**
+  - LCP mobil auf `/` +0,18 s (E-097, Maßnahme 1 von UM-E4-LEISTUNG);
+  - E4-W3 bis E5 (PLAN);
+  - Fragen M-07, M-08, UM-12 und UM-13 (MENSCHEN).
+- **Danach:** weiter nach PLAN auf dem Arbeitsbranch.
+  - main bekommt nur auf erneute Anweisung oder nach der Endabnahme einen neuen Stand (E-089).
+  - Rückweg: der vorige Produktions-Deploy `dpl_74ZHMPq8qcyV2YknJR61t3fN7X9m` (2317dcde) ist als Rücksprung-Kandidat markiert.
