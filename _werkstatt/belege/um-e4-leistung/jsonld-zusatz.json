@@ -1,0 +1,145 @@
+{
+  "base": "http://127.0.0.1:4325",
+  "ergebnisse": [
+    {
+      "pfad": "/preise",
+      "status": 200,
+      "gruen": false,
+      "bloecke": 1,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product"
+      ],
+      "befunde": [
+        "kein Seitenknoten (WebPage …) für diese Adresse",
+        "0 BreadcrumbList (genau eine erwartet)"
+      ]
+    },
+    {
+      "pfad": "/bad/projekt-check",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/termin",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/blog/barrierefreier-balkonaustritt",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/blog/handwerkerbonus-fliesenarbeiten",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/blog/fliesenleger-gesucht-geselle-meister",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/standorte/giessen",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "City"
+      ],
+      "befunde": []
+    }
+  ],
+  "uebersprungen": []
+}

@@ -1,0 +1,93 @@
+=== LIGHTHOUSE Desktop, allein 19:30:29 last 0.59
+--- lh dv port 4324 desktop 19:30:29 last 0.59
+lighthouse dv exit 0
+/
+  desktop: perf 100 [100–100] · LCP 644 ms [612–762] · TBT 2 ms [0–9] · CLS 0 [0–0] · LCP-Element figure > div.border > picture > img.block
+/bad
+  desktop: perf 100 [100–100] · LCP 683 ms [607–733] · TBT 4 ms [0–8] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block · Benchmark außerhalb des Bands
+/bad/badsanierung
+  desktop: perf 100 [100–100] · LCP 654 ms [605–682] · TBT 0 ms [0–1] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block · Benchmark außerhalb des Bands
+/bad/barrierefreies-bad
+  desktop: perf 100 [100–100] · LCP 646 ms [643–728] · TBT 0 ms [0–5] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block · Benchmark außerhalb des Bands
+/leistungen
+  desktop: perf 100 [100–100] · LCP 594 ms [594–651] · TBT 0 ms [0–0] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+/fliesen
+  desktop: perf 100 [100–100] · LCP 656 ms [655–738] · TBT 0 ms [0–2] · CLS 0 [0–0] · LCP-Element section.@container > div.relative > div.mx-auto > p.mt-8
+/balkon-terrasse
+  desktop: perf 100 [100–100] · LCP 685 ms [607–734] · TBT 1 ms [0–8] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+/referenzen
+  desktop: perf 100 [100–100] · LCP 619 ms [600–729] · TBT 0 ms [0–3] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+/ueber-uns
+  desktop: perf 100 [100–100] · LCP 687 ms [640–734] · TBT 0 ms [0–1] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block · Benchmark außerhalb des Bands
+/kontakt
+  desktop: perf 100 [100–100] · LCP 651 ms [529–657] · TBT 0 ms [0–0] · CLS 0 [0–0] · LCP-Element div.relative > section.@container > div.mx-auto > h1#seite-titel · Benchmark außerhalb des Bands
+/standorte/wetzlar
+  desktop: perf 100 [100–100] · LCP 617 ms [575–655] · TBT 0 ms [0–16] · CLS 0 [0–0] · LCP-Element section.@container > div.relative > div.mx-auto > p.mt-8 · Benchmark außerhalb des Bands
+/blog
+  desktop: perf 100 [100–100] · LCP 693 ms [648–699] · TBT 0 ms [0–0] · CLS 0 [0–0] · LCP-Element section.@container > div.relative > div.mx-auto > p.mt-8 · Benchmark außerhalb des Bands
+--- lh dn port 4325 desktop 19:48:04 last 2.59
+lighthouse dn exit 0
+/
+  desktop: perf 100 [100–100] · LCP 710 ms [703–738] · TBT 0 ms [0–11] · CLS 0 [0–0] · LCP-Element figure > div.border > picture > img.block
+/bad
+  desktop: perf 100 [100–100] · LCP 644 ms [606–731] · TBT 0 ms [0–2] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+/bad/badsanierung
+  desktop: perf 100 [100–100] · LCP 642 ms [601–644] · TBT 3 ms [0–5] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+/bad/barrierefreies-bad
+  desktop: perf 100 [100–100] · LCP 679 ms [649–727] · TBT 0 ms [0–0] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+/leistungen
+  desktop: perf 100 [100–100] · LCP 609 ms [577–613] · TBT 0 ms [0–0] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+/fliesen
+  desktop: perf 100 [100–100] · LCP 714 ms [568–745] · TBT 2 ms [0–7] · CLS 0 [0–0] · LCP-Element section.@container > div.relative > div.mx-auto > p.mt-8
+/balkon-terrasse
+  desktop: perf 100 [100–100] · LCP 682 ms [604–688] · TBT 0 ms [0–4] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+/referenzen
+  desktop: perf 100 [100–100] · LCP 622 ms [618–704] · TBT 0 ms [0–0] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+/ueber-uns
+  desktop: perf 100 [100–100] · LCP 640 ms [584–730] · TBT 0 ms [0–14] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+/kontakt
+  desktop: perf 100 [100–100] · LCP 656 ms [604–660] · TBT 0 ms [0–0] · CLS 0 [0–0] · LCP-Element div.relative > section.@container > div.mx-auto > h1#seite-titel
+/standorte/wetzlar
+  desktop: perf 100 [100–100] · LCP 573 ms [550–576] · TBT 0 ms [0–0] · CLS 0 [0–0] · LCP-Element section.@container > div.relative > div.mx-auto > p.mt-8
+/blog
+  desktop: perf 100 [100–100] · LCP 581 ms [580–617] · TBT 0 ms [0–1] · CLS 0 [0–0] · LCP-Element section.@container > div.relative > div.mx-auto > p.mt-8
+=== REAKTION (INP) im Wechsel 19:58:01
+reaktion v exit 0
+....................................
+
+Satz leist4-reaktion-v · m390 · CPU 4× · Median aus 3 Läufen je Handlung · Schwelle ≤ 200 ms (ms)
+Seite                     Hauptknopf      Menü Akkordeon   Eingabe      Link  Höchster  Urteil
+/                                120       144         —        48        72       144  ok
+/bad                             120        88         —         —        32       120  ok
+/bad/badsanierung                 88       104         —         —        32       104  ok
+/bad/barrierefreies-bad           88        80         —         —        32        88  ok
+/leistungen                       80       112         —         —        32       112  ok
+/fliesen                          96        88         —         —        32        96  ok
+/balkon-terrasse                  80        88         —         —        32        88  ok
+/referenzen                       88        96         —         —        32        96  ok
+/ueber-uns                        88        80         —         —        40        88  ok
+/kontakt                         120        88         —         —        40       120  ok
+/standorte/wetzlar               152        96         —        80        64       152  ok
+/blog                            104       136         —       104        40       136  ok
+
+Belege: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/leist4/pruef-haupt/reaktion-v/reaktion.json
+reaktion n exit 0
+....................................
+
+Satz leist4-reaktion-n · m390 · CPU 4× · Median aus 3 Läufen je Handlung · Schwelle ≤ 200 ms (ms)
+Seite                     Hauptknopf      Menü Akkordeon   Eingabe      Link  Höchster  Urteil
+/                                104       104         —        56        72       104  ok
+/bad                              80        80         —         —        32        80  ok
+/bad/badsanierung                120        96         —         —        40       120  ok
+/bad/barrierefreies-bad           80        80         —         —        32        80  ok
+/leistungen                       96       120         —         —        40       120  ok
+/fliesen                          80        96         —         —        32        96  ok
+/balkon-terrasse                  80        88         —         —        40        88  ok
+/referenzen                      104        88         —         —        32       104  ok
+/ueber-uns                        80       104         —         —        40       104  ok
+/kontakt                          80        88         —         —        40        88  ok
+/standorte/wetzlar               128       104         —        56        56       128  ok
+/blog                             80       128         —       120        48       128  ok
+
+Belege: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/leist4/pruef-haupt/reaktion-n/reaktion.json
+=== ENDE 20:05:26

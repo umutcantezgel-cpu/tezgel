@@ -1603,3 +1603,67 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - LCP mobil 2,79 bis 3,46 s auf allen Ansichten, also überall über dem Budget von 2,5 s;
   - TBT 93 bis 200 ms; CLS überall 0; Desktop überall 100.
 - **Folge:** E4-W3 weiter mit UM-E4-LEISTUNG (Workflow, Briefing `pakete/UM-E4-LEISTUNG.md`), danach E4-W4.
+
+## E-101 · UM-E4-LEISTUNG abgenommen: ein Stylesheet, FCP mobil −150 ms auf allen Ansichten, Wetzlar 79 → 86; Ausnahme A-1 gilt für alle zwölf Ansichten (30.10.2026, 21:07 MEZ)
+- **Umfang** (e222f6d3; Workflow wf_b9ac3570-4bf: Kundschafter und Baumeister Opus, zwei Sonnet-Prüfer mit 9 Befunden, Nacharbeit; `berichte/UM-E4-LEISTUNG.ursache.md`, `berichte/UM-E4-LEISTUNG.notiz.md`):
+  1. **Ein render-blockierendes Stylesheet** auf allen Seiten. Die zwei `@font-face` stehen als `<style>` im Kopf von `_dokument.tsx` statt über `next/font/local`; die Schriftdateien kommen per Turbopack-Asset-Import, Archivo ist vorgeladen. Kein Schalter legt die Dateien zusammen (`experimental.cssChunking` und `turbopackChunking.maxMergeChunkSize` ohne Wirkung, belegt), Turbopack führt CSS-Module erst unter rund 121 bis 132 KB zusammen. Absicherung `test/stylesheets.test.mjs` (Quelle und Bau; im Reinraum 0 übersprungen). KERN K-004 angepasst.
+  2. **Cookie-Hinweis ein Bild nach dem Einhängen** statt nach 400 ms (`useConsent.ts`, `requestAnimationFrame`), früheres Zeichnen nach E-067. Wortlaut, Knöpfe, Fokus, Wahl, Speicherung, Tracking und Wiederbesuch bleiben gleich (G8); die acht Tracking-Fälle laufen mit GA4-Platzhalter vorher und nachher 44/0.
+  3. **`/blog` ohne Inhaltsspeicher im Layout und ohne zod beim Lesen:** Der Speicher umschließt nur noch die Liste, Beiträge kommen ohne ihren Text als Vorgabe von der Serverseite, `dataService` (mit zod) lädt erst beim ersten Schreiben. `/blog` und die 13 Beiträge laden rund 64 KB gz weniger Skript; nebenbei legt Turbopack zwei gemeinsame Stücke zusammen (eine Anfrage weniger auf allen Seiten).
+- **Entscheidungen des Orchestrators:**
+  - **Option M5 nicht übernommen** (`berichte/UM-E4-LEISTUNG-M5-option.diff`, Bildbreite 680 und `sizes` mobil): Der Gewinn von 4 bis 40 ms liegt unter einer Lantern-Stufe. Dafür verschiebt sich die Seite im Ruhezustand um Bruchteile eines Pixels (14 von 48 Pixelpaaren, Seitenhöhe ±0,4 px).
+  - **Teilung des Bannertexts abgelehnt** (`ursache.md` 6, Nr. 2; nach Rechnung Wetzlar 90 bis 92): Sie änderte nur, welches Element Lighthouse als LCP wählt, nicht, was Besucher sehen. Das wäre ein Bau für die Prüfung (G7).
+  - **Serverseitig gezeichneter Banner nicht freigegeben:** Seine Knöpfe stünden vor der Hydrierung ohne Wirkung da; das berührt das Verhalten der Einwilligung (G8).
+  - Nicht umgesetzt, mit Grund in der Notiz (Abschnitt 4): Dokumentstufe, gemeinsame Skriptposten, Plex-Ersatz, Kopfskript vor dem Stylesheet (React ordnet den Kopf selbst). Das App-Stück der Einwilligung lädt schon nach der Hydrierung, ein weiterer Hebel ist nicht belegt.
+- **Prüfkette** (vorher 9c98aa9a auf 4324, nachher e222f6d3 auf 4325; Skripte und Protokolle `belege/um-e4-leistung/pruefkette.sh`, `pruefkette.txt`, `rest.sh`, `rest.txt`; die Kette stieß nach dem mobilen Lighthouse an die Zeitgrenze für Hintergrundaufgaben, Desktop und Reaktion liefen danach allein mit `rest.sh`):
+
+| Prüfung | Ergebnis |
+|---|---|
+| Reinraum e222f6d3 | grün (lint 0, test 0, qa-graph 0); `npm test` 261/261, 0 übersprungen |
+| Stylesheets im ausgelieferten HTML (12 Ansichten, `/preise`, ein Beitrag) | vorher 2, nachher 1; `@font-face` nachher 4 (2 im `<style>`, 2 als Text im RSC-Fluss) |
+| G8-Abgleich | gleich (Fuß, Zitate, Zahlen auf `/`, `/bad`, `/ueber-uns`, Impressum, Datenschutz) |
+| Suite reduziert / Bewegung an | 398 / 0 / 26 und 398 / 0 / 26 |
+| Bildrate `/` im Wechsel | vorher 0,36 und 0,42 %, nachher 0,79 und 0,50 % verworfen (Schwelle 5 %; auf gleichem Stand streute der Wert in E-100 von 0,14 bis 2,19 %); Long Animation Frames nachher je 1 statt 2, Summe 72 und 59 statt 149 und 103 ms |
+| axe `--zustaende`, 12 Hauptansichten | 396 Läufe, 0 ernste oder kritische Knoten |
+| axe Zusatz (7 Seiten) | 52 Knoten, nur `label-content-name-mismatch` am WhatsApp-Link auf `/preise` und `/termin` (Altbestand, E-100) |
+| ruhig und reduziert (13 Seiten) | 0 Befunde |
+| Register d1440 und m390 (je 13 Seiten) | 0 unbekannt, 0 ohne Register |
+| Strukturdaten | 113 von 113 grün; Zusatz 6 von 7 (`/preise` ohne Seitenknoten und BreadcrumbList, Altbestand, E-100) |
+| Lesbarkeit (12 Hauptansichten) | 10 grün; rot nur die geschützten H1 auf `/` und `/bad/badsanierung` |
+| Pixel, Ruhezustand | 48 Paare und 28 Zusatzpaare, 0 Pixel; `/leistungen` d1440 meldete eine Höhenabweichung auf der Vorher-Seite (10.381 statt 11.350 px, ein Aufnahmefehler: FS und START maßen auf demselben Quelltext 11.350); zwei Nachläufe des Paars: beide 11.350 px, 0 Pixel (`pixelvergleich-leistungen-d1440-nachlauf-1.json`, `-2.json`) |
+
+- **Lighthouse mobil** (Median aus sechs Läufen je Stand, Reihenfolge V N N V, allein; `belege/um-e4-leistung/lh-vergleich-mobil.md`):
+
+| Ansicht | Leistung | LCP s | FCP ms | TBT ms | Skript KB gz |
+|---|---|---|---|---|---|
+| `/` | 94 → 94 | 2,86 → 2,86 | 1359 → 1207 | 109 → 102 | 202 → 198 |
+| `/bad` | 93 → 94 | 3,13 → 2,98 | 1360 → 1205 | 84 → 88 | 228 → 224 |
+| `/bad/badsanierung` | 94 → 93 | 2,85 → 2,99 | 1358 → 1209 | 104 → 119 | 236 → 233 |
+| `/bad/barrierefreies-bad` | 94 → 94 | 2,84 → 3,02 | 1358 → 1207 | 108 → 83 | 236 → 233 |
+| `/leistungen` | 94 → 95 | 2,90 → 2,79 | 1357 → 1207 | 86 → 82 | 222 → 219 |
+| `/fliesen` | 94 → 96 | 2,92 → 2,75 | 1358 → 1205 | 148 → 79 | 235 → 231 |
+| `/balkon-terrasse` | 94 → 94 | 2,99 → 2,96 | 1358 → 1207 | 88 → 83 | 213 → 210 |
+| `/referenzen` | 94 → 96 | 2,98 → 2,69 | 1356 → 1207 | 70 → 75 | 218 → 215 |
+| `/ueber-uns` | 94 → 96 | 2,91 → 2,72 | 1358 → 1206 | 70 → 89 | 211 → 208 |
+| `/kontakt` | 96 → 96 | 2,79 → 2,49 | 1208 → 1057 | 63 → 132 | 211 → 208 |
+| `/standorte/wetzlar` | 79 → 86 | 4,90 → 3,77 | 1357 → 1207 | 187 → 158 | 236 → 232 |
+| `/blog` | 92 → 95 | 3,24 → 2,75 | 1358 → 1206 | 84 → 104 | 288 → 222 |
+
+- **Lighthouse Desktop** (je drei Läufe, V N): Leistung 100 auf allen zwölf Ansichten in beiden Ständen; FCP 365 bis 372 → 258 bis 335 ms (rund −40 ms), LCP 594 bis 693 → 573 bis 714 ms (Streuung ±70 ms), TBT 0 bis 4 ms (`belege/um-e4-leistung/lh-vergleich-desktop.md`).
+- **Reaktion** (`reaktion.mjs`, je drei Läufe, V N): alle zwölf Ansichten ≤ 200 ms in beiden Ständen; höchster Median je Ansicht vorher 88 bis 152 ms, nachher 80 bis 128 ms (`/` 144 → 104, `/kontakt` 120 → 88, Wetzlar 152 → 128; höher nur `/bad/badsanierung` 104 → 120, `/leistungen` 112 → 120, `/referenzen` 96 → 104, `/ueber-uns` 88 → 104, in Schritten von 8 ms und in überlappenden Spannen). Gegen E0 (`belege/um-e0/reaktion/`): zehn Ansichten auf oder unter dem E0-Median, `/bad/badsanierung` und `/leistungen` in der Spanne der drei E0-Läufe (40 bis 536 und 40 bis 368 ms). Belege `reaktion-vorher.json`, `reaktion-nachher.json`.
+- **TBT auf `/kontakt`** (63 → 132 ms, `belege/um-e4-leistung/tbt-kontakt.md`): In beiden Ständen stehen dieselben langen Aufgaben mit gleicher Dauer in den Rohberichten. Der erste Inhalt kommt aber 150 ms früher, und TBT zählt nur Blockierung nach dem FCP. Im simulierten Ablauf fällt deshalb ein größerer Teil der frühen Aufgaben hinter den FCP. Das ist eine Folge der Definition, keine zusätzliche Arbeit. Budget ≤ 200 ms erfüllt.
+- **Budget K-012 nach dem Paket** (12 Hauptansichten, mobil, Median):
+  - Leistung ≥ 90: 11 von 12 (93 bis 96); `/standorte/wetzlar` 86 (vorher 79, E0 81).
+  - LCP ≤ 2,5 s: nur `/kontakt` (2,49 s); sonst 2,69 bis 3,02 s, Wetzlar 3,77 s.
+  - TBT ≤ 200 ms: überall (75 bis 158 ms). CLS: überall 0.
+  - Reaktion ≤ 200 ms: überall (80 bis 128 ms; E0: 4 von 12 bestanden).
+  - Keine Ansicht schlechter als E0 um mehr als die E0-Spanne (Z-10).
+- **Ausnahme A-1, Geltung erweitert (Denkprotokoll):**
+  - **LCP ≤ 2,5 s:** Der Kundschafter belegt für alle zwölf Ansichten dieselbe Ursache wie E-085: Der simulierte LCP endet am Ende von React DOM und der Next-Laufzeit, nicht am Foto (es ist vorgeladen und vor dem Ende der Skripte fertig). Unter 2,5 s käme er nur ohne diese Skripte im Graphen; das hängt am Wettlauf ihrer Auswertung gegen das erste Malen und lässt sich ohne künstliche Verschiebung nicht steuern (G7). Zwei belegte Anläufe: UM-E3-LEISTUNG (E-085) und dieses Paket.
+  - **`/standorte/wetzlar`, Leistung 86 statt ≥ 90:** Das LCP-Element ist der Text des Cookie-Hinweises (G8). Er erscheint jetzt ein Bild nach dem Einhängen statt 400 ms später; das bringt LCP 4,90 → 3,77 s und Leistung 79 → 86. Was darüber hinausginge, änderte entweder nur die Messung (Teilung) oder das Verhalten der Einwilligung (Server-Banner). Die Abweichung folgt aus demselben LCP-Kriterium und gehört deshalb zu A-1, sie ist keine zweite AUSNAHME.
+  - **Beste Ersatzlösung:** FCP mobil −150 ms auf allen Ansichten, LCP besser auf 10 von 12 (−7 bis −1.127 ms), Leistung mobil 93 bis 96 außer Wetzlar, Desktop 100 überall. Für echte Besucher mit Brotli liegt das Dokument eine Stufe niedriger (E-085).
+  - Zahl der AUSNAHMEN nach L7: weiter eine (A-1, Z-10).
+- **LCP auf `/bad/badsanierung` (+134 ms) und `/bad/barrierefreies-bad` (+184 ms):** In beiden Ständen springt der simulierte LCP zwischen rund 2,83 und 3,15 s (zwei Graphen-Varianten), nachher öfter in der höheren. Die Spannen überlappen (vorher 2.836 bis 3.151 und 2.825 bis 2.976 ms, nachher 2.845 bis 3.470 und 2.896 bis 3.153 ms); kein Beleg für eine Verschlechterung, Leistung 93 und 94 wie vorher.
+- **Vorhanden, nicht aus diesem Paket** (→ PLAN „Offene Punkte“):
+  - Hydrierungsfehler #418 auf `/blog`, wenn Überschreibungen aus localStorage vor dem Laden stehen (nur Verwaltung; auf 9c98aa9a gleich) → UM-E5-C.
+  - Platzhalterhöhe von `spaet-zeichnen` (50rem, E-087): kein Beleg für eine Budgetwirkung (CLS 0), axe-Messartefakt → bleibt offener Punkt für E4-SICHT.
+- **Folge:** PLAN-Zeile UM-E4-LEISTUNG erledigt. E4-W4: UM-E4-B (Prüfstufe B der Etappe, Skript `S/e4b/e4b.sh`, Bericht `berichte/UM-E4-B.md`), danach UM-E4-SICHT.

@@ -1,0 +1,236 @@
+=== REINRAUM 17:29:33
+exit 0
+lint 0 (20s)
+test 0 (2s)
+qa-graph 0 (0s)
+ℹ tests 261
+ℹ pass 261
+ℹ fail 0
+ℹ skipped 0
+läuft: 9c98aa9a auf 4324
+läuft: e222f6d3 auf 4325
+4324 200
+4325 200
+/preise 200
+/bad/projekt-check 200
+/termin 200
+/blog/barrierefreier-balkonaustritt 200
+/blog/handwerkerbonus-fliesenarbeiten 200
+/blog/fliesenleger-gesucht-geselle-meister 200
+/standorte/giessen 200
+=== STYLESHEETS im ausgelieferten HTML 17:31:53
+4324 / css=2 fontface=0
+4324 /bad css=2 fontface=0
+4324 /bad/badsanierung css=2 fontface=0
+4324 /bad/barrierefreies-bad css=2 fontface=0
+4324 /leistungen css=2 fontface=0
+4324 /fliesen css=2 fontface=0
+4324 /balkon-terrasse css=2 fontface=0
+4324 /referenzen css=2 fontface=0
+4324 /ueber-uns css=2 fontface=0
+4324 /kontakt css=2 fontface=0
+4324 /standorte/wetzlar css=2 fontface=0
+4324 /blog css=2 fontface=0
+4324 /preise css=2 fontface=0
+4324 /blog/fliesenleger-gesucht-geselle-meister css=2 fontface=0
+4325 / css=1 fontface=4
+4325 /bad css=1 fontface=4
+4325 /bad/badsanierung css=1 fontface=4
+4325 /bad/barrierefreies-bad css=1 fontface=4
+4325 /leistungen css=1 fontface=4
+4325 /fliesen css=1 fontface=4
+4325 /balkon-terrasse css=1 fontface=4
+4325 /referenzen css=1 fontface=4
+4325 /ueber-uns css=1 fontface=4
+4325 /kontakt css=1 fontface=4
+4325 /standorte/wetzlar css=1 fontface=4
+4325 /blog css=1 fontface=4
+4325 /preise css=1 fontface=4
+4325 /blog/fliesenleger-gesucht-geselle-meister css=1 fontface=4
+=== G8 17:31:57
+/ fuss gleich · zitate gleich · zahlen weg 0 neu 0
+/bad fuss gleich · zitate gleich · zahlen weg 0 neu 0
+/ueber-uns fuss gleich · zitate gleich · zahlen weg 0 neu 0
+/impressum fuss gleich · zitate gleich · zahlen weg 0 neu 0
+/datenschutz fuss gleich · zitate gleich · zahlen weg 0 neu 0
+g8 exit 0
+=== SUITE reduziert 17:32:17 last 2.53
+  ✓  424 [desktop] › tests/verlegen.spec.mjs:1266:3 › Reduzierte Bewegung › (12) reduzierte Bewegung: Wechsel vollständig, Überblendung über .verlegen-blende, keine Fliesen-Animation (2.1s)
+  ✓  422 [desktop] › tests/verlegen.spec.mjs:786:3 › Bewegung an (Wechsel mit Fliesen) › (20) Zurück im Browser, während die Fliesen abgenommen werden: Adresse, Inhalt, Scroll und Fokus (Prüfung E-043) (8.8s)
+
+  26 skipped
+  398 passed (8.4m)
+=== SUITE Bewegung an 17:40:41 last 4.17
+  ✓  424 [desktop] › tests/verlegen.spec.mjs:1266:3 › Reduzierte Bewegung › (12) reduzierte Bewegung: Wechsel vollständig, Überblendung über .verlegen-blende, keine Fliesen-Animation (2.0s)
+  ✓  422 [desktop] › tests/verlegen.spec.mjs:786:3 › Bewegung an (Wechsel mit Fliesen) › (20) Zurück im Browser, während die Fliesen abgenommen werden: Adresse, Inhalt, Scroll und Fokus (Prüfung E-043) (8.8s)
+
+  26 skipped
+  398 passed (9.8m)
+=== BILDRATE im Wechsel 17:50:30
+1 4324 {'anteil_verworfen_prozent': 0.36, 'loaf_anzahl': 2, 'loaf_summe_ms': 149}
+1 4325 {'anteil_verworfen_prozent': 0.79, 'loaf_anzahl': 1, 'loaf_summe_ms': 72}
+2 4324 {'anteil_verworfen_prozent': 0.42, 'loaf_anzahl': 2, 'loaf_summe_ms': 103}
+2 4325 {'anteil_verworfen_prozent': 0.5, 'loaf_anzahl': 1, 'loaf_summe_ms': 59}
+=== AXE 18:00:20
+.............................................................................................................................................................................................................................................................
+axe: 396 Läufe · ernst/kritisch (Knoten) 0
+
+
+=== AXE Zusatz 18:09:59
+.....XXXXXXXXXX.X............................................X..XX.X.X.X.XXXXXXX.XX.......................XX.X.X.X..XXXXXXXXXX........................................................................................
+axe: 231 Läufe · ernst/kritisch (Knoten) 52
+serious:label-content-name-mismatch 52
+
+=== RUHIG/REDUZIERT 18:15:20
+ruhig / befunde 0 unsichtbar 10
+reduziert / befunde 0 unsichtbar 12
+ruhig /bad befunde 0 unsichtbar 9
+reduziert /bad befunde 0 unsichtbar 11
+ruhig /bad/badsanierung befunde 0 unsichtbar 6
+reduziert /bad/badsanierung befunde 0 unsichtbar 8
+ruhig /bad/barrierefreies-bad befunde 0 unsichtbar 7
+reduziert /bad/barrierefreies-bad befunde 0 unsichtbar 9
+ruhig /leistungen befunde 0 unsichtbar 8
+reduziert /leistungen befunde 0 unsichtbar 10
+ruhig /fliesen befunde 0 unsichtbar 7
+reduziert /fliesen befunde 0 unsichtbar 9
+ruhig /balkon-terrasse befunde 0 unsichtbar 6
+reduziert /balkon-terrasse befunde 0 unsichtbar 8
+ruhig /referenzen befunde 0 unsichtbar 6
+reduziert /referenzen befunde 0 unsichtbar 8
+ruhig /ueber-uns befunde 0 unsichtbar 6
+reduziert /ueber-uns befunde 0 unsichtbar 8
+ruhig /kontakt befunde 0 unsichtbar 6
+reduziert /kontakt befunde 0 unsichtbar 8
+ruhig /standorte/wetzlar befunde 0 unsichtbar 8
+reduziert /standorte/wetzlar befunde 0 unsichtbar 10
+ruhig /blog befunde 0 unsichtbar 6
+reduziert /blog befunde 0 unsichtbar 8
+ruhig /preise befunde 0 unsichtbar 5
+reduziert /preise befunde 0 unsichtbar 7
+=== REGISTER 18:24:46
+d1440 / {'gefundene_kennungen': 10, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /bad {'gefundene_kennungen': 10, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /bad/badsanierung {'gefundene_kennungen': 9, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /bad/barrierefreies-bad {'gefundene_kennungen': 10, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /leistungen {'gefundene_kennungen': 11, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /fliesen {'gefundene_kennungen': 10, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /balkon-terrasse {'gefundene_kennungen': 10, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /referenzen {'gefundene_kennungen': 11, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /ueber-uns {'gefundene_kennungen': 11, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /kontakt {'gefundene_kennungen': 8, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /standorte/wetzlar {'gefundene_kennungen': 9, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /blog {'gefundene_kennungen': 8, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /preise {'gefundene_kennungen': 6, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 / {'gefundene_kennungen': 9, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /bad {'gefundene_kennungen': 9, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /bad/badsanierung {'gefundene_kennungen': 8, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /bad/barrierefreies-bad {'gefundene_kennungen': 9, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /leistungen {'gefundene_kennungen': 10, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /fliesen {'gefundene_kennungen': 9, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /balkon-terrasse {'gefundene_kennungen': 9, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /referenzen {'gefundene_kennungen': 10, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /ueber-uns {'gefundene_kennungen': 10, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /kontakt {'gefundene_kennungen': 7, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /standorte/wetzlar {'gefundene_kennungen': 8, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /blog {'gefundene_kennungen': 7, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /preise {'gefundene_kennungen': 5, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+=== JSONLD 18:32:53
+Seiten 113 · GRÜN 113 · ROT 0 · Ziel /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/leist4/pruef-haupt/jsonld
+jsonld.json: 113 Seiten, 112 mit Service als Knoten, ROT 0
+HTML: 113 von 113 Seiten mit Typ Service; ohne: keine
+Seiten mit mehr als einem Service-Knoten auf oberster Ebene: keine
+=== JSONLD Zusatz 18:32:58
+GRÜN /standorte/giessen
+Seiten 7 · GRÜN 6 · ROT 1 · Ziel /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/leist4/pruef-haupt/jsonld-zusatz
+=== LESBARKEIT 18:32:58
+............
+Seiten 12 · GRÜN 10 · ROT 2 · ausgenommen 0 · Ziel /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/leist4/pruef-haupt/lesbarkeit
+=== PIXEL 18:33:14
+Paare: 48 · mit Abweichung: 1 · Fehler: 0 · Pixel gesamt: 0 · Laufzeit: 3.49 min
+  1. / · m390 · 0 Pixel · Anteil 0.000e+0
+  2. / · t768 · 0 Pixel · Anteil 0.000e+0
+  3. / · d1440 · 0 Pixel · Anteil 0.000e+0
+  4. / · d1920 · 0 Pixel · Anteil 0.000e+0
+  5. /bad · m390 · 0 Pixel · Anteil 0.000e+0
+=== PIXEL Zusatz 18:36:45
+Paare: 28 · mit Abweichung: 0 · Fehler: 0 · Pixel gesamt: 0 · Laufzeit: 1.45 min
+  1. /preise · m390 · 0 Pixel · Anteil 0.000e+0
+  2. /preise · t768 · 0 Pixel · Anteil 0.000e+0
+  3. /preise · d1440 · 0 Pixel · Anteil 0.000e+0
+  4. /preise · d1920 · 0 Pixel · Anteil 0.000e+0
+  5. /bad/projekt-check · m390 · 0 Pixel · Anteil 0.000e+0
+=== LIGHTHOUSE im Wechsel, allein 18:38:12 last 7.74
+--- lh v1 port 4324 mobil 18:38:12 last 7.74
+lighthouse v1 exit 0
+/referenzen
+  mobil: perf 94 [94–94] · LCP 2984 ms [2978–2994] · TBT 69 ms [53–75] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+a.ww..
+/ueber-uns
+  mobil: perf 94 [94–95] · LCP 2841 ms [2829–2982] · TBT 78 ms [66–113] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block · Benchmark außerhalb des Bands
+aw...
+/kontakt
+  mobil: perf 96 [96–96] · LCP 2787 ms [2786–2787] · TBT 63 ms [56–63] · CLS 0 [0–0] · LCP-Element div.relative > section.@container > div.mx-auto > p.mt-8
+a.ww.w.
+/standorte/wetzlar
+  mobil: perf 79 [73–80] · LCP 4897 ms [4894–4899] · TBT 185 ms [169–378] · CLS 0 [0–0] · LCP-Element div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block · Benchmark außerhalb des Bands
+a.w.ww.
+/blog
+  mobil: perf 91 [91–92] · LCP 3238 ms [3235–3238] · TBT 136 ms [95–137] · CLS 0 [0–0] · LCP-Element section.@container > div.relative > div.mx-auto > p.mt-8
+
+Ergebnis: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/leist4/pruef-haupt/lh/leist4-v1/lighthouse.json · Benchmark-Referenz 2057.0
+--- lh n1 port 4325 mobil 18:49:42 last 3.40
+lighthouse n1 exit 0
+/referenzen
+  mobil: perf 96 [96–96] · LCP 2688 ms [2684–2698] · TBT 80 ms [69–93] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+a...
+/ueber-uns
+  mobil: perf 96 [95–96] · LCP 2713 ms [2687–2864] · TBT 74 ms [68–108] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+a...
+/kontakt
+  mobil: perf 96 [96–97] · LCP 2412 ms [2409–2635] · TBT 130 ms [126–154] · CLS 0 [0–0] · LCP-Element div.relative > section.@container > div.mx-auto > p.mt-8
+a...
+/standorte/wetzlar
+  mobil: perf 88 [87–88] · LCP 3759 ms [3708–3774] · TBT 153 ms [119–164] · CLS 0 [0–0] · LCP-Element div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block
+a...
+/blog
+  mobil: perf 96 [95–96] · LCP 2633 ms [2632–2634] · TBT 88 ms [71–136] · CLS 0 [0–0] · LCP-Element section.@container > div.relative > div.mx-auto > p.mt-8
+
+Ergebnis: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/leist4/pruef-haupt/lh/leist4-n1/lighthouse.json · Benchmark-Referenz 2508.0
+--- lh n2 port 4325 mobil 19:00:15 last 1.59
+lighthouse n2 exit 0
+/referenzen
+  mobil: perf 95 [93–96] · LCP 2853 ms [2677–3132] · TBT 70 ms [56–79] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+a..w.
+/ueber-uns
+  mobil: perf 95 [94–96] · LCP 2722 ms [2719–2993] · TBT 104 ms [60–137] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+aw...
+/kontakt
+  mobil: perf 96 [94–97] · LCP 2562 ms [2406–2642] · TBT 135 ms [115–201] · CLS 0 [0–0] · LCP-Element div.relative > section.@container > div.mx-auto > p.mt-8
+a...
+/standorte/wetzlar
+  mobil: perf 86 [84–86] · LCP 3834 ms [3762–4209] · TBT 180 ms [148–181] · CLS 0 [0–0] · LCP-Element div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block
+a...
+/blog
+  mobil: perf 95 [94–95] · LCP 2859 ms [2856–2860] · TBT 121 ms [81–137] · CLS 0 [0–0] · LCP-Element section.@container > div.relative > div.mx-auto > p.mt-8
+
+Ergebnis: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/leist4/pruef-haupt/lh/leist4-n2/lighthouse.json · Benchmark-Referenz 2385.0
+--- lh v2 port 4324 mobil 19:09:19 last 0.61
+lighthouse v2 exit 0
+/referenzen
+  mobil: perf 94 [94–95] · LCP 2980 ms [2839–3003] · TBT 71 ms [68–89] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+a...
+/ueber-uns
+  mobil: perf 94 [92–95] · LCP 2987 ms [2845–3273] · TBT 70 ms [61–72] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+a...
+/kontakt
+  mobil: perf 96 [96–97] · LCP 2784 ms [2562–2785] · TBT 63 ms [58–64] · CLS 0 [0–0] · LCP-Element div.relative > section.@container > div.mx-auto > p.mt-8
+aw...
+/standorte/wetzlar
+  mobil: perf 79 [78–81] · LCP 4893 ms [4867–4956] · TBT 190 ms [116–215] · CLS 0 [0–0] · LCP-Element div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block
+a...
+/blog
+  mobil: perf 93 [92–93] · LCP 3236 ms [3123–3237] · TBT 68 ms [61–73] · CLS 0 [0–0] · LCP-Element section.@container > div.relative > div.mx-auto > p.mt-8
+
+Ergebnis: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/leist4/pruef-haupt/lh/leist4-v2/lighthouse.json · Benchmark-Referenz 2575.5
+--- lh dv port 4324 desktop 19:19:38 last 2.05
