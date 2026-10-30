@@ -1,0 +1,842 @@
+{
+ "satz": "w3-neu-4325-zusatz",
+ "base": "http://127.0.0.1:4325",
+ "erstellt": "2026-10-30T14:47:51.463Z",
+ "schwellen": {
+  "flesch": {
+   "erzaehl": 60,
+   "ort": 60,
+   "wissen": 50,
+   "arbeit": null
+  },
+  "satzMittelMax": 14,
+  "satzMax": 25,
+  "absatzMax": 4,
+  "titelMax": 60,
+  "beschreibungMin": 120,
+  "beschreibungMax": 155,
+  "altMax": 125
+ },
+ "zusammenfassung": {
+  "seiten": 5,
+  "gruen": 1,
+  "rot": 4,
+  "ausgenommen": 0,
+  "befunde": {
+   "satz-lang": 6,
+   "gedankenstrich": 30,
+   "bindestrich": 38,
+   "floskel": 3,
+   "glossar-offen": 19,
+   "flesch": 1
+  }
+ },
+ "seiten": [
+  {
+   "pfad": "/preise",
+   "art": "arbeit",
+   "status": 200,
+   "ausgenommen": false,
+   "flesch": 56.8,
+   "satzMittel": 8.3,
+   "satzMax": 24,
+   "satzAnzahl": 83,
+   "absaetze": 36,
+   "absaetzeMehr": 0,
+   "titel": {
+    "zeichen": 51
+   },
+   "beschreibung": {
+    "zeichen": 141
+   },
+   "alt": {
+    "anzahl": 3,
+    "ohneAlt": 0,
+    "zuLang": 0
+   },
+   "zaehlung": {},
+   "glossar": {
+    "gefunden": 9,
+    "erfuellt": [
+     "abdichtung",
+     "din-18534",
+     "stelzlager",
+     "rutschhemmung",
+     "nivelliersystem",
+     "vakuumhebetechnik",
+     "feinsteinzeug",
+     "grossformat",
+     "dichtband"
+    ],
+    "offen": []
+   },
+   "gruen": true,
+   "ergebnis": "GRÜN",
+   "befunde": [],
+   "gesperrt": 0,
+   "gesperrtArten": []
+  },
+  {
+   "pfad": "/bad/projekt-check",
+   "art": "arbeit",
+   "status": 200,
+   "ausgenommen": false,
+   "flesch": 52.7,
+   "satzMittel": 6,
+   "satzMax": 27,
+   "satzAnzahl": 34,
+   "absaetze": 17,
+   "absaetzeMehr": 0,
+   "titel": {
+    "zeichen": 56
+   },
+   "beschreibung": {
+    "zeichen": 137
+   },
+   "alt": {
+    "anzahl": 3,
+    "ohneAlt": 0,
+    "zuLang": 0
+   },
+   "zaehlung": {
+    "satz-lang": 1,
+    "gedankenstrich": 4,
+    "bindestrich": 12,
+    "floskel": 1,
+    "glossar-offen": 3
+   },
+   "glossar": {
+    "gefunden": 3,
+    "erfuellt": [],
+    "offen": [
+     {
+      "id": "abdichtung",
+      "begriff": "Verbundabdichtung",
+      "grund": "nicht als dfn[data-glossar] ausgezeichnet",
+      "ausschnitt": "tverlegung (XXL) Normgerechte Verbundabdichtung nach DIN 18534 Verbindliche F"
+     },
+     {
+      "id": "din-18534",
+      "begriff": "DIN 18534",
+      "grund": "nicht als dfn[data-glossar] ausgezeichnet",
+      "ausschnitt": "rechte Verbundabdichtung nach DIN 18534 Verbindliche Festpreis-Kalkul"
+     },
+     {
+      "id": "schadensanalyse",
+      "begriff": "Schadensanalyse",
+      "grund": "nicht als dfn[data-glossar] ausgezeichnet",
+      "ausschnitt": "Kostenfreies Vor-Ort-Aufmaß & Schadensanalyse Millimetergenaue Großformatve"
+     }
+    ]
+   },
+   "gruen": false,
+   "ergebnis": "ROT: Satz über 25 1, Gedankenstrich 4, Bindestrich 12, Floskel 1, Glossar offen 3",
+   "befunde": [
+    {
+     "regel": "satz-lang",
+     "detail": "27 Wörter (höchstens 25)",
+     "ausschnitt": "Nutzen Sie den Bad-Projektcheck von Tezgel Wetzlar: Badsanierung in 2 Minuten online prüfen, Größe, Umfang und Ausstattu"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in sichtbarer Text",
+     "ausschnitt": "ang und Ausstattung auswählen – den verbindlichen Festpreis e"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in sichtbarer Text",
+     "ausschnitt": "arungen, Preisen und Terminen – in Aßlar, Wetzlar und ganz He"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in sichtbarer Text",
+     "ausschnitt": "r Baustart und Fertigstellung – damit Ihr Alltag planbar blei"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in sichtbarer Text",
+     "ausschnitt": "Ort-Aufmaß durch Deniz Tezgel – in Aßlar, Wetzlar, Gießen und"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "Bad-Projektcheck in sichtbarer Text",
+     "ausschnitt": "sApp Termin vor Ort anfragen Bad-Projektcheck Bad-Projektcheck: Badsanieru"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "Bad-Projektcheck in sichtbarer Text",
+     "ausschnitt": "t anfragen Bad-Projektcheck Bad-Projektcheck: Badsanierung online prüfen b"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "Bad-Projektcheck in sichtbarer Text",
+     "ausschnitt": "ezgel Wetzlar Nutzen Sie den Bad-Projektcheck von Tezgel Wetzlar: Badsanier"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "Vor-Ort-Aufmaß in sichtbarer Text",
+     "ausschnitt": "ten Sie nach dem kostenfreien Vor-Ort-Aufmaß. Projektcheck fürs Bad Festp"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "8-Punkte-Qualitätsversprechen in sichtbarer Text",
+     "ausschnitt": "Garantierter Standard Unser 8-Punkte-Qualitätsversprechen für Ihr Fliesenprojekt Vom Au"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "Vor-Ort-Aufmaß in sichtbarer Text",
+     "ausschnitt": "ganz Hessen. 01 Kostenfreies Vor-Ort-Aufmaß & Schadensanalyse Persönlich"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "Vakuum-Heber in sichtbarer Text",
+     "ausschnitt": "L) Spezialwerkzeuge, moderne Vakuum-Heber und exaktes Nivelliersystem f"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "Festpreis-Kalkulation in sichtbarer Text",
+     "ausschnitt": "immelschutz. 04 Verbindliche Festpreis-Kalkulation Transparente Kostenaufstellu"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "C2-TE-S1 in sichtbarer Text",
+     "ausschnitt": "ießliche Verwendung flexibler C2-TE-S1/S2 Fliesenkleber und verfärbu"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "Premium-Fugenmassen in sichtbarer Text",
+     "ausschnitt": "nkleber und verfärbungsfreier Premium-Fugenmassen. 08 Persönliche Betreuung du"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "Vor-Ort-Aufmaß in sichtbarer Text",
+     "ausschnitt": "er Fachqualität Kostenfreies Vor-Ort-Aufmaß durch Deniz Tezgel – in Aßlar"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "Bad-Projektcheck in aria-label",
+     "ausschnitt": "Bad-Projektcheck"
+    },
+    {
+     "regel": "floskel",
+     "detail": "„Überschrift nach dem Muster „Begriff: Erklärung““ in Überschrift",
+     "ausschnitt": "Bad-Projektcheck: B"
+    },
+    {
+     "regel": "glossar-offen",
+     "detail": "Verbundabdichtung: nicht als dfn[data-glossar] ausgezeichnet",
+     "ausschnitt": "tverlegung (XXL) Normgerechte Verbundabdichtung nach DIN 18534 Verbindliche F"
+    },
+    {
+     "regel": "glossar-offen",
+     "detail": "DIN 18534: nicht als dfn[data-glossar] ausgezeichnet",
+     "ausschnitt": "rechte Verbundabdichtung nach DIN 18534 Verbindliche Festpreis-Kalkul"
+    },
+    {
+     "regel": "glossar-offen",
+     "detail": "Schadensanalyse: nicht als dfn[data-glossar] ausgezeichnet",
+     "ausschnitt": "Kostenfreies Vor-Ort-Aufmaß & Schadensanalyse Millimetergenaue Großformatve"
+    }
+   ],
+   "gesperrt": 0,
+   "gesperrtArten": []
+  },
+  {
+   "pfad": "/termin",
+   "art": "arbeit",
+   "status": 200,
+   "ausgenommen": false,
+   "flesch": 51.6,
+   "satzMittel": 6.7,
+   "satzMax": 19,
+   "satzAnzahl": 15,
+   "absaetze": 6,
+   "absaetzeMehr": 0,
+   "titel": {
+    "zeichen": 48
+   },
+   "beschreibung": {
+    "zeichen": 155
+   },
+   "alt": {
+    "anzahl": 3,
+    "ohneAlt": 0,
+    "zuLang": 0
+   },
+   "zaehlung": {
+    "bindestrich": 6
+   },
+   "glossar": {
+    "gefunden": 0,
+    "erfuellt": [],
+    "offen": []
+   },
+   "gruen": false,
+   "ergebnis": "ROT: Bindestrich 6",
+   "befunde": [
+    {
+     "regel": "bindestrich",
+     "detail": "Vor-Ort-Termin in sichtbarer Text",
+     "ausschnitt": "esenleger Tezgel Jetzt Ihren Vor-Ort-Termin vereinbaren: Wählen Sie Ihr W"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "2-Schritt in sichtbarer Text",
+     "ausschnitt": "er WhatsApp an Deniz Tezgel. 2-Schritt Schnellauswahl Individuelles"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "HWK-Fachbetrieb in sichtbarer Text",
+     "ausschnitt": "rsönliche Betreuung vor Ort • HWK-Fachbetrieb Kostenfreies Vor-Ort-Aufmaß"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "Vor-Ort-Aufmaß in sichtbarer Text",
+     "ausschnitt": "HWK-Fachbetrieb Kostenfreies Vor-Ort-Aufmaß in Aßlar, Wetzlar & Hessen Ve"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "Staubschutz-Garantie in sichtbarer Text",
+     "ausschnitt": "Kosten Saubere Baustelle mit Staubschutz-Garantie 06441 / 44 83 567 Jetzt koste"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "Google-Bewertung in sichtbarer Text",
+     "ausschnitt": "n Per WhatsApp schreiben 5,0 Google-Bewertung bei 27 echten Kundenstimmen"
+    }
+   ],
+   "gesperrt": 0,
+   "gesperrtArten": []
+  },
+  {
+   "pfad": "/blog/barrierefreier-balkonaustritt",
+   "art": "wissen",
+   "status": 200,
+   "ausgenommen": false,
+   "flesch": 50.7,
+   "satzMittel": 11.3,
+   "satzMax": 37,
+   "satzAnzahl": 79,
+   "absaetze": 43,
+   "absaetzeMehr": 0,
+   "titel": {
+    "zeichen": 50
+   },
+   "beschreibung": {
+    "zeichen": 151
+   },
+   "alt": {
+    "anzahl": 4,
+    "ohneAlt": 0,
+    "zuLang": 0
+   },
+   "zaehlung": {
+    "satz-lang": 2,
+    "gedankenstrich": 10,
+    "bindestrich": 11,
+    "floskel": 1,
+    "glossar-offen": 10
+   },
+   "glossar": {
+    "gefunden": 10,
+    "erfuellt": [],
+    "offen": [
+     {
+      "id": "abdichtung",
+      "begriff": "Abdichtung",
+      "grund": "nicht als dfn[data-glossar] ausgezeichnet",
+      "ausschnitt": "rage, sondern ein Detail, das Abdichtung, Entwässerung und Türelement"
+     },
+     {
+      "id": "din-18534",
+      "begriff": "DIN 18534",
+      "grund": "nicht als dfn[data-glossar] ausgezeichnet",
+      "ausschnitt": "rechte Verbundabdichtung nach DIN 18534 Verbindliche Festpreis-Kalkul"
+     },
+     {
+      "id": "din-18040",
+      "begriff": "DIN 18040",
+      "grund": "nicht als dfn[data-glossar] ausgezeichnet",
+      "ausschnitt": "men und Richtlinien. Die Norm DIN 18040-2 für barrierefreie Wohnungen"
+     },
+     {
+      "id": "barrierefrei",
+      "begriff": "barrierefreier",
+      "grund": "nicht als dfn[data-glossar] ausgezeichnet",
+      "ausschnitt": "Terrasse Wie niedrig ist ein barrierefreier Balkonaustritt? – Fachwissen,"
+     },
+     {
+      "id": "stelzlager",
+      "begriff": "Stelzlager",
+      "grund": "nicht als dfn[data-glossar] ausgezeichnet",
+      "ausschnitt": "chluss als ein dicker Aufbau. Stelzlager und Splittbett: Bei Platten a"
+     },
+     {
+      "id": "rutschhemmung",
+      "begriff": "Rutschhemmung",
+      "grund": "nicht als dfn[data-glossar] ausgezeichnet",
+      "ausschnitt": "che wichtig. Geprüft wird die Rutschhemmung nach DIN EN 16165. An einem s"
+     },
+     {
+      "id": "en-16165",
+      "begriff": "EN 16165",
+      "grund": "nicht als dfn[data-glossar] ausgezeichnet",
+      "ausschnitt": "rd die Rutschhemmung nach DIN EN 16165. An einem schwellenarmen Balk"
+     },
+     {
+      "id": "estrich",
+      "begriff": "Estrich",
+      "grund": "nicht als dfn[data-glossar] ausgezeichnet",
+      "ausschnitt": "Folgen sind Feuchteschäden an Estrich, Bodenbelag und Wand im Innen"
+     },
+     {
+      "id": "gefaelle",
+      "begriff": "Gefälle",
+      "grund": "nicht als dfn[data-glossar] ausgezeichnet",
+      "ausschnitt": "zugänglich für die Reinigung. Gefälle der Fläche weg von der Tür, s"
+     },
+     {
+      "id": "schadensanalyse",
+      "begriff": "Schadensanalyse",
+      "grund": "nicht als dfn[data-glossar] ausgezeichnet",
+      "ausschnitt": "Kostenfreies Vor-Ort-Aufmaß & Schadensanalyse Millimetergenaue Großformatve"
+     }
+    ]
+   },
+   "gruen": false,
+   "ergebnis": "ROT: Satz über 25 2, Gedankenstrich 10, Bindestrich 11, Floskel 1, Glossar offen 10",
+   "befunde": [
+    {
+     "regel": "satz-lang",
+     "detail": "37 Wörter (höchstens 25)",
+     "ausschnitt": "Die Anschlusshöhe darf auf mindestens 5 cm reduziert werden, wenn unmittelbar vor der Tür eine dauerhaft funktionierende"
+    },
+    {
+     "regel": "satz-lang",
+     "detail": "28 Wörter (höchstens 25)",
+     "ausschnitt": "Die Fachregeln sehen normalerweise rund 15 cm Anschlusshöhe vor, mit Entwässerungsrinne direkt vor der Tür sind etwa 5 c"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in sichtbarer Text",
+     "ausschnitt": "arrierefreier Balkonaustritt? – Fachwissen, Praxistipps und r"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in sichtbarer Text",
+     "ausschnitt": "l: Stolperfrei auf den Balkon – und trotzdem dicht? Warum die"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in sichtbarer Text",
+     "ausschnitt": "uft Wasser über den Belag und – je nach Aufbau – auch in der"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in sichtbarer Text",
+     "ausschnitt": "en Belag und – je nach Aufbau – auch in der Ebene darunter zu"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in sichtbarer Text",
+     "ausschnitt": "umbauen? Sprechen Sie uns an – wir besprechen mit Ihnen Aufb"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in sichtbarer Text",
+     "ausschnitt": "Fachbetrieb der HWK Wiesbaden – Fliesen-, Platten- und Mosaik"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in sichtbarer Text",
+     "ausschnitt": "arungen, Preisen und Terminen – in Aßlar, Wetzlar und ganz He"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in sichtbarer Text",
+     "ausschnitt": "r Baustart und Fertigstellung – damit Ihr Alltag planbar blei"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in sichtbarer Text",
+     "ausschnitt": "Ort-Aufmaß durch Deniz Tezgel – in Aßlar, Wetzlar, Gießen und"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "Ratgeber-Übersicht in sichtbarer Text",
+     "ausschnitt": "n vor Ort anfragen Zurück zur Ratgeber-Übersicht Balkon und Terrasse Wie nie"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "Abdichtungs-Fachregeln in sichtbarer Text",
+     "ausschnitt": "stelle ist Die Grundregel der Abdichtungs-Fachregeln Was Barrierefreiheit verlangt"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "Praxis-Leitfaden in sichtbarer Text",
+     "ausschnitt": "barrierefreie Umbauten Fazit Praxis-Leitfaden von Fachbetriebsleiter Deniz"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "Abdichtungs-Fachregeln in sichtbarer Text",
+     "ausschnitt": "höhe vor. Die Grundregel der Abdichtungs-Fachregeln Nach den Fachregeln für Abdi"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "8-Punkte-Qualitätsversprechen in sichtbarer Text",
+     "ausschnitt": "Garantierter Standard Unser 8-Punkte-Qualitätsversprechen für Ihr Fliesenprojekt Vom Au"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "Vor-Ort-Aufmaß in sichtbarer Text",
+     "ausschnitt": "ganz Hessen. 01 Kostenfreies Vor-Ort-Aufmaß & Schadensanalyse Persönlich"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "Vakuum-Heber in sichtbarer Text",
+     "ausschnitt": "L) Spezialwerkzeuge, moderne Vakuum-Heber und exaktes Nivelliersystem f"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "Festpreis-Kalkulation in sichtbarer Text",
+     "ausschnitt": "immelschutz. 04 Verbindliche Festpreis-Kalkulation Transparente Kostenaufstellu"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "C2-TE-S1 in sichtbarer Text",
+     "ausschnitt": "ießliche Verwendung flexibler C2-TE-S1/S2 Fliesenkleber und verfärbu"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "Premium-Fugenmassen in sichtbarer Text",
+     "ausschnitt": "nkleber und verfärbungsfreier Premium-Fugenmassen. 08 Persönliche Betreuung du"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "Vor-Ort-Aufmaß in sichtbarer Text",
+     "ausschnitt": "er Fachqualität Kostenfreies Vor-Ort-Aufmaß durch Deniz Tezgel – in Aßlar"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in Alt-Text",
+     "ausschnitt": "Fliesenverlegung Tezgel – Fachbetrieb Aßlar & Wetzlar"
+    },
+    {
+     "regel": "floskel",
+     "detail": "„Überschrift nach dem Muster „Begriff: Erklärung““ in Überschrift",
+     "ausschnitt": "Niveaugleich planen: R"
+    },
+    {
+     "regel": "glossar-offen",
+     "detail": "Abdichtung: nicht als dfn[data-glossar] ausgezeichnet",
+     "ausschnitt": "rage, sondern ein Detail, das Abdichtung, Entwässerung und Türelement"
+    },
+    {
+     "regel": "glossar-offen",
+     "detail": "DIN 18534: nicht als dfn[data-glossar] ausgezeichnet",
+     "ausschnitt": "rechte Verbundabdichtung nach DIN 18534 Verbindliche Festpreis-Kalkul"
+    },
+    {
+     "regel": "glossar-offen",
+     "detail": "DIN 18040: nicht als dfn[data-glossar] ausgezeichnet",
+     "ausschnitt": "men und Richtlinien. Die Norm DIN 18040-2 für barrierefreie Wohnungen"
+    },
+    {
+     "regel": "glossar-offen",
+     "detail": "barrierefreier: nicht als dfn[data-glossar] ausgezeichnet",
+     "ausschnitt": "Terrasse Wie niedrig ist ein barrierefreier Balkonaustritt? – Fachwissen,"
+    },
+    {
+     "regel": "glossar-offen",
+     "detail": "Stelzlager: nicht als dfn[data-glossar] ausgezeichnet",
+     "ausschnitt": "chluss als ein dicker Aufbau. Stelzlager und Splittbett: Bei Platten a"
+    },
+    {
+     "regel": "glossar-offen",
+     "detail": "Rutschhemmung: nicht als dfn[data-glossar] ausgezeichnet",
+     "ausschnitt": "che wichtig. Geprüft wird die Rutschhemmung nach DIN EN 16165. An einem s"
+    },
+    {
+     "regel": "glossar-offen",
+     "detail": "EN 16165: nicht als dfn[data-glossar] ausgezeichnet",
+     "ausschnitt": "rd die Rutschhemmung nach DIN EN 16165. An einem schwellenarmen Balk"
+    },
+    {
+     "regel": "glossar-offen",
+     "detail": "Estrich: nicht als dfn[data-glossar] ausgezeichnet",
+     "ausschnitt": "Folgen sind Feuchteschäden an Estrich, Bodenbelag und Wand im Innen"
+    },
+    {
+     "regel": "glossar-offen",
+     "detail": "Gefälle: nicht als dfn[data-glossar] ausgezeichnet",
+     "ausschnitt": "zugänglich für die Reinigung. Gefälle der Fläche weg von der Tür, s"
+    },
+    {
+     "regel": "glossar-offen",
+     "detail": "Schadensanalyse: nicht als dfn[data-glossar] ausgezeichnet",
+     "ausschnitt": "Kostenfreies Vor-Ort-Aufmaß & Schadensanalyse Millimetergenaue Großformatve"
+    }
+   ],
+   "gesperrt": 0,
+   "gesperrtArten": []
+  },
+  {
+   "pfad": "/blog/handwerkerbonus-fliesenarbeiten",
+   "art": "wissen",
+   "status": 200,
+   "ausgenommen": false,
+   "flesch": 44.3,
+   "satzMittel": 10.2,
+   "satzMax": 28,
+   "satzAnzahl": 88,
+   "absaetze": 45,
+   "absaetzeMehr": 0,
+   "titel": {
+    "zeichen": 52
+   },
+   "beschreibung": {
+    "zeichen": 150
+   },
+   "alt": {
+    "anzahl": 4,
+    "ohneAlt": 0,
+    "zuLang": 0
+   },
+   "zaehlung": {
+    "flesch": 1,
+    "satz-lang": 3,
+    "gedankenstrich": 16,
+    "bindestrich": 9,
+    "floskel": 1,
+    "glossar-offen": 6
+   },
+   "glossar": {
+    "gefunden": 6,
+    "erfuellt": [],
+    "offen": [
+     {
+      "id": "abdichtung",
+      "begriff": "Verbundabdichtung",
+      "grund": "nicht als dfn[data-glossar] ausgezeichnet",
+      "ausschnitt": "tverlegung (XXL) Normgerechte Verbundabdichtung nach DIN 18534 Verbindliche F"
+     },
+     {
+      "id": "din-18534",
+      "begriff": "DIN 18534",
+      "grund": "nicht als dfn[data-glossar] ausgezeichnet",
+      "ausschnitt": "rechte Verbundabdichtung nach DIN 18534 Verbindliche Festpreis-Kalkul"
+     },
+     {
+      "id": "barrierefrei",
+      "begriff": "barrierefreien",
+      "grund": "nicht als dfn[data-glossar] ausgezeichnet",
+      "ausschnitt": "piel bei Zuschüssen für einen barrierefreien Badumbau relevant werden. Auc"
+     },
+     {
+      "id": "feinsteinzeug",
+      "begriff": "Feinsteinzeug",
+      "grund": "nicht als dfn[data-glossar] ausgezeichnet",
+      "ausschnitt": "eigen, was moderne Beläge aus Feinsteinzeug wirklich leisten. Artikel les"
+     },
+     {
+      "id": "grossformat",
+      "begriff": "Großformate",
+      "grund": "nicht als dfn[data-glossar] ausgezeichnet",
+      "ausschnitt": "ie Fugen immer schmutzig, und Großformate passen nur in große Räume? Wi"
+     },
+     {
+      "id": "schadensanalyse",
+      "begriff": "Schadensanalyse",
+      "grund": "nicht als dfn[data-glossar] ausgezeichnet",
+      "ausschnitt": "Kostenfreies Vor-Ort-Aufmaß & Schadensanalyse Millimetergenaue Großformatve"
+     }
+    ]
+   },
+   "gruen": false,
+   "ergebnis": "ROT: Flesch 1, Satz über 25 3, Gedankenstrich 16, Bindestrich 9, Floskel 1, Glossar offen 6",
+   "befunde": [
+    {
+     "regel": "flesch",
+     "detail": "44.3 (mindestens 50)"
+    },
+    {
+     "regel": "satz-lang",
+     "detail": "27 Wörter (höchstens 25)",
+     "ausschnitt": "Ein neues Bad, ein frisch gefliester Flur oder die Sanierung des Balkonbelags: Wer im eigenen Zuhause renoviert, kann ei"
+    },
+    {
+     "regel": "satz-lang",
+     "detail": "28 Wörter (höchstens 25)",
+     "ausschnitt": "Begünstigt sind in der Regel sowohl Eigentümerinnen und Eigentümer als auch Mieterinnen und Mieter, solange die Arbeiten"
+    },
+    {
+     "regel": "satz-lang",
+     "detail": "28 Wörter (höchstens 25)",
+     "ausschnitt": "Der Handwerkerbonus nach § 35a Abs. 3 EStG macht Fliesenarbeiten im bewohnten Zuhause spürbar günstiger: 20 % der Arbeit"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in sichtbarer Text",
+     "ausschnitt": "Handwerkerbonus bei Fliesen? – Fachwissen, Praxistipps und r"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in sichtbarer Text",
+     "ausschnitt": "e Steuerermäßigung? Was zählt – und was nicht? Renovierung ja"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in sichtbarer Text",
+     "ausschnitt": "hterungen für Privathaushalte – vorausgesetzt, Rechnung und Z"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in sichtbarer Text",
+     "ausschnitt": ", kann den Bonus nicht nutzen – eine Auszahlung gibt es nicht"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in sichtbarer Text",
+     "ausschnitt": "ung gibt es nicht. Was zählt – und was nicht? Absetzbar sin"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in sichtbarer Text",
+     "ausschnitt": "ungen im Rahmen eines Neubaus – also bis zur Fertigstellung e"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in sichtbarer Text",
+     "ausschnitt": "stellung eines neuen Gebäudes – sind nicht begünstigt. Wer ei"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in sichtbarer Text",
+     "ausschnitt": ": Material ist nie begünstigt – egal, ob Sie es selbst kaufen"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in sichtbarer Text",
+     "ausschnitt": "g im Einzelfall gibt es nicht – die verbindliche Einschätzung"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in sichtbarer Text",
+     "ausschnitt": "ein nachvollziehbares Angebot – was den Aufwand bestimmt, erk"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in sichtbarer Text",
+     "ausschnitt": "Fachbetrieb der HWK Wiesbaden – Fliesen-, Platten- und Mosaik"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in sichtbarer Text",
+     "ausschnitt": "arungen, Preisen und Terminen – in Aßlar, Wetzlar und ganz He"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in sichtbarer Text",
+     "ausschnitt": "r Baustart und Fertigstellung – damit Ihr Alltag planbar blei"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in sichtbarer Text",
+     "ausschnitt": "Ort-Aufmaß durch Deniz Tezgel – in Aßlar, Wetzlar, Gießen und"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "Ratgeber-Übersicht in sichtbarer Text",
+     "ausschnitt": "n vor Ort anfragen Zurück zur Ratgeber-Übersicht Ratgeber und Neuigkeiten · E"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "Praxis-Leitfaden in sichtbarer Text",
+     "ausschnitt": "für Ihr Fliesenprojekt Fazit Praxis-Leitfaden von Fachbetriebsleiter Deniz"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "8-Punkte-Qualitätsversprechen in sichtbarer Text",
+     "ausschnitt": "Garantierter Standard Unser 8-Punkte-Qualitätsversprechen für Ihr Fliesenprojekt Vom Au"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "Vor-Ort-Aufmaß in sichtbarer Text",
+     "ausschnitt": "ganz Hessen. 01 Kostenfreies Vor-Ort-Aufmaß & Schadensanalyse Persönlich"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "Vakuum-Heber in sichtbarer Text",
+     "ausschnitt": "L) Spezialwerkzeuge, moderne Vakuum-Heber und exaktes Nivelliersystem f"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "Festpreis-Kalkulation in sichtbarer Text",
+     "ausschnitt": "immelschutz. 04 Verbindliche Festpreis-Kalkulation Transparente Kostenaufstellu"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "C2-TE-S1 in sichtbarer Text",
+     "ausschnitt": "ießliche Verwendung flexibler C2-TE-S1/S2 Fliesenkleber und verfärbu"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "Premium-Fugenmassen in sichtbarer Text",
+     "ausschnitt": "nkleber und verfärbungsfreier Premium-Fugenmassen. 08 Persönliche Betreuung du"
+    },
+    {
+     "regel": "bindestrich",
+     "detail": "Vor-Ort-Aufmaß in sichtbarer Text",
+     "ausschnitt": "er Fachqualität Kostenfreies Vor-Ort-Aufmaß durch Deniz Tezgel – in Aßlar"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in aria-label",
+     "ausschnitt": "Tabelle: Was zählt – und was nicht?"
+    },
+    {
+     "regel": "gedankenstrich",
+     "detail": "– in Alt-Text",
+     "ausschnitt": "Fliesenverlegung Tezgel – Fachbetrieb Aßlar & Wetzlar"
+    },
+    {
+     "regel": "floskel",
+     "detail": "„Überschrift nach dem Muster „Begriff: Erklärung““ in Überschrift",
+     "ausschnitt": "Voraussetzungen: R"
+    },
+    {
+     "regel": "glossar-offen",
+     "detail": "Verbundabdichtung: nicht als dfn[data-glossar] ausgezeichnet",
+     "ausschnitt": "tverlegung (XXL) Normgerechte Verbundabdichtung nach DIN 18534 Verbindliche F"
+    },
+    {
+     "regel": "glossar-offen",
+     "detail": "DIN 18534: nicht als dfn[data-glossar] ausgezeichnet",
+     "ausschnitt": "rechte Verbundabdichtung nach DIN 18534 Verbindliche Festpreis-Kalkul"
+    },
+    {
+     "regel": "glossar-offen",
+     "detail": "barrierefreien: nicht als dfn[data-glossar] ausgezeichnet",
+     "ausschnitt": "piel bei Zuschüssen für einen barrierefreien Badumbau relevant werden. Auc"
+    },
+    {
+     "regel": "glossar-offen",
+     "detail": "Feinsteinzeug: nicht als dfn[data-glossar] ausgezeichnet",
+     "ausschnitt": "eigen, was moderne Beläge aus Feinsteinzeug wirklich leisten. Artikel les"
+    },
+    {
+     "regel": "glossar-offen",
+     "detail": "Großformate: nicht als dfn[data-glossar] ausgezeichnet",
+     "ausschnitt": "ie Fugen immer schmutzig, und Großformate passen nur in große Räume? Wi"
+    },
+    {
+     "regel": "glossar-offen",
+     "detail": "Schadensanalyse: nicht als dfn[data-glossar] ausgezeichnet",
+     "ausschnitt": "Kostenfreies Vor-Ort-Aufmaß & Schadensanalyse Millimetergenaue Großformatve"
+    }
+   ],
+   "gesperrt": 0,
+   "gesperrtArten": []
+  }
+ ]
+}

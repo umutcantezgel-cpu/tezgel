@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
-  silben, saetze, woerter, flesch, striche, bindestrichwoerter, floskeln,
+  silben, saetze, woerter, flesch, striche, bindestrichwoerter, floskeln, ohneTrennhilfen, rohOhneTrennhilfen,
 } from '../lesbarkeit-logik.mjs';
 
 const REGELN = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..', 'regeln');
@@ -107,4 +107,23 @@ test('flesch: Wir messen. Dann bauen wir. ergibt 95,6 (±0,5, von Hand gerechnet
   // Hand: 2 Sätze, 5 Wörter, Silben 1+2 und 1+2+1 = 7; mittlere Satzlänge 2,5; Silben je Wort 7/5 = 1,4.
   // 180 − 2,5 − 58,5 × 1,4 = 95,6.
   assert.ok(Math.abs(flesch('Wir messen. Dann bauen wir.') - 95.6) <= 0.5);
+});
+
+test('Trennhilfen: weiches Trennzeichen ist keine Wortgrenze (Rutsch\u00ADhemmung bleibt ein Wort)', () => {
+  assert.deepEqual(woerter(ohneTrennhilfen('Fliesen mit Rutsch\u00ADhemmung R10')), ['Fliesen', 'mit', 'Rutschhemmung', 'R10']);
+  assert.equal(ohneTrennhilfen('boden\u00ADgleiche Du\u200Bsche\u2060n'), 'bodengleiche Duschen');
+  assert.equal(ohneTrennhilfen('120 × 260\u00A0cm'), '120 × 260\u00A0cm');
+});
+
+test('Trennhilfen: rohOhneTrennhilfen bereinigt jedes Textfeld der ausgelesenen Seite', () => {
+  const w = 'Traum\u00ADbad';
+  const roh = rohOhneTrennhilfen({
+    title: w, description: null, fliess: [{ tag: 'p', text: w }], knoten: [{ t: w, dfn: 'x' }], sichtbar: w,
+    alts: [w], arias: [w], ueberschriften: [w], erklaerungen: [{ id: 'x', text: w }], hatMain: true,
+  });
+  assert.equal(roh.description, null);
+  assert.equal(roh.hatMain, true);
+  const felder = [roh.title, roh.fliess[0].text, roh.knoten[0].t, roh.sichtbar, roh.alts[0], roh.arias[0], roh.ueberschriften[0], roh.erklaerungen[0].text];
+  assert.deepEqual([...new Set(felder)], ['Traumbad']);
+  assert.equal(roh.knoten[0].dfn, 'x');
 });

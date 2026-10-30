@@ -10,7 +10,7 @@ import {
   BASE, ANSICHTEN, RELAUNCH, SCRATCH, WERKZEUGE, assertLocal, installSperre, setzeEinwilligung, bereit, ensureDir,
 } from './lib.mjs';
 import {
-  saetze, woerter, fleschAusSaetzen, striche, bindestrichwoerter, floskeln, ausschnitt, escapeRe,
+  saetze, woerter, fleschAusSaetzen, striche, bindestrichwoerter, floskeln, ausschnitt, escapeRe, rohOhneTrennhilfen,
 } from './lesbarkeit-logik.mjs';
 
 const arg = (k, d) => { const i = process.argv.indexOf(`--${k}`); return i > -1 && process.argv[i + 1] && !process.argv[i + 1].startsWith('--') ? process.argv[i + 1] : d; };
@@ -146,6 +146,8 @@ export function bewerte(roh, art, { pfad = '', status = null } = {}) {
   if (art === 'ausgenommen') {
     return { pfad, art, status, ausgenommen: true, gruen: null, ergebnis: 'AUSGENOMMEN (Rechtstext)', befunde: [] };
   }
+  // Weiche Trennzeichen aus mitFugen sind keine Wortgrenze; gezählt und gesucht wird der Text, wie man ihn liest.
+  roh = rohOhneTrennhilfen(roh);
   const befunde = [];
   const befund = (regel, detail, extra = {}) => befunde.push({ regel, detail, ...extra });
   const teile = roh.fliess.map((el) => ({ tag: el.tag, saetze: saetze(el.text) }));

@@ -1,0 +1,1534 @@
+{
+ "satz": "w3-zusatz",
+ "base": "http://127.0.0.1:4325",
+ "server_stand": {
+  "port": "4325",
+  "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/reinraum-9c98aa9a",
+  "commit": "9c98aa9a"
+ },
+ "tags": [
+  "wcag2a",
+  "wcag2aa",
+  "wcag21a",
+  "wcag21aa",
+  "wcag22aa"
+ ],
+ "laeufe": 165,
+ "uebersprungen": 0,
+ "ernst_kritisch_knoten": 52,
+ "je_regel": {
+  "serious:label-content-name-mismatch": 52
+ },
+ "ergebnisse": [
+  {
+   "seite": "/preise",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "m360",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "q844",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "m430",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "t1024",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "d1280",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "d2560",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "m360",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "m430",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "q844",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "t1024",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d1280",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d2560",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "m360",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "q844",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "m430",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "t1024",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "d1280",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "d2560",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "m360",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "m430",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "q844",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "t1024",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "d1280",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "d2560",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "m360",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "m430",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "q844",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "t1024",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "d1280",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "d2560",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "m360",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "m360",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "m430",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "m430",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "q844",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "q844",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "t768",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "t768",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "t1024",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "t1024",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "d1280",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "d1280",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "d1440",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "d1920",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "d1920",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "d2560",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "d2560",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "m360",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "m360",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "m430",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "m430",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "q844",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "q844",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "t768",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "t1024",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "t768",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "t1024",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d1280",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d1280",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d1440",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d1920",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d1920",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d2560",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d2560",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "m360",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "m360",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "m430",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "m430",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "q844",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "q844",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "t768",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "t768",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "t1024",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "t1024",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "d1280",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "d1280",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "d1440",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "d1920",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "d1920",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "d2560",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "d2560",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "m360",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "m360",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "m430",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "m430",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "q844",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "q844",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "t768",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "t768",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "t1024",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "t1024",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "d1280",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "d1280",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "d1440",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "d1920",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "d1920",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "d2560",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "d2560",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "m360",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "m360",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "m430",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "m430",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "q844",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "q844",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "t768",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "t768",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "t1024",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "t1024",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "d1280",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "d1280",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "d1440",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "d1920",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "d1920",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "d2560",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+   "ansicht": "d2560",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  }
+ ]
+}

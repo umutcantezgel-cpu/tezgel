@@ -39,6 +39,32 @@ export function saetze(text) {
     .filter((s) => /[\p{L}\p{N}]/u.test(s));
 }
 
+// Unsichtbare Trennhilfen: weiches Trennzeichen U+00AD (mitFugen in src/components/kern/zusammen.tsx), Nullbreitenleerzeichen
+// U+200B und Wortverbinder U+2060. Sie trennen kein Wort (Unicode UAX #29, Regel WB4) und werden vor jeder Zählung und Suche entfernt.
+const TRENNHILFEN_RE = /[­​⁠]/g;
+
+/** Text ohne unsichtbare Trennhilfen, so wie man ihn liest. */
+export function ohneTrennhilfen(text) {
+  return String(text ?? '').replace(TRENNHILFEN_RE, '');
+}
+
+/** Ausgelesene Seite (lesbarkeit.mjs) ohne unsichtbare Trennhilfen in allen Textfeldern. */
+export function rohOhneTrennhilfen(roh) {
+  const o = (t) => (t == null ? t : ohneTrennhilfen(t));
+  return {
+    ...roh,
+    title: o(roh.title),
+    description: o(roh.description),
+    fliess: roh.fliess.map((el) => ({ ...el, text: o(el.text) })),
+    knoten: roh.knoten.map((k) => ({ ...k, t: o(k.t) })),
+    sichtbar: o(roh.sichtbar),
+    alts: roh.alts.map(o),
+    arias: roh.arias.map(o),
+    ueberschriften: roh.ueberschriften.map(o),
+    erklaerungen: roh.erklaerungen.map((e) => ({ ...e, text: o(e.text) })),
+  };
+}
+
 // Wort: Zahl mit Trennzeichen (1.200, 7:30, 2,5) oder Buchstaben-/Ziffernfolge mit Bindestrichen (Vor-Ort-Aufmaß, 2026-10-23).
 const WORT_RE = /\p{N}+(?:[.,:]\p{N}+)+|[\p{L}\p{N}]+(?:[-’'][\p{L}\p{N}]+)*/gu;
 

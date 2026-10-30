@@ -1551,3 +1551,55 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - main bekommt nur auf erneute Anweisung oder nach der Endabnahme einen neuen Stand (E-089).
   - Rückweg: der vorige Produktions-Deploy `dpl_74ZHMPq8qcyV2YknJR61t3fN7X9m` (2317dcde) ist als Rücksprung-Kandidat markiert.
 - **Nachtrag 12:18 MEZ:** Der Deploy `dpl_BXjzhrZtvReZnucWBsAeTmSV8Hjp` ist READY, mit den Aliasen `tezgel.de` und `www.tezgel.de`. Live-Rauchtest (`werkzeuge/live-rauchtest.sh`, nur lesend, ≤ 1 Anfrage/s) GRÜN: x-build = 78c37647; `/`, `/bad`, `/leistungen`, `/standorte`, `/blog`, `/ueber-uns`, `/kontakt`, `sitemap.xml`, `robots.txt` und `llms.txt` liefern 200, eine unbekannte Adresse liefert 404, die Sitemap hat 164 Adressen.
+
+## E-099 · UM-E4-NBSP abgenommen: Zahl und Einheit in einer Zeile (30.10.2026, 15:55 MEZ)
+- **Umfang** (19b12d25, Workflow wf_b29483d7-655, Baumeister Haiku, ein Sonnet-Prüfer, Nacharbeit; Notiz `belege/um-e4-nbsp/notiz.md`):
+  - 8 Stellen in `src/inhalte` (bad, balkon-terrasse, barrierefreies-bad: „4.180 €“, „2 %“, „2 cm“, „8.360 €“);
+  - der Ortssatz in `src/inhalte/orte.ts` („etwa 25 km bis …“), dazu die Testzeile `test/orte.test.mjs:59` mit demselben geschützten Leerzeichen (gleich streng, nur das Zeichen nachgezogen);
+  - 105 Stellen in `src/config` (glossar 2, musterbaeder 87, navigation 1, services 3, zwei Ratgeber 8 und 5), übertragen durch den Orchestrator nach der Liste der Notiz mit `belege/um-e4-nbsp/uebertrag-config.py`;
+  - Spiegel `regeln/glossar.json` (Erklärung „grossformat“, sonst rot in `test/glossar.test.mjs`).
+- **Nicht geändert:** Kundenstimmen, Kennungen, URLs, `meta`, Kommentare.
+- **Prüfkette:** gemeinsam mit FS, siehe E-100. Die Bildabweichungen aus NBSP sind gewollte Umbrüche: Auf `/referenzen` m390 und im Ratgeber „Balkonaustritt“ m390 stehen „120 × 260 cm“ bzw. „5 cm“ jetzt zusammen, der Absatz bricht eine Zeile anders.
+- **Offener Punkt:** 71 Stellen in Ausdrücken von Komponenten, App-Seiten, E-Mail-Vorlagen und Formularlogik (`{zahl} cm` u. ä.). E-Mail und Formulare bleiben nach G8 unberührt; die übrigen prüft UM-E5-C im Endbildsatz (200 %, m360) und nimmt nur sichtbare Umbrüche auf. Die frühere Zahl „101 Stellen“ ist nicht nachvollziehbar; belegt sind 8 + 105 + 1.
+
+## E-100 · UM-E4-FS abgenommen, mit Werkzeugkorrektur der Lesbarkeit (30.10.2026, 15:55 MEZ)
+- **Umfang** (9c98aa9a, Workflow wf_b29483d7-655, Baumeister Sonnet, zwei Sonnet-Prüfer, 9 Befunde, Nacharbeit; Notiz `belege/um-e4-fs/notiz.md`): Ortsliste, Regler, Leitsatz-Karte auf `/ueber-uns`, Pfeil im Knopf (letztes Wort und Pfeil brechen nicht getrennt), Preiskarten und Preisrechner bei großer Schrift, Zusammenfassung des Projektchecks, 13 neue FUGEN-Wörter. Nr. 7 (Fischgrät-Foto) ohne Codeänderung, Frage UM-14.
+- **Prüfkette** (vorher f34c103b auf 4324, nachher 9c98aa9a auf 4325; Skript und Protokoll `belege/um-e4-fs/pruefkette.sh`, `pruefkette.txt`):
+
+| Prüfung | Ergebnis |
+|---|---|
+| Reinraum 9c98aa9a | grün (lint 0, test 0, qa-graph 0) |
+| G8-Abgleich | gleich (Fuß, Zitate, Zahlen auf `/`, `/bad`, `/ueber-uns`, Impressum, Datenschutz) |
+| Suite reduziert / Bewegung an | 398 / 0 / 26 und 398 / 0 / 26 |
+| Bildrate `/` im Wechsel | vorher 0,14 und 2,19 %, nachher 0,14 und 0,22 % → nicht schlechter |
+| axe `--zustaende`, 12 Hauptansichten | 396 Läufe, 0 ernste oder kritische Knoten |
+| ruhig und reduziert (13 Seiten) | 0 Befunde |
+| Register d1440 und m390 (je 13 Seiten) | 0 unbekannt, 0 ohne Register |
+| Strukturdaten (113 Leistungsadressen) | 113 grün; Service 113 von 113 |
+| Lesbarkeit (12 Hauptansichten, Werkzeug korrigiert) | 10 grün; rot nur die geschützten H1 auf `/` und `/bad/badsanierung` (A-1, A-2), vorher und nachher Zeile für Zeile gleich |
+| Pixel, Ruhezustand | 34 von 48 Paaren: `/ueber-uns` (Leitsatz-Karte, gewollt), `/referenzen` m390 (NBSP), sonst Pfeile und Umbrüche bis 1171 px; Zusatz: `/preise` (Preiskarten und Rechner, gewollt), Ratgeber m390 (NBSP) |
+
+- **Werkzeugkorrektur Lesbarkeit:**
+  - Im ersten Lauf waren `/bad/badsanierung`, `/bad/barrierefreies-bad` und `/balkon-terrasse` neu rot: „Satz über 25“ (26 Wörter) und auf `/bad/badsanierung` „Walk-in-Dusche nicht ausgezeichnet“.
+  - Ursache: Die neuen FUGEN-Wörter setzen ein weiches Trennzeichen (U+00AD) in „Rutsch­hemmung“ und „boden­gleiche“. `lesbarkeit.mjs` zählte es als Wortgrenze und fand den Glossarbegriff im `dfn` nicht mehr. Für Lesende ist der Text gleich.
+  - Behebung: `lesbarkeit-logik.mjs` entfernt unsichtbare Trennhilfen (U+00AD, U+200B, U+2060) vor jeder Zählung und Suche, in allen Textfeldern (`rohOhneTrennhilfen`, aufgerufen am Anfang von `bewerte`).
+  - Das ist kein Lockern (G7): Nach Unicode (UAX #29, Regel WB4) trennen diese Zeichen kein Wort. Floskeln und Bindestrichwörter mit Trennzeichen werden jetzt auch gefunden (vorher nicht).
+  - Belege: zwei neue Logiktests (`tests-logik/lesbarkeit.test.mjs`, 45/45), Probe `--probe` unverändert grün. Neulauf vorher und nachher (`belege/um-e4-fs/lesbarkeit/korrigiert-*`) ist auf allen 17 Seiten gleich.
+  - Flesch sinkt dadurch überall um 0,1 bis 0,8, weil getrennte Wortteile nicht mehr als kurze Wörter zählen. Alle Schwellen bleiben erfüllt.
+- **Vorhanden, nicht aus W3** (erstmals mit geprüft, auf f34c103b gleich):
+  - axe `label-content-name-mismatch` am WhatsApp-Link auf `/preise` und `/termin` (`axe-zusatz-vorher.json`: 22 von 22);
+  - `/preise` ohne Seitenknoten und ohne BreadcrumbList (`jsonld-preise-vorher.json`);
+  - Lesbarkeit rot auf `/bad/projekt-check`, `/termin` und den beiden Ratgebern (Altbestand).
+  - Alle → PLAN „Offene Punkte“, für UM-E5-C.
+- **Bewusst angenommen** (Prüferbefunde, gering):
+  - Restspur des Reglers bleibt nativ (Daumen und Füllung ≥ 3 : 1);
+  - Pfeile bei 100 % 0,4 bis 0,8 px tiefer;
+  - `/ueber-uns` bei 100 % breiter (gewollt, Entscheidung 4 der Notiz);
+  - Umbruchstellen im Rechner;
+  - `stummeFugen` bleibt im PricingCalculator (später in `zusammen.tsx` möglich).
+- **Offener Punkt:** Überlauf der Ortsliste bei t768 und q844 ist vorhanden (schon auf f34c103b) → E4-SICHT.
+- **Grundmessung für UM-E4-LEISTUNG** (Ende der Kette, allein, 9c98aa9a, 12 Hauptansichten × mobil/Desktop × 3; `belege/um-e4-leistung/grund-lighthouse.json`):
+  - mobil Leistung 92 bis 95, außer `/standorte/wetzlar` 79 (LCP 4,9 s; das LCP-Element ist der Text des Cookie-Banners) und `/blog` 89 (LCP 3,5 s, TBT 200 ms);
+  - LCP mobil 2,79 bis 3,46 s auf allen Ansichten, also überall über dem Budget von 2,5 s;
+  - TBT 93 bis 200 ms; CLS überall 0; Desktop überall 100.
+- **Folge:** E4-W3 weiter mit UM-E4-LEISTUNG (Workflow, Briefing `pakete/UM-E4-LEISTUNG.md`), danach E4-W4.

@@ -1,0 +1,1551 @@
+{
+  "werkzeug": "pixelvergleich.mjs",
+  "satz": "w3-zusatz",
+  "vorher": "http://127.0.0.1:4324",
+  "nachher": "http://127.0.0.1:4325",
+  "stand_vorher": {
+    "port": "4324",
+    "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/reinraum-f34c103b",
+    "commit": "f34c103b"
+  },
+  "stand_nachher": {
+    "port": "4325",
+    "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/reinraum-9c98aa9a",
+    "commit": "9c98aa9a"
+  },
+  "seiten": [
+    "/preise",
+    "/bad/projekt-check",
+    "/termin",
+    "/blog/barrierefreier-balkonaustritt",
+    "/blog/handwerkerbonus-fliesenarbeiten"
+  ],
+  "geraete": [
+    "m390",
+    "t768",
+    "d1440",
+    "d1920"
+  ],
+  "schwelle": 0.1,
+  "include_aa": true,
+  "worker": 2,
+  "selbsttest_stoerung": false,
+  "laufzeit_min": 1.13,
+  "max_ausschnitte": null,
+  "zusammenfassung": {
+    "paare": 20,
+    "mit_abweichung": 16,
+    "summe_abweichend": 1440564,
+    "fehler": 0,
+    "wiederholt": 0,
+    "ungeprueft_px": 0,
+    "paare_mit_ungeprueftem_rest": 0
+  },
+  "paare": [
+    {
+      "seite": "/preise",
+      "geraet": "m390",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 12869,
+      "hoehe_nachher": 12869,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 1370,
+          "anteil": 0.0041621096123465795
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 1312,
+          "anteil": 0.003985903511969863
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 2921,
+          "anteil": 0.00887410377931705
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 4766,
+          "anteil": 0.014479280593024668
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 66,
+          "anteil": 0.0002005103900838498
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 14,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 15,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 16,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 10435,
+      "anteil": 0.0019813692429213755,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/m390/preise/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/m390/preise/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/m390/preise/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/m390/preise/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/m390/preise/diff-k09.png"
+      ],
+      "dauer_s": 8.7,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 12869.140625,
+      "hoehe_genau_nachher": 12869.140625
+    },
+    {
+      "seite": "/preise",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 11074,
+      "hoehe_nachher": 11074,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 73,
+          "anteil": 0.00009282430013020833
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 37,
+          "anteil": 0.000047047932942708336
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 2514,
+          "anteil": 0.00319671630859375
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 333,
+          "anteil": 0.000423431396484375
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 11,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 2957,
+      "anteil": 0.00034181999437736744,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/t768/preise/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/t768/preise/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/t768/preise/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/t768/preise/diff-k05.png"
+      ],
+      "dauer_s": 6.7,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 11073.65625,
+      "hoehe_genau_nachher": 11073.65625
+    },
+    {
+      "seite": "/preise",
+      "geraet": "d1440",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 9439,
+      "hoehe_nachher": 9418,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 29062,
+          "anteil": 0.022424382716049383
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 134103,
+          "anteil": 0.10347453703703703
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 128742,
+          "anteil": 0.09933796296296296
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 145000,
+          "anteil": 0.11188271604938271
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 116737,
+          "anteil": 0.09007484567901235
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 113801,
+          "anteil": 0.08780941358024691
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 11,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 667445,
+      "anteil": 0.046818532547699215,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/d1440/preise/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/d1440/preise/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/d1440/preise/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/d1440/preise/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/d1440/preise/diff-k08.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/d1440/preise/diff-k09.png"
+      ],
+      "dauer_s": 6.8,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 9438.609375,
+      "hoehe_genau_nachher": 9417.609375
+    },
+    {
+      "seite": "/preise",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 10609,
+      "hoehe_nachher": 10585,
+      "hoehe_abweichend": true,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 83,
+          "anteil": 0.000040027006172839503
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 66,
+          "anteil": 0.0000318287037037037
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 72144,
+          "anteil": 0.034791666666666665
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 173782,
+          "anteil": 0.08380690586419753
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 169127,
+          "anteil": 0.08156201774691359
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 205332,
+          "anteil": 0.09902199074074074
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 130478,
+          "anteil": 0.06292341820987654
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 10,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 751012,
+      "anteil": 0.03621778549382716,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/d1920/preise/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/d1920/preise/diff-k03.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/d1920/preise/diff-k04.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/d1920/preise/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/d1920/preise/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/d1920/preise/diff-k07.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/d1920/preise/diff-k08.png"
+      ],
+      "dauer_s": 10.3,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 10608.921875,
+      "hoehe_genau_nachher": 10585.296875
+    },
+    {
+      "seite": "/bad/projekt-check",
+      "geraet": "m390",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 8258,
+      "hoehe_nachher": 8258,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 654,
+          "anteil": 0.001986875683558148
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 10,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 654,
+      "anteil": 0.0001986875683558148,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/m390/bad__projekt-check/diff-k01.png"
+      ],
+      "dauer_s": 7,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 8258.40625,
+      "hoehe_genau_nachher": 8258.40625
+    },
+    {
+      "seite": "/bad/projekt-check",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 7389,
+      "hoehe_nachher": 7389,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 1206,
+          "anteil": 0.00153350830078125
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 27,
+          "anteil": 0.000034332275390625
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 73,
+          "anteil": 0.00009282430013020833
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 8,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 1306,
+      "anteil": 0.0002075831095377604,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/t768/bad__projekt-check/diff-k00.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/t768/bad__projekt-check/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/t768/bad__projekt-check/diff-k04.png"
+      ],
+      "dauer_s": 4.4,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 7388.640625,
+      "hoehe_genau_nachher": 7388.640625
+    },
+    {
+      "seite": "/bad/projekt-check",
+      "geraet": "d1440",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 5211,
+      "hoehe_nachher": 5211,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 1166,
+          "anteil": 0.0008996913580246914
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 73,
+          "anteil": 0.00005632716049382716
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 6,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 1239,
+      "anteil": 0.00015933641975308642,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/d1440/bad__projekt-check/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/d1440/bad__projekt-check/diff-k03.png"
+      ],
+      "dauer_s": 5.1,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 5211.25,
+      "hoehe_genau_nachher": 5211.25
+    },
+    {
+      "seite": "/bad/projekt-check",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 5858,
+      "hoehe_nachher": 5858,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 30,
+          "anteil": 0.000014467592592592593
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 25,
+          "anteil": 0.000012056327160493826
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 6,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 55,
+      "anteil": 0.00000442065329218107,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/d1920/bad__projekt-check/diff-k01.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/d1920/bad__projekt-check/diff-k03.png"
+      ],
+      "dauer_s": 6.2,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 5858.046875,
+      "hoehe_genau_nachher": 5858.046875
+    },
+    {
+      "seite": "/termin",
+      "geraet": "m390",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 5093,
+      "hoehe_nachher": 5093,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 7,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 5.3,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 5093.265625,
+      "hoehe_genau_nachher": 5093.265625
+    },
+    {
+      "seite": "/termin",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 5453,
+      "hoehe_nachher": 5453,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 6,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 4.2,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 5453.15625,
+      "hoehe_genau_nachher": 5453.15625
+    },
+    {
+      "seite": "/termin",
+      "geraet": "d1440",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 4020,
+      "hoehe_nachher": 4020,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 5,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 4.8,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 4019.546875,
+      "hoehe_genau_nachher": 4019.546875
+    },
+    {
+      "seite": "/termin",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 4521,
+      "hoehe_nachher": 4521,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 5,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 0,
+      "anteil": 0,
+      "abweichend": false,
+      "diffbilder": [],
+      "dauer_s": 5.1,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 4520.703125,
+      "hoehe_genau_nachher": 4520.703125
+    },
+    {
+      "seite": "/blog/barrierefreier-balkonaustritt",
+      "geraet": "m390",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 13172,
+      "hoehe_nachher": 13172,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 4570,
+          "anteil": 0.013883825495199903
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 29,
+          "anteil": 0.00008810305018835825
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 14,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 15,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 16,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 4599,
+      "anteil": 0.0008732455340867663,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/m390/blog__barrierefreier-balkonaustritt/diff-k02.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/m390/blog__barrierefreier-balkonaustritt/diff-k08.png"
+      ],
+      "dauer_s": 5.9,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 13171.84375,
+      "hoehe_genau_nachher": 13171.84375
+    },
+    {
+      "seite": "/blog/barrierefreier-balkonaustritt",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 10833,
+      "hoehe_nachher": 10833,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 75,
+          "anteil": 0.000095367431640625
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 73,
+          "anteil": 0.00009282430013020833
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 11,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 148,
+      "anteil": 0.000017108339251893938,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/t768/blog__barrierefreier-balkonaustritt/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/t768/blog__barrierefreier-balkonaustritt/diff-k07.png"
+      ],
+      "dauer_s": 5.8,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 10833.296875,
+      "hoehe_genau_nachher": 10833.296875
+    },
+    {
+      "seite": "/blog/barrierefreier-balkonaustritt",
+      "geraet": "d1440",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 9775,
+      "hoehe_nachher": 9775,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 118,
+          "anteil": 0.00009104938271604938
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 73,
+          "anteil": 0.00005632716049382716
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 11,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 191,
+      "anteil": 0.000013397867564534231,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/d1440/blog__barrierefreier-balkonaustritt/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/d1440/blog__barrierefreier-balkonaustritt/diff-k08.png"
+      ],
+      "dauer_s": 6.9,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 9775.3125,
+      "hoehe_genau_nachher": 9775.3125
+    },
+    {
+      "seite": "/blog/barrierefreier-balkonaustritt",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 10990,
+      "hoehe_nachher": 10990,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 102,
+          "anteil": 0.000049189814814814815
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 25,
+          "anteil": 0.000012056327160493826
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 11,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 127,
+      "anteil": 0.000005567831088664422,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/d1920/blog__barrierefreier-balkonaustritt/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/d1920/blog__barrierefreier-balkonaustritt/diff-k08.png"
+      ],
+      "dauer_s": 8.6,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 10990.0625,
+      "hoehe_genau_nachher": 10990.0625
+    },
+    {
+      "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+      "geraet": "m390",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 13989,
+      "hoehe_nachher": 13989,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 25,
+          "anteil": 0.0000759509053347916
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 12,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 13,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 14,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 15,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 16,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 17,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 25,
+      "anteil": 0.00000446770031381127,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/m390/blog__handwerkerbonus-fliesenarbeiten/diff-k09.png"
+      ],
+      "dauer_s": 7.1,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 13989.09375,
+      "hoehe_genau_nachher": 13989.09375
+    },
+    {
+      "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+      "geraet": "t768",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 11258,
+      "hoehe_nachher": 11258,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 75,
+          "anteil": 0.000095367431640625
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 73,
+          "anteil": 0.00009282430013020833
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 11,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 148,
+      "anteil": 0.000017108339251893938,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/t768/blog__handwerkerbonus-fliesenarbeiten/diff-k05.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/t768/blog__handwerkerbonus-fliesenarbeiten/diff-k08.png"
+      ],
+      "dauer_s": 5.8,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 11258.234375,
+      "hoehe_genau_nachher": 11258.234375
+    },
+    {
+      "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+      "geraet": "d1440",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 10265,
+      "hoehe_nachher": 10265,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 118,
+          "anteil": 0.00009104938271604938
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 11,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 12,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 118,
+      "anteil": 0.0000075874485596707815,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/d1440/blog__handwerkerbonus-fliesenarbeiten/diff-k06.png"
+      ],
+      "dauer_s": 7.5,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 10264.640625,
+      "hoehe_genau_nachher": 10264.640625
+    },
+    {
+      "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+      "geraet": "d1920",
+      "status_vorher": 200,
+      "status_nachher": 200,
+      "hoehe_vorher": 11540,
+      "hoehe_nachher": 11540,
+      "hoehe_abweichend": false,
+      "ausschnitte": [
+        {
+          "k": 0,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 1,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 2,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 3,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 4,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 5,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 6,
+          "pixel_abweichend": 80,
+          "anteil": 0.000038580246913580246
+        },
+        {
+          "k": 7,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 8,
+          "pixel_abweichend": 25,
+          "anteil": 0.000012056327160493826
+        },
+        {
+          "k": 9,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        },
+        {
+          "k": 10,
+          "pixel_abweichend": 0,
+          "anteil": 0
+        }
+      ],
+      "ausschnitte_gesamt": 11,
+      "ungeprueft_px": 0,
+      "summe_abweichend": 105,
+      "anteil": 0.0000046033249158249155,
+      "abweichend": true,
+      "diffbilder": [
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/d1920/blog__handwerkerbonus-fliesenarbeiten/diff-k06.png",
+        "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/w3pruef/pixel-zusatz/d1920/blog__handwerkerbonus-fliesenarbeiten/diff-k08.png"
+      ],
+      "dauer_s": 8.1,
+      "fehler": null,
+      "wiederholt": false,
+      "hoehe_genau_vorher": 11540.15625,
+      "hoehe_genau_nachher": 11540.15625
+    }
+  ]
+}

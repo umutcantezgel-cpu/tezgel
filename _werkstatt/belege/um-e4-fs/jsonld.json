@@ -1,0 +1,2268 @@
+{
+  "base": "http://127.0.0.1:4325",
+  "ergebnisse": [
+    {
+      "pfad": "/bad",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/bad/bad-aus-einer-hand",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/bad/badanfrage",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/bad/badplaner",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/bad/badsanierung",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/bad/barrierefreies-bad",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/bad/fliesen",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/bad/musterbaeder",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/bad/musterbaeder/basic-bad-15_9",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/bad/musterbaeder/basic-bad-4_6",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/bad/musterbaeder/basic-bad-7",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/bad/musterbaeder/basic-bad-8_2",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/bad/musterbaeder/luxus-bad-15_9",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/bad/musterbaeder/luxus-bad-4_6",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/bad/musterbaeder/luxus-bad-7",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/bad/musterbaeder/luxus-bad-8_2",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/bad/musterbaeder/premium-bad-15_9",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/bad/musterbaeder/premium-bad-4_6",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/bad/musterbaeder/premium-bad-7",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/bad/musterbaeder/premium-bad-8_2",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/bad/projekt-check",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/balkon-terrasse",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/balkon-terrasse/balkonsanierung",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/balkon-terrasse/stelzlager",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/balkon-terrasse/terrassenplatten",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/beratung",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service",
+        "FAQPage"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/fliesen",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/fliesen/abnahme",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/fliesen/auf-fussbodenheizung",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/fliesen/festpreisangebot",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/fliesen/fliesenarten",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/fliesen/flur-diele",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/fliesen/fugensanierung",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/fliesen/grossformat",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/fliesen/holzoptik",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/fliesen/konfigurator",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/fliesen/kueche",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/fliesen/neubau",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/fliesen/renovierung",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/fliesen/verlegemuster",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/fliesen/verlegetechnik",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/fliesenreparatur",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "OfferCatalog"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/aussen",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/aussen/asslar",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/aussen/bad-nauheim",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/aussen/braunfels",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/aussen/butzbach",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/aussen/dillenburg",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/aussen/friedberg",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/aussen/giessen",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/aussen/haiger",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/aussen/herborn",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/aussen/limburg",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/aussen/marburg",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/aussen/solms",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/aussen/wetzlar",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/bad",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/bad/asslar",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/bad/bad-nauheim",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/bad/braunfels",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/bad/butzbach",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/bad/dillenburg",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/bad/friedberg",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/bad/giessen",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/bad/haiger",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/bad/herborn",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/bad/limburg",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/bad/marburg",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/bad/solms",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/bad/wetzlar",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/untergrund",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/untergrund/asslar",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/untergrund/bad-nauheim",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/untergrund/braunfels",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/untergrund/butzbach",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/untergrund/dillenburg",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/untergrund/friedberg",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/untergrund/giessen",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/untergrund/haiger",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/untergrund/herborn",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/untergrund/limburg",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/untergrund/marburg",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/untergrund/solms",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/untergrund/wetzlar",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/wohnen",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/wohnen/asslar",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/wohnen/bad-nauheim",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/wohnen/braunfels",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/wohnen/butzbach",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/wohnen/dillenburg",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/wohnen/friedberg",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/wohnen/giessen",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/wohnen/haiger",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/wohnen/herborn",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/wohnen/limburg",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/wohnen/marburg",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/wohnen/solms",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/leistungen/wohnen/wetzlar",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/naturstein",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/naturstein/granit",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/naturstein/marmor-kalkstein",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/schadensanalyse",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service",
+        "FAQPage"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/treppen",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/treppen/aussentreppe",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/treppen/innentreppe",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/treppen/treppenhaus",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/untergrund-abdichtung",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 2,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/untergrund-abdichtung/ausgleich-gefaelle",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/untergrund-abdichtung/din-18534",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/untergrund-abdichtung/entkopplung",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/untergrund-abdichtung/estrich-belegreife",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    },
+    {
+      "pfad": "/untergrund-abdichtung/fliesen-auf-fliesen",
+      "status": 200,
+      "gruen": true,
+      "bloecke": 3,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product",
+        "Service",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "befunde": []
+    }
+  ],
+  "uebersprungen": []
+}

@@ -1,0 +1,26 @@
+{
+  "base": "http://127.0.0.1:4324",
+  "ergebnisse": [
+    {
+      "pfad": "/preise",
+      "status": 200,
+      "gruen": false,
+      "bloecke": 1,
+      "typen": [
+        "Country",
+        "Organization",
+        "WebSite",
+        "Person",
+        "HomeAndConstructionBusiness",
+        "GeneralContractor",
+        "LocalBusiness",
+        "Product"
+      ],
+      "befunde": [
+        "kein Seitenknoten (WebPage …) für diese Adresse",
+        "0 BreadcrumbList (genau eine erwartet)"
+      ]
+    }
+  ],
+  "uebersprungen": []
+}
