@@ -17,9 +17,9 @@ export const MUSTERBAEDER = [
         headline: "Kompakter Komfort mit durchdachter Raumausnutzung",
         image: "/images/bad/barrierefreies-bad-holz.webp",
         highlights: [
-            "Design-Badheizkörper 177 × 60 cm (RAL 9016)",
+            "Design-Badheizkörper 177 × 60\u00a0cm (RAL 9016)",
             "Keramik-Waschtisch mit 4-seitig hinterleuchtetem LED-Lichtspiegel (4.000 K)",
-            "Stahl-Duschwanne 90 × 90 cm mit Eckeinstieg aus Sicherheitsglas",
+            "Stahl-Duschwanne 90 × 90\u00a0cm mit Eckeinstieg aus Sicherheitsglas",
             "Wand-Tiefspül-WC mit pflegeleichter Glasur und Vorwandelement mit Unterputz-Spülkasten",
             "Accessoires-Set in Chrom"
         ],
@@ -27,37 +27,37 @@ export const MUSTERBAEDER = [
             {
                 category: "Dusch-Anlage",
                 items: [
-                    "Stahl-Duschwanne 90 × 90 × 3,2 cm mit Wannenträger, weiß, inkl. Ablaufgarnitur mit Siphon und Abdeckung",
-                    "Eckeinstieg aus 2 Schiebetür-Hälften 87–89 × 200 cm, Einscheibensicherheitsglas (ESG) mit Abperl-Beschichtung, Profile chrom",
-                    "Einhand-Aufputz-Brausearmatur mit Verbrühschutz (kühles Armaturengehäuse), verchromt, inkl. Brausegarnitur mit Stange 90 cm, Schlauch und 3-fach verstellbarer Handbrause"
+                    "Stahl-Duschwanne 90 × 90 × 3,2\u00a0cm mit Wannenträger, weiß, inkl. Ablaufgarnitur mit Siphon und Abdeckung",
+                    "Eckeinstieg aus 2 Schiebetür-Hälften 87–89 × 200\u00a0cm, Einscheibensicherheitsglas (ESG) mit Abperl-Beschichtung, Profile chrom",
+                    "Einhand-Aufputz-Brausearmatur mit Verbrühschutz (kühles Armaturengehäuse), verchromt, inkl. Brausegarnitur mit Stange 90\u00a0cm, Schlauch und 3-fach verstellbarer Handbrause"
                 ],
             },
             {
                 category: "Waschtisch-Anlage",
                 items: [
-                    "Keramik-Waschtisch 65 × 48 cm, weiß mit pflegeleichter Glasur, Halbsäule weiß sowie Röhrensiphon und Eckventil",
+                    "Keramik-Waschtisch 65 × 48\u00a0cm, weiß mit pflegeleichter Glasur, Halbsäule weiß sowie Röhrensiphon und Eckventil",
                     "Einhand-Waschtischarmatur mit Ablaufgarnitur, verchromt",
-                    "LED-Lichtspiegel 65 × 80 cm, 4-seitig umlaufende Beleuchtung (3 cm) und hinterleuchtet, 4.000 Kelvin"
+                    "LED-Lichtspiegel 65 × 80\u00a0cm, 4-seitig umlaufende Beleuchtung (3\u00a0cm) und hinterleuchtet, 4.000 Kelvin"
                 ],
             },
             {
                 category: "WC-Anlage",
                 items: [
                     "Wand-Tiefspül-WC, weiß mit pflegeleichter Glasur, WC-Sitz mit Deckel und Absenkautomatik inkl. Schallschutzset",
-                    "Vorwandelement mit Unterputz-Spülkasten (112 cm) und Betätigungsplatte seidenmatt für 2-Mengen-Spülung"
+                    "Vorwandelement mit Unterputz-Spülkasten (112\u00a0cm) und Betätigungsplatte seidenmatt für 2-Mengen-Spülung"
                 ],
             },
             {
                 category: "Badheizkörper",
                 items: [
-                    "Design-Badheizkörper 177 × 60 cm (RAL 9016)"
+                    "Design-Badheizkörper 177 × 60\u00a0cm (RAL 9016)"
                 ],
             },
             {
                 category: "Accessoires",
                 items: [
                     "WC-Bürstengarnitur und Papierhalter mit Deckel, verchromt",
-                    "Handtuchhalter 45 cm, starr, und Flüssigseifenspender mit Glasbehälter, verchromt"
+                    "Handtuchhalter 45\u00a0cm, starr, und Flüssigseifenspender mit Glasbehälter, verchromt"
                 ],
             }
         ]
@@ -72,32 +72,32 @@ export const MUSTERBAEDER = [
         headline: "Familienfreundliche Vollausstattung mit Badewanne & Dusche",
         image: "/images/bad/bad-freistehende-wanne.webp",
         highlights: [
-            "Stahl-Körperform-Badewanne 170 × 75 cm",
-            "Stahl-Duschwanne 120 × 90 cm mit Glas-Duschabtrennung",
+            "Stahl-Körperform-Badewanne 170 × 75\u00a0cm",
+            "Stahl-Duschwanne 120 × 90\u00a0cm mit Glas-Duschabtrennung",
             "Waschtisch-Set mit Spiegelschrank & Unterschrank in Weiß Hochglanz",
             "Spülrandloses Wand-Tiefspül-WC mit pflegeleichter Glasur",
-            "Design-Badheizkörper 140 × 60 cm"
+            "Design-Badheizkörper 140 × 60\u00a0cm"
         ],
         components: [
             {
                 category: "Badewannen-Anlage",
                 items: [
-                    "Stahl-Körperform-Badewanne 170 × 75 cm, weiß, inkl. Wannenträger sowie Ab- und Überlaufgarnitur",
+                    "Stahl-Körperform-Badewanne 170 × 75\u00a0cm, weiß, inkl. Wannenträger sowie Ab- und Überlaufgarnitur",
                     "Einhand-Aufputz-Wannenarmatur mit Wannenset (Wandhalter, Brauseschlauch, Handbrause), verchromt"
                 ],
             },
             {
                 category: "Dusch-Anlage",
                 items: [
-                    "Stahl-Duschwanne 120 × 90 × 3,5 cm, Ablauf mittig an der kurzen Seite, weiß, inkl. Wannenträger und Ablaufgarnitur",
-                    "Aufputz-Brausethermostat mit Sicherheitsablage, inkl. Brausegarnitur mit Stange 90 cm, Schlauch und 3-fach verstellbarer Handbrause, verchromt",
-                    "Duschabtrennung aus zweiteiliger Seitenwand 90 × 195 cm und Pendeltür mit Festfeld links, Profile silber matt, ESG klar mit Abperl-Beschichtung"
+                    "Stahl-Duschwanne 120 × 90 × 3,5\u00a0cm, Ablauf mittig an der kurzen Seite, weiß, inkl. Wannenträger und Ablaufgarnitur",
+                    "Aufputz-Brausethermostat mit Sicherheitsablage, inkl. Brausegarnitur mit Stange 90\u00a0cm, Schlauch und 3-fach verstellbarer Handbrause, verchromt",
+                    "Duschabtrennung aus zweiteiliger Seitenwand 90 × 195\u00a0cm und Pendeltür mit Festfeld links, Profile silber matt, ESG klar mit Abperl-Beschichtung"
                 ],
             },
             {
                 category: "Waschtisch-Anlage",
                 items: [
-                    "Waschtisch-Set mit Spiegelschrank, Mineralguss-Waschtisch in Alpinweiß und Waschtischunterschrank 82 × 51,5 cm in Weiß Hochglanz inkl. Eckventil",
+                    "Waschtisch-Set mit Spiegelschrank, Mineralguss-Waschtisch in Alpinweiß und Waschtischunterschrank 82 × 51,5\u00a0cm in Weiß Hochglanz inkl. Eckventil",
                     "Einhand-Waschtischarmatur mit Ablaufgarnitur, verchromt, und Raumspar-Möbelsiphon"
                 ],
             },
@@ -105,13 +105,13 @@ export const MUSTERBAEDER = [
                 category: "WC-Anlage",
                 items: [
                     "Spülrandloses Wand-Tiefspül-WC, weiß mit pflegeleichter Glasur, abnehmbarer WC-Sitz mit Absenkautomatik und Edelstahlscharnieren sowie Schallschutzset",
-                    "Vorwandelement für den Trockenbau mit Unterputz-Spülkasten (112 cm) und Betätigungsplatte seidenmatt für 2-Mengen-Spülung"
+                    "Vorwandelement für den Trockenbau mit Unterputz-Spülkasten (112\u00a0cm) und Betätigungsplatte seidenmatt für 2-Mengen-Spülung"
                 ],
             },
             {
                 category: "Badheizkörper",
                 items: [
-                    "Design-Badheizkörper 140 × 60 cm (RAL 9016)"
+                    "Design-Badheizkörper 140 × 60\u00a0cm (RAL 9016)"
                 ],
             }
         ]
@@ -128,7 +128,7 @@ export const MUSTERBAEDER = [
         highlights: [
             "Mineralguss-Waschtisch in Alpinweiß mit Spiegelschrank",
             "2 Hochschränke in Anthrazit Hochglanz",
-            "Duschbereich mit ESG-Glasseitenwand 120 × 200 cm",
+            "Duschbereich mit ESG-Glasseitenwand 120 × 200\u00a0cm",
             "Spülrandloses Wand-Tiefspül-WC",
             "Design-Badheizkörper (RAL 9016)"
         ],
@@ -136,31 +136,31 @@ export const MUSTERBAEDER = [
             {
                 category: "Dusch-Anlage",
                 items: [
-                    "Stahl-Duschwanne 120 × 90 × 3,5 cm, weiß, mit Ablaufgarnitur und verchromter Abdeckung",
-                    "Renovierungsset mit Aufputz-Brausethermostat und Brausegarnitur (Stange 90 cm, 3-fach verstellbare Handbrause)",
-                    "Glas-Seitenwand 120 × 200 cm, Profile silber Hochglanz, ESG klar"
+                    "Stahl-Duschwanne 120 × 90 × 3,5\u00a0cm, weiß, mit Ablaufgarnitur und verchromter Abdeckung",
+                    "Renovierungsset mit Aufputz-Brausethermostat und Brausegarnitur (Stange 90\u00a0cm, 3-fach verstellbare Handbrause)",
+                    "Glas-Seitenwand 120 × 200\u00a0cm, Profile silber Hochglanz, ESG klar"
                 ],
             },
             {
                 category: "Waschtisch-Anlage",
                 items: [
-                    "Waschtisch-Set aus Spiegelschrank, Mineralguss-Waschtisch in Alpinweiß und Waschtischunterschrank 82 × 51,5 cm in Anthrazit Hochglanz mit Siphon und Eckventil",
+                    "Waschtisch-Set aus Spiegelschrank, Mineralguss-Waschtisch in Alpinweiß und Waschtischunterschrank 82 × 51,5\u00a0cm in Anthrazit Hochglanz mit Siphon und Eckventil",
                     "Einhand-Waschtischarmatur mit Ablaufgarnitur, verchromt",
-                    "2 Hochschränke in Anthrazit Hochglanz, 30 × 32 × 160 cm"
+                    "2 Hochschränke in Anthrazit Hochglanz, 30 × 32 × 160\u00a0cm"
                 ],
             },
             {
                 category: "WC-Anlage",
                 items: [
                     "Spülrandloses Wand-Tiefspül-WC, weiß, mit WC-Sitz und Deckel (Edelstahlscharniere, Schallschutzset)",
-                    "Vorwandelement mit Unterputz-Spülkasten, Bauhöhe 112 cm",
+                    "Vorwandelement mit Unterputz-Spülkasten, Bauhöhe 112\u00a0cm",
                     "Betätigungsplatte für 2-Mengen-Spülung (Glas weiß / Kunststoff weiß)"
                 ],
             },
             {
                 category: "Badheizkörper",
                 items: [
-                    "Design-Badheizkörper 176,4 × 60 cm (RAL 9016)"
+                    "Design-Badheizkörper 176,4 × 60\u00a0cm (RAL 9016)"
                 ],
             },
             {
@@ -181,17 +181,17 @@ export const MUSTERBAEDER = [
         headline: "Großzügiges Raumbad mit separatem WC & breitem Möbelwaschtisch",
         image: "/images/bad/bad-tageslicht.webp",
         highlights: [
-            "Stahl-Mittelablauf-Badewanne 180 × 80 cm mit Design-Wannenarmatur",
-            "Rutschhemmende Mineralguss-Duschwanne 120 × 100 cm mit Nischen-Schwenktür",
-            "Möbelwaschtisch-Set 140 cm in Metallic-Braun mit großem Wandspiegel",
+            "Stahl-Mittelablauf-Badewanne 180 × 80\u00a0cm mit Design-Wannenarmatur",
+            "Rutschhemmende Mineralguss-Duschwanne 120 × 100\u00a0cm mit Nischen-Schwenktür",
+            "Möbelwaschtisch-Set 140\u00a0cm in Metallic-Braun mit großem Wandspiegel",
             "Spülrandloses Wand-Tiefspül-WC in runder Form mit Vorwandelement",
-            "Badheizkörper 180 × 60 cm (RAL 9016)"
+            "Badheizkörper 180 × 60\u00a0cm (RAL 9016)"
         ],
         components: [
             {
                 category: "Badewannen-Anlage",
                 items: [
-                    "Stahl-Mittelablauf-Badewanne 180 × 80 cm, weiß, mit Wannenträger sowie Ab- und Überlaufgarnitur mit verchromter Abdeckung",
+                    "Stahl-Mittelablauf-Badewanne 180 × 80\u00a0cm, weiß, mit Wannenträger sowie Ab- und Überlaufgarnitur mit verchromter Abdeckung",
                     "Design-Aufputz-Wannenarmatur (Einhebel) mit Umsteller, chrom",
                     "Wand-Brausehalter, Handbrause mit Anti-Kalk-Düsen und Design-Brauseschlauch"
                 ],
@@ -199,30 +199,30 @@ export const MUSTERBAEDER = [
             {
                 category: "Dusch-Anlage",
                 items: [
-                    "Mineralguss-Duschwanne mit rutschhemmender Oberfläche, 120 × 100 × 3,2 cm, weiß, mit Ablaufgarnitur und Abdeckung",
-                    "Schwenktür für Nischeneinbau, Anschlag rechts, 100 × 195 cm, Profile chrom/Alu Hochglanz, ESG klar",
-                    "Design-Aufputz-Brausearmatur (Einhebel) mit Brausestangen-Set 60 cm, chrom"
+                    "Mineralguss-Duschwanne mit rutschhemmender Oberfläche, 120 × 100 × 3,2\u00a0cm, weiß, mit Ablaufgarnitur und Abdeckung",
+                    "Schwenktür für Nischeneinbau, Anschlag rechts, 100 × 195\u00a0cm, Profile chrom/Alu Hochglanz, ESG klar",
+                    "Design-Aufputz-Brausearmatur (Einhebel) mit Brausestangen-Set 60\u00a0cm, chrom"
                 ],
             },
             {
                 category: "Waschtisch-Anlage",
                 items: [
-                    "Möbelwaschtisch-Set aus Waschtisch und Unterschrank 140 cm in Metallic-Braun, mit Röhrensiphon und Eckventil",
+                    "Möbelwaschtisch-Set aus Waschtisch und Unterschrank 140\u00a0cm in Metallic-Braun, mit Röhrensiphon und Eckventil",
                     "Design-Waschtischarmatur (Einhebel) mit Ablaufgarnitur, chrom",
-                    "Wandspiegel 140 × 72,5 cm mit Rahmen passend in Metallic-Braun"
+                    "Wandspiegel 140 × 72,5\u00a0cm mit Rahmen passend in Metallic-Braun"
                 ],
             },
             {
                 category: "WC-Anlage",
                 items: [
                     "Spülrandloses Wand-Tiefspül-WC in runder Form mit verdeckter Befestigung, weiß mit pflegeleichter Glasur, Softclose-Sitz und Schallschutzset",
-                    "Vorwandelement mit Unterputz-Spülkasten (112 cm) und Betätigungsplatte seidenmatt"
+                    "Vorwandelement mit Unterputz-Spülkasten (112\u00a0cm) und Betätigungsplatte seidenmatt"
                 ],
             },
             {
                 category: "Badheizkörper",
                 items: [
-                    "Badheizkörper 180 × 60 cm, weiß (RAL 9016)"
+                    "Badheizkörper 180 × 60\u00a0cm, weiß (RAL 9016)"
                 ],
             },
             {
@@ -247,40 +247,40 @@ export const MUSTERBAEDER = [
         headline: "Barrierefreier Luxus und Edelstahl-Akzente auf kompaktem Raum",
         image: "/images/bad/barrierefreies-bad-holz.webp",
         highlights: [
-            "Barrierefreies Fünfeck-Duschelement 90 cm mit teilgerahmter Glasabtrennung",
-            "Asymmetrischer Waschtisch 100 cm mit Edelstahl-Armatur (gebürstet)",
-            "4-seitig hinterleuchteter LED-Lichtspiegel 100 × 80 cm",
+            "Barrierefreies Fünfeck-Duschelement 90\u00a0cm mit teilgerahmter Glasabtrennung",
+            "Asymmetrischer Waschtisch 100\u00a0cm mit Edelstahl-Armatur (gebürstet)",
+            "4-seitig hinterleuchteter LED-Lichtspiegel 100 × 80\u00a0cm",
             "Kompakt-Wand-WC mit platzsparendem Eck-Vorwandelement",
-            "Design-Badheizkörper 175,4 × 50 cm (RAL 9016)"
+            "Design-Badheizkörper 175,4 × 50\u00a0cm (RAL 9016)"
         ],
         components: [
             {
                 category: "Dusch-Anlage",
                 items: [
-                    "Fünfeck-Duschelement 90 cm, rollstuhlbefahrbar, Ablauf waagerecht",
+                    "Fünfeck-Duschelement 90\u00a0cm, rollstuhlbefahrbar, Ablauf waagerecht",
                     "Duschsystem mit Thermostat und Sicherheitsablage, 3-fach verstellbarer Handbrause und Schlauch, verchromt",
-                    "Teilgerahmte Fünfeck-Duschabtrennung 90 × 200 cm, 2-teilig mit Festfeld, Profile silber Hochglanz, ESG mit Abperl-Beschichtung"
+                    "Teilgerahmte Fünfeck-Duschabtrennung 90 × 200\u00a0cm, 2-teilig mit Festfeld, Profile silber Hochglanz, ESG mit Abperl-Beschichtung"
                 ],
             },
             {
                 category: "Waschtisch-Anlage",
                 items: [
-                    "Asymmetrischer Mineralguss-Waschtisch mit Waschtischunterschrank 57 × 48 × 100 cm in Weiß Hochglanz, mit Eckventil und Siphon",
+                    "Asymmetrischer Mineralguss-Waschtisch mit Waschtischunterschrank 57 × 48 × 100\u00a0cm in Weiß Hochglanz, mit Eckventil und Siphon",
                     "Einhand-Waschtischarmatur aus Edelstahl, matt gebürstet, mit Ablaufgarnitur",
-                    "LED-Lichtspiegel 100 × 80 cm, 4-seitig hinterleuchtet"
+                    "LED-Lichtspiegel 100 × 80\u00a0cm, 4-seitig hinterleuchtet"
                 ],
             },
             {
                 category: "WC-Anlage",
                 items: [
-                    "Kompakt-Wand-Tiefspül-WC (Ausladung 48 cm), weiß mit pflegeleichter Glasur, WC-Sitz mit Absenkautomatik und Edelstahlscharnieren",
+                    "Kompakt-Wand-Tiefspül-WC (Ausladung 48\u00a0cm), weiß mit pflegeleichter Glasur, WC-Sitz mit Absenkautomatik und Edelstahlscharnieren",
                     "Eck-Vorwandelement für Wand-WC inkl. Verkleidung und Betätigungsplatte weiß"
                 ],
             },
             {
                 category: "Badheizkörper",
                 items: [
-                    "Design-Badheizkörper 175,4 × 50 cm (RAL 9016)"
+                    "Design-Badheizkörper 175,4 × 50\u00a0cm (RAL 9016)"
                 ],
             },
             {
@@ -301,7 +301,7 @@ export const MUSTERBAEDER = [
         headline: "Elegante Balance aus Funktion, Ästhetik und bodengleicher Duschzone",
         image: "/images/bad/bad-freistehende-wanne.webp",
         highlights: [
-            "Waschtischanlage 100 cm mit LED-Lichtspiegel und Touch-Bedienung",
+            "Waschtischanlage 100\u00a0cm mit LED-Lichtspiegel und Touch-Bedienung",
             "Bodengleiche Walk-In-Duschzone mit Edelstahl-Duschrinne",
             "Rahmenlose Festglaswand mit Abperl-Beschichtung",
             "Design-Badheizkörper mit Handtuchwärmefunktion",
@@ -311,14 +311,14 @@ export const MUSTERBAEDER = [
             {
                 category: "Dusch-Anlage",
                 items: [
-                    "Bodengleiche Walk-In-Dusche mit Edelstahl-Designrinne und Festglaswand 100 × 200 cm",
+                    "Bodengleiche Walk-In-Dusche mit Edelstahl-Designrinne und Festglaswand 100 × 200\u00a0cm",
                     "Regendusch-System mit Thermostat und Anti-Kalk-Düsen"
                 ],
             },
             {
                 category: "Möbel & Keramik",
                 items: [
-                    "Möbelwaschtisch 100 cm mit Softclose-Schubladen, Front samtweiß lackiert",
+                    "Möbelwaschtisch 100\u00a0cm mit Softclose-Schubladen, Front samtweiß lackiert",
                     "LED-Lichtspiegel mit Touch-Sensor und einstellbarer Lichtfarbe (2.700–6.500 K)",
                     "Spülrandloses Design-Wand-WC mit Vorwandelement"
                 ],
@@ -342,8 +342,8 @@ export const MUSTERBAEDER = [
         headline: "Stilvolles Ambiente mit großzügigem Waschtisch & Walk-In Dusche",
         image: "/images/bad/barrierefreies-bad.webp",
         highlights: [
-            "Möbelwaschtisch 120 cm mit samtweißer Front",
-            "LED-Lichtspiegel 120 × 75 cm mit Lichtband und Dimmfunktion",
+            "Möbelwaschtisch 120\u00a0cm mit samtweißer Front",
+            "LED-Lichtspiegel 120 × 75\u00a0cm mit Lichtband und Dimmfunktion",
             "Walk-In-Dusche mit Edelstahl-Duschrinne und Echtglaswand",
             "Spülrandloses Wand-WC mit verdeckter Befestigung",
             "Drehbarer Design-Badheizkörper"
@@ -352,29 +352,29 @@ export const MUSTERBAEDER = [
             {
                 category: "Dusch-Anlage",
                 items: [
-                    "Edelstahl-Duschrinne mit Walk-In-Glaswand 120 × 200 cm",
-                    "Duschthermostat mit Regen-Kopfbrause (Ø 25 cm) und 2-strahliger Handbrause"
+                    "Edelstahl-Duschrinne mit Walk-In-Glaswand 120 × 200\u00a0cm",
+                    "Duschthermostat mit Regen-Kopfbrause (Ø 25\u00a0cm) und 2-strahliger Handbrause"
                 ],
             },
             {
                 category: "Waschtisch-Anlage",
                 items: [
-                    "Waschtischanlage 120 cm mit Doppel-Schublade und Mineralguss-Becken",
+                    "Waschtischanlage 120\u00a0cm mit Doppel-Schublade und Mineralguss-Becken",
                     "Einhand-Waschtischarmatur, chrom",
-                    "LED-Lichtspiegel 120 cm mit stufenlos einstellbarer Lichtfarbe"
+                    "LED-Lichtspiegel 120\u00a0cm mit stufenlos einstellbarer Lichtfarbe"
                 ],
             },
             {
                 category: "WC-Anlage",
                 items: [
                     "Spülrandloses Wand-Tiefspül-WC mit Softclose-Sitz",
-                    "Vorwandelement 112 cm mit Unterputz-Spülkasten und Glas-Betätigungsplatte"
+                    "Vorwandelement 112\u00a0cm mit Unterputz-Spülkasten und Glas-Betätigungsplatte"
                 ],
             },
             {
                 category: "Heizung & Zubehör",
                 items: [
-                    "Drehbarer Design-Badheizkörper 175,4 × 60 cm",
+                    "Drehbarer Design-Badheizkörper 175,4 × 60\u00a0cm",
                     "Design-Accessoires-Set"
                 ],
             }
@@ -390,25 +390,25 @@ export const MUSTERBAEDER = [
         headline: "Großzügige Wellness-Oase für höchste Komfort- und Designansprüche",
         image: "/images/bad/bad-glastuer.webp",
         highlights: [
-            "Möbel-Doppelwaschtisch 140 cm mit pflegeleichter Oberfläche & LED-Lichtspiegel (2.700–6.500 K)",
-            "Große Stahl-Badewanne 190 × 90 cm mit Wannenfüllung über den Überlauf",
-            "Bodengleiche Walk-In-Dusche mit Edelstahl-Duschrinne 100 cm",
-            "LED-Kopfbrause Ø 30 cm mit Nachtropf-Stopp",
-            "Drehbarer Design-Badheizkörper 175,4 × 75 cm"
+            "Möbel-Doppelwaschtisch 140\u00a0cm mit pflegeleichter Oberfläche & LED-Lichtspiegel (2.700–6.500 K)",
+            "Große Stahl-Badewanne 190 × 90\u00a0cm mit Wannenfüllung über den Überlauf",
+            "Bodengleiche Walk-In-Dusche mit Edelstahl-Duschrinne 100\u00a0cm",
+            "LED-Kopfbrause Ø 30\u00a0cm mit Nachtropf-Stopp",
+            "Drehbarer Design-Badheizkörper 175,4 × 75\u00a0cm"
         ],
         components: [
             {
                 category: "Badewannen-Anlage",
                 items: [
-                    "Stahl-Badewanne 190 × 90 cm, Mittelablauf, weiß, mit Wannenträger und Ab- und Überlaufgarnitur mit integriertem Wasserzulauf",
+                    "Stahl-Badewanne 190 × 90\u00a0cm, Mittelablauf, weiß, mit Wannenträger und Ab- und Überlaufgarnitur mit integriertem Wasserzulauf",
                     "Unterputz-Wannenarmatur mit Wandanschlussbogen, 1-strahlige Stabhandbrause und Design-Brauseschlauch, verchromt"
                 ],
             },
             {
                 category: "Dusch-Anlage",
                 items: [
-                    "Edelstahl-Duschrinne 100 cm mit Designrost",
-                    "Thermostat-Duschsystem mit LED-Kopfbrause Ø 30 cm (Nachtropf-Stopp), Design-Brauseschlauch verchromt und 2-strahliger Handbrause Ø 12 cm",
+                    "Edelstahl-Duschrinne 100\u00a0cm mit Designrost",
+                    "Thermostat-Duschsystem mit LED-Kopfbrause Ø 30\u00a0cm (Nachtropf-Stopp), Design-Brauseschlauch verchromt und 2-strahliger Handbrause Ø 12\u00a0cm",
                     "Eckiger Wandbrausehalter, verchromt",
                     "Pendeltür mit Design-Scharnieren für Nischeneinbau, ESG klar mit Abperl-Beschichtung, chrom, inkl. Aufmaß und Montage"
                 ],
@@ -416,31 +416,31 @@ export const MUSTERBAEDER = [
             {
                 category: "Waschtisch-Anlage",
                 items: [
-                    "Mineralguss-Möbel-Doppelwaschtisch 140 × 49 cm, weiß mit pflegeleichter Oberfläche, inkl. Eckventilen",
-                    "Waschtischunterschrank 56,6 × 50 × 140 cm, samtweiß matt",
+                    "Mineralguss-Möbel-Doppelwaschtisch 140 × 49\u00a0cm, weiß mit pflegeleichter Oberfläche, inkl. Eckventilen",
+                    "Waschtischunterschrank 56,6 × 50 × 140\u00a0cm, samtweiß matt",
                     "Einhand-Waschtischarmatur mit Ablaufgarnitur, verchromt",
-                    "LED-Lichtspiegel 140 × 75 cm mit Lichtband oben und einstellbarer Lichtfarbe 2.700–6.500 K (warm/kalt)"
+                    "LED-Lichtspiegel 140 × 75\u00a0cm mit Lichtband oben und einstellbarer Lichtfarbe 2.700–6.500 K (warm/kalt)"
                 ],
             },
             {
                 category: "WC-Anlage",
                 items: [
                     "Spülrandloses Wand-Tiefspül-WC mit verdeckter Befestigung, weiß mit pflegeleichter Glasur, WC-Sitz mit Absenkautomatik und Edelstahlscharnieren sowie Schallschutzset",
-                    "Vorwandelement mit Unterputz-Spülkasten (112 cm)",
+                    "Vorwandelement mit Unterputz-Spülkasten (112\u00a0cm)",
                     "Betätigungsplatte für 2-Mengen-Spülung (Glas weiß / Kunststoff weiß)"
                 ],
             },
             {
                 category: "Badheizkörper",
                 items: [
-                    "Drehbarer Design-Badheizkörper 175,4 × 75 cm (RAL 9016)"
+                    "Drehbarer Design-Badheizkörper 175,4 × 75\u00a0cm (RAL 9016)"
                 ],
             },
             {
                 category: "Accessoires",
                 items: [
                     "Papierhalter ohne Deckel und Wand-WC-Bürstengarnitur, verchromt, mit Behälter aus weißer Keramik",
-                    "Handtuchhalter 1-armig, starr (48 cm), und Wand-Seifenspender mit weißer Keramik, verchromt"
+                    "Handtuchhalter 1-armig, starr (48\u00a0cm), und Wand-Seifenspender mit weißer Keramik, verchromt"
                 ],
             }
         ]
@@ -470,7 +470,7 @@ export const MUSTERBAEDER = [
                 category: "Dusch-Anlage & Spa",
                 items: [
                     "Bodengleiche Walk-In-Dusche mit integriertem Decken-Regenpaneel und farbiger LED-Beleuchtung",
-                    "Rahmenlose Glasfront aus Einscheibensicherheitsglas (100 × 210 cm) mit Abperl-Beschichtung",
+                    "Rahmenlose Glasfront aus Einscheibensicherheitsglas (100 × 210\u00a0cm) mit Abperl-Beschichtung",
                     "Unterputz-Thermostat mit digitaler Temperatureinstellung"
                 ],
             },
@@ -510,7 +510,7 @@ export const MUSTERBAEDER = [
         highlights: [
             "Ergonomische Mineralguss-Badewanne mit Unterputz-Schwallauslauf",
             "Walk-In-Regendusche mit Deckenbrause & rahmenloser Glasabtrennung",
-            "Doppelwaschtischanlage 120 cm samtweiß mit LED-Ambientebeleuchtung",
+            "Doppelwaschtischanlage 120\u00a0cm samtweiß mit LED-Ambientebeleuchtung",
             "Dusch-WC mit Fernbedienung & Nachtlicht",
             "Design-Heizpaneel mit programmierbarem Raumthermostat"
         ],
@@ -526,13 +526,13 @@ export const MUSTERBAEDER = [
                 category: "Dusch-Anlage",
                 items: [
                     "Bodengleiche Walk-In-Dusche mit Decken-Regenkopfbrause",
-                    "Rahmenlose Glasabtrennung 120 × 205 cm"
+                    "Rahmenlose Glasabtrennung 120 × 205\u00a0cm"
                 ],
             },
             {
                 category: "Doppelwaschtisch & Möbel",
                 items: [
-                    "Doppelbecken-Möbelanlage 120 cm mit Softclose-Auszügen und matter Oberfläche",
+                    "Doppelbecken-Möbelanlage 120\u00a0cm mit Softclose-Auszügen und matter Oberfläche",
                     "2 Unterputz-Waschtischarmaturen im Design-Look",
                     "Großflächiger LED-Lichtspiegel, dimmbar, mit einstellbarer Lichtfarbe (warm/kalt)"
                 ],
@@ -558,7 +558,7 @@ export const MUSTERBAEDER = [
         highlights: [
             "Freistehende Mineralguss-Badewanne mit Standarmatur",
             "Großzügige Walk-In-Dusche mit Decken-Regenhimmel",
-            "Design-Waschtisch 140 cm in Mattlack mit LED-Schattenfuge",
+            "Design-Waschtisch 140\u00a0cm in Mattlack mit LED-Schattenfuge",
             "Dusch-WC mit Warmluftföhn & Selbstreinigung",
             "Design-Badheizkörper mit integriertem Handtuchwärmer"
         ],
@@ -572,14 +572,14 @@ export const MUSTERBAEDER = [
             {
                 category: "Dusch-Anlage",
                 items: [
-                    "Bodengleiche Walk-In-Duschzone mit Decken-Regenhimmel 40 × 40 cm",
-                    "Rahmenlose Echtglaswand 140 cm mit Abperl-Beschichtung"
+                    "Bodengleiche Walk-In-Duschzone mit Decken-Regenhimmel 40 × 40\u00a0cm",
+                    "Rahmenlose Echtglaswand 140\u00a0cm mit Abperl-Beschichtung"
                 ],
             },
             {
                 category: "Waschtisch & Möbel",
                 items: [
-                    "Design-Doppelwaschtisch 140 cm in samtmatten Lackfarben mit Push-to-Open-Auszügen",
+                    "Design-Doppelwaschtisch 140\u00a0cm in samtmatten Lackfarben mit Push-to-Open-Auszügen",
                     "2 Unterputz-Waschtischmischer und doppelter LED-Lichtspiegel mit Gestensteuerung"
                 ],
             },
@@ -619,7 +619,7 @@ export const MUSTERBAEDER = [
                 category: "Erlebnis-Dusche",
                 items: [
                     "Walk-In-Duschanlage mit Decken-Regenbrause und elektronischer Thermostatsteuerung",
-                    "Rahmenlose Echtglas-Abtrennung 140 × 210 cm"
+                    "Rahmenlose Echtglas-Abtrennung 140 × 210\u00a0cm"
                 ],
             },
             {

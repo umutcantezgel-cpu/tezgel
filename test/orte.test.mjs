@@ -56,7 +56,7 @@ test('Orte 5: Entfernung ab Aßlar im Ortssatz, der Sitz selbst ohne Entfernung'
     const o = inhalte[i];
     const km = CITY_HUB_DATA[c.slug]?.distanceKm ?? c.distanceKm;
     if (km === 0) assert.match(o.worum.ort, /Sitz in Aßlar/);
-    else if (c.slug !== 'wetzlar') assert.match(o.worum.ort, re(`etwa ${km} km bis ${c.name}.`));
+    else if (c.slug !== 'wetzlar') assert.match(o.worum.ort, re(`etwa ${km}\u00a0km bis ${c.name}.`));
     assert.match(o.lage.absaetze[0], re(`im ${c.region}.`));
   }
 });

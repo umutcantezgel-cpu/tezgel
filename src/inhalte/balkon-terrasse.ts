@@ -47,7 +47,7 @@ export const BALKON_TERRASSE: ErzaehlInhalt = {
     einleitung: VORSPANN,
     // Eine Aussage je Fliese: Überschrift der Textdatei und Satz, getrennt durch einen Punkt (die Fliese hat nur Sätze)
     punkte: [
-      'Das Wasser läuft ab. Der Belag bekommt ein [[gefaelle|Gefälle]] von mindestens 1,5 bis 2 %.',
+      'Das Wasser läuft ab. Der Belag bekommt ein [[gefaelle|Gefälle]] von mindestens 1,5 bis 2\u00A0%.',
       'Platten auf Stelzlagern. Ob Stelzlager zu Ihrer Fläche passen, prüfen wir vor Ort, bevor wir einen Belag planen.',
       'Die richtige Oberfläche. Wir verlegen Platten mit [[rutschhemmung|Rutschhemmung R10 oder R11]], je nach Raum.',
       'Der Aufbau darunter. Auch der [[untergrund|Untergrund]] gehört zu unseren Leistungen. Ebenso die [[abdichtung|Abdichtung]].',
@@ -81,7 +81,7 @@ export const BALKON_TERRASSE: ErzaehlInhalt = {
         werte: {
           hoehe: 'Mittel bis hoch, über die Lager stufenlos einstellbar',
           wasser: 'Wasser läuft durch offene Fugen auf die Abdichtungsebene und dort im Gefälle ab',
-          platten: '2 cm starke Platten aus [[feinsteinzeug|Feinsteinzeug]] oder geeignetem Naturstein',
+          platten: '2\u00A0cm starke Platten aus [[feinsteinzeug|Feinsteinzeug]] oder geeignetem Naturstein',
           geeignet: 'Balkon, Loggia, Dachterrasse auf tragfähiger, abgedichteter Fläche',
           revision: 'Platten einzeln abnehmbar, Abdichtung und Abläufe bleiben zugänglich',
         },
@@ -92,7 +92,7 @@ export const BALKON_TERRASSE: ErzaehlInhalt = {
         werte: {
           hoehe: 'Mittel, abhängig von Bettungsdicke und Unterbau',
           wasser: 'Wasser versickert über Fugen und Bettung in einen wasserdurchlässigen Unterbau',
-          platten: '2 cm starke Platten oder dickere Terrassenplatten',
+          platten: '2\u00A0cm starke Platten oder dickere Terrassenplatten',
           geeignet: 'Vor allem Terrassen auf Erdreich mit tragfähigem, frostsicherem Unterbau',
           revision: 'Platten aufnehmbar, Bettung lässt sich nachrichten',
         },
@@ -111,7 +111,7 @@ export const BALKON_TERRASSE: ErzaehlInhalt = {
     ],
     hinweis: {
       stichwort: 'Plattenstärke',
-      text: '2 cm starke Platten sind für Stelzlager und Splittbett nötig, weil sie dort frei spannen bzw. punktuell aufliegen. Bei gebundener Verlegung trägt das Bett die Platte vollflächig. Dann genügt frostbeständiges Feinsteinzeug in üblicher Stärke.',
+      text: '2\u00A0cm starke Platten sind für Stelzlager und Splittbett nötig, weil sie dort frei spannen bzw. punktuell aufliegen. Bei gebundener Verlegung trägt das Bett die Platte vollflächig. Dann genügt frostbeständiges Feinsteinzeug in üblicher Stärke.',
     },
   },
   ablauf: {

@@ -24,7 +24,7 @@ export function ortsInhalt(stadt: CityData, kmAbSitz: number, index: number): Or
       ? 'Fliesenverlegung Tezgel hat seinen Sitz in Aßlar.'
       : stadt.slug === 'wetzlar'
         ? 'Fliesenverlegung Tezgel aus Aßlar, direkt neben Wetzlar.'
-        : `Fliesenverlegung Tezgel aus Aßlar, etwa ${kmAbSitz} km bis ${name}.`;
+        : `Fliesenverlegung Tezgel aus Aßlar, etwa ${kmAbSitz}\u00a0km bis ${name}.`;
   const leistungen: Zeile[] = [
     { name: 'Badsanierung und Dusche', href: `/leistungen/bad/${stadt.slug}`, motiv: 'kreuzfuge' },
     { name: 'Böden und Wände', href: `/leistungen/wohnen/${stadt.slug}`, motiv: 'drittelverband' },

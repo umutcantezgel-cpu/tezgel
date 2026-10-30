@@ -52,7 +52,7 @@ export const BARRIEREFREIES_BAD: ErzaehlInhalt = {
     ],
     hinweis: {
       // zweiter Satz aus dem alten Zuschuss-Abschnitt (F-25, sinngleich; Abnahme E3-BAU-03)
-      text: 'Haben Sie einen Pflegegrad? Dann kann die Pflegekasse bis zu 4.180 € je Person dazugeben. Haben zwei Personen im Haushalt einen Pflegegrad, sind es bis zu 8.360 €.',
+      text: 'Haben Sie einen Pflegegrad? Dann kann die Pflegekasse bis zu 4.180\u00A0€ je Person dazugeben. Haben zwei Personen im Haushalt einen Pflegegrad, sind es bis zu 8.360\u00A0€.',
       verweis: { name: 'Mehr zum Zuschuss', href: '/foerderung' },
     },
   },

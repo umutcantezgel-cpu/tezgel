@@ -161,7 +161,7 @@ export const footerGruppen = [
             { name: 'Ablauf und Kosten', path: '/preise' },
             { name: 'Anfrage fürs Bad', path: '/bad/badanfrage' },
             { name: 'Badplaner', path: '/bad/badplaner' },
-            { name: 'Bad in 2 Minuten beschreiben', path: '/bad/projekt-check' },
+            { name: 'Bad in 2\u00a0Minuten beschreiben', path: '/bad/projekt-check' },
             { name: 'Fliesen zusammenstellen', path: '/fliesen/konfigurator' },
             { name: 'Angebot mit festem Preis', path: '/fliesen/festpreisangebot' },
             { name: 'Unterlagen zum Herunterladen', path: '/downloads' },

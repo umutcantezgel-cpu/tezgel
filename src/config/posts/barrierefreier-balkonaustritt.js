@@ -27,23 +27,23 @@ Auf dem Balkon läuft Wasser über den Belag und – je nach Aufbau – auch in 
 
 Nach den Fachregeln für Abdichtungen von Balkonen und genutzten Dachflächen (u. a. DIN 18531 und die Flachdachrichtlinie) gilt vereinfacht:
 
-- Die Abdichtung wird an Türen **in der Regel mindestens 15 cm über die Oberfläche des Belags** hochgeführt.
-- Die Anschlusshöhe darf auf **mindestens 5 cm reduziert** werden, wenn unmittelbar vor der Tür eine dauerhaft funktionierende Entwässerung liegt, zum Beispiel eine Rinne mit Gitterrost, und weitere Randbedingungen erfüllt sind (etwa Schutz vor Schlagregen durch ein Vordach).
+- Die Abdichtung wird an Türen **in der Regel mindestens 15\u00a0cm über die Oberfläche des Belags** hochgeführt.
+- Die Anschlusshöhe darf auf **mindestens 5\u00a0cm reduziert** werden, wenn unmittelbar vor der Tür eine dauerhaft funktionierende Entwässerung liegt, zum Beispiel eine Rinne mit Gitterrost, und weitere Randbedingungen erfüllt sind (etwa Schutz vor Schlagregen durch ein Vordach).
 - **Niveaugleiche Übergänge** sind eine Sonderlösung. Sie sind möglich, müssen aber besonders geplant und mit allen Beteiligten ausdrücklich vereinbart werden.
 
 Die genauen Anforderungen hängen vom Einzelfall ab. Für die Planung gelten die jeweils aktuellen Fassungen der Normen und Richtlinien.
 
 ## Was Barrierefreiheit verlangt
 
-Die Norm **DIN 18040-2** für barrierefreie Wohnungen sieht vor, dass untere Türanschläge und Schwellen grundsätzlich vermieden werden. Sind sie **technisch unabdingbar**, dürfen sie **höchstens 2 cm** hoch sein.
+Die Norm **DIN 18040-2** für barrierefreie Wohnungen sieht vor, dass untere Türanschläge und Schwellen grundsätzlich vermieden werden. Sind sie **technisch unabdingbar**, dürfen sie **höchstens 2\u00a0cm** hoch sein.
 
 Hier treffen zwei Ziele aufeinander: Die Abdichtung braucht Höhe, die Barrierefreiheit möglichst keine. Der Ausweg liegt nicht darin, einfach die Schwelle wegzulassen, sondern das Wasser so zuverlässig vor der Tür abzuführen, dass ein niedriger Anschluss vertretbar wird.
 
 | Ziel | Typische Anforderung |
 |---|---|
-| Regelanschluss Abdichtung | in der Regel ca. 15 cm über Belag |
-| Reduzierter Anschluss | ca. 5 cm, mit Entwässerungsrinne direkt vor der Tür |
-| Barrierefreiheit (DIN 18040-2) | keine Schwelle, falls unvermeidbar max. 2 cm |
+| Regelanschluss Abdichtung | in der Regel ca. 15\u00a0cm über Belag |
+| Reduzierter Anschluss | ca. 5\u00a0cm, mit Entwässerungsrinne direkt vor der Tür |
+| Barrierefreiheit (DIN 18040-2) | keine Schwelle, falls unvermeidbar max. 2\u00a0cm |
 | Niveaugleicher Übergang | Sonderlösung, gesondert planen und vereinbaren |
 
 ## Niveaugleich planen: Rinne, Gefälle, Türelement
@@ -74,7 +74,7 @@ Für Maßnahmen, die das Wohnen im Alter oder mit Einschränkungen erleichtern, 
 
 ## Fazit
 
-Ein stufenloser Balkonaustritt ist machbar, aber er ist ein Abdichtungsdetail und keine Frage des Belags allein. Die Fachregeln sehen normalerweise rund 15 cm Anschlusshöhe vor, mit Entwässerungsrinne direkt vor der Tür sind etwa 5 cm möglich, niveaugleiche Übergänge sind eine gesondert zu planende Sonderlösung. Wer Barrierefreiheit wünscht, sollte Türelement, Gefälle, Rinne und Belag gemeinsam planen.
+Ein stufenloser Balkonaustritt ist machbar, aber er ist ein Abdichtungsdetail und keine Frage des Belags allein. Die Fachregeln sehen normalerweise rund 15\u00a0cm Anschlusshöhe vor, mit Entwässerungsrinne direkt vor der Tür sind etwa 5\u00a0cm möglich, niveaugleiche Übergänge sind eine gesondert zu planende Sonderlösung. Wer Barrierefreiheit wünscht, sollte Türelement, Gefälle, Rinne und Belag gemeinsam planen.
 
 Sie möchten Ihren Balkon neu belegen oder schwellenarm umbauen? [Sprechen Sie uns an](/kontakt) – wir besprechen mit Ihnen Aufbau, Anschlüsse und Belag und stimmen uns bei Bedarf mit den weiteren Gewerken ab.`
 };

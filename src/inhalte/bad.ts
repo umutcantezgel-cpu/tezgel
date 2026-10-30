@@ -76,7 +76,7 @@ export const BAD: ErzaehlInhalt = {
       },
     ],
     hinweis: {
-      text: 'Haben Sie einen Pflegegrad? Dann kann die Pflegekasse bis zu 4.180 € je Person dazugeben. Das gilt für einen [[barrierefrei|barrierefreien]] Umbau.',
+      text: 'Haben Sie einen Pflegegrad? Dann kann die Pflegekasse bis zu 4.180\u00A0€ je Person dazugeben. Das gilt für einen [[barrierefrei|barrierefreien]] Umbau.',
       verweis: { name: 'Mehr zum Zuschuss', href: '/foerderung' },
     },
   },

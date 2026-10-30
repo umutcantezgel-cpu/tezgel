@@ -30,9 +30,9 @@ Begünstigt sind in der Regel sowohl Eigentümerinnen und Eigentümer als auch M
 
 ## Wie hoch ist die Steuerermäßigung?
 
-- **20 %** der begünstigten Aufwendungen
-- **höchstens 1.200 € Steuerermäßigung pro Jahr** und Haushalt
-- Der Höchstbetrag ist damit bei 6.000 € begünstigten Arbeitskosten im Jahr ausgeschöpft
+- **20\u00a0%** der begünstigten Aufwendungen
+- **höchstens 1.200\u00a0€ Steuerermäßigung pro Jahr** und Haushalt
+- Der Höchstbetrag ist damit bei 6.000\u00a0€ begünstigten Arbeitskosten im Jahr ausgeschöpft
 
 Maßgeblich ist das Jahr der **Zahlung**, nicht das Jahr der Arbeiten. Bei größeren Projekten, die sich über den Jahreswechsel ziehen, kann es sinnvoll sein, Abschlags- und Schlusszahlung auf zwei Kalenderjahre zu verteilen. Ob sich das in Ihrem Fall lohnt, besprechen Sie am besten vorab mit Ihrer Steuerberatung.
 
@@ -87,7 +87,7 @@ Für öffentlich geförderte Maßnahmen, für die Sie zinsverbilligte Darlehen o
 
 ## Fazit
 
-Der Handwerkerbonus nach § 35a Abs. 3 EStG macht Fliesenarbeiten im bewohnten Zuhause spürbar günstiger: 20 % der Arbeits-, Fahrt- und Maschinenkosten inklusive Umsatzsteuer, bis zu 1.200 € Steuerermäßigung pro Jahr. Entscheidend sind eine Rechnung mit ausgewiesenem Arbeitsanteil und die Zahlung per Überweisung. Für Neubauten gilt der Bonus nicht, und eine Garantie für die Anerkennung im Einzelfall gibt es nicht – die verbindliche Einschätzung liefert Ihre Steuerberatung.
+Der Handwerkerbonus nach § 35a Abs. 3 EStG macht Fliesenarbeiten im bewohnten Zuhause spürbar günstiger: 20\u00a0% der Arbeits-, Fahrt- und Maschinenkosten inklusive Umsatzsteuer, bis zu 1.200\u00a0€ Steuerermäßigung pro Jahr. Entscheidend sind eine Rechnung mit ausgewiesenem Arbeitsanteil und die Zahlung per Überweisung. Für Neubauten gilt der Bonus nicht, und eine Garantie für die Anerkennung im Einzelfall gibt es nicht – die verbindliche Einschätzung liefert Ihre Steuerberatung.
 
 Sie planen eine [Badsanierung](/bad/badsanierung) oder einen neuen Fliesenboden? Als Fachbetrieb aus Aßlar erstellen wir Ihnen ein nachvollziehbares Angebot – was den Aufwand bestimmt, erklären wir auf der Seite [Festpreisangebot](/fliesen/festpreisangebot). [Nehmen Sie Kontakt mit uns auf](/kontakt), wir besprechen Ihr Vorhaben gern.`
 };

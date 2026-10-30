@@ -112,8 +112,8 @@ export const GLOSSAR = {
   },
   "grossformat": {
     begriffe: ["Großformat"],
-    erklaerung: "Große Fliesen, zum Beispiel 120 × 260 cm. Es gibt dann weniger Fugen.",
-    klammer: "große Fliesen, zum Beispiel 120 × 260 cm; es gibt dann weniger Fugen",
+    erklaerung: "Große Fliesen, zum Beispiel 120 × 260\u00a0cm. Es gibt dann weniger Fugen.",
+    klammer: "große Fliesen, zum Beispiel 120 × 260\u00a0cm; es gibt dann weniger Fugen",
   },
   "kuvertschnitt": {
     begriffe: ["Kuvertschnitt"],

@@ -20,7 +20,7 @@ export const SERVICES = [
 
         features: [
             "Barrierefreie Walk-In-Duschen mit millimetergenauem Gefälleschnitt",
-            "Fugenarme XXL-Fliesen (bis 120 x 278 cm) für edle, monolithische Optik",
+            "Fugenarme XXL-Fliesen (bis 120 x 278\u00a0cm) für edle, monolithische Optik",
             "Indirekt illuminierte Wandnischen & Ablagen mit Edelstahl- oder Gehrungskanten",
             "Fachgerechte Verkleidung von Vorwandelementen und Installationsschächten",
             "Staubarme Sanierung mit Schonvlies und modernen Staubschutzwänden",
@@ -80,7 +80,7 @@ export const SERVICES = [
         link: "/balkon-terrasse",
 
         subcategories: [
-            { id: "stelzlager", name: "20 mm Platten auf Stelzlagern", path: "/balkon-terrasse/stelzlager", icon: "layers" },
+            { id: "stelzlager", name: "20\u00a0mm Platten auf Stelzlagern", path: "/balkon-terrasse/stelzlager", icon: "layers" },
             { id: "gefaelle", name: "Gefälleausbildung & Entwässerung", path: "/untergrund-abdichtung/ausgleich-gefaelle", icon: "arrow-down-right" },
             { id: "abdichtung-aussen", name: "Witterungsbeständige Abdichtung", path: "/balkon-terrasse/balkonsanierung", icon: "shield" }
         ],
@@ -88,7 +88,7 @@ export const SERVICES = [
         features: [
             "Verlegung robuster 2-cm-Außenkeramik auf Stelzlagern oder Splittbett",
             "Frei ablaufendes Regenwasser durch offene Fugen – dauerhafter Frostschutz",
-            "Normgerechte Gefälleherstellung (mind. 1,5 bis 2 %) vom Gebäude weg",
+            "Normgerechte Gefälleherstellung (mind. 1,5 bis 2\u00a0%) vom Gebäude weg",
             "Architektonisch saubere Randabschlüsse mit Tropfprofilen aus pulverbeschichtetem Aluminium",
             "Keine unschönen Kalkausblühungen oder aufplatzenden Zementfugen mehr",
             "Sanierung von Bestandsbalkonen inklusive Entkernung des Altbelags"
