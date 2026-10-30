@@ -1,0 +1,330 @@
+{
+ "werkzeug": "svg.mjs",
+ "zeitpunkt": "2026-10-30T20:19:14.076Z",
+ "animiert": false,
+ "dateien": [],
+ "seiten": {
+  "base": "http://127.0.0.1:4325",
+  "ansichten": [
+   "m390",
+   "d1440"
+  ],
+  "ergebnisse": [
+   {
+    "seite": "/bad/badsanierung",
+    "ansicht": "d1440",
+    "status": 200,
+    "inline_svgs": 163,
+    "befunde": [],
+    "fehler": null,
+    "anfragen": {
+     "fremd": 0,
+     "blockiert": 0,
+     "anfrage_attrappe": 0
+    }
+   },
+   {
+    "seite": "/bad/badsanierung",
+    "ansicht": "m390",
+    "status": 200,
+    "inline_svgs": 163,
+    "befunde": [],
+    "fehler": null,
+    "anfragen": {
+     "fremd": 0,
+     "blockiert": 0,
+     "anfrage_attrappe": 0
+    }
+   },
+   {
+    "seite": "/bad/barrierefreies-bad",
+    "ansicht": "d1440",
+    "status": 200,
+    "inline_svgs": 153,
+    "befunde": [],
+    "fehler": null,
+    "anfragen": {
+     "fremd": 0,
+     "blockiert": 0,
+     "anfrage_attrappe": 0
+    }
+   },
+   {
+    "seite": "/bad/barrierefreies-bad",
+    "ansicht": "m390",
+    "status": 200,
+    "inline_svgs": 153,
+    "befunde": [],
+    "fehler": null,
+    "anfragen": {
+     "fremd": 0,
+     "blockiert": 0,
+     "anfrage_attrappe": 0
+    }
+   },
+   {
+    "seite": "/bad",
+    "ansicht": "d1440",
+    "status": 200,
+    "inline_svgs": 180,
+    "befunde": [],
+    "fehler": null,
+    "anfragen": {
+     "fremd": 0,
+     "blockiert": 0,
+     "anfrage_attrappe": 0
+    }
+   },
+   {
+    "seite": "/bad",
+    "ansicht": "m390",
+    "status": 200,
+    "inline_svgs": 180,
+    "befunde": [],
+    "fehler": null,
+    "anfragen": {
+     "fremd": 0,
+     "blockiert": 0,
+     "anfrage_attrappe": 0
+    }
+   },
+   {
+    "seite": "/balkon-terrasse",
+    "ansicht": "d1440",
+    "status": 200,
+    "inline_svgs": 171,
+    "befunde": [],
+    "fehler": null,
+    "anfragen": {
+     "fremd": 0,
+     "blockiert": 0,
+     "anfrage_attrappe": 0
+    }
+   },
+   {
+    "seite": "/balkon-terrasse",
+    "ansicht": "m390",
+    "status": 200,
+    "inline_svgs": 171,
+    "befunde": [],
+    "fehler": null,
+    "anfragen": {
+     "fremd": 0,
+     "blockiert": 0,
+     "anfrage_attrappe": 0
+    }
+   },
+   {
+    "seite": "/blog",
+    "ansicht": "d1440",
+    "status": 200,
+    "inline_svgs": 182,
+    "befunde": [],
+    "fehler": null,
+    "anfragen": {
+     "fremd": 0,
+     "blockiert": 0,
+     "anfrage_attrappe": 0
+    }
+   },
+   {
+    "seite": "/blog",
+    "ansicht": "m390",
+    "status": 200,
+    "inline_svgs": 182,
+    "befunde": [],
+    "fehler": null,
+    "anfragen": {
+     "fremd": 0,
+     "blockiert": 0,
+     "anfrage_attrappe": 0
+    }
+   },
+   {
+    "seite": "/",
+    "ansicht": "d1440",
+    "status": 200,
+    "inline_svgs": 194,
+    "befunde": [],
+    "fehler": null,
+    "anfragen": {
+     "fremd": 0,
+     "blockiert": 0,
+     "anfrage_attrappe": 0
+    }
+   },
+   {
+    "seite": "/fliesen",
+    "ansicht": "d1440",
+    "status": 200,
+    "inline_svgs": 156,
+    "befunde": [],
+    "fehler": null,
+    "anfragen": {
+     "fremd": 0,
+     "blockiert": 0,
+     "anfrage_attrappe": 0
+    }
+   },
+   {
+    "seite": "/fliesen",
+    "ansicht": "m390",
+    "status": 200,
+    "inline_svgs": 156,
+    "befunde": [],
+    "fehler": null,
+    "anfragen": {
+     "fremd": 0,
+     "blockiert": 0,
+     "anfrage_attrappe": 0
+    }
+   },
+   {
+    "seite": "/kontakt",
+    "ansicht": "d1440",
+    "status": 200,
+    "inline_svgs": 123,
+    "befunde": [],
+    "fehler": null,
+    "anfragen": {
+     "fremd": 0,
+     "blockiert": 0,
+     "anfrage_attrappe": 0
+    }
+   },
+   {
+    "seite": "/kontakt",
+    "ansicht": "m390",
+    "status": 200,
+    "inline_svgs": 123,
+    "befunde": [],
+    "fehler": null,
+    "anfragen": {
+     "fremd": 0,
+     "blockiert": 0,
+     "anfrage_attrappe": 0
+    }
+   },
+   {
+    "seite": "/leistungen",
+    "ansicht": "d1440",
+    "status": 200,
+    "inline_svgs": 174,
+    "befunde": [],
+    "fehler": null,
+    "anfragen": {
+     "fremd": 0,
+     "blockiert": 0,
+     "anfrage_attrappe": 0
+    }
+   },
+   {
+    "seite": "/leistungen",
+    "ansicht": "m390",
+    "status": 200,
+    "inline_svgs": 174,
+    "befunde": [],
+    "fehler": null,
+    "anfragen": {
+     "fremd": 0,
+     "blockiert": 0,
+     "anfrage_attrappe": 0
+    }
+   },
+   {
+    "seite": "/",
+    "ansicht": "m390",
+    "status": 200,
+    "inline_svgs": 194,
+    "befunde": [],
+    "fehler": null,
+    "anfragen": {
+     "fremd": 0,
+     "blockiert": 0,
+     "anfrage_attrappe": 0
+    }
+   },
+   {
+    "seite": "/referenzen",
+    "ansicht": "d1440",
+    "status": 200,
+    "inline_svgs": 243,
+    "befunde": [],
+    "fehler": null,
+    "anfragen": {
+     "fremd": 0,
+     "blockiert": 0,
+     "anfrage_attrappe": 0
+    }
+   },
+   {
+    "seite": "/referenzen",
+    "ansicht": "m390",
+    "status": 200,
+    "inline_svgs": 243,
+    "befunde": [],
+    "fehler": null,
+    "anfragen": {
+     "fremd": 0,
+     "blockiert": 0,
+     "anfrage_attrappe": 0
+    }
+   },
+   {
+    "seite": "/standorte/wetzlar",
+    "ansicht": "d1440",
+    "status": 200,
+    "inline_svgs": 160,
+    "befunde": [],
+    "fehler": null,
+    "anfragen": {
+     "fremd": 0,
+     "blockiert": 0,
+     "anfrage_attrappe": 0
+    }
+   },
+   {
+    "seite": "/standorte/wetzlar",
+    "ansicht": "m390",
+    "status": 200,
+    "inline_svgs": 160,
+    "befunde": [],
+    "fehler": null,
+    "anfragen": {
+     "fremd": 0,
+     "blockiert": 0,
+     "anfrage_attrappe": 0
+    }
+   },
+   {
+    "seite": "/ueber-uns",
+    "ansicht": "d1440",
+    "status": 200,
+    "inline_svgs": 178,
+    "befunde": [],
+    "fehler": null,
+    "anfragen": {
+     "fremd": 0,
+     "blockiert": 0,
+     "anfrage_attrappe": 0
+    }
+   },
+   {
+    "seite": "/ueber-uns",
+    "ansicht": "m390",
+    "status": 200,
+    "inline_svgs": 178,
+    "befunde": [],
+    "fehler": null,
+    "anfragen": {
+     "fremd": 0,
+     "blockiert": 0,
+     "anfrage_attrappe": 0
+    }
+   }
+  ]
+ },
+ "befunde_gesamt": 0,
+ "befunde": [],
+ "zusammenfassung": {}
+}

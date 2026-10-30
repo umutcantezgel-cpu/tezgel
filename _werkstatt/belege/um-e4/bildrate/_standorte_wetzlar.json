@@ -1,0 +1,129 @@
+{
+ "modus": "bildrate",
+ "seite": "/standorte/wetzlar",
+ "base": "http://127.0.0.1:4325",
+ "ansicht": "m390",
+ "zeitpunkt": "2026-10-30T20:48:09.352Z",
+ "dpr": 2,
+ "cpu_drosselung": 4,
+ "gesten": {
+  "befehl": "Input.synthesizeScrollGesture",
+  "gestureSourceType": "default",
+  "geschwindigkeit_px_s": 800,
+  "folge": "oben→unten, dann unten→oben"
+ },
+ "wiederholungen": 3,
+ "bilder_gesamt": 1487,
+ "verworfen": 33,
+ "anteil_verworfen_prozent": 2.2,
+ "anteile_je_lauf": [
+  1.13,
+  2.42,
+  2.2
+ ],
+ "anteile_pipeline_je_lauf": [
+  0.71,
+  0.74,
+  0.07
+ ],
+ "loaf_anzahl": 5,
+ "loaf_summe_ms": 376,
+ "hinweis": "Median je Feld, nicht aus derselben Zeile (bilder_gesamt, verworfen, loaf_*). Kopfwert anteil_verworfen_prozent = Median der Anteile je Lauf (anteile_je_lauf).",
+ "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+ "laeufe": [
+  {
+   "bilder_gesamt": 1234,
+   "verworfen": 14,
+   "anteil_verworfen_prozent": 1.13,
+   "loaf_anzahl": 6,
+   "loaf_summe_ms": 416,
+   "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+   "zusatz": {
+    "frame_ereignisse": {
+     "praesentiert": 1220,
+     "verworfen": 14,
+     "anteil_prozent": 1.13
+    },
+    "pipeline_reporter": {
+     "praesentiert": 1257,
+     "verworfen": 9,
+     "anteil_prozent": 0.71
+    }
+   },
+   "scroll": {
+    "hoehe": 8148,
+    "nach_abwaerts": 8148,
+    "nach_aufwaerts": 0
+   },
+   "trace_vollstaendig": true,
+   "dauer_s": 25.3
+  },
+  {
+   "bilder_gesamt": 1487,
+   "verworfen": 36,
+   "anteil_verworfen_prozent": 2.42,
+   "loaf_anzahl": 5,
+   "loaf_summe_ms": 376,
+   "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+   "zusatz": {
+    "frame_ereignisse": {
+     "praesentiert": 1451,
+     "verworfen": 36,
+     "anteil_prozent": 2.42
+    },
+    "pipeline_reporter": {
+     "praesentiert": 1484,
+     "verworfen": 11,
+     "anteil_prozent": 0.74
+    }
+   },
+   "scroll": {
+    "hoehe": 9751,
+    "nach_abwaerts": 9751,
+    "nach_aufwaerts": 0
+   },
+   "trace_vollstaendig": true,
+   "dauer_s": 30.3
+  },
+  {
+   "bilder_gesamt": 1502,
+   "verworfen": 33,
+   "anteil_verworfen_prozent": 2.2,
+   "loaf_anzahl": 2,
+   "loaf_summe_ms": 103,
+   "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+   "zusatz": {
+    "frame_ereignisse": {
+     "praesentiert": 1469,
+     "verworfen": 33,
+     "anteil_prozent": 2.2
+    },
+    "pipeline_reporter": {
+     "praesentiert": 1499,
+     "verworfen": 1,
+     "anteil_prozent": 0.07
+    }
+   },
+   "scroll": {
+    "hoehe": 9774,
+    "nach_abwaerts": 9774,
+    "nach_aufwaerts": 0
+   },
+   "trace_vollstaendig": true,
+   "dauer_s": 30.4
+  }
+ ],
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "rohtrace": "nicht gespeichert (nur Kennzahlen)",
+ "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e4b/bildrate/_standorte_wetzlar",
+ "basisadresse": "http://127.0.0.1:4325",
+ "server_stand": {
+  "port": "4325",
+  "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/reinraum-e222f6d3",
+  "commit": "e222f6d3"
+ }
+}

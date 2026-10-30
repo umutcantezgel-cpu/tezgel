@@ -1,0 +1,28 @@
+Hinweis: HEAD e11cf976, geprüft wird der Bau e222f6d3 auf 4325
+4325 200
+=== WERTE Etappe seit 552a9f53 20:18:42
+werte: 98 Dateien · 3854 Klassenvorkommen (451 eindeutig) · 2.9 s
+  beliebig             11
+  befunde gesamt       11
+Bericht: ../../../tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e4b/werte/2026-10-30T20-18-45-484Z.json
+=== SVG 20:18:46
+  /standorte/wetzlar d1440: Inline-SVG 160 · HTTP 200 · Befunde 0
+  /standorte/wetzlar m390: Inline-SVG 160 · HTTP 200 · Befunde 0
+  /ueber-uns d1440: Inline-SVG 178 · HTTP 200 · Befunde 0
+  /ueber-uns m390: Inline-SVG 178 · HTTP 200 · Befunde 0
+befunde gesamt: 0
+Bericht: ../../../tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e4b/svg/2026-10-30T20-19-14-076Z.json
+=== BILDRATE alle Hauptansichten 20:20:19
+/ {'anteil_verworfen_prozent': 0.51, 'loaf_anzahl': 3, 'loaf_summe_ms': 168}
+/bad {'anteil_verworfen_prozent': 2.55, 'loaf_anzahl': 2, 'loaf_summe_ms': 119}
+/bad/badsanierung {'anteil_verworfen_prozent': 2.16, 'loaf_anzahl': 1, 'loaf_summe_ms': 67}
+/bad/barrierefreies-bad {'anteil_verworfen_prozent': 0.21, 'loaf_anzahl': 1, 'loaf_summe_ms': 50}
+/leistungen {'anteil_verworfen_prozent': 2.63, 'loaf_anzahl': 2, 'loaf_summe_ms': 168}
+/fliesen {'anteil_verworfen_prozent': 2.26, 'loaf_anzahl': 3, 'loaf_summe_ms': 176}
+/balkon-terrasse {'anteil_verworfen_prozent': 2.29, 'loaf_anzahl': 4, 'loaf_summe_ms': 308}
+/referenzen {'anteil_verworfen_prozent': 3.1, 'loaf_anzahl': 6, 'loaf_summe_ms': 371}
+/ueber-uns {'anteil_verworfen_prozent': 2.74, 'loaf_anzahl': 2, 'loaf_summe_ms': 185}
+/kontakt {'anteil_verworfen_prozent': 0.33, 'loaf_anzahl': 1, 'loaf_summe_ms': 74}
+/standorte/wetzlar {'anteil_verworfen_prozent': 2.2, 'loaf_anzahl': 5, 'loaf_summe_ms': 376}
+/blog {'anteil_verworfen_prozent': 2.23, 'loaf_anzahl': 3, 'loaf_summe_ms': 247}
+=== ENDE TEIL 1 20:53:19

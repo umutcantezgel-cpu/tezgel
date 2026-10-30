@@ -1,0 +1,129 @@
+{
+ "modus": "bildrate",
+ "seite": "/fliesen",
+ "base": "http://127.0.0.1:4325",
+ "ansicht": "m390",
+ "zeitpunkt": "2026-10-30T20:34:05.210Z",
+ "dpr": 2,
+ "cpu_drosselung": 4,
+ "gesten": {
+  "befehl": "Input.synthesizeScrollGesture",
+  "gestureSourceType": "default",
+  "geschwindigkeit_px_s": 800,
+  "folge": "oben→unten, dann unten→oben"
+ },
+ "wiederholungen": 3,
+ "bilder_gesamt": 1904,
+ "verworfen": 43,
+ "anteil_verworfen_prozent": 2.26,
+ "anteile_je_lauf": [
+  2.11,
+  2.57,
+  2.26
+ ],
+ "anteile_pipeline_je_lauf": [
+  0.24,
+  0.32,
+  0.05
+ ],
+ "loaf_anzahl": 3,
+ "loaf_summe_ms": 176,
+ "hinweis": "Median je Feld, nicht aus derselben Zeile (bilder_gesamt, verworfen, loaf_*). Kopfwert anteil_verworfen_prozent = Median der Anteile je Lauf (anteile_je_lauf).",
+ "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+ "laeufe": [
+  {
+   "bilder_gesamt": 1655,
+   "verworfen": 35,
+   "anteil_verworfen_prozent": 2.11,
+   "loaf_anzahl": 3,
+   "loaf_summe_ms": 176,
+   "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+   "zusatz": {
+    "frame_ereignisse": {
+     "praesentiert": 1620,
+     "verworfen": 35,
+     "anteil_prozent": 2.11
+    },
+    "pipeline_reporter": {
+     "praesentiert": 1692,
+     "verworfen": 4,
+     "anteil_prozent": 0.24
+    }
+   },
+   "scroll": {
+    "hoehe": 10772,
+    "nach_abwaerts": 10772,
+    "nach_aufwaerts": 0
+   },
+   "trace_vollstaendig": true,
+   "dauer_s": 33.6
+  },
+  {
+   "bilder_gesamt": 1904,
+   "verworfen": 49,
+   "anteil_verworfen_prozent": 2.57,
+   "loaf_anzahl": 3,
+   "loaf_summe_ms": 259,
+   "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+   "zusatz": {
+    "frame_ereignisse": {
+     "praesentiert": 1855,
+     "verworfen": 49,
+     "anteil_prozent": 2.57
+    },
+    "pipeline_reporter": {
+     "praesentiert": 1892,
+     "verworfen": 6,
+     "anteil_prozent": 0.32
+    }
+   },
+   "scroll": {
+    "hoehe": 12402,
+    "nach_abwaerts": 12402,
+    "nach_aufwaerts": 0
+   },
+   "trace_vollstaendig": true,
+   "dauer_s": 38.7
+  },
+  {
+   "bilder_gesamt": 1906,
+   "verworfen": 43,
+   "anteil_verworfen_prozent": 2.26,
+   "loaf_anzahl": 0,
+   "loaf_summe_ms": 0,
+   "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+   "zusatz": {
+    "frame_ereignisse": {
+     "praesentiert": 1863,
+     "verworfen": 43,
+     "anteil_prozent": 2.26
+    },
+    "pipeline_reporter": {
+     "praesentiert": 1902,
+     "verworfen": 1,
+     "anteil_prozent": 0.05
+    }
+   },
+   "scroll": {
+    "hoehe": 12402,
+    "nach_abwaerts": 12402,
+    "nach_aufwaerts": 0
+   },
+   "trace_vollstaendig": true,
+   "dauer_s": 38.8
+  }
+ ],
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "rohtrace": "nicht gespeichert (nur Kennzahlen)",
+ "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e4b/bildrate/_fliesen",
+ "basisadresse": "http://127.0.0.1:4325",
+ "server_stand": {
+  "port": "4325",
+  "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/reinraum-e222f6d3",
+  "commit": "e222f6d3"
+ }
+}

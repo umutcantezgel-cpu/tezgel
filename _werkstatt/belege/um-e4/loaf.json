@@ -1,0 +1,1421 @@
+{
+ "base": "http://127.0.0.1:4324",
+ "ansicht": "m390",
+ "cpu": 4,
+ "wiederholungen": 3,
+ "marken": [
+  "data-motion-stand",
+  "k-bewegung-wechsel",
+  ".vn-zone",
+  "--ease-aufsetzen",
+  "blende-aus",
+  "k-notaus"
+ ],
+ "stuecke": {
+  "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js": "anderes Skript",
+  "http://127.0.0.1:4324/_next/static/chunks/2tbu000sg63yb.js": "anderes Skript"
+ },
+ "ergebnis": [
+  {
+   "seite": "/",
+   "loaf_je_lauf": [
+    3,
+    2,
+    1
+   ],
+   "loaf_ohne_skript": 5,
+   "skripte_gesamt": 1,
+   "bewegung_skripte": 0,
+   "bewegung_ueber_20ms": 0,
+   "groesste_bewegung_ms": 0,
+   "groesste_skripte": [
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "ReadableStreamDefaultReader.read.then",
+     "dauer": 7,
+     "layout": 0
+    }
+   ],
+   "laeufe": [
+    [
+     {
+      "dauer": 77.80000000074506,
+      "blockierend": 0,
+      "render": 2.2000000029802322,
+      "skripte": []
+     },
+     {
+      "dauer": 93.30000000074506,
+      "blockierend": 0,
+      "render": 0.5999999977648258,
+      "skripte": []
+     },
+     {
+      "dauer": 57.400000002235174,
+      "blockierend": 0,
+      "render": 43.400000002235174,
+      "skripte": []
+     }
+    ],
+    [
+     {
+      "dauer": 78.79999999701977,
+      "blockierend": 0,
+      "render": 1.7999999970197678,
+      "skripte": []
+     },
+     {
+      "dauer": 68,
+      "blockierend": 0,
+      "render": 2,
+      "skripte": [
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 7,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       }
+      ]
+     }
+    ],
+    [
+     {
+      "dauer": 58.399999998509884,
+      "blockierend": 0,
+      "render": 7.199999999254942,
+      "skripte": []
+     }
+    ]
+   ]
+  },
+  {
+   "seite": "/bad",
+   "loaf_je_lauf": [
+    5,
+    2,
+    1
+   ],
+   "loaf_ohne_skript": 4,
+   "skripte_gesamt": 7,
+   "bewegung_skripte": 0,
+   "bewegung_ueber_20ms": 0,
+   "groesste_bewegung_ms": 0,
+   "groesste_skripte": [
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2tbu000sg63yb.js",
+     "funktion": "fW",
+     "ausloeser": "#document.onwheel",
+     "dauer": 36,
+     "layout": 0
+    },
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "ReadableStreamDefaultReader.read.then",
+     "dauer": 9,
+     "layout": 0
+    },
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "ReadableStreamDefaultReader.read.then",
+     "dauer": 9,
+     "layout": 0
+    },
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "IntersectionObserverCallback",
+     "dauer": 6,
+     "layout": 0
+    }
+   ],
+   "laeufe": [
+    [
+     {
+      "dauer": 59.600000001490116,
+      "blockierend": 0,
+      "render": 2.300000000745058,
+      "skripte": []
+     },
+     {
+      "dauer": 84.69999999925494,
+      "blockierend": 0,
+      "render": 5.100000001490116,
+      "skripte": [
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "IntersectionObserverCallback",
+        "art": "user-callback",
+        "dauer": 5.800000000745058,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       },
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 5.5,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       },
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 8.699999999254942,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       }
+      ]
+     },
+     {
+      "dauer": 59.69999999925494,
+      "blockierend": 0,
+      "render": 2.699999999254942,
+      "skripte": [
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 8.800000000745058,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       },
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 5.5,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       }
+      ]
+     },
+     {
+      "dauer": 64.40000000223517,
+      "blockierend": 0,
+      "render": 5.700000002980232,
+      "skripte": []
+     },
+     {
+      "dauer": 69.09999999776483,
+      "blockierend": 0,
+      "render": 2.300000000745058,
+      "skripte": []
+     }
+    ],
+    [
+     {
+      "dauer": 64.5,
+      "blockierend": 0,
+      "render": 3.100000001490116,
+      "skripte": [
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2tbu000sg63yb.js",
+        "funktion": "fW",
+        "ausloeser": "#document.onwheel",
+        "art": "event-listener",
+        "dauer": 5.200000002980232,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       }
+      ]
+     },
+     {
+      "dauer": 114.5,
+      "blockierend": 0,
+      "render": 0.8000000007450581,
+      "skripte": []
+     }
+    ],
+    [
+     {
+      "dauer": 52.80000000074506,
+      "blockierend": 0,
+      "render": 3.199999999254942,
+      "skripte": [
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2tbu000sg63yb.js",
+        "funktion": "fW",
+        "ausloeser": "#document.onwheel",
+        "art": "event-listener",
+        "dauer": 35.5,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       }
+      ]
+     }
+    ]
+   ]
+  },
+  {
+   "seite": "/bad/badsanierung",
+   "loaf_je_lauf": [
+    2,
+    2,
+    6
+   ],
+   "loaf_ohne_skript": 9,
+   "skripte_gesamt": 2,
+   "bewegung_skripte": 0,
+   "bewegung_ueber_20ms": 0,
+   "groesste_bewegung_ms": 0,
+   "groesste_skripte": [
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "ReadableStreamDefaultReader.read.then",
+     "dauer": 9,
+     "layout": 0
+    },
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "ReadableStreamDefaultReader.read.then",
+     "dauer": 5,
+     "layout": 0
+    }
+   ],
+   "laeufe": [
+    [
+     {
+      "dauer": 76.5,
+      "blockierend": 0,
+      "render": 3.099999997764826,
+      "skripte": [
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 5.400000002235174,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       },
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 9,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       }
+      ]
+     },
+     {
+      "dauer": 55.69999999925494,
+      "blockierend": 0,
+      "render": 0.8999999985098839,
+      "skripte": []
+     }
+    ],
+    [
+     {
+      "dauer": 134,
+      "blockierend": 0,
+      "render": 4.899999998509884,
+      "skripte": []
+     },
+     {
+      "dauer": 53.899999998509884,
+      "blockierend": 0,
+      "render": 2,
+      "skripte": []
+     }
+    ],
+    [
+     {
+      "dauer": 93,
+      "blockierend": 0,
+      "render": 3.600000001490116,
+      "skripte": []
+     },
+     {
+      "dauer": 64.90000000223517,
+      "blockierend": 0,
+      "render": 0.6999999992549419,
+      "skripte": []
+     },
+     {
+      "dauer": 73.80000000074506,
+      "blockierend": 0,
+      "render": 0.6000000014901161,
+      "skripte": []
+     },
+     {
+      "dauer": 97.70000000298023,
+      "blockierend": 0,
+      "render": 5.900000002235174,
+      "skripte": []
+     },
+     {
+      "dauer": 55.399999998509884,
+      "blockierend": 0,
+      "render": 3.199999999254942,
+      "skripte": []
+     },
+     {
+      "dauer": 65.80000000074506,
+      "blockierend": 0,
+      "render": 2.699999999254942,
+      "skripte": []
+     }
+    ]
+   ]
+  },
+  {
+   "seite": "/bad/barrierefreies-bad",
+   "loaf_je_lauf": [
+    3,
+    1,
+    0
+   ],
+   "loaf_ohne_skript": 3,
+   "skripte_gesamt": 2,
+   "bewegung_skripte": 0,
+   "bewegung_ueber_20ms": 0,
+   "groesste_bewegung_ms": 0,
+   "groesste_skripte": [
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "ReadableStreamDefaultReader.read.then",
+     "dauer": 8,
+     "layout": 0
+    },
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "ReadableStreamDefaultReader.read.then",
+     "dauer": 6,
+     "layout": 0
+    }
+   ],
+   "laeufe": [
+    [
+     {
+      "dauer": 50.599999997764826,
+      "blockierend": 0,
+      "render": 0.5,
+      "skripte": []
+     },
+     {
+      "dauer": 80.60000000149012,
+      "blockierend": 0,
+      "render": 2.600000001490116,
+      "skripte": [
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 6.199999999254942,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       },
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 8.400000002235174,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       }
+      ]
+     },
+     {
+      "dauer": 52.69999999925494,
+      "blockierend": 0,
+      "render": 3.699999999254942,
+      "skripte": []
+     }
+    ],
+    [
+     {
+      "dauer": 74.79999999701977,
+      "blockierend": 0,
+      "render": 3.7999999970197678,
+      "skripte": []
+     }
+    ],
+    []
+   ]
+  },
+  {
+   "seite": "/leistungen",
+   "loaf_je_lauf": [
+    5,
+    2,
+    0
+   ],
+   "loaf_ohne_skript": 5,
+   "skripte_gesamt": 4,
+   "bewegung_skripte": 0,
+   "bewegung_ueber_20ms": 0,
+   "groesste_bewegung_ms": 0,
+   "groesste_skripte": [
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "ReadableStreamDefaultReader.read.then",
+     "dauer": 8,
+     "layout": 0
+    },
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "Promise.resolve",
+     "dauer": 7,
+     "layout": 0
+    },
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "ReadableStreamDefaultReader.read.then",
+     "dauer": 6,
+     "layout": 0
+    },
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "ReadableStreamDefaultReader.read.then",
+     "dauer": 6,
+     "layout": 0
+    }
+   ],
+   "laeufe": [
+    [
+     {
+      "dauer": 83.09999999776483,
+      "blockierend": 0,
+      "render": 1.3999999985098839,
+      "skripte": []
+     },
+     {
+      "dauer": 78.80000000074506,
+      "blockierend": 0,
+      "render": 2.5,
+      "skripte": [
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "Promise.resolve",
+        "art": "resolve-promise",
+        "dauer": 6.700000002980232,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       },
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 6.399999998509884,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       }
+      ]
+     },
+     {
+      "dauer": 66.89999999850988,
+      "blockierend": 0,
+      "render": 2.699999999254942,
+      "skripte": [
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 7.5,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       },
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 6,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       }
+      ]
+     },
+     {
+      "dauer": 104.19999999925494,
+      "blockierend": 0,
+      "render": 4.100000001490116,
+      "skripte": []
+     },
+     {
+      "dauer": 78.09999999776483,
+      "blockierend": 0,
+      "render": 1.3999999985098839,
+      "skripte": []
+     }
+    ],
+    [
+     {
+      "dauer": 52.69999999925494,
+      "blockierend": 0,
+      "render": 2.400000002235174,
+      "skripte": []
+     },
+     {
+      "dauer": 77.30000000074506,
+      "blockierend": 0,
+      "render": 2.199999999254942,
+      "skripte": []
+     }
+    ],
+    []
+   ]
+  },
+  {
+   "seite": "/fliesen",
+   "loaf_je_lauf": [
+    0,
+    4,
+    2
+   ],
+   "loaf_ohne_skript": 4,
+   "skripte_gesamt": 3,
+   "bewegung_skripte": 0,
+   "bewegung_ueber_20ms": 0,
+   "groesste_bewegung_ms": 0,
+   "groesste_skripte": [
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "ReadableStreamDefaultReader.read.then",
+     "dauer": 9,
+     "layout": 0
+    },
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "Promise.resolve",
+     "dauer": 5,
+     "layout": 0
+    },
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "ReadableStreamDefaultReader.read.then",
+     "dauer": 5,
+     "layout": 0
+    }
+   ],
+   "laeufe": [
+    [],
+    [
+     {
+      "dauer": 79.69999999925494,
+      "blockierend": 0,
+      "render": 0.30000000074505806,
+      "skripte": []
+     },
+     {
+      "dauer": 81.59999999776483,
+      "blockierend": 0,
+      "render": 4.5,
+      "skripte": [
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 9.199999999254942,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       }
+      ]
+     },
+     {
+      "dauer": 67.10000000149012,
+      "blockierend": 0,
+      "render": 2.800000000745058,
+      "skripte": [
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "Promise.resolve",
+        "art": "resolve-promise",
+        "dauer": 5.199999999254942,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       },
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 5.100000001490116,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       }
+      ]
+     },
+     {
+      "dauer": 72.5,
+      "blockierend": 0,
+      "render": 3.199999999254942,
+      "skripte": []
+     }
+    ],
+    [
+     {
+      "dauer": 98,
+      "blockierend": 0,
+      "render": 0.3999999985098839,
+      "skripte": []
+     },
+     {
+      "dauer": 51.19999999925494,
+      "blockierend": 0,
+      "render": 2.899999998509884,
+      "skripte": []
+     }
+    ]
+   ]
+  },
+  {
+   "seite": "/balkon-terrasse",
+   "loaf_je_lauf": [
+    6,
+    3,
+    1
+   ],
+   "loaf_ohne_skript": 9,
+   "skripte_gesamt": 2,
+   "bewegung_skripte": 0,
+   "bewegung_ueber_20ms": 0,
+   "groesste_bewegung_ms": 0,
+   "groesste_skripte": [
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "ReadableStreamDefaultReader.read.then",
+     "dauer": 9,
+     "layout": 0
+    },
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "ReadableStreamDefaultReader.read.then",
+     "dauer": 6,
+     "layout": 0
+    }
+   ],
+   "laeufe": [
+    [
+     {
+      "dauer": 68.60000000149012,
+      "blockierend": 0,
+      "render": 4.199999999254942,
+      "skripte": []
+     },
+     {
+      "dauer": 61.400000002235174,
+      "blockierend": 0,
+      "render": 3.5,
+      "skripte": []
+     },
+     {
+      "dauer": 57.19999999925494,
+      "blockierend": 0,
+      "render": 3.399999998509884,
+      "skripte": []
+     },
+     {
+      "dauer": 54.400000002235174,
+      "blockierend": 0,
+      "render": 3.2000000029802322,
+      "skripte": []
+     },
+     {
+      "dauer": 113.89999999850988,
+      "blockierend": 0,
+      "render": 2.199999999254942,
+      "skripte": []
+     },
+     {
+      "dauer": 69,
+      "blockierend": 0,
+      "render": 2.099999997764826,
+      "skripte": []
+     }
+    ],
+    [
+     {
+      "dauer": 84.80000000074506,
+      "blockierend": 0,
+      "render": 2.399999998509884,
+      "skripte": [
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 8.599999997764826,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       },
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 6.399999998509884,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       }
+      ]
+     },
+     {
+      "dauer": 50.19999999925494,
+      "blockierend": 0,
+      "render": 2.300000000745058,
+      "skripte": []
+     },
+     {
+      "dauer": 66.69999999925494,
+      "blockierend": 0,
+      "render": 1.9000000022351742,
+      "skripte": []
+     }
+    ],
+    [
+     {
+      "dauer": 367,
+      "blockierend": 0,
+      "render": 0.5,
+      "skripte": []
+     }
+    ]
+   ]
+  },
+  {
+   "seite": "/referenzen",
+   "loaf_je_lauf": [
+    2,
+    6,
+    3
+   ],
+   "loaf_ohne_skript": 9,
+   "skripte_gesamt": 3,
+   "bewegung_skripte": 0,
+   "bewegung_ueber_20ms": 0,
+   "groesste_bewegung_ms": 0,
+   "groesste_skripte": [
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "ReadableStreamDefaultReader.read.then",
+     "dauer": 8,
+     "layout": 0
+    },
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "ReadableStreamDefaultReader.read.then",
+     "dauer": 6,
+     "layout": 0
+    },
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "ReadableStreamDefaultReader.read.then",
+     "dauer": 5,
+     "layout": 0
+    }
+   ],
+   "laeufe": [
+    [
+     {
+      "dauer": 172.69999999925494,
+      "blockierend": 109.7,
+      "render": 158.80000000074506,
+      "skripte": []
+     },
+     {
+      "dauer": 81.09999999776483,
+      "blockierend": 0,
+      "render": 1.5999999977648258,
+      "skripte": []
+     }
+    ],
+    [
+     {
+      "dauer": 65.5,
+      "blockierend": 0.6,
+      "render": 50.5,
+      "skripte": []
+     },
+     {
+      "dauer": 52.399999998509884,
+      "blockierend": 0,
+      "render": 13.5,
+      "skripte": []
+     },
+     {
+      "dauer": 83.5,
+      "blockierend": 0,
+      "render": 3.199999999254942,
+      "skripte": []
+     },
+     {
+      "dauer": 54.5,
+      "blockierend": 0,
+      "render": 8.900000002235174,
+      "skripte": []
+     },
+     {
+      "dauer": 68.19999999925494,
+      "blockierend": 0,
+      "render": 0.6999999992549419,
+      "skripte": [
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 7.5,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       }
+      ]
+     },
+     {
+      "dauer": 56.400000002235174,
+      "blockierend": 0,
+      "render": 2.5,
+      "skripte": [
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 5.199999999254942,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       },
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 5.5,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       }
+      ]
+     }
+    ],
+    [
+     {
+      "dauer": 53.19999999925494,
+      "blockierend": 0,
+      "render": 1.800000000745058,
+      "skripte": []
+     },
+     {
+      "dauer": 60.5,
+      "blockierend": 0,
+      "render": 2.199999999254942,
+      "skripte": []
+     },
+     {
+      "dauer": 51.599999997764826,
+      "blockierend": 0,
+      "render": 5.5,
+      "skripte": []
+     }
+    ]
+   ]
+  },
+  {
+   "seite": "/ueber-uns",
+   "loaf_je_lauf": [
+    4,
+    0,
+    1
+   ],
+   "loaf_ohne_skript": 4,
+   "skripte_gesamt": 1,
+   "bewegung_skripte": 0,
+   "bewegung_ueber_20ms": 0,
+   "groesste_bewegung_ms": 0,
+   "groesste_skripte": [
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "ReadableStreamDefaultReader.read.then",
+     "dauer": 8,
+     "layout": 0
+    }
+   ],
+   "laeufe": [
+    [
+     {
+      "dauer": 52.5,
+      "blockierend": 0,
+      "render": 2.100000001490116,
+      "skripte": []
+     },
+     {
+      "dauer": 78.10000000149012,
+      "blockierend": 0,
+      "render": 2.400000002235174,
+      "skripte": [
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 8.399999998509884,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       }
+      ]
+     },
+     {
+      "dauer": 51.900000002235174,
+      "blockierend": 0,
+      "render": 2.5,
+      "skripte": []
+     },
+     {
+      "dauer": 81,
+      "blockierend": 0,
+      "render": 2.099999997764826,
+      "skripte": []
+     }
+    ],
+    [],
+    [
+     {
+      "dauer": 56.29999999701977,
+      "blockierend": 0,
+      "render": 1.0999999977648258,
+      "skripte": []
+     }
+    ]
+   ]
+  },
+  {
+   "seite": "/kontakt",
+   "loaf_je_lauf": [
+    0,
+    1,
+    0
+   ],
+   "loaf_ohne_skript": 0,
+   "skripte_gesamt": 4,
+   "bewegung_skripte": 0,
+   "bewegung_ueber_20ms": 0,
+   "groesste_bewegung_ms": 0,
+   "groesste_skripte": [
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "ReadableStreamDefaultReader.read.then",
+     "dauer": 12,
+     "layout": 0
+    },
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "ReadableStreamDefaultReader.read.then",
+     "dauer": 7,
+     "layout": 0
+    },
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "ReadableStreamDefaultReader.read.then",
+     "dauer": 7,
+     "layout": 0
+    },
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "ReadableStreamDefaultReader.read.then",
+     "dauer": 5,
+     "layout": 0
+    }
+   ],
+   "laeufe": [
+    [],
+    [
+     {
+      "dauer": 88,
+      "blockierend": 0,
+      "render": 3.199999999254942,
+      "skripte": [
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 6.800000000745058,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       },
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 5.400000002235174,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       },
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 11.5,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       },
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 6.600000001490116,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       }
+      ]
+     }
+    ],
+    []
+   ]
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "loaf_je_lauf": [
+    2,
+    2,
+    2
+   ],
+   "loaf_ohne_skript": 5,
+   "skripte_gesamt": 2,
+   "bewegung_skripte": 0,
+   "bewegung_ueber_20ms": 0,
+   "groesste_bewegung_ms": 0,
+   "groesste_skripte": [
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "ReadableStreamDefaultReader.read.then",
+     "dauer": 9,
+     "layout": 0
+    },
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "ReadableStreamDefaultReader.read.then",
+     "dauer": 5,
+     "layout": 0
+    }
+   ],
+   "laeufe": [
+    [
+     {
+      "dauer": 74.30000000074506,
+      "blockierend": 0,
+      "render": 2.5,
+      "skripte": []
+     },
+     {
+      "dauer": 67,
+      "blockierend": 0,
+      "render": 47.30000000074506,
+      "skripte": []
+     }
+    ],
+    [
+     {
+      "dauer": 55.900000002235174,
+      "blockierend": 0,
+      "render": 2.600000001490116,
+      "skripte": []
+     },
+     {
+      "dauer": 77.69999999925494,
+      "blockierend": 0,
+      "render": 2.900000002235174,
+      "skripte": [
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 5.300000000745058,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       },
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 9.399999998509884,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       }
+      ]
+     }
+    ],
+    [
+     {
+      "dauer": 61.5,
+      "blockierend": 0,
+      "render": 2.400000002235174,
+      "skripte": []
+     },
+     {
+      "dauer": 60.5,
+      "blockierend": 0,
+      "render": 1.1000000014901161,
+      "skripte": []
+     }
+    ]
+   ]
+  },
+  {
+   "seite": "/blog",
+   "loaf_je_lauf": [
+    7,
+    2,
+    1
+   ],
+   "loaf_ohne_skript": 7,
+   "skripte_gesamt": 8,
+   "bewegung_skripte": 0,
+   "bewegung_ueber_20ms": 0,
+   "groesste_bewegung_ms": 0,
+   "groesste_skripte": [
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "ReadableStreamDefaultReader.read.then",
+     "dauer": 18,
+     "layout": 0
+    },
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "ReadableStreamDefaultReader.read.then",
+     "dauer": 13,
+     "layout": 0
+    },
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "ReadableStreamDefaultReader.read.then",
+     "dauer": 9,
+     "layout": 0
+    },
+    {
+     "stueck": "anderes Skript",
+     "quelle": "2oi9n3b4syua3.js",
+     "funktion": "",
+     "ausloeser": "ReadableStreamDefaultReader.read.then",
+     "dauer": 8,
+     "layout": 0
+    }
+   ],
+   "laeufe": [
+    [
+     {
+      "dauer": 63,
+      "blockierend": 0,
+      "render": 19.699999999254942,
+      "skripte": []
+     },
+     {
+      "dauer": 152.5,
+      "blockierend": 0,
+      "render": 20.199999999254942,
+      "skripte": []
+     },
+     {
+      "dauer": 101.10000000149012,
+      "blockierend": 0,
+      "render": 3.699999999254942,
+      "skripte": [
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 5.5,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       },
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 6.699999999254942,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       },
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 12.5,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       },
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 8.700000002980232,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       },
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 7.300000000745058,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       }
+      ]
+     },
+     {
+      "dauer": 93,
+      "blockierend": 0,
+      "render": 3.900000002235174,
+      "skripte": [
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 17.5,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       },
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "ReadableStreamDefaultReader.read.then",
+        "art": "resolve-promise",
+        "dauer": 7.800000000745058,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       }
+      ]
+     },
+     {
+      "dauer": 69.59999999776483,
+      "blockierend": 0,
+      "render": 2.2999999970197678,
+      "skripte": [
+       {
+        "quelle": "http://127.0.0.1:4324/_next/static/chunks/2oi9n3b4syua3.js",
+        "funktion": "",
+        "ausloeser": "Promise.resolve",
+        "art": "resolve-promise",
+        "dauer": 5.399999998509884,
+        "layout": 0,
+        "stueck": "anderes Skript"
+       }
+      ]
+     },
+     {
+      "dauer": 58.30000000074506,
+      "blockierend": 0,
+      "render": 2.099999997764826,
+      "skripte": []
+     },
+     {
+      "dauer": 53.19999999925494,
+      "blockierend": 0,
+      "render": 0.3999999985098839,
+      "skripte": []
+     }
+    ],
+    [
+     {
+      "dauer": 82.09999999776483,
+      "blockierend": 0,
+      "render": 0.19999999925494194,
+      "skripte": []
+     },
+     {
+      "dauer": 65.89999999850988,
+      "blockierend": 0,
+      "render": 2.599999997764826,
+      "skripte": []
+     }
+    ],
+    [
+     {
+      "dauer": 76.40000000223517,
+      "blockierend": 0,
+      "render": 0.5,
+      "skripte": []
+     }
+    ]
+   ]
+  }
+ ]
+}

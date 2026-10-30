@@ -1,0 +1,129 @@
+{
+ "modus": "bildrate",
+ "seite": "/bad/badsanierung",
+ "base": "http://127.0.0.1:4325",
+ "ansicht": "m390",
+ "zeitpunkt": "2026-10-30T20:25:52.274Z",
+ "dpr": 2,
+ "cpu_drosselung": 4,
+ "gesten": {
+  "befehl": "Input.synthesizeScrollGesture",
+  "gestureSourceType": "default",
+  "geschwindigkeit_px_s": 800,
+  "folge": "oben→unten, dann unten→oben"
+ },
+ "wiederholungen": 3,
+ "bilder_gesamt": 1863,
+ "verworfen": 40,
+ "anteil_verworfen_prozent": 2.16,
+ "anteile_je_lauf": [
+  2.16,
+  2.63,
+  2.15
+ ],
+ "anteile_pipeline_je_lauf": [
+  0.64,
+  0.38,
+  0.16
+ ],
+ "loaf_anzahl": 1,
+ "loaf_summe_ms": 67,
+ "hinweis": "Median je Feld, nicht aus derselben Zeile (bilder_gesamt, verworfen, loaf_*). Kopfwert anteil_verworfen_prozent = Median der Anteile je Lauf (anteile_je_lauf).",
+ "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+ "laeufe": [
+  {
+   "bilder_gesamt": 1851,
+   "verworfen": 40,
+   "anteil_verworfen_prozent": 2.16,
+   "loaf_anzahl": 5,
+   "loaf_summe_ms": 411,
+   "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+   "zusatz": {
+    "frame_ereignisse": {
+     "praesentiert": 1811,
+     "verworfen": 40,
+     "anteil_prozent": 2.16
+    },
+    "pipeline_reporter": {
+     "praesentiert": 1858,
+     "verworfen": 12,
+     "anteil_prozent": 0.64
+    }
+   },
+   "scroll": {
+    "hoehe": 12660,
+    "nach_abwaerts": 12140,
+    "nach_aufwaerts": 0
+   },
+   "trace_vollstaendig": true,
+   "dauer_s": 39.2
+  },
+  {
+   "bilder_gesamt": 1866,
+   "verworfen": 49,
+   "anteil_verworfen_prozent": 2.63,
+   "loaf_anzahl": 1,
+   "loaf_summe_ms": 67,
+   "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+   "zusatz": {
+    "frame_ereignisse": {
+     "praesentiert": 1817,
+     "verworfen": 49,
+     "anteil_prozent": 2.63
+    },
+    "pipeline_reporter": {
+     "praesentiert": 1855,
+     "verworfen": 7,
+     "anteil_prozent": 0.38
+    }
+   },
+   "scroll": {
+    "hoehe": 12140,
+    "nach_abwaerts": 12140,
+    "nach_aufwaerts": 0
+   },
+   "trace_vollstaendig": true,
+   "dauer_s": 37.8
+  },
+  {
+   "bilder_gesamt": 1863,
+   "verworfen": 40,
+   "anteil_verworfen_prozent": 2.15,
+   "loaf_anzahl": 0,
+   "loaf_summe_ms": 0,
+   "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+   "zusatz": {
+    "frame_ereignisse": {
+     "praesentiert": 1823,
+     "verworfen": 40,
+     "anteil_prozent": 2.15
+    },
+    "pipeline_reporter": {
+     "praesentiert": 1861,
+     "verworfen": 3,
+     "anteil_prozent": 0.16
+    }
+   },
+   "scroll": {
+    "hoehe": 12140,
+    "nach_abwaerts": 12140,
+    "nach_aufwaerts": 0
+   },
+   "trace_vollstaendig": true,
+   "dauer_s": 37.2
+  }
+ ],
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "rohtrace": "nicht gespeichert (nur Kennzahlen)",
+ "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e4b/bildrate/_bad_badsanierung",
+ "basisadresse": "http://127.0.0.1:4325",
+ "server_stand": {
+  "port": "4325",
+  "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/reinraum-e222f6d3",
+  "commit": "e222f6d3"
+ }
+}
