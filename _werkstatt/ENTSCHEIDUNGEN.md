@@ -1684,3 +1684,35 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
 - **Sichtabnahme** (UM-E4-SICHT Anlauf 1, `berichte/UM-E4-SICHT.md`, Belege `belege/um-e4/sicht-anlauf-1.json`): acht frische Opus-Prüfer, je Ansicht zwei unabhängige Urteile. Mittel je Ansicht 6,3 (`/ueber-uns`, `/referenzen`) bis 7,7 (`/`); Ziel 8,5 bzw. 8,0 auf keiner Ansicht erreicht; 163 Befunde (31 hoch, 75 mittel, 57 gering).
 - **Gemeinsame Ursache** in allen vier Gruppen: eine Einstiegsvorlage für alle Unterseiten (H1 dort nicht auf der Schnur), schmale Mittelsäule am Desktop ohne Drittelverband, gleichförmiger Rhythmus mittiger Abschnitte, wiederholte Bausteine, Arbeits-, Orts- und Wissensansichten ohne Hauptbild.
 - **Folge nach L3:** Anlauf 2 nach gezielter Nacharbeit UM-E4-SICHT-FIX. Zuerst bündelt ein Workflow die Befunde zu Maßnahmen an den gemeinsamen Vorlagen (größte Hebel) und je Ansicht, mit Prüfung gegen G8 und B-01 (eingefroren); danach Bau wie bisher (Baumeister in Arbeitskopie, zwei Prüfer, Nacharbeit, Prüfkette), dann neuer Bildsatz und Sicht Anlauf 2 mit frischen Prüfern. Bleibt Z-05 danach offen, geht die Arbeit mit E5 weiter und die Lücke steht in PLAN.
+
+## E-104 · UM-E4-SICHT-FIX: Maßnahmenplan und Entscheidungen zu seinen offenen Fragen (31.10.2026, 00:45 MEZ)
+- **Plan:** Ein Workflow hat die 163 Befunde zu 22 Maßnahmen gebündelt, mit 28 begründeten Nicht-Umsetzungen; Ablauf: Opus-Bündelung, zwei Sonnet-Gegenprüfungen (Vollständigkeit; Leitplanken und Machbarkeit), Opus-Zusammenführung. Ergebnis in `belege/um-e4-sicht-fix/endplan.json`, die Gegenprüfungen in `gegenpruefungen.json`. Briefing: `pakete/UM-E4-SICHT-FIX.md`.
+- **Größte Hebel liegen an den gemeinsamen Vorlagen:**
+  - Einstieg an der Schnur für alle Erzähl-, Wissens- und Ortsansichten;
+  - Satzspiegel im Drittelverband statt Mittelsäule;
+  - ein Abschluss je Seite;
+  - Aufklapper für lange Muss-Blöcke;
+  - Schalter für die Reihenfolge.
+- **Ehrliche Erwartung des Plans:** Arbeits-, Wissens- und Ortsansichten erreichen 8,0 wahrscheinlich oder knapp. Die Erzählansichten steigen um etwa 0,8 bis 1,2, erreichen 8,5 voraussichtlich aber nicht. Gründe:
+  - weiche Hochformatfotos ohne Querformat im Bestand;
+  - Texte nur als Vorschlag;
+  - Muss-Rückführungen verlängern die Seiten;
+  - die Kreativität wird an Standbildern bewertet.
+- **Entscheidungen zu den offenen Fragen,** Nummern wie im Briefing:
+  1. Schwelle für `/standorte/wetzlar`: 8,0, nach `HAUPTANSICHTEN.json` (Art `ort`, seit E0 unveränderlich).
+  2. H1 der Figur-Einstiege ab md in `fs-7` wie auf `/`; mobil nur, wenn das erste Bild grün bleibt. Die Ruhe-Regel in K-003 wird nachgezogen.
+  3. Aufklapper für EP1 bis EP3 sind zulässig, weil der Inhalt im DOM bleibt und `lesbarkeit.mjs` alle `details` öffnet (G7).
+  4. F-04 bleibt mit der Badanfrage im Aufklapper unter dem Hauptknopf erfüllt.
+  5. Leitfaden mobil mit Abschnittsmarken; Entscheidung nach Bildvergleich am Messpunkt.
+  6. Keine Querformat-Zuschnitte (Annahme UM-12).
+  7. Textvorschläge gehen nach `TEXTVORSCHLAEGE.md`, ohne zu warten.
+  8. Erstbesuch-Bildfolgen aller Erzählansichten, B-01 und Cursor-Zustände kommen in das Prüfmaterial für Anlauf 2.
+  9. `einzugsband` auf Ortsseiten löst bei Sichtbarkeit aus; Register und K-008 werden nachgezogen.
+  10. Keine Einsatzkarte auf Ortsseiten (E-037).
+  11. Priorität 3 (M-B5, M-B8) nur mit Kontingent nach Welle 2.
+- **Ablauf:**
+  - Welle 1 (Priorität 1): erst SF-A und SF-B parallel, dann SF-C1 und SF-C2 parallel.
+  - Messpunkt mit Stufe A, Lighthouse und CSS-Zuwachs.
+  - Welle 2 (Priorität 2).
+  - Prüfkette, Bildsatz, Sicht Anlauf 2, Tor E4 als E-105.
+  - Bau ab dem Kontingent-Fenster 01:05 UTC.
