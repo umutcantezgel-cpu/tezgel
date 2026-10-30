@@ -116,7 +116,7 @@ export default function PriceCard({
       <div className="mt-8 flex items-end">
         {/* Lange Wörter wie „Großformat“ trennen sich im Knopf erst ab 10 Zeichen, wenn die Breite bei großer Schrift nicht reicht */}
         {/* Zusammensetzungen aus FUGEN („Badsanierung anfragen“) trennen an der Fuge statt „Badsa-nierung“ (FS-K Nr. 17) */}
-        <Knopf href={ctaHref} variante={isPopular ? "haupt" : "neben"} className="w-full [hyphenate-limit-chars:10_4_4]">
+        <Knopf href={ctaHref} variante={isPopular ? "haupt" : "neben"} className="w-full trennen-ab-10">
           {mitFugen(ctaText)}
         </Knopf>
       </div>

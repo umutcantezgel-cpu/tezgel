@@ -212,6 +212,18 @@
   width: clamp(calc(100% / 2), calc((100svh - var(--spacing) * 62 - 2.2 * var(--text-fs-7)) * var(--bild-format)), calc(100% * 2 / 3));
 }
 
+/* Silbentrennung in engen Spalten bei großer Schrift (Preiskarten, Abschlussband auf /preise, Preisrechner, Auswahl im Konfigurator; E4-W1, FS):
+   lange Wörter schon ab 10, 11 bzw. 12 Zeichen trennen (Konfigurator: 12), je Teil mindestens vier. Sonst gilt die Seitenregel 12 5 5 (body). */
+@utility trennen-ab-10 {
+  hyphenate-limit-chars: 10 4 4;
+}
+@utility trennen-ab-11 {
+  hyphenate-limit-chars: 11 4 4;
+}
+@utility trennen-ab-12 {
+  hyphenate-limit-chars: 12 4 4;
+}
+
 @utility ohne-scrollleiste {
   scrollbar-width: none;
 }

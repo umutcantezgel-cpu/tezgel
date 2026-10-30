@@ -46,7 +46,7 @@ export default function OptionGroup({ legend, legendClassName = legendClass, opt
                             >
                                 {fach && <Icon name={fach} groesse={6} className="mt-1" />}
                                 {/* Trennung ab 4 Zeichen je Teil, nur hier: „Feinsteinzeug“ (13 Zeichen) braucht „Feinstein-zeug“ (Grenze 5 im Körper) */}
-                                <span className={`flex min-w-0 flex-1 flex-col wrap-break-word hyphens-auto [hyphenate-limit-chars:12_4_4] ${textSchmal}`}>
+                                <span className={`flex min-w-0 flex-1 flex-col wrap-break-word hyphens-auto trennen-ab-12 ${textSchmal}`}>
                                     <span className="block text-fs-3 font-semibold">{o.label ?? o.title}</span>
                                     {o.desc && <span className={`mt-1 block text-fs-2 ${nebenClass(selected)}`}>{o.desc}</span>}
                                 </span>

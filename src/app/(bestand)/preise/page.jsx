@@ -249,7 +249,7 @@ export default function PreisePage() {
       {/* Überschrift trennt lange Wörter (Fachbetriebsleiter) bei 200 %: die Schrift der Überschrift setzt hyphens: manual, daher hier ausdrücklich */}
       <FinalCTA
         achse={false}
-        className="[&_h2]:hyphens-auto [&_h2]:[hyphenate-limit-chars:10_4_4]"
+        className="[&_h2]:hyphens-auto [&_h2]:trennen-ab-10"
         benefits={[
           "Kostenfreies Aufmaß vor Ort in Aßlar, Wetzlar und Hessen",
           "Verbindlicher Festpreis ohne versteckte Kosten",
