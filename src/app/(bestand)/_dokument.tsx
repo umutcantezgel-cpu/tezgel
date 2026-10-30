@@ -1,6 +1,6 @@
 // Dokument-Gerüst der Bestandsseiten (E-015): Inhalt des früheren Root-Layouts (Stand KERN v2), eingebunden über ./layout.tsx.
 import type { Metadata, Viewport } from 'next';
-import localFont from 'next/font/local';
+import { preload } from 'react-dom';
 // Pfad nach dem Umzug in die Gruppe (bestand); globals.css ist die einzige Quelle der Gestaltungswerte (KERN K-005).
 import '@/app/globals.css';
 import { HeaderWrapper } from '@/components/layout/HeaderWrapper';
@@ -18,23 +18,20 @@ import { KOPFSKRIPT } from '@/lib/motion/kopfskript';
 
 // Schriften selbst gehostet (OFL 1.1, src/app/fonts/LIZENZEN.md). Archivo auf die genutzten Achsen beschnitten
 // (wdth 74–100, wght 400–800); Ersatzschriften mit Metrik-Anpassung stehen in globals.css (KERN K-006, E-010).
-const archivo = localFont({
-  src: '../fonts/archivo-variabel.woff2',
-  variable: '--font-archivo',
-  display: 'swap',
-  weight: '400 800',
-  adjustFontFallback: false,
-  declarations: [{ prop: 'font-stretch', value: '74% 100%' }],
-});
+// Ein Stylesheet (UM-E4-LEISTUNG, Maßnahme 1, E-101): Die zwei @font-face stehen als <style> im Kopf statt über
+// next/font/local. next/font legt je Schrift ein eigenes CSS-Modul an; seit das Haupt-CSS über der Grenze liegt, bis zu der
+// Turbopack CSS-Module in eine Datei zusammenlegt (zwischen 129 und 132 KB, UM-E4-START), kam es als zweite
+// render-blockierende Datei. Jetzt ist globals.css das einzige CSS-Modul, also genau eine Datei, gleich wie groß sie wird
+// (test/stylesheets.test.mjs). Inhalt wie vorher von next/font erzeugt: Familiennamen archivo und plexMono, dieselben
+// Variablen und Werte; die Dateien laden als Asset mit Inhaltskennung unter /_next/static/media (wie vorher), Archivo
+// vorgeladen wie vorher (preload), Plex Mono nicht.
+import archivoDatei from '../fonts/archivo-variabel.woff2' with { turbopackModuleType: 'asset' };
+import plexMonoDatei from '../fonts/plex-mono-400.woff2' with { turbopackModuleType: 'asset' };
 
-const plexMono = localFont({
-  src: '../fonts/plex-mono-400.woff2',
-  variable: '--font-plex-mono',
-  display: 'swap',
-  weight: '400',
-  preload: false,
-  adjustFontFallback: false,
-});
+const SCHRIFTEN =
+  `@font-face{font-family:archivo;src:url(${archivoDatei}) format("woff2");font-display:swap;font-weight:400 800;font-stretch:74% 100%}` +
+  `@font-face{font-family:plexMono;src:url(${plexMonoDatei}) format("woff2");font-display:swap;font-weight:400}` +
+  ':root{--font-archivo:"archivo";--font-plex-mono:"plexMono"}';
 
 export const BESTAND_METADATA: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -150,10 +147,14 @@ export default function BestandDokument({
   children: React.ReactNode;
 }>) {
   const rootKnowledgeGraph = buildRootGraph();
+  // wie vorher next/font: Archivo vorladen (erstes Bild), Plex Mono nicht (preload: false)
+  preload(archivoDatei, { as: 'font', type: 'font/woff2', crossOrigin: '' });
 
   return (
-    <html lang="de" data-scroll-behavior="smooth" suppressHydrationWarning className={`${archivo.variable} ${plexMono.variable}`}>
+    <html lang="de" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
+        {/* Schriften (siehe SCHRIFTEN oben): kein eigenes Stylesheet, damit / und alle Seiten genau eine CSS-Datei laden */}
+        <style dangerouslySetInnerHTML={{ __html: SCHRIFTEN }} />
         {/* Bewegung: Startklassen vor dem ersten Rendern, auch für den Eingang ohne Vorhang (KERN K-007, E-067-4) */}
         <script dangerouslySetInnerHTML={{ __html: KOPFSKRIPT }} />
         {/* Abruf öffentlicher Seiten beim Zeigen (UM-E3-SCROLL); Browser ohne Speculation Rules übergehen den Block */}

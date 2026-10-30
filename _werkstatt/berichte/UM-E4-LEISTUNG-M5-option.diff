@@ -1,0 +1,30 @@
+--- vor/next.config.ts	2026-10-30 14:50:17.000000000 +0000
++++ baum/next.config.ts	2026-10-30 16:00:32.884330758 +0000
+@@ -26,6 +26,10 @@
+     minimumCacheTTL: 31536000,
+     // Ab Next 16 Pflicht: erlaubte Bildqualitäten (KERN K-004)
+     qualities: [75],
++    // Standardstufen von Next 16 plus 680 (UM-E4-LEISTUNG, Maßnahme 5, Entscheidungsvermerk in der Notiz des Pakets): Das
++    // Einstiegsfoto ist auf Telefonen 100vw − 34 px breit; bei 412 px und DPR 1,75 (Lighthouse mobil) braucht es 662 px und
++    // lud bisher w=750. Gleiche Qualität, nur eine genauere Breite; jedes Bild nimmt weiter die kleinste Stufe ≥ Bedarf.
++    deviceSizes: [640, 680, 750, 828, 1080, 1200, 1920, 2048, 3840],
+   },
+   experimental: {
+     // E-015: kein app/layout.tsx, das lebende Root-Layout liegt in der Gruppe (bestand) → 404 für unbekannte Adressen
+--- vor/src/components/vorlagen/teile/EinstiegMitte.tsx	2026-10-30 14:50:17.000000000 +0000
++++ baum/src/components/vorlagen/teile/EinstiegMitte.tsx	2026-10-30 16:00:32.883806507 +0000
+@@ -110,9 +110,12 @@
+  *  wuchs 66vw über die Seitenbreite hinaus (d1920 und d2560 luden w=1920 für 809 px). Eine Quelle für Vorlage und page.tsx.
+  *  Ab 1440 px wächst die Grundschrift (--grundschrift, UM-E3-FIX F8), `sizes` misst aber in der Ausgangsgröße: dort dieselbe
+  *  Rechnung mit der Grundschrift 1rem + (100vw − 90rem) / 240, höchstens 1,25rem (zwei Drittel der Spalte 50,67 Grundschrift
+- *  = 31,67rem + 21,11vw, höchstens 63,33rem; Höhe 80vh − 4,8 Grundschrift = 80vh − 3rem − 2vw). */
++ *  = 31,67rem + 21,11vw, höchstens 63,33rem; Höhe 80vh − 4,8 Grundschrift = 80vh − 3rem − 2vw).
++ *  Unter sm (UM-E4-LEISTUNG, Maßnahme 5): das Foto ist 100vw − 2,125rem breit (Seitenrand und Rahmen, gemessen 320 bis 480 px:
++ *  34 px), höchstens 28 rem; vorher stand dort 100vw, und Telefone luden eine Stufe zu groß (412 px bei DPR 1,75: w=750 statt
++ *  w=680, 390 px bei DPR 3: w=1200 statt w=1080; Zwischenstufe 680 in images.deviceSizes, next.config.ts). */
+ export const EINSTIEG_MITTE_SIZES =
+-  '(min-width: 1440px) min(calc(31.67rem + 21.11vw), 63.33rem, calc(80vh - 3rem - 2vw)), (min-width: 1024px) min(calc(66.67vw - 4rem), 51rem, calc(80vh - 4.8rem)), (min-width: 640px) 28rem, 100vw';
++  '(min-width: 1440px) min(calc(31.67rem + 21.11vw), 63.33rem, calc(80vh - 3rem - 2vw)), (min-width: 1024px) min(calc(66.67vw - 4rem), 51rem, calc(80vh - 4.8rem)), (min-width: 640px) 28rem, min(calc(100vw - 2.125rem), 28rem)';
+ 
+ export default function EinstiegMitte({ pfad, brotkrumen, titelZeilen, titelGross = false, quadratmeter = false, ort, hauptziel, bild, bewertung = false, orteAnker, fugeUnten = false, schnurFigur = false, bildQuer }: EinstiegMitteProps) {
+   const { contact } = COMPANY_DATA;

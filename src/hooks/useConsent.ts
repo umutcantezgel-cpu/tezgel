@@ -137,11 +137,14 @@ export function useConsent() {
   useEffect(() => {
     const stored = readConsentCookie();
     if (!stored || stored.version !== CONSENT_VERSION) {
-      // Defer banner slightly so browser paints Hero (H1 / LCP hero image) first
-      const timer = setTimeout(() => {
+      // Banner nach dem nächsten Bild einblenden: Der Hook hängt erst nach der Hydrierung ein (CookieConsent per
+      // dynamic, ssr: false), Überschrift und Einstiegsbild sind dann längst gezeichnet. Vorher wartete er zusätzlich
+      // 400 ms; auf den Ortsseiten ist der Bannertext das größte Element im ersten Bildschirm, und die Wartezeit schob
+      // dort den LCP auf rund 800 ms (UM-E4-LEISTUNG, Maßnahme 2, E-067: Wortlaut, Knöpfe und Wirkung unverändert).
+      const bild = requestAnimationFrame(() => {
         setShowBanner(true);
-      }, 400);
-      return () => clearTimeout(timer);
+      });
+      return () => cancelAnimationFrame(bild);
     }
 
     const handleHashChange = () => {

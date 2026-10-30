@@ -13,17 +13,8 @@ import { categories as blogCategories } from '@/config/blog';
 import { posts as blogPosts } from '@/config/posts';
 import { teamMembers } from '@/config/team';
 import { schemas as validationSchemas } from '@/schemas/validation';
-
-const STORAGE_KEYS = {
-    SITE: 'tezgel_content_site',
-    SERVICES: 'tezgel_content_services',
-    COMPANY: 'tezgel_content_company',
-    PROJECTS: 'tezgel_content_projects',
-    BLOG_CATEGORIES: 'tezgel_content_blog_categories',
-    BLOG_POSTS: 'tezgel_content_blog_posts',
-    TEAM: 'tezgel_content_team',
-    SETTINGS: 'tezgel_content_settings'
-};
+// Schlüssel und Lesen liegen in inhaltLesen.js (UM-E4-LEISTUNG), damit Leser ohne Vorgaben und zod auskommen
+import { STORAGE_KEYS, liesInhalt } from './inhaltLesen';
 
 // Adapter to map COMPANY_DATA to legacy siteConfig structure for UI compatibility
 const getAdaptedSiteConfig = () => ({
@@ -77,29 +68,20 @@ const DEFAULTS = {
 
 export const dataService = {
     get(key) {
-        try {
-            if (typeof window !== 'undefined') {
-                const stored = localStorage.getItem(key);
-                if (stored) {
-                    const parsed = JSON.parse(stored);
-                    if (key === STORAGE_KEYS.SITE) {
-                        const freshConfig = getAdaptedSiteConfig();
-                        return {
-                            ...parsed,
-                            contact: {
-                                ...freshConfig.contact,
-                                ...parsed.contact
-                            },
-                            legal: freshConfig.legal
-                        };
-                    }
-                    return parsed;
-                }
-            }
-        } catch (e) {
-            console.error(`Error reading ${key} from storage:`, e);
+        if (key === STORAGE_KEYS.SITE) {
+            return liesInhalt(key, DEFAULTS[key], (parsed) => {
+                const freshConfig = getAdaptedSiteConfig();
+                return {
+                    ...parsed,
+                    contact: {
+                        ...freshConfig.contact,
+                        ...parsed.contact
+                    },
+                    legal: freshConfig.legal
+                };
+            });
         }
-        return DEFAULTS[key];
+        return liesInhalt(key, DEFAULTS[key]);
     },
 
     save(key, data) {
