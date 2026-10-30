@@ -1,0 +1,553 @@
+{
+ "satz": "start-b",
+ "base": "http://127.0.0.1:4325",
+ "erstellt": "2026-10-30T10:13:53.588Z",
+ "schwellen": {
+  "flesch": {
+   "erzaehl": 60,
+   "ort": 60,
+   "wissen": 50,
+   "arbeit": null
+  },
+  "satzMittelMax": 14,
+  "satzMax": 25,
+  "absatzMax": 4,
+  "titelMax": 60,
+  "beschreibungMin": 120,
+  "beschreibungMax": 155,
+  "altMax": 125
+ },
+ "zusammenfassung": {
+  "seiten": 12,
+  "gruen": 10,
+  "rot": 2,
+  "ausgenommen": 0,
+  "befunde": {
+   "floskel": 2
+  }
+ },
+ "seiten": [
+  {
+   "pfad": "/",
+   "art": "erzaehl",
+   "status": 200,
+   "ausgenommen": false,
+   "flesch": 78.7,
+   "satzMittel": 6.2,
+   "satzMax": 24,
+   "satzAnzahl": 60,
+   "absaetze": 20,
+   "absaetzeMehr": 0,
+   "titel": {
+    "zeichen": 56
+   },
+   "beschreibung": {
+    "zeichen": 146
+   },
+   "alt": {
+    "anzahl": 9,
+    "ohneAlt": 0,
+    "zuLang": 0
+   },
+   "zaehlung": {
+    "floskel": 1
+   },
+   "glossar": {
+    "gefunden": 1,
+    "erfuellt": [
+     "untergrund"
+    ],
+    "offen": []
+   },
+   "gruen": false,
+   "ergebnis": "ROT: Floskel 1",
+   "befunde": [
+    {
+     "regel": "floskel",
+     "detail": "„Perfektion“ in sichtbarer Text",
+     "ausschnitt": "tsApp Termin vor Ort anfragen Perfektion auf jedem Quadratmeter. 100 c"
+    }
+   ],
+   "gesperrt": 0,
+   "gesperrtArten": []
+  },
+  {
+   "pfad": "/bad",
+   "art": "erzaehl",
+   "status": 200,
+   "ausgenommen": false,
+   "flesch": 74.7,
+   "satzMittel": 8.3,
+   "satzMax": 24,
+   "satzAnzahl": 76,
+   "absaetze": 38,
+   "absaetzeMehr": 0,
+   "titel": {
+    "zeichen": 58
+   },
+   "beschreibung": {
+    "zeichen": 149
+   },
+   "alt": {
+    "anzahl": 7,
+    "ohneAlt": 0,
+    "zuLang": 0
+   },
+   "zaehlung": {},
+   "glossar": {
+    "gefunden": 7,
+    "erfuellt": [
+     "abdichtung",
+     "din-18534",
+     "barrierefrei",
+     "bodengleiche-dusche",
+     "rutschhemmung",
+     "untergrund",
+     "gefaelle"
+    ],
+    "offen": []
+   },
+   "gruen": true,
+   "ergebnis": "GRÜN",
+   "befunde": [],
+   "gesperrt": 0,
+   "gesperrtArten": []
+  },
+  {
+   "pfad": "/bad/badsanierung",
+   "art": "erzaehl",
+   "status": 200,
+   "ausgenommen": false,
+   "flesch": 66.4,
+   "satzMittel": 10.2,
+   "satzMax": 25,
+   "satzAnzahl": 62,
+   "absaetze": 39,
+   "absaetzeMehr": 0,
+   "titel": {
+    "zeichen": 57
+   },
+   "beschreibung": {
+    "zeichen": 136
+   },
+   "alt": {
+    "anzahl": 11,
+    "ohneAlt": 0,
+    "zuLang": 0
+   },
+   "zaehlung": {
+    "floskel": 1
+   },
+   "glossar": {
+    "gefunden": 13,
+    "erfuellt": [
+     "abdichtung",
+     "din-18534",
+     "din-18040",
+     "barrierefrei",
+     "bodengleiche-dusche",
+     "c2te-s1",
+     "rutschhemmung",
+     "nivelliersystem",
+     "untergrund",
+     "gefaelle",
+     "grossformat",
+     "dichtband",
+     "ueberzaehne"
+    ],
+    "offen": []
+   },
+   "gruen": false,
+   "ergebnis": "ROT: Floskel 1",
+   "befunde": [
+    {
+     "regel": "floskel",
+     "detail": "„Traumbad“ in sichtbarer Text",
+     "ausschnitt": "Bad › Badsanierung Ihr neues Traumbad zum Festpreis. Für Aßlar, We"
+    }
+   ],
+   "gesperrt": 0,
+   "gesperrtArten": []
+  },
+  {
+   "pfad": "/bad/barrierefreies-bad",
+   "art": "erzaehl",
+   "status": 200,
+   "ausgenommen": false,
+   "flesch": 76.3,
+   "satzMittel": 8.9,
+   "satzMax": 25,
+   "satzAnzahl": 44,
+   "absaetze": 26,
+   "absaetzeMehr": 0,
+   "titel": {
+    "zeichen": 48
+   },
+   "beschreibung": {
+    "zeichen": 150
+   },
+   "alt": {
+    "anzahl": 8,
+    "ohneAlt": 0,
+    "zuLang": 0
+   },
+   "zaehlung": {},
+   "glossar": {
+    "gefunden": 6,
+    "erfuellt": [
+     "abdichtung",
+     "din-18534",
+     "din-18040",
+     "bodengleiche-dusche",
+     "rutschhemmung",
+     "gefaelle"
+    ],
+    "offen": []
+   },
+   "gruen": true,
+   "ergebnis": "GRÜN",
+   "befunde": [],
+   "gesperrt": 0,
+   "gesperrtArten": []
+  },
+  {
+   "pfad": "/leistungen",
+   "art": "erzaehl",
+   "status": 200,
+   "ausgenommen": false,
+   "flesch": 76.1,
+   "satzMittel": 8.2,
+   "satzMax": 19,
+   "satzAnzahl": 55,
+   "absaetze": 26,
+   "absaetzeMehr": 0,
+   "titel": {
+    "zeichen": 57
+   },
+   "beschreibung": {
+    "zeichen": 146
+   },
+   "alt": {
+    "anzahl": 7,
+    "ohneAlt": 0,
+    "zuLang": 0
+   },
+   "zaehlung": {},
+   "glossar": {
+    "gefunden": 5,
+    "erfuellt": [
+     "abdichtung",
+     "din-18534",
+     "bodengleiche-dusche",
+     "stelzlager",
+     "untergrund"
+    ],
+    "offen": []
+   },
+   "gruen": true,
+   "ergebnis": "GRÜN",
+   "befunde": [],
+   "gesperrt": 0,
+   "gesperrtArten": []
+  },
+  {
+   "pfad": "/fliesen",
+   "art": "wissen",
+   "status": 200,
+   "ausgenommen": false,
+   "flesch": 61.1,
+   "satzMittel": 9.7,
+   "satzMax": 25,
+   "satzAnzahl": 67,
+   "absaetze": 33,
+   "absaetzeMehr": 0,
+   "titel": {
+    "zeichen": 54
+   },
+   "beschreibung": {
+    "zeichen": 154
+   },
+   "alt": {
+    "anzahl": 6,
+    "ohneAlt": 0,
+    "zuLang": 0
+   },
+   "zaehlung": {},
+   "glossar": {
+    "gefunden": 8,
+    "erfuellt": [
+     "c2te-s1",
+     "nivelliersystem",
+     "untergrund",
+     "estrich",
+     "feinsteinzeug",
+     "grossformat",
+     "dichtband",
+     "ueberzaehne"
+    ],
+    "offen": []
+   },
+   "gruen": true,
+   "ergebnis": "GRÜN",
+   "befunde": [],
+   "gesperrt": 0,
+   "gesperrtArten": []
+  },
+  {
+   "pfad": "/balkon-terrasse",
+   "art": "erzaehl",
+   "status": 200,
+   "ausgenommen": false,
+   "flesch": 60.5,
+   "satzMittel": 9.3,
+   "satzMax": 25,
+   "satzAnzahl": 84,
+   "absaetze": 49,
+   "absaetzeMehr": 0,
+   "titel": {
+    "zeichen": 57
+   },
+   "beschreibung": {
+    "zeichen": 145
+   },
+   "alt": {
+    "anzahl": 8,
+    "ohneAlt": 0,
+    "zuLang": 0
+   },
+   "zaehlung": {},
+   "glossar": {
+    "gefunden": 11,
+    "erfuellt": [
+     "abdichtung",
+     "c2te-s1",
+     "stelzlager",
+     "rutschhemmung",
+     "nivelliersystem",
+     "untergrund",
+     "gefaelle",
+     "feinsteinzeug",
+     "dichtband",
+     "duennbett",
+     "ueberzaehne"
+    ],
+    "offen": []
+   },
+   "gruen": true,
+   "ergebnis": "GRÜN",
+   "befunde": [],
+   "gesperrt": 0,
+   "gesperrtArten": []
+  },
+  {
+   "pfad": "/referenzen",
+   "art": "erzaehl",
+   "status": 200,
+   "ausgenommen": false,
+   "flesch": 67.3,
+   "satzMittel": 9,
+   "satzMax": 25,
+   "satzAnzahl": 72,
+   "absaetze": 25,
+   "absaetzeMehr": 0,
+   "titel": {
+    "zeichen": 54
+   },
+   "beschreibung": {
+    "zeichen": 133
+   },
+   "alt": {
+    "anzahl": 30,
+    "ohneAlt": 0,
+    "zuLang": 0
+   },
+   "zaehlung": {},
+   "glossar": {
+    "gefunden": 5,
+    "erfuellt": [
+     "abdichtung",
+     "din-18534",
+     "barrierefrei",
+     "untergrund",
+     "grossformat"
+    ],
+    "offen": []
+   },
+   "gruen": true,
+   "ergebnis": "GRÜN",
+   "befunde": [],
+   "gesperrt": 0,
+   "gesperrtArten": []
+  },
+  {
+   "pfad": "/ueber-uns",
+   "art": "erzaehl",
+   "status": 200,
+   "ausgenommen": false,
+   "flesch": 64.9,
+   "satzMittel": 8.4,
+   "satzMax": 25,
+   "satzAnzahl": 98,
+   "absaetze": 49,
+   "absaetzeMehr": 0,
+   "titel": {
+    "zeichen": 46
+   },
+   "beschreibung": {
+    "zeichen": 153
+   },
+   "alt": {
+    "anzahl": 4,
+    "ohneAlt": 0,
+    "zuLang": 0
+   },
+   "zaehlung": {},
+   "glossar": {
+    "gefunden": 9,
+    "erfuellt": [
+     "abdichtung",
+     "din-18534",
+     "bodengleiche-dusche",
+     "c2te-s1",
+     "rutschhemmung",
+     "nivelliersystem",
+     "untergrund",
+     "dichtband",
+     "ueberzaehne"
+    ],
+    "offen": []
+   },
+   "gruen": true,
+   "ergebnis": "GRÜN",
+   "befunde": [],
+   "gesperrt": 0,
+   "gesperrtArten": []
+  },
+  {
+   "pfad": "/kontakt",
+   "art": "arbeit",
+   "status": 200,
+   "ausgenommen": false,
+   "flesch": 79,
+   "satzMittel": 8,
+   "satzMax": 24,
+   "satzAnzahl": 34,
+   "absaetze": 16,
+   "absaetzeMehr": 0,
+   "titel": {
+    "zeichen": 54
+   },
+   "beschreibung": {
+    "zeichen": 153
+   },
+   "alt": {
+    "anzahl": 3,
+    "ohneAlt": 0,
+    "zuLang": 0
+   },
+   "zaehlung": {},
+   "glossar": {
+    "gefunden": 1,
+    "erfuellt": [
+     "untergrund"
+    ],
+    "offen": []
+   },
+   "gruen": true,
+   "ergebnis": "GRÜN",
+   "befunde": [],
+   "gesperrt": 0,
+   "gesperrtArten": []
+  },
+  {
+   "pfad": "/standorte/wetzlar",
+   "art": "ort",
+   "status": 200,
+   "ausgenommen": false,
+   "flesch": 67.5,
+   "satzMittel": 7.1,
+   "satzMax": 25,
+   "satzAnzahl": 66,
+   "absaetze": 30,
+   "absaetzeMehr": 0,
+   "titel": {
+    "zeichen": 49
+   },
+   "beschreibung": {
+    "zeichen": 131
+   },
+   "alt": {
+    "anzahl": 6,
+    "ohneAlt": 0,
+    "zuLang": 0
+   },
+   "zaehlung": {},
+   "glossar": {
+    "gefunden": 7,
+    "erfuellt": [
+     "abdichtung",
+     "din-18534",
+     "c2te-s1",
+     "nivelliersystem",
+     "untergrund",
+     "dichtband",
+     "ueberzaehne"
+    ],
+    "offen": []
+   },
+   "gruen": true,
+   "ergebnis": "GRÜN",
+   "befunde": [],
+   "gesperrt": 0,
+   "gesperrtArten": []
+  },
+  {
+   "pfad": "/blog",
+   "art": "wissen",
+   "status": 200,
+   "ausgenommen": false,
+   "flesch": 63.7,
+   "satzMittel": 9.5,
+   "satzMax": 25,
+   "satzAnzahl": 83,
+   "absaetze": 53,
+   "absaetzeMehr": 0,
+   "titel": {
+    "zeichen": 56
+   },
+   "beschreibung": {
+    "zeichen": 146
+   },
+   "alt": {
+    "anzahl": 3,
+    "ohneAlt": 0,
+    "zuLang": 0
+   },
+   "zaehlung": {},
+   "glossar": {
+    "gefunden": 13,
+    "erfuellt": [
+     "abdichtung",
+     "din-18534",
+     "bodengleiche-dusche",
+     "c2te-s1",
+     "rutschhemmung",
+     "nivelliersystem",
+     "untergrund",
+     "feinsteinzeug",
+     "dichtband",
+     "duschrinne",
+     "punktablauf",
+     "vorwand",
+     "ueberzaehne"
+    ],
+    "offen": []
+   },
+   "gruen": true,
+   "ergebnis": "GRÜN",
+   "befunde": [],
+   "gesperrt": 0,
+   "gesperrtArten": []
+  }
+ ]
+}

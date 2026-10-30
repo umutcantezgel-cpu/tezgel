@@ -1,0 +1,235 @@
+{
+ "bau": {
+  "npm_test": "249 Tests, 249 bestanden, 0 fehlgeschlagen (Endstand, /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/start/npm-test.log)",
+  "tsc": "npx tsc --noEmit mit vorübergehender next-env.d.ts: Exit 0, keine Ausgabe",
+  "eslint": "npx eslint: Exit 0, keine Ausgabe (auch nach der letzten Änderung an Lage.tsx/Stimmen.tsx)",
+  "werte": "werte.mjs --arbeitsbaum --dateien (25 geänderte Dateien) gegen das Designsystem der Arbeitskopie: 0 Befunde (/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/start/werte/2026-10-30T06-40-50-598Z.json). Ein Zwischenstand meldete w-20, ersetzt durch Stufe 16.",
+  "messwerte": "LCP Lighthouse auf /, im Wechsel vorher (4421) und nachher (4420), simuliert in ms, je Aufruf 1 Aufwärmlauf und 1 gezählter Lauf.\n- Endbau, Reihe C: mobil 2680 vorher, 2843 nachher (Median aus 3). Desktop 631 vorher, 597 nachher (Median aus 5).\n- Reihe B, gleicher Quelltext bis auf w-16: mobil 2909 / 2696, Desktop 613 / 636.\n- Reihe A, mit preload, vor den Layout-Korrekturen: mobil 2690 / 2683, Desktop 608 / 630.\n- Alle drei Reihen zusammen: mobil 2690 / 2699 (je 9 Läufe), Desktop 613 / 630 (je 15 Läufe).\n- Die Einzelläufe streuen um etwa ±100 ms. CLS ist in jedem Lauf 0.\n- Das LCP-Element ist nachher das vorgeladene Startfoto (picture > img).\n- Das Ziel von höchstens 2,5 s mobil wird weder vorher noch nachher erreicht.\n- Zum Desktop: Der Endbau liefert eine zweite render-blockierende CSS-Datei (478 B, nur Schriften), weil das Haupt-CSS mit 133 KB über die Zusammenlegungsgrenze von Turbopack wächst. Ein Probebau mit 130 KB ergab wieder eine Datei. Das erklärt vermutlich die rund 17 ms.\n\nBildrate (bewegung.mjs --modus bildrate, m390, DPR 2, CPU 4×), Anteil verworfener Bilder:\n- Reihe 1: vorher 0,27 % und 0,07 %, nachher 0,07 % und 0,15 %.\n- Reihe 2: vorher 0,07 % und 0 %, nachher 0,22 % und 0,07 %.\n- Alle Werte unter 1 %.\n\nbewegung.mjs auf /:\n- register: vorher 8 Kennungen, nachher 9 (anriss ist neu und registriert), keine unbekannte Kennung, 0 ohne Registereintrag.\n- reduziert: 0 Bewegungsbefunde vorher wie nachher, 12 bzw. 12 unsichtbare Elemente (dieselben wie vorher).\n- ruhig: 0 Bewegungsbefunde vorher wie nachher, 10 bzw. 10 unsichtbare Elemente.\n\nSpur zum Hauptthread-Schub (Bilder mit Hauptthread-Animation über die ganze Geste):\n- Vorher 93 bis 100. Nachher 245, solange das Treppen-Kreuz als SVG animiert wurde; nach dem Fix 4 bis 86.\n- Ursache des alten Schubs: Die faul geladenen Galeriebilder mit Platzhalter-Hintergrund lösen ihn in Chromium aus. Belegt durch Ausschluss: mit img{background-image:none} 0 Bilder; jeder Hintergrund ergibt etwa 100.\n\nSpecs gegen den Endbau:\n- 189 bestanden, 17 übersprungen, 2 fehlgeschlagen (funktion-navigation:276, Wortlaut wörtlich, mobil und desktop; erwartbar nach Entscheidung 8).\n- Gegenprobe gegen den Bau vorher: funktion-navigation und funktion-einwilligung 83 bestanden.\n- funktion-tracking und funktion-einwilligung gegen einen Bau mit NEXT_PUBLIC_GA4_ID=G-TEST000000 auf Port 4311 mit RELAUNCH_TRACKING=1: 44 bestanden, 0 übersprungen.",
+  "diff_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/start/UM-E4-START.diff",
+  "dateien": [
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/start/UM-E4-START.diff",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/start/UM-E4-START.notiz.md",
+   "_werkstatt/bilder/auftrag-e4.json",
+   "_werkstatt/register.json",
+   "public/images/arbeiten/bad/dachgeschoss-bad-dusche-glaswand-beige.jpg (neu, binär)",
+   "public/images/arbeiten/bad/dachgeschoss-bad-dusche-glaswand-beige-breit.jpg (neu, binär)",
+   "src/app/(bestand)/page.tsx",
+   "src/app/bewegung.css",
+   "src/app/globals.css",
+   "src/components/kern/Bildfeld.tsx",
+   "src/components/kern/Glasbild.tsx",
+   "src/components/kern/Leitachse.tsx",
+   "src/components/kern/Seitenformel.tsx",
+   "src/components/kern/Textmarken.tsx",
+   "src/components/kern/vignetten/Treppe.tsx (neu)",
+   "src/components/kern/vignetten/index.ts",
+   "src/components/kern/zusammen.tsx",
+   "src/components/layout/MobileBottomBar.tsx",
+   "src/components/start/Startbild.tsx",
+   "src/components/vorlagen/ErzaehlSeite.tsx",
+   "src/components/vorlagen/inhalt.ts",
+   "src/components/vorlagen/teile/Ablauf.tsx",
+   "src/components/vorlagen/teile/Beleg.tsx",
+   "src/components/vorlagen/teile/EinstiegMitte.tsx",
+   "src/components/vorlagen/teile/Lage.tsx",
+   "src/components/vorlagen/teile/Quadratmeter.tsx",
+   "src/components/vorlagen/teile/Stimmen.tsx",
+   "src/components/vorlagen/teile/Tun.tsx",
+   "src/config/arbeiten.ts",
+   "src/inhalte/start.ts",
+   "src/lib/motion/register.ts",
+   "test/intro.test.mjs"
+  ],
+  "umgesetzt": [
+   "Wiederaufnahme: Die begonnenen Änderungen des abgebrochenen Anlaufs habe ich gegen vor gesichtet (diff -ruN) und übernommen. Die alten PID-Dateien sind ohne Beenden nach start/alt-pid verschoben. Eigene Server liefen über skripte/srv.sh, gebaut wurde über skripte/bau.sh (echte node_modules-Kopie, danach Verweis zurück). Am Ende sind .next und node_modules_echt gelöscht und die Server 4420, 4421 und 4311 beendet.",
+   "1 Erster Bildschirm mobil: In der Figur stehen auf jeder Breite H1, Ort, Orte-Link, Hauptknopf, Telefon und dann das Foto. Vorspann und Bewertung folgen darunter (order-last, die DOM-Reihenfolge bleibt). Zwischen Orte-Link und Hauptknopf liegen 12 px (mt-3), wie zwischen Ort und Link. Das Foto steht ganz im ersten Bildschirm: m390 bei 467 bis 705 px (Leiste ab 783), m360 bei 461 bis 678 px. Es ist das vorgeladene LCP-Element. Mobil zeigt es denselben Raum im Querformat 3:2.",
+   "2 Startfoto: Echtes Querformat IMG_2569 (Dachgeschossbad, Boden und Wand ganz zu sehen). Ab lg ein 16:9-Zuschnitt, unter lg 3:2, gewählt über picture/getImageProps. Ab lg wird die Breite aus Bildschirmhöhe, 2,2 × fs-7 und Stufe 62 berechnet statt pauschal: d1440 797 px (66 %, vorher 716), d1920 910 px, t1024 617 px, die Unterkante jeweils im ersten Bildschirm. Die linke Kante steht auf d1440 und d1920 in der Flucht des Ort-Satzes (±4 px). Die Oberkante hängt an einer Fuge mit Fugenkreuz am Lot-Ende. Neu ist je ein React-preload pro Zuschnitt mit sich ausschließender Medienabfrage; je Ansicht wird genau eine Datei geladen. Ein zweites Nahfoto gibt es nicht, weil keine scharfe Nahaufnahme im Bestand liegt.",
+   "3 H1 an der Schnur: Die Grundlinie der letzten Zeile steht auf der Schnur (gemessen auf allen sieben Geräten, z. B. d1440 278,2 zu 279 px). Das 1-m²-Maß steht direkt hinter „Quadratmeter.“: ab lg 1,65 em (die Zahl jetzt 18 bis 22 px unter dem Kopf statt 4 bis 6 px), unter lg 1,1 em. Ab md ist die H1 fs-7 (t768 58 px statt 41). Das Lot reicht bis an die Oberkante des Fotos. Die Schnur ist mobil und bei DPR 1 2 px stark. Der H1-Wortlaut ist unverändert.",
+   "4 Leitfaden: Mobil steht das Lot auf der Satzkante (rotes Stück bei 14 bis 16 px), die Kreuze und die Treppe rücken mit. Der rote gezogene Teil war schon 2 px. Das Kantenkreuz wird an der Leselinie rot; belegt auf m390, t1024 und d1440 (kreuz-rot Deckkraft 1). Die ruhige Fassung ist unverändert.",
+   "5 Eine Auswahlebene: Die Plan-Zeichnungen stehen links in den Zeilen von „Was möchten Sie ändern?“ (neu gezeichnet ist die Vignette treppe). Die Ziele sind gleich. Mit Zeichnung gibt es zwei Spalten erst ab lg; unter 24 rem Listenbreite ist die Zeichnung 64 px breit, damit kein Satz mehr als drei Zeilen braucht. „Wir kümmern uns …“ hat einen mittigen Kopf und eine Zeile mit den Leistungs-Links. Mobil kommt der Ablauf etwa 500 px früher.",
+   "6 Moment in der Mitte: Die Stufenlinie der Treppe reißt mit der Kennung anriss Stufe für Stufe an, je Stufe dauer-3 mit ease-setzen. Das Fugenkreuz setzt sich, wenn die Linie es erreicht. Animiert werden nur scale und opacity, das Kreuz jetzt in einem span statt auf dem svg, damit es im Compositor läuft. Reduziert, ruhig, im Notaus und bei Zurück und Vor steht die Linie voll. register.ts und register.json sind gleich ergänzt.",
+   "7 Galerie: Ohne Hover zeigt jede Breite den kurzen Verlauf wie mobil (data-verlauf). Die Tintenblöcke auf t1024 sind weg, Desktop mit Hover ist unverändert.",
+   "8 Kundenstimmen: Die Karte steht ab lg um ein Drittel versetzt. Jede Stimme endet am letzten ganzen Satz; geprüft ist das für alle acht als Präfix des Wortlauts. Der Wortlaut steht in der Höhe mittig. Wörter in Versalien trennen nicht (FS-K Nr. 12, nur per CSS).",
+   "9 Leiste „Cookies“: Serverseitig steht ein ruhendes Schloss mit „Cookies“ (inert), das per :has zurücktritt, sobald der Knopf eingehängt ist. Die Folge beim Erstbesuch ist stabil (Platz, Knopf, Platz in gleicher Gestalt; vorher Knopf und dann leer). Auf q844 stehen Symbol und Text in einer Zeile. Das Verhalten der Einwilligung ist unverändert, die Specs sind grün.",
+   "10 Trennfugen: Festpreisangebot und Verbundabdichtung stehen in FUGEN. mitFugen ist in Tun.tsx und Ablauf.tsx eingebunden (Textmarken mit fugen).",
+   "11 Hauptthread-Schub: Die Spur ist ausgewertet. Der alte Schub bei etwa 2,7 s kommt aus Chromium, wenn faul geladene Galeriebilder mit Platzhalter-Hintergrund nachladen; das ist nicht unser Code, und der Platzhalter ist KERN-Regel. Das bleibt ein Befund mit Beleg. Behoben ist der eigene Anteil: Das Treppen-Kreuz lief im Hauptthread (+155 Bilder) und läuft jetzt im Compositor."
+  ],
+  "offene_fragen": [
+   "Die Spec funktion-navigation.spec.mjs:276 („Wortlaut wörtlich aus REVIEWS“) ist nach Entscheidung 8 rot (mobil und desktop). Sie müsste prüfen, dass der Text ein Präfix des Wortlauts ist und an . ! ? endet. Die Spec liegt im Repository, das ich nur lese; die Änderung liegt beim Orchestrator.",
+   "Die Hervorhebung „ordnungsgemäß, sauber und pünktlich“ der ersten Stimme (C. W.) entfällt, weil dieser Satz beim Anbieter mit „…“ abbricht. Wenn die Hervorhebung bleiben soll, wäre das eine Inhaltsentscheidung: Reihenfolge der Stimmen ändern (z. B. U. T. mit vier ganzen Sätzen zuerst) und dort markieren.",
+   "Die Auslöseschwelle der Treppe ist 0,5, wie in Register, KERN K-008 und bewegung.test.mjs für anriss; das Briefing nennt 40 %. 0,4 hieße Register, Test und KERN ändern, und das gälte auch für die Markierung in den Kundenstimmen.",
+   "Flucht auf t1024: Das Foto ist auf zwei Drittel begrenzt (617 px), die Zeile aus Ort und Orte-Link ist 776 px breit. Die Fotokante steht bei 204, der Ort-Satz bei 124 px. Auf d1440 und d1920 stimmt die Flucht auf ±4 px.",
+   "Desktop-LCP über alle Reihen +17 ms (613 zu 630), im Rauschen, vermutlich durch die zweite CSS-Datei: Turbopack teilt ab etwa 131 KB. Soll das über experimental.cssChunking in next.config.ts (gemeinsame Datei) oder einen CSS-Schnitt angegangen werden? Mobil wird ≤ 2,5 s weder vorher noch nachher erreicht (etwa 2,7 s).",
+   "Der Rest-Hauptthread-Schub (etwa 95 bis 100 Bilder beim Nachladen der Galerie) hängt am Platzhalter-Hintergrund der faul geladenen Bilder. Der Platzhalter ist KERN-Regel, darum habe ich ihn nicht entfernt. Soll er für die Galerie trotzdem entfallen?",
+   "Startfoto IMG_2569 zeigt denselben Raum wie IMG_2570, dessen Herkunft laut M-08 offen ist (Annahme: verwenden). In der Nische stehen Flaschen, die Marken sind nicht lesbar. Bei DPR 2 ab lg wirkt das Bild aus dem 1312 px breiten Original leicht weich.",
+   "Der rote Leitfaden-Teil war schon vorher 2 px stark, auch am Desktop mit DPR 2; das Briefing ging von 1 px aus. Ich habe ihn unverändert gelassen."
+  ]
+ },
+ "pruefungen": [
+  {
+   "befunde": [
+    {
+     "datei": "src/components/vorlagen/teile/Stimmen.tsx (mit src/inhalte/start.ts, Reihenfolge der Stimmen)",
+     "schwere": "mittel",
+     "befund": "Der Satzende-Ausschnitt löst das abgebrochene Zitat, aber die erste Stimme ist jetzt eine bloße Tatsachenaussage ohne Lob: „Die Firma Tezgel hat für mich zwei Bäder saniert.“ Die Hervorhebung „ordnungsgemäß, sauber und pünktlich“ ist weg, obwohl der Befund aus Sicht 3 ausdrücklich verlangte, dass sie auf dem Schlüsselwort bleibt. Die Karte ist wegen der längsten Stimme der Reihe 376 px hoch (d1440), der kurze Satz steht mit je rund 110 px Leere darüber und darunter. Der Versatz um ein Drittel lässt links 400 px (d1440) bzw. 325 px (t1024) völlig leer. Der soziale Beleg wirkt dadurch kleiner als vorher, und die Notiz führt das selbst als offene Frage 2.",
+     "beleg": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/start/pruef-A-bilder/abschnitte/d1440-abschnitt-kundenstimmen.png, …/t1024-abschnitt-kundenstimmen.png, …/stimmen/m390-stimmen.png; Wortlaut c-wolf in src/config/reviews.js:41–47 (Lob steht im abgeschnittenen zweiten Satz); acht Stimmen m390 durchgeklickt (stimmen2.mjs): alle enden an einem Satzende, keine beschnitten.",
+     "vorschlag": "Mit einer Stimme beginnen, deren ganze Sätze schon Lob tragen (z. B. ute-t oder die Stimme „… uneingeschränkt und wärmstens empfehlen.“), und dort ein Schlüsselwort markieren (MARKIERUNG). Die Bewertungszeile oder den Google-Link in das linke Drittel setzen oder die Karte nach Inhalt statt auf die Höhe der längsten Stimme bemessen."
+    },
+    {
+     "datei": "src/inhalte/start.ts (Startfoto) und _werkstatt/MENSCHEN.md",
+     "schwere": "mittel",
+     "befund": "Es fehlt weiterhin der Beleg aus der Nähe für „Perfektion auf jedem Quadratmeter“. Das neue Startfoto zeigt den Raum aus Distanz, im Vordergrund stehen Kerzenständer, Hocker und Flaschen; Fugenbild und Kante sind bei 910 px Breite nicht lesbar. Der Befund aus Sicht 3 (Prüfer 2) wollte ein Paar „ganz und nah“ oder wenigstens eine Annahme in MENSCHEN.md; der Diff enthält keinen Eintrag dort, die Notiz erwähnt es nur als offene Frage 9. Das Maßquadrat trägt das Wortspiel jetzt auf allen Geräten, das Foto trägt es nicht.",
+     "beleg": "…/pruef-A-bilder/wieder/d1920-wieder-erster-bildschirm.png, …/d1440-wieder-erster-bildschirm.png, …/montage/dpr2-foto-crop.png; Diff berührt MENSCHEN.md nicht (Dateiliste des Diffs).",
+     "vorschlag": "MENSCHEN.md-Annahme jetzt eintragen (kein scharfes Nahfoto im Bestand, Auftraggeber um eine Aufnahme von Fuge oder Kante bitten). Solange das offen ist, aus einem vorhandenen scharfen Original einen echten 1:1-Ausschnitt von Fuge und Kante als zweites, kleines Foto neben das Startfoto stellen, nie Stock."
+    },
+    {
+     "datei": "src/components/vorlagen/teile/Ablauf.tsx, src/app/bewegung.css (anriss an der Treppe)",
+     "schwere": "mittel",
+     "befund": "Der Moment mit Gewicht in der Mitte ist am Desktop als Stufenlinie lesbar (d1440: Lauf 1 bis etwa 400 ms, Setzstufe und Lauf 2 bis etwa 1000 ms, Lauf 3 bis etwa 1800 ms, Kreuze setzen mit), aber das Gewicht bleibt gering: Es wächst eine 2-px-Linie über wenigen hundert Pixeln, nichts anderes im Bild bewegt sich. Mobil (m390, m360) ist es nur eine Verlängerung des Lots am linken Rand in drei Schüben, ohne waagrechte Stufe; als „Stufe für Stufe“ liest man es dort nicht. Für Kreativität reicht das für „vorhanden“, nicht für „trägt die Seite in der Mitte“.",
+     "beleg": "…/pruef-A-bilder/montage/treppe-d1440.png und treppe-m390.png (Zeitpunkte 100, 400, 700, 1000, 1400, 2200 ms, Animationen angehalten; ausgelöst true, 8 bzw. 5 Animationen).",
+     "vorschlag": "Die Kreuze beim Setzen sichtbar betonen (kurz rot, größer), den jeweiligen Schritt (Nummer und Titel) mit der Linie aufdecken statt nur die Linie, mobil je Schritt eine kurze waagrechte Stufe vom Lot zur Nummer anreißen."
+    },
+    {
+     "datei": "src/components/vorlagen/teile/EinstiegMitte.tsx, src/app/globals.css (schnur-grundlinie, titel-spalte)",
+     "schwere": "gering",
+     "befund": "Die H1 sitzt als Gruppe mit dem Maßquadrat in der Mitte, ihr Text liegt dadurch links der Achse, auf der Foto, Ort-Zeile und Knöpfe stehen: Mitte des H1-Kastens gegen Mitte des Fotos bei m390 −26 px, t768 −39 px, t1024 −85 px, d1440 −111 px, d1920 −124 px. Auf t1024 steht außerdem die Fotokante bei 204 px, der Ort-Satz bei 124 px (80 px Versatz, die Flucht aus Entscheidung 2 greift nur auf d1440 und d1920). Der Eindruck ist ein leicht nach links gerutschter Kopf über sauber mittigem Rest.",
+     "beleg": "…/pruef-A-bilder/wieder/<gerät>-masse.json (h1, foto, ort); Bilder …/d1440-wieder-erster-bildschirm.png, …/t1024-wieder-erster-bildschirm.png.",
+     "vorschlag": "Das Maß so setzen, dass die H1 selbst mittig bleibt (Maß hängt rechts außen aus der Achse heraus), oder die Flucht bewusst an der H1-Kante statt am Ort-Satz ausrichten. Auf t1024 Ort-Zeile umbrechen oder Foto auf die Breite der Zeile bringen."
+    },
+    {
+     "datei": "src/app/globals.css, src/components/vorlagen/teile/Beleg.tsx (Abschnittsfolge)",
+     "schwere": "gering",
+     "befund": "Der Rhythmus der Abschnitte ist unverändert schematisch: sieben Bänder wechseln strikt Weiß und Grau, fünf davon tragen eine mittige H2 über Einzelinhalt (Lage, Tun, Galerie, Stimmen, Termin). Neu ist nur der Versatz der Stimmenkarte; Galerie und Treppe hatten ihn schon. Das war der dritte Punkt von „bis 8,5“ in Sicht 3 (weniger Schema), er ist nur zu einem Teil eingelöst.",
+     "beleg": "…/pruef-A-bilder/montage/seite-d1440.png, seite-d1920.png, seite-t1024.png.",
+     "vorschlag": "Mindestens ein Paar Bänder ohne Farbwechsel führen (Lage und Leistungszeile in einem Weißband), die Einsatzorte oder die Galerie als breites Band mit anderem Kopf (links, an der Leitachse) setzen."
+    },
+    {
+     "datei": "src/components/vorlagen/teile/Tun.tsx (Leistungszeile)",
+     "schwere": "gering",
+     "befund": "Das Band „Wir kümmern uns um alles …“ ist jetzt eine ruhige Zeile, aber auf d1440, d1920 und t1024 bricht sie 3 + 1 um: „Reparatur von Fliesen und Fugen“ steht allein in der zweiten Zeile. Das Band ist rund 300 px hoch bei sehr wenig Inhalt (zwei H2-Zeilen, ein Satz, vier Links).",
+     "beleg": "…/pruef-A-bilder/montage/lage-d1440.png (rechtes Bild), seite-t1024.png Bild 02, seite-d1920.png Bild 02.",
+     "vorschlag": "Vier Links als 2 × 2 oder alle vier in einer Zeile (schmalere Schrift oder Abstand), den Abstand über und unter dem Band kürzen."
+    },
+    {
+     "datei": "src/components/kern/Glasbild.tsx, src/app/bewegung.css (data-verlauf)",
+     "schwere": "gering",
+     "befund": "Auf t1024 ist der Tintenblock weg und durch einen Verlauf ersetzt, der Boden bleibt aber nur zur Hälfte sichtbar: Der Verlauf deckt knapp die Hälfte jeder Kachel (Kachel 289–656 px, Verlauf ab etwa y 490), weil der Name in der schmalen Kachel zweizeilig läuft und „Ansehen →“ eine dritte Zeile belegt. Briefing und Befund sagten höchstens zwei Zeilen; beim ersten Foto ist das Mosaik des Bodens abgedunkelt.",
+     "beleg": "…/pruef-A-bilder/abschnitte/t1024-abschnitt-unsere-arbeiten.png; ebenso t768 (…/montage/seite-t768.png Bild 03).",
+     "vorschlag": "„Ansehen →“ in die Zeile des Namens setzen oder ausblenden, solange keine Maus da ist (Kachel ist ohnehin der Link), Verlauf auf höchstens ein Drittel begrenzen."
+    },
+    {
+     "datei": "src/components/layout/MobileBottomBar.tsx, src/app/globals.css (leiste-schild)",
+     "schwere": "gering",
+     "befund": "Die Leiste ist stabil (Erstbesuch m360, m390, q844, t768 bei 0 bis 1500 ms und mit offenem Banner: Cookies-Feld immer da, gleiche Breite wie später; q844 Symbol und Wort in einer Zeile). Offen bleibt die Gestalt: „Cookies“ steht weiter als erstes Feld und ist schmaler als die drei Handlungen (64 gegen 98/108/108/108 px auf m360/m390, 103 gegen 246 px auf q844). Das ist die Auftraggeber-Entscheidung M-28, kostet aber einen Teil des Eindrucks „drei klare Handlungen“.",
+     "beleg": "…/pruef-A-bilder/wieder/<gerät>-masse.json (leiste), …/erst/<gerät>-erst-banner-masse.json; Bilder …/erst/m390-erst-0000.png bis …-1500.png, montage/erst-m390.png.",
+     "vorschlag": "Nur falls M-28 es zulässt: das Feld ans Ende der Leiste setzen oder die drei Handlungen gleich breit lassen und Cookies als schmales Feld rechts anfügen."
+    },
+    {
+     "datei": "src/components/vorlagen/teile/EinstiegMitte.tsx, src/app/globals.css (flach)",
+     "schwere": "gering",
+     "befund": "Auf q844 (Handy quer) ist das Foto im ersten Bildschirm nicht angekommen: Oberkante 243 von 390 px, sichtbar bleibt ein Streifen von rund 100 px der dunklen Dachschräge über der Leiste. Das Maßquadrat fehlt dort (Zweig „flach“), der Befund „H1 ohne Maß“ aus Sicht 3 (q844 genannt) bleibt also an dieser Größe offen.",
+     "beleg": "…/pruef-A-bilder/wieder/q844-wieder-erster-bildschirm.png; masse.json: foto.y 243,2, quadrat 0×0.",
+     "vorschlag": "Im flachen Zweig das Maß klein hinter die einzeilige H1 setzen (rechts ist Platz) und die Knöpfe neben der Ort-Zeile statt darunter führen, damit das Foto früher beginnt."
+    },
+    {
+     "datei": "src/components/kern/Bildfeld.tsx, public/images/arbeiten/bad/dachgeschoss-bad-dusche-glaswand-beige-breit.jpg",
+     "schwere": "gering",
+     "befund": "Bei DPR 2 am Desktop ist das Startfoto leicht weich: Der Optimierer liefert bei w=1920 das 1312-px-Original (797 CSS-px ≙ 1594 Gerätepixel, 1,2-fach aufgezogen), an Fliesenkanten sichtbar AVIF-Blöcke. Bei DPR 1 und 2/3 mobil scharf. Sicht 3 hatte „wirkt bei DPR 2 weich“ schon am alten Foto genannt.",
+     "beleg": "…/pruef-A-bilder/dpr/d1440-dpr2-erster.png, montage/dpr2-foto-crop.png; curl …/_next/image?…&w=1920 → 1312 × 738.",
+     "vorschlag": "Obergrenze der ausgelieferten Breite an die echte Breite koppeln oder das Foto nicht über 1,0-fach zeigen (Breite begrenzen), Qualität für dieses eine Bild höher setzen."
+    },
+    {
+     "datei": "src/inhalte/start.ts, src/components/vorlagen/teile/Lage.tsx",
+     "schwere": "gering",
+     "befund": "Mobil bleibt die Seite lang: m390 12745 px = 15,1 Bildschirmhöhen (Sicht 3: 14). Der Ablauf beginnt auf m390 bei rund 2480 px, nach der Notiz selbst 2482 statt 2984 px, also nur etwa 0,6 Bildschirmhöhen früher, nicht zwei. Die Zeilen der Lage sind mit Zeichnung 80 bis 100 px hoch, drei bis vier Zeilen je Bildschirm.",
+     "beleg": "…/pruef-A-bilder/wieder/m390-masse.json (hoehe 12745); montage/seite-m390.png Bilder 01 bis 03; Notiz „Ablauf beginnt bei 2482 statt 2984 px“.",
+     "vorschlag": "Auf Handys die Lage-Zeilen auf höchstens zwei Satzzeilen und 64 px Höhe halten oder die Einleitung „Wählen Sie, was am besten passt …“ mobil kürzen; Fuß und Formular wie bisher gefaltet lassen."
+    }
+   ],
+   "gesamturteil": "Eigene Bilder (PNG, Sperre, eigener Bau pruef-A-0, Server 4422) in m360, m390, q844, t768, t1024, d1440, d1920 mit Wiederbesuch (ganze Seite) und Erstbesuch (Eingang bei 0 bis 1500 ms, dazu Erstbesuch mit Banner), dazu 200 % Schrift (m360, m390, q844, t768, t1024, d1440), Treppe in sechs Zeitpunkten (m390, d1440), Stimmen, Abschnitte, DPR 2/3. Bilder unter /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/start/pruef-A-bilder/, Skripte unter …/start/pruef-A-skripte/.\\n\\nNOTEN (Skala 1 bis 10): Design 7,9 · Bedienbarkeit 8,3 · Kreativität 8,0 · Inhalt 8,0 · ANSICHTWERT 8,0. Sicht 3 lag bei 7,5 und 7,6; 8,5 ist nicht erreicht, es fehlen etwa 0,5.\\n\\nWas der Diff sichtbar löst: (1) Erster Bildschirm mobil zeigt die Arbeit: Foto m390 Oberkante 467, Unterkante 705 px, ganz über der Leiste (ab 784); m360 461 bis 678 (Leiste ab 681); Abstand Orte-Link zu Hauptknopf 12 px. (2) H1-Grundlinie liegt auf der Schnur: gemessener Abstand −0,7 bis +0,2 px auf allen sieben Geräten und bei 200 % (−1,0 bis 0), die Unterlängen von j und Q kreuzen sie; das Maßquadrat steht mit der Unterkante auf der Schnur direkt hinter „Quadratmeter.“ (14 px Zahl, mobil 38 bis 42 px, ab lg 118 bis 171 px), außer auf q844; Lot reicht bis zur Fuge am Foto (Fugenkreuz ab sm). (3) Startfoto groß und vollständig: d1440 797 × 449 px (66 %, Unterkante 889 von 900), d1920 910 px (2/3), t1024 617 px; Kante in der Flucht des Ort-Satzes auf d1440 und d1920 (±4 px). (4) Eine Auswahlebene: die Zeichnungen stehen in den Zeilen von „Was möchten Sie ändern?“, „Wir kümmern uns“ ist eine Zeile mit Links, Kopf mittig; Ziele und Wortlaut gleich. (5) Treppe reißt Stufe für Stufe an (Compositor, Linie am Ende voll). (6) Leitfaden mit Präsenz: Schnur 2 px mobil und bei DPR 1 (gemessen 2 px), Lot mobil 14 bis 16 px auf der Satzkante, Kantenkreuz wird rot, wenn der Strich es erreicht (t1024 Galerie sichtbar). (7) Galerie t1024: Tintenblöcke weg, Verlauf wie mobil. (8) Stimmen enden am Satzende (alle acht geprüft, keine beschnitten), Karte um ein Drittel versetzt, Versalwort ohne Trennung. (9) Leiste: Cookies-Feld in allen Erstbesuch-Bildern vorhanden, gleiche Breite wie später, kein Flackern; q844 einzeilig.\\n\\nNeue Brüche: keine. scrollWidth gleich Bildschirmbreite auf allen sieben Geräten und bei 200 % (Prüfung auf Elemente über den Rand: leer), keine Überlappung von Maß, H1, Ort oder Knöpfen, auch nicht bei 200 % (m360 und m390 brechen die H1 in drei Zeilen, die letzte steht weiter auf der Schnur, das Maß entfällt dort geplant unter 20 rem). Leiste unter dem offenen Banner überdeckt oben wenige Pixel der Symbole (Banner bleibt unverändert, nicht aus diesem Diff). Andere Seiten (/bad, /bad/badsanierung, /fliesen) zeigen die Leiste unverändert.\\n\\nWas zu 8,5 fehlt (Design 8,3, Kreativität 8,5, Inhalt 8,4 wären nötig): Die Seite trägt als Ganzes noch nicht. (a) Der Moment in der Mitte ist leise (mobil kaum als Stufe lesbar) und der Rhythmus der Bänder bleibt grau/weiß schematisch (Befunde 3 und 5). (b) Die Stimmen schwächer als vorher: erste Stimme ohne Lob, Hervorhebung weg, Karte leer (Befund 1). (c) Kein Beleg aus der Nähe für „Perfektion“ (Befund 2). (d) Der erste Bildschirm ist stark, aber die H1 sitzt gegen die Achse des Fotos verschoben (Befund 4), auf q844 fehlen Foto und Maß (Befund 9). (e) Kleinigkeiten: 3 + 1 Links, Verlauf in der Galerie, Cookies-Feld schmal, DPR-2-Schärfe, lange Handy-Seite.\\n\\nAufgeräumt: Server (PID 3829, Prozessgruppe) beendet, Port 4422 frei, .next und node_modules_echt in pruef-A-0 gelöscht; baum, vor und das Repository nicht verändert (git status leer). Ein Server auf Port 4423 gehört nicht zu diesem Lauf und blieb unberührt."
+  },
+  {
+   "befunde": [
+    {
+     "datei": "_werkstatt/werkzeuge/tests/funktion-navigation.spec.mjs (Spec) gegen src/components/vorlagen/teile/Stimmen.tsx",
+     "zeile": "Spec 276-281; Stimmen.tsx 174 (EinzelStimme versetzt, bisSatzende)",
+     "schwere": "hoch",
+     "befund": "Die Spec „acht Stimmen auf /, Wortlaut wörtlich aus REVIEWS“ ist gegen den Bau rot, mobil und desktop. Sie vergleicht den textContent jedes blockquote mit dem vollen REVIEWS-Text. Der Bau zeigt nur noch den Ausschnitt bis zum letzten ganzen Satz. Damit sind die Specs zu Start nicht grün. Außerdem entfällt die Hervorhebung der ersten Stimme (MARKIERUNG 'ordnungsgemäß, sauber und pünktlich' steht nicht mehr im Ausschnitt).",
+     "beleg": "Eigener Bau auf Port 4423, 188 bestanden, 9 übersprungen, 3 fehlgeschlagen. Zwei davon sind diese Spec (Log /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/start/pruef-A-1/specs/nach/lauf.log, Zeilen 210-240). Die Differenz zeigt acht Ausschnitte statt acht Volltexte, z. B. erhalten 'Die Firma Tezgel hat für mich zwei Bäder saniert.' statt '… ordnungsgemäß, sauber und pünktlich …'. Gegenprobe mit stimmen.mjs (pruef-A-1/stimmen.mjs): Alle acht Ausschnitte sind Präfixe des Wortlauts, der Wortlaut ist also nicht verändert, nur gekürzt.",
+     "vorschlag": "Orchestrator entscheidet: Entweder Spec auf „Präfix des REVIEWS-Textes, endet an . ! ?“ umstellen (so schlägt es die Notiz vor). Oder den vollen Text im DOM lassen und nur optisch kürzen. Die erste Stimme nach Inhaltsentscheidung neu ordnen oder ohne Markierung lassen."
+    },
+    {
+     "datei": "src/lib/motion/register.ts, src/lib/motion/bewegung.ts, src/app/bewegung.css, src/components/vorlagen/teile/Ablauf.tsx",
+     "zeile": "register.ts:46 (anriss schwelle 0.5); bewegung.ts:31-44 (threshold); bewegung.css:67-72; Ablauf.tsx AnrissTreppe",
+     "schwere": "mittel",
+     "befund": "Die Treppe „So kommen Sie …“ löst ihren Anriss bei großer Schrift nie aus. Der Beobachter wartet auf 50 % Sichtbarkeit des ganzen ol. Ist das ol höher als zwei Bildschirmhöhen, wird die Schwelle nie erreicht. data-motion-stand bleibt leer, und der Startzustand (Lot scale 1 0, Fugenkreuze Deckkraft 0) bleibt dauerhaft stehen. Die rote Stufenlinie und alle drei Fugenkreuze fehlen dann ganz. Vorher stand die Linie immer (border-laser). Das trifft die 200-%-Konfiguration aus K-013 und schon realistische Zwischenstufen.",
+     "beleg": "Eigenes Skript pruef-A-1/treppe-io.mjs und treppe-io2.mjs, Bau 4423, nach vollständigem Durchscrollen der Seite (ol-Höhe, Fensterhöhe, stand): m390 200 %: 2575 px, 844, null (Lot scale '1 0', Kreuz opacity 0). m360 200 %: 3066, 640, null. m390 175 %: 2015, 844, null. m360 150 %: 1605, 740, null. Dagegen sind m390 100 % (746 px), m360 130 % (1213 px, 740), m390 150 % (1523 px, 844) und t768 200 % (1491 px, 1024) 'an'. Bild: .../pruef-A-1/bilder/treppe/schrift200-m390-nach.png (keine Linie, kein Kreuz) gegen schrift200-m390-vor.png (Linie und Kreuz sichtbar).",
+     "vorschlag": "Auslöser nicht an der Höhe des ganzen ol hängen: je li (Schritt) beobachten oder Schwelle/rootMargin so wählen, dass sie auch bei hohem ol erreicht wird. Oder den Startzustand nur setzen, wenn das ol ≤ 2 Bildschirmhöhen misst. Dazu einen Test bei großer Schrift."
+    },
+    {
+     "datei": "src/components/vorlagen/teile/Ablauf.tsx",
+     "zeile": "100-101 (treppe-kreuz mit Fugenkreuz className='block size-full')",
+     "schwere": "mittel",
+     "befund": "Das Fugenkreuz der neuen Treppe sitzt 7 bis 9 px unter der Linie, auf jeder Breite und im Ruhezustand. In der alten Treppe stand es mittig auf dem Anfang der Linie. Ursache: Fugenkreuz setzt clsx('inline-block …', className). Mit className 'block size-full' stehen beide Klassen am svg, 'inline-block' gewinnt, und das svg (vertical-align middle) liegt in einer 24-px-Zeile des 12-px-Spans, also nach unten versetzt. Das Briefing verlangt, dass die Kreuze setzen, wenn die Linie sie erreicht.",
+     "beleg": "DOM-Messung pruef-A-1/kreuz-svg.mjs (Bau 4423): Mitte des svg liegt unter der Mitte des Spans um d1440 6,8 px, t768 6,8 px, m390 8,8 px. Berechnet: display inline-block, vertical-align middle. Pixelmessung der erzwungenen Farben (bilder/treppe/erzwungen-d1440-vor.png, -nach.png, Spalte x=112): Kreuz vorher y 143-154 (Mitte 148,5) auf der Linie y 147-148, nachher y 149-160 (Mitte ≈154,5). Auch im Bild des Baumeisters bilder/nach/treppe/d1440-treppe-2000.png: Linie y 274, Kreuz y 282.",
+     "vorschlag": "Am svg 'block' erzwingen (z. B. '!block' oder 'align-top') oder das Kreuz im Span absolut füllen (absolute inset-0 size-full). Danach Mitte des Kreuzes auf Oberkante der Linie prüfen."
+    },
+    {
+     "datei": "src/components/kern/Bildfeld.tsx, src/config/arbeiten.ts",
+     "zeile": "Bildfeld.tsx 100-124 (Bildauswahl, img ohne Platzhalter); arbeiten.ts 440-456 (blur-Daten ungenutzt)",
+     "schwere": "gering",
+     "befund": "Das Startfoto, das LCP-Bild, hat keinen unscharfen Platzhalter mehr. KERN verlangt für Bildfeld „feste Maße, sizes, unscharfer Platzhalter“. Das alte Startfoto trug ihn. Die für start-bad und start-bad-gross in arbeiten.ts angelegten blur-Daten werden nirgends verwendet. Die Notiz erwähnt den Verzicht nicht, nur ein Kommentar im Code.",
+     "beleg": "Ausgeliefertes HTML von / (pruef-A-1/vor-index.html, nach-index.html): vorher img mit style 'background-image:url(data:image/svg+xml… feGaussianBlur …)' und data-nimg; nachher style='color:transparent' ohne Hintergrund. KERN.md Zeile 158. LCP und CLS dadurch nicht messbar schlechter (CLS 0 in allen 30 Lighthouse-Läufen).",
+     "vorschlag": "Platzhalter über eigene Hintergrundregel am umgebenden Kasten setzen (die blur-Daten sind schon da) oder die Ausnahme in KERN K-006 eintragen und die toten blur-Daten entfernen."
+    },
+    {
+     "datei": "Build-Ergebnis (src/app/globals.css Wachstum) , Hinweis für Orchestrator",
+     "zeile": "nicht zeilengebunden",
+     "schwere": "gering",
+     "befund": "Die Startseite lädt nachher zwei render-blockierende Stylesheets statt einem (Turbopack legt ab etwa 131 KB nicht mehr zusammen). Das bestätigt die Notiz. Eine messbare Verschlechterung des LCP ergibt meine Messung nicht, aber das Wachstum des CSS wird jede weitere Änderung an diese Grenze führen.",
+     "beleg": "HTML von / im eigenen Bau: nachher '/_next/static/chunks/0nxicmqezp7pl.css' plus '/_next/static/chunks/2cjly9x94-xma.css', vorher '/_next/static/chunks/3ulq2_un_f-fj.css' allein. Eigene Messung im Wechsel (Lighthouse, 1 Aufwärmlauf, frisches Profil, je Lauf einzeln): mobil 8 Paare, LCP vorher 2935 2684 2703 2923 2908 2859 2867 2912, Median 2888, nachher 2834 2832 2867 2408 2704 2691 2849 2710, Median 2771. Desktop 7 Paare, vorher 612 634 642 714 573 673 636, Median 636, nachher 589 590 746 721 584 638 722, Median 638 (Mittel 641 gegen 656). CLS 0 in allen 30 Läufen, LCP-Element nachher figure > div.border > picture > img.block mit Vorladen.",
+     "vorschlag": "Orchestrator entscheidet über experimental.cssChunking oder einen CSS-Schnitt; kein Handlungsdruck für dieses Paket."
+    },
+    {
+     "datei": "_werkstatt/KERN.md (K-008, Zeile 198) gegen src/lib/motion/register.ts und _werkstatt/register.json",
+     "zeile": "KERN.md:198; register.ts:248-254",
+     "schwere": "gering",
+     "befund": "Der Register-Eintrag anriss nennt jetzt --dauer-4, --dauer-3, --dauer-1 und die Stufenlinie der Treppe. Die Zeile anriss in KERN K-008 beschreibt noch nur „Schlüsselwort einer Stimme“ mit dauer-4. Register und KERN laufen auseinander. Eine Prüfung (npm test) merkt das nicht.",
+     "beleg": "KERN.md Zeile 198: '| `anriss` | Hierarchie: Schlüsselwort einer Stimme | IO 50 % | `dauer-4` | Strich sofort | Stimmen (aus v2) |'. register.ts und register.json tragen im Diff die erweiterten Stufen und den neuen Text „Strich und Stufenlinie stehen sofort“.",
+     "vorschlag": "KERN K-008 Zeile anriss um Treppe der Startseite, dauer-3, dauer-1 und den Text für reduziert ergänzen (nur der Orchestrator schreibt KERN)."
+    }
+   ],
+   "gesamturteil": "Unantastbares ist nicht berührt: H1-Wortlaut „Perfektion auf jedem Quadratmeter.“ unverändert (textContent geprüft), Logo, Rechtstexte, Firmendaten, Formulare, Adressen und Verlegen.tsx (B-01, E-078) liegen nicht im Diff. Das Verhalten der Einwilligung ist unverändert (CookieConsent nicht im Diff, der Knopf hängt weiter als direktes button-Kind in #leiste-schild, :has greift). Alle acht Kundenstimmen sind Präfixe des Wortlauts.\n\nGemessen im eigenen Bau (Port 4423, vorher auf 4424): LCP-Element bleibt das Startfoto (picture > img), vorgeladen mit sich ausschließenden Medienabfragen, genau ein Bildabruf je Ansicht auf sieben Geräten und bei DPR 1, 2 und 3. LCP nicht schlechter: mobil Median 2888 ms vorher, 2771 ms nachher (8 Paare im Wechsel). Desktop 636 ms vorher, 638 ms nachher (7 Paare). Das Mobilziel ≤ 2,5 s verfehlen beide Stände, wie schon vorher. CLS 0 in allen 30 Läufen. Bildrate verworfener Bilder nachher 0,07 % und 0 % (Median je Reihe, höchster Einzellauf 0,65 %). Konsole ohne Fehler. axe mit 21 Läufen (sieben Geräte, Menü, Banner): 0 Verstöße vorher und nachher. bewegung.mjs: register unbekannt [] und ohne Register 0, reduziert und ruhig 0 Bewegungsbefunde (gleich wie vorher). Die Animationen der Treppe haben echte Änderungen in den Keyframes (scale 0 1 → none, scale 1 0 → none, opacity 0 und scale 0,4 → Endwert, nur scale und opacity, bei reduzierter Bewegung 0 Animationen); alle Dauern aus Tokens.\n\nPrüfungen in der Arbeitskopie: npm test 249 von 249, eslint Exit 0, werte.mjs mit den 25 geänderten Dateien 0 Befunde, Typprüfung im Build ohne Fehler. Specs gegen meinen Bau: Start (Navigation, Hero-Kontakt), Einwilligung, Leiste (Kontaktwege) und Verlegen: 188 bestanden, 3 rot. Zwei rot sind die Stimmen-Spec (Befund 1). Die dritte, Verlegen (21) desktop, war eine reine Zeitgrenze (5328 ms gegen 3400 ms) bei Last von rund 6 durch fremde Läufe; allein wiederholt grün (9,4 s), wie schon in E-092 beschrieben. Tracking, Einwilligung, Kontaktwege gegen einen Bau mit Platzhalter-ID (RELAUNCH_TRACKING=1): 75 bestanden, 3 übersprungen, 0 rot.\n\nZu beheben vor der Abnahme: Befund 1 (Spec oder Textstand entscheiden), Befund 2 (Treppe bleibt bei großer Schrift dauerhaft ohne Linie und Kreuze) und Befund 3 (Fugenkreuz 7 bis 9 px zu tief). Die übrigen sind gering. Aufgeräumt: Server 4423 und 4424 per Prozessgruppe beendet, .next in den drei eigenen Kopien gelöscht, node_modules_echt nicht mehr vorhanden, baum und Repository unverändert (git status vorher gleich nachher). Eigene Belege liegen unter /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/start/pruef-A-1/."
+  }
+ ],
+ "nacharbeit": {
+  "behoben": [
+   "hoch · Spec „acht Stimmen auf /, Wortlaut wörtlich aus REVIEWS“ (funktion-navigation.spec.mjs:276): bestätigt (2 rote Specs). Entscheidung 8 verlangt den Ausschnitt, darum wurde die Spec in der Arbeitskopie umgestellt (_werkstatt/werkzeuge/tests/funktion-navigation.spec.mjs, im Diff). Sie prüft jetzt: gezeigter Text = Anfang des REVIEWS-Wortlauts; ist er kürzer, endet REVIEWS mit „…“ und der Ausschnitt an . ! ?. Die Reihenfolge folgt start.ts. Den Volltext versteckt im DOM zu lassen habe ich verworfen, weil der Vorleser sonst den abgebrochenen Satz hört. Ergebnis: Specs gegen 4420 mit 191 bestanden, 17 übersprungen, 0 fehlgeschlagen.",
+   "mittel · Erste Stimme ohne Lob, leeres Drittel: bestätigt. In start.ts sind Peter P. und C. W. getauscht (Peter P. zuerst, Wortlaut unverändert). Neu ist MARKIERUNG['peter-p'] = „professionell und hochwertig“. Ab lg steht die Kennzeile (Bewertung, Zahl, Stand, Google-Link) im freien ersten Drittel auf Höhe der Kartenkopfzeile, absolut gesetzt, Lese- und Fokusfolge unverändert. Sie ist über die neue Option `untereinander` von Bewertungszeile gestapelt; die Option wird nur hier gesetzt, andere Seiten bleiben unverändert. Bilder: S/bilder/nach9/abschnitte/d1440-kundenstimmen.png, S/bilder/nach10/stimmen-t1024-d1920.png.",
+   "mittel · Nahaufnahme/MENSCHEN.md: Eintrag UM-12 in _werkstatt/MENSCHEN.md. Kein scharfes Nahfoto im Bestand (84 Bildschirmfotos mit höchstens 1320 px Breite), Bitte um 2–3 Nahfotos, Annahme: nur das Raumfoto, kein Ersatzausschnitt.",
+   "mittel · Treppe mit Gewicht: Das Kreuz setzt sich rot und auf das Doppelte vergrößert und wird dann Tinte (rote Kopie, nur opacity). Der Schritt (Nummer, Titel, Satz) setzt sich mit (8 px, dauer-3, ease-setzen). Mobil reißt je Schritt eine rote Stufe vom Lot zur Nummer an (treppe-tritt, steht auch in Ruhe). In den Zuständen reduziert, ruhig, Notaus und Zurück/Vor ist alles ganz da. Montagen: S/bilder/nach9/treppe/montage-d1440.png, montage-m390.png.",
+   "mittel · Anriss löst bei großer Schrift nie aus: bewegung.ts `erreicht()` zählt bei Elementen, die höher als das Fenster sind, den Anteil des Fensters. Rückrufstufen in Zwanzigsteln bis zur Schwelle; für Elemente bis Fensterhöhe gilt unverändert der Anteil des Elements. Gemessen m390 bei 100/175/200 %, m360 bei 150/200 %, t768 bei 200 %, d1440 bei 100/200 %: alle „an“, Linie, Kreuz und Schritt sichtbar (S/nachpruef-4420.log).",
+   "mittel · Fugenkreuz 7–9 px unter der Linie: Das svg füllt die Hülle jetzt absolut (absolute inset-0 size-full). Gemessen: Mitte svg = Mitte Hülle (0 px), Abstand zur Linie 1 px.",
+   "gering · H1 links der Achse: Ab md hängt das Maß absolut rechts an der H1, die H1 steht mittig. Versatz jetzt 0 auf q844, t768, t1024, d1440, d1920 (vorher −39 bis −124 px). Unter md reicht der Platz nicht, die Gruppe bleibt mittig (m390 −25,5 px). Die cqi-Grenzen von titel-spalte sind angepasst, bei 100 % unverändert. Kein Überlauf auf sieben Geräten.",
+   "gering · Leistungszeile 3+1: ab md 2×2 in gleich breiten Spalten. Das Band hat ab lg 64 statt 96 px Abstand oben und unten (nur /).",
+   "gering · Glasbild ohne Maus: Mit data-verlauf steht ohne Hover nur der Name, „Ansehen →“ bleibt nur für den Vorleser. Auslauf 8 statt 12 Einheiten, auf t1024 rund ein Drittel der Kachel. Mit Maus unverändert.",
+   "gering · q844: Flach steht das Maß als kleine Fliese ohne Bemaßung hinter der einzeiligen H1. Engere Abstände bei Knöpfen und Foto (nur Startseite): Foto-Oberkante 215 statt 243 px.",
+   "gering · Unscharfer Platzhalter am Startfoto: getImageProps erhält placeholder 'blur' mit den blur-Daten des kleinen Zuschnitts. CLS 0, LCP nicht schlechter.",
+   "gering · KERN K-008 und Register: Zeile anriss in _werkstatt/KERN.md ergänzt (Treppe, dauer-3/dauer-1, Schwelle bei hohen Elementen, reduziert). register.ts und register.json gleichlautend ergänzt. Die KERN-Version ist nicht angehoben, das entscheidet der Orchestrator."
+  ],
+  "nicht_behoben": [
+   "gering · Rhythmus der Bänder: kein kleiner Eingriff. Gleichfarbige Nachbarbänder ändern Kanten (data-kante, Kantenkreuze) und die Abschnittsmarke des Leitfadens, die nur auf Kalk steht. Ein anderer Kopf für Galerie oder Orte ist eine K-016-Entscheidung des Orchestrators. Teilweise eingelöst: gefülltes Drittel bei den Stimmen, niedrigeres Leistungsband.",
+   "gering · Cookies-Feld in der Leiste: E-089 (M-28) legt Feld, Ort und Breite (16 Stufen) fest. Die Stabilität ist bestätigt; umstellen kann nur Orchestrator oder Auftraggeber.",
+   "gering · Startfoto bei DPR 2 weich: bestätigt, das Original misst nur 1312 bzw. 1320 px. Höhere Qualität hieße images.qualities in next.config.ts ändern (KERN K-004, gemeinsame Datei). Eine Begrenzung auf 1,0-fach (rund 656 statt 797 px) widerspräche Entscheidung 2. Hängt an UM-12 (Originaldateien der Kamera).",
+   "gering · Mobil lange Seite (m390 rund 15 Bildschirmhöhen): Lage-Zeilen auf 64 px brächten nur rund 120 px und hießen entweder eine kleinere Schriftstufe (fs-3 statt fs-4) oder keine Zeichnung (gegen Entscheidung 5). Die Einleitung zu kürzen ändert den Wortlaut (G8).",
+   "gering (Teil des H1-Befunds) · Flucht der Fotokante auf t1024 (Ort 124 px, Foto 204 px): nur mit Umbruch der Ortszeile oder einem Foto unter dem Falz erreichbar, bleibt offen.",
+   "gering · CSS-Aufteilung in zwei Dateien: bestätigt, laut Prüfer kein Handlungsdruck für dieses Paket. Entscheidung über experimental.cssChunking liegt beim Orchestrator."
+  ],
+  "npm_test": "249 Tests, 249 bestanden, 0 fehlgeschlagen (S/npm-test-2.log). Specs gegen 4420 (navigation mit geänderter Stimmen-Spec, hero-kontakt, einwilligung, tracking, kontaktwege, verlegen): 191 bestanden, 17 übersprungen, 0 fehlgeschlagen (S/specs/nach10/lauf.log). Tracking und Einwilligung gegen GA-Variante 4311: 44 bestanden (S/specs/tracking-n10/lauf.log). Lighthouse, 4 Paare im Wechsel: LCP mobil Median 2805 → 2692 ms, Desktop 624 → 609 ms, CLS 0 bis 0,0015 (vorbestehendes Kopf-Symbol). Bildrate vorher 0,14 %, nachher 0,29 % (beide unter 1 %). Register: 8 → 9 Kennungen, unbekannt 0. Reduziert und ruhig: 0 Bewegungsbefunde. Alles unter S=/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/start (lh-n10, bew-n10).",
+  "tsc": "npx tsc --noEmit mit vorübergehender next-env.d.ts: Exit 0, keine Ausgabe",
+  "eslint": "npx eslint: Exit 0, keine Ausgabe",
+  "werte": "0 Befunde bei 27 geänderten .ts/.tsx/.css-Dateien (S/werte/2026-10-30T08-36-46-519Z.json). Gestartet aus der Arbeitskopie (baum/_werkstatt/werkzeuge/werte.mjs), damit die Dateien der Arbeitskopie geprüft werden und die Ausnahmen greifen. Mit dem Werkzeug aus dem Repository liest werte.mjs bei relativen Pfaden die Dateien des Repositorys. Bei absoluten Pfaden greifen die Ausnahmen nicht, dann erscheinen 4 Scheinbefunde „0.01ms“ in den schon vorhandenen Ruhig-Regeln.",
+  "diff_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/start/UM-E4-START.diff (1978 Zeilen, 33 Dateien, neu aus vor erzeugt). Notiz ergänzt: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/start/UM-E4-START.notiz.md, Abschnitte „Nacharbeit nach Prüfung A“, „Nicht behoben“, „Prüfungen“, „Messwerte der Nacharbeit“ und Bildsätze nach9/nach10. Server beendet, .next und node_modules_echt in baum gelöscht."
+ },
+ "orchestrator": "Ausschnitt der Kundenstimmen (bisSatzende), Tausch der Reihenfolge und Spec-Änderung nicht übernommen (G7, G8; E-097, MENSCHEN UM-13)"
+}
