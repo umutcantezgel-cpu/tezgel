@@ -1,0 +1,478 @@
+{
+ "seiten": {
+  "/": {
+   "mobil": {
+    "median": {
+     "perf": 94,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 3006,
+     "cls": 0,
+     "tbt": 113,
+     "fcp": 1356,
+     "si": 1460,
+     "js_kb": 201,
+     "font_kb": 57,
+     "gesamt_kb": 428,
+     "benchmark": 2022.5,
+     "lcp_element": {
+      "selector": "figure > div.border > picture > img.block",
+      "ausschnitt": "<img alt=\"Bad im Dachgeschoss mit Dusche hinter einer Glaswand und großen beigen Fli…\" loading=\"eager\" fetchpriority=\"high\" width=\"1320\" height=\"880\" decoding=\""
+     },
+     "spanne": {
+      "perf": [
+       92,
+       94
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       2848,
+       3212
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       101,
+       117
+      ],
+      "fcp": [
+       1356,
+       1361
+      ],
+      "si": [
+       1356,
+       1478
+      ],
+      "js_kb": [
+       201,
+       201
+      ],
+      "font_kb": [
+       57,
+       57
+      ],
+      "gesamt_kb": [
+       428,
+       428
+      ],
+      "benchmark": [
+       1936,
+       2035.5
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 94,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2848.4835249999996,
+      "cls": 0,
+      "tbt": 117,
+      "fcp": 1356.2763,
+      "si": 1459.5354141804387,
+      "js_kb": 201,
+      "font_kb": 57,
+      "gesamt_kb": 428,
+      "benchmark": 2022.5,
+      "lcp_element": {
+       "selector": "figure > div.border > picture > img.block",
+       "ausschnitt": "<img alt=\"Bad im Dachgeschoss mit Dusche hinter einer Glaswand und großen beigen Fli…\" loading=\"eager\" fetchpriority=\"high\" width=\"1320\" height=\"880\" decoding=\""
+      },
+      "lcp_phasen": {
+       "ttfb": 11,
+       "ladeverzoegerung": 45,
+       "ladezeit": 26,
+       "renderverzoegerung": 107
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2tbu000sg63yb.js",
+        "kb": 71.2
+       },
+       {
+        "pfad": "/_next/static/chunks/2oi9n3b4syua3.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/20bq5kh35yi_3.js",
+        "kb": 19.7
+       },
+       {
+        "pfad": "/_next/static/chunks/1y-c6c2plhxce.js",
+        "kb": 15.1
+       },
+       {
+        "pfad": "/_next/static/chunks/3b5xgw8j5i36w.js",
+        "kb": 13.1
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/2-2026-10-30T10-24-41-891Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 92,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3212.1683249999996,
+      "cls": 0,
+      "tbt": 113.00000000000023,
+      "fcp": 1356.3819,
+      "si": 1356.3819,
+      "js_kb": 201,
+      "font_kb": 57,
+      "gesamt_kb": 428,
+      "benchmark": 2035.5,
+      "lcp_element": {
+       "selector": "figure > div.border > picture > img.block",
+       "ausschnitt": "<img alt=\"Bad im Dachgeschoss mit Dusche hinter einer Glaswand und großen beigen Fli…\" loading=\"eager\" fetchpriority=\"high\" width=\"1320\" height=\"880\" decoding=\""
+      },
+      "lcp_phasen": {
+       "ttfb": 15,
+       "ladeverzoegerung": 40,
+       "ladezeit": 25,
+       "renderverzoegerung": 129
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2tbu000sg63yb.js",
+        "kb": 71.2
+       },
+       {
+        "pfad": "/_next/static/chunks/2oi9n3b4syua3.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/20bq5kh35yi_3.js",
+        "kb": 19.7
+       },
+       {
+        "pfad": "/_next/static/chunks/1y-c6c2plhxce.js",
+        "kb": 15.1
+       },
+       {
+        "pfad": "/_next/static/chunks/3b5xgw8j5i36w.js",
+        "kb": 13.1
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/4-2026-10-30T10-25-05-887Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 94,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3006.1758,
+      "cls": 0,
+      "tbt": 100.50000000000023,
+      "fcp": 1360.9576,
+      "si": 1477.786700725892,
+      "js_kb": 201,
+      "font_kb": 57,
+      "gesamt_kb": 428,
+      "benchmark": 1936,
+      "lcp_element": {
+       "selector": "figure > div.border > picture > img.block",
+       "ausschnitt": "<img alt=\"Bad im Dachgeschoss mit Dusche hinter einer Glaswand und großen beigen Fli…\" loading=\"eager\" fetchpriority=\"high\" width=\"1320\" height=\"880\" decoding=\""
+      },
+      "lcp_phasen": {
+       "ttfb": 21,
+       "ladeverzoegerung": 29,
+       "ladezeit": 35,
+       "renderverzoegerung": 123
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2tbu000sg63yb.js",
+        "kb": 71.2
+       },
+       {
+        "pfad": "/_next/static/chunks/2oi9n3b4syua3.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/20bq5kh35yi_3.js",
+        "kb": 19.7
+       },
+       {
+        "pfad": "/_next/static/chunks/1y-c6c2plhxce.js",
+        "kb": 15.1
+       },
+       {
+        "pfad": "/_next/static/chunks/3b5xgw8j5i36w.js",
+        "kb": 13.1
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/5-2026-10-30T10-25-17-703Z",
+      "profil_dateien": 20
+     }
+    ]
+   },
+   "desktop": {
+    "median": {
+     "perf": 100,
+     "a11y": 100,
+     "bp": 100,
+     "seo": 100,
+     "lcp": 615,
+     "cls": 0,
+     "tbt": 6,
+     "fcp": 368,
+     "si": 520,
+     "js_kb": 247,
+     "font_kb": 57,
+     "gesamt_kb": 565,
+     "benchmark": 2258,
+     "lcp_element": {
+      "selector": "figure > div.border > picture > img.block",
+      "ausschnitt": "<img alt=\"Bad im Dachgeschoss mit Dusche hinter einer Glaswand und großen beigen Fli…\" loading=\"eager\" fetchpriority=\"high\" width=\"1320\" height=\"880\" decoding=\""
+     },
+     "spanne": {
+      "perf": [
+       100,
+       100
+      ],
+      "a11y": [
+       100,
+       100
+      ],
+      "bp": [
+       100,
+       100
+      ],
+      "seo": [
+       100,
+       100
+      ],
+      "lcp": [
+       603,
+       647
+      ],
+      "cls": [
+       0,
+       0
+      ],
+      "tbt": [
+       4,
+       8
+      ],
+      "fcp": [
+       366,
+       385
+      ],
+      "si": [
+       483,
+       527
+      ],
+      "js_kb": [
+       247,
+       247
+      ],
+      "font_kb": [
+       57,
+       57
+      ],
+      "gesamt_kb": [
+       565,
+       565
+      ],
+      "benchmark": [
+       2033.5,
+       2325
+      ]
+     }
+    },
+    "laeufe": [
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 615.4157,
+      "cls": 0,
+      "tbt": 4,
+      "fcp": 385.3804,
+      "si": 526.5304245541014,
+      "js_kb": 247,
+      "font_kb": 57,
+      "gesamt_kb": 565,
+      "benchmark": 2258,
+      "lcp_element": {
+       "selector": "figure > div.border > picture > img.block",
+       "ausschnitt": "<img alt=\"Bad im Dachgeschoss mit Dusche hinter einer Glaswand und großen beigen Fli…\" loading=\"eager\" fetchpriority=\"high\" width=\"1320\" height=\"880\" decoding=\""
+      },
+      "lcp_phasen": {
+       "ttfb": 18,
+       "ladeverzoegerung": 31,
+       "ladezeit": 22,
+       "renderverzoegerung": 160
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2tbu000sg63yb.js",
+        "kb": 71.2
+       },
+       {
+        "pfad": "/_next/static/chunks/2oi9n3b4syua3.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/20bq5kh35yi_3.js",
+        "kb": 19.7
+       },
+       {
+        "pfad": "/_next/static/chunks/1y-c6c2plhxce.js",
+        "kb": 15.1
+       },
+       {
+        "pfad": "/_next/static/chunks/251vrq2nj0d4g.js",
+        "kb": 14.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/7-2026-10-30T10-25-44-238Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 647.4375499999999,
+      "cls": 0,
+      "tbt": 6,
+      "fcp": 367.67859999999996,
+      "si": 520.266415212155,
+      "js_kb": 247,
+      "font_kb": 57,
+      "gesamt_kb": 565,
+      "benchmark": 2325,
+      "lcp_element": {
+       "selector": "figure > div.border > picture > img.block",
+       "ausschnitt": "<img alt=\"Bad im Dachgeschoss mit Dusche hinter einer Glaswand und großen beigen Fli…\" loading=\"eager\" fetchpriority=\"high\" width=\"1320\" height=\"880\" decoding=\""
+      },
+      "lcp_phasen": {
+       "ttfb": 23,
+       "ladeverzoegerung": 34,
+       "ladezeit": 27,
+       "renderverzoegerung": 143
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2tbu000sg63yb.js",
+        "kb": 71.2
+       },
+       {
+        "pfad": "/_next/static/chunks/2oi9n3b4syua3.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/20bq5kh35yi_3.js",
+        "kb": 19.7
+       },
+       {
+        "pfad": "/_next/static/chunks/1y-c6c2plhxce.js",
+        "kb": 15.1
+       },
+       {
+        "pfad": "/_next/static/chunks/251vrq2nj0d4g.js",
+        "kb": 14.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/8-2026-10-30T10-25-57-921Z",
+      "profil_dateien": 20
+     },
+     {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 602.92245,
+      "cls": 0,
+      "tbt": 8.499999999999943,
+      "fcp": 366.2414,
+      "si": 482.74945805777355,
+      "js_kb": 247,
+      "font_kb": 57,
+      "gesamt_kb": 565,
+      "benchmark": 2033.5,
+      "lcp_element": {
+       "selector": "figure > div.border > picture > img.block",
+       "ausschnitt": "<img alt=\"Bad im Dachgeschoss mit Dusche hinter einer Glaswand und großen beigen Fli…\" loading=\"eager\" fetchpriority=\"high\" width=\"1320\" height=\"880\" decoding=\""
+      },
+      "lcp_phasen": {
+       "ttfb": 19,
+       "ladeverzoegerung": 28,
+       "ladezeit": 36,
+       "renderverzoegerung": 156
+      },
+      "cls_quellen": [],
+      "js_top": [
+       {
+        "pfad": "/_next/static/chunks/2tbu000sg63yb.js",
+        "kb": 71.2
+       },
+       {
+        "pfad": "/_next/static/chunks/2oi9n3b4syua3.js",
+        "kb": 44.8
+       },
+       {
+        "pfad": "/_next/static/chunks/20bq5kh35yi_3.js",
+        "kb": 19.7
+       },
+       {
+        "pfad": "/_next/static/chunks/1y-c6c2plhxce.js",
+        "kb": 15.1
+       },
+       {
+        "pfad": "/_next/static/chunks/251vrq2nj0d4g.js",
+        "kb": 14.3
+       }
+      ],
+      "profil": "frisch",
+      "profil_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/lh-profile/9-2026-10-30T10-26-12-236Z",
+      "profil_dateien": 20
+     }
+    ]
+   }
+  }
+ },
+ "satz": "lh-2-4325",
+ "base": "http://127.0.0.1:4325",
+ "laeufe": 3,
+ "bedingungen": "lokal next start (komprimiert), Erstbesuch mit Banner, Dritt-Hosts blockiert, Lighthouse-Standard-Drosselung (mobil: simuliert 4× CPU, Slow 4G; Desktop-Preset), frisches Chrome-Profil je Lauf, Aufwärmlauf, Median aus 3, Benchmark-Band ±15 %",
+ "benchmark_band": 0.15,
+ "benchmark_referenz": 2022.5,
+ "basisadresse": "http://127.0.0.1:4325",
+ "server_stand": {
+  "port": "4325",
+  "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/reinraum-f34c103b",
+  "commit": "f34c103b"
+ }
+}

@@ -1473,3 +1473,66 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
 | Bildrate `/` | in der Kette 0,48 %; im Wechsel vorher 0,2, 0, 0,88 %, nachher 0,14, 0, 0 % → nicht schlechter, Streuung |
 
 - **Folge:** E4-W2 schließt mit INHALT Teil B und START (laufen).
+
+## E-096 · UM-E4-INHALT Teil B abgenommen: Service-Strukturdaten, Video-Sitemap, Trennfugen (30.10.2026, 11:28 MEZ)
+- **Inhalt** (a220c9ec; Baumeister Sonnet, zwei Prüfer Sonnet, Nacharbeit; Notiz und Prüferbefunde in `belege/um-e4-inhalt-b/`):
+  - EP4: Service-Knoten je Ordner über `OrdnerService` im Layout; Texte aus den Ordnerseiten bzw. E0, keine erfundenen Werte. `NurUnterseiten` verhindert Doppelknoten.
+  - VIDEO: beide Einträge der Video-Sitemap entfernt, weil die Videos nie existierten. Die Adresse bleibt mit leerem urlset erreichbar (Vermerk G4).
+  - FS-FUGEN Nr. 5, 10, 11, 16, 17 über `mitFugen` (Schritt, Einstieg samt Ortszeile, Kurzformular, Preise, FinalCTA).
+  - Name der Einwilligungs-Checkbox im Kurzformular wieder mit Leerzeichen vor dem Link, Wortlaut unverändert.
+- **Prüfkette:** gemeinsam mit UM-E4-START, siehe E-097. Für B gilt daraus:
+  - Service-Typ auf 113 von 113 E0-Adressen, vorher 66. 112 als Knoten oberster Ebene; `/leistungen` trägt ihn eine Ebene tiefer in der Übersicht, wie im Bau von B.
+  - jsonld.mjs: 113 grün, 0 rot, kein doppelter Service-Knoten.
+  - Pixel: nur die gewollten Trennstellen im Vorspann von `/standorte/wetzlar` und `/blog` („Fliesen-verlegung“ statt „Fliesenver-legung“).
+- **Offen, in UM-E4-FS (PLAN):**
+  - fehlendes Leerzeichen im Namen der Einwilligung in fünf weiteren Formularen;
+  - Zusage „Kostenfreie“ im Kurzformular bei m360 und 200 %;
+  - FUGEN-Wörter im Rechner.
+  - Garantie-Wörter bleiben draußen, solange M-07 offen ist.
+  - `hyphenate-limit-chars` bleibt als vorhandener Befund von werte.mjs.
+
+## E-097 · UM-E4-START abgenommen, mit offenem Punkt LCP mobil (30.10.2026, 11:28 MEZ)
+- **Inhalt** (f34c103b; Baumeister Opus, zwei Prüfer Sonnet mit 17 Befunden, Nacharbeit Opus; Notiz, Befunde und Bilder in `belege/um-e4-start/`):
+  - Erster Bildschirm mobil: H1, Ort, Knopf, Telefon, dann das Startfoto (vorgeladenes LCP-Bild).
+  - Startfoto als echtes Querformat aus dem Bestand (IMG_2569): unter lg 3 : 2, ab lg 16 : 9, je Ansicht genau eine Datei, unscharfer Platzhalter.
+  - H1 mit der Grundlinie auf der Schnur, Maß an „Quadratmeter.“, Lot bis zum Foto; Wortlaut A-1 unverändert.
+  - Leitfaden mobil auf der Satzkante. Eine Auswahlebene: Plan-Zeichnungen in den Zeilen der Lage, Leistungen als ruhige Zeile mit mittigem Kopf.
+  - Treppe „So kommen Sie …“ reißt Stufe für Stufe an: `anriss`, nur `scale` und `opacity`. Die Schwelle gilt bei Elementen, die höher als das Fenster sind, für das Fenster (Prüferbefund: bei 200 % Schrift löste der Anriss sonst nie aus). Reduziert, ruhig, Notaus und Zurück/Vor: Linie voll. KERN 4.4.1 (K-008), Register gleichlautend.
+  - Galerie ohne Hover mit kurzem Verlauf. Kundenstimmen um ein Drittel versetzt, Kennzeile im freien Drittel; Versalwörter ohne Trennung (FS-K Nr. 12).
+  - Leiste: ruhendes Schloss „Cookies“ ab dem ersten Bild, Verhalten der Einwilligung unverändert (G8).
+  - Trennfugen Festpreisangebot und Verbundabdichtung. Beim Zusammenführen mit B greifen die Fugen auch im Fachwort: Die Glossarprüfung findet „Abdichtung“ weiter im dfn, Lesbarkeit ohne offenen Glossarbegriff.
+  - Hauptthread-Schub: Der eigene Anteil ist behoben (Treppen-Kreuz im Compositor). Der Rest kommt aus dem Platzhalter faul geladener Galeriebilder in Chromium (KERN-Regel, Befund mit Beleg).
+- **Nicht übernommen (Orchestrator):**
+  - Der Ausschnitt der Kundenstimmen bis zum letzten ganzen Satz (`bisSatzende`), der Tausch der Reihenfolge und die dazu gelockerte Spec „Wortlaut wörtlich“ in `funktion-navigation.spec.mjs`.
+  - Grund: G7 (keine Prüfung lockern, damit etwas besteht) und G8 (Wortlaut der Kundenstimmen).
+  - Die Stimmen stehen ganz wie vorher. Die Spec bleibt unverändert und ist grün. Frage an den Auftraggeber: MENSCHEN UM-13.
+  - Neu in MENSCHEN: UM-12 (Nahfotos von Fuge und Kante).
+- **Prüfkette** (vorher 3555b615 auf 4324, nachher f34c103b auf 4325, enthält INHALT-B; Skript `$SCRATCH/startpruef/pruefkette.sh`, Protokoll `belege/um-e4-start/pruefkette.txt`):
+
+| Prüfung | Ergebnis |
+|---|---|
+| Reinraum f34c103b | grün (lint 0, test 0) |
+| G8-Abgleich | gleich |
+| Suite reduziert / Bewegung an | 398 / 0 / 26 und 398 / 0 / 26 |
+| Bildrate `/` im Wechsel | vorher 0,2 und 2,13 %, nachher 0,07 und 0,14 % → nicht schlechter |
+| axe `--zustaende` | 396 Läufe, 0 ernste oder kritische Knoten |
+| ruhig und reduziert (11 Seiten) | 0 Befunde |
+| Register d1440 und m390 (je 11 Seiten) | 0 unbekannt, 0 ohne Register |
+| Strukturdaten (113 Adressen) | 113 grün; Service 113 von 113 |
+| Lesbarkeit (12 Hauptansichten) | 10 grün; rot nur die geschützten H1 auf `/` und `/bad/badsanierung` (A-1, A-2), wie vorher |
+| Pixel, Ruhezustand | 22 von 48 Paaren: `/` auf allen Geräten (gewollt), Vorspann `/standorte/wetzlar` und `/blog` (Fugen, B), Kundenstimme mit Versalwort auf `/balkon-terrasse` (FS-K Nr. 12), sonst nur Rauschen (4 bis 314 px) |
+| Lighthouse `/`, allein, 2 × 3 Läufe im Wechsel | mobil Leistung 95 → 94, LCP Median 2816 → 2997 ms, FCP 1057–1217 → 1355–1363 ms, TBT 111 → 113 ms, CLS 0; Desktop Leistung 100, LCP 637 → 613 ms |
+
+- **Offener Punkt LCP mobil auf `/`, +0,18 s:**
+  - Ursache belegt: Das Haupt-Stylesheet wuchs von 129,0 auf 135,8 KB. Turbopack legt dann die Schrift-Deklarationen (478 B) nicht mehr hinein, sondern liefert sie als zweite render-blockierende Datei aus.
+  - Lighthouse rechnet dafür eine weitere Runde vor dem ersten Malen: FCP in allen sechs Läufen rund 150 ms später. Das Bild selbst lädt nicht langsamer (Ladephasen gleich).
+  - Der Baumeister hatte im Endbau dasselbe gemessen (+163 ms, Reihe C).
+  - Behebung ist Maßnahme 1 von UM-E4-LEISTUNG, mit Denkprotokoll (G6), weil es um `experimental.cssChunking` in der gemeinsamen `next.config.ts` geht oder um ein kleineres Stylesheet; gemessen über alle Hauptansichten.
+  - Das Budget von 2,5 s verfehlte `/` schon vorher (Ausnahme A-1, E-085). Der Stand liegt in der Spanne von E0 (2,85 bis 2,89 s mit Brotli, E-085).
+- **Weitere offene Prüferbefunde (gering, nicht behoben):**
+  - Rhythmus der Bänder: eine K-016-Entscheidung, für E4-SICHT;
+  - Breite des Cookies-Felds (M-28);
+  - Startfoto bei DPR 2 leicht weich (Original 1312 px, hängt an UM-12);
+  - lange Handyseite;
+  - Flucht der Fotokante auf t1024.
+- **Folge:** E4-W2 ist abgeschlossen. E4-W3 läuft: NBSP und FS (wf_b29483d7-655), danach UM-E4-LEISTUNG allein mit Lighthouse.
