@@ -1,0 +1,92 @@
+=== REINRAUM 00:57:39
+exit 0
+lint 0 (20s)
+test 0 (2s)
+qa-graph 0 (0s)
+läuft: 0a0b1ba2 auf 4324
+läuft: 3555b615 auf 4325
+4324 200
+4325 200
+=== G8 00:58:54
+/ fuss gleich · zitate gleich · zahlen weg 0 neu 0
+/bad fuss gleich · zitate gleich · zahlen weg 0 neu 0
+/ueber-uns fuss gleich · zitate gleich · zahlen weg 0 neu 0
+/impressum fuss gleich · zitate gleich · zahlen weg 0 neu 0
+/datenschutz fuss gleich · zitate gleich · zahlen weg 0 neu 0
+g8 exit 0
+=== SUITE reduziert 00:59:10 last 1.90
+  ✓  424 [desktop] › tests/verlegen.spec.mjs:1266:3 › Reduzierte Bewegung › (12) reduzierte Bewegung: Wechsel vollständig, Überblendung über .verlegen-blende, keine Fliesen-Animation (1.6s)
+  ✓  422 [desktop] › tests/verlegen.spec.mjs:786:3 › Bewegung an (Wechsel mit Fliesen) › (20) Zurück im Browser, während die Fliesen abgenommen werden: Adresse, Inhalt, Scroll und Fokus (Prüfung E-043) (9.0s)
+
+  26 skipped
+  398 passed (8.8m)
+=== SUITE Bewegung an 01:08:01 last 5.34
+  ✓  424 [desktop] › tests/verlegen.spec.mjs:1266:3 › Reduzierte Bewegung › (12) reduzierte Bewegung: Wechsel vollständig, Überblendung über .verlegen-blende, keine Fliesen-Animation (2.0s)
+  ✓  422 [desktop] › tests/verlegen.spec.mjs:786:3 › Bewegung an (Wechsel mit Fliesen) › (20) Zurück im Browser, während die Fliesen abgenommen werden: Adresse, Inhalt, Scroll und Fokus (Prüfung E-043) (8.8s)
+
+  26 skipped
+  398 passed (10.2m)
+=== BILDRATE 01:18:12
+{'anteil_verworfen_prozent': 0.48, 'loaf_anzahl': 1, 'loaf_summe_ms': 159}
+=== BAU-FREI für START und INHALT-B 01:20:50
+=== AXE 01:20:50
+.............................................................................................................................................................................................................................................................
+axe: 396 Läufe · ernst/kritisch (Knoten) 0
+
+
+=== RUHIG/REDUZIERT 01:33:58
+ruhig / befunde 0 unsichtbar 10
+reduziert / befunde 0 unsichtbar 12
+ruhig /bad befunde 0 unsichtbar 9
+reduziert /bad befunde 0 unsichtbar 11
+ruhig /bad/badsanierung befunde 0 unsichtbar 6
+reduziert /bad/badsanierung befunde 0 unsichtbar 8
+ruhig /bad/barrierefreies-bad befunde 0 unsichtbar 7
+reduziert /bad/barrierefreies-bad befunde 0 unsichtbar 9
+ruhig /leistungen befunde 0 unsichtbar 8
+reduziert /leistungen befunde 0 unsichtbar 10
+ruhig /fliesen befunde 0 unsichtbar 7
+reduziert /fliesen befunde 0 unsichtbar 9
+ruhig /balkon-terrasse befunde 0 unsichtbar 6
+reduziert /balkon-terrasse befunde 0 unsichtbar 8
+ruhig /referenzen befunde 0 unsichtbar 6
+reduziert /referenzen befunde 0 unsichtbar 8
+ruhig /ueber-uns befunde 0 unsichtbar 6
+reduziert /ueber-uns befunde 0 unsichtbar 8
+ruhig /standorte/wetzlar befunde 0 unsichtbar 8
+reduziert /standorte/wetzlar befunde 0 unsichtbar 10
+ruhig /blog befunde 0 unsichtbar 6
+reduziert /blog befunde 0 unsichtbar 8
+=== REGISTER 01:42:07
+/ {'gefundene_kennungen': 9, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+/bad {'gefundene_kennungen': 10, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+/bad/badsanierung {'gefundene_kennungen': 9, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+/bad/barrierefreies-bad {'gefundene_kennungen': 10, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+/leistungen {'gefundene_kennungen': 11, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+/fliesen {'gefundene_kennungen': 10, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+/balkon-terrasse {'gefundene_kennungen': 10, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+/referenzen {'gefundene_kennungen': 11, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+/ueber-uns {'gefundene_kennungen': 11, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+/standorte/wetzlar {'gefundene_kennungen': 9, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+/blog {'gefundene_kennungen': 8, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+=== LESBARKEIT 01:45:31
+............
+Seiten 12 · GRÜN 10 · ROT 2 · ausgenommen 0 · Ziel /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/chorfix/pruef/lesbarkeit
+=== PIXEL 01:45:50
+Paare: 48 · mit Abweichung: 40 · Fehler: 0 · Pixel gesamt: 41159301 · Laufzeit: 6.08 min
+  1. /referenzen · d1440 · 2489680 Pixel · Anteil 1.201e-1 · Höhe 14045/14081
+  2. /bad/badsanierung · d1440 · 1838742 Pixel · Anteil 1.013e-1 · Höhe 12053/12151
+  3. /referenzen · d1920 · 3033955 Pixel · Anteil 9.754e-2 · Höhe 15924/15964
+  4. /standorte/wetzlar · d1440 · 1275216 Pixel · Anteil 8.945e-2 · Höhe 9692/9630
+  5. /bad/badsanierung · d1920 · 2376178 Pixel · Anteil 8.815e-2 · Höhe 13627/13737
+=== ENDE 01:51:55
+
+## Bildrate / im Wechsel (vorher 0a0b1ba2 auf 4324, nachher 3555b615 auf 4325; START und INHALT-B bauten nebenher)
+4324 last 10.51 {'anteil_verworfen_prozent': 0.2, 'loaf_anzahl': 4, 'loaf_summe_ms': 252}
+4325 last 2.52 {'anteil_verworfen_prozent': 0.14, 'loaf_anzahl': 1, 'loaf_summe_ms': 69}
+4325 last 0.67 {'anteil_verworfen_prozent': 0, 'loaf_anzahl': 1, 'loaf_summe_ms': 59}
+4324 last 0.60 {'anteil_verworfen_prozent': 0, 'loaf_anzahl': 0, 'loaf_summe_ms': 0}
+4324 last 0.67 {'anteil_verworfen_prozent': 0.88, 'loaf_anzahl': 1, 'loaf_summe_ms': 59}
+4325 last 0.58 {'anteil_verworfen_prozent': 0, 'loaf_anzahl': 0, 'loaf_summe_ms': 0}
+
+[exited with code 0]

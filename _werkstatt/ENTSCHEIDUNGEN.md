@@ -1448,3 +1448,28 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
 
 - **Offene Fragen an den Auftraggeber (MENSCHEN, Textvorschläge):** „Revision“ im Vergleich ohne Erklärung (Vorschlag „Später zugänglich“); Plattenstärke „2 cm“ im Vergleich gegen E-027 (Wortlaut der Quelle hat Vorrang, EP1 ist Muss); das Motto steht auf `/ueber-uns` nun dreimal; auf `/fliesen` erklärt nur die H3 „Verbundabdichtung“ und „DIN 18534“. Keine davon hält die Abnahme auf.
 - **Folge:** CHOR-FIX baut auf diesem Stand (Flächenfolge mit den neuen Abschnitten). Danach INHALT Teil B.
+
+## E-095 · UM-E4-CHOR-FIX abgenommen: Rhythmus der Hauptansichten wie auf `/` (30.10.2026, 05:39 MEZ)
+- **Inhalt** (3555b615; Baumeister Opus, zwei Prüfer Sonnet, ein mittlerer Befund bestätigt und behoben; Notiz und Prüferbefunde in `belege/um-e4-chor-fix/`):
+  - Die Leitfaden-Marke steht im Register (`data-motion="leitachse"` an der Bahn).
+  - Die Flächen wechseln ab dem Einstieg wie auf `/`: `aufFliese` auf neun Hauptansichten und allen Ortsseiten. Die Wissens- und Ortsvorlage reichen `fugeUnten` an den Einstieg. Wo sonst drei Fliesen folgten, stehen die Kundenstimmen auf Kalk.
+  - Fotoreihen mit Drittelversatz auf `/bad/badsanierung`, `/leistungen` und `/balkon-terrasse`.
+  - Kopf-Pausen an Musterwahl, Zweierbild und Galerie-Bedienung.
+  - Plan-Reihe auf `/leistungen` auf Touch ein Auftritt; Vorher-Nachher auf `/referenzen` auf Fliese.
+  - Angenommene Abweichung vom Briefing: Das Kantenkreuz der Bewertungen (`ReviewsSection.jsx`) rastet ein wie in `Abschnitt`.
+  - Bewusst gelassen (K-016, Werkzeuge): die Galerie auf `/referenzen`, die Artikelliste auf `/blog`, die Kalkstrecke um zwei Fotos auf `/bad/barrierefreies-bad`, der vorbestehende Kopf neben dem Formatregler auf `/leistungen`.
+- **Prüfkette** (vorher 0a0b1ba2 auf 4324, nachher 3555b615 auf 4325, dazu M-28-Nachtrag 41a751c8; Belege `belege/um-e4-chor-fix/`):
+
+| Prüfung | Ergebnis |
+|---|---|
+| Reinraum 3555b615 | grün |
+| G8-Abgleich | gleich |
+| Suite reduziert / Bewegung an | 398 / 0 / 26 und 398 / 0 / 26 (mit den Specs Einwilligung und Tracking zum neuen Namen des Cookie-Knopfs) |
+| axe `--zustaende` | 396 Läufe, 0 ernste oder kritische Knoten |
+| ruhig und reduziert (11 Seiten) | 0 Befunde |
+| Register (11 Seiten) | 0 unbekannt, 0 ohne Register (vorher je 2) |
+| Lesbarkeit (12 Hauptansichten) | 10 grün; rot nur die geschützten H1 auf `/` und `/bad/badsanierung` (A-1, A-2) |
+| Pixel, Ruhezustand | 40 von 48 Paaren, alle auf Seiten mit geänderter Flächenfolge (gewollt); `/` und `/kontakt` gleich |
+| Bildrate `/` | in der Kette 0,48 %; im Wechsel vorher 0,2, 0, 0,88 %, nachher 0,14, 0, 0 % → nicht schlechter, Streuung |
+
+- **Folge:** E4-W2 schließt mit INHALT Teil B und START (laufen).

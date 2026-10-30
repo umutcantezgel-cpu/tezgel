@@ -1,0 +1,92 @@
+{
+ "/": {
+  "fussWoerter": {
+   "weg": [],
+   "neu": []
+  },
+  "fussLinks": {
+   "weg": [],
+   "neu": []
+  },
+  "zitate": {
+   "weg": [],
+   "neu": []
+  },
+  "zahlen": {
+   "weg": [],
+   "neu": []
+  }
+ },
+ "/bad": {
+  "fussWoerter": {
+   "weg": [],
+   "neu": []
+  },
+  "fussLinks": {
+   "weg": [],
+   "neu": []
+  },
+  "zitate": {
+   "weg": [],
+   "neu": []
+  },
+  "zahlen": {
+   "weg": [],
+   "neu": []
+  }
+ },
+ "/ueber-uns": {
+  "fussWoerter": {
+   "weg": [],
+   "neu": []
+  },
+  "fussLinks": {
+   "weg": [],
+   "neu": []
+  },
+  "zitate": {
+   "weg": [],
+   "neu": []
+  },
+  "zahlen": {
+   "weg": [],
+   "neu": []
+  }
+ },
+ "/impressum": {
+  "fussWoerter": {
+   "weg": [],
+   "neu": []
+  },
+  "fussLinks": {
+   "weg": [],
+   "neu": []
+  },
+  "zitate": {
+   "weg": [],
+   "neu": []
+  },
+  "zahlen": {
+   "weg": [],
+   "neu": []
+  }
+ },
+ "/datenschutz": {
+  "fussWoerter": {
+   "weg": [],
+   "neu": []
+  },
+  "fussLinks": {
+   "weg": [],
+   "neu": []
+  },
+  "zitate": {
+   "weg": [],
+   "neu": []
+  },
+  "zahlen": {
+   "weg": [],
+   "neu": []
+  }
+ }
+}
