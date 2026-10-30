@@ -43,7 +43,7 @@ Kein Inhalt fällt weg. Einwilligung, Tracking-Verhalten, Logo und `/api/anfrage
   - (a) `experimental.cssChunking` in `next.config.ts`; für Turbopack nur `true` oder `'graph'` mit `requestCost`, siehe `node_modules/next/dist/docs/01-app/03-api-reference/05-config/01-next-config-js/cssChunking.md`;
   - (b) ein kleineres Haupt-Stylesheet (totes CSS entfernen, seltene Regeln in Komponenten- oder Seiten-CSS);
   - (c) ein anderer belegter Weg.
-- Für (a) gilt G6, Denkprotokoll in der Notiz:
+- Für (a) gilt G6, ein schriftlicher Entscheidungsvermerk in der Notiz:
   - Ziel und Alternativen;
   - Wirkung auf alle Routen: Zahl und Größe der Stylesheets je Hauptansicht vorher und nachher, aus dem Build-Manifest bzw. dem ausgelieferten HTML;
   - Risiko der Reihenfolge der Regeln;
@@ -51,7 +51,7 @@ Kein Inhalt fällt weg. Einwilligung, Tracking-Verhalten, Logo und `/api/anfrage
 - Ein Weg, der nur unter einer Schwelle bleibt und beim nächsten Paket wieder kippt, braucht eine Absicherung: einen Test in `test/`, der die Zahl der Stylesheets von `/` im Build prüft, oder die Begründung, warum das nicht geht.
 
 **Danach die Maßnahmen aus Schritt 1** mit der größten belegten Wirkung, zuerst für die Ansichten unter Budget.
-- Nur, was die Daten tragen. Keine weiteren experimentellen Schalter ohne Denkprotokoll.
+- Nur, was die Daten tragen. Keine weiteren experimentellen Schalter ohne Entscheidungsvermerk (G6).
 - Die Dokumentation von Next 16 liegt in `node_modules/next/dist/docs/` (AGENTS.md).
 
 ## Arbeitsweise (verbindlich)
@@ -60,7 +60,7 @@ Kein Inhalt fällt weg. Einwilligung, Tracking-Verhalten, Logo und `/api/anfrage
   `mkdir -p …/leist4/vor && (cd …/leist4/baum && tar --exclude=./node_modules --exclude=./.next -cf - .) | (cd …/leist4/vor && tar -xf -)`
 - Am Ende:
   - `cd …/leist4 && diff -ruN --exclude=node_modules --exclude=.next --exclude=cache --exclude=next-env.d.ts --exclude=tsconfig.tsbuildinfo vor baum > UM-E4-LEISTUNG.diff`
-  - Notiz `UM-E4-LEISTUNG.notiz.md` mit Ursachen, Maßnahmen, Denkprotokollen, Prüfzahlen und Erwartung je Ansicht.
+  - Notiz `UM-E4-LEISTUNG.notiz.md` mit Ursachen, Maßnahmen, Entscheidungsvermerken (G6), Prüfzahlen und Erwartung je Ansicht.
 - Bauen: Turbopack folgt dem Verweis `node_modules` nicht aus dem Projekt heraus. Für den Bau den Verweis durch eine echte Kopie mit dem Namen `node_modules` ersetzen (eine Kopie unter anderem Namen behandelt Turbopack als Projektcode, Hinweis aus UM-E4-NBSP), danach Verweis zurück und `.next` löschen. Speicher ist knapp.
 - Kein Lighthouse und keine Zeitmessung durch Agenten (E-076). Das Messen macht der Orchestrator danach als Skript, allein auf dem Rechner, im Wechsel vorher und nachher.
   - Gib eine nachprüfbare Erwartung je Ansicht an.
@@ -78,7 +78,7 @@ Kein Inhalt fällt weg. Einwilligung, Tracking-Verhalten, Logo und `/api/anfrage
 
 ## Rückgabe
 - Ursachen je Ansicht in einem Satz, Maßnahmen mit erwarteter Wirkung
-- Denkprotokolle
+- Entscheidungsvermerke (G6)
 - Prüfzahlen
 - Diff-Pfad und Dateien
 - offene Fragen
