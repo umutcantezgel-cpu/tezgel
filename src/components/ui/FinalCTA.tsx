@@ -76,8 +76,10 @@ export default function FinalCTA({
             {/* Anliegen: Kontext, Überschrift, Untertitel, Zusagen */}
             <div className="flex flex-col gap-6 p-4 md:p-8 lg:col-span-7 lg:p-12">
               {serviceContext && <p className="font-mono text-fs-1 text-tinte-2">{serviceContext}</p>}
+              {/* „Badprojekt“ und „Fachbetriebsleiter“ trennen an der Fuge: bei vier Zeichen vor dem Strich (hyphenate-limit-chars
+                  der Seite /preise) war „Bad-projekt“ nicht erlaubt und es entstand „Badpro-jekt“ (FS-K Nr. 17) */}
               <h2 id="final-cta-heading" className="font-anzeige text-fs-6 text-tinte">
-                {headline}
+                {mitFugen(headline)}
               </h2>
               {/* Zusammensetzungen trennen an der Fuge („Reaktions-zeit“; Browserprüfung E4-W1, Runde 4) */}
               <p className="font-text text-fs-2 text-tinte-2">{mitFugen(subtitle)}</p>

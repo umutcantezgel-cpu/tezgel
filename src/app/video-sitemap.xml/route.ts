@@ -1,40 +1,29 @@
 import { NextResponse } from 'next/server';
-import { SITE_CONFIG } from '@/shared/config/site';
 
 export const dynamic = 'force-static';
 
-export async function GET() {
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+// Video-Sitemap ohne Einträge (UM-E4-VIDEO, G4).
+//
+// Entfernt sind beide Einträge, weil jeder auf eine Datei zeigte, die es nicht gibt:
+//   - Startseite: player_loc /videos/handwerk.mp4
+//   - /bad/barrierefreies-bad: player_loc /videos/din18534.mp4
+// Der Ordner public/videos fehlt und steht in keinem Stand des Git-Verlaufs (Kundschafter E0-KUND-06, LAGEBILD). Die beiden
+// Vorschaubilder gehörten zu den Generatorbildern aus public/images/bad/ (E-013). Ein Eintrag mit toter Videoadresse nützt keiner
+// Suchmaschine und behauptet ein Video, das Besucher nicht sehen können.
+//
+// Ein gleichwertiger Ersatz besteht nicht: Die Seite zeigt kein Video. Die Adresse /video-sitemap.xml bleibt erreichbar (Status
+// 200, wohlgeformtes, leeres `urlset`), damit keine Adresse verloren geht (G4). Streng nach dem Schema der Sitemaps verlangt ein
+// `urlset` mindestens ein `url`; die Antwort ist deshalb wohlgeformt, aber kein Schema-gültiger Inhalt (Entscheidung des
+// Orchestrators: Adresse behalten). Sie steht weder in robots.ts noch in sitemap.ts.
+//
+// Kommt ein echtes Video auf eine Seite, gehört sein Eintrag hierher, mit einer Adresse, die antwortet: `url` mit `loc` der
+// Seite und `video:video` mit thumbnail_loc, title, description und content_loc oder player_loc, so wie die Seite es zeigt.
+const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-  <url>
-    <loc>${SITE_CONFIG.baseUrl}/</loc>
-    <video:video>
-      <video:thumbnail_loc>${SITE_CONFIG.baseUrl}/images/bad/walk-in-dusche.webp</video:thumbnail_loc>
-      <video:title>Handwerkliche Präzision: Großformatfliesen &amp; Badsanierung Tezgel</video:title>
-      <video:description>Exklusive Fliesenverlegung und barrierefreie Badsanierung von Fachbetrieb Fliesenverlegung Tezgel in Aßlar und Wetzlar.</video:description>
-      <video:player_loc>${SITE_CONFIG.baseUrl}/videos/handwerk.mp4</video:player_loc>
-      <video:duration>45</video:duration>
-      <video:publication_date>2025-01-15T08:00:00+01:00</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:uploader info="${SITE_CONFIG.baseUrl}">${SITE_CONFIG.companyName}</video:uploader>
-    </video:video>
-  </url>
-  <url>
-    <loc>${SITE_CONFIG.baseUrl}/bad/barrierefreies-bad</loc>
-    <video:video>
-      <video:thumbnail_loc>${SITE_CONFIG.baseUrl}/images/bad/barrierefreies-bad-holz.webp</video:thumbnail_loc>
-      <video:title>Barrierefreie Walk-In Dusche mit DIN 18534 Verbundabdichtung</video:title>
-      <video:description>Schritt-für-Schritt Einbau einer bodengleichen Dusche mit normgerechter Verbundabdichtung nach DIN 18534 in Mittelhessen.</video:description>
-      <video:player_loc>${SITE_CONFIG.baseUrl}/videos/din18534.mp4</video:player_loc>
-      <video:duration>60</video:duration>
-      <video:publication_date>2025-02-10T09:30:00+01:00</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:uploader info="${SITE_CONFIG.baseUrl}">${SITE_CONFIG.companyName}</video:uploader>
-    </video:video>
-  </url>
 </urlset>`;
 
+export async function GET() {
   return new NextResponse(xml, {
     status: 200,
     headers: {

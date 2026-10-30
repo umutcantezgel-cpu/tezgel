@@ -71,8 +71,9 @@ export default function PreisePage() {
         }
         aktionen={
           <>
+            {/* trennt an der Fuge „Projekt-anfrage“ statt „Projektan-frage“ (FS-K Nr. 16, Runde 5, 200 %) */}
             <Knopf href="#anfrage" icon="pfeil-rechts">
-              Projektanfrage starten
+              {mitFugen('Projektanfrage starten')}
             </Knopf>
             <Knopf
               href={siteConfig.contact.whatsappLink}

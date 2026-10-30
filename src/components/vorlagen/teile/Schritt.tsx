@@ -154,7 +154,8 @@ export default function Schritt({ inhalt, pfad, formular, titelId = 'anfrage', z
       leitachse
       flaeche="fliese"
       mitte
-      titel={inhalt.titel}
+      // Wörter aus FUGEN trennen an ihrer Fuge: „Badsanierung.“ in der dritten Zeile ragte bei 200 % über die Spalte (FS-K Nr. 5)
+      titel={mitFugen(inhalt.titel)}
       einleitung={<p><Textmarken text={inhalt.satz} /></p>}
     >
       {/* ruhig (K-016, E-047): alles mittig untereinander statt Kopf links und Knöpfe rechts zugleich */}

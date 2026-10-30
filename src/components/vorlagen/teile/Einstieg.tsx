@@ -28,6 +28,7 @@ import { ACHSE_LAGE } from '@/components/kern/Leitachse';
 import Rufnummer from '@/components/kern/Rufnummer';
 import Textmarken from '@/components/kern/Textmarken';
 import { knopfKlassen, seitenKlassen } from '@/components/kern/stile';
+import { mitFugen } from '@/components/kern/zusammen';
 import { COMPANY_DATA } from '@/config/company';
 import type { ArbeitId } from '@/config/arbeiten';
 import { buildWhatsAppUrl, kontextNachricht } from '@/lib/whatsapp';
@@ -79,8 +80,10 @@ export default function Einstieg({ pfad, brotkrumen, titel, ort, vorspann, bild,
         >
           {titel}
         </h1>
+        {/* die Ortszeile trägt Wörter aus FUGEN („Fliesenverlegung Tezgel aus Aßlar …“): Trennstelle an der Fuge, nicht im Wortteil
+            (UM-E4-INHALT Teil B, FS-K Nr. 10; bei m360 und 200 % gemessen) */}
         <p data-erstes-bild="ort" className="mt-6 max-w-mass font-text text-fs-4 text-balance text-tinte-2 max-sm:animate-none">
-          {ort}
+          {mitFugen(ort)}
         </p>
         <div data-eingang="knoepfe" className="mt-8 flex w-full flex-col items-center gap-3 max-sm:animate-none sm:flex-row sm:flex-wrap sm:justify-center">
           <Hauptknopf href={hauptziel} erstesBild breit />
@@ -101,9 +104,10 @@ export default function Einstieg({ pfad, brotkrumen, titel, ort, vorspann, bild,
             <span>Nachricht per WhatsApp</span>
           </a>
         </div>
-        {/* ohne data-eingang: das LCP-Element der Wissens- und Ortsseiten (E-067-4, siehe oben) */}
+        {/* ohne data-eingang: das LCP-Element der Wissens- und Ortsseiten (E-067-4, siehe oben). Wörter aus FUGEN trennen an
+            ihrer Fuge („Bad-sanierung“, „Fliesen-verlegung“; UM-E4-INHALT Teil B, FS-K Nr. 10) */}
         <p className="mt-8 max-w-mass font-text text-fs-3 text-pretty text-tinte-2">
-          <Textmarken text={vorspann} />
+          <Textmarken text={vorspann} fugen />
         </p>
       </div>
       {mitBild && (

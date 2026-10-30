@@ -15,6 +15,7 @@ import Fachwort from "@/components/kern/Fachwort";
 import Fugenkreuz from "@/components/kern/Fugenkreuz";
 import Knopf from "@/components/kern/Knopf";
 import { etikettKlassen } from "@/components/kern/stile";
+import { mitFugen } from "@/components/kern/zusammen";
 import type { GlossarId } from "@/config/glossar";
 
 interface PriceCardProps {
@@ -108,8 +109,9 @@ export default function PriceCard({
       {/* 5 · ein Weg */}
       <div className="mt-8 flex items-end">
         {/* Lange Wörter wie „Großformat“ trennen sich im Knopf erst ab 10 Zeichen, wenn die Breite bei großer Schrift nicht reicht */}
+        {/* Zusammensetzungen aus FUGEN („Badsanierung anfragen“) trennen an der Fuge statt „Badsa-nierung“ (FS-K Nr. 17) */}
         <Knopf href={ctaHref} variante={isPopular ? "haupt" : "neben"} className="w-full [hyphenate-limit-chars:10_4_4]">
-          {ctaText}
+          {mitFugen(ctaText)}
         </Knopf>
       </div>
     </Tag>

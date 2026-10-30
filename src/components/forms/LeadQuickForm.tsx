@@ -22,6 +22,7 @@ import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import { etikettKlassen, feldKlassen, knopfKlassen, kontrollKlassen, labelKlassen, linkKlassen } from '@/components/kern/stile';
 import PflichtHinweis from '@/components/kern/PflichtHinweis';
 import Rufnummer from '@/components/kern/Rufnummer';
+import { mitFugen } from '@/components/kern/zusammen';
 import { COMPANY_DATA } from '@/config/company';
 import { useSchnellanfrage } from '@/lib/formulare/useSchnellanfrage';
 
@@ -169,12 +170,12 @@ export function LeadQuickForm({
           <p id={titelId} className="mt-6 font-anzeige text-fs-5 font-semibold text-balance text-tinte">
             {heading}
           </p>
-          {subheading && <p className="mt-2 max-w-mass text-fs-2 text-tinte-2">{subheading}</p>}
+          {subheading && <p className="mt-2 max-w-mass text-fs-2 text-tinte-2">{mitFugen(subheading)}</p>}
         </div>
       )}
       {/* ohne eigene Überschrift (die Vorlage trägt sie, Ortsseiten): die Zusage steht trotzdem über den Feldern (M-07,
           Abnahme E3-BAU-10) */}
-      {!heading && subheading && <p className="mb-6 max-w-mass text-fs-2 text-tinte-2">{subheading}</p>}
+      {!heading && subheading && <p className="mb-6 max-w-mass text-fs-2 text-tinte-2">{mitFugen(subheading)}</p>}
 
       <form onSubmit={absenden} className="flex flex-col gap-6">
         {/* HONEYPOT - Hidden from real visitors and assistive tech */}
@@ -276,7 +277,9 @@ export function LeadQuickForm({
           />
         </div>
 
-        {/* Einwilligung (Rechtstext unverändert); das ganze Label ist klickbar, der Link hat 24 px Zielhöhe */}
+        {/* Einwilligung (Rechtstext unverändert); das ganze Label ist klickbar, der Link hat 24 px Zielhöhe. Wörter aus FUGEN
+            trennen nur an ihrer Fuge („Kontakt-aufnahme“, „Datenschutz-erklärung“ statt „Kontaktauf-nahme“, „Datenschutzer-klärung“;
+            FS-K Nr. 11); der Wortlaut bleibt Zeichen für Zeichen gleich, es kommen nur weiche Trennstriche dazu (G8) */}
         <div className="flex items-start gap-3">
           <input
             ref={einwilligungRef}
@@ -290,9 +293,12 @@ export function LeadQuickForm({
             className={clsx(kontrollKlassen, einwilligungFehlt && 'outline-2 outline-offset-2 outline-laser-tief focus-visible:outline-tinte')}
           />
           <label htmlFor={`consent-${sourceTag}`} className="min-w-0 cursor-pointer text-fs-2 text-tinte @max-3xs:hyphens-auto wrap-break-word">
-            Ich willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. Hinweise in der{' '}
+            {/* das Leerzeichen vor dem Link steht im Text davor, nicht als eigenes `{' '}`: React setzt zwischen zwei Textknoten einen
+                Kommentarknoten, und Chrome lässt dann das einzelne Leerzeichen im Namen der Checkbox aus („in derDatenschutz…“,
+                gemessen im Produktionsbau; UM-E4-INHALT Teil B, Nacharbeit) */}
+            {mitFugen('Ich willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. Hinweise in der ')}
             <Link href="/datenschutz" className={clsx(linkKlassen, 'py-1')}>
-              Datenschutzerklärung
+              {mitFugen('Datenschutzerklärung')}
             </Link>
             .
           </label>
@@ -347,7 +353,9 @@ export function LeadQuickForm({
             </span>
             <span className={`${etikettKlassen} hyphens-auto wrap-break-word`}>
               <Icon name="telefon" groesse={4} />
-              Kostenfreie Erstberatung
+              {/* ein Element für den ganzen Text: im Flex-Etikett wären sonst „Kostenfreie“ und das Wort mit Trennstelle einzelne
+                  Flex-Kinder und liefen über den Rand (Begründung am Kopf von kern/zusammen.tsx) */}
+              <span>{mitFugen('Kostenfreie Erstberatung')}</span>
             </span>
           </div>
         </div>

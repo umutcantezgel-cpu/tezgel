@@ -50,6 +50,20 @@ const FUGEN: Record<string, string> = {
   Terrassenplatten: 'Terrassen­platten',
   Festpreisgarantie: 'Festpreis­garantie',
   Reaktionszeit: 'Reaktions­zeit',
+  // UM-E4-INHALT Teil B (FS-K Nr. 10, 11, 16, 17; Runde 5 bei 200 % Schrift): Vorspann der Ortsseite, Formular, Knopf und
+  // Abschluss auf /preise trennten „Badsa-nierung“, „Fliesenver-legung“, „Projektan-frage“, „Badpro-jekt“, „Fachbe-triebsleiter“.
+  // Der Wortlaut bleibt gleich; nur die Trennstellen sitzen an den Fugen (weicher Trennstrich U+00AD, wie in den Zeilen darüber);
+  // lange Wörter mit mehreren Fugen („Daten-schutz-erklärung“), weil schon ein Teil allein in die schmale Spalte nicht passt.
+  Fliesenverlegung: 'Fliesen­verlegung',
+  Projektanfrage: 'Projekt­anfrage',
+  Badprojekt: 'Bad­projekt',
+  Fachbetriebsleiter: 'Fach­betriebs­leiter',
+  Kontaktaufnahme: 'Kontakt­aufnahme',
+  Datenschutzerklärung: 'Daten­schutz­erklärung',
+  Erstberatung: 'Erst­beratung',
+  // Abgeleitetes Wort ohne Fuge: eine Trennstelle an der Silbengrenze („Verarbei-tung“), nicht „Verar-beitung“ (Nr. 11). Ohne
+  // Trennstelle bräche das Wort in der schmalen Einwilligungsspalte bei 200 % Schrift mit overflow-wrap ohne Strich („Verarbeitun“ und „g“).
+  Verarbeitung: 'Verarbei­tung',
 };
 
 const FUGEN_MUSTER = new RegExp(`(${Object.keys(FUGEN).join('|')})`);

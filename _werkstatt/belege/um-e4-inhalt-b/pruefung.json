@@ -1,0 +1,157 @@
+{
+ "bau": {
+  "npm_test": "256 Tests, 256 bestanden, 0 rot (Node 24.22.1, Endstand in baum-b; sieben neue Tests in test/meta.test.mjs: Strukturdaten 1 bis 6 und Fugen 1)",
+  "tsc": "npx tsc --noEmit mit vorübergehender next-env.d.ts: Exit 0, 0 Fehler (Datei und tsbuildinfo danach gelöscht)",
+  "eslint": "npx eslint: Exit 0, keine Meldung",
+  "werte": "werte.mjs --arbeitsbaum --dateien (19 geänderte Dateien): 2 Befunde, beide 'beliebig' und beide schon in HEAD (hyphenate-limit-chars:10_4_4 in preise/page.jsx und PriceCard.tsx; vor-B mit denselben Dateien ebenfalls 2). 0 neue Befunde. Auf 0 nur mit einer Nutzgröße in globals.css oder Regel in werte-regeln.json, Entscheidung beim Orchestrator. Bewegung (bewegung.mjs register, reduziert, ruhig auf 4 Seiten, m390): unbekannt und ohne_register leer, 0 Bewegungsbefunde.",
+  "jsonld": "jsonld.mjs auf den 113 E0-Adressen mit Typ Service (Port 4430): 113 grün, 0 rot. Seiten mit Typ Service: 113 von 113 (HTML, beliebige Tiefe, E0-Zählweise), 112 als oberster Knoten (/leistungen trägt Service nur verschachtelt, wie in E0 und HEAD). Vorher (vor-B/HEAD): 66 bzw. 65. Kein Doppelknoten auf irgendeiner Seite, Ordnerseiten genau ein Knoten.",
+  "diff_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/inhalt/UM-E4-INHALT-B.diff (Notiz: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/inhalt/UM-E4-INHALT-B.notiz.md)",
+  "dateien": [
+   "src/lib/schema.ts",
+   "src/lib/ordnerdienst.ts (neu)",
+   "src/components/seo/OrdnerService.tsx (neu)",
+   "src/components/seo/NurUnterseiten.tsx (neu)",
+   "src/app/(bestand)/bad/layout.tsx",
+   "src/app/(bestand)/balkon-terrasse/layout.tsx",
+   "src/app/(bestand)/fliesen/layout.tsx",
+   "src/app/(bestand)/naturstein/layout.tsx (nicht in PLAN-Liste)",
+   "src/app/(bestand)/treppen/layout.tsx (nicht in PLAN-Liste)",
+   "src/app/(bestand)/untergrund-abdichtung/layout.tsx (nicht in PLAN-Liste)",
+   "test/meta.test.mjs",
+   "src/app/video-sitemap.xml/route.ts",
+   "src/components/kern/zusammen.tsx",
+   "src/components/kern/Textmarken.tsx",
+   "src/components/vorlagen/teile/Einstieg.tsx",
+   "src/components/vorlagen/teile/Schritt.tsx",
+   "src/components/forms/LeadQuickForm.tsx",
+   "src/components/pricing/PriceCard.tsx",
+   "src/components/ui/FinalCTA.tsx",
+   "src/app/(bestand)/preise/page.jsx"
+  ],
+  "umgesetzt": [
+   "EP4: Service-Knoten je Ordner aus Tabelle ORDNER_DIENSTE (schema.ts, nur Texte der Ordnerseiten/E0, keine erfundenen Werte) über OrdnerService im Layout; NurUnterseiten (usePathname) lässt die Ordnerseite aus, die ihren Knoten selbst trägt, also kein Doppelknoten. 66 auf 113 Seiten mit Typ Service. Zusätzlich naturstein, treppen, untergrund-abdichtung (E0: 10 Unterseiten); beratung/layout.tsx unverändert. Tests Strukturdaten 1 bis 6.",
+   "VIDEO: beide Einträge der video-sitemap.xml entfernt (player_loc auf nicht vorhandene /videos/*.mp4, public/videos in keinem Commit); Adresse bleibt mit leerem, wohlgeformtem urlset erreichbar (200); Vermerk G4 im Kopfkommentar und in der Notiz.",
+   "FS-FUGEN Nr. 5: Abschluss-H2 über mitFugen (Bad-/sanierung), gemessen und im Bild bei 200 %.",
+   "FS-FUGEN Nr. 10: Textmarken mit Eigenschaft fugen, Einstieg-Vorspann setzt sie (Bad-sanierung, Fliesenverlegung in einer Zeile); FUGEN + Fliesenverlegung.",
+   "FS-FUGEN Nr. 11: LeadQuickForm setzt Einleitung, Einwilligungssatz (Wortlaut unverändert), Datenschutzlink und Zusage über mitFugen; FUGEN + Fachbetriebsleiter (Fach-betriebs-leiter), Kontaktaufnahme, Datenschutzerklärung (Daten-schutz-erklärung), Erstberatung, Verarbeitung (Verarbei-tung); Zusage in einem span, weil sonst Überlauf im Flex-Etikett (Überlauf danach 0).",
+   "FS-FUGEN Nr. 15 (b, c): nach Messung bei 200 % (m390, t1024, d1440, vor-B und neu) bereits an der Fuge, keine Änderung. Nr. 15 (a) Vakuumhebetechnik bleibt offen nach E-065.",
+   "FS-FUGEN Nr. 16 (nur das Wort): Knopf Projektanfrage starten über mitFugen, FUGEN + Projektanfrage; loser Pfeil bleibt FS.",
+   "FS-FUGEN Nr. 17: PriceCard-Knopf (Bad-sanierung anfragen) und FinalCTA-H2 über mitFugen, FUGEN + Badprojekt.",
+   "Nicht angefasst: Tun.tsx, Ablauf.tsx, Stimmen.tsx, Nr. 2, 6, 12, globals.css, Kundenstimmen, Rechtstexte, H1, B-01. / und /kontakt im HTML-Vergleich vor/nach identisch."
+  ],
+  "bilder": [
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/inhalt/bild-B/neu/ (44 PNG, je m390, t1024, d1440 in 100 % und 200 %: standorte__wetzlar-*-vorspann.png, standorte__wetzlar-*-formular.png, bad__badsanierung-*-schritt.png, preise-*-knopf-einstieg.png, preise-*-karte-badsanierung.png, preise-*-zusagen-festpreis.png, preise-*-abschluss.png)",
+   "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/inhalt/bild-B/port4433/standorte__wetzlar-m390-200-formularfuss.png (Vorher-Stand vor-B)"
+  ],
+  "offene_fragen": [
+   "EP4: Drei Layouts (naturstein, treppen, untergrund-abdichtung) stehen nicht in der PLAN-Dateiliste, sind für den Zielwert 113 aber nötig (E0 hatte dort 10 Unterseiten mit Service). Bitte bestätigen.",
+   "EP4: NurUnterseiten ist eine kleine Clientkomponente (usePathname), weil ein Layout die Adresse nicht kennt. Alternative: Ordnerseiten geben ihren eigenen Knoten ab und das Layout setzt ihn für den ganzen Ordner (sechs page.jsx außerhalb der Dateiliste).",
+   "VIDEO: leeres urlset entspricht streng nicht dem XSD (mindestens ein url); Alternative wäre die Route ganz zu löschen (404). Ich habe nach G4 die Adresse behalten.",
+   "werte.mjs zeigt 2 vorhandene Befunde (hyphenate-limit-chars:10_4_4 in preise/page.jsx, PriceCard.tsx), nicht neu; die Schreibweise steht auch in PricingCalculator.tsx und OptionGroup.jsx. Nutzgröße in globals.css oder Regel in werte-regeln.json?",
+   "Textvergleich: Weiche Trennstriche (U+00AD) stehen im Text und werden von texte.mjs und lesbarkeit.mjs nicht entfernt; betroffene Seiten und Texte in der Notiz, als erlaubte Änderungen eintragen.",
+   "Zusammenführung: zusammen.tsx (START ergänzt ebenfalls am Ende von FUGEN), LeadQuickForm.tsx (FS Nr. 9 ändert den Sendeknopf), PriceCard.tsx und preise/page.jsx (FS Nr. 13, 14). Außerdem ist Verbundabdichtung (START Nr. 6) ein Glossarbegriff, gleicher Zielkonflikt wie Vakuumhebetechnik (E-065).",
+   "Weitere Stellen mit FUGEN-Wörtern ohne mitFugen, nicht in FS-K: Einwilligung im PricingCalculator (Kontaktauf-nahme bei 200 %), Beschreibung der Preiskarte Boden & Wand Standard (Fliesenver-legung).",
+   "buildServiceNode setzt bei offers price 0.00 und priceValidUntil 2026-12-31 als Standardwerte (nur /beratung betroffen, läuft in zwei Monaten ab; E-091), nicht Teil von EP4, nicht verändert.",
+   "Pre-existing: /preise bei t1024 und 200 % hat 41 Elemente mit waagerechtem Überlauf, im Vergleichsstand gleich (FS Nr. 13)."
+  ]
+ },
+ "pruefungen": [
+  {
+   "befunde": [
+    {
+     "datei": "src/components/vorlagen/teile/Einstieg.tsx",
+     "zeile": "82-84 (Ortszeile `{ort}`; Vorspann mit `fugen` in Zeile 107)",
+     "schwere": "gering",
+     "befund": "FS-K Nr. 10 ist nur für den Vorspann gelöst, nicht für die Ortszeile im selben Einstieg-Block. 'Fliesenverlegung' steht jetzt in FUGEN, aber `{ort}` läuft ohne `mitFugen`. Auf m360 bei 200 % trennt die Zeile 'Fliesenver-/legung Tezgel aus Aßlar, direkt neben Wetzlar.' im Wortteil, direkt über dem behobenen Vorspann 'Bad-/sanierung'. Nicht vom Diff erzeugt. Die Notiz hat m360 nicht gemessen (nur m390, t1024, d1440), dort tritt es nicht auf.",
+     "beleg": "Eigene Messung auf Port 4431, Produktionsbau von baum-b, 200 % Schrift, m360: '/standorte/wetzlar TEIL Fliesenver|legung ← p: Fliesenverlegung Tezgel aus Aßlar, direkt neben Wetzlar.' Gleich auf /standorte/giessen, /blog und /fliesen. Bild: .../inhalt/pruef-B-0-bild/wetzlar-einstieg-m360-200.png. Quelle des Texts: src/inhalte/orte.ts Zeilen 24-27. Messprotokoll: .../inhalt/pruef-B-0-mess/lauf-m360-200.log.",
+     "vorschlag": "In Einstieg.tsx `{mitFugen(ort)}` setzen. Das ist eine Zeile in einem Vorlagenteil, `ort` ist immer ein String. Alternativ in der Notiz als bekannter Rest bei m360 führen. Auf `/` ändert das nichts, denn `/` nutzt EinstiegMitte oder EinstiegPlanblatt."
+    },
+    {
+     "datei": "src/components/forms/LeadQuickForm.tsx",
+     "zeile": "350-356 (Zusage 'Kostenfreie Erstberatung')",
+     "schwere": "gering",
+     "befund": "Die Notiz meldet für Nr. 11 'Überlauf 0 auf allen drei Geräten'. Das gilt nur für das Seitenmaß. Auf m360 bei 200 % ragt 'Kostenfreie' in der Zusage-Zeile 22 px über das Etikett hinaus, in den Innenrand der Karte, aber nicht über deren Rand. Das ist nicht neu: Im nachgebauten Altzustand (Text ohne span, ohne Trennstriche) ist der Überstand gleich. Der span ändert daran bei m360 nichts. Bei m390 und q844 ist die Zeile in Ordnung. 'Erst-/beratung' trennt an der Fuge. Die Zeile ist die Fußzeile aus Nr. 11 und bei m360 nicht ganz sauber.",
+     "beleg": "Messung m360, 200 %, /standorte/wetzlar: Etikett 81..279 px, Text bis 301 px, scrollWidth 220 gegen clientWidth 198, Karte 32..328 px. Altzustand per DOM-Austausch nachgebaut, gleiche Werte. m390: Überstand -8 (kein Überstand), q844: 0. Bilder: .../inhalt/pruef-B-0-bild/wetzlar-karte-m360-200.png und zusage-m360-200.png. Skripte: .../inhalt/pruef-B-0-skript/zusage.mjs und zusage-alt.mjs.",
+     "vorschlag": "Als bekannten Rest bei m360 in der Notiz vermerken, oder dem Paket FS geben (Etikett-Breite oder kleinere Schrift im Etikett). Die Aussage 'Überlauf 0 auf allen Geräten' auf die gemessenen Geräte beschränken."
+    },
+    {
+     "datei": "src/components/pricing/PricingCalculator.tsx",
+     "zeile": "311 (Überschrift der Zusammenfassung 'Unverbindliche Projektanfrage')",
+     "schwere": "gering",
+     "befund": "Hinweis 4 der Notiz ('weitere Stellen mit FUGEN-Wörtern ohne mitFugen') nennt hier nur die Einwilligung und die Preiskarte. Dasselbe gilt für die Überschrift 'Unverbindliche Projektanfrage'. 'Projektanfrage' steht seit diesem Diff in FUGEN (für Nr. 16), die Überschrift auf /preise und /faq geht aber ohne mitFugen durch und trennt auf m360 bei 200 % 'Projektan-/frage'. Nicht vom Diff erzeugt, gehört zu FS Nr. 14 (PricingCalculator).",
+     "beleg": "Messung m360, 200 %: '/preise TEIL Projektan|frage ← p: Unverbindliche Projektanfrage' und dasselbe auf /faq (lauf-m360-200.log). Quelle: PricingCalculator.tsx:311.",
+     "vorschlag": "In Hinweis 4 der Notiz ergänzen, damit FS die Stelle zusammen mit Nr. 14 und der Einwilligung (Zeile 475) setzt. Teil B soll PricingCalculator.tsx nicht anfassen."
+    },
+    {
+     "datei": "src/app/video-sitemap.xml/route.ts",
+     "zeile": "Kopfkommentar, Zeilen 14-15 (Diff 151-152)",
+     "schwere": "gering",
+     "befund": "Der Kommentar nennt die Antwort 'gültiges, leeres `urlset`'. Die Notiz sagt selbst, ein leeres urlset entspreche streng nicht dem Sitemap-Schema (mindestens ein `url`). Der Kommentar widerspricht damit der Notiz. Die Antwort ist wohlgeformt, Status 200, ohne Eintrag. Die Adresse steht weder in robots.ts noch in sitemap.ts. Die Entscheidung 'leer behalten oder 404' bleibt offen, wie die Notiz sagt.",
+     "beleg": "curl auf den Produktionsbau (Port 4431): HTTP 200, Body nur `<urlset xmlns=… xmlns:video=…></urlset>`. /sitemap.xml enthält kein 'video', die robots.txt-Ausgabe enthält keinen Verweis. `public/videos` fehlt im Baum und in `git log --all -- public/videos` (leer). Beide entfernten Einträge zeigten auf diese fehlenden Dateien, also ist das Entfernen beider Einträge belegt.",
+     "vorschlag": "Im Kommentar 'wohlgeformtes' statt 'gültiges' schreiben. Die Entscheidung über Löschen (404) oder leeres urlset beim Orchestrator festhalten, das G4-Vermerk gehört in ENTSCHEIDUNGEN."
+    },
+    {
+     "datei": "src/components/ui/FinalCTA.tsx",
+     "zeile": "41-42; ebenso src/app/(bestand)/preise/page.jsx 69 und 255",
+     "schwere": "gering",
+     "befund": "Nicht durch den Diff verursacht, aber in Dateien und Bildern von Teil B sichtbar: Der Diff fügt kein Garantie-Wort hinzu (alle '+'-Zeilen geprüft). Im berührten FinalCTA.tsx stehen aber die Standardpunkte 'Verbindlicher Festpreis ohne versteckte Kosten' und 'Staubschutz-Garantie'. Auf /preise stehen 'garantiert ohne versteckte Nebenkosten' (page.jsx:69) und 'garantiertem Staubschutz' (page.jsx:255). Sie sind auf dem Bild preise-m390-200-abschluss.png sichtbar. Das sind die Wörter aus M-07. MENSCHEN M-23 verschiebt sie auf eine spätere Welle.",
+     "beleg": "grep in baum-b: FinalCTA.tsx:41-42, preise/page.jsx:69 und :255. Bild: .../inhalt/bild-B/neu/preise-m390-200-abschluss.png. grep der '+'-Zeilen im Diff nach 'arantie|Festpreis|Staubschutz': keine Treffer.",
+     "vorschlag": "Nur zur Kenntnis für den Orchestrator (M-07, M-23). Kein Handlungsbedarf in Teil B."
+    }
+   ],
+   "gesamturteil": "Teil B ist inhaltlich vollständig und an den genannten Stellen umgesetzt. Ich habe keinen Fehler gefunden, der eine Rückgabe verlangt. Die fünf Befunde sind gering und nicht vom Diff erzeugt.\n\nEP4: Eigener Produktionsbau von baum-b (Port 4431). Alle 113 E0-Adressen tragen den Typ Service, ohne Doppelknoten auf oberster Ebene. Das sind 21 Seiten unter /bad, 4 unter /balkon-terrasse, 15 unter /fliesen, 3 unter /naturstein, 4 unter /treppen und 6 unter /untergrund-abdichtung. Dazu kommen /beratung, /fliesenreparatur und /schadensanalyse mit eigenem Knoten sowie 57 Leistungsseiten (zwei nur über OfferCatalog). `jsonld.mjs` auf allen 113: 113 grün, 0 rot. Es liefert 112 Seiten mit Service als obersten Knoten. Die 113 entstehen nur bei der E0-Zählweise (beliebige Tiefe), weil /leistungen den Service nur verschachtelt trägt. Das war schon in E0 so; die Notiz sagt es offen. Die Werte stimmen Wort für Wort mit den E0-Layouts (`git show e097bd58^`, `522a313e^`) und mit den heutigen Ordnerseiten überein. Es sind keine Preise, Bilder oder Bewertungen erfunden. Die Abweichung von der PLAN-Dateiliste (drei Layouts mehr, `beratung/layout.tsx` unberührt) ist begründet und für 113 nötig: 113 = 66 + 47 Unterseiten. `npm test` in meiner Kopie: 256 von 256 bestanden.\n\nVIDEO: Beide Einträge sind zu Recht entfernt, weil `public/videos` nie im Verlauf stand. Die Adresse antwortet mit 200 und leerem urlset. Offen sind die Entscheidung 'leer behalten oder 404' (Befund 4) und der Vermerk in ENTSCHEIDUNGEN.\n\nFS-FUGEN: Nr. 5, 10 (Vorspann), 11, 16 und 17 sind an den genannten Stellen umgesetzt, Nr. 15 (b) und (c) nach Messung zu Recht unverändert, 15 (a) bleibt offen nach E-065. Die Wörter stehen am Ende von FUGEN, Tun, Ablauf und Stimmen sind unberührt. Der Wortlaut der Einwilligung ist unverändert, es kommen nur weiche Trennstriche dazu. Sie wird weder gespeichert noch in einer Spezifikation per Text gesucht, Tests und Specs nutzen Rollen. Auf m360, q844 und d2560 bricht bei 100 % und bei 200 % keine berührte Stelle im Wortteil, alle trennen an der Fuge. Der Seitenüberlauf ist an den berührten Stellen 0. Messung bei 200 %: 21 Seiten auf m360, m390 und d2560, 17 auf q844. Gelegentlicher Überlauf auf /standorte, /beratung, /naturstein, /untergrund-abdichtung, /foerderung und /termin stammt aus anderen Bausteinen (Einsatzorte, Öffnungszeiten, H1, Tabelle) und nicht aus diesem Diff. Der Wert auf /termin (m360) ließ sich nicht wiederholen. Auf t1024 hat /preise Überlauf an der Balkon-Karte und den FAQ-Knöpfen, wie in der Notiz (Vergleichsstand). Mit der Messung vom Baumeister (m390, t1024, d1440) und meiner (m360, q844, d2560) sind alle Geräte aus der Linse abgedeckt. Die Seiten `/`, /datenschutz, /impressum, /agb, /widerruf und /login tragen keines der acht neuen Fugenwörter.\n\nNeue Abschnitte oder Kartenreihen entstehen in Teil B nicht, K-003 Prinzip 4 ist nicht berührt. Garantie-Wörter bringt der Diff keine mit.\n\nMeine Kopie unter .../inhalt/pruef-B-0 hat `node_modules` und `.next` nicht mehr, der Server auf Port 4431 ist über seine Prozessgruppe beendet, das Repository und baum-b sind unverändert. Bilder, Messprotokolle und Skripte liegen unter .../inhalt/pruef-B-0-bild, -mess, -skript und -jsonld.\""
+  },
+  {
+   "befunde": [
+    {
+     "datei": "src/app/(bestand)/preise/page.jsx und src/components/pricing/PriceCard.tsx",
+     "zeile": "page.jsx:251, PriceCard.tsx:113",
+     "schwere": "gering",
+     "befund": "Die Abnahmeschwelle „werte.mjs 0 Befunde“ ist für die geänderte Dateimenge formal nicht erreicht: zwei Befunde der Art `beliebig` (`[&_h2]:[hyphenate-limit-chars:10_4_4]` und `[hyphenate-limit-chars:10_4_4]`) stehen in zwei Dateien, die der Diff anfasst. Der Diff bringt keinen neuen Wert hinein, der Baumeister hat beide ehrlich gemeldet.",
+     "beleg": "Eigener Lauf in baum-b (Node 24.22.1): `werte.mjs --arbeitsbaum --dateien <18 geänderte Quelldateien> --ziel <eigener Ordner>` ergibt `befunde gesamt 2`, beide `beliebig`, Exit 1. Dieselben Zeichenketten stehen unverändert im Vergleichsstand vor-B (page.jsx:250, PriceCard.tsx:111), nur um 1 bzw. 2 Zeilen verschoben.",
+     "vorschlag": "Orchestrator entscheidet: entweder Nutzgröße für `hyphenate-limit-chars` in `globals.css` (gemeinsame Datei) oder eine Regel in `werte-regeln.json`, damit die Datei-Prüfung für diese beiden Dateien auf 0 kommt. Im Diff selbst nichts zu ändern."
+    },
+    {
+     "datei": "src/app/video-sitemap.xml/route.ts",
+     "zeile": "19-22",
+     "schwere": "gering",
+     "befund": "Die Adresse liefert nach der Entfernung beider Einträge ein `urlset` ohne ein einziges `url`-Element. Das entspricht streng nicht dem Sitemap-Schema (mindestens ein `url`). Der Baumeister hat das selbst als offene Frage notiert. Die Adresse steht weder in `robots.ts` noch in `sitemap.ts` noch in `adressen-e0.csv`, ein Schaden entsteht daher nicht. Entfernung, Vermerk (G4) und Kopfkommentar sind sonst korrekt.",
+     "beleg": "`curl http://127.0.0.1:4432/video-sitemap.xml` im eigenen Produktionsbau: Status 200, `content-type: application/xml`, Körper nur `<urlset …></urlset>`. Suche nach `video-sitemap` in src, public, next.config.ts, vercel.json und README.md findet nur den Kopfkommentar der Route.",
+     "vorschlag": "Orchestrator wählt: Route behalten (wie umgesetzt, Adresse bleibt 200) oder die Datei löschen (404), weil nichts auf die Adresse verweist und kein Video existiert."
+    },
+    {
+     "datei": "src/components/forms/LeadQuickForm.tsx",
+     "zeile": "296-298",
+     "schwere": "gering",
+     "befund": "Im Zugänglichkeitsbaum von Chrome lautet der Name der Einwilligungs-Checkbox „… Hinweise in derDaten­schutz­erklärung.“: Das Leerzeichen vor dem Link fällt aus, weil es als eigener Textknoten (`{' '}`) nach dem Kommentarknoten von React steht. Das ist nicht vom Diff verursacht, denn der Aufbau an dieser Stelle war vorher gleich, liegt aber genau in der vom Diff geänderten Zeile. Der Wortlaut wird für Vorleser an dieser Stelle verklebt.",
+     "beleg": "CDP `Accessibility.getFullAXTree` auf `/standorte/wetzlar` (d1440, Port 4432): checkbox-Name endet auf `in derDaten<SHY>schutz<SHY>erklärung.`; die Kinder des Labels sind StaticText „… ein. Hinweise in der“, dann direkt der Link. Der Aufbau des Vorstands (ein Textknoten, Kommentarknoten, Textknoten ' ', Link) im DOM nachgebaut ergibt denselben Namen „in derDatenschutzerklärung.“ (ohne Kommentarknoten dagegen mit Leerzeichen). Hinweis: Das Verhalten im echten Vorstandsbau habe ich nicht gemessen.",
+     "vorschlag": "Das Leerzeichen in den vorangehenden Textknoten legen (`mitFugen('… Hinweise in der ')` ohne `{' '}`) oder ein geschütztes Leerzeichen verwenden; danach den Namen im Zugänglichkeitsbaum erneut prüfen. Kann auch als eigener Punkt an den Orchestrator gehen, weil es ein Vorstandsmangel ist."
+    }
+   ],
+   "gesamturteil": "Der Diff hält die Leitplanken ein und ich habe keinen Befund gefunden, der gegen sie verstößt.\n\n**Eigene Läufe in baum-b mit Node 24.22.1**\n- `npm test`: 256 von 256 bestanden.\n- `npx eslint`: Exit 0.\n- `werte.mjs`: 2 Befunde, beide schon im Vorstand (siehe Befund 1).\n\n**Eigener Produktionsbau** unter pruef-B-1, Port 4432, Sperre, Einwilligung abgelehnt:\n- Der Build lief mit Exit 0 durch.\n- Die 20 Dateien des Diffs stimmen mit baum-b gegen vor-B überein.\n- `src/proxy.ts` ist nicht berührt.\n\n**Unantastbares und B-01**\n- B-01 (E-078): Der Diff berührt weder `Verlegen`, `bewegung.css` noch Bewegungsdateien.\n- H1 A-1/A-2: Der Diff berührt keine H1. Auf `/` steht kein einziger weicher Trennstrich, kein H1 der geprüften Seiten trägt einen neuen.\n- Rechtstexte, Kundenstimmen, Fuß: In `/datenschutz`, `/impressum` und `/agb` ist keines der neuen Wörter verändert. In keinem Zitat und keinem Fuß steht ein neuer Trennstrich. Auf `/agb` steht nur das schon vorhandene „Geschäfts­bedingungen“ im H1.\n- Firmenname und Adressen: „Fliesenverlegung Tezgel“ bleibt ungetrennt (0 Treffer in 168 Seiten). Strukturdaten und Köpfe tragen keinen Trennstrich. Alle 168 Adressen liefern 200.\n- Einwilligungswortlaut: Er ist nur um U+00AD ergänzt. Playwright-Namenssuche und axe (`label-content-name-mismatch`) finden darin keinen Fehler. Die Funktionsspecs suchen diese Texte nicht.\n\n**Bewegung (E-092)**\n- Der Diff fügt keine Bewegung hinzu.\n- `bewegung.mjs` register, reduziert und reduziert mit `--schalter ruhig` (m390): `/standorte/wetzlar`, `/preise`, `/bad/badsanierung` ohne Befund. Im Register sind `unbekannt` und `ohne_register` leer.\n\n**Strukturdaten (EP4)**\n- 112 Seiten haben einen Service-Knoten auf oberster Ebene, `/leistungen` trägt ihn verschachtelt. Das sind 113 von 113.\n- Es gibt keinen Doppelknoten, keine zwei Service-Knoten und keine Seite mit Service außerhalb der E0-Liste.\n- Ordnerseiten tragen genau einen Knoten, Unterseiten den Ordnerknoten.\n- Beim Seitenwechsel ohne Neuladen (/bad, Unterseite, /bad, /fliesen/abnahme, zurück) bleibt es immer bei genau einem Knoten, die Konsole ist leer.\n- Die Werte stammen aus dem Git-Verlauf (`522a313e^`, `e097bd58^`) und den Ordnerseiten, ohne Preis, Bild oder Bewertung.\n\n**Zugänglichkeit**\n- axe auf `/standorte/wetzlar`, `/preise`, `/bad/badsanierung`, `/bad/musterbaeder/basic-bad-7` und `/fliesen` (m390, d1440): ein ernster Treffer, `label-content-name-mismatch` am WhatsApp-Link von `FinalCTA` auf `/preise`.\n  - Das `aria-label` dort steht unverändert in vor-B und ist nicht aus dem Diff.\n- Überschriftenfolge: Auf den fünf geprüften Seiten gibt es genau eine H1 und keinen Sprung.\n- Kontrast: Der Diff ändert keine Farben. Der Flesch-Wert verschiebt sich durch die Trennstriche um höchstens 0,9 Punkte und kippt kein Tor.\n- 200 % Schrift: In meinen Bildern und Messungen gibt es keinen neuen Überlauf auf den geänderten Stellen. Gemessen habe ich m390 auf `/standorte/wetzlar`, `/bad/badsanierung`, `/preise` und `/treppen` (jeweils 0), t1024 auf `/standorte/wetzlar` (0) und d1440 auf `/preise` (0).\n  - `/preise` bei t1024 hat 41 Überstände, die Baumeister-Notiz nennt denselben Wert für vor-B. Die Elemente sind Karussell und Aufklapper, keine der geänderten Stellen.\n- Außerhalb des Diffs liegen zwei Überstände bei 200 % auf m390, die die Notiz nicht kennt: je ein `span` in einer Abschnittsüberschrift auf `/fliesen/abnahme` und `/untergrund-abdichtung/din-18534`. Die Zeilen stehen in `page.jsx` und werden vom Diff nicht berührt. Als eigenes Paket vermerken, nicht dem Diff anlasten.\n\n**Befunde:** Alle drei oben genannten sind gering. Zwei sind Vorstand oder bewusst offen, einer ist die Formalie `werte.mjs`.\n\n**Bilder** in `…/inhalt/pruef-B-1-bild/` (m390, 100 % und 200 %). Ich habe mir fünf angesehen: Formular, Vorspann, Abschluss der Preisseite, Knopf und Schritt. Die Trennstellen sitzen an den Fugen („Bad-/sanierung“, „Projekt-/anfrage“, „Fach-/betriebs-/leiter“, „Erst-/beratung“).\n\n**Aufgeräumt**\n- Der Server auf 4432 ist per Prozessgruppe beendet.\n- `node_modules` und `.next` in pruef-B-1 sind gelöscht.\n- In baum-b und im Repository habe ich nichts geändert (`git status` sauber)."
+  }
+ ],
+ "nacharbeit": {
+  "behoben": [
+   "Befund 1 (gering, bestätigt): Einstieg.tsx setzt jetzt {mitFugen(ort)} samt Import. Gemessen im Produktionsbau (Port 4431, m360, 200 %): 'Fliesen|verlegung' trennt auf /standorte/wetzlar, /standorte/giessen, /blog und /fliesen an der Fuge (vorher 'Fliesenver|legung'), Seitenüberlauf 0. 15 Seiten tragen jetzt Trennstriche in der Ortszeile (13 Ortsseiten, /blog, /fliesen). Die Startseite ist unverändert, sie nutzt EinstiegMitte. Neuer Test 'Fugen 2'.",
+   "Befund 8 (gering, bestätigt im echten Produktionsbau per CDP Accessibility.getFullAXTree): Der Name der Einwilligungs-Checkbox lautete '... Hinweise in derDatenschutzerklärung.', weil React zwischen 'in der' und {' '} einen Kommentarknoten setzt und Chrome das einzelne Leerzeichen dann auslässt. LeadQuickForm.tsx: Das Leerzeichen steht jetzt im Text davor (mitFugen('... Hinweise in der '), kein {' '} mehr). Der Wortlaut ist gleich. Nachher lautet der Name '... in der Daten-schutz-erklärung.' (d1440 und m360). Neuer Test 'Fugen 3'.",
+   "Befund 4 und 7 (Kommentar, gering): Der Kopfkommentar in video-sitemap.xml/route.ts sagt jetzt 'wohlgeformtes, leeres urlset'. Er nennt die Abweichung vom Sitemap-Schema (mindestens ein url) und die Entscheidung des Orchestrators (Adresse behalten, Vermerk G4 bleibt).",
+   "Befund 2 (gering, bestätigt): Die Aussage 'Überlauf 0 auf allen drei Geräten' in der Notiz ist auf das Seitenmaß und auf m390, t1024, d1440 eingeschränkt. Der Rest bei m360 mit 200 % (22 px Überstand von 'Kostenfreie' im Zusage-Etikett, scrollWidth 220 gegen clientWidth 198, Altzustand gleich) steht als Hinweis 10 in der Notiz.",
+   "Befund 3 (gering, bestätigt): Die Überschrift 'Unverbindliche Projektanfrage' (PricingCalculator.tsx:311) ist in Hinweis 4 der Notiz ergänzt, zusammen mit der Einwilligung auf Zeile 475. Gemessen bei m360 und 200 % auf /preise und /faq: 'Projektan|frage'. PricingCalculator.tsx ist nicht angefasst (FS Nr. 14).",
+   "Notiz ergänzt: Abschnitt 'Nacharbeit' mit den Entscheidungen des Orchestrators und der Nachprüfung je Befund, neue Hinweise 8 bis 10 (Garantie-Wörter M-07/M-23, gleicher {' '}-Aufbau in fünf weiteren Einwilligungen, Zusage-Rest m360), geänderte Tabellenzeilen Nr. 10 und 11, neue Prüfzahlen und Bildpfade (pruef-B-2-bild)."
+  ],
+  "nicht_behoben": [
+   "Befund 5 (Garantie-Wörter in FinalCTA.tsx:41-42 und preise/page.jsx:69 und 255): bestätigt, aber Bestand. Der Diff fügt kein Garantie-Wort hinzu. M-23 verschiebt die Wörter auf eine spätere Welle. Nur als Hinweis 8 in der Notiz vermerkt.",
+   "Befund 6 (werte.mjs 0 Befunde, Zeichenkette hyphenate-limit-chars:10_4_4 in preise/page.jsx:251 und PriceCard.tsx:113): bestätigt, beide Befunde stehen auch im Vergleichsstand vor-B. Nach Entscheidung 4 des Orchestrators bleibt das als vorhandener Befund, nicht in diesem Paket.",
+   "Befund 7 (video-sitemap.xml/route.ts, leeres urlset gegen das Schema, Zeilen 19-22): bestätigt. Nach Entscheidung 3 bleibt die Route mit leerem urlset und Vermerk G4. Nur der Kommentar ist korrigiert (siehe behoben).",
+   "Befund 2, der CSS-Rest: Der Überstand von 'Kostenfreie' bei m360 mit 200 % ist nicht per CSS behoben. Er war schon vorher gleich. Eine Lösung (Etikettbreite oder Schrift in etikettForm, kern/stile.ts) ist weder klein noch klar richtig und liegt in einer gemeinsamen Datei. Gehört zu FS und steht als Hinweis 10 in der Notiz.",
+   "Befund 3, die Datei selbst: PricingCalculator.tsx ist nicht geändert (FS Nr. 13/14), nur die Notiz ist ergänzt.",
+   "Aus den Hinweisen der Notiz, nicht geändert: Der gleiche Aufbau mit {' '} nach Text und vor einem Link steht in BookingCalendar.tsx:275, FliesenKonfigurator/Schritt4.jsx:117, BadanfrageFunnel/Schritt5.jsx, TezgelAnfrageFunnel/Schritt3.jsx und BadProjektCheck/Zusammenfassung.jsx:298. Das liegt außerhalb von Teil B und ist dort nicht gemessen (Hinweis 9). Auch price '0.00' und priceValidUntil in buildServiceNode bleiben unberührt (Entscheidung 6)."
+  ],
+  "npm_test": "npm test: 258 Tests, 258 bestanden, 0 rot, 0 abgebrochen, 0 übersprungen (Node 24.22.1, baum-b). Vorher 256. Neu sind Fugen 2 (Ortszeile über mitFugen) und Fugen 3 (Leerzeichen vor dem Datenschutz-Link) in test/meta.test.mjs.",
+  "tsc": "npx tsc --noEmit: Exit 0, keine Meldung. Die next-env.d.ts stammt aus dem Bau und ist danach gelöscht.",
+  "eslint": "npx eslint: Exit 0, Ausgabe leer.",
+  "werte": "werte.mjs --arbeitsbaum --dateien (19 Quelldateien, Werkzeug aus baum-b/_werkstatt): 2 Befunde der Art beliebig, beide schon im Vergleichsstand (preise/page.jsx:251 und PriceCard.tsx:113, hyphenate-limit-chars:10_4_4), kein neuer, Exit 1. Das bleibt nach Entscheidung 4. Weitere Zahlen aus dem frisch gebauten Produktionsbau (Port 4431), alle in …/inhalt/pruef-B-2-*: jsonld.mjs auf den 113 E0-Adressen 113 grün, 0 rot. Typ Service im HTML auf 113 von 113 Seiten, auf oberster Ebene 112 (/leistungen nur verschachtelt), keine Seite mit zwei Service-Knoten. bewegung.mjs register, reduziert und ruhig (m390) auf 4 Seiten: 12 Läufe Exit 0, unbekannt und ohne_register leer, bewegungsbefunde leer. Seitenüberlauf bei 200 % auf 6 Seiten: m360, m390 und d1440 je 0. t1024 ist 0 außer /preise mit 41, wie im Vergleichsstand. next build Exit 0 (179 Seiten). Das Repository ist unberührt (git status leer). Aufgeräumt: eigener Server beendet (nur Prozessgruppe aus eigener PID-Datei, die Server von UM-E4-START blieben unberührt), echte node_modules-Kopie und .next gelöscht, Verweis node_modules wiederhergestellt, next-env.d.ts gelöscht. Notiz: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/inhalt/UM-E4-INHALT-B.notiz.md. Bilder: …/inhalt/pruef-B-2-bild/wetzlar-einstieg-nach-m360-200.png, wetzlar-einwilligung-nach-m360-200.png, zusage-m360-200-vor-fix.png.",
+  "diff_pfad": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/inhalt/UM-E4-INHALT-B.diff"
+ }
+}

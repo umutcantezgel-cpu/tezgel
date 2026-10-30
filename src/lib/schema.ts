@@ -459,6 +459,65 @@ export function buildServiceNode(options: {
 }
 
 /**
+ * Angaben zur Leistung je Ordner (UM-E4-EP4, E-068): ein Service-Knoten, den das Layout des Ordners an alle Unterseiten gibt,
+ * wie in E0 („derselbe Knoten an einer gemeinsamen Stelle“). Die Texte sind die der Ordnerseiten selbst (dort tragen
+ * `bad/page.jsx`, `balkon-terrasse/page.jsx` … denselben Knoten; ein Test hält beide Fassungen gleich) und stehen so schon im
+ * Bestand; es kommt kein Wert hinzu (E-091): kein Preis, keine Bewertung, kein Bild. Die Ordnerseite trägt ihren Knoten selbst
+ * und bekommt vom Layout keinen zweiten (`NurUnterseiten`).
+ */
+export const ORDNER_DIENSTE = {
+  '/bad': {
+    name: 'Badsanierung & Badmodernisierung',
+    serviceType: 'Badsanierung, Walk-In Duschen & Barrierefreie Bäder',
+    description:
+      'Fachmännische Badsanierung aus einer Hand in Aßlar, Wetzlar und Mittelhessen: Barrierefreie Bäder, bodengleiche Duschen, Großformatfliesen und Verbundabdichtung.',
+    areaServed: 'Aßlar, Wetzlar & Mittelhessen',
+  },
+  '/balkon-terrasse': {
+    name: 'Balkon- & Terrassensanierung',
+    serviceType: 'Balkonsanierung, Stelzlager & Terrassenplatten',
+    description:
+      'Fachgerechte Sanierung von Außenflächen in Aßlar, Wetzlar und Hessen: Verlegung von Feinsteinzeugplatten auf Stelzlagern, Entwässerung und Abdichtung.',
+    areaServed: 'Aßlar, Wetzlar & Mittelhessen',
+  },
+  '/fliesen': {
+    name: 'Fliesenverlegung & Großformate',
+    serviceType: 'Fliesen-, Platten- und Mosaikverlegung',
+    description:
+      'Fachgerechte Fliesenverlegung im Innen- und Außenbereich in Aßlar, Wetzlar und Hessen: XXL-Großformate, Feinsteinzeug, Fugenbilder und Renovierung.',
+    areaServed: 'Aßlar, Wetzlar & Mittelhessen',
+  },
+  '/naturstein': {
+    name: 'Natursteinverlegung & Veredelung',
+    serviceType: 'Granit-, Marmor-, Kalkstein- & Schieferverlegung',
+    description:
+      'Fachgerechte Verlegung von Natursteinbelägen in Aßlar, Wetzlar und Hessen: Verfärbungsfreie Verklebung, passende Fugenmörtel und Oberflächenschutz.',
+    areaServed: 'Aßlar, Wetzlar & Mittelhessen',
+  },
+  '/treppen': {
+    name: 'Treppenverlegung & Treppensanierung',
+    serviceType: 'Innentreppen, Außentreppen & Treppenhäuser',
+    description:
+      'Fachbetrieb für Treppenbeläge in Aßlar, Wetzlar und Mittelhessen: Rutschfeste Fliesen, Kantenprofile, Setz- und Trittstufen und Entkopplung.',
+    areaServed: 'Aßlar, Wetzlar & Mittelhessen',
+  },
+  '/untergrund-abdichtung': {
+    name: 'Untergrundvorbereitung & DIN 18534 Verbundabdichtung',
+    serviceType: 'Estrichprüfung, Gefälleausgleich, Entkopplung & Verbundabdichtung',
+    description:
+      'Normgerechte Untergrundvorbereitung und DIN 18534 Verbundabdichtung im Sanitär- und Außenbereich in Aßlar, Wetzlar und Hessen.',
+    areaServed: 'Aßlar, Wetzlar & Mittelhessen',
+  },
+} as const satisfies Record<string, { name: string; serviceType: string; description: string; areaServed: string }>;
+
+export type DienstOrdner = keyof typeof ORDNER_DIENSTE;
+
+/** Der Service-Knoten eines Ordners aus ORDNER_DIENSTE: `@id` und `url` sind die Ordnerseite, wie auf ihr selbst. */
+export function buildOrdnerServiceNode(ordner: DienstOrdner): SchemaNode {
+  return buildServiceNode({ ...ORDNER_DIENSTE[ordner], url: `${SITE_URL}${ordner}` });
+}
+
+/**
  * Builds a localized LocalBusiness slice for a specific city.
  */
 export function buildCityLocalBusinessNode(options: {
