@@ -1550,3 +1550,4 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
 - **Danach:** weiter nach PLAN auf dem Arbeitsbranch.
   - main bekommt nur auf erneute Anweisung oder nach der Endabnahme einen neuen Stand (E-089).
   - Rückweg: der vorige Produktions-Deploy `dpl_74ZHMPq8qcyV2YknJR61t3fN7X9m` (2317dcde) ist als Rücksprung-Kandidat markiert.
+- **Nachtrag 12:18 MEZ:** Der Deploy `dpl_BXjzhrZtvReZnucWBsAeTmSV8Hjp` ist READY, mit den Aliasen `tezgel.de` und `www.tezgel.de`. Live-Rauchtest (`werkzeuge/live-rauchtest.sh`, nur lesend, ≤ 1 Anfrage/s) GRÜN: x-build = 78c37647; `/`, `/bad`, `/leistungen`, `/standorte`, `/blog`, `/ueber-uns`, `/kontakt`, `sitemap.xml`, `robots.txt` und `llms.txt` liefern 200, eine unbekannte Adresse liefert 404, die Sitemap hat 164 Adressen.
