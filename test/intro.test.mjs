@@ -275,7 +275,8 @@ test('Eingang 5: kein Startzustand und kein Belag für das LCP-Foto, keine Intro
   // Komponenten: Startbild ohne Belag, das Foto lädt weiter mit Vorrang
   const startbild = lies('src/components/start/Startbild.tsx');
   assert.ok(!/startbild-decke|startbild-reihe|aria-hidden/.test(startbild), 'kein Belag über dem Foto');
-  assert.match(startbild, /<Bildfeld arbeit="start-dusche" lcp=\{lcp\}/);
+  // UM-E4-START: Startfoto ist das Querformat start-bad (ab lg der Zuschnitt start-bad-gross über `gross`)
+  assert.match(startbild, /<Bildfeld arbeit="start-bad" lcp=\{lcp\}/);
   const mitte = lies('src/components/vorlagen/teile/EinstiegMitte.tsx');
   assert.match(mitte, /<Bildfeld arbeit=\{bild as ArbeitId\} lcp /);
   const dokument = lies('src/app/(bestand)/_dokument.tsx');

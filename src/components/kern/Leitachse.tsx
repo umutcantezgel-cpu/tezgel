@@ -42,15 +42,17 @@ import { seitenKlassen } from './stile';
 // mobil 8 px vom Rand, mittig im Rand vor dem Satz (16 px; UM-E3-FIX2 N2, Sichtabnahme E3 Anlauf 2: bei 4 px las sich das Lot
 // wie ein Gehäuserand, die Kreuze lagen halb am Bildrand). Das Kreuz (mobil 8 px, KREUZ_GROESSE) steht ganz im Bild und hält
 // 4 px Abstand zur Textkante; ab md 16 px vom Rand (Text ab 32 px), ab lg 32 px (Text ab 48 px), dort mit 12-px-Kreuz
-// 10 px Abstand. Die Abschnittsmarke steht nur ab md.
-export const ACHSE_LAGE = 'left-2 md:left-4 lg:left-8';
+// 10 px Abstand. Die Abschnittsmarke steht nur ab md. Die Marke `achse` (ohne eigenen Stil) ist der Haken für das Lot an der
+// Satzkante: Auf der Startseite steht es unter md auf der Satzkante (16 px) statt im Rand (Seitenformel lot="satzkante",
+// globals.css; UM-E4-START, Sicht Anlauf 3: bei 8 px las sich das 2-px-Rot wie eine Schnittmarke am Bildrand).
+export const ACHSE_LAGE = 'achse left-2 md:left-4 lg:left-8';
 /** Dieselbe Lage, gemessen von der Inhaltskante eines Abschnitts mit Satzspiegel (seitenKlassen px-4 md:px-8 lg:px-12):
  *  8 px davor, ab md 16 px (rem, wächst mit der Grundschrift wie Rand und Achse) */
 export const ACHSE_VOR_SATZ = '-left-2 md:-left-4';
 /** Größe eines Fugenkreuzes auf dem Lot: mobil 8 px (ganz im Bild, 4 px vor der Textkante), ab md 12 px */
 export const KREUZ_GROESSE = 'size-2 md:size-3';
 /** Schnur des mittigen Einstiegs (UM-E3-FIX F1): von der Achse bis zur gespiegelten Stelle am rechten Rand */
-export const SCHNUR_LAGE = `${ACHSE_LAGE} right-2 md:right-4 lg:right-8`;
+export const SCHNUR_LAGE = `${ACHSE_LAGE} achse-rechts right-2 md:right-4 lg:right-8`;
 
 export default function Leitachse({ children, gezogen = true, className }: { children: ReactNode; gezogen?: boolean; className?: string }) {
   return (

@@ -20,7 +20,8 @@ export type Ausloeser = 'laden' | 'sicht' | 'scroll' | 'interaktion';
 
 export interface Registereintrag {
   ausloeser: Ausloeser;
-  /** Sichtbarkeitsschwelle (0–1) für Auslöser „sicht“ */
+  /** Sichtbarkeitsschwelle (0–1) für Auslöser „sicht“; bei einem Element, das höher als das Fenster ist, derselbe Anteil des
+   *  Fensters (bewegung.ts „erreicht“) */
   schwelle?: number;
   /** nur auf groben Zeigegeräten über Sichtbarkeit auslösen (sonst Hover/Fokus) */
   nurGrob?: boolean;
@@ -247,9 +248,9 @@ export const REGISTER_V4: Record<string, V4Eintrag> = {
   },
   anriss: {
     zweck: 'hierarchie',
-    was: 'Das Schlüsselwort einer Stimme wird von Hand unterstrichen',
-    stufen: { dauer: ['--dauer-4'], kurve: ['--ease-setzen'] },
-    reduziert: { art: 'sofort', text: 'der Strich steht sofort' },
+    was: 'Das Schlüsselwort einer Stimme wird von Hand unterstrichen; an der Treppe der Startseite reißt die rote Stufenlinie beim Eintritt einmal Stufe für Stufe an, das Fugenkreuz setzt sich rot und vergrößert, wo die Linie ankommt, und der Schritt setzt sich mit (UM-E4-START)',
+    stufen: { dauer: ['--dauer-4', '--dauer-3', '--dauer-1'], kurve: ['--ease-setzen'] },
+    reduziert: { art: 'sofort', text: 'Strich und Stufenlinie stehen sofort, die Schritte ganz da' },
     notaus: 'endzustand',
   },
   auftritt: {

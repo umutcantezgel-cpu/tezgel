@@ -21,14 +21,15 @@ html.k-bewegung:not(.k-notaus) [data-motion="auftritt"]:not([data-motion-stand="
   translate: 0 calc(var(--spacing) * 2);
 }
 
-/* anriss – handgeführte Unterstreichung eines Schlüsselworts (IO 50 %) */
-[data-motion="anriss"] {
+/* anriss – handgeführte Unterstreichung eines Schlüsselworts (IO 50 %); nur am Wort (mark), die Treppe trägt dieselbe
+   Kennung mit eigener Form (unten, „anriss an der Treppe“) */
+mark[data-motion="anriss"] {
   position: relative;
   background: none;
   color: inherit;
   white-space: nowrap;
 }
-[data-motion="anriss"]::after {
+mark[data-motion="anriss"]::after {
   content: "";
   position: absolute;
   inset-inline: -2px;
@@ -38,11 +39,104 @@ html.k-bewegung:not(.k-notaus) [data-motion="auftritt"]:not([data-motion-stand="
   transform-origin: left center;
   rotate: -0.6deg;
 }
-html.k-bewegung [data-motion="anriss"]::after {
+html.k-bewegung mark[data-motion="anriss"]::after {
   transition: scale var(--dauer-4) var(--ease-setzen);
 }
-html.k-bewegung:not(.k-notaus) [data-motion="anriss"]:not([data-motion-stand="an"])::after {
+html.k-bewegung:not(.k-notaus) mark[data-motion="anriss"]:not([data-motion-stand="an"])::after {
   scale: 0 1;
+}
+
+/* anriss an der Treppe (Startseite, UM-E4-START, vorlagen/teile/Ablauf „AnrissTreppe“; Sicht Anlauf 3: zwischen Eingang und
+   Fuß kein Moment mit Gewicht): Beim Eintritt (Sicht 0,5, data-motion-stand="an" vom Bewegungsmodul) reißt die rote
+   Stufenlinie einmal Stufe für Stufe an. Je Stufe dauer-3 mit ease-setzen: zuerst die Setzstufe herab (dauer-1, ab lg) und
+   das Fugenkreuz setzt sich, wo die Linie ankommt, dann der Lauf nach rechts (mobil das Lot herab zum nächsten Kreuz) in der
+   übrigen Zeit der Stufe. --stufe ist die Nummer des Schritts (am li). Nur scale und opacity (Compositor), jede Animation mit
+   echter Änderung (E-092). Startzustand nur unter html.k-bewegung ohne Notaus und vor dem Auslösen; ohne JavaScript,
+   reduziert, „ruhig“, im Notaus, im Druck, bei erzwungenen Farben und bei Zurück und Vor steht die Linie voll.
+   Gewicht (Nacharbeit UM-E4-START, Prüfung A): Wo die Linie ankommt, setzt sich das Kreuz rot und auf das Doppelte vergrößert
+   und wird in der übrigen Zeit der Stufe wieder Tinte (rote Kopie darüber, nur Deckkraft); mit ihm setzt sich der Schritt
+   (Nummer, Titel, Satz: „Setzen“, 8 px, dauer-3), und mobil reißt die Stufe vom Lot zur Nummer an (treppe-tritt). Schritt
+   und Stufe stehen in jedem anderen Zustand ganz da. */
+.treppe-lauf,
+.treppe-tritt {
+  transform-origin: left center;
+}
+.treppe-lot,
+.treppe-setz {
+  transform-origin: center top;
+}
+@media screen and (prefers-reduced-motion: no-preference) and (forced-colors: none) {
+  html.k-bewegung:not(.k-notaus) ol[data-motion="anriss"]:not([data-motion-stand="an"]) .treppe-lauf {
+    scale: 0 1;
+  }
+  html.k-bewegung:not(.k-notaus) ol[data-motion="anriss"]:not([data-motion-stand="an"]) .treppe-lot,
+  html.k-bewegung:not(.k-notaus) ol[data-motion="anriss"]:not([data-motion-stand="an"]) .treppe-setz {
+    scale: 1 0;
+  }
+  html.k-bewegung:not(.k-notaus) ol[data-motion="anriss"]:not([data-motion-stand="an"]) .treppe-kreuz,
+  html.k-bewegung:not(.k-notaus) ol[data-motion="anriss"]:not([data-motion-stand="an"]) .treppe-schritt {
+    opacity: 0;
+  }
+  html.k-bewegung:not(.k-notaus) ol[data-motion="anriss"]:not([data-motion-stand="an"]) .treppe-tritt {
+    scale: 0 1;
+  }
+  html.k-bewegung:not(.k-notaus) ol[data-motion="anriss"][data-motion-stand="an"] .treppe-lauf {
+    animation: anriss-lauf calc(var(--dauer-3) - var(--dauer-1)) var(--ease-setzen) calc(var(--dauer-3) * var(--stufe, 0) + var(--dauer-1)) backwards;
+  }
+  html.k-bewegung:not(.k-notaus) ol[data-motion="anriss"][data-motion-stand="an"] .treppe-lot {
+    animation: anriss-lot calc(var(--dauer-3) - var(--dauer-1)) var(--ease-setzen) calc(var(--dauer-3) * var(--stufe, 0) + var(--dauer-1)) backwards;
+  }
+  html.k-bewegung:not(.k-notaus) ol[data-motion="anriss"][data-motion-stand="an"] .treppe-setz {
+    animation: anriss-lot var(--dauer-1) var(--ease-setzen) calc(var(--dauer-3) * var(--stufe, 0)) backwards;
+  }
+  html.k-bewegung:not(.k-notaus) ol[data-motion="anriss"][data-motion-stand="an"] .treppe-kreuz {
+    animation: anriss-kreuz var(--dauer-3) var(--ease-setzen) calc(var(--dauer-3) * var(--stufe, 0)) backwards;
+  }
+  html.k-bewegung:not(.k-notaus) ol[data-motion="anriss"][data-motion-stand="an"] .treppe-kreuz-rot {
+    animation: anriss-kreuz-rot var(--dauer-3) linear calc(var(--dauer-3) * var(--stufe, 0)) backwards;
+  }
+  html.k-bewegung:not(.k-notaus) ol[data-motion="anriss"][data-motion-stand="an"] .treppe-schritt {
+    animation: anriss-schritt var(--dauer-3) var(--ease-setzen) calc(var(--dauer-3) * var(--stufe, 0)) backwards;
+  }
+  html.k-bewegung:not(.k-notaus) ol[data-motion="anriss"][data-motion-stand="an"] .treppe-tritt {
+    animation: anriss-lauf var(--dauer-1) var(--ease-setzen) calc(var(--dauer-3) * var(--stufe, 0)) backwards;
+  }
+}
+@keyframes anriss-lauf {
+  from { scale: 0 1; }
+}
+@keyframes anriss-lot {
+  from { scale: 1 0; }
+}
+@keyframes anriss-kreuz {
+  from { opacity: 0; scale: 0.4; }
+  25% { opacity: 1; scale: 2; }
+}
+/* die rote Kopie: beim Setzen ganz da, nach der Hälfte der Stufe ausgeblendet (dann steht das Kreuz in Tinte) */
+@keyframes anriss-kreuz-rot {
+  from, 50% { opacity: 1; }
+  to { opacity: 0; }
+}
+@keyframes anriss-schritt {
+  from { opacity: 0; translate: 0 calc(var(--spacing) * 2); }
+}
+/* Zurück und Vor (html.k-verlauf aus B-01): sofort der Endzustand, die Linie reißt nicht noch einmal an */
+html.k-verlauf ol[data-motion="anriss"] .treppe-lauf,
+html.k-verlauf ol[data-motion="anriss"] .treppe-lot,
+html.k-verlauf ol[data-motion="anriss"] .treppe-setz,
+html.k-verlauf ol[data-motion="anriss"] .treppe-tritt,
+html.k-verlauf ol[data-motion="anriss"] .treppe-kreuz,
+html.k-verlauf ol[data-motion="anriss"] .treppe-schritt {
+  animation: none !important;
+  scale: none !important;
+  opacity: 1 !important;
+}
+/* nur der Schritt rückt; Kreuz und Setzstufe behalten ihr Zentrieren (translate aus den Klassen) */
+html.k-verlauf ol[data-motion="anriss"] .treppe-schritt {
+  translate: none !important;
+}
+html.k-verlauf ol[data-motion="anriss"] .treppe-kreuz-rot {
+  animation: none !important;
 }
 
 /* leitachse – Lot im Seitenfluss, rotes Stück folgt dem Lesefortschritt. Zeitstrahl ist das Lot selbst (view-timeline,
@@ -572,10 +666,42 @@ html.k-bewegung:not(.k-notaus) [data-motion="galerie-filter"][data-galerie-neu] 
 }
 @media (hover: none) {
   @container (max-width: 20rem) {
-    .glasbild-flaeche {
+    .glasbild:not([data-verlauf]) .glasbild-flaeche {
       grid-row-start: 2;
     }
-    .glasbild-text {
+    .glasbild:not([data-verlauf]) .glasbild-text {
+      padding-top: calc(var(--spacing) * 3);
+      background: var(--color-tinte);
+    }
+  }
+  /* Startseite (data-verlauf, UM-E4-START, Sicht Anlauf 3: auf t1024 deckten Tintenblöcke ein Viertel jedes Fotos): ohne Maus
+     auf jeder Breite derselbe kurze Verlauf wie mobil, der Boden bleibt sichtbar; der Block unter dem Foto erst bei großer
+     Systemschrift (Kachel schmaler als 16rem). Nacharbeit (Prüfung A: auf t768 und t1024 deckte der Verlauf mit zweizeiligem
+     Namen und „Ansehen →“ knapp die Hälfte der Kachel): ohne Maus nur der Name, der Auslauf 8 statt 12 Einheiten, so bleibt
+     der Verlauf unter einem Drittel der Kachel; „Ansehen“ bleibt für den Vorleser im Namen des Links. */
+  .glasbild[data-verlauf] .glasbild-text {
+    padding-top: calc(var(--spacing) * 8);
+    background: linear-gradient(
+      to top,
+      color-mix(in srgb, var(--color-tinte) 72%, transparent),
+      color-mix(in srgb, var(--color-tinte) 64%, transparent) calc(100% - var(--spacing) * 8),
+      transparent
+    );
+  }
+  .glasbild[data-verlauf] .glasbild-weg {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  @container (max-width: 16rem) {
+    .glasbild[data-verlauf] .glasbild-flaeche {
+      grid-row-start: 2;
+    }
+    .glasbild[data-verlauf] .glasbild-text {
       padding-top: calc(var(--spacing) * 3);
       background: var(--color-tinte);
     }

@@ -22,13 +22,17 @@ export interface GlasbildProps {
   href?: string;
   /** Wort des Links, Standard „Ansehen“ */
   linkText?: string;
+  /** ohne Maus auch in schmaler Kachel (16 bis 20rem, Tablet) der Name auf dem Verlauf statt als Block darunter (Startseite,
+   *  UM-E4-START; data-verlauf, bewegung.css „glasbild“); ohne Maus steht dann nur der Name auf einem kürzeren Verlauf, das
+   *  Wort des Links bleibt für den Vorleser (die Kachel ist der Link) */
+  verlauf?: boolean;
   sizes: string;
 }
 
 /** Foto oben in der gemeinsamen Zelle, in seinem eigenen Seitenverhältnis (K-012) */
 const FOTO = 'col-start-1 row-start-1 self-start';
 
-export default function Glasbild({ arbeit, name, href, linkText = 'Ansehen', sizes }: GlasbildProps) {
+export default function Glasbild({ arbeit, name, href, linkText = 'Ansehen', sizes, verlauf = false }: GlasbildProps) {
   // Lage im Raster (Zelle des Fotos, ohne Maus in schmaler Kachel darunter) steht in bewegung.css, Block glasbild: eine
   // Tailwind-Klasse wie row-start-1 gewönne dort über die Regel (Ebene utilities vor components)
   const flaeche = (
@@ -36,7 +40,7 @@ export default function Glasbild({ arbeit, name, href, linkText = 'Ansehen', siz
       <span className="glasbild-text flex flex-col px-4 pb-4 lg:px-6 lg:pb-6">
         <span className="font-text text-fs-4 font-semibold text-pretty">{mitFugen(name)}</span>
         {href && (
-          <span className="mt-2 inline-flex items-center gap-2 font-text text-fs-2">
+          <span className="glasbild-weg mt-2 inline-flex items-center gap-2 font-text text-fs-2">
             {linkText}
             <Icon name="pfeil-rechts" groesse={4} />
           </span>
@@ -46,7 +50,7 @@ export default function Glasbild({ arbeit, name, href, linkText = 'Ansehen', siz
   );
   if (!href) {
     return (
-      <div className="glasbild grid">
+      <div className="glasbild grid" data-verlauf={verlauf || undefined}>
         <Bildfeld arbeit={arbeit} sizes={sizes} flaeche className={FOTO} />
         {flaeche}
       </div>
@@ -61,6 +65,7 @@ export default function Glasbild({ arbeit, name, href, linkText = 'Ansehen', siz
       data-motion="zustand"
       data-cursor="ansehen"
       data-cursor-text=""
+      data-verlauf={verlauf || undefined}
       className="glasbild grid focus-visible:outline-hidden after:pointer-events-none after:relative after:col-start-1 after:row-start-1 focus-visible:after:inset-ring-2 focus-visible:after:inset-ring-tinte focus-visible:after:outline-2 focus-visible:after:-outline-offset-4 focus-visible:after:outline-kalk"
     >
       <Bildfeld arbeit={arbeit} sizes={sizes} flaeche className={FOTO} />

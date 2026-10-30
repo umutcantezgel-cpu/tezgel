@@ -44,6 +44,13 @@ export interface WorumInhalt {
   bildGross?: ArbeitId;
   /** Bewertungszeile als Kennzeile über dem Plan (mittig: unter den Knöpfen) */
   bewertung?: boolean;
+  /** Mittiger Einstieg, nur Startseite (UM-E4-START): Zuschnitt des Fotos ab lg (Kennung aus ARBEITEN, Bildauswahl je Breite
+   *  im Bildplatz der Seite); sein Seitenverhältnis bemisst das Foto ab lg */
+  bildQuer?: ArbeitId;
+  /** Mittiger Einstieg, nur Startseite (UM-E4-START, Sicht Anlauf 3): die Figur „An der Schnur“ geschlossen. Die Grundlinie der
+   *  letzten H1-Zeile steht auf der Schnur, der Quadratmeter direkt hinter „Quadratmeter.“, das rote Lot reicht bis zum Foto,
+   *  das an einer Fuge hängt; mobil folgt das Foto direkt auf Hauptknopf und Telefon, Vorspann und Bewertung darunter */
+  schnurFigur?: boolean;
   /** Form des Einstiegs: `mitte` = ruhig und mittig, H1 in `titelZeilen`, darunter `ort` als eine Zeile, dann das Foto
    *  vollständig (K-016 „Ruhe“, E-047); ohne Angabe Planblatt (mit `plan`) bzw. der einfache Einstieg */
   einstieg?: 'planblatt' | 'mitte';
@@ -57,7 +64,9 @@ export interface LageInhalt {
   aufFliese?: boolean;
   einleitung?: Markentext;
   absaetze?: Markentext[];
-  fliesen?: ({ satz: string; href: string } & BildOderMotiv)[];
+  /** Auswahl je Lage; `vignette` (Startseite, UM-E4-START): die Plan-Zeichnung der Lage links in der Zeile (eine Auswahlebene
+   *  statt Lagen und Leistungskarten nacheinander) */
+  fliesen?: ({ satz: string; href: string; vignette?: VignettenName } & BildOderMotiv)[];
   /** Wege als Zeilen mit Link und Satz (z. B. die Unterseiten eines Bereichs), Muster optional */
   wege?: Zeile[];
 }
@@ -84,6 +93,9 @@ export interface TunInhalt {
   /** Bereiche als Fliesen mit Zeichnung (statt Zeilen); mit Plan-Vignetten als ungleiches Raster im Drittelverband, der erste
    *  Bereich groß (UM-E3-FIX2 N9) */
   bereichsfliesen?: BereichFliese[];
+  /** Leistungen als eine ruhige Zeile mit Links unter dem Kopf (Startseite, UM-E4-START: die Zeichnungen stehen in den Zeilen
+   *  der Lage, hier bleiben nur die Wege) */
+  leistungen?: Verweis[];
   /** erklärende Zeichnung unter dem Kopf (ab lg in der Kopfspalte, mobil nach dem Inhalt) mit Bildunterschrift */
   unterKopf?: { vignette: VignettenName; unterschrift: Markentext };
   /** Aussagen als Fliesen an der Fuge (eine Aussage je Fliese) */
@@ -101,6 +113,8 @@ export interface AblaufInhalt {
   /** Belege aus dem Faktenblatt unter den Schritten, je mit Fugenkreuz (E-040) */
   belege?: Markentext[];
   hinweis?: { text: Markentext; verweis?: Verweis };
+  /** Die rote Stufenlinie der Treppe reißt beim Eintritt einmal Stufe für Stufe an (Startseite, UM-E4-START; Kennung anriss) */
+  anriss?: boolean;
 }
 
 /** 5 · Beleg */
@@ -112,6 +126,9 @@ export interface BelegInhalt {
   /** Reihe der Fotos im Drittelverband (K-003 Nr. 4): ab md steht jedes zweite, ab lg jedes dritte Foto (das mittlere der
    *  ersten drei) um 16 Stufen tiefer, so trägt jeder Bildschirm der Reihe genau einen Versatz (Startseite, UM-E3-FIX F4) */
   fotosVersatz?: boolean;
+  /** Namen der Fotos ohne Maus auf jeder Breite auf dem kurzen Verlauf wie mobil, nicht als Tintenblock unter dem Foto (nur
+   *  Startseite, UM-E4-START; der Block bleibt bei großer Systemschrift) */
+  fotosVerlauf?: boolean;
   /** zwei Bilder desselben Vorgangs nebeneinander (kein Regler, wenn die Blickwinkel verschieden sind) */
   zweierbild?: { titel: string; bilder: [{ bild: ArbeitId; unterschrift: string }, { bild: ArbeitId; unterschrift: string }] };
   /** Kennungen aus REVIEWS, Wortlaut unverändert (G8) */
@@ -129,6 +146,10 @@ export interface BelegInhalt {
   /** Überschrift und Satz über den Kundenstimmen, wenn der Seitentext eigene hat (Standard „Das sagen unsere Kunden.“) */
   stimmenTitel?: string;
   stimmenEinleitung?: Markentext;
+  /** Form „einzeln“ (Startseite, UM-E4-START): die Karte steht ab lg um ein Drittel der Spalte versetzt (der bewusste Bruch
+   *  dieses Bildschirms), und jede Stimme zeigt ihren Wortlaut bis zum letzten ganzen Satz (Wortlaut Zeichen für Zeichen
+   *  gleich, nur kürzer; der ganze Text steht beim Anbieter) */
+  stimmenVersatz?: boolean;
   /** Satz unter den Fotos (z. B. seit wann etwas Standard ist) */
   satz?: Markentext;
   verweis?: Verweis;
@@ -174,6 +195,8 @@ export interface VersprechenInhalt {
 export interface ErzaehlInhalt {
   /** Adresse der Seite, z. B. `/bad` */
   pfad: string;
+  /** Leitfaden mit Präsenz (Startseite, UM-E4-START): Das Lot steht unter md auf der Satzkante (16 px) statt im Rand */
+  lotAnDerSatzkante?: boolean;
   meta: { titel: string; beschreibung: string };
   worum: WorumInhalt;
   lage: LageInhalt;

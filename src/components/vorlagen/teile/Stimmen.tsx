@@ -11,7 +11,14 @@
 // In der Form „einzeln“ steht die Kennzeile mit dem Link direkt unter der Karte an der Kante des Wortlauts, im Bild vor den
 // Knöpfen, im DOM wie bisher dahinter (Karussell nachSpur; UM-E3-FIX2 N11: vorher unter den Knöpfen, rund 150 px unter der
 // Stimme), und ab 56rem stehen Sterne und Name im ersten Viertel statt im ersten Drittel: Die Zelle war am Desktop fast leer.
+// Startseite (UM-E4-START, Sicht Anlauf 3: die Stimme brach mitten im Satz mit „…“ ab, und die Karte stand wie alle Bänder
+// in voller Breite): In der Form „einzeln“ mit `versatz` steht die Karte ab lg um ein Drittel der Spalte versetzt (der
+// bewusste Bruch dieses Bildschirms, K-003 Nr. 4). Der Wortlaut steht ganz, wie ihn REVIEWS führt (G8; ein Ausschnitt bis zum
+// letzten ganzen Satz ist verworfen, E-097: die Spec „Wortlaut wörtlich“ bleibt, offene Frage UM-13 an den Auftraggeber).
+// Ab lg steht die Kennzeile im freien Drittel neben der Karte. Wörter in Versalien („HERVORRAGENDE!!!“) trennen nie (FS-K Nr. 12;
+// nur Darstellung, der Wortlaut bleibt).
 // Serverkomponente, das Karussell ist eine Insel.
+import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
 import Bewertungszeile from '@/components/kern/Bewertungszeile';
@@ -25,16 +32,31 @@ export const MARKIERUNG: Record<string, string> = { 'c-wolf': 'ordnungsgemäß, 
 
 type Bewertung = (typeof REVIEWS)[number];
 
+/** Wörter in Versalien (ab drei Großbuchstaben, mit folgenden Satzzeichen) ohne Silbentrennung (FS-K Nr. 12): Die globale
+ *  Trennregel für Absätze trennte „HERVORRAGENDE!!!“ bei großer Schrift mitten im Wort. Nur ein Span um das Wort. */
+const VERSAL = /(\p{Lu}{3,}[!?.,]*)/u;
+export function versalien(text: string): ReactNode {
+  const teile = text.split(VERSAL);
+  if (teile.length === 1) return text;
+  return teile.map((t, i) => (i % 2 ? <span key={i} className="hyphens-none">{t}</span> : t));
+}
+
 function markiert(text: string, stelle?: string) {
   const i = stelle ? text.indexOf(stelle) : -1;
-  if (!stelle || i < 0) return text;
+  if (!stelle || i < 0) return versalien(text);
   return (
     <>
-      {text.slice(0, i)}
-      <span className="underline decoration-laser decoration-2 underline-offset-4">{stelle}</span>
-      {text.slice(i + stelle.length)}
+      {versalien(text.slice(0, i))}
+      <span className="underline decoration-laser decoration-2 underline-offset-4">{versalien(stelle)}</span>
+      {versalien(text.slice(i + stelle.length))}
     </>
   );
+}
+
+/** Umbruchstellen nach Satzzeichen wie bisher, dazu die Versalien ohne Trennung */
+function satz(text: string): ReactNode {
+  const teile = umbruchNachSatzzeichen(text);
+  return Array.isArray(teile) ? teile.map((t, i) => (typeof t === 'string' ? <span key={`t${i}`}>{versalien(t)}</span> : t)) : versalien(text);
 }
 
 /** Stimmen zu Kennungen; bricht ab, wenn eine fehlt (statt sie still wegzulassen). */
@@ -96,7 +118,7 @@ export function Stimme({ s, gross, klein = false }: { s: Bewertung; gross: boole
       {/* wrap-break-word: der Wortlaut enthält Stellen ohne Leerzeichen („empfehlen.Handwerklich“), die bei großer
           Systemschrift sonst über den Rand laufen; lange Wörter trennt der Browser mit Strich (globals.css, E-065) */}
       <blockquote className={clsx('mt-4 min-w-0 font-text text-pretty wrap-break-word text-tinte', gross ? 'text-fs-4 font-semibold lg:text-fs-5' : klein ? 'text-fs-2' : 'text-fs-3')}>
-        <p>{gross ? markiert(s.text, MARKIERUNG[s.id]) : umbruchNachSatzzeichen(s.text)}</p>
+        <p>{gross ? markiert(s.text, MARKIERUNG[s.id]) : satz(s.text)}</p>
       </blockquote>
       <figcaption className="mt-6 font-text text-fs-2 text-tinte-2">
         <span className="font-semibold text-tinte">{s.author}</span> bei {s.source}
@@ -114,8 +136,35 @@ export function Stimme({ s, gross, klein = false }: { s: Bewertung; gross: boole
  *  mit großer Systemschrift): Das Drittel fasst die fünf Sterne samt Innenabstand ab knapp 34rem (Sterne 7,25rem,
  *  Innenabstand zweimal 2rem), das Viertel ab 53rem (zweimal 3rem); vorher teilte md nach der Bildschirmbreite, bei 200 %
  *  ragte der fünfte Stern auf t768 bis t1024 über die Fuge in den Wortlaut (Prüfung Teil B). */
-function EinzelStimme({ s, nummer, anzahl }: { s: Bewertung; nummer: number; anzahl: number }) {
+function EinzelStimme({ s, nummer, anzahl, versetzt = false }: { s: Bewertung; nummer: number; anzahl: number; versetzt?: boolean }) {
   const zwei = (n: number) => String(n).padStart(2, '0');
+  if (versetzt) {
+    // Karte um ein Drittel versetzt (UM-E4-START): Der Versatz ist das Drittel, darum innen kein zweites Drittel; Sterne, Name und
+    // Nummer in einer Kopfzeile an der Fuge, der Wortlaut in voller Breite darunter (die Karte wird
+    // niedriger, keine leere Zelle neben einem kurzen Satz)
+    return (
+      <figure className="flex h-full flex-col border border-fuge bg-kalk">
+        <figcaption className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-b border-fuge px-6 py-4 font-text text-fs-2 text-tinte-2 lg:px-8">
+          <span className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            <Sterne s={s} groesse={5} />
+            <span>
+              <span className="font-semibold text-fs-3 text-tinte">{s.author}</span> bei {s.source}
+              <span className="sr-only">, {s.rating} von 5 Sternen</span>
+            </span>
+          </span>
+          <span aria-hidden="true" className="font-mono text-fs-3 text-tinte-2">
+            {zwei(nummer)} / {zwei(anzahl)}
+          </span>
+        </figcaption>
+        {/* Wortlaut mittig in der Höhe: Die Karten der Reihe sind gleich hoch, ein kurzer Ausschnitt stand sonst über leerer Fläche */}
+        <div className="flex min-w-0 flex-1 flex-col justify-center p-6 lg:p-8">
+          <blockquote className="font-text text-fs-4 font-semibold text-pretty wrap-break-word text-tinte lg:text-fs-5 lg:leading-snug">
+            <p>{markiert(s.text, MARKIERUNG[s.id])}</p>
+          </blockquote>
+        </div>
+      </figure>
+    );
+  }
   return (
     <div className="@container h-full">
       <figure className="grid h-full grid-cols-1 border border-fuge bg-kalk @xl:grid-cols-3 @4xl:grid-cols-4">
@@ -143,7 +192,19 @@ function EinzelStimme({ s, nummer, anzahl }: { s: Bewertung; nummer: number; anz
 /** Kennzeile der Form „einzeln“ direkt unter der Karte (UM-E3-FIX2 N11): Bewertung mit Stand und der Link zu allen
  *  Bewertungen, an der Kante des Wortlauts (dasselbe Raster wie die Karte, ab 36rem nach dem ersten Drittel, ab 56rem nach dem
  *  ersten Viertel) */
-function KennzeileEinzeln({ stimmen }: { stimmen: Bewertung[] }) {
+function KennzeileEinzeln({ stimmen, versetzt = false }: { stimmen: Bewertung[]; versetzt?: boolean }) {
+  if (versetzt) {
+    // unter lg an der Kante des Wortlauts unter der Karte (UM-E4-START); ab lg im freien ersten Drittel neben der Karte, auf
+    // der Höhe ihrer Kopfzeile (Nacharbeit, Prüfung A: das Drittel stand leer, 400 px auf d1440). Absolut in der Hülle der
+    // Stimmen (Stimmen, lg:relative): Die Karte und die Knöpfe darunter rücken nicht; im DOM bleibt die Zeile hinter der
+    // Reihe (Lese- und Fokusfolge wie bisher)
+    return (
+      <div className="px-6 lg:absolute lg:top-1 lg:left-0 lg:w-1/3 lg:px-0 lg:pt-4 lg:pr-12">
+        <Bewertungszeile stand untereinander className="font-text text-fs-2 text-tinte-2 hyphens-none lg:text-fs-3" />
+        <AlleBewertungen stimmen={stimmen} />
+      </div>
+    );
+  }
   return (
     <div className="@container">
       <div className="grid grid-cols-1 @xl:grid-cols-3 @4xl:grid-cols-4">
@@ -160,7 +221,8 @@ function KennzeileEinzeln({ stimmen }: { stimmen: Bewertung[] }) {
 // damit keine Karte angeschnitten ist
 const KARTE = { einzeln: 'w-full', gross: 'w-full md:w-1/2 lg:w-1/3', klein: 'w-full sm:w-1/2 lg:w-1/4' } as const;
 
-export default function Stimmen({ ids, form = 'gross' }: { ids: string[]; form?: keyof typeof KARTE }) {
+/** `versatz` (nur Form „einzeln“, Startseite): Karte ab lg um ein Drittel versetzt, Wortlaut bis zum letzten ganzen Satz */
+export default function Stimmen({ ids, form = 'gross', versatz = false }: { ids: string[]; form?: keyof typeof KARTE; versatz?: boolean }) {
   const stimmen = stimmenZu(ids);
   const [erste] = stimmen;
   if (!erste) return null;
@@ -176,19 +238,22 @@ export default function Stimmen({ ids, form = 'gross' }: { ids: string[]; form?:
     );
   }
   const einzeln = form === 'einzeln';
+  const versetzt = einzeln && versatz;
   return (
-    <div>
-      <Karussell art="reihe" name="Kundenstimmen" selbstlauf karte={KARTE[form]} nachSpur={einzeln ? <KennzeileEinzeln stimmen={stimmen} /> : undefined}>
-        {stimmen.map((s, i) =>
-          einzeln ? (
-            <EinzelStimme key={s.id} s={s} nummer={i + 1} anzahl={stimmen.length} />
-          ) : (
-            <div key={s.id} className={clsx('h-full border border-fuge bg-kalk p-6', form === 'gross' && 'lg:p-8')}>
-              <Stimme s={s} gross={false} klein={form === 'klein'} />
-            </div>
-          ),
-        )}
-      </Karussell>
+    <div className={clsx(versetzt && 'lg:relative lg:grid lg:grid-cols-3')}>
+      <div className={clsx(versetzt && 'lg:col-span-2 lg:col-start-2')}>
+        <Karussell art="reihe" name="Kundenstimmen" selbstlauf karte={KARTE[form]} nachSpur={einzeln ? <KennzeileEinzeln stimmen={stimmen} versetzt={versetzt} /> : undefined}>
+          {stimmen.map((s, i) =>
+            einzeln ? (
+              <EinzelStimme key={s.id} s={s} nummer={i + 1} anzahl={stimmen.length} versetzt={versetzt} />
+            ) : (
+              <div key={s.id} className={clsx('h-full border border-fuge bg-kalk p-6', form === 'gross' && 'lg:p-8')}>
+                <Stimme s={s} gross={false} klein={form === 'klein'} />
+              </div>
+            ),
+          )}
+        </Karussell>
+      </div>
       {!einzeln && (
         <>
           <Bewertungszeile stand className="mt-8 text-center font-text text-fs-2 text-tinte-2 hyphens-none" />

@@ -28,6 +28,23 @@ function alleAn(wurzel: ParentNode) {
   }
 }
 
+/** Schwelle erreicht: der Anteil des Elements im Bild, oder bei einem Element, das höher als das Fenster ist, derselbe Anteil
+ *  des Fensters (Nacharbeit UM-E4-START, Prüfung A: Die Treppe der Startseite misst bei großer Systemschrift 1600 bis 3100 px;
+ *  ein Anteil von 0,5 ihrer Höhe passte nie ins Fenster, sie blieb im Startzustand ohne Linie). Für Elemente bis zur
+ *  Fensterhöhe gilt unverändert der Anteil des Elements. */
+function erreicht(e: IntersectionObserverEntry, schwelle: number): boolean {
+  if (!e.isIntersecting) return false;
+  if (e.intersectionRatio >= schwelle) return true;
+  const fenster = e.rootBounds?.height ?? window.innerHeight;
+  return e.boundingClientRect.height > fenster && e.intersectionRect.height >= schwelle * fenster;
+}
+
+/** Stufen für den Rückruf: die Schwelle selbst und darunter in Zwanzigsteln, damit ein hohes Element den Anteil des Fensters
+ *  auch zwischen zwei Stufen meldet */
+function stufenBis(schwelle: number): number[] {
+  return Array.from({ length: 21 }, (_, i) => (schwelle * i) / 20);
+}
+
 function beobachterFuer(schwelle: number): IntersectionObserver {
   const schluessel = Math.round(schwelle * 100);
   let io = beobachter.get(schluessel);
@@ -35,13 +52,13 @@ function beobachterFuer(schwelle: number): IntersectionObserver {
     io = new IntersectionObserver(
       (eintraege, selbst) => {
         for (const e of eintraege) {
-          if (e.isIntersecting) {
+          if (erreicht(e, schwelle)) {
             setzeAn(e.target);
             selbst.unobserve(e.target);
           }
         }
       },
-      { threshold: schwelle },
+      { threshold: stufenBis(schwelle) },
     );
     beobachter.set(schluessel, io);
   }

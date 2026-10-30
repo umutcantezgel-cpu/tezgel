@@ -3,8 +3,20 @@
 // v3: echte Fotos per Kennung aus `src/config/arbeiten.ts` (Maße, Alt-Text und Platzhalter aus der Bilddatei), `sizes` je
 // Bildplatz aus `_werkstatt/bildplaetze.md`, unscharfer Platzhalter bis zum Laden. Vorgeladen wird nur das tatsächliche
 // LCP-Bild (lcp); alle anderen Bilder laden verzögert.
+// Bildauswahl je Breite (`gross`, UM-E4-START): ab einer Medienabfrage ein anderer Zuschnitt derselben Aufnahme (Art Direction
+// nach der Next-16-Doku Image „Art direction“, getImageProps): <picture> mit einer <source> samt eigener Breite und Höhe (kein
+// Layoutsprung), das <img> trägt den Zuschnitt darunter. Der Browser lädt genau eine Datei, mit hoher Priorität, wenn `lcp`.
+// Beide Zuschnitte zeigen dieselbe Aufnahme, darum gilt ein Alt-Text. Unscharfer Platzhalter wie bei jedem Bildfeld (K-006;
+// Nacharbeit UM-E4-START, Prüfung A: er fehlte am Startfoto): der des kleinen Zuschnitts als Hintergrund des <img>, deckend
+// gefüllt (cover), auch unter dem großen Zuschnitt; beide zeigen dieselbe Aufnahme. getImageProps nimmt ihn nach dem Laden
+// nicht weg; hinter einem deckenden Foto ist er dann nicht mehr zu sehen.
+// Vorladen (lcp): Für ein einzelnes <img> mit hoher Priorität setzt React selbst ein preload in den Kopf, für ein <img> in
+// <picture> nicht (die <source> könnte gewinnen). Darum hier je Zuschnitt ein preload mit eigener Medienabfrage, die sich
+// ausschließen (gross.media und ihr Gegenteil): Es lädt genau die Datei vor, die das <picture> wählt (Messung UM-E4-START:
+// ohne preload lag das LCP am Desktop rund 70 ms später).
 import type { ReactNode } from 'react';
-import Image from 'next/image';
+import { preload } from 'react-dom';
+import Image, { getImageProps } from 'next/image';
 import clsx from 'clsx';
 import { ARBEITEN, type ArbeitId } from '@/config/arbeiten';
 
@@ -26,6 +38,8 @@ interface Gemeinsam {
   beschriftung?: ReactNode;
   /** Quelle, in Mono unter der Beschriftung */
   quelle?: ReactNode;
+  /** anderer Zuschnitt derselben Aufnahme ab `media` (Kennung aus ARBEITEN, eigene sizes) */
+  gross?: { arbeit: ArbeitId; media: string; sizes: string };
   /** als Fliese einer verlegten Fläche (Raster mit 1-px-Fugen): Bild ohne eigenen Rahmen, Beschriftung mit Innenabstand
    *  und ohne Silbentrennung */
   flaeche?: boolean;
@@ -53,23 +67,27 @@ interface MitDatei extends Gemeinsam {
 export type BildfeldProps = MitArbeit | MitDatei;
 
 export default function Bildfeld(props: BildfeldProps) {
-  const { spalten = 'voll', sizes, lcp = false, beschriftung, quelle, flaeche = false, className } = props;
+  const { spalten = 'voll', sizes, lcp = false, beschriftung, quelle, flaeche = false, gross, className } = props;
   const bild = props.arbeit ? ARBEITEN[props.arbeit] : props;
   return (
     <figure className={className} aria-hidden={bild.alt === '' || undefined}>
       <div className={flaeche ? 'bg-fliese' : 'border border-fuge bg-fliese'}>
-        <Image
-          src={bild.src}
-          alt={bild.alt}
-          width={bild.breite}
-          height={bild.hoehe}
-          sizes={sizes ?? GROESSEN[spalten]}
-          loading={lcp ? 'eager' : undefined}
-          fetchPriority={lcp ? 'high' : undefined}
-          placeholder={bild.blur ? 'blur' : 'empty'}
-          blurDataURL={bild.blur}
-          className="block h-auto w-full"
-        />
+        {gross ? (
+          <Bildauswahl bild={bild} sizes={sizes ?? GROESSEN[spalten]} lcp={lcp} gross={gross} />
+        ) : (
+          <Image
+            src={bild.src}
+            alt={bild.alt}
+            width={bild.breite}
+            height={bild.hoehe}
+            sizes={sizes ?? GROESSEN[spalten]}
+            loading={lcp ? 'eager' : undefined}
+            fetchPriority={lcp ? 'high' : undefined}
+            placeholder={bild.blur ? 'blur' : 'empty'}
+            blurDataURL={bild.blur}
+            className="block h-auto w-full"
+          />
+        )}
       </div>
       {(beschriftung || quelle) && (
         <figcaption className={flaeche ? 'px-4 pt-3 pb-4' : 'mt-3'}>
@@ -78,5 +96,35 @@ export default function Bildfeld(props: BildfeldProps) {
         </figcaption>
       )}
     </figure>
+  );
+}
+
+/** Bildauswahl je Breite: <source> für den großen Zuschnitt ab `media`, darunter das <img> des kleinen (Art Direction) */
+function Bildauswahl({ bild, sizes, lcp, gross }: { bild: { src: string; alt: string; breite: number; hoehe: number; blur?: string }; sizes: string; lcp: boolean; gross: NonNullable<Gemeinsam['gross']> }) {
+  const g = ARBEITEN[gross.arbeit];
+  const {
+    props: { srcSet: grossSet, src: grossSrc },
+  } = getImageProps({ src: g.src, alt: g.alt, width: g.breite, height: g.hoehe, sizes: gross.sizes });
+  const { props: klein } = getImageProps({
+    src: bild.src,
+    alt: bild.alt,
+    width: bild.breite,
+    height: bild.hoehe,
+    sizes,
+    loading: lcp ? 'eager' : undefined,
+    fetchPriority: lcp ? 'high' : undefined,
+    placeholder: bild.blur ? 'blur' : 'empty',
+    blurDataURL: bild.blur,
+  });
+  if (lcp) {
+    preload(grossSrc, { as: 'image', imageSrcSet: grossSet, imageSizes: gross.sizes, fetchPriority: 'high', media: gross.media });
+    preload(klein.src, { as: 'image', imageSrcSet: klein.srcSet, imageSizes: sizes, fetchPriority: 'high', media: `not all and ${gross.media}` });
+  }
+  return (
+    <picture>
+      <source media={gross.media} srcSet={grossSet} sizes={gross.sizes} width={g.breite} height={g.hoehe} />
+      {/* Art Direction nach der Next-Doku: getImageProps liefert die Props des <img> */}
+      <img {...klein} alt={bild.alt} className="block h-auto w-full" />
+    </picture>
   );
 }

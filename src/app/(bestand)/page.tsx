@@ -23,7 +23,7 @@ export default function HomePage() {
     return (
         <>
             <SeitenDaten pfad="/" titel={START.meta.titel} beschreibung={START.meta.beschreibung} brotkrumen={[{ name: 'Start' }]} />
-            <ErzaehlSeite inhalt={START} einstiegBild={<Startbild lcp sizes={EINSTIEG_MITTE_SIZES} />} formular={<HeroContactForm titel={false} />} />
+            <ErzaehlSeite inhalt={START} einstiegBild={<Startbild lcp sizes={EINSTIEG_MITTE_SIZES} gross={START.worum.bildQuer} />} formular={<HeroContactForm titel={false} />} />
         </>
     );
 }

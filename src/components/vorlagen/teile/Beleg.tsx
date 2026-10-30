@@ -54,7 +54,7 @@ export default function Beleg({ inhalt, pfad, moment, zweiter, stimmenTitel = 'D
           <Karussell art="reihe" name="Fotos" karte={karte}>
             {inhalt.fotos.map((f, i) => (
               <div key={f.bild} className={versatz(i)}>
-                <Glasbild arbeit={f.bild} name={f.unterschrift} href={ziel(f.href)} sizes={inhalt.fotos.length === 2 ? '(min-width: 768px) 50vw, 100vw' : '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw'} />
+                <Glasbild arbeit={f.bild} name={f.unterschrift} href={ziel(f.href)} verlauf={inhalt.fotosVerlauf} sizes={inhalt.fotos.length === 2 ? '(min-width: 768px) 50vw, 100vw' : '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw'} />
               </div>
             ))}
           </Karussell>
@@ -99,7 +99,7 @@ export default function Beleg({ inhalt, pfad, moment, zweiter, stimmenTitel = 'D
           titel={inhalt.stimmenTitel ?? stimmenTitel}
           einleitung={inhalt.stimmenEinleitung ? <p><Textmarken text={inhalt.stimmenEinleitung} /></p> : undefined}
         >
-          <Stimmen ids={inhalt.stimmen} form={inhalt.stimmenEinzeln ? 'einzeln' : inhalt.stimmenGross ? 'gross' : 'klein'} />
+          <Stimmen ids={inhalt.stimmen} form={inhalt.stimmenEinzeln ? 'einzeln' : inhalt.stimmenGross ? 'gross' : 'klein'} versatz={inhalt.stimmenVersatz} />
         </Abschnitt>
       )}
       {inhalt.orte && <Einsatzorte titel={inhalt.orte.titel} einleitung={inhalt.orte.einleitung} />}

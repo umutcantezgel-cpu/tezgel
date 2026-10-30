@@ -64,6 +64,10 @@ const FUGEN: Record<string, string> = {
   // Abgeleitetes Wort ohne Fuge: eine Trennstelle an der Silbengrenze („Verarbei-tung“), nicht „Verar-beitung“ (Nr. 11). Ohne
   // Trennstelle bräche das Wort in der schmalen Einwilligungsspalte bei 200 % Schrift mit overflow-wrap ohne Strich („Verarbeitun“ und „g“).
   Verarbeitung: 'Verarbei­tung',
+  // FS-K Nr. 6 (UM-E4-START): Zeitleiste und Fachwort auf /bad/badsanierung trennten bei 200 % im Wortteil
+  // („Festpreisan-gebot“, „Verbundab-dichtung“); eingebunden über mitFugen in Ablauf und Tun (Textmarken mit fugen)
+  Festpreisangebot: 'Festpreis­angebot',
+  Verbundabdichtung: 'Verbund­abdichtung',
 };
 
 const FUGEN_MUSTER = new RegExp(`(${Object.keys(FUGEN).join('|')})`);

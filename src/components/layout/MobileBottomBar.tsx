@@ -15,6 +15,7 @@ import { hauptziel, ohneLeiste } from "@/config/navigation";
 // Markenzeichen. Anrufen und Termin tragen die Markierungen für „Erstes Bild“ (K-004). Das erste Feld
 // ist der Platz des Widerruf-Schilds der Einwilligung (#leiste-schild): die
 // Einwilligungs-Komponente hängt ihren Knopf dort ein, sobald sie geladen ist – so verdeckt kein schwebender Knopf Inhalt.
+// Bis dahin (und solange der Banner offen ist) steht dort ein ruhender Platzhalter in derselben Gestalt (UM-E4-START).
 // Fokus: der Umriss liegt innerhalb des Feldes (Versatz -4), damit ihn weder Nachbarfeld, Fuß der Seite noch Fensterrand
 // verdecken; die Farbe je Fläche: Tinte auf den hellen Feldern, Kalk auf dem Termin-Feld (Prüfung UM-E3-ZUST).
 // Gedrückt: Hintergrund-Token, ohne Platzwechsel.
@@ -37,7 +38,14 @@ export default function MobileBottomBar() {
       data-leiste
     >
       <div className="flex gap-px">
-        <div id="leiste-schild" className="flex w-16 shrink-0 bg-kalk" />
+        {/* Platz des Schilds mit ruhendem Platzhalter: dasselbe Schloss mit „Cookies“ ab dem ersten Bild, bis die Einwilligung
+            ihren Knopf einhängt (dann tritt er zurück, globals.css); kein Ein- und Ausblenden beim Erstbesuch (UM-E4-START) */}
+        <div id="leiste-schild" className="flex w-16 shrink-0 bg-kalk">
+          <span aria-hidden="true" inert className="leiste-schild-platz flex size-full flex-col items-center justify-center gap-1 px-1 font-text text-fs-1 font-semibold text-tinte-2">
+            <Icon name="schloss" groesse={5} />
+            <span className="leiste-text">Cookies</span>
+          </span>
+        </div>
         <a
           href={siteConfig.contact.phone.link}
           onClick={() => triggerHaptic("medium")}

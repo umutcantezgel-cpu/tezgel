@@ -433,6 +433,26 @@ export const ARBEITEN = {
     raum: "bad",
     blur: "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAADwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JZQCdABJeR0Rqdaa7ijsAAP5L/k9mTuJiFyEnq5dKdScd6tvwXwO6XeAr9H+41CZe5d+tTBf+WYFJJ05R6PZl82d7O2mkQVIp2lk7OzUdsK9PNIVXb+U2NpowSYlzy6Ki+AAA",
   },
+  // Startfoto (UM-E4-START, Sicht Anlauf 3): echtes Querformat aus IMG_2569 (Original 1320 × 880 im Bildschirmfoto), Bad im
+  // Dachgeschoss, Boden und Wand ganz im Bild. Unter lg im eigenen Seitenverhältnis 3 : 2, ab lg oben um die Dachschräge
+  // gekürzt auf 16 : 9, damit es bei zwei Dritteln der Spalte ganz in den ersten Bildschirm passt (Bildauswahl je Breite,
+  // Startbild); Korrektur aus (die Farben des Originals bleiben), Zuschnitt mit bilder.mjs, Metadaten 0
+  "start-bad": {
+    src: "/images/arbeiten/bad/dachgeschoss-bad-dusche-glaswand-beige.jpg",
+    breite: 1320,
+    hoehe: 880,
+    alt: "Bad im Dachgeschoss mit Dusche hinter einer Glaswand und großen beigen Fliesen an Wand und Boden",
+    raum: "bad",
+    blur: "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAAAQAgCdASoQAAsAA4BaJYwCdADcQPPyEzPAAP6RaMJul6QPFWmoKXLYUS11gsE1uzFT6kzzokcATb58ouV36chzaZVlIAAA",
+  },
+  "start-bad-gross": {
+    src: "/images/arbeiten/bad/dachgeschoss-bad-dusche-glaswand-beige-breit.jpg",
+    breite: 1312,
+    hoehe: 738,
+    alt: "Bad im Dachgeschoss mit Dusche hinter einer Glaswand und großen beigen Fliesen an Wand und Boden",
+    raum: "bad",
+    blur: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAACQAQCdASoQAAkAA4BaJYwCdABV8gAA+MdpZRIqZabeXeyIWJGeql7Gsfg2WsZxbVN5Gbv0/YgVqVGWmwKAAA==",
+  },
 } as const satisfies Record<string, Arbeit>;
 
 export type ArbeitId = keyof typeof ARBEITEN;

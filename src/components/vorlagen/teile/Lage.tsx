@@ -6,25 +6,51 @@
 // nicht zu sehen. Weiß mit Fuge und Kantenkreuz setzt den Bruch nach dem Einstieg, danach wechseln die Flächen Abschnitt für
 // Abschnitt. Ab lg setzt der Einstieg eine Stufe 16 Kalk unter seine Bewertungszeile (EinstiegMitte fugeUnten), und der Kopf
 // beginnt eine Stufe 16 unter der Fuge. Der Abschnitt zeichnet spät (content-visibility, unter dem ersten Bildschirm,
-// E3-LEIST-01). Serverkomponente.
+// E3-LEIST-01).
+// Eine Auswahlebene (Startseite, UM-E4-START, Sicht Anlauf 3): Trägt eine Lage eine Plan-Zeichnung (`vignette`), steht sie links
+// in der Zeile in einem eigenen Feld an der Fuge, Satz und Pfeil rechts; die Leistungen darunter („Was wir tun“) sind nur noch
+// eine Zeile mit Links. Unter 20rem Zeilenbreite (große Systemschrift) entfällt die Zeichnung. Serverkomponente.
 import Link from 'next/link';
 import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Textmarken from '@/components/kern/Textmarken';
+import { VIGNETTEN, type VignettenName } from '@/components/kern/vignetten';
 import type { BildOderMotiv, LageInhalt } from '../inhalt';
 import { Bereichszeilen } from './Tun';
 
-type Fliese = { satz: string; href: string } & BildOderMotiv;
+type Fliese = { satz: string; href: string; vignette?: VignettenName } & BildOderMotiv;
 
-/** Auswahl: je Lage eine Zeile mit Satz und Pfeil; Bild oder Motiv im Inhalt bleiben für andere Formen erhalten, hier ruhen sie */
-export function LageFliesen({ fliesen, className }: { fliesen: Fliese[]; className?: string }) {
+/** Plan-Zeichnung der Lage im eigenen Feld an der Fuge, ganz und mittig (Feld 4 : 3), dekorativ; unter 24rem Listenbreite (Handy)
+ *  Stufe 16 (64 px) mit engerem Innenabstand, sonst Stufe 24 (96 px), ab lg 32 (128 px), damit der Satz daneben höchstens drei
+ *  Zeilen braucht */
+function LageZeichnung({ name }: { name: VignettenName }) {
+  const Vignette = VIGNETTEN[name];
   return (
-    <ul className={clsx('grid border-t border-fuge md:grid-cols-2 md:gap-x-12', className)}>
+    <span aria-hidden="true" className="hidden w-16 shrink-0 @xs:block @sm:w-24 lg:w-32">
+      <span className="flex aspect-4/3 items-center justify-center border border-fuge bg-kalk p-1 text-tinte @sm:p-2">
+        <Vignette fuellen />
+      </span>
+    </span>
+  );
+}
+
+/** Auswahl: je Lage eine Zeile mit Satz und Pfeil, mit Zeichnung links (UM-E4-START); Bild oder Motiv im Inhalt bleiben für
+ *  andere Formen erhalten, hier ruhen sie. Mit Zeichnung zwei Spalten erst ab lg: auf t768 standen die Sätze neben der
+ *  Zeichnung in vier bis fünf Zeilen */
+export function LageFliesen({ fliesen, className }: { fliesen: Fliese[]; className?: string }) {
+  const mitZeichnung = fliesen.some((f) => f.vignette);
+  return (
+    <ul className={clsx('grid border-t border-fuge', mitZeichnung ? '@container lg:grid-cols-2 lg:gap-x-12' : 'md:grid-cols-2 md:gap-x-12', className)}>
       {fliesen.map((f) => (
         <li key={f.href} className="border-b border-fuge">
-          <Link href={f.href} data-motion="zustand" className="group flex min-h-16 items-start justify-between gap-6 py-6 text-tinte">
-            <span className="font-text text-fs-4 font-semibold text-pretty hyphens-none underline decoration-transparent decoration-2 underline-offset-8 transition-colors dauer-1 group-hover:decoration-laser">
+          <Link
+            href={f.href}
+            data-motion="zustand"
+            className={clsx('group flex min-h-16 justify-between text-tinte', mitZeichnung ? 'items-center gap-4 py-4 lg:gap-6' : 'items-start gap-6 py-6')}
+          >
+            {f.vignette && <LageZeichnung name={f.vignette} />}
+            <span className={clsx('font-text text-fs-4 font-semibold text-pretty hyphens-none underline decoration-transparent decoration-2 underline-offset-8 transition-colors dauer-1 group-hover:decoration-laser', mitZeichnung && 'min-w-0 flex-1')}>
               {f.satz}
             </span>
             {/* Pfeil an der ersten Zeile: in einer Zeile der Liste stehen die Pfeile gleich hoch, ob der Satz ein- oder zweizeilig ist (Browserprüfung E4-W1, Runde 2).

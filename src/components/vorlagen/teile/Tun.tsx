@@ -3,7 +3,11 @@
 // Laserlinie (Startseite, UM-E3-FIX2 N9: vorher drei mittige Köpfe in Folge); Bereiche oder Unterseiten als Zeilen an der Fuge mit einem Verlegemuster aus dem Formsystem statt eines
 // Strichsymbols (unter 20 rem Zeilenbreite entfällt das Muster); Aussagen als Fliesen an der Fuge (bei großer Schrift das
 // Fugenkreuz über dem Satz); oder Bereiche als Plan-Fliesen im Drittelverband (Startseite, E-037, UM-E3-FIX2 N9); danach ein Absatz und der Platz
-// für den großen Moment der Seite. Wahlweise eine erklärende Zeichnung mit Bildunterschrift nach dem Inhalt. Der Abschnitt zeichnet spät (unter dem ersten Bildschirm, E-044). Serverkomponente.
+// für den großen Moment der Seite. Wahlweise eine erklärende Zeichnung mit Bildunterschrift nach dem Inhalt. Der Abschnitt zeichnet spät (unter dem ersten Bildschirm, E-044).
+// Oder (Startseite, UM-E4-START, Sicht Anlauf 3: zwei Auswahllisten mit sich überschneidenden Zielen folgten aufeinander) nur
+// eine ruhige Zeile mit den Leistungen als Links unter dem mittigen Kopf; ihre Zeichnungen stehen in den Zeilen der Lage.
+// Lange Namen trennen nur an ihrer Fuge (mitFugen, FS-K Nr. 2), ebenso die Sätze der Punkte (Textmarken mit fugen, FS-K
+// Nr. 6). Serverkomponente.
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import Icon from '@/components/icons/Icon';
@@ -13,7 +17,9 @@ import Fliesenkomposition from '@/components/kern/Fliesenkomposition';
 import { VIGNETTEN } from '@/components/kern/vignetten';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Textmarken from '@/components/kern/Textmarken';
-import type { BereichFliese, TunInhalt } from '../inhalt';
+import { linkKlassen } from '@/components/kern/stile';
+import { mitFugen } from '@/components/kern/zusammen';
+import type { BereichFliese, TunInhalt, Verweis } from '../inhalt';
 
 export function Bereichszeilen({ bereiche }: { bereiche: NonNullable<TunInhalt['bereiche']> }) {
   return (
@@ -97,7 +103,7 @@ function Planfliesen({ bereiche }: { bereiche: Bereich[] }) {
                       gross && '@5xl:text-fs-4',
                     )}
                   >
-                    {b.name}
+                    {mitFugen(b.name)}
                   </span>
                   <Icon name="pfeil-rechts" groesse={5} className="shrink-0 text-tinte-2 transition-colors dauer-1 group-hover:text-tinte" />
                 </span>
@@ -130,7 +136,7 @@ export function Bereichsfliesen({ bereiche }: { bereiche: Bereich[] }) {
               <span className="flex min-w-0 flex-1 items-start gap-3 p-4 lg:p-6">
                 {/* gesetzt wie die Sätze der Lage-Fliesen (gleiche Ebene, ein Schnitt; E2-SICHT-2 Typografie) */}
                 <span className="min-w-0 flex-1 font-text text-fs-4 font-semibold text-pretty hyphens-auto underline decoration-transparent decoration-2 underline-offset-4 transition-colors dauer-1 group-hover:decoration-laser">
-                  {b.name}
+                  {mitFugen(b.name)}
                 </span>
                 <Icon name="pfeil-rechts" groesse={5} className="mt-1 shrink-0 text-tinte-2 transition-colors dauer-1 group-hover:text-tinte" />
               </span>
@@ -154,6 +160,25 @@ export function Punktfliesen({ punkte }: { punkte: ReactNode[] }) {
         ))}
       </ul>
     </div>
+  );
+}
+
+/** Leistungen als ruhige Zeilen (Startseite, UM-E4-START): Links mittig unter dem Kopf, mobil untereinander, ab md zwei mal
+ *  zwei in zwei gleich breiten Spalten, jeder Link mittig in seiner Zelle (Nacharbeit, Prüfung A: als umbrechende Zeile stand
+ *  auf t1024 bis d1920 „Reparatur von Fliesen und Fugen“ allein in der zweiten Zeile); jede Trefffläche mindestens 44 px
+ *  hoch. Lange Namen trennen nur an ihrer Fuge (FS-K Nr. 2). Ohne Karten und ohne Zeichnungen: Die Zeichnungen stehen in den
+ *  Zeilen der Lage darüber. */
+function Leistungszeile({ leistungen }: { leistungen: Verweis[] }) {
+  return (
+    <ul className="mx-auto grid w-fit max-w-full grid-cols-1 justify-items-center gap-x-12 text-center md:grid-cols-2">
+      {leistungen.map((l) => (
+        <li key={l.href}>
+          <Link href={l.href} data-motion="zustand" className={clsx(linkKlassen, 'inline-block min-h-11 py-2 font-text text-fs-3 font-semibold text-balance')}>
+            {mitFugen(l.name)}
+          </Link>
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -182,12 +207,16 @@ export default function Tun({ inhalt, moment }: { inhalt: TunInhalt; moment?: Re
       mitte={!inhalt.anDerLinie}
       titel={inhalt.titel}
       einleitung={inhalt.einleitung ? <p><Textmarken text={inhalt.einleitung} /></p> : undefined}
+      // ruhige Leistungszeilen (Startseite): ab lg eine Stufe 16 statt 24 über und unter dem Band, es trägt wenig Inhalt
+      // (Nacharbeit UM-E4-START, Prüfung A: rund 300 px für Kopf, Satz und vier Links)
+      className={inhalt.leistungen?.length ? 'lg:pt-16 lg:pb-16' : undefined}
     >
       {inhalt.bereiche && inhalt.bereiche.length > 0 && <Bereichszeilen bereiche={inhalt.bereiche} />}
       {inhalt.bereichsfliesen && inhalt.bereichsfliesen.length > 0 && <Bereichsfliesen bereiche={inhalt.bereichsfliesen} />}
+      {inhalt.leistungen && inhalt.leistungen.length > 0 && <Leistungszeile leistungen={inhalt.leistungen} />}
       {inhalt.punkte && inhalt.punkte.length > 0 && (
         <div className={inhalt.bereiche?.length ? 'mt-16' : undefined}>
-          <Punktfliesen punkte={inhalt.punkte.map((p) => <Textmarken key={p} text={p} />)} />
+          <Punktfliesen punkte={inhalt.punkte.map((p) => <Textmarken key={p} text={p} fugen />)} />
         </div>
       )}
       {inhalt.absatz && (

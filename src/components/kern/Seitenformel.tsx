@@ -16,6 +16,12 @@ export const FORMEL_NAMEN: Record<Formelteil, string> = {
   schritt: 'Nächster Schritt',
 };
 
-export default function Seitenformel({ children }: { children: ReactNode }) {
-  return <div data-seitenformel="">{children}</div>;
+/** `lot="satzkante"` (Startseite, UM-E4-START): Das Lot des Leitfadens steht unter md auf der Satzkante statt mittig im Rand
+ *  (globals.css „Lot an der Satzkante“, Marke `achse` an ACHSE_LAGE) */
+export default function Seitenformel({ children, lot }: { children: ReactNode; lot?: 'satzkante' }) {
+  return (
+    <div data-seitenformel="" data-lot={lot}>
+      {children}
+    </div>
+  );
 }

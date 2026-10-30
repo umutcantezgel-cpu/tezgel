@@ -202,6 +202,15 @@
 @utility einstieg-foto {
   width: min(calc(100% * 2 / 3), calc((100svh - var(--spacing) * 24) * var(--bild-format)));
 }
+/* Startfoto ab lg in der Figur „An der Schnur“ (EinstiegMitte schnurFigur, UM-E4-START, Sicht Anlauf 3: das Foto stand halb
+   unter dem Falz): so breit, dass es ganz im ersten Bildschirm steht, im eigenen Seitenverhältnis (--bild-format). Über dem
+   Foto stehen die zwei Zeilen der H1 (2 × Zeilenhöhe 1,1 in fs-7, ab lg die Größe der H1) und Kopf, Ort, Knöpfe und Abstände
+   (15 rem, wachsen mit der Grundschrift), darunter eine Stufe 2 Luft bis zum Rand (zusammen Stufe 62); gemessen t1024, d1440,
+   d1920. Mindestens die Hälfte, höchstens zwei Drittel der Spalte: Auf d1440 und d1920 sind das rund zwei Drittel, die linke
+   Kante steht dort in der Flucht des Ort-Satzes (Zeile Ort und Orte-Link, ebenso breit). */
+@utility einstieg-foto-start {
+  width: clamp(calc(100% / 2), calc((100svh - var(--spacing) * 62 - 2.2 * var(--text-fs-7)) * var(--bild-format)), calc(100% * 2 / 3));
+}
 
 @utility ohne-scrollleiste {
   scrollbar-width: none;
@@ -487,6 +496,139 @@
   .titel-spalte > * {
     font-size: min(1em, 16.5cqi);
   }
+  /* Figur „An der Schnur“ (EinstiegMitte schnurFigur, UM-E4-START): Die Grundlinie der letzten Zeile steht auf der Schnur. Die
+     Zeile rückt dafür um ihren Abstand von der Grundlinie zur Unterkante ihres Zeilenkastens hinab: halber Durchschuss
+     (Zeilenhöhe 1,1 minus Inhaltshöhe der Archivo 0,878 + 0,210 = 1,088, also 0,006em) plus Unterlänge 0,21em. Die
+     Ersatzschrift trägt dieselben Werte (ascent- und descent-override mal size-adjust). Flach fließen die Zeilen als ein Satz
+     in fs-5 (Zeilenhöhe 1,15): dort rückt die H1 selbst. Die Zeilenmaske des Eingangs bleibt am Zeilenkasten. */
+  .schnur-grundlinie > :last-child {
+    margin-block-end: calc(-1em * (1.1 - 1.088) / 2 - 0.21em);
+  }
+  @media (orientation: landscape) and (height <= 32rem) {
+    .schnur-grundlinie > :last-child {
+      margin-block-end: 0;
+    }
+    .schnur-grundlinie {
+      margin-block-end: calc(-1em * (1.15 - 1.088) / 2 - 0.21em);
+    }
+  }
+  /* Mit dem Quadratmeter hinter „Quadratmeter.“ (UM-E4-START) passen Zeile und Maß zusammen in die Spalte: Die letzte Zeile
+     misst 7,86em (gemessen d1440 und m390), dazu Abstand und Maß (unter lg 0,25em + 1,1em, ab lg 0,75em + 1,65em, globals.css
+     „quadratmeter“). Unter md steht die Gruppe mittig und füllt höchstens rund 98 % der Spalte. Ab md steht die H1 mittig und
+     das Maß hängt rechts außen an ihr (EinstiegMitte, Nacharbeit UM-E4-START): Die halbe Zeile und das Maß passen in die
+     halbe Spalte (3,93em + 1,35em bzw. + 2,4em ≤ 49 %). Bei 100 % Systemschrift greift keine dieser Grenzen (t1024 knapp:
+     71,1 px gegen 71,5 px). Unter 20rem Spalte (große Systemschrift) entfällt das Maß, dort gilt die Grenze oben. */
+  @container (width >= 20rem) {
+    .titel-spalte > * {
+      font-size: min(1em, 10.6cqi);
+    }
+    @media (width >= 48rem) {
+      .titel-spalte > * {
+        font-size: min(1em, 9.2cqi);
+      }
+    }
+    @media (width >= 64rem) {
+      .titel-spalte > * {
+        font-size: min(1em, 7.7cqi);
+      }
+    }
+  }
+  @container (width < 20rem) {
+    .quadratmeter {
+      display: none;
+    }
+  }
+  /* Quadratmeter an der Schnur (vorlagen/teile/Quadratmeter, UM-E4-START): Platz ohne Höhe direkt hinter der H1, Unterkante auf
+     der Grundlinie; Größen in der Schrift der H1-Zeilen (--qm Seite der Fliese, --qm-luft Abstand zur Zeile). Ab lg 1,65em:
+     so hoch wie die H1 von knapp unter der Versalhöhe der ersten bis zur Grundlinie der zweiten Zeile (rund zwei Zeilen);
+     mit 1,8em stand die obere Zahl auf t1024 und d1440 nur 4 bis 6 px unter dem Kopf der Seite, jetzt rund 18 px.
+     Zeichnung 96 × 96 Einheiten, Maße 12 Einheiten vor der Kante (0,125 der Seite),
+     die Zahlen stehen auf der Maßlinie. Unter lg nur das obere Maß (links stünde es im Wortabstand). */
+  .quadratmeter {
+    --qm: 1.1em;
+    --qm-luft: 0.25em;
+    position: relative;
+    flex: none;
+    width: calc(var(--qm-luft) + var(--qm));
+    height: 0;
+  }
+  @media (width >= 64rem) {
+    .quadratmeter {
+      --qm: 1.65em;
+      --qm-luft: 0.75em;
+    }
+  }
+  .quadratmeter-zeichnung {
+    position: absolute;
+    left: var(--qm-luft);
+    bottom: 0;
+    width: var(--qm);
+    height: var(--qm);
+    overflow: visible;
+  }
+  .quadratmeter-zahl-oben {
+    position: absolute;
+    left: var(--qm-luft);
+    width: var(--qm);
+    bottom: calc(var(--qm) * 1.125 + var(--spacing) / 2);
+    display: flex;
+    justify-content: center;
+  }
+  .quadratmeter-zahl-seite {
+    position: absolute;
+    bottom: 0;
+    height: var(--qm);
+    right: calc(100% - var(--qm-luft) + var(--qm) * 0.125 + var(--spacing) / 2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    writing-mode: vertical-rl;
+    rotate: 180deg;
+  }
+  @media (width < 64rem) {
+    .quadratmeter-seite {
+      display: none;
+    }
+  }
+  /* Flach (Handy quer, H1 in einer Zeile fs-5; Nacharbeit UM-E4-START, Prüfung A: dort fehlte das Maß): die Fliese klein in
+     der Zeilenhöhe ohne Bemaßung und Zahl (darüber stünde sie im Kopf der Seite), Fugen bleiben */
+  @media (orientation: landscape) and (height <= 32rem) {
+    .quadratmeter {
+      --qm: 0.85em;
+      --qm-luft: 0.35em;
+    }
+    .quadratmeter-zahl-oben,
+    .quadratmeter-mass-oben {
+      display: none;
+    }
+  }
+  /* Schnur des mittigen Einstiegs: mobil und bei DPR 1 zwei Pixel, damit das Rot als Rot ankommt (UM-E4-START, Sicht
+     Anlauf 3: als 1-px-Linie las sie sich bei DPR 1 als dunkle Haarlinie); am Desktop mit DPR 2 bleibt sie 1 px. Sie wächst
+     nach unten, ihre Oberkante bleibt die Grundlinie der H1. */
+  @media (width < 64rem), (resolution < 2dppx) {
+    .einstieg-lot .schnur-linie {
+      height: 2px;
+    }
+  }
+  /* Lot an der Satzkante (Seitenformel lot="satzkante", nur Startseite; UM-E4-START, Sicht Anlauf 3: mittig im Rand bei 8 px
+     las sich das Rot wie eine Schnittmarke am Bildrand): unter md steht das Lot mit seiner rechten Kante auf der Satzkante
+     (16 px), das 2-px-Rot also von 14 bis 16 px, die Fugenkreuze mittig darauf; die Schnur beginnt dort und endet gespiegelt.
+     Die Treppe des Ablaufs steht mobil auf dem Lot und rückt mit (treppe-auf-lot). Haken: die Marke `achse` an ACHSE_LAGE. */
+  @media (width < 48rem) {
+    [data-lot="satzkante"] .achse {
+      left: calc(var(--spacing) * 4 - 1px);
+    }
+    [data-lot="satzkante"] .achse-rechts {
+      right: calc(var(--spacing) * 4 - 1px);
+    }
+    [data-lot="satzkante"] .leitachse-rot,
+    [data-lot="satzkante"] .lot-stueck {
+      margin-left: -1px;
+    }
+    [data-lot="satzkante"] .treppe-auf-lot {
+      margin-left: -2px;
+    }
+  }
   /* Planblatt der Startseite: Das Formular setzt die Wände des geschnittenen Plans nach unten fort (--wand aus
      wandEinzug() in Verlegeplan.tsx, Anteil der Zeichnungsbreite) */
   @media (width >= 64rem) {
@@ -612,12 +754,28 @@
     .kopf-zeile img {
       height: calc(var(--spacing) * 10);
     }
-    [data-leiste] a {
+    [data-leiste] a,
+    [data-leiste] #leiste-schild > * {
       min-height: calc(var(--spacing) * 11);
       flex-direction: row;
       gap: calc(var(--spacing) * 2);
       padding-block: 0;
     }
+    /* Feld „Cookies“ wie die übrigen Felder: Zeichen und Wort in einer Zeile (UM-E4-START, Sicht Anlauf 3: auf q844 brach das
+       Wort unter das Zeichen); dafür so breit wie sein Inhalt statt 64 px */
+    [data-leiste] #leiste-schild {
+      width: auto;
+    }
+    [data-leiste] #leiste-schild > * {
+      padding-inline: calc(var(--spacing) * 3);
+    }
+  }
+  /* Platz des Widerruf-Schilds in der Leiste (MobileBottomBar, UM-E4-START, Sicht Anlauf 3: beim Erstbesuch erschien und
+     verschwand das Feld): Ab dem ersten Bild steht dort serverseitig dasselbe Schloss mit „Cookies“, ruhend (inert, ohne
+     Namen). Hängt die Einwilligung ihren Knopf ein, tritt der Platzhalter zurück, ohne sichtbaren Wechsel; solange der
+     Banner offen ist, bleibt er stehen. */
+  #leiste-schild:has(> button) > .leiste-schild-platz {
+    display: none;
   }
   /* Große Systemschrift (K-013, P1 mit 200 %): Ist die untere Leiste schmaler als 20 em ihrer eigenen Schriftgröße (bei
      100 % also unter 320 px, bei 200 % unter 640 px), bleiben Anrufen und Termin mit vollem Wort; WhatsApp tritt zurück

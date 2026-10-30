@@ -253,10 +253,12 @@
       },
       "anriss": {
         "zweck": "hierarchie",
-        "was": "Das Schlüsselwort einer Stimme wird von Hand unterstrichen",
+        "was": "Das Schlüsselwort einer Stimme wird von Hand unterstrichen; an der Treppe der Startseite reißt die rote Stufenlinie beim Eintritt einmal Stufe für Stufe an, das Fugenkreuz setzt sich rot und vergrößert, wo die Linie ankommt, und der Schritt setzt sich mit (UM-E4-START)",
         "stufen": {
           "dauer": [
-            "--dauer-4"
+            "--dauer-4",
+            "--dauer-3",
+            "--dauer-1"
           ],
           "kurve": [
             "--ease-setzen"
@@ -264,7 +266,7 @@
         },
         "reduziert": {
           "art": "sofort",
-          "text": "der Strich steht sofort"
+          "text": "Strich und Stufenlinie stehen sofort, die Schritte ganz da"
         },
         "notaus": "endzustand"
       },

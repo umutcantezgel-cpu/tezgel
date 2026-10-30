@@ -642,5 +642,49 @@
     "alt": "Bodengleiche Dusche mit dunklem Mosaikstreifen an der Wand, Handbrause und Mosaikboden",
     "korrektur": true,
     "schaerfen": 0.8
+  },
+  {
+    "id": "start-bad",
+    "original": "IMG_2569.PNG",
+    "raum": "bad",
+    "name": "dachgeschoss-bad-dusche-glaswand-beige",
+    "format": "3:2",
+    "schwerpunkt": {
+      "x": 50,
+      "y": 50
+    },
+    "ausschnitt": {
+      "links": 0,
+      "oben": 34.6583,
+      "rechts": 0,
+      "unten": 34.6583
+    },
+    "breiten": [
+      1320
+    ],
+    "alt": "Bad im Dachgeschoss mit Dusche hinter einer Glaswand und großen beigen Fliesen an Wand und Boden",
+    "korrektur": false
+  },
+  {
+    "id": "start-bad-gross",
+    "original": "IMG_2569.PNG",
+    "raum": "bad",
+    "name": "dachgeschoss-bad-dusche-glaswand-beige-breit",
+    "format": "16:9",
+    "schwerpunkt": {
+      "x": 50,
+      "y": 52
+    },
+    "ausschnitt": {
+      "links": 0,
+      "oben": 39.47,
+      "rechts": 0,
+      "unten": 34.6583
+    },
+    "breiten": [
+      1320
+    ],
+    "alt": "Bad im Dachgeschoss mit Dusche hinter einer Glaswand und großen beigen Fliesen an Wand und Boden",
+    "korrektur": false
   }
 ]

@@ -92,7 +92,7 @@ export default function ErzaehlSeite({ inhalt, momente, werkzeug, nachTun, nachB
   if (worum.einstieg === 'mitte' && worum.titelZeilen) {
     // ruhiger Einstieg (K-016, E-047): mittig, ohne Plan und ohne Waage; die Leitachse beginnt an seinem Fuß
     return (
-      <Seitenformel>
+      <Seitenformel lot={inhalt.lotAnDerSatzkante ? 'satzkante' : undefined}>
         <EinstiegMitte
           pfad={inhalt.pfad}
           brotkrumen={worum.brotkrumen}
@@ -105,6 +105,8 @@ export default function ErzaehlSeite({ inhalt, momente, werkzeug, nachTun, nachB
           bewertung={worum.bewertung}
           orteAnker={inhalt.beleg.orte ? 'einsatzgebiet' : undefined}
           fugeUnten={inhalt.lage.aufFliese}
+          schnurFigur={worum.schnurFigur}
+          bildQuer={worum.bildQuer}
         />
         <Leitachse>{rest}</Leitachse>
       </Seitenformel>
