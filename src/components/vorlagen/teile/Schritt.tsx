@@ -133,9 +133,11 @@ function MitPfeil({ text }: { text: string }) {
     );
   }
   if (ende < 0) return <span className="whitespace-nowrap">{mitFugen(text)}{pfeil}</span>;
+  // das Leerzeichen gehört in denselben Text wie das Wort davor: als eigener Knoten `{' '}` hinter einem Textknoten fehlte es im
+  // zugänglichen Namen („… auf Fußbodenheizunggehört“, Chrome lässt reinen Leerraum hinter Text weg)
   return (
     <>
-      {mitFugen(text.slice(0, ende))}{' '}
+      {mitFugen(text.slice(0, ende + 1))}
       <span className="whitespace-nowrap">
         {text.slice(ende + 1)}
         {pfeil}

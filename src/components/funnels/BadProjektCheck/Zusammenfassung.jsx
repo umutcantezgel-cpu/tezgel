@@ -137,7 +137,7 @@ export default function Zusammenfassung({ sqmLabel, sqmGewaehlt, scopeLabel, tie
                     <Knopf
                         onClick={() => setContactOpen(true)}
                         icon="pfeil-rechts"
-                        className="w-full @max-3xs:flex-col-reverse"
+                        className="w-full"
                     >
                         Angebot mit Festpreis anfordern
                     </Knopf>

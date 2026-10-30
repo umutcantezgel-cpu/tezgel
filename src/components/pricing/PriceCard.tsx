@@ -71,7 +71,13 @@ export default function PriceCard({
 }: PriceCardProps) {
   const Tag = als;
   return (
-    <Tag className={clsx("row-span-5 grid grid-rows-subgrid bg-fliese p-6 lg:p-8", className)}>
+    // grid-cols-1 (eine Spalte von der Breite des Feldes, nicht der Breite des längsten Wortes): Ohne sie wuchs die unbenannte
+    // Spalte des Feldes bei großer Schrift um die Länge des längsten Worts („Feinsteinzeug“), und Trennlinie und Knopf der
+    // Karte „Balkon & Terrasse“ standen breiter als in den übrigen Karten (Runde 5, Nr. 13). Damit die Wörter dort trotzdem
+    // ganz bleiben, haben die Felder bei großer Schrift weniger Innenabstand: Das Raster der Seite ist ein @container; einspaltig
+    // (unter md) heißt schmal unter 16 rem, zwei Spalten (md) unter 36 rem, vier Spalten (ab lg) unter 56 rem. Bei 100 % Schrift
+    // ist das Raster dort mindestens 20, 40 und 58 rem breit: unverändert.
+    <Tag className={clsx("row-span-5 grid grid-cols-1 grid-rows-subgrid bg-fliese p-6 @max-3xs:p-3 md:@max-xl:p-3 lg:p-8 lg:@max-4xl:p-3", className)}>
       {/* 1 · Etikett: nur beim hervorgehobenen Paket; die übrigen Felder halten die Zeile leer */}
       {isPopular ? (
         <p className={clsx(etikettKlassen, "mb-4 text-tinte")}>
@@ -99,7 +105,7 @@ export default function PriceCard({
       {/* 4 · Merkmale an Fugenkreuzen */}
       <ul className="mt-6 flex flex-col gap-3 font-text text-fs-2 text-tinte">
         {features.map((feature, i) => (
-          <li key={i} className="flex items-start gap-3">
+          <li key={i} className="flex items-start gap-3 @max-3xs:gap-2 md:@max-xl:gap-2 lg:@max-4xl:gap-2">
             <Fugenkreuz className="mt-2 size-3 shrink-0 text-strich" />
             <span className="min-w-0 hyphens-auto wrap-break-word">{mitBausteinen(feature)}</span>
           </li>

@@ -109,7 +109,8 @@ export default function PreisePage() {
           </p>
         }
       >
-        <Feldraster spalten={4}>
+        {/* @container: die Felder bekommen in einer schmalen Spalte (große Schrift) weniger Innenabstand, damit lange Wörter ganz bleiben (Runde 5, Nr. 13) */}
+        <Feldraster spalten={4} className="@container">
           <PriceCard
             als="li"
             title="Boden & Wand Standard"

@@ -152,7 +152,7 @@ export default function Schritt5({ setStep, status, errorMessage, formData, setF
                         laedt={status === 'submitting'}
                         ladeText="Wird gesendet …"
                         icon="pfeil-rechts"
-                        className="w-full @2xl:flex-1 @max-3xs:px-2! @max-3xs:[&>svg]:hidden!"
+                        className="w-full @2xl:flex-1 @max-3xs:px-2! @max-3xs:[&_svg]:hidden!"
                     >
                         Badanfrage jetzt absenden (Online)
                     </Knopf>

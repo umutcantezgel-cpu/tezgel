@@ -87,8 +87,11 @@ function Ortsgruppe({ g, bereich, mehr = false }: { g: (typeof GRUPPEN)[number];
             // zweispaltig endet jede Spalte ohne Fuge: ohne Strich bleiben der letzte Ort und der letzte der ersten Spalte
             <li key={o.slug} className={clsx('flex flex-col items-start border-b border-fuge pb-2 last:border-b-0 @2xs:flex-row @2xs:items-center @2xs:justify-between @2xs:gap-3 @2xs:pb-0', breit && i === zeilen - 1 && 'md:max-xl:border-b-0')}>
               {/* der Link nimmt die ganze Zeile bis zur Entfernung ein (Trefffläche ≥ 44 px auch bei kurzen Namen) */}
-              {/* schmal: gleicher Abstand über und unter jeder Zeile, auch bei zweizeiligen Namen (Runde 4) */}
-              <Link href={`/standorte/${o.slug}`} data-motion="zustand" className={clsx(linkKlassen, 'flex min-h-11 w-full items-center font-text text-fs-3 hyphens-none @max-2xs:pt-2 @2xs:w-auto @2xs:flex-1')}>
+              {/* schmal: gleicher Abstand über und unter jeder Zeile, auch bei zweizeiligen Namen (Runde 4). Dort ohne
+                  Mindesthöhe wie in der Einsatzkarte (E-065): bei einzeiligen Namen stand der Name sonst mittig in 2,75 rem
+                  (bei 200 % Schrift 88 px) und lag weiter von der Linie darüber entfernt als ein zweizeiliger (Runde 5, Nr. 3);
+                  eine Zeile ist bei großer Schrift mit dem Abstand oben ohnehin höher als 24 px (WCAG 2.5.8) */}
+              <Link href={`/standorte/${o.slug}`} data-motion="zustand" className={clsx(linkKlassen, 'flex min-h-11 w-full items-center font-text text-fs-3 hyphens-none @max-2xs:min-h-0 @max-2xs:pt-2 @2xs:w-auto @2xs:flex-1')}>
                 <span>{o.name}</span>
               </Link>
               {o.distanceKm === 0 ? (

@@ -10,7 +10,7 @@
 import { COMPANY_DATA, historyTimeline } from '@/config/company';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
-import { zusammen } from '@/components/kern/zusammen';
+import { mitFugen, zusammen } from '@/components/kern/zusammen';
 
 export default function CompanyHistory() {
   const { business, headquarters, authority, owner, legalName, motto } = COMPANY_DATA;
@@ -29,7 +29,10 @@ export default function CompanyHistory() {
         </p>
       }
       auftritt
-      className="wrap-break-word"
+      // Der Abschnitt steht im Werkzeug-Slot der Seite, der selbst schon den Seitenrand setzt: die zweite Seitenkante entfällt
+      // (`[&>div]` ist der Satzspiegel dieses Abschnitts). Zwei Ränder ließen bei 200 % Schrift eine schmale Spalte (rund
+      // 160 px) und machten den Abschnitt schmaler als den Rest der Seite (Browserprüfung Runde 5, Nr. 8).
+      className="wrap-break-word [&>div]:px-0"
     >
       <div className="@container relative">
         {/* Die Fuge: eine Linie über alle Einträge (mobil links, ab md an der Grenze Jahr | Text bei 1/4) */}
@@ -60,14 +63,18 @@ export default function CompanyHistory() {
       </div>
 
       {/* Leitsatz zum Schluss: Motto mit Unterschrift (Bestand: „Final Vision Banner“) */}
-      <figure className="mt-16 border border-fuge bg-fliese p-6 md:p-12 lg:mt-24">
-        <blockquote className="max-w-mass font-anzeige text-fs-5 font-extrabold text-tinte lg:text-fs-6">
-          &bdquo;{motto}&ldquo;
-        </blockquote>
-        <figcaption className="mt-6 font-mono text-fs-1 text-tinte-2">
-          {owner.fullName} &middot; {owner.title}, {legalName}
-        </figcaption>
-      </figure>
+      {/* @container: in schmaler Spalte (große Schrift, unter 16 rem) weniger Innenabstand, damit dem Motto mehr als die halbe
+          Breite bleibt (Runde 5, Nr. 8); bei 100 % Schrift unverändert. „Fachbetriebsleiter“ trennt an seinen Fugen. */}
+      <div className="@container mt-16 lg:mt-24">
+        <figure className="border border-fuge bg-fliese p-6 @max-3xs:p-4 md:p-12">
+          <blockquote className="max-w-mass font-anzeige text-fs-5 font-extrabold text-tinte lg:text-fs-6">
+            &bdquo;{motto}&ldquo;
+          </blockquote>
+          <figcaption className="mt-6 font-mono text-fs-1 text-tinte-2">
+            {owner.fullName} &middot; {mitFugen(owner.title)}, {legalName}
+          </figcaption>
+        </figure>
+      </div>
     </Abschnitt>
   );
 }

@@ -7,7 +7,7 @@
 // Einwilligung leer (Fairness, E-014).
 // E4-W1-FORMULARE (F5): kein Gewerk und kein Zeitraum vorab gewählt; „noch keine Angabe“ in der Zusammenfassung;
 // Zahl und m² bleiben zusammen; Fehlertext rückt ins Bild.
-import { useEffect, useRef } from "react";
+import { Children, cloneElement, Fragment, isValidElement, useEffect, useRef, type ReactElement, type ReactNode } from "react";
 import {
   CRAFT_SERVICES,
   ROOM_SIZES,
@@ -26,7 +26,7 @@ import Rufnummer from "@/components/kern/Rufnummer";
 import { siteConfig } from "@/lib/config";
 import { usePreisrechner } from "@/lib/formulare/usePreisrechner";
 import { anzeige } from "@/lib/formulare/anzeige";
-import { zusammen } from "@/components/kern/zusammen";
+import { mitFugen, zusammen } from "@/components/kern/zusammen";
 
 const SERVICE_PLAENE: Record<CraftServiceType, PlanName> = {
   bad: "bad",
@@ -54,6 +54,39 @@ const zahlFeldKlassen =
  *  Browserprüfung E4-W1, Runde 2) */
 function OhneAngabe() {
   return <span className="font-text font-normal text-nacht-2">noch keine Angabe</span>;
+}
+
+/** Wörter aus FUGEN trennen an ihrer Fuge („Bad-sanierung“ statt „Badsanier-ung“; Browserprüfung Runde 5, Rechner bei 200 %
+ *  Schrift). Der weiche Trennstrich steht in einem verborgenen Span (aria-hidden): Er bleibt Umbruchstelle, aber nicht im
+ *  zugänglichen Namen der Auswahlknöpfe, der Einwilligung und des Absendeknopfs, der Name bleibt der Klartext wie vorher
+ *  („Beantwortung“ statt „Beantwor<SHY>tung“; Sprachsteuerung und Namensvergleich, WCAG 2.5.3). */
+const SHY = "\u00ad";
+
+function stummeFugen(knoten: ReactNode): ReactNode {
+  if (typeof knoten === "string") {
+    if (!knoten.includes(SHY)) return knoten;
+    return knoten.split(SHY).flatMap((teil, i) => (i === 0 ? [teil] : [<span key={i} aria-hidden="true">{SHY}</span>, teil]));
+  }
+  if (Array.isArray(knoten)) return knoten.map((k, i) => <Fragment key={i}>{stummeFugen(k)}</Fragment>);
+  if (isValidElement(knoten)) {
+    const element = knoten as ReactElement<{ children?: ReactNode }>;
+    if (element.props.children === undefined) return element;
+    return cloneElement(element, undefined, ...Children.toArray(element.props.children).map(stummeFugen));
+  }
+  return knoten;
+}
+
+/** mitFugen für Texte in Bedienelementen (Name aus dem Inhalt): die Wörter trennen an der Fuge, der Name bleibt Klartext */
+function fugenName(text: string): ReactNode {
+  return stummeFugen(mitFugen(text));
+}
+
+/** Titel der Auswahlkarten: Wörter aus FUGEN trennen an ihrer Fuge, Gruppen aus zusammen() („DIN 18534“) bleiben beisammen
+ *  (Browserprüfung Runde 5, Rechner bei 200 % Schrift) */
+function titelSatz(text: string): ReactNode {
+  const teile = mitFugen(text);
+  if (!Array.isArray(teile)) return zusammen(text);
+  return stummeFugen(teile.map((teil, i) => (typeof teil === "string" ? <Fragment key={i}>{zusammen(teil)}</Fragment> : teil)));
 }
 
 /** Zeitraum-Karte auf der Tinte-Fläche (aria-pressed): Text bricht um und wird nie abgeschnitten */
@@ -138,7 +171,10 @@ export default function PricingCalculator() {
             <span className={etikettKlassen}>Auswahl erforderlich</span>
           </div>
 
-          <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
+          {/* zwei Spalten ab sm (Fenster) und nur, wenn der Behälter mindestens 24 rem breit ist: Bei großer Schrift (200 %) ist er
+              bei t768, q844 und t1024 nur 18 bis 20 rem breit, die Karten wären dort rund 9 rem breit und die Wörter brächen im
+              Notbruch (Browserprüfung Runde 5, Rechner). Bei 100 % Schrift ist er dort immer mindestens 31 rem breit: unverändert. */}
+          <div className="mt-4 grid grid-cols-1 gap-2 sm:@sm:grid-cols-2">
             {Object.values(CRAFT_SERVICES).map((srv) => {
               const isSelected = serviceType === srv.id;
               return (
@@ -156,9 +192,9 @@ export default function PricingCalculator() {
                   </span>
                   <span className="min-w-0 flex-1">
                     <span className="flex flex-wrap items-start justify-between gap-x-2 gap-y-1">
-                      <span className="block min-w-0 text-fs-2 font-semibold @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]">{zusammen(anzeige(srv.title))}</span>
+                      <span className="block min-w-0 text-fs-2 font-semibold @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]">{titelSatz(anzeige(srv.title))}</span>
                     </span>
-                    <span className="mt-1 block text-fs-1 @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]">{anzeige(srv.subtitle)}</span>
+                    <span className="mt-1 block text-fs-1 @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]">{fugenName(anzeige(srv.subtitle))}</span>
                   </span>
                 </button>
               );
@@ -183,7 +219,7 @@ export default function PricingCalculator() {
                   className={stufeKlassen}
                   data-motion="zustand"
                 >
-                  <span className="block w-full text-fs-2 font-semibold @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]">{anzeige(size.label)}</span>
+                  <span className="block w-full text-fs-2 font-semibold @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]">{fugenName(anzeige(size.label))}</span>
                   <span className="block w-full font-mono text-fs-1">{einheit(anzeige(size.areaText))}</span>
                 </button>
               );
@@ -218,7 +254,7 @@ export default function PricingCalculator() {
           <p id="calc-rahmen" className={labelKlassen}>
             3. Was trifft bei Ihnen zu?
           </p>
-          <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
+          <div className="mt-4 grid grid-cols-1 gap-2 sm:@sm:grid-cols-2">
             {SITUATION_OPTIONS.map((opt) => {
               const isChecked = selectedFeatures.includes(opt.id);
               return (
@@ -238,8 +274,8 @@ export default function PricingCalculator() {
                     {isChecked && <Icon name="haken" groesse={4} />}
                   </span>
                   <span className="min-w-0">
-                    <span className="block text-fs-2 font-semibold @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]">{anzeige(opt.label)}</span>
-                    <span className="mt-1 block text-fs-1 text-tinte-2 @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]">{anzeige(opt.description)}</span>
+                    <span className="block text-fs-2 font-semibold @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]">{fugenName(anzeige(opt.label))}</span>
+                    <span className="mt-1 block text-fs-1 text-tinte-2 @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]">{fugenName(anzeige(opt.description))}</span>
                   </span>
                 </button>
               );
@@ -308,33 +344,32 @@ export default function PricingCalculator() {
               </span>
 
               <p className="mt-6 font-anzeige text-fs-5 font-semibold text-kalk">
-                Unverbindliche Projektanfrage
+                {mitFugen("Unverbindliche Projektanfrage")}
               </p>
 
               <p className="mt-3 text-fs-2 text-nacht-2">
-                Jedes Vorhaben ist anders. Beschreiben Sie Ihr Vorhaben kurz. Wir melden uns für einen kostenfreien Termin
-                bei Ihnen vor Ort. Danach bekommen Sie ein verbindliches Festpreisangebot.
+                {mitFugen("Jedes Vorhaben ist anders. Beschreiben Sie Ihr Vorhaben kurz. Wir melden uns für einen kostenfreien Termin bei Ihnen vor Ort. Danach bekommen Sie ein verbindliches Festpreisangebot.")}
               </p>
 
               {/* Projekt-Zusammenfassung */}
               <dl className="mt-6 border-t border-nacht-fuge text-fs-2">
                 <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3 @max-3xs:flex-wrap">
                   <dt className="text-nacht-2">Projekt:</dt>
-                  <dd className="text-right font-semibold text-kalk @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]">{selectedService ? anzeige(selectedService.title) : <OhneAngabe />}</dd>
+                  <dd className="text-right font-semibold text-kalk @max-3xs:w-full @max-3xs:text-left @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]">{selectedService ? mitFugen(anzeige(selectedService.title)) : <OhneAngabe />}</dd>
                 </div>
                 <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3 @max-3xs:flex-wrap">
                   <dt className="text-nacht-2">Fläche:</dt>
-                  <dd className="text-right font-mono text-kalk wrap-break-word">
+                  <dd className="text-right font-mono text-kalk @max-3xs:w-full @max-3xs:text-left wrap-break-word">
                     {customArea.trim() ? einheit(`${customArea.trim()} m²`) : selectedSize ? einheit(anzeige(selectedSize.areaText)) : <OhneAngabe />}
                   </dd>
                 </div>
                 <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3 @max-3xs:flex-wrap">
                   <dt className="text-nacht-2">{zusammen("Termin bei Ihnen vor Ort:")}</dt>
-                  <dd className="min-w-0 text-right font-mono text-kalk hyphens-auto wrap-break-word">0{"\u00a0"}€ (Kostenfrei)</dd>
+                  <dd className="min-w-0 text-right font-mono text-kalk @max-3xs:w-full @max-3xs:text-left hyphens-auto wrap-break-word">0{"\u00a0"}€ (Kostenfrei)</dd>
                 </div>
                 <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3 @max-3xs:flex-wrap">
                   <dt className="text-nacht-2">Angebot:</dt>
-                  <dd className="text-right font-semibold text-kalk @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]">Verbindlicher Festpreis</dd>
+                  <dd className="text-right font-semibold text-kalk @max-3xs:w-full @max-3xs:text-left @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]">Verbindlicher Festpreis</dd>
                 </div>
               </dl>
 
@@ -453,7 +488,7 @@ export default function PricingCalculator() {
                             className={zeitKlassen}
                             data-motion="zustand"
                           >
-                            {anzeige(t)}
+                            {fugenName(anzeige(t))}
                           </button>
                         );
                       })}
@@ -472,8 +507,7 @@ export default function PricingCalculator() {
                     className="mt-1 size-5 shrink-0 rounded-r1 accent-kalk"
                   />
                   <span className="min-w-0 @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4]">
-                    Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Beantwortung meiner
-                    Anfrage verarbeitet werden.
+                    {fugenName("Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Beantwortung meiner Anfrage verarbeitet werden.")}
                   </span>
                 </label>
               </div>
@@ -481,8 +515,8 @@ export default function PricingCalculator() {
 
             {/* Absenden und Anruf */}
             <div className="flex flex-col gap-4 border-t border-nacht-fuge pt-6">
-              <Knopf type="submit" variante="hell" laedt={status === "submitting"} ladeText="Wird gesendet …" icon="pfeil-rechts" className="w-full @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4] @max-3xs:px-2! @max-3xs:flex-wrap @max-3xs:[&>svg]:hidden!">
-                Unverbindliche Anfrage senden
+              <Knopf type="submit" variante="hell" laedt={status === "submitting"} ladeText="Wird gesendet …" icon="pfeil-rechts" className="w-full @max-3xs:hyphens-auto wrap-break-word [hyphenate-limit-chars:11_4_4] @max-3xs:px-2! @max-3xs:flex-wrap @max-3xs:[&_svg]:hidden!">
+                {fugenName("Unverbindliche Anfrage senden")}
               </Knopf>
 
               <div>

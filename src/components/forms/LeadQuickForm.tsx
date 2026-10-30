@@ -22,7 +22,7 @@ import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import { etikettKlassen, feldKlassen, knopfKlassen, kontrollKlassen, labelKlassen, linkKlassen } from '@/components/kern/stile';
 import PflichtHinweis from '@/components/kern/PflichtHinweis';
 import Rufnummer from '@/components/kern/Rufnummer';
-import { mitFugen } from '@/components/kern/zusammen';
+import { mitFugen, zusammen } from '@/components/kern/zusammen';
 import { COMPANY_DATA } from '@/config/company';
 import { useSchnellanfrage } from '@/lib/formulare/useSchnellanfrage';
 
@@ -83,6 +83,8 @@ export function LeadQuickForm({
   const telefonFehlt = pruefFehler && !formData.phone.trim();
   const einwilligungFehlt = pruefFehler && !formData.privacyConsent;
   const laedt = status === 'loading';
+  // Beginn des letzten Worts der Beschriftung des Sendeknopfs (Pfeil bleibt mit ihm zusammen)
+  const schnitt = submitLabel.lastIndexOf(' ') + 1;
 
   // Fokusführung je Absendeversuch: Das Formular wird bei Erfolg ersetzt, beim Laden wechselt der Knopftext – ohne
   // Führung läge der Fokus auf <body> oder im Feld davor
@@ -335,10 +337,16 @@ export function LeadQuickForm({
                 <span className="laden-fuge w-16" data-motion="laden" aria-hidden="true" />
               </span>
             ) : (
-              <>
-                <span>{submitLabel}</span>
-                <Icon name="pfeil-rechts" groesse={5} />
-              </>
+              // „vor Ort“ steht als Gruppe (zusammen), der Pfeil am letzten Wort: Bei großer Schrift bricht die Beschriftung
+              // sonst in vier Zeilen („Termin vor“, „Ort“, „anfragen“, Pfeil allein), und der Knopf wird unnötig hoch (Runde 5,
+              // Nr. 9). Wortlaut und Name gleich; eine Zeile sieht aus wie vorher (Pfeil im Abstand von 0,5 rem, wie gap-2).
+              <span className="@max-3xs:text-center">
+                {schnitt > 0 && zusammen(submitLabel.slice(0, schnitt))}
+                <span className="whitespace-nowrap">
+                  {submitLabel.slice(schnitt)}
+                  <Icon name="pfeil-rechts" groesse={5} className="ml-2 align-middle" />
+                </span>
+              </span>
             )}
           </button>
 

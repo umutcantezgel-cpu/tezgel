@@ -68,6 +68,22 @@ const FUGEN: Record<string, string> = {
   // („Festpreisan-gebot“, „Verbundab-dichtung“); eingebunden über mitFugen in Ablauf und Tun (Textmarken mit fugen)
   Festpreisangebot: 'Festpreis­angebot',
   Verbundabdichtung: 'Verbund­abdichtung',
+  // UM-E4-FS (Hinweis aus UM-E4-INHALT Teil B; Preisrechner bei 200 % Schrift, m360 bis t768): Wörter, die in den Auswahlkarten, im Vorspann und in
+  // der Einwilligung des Rechners mitten im Wortteil brachen („Fußbodenheiz-ung“, „Kontaktaufn-ahme“). Nur Anzeige, der Wortlaut
+  // bleibt gleich; Ableitungen ohne Fuge trennen an der Silbengrenze wie „Verarbei-tung“.
+  bodengleiche: 'boden­gleiche',
+  Dichtbänder: 'Dicht­bänder',
+  fachgerecht: 'fach­gerecht',
+  Fußbodenheizung: 'Fußboden­heizung',
+  Staubschutztüren: 'Staubschutz­türen',
+  Luftreinigern: 'Luft­reinigern',
+  Fliesenauswahl: 'Fliesen­auswahl',
+  Rutschhemmung: 'Rutsch­hemmung',
+  Formatabstimmung: 'Format­abstimmung',
+  Unverbindliche: 'Unverbind­liche',
+  kostenfreien: 'kosten­freien',
+  Schnellstmöglich: 'Schnellst­möglich',
+  Beantwortung: 'Beantwor­tung',
 };
 
 const FUGEN_MUSTER = new RegExp(`(${Object.keys(FUGEN).join('|')})`);

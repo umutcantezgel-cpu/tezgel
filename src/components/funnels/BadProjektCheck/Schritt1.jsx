@@ -33,8 +33,11 @@ export default function Schritt1({ sqm, sqmGewaehlt, changeSqm, sqmLabel }) {
                 value={sqm}
                 aria-valuetext={sqmGewaehlt ? `${sqmLabel} m²` : 'noch keine Angabe'}
                 onChange={(e) => changeSqm(e.target.value)}
-                // ohne Wahl in Grau statt Tinte: der Griff steht nur, weil ein Regler einen Wert braucht (Browserprüfung E4-W1, Runde 2)
-                className={`mt-4 block h-11 w-full cursor-pointer ${sqmGewaehlt ? 'accent-tinte' : 'accent-tinte-2'}`}
+                // ohne Wahl in Strich statt Tinte: Griff und Füllung stehen nur, weil ein Regler einen Wert braucht, und sollen
+                // sichtbar „noch nicht gesetzt“ wirken (Browserprüfung E4-W1 Runde 2, Runde 5 Nr. 4: tinte-2 war kaum heller als
+                // Tinte). Strich (tinte-62) bleibt über 3 : 1 gegen Kalk und Fliese (WCAG 1.4.11); Fuge wäre mit 1,3 : 1 zu hell.
+                // Gewählt wie bisher in Tinte.
+                className={`mt-4 block h-11 w-full cursor-pointer ${sqmGewaehlt ? 'accent-tinte' : 'accent-strich'}`}
             />
             <ul className="mt-2 flex flex-col gap-1 font-mono text-fs-1 tabular-nums text-tinte-2 @lg:flex-row @lg:flex-wrap @lg:gap-x-6">
                 <li>3,5{NBSP}m² <span className="whitespace-nowrap">(Gäste-WC)</span></li>
