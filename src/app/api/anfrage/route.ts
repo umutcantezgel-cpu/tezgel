@@ -10,6 +10,10 @@ import {
   isHoneypotTriggered
 } from '@/lib/email';
 
+// Hinweis bei jedem Fehlschlag des Versands, Wortlaut unverändert aus dem Bestand
+const FEHLER_HINWEIS =
+  'Die Anfrage konnte derzeit nicht übertragen werden. Bitte kontaktieren Sie uns direkt telefonisch (06441 / 44 83 567) oder per WhatsApp.';
+
 export async function POST(request: NextRequest) {
   try {
     // 1. Client IP & Rate Limiting Check (max 5 requests per 10 minutes per IP)
@@ -135,6 +139,11 @@ export async function POST(request: NextRequest) {
     // 8. Dispatch emails via central mailer (with retry, backoff and fail-safe logging)
     const result = await sendInquiryEmails(payload);
 
+    // Nicht versendet und nicht gesichert: als Fehler melden (E-110), mit demselben Hinweis wie bei einer Ausnahme
+    if (!result.success) {
+      return NextResponse.json({ success: false, error: FEHLER_HINWEIS }, { status: 503 });
+    }
+
     return NextResponse.json({
       success: true,
       referenceId: result.referenceId,
@@ -145,7 +154,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       {
         success: false,
-        error: 'Die Anfrage konnte derzeit nicht übertragen werden. Bitte kontaktieren Sie uns direkt telefonisch (06441 / 44 83 567) oder per WhatsApp.'
+        error: FEHLER_HINWEIS
       },
       { status: 500 }
     );

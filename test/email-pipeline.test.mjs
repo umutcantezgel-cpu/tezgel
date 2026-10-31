@@ -29,7 +29,7 @@ import {
   getCustomerEmailSubject
 } from '../src/lib/email/templates/customerEmail.ts';
 
-import { sendInquiryEmails, ANFRAGE_EMPFAENGER, ANFRAGE_ABSENDER, anfrageEmpfaenger, anfrageAbsender } from '../src/lib/email/mailer.ts';
+import { sendInquiryEmails, ANFRAGE_EMPFAENGER, ANFRAGE_ABSENDER, anfrageEmpfaenger, anfrageAbsender, istLiveProduktion } from '../src/lib/email/mailer.ts';
 
 test('1. Security: HTML Escaping prevents Injection', () => {
   const dangerous = '<script>alert("XSS")</script><img src="x" onerror="steal()">&"\'';
@@ -333,4 +333,98 @@ test('14. Mailer: Absender kontakt@tezgel.de, Anfrage an info@tezgel.de; Umgebun
   assert.equal(anfrageAbsender({ RESEND_FROM_EMAIL: '' }), 'Fliesenverlegung Tezgel <kontakt@tezgel.de>');
   assert.equal(anfrageEmpfaenger({ CONTACT_EMAIL: ' buero@tezgel.de ' }), 'buero@tezgel.de');
   assert.equal(anfrageAbsender({ RESEND_FROM_EMAIL: 'Tezgel <web@tezgel.de>' }), 'Tezgel <web@tezgel.de>');
+});
+
+// --- Absicherung des Versands (E-110): nachgebauter Resend-Client, ohne Netz und ohne Wartezeit ---
+const OHNE_WARTEN = { team: [0, 0], kunde: [0] };
+const MIT_SCHLUESSEL = { RESEND_API_KEY: 're_test_schluessel_nur_fuer_den_test', VERCEL_ENV: 'production' };
+let laufNr = 0;
+function anfrage(name) {
+  laufNr += 1;
+  return {
+    inquiryType: 'general',
+    projectTitle: 'Fliesenverlegung',
+    contact: { name: `${name} ${laufNr}`, phone: `0151 / 1000${laufNr}`, email: `test${laufNr}@example.com`, location: 'Wetzlar' },
+    notes: `Absicherung ${laufNr}`
+  };
+}
+function nachgebauterClient(antworten) {
+  const aufrufe = [];
+  return {
+    aufrufe,
+    emails: {
+      send: async (nachricht) => {
+        aufrufe.push(nachricht);
+        const antwort = antworten(nachricht, aufrufe.length);
+        if (antwort instanceof Error) throw antwort;
+        return antwort;
+      }
+    }
+  };
+}
+const OK = { data: { id: 'mail-1' }, error: null };
+const ABGELEHNT = { data: null, error: { statusCode: 403, name: 'validation_error', message: 'The domain is not verified.' } };
+
+test('15. Absicherung: abgelehnte Team-Mail ohne Notfallspeicher meldet Fehlschlag, drei Versuche (E-110)', async () => {
+  const client = nachgebauterClient(() => ABGELEHNT);
+  const res = await sendInquiryEmails(anfrage('Abgelehnt'), { env: MIT_SCHLUESSEL, client, notfallSpeichern: () => false, wartezeiten: OHNE_WARTEN });
+  assert.equal(res.success, false);
+  assert.equal(res.teamSent, false);
+  assert.equal(res.error, 'versand_fehlgeschlagen');
+  assert.equal(client.aufrufe.length, 3);
+});
+
+test('16. Absicherung: abgelehnte Team-Mail mit gesichertem Notfalleintrag bleibt Erfolg mit Vermerk', async () => {
+  const gesichert = [];
+  const client = nachgebauterClient(() => ABGELEHNT);
+  const res = await sendInquiryEmails(anfrage('Gesichert'), { env: MIT_SCHLUESSEL, client, notfallSpeichern: (r) => { gesichert.push(r); return true; }, wartezeiten: OHNE_WARTEN });
+  assert.equal(res.success, true);
+  assert.equal(res.fallbackLogged, true);
+  assert.equal(gesichert.length, 1);
+  assert.match(gesichert[0].error, /domain is not verified/);
+});
+
+test('17. Absicherung: Netzfehler gilt ebenfalls als Fehlschlag', async () => {
+  const client = nachgebauterClient(() => new Error('fetch failed'));
+  const res = await sendInquiryEmails(anfrage('Netzfehler'), { env: MIT_SCHLUESSEL, client, notfallSpeichern: () => false, wartezeiten: OHNE_WARTEN });
+  assert.equal(res.success, false);
+});
+
+test('18. Absicherung: erfolgreicher Versand, Weg kontakt@ an info@ und an den Kunden', async () => {
+  const client = nachgebauterClient(() => OK);
+  const a = anfrage('Erfolg');
+  const res = await sendInquiryEmails(a, { env: MIT_SCHLUESSEL, client, notfallSpeichern: () => false, wartezeiten: OHNE_WARTEN });
+  assert.equal(res.success, true);
+  assert.equal(res.teamSent, true);
+  assert.equal(res.customerSent, true);
+  assert.equal(client.aufrufe.length, 2);
+  const [team, kunde] = client.aufrufe;
+  assert.equal(team.from, ANFRAGE_ABSENDER);
+  assert.equal(team.to, 'info@tezgel.de');
+  assert.equal(team.replyTo, a.contact.email);
+  assert.equal(kunde.from, ANFRAGE_ABSENDER);
+  assert.equal(kunde.to, a.contact.email);
+  assert.equal(kunde.replyTo, 'info@tezgel.de');
+});
+
+test('19. Absicherung: abgelehnte Kundenbestätigung blockiert nicht, Team-Mail ist raus', async () => {
+  const client = nachgebauterClient((n) => (n.to === 'info@tezgel.de' ? OK : ABGELEHNT));
+  const res = await sendInquiryEmails(anfrage('Kunde'), { env: MIT_SCHLUESSEL, client, notfallSpeichern: () => false, wartezeiten: OHNE_WARTEN });
+  assert.equal(res.success, true);
+  assert.equal(res.teamSent, true);
+  assert.equal(res.customerSent, false);
+});
+
+test('20. Absicherung: ohne Schlüssel nur in der Vercel-Produktion ein Fehlschlag, sonst Probemodus', async () => {
+  assert.equal(istLiveProduktion({ VERCEL_ENV: 'production' }), true);
+  assert.equal(istLiveProduktion({ VERCEL_ENV: 'preview' }), false);
+  assert.equal(istLiveProduktion({}), false);
+  const client = nachgebauterClient(() => OK);
+  const live = await sendInquiryEmails(anfrage('OhneSchluesselLive'), { env: { VERCEL_ENV: 'production' }, client });
+  assert.equal(live.success, false);
+  assert.equal(live.error, 'mail_nicht_eingerichtet');
+  assert.equal(client.aufrufe.length, 0);
+  const vorschau = await sendInquiryEmails(anfrage('OhneSchluesselVorschau'), { env: { VERCEL_ENV: 'preview' } });
+  assert.equal(vorschau.success, true);
+  assert.equal(vorschau.mocked, true);
 });
