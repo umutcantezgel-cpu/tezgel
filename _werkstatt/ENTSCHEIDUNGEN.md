@@ -1731,3 +1731,30 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
 - **Rauchtest** (eine Anfrage pro Sekunde): /, /leistungen, /bad, /bad/badsanierung, /bad/barrierefreies-bad, /balkon-terrasse, /fliesen, /referenzen, /kontakt, /ueber-uns, /preise, /blog, /standorte/wetzlar, /impressum, /datenschutz antworten mit 200; tezgel.de leitet mit 308 auf www.tezgel.de.
 - **Live sind damit:** alles bis E4-W3 und Welle 1 SF-A und SF-B von UM-E4-SICHT-FIX (Einstieg an der Schnur, Einstiegsfotos, Reihenfolge, ein Abschluss, Aufklapper). **Noch nicht live:** SF-C1 und SF-C2 (laufen), Welle 2, E5.
 - **Folge:** Die Arbeit geht nach E-106 weiter. Der Endstand kommt nach der Endabnahme erneut als Fast-Forward auf main.
+
+## E-109 · Auftraggeber: Mailweg der Anfragen über kontakt@tezgel.de, sofort live (31.10.2026, 18:55 MEZ)
+- **Anlass:** Nach den Worten des Auftraggebers kommen die E-Mails nicht mehr an. Befund (nur gelesen):
+  - Im Vercel-Projekt (angelegt am 2.10.2026) fehlte `RESEND_API_KEY`. Ohne Schlüssel läuft `sendInquiryEmails` im Probemodus: Der Besucher sieht „erfolgreich“ mit Vorgangsnummer, es geht aber keine Mail raus.
+  - Laut Protokoll hat kein Agent dieser Sitzung Umgebungsvariablen geändert; die Vercel-Kommandozeile ist nicht installiert.
+  - DNS: DKIM `resend._domainkey`, Rückweg über `send.tezgel.de` und DMARC `p=none` sind vorhanden. Postfach bei Strato (MX `smtpin.rzone.de`). Für tezgel.de selbst fehlt ein SPF-Eintrag (Hinweis an den Auftraggeber).
+- **Weitere Schwächen der Mail-Logik** (offen, Absicherung nur mit Zustimmung, G8):
+  - Resend 6 wirft bei API-Fehlern nicht, es gibt `{ error }` zurück. Der Code wertet das nicht aus und meldet trotzdem Erfolg.
+  - Der Notfallspeicher schreibt auf die Platte; auf Vercel wirkt das nicht.
+- **Anweisung** (31.10., gegen 18:40 MEZ): „es soll an die Info gehen aber mit kontakt als mittelpunkt so das kontakt die email an info und den kunden sendet“, dann „ja, live“.
+- **Umgesetzt in `src/lib/email/mailer.ts`:**
+  - `anfrageAbsender()` liefert `RESEND_FROM_EMAIL`, sonst „Fliesenverlegung Tezgel <kontakt@tezgel.de>“.
+  - `anfrageEmpfaenger()` liefert `CONTACT_EMAIL`, sonst info@tezgel.de. Vorher ging die Firmenadresse der Umgebungsvariable vor.
+  - Antworten der Kunden gehen an info@; die Antwortadresse der Team-Mail ist der Kunde.
+  - Die angezeigte Firmenadresse (Impressum, Fuß, strukturierte Daten, Kundenmail) bleibt info@tezgel.de.
+  - Test 14 in `test/email-pipeline.test.mjs`.
+  - Ein Zwischenschritt (95f6c4be, kontakt@ als Empfänger) beruhte auf einem Missverständnis und ist mit a4bf32ed berichtigt.
+- **Live:**
+  - Nur diese Änderung, auf dem Live-Stand 809333d4, in eigener Arbeitskopie geprüft: Mail-Tests 15/15, npm test 266/0/1, eslint 0, tsc 0.
+  - Push als Fast-Forward 809333d4 → b5bbb68d. Danach main in den Arbeitsbranch zusammengeführt (977cbb96, Code gleich a4bf32ed); main bleibt Vorfahr von HEAD.
+  - Der Auftraggeber hat `RESEND_API_KEY` (Production, vertraulich) selbst eingetragen und den Stand 809333d4 neu deployt. `RESEND_FROM_EMAIL` und `CONTACT_EMAIL` sind nicht gesetzt (richtig so).
+  - Die kurze Prüfung lief 17:39 bis 17:45 UTC parallel zur Lighthouse-Messung des Messpunkts; Vermerk in dessen Beleg.
+- **Empfehlungen an den Auftraggeber:**
+  - kontakt@tezgel.de bei Strato als Weiterleitung auf info@ anlegen;
+  - kontakt@ in Outlook als sicheren Absender eintragen;
+  - SPF für tezgel.de nach Strato-Anleitung setzen;
+  - Testanfrage mit eigener Adresse; Zustellung in Resend unter „Emails“ prüfen.
