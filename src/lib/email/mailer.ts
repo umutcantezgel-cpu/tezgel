@@ -101,12 +101,15 @@ export interface MailClient {
   };
 }
 
-async function sendeMail(client: MailClient, nachricht: MailNachricht): Promise<void> {
+async function sendeMail(client: MailClient, nachricht: MailNachricht): Promise<string> {
   const antwort = await client.emails.send(nachricht);
   const fehler = antwort?.error;
   if (fehler) {
     throw new Error(`Resend ${fehler.statusCode ?? ''} ${fehler.name ?? ''}: ${fehler.message ?? 'unbekannter Fehler'}`.replace(/\s+/g, ' '));
   }
+  // Resend-ID für das Protokoll (in Resend unter „Emails“ auffindbar); ohne Namen oder Adressen
+  const daten = antwort?.data as { id?: string } | null | undefined;
+  return daten?.id ?? 'ohne ID';
 }
 
 /** Nur die Produktion auf Vercel versendet zwingend echt; lokal, in Tests und in Vorschauen bleibt der Probemodus. */
@@ -222,8 +225,8 @@ export async function sendInquiryEmails(payload: InquiryPayload, optionen: Versa
 
   // 3. Send Team Lead Alert with Retry & Backoff (an den Anfrage-Empfänger, siehe anfrageEmpfaenger)
   try {
-    await withRetry(async () => {
-      await sendeMail(client, {
+    const teamId = await withRetry(async () => {
+      return await sendeMail(client, {
         from: fromSender,
         to: recipientEmail,
         replyTo: payload.contact.email || recipientEmail,
@@ -233,6 +236,7 @@ export async function sendInquiryEmails(payload: InquiryPayload, optionen: Versa
       });
     }, 2, wartezeiten.team);
     teamSent = true;
+    console.info(`[E-Mail Mailer] Vorgang ${referenceId}: Anfrage-Mail von Resend angenommen (ID ${teamId}).`);
   } catch (teamError) {
     console.error('[E-Mail Mailer] Error dispatching team notification after retries:', teamError);
 
@@ -277,8 +281,8 @@ export async function sendInquiryEmails(payload: InquiryPayload, optionen: Versa
     const rateCheck = checkRecipientRateLimit(payload.contact.email);
     if (rateCheck.allowed) {
       try {
-        await withRetry(async () => {
-          await sendeMail(client, {
+        const kundeId = await withRetry(async () => {
+          return await sendeMail(client, {
             from: fromSender,
             to: payload.contact.email!.trim(),
             replyTo: recipientEmail, // Antworten der Kunden gehen an info@tezgel.de
@@ -288,6 +292,7 @@ export async function sendInquiryEmails(payload: InquiryPayload, optionen: Versa
           });
         }, 1, wartezeiten.kunde);
         customerSent = true;
+        console.info(`[E-Mail Mailer] Vorgang ${referenceId}: Eingangsbestätigung von Resend angenommen (ID ${kundeId}).`);
       } catch (custError) {
         console.error('[E-Mail Mailer] Error dispatching customer confirmation:', custError);
         // Non-blocking: team lead was already delivered successfully
