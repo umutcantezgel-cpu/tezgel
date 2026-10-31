@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { ARBEITEN } from '../src/config/arbeiten.ts';
 import { GLOSSAR } from '../src/config/glossar.ts';
 import { GALERIE, GRUPPEN, SATZ, STAFFEL_MAX, ZUERST, anzahl, ansage, blendetEin, istSichtbar, mehrMarke, stufen, stufenNachzeigen } from '../src/components/momente/galerie-filter/daten.ts';
@@ -92,4 +93,21 @@ test('Galerie 8: eingeklappt 6 bzw. 9 Fotos, Nachzeigen gestaffelt', () => {
   }
   // eingeklappt zeigt „Alle“ nur fertige Arbeiten (die Baustelle steht am Ende)
   assert.ok(GALERIE.slice(0, ZUERST.breit).every((f) => f.gruppe !== 'so-arbeiten-wir'));
+});
+
+// Spaltengrenzen (UM-E4-SICHT-FIX R-1, E-111): Die Liste in GalerieWahl wechselt bei @2xl (42rem) auf zwei und bei @5xl
+// (64rem) auf drei Spalten; Einklappen und Platzhalterhöhe in globals.css müssen dieselben Grenzen nennen, sonst stehen
+// eingeklappt halbe Reihen oder die übersprungenen Kacheln springen beim ersten Zeichnen.
+test('Galerie 9: Spaltengrenzen der Liste gleich in GalerieWahl und globals.css', () => {
+  const css = readFileSync(new URL('../src/app/globals.css', import.meta.url), 'utf8');
+  const wahl = readFileSync(new URL('../src/components/momente/galerie-filter/GalerieWahl.tsx', import.meta.url), 'utf8');
+  const theme = readFileSync(new URL('../node_modules/tailwindcss/theme.css', import.meta.url), 'utf8');
+  assert.match(theme, /--container-2xl:\s*42rem;/);
+  assert.match(theme, /--container-5xl:\s*64rem;/);
+  assert.doesNotMatch(css, /--container-(2xl|5xl):/, 'eigene Containergrößen verschieben die Grenzen');
+  assert.match(wahl, /galerie-liste[^"]*@2xl:grid-cols-2[^"]*@5xl:grid-cols-3/);
+  const block = (abfrage) => css.split(abfrage).slice(1).map((teil) => teil.slice(0, 400));
+  assert.ok(block('@container (width < 64rem) {').some((b) => b.includes('[data-galerie-mehr="schmal"]')), 'Einklappen schmal bis 64rem');
+  assert.ok(block('@container (width >= 42rem) {').some((b) => b.includes('[data-galerie-mehr]') && b.includes('/ 2 - 1px')), 'Platzhalter zwei Spalten ab 42rem');
+  assert.ok(block('@container (width >= 64rem) {').some((b) => b.includes('[data-galerie-mehr]') && b.includes('/ 3 - 1px')), 'Platzhalter drei Spalten ab 64rem');
 });
