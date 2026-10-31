@@ -1716,3 +1716,10 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - Welle 2 (Priorität 2).
   - Prüfkette, Bildsatz, Sicht Anlauf 2, Tor E4 als E-105.
   - Bau ab dem Kontingent-Fenster 01:05 UTC.
+
+## E-106 · Auftraggeber: Tempomat aus, durcharbeiten bis zur Endabnahme, dann einmal live (31.10.2026, 11:25 MEZ)
+- **Anweisung** (31.10., gegen 10:45 MEZ): „achte nicht mehr auf das nutzungslevel sondern arbeite bis alles fertig und live ist“.
+- **Folge 1:** Die Kontingent-Bremse des Tempomaten (L6, Planungsziel) ist ausgesetzt. Ich warte nicht mehr auf Fensterwechsel. Das Fensterprotokoll in KONTINGENT läuft weiter, als Nachweis für UM-E5-KONT. Trifft ein hartes Limit, setze ich nach dem Reset per `resumeFromRunId` fort; die stündliche Routine WEITER sichert das ab.
+- **Folge 2:** Nach der Endabnahme kommt der Endstand ohne weitere Rückfrage einmal auf main (E-089 Folge 2, jetzt bekräftigt), als Fast-Forward ohne Force. Vorher prüfe ich: Reinraum, Suite und axe grün, Arbeitsbaum sauber, main ist Vorfahr von HEAD. Offene Punkte stehen dann ehrlich in ABNAHME und BERICHT.
+- **Unverändert:** Die Leitplanken G1 bis G9 gelten weiter; nie zwei Opus-Workflows gleichzeitig, Messungen nur als Skript, Lighthouse allein.
+- **Sofort umgesetzt:** Die Erinnerung für 11:12 UTC ist gelöscht. SF-C1 und SF-C2 laufen seit 10:27 UTC (wf_51622c16-2ee), nach einem Neustart der Umgebung um 10:22 UTC; die Server 4324 und 4325 sind neu gestartet.
