@@ -11,10 +11,22 @@ import {
   generateTeamEmailText,
   getTeamEmailSubject
 } from './templates/teamEmail';
-import { COMPANY_DATA } from '@/config/company';
 import { checkRecipientRateLimit } from './security';
 import fs from 'node:fs';
 import path from 'node:path';
+
+/**
+ * Empfänger der Anfragen aus allen Formularen (Auftraggeber 31.10.2026, E-109): kontakt@tezgel.de, weil
+ * info@tezgel.de dauerhaft Spam bekommt. CONTACT_EMAIL in der Hosting-Umgebung geht vor, damit sich der
+ * Empfänger ohne Codeänderung umstellen lässt. Die angezeigte Firmenadresse (COMPANY_DATA.contact.email:
+ * Impressum, Fuß, strukturierte Daten, Kundenmail) bleibt davon unberührt. Absender und Antwortadresse der
+ * Mails folgen dem Empfänger.
+ */
+export const ANFRAGE_EMPFAENGER = 'kontakt@tezgel.de';
+
+export function anfrageEmpfaenger(env: Record<string, string | undefined> = process.env): string {
+  return env.CONTACT_EMAIL?.trim() || ANFRAGE_EMPFAENGER;
+}
 
 /**
  * Idempotency cache to prevent duplicate email dispatches from rapid double clicks.
@@ -104,8 +116,8 @@ export async function sendInquiryEmails(payload: InquiryPayload): Promise<SendEm
   const customerText = generateCustomerEmailText(payload, referenceId);
 
   const resendApiKey = process.env.RESEND_API_KEY;
-  // info@tezgel.de is the authoritative single email address for all incoming inquiries
-  const recipientEmail = COMPANY_DATA.contact.email || process.env.CONTACT_EMAIL || 'info@tezgel.de';
+  // Empfänger der Anfragen: kontakt@tezgel.de bzw. CONTACT_EMAIL (siehe anfrageEmpfaenger)
+  const recipientEmail = anfrageEmpfaenger();
   const fromSender = process.env.RESEND_FROM_EMAIL || `Fliesenverlegung Tezgel <${recipientEmail}>`;
 
   // 2. Dev Mock Mode: In development without a key, simulate delivery and log details
@@ -139,7 +151,7 @@ export async function sendInquiryEmails(payload: InquiryPayload): Promise<SendEm
   let teamSent = false;
   let customerSent = false;
 
-  // 3. Send Team Lead Alert with Retry & Backoff (always arrives at info@tezgel.de)
+  // 3. Send Team Lead Alert with Retry & Backoff (an den Anfrage-Empfänger, siehe anfrageEmpfaenger)
   try {
     await withRetry(async () => {
       await resend.emails.send({
@@ -187,7 +199,7 @@ export async function sendInquiryEmails(payload: InquiryPayload): Promise<SendEm
           await resend.emails.send({
             from: fromSender,
             to: payload.contact.email!.trim(),
-            replyTo: recipientEmail, // Direct customer replies directly into info@tezgel.de
+            replyTo: recipientEmail, // Antworten der Kunden gehen an den Anfrage-Empfänger
             subject: customerSubject,
             html: customerHtml,
             text: customerText

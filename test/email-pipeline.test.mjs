@@ -29,7 +29,7 @@ import {
   getCustomerEmailSubject
 } from '../src/lib/email/templates/customerEmail.ts';
 
-import { sendInquiryEmails } from '../src/lib/email/mailer.ts';
+import { sendInquiryEmails, ANFRAGE_EMPFAENGER, anfrageEmpfaenger } from '../src/lib/email/mailer.ts';
 
 test('1. Security: HTML Escaping prevents Injection', () => {
   const dangerous = '<script>alert("XSS")</script><img src="x" onerror="steal()">&"\'';
@@ -322,4 +322,11 @@ test('13b. PricingCalculator ohne eigene Wahl (E-062): ohne Fläche und ohne Sit
   assert.equal(validation.data?.area, undefined);
   const ohneName = validateInquiryPayload({ ...payload, contact: { ...payload.contact, name: '' } });
   assert.equal(ohneName.success, false);
+});
+
+test('14. Mailer: Anfragen gehen an kontakt@tezgel.de, CONTACT_EMAIL geht vor (E-109)', () => {
+  assert.equal(ANFRAGE_EMPFAENGER, 'kontakt@tezgel.de');
+  assert.equal(anfrageEmpfaenger({}), 'kontakt@tezgel.de');
+  assert.equal(anfrageEmpfaenger({ CONTACT_EMAIL: '   ' }), 'kontakt@tezgel.de');
+  assert.equal(anfrageEmpfaenger({ CONTACT_EMAIL: ' buero@tezgel.de ' }), 'buero@tezgel.de');
 });
