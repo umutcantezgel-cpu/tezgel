@@ -34,10 +34,11 @@ export interface WissensSeiteProps {
 
 export default function WissensSeite({ inhalt, zeichnungen, werkzeug }: WissensSeiteProps) {
   const { worum } = inhalt;
-  const bild = worum.plan ? <Verlegeplan plan={worum.plan} flucht="zeigen" /> : worum.bild;
+  // Einstieg an der Schnur mit Bewertungszeile (UM-E4-SICHT-FIX M-A3): ein Rot im ersten Bildschirm, der Plan ohne seine Achse
+  const bild = worum.plan ? <Verlegeplan plan={worum.plan} flucht="zeigen" ohneAchse /> : worum.bild;
   return (
     <Seitenformel>
-      <Einstieg pfad={inhalt.pfad} brotkrumen={worum.brotkrumen} titel={worum.titel} ort={worum.ort} vorspann={worum.vorspann} bild={bild} hauptziel={hauptziel(inhalt.pfad)} lot fugeUnten={inhalt.lage.aufFliese} />
+      <Einstieg pfad={inhalt.pfad} brotkrumen={worum.brotkrumen} titel={worum.titel} ort={worum.ort} vorspann={worum.vorspann} bild={bild} hauptziel={hauptziel(inhalt.pfad)} lot schnur bewertung fugeUnten={inhalt.lage.aufFliese} />
       <Leitachse>
         <Suspense fallback={<div aria-hidden="true" className="min-h-dvh noscript:hidden" />}>
           <Lage inhalt={inhalt.lage} />

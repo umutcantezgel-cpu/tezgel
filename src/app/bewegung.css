@@ -1025,6 +1025,21 @@ html.k-wiederkehr [data-motion="eingang"] {
   --eingang-zeile-beginn: var(--dauer-0);
   --eingang-zeile: var(--dauer-2);
 }
+/* Einfacher Einstieg an der Schnur (Wissensseiten, die Ortsseiten mit M-C6; Einstieg.tsx `schnur`, UM-E4-SICHT-FIX M-A3 Nr. 2):
+   H1, Ort, Knöpfe, Bewertung, Bild und Vorspann stehen ab dem ersten Bild (LCP-Kandidaten, E-067-4; ohne Zeilenmaske, Ort
+   und Knöpfe mit animate-none, kein Fugenriss), es ziehen nur Schnur und Lotstück, in dauer-1 (0 bis 140 ms) statt dauer-2.
+   Wiederkehr wie im mittigen Einstieg: beide stehen. */
+[data-motion="eingang"][data-einstieg="schnur"] {
+  --eingang-schnur: var(--dauer-1);
+}
+/* Zeilenmaske an der Schnur (Figur der Unterseiten, EinstiegMitte titel-zeile; Nacharbeit UM-E4-SICHT-FIX SF-A, Vorgriff auf
+   M-A5 Nr. 2): Die Grundlinie der letzten H1-Zeile steht auf der Schnur, ihr Zeilenkasten reicht um halben Durchschuss und
+   Unterlänge (0,216em, globals.css „schnur-grundlinie“) darunter. Mit der Maske 0,2em unter dem Kasten blitzten beim Aufsteigen
+   Bruchstücke der Zeile bis rund 25 px unter der Schnur (d1440, um 170 ms). Hier endet die Maske an der Grundlinie: Die Zeile
+   steigt aus der Schnur auf, die Unterlängen erscheinen mit dem Ende des Zugs. Dauer und Folge bleiben; / folgt mit M-A5. */
+.titel-zeile > [data-motion="zeilenmaske"]:last-child {
+  --eingang-maske-unten: calc(1em * (1.1 - 1.088) / 2 + 0.21em);
+}
 /* Schnur: zieht von der Achse nach rechts (transform-origin links an der Schnur selbst, EinstiegMitte); ebenso die obere
    Kante des Quadratmeters */
 @keyframes eingang-schnur {
@@ -1053,15 +1068,18 @@ html.k-wiederkehr [data-motion="eingang"] {
   }
 }
 /* Weg der Zeile: ihre Höhe und 0,4em, dann liegt sie ganz unter der Maske; die Maske (Zeile ± 0,2em) steht dabei fest.
-   transform statt translate: Die Flucht (sig-flucht) bewegt dieselbe Zeile über translate, beide setzen sich zusammen. */
+   transform statt translate: Die Flucht (sig-flucht) bewegt dieselbe Zeile über translate, beide setzen sich zusammen.
+   Unterkante der Maske: --eingang-maske-unten (Abstand nach innen von der Unterkante der Zeile; ohne Angabe −0,2em, also 0,2em
+   darunter wie bisher). Die Figur der Unterseiten setzt sie an der letzten Zeile auf die Grundlinie (Block „Zeilenmaske an der
+   Schnur“ unten). */
 @keyframes eingang-zeile {
   from {
     transform: translateY(calc(100% + 0.4em));
-    clip-path: inset(calc(-100% - 0.6em) -1em calc(100% + 0.2em) -1em);
+    clip-path: inset(calc(-100% - 0.6em) -1em calc(100% + 0.4em + var(--eingang-maske-unten, -0.2em)) -1em);
   }
   to {
     transform: translateY(0);
-    clip-path: inset(-0.2em -1em -0.2em -1em);
+    clip-path: inset(-0.2em -1em var(--eingang-maske-unten, -0.2em) -1em);
   }
 }
 @keyframes eingang-setzen {

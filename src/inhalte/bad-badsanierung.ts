@@ -24,7 +24,8 @@ export const BADSANIERUNG: ErzaehlInhalt = {
     titelZeilen: ['Ihr neues Traumbad', 'zum Festpreis.'],
     ort: 'Für Aßlar, Wetzlar und Umgebung.',
     vorspann: VORSPANN,
-    bild: 'badsanierung-einstieg',
+    // Wanne und Dusche mit Mosaikboden ab rund 45 % der Höhe: ein fertiges Bad statt des Wannendetails (UM-E4-SICHT-FIX M-A2)
+    bild: 'badsanierung-beleg-2',
     bewertung: true,
   },
   lage: {
@@ -74,7 +75,8 @@ export const BADSANIERUNG: ErzaehlInhalt = {
     // hinter den fertigen Bädern (Abschnitt 5). Die Namen sind je höchstens sechs Wörter aus Textdatei oder Alt-Text.
     fotos: [
       { bild: 'badsanierung-beleg-1', unterschrift: 'Badewanne mit gestreifter Verkleidung', href: '/bad/badsanierung' },
-      { bild: 'badsanierung-beleg-2', unterschrift: 'Badewanne und Dusche mit Mosaikboden', href: '/bad/badsanierung' },
+      // badsanierung-beleg-2 ist der Einstieg der Seite (M-A2); an seiner Stelle das bisherige Einstiegsbild
+      { bild: 'badsanierung-einstieg', unterschrift: 'Badewanne mit Ornamentfliesen und Nische', href: '/bad/badsanierung' },
       { bild: 'sanierung-weg-1', unterschrift: 'Beige Wandfliesen bis halbhoch', href: '/bad/badsanierung' },
       { bild: 'sanierung-weg-2', unterschrift: 'Offene Decke und dunkle Holzoptik', href: '/bad/badsanierung' },
       { bild: 'sanierung-weg-3', unterschrift: 'Brauner Boden im Duschbereich', href: '/bad/badsanierung' },

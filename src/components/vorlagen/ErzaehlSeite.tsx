@@ -105,8 +105,9 @@ export default function ErzaehlSeite({ inhalt, momente, werkzeug, nachTun, nachB
           bewertung={worum.bewertung}
           orteAnker={inhalt.beleg.orte ? 'einsatzgebiet' : undefined}
           fugeUnten={inhalt.lage.aufFliese}
-          schnurFigur={worum.schnurFigur}
+          schnurFigur={worum.schnurFigur ?? true}
           bildQuer={worum.bildQuer}
+          schnurZeichen={worum.schnurZeichen}
         />
         <Leitachse>{rest}</Leitachse>
       </Seitenformel>

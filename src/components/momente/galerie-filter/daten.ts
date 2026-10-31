@@ -44,13 +44,15 @@ export const GRUPPEN: Gruppe[] = [
 // Browserprüfung E4-W1, Runde 2: fertige Räume zuerst (abwechselnd nach Gruppe), die Fotos von der Baustelle als eigener
 // Block am Ende, damit „Alle Fotos“ nicht Baustelle und fertige Räume mischt; 24 Fotos, damit Zwei- und Dreierraster
 // ohne Loch enden (Gäste-WC dazu). Runde 3: die Dusche mit Sitzbank zeigt noch Rohranschlüsse ohne Armatur und steht
-// deshalb als erstes Foto im Block von der Baustelle.
+// deshalb als erstes Foto im Block von der Baustelle. UM-E4-SICHT-FIX M-A2: start-dusche ist der Einstieg von /referenzen und
+// verlässt die Galerie; das bisherige Einstiegsbild tritt ans Ende der fertigen Räume (Tausch, weiter 24 Fotos). An seine Stelle
+// rückt die helle Dusche mit Sitzbank (gleiche Gruppe): Die erste Reihe beginnt wie vorher mit einer Dusche statt mit drei
+// dunklen Motiven (Nacharbeit SF-A; die Reihenfolge im Ganzen legt M-C3).
 export const GALERIE: GalerieFoto[] = [
-  { bild: 'start-dusche', gruppe: 'dusche', unterschrift: 'Dusche ohne Stufe mit großen grauen Fliesen' },
+  { bild: 'start-galerie-1', gruppe: 'dusche', unterschrift: 'Dusche ohne Stufe mit Sitzbank und Mosaik' },
   { bild: 'start-beleg-bad', gruppe: 'bad', unterschrift: 'Badewanne mit dunklen Mosaikfliesen' },
   { bild: 'start-galerie-3', gruppe: 'balkon-und-terrasse', unterschrift: 'Balkon mit dunklen Fliesen, jede Reihe um ein Stück versetzt' },
   { bild: 'start-beleg-treppe', gruppe: 'treppe-und-eingang', unterschrift: 'Außentreppe mit anthrazitfarbenen Fliesen und Handlauf' },
-  { bild: 'start-galerie-1', gruppe: 'dusche', unterschrift: 'Dusche ohne Stufe mit Sitzbank und Mosaik' },
   { bild: 'bad-beleg-3', gruppe: 'bad', unterschrift: 'Doppelwaschtisch aus dunklem Holz mit goldenem Spiegel' },
   { bild: 'start-galerie-4', gruppe: 'balkon-und-terrasse', unterschrift: 'Terrasse mit großen hellgrauen Platten' },
   { bild: 'kontakt-eingang', gruppe: 'treppe-und-eingang', unterschrift: 'Stufen am Eingang mit beigen Fliesen und hellen Kanten' },
@@ -62,6 +64,7 @@ export const GALERIE: GalerieFoto[] = [
   { bild: 'ort-gaeste-wc', gruppe: 'bad', unterschrift: 'Gäste-WC mit weißen Metrofliesen' },
   { bild: 'balkon-beleg-aluprofil', gruppe: 'balkon-und-terrasse', unterschrift: 'Graue Terrassenplatten mit heller Kante aus Metall' },
   { bild: 'bad-beleg-2', gruppe: 'bad', unterschrift: 'Bad im Landhausstil mit Wanne und Holzregal' },
+  { bild: 'referenzen-einstieg', gruppe: 'bad', unterschrift: 'Bad in Marmoroptik mit Regendusche' },
   { bild: 'bereich-dusche-streifen-sitzbank', gruppe: 'so-arbeiten-wir', unterschrift: 'Dusche fertig gefliest, die Armaturen kommen noch' },
   { bild: 'entstehung-dusche-2', gruppe: 'so-arbeiten-wir', unterschrift: 'Die Fliesen sind schräg zum Ablauf geschnitten, so läuft das Wasser gut ab' },
   { bild: 'sanierung-weg-1', gruppe: 'so-arbeiten-wir', unterschrift: 'Bad während der Arbeit, die Wand ist halb gefliest' },

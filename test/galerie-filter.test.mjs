@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { ARBEITEN } from '../src/config/arbeiten.ts';
 import { GLOSSAR } from '../src/config/glossar.ts';
 import { GALERIE, GRUPPEN, SATZ, STAFFEL_MAX, anzahl, ansage, blendetEin, istSichtbar, stufen } from '../src/components/momente/galerie-filter/daten.ts';
+import { REFERENZEN } from '../src/inhalte/referenzen.ts';
 
 // Großer Moment galerie-filter (KERN v3.4 K-007, E3-GRAF-08): Daten und Logik der Galerie „Unsere Arbeiten“ auf /referenzen.
 const FILTER = ['Bad', 'Dusche', 'Balkon und Terrasse', 'Treppe und Eingang', 'So arbeiten wir']; // referenzen.md, Abschnitt 5
@@ -25,7 +26,10 @@ test('Galerie 2: jedes Foto aus ARBEITEN, Format 4 : 5, jede Bilddatei einmal, o
   }
   const dateien = ids.map((id) => ARBEITEN[id].src);
   assert.equal(new Set(dateien).size, dateien.length, 'Bilddatei doppelt');
-  assert.ok(!dateien.includes(ARBEITEN['referenzen-einstieg'].src), 'Einstiegsbild der Seite steht nicht in der Galerie');
+  // an das Einstiegsbild der Seite gebunden statt an eine Kennung (UM-E4-SICHT-FIX M-A2: der Einstieg wechselt die Kennung,
+  // die Anforderung bleibt gleich)
+  assert.ok(REFERENZEN.worum.bild, 'Einstiegsbild der Seite');
+  assert.ok(!dateien.includes(ARBEITEN[REFERENZEN.worum.bild].src), 'Einstiegsbild der Seite steht nicht in der Galerie');
 });
 
 test('Galerie 3: jede Gruppe hat Fotos, die Zahlen gehen auf', () => {

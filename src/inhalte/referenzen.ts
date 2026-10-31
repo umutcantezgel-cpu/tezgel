@@ -43,7 +43,9 @@ export const REFERENZEN: ErzaehlInhalt = {
     ort: 'Fliesenleger Deniz Tezgel aus Aßlar, für Wetzlar und Mittelhessen.',
     // im mittigen Einstieg nicht gezeigt; der Vorspann steht als `tun.einleitung` auf der Seite (Regel 2)
     vorspann: VORSPANN,
-    bild: 'referenzen-einstieg',
+    // Dusche ohne Stufe, Güte A (UM-E4-SICHT-FIX M-A2; vorher die blasse Duschwand referenzen-einstieg, Schärfe 0,068). Das
+    // Foto verlässt dafür die Galerie der Seite (galerie-filter/daten.ts)
+    bild: 'start-dusche',
     bewertung: true,
   },
   lage: {

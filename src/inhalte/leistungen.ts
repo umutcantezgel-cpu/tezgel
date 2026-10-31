@@ -20,8 +20,9 @@ export const LEISTUNGEN: ErzaehlInhalt = {
     titelZeilen: ['Alle Leistungen vom Fliesenleger', 'aus Aßlar, Fliese für Fliese.'],
     ort: 'Für Aßlar, Wetzlar und Umgebung.',
     vorspann: 'Sie haben ein Bad, einen Boden oder einen Balkon, der nicht mehr passt. Hier sehen Sie, was wir tun: von der Badsanierung bis zur Terrasse, dazu Böden und Naturstein.',
-    // große Fliesen ohne Kante unter der Glaswand: zeigt, worum es auf der Seite geht (Formatregler weiter unten)
-    bild: 'leistungen-einstieg',
+    // ganzes Bad mit Boden und Wand, Schärfe 0,125 statt 0,064 (UM-E4-SICHT-FIX M-A2; vorher die dunkle Nahaufnahme
+    // leistungen-einstieg unter den Untergrenzen, sie wird ersetzt; bad-einstieg wird auf /bad frei)
+    bild: 'bad-einstieg',
     bewertung: true,
   },
   lage: {

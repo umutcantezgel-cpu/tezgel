@@ -23,8 +23,12 @@ export const BAD: ErzaehlInhalt = {
     ort: 'Für Aßlar, Wetzlar und Umgebung.',
     // im mittigen Einstieg nicht gezeigt; der Vorspann steht als `tun.einleitung` auf der Seite (Regel 2)
     vorspann: VORSPANN,
-    bild: 'bad-einstieg',
+    // Wanne und Ornamentboden ab rund 45 % der Höhe: das fertige Bad im ersten Bildschirm (UM-E4-SICHT-FIX M-A2; vorher
+    // bad-einstieg mit Decke und Fenster oben, jetzt Einstieg von /leistungen)
+    bild: 'bad-beleg-1',
     bewertung: true,
+    // Plan-Vignette des Bads am rechten Ende der Schnur, erst ab xl (bei t1024 hielte die H1 mit Zeichen nur 1,12 × H2; M-A1 Nr. 3)
+    schnurZeichen: { vignette: 'bad', ab: 'xl' },
   },
   lage: {
     // auf Fliese wie auf /: sichtbare Grenze nach dem Einstieg, die Flächen wechseln ab hier (UM-E3-FIX2 N8, UM-E4-CHOR-FIX);
@@ -84,8 +88,9 @@ export const BAD: ErzaehlInhalt = {
     titel: 'Bäder, die wir gebaut haben.',
     // Unterschriften: Wörter aus dem Text, höchstens sechs, ohne Punkt (Regel 4); Wege nach Leistung
     fotos: [
-      { bild: 'bad-beleg-1', unterschrift: 'Badewanne mit weißen Fliesen', href: '/bad/badsanierung' },
+      // bad-beleg-1 ist der Einstieg der Seite (M-A2); an seine Stelle tritt das bisherige Einstiegsbild, nicht als erstes
       { bild: 'bad-beleg-2', unterschrift: 'Wanne unter weißen Fliesen', href: '/bad/badsanierung' },
+      { bild: 'bad-einstieg', unterschrift: 'Helles Bad mit Glasdusche', href: '/bad/badsanierung' },
       { bild: 'bad-beleg-3', unterschrift: 'Doppelwaschtisch aus dunklem Holz', href: '/bad/badsanierung' },
     ],
     // Stimme der Textdatei zuerst, dann Stimmen aus REVIEWS zum Thema Bad (Regel 5, G8: Wortlaut unverändert)

@@ -211,6 +211,13 @@
 @utility einstieg-foto-start {
   width: clamp(calc(100% / 2), calc((100svh - var(--spacing) * 62 - 2.2 * var(--text-fs-7)) * var(--bild-format)), calc(100% * 2 / 3));
 }
+/* Hochformat im mittigen Einstieg ab lg (Figur „An der Schnur“ ohne bildQuer, UM-E4-SICHT-FIX M-A1 Nr. 4): höchstens 80svh hoch,
+   Breite aus dem eigenen Seitenverhältnis (--bild-format), höchstens zwei Drittel der Spalte. Das 4 : 5-Foto misst so auf d1440
+   576 × 720 px und beginnt unter den Knöpfen; im ersten Bildschirm stehen rund 60 % (vorher eine ganze Bildschirmhöhe, deren
+   oberer Teil Decke und Wand zeigte). sizes passend dazu: EINSTIEG_HOCH_SIZES in vorlagen/teile/EinstiegMitte.tsx. */
+@utility einstieg-foto-hoch {
+  width: min(calc(100% * 2 / 3), calc(80svh * var(--bild-format)));
+}
 
 /* Silbentrennung in engen Spalten bei großer Schrift (Preiskarten, Abschlussband auf /preise, Preisrechner, Auswahl im Konfigurator; E4-W1, FS):
    lange Wörter schon ab 10, 11 bzw. 12 Zeichen trennen (Konfigurator: 12), je Teil mindestens vier. Sonst gilt die Seitenregel 12 5 5 (body). */
@@ -547,6 +554,39 @@
   }
   @container (width < 20rem) {
     .quadratmeter {
+      display: none;
+    }
+  }
+  /* H1 der Figur-Einstiege außer / (EinstiegMitte, UM-E4-SICHT-FIX M-A1 Nr. 2, E-104 Nr. 2): fs-7 auf allen Breiten, eine
+     Stufe über den H2. Unter md brechen die Zeilen an Wortgrenzen um (lange Wörter trennt die Seitenregel wie bisher bei fs-6).
+     Ab md bricht die längste Zeile nicht um: höchstens 98 % der Spalte (cqi am Container des Einstiegs) durch ihre gemessene
+     em-Breite (--titel-em aus ZEILEN_EM, ab lg bzw. xl mit dem Platz des Schnurzeichens: --titel-em-lg, --titel-em-xl). Nie
+     kleiner als 1,15 × fs-6 (die H2, Abnahmeregel M-A1): Reicht die Spalte dafür nicht (nur bei großer Systemschrift), bricht
+     die Zeile um, statt kleiner als die H2 zu werden; bei 200 % sind fs-6 und fs-7 gleich (2rem), dort gilt H1 = H2. */
+  @media (width >= 48rem) {
+    .titel-zeile > * {
+      font-size: min(1em, max(calc(var(--text-fs-6) * 1.15), calc(98cqi / var(--titel-em, 13.3))));
+    }
+  }
+  @media (width >= 64rem) {
+    .titel-zeile > * {
+      font-size: min(1em, max(calc(var(--text-fs-6) * 1.15), calc(98cqi / var(--titel-em-lg, var(--titel-em, 13.3)))));
+    }
+  }
+  @media (width >= 80rem) {
+    .titel-zeile > * {
+      font-size: min(1em, max(calc(var(--text-fs-6) * 1.15), calc(98cqi / var(--titel-em-xl, var(--titel-em-lg, var(--titel-em, 13.3))))));
+    }
+  }
+  /* Schnurzeichen (EinstiegMitte, M-A1 Nr. 3): Plan-Vignette eine Zeilenhöhe der H1 hoch (1,1em in der Schrift der Zeilen),
+     Breite aus ihrem Format (--zeichen-format). In schmaler Spalte (unter 56rem: Tablet hochkant und große Systemschrift)
+     entfällt es; dort stünde es an der H1 (ueberlappung.mjs) */
+  .schnur-zeichen {
+    display: block;
+    width: calc(1.1em * var(--zeichen-format));
+  }
+  @container (width < 56rem) {
+    .schnur-zeichen {
       display: none;
     }
   }

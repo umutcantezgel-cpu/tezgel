@@ -17,7 +17,9 @@ export const BARRIEREFREIES_BAD: ErzaehlInhalt = {
     ort: 'Für Aßlar, Wetzlar und Umgebung.',
     vorspann:
       'Wir bauen Ihre Badewanne aus und eine [[bodengleiche-dusche|bodengleiche Dusche]] ein. So steigen Sie sicher hinein, heute und auch später.',
-    bild: 'barrierefrei-einstieg',
+    // stufenloser Boden bis in die Dusche ab rund 40 % der Höhe, Schärfe 0,088 statt 0,023 (UM-E4-SICHT-FIX M-A2; das
+    // bisherige Bild lag unter den Untergrenzen und wird ersetzt)
+    bild: 'bereich-dusche-streifen-sitzbank',
     einstieg: 'mitte',
     titelZeilen: ['Ein barrierefreies Bad', 'mit Dusche ohne Stufe'],
     bewertung: true,

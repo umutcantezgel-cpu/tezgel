@@ -314,7 +314,18 @@ test('Eingang 7: Behälter und Teile in Kopf und Einstiegen; H1 bleibt Text, Arb
   }
   const einstieg = lies('src/components/vorlagen/teile/Einstieg.tsx');
   assert.match(einstieg, /data-motion=\{kompakt \? undefined : 'eingang'\}/);
-  assert.match(einstieg, /data-motion=\{kompakt \? undefined : 'zeilenmaske'\}/);
+  // Wissens- und Ortsseiten (UM-E4-SICHT-FIX M-A3 Nr. 2, Eintrag in ENTSCHEIDUNGEN): Die H1 steht ab dem ersten Bild
+  // (LCP-Kandidat, E-067-4), ohne Zeilenmaske; der Vorspann steht ohne data-eingang; an der Schnur ziehen nur Schnur und
+  // Lotstück der Schnurebene (Kennung eingang), im Behälter des Einstiegs
+  assert.ok(!einstieg.includes('zeilenmaske'), 'Einstieg: H1 ohne Zeilenmaske');
+  const vorspann = /<p className=\{clsx\('max-w-mass font-text text-fs-3[^\n]*\n\s*<Textmarken text=\{vorspann\}/.exec(einstieg);
+  assert.ok(vorspann && !vorspann[0].includes('data-eingang'), 'Einstieg: Vorspann ohne data-eingang');
+  assert.match(einstieg, /data-formel="worum" data-motion="eingang" data-einstieg="schnur"/);
+  assert.match(einstieg, /<Schnurebene stark \/>/);
+  assert.match(einstieg, /<Lotstueck className=/);
+  const ebene = lies('src/components/vorlagen/teile/Schnurebene.tsx');
+  assert.match(ebene, /data-eingang="schnur"/);
+  assert.match(ebene, /data-eingang="lot"/);
   // die Zeilenmaske hält höchstens vier Stufen (Staffel ≤ 8 Elemente, K-005)
   assert.match(CSS, /min\(var\(--zeile, 0\), 3\)/);
 });

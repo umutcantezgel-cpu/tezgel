@@ -25,6 +25,8 @@ export const BALKON_TERRASSE: ErzaehlInhalt = {
     vorspann: VORSPANN,
     bild: 'balkon-einstieg-hell',
     bewertung: true,
+    // Plan-Vignette „außen“ am rechten Ende der Schnur ab lg (UM-E4-SICHT-FIX M-A1 Nr. 3)
+    schnurZeichen: { vignette: 'aussen', ab: 'lg' },
   },
   lage: {
     // auf Fliese wie auf /: sichtbare Grenze nach dem Einstieg, die Flächen wechseln ab hier (UM-E3-FIX2 N8, UM-E4-CHOR-FIX)

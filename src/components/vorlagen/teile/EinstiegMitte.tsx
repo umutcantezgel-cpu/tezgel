@@ -47,19 +47,34 @@
 //   bis an die Oberkante des Fotos; dort kreuzt es eine Fuge, auf der das Foto hängt (ab sm, Fugenkreuz am Lot).
 // - Das Foto wählt je Breite seinen Zuschnitt (Startbild), ab lg so groß, dass es ganz im ersten Bildschirm steht, zwischen
 //   der Hälfte und zwei Dritteln der Spalte (einstieg-foto-start, --bild-format aus dem Zuschnitt ab lg).
+// Figur auf allen mittigen Einstiegen (UM-E4-SICHT-FIX M-A1, Sicht E4 Anlauf 1: auf den Unterseiten schwebte die H1 15 bis
+// 25 px über der Schnur, war so groß wie die H2, und mobil stand das Foto unter dem Falz): ErzaehlSeite setzt `schnurFigur` für
+// jeden Aufruf mit `einstieg: 'mitte'` (die Angabe bleibt Abschalter). Schnur, Lot und Lotstück kommen aus der Schnurebene
+// (M-A3 Nr. 1, gemeinsam mit dem einfachen Einstieg).
+// - H1 außer auf / in fs-7 (E-104 Nr. 2, KERN K-003), eine Stufe über den H2. Unter md brechen die Zeilen an Wortgrenzen um,
+//   ab md bricht die längste Zeile nicht um: Ihr Maß kommt aus der Tabelle ZEILEN_EM gemessener em-Breiten (nicht aus der
+//   Zeichenzahl) und steht als --titel-em am Container (globals.css „titel-zeile“); nie kleiner als 1,15 × fs-6 (die H2).
+// - Schnurzeichen (WorumInhalt.schnurZeichen, /bad ab xl, /balkon-terrasse ab lg): die Plan-Vignette der Seite am rechten
+//   Ende der Schnur, unten auf ihr, in der Größe einer H1-Zeile; ihre Breite ist im Maß der H1 ab ihrer Stufe eingerechnet
+//   (--titel-em-lg, --titel-em-xl). Setzt sich im Eingang mit den Knöpfen (`eingang`, data-eingang="knoepfe").
+// - Hochformat ohne bildQuer: ab lg höchstens 80svh hoch, Breite aus dem Format, höchstens zwei Drittel der Spalte
+//   (einstieg-foto-hoch, EINSTIEG_HOCH_SIZES).
+// - Unter sm stehen Brotkrumen und H1 näher am Kopf (Nacharbeit SF-A): 16 statt 32 px Luft unter dem Kopf (pt-16 und mt-4
+//   statt pt-24), 16 statt 24 px bis zur H1. In fs-7 brechen lange Titel dort in vier Zeilen um (/leistungen, /referenzen,
+//   /ueber-uns), und im Erstbesuch rückte der Hauptknopf bei m390 unter den Rand des Einwilligungsbanners (erstesbild.mjs
+//   4 → 3). Die gewonnenen 24 px gehen an Knöpfe und Foto. / (ohne Brotkrumen) bleibt bei pt-24.
 // Serverkomponente.
 import type { CSSProperties, ReactNode } from 'react';
 import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
-import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
 import Bewertungszeile from '@/components/kern/Bewertungszeile';
 import Bildfeld from '@/components/kern/Bildfeld';
 import Brotkrumen, { type Krume } from '@/components/kern/Brotkrumen';
 import Hauptknopf from '@/components/kern/Hauptknopf';
-import Laserachse from '@/components/kern/Laserachse';
-import { ACHSE_LAGE, KREUZ_GROESSE, SCHNUR_LAGE } from '@/components/kern/Leitachse';
+import { VIGNETTEN, type VignettenName } from '@/components/kern/vignetten';
 import Quadratmeter from './Quadratmeter';
+import Schnurebene, { Aufhaengung, Lotstueck } from './Schnurebene';
 import Rufnummer from '@/components/kern/Rufnummer';
 import WeiterLink from '@/components/kern/WeiterLink';
 import { knopfKlassen, seitenKlassen } from '@/components/kern/stile';
@@ -95,7 +110,42 @@ export interface EinstiegMitteProps {
   schnurFigur?: boolean;
   /** Zuschnitt des Fotos ab lg (WorumInhalt.bildQuer): sein Seitenverhältnis bemisst das Foto ab lg */
   bildQuer?: ArbeitId;
+  /** Plan-Vignette am rechten Ende der Schnur ab lg bzw. xl (WorumInhalt.schnurZeichen, nur in der Figur) */
+  schnurZeichen?: Schnurzeichen;
 }
+
+export interface Schnurzeichen {
+  vignette: VignettenName;
+  /** ab dieser Breite; darunter reicht die Spalte neben der H1 nicht (Maß der H1 ≥ 1,15 × H2) */
+  ab: 'lg' | 'xl';
+}
+
+/** Breite der H1-Zeilen in em (Archivo wdth 74, wght 760, Laufweite −0,015 em, Wortabstand 0,06 em wie font-anzeige;
+ *  gemessen im Browser bei d1440 mit nowrap, UM-E4-SICHT-FIX M-A1 Nr. 2). Ab md bemisst die längste Zeile die H1
+ *  (--titel-em, globals.css „titel-zeile“). Eine Zeile, die hier fehlt, nimmt das Maß der breitesten (13,3). Ändert sich der
+ *  Wortlaut einer Zeile, wird sie neu gemessen (Messweise in der Paketnotiz UM-E4-SICHT-FIX-a). */
+const ZEILEN_EM: Record<string, number> = {
+  'Aus Ihrem alten Bad wird ein neues,': 13.3,
+  'das Sie gern nutzen.': 7.49,
+  'Ihr neues Traumbad': 7.38,
+  'zum Festpreis.': 5.41,
+  'Ein barrierefreies Bad': 8.07,
+  'mit Dusche ohne Stufe': 8.39,
+  'Alle Leistungen vom Fliesenleger': 12.25,
+  'aus Aßlar, Fliese für Fliese.': 9.94,
+  'Ein neuer Belag für': 7.02,
+  'Balkon und Terrasse': 7.58,
+  'Das sagen unsere Kunden,': 9.89,
+  'und so sieht unsere Arbeit aus.': 11.43,
+  'Ihr Fliesenleger aus Aßlar': 9.44,
+  'kommt persönlich zu Ihnen.': 10.22,
+};
+const ZEILE_EM_GROESST = 13.3;
+/** Seitenverhältnis der Vignetten (viewBox in kern/vignetten) */
+const ZEICHEN_FORMAT: Record<VignettenName, number> = { bad: 240 / 184, wohnen: 240 / 128, aussen: 240 / 128, untergrund: 240 / 128, reparatur: 240 / 128, treppe: 240 / 128 };
+/** Höhe des Schnurzeichens (eine Zeilenhöhe der H1) und Luft zur H1, in em der H1 */
+const ZEICHEN_HOEHE = 1.1;
+const ZEICHEN_LUFT = 0.5;
 
 /** Erster Schritt und Kosten in einem Satz unter den Knöpfen (Aufgabe A5, Probeläufe E3: Ablauf und kostenfreier Termin erst
  *  nach vielem Scrollen; E-062). Termin kostenfrei: K-015 F-12; Angebot mit festem Preis wie im Ablauf jeder Seite. */
@@ -113,8 +163,13 @@ const EINSTIEG_FORMAT = 4 / 5;
  *  = 31,67rem + 21,11vw, höchstens 63,33rem; Höhe 80vh − 4,8 Grundschrift = 80vh − 3rem − 2vw). */
 export const EINSTIEG_MITTE_SIZES =
   '(min-width: 1440px) min(calc(31.67rem + 21.11vw), 63.33rem, calc(80vh - 3rem - 2vw)), (min-width: 1024px) min(calc(66.67vw - 4rem), 51rem, calc(80vh - 4.8rem)), (min-width: 640px) 28rem, 100vw';
+/** Bildbreiten zum Hochformat in der Figur (einstieg-foto-hoch, UM-E4-SICHT-FIX M-A1 Nr. 4): dieselbe Rechnung wie oben, aber
+ *  die Höhe höchstens 80vh, beim 4 : 5-Foto (alle Einstiegsquellen, _werkstatt/bildplaetze.md) also die Breite 80vh · 0,8 =
+ *  64vh; die Höhe hängt nicht an der Grundschrift. d1440: 576 px, d1920: 691 px. */
+export const EINSTIEG_HOCH_SIZES =
+  '(min-width: 1440px) min(calc(31.67rem + 21.11vw), 63.33rem, 64vh), (min-width: 1024px) min(calc(66.67vw - 4rem), 51rem, 64vh), (min-width: 640px) 28rem, 100vw';
 
-export default function EinstiegMitte({ pfad, brotkrumen, titelZeilen, titelGross = false, quadratmeter = false, ort, hauptziel, bild, bewertung = false, orteAnker, fugeUnten = false, schnurFigur = false, bildQuer }: EinstiegMitteProps) {
+export default function EinstiegMitte({ pfad, brotkrumen, titelZeilen, titelGross = false, quadratmeter = false, ort, hauptziel, bild, bewertung = false, orteAnker, fugeUnten = false, schnurFigur = false, bildQuer, schnurZeichen }: EinstiegMitteProps) {
   const { contact } = COMPANY_DATA;
   const format = bildQuer
     ? ARBEITEN[bildQuer].breite / ARBEITEN[bildQuer].hoehe
@@ -122,8 +177,25 @@ export default function EinstiegMitte({ pfad, brotkrumen, titelZeilen, titelGros
       ? ARBEITEN[bild as ArbeitId].breite / ARBEITEN[bild as ArbeitId].hoehe
       : EINSTIEG_FORMAT;
   const figur = schnurFigur;
-  // Größe der H1: Startseite unter sm und ab md fs-7 (Figur: ab md eine Stufe größer als vorher, UM-E4-START), sonst fs-6
-  const titelStufe = titelGross && (figur ? 'titel-spalte max-sm:text-fs-7 md:text-fs-7' : 'titel-spalte max-sm:text-fs-7 lg:text-fs-7');
+  // Hochformat in der Figur: kein eigener Zuschnitt ab lg (bildQuer) und das Foto steht hochkant (M-A1 Nr. 4)
+  const hochformat = figur && !bildQuer && format < 1;
+  // Größe der H1: Startseite unter sm und ab md fs-7 (Figur: ab md eine Stufe größer als vorher, UM-E4-START), sonst fs-6;
+  // die übrigen Figuren fs-7 auf allen Breiten, ab md im Maß der längsten Zeile (titel-zeile, UM-E4-SICHT-FIX M-A1 Nr. 2)
+  const zeileGemessen = !titelGross && figur;
+  const titelStufe = titelGross ? (figur ? 'titel-spalte max-sm:text-fs-7 md:text-fs-7' : 'titel-spalte max-sm:text-fs-7 lg:text-fs-7') : zeileGemessen ? 'titel-zeile' : undefined;
+  const titelGrundstufe = zeileGemessen ? 'text-fs-7' : 'text-fs-6';
+  const mitKrumen = brotkrumen !== undefined && brotkrumen.length > 1;
+  // unter sm Brotkrumen und H1 näher am Kopf (16 statt 32 px Luft unter dem Kopf, 16 statt 24 px bis zur H1), nur in der Figur
+  // der Unterseiten und nur mit Brotkrumen (ohne sie bliebe unter dem Kopf keine Luft)
+  const engKopf = zeileGemessen && mitKrumen;
+  const zeichen = figur && schnurZeichen ? schnurZeichen : undefined;
+  const Zeichen = zeichen ? VIGNETTEN[zeichen.vignette] : null;
+  const titelMass = zeileGemessen ? Math.max(...titelZeilen.map((z) => ZEILEN_EM[z] ?? ZEILE_EM_GROESST)) : undefined;
+  // mit Zeichen: zweimal (die H1 steht mittig) Zeichen und Luft, ab der Stufe des Zeichens
+  const mitZeichen = titelMass !== undefined && zeichen ? titelMass + 2 * (ZEICHEN_HOEHE * ZEICHEN_FORMAT[zeichen.vignette] + ZEICHEN_LUFT) : undefined;
+  const titelVariablen = titelMass === undefined
+    ? undefined
+    : ({ '--titel-em': titelMass, ...(mitZeichen && { [zeichen?.ab === 'lg' ? '--titel-em-lg' : '--titel-em-xl']: +mitZeichen.toFixed(2) }) } as CSSProperties);
   const zeilen = titelZeilen.map((zeile, i) => (
     <span key={zeile} data-motion="zeilenmaske" style={{ '--zeile': i } as CSSProperties} className="block flach:inline flach:animate-none">
       {zeile}
@@ -134,8 +206,8 @@ export default function EinstiegMitte({ pfad, brotkrumen, titelZeilen, titelGros
     <section aria-labelledby="seite-titel" data-formel="worum" data-motion="eingang" className="relative">
       {/* H1; schnur-abstand (0,25em) hält die Schnur von den Unterlängen und von der Zeilenmaske fern (globals.css). Der
           Container ist das Maß der Zeilen der Startseite (titel-spalte, cqi) und trägt den Quadratmeter */}
-      <div className={clsx(seitenKlassen, '@container relative flex flex-col items-center pt-24 text-center flach:pt-16', figur && 'z-10')}>
-        {brotkrumen && brotkrumen.length > 1 && <Brotkrumen wege={brotkrumen} className="mb-6 flach:hidden" />}
+      <div style={titelVariablen} className={clsx(seitenKlassen, '@container relative flex flex-col items-center pt-24 text-center flach:pt-16', figur && 'z-10', engKopf && 'max-sm:pt-16')}>
+        {mitKrumen && brotkrumen && <Brotkrumen wege={brotkrumen} className={clsx('mb-6 flach:hidden', engKopf && 'max-sm:mt-4 max-sm:mb-4')} />}
         {figur ? (
           // H1 und Quadratmeter als eine Gruppe; die Unterkante der Gruppe ist die Grundlinie der letzten Zeile, also die
           // Schnur. Der Quadratmeter steht außerhalb der H1 (ihr Text bleibt der Wortlaut, A-1) in derselben Schriftgröße wie
@@ -145,7 +217,7 @@ export default function EinstiegMitte({ pfad, brotkrumen, titelZeilen, titelGros
           // Achse); unter md reicht die Spalte dafür nicht, dort steht die Gruppe mittig. Flach (Handy quer) steht er klein ohne
           // Zahl hinter der einzeiligen H1 (globals.css „quadratmeter“)
           <div className="relative flex max-w-full">
-            <h1 id="seite-titel" data-erstes-bild="ueberschrift" data-motion="sig-flucht" className={clsx('schnur-grundlinie min-w-0 text-fs-6 text-balance text-tinte flach:text-fs-5', titelStufe)}>
+            <h1 id="seite-titel" data-erstes-bild="ueberschrift" data-motion="sig-flucht" className={clsx('schnur-grundlinie min-w-0 text-balance text-tinte flach:text-fs-5', titelGrundstufe, titelStufe)}>
               {zeilen}
             </h1>
             {quadratmeter && (
@@ -161,23 +233,32 @@ export default function EinstiegMitte({ pfad, brotkrumen, titelZeilen, titelGros
             </h1>
           </>
         )}
+        {/* Schnurzeichen: rechts am Ende der Schnur (right-8 wie SCHNUR_LAGE ab lg), unten auf ihr; in der Schrift der H1-Zeilen
+            (titel-zeile am Platz), ohne Höhe im Fluss. Entfällt in schmaler Spalte (große Systemschrift, globals.css) */}
+        {Zeichen && zeichen && (
+          <span
+            aria-hidden="true"
+            data-eingang="knoepfe"
+            style={{ '--zeichen-format': ZEICHEN_FORMAT[zeichen.vignette] } as CSSProperties}
+            className={clsx('titel-zeile absolute right-8 bottom-0 hidden text-fs-7 text-tinte flach:hidden', zeichen.ab === 'lg' ? 'lg:block' : 'xl:block')}
+          >
+            <span className="schnur-zeichen">
+              <Zeichen />
+            </span>
+          </span>
+        )}
       </div>
       {/* Ab der Schnur: Zierebene (Schnur an der Oberkante, Lot im Seitenrand bis zum Fuß des Einstiegs), darüber der Inhalt in
           einer positionierten Hülle ohne eigenen Stapelkontext (wie in kern/Leitachse) */}
       <div className="relative">
-        <div aria-hidden="true" className="einstieg-lot pointer-events-none absolute inset-0">
-          <div className={clsx(seitenKlassen, 'relative h-full')}>
-            <Laserachse className={ACHSE_LAGE} />
-            {/* Figur: mobil und bei DPR 1 zwei Pixel stark (schnur-linie, globals.css) */}
-            <span data-eingang="schnur" data-leitachse="" className={clsx('absolute top-0 h-px origin-left bg-laser', figur && 'schnur-linie', SCHNUR_LAGE)} />
-          </div>
-        </div>
+        {/* Figur: mobil und bei DPR 1 zwei Pixel stark (schnur-linie, globals.css) */}
+        <Schnurebene stark={figur} />
         {/* Spalte: Ort und Knöpfe, erster Schritt mit Bewertung, Foto; ab lg rücken erster Schritt und Bewertung unter das Foto */}
         <div className={clsx('relative flex flex-col', fugeUnten && 'lg:pb-16')}>
           <div className={`${seitenKlassen} relative flex flex-col items-center pt-6 text-center flach:pt-3`}>
             {/* rotes Lot von der Schnur bis unter die Knopfreihe (UM-E3-FIX2 N3), auf derselben Achse wie das Lot der Zierebene */}
             {/* in der Figur bis an die Oberkante des Fotos (Abstand des Fotos, pt-8, ab lg pt-6) */}
-            <span aria-hidden="true" data-eingang="lot" data-leitachse="" className={clsx('lot-stueck origin-top max-sm:animate-none', figur ? '-bottom-8 flach:-bottom-4 lg:-bottom-6' : '-bottom-4', ACHSE_LAGE)} />
+            <Lotstueck className={figur ? '-bottom-8 flach:-bottom-4 lg:-bottom-6' : '-bottom-4'} />
             {/* Ort, ab lg mit dem Orte-Link in einer Zeile (auf der Grundlinie) */}
             <div className="flex w-full flex-col items-center lg:flex-row lg:flex-wrap lg:items-baseline lg:justify-center lg:gap-x-6">
               <p data-erstes-bild="ort" className="max-w-mass font-text text-fs-4 text-balance text-tinte-2 max-sm:animate-none">
@@ -235,18 +316,13 @@ export default function EinstiegMitte({ pfad, brotkrumen, titelZeilen, titelGros
           {/* Flach (Handy quer, q844) stehen Knöpfe und Foto in der kleineren Fugenstufe (12 und 16 px statt 24 und 32 px): Das
               Foto beginnt so rund 28 px höher im ersten Bildschirm (Nacharbeit UM-E4-START, Prüfung A) */}
           <div className={clsx(seitenKlassen, figur ? 'relative pt-8 flach:pt-4 lg:pt-6' : 'pt-12 pb-16 lg:pt-8 lg:pb-0')}>
-            {figur && (
-              <>
-                <span aria-hidden="true" data-leitachse="" className={clsx('absolute top-8 h-px bg-fuge max-sm:hidden flach:top-4 lg:top-6', SCHNUR_LAGE)} />
-                <Fugenkreuz className={clsx('absolute top-8 -translate-1/2 text-tinte max-sm:hidden flach:top-4 lg:top-6', KREUZ_GROESSE, ACHSE_LAGE)} />
-              </>
-            )}
+            {figur && <Aufhaengung lage="top-8 flach:top-4 lg:top-6" />}
             <div
               data-eingang="bild"
               style={{ '--bild-format': format } as CSSProperties}
-              className={clsx('relative mx-auto w-full max-w-md max-sm:after:hidden lg:max-w-full', figur ? 'lg:einstieg-foto-start' : 'lg:einstieg-foto')}
+              className={clsx('relative mx-auto w-full max-w-md max-sm:after:hidden lg:max-w-full', figur ? (hochformat ? 'lg:einstieg-foto-hoch' : 'lg:einstieg-foto-start') : 'lg:einstieg-foto')}
             >
-              {typeof bild === 'string' ? <Bildfeld arbeit={bild as ArbeitId} lcp sizes={EINSTIEG_MITTE_SIZES} /> : bild}
+              {typeof bild === 'string' ? <Bildfeld arbeit={bild as ArbeitId} lcp sizes={hochformat ? EINSTIEG_HOCH_SIZES : EINSTIEG_MITTE_SIZES} /> : bild}
             </div>
           </div>
         </div>

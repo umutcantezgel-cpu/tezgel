@@ -34,8 +34,8 @@ export interface WorumInhalt {
    *  festen Zeilen (sig-flucht) und dem Plan (sig-plan); `bild` ist dann das hohe Foto unter lg, `bildGross` das Querformat */
   plan?: PlanName;
   titelZeilen?: string[];
-  /** Mittiger Einstieg: H1 ab lg eine Stufe größer (fs-7), nur auf der Startseite (UM-E3-FIX F1). Gleich gebaute Einstiege
-   *  der übrigen Seiten bleiben einheitlich bei fs-6; keine Regel nach Zeilenlänge (Nacharbeit A, Prüfer 2) */
+  /** Mittiger Einstieg, nur Startseite (UM-E3-FIX F1): H1 im Maß von „Quadratmeter.“ und Quadratmeter (titel-spalte). Die
+   *  übrigen Figur-Einstiege stehen in fs-7 im Maß ihrer längsten Zeile (UM-E4-SICHT-FIX M-A1 Nr. 2, EinstiegMitte ZEILEN_EM) */
   titelGross?: boolean;
   /** Mittiger Einstieg: Strichzeichnung eines Quadratmeters mit Bemaßung an der Schnur, nur auf der Startseite (UM-E3-FIX2
    *  N5; belegt die H1 „Perfektion auf jedem Quadratmeter.“) */
@@ -47,10 +47,14 @@ export interface WorumInhalt {
   /** Mittiger Einstieg, nur Startseite (UM-E4-START): Zuschnitt des Fotos ab lg (Kennung aus ARBEITEN, Bildauswahl je Breite
    *  im Bildplatz der Seite); sein Seitenverhältnis bemisst das Foto ab lg */
   bildQuer?: ArbeitId;
-  /** Mittiger Einstieg, nur Startseite (UM-E4-START, Sicht Anlauf 3): die Figur „An der Schnur“ geschlossen. Die Grundlinie der
-   *  letzten H1-Zeile steht auf der Schnur, der Quadratmeter direkt hinter „Quadratmeter.“, das rote Lot reicht bis zum Foto,
-   *  das an einer Fuge hängt; mobil folgt das Foto direkt auf Hauptknopf und Telefon, Vorspann und Bewertung darunter */
+  /** Mittiger Einstieg (UM-E4-START, Sicht Anlauf 3): die Figur „An der Schnur“ geschlossen. Die Grundlinie der letzten H1-Zeile
+   *  steht auf der Schnur, das rote Lot reicht bis zum Foto, das an einer Fuge hängt; mobil folgt das Foto direkt auf Hauptknopf
+   *  und Telefon, erster Schritt und Bewertung darunter. Seit UM-E4-SICHT-FIX M-A1 Standard für jeden Einstieg `mitte`
+   *  (ErzaehlSeite); `false` schaltet sie ab */
   schnurFigur?: boolean;
+  /** Mittiger Einstieg mit Figur (UM-E4-SICHT-FIX M-A1 Nr. 3): Plan-Vignette der Seite am rechten Ende der Schnur, ab `ab`
+   *  (darunter reicht die Spalte neben der H1 nicht); ihre Breite rechnet EinstiegMitte in das Maß der H1 ein */
+  schnurZeichen?: { vignette: VignettenName; ab: 'lg' | 'xl' };
   /** Form des Einstiegs: `mitte` = ruhig und mittig, H1 in `titelZeilen`, darunter `ort` als eine Zeile, dann das Foto
    *  vollständig (K-016 „Ruhe“, E-047); ohne Angabe Planblatt (mit `plan`) bzw. der einfache Einstieg */
   einstieg?: 'planblatt' | 'mitte';
