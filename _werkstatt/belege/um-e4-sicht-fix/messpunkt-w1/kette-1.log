@@ -1,0 +1,157 @@
+=== REINRAUM 13315fa8 15:25:38
+exit 0
+lint 0 (21s)
+test 0 (3s)
+qa-graph 0 (0s)
+ℹ tests 270
+ℹ pass 270
+ℹ fail 0
+ℹ skipped 0
+läuft: 13315fa8 auf 4325
+4324 200
+4325 200
+/preise 200
+/bad/projekt-check 200
+/termin 200
+/blog/barrierefreier-balkonaustritt 200
+/standorte/giessen 200
+/standorte/asslar 200
+/leistungen/bad 200
+/foerderung 200
+/bad/badanfrage 200
+=== STYLESHEETS und CSS gzip 15:27:24
+4324 / css=1
+4324 /bad css=1
+4324 /bad/badsanierung css=1
+4324 /bad/barrierefreies-bad css=1
+4324 /leistungen css=1
+4324 /fliesen css=1
+4324 /balkon-terrasse css=1
+4324 /referenzen css=1
+4324 /ueber-uns css=1
+4324 /kontakt css=1
+4324 /standorte/wetzlar css=1
+4324 /blog css=1
+4324 /preise css=1
+4324 css /_next/static/chunks/3-crs60l327ie.css roh=136410 gzip=23400
+4325 / css=1
+4325 /bad css=1
+4325 /bad/badsanierung css=1
+4325 /bad/barrierefreies-bad css=1
+4325 /leistungen css=1
+4325 /fliesen css=1
+4325 /balkon-terrasse css=1
+4325 /referenzen css=1
+4325 /ueber-uns css=1
+4325 /kontakt css=1
+4325 /standorte/wetzlar css=1
+4325 /blog css=1
+4325 /preise css=1
+4325 css /_next/static/chunks/0xw31w3mvx2pp.css roh=142465 gzip=24541
+=== G8 15:27:28
+/ fuss gleich · zitate gleich · zahlen weg 0 neu 0
+/bad fuss gleich · zitate gleich · zahlen weg 0 neu 0
+/ueber-uns fuss gleich · zitate gleich · zahlen weg 0 neu 0
+/impressum fuss gleich · zitate gleich · zahlen weg 0 neu 0
+/datenschutz fuss gleich · zitate gleich · zahlen weg 0 neu 0
+g8 exit 0
+=== ERSTES BILD 15:27:47
+  /ueber-uns [q844] erstbesuch: hauptknopf verdeckt-durch durch p#cookie-consent-description > span.block
+  /ueber-uns [q844] erstbesuch: kontakt verdeckt-durch durch p#cookie-consent-description > span.block
+  /kontakt [m360] erstbesuch: ort verdeckt-durch durch div.p-4.md:p-6 > div.flex.items-start > p.pt-2.text-fs-3 > span
+  /kontakt [m360] erstbesuch: hauptknopf verdeckt-durch durch p#cookie-consent-description > span.block
+  /kontakt [m360] erstbesuch: kontakt verdeckt-durch durch p#cookie-consent-description > span.block
+  /kontakt [m390] erstbesuch: kontakt verdeckt-durch durch div.p-4.md:p-6 > div.flex.items-start > p.pt-2.text-fs-3 > span
+  … 14 weitere, siehe erstes-bild.json
+Belege: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/sfix/pruef-w1/erstesbild/erstes-bild.json
+erstesbild exit 0
+=== SUITE reduziert 15:32:20 last 3.04
+exit 0
+=== SUITE Bewegung an 15:41:01 last 4.50
+exit 0
+suite {'startTime': '2026-10-31T15:32:21.438Z', 'duration': 520267.245, 'expected': 398, 'skipped': 26, 'unexpected': 0, 'flaky': 0}
+suite-bewegung {'startTime': '2026-10-31T15:41:02.669Z', 'duration': 615637.671, 'expected': 398, 'skipped': 26, 'unexpected': 0, 'flaky': 0}
+=== BILDRATE im Wechsel 15:51:18
+/ 4324 {'anteil_verworfen_prozent': 2.3, 'loaf_anzahl': 2, 'loaf_summe_ms': 111}
+/ 4325 {'anteil_verworfen_prozent': 1.08, 'loaf_anzahl': 2, 'loaf_summe_ms': 285}
+/bad 4324 {'anteil_verworfen_prozent': 3.35, 'loaf_anzahl': 4, 'loaf_summe_ms': 229}
+/bad 4325 {'anteil_verworfen_prozent': 3.68, 'loaf_anzahl': 2, 'loaf_summe_ms': 121}
+/referenzen 4324 {'anteil_verworfen_prozent': 4.47, 'loaf_anzahl': 5, 'loaf_summe_ms': 697}
+/referenzen 4325 {'anteil_verworfen_prozent': 2.27, 'loaf_anzahl': 0, 'loaf_summe_ms': 0}
+/standorte/wetzlar 4324 {'anteil_verworfen_prozent': 2.08, 'loaf_anzahl': 5, 'loaf_summe_ms': 324}
+/standorte/wetzlar 4325 {'anteil_verworfen_prozent': 3.09, 'loaf_anzahl': 3, 'loaf_summe_ms': 183}
+=== AXE 16:13:51
+.............................................................................................................................................................................................................................................................
+axe: 396 Läufe · ernst/kritisch (Knoten) 0
+
+
+=== AXE Zusatz 16:23:57
+XXX.............XX..XX..XX.XXXXXXX.XX.......................XX.X.X.X..XXXXXXXXXX...................................................................X.X..XX.X..XXXXXXXXXX.X.X.X..XX.X.XXXXXXXXX......................
+axe: 297 Läufe · ernst/kritisch (Knoten) 104
+serious:label-content-name-mismatch 104
+
+=== RUHIG/REDUZIERT 16:30:39
+ruhig / befunde 0 unsichtbar 10
+reduziert / befunde 0 unsichtbar 12
+ruhig /bad befunde 0 unsichtbar 9
+reduziert /bad befunde 0 unsichtbar 11
+ruhig /bad/badsanierung befunde 0 unsichtbar 6
+reduziert /bad/badsanierung befunde 0 unsichtbar 8
+ruhig /bad/barrierefreies-bad befunde 0 unsichtbar 7
+reduziert /bad/barrierefreies-bad befunde 0 unsichtbar 9
+ruhig /leistungen befunde 0 unsichtbar 9
+reduziert /leistungen befunde 0 unsichtbar 11
+ruhig /fliesen befunde 0 unsichtbar 8
+reduziert /fliesen befunde 0 unsichtbar 10
+ruhig /balkon-terrasse befunde 0 unsichtbar 6
+reduziert /balkon-terrasse befunde 0 unsichtbar 8
+ruhig /referenzen befunde 0 unsichtbar 25
+reduziert /referenzen befunde 0 unsichtbar 27
+ruhig /ueber-uns befunde 0 unsichtbar 8
+reduziert /ueber-uns befunde 0 unsichtbar 10
+ruhig /kontakt befunde 0 unsichtbar 6
+reduziert /kontakt befunde 0 unsichtbar 8
+ruhig /standorte/wetzlar befunde 0 unsichtbar 8
+reduziert /standorte/wetzlar befunde 0 unsichtbar 10
+ruhig /blog befunde 0 unsichtbar 6
+reduziert /blog befunde 0 unsichtbar 8
+ruhig /preise befunde 0 unsichtbar 5
+reduziert /preise befunde 0 unsichtbar 7
+=== REGISTER 16:40:01
+d1440 / {'gefundene_kennungen': 10, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /bad {'gefundene_kennungen': 10, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /bad/badsanierung {'gefundene_kennungen': 9, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /bad/barrierefreies-bad {'gefundene_kennungen': 10, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /leistungen {'gefundene_kennungen': 11, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /fliesen {'gefundene_kennungen': 9, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /balkon-terrasse {'gefundene_kennungen': 10, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /referenzen {'gefundene_kennungen': 11, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /ueber-uns {'gefundene_kennungen': 11, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /kontakt {'gefundene_kennungen': 8, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /standorte/wetzlar {'gefundene_kennungen': 8, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /blog {'gefundene_kennungen': 8, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /preise {'gefundene_kennungen': 6, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 / {'gefundene_kennungen': 9, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /bad {'gefundene_kennungen': 9, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /bad/badsanierung {'gefundene_kennungen': 8, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /bad/barrierefreies-bad {'gefundene_kennungen': 9, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /leistungen {'gefundene_kennungen': 10, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /fliesen {'gefundene_kennungen': 8, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /balkon-terrasse {'gefundene_kennungen': 9, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /referenzen {'gefundene_kennungen': 10, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /ueber-uns {'gefundene_kennungen': 10, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /kontakt {'gefundene_kennungen': 7, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /standorte/wetzlar {'gefundene_kennungen': 7, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /blog {'gefundene_kennungen': 7, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /preise {'gefundene_kennungen': 5, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+=== JSONLD 16:47:58
+Seiten 113 · GRÜN 113 · ROT 0 · Ziel /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/sfix/pruef-w1/jsonld
+jsonld.json: 113 Seiten, 112 mit Service als Knoten, ROT 0
+HTML: 113 von 113 Seiten mit Typ Service; ohne: keine
+Seiten mit mehr als einem Service-Knoten auf oberster Ebene: keine
+=== LESBARKEIT 16:48:02
+............
+Seiten 12 · GRÜN 10 · ROT 2 · ausgenommen 0 · Ziel /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/sfix/pruef-w1/lesbarkeit
+=== WERTE 16:48:16
+ABBRUCH: Unbekannte Option: src/app/(bestand)/bad/badsanierung/page.jsx
+=== PIXEL 16:48:17

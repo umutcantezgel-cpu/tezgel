@@ -1,0 +1,2846 @@
+{
+ "satz": "sfix-w1-zusatz",
+ "base": "http://127.0.0.1:4325",
+ "server_stand": {
+  "port": "4325",
+  "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/reinraum-13315fa8",
+  "commit": "13315fa8"
+ },
+ "tags": [
+  "wcag2a",
+  "wcag2aa",
+  "wcag21a",
+  "wcag21aa",
+  "wcag22aa"
+ ],
+ "laeufe": 297,
+ "uebersprungen": 0,
+ "ernst_kritisch_knoten": 104,
+ "je_regel": {
+  "serious:label-content-name-mismatch": 104
+ },
+ "ergebnisse": [
+  {
+   "seite": "/preise",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "m360",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "m430",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "q844",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "t1024",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "d1280",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "d2560",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "m360",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "m430",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "q844",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "t1024",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d1280",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d2560",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "m360",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "m430",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "q844",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "t1024",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "d1280",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "d2560",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "m360",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "m430",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "q844",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "t1024",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "d1280",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "d2560",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "m360",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "m430",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "q844",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "t1024",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "d1280",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "d2560",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "m360",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "m430",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "q844",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "t1024",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "d1280",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "d2560",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "m430",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "m360",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "q844",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "t1024",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "d1280",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "m360",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "d2560",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "m430",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "q844",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "t1024",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "d1280",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "d2560",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "m360",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "q844",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "m430",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "t1024",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "d1280",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "d2560",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "m360",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "m360",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "m430",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "m430",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "q844",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "t768",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "q844",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "t768",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "t1024",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "t1024",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "d1280",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "d1280",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "d1440",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "d1920",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "d1920",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "d2560",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "d2560",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:col-span-5 > a[href=\"https://wa.me/491726728504\"][rel=\"noopener noreferrer\"][target=\"_blank\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "m360",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "m360",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "m430",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "m430",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "q844",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "q844",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "t768",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "t768",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "t1024",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "t1024",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d1280",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d1280",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d1440",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d1920",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d1920",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d2560",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d2560",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "m360",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "m360",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "m430",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "m430",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "q844",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "q844",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "t768",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "t1024",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "t768",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "t1024",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "d1280",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "d1280",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "d1440",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "d1920",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "d1920",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "d2560",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "d2560",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "m360",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "m360",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "m430",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "m430",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "q844",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "q844",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "t768",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "t1024",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "t768",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "t1024",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "d1280",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "d1280",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "d1440",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "d1920",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "d1920",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "d2560",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog/barrierefreier-balkonaustritt",
+   "ansicht": "d2560",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "m360",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "m360",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "m430",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "m430",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "q844",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "q844",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "t768",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "t1024",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "t768",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "t1024",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "d1280",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "d1280",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "d1440",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "d1920",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "d1920",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "d2560",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "d2560",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "m360",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "m360",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "m430",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "m430",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "q844",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "q844",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "t768",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "t1024",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "t768",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "t1024",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "d1280",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "d1280",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "d1440",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "d1920",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "d1920",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "d2560",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "d2560",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "m360",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "m360",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "m430",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "m430",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "q844",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "q844",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "t768",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "t1024",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "t768",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "t1024",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "d1280",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "d1280",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "d1440",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "d1920",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "d1920",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "d2560",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "d2560",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "m360",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "m360",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "m430",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "q844",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "m430",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "q844",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "t768",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "t768",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "t1024",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "t1024",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "d1280",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "d1280",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "d1440",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "d1920",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "d1920",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "d2560",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "d2560",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "label-content-name-mismatch",
+     "impact": "serious",
+     "hilfe": "Elements must have their visible text as part of their accessible name",
+     "anzahl": 1,
+     "ziele": [
+      "a[href=\"https://wa.me/491726728504\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "m360",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "m360",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "m430",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "m430",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "q844",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "q844",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "t768",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "t768",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "t1024",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "t1024",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "d1280",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "d1280",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "d1440",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "d1920",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "d1920",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "d2560",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "d2560",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  }
+ ]
+}

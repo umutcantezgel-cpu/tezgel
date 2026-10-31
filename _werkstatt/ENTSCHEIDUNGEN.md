@@ -1758,3 +1758,41 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - kontakt@ in Outlook als sicheren Absender eintragen;
   - SPF für tezgel.de nach Strato-Anleitung setzen;
   - Testanfrage mit eigener Adresse; Zustellung in Resend unter „Emails“ prüfen.
+
+## E-108 · Messpunkt nach Welle 1 von UM-E4-SICHT-FIX: grün bis auf zwei Messwerte, beide als Nacharbeit in Welle 2 (31.10.2026, 19:25 MEZ)
+- **Belege:** `belege/um-e4-sicht-fix/messpunkt-w1/` (README mit allen Werten, Rohdaten, Protokolle).
+- **Grün:**
+  - Reinraum 13315fa8 270/270; Suiten je 398/0; axe Hauptansichten 0; G8 gleich.
+  - Ein Stylesheet je Seite; CSS +1.141 B gzip (Budget +4 KB).
+  - Ruhig und reduziert 0; Register 0; Strukturdaten 113/113; Lesbarkeit wie vorher.
+  - Bildrate ohne durchgängige Verschlechterung; Pixel nur in Ansichten mit gewollten Änderungen.
+  - Lighthouse mobil auf 11 von 12 Ansichten mindestens 90. /standorte/wetzlar steigt von 86 auf 93, /referenzen von 93 auf 96.
+- **Rot, als Nacharbeit in Welle 2:**
+  - **R-1** (SF-A2): /referenzen, Aufklappen der Galerie, Reaktion 384 ms (Schwelle 200 ms).
+  - **R-2** (SF-A2, zusammen mit O-1): /kontakt Lighthouse mobil 87. LCP 3,86 s, weil der Bannertext des Cookie-Hinweises das größte Element im ersten Bildschirm ist. Gesucht ist ein gestalterisch begründetes erstes Bild. Keine Teilung des Bannertexts (E-101, G7) und keine Änderung an der Einwilligung (G8).
+  - **X-1** (SF-B2): axe am WhatsApp-Knopf auf vier Zusatzseiten (Altbefund E-100).
+- **Entscheidungen zu den offenen Fragen von C1 und C2:**
+  - angenommen: EV-1 Variante b, Staffel 0/3/6, O-3 (`strich`), O-7, O-8, O-9, O-10;
+  - abgelehnt: O-2 (Testgrenzen, G7) und O-5;
+  - unverändert: O-4;
+  - O-6: nur Chromium vorhanden, Vermerk im Bericht.
+- **Welle 2** gestartet als wf_c0f2912c-207, mit diesen Entscheidungen im Skript (`$S/sfix/w2-wf.js`).
+
+## E-110 · Auftraggeber: Mail-Logik absichern (31.10.2026, 19:25 MEZ)
+- **Anweisung:** „ja, sichere die Mail-Logik ab“.
+- **Umgesetzt** (Arbeitsbranch 8f3079f6, c1503941, 628a6399):
+  - `sendeMail` wertet `{ error }` von Resend 6 aus.
+  - Wiederholung nur bei vorübergehenden Fehlern, mit Idempotenzschlüssel je Mail. Dauerfehler 400, 401, 403, 404 und 422 werden nicht wiederholt.
+  - In der Vercel-Produktion (`VERCEL_ENV=production`) gibt es ohne Schlüssel keinen Probemodus mehr.
+  - Der Notfallspeicher meldet, ob er schreiben konnte. Ist die Anfrage weder versendet noch gesichert, antwortet `/api/anfrage` mit 503 und dem vorhandenen Hinweis auf Telefon und WhatsApp (`anfrageAntwort`).
+  - Der Doppelklick-Schutz greift direkt nach der angenommenen Anfrage-Mail.
+  - Protokollzeile mit Vorgangsnummer und Resend-ID, ohne Namen oder Adressen.
+  - Erfolgsweg, Wortlaut, Validierung, Honeypot und Ratenbegrenzung bleiben unverändert.
+- **Prüfung:**
+  - Mail-Tests 23/23 (Tests 15 bis 21 mit nachgebautem Resend); npm test 278/0/1; eslint 0, tsc 0.
+  - Zwei unabhängige Sonnet-Prüfer (wf_5c6bdb90-d79): Freigabe mit Hinweisen, alle umgesetzt.
+  - Reinraum der Live-Korrektur f19ebba9 (auf main b5bbb68d) grün, 275/275.
+  - Lokale Probe der Route im Produktionsbau ohne Versand: ohne `VERCEL_ENV` 200 im Probemodus; mit `VERCEL_ENV=production` und ohne Schlüssel 503 mit Hinweis.
+- **Live:** offen. Der Push von f19ebba9 auf main wurde von der Sicherheitsprüfung der Umgebung abgelehnt, weil die Freigabe nicht ausdrücklich das Live-Schalten nannte. Er wartet auf die ausdrückliche Freigabe des Auftraggebers. Die Arbeitskopie `$S/hotfix-mail2` mit f19ebba9 liegt bereit.
+- **Bestätigung des Auftraggebers zu E-109:** „es funktioniert über die seite“. Die Testanfrage kam an.
+- **Restrisiko:** Die Sperre hängt an der Systemvariable `VERCEL_ENV`. Vercel stellt sie standardmäßig bereit (Einstellung „Automatically expose System Environment Variables“); Hinweis an den Auftraggeber.
