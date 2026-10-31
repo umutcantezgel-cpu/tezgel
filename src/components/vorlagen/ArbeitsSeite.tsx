@@ -8,6 +8,12 @@
 // mit dem Scrollen wie auf den Erzählseiten von v2, und bei scrollY 0 stand ein roter Stummel unter dem Kopf). Rückmeldung
 // bleibt an den Bedienelementen und am Cursor-Schild („Nicht verfügbar“, „Lädt“ über den Treffertest in
 // src/lib/motion/cursor.ts). Serverkomponente mit den Inseln der Funktionen.
+// Formular im ersten Bildschirm (UM-E4-SICHT-FIX M-C5 Nr. 1 und 2, /kontakt): H1 in Satzzeilen (`titelZeilen`), der Vorspann
+// darf im Einstieg fehlen (die Seite setzt ihn unter das Formular), ein Abschnitt kann dicht beginnen (`dicht`: eine Stufe
+// weniger Raum über dem Kopf) und ohne sichtbaren Kopf (`kopfVerborgen`: die H2 nur für Hilfsmittel, die Einleitung setzt die
+// Seite selbst, z. B. unter das Formular; Nacharbeit SF-C2: direkt unter dem Hauptknopf „Termin vor Ort anfragen“ stand dieselbe
+// Zeile noch einmal als H2, dann Einleitung, Kastenkopf und „Schritt 1“). Der kompakte Einstieg selbst (vorlagen/teile/Einstieg)
+// bleibt unverändert; ohne diese Angaben sieht die Seite aus wie bisher.
 import type { ReactNode } from 'react';
 import Leitachse from '@/components/kern/Leitachse';
 import Abschnitt from '@/components/kern/Abschnitt';
@@ -36,14 +42,23 @@ export interface Arbeitsabschnitt {
   zu?: string;
   /** Eigene Seite des Werkzeugs (z. B. `/bad/badanfrage`): Steht es im Schritt, entfällt der Hilfen-Link dorthin (M-B3 Nr. 5) */
   seite?: string;
+  /** Arbeitsseite: eine Stufe weniger Raum über dem Kopf (erster Abschnitt direkt nach dem Einstieg, M-C5) */
+  dicht?: boolean;
+  /** Arbeitsseite: kein sichtbarer Kopf. Die H2 steht nur für Hilfsmittel (sr-only, Kennung `titelId` wie bisher, die Region
+   *  trägt den Titel als Namen), die Einleitung setzt die Seite selbst in den Inhalt (M-C5 Nr. 1, /kontakt: das Formular folgt
+   *  direkt auf Hauptknopf und Anruf, dessen Wortlaut die H2 wiederholte) */
+  kopfVerborgen?: boolean;
 }
 
 export interface ArbeitsSeiteProps {
   pfad: string;
   brotkrumen?: Krume[];
   titel: string;
+  /** H1 in festen Satzzeilen (zusammen der Titel, Wortlaut gleich; M-A3 Nr. 5) */
+  titelZeilen?: string[];
   ort: string;
-  vorspann: string;
+  /** Vorspann im Einstieg; ohne Angabe steht er nicht dort (die Seite setzt ihn selbst, z. B. unter das Formular) */
+  vorspann?: string;
   /** Ziel des Hauptknopfs (gleich für alle Hauptknöpfe der Seite, `hauptziel` in navigation.js) */
   hauptziel: string;
   abschnitte: Arbeitsabschnitt[];
@@ -96,10 +111,10 @@ export function Werkzeug({ werkzeug }: { werkzeug: Arbeitsabschnitt }) {
   );
 }
 
-export default function ArbeitsSeite({ pfad, brotkrumen, titel, ort, vorspann, hauptziel, abschnitte }: ArbeitsSeiteProps) {
+export default function ArbeitsSeite({ pfad, brotkrumen, titel, titelZeilen, ort, vorspann, hauptziel, abschnitte }: ArbeitsSeiteProps) {
   return (
     <Leitachse gezogen={false}>
-      <Einstieg pfad={pfad} brotkrumen={brotkrumen} titel={titel} ort={ort} vorspann={vorspann} hauptziel={hauptziel} kompakt />
+      <Einstieg pfad={pfad} brotkrumen={brotkrumen} titel={titel} titelZeilen={titelZeilen} ort={ort} vorspann={vorspann ?? ''} hauptziel={hauptziel} kompakt />
       {abschnitte.map((a, i) => (
         <Abschnitt
           key={a.id}
@@ -110,10 +125,17 @@ export default function ArbeitsSeite({ pfad, brotkrumen, titel, ort, vorspann, h
           flaeche={a.flaeche ?? (i % 2 === 0 ? 'fliese' : 'kalk')}
           kopf={a.kopf ?? 'gestapelt'}
           mitte={a.kopf !== 'seitlich'}
-          titel={a.titel}
-          einleitung={a.einleitung ? <p><Textmarken text={a.einleitung} /></p> : undefined}
+          titel={a.kopfVerborgen ? undefined : a.titel}
+          aria-label={a.kopfVerborgen ? a.titel : undefined}
+          einleitung={a.einleitung && !a.kopfVerborgen ? <p><Textmarken text={a.einleitung} /></p> : undefined}
           unterKopf={a.unterKopf}
+          className={a.dicht ? 'pt-8 lg:pt-12' : undefined}
         >
+          {a.kopfVerborgen && (
+            <h2 id={a.titelId ?? `${a.id}-titel`} className="sr-only">
+              {a.titel}
+            </h2>
+          )}
           {a.inhalt}
         </Abschnitt>
       ))}

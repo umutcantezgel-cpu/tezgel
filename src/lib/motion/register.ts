@@ -385,7 +385,7 @@ export const REGISTER_V4: Record<string, V4Eintrag> = {
   },
   karte: {
     zweck: 'orientierung',
-    was: 'Einsatzgebiet ab Aßlar: die Ringe legen sich von innen nach außen, die Punkte jeder Zone mit ihrem Ring',
+    was: 'Einsatzgebiet ab Aßlar: die Ringe legen sich von innen nach außen, die Punkte jeder Zone mit ihrem Ring (gezeichnet sind nur Orte mit Namen; in der Standardzeichnung Wetzlar, Gießen und Herborn, die Stufe für Orte über 25 km bleibt dort ohne Punkt)',
     stufen: { dauer: ['--dauer-2', '--dauer-3'], kurve: ['--ease-setzen'], letzteStufe: 7 },
     reduziert: { art: 'sofort', text: 'die Karte steht fertig' },
     notaus: 'endzustand',

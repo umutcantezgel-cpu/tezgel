@@ -7,24 +7,45 @@
 // trägt der Container genau einen `auftritt` (ohne JS und bei reduzierter Bewegung sofort sichtbar).
 // Abschluss: das Motto als großes Zitat im Anzeigeschnitt auf einem Feld in Fliese (ohne Anführungs-Icon, nicht kursiv),
 // die Quelle in Mono in Satzschreibung. Wortlaut wörtlich aus dem Bestand, Daten aus `@/config/company`.
+// UM-E4-SICHT-FIX M-C4 Nr. 1 und 3 (/ueber-uns): kein Mono-Etikett über der H2 mehr (K-006), Gründung und Kammer stehen als Satz
+// unter ihr (Mikrotext aus den Firmendaten). Nur die Kammer: Gründungsjahr und Ort nennt der Satz danach und die erste Station der
+// Zeitleiste (Nacharbeit SF-C2: „Gegründet 2008 in Aßlar“ stand sonst zweimal im Absatz und ein drittes Mal 250 px darunter). Das Motto lässt sich aus der Komponente lösen (`motto={false}`) und steht dann als
+// `Leitsatz` ohne Kasten an anderer Stelle der Seite (nach den Stimmen, vor dem nächsten Schritt), Wortlaut und Unterschrift
+// unverändert; so steht mitten auf der Seite kein Schlusszitat. An seiner Stelle unter der Zeitleiste kann die Seite einen
+// eigenen Block setzen (`unten`, z. B. Fotos der Arbeitsweise ohne Jahresbezug).
 import { COMPANY_DATA, historyTimeline } from '@/config/company';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import { mitFugen, zusammen } from '@/components/kern/zusammen';
 
-export default function CompanyHistory() {
-  const { business, headquarters, authority, owner, legalName, motto } = COMPANY_DATA;
+/** Leitsatz: das Motto ohne Kasten als Schlusszeile, mittig, darunter die Unterschrift (Wortlaut wie im Bestand). In der Stufe der
+ *  Zwischentitel (fs-4, ab lg fs-5), nicht als Anzeige über drei Zeilen: Auf /ueber-uns steht das Motto schon in der Einleitung der
+ *  Stimmen darüber (Nacharbeit SF-C2, Textvorschlag 2 offen) */
+export function Leitsatz() {
+  const { owner, legalName, motto } = COMPANY_DATA;
+  return (
+    <figure className="mx-auto max-w-mass text-center text-tinte">
+      <blockquote className="font-anzeige text-fs-4 font-extrabold text-balance lg:text-fs-5">&bdquo;{motto}&ldquo;</blockquote>
+      <figcaption className="mt-6 font-text text-fs-2 text-tinte-2">
+        {owner.fullName} &middot; {mitFugen(owner.title)}, {legalName}
+      </figcaption>
+    </figure>
+  );
+}
+
+export default function CompanyHistory({ motto: mitMotto = true, unten = null }) {
+  const { headquarters, authority, owner, legalName, motto } = COMPANY_DATA;
 
   return (
     <Abschnitt
       titelId="company-history-heading"
-      etikett={<>Gegründet {business.establishmentYear} in {headquarters.city}&nbsp;&middot; {authority.shortName}</>}
       // Trennstelle im Titel (Überschriften trennen nur an gesetzten Fugenstellen): bei großer Schrift „gewach-“ / „sen.“ statt
       // „gewachse“ / „n.“ (Browserprüfung E4-W0, E-065)
       titel={'So sind wir gewach\u00adsen.'}
       mitte
       einleitung={
         <p>
+          Eingetragen bei der {authority.name}.{' '}
           Von der Betriebsgründung in {headquarters.city} bis zum Fliesenfachbetrieb für ganz Mittelhessen: So hat sich {legalName} unter {owner.fullName} entwickelt.
         </p>
       }
@@ -62,19 +83,24 @@ export default function CompanyHistory() {
         </ol>
       </div>
 
-      {/* Leitsatz zum Schluss: Motto mit Unterschrift (Bestand: „Final Vision Banner“) */}
+      {/* eigener Block unter der Zeitleiste mit eigener Zeile (z. B. „So arbeiten wir“), damit er nicht wie das Bild der letzten Station wirkt */}
+      {unten && <div className="mt-16 lg:mt-24">{unten}</div>}
+
+      {/* Leitsatz zum Schluss: Motto mit Unterschrift (Bestand: „Final Vision Banner“); auf /ueber-uns seit M-C4 als Leitsatz vor dem Schritt */}
       {/* @container: in schmaler Spalte (große Schrift, unter 16 rem) weniger Innenabstand, damit dem Motto mehr als die halbe
           Breite bleibt (Runde 5, Nr. 8); bei 100 % Schrift unverändert. „Fachbetriebsleiter“ trennt an seinen Fugen. */}
-      <div className="@container mt-16 lg:mt-24">
-        <figure className="border border-fuge bg-fliese p-6 @max-3xs:p-4 md:p-12">
-          <blockquote className="max-w-mass font-anzeige text-fs-5 font-extrabold text-tinte lg:text-fs-6">
-            &bdquo;{motto}&ldquo;
-          </blockquote>
-          <figcaption className="mt-6 font-mono text-fs-1 text-tinte-2">
-            {owner.fullName} &middot; {mitFugen(owner.title)}, {legalName}
-          </figcaption>
-        </figure>
-      </div>
+      {mitMotto && (
+        <div className="@container mt-16 lg:mt-24">
+          <figure className="border border-fuge bg-fliese p-6 @max-3xs:p-4 md:p-12">
+            <blockquote className="max-w-mass font-anzeige text-fs-5 font-extrabold text-tinte lg:text-fs-6">
+              &bdquo;{motto}&ldquo;
+            </blockquote>
+            <figcaption className="mt-6 font-mono text-fs-1 text-tinte-2">
+              {owner.fullName} &middot; {mitFugen(owner.title)}, {legalName}
+            </figcaption>
+          </figure>
+        </div>
+      )}
     </Abschnitt>
   );
 }

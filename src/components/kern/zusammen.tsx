@@ -58,6 +58,8 @@ const FUGEN: Record<string, string> = {
   Projektanfrage: 'Projekt­anfrage',
   Badprojekt: 'Bad­projekt',
   Fachbetriebsleiter: 'Fach­betriebs­leiter',
+  // UM-E4-SICHT-FIX-c2 O-10: Firmengeschichte auf /ueber-uns trennte das lange Wort mitten im Wortteil
+  Fliesenfachbetrieb: 'Fliesen­fach­betrieb',
   Kontaktaufnahme: 'Kontakt­aufnahme',
   Datenschutzerklärung: 'Daten­schutz­erklärung',
   Erstberatung: 'Erst­beratung',

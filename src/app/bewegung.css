@@ -494,6 +494,32 @@ html.k-verlauf ol[data-motion="anriss"] .treppe-kreuz-rot {
     transition: opacity var(--dauer-3) var(--ease-setzen) var(--dauer-1), translate var(--dauer-3) var(--ease-setzen) var(--dauer-1);
   }
 }
+/* verband · Foto im Feld (UM-E4-SICHT-FIX M-C7 Nr. 2): zum gewählten Muster das vorhandene Foto im selben Feld wie die
+   Zeichnung (Halbverband, Fischgrät); bei Kreuzfuge und Drittelverband keines: Dann entfällt die Fotozelle, und die Zeichnung
+   steht ab md mittig (Spalten 2 bis 4 von 5) statt links neben einer leeren Spalte (Nacharbeit SF-C2). Zustand ohne
+   Startklasse, sofort (wie die Beschreibungen), kein Übergang: Es wechselt der Inhalt, die Höhe des Felds bleibt ab md (sie
+   kommt von der Zeichnung; seit Nacharbeit 2 ab md nebeneinander statt erst ab lg). Unter md rückt der Inhalt unter dem Feld
+   um die Fotohöhe, nur nach dem Tippen (V-7). Ohne :has() ist das Feld ganz ausgeblendet. */
+@supports selector(:has(*)) {
+  .verband .verband-foto {
+    display: none;
+  }
+  .verband:has([data-verband-wahl="halb"]:checked) .verband-foto[data-muster-foto="halb"],
+  .verband:has([data-verband-wahl="fisch"]:checked) .verband-foto[data-muster-foto="fisch"] {
+    display: block;
+  }
+  .verband:has([data-verband-wahl="kreuz"]:checked, [data-verband-wahl="drittel"]:checked) .verband-fotozelle {
+    display: none;
+  }
+  @media (width >= 48rem) {
+    .verband .verband-zeichnung {
+      grid-column: 1 / span 3;
+    }
+    .verband:has([data-verband-wahl="kreuz"]:checked, [data-verband-wahl="drittel"]:checked) .verband-zeichnung {
+      grid-column: 2 / span 3;
+    }
+  }
+}
 @supports not selector(:has(*)) {
   .verband .muster-legende {
     display: none;
@@ -1595,7 +1621,8 @@ html.k-verlauf [data-motion="einzugsband"] .einzugsband-kante {
    setzen; 25 km drei Staffelstufen nach 10 km); die Punkte jeder Zone erscheinen mit ihrem Ring (Deckkraft dauer-2, nah
    bei Stufe 2, mittel bei 5), die Orte über 25 km zuletzt bei 7; gesamt 0,78 s. Staffel höchstens acht Takte, Stufen 0 bis
    7 (K-008 Regeln v4; UM-E3-REG, vorher Stufen bis 13 und 1,1 s). Aßlar, Achsen, Raster und alle Beschriftungen stehen ab
-   dem ersten Bild.
+   dem ersten Bild. Gezeichnet sind nur Orte mit Namen (UM-E4-SICHT-FIX V-2): In der Standardzeichnung (Wetzlar, Gießen,
+   Herborn) bleibt die Gruppe über 25 km ohne Punkt, ihre Stufe gilt, sobald dort ein Ort beschriftet ist.
    Startzustände nur unter html.k-bewegung ohne Notaus; reduziert, ohne JS, nach dem Notaus, im Druck und in erzwungenen
    Farben steht die Karte fertig. Nur scale und opacity, Übergänge statt Keyframes (wie auftritt). */
 .karte-ring {

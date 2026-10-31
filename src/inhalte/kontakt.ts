@@ -21,8 +21,12 @@ export interface KontaktInhalt {
   brotkrumen: Krume[];
   /** H1 (wörtlich aus der Textdatei) */
   titel: string;
+  /** H1 in zwei Satzzeilen, zusammen der Titel (UM-E4-SICHT-FIX M-C5 Nr. 1, Prop aus M-A3) */
+  titelZeilen: string[];
   /** Satz zum Ort (Pflichtelement des ersten Bildschirms, K-009) */
   ort: string;
+  /** Vorspann; steht seit M-C5 unter dem Formular im Abschnitt express-anfrage (Text gleich, nach der Einleitung des Abschnitts),
+   *  nicht mehr im Einstieg */
   vorspann: Markentext;
   /** Ziel aller Hauptknöpfe: der Abschnitt „Termin vor Ort anfragen“ auf dieser Seite (#express-anfrage, wie `hauptziel`) */
   hauptziel: string;
@@ -43,6 +47,7 @@ export const KONTAKT: KontaktInhalt = {
   },
   brotkrumen: [{ name: 'Start', href: '/' }, { name: 'Kontakt' }],
   titel: 'Nehmen Sie Kontakt auf. Wir kommen für einen Termin zu Ihnen.',
+  titelZeilen: ['Nehmen Sie Kontakt auf.', 'Wir kommen für einen Termin zu Ihnen.'],
   ort: 'Fliesenleger Deniz Tezgel aus Aßlar in Hessen, für Wetzlar und die Orte rundherum.',
   vorspann:
     'Wollen Sie Ihre Badewanne gegen eine Dusche ohne Stufe tauschen oder einen Boden neu verlegen lassen? Dann genügt ein Anruf oder eine kurze Nachricht. Der Termin bei Ihnen vor Ort ist für Sie kostenfrei, und wir beraten Sie dabei persönlich.',
@@ -55,6 +60,10 @@ export const KONTAKT: KontaktInhalt = {
       einleitung:
         'Wählen Sie Ihr Vorhaben und sagen Sie uns, wo und wann. Dann tragen Sie Ihren Namen und Ihre Telefonnummer ein. Deniz Tezgel meldet sich bei Ihnen und macht einen Termin mit Ihnen aus.',
       flaeche: 'fliese',
+      // Formular im ersten Bildschirm (M-C5 Nr. 1, Nacharbeit SF-C2): eine Stufe weniger Raum über dem Abschnitt, kein sichtbarer
+      // Kopf (die H2 wiederholte den Hauptknopf direkt darüber; sie bleibt für Hilfsmittel), die Einleitung steht unter dem Formular
+      dicht: true,
+      kopfVerborgen: true,
     },
     {
       id: 'andere-wege',

@@ -52,8 +52,10 @@ export const LEISTUNGEN: ErzaehlInhalt = {
     // „fertig“ entfällt (E-065): das dritte Foto zeigt die Abdichtung vor dem Verlegen
     titel: 'Drei Arbeiten von uns.',
     // Übersicht: die drei Fotos stehen auch auf ihrer Leistungsseite (Bad, Balkon, Über uns), sonst keines doppelt (E4-W0-BILDER)
+    // bodengleiche Dusche zuerst (UM-E4-SICHT-FIX M-C2 Nr. 5): bad-beleg-1 ist seit M-A2 Aufmacher von /bad und verlässt die
+    // Reihe; bad-beleg-4 steht außerhalb der Galerie sonst nur auf /bad/barrierefreies-bad (Unterschrift von dort)
     fotos: [
-      { bild: 'bad-beleg-1', unterschrift: 'Bad mit neuer Badewanne', href: '/bad/badsanierung' },
+      { bild: 'bad-beleg-4', unterschrift: 'Bodengleiche Dusche mit Mosaik', href: '/bad' },
       { bild: 'leistungen-balkon', unterschrift: 'Balkon mit neuen Fliesen', href: '/balkon-terrasse' },
       { bild: 'leistungen-untergrund', unterschrift: 'Abdichtung auf dem Balkon', href: '/untergrund-abdichtung' },
     ],
@@ -86,6 +88,9 @@ export const LEISTUNGSPLAENE: Leistungsplan[] = [
     link: 'Mehr zu Untergrund und Abdichtung',
   },
 ];
+
+/** Überschrift des Abschnitts mit dem großen Moment `formatregler` (Satz der Zeichnung aus dem Seitentext, M-C2 Nr. 3) */
+export const FORMATREGLER_TITEL = 'Große Fliesen haben weniger Fugen.';
 
 /** Einleitung über dem Weg zur ausführlichen Projektanfrage auf /preise (#anfrage, Komponente PricingCalculator). Seit
  * E4-W0-LEISTUNGEN steht auf /leistungen nur noch ein Formular (die Express-Anfrage); die Projektanfrage nennt keinen Preis. */

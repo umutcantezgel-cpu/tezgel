@@ -7,11 +7,14 @@
 // Sie setzt den Abschnitt gegen „Was wir tun“ auf Kalk ab; auf Fliese steht kein Kopf des Leitfadens neben den H3. Ohne
 // Bewegung (Ruhe). Wortlaut und Anpassungen (Garantie-Wörter nach M-07, K-011) in `src/inhalte/ueber-uns.ts`; Garantie-Wörter
 // prüft der Baustein beim Bau mit demselben Muster wie das Qualitätsversprechen (M-07 in einer Linie). Serverkomponente.
-import clsx from 'clsx';
+// UM-E4-SICHT-FIX M-C4 Nr. 2: Vertrauensliste an der Fuge ohne Symbolraster (Sichtabnahme E4 a2/b3: generische Zeichen im
+// Kartenraster). Die zwei belegten Fakten stehen groß nebeneinander (ab md je die halbe Breite), die übrigen vier als Zeilen an
+// der Fuge darunter: Name links, Satz rechts daneben (ab md), mobil untereinander; alles linksbündig. Die Zeichen der Werte
+// bleiben in den Daten (`zeichen`), der Baustein zeigt sie nicht mehr. Wortlaut unverändert.
 import Abschnitt from '@/components/kern/Abschnitt';
 import Textmarken from '@/components/kern/Textmarken';
 import { zusammen } from '@/components/kern/zusammen';
-import Icon, { type IconName } from '@/components/icons/Icon';
+import type { IconName } from '@/components/icons/Icon';
 import type { Markentext } from '@/components/vorlagen/inhalt';
 import { GARANTIE } from '@/components/vorlagen/teile/Versprechen';
 
@@ -33,6 +36,8 @@ export default function Werte({ inhalt }: { inhalt: WerteInhalt }) {
   for (const w of inhalt.werte) {
     if (GARANTIE.test(`${w.name} ${w.satz}`)) throw new Error(`Werte: Garantie-Wort in „${w.name}“ (M-07 offen).`);
   }
+  const belegt = inhalt.werte.filter((w) => w.belegt);
+  const uebrige = inhalt.werte.filter((w) => !w.belegt);
   return (
     // Kennungen wie im Bestand (E0: Abschnitt `werte`, Überschrift `werte-heading`)
     <Abschnitt
@@ -46,24 +51,30 @@ export default function Werte({ inhalt }: { inhalt: WerteInhalt }) {
       titel={inhalt.titel}
       einleitung={inhalt.einleitung ? <p><Textmarken text={inhalt.einleitung} /></p> : undefined}
     >
-      <ul className="grid grid-cols-1 gap-px border-y border-fuge bg-fuge md:grid-cols-2 xl:grid-cols-4">
-        {inhalt.werte.map((w) => (
-          <li key={w.name} className={clsx('flex flex-col bg-fliese py-6 md:p-6 lg:p-8', w.belegt && 'xl:col-span-2')}>
-            <Icon name={w.zeichen} groesse={6} className="text-tinte" />
-            <h3
-              className={clsx(
-                'mt-4 text-tinte',
-                w.belegt ? 'font-anzeige text-fs-5 font-extrabold' : 'font-text text-fs-3 font-semibold',
-              )}
-            >
-              {zusammen(w.name)}
-            </h3>
-            <p className={clsx('mt-2 max-w-mass font-text text-pretty', w.belegt ? 'text-fs-3 text-tinte' : 'text-fs-2 text-tinte-2')}>
-              <Textmarken text={w.satz} />
-            </p>
-          </li>
-        ))}
-      </ul>
+      <div className="text-left">
+        {/* belegte Fakten (Kammer, Abdichtung nach Norm): groß, an der Fuge nebeneinander */}
+        <ul className="grid grid-cols-1 gap-px border-y border-fuge bg-fuge md:grid-cols-2">
+          {belegt.map((w) => (
+            <li key={w.name} className="bg-fliese py-6 md:p-8">
+              <h3 className="font-anzeige text-fs-5 font-extrabold text-tinte">{zusammen(w.name)}</h3>
+              <p className="mt-2 max-w-mass font-text text-fs-3 text-pretty text-tinte">
+                <Textmarken text={w.satz} />
+              </p>
+            </li>
+          ))}
+        </ul>
+        {/* übrige Werte als Zeilen: Name und Satz, je Zeile eine Fuge */}
+        <ul className="border-b border-fuge">
+          {uebrige.map((w) => (
+            <li key={w.name} className="grid gap-2 border-b border-fuge py-4 last:border-b-0 md:grid-cols-3 md:gap-8 md:px-8 md:py-6">
+              <h3 className="font-text text-fs-3 font-semibold text-tinte">{zusammen(w.name)}</h3>
+              <p className="max-w-mass font-text text-fs-3 text-pretty text-tinte-2 md:col-span-2">
+                <Textmarken text={w.satz} />
+              </p>
+            </li>
+          ))}
+        </ul>
+      </div>
     </Abschnitt>
   );
 }

@@ -29,3 +29,15 @@ T-B3 (/balkon-terrasse, Fachwort „Abdichtung“ in der Legende der Gefälle-Ze
 | T-C1-2 | /standorte/[stadt] (lange Ortsnamen, z. B. Limburg) | Ortszeile im Einstieg | „Fliesenverlegung Tezgel aus Aßlar, etwa 35 km bis Limburg an der Lahn.“ | „Aus Aßlar, etwa 35 km bis Limburg an der Lahn.“ | Wie T-A zur Ortszeile von /referenzen: Name und Beruf stehen im Kopf; mobil eine Zeile weniger über dem Hauptknopf. |
 
 Direkt gesetzte Mikrotexte aus SF-C1: „Weitere Orte bis 50 km“, „Alle {n} Fotos zeigen“, „{n} Artikel“ (Gruppenkopf). In der Textablage `texte/bad.md` sind die Glossar-Marken von „Untergrund“ und „Abdichtung“ aus den Punkten entfernt; sie stehen jetzt in der Legende der Szene (Wortlaut gleich).
+
+### Teil SF-C2 (/leistungen, /kontakt, /ueber-uns, /fliesen; eingetragen vom Orchestrator)
+
+| Nr. | Ansicht | Stelle | heute | Vorschlag | Grund |
+|---|---|---|---|---|---|
+| T-C2-1 | /fliesen | Unterschrift der Schichtzeichnung im Block „Alles beginnt mit dem Boden.“ | „Wir fliesen, wenn der Estrich fertig ist.“ | „Unter der Fliese liegen Estrich und Abdichtung, in der Ecke ein Dichtband.“ | Ein eigener Satz zu dem, was man sieht (K-003 Nr. 3); der heutige Satz doppelt die Lage. |
+| T-C2-2 | /ueber-uns | Einleitung „Das sagen unsere Kunden.“ | „… Unser Motto: „Die Zufriedenheit unserer Kunden ist die beste Reklame für uns.““ | den Satz „Unser Motto: …“ streichen | Der Leitsatz steht jetzt direkt nach den Stimmen; das Motto stünde zweimal in einem Bildschirm (insgesamt viermal auf der Seite). |
+| T-C2-3 | /ueber-uns | Einleitung der Firmengeschichte | „… Von der Betriebsgründung in Aßlar bis zum Fliesenfachbetrieb für ganz Mittelhessen: …“ | „… Von der Gründung bis zum Fliesenfachbetrieb für ganz Mittelhessen: …“ | „in Aßlar“ steht sonst zweimal hintereinander. Firmendaten (G8): nur mit Ihrer Zustimmung. |
+| T-C2-4 | /kontakt | Vorspann, jetzt unter dem Formular | „Wollen Sie Ihre Badewanne gegen eine Dusche ohne Stufe tauschen oder einen Boden neu verlegen lassen? Dann genügt ein Anruf oder eine kurze Nachricht. Der Termin bei Ihnen vor Ort ist für Sie kostenfrei, und wir beraten Sie dabei persönlich.“ | „Lieber erst sprechen? Dann genügt ein Anruf. Der Termin bei Ihnen vor Ort ist kostenfrei.“ | Unter dem Formular wiederholt der erste Satz die Auswahl der Kacheln. |
+| T-C2-5 | /kontakt | Einleitung des Formularabschnitts, jetzt unter dem Formular | „Wählen Sie Ihr Vorhaben und sagen Sie uns, wo und wann. Dann tragen Sie Ihren Namen und Ihre Telefonnummer ein. Deniz Tezgel meldet sich bei Ihnen und macht einen Termin mit Ihnen aus.“ | „Nach dem Absenden meldet sich Deniz Tezgel bei Ihnen und macht einen Termin mit Ihnen aus.“ | Die ersten zwei Sätze beschreiben das Formular darüber; unter dem Formular zählt, was danach passiert. |
+
+Direkt gesetzter Mikrotext aus SF-C2: Legende der Einsatzkarte „Die Punkte sind eine Auswahl der Orte, in denen wir arbeiten.“ (statt „Jeder Punkt ist ein Ort, in dem wir arbeiten.“; die Karte zeigt nur noch die beschrifteten Orte). Die Zeilen von /kontakt (H1) und die Fotounterschriften auf /ueber-uns und /fliesen sind aus vorhandenen Texten übernommen, nicht neu geschrieben.

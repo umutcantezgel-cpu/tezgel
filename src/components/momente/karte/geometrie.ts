@@ -35,6 +35,31 @@ export const LAGE: Readonly<Record<string, Lage>> = {
   friedberg: 'links',
 };
 
+/** Ecke der Beschriftung am Anker einer Führungslinie: Der Name wächst vom Anker aus in diese Richtung (oben-links: nach oben
+ *  und nach links) und steht mit seiner inneren Ecke am Anker */
+export type Ecke = 'oben-links' | 'oben-rechts' | 'unten-rechts';
+
+/** Beschriftung außerhalb der Ringe (UM-E4-SICHT-FIX M-C4 Nr. 4, M-C5 Nr. 4): Der Name (zwei Zeilen: Ort und „ca. N km“) steht in
+ *  einer freien Ecke der Zeichenfläche und wächst vom Anker nach außen; so bleibt er bei jeder Schriftgröße ganz in der Fläche,
+ *  solange sie Namen zeigt (ab 16rem Breite: Namen bis rund 5 × 3 rem, Anker so, dass die innere Ecke mindestens 140 Einheiten
+ *  vom Mittelpunkt und die äußere höchstens 196 vom Rand entfernt liegt; Nacharbeit SF-C2, vorher wurden „ca. 5 km“ und die
+ *  Namen oben bei 110 bis 150 % abgeschnitten). Die 1-px-Linie läuft vom Punkt über `linie` bis unter den Namen (sein Grund
+ *  deckt das Ende, die Linie endet sichtbar an seiner Kante): Herborn radial nach außen, Gießen erst schräg vom Ring weg, dann
+ *  senkrecht (vorher lief sie als Tangente am Ring entlang), Wetzlar steil durch beide Ringe. Kein Name steht auf einer
+ *  Ringlinie (Sichtabnahme E4 /ueber-uns a5, /kontakt a5/b3). Gilt für die Standardnamen; ein anderer Ort mit Namen behält
+ *  seine Lage direkt am Punkt (LAGE). */
+export const FUEHRUNG: Readonly<Record<string, { linie: readonly (readonly [number, number])[]; x: number; y: number; ecke: Ecke }>> = {
+  wetzlar: { linie: [[80, 140]], x: 66, y: 123, ecke: 'unten-rechts' },
+  giessen: { linie: [[170, -33.2], [170, -140]], x: 196, y: -123, ecke: 'oben-links' },
+  herborn: { linie: [[-160, -147]], x: -196, y: -123, ecke: 'oben-rechts' },
+};
+
+/** Ringmaß am Ringrand: Punkt auf dem Ring unten links (225°), dort steht das Maß außen am Ring statt auf der Mittelachse */
+export function ringmass(km: number): { x: number; y: number } {
+  const r = radius(km) * Math.SQRT1_2;
+  return { x: runde(-r), y: runde(r) };
+}
+
 export interface Kartenort {
   slug: string;
   name: string;

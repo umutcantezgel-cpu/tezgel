@@ -107,7 +107,18 @@ export const FLIESEN: WissenInhalt = {
     titel: 'Fliesen, die wir verlegt haben.',
     // Unterschrift: Wörter aus dem Alt-Text der Textdatei, auf sechs Wörter gekürzt (Regel 4)
     // fertige Dusche statt Rohbau (Browserprüfung E4-W1, Runde 2: das frühere Foto zeigte offene Anschlüsse und Ablauf)
-    fotos: [{ bild: 'start-dusche', unterschrift: 'Dusche mit großen grauen Fliesen', href: '/fliesen/grossformat' }],
+    // drei vorhandene Fotos nach Raum als Reihe statt eines Fotos (UM-E4-SICHT-FIX M-C7 Nr. 3): Bad, Treppe, Balkon; ohne
+    // start-dusche (seit M-A2 Aufmacher von /referenzen). Zuerst große Fliesen, wie der Satz darunter sagt (Nacharbeit SF-C2: die
+    // erste Wahl zeigte keine großen Fliesen). Außerhalb der Galerie steht jedes damit zweimal (/ und /fliesen, M-A2). Alle drei
+    // quadratisch (Nacharbeit 2: ein Hochformat in der Mitte ließ die Reihe mobil beim Blättern um 90 px springen). Namen auf
+    // der Glasfläche aus Wörtern des Alt-Texts (Mikrotext, höchstens sechs Wörter)
+    fotos: [
+      { bild: 'start-lage-dusche', unterschrift: 'Dusche mit weißen Großformatfliesen', href: '/bad' },
+      { bild: 'start-lage-treppe', unterschrift: 'Hauseingang mit beigen Fliesen auf Stufen', href: '/treppen' },
+      { bild: 'start-lage-balkon', unterschrift: 'Balkon mit hellgrauen Großformatfliesen', href: '/balkon-terrasse' },
+    ],
+    // Drittelverband in der Reihe wie auf /leistungen (K-003 Nr. 4)
+    fotosVersatz: true,
     satz: 'Seit 2014 ist das Verlegen großer Fliesen ein Schwerpunkt bei uns.',
     // Stimme der Textdatei (G8: Wortlaut unverändert); die Kennzeile mit Stand setzt der Baustein Stimmen darunter
     stimmen: ['rabia-oe'],

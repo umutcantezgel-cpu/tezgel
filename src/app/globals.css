@@ -797,6 +797,26 @@
     left: var(--x);
     top: var(--y);
   }
+  /* Einsatzkarte · Ortsliste (UM-E4-SICHT-FIX M-C4 Nr. 4): mobil im nativen Aufklapper „Alle {n} Orte zeigen“, ab lg offen in zwei
+     Spalten ohne Zeile zum Öffnen (der Inhalt steht ohnehin im DOM). Nur wo der Browser ::details-content kennt; sonst bleibt
+     der Aufklapper auch ab lg bedienbar (Zeile sichtbar). */
+  @supports selector(::details-content) {
+    @media (width >= 64rem) {
+      .orte-zu > summary {
+        display: none;
+      }
+      .orte-zu::details-content {
+        content-visibility: visible;
+      }
+    }
+  }
+  /* Einstieg · leerer Vorspann (UM-E4-SICHT-FIX M-C5 Nr. 1, V-1, Nacharbeit SF-C2): Eine Arbeitsseite ohne Vorspann im Einstieg
+     (/kontakt, der Vorspann steht unter dem Formular) übergibt der gesperrten Vorlage einen leeren Text; ihr leerer Absatz
+     hielt 32 px Raum (mt-8) im ersten Bildschirm. Ein leerer Absatz im Einstieg steht nicht. Rückweg: O-1 (Vorlage lässt den
+     Absatz ohne Text weg), dann diesen Block löschen. */
+  [data-formel="worum"] p:empty {
+    display: none;
+  }
   /* Handy quer (K-013): Kopf und untere Leiste zusammen höchstens ein Viertel der Höhe. Kopf 48 px statt 64 px, Leiste
      44 px mit Zeichen und Wort nebeneinander (Touchziel bleibt 44 × 44); Messung in der Prüfung „Erstes Bild“. */
   @media (orientation: landscape) and (height <= 32rem) {

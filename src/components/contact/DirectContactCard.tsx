@@ -57,7 +57,8 @@ function Weg({ href, icon, label, wert, extern, text = false }: { href: string; 
 export function DirectContactCard({ className = '' }: DirectContactCardProps) {
   return (
     <div className={clsx('@container border border-fuge bg-fliese p-6 text-tinte sm:p-8', className)}>
-      <div className="border-t border-strich">
+      {/* ohne obere Trennlinie: der Kasten hat seinen Rahmen, eine zweite Linie darunter las sich als Doppelrahmen (UM-E4-SICHT-FIX M-C5 Nr. 5); -mt-4 gleicht den Innenabstand der ersten Zeile aus */}
+      <div className="-mt-4">
         <Weg href={telLink(SITE_CONFIG.contact.telephone)} icon="telefon" label="Telefon" wert={<Rufnummer nummer={SITE_CONFIG.contact.telephoneFormatted} />} />
         <Weg href={telLink(SITE_CONFIG.contact.mobile)} icon="telefon" label="Mobil" wert={<Rufnummer nummer={SITE_CONFIG.contact.mobileFormatted} />} />
         <Weg href={SITE_CONFIG.contact.whatsappLink} icon="sprechblase" label="WhatsApp" wert="Nachricht per WhatsApp" extern text />

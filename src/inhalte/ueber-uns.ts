@@ -5,6 +5,7 @@
 // Vorlage: ErzaehlSeite. Fakten: K-015 F-01, F-02, F-05, F-06, F-09, F-19, F-14.
 import type { ErzaehlInhalt, Markentext } from '@/components/vorlagen/inhalt';
 import type { Wert, WerteInhalt } from '@/components/ueber-uns/Werte';
+import type { ArbeitId } from '@/config/arbeiten';
 import { COMPANY_DATA, values } from '@/config/company';
 import { strasse } from '@/lib/anschrift';
 
@@ -102,6 +103,16 @@ export const UEBER_UNS: ErzaehlInhalt = {
     ],
   },
 };
+
+/** Fotos der Arbeitsweise unter der Zeitleiste (UM-E4-SICHT-FIX M-C4 Nr. 3): drei vorhandene Fotos ohne Jahresbezug (keine
+ *  Station der Zeitleiste behauptet ein Aufnahmejahr), Namen auf der Glasfläche wörtlich aus der Gruppe „So arbeiten wir“ der
+ *  Galerie (galerie-filter/daten.ts). Nicht start-galerie-6: dieselbe Aufnahme wie das Einstiegsbild ueber-einstieg. Außerhalb der
+ *  Galerie steht jedes der drei damit höchstens zweimal (Verteilungstabelle M-A2). */
+export const ARBEITSWEISE: { bild: ArbeitId; unterschrift: string }[] = [
+  { bild: 'entstehung-dusche-1', unterschrift: 'Kleine Klemmen bringen große Fliesen genau auf eine Höhe' },
+  { bild: 'sanierung-weg-2', unterschrift: 'Bad während der Arbeit, die Decke ist noch offen' },
+  { bild: 'balkon-stelzlager', unterschrift: 'Große Platten liegen auf kleinen Füßen, darunter läuft Regen ab' },
+];
 
 /** Werte (UM-E4-EP2, Rückführung nach UM-5): die sechs Werte des Bestands als Vertrauensliste nach „Was wir tun“ (Baustein
  *  `components/ueber-uns/Werte`, Slot `nachTun`). Wortlaut aus `values` in `src/config/company.js` (Zeilen 188 bis 195, in E0

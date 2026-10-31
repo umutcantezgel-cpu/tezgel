@@ -8,6 +8,9 @@
 // nur translate über --formatregler-teil (CSS in bewegung.css). Ohne JavaScript steht die Linie in der Mitte, beide Formate
 // sind zu sehen; Regler und Griff sind unsichtbar (kein toter Griff), ihr Platz bleibt (kein Layoutsprung). Im Druck fehlen
 // beide. Texte aus _werkstatt/texte/leistungen.md.
+// Eigener Abschnitt (UM-E4-SICHT-FIX M-C2 Nr. 3): Auf /leistungen trägt der Abschnitt die Überschrift (H2), die Bildunterschrift
+// entfällt dort (`titel={false}`, Text gleich). Der Schieberegler steht bündig unter der Wand, der Hinweis direkt darunter: Griff
+// und Regler lesen sich als eine Bedienung. Das Maß der großen Fliese steht in eigener Zeile unter ihrem Namen (Mikrotext).
 import { useId, useRef, useState, useSyncExternalStore, type CSSProperties, type PointerEvent as Zeigerereignis } from 'react';
 import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
@@ -16,7 +19,7 @@ import { START, wertAusZeiger, wertText } from './geometrie';
 
 const ohneAbo = () => () => {};
 const NBSP = String.fromCharCode(160);
-const GROSS_NAME = `Große Fliese, bis 120${NBSP}×${NBSP}260${NBSP}cm`;
+const GROSS_MASS = `bis 120${NBSP}×${NBSP}260${NBSP}cm`;
 const SCHWELLE_FINGER = 8;
 
 interface Zug {
@@ -25,7 +28,8 @@ interface Zug {
   gezogen: boolean;
 }
 
-export default function Formatregler() {
+/** `titel`: Bildunterschrift über der Wand (Standard); false, wenn der Abschnitt die Überschrift trägt */
+export default function Formatregler({ titel = true }: { titel?: boolean }) {
   const [wert, setWert] = useState(START);
   // true nach der Hydrierung, auf dem Server und ohne JavaScript false (Muster aus common/FussGruppe.tsx)
   const bereit = useSyncExternalStore(ohneAbo, () => true, () => false);
@@ -40,12 +44,20 @@ export default function Formatregler() {
     <div className="@container">
       {/* K-016 (E-047): der Satz über der Wand, mittig, kein zweiter Strang daneben; die Wand mittig, am Desktop halb so breit */}
       <figure data-motion="formatregler" className="formatregler mx-auto flex w-full max-w-md flex-col gap-6 text-tinte @2xl:max-w-full @2xl:w-1/2">
-        <figcaption className="text-center font-text text-fs-4 font-semibold text-pretty">Große Fliesen haben weniger Fugen.</figcaption>
-        {/* Namen stehen über der Wand, links über den kleinen, rechts über den großen Fliesen (die Pfeile zeigen dorthin) */}
+        {titel && <figcaption className="text-center font-text text-fs-4 font-semibold text-pretty">Große Fliesen haben weniger Fugen.</figcaption>}
+        {/* Namen stehen über der Wand, links über den kleinen, rechts über den großen Fliesen (die Pfeile zeigen dorthin). Beide
+            Namen oben bündig auf einer Zeile, das Maß der großen Fliese als eigene Zeile darunter (Nacharbeit SF-C2: unten bündig
+            stand „Kleine Fliese“ auf der Höhe des Maßes, rund 20 px tiefer als „Große Fliese“) */}
         <div>
-          <div className="mb-4 grid grid-cols-1 gap-4 @xs:grid-cols-2">
+          <div className="mb-4 grid grid-cols-1 gap-4 @xs:grid-cols-2 @xs:items-start">
             <p className="flex items-center gap-2 font-text text-fs-3 font-semibold"><Icon name="pfeil-links" groesse={4} /><span className="min-w-0">Kleine Fliese</span></p>
-            <p className="flex items-center gap-2 font-text text-fs-3 font-semibold @xs:justify-end"><span className="min-w-0 text-pretty @xs:text-right">{GROSS_NAME}</span><Icon name="pfeil-rechts" groesse={4} /></p>
+            <p className="flex flex-col font-text text-fs-3 font-semibold @xs:items-end @xs:text-right">
+              <span className="flex items-center gap-2">
+                <span className="min-w-0">Große Fliese</span>
+                <Icon name="pfeil-rechts" groesse={4} />
+              </span>
+              <span className="block font-mono text-fs-1 font-normal text-tinte-2">{GROSS_MASS}</span>
+            </p>
           </div>
           <div
             role="img"
@@ -74,9 +86,10 @@ export default function Formatregler() {
               <span className={clsx('formatregler-griff flex size-11 items-center justify-center border border-tinte bg-fliese print:hidden', !bereit && 'invisible')}><Icon name="pfeil-links" groesse={4} /><Icon name="pfeil-rechts" groesse={4} /></span>
             </div>
           </div>
-          <div className={clsx('formatregler-regler mt-6', !bereit && 'invisible')}>
-            <label htmlFor={reglerId} className="block font-text text-fs-2 text-tinte-2">Schieben Sie den Regler nach links oder rechts.</label>
-            <input id={reglerId} type="range" min={0} max={100} step={1} value={wert} aria-valuetext={wertText(wert)} onChange={(e) => setWert(Number(e.target.value))} className="mt-2 block h-11 w-full cursor-pointer accent-tinte" />
+          {/* Regler bündig unter der Wand, Hinweis direkt darunter (ein Bedienelement statt zweier) */}
+          <div className={clsx('formatregler-regler', !bereit && 'invisible')}>
+            <input id={reglerId} type="range" min={0} max={100} step={1} value={wert} aria-valuetext={wertText(wert)} onChange={(e) => setWert(Number(e.target.value))} className="block h-11 w-full cursor-pointer accent-tinte" />
+            <label htmlFor={reglerId} className="block text-center font-text text-fs-2 text-tinte-2">Schieben Sie den Regler nach links oder rechts.</label>
           </div>
         </div>
       </figure>
