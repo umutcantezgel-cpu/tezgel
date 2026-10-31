@@ -33,7 +33,7 @@ export default function BalkonTerrassePage() {
                     }),
                 ]}
             />
-            <ErzaehlSeite inhalt={BALKON_TERRASSE} momente={{ tun: <GefaelleBalkon /> }} />
+            <ErzaehlSeite inhalt={BALKON_TERRASSE} momente={{ tun: <GefaelleBalkon fachwort /> }} />
         </>
     );
 }

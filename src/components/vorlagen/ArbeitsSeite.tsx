@@ -14,6 +14,7 @@ import Abschnitt from '@/components/kern/Abschnitt';
 import type { Krume } from '@/components/kern/Brotkrumen';
 import Textmarken from '@/components/kern/Textmarken';
 import Einstieg from './teile/Einstieg';
+import Aufklapper from './teile/Aufklapper';
 
 export interface Arbeitsabschnitt {
   /** Anker des Abschnitts (`id` der Section), unverändert aus dem Bestand */
@@ -27,6 +28,14 @@ export interface Arbeitsabschnitt {
   unterKopf?: ReactNode;
   flaeche?: 'kalk' | 'fliese';
   kopf?: 'gestapelt' | 'seitlich';
+  /** Erzähl- und Wissensseite (UM-E4-SICHT-FIX M-B3, ein Abschluss je Seite): Das Werkzeug steht im nächsten Schritt unter
+   *  Hauptknopf, Anruf und WhatsApp statt als eigener Abschnitt danach. Ohne Angabe bleibt es nach dem Schritt (Standard) */
+  imSchritt?: boolean;
+  /** Im Schritt geschlossen in einem nativen Aufklapper; der Wert ist die Zeile zum Öffnen (Mikrotext, z. B. „Badanfrage öffnen“).
+   *  Ohne Angabe steht das Werkzeug offen (z. B. der Projektcheck auf /bad, F-05 prüft sichtbare Inhalte) */
+  zu?: string;
+  /** Eigene Seite des Werkzeugs (z. B. `/bad/badanfrage`): Steht es im Schritt, entfällt der Hilfen-Link dorthin (M-B3 Nr. 5) */
+  seite?: string;
 }
 
 export interface ArbeitsSeiteProps {
@@ -42,8 +51,33 @@ export interface ArbeitsSeiteProps {
 
 /** Werkzeug der Seite nach dem nächsten Schritt (E-012: unter dem Hauptweg, nicht konkurrierend; Funktion wie im Bestand,
  *  F-02, F-04): eigener Abschnitt mit der Kennung aus dem Bestand. Kopf seit K-016 (E-047) mittig über dem Werkzeug statt
- *  seitlich daneben; `kopf: 'seitlich'` nur noch, wo das Werkzeug selbst schmal ist. */
+ *  seitlich daneben; `kopf: 'seitlich'` nur noch, wo das Werkzeug selbst schmal ist.
+ *  Mit `imSchritt` (UM-E4-SICHT-FIX M-B3) kein eigener Abschnitt und keine eigene H2: Der Schritt trägt die eine Überschrift und
+ *  den einen Hauptknopf, das Werkzeug steht darunter. Die Kennung aus dem Bestand liegt am Element um das Werkzeug, der Titel
+ *  wird der Name der Region (aria-label). Mit `zu` steht das Werkzeug geschlossen im nativen Aufklapper (ohne JavaScript
+ *  bedienbar, das Formular bleibt im DOM und lädt wie bisher nach); mit Einleitung und ohne `zu` als Zeile mit H3 und Satz
+ *  (z. B. „Sie möchten mehr erzählen?“ im Formular-Schritt von /leistungen). */
 export function Werkzeug({ werkzeug }: { werkzeug: Arbeitsabschnitt }) {
+  if (werkzeug.imSchritt) {
+    if (werkzeug.einleitung && !werkzeug.zu) {
+      const hId = werkzeug.titelId ?? `${werkzeug.id}-titel`;
+      return (
+        <div id={werkzeug.id}>
+          <h3 id={hId} className="font-text text-fs-3 font-semibold text-tinte">{werkzeug.titel}</h3>
+          <p className="mt-2 font-text text-fs-2 text-tinte-2">
+            <Textmarken text={werkzeug.einleitung} />
+          </p>
+          <div className="mt-2">{werkzeug.inhalt}</div>
+        </div>
+      );
+    }
+    const region = (
+      <div id={werkzeug.id} role={werkzeug.titel ? 'region' : undefined} aria-label={werkzeug.titel || undefined} className={werkzeug.zu ? 'pt-4 pb-12' : 'py-12'}>
+        {werkzeug.inhalt}
+      </div>
+    );
+    return werkzeug.zu ? <Aufklapper zeile={werkzeug.zu}>{region}</Aufklapper> : region;
+  }
   return (
     <Abschnitt
       id={werkzeug.id}

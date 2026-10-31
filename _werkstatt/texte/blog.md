@@ -18,7 +18,7 @@
 
 ## 2 · Ihre Lage
 - H2: `Vieles rund ums Bad ist schwer zu verstehen.`
-- Absatz: `Sie möchten Ihre Wanne gegen eine [[bodengleiche-dusche|bodengleiche Dusche]] tauschen? Dann stellen sich viele Fragen.`
+- Absatz: `Sie möchten Ihre Wanne gegen eine bodengleiche Dusche tauschen? Dann stellen sich viele Fragen.` (die Erklärung steht seit UM-E4-SICHT-FIX M-B7, `wissenVorLage`, beim ersten Vorkommen im Anriss duschrinne-oder-punktablauf)
 - Absatz: `Wie muss der [[untergrund|Untergrund]] sein? Was muss abgedichtet werden, und was kostet das? Hier finden Sie Antworten.` (Abnahme E3-BAU-11: erste Nennung von „Untergrund“ mit Erklärung, vor der Artikelliste)
 
 ## 3 · Was wir tun
@@ -36,7 +36,7 @@
 - Artikel fliesen-reinigen-pflegen: `Welcher Reiniger passt zu Fliesen und Fugen? Wir zeigen, was Sie besser meiden sollten und wann eine Grundreinigung sinnvoll ist.`
 - Artikel barrierefreier-balkonaustritt: `Wie hoch darf die Schwelle an der Balkontür sein? Wir erklären, welche Regeln gelten und wie sich niedrige Übergänge sauber planen lassen.`
 - Artikel wandnischen-dusche-planen: `Eine geflieste Nische kann das Duschregal ersetzen. Wir zeigen, worauf es bei Lage, Abdichtung, Kanten und Licht ankommt.`
-- Artikel duschrinne-oder-punktablauf: `Welcher Ablauf passt in Ihre bodengleiche Dusche? Wir vergleichen die [[duschrinne|Duschrinne]] mit dem [[punktablauf|Punktablauf]]. Dazu zeigen wir, worauf es bei Fliesen, Abdichtung und Reinigung ankommt.`
+- Artikel duschrinne-oder-punktablauf: `Welcher Ablauf passt in Ihre [[bodengleiche-dusche|bodengleiche Dusche]]? Wir vergleichen die [[duschrinne|Duschrinne]] mit dem [[punktablauf|Punktablauf]]. Dazu zeigen wir, worauf es bei Fliesen, Abdichtung und Reinigung ankommt.`
 - Artikel schimmel-fliesenfugen-vermeiden: `Was steckt hinter schwarzen Punkten in Fugen und Silikon? Wir zeigen, wie Schimmel entsteht, wie Sie vorbeugen und wann eine Fuge erneuert werden sollte.`
 - Artikel fliesen-fuer-allergiker: `Können harte Böden Allergikern helfen? Wir erklären, warum sie für Haushalte mit Allergikern in Frage kommen und worauf Sie bei Fugen und Pflege achten sollten.`
 - Artikel rutschfeste-fliesen-r-klassen: `Wie rutschfest muss eine Fliese sein? Wir erklären die [[rutschhemmung|Rutschhemmung]]. Dazu zeigen wir, für welche Räume welche Klasse passt.`

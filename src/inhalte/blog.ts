@@ -28,7 +28,7 @@ export const BLOG: WissenInhalt = {
     aufFliese: true,
     titel: 'Vieles rund ums Bad ist schwer zu verstehen.',
     absaetze: [
-      'Sie möchten Ihre Wanne gegen eine [[bodengleiche-dusche|bodengleiche Dusche]] tauschen? Dann stellen sich viele Fragen.',
+      'Sie möchten Ihre Wanne gegen eine bodengleiche Dusche tauschen? Dann stellen sich viele Fragen.',
       // Abnahme E3-BAU-11: die erste Nennung von „Untergrund“ steht hier im Fließtext mit Erklärung (die Liste mit dem Thema
       // „Untergrund und Abdichtung“ folgt direkt darunter; E-027: keine Marke im Linknamen)
       'Wie muss der [[untergrund|Untergrund]] sein? Was muss abgedichtet werden, und was kostet das? Hier finden Sie Antworten.',
@@ -86,6 +86,11 @@ export const BLOG: WissenInhalt = {
       { name: 'Untergrund und Abdichtung', href: '/untergrund-abdichtung' },
     ],
   },
+  // Folge (K-009, M-B7): Suche, Themen und Liste direkt nach dem Einstieg, „Vieles rund ums Bad …“ danach; vorher begann das
+  // Werkzeug der Wissensansicht erst im zweiten Bildschirm (Sicht Anlauf 1, a2, b3). Damit steht „bodengleiche Dusche“ zuerst im
+  // Anriss zu Duschrinne und Punktablauf: Die Auszeichnung mit Erklärung wandert dorthin (Schreibregel erstes Vorkommen, K-011;
+  // lesbarkeit.mjs), der Absatz der Lage nennt das Wort danach ohne Marke. Wortlaut unverändert
+  wissenVorLage: true,
 };
 
 /** Anrisse der Artikelliste je Beitrag (Textdatei Abschnitt 3, wörtlich mit Textmarken); BlogFilter zeigt sie statt der Auszüge */
@@ -103,7 +108,7 @@ export const ANRISSE: Record<string, string> = {
   'wandnischen-dusche-planen':
     'Eine geflieste Nische kann das Duschregal ersetzen. Wir zeigen, worauf es bei Lage, Abdichtung, Kanten und Licht ankommt.',
   'duschrinne-oder-punktablauf':
-    'Welcher Ablauf passt in Ihre bodengleiche Dusche? Wir vergleichen die [[duschrinne|Duschrinne]] mit dem [[punktablauf|Punktablauf]]. Dazu zeigen wir, worauf es bei Fliesen, Abdichtung und Reinigung ankommt.',
+    'Welcher Ablauf passt in Ihre [[bodengleiche-dusche|bodengleiche Dusche]]? Wir vergleichen die [[duschrinne|Duschrinne]] mit dem [[punktablauf|Punktablauf]]. Dazu zeigen wir, worauf es bei Fliesen, Abdichtung und Reinigung ankommt.',
   'schimmel-fliesenfugen-vermeiden':
     'Was steckt hinter schwarzen Punkten in Fugen und Silikon? Wir zeigen, wie Schimmel entsteht, wie Sie vorbeugen und wann eine Fuge erneuert werden sollte.',
   'fliesen-fuer-allergiker':

@@ -7,7 +7,10 @@
 // Oder (Startseite, UM-E4-START, Sicht Anlauf 3: zwei Auswahllisten mit sich überschneidenden Zielen folgten aufeinander) nur
 // eine ruhige Zeile mit den Leistungen als Links unter dem mittigen Kopf; ihre Zeichnungen stehen in den Zeilen der Lage.
 // Lange Namen trennen nur an ihrer Fuge (mitFugen, FS-K Nr. 2), ebenso die Sätze der Punkte (Textmarken mit fugen, FS-K
-// Nr. 6). Serverkomponente.
+// Nr. 6).
+// Folge im Abschnitt (UM-E4-SICHT-FIX M-B7): Mit `momentZuerst` steht der große Moment direkt nach Kopf und Satz, Bereiche,
+// Punkte, Absatz und Zeichnung danach (nur Seiten aus K-009). Fachtext (`absatzMehr`, M-B4) steht am Ende im Aufklapper „Mehr
+// erfahren“ statt mitten in der Erzählung. Serverkomponente.
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import Icon from '@/components/icons/Icon';
@@ -20,6 +23,7 @@ import Textmarken from '@/components/kern/Textmarken';
 import { linkKlassen } from '@/components/kern/stile';
 import { mitFugen } from '@/components/kern/zusammen';
 import type { BereichFliese, TunInhalt, Verweis } from '../inhalt';
+import Aufklapper from './Aufklapper';
 
 export function Bereichszeilen({ bereiche }: { bereiche: NonNullable<TunInhalt['bereiche']> }) {
   return (
@@ -198,19 +202,10 @@ function Zeichnung({ vignette, unterschrift }: NonNullable<TunInhalt['unterKopf'
 }
 
 export default function Tun({ inhalt, moment }: { inhalt: TunInhalt; moment?: ReactNode }) {
-  return (
-    <Abschnitt
-      id="was-wir-tun"
-      formel="tun"
-      leitachse
-      spaet
-      mitte={!inhalt.anDerLinie}
-      titel={inhalt.titel}
-      einleitung={inhalt.einleitung ? <p><Textmarken text={inhalt.einleitung} /></p> : undefined}
-      // ruhige Leistungszeilen (Startseite): ab lg eine Stufe 16 statt 24 über und unter dem Band, es trägt wenig Inhalt
-      // (Nacharbeit UM-E4-START, Prüfung A: rund 300 px für Kopf, Satz und vier Links)
-      className={inhalt.leistungen?.length ? 'lg:pt-16 lg:pb-16' : undefined}
-    >
+  const zuerst = Boolean(inhalt.momentZuerst && moment);
+  const hatFolge = Boolean(inhalt.bereiche?.length || inhalt.bereichsfliesen?.length || inhalt.leistungen?.length || inhalt.punkte?.length || inhalt.absatz || inhalt.unterKopf);
+  const folge = (
+    <>
       {inhalt.bereiche && inhalt.bereiche.length > 0 && <Bereichszeilen bereiche={inhalt.bereiche} />}
       {inhalt.bereichsfliesen && inhalt.bereichsfliesen.length > 0 && <Bereichsfliesen bereiche={inhalt.bereichsfliesen} />}
       {inhalt.leistungen && inhalt.leistungen.length > 0 && <Leistungszeile leistungen={inhalt.leistungen} />}
@@ -232,7 +227,39 @@ export default function Tun({ inhalt, moment }: { inhalt: TunInhalt; moment?: Re
           <Zeichnung {...inhalt.unterKopf} />
         </div>
       )}
-      {moment && <div className="mt-16">{moment}</div>}
+    </>
+  );
+  return (
+    <Abschnitt
+      id="was-wir-tun"
+      formel="tun"
+      leitachse
+      spaet
+      mitte={!inhalt.anDerLinie}
+      titel={inhalt.titel}
+      einleitung={inhalt.einleitung ? <p><Textmarken text={inhalt.einleitung} /></p> : undefined}
+      // ruhige Leistungszeilen (Startseite): ab lg eine Stufe 16 statt 24 über und unter dem Band, es trägt wenig Inhalt
+      // (Nacharbeit UM-E4-START, Prüfung A: rund 300 px für Kopf, Satz und vier Links)
+      className={inhalt.leistungen?.length ? 'lg:pt-16 lg:pb-16' : undefined}
+    >
+      {zuerst ? (
+        <>
+          <div>{moment}</div>
+          {hatFolge && <div className="mt-16">{folge}</div>}
+        </>
+      ) : (
+        <>
+          {folge}
+          {moment && <div className="mt-16">{moment}</div>}
+        </>
+      )}
+      {inhalt.absatzMehr && (
+        <Aufklapper zeile="Mehr erfahren" className="mx-auto mt-8 max-w-mass border-y border-fuge">
+          <p className="pb-6 font-text text-fs-3 text-pretty text-tinte">
+            <Textmarken text={inhalt.absatzMehr} />
+          </p>
+        </Aufklapper>
+      )}
     </Abschnitt>
   );
 }

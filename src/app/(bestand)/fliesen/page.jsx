@@ -44,14 +44,15 @@ export default function FliesenRatgeberPage() {
             <WissensSeite
                 inhalt={FLIESEN}
                 zeichnungen={{ verband: <VerbandProbe /> }}
+                // ein Abschluss (UM-E4-SICHT-FIX M-B3): Konfigurator im nächsten Schritt unter dem Hauptknopf, geschlossen; der
+                // Hilfen-Link auf /fliesen/konfigurator entfällt dann (gleiches Werkzeug im Block). Kennung #konfigurator wie bisher
                 werkzeug={{
                     id: 'konfigurator',
                     titel: '',
-                    inhalt: (
-                        <div className="mx-auto max-w-mass">
-                            <FliesenKonfigurator />
-                        </div>
-                    ),
+                    imSchritt: true,
+                    zu: 'Projekt im Konfigurator vorbereiten',
+                    seite: '/fliesen/konfigurator',
+                    inhalt: <FliesenKonfigurator />,
                 }}
             />
         </>

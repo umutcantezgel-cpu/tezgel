@@ -105,4 +105,7 @@ export const REFERENZEN: ErzaehlInhalt = {
       'Schreiben Sie uns Ihren Namen und Ihre Telefonnummer. Deniz Tezgel ruft Sie zurück und macht einen Termin mit Ihnen aus.',
     verwandte: PORTFOLIO_PROJECTS.map((p: { id: string; title: string }) => ({ name: BEISPIELE[p.id] ?? p.title, href: `/referenzen/${p.id}` })),
   },
+  // Folge (K-009, UM-E4-SICHT-FIX M-B7): Galerie, Vorher-Nachher und Bewertungen direkt nach der Lage, die Arbeiten sind der
+  // Menüpunkt (A4); vorher begann die Galerie nach rund fünf Bildschirmen Text (Sicht Anlauf 1, a1)
+  belegVorn: true,
 };

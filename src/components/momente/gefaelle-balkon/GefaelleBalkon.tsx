@@ -9,21 +9,25 @@
 import type { CSSProperties } from 'react';
 import clsx from 'clsx';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Textmarken from '@/components/kern/Textmarken';
+import { klartext } from '@/lib/textmarken';
 import { Linie, Planrahmen, schraffur } from '@/components/kern/vignetten/zeichnen';
 import { ABDICHTUNG, BETON, ESTRICH, FUGEN, PFEILE, PLATTEN, RINNE, TROPFEN, TROPFKANTE, VIEWBOX, WAND } from './geometrie';
 
 /** Hauswand und Betonplatte im Schnitt */
 const SCHNITT = schraffur(8, 20, 20, 100) + schraffur(28, 96, 172, 16, 4);
 
+// Legende mit Textmarke am Fachwort: Steht der Moment vorn in „Was wir tun“ (`momentZuerst`, UM-E4-SICHT-FIX M-B7), ist die
+// Legende das erste Vorkommen von „Abdichtung“ auf der Seite und erklärt es (`fachwort`, K-011); sonst steht der Satz ohne Marke
 const LEGENDE = [
   'Die Platten liegen leicht schräg, weg vom Haus. So läuft der Regen zum Rand.',
-  'Darunter liegt eine wasserdichte Schicht, die Abdichtung. Sie schützt den Beton.',
+  'Darunter liegt eine wasserdichte Schicht, die [[abdichtung|Abdichtung]]. Sie schützt den Beton.',
   'Am Rand tropft das Wasser über eine Blechkante in die Rinne.',
 ];
 
 type Stil = CSSProperties & Record<`--${string}`, number>;
 
-export default function GefaelleBalkon({ className }: { className?: string }) {
+export default function GefaelleBalkon({ className, fachwort = false }: { className?: string; fachwort?: boolean }) {
   return (
     <figure className={clsx('mx-auto max-w-mass text-tinte', className)}>
       <div data-motion="gefaelle-balkon" className="border border-fuge bg-fliese p-4 lg:p-6">
@@ -48,7 +52,7 @@ export default function GefaelleBalkon({ className }: { className?: string }) {
           {LEGENDE.map((satz) => (
             <li key={satz} className="flex gap-3">
               <Fugenkreuz className="mt-2 size-3 text-strich" />
-              <span className="min-w-0 flex-1 text-pretty hyphens-auto">{satz}</span>
+              <span className="min-w-0 flex-1 text-pretty hyphens-auto">{fachwort ? <Textmarken text={satz} /> : klartext(satz)}</span>
             </li>
           ))}
         </ul>

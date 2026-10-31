@@ -18,6 +18,10 @@
 // Treppe): Das Kreuz setzt sich rot und größer und wird dann Tinte, der Schritt (Nummer, Titel, Satz) setzt sich mit ihm,
 // und mobil zweigt am Kreuz je Schritt eine kurze rote Stufe vom Lot zur Spalte der Nummer ab (treppe-tritt, auch im
 // Ruhezustand).
+// Anschluss und Versatz (UM-E4-SICHT-FIX M-B7 Nr. 4): Ab lg schließt ein kurzes rotes Waagstück die erste Stufe an das Lot der
+// Leitachse an (16 px von der Achse bis zur Inhaltskante, ohne Bewegung), und der Hinweis unter der Treppe steht unter Stufe 02
+// statt unter Stufe 01 (ein Drittel bzw. eine Spalte versetzt: der bewusste Bruch dieses Bildschirms, inhaltlich beim Angebot).
+// Mit großem Moment statt Treppe bleibt der Hinweis an der Inhaltskante.
 import type { CSSProperties, ReactNode } from 'react';
 import clsx from 'clsx';
 import Abschnitt from '@/components/kern/Abschnitt';
@@ -36,14 +40,15 @@ const STUFE = ['', 'lg:mt-16', 'lg:mt-32', 'lg:mt-48'];
 export const ZWEI_SPALTEN_AB = 5;
 
 /** Treppe; `start` zählt weiter (zweiter Lauf beginnt bei 04), `weiter`: mobil läuft die Linie über den letzten Schritt hinaus
- *  in den nächsten Lauf; `anriss`: die Linie reißt beim Eintritt Stufe für Stufe an (nur ein Lauf, Startseite) */
-export function Schritte({ schritte, start = 0, weiter = false, anriss = false }: { schritte: AblaufInhalt['schritte']; start?: number; weiter?: boolean; anriss?: boolean }) {
+ *  in den nächsten Lauf; `anriss`: die Linie reißt beim Eintritt Stufe für Stufe an (nur ein Lauf, Startseite); `anschluss`: ab
+ *  lg das Waagstück von der Achse zur ersten Stufe (M-B7; eingeschaltet erst mit dem sichtbaren Lot auf Fliese, M-A4) */
+export function Schritte({ schritte, start = 0, weiter = false, anriss = false, anschluss = false }: { schritte: AblaufInhalt['schritte']; start?: number; weiter?: boolean; anriss?: boolean; anschluss?: boolean }) {
   if (anriss && schritte.length < ZWEI_SPALTEN_AB) return <AnrissTreppe schritte={schritte} />;
   if (start === 0 && schritte.length >= ZWEI_SPALTEN_AB) {
     const haelfte = Math.ceil(schritte.length / 2);
     return (
       <div className="flex flex-col lg:gap-32">
-        <Schritte schritte={schritte.slice(0, haelfte)} weiter />
+        <Schritte schritte={schritte.slice(0, haelfte)} weiter anschluss={anschluss} />
         <Schritte schritte={schritte.slice(haelfte)} start={haelfte} />
       </div>
     );
@@ -66,6 +71,9 @@ export function Schritte({ schritte, start = 0, weiter = false, anriss = false }
           >
             {/* Setzstufe ab lg: vom Ende der vorigen Linie senkrecht herab zum Anfang dieser */}
             {i > 0 && <span aria-hidden="true" className="absolute bottom-full left-0 hidden h-16 -translate-x-1/2 border-l-2 border-laser lg:block" />}
+            {/* Waagstück ab lg (M-B7): von der Achse (lg:left-8 im Seitenrahmen, 16 px vor der Inhaltskante) zum Anfang der ersten
+                Stufe, auf der Höhe ihrer Linie */}
+            {anschluss && start === 0 && i === 0 && <span aria-hidden="true" className="absolute right-full bottom-full hidden w-4 border-t-2 border-laser lg:block" />}
             <Fugenkreuz className={clsx('absolute top-0 left-0 -translate-1/2 text-tinte', KREUZ_GROESSE)} />
             <p className="font-mono text-fs-4 text-tinte-2">{String(start + i + 1).padStart(2, '0')}</p>
             <h3 className="mt-2 font-anzeige text-fs-5 font-extrabold text-tinte">{mitFugen(s.titel)}</h3>
@@ -146,6 +154,8 @@ function Belege({ belege }: { belege: string[] }) {
 export default function Ablauf({ inhalt, moment }: { inhalt: AblaufInhalt; moment?: ReactNode }) {
   // zwei Läufe: Überschrift und Satz mittig darüber (Auftraggeber zu /bad/badsanierung, E-047)
   const zweiSpaltig = !moment && inhalt.schritte.length >= ZWEI_SPALTEN_AB;
+  // Spalten eines Treppenlaufs (zwei Läufe: die Hälfte, aufgerundet)
+  const laufLaenge = zweiSpaltig ? Math.ceil(inhalt.schritte.length / 2) : inhalt.schritte.length;
   return (
     <Abschnitt
       id="ablauf"
@@ -158,14 +168,19 @@ export default function Ablauf({ inhalt, moment }: { inhalt: AblaufInhalt; momen
       einleitung={inhalt.einleitung ? <p><Textmarken text={inhalt.einleitung} /></p> : undefined}
       className="lg:pb-32"
     >
+      {/* Waagstück (`anschluss`) bleibt aus, bis das Lot auf Fliese sichtbar ist (M-A4): Ohne Achse daneben las es sich als
+          Überstand links vom Fugenkreuz (Prüfung SF-B, Nacharbeit) */}
       {moment ?? <Schritte schritte={inhalt.schritte} anriss={inhalt.anriss} />}
       {inhalt.belege && inhalt.belege.length > 0 && <Belege belege={inhalt.belege} />}
       {inhalt.hinweis && (
-        <div className="mt-12 max-w-mass border-l-2 border-tinte pl-6 lg:mt-24">
-          <p className="font-text text-fs-3 text-tinte">
-            <Textmarken text={inhalt.hinweis.text} />
-          </p>
-          {inhalt.hinweis.verweis && <WeiterLink href={inhalt.hinweis.verweis.href} className="mt-2">{inhalt.hinweis.verweis.name}</WeiterLink>}
+        // unter Stufe 02 ab lg: im Raster der (ersten) Treppe ab ihrer zweiten Spalte; mit Moment an der Inhaltskante
+        <div className={clsx('mt-12 lg:mt-24', !moment && clsx('lg:grid', SPALTEN[laufLaenge] ?? 'lg:grid-cols-3'))}>
+          <div className={clsx('max-w-mass border-l-2 border-tinte pl-6', !moment && 'lg:col-span-2 lg:col-start-2')}>
+            <p className="font-text text-fs-3 text-tinte">
+              <Textmarken text={inhalt.hinweis.text} />
+            </p>
+            {inhalt.hinweis.verweis && <WeiterLink href={inhalt.hinweis.verweis.href} className="mt-2">{inhalt.hinweis.verweis.name}</WeiterLink>}
+          </div>
         </div>
       )}
     </Abschnitt>

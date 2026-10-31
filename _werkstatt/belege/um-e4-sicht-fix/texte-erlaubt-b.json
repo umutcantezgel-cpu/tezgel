@@ -1,0 +1,236 @@
+[
+ {
+  "seite": "/bad/barrierefreies-bad",
+  "teil": "main_zeilen",
+  "alt": "Badanfrage",
+  "vermerk": "H2 „Badanfrage“ entfällt mit dem eigenen Abschnitt; Werkzeug im Schritt mit Zeile „Badanfrage öffnen“ und Region „Badanfrage“ (M-B3 Nr. 2/3)"
+ },
+ {
+  "seite": "/bad/barrierefreies-bad",
+  "block": "main",
+  "entfernt": "Das Wasser läuft von selbst zum Ablauf.",
+  "vermerk": "verschoben (Folge M-B7 bzw. Tun momentZuerst), wortgleich an anderer Stelle der Seite"
+ },
+ {
+  "seite": "/bad/barrierefreies-bad",
+  "teil": "ueberschriften",
+  "alt": "h2: Badanfrage",
+  "vermerk": "H2 „Badanfrage“ entfällt mit dem eigenen Abschnitt; Werkzeug im Schritt mit Zeile „Badanfrage öffnen“ und Region „Badanfrage“ (M-B3 Nr. 2/3)"
+ },
+ {
+  "seite": "/bad",
+  "teil": "main_zeilen",
+  "alt": "Zurück",
+  "vermerk": "Knöpfe des Badanfrage-Funnels im geschlossenen Aufklapper (im DOM, nicht im sichtbaren Text; M-B3 Nr. 3, E-104 Nr. 4)"
+ },
+ {
+  "seite": "/bad",
+  "teil": "main_zeilen",
+  "alt": "Weiter",
+  "vermerk": "Knöpfe des Badanfrage-Funnels im geschlossenen Aufklapper (im DOM, nicht im sichtbaren Text; M-B3 Nr. 3, E-104 Nr. 4)"
+ },
+ {
+  "seite": "/bad",
+  "teil": "main_zeilen",
+  "alt": "Hilfen",
+  "vermerk": "Gruppenlabel „Hilfen“ entfällt: Hilfen stehen als Zeilen unter den Werkzeugen im Schritt (Nacharbeit SF-B, Befund /bad Abschluss)"
+ },
+ {
+  "seite": "/bad",
+  "teil": "main_zeilen",
+  "alt": "Badanfrage",
+  "vermerk": "H2 „Badanfrage“ entfällt mit dem eigenen Abschnitt; Werkzeug im Schritt mit Zeile „Badanfrage öffnen“ und Region „Badanfrage“ (M-B3 Nr. 2/3)"
+ },
+ {
+  "seite": "/bad",
+  "teil": "main_zeilen",
+  "alt": "Schreiben Sie uns, was Sie sich für Ihr Bad wünschen.",
+  "vermerk": "Hilfen-Link auf ein Werkzeug, das im Schritt steht, entfällt (M-B3 Nr. 5; Daten bleiben, Filter über `seite`)"
+ },
+ {
+  "seite": "/bad",
+  "teil": "main_zeilen",
+  "alt": "Projektcheck",
+  "vermerk": "Hilfen-Link auf ein Werkzeug, das im Schritt steht, entfällt (M-B3 Nr. 5; Daten bleiben, Filter über `seite`)"
+ },
+ {
+  "seite": "/bad",
+  "teil": "main_zeilen",
+  "alt": "Mit wenigen Fragen sehen Sie online, was bei Ihrem Bad möglich ist.",
+  "vermerk": "Hilfen-Link auf ein Werkzeug, das im Schritt steht, entfällt (M-B3 Nr. 5; Daten bleiben, Filter über `seite`)"
+ },
+ {
+  "seite": "/bad",
+  "block": "main",
+  "entfernt": "Hilfen Badanfrage Schreiben Sie uns, was Sie sich für Ihr Bad wünschen.",
+  "vermerk": "Gruppenlabel „Hilfen“ entfällt: Hilfen stehen als Zeilen unter den Werkzeugen im Schritt (Nacharbeit SF-B, Befund /bad Abschluss)"
+ },
+ {
+  "seite": "/bad",
+  "block": "main",
+  "entfernt": "Mit wenigen Fragen sehen Sie online, was bei Ihrem Bad möglich ist. Badplaner Projektcheck",
+  "vermerk": "Hilfen-Link auf ein Werkzeug, das im Schritt steht, entfällt (M-B3 Nr. 5; Daten bleiben, Filter über `seite`)"
+ },
+ {
+  "seite": "/bad",
+  "teil": "ueberschriften",
+  "alt": "h3: Hilfen",
+  "vermerk": "Gruppenlabel „Hilfen“ entfällt: Hilfen stehen als Zeilen unter den Werkzeugen im Schritt (Nacharbeit SF-B, Befund /bad Abschluss)"
+ },
+ {
+  "seite": "/bad/badsanierung",
+  "teil": "main_zeilen",
+  "alt": "Hilfen",
+  "vermerk": "Gruppenlabel „Hilfen“ entfällt: Hilfen stehen als Zeilen unter den Werkzeugen im Schritt (Nacharbeit SF-B, Befund /bad Abschluss)"
+ },
+ {
+  "seite": "/bad/badsanierung",
+  "teil": "main_zeilen",
+  "alt": "Angebot anfordern",
+  "vermerk": "Hilfen-Link auf ein Werkzeug, das im Schritt steht, entfällt (M-B3 Nr. 5; Daten bleiben, Filter über `seite`)"
+ },
+ {
+  "seite": "/bad/badsanierung",
+  "teil": "main_zeilen",
+  "alt": "Badanfrage",
+  "vermerk": "H2 „Badanfrage“ entfällt mit dem eigenen Abschnitt; Werkzeug im Schritt mit Zeile „Badanfrage öffnen“ und Region „Badanfrage“ (M-B3 Nr. 2/3)"
+ },
+ {
+  "seite": "/bad/badsanierung",
+  "block": "main",
+  "entfernt": "Hilfen Angebot anfordern Projektcheck starten",
+  "vermerk": "Gruppenlabel „Hilfen“ entfällt: Hilfen stehen als Zeilen unter den Werkzeugen im Schritt (Nacharbeit SF-B, Befund /bad Abschluss)"
+ },
+ {
+  "seite": "/bad/badsanierung",
+  "teil": "ueberschriften",
+  "alt": "h3: Hilfen",
+  "vermerk": "Gruppenlabel „Hilfen“ entfällt: Hilfen stehen als Zeilen unter den Werkzeugen im Schritt (Nacharbeit SF-B, Befund /bad Abschluss)"
+ },
+ {
+  "seite": "/bad/badsanierung",
+  "teil": "ueberschriften",
+  "alt": "h2: Badanfrage",
+  "vermerk": "H2 „Badanfrage“ entfällt mit dem eigenen Abschnitt; Werkzeug im Schritt mit Zeile „Badanfrage öffnen“ und Region „Badanfrage“ (M-B3 Nr. 2/3)"
+ },
+ {
+  "seite": "/leistungen",
+  "teil": "ueberschriften",
+  "alt": "h2: Sie möchten mehr erzählen?",
+  "vermerk": "verschoben (Folge M-B7 bzw. Tun momentZuerst), wortgleich an anderer Stelle der Seite"
+ },
+ {
+  "seite": "/balkon-terrasse",
+  "teil": "main_zeilen",
+  "alt": "Der Aufbau darunter. Auch der Untergrund (alles, was unter der Fliese liegt, zum Beispiel Estrich, Putz oder alte Fliesen) gehört zu unseren Leistungen. Ebenso die Abdichtung (eine wasserdichte Schicht direkt unter den Fliesen, damit kein Wasser in Wand und Boden dringt).",
+  "vermerk": "Klammer-Erklärung (Glossar, Wortlaut aus config/glossar.ts) wandert mit dem ersten Vorkommen (K-011, M-B7 Risiko); Wortlaut der Sätze gleich"
+ },
+ {
+  "seite": "/balkon-terrasse",
+  "teil": "main_zeilen",
+  "alt": "Darunter liegt eine wasserdichte Schicht, die Abdichtung. Sie schützt den Beton.",
+  "vermerk": "Klammer-Erklärung (Glossar, Wortlaut aus config/glossar.ts) wandert mit dem ersten Vorkommen (K-011, M-B7 Risiko); Wortlaut der Sätze gleich"
+ },
+ {
+  "seite": "/balkon-terrasse",
+  "block": "main",
+  "entfernt": "Abdichtung (eine wasserdichte Schicht direkt unter den Fliesen, damit kein Wasser in Wand und Boden dringt). Der Regen läuft vom Balkon ab. Die Platten liegen leicht schräg, weg vom Haus. So läuft der Regen zum Rand. Darunter liegt eine wasserdichte Schicht, die",
+  "vermerk": "Klammer-Erklärung (Glossar, Wortlaut aus config/glossar.ts) wandert mit dem ersten Vorkommen (K-011, M-B7 Risiko); Wortlaut der Sätze gleich"
+ },
+ {
+  "seite": "/balkon-terrasse",
+  "block": "main",
+  "entfernt": "Sie schützt den Beton. Am Rand tropft das Wasser über eine Blechkante in die Rinne.",
+  "vermerk": "verschoben (Folge M-B7 bzw. Tun momentZuerst), wortgleich an anderer Stelle der Seite"
+ },
+ {
+  "seite": "/balkon-terrasse",
+  "block": "main",
+  "entfernt": "Geeignet für Balkon, Loggia, Dachterrasse auf tragfähiger, abgedichteter Fläche",
+  "vermerk": "verschoben (Folge M-B7 bzw. Tun momentZuerst), wortgleich an anderer Stelle der Seite"
+ },
+ {
+  "seite": "/balkon-terrasse",
+  "block": "main",
+  "entfernt": "Geeignet für Vor allem Terrassen auf Erdreich mit tragfähigem, frostsicherem Unterbau",
+  "vermerk": "verschoben (Folge M-B7 bzw. Tun momentZuerst), wortgleich an anderer Stelle der Seite"
+ },
+ {
+  "seite": "/balkon-terrasse",
+  "block": "main",
+  "entfernt": "Geeignet für Flächen mit knapper Aufbauhöhe, wenn Gefälle und Abdichtung darunter stimmen",
+  "vermerk": "Klammer-Erklärung (Glossar, Wortlaut aus config/glossar.ts) wandert mit dem ersten Vorkommen (K-011, M-B7 Risiko); Wortlaut der Sätze gleich"
+ },
+ {
+  "seite": "/balkon-terrasse",
+  "block": "main",
+  "entfernt": "Balkone und Terrassen, die wir verlegt haben. So legen wir Platten auf Stelzlagern Ansehen Zurück Weiter Alle Arbeiten ansehen Das sagen unsere Kunden. Ich kann die Firma Tezgel nur wärmstens empfehlen! Herr Tezgel hat bei mir die Fliesen auf dem Balkon neu verlegt, und ich bin mehr als zufrieden mit seiner … Hasan Ö. bei Google , 5 von 5 Sternen Wir haben unser gesamtes Haus von der Firma Fliesenverlegung Tezgel verlegen lassen – und sind rundum zufrieden. Vom ersten Tag an lief alles absolut … Rabia Ö. bei Google , 5 von 5 Sternen Immer wieder HERVORRAGENDE!!! Jedes Bad, jede Treppe, jeder Bodenbelag immer wieder TOP! … Erik S. bei Google , 5 von 5 Sternen Sehr zuverlässig, freundlich und qualitativ sehr hochwertige Arbeit! Kathrin W. bei Google , 5 von 5 Sternen Wir haben unser komplettes Haus von Herrn Tezgel und seinen Angestellten fliesen lassen. Auch die Bäder und die Treppen. Wir sind mit der Arbeit mehr als … Sara J. bei Google , 5 von 5 Sternen Zurück Weiter 5,0 von 5 Sternen , 27 Bewertungen bei Google , Stand September 2026 Alle Bewertungen bei Google lesen , öffnet in neuem Tab",
+  "vermerk": "verschoben (Folge M-B7 bzw. Tun momentZuerst), wortgleich an anderer Stelle der Seite"
+ },
+ {
+  "seite": "/fliesen",
+  "teil": "main_zeilen",
+  "alt": "Hilfen",
+  "vermerk": "Gruppenlabel „Hilfen“ entfällt: Hilfen stehen als Zeilen unter den Werkzeugen im Schritt (Nacharbeit SF-B, Befund /bad Abschluss)"
+ },
+ {
+  "seite": "/fliesen",
+  "teil": "main_zeilen",
+  "alt": "Hier wählen Sie Raum, Untergrund, Fliesengröße und Fläche.",
+  "vermerk": "Hilfen-Link auf ein Werkzeug, das im Schritt steht, entfällt (M-B3 Nr. 5; Daten bleiben, Filter über `seite`)"
+ },
+ {
+  "seite": "/fliesen",
+  "block": "main",
+  "entfernt": "Mehr zum Thema Bad und Dusche Estrich und Untergrund Hilfen",
+  "vermerk": "Gruppenlabel „Hilfen“ entfällt: Hilfen stehen als Zeilen unter den Werkzeugen im Schritt (Nacharbeit SF-B, Befund /bad Abschluss)"
+ },
+ {
+  "seite": "/fliesen",
+  "block": "main",
+  "entfernt": "Hier wählen Sie Raum, Untergrund, Fliesengröße und Fläche.",
+  "vermerk": "Hilfen-Link auf ein Werkzeug, das im Schritt steht, entfällt (M-B3 Nr. 5; Daten bleiben, Filter über `seite`)"
+ },
+ {
+  "seite": "/fliesen",
+  "teil": "ueberschriften",
+  "alt": "h3: Hilfen",
+  "vermerk": "Gruppenlabel „Hilfen“ entfällt: Hilfen stehen als Zeilen unter den Werkzeugen im Schritt (Nacharbeit SF-B, Befund /bad Abschluss)"
+ },
+ {
+  "seite": "/ueber-uns",
+  "block": "main",
+  "entfernt": "Gegründet 2008 in Aßlar · HWK Wiesbaden So sind wir gewach­sen. Von der Betriebsgründung in Aßlar bis zum Fliesenfachbetrieb für ganz Mittelhessen: So hat sich Fliesenverlegung Tezgel unter Deniz Tezgel entwickelt. 2008 Betriebsgründung in Aßlar Gründung der Fliesenverlegung Tezgel und Eintragung bei der Handwerkskammer Wiesbaden durch Deniz Tezgel. 2014 Große Fliesen mit wenig Fugen Neue Werkzeuge zum Schneiden und Anheben großer Fliesen: So liegen auch sehr große Fliesen millimetergenau. 2019 Abdichtung nach DIN 18534 als Standard Abdichtung nach Norm für bodengleiche Duschen und Feuchträume. Heute Ihr Fliesenfachbetrieb in Mittelhessen Fester Partner für private Bauherren und anspruchsvolle Sanierungen in Aßlar, Wetzlar und ganz Hessen. „Die Zufriedenheit unserer Kunden ist die beste Reklame für uns.“ Deniz Tezgel · Inhaber & Fach­betriebs­leiter, Fliesenverlegung Tezgel",
+  "vermerk": "Klammer-Erklärung (Glossar, Wortlaut aus config/glossar.ts) wandert mit dem ersten Vorkommen (K-011, M-B7 Risiko); Wortlaut der Sätze gleich"
+ },
+ {
+  "seite": "/referenzen",
+  "block": "main",
+  "entfernt": "Das alles gehört zu unserer Arbeit. Hier sehen Sie Bäder, Terrassen, Treppen und Großformate (große Fliesen, zum Beispiel 120 × 260 cm; es gibt dann weniger Fugen), die wir gebaut haben. Unter „So arbeiten wir“ finden Sie Fotos von unseren Baustellen. Dazu kommen die Bewertungen unserer Kunden mit 5,0 Sternen bei Google. Badsanierung und neue Dusche Böden und Wände in Haus und Wohnung Balkon und Terrasse Reparatur von Fliesen und Fugen Wir nehmen die alten Fliesen heraus und bereiten den Untergrund (alles, was unter der Fliese liegt, zum Beispiel Estrich, Putz oder alte Fliesen) vor. Dann verlegen wir neue Fliesen, auch Großformate. Seit 2019 ist die Abdichtung (eine wasserdichte Schicht direkt unter den Fliesen, damit kein Wasser in Wand und Boden dringt) bei uns Standard. Wir arbeiten nach DIN 18534 (die Regel für Abdichtungen in Bad und Dusche). Wohnen Sie während der Arbeiten im Haus, schützen wir Ihre Räume vor Staub. Dazu gehören auch barrierefreie (so gebaut, dass man es auch mit Rollator oder Rollstuhl gut nutzen kann) Bäder, zum Beispiel mit einer Dusche ohne Stufe. So entstehen diese Arbeiten. Deniz Tezgel ist Ihr fester Ansprechpartner, von der ersten Skizze bis zum fertigen Raum. 01 Termin bei Ihnen vor Ort Deniz Tezgel kommt zu Ihnen. Er schaut sich den Raum genau an und prüft den Untergrund. Der Termin ist kostenfrei. 02 Planen und auswählen Sie wählen mit uns Fliesen und die Farbe der Fugen aus. Danach bekommen Sie ein Angebot mit festem Preis. 03 Verlegen und übergeben Wir verlegen Fliese für Fliese und übergeben Ihnen den Raum sauber gefegt. Zum Schluss gehen wir alles gemeinsam durch.",
+  "vermerk": "Klammer-Erklärung (Glossar, Wortlaut aus config/glossar.ts) wandert mit dem ersten Vorkommen (K-011, M-B7 Risiko); Wortlaut der Sätze gleich"
+ },
+ {
+  "seite": "/blog",
+  "teil": "main_zeilen",
+  "alt": "Sie möchten Ihre Wanne gegen eine bodengleiche Dusche (eine Dusche ohne Stufe, auf gleicher Höhe wie der Boden im Bad) tauschen? Dann stellen sich viele Fragen.",
+  "vermerk": "Klammer-Erklärung (Glossar, Wortlaut aus config/glossar.ts) wandert mit dem ersten Vorkommen (K-011, M-B7 Risiko); Wortlaut der Sätze gleich"
+ },
+ {
+  "seite": "/blog",
+  "teil": "main_zeilen",
+  "alt": "Welcher Ablauf passt in Ihre bodengleiche Dusche? Wir vergleichen die Duschrinne (ein schmaler, langer Ablauf im Boden der Dusche) mit dem Punktablauf (ein kleiner, quadratischer Ablauf im Boden der Dusche). Dazu zeigen wir, worauf es bei Fliesen, Abdichtung und Reinigung ankommt.",
+  "vermerk": "Klammer-Erklärung (Glossar, Wortlaut aus config/glossar.ts) wandert mit dem ersten Vorkommen (K-011, M-B7 Risiko); Wortlaut der Sätze gleich"
+ },
+ {
+  "seite": "/blog",
+  "block": "main",
+  "entfernt": "Vieles rund ums Bad ist schwer zu verstehen. Sie möchten Ihre Wanne gegen eine bodengleiche Dusche (eine Dusche ohne Stufe, auf gleicher Höhe wie der Boden im Bad) tauschen? Dann stellen sich viele Fragen. Wie muss der Untergrund (alles, was unter der Fliese liegt, zum Beispiel Estrich, Putz oder alte Fliesen) sein? Was muss abgedichtet werden, und was kostet das? Hier finden Sie Antworten.",
+  "vermerk": "Klammer-Erklärung (Glossar, Wortlaut aus config/glossar.ts) wandert mit dem ersten Vorkommen (K-011, M-B7 Risiko); Wortlaut der Sätze gleich"
+ },
+ {
+  "seite": "/blog",
+  "block": "main",
+  "entfernt": "Dusche?",
+  "vermerk": "verschoben (Folge M-B7 bzw. Tun momentZuerst), wortgleich an anderer Stelle der Seite"
+ }
+]

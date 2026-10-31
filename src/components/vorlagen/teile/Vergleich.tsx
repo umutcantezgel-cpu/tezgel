@@ -6,11 +6,17 @@
 // statt einer Kartenreihe). Darunter Bauweise für Bauweise untereinander in der Lesebreite. Die Schnitte stehen im selben Maßstab: Wie hoch
 // der Belag über seinem Unterbau liegt, sieht man ohne Zahl (Stelzlager oben, Splittbett darunter, gebunden am tiefsten).
 // Fläche Fliese: Sie setzt den Abschnitt gegen „Was wir tun“ auf Kalk ab. Ohne Bewegung (Ruhe; der große Moment der Seite
-// steht direkt davor). Der Abschnitt zeichnet spät (unter dem ersten Bildschirm). Serverkomponente.
+// steht direkt davor). Der Abschnitt zeichnet spät (unter dem ersten Bildschirm).
+// Aufklapper (UM-E4-SICHT-FIX M-B4, E-104 Nr. 3): Offen stehen je Bauweise Schnitt, Name und das Kriterium, das die Wahl
+// entscheidet (`offen`, auf /balkon-terrasse „Geeignet für“), ab lg in drei Spalten, mobil untereinander. Die übrigen Kriterien
+// stehen im nativen Aufklapper „Alle Merkmale im Vergleich“: geöffnet ab lg die fluchtende Tabelle (Subgrid) wie bisher, mobil
+// Bauweise für Bauweise in fester Folge. Der Hinweis (Plattenstärke) steht im Aufklapper „Mehr erfahren“. Keine Reiter: Der
+// ganze Inhalt steht im DOM (EP1), lesbarkeit.mjs öffnet jedes details vor dem Lesen und misst so jede Zelle mit. Serverkomponente.
 import type { ComponentType } from 'react';
 import clsx from 'clsx';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Textmarken from '@/components/kern/Textmarken';
+import Aufklapper from './Aufklapper';
 import { Linie, Planrahmen, Punkt, pfeil, schraffur } from '@/components/kern/vignetten/zeichnen';
 import type { VergleichInhalt, VergleichSchnitt } from '../inhalt';
 
@@ -100,13 +106,34 @@ function Gebunden() {
 
 const SCHNITTE: Record<VergleichSchnitt, ComponentType> = { stelzlager: Stelzlager, splittbett: Splittbett, gebunden: Gebunden };
 
-// Zeilen je Spalte ab lg: Schnitt, Name und je Kriterium eine (Subgrid; Klassen fest im Quelltext, je Kriterienzahl)
-const SPALTE_ZEILEN: Record<number, string> = { 3: 'lg:row-span-5', 4: 'lg:row-span-6', 5: 'lg:row-span-7', 6: 'lg:row-span-8' };
-const LISTE_ZEILEN: Record<number, string> = { 3: 'lg:row-span-3', 4: 'lg:row-span-4', 5: 'lg:row-span-5', 6: 'lg:row-span-6' };
+// Zeilen je Spalte ab lg (Subgrid; Klassen fest im Quelltext): offen Schnitt, Name und das offene Kriterium; im Aufklapper der
+// Name und je übriges Kriterium eine Zeile (bei 3 bis 6 Kriterien also 3 bis 6 Zeilen, die Liste 2 bis 5)
+const ZEILEN: Record<number, string> = { 2: 'lg:row-span-2', 3: 'lg:row-span-3', 4: 'lg:row-span-4', 5: 'lg:row-span-5', 6: 'lg:row-span-6' };
+
+/** ein Kriterium als Zeile an der Fuge: Name und Wert (als Absatz, damit lesbarkeit.mjs jede Zelle für sich misst) */
+function Kriterium({ name, wert }: { name: string; wert: string }) {
+  return (
+    <div className="border-t border-fuge py-4 last:border-b">
+      <dt className="font-text text-fs-2 font-semibold text-tinte-2">{name}</dt>
+      <dd className="mt-1 font-text text-fs-3 text-pretty text-tinte">
+        <p>
+          <Textmarken text={wert} />
+        </p>
+      </dd>
+    </div>
+  );
+}
+
+// Spalte je Bauweise: bis lg in der Lesebreite mittig wie die Fliesen in „Was wir tun“, ab lg ein Subgrid über die gemeinsamen
+// Zeilen mit demselben Innenabstand, die Fuge zwischen den Spalten
+const spalte = (i: number, zeilen: string) =>
+  clsx('mx-auto grid w-full max-w-mass content-start lg:max-w-full lg:grid-rows-subgrid lg:px-8', zeilen, i > 0 && 'lg:border-l lg:border-fuge');
 
 export default function Vergleich({ inhalt }: { inhalt: VergleichInhalt }) {
-  const zeilen = inhalt.kriterien.length;
-  if (!SPALTE_ZEILEN[zeilen]) throw new Error(`Vergleich: ${zeilen} Kriterien, vorgesehen sind 3 bis 6`);
+  const zahl = inhalt.kriterien.length;
+  if (zahl < 3 || zahl > 6) throw new Error(`Vergleich: ${zahl} Kriterien, vorgesehen sind 3 bis 6`);
+  const offen = inhalt.kriterien.find((k) => k.id === inhalt.offen) ?? inhalt.kriterien[0];
+  const uebrige = inhalt.kriterien.filter((k) => k !== offen);
   return (
     <Abschnitt
       id="vergleich"
@@ -118,51 +145,53 @@ export default function Vergleich({ inhalt }: { inhalt: VergleichInhalt }) {
       titel={inhalt.titel}
       einleitung={inhalt.einleitung ? <p><Textmarken text={inhalt.einleitung} /></p> : undefined}
     >
-      {/* je Bauweise: Schnitt, Name, Kriterien; ab lg je Spalte ein Subgrid über die gemeinsamen Zeilen, gleich breite Spalten
-          mit demselben Innenabstand (die Gruppe greift dafür um ihn über den Satzspiegel). Gruppen statt Liste: Als li zählte
-          lesbarkeit.mjs jede Spalte als einen Satz von rund 50 Wörtern, wie es eine Tabelle nicht täte. Jeder Wert steht dagegen
-          als Absatz in seiner Zelle: So misst lesbarkeit.mjs (p und li, kein dd) jede Zelle für sich mit, Satzlänge, Flesch und
-          Glossar. Die Zellen tragen Textmarken: Steht ein Fachwort hier zum ersten Mal auf der Seite, folgt seine Erklärung in
-          der Zelle (K-011) */}
+      {/* je Bauweise: Schnitt, Name und das offene Kriterium; ab lg je Spalte ein Subgrid über die gemeinsamen Zeilen, gleich breite
+          Spalten mit demselben Innenabstand (die Gruppe greift dafür um ihn über den Satzspiegel). Gruppen statt Liste: Als li
+          zählte lesbarkeit.mjs jede Spalte als einen Satz von rund 50 Wörtern, wie es eine Tabelle nicht täte. Jeder Wert steht
+          dagegen als Absatz in seiner Zelle: So misst lesbarkeit.mjs (p und li, kein dd) jede Zelle für sich mit, Satzlänge,
+          Flesch und Glossar. Die Zellen tragen Textmarken: Steht ein Fachwort hier zum ersten Mal auf der Seite, folgt seine
+          Erklärung in der Zelle (K-011), auch im Aufklapper (lesbarkeit.mjs liest geöffnet) */}
       <div className="grid grid-cols-1 gap-16 lg:-mx-8 lg:grid-cols-3 lg:gap-0">
         {inhalt.spalten.map((s, i) => {
           const Schnitt = SCHNITTE[s.schnitt];
           return (
-            <div
-              key={s.name}
-              className={clsx(
-                // bis lg Bauweise für Bauweise in der Lesebreite, mittig wie die Fliesen in „Was wir tun“
-                'mx-auto grid w-full max-w-mass content-start lg:max-w-full lg:grid-rows-subgrid lg:px-8',
-                SPALTE_ZEILEN[zeilen],
-                i > 0 && 'lg:border-l lg:border-fuge',
-              )}
-            >
-              <div className="pb-6 text-tinte">
+            // von md bis lg Schnitt links, Name und Kriterium rechts: untereinander stand je Bauweise ein Schnitt in voller
+            // Lesebreite, bei t768 und q844 rund 600 px je Bauweise (Prüfung SF-B, Nacharbeit); ab lg wieder eine Spalte im Subgrid
+            <div key={s.name} className={clsx(spalte(i, ZEILEN[3]), 'md:grid-cols-2 md:gap-x-8 lg:grid-cols-1')}>
+              <div className="pb-6 text-tinte md:row-span-2 lg:row-span-1">
                 <Schnitt />
               </div>
               <h3 className="pb-4 font-anzeige text-fs-5 font-extrabold text-tinte">{s.name}</h3>
-              <dl className={clsx('grid lg:grid-rows-subgrid', LISTE_ZEILEN[zeilen])}>
-                {inhalt.kriterien.map((k) => (
-                  <div key={k.id} className="border-t border-fuge py-4 last:border-b">
-                    <dt className="font-text text-fs-2 font-semibold text-tinte-2">{k.name}</dt>
-                    <dd className="mt-1 font-text text-fs-3 text-pretty text-tinte">
-                      <p>
-                        <Textmarken text={s.werte[k.id]} />
-                      </p>
-                    </dd>
-                  </div>
-                ))}
+              <dl>
+                <Kriterium name={offen.name} wert={s.werte[offen.id]} />
               </dl>
             </div>
           );
         })}
       </div>
-      {inhalt.hinweis && (
-        <div className="mx-auto mt-16 max-w-mass border-l-2 border-tinte pl-6">
-          <p className="font-text text-fs-3 text-pretty text-tinte">
-            <strong className="font-semibold">{inhalt.hinweis.stichwort}:</strong> <Textmarken text={inhalt.hinweis.text} />
-          </p>
+      <Aufklapper zeile="Alle Merkmale im Vergleich" className="mt-12" zeileKlassen="mx-auto max-w-mass border-y border-fuge">
+        <div className="grid grid-cols-1 gap-12 pt-8 lg:-mx-8 lg:grid-cols-3 lg:gap-0">
+          {inhalt.spalten.map((s, i) => (
+            <div key={s.name} className={spalte(i, ZEILEN[zahl])}>
+              {/* Name der Bauweise als Zeile, keine zweite Überschrift (die H3 stehen offen darüber) */}
+              <p className="pb-4 font-text text-fs-3 font-semibold text-tinte">{s.name}</p>
+              <dl className={clsx('grid lg:grid-rows-subgrid', ZEILEN[zahl - 1])}>
+                {uebrige.map((k) => (
+                  <Kriterium key={k.id} name={k.name} wert={s.werte[k.id]} />
+                ))}
+              </dl>
+            </div>
+          ))}
         </div>
+      </Aufklapper>
+      {inhalt.hinweis && (
+        <Aufklapper zeile="Mehr erfahren" zeileKlassen="mx-auto max-w-mass border-b border-fuge">
+          <div className="mx-auto max-w-mass pt-4 pb-6">
+            <p className="border-l-2 border-tinte pl-6 font-text text-fs-3 text-pretty text-tinte">
+              <strong className="font-semibold">{inhalt.hinweis.stichwort}:</strong> <Textmarken text={inhalt.hinweis.text} />
+            </p>
+          </div>
+        </Aufklapper>
       )}
     </Abschnitt>
   );

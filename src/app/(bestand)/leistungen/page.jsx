@@ -93,15 +93,14 @@ export default function ServiceHubPage() {
         formularId="express-anfrage"
         // ein Anfrageweg auf der Seite (E4-W0-LEISTUNGEN, E3-SICHT): die ausführliche Projektanfrage steht auf /preise, hier
         // nur der Weg dorthin
+        // ein Abschluss (UM-E4-SICHT-FIX M-B3): „Sie möchten mehr erzählen?“ als Zeile mit H3 und Satz im Formular-Schritt neben den
+        // Öffnungszeiten statt als eigener Abschnitt danach (Text und Link gleich)
         werkzeug={{
           id: 'genauer',
           titel: 'Sie möchten mehr erzählen?',
           einleitung: RECHNER_SATZ,
-          inhalt: (
-            <p className="text-center">
-              <WeiterLink href="/preise#anfrage">Vorhaben genauer beschreiben</WeiterLink>
-            </p>
-          ),
+          imSchritt: true,
+          inhalt: <WeiterLink href="/preise#anfrage">Vorhaben genauer beschreiben</WeiterLink>,
         }}
       />
     </>

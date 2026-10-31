@@ -1,7 +1,8 @@
 // Bad (E3-BAU-01, KERN v3.6, Zusatz E3-BAU-K016): Erzählseite auf der Vorlage ErzaehlSeite. Der Inhalt steht als Daten in
 // `src/inhalte/bad.ts`; die Metadaten kommen aus dem Inhalt. Der große Moment „schichten“ steht im Platz `momente.tun`
-// (E-048: die Zeichnung des alten Einstiegs entfällt). Die Anfragewege (Projektcheck, darunter Badanfrage) stehen mittig als
-// Werkzeug nach dem nächsten Schritt; die Funnel werden nachgeladen (TEMPO, Z-08 / E-025) wie im Bestand.
+// (E-048: die Zeichnung des alten Einstiegs entfällt). Die Anfragewege (Projektcheck, darunter Badanfrage) stehen seit
+// UM-E4-SICHT-FIX M-B3 im nächsten Schritt unter dem Hauptknopf (die Badanfrage geschlossen); die Funnel werden nachgeladen
+// (TEMPO, Z-08 / E-025) wie im Bestand.
 // Strukturierte Daten (SeitenDaten) stehen auf dieser Seite; das Layout vererbt keine mehr.
 import dynamic from 'next/dynamic';
 import ErzaehlSeite from '@/components/vorlagen/ErzaehlSeite';
@@ -51,24 +52,13 @@ export default function BadPage() {
             <ErzaehlSeite
                 inhalt={BAD}
                 momente={{ tun: <Schichten /> }}
-                werkzeug={{
-                    id: 'anfragewege',
-                    titel: '',
-                    flaeche: 'fliese',
-                    kopf: 'gestapelt',
-                    // K-016 (Abnahme E3-BAU-01): beide Werkzeuge mittig untereinander, ohne Rückfrage daneben (kein zweiter Strang,
-                    // keine Firmendaten außerhalb von /kontakt und /ueber-uns)
-                    inhalt: (
-                        <div className="mx-auto max-w-mass">
-                            <div id="projekt-check" role="region" aria-label="Projektcheck fürs Bad">
-                                <BadProjektCheck />
-                            </div>
-                            <div id="anfrage" role="region" aria-label="Badanfrage" className="mt-12 border-t border-fuge pt-12">
-                                <BadanfrageFunnel />
-                            </div>
-                        </div>
-                    ),
-                }}
+                // ein Abschluss (UM-E4-SICHT-FIX M-B3): beide Werkzeuge im nächsten Schritt unter dem Hauptknopf, ohne Rückfrage
+                // daneben (K-016); der Projektcheck offen (F-05 prüft sichtbare Inhalte in #projekt-check), die Badanfrage im
+                // geschlossenen Aufklapper (F-04, E-104 Nr. 4); Kennungen und Regionsnamen wie bisher
+                werkzeug={[
+                    { id: 'projekt-check', titel: 'Projektcheck fürs Bad', imSchritt: true, seite: '/bad/projekt-check', inhalt: <BadProjektCheck /> },
+                    { id: 'anfrage', titel: 'Badanfrage', imSchritt: true, zu: 'Badanfrage öffnen', seite: '/bad/badanfrage', inhalt: <BadanfrageFunnel /> },
+                ]}
             />
         </>
     );

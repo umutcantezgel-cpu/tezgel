@@ -5,7 +5,12 @@
 // Fläche Fliese als Abschluss vor dem Fuß. Variante mit Formular (Startseite #termin, Ortsseite #anfrage; E-044, E-047): Kopf
 // mittig, darunter die Anfrage mit vorhandener Logik (Slot, Pflichtfelder und Empfänger unverändert, G8), dann Anruf,
 // WhatsApp und ein Zusatz (Öffnungszeiten oder Nachbarorte) in einer ruhigen Zeile. Die Rufnummer steht groß wie auf einem
-// Bauschild (P1). Serverkomponente.
+// Bauschild (P1).
+// Ein Abschluss je Seite (UM-E4-SICHT-FIX M-B3): Werkzeuge mit `imSchritt` stehen hier unter Anruf und WhatsApp (Slot
+// `werkzeuge`, je Werkzeug offen oder im geschlossenen Aufklapper), darunter Hilfen und „Mehr zum Thema“ als eine ruhige
+// Linkzeile: beide Gruppen ab md nebeneinander, eine Gruppe allein mit ihren Links in zwei Spalten. Stehen Werkzeuge im Schritt,
+// folgen die Hilfen als weitere Zeilen ihrer Liste, die Linkzeile trägt dann nur „Mehr zum Thema“. Der Hauptknopf bleibt der
+// einzige dunkle Knopf des Blocks, solange die Werkzeuge geschlossen sind. Serverkomponente.
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import clsx from 'clsx';
@@ -117,6 +122,8 @@ export interface SchrittProps {
   titelId?: string;
   /** dritter Block unter Anruf und WhatsApp, nur mit Formular (z. B. Öffnungszeiten, Nachbarorte) */
   zusatz?: ReactNode;
+  /** Werkzeuge der Seite im Schritt (M-B3), ohne Formular: unter Anruf und WhatsApp, über Hilfen und „Mehr zum Thema“ */
+  werkzeuge?: ReactNode;
 }
 
 /** Linkname mit Pfeil am letzten Wort: bricht der Name bei großer Schrift um, folgt der Pfeil dem letzten Wort, statt am
@@ -146,7 +153,83 @@ function MitPfeil({ text }: { text: string }) {
   );
 }
 
-export default function Schritt({ inhalt, pfad, formular, titelId = 'anfrage', zusatz }: SchrittProps) {
+/** Hilfen und „Mehr zum Thema“ als eine ruhige Linkzeile (M-B3): zwei Gruppen ab md nebeneinander, eine Gruppe allein mit ihren
+ *  Links in zwei Spalten; in zwei Spalten ohne Fuge unter jedem Link (sie stünde sonst nur unter dem linken der letzten Reihe) */
+function Linkzeile({ verwandte = [], hilfen = [] }: { verwandte?: SchrittInhalt['verwandte']; hilfen?: SchrittInhalt['hilfen'] }) {
+  const mitVerwandten = verwandte.length > 0;
+  const mitHilfen = hilfen.length > 0;
+  if (!mitVerwandten && !mitHilfen) return null;
+  const beide = mitVerwandten && mitHilfen;
+  const liste = clsx('mt-2', !beide && 'md:grid md:grid-cols-2 md:gap-x-8');
+  const eintrag = clsx('border-b border-fuge last:border-b-0', !beide && 'md:border-b-0');
+  return (
+    <div className={clsx('grid w-full gap-6 border-t border-fuge pt-6', beide && 'md:grid-cols-2 md:gap-8')}>
+      {mitVerwandten && (
+        <div>
+          <h3 className="font-text text-fs-3 font-semibold text-tinte">Mehr zum Thema</h3>
+          <ul className={liste}>
+            {verwandte.map((v) => (
+              <li key={v.href} className={eintrag}>
+                <Link href={v.href} data-motion="zustand" className={clsx(linkKlassen, 'inline-block min-h-11 py-2 font-text text-fs-3')}>
+                  <MitPfeil text={v.name} />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {mitHilfen && (
+        <div>
+          <h3 className="font-text text-fs-3 font-semibold text-tinte">Hilfen</h3>
+          <ul className={liste}>
+            {hilfen.map((h) => (
+              <li key={h.href} className={eintrag}>
+                <Link href={h.href} data-motion="zustand" className={clsx(linkKlassen, 'flex min-h-11 flex-col items-start py-3 no-underline')}>
+                  {/* Pfeil am letzten Wort wie bei „Mehr zum Thema“ (Browserprüfung E4-W1, Runde 4) */}
+                  <span className="font-semibold text-fs-3 underline decoration-fuge underline-offset-4">
+                    <MitPfeil text={h.name} />
+                  </span>
+                  {h.satz && (
+                    <span className="mt-1 font-text text-fs-2 text-tinte-2">
+                      <Textmarken text={h.satz} />
+                    </span>
+                  )}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/** Hilfen unter den Werkzeugen im Schritt (M-B3): als weitere Zeilen derselben Liste an der Fuge, Name mit Pfeil wie die Zeile
+ *  eines Aufklappers mit Plus, der Satz darunter. Vorher standen sie als eigene Gruppe „Hilfen“ darunter; auf /bad blieb dort nur
+ *  ein einzelner Link ohne Satz und las sich wie ein Rest (Prüfung SF-B, Nacharbeit) */
+function Hilfezeilen({ hilfen = [] }: { hilfen?: SchrittInhalt['hilfen'] }) {
+  if (!hilfen.length) return null;
+  return (
+    <ul>
+      {hilfen.map((h) => (
+        <li key={h.href} className="border-t border-fuge">
+          <Link href={h.href} data-motion="zustand" className={clsx(linkKlassen, 'flex min-h-12 flex-col items-start py-3 no-underline')}>
+            <span className="font-text text-fs-3 font-semibold text-tinte underline decoration-fuge underline-offset-4">
+              <MitPfeil text={h.name} />
+            </span>
+            {h.satz && (
+              <span className="mt-1 font-text text-fs-2 text-tinte-2">
+                <Textmarken text={h.satz} />
+              </span>
+            )}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+export default function Schritt({ inhalt, pfad, formular, titelId = 'anfrage', zusatz, werkzeuge }: SchrittProps) {
   if (formular) return <FormularSchritt inhalt={inhalt} pfad={pfad} formular={formular} titelId={titelId} zusatz={zusatz} />;
   const { contact } = COMPANY_DATA;
   return (
@@ -192,42 +275,13 @@ export default function Schritt({ inhalt, pfad, formular, titelId = 'anfrage', z
             </a>
           </div>
         </div>
-        {inhalt.verwandte && inhalt.verwandte.length > 0 && (
-          <div className="w-full border-t border-fuge pt-6">
-            <h3 className="font-text text-fs-3 font-semibold text-tinte">Mehr zum Thema</h3>
-            <ul className="mt-2">
-              {inhalt.verwandte.map((v) => (
-                <li key={v.href} className="border-b border-fuge last:border-b-0">
-                  <Link href={v.href} data-motion="zustand" className={clsx(linkKlassen, 'inline-block min-h-11 py-2 font-text text-fs-3')}>
-                    <MitPfeil text={v.name} />
-                  </Link>
-                </li>
-              ))}
-            </ul>
+        {werkzeuge && (
+          <div className="w-full">
+            {werkzeuge}
+            <Hilfezeilen hilfen={inhalt.hilfen} />
           </div>
         )}
-        {inhalt.hilfen && inhalt.hilfen.length > 0 && (
-          <div className="w-full border-t border-fuge pt-6">
-            <h3 className="font-text text-fs-3 font-semibold text-tinte">Hilfen</h3>
-            <ul className="mt-2">
-              {inhalt.hilfen.map((h) => (
-                <li key={h.href} className="border-b border-fuge last:border-b-0">
-                  <Link href={h.href} data-motion="zustand" className={clsx(linkKlassen, 'flex min-h-11 flex-col items-start py-3 no-underline')}>
-                    {/* Pfeil am letzten Wort wie bei „Mehr zum Thema“ (Browserprüfung E4-W1, Runde 4) */}
-                    <span className="font-semibold text-fs-3 underline decoration-fuge underline-offset-4">
-                      <MitPfeil text={h.name} />
-                    </span>
-                    {h.satz && (
-                      <span className="mt-1 font-text text-fs-2 text-tinte-2">
-                        <Textmarken text={h.satz} />
-                      </span>
-                    )}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+        <Linkzeile verwandte={inhalt.verwandte} hilfen={werkzeuge ? undefined : inhalt.hilfen} />
       </div>
     </Abschnitt>
   );

@@ -23,11 +23,14 @@ export const metadata = METADATEN;
 
 // Werkzeug der Seite (Bestand: Abschnitt `anfrage`, aria-label „Badanfrage“): der Funnel allein. Die Rückfrage-Spalte des
 // Bestands (Ansprechpartner, Sitz) entfällt: K-016 verlangt einen Strang je Bildschirm, und der Sitz ist ein Firmendatum.
+// ein Abschluss (UM-E4-SICHT-FIX M-B3): Badanfrage im nächsten Schritt unter dem Hauptknopf, geschlossen (F-04, E-104 Nr. 4); der
+// Hilfen-Link „Angebot anfordern“ auf /bad/badanfrage entfällt dann (gleiches Werkzeug im Block)
 const ANFRAGE = {
     id: 'anfrage',
     titel: 'Badanfrage',
-    kopf: 'gestapelt',
-    flaeche: 'fliese',
+    imSchritt: true,
+    zu: 'Badanfrage öffnen',
+    seite: '/bad/badanfrage',
     inhalt: <BadanfrageFunnel />
 };
 

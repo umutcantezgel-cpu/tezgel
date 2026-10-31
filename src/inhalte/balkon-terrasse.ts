@@ -52,8 +52,12 @@ export const BALKON_TERRASSE: ErzaehlInhalt = {
       'Das Wasser läuft ab. Der Belag bekommt ein [[gefaelle|Gefälle]] von mindestens 1,5 bis 2\u00A0%.',
       'Platten auf Stelzlagern. Ob Stelzlager zu Ihrer Fläche passen, prüfen wir vor Ort, bevor wir einen Belag planen.',
       'Die richtige Oberfläche. Wir verlegen Platten mit [[rutschhemmung|Rutschhemmung R10 oder R11]], je nach Raum.',
-      'Der Aufbau darunter. Auch der [[untergrund|Untergrund]] gehört zu unseren Leistungen. Ebenso die [[abdichtung|Abdichtung]].',
+      // „Abdichtung“ erklärt seit M-B7 (momentZuerst) die Legende der Gefälle-Zeichnung davor (GefaelleBalkon `fachwort`)
+      'Der Aufbau darunter. Auch der [[untergrund|Untergrund]] gehört zu unseren Leistungen. Ebenso die Abdichtung.',
     ],
+    // großer Moment zuerst (K-009, M-B7): die Gefälle-Zeichnung direkt nach Kopf und Satz, die Prüfliste danach (Sicht
+    // Anlauf 1, b3: die Zeichnung stand klein unter der Prüfliste)
+    momentZuerst: true,
   },
   // Vergleich der Aufbauten (UM-E4-EP1, Rückführung nach UM-5): Wortlaut aus der Seite vor dem Relaunch, Abschnitt „Aufbauten im
   // Vergleich: Stelzlager, Splittbett, gebunden“ mit CONSTRUCTIONS, den Zeilen der Tabelle und dem Hinweis zur Plattenstärke
@@ -67,6 +71,8 @@ export const BALKON_TERRASSE: ErzaehlInhalt = {
   // Die Brotkrumen und Links „Aufbauten im Vergleich“ der Unterseiten zeigen wieder auf einen Vergleich.
   vergleich: {
     titel: 'Drei Aufbauten im Vergleich.',
+    // offen neben Schnitt und Name (M-B4): „Geeignet für“ entscheidet die Wahl; die übrigen Merkmale im Aufklapper
+    offen: 'geeignet',
     einleitung:
       'Alle drei Bauweisen funktionieren, wenn sie zur Fläche passen. Entscheidend sind verfügbare Aufbauhöhe, Untergrund und der Weg, den das Wasser nehmen soll.',
     kriterien: [
@@ -150,8 +156,9 @@ export const BALKON_TERRASSE: ErzaehlInhalt = {
     // öffnet die Galerie auf /referenzen mit der Auswahl „Balkon und Terrasse“ (GalerieWahl liest ?raum=)
     verweis: { name: 'Alle Arbeiten ansehen', href: '/referenzen?raum=balkon-und-terrasse#unsere-arbeiten' },
   },
-  // Qualitätsversprechen (UM-E4-EP3) vor dem nächsten Schritt; Wortlaut aus COMPANY_DATA.qualityPromises
-  versprechen: {},
+  // Qualitätsversprechen (UM-E4-EP3) vor dem nächsten Schritt; Wortlaut aus COMPANY_DATA.qualityPromises. Die Abdichtung erklärt
+  // die Legende der Gefälle-Zeichnung (außerhalb des Inhalts)
+  versprechen: { erklaert: ['abdichtung'] },
   schritt: {
     titel: 'Sprechen Sie mit uns über Ihren Balkon oder Ihre Terrasse.',
     satz: 'Rufen Sie an oder fragen Sie einen Termin an. Deniz Tezgel ruft Sie zurück.',
@@ -162,4 +169,7 @@ export const BALKON_TERRASSE: ErzaehlInhalt = {
       { name: 'Häufige Fragen', href: '/faq' },
     ],
   },
+  // Folge (K-009, M-B7): Fotos und Stimmen direkt nach der Lage, die echten Arbeiten kamen vorher erst nach drei Vierteln der
+  // Seite (Sicht Anlauf 1, a4)
+  belegVorn: true,
 };

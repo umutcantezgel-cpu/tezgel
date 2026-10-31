@@ -31,7 +31,7 @@
   1. `Das Wasser läuft ab` · `Der Belag bekommt ein [[gefaelle|Gefälle]] von mindestens 1,5 bis 2 %.` (F-21)
   2. `Platten auf Stelzlagern` · `Ob Stelzlager zu Ihrer Fläche passen, prüfen wir vor Ort, bevor wir einen Belag planen.` (F-11)
   3. `Die richtige Oberfläche` · `Wir verlegen Platten mit [[rutschhemmung|Rutschhemmung R10 oder R11]], je nach Raum.` (F-22)
-  4. `Der Aufbau darunter` · `Auch der [[untergrund|Untergrund]] gehört zu unseren Leistungen. Ebenso die [[abdichtung|Abdichtung]].` (F-08)
+  4. `Der Aufbau darunter` · `Auch der [[untergrund|Untergrund]] gehört zu unseren Leistungen. Ebenso die Abdichtung.` (F-08; „Abdichtung“ erklärt seit UM-E4-SICHT-FIX M-B7, `momentZuerst`, die Legende der Gefälle-Zeichnung davor: `Darunter liegt eine wasserdichte Schicht, die [[abdichtung|Abdichtung]]. Sie schützt den Beton.`)
 - Großer Moment `gefaelle-balkon`: Zeichnung eines Balkons, ein Regentropfen läuft über das Gefälle ab. Unterschrift: `Der Regen läuft vom Balkon ab.`
 
 ## 4 · So läuft es ab

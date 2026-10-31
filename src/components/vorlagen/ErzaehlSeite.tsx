@@ -24,12 +24,19 @@
 // - Zurückgeführte Inhalte (UM-E4-INHALT, UM-5) stehen je als eigener Abschnitt: der Vergleich aus dem Inhalt (`vergleich`) und
 //   ein Abschnitt der Seite (`nachTun`, z. B. die Werte auf /ueber-uns) nach „Was wir tun“; das Qualitätsversprechen aus dem
 //   Inhalt (`versprechen`) nach dem Beleg vor dem nächsten Schritt. Ohne diese Angaben bleibt die Seite, wie sie war (/).
+// - Folge (UM-E4-SICHT-FIX M-B7, `folge.ts`): Standard ist die Seitenformel; `belegVorn` im Inhalt setzt den Beleg direkt nach
+//   die Lage, der Slot `nachLage` einen eigenen Abschnitt direkt dahinter (nur Seiten aus K-009). Das Qualitätsversprechen kennt
+//   die Fachwörter aus den Teilen, die tatsächlich vor ihm stehen.
+// - Ein Abschluss je Seite (M-B3): Werkzeuge mit `imSchritt` stehen im nächsten Schritt unter Hauptknopf, Anruf und WhatsApp
+//   (mit Formular im Zusatz neben den Öffnungszeiten), ein Hilfen-Link auf ihre eigene Seite entfällt dann; übrige Werkzeuge
+//   stehen wie bisher danach.
 // Serverkomponente.
-import { Suspense, type ReactNode } from 'react';
+import { Fragment, Suspense, type ReactNode } from 'react';
 import Leitachse from '@/components/kern/Leitachse';
 import Seitenformel from '@/components/kern/Seitenformel';
 import { hauptziel } from '@/config/navigation';
 import type { ErzaehlInhalt } from './inhalt';
+import { erzaehlFolge, type ErzaehlTeil } from './folge';
 import Einstieg from './teile/Einstieg';
 import EinstiegMitte from './teile/EinstiegMitte';
 import EinstiegPlanblatt from './teile/EinstiegPlanblatt';
@@ -47,8 +54,12 @@ export interface ErzaehlSeiteProps {
   /** große Momente der Seite an ihrem Platz (Registereinträge, K-007); belegZwei steht als eigener Abschnitt mit H2 zwischen
    *  Fotos und Stimmen (E-045) */
   momente?: { tun?: ReactNode; ablauf?: ReactNode; beleg?: ReactNode; belegZwei?: ZweiterBeleg };
-  /** Werkzeug der Seite (Badanfrage, Preisrechner …) nach dem nächsten Schritt, Kennung wie im Bestand */
-  werkzeug?: Arbeitsabschnitt;
+  /** Werkzeug(e) der Seite (Badanfrage, Projektcheck …), Kennung wie im Bestand: mit `imSchritt` im nächsten Schritt (M-B3),
+   *  sonst als eigener Abschnitt nach ihm */
+  werkzeug?: Arbeitsabschnitt | Arbeitsabschnitt[];
+  /** eigener Abschnitt direkt nach der Lage, der seinen Kopf selbst mitbringt (Slot der Folge, M-B7; nur Seiten aus K-009,
+   *  z. B. die Firmengeschichte auf /ueber-uns) */
+  nachLage?: ReactNode;
   /** eigener Abschnitt nach „Was wir tun“ (und dem Vergleich), der seinen Kopf selbst mitbringt (z. B. die Werte auf /ueber-uns,
    *  UM-E4-EP2); erklärt er Fachwörter, nennt der Inhalt sie in `versprechen.erklaert` */
   nachTun?: ReactNode;
@@ -64,29 +75,68 @@ export interface ErzaehlSeiteProps {
   formularId?: string;
 }
 
-export default function ErzaehlSeite({ inhalt, momente, werkzeug, nachTun, nachBeleg, einstiegBild, formular, formularId }: ErzaehlSeiteProps) {
+export default function ErzaehlSeite({ inhalt, momente, werkzeug, nachLage, nachTun, nachBeleg, einstiegBild, formular, formularId }: ErzaehlSeiteProps) {
   const { worum } = inhalt;
   const ziel = hauptziel(inhalt.pfad);
-  // Texte vor dem Qualitätsversprechen (der Vorspann steht im mittigen Einstieg nicht auf der Seite)
-  const vorher = [worum.einstieg === 'mitte' ? null : worum.vorspann, inhalt.lage, inhalt.tun, inhalt.vergleich, inhalt.ablauf, inhalt.beleg];
-  const rest = (
-    <Suspense fallback={<div aria-hidden="true" className="min-h-dvh noscript:hidden" />}>
-      <Lage inhalt={inhalt.lage} />
-      <Tun inhalt={inhalt.tun} moment={momente?.tun} />
-      {inhalt.vergleich && <Vergleich inhalt={inhalt.vergleich} />}
-      {nachTun}
-      <Ablauf inhalt={inhalt.ablauf} moment={momente?.ablauf} />
-      <Beleg inhalt={inhalt.beleg} pfad={inhalt.pfad} moment={momente?.beleg} zweiter={momente?.belegZwei} />
-      {nachBeleg}
-      {inhalt.versprechen && <Versprechen vorher={vorher} erklaert={inhalt.versprechen.erklaert} />}
+  const folge = erzaehlFolge({ belegVorn: inhalt.belegVorn });
+  // Werkzeuge im Schritt (M-B3) und danach; ein Hilfen-Link auf die eigene Seite eines Werkzeugs im Schritt entfällt
+  const werkzeuge = werkzeug ? [werkzeug].flat() : [];
+  const imSchritt = werkzeuge.filter((w) => w.imSchritt);
+  const seiten = new Set(imSchritt.map((w) => w.seite));
+  const schritt = imSchritt.length ? { ...inhalt.schritt, hilfen: inhalt.schritt.hilfen?.filter((h) => !seiten.has(h.href)) } : inhalt.schritt;
+  const imSchrittListe = imSchritt.length > 0 && (
+    <ul className="border-t border-fuge">
+      {imSchritt.map((w) => (
+        <li key={w.id} className="border-b border-fuge last:border-b-0">
+          <Werkzeug werkzeug={w} />
+        </li>
+      ))}
+    </ul>
+  );
+  // Texte vor dem Qualitätsversprechen in der tatsächlichen Folge (der Vorspann steht im mittigen Einstieg nicht auf der Seite)
+  const texte: Partial<Record<ErzaehlTeil, unknown>> = { lage: inhalt.lage, tun: inhalt.tun, vergleich: inhalt.vergleich, ablauf: inhalt.ablauf, beleg: inhalt.beleg };
+  const vorher = [worum.einstieg === 'mitte' ? null : worum.vorspann, ...folge.slice(0, folge.indexOf('versprechen')).flatMap((t) => (texte[t] ? [texte[t]] : []))];
+  const teile: Record<ErzaehlTeil, ReactNode> = {
+    lage: <Lage inhalt={inhalt.lage} />,
+    nachLage,
+    tun: <Tun inhalt={inhalt.tun} moment={momente?.tun} />,
+    vergleich: inhalt.vergleich && <Vergleich inhalt={inhalt.vergleich} />,
+    nachTun,
+    ablauf: <Ablauf inhalt={inhalt.ablauf} moment={momente?.ablauf} />,
+    beleg: <Beleg inhalt={inhalt.beleg} pfad={inhalt.pfad} moment={momente?.beleg} zweiter={momente?.belegZwei} />,
+    nachBeleg,
+    versprechen: inhalt.versprechen && <Versprechen vorher={vorher} erklaert={inhalt.versprechen.erklaert} />,
+    schritt: (
       <Schritt
-        inhalt={inhalt.schritt}
+        inhalt={schritt}
         pfad={inhalt.pfad}
         formular={formular}
         titelId={formularId ?? (ziel.startsWith('#') ? ziel.slice(1) : undefined)}
-        zusatz={formular ? <Oeffnungszeiten /> : undefined}
+        // mit Formular: Werkzeuge im Schritt als Zeile neben den Öffnungszeiten (z. B. „Sie möchten mehr erzählen?“ auf /leistungen)
+        zusatz={
+          formular ? (
+            imSchritt.length ? (
+              <div className="grid gap-8 md:grid-cols-2">
+                <Oeffnungszeiten />
+                {imSchritt.map((w) => (
+                  <Werkzeug key={w.id} werkzeug={w} />
+                ))}
+              </div>
+            ) : (
+              <Oeffnungszeiten />
+            )
+          ) : undefined
+        }
+        werkzeuge={formular ? undefined : imSchrittListe}
       />
-      {werkzeug && <Werkzeug werkzeug={werkzeug} />}
+    ),
+    werkzeug: werkzeuge.filter((w) => !w.imSchritt).map((w) => <Werkzeug key={w.id} werkzeug={w} />),
+  };
+  const rest = (
+    <Suspense fallback={<div aria-hidden="true" className="min-h-dvh noscript:hidden" />}>
+      {folge.map((t) => (
+        <Fragment key={t}>{teile[t]}</Fragment>
+      ))}
     </Suspense>
   );
   if (worum.einstieg === 'mitte' && worum.titelZeilen) {

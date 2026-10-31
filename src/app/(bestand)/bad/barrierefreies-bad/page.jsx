@@ -35,16 +35,8 @@ export default function BarrierefreiesBadPage() {
             <ErzaehlSeite
                 inhalt={BARRIEREFREIES_BAD}
                 momente={{ tun: <GefaelleDusche /> }}
-                werkzeug={{
-                    id: 'anfrage',
-                    titel: 'Badanfrage',
-                    flaeche: 'fliese',
-                    inhalt: (
-                        <div className="mx-auto max-w-mass">
-                            <BadanfrageFunnel />
-                        </div>
-                    ),
-                }}
+                // ein Abschluss (UM-E4-SICHT-FIX M-B3): Badanfrage im nächsten Schritt unter dem Hauptknopf, geschlossen (F-04, E-104 Nr. 4)
+                werkzeug={{ id: 'anfrage', titel: 'Badanfrage', imSchritt: true, zu: 'Badanfrage öffnen', seite: '/bad/badanfrage', inhalt: <BadanfrageFunnel /> }}
             />
         </>
     );

@@ -31,9 +31,21 @@ function Karten({ karten }: { karten: NonNullable<Wissensblock['karten']> }) {
   );
 }
 
-export function Block({ block, nummer, zeichnung }: { block: Wissensblock; nummer: number; zeichnung?: ReactNode }) {
+/** `aufFliese`: der Block steht direkt nach dem Einstieg an der Stelle der Lage auf Fliese, mit derselben kleineren Stufe
+ *  darüber wie sie (`wissenVorLage`, M-B7) */
+export function Block({ block, nummer, zeichnung, aufFliese = false }: { block: Wissensblock; nummer: number; zeichnung?: ReactNode; aufFliese?: boolean }) {
   return (
-    <Abschnitt id={`wissen-${nummer}`} formel="tun" leitachse spaet mitte titel={block.titel} einleitung={block.absatz ? <p><Textmarken text={block.absatz} /></p> : undefined}>
+    <Abschnitt
+      id={`wissen-${nummer}`}
+      formel="tun"
+      leitachse
+      spaet
+      mitte
+      flaeche={aufFliese ? 'fliese' : 'kalk'}
+      className={aufFliese ? 'lg:pt-16' : undefined}
+      titel={block.titel}
+      einleitung={block.absatz ? <p><Textmarken text={block.absatz} /></p> : undefined}
+    >
       <div className="flex flex-col gap-12">
         {block.karten && block.karten.length > 0 && <Karten karten={block.karten} />}
         {block.liste && block.liste.length > 0 && <Punktfliesen punkte={block.liste.map((p) => <Textmarken key={p} text={p} />)} />}
@@ -49,11 +61,12 @@ export function Block({ block, nummer, zeichnung }: { block: Wissensblock; numme
   );
 }
 
-export default function Wissen({ bloecke, zeichnungen }: { bloecke: Wissensblock[]; zeichnungen?: Record<string, ReactNode> }) {
+/** `ersterAufFliese`: der erste Block trägt die Fliese der Lage (WissensSeite mit `wissenVorLage`, M-B7) */
+export default function Wissen({ bloecke, zeichnungen, ersterAufFliese = false }: { bloecke: Wissensblock[]; zeichnungen?: Record<string, ReactNode>; ersterAufFliese?: boolean }) {
   return (
     <>
       {bloecke.map((b, i) => (
-        <Block key={b.titel} block={b} nummer={i + 1} zeichnung={b.zeichnung ? zeichnungen?.[b.zeichnung] : undefined} />
+        <Block key={b.titel} block={b} nummer={i + 1} zeichnung={b.zeichnung ? zeichnungen?.[b.zeichnung] : undefined} aufFliese={ersterAufFliese && i === 0} />
       ))}
     </>
   );

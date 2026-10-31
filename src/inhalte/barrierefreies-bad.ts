@@ -35,6 +35,8 @@ export const BARRIEREFREIES_BAD: ErzaehlInhalt = {
   },
   tun: {
     titel: 'So wird aus der Wanne eine sichere Dusche.',
+    // Folge (K-009, UM-E4-SICHT-FIX M-B7): die Gefälle-Zeichnung direkt nach Kopf und Satz, die Punkte danach
+    momentZuerst: true,
     einleitung:
       'Wir bauen Ihre Badewanne aus und eine [[bodengleiche-dusche|bodengleiche Dusche]] ein. So steigen Sie sicher hinein, heute und auch später.',
     punkte: [

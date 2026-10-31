@@ -11,7 +11,11 @@
 //   nicht), kein Satz über 25 Wörter mit den Erklärungen.
 // Ändert sich die Quelle, bricht der Bau ab (Abgleich der Titel), damit niemand eine Garantie ungeprüft übernimmt.
 // Fachwörter: Was der Inhalt davor schon erklärt (Textmarken in `vorher`), steht hier ohne Erklärung; `erklaert` ergänzt, was ein
-// Abschnitt außerhalb des Inhalts erklärt. Serverkomponente.
+// Abschnitt außerhalb des Inhalts erklärt.
+// Aufklapper (UM-E4-SICHT-FIX M-B4, E-104 Nr. 3): Die H2 bleibt sichtbar, die Liste steht in einem nativen details mit der Zeile
+// „Alle {n} Punkte zeigen“ (Zahl aus den Daten). Geöffnet steht sie wie bisher in zwei Spalten, aber in einer Flucht: Der Versatz
+// der rechten Spalte um 48 px las sich als Fehler (Sicht Anlauf 1, /standorte/wetzlar a5, b5). Wortlaut, ANPASSUNG und
+// Garantie-Prüfung unverändert; der Inhalt steht vollständig im DOM (EP3), lesbarkeit.mjs öffnet vor dem Lesen. Serverkomponente.
 import type { ReactNode } from 'react';
 import { COMPANY_DATA } from '@/config/company';
 import { istGlossarId, type GlossarId } from '@/config/glossar';
@@ -20,6 +24,7 @@ import Abschnitt from '@/components/kern/Abschnitt';
 import Fachwort from '@/components/kern/Fachwort';
 import { zusammen } from '@/components/kern/zusammen';
 import type { Markentext } from '../inhalt';
+import Aufklapper from './Aufklapper';
 
 /** Titel (Überschrift, ohne Textmarken: Überschriften erklären nicht) und Satz (Fließtext mit Textmarken) */
 type Punkt = { titel: string; text: Markentext };
@@ -149,14 +154,18 @@ export default function Versprechen({ vorher, erklaert = [] }: VersprechenProps)
       spaet
       mitte
       titel={'Unser Qualitäts\u00adversprechen in acht Punkten.'}
+      // geschlossen trägt das Band nur Kopf und Zeile: eine Stufe weniger über und unter ihm (wie „Was wir tun“ mit
+      // Leistungszeilen), sonst stand unter der Zeile eine leere halbe Bandhöhe (Prüfung SF-B, Nacharbeit)
+      className="pt-12 pb-12 lg:pt-16 lg:pb-16"
     >
       {/* Punkte mit H3: Daneben tritt der Kopf des Leitfadens auf der ganzen Höhe der Liste zurück (data-kopf-pause="ganz",
           bewegung.css „Leitfaden mit Abschnittsmarke“: nie ein Kreuz neben einer H3) */}
-      <ol data-kopf-pause="ganz" className="grid grid-cols-1 md:grid-cols-2 md:gap-x-12 lg:gap-x-24">
+      <Aufklapper zeile={`Alle ${punkte.length} Punkte zeigen`} zeileKlassen="mx-auto max-w-mass border-y border-fuge">
+      <ol data-kopf-pause="ganz" className="mt-8 grid grid-cols-1 md:grid-cols-2 md:gap-x-12 lg:gap-x-24">
         {punkte.map((p, i) => (
           <li
             key={i}
-            className="flex gap-4 border-t border-fuge py-6 last:border-b md:gap-6 md:even:mt-12 md:nth-last-2:border-b"
+            className="flex gap-4 border-t border-fuge py-6 last:border-b md:gap-6 md:nth-last-2:border-b"
           >
             <span aria-hidden="true" className="w-8 shrink-0 font-mono text-fs-2 text-tinte-2">
               {String(i + 1).padStart(2, '0')}
@@ -172,6 +181,7 @@ export default function Versprechen({ vorher, erklaert = [] }: VersprechenProps)
           </li>
         ))}
       </ol>
+      </Aufklapper>
     </Abschnitt>
   );
 }

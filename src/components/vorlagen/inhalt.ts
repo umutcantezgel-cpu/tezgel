@@ -1,6 +1,6 @@
 // Inhaltsmodell der Seitenvorlagen (KERN v3 K-009 Seitenformel, E-025): Jede Erzähl-, Wissens- und Ortsseite liefert
 // ihre Texte als Daten in `src/inhalte/<seite>.ts`; die Vorlage setzt daraus die sechs Abschnitte in fester Folge mit den
-// Bausteinen der Startseite. Texte tragen die Auszeichnungen der Seitentexte (`[[id|Wort]]`, siehe `src/lib/textmarken.ts`)
+// Bausteinen der Startseite (abweichende Folgen nur per Schalter aus K-009, `folge.ts`, UM-E4-SICHT-FIX M-B7). Texte tragen die Auszeichnungen der Seitentexte (`[[id|Wort]]`, siehe `src/lib/textmarken.ts`)
 // und werden wörtlich aus `_werkstatt/texte/<seite>.md` übernommen. Bilder nur über Kennungen aus `ARBEITEN`.
 import type { ArbeitId } from '@/config/arbeiten';
 import type { GlossarId } from '@/config/glossar';
@@ -106,6 +106,12 @@ export interface TunInhalt {
   punkte?: Markentext[];
   /** Absatz nach den Punkten (z. B. Norm, Zuschuss) */
   absatz?: Markentext;
+  /** Fachtext am Ende des Abschnitts im Aufklapper „Mehr erfahren“ (natives details, Ruhe-Regel „Fachtext in Mehr erfahren“;
+   *  UM-E4-SICHT-FIX M-B4): steht im DOM, liest sich aber nicht mitten in der Erzählung */
+  absatzMehr?: Markentext;
+  /** Der große Moment der Seite steht direkt nach Kopf und Satz, Bereiche, Punkte und Absatz danach (Schalter der Folge,
+   *  K-009; UM-E4-SICHT-FIX M-B7, nur auf den dort gelisteten Seiten) */
+  momentZuerst?: boolean;
 }
 
 /** 4 · So läuft es ab */
@@ -184,8 +190,11 @@ export interface VergleichInhalt {
   /** Spalten: Name der Bauweise, ihr Schnitt und je Kriterium der Wert (Fachtext mit Textmarken: Ein Fachwort, das hier zum
    *  ersten Mal auf der Seite steht, trägt seine Erklärung in der Zelle, K-011) */
   spalten: { name: string; schnitt: VergleichSchnitt; werte: Record<string, Markentext> }[];
-  /** Hinweis unter dem Vergleich: Stichwort in Fett, dann der Satz */
+  /** Hinweis unter dem Vergleich: Stichwort in Fett, dann der Satz; steht im Aufklapper „Mehr erfahren“ (M-B4) */
   hinweis?: { stichwort: string; text: Markentext };
+  /** Kennung des Kriteriums, das neben Schnitt und Name offen steht (es entscheidet die Wahl, z. B. `geeignet`); die übrigen
+   *  stehen im Aufklapper „Alle Merkmale im Vergleich“ (UM-E4-SICHT-FIX M-B4). Ohne Angabe das erste Kriterium */
+  offen?: string;
 }
 
 /** Qualitätsversprechen (UM-E4-EP3): die acht Punkte aus `COMPANY_DATA.qualityPromises` als eigener Abschnitt nach dem
@@ -212,6 +221,9 @@ export interface ErzaehlInhalt {
   /** Qualitätsversprechen vor dem nächsten Schritt */
   versprechen?: VersprechenInhalt;
   schritt: SchrittInhalt;
+  /** Schalter der Folge (K-009, `vorlagen/folge.ts`; UM-E4-SICHT-FIX M-B7): Beleg mit seinen Momenten direkt nach der Lage, danach
+   *  Tun, Ablauf, Versprechen und Schritt. Nur auf den in K-009 gelisteten Seiten */
+  belegVorn?: boolean;
 }
 
 /** Ein Block der Wissensseite in „Was wir tun“: Überschrift und wahlweise Absatz, Karten, Liste, Tabelle, Zeichnung */
@@ -240,4 +252,7 @@ export interface WissenInhalt {
   /** Qualitätsversprechen vor dem nächsten Schritt */
   versprechen?: VersprechenInhalt;
   schritt: SchrittInhalt;
+  /** Schalter der Folge (K-009, `vorlagen/folge.ts`; UM-E4-SICHT-FIX M-B7): Wissensblöcke direkt nach dem Einstieg, die Lage
+   *  danach. Nur auf den in K-009 gelisteten Seiten */
+  wissenVorLage?: boolean;
 }
