@@ -10,13 +10,17 @@
 // `werkzeuge`, je Werkzeug offen oder im geschlossenen Aufklapper), darunter Hilfen und „Mehr zum Thema“ als eine ruhige
 // Linkzeile: beide Gruppen ab md nebeneinander, eine Gruppe allein mit ihren Links in zwei Spalten. Stehen Werkzeuge im Schritt,
 // folgen die Hilfen als weitere Zeilen ihrer Liste, die Linkzeile trägt dann nur „Mehr zum Thema“. Der Hauptknopf bleibt der
-// einzige dunkle Knopf des Blocks, solange die Werkzeuge geschlossen sind. Serverkomponente.
+// einzige dunkle Knopf des Blocks, solange die Werkzeuge geschlossen sind.
+// Satzspiegel (UM-E4-SICHT-FIX M-B1): Der Schritt steht mittig; ein langer Satz unter dem Kopf linksbündig im Lesemaß. Mit
+// Formular steht der Formularkasten mit Anruf, WhatsApp und Zusatz links an der Leitachse (Spalten 1 bis 2, geteilt ab lg 16 px am Lot;
+// auch auf `/`, Sicht Anlauf 1 b3: der Kasten stand mittig in 500 px Leere), der Kopf bleibt mittig. Serverkomponente.
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
 import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
-import Abschnitt from '@/components/kern/Abschnitt';
+import Abschnitt, { satzMass } from '@/components/kern/Abschnitt';
+import { langeEinleitung } from '@/components/kern/einleitung';
 import Hauptknopf from '@/components/kern/Hauptknopf';
 import Rufnummer from '@/components/kern/Rufnummer';
 import Textmarken from '@/components/kern/Textmarken';
@@ -62,8 +66,9 @@ export function Nachbarorte({ nachbarn }: { nachbarn: Verweis[] }) {
 
 function FormularSchritt({ inhalt, pfad, formular, titelId, zusatz }: { inhalt: SchrittInhalt; pfad: string; formular: ReactNode; titelId: string; zusatz?: ReactNode }) {
   const { contact } = COMPANY_DATA;
-  // ruhig (K-016, E-047): Kopf mittig, darunter das Formular mittig und dann Anruf, WhatsApp und Zusatz in einer Zeile,
-  // statt links und rechts zugleich (vorher Kopfspalte mit Anruf neben dem Formular)
+  // ruhig (K-016, E-047): Kopf mittig, darunter der ganze Formularblock untereinander (Formular, dann Anruf, WhatsApp und Zusatz
+  // in einer Zeile), statt links und rechts zugleich (vorher Kopfspalte mit Anruf neben dem Formular). Der Block steht im
+  // Satzspiegel links (M-B1, V-6): ab lg an der Leitachse in den Spalten 1 bis 2, darunter mittig im Lesemaß
   return (
     <Abschnitt
       titelId={titelId}
@@ -71,17 +76,19 @@ function FormularSchritt({ inhalt, pfad, formular, titelId, zusatz }: { inhalt: 
       leitachse
       flaeche="fliese"
       mitte
+      satz="links"
       titel={zusammen(inhalt.titel)}
       einleitung={
         <p>
           <Textmarken text={inhalt.satz} />
         </p>
       }
+      einleitungLang={langeEinleitung(inhalt.satz)}
     >
-      <div className="mx-auto w-full max-w-mass">{formular}</div>
+      <div className={`w-full ${satzMass('links')}`}>{formular}</div>
       {/* Container-Abfrage: unter 20 rem steht der Hörer über der großen Nummer, damit sie nicht über den Rand läuft (Runde 4);
           das WhatsApp-Zeichen steht dann ebenso mittig über seinem Text (Browserprüfung E4-W0, E-065) */}
-      <div className="@container mx-auto mt-12 grid max-w-mass gap-8 border-t border-fuge pt-8 text-center md:grid-cols-2 md:text-left">
+      <div className={`@container mt-12 grid gap-8 border-t border-fuge pt-8 text-center md:grid-cols-2 md:text-left ${satzMass('links')}`}>
         <div>
           <p className="font-text text-fs-3 text-tinte">Lieber anrufen?</p>
           <a
@@ -242,6 +249,7 @@ export default function Schritt({ inhalt, pfad, formular, titelId = 'anfrage', z
       // Wörter aus FUGEN trennen an ihrer Fuge: „Badsanierung.“ in der dritten Zeile ragte bei 200 % über die Spalte (FS-K Nr. 5)
       titel={mitFugen(inhalt.titel)}
       einleitung={<p><Textmarken text={inhalt.satz} /></p>}
+      einleitungLang={langeEinleitung(inhalt.satz)}
     >
       {/* ruhig (K-016, E-047): alles mittig untereinander statt Kopf links und Knöpfe rechts zugleich */}
       <div className="mx-auto flex max-w-mass flex-col items-center gap-8">

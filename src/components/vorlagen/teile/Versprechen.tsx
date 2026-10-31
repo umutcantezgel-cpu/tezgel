@@ -15,7 +15,11 @@
 // Aufklapper (UM-E4-SICHT-FIX M-B4, E-104 Nr. 3): Die H2 bleibt sichtbar, die Liste steht in einem nativen details mit der Zeile
 // „Alle {n} Punkte zeigen“ (Zahl aus den Daten). Geöffnet steht sie wie bisher in zwei Spalten, aber in einer Flucht: Der Versatz
 // der rechten Spalte um 48 px las sich als Fehler (Sicht Anlauf 1, /standorte/wetzlar a5, b5). Wortlaut, ANPASSUNG und
-// Garantie-Prüfung unverändert; der Inhalt steht vollständig im DOM (EP3), lesbarkeit.mjs öffnet vor dem Lesen. Serverkomponente.
+// Garantie-Prüfung unverändert; der Inhalt steht vollständig im DOM (EP3), lesbarkeit.mjs öffnet vor dem Lesen.
+// Satzspiegel (UM-E4-SICHT-FIX M-B1): Das Band bleibt mittig (Satz `mitte`, abweichend vom Plan „Versprechen rechts“, V-17):
+// Geschlossen trägt es nur Kopf und eine Zeile; rechts gesetzt folgte im selben Bildschirm der Schritt mit mittigem Kopf und
+// dem Formularblock links (drei Achsen an einem Übergang), und geöffnet stünden zwei Spalten in zwei Dritteln der Breite zu schmal
+// (t1024: 205 px Text; Prüfung SF-B2). Serverkomponente.
 import type { ReactNode } from 'react';
 import { COMPANY_DATA } from '@/config/company';
 import { istGlossarId, type GlossarId } from '@/config/glossar';

@@ -106,11 +106,13 @@ export default function FinalCTA({
               <Knopf href={siteConfig.contact.phone.link} variante="haupt" iconLinks="telefon" className="w-full">
                 {buttonText}
               </Knopf>
+              {/* Name des Links ist der sichtbare Text (WCAG 2.5.3 „Label in Name“, axe label-content-name-mismatch; UM-E4-SICHT-FIX
+                  X-1): Das frühere aria-label „WhatsApp Nachricht an Fliesenverlegung Tezgel senden“ enthielt „Per WhatsApp
+                  schreiben“ nicht, wer den sichtbaren Text spricht, traf den Link per Sprachsteuerung nicht. Das Logo ist dekorativ */}
               <a
                 href={siteConfig.contact.whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="WhatsApp Nachricht an Fliesenverlegung Tezgel senden"
                 data-motion="druck"
                 className={knopfKlassen("neben", "w-full")}
               >

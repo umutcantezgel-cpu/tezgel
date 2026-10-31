@@ -218,6 +218,15 @@
 @utility einstieg-foto-hoch {
   width: min(calc(100% * 2 / 3), calc(80svh * var(--bild-format)));
 }
+/* Foto im Beleg höchstens 70svh hoch (UM-E4-SICHT-FIX M-B6 Nr. 2): Zweierbild und Reihen mit einem oder zwei Hochformaten.
+   Das Foto bleibt ganz im eigenen Seitenverhältnis (--bild-format = Breite : Höhe, am Element aus der Bilddatei), darum
+   begrenzt die Breite die Höhe: Ein 4 : 5-Foto misst auf d1440 höchstens 504 × 630 px, Kopf und Fotopaar stehen in einer
+   Bildschirmhöhe (vorher je rund 750 px hoch). Schmaler als der Platz, wo nötig; nie breiter als er. Untergrenze 30 rem Höhe,
+   wo 70svh weniger sind (Handy quer: auf q844 sonst 219 × 271 px, die Namensfläche deckte fast die Hälfte; Prüfung SF-B2): Dort
+   passt ohnehin kein Kopf mit Foto in eine Bildschirmhöhe, und die Fotos stehen so groß wie vor M-B6 (q844 384 × 480 px). */
+@utility glas-hoch {
+  width: min(100%, calc(max(70svh, var(--spacing) * 120) * var(--bild-format)));
+}
 
 /* Silbentrennung in engen Spalten bei großer Schrift (Preiskarten, Abschlussband auf /preise, Preisrechner, Auswahl im Konfigurator; E4-W1, FS):
    lange Wörter schon ab 10, 11 bzw. 12 Zeichen trennen (Konfigurator: 12), je Teil mindestens vier. Sonst gilt die Seitenregel 12 5 5 (body). */

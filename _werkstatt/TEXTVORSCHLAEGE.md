@@ -41,3 +41,13 @@ Direkt gesetzte Mikrotexte aus SF-C1: „Weitere Orte bis 50 km“, „Alle {n} 
 | T-C2-5 | /kontakt | Einleitung des Formularabschnitts, jetzt unter dem Formular | „Wählen Sie Ihr Vorhaben und sagen Sie uns, wo und wann. Dann tragen Sie Ihren Namen und Ihre Telefonnummer ein. Deniz Tezgel meldet sich bei Ihnen und macht einen Termin mit Ihnen aus.“ | „Nach dem Absenden meldet sich Deniz Tezgel bei Ihnen und macht einen Termin mit Ihnen aus.“ | Die ersten zwei Sätze beschreiben das Formular darüber; unter dem Formular zählt, was danach passiert. |
 
 Direkt gesetzter Mikrotext aus SF-C2: Legende der Einsatzkarte „Die Punkte sind eine Auswahl der Orte, in denen wir arbeiten.“ (statt „Jeder Punkt ist ein Ort, in dem wir arbeiten.“; die Karte zeigt nur noch die beschrifteten Orte). Die Zeilen von /kontakt (H1) und die Fotounterschriften auf /ueber-uns und /fliesen sind aus vorhandenen Texten übernommen, nicht neu geschrieben.
+
+### Teil SF-B2 (Listen, Satzspiegel, Beleg, WhatsApp-Name; eingetragen vom Orchestrator)
+
+| Nr. | Ansicht | Stelle | heute | Vorschlag | Grund |
+|---|---|---|---|---|---|
+| T-B2-1 | /bad/barrierefreies-bad | Titel des Zweierbilds (mit SF-C3 eine H2) | „So entsteht eine Dusche ohne Stufe“ | „So entsteht eine Dusche ohne Stufe.“ | Alle übrigen H2 enden mit Punkt. |
+| T-B2-2 | /bad/badsanierung | Titel des Zweierbilds | „So sieht ein Bad im Bau aus“ | „So sieht ein Bad im Bau aus.“ | Wie T-B2-1. |
+| T-B2-3 | /preise, /termin, /leistungen/bad, /foerderung | WhatsApp-Knopf im Abschluss | „Per WhatsApp schreiben“ | „Nachricht per WhatsApp“ | Kopf, untere Leiste und Schritt nennen denselben Weg „Nachricht per WhatsApp“ (K-010). |
+
+SF-B2 hat keine Mikrotexte gesetzt. Für X-1 ist am WhatsApp-Knopf im Abschluss nur das abweichende `aria-label` entfallen; der zugängliche Name ist jetzt der sichtbare Text. SF-A2 hat keine Textvorschläge und keine Mikrotexte.

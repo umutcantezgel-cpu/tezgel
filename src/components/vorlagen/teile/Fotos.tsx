@@ -1,10 +1,16 @@
 // Vorlagen · Fotos als verlegte Fläche (KERN v3 K-012; E-023, E-025): echte Fotos mit kurzer Unterschrift in einem
 // geraden Raster mit 1-px-Fugen (kein Versatz: den tragen Lage und Ablauf), schmal einspaltig (große Systemschrift: ein
 // Foto über die volle Breite), ab 42 rem zweispaltig (am Handy untereinander statt aneinandergequetscht, K-016), ab 64 rem
-// dreispaltig. Serverkomponente.
+// dreispaltig.
+// Glaspaar (UM-E4-SICHT-FIX M-B6 Nr. 2 und 3, K-016): zwei Fotos desselben Vorgangs als zwei Glasbilder an einer 1-px-Fuge, der
+// Name auf der Glasfläche statt einer Unterschrift darunter, jedes Foto ganz im eigenen Seitenverhältnis und höchstens 70svh
+// hoch (glas-hoch, --bild-format aus der Bilddatei): Kopf und Paar passen bei d1440 in eine Bildschirmhöhe. Ab md nebeneinander
+// und gemeinsam mittig, darunter untereinander. Serverkomponente.
+import type { CSSProperties } from 'react';
 import clsx from 'clsx';
 import Bildfeld from '@/components/kern/Bildfeld';
-import type { ArbeitId } from '@/config/arbeiten';
+import Glasbild from '@/components/kern/Glasbild';
+import { ARBEITEN, type ArbeitId } from '@/config/arbeiten';
 
 export interface Foto {
   bild: ArbeitId;
@@ -27,6 +33,29 @@ export default function Fotos({ fotos, spalten = 3 }: { fotos: Foto[]; spalten?:
           </li>
         ))}
       </ul>
+    </div>
+  );
+}
+
+/** Seitenverhältnis (Breite : Höhe) eines Fotos aus ARBEITEN als CSS-Variable für glas-hoch */
+export function bildFormat(bild: ArbeitId): CSSProperties {
+  const { breite, hoehe } = ARBEITEN[bild];
+  return { '--bild-format': breite / hoehe } as CSSProperties;
+}
+
+/** Zwei Glasbilder an einer 1-px-Fuge (Zweierbild im Beleg, M-B6 Nr. 3): ab md nebeneinander, gemeinsam mittig, die Fuge links am
+ *  zweiten Bild; darunter untereinander mit der Fuge oben. Ohne Link, der Name steht immer auf dem kurzen Verlauf (verlauf).
+ *  Ohne Link ist die Glasfläche aria-hidden (kern/Glasbild); der Name bleibt darum als Bildunterschrift für Vorleser im Baum
+ *  (figcaption, nur für Hilfsmittel), wie vorher die sichtbare Unterschrift (Prüfung SF-B2). */
+export function Glaspaar({ fotos }: { fotos: Foto[] }) {
+  return (
+    <div className="flex flex-col items-center md:flex-row md:items-start md:justify-center">
+      {fotos.map((f, i) => (
+        <figure key={f.bild} style={bildFormat(f.bild)} className={clsx('glas-hoch', i > 0 && 'border-t border-fuge md:border-t-0 md:border-l')}>
+          <Glasbild arbeit={f.bild} name={f.unterschrift} verlauf sizes="(min-width: 768px) 50vw, 100vw" />
+          <figcaption className="sr-only">{f.unterschrift}</figcaption>
+        </figure>
+      ))}
     </div>
   );
 }

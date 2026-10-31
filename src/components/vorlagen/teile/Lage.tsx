@@ -11,12 +11,16 @@
 // in der Zeile in einem eigenen Feld an der Fuge, Satz und Pfeil rechts; die Leistungen darunter („Was wir tun“) sind nur noch
 // eine Zeile mit Links. Unter 20rem Zeilenbreite (große Systemschrift) entfällt die Zeichnung.
 // Ortsmoment (Ortsseiten, UM-E4-SICHT-FIX M-C6 Nr. 2): `zusatz` steht nach den Absätzen im Satzspiegel, dort das Einzugsband
-// mit „Sie sind hier“. Ohne Angabe unverändert. Serverkomponente.
+// mit „Sie sind hier“. Ohne Angabe unverändert.
+// Satzspiegel (UM-E4-SICHT-FIX M-B1): Absätze, Wege und Zusatz stehen links an der Laserlinie (Spalten 1 bis 2, geteilt ab lg
+// 16 px am Lot; darunter mittig wie die Nachbarn), eine lange Einleitung linksbündig darüber; eine Lage nur mit der Auswahl (Startseite) steht wie bisher in voller
+// Breite (breit) mit mittiger Einleitung. Serverkomponente.
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
-import Abschnitt from '@/components/kern/Abschnitt';
+import Abschnitt, { satzMass, type Satz } from '@/components/kern/Abschnitt';
+import { langeEinleitung } from '@/components/kern/einleitung';
 import Textmarken from '@/components/kern/Textmarken';
 import { VIGNETTEN, type VignettenName } from '@/components/kern/vignetten';
 import type { BildOderMotiv, LageInhalt } from '../inhalt';
@@ -72,6 +76,7 @@ export function LageFliesen({ fliesen, className }: { fliesen: Fliese[]; classNa
 
 export default function Lage({ inhalt, zusatz }: { inhalt: LageInhalt; zusatz?: ReactNode }) {
   const fliesen = inhalt.fliesen ?? [];
+  const satz: Satz = fliesen.length && !inhalt.absaetze?.length && !inhalt.wege?.length && !zusatz ? 'breit' : 'links';
   return (
     <Abschnitt
       id="ihre-lage"
@@ -80,14 +85,17 @@ export default function Lage({ inhalt, zusatz }: { inhalt: LageInhalt; zusatz?: 
       spaet
       mitte
       flaeche={inhalt.aufFliese ? 'fliese' : 'kalk'}
+      satz={satz}
       className={inhalt.aufFliese ? 'lg:pt-16' : undefined}
       titel={inhalt.titel}
       einleitung={inhalt.einleitung ? <p><Textmarken text={inhalt.einleitung} /></p> : undefined}
+      // die Auswahl der Startseite (breit) behält ihre mittige Einleitung: `/` ändert sich nur im Schritt (M-B1)
+      einleitungLang={satz !== 'breit' && langeEinleitung(inhalt.einleitung)}
     >
       {inhalt.absaetze && inhalt.absaetze.length > 0 && (
         // Satzspiegel in der Grundschrift: max-w-mass misst in ch der eigenen Schrift; mit text-fs-4 am selben Element stand der
         // Absatz rund 300 px breiter als die Zeilen darunter (Browserprüfung E4-W0, E-065). So fluchten beide Kanten.
-        <div className="mx-auto max-w-mass">
+        <div className={satzMass(satz)}>
           <div className="space-y-4 font-text text-fs-4 text-pretty text-tinte">
             {inhalt.absaetze.map((a) => (
               <p key={a}>
@@ -99,11 +107,9 @@ export default function Lage({ inhalt, zusatz }: { inhalt: LageInhalt; zusatz?: 
       )}
       {fliesen.length > 0 && <LageFliesen fliesen={fliesen} className={clsx(inhalt.absaetze?.length && 'mt-12')} />}
       {inhalt.wege && inhalt.wege.length > 0 && (
-        <div className={clsx('mx-auto max-w-mass', (inhalt.absaetze?.length || fliesen.length) && 'mt-12')}>
-          <Bereichszeilen bereiche={inhalt.wege} />
-        </div>
+        <Bereichszeilen bereiche={inhalt.wege} className={clsx(satzMass(satz), (inhalt.absaetze?.length || fliesen.length) && 'mt-12')} />
       )}
-      {zusatz && <div className={clsx('mx-auto max-w-mass', (inhalt.absaetze?.length || fliesen.length || inhalt.wege?.length) && 'mt-12')}>{zusatz}</div>}
+      {zusatz && <div className={clsx(satzMass(satz), (inhalt.absaetze?.length || fliesen.length || inhalt.wege?.length) && 'mt-12')}>{zusatz}</div>}
     </Abschnitt>
   );
 }

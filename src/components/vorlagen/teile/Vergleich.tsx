@@ -11,7 +11,9 @@
 // entscheidet (`offen`, auf /balkon-terrasse „Geeignet für“), ab lg in drei Spalten, mobil untereinander. Die übrigen Kriterien
 // stehen im nativen Aufklapper „Alle Merkmale im Vergleich“: geöffnet ab lg die fluchtende Tabelle (Subgrid) wie bisher, mobil
 // Bauweise für Bauweise in fester Folge. Der Hinweis (Plattenstärke) steht im Aufklapper „Mehr erfahren“. Keine Reiter: Der
-// ganze Inhalt steht im DOM (EP1), lesbarkeit.mjs öffnet jedes details vor dem Lesen und misst so jede Zelle mit. Serverkomponente.
+// ganze Inhalt steht im DOM (EP1), lesbarkeit.mjs öffnet jedes details vor dem Lesen und misst so jede Zelle mit.
+// Satzspiegel (UM-E4-SICHT-FIX M-B1): ein großer Moment, breit (volle Rasterbreite, wie bisher; die Einleitung bleibt mittig).
+// Serverkomponente.
 import type { ComponentType } from 'react';
 import clsx from 'clsx';
 import Abschnitt from '@/components/kern/Abschnitt';
@@ -142,6 +144,7 @@ export default function Vergleich({ inhalt }: { inhalt: VergleichInhalt }) {
       spaet
       flaeche="fliese"
       mitte
+      satz="breit"
       titel={inhalt.titel}
       einleitung={inhalt.einleitung ? <p><Textmarken text={inhalt.einleitung} /></p> : undefined}
     >

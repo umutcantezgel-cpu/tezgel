@@ -4,6 +4,7 @@
 // und werden wörtlich aus `_werkstatt/texte/<seite>.md` übernommen. Bilder nur über Kennungen aus `ARBEITEN`.
 import type { ArbeitId } from '@/config/arbeiten';
 import type { GlossarId } from '@/config/glossar';
+import type { Satz } from '@/components/kern/Abschnitt';
 import type { Kompositionsmotiv } from '@/components/kern/Fliesenkomposition';
 import type { Krume } from '@/components/kern/Brotkrumen';
 import type { VignettenName } from '@/components/kern/vignetten';
@@ -81,8 +82,8 @@ export interface Zeile {
   satz?: Markentext;
   href: string;
   motiv?: Kompositionsmotiv;
-  /** Plan-Vignette statt des Verlegemusters, Feld 4 : 3 wie in der Lage (Ortsseiten, UM-E4-SICHT-FIX M-C6 Nr. 3; Vorgriff auf
-   *  M-B2 Nr. 2) */
+  /** Plan-Vignette (kern/vignetten, 1,5 px, currentColor, kein Rot) statt des blassen Verlegemusters, Feld 4 : 3 wie in der
+   *  Lage, unter 20 rem Zeilenbreite ohne Zeichnung (UM-E4-SICHT-FIX M-B2 Nr. 2; genutzt auf den Ortsseiten, M-C6 Nr. 3) */
   vignette?: VignettenName;
 }
 
@@ -105,7 +106,7 @@ export interface TunInhalt {
   leistungen?: Verweis[];
   /** erklärende Zeichnung unter dem Kopf (ab lg in der Kopfspalte, mobil nach dem Inhalt) mit Bildunterschrift */
   unterKopf?: { vignette: VignettenName; unterschrift: Markentext };
-  /** Aussagen als Fliesen an der Fuge (eine Aussage je Fliese) */
+  /** Aussagen als nummerierte Liste an der Fuge (eine Aussage je Zeile, Mono-Nummer, ohne Kasten; M-B2) */
   punkte?: Markentext[];
   /** Absatz nach den Punkten (z. B. Norm, Zuschuss) */
   absatz?: Markentext;
@@ -115,6 +116,10 @@ export interface TunInhalt {
   /** Der große Moment der Seite steht direkt nach Kopf und Satz, Bereiche, Punkte und Absatz danach (Schalter der Folge,
    *  K-009; UM-E4-SICHT-FIX M-B7, nur auf den dort gelisteten Seiten) */
   momentZuerst?: boolean;
+  /** Satzspiegel der Zeilen, Punkte und Absätze (UM-E4-SICHT-FIX M-B1, `kern/Abschnitt`): Standard `rechts` (Spalten 2 bis 3),
+   *  mit großem Moment `mitte` (auf der Kante des Moments und der Einleitung, V-16); der Moment selbst steht immer breit. `rechts`
+   *  mit Moment erst, wenn der Moment die volle Rasterbreite füllt (M-C9), sonst liegen zwei Kanten knapp nebeneinander */
+  satz?: Satz;
 }
 
 /** 4 · So läuft es ab */
@@ -137,13 +142,23 @@ export interface BelegInhalt {
    *  der Glasfläche, `href` führt zur passenden Leistungsseite (K-016, E-047) */
   fotos: { bild: ArbeitId; unterschrift: string; href?: string }[];
   /** Reihe der Fotos im Drittelverband (K-003 Nr. 4): ab md steht jedes zweite, ab lg jedes dritte Foto (das mittlere der
-   *  ersten drei) um 16 Stufen tiefer, so trägt jeder Bildschirm der Reihe genau einen Versatz (Startseite, UM-E3-FIX F4) */
+   *  ersten drei) um 16 Stufen tiefer, so trägt jeder Bildschirm der Reihe genau einen Versatz (Startseite, UM-E3-FIX F4).
+   *  Standard ab drei Fotos (UM-E4-SICHT-FIX M-B6 Nr. 1); `false` schaltet ihn ab */
   fotosVersatz?: boolean;
-  /** Namen der Fotos ohne Maus auf jeder Breite auf dem kurzen Verlauf wie mobil, nicht als Tintenblock unter dem Foto (nur
-   *  Startseite, UM-E4-START; der Block bleibt bei großer Systemschrift) */
+  /** Namen der Fotos ohne Maus auf jeder Breite auf dem kurzen Verlauf nur hinter der Namenszeile wie mobil, nicht als
+   *  Tintenblock unter dem Foto (Startseite, UM-E4-START; der Block bleibt bei großer Systemschrift). Standard ab drei Fotos
+   *  (M-B6 Nr. 1); `false` schaltet ihn ab */
   fotosVerlauf?: boolean;
-  /** zwei Bilder desselben Vorgangs nebeneinander (kein Regler, wenn die Blickwinkel verschieden sind) */
-  zweierbild?: { titel: string; bilder: [{ bild: ArbeitId; unterschrift: string }, { bild: ArbeitId; unterschrift: string }] };
+  /** zwei Bilder desselben Vorgangs nebeneinander (kein Regler, wenn die Blickwinkel verschieden sind): zwei Glasbilder an einer
+   *  1-px-Fuge, der Name auf der Glasfläche statt einer Unterschrift darunter (K-016), höchstens 70svh hoch (glas-hoch), der
+   *  Kopf mittig (M-B6 Nr. 2 und 3). Mit `abschnitt` als eigener Abschnitt nach den Fotos mit eigener H2 (wie der zweite große
+   *  Moment, `ZweiterBeleg` in teile/Beleg; Kennung und Fläche aus `abschnitt`), sonst im Abschnitt der Fotos unter einem
+   *  Unterkopf */
+  zweierbild?: {
+    titel: string;
+    bilder: [{ bild: ArbeitId; unterschrift: string }, { bild: ArbeitId; unterschrift: string }];
+    abschnitt?: { id: string; flaeche?: 'kalk' | 'fliese' };
+  };
   /** Kennungen aus REVIEWS, Wortlaut unverändert (G8) */
   stimmen?: string[];
   /** Kundenstimmen groß (Startseite, Über uns, Unsere Arbeiten: drei Karten ab lg); sonst das kleine Karussell jeder Seite
@@ -235,13 +250,16 @@ export interface Wissensblock {
   absatz?: Markentext;
   /** Arten oder Möglichkeiten nebeneinander (Kopfzeile ohne Doppelpunkt, ein Satz) */
   karten?: { kopf: string; satz: Markentext }[];
-  /** Punkte als Fliesen an der Fuge */
+  /** Punkte als nummerierte Liste an der Fuge (M-B2) */
   liste?: Markentext[];
   tabelle?: { name: string; kopf: string[]; zeilen: string[][] };
   /** Kennung einer ruhigen Zeichnung, die die Seite über `zeichnungen` liefert */
   zeichnung?: string;
   /** Zeilen mit Link nach der Zeichnung (z. B. „Formate und Technik“ auf /fliesen), wie die Wege in „Ihre Lage“ */
   wege?: Zeile[];
+  /** Satzspiegel des Blocks (UM-E4-SICHT-FIX M-B1, `kern/Abschnitt`): Standard `links`, mit `zeichnung` (großer Moment) `breit`.
+   *  Kein Wechsel nach Index; ein anderer Satz nur für einen Block, der mindestens eine Bildschirmhöhe trägt */
+  satz?: Satz;
 }
 
 export interface WissenInhalt {

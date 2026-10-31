@@ -5,7 +5,15 @@
 // wie auf der Startseite. Platz für einen großen Moment (z. B. Galerie mit Filter, Karte); steht nichts davor, beginnt er
 // direkt unter der Überschrift. Wahlweise ein zweiter großer Moment mit eigener H2 als eigener Abschnitt zwischen Fotos und
 // Stimmen (z. B. vorher-nachher auf /referenzen, E-045) und die Einsatzorte als letzter Abschnitt. Alle zeichnen spät (unter
-// dem ersten Bildschirm, E-044). Serverkomponente.
+// dem ersten Bildschirm, E-044).
+// UM-E4-SICHT-FIX M-B6: Ab drei Fotos steht die Reihe im Drittelverband und die Namen ohne Maus auf dem kurzen Verlauf nur
+// hinter der Namenszeile (wie auf /, Standard statt Schalter). Reihen mit einem oder zwei Hochformaten und das Zweierbild
+// stehen höchstens 70svh hoch (glas-hoch), Kopf und Fotos passen bei d1440 in eine Bildschirmhöhe. Das Zweierbild steht als
+// zwei Glasbilder an einer 1-px-Fuge, der Name auf der Glasfläche (K-016), der Kopf mittig wie die übrigen Köpfe; mit
+// `zweierbild.abschnitt` als eigener Abschnitt mit H2 nach den Fotos (Muster wie `ZweiterBeleg`). Ein Beleg nur mit Satz
+// (z. B. „Aus unserer Praxis“ auf /blog) trägt eine Stufe weniger Innenabstand. Zwischen Fotoreihe und Weg eine Fliesenstufe
+// (16): Passen alle Fotos nebeneinander (bis drei ab lg, zwei ab md), entfällt dort der leere Platz der Karussell-Knöpfe, die
+// dort nie gebraucht werden. Satzspiegel (M-B1): die Fotos breit. Serverkomponente.
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import Abschnitt from '@/components/kern/Abschnitt';
@@ -13,9 +21,10 @@ import Glasbild from '@/components/kern/Glasbild';
 import Karussell from '@/components/kern/Karussell';
 import Textmarken from '@/components/kern/Textmarken';
 import WeiterLink from '@/components/kern/WeiterLink';
+import { ARBEITEN } from '@/config/arbeiten';
 import type { BelegInhalt } from '../inhalt';
 import Einsatzorte from './Einsatzorte';
-import Fotos from './Fotos';
+import { Glaspaar, bildFormat } from './Fotos';
 import Stimmen from './Stimmen';
 
 /** zweiter großer Moment im Beleg mit eigener H2 (id des Abschnitts, H2 `${id}-titel`) */
@@ -28,33 +37,64 @@ export interface ZweiterBeleg {
   flaeche?: 'kalk' | 'fliese';
 }
 
+/** Zweierbild (M-B6 Nr. 3): zwei Glasbilder an der Fuge; im Abschnitt der Fotos mit einem mittigen Unterkopf (eine Stufe unter
+ *  der H2), als eigener Abschnitt (`abschnitt`) unter der H2 des Abschnitts. Neben dem Unterkopf tritt der Kopf des Leitfadens auf
+ *  der ganzen Höhe zurück (data-kopf-pause="ganz", wie bisher): nie ein Kreuz neben einer Überschrift */
+function Zweierbild({ zweierbild, unterkopf }: { zweierbild: NonNullable<BelegInhalt['zweierbild']>; unterkopf: boolean }) {
+  if (!unterkopf) return <Glaspaar fotos={zweierbild.bilder} />;
+  return (
+    <figure data-kopf-pause="ganz">
+      <figcaption className="mx-auto max-w-mass text-center font-anzeige text-fs-5 font-extrabold text-balance text-tinte">{zweierbild.titel}</figcaption>
+      <div className="mt-8">
+        <Glaspaar fotos={zweierbild.bilder} />
+      </div>
+    </figure>
+  );
+}
+
 export default function Beleg({ inhalt, pfad, moment, zweiter, stimmenTitel = 'Das sagen unsere Kunden.' }: { inhalt: BelegInhalt; pfad?: string; moment?: ReactNode; zweiter?: ZweiterBeleg; stimmenTitel?: string }) {
-  const davor = inhalt.fotos.length > 0 || Boolean(inhalt.satz) || Boolean(inhalt.zweierbild);
+  const zweierEigen = inhalt.zweierbild?.abschnitt;
+  const zweierInnen = inhalt.zweierbild && !zweierEigen ? inhalt.zweierbild : undefined;
+  const davor = inhalt.fotos.length > 0 || Boolean(inhalt.satz) || Boolean(zweierInnen);
   // Ein Foto führt nur dann weiter, wenn sein Ziel eine andere Seite ist: ein Link auf die Seite, auf der man steht, lädt sie
   // bloß neu (Browserprüfung E4-W0, E-065)
   const ziel = (href?: string) => (href && href !== pfad ? href : undefined);
+  const zahl = inhalt.fotos.length;
   // zwei Fotos ab md in zwei Spalten statt zwei von drei Plätzen (sonst bleibt rechts ein Loch im Raster, E-065)
-  const karte = inhalt.fotos.length === 2 ? 'w-full md:w-1/2' : 'w-full md:w-1/2 lg:w-1/3';
+  const karte = zahl === 2 ? 'w-full md:w-1/2' : 'w-full md:w-1/2 lg:w-1/3';
+  // Drittelverband und Verlauf ab drei Fotos als Standard (M-B6 Nr. 1, wie /); `false` im Inhalt schaltet ab
+  const versatzAn = zahl > 2 && inhalt.fotosVersatz !== false;
+  const verlaufAn = zahl > 2 && inhalt.fotosVerlauf !== false;
   // Drittelverband in der Reihe (K-003 Nr. 4, UM-E3-FIX F4): ab md (zwei Fotos im Bild) steht jedes zweite, ab lg (drei im
   // Bild) jedes dritte Foto ab dem zweiten um 16 Stufen (64 px, ein Drittel der langen Fliesenseite) tiefer. Je zwei bzw.
   // drei Nachbarn enthalten genau eines davon: Wie weit man auch blättert, jeder Bildschirm der Reihe trägt einen Versatz.
   // Abstand innen statt Verschiebung: Die Spur beschneidet senkrecht, und die Knöpfe darunter rücken mit.
-  const versatz = (i: number) => (inhalt.fotosVersatz && inhalt.fotos.length > 2 ? clsx(i % 2 === 1 && 'md:pt-16', i % 3 === 1 ? 'lg:pt-16' : 'lg:pt-0') : undefined);
+  const versatz = (i: number) => (versatzAn ? clsx(i % 2 === 1 && 'md:pt-16', i % 3 === 1 ? 'lg:pt-16' : 'lg:pt-0') : undefined);
+  // Hochformat in einer Reihe aus einem oder zwei Fotos: höchstens 70svh (glas-hoch, M-B6 Nr. 2), mittig in seiner Karte (auch
+  // unter md, wo jede Karte die volle Breite hat: Handy quer, Prüfung SF-B2); zwei rücken ab md an die Mitte zusammen (Abstand
+  // der Karten 24 px), statt je mittig in ihrer Hälfte zu stehen
+  const hoch = (bild: (typeof inhalt.fotos)[number]['bild']) => zahl <= 2 && ARBEITEN[bild].hoehe > ARBEITEN[bild].breite;
+  const paarKante = (i: number) => clsx('mx-auto', zahl === 2 && (i === 0 ? 'md:mr-0' : 'md:ml-0'));
+  // Passen alle Fotos nebeneinander, braucht die Reihe dort nie Knöpfe: Deren leerer Platz (aria-hidden, unsichtbar) entfällt
+  // dort, zwischen Reihe und Weg bleibt eine Stufe 16 (M-B6 Nr. 5). Nur dort, wo nie geblättert wird, damit nichts springt
+  const ohneKnoepfe = zahl === 2 ? 'md:[&>[aria-hidden]]:hidden' : zahl === 3 ? 'lg:[&>[aria-hidden]]:hidden' : undefined;
+  // Beleg nur mit Satz (z. B. /blog): eine Stufe weniger über und unter dem Band, wie das geschlossene Versprechen (M-B6 Nr. 4)
+  const nurSatz = zahl === 0 && !inhalt.zweierbild && !moment && Boolean(inhalt.satz);
   return (
     <>
-      <Abschnitt id="unsere-arbeiten" formel="beleg" leitachse spaet mitte titel={inhalt.titel}>
+      <Abschnitt id="unsere-arbeiten" formel="beleg" leitachse spaet mitte satz="breit" titel={inhalt.titel} className={nurSatz ? 'pt-12 pb-12 lg:pt-16 lg:pb-16' : undefined}>
         {/* ein einzelnes Foto wie die Fotos der Reihe: Glasfläche mit Name und Weg zur Leistungsseite, ohne Unterschrift darunter
-            (K-016, Zusatz Regel 4; Gegenprüfung Welle 2), mittig in der Lesebreite */}
-        {inhalt.fotos.length === 1 && (
-          <div className="mx-auto w-full max-w-mass">
+            (K-016, Zusatz Regel 4; Gegenprüfung Welle 2), mittig in der Lesebreite, als Hochformat höchstens 70svh hoch */}
+        {zahl === 1 && (
+          <div style={hoch(inhalt.fotos[0].bild) ? bildFormat(inhalt.fotos[0].bild) : undefined} className={clsx('mx-auto max-w-mass', hoch(inhalt.fotos[0].bild) ? 'glas-hoch' : 'w-full')}>
             <Glasbild arbeit={inhalt.fotos[0].bild} name={inhalt.fotos[0].unterschrift} href={ziel(inhalt.fotos[0].href)} sizes="(min-width: 768px) 66ch, 100vw" />
           </div>
         )}
-        {inhalt.fotos.length > 1 && (
-          <Karussell art="reihe" name="Fotos" karte={karte}>
+        {zahl > 1 && (
+          <Karussell art="reihe" name="Fotos" karte={karte} className={ohneKnoepfe}>
             {inhalt.fotos.map((f, i) => (
-              <div key={f.bild} className={versatz(i)}>
-                <Glasbild arbeit={f.bild} name={f.unterschrift} href={ziel(f.href)} verlauf={inhalt.fotosVerlauf} sizes={inhalt.fotos.length === 2 ? '(min-width: 768px) 50vw, 100vw' : '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw'} />
+              <div key={f.bild} style={hoch(f.bild) ? bildFormat(f.bild) : undefined} className={clsx(versatz(i), hoch(f.bild) && clsx('glas-hoch', paarKante(i)))}>
+                <Glasbild arbeit={f.bild} name={f.unterschrift} href={ziel(f.href)} verlauf={verlaufAn || undefined} sizes={zahl === 2 ? '(min-width: 768px) 50vw, 100vw' : '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw'} />
               </div>
             ))}
           </Karussell>
@@ -64,17 +104,10 @@ export default function Beleg({ inhalt, pfad, moment, zweiter, stimmenTitel = 'D
             <Textmarken text={inhalt.satz} />
           </p>
         )}
-        {inhalt.zweierbild && (
-          // Bildunterschrift wie eine H3 über zwei Fotos: Daneben tritt der Kopf des Leitfadens auf der ganzen Höhe zurück
-          // (data-kopf-pause="ganz", bewegung.css „Leitfaden mit Abschnittsmarke“, wie die Einsatzkarte; UM-E4-CHOR-FIX): nie
-          // ein Kreuz neben einer Überschrift. Höchstens eine Pause „ganz“ je Abschnitt: Seiten mit Zweierbild haben hier
-          // keinen Moment mit eigener Pause (Einsatzkarte, Galerie)
-          <figure data-kopf-pause="ganz" className="mt-16">
-            <figcaption className="font-anzeige text-fs-5 font-extrabold text-tinte">{inhalt.zweierbild.titel}</figcaption>
-            <div className="mt-6">
-              <Fotos fotos={inhalt.zweierbild.bilder} spalten={2} />
-            </div>
-          </figure>
+        {zweierInnen && (
+          <div className="mt-16">
+            <Zweierbild zweierbild={zweierInnen} unterkopf />
+          </div>
         )}
         {moment && <div className={davor ? 'mt-16' : undefined}>{moment}</div>}
         {inhalt.verweis && (
@@ -83,6 +116,11 @@ export default function Beleg({ inhalt, pfad, moment, zweiter, stimmenTitel = 'D
           </p>
         )}
       </Abschnitt>
+      {inhalt.zweierbild && zweierEigen && (
+        <Abschnitt id={zweierEigen.id} formel="beleg" leitachse spaet flaeche={zweierEigen.flaeche} mitte satz="breit" titel={inhalt.zweierbild.titel}>
+          <Zweierbild zweierbild={inhalt.zweierbild} unterkopf={false} />
+        </Abschnitt>
+      )}
       {zweiter && (
         <Abschnitt id={zweiter.id} formel="beleg" leitachse spaet flaeche={zweiter.flaeche} mitte titel={zweiter.titel}>
           {zweiter.moment}
