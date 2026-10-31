@@ -11,10 +11,31 @@ import {
   generateTeamEmailText,
   getTeamEmailSubject
 } from './templates/teamEmail';
-import { COMPANY_DATA } from '@/config/company';
 import { checkRecipientRateLimit } from './security';
 import fs from 'node:fs';
 import path from 'node:path';
+
+/**
+ * Weg der Anfrage-Mails (Auftraggeber 31.10.2026, E-109): kontakt@tezgel.de ist der Absender und damit der
+ * Mittelpunkt. Von dort geht die Anfrage an info@tezgel.de und die Eingangsbestätigung an den Kunden.
+ * Antworten des Kunden auf seine Bestätigung gehen an info@tezgel.de, Antworten des Teams auf die Anfrage
+ * direkt an den Kunden. Vorher schrieb info@ an info@ selbst; solche Mails landen leicht im Spam.
+ * In der Hosting-Umgebung gehen CONTACT_EMAIL (Empfänger) und RESEND_FROM_EMAIL (Absender) vor, damit sich
+ * beides ohne Codeänderung umstellen lässt. Die angezeigte Firmenadresse (COMPANY_DATA.contact.email:
+ * Impressum, Fuß, strukturierte Daten, Kundenmail) bleibt davon unberührt.
+ */
+export const ANFRAGE_EMPFAENGER = 'info@tezgel.de';
+export const ANFRAGE_ABSENDER = 'Fliesenverlegung Tezgel <kontakt@tezgel.de>';
+
+type Umgebung = Record<string, string | undefined>;
+
+export function anfrageEmpfaenger(env: Umgebung = process.env): string {
+  return env.CONTACT_EMAIL?.trim() || ANFRAGE_EMPFAENGER;
+}
+
+export function anfrageAbsender(env: Umgebung = process.env): string {
+  return env.RESEND_FROM_EMAIL?.trim() || ANFRAGE_ABSENDER;
+}
 
 /**
  * Idempotency cache to prevent duplicate email dispatches from rapid double clicks.
@@ -104,9 +125,9 @@ export async function sendInquiryEmails(payload: InquiryPayload): Promise<SendEm
   const customerText = generateCustomerEmailText(payload, referenceId);
 
   const resendApiKey = process.env.RESEND_API_KEY;
-  // info@tezgel.de is the authoritative single email address for all incoming inquiries
-  const recipientEmail = COMPANY_DATA.contact.email || process.env.CONTACT_EMAIL || 'info@tezgel.de';
-  const fromSender = process.env.RESEND_FROM_EMAIL || `Fliesenverlegung Tezgel <${recipientEmail}>`;
+  // Weg der Mails: Absender kontakt@tezgel.de, Anfrage an info@tezgel.de (siehe anfrageAbsender, anfrageEmpfaenger)
+  const recipientEmail = anfrageEmpfaenger();
+  const fromSender = anfrageAbsender();
 
   // 2. Dev Mock Mode: In development without a key, simulate delivery and log details
   if (!resendApiKey || resendApiKey.trim() === '' || resendApiKey.startsWith('re_your_api_key')) {
@@ -139,7 +160,7 @@ export async function sendInquiryEmails(payload: InquiryPayload): Promise<SendEm
   let teamSent = false;
   let customerSent = false;
 
-  // 3. Send Team Lead Alert with Retry & Backoff (always arrives at info@tezgel.de)
+  // 3. Send Team Lead Alert with Retry & Backoff (an den Anfrage-Empfänger, siehe anfrageEmpfaenger)
   try {
     await withRetry(async () => {
       await resend.emails.send({
@@ -187,7 +208,7 @@ export async function sendInquiryEmails(payload: InquiryPayload): Promise<SendEm
           await resend.emails.send({
             from: fromSender,
             to: payload.contact.email!.trim(),
-            replyTo: recipientEmail, // Direct customer replies directly into info@tezgel.de
+            replyTo: recipientEmail, // Antworten der Kunden gehen an info@tezgel.de
             subject: customerSubject,
             html: customerHtml,
             text: customerText

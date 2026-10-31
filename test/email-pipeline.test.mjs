@@ -29,7 +29,7 @@ import {
   getCustomerEmailSubject
 } from '../src/lib/email/templates/customerEmail.ts';
 
-import { sendInquiryEmails } from '../src/lib/email/mailer.ts';
+import { sendInquiryEmails, ANFRAGE_EMPFAENGER, ANFRAGE_ABSENDER, anfrageEmpfaenger, anfrageAbsender } from '../src/lib/email/mailer.ts';
 
 test('1. Security: HTML Escaping prevents Injection', () => {
   const dangerous = '<script>alert("XSS")</script><img src="x" onerror="steal()">&"\'';
@@ -322,4 +322,15 @@ test('13b. PricingCalculator ohne eigene Wahl (E-062): ohne Fläche und ohne Sit
   assert.equal(validation.data?.area, undefined);
   const ohneName = validateInquiryPayload({ ...payload, contact: { ...payload.contact, name: '' } });
   assert.equal(ohneName.success, false);
+});
+
+test('14. Mailer: Absender kontakt@tezgel.de, Anfrage an info@tezgel.de; Umgebung geht vor (E-109)', () => {
+  assert.equal(ANFRAGE_EMPFAENGER, 'info@tezgel.de');
+  assert.equal(ANFRAGE_ABSENDER, 'Fliesenverlegung Tezgel <kontakt@tezgel.de>');
+  assert.equal(anfrageEmpfaenger({}), 'info@tezgel.de');
+  assert.equal(anfrageAbsender({}), 'Fliesenverlegung Tezgel <kontakt@tezgel.de>');
+  assert.equal(anfrageEmpfaenger({ CONTACT_EMAIL: '   ' }), 'info@tezgel.de');
+  assert.equal(anfrageAbsender({ RESEND_FROM_EMAIL: '' }), 'Fliesenverlegung Tezgel <kontakt@tezgel.de>');
+  assert.equal(anfrageEmpfaenger({ CONTACT_EMAIL: ' buero@tezgel.de ' }), 'buero@tezgel.de');
+  assert.equal(anfrageAbsender({ RESEND_FROM_EMAIL: 'Tezgel <web@tezgel.de>' }), 'Tezgel <web@tezgel.de>');
 });
