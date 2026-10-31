@@ -43,8 +43,8 @@
 //   (Quadratmeter); H1 und Maß stehen zusammen mittig. Die Zeilen werden nur so groß, dass beide in die Spalte
 //   passen (titel-spalte). Ab md steht die H1 eine Stufe größer (fs-7 wie mobil und ab lg).
 // - Unter der Schnur Ort und Orte-Link, dann Hauptknopf und Telefon in derselben Fugenstufe (12 px), dann sofort das Foto, auf
-//   jeder Breite; Vorspann und Bewertung folgen unter dem Foto (vorher mobil davor). Das rote Lotstück reicht von der Schnur
-//   bis an die Oberkante des Fotos; dort kreuzt es eine Fuge, auf der das Foto hängt (ab sm, Fugenkreuz am Lot).
+//   jeder Breite; Vorspann und Bewertung folgen unter dem Foto (vorher mobil davor). Das rote Lotstück reicht ab md von der
+//   Schnur bis an die Oberkante des Fotos; dort kreuzt es eine Fuge, auf der das Foto hängt (ab sm, Fugenkreuz am Lot).
 // - Das Foto wählt je Breite seinen Zuschnitt (Startbild), ab lg so groß, dass es ganz im ersten Bildschirm steht, zwischen
 //   der Hälfte und zwei Dritteln der Spalte (einstieg-foto-start, --bild-format aus dem Zuschnitt ab lg).
 // Figur auf allen mittigen Einstiegen (UM-E4-SICHT-FIX M-A1, Sicht E4 Anlauf 1: auf den Unterseiten schwebte die H1 15 bis
@@ -63,6 +63,26 @@
 //   statt pt-24), 16 statt 24 px bis zur H1. In fs-7 brechen lange Titel dort in vier Zeilen um (/leistungen, /referenzen,
 //   /ueber-uns), und im Erstbesuch rückte der Hauptknopf bei m390 unter den Rand des Einwilligungsbanners (erstesbild.mjs
 //   4 → 3). Die gewonnenen 24 px gehen an Knöpfe und Foto. / (ohne Brotkrumen) bleibt bei pt-24.
+// Feinschliff der Startseite (UM-E4-SICHT-FIX M-A5, Sicht E4 Anlauf 1: mobil stand der H1-Block 25 px links der Achse, weil das
+// Maß neben „Quadratmeter.“ im Fluss stand; am Desktop hatten Foto und Knopfgruppe verschiedene Kanten, q844 zeigte vom Foto
+// nur einen Streifen):
+// - Unter sm steht statt des Quadratmeters nur ein Fugenkreuz am Schnurende (in Tinte wie das Kreuz der Aufhängung, 8 px,
+//   mittig auf dem rechten Ende der Schnur). Es braucht keinen Platz neben der H1; die H1 steht mittig auf der Achse von Ort,
+//   Knöpfen und Foto, ihre Grundlinie weiter auf der Schnur. Ab sm wie bisher das Maß. Im Eingang erscheint das Kreuz, wenn
+//   die Schnur es erreicht (data-eingang="schnurende", bewegung.css; vorher stand es ab dem ersten Bild allein am Rand).
+// - Ab lg stehen Knopfgruppe und Foto (Querformat, einstieg-foto-start) auf denselben Kanten: Beide nehmen dasselbe Maß
+//   (globals.css einstieg-foto-start und einstieg-knoepfe-start, --bild-format am gemeinsamen Behälter), die Knöpfe teilen
+//   sich die Breite und stehen dort mit 16 statt 24 px Innenabstand (sie wachsen ohnehin auf das Maß, sichtbar bleibt mehr).
+//   Reicht das Maß nicht für die Knöpfe, steht die Gruppe so breit wie ihr Inhalt; das Foto bleibt dann so groß, dass es
+//   ganz im ersten Bildschirm steht. Gleiche Kanten also auf d1440, d1920, d2560 und t1024 (ohne WhatsApp); auf niedrigeren
+//   Bildschirmen (d1280, 1366 × 768, 1536 × 864) und wo die Grundschrift schneller wächst als die Höhe (1600 × 900) steht
+//   die Gruppe breiter als das Foto (Paketnotiz UM-E4-SICHT-FIX-a2, EV-1).
+// - Flach (q844) stehen Ort, Knöpfe und Foto je eine Fugenstufe näher an der Schnur (8, 8 und 12 statt 12, 12 und 16 px), und
+//   das Querformat steht schmaler (halbe Spalte, q844 390 statt 448 px): Über der unteren Leiste steht so mehr als die Hälfte
+//   davon (/ q844: 54,7 statt 43,7 %). Ein Hochformat bleibt breit; von ihm stünde erst bei rund 230 px Breite die Hälfte da.
+// - Unter md steht kein rotes Lotstück neben Ort und Knöpfen (globals.css „Leitfaden-Ebene“, UM-E4-SICHT-FIX M-A4 Nr. 2): Im
+//   16-px-Rand las es sich als Rahmenlinie (8 px) bzw. Naht (an der Satzkante); dort bleibt nur die Schnur unter der H1.
+// - Die Zeilenmaske der letzten Zeile endet an der Grundlinie, bis die Zeile steht (bewegung.css „Zeilenmaske an der Schnur“).
 // Serverkomponente.
 import type { CSSProperties, ReactNode } from 'react';
 import clsx from 'clsx';
@@ -71,7 +91,9 @@ import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
 import Bewertungszeile from '@/components/kern/Bewertungszeile';
 import Bildfeld from '@/components/kern/Bildfeld';
 import Brotkrumen, { type Krume } from '@/components/kern/Brotkrumen';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Hauptknopf from '@/components/kern/Hauptknopf';
+import { KREUZ_GROESSE } from '@/components/kern/Leitachse';
 import { VIGNETTEN, type VignettenName } from '@/components/kern/vignetten';
 import Quadratmeter from './Quadratmeter';
 import Schnurebene, { Aufhaengung, Lotstueck } from './Schnurebene';
@@ -215,13 +237,14 @@ export default function EinstiegMitte({ pfad, brotkrumen, titelZeilen, titelGros
           // er rechts außen an der H1 (absolut), die H1 selbst steht mittig auf der Achse von Ort, Knöpfen und Foto
           // (Nacharbeit UM-E4-START, Prüfung A: als mittige Gruppe stand die H1 auf d1440 111 px, auf t1024 85 px links der
           // Achse); unter md reicht die Spalte dafür nicht, dort steht die Gruppe mittig. Flach (Handy quer) steht er klein ohne
-          // Zahl hinter der einzeiligen H1 (globals.css „quadratmeter“)
+          // Zahl hinter der einzeiligen H1 (globals.css „quadratmeter“). Unter sm entfällt er (UM-E4-SICHT-FIX M-A5 Nr. 1): Dort
+          // steht nur das Fugenkreuz am Schnurende, und die H1 steht allein mittig auf der Achse
           <div className="relative flex max-w-full">
             <h1 id="seite-titel" data-erstes-bild="ueberschrift" data-motion="sig-flucht" className={clsx('schnur-grundlinie min-w-0 text-balance text-tinte flach:text-fs-5', titelGrundstufe, titelStufe)}>
               {zeilen}
             </h1>
             {quadratmeter && (
-              <div aria-hidden="true" className={clsx('flex shrink-0 items-end text-fs-6 md:absolute md:bottom-0 md:left-full flach:text-fs-5', titelStufe)}>
+              <div aria-hidden="true" className={clsx('flex shrink-0 items-end text-fs-6 max-sm:hidden md:absolute md:bottom-0 md:left-full flach:text-fs-5', titelStufe)}>
                 <Quadratmeter />
               </div>
             )}
@@ -253,12 +276,22 @@ export default function EinstiegMitte({ pfad, brotkrumen, titelZeilen, titelGros
       <div className="relative">
         {/* Figur: mobil und bei DPR 1 zwei Pixel stark (schnur-linie, globals.css) */}
         <Schnurebene stark={figur} />
-        {/* Spalte: Ort und Knöpfe, erster Schritt mit Bewertung, Foto; ab lg rücken erster Schritt und Bewertung unter das Foto */}
-        <div className={clsx('relative flex flex-col', fugeUnten && 'lg:pb-16')}>
-          <div className={`${seitenKlassen} relative flex flex-col items-center pt-6 text-center flach:pt-3`}>
+        {/* unter sm statt des Quadratmeters: Fugenkreuz mittig auf dem rechten Ende der Schnur (right-2 wie SCHNUR_LAGE, die Schnur
+            ist dort 2 px stark: Mitte bei 1 px); Zierde, data-leitachse für die Überlappungsprüfung (UM-E4-SICHT-FIX M-A5 Nr. 1).
+            Im Eingang erscheint es, wenn die Schnur ankommt (data-eingang="schnurende", bewegung.css) */}
+        {quadratmeter && (
+          <span aria-hidden="true" data-leitachse="" data-eingang="schnurende" className={clsx('pointer-events-none absolute top-px right-2 translate-x-1/2 -translate-y-1/2 sm:hidden', KREUZ_GROESSE)}>
+            <Fugenkreuz className="absolute inset-0 size-full text-tinte" />
+          </span>
+        )}
+        {/* Spalte: Ort und Knöpfe, erster Schritt mit Bewertung, Foto; ab lg rücken erster Schritt und Bewertung unter das Foto.
+            --bild-format gilt für Foto und Knopfgruppe (gemeinsames Maß ab lg, einstieg-knoepfe-start) */}
+        <div style={{ '--bild-format': format } as CSSProperties} className={clsx('relative flex flex-col', fugeUnten && 'lg:pb-16')}>
+          <div className={clsx(seitenKlassen, 'relative flex flex-col items-center pt-6 text-center', figur ? 'flach:pt-2' : 'flach:pt-3')}>
             {/* rotes Lot von der Schnur bis unter die Knopfreihe (UM-E3-FIX2 N3), auf derselben Achse wie das Lot der Zierebene */}
-            {/* in der Figur bis an die Oberkante des Fotos (Abstand des Fotos, pt-8, ab lg pt-6) */}
-            <Lotstueck className={figur ? '-bottom-8 flach:-bottom-4 lg:-bottom-6' : '-bottom-4'} />
+            {/* in der Figur bis an die Oberkante des Fotos (Abstand des Fotos, pt-8, flach pt-3, ab lg pt-6); unter md entfällt es
+                (globals.css „Leitfaden-Ebene“, UM-E4-SICHT-FIX M-A4 Nr. 2) */}
+            <Lotstueck className={figur ? '-bottom-8 flach:-bottom-3 lg:-bottom-6' : '-bottom-4'} />
             {/* Ort, ab lg mit dem Orte-Link in einer Zeile (auf der Grundlinie) */}
             <div className="flex w-full flex-col items-center lg:flex-row lg:flex-wrap lg:items-baseline lg:justify-center lg:gap-x-6">
               <p data-erstes-bild="ort" className="max-w-mass font-text text-fs-4 text-balance text-tinte-2 max-sm:animate-none">
@@ -275,8 +308,16 @@ export default function EinstiegMitte({ pfad, brotkrumen, titelZeilen, titelGros
               )}
             </div>
             {/* Figur: dieselbe Fugenstufe wie zwischen Ortszeile und Link (12 px) statt 48 px, ab lg 16 statt 24 px (UM-E4-START:
-                die gewonnene Höhe geht ans Foto) */}
-            <div data-eingang="knoepfe" className={clsx('@container flex w-full flex-col items-center gap-3 max-sm:animate-none sm:flex-row sm:flex-wrap sm:justify-center', figur ? 'mt-3 lg:mt-4' : 'mt-12 flach:mt-6 lg:mt-6')}>
+                die gewonnene Höhe geht ans Foto), flach 8 px (M-A5 Nr. 4). Ab lg mit dem Querformat auf den Kanten des Fotos
+                (einstieg-knoepfe-start, M-A5 Nr. 3) */}
+            <div
+              data-eingang="knoepfe"
+              className={clsx(
+                '@container flex w-full flex-col items-center gap-3 max-sm:animate-none sm:flex-row sm:flex-wrap sm:justify-center',
+                figur ? 'mt-3 flach:mt-2 lg:mt-4' : 'mt-12 flach:mt-6 lg:mt-6',
+                figur && !hochformat && 'lg:einstieg-knoepfe-start',
+              )}
+            >
               <Hauptknopf href={hauptziel} erstesBild breit />
               <a href={`tel:${contact.phoneLink}`} data-erstes-bild="kontakt" data-motion="druck" className={knopfKlassen('neben', 'w-full px-4 sm:w-auto @max-3xs:flex-col @max-3xs:gap-1')}>
                 <Icon name="telefon" groesse={5} className="shrink-0" />
@@ -314,13 +355,18 @@ export default function EinstiegMitte({ pfad, brotkrumen, titelZeilen, titelGros
               Figur: direkt nach den Knöpfen (pt-8, ab lg pt-6), ab lg so groß, dass es im ersten Bildschirm steht (einstieg-foto-start); ab sm
               hängt es an einer Fuge, die das Lot an seinem Ende kreuzt (Fugenkreuz in Tinte wie an den Abschnittskanten) */}
           {/* Flach (Handy quer, q844) stehen Knöpfe und Foto in der kleineren Fugenstufe (12 und 16 px statt 24 und 32 px): Das
-              Foto beginnt so rund 28 px höher im ersten Bildschirm (Nacharbeit UM-E4-START, Prüfung A) */}
-          <div className={clsx(seitenKlassen, figur ? 'relative pt-8 flach:pt-4 lg:pt-6' : 'pt-12 pb-16 lg:pt-8 lg:pb-0')}>
-            {figur && <Aufhaengung lage="top-8 flach:top-4 lg:top-6" />}
+              Foto beginnt so rund 28 px höher im ersten Bildschirm (Nacharbeit UM-E4-START, Prüfung A); seit M-A5 Nr. 4 je eine
+              Stufe kleiner (Ort 8, Knöpfe 8, Foto 12 px) und das Querformat auf der halben Spalte (flach:max-w-1/2), damit
+              mindestens das halbe Foto im ersten Bild steht */}
+          <div className={clsx(seitenKlassen, figur ? 'relative pt-8 flach:pt-3 lg:pt-6' : 'pt-12 pb-16 lg:pt-8 lg:pb-0')}>
+            {figur && <Aufhaengung lage="top-8 flach:top-3 lg:top-6" />}
             <div
               data-eingang="bild"
-              style={{ '--bild-format': format } as CSSProperties}
-              className={clsx('relative mx-auto w-full max-w-md max-sm:after:hidden lg:max-w-full', figur ? (hochformat ? 'lg:einstieg-foto-hoch' : 'lg:einstieg-foto-start') : 'lg:einstieg-foto')}
+              className={clsx(
+                'relative mx-auto w-full max-w-md max-sm:after:hidden lg:max-w-full',
+                !hochformat && 'flach:max-w-1/2',
+                figur ? (hochformat ? 'lg:einstieg-foto-hoch' : 'lg:einstieg-foto-start') : 'lg:einstieg-foto',
+              )}
             >
               {typeof bild === 'string' ? <Bildfeld arbeit={bild as ArbeitId} lcp sizes={hochformat ? EINSTIEG_HOCH_SIZES : EINSTIEG_MITTE_SIZES} /> : bild}
             </div>

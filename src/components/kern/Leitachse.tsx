@@ -12,8 +12,9 @@
 // in einer Ansicht mit Seitenformel auf den Einstieg (Erzählseite mit mittigem Einstieg oder Planblatt: `/` und mit Absicht
 // die übrigen Seiten dieser Vorlage, K-007 „alle Erzählansichten“), steht ihre rote Spitze fest auf der Leselinie (40 % der
 // Bildschirmhöhe). Den Kopf, ein rotes Fugenkreuz auf der Spitze, setzt der Abschnitt selbst (kern/Abschnitt), und nur
-// dort, wo das Lot gezeichnet ist: neben dem Inhalt eines Abschnitts auf Kalk. Fliese- und Tinteflächen decken das Lot,
-// dort gibt es keinen Kopf (vorher schwebte er dort allein im Weiß, Sichtabnahme E3 Anlauf 2). Neben Kopf und Satz des
+// dort, wo der Abschnitt ihm eine Bahn gibt: neben dem Inhalt eines Abschnitts auf Kalk. Auf Fliese- und Tinteflächen gibt es
+// keinen Kopf (vorher schwebte er dort allein im Weiß, Sichtabnahme E3 Anlauf 2), das Lot läuft dort ab md aber weiter
+// (Ebenen unten). Neben Kopf und Satz des
 // Abschnitts (H2 und Einleitung), an den Kanten, am Ursprung der Entfernungsskala, neben den Köpfen der Ortsgruppen und
 // neben Karten mit H3 (data-kopf-pause) steht er nie, in einem Abschnitt ohne eigenen Kopf gar nicht; an einer Kante
 // rastet er ein: Ihr Fugenkreuz wird rot, solange die Leselinie es auf eine Stufe 6 (24 px) trifft. So steht nie ein
@@ -24,10 +25,17 @@
 // beides nicht; die Klassen `leitfaden` und `leitfaden-ebene` sind die Haken dafür.
 //
 // Ebenen (K-005, R-01a): Die Zierebene liegt unter dem Inhalt – ohne z-index vor dem Inhalt; der Inhalt steht in einer
-// positionierten Hülle ohne eigenen Stapelkontext und malt in Baumreihenfolge darüber. Flächen (Fliese, Tinte, Bänder)
-// decken das Lot, es läuft unter ihnen weiter wie im Anfahrtsband (Gutachten u8). Über dem Text liegt keine Ebene (axe
+// positionierten Hülle ohne eigenen Stapelkontext und malt in Baumreihenfolge darüber. Über dem Text liegt keine Ebene (axe
 // „bgOverlap“), und Ebenen im Inhalt (z-30 … z-50) bleiben im Stapel der Seite. Kopf und Fugenkreuze der Abschnittskanten
 // stehen in Ebene z-10, ganz im Seitenrand vor der Textkante, nie über Text.
+// Leitfaden ohne Lücke (UM-E4-SICHT-FIX M-A4, Sicht E4 Anlauf 1: das Lot riss an jeder Fliese- und Tintefläche ab und lief nur
+// in jedem zweiten Abschnitt; vorher deckten Flächen das Lot wie im Anfahrtsband, Gutachten u8): Ab md trägt das Lot selbst
+// (1 px, sein rotes Stück 2 px) die Ebene z-10 wie Kantenkreuze und Bahn, der ganzflächige Behälter der Zierebene bleibt ohne
+// z-index. So läuft die Grundschicht über Fliese und Tinte weiter, auf Tinte in nacht-fuge (globals.css „Leitfaden-Ebene“).
+// Mobil (unter md) steht keine durchlaufende Haarlinie und kein gezogenes Rot: An jeder Kante steht das Fugenkreuz mit einem
+// statischen roten Anrissstück (Stufe 6, nach unten); im Einstieg bleibt nur die Schnur unter der H1 (das rote Lotstück neben
+// Ort und Knöpfen las sich im Rand als Rahmenlinie und steht erst ab md, globals.css). Ab md steht dasselbe Anrissstück
+// in der ruhigen Fassung (reduziert, „ruhig“, ohne JavaScript) unter jedem Kantenkreuz; mit Bewegung rastet dort der Kopf ein.
 //
 // `gezogen={false}` (R-02a): nur die Grundschicht, kein rotes Stück und keine Marke – für Strecken der Seite, in denen
 // ein anderes Rot der Blickfang ist (z. B. die Anfahrt der Stadtseiten). Die Seite teilt ihre Leitachse dann in
@@ -42,17 +50,16 @@ import { seitenKlassen } from './stile';
 // mobil 8 px vom Rand, mittig im Rand vor dem Satz (16 px; UM-E3-FIX2 N2, Sichtabnahme E3 Anlauf 2: bei 4 px las sich das Lot
 // wie ein Gehäuserand, die Kreuze lagen halb am Bildrand). Das Kreuz (mobil 8 px, KREUZ_GROESSE) steht ganz im Bild und hält
 // 4 px Abstand zur Textkante; ab md 16 px vom Rand (Text ab 32 px), ab lg 32 px (Text ab 48 px), dort mit 12-px-Kreuz
-// 10 px Abstand. Die Abschnittsmarke steht nur ab md. Die Marke `achse` (ohne eigenen Stil) ist der Haken für das Lot an der
-// Satzkante: Auf der Startseite steht es unter md auf der Satzkante (16 px) statt im Rand (Seitenformel lot="satzkante",
-// globals.css; UM-E4-START, Sicht Anlauf 3: bei 8 px las sich das 2-px-Rot wie eine Schnittmarke am Bildrand).
-export const ACHSE_LAGE = 'achse left-2 md:left-4 lg:left-8';
+// 10 px Abstand. Die Abschnittsmarke steht nur ab md. Auf allen Seiten dieselbe Lage, auch auf der Startseite (UM-E4-SICHT-FIX
+// M-A4 Nr. 2: das Lot an der Satzkante, lot="satzkante", entfällt; mobil stehen ohnehin nur Marken an den Kanten).
+export const ACHSE_LAGE = 'left-2 md:left-4 lg:left-8';
 /** Dieselbe Lage, gemessen von der Inhaltskante eines Abschnitts mit Satzspiegel (seitenKlassen px-4 md:px-8 lg:px-12):
  *  8 px davor, ab md 16 px (rem, wächst mit der Grundschrift wie Rand und Achse) */
 export const ACHSE_VOR_SATZ = '-left-2 md:-left-4';
 /** Größe eines Fugenkreuzes auf dem Lot: mobil 8 px (ganz im Bild, 4 px vor der Textkante), ab md 12 px */
 export const KREUZ_GROESSE = 'size-2 md:size-3';
 /** Schnur des mittigen Einstiegs (UM-E3-FIX F1): von der Achse bis zur gespiegelten Stelle am rechten Rand */
-export const SCHNUR_LAGE = `${ACHSE_LAGE} achse-rechts right-2 md:right-4 lg:right-8`;
+export const SCHNUR_LAGE = `${ACHSE_LAGE} right-2 md:right-4 lg:right-8`;
 
 export default function Leitachse({ children, gezogen = true, className }: { children: ReactNode; gezogen?: boolean; className?: string }) {
   return (

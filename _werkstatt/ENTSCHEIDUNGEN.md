@@ -1796,3 +1796,33 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
 - **Live:** Der erste Push von f19ebba9 auf main wurde von der Sicherheitsprüfung der Umgebung abgelehnt, weil die Freigabe nicht ausdrücklich das Live-Schalten nannte. Ausdrückliche Freigabe des Auftraggebers um 20:00 MEZ: „ja, Absicherung live schalten“. Danach `git push origin HEAD:main` als Fast-Forward b5bbb68d..f19ebba9, ohne Force; main in den Arbeitsbranch zusammengeführt (0a71b5de, ohne Inhaltsänderung, weil der Arbeitsbranch E-110 schon trug); Arbeitskopie `$S/hotfix-mail2` entfernt. Production-Deploy dpl_75Xnr83H9M2cfqtGtSZPCpAEpGCA: READY in 27 s, Aliase tezgel.de und www.tezgel.de (lesend über Vercel geprüft). Rauchtest nur mit Seitenabrufen, ohne Formularsendung (G5): www.tezgel.de/, /kontakt und /bad/badsanierung antworten 200; tezgel.de leitet mit 308 auf www weiter. **live main = f19ebba9.**
 - **Bestätigung des Auftraggebers zu E-109:** „es funktioniert über die seite“. Die Testanfrage kam an.
 - **Restrisiko:** Die Sperre hängt an der Systemvariable `VERCEL_ENV`. Vercel stellt sie standardmäßig bereit (Einstellung „Automatically expose System Environment Variables“); Hinweis an den Auftraggeber.
+
+## E-111 · Welle 2: SF-B2 und SF-A2 eingespielt, Entscheidungen zu den offenen Fragen (31.10.2026, 23:55 MEZ)
+- **Lage:** Neustart der Umgebung um 22:43 UTC während SF-C3. wf_c0f2912c-207 mit `resumeFromRunId` fortgesetzt; nur `bau:c3` läuft neu, mit Absatz WIEDERAUFNAHME (Bestand in `$S/sfix/c3`). Speicher von 3,0 auf 5,0 GB freigemacht (Prüferkopien A2/B2, `reinraum-4d2d3fef`), Server 4325 = 13315fa8 neu gestartet.
+- **Eingespielt:**
+  - SF-B2 als 78ebf928 (Trockenlauf ohne Versatz).
+  - SF-A2 auf dem Stand mit B2: alle Hunks gehen durch (globals.css mit Versatz 9). Der Zusammenführungspatch `a2-nach-b2` entfällt, weil der Endstand von B2 Register und KERN nicht mehr berührt (B11). Den B2-Satz „Abschnitte mit Satz links stehen ab lg 16 px am Lot (UM-E4-SICHT-FIX M-B1, M-A4 Nr. 4)“ hat der Orchestrator in `leitachse.was` (register.ts und register.json gleich) und in K-007 Leitfaden-Motiv eingefügt.
+  - Prüfung im Repository nach beiden: npm test 278/0/1, tsc 0, eslint 0 (geänderte Dateien), werte `--basis 13315fa8` 0 Befunde.
+- **Entscheidungen SF-A2:**
+  - Frage 1 (E-104 Nr. 5): angenommen wie gebaut, mobil „nur Marken, im Einstieg nur die Schnur“ (Ruhe, K-016).
+  - Frage 2 (M-A5 Nr. 3): angenommen wie gebaut. Das Foto bleibt ganz im ersten Bildschirm; der Versatz bei d1280 und Bildschirmen unter 900 px Höhe bleibt.
+  - Frage 3 (M-A5 Nr. 4): für `/` erfüllt (54,7 %). Die Hochformat-Unterseiten (25,5 %) bleiben ohne Querformat-Zuschnitt (E-104 Nr. 6); Vermerk für das Tor.
+  - Frage 4 (R-2): nicht bauen. Inline-Zeilen nur für die LCP-Messung wären ein Bau nur für eine Prüfung (G7, wie E-101). R-2 wird in der Prüfkette nach Welle 2 neu gemessen und dort entschieden (E-112).
+  - Frage 5 und Frage 14 (Zusammenführung): `lot=` in ErzaehlSeite, `lotAnDerSatzkante` in inhalt.ts, der Typ in Seitenformel und die veralteten Kommentare (Ablauf, Abschnitt, Schnurebene, Einstieg) zieht der Orchestrator nach SF-C3 nach, weil C3 auf inhalt.ts und Abschnitt baut.
+  - Frage 6: bestätigt (Lot bei 8/16/32 px, Anrissstücke nur im oberen Innenabstand).
+  - Frage 7: nein; die H1 auf `/` bleibt in Größe und Umbruch (G8).
+  - Frage 9 (Rasterbild-Platzhalter für alle Bildfelder) und Frage 13 (Bildfeld ohne SVG-Platzhalter): nicht in dieser Welle; offener Punkt für E5, Bildfeld ist gemeinsame Datei.
+  - Frage 10 (Bestandsseiten mit eigener Leitachse): bleiben im alten Leitfaden (Bestand unverändert).
+  - Frage 15 (Prüfzeile Galerie-Spaltengrenzen): baut der Orchestrator mit der Zusammenführung nach SF-C3.
+- **Entscheidungen SF-B2:**
+  - O-1 (V-5, V-3) und NO-1 (V-16, V-17): bestätigt.
+  - O-2: der Selektor in Beleg bleibt; eine Prop im Karussell erst bei einer Änderung am Karussell.
+  - O-3: Satzspiegel als Ruhe-Regel „Fläche“ in K-003 eingetragen (Endstand: Versprechen mittig, Tun mit Moment breit).
+  - O-5: Pixelvergleiche des ersten Bildschirms ruhig nur über Kontrolläufe und erstesbild.
+  - O-6: axe target-size am Schließen-Knopf des Menüblatts in der Prüfkette beobachten.
+  - NO-2: kein `LageInhalt.satz` in dieser Welle.
+  - NO-3: angenommen, `tun.satz: 'mitte'` in `src/inhalte/referenzen.ts` (den Versatz trägt dort die Galerie); mit der Zusammenführung nach SF-C3.
+  - NO-4: zur Kenntnis, Wirkung wird im Tor bewertet.
+  - NO-5: die `_pruefb2l-*.mjs` hat ihr Prüfer gelöscht; die Löschung ist mit 78ebf928 eingetragen.
+- **Nicht behoben, bestätigt:** A2 Befund 4 (Marken bei x = 8), A2 Befund 1 Rest (Versatz unter 900 px Höhe), B2 B3 (wandernde Leerfläche, E-047), B2 B7 (zwei Fugen bei zwei Fotopaaren), B2 B10 (Lot in weißen Abschnitten; mit beiden Diffs im Tor bewerten).
+- **Textvorschläge:** T-B2-1 bis 3 in TEXTVORSCHLAEGE; SF-A2 ohne.

@@ -172,7 +172,7 @@
       },
       "eingang": {
         "zweck": "charakter",
-        "was": "Eingang ohne Vorhang: Logo baut sich im Kopf auf, Schnur und rotes Lotstück ziehen aus dem Kreuzpunkt unter der H1, auf / zeichnet sich der Quadratmeter an der Schnur, Ort und Knopfzeile (mittig mit allem darunter) setzen sich, Fugenriss am Foto; unter sm kommen nur Schnur und Zeilen (E-067-4, UM-E3-FIX, UM-E3-FIX2)",
+        "was": "Eingang ohne Vorhang: Logo baut sich im Kopf auf, Schnur und rotes Lotstück ziehen aus dem Kreuzpunkt unter der H1, auf / zeichnet sich der Quadratmeter an der Schnur, Ort und Knopfzeile (mittig mit allem darunter) setzen sich, Fugenriss am Foto; unter sm kommen nur Schnur und Zeilen, auf / erscheint das Fugenkreuz am Schnurende mit dem Ende des Zugs (E-067-4, UM-E3-FIX, UM-E3-FIX2, UM-E4-SICHT-FIX M-A5)",
         "stufen": {
           "dauer": [
             "--dauer-1",
@@ -235,7 +235,7 @@
       },
       "leitachse": {
         "zweck": "orientierung",
-        "was": "Leitfaden: das rote Lot wächst mit dem Lesen; auf den Erzählseiten der Vorlage steht die Spitze bei 40 %, mit der Abschnittsmarke nur neben dem Inhalt der Abschnitte auf Kalk, wo das Lot gezeichnet ist, und an Kanten rastet sie ins Fugenkreuz ein (UM-E3-LEIT, UM-E3-FIX2); dazu der Lesefortschritt der Ratgeber",
+        "was": "Leitfaden: das rote Lot wächst mit dem Lesen; auf den Erzählseiten der Vorlage steht die Spitze bei 40 %, mit der Abschnittsmarke nur neben dem Inhalt der Abschnitte auf Kalk, und an Kanten rastet sie ins Fugenkreuz ein (UM-E3-LEIT, UM-E3-FIX2); ab md läuft das Lot ohne Lücke über Fliese und Tinte, mobil stehen statt Lot und Bewegung nur Kantenkreuze mit statischem Anrissstück, im Einstieg nur die Schnur ohne Lotstück (UM-E4-SICHT-FIX M-A4); Abschnitte mit Satz links stehen ab lg 16 px am Lot (UM-E4-SICHT-FIX M-B1, M-A4 Nr. 4); dazu der Lesefortschritt der Ratgeber",
         "stufen": {
           "dauer": [
             "scroll"
@@ -246,7 +246,7 @@
         },
         "reduziert": {
           "art": "grundform",
-          "text": "Grundschicht: das graue Lot steht vollständig, kein Rot gezogen, keine Marke, Kantenkreuze schwarz; der Lesefortschritt ist ausgeblendet"
+          "text": "Grundschicht: das graue Lot steht ab md vollständig und ohne Lücke, kein Rot gezogen, keine Marke, Kantenkreuze schwarz mit statischem rotem Anrissstück (Stufe 6 nach unten; mobil ebenso, dort ohne Lot); der Lesefortschritt ist ausgeblendet"
         },
         "notaus": "laeuft",
         "hinweis": "Im Notaus läuft das Lot mit der Marke weiter: kein Startzustand, es verbirgt nichts und braucht kein Skript (UM-E3-LEIT, Entscheidung 5). Nur der Lesefortschritt steht im Notaus bei 0."

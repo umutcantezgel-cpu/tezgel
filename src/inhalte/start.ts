@@ -8,8 +8,6 @@ import type { ErzaehlInhalt } from '@/components/vorlagen/inhalt';
 
 export const START: ErzaehlInhalt = {
   pfad: '/',
-  // Leitfaden mit Präsenz (UM-E4-START, Sicht Anlauf 3): mobil steht das Lot auf der Satzkante statt im Rand
-  lotAnDerSatzkante: true,
   meta: {
     titel: 'Fliesenleger Aßlar und Wetzlar | Fliesenverlegung Tezgel',
     beschreibung: 'Fliesenverlegung Tezgel aus Aßlar: Badsanierung, Böden, Balkon und Terrasse für Wetzlar und Umgebung. Der Termin bei Ihnen vor Ort ist kostenfrei.',

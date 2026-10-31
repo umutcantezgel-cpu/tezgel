@@ -180,7 +180,10 @@ html.k-verlauf ol[data-motion="anriss"] .treppe-kreuz-rot {
    Planblatt: `/` und mit Absicht die übrigen Seiten dieser Vorlage, K-007 „alle Erzählansichten“). Ihre rote Spitze steht
    fest auf der Leselinie, 40 % der Bildschirmhöhe von oben: Darüber ist das Lot gezogen (gelesen), darunter Grundschicht
    (kommt noch). Auf dem Bildschirm bewegt sich nichts: Linie und Kopf stehen still, der Inhalt läuft unter ihnen durch.
-   Flächen (Fliese, Tinte) decken das Lot wie bisher (Gutachten u8).
+   Seit UM-E4-SICHT-FIX M-A4 läuft das Lot ab md über Fliese und Tinte weiter (Ebene z-10 am Lot, globals.css
+   „Leitfaden-Ebene“; vorher deckten die Flächen es, Gutachten u8). Bewegung nur ab md: Mobil stehen statt Lot, Kopf und
+   Einrasten nur Kantenkreuze mit statischem Anrissstück (globals.css „Anrissstück an der Kante“), ab md ersetzt das Einrasten
+   das Anrissstück.
    Kopf (Abschnittsmarke, rotes Fugenkreuz auf der Spitze): Er steht nur dort, wo er auf einer gezeichneten Achse sitzt,
    also neben dem Inhalt eines Abschnitts auf Kalk (kern/Abschnitt setzt dort eine Bahn). Auf Fliese und Tinte gibt es
    keinen Kopf, vorher schwebte er dort allein im Weiß, neben dem Formular und neben H2 (Sichtabnahme E3 Anlauf 2). Die
@@ -244,7 +247,11 @@ html.k-verlauf ol[data-motion="anriss"] .treppe-kreuz-rot {
   }
 }
 @supports (animation-timeline: view()) and (animation-range-end: cover calc(100% - 40vh)) and (timeline-scope: --a) {
-  @media screen and (prefers-reduced-motion: no-preference) {
+  @media screen and (prefers-reduced-motion: no-preference) and (width >= 48rem) {
+    /* Mit Bewegung rastet der Kopf an der Kante ein; das statische Anrissstück der ruhigen Fassung entfällt dort (M-A4 Nr. 3) */
+    html.k-bewegung [data-seitenformel] > [data-formel="worum"] + .leitfaden .abschnitt-kreuz > ::before {
+      display: none;
+    }
     /* Kopf je Abschnitt: Bahn neben dem Inhalt, Pause im selben Inhalt */
     html.k-bewegung [data-seitenformel] > [data-formel="worum"] + .leitfaden .abschnitt-inhalt {
       timeline-scope: --kopf-pause, --kopf-pause-2, --kopf-pause-ganz;
@@ -326,6 +333,10 @@ html.k-verlauf ol[data-motion="anriss"] .treppe-kreuz-rot {
   /* !important: Das Fugenkreuz trägt die Utility inline-block, und die Ebene utilities schlägt diese Regel; ohne stand das
      rote Kreuz weiter im Baum, und kante-rot lief unter erzwungenen Farben und im Druck (Prüfung UM-E4-VORL) */
   .kreuz-rot {
+    display: none !important;
+  }
+  /* Anrissstück an der Kante (globals.css, M-A4) wie das rote Kreuz */
+  [data-seitenformel] > [data-formel="worum"] + .leitfaden .abschnitt-kreuz > ::before {
     display: none !important;
   }
 }
@@ -1038,11 +1049,13 @@ html.k-notaus::view-transition-new(*) {
    - Ort und Knopfzeile setzen sich (8 px, Deckkraft, wie auftritt), über die Oberkante des Fotos zieht ein Fugenriss in
      Strich und verblasst (nur ein Pseudoelement am Bildplatz, das Foto bleibt unberührt). Im mittigen Einstieg trägt
      data-eingang="knoepfe" alles unter dem Ort (Orte-Link, Knopfzeile, erster Schritt, Bewertung): Vor der H1 steht so
-     nichts allein im Bild. Unter sm stehen Ort, Knöpfe, erster Schritt, Bewertung und Lotstück ab dem ersten Bild, der
-     Fugenriss entfällt (Klassen in EinstiegMitte: max-sm:animate-none, max-sm:after:hidden); dort kommen nur Schnur und
-     Zeilen herein: Schnur 0–320 ms, Zeilenmasken 140–860 ms. Die Flucht der zweiten Zeile (sig-flucht, unverändert, siehe
-     oben) läuft als Zeitstrahl bis 920 ms; ab 860 ms fehlen ihr weniger als 0,01 px (ease-setzen), sichtbar endet der
-     Eingang mobil also bei 0,86 s.
+     nichts allein im Bild. Unter sm stehen Ort, Knöpfe, erster Schritt und Bewertung ab dem ersten Bild (das Lotstück steht
+     unter md mit Seitenformel nicht, globals.css „Leitfaden-Ebene“), der Fugenriss entfällt (Klassen in EinstiegMitte:
+     max-sm:animate-none, max-sm:after:hidden); dort kommen nur Schnur und Zeilen herein: Schnur 0–320 ms, Zeilenmasken
+     140–860 ms. Auf / steht am rechten Ende der Schnur statt des Quadratmeters ein Fugenkreuz (data-eingang="schnurende",
+     UM-E4-SICHT-FIX M-A5 Nr. 1); es erscheint, wenn die Schnur ankommt (320–460 ms), vorher stand es allein am Rand. Die
+     Flucht der zweiten Zeile (sig-flucht, unverändert, siehe oben) läuft als Zeitstrahl bis 920 ms; ab 860 ms fehlen ihr
+     weniger als 0,01 px (ease-setzen), sichtbar endet der Eingang mobil also bei 0,86 s.
    Wiederkehr im selben Besuch (html.k-wiederkehr): nur die Zeilenmasken, kürzer, kein Logo-Aufbau, Schnur, Lotstück und
    Quadratmeter stehen. Takt voll: Logo 0–800 ms, Schnur und Lotstück 0–320, Zeilen 140–860, Kanten des Quadratmeters
    320–880, Maße 680–1280, Ort 500–1100, Knöpfe und Rest 620–1220, Fugenriss 800–1400. Alle Teile laufen mit Füllung
@@ -1075,12 +1088,13 @@ html.k-wiederkehr [data-motion="eingang"] {
 [data-motion="eingang"][data-einstieg="schnur"] {
   --eingang-schnur: var(--dauer-1);
 }
-/* Zeilenmaske an der Schnur (Figur der Unterseiten, EinstiegMitte titel-zeile; Nacharbeit UM-E4-SICHT-FIX SF-A, Vorgriff auf
-   M-A5 Nr. 2): Die Grundlinie der letzten H1-Zeile steht auf der Schnur, ihr Zeilenkasten reicht um halben Durchschuss und
-   Unterlänge (0,216em, globals.css „schnur-grundlinie“) darunter. Mit der Maske 0,2em unter dem Kasten blitzten beim Aufsteigen
-   Bruchstücke der Zeile bis rund 25 px unter der Schnur (d1440, um 170 ms). Hier endet die Maske an der Grundlinie: Die Zeile
-   steigt aus der Schnur auf, die Unterlängen erscheinen mit dem Ende des Zugs. Dauer und Folge bleiben; / folgt mit M-A5. */
-.titel-zeile > [data-motion="zeilenmaske"]:last-child {
+/* Zeilenmaske an der Schnur (alle Figur-Einstiege samt /, EinstiegMitte schnur-grundlinie; Nacharbeit UM-E4-SICHT-FIX SF-A,
+   UM-E4-SICHT-FIX M-A5 Nr. 2): Die Grundlinie der letzten H1-Zeile steht auf der Schnur, ihr Zeilenkasten reicht um halben
+   Durchschuss und Unterlänge (0,216em, globals.css „schnur-grundlinie“) darunter. Mit der Maske 0,2em unter dem Kasten
+   blitzten beim Aufsteigen Bruchstücke der Zeile bis rund 25 px unter der Schnur (d1440 und m390, um 170 bis 300 ms). Hier
+   endet die Maske bis 85 % des Zugs an der Grundlinie (Schlüsselbilder eingang-zeile): Die Zeile steigt aus der Schnur auf,
+   die Unterlängen erscheinen erst, wenn sie steht. Dauer und Folge bleiben. */
+.schnur-grundlinie > [data-motion="zeilenmaske"]:last-child {
   --eingang-maske-unten: calc(1em * (1.1 - 1.088) / 2 + 0.21em);
 }
 /* Schnur: zieht von der Achse nach rechts (transform-origin links an der Schnur selbst, EinstiegMitte); ebenso die obere
@@ -1113,16 +1127,23 @@ html.k-wiederkehr [data-motion="eingang"] {
 /* Weg der Zeile: ihre Höhe und 0,4em, dann liegt sie ganz unter der Maske; die Maske (Zeile ± 0,2em) steht dabei fest.
    transform statt translate: Die Flucht (sig-flucht) bewegt dieselbe Zeile über translate, beide setzen sich zusammen.
    Unterkante der Maske: --eingang-maske-unten (Abstand nach innen von der Unterkante der Zeile; ohne Angabe −0,2em, also 0,2em
-   darunter wie bisher). Die Figur der Unterseiten setzt sie an der letzten Zeile auf die Grundlinie (Block „Zeilenmaske an der
-   Schnur“ unten). */
+   darunter wie bisher). Die Figur-Einstiege setzen sie an der letzten Zeile auf die Grundlinie (Block „Zeilenmaske an der
+   Schnur“ oben). Bei 85 % steht die Zeile (Kurve je Abschnitt: der Zug endet dort statt bei 100 %, mit ease-setzen fehlten ihr
+   bei 85 % ohnehin nur 0,3 %), danach öffnet die Maske unten bis zum Polster von 0,2em: Die Unterlängen erscheinen erst nach
+   dem Ankommen und nicht in einem Bild (das letzte Schlüsselbild hält die Maske offen, die Füllung backwards nimmt sie danach
+   ohne Sprung weg; UM-E4-SICHT-FIX M-A5 Nr. 2). Ohne Angabe von --eingang-maske-unten bleibt die Maske bis zum Ende gleich. */
 @keyframes eingang-zeile {
   from {
     transform: translateY(calc(100% + 0.4em));
     clip-path: inset(calc(-100% - 0.6em) -1em calc(100% + 0.4em + var(--eingang-maske-unten, -0.2em)) -1em);
   }
-  to {
+  85% {
     transform: translateY(0);
     clip-path: inset(-0.2em -1em var(--eingang-maske-unten, -0.2em) -1em);
+  }
+  to {
+    transform: translateY(0);
+    clip-path: inset(-0.2em -1em -0.2em -1em);
   }
 }
 @keyframes eingang-setzen {
@@ -1153,6 +1174,10 @@ html.k-wiederkehr [data-motion="eingang"] {
   }
   html.k-eingang.k-bewegung:not(.k-notaus):not(.k-wiederkehr) [data-motion="eingang"] [data-eingang="lot"] {
     animation: eingang-lot var(--eingang-schnur) var(--ease-laser) backwards;
+  }
+  /* Kreuz am Schnurende (/, unter sm): erscheint mit dem Ende des Zugs, nur Deckkraft */
+  html.k-eingang.k-bewegung:not(.k-notaus):not(.k-wiederkehr) [data-motion="eingang"] [data-eingang="schnurende"] {
+    animation: eingang-mass var(--dauer-1) var(--ease-setzen) var(--eingang-schnur) backwards;
   }
   /* Quadratmeter: Kanten am eigenen Rahmen (fill-box), links von unten, oben von links, rechts von oben */
   html.k-eingang.k-bewegung:not(.k-notaus):not(.k-wiederkehr) [data-motion="eingang"] [data-eingang="kante-links"] {
@@ -1207,6 +1232,7 @@ html.k-wiederkehr [data-motion="eingang"] {
   html.k-eingang [data-motion="eingang"] [data-eingang="knoepfe"],
   html.k-eingang [data-motion="eingang"] [data-eingang="schnur"],
   html.k-eingang [data-motion="eingang"] [data-eingang="lot"],
+  html.k-eingang [data-motion="eingang"] [data-eingang="schnurende"],
   html.k-eingang [data-motion="eingang"] [data-eingang^="kante-"],
   html.k-eingang [data-motion="eingang"] [data-eingang="mass"] {
     animation: none !important;
@@ -1945,6 +1971,13 @@ html[data-bewegung="ruhig"] .fugenband-rot {
 }
 html[data-bewegung="ruhig"] [data-motion="druck"]:active {
   translate: none;
+}
+/* Anrissstück an der Kante (M-A4): „ruhig“ zeigt es auch ab md (die Regel, die es mit Bewegung wegnimmt, hängt schon an
+   html.k-bewegung; dieser Spiegel steht zur Sicherheit wie die Leitachse oben, nur am Bildschirm ohne erzwungene Farben) */
+@media screen and (forced-colors: none) {
+  html[data-bewegung="ruhig"] [data-seitenformel] > [data-formel="worum"] + .leitfaden .abschnitt-kreuz > ::before {
+    display: block;
+  }
 }
 html[data-bewegung="ruhig"]::view-transition-group(*),
 html[data-bewegung="ruhig"]::view-transition-old(*),

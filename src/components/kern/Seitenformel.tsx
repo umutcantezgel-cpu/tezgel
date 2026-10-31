@@ -16,12 +16,9 @@ export const FORMEL_NAMEN: Record<Formelteil, string> = {
   schritt: 'Nächster Schritt',
 };
 
-/** `lot="satzkante"` (Startseite, UM-E4-START): Das Lot des Leitfadens steht unter md auf der Satzkante statt mittig im Rand
- *  (globals.css „Lot an der Satzkante“, Marke `achse` an ACHSE_LAGE) */
-export default function Seitenformel({ children, lot }: { children: ReactNode; lot?: 'satzkante' }) {
-  return (
-    <div data-seitenformel="" data-lot={lot}>
-      {children}
-    </div>
-  );
+/** Das Lot steht auf allen Seiten an derselben Stelle (ACHSE_LAGE). `lot="satzkante"` (Startseite, UM-E4-START) ist entfallen
+ *  (UM-E4-SICHT-FIX M-A4 Nr. 2: mobil stehen nur noch Marken an den Kanten); die Angabe bleibt bis zur Zusammenführung mit der
+ *  Vorlage ErzaehlSeite im Typ und wirkt nicht mehr (siehe Paketnotiz UM-E4-SICHT-FIX-a2) */
+export default function Seitenformel({ children }: { children: ReactNode; lot?: 'satzkante' }) {
+  return <div data-seitenformel="">{children}</div>;
 }

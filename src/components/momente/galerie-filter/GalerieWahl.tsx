@@ -17,12 +17,21 @@
 // einer Kachel tiefer (data-verband). Die Knöpfe stehen unter md in zwei gleich breiten Spalten (drei Reihen zu zwei; vorher
 // 3, 1, 2 mit einem Knopf allein, Nacharbeit SF-C1), bei großer Schrift untereinander, ab md in drei gleich breiten
 // Spalten, ab xl in einer Zeile. Ohne Maus steht der Name auf dem Verlauf in höchstens zwei Zeilen (globals.css).
+// Reaktion beim Aufklappen (UM-E4-SICHT-FIX R-1, E-108: 384 ms bei m390 und CPU 4×, Schwelle 200 ms): Jedes neu gezeigte Foto
+// legte im selben Bild sein Platzhalter-SVG als eigenes Dokument an (next/image placeholder="blur"; Leistungsspur: 18
+// SVG-Dokumente in einem Layout von rund 170 ms). Darum zeigt der Klick zuerst nur die erste Reihe der neuen Fotos (so viele wie
+// Spalten, darin das Foto, das den Fokus bekommt) und malt; die übrigen kommen in einer eigenen Aufgabe nach diesem Bild dazu.
+// Fotos ab dem siebten zeichnet der Browser erst in Sichtnähe (content-visibility, globals.css „Galerie eingeklappt“), und der
+// unscharfe Platzhalter steht als kleines Rasterbild statt als SVG-Dokument hinter jedem Foto (GalerieFilter). Das
+// Verhalten bleibt: aria-expanded, Fokus auf dem ersten neuen Foto, Rückfall ohne JavaScript, ?raum=; die neuen blenden weiter
+// gestaffelt ein, die zweite Gruppe ein Bild später.
 import { useId, useRef, useState, useSyncExternalStore, type CSSProperties, type ReactNode } from 'react';
 import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import { knopfKlassen, wahlKlassen } from '@/components/kern/stile';
 import type { ArbeitId } from '@/config/arbeiten';
+import { naechstesBild } from '@/lib/motion/takt';
 import { GRUPPEN, ansage, anzahl, istSichtbar, mehrMarke, stufen, stufenNachzeigen, type GruppeId, type Wahl } from './daten';
 
 export interface GalerieWahlFoto {
@@ -30,6 +39,8 @@ export interface GalerieWahlFoto {
   gruppe: GruppeId;
   /** fertiges Bildfeld vom Server */
   knoten: ReactNode;
+  /** unscharfer Platzhalter (Daten-URL, WebP 16 px) als Hintergrund des Fotos (R-1, globals.css „Galerie“) */
+  platzhalter?: string;
 }
 
 interface Stand {
@@ -38,6 +49,8 @@ interface Stand {
   vorher: Wahl | null;
   /** aufgeklappt: ab diesem Foto blenden die nachgezeigten ein (null: noch eingeklappt bzw. nach einem Wechsel ruhig) */
   nach?: number | null;
+  /** beim Aufklappen bis zum ersten Bild nur die erste Reihe der neuen Fotos (bis ausschließlich zu diesem Foto, R-1) */
+  bis?: number | null;
 }
 
 const ohneAbo = () => () => {};
@@ -60,16 +73,21 @@ export default function GalerieWahl({ fotos, satz }: { fotos: GalerieWahlFoto[];
   const gruppen = GRUPPEN.filter((g) => anzahl(g.id, fotos) > 0);
   const eingeklappt = stand.wahl === 'alle' && !aufgeklappt;
   const stufe = typeof stand.nach === 'number' ? stufenNachzeigen(fotos.length, stand.nach) : stufen(fotos, stand.wahl, stand.vorher);
-  // Alle zeigen: das erste verborgene Foto (je nach Raster das 7. oder 10.) ist das erste neue; es bekommt danach den Fokus
+  // Alle zeigen: das erste verborgene Foto (je nach Raster das 7. oder 10.) ist das erste neue; es bekommt danach den Fokus.
+  // Bis zum ersten Bild steht nur die erste Reihe der neuen Fotos, die übrigen folgen in einer eigenen Aufgabe (R-1, oben)
   const aufklappen = () => {
     const kacheln = [...(liste.current?.children ?? [])] as HTMLElement[];
     const ab = kacheln.findIndex((k) => getComputedStyle(k).display === 'none');
     setAufgeklappt(true);
     if (ab < 0) return;
-    setGewaehlt({ wahl: 'alle', vorher: stand.vorher, nach: ab });
-    requestAnimationFrame(() => {
+    const spalten = liste.current ? getComputedStyle(liste.current).gridTemplateColumns.split(' ').length : 1;
+    const bis = ab + spalten;
+    setGewaehlt({ wahl: 'alle', vorher: stand.vorher, nach: ab, bis });
+    naechstesBild(() => {
       const erstes = liste.current?.children[ab] as HTMLElement | undefined;
       erstes?.querySelector<HTMLElement>('a')?.focus();
+      // nach diesem Bild: die übrigen Fotos, solange niemand inzwischen anders gewählt hat
+      setTimeout(() => setGewaehlt((s) => (s?.bis === bis ? { ...s, bis: null } : s)), 0);
     });
   };
 
@@ -120,12 +138,12 @@ export default function GalerieWahl({ fotos, satz }: { fotos: GalerieWahlFoto[];
             return (
               <li
                 key={f.bild}
-                hidden={!istSichtbar(f.gruppe, stand.wahl)}
+                hidden={!istSichtbar(f.gruppe, stand.wahl) || (typeof stand.bis === 'number' && i >= stand.bis)}
                 data-motion="galerie-filter"
                 data-galerie-gruppe={f.gruppe}
                 data-galerie-mehr={mehrMarke(i)}
                 data-galerie-neu={neu ? '' : undefined}
-                style={neu ? ({ '--galerie-stufe': s } as CSSProperties) : undefined}
+                style={{ ...(f.platzhalter ? { '--galerie-platzhalter': `url("${f.platzhalter}")` } : {}), ...(neu ? { '--galerie-stufe': s } : {}) } as CSSProperties}
                 className="border-r border-b border-fuge bg-kalk"
               >
                 {f.knoten}

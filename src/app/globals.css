@@ -211,6 +211,22 @@
 @utility einstieg-foto-start {
   width: clamp(calc(100% / 2), calc((100svh - var(--spacing) * 62 - 2.2 * var(--text-fs-7)) * var(--bild-format)), calc(100% * 2 / 3));
 }
+/* Knopfgruppe ab lg auf den Kanten des Startfotos (UM-E4-SICHT-FIX M-A5 Nr. 3, Sicht E4 Anlauf 1: Foto und Knopfgruppe ohne
+   gemeinsame Kanten): dasselbe Maß wie einstieg-foto-start, die Knöpfe teilen sich die Breite. Ihr Innenabstand ist dort Stufe 4
+   statt 6: Sie wachsen ohnehin auf das Maß (gleiche Zugabe je Knopf, auf breiten Bildschirmen also dieselben Breiten wie mit
+   Stufe 6), aber die drei Knöpfe passen so schon in das Foto von d1440 (Inhalt 793 gegen Foto 799 px; mit Stufe 6 waren es 841,
+   die Gruppe stand je Seite 21 px über das Foto hinaus). Mindestens so breit wie ihr Inhalt (ohne Größeneinschluss, sonst
+   zählte der Inhalt nicht): Wo das Foto für den ersten Bildschirm noch schmaler bleibt (Bildschirmhöhe unter rund 900 px wie
+   d1280, oder 1600 × 900, wo die Grundschrift schneller wächst als die Höhe), steht die Gruppe mittig breiter als das Foto. */
+@utility einstieg-knoepfe-start {
+  width: clamp(calc(100% / 2), calc((100svh - var(--spacing) * 62 - 2.2 * var(--text-fs-7)) * var(--bild-format)), calc(100% * 2 / 3));
+  min-width: max-content;
+  container-type: normal;
+  & > * {
+    flex-grow: 1;
+    padding-inline: calc(var(--spacing) * 4);
+  }
+}
 /* Hochformat im mittigen Einstieg ab lg (Figur „An der Schnur“ ohne bildQuer, UM-E4-SICHT-FIX M-A1 Nr. 4): höchstens 80svh hoch,
    Breite aus dem eigenen Seitenverhältnis (--bild-format), höchstens zwei Drittel der Spalte. Das 4 : 5-Foto misst so auf d1440
    576 × 720 px und beginnt unter den Knöpfen; im ersten Bildschirm stehen rund 60 % (vorher eine ganze Bildschirmhöhe, deren
@@ -500,6 +516,66 @@
   [data-seitenformel] > [data-formel="worum"] + .leitfaden [data-kante] + section > .abschnitt-kreuz {
     display: block;
   }
+  /* Anrissstück an der Kante (UM-E4-SICHT-FIX M-A4 Nr. 2 und 3): unter jedem Kantenkreuz des Leitfadens ein statisches rotes
+     Stück, Stufe 6 (24 px) vom Kreuzpunkt nach unten, 2 px wie das rote Lot, mittig auf der Achse und unter dem Kreuz (vor
+     ihm im Baum). Es steht im oberen Innenabstand des Abschnitts im Seitenrand, nie neben Text. Mobil, wo keine Haarlinie
+     steht, immer; ab md in der ruhigen Fassung (reduziert, „ruhig“, ohne JavaScript): Mit Bewegung nimmt bewegung.css es dort
+     weg, weil der Kopf an der Kante einrastet. Druck und erzwungene Farben ohne (bewegung.css, wie .kreuz-rot). */
+  [data-seitenformel] > [data-formel="worum"] + .leitfaden .abschnitt-kreuz > ::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc(var(--spacing) * 2);
+    width: 2px;
+    height: calc(var(--spacing) * 6);
+    margin-inline-start: -1px;
+    background-color: var(--color-laser);
+  }
+  /* Leitfaden-Ebene (M-A4 Nr. 1 und 2): Ab md trägt das Lot selbst (1 px, sein rotes Stück 2 px) die Ebene z-10 wie Kantenkreuze
+     und Bahn; der ganzflächige Behälter der Zierebene bleibt ohne z-index (sonst läge eine Ebene über dem Text, axe
+     bgOverlap). So läuft die Grundschicht ohne Lücke über Fliese- und Tinteflächen weiter. Auf Tinte steht darüber ein Stück
+     in nacht-fuge, ebenso in z-10 und später im Baum (es deckt dort Grundschicht und Rot: Die Spitze taucht unter die Tinte):
+     3 px breit, außen Tinte, in der Mitte 1 px nacht-fuge auf dem Lot, so deckt es auch die Halbpixel des 2-px-Rots (mit 1 px
+     blieb das Rot an beiden Seiten halb sichtbar, Nacharbeit SF-A2); nur an Tinte-Abschnitten (section mit data-kante aus
+     kern/Abschnitt), nicht an Tinte-Kästen im Inhalt wie dem Preisrechner. Die Kantenkreuze mit Anrissstück liegen darüber
+     (z-10, später im Baum).
+     Mobil (unter md) keine durchlaufende Haarlinie und kein gezogenes Rot, auch nicht im Einstieg: An den Kanten stehen
+     Fugenkreuz und Anrissstück, im Einstieg nur die Schnur unter der H1. Auch das rote Lotstück neben Ort und Knöpfen entfällt
+     dort (Nacharbeit SF-A2: im 16-px-Rand las es sich bei 8 px als Rahmenlinie, auf der Satzkante als Naht neben den Knöpfen,
+     Sicht E4 Anlauf 1 b1, b6; Anlauf 3 „Schnittmarke“). */
+  @media (width < 48rem) {
+    [data-seitenformel] > [data-formel="worum"] .leitachse,
+    [data-seitenformel] > [data-formel="worum"] .lot-stueck,
+    [data-seitenformel] > [data-formel="worum"] + .leitfaden > .leitfaden-ebene .leitachse {
+      display: none;
+    }
+  }
+  @media (width >= 48rem) {
+    [data-seitenformel] > [data-formel="worum"] + .leitfaden > .leitfaden-ebene .leitachse {
+      z-index: 10;
+    }
+    [data-seitenformel] > [data-formel="worum"] + .leitfaden .abschnitt-kreuz > ::before {
+      left: calc(var(--spacing) * 4);
+    }
+    [data-seitenformel] > [data-formel="worum"] + .leitfaden section.flaeche-tinte[data-kante]::before {
+      content: "";
+      position: absolute;
+      inset-block: 0;
+      z-index: 10;
+      left: calc(max(0px, (100% - var(--container-seite)) / 2) + var(--spacing) * 4 - 1px);
+      width: 3px;
+      background-image: linear-gradient(to right, var(--color-tinte) 1px, var(--color-nacht-fuge) 1px 2px, var(--color-tinte) 2px);
+      pointer-events: none;
+    }
+  }
+  @media (width >= 64rem) {
+    [data-seitenformel] > [data-formel="worum"] + .leitfaden .abschnitt-kreuz > ::before {
+      left: calc(var(--spacing) * 8);
+    }
+    [data-seitenformel] > [data-formel="worum"] + .leitfaden section.flaeche-tinte[data-kante]::before {
+      left: calc(max(0px, (100% - var(--container-seite)) / 2) + var(--spacing) * 8 - 1px);
+    }
+  }
 }
 
 /* Anzeigeschnitt für Titel ohne Überschriften-Element (Formulartitel, Kennwerte, Merkliste): schmal gesetzt wie
@@ -604,7 +680,9 @@
      so hoch wie die H1 von knapp unter der Versalhöhe der ersten bis zur Grundlinie der zweiten Zeile (rund zwei Zeilen);
      mit 1,8em stand die obere Zahl auf t1024 und d1440 nur 4 bis 6 px unter dem Kopf der Seite, jetzt rund 18 px.
      Zeichnung 96 × 96 Einheiten, Maße 12 Einheiten vor der Kante (0,125 der Seite),
-     die Zahlen stehen auf der Maßlinie. Unter lg nur das obere Maß (links stünde es im Wortabstand). */
+     die Zahlen stehen auf der Maßlinie. Unter lg nur das obere Maß (links stünde es im Wortabstand). Unter sm steht statt des
+     Quadratmeters ein Fugenkreuz am Schnurende (EinstiegMitte, UM-E4-SICHT-FIX M-A5 Nr. 1); die Zeilengrenze titel-spalte
+     bleibt dort, damit die H1 der Referenzansicht ihre abgenommene Größe behält. */
   .quadratmeter {
     --qm: 1.1em;
     --qm-luft: 0.25em;
@@ -669,25 +747,6 @@
   @media (width < 64rem), (resolution < 2dppx) {
     .einstieg-lot .schnur-linie {
       height: 2px;
-    }
-  }
-  /* Lot an der Satzkante (Seitenformel lot="satzkante", nur Startseite; UM-E4-START, Sicht Anlauf 3: mittig im Rand bei 8 px
-     las sich das Rot wie eine Schnittmarke am Bildrand): unter md steht das Lot mit seiner rechten Kante auf der Satzkante
-     (16 px), das 2-px-Rot also von 14 bis 16 px, die Fugenkreuze mittig darauf; die Schnur beginnt dort und endet gespiegelt.
-     Die Treppe des Ablaufs steht mobil auf dem Lot und rückt mit (treppe-auf-lot). Haken: die Marke `achse` an ACHSE_LAGE. */
-  @media (width < 48rem) {
-    [data-lot="satzkante"] .achse {
-      left: calc(var(--spacing) * 4 - 1px);
-    }
-    [data-lot="satzkante"] .achse-rechts {
-      right: calc(var(--spacing) * 4 - 1px);
-    }
-    [data-lot="satzkante"] .leitachse-rot,
-    [data-lot="satzkante"] .lot-stueck {
-      margin-left: -1px;
-    }
-    [data-lot="satzkante"] .treppe-auf-lot {
-      margin-left: -2px;
     }
   }
   /* Planblatt der Startseite: Das Formular setzt die Wände des geschnittenen Plans nach unten fort (--wand aus
@@ -779,7 +838,8 @@
   /* Lotstück des mittigen Einstiegs (UM-E3-FIX2 N3): rot von der Schnur bis unter die Knopfreihe, auf derselben Achse wie das
      rote Stück der Laserachse (2 px, um 0,5 px nach links wie .leitachse-rot im 1-px-Lot). Teil der Figur „An der Schnur“ wie
      die Schnur: steht in jedem Zustand, auch reduziert, ruhig und ohne JavaScript; nur sein Ziehen im Eingang ist Bewegung
-     (bewegung.css „eingang“). Unten setzt EinstiegMitte die Länge (Abstand unter der Knopfreihe). */
+     (bewegung.css „eingang“). Unten setzt EinstiegMitte die Länge (Abstand unter der Knopfreihe). Unter md steht es mit
+     Seitenformel nicht (Block „Leitfaden-Ebene“, UM-E4-SICHT-FIX M-A4 Nr. 2). */
   .lot-stueck {
     pointer-events: none;
     position: absolute;
@@ -898,6 +958,36 @@
     }
     .galerie-liste[data-verband] > li:nth-child(3n + 2) {
       translate: 0 calc(100% / 3);
+    }
+  }
+  /* Reaktion beim Aufklappen (UM-E4-SICHT-FIX R-1): Fotos ab dem siebten (data-galerie-mehr) zeichnet der Browser erst in
+     Sichtnähe. Sonst legte jedes neu gezeigte Foto im selben Bild sein Platzhalter-SVG als eigenes Dokument an (18 auf m390).
+     Platzhalterhöhe bis zum ersten Zeichnen: die Kachel 4 : 5 (alle Galeriefotos, test/galerie-filter.test.mjs „Galerie 2“) in
+     einer, zwei oder drei Spalten; danach merkt sich der Browser die echte Höhe (auto). Die Ränder zählen mit: Die Liste hat
+     links 1 px (Rand oder im Verband Innenabstand), jede Kachel rechts 1 px vor dem Foto, also Foto = (Liste − 1 px) / Spalten
+     − 1 px breit; der untere Rand der Kachel liegt außerhalb dieser Höhe (sonst stand die übersprungene Kachel 2,5 px höher als
+     die gezeichnete). Spaltengrenzen 42 und 64rem wie @2xl und @5xl der Liste in GalerieWahl. */
+  .galerie-liste > [data-galerie-mehr] {
+    content-visibility: auto;
+    contain-intrinsic-block-size: auto calc((100cqi - 2px) * 5 / 4);
+  }
+  /* Unscharfer Platzhalter der Galerie (R-1): das kleine Rasterbild aus ARBEITEN (--galerie-platzhalter am Foto der Liste,
+     GalerieWahl) statt des SVG mit Weichzeichner, das next/image als Hintergrund setzt; gestreckt steht es weich hinter dem
+     Foto, bis es geladen ist. !important, weil next/image den Platzhalter als Inline-Stil schreibt */
+  .galerie-liste img {
+    background-image: var(--galerie-platzhalter) !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  @container (width >= 42rem) {
+    .galerie-liste > [data-galerie-mehr] {
+      contain-intrinsic-block-size: auto calc(((100cqi - 1px) / 2 - 1px) * 5 / 4);
+    }
+  }
+  @container (width >= 64rem) {
+    .galerie-liste > [data-galerie-mehr] {
+      contain-intrinsic-block-size: auto calc(((100cqi - 1px) / 3 - 1px) * 5 / 4);
     }
   }
   /* Ohne Maus steht der Name auf dem kurzen Verlauf in höchstens zwei Zeilen (Text im DOM, Name des Links unverändert): Mit

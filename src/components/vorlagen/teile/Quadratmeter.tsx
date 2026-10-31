@@ -9,7 +9,9 @@
 // Zeilenhöhe mit Maß nur oben
 // (links stünde es im Wortabstand zur H1). Ohne Höhe im Fluss: Die Unterkante ist die Grundlinie der letzten Zeile, also die
 // Schnur; Zeichnung und Zahlen ragen darüber auf (globals.css „quadratmeter“). Flach (Querformat bis 32rem Höhe)
-// fließt die H1 als ein Satz; dort steht nur die Fliese in Zeilenhöhe ohne Bemaßung (Nacharbeit UM-E4-START).
+// fließt die H1 als ein Satz; dort steht nur die Fliese in Zeilenhöhe ohne Bemaßung (Nacharbeit UM-E4-START). Unter sm steht er
+// gar nicht (UM-E4-SICHT-FIX M-A5 Nr. 1, Sicht E4 Anlauf 1: neben der mittigen Zeile schob er die H1 rund 25 px links der Achse,
+// und „Quadratmeter.“ stieß bei m360 an ihn): Dort setzt EinstiegMitte nur ein Fugenkreuz an das rechte Ende der Schnur.
 // Dekorativ (aria-hidden am Platz in EinstiegMitte), Inline-SVG mit currentColor und Tokens: kein Bild, kein Abruf; die Zahlen
 // sind kleiner als jede Zeile der H1 und das Foto, nie LCP-Element. Die Zahlen stehen außerhalb der H1 (ihr Text bleibt der
 // Wortlaut, A-1).
