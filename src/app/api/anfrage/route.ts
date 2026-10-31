@@ -7,12 +7,10 @@ import {
   checkIpRateLimit,
   getClientIp,
   checkFastBot,
-  isHoneypotTriggered
+  isHoneypotTriggered,
+  anfrageAntwort,
+  FEHLER_HINWEIS
 } from '@/lib/email';
-
-// Hinweis bei jedem Fehlschlag des Versands, Wortlaut unverändert aus dem Bestand
-const FEHLER_HINWEIS =
-  'Die Anfrage konnte derzeit nicht übertragen werden. Bitte kontaktieren Sie uns direkt telefonisch (06441 / 44 83 567) oder per WhatsApp.';
 
 export async function POST(request: NextRequest) {
   try {
@@ -139,16 +137,9 @@ export async function POST(request: NextRequest) {
     // 8. Dispatch emails via central mailer (with retry, backoff and fail-safe logging)
     const result = await sendInquiryEmails(payload);
 
-    // Nicht versendet und nicht gesichert: als Fehler melden (E-110), mit demselben Hinweis wie bei einer Ausnahme
-    if (!result.success) {
-      return NextResponse.json({ success: false, error: FEHLER_HINWEIS }, { status: 503 });
-    }
-
-    return NextResponse.json({
-      success: true,
-      referenceId: result.referenceId,
-      message: result.message
-    });
+    // Nicht versendet und nicht gesichert: 503 mit dem Hinweis auf Telefon und WhatsApp (E-110, anfrageAntwort)
+    const antwort = anfrageAntwort(result);
+    return NextResponse.json(antwort.body, { status: antwort.status });
   } catch (error) {
     console.error('[API /api/anfrage error]:', error);
     return NextResponse.json(

@@ -96,16 +96,38 @@ export interface MailNachricht {
 export interface MailClient {
   emails: {
     send: (
-      nachricht: MailNachricht
+      nachricht: MailNachricht,
+      optionen?: { idempotencyKey?: string }
     ) => Promise<{ data?: unknown; error?: { message?: string; name?: string; statusCode?: number | null } | null }>;
   };
 }
 
-async function sendeMail(client: MailClient, nachricht: MailNachricht): Promise<string> {
-  const antwort = await client.emails.send(nachricht);
+/** Fehler, bei denen eine Wiederholung nichts ändert (Schlüssel ungültig, Domain nicht bestätigt, Eingabe abgelehnt) */
+const DAUERHAFTE_FEHLER = new Set([400, 401, 403, 404, 422]);
+
+class VersandFehler extends Error {
+  // ausgeschrieben statt Parameter-Eigenschaft: die Tests laden TypeScript im Strip-Modus von Node
+  readonly dauerhaft: boolean;
+  constructor(meldung: string, dauerhaft: boolean) {
+    super(meldung);
+    this.name = 'VersandFehler';
+    this.dauerhaft = dauerhaft;
+  }
+}
+
+/**
+ * Ein Versuch je Aufruf. Der Idempotenzschlüssel (Vorgangsnummer plus Empfängerrolle) sorgt dafür, dass Resend eine
+ * wiederholte Mail nach einem Verbindungsabbruch nicht doppelt verschickt.
+ */
+async function sendeMail(client: MailClient, nachricht: MailNachricht, schluessel: string): Promise<string> {
+  const antwort = await client.emails.send(nachricht, { idempotencyKey: schluessel });
   const fehler = antwort?.error;
   if (fehler) {
-    throw new Error(`Resend ${fehler.statusCode ?? ''} ${fehler.name ?? ''}: ${fehler.message ?? 'unbekannter Fehler'}`.replace(/\s+/g, ' '));
+    const status = typeof fehler.statusCode === 'number' ? fehler.statusCode : null;
+    throw new VersandFehler(
+      `Resend ${status ?? ''} ${fehler.name ?? ''}: ${fehler.message ?? 'unbekannter Fehler'}`.replace(/\s+/g, ' '),
+      status !== null && DAUERHAFTE_FEHLER.has(status)
+    );
   }
   // Resend-ID für das Protokoll (in Resend unter „Emails“ auffindbar); ohne Namen oder Adressen
   const daten = antwort?.data as { id?: string } | null | undefined;
@@ -115,6 +137,21 @@ async function sendeMail(client: MailClient, nachricht: MailNachricht): Promise<
 /** Nur die Produktion auf Vercel versendet zwingend echt; lokal, in Tests und in Vorschauen bleibt der Probemodus. */
 export function istLiveProduktion(env: Umgebung = process.env): boolean {
   return env.VERCEL_ENV === 'production';
+}
+
+/** Hinweis bei jedem Fehlschlag des Versands, Wortlaut unverändert aus dem Bestand (/api/anfrage) */
+export const FEHLER_HINWEIS =
+  'Die Anfrage konnte derzeit nicht übertragen werden. Bitte kontaktieren Sie uns direkt telefonisch (06441 / 44 83 567) oder per WhatsApp.';
+
+/**
+ * Antwort von /api/anfrage auf ein Versandergebnis (E-110): nicht versendet und nicht gesichert ergibt 503 mit dem
+ * Hinweis auf Telefon und WhatsApp, sonst 200 mit Vorgangsnummer. Als eigene Funktion, damit ein Test sie abdeckt.
+ */
+export function anfrageAntwort(result: SendEmailResult): { status: number; body: Record<string, unknown> } {
+  if (!result.success) {
+    return { status: 503, body: { success: false, error: FEHLER_HINWEIS } };
+  }
+  return { status: 200, body: { success: true, referenceId: result.referenceId, message: result.message } };
 }
 
 /** Einstellbar für Tests: Umgebung, nachgebauter Client, Notfallspeicher, Wartezeiten der Wiederholung. */
@@ -138,8 +175,9 @@ async function withRetry<T>(
     try {
       return await fn();
     } catch (err) {
-      if (attempt >= retries) throw err;
-      const delay = delays[attempt] || 1000;
+      // dauerhafte Fehler nicht wiederholen (E-110)
+      if (attempt >= retries || (err instanceof VersandFehler && err.dauerhaft)) throw err;
+      const delay = delays[attempt] ?? 1000;
       await new Promise((res) => setTimeout(res, delay));
       attempt++;
     }
@@ -215,7 +253,7 @@ export async function sendInquiryEmails(payload: InquiryPayload, optionen: Versa
     };
   }
 
-  const client: MailClient = optionen.client ?? (new Resend(resendApiKey) as unknown as MailClient);
+  const client: MailClient = optionen.client ?? new Resend(resendApiKey);
 
   const teamSubject = getTeamEmailSubject(payload, referenceId);
   const customerSubject = getCustomerEmailSubject(payload, referenceId);
@@ -233,9 +271,11 @@ export async function sendInquiryEmails(payload: InquiryPayload, optionen: Versa
         subject: teamSubject,
         html: teamHtml,
         text: teamText
-      });
+      }, `${referenceId}-anfrage`);
     }, 2, wartezeiten.team);
     teamSent = true;
+    // Ab hier ist die Anfrage beim Team: ein Doppelklick darf keine zweite Anfrage-Mail auslösen (E-110)
+    submissionIdempotencyCache.set(fingerprint, { referenceId, timestamp: now });
     console.info(`[E-Mail Mailer] Vorgang ${referenceId}: Anfrage-Mail von Resend angenommen (ID ${teamId}).`);
   } catch (teamError) {
     console.error('[E-Mail Mailer] Error dispatching team notification after retries:', teamError);
@@ -289,7 +329,7 @@ export async function sendInquiryEmails(payload: InquiryPayload, optionen: Versa
             subject: customerSubject,
             html: customerHtml,
             text: customerText
-          });
+          }, `${referenceId}-bestaetigung`);
         }, 1, wartezeiten.kunde);
         customerSent = true;
         console.info(`[E-Mail Mailer] Vorgang ${referenceId}: Eingangsbestätigung von Resend angenommen (ID ${kundeId}).`);

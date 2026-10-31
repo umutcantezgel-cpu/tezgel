@@ -29,7 +29,7 @@ import {
   getCustomerEmailSubject
 } from '../src/lib/email/templates/customerEmail.ts';
 
-import { sendInquiryEmails, ANFRAGE_EMPFAENGER, ANFRAGE_ABSENDER, anfrageEmpfaenger, anfrageAbsender, istLiveProduktion } from '../src/lib/email/mailer.ts';
+import { sendInquiryEmails, ANFRAGE_EMPFAENGER, ANFRAGE_ABSENDER, anfrageEmpfaenger, anfrageAbsender, istLiveProduktion, anfrageAntwort, FEHLER_HINWEIS } from '../src/lib/email/mailer.ts';
 
 test('1. Security: HTML Escaping prevents Injection', () => {
   const dangerous = '<script>alert("XSS")</script><img src="x" onerror="steal()">&"\'';
@@ -353,8 +353,8 @@ function nachgebauterClient(antworten) {
   return {
     aufrufe,
     emails: {
-      send: async (nachricht) => {
-        aufrufe.push(nachricht);
+      send: async (nachricht, optionen) => {
+        aufrufe.push({ ...nachricht, schluessel: optionen?.idempotencyKey });
         const antwort = antworten(nachricht, aufrufe.length);
         if (antwort instanceof Error) throw antwort;
         return antwort;
@@ -365,13 +365,22 @@ function nachgebauterClient(antworten) {
 const OK = { data: { id: 'mail-1' }, error: null };
 const ABGELEHNT = { data: null, error: { statusCode: 403, name: 'validation_error', message: 'The domain is not verified.' } };
 
-test('15. Absicherung: abgelehnte Team-Mail ohne Notfallspeicher meldet Fehlschlag, drei Versuche (E-110)', async () => {
+test('15. Absicherung: abgelehnte Team-Mail (403, dauerhaft) meldet Fehlschlag ohne Wiederholung (E-110)', async () => {
   const client = nachgebauterClient(() => ABGELEHNT);
   const res = await sendInquiryEmails(anfrage('Abgelehnt'), { env: MIT_SCHLUESSEL, client, notfallSpeichern: () => false, wartezeiten: OHNE_WARTEN });
   assert.equal(res.success, false);
   assert.equal(res.teamSent, false);
   assert.equal(res.error, 'versand_fehlgeschlagen');
+  assert.equal(client.aufrufe.length, 1);
+});
+
+test('15b. Absicherung: vorübergehender Fehler (500) wird zweimal wiederholt, mit gleichem Idempotenzschlüssel', async () => {
+  const client = nachgebauterClient(() => ({ data: null, error: { statusCode: 500, name: 'application_error', message: 'Internal server error' } }));
+  const res = await sendInquiryEmails(anfrage('Voruebergehend'), { env: MIT_SCHLUESSEL, client, notfallSpeichern: () => false, wartezeiten: OHNE_WARTEN });
+  assert.equal(res.success, false);
   assert.equal(client.aufrufe.length, 3);
+  assert.equal(new Set(client.aufrufe.map((a) => a.schluessel)).size, 1);
+  assert.match(client.aufrufe[0].schluessel, /^TEZ-.+-anfrage$/);
 });
 
 test('16. Absicherung: abgelehnte Team-Mail mit gesichertem Notfalleintrag bleibt Erfolg mit Vermerk', async () => {
@@ -405,6 +414,8 @@ test('18. Absicherung: erfolgreicher Versand, Weg kontakt@ an info@ und an den K
   assert.equal(kunde.from, ANFRAGE_ABSENDER);
   assert.equal(kunde.to, a.contact.email);
   assert.equal(kunde.replyTo, 'info@tezgel.de');
+  assert.equal(team.schluessel, `${res.referenceId}-anfrage`);
+  assert.equal(kunde.schluessel, `${res.referenceId}-bestaetigung`);
 });
 
 test('19. Absicherung: abgelehnte Kundenbestätigung blockiert nicht, Team-Mail ist raus', async () => {
@@ -427,4 +438,14 @@ test('20. Absicherung: ohne Schlüssel nur in der Vercel-Produktion ein Fehlschl
   const vorschau = await sendInquiryEmails(anfrage('OhneSchluesselVorschau'), { env: { VERCEL_ENV: 'preview' } });
   assert.equal(vorschau.success, true);
   assert.equal(vorschau.mocked, true);
+});
+
+test('21. Absicherung: /api/anfrage antwortet auf Fehlschlag mit 503 und Hinweis, auf Erfolg mit 200 und Vorgangsnummer', () => {
+  const fehl = anfrageAntwort({ success: false, referenceId: 'TEZ-26-XXXX', teamSent: false, customerSent: false, message: 'x', error: 'versand_fehlgeschlagen' });
+  assert.equal(fehl.status, 503);
+  assert.deepEqual(fehl.body, { success: false, error: FEHLER_HINWEIS });
+  assert.match(FEHLER_HINWEIS, /06441 \/ 44 83 567/);
+  const ok = anfrageAntwort({ success: true, referenceId: 'TEZ-26-ABCD', teamSent: true, customerSent: true, message: 'Ihre Anfrage wurde erfolgreich an Fliesenverlegung Tezgel übermittelt.' });
+  assert.equal(ok.status, 200);
+  assert.deepEqual(ok.body, { success: true, referenceId: 'TEZ-26-ABCD', message: 'Ihre Anfrage wurde erfolgreich an Fliesenverlegung Tezgel übermittelt.' });
 });
