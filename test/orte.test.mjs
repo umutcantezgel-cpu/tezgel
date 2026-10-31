@@ -67,3 +67,23 @@ test('Orte 6: Leistungslinks auf die vier Leistungen im Ort', () => {
     assert.deepEqual(hrefs, ['bad', 'wohnen', 'aussen', 'untergrund'].map((id) => `/leistungen/${id}/${c.slug}`));
   }
 });
+
+// UM-E4-SICHT-FIX M-C6 Nr. 1 und 4: Einstieg mit Foto, höchstens drei Aufmacher über die 13 Orte, keiner doppelt mit der
+// Fotoreihe derselben Seite (auch nicht über ein anderes Bild aus demselben Original, _werkstatt/bilder/auftrag-e4.json);
+// die Fotoreihe beginnt nie mit dem dunklen Gäste-WC
+const GLEICHES_ORIGINAL = { 'balkon-beleg-3': 'ort-terrasse-erdtoene' };
+test('Orte 7: Aufmacher je Ort, höchstens drei, nicht in der eigenen Fotoreihe; Fotoreihe nicht mit dem Gäste-WC vorn', () => {
+  const aufmacher = new Set();
+  for (const o of inhalte) {
+    assert.ok(o.worum.bild && ARBEITEN[o.worum.bild], `${o.stadt}: Aufmacher ${o.worum.bild}`);
+    aufmacher.add(o.worum.bild);
+    const reihe = o.beleg.fotos.map((f) => f.bild);
+    assert.ok(!reihe.includes(o.worum.bild), `${o.stadt}: Aufmacher in der Fotoreihe`);
+    const zwilling = GLEICHES_ORIGINAL[o.worum.bild];
+    assert.ok(!zwilling || !reihe.includes(zwilling), `${o.stadt}: ${zwilling} ist dasselbe Original wie der Aufmacher`);
+    assert.notEqual(reihe[0], 'ort-gaeste-wc', `${o.stadt}: Gäste-WC vorn`);
+    assert.ok(!o.tun.anDerLinie, `${o.stadt}: „Das machen wir“ mittig`);
+    assert.ok(o.tun.bereiche.every((b) => b.vignette && !b.motiv), `${o.stadt}: Zeilen mit Plan-Vignetten`);
+  }
+  assert.ok(aufmacher.size <= 3, `höchstens drei Aufmacher: ${[...aufmacher]}`);
+});

@@ -379,9 +379,26 @@ html.k-verlauf ol[data-motion="anriss"] .treppe-kreuz-rot {
   --teilung: 50;
 }
 /* Höhe: das ganze Foto steht in einem Bildschirm (K-016, Bilder vollständig); die Breite folgt dem Seitenverhältnis der Fotos
-   (--vn-seite = Breite / Höhe, setzt VorherNachher aus ARBEITEN), höchstens so breit wie der Rahmen. */
+   (--vn-seite = Breite / Höhe, setzt VorherNachher aus ARBEITEN), höchstens so breit wie der Rahmen. Seit UM-E4-SICHT-FIX
+   M-C3 steht die Anleitung unter lg über dem Regler: In hohen Fenstern (ab 40rem) stehen Anleitung und Regler zusammen in
+   einem Bildschirm (höchstens 80svh, sonst der Bildschirm abzüglich 11rem für festen Kopf, Anleitung und Abstand). In
+   flachen Fenstern (q844) und ab lg (Anleitung daneben) bleibt es bei 80svh; vorher schrumpfte die Bühne auf q844 um 31 %. */
 .vn-hoehe {
   max-width: calc(80svh * var(--vn-seite, 0.8));
+}
+@media (width < 64rem) and (height >= 40rem) {
+  .vn-hoehe {
+    max-width: calc(min(80svh, 100svh - 11rem) * var(--vn-seite, 0.8));
+  }
+}
+/* Wörter am Griff (ab 18rem Bühnenbreite): Sie wandern mit dem Lot und blenden zum Rand hin aus, bevor die Bühne sie
+   anschneidet. Bei 18rem braucht „Vorher“ mit Abstand rund 26 % der Bühne links vom Lot, „Nachher“ rund 31 % rechts davon;
+   die Deckkraft folgt --teilung direkt (kein Übergang, reduziert gleich), nur opacity. */
+.vn-wort-vor {
+  opacity: clamp(0, calc((var(--teilung) - 27) / 8), 1);
+}
+.vn-wort-nach {
+  opacity: clamp(0, calc((68 - var(--teilung)) / 8), 1);
 }
 .vn-fenster {
   translate: calc((var(--teilung) - 100) * 1%) 0;
@@ -1319,17 +1336,41 @@ html.k-bewegung:not(.k-notaus) [data-motion="sig-plan"][data-flucht="laden"] .pl
    Fliese. Zeitstrahl je Satz (view-timeline --schichten-2 bis -5 an den Listenpunkten, über timeline-scope an der Figur
    für die Zeichnung sichtbar). Solange die Liste läuft, klebt die Zeichnung unter dem Kopf. Alles nur ab 32rem Höhe
    (Querformat, Zoom: ohne Kleben sähe man die Zeichnung nie fertig). Nur scale, translate und opacity. Ersatzpfad (ohne
-   animation-timeline oder timeline-scope, reduziert, ohne JS, nach dem Notaus, Druck, forced-colors) = Endzustand. */
+   animation-timeline oder timeline-scope, reduziert, ohne JS, nach dem Notaus, Druck, forced-colors) = Endzustand.
+   Auslauf (UM-E4-SICHT-FIX M-C1): Kopf plus Bühne sind eine feste Länge. Die Zeichnung ist höchstens 40svh hoch, sonst so
+   hoch wie ihre Breite verlangt (--schichten-zeichnung, gerechnet aus Seitenrand, Innenabstand und Breite der Spalte in
+   vw und rem wie seitenKlassen und die Bühne: unter md 1rem Rand, ab md 2rem, ab lg 3rem und die halbe Spalte; keine
+   Container-Einheiten im Zeitstrahl). Hinter der Liste steht ein leerer Platz in Bühnenhöhe (.schichten-auslauf): Satz 5
+   gleitet ganz unter die Bühne, bevor sie sich löst, und am Ende steht die fertige Zeichnung allein. Jeder Satz blendet über
+   48 px vor der Bühnenunterkante aus (eigener Zeitstrahl view() mit dem Einzug Kopf plus Bühne, nur opacity); die Unterkante
+   der Bühne ist eine 1-px-Fuge. */
 .schichten .schichten-abdichtung,
 .schichten .schichten-fugen {
   transform-box: fill-box;
 }
 .schichten .schichten-abdichtung { transform-origin: 0 50%; }
+/* Auslauf: sonst verborgen, nur im Bewegungszweig in Bühnenhöhe (unten) */
+.schichten .schichten-auslauf { display: none; }
 .schichten .schichten-fugen { transform-origin: 50% 100%; }
 @supports (animation-timeline: view()) and (timeline-scope: --a) {
   @media screen and (prefers-reduced-motion: no-preference) and (height > 32rem) {
     html.k-bewegung:not(.k-notaus) .schichten {
       timeline-scope: --schichten-2, --schichten-3, --schichten-4, --schichten-5;
+      --schichten-kopf: calc(var(--spacing) * 16);
+      --schichten-zeichnung: min(40svh, calc(min(28rem, 100vw - 4rem - 2px) * 104 / 240));
+      --schichten-buehne: calc(var(--schichten-zeichnung) + var(--spacing) * 8 + 1px);
+    }
+    html.k-bewegung:not(.k-notaus) .schichten .schichten-buehne svg {
+      max-block-size: var(--schichten-zeichnung);
+    }
+    html.k-bewegung:not(.k-notaus) .schichten .schichten-auslauf {
+      display: block;
+      block-size: var(--schichten-buehne);
+    }
+    html.k-bewegung:not(.k-notaus) .schichten .schichten-satz {
+      animation: schichten-satz-gehen linear both;
+      animation-timeline: view(block calc(var(--schichten-kopf) + var(--schichten-buehne)) 0px);
+      animation-range: contain calc(100% - var(--spacing) * 12) contain 100%;
     }
     html.k-bewegung:not(.k-notaus) .schichten .schichten-satz:nth-child(2) { view-timeline: --schichten-2 block; }
     html.k-bewegung:not(.k-notaus) .schichten .schichten-satz:nth-child(3) { view-timeline: --schichten-3 block; }
@@ -1337,7 +1378,7 @@ html.k-bewegung:not(.k-notaus) [data-motion="sig-plan"][data-flucht="laden"] .pl
     html.k-bewegung:not(.k-notaus) .schichten .schichten-satz:nth-child(5) { view-timeline: --schichten-5 block; }
     html.k-bewegung:not(.k-notaus) .schichten .schichten-buehne {
       position: sticky;
-      top: calc(var(--spacing) * 16);
+      top: var(--schichten-kopf);
       z-index: 10;
     }
     html.k-bewegung:not(.k-notaus) .schichten .schichten-abdichtung {
@@ -1364,18 +1405,30 @@ html.k-bewegung:not(.k-notaus) [data-motion="sig-plan"][data-flucht="laden"] .pl
       animation-range: cover 15% cover 45%;
     }
   }
+  @media screen and (prefers-reduced-motion: no-preference) and (height > 32rem) and (width >= 48rem) {
+    html.k-bewegung:not(.k-notaus) .schichten {
+      --schichten-zeichnung: min(40svh, calc(min(28rem, 100vw - 6rem - 2px) * 104 / 240));
+    }
+  }
   @media screen and (prefers-reduced-motion: no-preference) and (height > 32rem) and (width >= 64rem) {
-    html.k-bewegung:not(.k-notaus) .schichten .schichten-buehne {
-      top: calc(var(--spacing) * 24);
+    html.k-bewegung:not(.k-notaus) .schichten {
+      --schichten-kopf: calc(var(--spacing) * 24);
+      --schichten-zeichnung: min(40svh, calc((min(100vw, var(--container-seite)) - 10rem - 2px) / 2 * 104 / 240));
+      --schichten-buehne: calc(var(--schichten-zeichnung) + var(--spacing) * 16 + 1px);
     }
   }
 }
 @keyframes schichten-streichen { from { scale: 0 1; } to { scale: 1 1; } }
+@keyframes schichten-satz-gehen { to { opacity: 0; } }
 @keyframes schichten-setzen { from { opacity: 0; translate: 0 -16px; } to { opacity: 1; translate: 0 0; } }
 @keyframes schichten-fuellen { from { scale: 1 0; } to { scale: 1 1; } }
 @media print, (forced-colors: active) {
-  .schichten [data-motion] {
+  .schichten [data-motion],
+  .schichten .schichten-satz {
     animation: none !important;
+  }
+  .schichten .schichten-auslauf {
+    display: none !important;
   }
   .schichten .schichten-buehne {
     position: static !important;
@@ -1500,28 +1553,40 @@ html.k-bewegung:not(.k-notaus) [data-motion="gefaelle-balkon"][data-motion-stand
 html.k-verlauf [data-motion="gefaelle-balkon"] .gefaelle-balkon-tropfen,
 html.k-verlauf [data-motion="gefaelle-balkon"] .gefaelle-balkon-pfeil { animation: none !important; opacity: 1 !important; translate: none !important; }
 
-/* einzugsband (K-007, /standorte und [stadt]; E4-NACH-02, E4-N2-03): beim Laden zieht sich die Kante jeder Zone von links
-   auf, Zone 2 und 3 je fünf Staffelstufen später (dauer-3 · setzen, gesamt 1,2 s); Orte und Entfernungen stehen ab dem
-   ersten Bild (vorher deckte eine Fläche sie ab, E3-SICHT-2-ERZ Befund 18). CSS ab dem ersten Bild unter html.k-bewegung;
-   ohne Startklasse, reduziert, nach dem Notaus und im Druck steht die Kante voll. Nur scale. */
+/* einzugsband (K-007, /standorte und [stadt]; E4-NACH-02, E4-N2-03; UM-E4-SICHT-FIX M-C6, E-104 Nr. 9): sobald das Band zu
+   40 % im Fenster steht (data-motion-stand vom Bewegungsmodul; auf den Ortsseiten steht es als Ortsmoment in der Lage, auf
+   /standorte im Einstieg), zieht sich die Kante jeder Zone von links auf, Zone 2 und 3 je drei Staffelstufen später
+   (dauer-3 · setzen, gesamt 0,96 s; vorher Stufen 5 und 10 ab dem Laden, register.json staffel_offen); Orte und
+   Entfernungen stehen ab dem ersten Bild (E3-SICHT-2-ERZ Befund 18). Startzustand nur unter html.k-bewegung ohne Notaus;
+   ohne JavaScript, ruhig, reduziert, nach dem Notaus, bei Zurück und Vor und im Druck steht die Kante voll. Zonen im
+   Aufklapper „Weitere Orte bis 50 km“ stehen beim Öffnen fertig. Nur scale. */
 .einzugsband .einzugsband-kante {
   transform-origin: left center;
 }
 @keyframes einzugsband-kante-ziehen {
   from { scale: 0 1; }
 }
-html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"] .einzugsband-kante {
+html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"]:not([data-motion-stand="an"]) .einzugsband-kante {
+  scale: 0 1;
+}
+html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"][data-motion-stand="an"] .einzugsband-kante {
   animation: einzugsband-kante-ziehen var(--dauer-3) var(--ease-setzen) both;
 }
-html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"] .einzugsband-zone:nth-child(2) .einzugsband-kante {
-  animation-delay: calc(var(--staffel) * 5);
+html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"][data-motion-stand="an"] .einzugsband-zone:nth-child(2) .einzugsband-kante {
+  animation-delay: calc(var(--staffel) * 3);
 }
-html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"] .einzugsband-zone:nth-child(3) .einzugsband-kante {
-  animation-delay: calc(var(--staffel) * 10);
+html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"][data-motion-stand="an"] .einzugsband-zone:nth-child(3) .einzugsband-kante {
+  animation-delay: calc(var(--staffel) * 6);
+}
+html.k-bewegung [data-motion="einzugsband"] details .einzugsband-kante,
+html.k-verlauf [data-motion="einzugsband"] .einzugsband-kante {
+  animation: none !important;
+  scale: none !important;
 }
 @media print {
   .einzugsband .einzugsband-kante {
     animation: none !important;
+    scale: none !important;
   }
 }
 

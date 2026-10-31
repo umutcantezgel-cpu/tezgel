@@ -2,7 +2,7 @@
 // Serverkomponente: baut je Foto das Glasbild (vollständig, Name und Link zur Leistung auf der Glasfläche, K-016; next/image
 // mit festen Maßen, Platzhalter, verzögertes Laden; verborgene Fotos laden erst, wenn sie gezeigt werden) und gibt die
 // fertigen Knoten an die Insel GalerieWahl, die nur auswählt. Platz: Schlitz momente.beleg der ErzaehlSeite, direkt unter
-// der H2 „Unsere Arbeiten in Bildern.“ (#unsere-arbeiten).
+// der H2 „Unsere Arbeiten in Bildern.“ (#unsere-arbeiten). Eingeklappt und im Verband (UM-E4-SICHT-FIX M-C3): siehe GalerieWahl.
 import Glasbild from '@/components/kern/Glasbild';
 import GalerieWahl from './GalerieWahl';
 import { GALERIE, GRUPPEN, SATZ } from './daten';
@@ -18,7 +18,8 @@ export default function GalerieFilter({ satz = SATZ }: { satz?: string }) {
         bild: f.bild,
         gruppe: f.gruppe,
         // ohne Unterschrift darunter: Name und Weg zur Leistung auf der Glasfläche (K-016, E-047)
-        knoten: <Glasbild arbeit={f.bild} name={f.unterschrift} href={GRUPPEN.find((g) => g.id === f.gruppe)?.href} sizes={GROESSEN} />,
+        // ohne Maus nur der Name auf dem kurzen Verlauf, „Ansehen“ bleibt für den Vorleser (verlauf, M-C3 Nr. 2)
+        knoten: <Glasbild arbeit={f.bild} name={f.unterschrift} href={GRUPPEN.find((g) => g.id === f.gruppe)?.href} sizes={GROESSEN} verlauf />,
       }))}
     />
   );

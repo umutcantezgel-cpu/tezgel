@@ -11,11 +11,14 @@ import Einzugsband from '@/components/kern/Einzugsband';
 // sichtbar (K-004), statt in einem verborgenen Streaming-Container hinter „Anfrageformular wird geladen...“.
 import LeadQuickForm from '@/components/forms/LeadQuickForm';
 import OrtsSeite from '@/components/vorlagen/OrtsSeite';
+import Aufklapper from '@/components/vorlagen/teile/Aufklapper';
 import { ortsInhalt, type Ortsinhalt } from '@/inhalte/orte';
 
 // Standortseite `/standorte/[stadt]` (E3-BAU-10, KERN v3.6, Zusatz E3-BAU-K016): Ortsseite auf der Vorlage `OrtsSeite`.
 // Der Inhalt kommt aus `ortsInhalt()` (`src/inhalte/orte.ts`, Muster `_werkstatt/texte/REF-ort-wetzlar.md`), die Metadaten
-// aus dem Inhalt. Schlitz `karte`: das Einzugsband am eigenen Ort; `formular`: die Schnellanfrage der Ortsseiten (F-09,
+// aus dem Inhalt. Schlitz `band`: das Einzugsband am eigenen Ort als Ortsmoment in der Lage, die Zonen bis zur Zone des
+// Ortes offen, die ferneren im Aufklapper „Weitere Orte bis 50 km“ (UM-E4-SICHT-FIX M-C6 Nr. 2); `formular`: die
+// Schnellanfrage der Ortsseiten (F-09,
 // Quelle `standort-{slug}`); `nachbarn`: die fünf nächsten Orte. Strukturierte Daten über `SeitenDaten` mit Titel, Beschreibung
 // und Brotkrumen aus dem Inhalt (E-053, vorher eigener Text im Seitenknoten), die Ortsknoten als `weitere`; `generateStaticParams`
 // und `generateMetadata` bleiben.
@@ -126,7 +129,18 @@ export default async function StandortPage({
       <OrtsSeite
         inhalt={inhalt}
         nachbarn={nachbarn}
-        karte={<Einzugsband aktuell={city.slug} form="stapel" />}
+        band={
+          <Einzugsband
+            aktuell={city.slug}
+            form="stapel"
+            weitere={(zonen) => (
+              // die Zeile setzt das Lot des Bandes fort (Tinte, wie die Zonen darüber)
+              <Aufklapper zeile="Weitere Orte bis 50 km" zeileKlassen="border-r border-b border-l-2 border-fuge border-l-tinte bg-fliese px-4 lg:px-6">
+                {zonen}
+              </Aufklapper>
+            )}
+          />
+        }
         formular={
           // heading leer: die Vorlage trägt die Überschrift; ohne leere Angabe setzte LeadQuickForm ihre eigene Kopfzeile.
           // Zusage wie im Bestand (M-07), mit Punkt statt Gedankenstrich (K-010); LeadQuickForm zeigt sie auch ohne Überschrift

@@ -20,3 +20,12 @@ Bis zur Antwort des Auftraggebers bleiben alle Texte unverändert. Quelle: `beri
 | T-B8 | /blog | Wissensblock „Alle Artikel auf einen Blick.“ | „Jeder Artikel gehört zu einem Thema. Sie wählen ein Thema oder geben einen Begriff in die Suche ein.“ | „Wählen Sie ein Thema, oder suchen Sie nach einem Begriff.“ | Das Suchfeld rückt bei d1440 näher an den ersten Bildschirm. |
 
 T-B3 (/balkon-terrasse, Fachwort „Abdichtung“ in der Legende der Gefälle-Zeichnung ausgezeichnet) ist ohne Änderung des Wortlauts umgesetzt; er steht deshalb nicht in der Tabelle. Direkt gesetzte Mikrotexte aus SF-B, die Zeilen der Aufklapper: „Badanfrage öffnen“, „Projekt im Konfigurator vorbereiten“, „Alle 8 Punkte zeigen“, „Alle Merkmale im Vergleich“ und „Mehr erfahren“.
+
+### Teil SF-C1 (Ortsseiten, /bad, /referenzen, /blog; eingetragen vom Orchestrator)
+
+| Nr. | Ansicht | Stelle | heute | Vorschlag | Grund |
+|---|---|---|---|---|---|
+| T-C1-1 | /bad | Legende der Szene „schichten“, Satz zu Schicht 1 | „Darauf wird alles aufgebaut.“ | „Auf ihm wird alles aufgebaut.“ | Nach der Klammer am Namen bezieht sich „Darauf“ auf die Klammer statt auf den Untergrund. |
+| T-C1-2 | /standorte/[stadt] (lange Ortsnamen, z. B. Limburg) | Ortszeile im Einstieg | „Fliesenverlegung Tezgel aus Aßlar, etwa 35 km bis Limburg an der Lahn.“ | „Aus Aßlar, etwa 35 km bis Limburg an der Lahn.“ | Wie T-A zur Ortszeile von /referenzen: Name und Beruf stehen im Kopf; mobil eine Zeile weniger über dem Hauptknopf. |
+
+Direkt gesetzte Mikrotexte aus SF-C1: „Weitere Orte bis 50 km“, „Alle {n} Fotos zeigen“, „{n} Artikel“ (Gruppenkopf). In der Textablage `texte/bad.md` sind die Glossar-Marken von „Untergrund“ und „Abdichtung“ aus den Punkten entfernt; sie stehen jetzt in der Legende der Szene (Wortlaut gleich).

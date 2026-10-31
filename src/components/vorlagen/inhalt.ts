@@ -81,6 +81,9 @@ export interface Zeile {
   satz?: Markentext;
   href: string;
   motiv?: Kompositionsmotiv;
+  /** Plan-Vignette statt des Verlegemusters, Feld 4 : 3 wie in der Lage (Ortsseiten, UM-E4-SICHT-FIX M-C6 Nr. 3; Vorgriff auf
+   *  M-B2 Nr. 2) */
+  vignette?: VignettenName;
 }
 
 /** Bereich als Fliese mit Zeichnung: Plan-Vignette oder Verlegemuster (Startseite, E-037) */

@@ -78,6 +78,22 @@ export const GALERIE: GalerieFoto[] = [
 /** höchste Staffelstufe: K-005 erlaubt eine Staffel über höchstens 8 Elemente (Stufen 0 bis 7) */
 export const STAFFEL_MAX = 7;
 
+/** Eingeklappt (UM-E4-SICHT-FIX M-C3 Nr. 2): bei „Alle Fotos“ zuerst drei Reihen, schmal (eine oder zwei Spalten) 6 Fotos, im
+ *  Dreierraster 9; darunter „Alle {n} Fotos zeigen“. Ein Raum zeigt immer alle Fotos seiner Gruppe */
+export const ZUERST = { schmal: 6, breit: 9 } as const;
+
+/** Marke für die Fotos, die eingeklappt fehlen: ab dem 7. Foto schmal, ab dem 10. auch im Dreierraster */
+export function mehrMarke(index: number): 'schmal' | 'breit' | undefined {
+  if (index >= ZUERST.breit) return 'breit';
+  return index >= ZUERST.schmal ? 'schmal' : undefined;
+}
+
+/** Staffelstufen beim Nachzeigen: die Fotos ab `ab` blenden in Lesefolge ein (0, 1, 2 … höchstens STAFFEL_MAX), wie beim
+ *  Filtern (Register galerie-filter) */
+export function stufenNachzeigen(anzahlFotos: number, ab: number): (number | null)[] {
+  return Array.from({ length: anzahlFotos }, (_, i) => (i >= ab ? Math.min(i - ab, STAFFEL_MAX) : null));
+}
+
 export function istSichtbar(gruppe: GruppeId, wahl: Wahl): boolean {
   return wahl === 'alle' || gruppe === wahl;
 }

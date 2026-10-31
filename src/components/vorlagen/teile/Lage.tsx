@@ -9,7 +9,10 @@
 // E3-LEIST-01).
 // Eine Auswahlebene (Startseite, UM-E4-START, Sicht Anlauf 3): Trägt eine Lage eine Plan-Zeichnung (`vignette`), steht sie links
 // in der Zeile in einem eigenen Feld an der Fuge, Satz und Pfeil rechts; die Leistungen darunter („Was wir tun“) sind nur noch
-// eine Zeile mit Links. Unter 20rem Zeilenbreite (große Systemschrift) entfällt die Zeichnung. Serverkomponente.
+// eine Zeile mit Links. Unter 20rem Zeilenbreite (große Systemschrift) entfällt die Zeichnung.
+// Ortsmoment (Ortsseiten, UM-E4-SICHT-FIX M-C6 Nr. 2): `zusatz` steht nach den Absätzen im Satzspiegel, dort das Einzugsband
+// mit „Sie sind hier“. Ohne Angabe unverändert. Serverkomponente.
+import type { ReactNode } from 'react';
 import Link from 'next/link';
 import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
@@ -67,7 +70,7 @@ export function LageFliesen({ fliesen, className }: { fliesen: Fliese[]; classNa
   );
 }
 
-export default function Lage({ inhalt }: { inhalt: LageInhalt }) {
+export default function Lage({ inhalt, zusatz }: { inhalt: LageInhalt; zusatz?: ReactNode }) {
   const fliesen = inhalt.fliesen ?? [];
   return (
     <Abschnitt
@@ -100,6 +103,7 @@ export default function Lage({ inhalt }: { inhalt: LageInhalt }) {
           <Bereichszeilen bereiche={inhalt.wege} />
         </div>
       )}
+      {zusatz && <div className={clsx('mx-auto max-w-mass', (inhalt.absaetze?.length || fliesen.length || inhalt.wege?.length) && 'mt-12')}>{zusatz}</div>}
     </Abschnitt>
   );
 }

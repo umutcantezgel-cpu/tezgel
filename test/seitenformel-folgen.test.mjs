@@ -8,7 +8,7 @@ import { erzaehlFolge, wissenFolge, FORMEL_NUMMER } from '../src/components/vorl
 // Seitenformel und erlaubte Folgen (KERN K-009 in K-010 „Informationsarchitektur“, UM-E4-SICHT-FIX M-B7): Die Formel bleibt
 // Standard; abweichen darf eine Seite nur per Schalter und nur, wenn sie hier und in K-009 mit Grund gelistet ist. ERLAUBT ist
 // die Liste aus K-009; EIN nennt, was schon eingeschaltet ist (/balkon-terrasse momentZuerst seit der Nacharbeit SF-B mit der
-// Erklärung in der Legende der Zeichnung; /bad schaltet Teil C mit M-C1 ein, zusammen mit der Erklärung der Fachwörter in der
+// Erklärung in der Legende der Zeichnung; /bad seit Teil C mit M-C1, zusammen mit der Erklärung der Fachwörter in der
 // Szene, /ueber-uns nachLage M-C4 mit einer Textentscheidung zur Zeitleiste). Wer einschaltet, trägt die Seite in EIN nach.
 const ERLAUBT = {
   belegVorn: ['/referenzen', '/balkon-terrasse'],
@@ -19,7 +19,7 @@ const ERLAUBT = {
 const EIN = {
   belegVorn: ['/referenzen', '/balkon-terrasse'],
   wissenVorLage: ['/blog'],
-  momentZuerst: ['/bad/barrierefreies-bad', '/balkon-terrasse'],
+  momentZuerst: ['/bad', '/bad/barrierefreies-bad', '/balkon-terrasse'],
   nachLage: [],
 };
 

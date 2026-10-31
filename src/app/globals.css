@@ -841,4 +841,47 @@
       display: none;
     }
   }
+  /* Galerie eingeklappt und im Verband (/referenzen, GalerieWahl; UM-E4-SICHT-FIX M-C3 Nr. 2). Bei „Alle Fotos“ stehen zuerst
+     drei Reihen: in einer oder zwei Spalten 6 Fotos, im Dreierraster (Liste ab 64rem) 9; die übrigen tragen data-galerie-mehr.
+     Verborgen nur mit Skript und am Bildschirm (scripting: enabled): ohne JavaScript, im Druck und in Browsern ohne diese
+     Abfrage stehen alle Fotos. Der Zustand steht schon im Server-HTML, die Hydrierung verschiebt nichts. Im Dreierraster bei
+     „Alle Fotos“ (data-verband) steht die mittlere Spalte um ein Drittel einer Kachel tiefer (translate, ruhend, keine
+     Bewegung); dafür trägt jede Kachel ihren ganzen Rand (1 px überlappend, wie Fugen), und unter der Liste bleibt ein Drittel
+     einer Kachel Platz (Kachel 4 : 5 bei einem Drittel der Breite: 100cqi · 5/36). */
+  @media screen and (scripting: enabled) {
+    .galerie-liste[data-eingeklappt] > [data-galerie-mehr="breit"] {
+      display: none;
+    }
+    @container (width < 64rem) {
+      .galerie-liste[data-eingeklappt] > [data-galerie-mehr="schmal"] {
+        display: none;
+      }
+    }
+  }
+  @container (width >= 64rem) {
+    .galerie-liste[data-verband] {
+      border-width: 0;
+      padding: 1px 0 calc(100cqi * 5 / 36) 1px;
+    }
+    .galerie-liste[data-verband] > li {
+      border-width: 1px;
+      margin: -1px 0 0 -1px;
+    }
+    .galerie-liste[data-verband] > li:nth-child(3n + 2) {
+      translate: 0 calc(100% / 3);
+    }
+  }
+  /* Ohne Maus steht der Name auf dem kurzen Verlauf in höchstens zwei Zeilen (Text im DOM, Name des Links unverändert): Mit
+     drei Zeilen deckte der Verlauf auf t768 rund ein Drittel der Kachel und damit den Boden (Nacharbeit SF-C1). Unter 16rem
+     Kachelbreite steht der Name ganz unter dem Foto (bewegung.css, Block glasbild). */
+  @media (hover: none) {
+    @container (width > 16rem) {
+      .galerie-liste .glasbild[data-verlauf] .glasbild-text > :first-child {
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+    }
+  }
 }

@@ -54,10 +54,14 @@ export const BAD: ErzaehlInhalt = {
     titel: 'Wir arbeiten Schicht für Schicht.',
     // Vorspann der Textdatei (Regel 2): so bleibt er für Suchmaschinen auf der Seite
     einleitung: VORSPANN,
+    // Zeichnung zuerst (UM-E4-SICHT-FIX M-C1 Nr. 3, M-B7): die Szene „schichten“ direkt nach Kopf und Einleitung, die Punkte
+    // und der DIN-Satz danach. „Untergrund“ und „Abdichtung“ stehen so zuerst in der Legende der Szene und tragen dort die
+    // Marke mit der Erklärung (Schichten `fachwort`); hier stehen sie danach ohne Marke (Wortlaut gleich, K-011)
+    momentZuerst: true,
     punkte: [
-      'Zuerst prüfen wir den [[untergrund|Untergrund]]. Dann machen wir ihn bereit für die neuen Schichten.',
+      'Zuerst prüfen wir den Untergrund. Dann machen wir ihn bereit für die neuen Schichten.',
       'Der Duschboden bekommt ein leichtes [[gefaelle|Gefälle]].',
-      'Auf dem Untergrund kommt eine [[abdichtung|Abdichtung]].',
+      'Auf dem Untergrund kommt eine Abdichtung.',
       'Im Bad verlegen wir rutschfeste Fliesen. Je nach Raum haben sie die [[rutschhemmung|Rutschhemmung R10 oder R11]].',
     ],
     // ohne den Satz zur Handwerkskammer (Regel 3)

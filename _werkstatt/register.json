@@ -73,7 +73,7 @@
     "startbild": "eingang"
   },
   "entfallen_e009": [],
-  "hinweis": "`kennungen` = alles, was registriert ist (bewegung.mjs prüft dagegen). Seit E-037 (Entscheidung des Auftraggebers) sind die SVG-Bewegungen aus v2 fester Teil des Systems und der Plan-Morph (seitenwechsel) ist zurück; startbild löste von E-037 bis E-067-4 über Sichtbarkeit aus (0,4). Die großen Momente stehen seit E3-ORCH-02a im Register (Bauvorgaben je Moment in _werkstatt/register/<kennung>.json). Seit E-067-4 (UM-E3-EIN) gibt es keinen Vorhang mehr: eingang (Logo-Aufbau im Kopf, Ort und Knopfzeile, Fugenriss am Foto) und zeilenmaske (Zeilen der H1) laufen als CSS ab dem ersten Bild; intro (B-02) und startbild (Belag) sind Aliase von eingang, ohne eigene Bewegung und ohne Beobachter. Seit UM-E3-CURSOR gibt es cursor (Schild neben dem Systemzeiger, nur feiner Zeiger, steuert sich selbst). Seit UM-E3-REG führt register_v4 je Kennung Zweck, Stufen (Dauer- und Kurven-Tokens, letzte Staffelstufe), die ruhige Fassung, das Notaus und die sechs Cursor-Zustände; test/bewegung.test.mjs hält beides gleich mit register.ts. Seit UM-E4-SICHT-FIX (M-A1, M-A3) gibt es zwei Fassungen von eingang: im mittigen Einstieg (Figur auf / und den Erzählseiten) wie oben, das Schnurzeichen der Erzählseiten setzt sich mit den Knöpfen (data-eingang=\"knoepfe\"), die Zeilenmaske der letzten Zeile endet dort an der Grundlinie (--eingang-maske-unten); im einfachen Einstieg an der Schnur (Wissensseiten, data-einstieg=\"schnur\") ziehen nur Schnur und Lotstück in dauer-1, H1, Ort, Knöpfe, Bewertung und Bild stehen ab dem ersten Bild, ohne Zeilenmaske.",
+  "hinweis": "`kennungen` = alles, was registriert ist (bewegung.mjs prüft dagegen). Seit E-037 (Entscheidung des Auftraggebers) sind die SVG-Bewegungen aus v2 fester Teil des Systems und der Plan-Morph (seitenwechsel) ist zurück; startbild löste von E-037 bis E-067-4 über Sichtbarkeit aus (0,4). Die großen Momente stehen seit E3-ORCH-02a im Register (Bauvorgaben je Moment in _werkstatt/register/<kennung>.json). Seit E-067-4 (UM-E3-EIN) gibt es keinen Vorhang mehr: eingang (Logo-Aufbau im Kopf, Ort und Knopfzeile, Fugenriss am Foto) und zeilenmaske (Zeilen der H1) laufen als CSS ab dem ersten Bild; intro (B-02) und startbild (Belag) sind Aliase von eingang, ohne eigene Bewegung und ohne Beobachter. Seit UM-E3-CURSOR gibt es cursor (Schild neben dem Systemzeiger, nur feiner Zeiger, steuert sich selbst). Seit UM-E3-REG führt register_v4 je Kennung Zweck, Stufen (Dauer- und Kurven-Tokens, letzte Staffelstufe), die ruhige Fassung, das Notaus und die sechs Cursor-Zustände; test/bewegung.test.mjs hält beides gleich mit register.ts. Seit UM-E4-SICHT-FIX (M-A1, M-A3) gibt es zwei Fassungen von eingang: im mittigen Einstieg (Figur auf / und den Erzählseiten) wie oben, das Schnurzeichen der Erzählseiten setzt sich mit den Knöpfen (data-eingang=\"knoepfe\"), die Zeilenmaske der letzten Zeile endet dort an der Grundlinie (--eingang-maske-unten); im einfachen Einstieg an der Schnur (Wissens- und Ortsseiten, data-einstieg=\"schnur\") ziehen nur Schnur und Lotstück in dauer-1, H1, Ort, Knöpfe, Bewertung und Bild stehen ab dem ersten Bild, ohne Zeilenmaske. Seit UM-E4-SICHT-FIX M-C8 steht sig-plan auch am Leitartikel von /blog (zeigen, Kasten mit sig-plan-ziel; KERN K-008 Spalte „Wo“). Seit UM-E4-SICHT-FIX M-C6 (E-104 Nr. 9) löst einzugsband über Sichtbarkeit aus (0,4, Staffel 0/3/6): auf den Ortsseiten steht es als Ortsmoment in der Lage, die Schnur im Einstieg.",
   "entfernt": [],
   "zurueck": [
     {
@@ -458,7 +458,7 @@
           "kurve": [
             "--ease-setzen"
           ],
-          "letzteStufe": 10
+          "letzteStufe": 6
         },
         "reduziert": {
           "art": "sofort",
@@ -752,7 +752,6 @@
     }
   },
   "staffel_offen": {
-    "einzugsband": "letzte Stufe 10 (Zone 2 und 3 je fünf Stufen später, gesamt 1,2 s) über der Grenze 7; nicht in der PLAN-Zeile UM-E3-REG. Vorschlag: Stufen 0, 3, 6 (gesamt 0,96 s), zwei Zeilen in bewegung.css, Bildfolge /standorte/wetzlar",
     "eingang": "letzte Stufe 8 (Knopfzeile bei dauer-1 + 8 Stufen) über der Grenze 7; abgenommen in E-081, seit UM-E3-FIX2 voll 1,40 s mit Zeilen ab dauer-1 (Schnur halb gezogen). Vorschlag: Knopfzeile bei Stufe 7, 60 ms früher, oder die Grenze für den Eingang als Signaturablauf (bis 1,5 s) eigens festhalten"
   },
   "entscheidungen": {

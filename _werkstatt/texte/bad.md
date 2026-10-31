@@ -29,9 +29,9 @@
 ## 3 · Was wir tun
 - H2: `Wir arbeiten Schicht für Schicht.`
 - Vier Fliesen (eine Aussage je Fliese):
-  1. `Zuerst prüfen wir den [[untergrund|Untergrund]]. Dann machen wir ihn bereit für die neuen Schichten.`
+  1. `Zuerst prüfen wir den Untergrund. Dann machen wir ihn bereit für die neuen Schichten.`
   2. `Der Duschboden bekommt ein leichtes [[gefaelle|Gefälle]].`
-  3. `Auf dem Untergrund kommt eine [[abdichtung|Abdichtung]].`
+  3. `Auf dem Untergrund kommt eine Abdichtung.`
   4. `Im Bad verlegen wir rutschfeste Fliesen. Je nach Raum haben sie die [[rutschhemmung|Rutschhemmung R10 oder R11]].` (F-22)
 - Großer Moment `schichten`: Zeichnung ohne Foto, von unten nach oben. Unterschrift: `So ist eine Fläche im Bad aufgebaut, von unten nach oben.`
   1. `Untergrund` · `Darauf wird alles aufgebaut.`

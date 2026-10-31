@@ -56,8 +56,9 @@ export const REGISTER: Record<string, Registereintrag> = {
   'sig-flucht': { ausloeser: 'laden' },
   'szene-ablauf': { ausloeser: 'scroll' },
   'sig-plan': { ausloeser: 'sicht', schwelle: 0.4, nurGrob: true },
-  // E4-NACH-02: legt sich beim Laden per CSS frei (Planblatt des Einstiegs), kein Beobachter
-  einzugsband: { ausloeser: 'laden' },
+  // UM-E4-SICHT-FIX M-C6 (E-104 Nr. 9): legt sich frei, sobald es zu 40 % im Fenster steht (Ortsmoment in der Lage der
+  // Ortsseiten); vorher beim Laden per CSS (E4-NACH-02, Planblatt des Einstiegs)
+  einzugsband: { ausloeser: 'sicht', schwelle: 0.4 },
   // UM-E3-REG: registriert und als CSS gebaut, zurzeit ohne Ort (REGISTER_V4.fugenband.ohneOrt)
   fugenband: { ausloeser: 'scroll' },
   // große Momente (KERN v3.4 K-007, E3-ORCH-02a; E3-GRAF-01 bis 09): Szenen scroll-gebunden per CSS, Sicht 0,4 über das
@@ -326,7 +327,7 @@ export const REGISTER_V4: Record<string, V4Eintrag> = {
   einzugsband: {
     zweck: 'orientierung',
     was: 'Die Kante jeder Einsatzzone zieht sich von links auf',
-    stufen: { dauer: ['--dauer-3'], kurve: ['--ease-setzen'], letzteStufe: 10 },
+    stufen: { dauer: ['--dauer-3'], kurve: ['--ease-setzen'], letzteStufe: 6 },
     reduziert: { art: 'sofort', text: 'die Kanten stehen voll' },
     notaus: 'endzustand',
   },

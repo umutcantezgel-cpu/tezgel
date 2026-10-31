@@ -4,10 +4,13 @@
 // gibt es nicht (K-015). Der nächste Schritt trägt die vorhandene Schnellanfrage der Ortsseiten (F-09, Slot `formular`,
 // Pflichtfelder und Zusage unverändert) unter der Kennung `anfrage`, links Satz, Rufnummer, WhatsApp und die
 // Nachbarorte. Alle Hauptknöpfe der Seite führen zu `#anfrage` (K-004, `hauptziel` in navigation.js, erst mit dem Umzug der
-// Bestandsseite auf diese Vorlage). Im Einstieg trägt der Schlitz `karte` das Einzugsband (statt SIG-1: ein großer Moment je
-// Bildschirm, E-044). Rahmen wie die Erzählseite (eine Suspense-Grenze nach dem Einstieg, spätes Zeichnen). Der Einstieg
-// steht vor der Leitachse und trägt sein Lot in Grundschicht (UM-E4-VORL): Danach führt der Leitfaden wie auf /, und im
-// ersten Bildschirm steht kein zweites Rot neben dem Einzugsband (K-003). Steht die Lage auf Fliese (`lage.aufFliese`, wie
+// Bestandsseite auf diese Vorlage). Einstieg an der Schnur mit Foto und Bewertungszeile (UM-E4-SICHT-FIX M-A3 und M-C6 in
+// einem Schritt): H1 auf der Schnur, rotes Lotstück bis zum Foto (`worum.bild`, das einzige preload, Alt-Text aus ARBEITEN
+// ohne Ort, K-015), dann der Vorspann. Das Einzugsband (Schlitz `band`) steht als Ortsmoment in der Lage nach „Sie suchen
+// einen Fliesenleger in …?“ (vorher im Bildplatz des Einstiegs): So stehen Schnur und rotes Band nie im selben Bildschirm.
+// Keine Einsatzkarte als Ortsmoment (E-104 Nr. 10). Rahmen wie die Erzählseite (eine Suspense-Grenze nach dem Einstieg,
+// spätes Zeichnen). Der Einstieg steht vor der Leitachse und trägt sein Lot in Grundschicht (UM-E4-VORL): Danach führt der
+// Leitfaden wie auf /. Steht die Lage auf Fliese (`lage.aufFliese`, wie
 // auf /), setzt der Einstieg ab lg eine Stufe 16 Kalk bis zur Fuge (`fugeUnten`, wie die Wissensvorlage; UM-E4-CHOR-FIX). Das
 // Qualitätsversprechen aus dem Inhalt (`versprechen`, UM-E4-EP3) steht als eigener Abschnitt nach dem Beleg vor dem nächsten
 // Schritt. Serverkomponente.
@@ -32,18 +35,18 @@ export interface OrtsSeiteProps {
   formular: ReactNode;
   /** nächstgelegene Orte (vorhandene Logik der Ortsseite) */
   nachbarn: Verweis[];
-  /** gezeichnete Karte im Einstieg (großer Moment `karte`) */
-  karte?: ReactNode;
+  /** Ortsmoment in der Lage: das Einzugsband am eigenen Ort (`einzugsband`, Sichtbarkeit) */
+  band?: ReactNode;
 }
 
-export default function OrtsSeite({ inhalt, formular, nachbarn, karte }: OrtsSeiteProps) {
+export default function OrtsSeite({ inhalt, formular, nachbarn, band }: OrtsSeiteProps) {
   const { worum } = inhalt;
   return (
     <Seitenformel>
-      <Einstieg pfad={inhalt.pfad} brotkrumen={worum.brotkrumen} titel={worum.titel} ort={worum.ort} vorspann={worum.vorspann} bild={karte} hauptziel={`#${ORT_ANKER}`} lot fugeUnten={inhalt.lage.aufFliese} />
+      <Einstieg pfad={inhalt.pfad} brotkrumen={worum.brotkrumen} titel={worum.titel} ort={worum.ort} vorspann={worum.vorspann} bild={worum.bild} hauptziel={`#${ORT_ANKER}`} lot schnur bewertung fugeUnten={inhalt.lage.aufFliese} />
       <Leitachse>
         <Suspense fallback={<div aria-hidden="true" className="min-h-dvh noscript:hidden" />}>
-          <Lage inhalt={inhalt.lage} />
+          <Lage inhalt={inhalt.lage} zusatz={band} />
           <Tun inhalt={inhalt.tun} />
           <Ablauf inhalt={inhalt.ablauf} />
           <Beleg inhalt={inhalt.beleg} pfad={inhalt.pfad} />

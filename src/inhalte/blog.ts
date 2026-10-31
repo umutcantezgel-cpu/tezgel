@@ -5,6 +5,7 @@
 // den Beitragsdaten (Abnahme E3-BAU-11). Die Kennzeile unter der Stimme setzt der Baustein Stimmen aus den Daten.
 // Vorlage: WissensSeite (E-025).
 import type { WissenInhalt } from '@/components/vorlagen/inhalt';
+import type { VignettenName } from '@/components/kern/vignetten';
 
 const VORSPANN =
   'Hier erklären wir Badsanierung und Fliesenverlegung in einfachen Worten, aus der Praxis unseres Fachbetriebs in Aßlar. Dazu gehört die [[abdichtung|Abdichtung]] im Bad.';
@@ -122,3 +123,43 @@ export const ANRISSE: Record<string, string> = {
   'fliesenleger-gesucht-geselle-meister':
     'Fliesenverlegung Tezgel in Aßlar sucht eine Fliesenlegerin oder einen Fliesenleger als Geselle (m/w/d). Hier steht, was Sie erwartet und wie Sie sich melden.',
 };
+
+/** Liste nach Thema (UM-E4-SICHT-FIX M-C8 Nr. 2 und 4): Vorschauzeichnung aus den Plan-Vignetten (statt fast gleicher
+ *  Verlegepläne); die Liste ordnet die Gruppen in der Folge der Kategorien, „Ratgeber und Neuigkeiten“ zuletzt.
+ *  Je Thema eine Grundzeichnung (für Beiträge ohne eigenen Eintrag) … */
+export const THEMEN_ZEICHNUNG: Record<string, VignettenName> = { bad: 'bad', fliesen: 'wohnen', aussen: 'aussen', ratgeber: 'reparatur' };
+
+/** … und je Beitrag die Zeichnung seines Gegenstands (Nacharbeit SF-C1: je Thema stand sonst vier- bis fünfmal dieselbe
+ *  Zeichnung untereinander). Innerhalb eines Themas keine zweimal, über die Grenze zweier Themen keine direkt hintereinander:
+ *  Duschrinne und Gefälle (bad), Abdichtung am Wandanschluss (untergrund), Riss und eingesetztes Stück (reparatur), Raum im
+ *  Großformat (wohnen), Treppe, Terrasse (aussen). Der Leitartikel trägt den Verlegeplan seines Themas. */
+export const ARTIKEL_ZEICHNUNG: Record<string, VignettenName> = {
+  'undichte-dusche-warnzeichen': 'reparatur',
+  'wandnischen-dusche-planen': 'untergrund',
+  'duschrinne-oder-punktablauf': 'bad',
+  'gaeste-wc-fliesen': 'wohnen',
+  'feinsteinzeug-oder-naturstein-vergleich': 'treppe',
+  'fliesen-reinigen-pflegen': 'bad',
+  'schimmel-fliesenfugen-vermeiden': 'reparatur',
+  'fliesen-fuer-allergiker': 'wohnen',
+  'rutschfeste-fliesen-r-klassen': 'aussen',
+  'barrierefreier-balkonaustritt': 'untergrund',
+  'fliesen-mythen-faktencheck': 'wohnen',
+  'fliesenleger-gesucht-geselle-meister': 'reparatur',
+};
+
+/** Zeichnung eines Beitrags: eigener Eintrag, sonst die seines Themas */
+export const zeichnungFuer = (slug: string, thema: string): VignettenName | undefined => ARTIKEL_ZEICHNUNG[slug] ?? THEMEN_ZEICHNUNG[thema];
+
+/** Die Stellenanzeige steht als letzter Eintrag ihrer Gruppe (Neuigkeiten), nicht zwischen den Ratgebern (Sicht E4, /blog a4, b6) */
+export const STELLENANZEIGE = 'fliesenleger-gesucht-geselle-meister';
+
+/** Beiträge serverseitig vorsortiert: nach der Folge der Kategorien (stabil, innerhalb gleich wie in den Daten), die
+ *  Stellenanzeige zuletzt. Mit Filter oder Suche zeigt die Liste dieselbe Folge ohne Gruppenköpfe */
+export function nachThema<T extends { slug: string; category: string }>(beitraege: readonly T[], kategorien: readonly { id: string }[]): T[] {
+  const rang = (b: T) => {
+    const i = kategorien.findIndex((k) => k.id === b.category);
+    return (i === -1 ? kategorien.length : i) * 2 + (b.slug === STELLENANZEIGE ? 1 : 0);
+  };
+  return beitraege.map((b, i) => ({ b, i })).sort((x, y) => rang(x.b) - rang(y.b) || x.i - y.i).map(({ b }) => b);
+}

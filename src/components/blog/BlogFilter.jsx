@@ -5,7 +5,6 @@ import BlogCard, { zeichenFuer } from '@/components/blog/BlogCard';
 import Leitfaden from '@/components/blog/liste/Leitfaden';
 import Suchfeld, { SUCHBEREICH_NAME } from '@/components/blog/liste/Suchfeld';
 import Icon from '@/components/icons/Icon';
-import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Knopf from '@/components/kern/Knopf';
 import { etikettKlassen, wahlKlassen } from '@/components/kern/stile';
 
@@ -24,11 +23,24 @@ import { etikettKlassen, wahlKlassen } from '@/components/kern/stile';
 // tragen Überschriften (H2 des Leitfadens, H3 je Zeile), davor stehen Suche und Kategorien: Neben der ganzen Insel tritt der
 // Kopf der Leitachse zurück (data-kopf-pause="ganz", bewegung.css „Leitfaden mit Abschnittsmarke“, wie das Kartenraster der
 // Leistungen und die Einsatzkarte), nie ein Kreuz neben einer Überschrift oder dem Suchfeld.
+// Liste nach Thema (UM-E4-SICHT-FIX M-C8, Sicht E4: 16 gleiche Einträge in einer 600-px-Säule über sechs Bildschirme): Suche
+// und Themen stehen zuerst in der Lesebreite, die Themenknöpfe brechen an der Kante des Suchfelds um (vorher mobil eine
+// querlaufende Zeile); gedrückt trägt ein Knopf den Haken (vorher das Fugenkreuz, las sich wie „hinzufügen“). Bei „Alle
+// Artikel“ ohne Suche folgen der Leitartikel als ruhiger Wissensmoment (Verlegeplan groß, sig-plan) und die Beiträge nach
+// Thema: je Gruppe ein mittiger Kopf mit Anzahl, ab lg abwechselnd um ein Sechstel versetzt; die Folge kommt vorsortiert vom
+// Server (nachThema: Folge der Kategorien, „Ratgeber und Neuigkeiten“ zuletzt, die Stellenanzeige als letzter Eintrag), die
+// Insel ordnet nur zu. Mit Filter oder Suche eine Liste wie bisher. Die Zeilen stehen ab lg über die volle Inhaltsbreite
+// (BlogCard). `zeichnungen` (je Vignette, nach Name) und `leitzeichnung` sind fertige Knoten vom Server, `motive` nennt je
+// Beitrag (slug) seine Vignette: Die Insel trägt keinen Zeichencode.
+// Überschriften (Nacharbeit SF-C1): Jede Zeile trägt in jedem Zustand eine H3, die Gruppenköpfe sind H2 wie der Titel des
+// Leitartikels darüber (vorher H3-Köpfe mit H4-Zeilen; die Funktionsprüfung F-16 sucht die Beiträge als H3). Die Themenknöpfe
+// stehen unter sm in zwei gleich breiten Spalten, „Alle Artikel“ über beide (vorher eine Treppe aus 2, 1, 1, 1 Knöpfen), bei
+// großer Schrift untereinander.
 
 /** Sichtbares Element aus einer Liste von Refs (das Suchfeld der aktuellen Breite) */
 const sichtbar = (refs) => refs.map((r) => r.current).find((el) => el && el.getClientRects().length > 0);
 
-export default function BlogFilter({ anrisse = {} }) {
+export default function BlogFilter({ anrisse = {}, zeichnungen = {}, motive = {}, leitzeichnung = null }) {
   const {
     activeCategory,
     setActiveCategory,
@@ -59,22 +71,17 @@ export default function BlogFilter({ anrisse = {} }) {
 
   const gefiltert = activeCategory !== 'all' || searchQuery !== '';
   const anzahl = filteredPosts.length;
-
-  // Fokussierter Chip ganz ins Bild der querlaufenden Zeile: ragt er heraus, rückt er an den Anfang (= Rastpunkt von
-  // snap-start, sonst rastet die Zeile zurück); scroll-padding der Zeile gilt
-  const insBild = (e) => {
-    const chip = e.currentTarget.getBoundingClientRect();
-    const zeile = e.currentTarget.parentElement.getBoundingClientRect();
-    if (chip.left < zeile.left || chip.right > zeile.right) e.currentTarget.scrollIntoView({ block: 'nearest', inline: 'start' });
-  };
+  // nach Thema nur ohne Filter und Suche; die Folge innerhalb der Gruppe kommt vom Server
+  const gruppen = gefiltert
+    ? null
+    : visibleCategories.map((kategorie) => ({ kategorie, beitraege: gridPosts.filter((post) => post.category === kategorie.id) })).filter((g) => g.beitraege.length > 0);
 
   return (
-    <div data-kopf-pause="ganz" className="mx-auto w-full max-w-mass">
+    <div data-kopf-pause="ganz" className="w-full">
       <div className="@container min-w-0">
 
-        {/* Suche (sichtbar beschriftet) und Kategorien; mobil eine querlaufende Zeile bis an den Bildrand (die erste
-            Schaltfläche steht auf dem Seitenrand, 16 px), ab sm umbrechend und mittig */}
-        <div className="mb-6 flex flex-col gap-4 border-b border-fuge pb-6">
+        {/* Suche (sichtbar beschriftet) und Kategorien in der Lesebreite; die Knöpfe brechen an der Kante des Suchfelds um */}
+        <div className="mx-auto mb-6 flex max-w-mass flex-col gap-4 border-b border-fuge pb-6">
           <div role="search" aria-label={SUCHBEREICH_NAME}>
             <Suchfeld
               id="blog-suche"
@@ -89,8 +96,8 @@ export default function BlogFilter({ anrisse = {} }) {
           {/* schmal (große Schrift) stehen die Themen untereinander, alle gleich breit: vorher sprang „Alle Artikel“ als
               einziger kurzer Knopf aus der Flucht (Browserprüfung E4-W0, E-065) */}
           {visibleCategories.length > 0 && (
-            <div role="group" aria-label="Kategorien" className="-mx-4 flex snap-x scroll-px-4 gap-2 overflow-x-auto px-4 py-1 sm:mx-0 sm:flex-wrap sm:justify-center sm:overflow-visible sm:px-0 @max-xs:mx-0 @max-xs:flex-wrap @max-xs:justify-center @max-xs:overflow-visible @max-xs:px-0">
-              {[{ id: 'all', name: 'Alle Artikel' }, ...visibleCategories].map((category) => {
+            <div role="group" aria-label="Kategorien" className="grid grid-cols-2 gap-2 @max-xs:grid-cols-1 sm:flex sm:flex-wrap">
+              {[{ id: 'all', name: 'Alle Artikel' }, ...visibleCategories].map((category, i) => {
                 const gedrueckt = activeCategory === category.id;
                 const zeichen = zeichenFuer(category.id);
                 return (
@@ -98,12 +105,11 @@ export default function BlogFilter({ anrisse = {} }) {
                     type="button"
                     key={category.id}
                     onClick={() => setActiveCategory(category.id)}
-                    onFocus={insBild}
                     aria-pressed={gedrueckt}
-                    className={`${wahlKlassen} shrink-0 @max-xs:w-full @max-xs:shrink @max-xs:justify-start @max-xs:text-left snap-start gap-2`}
+                    className={`${wahlKlassen} gap-2 @max-xs:w-full @max-xs:justify-start @max-xs:text-left ${i === 0 ? 'col-span-2 @max-xs:col-span-1' : ''}`}
                   >
-                    {/* genau ein Zeichen: gedrückt das Fugenkreuz, sonst das Kategoriesymbol */}
-                    {gedrueckt ? <Fugenkreuz className="size-3 shrink-0" /> : zeichen && <Icon name={zeichen} groesse={4} />}
+                    {/* genau ein Zeichen: gedrückt der Haken, sonst das Kategoriesymbol */}
+                    {gedrueckt ? <Icon name="haken" groesse={4} /> : zeichen && <Icon name={zeichen} groesse={4} />}
                     {category.name}
                   </button>
                 );
@@ -113,7 +119,7 @@ export default function BlogFilter({ anrisse = {} }) {
         </div>
 
         {/* Statusregion: Trefferzahl bzw. Leerzustand werden angesagt */}
-        <div role="status">
+        <div role="status" className="mx-auto max-w-mass">
           {gefiltert && anzahl > 0 && (
             <p className={`${etikettKlassen} mb-4`}>{anzahl} Artikel</p>
           )}
@@ -132,17 +138,34 @@ export default function BlogFilter({ anrisse = {} }) {
 
         {/* Hervorgehobener Beitrag (nur ohne Filter und Suche) */}
         {showFeatured && (
-          <div className="mb-8 md:mb-12">
-            <Leitfaden post={featuredPost} lesezeit={getReadTime(featuredPost)} anriss={anrisse[featuredPost.slug]} />
+          <div className="mb-12 lg:mb-16">
+            <Leitfaden post={featuredPost} lesezeit={getReadTime(featuredPost)} anriss={anrisse[featuredPost.slug]} zeichnung={leitzeichnung} />
           </div>
         )}
 
-        {/* Beiträge als Zeilen an der Fuge */}
-        {gridPosts.length > 0 && (
+        {/* Beiträge nach Thema: mittiger Kopf mit Anzahl, ab lg abwechselnd versetzt; darunter die Zeilen an der Fuge */}
+        {gruppen && gruppen.map(({ kategorie, beitraege }, i) => (
+          <div key={kategorie.id} className={i > 0 ? 'mt-12 lg:mt-16' : undefined}>
+            <div className={`mx-auto flex flex-col items-center gap-1 text-center lg:w-2/3 ${i % 2 === 0 ? 'lg:mr-auto lg:ml-0' : 'lg:mr-0 lg:ml-auto'}`}>
+              <h2 className="text-fs-5 text-tinte">{kategorie.name}</h2>
+              <p className="font-mono text-fs-1 text-tinte-2">{beitraege.length === 1 ? '1 Artikel' : `${beitraege.length} Artikel`}</p>
+            </div>
+            <ul className="mt-6 border-t border-fuge">
+              {beitraege.map((post) => (
+                <li key={post.id}>
+                  <BlogCard post={post} lesezeit={getReadTime(post)} anriss={anrisse[post.slug]} zeichnung={zeichnungen[motive[post.slug]]} />
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+
+        {/* mit Filter oder Suche: eine Liste wie bisher */}
+        {!gruppen && gridPosts.length > 0 && (
           <ul className="border-t border-fuge">
             {gridPosts.map((post) => (
               <li key={post.id}>
-                <BlogCard post={post} lesezeit={getReadTime(post)} anriss={anrisse[post.slug]} />
+                <BlogCard post={post} lesezeit={getReadTime(post)} anriss={anrisse[post.slug]} zeichnung={zeichnungen[motive[post.slug]]} />
               </li>
             ))}
           </ul>

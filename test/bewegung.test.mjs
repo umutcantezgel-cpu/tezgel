@@ -69,9 +69,12 @@ test('Bewegung 2: sig-plan wird nur auf groben Zeigegeräten über Sichtbarkeit 
 });
 
 test('Bewegung 3: Ladeeinträge und Schwellen', () => {
-  // E4-NACH-02: einzugsband legt sich beim Laden frei (CSS ab dem ersten Bild) – Ladeeintrag statt Beobachter
-  assert.deepEqual(ladeKennungen().sort(), ['einzugsband', 'sig-flucht', 'sig-kreuzlinie']);
-  assert.ok(!beobachteteKennungen(true).includes('einzugsband') && !beobachteteKennungen(false).includes('einzugsband'));
+  // UM-E4-SICHT-FIX M-C6 (E-104 Nr. 9): einzugsband legt sich bei Sichtbarkeit frei (IO 40 %, Ortsmoment in der Lage der
+  // Ortsseiten), auf jedem Zeigegerät; vorher Ladeeintrag (E4-NACH-02)
+  assert.deepEqual(ladeKennungen().sort(), ['sig-flucht', 'sig-kreuzlinie']);
+  assert.ok(beobachteteKennungen(true).includes('einzugsband') && beobachteteKennungen(false).includes('einzugsband'));
+  assert.equal(REGISTER.einzugsband.ausloeser, 'sicht');
+  assert.equal(schwelleFuer('einzugsband'), 0.4);
   assert.equal(schwelleFuer('anriss'), 0.5);
   assert.equal(schwelleFuer('auftritt'), 0.2);
   assert.equal(schwelleFuer('unbekannt'), 0.2);

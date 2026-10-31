@@ -51,7 +51,8 @@ export default function BadPage() {
             />
             <ErzaehlSeite
                 inhalt={BAD}
-                momente={{ tun: <Schichten /> }}
+                // Zeichnung zuerst (M-C1, tun.momentZuerst): die Legende der Szene erklärt „Untergrund“ und „Abdichtung“
+                momente={{ tun: <Schichten fachwort /> }}
                 // ein Abschluss (UM-E4-SICHT-FIX M-B3): beide Werkzeuge im nächsten Schritt unter dem Hauptknopf, ohne Rückfrage
                 // daneben (K-016); der Projektcheck offen (F-05 prüft sichtbare Inhalte in #projekt-check), die Badanfrage im
                 // geschlossenen Aufklapper (F-04, E-104 Nr. 4); Kennungen und Regionsnamen wie bisher

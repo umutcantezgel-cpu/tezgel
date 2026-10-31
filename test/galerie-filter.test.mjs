@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { ARBEITEN } from '../src/config/arbeiten.ts';
 import { GLOSSAR } from '../src/config/glossar.ts';
-import { GALERIE, GRUPPEN, SATZ, STAFFEL_MAX, anzahl, ansage, blendetEin, istSichtbar, stufen } from '../src/components/momente/galerie-filter/daten.ts';
+import { GALERIE, GRUPPEN, SATZ, STAFFEL_MAX, ZUERST, anzahl, ansage, blendetEin, istSichtbar, mehrMarke, stufen, stufenNachzeigen } from '../src/components/momente/galerie-filter/daten.ts';
 import { REFERENZEN } from '../src/inhalte/referenzen.ts';
 
 // Großer Moment galerie-filter (KERN v3.4 K-007, E3-GRAF-08): Daten und Logik der Galerie „Unsere Arbeiten“ auf /referenzen.
@@ -72,4 +72,24 @@ test('Galerie 7: Statuszeile', () => {
   assert.equal(ansage('bad', 7), 'Sie sehen 7 Fotos aus dem Bad.');
   assert.equal(ansage('treppe-und-eingang', 1), 'Sie sehen 1 Foto von Treppe und Eingang.');
   for (const g of GRUPPEN) assert.ok(!STRICH.test(ansage(g.id, 2)));
+});
+
+// UM-E4-SICHT-FIX M-C3 Nr. 2: eingeklappt drei Reihen (schmal 6, im Dreierraster 9), die übrigen tragen ihre Marke; beim
+// Nachzeigen blenden die neuen Fotos in Lesefolge ein, höchstens 8 Stufen (Register galerie-filter)
+test('Galerie 8: eingeklappt 6 bzw. 9 Fotos, Nachzeigen gestaffelt', () => {
+  assert.deepEqual(ZUERST, { schmal: 6, breit: 9 });
+  assert.equal(ZUERST.breit % 3, 0, 'volle Reihen im Dreierraster');
+  assert.equal(ZUERST.schmal % 2, 0, 'volle Reihen im Zweierraster');
+  const marken = GALERIE.map((_, i) => mehrMarke(i));
+  assert.equal(marken.filter((m) => m === undefined).length, ZUERST.schmal);
+  assert.equal(marken.filter((m) => m === 'schmal').length, ZUERST.breit - ZUERST.schmal);
+  assert.equal(marken.filter((m) => m === 'breit').length, GALERIE.length - ZUERST.breit);
+  for (const ab of [ZUERST.schmal, ZUERST.breit]) {
+    const s = stufenNachzeigen(GALERIE.length, ab);
+    assert.ok(s.slice(0, ab).every((x) => x === null));
+    assert.deepEqual(s.slice(ab, ab + 3), [0, 1, 2]);
+    assert.ok(s.every((x) => x === null || x <= STAFFEL_MAX));
+  }
+  // eingeklappt zeigt „Alle“ nur fertige Arbeiten (die Baustelle steht am Ende)
+  assert.ok(GALERIE.slice(0, ZUERST.breit).every((f) => f.gruppe !== 'so-arbeiten-wir'));
 });
