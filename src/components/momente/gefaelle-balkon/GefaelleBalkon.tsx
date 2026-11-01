@@ -5,9 +5,15 @@
 // Pfeile): ohne JavaScript, bei reduzierter Bewegung, nach dem Notaus, im Druck und bei erzwungenen Farben stehen die Pfeile
 // still. Die Zeichnung ist dekorativ (aria-hidden über Planrahmen); was sie zeigt, sagen Unterschrift und Liste darunter.
 // Linien 1,5 px wie die Plan-Vignetten, Töne über `color` (Strich für Schraffur und Fugen, Tinte für Bauteile und Wasser),
-// kein Rot, keine IDs, kein Text im SVG. Serverkomponente ohne JavaScript.
+// kein Rot, keine IDs, kein Text im SVG. `breit` (UM-E4-SICHT-FIX M-C9; Sicht Anlauf 1: der große Moment der Seite saß klein in
+// einem 606 px breiten Kasten): das Feld in voller Rasterbreite, die Zeichnung darin ab xl höchstens zwei Drittel breit (Prüfung
+// SF-C3: d1920 rund 700 px hoch, beim Sprung an den Abschnitt fehlten Rinne und Tropfen; so steht das Feld nach dem Sprung bei
+// d1440 und d1920 ganz im Fenster, mit drei Vierteln wie gefaelle-dusche nur bei d1920), Unterschrift und Legende im Satz rechts
+// (Spalten 2 bis 3) wie die Prüfliste danach (`tun.satz`); die Legende dort ohne Fugenkreuze (neben der nummerierten Prüfliste
+// sonst zwei Markenarten, M-B2: das Kreuz gehört Kanten und Aufklappern). Serverkomponente ohne JavaScript.
 import type { CSSProperties } from 'react';
 import clsx from 'clsx';
+import { Satzblock, satzMass } from '@/components/kern/Abschnitt';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Textmarken from '@/components/kern/Textmarken';
 import { klartext } from '@/lib/textmarken';
@@ -27,11 +33,24 @@ const LEGENDE = [
 
 type Stil = CSSProperties & Record<`--${string}`, number>;
 
-export default function GefaelleBalkon({ className, fachwort = false }: { className?: string; fachwort?: boolean }) {
+export default function GefaelleBalkon({ className, fachwort = false, breit = false }: { className?: string; fachwort?: boolean; breit?: boolean }) {
+  const legende = (
+    <>
+      <p className="font-semibold text-pretty text-tinte">Der Regen läuft vom Balkon ab.</p>
+      <ul className="mt-3 grid gap-2 text-tinte-2">
+        {LEGENDE.map((satz) => (
+          <li key={satz} className={breit ? undefined : 'flex gap-3'}>
+            {!breit && <Fugenkreuz className="mt-2 size-3 text-strich" />}
+            <span className={clsx('text-pretty hyphens-auto', !breit && 'min-w-0 flex-1')}>{fachwort ? <Textmarken text={satz} /> : klartext(satz)}</span>
+          </li>
+        ))}
+      </ul>
+    </>
+  );
   return (
-    <figure className={clsx('mx-auto max-w-mass text-tinte', className)}>
+    <figure className={clsx('text-tinte', !breit && 'mx-auto max-w-mass', className)}>
       <div data-motion="gefaelle-balkon" className="border border-fuge bg-fliese p-4 lg:p-6">
-        <Planrahmen viewBox={VIEWBOX}>
+        <Planrahmen viewBox={VIEWBOX} className={breit ? 'mx-auto xl:max-w-2/3' : undefined}>
           <g className="text-strich">
             <Linie d={SCHNITT} />
             <Linie d={FUGEN} />
@@ -46,16 +65,17 @@ export default function GefaelleBalkon({ className, fachwort = false }: { classN
           <Linie d={TROPFEN} fill="currentColor" className="gefaelle-balkon-tropfen" />
         </Planrahmen>
       </div>
-      <figcaption className="mt-4 font-text text-fs-3">
-        <p className="font-semibold text-pretty text-tinte">Der Regen läuft vom Balkon ab.</p>
-        <ul className="mt-3 grid gap-2 text-tinte-2">
-          {LEGENDE.map((satz) => (
-            <li key={satz} className="flex gap-3">
-              <Fugenkreuz className="mt-2 size-3 text-strich" />
-              <span className="min-w-0 flex-1 text-pretty hyphens-auto">{fachwort ? <Textmarken text={satz} /> : klartext(satz)}</span>
-            </li>
-          ))}
-        </ul>
+      <figcaption className={clsx('mt-4', !breit && 'font-text text-fs-3')}>
+        {breit ? (
+          // Lesemaß in der Grundschrift (max-w-mass misst in ch, E-065), wie die Liste danach
+          <Satzblock satz="rechts">
+            <div className={satzMass('rechts')}>
+              <div className="font-text text-fs-3">{legende}</div>
+            </div>
+          </Satzblock>
+        ) : (
+          legende
+        )}
       </figcaption>
     </figure>
   );

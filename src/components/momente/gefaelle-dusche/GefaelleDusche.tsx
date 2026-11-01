@@ -4,7 +4,13 @@
 // Tropfen über das Gefälle in den Ablauf, die drei Pfeile legen sich hinter ihm hin (CSS in bewegung.css, Auslöser im
 // Bewegungsmodul). Ohne JavaScript, reduziert, im Notaus, im Druck und bei erzwungenen Farben: Pfeile stehen, kein Tropfen.
 // Zeichenmittel aus kern/vignetten/zeichnen (1,5 px, currentColor, Fugen und Schnitt in Strich, kein Rot).
-// Serverkomponente ohne Client-Code.
+// `breit` (UM-E4-SICHT-FIX M-C9, /bad/barrierefreies-bad; Sicht Anlauf 1: die Zeichnung kam im Lesemaß nicht als Blickfang an):
+// das Feld in voller Rasterbreite, die Zeichnung darin ab xl höchstens drei Viertel breit (Prüfung SF-C3: so steht das Feld nach
+// dem Sprung an den Abschnitt bei d1440 und d1920 ganz im Fenster),
+// die Unterschrift im Satz rechts (Spalten 2 bis 3) wie die Liste danach (`tun.satz`).
+// Ohne `breit` mittig im Lesemaß wie bisher. Serverkomponente ohne Client-Code.
+import clsx from 'clsx';
+import { Satzblock, satzMass } from '@/components/kern/Abschnitt';
 import { Linie, Planrahmen, schraffur } from '@/components/kern/vignetten/zeichnen';
 import { PFADE, PFEILE, SCHNITT_FLAECHEN, VIEWBOX, pfeilEntlang, tropfenPfad } from './geometrie';
 
@@ -14,11 +20,11 @@ const SCHNITT = SCHNITT_FLAECHEN.map(([x, y, b, h, abstand]) => schraffur(x, y, 
 export const ZEICHNUNG_NAME =
   'Zeichnung einer Dusche ohne Stufe, von der Seite gesehen. Der Boden neigt sich zum Ablauf an der Wand. Pfeile zeigen, wohin das Wasser fließt.';
 
-export default function GefaelleDusche() {
+export default function GefaelleDusche({ breit = false }: { breit?: boolean }) {
   return (
-    <figure data-motion="gefaelle-dusche" className="mx-auto max-w-mass text-tinte">
+    <figure data-motion="gefaelle-dusche" className={clsx('text-tinte', !breit && 'mx-auto max-w-mass')}>
       <div role="img" aria-label={ZEICHNUNG_NAME} className="border border-fuge bg-fliese p-4 lg:p-6">
-        <Planrahmen viewBox={VIEWBOX}>
+        <Planrahmen viewBox={VIEWBOX} className={breit ? 'mx-auto xl:max-w-3/4' : undefined}>
           <g className="text-strich">
             <Linie d={SCHNITT} />
             <Linie d={PFADE.fugen} />
@@ -37,8 +43,17 @@ export default function GefaelleDusche() {
           </g>
         </Planrahmen>
       </div>
-      <figcaption className="mt-4 font-text text-fs-3 text-pretty text-tinte-2">
-        <p>Das Wasser läuft von selbst zum Ablauf.</p>
+      <figcaption className={clsx('mt-4', !breit && 'font-text text-fs-3 text-pretty text-tinte-2')}>
+        {breit ? (
+          // Lesemaß in der Grundschrift (max-w-mass misst in ch, E-065), wie die Liste danach
+          <Satzblock satz="rechts">
+            <div className={satzMass('rechts')}>
+              <p className="font-text text-fs-3 text-pretty text-tinte-2">Das Wasser läuft von selbst zum Ablauf.</p>
+            </div>
+          </Satzblock>
+        ) : (
+          <p>Das Wasser läuft von selbst zum Ablauf.</p>
+        )}
       </figcaption>
     </figure>
   );

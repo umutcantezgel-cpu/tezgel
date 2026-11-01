@@ -51,3 +51,14 @@ Direkt gesetzter Mikrotext aus SF-C2: Legende der Einsatzkarte „Die Punkte sin
 | T-B2-3 | /preise, /termin, /leistungen/bad, /foerderung | WhatsApp-Knopf im Abschluss | „Per WhatsApp schreiben“ | „Nachricht per WhatsApp“ | Kopf, untere Leiste und Schritt nennen denselben Weg „Nachricht per WhatsApp“ (K-010). |
 
 SF-B2 hat keine Mikrotexte gesetzt. Für X-1 ist am WhatsApp-Knopf im Abschluss nur das abweichende `aria-label` entfallen; der zugängliche Name ist jetzt der sichtbare Text. SF-A2 hat keine Textvorschläge und keine Mikrotexte.
+
+### Teil SF-C3 (Bad-Unterseiten, Balkon, Stimmen, Startseite „Was wir tun“; eingetragen vom Orchestrator)
+
+| Nr. | Ansicht | Stelle | heute | Vorschlag | Grund |
+|---|---|---|---|---|---|
+| T-C3-1 | /bad/barrierefreies-bad | H2 des neuen Abschnitts `#entstehung` | „So entsteht eine Dusche ohne Stufe“ | „So entsteht eine Dusche ohne Stufe.“ | Gleich T-B2-1; mit SF-C3 ist der Titel eine eigene H2. |
+| T-C3-2 | /bad/badsanierung | Unterschrift der Zeichnung „Wanne raus, Dusche ohne Stufe“ in „Was wir tun“ | „Der Einstieg bleibt dabei eben, ohne Stufe.“ | „Die Wanne kommt raus. Der Boden läuft eben in die Dusche und neigt sich zur Rinne.“ | Die Unterschrift wiederholt heute Punkt 2 direkt darunter; der Vorschlag sagt, was die Zeichnung zeigt. |
+| T-C3-3 | /balkon-terrasse | Punkt 1 der Prüfliste | „Das Wasser läuft ab. Der Belag bekommt ein Gefälle von mindestens 1,5 bis 2 %.“ | „Genug Gefälle. Wir planen mindestens 1,5 bis 2 % Gefälle.“ | Das Gefälle steht heute dreimal in einem Bildschirm (Zeichnung, Legende, Punkt 1); der Punkt nennt dann nur die Zahl. |
+| T-C3-4 | /balkon-terrasse | erste Zeile der Legende der Gefälle-Zeichnung | „Die Platten liegen leicht schräg, weg vom Haus. So läuft der Regen zum Rand.“ | „Die Platten liegen leicht schräg, weg vom Haus.“ | Der Titel der Legende sagt schon „Der Regen läuft vom Balkon ab.“; zusammen mit T-C3-3 ist das Gefälle einmal erklärt und einmal beziffert. |
+
+SF-C3 hat keine Mikrotexte gesetzt. Die Unterschrift der neuen Zeichnung ist ein vorhandener Satz der Seite (Plan M-C9).

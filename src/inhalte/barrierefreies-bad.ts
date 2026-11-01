@@ -37,6 +37,10 @@ export const BARRIEREFREIES_BAD: ErzaehlInhalt = {
     titel: 'So wird aus der Wanne eine sichere Dusche.',
     // Folge (K-009, UM-E4-SICHT-FIX M-B7): die Gefälle-Zeichnung direkt nach Kopf und Satz, die Punkte danach
     momentZuerst: true,
+    // die Zeichnung steht in voller Rasterbreite (GefaelleDusche `breit`, M-C9 Nr. 2), Einleitung, Unterschrift, Punkte und
+    // Absatz um ein Drittel versetzt in den Spalten 2 bis 3 auf einer Kante (M-B1; vorher mittig auf der Kante der Zeichnung im
+    // Lesemaß, V-16 von SF-B2; die Einleitung zieht mit, Prüfung SF-C3)
+    satz: 'rechts',
     einleitung:
       'Wir bauen Ihre Badewanne aus und eine [[bodengleiche-dusche|bodengleiche Dusche]] ein. So steigen Sie sicher hinein, heute und auch später.',
     punkte: [
@@ -75,6 +79,10 @@ export const BARRIEREFREIES_BAD: ErzaehlInhalt = {
         { bild: 'entstehung-dusche-1', unterschrift: 'Die großen Fliesen liegen, das Gefälle ist geschnitten.' },
         { bild: 'entstehung-dusche-2', unterschrift: 'Die Fugen sind fertig. Das Wasser läuft zum Ablauf in der Mitte.' },
       ],
+      // eigener Abschnitt mit mittigem Kopf (UM-E4-SICHT-FIX M-C9 Nr. 2, M-B6 Nr. 3; Sicht Anlauf 1: „So entsteht“ stand ohne
+      // eigenen Kopf in der Fläche der Galerie, zwei Fotopaare mit zwei Beschriftungsarten). Auf Fliese zwischen Galerie und
+      // Stimmen (beide Kalk): die Flächen wechseln weiter Abschnitt für Abschnitt
+      abschnitt: { id: 'entstehung', flaeche: 'fliese' },
     },
     stimmen: ['ute-t', 'elke-s', 'peter-p', 'k-d'],
     // Stimmen auf Kalk (UM-E4-CHOR-FIX, nur die Fläche): sonst stünden Stimmen, nächster Schritt und Badanfrage als drei

@@ -1,8 +1,9 @@
 // Vorlagen · Kundenstimmen (KERN v3 K-003 Nr. 4, G8; E-025, E-044; K-016 „Ruhe“, E-047): Stimmen wörtlich aus REVIEWS als
-// langsames Karussell mit gleich großen Karten, groß (Über uns, Unsere Arbeiten) oder klein (jede andere Seite) (vorher eine große und kleinere Stimmen in verschiedenen Größen, das wirkte
-// unruhig, E-047). Die Reihe rückt alle acht Sekunden um eine Karte, hält bei Maus und Fokus an und hat Knöpfe; darunter
-// die Kennzeile mit Stand. Eine einzelne Stimme steht groß ohne Karussell; dort kann die Laserlinie die Worte unterstreichen,
-// auf die es der Kundschaft ankommt (Wortlaut unverändert). Fehlt eine Kennung in REVIEWS, bricht der Bau ab.
+// langsames Karussell mit gleich großen Karten, groß (Über uns) oder einzeln (jede andere Seite, unten) (vorher eine große und
+// kleinere Stimmen in verschiedenen Größen, das wirkte unruhig, E-047; bis UM-E4-SICHT-FIX M-B5 vier kleine Karten ab lg). Die
+// Reihe rückt alle acht Sekunden um eine Karte, hält bei Maus und Fokus an und hat Knöpfe; darunter die Kennzeile mit Stand.
+// Eine einzelne Stimme steht groß ohne Karussell; dort kann die Laserlinie die Worte unterstreichen, auf die es der Kundschaft
+// ankommt (Wortlaut unverändert). Fehlt eine Kennung in REVIEWS, bricht der Bau ab.
 // Form „einzeln“ (Startseite, UM-E3-FIX F4): eine große Stimme je Schritt statt drei gleicher Karten nebeneinander (eine
 // Fliese, ein Gedanke); ab 36rem Breite Sterne und Name im ersten Drittel, der Wortlaut in den zwei Dritteln dahinter an der
 // Fuge (Versatz um ein Drittel der Spaltenbreite, K-005). So folgen auf die Fotoreihe keine zweiten drei gleichen Karten.
@@ -17,6 +18,10 @@
 // letzten ganzen Satz ist verworfen, E-097: die Spec „Wortlaut wörtlich“ bleibt, offene Frage UM-13 an den Auftraggeber).
 // Ab lg steht die Kennzeile im freien Drittel neben der Karte. Wörter in Versalien („HERVORRAGENDE!!!“) trennen nie (FS-K Nr. 12;
 // nur Darstellung, der Wortlaut bleibt).
+// Seit UM-E4-SICHT-FIX M-B5 ist „einzeln“ mit Versatz die Form jeder Seite ohne `stimmenGross` (Beleg; vorher vier kleine Karten
+// ab lg, Sicht Anlauf 1: dieselbe Kartenwand auf vielen Seiten). Die markierte Stelle trennt nicht und bricht nur an Wortgrenzen
+// um (vorher „ordnungs-/gemäß“: der rote Strich lief über die Trennung); die Unterstreichung liegt ohnehin auf jedem Zeilenstück
+// für sich (die im Plan genannte Zerlegung nach box-decoration-break wirkt auf text-decoration nicht und entfällt, Prüfung SF-C3).
 // Serverkomponente, das Karussell ist eine Insel.
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
@@ -47,7 +52,8 @@ function markiert(text: string, stelle?: string) {
   return (
     <>
       {versalien(text.slice(0, i))}
-      <span className="underline decoration-laser decoration-2 underline-offset-4">{versalien(stelle)}</span>
+      {/* markierte Stelle: nie getrennt (hyphens-none, M-B5) */}
+      <span className="underline decoration-laser decoration-2 underline-offset-4 hyphens-none">{versalien(stelle)}</span>
       {versalien(text.slice(i + stelle.length))}
     </>
   );
@@ -109,15 +115,14 @@ function Sterne({ s, groesse }: { s: Bewertung; groesse: 4 | 5 }) {
   );
 }
 
-/** Eine Stimme: Sterne nur als Bild (der Name nennt die Bewertung), Wortlaut unverändert aus REVIEWS. `klein`: Karte im kleinen
- *  Karussell, Wortlaut eine Stufe kleiner. */
-export function Stimme({ s, gross, klein = false }: { s: Bewertung; gross: boolean; klein?: boolean }) {
+/** Eine Stimme: Sterne nur als Bild (der Name nennt die Bewertung), Wortlaut unverändert aus REVIEWS. */
+export function Stimme({ s, gross }: { s: Bewertung; gross: boolean }) {
   return (
     <figure className="flex h-full flex-col">
       <Sterne s={s} groesse={gross ? 5 : 4} />
       {/* wrap-break-word: der Wortlaut enthält Stellen ohne Leerzeichen („empfehlen.Handwerklich“), die bei großer
           Systemschrift sonst über den Rand laufen; lange Wörter trennt der Browser mit Strich (globals.css, E-065) */}
-      <blockquote className={clsx('mt-4 min-w-0 font-text text-pretty wrap-break-word text-tinte', gross ? 'text-fs-4 font-semibold lg:text-fs-5' : klein ? 'text-fs-2' : 'text-fs-3')}>
+      <blockquote className={clsx('mt-4 min-w-0 font-text text-pretty wrap-break-word text-tinte', gross ? 'text-fs-4 font-semibold lg:text-fs-5' : 'text-fs-3')}>
         <p>{gross ? markiert(s.text, MARKIERUNG[s.id]) : satz(s.text)}</p>
       </blockquote>
       <figcaption className="mt-6 font-text text-fs-2 text-tinte-2">
@@ -197,9 +202,11 @@ function KennzeileEinzeln({ stimmen, versetzt = false }: { stimmen: Bewertung[];
     // unter lg an der Kante des Wortlauts unter der Karte (UM-E4-START); ab lg im freien ersten Drittel neben der Karte, auf
     // der Höhe ihrer Kopfzeile (Nacharbeit, Prüfung A: das Drittel stand leer, 400 px auf d1440). Absolut in der Hülle der
     // Stimmen (Stimmen, lg:relative): Die Karte und die Knöpfe darunter rücken nicht; im DOM bleibt die Zeile hinter der
-    // Reihe (Lese- und Fokusfolge wie bisher)
+    // Reihe (Lese- und Fokusfolge wie bisher). An der Kartenoberkante ausgerichtet (UM-E4-SICHT-FIX M-B5; Sicht Anlauf 1, d1920:
+    // die Spalte wirkte neben der Karte verloren): Die obere Fuge der Karte läuft als Fuge über das freie Drittel bis zur Kante
+    // des Rasters, die Kennzeile hängt daran wie die Kopfzeile der Karte
     return (
-      <div className="px-6 lg:absolute lg:top-1 lg:left-0 lg:w-1/3 lg:px-0 lg:pt-4 lg:pr-12">
+      <div className="px-6 lg:absolute lg:top-1 lg:left-0 lg:w-1/3 lg:border-t lg:border-fuge lg:px-0 lg:pt-4 lg:pr-12">
         <Bewertungszeile stand untereinander className="font-text text-fs-2 text-tinte-2 hyphens-none lg:text-fs-3" />
         <AlleBewertungen stimmen={stimmen} />
       </div>
@@ -217,11 +224,12 @@ function KennzeileEinzeln({ stimmen, versetzt = false }: { stimmen: Bewertung[];
   );
 }
 
-// Karussell einzeln (eine Stimme auf jeder Breite), groß (drei Karten ab lg) oder klein (vier Karten ab lg); Teiler der Breite,
-// damit keine Karte angeschnitten ist
-const KARTE = { einzeln: 'w-full', gross: 'w-full md:w-1/2 lg:w-1/3', klein: 'w-full sm:w-1/2 lg:w-1/4' } as const;
+// Karussell einzeln (eine Stimme auf jeder Breite) oder groß (drei Karten ab lg); Teiler der Breite, damit keine Karte
+// angeschnitten ist
+const KARTE = { einzeln: 'w-full', gross: 'w-full md:w-1/2 lg:w-1/3' } as const;
 
-/** `versatz` (nur Form „einzeln“, Startseite): Karte ab lg um ein Drittel versetzt, Wortlaut bis zum letzten ganzen Satz */
+/** `versatz` (nur Form „einzeln“; Startseite und seit M-B5 jede Seite ohne `stimmenGross`): Karte ab lg um ein Drittel versetzt,
+ *  Kennzeile im freien Drittel, Wortlaut ganz (E-097) */
 export default function Stimmen({ ids, form = 'gross', versatz = false }: { ids: string[]; form?: keyof typeof KARTE; versatz?: boolean }) {
   const stimmen = stimmenZu(ids);
   const [erste] = stimmen;
@@ -248,7 +256,7 @@ export default function Stimmen({ ids, form = 'gross', versatz = false }: { ids:
               <EinzelStimme key={s.id} s={s} nummer={i + 1} anzahl={stimmen.length} versetzt={versetzt} />
             ) : (
               <div key={s.id} className={clsx('h-full border border-fuge bg-kalk p-6', form === 'gross' && 'lg:p-8')}>
-                <Stimme s={s} gross={false} klein={form === 'klein'} />
+                <Stimme s={s} gross={false} />
               </div>
             ),
           )}

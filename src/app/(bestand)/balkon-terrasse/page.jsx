@@ -1,6 +1,7 @@
 // Balkon und Terrasse (E3-BAU-06, KERN v3.6, K-016 „Ruhe“, E-047): Erzählseite auf der Vorlage ErzaehlSeite. Inhalt in
 // `src/inhalte/balkon-terrasse.ts`, Metadaten aus dem Inhalt, der große Moment `gefaelle-balkon` an seinem Platz
-// (momente.tun). Strukturierte Daten (WebPage, Brotkrumen, Service) setzt die Seite selbst (SeitenDaten).
+// (momente.tun), in voller Rasterbreite (`breit`, UM-E4-SICHT-FIX M-C9 Nr. 3). Strukturierte Daten (WebPage, Brotkrumen,
+// Service) setzt die Seite selbst (SeitenDaten).
 import ErzaehlSeite from '@/components/vorlagen/ErzaehlSeite';
 import GefaelleBalkon from '@/components/momente/gefaelle-balkon/GefaelleBalkon';
 import { BALKON_TERRASSE } from '@/inhalte/balkon-terrasse';
@@ -33,7 +34,7 @@ export default function BalkonTerrassePage() {
                     }),
                 ]}
             />
-            <ErzaehlSeite inhalt={BALKON_TERRASSE} momente={{ tun: <GefaelleBalkon fachwort /> }} />
+            <ErzaehlSeite inhalt={BALKON_TERRASSE} momente={{ tun: <GefaelleBalkon fachwort breit /> }} />
         </>
     );
 }

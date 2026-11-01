@@ -7,7 +7,7 @@ import type { GlossarId } from '@/config/glossar';
 import type { Satz } from '@/components/kern/Abschnitt';
 import type { Kompositionsmotiv } from '@/components/kern/Fliesenkomposition';
 import type { Krume } from '@/components/kern/Brotkrumen';
-import type { VignettenName } from '@/components/kern/vignetten';
+import type { VignettenName, ZeichnungName } from '@/components/kern/vignetten';
 import type { PlanName } from '@/lib/plaene/vorgaben';
 
 /** Text mit Textmarken (`[[id|Wort]]` = Fachwort mit Glossarerklärung beim ersten Vorkommen der Seite) */
@@ -104,8 +104,10 @@ export interface TunInhalt {
   /** Leistungen als eine ruhige Zeile mit Links unter dem Kopf (Startseite, UM-E4-START: die Zeichnungen stehen in den Zeilen
    *  der Lage, hier bleiben nur die Wege) */
   leistungen?: Verweis[];
-  /** erklärende Zeichnung unter dem Kopf (ab lg in der Kopfspalte, mobil nach dem Inhalt) mit Bildunterschrift */
-  unterKopf?: { vignette: VignettenName; unterschrift: Markentext };
+  /** erklärende Zeichnung direkt unter Kopf und Satz, vor Zeilen und Punkten, mit Bildunterschrift (der Erklärmoment des
+   *  Abschnitts, z. B. die Schnittzeichnung `wanne-dusche` auf /bad/badsanierung; UM-E4-SICHT-FIX M-C9). Die Unterschrift ist ein
+   *  Satz der Seite; ein Fachwort darin steht vor den Punkten, trägt also dort die Erklärung */
+  unterKopf?: { vignette: ZeichnungName; unterschrift: Markentext };
   /** Aussagen als nummerierte Liste an der Fuge (eine Aussage je Zeile, Mono-Nummer, ohne Kasten; M-B2) */
   punkte?: Markentext[];
   /** Absatz nach den Punkten (z. B. Norm, Zuschuss) */
@@ -161,11 +163,14 @@ export interface BelegInhalt {
   };
   /** Kennungen aus REVIEWS, Wortlaut unverändert (G8) */
   stimmen?: string[];
-  /** Kundenstimmen groß (Startseite, Über uns, Unsere Arbeiten: drei Karten ab lg); sonst das kleine Karussell jeder Seite
-   *  (vier Karten ab lg, eine Stufe kleinere Schrift; K-016, E-047) */
+  /** Kundenstimmen groß (Über uns: drei Karten ab lg); sonst eine Stimme je Schritt mit Versatz wie auf / (die Karte ab lg um
+   *  ein Drittel versetzt, die Kennzeile im freien Drittel; UM-E4-SICHT-FIX M-B5: vorher das kleine Karussell mit vier Karten
+   *  ab lg, Sicht Anlauf 1 „wiederholte gleiche Stimmenkarten“). K-016 (gleich große Karten, 8 s, Anhalten, Knöpfe) gilt in jeder
+   *  Form */
   stimmenGross?: boolean;
   /** eine große Stimme je Schritt (Startseite, UM-E3-FIX F4): das langsame Karussell zeigt auf jeder Breite eine Stimme, ab md
-   *  Sterne und Name im ersten Drittel, der Wortlaut in den zwei Dritteln dahinter an der Fuge; geht `stimmenGross` vor */
+   *  Sterne und Name im ersten Drittel, der Wortlaut in den zwei Dritteln dahinter an der Fuge; geht `stimmenGross` vor. Ohne
+   *  `stimmenGross` ist „einzeln“ mit Versatz Standard (M-B5); mit `stimmenEinzeln` gilt `stimmenVersatz` wie angegeben */
   stimmenEinzeln?: boolean;
   /** Kundenstimmen auf Kalk statt auf Fliese, nur die Fläche (UM-E4-CHOR-FIX): wenn danach nächster Schritt und Werkzeug auf
    *  Fliese folgen und sonst drei gleiche Flächen in Folge stünden (K-003 Nr. 4). Das Werkzeug mit Formular bleibt auf
@@ -175,8 +180,8 @@ export interface BelegInhalt {
   stimmenTitel?: string;
   stimmenEinleitung?: Markentext;
   /** Form „einzeln“ (Startseite, UM-E4-START): die Karte steht ab lg um ein Drittel der Spalte versetzt (der bewusste Bruch
-   *  dieses Bildschirms), und jede Stimme zeigt ihren Wortlaut bis zum letzten ganzen Satz (Wortlaut Zeichen für Zeichen
-   *  gleich, nur kürzer; der ganze Text steht beim Anbieter) */
+   *  dieses Bildschirms), der Wortlaut ganz (G8, E-097). Nur mit `stimmenEinzeln`; ohne `stimmenGross` steht der Versatz immer
+   *  (M-B5) */
   stimmenVersatz?: boolean;
   /** Satz unter den Fotos (z. B. seit wann etwas Standard ist) */
   satz?: Markentext;

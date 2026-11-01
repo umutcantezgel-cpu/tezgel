@@ -40,13 +40,19 @@ export const BADSANIERUNG: ErzaehlInhalt = {
   tun: {
     titel: 'So wird aus Ihrer Wanne eine sichere Dusche.',
     einleitung: VORSPANN,
+    // Erklärmoment des Abschnitts (UM-E4-SICHT-FIX M-C9 Nr. 1; Sicht Anlauf 1: Wanne raus und Dusche ohne Stufe nur mit
+    // Textkästen): Schnittzeichnung „Wanne raus, Dusche ohne Stufe“ unter Kopf und Satz, vor den Punkten. Unterschrift ist ein
+    // Satz der Seite (zweiter Punkt), ohne Fachwort: Die Erklärungen stehen weiter beim ersten Vorkommen in den Punkten
+    unterKopf: { vignette: 'wanne-dusche', unterschrift: 'Der Einstieg bleibt dabei eben, ohne Stufe.' },
     punkte: [
       'Die Wanne geht raus, und an ihre Stelle kommt eine [[bodengleiche-dusche|bodengleiche Dusche]]. Man nennt sie auch Walk-in-Dusche.',
       'Der Boden bekommt ein leichtes [[gefaelle|Gefälle]]. Der Einstieg bleibt dabei eben, ohne Stufe.',
       'Wir bauen eine [[abdichtung|Verbundabdichtung]] ein. Sie richtet sich nach der [[din-18534|DIN 18534]]. Das ist bei uns seit 2019 Standard.',
       'Wir verlegen Fliesen mit [[rutschhemmung|Rutschhemmung R10 oder R11]], je nach Raum.',
     ],
-    absatz:
+    // Fachtext mit Normen am Ende im Aufklapper „Mehr erfahren“ statt mitten in der Erzählung (M-C9 Nr. 1, M-B4; Sicht Anlauf 1:
+    // Suchmaschinentext nach den Punkten); Wortlaut und Textmarken unverändert
+    absatzMehr:
       'Wir bauen [[barrierefrei|barrierefreie]] Bäder mit bodengleichen Duschen. Wir verlegen auch [[grossformat|Großformate]]. Wenn Sie ein Bad ohne Stufen wünschen, planen wir nach [[din-18040|DIN 18040]]. So bleibt Ihr Bad auch später gut nutzbar.',
   },
   ablauf: {

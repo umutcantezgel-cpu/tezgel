@@ -13,7 +13,10 @@
 // `zweierbild.abschnitt` als eigener Abschnitt mit H2 nach den Fotos (Muster wie `ZweiterBeleg`). Ein Beleg nur mit Satz
 // (z. B. „Aus unserer Praxis“ auf /blog) trägt eine Stufe weniger Innenabstand. Zwischen Fotoreihe und Weg eine Fliesenstufe
 // (16): Passen alle Fotos nebeneinander (bis drei ab lg, zwei ab md), entfällt dort der leere Platz der Karussell-Knöpfe, die
-// dort nie gebraucht werden. Satzspiegel (M-B1): die Fotos breit. Serverkomponente.
+// dort nie gebraucht werden. Satzspiegel (M-B1): die Fotos breit.
+// UM-E4-SICHT-FIX M-B5: Kundenstimmen ohne `stimmenGross` stehen als eine Stimme je Schritt mit Versatz wie auf / (Form
+// „einzeln“, Karte ab lg um ein Drittel versetzt, Kennzeile im freien Drittel); die vier kleinen Karten ab lg sind kein Standard
+// mehr (Sicht Anlauf 1: wiederholte gleiche Stimmenkarten auf vielen Seiten). Serverkomponente.
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import Abschnitt from '@/components/kern/Abschnitt';
@@ -137,7 +140,7 @@ export default function Beleg({ inhalt, pfad, moment, zweiter, stimmenTitel = 'D
           titel={inhalt.stimmenTitel ?? stimmenTitel}
           einleitung={inhalt.stimmenEinleitung ? <p><Textmarken text={inhalt.stimmenEinleitung} /></p> : undefined}
         >
-          <Stimmen ids={inhalt.stimmen} form={inhalt.stimmenEinzeln ? 'einzeln' : inhalt.stimmenGross ? 'gross' : 'klein'} versatz={inhalt.stimmenVersatz} />
+          <Stimmen ids={inhalt.stimmen} form={inhalt.stimmenEinzeln || !inhalt.stimmenGross ? 'einzeln' : 'gross'} versatz={inhalt.stimmenEinzeln ? inhalt.stimmenVersatz : !inhalt.stimmenGross} />
         </Abschnitt>
       )}
       {inhalt.orte && <Einsatzorte titel={inhalt.orte.titel} einleitung={inhalt.orte.einleitung} />}

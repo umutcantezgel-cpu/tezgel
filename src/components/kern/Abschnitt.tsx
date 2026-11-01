@@ -71,6 +71,10 @@ export interface AbschnittProps {
   einleitungLang?: boolean;
   /** Satzspiegel des Inhalts (M-B1), Standard `mitte`; nur gestapelt */
   satz?: Satz;
+  /** Satz der langen Einleitung, wenn er vom Inhalt abweicht (nur gestapelt; Standard: `satz`). „Was wir tun“ mit großem Moment in
+   *  voller Breite (`satz` breit) und Zeilen und Punkten rechts (`tun.satz`, UM-E4-SICHT-FIX M-C9): Die Einleitung steht mit
+   *  ihnen im Satzblock rechts statt mittig im Lesemaß (Prüfung SF-C3: sonst drei linke Kanten in einer Bildschirmhöhe) */
+  einleitungSatz?: Satz;
   /** nur mit kopf="seitlich": Block unter dem Kopf (ab lg in der Kopfspalte direkt unter der Einleitung, mobil nach dem
    *  Inhalt), z. B. Anruf neben einem Formular, das mobil direkt auf die Überschrift folgen soll */
   unterKopf?: ReactNode;
@@ -96,13 +100,16 @@ export interface AbschnittProps {
   'aria-label'?: string;
 }
 
-export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleitung, einleitungLang = false, satz = 'mitte', unterKopf, art = 'erzaehl', flaeche = 'kalk', kopf = 'gestapelt', mitte = false, breite = 'seite', auftritt = false, leitachse = false, spaet = false, ziel = false, formel, className, children, ...rest }: AbschnittProps) {
+export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleitung, einleitungLang = false, satz = 'mitte', einleitungSatz, unterKopf, art = 'erzaehl', flaeche = 'kalk', kopf = 'gestapelt', mitte = false, breite = 'seite', auftritt = false, leitachse = false, spaet = false, ziel = false, formel, className, children, ...rest }: AbschnittProps) {
   const hId = titelId ?? (id ? `${id}-titel` : undefined);
   const tinte = flaeche === 'tinte';
-  // Satzspiegel (M-B1): geteilt nur gestapelt; die lange Einleitung wandert dann in den Inhaltsblock (über der Bahn)
+  // Satzspiegel (M-B1): geteilt nur gestapelt; die lange Einleitung wandert dann in den Inhaltsblock (über der Bahn), mit
+  // `einleitungSatz` in dessen Satz (M-C9)
   const geteilt = kopf !== 'seitlich' && (satz === 'links' || satz === 'rechts');
-  const einleitungImBlock = Boolean(einleitung && einleitungLang && geteilt);
-  const einleitungBuendig = Boolean(einleitungLang && !geteilt);
+  const satzEinleitung = einleitungSatz ?? satz;
+  const einleitungGeteilt = kopf !== 'seitlich' && (satzEinleitung === 'links' || satzEinleitung === 'rechts');
+  const einleitungImBlock = Boolean(einleitung && einleitungLang && einleitungGeteilt);
+  const einleitungBuendig = Boolean(einleitungLang && !einleitungGeteilt);
   const einleitungKlassen = clsx('text-fs-3', tinte ? 'text-nacht-2' : 'text-tinte-2', (einleitungImBlock || einleitungBuendig) && 'text-left text-pretty');
   const kopfInhalt = (titel || etikett) && (
     <div className={clsx(kopf === 'seitlich' ? 'col-span-4 md:col-span-8 lg:col-span-4' : 'max-w-mass', kopf !== 'seitlich' && mitte && 'mx-auto text-center text-balance')}>
@@ -122,8 +129,8 @@ export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleit
   const einleitungBlock = einleitungImBlock && (
     // Lesemaß wie der Kopf (max-w-mass misst in ch der Grundschrift, die Stufe fs-3 steht innen, E-065): so fluchtet die
     // Einleitung mit den Zeilen und Absätzen darunter
-    <Satzblock satz={satz} className="mt-6">
-      <div className={satzMass(satz)}>
+    <Satzblock satz={satzEinleitung} className="mt-6">
+      <div className={satzMass(satzEinleitung)}>
         <div className={einleitungKlassen}>{einleitung}</div>
       </div>
     </Satzblock>

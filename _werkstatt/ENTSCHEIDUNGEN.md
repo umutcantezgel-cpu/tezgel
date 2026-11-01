@@ -1826,3 +1826,12 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - NO-5: die `_pruefb2l-*.mjs` hat ihr Prüfer gelöscht; die Löschung ist mit 78ebf928 eingetragen.
 - **Nicht behoben, bestätigt:** A2 Befund 4 (Marken bei x = 8), A2 Befund 1 Rest (Versatz unter 900 px Höhe), B2 B3 (wandernde Leerfläche, E-047), B2 B7 (zwei Fugen bei zwei Fotopaaren), B2 B10 (Lot in weißen Abschnitten; mit beiden Diffs im Tor bewerten).
 - **Textvorschläge:** T-B2-1 bis 3 in TEXTVORSCHLAEGE; SF-A2 ohne.
+- **SF-C3 eingespielt (1.11.2026, 02:50 MEZ):** wf_c0f2912c-207 fertig (12 Agenten, 0 Fehler). Hauptdiff `UM-E4-SICHT-FIX-c3.diff` (14 Dateien) auf HEAD 5cb4facc ohne Versatz; Repository danach npm test 280 (279 bestanden, 0 rot, 1 übersprungen), tsc 0, eslint 0, werte `--basis 13315fa8` 0 Befunde. CSS gzip im Bau der Nacharbeit +12 B gegen B2. Notiz `berichte/UM-E4-SICHT-FIX-c3.notiz.md`, Textvorschläge T-C3-1 bis 4.
+  - Inhalt: M-C9 (/bad/badsanierung Normen im Aufklapper, neue Zeichnung `wanne-dusche`; /bad/barrierefreies-bad und /balkon-terrasse Gefälle-Zeichnung breit mit Satz rechts, eigener Abschnitt `#entstehung`), M-B5 (Kundenstimmen einzeln mit Versatz, Markierung ohne Trennung), M-B8 (Startseite „Was wir tun“ als Reihe aus vier Fliesen). Wortlaut und Bewertungen unverändert (G8).
+  - OF-C3-1: Nachtrag Schnurzeichen (`-head.diff`) als eigener Commit nach dem Hauptdiff eingespielt; nur diese Fassung.
+  - OF-C3-2: Löschung der `sfixc3-*.mjs` mit diesem Commit eingetragen.
+  - OF-C3-3: erledigt in der Nacharbeit (Zeichnung neu komponiert).
+  - OF-C3-4 (m360 bei 200 %: 0/14 voll, Kopf- und Formularleiste) und OF-C3-6 (Leerraum unter der Kennzeile der Stimmen): offene Punkte, im Tor E4 bewerten; kein Bau ohne Befund.
+  - OF-C3-5 (Reihe direkt unter der Auswahl auf `/`): Planentscheidung M-B8 bleibt; Wirkung im Tor.
+  - OF-C3-7 (zwei Fotopaare mit fast gleichen Kanten auf /bad/barrierefreies-bad): betrifft Standards von SF-B2 für alle Seiten; im Tor E4 bewerten, Nachbau nur nach Befund.
+  - OF-C3-8: hängt an T-C3-2 bis 4 (Auftraggeber).
