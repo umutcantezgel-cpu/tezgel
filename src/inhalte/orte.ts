@@ -104,9 +104,11 @@ export function ortsInhalt(stadt: CityData, kmAbSitz: number, index: number): Or
     },
     // Qualitätsversprechen (UM-E4-EP3) vor dem nächsten Schritt; Wortlaut aus COMPANY_DATA.qualityPromises. Offen stehen drei
     // Punkte, die die Seite sichtbar noch nicht sagt (UM-E4-SICHT-FIX-2 M2-A3, Darstellung SF2-A): 2 Großformat, 5 Termintreue,
-    // 7 Werkstoffe; nicht 1 (Termin kostenfrei im Ablauf), 3 (Abdichtung nach DIN 18534 in „Was wir tun“), 4 (Angebot mit festem
-    // Preis im Ablauf), 6 (Staubschutz, auf der Ortsseite ohne Bezug), 8 (Inhaber, K-003 „Text“)
-    versprechen: { offen: [2, 5, 7] },
+    // 6 Staubschutz (Arbeiten im bewohnten Haus); nicht 1 (Termin kostenfrei im Ablauf), 3 (Abdichtung nach DIN 18534 in „Was wir
+    // tun“), 4 (Angebot mit festem Preis im Ablauf), 8 (Inhaber, K-003 „Text“). 7 (Werkstoffe) steht auf /bad/badsanierung,
+    // /balkon-terrasse, /fliesen und /ueber-uns offen; hier ein anderer Dreier, damit die Reihe nicht auf jeder Ansicht gleich steht
+    // (Nacharbeit SF2-A2 N-2, Entscheidung E-114)
+    versprechen: { offen: [2, 5, 6] },
     schritt: {
       titel: `Termin in ${name} anfragen`,
       satz: `Schreiben Sie uns oder rufen Sie an. Wir sprechen einen Termin bei Ihnen in ${name} ab.`,

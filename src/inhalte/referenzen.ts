@@ -88,7 +88,9 @@ export const REFERENZEN: ErzaehlInhalt = {
     schritte: [
       {
         titel: 'Termin bei Ihnen vor Ort',
-        text: 'Deniz Tezgel kommt zu Ihnen. Er schaut sich den Raum genau an und prüft den Untergrund. Der Termin ist kostenfrei.',
+        // Textmarke wie auf /kontakt: das erste sichtbare „Untergrund“ der Seite, der Aufklapper „Mehr erfahren“ davor ist zu (K-011,
+        // Nacharbeit SF2-C N-11, E-114); Wortlaut gleich
+        text: 'Deniz Tezgel kommt zu Ihnen. Er schaut sich den Raum genau an und prüft den [[untergrund|Untergrund]]. Der Termin ist kostenfrei.',
       },
       {
         titel: 'Planen und auswählen',

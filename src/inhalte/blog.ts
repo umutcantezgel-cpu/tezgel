@@ -83,10 +83,11 @@ export const BLOG: WissenInhalt = {
     stimmen: ['c-wolf', 'peter-p', 'elke-s', 'ute-t'],
   },
   // Qualitätsversprechen (UM-E4-EP3) vor dem nächsten Schritt; Wortlaut aus COMPANY_DATA.qualityPromises. Offen stehen drei
-  // Punkte, die die Seite sichtbar noch nicht sagt (UM-E4-SICHT-FIX-2 M2-A3 und M2-B5, Darstellung SF2-A): 2 Großformat, 5
-  // Termintreue, 7 Werkstoffe (Kleber und Fugen wie in den Ratgebern); nicht 1 (Termin kostenfrei im Ablauf), 3 (Abdichtung nach
-  // DIN 18534 im Vorspann und im Beleg), 8 (Inhaber, K-003 „Text“); 4 und 6 passen weniger zum Ratgeber
-  versprechen: { offen: [2, 5, 7] },
+  // Punkte, die die Seite sichtbar noch nicht sagt (UM-E4-SICHT-FIX-2 M2-A3 und M2-B5, Darstellung SF2-A): 4 Festpreis, 5
+  // Termintreue, 6 Staubschutz, die drei Fragen, wer eine Sanierung plant (Kosten, Zeit, Schmutz); nicht 1 (Termin kostenfrei im
+  // Ablauf), 3 (Abdichtung nach DIN 18534 im Vorspann und im Beleg), 8 (Inhaber, K-003 „Text“); 2 und 7 stehen auf den Leistungs-
+  // seiten offen, hier ein anderer Dreier (Nacharbeit SF2-A2 N-2, Entscheidung E-114)
+  versprechen: { offen: [4, 5, 6] },
   schritt: {
     titel: 'Haben Sie eine Frage zu Ihrem Bad?',
     satz: 'Rufen Sie uns an oder senden Sie Ihre Anfrage. Deniz Tezgel ruft Sie zurück.',
