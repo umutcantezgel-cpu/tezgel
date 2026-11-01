@@ -51,7 +51,7 @@ export default function OrtsSeite({ inhalt, formular, nachbarn, band }: OrtsSeit
           <Ablauf inhalt={inhalt.ablauf} />
           <Beleg inhalt={inhalt.beleg} pfad={inhalt.pfad} />
           {inhalt.versprechen && (
-            <Versprechen vorher={[worum.vorspann, inhalt.lage, inhalt.tun, inhalt.ablauf, inhalt.beleg]} erklaert={inhalt.versprechen.erklaert} />
+            <Versprechen vorher={[worum.vorspann, inhalt.lage, inhalt.tun, inhalt.ablauf, inhalt.beleg]} erklaert={inhalt.versprechen.erklaert} offen={inhalt.versprechen.offen} />
           )}
           <Schritt inhalt={inhalt.schritt} pfad={inhalt.pfad} formular={formular} titelId={ORT_ANKER} zusatz={<Nachbarorte nachbarn={nachbarn} />} />
         </Suspense>

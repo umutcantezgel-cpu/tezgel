@@ -14,9 +14,11 @@
 // Punkte und Absatz danach (nur Seiten aus K-009). Fachtext (`absatzMehr`, M-B4) steht am Ende im Aufklapper „Mehr
 // erfahren“ statt mitten in der Erzählung; mit `punkteMehr` (UM-E4-SICHT-FIX-2 M2-A6) wandern auch die Punkte dorthin, vor den
 // Fachtext: genau ein Aufklapper je Abschnitt, der Absatz bleibt offen.
-// Listen an der Fuge (UM-E4-SICHT-FIX M-B2): Aussagen stehen als nummerierte Liste mit Mono-Nummer wie im Qualitätsversprechen,
-// getrennt durch 1-px-Fugen, ohne Außenrahmen und ohne Kasten je Punkt (vorher Plus-Kästen, die wie ein Akkordeon aussahen,
-// Sicht Anlauf 1: das Fugenkreuz bleibt Abschnittskanten und echten Aufklappern vorbehalten). Bereichszeilen nennen ihren Namen
+// Listen an der Fuge (UM-E4-SICHT-FIX M-B2): Aussagen stehen als Liste an der Fuge, getrennt durch 1-px-Fugen, ohne Außenrahmen
+// und ohne Kasten je Punkt (vorher Plus-Kästen, die wie ein Akkordeon aussahen, Sicht Anlauf 1: das Fugenkreuz bleibt
+// Abschnittskanten und echten Aufklappern vorbehalten). Seit UM-E4-SICHT-FIX-2 M2-A7 ohne Mono-Nummern (Sicht Anlauf 2,
+// übergreifend 2b Nr. 3: Punkte 01 bis 04 direkt vor der Treppe 01 bis 03, zwei Nummernfolgen in Folge): Die Nummern gehören der
+// Ablauf-Treppe, das ol bleibt für Vorleser. Bereichszeilen nennen ihren Namen
 // im Textschnitt (fs-4 halbfett) statt in der Anzeigeschrift: Sie sind Wege, keine Überschriften.
 // Satzspiegel v2 (UM-E4-SICHT-FIX-2 M2-A1, K-003 „Fläche“; vorher rechts in den Spalten 2 bis 3, M-B1): Punkte, Absatz und
 // Aufklapper stehen im Block auf der Kopfachse (`achse`, zwei Drittel ab lg), die lange Einleitung im selben Block darüber; alle
@@ -192,25 +194,20 @@ export function Bereichsfliesen({ bereiche }: { bereiche: Bereich[] }) {
   );
 }
 
-/** Aussagen als nummerierte Liste an der Fuge (UM-E4-SICHT-FIX M-B2): je Punkt eine Zeile mit der Nummer in Mono (01, 02 …,
- *  wie im Qualitätsversprechen; für Vorleser zählt die Liste selbst, die Ziffer ist aria-hidden), 1-px-Fugen zwischen den
- *  Punkten, ohne Rahmen und ohne Kasten. Unter 20 rem (große Systemschrift) steht die Nummer über dem Satz. Glossar-Erklärungen
- *  bleiben im Satz (Textmarken). `className` setzt Breite und Lage im Satz (z. B. `satzBlock`): Die Fugen laufen über die ganze
- *  Breite der Liste, Nummer und Satz stehen zusammen im Lesemaß der Schrift der Liste (max-w-mass misst in ch der eigenen Schrift,
- *  E-065; Grundschrift, auf der Achse ab lg fs-3 über `satzBlock('achse')`, dann füllt der Satz die Liste), so endet der Satz an
- *  derselben rechten Kante wie ein Absatz darunter (Prüfung SF-B2, Nacharbeit SF2-A1). `schluss={false}`: ohne Fuge
- *  unter dem letzten Punkt, wenn die Liste am Ende eines Aufklappers steht, dessen untere Kante die Fuge trägt (M2-A6). */
+/** Aussagen als Liste an der Fuge (UM-E4-SICHT-FIX M-B2): je Punkt eine Fugenzeile, 1-px-Fugen zwischen den Punkten, ohne Rahmen
+ *  und ohne Kasten, ohne Nummer (M2-A7: die Nummern gehören der Ablauf-Treppe; für Vorleser zählt das ol weiter). Kein
+ *  Fugenkreuz je Zeile (M-B2). Glossar-Erklärungen bleiben im Satz (Textmarken). `className` setzt Breite und Lage im Satz (z. B.
+ *  `satzBlock`): Die Fugen laufen über die ganze Breite der Liste, der Satz steht im Lesemaß der Schrift der Liste (max-w-mass
+ *  misst in ch der eigenen Schrift, E-065; Grundschrift, auf der Achse ab lg fs-3 über `satzBlock('achse')`, dann füllt der Satz
+ *  die Liste), so endet der Satz an derselben rechten Kante wie ein Absatz darunter (Prüfung SF-B2, Nacharbeit SF2-A1).
+ *  `schluss={false}`: ohne Fuge unter dem letzten Punkt, wenn die Liste am Ende eines Aufklappers steht, dessen untere Kante die
+ *  Fuge trägt (M2-A6). */
 export function Punktliste({ punkte, className, schluss = true }: { punkte: ReactNode[]; className?: string; schluss?: boolean }) {
   return (
     <ol className={clsx('@container', className)}>
       {punkte.map((p, i) => (
         <li key={i} className={clsx('border-t border-fuge py-4 @xs:py-6', schluss && 'last:border-b')}>
-          <div className="flex max-w-mass flex-col gap-1 @xs:flex-row @xs:items-baseline @xs:gap-6">
-            <span aria-hidden="true" className="w-8 shrink-0 font-mono text-fs-2 text-tinte-2">
-              {String(i + 1).padStart(2, '0')}
-            </span>
-            <p className="min-w-0 flex-1 font-text text-fs-3 text-tinte">{p}</p>
-          </div>
+          <p className="max-w-mass font-text text-fs-3 text-tinte">{p}</p>
         </li>
       ))}
     </ol>
@@ -325,6 +322,8 @@ export default function Tun({ inhalt, moment }: { inhalt: TunInhalt; moment?: Re
       leitachse
       spaet
       mitte={!inhalt.anDerLinie}
+      // weit (M2-A9): mit großem Moment oder erklärender Zeichnung trägt der Abschnitt Ruhe um sich
+      dichte={moment || inhalt.unterKopf ? 'weit' : undefined}
       satz={nurLeistungen ? 'mitte' : 'breit'}
       // die lange Einleitung steht im Satz der Blöcke über dem Inhalt (auf der Achse im Block, M2-A1; M-C9)
       einleitungSatz={nurLeistungen ? undefined : satz}

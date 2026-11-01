@@ -1,8 +1,9 @@
 // Großer Moment `gefaelle-dusche` (KERN v3.4 K-007, K-008; E3-GRAF-03; Schlitz `momente.tun` der ErzaehlSeite auf
 // /bad/barrierefreies-bad): Schnitt durch eine Dusche ohne Stufe. Der Badboden geht ohne Kante in den Duschboden über, der
 // sich zum Ablauf an der Wand neigt (Neigung übertrieben, gestrichelt die Waagrechte). Beim Eintritt (Sicht 0,4) läuft ein
-// Tropfen über das Gefälle in den Ablauf, die drei Pfeile legen sich hinter ihm hin (CSS in bewegung.css, Auslöser im
-// Bewegungsmodul). Ohne JavaScript, reduziert, im Notaus, im Druck und bei erzwungenen Farben: Pfeile stehen, kein Tropfen.
+// Tropfen über das Gefälle in den Ablauf und bleibt dort liegen, die drei Pfeile legen sich hinter ihm hin (CSS in
+// bewegung.css, Auslöser im Bewegungsmodul). Ohne JavaScript, reduziert, im Notaus, im Druck und bei erzwungenen Farben: Pfeile
+// stehen, der Tropfen liegt im Ablauf (UM-E4-SICHT-FIX-2 M2-A10, Endzustand wie gefaelle-balkon; vorher kein Tropfen).
 // Zeichenmittel aus kern/vignetten/zeichnen (1,5 px, currentColor, Fugen und Schnitt in Strich, kein Rot).
 // `breit` (UM-E4-SICHT-FIX M-C9, /bad/barrierefreies-bad; Sicht Anlauf 1: die Zeichnung kam im Lesemaß nicht als Blickfang an):
 // das Feld in voller Rasterbreite, die Zeichnung darin ab xl höchstens drei Viertel breit (Prüfung SF-C3: so steht das Feld nach

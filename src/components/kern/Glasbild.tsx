@@ -4,6 +4,10 @@
 // Bildplatz (arbeiten.ts), der Name ist der sichtbare Text des Links. Foto und Fläche liegen in derselben Rasterzelle:
 // Ist der Name bei großer Systemschrift höher als das Foto, wächst die Kachel nach unten mit, statt ihn über die
 // Fotokante zu schieben; der Verlauf hängt am Text und steht so immer hinter ihm.
+// Schlanker (UM-E4-SICHT-FIX-2 M2-A8; Sicht Anlauf 2 /bad/badsanierung 1b: der Verlauf hinter zweizeiligen Namen deckte das untere
+// Drittel bis zwei Fünftel jedes Fotos, also Boden und Fugen): Name eine Stufe kleiner (fs-3 statt fs-4, bei rund 390 px Kachel
+// höchstens zwei Zeilen), der Auslauf über dem Namen 4 statt 12 bzw. 8 Einheiten (bewegung.css, Block glasbild). Mit Maus und Link
+// erscheint die Glasfläche beim Darüberfahren wie bisher, mit dem Auslauf von 12 Einheiten (K-016, E-047; Nacharbeit SF2-A2).
 // Zeiger (Cursor-Zustand „ansehen“, src/lib/motion/cursor.ts): Über einem Foto mit Weg zeigt das Schild nur das Fugenkreuz,
 // ohne Wort (data-cursor-text=""). Die Glasfläche sagt „Ansehen →“ schon direkt darunter; vorher stand dieselbe Handlung
 // doppelt da (Sichtabnahme E3 Anlauf 3, Prüfer 1, gering; Entscheidung UM-E4-VORL). Das Wort bleibt so an einer Stelle, die
@@ -38,7 +42,7 @@ export default function Glasbild({ arbeit, name, href, linkText = 'Ansehen', siz
   const flaeche = (
     <span aria-hidden={href ? undefined : true} className="glasbild-flaeche pointer-events-none flex flex-col justify-end text-kalk">
       <span className="glasbild-text flex flex-col px-4 pb-4 lg:px-6 lg:pb-6">
-        <span className="font-text text-fs-4 font-semibold text-pretty">{mitFugen(name)}</span>
+        <span className="font-text text-fs-3 font-semibold text-pretty">{mitFugen(name)}</span>
         {href && (
           <span className="glasbild-weg mt-2 inline-flex items-center gap-2 font-text text-fs-2">
             {linkText}

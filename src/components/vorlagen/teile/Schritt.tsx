@@ -12,8 +12,11 @@
 // folgen die Hilfen als weitere Zeilen ihrer Liste, die Linkzeile trägt dann nur „Mehr zum Thema“. Der Hauptknopf bleibt der
 // einzige dunkle Knopf des Blocks, solange die Werkzeuge geschlossen sind.
 // Satzspiegel (UM-E4-SICHT-FIX M-B1): Der Schritt steht mittig; ein langer Satz unter dem Kopf linksbündig im Lesemaß. Mit
-// Formular steht der Formularkasten mit Anruf, WhatsApp und Zusatz links an der Leitachse (Spalten 1 bis 2, geteilt ab lg 16 px am Lot;
-// auch auf `/`, Sicht Anlauf 1 b3: der Kasten stand mittig in 500 px Leere), der Kopf bleibt mittig. Serverkomponente.
+// Formular steht der Formularblock auf der Kopfachse (Satzspiegel v2, UM-E4-SICHT-FIX-2 M2-A2, K-003 „Fläche“; vorher links an
+// der Leitachse in den Spalten 1 bis 2, M-B1 Nr. 2 und V-6, E-113 Nr. 3 zurückgenommen; Sicht Anlauf 2: / 1a hoch, /leistungen 2b
+// hoch, rechte Hälfte über eine bis anderthalb Bildschirmhöhen leer): Formularkasten, Anruf, WhatsApp und Zusatz im mittigen Block
+// über zwei Drittel (ab lg, d1440 rund 810 px), die lange Einleitung im selben Block; darunter mittig im Lesemaß wie bisher.
+// Serverkomponente.
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import clsx from 'clsx';
@@ -64,11 +67,12 @@ export function Nachbarorte({ nachbarn }: { nachbarn: Verweis[] }) {
   );
 }
 
-function FormularSchritt({ inhalt, pfad, formular, titelId, zusatz }: { inhalt: SchrittInhalt; pfad: string; formular: ReactNode; titelId: string; zusatz?: ReactNode }) {
+function FormularSchritt({ inhalt, pfad, formular, titelId, zusatz, zusatzBreit = false }: { inhalt: SchrittInhalt; pfad: string; formular: ReactNode; titelId: string; zusatz?: ReactNode; zusatzBreit?: boolean }) {
   const { contact } = COMPANY_DATA;
   // ruhig (K-016, E-047): Kopf mittig, darunter der ganze Formularblock untereinander (Formular, dann Anruf, WhatsApp und Zusatz
-  // in einer Zeile), statt links und rechts zugleich (vorher Kopfspalte mit Anruf neben dem Formular). Der Block steht im
-  // Satzspiegel links (M-B1, V-6): ab lg an der Leitachse in den Spalten 1 bis 2, darunter mittig im Lesemaß
+  // in einer Zeile), statt links und rechts zugleich (vorher Kopfspalte mit Anruf neben dem Formular). Der Block steht auf der
+  // Kopfachse (Satzspiegel v2, M2-A2): ab lg mittig über zwei Drittel, darunter mittig im Lesemaß. Die Formularinseln bleiben
+  // unverändert (G8); HeroContactForm und LeadQuickForm schalten ihre Spalten über die Fensterbreite, ihr Bild bleibt gleich
   return (
     <Abschnitt
       titelId={titelId}
@@ -76,7 +80,7 @@ function FormularSchritt({ inhalt, pfad, formular, titelId, zusatz }: { inhalt: 
       leitachse
       flaeche="fliese"
       mitte
-      satz="links"
+      satz="achse"
       titel={zusammen(inhalt.titel)}
       einleitung={
         <p>
@@ -85,10 +89,15 @@ function FormularSchritt({ inhalt, pfad, formular, titelId, zusatz }: { inhalt: 
       }
       einleitungLang={langeEinleitung(inhalt.satz)}
     >
-      <div className={`w-full ${satzMass('links')}`}>{formular}</div>
+      <div className={`w-full ${satzMass('achse')}`}>{formular}</div>
       {/* Container-Abfrage: unter 20 rem steht der Hörer über der großen Nummer, damit sie nicht über den Rand läuft (Runde 4);
-          das WhatsApp-Zeichen steht dann ebenso mittig über seinem Text (Browserprüfung E4-W0, E-065) */}
-      <div className={`@container mt-12 grid gap-8 border-t border-fuge pt-8 text-center md:grid-cols-2 md:text-left ${satzMass('links')}`}>
+          das WhatsApp-Zeichen steht dann ebenso mittig über seinem Text (Browserprüfung E4-W0, E-065). Kontaktzeile ab md in zwei
+          Spalten über die Breite des Blocks (Lieber anrufen | Lieber schreiben; M2-A2; drei Spalten verworfen: der Anruflink mit
+          Rufnummer braucht rund 281 px, bei 810 px Block blieben je Spalte rund 249 px). Ein Zusatz aus einem Block (Öffnungszeiten
+          auf `/`, Nachbarorte auf den Ortsseiten) steht ab md rechts unter „Lieber schreiben“, sonst trüge die rechte Spalte nur eine
+          Zeile und das rechte untere Viertel bliebe leer (Nacharbeit SF2-A2); ein Zusatz aus zwei Blöcken (`zusatzBreit`, z. B.
+          Öffnungszeiten und „Sie möchten mehr erzählen?“ auf /leistungen) darunter über beide Spalten. Lesefolge gleich */}
+      <div className={`@container mt-12 grid gap-8 border-t border-fuge pt-8 text-center md:grid-cols-2 md:text-left ${satzMass('achse')}`}>
         <div>
           <p className="font-text text-fs-3 text-tinte">Lieber anrufen?</p>
           <a
@@ -114,7 +123,7 @@ function FormularSchritt({ inhalt, pfad, formular, titelId, zusatz }: { inhalt: 
             Nachricht per WhatsApp
           </a>
         </div>
-        {zusatz && <div className="md:col-span-2">{zusatz}</div>}
+        {zusatz && <div className={zusatzBreit ? 'md:col-span-2' : 'md:col-start-2'}>{zusatz}</div>}
       </div>
     </Abschnitt>
   );
@@ -127,8 +136,10 @@ export interface SchrittProps {
   formular?: ReactNode;
   /** id der H2 (Ziel aller Hauptknöpfe der Seite, `hauptziel` in navigation.js), nur mit Formular */
   titelId?: string;
-  /** dritter Block unter Anruf und WhatsApp, nur mit Formular (z. B. Öffnungszeiten, Nachbarorte) */
+  /** dritter Block unter Anruf und WhatsApp, nur mit Formular (z. B. Öffnungszeiten, Nachbarorte): ab md rechts unter WhatsApp */
   zusatz?: ReactNode;
+  /** Zusatz aus zwei Blöcken nebeneinander: ab md über beide Spalten statt rechts (Nacharbeit SF2-A2) */
+  zusatzBreit?: boolean;
   /** Werkzeuge der Seite im Schritt (M-B3), ohne Formular: unter Anruf und WhatsApp, über Hilfen und „Mehr zum Thema“ */
   werkzeuge?: ReactNode;
 }
@@ -236,8 +247,8 @@ function Hilfezeilen({ hilfen = [] }: { hilfen?: SchrittInhalt['hilfen'] }) {
   );
 }
 
-export default function Schritt({ inhalt, pfad, formular, titelId = 'anfrage', zusatz, werkzeuge }: SchrittProps) {
-  if (formular) return <FormularSchritt inhalt={inhalt} pfad={pfad} formular={formular} titelId={titelId} zusatz={zusatz} />;
+export default function Schritt({ inhalt, pfad, formular, titelId = 'anfrage', zusatz, zusatzBreit, werkzeuge }: SchrittProps) {
+  if (formular) return <FormularSchritt inhalt={inhalt} pfad={pfad} formular={formular} titelId={titelId} zusatz={zusatz} zusatzBreit={zusatzBreit} />;
   const { contact } = COMPANY_DATA;
   return (
     <Abschnitt

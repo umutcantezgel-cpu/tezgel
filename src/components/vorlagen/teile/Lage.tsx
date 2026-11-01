@@ -107,6 +107,8 @@ export default function Lage({ inhalt, zusatz, zusatzBreit = false }: { inhalt: 
       spaet
       mitte
       flaeche={inhalt.aufFliese ? 'fliese' : 'kalk'}
+      // dicht (M2-A9): die Lage ist ein kurzer Rahmen nach dem Einstieg; die Auswahl der Startseite bleibt, wie sie ist (`/`)
+      dichte={nurAuswahl ? undefined : 'dicht'}
       satz="breit"
       // Satzspiegel v2: die lange Einleitung im Block auf der Achse über dem Inhalt
       einleitungSatz={nurAuswahl ? undefined : 'achse'}

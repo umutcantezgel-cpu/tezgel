@@ -22,6 +22,14 @@
 // Leitachse an (16 px von der Achse bis zur Inhaltskante, ohne Bewegung), und der Hinweis unter der Treppe steht unter Stufe 02
 // statt unter Stufe 01 (ein Drittel bzw. eine Spalte versetzt: der bewusste Bruch dieses Bildschirms, inhaltlich beim Angebot).
 // Mit großem Moment statt Treppe bleibt der Hinweis an der Inhaltskante.
+// Ein Laserweg (UM-E4-SICHT-FIX-2 M2-A5; Sicht Anlauf 2 /bad/badsanierung 1a: zwei gleiche Treppen, die Linie riss ab und der
+// zweite Lauf begann ohne Verbindung links oben): Bei zwei Läufen steht ab lg zwischen ihnen ein Zwischenraum der Stufe 32 mit
+// drei Strichen in Laser (2 px wie die Stufenlinie, aria-hidden, ohne Bewegung): ein Lot am rechten Rand bis zur Mitte des
+// Zwischenraums, eine Waagrechte nach links bis zur Kante von Stufe 04, ein Lot bis zu deren Fugenkreuz. Das Lot am rechten
+// Rand beginnt am Ende der Linie von Stufe 03 (ein Strich in ihrer Rasterzelle, rund 70 px neben ihrem Text): Im Bildsatz las
+// sich ein Lot erst ab der Unterkante des Textes als Stummel in der Fläche, die Linie riss weiter ab (Entscheidungsvermerk
+// SF2-A2). Der Anschluss setzt die Stufenlinie fort (Rot nur für die Schrittfolge, K-003 Nr. 5); mobil läuft das Lot ohnehin
+// durch (`weiter`).
 import type { CSSProperties, ReactNode } from 'react';
 import clsx from 'clsx';
 import Abschnitt from '@/components/kern/Abschnitt';
@@ -47,8 +55,16 @@ export function Schritte({ schritte, start = 0, weiter = false, anriss = false, 
   if (start === 0 && schritte.length >= ZWEI_SPALTEN_AB) {
     const haelfte = Math.ceil(schritte.length / 2);
     return (
-      <div className="flex flex-col lg:gap-32">
+      <div className="flex flex-col">
         <Schritte schritte={schritte.slice(0, haelfte)} weiter anschluss={anschluss} />
+        {/* Anschluss ab lg (M2-A5) statt eines leeren Abstands: Zwischenraum h-32 (ein drittes Kind trüge kein gap); Lot rechts
+            (Fortsetzung des Lots in der Zelle von 03) bis zur Mitte, Waagrechte über die ganze Breite, Lot links bis zum
+            Fugenkreuz von Stufe 04 */}
+        <div aria-hidden="true" className="relative hidden h-32 lg:block">
+          <span className="absolute top-0 right-0 h-16 translate-x-1/2 border-l-2 border-laser" />
+          <span className="absolute inset-x-0 top-16 border-t-2 border-laser" />
+          <span className="absolute bottom-0 left-0 h-16 -translate-x-1/2 border-l-2 border-laser" />
+        </div>
         <Schritte schritte={schritte.slice(haelfte)} start={haelfte} />
       </div>
     );
@@ -71,6 +87,9 @@ export function Schritte({ schritte, start = 0, weiter = false, anriss = false, 
           >
             {/* Setzstufe ab lg: vom Ende der vorigen Linie senkrecht herab zum Anfang dieser */}
             {i > 0 && <span aria-hidden="true" className="absolute bottom-full left-0 hidden h-16 -translate-x-1/2 border-l-2 border-laser lg:block" />}
+            {/* Laserweg ab lg (M2-A5): am Ende der Linie des letzten Schritts im ersten Lauf das Lot am rechten Rand bis zur
+                Unterkante der Zelle (die Zellen einer Reihe sind gleich hoch); es läuft im Zwischenraum weiter */}
+            {weiter && letzter && <span aria-hidden="true" className="absolute top-0 right-0 bottom-0 hidden translate-x-1/2 border-l-2 border-laser lg:block" />}
             {/* Waagstück ab lg (M-B7): von der Achse (lg:left-8 im Seitenrahmen, 16 px vor der Inhaltskante) zum Anfang der ersten
                 Stufe, auf der Höhe ihrer Linie */}
             {anschluss && start === 0 && i === 0 && <span aria-hidden="true" className="absolute right-full bottom-full hidden w-4 border-t-2 border-laser lg:block" />}

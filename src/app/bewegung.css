@@ -679,15 +679,18 @@ html.k-bewegung:not(.k-notaus) [data-motion="galerie-filter"][data-galerie-neu] 
 
 /* glasbild (K-016, E-047) – Foto ohne Unterschrift; mit Link dunkelt beim Darüberfahren oder mit dem Fokus eine Glasfläche
    das Bild ab und zeigt Name und Weg (dauer-2 · setzen, nur opacity). Ohne Maus (Touch) und ohne Link steht der Name immer
-   unten auf einem Verlauf. Der Verlauf hängt am Textblock (oben ein Auslauf von 12 Einheiten), damit jede Zeile auch bei
-   großer Systemschrift auf mindestens 64 % Tinte steht (Kalk darauf über Weiß 5,1 : 1). Erzwungene Farben: das Foto bleibt
-   frei, nur der Text steht auf Canvas. */
+   unten auf einem Verlauf. Der Verlauf hängt am Textblock (oben ein Auslauf von 4 Einheiten), damit jede Zeile auch bei
+   großer Systemschrift auf mindestens 64 % Tinte steht (Kalk darauf über Weiß 5,1 : 1). Schlanker (UM-E4-SICHT-FIX-2 M2-A8,
+   Sicht Anlauf 2: der Block deckte mit 12 Einheiten Auslauf und Namen in fs-4 rund 30 % eines Galeriefotos, Boden und Fugen):
+   Auslauf 4 statt 12 Einheiten, der 64-%-Stopp wandert mit, der Name steht in fs-3 (Glasbild.tsx). Erzwungene Farben: das Foto
+   bleibt frei, nur der Text steht auf Canvas. */
 .glasbild-text {
-  padding-top: calc(var(--spacing) * 12);
+  --glas-auslauf: calc(var(--spacing) * 4);
+  padding-top: var(--glas-auslauf);
   background: linear-gradient(
     to top,
     color-mix(in srgb, var(--color-tinte) 72%, transparent),
-    color-mix(in srgb, var(--color-tinte) 64%, transparent) calc(100% - var(--spacing) * 12),
+    color-mix(in srgb, var(--color-tinte) 64%, transparent) calc(100% - var(--glas-auslauf)),
     transparent
   );
 }
@@ -706,6 +709,12 @@ html.k-bewegung:not(.k-notaus) [data-motion="galerie-filter"][data-galerie-neu] 
   a.glasbild:hover .glasbild-flaeche,
   a.glasbild:focus-visible .glasbild-flaeche {
     opacity: 1;
+  }
+  /* Auf der Fläche, die erst beim Darüberfahren erscheint, bleibt der lange Auslauf von vor M2-A8 (Nacharbeit SF2-A2, Prüfung: mit
+     4 Einheiten stand auf der abgedunkelten Fläche eine harte Bandkante über Name und Weg). Der kurze Auslauf gilt, wo der Name
+     immer steht: ohne Link und ohne Maus. */
+  a.glasbild .glasbild-text {
+    --glas-auslauf: calc(var(--spacing) * 12);
   }
 }
 /* Ohne Maus und in schmaler Kachel (bei großer Systemschrift: Kachel schmaler als 20 rem) steht der Name unter dem Foto
@@ -731,17 +740,9 @@ html.k-bewegung:not(.k-notaus) [data-motion="galerie-filter"][data-galerie-neu] 
   /* Startseite (data-verlauf, UM-E4-START, Sicht Anlauf 3: auf t1024 deckten Tintenblöcke ein Viertel jedes Fotos): ohne Maus
      auf jeder Breite derselbe kurze Verlauf wie mobil, der Boden bleibt sichtbar; der Block unter dem Foto erst bei großer
      Systemschrift (Kachel schmaler als 16rem). Nacharbeit (Prüfung A: auf t768 und t1024 deckte der Verlauf mit zweizeiligem
-     Namen und „Ansehen →“ knapp die Hälfte der Kachel): ohne Maus nur der Name, der Auslauf 8 statt 12 Einheiten, so bleibt
-     der Verlauf unter einem Drittel der Kachel; „Ansehen“ bleibt für den Vorleser im Namen des Links. */
-  .glasbild[data-verlauf] .glasbild-text {
-    padding-top: calc(var(--spacing) * 8);
-    background: linear-gradient(
-      to top,
-      color-mix(in srgb, var(--color-tinte) 72%, transparent),
-      color-mix(in srgb, var(--color-tinte) 64%, transparent) calc(100% - var(--spacing) * 8),
-      transparent
-    );
-  }
+     Namen und „Ansehen →“ knapp die Hälfte der Kachel): ohne Maus nur der Name auf dem Verlauf; „Ansehen“ bleibt für den
+     Vorleser im Namen des Links. Der Auslauf ist seit M2-A8 auch hier 4 Einheiten wie in der Grundregel oben (vorher 8 statt
+     12), eine eigene Regel entfällt. */
   .glasbild[data-verlauf] .glasbild-weg {
     position: absolute;
     width: 1px;
@@ -1520,17 +1521,18 @@ html.k-bewegung:not(.k-notaus) [data-motion="sig-plan"][data-flucht="laden"] .pl
 
 /* gefaelle-dusche (K-007, großer Moment /bad/barrierefreies-bad, E3-GRAF-03) – Schnitt durch eine Dusche ohne Stufe: Beim
    Eintritt (Sicht 0,4, data-motion-stand="an" vom Bewegungsmodul) läuft ein Tropfen über das Gefälle in den Ablauf
-   (dauer-5 linear, einmal) und verschwindet darin; die drei Pfeile legen sich hinter ihm hin, je Pfeil sobald der Tropfen
-   seinen Anfang erreicht (dauer-2 · setzen). Weg in Einheiten der viewBox (px auf SVG-Elementen), Anteile von dauer-5;
+   (dauer-5 linear, einmal) und bleibt dort liegen, unter den Kanten der Rinne (UM-E4-SICHT-FIX-2 M2-A10, E-113 Nr. 9; vorher
+   verschwand er darin, das Standbild zeigte nur drei Pfeile); die drei Pfeile legen sich hinter ihm hin, je Pfeil sobald der
+   Tropfen seinen Anfang erreicht (dauer-2 · setzen). Weg in Einheiten der viewBox (px auf SVG-Elementen), Anteile von dauer-5;
    gekoppelt an src/components/momente/gefaelle-dusche/geometrie.ts (Test test/gefaelle-dusche.test.mjs). Ersatzpfad =
-   Endzustand: Pfeile stehen, kein Tropfen (ohne JavaScript, reduziert, Notaus, Druck, erzwungene Farben, Zurück und
-   Vor). Nur translate und opacity. */
+   Endzustand: Pfeile stehen, der Tropfen liegt im Ablauf an derselben Stelle wie am Ende der Bewegung (ohne JavaScript,
+   reduziert, Notaus, Druck, erzwungene Farben, Zurück und Vor; wie gefaelle-balkon). Nur translate und opacity. */
 .gefaelle-tropfen {
-  opacity: 0;
+  translate: 159px 29.5px;
 }
 @media screen and (prefers-reduced-motion: no-preference) and (forced-colors: none) {
   html.k-bewegung:not(.k-notaus) [data-motion="gefaelle-dusche"]:not([data-motion-stand="an"]) .gefaelle-tropfen {
-    opacity: 1;
+    translate: 0 0;
   }
   html.k-bewegung:not(.k-notaus) [data-motion="gefaelle-dusche"]:not([data-motion-stand="an"]) .gefaelle-pfeil {
     opacity: 0;
@@ -1548,16 +1550,18 @@ html.k-bewegung:not(.k-notaus) [data-motion="sig-plan"][data-flucht="laden"] .pl
 @keyframes gefaelle-tropfen {
   0% { translate: 0 0; opacity: 1; }
   85% { translate: 147px 14px; opacity: 1; }
-  100% { translate: 159px 29.5px; opacity: 0; }
+  100% { translate: 159px 29.5px; opacity: 1; }
 }
 @keyframes gefaelle-pfeil {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-/* Zurück und Vor (html.k-verlauf aus B-01, wie SIG-1): sofort der Endzustand, der Tropfen läuft nicht noch einmal */
+/* Zurück und Vor (html.k-verlauf aus B-01, wie SIG-1): sofort der Endzustand, der Tropfen läuft nicht noch einmal, er liegt im
+   Ablauf */
 html.k-verlauf [data-motion="gefaelle-dusche"] .gefaelle-tropfen {
   animation: none !important;
-  opacity: 0 !important;
+  translate: 159px 29.5px !important;
+  opacity: 1 !important;
 }
 html.k-verlauf [data-motion="gefaelle-dusche"] .gefaelle-pfeil {
   animation: none !important;

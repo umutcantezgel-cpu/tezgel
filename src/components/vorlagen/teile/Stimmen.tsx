@@ -32,8 +32,15 @@ import { RATING_SUMMARY, REVIEWS } from '@/config/reviews';
 import { linkKlassen } from '@/components/kern/stile';
 import { umbruchNachSatzzeichen } from '@/components/kern/zusammen';
 
-// Stellen im Wortlaut, die in der großen Stimme unterstrichen werden (fehlt die Stelle, bleibt die Stimme ohne Markierung)
-export const MARKIERUNG: Record<string, string> = { 'c-wolf': 'ordnungsgemäß, sauber und pünktlich' };
+// Stellen im Wortlaut, die in der großen Stimme unterstrichen werden (fehlt die Stelle, bleibt die Stimme ohne Markierung).
+// Statische Unterstreichung in Laser, ohne Bewegung. Ute T. und Hasan Ö. (UM-E4-SICHT-FIX-2 M2-A7; Sicht Anlauf 2,
+// /bad/barrierefreies-bad und /balkon-terrasse 2b: die Stimme stand ohne Anriss): je eine Wortgruppe wörtlich aus ihrem Text
+// (REVIEWS, G8: nur die Auszeichnung, der Wortlaut bleibt); wirkt überall, wo die Stimme groß steht (auch Ortsseiten und /bad)
+export const MARKIERUNG: Record<string, string> = {
+  'c-wolf': 'ordnungsgemäß, sauber und pünktlich',
+  'ute-t': 'unser Bad (barrierefrei) gefliest',
+  'hasan-oe': 'die Fliesen auf dem Balkon neu verlegt',
+};
 
 type Bewertung = (typeof REVIEWS)[number];
 

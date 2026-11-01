@@ -5,6 +5,8 @@ import { GEFAELLE, LUFT, PFEILE, PFEIL_ABSTAND, PFEIL_BEGINN, RINNE, TROPFEN, VI
 
 // Großer Moment `gefaelle-dusche` (E3-GRAF-03): Der Tropfen liegt auf dem Gefälle, sein Weg endet im Ablauf, die Pfeile liegen
 // parallel zum Gefälle und erscheinen, wenn der Tropfen sie erreicht. Die Werte in bewegung.css müssen zur Geometrie passen.
+// Endzustand seit UM-E4-SICHT-FIX-2 M2-A10 (E-113 Nr. 9): Der Tropfen bleibt sichtbar im Ablauf liegen (vorher opacity 0), am Ende
+// der Bewegung wie im Ersatzpfad an derselben Stelle. Geänderte Erwartung mit Entscheidung, keine Lockerung (G7).
 const nah = (a, b, eps = 0.01) => Math.abs(a - b) <= eps;
 const [, , vbB, vbH] = VIEWBOX.split(' ').map(Number);
 
@@ -52,6 +54,9 @@ const css = fs.readFileSync(new URL('../src/app/bewegung.css', import.meta.url),
 test('Gefälle 6: bewegung.css passt zur Geometrie (Weg, Anteil, Beginn der Pfeile)', { skip: !css.includes('@keyframes gefaelle-tropfen') && 'bewegung.css noch ohne Block gefaelle-dusche (E3-ORCH-02a)' }, () => {
   const block = css.slice(css.indexOf('@keyframes gefaelle-tropfen'));
   assert.ok(block.includes(`${Math.round(WEG.anteilHang * 100)}% { translate: ${WEG.hang.x}px ${WEG.hang.y}px; opacity: 1; }`));
-  assert.ok(block.includes(`100% { translate: ${WEG.ablauf.x}px ${WEG.ablauf.y}px; opacity: 0; }`));
+  assert.ok(block.includes(`100% { translate: ${WEG.ablauf.x}px ${WEG.ablauf.y}px; opacity: 1; }`));
+  // Ersatzpfad (ohne JavaScript, reduziert, Notaus, Druck, erzwungene Farben) und Zurück/Vor: derselbe Endzustand im Ablauf
+  assert.ok(css.includes(`.gefaelle-tropfen {\n  translate: ${WEG.ablauf.x}px ${WEG.ablauf.y}px;\n}`), 'Ersatzpfad: Tropfen im Ablauf');
+  assert.ok(css.includes(`  translate: ${WEG.ablauf.x}px ${WEG.ablauf.y}px !important;\n  opacity: 1 !important;`), 'Zurück und Vor: Tropfen im Ablauf');
   PFEIL_BEGINN.forEach((a, i) => assert.ok(css.includes(`.gefaelle-pfeil:nth-child(${i + 1}) { animation-delay: calc(var(--dauer-5) * ${a}); }`), `Beginn Pfeil ${i + 1}`));
 });

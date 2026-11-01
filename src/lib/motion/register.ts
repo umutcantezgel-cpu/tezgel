@@ -359,7 +359,7 @@ export const REGISTER_V4: Record<string, V4Eintrag> = {
     zweck: 'zusammenhang',
     was: 'Wasser läuft über das Gefälle zum Ablauf',
     stufen: { dauer: ['--dauer-2', '--dauer-5'], kurve: ['linear', '--ease-setzen'] },
-    reduziert: { art: 'sofort', text: 'die Pfeile stehen, kein Tropfen läuft' },
+    reduziert: { art: 'sofort', text: 'die Pfeile stehen, der Tropfen liegt im Ablauf' },
     notaus: 'endzustand',
   },
   'gefaelle-balkon': {

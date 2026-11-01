@@ -19,12 +19,25 @@
 // Satzspiegel (UM-E4-SICHT-FIX M-B1): Das Band bleibt mittig (Satz `mitte`, abweichend vom Plan „Versprechen rechts“, V-17):
 // Geschlossen trägt es nur Kopf und eine Zeile; rechts gesetzt folgte im selben Bildschirm der Schritt mit mittigem Kopf und
 // dem Formularblock links (drei Achsen an einem Übergang), und geöffnet stünden zwei Spalten in zwei Dritteln der Breite zu schmal
-// (t1024: 205 px Text; Prüfung SF-B2). Serverkomponente.
+// (t1024: 205 px Text; Prüfung SF-B2).
+// Drei Punkte offen (UM-E4-SICHT-FIX-2 M2-A3, E-113; Sicht Anlauf 2 auf sechs Ansichten: großer Kopf über einer zugeklappten Zeile,
+// der Abschnitt wirkte wie ein Platzhalter): Mit `offen` (Nummern der Punkte in der Quellfolge, je Ansicht gewählt: nichts, was die
+// Seite sichtbar schon sagt; höchstens drei) stehen diese Punkte offen als Fugenreihe, ab lg drei Spalten über die volle Breite
+// ohne Kasten und ohne Fläche, getrennt durch senkrechte 1-px-Fugen, mit Fuge oben und unten; darunter Fugenzeilen untereinander.
+// Titel als H3 in fs-4 halbfett, Satz in fs-3, ohne Nummer. So steht die Reihe anders gebaut da als die Nachbarabschnitte auf der
+// Achse. Direkt
+// darunter der Aufklapper „Weitere {n} Punkte zeigen“ (Zahl aus den Daten, Mikrotext) über die volle Breite, die Fuge unter der
+// Reihe ist seine obere Kante; darin die übrigen Punkte in Quellfolge ohne Mono-Nummern (sie zählten sonst 01 bis 05 neu), ab lg in
+// zwei Spalten (`satzSpalten`, ein ungerader letzter über beide). Reihe und Aufklapper stehen in einer Hülle mit genau einer Pause
+// „ganz“ für die Abschnittsmarke (bewegung.css erlaubt höchstens eine je Abschnitt). Fachwörter werden in der Anzeigefolge
+// erklärt (offene zuerst), jedes beim ersten sichtbaren Vorkommen. PUNKTE, ANPASSUNG, Garantie-Prüfung und Wortlaut bleiben; nur
+// die Anzeigefolge ändert sich. Ohne `offen` wie bisher. Serverkomponente.
 import type { ReactNode } from 'react';
+import clsx from 'clsx';
 import { COMPANY_DATA } from '@/config/company';
 import { istGlossarId, type GlossarId } from '@/config/glossar';
 import { zerlege } from '@/lib/textmarken';
-import Abschnitt from '@/components/kern/Abschnitt';
+import Abschnitt, { satzSpalten } from '@/components/kern/Abschnitt';
 import Fachwort from '@/components/kern/Fachwort';
 import { zusammen } from '@/components/kern/zusammen';
 import type { Markentext } from '../inhalt';
@@ -137,34 +150,78 @@ function marken(text: Markentext, bekannt: Set<GlossarId>): ReactNode[] {
   });
 }
 
+/** höchstens so viele Punkte offen, wie die Reihe Spalten hat (M2-A3: drei; Prüfung SF2-A2: mit vier und mehr stand die Reihe in
+ *  zwei Spalten mit Fuge und Einzug am äußeren Rand der zweiten Zeile und ohne Fuge zwischen den Zeilen) */
+const OFFEN_HOECHSTENS = 3;
+
+/** Prüft die Auswahl `offen` (ein bis drei Nummern 1 bis 8 der Quellfolge, ohne Doppel) beim Bau, statt still Punkte wegzulassen
+ *  oder eine Reihe zu bauen, für die es keine Form gibt */
+function auswahl(offen: number[]): number[] {
+  const ok = offen.length <= OFFEN_HOECHSTENS && new Set(offen).size === offen.length && offen.every((n) => Number.isInteger(n) && n >= 1 && n <= PUNKTE.length);
+  if (!ok) throw new Error(`Qualitätsversprechen: Auswahl offen [${offen.join(', ')}] ungültig (höchstens ${OFFEN_HOECHSTENS} Nummern 1 bis ${PUNKTE.length}, ohne Doppel).`);
+  return offen.map((n) => n - 1);
+}
+
+/** Punkt in der Anzeige: Titel und Satz als Knoten (Fachwörter schon nach der Anzeigefolge erklärt) */
+type Angezeigt = { titel: string; text: ReactNode[] };
+
+/** Titel und Satz eines Punkts ohne Nummer (Reihe und Zeilen im Aufklapper, M2-A3) */
+function Punktinhalt({ p }: { p: Angezeigt }) {
+  return (
+    <>
+      <h3 className="font-text text-fs-4 font-semibold text-tinte">{zusammen(mitTitelFugen(p.titel))}</h3>
+      <p className="mt-2 font-text text-fs-3 text-pretty text-tinte-2">{p.text}</p>
+    </>
+  );
+}
+
 export interface VersprechenProps {
   /** Inhalt der Seite vor diesem Abschnitt (Texte mit Textmarken), daraus die schon erklärten Fachwörter */
   vorher: unknown[];
   /** dazu Fachwörter, die ein Abschnitt außerhalb des Inhalts erklärt */
   erklaert?: GlossarId[];
+  /** Nummern der Punkte (1 bis 8, Quellfolge), die offen als Fugenreihe stehen (`VersprechenInhalt.offen`, M2-A3); ohne Angabe
+   *  alle im Aufklapper wie bisher. Höchstens drei (eine Zeile der Reihe), sonst bricht der Bau ab */
+  offen?: number[];
 }
 
-export default function Versprechen({ vorher, erklaert = [] }: VersprechenProps) {
-  const bekannt = new Set<GlossarId>([...fachwoerterIn(vorher), ...erklaert]);
-  const punkte = PUNKTE.map((p) => ({ titel: p.titel, text: marken(p.text, bekannt) }));
+/** Drei (allgemein: ein bis drei gewählte, `auswahl`) Punkte offen als Fugenreihe, die übrigen im Aufklapper (M2-A3). Reihe: ab lg
+ *  eine Zeile aus so vielen Spalten, wie Punkte offen sind (einer über die volle Breite), mit senkrechten Fugen (je Zelle links,
+ *  außer der ersten), Fuge oben und unten; darunter Fugenzeilen (je Zelle oben, außer der ersten). Eine Pause „ganz“ für Reihe und
+ *  Aufklapper: nie ein Kreuz neben einer H3 */
+function OffenUndMehr({ reihe, rest }: { reihe: Angezeigt[]; rest: Angezeigt[] }) {
+  const spalten = satzSpalten(rest.length);
   return (
-    // Kennungen wie im Bestand (E0 `QualityPromise`: Abschnitt `qualitaet`, Überschrift `quality-promise-heading`). Trennfuge im
-    // langen Wort der Überschrift (Überschriften trennen nur dort; bei 200 % Schrift lief es sonst über den Rand)
-    <Abschnitt
-      id="qualitaet"
-      titelId="quality-promise-heading"
-      formel="beleg"
-      leitachse
-      spaet
-      mitte
-      titel={'Unser Qualitäts\u00adversprechen in acht Punkten.'}
-      // geschlossen trägt das Band nur Kopf und Zeile: eine Stufe weniger über und unter ihm (wie „Was wir tun“ mit
-      // Leistungszeilen), sonst stand unter der Zeile eine leere halbe Bandhöhe (Prüfung SF-B, Nacharbeit)
-      className="pt-12 pb-12 lg:pt-16 lg:pb-16"
-    >
-      {/* Punkte mit H3: Daneben tritt der Kopf des Leitfadens auf der ganzen Höhe der Liste zurück (data-kopf-pause="ganz",
-          bewegung.css „Leitfaden mit Abschnittsmarke“: nie ein Kreuz neben einer H3) */}
-      <Aufklapper zeile={`Alle ${punkte.length} Punkte zeigen`} zeileKlassen="mx-auto max-w-mass border-y border-fuge">
+    <div data-kopf-pause="ganz">
+      <ul className={clsx('grid border-y border-fuge', reihe.length === 3 ? 'lg:grid-cols-3' : reihe.length > 1 && 'lg:grid-cols-2')}>
+        {reihe.map((p, i) => (
+          <li key={p.titel} className={clsx('py-6 lg:py-8', i > 0 && 'border-t border-fuge lg:border-t-0 lg:border-l lg:pl-12', i < reihe.length - 1 && 'lg:pr-12')}>
+            <Punktinhalt p={p} />
+          </li>
+        ))}
+      </ul>
+      {/* die Fuge unter der Reihe ist die obere Kante der Zeile; die übrigen Punkte ab lg in zwei Spalten, je mit Fuge unten */}
+      <Aufklapper zeile={`Weitere ${rest.length} Punkte zeigen`} zeileKlassen="border-b border-fuge">
+        <div className="@container">
+          <ul className={spalten.liste}>
+            {rest.map((p, i) => (
+              <li key={p.titel} className={clsx('border-b border-fuge py-6', i === rest.length - 1 && spalten.letzte)}>
+                <Punktinhalt p={p} />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Aufklapper>
+    </div>
+  );
+}
+
+/** alle Punkte nummeriert im Aufklapper „Alle {n} Punkte zeigen“ (M-B4, ohne Auswahl `offen`) */
+function AlleImAufklapper({ punkte }: { punkte: Angezeigt[] }) {
+  return (
+    // Punkte mit H3: Daneben tritt der Kopf des Leitfadens auf der ganzen Höhe der Liste zurück (data-kopf-pause="ganz",
+    // bewegung.css „Leitfaden mit Abschnittsmarke“: nie ein Kreuz neben einer H3)
+    <Aufklapper zeile={`Alle ${punkte.length} Punkte zeigen`} zeileKlassen="mx-auto max-w-mass border-y border-fuge">
       <ol data-kopf-pause="ganz" className="mt-8 grid grid-cols-1 md:grid-cols-2 md:gap-x-12 lg:gap-x-24">
         {punkte.map((p, i) => (
           <li
@@ -185,7 +242,33 @@ export default function Versprechen({ vorher, erklaert = [] }: VersprechenProps)
           </li>
         ))}
       </ol>
-      </Aufklapper>
+    </Aufklapper>
+  );
+}
+
+export default function Versprechen({ vorher, erklaert = [], offen }: VersprechenProps) {
+  const bekannt = new Set<GlossarId>([...fachwoerterIn(vorher), ...erklaert]);
+  // Anzeigefolge: mit Auswahl die offenen in der Folge der Auswahl, dann die übrigen in Quellfolge, sonst die Quellfolge. Die
+  // Fachwörter werden in dieser Folge erklärt (marken im Rumpf, nicht in einer eigenen Komponente)
+  const vorn = offen?.length ? auswahl(offen) : [];
+  const folge = [...vorn, ...PUNKTE.map((_, i) => i).filter((i) => !vorn.includes(i))];
+  const punkte: Angezeigt[] = folge.map((i) => ({ titel: PUNKTE[i].titel, text: marken(PUNKTE[i].text, bekannt) }));
+  return (
+    // Kennungen wie im Bestand (E0 `QualityPromise`: Abschnitt `qualitaet`, Überschrift `quality-promise-heading`). Trennfuge im
+    // langen Wort der Überschrift (Überschriften trennen nur dort; bei 200 % Schrift lief es sonst über den Rand)
+    <Abschnitt
+      id="qualitaet"
+      titelId="quality-promise-heading"
+      formel="beleg"
+      leitachse
+      spaet
+      mitte
+      titel={'Unser Qualitäts\u00adversprechen in acht Punkten.'}
+      // dicht (M2-A9; vorher dieselben Stufen als Klassen): geschlossen trägt das Band nur Kopf und Zeile, sonst stand unter der
+      // Zeile eine leere halbe Bandhöhe (Prüfung SF-B, Nacharbeit); mit offener Reihe ein dichter Rahmen vor dem Schritt
+      dichte="dicht"
+    >
+      {vorn.length ? <OffenUndMehr reihe={punkte.slice(0, vorn.length)} rest={punkte.slice(vorn.length)} /> : <AlleImAufklapper punkte={punkte} />}
     </Abschnitt>
   );
 }

@@ -106,14 +106,16 @@ export default function ErzaehlSeite({ inhalt, momente, werkzeug, nachLage, nach
     ablauf: <Ablauf inhalt={inhalt.ablauf} moment={momente?.ablauf} />,
     beleg: <Beleg inhalt={inhalt.beleg} pfad={inhalt.pfad} moment={momente?.beleg} zweiter={momente?.belegZwei} stimmenZusatz={momente?.stimmen} />,
     nachBeleg,
-    versprechen: inhalt.versprechen && <Versprechen vorher={vorher} erklaert={inhalt.versprechen.erklaert} />,
+    versprechen: inhalt.versprechen && <Versprechen vorher={vorher} erklaert={inhalt.versprechen.erklaert} offen={inhalt.versprechen.offen} />,
     schritt: (
       <Schritt
         inhalt={schritt}
         pfad={inhalt.pfad}
         formular={formular}
         titelId={formularId ?? (ziel.startsWith('#') ? ziel.slice(1) : undefined)}
-        // mit Formular: Werkzeuge im Schritt als Zeile neben den Öffnungszeiten (z. B. „Sie möchten mehr erzählen?“ auf /leistungen)
+        // mit Formular: Werkzeuge im Schritt als Zeile neben den Öffnungszeiten (z. B. „Sie möchten mehr erzählen?“ auf /leistungen),
+        // dann über beide Spalten der Kontaktzeile; die Öffnungszeiten allein rechts unter WhatsApp (Nacharbeit SF2-A2)
+        zusatzBreit={imSchritt.length > 0}
         zusatz={
           formular ? (
             imSchritt.length ? (

@@ -14,6 +14,9 @@
 // Kopf und Satz), breit im Lesemaß unter dem Kopf wie mittig; eine kurze steht immer mittig unter dem Kopf. Die Schwelle
 // rechnen die Aufrufer (Serverkomponenten) aus; Abschnitt selbst bekommt nur `einleitungLang` und zieht so weder Textmarken
 // noch Glossar in die Client-Bündel der Seiten, die ihn als Client-Komponente nutzen (Prüfung SF-B2).
+// Dichte (UM-E4-SICHT-FIX-2 M2-A9; Sicht Anlauf 1 und 2: gleich große Abstände, kein Rhythmus aus Dichte und Ruhe): Innenabstand
+// je Erzählabschnitt in Stufen der Fliesenskala, `dicht` (12, ab lg 16) für kurze Rahmen wie Lage und Versprechen, `weit` (24, ab
+// lg 32) für „Was wir tun“ mit großem Moment oder Zeichnung; ohne Angabe wie bisher (16, ab lg 24). Fläche und Kantenkreuze bleiben.
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import Fugenkreuz from './Fugenkreuz';
@@ -130,6 +133,9 @@ export interface AbschnittProps {
   spaet?: boolean;
   /** Laserlinie links an der H2: das Ziel der Hauptknöpfe (K-004), damit die Linie, die führt, nicht vor dem Ziel endet */
   ziel?: boolean;
+  /** Innenabstand eines Erzählabschnitts (M2-A9): `dicht` py-12 lg:py-16, `weit` py-24 lg:py-32; ohne Angabe py-16 lg:py-24.
+   *  Arbeitsabschnitte bleiben bei py-12 lg:py-16 */
+  dichte?: 'dicht' | 'weit';
   /** Teil der Seitenformel (KERN v3 K-009), als data-formel für die Prüfung */
   formel?: Formelteil;
   className?: string;
@@ -137,7 +143,10 @@ export interface AbschnittProps {
   'aria-label'?: string;
 }
 
-export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleitung, einleitungLang = false, satz = 'mitte', einleitungSatz, unterKopf, art = 'erzaehl', flaeche = 'kalk', kopf = 'gestapelt', mitte = false, breite = 'seite', auftritt = false, leitachse = false, spaet = false, ziel = false, formel, className, children, ...rest }: AbschnittProps) {
+/** Innenabstand je Art und Dichte (M2-A9), nur Stufen der Fliesenskala */
+const INNEN = { dicht: 'py-12 lg:py-16', weit: 'py-24 lg:py-32', standard: 'py-16 lg:py-24' } as const;
+
+export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleitung, einleitungLang = false, satz = 'mitte', einleitungSatz, unterKopf, art = 'erzaehl', flaeche = 'kalk', kopf = 'gestapelt', mitte = false, breite = 'seite', auftritt = false, leitachse = false, spaet = false, ziel = false, dichte, formel, className, children, ...rest }: AbschnittProps) {
   const hId = titelId ?? (id ? `${id}-titel` : undefined);
   const tinte = flaeche === 'tinte';
   // Satzspiegel (M-B1, v2 M2-A1): geteilt nur gestapelt; die lange Einleitung wandert dann in den Inhaltsblock (über der Bahn),
@@ -194,7 +203,7 @@ export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleit
         'relative',
         // Zeitstrahl der Kante (Einrasten des Kopfs im Leitfaden, bewegung.css)
         leitachse && 'abschnitt-lot',
-        art === 'erzaehl' ? 'py-16 lg:py-24' : 'py-12 lg:py-16',
+        art === 'erzaehl' ? INNEN[dichte ?? 'standard'] : INNEN.dicht,
         flaeche === 'fliese' && 'border-y border-fuge bg-fliese',
         tinte && 'flaeche-tinte bg-tinte text-kalk',
         className,

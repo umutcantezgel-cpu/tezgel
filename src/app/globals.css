@@ -243,6 +243,14 @@
 @utility glas-hoch {
   width: min(100%, calc(max(70svh, var(--spacing) * 120) * var(--bild-format)));
 }
+/* Zweierbild im Verband (UM-E4-SICHT-FIX-2 M2-A4, Nacharbeit SF2-A2, Glaspaar): ab md das erste Foto zwei Drittel so groß wie
+   das zweite (glas-hoch), beide unten bündig (Fotos.tsx). Sein Kopf steht so ein Drittel der Fotohöhe tiefer, ohne das Paar zu
+   verlängern: Kopf und Paar passen bei d1440 in eine Bildschirmhöhe (4 : 5, 336 × 420 neben 504 × 630 px). Untergrenze 24 rem
+   Höhe: bei wenig Höhe (q844) bleibt die Kachel breiter als 16 rem, sonst rückte der Name dort unter das Foto (bewegung.css,
+   Block glasbild, schmale Kachel ohne Maus). */
+@utility glas-hoch-zwei-drittel {
+  width: min(100%, calc(max(70svh * 2 / 3, var(--spacing) * 96) * var(--bild-format)));
+}
 
 /* Silbentrennung in engen Spalten bei großer Schrift (Preiskarten, Abschlussband auf /preise, Preisrechner, Auswahl im Konfigurator; E4-W1, FS):
    lange Wörter schon ab 10, 11 bzw. 12 Zeichen trennen (Konfigurator: 12), je Teil mindestens vier. Sonst gilt die Seitenregel 12 5 5 (body). */

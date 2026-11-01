@@ -5,8 +5,8 @@
 // die die Seite liefert, und Zeilen mit Link (`wege`). Alle Blöcke gehören zum Teil „Was wir tun“ der Seitenformel
 // (data-formel="tun"). Jeder Block ist ein Abschnitt auf Kalk mit eigenem Kopf: Im Leitfaden (UM-E4-VORL) steht der Kopf der
 // Leitachse neben seinem Inhalt, neben Karten tritt er zurück.
-// Listen an der Fuge (UM-E4-SICHT-FIX M-B2): Punkte als nummerierte Liste wie in „Was wir tun“ (Punktliste), Wege als ruhige
-// Zeilen. Satzspiegel v2 (UM-E4-SICHT-FIX-2 M2-A1, K-003 „Fläche“; vorher links an der Laserlinie, M-B1): je Block `satz` aus
+// Listen an der Fuge (UM-E4-SICHT-FIX M-B2): Punkte als Liste an der Fuge wie in „Was wir tun“ (Punktliste, seit UM-E4-SICHT-FIX-2
+// M2-A7 ohne Mono-Nummern), Wege als ruhige Zeilen. Satzspiegel v2 (UM-E4-SICHT-FIX-2 M2-A1, K-003 „Fläche“; vorher links an der Laserlinie, M-B1): je Block `satz` aus
 // dem Inhalt, Standard `achse`: Liste (Punkte) und Tabelle einspaltig im Block auf der Kopfachse (zwei Drittel ab lg), die lange
 // Einleitung im selben Block darüber, Wege ab drei Einträgen voll breit in Spalten (`satzSpalten`). Ein Block mit großem Moment
 // der Seite (`zeichnung`, z. B. Verband-Wähler, Artikelliste) steht breit wie bisher. Kein Wechsel nach Index: Ein Wechsel

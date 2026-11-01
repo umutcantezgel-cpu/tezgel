@@ -2,10 +2,16 @@
 // geraden Raster mit 1-px-Fugen (kein Versatz: den tragen Lage und Ablauf), schmal einspaltig (große Systemschrift: ein
 // Foto über die volle Breite), ab 42 rem zweispaltig (am Handy untereinander statt aneinandergequetscht, K-016), ab 64 rem
 // dreispaltig.
-// Glaspaar (UM-E4-SICHT-FIX M-B6 Nr. 2 und 3, K-016): zwei Fotos desselben Vorgangs als zwei Glasbilder an einer 1-px-Fuge, der
-// Name auf der Glasfläche statt einer Unterschrift darunter, jedes Foto ganz im eigenen Seitenverhältnis und höchstens 70svh
-// hoch (glas-hoch, --bild-format aus der Bilddatei): Kopf und Paar passen bei d1440 in eine Bildschirmhöhe. Ab md nebeneinander
-// und gemeinsam mittig, darunter untereinander. Serverkomponente.
+// Glaspaar (UM-E4-SICHT-FIX M-B6 Nr. 2 und 3, K-016): zwei Fotos desselben Vorgangs als zwei Glasbilder, der Name auf der
+// Glasfläche statt einer Unterschrift darunter, jedes Foto ganz im eigenen Seitenverhältnis (--bild-format aus der Bilddatei).
+// Ab md nebeneinander und gemeinsam mittig, darunter untereinander. Verband an einer echten Fuge (UM-E4-SICHT-FIX-2 M2-A4; Sicht
+// Anlauf 2: die Fotos stießen bei x 720 ohne Fuge aneinander, mobil mit 2 px übereinander, und die Haarlinie zählte in der Breite
+// des zweiten Bildes mit, die Unterkanten standen 1 bis 2 px versetzt): eine Fliesenstufe Fuge (gap-6) auf allen Breiten statt
+// der Haarlinie. Ab md ungleich (Nacharbeit SF2-A2, Prüfung: auf /bad/barrierefreies-bad stand das Paar mit einem Versatz von 96 px
+// fast so da wie die zwei gleich großen Hochformate der Galerie direkt davor): das erste Foto zwei Drittel so groß wie das zweite
+// (glas-hoch-zwei-drittel neben glas-hoch, globals.css), beide unten bündig. Der Kopf des ersten steht so ein Drittel der Fotohöhe
+// tiefer (Drittelverband), ohne das Paar zu verlängern: Kopf und Paar passen bei d1440 in eine Bildschirmhöhe.
+// Serverkomponente.
 import type { CSSProperties } from 'react';
 import clsx from 'clsx';
 import Bildfeld from '@/components/kern/Bildfeld';
@@ -43,15 +49,18 @@ export function bildFormat(bild: ArbeitId): CSSProperties {
   return { '--bild-format': breite / hoehe } as CSSProperties;
 }
 
-/** Zwei Glasbilder an einer 1-px-Fuge (Zweierbild im Beleg, M-B6 Nr. 3): ab md nebeneinander, gemeinsam mittig, die Fuge links am
- *  zweiten Bild; darunter untereinander mit der Fuge oben. Ohne Link, der Name steht immer auf dem kurzen Verlauf (verlauf).
- *  Ohne Link ist die Glasfläche aria-hidden (kern/Glasbild); der Name bleibt darum als Bildunterschrift für Vorleser im Baum
- *  (figcaption, nur für Hilfsmittel), wie vorher die sichtbare Unterschrift (Prüfung SF-B2). */
+/** Zwei Glasbilder im Verband (Zweierbild im Beleg, M-B6 Nr. 3, M2-A4): ab md nebeneinander, gemeinsam mittig, an einer Fuge
+ *  der Stufe 6, das erste zwei Drittel so groß, beide unten bündig; darunter untereinander mit derselben Fuge, beide gleich breit
+ *  (höchstens 70svh hoch). Das kleinere ist das erste: Der Weg geht vom Bau zum größeren Bild, und der kürzere Name des ersten
+ *  Fotos bleibt auf der schmaleren Kachel bei zwei Zeilen (Bildunterschriften der Inhalte). Ohne Link, der Name steht immer auf
+ *  dem kurzen Verlauf (verlauf). Ohne Link ist die Glasfläche aria-hidden (kern/Glasbild); der Name bleibt darum als
+ *  Bildunterschrift für Vorleser im Baum (figcaption, nur für Hilfsmittel), wie vorher die sichtbare Unterschrift (Prüfung SF-B2).
+ *  Statischer Versatz, keine Bewegung. */
 export function Glaspaar({ fotos }: { fotos: Foto[] }) {
   return (
-    <div className="flex flex-col items-center md:flex-row md:items-start md:justify-center">
+    <div className="flex flex-col items-center gap-6 md:flex-row md:items-end md:justify-center">
       {fotos.map((f, i) => (
-        <figure key={f.bild} style={bildFormat(f.bild)} className={clsx('glas-hoch', i > 0 && 'border-t border-fuge md:border-t-0 md:border-l')}>
+        <figure key={f.bild} style={bildFormat(f.bild)} className={clsx('glas-hoch', i === 0 && fotos.length > 1 && 'md:glas-hoch-zwei-drittel')}>
           <Glasbild arbeit={f.bild} name={f.unterschrift} verlauf sizes="(min-width: 768px) 50vw, 100vw" />
           <figcaption className="sr-only">{f.unterschrift}</figcaption>
         </figure>
