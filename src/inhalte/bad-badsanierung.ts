@@ -27,6 +27,9 @@ export const BADSANIERUNG: ErzaehlInhalt = {
     // Wanne und Dusche mit Mosaikboden ab rund 45 % der Höhe: ein fertiges Bad statt des Wannendetails (UM-E4-SICHT-FIX M-A2)
     bild: 'badsanierung-beleg-2',
     bewertung: true,
+    // Schnittzeichnung „Wanne raus, Dusche ohne Stufe“ am rechten Ende der Schnur ab lg (UM-E4-SICHT-FIX M-C9 Nr. 1, M-A1 Nr. 3;
+    // Sicht Anlauf 1, a5: der Einstieg glich /bad), dieselbe Zeichnung wie unter dem Kopf von „Was wir tun“
+    schnurZeichen: { vignette: 'wanne-dusche', ab: 'lg' },
   },
   lage: {
     // auf Fliese wie auf /: sichtbare Grenze nach dem Einstieg, die Flächen wechseln ab hier (UM-E3-FIX2 N8, UM-E4-CHOR-FIX)

@@ -94,7 +94,7 @@ import Brotkrumen, { type Krume } from '@/components/kern/Brotkrumen';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Hauptknopf from '@/components/kern/Hauptknopf';
 import { KREUZ_GROESSE } from '@/components/kern/Leitachse';
-import { VIGNETTEN, type VignettenName } from '@/components/kern/vignetten';
+import { VIGNETTEN, type ZeichnungName } from '@/components/kern/vignetten';
 import Quadratmeter from './Quadratmeter';
 import Schnurebene, { Aufhaengung, Lotstueck } from './Schnurebene';
 import Rufnummer from '@/components/kern/Rufnummer';
@@ -137,7 +137,7 @@ export interface EinstiegMitteProps {
 }
 
 export interface Schnurzeichen {
-  vignette: VignettenName;
+  vignette: ZeichnungName;
   /** ab dieser Breite; darunter reicht die Spalte neben der H1 nicht (Maß der H1 ≥ 1,15 × H2) */
   ab: 'lg' | 'xl';
 }
@@ -164,7 +164,7 @@ const ZEILEN_EM: Record<string, number> = {
 };
 const ZEILE_EM_GROESST = 13.3;
 /** Seitenverhältnis der Vignetten (viewBox in kern/vignetten) */
-const ZEICHEN_FORMAT: Record<VignettenName, number> = { bad: 240 / 184, wohnen: 240 / 128, aussen: 240 / 128, untergrund: 240 / 128, reparatur: 240 / 128, treppe: 240 / 128 };
+const ZEICHEN_FORMAT: Record<ZeichnungName, number> = { bad: 240 / 184, wohnen: 240 / 128, aussen: 240 / 128, untergrund: 240 / 128, reparatur: 240 / 128, treppe: 240 / 128, 'wanne-dusche': 240 / 128 };
 /** Höhe des Schnurzeichens (eine Zeilenhöhe der H1) und Luft zur H1, in em der H1 */
 const ZEICHEN_HOEHE = 1.1;
 const ZEICHEN_LUFT = 0.5;

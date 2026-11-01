@@ -53,9 +53,10 @@ export interface WorumInhalt {
    *  und Telefon, erster Schritt und Bewertung darunter. Seit UM-E4-SICHT-FIX M-A1 Standard für jeden Einstieg `mitte`
    *  (ErzaehlSeite); `false` schaltet sie ab */
   schnurFigur?: boolean;
-  /** Mittiger Einstieg mit Figur (UM-E4-SICHT-FIX M-A1 Nr. 3): Plan-Vignette der Seite am rechten Ende der Schnur, ab `ab`
-   *  (darunter reicht die Spalte neben der H1 nicht); ihre Breite rechnet EinstiegMitte in das Maß der H1 ein */
-  schnurZeichen?: { vignette: VignettenName; ab: 'lg' | 'xl' };
+  /** Mittiger Einstieg mit Figur (UM-E4-SICHT-FIX M-A1 Nr. 3): Zeichnung der Seite am rechten Ende der Schnur (Plan-Vignette
+   *  oder Schnittzeichnung des Seitenthemas, z. B. `wanne-dusche` auf /bad/badsanierung, M-C9), ab `ab` (darunter reicht die
+   *  Spalte neben der H1 nicht); ihre Breite rechnet EinstiegMitte in das Maß der H1 ein */
+  schnurZeichen?: { vignette: ZeichnungName; ab: 'lg' | 'xl' };
   /** Form des Einstiegs: `mitte` = ruhig und mittig, H1 in `titelZeilen`, darunter `ort` als eine Zeile, dann das Foto
    *  vollständig (K-016 „Ruhe“, E-047); ohne Angabe Planblatt (mit `plan`) bzw. der einfache Einstieg */
   einstieg?: 'planblatt' | 'mitte';
