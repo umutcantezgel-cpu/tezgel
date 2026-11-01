@@ -1,3 +1,4 @@
+import { timingSafeEqual } from 'node:crypto';
 import { NextRequest, NextResponse } from 'next/server';
 import {
   submitToIndexNow,
@@ -9,11 +10,20 @@ import {
 
 export const dynamic = 'force-dynamic';
 
+/** Vergleich in konstanter Zeit (gleich lange Puffer), damit die Antwortzeit nichts über das Secret verrät */
+function gleich(angabe: unknown, secret: string): boolean {
+  if (typeof angabe !== 'string') return false;
+  const a = Buffer.from(angabe);
+  const b = Buffer.from(secret);
+  return a.length === b.length && timingSafeEqual(a, b);
+}
+
 export async function POST(req: NextRequest) {
   try {
     let body: { urls?: string[]; secret?: string } = {};
     try {
-      body = await req.json();
+      const gelesen = await req.json();
+      if (gelesen && typeof gelesen === 'object' && !Array.isArray(gelesen)) body = gelesen;
     } catch {
       // Body is optional
     }
@@ -27,7 +37,7 @@ export async function POST(req: NextRequest) {
         { status: 403 }
       );
     }
-    if (body.secret !== requiredSecret) {
+    if (!gleich(body.secret, requiredSecret)) {
       return NextResponse.json({ success: false, error: 'Unauthorized: Invalid secret' }, { status: 401 });
     }
 

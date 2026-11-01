@@ -6,6 +6,7 @@ import { REVIEWS } from '../src/config/reviews.js';
 import { ARBEITEN } from '../src/config/arbeiten.ts';
 import { zerlege } from '../src/lib/textmarken.ts';
 import { ortsInhalt } from '../src/inhalte/orte.ts';
+import { findCityConfig, getCityLandingPageSchema } from '../src/lib/schemaPyramid.ts';
 
 const re = (s) => new RegExp(s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
 
@@ -86,4 +87,21 @@ test('Orte 7: Aufmacher je Ort, höchstens drei, nicht in der eigenen Fotoreihe;
     assert.ok(o.tun.bereiche.every((b) => b.vignette && !b.motiv), `${o.stadt}: Zeilen mit Plan-Vignetten`);
   }
   assert.ok(aufmacher.size <= 3, `höchstens drei Aufmacher: ${[...aufmacher]}`);
+});
+
+// SEO-Runde P1 (T03, T04): Jeder Ort hat Angaben für die strukturierten Daten der Ortsseite. Ohne sie bricht der Bau der
+// Ortsseite ab (src/app/(bestand)/standorte/[stadt]/page.tsx); früher stand dort ein Ersatzzweig mit eigenem Knoten.
+test('Orte 8: jeder Ort mit Angaben in HESSEN_GEO_HIERARCHY, Service mit provider und areaServed auf den Ort', () => {
+  for (const c of CITIES) {
+    const conf = findCityConfig(c.slug);
+    assert.ok(conf, `${c.slug}: keine Angaben in HESSEN_GEO_HIERARCHY`);
+    assert.match(conf.wikidataId ?? '', /^Q\d+$/, `${c.slug}: Wikidata-Kennung`);
+    const graph = getCityLandingPageSchema(conf)['@graph'];
+    const ort = graph.find((k) => k['@type'] === 'City');
+    const dienst = graph.find((k) => k['@type'] === 'Service');
+    assert.ok(ort && dienst, `${c.slug}: City und Service`);
+    assert.equal(dienst.areaServed['@id'], ort['@id'], `${c.slug}: areaServed auf den Ort`);
+    assert.match(dienst.provider['@id'], /\/#local-business$/, `${c.slug}: provider ist der eine Betrieb`);
+    assert.ok(!graph.some((k) => [].concat(k['@type']).includes('LocalBusiness')), `${c.slug}: kein zweites LocalBusiness`);
+  }
 });

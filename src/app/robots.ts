@@ -22,7 +22,7 @@ export default function robots(): MetadataRoute.Robots {
   ];
 
   // SEO-Runde T01 (docs/seo/KONTEXT.md, Abschnitt 5): Keine Sperre für Adressen mit Fragezeichen mehr. `/*?*` sperrte alle
-  // Fotos (`/_next/image?url=…`) und jeden Link mit Kampagnenparametern, etwa aus dem Unternehmensprofil. Doppelte
+  // Fotos (`/_next/image?url=…`) und jeden Link mit Kampagnenparametern (utm_…). Doppelte
   // Parameter-Adressen fasst das selbstreferenzierende Canonical zusammen (src/lib/metadata.ts).
   const gesperrt = ['/api/', '/login', '/admin'];
 

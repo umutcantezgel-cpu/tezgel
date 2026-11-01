@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { CITIES, type CityData } from '@/config/cities';
 import { CITY_HUB_DATA } from '@/lib/maps/getMapEmbedUrl';
-import { buildServiceNode, SITE_URL } from '@/lib/schema';
 import { findCityConfig, getCityLandingPageSchema } from '@/lib/schemaPyramid';
 import { createMetadata } from '@/lib/metadata';
 import SeitenDaten from '@/components/seo/SeitenDaten';
@@ -105,18 +104,10 @@ export default async function StandortPage({
 
   const inhalt = inhaltFuer(city);
   const cityConfig = findCityConfig(city.slug);
-  // Ort und Leistung für den Ort; der Betrieb steht nur einmal im Wurzelgraph (SEO-Runde T04, kein zweites LocalBusiness)
-  const cityTierNodes = cityConfig
-    ? getCityLandingPageSchema(cityConfig)['@graph']
-    : [
-        buildServiceNode({
-          name: `Fliesenverlegung in ${city.name}`,
-          serviceType: 'Fliesenverlegung',
-          description: `Fliesenverlegung, Badsanierung, Duschen ohne Stufe, Großformate und Abdichtung nach DIN 18534 für Kunden in ${city.name}, ausgeführt vom Fachbetrieb in Aßlar.`,
-          url: `${SITE_URL}/standorte/${city.slug}`,
-          areaServedCity: city.name,
-        }),
-      ];
+  // Ort und Leistung für den Ort; der Betrieb steht nur einmal im Wurzelgraph (SEO-Runde T04, kein zweites LocalBusiness).
+  // Jeder Ort aus CITIES hat Angaben in HESSEN_GEO_HIERARCHY (test/orte.test.mjs); fehlen sie, bricht der Bau ab.
+  if (!cityConfig) throw new Error(`Ort ohne Angaben in HESSEN_GEO_HIERARCHY (src/lib/schemaPyramid.ts): ${city.slug}`);
+  const cityTierNodes = getCityLandingPageSchema(cityConfig)['@graph'];
 
 
   const nachbarn = getNearbyCities(city.slug, 5).map((n) => ({ name: n.name, href: `/standorte/${n.slug}` }));
