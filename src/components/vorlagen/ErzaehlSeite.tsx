@@ -52,8 +52,9 @@ import { Werkzeug, type Arbeitsabschnitt } from './ArbeitsSeite';
 export interface ErzaehlSeiteProps {
   inhalt: ErzaehlInhalt;
   /** große Momente der Seite an ihrem Platz (Registereinträge, K-007); belegZwei steht als eigener Abschnitt mit H2 zwischen
-   *  Fotos und Stimmen (E-045) */
-  momente?: { tun?: ReactNode; ablauf?: ReactNode; beleg?: ReactNode; belegZwei?: ZweiterBeleg };
+   *  Fotos und Stimmen (E-045); stimmen steht direkt nach der Einleitung der Kundenstimmen vor den Stimmen (`stimmenZusatz` in
+   *  teile/Beleg, UM-E4-SICHT-FIX-2 M2-A6, z. B. ein Leitsatz; ohne Angabe unverändert) */
+  momente?: { tun?: ReactNode; ablauf?: ReactNode; beleg?: ReactNode; belegZwei?: ZweiterBeleg; stimmen?: ReactNode };
   /** Werkzeug(e) der Seite (Badanfrage, Projektcheck …), Kennung wie im Bestand: mit `imSchritt` im nächsten Schritt (M-B3),
    *  sonst als eigener Abschnitt nach ihm */
   werkzeug?: Arbeitsabschnitt | Arbeitsabschnitt[];
@@ -103,7 +104,7 @@ export default function ErzaehlSeite({ inhalt, momente, werkzeug, nachLage, nach
     vergleich: inhalt.vergleich && <Vergleich inhalt={inhalt.vergleich} />,
     nachTun,
     ablauf: <Ablauf inhalt={inhalt.ablauf} moment={momente?.ablauf} />,
-    beleg: <Beleg inhalt={inhalt.beleg} pfad={inhalt.pfad} moment={momente?.beleg} zweiter={momente?.belegZwei} />,
+    beleg: <Beleg inhalt={inhalt.beleg} pfad={inhalt.pfad} moment={momente?.beleg} zweiter={momente?.belegZwei} stimmenZusatz={momente?.stimmen} />,
     nachBeleg,
     versprechen: inhalt.versprechen && <Versprechen vorher={vorher} erklaert={inhalt.versprechen.erklaert} />,
     schritt: (

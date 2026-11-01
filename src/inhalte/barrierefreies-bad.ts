@@ -37,10 +37,6 @@ export const BARRIEREFREIES_BAD: ErzaehlInhalt = {
     titel: 'So wird aus der Wanne eine sichere Dusche.',
     // Folge (K-009, UM-E4-SICHT-FIX M-B7): die Gefälle-Zeichnung direkt nach Kopf und Satz, die Punkte danach
     momentZuerst: true,
-    // die Zeichnung steht in voller Rasterbreite (GefaelleDusche `breit`, M-C9 Nr. 2), Einleitung, Unterschrift, Punkte und
-    // Absatz um ein Drittel versetzt in den Spalten 2 bis 3 auf einer Kante (M-B1; vorher mittig auf der Kante der Zeichnung im
-    // Lesemaß, V-16 von SF-B2; die Einleitung zieht mit, Prüfung SF-C3)
-    satz: 'rechts',
     einleitung:
       'Wir bauen Ihre Badewanne aus und eine [[bodengleiche-dusche|bodengleiche Dusche]] ein. So steigen Sie sicher hinein, heute und auch später.',
     punkte: [

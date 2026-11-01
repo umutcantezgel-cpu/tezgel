@@ -58,9 +58,6 @@ export const BALKON_TERRASSE: ErzaehlInhalt = {
     // großer Moment zuerst (K-009, M-B7): die Gefälle-Zeichnung direkt nach Kopf und Satz, die Prüfliste danach (Sicht
     // Anlauf 1, b3: die Zeichnung stand klein unter der Prüfliste)
     momentZuerst: true,
-    // die Zeichnung in voller Rasterbreite (GefaelleBalkon `breit`, M-C9 Nr. 3), Einleitung, Legende und Prüfliste (Punktliste,
-    // M-B2) um ein Drittel versetzt in den Spalten 2 bis 3 auf einer Kante (M-B1; die Einleitung zieht mit, Prüfung SF-C3)
-    satz: 'rechts',
   },
   // Vergleich der Aufbauten (UM-E4-EP1, Rückführung nach UM-5): Wortlaut aus der Seite vor dem Relaunch, Abschnitt „Aufbauten im
   // Vergleich: Stelzlager, Splittbett, gebunden“ mit CONSTRUCTIONS, den Zeilen der Tabelle und dem Hinweis zur Plattenstärke

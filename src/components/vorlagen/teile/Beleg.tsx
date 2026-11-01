@@ -36,8 +36,9 @@ export interface ZweiterBeleg {
   titel: string;
   moment: ReactNode;
   /** Fläche des Abschnitts (Standard Kalk); Fliese setzt den Bruch zwischen Fotos und dem, was folgt (UM-E4-CHOR-FIX,
-   *  /referenzen: Galerie, Vorher-Nachher und Bewertungen lagen sonst rund 7 000 px auf Kalk) */
-  flaeche?: 'kalk' | 'fliese';
+   *  /referenzen: Galerie, Vorher-Nachher und Bewertungen lagen sonst rund 7 000 px auf Kalk); Tinte als Bühne für einen hohen
+   *  Moment (UM-E4-SICHT-FIX-2 M2-A6, für den Vorher-Nachher-Regler auf /referenzen M2-C2; Abschnitt kennt die Fläche) */
+  flaeche?: 'kalk' | 'fliese' | 'tinte';
 }
 
 /** Zweierbild (M-B6 Nr. 3): zwei Glasbilder an der Fuge; im Abschnitt der Fotos mit einem mittigen Unterkopf (eine Stufe unter
@@ -55,7 +56,10 @@ function Zweierbild({ zweierbild, unterkopf }: { zweierbild: NonNullable<BelegIn
   );
 }
 
-export default function Beleg({ inhalt, pfad, moment, zweiter, stimmenTitel = 'Das sagen unsere Kunden.' }: { inhalt: BelegInhalt; pfad?: string; moment?: ReactNode; zweiter?: ZweiterBeleg; stimmenTitel?: string }) {
+/** `stimmenZusatz` (UM-E4-SICHT-FIX-2 M2-A6, Schnittstelle für M2-C3): ein Element der Seite direkt nach der Einleitung der
+ *  Kundenstimmen, vor den Stimmen (z. B. ein Leitsatz). Neben ihm tritt die Abschnittsmarke zurück (data-kopf-pause="ganz", nur
+ *  auf Kalk wirksam; Stimmen tragen keine eigene Pause). Ohne Angabe unverändert */
+export default function Beleg({ inhalt, pfad, moment, zweiter, stimmenTitel = 'Das sagen unsere Kunden.', stimmenZusatz }: { inhalt: BelegInhalt; pfad?: string; moment?: ReactNode; zweiter?: ZweiterBeleg; stimmenTitel?: string; stimmenZusatz?: ReactNode }) {
   const zweierEigen = inhalt.zweierbild?.abschnitt;
   const zweierInnen = inhalt.zweierbild && !zweierEigen ? inhalt.zweierbild : undefined;
   const davor = inhalt.fotos.length > 0 || Boolean(inhalt.satz) || Boolean(zweierInnen);
@@ -140,6 +144,11 @@ export default function Beleg({ inhalt, pfad, moment, zweiter, stimmenTitel = 'D
           titel={inhalt.stimmenTitel ?? stimmenTitel}
           einleitung={inhalt.stimmenEinleitung ? <p><Textmarken text={inhalt.stimmenEinleitung} /></p> : undefined}
         >
+          {stimmenZusatz && (
+            <div data-kopf-pause="ganz" className="mb-12">
+              {stimmenZusatz}
+            </div>
+          )}
           <Stimmen ids={inhalt.stimmen} form={inhalt.stimmenEinzeln || !inhalt.stimmenGross ? 'einzeln' : 'gross'} versatz={inhalt.stimmenEinzeln ? inhalt.stimmenVersatz : !inhalt.stimmenGross} />
         </Abschnitt>
       )}

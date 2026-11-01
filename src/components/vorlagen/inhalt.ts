@@ -111,6 +111,11 @@ export interface TunInhalt {
   unterKopf?: { vignette: ZeichnungName; unterschrift: Markentext };
   /** Aussagen als nummerierte Liste an der Fuge (eine Aussage je Zeile, Mono-Nummer, ohne Kasten; M-B2) */
   punkte?: Markentext[];
+  /** Die Punkte stehen im Aufklapper „Mehr erfahren“ am Ende des Abschnitts statt offen (UM-E4-SICHT-FIX-2 M2-A6, für /referenzen
+   *  M2-C2): Punkte und `absatzMehr` teilen genau diesen einen Aufklapper (Punkte zuerst), der Absatz bleibt offen. Der Inhalt
+   *  steht im DOM (natives details). Steht ein Fachwort zuerst in den Punkten und danach im offenen Absatz, wandert seine
+   *  Auszeichnung mit (K-011, erstes Vorkommen in der DOM-Folge). Ohne Angabe offen wie bisher */
+  punkteMehr?: boolean;
   /** Absatz nach den Punkten (z. B. Norm, Zuschuss) */
   absatz?: Markentext;
   /** Fachtext am Ende des Abschnitts im Aufklapper „Mehr erfahren“ (natives details, Ruhe-Regel „Fachtext in Mehr erfahren“;
@@ -119,9 +124,10 @@ export interface TunInhalt {
   /** Der große Moment der Seite steht direkt nach Kopf und Satz, Bereiche, Punkte und Absatz danach (Schalter der Folge,
    *  K-009; UM-E4-SICHT-FIX M-B7, nur auf den dort gelisteten Seiten) */
   momentZuerst?: boolean;
-  /** Satzspiegel der Zeilen, Punkte und Absätze (UM-E4-SICHT-FIX M-B1, `kern/Abschnitt`): Standard `rechts` (Spalten 2 bis 3),
-   *  mit großem Moment `mitte` (auf der Kante des Moments und der Einleitung, V-16); der Moment selbst steht immer breit. `rechts`
-   *  mit Moment erst, wenn der Moment die volle Rasterbreite füllt (M-C9), sonst liegen zwei Kanten knapp nebeneinander */
+  /** Satzspiegel der Punkte, des Absatzes, des Aufklappers und der langen Einleitung (Satzspiegel v2, UM-E4-SICHT-FIX-2 M2-A1,
+   *  `kern/Abschnitt`): Standard `achse` (Block über zwei Drittel auf der Kopfachse), mit oder ohne großen Moment. Unabhängig davon
+   *  stehen der Moment und die Zeichnung (`unterKopf`) breit, Bereiche ab drei Einträgen voll breit in Spalten (`satzSpalten`).
+   *  Ein anderer Satz nur als ausdrückliche Wahl mit Grund (die Überschreibungen `rechts` und `mitte` aus v1 sind entfallen) */
   satz?: Satz;
 }
 
@@ -227,6 +233,9 @@ export interface VergleichInhalt {
  *  /ueber-uns), damit kein Wort zweimal erklärt wird */
 export interface VersprechenInhalt {
   erklaert?: GlossarId[];
+  /** Nummern der Punkte in der Quellfolge (1 bis 8, `COMPANY_DATA.qualityPromises`), die offen stehen; die übrigen im Aufklapper
+   *  (UM-E4-SICHT-FIX-2 M2-A6, die Darstellung baut M2-A3). Ohne Angabe wie bisher */
+  offen?: number[];
 }
 
 export interface ErzaehlInhalt {
@@ -261,8 +270,13 @@ export interface Wissensblock {
   zeichnung?: string;
   /** Zeilen mit Link nach der Zeichnung (z. B. „Formate und Technik“ auf /fliesen), wie die Wege in „Ihre Lage“ */
   wege?: Zeile[];
-  /** Satzspiegel des Blocks (UM-E4-SICHT-FIX M-B1, `kern/Abschnitt`): Standard `links`, mit `zeichnung` (großer Moment) `breit`.
-   *  Kein Wechsel nach Index; ein anderer Satz nur für einen Block, der mindestens eine Bildschirmhöhe trägt */
+  /** Form der Wege (UM-E4-SICHT-FIX-2 M2-A6, für /fliesen M2-C4): `zeilen` (Standard) wie die Wege der Lage; `reihe` als Fugenfeld
+   *  voll breit, ab lg drei je Reihe, nur durch 1-px-Fugen getrennt, ohne Füllung und ohne Rahmen je Zelle, die letzte Reihe mittig
+   *  im Halbverband (fünf Wege: 3 + 2), je Zelle Name, Satz und Pfeil; darunter Zeilen */
+  wegeForm?: 'zeilen' | 'reihe';
+  /** Satzspiegel des Blocks (Satzspiegel v2, UM-E4-SICHT-FIX-2 M2-A1, `kern/Abschnitt`): Standard `achse` (Liste und Tabelle im
+   *  Block auf der Kopfachse, Wege ab drei voll breit in Spalten), mit `zeichnung` (großer Moment) `breit` wie bisher. Kein Wechsel
+   *  nach Index; ein anderer Satz nur für einen Block, der mindestens eine Bildschirmhöhe trägt */
   satz?: Satz;
 }
 

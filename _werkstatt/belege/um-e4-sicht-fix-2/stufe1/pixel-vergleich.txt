@@ -1,0 +1,72 @@
+## m390 (je Ausschnitt: Zahl abweichender Pixel; S = andere Größe, X = nur auf einer Seite)
+  start                      abweichend  0/12 · 0 0 0 0 0 0 0 0 0 0 0 0
+  bad__badsanierung          abweichend  0/12 · 0 0 0 0 0 0 0 0 0 0 0 0
+  fliesen                    abweichend  0/12 · 0 0 0 0 0 0 0 0 0 0 0 0
+  referenzen                 abweichend  0/12 · 0 0 0 0 0 0 0 0 0 0 0 0
+  bad__barrierefreies-bad    abweichend  0/12 · 0 0 0 0 0 0 0 0 0 0 0 0
+  balkon-terrasse            abweichend  0/12 · 0 0 0 0 0 0 0 0 0 0 0 0
+  ueber-uns                  abweichend  0/12 · 0 0 0 0 0 0 0 0 0 0 0 0
+  standorte__wetzlar         abweichend  0/12 · 0 0 0 0 0 0 0 0 0 0 0 0
+  leistungen                 abweichend  0/12 · 0 0 0 0 0 0 0 0 0 0 0 0
+  bad                        abweichend  0/12 · 0 0 0 0 0 0 0 0 0 0 0 0
+  blog                       abweichend  0/12 · 0 0 0 0 0 0 0 0 0 0 0 0
+## q844 (je Ausschnitt: Zahl abweichender Pixel; S = andere Größe, X = nur auf einer Seite)
+  start                      abweichend  0/12 · 0 0 0 0 0 0 0 0 0 0 0 0
+  bad__badsanierung          abweichend 10/12 · 0 0 1416 87572 105567 49035 39344 50484 22345 27636 23159 119006
+  fliesen                    abweichend 10/12 · 0 0 19336 29610 49767 57618 91016 57724 26370 57029 32690 31313
+  referenzen                 abweichend  1/12 · 0 0 1261 0 0 0 0 0 0 0 0 0
+  bad__barrierefreies-bad    abweichend  2/12 · 0 0 1184 12559 0 0 0 0 0 0 0 0
+  balkon-terrasse            abweichend 10/12 · 0 0 1219 23324 60438 223258 62834 65852 50936 43279 62670 37655
+  ueber-uns                  abweichend 10/12 · 0 0 14693 96877 33137 28096 45491 33874 35438 81365 223711 76046
+  standorte__wetzlar         abweichend  9/12 · 0 0 0 25417 66887 29081 54308 33451 55493 208534 100364 65716
+  leistungen                 abweichend  1/12 · 0 0 0 24899 0 0 0 0 0 0 0 0
+  bad                        abweichend 10/12 · 0 0 14453 30554 77836 78711 33868 65760 34559 80222 30398 39277
+  blog                       abweichend  0/12 · 0 0 0 0 0 0 0 0 0 0 0 0
+## t768 (je Ausschnitt: Zahl abweichender Pixel; S = andere Größe, X = nur auf einer Seite)
+  start                      abweichend  0/10 · 0 0 0 0 0 0 0 0 0 0
+  bad__badsanierung          abweichend  9/11 · 0 113406 140923 88362 277217 358936 139061 97302 69615 66066 0
+  fliesen                    abweichend  9/10 · 0 102797 181943 104949 196435 168149 128783 66149 69025 35161
+  referenzen                 abweichend  3/12 · 0 11184 0 0 0 9169 98 0 0 0 0 0
+  bad__barrierefreies-bad    abweichend  1/10 · 0 31140 0 0 0 0 0 0 0 0
+  balkon-terrasse            abweichend  1/11 · 0 49060 0 0 0 0 0 0 0 0 0
+  ueber-uns                  abweichend 11/12 · 0 145538 104918 111310 357728 78373 178396 259209 206276 129005 68583 69797
+  standorte__wetzlar         abweichend  2/10 · 0 21033 26215 0 0 0 0 0 0 0
+  leistungen                 abweichend  1/11 · 0 23569 0 0 0 0 0 0 0 0 0
+  bad                        abweichend  1/12 · 0 57596 0 0 0 0 0 0 0 0 0 0
+  blog                       abweichend  5/11 · 0 0 0 0 0 92238 135663 138928 105113 66918 0
+## t1024 (je Ausschnitt: Zahl abweichender Pixel; S = andere Größe, X = nur auf einer Seite)
+  start                      abweichend  0/12 · 0 0 0 0 0 0 0 0 0 0 0 0
+  bad__badsanierung          abweichend 11/12 · 0 6728 76744 258168 191300 76802 458311 503968 379843 389115 205260 79051
+  fliesen                    abweichend 11/12 · 0 44250 377671 552344 334746 390632 453943 531311 599094 302375 138851 91481
+  referenzen                 abweichend  5/12 · 0 7117 0 0 0 0 0 0 45809 160791 92327 83247
+  bad__barrierefreies-bad    abweichend 11/12 · 0 14595 134626 131622 105990 197410 356890 523366 121691 121612 72373 78167
+  balkon-terrasse            abweichend 11/12 · 0 13770 216172 489883 375660 278605 94239 259757 64307 277714 135798 139886
+  ueber-uns                  abweichend 11/12 · 0 24811 53751 79232 73267 253460 450742 87217 141174 177234 143178 320989
+  standorte__wetzlar         abweichend 10/12 · 0 23510 43010 365345 405799 628807 480688 350479 160554 255456 86687 0
+  leistungen                 abweichend  2/12 · 0 14217 28275 0 0 0 0 0 0 0 0 0
+  bad                        abweichend 11/12 · 0 15936 235065 274023 173407 310271 88947 635538 92786 291876 76224 204123
+  blog                       abweichend  1/12 · 0 0 0 0 0 0 36159 0 0 0 0 0
+## d1440 (je Ausschnitt: Zahl abweichender Pixel; S = andere Größe, X = nur auf einer Seite)
+  start                      abweichend  0/11 · 0 0 0 0 0 0 0 0 0 0 0
+  bad__badsanierung          abweichend 11/12 · 0 22240 334116 177868 105677 124348 632046 459556 137515 112953 117280 60691
+  fliesen                    abweichend 11/12 · 0 64521 869687 919696 580151 379705 1058685 724535 544995 463570 111071 X
+  referenzen                 abweichend  6/12 · 0 15164 0 0 0 0 0 60019 475014 121140 487829 109208
+  bad__barrierefreies-bad    abweichend  9/11 · 0 31388 319652 192552 182666 704014 615830 372775 287049 105115 0
+  balkon-terrasse            abweichend 11/12 · 0 28490 703088 897414 713910 406658 456035 124503 771417 432854 108003 60691
+  ueber-uns                  abweichend 11/12 · 0 51607 211144 103898 113964 1013066 238389 492199 283450 370682 733848 741435
+  standorte__wetzlar         abweichend  9/11 · 0 28662 68920 530323 1041788 813644 865343 116051 530300 118395 0
+  leistungen                 abweichend 11/12 · 0 31222 297523 228109 196337 238491 724074 223396 67169 179724 115978 60691
+  bad                        abweichend 11/12 · 0 24332 461634 359849 420618 514315 831026 460228 521990 99981 183641 631132
+  blog                       abweichend  6/12 · 0 0 0 0 0 76366 154579 197386 153714 150864 98578 0
+## d1920 (je Ausschnitt: Zahl abweichender Pixel; S = andere Größe, X = nur auf einer Seite)
+  start                      abweichend  0/10 · 0 0 0 0 0 0 0 0 0 0
+  bad__badsanierung          abweichend 11/12 · 0 35733 526239 152671 124560 494997 871676 290651 145098 158491 159623 80084
+  fliesen                    abweichend  9/11 · 0 102709 1396315 1183656 881942 1054843 1345707 1570540 896379 149291 0
+  referenzen                 abweichend  6/12 · 0 18408 0 0 0 0 0 131746 737825 146043 633779 156450
+  bad__barrierefreies-bad    abweichend  9/11 · 0 49856 468221 283162 334049 1022153 1120446 338909 285302 132701 0
+  balkon-terrasse            abweichend 11/12 · 0 41008 1150068 1162541 1015192 405678 565189 484455 695314 641145 148518 X
+  ueber-uns                  abweichend 11/12 · 0 71590 213941 136296 465811 1247791 156226 1048956 126540 1107787 1210395 698515
+  standorte__wetzlar         abweichend  8/10 · 0 39777 98348 1089327 1444387 1168828 758175 808783 153958 0
+  leistungen                 abweichend 11/12 · 0 52277 407140 307076 283303 636600 661422 169081 118310 267144 159063 X
+  bad                        abweichend 11/12 · 0 34388 867369 264874 808989 449306 1463326 614688 177794 168967 483005 524319
+  blog                       abweichend  6/11 · 0 0 0 0 0 168814 290213 271882 194715 134963 80084

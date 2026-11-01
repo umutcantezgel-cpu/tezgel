@@ -56,9 +56,6 @@ export const REFERENZEN: ErzaehlInhalt = {
     absaetze: ['Ein neues Bad oder ein neuer Balkon bleiben viele Jahre. Da wollen Sie sicher sein, dass die Arbeit stimmt.'],
   },
   tun: {
-    // Satz mittig: Kopf und Inhaltskante lagen rechts nur 21 px auseinander; den Versatz dieses Bildschirms trägt die Galerie
-    // (UM-E4-SICHT-FIX SF-B2 NO-3, E-111)
-    satz: 'mitte',
     titel: 'Das alles gehört zu unserer Arbeit.',
     // Vorspann der Textdatei (Regel 2): so bleibt er für Suchmaschinen auf der Seite
     einleitung: VORSPANN,

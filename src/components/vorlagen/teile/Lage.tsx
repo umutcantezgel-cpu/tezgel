@@ -10,23 +10,38 @@
 // Eine Auswahlebene (Startseite, UM-E4-START, Sicht Anlauf 3): Trägt eine Lage eine Plan-Zeichnung (`vignette`), steht sie links
 // in der Zeile in einem eigenen Feld an der Fuge, Satz und Pfeil rechts; die Leistungen darunter („Was wir tun“) sind nur noch
 // eine Zeile mit Links. Unter 20rem Zeilenbreite (große Systemschrift) entfällt die Zeichnung.
-// Ortsmoment (Ortsseiten, UM-E4-SICHT-FIX M-C6 Nr. 2): `zusatz` steht nach den Absätzen im Satzspiegel, dort das Einzugsband
-// mit „Sie sind hier“. Ohne Angabe unverändert.
-// Satzspiegel (UM-E4-SICHT-FIX M-B1): Absätze, Wege und Zusatz stehen links an der Laserlinie (Spalten 1 bis 2, geteilt ab lg
-// 16 px am Lot; darunter mittig wie die Nachbarn), eine lange Einleitung linksbündig darüber; eine Lage nur mit der Auswahl (Startseite) steht wie bisher in voller
-// Breite (breit) mit mittiger Einleitung. Serverkomponente.
+// Ortsmoment (Ortsseiten, UM-E4-SICHT-FIX M-C6 Nr. 2): `zusatz` steht nach den Absätzen, dort das Einzugsband mit „Sie sind
+// hier“. Ohne Angabe unverändert.
+// Satzspiegel v2 (UM-E4-SICHT-FIX-2 M2-A1, K-003 „Fläche“; vorher links an der Laserlinie, M-B1): Die Absätze stehen als großer
+// Vorspann (fs-4, Tinte, Lesemaß am eigenen Element, d1440 rund 790 px) im Block auf der Kopfachse (`achse`, zwei Drittel ab lg),
+// eine lange Einleitung linksbündig im selben Block darüber. Ausrichtung je Block, nicht je Absatz: ab lg mittig, wenn alle Absätze
+// zusammen höchstens VORSPANN_MITTIG Zeichen Klartext tragen (rund zwei Zeilen), sonst alle linksbündig an der Kante des Blocks;
+// unter lg linksbündig wie bisher.
+// Mittig gesetzt tritt die Abschnittsmarke daneben zurück (data-kopf-pause="ganz"): Sie steht nie neben mittigem Text. Wege ab
+// drei Einträgen stehen voll breit in Spalten (`satzSpalten`). Der Zusatz (Einzugsband der Ortsseiten) steht im Block auf der
+// Achse, auf der Kante des Vorspanns (Nacharbeit SF2-A1: über die volle Satzbreite gedehnt standen Name und Wert einer Zeile bis
+// 560 px auseinander, solange das Band nur eine Zone zeigt); `zusatzBreit` setzt ihn über die volle Satzbreite (für M2-B7, wenn
+// das Band Ortsmaß und Kennzahl trägt). Eine Lage nur mit der Auswahl (Startseite) steht wie bisher in voller Breite (breit)
+// mit mittiger Einleitung. Serverkomponente.
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
-import Abschnitt, { satzMass, type Satz } from '@/components/kern/Abschnitt';
+import Abschnitt, { Satzblock, satzBlock, satzMass } from '@/components/kern/Abschnitt';
 import { langeEinleitung } from '@/components/kern/einleitung';
+import { klartext } from '@/lib/textmarken';
 import Textmarken from '@/components/kern/Textmarken';
 import { VIGNETTEN, type VignettenName } from '@/components/kern/vignetten';
 import type { BildOderMotiv, LageInhalt } from '../inhalt';
 import { Bereichszeilen } from './Tun';
 
 type Fliese = { satz: string; href: string; vignette?: VignettenName } & BildOderMotiv;
+
+/** Höchstens so viele Zeichen Klartext tragen alle Absätze zusammen, damit die Lage mittig steht (rund zwei Zeilen im Vorspann,
+ *  M2-A1 Nr. 2: /referenzen mittig, Ortsseiten und /bad/badsanierung linksbündig). Der Plan nennt 160; gemessen fasst eine Zeile
+ *  des Vorspanns bei d1440 rund 72 Zeichen, /bad (153 Zeichen) stand mittig in drei Zeilen mit einem Rest von zwei Wörtern. 120
+ *  hält die Regel „rund zwei Zeilen“ (Nacharbeit SF2-A1, EV-13) */
+export const VORSPANN_MITTIG = 120;
 
 /** Plan-Zeichnung der Lage im eigenen Feld an der Fuge, ganz und mittig (Feld 4 : 3), dekorativ; unter 24rem Listenbreite (Handy)
  *  Stufe 16 (64 px) mit engerem Innenabstand, sonst Stufe 24 (96 px), ab lg 32 (128 px), damit der Satz daneben höchstens drei
@@ -74,9 +89,16 @@ export function LageFliesen({ fliesen, className }: { fliesen: Fliese[]; classNa
   );
 }
 
-export default function Lage({ inhalt, zusatz }: { inhalt: LageInhalt; zusatz?: ReactNode }) {
+/** `zusatzBreit`: der Zusatz über die volle Satzbreite statt im Block auf der Achse (für M2-B7, Einzugsband mit Ortsmaß) */
+export default function Lage({ inhalt, zusatz, zusatzBreit = false }: { inhalt: LageInhalt; zusatz?: ReactNode; zusatzBreit?: boolean }) {
   const fliesen = inhalt.fliesen ?? [];
-  const satz: Satz = fliesen.length && !inhalt.absaetze?.length && !inhalt.wege?.length && !zusatz ? 'breit' : 'links';
+  const absaetze = inhalt.absaetze ?? [];
+  const wege = inhalt.wege ?? [];
+  // nur die Auswahl (Startseite): breit wie bisher, mittige Einleitung; `/` ändert sich hier nicht
+  const nurAuswahl = fliesen.length > 0 && !absaetze.length && !wege.length && !zusatz;
+  const mittig = absaetze.reduce((summe, a) => summe + klartext(a).length, 0) <= VORSPANN_MITTIG;
+  // Wege ab drei Einträgen voll breit in Spalten, weniger im Block auf der Achse
+  const wegeVoll = wege.length >= 3;
   return (
     <Abschnitt
       id="ihre-lage"
@@ -85,31 +107,48 @@ export default function Lage({ inhalt, zusatz }: { inhalt: LageInhalt; zusatz?: 
       spaet
       mitte
       flaeche={inhalt.aufFliese ? 'fliese' : 'kalk'}
-      satz={satz}
+      satz="breit"
+      // Satzspiegel v2: die lange Einleitung im Block auf der Achse über dem Inhalt
+      einleitungSatz={nurAuswahl ? undefined : 'achse'}
       className={inhalt.aufFliese ? 'lg:pt-16' : undefined}
       titel={inhalt.titel}
       einleitung={inhalt.einleitung ? <p><Textmarken text={inhalt.einleitung} /></p> : undefined}
       // die Auswahl der Startseite (breit) behält ihre mittige Einleitung: `/` ändert sich nur im Schritt (M-B1)
-      einleitungLang={satz !== 'breit' && langeEinleitung(inhalt.einleitung)}
+      einleitungLang={!nurAuswahl && langeEinleitung(inhalt.einleitung)}
     >
-      {inhalt.absaetze && inhalt.absaetze.length > 0 && (
-        // Satzspiegel in der Grundschrift: max-w-mass misst in ch der eigenen Schrift; mit text-fs-4 am selben Element stand der
-        // Absatz rund 300 px breiter als die Zeilen darunter (Browserprüfung E4-W0, E-065). So fluchten beide Kanten.
-        <div className={satzMass(satz)}>
-          <div className="space-y-4 font-text text-fs-4 text-pretty text-tinte">
-            {inhalt.absaetze.map((a) => (
+      {absaetze.length > 0 && (
+        // Vorspann: das Lesemaß in ch der eigenen Stufe fs-4 (rund 790 px), so füllt er den Block auf der Achse. Mittig erst ab
+        // der Teilung (lg, Block über zwei Drittel): schmaler stünde ein mittiger Vorspann in vier bis zehn Zeilen (m390, mit 200 %
+        // Schrift), dort bleibt er linksbündig wie bisher. Mittig gesetzt tritt die Abschnittsmarke daneben zurück (höchstens eine
+        // Pause „ganz“ je Abschnitt; die Lage hat sonst keine)
+        <Satzblock satz="achse">
+          <div data-kopf-pause={mittig ? 'ganz' : undefined} className={clsx('mx-auto max-w-mass space-y-4 font-text text-fs-4 text-pretty text-tinte', mittig ? 'lg:@lg:text-center' : 'lg:@lg:mx-0')}>
+            {absaetze.map((a) => (
               <p key={a}>
                 <Textmarken text={a} />
               </p>
             ))}
           </div>
-        </div>
+        </Satzblock>
       )}
-      {fliesen.length > 0 && <LageFliesen fliesen={fliesen} className={clsx(inhalt.absaetze?.length && 'mt-12')} />}
-      {inhalt.wege && inhalt.wege.length > 0 && (
-        <Bereichszeilen bereiche={inhalt.wege} className={clsx(satzMass(satz), (inhalt.absaetze?.length || fliesen.length) && 'mt-12')} />
-      )}
-      {zusatz && <div className={clsx(satzMass(satz), (inhalt.absaetze?.length || fliesen.length || inhalt.wege?.length) && 'mt-12')}>{zusatz}</div>}
+      {fliesen.length > 0 && <LageFliesen fliesen={fliesen} className={clsx(absaetze.length && 'mt-12')} />}
+      {wege.length > 0 &&
+        (wegeVoll ? (
+          <Bereichszeilen bereiche={wege} spalten className={clsx((absaetze.length || fliesen.length) && 'mt-12')} />
+        ) : (
+          <Satzblock satz="achse" className={clsx((absaetze.length || fliesen.length) && 'mt-12')}>
+            <Bereichszeilen bereiche={wege} className={satzBlock('achse')} />
+          </Satzblock>
+        ))}
+      {/* Zusatz (Einzugsband der Ortsseiten) im Block auf der Achse, unter lg im Lesemaß wie bisher; breit nur mit zusatzBreit */}
+      {zusatz &&
+        (zusatzBreit ? (
+          <div className={clsx((absaetze.length || fliesen.length || wege.length) && 'mt-12')}>{zusatz}</div>
+        ) : (
+          <Satzblock satz="achse" className={clsx((absaetze.length || fliesen.length || wege.length) && 'mt-12')}>
+            <div className={satzMass('achse')}>{zusatz}</div>
+          </Satzblock>
+        ))}
     </Abschnitt>
   );
 }

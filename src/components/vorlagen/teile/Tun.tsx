@@ -12,24 +12,27 @@
 // Nr. 6).
 // Folge im Abschnitt (UM-E4-SICHT-FIX M-B7): Mit `momentZuerst` steht der große Moment direkt nach Kopf und Satz, Bereiche,
 // Punkte und Absatz danach (nur Seiten aus K-009). Fachtext (`absatzMehr`, M-B4) steht am Ende im Aufklapper „Mehr
-// erfahren“ statt mitten in der Erzählung.
+// erfahren“ statt mitten in der Erzählung; mit `punkteMehr` (UM-E4-SICHT-FIX-2 M2-A6) wandern auch die Punkte dorthin, vor den
+// Fachtext: genau ein Aufklapper je Abschnitt, der Absatz bleibt offen.
 // Listen an der Fuge (UM-E4-SICHT-FIX M-B2): Aussagen stehen als nummerierte Liste mit Mono-Nummer wie im Qualitätsversprechen,
 // getrennt durch 1-px-Fugen, ohne Außenrahmen und ohne Kasten je Punkt (vorher Plus-Kästen, die wie ein Akkordeon aussahen,
 // Sicht Anlauf 1: das Fugenkreuz bleibt Abschnittskanten und echten Aufklappern vorbehalten). Bereichszeilen nennen ihren Namen
 // im Textschnitt (fs-4 halbfett) statt in der Anzeigeschrift: Sie sind Wege, keine Überschriften.
-// Satzspiegel (UM-E4-SICHT-FIX M-B1): Zeilen, Punkte und Absatz stehen rechts (Spalten 2 bis 3). Steht ein großer Moment im
-// Abschnitt, steht der Abschnitt breit und Zeilen, Punkte und Absatz auf der Kante des Moments und der Einleitung, im mittigen
-// Lesemaß (Prüfung SF-B2: rechts daneben lagen zwei Kanten 100 px auseinander in einer Bildschirmhöhe, V-16); `satz` im Inhalt
-// überschreibt das, sobald der Moment selbst die volle Breite trägt (M-C9), und nimmt die lange Einleitung mit (Prüfung SF-C3:
-// sonst stand sie mittig, Zeilen und Punkte rechts, der Moment breit, drei linke Kanten in einer Bildschirmhöhe). Folgt der
-// Aufklapper „Mehr erfahren“ direkt auf die Punkte, ist die letzte Fuge der Liste seine obere Kante (vorher zwei Linien 33 px
-// übereinander). Die Leistungsreihe der Startseite setzt ihren Versatz selbst (M-B8), der Abschnitt bleibt mittig.
-// Serverkomponente.
+// Satzspiegel v2 (UM-E4-SICHT-FIX-2 M2-A1, K-003 „Fläche“; vorher rechts in den Spalten 2 bis 3, M-B1): Punkte, Absatz und
+// Aufklapper stehen im Block auf der Kopfachse (`achse`, zwei Drittel ab lg), die lange Einleitung im selben Block darüber; alle
+// an der linken Kante des Blocks im Lesemaß der Stufe fs-3, Fugen und Text enden an einer Kante (`satzBlock`, Nacharbeit SF2-A1).
+// Punkte sind mehrsätzige Absätze und bleiben einspaltig (in zwei Spalten ohne Nummern wäre die Lesefolge unklar). Bereiche
+// (Wegzeilen) ab drei Einträgen stehen voll breit in Spalten (`satzSpalten`: ab vier zwei, bei drei drei), weniger im Block. Die
+// Zeichnung unter Kopf und Satz steht breit und mittig (höchstens max-w-5xl), ihre Unterschrift darunter im Lesemaß, ab lg
+// mittig; ein großer Moment steht breit. So wechselt die Breite im Abschnitt, alle Blöcke stehen auf der Kopfachse. `satz` im
+// Inhalt wählt ausdrücklich einen anderen Satz für die Blöcke (Standard `achse`). Folgt der Aufklapper „Mehr erfahren“ direkt auf die
+// Punkte, ist die letzte Fuge der Liste seine obere Kante (vorher zwei Linien 33 px übereinander). Die Leistungsreihe der
+// Startseite setzt ihren Versatz selbst (M-B8), der Abschnitt bleibt mittig. Serverkomponente.
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import Icon from '@/components/icons/Icon';
 import clsx from 'clsx';
-import Abschnitt, { Satzblock, satzBlock, satzMass, type Satz } from '@/components/kern/Abschnitt';
+import Abschnitt, { Satzblock, satzBlock, satzMass, satzSpalten, type Satz } from '@/components/kern/Abschnitt';
 import { langeEinleitung } from '@/components/kern/einleitung';
 import Fliesenkomposition from '@/components/kern/Fliesenkomposition';
 import { VIGNETTEN } from '@/components/kern/vignetten';
@@ -44,13 +47,19 @@ function ZeilenVignette({ name }: { name: NonNullable<Zeile['vignette']> }) {
 }
 
 /** Zeilen mit Link an der Fuge: Name im Textschnitt (fs-4 halbfett, M-B2 Nr. 2), Satz und Pfeil; vorn wahlweise eine
- *  Plan-Vignette (`vignette`, Feld 4 : 3) oder ein Verlegemuster (`motiv`), unter 20 rem Zeilenbreite ohne Zeichnung */
-export function Bereichszeilen({ bereiche, className }: { bereiche: NonNullable<TunInhalt['bereiche']>; className?: string }) {
-  return (
-    <ul className={clsx('@container border-t border-fuge', className)}>
-      {bereiche.map((b) => (
-        <li key={b.href} className="border-b border-fuge">
-          <Link href={b.href} data-motion="zustand" className="group flex min-h-16 items-center gap-4 py-4 text-tinte lg:gap-6 lg:py-6">
+ *  Plan-Vignette (`vignette`, Feld 4 : 3) oder ein Verlegemuster (`motiv`), unter 20 rem Zeilenbreite ohne Zeichnung.
+ *  `spalten` (Satzspiegel v2, M2-A1): voll breit, ab lg in Spalten nach `satzSpalten` (Liste mit Fuge oben, jede Zeile mit
+ *  eigener Fuge unten); die Zeichnung misst sich dann an der eigenen Zeile (unter 20 rem Spaltenbreite entfällt sie, gewollt).
+ *  Ab lg füllt der Link seine Zelle und steht oben darin, der Pfeil auf der Höhe des Namens: Die Zellen einer Reihe sind gleich
+ *  hoch, ihre Texte verschieden lang (Nacharbeit SF2-A1; vorher stand jeder Pfeil auf der Mitte seines eigenen Textes, in einer
+ *  Reihe bis zu 15 px versetzt; wie das Fugenfeld der Wissensseiten) */
+export function Bereichszeilen({ bereiche, className, spalten = false }: { bereiche: NonNullable<TunInhalt['bereiche']>; className?: string; spalten?: boolean }) {
+  const raster = spalten ? satzSpalten(bereiche.length) : undefined;
+  const liste = (
+    <ul className={clsx(raster ? raster.liste : '@container', 'border-t border-fuge', !raster && className)}>
+      {bereiche.map((b, i) => (
+        <li key={b.href} className={clsx('border-b border-fuge', raster && '@container', raster && i === bereiche.length - 1 && raster.letzte)}>
+          <Link href={b.href} data-motion="zustand" className={clsx('group flex min-h-16 items-center gap-4 py-4 text-tinte lg:gap-6 lg:py-6', raster && 'h-full lg:items-start')}>
             {b.vignette ? (
               // Plan-Vignette im Feld 4 : 3 wie in der Lage (M-C6 Nr. 3), unter 20rem Zeilenbreite ohne Zeichnung
               <span aria-hidden="true" className="hidden w-24 shrink-0 @xs:block lg:w-32">
@@ -75,12 +84,14 @@ export function Bereichszeilen({ bereiche, className }: { bereiche: NonNullable<
                 </span>
               )}
             </span>
-            <Icon name="pfeil-rechts" groesse={6} className="shrink-0 text-tinte-2 transition-colors dauer-1 group-hover:text-tinte" />
+            <Icon name="pfeil-rechts" groesse={6} className={clsx('shrink-0 text-tinte-2 transition-colors dauer-1 group-hover:text-tinte', raster && 'lg:mt-1')} />
           </Link>
         </li>
       ))}
     </ul>
   );
+  // die Spalten fragen die volle Breite der Hülle ab
+  return raster ? <div className={clsx('@container', className)}>{liste}</div> : liste;
 }
 
 export type Bereich = BereichFliese;
@@ -185,13 +196,15 @@ export function Bereichsfliesen({ bereiche }: { bereiche: Bereich[] }) {
  *  wie im Qualitätsversprechen; für Vorleser zählt die Liste selbst, die Ziffer ist aria-hidden), 1-px-Fugen zwischen den
  *  Punkten, ohne Rahmen und ohne Kasten. Unter 20 rem (große Systemschrift) steht die Nummer über dem Satz. Glossar-Erklärungen
  *  bleiben im Satz (Textmarken). `className` setzt Breite und Lage im Satz (z. B. `satzBlock`): Die Fugen laufen über die ganze
- *  Breite der Liste, Nummer und Satz stehen zusammen im Lesemaß der Grundschrift (max-w-mass misst in ch der eigenen Schrift,
- *  E-065), so endet der Satz an derselben rechten Kante wie ein Absatz darunter (Prüfung SF-B2). */
-export function Punktliste({ punkte, className }: { punkte: ReactNode[]; className?: string }) {
+ *  Breite der Liste, Nummer und Satz stehen zusammen im Lesemaß der Schrift der Liste (max-w-mass misst in ch der eigenen Schrift,
+ *  E-065; Grundschrift, auf der Achse ab lg fs-3 über `satzBlock('achse')`, dann füllt der Satz die Liste), so endet der Satz an
+ *  derselben rechten Kante wie ein Absatz darunter (Prüfung SF-B2, Nacharbeit SF2-A1). `schluss={false}`: ohne Fuge
+ *  unter dem letzten Punkt, wenn die Liste am Ende eines Aufklappers steht, dessen untere Kante die Fuge trägt (M2-A6). */
+export function Punktliste({ punkte, className, schluss = true }: { punkte: ReactNode[]; className?: string; schluss?: boolean }) {
   return (
     <ol className={clsx('@container', className)}>
       {punkte.map((p, i) => (
-        <li key={i} className="border-t border-fuge py-4 last:border-b @xs:py-6">
+        <li key={i} className={clsx('border-t border-fuge py-4 @xs:py-6', schluss && 'last:border-b')}>
           <div className="flex max-w-mass flex-col gap-1 @xs:flex-row @xs:items-baseline @xs:gap-6">
             <span aria-hidden="true" className="w-8 shrink-0 font-mono text-fs-2 text-tinte-2">
               {String(i + 1).padStart(2, '0')}
@@ -235,16 +248,20 @@ function Leistungsreihe({ leistungen }: { leistungen: Verweis[] }) {
 
 /** Zeichnung unter Kopf und Satz mit Bildunterschrift (UM-E4-SICHT-FIX M-C9, /bad/badsanierung „Wanne raus, Dusche ohne
  *  Stufe“; Sicht Anlauf 1: der Abschnitt erzählte das Kernthema der Seite nur mit Textkästen): der Erklärmoment des Abschnitts
- *  vor der Liste, im Feld auf Fliese wie die großen Momente (gefaelle-dusche), so breit wie die Liste darunter (`className`, im
- *  Satz `satzBlock`), die Unterschrift im Lesemaß. Die Zeichnung ist dekorativ, die Unterschrift sagt, was sie zeigt. */
-function Zeichnung({ vignette, unterschrift, className }: NonNullable<TunInhalt['unterKopf']> & { className?: string }) {
+ *  vor der Liste, im Feld auf Fliese wie die großen Momente (gefaelle-dusche). Satzspiegel v2 (M2-A1 Nr. 3): breit und mittig,
+ *  höchstens max-w-5xl (d1440 rund 1024 px statt 811 px im Block rechts), die Unterschrift darunter im Lesemaß, ab lg mittig
+ *  (unter lg linksbündig wie die Einleitung und die Punkte darüber und darunter, Nacharbeit SF2-A1); neben ihr
+ *  tritt die Abschnittsmarke zurück (data-kopf-pause="ganz": nie neben mittigem Text; höchstens eine Pause „ganz“ je Abschnitt,
+ *  kein großer Moment in „Was wir tun“ trägt mit dieser Zeichnung zusammen eine eigene). Die Zeichnung ist dekorativ, die
+ *  Unterschrift sagt, was sie zeigt. */
+function Zeichnung({ vignette, unterschrift }: NonNullable<TunInhalt['unterKopf']>) {
   const Vignette = VIGNETTEN[vignette];
   return (
-    <figure className={clsx('text-tinte', className)}>
+    <figure className="mx-auto max-w-5xl text-tinte">
       <div className="border border-fuge bg-fliese p-4 lg:p-6">
         <Vignette />
       </div>
-      <figcaption className="mt-4 max-w-mass">
+      <figcaption data-kopf-pause="ganz" className="mx-auto mt-4 max-w-mass lg:text-center">
         <p className="font-text text-fs-3 text-pretty text-tinte-2">
           <Textmarken text={unterschrift} />
         </p>
@@ -255,33 +272,50 @@ function Zeichnung({ vignette, unterschrift, className }: NonNullable<TunInhalt[
 
 export default function Tun({ inhalt, moment }: { inhalt: TunInhalt; moment?: ReactNode }) {
   const zuerst = Boolean(inhalt.momentZuerst && moment);
-  const hatFolge = Boolean(inhalt.bereiche?.length || inhalt.bereichsfliesen?.length || inhalt.leistungen?.length || inhalt.punkte?.length || inhalt.absatz || inhalt.unterKopf);
-  // Satz der Zeilen, Punkte und Absätze (M-B1): Standard rechts (Spalten 2 bis 3); mit der Leistungsreihe der Startseite bleibt
-  // der Abschnitt mittig (die Reihe setzt ihren Versatz selbst, M-B8). Mit großem Moment steht der Abschnitt breit (Moment in voller Rasterbreite, die Einleitung mittig darüber),
-  // die übrigen Teile in einem eigenen Satzblock, ohne Angabe im Inhalt mittig auf der Kante des Moments (V-16); ohne Moment
-  // setzt der Abschnitt selbst den Satz.
-  const nurLeistungen = Boolean(inhalt.leistungen?.length) && !inhalt.bereiche?.length && !inhalt.bereichsfliesen?.length && !inhalt.punkte?.length && !inhalt.absatz;
-  const satz: Satz = nurLeistungen ? 'mitte' : (inhalt.satz ?? (moment ? 'mitte' : 'rechts'));
-  const imSatz = (teil: ReactNode, className?: string) => (moment ? <Satzblock satz={satz} className={className}>{teil}</Satzblock> : <div className={className}>{teil}</div>);
-  // Aufklapper direkt nach den Punkten (kein Absatz, kein Moment dazwischen): Die letzte Fuge der Liste ist seine obere Kante
-  const nachListe = Boolean(inhalt.punkte?.length) && !inhalt.absatz && !(moment && !zuerst);
+  const bereiche = inhalt.bereiche ?? [];
+  const punkte = inhalt.punkte ?? [];
+  // Punkte im Aufklapper (M2-A6): nur die Punkte wandern, sie teilen den einen Aufklapper „Mehr erfahren“ mit dem Fachtext
+  const punkteZu = Boolean(inhalt.punkteMehr) && punkte.length > 0;
+  const punkteOffen = punkte.length > 0 && !punkteZu;
+  const hatFolge = Boolean(bereiche.length || inhalt.bereichsfliesen?.length || inhalt.leistungen?.length || punkteOffen || inhalt.absatz || inhalt.unterKopf);
+  // Satz der Blöcke (Satzspiegel v2, M2-A1): Standard `achse`; mit der Leistungsreihe der Startseite bleibt der Abschnitt mittig
+  // (die Reihe setzt ihren Versatz selbst, M-B8; `/` unverändert). Der Abschnitt selbst steht breit, jeder Block trägt seinen
+  // Satz: Zeichnung und großer Moment breit, Bereiche ab drei voll breit in Spalten, Punkte, Absatz und Aufklapper im Satz.
+  const nurLeistungen = Boolean(inhalt.leistungen?.length) && !bereiche.length && !inhalt.bereichsfliesen?.length && !punkte.length && !inhalt.absatz;
+  const satz: Satz = nurLeistungen ? 'mitte' : (inhalt.satz ?? 'achse');
+  const achse = satz === 'achse';
+  // Block im Satz: `achse`, `links`, `rechts` mit eigener Hülle (Container-Abfrage auf der vollen Breite), `mitte` ohne
+  const imSatz = (teil: ReactNode, className?: string) => <Satzblock satz={satz} className={className}>{teil}</Satzblock>;
+  const bereicheVoll = achse && bereiche.length >= 3;
+  // Aufklapper direkt nach den offenen Punkten (kein Absatz, kein Moment dazwischen): Die letzte Fuge der Liste ist seine obere Kante
+  const nachListe = punkteOffen && !inhalt.absatz && !(moment && !zuerst);
+  const vorPunkten = Boolean(bereiche.length || inhalt.unterKopf);
+  // Abstand des Absatzes: nach den offenen Punkten 8, nach Bereichen oder Zeichnung 16 (EV-9), nach Bereichsfliesen oder der
+  // Leistungsreihe wie bisher 8; als erstes Element ohne
+  const vorAbsatz = punkteOffen ? 'mt-8' : vorPunkten ? 'mt-16' : inhalt.bereichsfliesen?.length || inhalt.leistungen?.length ? 'mt-8' : undefined;
   const folge = (
     <>
-      {inhalt.unterKopf && <Zeichnung {...inhalt.unterKopf} className={satzBlock(satz)} />}
-      {inhalt.bereiche && inhalt.bereiche.length > 0 && <Bereichszeilen bereiche={inhalt.bereiche} className={clsx(satzBlock(satz), inhalt.unterKopf && 'mt-16')} />}
+      {inhalt.unterKopf && <Zeichnung {...inhalt.unterKopf} />}
+      {bereiche.length > 0 &&
+        (bereicheVoll ? (
+          <Bereichszeilen bereiche={bereiche} spalten className={clsx(inhalt.unterKopf && 'mt-16')} />
+        ) : (
+          imSatz(<Bereichszeilen bereiche={bereiche} className={satzBlock(satz)} />, clsx(inhalt.unterKopf && 'mt-16'))
+        ))}
       {inhalt.bereichsfliesen && inhalt.bereichsfliesen.length > 0 && <Bereichsfliesen bereiche={inhalt.bereichsfliesen} />}
       {inhalt.leistungen && inhalt.leistungen.length > 0 && <Leistungsreihe leistungen={inhalt.leistungen} />}
-      {inhalt.punkte && inhalt.punkte.length > 0 && (
-        <Punktliste punkte={inhalt.punkte.map((p) => <Textmarken key={p} text={p} fugen />)} className={clsx(satzBlock(satz), (inhalt.bereiche?.length || inhalt.unterKopf) && 'mt-16')} />
-      )}
-      {inhalt.absatz && (
-        // Satzspiegel in der Grundschrift, damit der Absatz mit der Liste darüber fluchtet (max-w-mass misst in ch, E-065)
-        <div className={clsx(satzMass(satz), 'mt-8')}>
-          <p className="font-text text-fs-3 text-pretty text-tinte">
-            <Textmarken text={inhalt.absatz} />
-          </p>
-        </div>
-      )}
+      {punkteOffen && imSatz(<Punktliste punkte={punkte.map((p) => <Textmarken key={p} text={p} fugen />)} className={satzBlock(satz)} />, clsx(vorPunkten && 'mt-16'))}
+      {inhalt.absatz &&
+        imSatz(
+          // Satzspiegel in der Grundschrift, damit der Absatz mit der Liste darüber fluchtet (max-w-mass misst in ch, E-065); auf
+          // der Achse trägt der Absatz das Lesemaß selbst (der Block ist die Breite)
+          <div className={satzMass(satz)}>
+            <p className={clsx('font-text text-fs-3 text-pretty text-tinte', achse && 'max-w-mass')}>
+              <Textmarken text={inhalt.absatz} />
+            </p>
+          </div>,
+          vorAbsatz,
+        )}
     </>
   );
   return (
@@ -291,9 +325,9 @@ export default function Tun({ inhalt, moment }: { inhalt: TunInhalt; moment?: Re
       leitachse
       spaet
       mitte={!inhalt.anDerLinie}
-      satz={moment ? 'breit' : satz}
-      // mit Moment und eigenem Satz im Inhalt steht die lange Einleitung mit Zeilen und Punkten im Satzblock (M-C9)
-      einleitungSatz={moment && inhalt.satz ? satz : undefined}
+      satz={nurLeistungen ? 'mitte' : 'breit'}
+      // die lange Einleitung steht im Satz der Blöcke über dem Inhalt (auf der Achse im Block, M2-A1; M-C9)
+      einleitungSatz={nurLeistungen ? undefined : satz}
       titel={inhalt.titel}
       einleitung={inhalt.einleitung ? <p><Textmarken text={inhalt.einleitung} /></p> : undefined}
       einleitungLang={langeEinleitung(inhalt.einleitung)}
@@ -304,25 +338,30 @@ export default function Tun({ inhalt, moment }: { inhalt: TunInhalt; moment?: Re
       {zuerst ? (
         <>
           <div>{moment}</div>
-          {hatFolge && imSatz(folge, 'mt-16')}
+          {hatFolge && <div className="mt-16">{folge}</div>}
         </>
       ) : (
         <>
-          {moment ? <Satzblock satz={satz}>{folge}</Satzblock> : folge}
+          {hatFolge && (nurLeistungen ? folge : <div>{folge}</div>)}
+          {/* wie bisher auch ohne Folge eine Stufe 16 über dem Moment (z. B. /leistungen: nur Einleitung und Moment) */}
           {moment && <div className="mt-16">{moment}</div>}
         </>
       )}
-      {inhalt.absatzMehr &&
+      {(punkteZu || inhalt.absatzMehr) &&
         imSatz(
           <Aufklapper zeile="Mehr erfahren" className={clsx(satzBlock(satz), nachListe ? 'border-b border-fuge' : 'border-y border-fuge')}>
-            {/* Lesemaß in der Grundschrift (E-065), wie der Absatz und die Liste darüber */}
-            <div className="max-w-mass pb-6">
-              <p className="font-text text-fs-3 text-pretty text-tinte">
-                <Textmarken text={inhalt.absatzMehr} />
-              </p>
-            </div>
+            {/* Punkte (M2-A6): die Fuge unter dem letzten Punkt trägt sonst die untere Kante des Aufklappers */}
+            {punkteZu && <Punktliste punkte={punkte.map((p) => <Textmarken key={p} text={p} fugen />)} schluss={Boolean(inhalt.absatzMehr)} />}
+            {inhalt.absatzMehr && (
+              // Lesemaß in der Grundschrift (E-065), wie der Absatz und die Liste darüber
+              <div className={clsx('max-w-mass pb-6', punkteZu && 'pt-6')}>
+                <p className="font-text text-fs-3 text-pretty text-tinte">
+                  <Textmarken text={inhalt.absatzMehr} />
+                </p>
+              </div>
+            )}
           </Aufklapper>,
-          nachListe ? undefined : 'mt-8',
+          nachListe ? undefined : clsx((hatFolge || moment) && 'mt-8'),
         )}
     </Abschnitt>
   );

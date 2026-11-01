@@ -45,10 +45,11 @@ export default function GefaelleDusche({ breit = false }: { breit?: boolean }) {
       </div>
       <figcaption className={clsx('mt-4', !breit && 'font-text text-fs-3 text-pretty text-tinte-2')}>
         {breit ? (
-          // Lesemaß in der Grundschrift (max-w-mass misst in ch, E-065), wie die Liste danach
-          <Satzblock satz="rechts">
-            <div className={satzMass('rechts')}>
-              <p className="font-text text-fs-3 text-pretty text-tinte-2">Das Wasser läuft von selbst zum Ablauf.</p>
+          // im Block auf der Kopfachse wie Einleitung und Punkte (Satzspiegel v2, UM-E4-SICHT-FIX-2 M2-A1 Nr. 5), das Lesemaß in
+          // ch der eigenen Stufe am Satz selbst (max-w-mass, E-065; der Block ist ab lg die Breite)
+          <Satzblock satz="achse">
+            <div className={satzMass('achse')}>
+              <p className="max-w-mass font-text text-fs-3 text-pretty text-tinte-2">Das Wasser läuft von selbst zum Ablauf.</p>
             </div>
           </Satzblock>
         ) : (

@@ -1,15 +1,19 @@
 // Abschnitt (KERN K-006, K-009): Kopf mit Mono-Etikett (vormals Badge, Wortlaut bleibt) und H2,
 // wahlweise gestapelt oder seitlich (Kopf links, Inhalt rechts). Flächen: Kalk, Fliese, Tinte.
-// Satzspiegel (UM-E4-SICHT-FIX M-B1, K-003 Nr. 4 „je Bildschirmhöhe genau ein Versatz“): Der Kopf bleibt mittig (Ruhe-Regel,
-// E-047), der Inhalt steht nach `satz` im Raster aus drei Spalten: `links` Spalten 1 bis 2 an der Laserlinie (geteilt 16 px am
-// Lot, M-A4 Nr. 4), `rechts` Spalten 2 bis 3, `breit` die volle Rasterbreite, `mitte` wie bisher mittig in der Lesebreite.
-// Geteilt wird ab lg und nur, solange der Inhaltsblock mindestens 20 rem breit bleibt (Container-Abfrage @lg = 32 rem auf der
-// Inhaltsbreite: zwei Drittel davon sind 21,3 rem; bei großer Systemschrift sonst eine Spalte). Die Hülle `abschnitt-inhalt`
-// mit der Leitfaden-Bahn bleibt volle Breite, Marke und Kopf-Pausen wandern nicht mit. Eine lange Einleitung (über
-// EINLEITUNG_LANG Zeichen, kern/einleitung) steht linksbündig: mittig gesetzt im Lesemaß unter dem Kopf, geteilt im
-// Inhaltsblock über dem Inhalt (außerhalb der Bahn: die Marke steht nie neben Kopf und Satz), breit im Lesemaß unter dem Kopf
-// wie mittig. Die Schwelle rechnen die Aufrufer (Serverkomponenten) aus; Abschnitt selbst bekommt nur `einleitungLang` und
-// zieht so weder Textmarken noch Glossar in die Client-Bündel der Seiten, die ihn als Client-Komponente nutzen (Prüfung SF-B2).
+// Satzspiegel v2 (UM-E4-SICHT-FIX-2 M2-A1, K-003 Ruhe-Regel „Fläche“, E-113 Nr. 3): Der Kopf bleibt mittig (Ruhe-Regel, E-047),
+// der Inhalt steht auf der Kopfachse. `achse` ist ein mittiger Block über zwei Drittel der Inhaltsbreite (ab lg und ab 32 rem
+// Inhaltsbreite, Container-Abfrage @lg: zwei Drittel sind dann mindestens 21,3 rem; darunter wie `mitte`); Text darin steht an
+// seiner linken Kante und trägt das Lesemaß am eigenen Element, Zeilen an der Fuge im Block dasselbe Maß (`satzBlock`), so enden
+// Fugen und Text an einer Kante. Listen ab drei Einträgen stehen voll breit in Spalten
+// (`satzSpalten`), große Momente `breit`. So wechselt die Breite je Abschnitt (Bruch je Bildschirmhöhe), statt dass eine
+// schmale Säule allein in der Mitte steht. `links` (Spalten 1 bis 2 an der Laserlinie, 16 px am Lot) und `rechts` (Spalten 2
+// bis 3) aus Satzspiegel v1 (UM-E4-SICHT-FIX M-B1) bleiben nur als ausdrückliche Wahl. Die Hülle `abschnitt-inhalt` mit der
+// Leitfaden-Bahn bleibt volle Breite, Marke und Kopf-Pausen wandern nicht mit (die Marke steht auf dem Lot, nie im Block).
+// Eine lange Einleitung (über EINLEITUNG_LANG Zeichen, kern/einleitung) steht linksbündig: mittig gesetzt im Lesemaß unter dem
+// Kopf, geteilt (`achse`, `links`, `rechts`) im Inhaltsblock über dem Inhalt (außerhalb der Bahn: die Marke steht nie neben
+// Kopf und Satz), breit im Lesemaß unter dem Kopf wie mittig; eine kurze steht immer mittig unter dem Kopf. Die Schwelle
+// rechnen die Aufrufer (Serverkomponenten) aus; Abschnitt selbst bekommt nur `einleitungLang` und zieht so weder Textmarken
+// noch Glossar in die Client-Bündel der Seiten, die ihn als Client-Komponente nutzen (Prüfung SF-B2).
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import Fugenkreuz from './Fugenkreuz';
@@ -17,9 +21,13 @@ import { ACHSE_LAGE, ACHSE_VOR_SATZ, KREUZ_GROESSE } from './Leitachse';
 import { etikettForm, seitenKlassen } from './stile';
 import type { Formelteil } from './Seitenformel';
 
-/** Satzspiegel eines Abschnitts oder Blocks (M-B1): `mitte` (Standard, mittig in der Lesebreite), `links` (Spalten 1 bis 2 an
- *  der Laserlinie), `rechts` (Spalten 2 bis 3), `breit` (volle Rasterbreite, große Momente) */
-export type Satz = 'mitte' | 'links' | 'rechts' | 'breit';
+/** Satzspiegel eines Abschnitts oder Blocks: `mitte` (Standard, mittig in der Lesebreite), `achse` (Satzspiegel v2, M2-A1:
+ *  mittiger Block über zwei Drittel ab lg, darunter wie `mitte`), `breit` (volle Rasterbreite, große Momente und Listen in
+ *  Spalten); aus v1 (M-B1) als ausdrückliche Wahl `links` (Spalten 1 bis 2 an der Laserlinie) und `rechts` (Spalten 2 bis 3) */
+export type Satz = 'mitte' | 'achse' | 'links' | 'rechts' | 'breit';
+
+/** Satz mit eigener Hülle im Raster (Container-Abfrage auf der vollen Inhaltsbreite): `achse`, `links`, `rechts` */
+const geteilterSatz = (satz: Satz) => satz === 'achse' || satz === 'links' || satz === 'rechts';
 
 // Spalten im Raster aus drei Spalten, ab lg und ab 32 rem Inhaltsbreite (zwei Drittel ≥ 20 rem); darunter eine Spalte
 const SPALTE: Record<'links' | 'rechts', string> = {
@@ -27,10 +35,17 @@ const SPALTE: Record<'links' | 'rechts', string> = {
   rechts: 'lg:@lg:col-span-2 lg:@lg:col-start-2',
 };
 
-/** Block im Satzspiegel (M-B1): `links` und `rechts` als Spalten im Raster aus drei Spalten (eigene Container-Abfrage auf der
- *  Breite des Blocks), `mitte` und `breit` unverändert (ohne Hülle, außer mit `className`). Für Bausteine mit Teilen in
- *  verschiedenem Satz, z. B. „Was wir tun“: großer Moment breit, Zeilen und Punkte rechts. */
+/** Block im Satzspiegel: `achse` als mittiger Block über zwei Drittel (M2-A1), `links` und `rechts` als Spalten im Raster aus
+ *  drei Spalten (M-B1); je eine eigene Container-Abfrage auf der Breite der Hülle. `mitte` und `breit` unverändert (ohne Hülle,
+ *  außer mit `className`). Für Bausteine mit Teilen in verschiedenem Satz, z. B. „Was wir tun“: Liste voll breit in zwei
+ *  Spalten, Punkte und Absatz auf der Achse, großer Moment breit. */
 export function Satzblock({ satz, className, children }: { satz: Satz; className?: string; children: ReactNode }) {
+  if (satz === 'achse')
+    return (
+      <div className={clsx('@container', className)}>
+        <div className="mx-auto lg:@lg:w-2/3">{children}</div>
+      </div>
+    );
   if (satz !== 'links' && satz !== 'rechts') return className ? <div className={className}>{children}</div> : <>{children}</>;
   return (
     <div className={clsx('@container', className)}>
@@ -41,20 +56,40 @@ export function Satzblock({ satz, className, children }: { satz: Satz; className
   );
 }
 
-/** Lesebreite eines Textblocks im Satz: mittig (mitte, breit, und ungeteilt auch links und rechts, wie die Nachbarabschnitte);
- *  ab der Teilung links an der Inhaltskante (16 px am Lot), rechts an der Kante der zweiten Spalte. Die Container-Abfrage greift
- *  auf den Satzblock darüber. Zwischen md und lg (t768, q844) stand die Lage mit `md:mx-0` allein am linken Rand, alle
- *  Nachbarn mittig (Prüfung SF-B2): Der Versatz gilt erst, wo das Raster geteilt ist. */
+/** Lesebreite eines Textblocks im Satz: mittig (mitte, breit, und ungeteilt auch achse, links und rechts, wie die
+ *  Nachbarabschnitte); ab der Teilung links an der Inhaltskante (16 px am Lot), rechts an der Kante der zweiten Spalte. Die
+ *  Container-Abfrage greift auf den Satzblock darüber. Zwischen md und lg (t768, q844) stand die Lage mit `md:mx-0` allein am
+ *  linken Rand, alle Nachbarn mittig (Prüfung SF-B2): Der Versatz gilt erst, wo das Raster geteilt ist.
+ *  `achse` (M2-A1): ab der Teilung ist der Block selbst die Breite, der Text steht an seiner linken Kante und trägt das Lesemaß
+ *  am eigenen Element (`max-w-mass` in ch der eigenen Schrift; in der Grundschrift blieben vom Zwei-Drittel-Block rund 200 px
+ *  rechts leer, und der Text stünde links neben der Kopfachse). */
 export function satzMass(satz: Satz) {
+  if (satz === 'achse') return 'mx-auto max-w-mass lg:@lg:mx-0 lg:@lg:max-w-none';
   if (satz === 'links' || satz === 'rechts') return 'mx-auto max-w-mass lg:@lg:mx-0';
   return 'mx-auto max-w-mass';
 }
 
 /** Breite eines Blocks mit Zeilen an der Fuge (Listen, Zeile eines Aufklappers) im Satz: wie `satzMass`, geteilt aber über die
- *  ganze Spalte (die Zeilen tragen den Versatz bis an die Kante; der Satz darin bleibt im Lesemaß) */
+ *  ganze Spalte (die Zeilen tragen den Versatz bis an die Kante; der Satz darin bleibt im Lesemaß). `achse` (M2-A1, Nacharbeit
+ *  SF2-A1): ab der Teilung im Lesemaß der Stufe fs-3 (66ch dieser Stufe, d1440 rund 719 px, wie Einleitung und Absatz, die das
+ *  Maß am eigenen Element tragen), an der linken Kante des Blocks: Fugen und Text enden an einer Kante (vorher liefen die Fugen
+ *  über den ganzen Block, der Satz endete rund 260 px davor, der Absatz dazwischen). Die Stufe setzt nur die Breite: Was im
+ *  Block Text trägt, setzt seine Stufe selbst. */
 export function satzBlock(satz: Satz) {
-  if (satz === 'links' || satz === 'rechts') return 'mx-auto max-w-mass lg:@lg:mx-0 lg:@lg:max-w-none';
+  if (satz === 'achse') return 'mx-auto max-w-mass lg:@lg:mx-0 lg:@lg:text-fs-3';
+  if (geteilterSatz(satz)) return 'mx-auto max-w-mass lg:@lg:mx-0 lg:@lg:max-w-none';
   return 'mx-auto max-w-mass';
+}
+
+/** Spalten einer Liste voll breit (Satzspiegel v2, M2-A1; K-003 „Fläche“: zwei Spalten derselben Liste sind ein Strang): ab lg
+ *  und 32 rem Breite der Hülle (Container-Abfrage, die Hülle trägt `@container`) zwei Spalten mit Fuge 12 ab vier Einträgen,
+ *  drei bei genau drei, darunter (und bei großer Systemschrift) eine Spalte. Zeilenweise: DOM-Folge = Lesefolge. Bei ungerader
+ *  Zahl in zwei Spalten füllt der letzte Eintrag beide Spalten (keine leere Zelle, keine hängende Fuge). `liste` an die Liste,
+ *  `letzte` an den letzten Eintrag. */
+export function satzSpalten(n: number): { liste: string; letzte?: string } {
+  if (n >= 4) return { liste: 'grid lg:@lg:grid-cols-2 lg:@lg:gap-x-12', letzte: n % 2 === 1 ? 'lg:@lg:col-span-2' : undefined };
+  if (n === 3) return { liste: 'grid lg:@lg:grid-cols-3 lg:@lg:gap-x-12' };
+  return { liste: 'grid' };
 }
 
 export interface AbschnittProps {
@@ -69,11 +104,13 @@ export interface AbschnittProps {
   /** Einleitung über EINLEITUNG_LANG Zeichen (`langeEinleitung(text)` aus kern/einleitung): steht linksbündig statt mittig (M-B1 Nr. 3); mittig und
    *  breit im Lesemaß unter dem Kopf, links und rechts im Inhaltsblock */
   einleitungLang?: boolean;
-  /** Satzspiegel des Inhalts (M-B1), Standard `mitte`; nur gestapelt */
+  /** Satzspiegel des Inhalts (M-B1, v2 M2-A1), Standard `mitte`; nur gestapelt. `achse`, `links` und `rechts` hüllen den ganzen
+   *  Inhalt in einen Satzblock */
   satz?: Satz;
-  /** Satz der langen Einleitung, wenn er vom Inhalt abweicht (nur gestapelt; Standard: `satz`). „Was wir tun“ mit großem Moment in
-   *  voller Breite (`satz` breit) und Zeilen und Punkten rechts (`tun.satz`, UM-E4-SICHT-FIX M-C9): Die Einleitung steht mit
-   *  ihnen im Satzblock rechts statt mittig im Lesemaß (Prüfung SF-C3: sonst drei linke Kanten in einer Bildschirmhöhe) */
+  /** Satz der langen Einleitung, wenn er vom Inhalt abweicht (nur gestapelt; Standard: `satz`). Bausteine mit Teilen in
+   *  verschiedenem Satz (Lage, „Was wir tun“, Wissensblock: Liste voll breit, Absätze und Punkte auf der Achse, M2-A1) setzen
+   *  `satz` breit und die Einleitung `achse`: Sie steht dann im Block auf der Achse über dem Inhalt (Prüfung SF-C3: sonst
+   *  mehrere linke Kanten in einer Bildschirmhöhe) */
   einleitungSatz?: Satz;
   /** nur mit kopf="seitlich": Block unter dem Kopf (ab lg in der Kopfspalte direkt unter der Einleitung, mobil nach dem
    *  Inhalt), z. B. Anruf neben einem Formular, das mobil direkt auf die Überschrift folgen soll */
@@ -103,14 +140,15 @@ export interface AbschnittProps {
 export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleitung, einleitungLang = false, satz = 'mitte', einleitungSatz, unterKopf, art = 'erzaehl', flaeche = 'kalk', kopf = 'gestapelt', mitte = false, breite = 'seite', auftritt = false, leitachse = false, spaet = false, ziel = false, formel, className, children, ...rest }: AbschnittProps) {
   const hId = titelId ?? (id ? `${id}-titel` : undefined);
   const tinte = flaeche === 'tinte';
-  // Satzspiegel (M-B1): geteilt nur gestapelt; die lange Einleitung wandert dann in den Inhaltsblock (über der Bahn), mit
-  // `einleitungSatz` in dessen Satz (M-C9)
-  const geteilt = kopf !== 'seitlich' && (satz === 'links' || satz === 'rechts');
+  // Satzspiegel (M-B1, v2 M2-A1): geteilt nur gestapelt; die lange Einleitung wandert dann in den Inhaltsblock (über der Bahn),
+  // mit `einleitungSatz` in dessen Satz (M-C9)
+  const geteilt = kopf !== 'seitlich' && geteilterSatz(satz);
   const satzEinleitung = einleitungSatz ?? satz;
-  const einleitungGeteilt = kopf !== 'seitlich' && (satzEinleitung === 'links' || satzEinleitung === 'rechts');
+  const einleitungGeteilt = kopf !== 'seitlich' && geteilterSatz(satzEinleitung);
   const einleitungImBlock = Boolean(einleitung && einleitungLang && einleitungGeteilt);
   const einleitungBuendig = Boolean(einleitungLang && !einleitungGeteilt);
-  const einleitungKlassen = clsx('text-fs-3', tinte ? 'text-nacht-2' : 'text-tinte-2', (einleitungImBlock || einleitungBuendig) && 'text-left text-pretty');
+  // auf der Achse trägt die Einleitung das Lesemaß selbst (satzMass `achse`: der Block ist die Breite)
+  const einleitungKlassen = clsx('text-fs-3', tinte ? 'text-nacht-2' : 'text-tinte-2', (einleitungImBlock || einleitungBuendig) && 'text-left text-pretty', einleitungImBlock && satzEinleitung === 'achse' && 'max-w-mass');
   const kopfInhalt = (titel || etikett) && (
     <div className={clsx(kopf === 'seitlich' ? 'col-span-4 md:col-span-8 lg:col-span-4' : 'max-w-mass', kopf !== 'seitlich' && mitte && 'mx-auto text-center text-balance')}>
       {(etikett || nummer) && (

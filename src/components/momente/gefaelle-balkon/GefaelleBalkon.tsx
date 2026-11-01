@@ -67,10 +67,11 @@ export default function GefaelleBalkon({ className, fachwort = false, breit = fa
       </div>
       <figcaption className={clsx('mt-4', !breit && 'font-text text-fs-3')}>
         {breit ? (
-          // Lesemaß in der Grundschrift (max-w-mass misst in ch, E-065), wie die Liste danach
-          <Satzblock satz="rechts">
-            <div className={satzMass('rechts')}>
-              <div className="font-text text-fs-3">{legende}</div>
+          // im Block auf der Kopfachse wie Einleitung und Prüfliste (Satzspiegel v2, UM-E4-SICHT-FIX-2 M2-A1 Nr. 5), das Lesemaß
+          // in ch der eigenen Stufe an der Legende selbst (max-w-mass, E-065; der Block ist ab lg die Breite)
+          <Satzblock satz="achse">
+            <div className={satzMass('achse')}>
+              <div className="max-w-mass font-text text-fs-3">{legende}</div>
             </div>
           </Satzblock>
         ) : (

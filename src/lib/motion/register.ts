@@ -241,7 +241,7 @@ export const REGISTER_V4: Record<string, V4Eintrag> = {
   },
   leitachse: {
     zweck: 'orientierung',
-    was: 'Leitfaden: das rote Lot wächst mit dem Lesen; auf den Erzählseiten der Vorlage steht die Spitze bei 40 %, mit der Abschnittsmarke nur neben dem Inhalt der Abschnitte auf Kalk, und an Kanten rastet sie ins Fugenkreuz ein (UM-E3-LEIT, UM-E3-FIX2); ab md läuft das Lot ohne Lücke über Fliese und Tinte, mobil stehen statt Lot und Bewegung nur Kantenkreuze mit statischem Anrissstück, im Einstieg nur die Schnur ohne Lotstück (UM-E4-SICHT-FIX M-A4); Abschnitte mit Satz links stehen ab lg 16 px am Lot (UM-E4-SICHT-FIX M-B1, M-A4 Nr. 4); dazu der Lesefortschritt der Ratgeber',
+    was: 'Leitfaden: das rote Lot wächst mit dem Lesen; auf den Erzählseiten der Vorlage steht die Spitze bei 40 %, mit der Abschnittsmarke nur neben dem Inhalt der Abschnitte auf Kalk, und an Kanten rastet sie ins Fugenkreuz ein (UM-E3-LEIT, UM-E3-FIX2); ab md läuft das Lot ohne Lücke über Fliese und Tinte, mobil stehen statt Lot und Bewegung nur Kantenkreuze mit statischem Anrissstück, im Einstieg nur die Schnur ohne Lotstück (UM-E4-SICHT-FIX M-A4); der Inhalt steht auf der Kopfachse, die Marke bleibt auf dem Lot und tritt neben mittigem Text zurück, ausdrücklich links gesetzte Blöcke stehen ab lg 16 px am Lot (Satzspiegel v2, UM-E4-SICHT-FIX-2 M2-A1); dazu der Lesefortschritt der Ratgeber',
     stufen: { dauer: ['scroll'], kurve: ['linear'] },
     reduziert: { art: 'grundform', text: 'Grundschicht: das graue Lot steht ab md vollständig und ohne Lücke, kein Rot gezogen, keine Marke, Kantenkreuze schwarz mit statischem rotem Anrissstück (Stufe 6 nach unten; mobil ebenso, dort ohne Lot); der Lesefortschritt ist ausgeblendet' },
     notaus: 'laeuft',
