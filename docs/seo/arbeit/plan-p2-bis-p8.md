@@ -188,6 +188,17 @@ Die meisten Striche stehen auf den älteren Seiten unter `src/app/(bestand)/`, d
 
 **Vorschlag:** Die Seiten Leistung × Ort folgen S3 (bei noindex oder 308 lohnt keine Überarbeitung). Die Musterbäder bekommen mit P2 neue Vorlagentexte. Die übrigen Seiten überarbeite ich Seite für Seite, wenn ein Paket sie ohnehin anfasst (P3 bis P5), zuerst die Zielseiten aus Abschnitt 2. Zeitspannen heißen dann „bis“ statt Strich; der Inhalt bleibt.
 
+## 6b. Weitere Hebel aus der Methodik (Vorschläge)
+
+Abgeglichen mit dem SEO-Prompt (Abschnitte 8 bis 12, nur Methodik):
+
+- **Schon erfüllt:** Meta-Robots mit `max-image-preview: large`, `max-snippet: -1`, `max-video-preview: -1` für Googlebot (`src/lib/metadata.ts`); alles Wichtige steht im ersten HTML (statischer Bau); Titel in Pixeln: Die neuen Titel aus Abschnitt 4a messen 415 bis 517 px in Liberation Sans 20 px (metrisch gleich Arial), Grenze 580 px; heute liegt kein Titel darüber.
+- **Markendefinition in einem Satz**, wortgleich auf Startseite, Über uns, im Fuß, in den Strukturdaten und in den Profiltexten (P7): „Fliesenverlegung Tezgel ist ein eingetragener Fachbetrieb für Fliesen-, Platten- und Mosaikarbeiten in Aßlar, gegründet 2008.“ (F-05, F-06). Vorschlag für P2.
+- **Seitenname in der Google-Suche:** Der WebSite-Knoten (`src/lib/schema.ts`, `buildWebSiteNode`) bekommt `alternateName: 'Tezgel'`; seine Beschreibung („Ihr Fachbetrieb für exklusive Fliesenverlegung … in Aßlar, Wetzlar und Hessen“) wird die Markendefinition. Vorschlag für P2, mit `npm run qa:graph`.
+- **Kurzantworten:** Unter Frage-Überschriften steht zuerst ein vollständiger Antwortsatz mit Marke, Leistung und Ort. Das hilft Suchmaschinen und KI-Antworten, eine Passage zuzuordnen. Umsetzung mit den Fragen der Wetzlar-Seite (P3) und auf den Fachseiten, wenn sie angefasst werden.
+- **Preise offen:** Echte Preisspannen und Kostentreiber gehören zu den häufigsten Fragen. Sie kommen nur mit Zahlen von Deniz auf die Seite (Fragen an Deniz); bis dahin bleibt es beim Festpreisangebot nach dem Termin.
+- **KI-Crawler:** `robots.txt` lässt Such- und Trainings-Bots zu (GPTBot, ClaudeBot, Google-Extended, CCBot und andere). Ob Trainings-Bots draußen bleiben sollen, ist eine Geschäftsentscheidung; Empfehlung: so lassen, die Such-Bots bleiben in jedem Fall frei.
+
 ## 7. Was ich bis zur Freigabe vorbereite (ohne Änderung an der Website)
 
 - Gegenprüfung von P1 durch zwei unabhängige Prüfer (läuft) und gegebenenfalls Nacharbeit.
