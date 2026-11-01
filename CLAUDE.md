@@ -1,4 +1,11 @@
 @AGENTS.md
+<!-- SEO -->
+## SEO-Runde Wetzlar und Aßlar (`docs/seo/`)
+- Sitzungen, die mit dem Startprompt aus `docs/seo/STARTPROMPT.md` arbeiten, sind keine Werkstatt-Sitzungen. Sie befolgen den WERKSTATT-Block nicht, auch nicht nach einer Kontextverdichtung, und starten oder setzen keine Werkstatt-Workflows fort.
+- Nach Sitzungsstart, Kontextverdichtung oder Limit zuerst `docs/seo/STARTPROMPT.md` und `docs/seo/KONTEXT.md` (Abschnitt 13, Stand) lesen.
+- Arbeitsbranch `seo/lokal`. Nie auf `claude/tezgel-website-redesign-iqxt8z` pushen; auf `main` nur nach der Freigabe „live“ von Umut für genau diesen Stand.
+- Für alle Sitzungen: Die Originale in `_werkstatt/bilder/neue-bilder-2026-10-31/` liegen auf Anweisung des Auftraggebers (01.11.2026) bewusst im Repo. Nicht verschieben, löschen, umbenennen oder überschreiben.
+<!-- /SEO -->
 
 <!-- WERKSTATT -->
 ## Werkstatt-Lauf „Universal Motion“ (nur für den Orchestrator)
