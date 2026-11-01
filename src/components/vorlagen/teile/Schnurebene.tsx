@@ -5,7 +5,8 @@
 //   ohne Lücke in den Leitfaden der Seite (Grundschicht Fuge, rot gezogen bis zur Leselinie, bewegung.css „Leitfaden“).
 //   Liegt unter dem Inhalt, schneidet nie Text (data-leitachse für die Überlappungsprüfung). `stark`: mobil und bei DPR 1 zwei
 //   Pixel (schnur-linie, globals.css), sonst 1 px.
-// - Lotstueck: rotes Lot von der Schnur bis an den nächsten Block (Länge über die Klassen des Aufrufs, z. B. -bottom-8), auf
+// - Lotstueck: rotes Lot von der Schnur bis an den nächsten Block (Länge über die Klassen des Aufrufs, z. B. -bottom-8), in der
+//   Seitenformel erst ab md (darunter nur die Schnur, globals.css „Leitfaden-Ebene“, UM-E4-SICHT-FIX M-A4 Nr. 2), auf
 //   derselben Achse wie das Lot der Zierebene. Ort und Hauptknopf stehen sichtbar an der Linie.
 // - Aufhaengung: Fuge mit Fugenkreuz am Ende des Lotstücks (ab sm), an der das Foto hängt (Tinte wie an den Abschnittskanten).
 // Schnur und Lotstück stehen in jedem Zustand rot, auch ruhig, reduziert und ohne JavaScript; nur ihr Ziehen ist Bewegung

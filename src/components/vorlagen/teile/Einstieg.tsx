@@ -18,12 +18,13 @@
 // An der Schnur (`schnur`, mit `lot`, nicht kompakt; UM-E4-SICHT-FIX M-A3, Sicht E4 Anlauf 1: im Einstieg der Unterseiten
 // keine Schnur, auf /fliesen mobil eine reine Textfläche, der Vorspann zentriert über sechs bis zwölf Zeilen): dieselbe Figur
 // wie der mittige Einstieg (Schnurebene). Die Grundlinie der letzten H1-Zeile steht auf der Schnur (schnur-grundlinie, der
-// Titel steht dafür in Block-Zeilen), von der Schnur reicht das rote Lotstück bis an das Bild bzw. den Vorspann, darunter
+// Titel steht dafür in Block-Zeilen), von der Schnur reicht ab md das rote Lotstück bis an das Bild bzw. den Vorspann (unter md
+// nur die Schnur, globals.css „Leitfaden-Ebene“, UM-E4-SICHT-FIX M-A4 Nr. 2), darunter
 // übernimmt das gezogene Lot (Laserachse). Reihenfolge wie die Figur: H1, Ort, Knöpfe (Fugenstufe 12), Bewertungszeile
 // (`bewertung`), dann Bild oder Plan, dann der Vorspann; so zeigt /fliesen mobil den Plan im ersten Bild. Ein Rot im ersten
 // Bildschirm, die Schnur: Ein Plan im Bildplatz steht ohne seine rote Achse (WissensSeite, `ohneAchse`); die Ortsseiten
 // schalten die Schnur erst zusammen mit dem Einzugsband außerhalb des Einstiegs ein (M-C6), nie Schnur und rotes Band zugleich.
-// Im Eingang ziehen nur Schnur und Lotstück (data-einstieg="schnur", bewegung.css: Schnur in dauer-1); H1, Ort, Knöpfe,
+// Im Eingang ziehen nur Schnur und (ab md) Lotstück (data-einstieg="schnur", bewegung.css: Schnur in dauer-1); H1, Ort, Knöpfe,
 // Bewertung, Bild und Vorspann stehen ab dem ersten Bild.
 // Vorspann (M-A3 Nr. 4): über VORSPANN_LANG Zeichen (mobil rund drei Zeilen) linksbündig im Satzmaß, sonst mittig; in schmaler
 // Spalte (unter 20rem, große Systemschrift) immer linksbündig.
@@ -73,7 +74,7 @@ export interface EinstiegProps {
   kompakt?: boolean;
   /** eigenes Lot in Grundschicht: Der Einstieg steht in der Seitenformel vor der Leitachse (Leitfaden, UM-E4-VORL) */
   lot?: boolean;
-  /** Figur „An der Schnur“ (mit `lot`, nicht kompakt; UM-E4-SICHT-FIX M-A3): Schnur unter der H1, rotes Lotstück, Bild vor dem
+  /** Figur „An der Schnur“ (mit `lot`, nicht kompakt; UM-E4-SICHT-FIX M-A3): Schnur unter der H1, rotes Lotstück ab md, Bild vor dem
    *  Vorspann. Wissensseiten; Ortsseiten erst mit dem Einzugsband außerhalb des Einstiegs (M-C6) */
   schnur?: boolean;
   /** Bewertungszeile unter den Knöpfen (an der Schnur; Bewertungszahlen nur über die Bewertungszeile, G8) */

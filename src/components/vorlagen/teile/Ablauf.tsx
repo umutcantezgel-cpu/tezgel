@@ -89,11 +89,11 @@ export function Schritte({ schritte, start = 0, weiter = false, anriss = false, 
 
 /** Treppe mit Anriss (UM-E4-START): wie Schritte, die Linien aber als eigene Striche (treppe-lot mobil, treppe-lauf und
  *  treppe-setz ab lg) über durchsichtigen Rändern derselben Breite, damit Lage und Abstände gleich bleiben. Jeder
- *  Schritt trägt seine Nummer als --stufe für den Takt (bewegung.css „anriss“). Mobil steht die Treppe auf dem Lot; an der
- *  Satzkante (Startseite) rückt sie dorthin mit (globals.css „Lot an der Satzkante“, Klasse treppe-auf-lot). */
+ *  Schritt trägt seine Nummer als --stufe für den Takt (bewegung.css „anriss“). Mobil steht die Treppe auf dem Lot (8 px, wie
+ *  auf allen Seiten; das Lot an der Satzkante ist entfallen, UM-E4-SICHT-FIX M-A4 Nr. 2). */
 function AnrissTreppe({ schritte }: { schritte: AblaufInhalt['schritte'] }) {
   return (
-    <ol data-motion="anriss" className={clsx('treppe-auf-lot -ml-2 grid md:-ml-4 lg:ml-0', SPALTEN[schritte.length] ?? 'lg:grid-cols-3')}>
+    <ol data-motion="anriss" className={clsx('-ml-2 grid md:-ml-4 lg:ml-0', SPALTEN[schritte.length] ?? 'lg:grid-cols-3')}>
       {schritte.map((s, i) => {
         const letzter = i === schritte.length - 1;
         return (

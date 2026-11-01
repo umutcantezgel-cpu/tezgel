@@ -136,8 +136,8 @@ export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleit
     </Satzblock>
   );
   const inhalt = geteilt ? <Satzblock satz={satz}>{children}</Satzblock> : children;
-  // Kopf der Leitachse (Abschnittsmarke, UM-E3-FIX2 N1) nur dort, wo das Lot gezeichnet ist: auf Kalk (Fliese und Tinte
-  // decken es), und nur neben dem Inhalt, nie neben Kopf und Satz; seitlich stünde der Inhalt neben der H2. Nur mit eigenem
+  // Kopf der Leitachse (Abschnittsmarke, UM-E3-FIX2 N1) nur auf Kalk (ab md läuft das Lot zwar ohne Lücke auch über Fliese,
+  // UM-E4-SICHT-FIX M-A4 Nr. 1, die Marke bleibt aber auf Kalk; auf Tinte deckt es ein Stück in nacht-fuge), und nur neben dem Inhalt, nie neben Kopf und Satz; seitlich stünde der Inhalt neben der H2. Nur mit eigenem
   // Kopf: Ein Abschnitt ohne Titel und Etikett trägt einen Inhalt, der seine Überschrift selbst mitbringt (z. B. ein
   // verschachtelter Abschnitt im Werkzeug-Slot, die Firmengeschichte auf /ueber-uns); dort begänne die Bahn über dessen H2
   // (Nacharbeit UM-E3-FIX2: Kopf neben „So sind wir gewachsen.“)

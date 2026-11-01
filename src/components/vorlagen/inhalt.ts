@@ -232,8 +232,6 @@ export interface VersprechenInhalt {
 export interface ErzaehlInhalt {
   /** Adresse der Seite, z. B. `/bad` */
   pfad: string;
-  /** Leitfaden mit Präsenz (Startseite, UM-E4-START): Das Lot steht unter md auf der Satzkante (16 px) statt im Rand */
-  lotAnDerSatzkante?: boolean;
   meta: { titel: string; beschreibung: string };
   worum: WorumInhalt;
   lage: LageInhalt;
