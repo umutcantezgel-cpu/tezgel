@@ -18,10 +18,17 @@ export async function POST(req: NextRequest) {
       // Body is optional
     }
 
-    // Optional protection: if INDEXNOW_SECRET is configured, require it
+    // SEO-Runde T12 (docs/seo/KONTEXT.md, Abschnitt 5): Ohne gesetztes INDEXNOW_SECRET ist die Meldung gesperrt (403).
+    // Vorher war die Route dann für jeden offen und meldete auf Zuruf alle Adressen an IndexNow.
     const requiredSecret = process.env.INDEXNOW_SECRET;
-    if (requiredSecret && body.secret !== requiredSecret) {
-      return NextResponse.json({ error: 'Unauthorized: Invalid secret' }, { status: 401 });
+    if (!requiredSecret) {
+      return NextResponse.json(
+        { success: false, error: 'Forbidden: INDEXNOW_SECRET is not configured' },
+        { status: 403 }
+      );
+    }
+    if (body.secret !== requiredSecret) {
+      return NextResponse.json({ success: false, error: 'Unauthorized: Invalid secret' }, { status: 401 });
     }
 
     const result = await submitToIndexNow(body.urls);

@@ -21,17 +21,22 @@ export default function robots(): MetadataRoute.Robots {
     'Amazonbot',
   ];
 
+  // SEO-Runde T01 (docs/seo/KONTEXT.md, Abschnitt 5): Keine Sperre für Adressen mit Fragezeichen mehr. `/*?*` sperrte alle
+  // Fotos (`/_next/image?url=…`) und jeden Link mit Kampagnenparametern, etwa aus dem Unternehmensprofil. Doppelte
+  // Parameter-Adressen fasst das selbstreferenzierende Canonical zusammen (src/lib/metadata.ts).
+  const gesperrt = ['/api/', '/login', '/admin'];
+
   return {
     rules: [
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/login', '/admin', '/*?*'],
+        disallow: gesperrt,
       },
       ...aiCrawlers.map((bot) => ({
         userAgent: bot,
         allow: '/',
-        disallow: ['/api/', '/login', '/admin', '/*?*'],
+        disallow: gesperrt,
       })),
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,

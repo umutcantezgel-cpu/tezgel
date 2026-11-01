@@ -1,22 +1,15 @@
-import { SITE_URL, ORG_ID, PLACE_DE_ID, buildMainProductOfferNode, type SchemaNode } from './schema';
-import { SITE_CONFIG } from '@/shared/config/site';
+import { SITE_URL, LOCAL_BUSINESS_ID, PLACE_DE_ID, type SchemaNode } from './schema';
 
 /**
- * ==============================================================================
- * 3-TIER LOCAL SEO SCHEMA PYRAMID - FLIESENVERLEGUNG TEZGEL
- * ==============================================================================
- * Prevents Google's "Fake Business Location" penalties when building local SEO
- * landing pages for multiple cities.
+ * Orte und Kreise für die strukturierten Daten der Ortsseiten.
  *
- * THE 3 TIERS:
- * 1. State / Master Region Hub: Declares an AdministrativeArea containing sub-regions.
- * 2. County / District Hub: Declares an AdministrativeArea with areaServed pointing to cities.
- * 3. City Landing Page:
- *    - Emits a real `City` node with exact city coordinates and Wikidata URI.
- *    - Emits a `LocalBusiness` node that retains the ACTUAL physical HQ address (Hohwardstraße 14, 35614 Aßlar).
- *    - Connects the business to the city via `areaServed: { '@id': '{cityId}' }`.
- *    - Emits a `Product` / `Service` node carrying customer reviews for SERP star snippets.
- * ==============================================================================
+ * SEO-Runde P1 (docs/seo/KONTEXT.md, Abschnitt 5):
+ * - T04: Eine Ortsseite meldet keinen zweiten Betrieb mehr. Es gibt genau ein LocalBusiness mit der echten Anschrift in
+ *   Aßlar (`LOCAL_BUSINESS_ID` aus schema.ts, Wurzelgraph). Die Ortsseite beschreibt die Leistung für den Ort als `Service`
+ *   mit `provider` auf diesen Betrieb und `areaServed` auf den Ort. Vorher stand hier je Ort ein LocalBusiness
+ *   „Fliesenverlegung Tezgel – <Ort>“ mit der Aßlarer Anschrift, also eine vorgetäuschte Filiale.
+ * - T02: Kein `Product` mit Bewertungen mehr auf den Ortsseiten.
+ * - T03: Wikidata-Kennungen am 01.11.2026 über die Wikidata-API geprüft (Bezeichnung, Beschreibung und Postleitzahl).
  */
 
 export interface CityConfig {
@@ -48,7 +41,7 @@ export interface StateConfig {
 export const HESSEN_GEO_HIERARCHY: StateConfig = {
   name: 'Hessen',
   slug: 'hessen',
-  wikidataId: 'Q1198',
+  wikidataId: 'Q1199',
   counties: [
     {
       name: 'Lahn-Dill-Kreis',
@@ -61,7 +54,7 @@ export const HESSEN_GEO_HIERARCHY: StateConfig = {
           postalCode: '35614',
           latitude: 50.5900,
           longitude: 8.4600,
-          wikidataId: 'Q547844',
+          wikidataId: 'Q558494',
           countySlug: 'lahn-dill-kreis',
           countyName: 'Lahn-Dill-Kreis',
           distanceKm: 0,
@@ -72,7 +65,7 @@ export const HESSEN_GEO_HIERARCHY: StateConfig = {
           postalCode: '35578',
           latitude: 50.5558,
           longitude: 8.5028,
-          wikidataId: 'Q4161',
+          wikidataId: 'Q4178',
           countySlug: 'lahn-dill-kreis',
           countyName: 'Lahn-Dill-Kreis',
           distanceKm: 0,
@@ -83,7 +76,7 @@ export const HESSEN_GEO_HIERARCHY: StateConfig = {
           postalCode: '35745',
           latitude: 50.6833,
           longitude: 8.3000,
-          wikidataId: 'Q516801',
+          wikidataId: 'Q18998',
           countySlug: 'lahn-dill-kreis',
           countyName: 'Lahn-Dill-Kreis',
           distanceKm: 20,
@@ -94,7 +87,7 @@ export const HESSEN_GEO_HIERARCHY: StateConfig = {
           postalCode: '35683',
           latitude: 50.7389,
           longitude: 8.2861,
-          wikidataId: 'Q516804',
+          wikidataId: 'Q517381',
           countySlug: 'lahn-dill-kreis',
           countyName: 'Lahn-Dill-Kreis',
           distanceKm: 25,
@@ -105,7 +98,7 @@ export const HESSEN_GEO_HIERARCHY: StateConfig = {
           postalCode: '35708',
           latitude: 50.7417,
           longitude: 8.2028,
-          wikidataId: 'Q516808',
+          wikidataId: 'Q516448',
           countySlug: 'lahn-dill-kreis',
           countyName: 'Lahn-Dill-Kreis',
           distanceKm: 30,
@@ -116,7 +109,7 @@ export const HESSEN_GEO_HIERARCHY: StateConfig = {
           postalCode: '35619',
           latitude: 50.5167,
           longitude: 8.3833,
-          wikidataId: 'Q516812',
+          wikidataId: 'Q525612',
           countySlug: 'lahn-dill-kreis',
           countyName: 'Lahn-Dill-Kreis',
           distanceKm: 10,
@@ -127,7 +120,7 @@ export const HESSEN_GEO_HIERARCHY: StateConfig = {
           postalCode: '35606',
           latitude: 50.5333,
           longitude: 8.4167,
-          wikidataId: 'Q516816',
+          wikidataId: 'Q566156',
           countySlug: 'lahn-dill-kreis',
           countyName: 'Lahn-Dill-Kreis',
           distanceKm: 8,
@@ -137,7 +130,7 @@ export const HESSEN_GEO_HIERARCHY: StateConfig = {
     {
       name: 'Landkreis Gießen',
       slug: 'landkreis-giessen',
-      wikidataId: 'Q7901',
+      wikidataId: 'Q7904',
       cities: [
         {
           name: 'Gießen',
@@ -145,7 +138,7 @@ export const HESSEN_GEO_HIERARCHY: StateConfig = {
           postalCode: '35390',
           latitude: 50.5833,
           longitude: 8.6667,
-          wikidataId: 'Q3870',
+          wikidataId: 'Q3874',
           countySlug: 'landkreis-giessen',
           countyName: 'Landkreis Gießen',
           distanceKm: 25,
@@ -155,7 +148,7 @@ export const HESSEN_GEO_HIERARCHY: StateConfig = {
     {
       name: 'Landkreis Marburg-Biedenkopf',
       slug: 'landkreis-marburg-biedenkopf',
-      wikidataId: 'Q7898',
+      wikidataId: 'Q7902',
       cities: [
         {
           name: 'Marburg',
@@ -163,7 +156,7 @@ export const HESSEN_GEO_HIERARCHY: StateConfig = {
           postalCode: '35037',
           latitude: 50.8167,
           longitude: 8.7667,
-          wikidataId: 'Q3935',
+          wikidataId: 'Q3869',
           countySlug: 'landkreis-marburg-biedenkopf',
           countyName: 'Landkreis Marburg-Biedenkopf',
           distanceKm: 40,
@@ -181,7 +174,7 @@ export const HESSEN_GEO_HIERARCHY: StateConfig = {
           postalCode: '65549',
           latitude: 50.3833,
           longitude: 8.0667,
-          wikidataId: 'Q6856',
+          wikidataId: 'Q16026',
           countySlug: 'landkreis-limburg-weilburg',
           countyName: 'Landkreis Limburg-Weilburg',
           distanceKm: 35,
@@ -191,7 +184,7 @@ export const HESSEN_GEO_HIERARCHY: StateConfig = {
     {
       name: 'Wetteraukreis',
       slug: 'wetteraukreis',
-      wikidataId: 'Q7904',
+      wikidataId: 'Q7910',
       cities: [
         {
           name: 'Bad Nauheim',
@@ -199,7 +192,7 @@ export const HESSEN_GEO_HIERARCHY: StateConfig = {
           postalCode: '61231',
           latitude: 50.3667,
           longitude: 8.7500,
-          wikidataId: 'Q487053',
+          wikidataId: 'Q16105',
           countySlug: 'wetteraukreis',
           countyName: 'Wetteraukreis',
           distanceKm: 40,
@@ -210,7 +203,7 @@ export const HESSEN_GEO_HIERARCHY: StateConfig = {
           postalCode: '61169',
           latitude: 50.3333,
           longitude: 8.7500,
-          wikidataId: 'Q490204',
+          wikidataId: 'Q516485',
           countySlug: 'wetteraukreis',
           countyName: 'Wetteraukreis',
           distanceKm: 45,
@@ -221,7 +214,7 @@ export const HESSEN_GEO_HIERARCHY: StateConfig = {
           postalCode: '35510',
           latitude: 50.4333,
           longitude: 8.6667,
-          wikidataId: 'Q490208',
+          wikidataId: 'Q569680',
           countySlug: 'wetteraukreis',
           countyName: 'Wetteraukreis',
           distanceKm: 35,
@@ -280,17 +273,10 @@ export function getCountyHubSchema(county: CountyConfig) {
 }
 
 /**
- * TIER 3: City Landing Page Schema (Anti-Fake-Location Pattern)
- * 1. Emits the real City entity with accurate geo and wikidata link
- * 2. Emits LocalBusiness pointing to real Aßlar headquarters
- * 3. Associates business with city strictly via areaServed
- * 4. Carries product package with verified aggregate reviews
+ * Ortsseite: der Ort (`City` mit Koordinaten und Wikidata-Kennung) und die Leistung für diesen Ort (`Service`).
+ * Der Betrieb selbst steht nur einmal im Wurzelgraph (T04).
  */
-export function getCityLandingPageSchema(
-  city: CityConfig,
-  serviceName?: string,
-  options?: { includeProductRating?: boolean }
-) {
+export function getCityLandingPageSchema(city: CityConfig, serviceName?: string) {
   const cityPageUrl = `${SITE_URL}/standorte/${city.slug}`;
   const cityId = `${cityPageUrl}#city`;
 
@@ -309,51 +295,24 @@ export function getCityLandingPageSchema(
       containedInPlace: {
         '@type': 'AdministrativeArea',
         name: 'Hessen',
-        sameAs: 'https://www.wikidata.org/wiki/Q1198',
+        sameAs: 'https://www.wikidata.org/wiki/Q1199',
       },
     },
     sameAs: city.wikidataId ? `https://www.wikidata.org/wiki/${city.wikidataId}` : undefined,
   };
 
-  const localBusinessNode = {
-    '@type': ['HomeAndConstructionBusiness', 'GeneralContractor', 'LocalBusiness'],
-    '@id': `${cityPageUrl}#localbusiness`,
-    name: `Fliesenverlegung Tezgel – ${city.name}`,
-    description: `Fliesenleger & Fachbetrieb für Badsanierung, barrierefreie Duschen, Großformate & DIN 18534 Abdichtung für Kunden in ${city.name}. Ausgeführt von unserem Fachbetrieb in Aßlar.`,
+  const serviceNode = {
+    '@type': 'Service',
+    '@id': `${cityPageUrl}#service`,
+    name: serviceName ? `${serviceName} in ${city.name}` : `Fliesenverlegung in ${city.name}`,
+    serviceType: 'Fliesenverlegung',
+    description: `Fliesenverlegung, Badsanierung, Duschen ohne Stufe, Großformate und Abdichtung nach DIN 18534 für Kunden in ${city.name}, ausgeführt vom Fachbetrieb in Aßlar.`,
     url: cityPageUrl,
-    image: `${SITE_CONFIG.baseUrl}/images/logo/tezgel-logo.png`,
-    telephone: SITE_CONFIG.contact.telephone,
-    email: SITE_CONFIG.contact.email,
-    parentOrganization: { '@id': ORG_ID },
+    provider: { '@id': LOCAL_BUSINESS_ID },
     areaServed: { '@id': cityId },
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: SITE_CONFIG.headquarters.streetAddress,
-      addressLocality: SITE_CONFIG.headquarters.addressLocality,
-      addressRegion: SITE_CONFIG.headquarters.addressRegion,
-      postalCode: SITE_CONFIG.headquarters.postalCode,
-      addressCountry: SITE_CONFIG.headquarters.addressCountry,
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: SITE_CONFIG.headquarters.geo.latitude,
-      longitude: SITE_CONFIG.headquarters.geo.longitude,
-    },
-    priceRange: SITE_CONFIG.priceRange,
-    currenciesAccepted: SITE_CONFIG.currenciesAccepted,
-    paymentAccepted: SITE_CONFIG.paymentAccepted,
   };
 
-  const nodes: SchemaNode[] = [cityNode, localBusinessNode];
-
-  if (options?.includeProductRating) {
-    const productNode = buildMainProductOfferNode({
-      name: serviceName ? `${serviceName} in ${city.name}` : `Fliesenverlegung & Badsanierung ${city.name}`,
-      description: `Hochwertige Fliesenverlegung und schlüsselfertige Badsanierung für Kunden in ${city.name} und Umgebung.`,
-      url: cityPageUrl,
-    });
-    nodes.push(productNode);
-  }
+  const nodes: SchemaNode[] = [cityNode, serviceNode];
 
   return {
     '@context': 'https://schema.org',

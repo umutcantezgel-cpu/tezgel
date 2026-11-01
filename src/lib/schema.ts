@@ -2,11 +2,7 @@
  * Type-safe Schema.org Linked Data & Knowledge Graph builder for Fliesenverlegung Tezgel.
  * Uses interconnected canonical @id URIs and standard @graph notation.
  */
-import { RATING_SUMMARY, REVIEWS } from '@/config/reviews';
 import { pfadAus, seitenBeschreibung } from '@/lib/beschreibung';
-
-/** Kundenstimmen in den strukturierten Daten (Auswahl wie im Bestand). */
-const SCHEMA_STIMMEN = ['elke-s', 'c-wolf', 'rabia-oe'];
 
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.tezgel.de';
 export const ORG_ID = `${SITE_URL}/#organization`;
@@ -15,7 +11,6 @@ export const FOUNDER_ID = `${SITE_URL}/#founder`;
 export const LOCAL_BUSINESS_ID = `${SITE_URL}/#local-business`;
 export const LOGO_ID = `${SITE_URL}/#logo`;
 export const PLACE_DE_ID = `${SITE_URL}/#place-deutschland`;
-export const MAIN_SERVICE_PACKAGE_ID = `${SITE_URL}/#main-service-package`;
 
 export interface SchemaNode {
   '@type'?: string | string[];
@@ -239,67 +234,12 @@ export function buildCountryNode(): SchemaNode {
   };
 }
 
-/**
- * Primary Product/Package Offer with Aggregate Reviews.
- * CRITICAL GOOGLE FILTER PROTECTION: Placed on Product entity (NOT Organization)
- * to avoid Google's self-serving review filter and render gold stars in SERPs!
+/*
+ * SEO-Runde T02 (docs/seo/KONTEXT.md, Abschnitt 5): Kein `Product` mit `aggregateRating` und `review` mehr. Die Sterne waren
+ * von Google übernommen und standen als Eigenbewertung auf jeder Seite; das widerspricht den Richtlinien für
+ * Rezensions-Snippets. Die Bewertungen stehen sichtbar auf den Seiten (src/config/reviews.js); der Link auf das
+ * Unternehmensprofil bei Google folgt mit T05, sobald der Auftraggeber ihn nennt.
  */
-export function buildMainProductOfferNode(options?: {
-  name?: string;
-  description?: string;
-  url?: string;
-  productId?: string;
-}): SchemaNode {
-  const name = options?.name || 'Fachbetrieb Fliesenverlegung & Badsanierung Komplettpaket';
-  const description =
-    options?.description ||
-    'Fachgerechte Fliesenverlegung, fugenarme Großformate, barrierefreie Badsanierung und DIN 18534 Verbundabdichtung in Aßlar, Wetzlar und Hessen.';
-  const id = options?.productId ? `${SITE_URL}/#${options.productId}` : MAIN_SERVICE_PACKAGE_ID;
-
-  return {
-    '@type': 'Product',
-    '@id': id,
-    name,
-    description,
-    url: options?.url || SITE_URL,
-    image: `${SITE_URL}/images/logo/tezgel-logo.png`,
-    brand: {
-      '@type': 'Brand',
-      name: 'Fliesenverlegung Tezgel',
-    },
-    offers: {
-      '@type': 'Offer',
-      priceCurrency: 'EUR',
-      price: '0.00',
-      priceValidUntil: '2026-12-31',
-      availability: 'https://schema.org/InStock',
-      url: `${SITE_URL}/termin`,
-      description: 'Kostenloses Vor-Ort-Aufmaß & verbindliches Festpreisangebot',
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: RATING_SUMMARY.google.rating.toFixed(1),
-      reviewCount: String(RATING_SUMMARY.google.count),
-      bestRating: '5',
-      worstRating: '1',
-    },
-    // Kundenstimmen wörtlich aus src/config/reviews.js (G8); ohne Datum, weil die Quelle keines nennt (E2-FIX-01c)
-    review: REVIEWS.filter((r: { id: string }) => SCHEMA_STIMMEN.includes(r.id)).map((r: { author: string; rating: number; text: string }) => ({
-      '@type': 'Review',
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: String(r.rating),
-        bestRating: '5',
-        worstRating: '1',
-      },
-      author: {
-        '@type': 'Person',
-        name: r.author,
-      },
-      reviewBody: r.text,
-    })),
-  };
-}
 
 /**
  * Builds the complete root Knowledge Graph array.
@@ -311,7 +251,6 @@ export function buildRootGraph(): { '@context': string; '@graph': SchemaNode[] }
     buildWebSiteNode(),
     buildFounderNode(),
     buildLocalBusinessNode(),
-    buildMainProductOfferNode(),
   ]);
 }
 
@@ -444,7 +383,6 @@ export function buildServiceNode(options: {
             '@type': 'Offer',
             price: '0.00',
             priceCurrency: 'EUR',
-            priceValidUntil: '2026-12-31',
             availability: 'https://schema.org/InStock',
             url: `${SITE_URL}/termin`,
             itemOffered: {
@@ -515,46 +453,6 @@ export type DienstOrdner = keyof typeof ORDNER_DIENSTE;
 /** Der Service-Knoten eines Ordners aus ORDNER_DIENSTE: `@id` und `url` sind die Ordnerseite, wie auf ihr selbst. */
 export function buildOrdnerServiceNode(ordner: DienstOrdner): SchemaNode {
   return buildServiceNode({ ...ORDNER_DIENSTE[ordner], url: `${SITE_URL}${ordner}` });
-}
-
-/**
- * Builds a localized LocalBusiness slice for a specific city.
- */
-export function buildCityLocalBusinessNode(options: {
-  cityName: string;
-  citySlug: string;
-  distanceKm: number;
-  description: string;
-}): SchemaNode {
-  const url = `${SITE_URL}/standorte/${options.citySlug}`;
-  return {
-    '@type': ['HomeAndConstructionBusiness', 'LocalBusiness'],
-    '@id': `${url}#localbusiness`,
-    name: `Fliesenverlegung Tezgel – ${options.cityName}`,
-    description: options.description,
-    url,
-    image: `${SITE_URL}/images/logo/tezgel-logo.png`,
-    telephone: '+49 6441 4483567',
-    email: 'info@tezgel.de',
-    parentOrganization: { '@id': ORG_ID },
-    areaServed: {
-      '@type': 'City',
-      name: options.cityName,
-    },
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Hohwardstraße 14',
-      addressLocality: 'Aßlar',
-      addressRegion: 'Hessen',
-      postalCode: '35614',
-      addressCountry: 'DE',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 50.5900,
-      longitude: 8.4600,
-    },
-  };
 }
 
 /**
