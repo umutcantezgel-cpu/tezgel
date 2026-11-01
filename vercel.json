@@ -2,7 +2,8 @@
   "framework": "nextjs",
   "git": {
     "deploymentEnabled": {
-      "claude/tezgel-website-redesign-iqxt8z": false
+      "claude/tezgel-website-redesign-iqxt8z": false,
+      "seo/lokal": false
     }
   }
 }
