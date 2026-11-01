@@ -1,0 +1,212 @@
+[
+ {
+  "pfad": "/",
+  "paket": "P3",
+  "titel": "Fliesenverlegung Tezgel · Fliesenleger in Aßlar",
+  "desc": "Fliesenverlegung Tezgel aus Aßlar: Bäder, Duschen ohne Stufe, Böden, Balkone und Treppen. Der Termin bei Ihnen vor Ort ist kostenfrei."
+ },
+ {
+  "pfad": "/standorte/wetzlar",
+  "paket": "P3",
+  "titel": "Fliesenleger in Wetzlar | Fliesenverlegung Tezgel",
+  "desc": "Ihr Fliesenleger für Wetzlar aus dem Nachbarort Aßlar: Bad und Dusche ohne Stufe, Böden, Balkon und Treppe. Der Termin bei Ihnen vor Ort ist kostenfrei."
+ },
+ {
+  "pfad": "/leistungen",
+  "paket": "P3",
+  "titel": "Leistungen vom Fliesenleger | Fliesenverlegung Tezgel",
+  "desc": "Alle Leistungen von Fliesenverlegung Tezgel aus Aßlar: Bad und Dusche, Böden und Wände, Balkon und Terrasse, Treppe, Naturstein und Abdichtung."
+ },
+ {
+  "pfad": "/bad",
+  "paket": "P3",
+  "titel": "Bad und Dusche erneuern | Fliesenverlegung Tezgel",
+  "desc": "Ein neues Bad vom Fliesenleger: Wanne raus, Dusche ohne Stufe rein, große Fliesen und Abdichtung nach DIN 18534. Der Termin vor Ort ist kostenfrei."
+ },
+ {
+  "pfad": "/bad/badsanierung",
+  "paket": "P3",
+  "titel": "Badsanierung zum Festpreis | Fliesenverlegung Tezgel",
+  "desc": "Komplette Badsanierung mit Dusche ohne Stufe und großen Fliesen. Sie bekommen ein verbindliches Festpreisangebot, der Termin vor Ort ist kostenfrei."
+ },
+ {
+  "pfad": "/bad/barrierefreies-bad",
+  "paket": "P3",
+  "titel": "Barrierefreies Bad umbauen | Fliesenverlegung Tezgel",
+  "desc": "Badewanne raus, Dusche ohne Stufe rein: Wir bauen Ihr Bad barrierefrei um. Mit Pflegegrad zahlt die Pflegekasse bis zu 4.180 € je Person dazu."
+ },
+ {
+  "pfad": "/bad/fliesen",
+  "paket": "P3",
+  "titel": "Badfliesen & große Fliesen | Fliesenverlegung Tezgel",
+  "desc": "Badfliesen vom Fachbetrieb: große Fliesen, Feinsteinzeug, Naturstein und Mosaik, abgedichtet nach DIN 18534. Wir beraten Sie beim Termin vor Ort."
+ },
+ {
+  "pfad": "/bad/bad-aus-einer-hand",
+  "paket": "P3",
+  "titel": "Ihr Bad aus einer Hand | Fliesenverlegung Tezgel",
+  "desc": "Bad aus einer Hand: Wir koordinieren Sanitär, Fliesen, Elektrik und Trockenbau. Sie haben einen festen Ansprechpartner von der Planung bis zur Abnahme."
+ },
+ {
+  "pfad": "/balkon-terrasse",
+  "paket": "P3",
+  "titel": "Balkon und Terrasse fliesen | Fliesenverlegung Tezgel",
+  "desc": "Balkon und Terrasse fliesen lassen: Wir verlegen Platten, auch auf Stelzlagern, mit Gefälle vom Haus weg. Der Termin bei Ihnen vor Ort ist kostenfrei."
+ },
+ {
+  "pfad": "/balkon-terrasse/balkonsanierung",
+  "paket": "P3",
+  "titel": "Balkonsanierung mit Abdichtung | Fliesenverlegung Tezgel",
+  "desc": "Balkonsanierung vom Fachbetrieb: Wir stellen ein Gefälle vom Gebäude weg her, dann folgen Abdichtung und neuer Belag. Der Termin vor Ort ist kostenfrei."
+ },
+ {
+  "pfad": "/treppen",
+  "paket": "P3",
+  "titel": "Treppe fliesen und sanieren | Fliesenverlegung Tezgel",
+  "desc": "Treppe fliesen oder sanieren: Innentreppe, Treppenhaus oder Außentreppe mit Fliesen oder Naturstein neu belegen. Der Termin vor Ort ist kostenfrei."
+ },
+ {
+  "pfad": "/naturstein",
+  "paket": "P3",
+  "titel": "Naturstein verlegen lassen | Fliesenverlegung Tezgel",
+  "desc": "Naturstein verlegen lassen: Granit, Marmor, Kalkstein, Travertin und Schiefer, verlegt vom Fachbetrieb aus Aßlar. Der Termin vor Ort ist kostenfrei."
+ },
+ {
+  "pfad": "/fliesenreparatur",
+  "paket": "P3",
+  "titel": "Fliesenreparatur und Fugen | Fliesenverlegung Tezgel",
+  "desc": "Fliesenreparatur: einzelne Fliesen austauschen, Sockelfliesen reparieren und Fugen erneuern. Den Termin stimmen wir mit Ihnen ab, Fotos helfen vorab."
+ },
+ {
+  "pfad": "/fliesen/kueche",
+  "paket": "P3",
+  "titel": "Küchenfliesen verlegen lassen | Fliesenverlegung Tezgel",
+  "desc": "Küchenfliesen und Fliesenspiegel vom Fachbetrieb aus Aßlar. Dichtes Feinsteinzeug nimmt Öl und Kaffee kaum auf und lässt sich leicht sauber halten."
+ },
+ {
+  "pfad": "/fliesen/fugensanierung",
+  "paket": "P3",
+  "titel": "Fugensanierung & Silikonfugen erneuern | Tezgel",
+  "desc": "Fugensanierung: schimmelige Silikonfugen und bröselnde Zementfugen erneuern. Für eine erste Einschätzung helfen uns Fotos per WhatsApp."
+ },
+ {
+  "pfad": "/fliesen/neubau",
+  "paket": "P3",
+  "titel": "Fliesen im Neubau verlegen | Fliesenverlegung Tezgel",
+  "desc": "Fliesen im Neubau verlegen lassen: Belegreife prüfen, Material festlegen und Termine mit der Bauleitung abstimmen. Fachbetrieb Tezgel aus Aßlar."
+ },
+ {
+  "pfad": "/kontakt",
+  "paket": "P3",
+  "titel": "Kontakt und Termin vor Ort | Fliesenverlegung Tezgel",
+  "desc": "Fliesenverlegung Tezgel in Aßlar: Rufen Sie an, schreiben Sie per WhatsApp oder senden Sie eine Anfrage. Der Termin bei Ihnen vor Ort ist kostenfrei."
+ },
+ {
+  "pfad": "/ueber-uns",
+  "paket": "P3",
+  "titel": "Über uns, seit 2008 in Aßlar | Fliesenverlegung Tezgel",
+  "desc": "Fliesenverlegung Tezgel in Aßlar seit 2008, eingetragen bei der Handwerkskammer Wiesbaden. Inhaber Deniz Tezgel kommt selbst zu Ihnen und berät Sie."
+ },
+ {
+  "pfad": "/team",
+  "paket": "P3",
+  "titel": "Unser Team | Fliesenverlegung Tezgel aus Aßlar",
+  "desc": "Unser Team: Inhaber Deniz Tezgel und sein Verlegeteam für Fliesen, Platten und Mosaik. Wir arbeiten in Aßlar und in ganz Mittelhessen."
+ },
+ {
+  "pfad": "/leistungen/bad",
+  "paket": "P3",
+  "titel": "Leistungen rund ums Bad | Fliesenverlegung Tezgel",
+  "desc": "Leistungen rund ums Bad: Dusche ohne Stufe, barrierefreies Bad und große Fliesen, abgedichtet nach DIN 18534. Der Termin bei Ihnen vor Ort ist kostenfrei."
+ },
+ {
+  "pfad": "/leistungen/wohnen",
+  "paket": "P3",
+  "titel": "Böden und Wände im Überblick | Fliesenverlegung Tezgel",
+  "desc": "Fliesen für Wohnräume und Küchen: Feinsteinzeug, Naturstein und Treppen, verlegt vom Fachbetrieb aus Aßlar. Der Termin bei Ihnen vor Ort ist kostenfrei."
+ },
+ {
+  "pfad": "/leistungen/aussen",
+  "paket": "P3",
+  "titel": "Leistungen für draußen | Fliesenverlegung Tezgel",
+  "desc": "Balkon und Terrasse sanieren, auch auf Stelzlagern. Das Gefälle beträgt mindestens 1,5 bis 2 %, damit Regenwasser vom Haus weg abläuft."
+ },
+ {
+  "pfad": "/leistungen/untergrund",
+  "paket": "P3",
+  "titel": "Leistungen für den Untergrund | Fliesenverlegung Tezgel",
+  "desc": "Untergrund und Abdichtung: Wir gleichen Estrich aus, messen die Restfeuchte und dichten unter den Fliesen nach DIN 18534 ab. Der Termin ist kostenfrei."
+ },
+ {
+  "pfad": "/beratung",
+  "paket": "P3 (S4, S6)",
+  "titel": "Kostenlose Fliesenberatung | Fliesenverlegung Tezgel",
+  "desc": "Kostenlose Fliesenberatung ohne Verpflichtung: Wir prüfen den Untergrund und beraten Sie zu Formaten, Fugenbild und Rutschhemmung für Ihren Raum."
+ },
+ {
+  "pfad": "/termin",
+  "paket": "P3 (S6)",
+  "titel": "Termin vor Ort vereinbaren | Fliesenverlegung Tezgel",
+  "desc": "Termin vereinbaren: Wählen Sie Ihr Thema und senden Sie die Anfrage online oder per WhatsApp. Der Termin bei Ihnen vor Ort ist kostenfrei."
+ },
+ {
+  "pfad": "/karriere",
+  "paket": "P3",
+  "titel": "Fliesenleger Jobs bei Wetzlar | Fliesenverlegung Tezgel",
+  "desc": "Jobs als Fliesenleger (m/w/d) in Aßlar bei Wetzlar: Wir suchen Gesellen oder erfahrene Fachkräfte. Bewerben Sie sich per E-Mail oder Telefon."
+ },
+ {
+  "pfad": "/bad/musterbaeder",
+  "paket": "P3",
+  "titel": "Musterbäder und Badideen | Fliesenverlegung Tezgel",
+  "desc": null
+ },
+ {
+  "pfad": "/bad/badanfrage",
+  "paket": "P3 (S6)",
+  "titel": "Angebot für Ihre Badsanierung | Fliesenverlegung Tezgel",
+  "desc": null
+ },
+ {
+  "pfad": "/standorte",
+  "paket": "P4 (S3)",
+  "titel": "Einsatzgebiet in Mittelhessen | Fliesenverlegung Tezgel",
+  "desc": null
+ },
+ {
+  "pfad": "/preise",
+  "paket": "P2",
+  "titel": "Preise und Festpreisangebot | Fliesenverlegung Tezgel",
+  "desc": "Was kostet Ihr Vorhaben? Den Preis für Fliesen, große Formate oder die Badsanierung nennen wir nach dem Termin vor Ort als verbindlichen Festpreis."
+ },
+ {
+  "pfad": "/faq",
+  "paket": "P2",
+  "titel": "Häufige Fragen und Antworten | Fliesenverlegung Tezgel",
+  "desc": null
+ },
+ {
+  "pfad": "/referenzen",
+  "paket": "P2",
+  "titel": "Referenzen und Bewertungen | Fliesenverlegung Tezgel",
+  "desc": null
+ },
+ {
+  "pfad": "/unternehmen",
+  "paket": "P2",
+  "titel": "Unternehmen und Geschichte | Fliesenverlegung Tezgel",
+  "desc": null
+ },
+ {
+  "pfad": "/blog/barrierefreier-balkonaustritt",
+  "paket": "P2",
+  "titel": "Wie niedrig ist ein barrierefreier Balkonaustritt · Tezgel",
+  "desc": null
+ },
+ {
+  "pfad": "/bad/musterbaeder/basic-bad-7",
+  "paket": "P2 (Muster für 12 Musterbäder)",
+  "titel": "Musterbad Basic mit 7,0 m² | Fliesenverlegung Tezgel",
+  "desc": null
+ }
+]
