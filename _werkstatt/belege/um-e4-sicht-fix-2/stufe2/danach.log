@@ -1,0 +1,30 @@
+=== kette-rest beendet 17:23:32
+4324 200
+4325 200
+=== LH-NACH /bad, /bad/badsanierung, /kontakt 17:23:32 last 0.08
+--- lh v3 port 4324 17:23:32 last 0.08
+lighthouse v3 exit 0
+  mobil: perf 93 [90–94] · LCP 2976 ms [2487–3011] · TBT 133 ms [118–323] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+  mobil: perf 85 [83–85] · LCP 3895 ms [3869–3953] · TBT 196 ms [186–258] · CLS 0 [0–0] · LCP-Element div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block
+Ergebnis: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/sfix2/pruef/lh/sfix2-v3/lighthouse.json · Benchmark-Referenz 1890.5
+--- lh n3 port 4325 17:26:11 last 0.80
+lighthouse n3 exit 0
+  mobil: perf 90 [85–93] · LCP 2998 ms [2678–3005] · TBT 227 ms [173–250] · CLS 0 [0–0.168] · LCP-Element div.relative > figure > div.border > img.block
+  mobil: perf 86 [86–88] · LCP 3875 ms [3619–3928] · TBT 169 ms [152–172] · CLS 0 [0–0] · LCP-Element div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block
+Ergebnis: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/sfix2/pruef/lh/sfix2-n3/lighthouse.json · Benchmark-Referenz 1717.5
+--- lh n4 port 4325 17:29:12 last 1.88
+lighthouse n4 exit 0
+  mobil: perf 90 [88–91] · LCP 2983 ms [2694–3302] · TBT 283 ms [111–286] · CLS 0 [0–0.005] · LCP-Element div.relative > figure > div.border > img.block
+  mobil: perf 88 [87–89] · LCP 3694 ms [3615–3855] · TBT 156 ms [143–160] · CLS 0 [0–0] · LCP-Element div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block
+Ergebnis: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/sfix2/pruef/lh/sfix2-n4/lighthouse.json · Benchmark-Referenz 1738.5
+--- lh v4 port 4324 17:31:47 last 2.18
+lighthouse v4 exit 0
+  mobil: perf 93 [88–93] · LCP 2994 ms [2983–3236] · TBT 144 ms [135–257] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+  mobil: perf 86 [84–87] · LCP 3914 ms [3849–3983] · TBT 165 ms [144–218] · CLS 0 [0–0] · LCP-Element div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block
+Ergebnis: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/sfix2/pruef/lh/sfix2-v4/lighthouse.json · Benchmark-Referenz 1722.5
+=== ENDE 17:34:08
+=== CLS-PROBE desktop nachher 4325 17:34:08
+Läufe 40, mit CLS > 0,05: 0, mit CLS > 0,01: 0
+=== CLS-PROBE mobil nachher 4325 17:36:50
+Läufe 24, mit CLS > 0,05: 0, mit CLS > 0,01: 0
+=== ENDE danach 17:38:27

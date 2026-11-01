@@ -1,0 +1,150 @@
+=== REST nach Abbruch der Hintergrundaufgabe (Zeitgrenze 2 h): Lighthouse ab n2 16:06:57
+--- lh n2 port 4325 mobil 16:06:57 last 0.62
+lighthouse n2 exit 0
+/referenzen
+  mobil: perf 94 [84–95] · LCP 2853 ms [2789–3311] · TBT 139 ms [98–358] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+a...
+/ueber-uns
+  mobil: perf 94 [94–95] · LCP 2981 ms [2717–2999] · TBT 106 ms [64–115] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+a...
+/kontakt
+  mobil: perf 86 [84–88] · LCP 3912 ms [3814–3956] · TBT 156 ms [125–212] · CLS 0 [0–0] · LCP-Element div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block
+a...
+/standorte/wetzlar
+  mobil: perf 93 [90–93] · LCP 2988 ms [2987–3004] · TBT 155 ms [149–233] · CLS 0 [0–0] · LCP-Element div.mx-auto > figure > div.border > img.block
+a..w.
+/blog
+  mobil: perf 95 [88–95] · LCP 2785 ms [2711–2785] · TBT 114 ms [105–328] · CLS 0 [0–0] · LCP-Element div.relative > div.relative > div.mx-auto > p.max-w-mass
+
+Ergebnis: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/sfix2/pruef/lh/sfix2-n2/lighthouse.json · Benchmark-Referenz 1961.0
+--- lh v2 port 4324 mobil 16:17:43 last 2.35
+lighthouse v2 exit 0
+/referenzen
+  mobil: perf 95 [94–95] · LCP 2714 ms [2401–2942] · TBT 132 ms [122–198] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+a.w..
+/ueber-uns
+  mobil: perf 94 [94–96] · LCP 2992 ms [2718–3004] · TBT 89 ms [80–105] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+a...
+/kontakt
+  mobil: perf 85 [84–87] · LCP 3829 ms [3826–3890] · TBT 202 ms [141–232] · CLS 0 [0–0.005] · LCP-Element div.hoehe-banner > div.p-4 > p#cookie-consent-description > span.block
+a...
+/standorte/wetzlar
+  mobil: perf 93 [92–94] · LCP 2942 ms [2863–3147] · TBT 110 ms [99–183] · CLS 0 [0–0] · LCP-Element div.mx-auto > figure > div.border > img.block
+a...
+/blog
+  mobil: perf 94 [94–96] · LCP 2783 ms [2570–2868] · TBT 136 ms [59–206] · CLS 0 [0–0] · LCP-Element div.relative > div.relative > div.mx-auto > p.max-w-mass
+
+Ergebnis: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/sfix2/pruef/lh/sfix2-v2/lighthouse.json · Benchmark-Referenz 2042.5
+--- lh dv port 4324 desktop 16:29:30 last 1.65
+lighthouse dv exit 0
+/referenzen
+  desktop: perf 100 [100–100] · LCP 624 ms [572–761] · TBT 0 ms [0–8] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+a...
+/ueber-uns
+  desktop: perf 100 [100–100] · LCP 723 ms [624–745] · TBT 5 ms [0–9] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+a..w.
+/kontakt
+  desktop: perf 100 [99–100] · LCP 600 ms [530–698] · TBT 31 ms [2–68] · CLS 0 [0–0.006] · LCP-Element section.@container > div.mx-auto > h1#seite-titel > span.block
+a...
+/standorte/wetzlar
+  desktop: perf 100 [99–100] · LCP 679 ms [579–728] · TBT 7 ms [3–99] · CLS 0 [0–0] · LCP-Element div.mx-auto > figure > div.border > img.block
+a...
+/blog
+  desktop: perf 100 [94–100] · LCP 616 ms [582–726] · TBT 9 ms [5–10] · CLS 0 [0–0.143] · LCP-Element div.relative > div.relative > div.mx-auto > p.max-w-mass
+
+Ergebnis: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/sfix2/pruef/lh/sfix2-dv/lighthouse.json · Benchmark-Referenz 1732.0
+--- lh dn port 4325 desktop 16:42:26 last 2.09
+lighthouse dn exit 0
+/referenzen
+  desktop: perf 100 [100–100] · LCP 658 ms [537–730] · TBT 0 ms [0–0] · CLS 0 [0–0] · LCP-Element div.relative > figure > div.border > img.block
+a.w..
+/ueber-uns
+  desktop: perf 100 [78–100] · LCP 628 ms [583–705] · TBT 8 ms [4–26] · CLS 0 [0–0.555] · LCP-Element div.relative > figure > div.border > img.block
+aww...
+/kontakt
+  desktop: perf 100 [100–100] · LCP 572 ms [531–657] · TBT 4 ms [0–4] · CLS 0 [0–0] · LCP-Element section.@container > div.mx-auto > h1#seite-titel > span.block · Benchmark außerhalb des Bands
+a...
+/standorte/wetzlar
+  desktop: perf 100 [100–100] · LCP 621 ms [596–632] · TBT 3 ms [1–7] · CLS 0 [0–0] · LCP-Element div.mx-auto > figure > div.border > img.block
+aw...
+/blog
+  desktop: perf 100 [100–100] · LCP 613 ms [587–708] · TBT 2 ms [2–3] · CLS 0 [0–0] · LCP-Element div.relative > div.relative > div.mx-auto > p.max-w-mass
+
+Ergebnis: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/sfix2/pruef/lh/sfix2-dn/lighthouse.json · Benchmark-Referenz 1656.5
+=== REAKTION (INP) im Wechsel 16:55:55
+reaktion v exit 0
+Satz sfix2-reaktion-v · m390 · CPU 4× · Median aus 3 Läufen je Handlung · Schwelle ≤ 200 ms (ms)
+Seite                     Hauptknopf      Menü Akkordeon   Eingabe      Link  Höchster  Urteil
+/                                144       152         —        72       104       152  ok
+/bad                             160       104       104         —        64       160  ok
+/bad/badsanierung                120       112        96         —        40       120  ok
+/bad/barrierefreies-bad          176        96       152         —        56       176  ok
+/leistungen                      128       120         —         —        48       128  ok
+/fliesen                         176        96        88         —        56       176  ok
+/balkon-terrasse                 144        88        72         —        72       144  ok
+/referenzen                      144       112       200         —        64       200  ok
+/ueber-uns                       136       120       128         —        64       136  ok
+/kontakt                         208       144         —         —        48       208  über 200 ms
+/standorte/wetzlar               208       120        96        96        80       208  über 200 ms
+/blog                             96       128        80       176       184       184  ok
+
+Belege: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/sfix2/pruef/reaktion-v/reaktion.json
+reaktion n exit 0
+Satz sfix2-reaktion-n · m390 · CPU 4× · Median aus 3 Läufen je Handlung · Schwelle ≤ 200 ms (ms)
+Seite                     Hauptknopf      Menü Akkordeon   Eingabe      Link  Höchster  Urteil
+/                                176       152         —        64        96       176  ok
+/bad                             152        96       112         —        64       152  ok
+/bad/badsanierung                144       104       104         —        48       144  ok
+/bad/barrierefreies-bad          184       104       120         —        56       184  ok
+/leistungen                       88       120         —         —        48       120  ok
+/fliesen                         152       120        72         —        56       152  ok
+/balkon-terrasse                 104       104        72         —        56       104  ok
+/referenzen                      152       104       232         —        56       232  über 200 ms
+/ueber-uns                       128       120       112         —        48       128  ok
+/kontakt                         176       104         —         —        48       176  ok
+/standorte/wetzlar               144       120       120        96        72       144  ok
+/blog                            152       152       112       176        56       176  ok
+
+Belege: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/sfix2/pruef/reaktion-n/reaktion.json
+=== REAKTION 7 Läufe V N V N 17:05:18
+--- v1 4324 17:05:18 last 2.38
+exit 0
+Satz sfix2-reaktion7-v1 · m390 · CPU 4× · Median aus 7 Läufen je Handlung · Schwelle ≤ 200 ms (ms)
+Seite                     Hauptknopf      Menü Akkordeon   Eingabe      Link  Höchster  Urteil
+/referenzen                      136       128       224         —        72       224  über 200 ms
+/kontakt                         176       128         —         —        56       176  ok
+/standorte/wetzlar               256       128        88       112        80       256  über 200 ms
+/bad/badsanierung                224       120       112         —        56       224  über 200 ms
+
+Belege: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/sfix2/pruef/reaktion7-v1/reaktion.json
+--- n1 4325 17:09:02 last 2.00
+exit 0
+Satz sfix2-reaktion7-n1 · m390 · CPU 4× · Median aus 7 Läufen je Handlung · Schwelle ≤ 200 ms (ms)
+Seite                     Hauptknopf      Menü Akkordeon   Eingabe      Link  Höchster  Urteil
+/referenzen                      152       128       240         —        88       240  über 200 ms
+/kontakt                         216       136         —         —        64       216  über 200 ms
+/standorte/wetzlar               232       136       104       104        56       232  über 200 ms
+/bad/badsanierung                184       128       128         —        64       184  ok
+
+Belege: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/sfix2/pruef/reaktion7-n1/reaktion.json
+--- v2 4324 17:12:45 last 2.15
+exit 0
+Satz sfix2-reaktion7-v2 · m390 · CPU 4× · Median aus 7 Läufen je Handlung · Schwelle ≤ 200 ms (ms)
+Seite                     Hauptknopf      Menü Akkordeon   Eingabe      Link  Höchster  Urteil
+/referenzen                      136       128       208         —        64       208  über 200 ms
+/kontakt                         184       144         —         —        56       184  ok
+/standorte/wetzlar               240       160       104       120        72       240  über 200 ms
+/bad/badsanierung                136        96       128         —        72       136  ok
+
+Belege: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/sfix2/pruef/reaktion7-v2/reaktion.json
+--- n2 4325 17:16:32 last 1.60
+exit 0
+Satz sfix2-reaktion7-n2 · m390 · CPU 4× · Median aus 7 Läufen je Handlung · Schwelle ≤ 200 ms (ms)
+Seite                     Hauptknopf      Menü Akkordeon   Eingabe      Link  Höchster  Urteil
+/referenzen                      200       128       224         —        72       224  über 200 ms
+/kontakt                         152       104         —         —        56       152  ok
+/standorte/wetzlar               232       120       104        96        64       232  über 200 ms
+/bad/badsanierung                192        96       112         —        56       192  ok
+
+Belege: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/sfix2/pruef/reaktion7-n2/reaktion.json
+=== ENDE 17:20:07

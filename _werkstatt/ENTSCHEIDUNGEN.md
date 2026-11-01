@@ -1910,3 +1910,58 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - **Lesemaß (Frage 9.6 Nr. 3): bleibt 66ch** der eigenen Stufe. Ein zusätzliches Token für 60ch träfe alle Blöcke gleich und wäre ein neuer Wert ohne Befund „hoch“.
   - **Szenenlegende auf `/bad` (Frage 9.6 Nr. 2): an SF2-A2 in Stufe 2.** Die Liste der Szene „schichten“ angleichen, wenn das ohne Textänderung und ohne Änderung am Ablauf der Szene geht; sonst bleibt sie mittig in ihrem Rahmen, mit Begründung in der Notiz.
   - **Zahlen:** Repository nach dem Einspielen `npm test` 280 (279 bestanden, 1 übersprungen, braucht den Bau), tsc 0, eslint 0, `werte --basis a3c28d36` 0 Befunde. CSS gzip 25.111 → 25.218 B (+107 B, Richtwert Stufe 1 0,5 KB; seit 4d2d3fef +1.818 B von 4 KB). Erstes Bild Fall für Fall gleich. Wortlaut unverändert, keine Textvorschläge.
+
+## E-114 · UM-E4-SICHT-FIX-2 Stufe 2 eingespielt, Entscheidungen zu den offenen Fragen, Prüfkette (1.11.2026, 18:50 MEZ)
+- **Bau** (wf_a8458441-6f2; SF2-A2, SF2-B, SF2-C parallel auf 2a93b91f, je Opus-Baumeister, zwei Sonnet-Prüfer mit den Linsen WIRKUNG und LEITPLANKEN, Nacharbeit; 12 Agenten, 0 Fehler, rund 4,6 h). Eingespielt nach Trockenlauf in der Reihenfolge A, dann B und C: SF2-A2 = 8682356f (mit Begleitdiff OrtsSeite), SF2-B = fa1d7fe2, SF2-C = 79ac9b9d (Satz von C in `register.json` → `hinweis` von Hand nach Notiz B 8.3; Übergabe `Tun.tsx` aus der Nacharbeit von C), Nachtrag des Orchestrators = bce95087. Notizen `berichte/UM-E4-SICHT-FIX-2-{a2,b,c}.notiz.md`, Textvorschläge T-B-1, T-C-1 bis T-C-5. Repository nach jedem Commit `npm test` 280 (279 bestanden, 1 braucht den Bau), tsc 0, eslint 0, `werte` 0 (C: ein Altbefund `STAFFEL_MAX: 7`, auf HEAD ebenso).
+- **Entscheidungen zu den offenen Fragen:**
+  1. **Grenzen zwischen den Bauteilen (A2 EV-1, B O-2, C N-5):** Die Weitergabe von `versprechen.offen` legt A2 in `ErzaehlSeite.tsx` an, der Begleitdiff von A2 in `OrtsSeite.tsx`; `WissensSeite.tsx` reicht den ganzen Inhalt durch (C). Damit wirkt `offen` auf allen sechs Ansichten.
+  2. **Dreier im Qualitätsversprechen (A2 N-2, Prüfer A2 WIRKUNG Befund 2): verschieden je Ansicht, nach dem sichtbaren Text vor `#qualitaet`.** /bad/badsanierung [2, 5, 7] (einzig möglich), /balkon-terrasse [2, 5, 7] (6 Staubschutz gilt für Innenräume, Begründung B), /fliesen [3, 5, 7] und /ueber-uns [4, 5, 7] (C, Plan; die Frage von A2 zu /ueber-uns: Plan angenommen), Ortsseiten [2, 5, 6] und /blog [4, 5, 6] (Empfehlung A2; vorher [2, 5, 7]). Fünf verschiedene Dreier auf sechs Ansichten.
+  3. **Laserweg (A2 EV-3): angenommen,** das Lot beginnt am Ende der Stufenlinie von 03. **Lage `dicht` auf /blog (A2 EV-4): angenommen.** Rhythmus M2-A9 (A2 N-4): bleibt bei den Stufen des Plans, kein Gewinn angesetzt.
+  4. **Fotos auf /blog (B O-1, E-113 Nr. 8):** gelöst durch die Nacharbeit von B (EV-B12): zwei fertige Arbeiten (start-beleg-dusche, leistungen-balkon) statt der Baustellenfotos. Gilt unter beiden Lesarten von Nr. 8.
+  5. **Einzugsband (B O-6): füllend wie gebaut**, Rot nur bis zur Spalte des Ortes (EV-B11). **M-A3 Nr. 2 auf den Ortsseiten (B O-5):** aufgehoben seit E-113 Nr. 2; Lighthouse Wetzlar siehe unten.
+  6. **Einstiegsfoto /bad/barrierefreies-bad (B O-4, Prüfer B Befund 3):** bleibt; die Gegenprobe zeigt, dass kein vorhandenes Foto den Boden bei 4 : 5 über den Falz bringt. Im Endprüfer-Bildsatz beobachten.
+  7. **/bad Seitenschluss (B Befund 2, hoch):** nur der Rückfall nach E-113 Nr. 1; Musterbäder, Pflegekasse und zweiter Knopf liegen im Formular (G8). Befunde 1a/1b bleiben offen.
+  8. **C EV-C4 (Lot in Kalk auf der Tinte-Bühne, gegen E-045 „Lot in Tinte“): angenommen**, auf Tinte wäre ein Lot in Tinte unsichtbar; K-008 ist nachgezogen. **EV-C11** (Plan-Unterschrift erst ab sm) und **EV-C13** (Raumliste mit vier Vignetten): angenommen; mit der Übergabe `Tun.tsx` halten Zeilen ohne Zeichnung das Feld frei, die Texte stehen auf einer Kante.
+  9. **Glossar /referenzen (C N-11): Variante (b).** Ablauf 01 trägt die Textmarke „Untergrund“ wie auf /kontakt (erstes sichtbares Vorkommen, K-011), Wortlaut gleich.
+  10. **Nicht behoben und offen geführt:** Galerie-Statuszeile „Auswahl aus 24“ statt Zahl (T-C-4), Vorher/Nachher nur 12 % breiter (C N-6), Formatregler und Werte blass (C N-7, N-8), Wegefeld unter lg (C N-9), Schnurzeichen an der letzten H1-Zeile (B Befund 6, G8), bad-beleg-2 bei DPR 2 (B Befund 5).
+- **Prüfkette** (`$S/sfix2/pruef/kette.sh bce95087`, vorher a3c28d36 auf 4324, nachher bce95087 auf 4325; Belege `belege/um-e4-sicht-fix-2/stufe2/`):
+  - **Ablauf:** Die Kette lief losgelöst von 14:06 bis 16:03 UTC. Dann beendete die Zeitgrenze ihrer Hintergrundaufgabe (2 h) sie mitten in Lighthouse n2. Den Rest (`kette-rest.sh`) habe ich losgelöst mit nohup neu gestartet, 16:07 bis 17:20 UTC, allein auf dem Rechner.
+  - **Bestand und Zugänglichkeit grün:**
+    - Reinraum bce95087 280/280; ein Stylesheet je Seite; CSS gzip 25.111 → 25.601 B (seit der Grundlinie 23.400 B +2.201 B von 4 KB); G8 gleich.
+    - Suiten 398/0/26 in beiden Bewegungszuständen, 0 flaky.
+    - axe Haupt (396 Läufe) und Zusatz (297) je 0; ruhig/reduziert 0; Register 0/0.
+    - jsonld 113/113; Lesbarkeit 10/12 (rot nur die geschützten H1).
+    - Erstes Bild Fall für Fall gleich wie nach Welle 1 und 2.
+    - Werte 1 Befund, Altbestand (`STAFFEL_MAX = 7`, Stufenzahl, schon auf a3c28d36).
+    - Bildrate alle unter 5 % ohne durchgängige Verschlechterung.
+  - **Pixel:** 46 von 48 Hauptpaaren abweichend, alle in Ansichten mit gewollten Änderungen; Zusatz 14 von 36 (Ortsvorlage; auf /leistungen/bad und /foerderung entfällt nur die Fuge neben der freien Zelle des Anfrageformulars, M2-A2).
+  - **Lighthouse mobil** (Median aus 6 Läufen je Stand, V N N V):
+    - / 94,5 → 93,5; /bad 94 → 91,5; /bad/badsanierung 91,5 → 90 (TBT 177 → 209 ms); /bad/barrierefreies-bad 93 → 94; /leistungen 94 → 93,5.
+    - /fliesen 91,5 → 95 (TBT 184 → 132 ms); /balkon-terrasse 93 → 94; /referenzen 94,5 → 94; /ueber-uns 94,5 → 94.
+    - /kontakt 86 → 85,5 (A-1); /standorte/wetzlar 94 → 92,5; /blog 95 → 94,5.
+    - Desktop überall 100.
+  - **Abbruchkriterium /fliesen** (E-113 Nr. 6, Median unter 91): greift nicht, 95. Der Plan „Laden“ in der Flucht bleibt.
+  - **Rückweg je Ansicht** (E-113): Keine Ansicht fällt unter 90. Nur /bad/badsanierung liegt mit TBT 209 ms über 200 ms. Die drei Läufe über 240 ms stammen alle aus Runde n1, deren Benchmark-Referenz (1641) 15 bis 20 % unter den übrigen Runden lag (v1 1914, n2 1961, v2 2042). Deshalb vor einer Rücknahme eine Nachmessung (`lh-nach.sh`): /bad, /bad/badsanierung, /kontakt, vier weitere Runden V N N V zu je 3 Läufen, allein.
+    - **Ergebnis** (Median aus 12 Läufen je Stand, vorher → nachher; Benchmark-Referenz der Runden vorher 1914, 2042, 1890, 1722, nachher 1641, 1961, 1717, 1738):
+      - /bad Leistung 94 → 92,5, TBT 130 → 161 ms.
+      - /bad/badsanierung Leistung 92 → 90, TBT 155 → 233 ms (ohne n1 178; auf Benchmark 2000 normiert 150 → 209), LCP 3,00 → 2,90 s.
+      - /kontakt 85,5 → 86, TBT 178 → 165 ms.
+    - **Ursachenprüfung /bad/badsanierung:**
+      - Die zwölf Skriptdateien der Seite sind in beiden Bauten gleich (Namen und 225.025 B gzip).
+      - Die Arbeit des Hauptthreads je Aufruf ist gleich (normiert, Median aus 12): Skriptausführung 1.047 → 1.039 ms, Stil und Layout 576 → 573, HTML 118 → 121. Die Zahl der DOM-Knoten sinkt von 1.672 auf 1.650, das HTML wächst um 0,5 %.
+      - Die langen Aufgaben sind dieselben: das Dokument bei rund 1,1 s, die Hydrierung bei 3,3 bis 4,1 s. Die Summe ihrer Längen steigt leicht (Skripte 561 → 596 ms je Lauf, Dokument 114 → 136). TBT zählt nur den Teil über 50 ms und reagiert deshalb stark darauf, wie dieselbe Arbeit in Aufgaben zerfällt. Beide Stände streuen gleich weit (vorher 118 bis 323 ms, nachher 111 bis 318). E0: 165 ms (105 bis 199).
+    - **Entscheidung:** Der Rückweg wird nicht angewandt. Leistung bleibt im Median ≥ 90 (90). Zuletzt eingespielt ist für diese Ansicht das Einstiegsfoto aus SF2-B. Es wirkt auf LCP (3,00 → 2,90 s), nicht auf den Hauptthread. Eine Rücknahme würde keine Arbeit einsparen. Dass TBT im Median über dem Budget von 200 ms liegt, ist offen und wird für Z-10 in UM-E5-C mit derselben Methode gegen E0 gemessen. Liegt TBT dort im Median über 200 ms und außerhalb der E0-Spanne, folgt die Ursachensuche mit Bauvarianten je Maßnahme von SF2-A2 auf dieser Ansicht.
+  - **CLS:** Im Median 0 auf allen Ansichten. Einzelne Ausreißer an der Schnurebene des Einstiegs (`div.einstieg-lot > div.mx-auto`) in beiden Ständen:
+    - mobil nur vorher (/bad/barrierefreies-bad 0,168, /leistungen 0,175);
+    - Desktop vorher /bad/badsanierung 0,573 und /blog 0,143, nachher /fliesen 0,223 und /ueber-uns 0,555.
+    - Lighthouse nennt als Ursachen das Einstiegsfoto („ohne feste Größe“, obwohl `unsized-images` leer ist) und das Laden der Schrift. Im Filmstreifen stehen Schnur und Foto ab 375 ms still.
+    - Probe mit PerformanceObserver (`cls/cls-probe.mjs`): in 64 Aufrufen (40 Desktop 1350 × 940, 24 mobil 412 × 823; frisches Profil, Erstbesuch mit Cookie-Hinweis, Bewegung an) keine Verschiebung über 0,01. Die Ausreißer entstehen nur unter Lighthouse und in beiden Ständen gleich selten; Budget (Median aus drei) eingehalten. E-112 „Ursache klären“: Das verschobene Element ist die Zierebene, eine Verschiebung im Browser ist nicht nachstellbar. Geschlossen mit diesem Beleg, UM-E5-C beobachtet weiter.
+  - **Reaktion** (m390, CPU 4×):
+    - Hauptlauf (3 Läufe, höchster Median, vorher → nachher): alle ≤ 200 ms außer /referenzen beim Aufklappen 200 → 232. /kontakt 208 → 176, /standorte/wetzlar 208 → 144.
+    - 7 Läufe je Handlung, Median über 14 Läufe je Stand: /referenzen Aufklappen 220 → 232, Hauptknopf 136 → 156; /kontakt 184 → 164; /standorte/wetzlar Hauptknopf 248 → 232; /bad/badsanierung 180 → 188.
+    - Keine durchgängige Verschlechterung, alle unter E0 (z. B. /referenzen 304, /kontakt 812).
+    - In dieser Sitzung liegen /referenzen (Aufklappen) und /standorte/wetzlar (Hauptknopf) aber in beiden Ständen über 200 ms. In Welle 2 maß a3c28d36 192 und 160. Der Rechner streut zwischen den Sitzungen. Offen für UM-E5-C (Messung gegen E0, dieselbe Methode).
+  - **Lernpunkt (L6):** Warteschleifen mit `pgrep -f <skript>` finden die eigene Befehlszeile der Shell, in der der Skriptname steht, und warten dann endlos (Nachmessung 17:20 bis 17:23 UTC blockiert). Künftig auf die Zeile `=== ENDE` im Protokoll warten.
+  - **Pixelbilder selbst angesehen:** die Abweichungen auf `/` (nur der Schlussabschnitt mit Formular, A2 M2-A2) und im Anfrageformular auf /leistungen/bad und /foerderung (Fuge neben der freien Zelle entfällt). Die volle Gesamtsicht Torstand a3c28d36 gegen Endstand folgt mit den Vergleichsbögen aus dem Endbildsatz von UM-E5-C (`sfix2/gesamt/gesamt-wf.js`: sechs Prüfer zu je zwei Ansichten, Gegenprüfung je Befund hoch/mittel).
+  - **Belege:** `belege/um-e4-sicht-fix-2/stufe2/` (README, Skripte, Protokolle, Lighthouse je Runde, Reaktion, CLS-Probe, Auswertungsskripte).
+- **Folge:** Stufe 2 ist abgenommen. Der Code-Stand bce95087 ist der Endstand für UM-E5. Offen für UM-E5-C: TBT /bad/badsanierung (Median 233 ms aus 12 Läufen) und Reaktion /referenzen (Aufklappen) und /standorte/wetzlar (Hauptknopf) über 200 ms, je gegen E0 mit derselben Methode; CLS-Ausreißer nur unter Lighthouse beobachten.

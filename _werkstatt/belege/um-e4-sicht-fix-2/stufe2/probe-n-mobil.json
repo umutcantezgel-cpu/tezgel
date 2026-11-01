@@ -1,0 +1,410 @@
+[
+ {
+  "seite": "/bad/barrierefreies-bad",
+  "lauf": 0,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 243,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 12641
+ },
+ {
+  "seite": "/bad/barrierefreies-bad",
+  "lauf": 1,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 255,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 12641
+ },
+ {
+  "seite": "/bad/barrierefreies-bad",
+  "lauf": 2,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 269,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 12641
+ },
+ {
+  "seite": "/bad/barrierefreies-bad",
+  "lauf": 3,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 263,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 12641
+ },
+ {
+  "seite": "/bad/barrierefreies-bad",
+  "lauf": 4,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 322,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 12641
+ },
+ {
+  "seite": "/bad/barrierefreies-bad",
+  "lauf": 5,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 225,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 12641
+ },
+ {
+  "seite": "/bad/barrierefreies-bad",
+  "lauf": 6,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 263,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 8667
+ },
+ {
+  "seite": "/bad/barrierefreies-bad",
+  "lauf": 7,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 258,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 12641
+ },
+ {
+  "seite": "/leistungen",
+  "lauf": 0,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 248,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 14592
+ },
+ {
+  "seite": "/leistungen",
+  "lauf": 1,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 286,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 14592
+ },
+ {
+  "seite": "/leistungen",
+  "lauf": 2,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 249,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 14592
+ },
+ {
+  "seite": "/leistungen",
+  "lauf": 3,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 237,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 14592
+ },
+ {
+  "seite": "/leistungen",
+  "lauf": 4,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 281,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 14592
+ },
+ {
+  "seite": "/leistungen",
+  "lauf": 5,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 231,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 14592
+ },
+ {
+  "seite": "/leistungen",
+  "lauf": 6,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 232,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 14592
+ },
+ {
+  "seite": "/leistungen",
+  "lauf": 7,
+  "cls": 0,
+  "shifts": [
+   {
+    "t": 208,
+    "wert": 0.1691,
+    "eingabe": true,
+    "scrollY": 0,
+    "quellen": [
+     {
+      "el": "section.relative > div.relative > div.relative.flex.flex-col > div.mx-auto.w-full.max-w-seite",
+      "vorher": [
+       0,
+       466,
+       412,
+       226
+      ],
+      "jetzt": [
+       0,
+       0,
+       0,
+       0
+      ]
+     }
+    ]
+   }
+  ],
+  "ereignisse": [
+   {
+    "t": 249,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 14592
+ },
+ {
+  "seite": "/",
+  "lauf": 0,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 243,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 13101
+ },
+ {
+  "seite": "/",
+  "lauf": 1,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 223,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 13101
+ },
+ {
+  "seite": "/",
+  "lauf": 2,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 214,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 13101
+ },
+ {
+  "seite": "/",
+  "lauf": 3,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 238,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 13101
+ },
+ {
+  "seite": "/",
+  "lauf": 4,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 279,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 13101
+ },
+ {
+  "seite": "/",
+  "lauf": 5,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 231,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 13101
+ },
+ {
+  "seite": "/",
+  "lauf": 6,
+  "cls": 0,
+  "shifts": [
+   {
+    "t": 207,
+    "wert": 0.0003,
+    "eingabe": true,
+    "scrollY": 0,
+    "quellen": [
+     {
+      "el": "div.mx-auto.w-full.max-w-seite > div.@container.flex.w-full > a.inline-flex.min-h-11.items-center > svg",
+      "vorher": [
+       192,
+       403,
+       20,
+       20
+      ],
+      "jetzt": [
+       84,
+       405,
+       20,
+       20
+      ]
+     }
+    ]
+   }
+  ],
+  "ereignisse": [
+   {
+    "t": 237,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 13101
+ },
+ {
+  "seite": "/",
+  "lauf": 7,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 238,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 13101
+ }
+]

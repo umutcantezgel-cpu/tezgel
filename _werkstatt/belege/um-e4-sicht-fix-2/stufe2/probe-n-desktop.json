@@ -1,0 +1,728 @@
+[
+ {
+  "seite": "/ueber-uns",
+  "lauf": 0,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 310,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 12136
+ },
+ {
+  "seite": "/ueber-uns",
+  "lauf": 1,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 306,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 12136
+ },
+ {
+  "seite": "/ueber-uns",
+  "lauf": 2,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 306,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 12136
+ },
+ {
+  "seite": "/ueber-uns",
+  "lauf": 3,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 294,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 12136
+ },
+ {
+  "seite": "/ueber-uns",
+  "lauf": 4,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 272,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 12136
+ },
+ {
+  "seite": "/ueber-uns",
+  "lauf": 5,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 348,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 12136
+ },
+ {
+  "seite": "/ueber-uns",
+  "lauf": 6,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 289,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 12136
+ },
+ {
+  "seite": "/ueber-uns",
+  "lauf": 7,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 286,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 12136
+ },
+ {
+  "seite": "/ueber-uns",
+  "lauf": 8,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 260,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 12136
+ },
+ {
+  "seite": "/ueber-uns",
+  "lauf": 9,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 296,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 12136
+ },
+ {
+  "seite": "/fliesen",
+  "lauf": 0,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 219,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 10917
+ },
+ {
+  "seite": "/fliesen",
+  "lauf": 1,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 225,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 10917
+ },
+ {
+  "seite": "/fliesen",
+  "lauf": 2,
+  "cls": 0.0001,
+  "shifts": [
+   {
+    "t": 204,
+    "wert": 0.0001,
+    "eingabe": false,
+    "scrollY": 0,
+    "quellen": [
+     {
+      "el": "div.mx-auto.w-full.max-w-seite > div.flex.shrink-0.items-center > a.hidden.min-h-11.items-center > svg",
+      "vorher": [
+       1251,
+       22,
+       20,
+       20
+      ],
+      "jetzt": [
+       993,
+       22,
+       20,
+       20
+      ]
+     }
+    ]
+   }
+  ],
+  "ereignisse": [
+   {
+    "t": 243,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 10917
+ },
+ {
+  "seite": "/fliesen",
+  "lauf": 3,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 218,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 10917
+ },
+ {
+  "seite": "/fliesen",
+  "lauf": 4,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 224,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 10917
+ },
+ {
+  "seite": "/fliesen",
+  "lauf": 5,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 229,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 10917
+ },
+ {
+  "seite": "/fliesen",
+  "lauf": 6,
+  "cls": 0.0011,
+  "shifts": [
+   {
+    "t": 241,
+    "wert": 0.0011,
+    "eingabe": false,
+    "scrollY": 0,
+    "quellen": [
+     {
+      "el": "div.relative > div.relative > div.mx-auto.w-full.max-w-seite > p.mt-4.font-text.text-fs-2",
+      "vorher": [
+       637,
+       367,
+       76,
+       25
+      ],
+      "jetzt": [
+       457,
+       367,
+       436,
+       25
+      ]
+     }
+    ]
+   }
+  ],
+  "ereignisse": [
+   {
+    "t": 260,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 10917
+ },
+ {
+  "seite": "/fliesen",
+  "lauf": 7,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 217,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 10917
+ },
+ {
+  "seite": "/fliesen",
+  "lauf": 8,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 236,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 10917
+ },
+ {
+  "seite": "/fliesen",
+  "lauf": 9,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 235,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 10917
+ },
+ {
+  "seite": "/bad/badsanierung",
+  "lauf": 0,
+  "cls": 0.0002,
+  "shifts": [
+   {
+    "t": 207,
+    "wert": 0.0002,
+    "eingabe": false,
+    "scrollY": 0,
+    "quellen": [
+     {
+      "el": "div.mx-auto.w-full.max-w-seite > div.flex.shrink-0.items-center > a.hidden.min-h-11.items-center > svg",
+      "vorher": [
+       1199,
+       22,
+       20,
+       20
+      ],
+      "jetzt": [
+       993,
+       22,
+       20,
+       20
+      ]
+     },
+     {
+      "el": "div.mx-auto.w-full.max-w-seite > div.flex.shrink-0.items-center > button.hidden.size-11.shrink-0 > svg",
+      "vorher": [
+       1251,
+       22,
+       20,
+       20
+      ],
+      "jetzt": [
+       1045,
+       22,
+       20,
+       20
+      ]
+     }
+    ]
+   }
+  ],
+  "ereignisse": [
+   {
+    "t": 265,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 9622
+ },
+ {
+  "seite": "/bad/badsanierung",
+  "lauf": 1,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 274,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 9622
+ },
+ {
+  "seite": "/bad/badsanierung",
+  "lauf": 2,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 229,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 9622
+ },
+ {
+  "seite": "/bad/badsanierung",
+  "lauf": 3,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 235,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 9622
+ },
+ {
+  "seite": "/bad/badsanierung",
+  "lauf": 4,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 281,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 9622
+ },
+ {
+  "seite": "/bad/badsanierung",
+  "lauf": 5,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 292,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 9622
+ },
+ {
+  "seite": "/bad/badsanierung",
+  "lauf": 6,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 285,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 9622
+ },
+ {
+  "seite": "/bad/badsanierung",
+  "lauf": 7,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 317,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 9622
+ },
+ {
+  "seite": "/bad/badsanierung",
+  "lauf": 8,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 284,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 9622
+ },
+ {
+  "seite": "/bad/badsanierung",
+  "lauf": 9,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 345,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 9622
+ },
+ {
+  "seite": "/blog",
+  "lauf": 0,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 251,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 12150
+ },
+ {
+  "seite": "/blog",
+  "lauf": 1,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 185,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 12150
+ },
+ {
+  "seite": "/blog",
+  "lauf": 2,
+  "cls": 0.0002,
+  "shifts": [
+   {
+    "t": 190,
+    "wert": 0.0002,
+    "eingabe": false,
+    "scrollY": 0,
+    "quellen": [
+     {
+      "el": "div.mx-auto.w-full.max-w-seite > div.flex.shrink-0.items-center > a.hidden.min-h-11.items-center > svg",
+      "vorher": [
+       1199,
+       22,
+       20,
+       20
+      ],
+      "jetzt": [
+       993,
+       22,
+       20,
+       20
+      ]
+     },
+     {
+      "el": "div.mx-auto.w-full.max-w-seite > div.flex.shrink-0.items-center > button.hidden.size-11.shrink-0 > svg",
+      "vorher": [
+       1251,
+       22,
+       20,
+       20
+      ],
+      "jetzt": [
+       1045,
+       22,
+       20,
+       20
+      ]
+     }
+    ]
+   }
+  ],
+  "ereignisse": [
+   {
+    "t": 243,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 11268
+ },
+ {
+  "seite": "/blog",
+  "lauf": 3,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 228,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 12150
+ },
+ {
+  "seite": "/blog",
+  "lauf": 4,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 206,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 12150
+ },
+ {
+  "seite": "/blog",
+  "lauf": 5,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 273,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 12150
+ },
+ {
+  "seite": "/blog",
+  "lauf": 6,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 214,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 12150
+ },
+ {
+  "seite": "/blog",
+  "lauf": 7,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 222,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 12150
+ },
+ {
+  "seite": "/blog",
+  "lauf": 8,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 227,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 12150
+ },
+ {
+  "seite": "/blog",
+  "lauf": 9,
+  "cls": 0,
+  "shifts": [],
+  "ereignisse": [
+   {
+    "t": 198,
+    "was": "fonts",
+    "n": 3
+   }
+  ],
+  "scrollbar": 0,
+  "hoehe": 12150
+ }
+]
