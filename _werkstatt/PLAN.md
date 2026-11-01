@@ -224,7 +224,7 @@ Vor dem Start einer Kür-Zeile trage ich ihre exakte Dateiliste nach denselben R
 - Aus E-099 und E-100 für UM-E5-C:
   - 71 Stellen „Zahl Einheit“ in Ausdrücken von Komponenten und App-Seiten (E-Mail und Formulare nach G8 unberührt); nur sichtbare Umbrüche im Endbildsatz aufnehmen.
   - Altbestand, auf f34c103b gleich:
-    - axe `label-content-name-mismatch` am WhatsApp-Link auf `/preise` und `/termin`;
+    - erledigt (E-112): axe `label-content-name-mismatch` am WhatsApp-Link, behoben in SF-B2 (X-1);
     - `/preise` ohne Seitenknoten und BreadcrumbList;
     - Lesbarkeit rot auf `/bad/projekt-check`, `/termin` und den beiden Ratgebern.
 - Aus E-100 für E4-SICHT: Überlauf der Ortsliste bei t768 und q844 (vorhanden).
@@ -232,3 +232,8 @@ Vor dem Start einer Kür-Zeile trage ich ihre exakte Dateiliste nach denselben R
   - Für UM-E5-C: Hydrierungsfehler #418 auf `/blog`, wenn Überschreibungen aus localStorage vor dem Laden stehen (nur Verwaltung, Altbestand).
   - Für E4-SICHT: Platzhalterhöhe von `spaet-zeichnen` (50rem, E-087) bei langen Abschnitten; ohne Budgetwirkung (CLS 0).
   - Für Tor E5 (Z-10): Ausnahme A-1 gilt für alle zwölf Ansichten, Wetzlar Leistung mobil 86 inbegriffen; Nachmessung mit derselben Methode (V N N V, allein).
+- Aus E-112 für UM-E5-C:
+  - Vereinzelter CLS am Einstiegsbehälter (2 von 72 mobilen Läufen, beide Stände: vorher / 0,129, nachher /bad 0,169): Ursache klären.
+  - `/referenzen`, Galerie aufklappen: 192 ms knapp unter der Grenze; mit derselben Methode (7 Läufe je Handlung) erneut messen.
+  - `/fliesen` LCP 2,82 → 3,16 s (Stufen des simulierten LCP) und `/bad/badsanierung` TBT 157 → 194 ms beobachten; beide über 90 und über E0.
+  - Für Tor E5 (Z-10): A-1 umfasst jetzt auch `/kontakt` (Leistung mobil 87, Einwilligungstext als LCP-Element).

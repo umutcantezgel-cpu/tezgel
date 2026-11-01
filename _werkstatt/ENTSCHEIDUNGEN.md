@@ -1835,3 +1835,27 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - OF-C3-5 (Reihe direkt unter der Auswahl auf `/`): Planentscheidung M-B8 bleibt; Wirkung im Tor.
   - OF-C3-7 (zwei Fotopaare mit fast gleichen Kanten auf /bad/barrierefreies-bad): betrifft Standards von SF-B2 für alle Seiten; im Tor E4 bewerten, Nachbau nur nach Befund.
   - OF-C3-8: hängt an T-C3-2 bis 4 (Auftraggeber).
+
+## E-112 · Messpunkt nach Welle 2 von UM-E4-SICHT-FIX: R-1 und X-1 erledigt, R-2 unter Ausnahme A-1 (1.11.2026, 05:00 MEZ)
+- **Belege:** `belege/um-e4-sicht-fix/messpunkt-w2/` (README mit allen Werten, Rohdaten, Protokolle). Vorher 13315fa8, nachher a3c28d36; Lighthouse sechs Läufe je Stand (V N N V) und Reaktion allein auf dem Rechner, Reaktion zusätzlich mit 7 Läufen je Handlung im Wechsel nachgemessen.
+- **Grün:**
+  - Reinraum a3c28d36 280/280; Suiten je 398/0/26; axe Hauptansichten 0; G8 gleich; Werte 0.
+  - Ein Stylesheet je Seite; CSS 25.111 B gzip, seit der Grundlinie vor Welle 1 +1.711 B (Budget +4 KB).
+  - Ruhig und reduziert 0; Register 0; Strukturdaten 113/113; Lesbarkeit wie vorher (rot nur die geschützten H1); erstes Bild Fall für Fall wie nach Welle 1.
+  - Bildrate unter 5 %, ohne durchgängige Verschlechterung (/referenzen 2,16 → 0,17 %).
+  - Pixel: Abweichungen nur in Ansichten mit gewollten Änderungen; /kontakt und die Formular- und Zusatzseiten pixelgleich.
+  - Lighthouse mobil: 11 von 12 Ansichten 91 bis 95, keine unter E0; Desktop 100 überall.
+- **R-1 erledigt (knapp):** /referenzen, Galerie aufklappen: Median 192 ms aus 14 Läufen (vorher 496 ms; Spanne nachher 168 bis 256 ms). Im Hauptlauf mit 3 Läufen 224 ms; die Nachmessung mit 7 Läufen je Runde gilt, weil 3 Läufe bei diesem Wert zu stark streuen. Die Grenze von 200 ms ist erreicht, ohne Puffer. In UM-E5-C misst die Prüfstufe C dieselbe Handlung erneut, mit derselben Methode (7 Läufe).
+- **X-1 erledigt:** axe Zusatz 0 Knoten auf 9 Seiten (Welle 1: 104 am WhatsApp-Knopf), ohne sichtbare Änderung (Pixel gleich). Der Altbefund aus E-100 auf /preise und /termin ist damit ebenfalls behoben → in PLAN „Offene Punkte“ gestrichen.
+- **R-2 nicht behoben → Geltung von A-1 erweitert (Entscheidungsvermerk):**
+  - /kontakt Leistung mobil 87 (vorher 87,5; E0 93, Spanne 91 bis 93). In allen 12 Läufen ist das LCP-Element der Text des Cookie-Hinweises. Seit SF-C2 (E-104: Formular im ersten Bildschirm) steht dort kein größeres Element mehr.
+  - SF-A2 hat den Weg geprüft (EV-11, Flächenrechnung in der Notiz Abschnitt 5). Ein gestalterisch begründetes größeres erstes Element gäbe es nur, wenn das Formular aus dem ersten Bildschirm wiche (gegen E-104) oder die H1 in feste Inline-Zeilen zerlegt würde. Letzteres wäre ein Bau nur für die Messung (G7, wie E-101). Den Text des Hinweises zu teilen oder den Hinweis anders zu zeichnen, schließen G7 und G8 aus (E-101).
+  - Das ist dieselbe Ursache wie bei `/standorte/wetzlar` in E-101: Das LCP-Kriterium folgt aus dem Einwilligungstext (G8). Deshalb gilt A-1 auch für die Leistung auf /kontakt; es entsteht keine zweite AUSNAHME. Zahl der AUSNAHMEN nach L7: weiter eine (A-1, Z-10).
+  - Für echte Besucher steht das Formular mit dem ersten Zeichnen da (FCP 1,2 s im Modell). Desktop 100.
+  - `ABNAHME.md` nachgezogen: Abschnitt „Ausnahmen“ nennt A-1 jetzt ausdrücklich, mit Geltung (er stand noch auf „Keine“), Stand E4 unter Z-10 und Z-07.
+- **Beobachtungen ohne Bau** (→ PLAN „Offene Punkte“ für UM-E5-C):
+  - /fliesen: Leistung 94 → 92,5, LCP 2,82 → 3,16 s. Der simulierte LCP des Vorspanns springt in Stufen von rund 230 ms, nachher öfter in der oberen; über E0 (92) und über 90.
+  - /bad/badsanierung: TBT 157 → 194 ms, Spannen überlappen, Leistung 91 (E0 90).
+  - Vereinzelter CLS am Einstiegsbehälter, je ein Lauf in jedem Stand (vorher / 0,129, nachher /bad 0,169; 2 von 72 Läufen, nach Welle 1 0 von 72). Er tritt auch auf 13315fa8 auf und folgt nicht aus Welle 2; Ursache in UM-E5-C klären.
+  - Hauptknöpfe (Ankersprung) auf /kontakt und /standorte/wetzlar streuen über 200 ms (bis 232 und 280 ms), im Median 136 und 160 ms.
+- **Folge:** Tor E4 Anlauf 2: Bildsatz `$S/sfix/sicht2/bildsatz.sh a3c28d36` läuft (seit 04:39 UTC, allein), danach `sicht2-wf.js` (8 Opus-Prüfer), Ergebnis E-105.

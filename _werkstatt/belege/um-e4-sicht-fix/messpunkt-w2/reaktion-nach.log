@@ -1,0 +1,41 @@
+--- v1 4325 04:24:46 last 0.50
+exit 0
+Satz sfix-w2-reaktion7-v1 · m390 · CPU 4× · Median aus 7 Läufen je Handlung · Schwelle ≤ 200 ms (ms)
+Seite                     Hauptknopf      Menü Akkordeon   Eingabe      Link  Höchster  Urteil
+/referenzen                      120       120       544         —        64       544  über 200 ms
+/kontakt                         160       104         —         —        40       160  ok
+/standorte/wetzlar               152       136        96       104        72       152  ok
+/bad/badsanierung                112       104        88         —        64       112  ok
+
+Belege: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/sfix/pruef-w2/reaktion7-v1/reaktion.json
+--- n1 4324 04:28:19 last 2.55
+exit 0
+Satz sfix-w2-reaktion7-n1 · m390 · CPU 4× · Median aus 7 Läufen je Handlung · Schwelle ≤ 200 ms (ms)
+Seite                     Hauptknopf      Menü Akkordeon   Eingabe      Link  Höchster  Urteil
+/referenzen                      120       104       176         —        64       176  ok
+/kontakt                         160        96         —         —        48       160  ok
+/standorte/wetzlar               152       128        72        88        64       152  ok
+/bad/badsanierung                136        96       104         —        48       136  ok
+
+Belege: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/sfix/pruef-w2/reaktion7-n1/reaktion.json
+--- v2 4325 04:31:42 last 1.81
+exit 0
+Satz sfix-w2-reaktion7-v2 · m390 · CPU 4× · Median aus 7 Läufen je Handlung · Schwelle ≤ 200 ms (ms)
+Seite                     Hauptknopf      Menü Akkordeon   Eingabe      Link  Höchster  Urteil
+/referenzen                      152       120       472         —        56       472  über 200 ms
+/kontakt                         136       112         —         —        48       136  ok
+/standorte/wetzlar               224       128        96       104        64       224  über 200 ms
+/bad/badsanierung                168        96        96         —        64       168  ok
+
+Belege: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/sfix/pruef-w2/reaktion7-v2/reaktion.json
+--- n2 4324 04:35:10 last 1.68
+exit 0
+Satz sfix-w2-reaktion7-n2 · m390 · CPU 4× · Median aus 7 Läufen je Handlung · Schwelle ≤ 200 ms (ms)
+Seite                     Hauptknopf      Menü Akkordeon   Eingabe      Link  Höchster  Urteil
+/referenzen                      112       104       200         —        56       200  ok
+/kontakt                         128       112         —         —        48       128  ok
+/standorte/wetzlar               176       120        80        88        72       176  ok
+/bad/badsanierung                144        96       112         —        48       144  ok
+
+Belege: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/sfix/pruef-w2/reaktion7-n2/reaktion.json
+=== ENDE 04:38:33

@@ -48,6 +48,7 @@ Stand 27.10.2026, E1, Fassung 2.1 (AUFTRAG.md Abschnitt 15; L0 Runde 1 eingearbe
 - Beleg: `belege/um-e5/scroll-cursor.md`, `belege/um-e5/reaktion/`.
 - E0: kein Cursor-System. Reaktionszeit (`belege/um-e0/reaktion/reaktion.json`, m390, 4× Drosselung, Schwelle 200 ms, höchster Median je Ansicht): `/` 608 ms (Eingabe), `/bad` 216, `/bad/badsanierung` 80, `/bad/barrierefreies-bad` 168, `/leistungen` 72, `/fliesen` 96, `/balkon-terrasse` 404 (unvollständig), `/referenzen` 304, `/ueber-uns` 456, `/kontakt` 812 (unvollständig), `/standorte/wetzlar` 584, `/blog` 744 ms. 4 bestanden, 6 nicht bestanden, 2 unvollständig. Die Einzelwerte streuen stark (zum Beispiel `/` Hauptknopf 3.184, 48 und 192 ms); verglichen wird deshalb der Median mit der Spanne der drei Läufe. Bildrate beim Scrollen siehe Z-06. Stand: offen.
 - Stand E4 (E-101, `belege/um-e4-leistung/reaktion-*.json`, m390, 4× Drosselung): alle 12 Ansichten ≤ 200 ms, höchster Median je Ansicht 80 bis 128 ms; zehn auf oder unter dem E0-Median, `/bad/badsanierung` (120) und `/leistungen` (120) in der Spanne der drei E0-Läufe.
+- Stand E4 nach UM-E4-SICHT-FIX (E-112, `belege/um-e4-sicht-fix/messpunkt-w2/`, a3c28d36): höchster Median je Ansicht 104 bis 192 ms (`/referenzen`, `/kontakt` und `/standorte/wetzlar` aus der Nachmessung). `/referenzen` beim Aufklappen der Galerie 192 ms, Median aus 14 Läufen (Nachmessung mit 7 Läufen je Runde, im Wechsel; nach Welle 1 384 ms). Hauptlauf mit 3 Läufen: `/referenzen` 224, `/kontakt` 224 und `/standorte/wetzlar` 232 ms; in der Nachmessung 192, 136 und 160 ms.
 
 ### Z-08 Grafik
 - Methode: Prüfstufe C; `svg.mjs` mit den SVGO-Konfigurationen; Kennungen je Ansicht im DOM.
@@ -70,6 +71,7 @@ Stand 27.10.2026, E1, Fassung 2.1 (AUFTRAG.md Abschnitt 15; L0 Runde 1 eingearbe
 - Stand E3 (E-081): Lighthouse mobil `/` nach UM-E3-EIN TBT 106 bis 115 ms statt 196 bis 202 ms, Leistung 94 bis 95 statt 89 bis 91. `/standorte/wetzlar` und `/blog/fliesen-reinigen-pflegen` unverändert in der Spanne.
 - Stand E3 (E-085): `/` mobil LCP 2,70 s (gzip und Brotli), Leistung 94 bis 96, Reaktion 128 ms. Das LCP-Budget 2,5 s ist nicht erfüllt: Ausnahme A-1, Prüfung erneut in UM-E4-LEISTUNG.
 - Stand E4 (E-101, `belege/um-e4-leistung/`, e222f6d3, Median aus sechs Läufen V N N V): mobil Leistung 93 bis 96 auf 11 Ansichten, `/standorte/wetzlar` 86 (E0 81); LCP 2,49 s (`/kontakt`) bis 3,02 s, Wetzlar 3,77 s; FCP überall −150 ms gegen vorher; TBT 75 bis 158 ms; CLS 0; Desktop 100 überall. Keine Ansicht schlechter als E0. Ausnahme A-1 gilt für das LCP-Budget auf allen zwölf Ansichten und für die Leistung auf Wetzlar (LCP-Element ist dort der Einwilligungstext, G8).
+- Stand E4 nach UM-E4-SICHT-FIX (E-112, `belege/um-e4-sicht-fix/messpunkt-w2/`, a3c28d36, Median aus sechs Läufen V N N V): mobil Leistung 91 bis 95 auf 11 Ansichten, `/standorte/wetzlar` 93, `/kontakt` 87 (E0 93; LCP-Element seit SF-C2 der Einwilligungstext, A-1); LCP 2,79 bis 3,16 s, `/kontakt` 3,83 s; TBT 77 bis 194 ms; CLS im Median 0 bis 0,010; Desktop 100 überall.
 
 ### Z-11 Darstellung
 - Methode: Bildsatz der Hauptansichten und der Stichprobe in den vier GERÄTEGRÖSSEN (390 × 844, 768 × 1024, 1440 × 900, 1920 × 1080), dazu 200 % Schrift und Reflow 320 px, mit Überlauf- und Überlappungsprüfung. Themen: hell (einziges Thema; kommt UM-K07, auch dunkel). Sprachen: Deutsch.
@@ -95,7 +97,7 @@ Stand 27.10.2026, E1, Fassung 2.1 (AUFTRAG.md Abschnitt 15; L0 Runde 1 eingearbe
 - U-3 Kontingent ohne Messwert: In der Cloud fehlt `~/.claude/kontingent.json`; Ersatz ist die Schätzung von `kontingent.mjs` mit Kalibrierung an Limit-Ereignissen und Meldungen. Z-12 wird für Fenster ohne Messwert an der Schätzung gemessen, mit Vermerk.
 
 ## Ausnahmen (höchstens zwei, keine für Z-02 und Z-09)
-- Keine.
+- **A-1 (Z-10, Ladezeit):** Das LCP-Budget von 2,5 s mobil gilt nicht. Der simulierte LCP endet am Ende von React DOM und der Next-Laufzeit, nicht am Foto. Belegt in zwei Anläufen: E-085 und E-101. Dazu gilt die Leistung ≥ 90 mobil nicht auf `/standorte/wetzlar` (E-101) und `/kontakt` (E-112). Auf beiden Seiten ist das LCP-Element der Text des Cookie-Hinweises (G8); was darüber hinausginge, änderte nur die Messung (G7) oder das Verhalten der Einwilligung (G8). Geltung: alle zwölf Hauptansichten. Nachmessung in Tor E5 mit derselben Methode (V N N V, allein).
 
 ## Prüfmatrix
 | Kriterium | Stufe A (Paket) | Stufe B (Etappe) | Stufe C (Ende) |

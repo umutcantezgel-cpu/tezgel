@@ -1,0 +1,1896 @@
+{
+ "satz": "sfix-w2-reaktion7-n2",
+ "base": "http://127.0.0.1:4324",
+ "ziel": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/sfix/pruef-w2/reaktion7-n2",
+ "erstellt": "2026-11-01T04:38:33.273Z",
+ "bedingungen": {
+  "geraet": "m390",
+  "viewport": {
+   "width": 390,
+   "height": 844
+  },
+  "mobil_mit_touch": true,
+  "dpr": 1,
+  "cpu_drosselung": 4,
+  "ereignis_schwelle_ms": 16,
+  "schwelle_ms": 200,
+  "laeufe": 7,
+  "einwilligung": "abgelehnt",
+  "intro": "gesehen (Speicher tezgel-intro und tezgel-eingang gesetzt)",
+  "hydriert": "Element mit __reactProps$ vorhanden",
+  "eingabe": "antippen (tap, Touch-Emulation); Eingabefeld: 5 Zeichen „Hallo“, kein Absenden",
+  "messung": "größter duration-Wert der Ereignisse mit interactionId > 0 im Zeitfenster der Handlung; Median je Handlung über die Läufe; Seitenwert = höchster Median",
+  "handlungen": [
+   "hauptknopf",
+   "menue",
+   "akkordeon",
+   "eingabe",
+   "link"
+  ],
+  "commit": "b0060976",
+  "arbeitsbaum": "sauber",
+  "server_stand": {
+   "port": "4324",
+   "verzeichnis": "/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/reinraum-a3c28d36",
+   "commit": "a3c28d36"
+  },
+  "chromium": "153.0.8010.12",
+  "basisadresse": "http://127.0.0.1:4324"
+ },
+ "zusammenfassung": {
+  "seiten": 4,
+  "bestanden": 4,
+  "nicht_bestanden": 0,
+  "unvollstaendig": 0
+ },
+ "seiten": [
+  {
+   "seite": "/referenzen",
+   "handlungen": {
+    "hauptknopf": {
+     "werte": [
+      96,
+      80,
+      160,
+      112,
+      160,
+      112,
+      104
+     ],
+     "median": 112,
+     "fehlende_laeufe": 0,
+     "ziel": "link"
+    },
+    "menue": {
+     "werte": [
+      88,
+      88,
+      104,
+      96,
+      128,
+      112,
+      136
+     ],
+     "median": 104,
+     "fehlende_laeufe": 0,
+     "ziel": "schalter"
+    },
+    "akkordeon": {
+     "werte": [
+      184,
+      208,
+      192,
+      192,
+      200,
+      216,
+      256
+     ],
+     "median": 200,
+     "fehlende_laeufe": 0,
+     "ziel": "schalter"
+    },
+    "eingabe": {
+     "nicht_vorhanden": true
+    },
+    "link": {
+     "werte": [
+      56,
+      64,
+      56,
+      56,
+      56,
+      56,
+      64
+     ],
+     "median": 56,
+     "fehlende_laeufe": 0,
+     "ziel": "link"
+    }
+   },
+   "hoechster_median": 200,
+   "hoechste_handlung": "akkordeon",
+   "bestanden": true,
+   "unvollstaendig": false,
+   "laeufe": [
+    {
+     "lauf": 1,
+     "seite": "/referenzen",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 96,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507713147,
+        1793507714134
+       ]
+      },
+      "menue": {
+       "wert": 88,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1793507714223,
+        1793507715140
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "wert": 184,
+       "eintraege": 3,
+       "ziel": "schalter",
+       "fenster": [
+        1793507715193,
+        1793507716136
+       ]
+      },
+      "eingabe": {
+       "nicht_vorhanden": true
+      },
+      "link": {
+       "wert": 56,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507716410,
+        1793507718736
+       ],
+       "navigiert_zu": "/",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 96,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    },
+    {
+     "lauf": 2,
+     "seite": "/referenzen",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 80,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507720417,
+        1793507721500
+       ]
+      },
+      "menue": {
+       "wert": 88,
+       "eintraege": 3,
+       "ziel": "schalter",
+       "fenster": [
+        1793507721598,
+        1793507722566
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "wert": 208,
+       "eintraege": 3,
+       "ziel": "schalter",
+       "fenster": [
+        1793507722636,
+        1793507723582
+       ]
+      },
+      "eingabe": {
+       "nicht_vorhanden": true
+      },
+      "link": {
+       "wert": 64,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507723816,
+        1793507726206
+       ],
+       "navigiert_zu": "/",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 72,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    },
+    {
+     "lauf": 3,
+     "seite": "/referenzen",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 160,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507727837,
+        1793507728892
+       ]
+      },
+      "menue": {
+       "wert": 104,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1793507728993,
+        1793507729960
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "wert": 192,
+       "eintraege": 3,
+       "ziel": "schalter",
+       "fenster": [
+        1793507730019,
+        1793507730959
+       ]
+      },
+      "eingabe": {
+       "nicht_vorhanden": true
+      },
+      "link": {
+       "wert": 56,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507731186,
+        1793507733540
+       ],
+       "navigiert_zu": "/",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 136,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    },
+    {
+     "lauf": 4,
+     "seite": "/referenzen",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 112,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507735175,
+        1793507736280
+       ]
+      },
+      "menue": {
+       "wert": 96,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1793507736363,
+        1793507737315
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "wert": 192,
+       "eintraege": 3,
+       "ziel": "schalter",
+       "fenster": [
+        1793507737380,
+        1793507738308
+       ]
+      },
+      "eingabe": {
+       "nicht_vorhanden": true
+      },
+      "link": {
+       "wert": 56,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507738566,
+        1793507740928
+       ],
+       "navigiert_zu": "/",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 112,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    },
+    {
+     "lauf": 5,
+     "seite": "/referenzen",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 160,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507742752,
+        1793507743837
+       ]
+      },
+      "menue": {
+       "wert": 128,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1793507743932,
+        1793507744965
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "wert": 200,
+       "eintraege": 3,
+       "ziel": "schalter",
+       "fenster": [
+        1793507745026,
+        1793507745984
+       ]
+      },
+      "eingabe": {
+       "nicht_vorhanden": true
+      },
+      "link": {
+       "wert": 56,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507746304,
+        1793507748680
+       ],
+       "navigiert_zu": "/",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 136,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    },
+    {
+     "lauf": 6,
+     "seite": "/referenzen",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 112,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507750365,
+        1793507751489
+       ]
+      },
+      "menue": {
+       "wert": 112,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1793507751573,
+        1793507752556
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "wert": 216,
+       "eintraege": 3,
+       "ziel": "schalter",
+       "fenster": [
+        1793507752648,
+        1793507753656
+       ]
+      },
+      "eingabe": {
+       "nicht_vorhanden": true
+      },
+      "link": {
+       "wert": 56,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507753971,
+        1793507756405
+       ],
+       "navigiert_zu": "/",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 88,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    },
+    {
+     "lauf": 7,
+     "seite": "/referenzen",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 104,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507758222,
+        1793507759366
+       ]
+      },
+      "menue": {
+       "wert": 136,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1793507759489,
+        1793507760587
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "wert": 256,
+       "eintraege": 3,
+       "ziel": "schalter",
+       "fenster": [
+        1793507760655,
+        1793507761658
+       ]
+      },
+      "eingabe": {
+       "nicht_vorhanden": true
+      },
+      "link": {
+       "wert": 64,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507761999,
+        1793507764420
+       ],
+       "navigiert_zu": "/",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 80,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    }
+   ]
+  },
+  {
+   "seite": "/kontakt",
+   "handlungen": {
+    "hauptknopf": {
+     "werte": [
+      216,
+      160,
+      112,
+      144,
+      128,
+      72,
+      104
+     ],
+     "median": 128,
+     "fehlende_laeufe": 0,
+     "ziel": "anker"
+    },
+    "menue": {
+     "werte": [
+      104,
+      112,
+      112,
+      112,
+      104,
+      96,
+      136
+     ],
+     "median": 112,
+     "fehlende_laeufe": 0,
+     "ziel": "schalter"
+    },
+    "akkordeon": {
+     "nicht_vorhanden": true
+    },
+    "eingabe": {
+     "nicht_vorhanden": true
+    },
+    "link": {
+     "werte": [
+      48,
+      56,
+      56,
+      48,
+      32,
+      40,
+      48
+     ],
+     "median": 48,
+     "fehlende_laeufe": 0,
+     "ziel": "link"
+    }
+   },
+   "hoechster_median": 128,
+   "hoechste_handlung": "hauptknopf",
+   "bestanden": true,
+   "unvollstaendig": false,
+   "laeufe": [
+    {
+     "lauf": 1,
+     "seite": "/kontakt",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 216,
+       "eintraege": 3,
+       "ziel": "anker",
+       "fenster": [
+        1793507765853,
+        1793507766918
+       ]
+      },
+      "menue": {
+       "wert": 104,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1793507767048,
+        1793507767999
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "nicht_vorhanden": true
+      },
+      "eingabe": {
+       "nicht_vorhanden": true
+      },
+      "link": {
+       "wert": 48,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507768146,
+        1793507770484
+       ],
+       "navigiert_zu": "/",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 216,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    },
+    {
+     "lauf": 2,
+     "seite": "/kontakt",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 160,
+       "eintraege": 3,
+       "ziel": "anker",
+       "fenster": [
+        1793507771840,
+        1793507772937
+       ]
+      },
+      "menue": {
+       "wert": 112,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1793507773030,
+        1793507773954
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "nicht_vorhanden": true
+      },
+      "eingabe": {
+       "nicht_vorhanden": true
+      },
+      "link": {
+       "wert": 56,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507774074,
+        1793507776386
+       ],
+       "navigiert_zu": "/",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 120,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    },
+    {
+     "lauf": 3,
+     "seite": "/kontakt",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 112,
+       "eintraege": 3,
+       "ziel": "anker",
+       "fenster": [
+        1793507777666,
+        1793507778679
+       ]
+      },
+      "menue": {
+       "wert": 112,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1793507778792,
+        1793507779693
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "nicht_vorhanden": true
+      },
+      "eingabe": {
+       "nicht_vorhanden": true
+      },
+      "link": {
+       "wert": 56,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507779794,
+        1793507782075
+       ],
+       "navigiert_zu": "/",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 64,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    },
+    {
+     "lauf": 4,
+     "seite": "/kontakt",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 144,
+       "eintraege": 3,
+       "ziel": "anker",
+       "fenster": [
+        1793507783466,
+        1793507784589
+       ]
+      },
+      "menue": {
+       "wert": 112,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1793507784704,
+        1793507785668
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "nicht_vorhanden": true
+      },
+      "eingabe": {
+       "nicht_vorhanden": true
+      },
+      "link": {
+       "wert": 48,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507785775,
+        1793507788038
+       ],
+       "navigiert_zu": "/",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 88,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    },
+    {
+     "lauf": 5,
+     "seite": "/kontakt",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 128,
+       "eintraege": 3,
+       "ziel": "anker",
+       "fenster": [
+        1793507789275,
+        1793507790313
+       ]
+      },
+      "menue": {
+       "wert": 104,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1793507790409,
+        1793507791335
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "nicht_vorhanden": true
+      },
+      "eingabe": {
+       "nicht_vorhanden": true
+      },
+      "link": {
+       "wert": 32,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507791500,
+        1793507793715
+       ],
+       "navigiert_zu": "/",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 128,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    },
+    {
+     "lauf": 6,
+     "seite": "/kontakt",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 72,
+       "eintraege": 3,
+       "ziel": "anker",
+       "fenster": [
+        1793507794964,
+        1793507795904
+       ]
+      },
+      "menue": {
+       "wert": 96,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1793507796011,
+        1793507796968
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "nicht_vorhanden": true
+      },
+      "eingabe": {
+       "nicht_vorhanden": true
+      },
+      "link": {
+       "wert": 40,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507797066,
+        1793507799355
+       ],
+       "navigiert_zu": "/",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 72,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    },
+    {
+     "lauf": 7,
+     "seite": "/kontakt",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 104,
+       "eintraege": 3,
+       "ziel": "anker",
+       "fenster": [
+        1793507800810,
+        1793507801837
+       ]
+      },
+      "menue": {
+       "wert": 136,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1793507801936,
+        1793507802926
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "nicht_vorhanden": true
+      },
+      "eingabe": {
+       "nicht_vorhanden": true
+      },
+      "link": {
+       "wert": 48,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507803049,
+        1793507805320
+       ],
+       "navigiert_zu": "/",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 56,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    }
+   ]
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "handlungen": {
+    "hauptknopf": {
+     "werte": [
+      128,
+      120,
+      232,
+      280,
+      136,
+      200,
+      176
+     ],
+     "median": 176,
+     "fehlende_laeufe": 0,
+     "ziel": "anker"
+    },
+    "menue": {
+     "werte": [
+      120,
+      112,
+      136,
+      128,
+      160,
+      112,
+      104
+     ],
+     "median": 120,
+     "fehlende_laeufe": 0,
+     "ziel": "schalter"
+    },
+    "akkordeon": {
+     "werte": [
+      56,
+      88,
+      64,
+      80,
+      88,
+      80,
+      112
+     ],
+     "median": 80,
+     "fehlende_laeufe": 0,
+     "ziel": "schalter"
+    },
+    "eingabe": {
+     "werte": [
+      88,
+      120,
+      96,
+      88,
+      72,
+      88,
+      96
+     ],
+     "median": 88,
+     "fehlende_laeufe": 0,
+     "ziel": "eingabe"
+    },
+    "link": {
+     "werte": [
+      72,
+      48,
+      56,
+      72,
+      72,
+      56,
+      80
+     ],
+     "median": 72,
+     "fehlende_laeufe": 0,
+     "ziel": "link"
+    }
+   },
+   "hoechster_median": 176,
+   "hoechste_handlung": "hauptknopf",
+   "bestanden": true,
+   "unvollstaendig": false,
+   "laeufe": [
+    {
+     "lauf": 1,
+     "seite": "/standorte/wetzlar",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 128,
+       "eintraege": 3,
+       "ziel": "anker",
+       "fenster": [
+        1793507806988,
+        1793507808055
+       ]
+      },
+      "menue": {
+       "wert": 120,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1793507808194,
+        1793507809243
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "wert": 56,
+       "eintraege": 3,
+       "ziel": "schalter",
+       "fenster": [
+        1793507809311,
+        1793507810112
+       ]
+      },
+      "eingabe": {
+       "wert": 88,
+       "eintraege": 17,
+       "ziel": "eingabe",
+       "fenster": [
+        1793507810141,
+        1793507811298
+       ]
+      },
+      "link": {
+       "wert": 72,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507811344,
+        1793507813657
+       ],
+       "navigiert_zu": "/",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 128,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    },
+    {
+     "lauf": 2,
+     "seite": "/standorte/wetzlar",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 120,
+       "eintraege": 3,
+       "ziel": "anker",
+       "fenster": [
+        1793507815178,
+        1793507816316
+       ]
+      },
+      "menue": {
+       "wert": 112,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1793507816400,
+        1793507817395
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "wert": 88,
+       "eintraege": 3,
+       "ziel": "schalter",
+       "fenster": [
+        1793507817480,
+        1793507818349
+       ]
+      },
+      "eingabe": {
+       "wert": 120,
+       "eintraege": 16,
+       "ziel": "eingabe",
+       "fenster": [
+        1793507818388,
+        1793507819588
+       ]
+      },
+      "link": {
+       "wert": 48,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507819644,
+        1793507822081
+       ],
+       "navigiert_zu": "/",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 72,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    },
+    {
+     "lauf": 3,
+     "seite": "/standorte/wetzlar",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 232,
+       "eintraege": 3,
+       "ziel": "anker",
+       "fenster": [
+        1793507823607,
+        1793507824732
+       ]
+      },
+      "menue": {
+       "wert": 136,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1793507824817,
+        1793507825950
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "wert": 64,
+       "eintraege": 3,
+       "ziel": "schalter",
+       "fenster": [
+        1793507826003,
+        1793507826800
+       ]
+      },
+      "eingabe": {
+       "wert": 96,
+       "eintraege": 18,
+       "ziel": "eingabe",
+       "fenster": [
+        1793507826836,
+        1793507828015
+       ]
+      },
+      "link": {
+       "wert": 56,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507828064,
+        1793507830429
+       ],
+       "navigiert_zu": "/",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 168,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    },
+    {
+     "lauf": 4,
+     "seite": "/standorte/wetzlar",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 280,
+       "eintraege": 3,
+       "ziel": "anker",
+       "fenster": [
+        1793507831891,
+        1793507833048
+       ]
+      },
+      "menue": {
+       "wert": 128,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1793507833135,
+        1793507834176
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "wert": 80,
+       "eintraege": 3,
+       "ziel": "schalter",
+       "fenster": [
+        1793507834250,
+        1793507835080
+       ]
+      },
+      "eingabe": {
+       "wert": 88,
+       "eintraege": 16,
+       "ziel": "eingabe",
+       "fenster": [
+        1793507835122,
+        1793507836306
+       ]
+      },
+      "link": {
+       "wert": 72,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507836392,
+        1793507838717
+       ],
+       "navigiert_zu": "/",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 280,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    },
+    {
+     "lauf": 5,
+     "seite": "/standorte/wetzlar",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 136,
+       "eintraege": 3,
+       "ziel": "anker",
+       "fenster": [
+        1793507840274,
+        1793507841411
+       ]
+      },
+      "menue": {
+       "wert": 160,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1793507841530,
+        1793507842616
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "wert": 88,
+       "eintraege": 3,
+       "ziel": "schalter",
+       "fenster": [
+        1793507842701,
+        1793507843541
+       ]
+      },
+      "eingabe": {
+       "wert": 72,
+       "eintraege": 16,
+       "ziel": "eingabe",
+       "fenster": [
+        1793507843574,
+        1793507844689
+       ]
+      },
+      "link": {
+       "wert": 72,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507844740,
+        1793507847012
+       ],
+       "navigiert_zu": "/",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 72,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    },
+    {
+     "lauf": 6,
+     "seite": "/standorte/wetzlar",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 200,
+       "eintraege": 3,
+       "ziel": "anker",
+       "fenster": [
+        1793507848459,
+        1793507849531
+       ]
+      },
+      "menue": {
+       "wert": 112,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1793507849608,
+        1793507850676
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "wert": 80,
+       "eintraege": 3,
+       "ziel": "schalter",
+       "fenster": [
+        1793507850751,
+        1793507851586
+       ]
+      },
+      "eingabe": {
+       "wert": 88,
+       "eintraege": 17,
+       "ziel": "eingabe",
+       "fenster": [
+        1793507851623,
+        1793507852780
+       ]
+      },
+      "link": {
+       "wert": 56,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507852828,
+        1793507855115
+       ],
+       "navigiert_zu": "/",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 160,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    },
+    {
+     "lauf": 7,
+     "seite": "/standorte/wetzlar",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 176,
+       "eintraege": 3,
+       "ziel": "anker",
+       "fenster": [
+        1793507856574,
+        1793507857609
+       ]
+      },
+      "menue": {
+       "wert": 104,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1793507857725,
+        1793507858776
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "wert": 112,
+       "eintraege": 3,
+       "ziel": "schalter",
+       "fenster": [
+        1793507858867,
+        1793507859814
+       ]
+      },
+      "eingabe": {
+       "wert": 96,
+       "eintraege": 16,
+       "ziel": "eingabe",
+       "fenster": [
+        1793507859845,
+        1793507861019
+       ]
+      },
+      "link": {
+       "wert": 80,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507861084,
+        1793507863406
+       ],
+       "navigiert_zu": "/",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 168,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    }
+   ]
+  },
+  {
+   "seite": "/bad/badsanierung",
+   "handlungen": {
+    "hauptknopf": {
+     "werte": [
+      144,
+      128,
+      88,
+      200,
+      104,
+      144,
+      152
+     ],
+     "median": 144,
+     "fehlende_laeufe": 0,
+     "ziel": "link"
+    },
+    "menue": {
+     "werte": [
+      96,
+      96,
+      96,
+      80,
+      96,
+      88,
+      96
+     ],
+     "median": 96,
+     "fehlende_laeufe": 0,
+     "ziel": "schalter"
+    },
+    "akkordeon": {
+     "werte": [
+      112,
+      96,
+      120,
+      104,
+      112,
+      104,
+      112
+     ],
+     "median": 112,
+     "fehlende_laeufe": 0,
+     "ziel": "schalter"
+    },
+    "eingabe": {
+     "nicht_vorhanden": true
+    },
+    "link": {
+     "werte": [
+      32,
+      48,
+      40,
+      48,
+      48,
+      40,
+      56
+     ],
+     "median": 48,
+     "fehlende_laeufe": 0,
+     "ziel": "link"
+    }
+   },
+   "hoechster_median": 144,
+   "hoechste_handlung": "hauptknopf",
+   "bestanden": true,
+   "unvollstaendig": false,
+   "laeufe": [
+    {
+     "lauf": 1,
+     "seite": "/bad/badsanierung",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 144,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507865057,
+        1793507866199
+       ]
+      },
+      "menue": {
+       "wert": 96,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1793507866316,
+        1793507867216
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "wert": 112,
+       "eintraege": 3,
+       "ziel": "schalter",
+       "fenster": [
+        1793507867297,
+        1793507868065
+       ]
+      },
+      "eingabe": {
+       "nicht_vorhanden": true
+      },
+      "link": {
+       "wert": 32,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507868137,
+        1793507870676
+       ],
+       "navigiert_zu": "/",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 120,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    },
+    {
+     "lauf": 2,
+     "seite": "/bad/badsanierung",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 128,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507872147,
+        1793507873327
+       ]
+      },
+      "menue": {
+       "wert": 96,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1793507873458,
+        1793507874408
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "wert": 96,
+       "eintraege": 3,
+       "ziel": "schalter",
+       "fenster": [
+        1793507874463,
+        1793507875217
+       ]
+      },
+      "eingabe": {
+       "nicht_vorhanden": true
+      },
+      "link": {
+       "wert": 48,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507875281,
+        1793507877854
+       ],
+       "navigiert_zu": "/",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 96,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    },
+    {
+     "lauf": 3,
+     "seite": "/bad/badsanierung",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 88,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507879387,
+        1793507880460
+       ]
+      },
+      "menue": {
+       "wert": 96,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1793507880570,
+        1793507881526
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "wert": 120,
+       "eintraege": 3,
+       "ziel": "schalter",
+       "fenster": [
+        1793507881605,
+        1793507882395
+       ]
+      },
+      "eingabe": {
+       "nicht_vorhanden": true
+      },
+      "link": {
+       "wert": 40,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507882464,
+        1793507884971
+       ],
+       "navigiert_zu": "/",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 88,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    },
+    {
+     "lauf": 4,
+     "seite": "/bad/badsanierung",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 200,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507886587,
+        1793507887665
+       ]
+      },
+      "menue": {
+       "wert": 80,
+       "eintraege": 3,
+       "ziel": "schalter",
+       "fenster": [
+        1793507887769,
+        1793507888626
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "wert": 104,
+       "eintraege": 3,
+       "ziel": "schalter",
+       "fenster": [
+        1793507888679,
+        1793507889451
+       ]
+      },
+      "eingabe": {
+       "nicht_vorhanden": true
+      },
+      "link": {
+       "wert": 48,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507889522,
+        1793507891974
+       ],
+       "navigiert_zu": "/",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 176,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    },
+    {
+     "lauf": 5,
+     "seite": "/bad/badsanierung",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 104,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507893467,
+        1793507894544
+       ]
+      },
+      "menue": {
+       "wert": 96,
+       "eintraege": 3,
+       "ziel": "schalter",
+       "fenster": [
+        1793507894691,
+        1793507895621
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "wert": 112,
+       "eintraege": 3,
+       "ziel": "schalter",
+       "fenster": [
+        1793507895688,
+        1793507896483
+       ]
+      },
+      "eingabe": {
+       "nicht_vorhanden": true
+      },
+      "link": {
+       "wert": 48,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507896545,
+        1793507899036
+       ],
+       "navigiert_zu": "/",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 104,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    },
+    {
+     "lauf": 6,
+     "seite": "/bad/badsanierung",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 144,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507900554,
+        1793507901716
+       ]
+      },
+      "menue": {
+       "wert": 88,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1793507901828,
+        1793507902717
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "wert": 104,
+       "eintraege": 3,
+       "ziel": "schalter",
+       "fenster": [
+        1793507902784,
+        1793507903543
+       ]
+      },
+      "eingabe": {
+       "nicht_vorhanden": true
+      },
+      "link": {
+       "wert": 40,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507903616,
+        1793507906034
+       ],
+       "navigiert_zu": "/",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 120,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    },
+    {
+     "lauf": 7,
+     "seite": "/bad/badsanierung",
+     "status": 200,
+     "handlungen": {
+      "hauptknopf": {
+       "wert": 152,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507907588,
+        1793507908755
+       ]
+      },
+      "menue": {
+       "wert": 96,
+       "eintraege": 5,
+       "ziel": "schalter",
+       "fenster": [
+        1793507908873,
+        1793507909789
+       ],
+       "offen_nach_escape": false
+      },
+      "akkordeon": {
+       "wert": 112,
+       "eintraege": 3,
+       "ziel": "schalter",
+       "fenster": [
+        1793507909849,
+        1793507910612
+       ]
+      },
+      "eingabe": {
+       "nicht_vorhanden": true
+      },
+      "link": {
+       "wert": 56,
+       "eintraege": 3,
+       "ziel": "link",
+       "fenster": [
+        1793507910689,
+        1793507913259
+       ],
+       "navigiert_zu": "/",
+       "seitenwechsel": true
+      }
+     },
+     "rueckkehr": 0,
+     "fehler": null,
+     "gegencheck": {
+      "erste_eingabe_ms": 104,
+      "handlung": "hauptknopf",
+      "eintrag_im_observer": "ja"
+     }
+    }
+   ]
+  }
+ ]
+}
