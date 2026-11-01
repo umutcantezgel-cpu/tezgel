@@ -1,0 +1,430 @@
+diff --git a/src/app/api/anfrage/route.ts b/src/app/api/anfrage/route.ts
+index d6e46461..312225ae 100644
+--- a/src/app/api/anfrage/route.ts
++++ b/src/app/api/anfrage/route.ts
+@@ -6,7 +6,7 @@ import {
+   validateInquiryPayload,
+   checkIpRateLimit,
+   getClientIp,
+-  checkFastBot,
++  pruefeZeitsperre,
+   isHoneypotTriggered,
+   anfrageAntwort,
+   FEHLER_HINWEIS
+@@ -63,7 +63,8 @@ export async function POST(request: NextRequest) {
+     }
+ 
+     // 3. Multi-stage Bot Detection: Fast-bot timing barrier (<1500ms)
+-    const botCheck = checkFastBot(body._t as number | string | undefined, 1500);
++    // SEO-Runde K01: die im Browser gemessene Ausfülldauer `_d` geht vor dem Zeitstempel `_t` (security.ts).
++    const botCheck = pruefeZeitsperre(body, 1500);
+     if (botCheck.isBot) {
+       return NextResponse.json(
+         { success: true, referenceId: 'TEZ-BOT-IGN', message: 'Anfrage erhalten.' },
+diff --git a/src/components/contact/BookingCalendar.tsx b/src/components/contact/BookingCalendar.tsx
+index 5e821d73..8a552546 100644
+--- a/src/components/contact/BookingCalendar.tsx
++++ b/src/components/contact/BookingCalendar.tsx
+@@ -2,7 +2,8 @@
+ 
+ // Terminkalender (E2-ORCH-09, Arbeitsansicht): Tage und Zeitfenster als Auswahlfelder an der Fuge, Formular mit
+ // verknüpften Labels. Logik aus useTerminKalender (F-07, gemeinsam mit der Kern-Ansicht): Tage erst im Browser und je
+-// Kalender festgehalten (V-02, P4-05d). Nutzlast und getestete Namen unverändert.
++// Kalender festgehalten (V-02, P4-05d). Getestete Namen unverändert; die Nutzlast trägt seit der SEO-Runde (K01, K02)
++// Wunschtag, Zeitfenster und Thema in den Feldern der API-Prüfung und die Ausfülldauer `_d` (terminNutzlast im Hook).
+ import React from 'react';
+ import Link from 'next/link';
+ import Icon from '@/components/icons/Icon';
+diff --git a/src/lib/email/security.ts b/src/lib/email/security.ts
+index b248a069..ffa4d786 100644
+--- a/src/lib/email/security.ts
++++ b/src/lib/email/security.ts
+@@ -152,11 +152,24 @@ export function checkRecipientRateLimit(
+ /**
+  * Detects automated fast-bots: A human requires at least 1500ms to interact and submit.
+  * Submissions faster than 1500ms from form initialization are treated as bot attempts.
++ *
++ * SEO-Runde K01: Vorrang hat die im Browser gemessene Ausfülldauer (`_d`, performance.now(), siehe
++ * src/lib/formulare/ausfuelldauer.ts); sie hängt nicht an der Uhr des Geräts. Alle Formulare mit Zeitsperre senden `_d`.
++ * Nur Seiten, die noch mit dem Stand vor dieser Änderung geöffnet sind, senden allein `_t`. Für sie gilt als zu schnell
++ * nur noch eine Dauer von 0 bis unter `minDelayMs`; ein Tab, der länger als einen Tag offen stand, oder eine Geräteuhr,
++ * die weiter vorgeht als die Ausfülldauer, verwirft nichts mehr. Ein Rest bleibt für diese alten Seiten: Geht die Uhr
++ * knapp weniger vor, als das Ausfüllen dauerte, kann die Rechnung in 0 bis 1,5 s fallen.
+  */
+ export function checkFastBot(
+   submissionTime: number | string | undefined,
+-  minDelayMs = 1500
++  minDelayMs = 1500,
++  fillDurationMs?: unknown
+ ): { isBot: boolean; elapsedMs?: number } {
++  const dauer = typeof fillDurationMs === 'string' && fillDurationMs.trim() !== '' ? Number(fillDurationMs) : fillDurationMs;
++  if (typeof dauer === 'number' && Number.isFinite(dauer) && dauer >= 0) {
++    return { isBot: dauer < minDelayMs, elapsedMs: Math.round(dauer) };
++  }
++
+   if (!submissionTime) {
+     // If no timestamp was supplied, don't hard reject to support legacy forms, but flag
+     return { isBot: false };
+@@ -168,14 +181,21 @@ export function checkFastBot(
+   const now = Date.now();
+   const elapsed = now - startTime;
+ 
+-  // Bot submitted too fast (under 1.5s) or timestamp from the distant future/past (>24 hours)
+-  if (elapsed < minDelayMs || elapsed > 86_400_000) {
++  // Zu schnell nur bei einer Dauer von 0 bis unter minDelayMs; Uhrabweichung und alte Tabs zählen nicht als Bot (K01).
++  if (elapsed >= 0 && elapsed < minDelayMs) {
+     return { isBot: true, elapsedMs: elapsed };
+   }
+ 
+   return { isBot: false, elapsedMs: elapsed };
+ }
+ 
++/**
++ * SEO-Runde K01: Zeitsperre für POST /api/anfrage aus dem Rohkörper (`_d` vor `_t`, siehe checkFastBot).
++ */
++export function pruefeZeitsperre(body: Record<string, unknown>, minDelayMs = 1500): { isBot: boolean; elapsedMs?: number } {
++  return checkFastBot(body._t as number | string | undefined, minDelayMs, body._d);
++}
++
+ /**
+  * Checks if honeypot was populated by a bot.
+  */
+diff --git a/src/lib/email/validation.ts b/src/lib/email/validation.ts
+index d7b3cce2..8d8e9534 100644
+--- a/src/lib/email/validation.ts
++++ b/src/lib/email/validation.ts
+@@ -167,6 +167,8 @@ export const InquirySubmissionSchema = z.object({
+   _t: z
+     .union([z.number(), z.string()])
+     .optional(),
++  // SEO-Runde K01: Die im Browser gemessene Ausfülldauer `_d` steht bewusst nicht im Schema. route.ts liest sie aus dem
++  // Rohkörper (pruefeZeitsperre in security.ts); so führt ein ungewohnter Wert nie zu 400.
+   // Specific details
+   badDetails: BadDetailsSchema,
+   fliesenDetails: FliesenDetailsSchema,
+diff --git a/src/lib/formulare/ausfuelldauer.ts b/src/lib/formulare/ausfuelldauer.ts
+new file mode 100644
+index 00000000..fef9c383
+--- /dev/null
++++ b/src/lib/formulare/ausfuelldauer.ts
+@@ -0,0 +1,18 @@
++// SEO-Runde K01 (docs/seo/KONTEXT.md, Abschnitt 5): Die Zeitsperre gegen schnelle Bots misst die Ausfülldauer im Browser
++// mit performance.now(). Diese Uhr läuft gleichmäßig vom Laden der Seite an und hängt nicht an der Uhrzeit des Geräts.
++// Bisher verglich der Server den Zeitstempel des Geräts (`_t`) mit seiner eigenen Uhr: Ging die Geräteuhr vor oder stand
++// der Tab länger als einen Tag offen, galt die Anfrage als Bot, die Person sah einen Erfolg, und keine Mail ging raus.
++
++/** Startwert für die Messung; im Formular-Hook einmal festhalten: `useState(() => messbeginn())`. */
++export function messbeginn(): number {
++  return typeof performance !== 'undefined' && typeof performance.now === 'function' ? performance.now() : Date.now();
++}
++
++/**
++ * Ausfülldauer in Millisekunden seit `beginn` (ganzzahlig); wird als `_d` an /api/anfrage gesendet. Mit performance.now()
++ * ist sie nie negativ. Nur im Ersatzweg über Date.now() könnte eine zurückgestellte Uhr sie negativ machen; einen
++ * negativen Wert wertet der Server nicht (security.ts), statt ihn wie 0 als Bot zu zählen.
++ */
++export function ausfuelldauer(beginn: number): number {
++  return Math.round(messbeginn() - beginn);
++}
+diff --git a/src/lib/formulare/useAnfrageFunnel.ts b/src/lib/formulare/useAnfrageFunnel.ts
+index e109f9a5..1d85e193 100644
+--- a/src/lib/formulare/useAnfrageFunnel.ts
++++ b/src/lib/formulare/useAnfrageFunnel.ts
+@@ -3,6 +3,7 @@
+ import React, { useState } from 'react';
+ import { COMPANY_DATA } from '@/config/company';
+ import { openWhatsApp } from '@/lib/whatsapp';
++import { messbeginn, ausfuelldauer } from './ausfuelldauer';
+ 
+ export const PROJECT_TYPES = [
+   {
+@@ -65,6 +66,7 @@ export function useAnfrageFunnel() {
+   const [notes, setNotes] = useState('');
+   const [honeypot, setHoneypot] = useState('');
+   const [formInitTime] = useState<number>(() => Date.now());
++  const [messStart] = useState<number>(() => messbeginn()); // SEO-Runde K01
+   const [status, setStatus] = useState<SubmissionStatus>('idle');
+   const [errorMessage, setErrorMessage] = useState('');
+   const [referenceId, setReferenceId] = useState('');
+@@ -123,7 +125,8 @@ export function useAnfrageFunnel() {
+           timing: timing || undefined,
+           notes: notes || undefined,
+           honeypot: honeypot || undefined,
+-          _t: formInitTime
++          _t: formInitTime,
++          _d: ausfuelldauer(messStart)
+         })
+       });
+ 
+diff --git a/src/lib/formulare/useHeroKontakt.ts b/src/lib/formulare/useHeroKontakt.ts
+index 7cf77e11..d8b8896f 100644
+--- a/src/lib/formulare/useHeroKontakt.ts
++++ b/src/lib/formulare/useHeroKontakt.ts
+@@ -3,6 +3,7 @@
+ import React, { useState } from 'react';
+ import { COMPANY_DATA } from '@/config/company';
+ import { buildWhatsAppUrl, openWhatsApp, isMobileDevice } from '@/lib/whatsapp';
++import { messbeginn, ausfuelldauer } from './ausfuelldauer';
+ 
+ export const PROJECT_OPTIONS = [
+     { id: 'bad', label: 'Badsanierung' },
+@@ -21,6 +22,7 @@ export function useHeroKontakt() {
+     const [notes, setNotes] = useState('');
+     const [honeypot, setHoneypot] = useState('');
+     const [formInitTime] = useState<number>(() => Date.now());
++    const [messStart] = useState<number>(() => messbeginn()); // SEO-Runde K01
+     const [referenceId, setReferenceId] = useState('');
+     const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+     const [errorMessage, setErrorMessage] = useState('');
+@@ -74,7 +76,8 @@ export function useHeroKontakt() {
+                     // Fläche und Zeitraum fragt dieses Formular nicht ab; es schickt keine Werte, die niemand gewählt hat (Abnahme E4-W1)
+                     notes: notes.trim() || undefined,
+                     honeypot: honeypot || undefined,
+-                    _t: formInitTime
++                    _t: formInitTime,
++                    _d: ausfuelldauer(messStart)
+                 })
+             });
+ 
+diff --git a/src/lib/formulare/usePreisrechner.ts b/src/lib/formulare/usePreisrechner.ts
+index 96ce79cf..50c34405 100644
+--- a/src/lib/formulare/usePreisrechner.ts
++++ b/src/lib/formulare/usePreisrechner.ts
+@@ -13,6 +13,7 @@ import {
+   type RoomSizeType,
+ } from "@/components/pricing/pricing.constants";
+ import { triggerHaptic } from "@/lib/haptics";
++import { messbeginn, ausfuelldauer } from "./ausfuelldauer";
+ 
+ type FormStatus = "idle" | "submitting" | "success" | "error";
+ 
+@@ -37,6 +38,7 @@ export function usePreisrechner() {
+   // 3. Status & Anti-Bot
+   const [honeypot, setHoneypot] = useState<string>("");
+   const [formInitTime] = useState<number>(() => Date.now());
++  const [messStart] = useState<number>(() => messbeginn()); // SEO-Runde K01
+   const [status, setStatus] = useState<FormStatus>("idle");
+   const [errorMessage, setErrorMessage] = useState<string>("");
+   const [referenceId, setReferenceId] = useState<string>("");
+@@ -121,6 +123,7 @@ export function usePreisrechner() {
+           notes: fullSituationDescription,
+           honeypot: honeypot || undefined,
+           _t: formInitTime,
++          _d: ausfuelldauer(messStart),
+         }),
+       });
+ 
+diff --git a/src/lib/formulare/useSchnellanfrage.ts b/src/lib/formulare/useSchnellanfrage.ts
+index 68bfe43a..88d2b11c 100644
+--- a/src/lib/formulare/useSchnellanfrage.ts
++++ b/src/lib/formulare/useSchnellanfrage.ts
+@@ -2,6 +2,7 @@
+ // Ohne Markup; Bestand und Kern-Ansicht nutzen denselben Hook.
+ import React, { useState } from 'react';
+ import { COMPANY_DATA } from '@/config/company';
++import { messbeginn, ausfuelldauer } from './ausfuelldauer';
+ 
+ export function useSchnellanfrage({ sourceTag, onSuccess }: { sourceTag: string; onSuccess?: () => void }) {
+   const [formData, setFormData] = useState({
+@@ -15,6 +16,7 @@ export function useSchnellanfrage({ sourceTag, onSuccess }: { sourceTag: string;
+   });
+ 
+   const [mountTime] = useState<number>(() => Date.now());
++  const [messStart] = useState<number>(() => messbeginn()); // SEO-Runde K01
+   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+   const [errorMessage, setErrorMessage] = useState('');
+   const [referenceId, setReferenceId] = useState('');
+@@ -56,6 +58,7 @@ export function useSchnellanfrage({ sourceTag, onSuccess }: { sourceTag: string;
+           privacyConsent: formData.privacyConsent,
+           honeypot: formData.websiteUrl,
+           _t: mountTime,
++          _d: ausfuelldauer(messStart),
+           source: sourceTag,
+         }),
+       });
+diff --git a/src/lib/formulare/useTerminKalender.ts b/src/lib/formulare/useTerminKalender.ts
+index 2613ee22..fab8d71f 100644
+--- a/src/lib/formulare/useTerminKalender.ts
++++ b/src/lib/formulare/useTerminKalender.ts
+@@ -1,8 +1,11 @@
+ // Logik des Terminkalenders (F-07, BookingCalendar) – wörtlich aus der Komponente verschoben (P4-05c, Vorbild P4-05a).
+-// Ohne Markup; Bestand und Kern-Ansicht nutzen denselben Hook. Keine Logikänderung (G9): auch die bekannten Lücken
+-// (Tage aus `new Date()` beim Rendern in der Zeitzone des Rechners, `_t` als feste Vergangenheit, `preferredDate` und
+-// `serviceType` verwirft die Prüfung der API; intern I-12, I-18) bleiben, wie sie sind.
++// Ohne Markup; Bestand und Kern-Ansicht nutzen denselben Hook. Bekannte Lücke: Tage aus `new Date()` beim Rendern in der
++// Zeitzone des Rechners (intern I-12). SEO-Runde K01 und K02 (docs/seo/KONTEXT.md, Abschnitt 5): Statt `_t` als feste
++// Vergangenheit (bei vorgehender Geräteuhr galt die Anfrage als Bot und ging verloren) sendet der Kalender die gemessene
++// Ausfülldauer `_d`; Wunschtag, Zeitfenster und Thema gehen in den Feldern, die die Prüfung der API kennt
++// (`date`, `formattedDate`, `timeSlot`, `timeSlotLabel`, `topicLabel`), statt verworfen zu werden.
+ import React, { useState, useMemo, useRef, useSyncExternalStore } from 'react';
++import { messbeginn, ausfuelldauer } from './ausfuelldauer';
+ 
+ export const AVAILABLE_SLOTS = [
+   { time: '08:30', label: '08:30 – 10:00 Uhr (Morgens)' },
+@@ -23,6 +26,51 @@ function tagesKennung(): string {
+   return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+ }
+ const keinTag = (): null => null;
++
++// SEO-Runde K02: Wunschtag und Zeitfenster als Text für die Mail („Donnerstag, 05.11.2026“, „08:30 bis 10:00 Uhr (Morgens)“).
++export function wunschtagText(dateStr: string): string {
++  const [jahr, monat, tag] = dateStr.split('-').map(Number);
++  if (!jahr || !monat || !tag) return dateStr;
++  return new Date(jahr, monat - 1, tag, 12).toLocaleDateString('de-DE', {
++    weekday: 'long',
++    day: '2-digit',
++    month: '2-digit',
++    year: 'numeric',
++  });
++}
++export function zeitfensterText(time: string): string {
++  const slot = AVAILABLE_SLOTS.find((s) => s.time === time);
++  return slot ? slot.label.replace(' – ', ' bis ') : time;
++}
++
++export type TerminKontakt = { name: string; phone: string; email: string; zipCity: string; notes: string; privacyConsent: boolean; websiteUrl: string };
++
++// SEO-Runde K01 und K02: Nutzlast für POST /api/anfrage als reine Funktion, damit Test 23 die echte Nutzlast prüft.
++export function terminNutzlast(eingaben: { selectedDate: string; selectedTime: string; initialServiceType: string; contactData: TerminKontakt; dauer: number }) {
++  const { selectedDate, selectedTime, initialServiceType, contactData, dauer } = eingaben;
++  return {
++    inquiryType: 'termin',
++    projectType: 'termin',
++    projectTitle: `Vor-Ort-Termin: ${initialServiceType}`,
++    terminDetails: {
++      date: selectedDate,
++      formattedDate: wunschtagText(selectedDate),
++      timeSlot: selectedTime,
++      timeSlotLabel: zeitfensterText(selectedTime),
++      topicLabel: initialServiceType,
++    },
++    contact: {
++      name: contactData.name.trim(),
++      phone: contactData.phone.trim(),
++      email: contactData.email.trim() || undefined,
++      zipCity: contactData.zipCity.trim() || undefined,
++    },
++    notes: contactData.notes.trim() || undefined,
++    privacyConsent: contactData.privacyConsent,
++    honeypot: contactData.websiteUrl,
++    _d: dauer,
++  };
++}
+ const ohneAbo = () => () => {};
+ 
+ export function useTerminKalender({ initialServiceType, onBookingConfirmed }: TerminKalenderEingaben) {
+@@ -34,6 +82,7 @@ export function useTerminKalender({ initialServiceType, onBookingConfirmed }: Te
+   const [isConfirmed, setIsConfirmed] = useState(false);
+   const [referenceId, setReferenceId] = useState('');
+   const [errorMessage, setErrorMessage] = useState('');
++  const [messStart] = useState<number>(() => messbeginn()); // SEO-Runde K01
+ 
+   const [contactData, setContactData] = useState({
+     name: '',
+@@ -112,26 +161,9 @@ export function useTerminKalender({ initialServiceType, onBookingConfirmed }: Te
+       const res = await fetch('/api/anfrage', {
+         method: 'POST',
+         headers: { 'Content-Type': 'application/json' },
+-        body: JSON.stringify({
+-          inquiryType: 'termin',
+-          projectType: 'termin',
+-          projectTitle: `Vor-Ort-Termin: ${initialServiceType}`,
+-          terminDetails: {
+-            preferredDate: selectedDate,
+-            timeSlot: selectedTime,
+-            serviceType: initialServiceType,
+-          },
+-          contact: {
+-            name: contactData.name.trim(),
+-            phone: contactData.phone.trim(),
+-            email: contactData.email.trim() || undefined,
+-            zipCity: contactData.zipCity.trim() || undefined,
+-          },
+-          notes: contactData.notes.trim() || undefined,
+-          privacyConsent: contactData.privacyConsent,
+-          honeypot: contactData.websiteUrl,
+-          _t: Date.now() - 3000,
+-        }),
++        body: JSON.stringify(
++          terminNutzlast({ selectedDate, selectedTime, initialServiceType, contactData, dauer: ausfuelldauer(messStart) })
++        ),
+       });
+ 
+       const data = await res.json();
+diff --git a/test/email-pipeline.test.mjs b/test/email-pipeline.test.mjs
+index 5a7122a9..052b8c0a 100644
+--- a/test/email-pipeline.test.mjs
++++ b/test/email-pipeline.test.mjs
+@@ -8,6 +8,7 @@ import {
+   checkIpRateLimit,
+   checkRecipientRateLimit,
+   checkFastBot,
++  pruefeZeitsperre,
+   isHoneypotTriggered
+ } from '../src/lib/email/security.ts';
+ 
+@@ -449,3 +450,64 @@ test('21. Absicherung: /api/anfrage antwortet auf Fehlschlag mit 503 und Hinweis
+   assert.equal(ok.status, 200);
+   assert.deepEqual(ok.body, { success: true, referenceId: 'TEZ-26-ABCD', message: 'Ihre Anfrage wurde erfolgreich an Fliesenverlegung Tezgel übermittelt.' });
+ });
++
++// --- SEO-Runde K01 und K02 (docs/seo/KONTEXT.md, Abschnitt 5) ---
++test('22. Zeitsperre (K01): die im Browser gemessene Ausfülldauer geht vor; Uhrabweichung und alte Tabs verwerfen keine Anfrage', () => {
++  const jetzt = Date.now();
++  // Ausfülldauer `_d` aus dem Browser
++  assert.equal(checkFastBot(undefined, 1500, 0).isBot, true);
++  assert.equal(checkFastBot(undefined, 1500, 800).isBot, true);
++  assert.equal(checkFastBot(undefined, 1500, 1500).isBot, false);
++  assert.equal(checkFastBot(undefined, 1500, 42000).isBot, false);
++  assert.equal(checkFastBot(undefined, 1500, '2500').isBot, false);
++  // `_d` geht vor `_t`, in beide Richtungen
++  assert.equal(checkFastBot(jetzt + 60_000, 1500, 9000).isBot, false);
++  assert.equal(checkFastBot(jetzt - 10_000, 1500, 300).isBot, true);
++  // ungültiges oder leeres `_d` fällt auf `_t` zurück
++  assert.equal(checkFastBot(jetzt - 300, 1500, -5).isBot, true);
++  assert.equal(checkFastBot(jetzt - 300, 1500, null).isBot, true);
++  assert.equal(checkFastBot(jetzt - 3500, 1500, '').isBot, false);
++  assert.equal(checkFastBot(jetzt - 3500, 1500, 'abc').isBot, false);
++  // ältere Seiten ohne `_d`: Geräteuhr eine Minute vor und Tab zwei Tage offen gelten nicht mehr als Bot
++  assert.equal(checkFastBot(jetzt + 60_000, 1500).isBot, false);
++  assert.equal(checkFastBot(jetzt - 2 * 86_400_000, 1500).isBot, false);
++  // zu schnell bleibt zu schnell, ohne Angabe gibt es keine Sperre
++  assert.equal(checkFastBot(jetzt - 300, 1500).isBot, true);
++  assert.equal(checkFastBot(undefined, 1500).isBot, false);
++  // die Route liest beide Felder aus dem Rohkörper (pruefeZeitsperre)
++  assert.equal(pruefeZeitsperre({ _d: 4000, _t: jetzt + 60_000 }).isBot, false);
++  assert.equal(pruefeZeitsperre({ _d: 300, _t: jetzt - 10_000 }).isBot, true);
++  assert.equal(pruefeZeitsperre({ _t: jetzt - 2 * 86_400_000 }).isBot, false);
++  assert.equal(pruefeZeitsperre({}).isBot, false);
++});
++
++test('23. Terminkalender (K02): Wunschtag, Zeitfenster und Thema kommen durch die Prüfung und in die Team-Mail', async () => {
++  const { wunschtagText, zeitfensterText, terminNutzlast } = await import('../src/lib/formulare/useTerminKalender.ts');
++  assert.equal(wunschtagText('2026-11-05'), 'Donnerstag, 05.11.2026');
++  assert.equal(zeitfensterText('08:30'), '08:30 bis 10:00 Uhr (Morgens)');
++  assert.equal(zeitfensterText('07:00'), '07:00');
++  // die echte Nutzlast des Kalenders
++  const payload = terminNutzlast({
++    selectedDate: '2026-11-05',
++    selectedTime: '08:30',
++    initialServiceType: 'Kostenfreies Vor-Ort-Aufmaß & Beratung',
++    contactData: { name: ' Erika Musterfrau ', phone: '0160 98765432', email: '', zipCity: '', notes: '', privacyConsent: true, websiteUrl: '' },
++    dauer: 4200,
++  });
++  assert.equal(payload._d, 4200);
++  assert.equal('_t' in payload, false);
++  assert.equal('preferredDate' in payload.terminDetails, false);
++  const validation = validateInquiryPayload(payload);
++  assert.equal(validation.success, true);
++  assert.equal(validation.data?.contact.name, 'Erika Musterfrau');
++  assert.equal(validation.data?.terminDetails?.date, '2026-11-05');
++  assert.equal(validation.data?.terminDetails?.formattedDate, 'Donnerstag, 05.11.2026');
++  assert.equal(validation.data?.terminDetails?.timeSlotLabel, '08:30 bis 10:00 Uhr (Morgens)');
++  assert.equal(validation.data?.terminDetails?.topicLabel, 'Kostenfreies Vor-Ort-Aufmaß & Beratung');
++  const text = generateTeamEmailText(validation.data, 'TEZ-26-TEST');
++  assert.match(text, /Donnerstag, 05\.11\.2026/);
++  assert.match(text, /08:30 bis 10:00 Uhr/);
++  // So ging es bisher verloren: `preferredDate` kennt die Prüfung nicht
++  const alt = validateInquiryPayload({ ...payload, terminDetails: { preferredDate: '2026-11-05', timeSlot: '08:30' } });
++  assert.equal(alt.data?.terminDetails?.date, undefined);
++});

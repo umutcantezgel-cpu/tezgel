@@ -1,0 +1,1035 @@
+diff --git a/src/app/(bestand)/agb/layout.tsx b/src/app/(bestand)/agb/layout.tsx
+index 5de815f6..e0fce106 100644
+--- a/src/app/(bestand)/agb/layout.tsx
++++ b/src/app/(bestand)/agb/layout.tsx
+@@ -4,7 +4,7 @@ import { COMPANY_DATA } from '@/config/company';
+ import JsonLd from '@/components/seo/JsonLd';
+ 
+ export const metadata = createMetadata({
+-  title: 'AGB – Allgemeine Geschäftsbedingungen | Tezgel',
++  title: 'Allgemeine Geschäftsbedingungen | Fliesenverlegung Tezgel',
+   description: 'Allgemeine Geschäftsbedingungen der Fliesenverlegung Tezgel für handwerkliche Werk-, Fliesen- und Montageleistungen in Hessen.',
+   path: '/agb',
+   robots: { index: false, follow: true },
+diff --git a/src/app/(bestand)/bad/badplaner/page.jsx b/src/app/(bestand)/bad/badplaner/page.jsx
+index 1409c5f1..e3daf353 100644
+--- a/src/app/(bestand)/bad/badplaner/page.jsx
++++ b/src/app/(bestand)/bad/badplaner/page.jsx
+@@ -23,7 +23,7 @@ const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFu
+     loading: () => <FormularPlatzhalter />,
+ });
+ 
+-const TITEL = 'Bad online planen mit dem Badplaner | Fliesen Tezgel';
++const TITEL = 'Ihr Bad online planen mit dem Badplaner · Tezgel';
+ const BESCHREIBUNG = 'Planen Sie Ihr Bad online: Raumgröße, Fliesen & Ausstattung wählen. Fliesenverlegung Tezgel berät Sie mit kostenfreiem Vor-Ort-Aufmaß in Wetzlar & Aßlar!';
+ 
+ const METADATEN = createMetadata({
+diff --git a/src/app/(bestand)/bad/musterbaeder/[slug]/page.jsx b/src/app/(bestand)/bad/musterbaeder/[slug]/page.jsx
+index 12b42917..34997766 100644
+--- a/src/app/(bestand)/bad/musterbaeder/[slug]/page.jsx
++++ b/src/app/(bestand)/bad/musterbaeder/[slug]/page.jsx
+@@ -28,7 +28,7 @@ const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFu
+ // Metadaten je Musterbad; die Seite nimmt Titel und Beschreibung für die strukturierten Daten (SeitenDaten) von hier
+ function musterbadMetadaten(bath, slug) {
+     return createMetadata({
+-        title: `Musterbad ${bath.title.split('-')[0]} mit ${bath.size.split(' ')[0]} m² | Badsanierung Tezgel`,
++        title: `Musterbad ${bath.title.split('-')[0]} mit ${bath.size.split(' ')[0]} m² | Fliesenverlegung Tezgel`, // SEO-Runde P2: ein Markenzusatz
+         description: `Musterbad ${bath.title}: ${bath.headline}. Ausstattungsliste, Markenkomponenten & transparente Festpreise von Fachbetrieb Tezgel aus Aßlar.`,
+         path: `/bad/musterbaeder/${slug}`
+     });
+@@ -79,7 +79,7 @@ export default async function MusterbadDetailPage({ params }) {
+                     { name: 'Bad', href: '/bad' },
+                     // Ebene der Übersicht mit ihrem Namen im Menü (navigation.js)
+                     { name: 'Ideen nach Badgröße', href: '/bad/musterbaeder' },
+-                    { name: `Musterbad ${bath.title.split('-')[0]} mit ${bath.size.split(' ')[0]} m² | Badsanierung Tezgel` },
++                    { name: `Musterbad ${bath.title.split('-')[0]} mit ${bath.size.split(' ')[0]} m²` },
+                 ]}
+             />
+ 
+diff --git a/src/app/(bestand)/bad/projekt-check/page.jsx b/src/app/(bestand)/bad/projekt-check/page.jsx
+index 430292bf..a915f747 100644
+--- a/src/app/(bestand)/bad/projekt-check/page.jsx
++++ b/src/app/(bestand)/bad/projekt-check/page.jsx
+@@ -14,7 +14,7 @@ import QualityPromise from '@/components/sections/QualityPromise';
+ import { createMetadata } from '@/lib/metadata';
+ import SeitenDaten from '@/components/seo/SeitenDaten';
+ 
+-const TITEL = 'Badsanierung online prüfen mit dem Projektcheck | Tezgel';
++const TITEL = 'Badsanierung online prüfen mit dem Projektcheck · Tezgel';
+ const BESCHREIBUNG = 'Bad-Projektcheck in 2 Minuten: Kostenfreie Machbarkeitsprüfung & Festpreisangebot für Ihre Badsanierung in Wetzlar & Aßlar. Jetzt online starten!';
+ 
+ const METADATEN = createMetadata({
+diff --git a/src/app/(bestand)/balkon-terrasse/stelzlager/page.jsx b/src/app/(bestand)/balkon-terrasse/stelzlager/page.jsx
+index 40eeaa8e..e76a44d7 100644
+--- a/src/app/(bestand)/balkon-terrasse/stelzlager/page.jsx
++++ b/src/app/(bestand)/balkon-terrasse/stelzlager/page.jsx
+@@ -25,7 +25,7 @@ import { linkKlassen, seitenKlassen } from '@/components/kern/stile';
+ import SeitenDaten from '@/components/seo/SeitenDaten';
+ 
+ export const metadata = createMetadata({
+-    title: 'Terrassenplatten auf Stelzlagern verlegen | Tezgel',
++    title: 'Terrassenplatten auf Stelzlagern verlegen · Tezgel',
+     description:
+         'Terrassenplatten auf Stelzlagern verlegen lassen: höhenverstellbar, frostsicher & drainagefähig. Fachbetrieb Tezgel in Wetzlar & Aßlar. Jetzt anfragen!',
+     path: '/balkon-terrasse/stelzlager'
+@@ -113,7 +113,7 @@ export default function StelzlagerPage() {
+         <>
+             <SeitenDaten
+                 pfad="/balkon-terrasse/stelzlager"
+-                titel="Terrassenplatten auf Stelzlagern verlegen | Tezgel"
++                titel="Terrassenplatten auf Stelzlagern verlegen · Tezgel"
+                 beschreibung="Terrassenplatten auf Stelzlagern verlegen lassen: höhenverstellbar, frostsicher & drainagefähig. Fachbetrieb Tezgel in Wetzlar & Aßlar. Jetzt anfragen!"
+                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Balkon und Terrasse', href: '/balkon-terrasse' }, { name: 'Terrassenplatten auf Stelzlagern verlegen mit Tezgel' }]}
+             />
+diff --git a/src/app/(bestand)/balkon-terrasse/terrassenplatten/page.jsx b/src/app/(bestand)/balkon-terrasse/terrassenplatten/page.jsx
+index fc46ed9a..e30f389d 100644
+--- a/src/app/(bestand)/balkon-terrasse/terrassenplatten/page.jsx
++++ b/src/app/(bestand)/balkon-terrasse/terrassenplatten/page.jsx
+@@ -28,7 +28,7 @@ import { etikettKlassen, linkKlassen, seitenKlassen } from '@/components/kern/st
+ import SeitenDaten from '@/components/seo/SeitenDaten';
+ 
+ export const metadata = createMetadata({
+-    title: 'Terrassenplatten verlegen lassen | Fliesen Tezgel',
++    title: 'Terrassenplatten verlegen lassen | Fliesenverlegung Tezgel',
+     description:
+         'Terrassenplatten aus Keramik oder Naturstein fachgerecht verlegen lassen: frostsicher, rutschfest & langlebig. Fachbetrieb Tezgel – Jetzt Aufmaß anfragen!',
+     path: '/balkon-terrasse/terrassenplatten'
+@@ -121,7 +121,7 @@ export default function TerrassenplattenPage() {
+         <>
+             <SeitenDaten
+                 pfad="/balkon-terrasse/terrassenplatten"
+-                titel="Terrassenplatten verlegen lassen | Fliesen Tezgel"
++                titel="Terrassenplatten verlegen lassen | Fliesenverlegung Tezgel"
+                 beschreibung="Terrassenplatten aus Keramik oder Naturstein fachgerecht verlegen lassen: frostsicher, rutschfest & langlebig. Fachbetrieb Tezgel – Jetzt Aufmaß anfragen!"
+                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Balkon und Terrasse', href: '/balkon-terrasse' }, { name: 'Terrassenplatten richtig wählen: Material, Stärke und Oberfläche' }]}
+             />
+diff --git a/src/app/(bestand)/barrierefreiheit/page.jsx b/src/app/(bestand)/barrierefreiheit/page.jsx
+index 5c046573..92efdc8f 100644
+--- a/src/app/(bestand)/barrierefreiheit/page.jsx
++++ b/src/app/(bestand)/barrierefreiheit/page.jsx
+@@ -11,7 +11,7 @@ import Fugenkreuz from '@/components/kern/Fugenkreuz';
+ import Icon from '@/components/icons/Icon';
+ import { linkKlassen, seitenKlassen } from '@/components/kern/stile';
+ 
+-const TITEL = 'Erklärung zur Barrierefreiheit | Fliesen Tezgel';
++const TITEL = 'Erklärung zur Barrierefreiheit | Fliesenverlegung Tezgel';
+ const BESCHREIBUNG = 'Erklärung zur digitalen Barrierefreiheit der Fliesenverlegung Tezgel gemäß Barrierefreiheitsstärkungsgesetz (BFSG) und europäischen Standards EN 301 549.';
+ 
+ export const metadata = createMetadata({
+diff --git a/src/app/(bestand)/blog/[slug]/page.jsx b/src/app/(bestand)/blog/[slug]/page.jsx
+index 8074a2b5..7e787c8a 100644
+--- a/src/app/(bestand)/blog/[slug]/page.jsx
++++ b/src/app/(bestand)/blog/[slug]/page.jsx
+@@ -28,7 +28,7 @@ export async function generateMetadata({ params }) {
+   if (!post) return { title: 'Ratgeber Artikel' };
+ 
+   return createMetadata({
+-    title: post.title,
++    title: post.seoTitel ?? post.title, // SEO-Runde P2
+     description: post.excerpt,
+     path: `/blog/${slug}`,
+     image: post.image
+diff --git a/src/app/(bestand)/datenschutz/layout.tsx b/src/app/(bestand)/datenschutz/layout.tsx
+index f2a91ada..fd9d403c 100644
+--- a/src/app/(bestand)/datenschutz/layout.tsx
++++ b/src/app/(bestand)/datenschutz/layout.tsx
+@@ -4,7 +4,7 @@ import { COMPANY_DATA } from '@/config/company';
+ import JsonLd from '@/components/seo/JsonLd';
+ 
+ export const metadata = createMetadata({
+-  title: 'Datenschutzerklärung nach DSGVO | Fliesen Tezgel',
++  title: 'Datenschutzerklärung nach DSGVO | Fliesenverlegung Tezgel',
+   description: 'Ausführliche Informationen zum Datenschutz und zur Verarbeitung personenbezogener Daten bei der Fliesenverlegung Tezgel gemäß EU-DSGVO.',
+   path: '/datenschutz',
+   robots: { index: false, follow: true },
+diff --git a/src/app/(bestand)/faq/layout.tsx b/src/app/(bestand)/faq/layout.tsx
+index ec2e3245..5cf0b9b5 100644
+--- a/src/app/(bestand)/faq/layout.tsx
++++ b/src/app/(bestand)/faq/layout.tsx
+@@ -4,7 +4,7 @@ import { COMPANY_DATA } from '@/config/company';
+ import JsonLd from '@/components/seo/JsonLd';
+ 
+ export const metadata = createMetadata({
+-  title: 'Häufige Fragen zu Fliesen, Bad & Kosten | Tezgel',
++  title: 'Häufige Fragen und Antworten | Fliesenverlegung Tezgel',
+   description: 'Häufige Fragen zu Fliesenverlegung, Badsanierung, Preisen & DIN 18534 Abdichtung beantwortet vom Fliesenleger-Fachbetrieb Tezgel in Aßlar & Wetzlar.',
+   path: '/faq',
+ });
+diff --git a/src/app/(bestand)/fliesen/abnahme/page.jsx b/src/app/(bestand)/fliesen/abnahme/page.jsx
+index d1280b0b..0894ba4e 100644
+--- a/src/app/(bestand)/fliesen/abnahme/page.jsx
++++ b/src/app/(bestand)/fliesen/abnahme/page.jsx
+@@ -21,7 +21,7 @@ import Verlegeplan from '@/components/kern/Verlegeplan';
+ import { linkKlassen } from '@/components/kern/stile';
+ 
+ export const metadata = createMetadata({
+-    title: 'Fliesenarbeiten abnehmen, Checkliste & Normen | Tezgel',
++    title: 'Fliesenarbeiten abnehmen, Checkliste und Normen · Tezgel',
+     description:
+         'Checkliste für die Abnahme von Fliesenarbeiten: Ebenheit nach DIN 18202, Fugenbild, Hohlstellen & Toleranzen erklärt vom Fachbetrieb Tezgel aus Aßlar.',
+     path: '/fliesen/abnahme'
+@@ -108,7 +108,7 @@ export default function AbnahmePage() {
+         <>
+             <SeitenDaten
+                 pfad="/fliesen/abnahme"
+-                titel="Fliesenarbeiten abnehmen, Checkliste & Normen | Tezgel"
++                titel="Fliesenarbeiten abnehmen, Checkliste und Normen · Tezgel"
+                 beschreibung="Checkliste für die Abnahme von Fliesenarbeiten: Ebenheit nach DIN 18202, Fugenbild, Hohlstellen & Toleranzen erklärt vom Fachbetrieb Tezgel aus Aßlar."
+                 brotkrumen={[
+                     { name: 'Start', href: '/' },
+diff --git a/src/app/(bestand)/fliesen/auf-fussbodenheizung/page.jsx b/src/app/(bestand)/fliesen/auf-fussbodenheizung/page.jsx
+index 13fd1768..1c7712ed 100644
+--- a/src/app/(bestand)/fliesen/auf-fussbodenheizung/page.jsx
++++ b/src/app/(bestand)/fliesen/auf-fussbodenheizung/page.jsx
+@@ -30,7 +30,7 @@ const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKo
+ });
+ 
+ export const metadata = createMetadata({
+-    title: 'Fliesen auf Fußbodenheizung verlegen | Ratgeber Tezgel',
++    title: 'Fliesen auf Fußbodenheizung verlegen · Tezgel',
+     description:
+         'Fliesen auf Fußbodenheizung fachgerecht verlegen: Belegreife des Heizestrichs, verformbare Kleber & normgerechte Dehnungsfugen. Ratgeber vom Fachbetrieb Tezgel.',
+     path: '/fliesen/auf-fussbodenheizung'
+@@ -86,7 +86,7 @@ export default function FliesenAufFussbodenheizungPage() {
+         <>
+             <SeitenDaten
+                 pfad="/fliesen/auf-fussbodenheizung"
+-                titel="Fliesen auf Fußbodenheizung verlegen | Ratgeber Tezgel"
++                titel="Fliesen auf Fußbodenheizung verlegen · Tezgel"
+                 beschreibung="Fliesen auf Fußbodenheizung fachgerecht verlegen: Belegreife des Heizestrichs, verformbare Kleber & normgerechte Dehnungsfugen. Ratgeber vom Fachbetrieb Tezgel."
+                 brotkrumen={[
+                     { name: 'Start', href: '/' },
+diff --git a/src/app/(bestand)/fliesen/festpreisangebot/page.jsx b/src/app/(bestand)/fliesen/festpreisangebot/page.jsx
+index 12d902d2..99ae7486 100644
+--- a/src/app/(bestand)/fliesen/festpreisangebot/page.jsx
++++ b/src/app/(bestand)/fliesen/festpreisangebot/page.jsx
+@@ -31,7 +31,7 @@ const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKo
+ });
+ 
+ export const metadata = createMetadata({
+-    title: 'Fliesenleger Festpreisangebot | Fachbetrieb Tezgel',
++    title: 'Fliesenleger Festpreisangebot | Fliesenverlegung Tezgel',
+     description:
+         'Transparentes Festpreisangebot für Fliesenarbeiten: Aufmaß, Material & Verlegung ohne versteckte Kosten. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!',
+     path: '/fliesen/festpreisangebot'
+@@ -81,7 +81,7 @@ export default function FestpreisangebotPage() {
+         <>
+             <SeitenDaten
+                 pfad="/fliesen/festpreisangebot"
+-                titel="Fliesenleger Festpreisangebot | Fachbetrieb Tezgel"
++                titel="Fliesenleger Festpreisangebot | Fliesenverlegung Tezgel"
+                 beschreibung="Transparentes Festpreisangebot für Fliesenarbeiten: Aufmaß, Material & Verlegung ohne versteckte Kosten. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!"
+                 brotkrumen={[
+                     { name: 'Start', href: '/' },
+diff --git a/src/app/(bestand)/fliesen/flur-diele/page.jsx b/src/app/(bestand)/fliesen/flur-diele/page.jsx
+index 947d896f..05f66c64 100644
+--- a/src/app/(bestand)/fliesen/flur-diele/page.jsx
++++ b/src/app/(bestand)/fliesen/flur-diele/page.jsx
+@@ -31,7 +31,7 @@ const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKo
+ });
+ 
+ export const metadata = createMetadata({
+-    title: 'Flur & Diele fliesen lassen | Fliesenleger Tezgel',
++    title: 'Flur und Diele fliesen lassen | Fliesenverlegung Tezgel',
+     description:
+         'Flur & Eingangsbereich fliesen lassen: strapazierfähige Formate, Verlegerichtung, Rutschhemmung & Schmutzfangzonen. Fachbetrieb Tezgel – Jetzt anfragen!',
+     path: '/fliesen/flur-diele'
+@@ -78,7 +78,7 @@ export default function FlurDielePage() {
+         <>
+             <SeitenDaten
+                 pfad="/fliesen/flur-diele"
+-                titel="Flur & Diele fliesen lassen | Fliesenleger Tezgel"
++                titel="Flur und Diele fliesen lassen | Fliesenverlegung Tezgel"
+                 beschreibung="Flur & Eingangsbereich fliesen lassen: strapazierfähige Formate, Verlegerichtung, Rutschhemmung & Schmutzfangzonen. Fachbetrieb Tezgel – Jetzt anfragen!"
+                 brotkrumen={[
+                     { name: 'Start', href: '/' },
+diff --git a/src/app/(bestand)/fliesen/grossformat/page.jsx b/src/app/(bestand)/fliesen/grossformat/page.jsx
+index 5a42da29..ff174be3 100644
+--- a/src/app/(bestand)/fliesen/grossformat/page.jsx
++++ b/src/app/(bestand)/fliesen/grossformat/page.jsx
+@@ -30,7 +30,7 @@ const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKo
+ });
+ 
+ export const metadata = createMetadata({
+-    title: 'Großformatfliesen verlegen lassen | Fliesen Tezgel',
++    title: 'Großformatfliesen verlegen | Fliesenverlegung Tezgel',
+     description:
+         'XXL-Großformatfliesen & fugenlose Platten fachgerecht verlegen lassen: perfekte Untergrundvorbereitung & Handling. Fachbetrieb Tezgel in Wetzlar & Aßlar!',
+     path: '/fliesen/grossformat'
+@@ -121,7 +121,7 @@ export default function GrossformatPage() {
+         <>
+             <SeitenDaten
+                 pfad="/fliesen/grossformat"
+-                titel="Großformatfliesen verlegen lassen | Fliesen Tezgel"
++                titel="Großformatfliesen verlegen | Fliesenverlegung Tezgel"
+                 beschreibung="XXL-Großformatfliesen & fugenlose Platten fachgerecht verlegen lassen: perfekte Untergrundvorbereitung & Handling. Fachbetrieb Tezgel in Wetzlar & Aßlar!"
+                 brotkrumen={[
+                     { name: 'Start', href: '/' },
+diff --git a/src/app/(bestand)/fliesen/holzoptik/page.jsx b/src/app/(bestand)/fliesen/holzoptik/page.jsx
+index 43035f3b..0896748d 100644
+--- a/src/app/(bestand)/fliesen/holzoptik/page.jsx
++++ b/src/app/(bestand)/fliesen/holzoptik/page.jsx
+@@ -30,7 +30,7 @@ const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKo
+ });
+ 
+ export const metadata = createMetadata({
+-    title: 'Fliesen in Holzoptik verlegen | Fliesenleger Tezgel',
++    title: 'Fliesen in Holzoptik verlegen | Fliesenverlegung Tezgel',
+     description:
+         'Holzoptik-Fliesen aus Feinsteinzeug verlegen lassen: warme Holzoptik, feuchteresistent & ideal für Fußbodenheizung. Fachbetrieb Tezgel – Jetzt anfragen!',
+     path: '/fliesen/holzoptik'
+@@ -78,7 +78,7 @@ export default function HolzoptikPage() {
+         <>
+             <SeitenDaten
+                 pfad="/fliesen/holzoptik"
+-                titel="Fliesen in Holzoptik verlegen | Fliesenleger Tezgel"
++                titel="Fliesen in Holzoptik verlegen | Fliesenverlegung Tezgel"
+                 beschreibung="Holzoptik-Fliesen aus Feinsteinzeug verlegen lassen: warme Holzoptik, feuchteresistent & ideal für Fußbodenheizung. Fachbetrieb Tezgel – Jetzt anfragen!"
+                 brotkrumen={[
+                     { name: 'Start', href: '/' },
+diff --git a/src/app/(bestand)/fliesen/konfigurator/page.jsx b/src/app/(bestand)/fliesen/konfigurator/page.jsx
+index 0d9ef1c8..a35e8866 100644
+--- a/src/app/(bestand)/fliesen/konfigurator/page.jsx
++++ b/src/app/(bestand)/fliesen/konfigurator/page.jsx
+@@ -23,7 +23,7 @@ const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKo
+ });
+ 
+ export const metadata = createMetadata({
+-    title: 'Fliesenkonfigurator und Bedarfsrechner | Tezgel',
++    title: 'Fliesenkonfigurator und Bedarfsrechner · Tezgel',
+     description:
+         'Fliesen online konfigurieren: Raum, Untergrund, Format & Fläche wählen und unverbindliche Preisschätzung erhalten. Fliesenverlegung Tezgel in Hessen.',
+     path: '/fliesen/konfigurator'
+@@ -111,7 +111,7 @@ export default function FliesenKonfiguratorPage() {
+         <>
+             <SeitenDaten
+                 pfad="/fliesen/konfigurator"
+-                titel="Fliesenkonfigurator und Bedarfsrechner | Tezgel"
++                titel="Fliesenkonfigurator und Bedarfsrechner · Tezgel"
+                 beschreibung="Fliesen online konfigurieren: Raum, Untergrund, Format & Fläche wählen und unverbindliche Preisschätzung erhalten. Fliesenverlegung Tezgel in Hessen."
+                 brotkrumen={[
+                     { name: 'Start', href: '/' },
+diff --git a/src/app/(bestand)/fliesen/renovierung/page.jsx b/src/app/(bestand)/fliesen/renovierung/page.jsx
+index 115a64c0..3e747410 100644
+--- a/src/app/(bestand)/fliesen/renovierung/page.jsx
++++ b/src/app/(bestand)/fliesen/renovierung/page.jsx
+@@ -31,7 +31,7 @@ const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKo
+ });
+ 
+ export const metadata = createMetadata({
+-    title: 'Fliesenrenovierung, alte Fliesen erneuern | Tezgel',
++    title: 'Fliesenrenovierung, alte Fliesen erneuern · Tezgel',
+     description:
+         'Fliesenboden im bewohnten Bestand fachgerecht renovieren & erneuern: Ablauf, Staubschutz & Etappenplanung vom Fliesenleger-Fachbetrieb Tezgel in Hessen.',
+     path: '/fliesen/renovierung'
+@@ -94,7 +94,7 @@ export default function RenovierungPage() {
+         <>
+             <SeitenDaten
+                 pfad="/fliesen/renovierung"
+-                titel="Fliesenrenovierung, alte Fliesen erneuern | Tezgel"
++                titel="Fliesenrenovierung, alte Fliesen erneuern · Tezgel"
+                 beschreibung="Fliesenboden im bewohnten Bestand fachgerecht renovieren & erneuern: Ablauf, Staubschutz & Etappenplanung vom Fliesenleger-Fachbetrieb Tezgel in Hessen."
+                 brotkrumen={[
+                     { name: 'Start', href: '/' },
+diff --git a/src/app/(bestand)/fliesen/verlegemuster/page.jsx b/src/app/(bestand)/fliesen/verlegemuster/page.jsx
+index 5ddf70d6..396702d2 100644
+--- a/src/app/(bestand)/fliesen/verlegemuster/page.jsx
++++ b/src/app/(bestand)/fliesen/verlegemuster/page.jsx
+@@ -29,7 +29,7 @@ const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKo
+ });
+ 
+ export const metadata = createMetadata({
+-    title: 'Verlegemuster für Fliesen, Fischgrät & Verbände | Tezgel',
++    title: 'Verlegemuster für Fliesen, Fischgrät und Verbände · Tezgel',
+     description:
+         'Fliesen-Verlegemuster im Überblick: Kreuzfuge, Halbverband, Fischgrät & Diagonalverlegung. Verschnitt, Wirkung & Fachberatung von Fliesenleger Tezgel.',
+     path: '/fliesen/verlegemuster'
+@@ -214,7 +214,7 @@ export default function VerlegemusterPage() {
+         <>
+             <SeitenDaten
+                 pfad="/fliesen/verlegemuster"
+-                titel="Verlegemuster für Fliesen, Fischgrät & Verbände | Tezgel"
++                titel="Verlegemuster für Fliesen, Fischgrät und Verbände · Tezgel"
+                 beschreibung="Fliesen-Verlegemuster im Überblick: Kreuzfuge, Halbverband, Fischgrät & Diagonalverlegung. Verschnitt, Wirkung & Fachberatung von Fliesenleger Tezgel."
+                 brotkrumen={[
+                     { name: 'Start', href: '/' },
+diff --git a/src/app/(bestand)/fliesen/verlegetechnik/page.jsx b/src/app/(bestand)/fliesen/verlegetechnik/page.jsx
+index f073856d..c373a4f1 100644
+--- a/src/app/(bestand)/fliesen/verlegetechnik/page.jsx
++++ b/src/app/(bestand)/fliesen/verlegetechnik/page.jsx
+@@ -30,7 +30,7 @@ const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKo
+ });
+ 
+ export const metadata = createMetadata({
+-    title: 'Verlegetechnik für Fliesen, Dünnbett & Kleber | Tezgel',
++    title: 'Verlegetechnik für Fliesen, Dünnbett und Kleber · Tezgel',
+     description:
+         'Verlegetechniken für Fliesen nach DIN 18157: Dünnbett, Mittelbett, Buttering-Floating & Kleberklassen erklärt vom Fachbetrieb Tezgel aus Aßlar & Wetzlar.',
+     path: '/fliesen/verlegetechnik'
+@@ -93,7 +93,7 @@ export default function VerlegetechnikPage() {
+         <>
+             <SeitenDaten
+                 pfad="/fliesen/verlegetechnik"
+-                titel="Verlegetechnik für Fliesen, Dünnbett & Kleber | Tezgel"
++                titel="Verlegetechnik für Fliesen, Dünnbett und Kleber · Tezgel"
+                 beschreibung="Verlegetechniken für Fliesen nach DIN 18157: Dünnbett, Mittelbett, Buttering-Floating & Kleberklassen erklärt vom Fachbetrieb Tezgel aus Aßlar & Wetzlar."
+                 brotkrumen={[
+                     { name: 'Start', href: '/' },
+diff --git a/src/app/(bestand)/foerderung/layout.tsx b/src/app/(bestand)/foerderung/layout.tsx
+index 22cbb470..8f511505 100644
+--- a/src/app/(bestand)/foerderung/layout.tsx
++++ b/src/app/(bestand)/foerderung/layout.tsx
+@@ -4,7 +4,7 @@ import { COMPANY_DATA } from '@/config/company';
+ import JsonLd from '@/components/seo/JsonLd';
+ 
+ export const metadata = createMetadata({
+-  title: 'Förderung & Zuschüsse fürs barrierefreie Bad | Tezgel',
++  title: 'Förderung und Zuschüsse fürs barrierefreie Bad · Tezgel',
+   description: 'Bis zu 4.180 € Pflegekassen-Zuschuss für Ihr barrierefreies Bad: Fliesenleger Tezgel erstellt den Kostenvoranschlag in Wetzlar & Aßlar. Jetzt beraten lassen!',
+   path: '/foerderung',
+ });
+diff --git a/src/app/(bestand)/impressum/layout.tsx b/src/app/(bestand)/impressum/layout.tsx
+index 3a198633..a4d259cc 100644
+--- a/src/app/(bestand)/impressum/layout.tsx
++++ b/src/app/(bestand)/impressum/layout.tsx
+@@ -4,7 +4,7 @@ import { COMPANY_DATA } from '@/config/company';
+ import JsonLd from '@/components/seo/JsonLd';
+ 
+ export const metadata = createMetadata({
+-  title: 'Impressum & rechtliche Angaben | Fliesen Tezgel',
++  title: 'Impressum und rechtliche Angaben | Fliesenverlegung Tezgel',
+   description: 'Impressum und gesetzliche Anbieterkennzeichnung der Fliesenverlegung Tezgel in 35614 Aßlar. Angaben gemäß § 5 DDG, Kontakt und Handwerkskammer.',
+   path: '/impressum',
+   robots: { index: false, follow: true },
+diff --git a/src/app/(bestand)/karriere/ausbildung/page.jsx b/src/app/(bestand)/karriere/ausbildung/page.jsx
+index 961390d7..b1c0f5ad 100644
+--- a/src/app/(bestand)/karriere/ausbildung/page.jsx
++++ b/src/app/(bestand)/karriere/ausbildung/page.jsx
+@@ -28,7 +28,7 @@ import { ORG_ID, SITE_URL } from '@/lib/schema';
+ const APPRENTICESHIP_TITLE = 'Fliesen-, Platten- und Mosaikleger (m/w/d)';
+ 
+ export const metadata = createMetadata({
+-    title: 'Ausbildung Fliesenleger (m/w/d) | Fachbetrieb Tezgel',
++    title: 'Ausbildung Fliesenleger (m/w/d) | Fliesenverlegung Tezgel',
+     description: 'Ausbildung zum Fliesenleger (m/w/d) in Aßlar & Wetzlar bei Tezgel: solides Handwerk, modernste Verlegetechnik & starkes Team. Jetzt unkompliziert bewerben!',
+     path: '/karriere/ausbildung'
+ });
+@@ -70,7 +70,7 @@ export default function AusbildungPage() {
+         <>
+             <SeitenDaten
+                 pfad="/karriere/ausbildung"
+-                titel="Ausbildung Fliesenleger (m/w/d) | Fachbetrieb Tezgel"
++                titel="Ausbildung Fliesenleger (m/w/d) | Fliesenverlegung Tezgel"
+                 beschreibung="Ausbildung zum Fliesenleger (m/w/d) in Aßlar & Wetzlar bei Tezgel: solides Handwerk, modernste Verlegetechnik & starkes Team. Jetzt unkompliziert bewerben!"
+                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Arbeiten bei uns', href: '/karriere' }, { name: 'Ausbildung zum Fliesen-, Platten- und Mosaikleger (m/w/d)' }]}
+                 weitere={[stelle]}
+diff --git a/src/app/(bestand)/naturstein/granit/page.jsx b/src/app/(bestand)/naturstein/granit/page.jsx
+index eb5a7f22..f919b830 100644
+--- a/src/app/(bestand)/naturstein/granit/page.jsx
++++ b/src/app/(bestand)/naturstein/granit/page.jsx
+@@ -27,7 +27,7 @@ import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
+ import SeitenDaten from '@/components/seo/SeitenDaten';
+ 
+ export const metadata = createMetadata({
+-    title: 'Granit & Schiefer verlegen lassen | Fliesen Tezgel',
++    title: 'Granit und Schiefer verlegen | Fliesenverlegung Tezgel',
+     description:
+         'Granit- & Schieferbeläge für Boden, Treppe und Außenbereich fachgerecht verlegen lassen: passende Kleber & Imprägnierung. Fachbetrieb Tezgel in Hessen.',
+     path: '/naturstein/granit'
+@@ -86,7 +86,7 @@ export default function GranitPage() {
+         <>
+             <SeitenDaten
+                 pfad="/naturstein/granit"
+-                titel="Granit & Schiefer verlegen lassen | Fliesen Tezgel"
++                titel="Granit und Schiefer verlegen | Fliesenverlegung Tezgel"
+                 beschreibung="Granit- & Schieferbeläge für Boden, Treppe und Außenbereich fachgerecht verlegen lassen: passende Kleber & Imprägnierung. Fachbetrieb Tezgel in Hessen."
+                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Naturstein', href: '/naturstein' }, { name: 'Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen' }]}
+             />
+diff --git a/src/app/(bestand)/naturstein/marmor-kalkstein/page.jsx b/src/app/(bestand)/naturstein/marmor-kalkstein/page.jsx
+index 8e64d9b7..e7e82b87 100644
+--- a/src/app/(bestand)/naturstein/marmor-kalkstein/page.jsx
++++ b/src/app/(bestand)/naturstein/marmor-kalkstein/page.jsx
+@@ -28,7 +28,7 @@ import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
+ import SeitenDaten from '@/components/seo/SeitenDaten';
+ 
+ export const metadata = createMetadata({
+-    title: 'Marmor & Travertin verlegen lassen | Fliesen Tezgel',
++    title: 'Marmor und Travertin verlegen | Fliesenverlegung Tezgel',
+     description:
+         'Marmor, Travertin & Kalkstein fachgerecht verlegen lassen: verfärbungsfreie Kleber, Imprägnierung & Schutz. Fachbetrieb Tezgel in Aßlar & Wetzlar.',
+     path: '/naturstein/marmor-kalkstein'
+@@ -120,7 +120,7 @@ export default function MarmorKalksteinPage() {
+         <>
+             <SeitenDaten
+                 pfad="/naturstein/marmor-kalkstein"
+-                titel="Marmor & Travertin verlegen lassen | Fliesen Tezgel"
++                titel="Marmor und Travertin verlegen | Fliesenverlegung Tezgel"
+                 beschreibung="Marmor, Travertin & Kalkstein fachgerecht verlegen lassen: verfärbungsfreie Kleber, Imprägnierung & Schutz. Fachbetrieb Tezgel in Aßlar & Wetzlar."
+                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Naturstein', href: '/naturstein' }, { name: 'Marmor, Travertin und Kalkstein: edle Natursteine richtig verlegen' }]}
+             />
+diff --git a/src/app/(bestand)/partner/page.jsx b/src/app/(bestand)/partner/page.jsx
+index 5a7dd967..278bce9c 100644
+--- a/src/app/(bestand)/partner/page.jsx
++++ b/src/app/(bestand)/partner/page.jsx
+@@ -20,7 +20,7 @@ import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+ import Verlegeplan from '@/components/kern/Verlegeplan';
+ import SeitenDaten from '@/components/seo/SeitenDaten';
+ 
+-const TITEL = 'Materialpartner & Verlegesysteme | Tezgel Fachbetrieb';
++const TITEL = 'Materialien und Verlegesysteme | Fliesenverlegung Tezgel';
+ const BESCHREIBUNG = 'Hochwertige Verlegewerkstoffe & Fliesenmarken bei Tezgel: Schlüter-Systems, Ardex, Sopro, PCI, Marazzi & Villeroy & Boch. Höchste Qualität für Ihr Projekt!';
+ 
+ export const metadata = createMetadata({
+diff --git a/src/app/(bestand)/preise/page.jsx b/src/app/(bestand)/preise/page.jsx
+index 4923d473..a3c52dad 100644
+--- a/src/app/(bestand)/preise/page.jsx
++++ b/src/app/(bestand)/preise/page.jsx
+@@ -32,9 +32,9 @@ const PricingCalculator = dynamic(() => import('@/components/pricing/PricingCalc
+ });
+ 
+ export const metadata = createMetadata({
+-  title: "Fliesenleger Preise auf Anfrage | Festpreisangebote · Tezgel",
++  title: "Preise und Festpreisangebot | Fliesenverlegung Tezgel",
+   description:
+-    "Preise für Fliesenverlegung, große Fliesen & Badsanierung in Wetzlar & Aßlar auf Anfrage. Schildern Sie Ihr Vorhaben für ein verbindliches Festpreisangebot!",
++    "Was kostet Ihr Vorhaben? Den Preis für Fliesen, große Formate oder die Badsanierung nennen wir nach dem Termin vor Ort als verbindlichen Festpreis.",
+   path: "/preise"
+ });
+ 
+diff --git a/src/app/(bestand)/referenzen/[id]/layout.jsx b/src/app/(bestand)/referenzen/[id]/layout.jsx
+index bb42b12c..219fc977 100644
+--- a/src/app/(bestand)/referenzen/[id]/layout.jsx
++++ b/src/app/(bestand)/referenzen/[id]/layout.jsx
+@@ -89,7 +89,7 @@ export default async function Layout({ children, params }) {
+       { name: 'Referenzen', path: '/referenzen' },
+       { name: project.title, path: `/referenzen/${project.id}` },
+     ];
+-    const seite = createMetadata({ title: project.title, description: project.description, path: `/referenzen/${project.id}` });
++    const seite = createMetadata({ title: project.seoTitle ?? project.title, description: project.description, path: `/referenzen/${project.id}` });
+     const primaryImage = project.images?.find((img) => img.type === 'after')?.url || project.images?.[0]?.url;
+ 
+     projectSchemaGraph = buildGraph([
+diff --git a/src/app/(bestand)/referenzen/[id]/page.jsx b/src/app/(bestand)/referenzen/[id]/page.jsx
+index dfcc414f..fb3fa8f5 100644
+--- a/src/app/(bestand)/referenzen/[id]/page.jsx
++++ b/src/app/(bestand)/referenzen/[id]/page.jsx
+@@ -61,7 +61,7 @@ export async function generateMetadata({ params }) {
+     if (!project) return { title: 'Referenzprojekt' };
+ 
+     return createMetadata({
+-        title: project.title,
++        title: project.seoTitle ?? project.title, // SEO-Runde P2
+         description: project.description,
+         path: `/referenzen/${id}`,
+         image: project.image
+diff --git a/src/app/(bestand)/schadensanalyse/layout.tsx b/src/app/(bestand)/schadensanalyse/layout.tsx
+index b63bd17f..5584a8c7 100644
+--- a/src/app/(bestand)/schadensanalyse/layout.tsx
++++ b/src/app/(bestand)/schadensanalyse/layout.tsx
+@@ -1,7 +1,7 @@
+ import { createMetadata } from '@/lib/metadata';
+ 
+ export const metadata = createMetadata({
+-  title: 'Fliesenschäden analysieren bei Rissen & Feuchte | Tezgel',
++  title: 'Fliesenschäden analysieren bei Rissen und Feuchte · Tezgel',
+   description:
+     'Gerissene Fliesen, Hohlstellen oder feuchte Fugen? Kostenfreie Schadensanalyse vor Ort in Wetzlar & Aßlar. Fliesenleger-Fachbetrieb Tezgel berät Sie!',
+   path: '/schadensanalyse',
+diff --git a/src/app/(bestand)/schadensanalyse/page.jsx b/src/app/(bestand)/schadensanalyse/page.jsx
+index aa75d0a4..07277992 100644
+--- a/src/app/(bestand)/schadensanalyse/page.jsx
++++ b/src/app/(bestand)/schadensanalyse/page.jsx
+@@ -123,7 +123,7 @@ const breadcrumbs = [
+ const schadensGraph = buildGraph([
+     buildWebPageNode({
+         url: PAGE_URL,
+-        name: 'Fliesenschäden analysieren bei Rissen & Feuchte | Tezgel',
++        name: 'Fliesenschäden analysieren bei Rissen und Feuchte · Tezgel',
+         description:
+             'Gerissene Fliesen, Hohlstellen oder feuchte Fugen? Kostenfreie Schadensanalyse vor Ort in Wetzlar & Aßlar. Fliesenleger-Fachbetrieb Tezgel berät Sie!',
+         breadcrumbItems: breadcrumbs
+diff --git a/src/app/(bestand)/treppen/aussentreppe/page.jsx b/src/app/(bestand)/treppen/aussentreppe/page.jsx
+index 660f9b19..65a6931d 100644
+--- a/src/app/(bestand)/treppen/aussentreppe/page.jsx
++++ b/src/app/(bestand)/treppen/aussentreppe/page.jsx
+@@ -27,7 +27,7 @@ import { linkKlassen } from '@/components/kern/stile';
+ import SeitenDaten from '@/components/seo/SeitenDaten';
+ 
+ export const metadata = createMetadata({
+-    title: 'Außentreppe fliesen, frostsicher & rutschfest | Tezgel',
++    title: 'Außentreppe fliesen, frostsicher und rutschfest · Tezgel',
+     description:
+         'Außentreppe frostsicher fliesen & sanieren: rutschhemmende Platten, Gefälleausbildung & Abdichtung. Fliesenleger-Fachbetrieb Tezgel in Wetzlar & Aßlar.',
+     path: '/treppen/aussentreppe'
+@@ -143,7 +143,7 @@ export default function AussentreppePage() {
+         <>
+             <SeitenDaten
+                 pfad="/treppen/aussentreppe"
+-                titel="Außentreppe fliesen, frostsicher & rutschfest | Tezgel"
++                titel="Außentreppe fliesen, frostsicher und rutschfest · Tezgel"
+                 beschreibung="Außentreppe frostsicher fliesen & sanieren: rutschhemmende Platten, Gefälleausbildung & Abdichtung. Fliesenleger-Fachbetrieb Tezgel in Wetzlar & Aßlar."
+                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Treppen', href: '/treppen' }, { name: 'Außentreppe fliesen: frostsicher & rutschfest bei Tezgel' }]}
+             />
+diff --git a/src/app/(bestand)/treppen/innentreppe/page.jsx b/src/app/(bestand)/treppen/innentreppe/page.jsx
+index f22eaac6..d5182e12 100644
+--- a/src/app/(bestand)/treppen/innentreppe/page.jsx
++++ b/src/app/(bestand)/treppen/innentreppe/page.jsx
+@@ -26,7 +26,7 @@ import { linkKlassen } from '@/components/kern/stile';
+ import SeitenDaten from '@/components/seo/SeitenDaten';
+ 
+ export const metadata = createMetadata({
+-    title: 'Innentreppe fliesen lassen | Stufen & Kanten · Tezgel',
++    title: 'Innentreppe fliesen lassen | Fliesenverlegung Tezgel',
+     description:
+         'Innentreppe im Haus fliesen lassen: Stufen aus Feinsteinzeug oder Naturstein, Gehrungskanten & Sockel. Fachbetrieb Tezgel – Jetzt Angebot anfragen!',
+     path: '/treppen/innentreppe'
+@@ -114,7 +114,7 @@ export default function InnentreppePage() {
+         <>
+             <SeitenDaten
+                 pfad="/treppen/innentreppe"
+-                titel="Innentreppe fliesen lassen | Stufen & Kanten · Tezgel"
++                titel="Innentreppe fliesen lassen | Fliesenverlegung Tezgel"
+                 beschreibung="Innentreppe im Haus fliesen lassen: Stufen aus Feinsteinzeug oder Naturstein, Gehrungskanten & Sockel. Fachbetrieb Tezgel – Jetzt Angebot anfragen!"
+                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Treppen', href: '/treppen' }, { name: 'Innentreppe fliesen: Stufen, Setzstufen und Sockel aus einem Guss' }]}
+             />
+diff --git a/src/app/(bestand)/treppen/treppenhaus/page.jsx b/src/app/(bestand)/treppen/treppenhaus/page.jsx
+index 07948e06..c4124d9b 100644
+--- a/src/app/(bestand)/treppen/treppenhaus/page.jsx
++++ b/src/app/(bestand)/treppen/treppenhaus/page.jsx
+@@ -26,7 +26,7 @@ import { linkKlassen } from '@/components/kern/stile';
+ import SeitenDaten from '@/components/seo/SeitenDaten';
+ 
+ export const metadata = createMetadata({
+-    title: 'Treppenhaus sanieren mit Fliesen & Naturstein | Tezgel',
++    title: 'Treppenhaus sanieren mit Fliesen und Naturstein · Tezgel',
+     description:
+         'Treppenhaus im MFH neu fliesen & sanieren: trittsichere Beläge, abschnittsweises Arbeiten im bewohnten Haus & Hausverwaltungs-Service. Tezgel Fachbetrieb.',
+     path: '/treppen/treppenhaus'
+@@ -111,7 +111,7 @@ export default function TreppenhausPage() {
+         <>
+             <SeitenDaten
+                 pfad="/treppen/treppenhaus"
+-                titel="Treppenhaus sanieren mit Fliesen & Naturstein | Tezgel"
++                titel="Treppenhaus sanieren mit Fliesen und Naturstein · Tezgel"
+                 beschreibung="Treppenhaus im MFH neu fliesen & sanieren: trittsichere Beläge, abschnittsweises Arbeiten im bewohnten Haus & Hausverwaltungs-Service. Tezgel Fachbetrieb."
+                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Treppen', href: '/treppen' }, { name: 'Treppenhaus sanieren: neue Beläge im Mehrfamilienhaus' }]}
+             />
+diff --git a/src/app/(bestand)/untergrund-abdichtung/ausgleich-gefaelle/page.jsx b/src/app/(bestand)/untergrund-abdichtung/ausgleich-gefaelle/page.jsx
+index a7ff6721..72f98de4 100644
+--- a/src/app/(bestand)/untergrund-abdichtung/ausgleich-gefaelle/page.jsx
++++ b/src/app/(bestand)/untergrund-abdichtung/ausgleich-gefaelle/page.jsx
+@@ -25,7 +25,7 @@ import { linkKlassen } from '@/components/kern/stile';
+ import SeitenDaten from '@/components/seo/SeitenDaten';
+ 
+ export const metadata = createMetadata({
+-    title: 'Untergrund ausgleichen & Gefälle herstellen | Tezgel',
++    title: 'Untergrund ausgleichen und Gefälle herstellen · Tezgel',
+     description:
+         'Unebene Böden & Wände vor dem Fliesen ausgleichen: Ebenheit nach DIN 18202, Spachtelung & Gefälleausbildung zu Abläufen. Fachbetrieb Tezgel in Hessen.',
+     path: '/untergrund-abdichtung/ausgleich-gefaelle'
+@@ -116,7 +116,7 @@ export default function AusgleichGefaellePage() {
+         <>
+             <SeitenDaten
+                 pfad="/untergrund-abdichtung/ausgleich-gefaelle"
+-                titel="Untergrund ausgleichen & Gefälle herstellen | Tezgel"
++                titel="Untergrund ausgleichen und Gefälle herstellen · Tezgel"
+                 beschreibung="Unebene Böden & Wände vor dem Fliesen ausgleichen: Ebenheit nach DIN 18202, Spachtelung & Gefälleausbildung zu Abläufen. Fachbetrieb Tezgel in Hessen."
+                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Untergrund und Abdichtung', href: '/untergrund-abdichtung' }, { name: 'Untergrund ausgleichen und Gefälle herstellen: eben verlegen, Wasser gezielt ableiten' }]}
+             />
+diff --git a/src/app/(bestand)/untergrund-abdichtung/din-18534/page.jsx b/src/app/(bestand)/untergrund-abdichtung/din-18534/page.jsx
+index 92861be3..7949d4df 100644
+--- a/src/app/(bestand)/untergrund-abdichtung/din-18534/page.jsx
++++ b/src/app/(bestand)/untergrund-abdichtung/din-18534/page.jsx
+@@ -26,7 +26,7 @@ import { linkKlassen } from '@/components/kern/stile';
+ import SeitenDaten from '@/components/seo/SeitenDaten';
+ 
+ export const metadata = createMetadata({
+-    title: 'DIN 18534 Verbundabdichtung für Bad und Dusche | Tezgel',
++    title: 'DIN 18534 Verbundabdichtung für Bad und Dusche · Tezgel',
+     description:
+         'DIN 18534 Verbundabdichtung für Bad & Dusche: Wassereinwirkungsklassen W0-I bis W3-I, Dichtbänder & Rohrmanschetten. Normgerecht ausgeführt von Tezgel.',
+     path: '/untergrund-abdichtung/din-18534'
+@@ -145,7 +145,7 @@ export default function Din18534Page() {
+         <>
+             <SeitenDaten
+                 pfad="/untergrund-abdichtung/din-18534"
+-                titel="DIN 18534 Verbundabdichtung für Bad und Dusche | Tezgel"
++                titel="DIN 18534 Verbundabdichtung für Bad und Dusche · Tezgel"
+                 beschreibung="DIN 18534 Verbundabdichtung für Bad & Dusche: Wassereinwirkungsklassen W0-I bis W3-I, Dichtbänder & Rohrmanschetten. Normgerecht ausgeführt von Tezgel."
+                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Untergrund und Abdichtung', href: '/untergrund-abdichtung' }, { name: 'Verbundabdichtung nach DIN 18534: dicht unter der Fliese' }]}
+             />
+diff --git a/src/app/(bestand)/untergrund-abdichtung/entkopplung/page.jsx b/src/app/(bestand)/untergrund-abdichtung/entkopplung/page.jsx
+index 24b3f384..d8a12323 100644
+--- a/src/app/(bestand)/untergrund-abdichtung/entkopplung/page.jsx
++++ b/src/app/(bestand)/untergrund-abdichtung/entkopplung/page.jsx
+@@ -24,7 +24,7 @@ import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
+ import SeitenDaten from '@/components/seo/SeitenDaten';
+ 
+ export const metadata = createMetadata({
+-    title: 'Fliesen auf Holzboden verlegen mit Entkopplung | Tezgel',
++    title: 'Fliesen auf Holzboden verlegen mit Entkopplung · Tezgel',
+     description:
+         'Fliesen auf Holzdielen, Mischuntergründen & gerissenem Estrich sicher verlegen: Entkopplungsmatten & Rissverharzung erklärt vom Fachbetrieb Tezgel.',
+     path: '/untergrund-abdichtung/entkopplung'
+@@ -125,7 +125,7 @@ export default function EntkopplungPage() {
+         <>
+             <SeitenDaten
+                 pfad="/untergrund-abdichtung/entkopplung"
+-                titel="Fliesen auf Holzboden verlegen mit Entkopplung | Tezgel"
++                titel="Fliesen auf Holzboden verlegen mit Entkopplung · Tezgel"
+                 beschreibung="Fliesen auf Holzdielen, Mischuntergründen & gerissenem Estrich sicher verlegen: Entkopplungsmatten & Rissverharzung erklärt vom Fachbetrieb Tezgel."
+                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Untergrund und Abdichtung', href: '/untergrund-abdichtung' }, { name: 'Fliesen auf Holzboden verlegen: Entkopplung bei Tezgel' }]}
+             />
+diff --git a/src/app/(bestand)/untergrund-abdichtung/estrich-belegreife/page.jsx b/src/app/(bestand)/untergrund-abdichtung/estrich-belegreife/page.jsx
+index eb2da8ad..ca61057d 100644
+--- a/src/app/(bestand)/untergrund-abdichtung/estrich-belegreife/page.jsx
++++ b/src/app/(bestand)/untergrund-abdichtung/estrich-belegreife/page.jsx
+@@ -26,7 +26,7 @@ import { linkKlassen } from '@/components/kern/stile';
+ import SeitenDaten from '@/components/seo/SeitenDaten';
+ 
+ export const metadata = createMetadata({
+-    title: 'Estrich auf Belegreife prüfen vor dem Fliesen | Tezgel',
++    title: 'Estrich auf Belegreife prüfen vor dem Fliesen · Tezgel',
+     description:
+         'Estrich-Belegreife zuverlässig prüfen: CM-Messung, Richtwerte je Estrichart & Feuchtigkeitsmessung vor dem Fliesen verlegen. Fachbetrieb Tezgel in Hessen.',
+     path: '/untergrund-abdichtung/estrich-belegreife'
+@@ -127,7 +127,7 @@ export default function EstrichBelegreifePage() {
+         <>
+             <SeitenDaten
+                 pfad="/untergrund-abdichtung/estrich-belegreife"
+-                titel="Estrich auf Belegreife prüfen vor dem Fliesen | Tezgel"
++                titel="Estrich auf Belegreife prüfen vor dem Fliesen · Tezgel"
+                 beschreibung="Estrich-Belegreife zuverlässig prüfen: CM-Messung, Richtwerte je Estrichart & Feuchtigkeitsmessung vor dem Fliesen verlegen. Fachbetrieb Tezgel in Hessen."
+                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Untergrund und Abdichtung', href: '/untergrund-abdichtung' }, { name: 'Estrich prüfen: Belegreife und Restfeuchte vor dem Fliesen' }]}
+             />
+diff --git a/src/app/(bestand)/untergrund-abdichtung/fliesen-auf-fliesen/page.jsx b/src/app/(bestand)/untergrund-abdichtung/fliesen-auf-fliesen/page.jsx
+index 03a5b8b3..f70bb0f3 100644
+--- a/src/app/(bestand)/untergrund-abdichtung/fliesen-auf-fliesen/page.jsx
++++ b/src/app/(bestand)/untergrund-abdichtung/fliesen-auf-fliesen/page.jsx
+@@ -25,7 +25,7 @@ import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
+ import SeitenDaten from '@/components/seo/SeitenDaten';
+ 
+ export const metadata = createMetadata({
+-    title: 'Altfliesen überkleben, wann es fachgerecht geht | Tezgel',
++    title: 'Altfliesen überkleben, wann es fachgerecht geht · Tezgel',
+     description:
+         'Altfliesen überkleben (Überfliesen): Prüfkriterien, Haftbrücke, Aufbauhöhen & wann Rückbau besser ist. Fachbetrieb Tezgel in Aßlar & Wetzlar.',
+     path: '/untergrund-abdichtung/fliesen-auf-fliesen'
+@@ -139,7 +139,7 @@ export default function FliesenAufFliesenPage() {
+         <>
+             <SeitenDaten
+                 pfad="/untergrund-abdichtung/fliesen-auf-fliesen"
+-                titel="Altfliesen überkleben, wann es fachgerecht geht | Tezgel"
++                titel="Altfliesen überkleben, wann es fachgerecht geht · Tezgel"
+                 beschreibung="Altfliesen überkleben (Überfliesen): Prüfkriterien, Haftbrücke, Aufbauhöhen & wann Rückbau besser ist. Fachbetrieb Tezgel in Aßlar & Wetzlar."
+                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Untergrund und Abdichtung', href: '/untergrund-abdichtung' }, { name: 'Altfliesen überkleben: Wann es fachgerecht geht bei Tezgel' }]}
+             />
+diff --git a/src/app/(bestand)/untergrund-abdichtung/page.jsx b/src/app/(bestand)/untergrund-abdichtung/page.jsx
+index a4f1dfb9..b4fe2d92 100644
+--- a/src/app/(bestand)/untergrund-abdichtung/page.jsx
++++ b/src/app/(bestand)/untergrund-abdichtung/page.jsx
+@@ -26,7 +26,7 @@ import SeitenDaten from '@/components/seo/SeitenDaten';
+ import { buildServiceNode, SITE_URL } from '@/lib/schema';
+ 
+ export const metadata = createMetadata({
+-    title: 'Untergrund & Abdichtung für Fliesen | Fachbetrieb Tezgel',
++    title: 'Untergrund und Abdichtung für Fliesen · Tezgel',
+     description:
+         'Untergrundvorbereitung & DIN 18534 Verbundabdichtung für Fliesen in Wetzlar & Aßlar: Estrichprüfung, Entkopplung & Gefälleausgleich. Jetzt beraten lassen!',
+     path: '/untergrund-abdichtung'
+@@ -145,7 +145,7 @@ export default function UntergrundAbdichtungPage() {
+         <>
+             <SeitenDaten
+                 pfad="/untergrund-abdichtung"
+-                titel="Untergrund & Abdichtung für Fliesen | Fachbetrieb Tezgel"
++                titel="Untergrund und Abdichtung für Fliesen · Tezgel"
+                 beschreibung="Untergrundvorbereitung & DIN 18534 Verbundabdichtung für Fliesen in Wetzlar & Aßlar: Estrichprüfung, Entkopplung & Gefälleausgleich. Jetzt beraten lassen!"
+                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Untergrund und Abdichtung: das Fundament jedes Fliesenbelags' }]}
+                 weitere={[
+diff --git a/src/app/(bestand)/unternehmen/page.jsx b/src/app/(bestand)/unternehmen/page.jsx
+index 06740c4d..349ff8d6 100644
+--- a/src/app/(bestand)/unternehmen/page.jsx
++++ b/src/app/(bestand)/unternehmen/page.jsx
+@@ -19,7 +19,7 @@ import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+ import Verlegeplan from '@/components/kern/Verlegeplan';
+ import SeitenDaten from '@/components/seo/SeitenDaten';
+ 
+-const TITEL = 'Unternehmen & Qualitätsversprechen | Tezgel Fachbetrieb';
++const TITEL = 'Unternehmen und Geschichte | Fliesenverlegung Tezgel';
+ const BESCHREIBUNG = 'Fliesenverlegung Tezgel aus Aßlar: Fachbetrieb der HWK seit 2008. Firmengeschichte, Inhaber Deniz Tezgel & unser Qualitätsversprechen für Hessen.';
+ 
+ export const metadata = createMetadata({
+diff --git a/src/components/vorlagen/inhalt.ts b/src/components/vorlagen/inhalt.ts
+index f39ce902..5099ddcc 100644
+--- a/src/components/vorlagen/inhalt.ts
++++ b/src/components/vorlagen/inhalt.ts
+@@ -198,7 +198,8 @@ export interface BelegInhalt {
+   satz?: Markentext;
+   verweis?: Verweis;
+   /** Orte nach Entfernung ab Aßlar mit Maßkette (Startseite, Über uns) */
+-  orte?: { titel: string; einleitung: Markentext };
++  // verweis (SEO-Runde P2): ein Link unter der Einleitung, zum Beispiel „Fliesenleger in Wetzlar“ auf der Startseite
++  orte?: { titel: string; einleitung: Markentext; verweis?: { name: string; href: string } };
+ }
+ 
+ /** 6 · Nächster Schritt: die eine Hauptaktion (K-004), darunter Hilfen, die nicht konkurrieren (E-012) */
+diff --git a/src/components/vorlagen/teile/Beleg.tsx b/src/components/vorlagen/teile/Beleg.tsx
+index 69f432fc..501ce74a 100644
+--- a/src/components/vorlagen/teile/Beleg.tsx
++++ b/src/components/vorlagen/teile/Beleg.tsx
+@@ -152,7 +152,7 @@ export default function Beleg({ inhalt, pfad, moment, zweiter, stimmenTitel = 'D
+           <Stimmen ids={inhalt.stimmen} form={inhalt.stimmenEinzeln || !inhalt.stimmenGross ? 'einzeln' : 'gross'} versatz={inhalt.stimmenEinzeln ? inhalt.stimmenVersatz : !inhalt.stimmenGross} />
+         </Abschnitt>
+       )}
+-      {inhalt.orte && <Einsatzorte titel={inhalt.orte.titel} einleitung={inhalt.orte.einleitung} />}
++      {inhalt.orte && <Einsatzorte titel={inhalt.orte.titel} einleitung={inhalt.orte.einleitung} verweis={inhalt.orte.verweis} />}
+     </>
+   );
+ }
+diff --git a/src/components/vorlagen/teile/Einsatzorte.tsx b/src/components/vorlagen/teile/Einsatzorte.tsx
+index 450fbeef..24b248c6 100644
+--- a/src/components/vorlagen/teile/Einsatzorte.tsx
++++ b/src/components/vorlagen/teile/Einsatzorte.tsx
+@@ -118,7 +118,15 @@ function Ortsgruppe({ g, bereich, mehr = false }: { g: (typeof GRUPPEN)[number];
+ // Spalten unter einer Maßkette. Vorher standen ab md links die nahen und mittleren Orte untereinander und rechts die
+ // weiteren: Zeilenweise las sich das als 10 km, mehr als 25 km, 25 km, und der rote Abschnitt der Ketten sprang hin und
+ // zurück (Sichtabnahme E3 Anlauf 1, t768 und t1024; UM-E3-FIX F9). Jetzt wandert er von links nach rechts.
+-export default function Einsatzorte({ titel, einleitung }: { titel: string; einleitung: Markentext }) {
++export default function Einsatzorte({
++  titel,
++  einleitung,
++  verweis,
++}: {
++  titel: string;
++  einleitung: Markentext;
++  verweis?: { name: string; href: string };
++}) {
+   return (
+     <Abschnitt
+       id="einsatzgebiet"
+@@ -127,9 +135,17 @@ export default function Einsatzorte({ titel, einleitung }: { titel: string; einl
+       spaet
+       titel={titel}
+       einleitung={
+-        <p>
+-          <Textmarken text={einleitung} />
+-        </p>
++        <>
++          <p>
++            <Textmarken text={einleitung} />
++          </p>
++          {/* SEO-Runde P2: interner Link mit sprechendem Text, zum Beispiel „Fliesenleger in Wetzlar“ (KONTEXT.md, Abschnitt 6) */}
++          {verweis && (
++            <p className="mt-4">
++              <WeiterLink href={verweis.href}>{verweis.name}</WeiterLink>
++            </p>
++          )}
++        </>
+       }
+     >
+       {/* data-kopf-pause (UM-E3-FIX2 N1, bewegung.css „Leitfaden mit Abschnittsmarke“): Der Kopf der Leitachse tritt zurück, bis
+diff --git a/src/config/navigation.js b/src/config/navigation.js
+index e8bdf0ea..837ec63b 100755
+--- a/src/config/navigation.js
++++ b/src/config/navigation.js
+@@ -171,7 +171,8 @@ export const footerGruppen = [
+         title: 'Wo wir arbeiten',
+         links: [
+             { name: 'Alle Orte', path: '/standorte' },
+-            ...CITIES.map((city) => ({ name: city.name, path: `/standorte/${city.slug}` })),
++            // SEO-Runde P2: Wetzlar mit sprechendem Linktext „Fliesenleger in Wetzlar“, die anderen Orte mit ihrem Namen
++            ...CITIES.map((city) => ({ name: city.slug === 'wetzlar' ? 'Fliesenleger in Wetzlar' : city.name, path: `/standorte/${city.slug}` })),
+             { name: 'Fliesenberatung Wetzlar', path: '/ausstellung/wetzlar' },
+             { name: 'Fliesenberatung Gießen', path: '/ausstellung/giessen' },
+         ],
+diff --git a/src/config/posts/barrierefreier-balkonaustritt.js b/src/config/posts/barrierefreier-balkonaustritt.js
+index d1a773d7..d3275426 100644
+--- a/src/config/posts/barrierefreier-balkonaustritt.js
++++ b/src/config/posts/barrierefreier-balkonaustritt.js
+@@ -4,6 +4,8 @@ const post = {
+     "id": "5",
+     "slug": "barrierefreier-balkonaustritt",
+     "title": "Wie niedrig ist ein barrierefreier Balkonaustritt?",
++    // SEO-Runde P2: Titel für die Suche (mit Marke höchstens 58 Zeichen); die Überschrift bleibt „title“
++    "seoTitel": "Wie niedrig ist ein barrierefreier Balkonaustritt · Tezgel",
+     "excerpt": "Stolperfrei auf den Balkon – und trotzdem dicht? Warum die Schwelle an der Balkontür ein Abdichtungsdetail ist, welche Regeln gelten und wie niedrige Übergänge sauber geplant werden.",
+     "category": "aussen",
+     "author": "Fliesenverlegung Tezgel",
+diff --git a/src/config/projects.js b/src/config/projects.js
+index e0b09c92..8ffc5856 100755
+--- a/src/config/projects.js
++++ b/src/config/projects.js
+@@ -73,6 +73,7 @@ export const PORTFOLIO_PROJECTS = [
+         id: "barrierefreies-duschbad",
+         placeholder: true,
+         title: "Barrierefreies Duschbad mit bodengleicher Walk-In-Dusche",
++        seoTitle: "Barrierefreies Duschbad mit bodengleicher Dusche · Tezgel", // SEO-Runde P2
+         category: "bad",
+         serviceLink: "/bad/barrierefreies-bad",
+         description: "Ein solches Projekt umfasst den Umbau von der Wanne zur bodengleichen Dusche, die Gefälleausbildung zum Ablauf oder zur Rinne, die Verbundabdichtung nach DIN 18534 und die Verlegung rutschhemmender Fliesen im Duschbereich.",
+@@ -89,6 +90,7 @@ export const PORTFOLIO_PROJECTS = [
+         id: "balkon-stelzlager",
+         placeholder: true,
+         title: "Balkonsanierung mit Terrassenplatten auf Stelzlagern",
++        seoTitle: "Balkonsanierung mit Platten auf Stelzlagern · Tezgel", // SEO-Runde P2
+         category: "aussen",
+         serviceLink: "/balkon-terrasse/stelzlager",
+         description: "Ein solches Projekt umfasst den Rückbau des schadhaften Altbelags, die Prüfung von Abdichtung und Gefälle sowie die Verlegung von 2-cm-Feinsteinzeugplatten auf höhenverstellbaren Stelzlagern mit sauberen Randabschlüssen.",
+diff --git a/src/inhalte/blog.ts b/src/inhalte/blog.ts
+index 3e1cc34a..6a985f95 100644
+--- a/src/inhalte/blog.ts
++++ b/src/inhalte/blog.ts
+@@ -13,7 +13,7 @@ const VORSPANN =
+ export const BLOG: WissenInhalt = {
+   pfad: '/blog',
+   meta: {
+-    titel: 'Fliesenratgeber für Badsanierung und Abdichtung | Tezgel',
++    titel: 'Fliesenratgeber für Badsanierung und Abdichtung · Tezgel',
+     beschreibung:
+       'Ratgeber und Praxiswissen vom Fliesenlegerfachbetrieb Tezgel aus Aßlar: Badsanierung, Fliesenverlegung und Abdichtung gegen Wasser nach DIN 18534.',
+   },
+diff --git a/src/inhalte/fliesen.ts b/src/inhalte/fliesen.ts
+index cf6205ef..f11c4057 100644
+--- a/src/inhalte/fliesen.ts
++++ b/src/inhalte/fliesen.ts
+@@ -15,7 +15,7 @@ const VORSPANN =
+ export const FLIESEN: WissenInhalt = {
+   pfad: '/fliesen',
+   meta: {
+-    titel: 'Fliesenverlegung einfach erklärt | Fliesenleger Tezgel',
++    titel: 'Fliesenwissen einfach erklärt | Fliesenverlegung Tezgel',
+     beschreibung:
+       'Ratgeber und Fachwissen zur Fliesenverlegung: Feinsteinzeug, Großformate, Holzoptik, Verlegetechniken. Fliesenleger Tezgel aus Aßlar in Hessen erklärt es.',
+   },
+diff --git a/src/inhalte/meta/seiten.ts b/src/inhalte/meta/seiten.ts
+index 6bbb5703..8c359d74 100644
+--- a/src/inhalte/meta/seiten.ts
++++ b/src/inhalte/meta/seiten.ts
+@@ -17,5 +17,6 @@ export const META_SEITEN: Readonly<Record<string, string>> = {
+   '/partner': 'Verlegewerkstoffe und Fliesen: Wir arbeiten unter anderem mit Ardex, Sopro, PCI und Marazzi, für Abdichtung, Kleber und Fliesen in Ihrem Zuhause.',
+   '/karriere': 'Jobs als Fliesenleger (m/w/d): Wir suchen Gesellen oder erfahrene Fachkräfte in Aßlar, Wetzlar und Mittelhessen. Bewerben Sie sich per E-Mail oder Telefon.',
+   '/karriere/ausbildung': 'Ausbildung zum Fliesenleger (m/w/d) in einem eingetragenen Fachbetrieb in Aßlar. Bewerben Sie sich per E-Mail, Telefon oder WhatsApp.',
++  '/preise': 'Was kostet Ihr Vorhaben? Den Preis für Fliesen, große Formate oder die Badsanierung nennen wir nach dem Termin vor Ort als verbindlichen Festpreis.', // SEO-Runde P2
+   '/termin': 'Termin vereinbaren in Aßlar und Wetzlar: Wählen Sie Ihr Wunschthema und senden Sie die Anfrage online oder per WhatsApp. Der Termin vor Ort ist kostenfrei.',
+ };
+diff --git a/src/inhalte/referenzen.ts b/src/inhalte/referenzen.ts
+index 8eaa202f..bdb63ae1 100644
+--- a/src/inhalte/referenzen.ts
++++ b/src/inhalte/referenzen.ts
+@@ -30,7 +30,7 @@ const VORSPANN =
+ export const REFERENZEN: ErzaehlInhalt = {
+   pfad: '/referenzen',
+   meta: {
+-    titel: 'Referenzen und Bewertungen | Fliesenleger Tezgel Aßlar',
++    titel: 'Referenzen und Bewertungen | Fliesenverlegung Tezgel',
+     beschreibung:
+       'Was unsere Kunden über Fliesenleger Tezgel aus Aßlar sagen, mit 5,0 Sternen bei Google. Dazu Fotos von Bädern, Terrassen und Treppen.',
+   },
+diff --git a/src/inhalte/start.ts b/src/inhalte/start.ts
+index 316e615f..2e3905de 100644
+--- a/src/inhalte/start.ts
++++ b/src/inhalte/start.ts
+@@ -108,6 +108,8 @@ export const START: ErzaehlInhalt = {
+     orte: {
+       titel: 'Hier sind wir für Sie unterwegs.',
+       einleitung: 'Unser Betrieb sitzt in Aßlar. Wir arbeiten in Wetzlar, Gießen, Herborn und den Orten rundherum.',
++      // SEO-Runde P2: Link mit dem Text „Fliesenleger in Wetzlar“ auf die Wetzlar-Seite
++      verweis: { name: 'Fliesenleger in Wetzlar', href: '/standorte/wetzlar' },
+     },
+   },
+   schritt: {
+diff --git a/src/lib/metadata.ts b/src/lib/metadata.ts
+index fc9a6dd6..07ec8ce5 100644
+--- a/src/lib/metadata.ts
++++ b/src/lib/metadata.ts
+@@ -44,8 +44,14 @@ function sanitizeTitle(raw: string): string {
+   if (/Tezgel/i.test(base)) {
+     candidate = base;
+   } else {
+-    if (base.length + 9 <= 58) {
+-      candidate = `${base} · Tezgel`;
++    // SEO-Runde T10 (docs/seo/arbeit/plan-p2-bis-p8.md, Abschnitt 3): nur noch zwei Formen des Markenzusatzes,
++    // „| Fliesenverlegung Tezgel“ und kurz „· Tezgel“; Titel werden bewusst gesetzt, die Auffüllung erfindet nichts dazu
++    const voll = `${base} | ${SITE_NAME}`;
++    const kurz = `${base} · Tezgel`;
++    if (voll.length <= 58 && (voll.length >= 45 || kurz.length < 45)) {
++      candidate = voll;
++    } else if (kurz.length <= 58) {
++      candidate = kurz;
+     } else if (base.length <= 58 && base.length >= 45) {
+       candidate = base;
+     } else {
+@@ -59,35 +65,8 @@ function sanitizeTitle(raw: string): string {
+     }
+   }
+ 
+-  // Ensure minimum length of 45 characters for Seobility
+-  if (candidate.length < 45) {
+-    if (candidate.includes(' · Tezgel')) {
+-      const parts = candidate.split(' · Tezgel');
+-      const prefix = cleanTrailingWords(parts[0]);
+-      if (prefix.length + 21 <= 58) {
+-        candidate = `${prefix} · Fachbetrieb Tezgel`;
+-      } else if (prefix.length + 18 <= 58) {
+-        candidate = `${prefix} · Fliesen Tezgel`;
+-      } else if (prefix.length + 16 <= 58) {
+-        candidate = `${prefix} – Tezgel Hessen`;
+-      }
+-    } else if (/Tezgel/i.test(candidate)) {
+-      // Already has Tezgel brand - expand regionally, do NOT repeat Tezgel
+-      const cleaned = cleanTrailingWords(candidate);
+-      if (cleaned.length + 10 <= 58) {
+-        candidate = `${cleaned} in Hessen`;
+-      } else if (cleaned.length + 7 <= 58) {
+-        candidate = `${cleaned} Hessen`;
+-      }
+-    } else {
+-      const cleaned = cleanTrailingWords(candidate);
+-      if (cleaned.length + 9 <= 58) {
+-        candidate = `${cleaned} · Tezgel`;
+-      } else if (cleaned.length + 7 <= 58) {
+-        candidate = `${cleaned} Hessen`;
+-      }
+-    }
+-  }
++  // SEO-Runde T10: keine Auffüllung mehr mit „Fachbetrieb Tezgel“, „Fliesen Tezgel“, „– Tezgel Hessen“ oder „in Hessen“.
++  // Kürzere Titel bleiben kurz; die Seiten setzen ihre Titel mit 45 bis 58 Zeichen selbst (test/titleLength.test.mjs).
+ 
+   // Guard: strictly clamp to <= 58 chars (SERP Budget < 580px)
+   if (candidate.length > 58) {
+@@ -100,8 +79,6 @@ function sanitizeTitle(raw: string): string {
+   candidate = candidate
+     .replace(/\s*[,:;\-–—/\\|&]+\s*·\s*Tezgel/gi, ' · Tezgel')
+     .replace(/\s+(in|und|für|mit|&|oder|der|die|das|wie|darf|kann|soll)\s+·\s+Tezgel/gi, ' · Tezgel')
+-    .replace(/\s*[,:;\-–—/\\|&]+\s*·\s*Fachbetrieb Tezgel/gi, ' · Fachbetrieb Tezgel')
+-    .replace(/\s*[,:;\-–—/\\|&]+\s*·\s*Fliesen Tezgel/gi, ' · Fliesen Tezgel')
+     .replace(/\s+(in|und|für|mit|&|oder|der|die|das|wie|darf|kann|soll)\s*$/gi, '')
+     .replace(/[,:;\-–—/\\|&]+\s*$/g, '')
+     .trim();
+diff --git a/test/titleLength.test.mjs b/test/titleLength.test.mjs
+index 2bc5d853..6374562d 100644
+--- a/test/titleLength.test.mjs
++++ b/test/titleLength.test.mjs
+@@ -69,3 +69,22 @@ test('4. Legal Routes: index: false, follow: true is correctly configured', () =
+   assert.equal(meta.robots?.index, false);
+   assert.equal(meta.robots?.follow, true);
+ });
++
++test('5. Markenzusatz (SEO-Runde T10): Auffüllung nur mit „| Fliesenverlegung Tezgel“ oder „· Tezgel“, nichts erfunden', () => {
++  const titel = (t) => {
++    const m = generatePageMetadata({ title: t, description: 'x', path: '/gibt-es-nicht' });
++    return typeof m.title === 'object' && m.title && 'absolute' in m.title ? String(m.title.absolute) : String(m.title);
++  };
++  assert.equal(titel('Sind Fliesen gut für Allergiker?'), 'Sind Fliesen gut für Allergiker? | Fliesenverlegung Tezgel');
++  assert.equal(titel('Fliesen auf Fußbodenheizung verlegen'), 'Fliesen auf Fußbodenheizung verlegen · Tezgel');
++  assert.equal(titel('Impressum'), 'Impressum | Fliesenverlegung Tezgel');
++  // bewusst gesetzte Titel mit Marke und 45 bis 58 Zeichen bleiben, wie sie sind
++  assert.equal(titel('Großformatfliesen verlegen | Fliesenverlegung Tezgel'), 'Großformatfliesen verlegen | Fliesenverlegung Tezgel');
++  const woerter = 'Fliesen Bad Dusche Treppe Balkon Terrasse verlegen sanieren abdichten Naturstein Fugen Küche Flur Wohnraum Neubau'.split(' ');
++  for (let n = 1; n <= 9; n += 1) {
++    const t = titel(woerter.slice(0, n).join(' '));
++    assert.ok(t.length <= 58, `${t} (${t.length})`);
++    assert.doesNotMatch(t, /Fachbetrieb Tezgel|Fliesen Tezgel|Hessen|[–—]/, t);
++    if (/Tezgel/.test(t)) assert.match(t, /( \| Fliesenverlegung Tezgel| · Tezgel)$/, t);
++  }
++});
