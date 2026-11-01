@@ -171,13 +171,30 @@ Das Muster der ersten Zeile gilt für alle 12 Musterbäder (Strich und „㎡“
 
 **Warum diese Reihenfolge:** P2 ist klein und schafft die Grundlage (Marke, Links auf die Wetzlar-Seite). P3 ist das Hauptziel; der Wetzlar-Teil von P4 gehört in denselben Push, weil sonst vier Leistungsseiten und die Ausstellungsseite weiter um Wetzlar konkurrieren. P5 und P6 brauchen Antworten von Deniz und eine Rechtsprüfung und laufen deshalb danach; vorbereiten kann ich sie vorher.
 
+## 6a. Seitentexte: Striche und Floskeln (Befund und Vorschlag)
+
+Gezählt im sichtbaren Text (`<main>`) des Baus, ohne Rechtstexte:
+
+| Seitengruppe | Gedankenstriche „ – “ oder „ - “ | Floskeln | Seiten mit Strich |
+|---|---|---|---|
+| Leistung × Ort (52 Seiten) | 322 | 39 | 52 |
+| Musterbäder (12) | 24 | 12 („Entdecken Sie“) | 12 |
+| Ratgeber im Blog (13) | 112 | 0 | 13 |
+| Referenzen (6) | 19 | 0 | 6 |
+| Ortsseiten (13) | 0 | 0 | 0 |
+| übrige Seiten | 471 | 14 | 53 |
+
+Die meisten Striche stehen auf den älteren Seiten unter `src/app/(bestand)/`, die die Werkstatt nicht neu geschrieben hat, zum Beispiel `/balkon-terrasse/stelzlager` (18), `/treppen` (17), `/standorte` (17), `/untergrund-abdichtung/din-18534` (17). Ein Teil der Floskeln steht im Wortlaut von Kundenstimmen („perfekt“) und in der geschützten H1 der Startseite; beides bleibt.
+
+**Vorschlag:** Die Seiten Leistung × Ort folgen S3 (bei noindex oder 308 lohnt keine Überarbeitung). Die Musterbäder bekommen mit P2 neue Vorlagentexte. Die übrigen Seiten überarbeite ich Seite für Seite, wenn ein Paket sie ohnehin anfasst (P3 bis P5), zuerst die Zielseiten aus Abschnitt 2. Zeitspannen heißen dann „bis“ statt Strich; der Inhalt bleibt.
+
 ## 7. Was ich bis zur Freigabe vorbereite (ohne Änderung an der Website)
 
 - Gegenprüfung von P1 durch zwei unabhängige Prüfer (läuft) und gegebenenfalls Nacharbeit.
 - Die Liste für P7 (Dokument für Umut).
 - P5: Auswahl der Fotos aus dem Inventar (Qualität A bis C, ohne offene Freigabe, je Fast-Duplikat eins), die Alt-Entwürfe gegen die Bilder prüfen, Zuordnung zu den Seiten. Nur als Vorschlag, ohne Orte.
 - P3: Textentwurf der Wetzlar-Seite nur aus belegten Fakten, als Datei zur Durchsicht, nicht im Code.
-- Für jede Zeile der Tabellen in Abschnitt 4 und 5 die genaue Stelle im Code, damit die Umsetzung nach der Freigabe schnell geht.
+- Für jede Zeile der Tabellen in Abschnitt 4 und 5 die genaue Stelle im Code (`docs/seo/arbeit/code-stellen-p2-p3.md`), damit die Umsetzung nach der Freigabe schnell geht.
 
 ## 8. Offene Fragen
 
