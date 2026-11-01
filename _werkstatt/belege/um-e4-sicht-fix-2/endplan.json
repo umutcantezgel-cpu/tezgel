@@ -1,0 +1,1037 @@
+{
+ "massnahmen": [
+  {
+   "id": "M2-A6",
+   "titel": "Schnittstellen zuerst festschreiben: Typen für alle drei Teile (Punkte im Aufklapper, Wege als Fugenfeld, offene Versprechen, zweites Einstiegsfoto, Bühne auf Tinte, Leitsatz bei den Stimmen)",
+   "ebene": "vorlage",
+   "ansichten": [
+    "/referenzen",
+    "/ueber-uns",
+    "/fliesen",
+    "/bad/badsanierung",
+    "/balkon-terrasse",
+    "/standorte/wetzlar",
+    "/blog",
+    "/bad",
+    "/bad/barrierefreies-bad"
+   ],
+   "dateien": [
+    "src/components/vorlagen/inhalt.ts (TunInhalt.punkteMehr, Wissensblock.wegeForm, VersprechenInhalt.offen, WorumInhalt.bildZwei)",
+    "src/components/vorlagen/teile/Tun.tsx",
+    "src/components/vorlagen/teile/Wissen.tsx",
+    "src/components/vorlagen/teile/Beleg.tsx (Prop stimmenZusatz, ZweiterBeleg.flaeche um 'tinte' erweitert)",
+    "src/components/vorlagen/ErzaehlSeite.tsx (momente.stimmen an Beleg stimmenZusatz)"
+   ],
+   "beschreibung": "Wird als Erstes in SF2-A gebaut und eingespielt, damit SF2-B und SF2-C parallel gegen feste Typen arbeiten. 1) TunInhalt.punkteMehr?: boolean, eng gefasst (Gegenprüfung Machbarkeit): nur die Punkte wandern in den Aufklapper. Punkte und absatzMehr teilen genau einen Aufklapper „Mehr erfahren“ (Kennung und Wortlaut wie heute), zwei Aufklapper in einem Abschnitt gibt es nicht; der Absatz bleibt offen; die Rahmenlinie nach der Liste (nachListe) wird für die neue Folge nachgezogen. Fachwörter bleiben beim ersten Vorkommen im DOM. Nutzer: /referenzen (M2-C2, der Zusatzabsatz wandert dort in absatzMehr, nur Daten). /ueber-uns nutzt punkteMehr nicht (K-011, siehe M2-C3). 2) Wissensblock.wegeForm?: 'zeilen' | 'reihe': 'reihe' setzt die Wege als Fugenfeld ohne Füllung und ohne Einzelrahmen (Zellen nur durch 1-px-Fugen getrennt, kein Kasten je Zelle; Einwand Wirkung: keine Textkarten), ab lg drei je Reihe, die letzte Reihe mittig im Halbverband (fünf Wege: 3 + 2), je Zelle Name, Satz und Pfeil; darunter Zeilen. 3) VersprechenInhalt.offen?: number[] (Nummern der Quelle, 1 bis 8) für M2-A3. 4) WorumInhalt.bildZwei?: ArbeitId für M2-B8 (ohne Angabe unverändert). 5) ZweiterBeleg.flaeche um 'tinte' erweitert für die Bühne in M2-C2 (Abschnitt kennt Tinte schon). 6) ErzaehlSeite: momente.stimmen?: ReactNode geht als stimmenZusatz an Beleg und steht direkt nach stimmenEinleitung vor den Stimmen (Leitsatz auf /ueber-uns, M2-C3).",
+   "befunde": [
+    "/referenzen · 3a, 3b · mittel · Fachtextblock „Das alles gehört …“ nach den Stimmen (über M2-C2)",
+    "/ueber-uns · 3b · hoch · Motto viermal (Platz für die Zusammenlegung, M2-C3)",
+    "/fliesen · 3a, 3b · mittel · drei gleich gebaute Linkblöcke (über M2-C4)",
+    "Schnittstellen für M2-A3, M2-B8, M2-C2"
+   ],
+   "rubrik_wirkung": "Wirkung erst über M2-A3, M2-B8, M2-C2 bis M2-C4 (dort beziffert).",
+   "leitplanken": "Aufklapper nativ (details), Inhalt im DOM, Muss-Elemente erreichbar; Wortlaut unverändert; kein JavaScript; nur Tokens und Tailwind-Standardklassen.",
+   "risiko": "Gering: Ohne Angabe im Inhalt bleibt jede Seite unverändert. Typprüfung über alle Inhalte. punkteMehr und absatzMehr in einem Aufklapper: Pixel /bad/badsanierung (nutzt absatzMehr) gegenprüfen.",
+   "prioritaet": 1,
+   "teil": "SF2-A"
+  },
+  {
+   "id": "M2-A1",
+   "titel": "Satzspiegel v2: Inhalt auf der Kopfachse mit Breitenwechsel (Abschnitt satz 'achse', neue Standards der Bausteine, Gefälle-Legenden)",
+   "ebene": "vorlage",
+   "ansichten": [
+    "/bad/badsanierung",
+    "/bad/barrierefreies-bad",
+    "/balkon-terrasse",
+    "/referenzen",
+    "/ueber-uns",
+    "/fliesen",
+    "/standorte/wetzlar",
+    "/leistungen",
+    "/bad",
+    "/blog"
+   ],
+   "dateien": [
+    "src/components/kern/Abschnitt.tsx",
+    "src/components/vorlagen/teile/Lage.tsx",
+    "src/components/vorlagen/teile/Tun.tsx",
+    "src/components/vorlagen/teile/Wissen.tsx",
+    "src/components/momente/gefaelle-dusche/GefaelleDusche.tsx (Legende im breiten Zustand)",
+    "src/components/momente/gefaelle-balkon/GefaelleBalkon.tsx (Legende im breiten Zustand)",
+    "src/components/vorlagen/inhalt.ts (nur Doku der Standards)",
+    "src/inhalte/barrierefreies-bad.ts und src/inhalte/balkon-terrasse.ts: tun.satz 'rechts' entfällt (SF2-B)",
+    "src/inhalte/referenzen.ts: tun.satz 'mitte' entfällt (SF2-C)",
+    "_werkstatt/KERN.md K-003 „Fläche“, K-007 Leitfaden-Motiv, K-009 (SF2-O)",
+    "src/lib/motion/register.ts und _werkstatt/register.json, leitachse.was (SF2-O, beide gemeinsam, Test Bewegung 13)",
+    "_werkstatt/ENTSCHEIDUNGEN.md: M-B1 Nr. 2, V-6, NO-3 und O-3 aus E-111 zurückgenommen (SF2-O)"
+   ],
+   "beschreibung": "Ursache im Code: kern/Abschnitt.tsx teilt bei satz 'links'/'rechts' ab lg ein Raster aus drei Spalten, satzMass('links') hält den Text zusätzlich im Lesemaß der Grundschrift (rund 600 px) an der linken Kante, der Kopf bleibt mittig. Standards heute: Lage 'links', Tun inhalt.satz ?? (moment ? 'mitte' : 'rechts'), Wissen-Block zeichnung ? 'breit' : 'links'. Dazu setzen GefaelleDusche.tsx (Zeile 49) und GefaelleBalkon.tsx (Zeile 71) ihre Legende fest in Satzblock 'rechts' (Gegenprüfung Machbarkeit, am Code bestätigt): Ohne diese zwei Dateien bliebe auf barrierefrei und balkon die Versatzspalte bei x 517 bestehen. Gemessen (4324, d1440): Text x 112–717; Tun-Zeichnung auf /bad/badsanierung x 517, 811 × 502 px. Bau: 1) Abschnitt.tsx: neuer Wert 'achse' = mittiger Block ab lg und Container ≥ 32 rem (mx-auto lg:@lg:w-2/3), darunter wie 'mitte'; lange Einleitung im Block linksbündig (einleitungGeteilt um 'achse' erweitert), kurze mittig. Helfer satzSpalten(n): ab lg zwei Spalten mit gap-x-12 ab vier Einträgen, drei bei genau drei; zeilenweise (DOM-Folge = Lesefolge); bei ungerader Zahl in zwei Spalten füllt die letzte Zeile beide Spalten (keine leere Zelle, keine hängende Fuge). Alle Blöcke eines Abschnitts stehen symmetrisch zur Kopfachse, keiner hat eine eigene linke Kante neben der Mitte. 'links'/'rechts' bleiben nur als ausdrückliche Wahl (Leistungsreihe auf /, Stimmen). 2) Lage.tsx: Standard 'achse'. Absätze als großer Vorspann (text-fs-4 Tinte, max-w-mass am selben Element, rund 790 px). Ausrichtung je Block, nicht je Absatz (Einwand Risiko, an orte.ts bestätigt: Ortsseiten 30 bis 51 und rund 150 Zeichen): mittig, wenn alle Absätze zusammen höchstens 160 Zeichen haben (rund zwei Zeilen), sonst alle linksbündig. Damit stehen Wetzlar und /bad/badsanierung linksbündig, /referenzen (108 Zeichen) mittig. Wege voll breit mit satzSpalten (/fliesen 6 → 3 Reihen zu 2, /bad 5 → 2 + 2 + 1 über beide, /balkon-terrasse 3 → drei nebeneinander); Bereichszeilen bekommen die Prop spalten (jede Zeile mit eigener Fuge unten, die Liste mit Fuge oben). zusatz (Einzugsband der Ortsseiten) steht 'breit' über die volle Satzbreite (Breitenwechsel, Grundlage für M2-B7). Die Lage nur mit Auswahl (/) bleibt 'breit', / ändert sich hier nicht. 3) Tun.tsx: Bereiche (Wegzeilen) ab vier Einträgen zweispaltig über die volle Breite; Punkte sind mehrsätzige Absätze und bleiben einspaltig im Block 'achse' (Einwand Wirkung: in zwei Spalten ohne Nummern wäre die Lesefolge unklar); Absatz und Aufklapper im Block 'achse'. Die Zeichnung unterKopf (/bad/badsanierung) steht breit, mittig, höchstens max-w-5xl (d1440 rund 1024 × 546 px statt 811 × 432), die Bildunterschrift mittig darunter im Lesemaß (Einwand Wirkung: im Block 'achse' wäre sie gleich groß wie heute). Mit Moment: Moment breit, Punkte im Block 'achse' darunter. Leistungsreihe von / unverändert. 4) Wissen.tsx: ohne Zeichnung 'achse'; die Liste (Punkte) einspaltig im Block, Wege voll breit mit satzSpalten; mit Zeichnung 'breit' wie bisher. 5) GefaelleDusche und GefaelleBalkon: Legende im breiten Zustand im Block 'achse' statt Satzblock rechts. 6) Inhalte folgen dem Standard (tun.satz entfällt in SF2-B und SF2-C). 7) Probe vor dem Ausrollen: Der Orchestrator sieht nach dem Bau zuerst /bad/badsanierung, /fliesen und /referenzen bei d1440, d1920, t1024 und m390 an. Abnahme im Paket: Bildfolge der ersten vier Bildschirme je Ansicht, keine zwei benachbarten Abschnitte gleich gebaut (K-003 Nr. 4). Der Bruch je Bildschirmhöhe entsteht danach aus dem Breitenwechsel (Vorspann zwei Drittel, Liste voll und zweispaltig, Moment breit, Versprechen-Reihe breit) und aus dem Versatz in Treppe, Fotoreihe, Stimme, Zweierbild (M2-A4) und, nach Freigabe, Einstieg im Verband (M2-B8); der Abstandstakt wechselt mit M2-A9. Entscheidung Widerspruch: 3a, 1b, 2b und 4b schlagen den Kopf an der Kante des versetzten Inhalts vor; 1a und 2a wollen den Inhalt auf der Kopfachse. Gewählt ist die Kopfachse mit Breitenwechsel: Sie hält die Ruhe-Regel „Köpfe mittig“ (K-003, Auftraggeber E-047) und meidet die schmale Mittelsäule aus Anlauf 1, weil die Breite je Abschnitt wechselt. Listen bleiben voll breit, nicht im Zwei-Drittel-Block, weil 3a (hoch, /fliesen), 2a und 2b ausdrücklich die volle Breite verlangen. Nimmt M-B1 Nr. 2 und V-6 zurück.",
+   "befunde": [
+    "/fliesen · 3a · hoch · Raumliste nur in der linken Hälfte, rechts 1,5 Bildschirmhöhen leer",
+    "/fliesen · 3b · mittel · Raumliste einseitig wie eine Sitemap",
+    "/bad/barrierefreies-bad · 2a · mittel · Lage-Satz links an der Laserlinie, halbe Fläche leer",
+    "/bad/barrierefreies-bad · 2b · mittel · Lage links am Lot, rechte Hälfte leer",
+    "/bad/barrierefreies-bad · 2b · mittel · „So wird aus der Wanne …“: Versatzspalte bei x 517 ohne sichtbare Kante (mit Legende der Gefälle-Zeichnung)",
+    "/bad/badsanierung · 1a · mittel · Lage und „So wird aus Ihrer Wanne …“ mit zwei Achsen und Leerflächen",
+    "/bad/badsanierung · 1b · mittel · H2 mittig, Vorspann, Zeichnung und Liste ab x 732, links ein leeres Drittel",
+    "/balkon-terrasse · 2a · mittel · Lage mit Unterseitenliste links, halbe Fläche leer",
+    "/balkon-terrasse · 2b · mittel · Unterseitenliste links, Pfeile mitten in der Seite",
+    "/referenzen · 3a · mittel · Lage-Absatz ganz links, zwei Drittel leer",
+    "/ueber-uns · 3a · mittel · „Wer kommt …“ links, „Wir verlegen …“ ab x 517 rechts, keine gemeinsame Achse",
+    "/standorte/wetzlar · 4a · mittel (Teil) · Abstandstabelle im 600-px-Kasten links, rechts leer",
+    "/standorte/wetzlar · 4b · gering · Lage links, zwei Achsen",
+    "/leistungen · 2a · gering · Lage am Desktop halbleer",
+    "/bad · 1a, 1b · mittel · Auswahlliste links, rechte Hälfte leer (Nebenwirkung der gemeinsamen Vorlage)",
+    "/bad/badsanierung · übergreifend 1b Nr. 7 · Zeichnungen klein im Kasten (Teil, über Nr. 3)",
+    "übergreifend 1a Nr. 1, 1b Nr. 2, 2a Nr. 1, 2b Nr. 2, 3a Nr. 2, 3b, 4a Nr. 2, 4b Nr. 2 · Satzspiegel erzeugt halbleere Bildschirme und zwei Achsen"
+   ],
+   "rubrik_wirkung": "Design (Komposition) +0,2 bis +0,4 auf allen Ansichten mit Lage, Liste oder Tun-Zeilen. Das ist gegenüber dem Plan gesenkt, weil der Rückfall in axiale Gleichförmigkeit erst mit der Probe in Nr. 7 ausgeschlossen ist. Bedienbarkeit (Hierarchie, Lesbarkeit) +0,1 bis +0,2 durch den großen Vorspann und Listen in zwei Spalten. Kreativität +0,05 auf /bad/badsanierung (Zeichnung breit). Alle vier Gruppen nennen den Satzspiegel als Hauptgrund für Design unter 7,5.",
+   "leitplanken": "Nur Darstellung: Wortlaut, DOM-Folge und Fokusfolge bleiben. Nur Tailwind-Standardklassen und Tokens (w-2/3, grid-cols-2/3, max-w-mass, max-w-5xl, gap-x-12), kein Beliebigwert (werte.mjs 0), kein JavaScript, keine Bewegung. G8 und B-01 unberührt. Die Container-Abfrage hält 200 % Systemschrift einspaltig. Lesart für K-003 „nie zwei Stränge nebeneinander“: Zwei Spalten derselben Liste sind ein Strang, wie Ablauf 1 bis 3 und 4 bis 6 (K-003 Abläufe); das trägt der Orchestrator in die Entscheidung ein.",
+   "risiko": "Pixel auf allen betroffenen Ansichten (gewollt, je Ansicht in der Notiz), auf / keine. Rückfall „zentriert und gleichförmig“ (Anlauf 1, gemeinsame Befunde Nr. 3; 3b „erster Bildschirm ganz axial“): Gegenmittel sind Nr. 7, M2-A9 und M2-B8. Leitfaden-Marke und Kopf-Pausen (abschnitt-inhalt, ACHSE_VOR_SATZ) prüfen, damit die Marke nie neben mittigem Text steht. register.ts und register.json beschreiben in leitachse.was „Abschnitte mit Satz links stehen ab lg 16 px am Lot“ (E-111): SF2-O ändert beide in einem Schritt, sonst wird Bewegung 13 rot. axe gering. Lesbarkeit gleich. CSS: einige Utilities, gegen das Restbudget von rund 2,3 KB messen (Messpunkt nach SF2-A). In zwei Spalten fallen Zeilen-Vignetten unter 20 rem Spaltenbreite weg (gewollt). test/gefaelle-*.test.mjs prüfen nur Geometrie und bleiben grün. Funktionssuite unberührt.",
+   "prioritaet": 1,
+   "teil": "SF2-A"
+  },
+  {
+   "id": "M2-A2",
+   "titel": "Formularblock auf der Kopfachse, Kontaktzeile in zwei Spalten, Projektraster geschlossen",
+   "ebene": "baustein",
+   "ansichten": [
+    "/",
+    "/leistungen",
+    "/standorte/wetzlar",
+    "/kontakt"
+   ],
+   "dateien": [
+    "src/components/vorlagen/teile/Schritt.tsx (FormularSchritt)",
+    "src/components/funnels/TezgelAnfrageFunnel/Schritt1.jsx (nur Raster)"
+   ],
+   "beschreibung": "Ursache im Code: FormularSchritt setzt satz=\"links\" und hüllt Formular und Kontaktzeile in satzMass('links') (V-6, Folge von M-B1 Nr. 2). Schritt1.jsx: Raster grid-cols-1 @md:grid-cols-2 @3xl:grid-cols-3 mit fünf Knöpfen und einem aria-hidden Füll-span (PROJECT_TYPES.length % 2), der im Dreierraster als leere sechste Zelle steht (/kontakt, d1920 /leistungen 08). Bau: 1) FormularSchritt mit satz 'achse' (M2-A1): Formularkasten über zwei Drittel mittig (d1440 rund 810 px), lange Einleitung im selben Block. Die Kontaktzeile steht in zwei Spalten (Lieber anrufen | Lieber schreiben) über dieselbe Breite, der Zusatz darunter über beide Spalten, wie heute. Drei Spalten sind verworfen: Gemessen braucht der Anruflink mit Rufnummer 281 px, bei 810 px und drei Spalten blieben rund 249 px (Umbruch der Nummer; Gegenprüfung Risiko bestätigt). Die Formularinseln bleiben unverändert. HeroContactForm (xl:grid-cols-2) und LeadQuickForm (sm:grid-cols-2) schalten über die Fensterbreite, nicht den Container (Plantext berichtigt); bei 810 px ändert sich ihr Bild darum nicht. 2) Schritt1.jsx, nur Raster: Der Füll-span entfällt. Der letzte Knopf schließt die Reihe: im Zweierraster bei ungerader Zahl über zwei Spalten, im Dreierraster bei fünf der fünfte über zwei Spalten (beides @md:col-span-2 bzw. @3xl:col-span-2 am button, es gibt kein li). Knöpfe, Texte, Auswahl, aria-pressed, Fokus und Daten bleiben gleich. Kein neues Prop, ErzaehlSeite bleibt unberührt. Entscheidung Widerspruch: 2a nennt den Aufklapper „Anfrage öffnen“ als Alternative. Auf /leistungen ist das Formular das Ziel der Seite (M-B3 Nr. 4), darum steht es offen auf der Achse.",
+   "befunde": [
+    "/ · 1a · hoch · Kopf mittig, Vorspann und Formular 600 px links, rechte Hälfte über eine Bildschirmhöhe leer",
+    "/ · 1b · mittel · Formular x 112–717, zwei Achsen",
+    "/leistungen · 2b · hoch · Formularblock und Kontaktspalten links, rechte Hälfte 1,5 Bildschirmhöhen leer",
+    "/leistungen · 2a · mittel · Schluss als 600-px-Spalte links",
+    "/standorte/wetzlar · 4a · gering · Formularkasten 112–717 px, rechte Hälfte leer",
+    "/kontakt · 4a, 4b · mittel · leere sechste Zelle im Projektraster (Nebenwirkung des gemeinsamen Bausteins)"
+   ],
+   "rubrik_wirkung": "Design (Komposition) +0,2 bis +0,4 auf / und /leistungen, +0,1 auf den Ortsseiten; Bedienbarkeit (Klarheit der Handlung) +0,1. /kontakt: Design +0,05 durch das geschlossene Raster.",
+   "leitplanken": "G8: Felder, Pflichtfelder, Verhalten, Empfänger und /api/anfrage unverändert; geändert werden nur Lage und Breite des Blocks und die Spannweite eines Knopfs. H1 auf / unberührt. Nur Tokens und Standardklassen, kein JavaScript.",
+   "risiko": "Funktionssuite F-02, F-07, F-09 (funktion-hero-kontakt, funktion-express-funnel, funktion-schnellanfrage) mobil und Desktop laufen lassen; sie prüfen Rollen und Labels (grün erwartet). Pixel auf / nur im Schritt-Band, auf /leistungen, den Ortsseiten und /kontakt (Projektraster). axe: Zielgrößen gleich. Lighthouse unverändert.",
+   "prioritaet": 1,
+   "teil": "SF2-A"
+  },
+  {
+   "id": "M2-A3",
+   "titel": "Qualitätsversprechen: drei Punkte je Ansicht offen als Fugenreihe, die übrigen fünf im Aufklapper",
+   "ebene": "baustein",
+   "ansichten": [
+    "/bad/badsanierung",
+    "/balkon-terrasse",
+    "/ueber-uns",
+    "/fliesen",
+    "/standorte/wetzlar",
+    "/blog"
+   ],
+   "dateien": [
+    "src/components/vorlagen/teile/Versprechen.tsx",
+    "src/components/vorlagen/inhalt.ts (VersprechenInhalt.offen, über M2-A6)",
+    "versprechen.offen in src/inhalte/bad-badsanierung.ts, balkon-terrasse.ts, orte.ts, blog.ts (SF2-B) und ueber-uns.ts, fliesen.ts (SF2-C)"
+   ],
+   "beschreibung": "Ursache im Code: Versprechen.tsx zeigt unter der H2 „Unser Qualitätsversprechen in acht Punkten.“ nur den Aufklapper „Alle 8 Punkte zeigen“ (M-B4 Nr. 1). Bau: 1) Drei Punkte stehen offen, gewählt je Ansicht über versprechen.offen (M2-A6). Die feste Auswahl 1, 3, 8 aus dem Plan ist verworfen (Einwände Vollständigkeit und Wirkung, an den Inhalten bestätigt): Punkt 1 steht im Einstiegssatz und in Ablauf 01, Punkt 4 im Ablauf 02 („Angebot mit festem Preis“), Punkt 6 im Ablauf 03 bzw. 04, Punkt 3 in Tun 03 auf /bad/badsanierung und im Tun der Ortsseiten. Punkt 3 spricht von Nassräumen, Punkt 8 zeigt „Inhaber“ (K-003 Regel „Text“: Firmendaten nur auf /kontakt, /ueber-uns und im Fuß). Regel: nichts, was die Seite sichtbar schon sagt; passend zum Thema; Punkt 8 nur auf /ueber-uns; Punkt 3 nie auf /balkon-terrasse. Vorschlag, vom Baumeister am sichtbaren Text jeder Seite geprüft und in der Notiz begründet: Standard 2, 5, 7 (Großformat, Termintreue, Werkstoffe), also /bad/badsanierung, /balkon-terrasse, /standorte/wetzlar, /blog; /ueber-uns 4, 5, 7 (2 steht dort in Zeitleiste und Punkten, 6 in den Werten); /fliesen 3, 5, 7 (2 steht im Beleg-Satz und in den Wegen, 6 in der Raumliste). 2) Form (Einwand Wirkung: keine Textkarten): ab lg eine Fugenreihe aus drei Spalten ohne Kasten und ohne Fläche, getrennt durch senkrechte 1-px-Fugen, mit Fuge oben und unten (Satz 'breit'); Titel als H3 in fs-4 halbfett, Satz in fs-3, ohne Nummer. Darunter stehen die drei als Fugenzeilen untereinander. So steht die Reihe anders gebaut da als die Nachbarabschnitte auf der Achse. 3) Darunter der Aufklapper „Weitere 5 Punkte zeigen“ (Mikrotext, Zahl aus den Daten) mit den übrigen fünf Punkten in Quellfolge, ohne Mono-Nummern (sie zählten sonst 01 bis 05 neu; passt zu M2-A7). 4) Kopf-Pause: Reihe und Aufklapper stehen in einer gemeinsamen Hülle mit genau einem data-kopf-pause=\"ganz\". Die Pause an der Liste (Zeile 168) entfällt, weil bewegung.css höchstens eine Pause „ganz“ je Abschnitt erlaubt; zwei Elemente mit --kopf-pause-ganz machten den Zeitstrahl mehrdeutig (am Code bestätigt). 5) marken() läuft in Anzeigefolge (offene zuerst), damit jedes Fachwort beim ersten sichtbaren Vorkommen erklärt wird. PUNKTE, ANPASSUNG und die GARANTIE-Prüfung bleiben, ebenso der Wortlaut; nur die Anzeigefolge ändert sich (Umordnen).",
+   "befunde": [
+    "/bad/badsanierung · 1a, 1b · mittel · großer Kopf über einer zugeklappten Zeile, beim ersten Blick leer",
+    "/balkon-terrasse · 2a, 2b · mittel · Abschnitt hohl, Überschrift verspricht, was sie versteckt",
+    "/ueber-uns · 3b · mittel, 3a · gering · Bühne bleibt leer, wirkt wie Platzhalter",
+    "/fliesen · 3a, 3b · gering · Versprechen ohne sichtbaren Inhalt",
+    "/standorte/wetzlar · 4a, 4b · mittel · eine Bildschirmhöhe ohne Versprechen",
+    "/blog · 4b · hoch (Teil) · H2 mit nur einer zugeklappten Zeile in der dünnen unteren Hälfte",
+    "übergreifend 3a Nr. 3, 3b, 4a Nr. 1, 4b Nr. 3 · leere Formelabschnitte, Bausteine wie gestempelt (Auswahl je Ansicht statt derselben drei)"
+   ],
+   "rubrik_wirkung": "Inhalt +0,1 bis +0,2 und Design (Rhythmus) +0,1 auf sechs Ansichten; Bedienbarkeit +0,05 durch eine sichtbare Zusage statt eines Platzhalters.",
+   "leitplanken": "Muss-Rückführung EP3 bleibt vollständig im DOM. Wortlaut, M-07-Anpassungen und Garantie-Prüfung unverändert. Mikrotext der Aufklappzeile direkt geändert. Natives details, kein JavaScript, nur Tokens. Kein „Inhaber“ offen außerhalb /ueber-uns.",
+   "risiko": "Lesbarkeit: lesbarkeit.mjs öffnet details schon heute, die Zählung bleibt gleich. Sichtbar mehr Fließtext (drei Sätze, bei Punkt 2 und 7 mit Glossar-Klammern) im Rahmen der Regeln. Glossar-Reihenfolge je Seite prüfen (Nivelliersystem, Überzähne, C2TE S1, Dichtmanschette). Pixel auf sechs Ansichten. Kopf-Pause im Leitfaden mit der Bewegungsprüfung gegenprüfen. CSS klein.",
+   "prioritaet": 1,
+   "teil": "SF2-A"
+  },
+  {
+   "id": "M2-A4",
+   "titel": "Zweierbild als Verband an einer echten Fuge (Glaspaar)",
+   "ebene": "baustein",
+   "ansichten": [
+    "/bad/badsanierung",
+    "/bad/barrierefreies-bad"
+   ],
+   "dateien": [
+    "src/components/vorlagen/teile/Fotos.tsx (Glaspaar)",
+    "src/app/globals.css: Utility-Variante glas-hoch-paar (SF2-O)"
+   ],
+   "beschreibung": "Ursache im Code: Glaspaar ist ein flex ohne Abstand. Getrennt wird nur mit border-l (ab md) bzw. border-t (mobil), die Fotos stoßen bei x 720 aneinander (gemessen: 504 × 630 px, x 216 und 720). Der Versatz der Unterkanten um 1 bis 2 px kommt vom border-l, das in der Breite des zweiten Bildes mitzählt. Beide Quellen haben exakt 4 : 5 (800/1000 und 792/990); der Plantext zu --bild-format ist berichtigt. Bau: 1) Echte Fuge einer Fliesenstufe (gap-6) mobil und ab md statt der Haarlinie; die Ränder entfallen, damit sind die Unterkanten bündig. 2) Ab md steht das zweite Foto eine Stufe 24 tiefer (md:mt-24, Tokenklasse). Die Reihe im Beleg versetzt um md:pt-16; das Paar hebt sich so sichtbar davon ab. Ein Drittel der Fotohöhe ginge nur über einen Beliebigwert und verlängerte das Paar um rund 210 px. 3) Höhe: Das Paar nutzt die Variante glas-hoch-paar (SF2-O, globals.css, 60svh statt 70svh, Untergrenze 30 rem wie glas-hoch). So passen Kopf und versetztes Paar bei d1440 in eine Bildschirmhöhe (M-B6 Nr. 2). Der Verlauf hinter dem Namen ist eigene Maßnahme M2-A8 (verbindlich statt optional). Entscheidung: 2b schlägt alternativ den Vorher-Nachher-Regler vor. Die beiden Entstehungsfotos zeigen verschiedene Stellen und Stände, ein Regler bräuchte zwei Bilder derselben Stelle.",
+   "befunde": [
+    "/bad/badsanierung · 1a · mittel · „So sieht ein Bad im Bau aus“: Fotos stoßen ohne Fuge aneinander",
+    "/bad/barrierefreies-bad · 2a · mittel · mobil zwei Hochformate mit 2-px-Fuge übereinander",
+    "/bad/barrierefreies-bad · 2b · mittel · zwei Fotoabschnitte in Folge gleich gebaut, Rhythmus steht",
+    "/bad/barrierefreies-bad · 2b · gering · Unterkanten 1 bis 2 px versetzt"
+   ],
+   "rubrik_wirkung": "Design (Bild, Rhythmus) +0,1 bis +0,2 auf beiden Bad-Unterseiten; Kreativität +0,05 (Verband als eigener kleiner Moment).",
+   "leitplanken": "Fotos vollständig im eigenen Seitenverhältnis, nichts angeschnitten (Ruhe-Regel). Nur Tokens: md:mt-24, gap-6, Utility aus globals.css, kein calc als Klasse (werte.mjs 0). Keine Bewegung (statischer Versatz). Alt-Texte und Namen unverändert.",
+   "risiko": "Pixel auf zwei Ansichten. Bildsatz d1440 und q844 prüfen (Kopf und Paar in einer Bildschirmhöhe; q844 einspaltig). Keine Tests betroffen.",
+   "prioritaet": 2,
+   "teil": "SF2-A"
+  },
+  {
+   "id": "M2-A8",
+   "titel": "Glasfläche schlanker: Verlauf nur so hoch wie der Name, Name eine Stufe kleiner (alle Glasbilder)",
+   "ebene": "baustein",
+   "ansichten": [
+    "/bad/badsanierung",
+    "/bad/barrierefreies-bad",
+    "/balkon-terrasse",
+    "/leistungen",
+    "/fliesen",
+    "/standorte/wetzlar",
+    "/ueber-uns",
+    "/bad",
+    "/"
+   ],
+   "dateien": [
+    "src/components/kern/Glasbild.tsx (Name text-fs-3 statt text-fs-4)",
+    "src/app/bewegung.css Block glasbild (SF2-O)"
+   ],
+   "beschreibung": "Aus der optionalen Nr. 3 von M2-A4 wird eine verbindliche Maßnahme (Einwände aller drei Gegenprüfungen). Ursache: .glasbild-text trägt oben einen Auslauf von 12 Einheiten (48 px) und darunter den Namen in fs-4 halbfett. Ohne Link und ohne Maus steht er immer. Gemessen (4324, d1440, /bad/badsanierung): Textblock 144 px auf 487 px hohen Galeriefotos (30 %) und auf 630 px hohen Fotos des Zweierbilds (23 %). Bild bewegt/_bad_badsanierung/d1440/07 zeigt zweizeilige Namen auf dunklem Band über Boden und Fugen. Bau: 1) bewegung.css (SF2-O): Auslauf in .glasbild-text von 12 auf 4 Einheiten, im Zweig data-verlauf ohne Maus von 8 auf 4. Der 64-%-Stopp des Verlaufs wandert mit, jede Zeile steht weiter auf mindestens 64 % Tinte (Kalk darauf 5,1 : 1). 2) Glasbild.tsx: Name in fs-3 statt fs-4, bei Kachelbreite rund 390 px höchstens zwei Zeilen. Erwartet: Textblock rund 90 px statt 144 px. Mit Maus und Link bleibt die Glasfläche beim Darüberfahren wie heute (K-016, E-047).",
+   "befunde": [
+    "/bad/badsanierung · 1b · mittel · Verlauf hinter den Namen deckt das untere Drittel bis zwei Fünftel jedes Fotos (Boden und Fugen), Galerie und Zweierbild",
+    "/bad/badsanierung · 1b bis_ziel · schlankere Glasflächen",
+    "Wirkung auf alle Fotoreihen der Vorlagen ohne Link (Gegenprüfung Leitplanken, fehlender Befund)"
+   ],
+   "rubrik_wirkung": "Design (Farbe und Bild) +0,05 bis +0,1 auf allen Ansichten mit Fotoreihen ohne Link, am stärksten auf /bad/badsanierung und /balkon-terrasse; Inhalt (Echtheit) +0,05, weil die Fliesenarbeit sichtbar bleibt.",
+   "leitplanken": "K-003 Nr. 5 „Lassen: Verläufe“ wird gestärkt. Kontrast des Namens mindestens 4,5 : 1 (axe). Erzwungene Farben unverändert. Nur Tokens, keine Bewegung.",
+   "risiko": "Pixel auf allen Ansichten mit Glasbild, auf / nur ohne Maus (Galerie). axe-Lauf auf drei Ansichten mit hellem Boden (/bad/badsanierung, /balkon-terrasse, /bad). Galerie /referenzen: Kachelhöhe bei großer Systemschrift prüfen (contain: size). CSS gleich groß.",
+   "prioritaet": 2,
+   "teil": "SF2-A"
+  },
+  {
+   "id": "M2-A5",
+   "titel": "Ablauf mit sechs Schritten als ein durchgehender Laserweg",
+   "ebene": "baustein",
+   "ansichten": [
+    "/bad/badsanierung"
+   ],
+   "dateien": [
+    "src/components/vorlagen/teile/Ablauf.tsx (Schritte, zwei Läufe)"
+   ],
+   "beschreibung": "Ursache im Code: Schritte setzt ab ZWEI_SPALTEN_AB (5) zwei Läufe in flex flex-col lg:gap-32; der zweite beginnt links oben ohne Verbindung. Bau: Ab lg ersetzt ein Zwischenelement mit h-32 den gap-32 (ein drittes Kind im flex trägt gap nicht, Einwand Machbarkeit). Darin stehen drei aria-hidden Striche in border-laser 2 px (Token wie die Stufenlinie): ein Lotstück am rechten Rand von der Unterkante des Schrittes 03 bis zur Mitte des Zwischenraums, eine Waagrechte nach links bis zur Kante von 04, ein Lotstück bis zu dessen Fugenkreuz. Das Lot beginnt an der Unterkante von 03 und nicht am Ende der Stufenlinie, damit kein Rot an der ganzen Texthöhe des Schrittes entlangläuft (Einwand Risiko). Liest es sich im Bildsatz trotzdem als Lücke im Weg, verlängert der Baumeister es bis zur Stufenlinie und begründet das in der Notiz. Keine Bewegung, daher kein Registereintrag; reduziert und ruhig gleich. Abwägung zur abgelehnten roten Zeitleiste: K-003 Nr. 5 erlaubt Rot ausdrücklich für die Schrittfolge. Der Anschluss setzt die vorhandene Stufenlinie fort und ist keine zweite rote Linie mit eigener Aufgabe. Berichtigung: Der Hinweis steht in Ablauf.tsx nach beiden Läufen, /bad/badsanierung hat keinen.",
+   "befunde": [
+    "/bad/badsanierung · 1a · mittel · zwei gleiche Treppen, Laserlinie reißt ab",
+    "/bad/badsanierung · 1a bis_ziel · die sechs Schritte als einen durchgehenden Laserweg führen"
+   ],
+   "rubrik_wirkung": "Kreativität (Leitidee, Signatur) +0,1 bis +0,2, Bedienbarkeit (Orientierung) +0,05 auf /bad/badsanierung.",
+   "leitplanken": "Rot nur als Laserlinie der Schrittfolge (K-003 Nr. 5). Nur Tokens, keine Bewegung. Wortlaut der Schritte unverändert.",
+   "risiko": "Pixel nur auf /bad/badsanierung und auf Bereichsseiten mit fünf oder mehr Schritten. Länge des rechten Lots und Nähe zur Leitachse im Bildsatz d1440 und d1920 prüfen.",
+   "prioritaet": 2,
+   "teil": "SF2-A"
+  },
+  {
+   "id": "M2-A9",
+   "titel": "Rhythmus aus Dichte und Ruhe: Abstandsstufe je Abschnitt",
+   "ebene": "vorlage",
+   "ansichten": [
+    "/bad/badsanierung",
+    "/bad/barrierefreies-bad",
+    "/balkon-terrasse",
+    "/leistungen",
+    "/referenzen",
+    "/ueber-uns",
+    "/fliesen",
+    "/standorte/wetzlar"
+   ],
+   "dateien": [
+    "src/components/kern/Abschnitt.tsx (Prop dichte)",
+    "src/components/vorlagen/teile/Lage.tsx",
+    "src/components/vorlagen/teile/Tun.tsx",
+    "src/components/vorlagen/teile/Versprechen.tsx"
+   ],
+   "beschreibung": "Ursache im Code: Jeder Erzählabschnitt hat py-16 lg:py-24 (Abschnitt.tsx), dazu wechselt die Fläche bei fast jedem Abschnitt. Gemeldet in Anlauf 1 (gemeinsame Befunde Nr. 3), 1b (1) „kein Rhythmus aus Dichte und Ruhe“, 3b „gleich große Abstände, 200 bis 250 px Leere nach Zitaten und Karussells“. Mit M2-A1 steht mehr auf der Achse, der Takt muss darum anders wechseln (Einwand Wirkung). Bau: neue Prop dichte am Abschnitt, nur mit Tokens: 'dicht' (py-12 lg:py-16) und 'weit' (py-24 lg:py-32); ohne Angabe bleibt der heutige Abstand. 'dicht' bekommt die Lage nach dem Einstieg (auf Fliese bleibt lg:pt-16) und das Versprechen. 'weit' bekommt „Was wir tun“ mit großem Moment oder Zeichnung. Die Flächenfolge bleibt; die Idee, Lage und Tun auf derselben Fläche zu trennen, ist verworfen, weil sie die Kantenkreuze des Leitfadens verschöbe. Die Lage nur mit Auswahl (/) bekommt keine Angabe, / bleibt unverändert. Baut erst, wenn M2-A1 bis M2-A8 stehen.",
+   "befunde": [
+    "übergreifend 1b (1) · mittel · kein Rhythmus aus Dichte und Ruhe",
+    "übergreifend 3b · gleich große Abstände und hohle Stellen",
+    "Gegenprüfung Wirkung · Rückfall in Gleichförmigkeit nach M2-A1"
+   ],
+   "rubrik_wirkung": "Design (Rhythmus) +0,05 bis +0,1 auf acht Ansichten.",
+   "leitplanken": "Nur Abstandsstufen der Fliesenskala (K-005), keine Beliebigwerte, keine Bewegung. Fläche und Kantenkreuze unverändert.",
+   "risiko": "Gering. Seiten werden um einige Stufen länger bzw. kürzer. Leitfaden-Bahn: Der Abstand der Marke zum Kantenkreuz folgt dem Innenabstand; mit 'dicht' im Bildsatz prüfen. Pixel auf acht Ansichten.",
+   "prioritaet": 3,
+   "teil": "SF2-A"
+  },
+  {
+   "id": "M2-A7",
+   "titel": "Anriss an der ersten Stimme auch auf barrierefrei und balkon, Punktliste ohne zweite Nummernfolge",
+   "ebene": "baustein",
+   "ansichten": [
+    "/bad/barrierefreies-bad",
+    "/balkon-terrasse",
+    "/bad/badsanierung",
+    "/ueber-uns",
+    "/bad",
+    "/standorte/wetzlar"
+   ],
+   "dateien": [
+    "src/components/vorlagen/teile/Stimmen.tsx (MARKIERUNG)",
+    "src/components/vorlagen/teile/Tun.tsx (Punktliste)"
+   ],
+   "beschreibung": "1) Stimmen.tsx MARKIERUNG kennt nur 'c-wolf'. Ergänzt werden 'ute-t' und 'hasan-oe' mit je einer Wortgruppe wörtlich aus ihrem Text (in REVIEWS bestätigt; Vorschläge: „unser Bad (barrierefrei) gefliest“ bzw. „die Fliesen auf dem Balkon neu verlegt“). Berichtigung: MARKIERUNG ist eine statische Unterstreichung ohne data-motion. Nur ReviewCard.tsx nutzt mark data-motion=\"anriss\", es gibt also keinen Registerabgleich und keine Bewegungsprüfung. Die Markierung wirkt überall, wo die beiden Stimmen in der Form 'einzeln' stehen, auch auf allen 13 Ortsseiten (WEITERE_STIMMEN) und /bad. 2) Punktliste ohne die Mono-Nummern 01, 02 …: Fugenzeilen, das ol bleibt für Vorleser. Die Nummern gehören der Ablauf-Treppe direkt danach. Kein Fugenkreuz je Zeile (Regel aus M-B2). Gering und billig.",
+   "befunde": [
+    "/bad/barrierefreies-bad · 2b · gering · Stimme ohne roten Anriss",
+    "/balkon-terrasse · 2b · gering · Stimme ohne roten Anriss",
+    "übergreifend 2b Nr. 3 · Wissensblock 01 bis 04 direkt vor der Treppe 01 bis 03",
+    "übergreifend 2b Nr. 4 · Anriss nur auf /leistungen"
+   ],
+   "rubrik_wirkung": "Kreativität (Signaturmoment) +0,05 auf zwei Ansichten; Bedienbarkeit (Hierarchie) +0,05 auf den Ansichten mit Punktlisten.",
+   "leitplanken": "G8: Wortlaut der Stimmen unverändert, nur die Auszeichnung. Keine Bewegung. Nur Tokens.",
+   "risiko": "Gering. Pixel auf den Ansichten mit Punktlisten sowie auf den Ortsseiten und /bad (Stimmen ute-t und hasan-oe) in die Stichprobe aufnehmen.",
+   "prioritaet": 3,
+   "teil": "SF2-A"
+  },
+  {
+   "id": "M2-B1",
+   "titel": "Einstiegs- und Galeriefotos neu verteilt (Bildtabelle aus dem Bestand, an den Dateien geprüft)",
+   "ebene": "inhalt",
+   "ansichten": [
+    "/bad",
+    "/bad/badsanierung",
+    "/bad/barrierefreies-bad",
+    "/standorte/wetzlar",
+    "/balkon-terrasse",
+    "/referenzen"
+   ],
+   "dateien": [
+    "src/inhalte/bad.ts",
+    "src/inhalte/bad-badsanierung.ts",
+    "src/inhalte/barrierefreies-bad.ts (dazu tun.satz entfällt, M2-A1)",
+    "src/inhalte/balkon-terrasse.ts (dazu tun.satz entfällt, M2-A1)",
+    "src/inhalte/orte.ts (AUFMACHER, NACH_HELLIGKEIT mit allen sechs Kennungen)",
+    "src/inhalte/galerie.ts (GALERIE_START, Kopfkommentar)",
+    "src/app/(bestand)/standorte/[stadt]/page.tsx (FOTOS: Namen und Wege aller sechs Plätze)",
+    "/referenzen: src/inhalte/referenzen.ts und galerie-filter/daten.ts gehören SF2-C (M2-C1)"
+   ],
+   "beschreibung": "Geprüft: alle Webdateien in public/images/arbeiten, gemessen mit Laplace-Varianz bei 640 px Breite, Helligkeit, Kontrast und dem Anteil ausgefressener Pixel, und angesehen. Die Messwerte des Plans sind nachgerechnet und stimmen (bad-beleg-1 2,94, bad-beleg-2 2,50, bad-beleg-3 3,78, start-dusche 2,84, start-galerie-1 3,00, barrierefrei-beleg-1 3,66). Ergebnis: /bad Einstieg bad-beleg-2 (Landhausbad mit Wanne, Holzregal und Ornamentboden; das Foto, das 1a selbst vorschlägt) statt bad-beleg-1 (enger Wannenausschnitt mit Flaschen). bad-beleg-2 ist nach Zahl etwas weicher und mit 688 px kleiner (Einwand Risiko). Der Bildsatz läuft mit DPR 1 (bildsatz.mjs), bei 576 CSS-Pixeln wird dort verkleinert. Der Befund ist vor allem einer des Motivs. Der Baumeister vergleicht vor dem Einspielen bei d1440 mit DPR 1 und 2 gegen bad-beleg-1 und legt die Bilder der Notiz bei. Reihe bad-einstieg, bad-beleg-3, bad-beleg-1. /bad/badsanierung Einstieg start-dusche (1280 × 1600, Güte A, Clipping 0,1 %) statt badsanierung-beleg-2 (13,4 % ausgefressen); Reihe badsanierung-beleg-1, badsanierung-einstieg, badsanierung-beleg-2, sanierung-weg-1 bis 3. Folge: /referenzen verliert ein gelobtes Güte-A-Foto und bekommt bad-beleg-3 (Güte B, unruhig, aber scharf; M2-C1). Geprüft und verworfen als Ersatz für /referenzen: start-beleg-bad (Güte A, aber Helligkeit 0,35 unter der Untergrenze, vgl. leistungen-einstieg 0,34). Weitere Güte-A-Duschen gibt es nicht (IMG_2561 nach M-08 gesperrt, IMG_2582 wird Aufmacher der Ortsseiten). Rückweg je eine Zeile in bad-badsanierung.ts und referenzen.ts. /bad/barrierefreies-bad Einstieg barrierefrei-beleg-1 statt bereich-dusche-streifen-sitzbank; Reihe bad-beleg-4, bereich-dusche-streifen-sitzbank. Ortsseiten: Aufmacher start-galerie-1 statt start-beleg-dusche. GALERIE_START neu: badsanierung-einstieg, start-beleg-bad, start-beleg-terrasse, balkon-beleg-aluprofil, kontakt-eingang, start-beleg-treppe. Wetzlar (Index 0) zeigt badsanierung-einstieg, start-beleg-terrasse, kontakt-eingang, nach Helligkeit sortiert. FOTOS in page.tsx bekommt Namen (aus dem Alt-Text, höchstens sechs Wörter, vorab in der Notiz) und Weg für alle sechs, NACH_HELLIGKEIT alle sechs Kennungen. Der Kopfkommentar in galerie.ts („Wetzlar zeigt Fotos, die auf keiner anderen Hauptansicht stehen“, E4-W0-BILDER) wird berichtigt: start-beleg-terrasse steht auch auf /, badsanierung-einstieg auch auf /bad/badsanierung. /balkon-terrasse: Reihe beginnt mit balkon-beleg-2, dann anthrazit, aluprofil, stelzlager. Geprüft je Ansicht: kein Foto doppelt auf derselben Ansicht, kein Aufmacher doppelt, außerhalb der Galerie von /referenzen jedes Foto höchstens zweimal (nachgezählt über src/). Bewusste Abweichung von M-A2 Nr. 4: start-galerie-1 ist erstes Galeriefoto auf / und auf /referenzen; bad-einstieg (Aufmacher /leistungen) steht auf /bad an Stelle 1. Die Paare liegen in verschiedenen Prüfgruppen (offene Frage). Einstiege von /leistungen, /balkon-terrasse, /ueber-uns und / bleiben.",
+   "befunde": [
+    "/bad · 1a · hoch · Hauptbild unscharf, enger Wannenausschnitt mit Flaschen",
+    "/bad · 1b · hoch · Einstiegsfoto wirkt wie ein Mängelfoto, Hochformat schmal",
+    "/bad/badsanierung · 1a · hoch · Hauptbild links oben ausgefressen, groß weich",
+    "/bad/badsanierung · 1b · hoch · linke Hälfte ausgebrannt, Glaswand als heller Block",
+    "/bad/barrierefreies-bad · 2a · mittel · Einstiegsfoto grau, weich, blauer Gegenstand",
+    "/standorte/wetzlar · 4a · hoch · Einstiegsfoto weich, dunstig, kontrastarm (LCP)",
+    "/standorte/wetzlar · 4b · mittel · Hauptfoto unscharf und flau",
+    "/standorte/wetzlar · 4a · mittel · Galerie mit Laub, Pflanzkübeln, Klobürste, Balken",
+    "/standorte/wetzlar · 4b · gering · Fotoreihe zeigt die Fliesenarbeit kaum",
+    "/balkon-terrasse · 2a · gering · erste Galeriekarte mobil zeigt Rollladen statt Belag",
+    "übergreifend 1a Nr. 2, 1b Nr. 3, 2a Nr. 3, 4a Nr. 6, 4b Nr. 4 · schwache Einstiegsfotos"
+   ],
+   "rubrik_wirkung": "Design (Farbe und Bild) +0,3 bis +0,5 und Inhalt (Bild, Echtheit) +0,3 auf /bad, /bad/badsanierung und /standorte/wetzlar; +0,2 auf /bad/barrierefreies-bad. /referenzen: Design 0 bis −0,05 durch den Tausch (in der Erwartung eingerechnet). Das Format bleibt 4 : 5 (siehe nicht_umsetzen und M2-B8).",
+   "leitplanken": "Nur vorhandene Kennungen und Dateien aus ARBEITEN, keine neue Datei und kein Zuschnitt (E-104 Nr. 6). Alt-Texte aus ARBEITEN ohne Ort (K-015). Namen auf der Glasfläche aus dem Alt-Text (Mikrotext). Keine Generatorbilder. Das LCP-Element bleibt das Einstiegsfoto (Bildfeld lcp, gleiches Format, gleiche Anzeigegröße).",
+   "risiko": "test/orte.test.mjs Orte 4 und 7 laufen lassen. test/galerie-filter.test.mjs „Galerie 2“ wird erst grün, wenn SF2-C den Einstieg von /referenzen tauscht: B und C in einem Zug einspielen (Zwischenstand mit start-dusche auf zwei Einstiegen vermeiden). Lighthouse: start-dusche ist größer (1280 px), next/image liefert nach sizes; LCP und TBT auf /bad/badsanierung beobachten (TBT 194 von 200 ms, Messpunkt SF2-O). Pixel in Einstiegen und Reihen.",
+   "prioritaet": 1,
+   "teil": "SF2-B"
+  },
+  {
+   "id": "M2-B2",
+   "titel": "Eingang „An der Schnur“ auf den Ortsseiten, nach Messung auch die Zeilenmaske auf den Wissensseiten",
+   "ebene": "vorlage",
+   "ansichten": [
+    "/standorte/wetzlar",
+    "/fliesen",
+    "/blog"
+   ],
+   "dateien": [
+    "src/components/vorlagen/teile/Einstieg.tsx (Prop zeilenmaske mit Zusatzattribut data-zeilenmaske; Vorspann in der Hülle des Fotos nur mit Foto)",
+    "src/components/vorlagen/OrtsSeite.tsx (setzt zeilenmaske)",
+    "src/components/vorlagen/WissensSeite.tsx (setzt zeilenmaske nach Messpunkt; SF2-C)",
+    "src/app/bewegung.css: Variante über data-zeilenmaske in dauer-2, Schnur der Wissensseiten dauer-2 statt dauer-1 (SF2-O)",
+    "test/intro.test.mjs „Eingang 7“ positiv gefasst (SF2-O)",
+    "src/lib/motion/register.ts und _werkstatt/register.json (zeilenmaske Wo), _werkstatt/KERN.md K-007 Spalte Wo (SF2-O)",
+    "_werkstatt/ENTSCHEIDUNGEN.md: M-A3 Nr. 2 für Ortsseiten aufgehoben, für Wissensseiten nach Messpunkt (SF2-O)"
+   ],
+   "beschreibung": "Ursache im Code: Einstieg.tsx (anDerSchnur) setzt die H1 ohne Zeilenmaske, Ort und Knöpfe mit animate-none; es ziehen nur Schnur und Lotstück, verkürzt auf dauer-1. Grund war M-A3 Nr. 2 (H1 als LCP-Kandidat). Auf den Ortsseiten ist seit M-C6 das Foto das LCP-Element (Messpunkt W2: lcp_element img, 2,92 s), auf den Wissensseiten der Vorspann. Bau: 1) Einstieg.tsx, Prop zeilenmaske: H1 als Block-Zeilen mit data-motion=\"zeilenmaske\" und --zeile (titelZeilen, sonst eine Zeile), die letzte an der Schnur (schnur-grundlinie). Ort und Knopfzeile ab sm mit data-eingang wie im mittigen Einstieg, unter sm ab dem ersten Bild (E-067-4, UM-E3-FIX2 N6). Foto und Bewertungszeile ab dem ersten Bild. Takt wie EinstiegMitte (Schnur 0–320, Zeilen 140–860, Ort 500–1100, Knöpfe 620–1220 ms, voll ≤ 1,5 s). Die Variante hängt an einem Zusatzattribut data-zeilenmaske. data-einstieg=\"schnur\" bleibt wörtlich, weil intro.test Zeile 323 das Muster data-formel=\"worum\" data-motion=\"eingang\" data-einstieg=\"schnur\" prüft und /fliesen und /blog denselben Wert teilen (Einwand Risiko, am Test bestätigt). Der Typ der Prop wird zuerst festgeschrieben, damit SF2-C ihn in WissensSeite setzen kann. 2) SF2-O: Variante in bewegung.css (Schnur und Lotstück in dauer-2 mit data-zeilenmaske), die Schnur der Wissensseiten von dauer-1 auf dauer-2, damit der Zug auf /fliesen und /blog auch mobil sichtbar ist. 3) Wissensseiten (neu, Einwand Wirkung): WissensSeite setzt zeilenmaske erst nach einem Messpunkt. Die Fläche der H1 bleibt kleiner als die des Vorspanns (m390 mit 200 % und d1440), das LCP-Element bleibt der Vorspann, Lighthouse mobil /fliesen und /blog im Median aus sechs Läufen ≥ 91. Sonst bleibt die Prop aus (eine Zeile). 4) Billig und sicher: Der Vorspann unter dem Foto steht in derselben Hülle wie das Foto (mx-auto w-full max-w-md lg:w-1/2), nur mit Foto im Bildplatz (Ortsseiten). Auf den Wissensseiten würde der Vorspann (LCP) sonst schmaler und länger. Die Klassenfolge des p (max-w-mass font-text text-fs-3 …) bleibt für die Prüfung in intro.test Zeile 321.",
+   "befunde": [
+    "/standorte/wetzlar · 4a · hoch · Eingang ab 0 ms im Endzustand, Signaturmoment fehlt",
+    "/standorte/wetzlar · 4b · hoch · Typo-Moment und Wachsen von Schnur und Lot fehlen, Ortsseite wirkt eine Stufe darunter",
+    "/standorte/wetzlar · 4a, 4b · gering · Satz unter dem Foto beginnt 56 px links der Bildkante",
+    "/fliesen · 3a · mittel · H1 ab 0 ms, mobil kein Eingang (Teil, mit M2-C4)",
+    "/fliesen · 3b · mittel (Teil) · Eingang leblos, mobil keine Schnur",
+    "übergreifend 4a Nr. 5, 4b Nr. 5 · Eingang uneinheitlich zwischen Orts- und Wissensansicht"
+   ],
+   "rubrik_wirkung": "Kreativität (Signaturmomente, Bewegung) +0,4 bis +0,6 auf /standorte/wetzlar, Design +0,05 (gemeinsame Kante). Mit der Zeilenmaske auf Wissensseiten Kreativität +0,1 bis +0,2 auf /fliesen und /blog, ohne sie +0,05.",
+   "leitplanken": "Bewegung nur über das Register (eingang, zeilenmaske). Startzustände nur unter html.k-eingang.k-bewegung:not(.k-notaus). Reduziert und ruhig gilt der Sofortzustand, die Wiederkehr ist kürzer. Die H1 bleibt Text im DOM. Kein JavaScript. Hauptknopf und Anruf stehen mobil sofort. B-01 unberührt; die H1 auf / und /bad/badsanierung (G8) laufen nicht über Einstieg.tsx und bleiben gleich.",
+   "risiko": "Lighthouse Wetzlar: Die H1 startet maskiert, ist aber kleiner als das Foto; LCP mobil beobachten (A-1). /fliesen steht bei 92,5 nah an 90: Die Zeilenmaske dort erst nach dem Messpunkt aus Nr. 3, vor sig-plan „laden“ (M2-C4) messen. erstesbild.mjs misst nach dem Eingang (H1 im ersten Bild prüfen). intro.test „Eingang 7“: Zeile 320 (!includes('zeilenmaske')) wird positiv gefasst (Maske nur hinter der Prop), Zeile 323 bleibt wörtlich. Pixel im Erstbesuch aller 13 Ortsseiten.",
+   "prioritaet": 1,
+   "teil": "SF2-B"
+  },
+  {
+   "id": "M2-B7",
+   "titel": "Ortsmaß am Einzugsband: roter Abschnitt von Aßlar bis zur Zone des Ortes, Entfernung als Kennzahl, Band breit",
+   "ebene": "baustein",
+   "ansichten": [
+    "/standorte/wetzlar"
+   ],
+   "dateien": [
+    "src/components/kern/Einzugsband.tsx (nur mit aktuell, nicht kompakt, Form band)",
+    "src/components/vorlagen/teile/Lage.tsx (zusatz 'breit', über M2-A1; SF2-A)",
+    "src/app/bewegung.css Block einzugsband (SF2-O, nur prüfen, dass der Abschnitt mit der Zone aufzieht)"
+   ],
+   "beschreibung": "Fehlender Hebel aus allen drei Gegenprüfungen. Der „Ersatz“ in nicht_umsetzen war keiner: Das Einzugsband mit „Sie sind hier“ gibt es seit M-C6 Nr. 2, der Prüfer 4a hat es gesehen und nennt es Abstandstabelle. Bau: 1) Die Lage der Ortsseiten setzt das Band breit über die volle Satzbreite (M2-A1 Nr. 2). Ab 42 rem stehen die drei Zonen nebeneinander (3 : 3 : 4, vorhanden), statt im 600-px-Kasten. 2) Mit aktuell zieht eine rote Laserlinie (2 px, border-laser) vom vorhandenen roten Lot des Firmensitzes Aßlar entlang der oberen Fuge bis zum Ende der Zone des Ortes. 3) Am Ort steht die vorhandene Entfernung („ca. 5 km“, aus CITY_HUB_DATA über mitEntfernungAbSitz) als Kennzahl in Mono fs-5 (K-006: Mono für Zahlen), darunter „Sie sind hier“ wie heute. Statisch; die Linie gehört zur Zone und zieht mit dem vorhandenen Auftritt einzugsband auf. Reduziert, ohne JavaScript und im Druck steht sie fertig. Keine Karte (E-037), keine neuen Daten, kein neuer Text. Die Formen kompakt und stapel (/standorte, Planblatt, Kartenplatzhalter) bleiben unverändert. Das Band „ordnet nur“: Die Linie markiert die Zone, keinen Maßstab.",
+   "befunde": [
+    "/standorte/wetzlar · 4a · mittel · nichts ortseigen, Abstandstabelle reiner Text im 600-px-Kasten links, rechts leer",
+    "/standorte/wetzlar · 4a bis_ziel · ortseigener Moment (Karte gesperrt, hier Teilersatz)",
+    "/standorte/wetzlar · 4b · gering · Lage links, zwei Achsen (mit M2-A1)",
+    "Kreativität Wetzlar 6,3 / 6,8 (Gegenprüfung Wirkung, fehlender Befund hoch)"
+   ],
+   "rubrik_wirkung": "Kreativität (Ortsmoment, Leitidee Laserlinie) +0,2 bis +0,3 und Design +0,1 auf /standorte/wetzlar und allen 13 Ortsseiten.",
+   "leitplanken": "Rot nur als Laserlinie, die den aktuellen Ort markiert (K-003 Nr. 5). Entfernung aus der Konfiguration. Muss-Inhalte, Links und aria-current unverändert. Keine neue Bewegung, kein Registereintrag. Nur Tokens.",
+   "risiko": "test/einzugszonen.test.mjs laufen lassen. Pixel auf 13 Ortsseiten. Lange Ortsnamen wie „Limburg an der Lahn“ bei t1024 und 200 % Schrift. Im Aufklapper „Weitere Orte bis 50 km“ keine Linie (Zonen hinter dem Ort).",
+   "prioritaet": 2,
+   "teil": "SF2-B"
+  },
+  {
+   "id": "M2-B3",
+   "titel": "Schnurzeichen an der H1 statt am rechten Rand",
+   "ebene": "vorlage",
+   "ansichten": [
+    "/balkon-terrasse",
+    "/bad",
+    "/bad/badsanierung"
+   ],
+   "dateien": [
+    "src/components/vorlagen/teile/EinstiegMitte.tsx",
+    "src/app/globals.css: Abstand des Zeichens als Utility oder Variable --zeichen-luft (SF2-O)"
+   ],
+   "beschreibung": "Ursache im Code: EinstiegMitte.tsx setzt das Schnurzeichen absolute right-8 bottom-0 ans rechte Ende der Schnur (d1440 x ≈ 1250–1340), weit weg von der mittigen H1; es liest sich als verirrtes Icon. Bau: Das Zeichen wandert in die Hülle der H1 (div.relative.flex.max-w-full, wie der Quadratmeter auf /) und hängt an der letzten H1-Zeile: ab dem rechten Rand des Titelblocks plus ZEICHEN_LUFT, Unterkante auf der Schnur, Höhe eine H1-Zeile. An seiner linken Unterkante steht ein Fugenkreuz (KREUZ_GROESSE) auf der Schnur. Schwelle ab lg (balkon, badsanierung) bzw. xl (bad) wie bisher; die Rechnung titel-em (mitZeichen) bleibt, so bricht die H1 nicht anders. ZEICHEN_LUFT (0,5 em der H1) hat keine Tokenklasse. ml-[0.5em] und style.marginLeft zählen als Beliebigwert bzw. style_wert (werte.mjs). Darum setzt SF2-O den Abstand als Utility in globals.css oder als Variable --zeichen-luft am Behälter, wie --zeichen-format. Entscheidung Widerspruch: 2a will die Vignette aus dem Einstieg nehmen, 2b sie präzise an die Schnur setzen. Gewählt ist 2b, weil das Zeichen der eigene Moment der Seite im ersten Bildschirm ist (M-A1, M-C9).",
+   "befunde": [
+    "/balkon-terrasse · 2a · mittel · Plan-Vignette ohne Bezug am rechten Ende der Schnur, zweiter Strang",
+    "/balkon-terrasse · 2b · gering · Platzierung wirkt zufällig, bei t1024 20 px vom Rand",
+    "/bad · 1b · gering · Wannen-Symbol isoliert am rechten Rand (Nebenwirkung der gemeinsamen Vorlage)"
+   ],
+   "rubrik_wirkung": "Design (Komposition, Grafik) +0,1 und Kreativität +0,05 auf /balkon-terrasse; Nebenwirkung auf /bad und /bad/badsanierung.",
+   "leitplanken": "G8: H1 auf /bad/badsanierung in Inhalt, Größe, Umbruch und Verhalten gleich; nur die Lage des Zeichens daneben ändert sich. H1 auf / unberührt (ohne Schnurzeichen). Keine Bewegung. Nur Tokens; werte.mjs in Stufe A laufen lassen.",
+   "risiko": "Umbruch der H1 bei d1280, d1440 und d1920 prüfen (mitZeichen unverändert). Überlauf bei t1024 und d1280. Pixel im Einstieg von drei Ansichten.",
+   "prioritaet": 2,
+   "teil": "SF2-B"
+  },
+  {
+   "id": "M2-B4",
+   "titel": "/bad: ein Abschluss mit einem dunklen Knopf, Projektcheck geschlossen (nur mit Entscheidung zur Spec)",
+   "ebene": "seite",
+   "ansichten": [
+    "/bad"
+   ],
+   "dateien": [
+    "src/app/(bestand)/bad/page.jsx (Werkzeug projekt-check, Kommentar)",
+    "_werkstatt/werkzeuge/tests/funktion-projektcheck.spec.mjs: auf /bad zuerst die Zeile anklicken (SF2-O, nach Entscheidung)",
+    "_werkstatt/KERN.md K-010 „Ein Abschluss“ (SF2-O)",
+    "_werkstatt/ENTSCHEIDUNGEN.md mit Denkprotokoll (SF2-O)"
+   ],
+   "beschreibung": "Ursache im Code: bad/page.jsx führt das Werkzeug projekt-check mit imSchritt, aber ohne zu, weil F-05 sichtbare Inhalte in #projekt-check prüft und K-010 sowie E-104 Nr. 4 „offen nur der Projektcheck auf /bad“ festhalten. Offen stehen damit vier Schritte, Musterbäder, Pflegekassen-Hinweis und der zweite dunkle Knopf „Angebot mit Festpreis anfordern“, dazu Badanfrage (zu) und Badplaner. Bau mit Freigabe: projekt-check bekommt zu: 'Bad in vier Schritten beschreiben' (Mikrotext), die Badanfrage bleibt zu, der Badplaner steht als Zeile derselben Liste. Offen bleiben Hauptknopf, Anruf und WhatsApp. Felder, Logik, Nutzlast und Ziel der Werkzeuge bleiben, ebenso die Kennung #projekt-check im details. SF2-O ändert Spec, bad/page.jsx und K-010 in einem Commit. Die Spec klickt auf /bad zuerst wirklich auf die Zeile (kein open per Skript); alle Aussagen zu Nutzlast, Zustand und WhatsApp-Ziel bleiben gleich (G7: ergänzt, nicht gelockert). Rückfall ohne Freigabe (Einwand Vollständigkeit): Der Projektcheck bleibt offen; Badanfrage und Badplaner werden zu einer Zeile zusammengelegt (Zusammenlegen gleicher Wege). Die zwei hohen Befunde gelten dann als bestehend, nicht als gelöst, und die Erwartung für /bad sinkt.",
+   "befunde": [
+    "/bad · 1a · hoch · drei dunkle Hauptknöpfe, Projektcheck, Badanfrage, Badplaner am Seitenende",
+    "/bad · 1b · hoch · vier Wege und mehrere Formulare in Folge auf einer Erzählansicht",
+    "übergreifend 1a Nr. 4, 1b Nr. 6 · zu viele Wege am Seitenende"
+   ],
+   "rubrik_wirkung": "Mit Freigabe: Bedienbarkeit (Klarheit der Handlung) +0,3 bis +0,4 und Design (Rhythmus, Länge) +0,1 auf /bad, mobil rund drei Bildschirmhöhen kürzer (vorher und nachher messen). Ohne Freigabe: Bedienbarkeit +0,05.",
+   "leitplanken": "G8: Formular, Felder und Verhalten unverändert, nur der Platz. F-05 bleibt eingebettet. Natives details ohne JavaScript. G7: Die Spec wird nicht gelockert, nur der Weg zum Element ergänzt; der Klick geschieht wirklich.",
+   "risiko": "Funktionssuite F-05 auf /bad mobil und Desktop laufen lassen; ohne Spec-Änderung wird sie rot, darum nur im selben Commit. Pixel /bad. Lesbarkeit: lesbarkeit.mjs öffnet details. erstesbild unberührt.",
+   "prioritaet": 1,
+   "teil": "SF2-B"
+  },
+  {
+   "id": "M2-B5",
+   "titel": "/blog: untere Hälfte mit echten Fotos und mehr Stimmen",
+   "ebene": "inhalt",
+   "ansichten": [
+    "/blog"
+   ],
+   "dateien": [
+    "src/inhalte/blog.ts (beleg.fotos, beleg.stimmen, versprechen.offen)",
+    "_werkstatt/ENTSCHEIDUNGEN.md: E-065 „kein Foto“ für /blog abgelöst (SF2-O)"
+   ],
+   "beschreibung": "Ursache: blog.ts beleg.fotos ist leer (E-065), beleg.stimmen nur ['c-wolf'], das Versprechen geschlossen. Bau: Im Beleg „Aus unserer Praxis.“ stehen zwei vorhandene Fotos aus der Arbeit, je mit Glasfläche und Weg zum passenden Artikel: entstehung-dusche-2 (Name „Fliesen schräg zum Ablauf geschnitten“ → /blog/duschrinne-oder-punktablauf) und badsanierung-zweier-1 (Name „Dusche im Bau mit Nische“ → /blog/wandnischen-dusche-planen). Die Namen kommen aus dem Alt-Text, höchstens sechs Wörter (Mikrotext), ohne Behauptung, das Foto stamme aus dem Artikel. Die Stimmen werden um drei vorhandene Stimmen zum Bad erweitert (zum Beispiel peter-p, elke-s, ute-t; Wortlaut unverändert). Das Versprechen zeigt drei Punkte über M2-A3 (Standard 2, 5, 7). Jedes Foto steht danach außerhalb der Galerie von /referenzen höchstens zweimal. Den Ablauf auf einen Satz zu kürzen, ist nicht erlaubt (K-009, Wortlaut).",
+   "befunde": [
+    "/blog · 4b · hoch · Formelabschnitte nach der Liste fast leer, kein echtes Foto, eine einzelne Stimme"
+   ],
+   "rubrik_wirkung": "Inhalt (Bild, Echtheit) +0,3, Design +0,1, Kreativität +0,05 auf /blog.",
+   "leitplanken": "Fotos nur aus ARBEITEN, Alt-Text aus dem Bestand, kein erfundener Projektbezug. G8: Wortlaut der Stimmen. Auf /blog nur der hohe Befund (E-105), kein eigenes Gestaltungspaket.",
+   "risiko": "Lighthouse /blog: Die Fotos stehen unter dem ersten Bildschirm und laden lazy (Bildfeld ohne lcp); das LCP-Element bleibt der Vorspann. Pixel /blog. Lesbarkeit: Namen ohne Glossarwort.",
+   "prioritaet": 2,
+   "teil": "SF2-B"
+  },
+  {
+   "id": "M2-B6",
+   "titel": "/bad/badsanierung: Bildunterschrift der Zeichnung sagt, was man sieht",
+   "ebene": "inhalt",
+   "ansichten": [
+    "/bad/badsanierung"
+   ],
+   "dateien": [
+    "src/inhalte/bad-badsanierung.ts (tun.unterKopf.unterschrift)"
+   ],
+   "beschreibung": "Die Bildunterschrift „Der Einstieg bleibt dabei eben, ohne Stufe.“ wiederholt den letzten Satz von Punkt 02 (im Bildsatz d1440/03 bestätigt). Als Bildunterschrift (Mikrotext) wird sie zu „Die Wanne kommt raus, der Boden neigt sich zur Rinne.“ Das zeigt die Zeichnung WanneDusche: alte Wanne gestrichelt, Fliesenboden im Gefälle zur Rinne an der Wand. Punkt 02 bleibt wörtlich. Mit M2-A1 Nr. 3 steht die Unterschrift mittig unter der breiten Zeichnung. Gering und billig.",
+   "befunde": [
+    "/bad/badsanierung · 1b · gering · derselbe Satz als Bildunterschrift und in Schritt 02"
+   ],
+   "rubrik_wirkung": "Inhalt (Klarheit) +0,05.",
+   "leitplanken": "Mikrotext (Bildunterschrift) direkt geändert. Er beschreibt nur die vorhandene Zeichnung, ohne Glossarwort und unter 25 Wörtern.",
+   "risiko": "Lesbarkeit unverändert; keine Tests.",
+   "prioritaet": 3,
+   "teil": "SF2-B"
+  },
+  {
+   "id": "M2-B8",
+   "titel": "Einstieg im Verband auf den Bad- und Balkonseiten: zweites Hochformat an einer Fuge, eine Stufe tiefer (nur mit Freigabe K-003 „Einstieg“)",
+   "ebene": "vorlage",
+   "ansichten": [
+    "/bad",
+    "/bad/badsanierung",
+    "/bad/barrierefreies-bad",
+    "/balkon-terrasse"
+   ],
+   "dateien": [
+    "src/components/vorlagen/teile/EinstiegMitte.tsx (worum.bildZwei)",
+    "src/components/vorlagen/inhalt.ts (WorumInhalt.bildZwei, über M2-A6; SF2-A)",
+    "worum.bildZwei in src/inhalte/bad.ts, bad-badsanierung.ts, barrierefreies-bad.ts, balkon-terrasse.ts",
+    "_werkstatt/KERN.md K-003 Ruhe-Regel „Einstieg“, _werkstatt/ENTSCHEIDUNGEN.md (SF2-O)"
+   ],
+   "beschreibung": "Fehlender Hebel aus der Gegenprüfung Wirkung. Ab lg füllt das Hochformat im Einstieg 574 von 1216 px Satzbreite (gemessen auf /bad/badsanierung: x 433, 574 × 718). Dazu kommen zwei hohe Befunde (Teil) und 3b „erster Bildschirm ganz axial, Drittelversatz fehlt“. Querformat-Zuschnitte sind gesperrt (E-104 Nr. 6). Bau: EinstiegMitte bekommt die optionale Angabe worum.bildZwei. Ab lg steht neben dem Aufmacher an einer Fuge (gap-6) ein zweites Hochformat derselben Seite, eine Stufe 24 tiefer (lg:mt-24, wie der Versatz der Reihen), beide in der Breite von glas-hoch, gemeinsam mittig zur Kopfachse. Zusammen füllen sie rund 1150 px. Unter lg wird es nicht gezeigt und nicht geladen (hidden lg:block, Bildfeld ohne lcp, loading lazy). Das zweite Foto verlässt dafür die Reihe der Seite (die Zählung bleibt) und ist nie Aufmacher einer anderen Ansicht. Es braucht mindestens die Schärfe des Aufmachers. Vorschlag zur Prüfung: /bad/badsanierung badsanierung-beleg-1, /bad bad-beleg-3, /balkon-terrasse balkon-beleg-2, /bad/barrierefreies-bad bereich-dusche-streifen-sitzbank. Der Baumeister misst und begründet. Ohne Angabe bleibt jeder Einstieg wie heute, auch / (eigene Angaben, G8). Schranke: nur mit Entscheidung zu K-003 „Einstieg“ (offene Frage). Erst eine Bildprobe /bad/badsanierung und /bad bei d1440 und d1920, dann Lighthouse desktop und mobil unverändert (LCP bleibt der Aufmacher). Fehlt eines davon, entfällt die Maßnahme.",
+   "befunde": [
+    "/bad · 1b · hoch (Teil) · Einstiegsfoto füllt am Desktop nur 574 von 1248 px Satzbreite",
+    "/bad/badsanierung · 1b · hoch (Teil) · Hochformat füllt am Desktop weniger als die Hälfte der Satzbreite",
+    "übergreifend 1b Nr. 3, 2b Nr. 1 · Einstiegsfoto schmal, Einstieg auf allen Seiten gleich",
+    "Gegenprüfung Wirkung · Einstieg ab lg ohne Drittelversatz"
+   ],
+   "rubrik_wirkung": "Design (Komposition, Bild) +0,1 bis +0,3 auf vier Ansichten, Kreativität +0,05 (Verband im ersten Bildschirm). Nur, wenn die Bildprobe trägt.",
+   "leitplanken": "E-047: Einstieg mittig. Das Paar steht gemeinsam mittig, beide Fotos vollständig im eigenen Seitenverhältnis. G8: H1 auf /bad/badsanierung unverändert, / ohne Angabe. Kein neues Bild, kein Zuschnitt. Keine Bewegung (statisch, Fotos ab dem ersten Bild wie heute). Nur Tokens.",
+   "risiko": "Ruhe-Regel „ein Gedanke je Bildschirm“: Das Paar darf nicht als zweiter Strang lesen; das entscheidet die Bildprobe. CLS keine (feste Seitenverhältnisse). LCP: Der Aufmacher bleibt das größte Element, gleich große zweite Fläche ersetzt ihn nicht. Bytes nur am Desktop. Pixel im Einstieg von vier Ansichten. Zusammenspiel mit M2-B1 (Reihen ändern sich) in der Notiz zählen.",
+   "prioritaet": 3,
+   "teil": "SF2-B"
+  },
+  {
+   "id": "M2-C1",
+   "titel": "/referenzen: Galerie im Verband ohne Loch oben, ehrliche Zählzeile, ein Filtermuster mobil, neues Einstiegsfoto",
+   "ebene": "seite",
+   "ansichten": [
+    "/referenzen"
+   ],
+   "dateien": [
+    "src/components/momente/galerie-filter/GalerieWahl.tsx (Statuszeile im Behälter der Liste, Raumknöpfe)",
+    "src/components/momente/galerie-filter/daten.ts (ansage mit optionalem Parameter eingeklappt; Tausch start-dusche ↔ bad-beleg-3)",
+    "src/components/sections/ReviewsSection.jsx (Themenfilter mobil)",
+    "src/inhalte/referenzen.ts (worum.bild bad-beleg-3)",
+    "src/app/globals.css Block „Galerie eingeklappt und im Verband“ (SF2-O)",
+    "src/components/kern/stile.ts: Variante von wahlKlassen ohne justify-center (SF2-O)"
+   ],
+   "beschreibung": "Ursache im Code: globals.css setzt im Dreierraster .galerie-liste[data-verband] > li:nth-child(3n + 2) { translate: 0 calc(100% / 3) }. Das gibt ein leeres Feld oben in der Mitte unter dem Filter und unten einen Zackenrand. daten.ts ansage(wahl, n) meldet bei „alle“ „Sie sehen alle ${n} Fotos.“ auch eingeklappt (berichtigt: Die Funktion heißt ansage, nicht statusText; test/galerie-filter.test.mjs „Galerie 7“ prüft ansage('alle', 25)). ReviewsSection setzt die Themen als flex flex-wrap justify-center, die Raumknöpfe in GalerieWahl.tsx stehen als Zweierraster mit Symbol links und Text mittig. Bau: 1) Die Statuszeile (role=\"status\") wandert in den Behälter der Liste (@container), direkt vor das ul; die DOM-Folge vor der Liste bleibt. Ab 64 rem Containerbreite steht sie im freien Feld oben in der Mittelspalte, mittig in der Höhe eines Drittels einer Kachel (SF2-O, globals.css). Unter der längsten Spalte schließt eine Fuge über die volle Breite, darauf mittig „Alle 24 Fotos zeigen“. Unter den äußeren Spalten bleibt ein Streifen von einem Drittel Kachelhöhe; die Notiz führt das ehrlich als Teilbehebung (oben geschlossen, unten bündige Fuge). 2) ansage(wahl, n, eingeklappt?) mit optionalem dritten Parameter: eingeklappt „Sie sehen eine Auswahl aus {n} Fotos.“ (Mikrotext), aufgeklappt oder gefiltert wie bisher. Galerie 7 bleibt unverändert grün (G7). 3) Beide Filter mobil als dasselbe Raster aus zwei gleich breiten Spalten, Symbol und Wort linksbündig als Einheit. „Alle“ ist eine normale Zelle; sechs Zellen ergeben drei volle Reihen, ohne leere Zelle (Einwand Wirkung). Bei ungerader Zahl füllt die letzte Zelle beide Spalten. Für die Ausrichtung legt SF2-O eine Variante von wahlKlassen in kern/stile.ts an, weil clsx den Konflikt mit justify-center nicht löst. Ab sm wie bisher als Reihe. 4) Einstiegsfoto bad-beleg-3 (Laplace 3,78, Kontrast 0,28, scharf, Güte B), weil start-dusche auf /bad/badsanierung wechselt (M2-B1). start-dusche nimmt in daten.ts den Platz von bad-beleg-3 ein (Gruppe dusche, Name aus dem Alt-Text „Dusche ohne Stufe mit großen grauen Fliesen“), nicht an Platz 1 (Aufmacher). Vor dem Einspielen werden beide Einstiege (d1440, m390) gegenübergestellt; Rückweg je eine Zeile. Entscheidung Widerspruch: 3a schlägt eine wischbare Chipreihe vor, 3b ein gleichmäßiges Zweierraster. Gewählt ist das Raster: nichts außerhalb des Bildes, kein seitliches Scrollen, beide Filter gleich.",
+   "befunde": [
+    "/referenzen · 3b · mittel · Mittelspalte 170 px tiefer, leeres Feld unter dem Filter, Zackenrand",
+    "/referenzen · 3a · gering · leeres Feld oben in der Mitte wirkt wie ein nicht geladenes Foto",
+    "/referenzen · 3b · mittel · „Sie sehen alle 24 Fotos.“ über einer Galerie, die mit „Alle 24 Fotos zeigen“ endet",
+    "/referenzen · 3a · mittel · zwei verschiedene Filtermuster mobil, eine Bildschirmhöhe",
+    "/referenzen · 3b · mittel · Themenknöpfe als Säule mit fünf Breiten, erste Stimme erst im nächsten Bildschirm"
+   ],
+   "rubrik_wirkung": "Design (Komposition) +0,15 bis +0,2, Bedienbarkeit (Mobilnutzung, Klarheit) +0,2 auf /referenzen. Der Tausch des Einstiegsfotos kostet Design 0 bis 0,05.",
+   "leitplanken": "Fotos nur aus dem Bestand, jede Bilddatei einmal in der Galerie, Einstieg nicht in der Galerie. Mikrotexte direkt. Bewertungszahlen und Wortlaut der Stimmen unverändert (G8). Kein zusätzliches JavaScript (Text und Klasse in der vorhandenen Insel). Verband statisch. Test Galerie 7 unverändert (G7).",
+   "risiko": "R-1 (Aufklappen 192 ms, Grenze 200 ms, kein Puffer): keine zusätzliche Arbeit beim Aufklappen, nach dem Bau sieben Läufe nachmessen. test/galerie-filter.test.mjs „Galerie 2“ wird nach dem Tausch grün (mit M2-B1 einspielen). axe: Kontrast der Statuszeile, Zielgröße der Filter 44 px. Pixel /referenzen.",
+   "prioritaet": 2,
+   "teil": "SF2-C"
+  },
+  {
+   "id": "M2-C2",
+   "titel": "/referenzen: Vorher/Nachher als Bühne auf Tinte, Fachtext im Aufklapper, Stimmenkarten ohne Rahmen",
+   "ebene": "seite",
+   "ansichten": [
+    "/referenzen"
+   ],
+   "dateien": [
+    "src/components/momente/vorher-nachher/VorherNachher.tsx",
+    "src/app/(bestand)/referenzen/page.jsx (belegZwei flaeche 'tinte')",
+    "src/inhalte/referenzen.ts (tun.punkteMehr, Zusatzabsatz nach absatzMehr, tun.satz entfällt)",
+    "src/components/sections/ReviewsSection.jsx (Karten)",
+    "src/components/vorlagen/teile/Beleg.tsx (Typ flaeche 'tinte', über M2-A6; SF2-A)",
+    "src/app/bewegung.css .vn-hoehe (SF2-O)"
+   ],
+   "beschreibung": "Ursache im Code: VorherNachher setzt ab lg figure lg:grid lg:grid-cols-2 (Anleitung links, Bühne rechts), .vn-hoehe begrenzt die Breite auf calc(80svh * --vn-seite) bei 0,515 → gemessen 370 × 718 px bei d1440. referenzen.ts zeigt Leistungsliste, drei Fachabsätze und einen Zusatzabsatz offen. ReviewsSection rahmt jede Stimme als Karte (border border-fuge bg-fliese). Bau: 1) Bühne statt Breite (Einwände Vollständigkeit hoch und Wirkung). Die einspaltige Bühne auf Kalk war der Zustand aus Anlauf 1 (370 px in leerer weißer Fläche), SF-C1 hat sie darum zweispaltig gebaut. Neu steht der Abschnitt auf der vorhandenen Fläche Tinte (belegZwei flaeche 'tinte'), die Bühne einspaltig mittig. Ihre Höhe reicht ab lg bis zur Bildschirmhöhe unter dem Kopf (SF2-O: .vn-hoehe mit calc aus 100svh, Kopfhöhe und einer Stufe 8): rund 400 px Breite bei d1440, rund 500 px bei d1920. Auf Tinte lesen die Flanken als gesetzter Rahmen um den hohen Ausschnitt, nicht als Leere. Die Anleitung „Schieben Sie den Regler hin und her. So sehen Sie den Unterschied.“ (Hilfetext, Wortlaut gleich) steht mittig über dem Regler in nacht-2 (M-C3 Nr. 3 bleibt: Anleitung über dem Regler). Lot und Griff stehen in Kalk, die Wortmarken bleiben. Mehr Breite ginge nur mit anderem Zuschnitt (E-104 Nr. 6, nicht_umsetzen). 2) tun.punkteMehr: true (M2-A6): Die Fachabsätze stehen im Aufklapper „Mehr erfahren“, der Zusatzabsatz wandert in absatzMehr (nur Daten) und teilt denselben Aufklapper. Die Leistungslinks bleiben offen. tun.satz 'mitte' entfällt (Standard M2-A1). 3) ReviewsSection: Karten ohne Rahmen und ohne Fläche, je Karte eine 1-px-Fuge links (border-l border-fuge). Wortlaut, Sterne und Quelle bleiben. „gap-px auf bg-fuge“ ist verworfen: Die Stimmen sind Slides im Karussell (kern/Karussell.tsx, px-3 je li), ein Fugenraster müsste die gemeinsame Datei ändern.",
+   "befunde": [
+    "/referenzen · 3a · mittel · Vorher/Nachher am Desktop nur 370 px, Anleitung als zweiter Strang daneben",
+    "/referenzen · 3a bis_ziel · Vorher/Nachher groß und mit Gewicht inszenieren",
+    "/referenzen · 3b bis_ziel · ein eigener Moment der Seite mit Bühne",
+    "/referenzen · 3a · mittel · Fachtextblock mit Klammern bremst die Erzählung, mobil zwei Bildschirme",
+    "/referenzen · 3b · mittel · anderthalb Bildschirme Text nach den Stimmen, doppelt zu /ueber-uns",
+    "/referenzen · 3b · gering · drei weiß umrandete Stimmenkarten als generisches Kartenraster"
+   ],
+   "rubrik_wirkung": "Kreativität (eigener Moment mit Bühne) +0,1 bis +0,2, Design (Komposition) +0,1, Bedienbarkeit (Länge, Lesbarkeit) +0,1 auf /referenzen. Die Breite allein bringt wenig (370 → 400 px bei d1440); gerechnet ist die Wirkung der Bühne.",
+   "leitplanken": "Vorher-Nachher bleibt Register vorher-nachher (direkt, ohne neue Bewegung). Fotos vollständig. Aufklapper mit Inhalt im DOM. G8 Stimmen und Bewertungszahlen. Nur Tokens. Die Fläche Tinte ist eine der drei Flächen (K-006).",
+   "risiko": "test/vorher-nachher.test.mjs (Geometrie) laufen lassen. Reaktion beim Ziehen unverändert. axe: Anleitung und Wortmarken auf Tinte (Kontrast). Leitfaden: Der Kopf der Achse steht nur auf Kalk, auf Tinte ohne Marke (vorhandene Regel). Lesbarkeit: lesbarkeit.mjs öffnet details; das Glossar-Erstvorkommen im Aufklapper bleibt im DOM. Pixel /referenzen.",
+   "prioritaet": 2,
+   "teil": "SF2-C"
+  },
+  {
+   "id": "M2-C3",
+   "titel": "/ueber-uns: Motto zusammengelegt (mit Entscheidung), Werte gleich gebaut, Arbeitsfotos nach „Wer kommt in Ihr Haus?“",
+   "ebene": "seite",
+   "ansichten": [
+    "/ueber-uns"
+   ],
+   "dateien": [
+    "src/inhalte/ueber-uns.ts (stimmenEinleitung geteilt, Schalter motto)",
+    "src/app/(bestand)/ueber-uns/page.jsx (nachLage, momente.stimmen, nachBeleg entfällt nur mit Schalter)",
+    "src/components/ueber-uns/Werte.tsx",
+    "src/components/sections/CompanyHistory.jsx (Leitsatz mit Prop zeile und etikett, hyphens-none; ohne unten)",
+    "test/seitenformel-folgen.test.mjs: EIN.nachLage um '/ueber-uns' ergänzt (SF2-O)",
+    "_werkstatt/KERN.md K-009 und K-010 (nachLage trägt auf /ueber-uns die Fotoreihe), ENTSCHEIDUNGEN (SF2-O)"
+   ],
+   "beschreibung": "Ursache: Das Motto steht viermal: values[5] in den Werten, dritter Satz der stimmenEinleitung, Leitsatz als nachBeleg (page.jsx) und Fuß. Werte.tsx setzt zwei belegte Werte groß und vier als Tabellenzeilen. Die Fotoreihe hängt mit einer H3-Zwischenzeile unter der Zeitleiste. Bau: 1) Motto, gebaut als Datenschalter motto: 'bestand' | 'eins' | 'zwei', damit Freigabe oder Rücknahme eine Zeile ist (Einwand Leitplanken). Stufe 'eins': Die stimmenEinleitung behält Satz 1 und 2. Satz 3 („Unser Motto: „…““) wird mit dem Leitsatz zu einem Element direkt darunter (momente.stimmen → stimmenZusatz, M2-A6): „Unser Motto:“ als kleine Zeile über dem Zitat, Zitat und Zuschreibung wie bisher, die Firmenzeile mit hyphens-none. Der Leitsatz nach dem Beleg entfällt als Dublette; kein Wort fehlt. Das Motto steht dann dreimal. Stufe 'zwei' (Einwand Vollständigkeit): Auch Wert 6 geht in dieses Element auf. Sein Name „Kundenbegeisterung“ steht als Etikett über „Unser Motto:“, die Werte-Reihe zeigt fünf gleich gebaute Zeilen. Das Motto steht dann zweimal (Element und Fuß), jedes Wort einmal. Beide Stufen gelten nur mit einer Entscheidung des Orchestrators „Zusammenlegen identischer Textstellen, kein Wort fällt weg“ (offene Frage). Ohne sie bleibt 'bestand' (viermal), und der hohe Befund bleibt bis zur Antwort auf T-1 und T-2. 2) Werte.tsx: alle Werte gleich gebaut, eine Zeile je Wert an der Fuge (Zeichen links, Name fs-4 halbfett, Satz fs-3), belegt als kleiner Hinweis, keine zweite Hierarchie. 3) Die Punkte in „Wir verlegen …“ bleiben offen; punkteMehr entfällt hier (Einwand Risiko, am Code bestätigt). Im Aufklapper stünden die Erklärungen zu Abdichtung und DIN 18534 verborgen, und das erste sichtbare „Abdichtung“ wäre die Zeitleiste ohne Erklärung (K-011). Die Erklärung dort sprengt 25 Wörter (Kommentar ueber-uns/page.jsx). Der Befund läuft über T-6 (nicht_umsetzen). 4) Die Fotoreihe der Arbeitsweise steht als eigener Abschnitt direkt nach der Lage (Slot nachLage). Kopf als H2 im Wortlaut der heutigen Zwischenzeile „Auf der Baustelle“, Karussell wie bisher. Die Fläche wird so gewählt, dass nicht zwei Kalkabschnitte aufeinander folgen. CompanyHistory ohne unten, die Zeitleiste steht allein. SF2-O trägt EIN.nachLage = ['/ueber-uns'] im selben Schritt nach, sonst wird Folge 4 rot.",
+   "befunde": [
+    "/ueber-uns · 3b · hoch · Motto viermal, entwertet das große Zitat (mit Stufe 'zwei' gelöst, mit 'eins' gemildert, ohne Entscheidung bestehend)",
+    "/ueber-uns · 3a · mittel · Motto viermal, nutzt sich ab",
+    "/ueber-uns · 3a · mittel · Werte: Hierarchiebruch zwei groß, vier als Tabelle (Werbesprache über T-3 bis T-5)",
+    "/ueber-uns · 3b · mittel · Werte-Etiketten und Doppelungen mit Zeitleiste",
+    "/ueber-uns · 3b · mittel (Teil) · Person nicht sichtbar, rechte Hälfte leer",
+    "/ueber-uns · 3a · gering · Fotostreifen nur mit kleiner Zwischenzeile",
+    "/ueber-uns · 3b · gering · Überschrift „Auf der Baustelle“ in Fließtextgröße",
+    "/ueber-uns · 3a · gering · Firmenzeile getrennt „Fliesen-/verlegung“"
+   ],
+   "rubrik_wirkung": "Mit Stufe 'zwei': Inhalt +0,3 bis +0,4, Design +0,2, Bedienbarkeit (Hierarchie) +0,1. Mit 'eins': Inhalt +0,2. Ohne Entscheidung: Inhalt +0,1 (Werte, Fotos). Mit T-1 bis T-6 bis +0,6 Inhalt.",
+   "leitplanken": "Wortlaut aller Sätze bleibt (Umordnen; Zusammenlegen nur mit Entscheidung, jedes Wort bleibt einmal vollständig). Firmendaten der Zuschreibung unverändert (G8). Werte-Anpassungen (M-07) und Garantie-Prüfung unverändert. Fotos aus dem Bestand. Kein JavaScript.",
+   "risiko": "test/seitenformel-folgen.test.mjs Folge 4 (EIN.nachLage) im selben Schritt. Leitfaden-Kopf neben dem neuen Abschnitt (Flächenwechsel). Etikett „Kundenbegeisterung“ ist ein Werbewort (T-2 schlägt Ersatz vor). Pixel /ueber-uns.",
+   "prioritaet": 2,
+   "teil": "SF2-C"
+  },
+  {
+   "id": "M2-C4",
+   "titel": "/fliesen: Plan legt sich im Eingang (mit Abbruchkriterium), Schichtschnitt mit Bildunterschrift vor dem Wähler, Raumliste mit Zeichnungen, zweite Linkliste als Fugenfeld, schärfere Fotoreihe",
+   "ebene": "seite",
+   "ansichten": [
+    "/fliesen"
+   ],
+   "dateien": [
+    "src/components/vorlagen/WissensSeite.tsx (Plan flucht 'laden', Prop einstiegUnterBild, zeilenmaske nach Messpunkt M2-B2)",
+    "src/inhalte/fliesen.ts (lage.wege mit vignette oder motiv, wissen[0].wegeForm 'reihe', beleg.fotos, versprechen.offen)",
+    "src/app/(bestand)/fliesen/page.jsx (Schichtzeichnung vor dem Wähler, Unterschriften)",
+    "src/components/kern/vignetten/Untergrund.tsx (Prop bruchkante; ohne Prop unverändert)",
+    "src/lib/motion/register.ts und _werkstatt/register.json: sig-plan Wo, KERN K-008 (SF2-O, erst nach dem Messpunkt)"
+   ],
+   "beschreibung": "Ursache im Code: WissensSeite rendert den Plan mit flucht=\"zeigen\" und ohne Satz. fliesen/page.jsx stellt die statische VignetteUntergrund unter den Verband-Wähler im selben Feld, ohne Beschriftung und rechts offen; ihre Unterschrift wiederholt den Satz der Wegzeile „Fliesen im Neubau“. wissen[0].wege (fünf Zeilen) ist gleich gebaut wie die Raumliste. Bau: 1) Plan im Einstieg mit flucht 'laden' (vorhandene Registerbewegung sig-plan; reduziert in der Flucht) und einer Bildunterschrift über einstiegUnterBild: „Die geschnittenen Fliesen am Rand sind links und rechts gleich breit.“ (Mikrotext, beschreibt die Gleich-Zeichen an der Maßlinie). Abbruchkriterium (Einwand Risiko): /fliesen allein mit sechs Läufen (V N N V wie in E-112). Unter 91 im Median geht es zurück auf 'zeigen' (eine Prop). Der Messpunkt der Zeilenmaske (M2-B2 Nr. 3) kommt zuerst; reicht der Puffer nicht für beides, entfällt 'laden' zuerst (geringere Wirkung). Register und K-008 ändern sich erst nach dem Messpunkt. 2) Die Schichtzeichnung steht als eigenes Feld vor dem Wähler, nach dem Absatz „Zuerst prüfen wir den Untergrund …“. Untergrund.tsx bekommt die Prop bruchkante, die das Bild rechts mit einer Bruchkante schließt; ohne Prop bleibt sie für /, /leistungen und die Ortsseiten unverändert. Statt SVG-Beschriftungen (skalierten mobil auf rund 9,6 px und wären in aria-hidden für Vorleser stumm, Einwand Machbarkeit) bekommt sie eine Bildunterschrift (Mikrotext, fs-3). Sie nennt in Zeichnungsfolge nur gezeichnete Schichten, zum Beispiel Fliese, Abdichtung, Estrich und an der Wand die Randfuge. Fachwörter, die die Seite davor noch nicht erklärt, stehen mit Glossarmarke (randfuge); „Randstreifen“ entfällt (nicht gezeichnet). Der Musterkasten trägt danach nur Muster und das Foto zum gewählten Muster (vorhanden). 3) Raumliste (Lage, zweispaltig über M2-A1): je Zeile eine vorhandene Plan-Vignette oder ein Verlegemuster (motiv), keine Zeichnung zweimal in derselben Liste. Das ist der Vorschlag aus dem hohen Befund 3a. 4) wissen[0].wegeForm 'reihe' (M2-A6): fünf Wege als Fugenfeld 3 + 2 im Halbverband, ohne Füllung und ohne Einzelrahmen. So stehen zwei verschieden gebaute Gruppen da; ihre Sätze laufen über T-12 und T-13. 5) Fotoreihe (Einwand Risiko: „Großformat zuerst“ aus Runde 1 bleibt): start-lage-balkon (Großformat, Laplace rund 12, Weg /balkon-terrasse), start-lage-bad (Laplace 2,73, Name „Eckbadewanne mit grauer Verkleidung“, Weg /bad), start-lage-treppe. Das weiche start-lage-dusche (0,88) verlässt /fliesen; außerhalb der Galerie steht jedes Foto weiter höchstens zweimal.",
+   "befunde": [
+    "/fliesen · 3a · mittel · H1 ab 0 ms, mobil kein Eingang, Plan statisch (mit M2-B2)",
+    "/fliesen · 3b · mittel · Eingang leblos, Plan-Einstieg nicht inszeniert",
+    "/fliesen · 3a · mittel · Musterkasten mischt Muster, Foto und Schichtschnitt; Linien rechts offen",
+    "/fliesen · 3b · mittel · Schnittzeichnung ohne Beschriftung, Satz erklärt sie nicht",
+    "/fliesen · 3a · hoch (Teil) · Raumliste mit passender Plan-Vignette je Zeile (mit M2-A1)",
+    "/fliesen · 3a · mittel · drei gleich gebaute Linkblöcke wie ein Inhaltsverzeichnis",
+    "/fliesen · 3b · mittel · zweite Linkliste kurz nach der Raumliste",
+    "/fliesen · 3a · mittel · Verlegeplan ohne Satz",
+    "/fliesen · 3b · gering · Fotoreihe weich"
+   ],
+   "rubrik_wirkung": "Kreativität +0,1 bis +0,2 (laden allein rund +0,1 nach Einwand Wirkung, mit der Zeilenmaske aus M2-B2 mehr), Design (Grafik, Komposition) +0,2, Inhalt (Klarheit) +0,1 bis +0,2 auf /fliesen.",
+   "leitplanken": "Bewegung nur aus dem Register (sig-plan Laden, transform), reduziert in der Flucht. Bildunterschriften als Mikrotexte, nur Gezeichnetes benannt. SVG unter 40 KB. Fotos aus dem Bestand. Keine Vignette außerhalb /fliesen verändert (Prop optional).",
+   "risiko": "LCP /fliesen ist der Vorspann (92,5, nah an 90). sig-plan bewegt SVG-Kinder auf dem Hauptthread, darum das Abbruchkriterium. sig-plan 'laden' gilt für alle Wissensseiten mit Plan (/fliesen/*). test/plaene.test.mjs und verband.test.mjs laufen lassen. Glossar: „Estrich“ ist in der Lage davor erklärt, „Randfuge“ mit Marke. Pixel /fliesen.",
+   "prioritaet": 2,
+   "teil": "SF2-C"
+  },
+  {
+   "id": "M2-C5",
+   "titel": "/leistungen: Lage in einer Stufe, Formatregler mit Fliesenoberfläche und Bezugsgröße im eigenen Band",
+   "ebene": "seite",
+   "ansichten": [
+    "/leistungen"
+   ],
+   "dateien": [
+    "src/inhalte/leistungen.ts (lage)",
+    "src/components/momente/formatregler/Formatregler.tsx",
+    "src/components/momente/formatregler/Wand.tsx",
+    "src/app/(bestand)/leistungen/page.jsx (Abschnitt formatregler)"
+   ],
+   "beschreibung": "Ursache: leistungen.ts lage.einleitung (fs-3 grau im Kopf, Überblick) steht vor den Absätzen (fs-4 Tinte, konkrete Lage). Der Formatregler steht auf Kalk direkt nach dem Bereichsraster auf Kalk (270 px Leere ohne Kante). Berichtigung (Einwand Vollständigkeit, am Code bestätigt): Die Wand ist heute schon fill: var(--color-fliese) (bewegung.css .formatregler-flaeche), die Fugen stehen schon in strich 1,5 px. Genau das liest 2b als Drahtmodell, „Fliesen in fliese, Fugen in strich“ änderte also nichts. Bau: 1) Umordnen ohne Wortlautänderung: Die Einleitung entfällt als Einleitung, derselbe Text steht als dritter Absatz nach den beiden Absätzen, alle in fs-4 Tinte (konkrete Lage zuerst). 2) Wand.tsx, Oberfläche ohne JavaScript, ohne IDs und ohne SVG-Muster (zwei Wände je Bild): je Fuge ein breites Band in fuge unter dem Strich (rund 3 Einheiten), die Fliesen im Wechsel fliese (kalk-100) und kalk (kalk-97) als eigene Klassen je Fliese aus geometrie.ts. Unten steht eine Bezugsgröße als Linienzeichnung in 1,5 px (Türzarge an der Wand, ohne Zahl nach E-045). geometrie.ts bleibt unverändert. Ein Glanzstreifen in fliese-glanz entfällt, weil er auf Weiß nicht zu sehen wäre. 3) Der Abschnitt formatregler bekommt eine eigene Fläche (fliese) mit Kantenkreuz an der Leitachse.",
+   "befunde": [
+    "/leistungen · 2b · mittel · Lage-Hierarchie verkehrt, Überblick klein, Situation groß",
+    "/leistungen · 2a · gering · Lage erst grau klein, dann schwarz groß",
+    "/leistungen · 2b · mittel · Formatregler wirkt wie Drahtmodell ohne Bezugsgröße",
+    "/leistungen · 2b · gering · 270 px Leere ohne Fuge vor dem Formatregler"
+   ],
+   "rubrik_wirkung": "Design (Grafik) +0,1 bis +0,2, Kreativität +0,1, Bedienbarkeit (Hierarchie) +0,1 auf /leistungen.",
+   "leitplanken": "Wortlaut der Lage unverändert (nur die Folge). Register formatregler unverändert (direkt, ohne neue Bewegung), keine Zahlen. Nur Farbtokens (fliese, kalk, fuge, strich).",
+   "risiko": "test/formatregler.test.mjs prüft nur geometrie.ts und bleibt grün. Erzwungene Farben: Fliesen auf Canvas, Fugen sichtbar (vorhandene Regel erweitern). Formatregler-Bündel nicht vergrößern (nur Klassen). Pixel /leistungen.",
+   "prioritaet": 2,
+   "teil": "SF2-C"
+  },
+  {
+   "id": "M2-A10",
+   "titel": "Gefälle-Zeichnung auf barrierefrei: Der Tropfen liegt am Ende im Ablauf (Endzustand wie auf balkon)",
+   "ebene": "baustein",
+   "ansichten": [
+    "/bad/barrierefreies-bad"
+   ],
+   "dateien": [
+    "src/app/bewegung.css Block gefaelle-dusche (SF2-O)",
+    "src/lib/motion/register.ts und _werkstatt/register.json: gefaelle-dusche reduziert (SF2-O)",
+    "test/gefaelle-dusche.test.mjs Zeile 55: Endwert opacity 1 (SF2-O, mit Entscheidung)"
+   ],
+   "beschreibung": "Aus nicht_umsetzen geholt (Einwand Wirkung, am Code geprüft: billig). Heute: Keyframe 100 % { translate: 159px 29.5px; opacity: 0 }; der Ersatzpfad zeigt „Pfeile stehen, kein Tropfen“. Nach dem Durchscrollen zeigen die Standbilder darum nur drei Pfeile. Auf /balkon-terrasse loben die Prüfer den Endzustand mit Tropfen in der Rinne. Bau (SF2-O): Keyframe 100 % mit opacity 1 an der Ablaufstelle. Der Ersatzpfad (reduziert, ohne JavaScript, Notaus, Druck, erzwungene Farben, Zurück und Vor) zeigt den Tropfen an derselben Stelle (translate wie 100 %, opacity 1). Der Tropfen liegt unter den Kanten der Rinne und bleibt im Ablauf sichtbar. Register-Zeile „reduziert“: „die Pfeile stehen, der Tropfen liegt im Ablauf“ (register.ts und register.json gemeinsam). Die Erwartung in gefaelle-dusche.test.mjs Zeile 55 wird auf opacity 1 geändert, die Geometrie bleibt. Das ist eine geänderte Erwartung mit Entscheidung, keine Lockerung (G7).",
+   "befunde": [
+    "/bad/barrierefreies-bad · 2a · gering · Endzustand der Gefälle-Zeichnung zeigt nur drei Pfeile, erzählt nicht, dass das Wasser ankommt",
+    "/bad/barrierefreies-bad · 2a bis_ziel · Seitenmoment Gefälle mit sichtbarem Endzustand"
+   ],
+   "rubrik_wirkung": "Kreativität (Seitenmoment im Standbild) +0,1 bis +0,2 auf /bad/barrierefreies-bad (2b 7,0).",
+   "leitplanken": "Bewegung nur über das Register (gefaelle-dusche, vorhandene Kennung). Nur translate und opacity. Reduziert und ruhig gilt der Endzustand. Keine neue Bewegung.",
+   "risiko": "Gering. Bewegung 13 (register.ts gegen register.json) und gefaelle-dusche.test im selben Schritt. Pixel auf /bad/barrierefreies-bad und im Schaufenster gefaelle-dusche.",
+   "prioritaet": 3,
+   "teil": "SF2-O"
+  },
+  {
+   "id": "M2-O1",
+   "titel": "Prüfwerkzeug: Erstbesuch-Bilder erst nach zwei Bildern anhalten (Scheinbefund „Navigation flackert“)",
+   "ebene": "designsystem",
+   "ansichten": [
+    "/bad",
+    "/bad/badsanierung",
+    "/leistungen",
+    "/ueber-uns",
+    "/fliesen",
+    "/kontakt",
+    "/standorte/wetzlar",
+    "/blog"
+   ],
+   "dateien": [
+    "_werkstatt/werkzeuge/sicht.mjs (aus dem Scratchpad sfix/sicht2/sicht.mjs übernommen und berichtigt; SF2-O)"
+   ],
+   "beschreibung": "Werkzeug, keine Seitenänderung. Fester Schritt vor dem Bildsatz von Anlauf 3 (Einwände Leitplanken und Wirkung: Eine offene Frage reicht nicht, der Befund stand auf acht Ansichten als „mittel“). Befund des Plans, von der Gegenprüfung mit acht frischen Kontexten bestätigt (audit/nav-probe.mjs): Ab dem ersten vollständigen Bild steht die Navigation in jedem Bild. Nur der allererste Rahmen vor der ersten Auswertung der Container-Abfrage @7xl (59 bis 154 ms) hat display none. sicht.mjs nimmt jedes Erstbesuch-Bild in einem frischen Kontext direkt nach DOMContentLoaded auf und setzt nur die Animationen auf t. Bau: Vor dem Anhalten wartet sicht.mjs zwei Bilder ab (requestAnimationFrame zweimal, wie rahmenAbwarten in einzelbild.mjs). Danach legt es die Datei unter _werkstatt/werkzeuge/ ab, damit Anlauf 3 sie nutzt. Beleg: eine Bild-für-Bild-Probe gegen den neuen Stand in die Notiz. Keine Änderung an Header.jsx.",
+   "befunde": [
+    "/bad/badsanierung · 1a, 1b · mittel · Navigation fehlt im Einzelbild bei 1000 ms",
+    "/ueber-uns · 3a · mittel · dieselbe Beobachtung",
+    "/fliesen · 3a · mittel · dieselbe Beobachtung",
+    "/standorte/wetzlar · 4b · mittel · dieselbe Beobachtung",
+    "übergreifend 1a Nr. 6, 1b Nr. 5, 3a Nr. 5, 4b Nr. 5 · „Fehler im gemeinsamen Kopf“"
+   ],
+   "rubrik_wirkung": "Verhindert in Anlauf 3 Abzüge von rund 0,05 bis 0,1 in Design und Bedienbarkeit auf acht Ansichten durch einen Scheinbefund.",
+   "leitplanken": "Nur das Prüfwerkzeug. Messverfahren dokumentiert, keine Seite geändert.",
+   "risiko": "Keines für die Seiten. Die Zeitmarken verschieben sich um rund 16 bis 32 ms; im Bericht vermerken.",
+   "prioritaet": 1,
+   "teil": "SF2-O"
+  }
+ ],
+ "textvorschlaege": [
+  {
+   "ansicht": "/ueber-uns",
+   "ort": "Abschnitt „Das sagen unsere Kunden.“, Einleitung (beleg.stimmenEinleitung in src/inhalte/ueber-uns.ts)",
+   "heute": "Was Kunden über unsere Arbeit schreiben, lesen Sie hier. Die Sätze stehen so, wie sie geschrieben wurden. Unser Motto: „Die Zufriedenheit unserer Kunden ist die beste Reklame für uns.“",
+   "vorschlag": "Was Kunden über unsere Arbeit schreiben, lesen Sie hier. Die Sätze stehen so, wie sie geschrieben wurden.",
+   "grund": "Motto viermal auf der Seite (3b hoch, 3a mittel). Es bleibt im großen Zitat mit Zuschreibung. Mit diesem Vorschlag entfällt dort auch die Zeile „Unser Motto:“, unabhängig von der Stufe in M2-C3."
+  },
+  {
+   "ansicht": "/ueber-uns",
+   "ort": "„Unsere Werte im Handwerk.“, Wert 6 (values in src/config/company.js, über WERTE)",
+   "heute": "Kundenbegeisterung · „Die Zufriedenheit unserer Kunden ist die beste Reklame für uns.“",
+   "vorschlag": "Gemeinsame Abnahme · Zum Schluss gehen wir alles gemeinsam mit Ihnen durch.",
+   "grund": "Motto doppelt, „Kundenbegeisterung“ ist ein Werbewort (3a mittel, 3b hoch). Der neue Satz steht sinngleich schon im Ablauf der Seite, ist also keine neue Zusage. Mit dieser Antwort braucht M2-C3 die Stufe 'zwei' nicht."
+  },
+  {
+   "ansicht": "/ueber-uns",
+   "ort": "„Unsere Werte im Handwerk.“, Wert 3 Staubschutz",
+   "heute": "Saubere Baustellenführung mit Schutzvliesen und moderner Staubabsaugung.",
+   "vorschlag": "Wir legen Schutzvlies aus und saugen den Staub ab.",
+   "grund": "Werbesprache statt Alltagssprache (3a mittel, K-011). Inhalt sinngleich, keine Garantie (M-07)."
+  },
+  {
+   "ansicht": "/ueber-uns",
+   "ort": "„Unsere Werte im Handwerk.“, Wert 5",
+   "heute": "Präzision bei Großformaten · Nivelliersystem für absolut planebene große Fliesen und harmonische Fugenbilder.",
+   "vorschlag": "Große Fliesen, ganz eben · Mit einem Nivelliersystem liegen große Fliesen eben, und die Fugen laufen gleichmäßig.",
+   "grund": "Werbeadjektive „absolut planebene“ und „harmonische“ (3a mittel, K-010-F). Das Fachwort Nivelliersystem bleibt mit Erklärung."
+  },
+  {
+   "ansicht": "/ueber-uns",
+   "ort": "„Unsere Werte im Handwerk.“, Namen von Wert 1 und 2",
+   "heute": "HWK Wiesbaden Mitglied · DIN 18534 Abdichtung",
+   "vorschlag": "Eingetragen bei der Handwerkskammer Wiesbaden · Abdichtung nach DIN 18534",
+   "grund": "Etikett-Überschriften (3b mittel, K-011). Fakten unverändert (Anhang F)."
+  },
+  {
+   "ansicht": "/ueber-uns",
+   "ort": "„Wir verlegen Fliesen im Bad, im Haus und auf dem Balkon.“, Absätze 01 und 02 (tun.punkte) und Zeitleiste 2019 (historyTimeline in src/config/company.js)",
+   "heute": "01 Seit 2008 gibt es unseren Betrieb in Aßlar. Eingetragen sind wir bei der Handwerkskammer Wiesbaden. Wir verlegen Fliesen, Platten und Mosaik, im Neubau und in bewohnten Räumen. · 02 Seit 2014 liegt unser Schwerpunkt auf großen Fliesen, denn sie haben weniger Fugen. Seit 2019 ist die Abdichtung bei uns Standard. Wir arbeiten dabei nach DIN 18534. · Zeitleiste 2019: Abdichtung nach Norm für bodengleiche Duschen und Feuchträume.",
+   "vorschlag": "Absätze 01 und 02 streichen; Absatz 03 (Rutschhemmung) bleibt. Die Zeitleiste trägt die Jahreszahlen allein. Ihr Satz zu 2019 wird geteilt, damit er mit beiden Glossar-Erklärungen (Abdichtung, bodengleiche Dusche) unter 25 Wörtern je Satz bleibt: „Abdichtung nach Norm. Wir bauen sie für bodengleiche Duschen und Feuchträume.“",
+   "grund": "Kammer, 2014 und 2019 stehen dreimal (3a mittel, 3b mittel), die Seite ist rund drei Bildschirme zu lang. Ein Aufklapper ist keine Lösung: Das erste sichtbare „Abdichtung“ wäre dann die Zeitleiste ohne Erklärung (K-011), und mit beiden Erklärungen hätte ihr heutiger Satz 35 Wörter."
+  },
+  {
+   "ansicht": "/leistungen",
+   "ort": "„Sprechen Sie mit uns über Ihr Vorhaben.“, Satz über dem Formular (schritt.satz)",
+   "heute": "Nennen Sie uns Ihren Namen und Ihre Telefonnummer. Deniz Tezgel ruft Sie zurück und macht einen Termin mit Ihnen aus.",
+   "vorschlag": "In drei kurzen Schritten: Vorhaben wählen, Fläche und Ort angeben, dann Name und Telefon. Deniz Tezgel ruft Sie zurück und macht einen Termin mit Ihnen aus.",
+   "grund": "Der Satz passt nicht zu Schritt 1 „Welches Projekt planen Sie?“ (2a mittel). Formular unverändert (G8)."
+  },
+  {
+   "ansicht": "/leistungen",
+   "ort": "Einstieg, H1 (titel, titelZeilen) und Ortszeile",
+   "heute": "Alle Leistungen vom Fliesenleger aus Aßlar, Fliese für Fliese. · Für Aßlar, Wetzlar und Umgebung.",
+   "vorschlag": "Alle Leistungen, Fliese für Fliese. · Bad, Böden, Balkon und Untergrund für Aßlar, Wetzlar und Umgebung.",
+   "grund": "Mobil vier unruhige Zeilen („aus Aßlar,“ allein) und der Ort doppelt (2a mittel). Die H1 auf /leistungen ist nicht geschützt. Der Suchbegriff „Fliesenleger“ bleibt im Titel der Metadaten. Ein neuer Schnitt der titelZeilen ohne Textänderung ist verworfen (offene Fragen)."
+  },
+  {
+   "ansicht": "/bad/badsanierung",
+   "ort": "Beleg, Überschrift der Fotoreihe (beleg.titel)",
+   "heute": "So sehen unsere Bäder aus, fertig und während der Arbeit.",
+   "vorschlag": "Unsere Bäder, fertig und im Bau.",
+   "grund": "H2 dreizeilig am Desktop (1b mittel); Aussage gleich."
+  },
+  {
+   "ansicht": "/standorte/wetzlar (alle Ortsseiten)",
+   "ort": "„Das machen wir in Wetzlar.“, Einleitung (TUN_EINLEITUNG in src/app/(bestand)/standorte/[stadt]/page.tsx; sie überschreibt tun.einleitung aus orte.ts)",
+   "heute": "Wir prüfen zuerst den Untergrund. Im Bad und auf dem Balkon kommt eine Abdichtung. Sie kommt nach DIN 18534 unter die Fliesen.",
+   "vorschlag": "Wir prüfen zuerst den Untergrund und dichten Bad und Balkon nach DIN 18534 ab.",
+   "grund": "Sechs bis sieben Zeilen mit drei Klammern vor der Liste, für die Prüfperson (72, Handy) die schwerste Stelle (4a gering). Ein Satz statt drei, die Glossarwörter bleiben markiert. Ort und „heute“ berichtigt: Auf der Seite steht TUN_EINLEITUNG, nicht der Text aus orte.ts."
+  },
+  {
+   "ansicht": "/balkon-terrasse",
+   "ort": "Glossar-Erklärung „Gefälle“ im Prüfpunkt 01 (gefaelle in src/config/glossar.ts)",
+   "heute": "der Boden neigt sich leicht, damit Wasser von selbst zum Ablauf fließt",
+   "vorschlag": "eigener Eintrag für draußen: der Belag neigt sich leicht, damit Wasser von selbst zum Rand und in die Rinne läuft",
+   "grund": "Die Erklärung aus dem Bad widerspricht Zeichnung und Text der Balkonseite (2b gering). Der bisherige Eintrag bleibt für das Bad."
+  },
+  {
+   "ansicht": "/fliesen",
+   "ort": "„Alles beginnt mit dem Boden.“, Wegzeile „Fliesenarten im Vergleich“ (wissen[0].wege in src/inhalte/fliesen.ts)",
+   "heute": "Wir zeigen, welche Fliese für welchen Raum taugt.",
+   "vorschlag": "Feinsteinzeug, Steinzeug und Steingut unterscheiden sich darin, wie viel Wasser sie aufnehmen und ob sie Frost aushalten.",
+   "grund": "Die zweite Linkliste verweist, statt zu erklären (3b mittel, 3a mittel Teil). Inhalt aus der Beschreibung der Unterseite /fliesen/fliesenarten (vorhandener Text), keine neue Behauptung."
+  },
+  {
+   "ansicht": "/fliesen",
+   "ort": "„Alles beginnt mit dem Boden.“, Wegzeile „Muster, Fugen und Kanten“ (wissen[0].wege in src/inhalte/fliesen.ts)",
+   "heute": "Dort zeigen wir, wie die Fugen verlaufen und wie Ecken und Kanten sauber enden.",
+   "vorschlag": "Kreuzfuge, Halbverband, Fischgrät oder diagonal: Je nach Muster planen Sie unterschiedlich viel Verschnitt ein.",
+   "grund": "„Dort zeigen wir …“ ist ein Verweis ohne Antwort (3b mittel). Inhalt aus der Beschreibung der Unterseite /fliesen/verlegemuster (vorhandener Text)."
+  }
+ ],
+ "nicht_umsetzen": [
+  {
+   "befund": "Querformat 3 : 2 über die Satzbreite im Einstieg; Hochformat füllt am Desktop nur 574 von 1248 px (/bad 1b hoch, /bad/badsanierung 1b hoch, /standorte/wetzlar 4a hoch Teil; übergreifend 1b Nr. 3, 2a Nr. 3)",
+   "grund": "E-104 Nr. 6: keine Querformat-Zuschnitte bis zur Antwort auf UM-12; ein neuer Zuschnitt wäre eine neue Bilddatei. Ersatz: schärfere fertige Hochformate (M2-B1) und, nach Freigabe K-003, der Einstieg im Verband mit zweitem Hochformat (M2-B8). Frage erneut in offene_fragen."
+  },
+  {
+   "befund": "Einstiegsfoto mit bilder.mjs in Belichtung und Weißabgleich korrigieren (/bad/badsanierung 1a, 1b; /bad/barrierefreies-bad 2a Alternative)",
+   "grund": "badsanierung-beleg-2 hat 13,4 % ausgefressene Pixel (Fenster links oben). Was im Weiß liegt, holt keine Korrektur zurück, und eine neu belichtete Datei ist ein neues Bild. Ersatz: Tausch gegen start-dusche bzw. barrierefrei-beleg-1."
+  },
+  {
+   "befund": "Einsatzkarte mit markiertem Wetzlar als Ortsmoment in „Ihre Lage“ (/standorte/wetzlar 4a mittel, bis_ziel 4a)",
+   "grund": "E-104 Nr. 10 und K-008: Die Karte auf /standorte nur nach Rückfrage beim Auftraggeber (E-037). Teilersatz: Ortsmaß am Einzugsband (roter Abschnitt bis zur Zone des Ortes, Entfernung als Kennzahl, Band breit; M2-B7). Der Befund „nichts ortseigen“ ist damit nur zum Teil behoben. Rückfrage in offene_fragen."
+  },
+  {
+   "befund": "Ein echtes Projekt aus Wetzlar zeigen, Ort auf der Glasfläche (/standorte/wetzlar 4a, bis_ziel, 4b gering Teil)",
+   "grund": "K-015 und Bildregeln: keine belegten Fotos aus Wetzlar, keine erfundenen Orte."
+  },
+  {
+   "befund": "Hauptnavigation verschwindet beim Erstbesuch in einzelnen Bildern bei d1440 (/bad, /bad/badsanierung, /leistungen, /ueber-uns, /fliesen, /kontakt, /standorte/wetzlar, /blog; übergreifend 1a Nr. 6, 1b Nr. 5, 3a Nr. 5, 4b Nr. 5)",
+   "grund": "Kein Flackern. Die Bild-für-Bild-Probe (Plan) und die Gegenprobe mit acht frischen Kontexten zeigen die Navigation ab dem ersten vollständigen Bild in jedem Bild. Nur der Rahmen vor der ersten Auswertung der Container-Abfrage @7xl hat display none. Ursache ist das Prüfwerkzeug (Aufnahme direkt nach DOMContentLoaded). Die Werkzeugkorrektur ist fester Schritt M2-O1 vor Anlauf 3. Keine Änderung an Header.jsx: Eine zusätzliche Medienabfrage änderte eine gemeinsame Datei ohne sichtbaren Fehler und müsste bei 200 % Systemschrift neu geprüft werden."
+  },
+  {
+   "befund": "Namen der Fotos am Desktop dauerhaft zeigen (/leistungen 2b mittel, 2a gering; /fliesen 3b gering)",
+   "grund": "K-016 und E-047 (Auftraggeber): Name und Weg auf der Glasfläche beim Darüberfahren, wie in Runde 1 (/ b5) entschieden. Fotos, deren Weg auf dieselbe Seite führt, haben keinen Link und tragen den Namen immer (Messung am Server: /balkon-terrasse und /bad/badsanierung DIV, /leistungen A). Die Glasfläche wird schlanker (M2-A8)."
+  },
+  {
+   "befund": "Rote Unterstreichung in der Kundenstimme durch Tinte ersetzen (/ 1a gering, /bad/badsanierung 1a gering)",
+   "grund": "Widerspruch zu 2b (Anriss auf allen Erzählseiten einheitlich). Der rote Anriss am Schlüsselwort gehört zum Leitfaden Laserlinie (K-007); entschieden für 2b, ergänzt auf barrierefrei und balkon (M2-A7)."
+  },
+  {
+   "befund": "Kopf linksbündig an die Kante des versetzten Inhalts bzw. Kopf der Lage an die Laserlinie (übergreifend 3a Nr. 2; /bad/badsanierung 1b; /bad/barrierefreies-bad 2b; /referenzen 3a Alternative; /ueber-uns 3a; /standorte/wetzlar 4b gering)",
+   "grund": "Ruhe-Regel K-003 „Köpfe mittig“ (Wunsch des Auftraggebers, E-047). Entschieden für 1a und 2a: Inhalt auf die Kopfachse mit Breitenwechsel (M2-A1)."
+  },
+  {
+   "befund": "Zeitleiste in Laserrot mit fugenband und Auftritt je Station; Zeitmarken auf das Lot der Leitachse (/ueber-uns 3b gering, bis_ziel 3a; Gegenprüfung Wirkung)",
+   "grund": "Ein zweites rotes Lot neben der Leitachse im selben Bildschirm (K-003 Nr. 5, Runde 1 UM-E3-REG). Die Zeitleiste an der Leitachse stünde links im Rand gegen „Köpfe mittig“ und müsste CompanyHistory bei t1024 neu umbrechen. Befund gering, Hebel nicht billig. auftritt wäre registriert, wirkt in Standbildern aber kaum."
+  },
+  {
+   "befund": "Roter Anriss vom Lot bis zur Grundlinie jeder H2, rotes Kantenkreuz des aktuellen Abschnitts, Leitachse rot nur vom zuletzt passierten Kantenkreuz bis zur Leselinie (übergreifend 1b Nr. 4, 3b; / 1b mittel; Gegenprüfung Wirkung)",
+   "grund": "Die Leitachse ist das Dauermotiv aller zwölf Ansichten, auch von / (dort nur Befunde hoch, E-105). 4a und 4b loben sie, 1b und 3b tadeln sie. Ein Zeitstrahl je Abschnitt (view-timeline) statt des gemeinsamen änderte ihr Verhalten auf allen Seiten in der letzten Runde. Das trifft Register, Bewegungstests und Leitfaden-Marken ohne hohen Befund. Kreativität kommt stattdessen über Seitenmomente (M2-A5, M2-A10, M2-B2, M2-B7, M2-C2, M2-C4)."
+  },
+  {
+   "befund": "Projektcheck auf /bad nur als Link zur eigenen Seite (/bad 1b Alternative)",
+   "grund": "Funktionsliste F-05 (LAGEBILD: /bad/projekt-check und /bad, als Hilfe): Er bleibt eingebettet, nur geschlossen (M2-B4, mit Entscheidung)."
+  },
+  {
+   "befund": "Hauptknopf im Fuß nochmals am Seitenende (/bad 1a, Teil)",
+   "grund": "Der Fuß ist eine gemeinsame Datei. Der Hauptknopf steht nach K-004 überall. Kein Paket für den Fuß in dieser Runde."
+  },
+  {
+   "befund": "Glossar als antippbares Popover statt Klammererklärung (übergreifend 2b Nr. 7, 3a Nr. 4, 4a Nr. 4; /referenzen 3a Teil)",
+   "grund": "K-011: Erklärung beim ersten Vorkommen sichtbar; lesbarkeit.mjs zählt sichtbaren Text. Fachwort ist ein gemeinsamer Baustein, ein Popover brächte Skript in den ersten Laden (A-1). Ersatz: Fachtext im Aufklapper (M2-C2), Textvorschläge T-6 und T-10."
+  },
+  {
+   "befund": "Kundenstimme C. W. vollständig zeigen oder „ganz lesen“ (/standorte/wetzlar 4a gering)",
+   "grund": "G8 Wortlaut der Stimmen (gekürzt nur mit „…“). Google hat keine Adresse je Rezension; der Link zu allen Bewertungen steht schon an der Kennzeile (Runde 1)."
+  },
+  {
+   "befund": "„Mittelhessen“ statt „ganz Hessen“ im Zeitleisten-Eintrag „Heute“ (/ueber-uns 3b gering)",
+   "grund": "Firmendaten aus company.js (G8), Frage in MENSCHEN offen; bis zur Antwort unverändert."
+  },
+  {
+   "befund": "Porträt von Deniz Tezgel bei „Wer kommt in Ihr Haus?“ (/ueber-uns 3b mittel, Teil)",
+   "grund": "Kein Porträt im Bestand; ein Porträt braucht Zustimmung (MENSCHEN). Ersatz: Arbeitsfotos direkt nach der Lage (M2-C3 Nr. 4)."
+  },
+  {
+   "befund": "/ueber-uns: nummerierte Absätze 01 bis 03 wiederholen Zeitleiste und Werte, Seite rund 14 Bildschirme (3a mittel)",
+   "grund": "Im Aufklapper (punkteMehr) stünde das erste sichtbare „Abdichtung“ unerklärt in der Zeitleiste (K-011), und ihre Erklärung dort sprengt 25 Wörter. Streichen ist eine Textentscheidung: T-6. Die Liste verliert mit M2-A7 ihre Nummern."
+  },
+  {
+   "befund": "Mobil Ortszeile und Knöpfe erst nach der H1 einblenden oder die H1-Zeilen mobil auf 0 bis 300 ms verkürzen (/bad/barrierefreies-bad 2b, /balkon-terrasse 2b, / 1b gering; übergreifend 2b Nr. 5, 3b; Gegenprüfung Wirkung)",
+   "grund": "E-067-4 und UM-E3-FIX2 N6: Hauptknopf und Anruf stehen mobil sofort. Ein kürzerer Takt der H1 in EinstiegMitte änderte das Verhalten der H1 auf / und /bad/badsanierung (G8: in Inhalt und Verhalten gleich). Für die Ortsseiten gilt in M2-B2 dasselbe wie heute."
+  },
+  {
+   "befund": "Qualitätsversprechen auf /fliesen streichen oder durch neue Punkte ersetzen (3b gering)",
+   "grund": "Muss-Rückführung EP3 (E-094), neue Punkte wären erfundener Text. Ersatz: drei passende Punkte offen (M2-A3)."
+  },
+  {
+   "befund": "Ablauf auf /blog auf einen Satz mit Link kürzen (/blog 4b hoch, Teil)",
+   "grund": "K-009: Der Ablauf ist Pflichtteil der Seitenformel, Wortlaut nur als Vorschlag. /blog ohne eigenes Gestaltungspaket (E-105)."
+  },
+  {
+   "befund": "Vorher-Nachher-Regler für die Entstehungsfotos (/bad/barrierefreies-bad 2b Alternative)",
+   "grund": "vorher-nachher braucht zwei Aufnahmen derselben Stelle; die beiden Entstehungsfotos zeigen verschiedene Ausschnitte und Stände. Ersatz: Zweierbild im Verband (M2-A4)."
+  },
+  {
+   "befund": "Vorher/Nachher auf /referenzen breiter als rund 400 px (d1440) bzw. 500 px (d1920) (3a mittel, Restgrenze)",
+   "grund": "Das Foto hat 0,515 : 1 (900 × 1752), die Höhe begrenzt die Breite. Breiter ginge nur mit anderem Zuschnitt (E-104 Nr. 6) oder einer Bühne höher als der Bildschirm (Foto im Standbild nicht ganz zu sehen, Ruhe-Regel „Bilder vollständig“). Gewählt ist die Bühne auf Tinte (M2-C2); der Teil „Breite“ des Befunds bleibt offen."
+  },
+  {
+   "befund": "Etikettzeilen „Nach Raum“ und „Nach Fliese“ über den beiden Linklisten auf /fliesen (Gegenprüfung Vollständigkeit)",
+   "grund": "K-003 Nr. 1 „Lassen: Etiketten über jeder Überschrift“. Beide Listen stehen schon unter eigenen H2. Die Unterscheidung tragen die verschiedene Bauform (M2-C4) und die Sätze (T-12, T-13)."
+  },
+  {
+   "befund": "Treppe mobil mit eingerückten Stufen (/bad/barrierefreies-bad 2a gering)",
+   "grund": "Gering und nicht billig: neue Linienform mobil (Ablauf, bewegung.css). Der Endzustand der Gefälle-Zeichnung aus demselben bis_ziel ist dagegen billig und wird gebaut (M2-A10)."
+  },
+  {
+   "befund": "Befunde mittel und gering auf / (Leistungskarten, Galerie mit schwachen Fotos, Ortsspalten, Leitachse, Stimmen-Spalte, Plan bei t768, mobile Staffel)",
+   "grund": "E-105: auf / nur Befunde hoch und die Wirkung gemeinsamer Vorlagen (drei Runden schon). Für eine spätere Runde wäre die Galerie mit bad-beleg-2, bad-einstieg und bad-beleg-3 der stärkste Hebel."
+  },
+  {
+   "befund": "Befunde mittel und gering auf /bad (Schichtaufbau mit Leerstrecke, Zeichnung klein, Projektcheck-Beschriftungen, Ablauftext, Pflegekassen-Hinweis doppelt)",
+   "grund": "E-105 Abbruchregel (+0,06 in Runde 1): nur Befunde hoch. Lage und Liste verbessern sich über M2-A1, die Vignette über M2-B3."
+  },
+  {
+   "befund": "Befunde mittel und gering auf /kontakt (Kontaktliste ohne Kasten, Karte breiter, Mono-Etiketten, Kostenfrei-Satz vor das Formular, Vorspann, Treppenabsatz, Führungslinie Gießen)",
+   "grund": "E-105: /kontakt ohne Gestaltungspaket (keine Befunde hoch). Die leere Zelle im Projektraster schließt M2-A2 nebenbei."
+  },
+  {
+   "befund": "Befunde mittel und gering auf /blog (Metaspalte, Themenköpfe, Vignetten doppelt, Teaser, Leitfaden-Zeichnung, Suchfeld unter der Falz, Chips, Stellenanzeige, Ortszeile)",
+   "grund": "E-105: auf /blog nur der hohe Befund (untere Hälfte, M2-B5 und M2-A3). Die Zeilenmaske der Wissensseiten (M2-B2 Nr. 3) wirkt nur nebenbei und nur nach dem Messpunkt."
+  },
+  {
+   "befund": "Ortsstrich im Kopf für /leistungen und /fliesen (/leistungen 2b gering, /fliesen 3a gering)",
+   "grund": "Header.jsx und navigation.js sind gemeinsame Dateien. Die Navigation ist nach K-010 im Baumtest bestätigt; gering."
+  },
+  {
+   "befund": "Bereichs-Vignetten als volle Verlegepläne ohne grauen Kasten, Karte Untergrund kürzen (/leistungen 2a, 2b gering)",
+   "grund": "Gering. Leistungsplaene ist ein eigener Moment mit Plan-Morph (E-037), Kürzungen wären Text (nur als Vorschlag)."
+  }
+ ],
+ "teile": [
+  {
+   "teil": "SF2-A",
+   "ziel": "Vorlagen und gemeinsame Bausteine. Zuerst die Typen aus M2-A6 festschreiben und einspielen: TunInhalt.punkteMehr, Wissensblock.wegeForm, VersprechenInhalt.offen, WorumInhalt.bildZwei, ZweiterBeleg.flaeche 'tinte', ErzaehlSeite momente.stimmen → Beleg stimmenZusatz. Dann M2-A1 als Probe an /bad/badsanierung, /fliesen und /referenzen bauen; der Orchestrator sieht sie bei d1440, d1920, t1024 und m390 an, erst danach folgt der Rest: M2-A2, M2-A3, M2-A8, M2-A4, M2-A5, M2-A7 und zuletzt M2-A9. Abnahme im Paket: Bildfolge der ersten vier Bildschirme je Ansicht ohne zwei gleich gebaute Nachbarn; Funktionssuite F-02, F-07, F-09; werte.mjs 0. Nach dem Teil folgt der CSS-Messpunkt (gzip, Restbudget rund 2,3 KB), bevor B und C eingespielt werden.",
+   "dateien": [
+    "src/components/kern/Abschnitt.tsx",
+    "src/components/kern/Glasbild.tsx",
+    "src/components/vorlagen/inhalt.ts",
+    "src/components/vorlagen/ErzaehlSeite.tsx",
+    "src/components/vorlagen/teile/Lage.tsx",
+    "src/components/vorlagen/teile/Tun.tsx",
+    "src/components/vorlagen/teile/Wissen.tsx",
+    "src/components/vorlagen/teile/Schritt.tsx",
+    "src/components/vorlagen/teile/Versprechen.tsx",
+    "src/components/vorlagen/teile/Fotos.tsx",
+    "src/components/vorlagen/teile/Stimmen.tsx",
+    "src/components/vorlagen/teile/Ablauf.tsx",
+    "src/components/vorlagen/teile/Beleg.tsx",
+    "src/components/momente/gefaelle-dusche/GefaelleDusche.tsx",
+    "src/components/momente/gefaelle-balkon/GefaelleBalkon.tsx",
+    "src/components/funnels/TezgelAnfrageFunnel/Schritt1.jsx"
+   ],
+   "reihenfolge": 1
+  },
+  {
+   "teil": "SF2-B",
+   "ziel": "Einstiege, Bilder und Ortsseiten: Bildtabelle (M2-B1) mit Vergleichsbildern bad-beleg-2 gegen bad-beleg-1 und den Einstiegen von /bad/badsanierung und /referenzen. Dazu der Eingang „An der Schnur“ mit Zeilenmaske (M2-B2; der Typ der Prop zeilenmaske wird zuerst festgeschrieben, damit SF2-C ihn setzen kann), das Ortsmaß am Einzugsband (M2-B7), das Schnurzeichen an der H1 (M2-B3), /bad mit einem Abschluss (M2-B4, nur mit Entscheidung, sonst der Rückfall), Fotos und Stimmen auf /blog (M2-B5), die Bildunterschrift (M2-B6) und versprechen.offen in den eigenen Inhalten. Die tun.satz-Überschreibungen in barrierefrei und balkon entfallen. Zuletzt und nur mit Freigabe K-003: der Einstieg im Verband (M2-B8). Baut parallel zu SF2-C gegen die Typen aus SF2-A. B und C werden in einem Zug eingespielt (start-dusche wechselt von /referenzen nach /bad/badsanierung; Galerie 2).",
+   "dateien": [
+    "src/components/vorlagen/teile/Einstieg.tsx",
+    "src/components/vorlagen/teile/EinstiegMitte.tsx",
+    "src/components/vorlagen/OrtsSeite.tsx",
+    "src/components/kern/Einzugsband.tsx",
+    "src/inhalte/bad.ts",
+    "src/inhalte/bad-badsanierung.ts",
+    "src/inhalte/barrierefreies-bad.ts",
+    "src/inhalte/balkon-terrasse.ts",
+    "src/inhalte/orte.ts",
+    "src/inhalte/galerie.ts",
+    "src/inhalte/blog.ts",
+    "src/app/(bestand)/standorte/[stadt]/page.tsx",
+    "src/app/(bestand)/bad/page.jsx"
+   ],
+   "reihenfolge": 2
+  },
+  {
+   "teil": "SF2-C",
+   "ziel": "Seitenmomente auf den Schnittstellen von SF2-A. /referenzen: Galerie oben ohne Loch, ansage mit optionalem Parameter, ein Filtermuster mobil, Einstieg bad-beleg-3 mit Tausch in daten.ts, Bühne auf Tinte, Fachtext im Aufklapper, Stimmenkarten ohne Rahmen. /ueber-uns: Motto als Datenschalter nach Entscheidung, Werte gleich gebaut, Arbeitsfotos nach der Lage, Punkte offen. /fliesen: Plan „laden“ mit Abbruchkriterium, Schichtschnitt mit Bildunterschrift und Bruchkante, Raumliste mit Zeichnungen, zweite Liste als Fugenfeld, Fotoreihe Großformat zuerst; die Zeilenmaske in WissensSeite erst nach dem Messpunkt aus M2-B2. /leistungen: Lage in einer Stufe, Formatregler-Oberfläche mit Türzarge. Baut parallel zu SF2-B, wird zusammen mit SF2-B eingespielt.",
+   "dateien": [
+    "src/components/vorlagen/WissensSeite.tsx",
+    "src/inhalte/referenzen.ts",
+    "src/inhalte/ueber-uns.ts",
+    "src/inhalte/fliesen.ts",
+    "src/inhalte/leistungen.ts",
+    "src/app/(bestand)/referenzen/page.jsx",
+    "src/app/(bestand)/ueber-uns/page.jsx",
+    "src/app/(bestand)/fliesen/page.jsx",
+    "src/app/(bestand)/leistungen/page.jsx",
+    "src/components/momente/galerie-filter/GalerieWahl.tsx",
+    "src/components/momente/galerie-filter/daten.ts",
+    "src/components/momente/vorher-nachher/VorherNachher.tsx",
+    "src/components/sections/ReviewsSection.jsx",
+    "src/components/ueber-uns/Werte.tsx",
+    "src/components/sections/CompanyHistory.jsx",
+    "src/components/kern/vignetten/Untergrund.tsx",
+    "src/components/momente/formatregler/Formatregler.tsx",
+    "src/components/momente/formatregler/Wand.tsx"
+   ],
+   "reihenfolge": 3
+  },
+  {
+   "teil": "SF2-O",
+   "ziel": "Orchestrator, begleitet alle Teile und besitzt jede gemeinsame Datei. Vorab: Entscheidungen zu den offenen Fragen 1 bis 9 eintragen; M2-O1 (sicht.mjs zwei Bilder abwarten, nach _werkstatt/werkzeuge übernehmen). Nach SF2-A: CSS-Messpunkt; globals.css (glas-hoch-paar); bewegung.css (glasbild-Auslauf 4 Einheiten, M2-A8); Register leitachse.was und K-003 „Fläche“, K-007, K-009 (M2-A1); ENTSCHEIDUNGEN (M-B1 Nr. 2, V-6, NO-3, O-3 zurück; Lesart „zwei Spalten einer Liste sind ein Strang“). Nach B und C: bewegung.css (Variante data-zeilenmaske dauer-2, Schnur der Wissensseiten dauer-2, .vn-hoehe ab lg, gefaelle-dusche Endzustand M2-A10, einzugsband prüfen); globals.css (Galerie-Block, zeichen-luft); stile.ts (wahlKlassen-Variante); register.ts und register.json gemeinsam (zeilenmaske Wo, sig-plan Wo nach dem Messpunkt, gefaelle-dusche reduziert); Tests (intro „Eingang 7“ positiv, Zeile 323 wörtlich; seitenformel-folgen EIN.nachLage '/ueber-uns'; gefaelle-dusche Zeile 55); Spec F-05 nur mit Entscheidung im selben Commit wie bad/page.jsx und K-010; KERN K-003 „Einstieg“ (nur mit M2-B8), K-008, K-010. Messpunkte vor dem Bildsatz: Lighthouse mobil mit sechs Läufen für /bad/badsanierung (TBT 194 von 200 ms), /fliesen (92,5), /standorte/wetzlar, /referenzen und /blog. R-1 mit sieben Läufen, Funktionssuite, axe, Lesbarkeit, werte.mjs 0. Rückweg je Ansicht: die zuletzt eingespielte Maßnahme zurücknehmen, wenn der Median unter 90 fällt oder TBT über 200 ms steigt (A-1: 11 von 12).",
+   "dateien": [
+    "src/app/globals.css",
+    "src/app/bewegung.css",
+    "src/components/kern/stile.ts",
+    "src/lib/motion/register.ts",
+    "_werkstatt/register.json",
+    "test/intro.test.mjs",
+    "test/seitenformel-folgen.test.mjs",
+    "test/gefaelle-dusche.test.mjs",
+    "_werkstatt/werkzeuge/tests/funktion-projektcheck.spec.mjs",
+    "_werkstatt/werkzeuge/sicht.mjs (neu, aus dem Scratchpad übernommen)",
+    "_werkstatt/KERN.md",
+    "_werkstatt/ENTSCHEIDUNGEN.md"
+   ],
+   "reihenfolge": 4
+  }
+ ],
+ "erwartung": "Ehrliche Schätzung, wenn Priorität 1 und 2 vollständig und ohne Rückschritt gebaut sind. Die Spannen enthalten die Streuung der Prüfer, die auf / ohne Änderung am Hauptinhalt −0,29 erzeugt hat. Gegenüber dem Plan sind /fliesen, /standorte/wetzlar und /referenzen nach der Gegenprüfung Wirkung um rund 0,1 bis 0,2 gesenkt, weil Kreativität dort kaum steigt. Ein Teil kommt über die neuen Hebel zurück: Ortsmaß, Zeilenmaske der Wissensseiten nach Messpunkt, Bühne auf Tinte, Tropfen im Ablauf, schlankere Glasflächen. Volle Runde: /bad/badsanierung 7,25 → 7,6 bis 7,9 (Foto, Achse mit breiter Zeichnung, Zweierbild, Laserweg, Versprechen); /bad/barrierefreies-bad 7,50 → 7,8 bis 8,0 (mit M2-A10); /leistungen 7,35 → 7,6 bis 7,9 (mit T-7 und T-8 bis 8,0); /balkon-terrasse 7,60 → 7,9 bis 8,1; /referenzen 7,25 → 7,5 bis 7,7 (Bühne und Galerie, der Tausch des Einstiegsfotos zählt 0 bis −0,05); /ueber-uns 7,06 → 7,3 bis 7,6 mit Motto-Stufe 'zwei', ohne Entscheidung 7,2 bis 7,4, mit T-1 bis T-6 bis 7,8; /fliesen 7,08 → 7,4 bis 7,7 (Ziel 8,0 verfehlt); /standorte/wetzlar 7,12 → 7,5 bis 7,8 (Ziel 8,0 verfehlt, außer Foto, Eingang und Ortsmaß tragen voll). Eingeschränkt: / 7,45 → 7,5 bis 7,7 (Formularblock, Glasfläche); /bad 7,05 → 7,3 bis 7,6 (Foto, Lage über die Vorlage; der Abschluss nur mit Freigabe der Spec, sonst Obergrenze 7,4; Einstieg im Verband nur mit Freigabe); /kontakt 7,46 → 7,4 bis 7,6 (geschlossenes Projektraster); /blog 6,79 → 7,0 bis 7,2. Keine Erzählansicht erreicht 8,5. Von den Wissens- und Ortsansichten erreicht keine sicher 8,0. „Keine Kategorie unter 7,5“ bleibt auf mehreren Ansichten verfehlt: Kreativität auf /blog, /fliesen, /referenzen und /standorte/wetzlar, wahrscheinlich auch auf /bad/badsanierung (1b) und /bad/barrierefreies-bad (2b), dazu Inhalt auf /ueber-uns ohne Textfreigabe. Die Grenzen liegen außerhalb dieser Runde. Der Bestand hat nur Hochformate ohne Querformat (UM-12). Texte gibt es nur als Vorschlag. Kreativität wird an Standbildern bewertet. Vier Ansichten sind nur eingeschränkt bearbeitbar. Der eigene Höhepunkt jeder Erzählseite liegt weiter in der Seitenmitte (übergreifend 1a Nr. 5, 2b Nr. 6). Größter Hebel bleibt M2-A1, aber nur, wenn die Probe den Rückfall in axiale Gleichförmigkeit ausschließt. Es folgen die Bildtabelle (M2-B1), der Eingang der Ortsseiten (M2-B2) und das Ortsmaß (M2-B7).",
+ "offene_fragen": [
+  "Funktionssuite (M2-B4): Darf funktion-projektcheck.spec.mjs auf /bad vor den Prüfungen die Zeile „Bad in vier Schritten beschreiben“ wirklich anklicken (Nutzlast, Zustand und WhatsApp-Ziel unverändert, G7 nicht gelockert), zusammen mit K-010 und bad/page.jsx in einem Commit? Ohne Ja bleibt der Projektcheck offen, Badanfrage und Badplaner werden eine Zeile, und beide hohen Befunde auf /bad bleiben.",
+  "Eingang (M2-B2): M-A3 Nr. 2 für die Ortsseiten aufheben (dort ist seit M-C6 das Foto das LCP-Element). Für die Wissensseiten nur nach Messpunkt: Fläche der H1 kleiner als der Vorspann (m390 mit 200 %, d1440), LCP bleibt der Vorspann, Lighthouse /fliesen und /blog im Median ≥ 91. intro.test „Eingang 7“ positiv fassen (Zeile 320), Zeile 323 wörtlich lassen; K-007 Spalte Wo nachziehen.",
+  "Satzspiegel v2 (M2-A1): K-003 Ruhe-Regel „Fläche“ neu fassen. Köpfe mittig; Inhalt auf der Kopfachse über zwei Drittel; Listen ab vier Einträgen voll breit in zwei Spalten; Punkte (Absätze) einspaltig; Momente breit; je Bildschirmhöhe ein Bruch, also Versatz (Treppe, Fotoreihe, Stimme, Zweierbild, Einstiegspaar) oder Breitenwechsel. Lesart „zwei Spalten derselben Liste sind ein Strang“ wie Ablauf 1 bis 3 und 4 bis 6. M-B1 Nr. 2, V-6, NO-3 und O-3 in ENTSCHEIDUNGEN zurücknehmen; register.ts und register.json (leitachse.was) und K-007 im selben Schritt.",
+  "Einstieg im Verband (M2-B8): K-003 Ruhe-Regel „Einstieg“ erweitern auf „dann das Foto vollständig, ab lg wahlweise mit einem zweiten Hochformat derselben Seite an einer Fuge, eine Stufe tiefer, gemeinsam mittig“? Nur auf /bad, /bad/badsanierung, /bad/barrierefreies-bad und /balkon-terrasse, nur nach Bildprobe und unveränderter Lighthouse-Messung; / bleibt ausgenommen (G8). Ohne Ja entfällt die Maßnahme.",
+  "/ueber-uns (M2-C3 Nr. 1): Gilt das Zusammenlegen identischer Textstellen als erlaubt, wenn jedes Wort einmal vollständig bleibt? Stufe 'eins' legt Einleitung Satz 3 und Leitsatz zusammen (Motto dreimal). Stufe 'zwei' legt auch Wert 6 mit dem Etikett „Kundenbegeisterung“ dazu (Motto zweimal). Gebaut als Datenschalter. Ohne Entscheidung bleibt 'bestand' (viermal), und der hohe Befund bleibt bis zur Antwort auf T-1 und T-2.",
+  "sig-plan (M2-C4): Darf der Plan im Einstieg der Wissensseiten mit Plan beim Laden in die Flucht rücken? Das ist die vorhandene Registerbewegung „Laden“, heute nur in Planblatt-Einstiegen, E-044 und K-008 führen „zeigen“. Abbruchkriterium: /fliesen allein, sechs Läufe, unter 91 im Median zurück auf 'zeigen'. Die Zeilenmaske hat beim Puffer Vorrang. Register und K-008 erst nach dem Messpunkt ändern.",
+  "Bildtabelle (M2-B1): Bewusste Abweichung von M-A2 Nr. 4 annehmen? start-galerie-1 wird Aufmacher der Ortsseiten und ist erstes Galeriefoto auf / und auf /referenzen; bad-einstieg ist Aufmacher von /leistungen und erstes Foto der Reihe auf /bad. Die Regel aus E4-W0-BILDER („Wetzlar zeigt nur Fotos, die auf keiner anderen Hauptansicht stehen“) entfällt, weil start-beleg-terrasse auch auf / und badsanierung-einstieg auch auf /bad/badsanierung steht. /referenzen tauscht das gelobte start-dusche (Güte A) gegen bad-beleg-3 (Güte B). start-beleg-bad (Güte A) ist dafür verworfen, weil seine Helligkeit 0,35 unter der Untergrenze liegt. Strenge Alternative für die Ortsseiten: badsanierung-einstieg als Aufmacher.",
+  "/blog (M2-B5): E-065 („kein Foto auf /blog“) durch den hohen Befund ablösen.",
+  "Gefälle-Zeichnung (M2-A10): Endzustand von gefaelle-dusche auf „Tropfen liegt im Ablauf“ ändern; die Erwartung in test/gefaelle-dusche.test.mjs Zeile 55 wird geändert, nicht gelockert, die Register-Zeile „reduziert“ wird nachgezogen.",
+  "Auftraggeber (MENSCHEN): Querformat-Zuschnitte aus den 84 Originalen (UM-12) bleiben der größte Hebel für Design und Bild. Dazu die Textvorschläge T-1 bis T-13 (vor allem /ueber-uns, /leistungen und /fliesen) und die Einsatzkarte auf den Ortsseiten (E-037).",
+  "Verworfene Einwände der Gegenprüfungen (je mit Grund): Kontaktzeile in drei Spalten verworfen, die Rufnummer braucht gemessen 281 px, bei drei Spalten blieben rund 249 px. Listen im Zwei-Drittel-Block statt voll breit verworfen, weil 3a (hoch), 2a und 2b ausdrücklich die volle Breite verlangen; die Blöcke stehen dafür symmetrisch zur Achse. Punkte rechts im Drittelverband an einer sichtbaren Fuge verworfen, das brächte die Versatzspalte zurück, die 2b tadelt. Leitachse je Abschnitt verworfen (siehe nicht_umsetzen). Medienabfrage im Kopf gegen das „Flackern“ verworfen, es ist kein sichtbarer Fehler; die Werkzeugkorrektur ist M2-O1. Vorher/Nachher bis 1,2 Bildschirmhöhen verworfen, das Foto stünde im Standbild nicht ganz; ebenso die Fuge mit Kantenkreuz an der Anleitung, sie behält den zweiten Strang.",
+  "Weitere verworfene Einwände: Glanzstreifen im Formatregler verworfen, fliese-glanz ist auf Weiß nicht sichtbar. Etiketten „Nach Raum“ und „Nach Fliese“ verworfen (K-003 Nr. 1). Neuer Schnitt der titelZeilen auf /leistungen ohne Textänderung verworfen: Die Mittelzeile bräche mobil wieder um, die H1 würde am Desktop dreizeilig, und ZEILEN_EM liegt in EinstiegMitte (SF2-B), die Daten in leistungen.ts (SF2-C); T-8 bleibt. Foto im Musterkasten nur zum passenden Muster: ist schon so gebaut (VerbandProbe FOTOS nur für Halbverband und Fischgrät). Mobil kürzerer Takt der H1 verworfen (G8, H1 auf / und /bad/badsanierung). Lage und Tun auf derselben Fläche verworfen, das verschöbe die Kantenkreuze des Leitfadens. Nur der Abstandstakt wechselt (M2-A9)."
+ ]
+}
