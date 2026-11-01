@@ -1859,3 +1859,27 @@ Damit hat der Plan 58 Pflichtpakete; der Bedarf liegt bei ≈ 238 USD, ≈ 4,9 F
   - Vereinzelter CLS am Einstiegsbehälter, je ein Lauf in jedem Stand (vorher / 0,129, nachher /bad 0,169; 2 von 72 Läufen, nach Welle 1 0 von 72). Er tritt auch auf 13315fa8 auf und folgt nicht aus Welle 2; Ursache in UM-E5-C klären.
   - Hauptknöpfe (Ankersprung) auf /kontakt und /standorte/wetzlar streuen über 200 ms (bis 232 und 280 ms), im Median 136 und 160 ms.
 - **Folge:** Tor E4 Anlauf 2: Bildsatz `$S/sfix/sicht2/bildsatz.sh a3c28d36` läuft (seit 04:39 UTC, allein), danach `sicht2-wf.js` (8 Opus-Prüfer), Ergebnis E-105.
+
+## E-105 · Tor E4, Anlauf 2: Sichtabnahme nicht bestanden (6,8 bis 7,6); Tor nach L3 geschlossen, Z-05 offen; zweite und letzte Nacharbeitsrunde UM-E4-SICHT-FIX-2 (1.11.2026, 06:45 MEZ)
+- **Sichtabnahme Anlauf 2** (`berichte/UM-E4-SICHT-2.md`, Rohurteile `belege/um-e4/sicht-anlauf-2.json`, Skripte `belege/um-e4/sicht-anlauf-2-*.{sh,js}`): acht frische Opus-Prüfer, dieselbe Rubrik und dieselbe Aufteilung wie in Anlauf 1, Torstand a3c28d36. Mittel je Ansicht 6,79 (`/blog`) bis 7,60 (`/balkon-terrasse`). Keine Ansicht erreicht ihre Schwelle (Erzählansichten 8,5, übrige 8,0); viele Kategorien liegen unter 7,5. 167 Befunde: 14 hoch, 88 mittel, 65 gering (Anlauf 1: 31, 75, 57).
+- **Wirkung von UM-E4-SICHT-FIX** gegen Anlauf 1, Durchschnitt +0,42:
+  - stark: `/referenzen` +0,90, `/leistungen` und `/balkon-terrasse` je +0,80, `/ueber-uns` +0,76, `/fliesen` +0,62, `/bad/badsanierung` +0,52, `/bad/barrierefreies-bad` +0,50;
+  - schwach: `/standorte/wetzlar` +0,32, `/kontakt` +0,12, `/blog` +0,08, `/bad` +0,06;
+  - `/` −0,29.
+  - Die Erwartung aus E-104 (Erzählansichten +0,8 bis 1,2) ist nur bei drei Ansichten eingetreten.
+- **Gemeinsame Ursachen laut Prüfern** (14 Befunde hoch):
+  - Formular- und Linkblöcke ab 1280 px links mit leerer rechter Hälfte (`/`, `/leistungen`, `/fliesen`; Folge von M-B1).
+  - Schwache Einstiegsfotos: weich, überbelichtet, Hochformat; sie füllen am Desktop nicht die Satzbreite (`/bad`, `/bad/badsanierung`, `/standorte/wetzlar`).
+  - Zu viele gleichrangige Wege am Seitenende von `/bad`.
+  - Der Eingang „An der Schnur“ fehlt auf der Ortsansicht (K-007).
+  - Das Motto steht viermal auf `/ueber-uns`.
+  - Die untere Hälfte von `/blog` ist dünn und hat kein Foto.
+- **Entscheidung (Entscheidungsvermerk):**
+  - **Tor E4 geschlossen** nach zwei Anläufen (L3). Z-05 bleibt offen und wird in der Endprüfung UM-E5-END bewertet → PLAN „Offene Punkte“.
+  - **UM-E4-SICHT-FIX-2:** AUFTRAG Abschnitt 13 erlaubt je Hauptansicht und Kategorie höchstens zwei Pakete im ganzen Lauf. Die meisten Ansichten hatten erst eines (UM-E4-SICHT-FIX). Deshalb wird jede Kategorie unter 8 zu einem Paket der zweiten und letzten Runde, mit diesen Grenzen:
+    - `/` hatte schon drei Runden (UM-E3-FIX, UM-E3-FIX2, SICHT-FIX). Dort nur, was gemeinsame Vorlagen ohnehin ändern, und Befunde „hoch“.
+    - `/bad`, `/kontakt` und `/blog` haben in Runde 1 weniger als 0,3 gewonnen; nach der Abbruchregel in Abschnitt 13 kein weiteres Gestaltungspaket. Dort nur Befunde „hoch“ und die Wirkung gemeinsamer Vorlagen.
+    - Die übrigen acht Ansichten bekommen eine volle zweite Runde nach Befunden hoch und mittel.
+  - **Vorgehen wie E-104:** Opus bündelt die Befunde zu Maßnahmen, zwei Sonnet-Gegenprüfungen (Vollständigkeit; Leitplanken und Machbarkeit), Opus führt zusammen. Danach höchstens drei Baumeister in Arbeitskopien, je zwei Prüfer und eine Nacharbeit, dann eine Prüfkette. Danach folgt kein dritter Toranlauf, sondern E5 (UM-E5-C, BLIND, END).
+  - **Leitplanken unverändert:** G8, B-01 eingefroren, Texte nur als Vorschlag, Fotos nur aus dem Bestand, nur Tokens, A-1 halten.
+- **Ehrliche Erwartung:** Auch nach Runde 2 erreichen die Erzählansichten 8,5 voraussichtlich nicht. Die Gründe aus E-104 gelten weiter: weiche Fotos im Bestand, Texte nur als Vorschlag, die Kreativität wird an Standbildern bewertet. Ziel der Runde sind die konkreten Mängel und der Abstand zu 8,0. Z-05 wird im Abschluss ehrlich ausgewiesen.
