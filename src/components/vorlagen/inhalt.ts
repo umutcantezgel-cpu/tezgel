@@ -34,6 +34,10 @@ export interface WorumInhalt {
   /** Planblatt (E-044): mit Plan steht der Einstieg wie auf der Startseite, mit Waage und Lot (sig-kreuzlinie), der H1 in
    *  festen Zeilen (sig-flucht) und dem Plan (sig-plan); `bild` ist dann das hohe Foto unter lg, `bildGross` das Querformat */
   plan?: PlanName;
+  /** Flucht des Plans im Einstieg der Wissensseite (sig-plan): ohne Angabe `zeigen` (Hover und Fokus, auf Touch beim Eintritt;
+   *  E-044), `laden` rückt das Raster beim Laden einmal in die Flucht (Datenschalter UM-E4-SICHT-FIX-2 M2-C4, E-113 Nr. 6, mit
+   *  Abbruchkriterium: Rückweg eine Zeile im Inhalt) */
+  planFlucht?: 'zeigen' | 'laden';
   titelZeilen?: string[];
   /** Mittiger Einstieg, nur Startseite (UM-E3-FIX F1): H1 im Maß von „Quadratmeter.“ und Quadratmeter (titel-spalte). Die
    *  übrigen Figur-Einstiege stehen in fs-7 im Maß ihrer längsten Zeile (UM-E4-SICHT-FIX M-A1 Nr. 2, EinstiegMitte ZEILEN_EM) */

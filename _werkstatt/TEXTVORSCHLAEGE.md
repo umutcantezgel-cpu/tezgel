@@ -72,3 +72,15 @@ SF2-A1 und SF2-A2 haben keine Textvorschläge und keine Mikrotexte.
 | Nr. | Ansicht | Stelle | heute | Vorschlag | Grund |
 |---|---|---|---|---|---|
 | T-B-1 | /bad | Aufklapper „Badanfrage oder Badplaner öffnen“, Weg „Badplaner“ | Name ohne Satz | Satz unter dem Namen: „Planen Sie Ihr Bad online in drei Schritten.“ (aus der Beschreibung von /bad/badplaner) | Der Weg erklärt sich sonst nur über seinen Namen; die übrigen Hilfen tragen einen Satz. |
+
+### Teil SF2-C (Galerie, /ueber-uns, /fliesen, /leistungen)
+
+| Nr. | Ansicht | Stelle | heute | Vorschlag | Grund |
+|---|---|---|---|---|---|
+| T-C-1 | /fliesen | Absatz „Alles beginnt mit dem Boden.“ | ein Absatz; „… Hier sind vier Muster zum Ausprobieren.“ steht nun vor dem Schichtschnitt | Sätze 1–2 vor den Schichtschnitt, Sätze 3–4 als eigener Absatz direkt vor den Wähler, Wortlaut gleich | Zwischen dem Satz und den Mustern steht jetzt die Zeichnung. |
+| T-C-2 | /ueber-uns | Hinweis an HWK und DIN in den Werten | „belegt“ | „nachgewiesen“ bzw. „im Register eingetragen“ / „nach Norm“ | ein Wort aus dem Alltag |
+| T-C-3 | /leistungen | Name des Formatregler-Bildes (aria-label) | „Dieselbe Wand, links mit kleinen Fliesen, rechts mit großen Fliesen.“ | dazu „Rechts unten steht zum Vergleich eine Tür.“ | Die neue Bezugsgröße ist für Vorleser sonst stumm. |
+| T-C-4 | /referenzen | Statuszeile eingeklappt | „Sie sehen eine Auswahl aus 24 Fotos.“ | „Sie sehen 9 von 24 Fotos.“ | genauer; braucht aber die Spaltenzahl in der Insel (JavaScript je Breite), darum nicht gebaut |
+| T-C-5 | /fliesen | Raumliste „Was wir tun“ | Reihenfolge der Zeilen wie in der Textdatei | Zeilen mit passender Zeichnung zuerst, Fußbodenheizung und Technik danach | Mit der Übergabe in Tun.tsx stehen die Texte schon auf einer Kante; die Folge änderte den Aufbau der Textdatei, darum nur Vorschlag. |
+
+SF2-C hat die Foto-Namen und Mikrotexte der Galerie gesetzt (Notiz, Abschnitt Texte); der alte Satz unter dem Schichtschnitt steht weiter in der Wegzeile „Fliesen im Neubau“.

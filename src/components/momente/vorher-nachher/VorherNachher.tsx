@@ -8,11 +8,18 @@
 // Anleitung über dem Regler, „Vorher“ und „Nachher“ am Griff (UM-E4-SICHT-FIX M-C3 Nr. 3): Anleitung und Regler stehen in
 // einem Bildschirm (Höhe bis 80svh, .vn-hoehe in bewegung.css); die beiden Wörter wandern mit dem Lot, ohne JavaScript
 // entfallen sie mit dem Griff. Nacharbeit SF-C1: Die Anleitung steht außerhalb des Bildkastens in der Breite des Rahmens
-// (auf q844 brach sie sonst in 110 px um); ab lg steht sie links neben dem Regler (zwei Spalten, der Regler in gleicher
-// Größe, keine leere Fläche um eine 370-px-Säule). Die Wörter am Griff stehen nur, wenn die Bühne mindestens 18rem breit
+// (auf q844 brach sie sonst in 110 px um); bis UM-E4-SICHT-FIX-2 stand sie ab lg links neben dem Regler (zwei Spalten, seit
+// M2-C2 die Bühne, unten). Die Wörter am Griff stehen nur, wenn die Bühne mindestens 18rem breit
 // ist, sonst wie vorher als Zeile unter dem Bild; nahe am Rand blenden sie aus, bevor die Bühne sie anschneiden würde (nur
 // opacity, an --teilung gebunden, bewegung.css). Serverkomponente; nur der Regler ist eine Insel.
+// Bühne statt Breite (UM-E4-SICHT-FIX-2 M2-C2 Nr. 1, Sicht E4 Anlauf 2: am Desktop nur 370 px, die Anleitung als zweiter Strang
+// daneben): auf allen Breiten einspaltig mittig, die Anleitung mittig über dem Regler (M-C3 Nr. 3 bleibt). Mit `aufTinte` steht
+// der Moment auf der Fläche Tinte des Abschnitts (/referenzen): Anleitung in nacht-2, Rahmen der Bühne in nacht-fuge, das Lot in
+// Kalk mit Kanten in Tinte (der Griff ist schon hell), die Wörter am Griff bleiben. Ab lg reicht die Bühne bis zur Bildschirmhöhe
+// unter dem Kopf (bewegung.css .vn-hoehe): d1440 rund 410 px breit, d1920 rund 500 px. Breiter ginge nur mit anderem Zuschnitt
+// (E-104 Nr. 6).
 import { useId, type CSSProperties } from 'react';
+import clsx from 'clsx';
 import Bildfeld from '@/components/kern/Bildfeld';
 import Fotos from '@/components/vorlagen/teile/Fotos';
 import { ARBEITEN, type ArbeitId } from '@/config/arbeiten';
@@ -30,9 +37,11 @@ export interface VorherNachherProps {
   titelId: string;
   /** Unterschrift unter dem Regler aus dem Seitentext */
   unterschrift: string;
+  /** Der Abschnitt steht auf Tinte (Bühne, M2-C2): helle Anleitung, Rahmen und Lot */
+  aufTinte?: boolean;
 }
 
-export default function VorherNachher({ vorher, nachher, titelId, unterschrift }: VorherNachherProps) {
+export default function VorherNachher({ vorher, nachher, titelId, unterschrift, aufTinte = false }: VorherNachherProps) {
   const uid = useId().replace(/[^a-zA-Z0-9-]/g, '');
   const hinweisId = `vn-${uid}-hinweis`;
   // Seitenverhältnis der Fotos für die Höhenbegrenzung (.vn-hoehe in bewegung.css): ganzes Foto in einem Bildschirm
@@ -40,18 +49,18 @@ export default function VorherNachher({ vorher, nachher, titelId, unterschrift }
   return (
     <div className="flex justify-center">
       <div className="w-full max-w-md lg:max-w-seite">
-        <figure className="lg:grid lg:grid-cols-2 lg:items-center lg:gap-x-12">
-          <figcaption id={hinweisId} className="mb-4 text-center font-text text-fs-3 text-pretty text-tinte-2 lg:mb-0 lg:max-w-2/3 lg:justify-self-end lg:text-left lg:text-fs-4">
+        <figure>
+          <figcaption id={hinweisId} className={clsx('mx-auto mb-4 max-w-mass text-center font-text text-fs-3 text-pretty lg:mb-6', aufTinte ? 'text-nacht-2' : 'text-tinte-2')}>
             {unterschrift}
           </figcaption>
-          <div className="vn-hoehe @container mx-auto w-full lg:mx-0" style={seite}>
-            <div className="vn-buehne relative overflow-hidden border border-fuge bg-fliese" data-motion="vorher-nachher">
+          <div className="vn-hoehe @container mx-auto w-full" style={seite}>
+            <div className={clsx('vn-buehne relative overflow-hidden border bg-fliese', aufTinte ? 'border-nacht-fuge' : 'border-fuge')} data-motion="vorher-nachher">
               <div className="vn-fenster absolute inset-0 overflow-hidden">
                 <Bildfeld arbeit={vorher} sizes={GROESSEN} flaeche className="vn-gegen" />
               </div>
               <Bildfeld arbeit={nachher} sizes={GROESSEN} flaeche />
               <div aria-hidden="true" className="vn-teiler pointer-events-none absolute inset-0">
-                <span className="absolute inset-y-0 left-0 w-1 -translate-x-1/2 border-x border-fliese bg-tinte" />
+                <span className={clsx('absolute inset-y-0 left-0 w-1 -translate-x-1/2 border-x', aufTinte ? 'border-tinte bg-kalk' : 'border-fliese bg-tinte')} />
                 {/* „Vorher“ links, „Nachher“ rechts vom Lot, knapp unter dem Griff (Griff 44 px um die Mitte); erst ab 18rem
                     Bühnenbreite */}
                 <span className="vn-wort-vor absolute top-1/2 right-full mt-8 mr-3 hidden border border-fuge bg-fliese px-2 py-1 font-text text-fs-2 font-semibold text-tinte noscript:hidden @2xs:block">
@@ -64,7 +73,7 @@ export default function VorherNachher({ vorher, nachher, titelId, unterschrift }
               <Regler titelId={titelId} hinweisId={hinweisId} />
             </div>
             {/* schmale Bühne (q844, große Schrift): die Wörter als Zeile unter dem Bild wie vor M-C3 */}
-            <p aria-hidden="true" className="mt-3 flex justify-between gap-4 font-text text-fs-2 font-semibold text-tinte @2xs:hidden">
+            <p aria-hidden="true" className={clsx('mt-3 flex justify-between gap-4 font-text text-fs-2 font-semibold @2xs:hidden', aufTinte ? 'text-kalk' : 'text-tinte')}>
               <span>Vorher</span>
               <span>Nachher</span>
             </p>

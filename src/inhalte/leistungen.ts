@@ -1,6 +1,6 @@
 // Inhalt der Seite /leistungen (KERN v3.6 K-009 Seitenformel, K-016 „Ruhe“; Text _werkstatt/texte/leistungen.md, E3-BAU-04,
 // E-048): wörtlich aus dem Seitentext, gesetzt von der Vorlage ErzaehlSeite. Abweichungen nach K-016 (Orchestrator,
-// Texthoheit): Einstieg mittig, der Vorspann steht als Einleitung der Lage; die vier Bereiche zeigen statt der Fotos ihren
+// Texthoheit): Einstieg mittig, der Vorspann steht als dritter Absatz der Lage (seit UM-E4-SICHT-FIX-2 M2-C5, vorher als Einleitung); die vier Bereiche zeigen statt der Fotos ihren
 // Verlegeplan (Plan-Morph zur Leistungsseite, E-037; `LEISTUNGSPLAENE`), die drei Fotos stehen dafür als Reihe im Beleg
 // (Überschrift wie auf der Startseite); der Satz zur Handwerkskammer entfällt (Firmendaten nur auf /kontakt, /ueber-uns und
 // im Fuß); weitere Kundenstimmen zum Thema der Seite (Wortlaut unverändert, G8). Rechner und Express-Anfrage setzt die Seite.
@@ -30,10 +30,12 @@ export const LEISTUNGEN: ErzaehlInhalt = {
     // sonst lagen Einstieg, Lage und „Was wir tun“ als drei Abschnitte auf Kalk in Folge
     aufFliese: true,
     titel: 'Vielleicht ist Ihr Bad oder Ihr Boden zu alt geworden.',
-    einleitung: 'Sie haben ein Bad, einen Boden oder einen Balkon, der nicht mehr passt. Hier sehen Sie, was wir tun: von der Badsanierung bis zur Terrasse, dazu Böden und Naturstein.',
+    // eine Stufe (UM-E4-SICHT-FIX-2 M2-C5 Nr. 1, Sicht E4 Anlauf 2: der Überblick stand klein und grau über der konkreten Lage):
+    // die konkrete Lage zuerst, der Überblick (vorher `einleitung`, Wortlaut gleich) als dritter Absatz, alle im Vorspann (fs-4)
     absaetze: [
       'Eine Fliese ist gesprungen. Die Fugen sind alt und dunkel. Auf dem Balkon bleibt nach dem Regen Wasser stehen.',
       'Sie wissen vielleicht nicht, wo Sie anfangen sollen. Das ist normal. Den ersten Schritt gehen wir gemeinsam.',
+      'Sie haben ein Bad, einen Boden oder einen Balkon, der nicht mehr passt. Hier sehen Sie, was wir tun: von der Badsanierung bis zur Terrasse, dazu Böden und Naturstein.',
     ],
   },
   tun: {

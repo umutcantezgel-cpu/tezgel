@@ -43,9 +43,11 @@ export const REFERENZEN: ErzaehlInhalt = {
     ort: 'Fliesenleger Deniz Tezgel aus Aßlar, für Wetzlar und Mittelhessen.',
     // im mittigen Einstieg nicht gezeigt; der Vorspann steht als `tun.einleitung` auf der Seite (Regel 2)
     vorspann: VORSPANN,
-    // Dusche ohne Stufe, Güte A (UM-E4-SICHT-FIX M-A2; vorher die blasse Duschwand referenzen-einstieg, Schärfe 0,068). Das
-    // Foto verlässt dafür die Galerie der Seite (galerie-filter/daten.ts)
-    bild: 'start-dusche',
+    // Bad mit Doppelwaschtisch, scharf, Güte B (UM-E4-SICHT-FIX-2 M2-C1 Nr. 4, Bildtabelle M2-B1: start-dusche wird Einstieg von
+    // /bad/badsanierung und kehrt an den Platz dieses Fotos in die Galerie zurück; vorher M-A2 start-dusche, davor die blasse
+    // Duschwand referenzen-einstieg). Das Foto verlässt dafür die Galerie der Seite (galerie-filter/daten.ts). Rückweg: eine Zeile
+    // hier und eine in daten.ts
+    bild: 'bad-beleg-3',
     bewertung: true,
   },
   lage: {
@@ -66,14 +68,18 @@ export const REFERENZEN: ErzaehlInhalt = {
       { name: 'Balkon und Terrasse', href: '/balkon-terrasse' },
       { name: 'Reparatur von Fliesen und Fugen', href: '/fliesenreparatur' },
     ],
-    // Aussagen als Fliesen an der Fuge: der Absatz über unsere Arbeit und die drei Belege aus dem Faktenblatt (je ein Satz)
+    // Aussagen als Fliesen an der Fuge: der Absatz über unsere Arbeit und die drei Belege aus dem Faktenblatt (je ein Satz). Im
+    // Aufklapper „Mehr erfahren“ (UM-E4-SICHT-FIX-2 M2-C2 Nr. 2, Sicht E4 Anlauf 2: Fachtext mit Klammern bremste nach Galerie und
+    // Stimmen die Erzählung, mobil zwei Bildschirme); die Leistungslinks bleiben offen. Inhalt im DOM (natives details), die
+    // Erklärungen der Fachwörter stehen beim ersten Vorkommen mit darin
+    punkteMehr: true,
     punkte: [
       'Wir nehmen die alten Fliesen heraus und bereiten den [[untergrund|Untergrund]] vor. Dann verlegen wir neue Fliesen, auch Großformate.',
       'Seit 2019 ist die [[abdichtung|Abdichtung]] bei uns Standard. Wir arbeiten nach [[din-18534|DIN 18534]].',
       'Wohnen Sie während der Arbeiten im Haus, schützen wir Ihre Räume vor Staub.',
     ],
-    // ohne den Beleg zur Handwerkskammer (Regel 3)
-    absatz: 'Dazu gehören auch [[barrierefrei|barrierefreie]] Bäder, zum Beispiel mit einer Dusche ohne Stufe.',
+    // ohne den Beleg zur Handwerkskammer (Regel 3); als Zusatz im selben Aufklapper nach den Punkten (M2-C2 Nr. 2, nur Daten)
+    absatzMehr: 'Dazu gehören auch [[barrierefrei|barrierefreie]] Bäder, zum Beispiel mit einer Dusche ohne Stufe.',
   },
   ablauf: {
     titel: 'So entstehen diese Arbeiten.',

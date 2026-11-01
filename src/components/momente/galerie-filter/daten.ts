@@ -3,7 +3,7 @@
 // wörtlich aus _werkstatt/texte/referenzen.md (Abschnitt 5), „Alle Fotos“ und die Statuszeile neu. Je Foto eine Gruppe nach
 // dem, was zu sehen ist (nicht nach `raum` in arbeiten.ts: bad-beleg-4 ist eine Dusche, Baustellenbilder sind „So arbeiten
 // wir“), und eine kurze Unterschrift aus dem Alt-Text, ohne Orte (K-015) und ohne Fachwort. Nur Fotos im Format 4 : 5, jede
-// Bilddatei einmal, das Einstiegsbild der Seite (bad-einstieg) nicht. Reihenfolge abwechselnd nach Gruppe, damit „Alle Fotos“
+// Bilddatei einmal, das Einstiegsbild der Seite (`REFERENZEN.worum.bild`) nicht. Reihenfolge abwechselnd nach Gruppe, damit „Alle Fotos“
 // gemischt beginnt. Neue Bildplätze aus E3-BILD-01 hier ergänzen.
 import type { ArbeitId } from '@/config/arbeiten';
 import type { IconName } from '@/components/icons/namen';
@@ -48,12 +48,16 @@ export const GRUPPEN: Gruppe[] = [
 // verlässt die Galerie; das bisherige Einstiegsbild tritt ans Ende der fertigen Räume (Tausch, weiter 24 Fotos). An seine Stelle
 // rückt die helle Dusche mit Sitzbank (gleiche Gruppe): Die erste Reihe beginnt wie vorher mit einer Dusche statt mit drei
 // dunklen Motiven (Nacharbeit SF-A; die Reihenfolge im Ganzen legt M-C3).
+// UM-E4-SICHT-FIX-2 M2-C1 Nr. 4 (Bildtabelle M2-B1): start-dusche wird Einstieg von /bad/badsanierung und kehrt in die Galerie
+// zurück, an den Platz von bad-beleg-3 (Gruppe Dusche, Name aus dem Alt-Text), nicht an Platz 1; bad-beleg-3 ist dafür der
+// Einstieg von /referenzen und verlässt die Galerie (weiter 24 Fotos, jede Bilddatei einmal). Rückweg: Tausch in dieser Zeile und
+// in referenzen.ts zurück.
 export const GALERIE: GalerieFoto[] = [
   { bild: 'start-galerie-1', gruppe: 'dusche', unterschrift: 'Dusche ohne Stufe mit Sitzbank und Mosaik' },
   { bild: 'start-beleg-bad', gruppe: 'bad', unterschrift: 'Badewanne mit dunklen Mosaikfliesen' },
   { bild: 'start-galerie-3', gruppe: 'balkon-und-terrasse', unterschrift: 'Balkon mit dunklen Fliesen, jede Reihe um ein Stück versetzt' },
   { bild: 'start-beleg-treppe', gruppe: 'treppe-und-eingang', unterschrift: 'Außentreppe mit anthrazitfarbenen Fliesen und Handlauf' },
-  { bild: 'bad-beleg-3', gruppe: 'bad', unterschrift: 'Doppelwaschtisch aus dunklem Holz mit goldenem Spiegel' },
+  { bild: 'start-dusche', gruppe: 'dusche', unterschrift: 'Dusche ohne Stufe mit großen grauen Fliesen' },
   { bild: 'start-galerie-4', gruppe: 'balkon-und-terrasse', unterschrift: 'Terrasse mit großen hellgrauen Platten' },
   { bild: 'kontakt-eingang', gruppe: 'treppe-und-eingang', unterschrift: 'Stufen am Eingang mit beigen Fliesen und hellen Kanten' },
   { bild: 'badsanierung-einstieg', gruppe: 'bad', unterschrift: 'Badewanne mit blauen und beigen Ornamentfliesen' },
@@ -115,9 +119,11 @@ export function stufen(fotos: readonly { gruppe: GruppeId }[], wahl: Wahl, vorhe
   return fotos.map((f) => (blendetEin(f.gruppe, wahl, vorher) ? Math.min(n++, STAFFEL_MAX) : null));
 }
 
-/** Text der Statuszeile (role="status"), z. B. „Sie sehen 7 Fotos aus dem Bad.“ */
-export function ansage(wahl: Wahl, n: number): string {
-  if (wahl === 'alle') return `Sie sehen alle ${n} Fotos.`;
+/** Text der Statuszeile (role="status"), z. B. „Sie sehen 7 Fotos aus dem Bad.“. `eingeklappt` (UM-E4-SICHT-FIX-2 M2-C1 Nr. 2,
+ *  Mikrotext): Bei „Alle Fotos“ stehen eingeklappt nur drei Reihen, die Zeile sagt dann ehrlich „eine Auswahl“ statt „alle“ (vorher
+ *  „Sie sehen alle 24 Fotos.“ über einer Galerie, die mit „Alle 24 Fotos zeigen“ endet); aufgeklappt oder gefiltert wie bisher */
+export function ansage(wahl: Wahl, n: number, eingeklappt = false): string {
+  if (wahl === 'alle') return eingeklappt ? `Sie sehen eine Auswahl aus ${n} Fotos.` : `Sie sehen alle ${n} Fotos.`;
   const zusatz = GRUPPEN.find((g) => g.id === wahl)?.zusatz ?? '';
   return `Sie sehen ${n === 1 ? '1 Foto' : `${n} Fotos`} ${zusatz}.`;
 }

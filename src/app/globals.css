@@ -946,7 +946,17 @@
      Abfrage stehen alle Fotos. Der Zustand steht schon im Server-HTML, die Hydrierung verschiebt nichts. Im Dreierraster bei
      „Alle Fotos“ (data-verband) steht die mittlere Spalte um ein Drittel einer Kachel tiefer (translate, ruhend, keine
      Bewegung); dafür trägt jede Kachel ihren ganzen Rand (1 px überlappend, wie Fugen), und unter der Liste bleibt ein Drittel
-     einer Kachel Platz (Kachel 4 : 5 bei einem Drittel der Breite: 100cqi · 5/36). */
+     einer Kachel Platz. Drittelverband mit Passstücken (UM-E4-SICHT-FIX-2 M2-C1, Nacharbeit): Die Liste trägt ihren Rand oben und
+     unten; das freie Feld über der Mittelspalte und die Streifen unter den äußeren Spalten sind Passstücke in fliese mit Fugen
+     rundum, wie die geschnittenen Fliesen am Rand einer Wand im Drittelverband. Gezeichnet als je ein Streifen über die volle
+     Breite oben und unten hinter den Kacheln (::before und ::after, z-index −1 in der isolierten Liste, Rand links und rechts):
+     Wo Fotos stehen, decken die Kacheln ihn. So enden alle drei Spalten bündig, auch ohne JavaScript und aufgeklappt (vorher ein
+     offener Streifen unter den äußeren Spalten). Im Passstück oben steht die Statuszeile (nur mit Skript am Bildschirm, darüber
+     mit z-index 1; ohne Skript und im Druck verborgen wie die Knöpfe, sonst überstimmte ihr display die Utilities noscript:hidden
+     und print:hidden), der Knopf „Alle … Fotos zeigen“ steht mit Abstand unter der Liste (vorher halb auf dem Foto der
+     Mittelspalte). Kachel = Foto 4 : 5 (Breite (Liste − 1 px) / 3 − 1 px, wie unten beim Platzhalter) plus 2 px Rand; ein
+     Drittel davon ist der Versatz V, die Passstücke messen V − 1 px zwischen den Fugen. Alles ruhend, nichts davon ändert sich
+     beim Aufklappen (R-1). */
   @media screen and (scripting: enabled) {
     .galerie-liste[data-eingeklappt] > [data-galerie-mehr="breit"] {
       display: none;
@@ -959,8 +969,26 @@
   }
   @container (width >= 64rem) {
     .galerie-liste[data-verband] {
-      border-width: 0;
-      padding: 1px 0 calc(100cqi * 5 / 36) 1px;
+      position: relative;
+      isolation: isolate;
+      border-width: 1px 0;
+      padding: 0 0 calc((((100cqi - 1px) / 3 - 1px) * 5 / 4 + 2px) / 3 - 1px) 1px;
+    }
+    .galerie-liste[data-verband]::before,
+    .galerie-liste[data-verband]::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset-inline: 0;
+      block-size: calc((((100cqi - 1px) / 3 - 1px) * 5 / 4 + 2px) / 3 - 1px);
+      border-inline: 1px solid var(--color-fuge);
+      background-color: var(--color-fliese);
+    }
+    .galerie-liste[data-verband]::before {
+      inset-block-start: 0;
+    }
+    .galerie-liste[data-verband]::after {
+      inset-block-end: 0;
     }
     .galerie-liste[data-verband] > li {
       border-width: 1px;
@@ -968,6 +996,23 @@
     }
     .galerie-liste[data-verband] > li:nth-child(3n + 2) {
       translate: 0 calc(100% / 3);
+    }
+  }
+  @media screen and (scripting: enabled) {
+    @container (width >= 64rem) {
+      .galerie-status[data-verband] {
+        position: absolute;
+        z-index: 1;
+        inset-block-start: 0;
+        inset-inline-start: calc((100cqi - 1px) / 3 + 1px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        inline-size: calc((100cqi - 1px) / 3 - 1px);
+        block-size: calc((((100cqi - 1px) / 3 - 1px) * 5 / 4 + 2px) / 3);
+        margin: 0;
+        padding-inline: calc(var(--spacing) * 6);
+      }
     }
   }
   /* Reaktion beim Aufklappen (UM-E4-SICHT-FIX R-1): Fotos ab dem siebten (data-galerie-mehr) zeichnet der Browser erst in

@@ -9,7 +9,8 @@ import { erzaehlFolge, wissenFolge, FORMEL_NUMMER } from '../src/components/vorl
 // Standard; abweichen darf eine Seite nur per Schalter und nur, wenn sie hier und in K-009 mit Grund gelistet ist. ERLAUBT ist
 // die Liste aus K-009; EIN nennt, was schon eingeschaltet ist (/balkon-terrasse momentZuerst seit der Nacharbeit SF-B mit der
 // Erklärung in der Legende der Zeichnung; /bad seit Teil C mit M-C1, zusammen mit der Erklärung der Fachwörter in der
-// Szene, /ueber-uns nachLage M-C4 mit einer Textentscheidung zur Zeitleiste). Wer einschaltet, trägt die Seite in EIN nach.
+// Szene; /ueber-uns nachLage seit UM-E4-SICHT-FIX-2 M2-C3 Nr. 4 mit der Fotoreihe der Arbeitsweise, die Zeitleiste bleibt nach
+// „Was wir tun“). Wer einschaltet, trägt die Seite in EIN nach.
 const ERLAUBT = {
   belegVorn: ['/referenzen', '/balkon-terrasse'],
   wissenVorLage: ['/blog'],
@@ -20,7 +21,7 @@ const EIN = {
   belegVorn: ['/referenzen', '/balkon-terrasse'],
   wissenVorLage: ['/blog'],
   momentZuerst: ['/bad', '/bad/barrierefreies-bad', '/balkon-terrasse'],
-  nachLage: [],
+  nachLage: ['/ueber-uns'],
 };
 
 const wurzel = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');

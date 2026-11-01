@@ -25,8 +25,11 @@ export const FLIESEN: WissenInhalt = {
     titel: 'So verlegen wir Fliesen, einfach erklärt.',
     ort: 'Fliesenverlegung Tezgel aus Aßlar',
     vorspann: VORSPANN,
-    // Verlegeplan im Einstieg (E-037, E-044: Wissensseiten mit Plan „zeigen“)
+    // Verlegeplan im Einstieg (E-037, E-044: Wissensseiten mit Plan „zeigen“). Seit UM-E4-SICHT-FIX-2 M2-C4 (E-113 Nr. 6) rückt
+    // er beim Laden einmal in die Flucht (Registerbewegung sig-plan „laden“, reduziert in der Flucht). Abbruchkriterium: Liegt
+    // Lighthouse mobil /fliesen im Median aus sechs Läufen unter 91, fällt diese Zeile (zurück auf „zeigen“), dazu Register und K-008
     plan: 'wohnen',
+    planFlucht: 'laden',
   },
   lage: {
     // auf Fliese wie auf / (UM-E4-CHOR-FIX): Einstieg, Lage und der Wissensblock lagen sonst als drei Abschnitte auf Kalk in Folge
@@ -35,16 +38,22 @@ export const FLIESEN: WissenInhalt = {
     absaetze: [
       'Ein Bad, eine Küche und ein Flur haben unterschiedliche Aufgaben. Ob Sie neu bauen, im bewohnten Haus renovieren oder nur die Fugen erneuern lassen, hängt vom Raum ab.',
     ],
-    // Zeilen mit Link (Abschnitt 2 der Textdatei)
+    // Zeilen mit Link (Abschnitt 2 der Textdatei). Plan-Vignetten (UM-E4-SICHT-FIX-2 M2-C4 Nr. 3, Sicht E4 Anlauf 2 3a hoch:
+    // Raumliste mit passender Plan-Vignette), keine zweimal in der Liste, nur wo eine vorhandene das Thema zeigt: die zwei Räume
+    // (Raum in Großformat mit Tür, Eingang mit Stufen) und die zwei Lagen (Estrich im Schnitt, eingesetztes neues Stück) in den
+    // ersten beiden Reihen. Die letzte Reihe (Fugen, Fußbodenheizung) bleibt ohne Zeichnung: Keine vorhandene zeigt ihr Thema
+    // (Dusche und Terrasse zeigten etwas anderes), und die Verlegemuster stehen auf Fliese blass wie leere Felder (M-B2 Nr. 2);
+    // verlegekante trüge dazu ein zweites Rot neben der Leitachse. Entscheidungsvermerk in der Notiz SF2-C
     wege: [
-      { name: 'Küche fliesen', satz: 'Hier zählen Fett, Flecken und Fugen, die lange halten.', href: '/fliesen/kueche' },
+      { name: 'Küche fliesen', satz: 'Hier zählen Fett, Flecken und Fugen, die lange halten.', href: '/fliesen/kueche', vignette: 'wohnen' },
       {
         name: 'Flur und Diele fliesen',
         satz: 'Hier zählt ein robuster Boden, auf dem man bei nassen Schuhen nicht ausrutscht.',
         href: '/fliesen/flur-diele',
+        vignette: 'treppe',
       },
-      { name: 'Fliesen im Neubau', satz: 'Wir fliesen, wenn der [[estrich|Estrich]] fertig ist.', href: '/fliesen/neubau' },
-      { name: 'Renovierung im bestehenden Haus', satz: 'Wir erneuern den Boden und sorgen für Staubschutz.', href: '/fliesen/renovierung' },
+      { name: 'Fliesen im Neubau', satz: 'Wir fliesen, wenn der [[estrich|Estrich]] fertig ist.', href: '/fliesen/neubau', vignette: 'untergrund' },
+      { name: 'Renovierung im bestehenden Haus', satz: 'Wir erneuern den Boden und sorgen für Staubschutz.', href: '/fliesen/renovierung', vignette: 'reparatur' },
       { name: 'Fugensanierung', satz: 'Schimmelige oder bröselnde Fugen erneuern wir fachgerecht.', href: '/fliesen/fugensanierung' },
       {
         name: 'Fliesen auf Fußbodenheizung',
@@ -60,7 +69,9 @@ export const FLIESEN: WissenInhalt = {
         'Zuerst prüfen wir den [[untergrund|Untergrund]]. Ist er eben und trocken genug, verlegen wir die Fliesen sauber, mit passenden Fugen und Übergängen. Wie die Fliesen angeordnet sind, bestimmt, wie eine Fläche wirkt. Hier sind vier Muster zum Ausprobieren.',
       // großer Moment: die vier Verlegemuster mit ihren Sätzen und den zwei Fotos (Schlitz `zeichnungen.verband`)
       zeichnung: 'verband',
-      // Formate und Technik (Textdatei Abschnitt 3), je ein Satz mit Link
+      // Formate und Technik (Textdatei Abschnitt 3), je ein Satz mit Link; als Fugenfeld 3 + 2 im Halbverband, anders gebaut als
+      // die Raumliste der Lage (UM-E4-SICHT-FIX-2 M2-C4 Nr. 4, Sicht E4 Anlauf 2: drei gleich gebaute Linkblöcke)
+      wegeForm: 'reihe',
       wege: [
         { name: 'Großformate verlegen', href: '/fliesen/grossformat', satz: 'Je größer die Fliese, desto ebener muss der Untergrund sein.' },
         { name: 'Fliesen in Holzoptik', href: '/fliesen/holzoptik', satz: 'Sie sehen aus wie Holzdielen, sind aber Fliesen.' },
@@ -112,10 +123,13 @@ export const FLIESEN: WissenInhalt = {
     // erste Wahl zeigte keine großen Fliesen). Außerhalb der Galerie steht jedes damit zweimal (/ und /fliesen, M-A2). Alle drei
     // quadratisch (Nacharbeit 2: ein Hochformat in der Mitte ließ die Reihe mobil beim Blättern um 90 px springen). Namen auf
     // der Glasfläche aus Wörtern des Alt-Texts (Mikrotext, höchstens sechs Wörter)
+    // UM-E4-SICHT-FIX-2 M2-C4 Nr. 5 (Sicht E4 Anlauf 2: Fotoreihe weich): das scharfe Großformat zuerst (start-lage-balkon), dann
+    // die Eckbadewanne (start-lage-bad, Name aus dem Alt-Text), dann der Hauseingang; die weiche Dusche (start-lage-dusche) verlässt
+    // /fliesen. Alle drei weiter quadratisch, außerhalb der Galerie jedes höchstens zweimal
     fotos: [
-      { bild: 'start-lage-dusche', unterschrift: 'Dusche mit weißen Großformatfliesen', href: '/bad' },
-      { bild: 'start-lage-treppe', unterschrift: 'Hauseingang mit beigen Fliesen auf Stufen', href: '/treppen' },
       { bild: 'start-lage-balkon', unterschrift: 'Balkon mit hellgrauen Großformatfliesen', href: '/balkon-terrasse' },
+      { bild: 'start-lage-bad', unterschrift: 'Eckbadewanne mit grauer Verkleidung', href: '/bad' },
+      { bild: 'start-lage-treppe', unterschrift: 'Hauseingang mit beigen Fliesen auf Stufen', href: '/treppen' },
     ],
     // Drittelverband in der Reihe wie auf /leistungen (K-003 Nr. 4)
     fotosVersatz: true,
@@ -123,8 +137,13 @@ export const FLIESEN: WissenInhalt = {
     // Stimme der Textdatei (G8: Wortlaut unverändert); die Kennzeile mit Stand setzt der Baustein Stimmen darunter
     stimmen: ['rabia-oe'],
   },
-  // Qualitätsversprechen (UM-E4-EP3) vor dem nächsten Schritt; Wortlaut aus COMPANY_DATA.qualityPromises
-  versprechen: {},
+  // Qualitätsversprechen (UM-E4-EP3) vor dem nächsten Schritt; Wortlaut aus COMPANY_DATA.qualityPromises. `erklaert`: Abdichtung
+  // und Randfuge erklärt die Bildunterschrift der Schichtzeichnung (fliesen/page.jsx, außerhalb des Inhalts; M2-C4 Nr. 2). Offen
+  // drei Punkte (UM-E4-SICHT-FIX-2 M2-A3, Darstellung SF2-A): 3 Abdichtung nach DIN 18534 (die Zeichnung zeigt die Abdichtung, die
+  // Norm nennt die Seite sonst nicht), 5 Termintreue (sonst nirgends), 7 Werkstoffe und Markenkleber (die Raumliste nennt nur „den
+  // richtigen Kleber“). Nicht 2 (Großformat im Satz des Belegs und in den Wegen), 6 (Staubschutz in der Raumliste), 1 und 4
+  // (Ablauf 01 und 02), 8 (Inhaber nur auf /ueber-uns)
+  versprechen: { erklaert: ['abdichtung', 'randfuge'], offen: [3, 5, 7] },
   schritt: {
     titel: 'Haben Sie Fragen zu Ihrem Raum?',
     satz: 'Nennen Sie uns Ihren Namen und Ihre Telefonnummer. Deniz Tezgel ruft Sie zurück und macht einen Termin mit Ihnen aus.',

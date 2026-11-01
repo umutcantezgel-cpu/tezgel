@@ -11,8 +11,9 @@
 // unter ihr (Mikrotext aus den Firmendaten). Nur die Kammer: Gründungsjahr und Ort nennt der Satz danach und die erste Station der
 // Zeitleiste (Nacharbeit SF-C2: „Gegründet 2008 in Aßlar“ stand sonst zweimal im Absatz und ein drittes Mal 250 px darunter). Das Motto lässt sich aus der Komponente lösen (`motto={false}`) und steht dann als
 // `Leitsatz` ohne Kasten an anderer Stelle der Seite (nach den Stimmen, vor dem nächsten Schritt), Wortlaut und Unterschrift
-// unverändert; so steht mitten auf der Seite kein Schlusszitat. An seiner Stelle unter der Zeitleiste kann die Seite einen
-// eigenen Block setzen (`unten`, z. B. Fotos der Arbeitsweise ohne Jahresbezug).
+// unverändert; so steht mitten auf der Seite kein Schlusszitat. UM-E4-SICHT-FIX-2 M2-C3 Nr. 4: Die Fotos der Arbeitsweise stehen
+// als eigener Abschnitt direkt nach der Lage, die Zeitleiste steht allein (die Prop `unten` ist entfallen). Die Firmenzeile unter
+// dem Leitsatz trennt nicht mehr im Firmennamen (vorher „Fliesen-/verlegung“, Sicht E4 Anlauf 2), nur an den Fugen des Titels.
 import { COMPANY_DATA, historyTimeline } from '@/config/company';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
@@ -26,14 +27,14 @@ export function Leitsatz() {
   return (
     <figure className="mx-auto max-w-mass text-center text-tinte">
       <blockquote className="font-anzeige text-fs-4 font-extrabold text-balance lg:text-fs-5">&bdquo;{motto}&ldquo;</blockquote>
-      <figcaption className="mt-6 font-text text-fs-2 text-tinte-2">
+      <figcaption className="mt-6 font-text text-fs-2 text-tinte-2 hyphens-none">
         {owner.fullName} &middot; {mitFugen(owner.title)}, {legalName}
       </figcaption>
     </figure>
   );
 }
 
-export default function CompanyHistory({ motto: mitMotto = true, unten = null }) {
+export default function CompanyHistory({ motto: mitMotto = true }) {
   const { headquarters, authority, owner, legalName, motto } = COMPANY_DATA;
 
   return (
@@ -82,9 +83,6 @@ export default function CompanyHistory({ motto: mitMotto = true, unten = null })
           ))}
         </ol>
       </div>
-
-      {/* eigener Block unter der Zeitleiste mit eigener Zeile (z. B. „So arbeiten wir“), damit er nicht wie das Bild der letzten Station wirkt */}
-      {unten && <div className="mt-16 lg:mt-24">{unten}</div>}
 
       {/* Leitsatz zum Schluss: Motto mit Unterschrift (Bestand: „Final Vision Banner“); auf /ueber-uns seit M-C4 als Leitsatz vor dem Schritt */}
       {/* @container: in schmaler Spalte (große Schrift, unter 16 rem) weniger Innenabstand, damit dem Motto mehr als die halbe

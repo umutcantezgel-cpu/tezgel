@@ -88,8 +88,13 @@ export const UEBER_UNS: ErzaehlInhalt = {
     // „Alle Orte ansehen“ weiter
   },
   // Qualitätsversprechen (UM-E4-EP3) vor dem nächsten Schritt; Wortlaut aus COMPANY_DATA.qualityPromises. Das Nivelliersystem
-  // erklären schon die Werte (Abschnitt der Seite nach „Was wir tun“, WERTE unten)
-  versprechen: { erklaert: ['nivelliersystem'] },
+  // erklären schon die Werte (Abschnitt der Seite nach „Was wir tun“, WERTE unten). Offen drei Punkte (UM-E4-SICHT-FIX-2 M2-A3,
+  // Darstellung SF2-A): 4 Kalkulation mit festem Preis, 5 Termintreue und Bauzeitenplan, 7 Werkstoffe und Markenkleber. Nicht 2
+  // (Großformat in Punkt 02 von „Was wir tun“ und in den Werten), 3 (DIN 18534 ebenda), 6 (Staub im Ablauf 03 und in den Werten),
+  // 1 (Termin vor Ort im Ablauf 01) und 8 (Inhaber in Einstieg, Lage und Einleitung). 4 und 5 stehen kurz auch im Wert „Termintreue
+  // und fester Preis“, 4 dazu als „Angebot mit festem Preis“ im Ablauf 02; ihre Sätze sagen mehr (Kosten nach Quadratmetern und
+  // Aufwand, Baustart und Fertigstellung abgestimmt). 7 sagt die Seite sonst nirgends
+  versprechen: { erklaert: ['nivelliersystem'], offen: [4, 5, 7] },
   schritt: {
     titel: 'Bitten Sie um einen Termin vor Ort.',
     satz:
@@ -104,7 +109,8 @@ export const UEBER_UNS: ErzaehlInhalt = {
   },
 };
 
-/** Fotos der Arbeitsweise unter der Zeitleiste (UM-E4-SICHT-FIX M-C4 Nr. 3): drei vorhandene Fotos ohne Jahresbezug (keine
+/** Fotos der Arbeitsweise, seit UM-E4-SICHT-FIX-2 M2-C3 Nr. 4 als eigener Abschnitt direkt nach der Lage (vorher unter der
+ *  Zeitleiste, UM-E4-SICHT-FIX M-C4 Nr. 3): drei vorhandene Fotos ohne Jahresbezug (keine
  *  Station der Zeitleiste behauptet ein Aufnahmejahr), Namen auf der Glasfläche wörtlich aus der Gruppe „So arbeiten wir“ der
  *  Galerie (galerie-filter/daten.ts). Nicht start-galerie-6: dieselbe Aufnahme wie das Einstiegsbild ueber-einstieg. Außerhalb der
  *  Galerie steht jedes der drei damit höchstens zweimal (Verteilungstabelle M-A2). */
@@ -117,7 +123,8 @@ export const ARBEITSWEISE: { bild: ArbeitId; unterschrift: string }[] = [
 /** Werte (UM-E4-EP2, Rückführung nach UM-5): die sechs Werte des Bestands als Vertrauensliste nach „Was wir tun“ (Baustein
  *  `components/ueber-uns/Werte`, Slot `nachTun`). Wortlaut aus `values` in `src/config/company.js` (Zeilen 188 bis 195, in E0
  *  ausgegeben von `Werte.tsx`), beim Bau gelesen; Überschrift wie in E0. Eingetragen bei der Handwerkskammer und Abdichtung
- *  nach DIN 18534 sind belegte Fakten (Anhang F, F-05 und F-15) und stehen groß in der ersten Reihe. Angepasst nur, wo der
+ *  nach DIN 18534 sind belegte Fakten (Anhang F, F-05 und F-15) und tragen seit M2-C3 Nr. 2 einen kleinen Hinweis (alle Werte
+ *  gleich gebaut; vorher groß in der ersten Reihe). Angepasst nur, wo der
  *  Kern es verlangt (Tabelle WERTE_ANPASSUNG, je mit Grund):
  *  - M-07 (Garantie-Wörter erst nach Bestätigung), in derselben Linie wie das Qualitätsversprechen (Punkt 4 „Kalkulation mit
  *    festem Preis“ ohne Zusage zu Zusatzkosten, AGB § 2 Abs. 3): „Staubschutz“ statt „Staubschutz-Garantie“; Wert 4 „Termintreue

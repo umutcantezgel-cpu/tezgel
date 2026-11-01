@@ -73,8 +73,11 @@ export default function ReviewsSection({ leitachse = false }) {
                     </p>
                 </div>
 
-                {/* Themenfilter: Auswahlknöpfe (aria-pressed), Zahl in Mono */}
-                <div className="mt-12 flex flex-wrap justify-center gap-2" role="group" aria-label="Bewertungen nach Thema filtern">
+                {/* Themenfilter: Auswahlknöpfe (aria-pressed), Zahl in Mono. Unter sm dasselbe Raster wie die Raumknöpfe der Galerie
+                    (UM-E4-SICHT-FIX-2 M2-C1 Nr. 3): zwei gleich breite Spalten, Wort und Zahl linksbündig, bei ungerader Zahl füllt
+                    die letzte Zelle beide Spalten; bei großer Schrift (unter 20 rem) untereinander; ab sm wie bisher als Reihe */}
+                <div className="@container mt-12">
+                    <div className="grid grid-cols-2 gap-2 @max-xs:grid-cols-1 sm:flex sm:flex-wrap sm:justify-center" role="group" aria-label="Bewertungen nach Thema filtern">
                     {filters.map((filter) => {
                         const isActive = filter.id === activeFilter.id;
                         return (
@@ -83,7 +86,7 @@ export default function ReviewsSection({ leitachse = false }) {
                                 type="button"
                                 onClick={() => setSelectedTopic(filter.id)}
                                 aria-pressed={isActive}
-                                className={wahlKlassen}
+                                className={clsx(wahlKlassen, 'max-sm:justify-start max-sm:text-left max-sm:@xs:last:odd:col-span-2')}
                             >
                                 {/* eine Zeile wie im Bestand: Name und Zahl in einem Element (der Knopf ist inline-flex) */}
                                 <span>
@@ -93,13 +96,16 @@ export default function ReviewsSection({ leitachse = false }) {
                             </button>
                         );
                     })}
+                    </div>
                 </div>
 
-                {/* Stimmen der Gruppe als großes Karussell; ein neues Thema beginnt wieder bei der ersten Karte */}
+                {/* Stimmen der Gruppe als großes Karussell; ein neues Thema beginnt wieder bei der ersten Karte. Karten ohne Rahmen und
+                    ohne Fläche, je Karte eine 1-px-Fuge links wie die Listen (M2-C2 Nr. 3; vorher weiß umrandete Karten, das einzige
+                    Kartenraster der Seite). Wortlaut, Sterne und Quelle unverändert (G8) */}
                 <div className="mt-8">
                     <Karussell key={activeFilter.id} art="reihe" name="Bewertungen" selbstlauf>
                         {filteredReviews.map((review) => (
-                            <figure key={review.id} className="flex h-full flex-col border border-fuge bg-fliese p-6 lg:p-8">
+                            <figure key={review.id} className="flex h-full flex-col border-l border-fuge py-2 pl-6 lg:pl-8">
                                 {/* role="img": aria-label an einem span ist ohne Rolle unzulässig (axe aria-prohibited-attr) */}
                                 <span role="img" className="flex items-center gap-1 text-tinte" aria-label={`${review.rating} von 5 Sternen`}>
                                     {Array.from({ length: review.rating }, (_, i) => (

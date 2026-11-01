@@ -1,7 +1,7 @@
 'use client';
 // Galerie „Unsere Arbeiten“ · Auswahl (KERN v3.4 K-007 `galerie-filter`, E3-GRAF-08): Insel mit Zustand. Knöpfe mit
 // aria-pressed wie der Themenfilter der Bewertungen (wahlKlassen; genau ein Zeichen: gedrückt das Fugenkreuz, sonst das
-// Raumzeichen), darunter die Statuszeile (role="status") und die Fotos als verlegte Fläche. Die Fotos kommen fertig vom
+// Raumzeichen), darunter die Statuszeile (role="status", im Behälter der Liste) und die Fotos als verlegte Fläche. Die Fotos kommen fertig vom
 // Server (Bildfeld als Knoten); die Insel setzt nur hidden und die Marke data-galerie-neu mit der Staffelstufe. Neue Fotos
 // blenden in dauer-2 ein, Stück für Stück (CSS in bewegung.css), wegfallende gehen sofort. Ohne JavaScript stehen alle
 // Fotos; Satz, Knöpfe und Statuszeile sind dann verborgen (noscript:hidden), im Druck ebenso (print:hidden: auf Papier
@@ -17,6 +17,13 @@
 // einer Kachel tiefer (data-verband). Die Knöpfe stehen unter md in zwei gleich breiten Spalten (drei Reihen zu zwei; vorher
 // 3, 1, 2 mit einem Knopf allein, Nacharbeit SF-C1), bei großer Schrift untereinander, ab md in drei gleich breiten
 // Spalten, ab xl in einer Zeile. Ohne Maus steht der Name auf dem Verlauf in höchstens zwei Zeilen (globals.css).
+// Verband ohne Loch oben (UM-E4-SICHT-FIX-2 M2-C1, Sicht E4 Anlauf 2: das freie Feld über der tieferen Mittelspalte las sich als
+// nicht geladenes Foto, „Sie sehen alle 24 Fotos.“ stand über einer Galerie, die mit „Alle 24 Fotos zeigen“ endet): Die
+// Statuszeile steht im Behälter der Liste direkt vor ihr und ab 64 rem Breite bei „Alle Fotos“ in diesem Feld; eingeklappt sagt
+// sie „Sie sehen eine Auswahl aus 24 Fotos.“ (Mikrotext, daten.ts `ansage`). Unter der längsten Spalte schließt eine Fuge über
+// die volle Breite, eingeklappt steht „Alle 24 Fotos zeigen“ mittig auf ihr (globals.css; ruhend, ohne Bewegung). Unter sm stehen
+// Zeichen und Wort im Knopf linksbündig, wie die Themen der Bewertungen. Beim Aufklappen ändert sich nur der Text der Zeile und
+// der Knopf entfällt (wie bisher): keine zusätzliche Arbeit je Foto (R-1).
 // Reaktion beim Aufklappen (UM-E4-SICHT-FIX R-1, E-108: 384 ms bei m390 und CPU 4×, Schwelle 200 ms): Jedes neu gezeigte Foto
 // legte im selben Bild sein Platzhalter-SVG als eigenes Dokument an (next/image placeholder="blur"; Leistungsspur: 18
 // SVG-Dokumente in einem Layout von rund 170 ms). Darum zeigt der Klick zuerst nur die erste Reihe der neuen Fotos (so viele wie
@@ -111,7 +118,9 @@ export default function GalerieWahl({ fotos, satz }: { fotos: GalerieWahlFoto[];
                 aria-pressed={gedrueckt}
                 data-galerie-wahl={g.id}
                 onClick={() => waehlen(g.id)}
-                className={clsx(wahlKlassen, 'gap-2')}
+                // unter sm Zeichen und Wort linksbündig als Einheit, wie die Themen der Bewertungen (M2-C1 Nr. 3); die Variante unter sm
+                // überstimmt justify-center und text-center aus wahlKlassen (Varianten stehen im Stylesheet nach den Grundklassen)
+                className={clsx(wahlKlassen, 'gap-2 max-sm:justify-start max-sm:text-left')}
               >
                 {gedrueckt ? <Fugenkreuz className="size-3 shrink-0" /> : <Icon name={g.icon} groesse={4} />}
                 {g.name}
@@ -119,12 +128,15 @@ export default function GalerieWahl({ fotos, satz }: { fotos: GalerieWahlFoto[];
             );
           })}
         </div>
-        <p role="status" className="mt-6 text-center font-text text-fs-2 text-tinte-2">
-          {ansage(stand.wahl, anzahl(stand.wahl, fotos))}
-        </p>
       </div>
       {/* 1 Spalte, ab 42 rem 2, ab 64 rem 3: je Foto groß statt gequetscht (K-016, E-047; große Systemschrift: eine Spalte) */}
-      <div className="@container mt-6">
+      <div className="@container relative mt-6">
+        {/* Statuszeile im Behälter der Liste, direkt vor ihr (M2-C1 Nr. 1): ab 64 rem bei „Alle Fotos“ im Passstück oben über der
+            Mittelspalte (globals.css „Galerie eingeklappt und im Verband“), sonst über der Liste. Ohne JavaScript und im Druck
+            verborgen wie die Knöpfe (die Lage im Passstück gilt nur mit Skript am Bildschirm) */}
+        <p role="status" data-verband={stand.wahl === 'alle' || undefined} className="galerie-status mb-6 text-center font-text text-fs-2 text-pretty text-tinte-2 noscript:hidden print:hidden">
+          {ansage(stand.wahl, anzahl(stand.wahl, fotos), eingeklappt)}
+        </p>
         <ul
           ref={liste}
           id={listeId}
@@ -151,7 +163,8 @@ export default function GalerieWahl({ fotos, satz }: { fotos: GalerieWahlFoto[];
             );
           })}
         </ul>
-        {/* ohne JavaScript und im Druck stehen alle Fotos (globals.css), der Knopf entfällt dort */}
+        {/* ohne JavaScript und im Druck stehen alle Fotos (globals.css), der Knopf entfällt dort; im Verband mit Abstand unter der
+            bündigen Unterkante, nicht auf dem Foto der Mittelspalte (Nacharbeit M2-C1) */}
         {eingeklappt && (
           <div className="galerie-mehr-knopf mt-6 flex justify-center noscript:hidden print:hidden">
             <button type="button" aria-expanded={false} aria-controls={listeId} onClick={aufklappen} data-motion="druck" className={knopfKlassen('neben', 'px-6')}>

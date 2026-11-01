@@ -2,8 +2,10 @@
 // und gleiche Bausteine wie die Erzählseite; „Was wir tun“ besteht aus Wissensblöcken (Absatz, Karten, Liste, Tabelle,
 // Zeichnung), der Beleg ist oft ein einzelnes Foto mit Satz, der nächste Schritt nennt verwandte Seiten. Ruhige
 // Zeichnungen der Seite kommen über `zeichnungen` (Kennung im Block). Mit Plan steht im Einstieg statt des Fotos der
-// Verlegeplan, der sich beim Zeigen in die Flucht rückt (sig-plan „zeigen“; Wissensseiten tragen nur diese Bewegung des
-// Planblatts, E-044). Rahmen wie die Erzählseite: alles nach dem Einstieg ist eine Suspense-Grenze, die Abschnitte zeichnen
+// Verlegeplan, der sich beim Zeigen in die Flucht rückt (sig-plan „zeigen“, E-044); mit `worum.planFlucht: 'laden'` rückt er beim
+// Laden einmal in die Flucht (Registerbewegung sig-plan „laden“, reduziert in der Flucht; UM-E4-SICHT-FIX-2 M2-C4 Nr. 1, E-113
+// Nr. 6, Datenschalter mit Abbruchkriterium). Unter dem Plan ab sm eine Bildunterschrift (Mikrotext, Prop `unterBild` des
+// Einstiegs): Sie sagt, was die Gleich-Zeichen an der Maßlinie zeigen. Ohne Zeilenmaske der H1 (E-113 Nr. 2). Rahmen wie die Erzählseite: alles nach dem Einstieg ist eine Suspense-Grenze, die Abschnitte zeichnen
 // spät, das Hauptziel kommt aus navigation.js. Der Einstieg steht vor der Leitachse und trägt sein Lot in Grundschicht
 // (UM-E4-VORL): Danach führt der Leitfaden wie auf / (Spitze auf der Leselinie, Kopf neben dem Inhalt der Abschnitte auf
 // Kalk, Einrasten an den Kanten); vorher umfasste die Leitachse den Einstieg, und ihr Rot stand als Stummel unter dem Kopf
@@ -55,7 +57,8 @@ function Teile({ inhalt, zeichnungen, werkzeug }: WissensSeiteProps) {
     wissen: <Wissen bloecke={inhalt.wissen} zeichnungen={zeichnungen} ersterAufFliese={getauscht} />,
     ablauf: <Ablauf inhalt={inhalt.ablauf} />,
     beleg: <Beleg inhalt={inhalt.beleg} pfad={inhalt.pfad} />,
-    versprechen: inhalt.versprechen && <Versprechen vorher={vorher} erklaert={inhalt.versprechen.erklaert} />,
+    // alle Angaben des Inhalts an den Baustein, auch `offen` (M2-A3; die Darstellung baut SF2-A in Versprechen.tsx)
+    versprechen: inhalt.versprechen && <Versprechen vorher={vorher} {...inhalt.versprechen} />,
     schritt: (
       <Schritt
         inhalt={schritt}
@@ -76,13 +79,19 @@ function Teile({ inhalt, zeichnungen, werkzeug }: WissensSeiteProps) {
   return folge.map((t) => <Fragment key={t}>{teile[t]}</Fragment>);
 }
 
+/** Bildunterschrift unter dem Plan im Einstieg (Mikrotext, M2-C4 Nr. 1): beschreibt die Gleich-Zeichen an der Maßlinie */
+const PLAN_UNTERSCHRIFT = 'Die geschnittenen Fliesen am Rand sind links und rechts gleich breit.';
+
 export default function WissensSeite({ inhalt, zeichnungen, werkzeug }: WissensSeiteProps) {
   const { worum } = inhalt;
   // Einstieg an der Schnur mit Bewertungszeile (UM-E4-SICHT-FIX M-A3): ein Rot im ersten Bildschirm, der Plan ohne seine Achse
-  const bild = worum.plan ? <Verlegeplan plan={worum.plan} flucht="zeigen" ohneAchse /> : worum.bild;
+  const bild = worum.plan ? <Verlegeplan plan={worum.plan} flucht={worum.planFlucht ?? 'zeigen'} ohneAchse /> : worum.bild;
+  // erst ab sm: Auf dem Handy schöbe die Zeile den Vorspann (LCP-Element von /fliesen) aus dem ersten Bildschirm (m390: sichtbar
+  // nur noch 54 statt 117 px), die H1 würde LCP-Element, mitten in der Messung des Abbruchkriteriums für „laden“ (E-113 Nr. 6)
+  const unterBild = worum.plan ? <p className="mx-auto mt-2 hidden max-w-mass text-center font-text text-fs-2 text-pretty text-tinte-2 sm:block">{PLAN_UNTERSCHRIFT}</p> : undefined;
   return (
     <Seitenformel>
-      <Einstieg pfad={inhalt.pfad} brotkrumen={worum.brotkrumen} titel={worum.titel} ort={worum.ort} vorspann={worum.vorspann} bild={bild} hauptziel={hauptziel(inhalt.pfad)} lot schnur bewertung fugeUnten={inhalt.lage.aufFliese} />
+      <Einstieg pfad={inhalt.pfad} brotkrumen={worum.brotkrumen} titel={worum.titel} ort={worum.ort} vorspann={worum.vorspann} bild={bild} unterBild={unterBild} hauptziel={hauptziel(inhalt.pfad)} lot schnur bewertung fugeUnten={inhalt.lage.aufFliese} />
       <Leitachse>
         <Suspense fallback={<div aria-hidden="true" className="min-h-dvh noscript:hidden" />}>
           <Teile inhalt={inhalt} zeichnungen={zeichnungen} werkzeug={werkzeug} />

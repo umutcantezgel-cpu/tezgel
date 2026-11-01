@@ -85,9 +85,11 @@ export default function ServiceHubPage() {
           tun: <Leistungsplaene bereiche={LEISTUNGSPLAENE} />,
           ablauf: <SzeneAblauf plan="fugen" bewegt={false} form="treppe" schritte={schritte} />,
         }}
-        // der große Moment im eigenen Abschnitt: Kopf mittig, die Überschrift ist der Satz der Zeichnung (Bildunterschrift entfällt)
+        // der große Moment im eigenen Abschnitt: Kopf mittig, die Überschrift ist der Satz der Zeichnung (Bildunterschrift entfällt).
+        // Eigene Fläche Fliese mit Kantenkreuz an der Leitachse (UM-E4-SICHT-FIX-2 M2-C5 Nr. 3, Sicht E4 Anlauf 2: auf Kalk nach den
+        // Bereichen auf Kalk standen rund 270 px Leere ohne Kante)
         nachTun={
-          <Abschnitt id="formatregler" formel="tun" leitachse spaet mitte titel={FORMATREGLER_TITEL}>
+          <Abschnitt id="formatregler" formel="tun" leitachse spaet mitte flaeche="fliese" titel={FORMATREGLER_TITEL}>
             <Formatregler titel={false} />
           </Abschnitt>
         }

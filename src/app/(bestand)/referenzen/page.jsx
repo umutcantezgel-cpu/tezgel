@@ -47,15 +47,18 @@ export default function ReferenzenPage() {
                     belegZwei: {
                         id: 'vorher-nachher',
                         titel: 'Eine Außentreppe, vorher und nachher.',
-                        // auf Fliese (UM-E4-CHOR-FIX, nur die Fläche): Galerie, Vorher-Nachher und Bewertungen lagen sonst rund
-                        // 7 000 px auf Kalk; so folgen Kalk, Fliese, Kalk und der nächste Schritt auf Fliese
-                        flaeche: 'fliese',
+                        // Bühne auf Tinte (UM-E4-SICHT-FIX-2 M2-C2 Nr. 1): der hohe Regler einspaltig mittig, ab lg so hoch wie der
+                        // Bildschirm unter dem Kopf; auf Tinte lesen die Flanken als gesetzter Rahmen, nicht als Leere (vorher auf
+                        // Fliese, UM-E4-CHOR-FIX: Galerie, Vorher-Nachher und Bewertungen lagen sonst rund 7 000 px auf Kalk; so folgen
+                        // Kalk, Tinte, Kalk und der nächste Schritt auf Fliese)
+                        flaeche: 'tinte',
                         moment: (
                             <VorherNachher
                                 vorher="ref-vorher"
                                 nachher="ref-nachher"
                                 titelId="vorher-nachher-titel"
                                 unterschrift="Schieben Sie den Regler hin und her. So sehen Sie den Unterschied."
+                                aufTinte
                             />
                         ),
                     },

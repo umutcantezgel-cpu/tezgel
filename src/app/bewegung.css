@@ -393,13 +393,20 @@ html.k-verlauf ol[data-motion="anriss"] .treppe-kreuz-rot {
    (--vn-seite = Breite / Höhe, setzt VorherNachher aus ARBEITEN), höchstens so breit wie der Rahmen. Seit UM-E4-SICHT-FIX
    M-C3 steht die Anleitung unter lg über dem Regler: In hohen Fenstern (ab 40rem) stehen Anleitung und Regler zusammen in
    einem Bildschirm (höchstens 80svh, sonst der Bildschirm abzüglich 11rem für festen Kopf, Anleitung und Abstand). In
-   flachen Fenstern (q844) und ab lg (Anleitung daneben) bleibt es bei 80svh; vorher schrumpfte die Bühne auf q844 um 31 %. */
+   flachen Fenstern (q844) bleibt es bei 80svh; vorher schrumpfte die Bühne auf q844 um 31 %. Ab lg (Bühne auf Tinte,
+   UM-E4-SICHT-FIX-2 M2-C2 Nr. 1, Anleitung darüber) reicht die Bühne bis zur Bildschirmhöhe unter dem festen Kopf (Stufe 16)
+   abzüglich einer Stufe 8: d1440 rund 410 px breit, d1920 rund 500 px (vorher 80svh, 370 px). */
 .vn-hoehe {
   max-width: calc(80svh * var(--vn-seite, 0.8));
 }
 @media (width < 64rem) and (height >= 40rem) {
   .vn-hoehe {
     max-width: calc(min(80svh, 100svh - 11rem) * var(--vn-seite, 0.8));
+  }
+}
+@media (width >= 64rem) {
+  .vn-hoehe {
+    max-width: calc((100svh - var(--spacing) * 24) * var(--vn-seite, 0.8));
   }
 }
 /* Wörter am Griff (ab 18rem Bühnenbreite): Sie wandern mit dem Lot und blenden zum Rand hin aus, bevor die Bühne sie
@@ -594,9 +601,31 @@ html.k-verlauf ol[data-motion="anriss"] .treppe-kreuz-rot {
   fill: var(--color-fliese);
   stroke: none;
 }
+/* Fliesenoberfläche (UM-E4-SICHT-FIX-2 M2-C5 Nr. 2, Wand.tsx): jede zweite Fliese in kalk, je Fuge ein Band in fuge unter dem
+   Strich (3 Einheiten, wächst mit der Zeichnung), die Tür der Bezugsgröße deckt die Fliesen in fliese. Ruhend, ohne Bewegung */
+.formatregler-wechsel {
+  fill: var(--color-kalk);
+  stroke: none;
+}
+.formatregler-fugenband {
+  fill: none;
+  stroke: var(--color-fuge);
+  stroke-width: 3;
+  /* bündig an der Wandkante: die eckigen Enden des Rahmens ragten sonst über sie hinaus */
+  stroke-linecap: butt;
+}
+.formatregler-tuer {
+  fill: var(--color-fliese);
+  stroke: none;
+}
 @media (forced-colors: active) {
-  .formatregler-flaeche {
+  .formatregler-flaeche,
+  .formatregler-wechsel,
+  .formatregler-tuer {
     fill: Canvas;
+  }
+  .formatregler-fugenband {
+    stroke: Canvas;
   }
 }
 @media print {

@@ -55,6 +55,8 @@ export const REGISTER: Record<string, Registereintrag> = {
   'sig-kreuzlinie': { ausloeser: 'laden' },
   'sig-flucht': { ausloeser: 'laden' },
   'szene-ablauf': { ausloeser: 'scroll' },
+  // „zeigen“ auf Touch über Sichtbarkeit; „laden“ (data-flucht="laden") läuft ohne Beobachter per CSS: Planblatt-Einstiege,
+  // /leistungen/[id] und seit UM-E4-SICHT-FIX-2 M2-C4 der Plan im Einstieg der Wissensseiten mit `worum.planFlucht` (/fliesen)
   'sig-plan': { ausloeser: 'sicht', schwelle: 0.4, nurGrob: true },
   // UM-E4-SICHT-FIX M-C6 (E-104 Nr. 9): legt sich frei, sobald es zu 40 % im Fenster steht (Ortsmoment in der Lage der
   // Ortsseiten); vorher beim Laden per CSS (E4-NACH-02, Planblatt des Einstiegs)

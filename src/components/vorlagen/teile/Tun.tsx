@@ -57,6 +57,10 @@ function ZeilenVignette({ name }: { name: NonNullable<Zeile['vignette']> }) {
  *  Reihe bis zu 15 px versetzt; wie das Fugenfeld der Wissensseiten) */
 export function Bereichszeilen({ bereiche, className, spalten = false }: { bereiche: NonNullable<TunInhalt['bereiche']>; className?: string; spalten?: boolean }) {
   const raster = spalten ? satzSpalten(bereiche.length) : undefined;
+  // Trägt eine Zeile der Liste eine Plan-Vignette, halten Zeilen ohne Zeichnung deren Feld frei (leer, gleiche Breite): Die Texte
+  // aller Zeilen beginnen an einer Kante (UM-E4-SICHT-FIX-2 Nacharbeit SF2-C, /fliesen: zwei Technikzeilen ohne passende Vignette
+  // sprangen sonst um das Feld nach links)
+  const mitZeichnung = bereiche.some((b) => b.vignette);
   const liste = (
     <ul className={clsx(raster ? raster.liste : '@container', 'border-t border-fuge', !raster && className)}>
       {bereiche.map((b, i) => (
@@ -69,12 +73,12 @@ export function Bereichszeilen({ bereiche, className, spalten = false }: { berei
                   <ZeilenVignette name={b.vignette} />
                 </span>
               </span>
+            ) : b.motiv ? (
+              <span aria-hidden="true" className="hidden size-16 shrink-0 border border-fuge @xs:block">
+                <Fliesenkomposition motiv={b.motiv} ausschnitt={48} fuellen />
+              </span>
             ) : (
-              b.motiv && (
-                <span aria-hidden="true" className="hidden size-16 shrink-0 border border-fuge @xs:block">
-                  <Fliesenkomposition motiv={b.motiv} ausschnitt={48} fuellen />
-                </span>
-              )
+              mitZeichnung && <span aria-hidden="true" className="hidden w-24 shrink-0 @xs:block lg:w-32" />
             )}
             <span className="min-w-0 flex-1">
               <span className="block font-text text-fs-4 font-semibold text-pretty hyphens-none underline decoration-transparent decoration-2 underline-offset-8 transition-colors dauer-1 group-hover:decoration-laser">
