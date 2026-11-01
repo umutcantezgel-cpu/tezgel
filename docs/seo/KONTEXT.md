@@ -2,7 +2,7 @@
 
 Stand 01.11.2026 abends · Code-Stand `main` f19ebba (live seit 31.10.2026, 20:55 UTC) · Auftraggeber: Umut (Sohn des Inhabers) · Startprompt: [`STARTPROMPT.md`](STARTPROMPT.md) · Belege mit Zeilennummern: [`analysen/`](analysen/)
 
-Dieses Dokument ist die gemeinsame Grundlage für die SEO-Runde. Es sagt, was erreicht werden soll, wo im Repo was liegt, was heute im Weg steht, was zu entscheiden ist und in welcher Reihenfolge gearbeitet wird. Fakten tragen einen Beleg; Empfehlungen sind als solche markiert. Kennungen: **S1 bis S10** sind Entscheidungen des Auftraggebers, **P0 bis P8** Arbeitspakete, **A, T, N, K** Befunde (Ausrichtung, Technik, Entität, Kontakt). Die Werkstatt nutzt eigene Kennungen (Etappen E0 bis E5, Entscheidungen E-001 ff.); sie sind hier nicht gemeint.
+Dieses Dokument ist die gemeinsame Grundlage für die SEO-Runde. Es sagt, was erreicht werden soll, wo im Repo was liegt, was heute im Weg steht, was zu entscheiden ist und in welcher Reihenfolge gearbeitet wird. Fakten tragen einen Beleg; Empfehlungen sind als solche markiert. Kennungen: **S1 bis S10** sind Entscheidungen des Auftraggebers, **P0 bis P8** Arbeitspakete, **A01, T01, N01, K01 ff.** Befunde (Ausrichtung, Technik, Entität, Kontakt). Nicht zu verwechseln: P01 bis P35 sind Baustellen aus `projekte.md`, keine Pakete; K-001 ff. sind Abschnitte von `_werkstatt/KERN.md`; F1 bis F9 sind Formulare, G1 bis G9 Grundregeln, M-xx Fragen aus `MENSCHEN.md`. Die Werkstatt nutzt eigene Kennungen (Etappen E0 bis E5, Entscheidungen E-001 ff.); sie sind hier nicht gemeint. Zeilenangaben gelten für `main` f19ebba; in den Dateien der Werkstatt-Liste (Abschnitt 3) verschieben sie sich nach deren Merge, dann nach Funktions- oder Feldnamen suchen.
 
 ## Kurzfassung
 
@@ -21,10 +21,10 @@ Dieses Dokument ist die gemeinsame Grundlage für die SEO-Runde. Es sagt, was er
   - Sie füllen Lücken (Küche, Flur, Treppenhaus, Neubau, Gewerbe, Großformat) und liefern Fotos für die `/treppen`-Seiten, die bisher keines zeigen.
   - **Das Repo ist öffentlich.** Mit dem Commit vom 01.11.2026 sind alle Originale über GitHub für jeden sichtbar (Auftrag: alle Bilder in einem Ordner ins Repo). Ob das Repo privat wird, ist S7.
 - **Vor dem ersten Push der SEO-Runde klären:**
-  - S1: Umgang mit dem Werkstatt-Branch. Stand 01.11.2026, 20:32 UTC: 44 Commits vor `main`, seit 19:40 UTC in der Endabnahme (Werkstatt-Etappe E5); ein Fast-Forward nach `main` ist geplant.
+  - S1: Umgang mit dem Werkstatt-Branch. Stand 01.11.2026, 20:49 UTC: 45 Commits vor `main`, seit 19:40 UTC in der Endabnahme (Werkstatt-Etappe E5); ein Fast-Forward nach `main` ist geplant.
   - Die Freigaben (Abschnitt 3).
   - S10: die sofortige Reparatur von K01 und K02.
-- **Reihenfolge, die nicht kippen darf:** Wetzlar verlässt Titel und Description der Startseite erst, wenn die neue Wetzlar-Seite live ist. Sonst geht die heutige Wetzlar-Sichtbarkeit der Startseite verloren, bevor eine Zielseite sie auffängt.
+- **Reihenfolge, die nicht kippen darf:** Wetzlar verlässt Titel und Description der Startseite und der Übersichtsseiten erst im selben Push, mit dem die neue Wetzlar-Seite live geht (P3); früher nur mit Umuts ausdrücklicher Freigabe. Sonst geht die heutige Wetzlar-Sichtbarkeit verloren, bevor eine Zielseite sie auffängt.
 
 ## Inhalt
 
@@ -70,9 +70,9 @@ Auftrag von Umut vom 01.11.2026, sinngemäß:
 | E-Mail | info@tezgel.de (Anfragen gehen an info@, Absender ist kontakt@tezgel.de) | `src/lib/email/mailer.ts:27-38` |
 | Domain | https://www.tezgel.de; `tezgel.de` und `http` leiten per 308 dorthin | live geprüft |
 | Bewertungen | Google 5,0 bei 27 (Stand September 2026, von Hand gepflegt) | `src/config/reviews.js:9-19` |
-| Faktenblatt | einzige Quelle für Zahlen und Zusagen | `_werkstatt/KERN.md:342-375` |
+| Faktenblatt | einzige Quelle für Zahlen und Zusagen | `_werkstatt/KERN.md`, Anhang F · Faktenblatt |
 
-**Nicht belegt, daher nicht behaupten** (`_werkstatt/KERN.md:375`): „Meisterbetrieb“, Zahl der Mitarbeiter, „über 15 Jahre“, Zertifikate, Partnerstatus, Projektorte zu Fotos, Dauer einer Badsanierung. Erlaubt sind „eingetragener Fachbetrieb“ und „Mittelhessen“ (`KERN.md:372`). Bestätigt Deniz oder Umut einen neuen Fakt (etwa einen Meisterbrief), trägt die SEO-Runde ihn mit Datum und Quelle in Abschnitt 13 ein. Ab dort gilt er für die SEO-Runde wie ein Eintrag im Faktenblatt; `KERN.md` und `MENSCHEN.md` ziehen die Werkstatt oder Umut nach.
+**Nicht belegt, daher nicht behaupten** (`_werkstatt/KERN.md`, Anhang F, „Nicht verwenden“): „Meisterbetrieb“, Zahl der Mitarbeiter, „über 15 Jahre“, Zertifikate, Partnerstatus, Projektorte zu Fotos, Dauer einer Badsanierung. Erlaubt sind „eingetragener Fachbetrieb“ und „Mittelhessen“ (Anhang F). Bestätigt Deniz oder Umut einen neuen Fakt (etwa einen Meisterbrief), trägt die SEO-Runde ihn mit Datum und Quelle in Abschnitt 13 ein. Ab dort gilt er für die SEO-Runde wie ein Eintrag im Faktenblatt; `KERN.md` und `MENSCHEN.md` ziehen die Werkstatt oder Umut nach.
 
 **Offene Fakten in `_werkstatt/MENSCHEN.md`, die SEO betreffen:**
 - M-03: Öffnungszeiten widersprechen sich (Freitag 17 oder 18 Uhr, Samstag).
@@ -100,10 +100,10 @@ Auftrag von Umut vom 01.11.2026, sinngemäß:
 - Eigene Arbeitsdateien der SEO-Runde (Audits, Keyword-Listen, Entwürfe) gehören deshalb unter `docs/seo/arbeit/` nur, wenn sie öffentlich sein dürfen, sonst außerhalb des Repos.
 
 **Werkstatt-Lauf „Universal Motion“** auf `claude/tezgel-website-redesign-iqxt8z`:
-- Stand 01.11.2026, 20:32 UTC: 44 Commits vor `main`, 0 dahinter, letzter Commit 7430535. Eine Routine setzt den Lauf stündlich fort.
+- Stand 01.11.2026, 20:49 UTC: 45 Commits vor `main`, letzter Commit 93fa042. Die Commits dieser Unterlagen auf `main` vom 01.11.2026 fehlen dem Branch; vor dem Fast-Forward mischt die Werkstatt sie zurück. Eine Routine setzt den Lauf stündlich fort.
 - Seit 19:40 UTC läuft die Endabnahme (Werkstatt-Etappe E5). Danach ist ein einmaliger Fast-Forward auf `main` geplant, ohne weitere Rückfrage, vorausgesetzt `main` ist Vorfahr des Branches.
 - Jeder Commit auf `main`, auch der Commit mit diesen Unterlagen und Bildern, zwingt die Werkstatt, `main` vorher zurückzumischen. Das hat sie bei früheren Live-Korrekturen getan. Der Bilder-Commit fügt fast nur neue Dateien hinzu; einzig `CLAUDE.md` bekommt einen eigenen SEO-Block, getrennt vom WERKSTATT-Block.
-- **Die Werkstatt ändert** (85 Dateien außerhalb von `_werkstatt/`, Stand 20:13 UTC):
+- **Die Werkstatt ändert** (85 Dateien außerhalb von `_werkstatt/`, Stand 20:49 UTC):
   - alle Dateien `src/inhalte/*.ts`, aber nicht `src/inhalte/meta/*`;
   - die Seiten `src/app/(bestand)/{bad,bad/barrierefreies-bad,balkon-terrasse,blog,fliesen,kontakt,leistungen,referenzen,standorte/[stadt],ueber-uns}/page.*`;
   - große Teile von `src/components/{kern,momente,vorlagen}/**`, dazu `blog/{BlogCard,BlogFilter,liste/Leitfaden}.jsx`, `contact/DirectContactCard.tsx`, `funnels/TezgelAnfrageFunnel/Schritt1.jsx`, `leistungen/Leistungsplaene.tsx`, `sections/{CompanyHistory,ReviewsSection}.jsx`, `ueber-uns/Werte.tsx`, `ui/FinalCTA.tsx`;
@@ -120,7 +120,7 @@ Auftrag von Umut vom 01.11.2026, sinngemäß:
 - **Variante A:** Erst den Werkstatt-Endstand nach `main` bringen, dann die SEO-Runde auf dem neuen `main` beginnen. Am sichersten. Weil die Werkstatt schon in der Endabnahme ist, kostet das vermutlich nur Tage.
 - **Variante B:** Die SEO-Runde arbeitet sofort auf einem eigenen Branch von `main` (Vorschlag `seo/lokal`).
   - Zuerst nur dort, wo die Werkstatt nichts ändert: Technik, Schema, Descriptions in `src/inhalte/meta/*`, `metadata.ts`, Bilddaten.
-  - Titel in `src/inhalte/*.ts` nur zeilenweise oder nach dem Merge. Inhalte von Startseite, Ortsseiten, Kontaktseite und Galerie nach dem Fast-Forward oder mit einer Dateisperre. Die Sperre gilt erst, wenn Umut sie der Werkstatt mitgeteilt und der SEO-Runde bestätigt hat.
+  - Einzige Ausnahme vor dem Merge: die Meta-Zeilen (`titel`, `beschreibung`) in `src/inhalte/*.ts`, als eigener Commit ohne weitere Änderung dieser Dateien. Inhalte von Startseite, Ortsseiten, Kontaktseite und Galerie nach dem Fast-Forward oder mit einer Dateisperre. Die Sperre gilt erst, wenn Umut sie der Werkstatt mitgeteilt und der SEO-Runde bestätigt hat.
   - Vorschau-Builds: `seo/lokal` nur lokal führen, oder im ersten Commit des Branches in `vercel.json` unter `git.deploymentEnabled` den Eintrag `"seo/lokal": false` setzen (wie für den Werkstatt-Branch).
 - **Für beide Varianten gilt:**
   - Bis Umut S9 anders entscheidet, braucht jeder Push auf `main` (auch ein Merge) eine eigene Freigabe „live“ für genau diesen Stand. Dauerfreigaben aus `_werkstatt/ENTSCHEIDUNGEN.md` gelten für die SEO-Runde nicht.
@@ -135,9 +135,9 @@ Auftrag von Umut vom 01.11.2026, sinngemäß:
 - Wer eine Sitzung unter `~/Downloads` startet, bekommt zusätzlich `~/Downloads/CLAUDE.md` geladen (Coday-Mediapipeline mit Zuschnitten, Umbenennungen und du-Anrede). Diese Datei gilt für dieses Projekt nicht; die Sitzung gehört in einen Klon außerhalb von `~/Downloads`.
 
 **Texthoheit:**
-- Die Werkstatt ändert nur Mikrotexte und legt übrige Texte als Vorschlag in `_werkstatt/TEXTVORSCHLAEGE.md` ab (`_werkstatt/STATUS.md:18`, `KERN.md:282`).
+- Die Werkstatt ändert nur Mikrotexte und legt übrige Texte als Vorschlag in `_werkstatt/TEXTVORSCHLAEGE.md` ab (`_werkstatt/STATUS.md:18`, KERN K-011, Absatz v4).
 - Für die SEO-Runde gilt nach dem Auftrag vom 01.11.2026 abweichend: Titel, Descriptions, Alt-Texte und Seitentexte ändert sie direkt im Code. Grundlage ist der von Umut freigegebene Plan; im Bericht steht jeweils alt und neu. `TEXTVORSCHLAEGE.md` bleibt unberührt.
-- Die 127 neuen Fotos sind echte Fotos des Betriebs und gelten für die Bildregeln (`KERN.md:155`) als Bestand.
+- Die 127 neuen Fotos sind echte Fotos des Betriebs und gelten für die Bildregeln (KERN K-006, „Bildregeln“) als Bestand.
 
 **Regeln G1 bis G9** (`_werkstatt/AUFTRAG.md:57-65`), sinngemäß auch für die SEO-Runde:
 - G1: nur in diesem Repo arbeiten; fremde Seiten nur lesen, höchstens eine Anfrage je Sekunde.
@@ -161,8 +161,9 @@ Auftrag von Umut vom 01.11.2026, sinngemäß:
   - Rechtstexte;
   - Cookie-Einwilligung und ihr Verhalten (betrifft Tracking);
   - das Logo;
+  - Wetzlar aus Titel oder Description der Startseite oder der Übersichtsseiten nehmen, bevor die neue Wetzlar-Seite live ist;
   - jeder Push auf `main`.
-- Formulare und Rechtstexte zusätzlich nur nach Rechtsprüfung (M-11).
+- Einwilligung, Datenschutzhinweise und Pflichtfelder der Formulare sowie Rechtstexte zusätzlich nur nach Rechtsprüfung (M-11). Für K01 und K02 genügt Umuts Zustimmung zu S10.
 
 ## 4. Landkarte: Wo ist was auf main
 
@@ -186,8 +187,8 @@ Kürzel `B/` = `src/app/(bestand)/` (die Klammer steht nicht in der Adresse). Ne
 
 | Thema | Dateien und Verhalten |
 |---|---|
-| Titel | `src/lib/metadata.ts`: `generatePageMetadata` alias `createMetadata` `:123-176`, Ausgabe als `title.absolute`. `sanitizeTitle` `:17-110`: Titel mit 45 bis 58 Zeichen und „Tezgel“ bleiben unverändert. Titel mit 50 bis 58 Zeichen ohne „Tezgel“ bleiben ebenfalls unverändert, also ohne Marke. Andere werden aufgefüllt oder gekürzt; dabei kann die Marke wegfallen (`:35`, `:44-50`, `:93-97`). Live tragen 12 von 164 Titeln keine Marke |
-| Description | `src/lib/beschreibung.ts` füllt kurze Texte auf und kürzt lange auf höchstens 155 Zeichen (mit „...“); „&“ und „!“ bleiben stehen. **Ein Eintrag in `src/inhalte/meta/*.ts` gewinnt immer** (`index.ts:15-22`), dann wirkt der Text der Seite nicht. Die Zeichenregeln prüft nur `test/meta.test.mjs`, und nur für diese Einträge |
+| Titel | `src/lib/metadata.ts`: `generatePageMetadata` alias `createMetadata` `:123-176`, Ausgabe als `title.absolute`. `sanitizeTitle` `:17-110`: Titel mit 45 bis 58 Zeichen und „Tezgel“ bleiben unverändert. Titel mit 50 bis 58 Zeichen ohne „Tezgel“ bleiben ebenfalls unverändert, also ohne Marke. Andere werden aufgefüllt oder gekürzt; dabei kann die Marke wegfallen (`:27-39`, `:47-50`, `:93-97`). Live tragen 12 von 164 Titeln keine Marke |
+| Description | `src/lib/beschreibung.ts` füllt kurze Texte auf und kürzt lange auf höchstens 155 Zeichen (mit „...“); „&“ und „!“ bleiben stehen. **Ein Eintrag in `src/inhalte/meta/*.ts` gewinnt immer** (`index.ts:15-22`), dann wirkt der Text der Seite nicht. Die Zeichenregeln prüft `test/meta.test.mjs` für die Einträge in `src/inhalte/meta`; für die 13 Ortsseiten prüft `test/orte.test.mjs:30-43` Länge (Titel höchstens 58, Description 120 bis 155) und Gedankenstriche, nicht aber „&“, „!“ und „...“. Alle übrigen Descriptions prüft kein Test |
 | Canonical, OG | `metadata.ts:124` (selbstreferenzierend); OG-Bild ohne Angabe das Logo `:132-135` |
 | JSON-LD | `src/lib/schema.ts` (Root-Graph `:307-316`, LocalBusiness `:168-227`, Product mit Sternen `:243-302`, Service `:412-459`); `src/lib/schemaPyramid.ts` (Orte, Wikidata, Ortsknoten `:289-362`); Ausgabe `src/components/seo/JsonLd.tsx`, `SeitenDaten.tsx`, `OrdnerService.tsx` |
 | Sitemap, robots | `src/app/sitemap.ts` (164 Adressen, `lastmod` = Buildzeit); `src/app/robots.ts`; `src/app/llms.txt/route.ts`; leere `video-sitemap.xml` |
@@ -213,7 +214,7 @@ Kürzel `B/` = `src/app/(bestand)/` (die Klammer steht nicht in der Adresse). Ne
 
 | Was | Wo |
 |---|---|
-| Text-, Bild- und Gestaltungsregeln | `_werkstatt/KERN.md`. Für die SEO-Runde zählen: K-003 (Ruhe-Regeln „Text“ und „Bilder“), K-004 („Adressen und Suchmaschinen“), K-006 („Bildregeln“), K-011, K-013 (Glossar) und das Faktenblatt `:342-375` |
+| Text-, Bild- und Gestaltungsregeln | `_werkstatt/KERN.md`. Für die SEO-Runde zählen: K-003 (Ruhe-Regeln „Text“ und „Bilder“), K-004 („Adressen und Suchmaschinen“), K-006 („Bildregeln“), K-011 (ohne den Absatz v4, siehe Abschnitt 3, Texthoheit), K-013 (Glossar) und Anhang F · Faktenblatt |
 | Verbotene Floskeln, erlaubte Bindestrichwörter, Glossar | `_werkstatt/regeln/floskeln.json`, `bindestrich-erlaubt.json`, `glossar.json` |
 | Grundregeln G1 bis G9 | `_werkstatt/AUFTRAG.md:57-65` |
 | Offene Fragen an Menschen | `_werkstatt/MENSCHEN.md` |
@@ -222,7 +223,7 @@ Kürzel `B/` = `src/app/(bestand)/` (die Klammer steht nicht in der Adresse). Ne
 
 **CI und Schema-Prüfung:**
 - Die CI (`.github/workflows/security.yml`) läuft nur bei Pull Requests auf `main` und von Hand. Sie prüft nur Audit und Lint, weder Build noch Tests; ein direkter Push auf `main` wird gar nicht geprüft. Deshalb immer lokal prüfen.
-- `scripts/qa/check-graph.mjs:27-29` verlangt heute ein `aggregateRating` im Product-Knoten (T02).
+- `scripts/qa/check-graph.mjs:27-29` verlangt per Textvergleich, dass `src/lib/schema.ts` `MAIN_SERVICE_PACKAGE_ID`, `buildMainProductOfferNode` und `aggregateRating` enthält (T02). Bei T02 alle drei Zeilen mit Beleg anpassen und Import und Aufruf in `schemaPyramid.ts:1` und `:350` mit entfernen.
 - `scripts/qa/check-graph.mjs:39-41` verlangt in `schemaPyramid.ts` die Zeichenfolgen „areaServed“, „getCityLandingPageSchema“ und „Hohwardstraße 14“ (T04).
 
 ## 5. Befunde nach Priorität
@@ -233,8 +234,8 @@ Priorität: **hoch** = blockiert das Ziel oder birgt Risiko · **mittel** = wich
 
 | ID | Befund | Beleg | Empfehlung | Priorität |
 |---|---|---|---|---|
-| A01 | Startseite zielt auf Wetzlar: Titel „Fliesenleger Aßlar und Wetzlar \| Fliesenverlegung Tezgel“, Description „… für Wetzlar und Umgebung“; Ersatzwerte im Dokument ebenso | `src/inhalte/start.ts:14-15`, `B/_dokument.tsx:36-44` | Wetzlar aus Titel und Description, aber erst zusammen mit der neuen Wetzlar-Seite (P3) | hoch |
-| A02 | „Wetzlar“ steht in 25 von 164 Titeln, auch auf Übersichten wie `/bad`, `/leistungen`, `/leistungen/bad`, `/leistungen/wohnen`, `/leistungen/aussen` (vollständige Liste in Abschnitt 6) | [Analyse 02](analysen/02-ortsseiten-startseite.md), [07](analysen/07-live-stand-nap.md) | Übersichten ortsneutral; Wetzlar nur auf Wetzlar-Seiten | hoch |
+| A01 | Startseite zielt auf Wetzlar: Titel „Fliesenleger Aßlar und Wetzlar \| Fliesenverlegung Tezgel“, Description „… für Wetzlar und Umgebung“; Ersatzwerte im Dokument ebenso | `src/inhalte/start.ts:14-15`, `B/_dokument.tsx:36-44` | Wetzlar aus Titel und Description, aber erst im selben Push wie die neue Wetzlar-Seite (P3) | hoch |
+| A02 | „Wetzlar“ steht in 25 von 164 Titeln, auch auf Übersichten wie `/bad`, `/leistungen`, `/leistungen/bad`, `/leistungen/wohnen`, `/leistungen/aussen` (vollständige Liste in Abschnitt 6) | [Analyse 02](analysen/02-ortsseiten-startseite.md), [07](analysen/07-live-stand-nap.md) | Übersichten ortsneutral; Wetzlar nur auf Wetzlar-Seiten; umgestellt im selben Push wie P3 | hoch |
 | A03 | `/standorte/wetzlar` ist Vorlage: laut zwei Messungen zu 89 bis 95 % gleich wie Aßlar und Gießen; zwei Sätze mit echtem Ortsbezug, keine Stadtteile, keine eigenen Projekte, drei von sechs gemeinsamen Fotos | `src/inhalte/orte.ts:19-86`, `src/inhalte/galerie.ts:7-14` | Eigene Inhalte (Abschnitt 6) | hoch |
 | A04 | 52 Leistung-×-Ort-Seiten (96 % gleich, ohne Fotos) und 13 Ortsseiten entsprechen Googles Beispielen für Brückenseiten. Echte Aufträge in einem Ort ändern daran nichts, nur eigene Inhalte | `B/leistungen/[id]/[stadt]/page.tsx:49-95`; Google-Spam-Richtlinien | Noindex (Meta-robots, aus Sitemap und IndexNow nehmen, nicht per robots.txt sperren), 308 oder mit eigenem Inhalt ausbauen (S3) | hoch |
 | A05 | `/standorte/asslar` konkurriert mit der Startseite um „Fliesenleger Aßlar“ | `src/config/cities.ts:108-115` | Entscheidung S2 | hoch |
@@ -256,7 +257,7 @@ Priorität: **hoch** = blockiert das Ziel oder birgt Risiko · **mittel** = wich
 | T06 | `areaServed` nennt Lahnau und Hüttenberg, aber nicht alle Orte des Einsatzgebiets. Es beschreibt, wo der Betrieb arbeitet, nicht, welche Orte eine Seite haben; Google dokumentiert die Eigenschaft für LocalBusiness nicht | `src/lib/schema.ts:196-207` | An das tatsächliche Einsatzgebiet aus M-04 angleichen, deckungsgleich mit dem Profil | niedrig |
 | T07 | Öffnungszeiten widersprechen sich (JSON-LD und Fuß Freitag 17 Uhr, Text „Mo bis Fr 18 Uhr“, Samstag 8 bis 14 Uhr sichtbar, im Schema keiner) | `company.js:125-129`, `schema.ts:210-225`, M-03 | Nach Antwort und Freigabe der Firmendaten vereinheitlichen | mittel |
 | T08 | Teilen-Bild ist das Logo (640 × 200, als 1200 × 630 angegeben); Generatorbilder (KI, `public/images/bad/*`) dienen als Teilen-Bild und `Article.image` der 13 Blogartikel und als `Service.image` | `metadata.ts:132-135`, `src/config/posts/*.js`, `services.js:32,67` | Echte Fotos aus der neuen Serie | mittel |
-| T09 | `priceValidUntil` 2026-12-31 läuft in zwei Monaten ab | `schema.ts:274`, `:447`, `B/leistungen/page.jsx:54` | Mit T02 erledigen oder entfernen; `B/leistungen/page.jsx` ist eine Werkstatt-Datei | mittel |
+| T09 | `priceValidUntil` 2026-12-31 läuft in zwei Monaten ab | `schema.ts:274`, `:447`, `B/leistungen/page.jsx:54` | `schema.ts:274` entfällt mit T02; `schema.ts:447` in P1 mit entfernen (freie Datei); `B/leistungen/page.jsx:54` (Werkstatt-Datei) nach dem Merge, spätestens vor dem 31.12.2026 | mittel |
 | T10 | Titel werden still umgeschrieben (siehe Abschnitt 4); `sanitizeTitle` kann „– Tezgel Hessen“ mit Gedankenstrich anhängen und schneidet lange Leistung-×-Ort-Titel ab („… in Friedberg (Hessen) \| Fliesen“) | `metadata.ts:72`, `:93-97` | Titel bewusst mit 45 bis 58 Zeichen und „Tezgel“ setzen. Das ist eine Hausregel und die Vorgabe des Codes; Google kennt keine feste Länge und kürzt nach Gerätebreite | mittel |
 | T11 | Sechs Platzhalter-Projekte unter `/referenzen/<id>` sind indexierbar | `B/referenzen/[id]/layout.jsx:64-66` | Mit echten Projekten aus der neuen Serie füllen oder noindex | mittel |
 | T12 | `lastmod` der Sitemap ist die Buildzeit; IndexNow meldet auch noindex-Seiten; `POST /api/indexnow` ist ohne gesetztes Secret offen | `sitemap.ts:65-71`, `indexnow.ts:42-46`, `src/app/api/indexnow/route.ts:22-25` | Ohne Secret mit 403 antworten; lastmod und Meldeliste pflegen | niedrig bis mittel |
@@ -300,7 +301,7 @@ Grundsatz: **ein Suchbegriff, eine Zielseite.** Andere Seiten verlinken die Ziel
 - **Variante 1 (Empfehlung):** Die Startseite ist Ziel für Marke **und** Aßlar. Das passt zum Firmensitz. Welche Website im Google-Profil steht, ist ungeprüft (N01, N03); vor der Umsetzung klären und im Profil `https://www.tezgel.de/` eintragen, dann zeigen Profil, Startseite und Aßlar auf dieselbe Seite.
   - Aßlar bleibt in `CITIES` (Daten für Zonen, Karte und Leistung × Ort).
   - `/standorte/asslar` leitet per 308 auf `/` (`next.config.ts`, `test/wege.test.mjs` anpassen).
-  - Links über einen Helfer in `cities.ts`: `Einsatzorte.tsx:94`, `B/standorte/page.tsx:150`, `navigation.js:174`.
+  - Links über einen Helfer in `cities.ts`: `Einsatzorte.tsx:94`, `B/standorte/page.tsx:150`, `navigation.js:174`, `B/leistungen/[id]/[stadt]/page.tsx:394`; dazu in Werkstatt-Dateien, also erst nach dem Merge oder mit Dateisperre: `kern/Einzugsband.tsx:84`, die Nachbarorte in `B/standorte/[stadt]/page.tsx:115` und `momente/karte/Einsatzkarte.tsx:159`. Danach verlinkt keine Seite mehr `/standorte/asslar`.
   - `sitemap.ts:79` und `indexnow.ts:60` lassen `/standorte/asslar` aus; die vier Seiten `/leistungen/*/asslar` folgen S3.
   - Fällt Aßlar doch aus `CITIES`, brauchen auch diese vier Seiten je eine 308, und `test/orte.test.mjs:25-28`, `test/einzugszonen.test.mjs:44` und `test/karte.test.mjs:40` brechen.
 - **Variante 2:** Die Startseite ist nur Marke; Aßlar steht dort nur als Sitz. `/standorte/asslar` wird eine eigenständige Aßlar-Seite (zum Beispiel mit bestätigten Ortsteilen und Projekten). Dann darf „Fliesenleger Aßlar“ nicht im Titel der Startseite stehen.
@@ -317,6 +318,8 @@ Grundsatz: **ein Suchbegriff, eine Zielseite.** Andere Seiten verlinken die Ziel
   - `/naturstein`: `page.jsx:36`, `:184`. `/treppen`: `page.jsx:32`, `:134`. `/fliesenreparatur`: `page.tsx:31`, `layout.tsx:14`. `/fliesen/kueche`: `page.jsx:32` und ein zweites Mal in SeitenDaten `:91`.
   - `/termin`: `B/termin/layout.tsx`. `/beratung`: `B/beratung/layout.tsx`.
   - `/karriere`: `B/karriere/layout.tsx:7`, `page.jsx:90`. Hier darf der Ort bleiben, wenn es um Stellen in Wetzlar geht; dann klar als Stellenangebot formulieren.
+  - **Description mit Wetzlar:** `src/inhalte/meta/seiten.ts:5` (`/bad/bad-aus-einer-hand`), `:13` (`/beratung`), `:18` (`/karriere`), `:20` (`/termin`); `meta/bauteile.ts:11` (`/balkon-terrasse/balkonsanierung`), `:15` (`/treppen`), `:20` (`/fliesenreparatur`); `meta/leistungen.ts:11` (`/naturstein`); `meta/fliesen.ts:7` (`/fliesen/kueche`); in Werkstatt-Dateien `bad.ts:14`*, `bad-badsanierung.ts:17`*, `leistungen.ts:14`*, `balkon-terrasse.ts:15`*.
+  - **H1 mit Wetzlar:** `B/beratung/page.jsx:81`, `B/karriere/page.jsx:110`, `B/fliesen/kueche/page.jsx:105`, `B/bad/musterbaeder/page.jsx:54`, `B/bad/badanfrage/page.jsx:47-51`.
 
 **Bauplan der Wetzlar-Seite (Empfehlung):**
 - **Eigene Belege statt Ortsname im Text:** bestätigte Projekte in Wetzlar (Stadtteil, Leistung, Fotos nur mit Bestätigung des Orts), Kundenstimmen aus Wetzlar (nur mit Erlaubnis), Anfahrt ab Aßlar, bestätigte Stadtteile, häufige Fragen aus Wetzlar.
@@ -325,9 +328,9 @@ Grundsatz: **ein Suchbegriff, eine Zielseite.** Andere Seiten verlinken die Ziel
 - **Schema:** WebPage plus `Service` mit `areaServed` Wetzlar (Q4178) und `provider` `#local-business`; kein zweites LocalBusiness.
 - **Interne Links mit Ankertext „Fliesenleger in Wetzlar“:** aus dem Einsatzgebiet der Startseite (`Einsatzorte.tsx`), aus dem Fuß (`navigation.js`), aus den Fachseiten und aus `/referenzen`. Zurück zur Startseite mit „Fliesenverlegung Tezgel in Aßlar“. `Einsatzorte.tsx` und `navigation.js` fasst die Werkstatt nicht an; diese Links können sofort kommen (P2).
 - **Technischer Weg:** Eigene Inhalte in einer neuen Datei (Vorschlag `src/inhalte/orte-eigen.ts`) in `inhaltFuer()` einmischen (`B/standorte/[stadt]/page.tsx:42-54`). Neue Abschnitte in `OrtsSeite.tsx` erst nach dem Werkstatt-Merge.
-- **Lesbarkeit:** Tiefe Fachtexte unter „Mehr erfahren“ (Aufklapper, bleibt im DOM), damit die Seite ruhig bleibt (`KERN.md:47`).
+- **Lesbarkeit:** Tiefe Fachtexte unter „Mehr erfahren“ (Aufklapper, bleibt im DOM), damit die Seite ruhig bleibt (KERN K-003, Ruhe-Regeln).
 
-**Reihenfolge:** Titel und Description der Startseite ändern sich erst, wenn die neue Wetzlar-Seite live ist (gleicher Push wie P3), oder früher, falls die Search Console zeigt, dass heute keine nennenswerten Wetzlar-Suchen auf `/` landen.
+**Reihenfolge:** Titel und Description der Startseite und der Übersichtsseiten verlieren Wetzlar im selben Push, mit dem die neue Wetzlar-Seite live geht (P3). Früher nur, wenn Umut es nach Vorlage der Search-Console-Werte ausdrücklich freigibt.
 
 **Google-Unternehmensprofil:**
 - Lokale Ergebnisse beruhen laut Google auf Relevanz, Entfernung und Bekanntheit. Zur Bekanntheit zählen Rezensionen (Zahl und Bewertung) und Websites, die auf das Unternehmen verweisen.
@@ -393,7 +396,7 @@ Einzige Bearbeitung: Auf `nb-079` ist ein lesbares Straßenschild verpixelt. Das
 - Außentreppe vorher und nachher für die `/treppen`-Seiten: `nb-080`, dazu `nb-076` und `nb-077`.
 - Neubau mit Großformat in Wohnräumen: `nb-044`, `nb-054` bis `nb-063`.
 - Gewerbe, ein runder Gemeinschaftsduschraum mit Toiletten (P09): `nb-027` bis `nb-029`, `nb-032` bis `nb-037`.
-- Balkone und Dachterrassen: `nb-073` bis `nb-079`, `nb-088`, `nb-089`.
+- Balkone und Terrassen: `nb-073` bis `nb-075`, `nb-078`, `nb-079`, `nb-088`, `nb-089`.
 - Duschen ohne Stufe mit Rinne oder Diagonalschnitten: `nb-019`, `nb-067` bis `nb-070`, `nb-082`, `nb-085`.
 - Fischgrät in Holzoptik im Bau: `nb-093`, `nb-094`.
 - Naturstein: Bruchmosaik am Holzherd (`nb-102`), Travertin im Römischen Verband (`nb-112`), Kamin mit Marmor (`nb-123`).
@@ -427,7 +430,7 @@ Einzige Bearbeitung: Auf `nb-079` ist ein lesbares Straßenschild verpixelt. Das
 | Zweck | Bilder |
 |---|---|
 | Startseite, Einstieg und Galerie | `nb-084` (Einstieg), `nb-085`, `nb-013`, `nb-004`, `nb-076`, `nb-082`, `nb-081` |
-| Wetzlar-Seite (ortsneutral, ohne Ortsbehauptung) | `nb-083`, `nb-118`, `nb-100`, `nb-077`, `nb-050` |
+| Wetzlar-Seite (ortsneutral, ohne Ortsbehauptung) | `nb-083`, `nb-118`, `nb-100`, `nb-077`, `nb-050` (nur als Bodenausschnitt ohne Fenster, nicht zusammen mit `nb-049`) |
 | Aßlar oder Startseite, zweiter Satz (ortsneutral) | `nb-120`, `nb-110`, `nb-102`, `nb-089`, `nb-123` |
 | `/referenzen` | `nb-086` (Einstieg), `nb-004`, `nb-013`, `nb-076`, `nb-120`, `nb-102`, `nb-033` (nur mit Freigabe), `nb-049` |
 | Küche | `nb-013`, `nb-049`, `nb-050`, `nb-102`, `nb-061` |
@@ -471,7 +474,7 @@ Einzige Bearbeitung: Auf `nb-079` ist ein lesbares Straßenschild verpixelt. Das
    ```
 2. **Voraussetzungen:** Node 24, `npm ci --prefix _werkstatt/werkzeuge` (bringt sharp), Umgebungsvariable `SCRATCH` auf einen Arbeitsordner außerhalb des Repos (`_werkstatt/werkzeuge/lib.mjs` bricht sonst ab).
 3. **Aufruf aus der Repo-Wurzel:** `node _werkstatt/werkzeuge/bilder.mjs --auftrag <json> --ziel "$SCRATCH/seo-bilder"`. Nicht direkt nach `public/` schreiben, sonst liegen `bilder.json` und ungenutzte Breitenvarianten öffentlich.
-4. **Kopieren:** Nur die Basisdatei `<raum>/<name>.jpg` nach `public/images/arbeiten/<raum>/` kopieren (für T13 ggf. auch die Breitenvarianten, siehe dort). Bei neuem Zuschnitt einen neuen Dateinamen wählen, weil `/images/*` ein Jahr unveränderlich gecacht wird.
+4. **Kopieren:** Nur die Basisdatei `<raum>/<name>.jpg` nach `public/images/arbeiten/<raum>/` kopieren; für T13 nach Umuts Zustimmung auch die Breitenvarianten `<name>-<breite>.jpg`, `bilder.json` nie. Bei neuem Zuschnitt einen neuen Dateinamen wählen, weil `/images/*` ein Jahr unveränderlich gecacht wird.
 5. **Prüfen:** `node _werkstatt/werkzeuge/bilder.mjs --pruefe public/images/arbeiten` bricht bei EXIF, XMP oder IPTC ab.
 6. **Eintragen** in `src/config/arbeiten.ts`:
    - Kennung je Bildplatz; `blurDataURL` aus `bilder.json` als `blur` übernehmen.
@@ -542,7 +545,7 @@ Quelle: `_werkstatt/KERN.md` (v4.4.1), `_werkstatt/regeln/*.json`, Tests; vollst
 - **„&“** ist in Titeln erlaubt, in Descriptions und Fließtext nicht.
 - **Floskeln** aus `floskeln.json` sind verboten, darunter nahtlos, maßgeschneidert, „Entdecken Sie“, „Ihr Partner für“, Perfektion, perfekt, Traumbad und Überschriften nach dem Muster „Begriff: Erklärung“. Ausnahmen sind die zwei H1 im Wortlaut des Auftraggebers.
 - **Längen:**
-  - Titel 45 bis 58 Zeichen mit „Tezgel“; sonst schreibt `sanitizeTitle` ihn um (Abschnitt 4).
+  - Titel 45 bis 58 Zeichen mit „Tezgel“. Andere schreibt `sanitizeTitle` um oder kürzt sie; Titel mit 50 bis 58 Zeichen ohne „Tezgel“ lässt er unverändert, also ohne Marke (Abschnitt 4).
   - Description 120 bis 155 Zeichen ohne „…“, „ – “, „&“ und „!“.
   - Alt-Text höchstens 125 Zeichen.
   - Galerie-Unterschrift höchstens 80 Zeichen, ohne Fachwort.
@@ -569,10 +572,10 @@ Jedes Paket endet mit grüner Prüfkette (`npm run typecheck`, `npm run lint`, `
 | Paket | Inhalt | Dateien (Auszug) | Fertig, wenn | Werkstatt-Konflikt |
 |---|---|---|---|---|
 | **P0 Klären und einrichten** | S1 bis S10 entscheiden lassen; Fragen an Deniz (Abschnitt 12); Zugang zu Search Console und Profil, Maps- oder CID-Link; Ausgangswerte sichern; Klon außerhalb `~/Downloads`; `npm ci`; Prüfkette auf dem Ausgangsstand | – | Entscheidungen und Ausgangswerte in Abschnitt 13, Prüfkette grün | nein |
-| **P1 Technik sofort** | T01 robots, T02 Product-Sterne raus, T03 Wikidata, T04 zweites LocalBusiness durch Service ersetzen, T12 `/api/indexnow` ohne Secret mit 403. T05 erst mit dem Profil-Link von Umut. K01 und K02 nach S10 (Dateien frei von der Werkstatt) | `src/app/robots.ts`, `src/lib/schema.ts`, `src/lib/schemaPyramid.ts`, `scripts/qa/check-graph.mjs`, `src/app/api/indexnow/route.ts`, `src/lib/email/*`, `src/app/api/anfrage/route.ts` | Rich-Results-Test ohne Fehler; ausgelieferte robots.txt ohne `/*?*`; die URL-Prüfung der Search Console meldet keine durch robots.txt blockierten Ressourcen; Tests grün | nein |
-| **P2 Meta und Zuordnung** | Ein Markensuffix und Titel ohne Marke (A10, T10); Descriptions in `src/inhalte/meta/*`; Links „Fliesenleger in Wetzlar“ aus `Einsatzorte.tsx` und Fuß; Übersichten ortsneutral (A02); S2 umsetzen; T07 nach M-03 und Freigabe der Firmendaten. Startseite (A01) erst mit P3 | `src/inhalte/meta/*`, `src/lib/metadata.ts`, `B/_dokument.tsx`, `B/leistungen/[id]/*`, `Einsatzorte.tsx`, `navigation.js`, Layouts; Titel in `src/inhalte/*.ts` | Tabelle Titel alt und neu im Bericht, keine Kannibalisierung laut Abschnitt 6 | mittel bis hoch: Titel in `src/inhalte/*.ts` nur zeilenweise oder nach dem Merge |
-| **P3 Wetzlar-Seite** | Eigener Inhalt, Fotos, Stimmen, Fragen, Links, Schema (Abschnitt 6); im selben Push A01 auf der Startseite | neue `src/inhalte/orte-eigen.ts`, `B/standorte/[stadt]/page.tsx`, `Fachdetails.tsx`, `src/inhalte/start.ts:14-15` | Wetzlar-Seite unterscheidet sich deutlich von anderen Ortsseiten; Links mit Ankertext gesetzt | hoch, nach Merge oder mit Dateisperre |
-| **P4 Ortsseiten-Matrix** | S3 umsetzen: 52 Leistung-×-Ort-Seiten noindex oder 308, ferne Orte, Nachbarorte A08, Entfernungen A09, Ausstellung A06 (S4), T06, T12 (lastmod, IndexNow ohne noindex-Seiten), T09 | `B/leistungen/[id]/[stadt]/page.tsx`, `next.config.ts`, `sitemap.ts`, `indexnow.ts`, `cities.ts`, `einzugszonen.ts`, `schema.ts`; Tests `orte`, `wege` | Sitemap enthält nur Seiten mit eigenem Inhalt | mittel (`test/orte`, bei T09 `B/leistungen/page.jsx`) |
+| **P1 Technik sofort** | T01 robots, T02 Product-Sterne raus (mit `schemaPyramid.ts:1`, `:350`), T03 Wikidata, T04 zweites LocalBusiness durch Service ersetzen, T09 in `schema.ts:447`, T12 `/api/indexnow` ohne Secret mit 403. T05 erst mit dem Profil-Link von Umut. K01 und K02 nach S10 (Dateien frei von der Werkstatt) | `src/app/robots.ts`, `src/lib/schema.ts`, `src/lib/schemaPyramid.ts`, `scripts/qa/check-graph.mjs`, `src/app/api/indexnow/route.ts`, `src/lib/email/*`, `src/app/api/anfrage/route.ts` | Rich-Results-Test ohne Fehler; ausgelieferte robots.txt ohne `/*?*`; die URL-Prüfung der Search Console meldet keine durch robots.txt blockierten Ressourcen; Tests grün | nein |
+| **P2 Meta und Zuordnung** | Ein Markensuffix und Titel ohne Marke (A10, T10); Descriptions ohne Ortswechsel; Links „Fliesenleger in Wetzlar“ aus `Einsatzorte.tsx` und Fuß; S2 umsetzen (ohne Startseitentitel); T07 nach M-03 und Freigabe der Firmendaten. A01 und A02 (Wetzlar raus) erst mit P3 | `src/inhalte/meta/*`, `src/lib/metadata.ts`, `B/_dokument.tsx`, `B/leistungen/[id]/*`, `Einsatzorte.tsx`, `navigation.js`, Layouts; Meta-Zeilen in `src/inhalte/*.ts` | Tabelle Titel alt und neu im Bericht | mittel bis hoch: Meta-Zeilen in `src/inhalte/*.ts` nur als eigener Commit; S2-Links in `Einzugsband.tsx`, `Einsatzkarte.tsx` und `B/standorte/[stadt]/page.tsx` erst nach dem Merge |
+| **P3 Wetzlar-Seite** | Eigener Inhalt, Fotos, Stimmen, Fragen, Links, Schema (Abschnitt 6); im selben Push A01 (Startseite) und A02 (Übersichten ortsneutral) | neue `src/inhalte/orte-eigen.ts`, `B/standorte/[stadt]/page.tsx`, `Fachdetails.tsx`, `src/inhalte/start.ts:14-15` | Wetzlar-Seite unterscheidet sich deutlich von anderen Ortsseiten; Links mit Ankertext gesetzt | hoch, nach Merge oder mit Dateisperre |
+| **P4 Ortsseiten-Matrix** | S3 umsetzen: 52 Leistung-×-Ort-Seiten noindex oder 308, ferne Orte, Nachbarorte A08, Entfernungen A09, Ausstellung A06 (S4), T06, T12 (lastmod, IndexNow ohne noindex-Seiten), Rest von T09 | `B/leistungen/[id]/[stadt]/page.tsx`, `B/standorte/[stadt]/page.tsx`, `next.config.ts`, `sitemap.ts`, `indexnow.ts`, `cities.ts`, `einzugszonen.ts`, `schema.ts`; Tests `orte`, `wege` | Sitemap enthält nur Seiten mit eigenem Inhalt | mittel: `B/standorte/[stadt]/page.tsx` (A08, noindex ferner Ortsseiten), `src/inhalte/orte.ts:27` (A09), `test/orte`, `B/leistungen/page.jsx` (T09) nach dem Merge oder mit Dateisperre |
 | **P5 Bilder** | Webfassungen der Auswahl (Abschnitt 8), Einträge in `arbeiten.ts`, Alt-Texte, Lücken füllen, Teilen-Bilder (T08), Referenzprojekte (T11), Vorher und Nachher, stabile Bild-Adressen (T13) | `_werkstatt/bilder/neue-bilder-2026-10-31/`, `public/images/arbeiten/**`, `src/config/arbeiten.ts`; Platzierung in `src/inhalte/*`, `galerie-filter/daten.ts` | Jede Seite aus der Lückenliste hat ein echtes Foto; `bilder.mjs --pruefe` ohne Fund; Bild-Adressen bleiben über zwei Deploys gleich | gering (Daten), hoch (Platzierung) |
 | **P6 Formulare** | Kurzanfrage, Quelle und Messung, Stilllegung mit 308 (K03, K04; Rest von K01 und K02) | `src/components/forms/*`, `src/lib/formulare/*`, `src/lib/email/*`, `src/app/api/anfrage/route.ts`, Seiten | eine Kurzanfrage überall, keine stille Verwerfung, Tests grün | hoch bei Seiten, nein bei Logik |
 | **P7 Entität und Offpage** | N01 bis N06: Liste für Umut (Profil, NAP in Verzeichnissen, fliesen-asslar.de, Bewertungen anfragen und beantworten, lokale Erwähnungen, S7). Die SEO-Runde kontaktiert keine Dritten und ändert keine Einträge selbst | außerhalb des Repos | NAP überall gleich; Profil gepflegt | nein |
@@ -608,10 +611,10 @@ Jedes Paket endet mit grüner Prüfkette (`npm run typecheck`, `npm run lint`, `
 
 ## 13. Stand und Entscheidungen der SEO-Runde
 
-Von der SEO-Runde zu führen: jede Entscheidung, jeder bestätigte Fakt und jeder Paketstand mit Datum und Quelle.
+Von der SEO-Runde zu führen: jede Entscheidung, jeder bestätigte Fakt und jeder Paketstand mit Datum und Quelle. Dieses Dokument, das Inventar und `projekte.md` sind öffentlich: Orte, Stadtteile und Projekte zu Fotos nur eintragen, wenn Deniz die Nennung erlaubt hat; nicht freigegebene Angaben, Kundendaten und Zugänge bleiben außerhalb des Repos.
 
 | Datum | Thema | Entscheidung oder Stand | Quelle |
 |---|---|---|---|
 | 01.11.2026 | Bilder | 127 neue Originale bewusst im Repo, Ordner `_werkstatt/bilder/neue-bilder-2026-10-31/`; `nb-079` mit verpixeltem Straßenschild | Auftrag Umut |
 | 01.11.2026 | Unterlagen | Kontext, Startprompt und Analysen unter `docs/seo/`; SEO-Block in `CLAUDE.md` | Auftrag Umut |
-| 01.11.2026 | Prüfung | Kontext, Startprompt und Inventar unabhängig gegengeprüft (Repo, Google-Doku, Bild-Stichprobe); Befunde eingearbeitet | Vorbereitung |
+| 01.11.2026 | Prüfung | Kontext, Startprompt und Inventar unabhängig gegengeprüft (Repo, Google-Doku, Bild-Stichprobe), danach ein zweites Mal auf Widersprüche; Befunde eingearbeitet, SEO-Block in `CLAUDE.md` auf SEO-Sitzungen begrenzt | Vorbereitung |

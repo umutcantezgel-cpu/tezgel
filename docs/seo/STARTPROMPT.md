@@ -49,10 +49,10 @@ LEITPLANKEN
   - Firmendaten (src/config/company.js);
   - Bewertungszahlen und der Wortlaut der Kundenstimmen;
   - Rechtstexte, Cookie-Einwilligung und Tracking, das Logo.
-  Formulare und Rechtstexte zusätzlich nur nach Rechtsprüfung. Die Pakete P2 bis P8 setzt du erst nach Umuts Zustimmung zum Plan um.
+  Einwilligung, Datenschutzhinweise und Pflichtfelder der Formulare sowie Rechtstexte zusätzlich nur nach Rechtsprüfung (M-11); für K01 und K02 genügt Umuts Zustimmung zu S10. Wetzlar verlässt Titel und Description der Startseite und der Übersichtsseiten erst im selben Push wie die neue Wetzlar-Seite (P3); früher nur mit Umuts Freigabe. Die Pakete P2 bis P8 setzt du erst nach Umuts Zustimmung zum Plan um.
 - Git:
   - Arbeite auf dem Branch seo/lokal von main.
-  - Push auf main, auch per Merge eines Pull Requests, nur wenn Umut im Chat für genau diesen Stand „live“ schreibt. Eine Freigabe gilt für genau einen Push. Dauerfreigaben aus _werkstatt/ENTSCHEIDUNGEN.md gelten nicht für dich.
+  - Push auf main, auch per Merge eines Pull Requests, nur wenn Umut im Chat für genau diesen Stand „live“ schreibt. Eine Freigabe gilt für genau einen Push, bis Umut S9 anders entscheidet; seine Antwort trägst du in KONTEXT.md Abschnitt 13 ein. Dauerfreigaben aus _werkstatt/ENTSCHEIDUNGEN.md gelten nicht für dich.
   - Vor jedem Push auf main führst du origin/main mit git merge in seo/lokal zusammen und lässt die Prüfkette auf genau diesem Stand laufen.
   - seo/lokal pushst du erst, wenn Umut S1 entschieden und geklärt hat, ob der Branch Vorschau-Builds auslösen darf (sonst in vercel.json unter git.deploymentEnabled "seo/lokal": false).
   - Kein Force-Push, kein Rebase, kein Reset über fremde Arbeit, kein Löschen von Branches.
@@ -66,7 +66,7 @@ LEITPLANKEN
   - Kein Aufruf von /api/anfrage oder /api/indexnow, kein npm run indexnow ohne Freigabe.
   - Einstellungen und Plugins von Claude Code änderst du nicht.
   - Eigene Arbeitsdateien legst du unter docs/seo/arbeit/ nur ab, wenn sie öffentlich sein dürfen (das Repo ist öffentlich), sonst außerhalb des Repos.
-- Daten: Zugangsdaten nie anfassen oder anzeigen.
+- Daten: Zugangsdaten nie anfassen oder anzeigen. KONTEXT.md, Inventar und projekte.md sind öffentlich: Orte, Stadtteile und Projekte zu Fotos trägst du dort nur ein, wenn Deniz die Nennung erlaubt hat; nicht freigegebene Angaben und Kundendaten bleiben außerhalb des Repos.
 - Prüfkette vor jedem Commit, der live gehen soll: npm run typecheck, npm run lint, npm test, npm run build, bei Schemaänderungen npm run qa:graph. Die GitHub-CI prüft bei einem Push auf main gar nichts. Prüfungen nie abschwächen; eine gewollte Änderung passt die Erwartung im Test mit Begründung an.
 
 ERSTE SCHRITTE
@@ -76,10 +76,10 @@ ERSTE SCHRITTE
    git rev-list --left-right --count origin/main...origin/claude/tezgel-website-redesign-iqxt8z
    (die rechte Zahl ist der Vorsprung der Werkstatt)
    git diff --name-only origin/main...origin/claude/tezgel-website-redesign-iqxt8z -- . ':(exclude)_werkstatt'
-   Die Dateiliste ist maßgeblich, nicht der Auszug in KONTEXT.md Abschnitt 3. Was darin steht, änderst du erst nach dem Merge der Werkstatt oder nach einer Dateisperre, die Umut dir bestätigt hat.
+   Die Dateiliste ist maßgeblich, nicht der Auszug in KONTEXT.md Abschnitt 3. Was darin steht, änderst du erst nach dem Merge der Werkstatt oder nach einer Dateisperre, die Umut dir bestätigt hat. Einzige Ausnahme vor dem Merge: die Meta-Zeilen (titel, beschreibung) in src/inhalte/*.ts für P2, als eigener Commit ohne weitere Änderung dieser Dateien.
 3. Schreib Umut hier im Chat EINE kurze Nachricht. Sie enthält die Entscheidungen S1 bis S10 und die weiteren Fragen aus KONTEXT.md Abschnitt 12 (Haak, Maps- oder CID-Link des Profils, Vorschau-Builds, Fragen an Deniz), jeweils mit deiner Empfehlung. Warte nicht untätig: Beginne lokal auf seo/lokal mit Paket P1:
    - T01 robots.txt;
-   - T02 Product-Sterne entfernen, mit scripts/qa/check-graph.mjs;
+   - T02 Product-Sterne entfernen, mit scripts/qa/check-graph.mjs und dem priceValidUntil in src/lib/schema.ts;
    - T03 Wikidata-IDs;
    - T04 zweites LocalBusiness durch Service ersetzen;
    - T12 /api/indexnow ohne Secret mit 403.
@@ -88,11 +88,11 @@ ERSTE SCHRITTE
    - Suchbegriff-Cluster je Zielseite (KONTEXT.md Abschnitt 6);
    - eine Tabelle „Titel und Description alt und neu“ für die wichtigsten Seiten;
    - die Reihenfolge der Pakete P2 bis P8.
-   Die Startseite gibt Wetzlar erst im selben Push ab, mit dem die neue Wetzlar-Seite (P3) live geht. P2 bis P8 setzt du erst nach Umuts Zustimmung um.
+   Startseite und Übersichtsseiten geben Wetzlar erst im selben Push ab, mit dem die neue Wetzlar-Seite (P3) live geht. P2 bis P8 setzt du erst nach Umuts Zustimmung um.
 5. Pro Paket: Änderungen, grüne Prüfkette, kurzer Bericht (was geändert, Titel alt und neu, was offen) und ein Eintrag in KONTEXT.md Abschnitt 13.
 
 BILDER
-Die Originale liegen bewusst im öffentlichen Repo unter _werkstatt/bilder/neue-bilder-2026-10-31/ (nb-001.jpg bis nb-127.jpg). Sie bleiben unverändert: nicht verschieben, umbenennen, überschreiben, zuschneiden, keine Metadaten schreiben. Webfassungen erzeugst du mit node _werkstatt/werkzeuge/bilder.mjs --auftrag <json> --ziel "$SCRATCH/seo-bilder" außerhalb des Repos und kopierst nur <raum>/<name>.jpg nach public/images/arbeiten/<raum>/ (KONTEXT.md Abschnitt 8). Alt-Entwürfe und Dateinamen im Inventar sind Vorschläge; prüfe sie gegen das Webbild. Ohne Bestätigung durch Deniz kommt keine Stadt an ein Foto. Bilder mit Datenschutzrisiko „hoch“, die Gewerbeanlage (P09) und die Mosaike nur mit Freigabe.
+Die Originale liegen bewusst im öffentlichen Repo unter _werkstatt/bilder/neue-bilder-2026-10-31/ (nb-001.jpg bis nb-127.jpg). Sie bleiben unverändert: nicht verschieben, umbenennen, überschreiben, zuschneiden, keine Metadaten schreiben. Webfassungen erzeugst du mit node _werkstatt/werkzeuge/bilder.mjs --auftrag <json> --ziel "$SCRATCH/seo-bilder" außerhalb des Repos und kopierst nur <raum>/<name>.jpg nach public/images/arbeiten/<raum>/ (KONTEXT.md Abschnitt 8); für T13 nach Umuts Zustimmung auch die Breitenvarianten <name>-<breite>.jpg, bilder.json nie. Alt-Entwürfe und Dateinamen im Inventar sind Vorschläge; prüfe sie gegen das Webbild. Ohne Bestätigung durch Deniz kommt keine Stadt an ein Foto. Bilder mit Datenschutzrisiko „hoch“, die Gewerbeanlage (Baustelle P09 in projekte.md) und die Mosaike nur mit Freigabe.
 
 BERICHTE
 Deutsch, kurz, mit Dateipfaden. Fakten und Vermutungen trennen. Am Ende immer: offene Fragen und der nächste Schritt.
