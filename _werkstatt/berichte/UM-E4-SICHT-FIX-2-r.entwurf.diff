@@ -1,0 +1,325 @@
+diff -ruN -x node_modules -x node_modules_echt -x .next -x bilder -x next-env.d.ts -x tsconfig.tsbuildinfo vor/src/app/(bestand)/ueber-uns/page.jsx baum/src/app/(bestand)/ueber-uns/page.jsx
+--- vor/src/app/(bestand)/ueber-uns/page.jsx	2026-11-01 17:41:18.000000000 +0000
++++ baum/src/app/(bestand)/ueber-uns/page.jsx	2026-11-01 19:51:43.502516325 +0000
+@@ -33,12 +33,15 @@
+ // Fotos der Arbeitsweise direkt nach der Lage (M2-C3 Nr. 4): Reihe wie die Fotos im Beleg (Karussell, Glasfläche mit Namen, kein
+ // Link) als eigener Abschnitt. Kopf „Auf der Baustelle“ (vorher die Zwischenzeile über der Reihe, Mikrotext aus der Nacharbeit
+ // SF-C2) statt des Gruppennamens „So arbeiten wir“ der Galerie: Die Seite hat weiter unten „So arbeiten wir mit Ihnen.“ als H2,
+-// und alle drei Fotos zeigen Arbeit im Gang. Kennung `auf-der-baustelle`
++// und alle drei Fotos zeigen Arbeit im Gang. Kennung `auf-der-baustelle`. Die Kacheln füllen die gleich hohe Folie (h-full):
++// Steht der Name ohne Maus in schmaler Kachel unter dem Foto (t1024), endet jede Kachel an derselben Kante, der Platz kommt
++// unter den Namen, nicht unter das Foto (Reparatur nach der Gesamtsicht, R-8: Namen in 3, 2 und 3 Zeilen, 29 px Stufe; Raster
++// der Kachel in bewegung.css, Block glasbild)
+ const arbeitsweise = (
+   <Abschnitt id="auf-der-baustelle" leitachse spaet mitte flaeche="fliese" className="-mt-px" titel="Auf der Baustelle">
+     <Karussell art="reihe" name="Fotos" karte="w-full md:w-1/2 lg:w-1/3">
+       {ARBEITSWEISE.map((f) => (
+-        <div key={f.bild}>
++        <div key={f.bild} className="h-full *:h-full">
+           <Glasbild arbeit={f.bild} name={f.unterschrift} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
+         </div>
+       ))}
+diff -ruN -x node_modules -x node_modules_echt -x .next -x bilder -x next-env.d.ts -x tsconfig.tsbuildinfo vor/src/app/bewegung.css baum/src/app/bewegung.css
+--- vor/src/app/bewegung.css	2026-11-01 17:41:18.000000000 +0000
++++ baum/src/app/bewegung.css	2026-11-01 19:51:43.503848879 +0000
+@@ -601,10 +601,12 @@
+   fill: var(--color-fliese);
+   stroke: none;
+ }
+-/* Fliesenoberfläche (UM-E4-SICHT-FIX-2 M2-C5 Nr. 2, Wand.tsx): jede zweite Fliese in kalk, je Fuge ein Band in fuge unter dem
+-   Strich (3 Einheiten, wächst mit der Zeichnung), die Tür der Bezugsgröße deckt die Fliesen in fliese. Ruhend, ohne Bewegung */
++/* Fliesenoberfläche (UM-E4-SICHT-FIX-2 M2-C5 Nr. 2, Wand.tsx): jede zweite Fliese in fuge, je Fuge ein Band in fuge unter dem
++   Strich (3 Einheiten, wächst mit der Zeichnung), die Tür der Bezugsgröße deckt die Fliesen in fliese. Ruhend, ohne Bewegung.
++   Wechsel in fuge statt kalk (Reparatur nach der Gesamtsicht, R-3): kalk auf fliese (rund 1,1 : 1) ließ die Wand auf dem
++   weißen Abschnitt blass; mit fuge (rund 1,3 : 1) liest sich das Schachbrett als Fläche */
+ .formatregler-wechsel {
+-  fill: var(--color-kalk);
++  fill: var(--color-fuge);
+   stroke: none;
+ }
+ .formatregler-fugenband {
+@@ -756,12 +758,20 @@
+   grid-column-start: 1;
+   grid-row-start: 1;
+ }
++/* Ist die Kachel höher als Foto und Name (gleich hohe Folien einer Reihe, /ueber-uns), geht der Platz in die Zeile des Namens,
++   nicht unter das Foto; der Block auf Tinte füllt sie bis zur gemeinsamen Unterkante, der Name steht oben direkt unter dem Foto
++   (Reparatur nach der Gesamtsicht, R-8). Bei Höhe aus dem Inhalt ändert sich nichts: die zweite Zeile ist dann so hoch wie ihr
++   Inhalt oder leer */
++.glasbild:not([data-verlauf]) {
++  grid-template-rows: auto 1fr;
++}
+ @media (hover: none) {
+   @container (max-width: 20rem) {
+     .glasbild:not([data-verlauf]) .glasbild-flaeche {
+       grid-row-start: 2;
+     }
+     .glasbild:not([data-verlauf]) .glasbild-text {
++      flex-grow: 1;
+       padding-top: calc(var(--spacing) * 3);
+       background: var(--color-tinte);
+     }
+diff -ruN -x node_modules -x node_modules_echt -x .next -x bilder -x next-env.d.ts -x tsconfig.tsbuildinfo vor/src/app/globals.css baum/src/app/globals.css
+--- vor/src/app/globals.css	2026-11-01 17:41:18.000000000 +0000
++++ baum/src/app/globals.css	2026-11-01 19:52:27.092864686 +0000
+@@ -524,6 +524,14 @@
+   [data-seitenformel] > [data-formel="worum"] + .leitfaden [data-kante] + section > .abschnitt-kreuz {
+     display: block;
+   }
++  /* Unter einer Tintefläche zeichnet der Abschnitt danach sein Kantenkreuz wie das Kreuz an ihrer Oberkante in nacht-2 (in Tinte
++     verschwand die obere Hälfte, /referenzen; Reparatur nach der Gesamtsicht, R-10). Die Füllung am Pfad, weil die Farbe am
++     Zeichen eine Utility trägt; unter erzwungenen Farben unverändert */
++  @media (forced-colors: none) {
++    [data-seitenformel] > [data-formel="worum"] + .leitfaden section.flaeche-tinte[data-kante] + section > .abschnitt-kreuz .kreuz-grund > path {
++      fill: var(--color-nacht-2);
++    }
++  }
+   /* Anrissstück an der Kante (UM-E4-SICHT-FIX M-A4 Nr. 2 und 3): unter jedem Kantenkreuz des Leitfadens ein statisches rotes
+      Stück, Stufe 6 (24 px) vom Kreuzpunkt nach unten, 2 px wie das rote Lot, mittig auf der Achse und unter dem Kreuz (vor
+      ihm im Baum). Es steht im oberen Innenabstand des Abschnitts im Seitenrand, nie neben Text. Mobil, wo keine Haarlinie
+@@ -987,8 +995,13 @@
+     .galerie-liste[data-verband]::before {
+       inset-block-start: 0;
+     }
++    /* Passstücke unten als geschnittenes Material wie die Passstücke der Plan-Zeichnungen: schraffiert unter 45 Grad, Linie in
++       fuge im Abstand einer Stufe 2 (Reparatur nach der Gesamtsicht, R-6: glatt weiß auf Kalk lasen sie sich wie zwei leere
++       Kacheln). Nur Hintergrund am Pseudo-Element, ruhend, beim Aufklappen unverändert (R-1 aus E-112); das Passstück oben trägt
++       die Statuszeile und bleibt glatt */
+     .galerie-liste[data-verband]::after {
+       inset-block-end: 0;
++      background-image: repeating-linear-gradient(135deg, var(--color-fuge) 0 1px, transparent 1px calc(var(--spacing) * 2));
+     }
+     .galerie-liste[data-verband] > li {
+       border-width: 1px;
+diff -ruN -x node_modules -x node_modules_echt -x .next -x bilder -x next-env.d.ts -x tsconfig.tsbuildinfo vor/src/components/kern/Einzugsband.tsx baum/src/components/kern/Einzugsband.tsx
+--- vor/src/components/kern/Einzugsband.tsx	2026-11-01 17:41:18.000000000 +0000
++++ baum/src/components/kern/Einzugsband.tsx	2026-11-01 20:07:51.614169096 +0000
+@@ -47,6 +47,11 @@
+  *  ab @4xl vier; Index ist die Stelle des Ortes in der Zone) */
+ const BIS_SPALTE_ZWEI = ['@xl:col-span-1', '@xl:col-span-2'];
+ const BIS_SPALTE_VIER = ['@4xl:col-span-1', '@4xl:col-span-2', '@4xl:col-span-3', '@4xl:col-span-4'];
++/** Endet die Spalte des Ortes vor der letzten Spalte, endet das Rot an ihrer Fuge (mr-0); ist sie die letzte Spalte der Reihe,
++ *  reicht es wie in einer Spalte bis an die rechte Kante der Zone (Reparatur nach der Gesamtsicht, R-11: auf t768 und q844 endete
++ *  es 16 px vor der Kante, der Rest lief als Stummel in Tinte weiter) */
++const BIS_KANTE_ZWEI = ['@xl:mr-0', undefined];
++const BIS_KANTE_VIER = [undefined, '@4xl:mr-0', undefined, undefined];
+ 
+ // Entfernung ab dem Firmensitz (wie die Ortsliste der Karte): der Sitz selbst heißt „Firmensitz“ (Bestandswortlaut)
+ const entfernung = (km: number) => (km === 0 ? 'Firmensitz' : `ca. ${km} km`);
+@@ -93,7 +98,7 @@
+             die rechte Kante der Zone wie die Kanten davor) */}
+         {ortsmass && zone.id === gruppen[eigene]?.zone.id && platz !== -1 ? (
+           <span className="einzugsband-kante absolute inset-x-0 top-0 grid border-t border-tinte px-4 lg:px-6 @xl:grid-cols-2 @xl:gap-x-6 @4xl:grid-cols-4" aria-hidden="true">
+-            <span className={clsx('-mx-4 -mt-px border-t-2 border-laser lg:-mx-6 @xl:mr-0', BIS_SPALTE_ZWEI[platz % 2], BIS_SPALTE_VIER[platz % 4])} />
++            <span className={clsx('-mx-4 -mt-px border-t-2 border-laser lg:-mx-6', BIS_KANTE_ZWEI[platz % 2], BIS_KANTE_VIER[platz % 4], BIS_SPALTE_ZWEI[platz % 2], BIS_SPALTE_VIER[platz % 4])} />
+           </span>
+         ) : (
+           <span
+diff -ruN -x node_modules -x node_modules_echt -x .next -x bilder -x next-env.d.ts -x tsconfig.tsbuildinfo vor/src/components/vorlagen/teile/Lage.tsx baum/src/components/vorlagen/teile/Lage.tsx
+--- vor/src/components/vorlagen/teile/Lage.tsx	2026-11-01 17:41:18.000000000 +0000
++++ baum/src/components/vorlagen/teile/Lage.tsx	2026-11-01 19:51:58.913979476 +0000
+@@ -122,14 +122,18 @@
+         // Vorspann: das Lesemaß in ch der eigenen Stufe fs-4 (rund 790 px), so füllt er den Block auf der Achse. Mittig erst ab
+         // der Teilung (lg, Block über zwei Drittel): schmaler stünde ein mittiger Vorspann in vier bis zehn Zeilen (m390, mit 200 %
+         // Schrift), dort bleibt er linksbündig wie bisher. Mittig gesetzt tritt die Abschnittsmarke daneben zurück (höchstens eine
+-        // Pause „ganz“ je Abschnitt; die Lage hat sonst keine)
++        // Pause „ganz“ je Abschnitt; die Lage hat sonst keine). Unter lg hält die Hülle das Lesemaß der Grundschrift wie der Zusatz
++        // unten und die Abschnitte danach (Reparatur nach der Gesamtsicht, R-9: in fs-4 lief der Vorspann dort voll breit, q844 rund
++        // 82 Zeichen je Zeile, mit eigener linker Kante neben der Leitachse); ab der Teilung ist die Hülle ohne Maß, wie bisher
+         <Satzblock satz="achse">
+-          <div data-kopf-pause={mittig ? 'ganz' : undefined} className={clsx('mx-auto max-w-mass space-y-4 font-text text-fs-4 text-pretty text-tinte', mittig ? 'lg:@lg:text-center' : 'lg:@lg:mx-0')}>
+-            {absaetze.map((a) => (
+-              <p key={a}>
+-                <Textmarken text={a} />
+-              </p>
+-            ))}
++          <div className={satzMass('achse')}>
++            <div data-kopf-pause={mittig ? 'ganz' : undefined} className={clsx('mx-auto max-w-mass space-y-4 font-text text-fs-4 text-pretty text-tinte', mittig ? 'lg:@lg:text-center' : 'lg:@lg:mx-0')}>
++              {absaetze.map((a) => (
++                <p key={a}>
++                  <Textmarken text={a} />
++                </p>
++              ))}
++            </div>
+           </div>
+         </Satzblock>
+       )}
+diff -ruN -x node_modules -x node_modules_echt -x .next -x bilder -x next-env.d.ts -x tsconfig.tsbuildinfo vor/src/components/vorlagen/teile/Tun.tsx baum/src/components/vorlagen/teile/Tun.tsx
+--- vor/src/components/vorlagen/teile/Tun.tsx	2026-11-01 17:41:18.000000000 +0000
++++ baum/src/components/vorlagen/teile/Tun.tsx	2026-11-01 20:16:30.484044020 +0000
+@@ -48,6 +48,13 @@
+   return <Vignette fuellen />;
+ }
+ 
++// Feld der Zeichnung (4 : 3) mit Telefonstufe wie die Lage-Zeichnung (LageZeichnung in Lage.tsx): unter 24 rem Zeilenbreite
++// Stufe 16 (64 px) mit engerem Innenabstand, sonst 24 (96 px), ab lg 32 (128 px) wie bisher; unter 20 rem ohne Zeichnung
++// (Reparatur nach der Gesamtsicht, R-4: mit 96 px blieben dem Satz auf m360 rund 176 px statt 274, /fliesen). Die Stufe 24 gilt
++// nur unter lg (max-lg): Container-Varianten stehen im Stylesheet nach den Breakpoints, ein @sm:w-24 schlüge sonst lg:w-32
++const ZEILEN_FELD = 'hidden w-16 shrink-0 @xs:block @sm:max-lg:w-24 lg:w-32';
++const ZEILEN_KARTE = 'flex aspect-4/3 items-center justify-center border border-fuge bg-kalk p-1 text-tinte @sm:p-2 lg:p-2';
++
+ /** Zeilen mit Link an der Fuge: Name im Textschnitt (fs-4 halbfett, M-B2 Nr. 2), Satz und Pfeil; vorn wahlweise eine
+  *  Plan-Vignette (`vignette`, Feld 4 : 3) oder ein Verlegemuster (`motiv`), unter 20 rem Zeilenbreite ohne Zeichnung.
+  *  `spalten` (Satzspiegel v2, M2-A1): voll breit, ab lg in Spalten nach `satzSpalten` (Liste mit Fuge oben, jede Zeile mit
+@@ -59,7 +66,8 @@
+   const raster = spalten ? satzSpalten(bereiche.length) : undefined;
+   // Trägt eine Zeile der Liste eine Plan-Vignette, halten Zeilen ohne Zeichnung deren Feld frei (leer, gleiche Breite): Die Texte
+   // aller Zeilen beginnen an einer Kante (UM-E4-SICHT-FIX-2 Nacharbeit SF2-C, /fliesen: zwei Technikzeilen ohne passende Vignette
+-  // sprangen sonst um das Feld nach links)
++  // sprangen sonst um das Feld nach links). Ein Verlegemuster (`motiv`) steht in einer solchen Liste im selben Feld wie die
++  // Vignetten, auf derselben Karte (R-5: das leere Feld las sich wie ein fehlendes Bild)
+   const mitZeichnung = bereiche.some((b) => b.vignette);
+   const liste = (
+     <ul className={clsx(raster ? raster.liste : '@container', 'border-t border-fuge', !raster && className)}>
+@@ -68,17 +76,25 @@
+           <Link href={b.href} data-motion="zustand" className={clsx('group flex min-h-16 items-center gap-4 py-4 text-tinte lg:gap-6 lg:py-6', raster && 'h-full lg:items-start')}>
+             {b.vignette ? (
+               // Plan-Vignette im Feld 4 : 3 wie in der Lage (M-C6 Nr. 3), unter 20rem Zeilenbreite ohne Zeichnung
+-              <span aria-hidden="true" className="hidden w-24 shrink-0 @xs:block lg:w-32">
+-                <span className="flex aspect-4/3 items-center justify-center border border-fuge bg-kalk p-2 text-tinte">
++              <span aria-hidden="true" className={ZEILEN_FELD}>
++                <span className={ZEILEN_KARTE}>
+                   <ZeilenVignette name={b.vignette} />
+                 </span>
+               </span>
++            ) : b.motiv && mitZeichnung ? (
++              // Verlegemuster auf der Karte der Vignetten: Fugen in strich wie `deutlich` (in fuge stand das Muster auf Fliese blass
++              // wie ein leeres Feld, EV-C13), ohne dessen rotes Merkmal (kein zweites Rot neben der Leitachse)
++              <span aria-hidden="true" className={ZEILEN_FELD}>
++                <span className={clsx(ZEILEN_KARTE, '*:bg-strich')}>
++                  <Fliesenkomposition motiv={b.motiv} ausschnitt={48} fuellen />
++                </span>
++              </span>
+             ) : b.motiv ? (
+               <span aria-hidden="true" className="hidden size-16 shrink-0 border border-fuge @xs:block">
+                 <Fliesenkomposition motiv={b.motiv} ausschnitt={48} fuellen />
+               </span>
+             ) : (
+-              mitZeichnung && <span aria-hidden="true" className="hidden w-24 shrink-0 @xs:block lg:w-32" />
++              mitZeichnung && <span aria-hidden="true" className={ZEILEN_FELD} />
+             )}
+             <span className="min-w-0 flex-1">
+               <span className="block font-text text-fs-4 font-semibold text-pretty hyphens-none underline decoration-transparent decoration-2 underline-offset-8 transition-colors dauer-1 group-hover:decoration-laser">
+@@ -96,8 +112,16 @@
+       ))}
+     </ul>
+   );
+-  // die Spalten fragen die volle Breite der Hülle ab
+-  return raster ? <div className={clsx('@container', className)}>{liste}</div> : liste;
++  // die Spalten fragen die volle Breite der Hülle ab. Unter lg (bzw. unter 32 rem Hülle) steht die eine Spalte im Lesemaß mittig
++  // wie Einleitung, Punkte und Aufklapper des Abschnitts (Reparatur nach der Gesamtsicht, R-7: auf t768 lief die Liste voll breit,
++  // zwei linke Kanten 50 px auseinander); ab der Teilung voll breit wie bisher
++  return raster ? (
++    <div className={clsx('@container', className)}>
++      <div className={clsx('@container', satzMass('achse'))}>{liste}</div>
++    </div>
++  ) : (
++    liste
++  );
+ }
+ 
+ export type Bereich = BereichFliese;
+diff -ruN -x node_modules -x node_modules_echt -x .next -x bilder -x next-env.d.ts -x tsconfig.tsbuildinfo vor/src/inhalte/bad.ts baum/src/inhalte/bad.ts
+--- vor/src/inhalte/bad.ts	2026-11-01 17:41:18.000000000 +0000
++++ baum/src/inhalte/bad.ts	2026-11-01 19:50:24.699042388 +0000
+@@ -23,9 +23,11 @@
+     ort: 'Für Aßlar, Wetzlar und Umgebung.',
+     // im mittigen Einstieg nicht gezeigt; der Vorspann steht als `tun.einleitung` auf der Seite (Regel 2)
+     vorspann: VORSPANN,
+-    // Landhausbad mit Wanne, Holzregal und Ornamentboden (UM-E4-SICHT-FIX-2 M2-B1, Bildtabelle E-113 Nr. 7; Sicht Anlauf 2,
+-    // 1a und 1b: der enge Wannenausschnitt mit Flaschen bad-beleg-1 wirkte wie ein Mängelfoto). Rückweg: bild 'bad-beleg-1'
+-    bild: 'bad-beleg-2',
++    // Wanne und Ornamentboden ab rund 45 % der Höhe: das fertige Bad im ersten Bildschirm (UM-E4-SICHT-FIX M-A2). Zurück seit
++    // der Reparatur nach der Gesamtsicht (UM-E4-SICHT-FIX-2-r R-1): Mit bad-beleg-2 (M2-B1) zeigte der erste Bildschirm auf allen
++    // Breiten nur Decke, Regal, Tür und Fenster, Wanne und Boden lagen ab rund 71 % unter dem Falz. Der Preis: der enge
++    // Ausschnitt mit Flaschen (Sicht Anlauf 2, 1a und 1b) kommt zurück. Rückweg: bild 'bad-beleg-2' und Reihe unten tauschen
++    bild: 'bad-beleg-1',
+     bewertung: true,
+     // Plan-Vignette des Bads am rechten Ende der Schnur, erst ab xl (bei t1024 hielte die H1 mit Zeichen nur 1,12 × H2; M-A1 Nr. 3)
+     schnurZeichen: { vignette: 'bad', ab: 'xl' },
+@@ -91,12 +93,12 @@
+   beleg: {
+     titel: 'Bäder, die wir gebaut haben.',
+     // Unterschriften: Wörter aus dem Text, höchstens sechs, ohne Punkt (Regel 4); Wege nach Leistung
+-    // Reihe nach der Bildtabelle (M2-B1): bad-beleg-2 ist der Einstieg der Seite, das helle Bad vorn, die Wanne mit Lichtlinie
+-    // (bisher Einstieg) zuletzt; ihr Name aus dem Alt-Text
++    // Reihe nach der Bildtabelle (M2-B1): das helle Bad vorn. bad-beleg-1 ist wieder der Einstieg der Seite (R-1), an seiner
++    // Stelle steht zuletzt das Landhausbad mit dem Eintrag aus a3c28d36 (kein Foto zweimal auf der Seite)
+     fotos: [
+       { bild: 'bad-einstieg', unterschrift: 'Helles Bad mit Glasdusche', href: '/bad/badsanierung' },
+       { bild: 'bad-beleg-3', unterschrift: 'Doppelwaschtisch aus dunklem Holz', href: '/bad/badsanierung' },
+-      { bild: 'bad-beleg-1', unterschrift: 'Badewanne mit Lichtlinie und Ornamentfliesen', href: '/bad/badsanierung' },
++      { bild: 'bad-beleg-2', unterschrift: 'Wanne unter weißen Fliesen', href: '/bad/badsanierung' },
+     ],
+     // Stimme der Textdatei zuerst, dann Stimmen aus REVIEWS zum Thema Bad (Regel 5, G8: Wortlaut unverändert)
+     stimmen: ['peter-p', 'elke-s', 'c-wolf', 'ute-t', 'k-d'],
+diff -ruN -x node_modules -x node_modules_echt -x .next -x bilder -x next-env.d.ts -x tsconfig.tsbuildinfo vor/src/inhalte/barrierefreies-bad.ts baum/src/inhalte/barrierefreies-bad.ts
+--- vor/src/inhalte/barrierefreies-bad.ts	2026-11-01 17:41:18.000000000 +0000
++++ baum/src/inhalte/barrierefreies-bad.ts	2026-11-01 19:50:24.701057623 +0000
+@@ -17,10 +17,12 @@
+     ort: 'Für Aßlar, Wetzlar und Umgebung.',
+     vorspann:
+       'Wir bauen Ihre Badewanne aus und eine [[bodengleiche-dusche|bodengleiche Dusche]] ein. So steigen Sie sicher hinein, heute und auch später.',
+-    // Dusche mit Mosaikboden und gefliester Eckbank, das schärfste fertige Duschfoto der Seite (UM-E4-SICHT-FIX-2 M2-B1,
+-    // Bildtabelle E-113 Nr. 7; Sicht Anlauf 2, 2a: das bisherige Einstiegsfoto bereich-dusche-streifen-sitzbank war grau und
+-    // weich, es steht jetzt in der Reihe). Rückweg: bild 'bereich-dusche-streifen-sitzbank'
+-    bild: 'barrierefrei-beleg-1',
++    // stufenloser Boden bis in die Dusche ab rund 40 % der Höhe, Schärfe 0,088 statt 0,023 (UM-E4-SICHT-FIX M-A2). Zurück seit
++    // der Reparatur nach der Gesamtsicht (UM-E4-SICHT-FIX-2-r R-2): Mit barrierefrei-beleg-1 (M2-B1) zeigte der erste Bildschirm
++    // nur Fenster, Wandfliesen und Griff, Bank und Mosaikboden lagen ab rund 62 % unter dem Falz; die „Dusche ohne Stufe“ der H1
++    // fehlte. Der Preis: grauer, weicher, mit dem blauen Teil rechts (Sicht Anlauf 2, 2a). Rückweg: bild 'barrierefrei-beleg-1'
++    // und Reihe unten tauschen
++    bild: 'bereich-dusche-streifen-sitzbank',
+     einstieg: 'mitte',
+     titelZeilen: ['Ein barrierefreies Bad', 'mit Dusche ohne Stufe'],
+     bewertung: true,
+@@ -63,13 +65,13 @@
+   },
+   beleg: {
+     // Überschrift nach den Fotos (E4-W0-BILDER, E-065): zwei fertige Duschen; „ohne Stufe“ behauptet nur die Unterschrift des
+-    // Fotos, das es zeigt. Die Wanne mit Tür trug noch Herstelleraufkleber und Klebeband und ist entfallen. Reihe nach der
+-    // Bildtabelle (M2-B1): barrierefrei-beleg-1 ist der Einstieg der Seite, an ihre Stelle tritt das bisherige Einstiegsfoto,
+-    // Name aus seinem Alt-Text
++    // Fotos, das es zeigt. Die Wanne mit Tür trug noch Herstelleraufkleber und Klebeband und ist entfallen. Reihe wie in
++    // a3c28d36 (R-2): bereich-dusche-streifen-sitzbank ist wieder der Einstieg der Seite, die Dusche mit Mosaikboden und Eckbank
++    // steht vorn (auf dem Telefon die erste Karte)
+     titel: 'Duschen, die wir gebaut haben.',
+     fotos: [
++      { bild: 'barrierefrei-beleg-1', unterschrift: 'Dusche mit Mosaikboden und Eckbank' },
+       { bild: 'bad-beleg-4', unterschrift: 'Bodengleiche Dusche mit Mosaik' },
+-      { bild: 'bereich-dusche-streifen-sitzbank', unterschrift: 'Dusche mit Fliesenstreifen und Sitzbank' },
+     ],
+     zweierbild: {
+       titel: 'So entsteht eine Dusche ohne Stufe',
+diff -ruN -x node_modules -x node_modules_echt -x .next -x bilder -x next-env.d.ts -x tsconfig.tsbuildinfo vor/src/inhalte/fliesen.ts baum/src/inhalte/fliesen.ts
+--- vor/src/inhalte/fliesen.ts	2026-11-01 17:41:18.000000000 +0000
++++ baum/src/inhalte/fliesen.ts	2026-11-01 20:13:59.692188969 +0000
+@@ -41,9 +41,11 @@
+     // Zeilen mit Link (Abschnitt 2 der Textdatei). Plan-Vignetten (UM-E4-SICHT-FIX-2 M2-C4 Nr. 3, Sicht E4 Anlauf 2 3a hoch:
+     // Raumliste mit passender Plan-Vignette), keine zweimal in der Liste, nur wo eine vorhandene das Thema zeigt: die zwei Räume
+     // (Raum in Großformat mit Tür, Eingang mit Stufen) und die zwei Lagen (Estrich im Schnitt, eingesetztes neues Stück) in den
+-    // ersten beiden Reihen. Die letzte Reihe (Fugen, Fußbodenheizung) bleibt ohne Zeichnung: Keine vorhandene zeigt ihr Thema
+-    // (Dusche und Terrasse zeigten etwas anderes), und die Verlegemuster stehen auf Fliese blass wie leere Felder (M-B2 Nr. 2);
+-    // verlegekante trüge dazu ein zweites Rot neben der Leitachse. Entscheidungsvermerk in der Notiz SF2-C
++    // ersten beiden Reihen. Die letzte Reihe (Fugen, Fußbodenheizung) trägt keine Plan-Vignette: Keine vorhandene zeigt ihr Thema
++    // (Dusche und Terrasse zeigten etwas anderes; Entscheidungsvermerk EV-C13 in der Notiz SF2-C). Seit der Reparatur nach der
++    // Gesamtsicht (R-5) steht dort je ein Verlegemuster auf derselben Karte wie die Vignetten (vorher ein leeres Feld, das sich
++    // wie ein fehlendes Bild las): das Fugenraster für die Fugen, der Drittelverband für den Boden; Fugen in strich, ohne Laserlinie
++    // (kein zweites Rot; Bereichszeilen in Tun.tsx)
+     wege: [
+       { name: 'Küche fliesen', satz: 'Hier zählen Fett, Flecken und Fugen, die lange halten.', href: '/fliesen/kueche', vignette: 'wohnen' },
+       {
+@@ -54,11 +56,12 @@
+       },
+       { name: 'Fliesen im Neubau', satz: 'Wir fliesen, wenn der [[estrich|Estrich]] fertig ist.', href: '/fliesen/neubau', vignette: 'untergrund' },
+       { name: 'Renovierung im bestehenden Haus', satz: 'Wir erneuern den Boden und sorgen für Staubschutz.', href: '/fliesen/renovierung', vignette: 'reparatur' },
+-      { name: 'Fugensanierung', satz: 'Schimmelige oder bröselnde Fugen erneuern wir fachgerecht.', href: '/fliesen/fugensanierung' },
++      { name: 'Fugensanierung', satz: 'Schimmelige oder bröselnde Fugen erneuern wir fachgerecht.', href: '/fliesen/fugensanierung', motiv: 'kreuzfuge' },
+       {
+         name: 'Fliesen auf Fußbodenheizung',
+         satz: 'Hier kommt es auf den richtigen Kleber und die richtigen Fugen an.',
+         href: '/fliesen/auf-fussbodenheizung',
++        motiv: 'drittelverband',
+       },
+     ],
+   },

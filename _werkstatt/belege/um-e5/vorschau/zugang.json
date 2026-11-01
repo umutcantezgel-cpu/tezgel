@@ -1,0 +1,369 @@
+{
+ "base": "http://127.0.0.1:4325",
+ "reflow": [
+  {
+   "seite": "/",
+   "befunde": [],
+   "skriptfehler": []
+  },
+  {
+   "seite": "/bad",
+   "befunde": [],
+   "skriptfehler": []
+  },
+  {
+   "seite": "/bad/badsanierung",
+   "befunde": [],
+   "skriptfehler": []
+  },
+  {
+   "seite": "/bad/barrierefreies-bad",
+   "befunde": [],
+   "skriptfehler": []
+  },
+  {
+   "seite": "/leistungen",
+   "befunde": [],
+   "skriptfehler": []
+  },
+  {
+   "seite": "/fliesen",
+   "befunde": [],
+   "skriptfehler": []
+  },
+  {
+   "seite": "/balkon-terrasse",
+   "befunde": [],
+   "skriptfehler": []
+  },
+  {
+   "seite": "/referenzen",
+   "befunde": [],
+   "skriptfehler": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "befunde": [],
+   "skriptfehler": []
+  },
+  {
+   "seite": "/kontakt",
+   "befunde": [],
+   "skriptfehler": []
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "befunde": [],
+   "skriptfehler": []
+  },
+  {
+   "seite": "/blog",
+   "befunde": [],
+   "skriptfehler": []
+  }
+ ],
+ "farben": [
+  {
+   "seite": "/",
+   "geraet": "d1440",
+   "forced": true,
+   "kreuzRotSichtbar": 0,
+   "cursorSichtbar": 0,
+   "h1": "Perfektion auf jedem Quadratmeter.",
+   "knoepfe": 151
+  },
+  {
+   "seite": "/bad",
+   "geraet": "d1440",
+   "forced": true,
+   "kreuzRotSichtbar": 0,
+   "cursorSichtbar": 0,
+   "h1": "Aus Ihrem alten Bad wird ein neues, das Sie gern nutzen.",
+   "knoepfe": 150
+  },
+  {
+   "seite": "/bad/badsanierung",
+   "geraet": "d1440",
+   "forced": true,
+   "kreuzRotSichtbar": 0,
+   "cursorSichtbar": 0,
+   "h1": "Ihr neues Traumbad zum Festpreis.",
+   "knoepfe": 124
+  },
+  {
+   "seite": "/bad/barrierefreies-bad",
+   "geraet": "d1440",
+   "forced": true,
+   "kreuzRotSichtbar": 0,
+   "cursorSichtbar": 0,
+   "h1": "Ein barrierefreies Bad mit Dusche ohne Stufe",
+   "knoepfe": 124
+  },
+  {
+   "seite": "/leistungen",
+   "geraet": "d1440",
+   "forced": true,
+   "kreuzRotSichtbar": 0,
+   "cursorSichtbar": 0,
+   "h1": "Alle Leistungen vom Fliesenleger aus Aßlar, Fliese für Fliese.",
+   "knoepfe": 130
+  },
+  {
+   "seite": "/fliesen",
+   "geraet": "d1440",
+   "forced": true,
+   "kreuzRotSichtbar": 0,
+   "cursorSichtbar": 0,
+   "h1": "So verlegen wir Fliesen, einfach erklärt.",
+   "knoepfe": 141
+  },
+  {
+   "seite": "/balkon-terrasse",
+   "geraet": "d1440",
+   "forced": true,
+   "kreuzRotSichtbar": 0,
+   "cursorSichtbar": 0,
+   "h1": "Ein neuer Belag für Balkon und Terrasse",
+   "knoepfe": 127
+  },
+  {
+   "seite": "/referenzen",
+   "geraet": "d1440",
+   "forced": true,
+   "kreuzRotSichtbar": 0,
+   "cursorSichtbar": 0,
+   "h1": "Das sagen unsere Kunden, und so sieht unsere Arbeit aus.",
+   "knoepfe": 148
+  },
+  {
+   "seite": "/ueber-uns",
+   "geraet": "d1440",
+   "forced": true,
+   "kreuzRotSichtbar": 0,
+   "cursorSichtbar": 0,
+   "h1": "Ihr Fliesenleger aus Aßlar kommt persönlich zu Ihnen.",
+   "knoepfe": 138
+  },
+  {
+   "seite": "/kontakt",
+   "geraet": "d1440",
+   "forced": true,
+   "kreuzRotSichtbar": 0,
+   "cursorSichtbar": 0,
+   "h1": "Nehmen Sie Kontakt auf. Wir kommen für einen Termin zu Ihnen.",
+   "knoepfe": 125
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "geraet": "d1440",
+   "forced": true,
+   "kreuzRotSichtbar": 0,
+   "cursorSichtbar": 0,
+   "h1": "Fliesenleger in Wetzlar",
+   "knoepfe": 144
+  },
+  {
+   "seite": "/blog",
+   "geraet": "d1440",
+   "forced": true,
+   "kreuzRotSichtbar": 0,
+   "cursorSichtbar": 0,
+   "h1": "Wir erklären Bad, Fliesen und Abdichtung.",
+   "knoepfe": 140
+  },
+  {
+   "seite": "/",
+   "geraet": "m390",
+   "forced": true,
+   "kreuzRotSichtbar": 0,
+   "cursorSichtbar": 0,
+   "h1": "Perfektion auf jedem Quadratmeter.",
+   "knoepfe": 71
+  },
+  {
+   "seite": "/bad",
+   "geraet": "m390",
+   "forced": true,
+   "kreuzRotSichtbar": 0,
+   "cursorSichtbar": 0,
+   "h1": "Aus Ihrem alten Bad wird ein neues, das Sie gern nutzen.",
+   "knoepfe": 70
+  },
+  {
+   "seite": "/bad/badsanierung",
+   "geraet": "m390",
+   "forced": true,
+   "kreuzRotSichtbar": 0,
+   "cursorSichtbar": 0,
+   "h1": "Ihr neues Traumbad zum Festpreis.",
+   "knoepfe": 44
+  },
+  {
+   "seite": "/bad/barrierefreies-bad",
+   "geraet": "m390",
+   "forced": true,
+   "kreuzRotSichtbar": 0,
+   "cursorSichtbar": 0,
+   "h1": "Ein barrierefreies Bad mit Dusche ohne Stufe",
+   "knoepfe": 44
+  },
+  {
+   "seite": "/leistungen",
+   "geraet": "m390",
+   "forced": true,
+   "kreuzRotSichtbar": 0,
+   "cursorSichtbar": 0,
+   "h1": "Alle Leistungen vom Fliesenleger aus Aßlar, Fliese für Fliese.",
+   "knoepfe": 50
+  },
+  {
+   "seite": "/fliesen",
+   "geraet": "m390",
+   "forced": true,
+   "kreuzRotSichtbar": 0,
+   "cursorSichtbar": 0,
+   "h1": "So verlegen wir Fliesen, einfach erklärt.",
+   "knoepfe": 61
+  },
+  {
+   "seite": "/balkon-terrasse",
+   "geraet": "m390",
+   "forced": true,
+   "kreuzRotSichtbar": 0,
+   "cursorSichtbar": 0,
+   "h1": "Ein neuer Belag für Balkon und Terrasse",
+   "knoepfe": 47
+  },
+  {
+   "seite": "/referenzen",
+   "geraet": "m390",
+   "forced": true,
+   "kreuzRotSichtbar": 0,
+   "cursorSichtbar": 0,
+   "h1": "Das sagen unsere Kunden, und so sieht unsere Arbeit aus.",
+   "knoepfe": 65
+  },
+  {
+   "seite": "/ueber-uns",
+   "geraet": "m390",
+   "forced": true,
+   "kreuzRotSichtbar": 0,
+   "cursorSichtbar": 0,
+   "h1": "Ihr Fliesenleger aus Aßlar kommt persönlich zu Ihnen.",
+   "knoepfe": 60
+  },
+  {
+   "seite": "/kontakt",
+   "geraet": "m390",
+   "forced": true,
+   "kreuzRotSichtbar": 0,
+   "cursorSichtbar": 0,
+   "h1": "Nehmen Sie Kontakt auf. Wir kommen für einen Termin zu Ihnen.",
+   "knoepfe": 45
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "geraet": "m390",
+   "forced": true,
+   "kreuzRotSichtbar": 0,
+   "cursorSichtbar": 0,
+   "h1": "Fliesenleger in Wetzlar",
+   "knoepfe": 64
+  },
+  {
+   "seite": "/blog",
+   "geraet": "m390",
+   "forced": true,
+   "kreuzRotSichtbar": 0,
+   "cursorSichtbar": 0,
+   "h1": "Wir erklären Bad, Fliesen und Abdichtung.",
+   "knoepfe": 60
+  }
+ ],
+ "suche": [
+  {
+   "seite": "/",
+   "ziel": "Termin vor Ort anfragen",
+   "gefunden": true,
+   "imBild": true,
+   "scrollY": 0
+  },
+  {
+   "seite": "/bad",
+   "ziel": "Planen Sie Ihr neues Bad mit uns.",
+   "gefunden": true,
+   "imBild": true,
+   "scrollY": 8831
+  },
+  {
+   "seite": "/bad/badsanierung",
+   "ziel": "Planen Sie Ihr neues Bad mit uns.",
+   "gefunden": true,
+   "imBild": true,
+   "scrollY": 7838
+  },
+  {
+   "seite": "/bad/barrierefreies-bad",
+   "ziel": "Planen Sie Ihr neues Bad mit uns.",
+   "gefunden": true,
+   "imBild": true,
+   "scrollY": 7741
+  },
+  {
+   "seite": "/leistungen",
+   "ziel": "Sprechen Sie mit uns über Ihr Vorhaben.",
+   "gefunden": true,
+   "imBild": true,
+   "scrollY": 7080
+  },
+  {
+   "seite": "/fliesen",
+   "ziel": "Fliesenprojekt vorbereiten",
+   "gefunden": true,
+   "imBild": false,
+   "scrollY": 8229
+  },
+  {
+   "seite": "/balkon-terrasse",
+   "ziel": "Sprechen Sie mit uns über Ihren Balkon o",
+   "gefunden": true,
+   "imBild": false,
+   "scrollY": 7948
+  },
+  {
+   "seite": "/referenzen",
+   "ziel": "Wünschen Sie sich so ein Ergebnis?",
+   "gefunden": true,
+   "imBild": false,
+   "scrollY": 7970
+  },
+  {
+   "seite": "/ueber-uns",
+   "ziel": "Bitten Sie um einen Termin vor Ort.",
+   "gefunden": true,
+   "imBild": true,
+   "scrollY": 9779
+  },
+  {
+   "seite": "/kontakt",
+   "ziel": "Was nach Ihrer Anfrage passiert.",
+   "gefunden": true,
+   "imBild": true,
+   "scrollY": 3540
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "ziel": "Termin in Wetzlar anfragen",
+   "gefunden": true,
+   "imBild": true,
+   "scrollY": 6518
+  },
+  {
+   "seite": "/blog",
+   "ziel": "Haben Sie eine Frage zu Ihrem Bad?",
+   "gefunden": true,
+   "imBild": false,
+   "scrollY": 8960
+  }
+ ]
+}

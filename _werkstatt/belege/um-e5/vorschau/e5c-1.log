@@ -1,0 +1,200 @@
+=== REINRAUM 990b01e0 17:41:51
+exit 0
+lint 0 (25s)
+test 0 (3s)
+qa-graph 0 (0s)
+ℹ tests 280
+ℹ pass 280
+ℹ fail 0
+ℹ skipped 0
+läuft: 990b01e0 auf 4325
+4325 200
+/ 200 css=1
+/bad 200 css=1
+/bad/badsanierung 200 css=1
+/bad/barrierefreies-bad 200 css=1
+/leistungen 200 css=1
+/fliesen 200 css=1
+/balkon-terrasse 200 css=1
+/referenzen 200 css=1
+/ueber-uns 200 css=1
+/kontakt 200 css=1
+/standorte/wetzlar 200 css=1
+/blog 200 css=1
+/preise 200 css=1
+/bad/projekt-check 200 css=1
+/termin 200 css=1
+/blog/barrierefreier-balkonaustritt 200 css=1
+/standorte/giessen 200 css=1
+/standorte/asslar 200 css=1
+/leistungen/bad 200 css=1
+/foerderung 200 css=1
+/bad/badanfrage 200 css=1
+/bad/badplaner 200 css=1
+/bad/fliesen 200 css=1
+/bad/musterbaeder 200 css=1
+/bad/musterbaeder/basic-bad-8_2 200 css=1
+/bad/musterbaeder/luxus-bad-8_2 200 css=1
+/blog/fliesen-reinigen-pflegen 200 css=1
+/datenschutz 200 css=1
+/fliesen/verlegemuster 200 css=1
+/schadensanalyse 200 css=1
+/standorte/butzbach 200 css=1
+/standorte/solms 200 css=1
+=== BILDSATZ Endbilder PNG 17:43:15
+........................................................................................................................
+Satz um-e5-c · Aufnahmen 1350 · Fehler 1 · nicht 200 0 · Überlauf 0 Ansichten (0 Befunde) · Überlappung 113 Ansichten (140 Befunde: leitachse 140) · Konsole 0 Ansichten (0 Meldungen)
+Fehler: / [d1920] page.evaluate: Target page, context or browser has been closed
+Überlappung: / [d1280] 1 (leitachse 1) | /bad [d1280] 1 (leitachse 1) | /bad/badsanierung [d1280] 1 (leitachse 1) | /bad/barrierefreies-bad [d1280] 1 (leitachse 1) | /balkon-terrasse [d1280] 1 (leitachse 1) | /blog [d1280] 1 (leitachse 1) | /fliesen [d1280] 1 (leitachse 1) | /leistungen [d1280] 1 (leitachse 1) | /referenzen [d1280] 1 (leitachse 1) | /standorte/wetzlar [d1280] 1 (leitachse 1) | /ueber-uns [d1280] 1 (leitachse 1) | / [d1440] 1 (leitachse 1) | /bad [d1440] 1 (leitachse 1) | /bad/badsanierung [d1440] 1 (leitachse 1) | /bad/barrierefreies-bad [d1440] 1 (leitachse 1) | /balkon-terrasse [d1440] 1 (leitachse 1) | /blog [d1440] 1 (leitachse 1) | /fliesen [d1440] 1 (leitachse 1) | /leistungen [d1440] 1 (leitachse 1) | /referenzen [d1440] 1 (leitachse 1)
+Belege: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e5/c/bildsatz/bildsatz.json
+=== VERGLEICHSBÖGEN a3c28d36 | Endstand 18:43:16
+106
+=== ADRESSEN 18:44:03
+Adressen gesamt 209 · CSV /home/user/tezgel/_werkstatt/adressen-um-e5-c.csv · Belege /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e5/c/adressen
+=== SUITE reduziert 18:44:07
+exit 0
+  ✓  422 [desktop] › tests/verlegen.spec.mjs:786:3 › Bewegung an (Wechsel mit Fliesen) › (20) Zurück im Browser, während die Fliesen abgenommen werden: Adresse, Inhalt, Scroll und Fokus (Prüfung E-043) (9.5s)
+  ✓  424 [desktop] › tests/verlegen.spec.mjs:1266:3 › Reduzierte Bewegung › (12) reduzierte Bewegung: Wechsel vollständig, Überblendung über .verlegen-blende, keine Fliesen-Animation (2.4s)
+
+  26 skipped
+  398 passed (9.9m)
+=== SUITE Bewegung an 18:54:02
+exit 0
+  ✓  424 [desktop] › tests/verlegen.spec.mjs:1266:3 › Reduzierte Bewegung › (12) reduzierte Bewegung: Wechsel vollständig, Überblendung über .verlegen-blende, keine Fliesen-Animation (1.8s)
+  ✓  423 [desktop] › tests/verlegen.spec.mjs:786:3 › Bewegung an (Wechsel mit Fliesen) › (20) Zurück im Browser, während die Fliesen abgenommen werden: Adresse, Inhalt, Scroll und Fokus (Prüfung E-043) (9.1s)
+
+  26 skipped
+  398 passed (11.3m)
+=== LESBARKEIT 19:05:20
+............
+Seiten 12 · GRÜN 10 · ROT 2 · ausgenommen 0 · Ziel /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e5/c/lesbarkeit
+=== WERTE seit 7ceb5e41 19:05:39
+werte: 163 Dateien · 6313 Klassenvorkommen (625 eindeutig) · 0.7 s
+  dauer_zahl           1
+  befunde gesamt       1
+Bericht: ../../../tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e5/c/werte/2026-11-01T19-05-40-372Z.json
+=== SVG alle 19:05:40
+  /termin d1440: Inline-SVG 94 · HTTP 200 · Befunde 0
+  /termin m390: Inline-SVG 94 · HTTP 200 · Befunde 0
+  /ueber-uns d1440: Inline-SVG 185 · HTTP 200 · Befunde 0
+  /ueber-uns m390: Inline-SVG 185 · HTTP 200 · Befunde 0
+befunde gesamt: 0
+Bericht: ../../../tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e5/c/svg/2026-11-01T19-05-41-761Z.json
+=== SVG Dateien 19:07:33
+  src/components/icons/svg/winkel-unten.svg: ohne Befund (roh 208 · gzip 176)
+befunde gesamt: 0
+Bericht: ../../../tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e5/c/svg-dateien-icons/2026-11-01T19-07-34-769Z.json
+befunde gesamt: 1
+Bericht: ../../../tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e5/c/svg-dateien-sprite.svg/2026-11-01T19-07-35-680Z.json
+befunde gesamt: 0
+Bericht: ../../../tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e5/c/svg-dateien-logo/2026-11-01T19-07-36-405Z.json
+=== AXE 19:07:36
+.............................................................................................................................................................................................................................................................
+axe: 396 Läufe · ernst/kritisch (Knoten) 0
+
+
+=== AXE Zusatz 19:19:06
+.............................................................................................................................................................................................................................................................
+axe: 660 Läufe · ernst/kritisch (Knoten) 0
+
+
+=== RUHIG/REDUZIERT 19:37:17
+ruhig / befunde 0 unsichtbar 12
+reduziert / befunde 0 unsichtbar 14
+ruhig /bad befunde 0 unsichtbar 11
+reduziert /bad befunde 0 unsichtbar 13
+ruhig /bad/badsanierung befunde 0 unsichtbar 8
+reduziert /bad/badsanierung befunde 0 unsichtbar 10
+ruhig /bad/barrierefreies-bad befunde 0 unsichtbar 8
+reduziert /bad/barrierefreies-bad befunde 0 unsichtbar 10
+ruhig /leistungen befunde 0 unsichtbar 10
+reduziert /leistungen befunde 0 unsichtbar 12
+ruhig /fliesen befunde 0 unsichtbar 10
+reduziert /fliesen befunde 0 unsichtbar 12
+ruhig /balkon-terrasse befunde 0 unsichtbar 8
+reduziert /balkon-terrasse befunde 0 unsichtbar 10
+ruhig /referenzen befunde 0 unsichtbar 27
+reduziert /referenzen befunde 0 unsichtbar 29
+ruhig /ueber-uns befunde 0 unsichtbar 10
+reduziert /ueber-uns befunde 0 unsichtbar 12
+ruhig /kontakt befunde 0 unsichtbar 6
+reduziert /kontakt befunde 0 unsichtbar 8
+ruhig /standorte/wetzlar befunde 0 unsichtbar 10
+reduziert /standorte/wetzlar befunde 0 unsichtbar 12
+ruhig /blog befunde 0 unsichtbar 9
+reduziert /blog befunde 0 unsichtbar 11
+=== REGISTER 19:46:29
+d1440 / {'gefundene_kennungen': 10, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /bad {'gefundene_kennungen': 10, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /bad/badsanierung {'gefundene_kennungen': 9, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /bad/barrierefreies-bad {'gefundene_kennungen': 10, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /leistungen {'gefundene_kennungen': 11, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /fliesen {'gefundene_kennungen': 9, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /balkon-terrasse {'gefundene_kennungen': 10, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /referenzen {'gefundene_kennungen': 11, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /ueber-uns {'gefundene_kennungen': 11, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /kontakt {'gefundene_kennungen': 8, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /standorte/wetzlar {'gefundene_kennungen': 9, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+d1440 /blog {'gefundene_kennungen': 8, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 / {'gefundene_kennungen': 9, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /bad {'gefundene_kennungen': 9, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /bad/badsanierung {'gefundene_kennungen': 8, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /bad/barrierefreies-bad {'gefundene_kennungen': 9, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /leistungen {'gefundene_kennungen': 10, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /fliesen {'gefundene_kennungen': 8, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /balkon-terrasse {'gefundene_kennungen': 9, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /referenzen {'gefundene_kennungen': 10, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /ueber-uns {'gefundene_kennungen': 10, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /kontakt {'gefundene_kennungen': 7, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /standorte/wetzlar {'gefundene_kennungen': 8, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+m390 /blog {'gefundene_kennungen': 7, 'unbekannt': 0, 'ohne_register_anzahl': 0}
+=== BILDRATE alle 19:54:30
+/ {'anteil_verworfen_prozent': 0.21, 'loaf_anzahl': 2, 'loaf_summe_ms': 140}
+/bad {'anteil_verworfen_prozent': 3.93, 'loaf_anzahl': 6, 'loaf_summe_ms': 512}
+/bad/badsanierung {'anteil_verworfen_prozent': 0, 'loaf_anzahl': 1, 'loaf_summe_ms': 90}
+/bad/barrierefreies-bad {'anteil_verworfen_prozent': 0.3, 'loaf_anzahl': 1, 'loaf_summe_ms': 59}
+/leistungen {'anteil_verworfen_prozent': 0, 'loaf_anzahl': 1, 'loaf_summe_ms': 52}
+/fliesen {'anteil_verworfen_prozent': 0.51, 'loaf_anzahl': 2, 'loaf_summe_ms': 261}
+/balkon-terrasse {'anteil_verworfen_prozent': 0.49, 'loaf_anzahl': 3, 'loaf_summe_ms': 224}
+/referenzen {'anteil_verworfen_prozent': 0.12, 'loaf_anzahl': 2, 'loaf_summe_ms': 109}
+/ueber-uns {'anteil_verworfen_prozent': 0.21, 'loaf_anzahl': 2, 'loaf_summe_ms': 122}
+/kontakt {'anteil_verworfen_prozent': 0.11, 'loaf_anzahl': 5, 'loaf_summe_ms': 405}
+/standorte/wetzlar {'anteil_verworfen_prozent': 0.37, 'loaf_anzahl': 1, 'loaf_summe_ms': 94}
+/blog {'anteil_verworfen_prozent': 0.06, 'loaf_anzahl': 1, 'loaf_summe_ms': 62}
+=== JSONLD 20:26:51
+Seiten 113 · GRÜN 113 · ROT 0 · Ziel /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e5/c/jsonld
+jsonld.json: 113 Seiten, 112 mit Service als Knoten, ROT 0
+HTML: 113 von 113 Seiten mit Typ Service; ohne: keine
+Seiten mit mehr als einem Service-Knoten auf oberster Ebene: keine
+=== ERSTES BILD (Zoom 200 %, q844) 20:26:59
+  /ueber-uns [q844] erstbesuch: hauptknopf verdeckt-durch durch p#cookie-consent-description > span.block
+  /ueber-uns [q844] erstbesuch: kontakt verdeckt-durch durch p#cookie-consent-description > span.block
+  /kontakt [m360] erstbesuch: ort verdeckt-durch durch div.p-4.md:p-6 > div.flex.items-start > p.pt-2.text-fs-3 > span
+  /kontakt [m360] erstbesuch: hauptknopf verdeckt-durch durch p#cookie-consent-description > span.block
+  /kontakt [m360] erstbesuch: kontakt verdeckt-durch durch p#cookie-consent-description > span.block
+  /kontakt [m390] erstbesuch: kontakt verdeckt-durch durch div.p-4.md:p-6 > div.flex.items-start > p.pt-2.text-fs-3 > span
+  … 14 weitere, siehe erstes-bild.json
+Belege: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e5/c/erstesbild/erstes-bild.json
+=== ERSTES BILD Stichprobe 20:34:08
+  /bad/musterbaeder [q844] erstbesuch: ort verdeckt-durch durch p#cookie-consent-description > span.block
+  /bad/musterbaeder [q844] nach-einwilligung: ort verdeckt-durch durch div.grid.grid-cols-4 > div.col-span-4.md:col-span-8 > h1.text-tinte.text-fs-6 > span.block
+  /bad/musterbaeder [t768] erstbesuch: ort verdeckt-durch durch div.grid.grid-cols-4 > div.col-span-4.md:col-span-8 > h1.text-tinte.text-fs-6 > span.block
+  /bad/musterbaeder [t768] erstbesuch: hauptknopf verdeckt-durch durch div.hoehe-banner.ueber-leiste-12 > div.p-4.md:p-6
+  … 140 weitere, siehe erstes-bild.json
+Belege: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e5/c/erstesbild-stichprobe/erstes-bild.json
+=== BILDSATZ Stichprobe PNG 20:40:03
+..............................................................................................................
+Satz um-e5-c-stichprobe · Aufnahmen 1043 · Fehler 0 · nicht 200 0 · Überlauf 0 Ansichten (0 Befunde) · Überlappung 44 Ansichten (68 Befunde: leitachse 68) · Konsole 0 Ansichten (0 Meldungen)
+Überlappung: /standorte/butzbach [d1280] 1 (leitachse 1) | /standorte/solms [d1280] 1 (leitachse 1) | /standorte/butzbach [d1440] 1 (leitachse 1) | /standorte/solms [d1440] 1 (leitachse 1) | /standorte/butzbach [d1920] 1 (leitachse 1) | /standorte/solms [d1920] 1 (leitachse 1) | /standorte/butzbach [d2560] 1 (leitachse 1) | /standorte/solms [d2560] 1 (leitachse 1) | /bad/fliesen [m360] 2 (leitachse 2) | /bad/musterbaeder [m360] 2 (leitachse 2) | /bad/musterbaeder/basic-bad-8_2 [m360] 2 (leitachse 2) | /bad/musterbaeder/luxus-bad-8_2 [m360] 2 (leitachse 2) | /fliesen/verlegemuster [m360] 2 (leitachse 2) | /schadensanalyse [m360] 2 (leitachse 2) | /standorte/butzbach [m360] 1 (leitachse 1) | /standorte/solms [m360] 1 (leitachse 1) | /bad/fliesen [m390] 2 (leitachse 2) | /bad/musterbaeder [m390] 2 (leitachse 2) | /bad/musterbaeder/basic-bad-8_2 [m390] 2 (leitachse 2) | /bad/musterbaeder/luxus-bad-8_2 [m390] 2 (leitachse 2)
+Belege: /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e5/c/bildsatz-stichprobe/bildsatz.json
+=== LESBARKEIT Stichprobe 20:46:04
+...........
+Seiten 11 · GRÜN 2 · ROT 8 · ausgenommen 1 · Ziel /tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e5/c/lesbarkeit-stichprobe
+=== ZUGANG Reflow 320, erzwungene Farben, Seitensuche 20:46:26
+reflow 320: 12/12 ohne Befund
+erzwungene Farben: 24/24 ohne Befund
+seitensuche: 8/12 gefunden und im Bild · /fliesen „Fliesenprojekt vorbereiten“ gefunden true im Bild false, /balkon-terrasse „Sprechen Sie mit uns über Ihren Balkon o“ gefunden true im Bild false, /referenzen „Wünschen Sie sich so ein Ergebnis?“ gefunden true im Bild false, /blog „Haben Sie eine Frage zu Ihrem Bad?“ gefunden true im Bild false
+=== CURSOR 20:49:03
+{"desktop_glasbild":{"stand":"an","zustand":"ansehen","text":""},"desktop_nach_tab":{"stand":"aus","zustand":"ansehen","text":""},"desktop_ausserhalb":{"stand":"aus","zustand":"ansehen","text":""},"desktop_fehler":[],"touch":null,"ruhig":{"stand":"an","zustand":"ansehen","text":""},"ruhig_transition":"1e-05s / none"}
+=== ENDE 20:49:16
+315M	/tmp/claude-0/-home-user-tezgel/e3298496-69df-51ae-b9b5-0d101f8045d6/scratchpad/e5/c

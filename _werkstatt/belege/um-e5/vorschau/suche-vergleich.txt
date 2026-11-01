@@ -1,0 +1,29 @@
+Seitensuche (window.find, d1440, reduziert, 1,2 s nach dem Sprung; je Seite letzte und mittlere H2; "ok" = Fundstelle unter dem Kopf (64 px) und über dem unteren Rand)
+== 4326 (E0 7ceb5e41)
+/ WEG (23..40) „Termin vor Ort anfragen“ | ok (144..205) „So sieht unsere Arbeit aus.“
+/bad ok (430..469) | ok (425..486)
+/bad/badsanierung ok (163..202) | WEG (1785..1846) „Das sagen unsere Kunden.“
+/bad/barrierefreies-bad ok (163..202) | WEG (1565..1626) „Das sagen unsere Kunden.“
+/leistungen ok | ok
+/fliesen ok | ok
+/balkon-terrasse ok | ok
+/referenzen ok | ok
+/ueber-uns ok | ok
+/kontakt ok | ok
+/standorte/wetzlar ok | ok
+/blog WEG (-548..-426) „Haben Sie eine Frage zu Ihrem Bad?“ | ok
+== 4325 (Endstand 990b01e0)
+/ WEG (23..40) „Termin vor Ort anfragen“ | ok (144..205)
+/bad ok (468..485) | ok (421..482)
+/bad/badsanierung WEG (28..49) „Planen Sie Ihr neues Bad mit uns.“ | WEG (1674..1735) „Das sagen unsere Kunden.“
+/bad/barrierefreies-bad ok (242..259) | ok (409..531)
+/leistungen ok | ok
+/fliesen WEG (-71..-50) „Fliesenprojekt vorbereiten“ | ok (332..393)
+/balkon-terrasse ok (-18..166, teilweise) | ok
+/referenzen ok (-57..65, teilweise) | ok
+/ueber-uns ok | ok
+/kontakt ok | ok
+/standorte/wetzlar ok (7..68, teilweise unter dem Kopf) | ok
+/blog WEG (-176..-54) „Haben Sie eine Frage zu Ihrem Bad?“ | ok
+Ergebnis: gefunden 24/24 in beiden Ständen; Sprung landet sichtbar E0 20/24, Endstand 20/24 (dazu drei nur teilweise sichtbar).
+Ursache: nach dem Sprung ändern sich Höhen über der Fundstelle (content-visibility auto mit Platzhalterhöhe, nachladende Bilder, fester Kopf) – in beiden Ständen.
