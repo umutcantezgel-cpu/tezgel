@@ -3,22 +3,25 @@
 // Firmensitz Aßlar (`CITY_HUB_DATA`, dieselbe Quelle wie Startseite und Karte, M-17). Keine erfundenen Projekte im Ort,
 // keine Projektorte an Fotos (K-015). Reine Funktion; Längen von Titel und Beschreibung prüft `test/orte.test.mjs`.
 // Einstieg mit Foto (UM-E4-SICHT-FIX M-C6 Nr. 1): ein Aufmacher aus der kurzen hellen Auswahl (Helligkeit ≥ 0,45 und
-// Schärfe ≥ 0,10 laut _werkstatt/bildinventar.csv), nicht Aufmacher oder erstes Galeriefoto einer Hauptansicht (verglichen
-// nach Originalnummer), nicht in der Fotoreihe derselben Seite, ohne Ortsetikett (Alt-Text aus ARBEITEN).
+// Schärfe ≥ 0,10 laut _werkstatt/bildinventar.csv), nicht Aufmacher einer anderen Hauptansicht (verglichen nach Originalnummer),
+// nicht in der Fotoreihe derselben Seite, ohne Ortsetikett (Alt-Text aus ARBEITEN). Seit der Bildtabelle (UM-E4-SICHT-FIX-2
+// M2-B1, E-113 Nr. 7) darf er erstes Galeriefoto einer Hauptansicht sein (bewusste Abweichung von M-A2 Nr. 4).
 // Fotoreihe hellste zuerst (M-C6 Nr. 4), „Das machen wir in …“ mittig mit Plan-Vignetten statt Verlegemustern (Nr. 3).
 import type { CityData } from '@/config/cities';
 import type { ArbeitId } from '@/config/arbeiten';
 import type { ErzaehlInhalt, Zeile } from '@/components/vorlagen/inhalt';
 import { GALERIE_START } from './galerie';
 
-/** Aufmacher aller 13 Ortsseiten: die Dusche (IMG_2553, auf / nur weiter hinten im Beleg). Er wird nach der sichtbaren Arbeit
- *  gewählt, nicht nur nach Helligkeit und Schärfe (Nacharbeit SF-C1): Die Terrasse in Erdtönen (balkon-beleg-3) zeigt im ersten
- *  Bildschirm Ablaufrost und Laub, die blaugraue Terrasse (start-beleg-terrasse) Hauswand und Dachunterseite, ihre Fliesen
- *  liegen unter der Falz. Im Feld 4 : 5 zeigt nur die Dusche die Fliesenarbeit über die ganze Höhe. */
-const AUFMACHER: ArbeitId = 'start-beleg-dusche';
+/** Aufmacher aller 13 Ortsseiten: die Dusche mit Sitzbank und Mosaik (IMG_2582, Güte A, scharf, ohne ausgefressene Pixel;
+ *  UM-E4-SICHT-FIX-2 M2-B1, Sicht Anlauf 2, 4a und 4b: die bisherige Duschtür mit Armatur start-beleg-dusche war weich, dunstig
+ *  und kontrastarm). Auf / und /referenzen steht sie als erstes Galeriefoto, auf keiner Hauptansicht als Aufmacher. Wie bisher
+ *  zeigt sie im Feld 4 : 5 die Fliesenarbeit über die ganze Höhe (Nacharbeit SF-C1: die Terrassen zeigten im ersten
+ *  Bildschirm Ablaufrost, Laub oder Hauswand). Rückweg: 'start-beleg-dusche' */
+const AUFMACHER: ArbeitId = 'start-galerie-1';
 
-/** Fotos der Reihe nach Helligkeit (bildinventar.csv, hellste zuerst): das dunkle Gäste-WC und die dunkle Wanne stehen nie vorn */
-const NACH_HELLIGKEIT: ArbeitId[] = ['start-galerie-5', 'ort-terrasse-erdtoene', 'start-galerie-3', 'start-galerie-1', 'ort-gaeste-wc', 'start-beleg-bad'];
+/** Fotos der Reihe nach Helligkeit (bildinventar.csv, hellste zuerst; alle sechs Plätze aus GALERIE_START, M2-B1): die dunkle
+ *  Wanne steht nie vorn */
+const NACH_HELLIGKEIT: ArbeitId[] = ['badsanierung-einstieg', 'kontakt-eingang', 'start-beleg-terrasse', 'balkon-beleg-aluprofil', 'start-beleg-treppe', 'start-beleg-bad'];
 const helligkeitsRang = (bild: ArbeitId) => {
   const rang = NACH_HELLIGKEIT.indexOf(bild);
   return rang === -1 ? NACH_HELLIGKEIT.length : rang;
@@ -99,8 +102,11 @@ export function ortsInhalt(stadt: CityData, kmAbSitz: number, index: number): Or
       stimmen: [STIMMEN[index % STIMMEN.length]],
       verweis: { name: 'Alle Arbeiten ansehen', href: '/referenzen' },
     },
-    // Qualitätsversprechen (UM-E4-EP3) vor dem nächsten Schritt; Wortlaut aus COMPANY_DATA.qualityPromises
-    versprechen: {},
+    // Qualitätsversprechen (UM-E4-EP3) vor dem nächsten Schritt; Wortlaut aus COMPANY_DATA.qualityPromises. Offen stehen drei
+    // Punkte, die die Seite sichtbar noch nicht sagt (UM-E4-SICHT-FIX-2 M2-A3, Darstellung SF2-A): 2 Großformat, 5 Termintreue,
+    // 7 Werkstoffe; nicht 1 (Termin kostenfrei im Ablauf), 3 (Abdichtung nach DIN 18534 in „Was wir tun“), 4 (Angebot mit festem
+    // Preis im Ablauf), 6 (Staubschutz, auf der Ortsseite ohne Bezug), 8 (Inhaber, K-003 „Text“)
+    versprechen: { offen: [2, 5, 7] },
     schritt: {
       titel: `Termin in ${name} anfragen`,
       satz: `Schreiben Sie uns oder rufen Sie an. Wir sprechen einen Termin bei Ihnen in ${name} ab.`,

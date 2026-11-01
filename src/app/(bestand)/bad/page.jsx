@@ -2,9 +2,12 @@
 // `src/inhalte/bad.ts`; die Metadaten kommen aus dem Inhalt. Der große Moment „schichten“ steht im Platz `momente.tun`
 // (E-048: die Zeichnung des alten Einstiegs entfällt). Die Anfragewege (Projektcheck, darunter Badanfrage) stehen seit
 // UM-E4-SICHT-FIX M-B3 im nächsten Schritt unter dem Hauptknopf (die Badanfrage geschlossen); die Funnel werden nachgeladen
-// (TEMPO, Z-08 / E-025) wie im Bestand.
+// (TEMPO, Z-08 / E-025) wie im Bestand. Badanfrage und Badplaner stehen als eine Zeile (UM-E4-SICHT-FIX-2 M2-B4, Rückfall nach
+// E-113 Nr. 1: der Projektcheck bleibt offen eingebettet, Specs unverändert): im Aufklapper „Badanfrage oder Badplaner öffnen“
+// zuerst der Weg zum Badplaner, dann die Badanfrage (Zusammenlegen gleicher Wege; vorher je eine eigene Zeile).
 // Strukturierte Daten (SeitenDaten) stehen auf dieser Seite; das Layout vererbt keine mehr.
 import dynamic from 'next/dynamic';
+import WeiterLink from '@/components/kern/WeiterLink';
 import ErzaehlSeite from '@/components/vorlagen/ErzaehlSeite';
 import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzhalter';
 import Schichten from '@/components/momente/schichten/Schichten';
@@ -55,10 +58,25 @@ export default function BadPage() {
                 momente={{ tun: <Schichten fachwort /> }}
                 // ein Abschluss (UM-E4-SICHT-FIX M-B3): beide Werkzeuge im nächsten Schritt unter dem Hauptknopf, ohne Rückfrage
                 // daneben (K-016); der Projektcheck offen (F-05 prüft sichtbare Inhalte in #projekt-check), die Badanfrage im
-                // geschlossenen Aufklapper (F-04, E-104 Nr. 4); Kennungen und Regionsnamen wie bisher
+                // geschlossenen Aufklapper (F-04, E-104 Nr. 4); Kennungen und Regionsnamen wie bisher. Der Badplaner steht seit
+                // M2-B4 (Rückfall) in derselben Zeile wie die Badanfrage, Zeile zum Öffnen als Mikrotext mit beiden Namen
                 werkzeug={[
                     { id: 'projekt-check', titel: 'Projektcheck fürs Bad', imSchritt: true, seite: '/bad/projekt-check', inhalt: <BadProjektCheck /> },
-                    { id: 'anfrage', titel: 'Badanfrage', imSchritt: true, zu: 'Badanfrage öffnen', seite: '/bad/badanfrage', inhalt: <BadanfrageFunnel /> },
+                    {
+                        id: 'anfrage',
+                        titel: 'Badanfrage',
+                        imSchritt: true,
+                        zu: 'Badanfrage oder Badplaner öffnen',
+                        seite: '/bad/badanfrage',
+                        inhalt: (
+                            <>
+                                <p className="mb-8">
+                                    <WeiterLink href="/bad/badplaner">Badplaner</WeiterLink>
+                                </p>
+                                <BadanfrageFunnel />
+                            </>
+                        ),
+                    },
                 ]}
             />
         </>

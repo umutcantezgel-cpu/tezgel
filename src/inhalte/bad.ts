@@ -23,9 +23,9 @@ export const BAD: ErzaehlInhalt = {
     ort: 'Für Aßlar, Wetzlar und Umgebung.',
     // im mittigen Einstieg nicht gezeigt; der Vorspann steht als `tun.einleitung` auf der Seite (Regel 2)
     vorspann: VORSPANN,
-    // Wanne und Ornamentboden ab rund 45 % der Höhe: das fertige Bad im ersten Bildschirm (UM-E4-SICHT-FIX M-A2; vorher
-    // bad-einstieg mit Decke und Fenster oben, jetzt Einstieg von /leistungen)
-    bild: 'bad-beleg-1',
+    // Landhausbad mit Wanne, Holzregal und Ornamentboden (UM-E4-SICHT-FIX-2 M2-B1, Bildtabelle E-113 Nr. 7; Sicht Anlauf 2,
+    // 1a und 1b: der enge Wannenausschnitt mit Flaschen bad-beleg-1 wirkte wie ein Mängelfoto). Rückweg: bild 'bad-beleg-1'
+    bild: 'bad-beleg-2',
     bewertung: true,
     // Plan-Vignette des Bads am rechten Ende der Schnur, erst ab xl (bei t1024 hielte die H1 mit Zeichen nur 1,12 × H2; M-A1 Nr. 3)
     schnurZeichen: { vignette: 'bad', ab: 'xl' },
@@ -91,11 +91,12 @@ export const BAD: ErzaehlInhalt = {
   beleg: {
     titel: 'Bäder, die wir gebaut haben.',
     // Unterschriften: Wörter aus dem Text, höchstens sechs, ohne Punkt (Regel 4); Wege nach Leistung
+    // Reihe nach der Bildtabelle (M2-B1): bad-beleg-2 ist der Einstieg der Seite, das helle Bad vorn, die Wanne mit Lichtlinie
+    // (bisher Einstieg) zuletzt; ihr Name aus dem Alt-Text
     fotos: [
-      // bad-beleg-1 ist der Einstieg der Seite (M-A2); an seine Stelle tritt das bisherige Einstiegsbild, nicht als erstes
-      { bild: 'bad-beleg-2', unterschrift: 'Wanne unter weißen Fliesen', href: '/bad/badsanierung' },
       { bild: 'bad-einstieg', unterschrift: 'Helles Bad mit Glasdusche', href: '/bad/badsanierung' },
       { bild: 'bad-beleg-3', unterschrift: 'Doppelwaschtisch aus dunklem Holz', href: '/bad/badsanierung' },
+      { bild: 'bad-beleg-1', unterschrift: 'Badewanne mit Lichtlinie und Ornamentfliesen', href: '/bad/badsanierung' },
     ],
     // Stimme der Textdatei zuerst, dann Stimmen aus REVIEWS zum Thema Bad (Regel 5, G8: Wortlaut unverändert)
     stimmen: ['peter-p', 'elke-s', 'c-wolf', 'ute-t', 'k-d'],
@@ -110,8 +111,8 @@ export const BAD: ErzaehlInhalt = {
     hilfen: [
       { name: 'Badanfrage', href: '/bad/badanfrage', satz: 'Schreiben Sie uns, was Sie sich für Ihr Bad wünschen.' },
       { name: 'Projektcheck', href: '/bad/projekt-check', satz: 'Mit wenigen Fragen sehen Sie online, was bei Ihrem Bad möglich ist.' },
-      // bleibt verlinkt wie im Bestand (Abnahme E3-BAU-01; die Seite steht auch im Menü)
-      { name: 'Badplaner', href: '/bad/badplaner' },
+      // Der Badplaner bleibt verlinkt wie im Bestand (Abnahme E3-BAU-01), seit UM-E4-SICHT-FIX-2 M2-B4 (Rückfall) in der Zeile der
+      // Badanfrage im nächsten Schritt (bad/page.jsx) statt als eigene Hilfezeile darunter
     ],
   },
 };

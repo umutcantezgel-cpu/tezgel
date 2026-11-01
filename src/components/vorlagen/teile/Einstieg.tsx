@@ -26,13 +26,23 @@
 // schalten die Schnur erst zusammen mit dem Einzugsband außerhalb des Einstiegs ein (M-C6), nie Schnur und rotes Band zugleich.
 // Im Eingang ziehen nur Schnur und (ab md) Lotstück (data-einstieg="schnur", bewegung.css: Schnur in dauer-1); H1, Ort, Knöpfe,
 // Bewertung, Bild und Vorspann stehen ab dem ersten Bild.
+// Zeilenmaske an der Schnur (`zeilenmaske`, nur Ortsseiten; UM-E4-SICHT-FIX-2 M2-B2, E-113 Nr. 2): Dort ist seit M-C6 das Foto
+// das LCP-Element, M-A3 Nr. 2 gilt dort nicht mehr. Die H1 steht als Block-Zeilen hinter Zeilenmasken (Kennung zeilenmaske,
+// --zeile; `titelZeilen`, sonst eine Zeile), die letzte an der Schnur (schnur-grundlinie); Ort und Knopfzeile setzen sich ab sm
+// wie im mittigen Einstieg (data-eingang="knoepfe"), unter sm stehen sie ab dem ersten Bild (max-sm:animate-none, E-067-4,
+// UM-E3-FIX2 N6). Foto, Bewertungszeile und Vorspann stehen ab dem ersten Bild. Die Variante hängt am Zusatzattribut
+// data-zeilenmaske (bewegung.css: Schnur und Lotstück in dauer-2, Takt wie EinstiegMitte: Schnur 0–320, Zeilen 140–860, Ort
+// 500–1100, Knöpfe 620–1220 ms); data-einstieg="schnur" bleibt, Wissensseiten setzen die Angabe nicht (E-113 Nr. 2). Die H1
+// bleibt Text im DOM; ruhig, reduziert und ohne JavaScript steht alles sofort.
+// Mit Foto im Bildplatz (Ortsseiten) steht der Vorspann in derselben Hülle wie das Foto, auf dessen Kanten (M2-B2 Nr. 4; Sicht
+// Anlauf 2: der Satz begann 56 px links der Bildkante); mit Plan oder ohne Bild (Wissensseiten) wie bisher im Satzmaß.
 // Vorspann (M-A3 Nr. 4): über VORSPANN_LANG Zeichen (mobil rund drei Zeilen) linksbündig im Satzmaß, sonst mittig; in schmaler
 // Spalte (unter 20rem, große Systemschrift) immer linksbündig.
 // Flach (Handy quer, q844; M-A3 Nr. 6, auch kompakt): Brotkrumen aus, Abstände und H1 eine Stufe kleiner, damit Hauptknopf und
 // Anruf im ersten Bild stehen; die Ortszeile bricht weiter um. Feste Satzzeilen (`titelZeilen`, auch kompakt) stehen als
 // Block-Zeilen und fließen flach als ein Satz.
 // Serverkomponente.
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
 import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
@@ -79,18 +89,23 @@ export interface EinstiegProps {
   schnur?: boolean;
   /** Bewertungszeile unter den Knöpfen (an der Schnur; Bewertungszahlen nur über die Bewertungszeile, G8) */
   bewertung?: boolean;
+  /** Zeilenmaske der H1 im Eingang an der Schnur (nur mit `schnur`; UM-E4-SICHT-FIX-2 M2-B2, E-113 Nr. 2): Ortsseiten, deren
+   *  LCP-Element das Foto ist. Nicht auf den Wissensseiten (dort ist die H1 bzw. der Vorspann LCP-Kandidat, M-A3 Nr. 2) */
+  zeilenmaske?: boolean;
   /** Der nächste Abschnitt steht auf Fliese (LageInhalt.aufFliese, wie EinstiegMitte, UM-E4-CHOR-FIX): ab lg bleibt unter dem
    *  letzten Block eine Stufe 16 Kalk bis zur Fuge statt einer Stufe 24 (dahinter eine Stufe 16 bis zum Kopf der Lage). Innen
    *  gesetzt, damit das Lot des Einstiegs bis an die Fuge reicht */
   fugeUnten?: boolean;
 }
 
-export default function Einstieg({ pfad, brotkrumen, titel, titelZeilen, ort, vorspann, bild, unterBild, hauptziel = '/kontakt', kompakt = false, lot = false, schnur = false, bewertung = false, fugeUnten = false }: EinstiegProps) {
+export default function Einstieg({ pfad, brotkrumen, titel, titelZeilen, ort, vorspann, bild, unterBild, hauptziel = '/kontakt', kompakt = false, lot = false, schnur = false, bewertung = false, zeilenmaske = false, fugeUnten = false }: EinstiegProps) {
   const { contact } = COMPANY_DATA;
   const titelId = 'seite-titel';
   const foto = typeof bild === 'string';
   const mitBild = Boolean(bild) && !kompakt;
   const anDerSchnur = schnur && lot && !kompakt;
+  // Zeilenmaske nur an der Schnur und nur mit der Angabe (Ortsseiten, M2-B2)
+  const maske = anDerSchnur && zeilenmaske;
   // Abstand unter dem letzten Block: ab lg eine Stufe 24, vor einer Fuge eine Stufe 16 (fugeUnten)
   const unten = clsx('pb-16', fugeUnten ? 'lg:pb-16' : 'lg:pb-24');
   // H1 eine Stufe kleiner bei langem Titel, flach noch eine Stufe kleiner (M-A3 Nr. 6)
@@ -98,7 +113,15 @@ export default function Einstieg({ pfad, brotkrumen, titel, titelZeilen, ort, vo
   const titelStufe = langerTitel ? 'text-fs-5 flach:text-fs-4' : 'text-fs-6 flach:text-fs-5';
   // Satzzeilen als Blöcke, flach als ein Satz; an der Schnur steht der Titel in einem Block, damit die Grundlinie seiner
   // letzten Zeile auf der Schnur steht (schnur-grundlinie > :last-child)
-  const titelInhalt = titelZeilen
+  const titelInhalt = maske
+    ? (titelZeilen ?? [titel]).map((zeile, i, alle) => (
+        // Zeile hinter der Maske (Nummer für den Abstand), als Text im DOM; flach (Handy quer) ohne Maske wie im mittigen Einstieg
+        <span key={zeile} data-motion="zeilenmaske" style={{ '--zeile': i } as CSSProperties} className={clsx('block flach:animate-none', titelZeilen && 'flach:inline')}>
+          {zeile}
+          {i < alle.length - 1 && ' '}
+        </span>
+      ))
+    : titelZeilen
     ? titelZeilen.map((zeile, i) => (
         <span key={zeile} className="block flach:inline">
           {zeile}
@@ -150,7 +173,7 @@ export default function Einstieg({ pfad, brotkrumen, titel, titelZeilen, ort, vo
   if (anDerSchnur) {
     // Figur „An der Schnur“: H1 auf der Schnur, darunter in der Ebene der Schnur Ort, Knöpfe, Bewertung, Bild, Vorspann
     return (
-      <section aria-labelledby={titelId} data-formel="worum" data-motion="eingang" data-einstieg="schnur" className="@container relative">
+      <section aria-labelledby={titelId} data-formel="worum" data-motion="eingang" data-einstieg="schnur" data-zeilenmaske={maske ? '' : undefined} className="@container relative">
         {/* über der Ebene der Schnur (z-10): Die Unterlängen der letzten Zeile ragen über die Schnur in den Block darunter */}
         <div className={clsx(seitenKlassen, 'relative z-10 flex flex-col items-center pt-24 text-center flach:pt-16 lg:pt-32')}>
           {brotkrumen && brotkrumen.length > 1 && <Brotkrumen wege={brotkrumen} className="mb-6 flach:hidden" />}
@@ -162,24 +185,29 @@ export default function Einstieg({ pfad, brotkrumen, titel, titelZeilen, ort, vo
             <div className={clsx(seitenKlassen, 'relative flex flex-col items-center pt-6 text-center flach:pt-3')}>
               {/* rotes Lot von der Schnur bis an den nächsten Block (dessen Abstand pt-8, flach pt-4, ab lg pt-6) */}
               <Lotstueck className="-bottom-8 flach:-bottom-4 lg:-bottom-6" />
-              {/* Ort, Knöpfe und Bewertung stehen ab dem ersten Bild (animate-none: kein Setzen im Eingang) */}
-              <p data-erstes-bild="ort" className="max-w-mass font-text text-fs-4 text-balance text-tinte-2 animate-none">
+              {/* Ort, Knöpfe und Bewertung stehen ab dem ersten Bild (animate-none: kein Setzen im Eingang); mit Zeilenmaske setzen
+                  sich Ort und Knopfzeile ab sm nach der ersten Zeile, die Bewertung steht ab dem ersten Bild (M2-B2) */}
+              <p data-erstes-bild="ort" className={clsx('max-w-mass font-text text-fs-4 text-balance text-tinte-2', maske ? 'max-sm:animate-none' : 'animate-none')}>
                 {mitFugen(ort)}
               </p>
-              <div className="mt-3 flex w-full flex-col items-center gap-3 sm:flex-row sm:flex-wrap sm:justify-center lg:mt-4">{knoepfe}</div>
+              <div data-eingang={maske ? 'knoepfe' : undefined} className={clsx('mt-3 flex w-full flex-col items-center gap-3 sm:flex-row sm:flex-wrap sm:justify-center lg:mt-4', maske && 'max-sm:animate-none')}>
+                {knoepfe}
+              </div>
               {bewertung && <Bewertungszeile className="mt-4 font-text text-fs-2 text-tinte-2 hyphens-none flach:mt-3" />}
             </div>
             {mitBild && (
-              <div className={clsx(seitenKlassen, 'relative pt-8 flach:pt-4 lg:pt-6')}>
+              <div className={clsx(seitenKlassen, 'relative pt-8 flach:pt-4 lg:pt-6', foto && unten)}>
                 {/* ein Foto hängt an einer Fuge, die das Lot an seinem Ende kreuzt (ab sm); ein Plan steht ohne */}
                 {foto && <Aufhaengung lage="top-8 flach:top-4 lg:top-6" />}
                 <div className="mx-auto w-full max-w-md lg:w-1/2 lg:max-w-full">
                   {foto ? <Bildfeld arbeit={bild as ArbeitId} lcp sizes="(min-width: 1024px) 50vw, (min-width: 640px) 28rem, 100vw" /> : bild}
                   {unterBild}
+                  {/* mit Foto: der Vorspann in der Hülle des Fotos, auf dessen Kanten (M2-B2 Nr. 4) */}
+                  {foto && <div className="pt-8">{vorspannAbsatz}</div>}
                 </div>
               </div>
             )}
-            <div className={clsx(seitenKlassen, 'flex flex-col items-center', mitBild ? 'pt-8' : 'pt-8 flach:pt-4 lg:pt-6', unten)}>{vorspannAbsatz}</div>
+            {!(mitBild && foto) && <div className={clsx(seitenKlassen, 'flex flex-col items-center', mitBild ? 'pt-8' : 'pt-8 flach:pt-4 lg:pt-6', unten)}>{vorspannAbsatz}</div>}
           </div>
         </div>
       </section>

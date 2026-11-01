@@ -1082,12 +1082,21 @@ html.k-wiederkehr [data-motion="eingang"] {
   --eingang-zeile-beginn: var(--dauer-0);
   --eingang-zeile: var(--dauer-2);
 }
-/* Einfacher Einstieg an der Schnur (Wissensseiten, die Ortsseiten mit M-C6; Einstieg.tsx `schnur`, UM-E4-SICHT-FIX M-A3 Nr. 2):
+/* Einfacher Einstieg an der Schnur (Wissensseiten; die Ortsseiten von M-C6 bis UM-E4-SICHT-FIX-2 M2-B2, seitdem mit Zeilenmaske im
+   Block darunter; Einstieg.tsx `schnur`, UM-E4-SICHT-FIX M-A3 Nr. 2):
    H1, Ort, Knöpfe, Bewertung, Bild und Vorspann stehen ab dem ersten Bild (LCP-Kandidaten, E-067-4; ohne Zeilenmaske, Ort
    und Knöpfe mit animate-none, kein Fugenriss), es ziehen nur Schnur und Lotstück, in dauer-1 (0 bis 140 ms) statt dauer-2.
    Wiederkehr wie im mittigen Einstieg: beide stehen. */
 [data-motion="eingang"][data-einstieg="schnur"] {
   --eingang-schnur: var(--dauer-1);
+}
+/* Ortsseiten mit Zeilenmaske (UM-E4-SICHT-FIX-2 M2-B2, E-113 Nr. 2; Einstieg.tsx `zeilenmaske`, Zusatzattribut data-zeilenmaske):
+   dort ist das Foto das LCP-Element. Takt wie im mittigen Einstieg: Schnur und Lotstück in dauer-2 (0 bis 320 ms), die H1-Zeilen
+   steigen hinter ihren Masken auf (140 bis 860 ms, Regeln oben), Ort und Knopfzeile setzen sich ab sm (500 bis 1100 bzw. 620 bis
+   1220 ms; unter sm stehen sie ab dem ersten Bild, max-sm:animate-none). Foto, Bewertung und Vorspann stehen ab dem ersten Bild.
+   Wiederkehr nur die Zeilen, kürzer; ruhig, reduziert und ohne JavaScript der Endzustand. Wissensseiten bleiben beim Block oben. */
+[data-motion="eingang"][data-einstieg="schnur"][data-zeilenmaske] {
+  --eingang-schnur: var(--dauer-2);
 }
 /* Zeilenmaske an der Schnur (alle Figur-Einstiege samt /, EinstiegMitte schnur-grundlinie; Nacharbeit UM-E4-SICHT-FIX SF-A,
    UM-E4-SICHT-FIX M-A5 Nr. 2): Die Grundlinie der letzten H1-Zeile steht auf der Schnur, ihr Zeilenkasten reicht um halben

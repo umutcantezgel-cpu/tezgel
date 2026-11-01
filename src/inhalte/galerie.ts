@@ -1,14 +1,19 @@
 // Fotos der Ortsseiten (KERN v3 K-012): sechs echte Fotos mit kurzer Unterschrift nur über das, was zu sehen ist (keine
 // Projektorte, K-015). Jede Ortsseite zeigt drei davon (`orte.ts`, fest je Ort, damit die Seite stabil bleibt). Wetzlar
-// (Index 0) bekommt die Plätze 0, 2 und 4: Fotos, die auf keiner anderen Hauptansicht stehen (E4-W0-BILDER). Die
-// Startseite hat seit K-016 eigene Fotos in `start.ts`.
+// (Index 0) bekommt die Plätze 0, 2 und 4 (badsanierung-einstieg, start-beleg-terrasse, kontakt-eingang). Bildtabelle
+// UM-E4-SICHT-FIX-2 M2-B1 (E-113 Nr. 7; Sicht Anlauf 2, 4a: Laub, Pflanzkübel, Klobürste und Balken; 4b: die Reihe zeigte die
+// Fliesenarbeit kaum): fertige Arbeiten aus Bad, Terrasse und Treppe. Die Regel aus E4-W0-BILDER („Wetzlar zeigt nur Fotos, die
+// auf keiner anderen Hauptansicht stehen“) gilt nicht mehr: start-beleg-terrasse, start-beleg-bad und start-beleg-treppe stehen
+// auch auf /, badsanierung-einstieg auch auf /bad/badsanierung, balkon-beleg-aluprofil auch auf /balkon-terrasse (kein Foto
+// zweimal auf derselben Seite, außerhalb der Galerie von /referenzen jedes höchstens zweimal). Die Startseite hat seit K-016
+// eigene Fotos in `start.ts`.
 import type { ArbeitId } from '@/config/arbeiten';
 
 export const GALERIE_START: { bild: ArbeitId; unterschrift: string }[] = [
-  { bild: 'ort-gaeste-wc', unterschrift: 'Gäste-WC mit weißen Metrofliesen' },
-  { bild: 'start-galerie-1', unterschrift: 'Dusche mit Sitzbank und Mosaik' },
-  { bild: 'start-galerie-5', unterschrift: 'Außentreppe mit Fliesen in Terrakotta' },
+  { bild: 'badsanierung-einstieg', unterschrift: 'Badewanne mit Ornamentfliesen und Nische' },
   { bild: 'start-beleg-bad', unterschrift: 'Badewanne mit dunklen Mosaikfliesen' },
-  { bild: 'ort-terrasse-erdtoene', unterschrift: 'Terrasse mit rustikalen Fliesen in Erdtönen' },
-  { bild: 'start-galerie-3', unterschrift: 'Balkon mit dunklen Fliesen, jede Reihe um ein Stück versetzt' },
+  { bild: 'start-beleg-terrasse', unterschrift: 'Terrasse mit blaugrauen Fliesen' },
+  { bild: 'balkon-beleg-aluprofil', unterschrift: 'Terrassenkante mit hellem Aluprofil' },
+  { bild: 'kontakt-eingang', unterschrift: 'Treppenstufen mit beigen Fliesen' },
+  { bild: 'start-beleg-treppe', unterschrift: 'Außentreppe mit anthrazitfarbenen Fliesen' },
 ];

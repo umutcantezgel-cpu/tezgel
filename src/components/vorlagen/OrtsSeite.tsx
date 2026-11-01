@@ -13,7 +13,9 @@
 // Leitfaden wie auf /. Steht die Lage auf Fliese (`lage.aufFliese`, wie
 // auf /), setzt der Einstieg ab lg eine Stufe 16 Kalk bis zur Fuge (`fugeUnten`, wie die Wissensvorlage; UM-E4-CHOR-FIX). Das
 // Qualitätsversprechen aus dem Inhalt (`versprechen`, UM-E4-EP3) steht als eigener Abschnitt nach dem Beleg vor dem nächsten
-// Schritt. Serverkomponente.
+// Schritt. Eingang an der Schnur mit Zeilenmaske (UM-E4-SICHT-FIX-2 M2-B2, E-113 Nr. 2: das Foto ist hier das LCP-Element):
+// Die H1 steigt hinter der Maske auf die Schnur, Ort und Knöpfe setzen sich ab sm. Das Einzugsband steht über die volle
+// Satzbreite (`zusatzBreit`, M2-B7: Ortsmaß und Kennzahl). Serverkomponente.
 import { Suspense, type ReactNode } from 'react';
 import Leitachse from '@/components/kern/Leitachse';
 import Seitenformel from '@/components/kern/Seitenformel';
@@ -43,10 +45,10 @@ export default function OrtsSeite({ inhalt, formular, nachbarn, band }: OrtsSeit
   const { worum } = inhalt;
   return (
     <Seitenformel>
-      <Einstieg pfad={inhalt.pfad} brotkrumen={worum.brotkrumen} titel={worum.titel} ort={worum.ort} vorspann={worum.vorspann} bild={worum.bild} hauptziel={`#${ORT_ANKER}`} lot schnur bewertung fugeUnten={inhalt.lage.aufFliese} />
+      <Einstieg pfad={inhalt.pfad} brotkrumen={worum.brotkrumen} titel={worum.titel} ort={worum.ort} vorspann={worum.vorspann} bild={worum.bild} hauptziel={`#${ORT_ANKER}`} lot schnur bewertung zeilenmaske fugeUnten={inhalt.lage.aufFliese} />
       <Leitachse>
         <Suspense fallback={<div aria-hidden="true" className="min-h-dvh noscript:hidden" />}>
-          <Lage inhalt={inhalt.lage} zusatz={band} />
+          <Lage inhalt={inhalt.lage} zusatz={band} zusatzBreit />
           <Tun inhalt={inhalt.tun} />
           <Ablauf inhalt={inhalt.ablauf} />
           <Beleg inhalt={inhalt.beleg} pfad={inhalt.pfad} />

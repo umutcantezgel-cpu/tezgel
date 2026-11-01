@@ -314,10 +314,23 @@ test('Eingang 7: Behälter und Teile in Kopf und Einstiegen; H1 bleibt Text, Arb
   }
   const einstieg = lies('src/components/vorlagen/teile/Einstieg.tsx');
   assert.match(einstieg, /data-motion=\{kompakt \? undefined : 'eingang'\}/);
-  // Wissens- und Ortsseiten (UM-E4-SICHT-FIX M-A3 Nr. 2, Eintrag in ENTSCHEIDUNGEN): Die H1 steht ab dem ersten Bild
-  // (LCP-Kandidat, E-067-4), ohne Zeilenmaske; der Vorspann steht ohne data-eingang; an der Schnur ziehen nur Schnur und
-  // Lotstück der Schnurebene (Kennung eingang), im Behälter des Einstiegs
-  assert.ok(!einstieg.includes('zeilenmaske'), 'Einstieg: H1 ohne Zeilenmaske');
+  // Wissensseiten (UM-E4-SICHT-FIX M-A3 Nr. 2, Eintrag in ENTSCHEIDUNGEN): Die H1 steht ab dem ersten Bild (LCP-Kandidat,
+  // E-067-4), ohne Zeilenmaske; der Vorspann steht ohne data-eingang; an der Schnur ziehen nur Schnur und Lotstück der
+  // Schnurebene (Kennung eingang), im Behälter des Einstiegs. Ortsseiten (UM-E4-SICHT-FIX-2 M2-B2, E-113 Nr. 2: dort ist das Foto
+  // das LCP-Element): Die Zeilenmaske steht nur hinter der Angabe `zeilenmaske` (Zusatzattribut data-zeilenmaske), jede Zeile ein
+  // Block mit Maske und Nummer als Text im DOM, flach ohne Maske; Ort und Knopfzeile setzen sich ab sm, unter sm stehen sie
+  // sofort. Die OrtsSeite setzt die Angabe, die WissensSeite nicht; die Schnur zieht dort im Takt des mittigen Einstiegs
+  assert.equal((einstieg.match(/data-motion="zeilenmaske"/g) ?? []).length, 1, 'Einstieg: Zeilenmaske an genau einer Stelle');
+  assert.match(einstieg, /const maske = anDerSchnur && zeilenmaske;/, 'Einstieg: Maske nur an der Schnur mit der Angabe');
+  assert.match(einstieg, /const titelInhalt = maske\s*\?\s*\(titelZeilen \?\? \[titel\]\)\.map\(/, 'Einstieg: Zeilen mit Maske nur hinter der Angabe');
+  assert.match(einstieg, /<span key=\{zeile\} data-motion="zeilenmaske" style=\{\{ '--zeile': i \} as CSSProperties\} className=\{clsx\('block flach:animate-none'/, 'Einstieg: Zeile als Block mit Nummer, flach ohne Maske');
+  assert.match(einstieg, /data-zeilenmaske=\{maske \? '' : undefined\}/, 'Einstieg: Zusatzattribut der Variante');
+  assert.match(einstieg, /data-erstes-bild="ort" className=\{clsx\([^)]*maske \? 'max-sm:animate-none' : 'animate-none'\)/, 'Einstieg: Ort ab sm im Eingang, unter sm sofort');
+  assert.match(einstieg, /data-eingang=\{maske \? 'knoepfe' : undefined\} className=\{clsx\([^)]*maske && 'max-sm:animate-none'\)/, 'Einstieg: Knopfzeile ab sm im Eingang, unter sm sofort');
+  assert.match(lies('src/components/vorlagen/OrtsSeite.tsx'), /<Einstieg [^>]*\bschnur\b[^>]*\bzeilenmaske\b/, 'Ortsseite mit Zeilenmaske');
+  assert.ok(!lies('src/components/vorlagen/WissensSeite.tsx').includes('zeilenmaske'), 'Wissensseiten ohne Zeilenmaske (E-113 Nr. 2)');
+  assert.equal(vars('[data-motion="eingang"][data-einstieg="schnur"]')['--eingang-schnur'], 'var(--dauer-1)', 'Wissensseiten: Schnur in dauer-1');
+  assert.equal(vars('[data-motion="eingang"][data-einstieg="schnur"][data-zeilenmaske]')['--eingang-schnur'], 'var(--dauer-2)', 'Ortsseiten: Schnur wie im mittigen Einstieg');
   const vorspann = /<p className=\{clsx\('max-w-mass font-text text-fs-3[^\n]*\n\s*<Textmarken text=\{vorspann\}/.exec(einstieg);
   assert.ok(vorspann && !vorspann[0].includes('data-eingang'), 'Einstieg: Vorspann ohne data-eingang');
   assert.match(einstieg, /data-formel="worum" data-motion="eingang" data-einstieg="schnur"/);

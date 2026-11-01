@@ -17,9 +17,10 @@ export const BARRIEREFREIES_BAD: ErzaehlInhalt = {
     ort: 'Für Aßlar, Wetzlar und Umgebung.',
     vorspann:
       'Wir bauen Ihre Badewanne aus und eine [[bodengleiche-dusche|bodengleiche Dusche]] ein. So steigen Sie sicher hinein, heute und auch später.',
-    // stufenloser Boden bis in die Dusche ab rund 40 % der Höhe, Schärfe 0,088 statt 0,023 (UM-E4-SICHT-FIX M-A2; das
-    // bisherige Bild lag unter den Untergrenzen und wird ersetzt)
-    bild: 'bereich-dusche-streifen-sitzbank',
+    // Dusche mit Mosaikboden und gefliester Eckbank, das schärfste fertige Duschfoto der Seite (UM-E4-SICHT-FIX-2 M2-B1,
+    // Bildtabelle E-113 Nr. 7; Sicht Anlauf 2, 2a: das bisherige Einstiegsfoto bereich-dusche-streifen-sitzbank war grau und
+    // weich, es steht jetzt in der Reihe). Rückweg: bild 'bereich-dusche-streifen-sitzbank'
+    bild: 'barrierefrei-beleg-1',
     einstieg: 'mitte',
     titelZeilen: ['Ein barrierefreies Bad', 'mit Dusche ohne Stufe'],
     bewertung: true,
@@ -62,12 +63,13 @@ export const BARRIEREFREIES_BAD: ErzaehlInhalt = {
   },
   beleg: {
     // Überschrift nach den Fotos (E4-W0-BILDER, E-065): zwei fertige Duschen; „ohne Stufe“ behauptet nur die Unterschrift des
-    // Fotos, das es zeigt. Die Wanne mit Tür trug noch Herstelleraufkleber und Klebeband und ist entfallen; die bodengleiche
-    // Dusche kommt von /bad hierher, kein Foto steht auf einer anderen Hauptansicht
+    // Fotos, das es zeigt. Die Wanne mit Tür trug noch Herstelleraufkleber und Klebeband und ist entfallen. Reihe nach der
+    // Bildtabelle (M2-B1): barrierefrei-beleg-1 ist der Einstieg der Seite, an ihre Stelle tritt das bisherige Einstiegsfoto,
+    // Name aus seinem Alt-Text
     titel: 'Duschen, die wir gebaut haben.',
     fotos: [
-      { bild: 'barrierefrei-beleg-1', unterschrift: 'Dusche mit Mosaikboden und Eckbank' },
       { bild: 'bad-beleg-4', unterschrift: 'Bodengleiche Dusche mit Mosaik' },
+      { bild: 'bereich-dusche-streifen-sitzbank', unterschrift: 'Dusche mit Fliesenstreifen und Sitzbank' },
     ],
     zweierbild: {
       titel: 'So entsteht eine Dusche ohne Stufe',

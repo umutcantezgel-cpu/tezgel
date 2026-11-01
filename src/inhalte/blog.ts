@@ -65,17 +65,28 @@ export const BLOG: WissenInhalt = {
   beleg: {
     // Überschrift wie auf /leistungen und /fliesen (Abnahme, Texthoheit: die Textdatei hatte keine)
     titel: 'Aus unserer Praxis.',
-    // Unterschrift: Wörter aus dem Alt-Text der Textdatei, auf höchstens sechs Wörter gekürzt (Regel 4)
-    // kein Foto (E-065): die Duschnische zeigte offene Anschlüsse ohne Armatur, und jedes andere fertige Foto steht schon auf
-    // einer Hauptansicht; der Satz und die Stimme tragen den Abschnitt
-    fotos: [],
+    // Zwei fertige Arbeiten, je mit Glasfläche und Weg zur Leistung (UM-E4-SICHT-FIX-2 M2-B5, E-113 Nr. 8: der Teil „/blog kein
+    // Foto“ aus E-065 ist abgelöst; Sicht Anlauf 2, 4b hoch: die untere Hälfte ohne echtes Foto). Güte B aus ARBEITEN, beide
+    // „Nachher“. Nicht die Baustellenfotos des Plans (entstehung-dusche-2: offene Nische mit Dämmung und Rohrstutzen,
+    // badsanierung-zweier-1: Dusche ohne Armaturen): Die in E-065 entfernten Motive („Duschnische ohne Armatur“) bleiben nach
+    // E-113 Nr. 8 draußen (Nacharbeit SF2-B, EV-B12). Namen wie auf / bzw. aus dem Alt-Text, höchstens sechs Wörter (Mikrotext).
+    // Jedes steht sonst nur auf einer Hauptansicht (/ bzw. /leistungen); unter dem ersten Bildschirm, ohne Vorrang (das LCP bleibt
+    // der Vorspann). Rückweg zum Plan: die zwei Zeilen mit entstehung-dusche-2 und badsanierung-zweier-1 (Notiz EV-B12)
+    fotos: [
+      { bild: 'start-beleg-dusche', unterschrift: 'Dusche mit Glastür und Mosaik', href: '/bad' },
+      { bild: 'leistungen-balkon', unterschrift: 'Balkon mit anthrazitfarbenen Fliesen', href: '/balkon-terrasse' },
+    ],
     // Satz der Textdatei ohne den Satz zur Handwerkskammer (Regel 3)
     satz: 'Seit 2019 ist die Abdichtung nach [[din-18534|DIN 18534]] bei uns Standard.',
-    // Stimme der Textdatei (G8: Wortlaut unverändert); die Kennzeile mit Stand setzt der Baustein Stimmen aus RATING_SUMMARY
-    stimmen: ['c-wolf'],
+    // Stimme der Textdatei zuerst, dazu drei vorhandene Stimmen zum Bad (M2-B5; G8: Wortlaut unverändert); die Kennzeile mit Stand
+    // setzt der Baustein Stimmen aus RATING_SUMMARY
+    stimmen: ['c-wolf', 'peter-p', 'elke-s', 'ute-t'],
   },
-  // Qualitätsversprechen (UM-E4-EP3) vor dem nächsten Schritt; Wortlaut aus COMPANY_DATA.qualityPromises
-  versprechen: {},
+  // Qualitätsversprechen (UM-E4-EP3) vor dem nächsten Schritt; Wortlaut aus COMPANY_DATA.qualityPromises. Offen stehen drei
+  // Punkte, die die Seite sichtbar noch nicht sagt (UM-E4-SICHT-FIX-2 M2-A3 und M2-B5, Darstellung SF2-A): 2 Großformat, 5
+  // Termintreue, 7 Werkstoffe (Kleber und Fugen wie in den Ratgebern); nicht 1 (Termin kostenfrei im Ablauf), 3 (Abdichtung nach
+  // DIN 18534 im Vorspann und im Beleg), 8 (Inhaber, K-003 „Text“); 4 und 6 passen weniger zum Ratgeber
+  versprechen: { offen: [2, 5, 7] },
   schritt: {
     titel: 'Haben Sie eine Frage zu Ihrem Bad?',
     satz: 'Rufen Sie uns an oder senden Sie Ihre Anfrage. Deniz Tezgel ruft Sie zurück.',

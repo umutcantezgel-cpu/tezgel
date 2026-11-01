@@ -17,20 +17,22 @@ import { ortsInhalt, type Ortsinhalt } from '@/inhalte/orte';
 // Standortseite `/standorte/[stadt]` (E3-BAU-10, KERN v3.6, Zusatz E3-BAU-K016): Ortsseite auf der Vorlage `OrtsSeite`.
 // Der Inhalt kommt aus `ortsInhalt()` (`src/inhalte/orte.ts`, Muster `_werkstatt/texte/REF-ort-wetzlar.md`), die Metadaten
 // aus dem Inhalt. Schlitz `band`: das Einzugsband am eigenen Ort als Ortsmoment in der Lage, die Zonen bis zur Zone des
-// Ortes offen, die ferneren im Aufklapper „Weitere Orte bis 50 km“ (UM-E4-SICHT-FIX M-C6 Nr. 2); `formular`: die
+// Ortes offen, die ferneren im Aufklapper „Weitere Orte bis 50 km“ (UM-E4-SICHT-FIX M-C6 Nr. 2), seit UM-E4-SICHT-FIX-2 M2-B7
+// in der Form band mit Ortsmaß (breit, rote Laserlinie bis zur Zone des Ortes, Entfernung als Kennzahl); `formular`: die
 // Schnellanfrage der Ortsseiten (F-09,
 // Quelle `standort-{slug}`); `nachbarn`: die fünf nächsten Orte. Strukturierte Daten über `SeitenDaten` mit Titel, Beschreibung
 // und Brotkrumen aus dem Inhalt (E-053, vorher eigener Text im Seitenknoten), die Ortsknoten als `weitere`; `generateStaticParams`
 // und `generateMetadata` bleiben.
 
-/** Fotos der Ortsseite (K-016, Regel 4): Ziel der Leistungsseite und Name auf der Glasfläche (Wörter aus `galerie.ts`, höchstens sechs) */
+/** Fotos der Ortsseite (K-016, Regel 4): Ziel der Leistungsseite und Name auf der Glasfläche (Wörter aus dem Alt-Text, höchstens
+ *  sechs, wie in `galerie.ts`); alle sechs Plätze der Bildtabelle (UM-E4-SICHT-FIX-2 M2-B1) */
 const FOTOS: Record<string, { unterschrift: string; href: string }> = {
-  'ort-gaeste-wc': { unterschrift: 'Gäste-WC mit weißen Metrofliesen', href: '/bad' },
-  'start-galerie-1': { unterschrift: 'Dusche mit Sitzbank und Mosaik', href: '/bad/barrierefreies-bad' },
-  'start-galerie-5': { unterschrift: 'Außentreppe mit Fliesen in Terrakotta', href: '/treppen' },
+  'badsanierung-einstieg': { unterschrift: 'Badewanne mit Ornamentfliesen und Nische', href: '/bad/badsanierung' },
   'start-beleg-bad': { unterschrift: 'Badewanne mit dunklen Mosaikfliesen', href: '/bad/badsanierung' },
-  'ort-terrasse-erdtoene': { unterschrift: 'Terrasse mit Fliesen in Erdtönen', href: '/balkon-terrasse' },
-  'start-galerie-3': { unterschrift: 'Balkon mit dunklen Fliesen', href: '/balkon-terrasse' },
+  'start-beleg-terrasse': { unterschrift: 'Terrasse mit blaugrauen Fliesen', href: '/balkon-terrasse' },
+  'balkon-beleg-aluprofil': { unterschrift: 'Terrassenkante mit hellem Aluprofil', href: '/balkon-terrasse' },
+  'kontakt-eingang': { unterschrift: 'Treppenstufen mit beigen Fliesen', href: '/treppen' },
+  'start-beleg-treppe': { unterschrift: 'Außentreppe mit anthrazitfarbenen Fliesen', href: '/treppen/aussentreppe' },
 };
 
 /** Weitere Kundenstimmen aus REVIEWS (K-016, Regel 5): Bad, Treppe, Boden, Balkon; die Stimme des Ortes steht zuerst */
@@ -132,7 +134,6 @@ export default async function StandortPage({
         band={
           <Einzugsband
             aktuell={city.slug}
-            form="stapel"
             weitere={(zonen) => (
               // die Zeile setzt das Lot des Bandes fort (Tinte, wie die Zonen darüber)
               <Aufklapper zeile="Weitere Orte bis 50 km" zeileKlassen="border-r border-b border-l-2 border-fuge border-l-tinte bg-fliese px-4 lg:px-6">

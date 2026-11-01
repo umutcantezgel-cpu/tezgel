@@ -54,9 +54,14 @@
 // - H1 außer auf / in fs-7 (E-104 Nr. 2, KERN K-003), eine Stufe über den H2. Unter md brechen die Zeilen an Wortgrenzen um,
 //   ab md bricht die längste Zeile nicht um: Ihr Maß kommt aus der Tabelle ZEILEN_EM gemessener em-Breiten (nicht aus der
 //   Zeichenzahl) und steht als --titel-em am Container (globals.css „titel-zeile“); nie kleiner als 1,15 × fs-6 (die H2).
-// - Schnurzeichen (WorumInhalt.schnurZeichen, /bad ab xl, /balkon-terrasse ab lg): die Plan-Vignette der Seite am rechten
-//   Ende der Schnur, unten auf ihr, in der Größe einer H1-Zeile; ihre Breite ist im Maß der H1 ab ihrer Stufe eingerechnet
-//   (--titel-em-lg, --titel-em-xl). Setzt sich im Eingang mit den Knöpfen (`eingang`, data-eingang="knoepfe").
+// - Schnurzeichen (WorumInhalt.schnurZeichen, /bad ab xl, /balkon-terrasse und /bad/badsanierung ab lg): die Plan-Vignette der
+//   Seite an der H1 (UM-E4-SICHT-FIX-2 M2-B3; Sicht Anlauf 2, 2a und 2b: am rechten Ende der Schnur las es sich als verirrtes
+//   Icon, bei t1024 20 px vom Rand). Es hängt wie der Quadratmeter auf / in der Gruppe der H1 an deren letzter Zeile: ab dem
+//   rechten Rand des Titelblocks plus ZEICHEN_LUFT (--zeichen-luft, globals.css „schnur-zeichen“), Unterkante auf der Schnur,
+//   eine H1-Zeile hoch; an seiner linken Unterkante steht ein Fugenkreuz auf der Schnur. Seine Breite samt Luft ist wie bisher
+//   im Maß der H1 ab ihrer Stufe eingerechnet (--titel-em-lg, --titel-em-xl, beidseitig, weil die H1 mittig steht): Inhalt,
+//   Größe, Umbruch und Verhalten der H1 bleiben gleich (G8). Setzt sich im Eingang mit den Knöpfen (`eingang`,
+//   data-eingang="knoepfe").
 // - Hochformat ohne bildQuer: ab lg höchstens 80svh hoch, Breite aus dem Format, höchstens zwei Drittel der Spalte
 //   (einstieg-foto-hoch, EINSTIEG_HOCH_SIZES).
 // - Unter sm stehen Brotkrumen und H1 näher am Kopf (Nacharbeit SF-A): 16 statt 32 px Luft unter dem Kopf (pt-16 und mt-4
@@ -165,7 +170,8 @@ const ZEILEN_EM: Record<string, number> = {
 const ZEILE_EM_GROESST = 13.3;
 /** Seitenverhältnis der Vignetten (viewBox in kern/vignetten) */
 const ZEICHEN_FORMAT: Record<ZeichnungName, number> = { bad: 240 / 184, wohnen: 240 / 128, aussen: 240 / 128, untergrund: 240 / 128, reparatur: 240 / 128, treppe: 240 / 128, 'wanne-dusche': 240 / 128 };
-/** Höhe des Schnurzeichens (eine Zeilenhöhe der H1) und Luft zur H1, in em der H1 */
+/** Höhe des Schnurzeichens (eine Zeilenhöhe der H1) und Luft zur H1, in em der H1 (die Luft steht als --zeichen-luft am Zeichen,
+ *  globals.css „schnur-zeichen“: eine Quelle für das Maß der H1 und den Abstand, ohne Beliebigwert) */
 const ZEICHEN_HOEHE = 1.1;
 const ZEICHEN_LUFT = 0.5;
 
@@ -248,6 +254,24 @@ export default function EinstiegMitte({ pfad, brotkrumen, titelZeilen, titelGros
                 <Quadratmeter />
               </div>
             )}
+            {/* Schnurzeichen an der H1 (M2-B3): rechts außen an der Gruppe, unten auf der Schnur, in der Schrift der H1-Zeilen
+                (titel-zeile am Platz), ohne Höhe im Fluss; Luft zur H1 und Fugenkreuz an der linken Unterkante. Entfällt in schmaler
+                Spalte (große Systemschrift, globals.css) */}
+            {Zeichen && zeichen && (
+              <span
+                aria-hidden="true"
+                data-eingang="knoepfe"
+                style={{ '--zeichen-format': ZEICHEN_FORMAT[zeichen.vignette], '--zeichen-luft': ZEICHEN_LUFT } as CSSProperties}
+                className={clsx('titel-zeile absolute bottom-0 left-full hidden text-fs-7 text-tinte flach:hidden', zeichen.ab === 'lg' ? 'lg:block' : 'xl:block')}
+              >
+                <span className="schnur-zeichen relative">
+                  <Zeichen />
+                  <span data-leitachse="" className={clsx('absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2', KREUZ_GROESSE)}>
+                    <Fugenkreuz className="absolute inset-0 size-full text-tinte" />
+                  </span>
+                </span>
+              </span>
+            )}
           </div>
         ) : (
           <>
@@ -255,20 +279,6 @@ export default function EinstiegMitte({ pfad, brotkrumen, titelZeilen, titelGros
               {zeilen}
             </h1>
           </>
-        )}
-        {/* Schnurzeichen: rechts am Ende der Schnur (right-8 wie SCHNUR_LAGE ab lg), unten auf ihr; in der Schrift der H1-Zeilen
-            (titel-zeile am Platz), ohne Höhe im Fluss. Entfällt in schmaler Spalte (große Systemschrift, globals.css) */}
-        {Zeichen && zeichen && (
-          <span
-            aria-hidden="true"
-            data-eingang="knoepfe"
-            style={{ '--zeichen-format': ZEICHEN_FORMAT[zeichen.vignette] } as CSSProperties}
-            className={clsx('titel-zeile absolute right-8 bottom-0 hidden text-fs-7 text-tinte flach:hidden', zeichen.ab === 'lg' ? 'lg:block' : 'xl:block')}
-          >
-            <span className="schnur-zeichen">
-              <Zeichen />
-            </span>
-          </span>
         )}
       </div>
       {/* Ab der Schnur: Zierebene (Schnur an der Oberkante, Lot im Seitenrand bis zum Fuß des Einstiegs), darüber der Inhalt in

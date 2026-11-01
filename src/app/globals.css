@@ -673,10 +673,12 @@
   }
   /* Schnurzeichen (EinstiegMitte, M-A1 Nr. 3): Plan-Vignette eine Zeilenhöhe der H1 hoch (1,1em in der Schrift der Zeilen),
      Breite aus ihrem Format (--zeichen-format). In schmaler Spalte (unter 56rem: Tablet hochkant und große Systemschrift)
-     entfällt es; dort stünde es an der H1 (ueberlappung.mjs) */
+     entfällt es; dort stünde es an der H1 (ueberlappung.mjs). Seit UM-E4-SICHT-FIX-2 M2-B3 hängt es an der H1 statt am Ende der
+     Schnur: Luft zur H1 in em der Zeilen aus --zeichen-luft (ZEICHEN_LUFT in EinstiegMitte, dieselbe Zahl wie im Maß der H1) */
   .schnur-zeichen {
     display: block;
     width: calc(1.1em * var(--zeichen-format));
+    margin-inline-start: calc(1em * var(--zeichen-luft, 0));
   }
   @container (width < 56rem) {
     .schnur-zeichen {

@@ -142,9 +142,11 @@ export const BALKON_TERRASSE: ErzaehlInhalt = {
   },
   beleg: {
     titel: 'Balkone und Terrassen, die wir verlegt haben.',
+    // Reihe nach der Bildtabelle (UM-E4-SICHT-FIX-2 M2-B1; Sicht Anlauf 2, 2a: die erste Karte zeigte mobil den Rollladen statt
+    // des Belags): der rosébraune Balkon vorn, dann Anthrazit, Aluprofil, Stelzlager
     fotos: [
-      { bild: 'balkon-beleg-anthrazit', unterschrift: 'Balkon mit anthrazitfarbenen Fliesen', href: '/balkon-terrasse' },
       { bild: 'balkon-beleg-2', unterschrift: 'Balkon mit rosébraunen Fliesen', href: '/balkon-terrasse' },
+      { bild: 'balkon-beleg-anthrazit', unterschrift: 'Balkon mit anthrazitfarbenen Fliesen', href: '/balkon-terrasse' },
       { bild: 'balkon-beleg-aluprofil', unterschrift: 'Terrassenkante mit hellem Aluprofil', href: '/balkon-terrasse' },
       // die Überschrift des Einzelbilds aus der Textdatei ist sein Name auf der Glasfläche (Abnahme E3-BAU-06)
       { bild: 'balkon-stelzlager', unterschrift: 'So legen wir Platten auf Stelzlagern', href: '/balkon-terrasse/stelzlager' },
@@ -157,8 +159,11 @@ export const BALKON_TERRASSE: ErzaehlInhalt = {
     verweis: { name: 'Alle Arbeiten ansehen', href: '/referenzen?raum=balkon-und-terrasse#unsere-arbeiten' },
   },
   // Qualitätsversprechen (UM-E4-EP3) vor dem nächsten Schritt; Wortlaut aus COMPANY_DATA.qualityPromises. Die Abdichtung erklärt
-  // die Legende der Gefälle-Zeichnung (außerhalb des Inhalts)
-  versprechen: { erklaert: ['abdichtung'] },
+  // die Legende der Gefälle-Zeichnung (außerhalb des Inhalts). Offen stehen drei Punkte, die die Seite sichtbar noch nicht sagt
+  // (UM-E4-SICHT-FIX-2 M2-A3, Darstellung SF2-A): 2 Großformat, 5 Termintreue, 7 Werkstoffe; nicht 1 (Termin kostenfrei im
+  // Ablauf), 3 (Nassräume, nie auf dieser Seite), 4 (Angebot mit festem Preis im Ablauf und unter den Knöpfen), 6 (Staubschutz
+  // in Innenräumen), 8 (Inhaber, K-003 „Text“)
+  versprechen: { erklaert: ['abdichtung'], offen: [2, 5, 7] },
   schritt: {
     titel: 'Sprechen Sie mit uns über Ihren Balkon oder Ihre Terrasse.',
     satz: 'Rufen Sie an oder fragen Sie einen Termin an. Deniz Tezgel ruft Sie zurück.',

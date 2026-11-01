@@ -220,14 +220,14 @@ export const REGISTER_V4: Record<string, V4Eintrag> = {
   },
   eingang: {
     zweck: 'charakter',
-    was: 'Eingang ohne Vorhang: Logo baut sich im Kopf auf, Schnur und rotes Lotstück ziehen aus dem Kreuzpunkt unter der H1, auf / zeichnet sich der Quadratmeter an der Schnur, Ort und Knopfzeile (mittig mit allem darunter) setzen sich, Fugenriss am Foto; unter sm kommen nur Schnur und Zeilen, auf / erscheint das Fugenkreuz am Schnurende mit dem Ende des Zugs (E-067-4, UM-E3-FIX, UM-E3-FIX2, UM-E4-SICHT-FIX M-A5)',
+    was: 'Eingang ohne Vorhang: Logo baut sich im Kopf auf, Schnur und rotes Lotstück ziehen aus dem Kreuzpunkt unter der H1, auf / zeichnet sich der Quadratmeter an der Schnur, Ort und Knopfzeile (mittig mit allem darunter) setzen sich, Fugenriss am Foto; unter sm kommen nur Schnur und Zeilen, auf / erscheint das Fugenkreuz am Schnurende mit dem Ende des Zugs (E-067-4, UM-E3-FIX, UM-E3-FIX2, UM-E4-SICHT-FIX M-A5); auf den Ortsseiten an der Schnur ebenso mit Zeilenmaske, Schnur in dauer-2, Foto und Bewertung ab dem ersten Bild (data-zeilenmaske, UM-E4-SICHT-FIX-2 M2-B2), auf den Wissensseiten ziehen nur Schnur und Lotstück in dauer-1',
     stufen: { dauer: ['--dauer-1', '--dauer-2', '--dauer-3', '--dauer-4'], kurve: ['--ease-setzen', '--ease-laser', 'linear'], letzteStufe: 8 },
     reduziert: { art: 'sofort', text: 'kein Eingang: alles steht ab dem ersten Bild, Schnur, Lotstück und Quadratmeter fertig, das Foto ist nie verdeckt' },
     notaus: 'endzustand',
   },
   zeilenmaske: {
     zweck: 'hierarchie',
-    was: 'Die Zeilen der H1 steigen hinter Zeilenmasken auf, eine nach der anderen, auf die Schnur („An der Schnur“); die erste, sobald die Schnur halb gezogen ist',
+    was: 'Die Zeilen der H1 steigen hinter Zeilenmasken auf, eine nach der anderen, auf die Schnur („An der Schnur“); die erste, sobald die Schnur halb gezogen ist; auf / und den mittigen Einstiegen der Erzählseiten, im Planblatt und auf den Ortsseiten (Einstieg an der Schnur mit data-zeilenmaske, UM-E4-SICHT-FIX-2 M2-B2), nicht auf den Wissensseiten (E-113 Nr. 2)',
     stufen: { dauer: ['--dauer-0', '--dauer-1', '--dauer-2', '--dauer-3'], kurve: ['--ease-setzen'], letzteStufe: 6 },
     reduziert: { art: 'sofort', text: 'die Zeilen stehen sofort' },
     notaus: 'endzustand',

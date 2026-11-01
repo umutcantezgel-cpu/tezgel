@@ -62,3 +62,13 @@ SF-B2 hat keine Mikrotexte gesetzt. Für X-1 ist am WhatsApp-Knopf im Abschluss 
 | T-C3-4 | /balkon-terrasse | erste Zeile der Legende der Gefälle-Zeichnung | „Die Platten liegen leicht schräg, weg vom Haus. So läuft der Regen zum Rand.“ | „Die Platten liegen leicht schräg, weg vom Haus.“ | Der Titel der Legende sagt schon „Der Regen läuft vom Balkon ab.“; zusammen mit T-C3-3 ist das Gefälle einmal erklärt und einmal beziffert. |
 
 SF-C3 hat keine Mikrotexte gesetzt. Die Unterschrift der neuen Zeichnung ist ein vorhandener Satz der Seite (Plan M-C9).
+
+## UM-E4-SICHT-FIX-2 Stufe 2 (1.11.2026; eingetragen vom Orchestrator)
+
+SF2-A1 und SF2-A2 haben keine Textvorschläge und keine Mikrotexte.
+
+### Teil SF2-B (Einstiegsfotos, Ortsseiten, Fotos auf /blog)
+
+| Nr. | Ansicht | Stelle | heute | Vorschlag | Grund |
+|---|---|---|---|---|---|
+| T-B-1 | /bad | Aufklapper „Badanfrage oder Badplaner öffnen“, Weg „Badplaner“ | Name ohne Satz | Satz unter dem Namen: „Planen Sie Ihr Bad online in drei Schritten.“ (aus der Beschreibung von /bad/badplaner) | Der Weg erklärt sich sonst nur über seinen Namen; die übrigen Hilfen tragen einen Satz. |
