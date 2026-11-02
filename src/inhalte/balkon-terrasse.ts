@@ -143,11 +143,14 @@ export const BALKON_TERRASSE: ErzaehlInhalt = {
   beleg: {
     titel: 'Balkone und Terrassen, die wir verlegt haben.',
     // Reihe nach der Bildtabelle (UM-E4-SICHT-FIX-2 M2-B1; Sicht Anlauf 2, 2a: die erste Karte zeigte mobil den Rollladen statt
-    // des Belags): der rosébraune Balkon vorn, dann Anthrazit, Aluprofil, Stelzlager
+    // des Belags): der rosébraune Balkon vorn, dann Anthrazit, der beige Balkon (P5), Aluprofil, die grauen Platten (P5), Stelzlager
     fotos: [
       { bild: 'balkon-beleg-2', unterschrift: 'Balkon mit rosébraunen Fliesen', href: '/balkon-terrasse' },
       { bild: 'balkon-beleg-anthrazit', unterschrift: 'Balkon mit anthrazitfarbenen Fliesen', href: '/balkon-terrasse' },
+      // SEO-Runde P5 (Freigabe Umut 02.11.2026): zwei neue Fotos, Namen aus dem Alt-Text; die Platten führen zur Seite Terrassenplatten
+      { bild: 'nb-073', unterschrift: 'Balkon mit beigen Fliesen in Steinoptik', href: '/balkon-terrasse' },
       { bild: 'balkon-beleg-aluprofil', unterschrift: 'Terrassenkante mit hellem Aluprofil', href: '/balkon-terrasse' },
+      { bild: 'nb-088', unterschrift: 'Terrasse mit grauen Platten in Betonoptik', href: '/balkon-terrasse/terrassenplatten' },
       // die Überschrift des Einzelbilds aus der Textdatei ist sein Name auf der Glasfläche (Abnahme E3-BAU-06)
       { bild: 'balkon-stelzlager', unterschrift: 'So legen wir Platten auf Stelzlagern', href: '/balkon-terrasse/stelzlager' },
     ],

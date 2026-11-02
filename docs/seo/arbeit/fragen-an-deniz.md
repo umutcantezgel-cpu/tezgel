@@ -11,6 +11,8 @@ Stand 01.11.2026. Gesammelt aus `docs/seo/KONTEXT.md` (Abschnitte 8, 9, 12), `_w
 
 ## B. Fotos
 
+Stand 02.11.2026: Umut hat mit „integriere alle Bilder“ die geprüften Fotos freigegeben (KONTEXT.md Abschnitt 13): die 19 aus Nr. 5 (alle dort genannten außer `nb-106`) und als eigene Arbeit `nb-109` bis `nb-111` aus Nr. 8. Mit Live 2 stehen sie ohne Ort auf der Website, außer `nb-015` und `nb-081` (erst nach der Retusche) und `nb-122`. Offen bleiben Nr. 5 für `nb-106` und Nr. 8 für die älteren Fotos, die nicht auf der Website stehen. Widerspricht ein Kunde, oder ist ein Foto keine eigene Arbeit, nehmen wir es sofort heraus. Neu dazu: Ist der Stein in `nb-109` bis `nb-111`, `nb-120` und `nb-125` bis `nb-127` echter Travertin? Sind die Räume in `nb-049`, `nb-061` und `nb-102` Küchen? Bis zur Antwort stehen `nb-109` und `nb-111` ohne Materialangabe und die drei Räume ohne „Küche“ im Dateinamen.
+
 5. Dürfen Fotos aus Kundenaufträgen ohne Ortsangabe auf der Website gezeigt werden? Bei 20 Fotos fragt die Sichtung ausdrücklich nach der Zustimmung der Bewohner oder der Hausverwaltung: `nb-004`, `nb-008`, `nb-013`, `nb-014`, `nb-015`, `nb-044`, `nb-049`, `nb-054`, `nb-062`, `nb-081`, `nb-084`, `nb-099`, `nb-100`, `nb-101`, `nb-102`, `nb-103`, `nb-105`, `nb-106`, `nb-120`, `nb-122`. Darunter sind die stärksten Bilder (zum Beispiel `nb-084` als Startbild).
 6. Gewerbeanlage (`nb-027` bis `nb-029`, `nb-032` bis `nb-037`): Gibt der Betreiber die Fotos frei, und darf die Art der Anlage genannt werden?
 7. Mosaike `nb-113` bis `nb-116` (historische und politische Motive, Signatur einer Mosaikwerkstatt): Sollen sie auf der Website erscheinen?

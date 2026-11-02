@@ -92,9 +92,12 @@ export const BADSANIERUNG: ErzaehlInhalt = {
       { bild: 'badsanierung-beleg-1', unterschrift: 'Badewanne mit gestreifter Verkleidung', href: '/bad/badsanierung' },
       { bild: 'badsanierung-einstieg', unterschrift: 'Badewanne mit Ornamentfliesen und Nische', href: '/bad/badsanierung' },
       { bild: 'badsanierung-beleg-2', unterschrift: 'Badewanne und Dusche mit Mosaikboden', href: '/bad/badsanierung' },
+      // SEO-Runde P5 (Freigabe Umut 02.11.2026): je ein neues Foto bei den fertigen Bädern und bei der Arbeit, Namen aus dem Alt-Text
+      { bild: 'nb-117', unterschrift: 'Dusche mit Mosaikstreifen und Glastüren', href: '/bad/badsanierung' },
       { bild: 'sanierung-weg-1', unterschrift: 'Beige Wandfliesen bis halbhoch', href: '/bad/badsanierung' },
       { bild: 'sanierung-weg-2', unterschrift: 'Offene Decke und dunkle Holzoptik', href: '/bad/badsanierung' },
       { bild: 'sanierung-weg-3', unterschrift: 'Brauner Boden im Duschbereich', href: '/bad/badsanierung' },
+      { bild: 'nb-119', unterschrift: 'Badewanne im Bau mit Mosaikstreifen', href: '/bad/badsanierung' },
     ],
     // Drittelverband in der Reihe wie auf / (K-003 Nr. 4, UM-E4-CHOR-FIX): je Bildschirm der Reihe ein Versatz
     fotosVersatz: true,

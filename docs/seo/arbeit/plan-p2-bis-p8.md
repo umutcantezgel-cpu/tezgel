@@ -291,6 +291,8 @@ Abgeglichen mit dem SEO-Prompt (Abschnitte 8 bis 12, nur Methodik):
 - die Wetzlar-Seite verlinkt die vier Seiten Leistung × Wetzlar und dazu barrierefreies Bad, Treppe und Reparatur.
 Die Patchdateien in diesem Ordner sind die Fassung vor dieser Entscheidung; maßgeblich sind die Commits auf `main`.
 
+**Vorbereitet für Live 2** (02.11.2026 auf `seo/lokal`, wartet auf „live“): Punkt 6 („Festpreisangebot“ statt „verbindlich“, `company.js` ohne „termintreu“), S4 (keine eigene Ausstellung, Lager im Dillfeld), Startseite mit Wetzlar vorn, P5 mit 90 Fotos. Einzelheiten in KONTEXT.md Abschnitt 13.
+
 ## 8. Offene Fragen
 
 - Freigabe des Plans, ganz oder mit Änderungen (einzelne Zeilen der Tabellen gern direkt korrigieren).

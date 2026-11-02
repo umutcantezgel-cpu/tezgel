@@ -3,6 +3,7 @@
 // Auftrag („Aßlar, direkt neben Wetzlar“) und KONTEXT.md Abschnitt 13 (Lager im Dillfeld, Umut 02.11.2026). Baustellen, Stadtteile und Stimmen aus Wetzlar kommen erst mit der Bestätigung
 // von Deniz dazu (Leitplanke Wahrheit). Fachwörter beim ersten Vorkommen auf der Seite mit Erklärung (K-011): Linknamen
 // der Zeilen zählen zum Fließtext, deshalb stehen dort keine Fachwörter. Zusagen nur sinngleich wie im Bestand.
+import type { ArbeitId } from '@/config/arbeiten';
 import type { Markentext, Zeile } from '@/components/vorlagen/inhalt';
 
 export interface EigenerOrtsinhalt {
@@ -11,6 +12,10 @@ export interface EigenerOrtsinhalt {
   lage: { titel: string; absaetze: Markentext[] };
   /** Wege auf die Seiten Leistung × Wetzlar und auf die Fachseiten ohne eigene Ortsseite (Entscheidung Umut: alle Seiten im Index) */
   tun: { titel: string; bereiche: Zeile[] };
+  /** eigene Fotoreihe statt der drei Plätze aus GALERIE_START (SEO-Runde P5): Fotos, die keine andere Ortsseite zeigt, Namen nur
+   *  über das, was zu sehen ist, ohne Ort (Leitplanke Wahrheit: der Ort keiner Baustelle ist bestätigt); hellste zuerst; jedes mit
+   *  Weg zur Leistungsseite (Regel 4, K-016) */
+  fotos?: { bild: ArbeitId; unterschrift: string; href: string }[];
 }
 
 const WETZLAR: EigenerOrtsinhalt = {
@@ -35,6 +40,12 @@ const WETZLAR: EigenerOrtsinhalt = {
       { name: 'Reparatur und Fugen', satz: 'Einzelne Fliesen tauschen, Fugen erneuern. Fotos per WhatsApp helfen bei der ersten Einschätzung.', href: '/fliesenreparatur', vignette: 'reparatur' },
     ],
   },
+  // Auswahl docs/seo/arbeit/p5-bildauswahl.md (Abschnitt 2); Reihenfolge nach mittlerer Helligkeit der Webfassung (0,54, 0,48, 0,47)
+  fotos: [
+    { bild: 'nb-118', unterschrift: 'Dusche mit Glastür und Wandnische', href: '/bad' },
+    { bild: 'nb-083', unterschrift: 'Beiges Bad mit Dusche ohne Stufe', href: '/bad/badsanierung' },
+    { bild: 'nb-077', unterschrift: 'Außentreppe mit beigen Fliesen', href: '/treppen/aussentreppe' },
+  ],
 };
 
 /** Orte mit eigenem Inhalt (heute nur Wetzlar, die Zielseite des Auftrags); alle anderen nutzen die gemeinsame Fassung */

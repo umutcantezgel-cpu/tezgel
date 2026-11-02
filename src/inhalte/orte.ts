@@ -101,7 +101,8 @@ export function ortsInhalt(stadt: CityData, kmAbSitz: number, index: number): Or
     beleg: {
       // SEO-Runde P3: ohne Ortsnamen, weil der Ort keines Fotos bestätigt ist (Leitplanke Wahrheit, K-015)
       titel: 'So arbeiten wir.',
-      fotos,
+      // SEO-Runde P5: eigene Fotoreihe, wo es eine gibt (heute Wetzlar)
+      fotos: eigen?.fotos ?? fotos,
       stimmen: [STIMMEN[index % STIMMEN.length]],
       verweis: { name: 'Alle Arbeiten ansehen', href: '/referenzen' },
     },

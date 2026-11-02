@@ -62,13 +62,17 @@ export const BARRIEREFREIES_BAD: ErzaehlInhalt = {
     },
   },
   beleg: {
-    // Überschrift nach den Fotos (E4-W0-BILDER, E-065): zwei fertige Duschen; „ohne Stufe“ behauptet nur die Unterschrift des
+    // Überschrift nach den Fotos (E4-W0-BILDER, E-065): fertige Duschen, seit der SEO-Runde P5 vier; „ohne Stufe“ behauptet nur die Unterschrift des
     // Fotos, das es zeigt. Die Wanne mit Tür trug noch Herstelleraufkleber und Klebeband und ist entfallen. Reihe nach der
     // Bildtabelle (M2-B1): barrierefrei-beleg-1 ist der Einstieg der Seite, an ihre Stelle tritt das bisherige Einstiegsfoto,
     // Name aus seinem Alt-Text
     titel: 'Duschen, die wir gebaut haben.',
+    // SEO-Runde P5 (Freigabe Umut 02.11.2026): die Dusche ohne Stufe mit Rinne vorn (Güte A), dazu die Dusche mit Sitzbank in
+    // Marmoroptik; Namen aus dem Alt-Text, ohne Fachwort
     fotos: [
+      { bild: 'nb-019', unterschrift: 'Dusche ohne Stufe mit Rinne' },
       { bild: 'bad-beleg-4', unterschrift: 'Bodengleiche Dusche mit Mosaik' },
+      { bild: 'nb-105', unterschrift: 'Dusche mit Boden in brauner Marmoroptik' },
       { bild: 'bereich-dusche-streifen-sitzbank', unterschrift: 'Dusche mit Fliesenstreifen und Sitzbank' },
     ],
     zweierbild: {

@@ -127,7 +127,7 @@ test('Orte 10 (SEO-Runde T12): Sitemap und IndexNow nennen dieselben Adressen, a
   assert.ok(karte.some((u) => u.endsWith('/preise')));
 });
 
-test('Orte 11 (SEO-Runde P3): eigene Inhalte nur für Wetzlar, Zahlen wie die Daten, Förderung wie im Bestand, Fototitel ohne Ort', async () => {
+test('Orte 11 (SEO-Runde P3, P5): eigene Inhalte nur für Wetzlar, Zahlen wie die Daten, Förderung wie im Bestand, Fototitel ohne Ort, eigene Fotos', async () => {
   const { EIGENE_ORTSINHALTE } = await import('../src/inhalte/orte-eigen.ts');
   assert.deepEqual(Object.keys(EIGENE_ORTSINHALTE), ['wetzlar']);
   const w = CITIES.findIndex((c) => c.slug === 'wetzlar');
@@ -144,4 +144,10 @@ test('Orte 11 (SEO-Runde P3): eigene Inhalte nur für Wetzlar, Zahlen wie die Da
     if (i === w) continue;
     for (const t of texte(o)) assert.doesNotMatch(t, /direkt neben Wetzlar|Stadtmitte von Wetzlar|Duschen ohne Stufe/, `${o.stadt}: ${t}`);
   }
+  // P5: Wetzlar zeigt drei Fotos, die keine andere Ortsseite zeigt; ihre Namen nennen keinen Ort
+  const eigeneFotos = wetzlar.beleg.fotos.map((f) => f.bild);
+  assert.ok(eigeneFotos.every((b) => b.startsWith('nb-')), `${eigeneFotos}`);
+  for (const [i, o] of inhalte.entries()) if (i !== w) for (const f of o.beleg.fotos) assert.ok(!eigeneFotos.includes(f.bild), `${o.stadt}: ${f.bild}`);
+  for (const f of wetzlar.beleg.fotos) for (const c of CITIES) assert.ok(!f.unterschrift.includes(c.name), `${f.bild}: ${f.unterschrift}`);
+  assert.ok(wetzlar.beleg.fotos.every((f) => f.href), 'Fotos mit Weg zur Leistung (Regel 4)');
 });

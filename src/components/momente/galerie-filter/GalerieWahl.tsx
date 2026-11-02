@@ -14,9 +14,10 @@
 // schon im Server-HTML (data-eingeklappt an der Liste, data-galerie-mehr an den Fotos, globals.css „Galerie eingeklappt“):
 // Die Hydrierung verschiebt nichts, verborgene Fotos laden nicht sofort; ohne JavaScript und im Druck stehen alle. Ein Raum
 // zeigt immer alle Fotos seiner Gruppe. Im Dreierraster bei „Alle Fotos“ im Verband: die mittlere Spalte steht um ein Drittel
-// einer Kachel tiefer (data-verband). Die Knöpfe stehen unter md in zwei gleich breiten Spalten (drei Reihen zu zwei; vorher
-// 3, 1, 2 mit einem Knopf allein, Nacharbeit SF-C1), bei großer Schrift untereinander, ab md in drei gleich breiten
-// Spalten, ab xl in einer Zeile. Ohne Maus steht der Name auf dem Verlauf in höchstens zwei Zeilen (globals.css).
+// einer Kachel tiefer (data-verband). Die Knöpfe stehen unter md in zwei gleich breiten Spalten, „Alle Fotos“ über beide, darunter
+// drei Reihen zu zwei (vorher 3, 1, 2 mit einem Knopf allein, Nacharbeit SF-C1; seit SEO-Runde P5 sieben Knöpfe, Muster wie „Alle
+// Artikel“ in BlogFilter), bei großer Schrift untereinander, ab md in drei Spalten mit „Alle Fotos“ über allen drei, ab xl in einer
+// Zeile oder zentriert umbrochen. Ohne Maus steht der Name auf dem Verlauf in höchstens zwei Zeilen (globals.css).
 // Verband ohne Loch oben (UM-E4-SICHT-FIX-2 M2-C1, Sicht E4 Anlauf 2: das freie Feld über der tieferen Mittelspalte las sich als
 // nicht geladenes Foto, „Sie sehen alle 24 Fotos.“ stand über einer Galerie, die mit „Alle 24 Fotos zeigen“ endet): Die
 // Statuszeile steht im Behälter der Liste direkt vor ihr und ab 64 rem Breite bei „Alle Fotos“ in diesem Feld; eingeklappt sagt
@@ -120,7 +121,7 @@ export default function GalerieWahl({ fotos, satz }: { fotos: GalerieWahlFoto[];
                 onClick={() => waehlen(g.id)}
                 // unter sm Zeichen und Wort linksbündig als Einheit, wie die Themen der Bewertungen (M2-C1 Nr. 3); die Variante unter sm
                 // überstimmt justify-center und text-center aus wahlKlassen (Varianten stehen im Stylesheet nach den Grundklassen)
-                className={clsx(wahlKlassen, 'gap-2 max-sm:justify-start max-sm:text-left')}
+                className={clsx(wahlKlassen, 'gap-2 max-sm:justify-start max-sm:text-left', g.id === 'alle' && 'col-span-2 @max-xs:col-span-1 md:col-span-3')}
               >
                 {gedrueckt ? <Fugenkreuz className="size-3 shrink-0" /> : <Icon name={g.icon} groesse={4} />}
                 {g.name}

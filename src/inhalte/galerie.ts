@@ -1,6 +1,6 @@
 // Fotos der Ortsseiten (KERN v3 K-012): sechs echte Fotos mit kurzer Unterschrift nur über das, was zu sehen ist (keine
-// Projektorte, K-015). Jede Ortsseite zeigt drei davon (`orte.ts`, fest je Ort, damit die Seite stabil bleibt). Wetzlar
-// (Index 0) bekommt die Plätze 0, 2 und 4 (badsanierung-einstieg, start-beleg-terrasse, kontakt-eingang). Bildtabelle
+// Projektorte, K-015). Jede Ortsseite zeigt drei davon (`orte.ts`, fest je Ort, damit die Seite stabil bleibt); Wetzlar zeigt seit
+// der SEO-Runde P5 eigene Fotos (`orte-eigen.ts`), vorher die Plätze 0, 2 und 4. Bildtabelle
 // UM-E4-SICHT-FIX-2 M2-B1 (E-113 Nr. 7; Sicht Anlauf 2, 4a: Laub, Pflanzkübel, Klobürste und Balken; 4b: die Reihe zeigte die
 // Fliesenarbeit kaum): fertige Arbeiten aus Bad, Terrasse und Treppe. Die Regel aus E4-W0-BILDER („Wetzlar zeigt nur Fotos, die
 // auf keiner anderen Hauptansicht stehen“) gilt nicht mehr: start-beleg-terrasse, start-beleg-bad und start-beleg-treppe stehen

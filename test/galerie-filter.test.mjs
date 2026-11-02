@@ -7,7 +7,8 @@ import { GALERIE, GRUPPEN, SATZ, STAFFEL_MAX, ZUERST, anzahl, ansage, blendetEin
 import { REFERENZEN } from '../src/inhalte/referenzen.ts';
 
 // Großer Moment galerie-filter (KERN v3.4 K-007, E3-GRAF-08): Daten und Logik der Galerie „Unsere Arbeiten“ auf /referenzen.
-const FILTER = ['Bad', 'Dusche', 'Balkon und Terrasse', 'Treppe und Eingang', 'So arbeiten wir']; // referenzen.md, Abschnitt 5
+// referenzen.md, Abschnitt 5; dazu „Wohnräume und Küche“ für die neuen Fotos (SEO-Runde P5, Freigabe Umut 02.11.2026)
+const FILTER = ['Bad', 'Dusche', 'Balkon und Terrasse', 'Treppe und Eingang', 'Wohnräume und Küche', 'So arbeiten wir'];
 const STRICH = /[‒-―]|\s-\s/;
 const FACHWOERTER = Object.values(GLOSSAR).flatMap((e) => e.begriffe.map((b) => b.toLowerCase()));
 
@@ -110,4 +111,31 @@ test('Galerie 9: Spaltengrenzen der Liste gleich in GalerieWahl und globals.css'
   assert.ok(block('@container (width < 64rem) {').some((b) => b.includes('[data-galerie-mehr="schmal"]')), 'Einklappen schmal bis 64rem');
   assert.ok(block('@container (width >= 42rem) {').some((b) => b.includes('[data-galerie-mehr]') && b.includes('/ 2 - 1px')), 'Platzhalter zwei Spalten ab 42rem');
   assert.ok(block('@container (width >= 64rem) {').some((b) => b.includes('[data-galerie-mehr]') && b.includes('/ 3 - 1px')), 'Platzhalter drei Spalten ab 64rem');
+});
+
+// SEO-Runde P5 (Gegenprüfung C-5): Jede Datei aus ARBEITEN liegt unter public, Breite und Höhe stimmen mit dem JPEG überein, der
+// Platzhalter ist eine WebP-Daten-URL. Ein Tippfehler im Pfad käme sonst durch Typprüfung und Bau (next/image prüft lokale Dateien
+// nicht) und zeigte live ein kaputtes Bild.
+function jpegMasse(puffer) {
+  if (puffer[0] !== 0xff || puffer[1] !== 0xd8) return null;
+  let i = 2;
+  while (i + 9 < puffer.length) {
+    if (puffer[i] !== 0xff) return null;
+    const marke = puffer[i + 1];
+    if (marke === 0xff) { i += 1; continue; }
+    const laenge = puffer.readUInt16BE(i + 2);
+    if (marke >= 0xc0 && marke <= 0xcf && marke !== 0xc4 && marke !== 0xc8 && marke !== 0xcc) {
+      return { hoehe: puffer.readUInt16BE(i + 5), breite: puffer.readUInt16BE(i + 7) };
+    }
+    i += 2 + laenge;
+  }
+  return null;
+}
+test('Galerie 10: jede Datei aus ARBEITEN liegt in public, Maße wie die Datei, Platzhalter WebP', () => {
+  for (const [id, a] of Object.entries(ARBEITEN)) {
+    const masse = jpegMasse(readFileSync(new URL(`../public${a.src}`, import.meta.url)));
+    assert.ok(masse, `${id}: kein lesbarer JPEG-Kopf in ${a.src}`);
+    assert.deepEqual([masse.breite, masse.hoehe], [a.breite, a.hoehe], `${id}: Maße von ${a.src}`);
+    assert.match(a.blur, /^data:image\/webp;base64,[A-Za-z0-9+/]+=*$/, `${id}: Platzhalter`);
+  }
 });

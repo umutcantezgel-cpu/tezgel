@@ -1,6 +1,6 @@
 # P5 Bilder: Auswahl, Zuschnitte, Alt-Texte und Zuordnung zu den Seiten
 
-Stand 02.11.2026. **Vorschlag, nichts davon ist auf der Website.** Umgesetzt wird erst nach Umuts Freigabe des Plans (`docs/seo/arbeit/plan-p2-bis-p8.md`), Fotos mit offener Frage erst nach der Antwort von Deniz. Keine Orte an Fotos: Der Ort keiner Baustelle ist bestätigt (KONTEXT.md, Abschnitt 8).
+Stand 02.11.2026. Umut hat den Plan und „alle Bilder“ freigegeben (KONTEXT.md Abschnitt 13). **Umgesetzt auf `seo/lokal` für Live 2 (wartet auf „live“):** 90 Fotos, Einzelheiten am Ende von Abschnitt 4. Die Tabellen unten sind die Auswahl vor der Umsetzung. Keine Orte an Fotos: Der Ort keiner Baustelle ist bestätigt (KONTEXT.md, Abschnitt 8).
 
 ## Kurzfassung
 
@@ -198,8 +198,20 @@ Keins. Alle Fotos der Auswahl sind verwendbar, einige nur mit Retusche oder klei
    - die Galerie in `galerie-filter/daten.ts` in Sechserschritten.
 4. **Prüfkette:** `bilder.mjs --pruefe`, `npm test`, Typprüfung, Build. Danach Bericht und Eintrag in KONTEXT.md Abschnitt 13.
 
+**Umgesetzt am 02.11.2026** (KONTEXT.md Abschnitt 13, Zeile „P5 umgesetzt“):
+
+- **Fotos:** 90 Webfassungen (800 × 1000 oder kleiner, nur die Basisdatei) unter `public/images/arbeiten/<raum>/`, Einträge `nb-…` in `src/config/arbeiten.ts` mit den Räumen Wohnraum, Küche und Flur. `bilder.mjs --pruefe` ohne Befund.
+- **Galerie `/referenzen`:** 114 Fotos statt 24, neue Gruppe „Wohnräume und Küche“. Die fertigen Räume stehen abwechselnd nach Gruppe hinter den bisherigen Fotos, die Baustellen im Block „So arbeiten wir“. Unterschriften nur über das, was zu sehen ist, ohne Fachwort und ohne Ort.
+- **`/standorte/wetzlar`:** drei eigene Fotos (`nb-118`, `nb-083`, `nb-077`, hellste zuerst), die keine andere Ortsseite zeigt.
+- **Fotoreihen:** `/bad/barrierefreies-bad` mit `nb-019` und `nb-105`, `/balkon-terrasse` mit `nb-073` und `nb-088` (führt zu den Terrassenplatten), `/bad/badsanierung` mit `nb-117` (fertig) und `nb-119` (im Bau).
+- **Nach der Gegenprüfung (zwei Stufen, 27 Befunde, 11 bestätigt):** `nb-049`, `nb-061` und `nb-102` liegen mit neutralen Namen unter `wohnen/`, weil die Raumart Küche nicht bestätigt ist; `nb-109` und `nb-111` stehen ohne Materialangabe, bis Deniz Travertin bestätigt; `nb-065` steht bei den fertigen Bädern; die Wetzlar-Fotos führen zu Leistungsseiten.
+- **Nicht eingebaut:** die 6 Fotos mit Retuschebedarf (`nb-015`, `nb-040`, `nb-041`, `nb-072`, `nb-081`, `nb-124`) und `nb-122` (dasselbe Bad wie `nb-120`, nur klein).
+- **Startseite unverändert** (Entscheidung von Umut offen): Ihre Galerie könnte neue Fotos zeigen; Startbild und Kachel brauchen dafür neue Zuschnitte im Querformat und im Format 1 : 1.
+- **Offen, weil die Seite dafür umgebaut werden müsste:** Einstiege der älteren Seiten mit Planblatt, großer Moment „Verband“ auf `/fliesen`, Bereiche auf `/leistungen` (dort stehen Verlegepläne), Vorher-Nachher-Regler. Das Zweierbild auf `/bad/badsanierung` bleibt: `nb-119` und `nb-117` zeigen verschiedene Stellen, „im Bau und fertig“ wäre nicht belegt.
+- **Messung:** Lighthouse mobil lokal, je vier Läufe im Wechsel vorher, nachher, nachher, vorher (Median): `/referenzen` Leistung 94 → 92,5, LCP 2,93 → 3,13 s, FCP 1,21 → 1,51 s, weil das HTML größer ist (gepackt 62 → 106 KB); `/standorte/wetzlar` 93 → 94, LCP 3,08 → 2,89 s. Beide Seiten bleiben über 90.
+
 ## 5. Offene Fragen
 
-1. Umut: Freigabe der Zuordnung, ganz oder mit Änderungen. Startbild jetzt `nb-086`, später `nb-084`?
-2. Deniz: Zustimmung für die 19 Fotos der Stufe „Freigabe“ und die Bestätigung „eigene Arbeit“ (Fragenliste Nr. 5 und 8); Stelzlager bei `nb-088` und `nb-089` (Nr. 9); ist der Raum in `nb-049` eine Küche?
+1. Umut: Bekommt die Startseite neue Fotos? Startbild `nb-084` (seit dem 02.11.2026 freigegeben) oder `nb-086`; dafür braucht es neue Zuschnitte (Abschnitt 4). Die Zuordnung der übrigen Seiten ist mit dem Plan freigegeben.
+2. Deniz: Stelzlager bei `nb-088` und `nb-089` (Nr. 9); sind die Räume in `nb-049`, `nb-061` und `nb-102` Küchen; ist der Stein in `nb-109` bis `nb-111`, `nb-120` und `nb-125` bis `nb-127` echter Travertin? Die Zustimmung für die 19 Fotos der Stufe „Freigabe“ und die Bestätigung „eigene Arbeit“ für `nb-109` bis `nb-111` gelten mit Umuts „integriere alle Bilder“ vom 02.11.2026 als erteilt (KONTEXT.md Abschnitt 13).
 3. Wer retuschiert, wenn die Fotos mit Retuschebedarf gebraucht werden?
