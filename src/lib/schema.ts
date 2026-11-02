@@ -3,7 +3,7 @@
  * Uses interconnected canonical @id URIs and standard @graph notation.
  */
 import { pfadAus, seitenBeschreibung } from '@/lib/beschreibung';
-import { GOOGLE_PROFIL } from '@/config/google-profil';
+import { GOOGLE_PROFIL, istKartenLink } from '@/config/google-profil';
 
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.tezgel.de';
 export const ORG_ID = `${SITE_URL}/#organization`;
@@ -204,7 +204,7 @@ export function buildLocalBusinessNode(): SchemaNode {
       { '@type': 'AdministrativeArea', name: 'Hessen' },
     ],
     // Google-Unternehmensprofil (T05): nur mit dem Link von Umut, src/config/google-profil.ts
-    ...(GOOGLE_PROFIL ? { sameAs: [GOOGLE_PROFIL], hasMap: GOOGLE_PROFIL } : {}),
+    ...(GOOGLE_PROFIL ? { sameAs: [GOOGLE_PROFIL], ...(istKartenLink(GOOGLE_PROFIL) ? { hasMap: GOOGLE_PROFIL } : {}) } : {}),
     currenciesAccepted: 'EUR',
     paymentAccepted: 'Überweisung, Bar',
     openingHoursSpecification: [

@@ -13,7 +13,7 @@ Stand 01.11.2026. Grundlage: `docs/seo/KONTEXT.md` Abschnitt 5 (N01 bis N06) und
 ## 1. Google-Unternehmensprofil (N03, T05)
 
 1. **Zugang klären:** Wer verwaltet das Profil? Ohne Zugang lässt sich nichts prüfen.
-2. **Link an mich (T05):** im Profil auf „Teilen“, den Link kopieren und hier in den Chat schicken. Stand 02.11.2026: technisch vorbereitet (`src/config/google-profil.ts`), es fehlt nur der Link. Ich trage ihn in die strukturierten Daten ein (`sameAs`, `hasMap`) und setze „Alle Bewertungen lesen“ auf das Profil statt auf eine Google-Suche. Den Link suche ich nie selbst, weil es einen zweiten Betrieb „Özcan Tezgel“ gibt.
+2. **Link an mich (T05):** im Profil auf „Teilen“, den Link kopieren und hier in den Chat schicken. Stand 02.11.2026: eingetragen (Link von Umut, `src/config/google-profil.ts`; KONTEXT.md Abschnitt 13, Zeile „Google-Profil verknüpft“). Ich trage ihn in die strukturierten Daten ein (`sameAs`, `hasMap`) und setze „Alle Bewertungen lesen“ auf das Profil statt auf eine Google-Suche. Den Link suche ich nie selbst, weil es einen zweiten Betrieb „Özcan Tezgel“ gibt.
 3. **Name** genau „Fliesenverlegung Tezgel“, ohne Zusätze wie Orte oder Leistungen (Google erlaubt nur den echten Namen).
 4. **Kategorie:** Hauptkategorie „Fliesenleger“, dazu nur Kategorien aus Googles Liste, die der Betrieb wirklich anbietet.
 5. **Adresse oder Einzugsgebiet:** Empfängt der Betrieb an der Hohwardstraße 14 Kunden mit Personal zu festen Zeiten?

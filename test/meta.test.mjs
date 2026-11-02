@@ -155,8 +155,8 @@ test('Fugen 3: das Leerzeichen vor dem Datenschutz-Link steht im Text davor, nic
 
 // SEO-Runde T05 (Umut, 02.11.2026): Das Google-Unternehmensprofil steht nur mit dem Link von Umut im LocalBusiness, als sameAs und
 // hasMap; ohne Link verweist die Website auf kein Profil (nie selbst ermittelt, zweiter Betrieb „Özcan Tezgel“)
-test('Meta T05: Google-Profil nur als geteilter Profil-Link, im LocalBusiness genau dann sameAs und hasMap', async () => {
-  const { GOOGLE_PROFIL, istGoogleProfilLink } = await import('../src/config/google-profil.ts');
+test('Meta T05: Google-Profil nur als geteilter Profil-Link, im LocalBusiness sameAs und bei Karten-Links hasMap', async () => {
+  const { GOOGLE_PROFIL, istGoogleProfilLink, istKartenLink } = await import('../src/config/google-profil.ts');
   const { buildLocalBusinessNode } = await import('../src/lib/schema.ts');
   const knoten = buildLocalBusinessNode();
   if (GOOGLE_PROFIL === null) {
@@ -165,9 +165,12 @@ test('Meta T05: Google-Profil nur als geteilter Profil-Link, im LocalBusiness ge
   } else {
     assert.ok(istGoogleProfilLink(GOOGLE_PROFIL), GOOGLE_PROFIL);
     assert.deepEqual(knoten.sameAs, [GOOGLE_PROFIL]);
-    assert.equal(knoten.hasMap, GOOGLE_PROFIL);
+    assert.equal(knoten.hasMap, istKartenLink(GOOGLE_PROFIL) ? GOOGLE_PROFIL : undefined);
   }
   // übliche Formen des Teilen-Links mit Kennung (Gegenprüfung CT-01, CT-02); nie eine Suche, ein Name ohne Kennung oder „Rezension schreiben“
+  assert.ok(istGoogleProfilLink('https://share.google/BT011aS1xjrJqsRlF'));
+  assert.equal(istKartenLink('https://share.google/BT011aS1xjrJqsRlF'), false);
+  assert.ok(istKartenLink('https://maps.app.goo.gl/AbC123xyz'));
   for (const u of ['https://maps.app.goo.gl/AbC123xyz', 'https://maps.app.goo.gl/AbC123xyz?g_st=ic', 'https://g.page/r/CbXyZ123AbCdEAE',
     'https://www.google.com/maps?cid=1234567890', 'https://maps.google.com/?cid=1234567890', 'https://www.google.com/maps/place/?q=place_id:ChIJAbC123xyz',
     'https://www.google.de/maps/place/Beispiel/@50.5,8.4,17z/data=!4m6!3m5!1s0x47bc1234:0x5678abcd!8m2!3d50.5!4d8.4'])
