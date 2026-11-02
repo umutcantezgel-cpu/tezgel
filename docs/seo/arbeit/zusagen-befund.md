@@ -32,6 +32,28 @@ Stand 02.11.2026, Code-Stand `seo/lokal`. **Befund mit Vorschlägen, nichts davo
 
 **Nicht gezählt:** Kommentare im Code und interne Zuordnungen. Ebenso Aussagen, die ausdrücklich keine Garantie geben (`/untergrund-abdichtung/entkopplung`: „eine Garantie gegen Risse gibt es nicht“), und der Datenschutz-Begriff „DPF zertifiziert“ im Cookie-Inventar.
 
+## Die größte Quelle: das Qualitätsversprechen der älteren Seiten
+
+- **Fakt (im gebauten HTML gezählt):** Auf 135 Seiten steht „Garantierter Staubschutz bei Sanierungen“, dazu „Verbindliche Festpreis-Kalkulation“ und „Feste Zusagen für Baustart und Fertigstellung“.
+- **Woher:** Der Baustein `src/components/sections/QualityPromise.jsx` (auf etwa 48 Seitendateien, darunter die Vorlage der 52 Leistung-×-Ort-Seiten) zeigt die acht Punkte aus `src/config/company.js` im Rohwortlaut. Die Vorlagen der Werkstatt zeigen dieselben Punkte schon bereinigt (`PUNKTE` in `src/components/vorlagen/teile/Versprechen.tsx`).
+- **Weitere Stellen:**
+  - `/referenzen/<id>` zeigt die ersten vier Punkte im Rohwortlaut.
+  - Die 13 Seiten „Wohnen × Ort“ sagen „mit Festpreisgarantie“ (`leistungen/[id]/[stadt]/page.tsx:59`).
+  - Listen auf `/bad/bad-aus-einer-hand`, `/fliesen/festpreisangebot` und `/fliesen/neubau` sagen „Feste Zusagen für Start und Fertigstellung“.
+
+## Fertiger Patch: `docs/seo/arbeit/zusagen.patch`
+
+- **Anwenden** nach `p2.patch` und vor `p3-meta.patch`.
+- **Inhalt:**
+  - alle Fundstellen der Tabelle oben;
+  - `QualityPromise.jsx` und `/referenzen/<id>` nutzen die bereinigte Fassung der Vorlagen. Die Firmendaten in `company.js` bleiben unverändert;
+  - „mit Festpreisgarantie“ und „Feste Zusagen“ werden zu „Festpreisangebot“ und „abgestimmt“;
+  - „Festpreisangebot mit festem Zeitplan“ in den Fragen der vier Leistungsseiten wird zu „Festpreisangebot“;
+  - zu Wetzlar auf `/standorte` fällt „jeden Tag pünktlich auf Ihrer Baustelle“ weg (`src/config/cities.ts`).
+- **Geprüft** in einer Arbeitskopie: Typprüfung, Lint, Build, 282 von 282 Tests, `qa:graph`. Im gebauten HTML stehen danach keine Garantie, kein Zertifikat und keine festen Zusagen mehr, außer den zwei Sätzen, die ausdrücklich keine Garantie geben.
+- **Bleibt zur Entscheidung:** „verbindlicher Festpreis“ und „verbindliches Festpreisangebot“ auf 44 Seiten (im Bau gezählt), zum Beispiel in den Musterbädern, im Preisrechner („Angebot: Verbindlicher Festpreis“), auf `/fliesen/festpreisangebot` und `/fliesen/konfigurator`. Siehe „Milder, aber zu klären“.
+- **Nicht genutzt:** `src/lib/config.ts:183` und `:195` („Feste Zusagen …“, „Staubschutz-Garantie …“) wird auf keiner Seite angezeigt.
+
 ## Vorschlag
 
 1. Umut entscheidet, ob diese Texte jetzt geändert werden. Das sind Seitentexte, sie gehören zum Plan, Abschnitt 6a. Für die Firmendaten braucht es seine ausdrückliche Freigabe.

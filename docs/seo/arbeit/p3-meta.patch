@@ -1,5 +1,37 @@
+diff --git a/src/app/(bestand)/_dokument.tsx b/src/app/(bestand)/_dokument.tsx
+index 8bbab2a6..5ec94cbe 100644
+--- a/src/app/(bestand)/_dokument.tsx
++++ b/src/app/(bestand)/_dokument.tsx
+@@ -33,13 +33,14 @@ const SCHRIFTEN =
+   `@font-face{font-family:plexMono;src:url(${plexMonoDatei}) format("woff2");font-display:swap;font-weight:400}` +
+   ':root{--font-archivo:"archivo";--font-plex-mono:"plexMono"}';
+ 
++// SEO-Runde P3 (KONTEXT.md, Abschnitt 6): Ersatzwerte wie Titel und Description der Startseite (src/inhalte/start.ts)
+ export const BESTAND_METADATA: Metadata = {
+   metadataBase: new URL(SITE_URL),
+   title: {
+-    default: 'Fliesenleger Wetzlar & Aßlar | Fliesenverlegung Tezgel',
++    default: 'Fliesenverlegung Tezgel · Fliesenleger in Aßlar',
+     template: '%s | Fliesenverlegung Tezgel'
+   },
+-  description: 'Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenarme Großformate & Terrassen. Abdichtung DIN 18534. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!',
++  description: 'Fliesenverlegung Tezgel aus Aßlar: Bäder, Duschen ohne Stufe, Böden, Balkone und Treppen. Der Termin bei Ihnen vor Ort ist kostenfrei.',
+   keywords: [
+     'Fliesenverlegung Tezgel',
+     'Deniz Tezgel',
+@@ -61,8 +62,8 @@ export const BESTAND_METADATA: Metadata = {
+   openGraph: {
+     type: 'website',
+     locale: 'de_DE',
+-    title: 'Fliesenleger Wetzlar & Aßlar | Fliesenverlegung Tezgel',
+-    description: 'Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenarme Großformate & Terrassen. Abdichtung DIN 18534. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!',
++    title: 'Fliesenverlegung Tezgel · Fliesenleger in Aßlar',
++    description: 'Fliesenverlegung Tezgel aus Aßlar: Bäder, Duschen ohne Stufe, Böden, Balkone und Treppen. Der Termin bei Ihnen vor Ort ist kostenfrei.',
+     siteName: 'Fliesenverlegung Tezgel',
+   },
+   robots: {
 diff --git a/src/app/(bestand)/bad/bad-aus-einer-hand/page.jsx b/src/app/(bestand)/bad/bad-aus-einer-hand/page.jsx
-index a78e84d9..10d293b1 100644
+index 53ef8d60..9aa3d8b7 100644
 --- a/src/app/(bestand)/bad/bad-aus-einer-hand/page.jsx
 +++ b/src/app/(bestand)/bad/bad-aus-einer-hand/page.jsx
 @@ -25,7 +25,7 @@ const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFu
@@ -8,9 +40,9 @@ index a78e84d9..10d293b1 100644
  
 -const TITEL = 'Bad aus einer Hand Wetzlar & Aßlar | Tezgel Badsanierung';
 +const TITEL = 'Ihr Bad aus einer Hand | Fliesenverlegung Tezgel';
- const BESCHREIBUNG = 'Bad aus einer Hand in Wetzlar & Aßlar: Alle Gewerke koordiniert, ein Ansprechpartner & garantierter Festpreis. Jetzt kostenfreies Vor-Ort-Aufmaß sichern!';
+ // SEO-Runde, Befund Zusagen: ohne Garantie, Wortlaut wie die Description im Plan (Tabelle 4b)
+ const BESCHREIBUNG = 'Bad aus einer Hand: Wir koordinieren Sanitär, Fliesen, Elektrik und Trockenbau. Sie haben einen festen Ansprechpartner von der Planung bis zur Abnahme.';
  
- const METADATEN = createMetadata({
 diff --git a/src/app/(bestand)/bad/badanfrage/page.jsx b/src/app/(bestand)/bad/badanfrage/page.jsx
 index b2fcd9ee..f813c0e3 100644
 --- a/src/app/(bestand)/bad/badanfrage/page.jsx
@@ -193,7 +225,7 @@ index 366f3708..b2c08ba8 100644
                  }
                  vorspann={
 diff --git a/src/app/(bestand)/fliesen/neubau/page.jsx b/src/app/(bestand)/fliesen/neubau/page.jsx
-index 48513a11..ee461822 100644
+index c140e1df..1dbb572d 100644
 --- a/src/app/(bestand)/fliesen/neubau/page.jsx
 +++ b/src/app/(bestand)/fliesen/neubau/page.jsx
 @@ -31,7 +31,7 @@ const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKo
@@ -298,7 +330,7 @@ index 8af599fb..a14ba7e3 100644
    const title = serviceHubTitles[service.id] || `${service.name} Wetzlar | Tezgel`;
    const description = `${service.shortDescription}. Fachbetrieb für ${service.name} in Aßlar, Wetzlar & Mittelhessen – kostenfreies Vor-Ort-Aufmaß & Festpreisangebot.`;
 diff --git a/src/app/(bestand)/leistungen/[id]/page.jsx b/src/app/(bestand)/leistungen/[id]/page.jsx
-index a7de3295..7dcf474c 100644
+index f3633d1a..896d2f97 100644
 --- a/src/app/(bestand)/leistungen/[id]/page.jsx
 +++ b/src/app/(bestand)/leistungen/[id]/page.jsx
 @@ -58,11 +58,12 @@ export default async function ServiceDetailPage({ params }) {
@@ -316,8 +348,8 @@ index a7de3295..7dcf474c 100644
 +    aussen: 'Leistungen für Balkon, Terrasse und Eingang',
 +    untergrund: 'Untergrund vorbereiten und nach DIN 18534 abdichten',
    };
-   const serviceIntroTexts = {
-     bad: 'Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exklusive Bäder & Wellness in Wetzlar und Mittelhessen realisieren wir maßgeschneiderte Wohlfühloasen. Wir verarbeiten raumhohe Fliesenformate mit minimalen Fugenanteilen, integrieren barrierefreie Walk-In-Bereiche und garantieren zertifizierten Staubschutz für Ihr bewohntes Zuhause.',
+   // SEO-Runde, Befund Zusagen (docs/seo/arbeit/zusagen-befund.md): ohne Garantie, Zertifikat und Floskeln; Fakten aus dem
+   // Faktenblatt (F-08, F-15, F-17, F-21) und den Fachseiten
 diff --git a/src/app/(bestand)/naturstein/page.jsx b/src/app/(bestand)/naturstein/page.jsx
 index 7b5f6a64..d4b87eef 100644
 --- a/src/app/(bestand)/naturstein/page.jsx
