@@ -284,6 +284,13 @@ Abgeglichen mit dem SEO-Prompt (Abschnitte 8 bis 12, nur Methodik):
   - Auf `main` geht er erst nach „live“.
 - **K01 und K02 als fertiger Patch:** `docs/seo/arbeit/k01-k02.patch`, Beschreibung in `docs/seo/arbeit/p6-kurzanfrage.md`. Er wartet auf S10.
 
+**Eingespielt am 02.11.2026 (Live 1)** nach Umuts Freigabe, in angepasster Form (KONTEXT.md Abschnitt 13):
+- ohne `s2-asslar.patch`: `/standorte/asslar` bleibt;
+- P4 ohne noindex (Umut: alle Seiten im Index); übrig bleiben Sitemap und IndexNow ohne Rechtstexte, `/preise` und der Titel von `/standorte`;
+- die Startseite behält ihren Titel mit Wetzlar;
+- die Wetzlar-Seite verlinkt die vier Seiten Leistung × Wetzlar und dazu barrierefreies Bad, Treppe und Reparatur.
+Die Patchdateien in diesem Ordner sind die Fassung vor dieser Entscheidung; maßgeblich sind die Commits auf `main`.
+
 ## 8. Offene Fragen
 
 - Freigabe des Plans, ganz oder mit Änderungen (einzelne Zeilen der Tabellen gern direkt korrigieren).
