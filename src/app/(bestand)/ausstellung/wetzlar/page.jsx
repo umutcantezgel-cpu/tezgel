@@ -137,7 +137,8 @@ export default function AusstellungWetzlarPage() {
                             <div className="mt-12 flex items-start gap-4 border border-l-2 border-strich bg-fliese p-6 font-text text-fs-2 text-tinte">
                                 <Icon name="info" groesse={5} className="mt-1 text-tinte" />
                                 <p>
-                                    Für die Fliesenausstellung in Wetzlar vergeben wir Termine flexibel nach Vereinbarung – kontaktieren Sie uns direkt per WhatsApp, Telefon oder über unser{' '}
+                                    {/* SEO-Runde: eine eigene Ausstellung gibt es nicht (Umut, 02.11.2026) */}
+                                    Eine eigene Ausstellung haben wir nicht. Den Beratungstermin bei Ihnen vor Ort stimmen wir flexibel mit Ihnen ab. Schreiben Sie uns per WhatsApp, rufen Sie an oder nutzen Sie unser{' '}
                                     <Link href="/kontakt" className={linkKlassen}>
                                         Kontaktformular
                                     </Link>

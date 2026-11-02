@@ -9,8 +9,8 @@ import type { ErzaehlInhalt } from '@/components/vorlagen/inhalt';
 export const START: ErzaehlInhalt = {
   pfad: '/',
   meta: {
-    titel: 'Fliesenleger Aßlar und Wetzlar | Fliesenverlegung Tezgel',
-    beschreibung: 'Fliesenverlegung Tezgel aus Aßlar: Badsanierung, Böden, Balkon und Terrasse für Wetzlar und Umgebung. Der Termin bei Ihnen vor Ort ist kostenfrei.',
+    titel: 'Fliesenleger Wetzlar und Aßlar | Fliesenverlegung Tezgel',
+    beschreibung: 'Fliesenverlegung Tezgel für Wetzlar, Aßlar und Umgebung: Badsanierung, Böden, Balkon und Terrasse. Der Termin bei Ihnen vor Ort ist kostenfrei.',
   },
   worum: {
     brotkrumen: [],

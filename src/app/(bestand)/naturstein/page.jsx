@@ -150,7 +150,7 @@ const FURTHER_READING = [
     { label: 'Leistung: Wohnbereiche & Böden', href: '/leistungen/wohnen' },
     { label: 'Feinsteinzeug oder Naturstein? Der Vergleich', href: '/blog/feinsteinzeug-oder-naturstein-vergleich' },
     { label: 'Fliesen im Bad', href: '/bad/fliesen' },
-    { label: 'Ausstellung Wetzlar', href: '/ausstellung/wetzlar' }
+    { label: 'Fliesenberatung Wetzlar', href: '/ausstellung/wetzlar' }
 ];
 
 const WIR_VERLEGEN = [

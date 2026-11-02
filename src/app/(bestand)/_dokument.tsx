@@ -38,10 +38,10 @@ const SCHRIFTEN =
 export const BESTAND_METADATA: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Fliesenleger Aßlar und Wetzlar | Fliesenverlegung Tezgel',
+    default: 'Fliesenleger Wetzlar und Aßlar | Fliesenverlegung Tezgel',
     template: '%s | Fliesenverlegung Tezgel'
   },
-  description: 'Fliesenverlegung Tezgel aus Aßlar: Badsanierung, Böden, Balkon und Terrasse für Wetzlar und Umgebung. Der Termin bei Ihnen vor Ort ist kostenfrei.',
+  description: 'Fliesenverlegung Tezgel für Wetzlar, Aßlar und Umgebung: Badsanierung, Böden, Balkon und Terrasse. Der Termin bei Ihnen vor Ort ist kostenfrei.',
   keywords: [
     'Fliesenverlegung Tezgel',
     'Deniz Tezgel',
@@ -63,8 +63,8 @@ export const BESTAND_METADATA: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'de_DE',
-    title: 'Fliesenleger Aßlar und Wetzlar | Fliesenverlegung Tezgel',
-    description: 'Fliesenverlegung Tezgel aus Aßlar: Badsanierung, Böden, Balkon und Terrasse für Wetzlar und Umgebung. Der Termin bei Ihnen vor Ort ist kostenfrei.',
+    title: 'Fliesenleger Wetzlar und Aßlar | Fliesenverlegung Tezgel',
+    description: 'Fliesenverlegung Tezgel für Wetzlar, Aßlar und Umgebung: Badsanierung, Böden, Balkon und Terrasse. Der Termin bei Ihnen vor Ort ist kostenfrei.',
     siteName: 'Fliesenverlegung Tezgel',
   },
   robots: {
