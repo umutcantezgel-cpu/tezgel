@@ -205,7 +205,7 @@ Abgeglichen mit dem SEO-Prompt (Abschnitte 8 bis 12, nur Methodik):
 - Gegenprüfung von P1 durch zwei unabhängige Prüfer: erledigt, Nacharbeit eingearbeitet (KONTEXT.md Abschnitt 13).
 - Die Liste für P7 (Dokument für Umut): `docs/seo/arbeit/p7-liste-fuer-umut.md`.
 - Der Ablauf für P8, Messen nach dem Live-Gang und Vergleich nach 4 und 8 Wochen: `docs/seo/arbeit/p8-messplan.md`.
-- P5: Auswahl der Fotos aus dem Inventar (Qualität A bis C, ohne offene Freigabe, je Fast-Duplikat eins), die Alt-Entwürfe gegen die Bilder prüfen, Zuordnung zu den Seiten. Nur als Vorschlag, ohne Orte.
+- P5: Auswahl der Fotos aus dem Inventar (Qualität A bis C, ohne offene Freigabe, je Fast-Duplikat eins), die Alt-Entwürfe gegen die Bilder prüfen, Zuordnung zu den Seiten. Nur als Vorschlag, ohne Orte. **Erledigt** (02.11.2026): `docs/seo/arbeit/p5-bildauswahl.md` (97 Fotos, davon 75 sofort verwendbar; 38 Bildplätze auf 35 Seiten) und die Auftragsdatei `_werkstatt/bilder/neue-bilder-2026-10-31/auftrag-seo.json` mit den 71 freien Fotos ohne Retusche. Mit dem Bildwerkzeug außerhalb des Repos geprüft: 71 Webfassungen, keine Metadaten. Die Kontaktbögen liegen nicht im Repo.
 - P3: Textentwurf der Wetzlar-Seite nur aus belegten Fakten, als Datei zur Durchsicht, nicht im Code.
 - Für jede Zeile der Tabellen in Abschnitt 4 und 5 die genaue Stelle im Code (`docs/seo/arbeit/code-stellen-p2-p3.md`), damit die Umsetzung nach der Freigabe schnell geht.
 - **P2 als fertiger Patch** (Stand 02.11.2026): `docs/seo/arbeit/p2.patch`, anwendbar mit `git apply` auf `seo/lokal`. Er enthält:
