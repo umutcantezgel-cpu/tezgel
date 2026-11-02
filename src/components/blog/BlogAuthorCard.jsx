@@ -56,7 +56,7 @@ const BlogAuthorCard = ({ author }) => {
                         <div className="flex h-24 w-32 items-center justify-center border border-fuge bg-fliese p-2">
                             <Image
                                 src="/images/logo/tezgel-logo.webp"
-                                alt="Fliesenverlegung Tezgel – Fachbetrieb Aßlar & Wetzlar"
+                                alt="Fliesenverlegung Tezgel"
                                 width={140}
                                 height={44}
                                 className="h-auto w-full object-contain"
