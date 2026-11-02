@@ -34,8 +34,10 @@ import { linkKlassen } from '@/components/kern/stile';
 import { seitenBeschreibung } from '@/lib/beschreibung';
 
 export const metadata = createMetadata({
-  title: 'Fliesenleger Standorte & Einsatzgebiete | Tezgel',
-  description: 'Fliesenleger-Fachbetrieb Tezgel aus Aßlar: Fliesenverlegung & Badsanierung in Wetzlar, Gießen, Herborn & Lahn-Dill-Kreis. Jetzt Vor-Ort-Aufmaß anfragen!',
+  // SEO-Runde (Plan, Abschnitt 4): Friedberg, Bad Nauheim und Butzbach liegen im Wetteraukreis, nicht in Mittelhessen
+  title: 'Einsatzgebiet in Mittelhessen und der Wetterau · Tezgel',
+  // die Description steht in src/inhalte/meta/seiten.ts und gewinnt dort (lib/beschreibung.ts)
+  description: seitenBeschreibung('/standorte', 'Übersicht aller Städte und Gemeinden, in denen Fliesenverlegung Tezgel aus Aßlar Fliesen verlegt und Bäder saniert.'),
   path: '/standorte',
 });
 
@@ -48,7 +50,7 @@ const breadcrumbs = [
 const standorteGraph = buildGraph([
   buildWebPageNode({
     url: pageUrl,
-    name: 'Standorte & Einsatzgebiete in Mittelhessen | Fliesenverlegung Tezgel',
+    name: 'Einsatzgebiet in Mittelhessen und der Wetterau · Tezgel',
     description: 'Übersicht aller Städte und Gemeinden, in denen Fliesenverlegung Tezgel aus Aßlar Fliesen verlegt und Bäder saniert.',
     breadcrumbItems: breadcrumbs,
   }),
@@ -56,7 +58,7 @@ const standorteGraph = buildGraph([
   {
     '@type': 'CollectionPage',
     '@id': `${pageUrl}#collection`,
-    name: 'Fliesenverlegung Tezgel – Standorte & Einsatzgebiete',
+    name: 'Einsatzgebiet in Mittelhessen und der Wetterau',
     // dieselbe Beschreibung wie Metadaten und WebPage (lib/beschreibung.ts, E-054)
     description: seitenBeschreibung('/standorte', 'Übersicht aller Städte und Gemeinden, in denen Fliesenverlegung Tezgel aus Aßlar Fliesen verlegt und Bäder saniert.'),
     publisher: { '@id': ORG_ID },

@@ -1,4 +1,4 @@
-import { MetadataRoute } from 'next';
+import type { MetadataRoute } from 'next';
 import { posts } from '@/config/posts';
 import { SERVICES } from '@/config/services';
 import { PORTFOLIO_PROJECTS } from '@/config/projects';
@@ -6,6 +6,7 @@ import { TOPIC_PAGES } from '@/config/topics';
 import { CITIES } from '@/config/cities';
 import { MUSTERBAEDER } from '@/config/musterbaeder';
 import { SITE_URL } from '@/lib/schema';
+import { adresseIndexiert } from '@/lib/seo/indexierung';
 
 export const dynamic = 'force-static';
 
@@ -91,5 +92,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  return Array.from(uniqueMap.values());
+  // SEO-Runde (T12): ohne die Rechtstexte mit noindex (src/lib/seo/indexierung.ts)
+  return Array.from(uniqueMap.values()).filter((item) => adresseIndexiert(item.url));
 }

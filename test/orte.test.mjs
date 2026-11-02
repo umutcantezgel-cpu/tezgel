@@ -110,6 +110,23 @@ test('Orte 8: jeder Ort mit Angaben in HESSEN_GEO_HIERARCHY, Service mit provide
     assert.ok(!graph.some((k) => [].concat(k['@type']).includes('LocalBusiness')), `${c.slug}: kein zweites LocalBusiness`);
   }
 });
+test('Orte 10 (SEO-Runde T12): Sitemap und IndexNow nennen dieselben Adressen, alle Orts- und Leistungsseiten, keine Rechtstexte', async () => {
+  const { pfadIndexiert, adresseIndexiert } = await import('../src/lib/seo/indexierung.ts');
+  const { default: sitemap } = await import('../src/app/sitemap.ts');
+  const { getAllSiteUrls } = await import('../src/lib/seo/indexnow.ts');
+  assert.equal(pfadIndexiert('/impressum'), false);
+  assert.equal(pfadIndexiert('/standorte/giessen'), true);
+  assert.equal(pfadIndexiert('/leistungen/bad/wetzlar'), true);
+  const karte = sitemap().map((e) => e.url);
+  const melden = getAllSiteUrls();
+  // Sitemap und IndexNow melden dieselben Adressen
+  assert.deepEqual([...melden].sort(), [...karte].sort());
+  for (const c of CITIES) assert.ok(karte.some((u) => u.endsWith(`/standorte/${c.slug}`)), c.slug);
+  assert.equal(karte.filter((u) => /\/leistungen\/[^/]+\/[^/]+$/.test(u)).length, 52);
+  assert.deepEqual(karte.filter((u) => !adresseIndexiert(u)), []);
+  assert.ok(karte.some((u) => u.endsWith('/preise')));
+});
+
 test('Orte 11 (SEO-Runde P3): eigene Inhalte nur für Wetzlar, Zahlen wie die Daten, Förderung wie im Bestand, Fototitel ohne Ort', async () => {
   const { EIGENE_ORTSINHALTE } = await import('../src/inhalte/orte-eigen.ts');
   assert.deepEqual(Object.keys(EIGENE_ORTSINHALTE), ['wetzlar']);

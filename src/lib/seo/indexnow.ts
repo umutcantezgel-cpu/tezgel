@@ -5,6 +5,7 @@ import { TOPIC_PAGES } from '@/config/topics';
 import { CITIES } from '@/config/cities';
 import { MUSTERBAEDER } from '@/config/musterbaeder';
 import { SITE_URL } from '@/lib/schema';
+import { adresseIndexiert } from './indexierung';
 
 export const INDEXNOW_KEY = process.env.INDEXNOW_KEY || '4c6796df61f5479387fc4f56b1ed6b19';
 export const INDEXNOW_HOST = new URL(SITE_URL).hostname; // 'www.tezgel.de'
@@ -39,6 +40,7 @@ const STATIC_PATHS = [
   '/karriere/ausbildung',
   '/kontakt',
   '/termin',
+  '/preise',
   '/impressum',
   '/datenschutz',
   '/agb',
@@ -64,7 +66,8 @@ export function getAllSiteUrls(): string[] {
     ...posts.map((post) => `${SITE_URL}/blog/${post.slug}`),
   ];
 
-  return Array.from(new Set(urls));
+  // SEO-Runde (T12): wie die Sitemap, ohne die Rechtstexte mit noindex (src/lib/seo/indexierung.ts)
+  return Array.from(new Set(urls)).filter((url) => adresseIndexiert(url));
 }
 
 export interface IndexNowResult {

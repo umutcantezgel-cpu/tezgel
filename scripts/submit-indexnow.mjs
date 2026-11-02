@@ -10,7 +10,8 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.tezgel.de';
 const HOST = new URL(SITE_URL).hostname;
 const KEY_LOCATION = `${SITE_URL}/${INDEXNOW_KEY}.txt`;
 
-// Fallback core routes in case sitemap.xml is unreachable offline
+// Fallback core routes in case sitemap.xml is unreachable offline. SEO-Runde (T12): ohne die Rechtstexte mit noindex
+// (wie src/lib/seo/indexierung.ts)
 const CORE_ROUTES = [
   '',
   '/bad',
@@ -47,11 +48,7 @@ const CORE_ROUTES = [
   '/karriere/ausbildung',
   '/kontakt',
   '/termin',
-  '/impressum',
-  '/datenschutz',
-  '/agb',
-  '/widerruf',
-  '/cookie-richtlinie',
+  '/preise',
   '/barrierefreiheit',
 ];
 
