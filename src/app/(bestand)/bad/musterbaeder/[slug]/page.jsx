@@ -112,7 +112,7 @@ export default async function MusterbadDetailPage({ params }) {
                         <ul className="grid gap-3">
                             <li className="flex items-center gap-3 font-text text-fs-2 text-tinte">
                                 <Fugenkreuz className="size-3 shrink-0 text-strich" />
-                                Verbindlicher Festpreis nach kostenfreiem Vor-Ort-Aufmaß – abgestimmt auf Ihren Grundriss.
+                                Festpreisangebot nach dem kostenfreien Termin vor Ort, abgestimmt auf Ihren Grundriss.
                             </li>
                         </ul>
                     }

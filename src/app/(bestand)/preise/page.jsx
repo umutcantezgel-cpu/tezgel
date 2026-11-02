@@ -105,7 +105,7 @@ export default function PreisePage() {
         titel="Unsere Fachgewerke"
         einleitung={
           <p className="max-w-mass">
-            Fachmännische Ausführung von der Vorbereitung der Flächen bis zur sauberen Fuge. Verbindliches Angebot nach dem Aufmaß.
+            Fachmännische Ausführung von der Vorbereitung der Flächen bis zur sauberen Fuge. Festpreisangebot nach dem Aufmaß.
           </p>
         }
       >

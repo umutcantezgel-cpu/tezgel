@@ -298,7 +298,7 @@ export default function KuechePage() {
                 einleitung={
                     <p>
                         Sprechen Sie uns früh an – dann passen Belagshöhe, Rückwand und Termine zur Küchenmontage. Nach dem Aufmaß erhalten
-                        Sie ein verbindliches Festpreisangebot.
+                        Sie ein Festpreisangebot.
                     </p>
                 }
             >

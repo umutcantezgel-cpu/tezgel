@@ -86,8 +86,8 @@ export default function Zusammenfassung({ sqmLabel, sqmGewaehlt, scopeLabel, tie
                     })}
                 </dl>
                 <p className="text-fs-2 text-tinte-2">
-                    Jedes Bad ist anders. Der Aufwand hängt davon ab, was unter den Fliesen liegt, wo die Leitungen verlaufen und welches Material Sie wählen. Den
-                    verbindlichen Festpreis erhalten Sie deshalb nach dem kostenfreien Termin bei Ihnen vor Ort.
+                    Jedes Bad ist anders. Der Aufwand hängt davon ab, was unter den Fliesen liegt, wo die Leitungen verlaufen und welches Material Sie wählen. Das
+                    Festpreisangebot erhalten Sie deshalb nach dem kostenfreien Termin bei Ihnen vor Ort.
                 </p>
 
                 {/* Verweis auf das passende Musterbad; das passende erscheint erst mit der gewählten Größe */}

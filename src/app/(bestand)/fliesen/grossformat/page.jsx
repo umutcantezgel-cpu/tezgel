@@ -366,7 +366,7 @@ export default function GrossformatPage() {
                 einleitung={
                     <p>
                         {COMPANY_DATA.owner.fullName} prüft Untergrund, Zugänge und Raumzuschnitt vor Ort und empfiehlt das passende
-                        Format – danach erhalten Sie ein verbindliches Festpreisangebot.
+                        Format. Danach erhalten Sie ein Festpreisangebot.
                     </p>
                 }
             >

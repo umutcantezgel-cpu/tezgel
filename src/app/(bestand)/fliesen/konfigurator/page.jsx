@@ -60,11 +60,11 @@ const WASTE_ROWS = [
 const FAQS = [
     {
         q: 'Wie genau ist der berechnete Materialbedarf?',
-        a: 'Es ist ein Richtwert zur Orientierung: Nettofläche plus ein typischer Verschnittzuschlag für das gewählte Verlegemuster. Raumform, Anzahl der Ecken, Türen und Vorsprünge, das Fliesenformat und die Fugenplanung verändern den tatsächlichen Bedarf. Die verbindliche Menge wird beim Vor-Ort-Aufmaß ermittelt.'
+        a: 'Es ist ein Richtwert zur Orientierung: Nettofläche plus ein typischer Verschnittzuschlag für das gewählte Verlegemuster. Raumform, Anzahl der Ecken, Türen und Vorsprünge, das Fliesenformat und die Fugenplanung verändern den tatsächlichen Bedarf. Die genaue Menge ermitteln wir beim Termin vor Ort.'
     },
     {
         q: 'Warum nennt der Konfigurator keinen Preis?',
-        a: 'Der Aufwand hängt vor allem vom Untergrund, vom Format und von den Details wie Sockeln, Kanten oder Abdichtung ab. Das lässt sich seriös erst vor Ort beurteilen. Deshalb erhalten Sie nach dem kostenfreien Aufmaß eine verbindliche Festpreis-Kalkulation statt einer Schätzung aus dem Internet.'
+        a: 'Der Aufwand hängt vor allem vom Untergrund, vom Format und von den Details wie Sockeln, Kanten oder Abdichtung ab. Das lässt sich seriös erst vor Ort beurteilen. Deshalb erhalten Sie nach dem kostenfreien Termin vor Ort ein Festpreisangebot statt einer Schätzung aus dem Internet.'
     },
     {
         q: 'Wie zähle ich Setzstufen und Trittstufen richtig?',
@@ -94,8 +94,8 @@ const NEXT_STEPS = [
         text: `${COMPANY_DATA.owner.fullName} sieht sich die Flächen persönlich an, misst auf und prüft Untergrund, Ebenheit und Anschlüsse.`
     },
     {
-        title: 'Verbindliches Festpreisangebot',
-        text: 'Auf Basis des Aufmaßes erhalten Sie eine verbindliche Festpreis-Kalkulation mit den tatsächlich benötigten Mengen.'
+        title: 'Festpreisangebot',
+        text: 'Auf Basis des Aufmaßes erhalten Sie ein Festpreisangebot mit den tatsächlich benötigten Mengen.'
     }
 ];
 

@@ -15,7 +15,7 @@ const trustItems = [
   'DIN 18534 Verbundabdichtung',
   'XXL-Großformat Nivelliertechnik',
   'Staubschutz & Sauberkeits-Garantie',
-  'Verbindliche Festpreis-Kalkulation',
+  'Kalkulation mit festem Preis',
   bewertungsZeile,
 ];
 

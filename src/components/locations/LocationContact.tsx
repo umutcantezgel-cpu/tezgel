@@ -85,7 +85,7 @@ export default function LocationContact({
               </li>
               <li className="flex items-center gap-3 border-b border-fuge py-3">
                 <Icon name="haken" groesse={4} className="text-abnahme" />
-                <span>Verbindlicher Festpreis</span>
+                <span>Festpreisangebot</span>
               </li>
             </ul>
           </div>

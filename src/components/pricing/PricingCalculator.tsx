@@ -327,7 +327,7 @@ export default function PricingCalculator() {
               <p className="font-semibold text-kalk">So geht es weiter:</p>
               <p className="mt-2">1. Deniz Tezgel prüft Ihre Angaben persönlich.</p>
               <p className="mt-1">2. Sie erhalten zeitnah einen Anruf oder eine Nachricht zur Abstimmung.</p>
-              <p className="mt-1">3. Kostenfreier Termin bei Ihnen vor Ort und danach ein verbindliches Festpreisangebot.</p>
+              <p className="mt-1">3. Kostenfreier Termin bei Ihnen vor Ort und danach ein Festpreisangebot.</p>
             </div>
 
             <Knopf variante="hell" onClick={handleReset} className="w-full">
@@ -348,7 +348,7 @@ export default function PricingCalculator() {
               </p>
 
               <p className="mt-3 text-fs-2 text-nacht-2">
-                {mitFugen("Jedes Vorhaben ist anders. Beschreiben Sie Ihr Vorhaben kurz. Wir melden uns für einen kostenfreien Termin bei Ihnen vor Ort. Danach bekommen Sie ein verbindliches Festpreisangebot.")}
+                {mitFugen("Jedes Vorhaben ist anders. Beschreiben Sie Ihr Vorhaben kurz. Wir melden uns für einen kostenfreien Termin bei Ihnen vor Ort. Danach bekommen Sie ein Festpreisangebot.")}
               </p>
 
               {/* Projekt-Zusammenfassung */}
@@ -369,7 +369,7 @@ export default function PricingCalculator() {
                 </div>
                 <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3 @max-3xs:flex-wrap">
                   <dt className="text-nacht-2">Angebot:</dt>
-                  <dd className="text-right font-semibold text-kalk @max-3xs:w-full @max-3xs:text-left @max-3xs:hyphens-auto wrap-break-word trennen-ab-11">Verbindlicher Festpreis</dd>
+                  <dd className="text-right font-semibold text-kalk @max-3xs:w-full @max-3xs:text-left @max-3xs:hyphens-auto wrap-break-word trennen-ab-11">Festpreisangebot</dd>
                 </div>
               </dl>
 

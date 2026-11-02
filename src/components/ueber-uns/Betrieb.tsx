@@ -25,7 +25,7 @@ export default function Betrieb() {
             Unter der Führung von Inhaber <strong className="font-semibold text-tinte">{owner.fullName}</strong> und mit unserem Team von bis zu 12 Fachkräften liegt unser Schwerpunkt auf Badsanierungen und barrierefreien Walk-In-Duschen, fugenarmen XXL-Großformaten, Wohnbereichen, Balkonen und Terrassen sowie der normgerechten Verbundabdichtung nach <span className="whitespace-nowrap font-mono text-fs-2">DIN 18534</span>.
           </p>
           <p>
-            Von unserem Firmensitz in der {headquarters.street}, {headquarters.postalCode} {headquarters.city} aus betreuen wir Großprojekte ebenso wie private Sanierungsvorhaben – persönlich, transparent und mit verbindlichem Festpreisangebot.
+            Von unserem Firmensitz in der {headquarters.street}, {headquarters.postalCode} {headquarters.city} aus betreuen wir Großprojekte ebenso wie private Sanierungsvorhaben: persönlich, transparent und mit Festpreisangebot.
           </p>
         </div>
 

@@ -295,7 +295,7 @@ export default function HolzoptikPage() {
                 titel="Dielenlook für Ihren Boden planen"
                 einleitung={
                     <p>
-                        Wir prüfen Untergrund und Ebenheit, besprechen Format und Verband und erstellen danach ein verbindliches
+                        Wir prüfen Untergrund und Ebenheit, besprechen Format und Verband und erstellen danach ein
                         Festpreisangebot.
                     </p>
                 }

@@ -210,7 +210,7 @@ export const processSteps = [
     {
         step: "03",
         title: "Ausführung & Abnahme",
-        subtitle: "Staubgeschützt, termintreu & DIN-gerecht",
+        subtitle: "Staubschutz und normgerechte Abdichtung",
         description: "Fachgerechte Verlegung mit modernstem Nivelliersystem und normgerechter Abdichtung. Besenreine Endreinigung und gemeinsame Abnahme."
     }
 ];

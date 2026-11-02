@@ -52,8 +52,8 @@ export default function BadProjektCheckPage() {
                 }
                 vorspann={
                     <p>
-                        Nutzen Sie den Bad-Projektcheck von Tezgel Wetzlar: Badsanierung in 2 Minuten online prüfen, Größe, Umfang und
-                        Ausstattung auswählen – den verbindlichen Festpreis erhalten Sie nach dem kostenfreien Vor-Ort-Aufmaß.
+                        Nutzen Sie den Bad-Projektcheck von Fliesenverlegung Tezgel: Badsanierung in 2 Minuten online prüfen, Größe, Umfang und
+                        Ausstattung auswählen. Das Festpreisangebot erhalten Sie nach dem kostenfreien Termin vor Ort.
                     </p>
                 }
             />

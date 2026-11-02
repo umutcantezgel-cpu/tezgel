@@ -33,7 +33,7 @@ const faqData = {
         questions: [
             { q: 'Welche Fliesenkleber und Fugenmassen verwenden Sie?', a: 'Wir verwenden ausschließlich flexible C2-TE-S1/S2 Fliesenkleber und verfärbungsfreie Premium-Fugenmassen – für einen dauerhaft festen Verbund und ein sauberes Fugenbild.' },
             { q: 'Wann lohnen sich großformatige Fliesen (XXL)?', a: 'Großformate sorgen für fugenarme, planebene Flächen mit ruhigem, monolithischem Raumgefühl – im Bad ebenso wie im Wohnbereich. Mit Nivelliersystem und Vakuumhebetechnik verlegen wir sie millimetergenau und ohne Überzähne.' },
-            { q: 'Was kostet die Fliesenverlegung pro Quadratmeter?', a: 'Das hängt von Format, Material und Zustand des Untergrunds ab. Nach dem kostenfreien Vor-Ort-Aufmaß erhalten Sie eine transparente Kostenaufstellung nach Quadratmetern und Arbeitsaufwand – als verbindliches Festpreisangebot.' },
+            { q: 'Was kostet die Fliesenverlegung pro Quadratmeter?', a: 'Das hängt von Format, Material und Zustand des Untergrunds ab. Nach dem kostenfreien Termin vor Ort erhalten Sie eine transparente Kostenaufstellung nach Quadratmetern und Arbeitsaufwand als Festpreisangebot.' },
             { q: 'Können neue Fliesen auf einen vorhandenen Belag verlegt werden?', a: 'Das hängt vom Zustand des Altbelags ab. Beim Vor-Ort-Aufmaß prüfen wir Ebenheit, Restfeuchte und Tragfähigkeit des Untergrunds und empfehlen Ihnen die fachgerechte Lösung.' }
         ]
     },

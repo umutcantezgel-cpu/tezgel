@@ -43,7 +43,7 @@ export default function BadAusEinerHandPage() {
 
     const benefits = [
         { title: 'Ein fester Fach-Ansprechpartner', desc: `Sie müssen nicht mit fünf verschiedenen Firmen telefonieren. ${COMPANY_DATA.owner.fullName} betreut Sie persönlich von A bis Z.` },
-        { title: 'Verbindlicher Festpreis', desc: 'Kalkulation aller Gewerke mit festem Preis.' },
+        { title: 'Festpreisangebot', desc: 'Kalkulation aller Gewerke mit festem Preis.' },
         { title: 'Abgestimmter Bauzeitplan', desc: 'Baustart und Fertigstellung stimmen wir mit Ihnen ab, damit Ihr Alltag planbar bleibt.' }, // SEO-Runde, Befund Zusagen (M-07)
         { title: 'Staubarme Ausführung', desc: 'Einsatz von Staubschutzwänden, Luftreinigern und Schonabdeckungen für saubere Wohnräume.' }
     ];

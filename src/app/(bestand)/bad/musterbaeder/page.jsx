@@ -127,8 +127,8 @@ export default function MusterbaederPage() {
                     <p className="mx-auto mt-8 flex max-w-mass items-start justify-center gap-2 text-center font-text text-fs-2 text-tinte-2">
                         <Icon name="info" groesse={4} className="mt-1 shrink-0 text-tinte" />
                         <span>
-                            Alle Preise sind Richtwerte zur Orientierung. Den verbindlichen Festpreis erhalten Sie nach dem kostenfreien
-                            Vor-Ort-Aufmaß – Fragen beantwortet {COMPANY_DATA.owner.fullName} gerne unter{' '}
+                            Alle Preise sind Richtwerte zur Orientierung. Das Festpreisangebot erhalten Sie nach dem kostenfreien
+                            Termin vor Ort. Fragen beantwortet {COMPANY_DATA.owner.fullName} gerne unter{' '}
                             <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className={clsx(linkKlassen, 'whitespace-nowrap font-mono')}>
                                 {COMPANY_DATA.contact.phone}
                             </a>

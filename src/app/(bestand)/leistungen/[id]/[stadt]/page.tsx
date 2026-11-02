@@ -53,7 +53,7 @@ const SERVICE_CITY_INTROS: Record<
 > = {
   bad: (city, reg, auth, subs) => ({
     p1: `Ob vollständige Badsanierung oder barrierefreier Umbau im bewohnten Bestand: Als eingetragener Fachbetrieb der ${auth} realisieren wir moderne Bäder, begehbare Walk-In-Duschen und großformatige Fliesenbeläge für Privatkunden, Architekten und Bauherren in ${city} sowie im gesamten ${reg}.`,
-    p2: `Im Mittelpunkt stehen kompromisslose Langlebigkeit, absolute Dichtigkeit und saubere Ausführung mit normgerechter Verbundabdichtung nach DIN 18534 überall dort, wo Wasser einwirkt.${subs ? ` Unsere Schwerpunkte in ${city}: ${subs}.` : ''} Nach einem kostenfreien Vor-Ort-Aufmaß erhalten Sie ein transparentes, verbindliches Festpreisangebot.`
+    p2: `Im Mittelpunkt stehen kompromisslose Langlebigkeit, absolute Dichtigkeit und saubere Ausführung mit normgerechter Verbundabdichtung nach DIN 18534 überall dort, wo Wasser einwirkt.${subs ? ` Unsere Schwerpunkte in ${city}: ${subs}.` : ''} Nach dem kostenfreien Termin bei Ihnen vor Ort erhalten Sie ein Festpreisangebot.`
   }),
   wohnen: (city, reg, auth, subs) => ({
     p1: `Für repräsentative Wohnräume, offene Küchen und Flure in ${city} und der Region ${reg} verlegen wir Feinsteinzeug und Natursteinbeläge. Als eingetragener Fachbetrieb der ${auth} schaffen wir schwellenlose Übergänge zwischen Wohnbereichen und ein vollkommen symmetrisches Fugenbild.`,

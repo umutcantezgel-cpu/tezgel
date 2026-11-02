@@ -30,7 +30,7 @@ export default function WhatsAppGeoeffnet({ data, setSentVia }) {
                 </div>
 
                 <p className="mt-8 max-w-mass font-text text-fs-3 font-semibold text-tinte">
-                    Das verbindliche Festpreisangebot folgt nach dem kostenfreien Termin bei Ihnen vor Ort durch {COMPANY_DATA.owner.fullName}.
+                    Das Festpreisangebot folgt nach dem kostenfreien Termin bei Ihnen vor Ort durch {COMPANY_DATA.owner.fullName}.
                 </p>
 
                 <div className="mt-6 flex flex-col items-stretch gap-3 @xl:flex-row @xl:items-center">

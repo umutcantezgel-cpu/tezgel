@@ -381,7 +381,7 @@ export default function VerlegemusterPage() {
                     titel="Verschnitt je Muster: Richtwerte für die Bestellung"
                     einleitung={
                         <p>
-                            Der Zuschlag hängt von Muster, Format und Raumzuschnitt ab. Die Werte dienen der Orientierung – die verbindliche
+                            Der Zuschlag hängt von Muster, Format und Raumzuschnitt ab. Die Werte dienen der Orientierung. Die genaue
                             Menge ergibt sich aus dem Aufmaß.
                         </p>
                     }
@@ -445,8 +445,8 @@ export default function VerlegemusterPage() {
                 titel="Muster und Fugenbild gemeinsam festlegen"
                 einleitung={
                     <p>
-                        {COMPANY_DATA.owner.fullName} plant Startpunkt, Fugenachsen und Abschlüsse vor Ort – danach erhalten Sie ein
-                        verbindliches Festpreisangebot.
+                        {COMPANY_DATA.owner.fullName} plant Startpunkt, Fugenachsen und Abschlüsse vor Ort. Danach erhalten Sie ein
+                        Festpreisangebot.
                     </p>
                 }
             >

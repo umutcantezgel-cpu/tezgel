@@ -307,7 +307,7 @@ export default function AbnahmePage() {
                     einleitung={
                         <p>
                             Mit dem Fliesen-Konfigurator bereiten Sie Raum, Untergrund, Format und Fläche in vier Schritten vor. Das
-                            verbindliche Festpreisangebot folgt nach dem kostenfreien Aufmaß vor Ort.
+                            Festpreisangebot folgt nach dem kostenfreien Aufmaß vor Ort.
                         </p>
                     }
                     leitachse

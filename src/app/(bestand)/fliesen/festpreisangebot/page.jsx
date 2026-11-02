@@ -39,7 +39,7 @@ export const metadata = createMetadata({
 
 const PROMISES = [
     { title: 'Kostenfreies Aufmaß vor Ort', desc: 'Flächen, Untergrund und Details werden vor Ort aufgenommen – die Grundlage für ein belastbares Angebot.' },
-    { title: 'Verbindlicher Festpreis', desc: 'Für den im Angebot beschriebenen Leistungsumfang gilt der vereinbarte Preis.' },
+    { title: 'Fester Preis', desc: 'Für den im Angebot beschriebenen Leistungsumfang gilt der vereinbarte Preis.' },
     { title: 'Transparente Positionen', desc: 'Jede Leistung steht als eigene Position mit Menge und Einheit im Angebot – nachvollziehbar und vergleichbar.' },
     { title: 'Abgestimmter Bauzeitenplan', desc: 'Start und Fertigstellung stimmen wir mit Ihnen ab, damit Sie Ihren Alltag und andere Gewerke planen können.' }, // SEO-Runde, Befund Zusagen (M-07)
     { title: 'Ein Ansprechpartner', desc: `${COMPANY_DATA.owner.fullName} begleitet Ihr Projekt persönlich – vom Aufmaß bis zur Abnahme.` }

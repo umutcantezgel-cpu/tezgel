@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     question: 'Was kostet die Fliesenverlegung pro Quadratmeter?',
-    answer: 'Das hängt von Format, Material und Zustand des Untergrunds ab. Nach dem kostenfreien Vor-Ort-Aufmaß erhalten Sie eine transparente Kostenaufstellung nach Quadratmetern und Arbeitsaufwand – als verbindliches Festpreisangebot.',
+    answer: 'Das hängt von Format, Material und Zustand des Untergrunds ab. Nach dem kostenfreien Termin vor Ort erhalten Sie eine transparente Kostenaufstellung nach Quadratmetern und Arbeitsaufwand als Festpreisangebot.',
   },
   {
     question: 'Können neue Fliesen auf einen vorhandenen Belag verlegt werden?',

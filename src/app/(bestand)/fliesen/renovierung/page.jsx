@@ -54,7 +54,7 @@ const STEPS = [
     {
         step: '02',
         title: 'Entscheidung',
-        desc: 'Gemeinsam legen Sie mit uns fest: überfliesen oder zurückbauen, welches Format, welche Verlegerichtung, welche Übergänge. Danach erhalten Sie das verbindliche Festpreisangebot.'
+        desc: 'Gemeinsam legen Sie mit uns fest: überfliesen oder zurückbauen, welches Format, welche Verlegerichtung, welche Übergänge. Danach erhalten Sie das Festpreisangebot.'
     },
     {
         step: '03',
