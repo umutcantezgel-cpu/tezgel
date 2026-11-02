@@ -25,6 +25,11 @@ Stand 02.11.2026, Code-Stand `seo/lokal`. **Befund mit Vorschlägen, nichts davo
 | `src/app/llms.txt/route.ts:24`, `:43`, `:47` | „Zertifizierte Abdichtung“, „Vertrauensmerkmale & Garantien“, „Staubschutz-Garantie“ | `/llms.txt` (Text für KI-Dienste) | „Abdichtung nach DIN 18534“, „Vertrauensmerkmale“, „Staubschutz in bewohnten Räumen“ |
 | `src/config/company.js:174`, `:191`; `src/lib/config.ts:195` | „Garantierter Staubschutz bei Sanierungen“, „Staubschutz-Garantie“, „Staubschutz-Garantie bei bewohnten Sanierungen“ | Firmendaten und Konfiguration. Die Vorlagen zeigen sie schon ohne Garantie-Wort. | Firmendaten ändern sich nur mit Umuts Freigabe; Vorschlag wie oben |
 
+**Milder, aber zu klären:**
+- **Das Wort „verbindlich“** vor Festpreis oder Festpreisangebot steht zusätzlich in Descriptions der Werkstatt: `src/inhalte/meta/seiten.ts` (`/bad/musterbaeder`, `/bad/projekt-check`, `/faq`) und in der Antwort `faq/page.jsx:44`.
+- **Einordnung (Vermutung):** Ein Angebot bindet nach dem BGB ohnehin; das Wort ist also weniger heikel als „Garantie“. Solange M-07 offen ist, bleibt der Wortlaut des Faktenblatts trotzdem sicherer: „Festpreisangebot“.
+- **Eigene Vorschläge berichtigt:** Meine Vorschläge für `/preise` und `/bad/badsanierung` nutzen seit dem 02.11.2026 nur noch „Festpreisangebot“ (Plan, Tabelle 4b, und die Patches).
+
 **Nicht gezählt:** Kommentare im Code und interne Zuordnungen. Ebenso Aussagen, die ausdrücklich keine Garantie geben (`/untergrund-abdichtung/entkopplung`: „eine Garantie gegen Risse gibt es nicht“), und der Datenschutz-Begriff „DPF zertifiziert“ im Cookie-Inventar.
 
 ## Vorschlag

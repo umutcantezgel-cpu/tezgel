@@ -515,7 +515,7 @@ index 5a7dd967..278bce9c 100644
  
  export const metadata = createMetadata({
 diff --git a/src/app/(bestand)/preise/page.jsx b/src/app/(bestand)/preise/page.jsx
-index 4923d473..a3c52dad 100644
+index 4923d473..47ca8178 100644
 --- a/src/app/(bestand)/preise/page.jsx
 +++ b/src/app/(bestand)/preise/page.jsx
 @@ -32,9 +32,9 @@ const PricingCalculator = dynamic(() => import('@/components/pricing/PricingCalc
@@ -526,7 +526,7 @@ index 4923d473..a3c52dad 100644
 +  title: "Preise und Festpreisangebot | Fliesenverlegung Tezgel",
    description:
 -    "Preise für Fliesenverlegung, große Fliesen & Badsanierung in Wetzlar & Aßlar auf Anfrage. Schildern Sie Ihr Vorhaben für ein verbindliches Festpreisangebot!",
-+    "Was kostet Ihr Vorhaben? Den Preis für Fliesen, große Formate oder die Badsanierung nennen wir nach dem Termin vor Ort als verbindlichen Festpreis.",
++    "Was kostet Ihr Vorhaben? Den Preis für Fliesen, große Formate oder die Badsanierung nennen wir nach dem Termin vor Ort als Festpreisangebot.",
    path: "/preise"
  });
  
@@ -936,14 +936,14 @@ index cf6205ef..f11c4057 100644
        'Ratgeber und Fachwissen zur Fliesenverlegung: Feinsteinzeug, Großformate, Holzoptik, Verlegetechniken. Fliesenleger Tezgel aus Aßlar in Hessen erklärt es.',
    },
 diff --git a/src/inhalte/meta/seiten.ts b/src/inhalte/meta/seiten.ts
-index 6bbb5703..8c359d74 100644
+index 6bbb5703..34a22de6 100644
 --- a/src/inhalte/meta/seiten.ts
 +++ b/src/inhalte/meta/seiten.ts
 @@ -17,5 +17,6 @@ export const META_SEITEN: Readonly<Record<string, string>> = {
    '/partner': 'Verlegewerkstoffe und Fliesen: Wir arbeiten unter anderem mit Ardex, Sopro, PCI und Marazzi, für Abdichtung, Kleber und Fliesen in Ihrem Zuhause.',
    '/karriere': 'Jobs als Fliesenleger (m/w/d): Wir suchen Gesellen oder erfahrene Fachkräfte in Aßlar, Wetzlar und Mittelhessen. Bewerben Sie sich per E-Mail oder Telefon.',
    '/karriere/ausbildung': 'Ausbildung zum Fliesenleger (m/w/d) in einem eingetragenen Fachbetrieb in Aßlar. Bewerben Sie sich per E-Mail, Telefon oder WhatsApp.',
-+  '/preise': 'Was kostet Ihr Vorhaben? Den Preis für Fliesen, große Formate oder die Badsanierung nennen wir nach dem Termin vor Ort als verbindlichen Festpreis.', // SEO-Runde P2
++  '/preise': 'Was kostet Ihr Vorhaben? Den Preis für Fliesen, große Formate oder die Badsanierung nennen wir nach dem Termin vor Ort als Festpreisangebot.', // SEO-Runde P2
    '/termin': 'Termin vereinbaren in Aßlar und Wetzlar: Wählen Sie Ihr Wunschthema und senden Sie die Anfrage online oder per WhatsApp. Der Termin vor Ort ist kostenfrei.',
  };
 diff --git a/src/inhalte/referenzen.ts b/src/inhalte/referenzen.ts
