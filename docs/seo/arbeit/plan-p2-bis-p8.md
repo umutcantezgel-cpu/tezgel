@@ -293,6 +293,8 @@ Die Patchdateien in diesem Ordner sind die Fassung vor dieser Entscheidung; maß
 
 **Vorbereitet für Live 2** (02.11.2026 auf `seo/lokal`, wartet auf „live“): Punkt 6 („Festpreisangebot“ statt „verbindlich“, `company.js` ohne „termintreu“), S4 (keine eigene Ausstellung, Lager im Dillfeld), Startseite mit Wetzlar vorn, P5 mit 90 Fotos. Einzelheiten in KONTEXT.md Abschnitt 13.
 
+**Vorbereitet für Live 3** (02.11.2026 auf `seo/lokal`, wartet auf „live“): b4, die 52 Seiten Leistung × Ort und `/standorte` mit Texten nur aus dem Faktenblatt (KONTEXT.md Abschnitt 13, Zeile „b4 vorbereitet“).
+
 ## 8. Offene Fragen
 
 - Freigabe des Plans, ganz oder mit Änderungen (einzelne Zeilen der Tabellen gern direkt korrigieren).

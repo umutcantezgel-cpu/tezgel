@@ -2,8 +2,9 @@
 // Laserachse, H1 links, Vorspann und Knöpfe, rechts das Planblatt mit dem Einzugsband (E4-NACH-01). Danach die Leitachse über die
 // Abschnitte: Gebietskarte (Einzugsband als Vorschau vor der Einwilligung, Karte dahinter unverändert), Städte als Feldraster mit
 // je einem Link, Leistungen als Merkliste, Anfahrt mit der Standortkarte, Anfrage (Orte auf Anfrage und regionaler Ansprechpartner
-// in einem Abschnitt; E4-N2-07). Der Abschluss steht außerhalb der Leitachse. Wortlaut, Überschriften, Links und IDs wie im
-// Bestand (#karte-ueberschrift, #leistungen-ueberall, #hauptsitz-heading, #weitere-orte-titel).
+// in einem Abschnitt; E4-N2-07). Der Abschluss steht außerhalb der Leitachse. Links und IDs wie im Bestand (#karte-ueberschrift,
+// #leistungen-ueberall, #hauptsitz-heading, #weitere-orte-titel); Vorspann, Knopf, Kartenüberschrift, Leistungsliste und
+// Ortsbeschreibungen seit der SEO-Runde b4 nur mit belegten Angaben.
 // Großer Moment: das Einzugsband im Planblatt des Einstiegs (E3-ORCH-03, E4-NACH-01).
 import Link from 'next/link';
 import clsx from 'clsx';
@@ -67,6 +68,19 @@ const standorteGraph = buildGraph([
 
 const REGIONS = Array.from(new Set(CITIES.map((city) => city.region)));
 
+/** Leistungen vor Ort (SEO-Runde b4): eigene Liste nach dem Faktenblatt (F-08), ohne Fachwörter und ohne „XXL“; vorher die Liste
+ *  business.primaryServices aus company.js (Firmendaten, unverändert), deren Fachwörter hier ohne Erklärung standen */
+const LEISTUNGEN_VOR_ORT = [
+  'Badsanierung und Duschen ohne Stufe',
+  'Bäder ohne Barrieren',
+  'Große Fliesen mit wenigen Fugen',
+  'Böden und Wände in Wohnräumen, Küchen und Fluren',
+  'Treppen innen und außen',
+  'Balkon und Terrasse',
+  'Naturstein',
+  'Vorarbeiten vor dem Fliesen',
+];
+
 // Stadtfeld: das ganze Feld ist der Link (Fuge statt Karte); der Name unterstreicht sich bei feinem Zeiger
 const STADT_LINK = 'group flex flex-1 flex-col justify-between after:absolute after:inset-0';
 const STADT_NAME =
@@ -79,7 +93,7 @@ function distanceLabel(city: CityData) {
 }
 
 export default function StandorteOverviewPage() {
-  const { headquarters, contact, business } = COMPANY_DATA;
+  const { headquarters, contact } = COMPANY_DATA;
 
   return (
     <>
@@ -92,15 +106,16 @@ export default function StandorteOverviewPage() {
         titel="Standorte & Einsatzgebiete in Mittelhessen"
         vorspann={
           <p>
-            Als Fachbetrieb mit Firmensitz in der {headquarters.street} in {headquarters.postalCode}{' '}
-            {headquarters.city} betreuen wir Privatkunden, Architekten und Bauherren in Wetzlar, Gießen, Herborn und
-            ganz Mittelhessen – mit persönlicher Beratung vor Ort und handwerklicher Präzision.
+            {/* SEO-Runde b4: kein Satz über 25 Wörter, kein Gedankenstrich (vorher 32 Wörter) */}
+            Unser Firmensitz ist in der {headquarters.street} in {headquarters.postalCode} {headquarters.city}. Von hier
+            kommen wir zu Ihnen nach Wetzlar, Gießen, Herborn und in ganz Mittelhessen. Deniz Tezgel berät Sie persönlich
+            bei Ihnen vor Ort.
           </p>
         }
         aktionen={
           <>
             <Knopf href="/kontakt" icon="pfeil-rechts">
-              Vor-Ort-Aufmaß anfragen
+              Termin vor Ort anfragen
             </Knopf>
             <Knopf href={`tel:${contact.phoneLink}`} variante="neben" iconLinks="telefon">
               <span className="font-mono font-normal">{contact.phone}</span>
@@ -117,15 +132,15 @@ export default function StandorteOverviewPage() {
       />
 
       <Leitachse>
-        {/* 2. GEBIETSKARTE: das 45-km-Einsatzgebiet; vor der Einwilligung zeigt der Platzhalter das gezeichnete Einzugsband
+        {/* 2. GEBIETSKARTE: das Einsatzgebiet; vor der Einwilligung zeigt der Platzhalter das gezeichnete Einzugsband
               als Vorschau (E4-N2-07, Befund 16), die Karte liegt dahinter (unverändert). Stadtleiste und Kurzprofil wie im Bestand. */}
         <Abschnitt
           titelId="karte-ueberschrift"
           leitachse
           spaet
           etikett="Interaktive Gebietskarte"
-          titel="Unser 45-km-Einsatzgebiet in Mittelhessen"
-          einleitung={<p>Klicken Sie auf eine Stadt für Details zu Entfernung, Anfahrt und schnellem Vor-Ort-Aufmaß.</p>}
+          titel="Unser Einsatzgebiet in Mittelhessen und der Wetterau"
+          einleitung={<p>Klicken Sie auf eine Stadt, dann sehen Sie Entfernung und Anfahrt.</p>}
         >
           <ServiceMapWrapper />
         </Abschnitt>
@@ -158,7 +173,7 @@ export default function StandorteOverviewPage() {
                       </span>
                     </div>
                     <p className={STADT_NAME}>{city.name}</p>
-                    <p className="mt-3 max-w-mass font-text text-fs-2 text-tinte-2">{city.description}</p>
+                    {city.description && <p className="mt-3 max-w-mass font-text text-fs-2 text-tinte-2">{city.description}</p>}
                   </div>
                   <span className="mt-6 flex items-center justify-between gap-3 border-t border-fuge pt-4 font-text text-fs-2 font-semibold text-tinte">
                     <span>Fliesenleger in {city.name}</span>
@@ -179,7 +194,7 @@ export default function StandorteOverviewPage() {
           etikett="In allen Einsatzgebieten"
           titel="Unsere Leistungen vor Ort"
         >
-          <Merkliste spalten={2} eintraege={business.primaryServices.map((titel: string) => ({ titel }))} />
+          <Merkliste spalten={2} eintraege={LEISTUNGEN_VOR_ORT.map((titel) => ({ titel }))} />
           <div className="mt-8">
             <Knopf href="/leistungen" variante="text" icon="pfeil-rechts">
               Alle Leistungen im Überblick
@@ -251,8 +266,8 @@ export default function StandorteOverviewPage() {
           titel="Ihre Stadt ist nicht aufgeführt?"
           einleitung={
             <p>
-              Wir sind unter anderem im {REGIONS.join(', ')} unterwegs. Rufen Sie uns einfach an – wir klären gern, ob
-              wir Ihr Projekt an Ihrem Wohnort übernehmen können.
+              Wir sind unter anderem im {REGIONS.join(', ')} unterwegs. Rufen Sie uns an. Wir klären gern, ob wir Ihr
+              Vorhaben an Ihrem Wohnort übernehmen können.
             </p>
           }
         >

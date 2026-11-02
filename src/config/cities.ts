@@ -6,6 +6,7 @@ export interface CityData {
   /** Approximate distance from Wetzlar city centre (neighbouring our head office in Aßlar). */
   distanceKm: number;
   region: string;
+  /** Satz auf der Karte in /standorte, nur mit einer echten Angabe zum Ort (Wetzlar: Lager, Aßlar: Firmensitz), sonst leer (SEO-Runde b4) */
   description: string;
   mapQuery: string;
 }
@@ -16,7 +17,7 @@ export const CITIES: CityData[] = [
     name: 'Wetzlar',
     distanceKm: 0,
     region: 'Lahn-Dill-Kreis',
-    description: 'Wetzlar grenzt direkt an unseren Firmensitz in Aßlar. Für Badsanierungen, große Fliesen und Balkonsanierungen sind wir dadurch schnell bei Ihnen vor Ort.',
+    description: 'Wetzlar grenzt an Aßlar, wo unser Firmensitz ist. Unser Lager liegt im Dillfeld in Wetzlar.',
     mapQuery: 'Wetzlar,Hessen,Deutschland',
   },
   {
@@ -24,7 +25,7 @@ export const CITIES: CityData[] = [
     name: 'Gießen',
     distanceKm: 25,
     region: 'Landkreis Gießen',
-    description: 'In Gießen und im Landkreis Gießen verlegen wir Fliesen in Bädern, Wohnräumen und auf Terrassen – vom kostenfreien Vor-Ort-Aufmaß bis zur fertigen Fuge, mit Staubschutz bei bewohnten Sanierungen.',
+    description: '',
     mapQuery: 'Gießen,Hessen,Deutschland',
   },
   {
@@ -32,7 +33,7 @@ export const CITIES: CityData[] = [
     name: 'Marburg',
     distanceKm: 40,
     region: 'Landkreis Marburg-Biedenkopf',
-    description: 'Auch in Marburg und im Landkreis Marburg-Biedenkopf übernehmen wir komplette Badsanierungen und fugenarme Großformat-Verlegungen – mit normgerechter Verbundabdichtung nach DIN 18534.',
+    description: '',
     mapQuery: 'Marburg,Hessen,Deutschland',
   },
   {
@@ -41,7 +42,7 @@ export const CITIES: CityData[] = [
     kurzname: 'Limburg',
     distanceKm: 35,
     region: 'Landkreis Limburg-Weilburg',
-    description: 'In Limburg und dem Landkreis Limburg-Weilburg sanieren wir Bäder, verlegen Wohnraum- und Treppenfliesen und bauen Balkone und Terrassen neu auf – mit transparentem Festpreisangebot.',
+    description: '',
     mapQuery: 'Limburg+an+der+Lahn,Hessen,Deutschland',
   },
   {
@@ -49,7 +50,7 @@ export const CITIES: CityData[] = [
     name: 'Bad Nauheim',
     distanceKm: 40,
     region: 'Wetteraukreis',
-    description: 'Für Bauherren und Eigentümer in Bad Nauheim planen und verlegen wir Fliesen und Naturstein – von der bodengleichen Walk-In-Dusche bis zur großformatigen Wohnraumfläche.',
+    description: '',
     mapQuery: 'Bad+Nauheim,Hessen,Deutschland',
   },
   {
@@ -58,7 +59,7 @@ export const CITIES: CityData[] = [
     kurzname: 'Friedberg',
     distanceKm: 45,
     region: 'Wetteraukreis',
-    description: 'In Friedberg und der Wetterau übernehmen wir Badsanierungen, Fliesenarbeiten im Neubau und die Untergrundvorbereitung, sauber abgestimmt.',
+    description: '',
     mapQuery: 'Friedberg,Hessen,Deutschland',
   },
   {
@@ -66,7 +67,7 @@ export const CITIES: CityData[] = [
     name: 'Butzbach',
     distanceKm: 35,
     region: 'Wetteraukreis',
-    description: 'Butzbach und Umgebung gehören zu unserem Einsatzgebiet: Wir verlegen Fliesen in Bad, Küche, Wohnbereich und auf dem Balkon – mit höchster Präzision aus dem Lahn-Dill-Kreis.',
+    description: '',
     mapQuery: 'Butzbach,Hessen,Deutschland',
   },
   {
@@ -74,7 +75,7 @@ export const CITIES: CityData[] = [
     name: 'Herborn',
     distanceKm: 20,
     region: 'Lahn-Dill-Kreis',
-    description: 'Herborn liegt im Lahn-Dill-Kreis nur eine kurze Fahrt von uns entfernt. Ob Bestandsbad oder Neubau – wir übernehmen Aufmaß, Abdichtung und Verlegung aus einer Hand.',
+    description: '',
     mapQuery: 'Herborn,Hessen,Deutschland',
   },
   {
@@ -82,7 +83,7 @@ export const CITIES: CityData[] = [
     name: 'Dillenburg',
     distanceKm: 25,
     region: 'Lahn-Dill-Kreis',
-    description: 'In Dillenburg und dem Dilltal sanieren wir Bäder schlüsselfertig und verlegen Großformate, Treppen und Terrassenbeläge – mit Staubschutz und besenreiner Übergabe.',
+    description: '',
     mapQuery: 'Dillenburg,Hessen,Deutschland',
   },
   {
@@ -90,7 +91,7 @@ export const CITIES: CityData[] = [
     name: 'Haiger',
     distanceKm: 30,
     region: 'Lahn-Dill-Kreis',
-    description: 'Auch in Haiger und den umliegenden Ortsteilen sind wir für Fliesen- und Badprojekte im Einsatz – von der barrierefreien Dusche bis zur Balkonsanierung.',
+    description: '',
     mapQuery: 'Haiger,Hessen,Deutschland',
   },
   {
@@ -98,7 +99,7 @@ export const CITIES: CityData[] = [
     name: 'Braunfels',
     distanceKm: 10,
     region: 'Lahn-Dill-Kreis',
-    description: 'Braunfels liegt ganz in der Nähe unseres Firmensitzes. Kurze Wege machen Aufmaß, Materialauswahl und Abstimmung vor Ort besonders unkompliziert.',
+    description: '',
     mapQuery: 'Braunfels,Hessen,Deutschland',
   },
   {
@@ -106,7 +107,7 @@ export const CITIES: CityData[] = [
     name: 'Solms',
     distanceKm: 8,
     region: 'Lahn-Dill-Kreis',
-    description: 'Solms gehört zu unseren direkten Nachbargemeinden. Hier sind wir schnell vor Ort – für die komplette Badsanierung ebenso wie für kleinere Fliesenarbeiten.',
+    description: '',
     mapQuery: 'Solms,Hessen,Deutschland',
   },
   {
@@ -114,7 +115,7 @@ export const CITIES: CityData[] = [
     name: 'Aßlar',
     distanceKm: 5,
     region: 'Lahn-Dill-Kreis',
-    description: 'In Aßlar ist unser Firmensitz in der Hohwardstraße 14. Hier sind wir zu Hause – mit persönlicher Beratung durch Inhaber Deniz Tezgel und kürzesten Wegen zu Ihrer Baustelle.',
+    description: 'In Aßlar ist unser Firmensitz, in der Hohwardstraße 14. Von hier kommen wir zu Ihnen.',
     mapQuery: 'Aßlar,Hessen,Deutschland',
   },
 ];

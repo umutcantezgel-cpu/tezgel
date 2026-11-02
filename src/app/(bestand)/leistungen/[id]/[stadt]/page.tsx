@@ -2,8 +2,10 @@
 // Muster der Leistungsseite (/leistungen/[id]). Einstieg mit Pfad (Brotkrumen), Etikett Region und Entfernung, H1,
 // Vorspann und Knöpfen; rechts das Planblatt der Leistung. Danach die Leitachse über Fachkompetenz (Text und drei
 // Kennzahlen an der Fuge), Leistungsspektrum (Liste mit Fugenkreuz), Ablauf (Schrittfolge) und weitere Leistungen vor
-// Ort (Feldraster mit Plänen). Wortlaut, Überschriften, Links, IDs und Lesefolge wie im Bestand; Daten, Metadaten und
-// strukturierte Daten unverändert. Keine Icon-Kacheln, kein Auftritt, kein großer Moment.
+// Ort (Feldraster mit Plänen). Links, IDs und Lesefolge wie im Bestand. Keine Icon-Kacheln, kein Auftritt, kein großer Moment.
+// SEO-Runde b4 (02.11.2026): Wortlaut aus src/inhalte/leistung-ort.ts (nur Faktenblatt, ohne Floskeln, Gedankenstriche und
+// weiche Zusagen, Fachwörter mit Erklärung); die frühere Ortsbeschreibung aus cities.ts entfällt hier, weil sie je Ort
+// Schwerpunkte nannte, die nicht belegt sind. Daten und Metadaten (Titel, Description) unverändert.
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import clsx from 'clsx';
@@ -28,6 +30,8 @@ import Schrittfolge from '@/components/kern/Schrittfolge';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import { linkKlassen } from '@/components/kern/stile';
+import Textmarken from '@/components/kern/Textmarken';
+import { LEISTUNG_ORT, ohneMarken } from '@/inhalte/leistung-ort';
 import type { PlanName } from '@/lib/plaene/vorgaben';
 
 function isHeadquartersCity(city: CityData) {
@@ -43,57 +47,9 @@ function distanceLabel(city: CityData) {
 function distanceSentence(city: CityData) {
   const { headquarters } = COMPANY_DATA;
   if (isHeadquartersCity(city)) return `Unser Firmensitz liegt in der ${headquarters.street} in ${headquarters.city}.`;
-  if (city.distanceKm === 0) return `Direkt neben unserem Firmensitz in ${headquarters.city}.`;
-  return `Ca. ${city.distanceKm} km ab Wetzlar – betreut von unserem Firmensitz in ${headquarters.city}.`;
+  if (city.distanceKm === 0) return `${city.name} liegt direkt neben unserem Firmensitz in ${headquarters.city}.`;
+  return `Bis ${city.name} sind es etwa ${city.distanceKm}\u00a0km ab Wetzlar. Wir kommen von unserem Firmensitz in ${headquarters.city} zu Ihnen.`;
 }
-
-const SERVICE_CITY_INTROS: Record<
-  string,
-  (cityName: string, region: string, authorityName: string, subcategories: string) => { p1: string; p2: string }
-> = {
-  bad: (city, reg, auth, subs) => ({
-    p1: `Ob vollständige Badsanierung oder barrierefreier Umbau im bewohnten Bestand: Als eingetragener Fachbetrieb der ${auth} realisieren wir moderne Bäder, begehbare Walk-In-Duschen und großformatige Fliesenbeläge für Privatkunden, Architekten und Bauherren in ${city} sowie im gesamten ${reg}.`,
-    p2: `Im Mittelpunkt stehen kompromisslose Langlebigkeit, absolute Dichtigkeit und saubere Ausführung mit normgerechter Verbundabdichtung nach DIN 18534 überall dort, wo Wasser einwirkt.${subs ? ` Unsere Schwerpunkte in ${city}: ${subs}.` : ''} Nach dem kostenfreien Termin bei Ihnen vor Ort erhalten Sie ein Festpreisangebot.`
-  }),
-  wohnen: (city, reg, auth, subs) => ({
-    p1: `Für repräsentative Wohnräume, offene Küchen und Flure in ${city} und der Region ${reg} verlegen wir Feinsteinzeug und Natursteinbeläge. Als eingetragener Fachbetrieb der ${auth} schaffen wir schwellenlose Übergänge zwischen Wohnbereichen und ein vollkommen symmetrisches Fugenbild.`,
-    p2: `Wir stimmen den Belagsaufbau auf Ihre Fußbodenheizung ab und prüfen vorher, ob der Estrich trocken genug ist.${subs ? ` Unsere Fachleistungen für ${city}: ${subs}.` : ''} Nach dem Termin bei Ihnen vor Ort in ${city} planen wir Fugen und Verlegemuster und erstellen ein Festpreisangebot.`
-  }),
-  aussen: (city, reg, auth, subs) => ({
-    p1: `Balkone, Terrassen und Eingangsbereiche in ${city} erfordern höchste Witterungsbeständigkeit. Als Fachbetrieb der ${auth} verlegen wir frostsichere 2-cm-Keramikplatten auf Stelzlagern oder im drainierten Kiesbett für Immobilienbesitzer im gesamten ${reg}.`,
-    p2: `Dank durchdachtem Gefälle- und Entwässerungskonzept bleibt Ihr Außenbelag in ${city} auch bei starken Frostwechseln rissfrei, trittsicher und dauerhaft wasserableitend.${subs ? ` Unsere Leistungen in ${city}: ${subs}.` : ''} Bei der Vor-Ort-Besichtigung prüfen wir Untergrund und Entwässerungswege persönlich.`
-  }),
-  untergrund: (city, reg, auth, subs) => ({
-    p1: `Ein solider Untergrund ist die unverzichtbare Basis für jeden dauerhaften Fliesenbelag. Als Fachbetrieb der ${auth} analysieren und sanieren wir Estriche, Altbeläge und Wandflächen für Bauherren und Renovierer in ${city} und Umgebung (${reg}).`,
-    p2: `Mit CM-Restfeuchtemessung, Rissverharzung, Ausgleichsspachtelungen und zugelassenen Entkopplungssystemen schaffen wir die perfekte Grundlage.${subs ? ` Unsere Schwerpunkte in ${city}: ${subs}.` : ''} Im Feuchtbereich dichten wir strikt nach DIN 18534 ab – verlässlich geprüft vor Ort in ${city}.`
-  })
-};
-
-const SERVICE_CITY_STEPS: Record<
-  string,
-  (cityName: string) => Array<{ step: string; subtitle: string; title: string; description: string }>
-> = {
-  bad: (city) => [
-    { step: '01', subtitle: 'Bedarf & Beratung', title: 'Vor-Ort-Aufmaß im Bad', description: `Deniz Tezgel prüft Ihr Bad in ${city} persönlich: Raummaße, Wandaufbau, Gefälle zur Entwässerung und Leitungsanschlüsse.` },
-    { step: '02', subtitle: 'Design & Fliesen', title: 'Fliesenformat & Verlegeplan', description: `Gemeinsame Auswahl von Großformaten, rutschhemmenden Bodenbelägen und Fugenrastern, abgestimmt auf Ihr Badkonzept in ${city}.` },
-    { step: '03', subtitle: 'Handwerksqualität', title: 'Abdichtung & Verlegung', description: `DIN 18534 Verbundabdichtung, millimetergenaue Verlegung mit Nivelliersystem und staubgeschützte Übergabe in ${city}.` }
-  ],
-  wohnen: (city) => [
-    { step: '01', subtitle: 'Vor-Ort-Check', title: 'Aufmaß & Estrichprüfung', description: `Wir begutachten Estrich, Raummaße und Fugenachsen vor Ort in ${city} und prüfen die Belegreife für Fußbodenheizungen.` },
-    { step: '02', subtitle: 'Materialauswahl', title: 'Feinsteinzeug & Fugenbild', description: `Auswahl der gewünschten Großformate und Abstimmung des Fugenverlaufs für ein harmonisches Raumgefühl in ${city}.` },
-    { step: '03', subtitle: 'Verlegearbeit', title: 'Präzisionsverlegung', description: `Planschliff und Verlegung im Dünnbettverfahren mit sauberen Sockelabschlüssen und besenreiner Übergabe in ${city}.` }
-  ],
-  aussen: (city) => [
-    { step: '01', subtitle: 'Planung Außen', title: 'Bestandsaufnahme Außen', description: `Begutachtung Ihres Balkons oder Ihrer Terrasse in ${city}: Gefälle, Wasserableitung und Untergrundaufbau.` },
-    { step: '02', subtitle: 'Belagskonzept', title: 'Stelzlager & Plattenwahl', description: `Auswahl robuster, frostsicherer 2-cm-Keramikplatten und Festlegung des Entwässerungs- bzw. Stelzlagersystems für ${city}.` },
-    { step: '03', subtitle: 'Ausführung', title: 'Wetterfeste Montage', description: `Fachgerechter Aufbau mit sauberem Gefälle, rissfreier Plattenausrichtung und dauerhafter Witterungsbeständigkeit in ${city}.` }
-  ],
-  untergrund: (city) => [
-    { step: '01', subtitle: 'Diagnose', title: 'CM-Restfeuchte & Ebenheit', description: `Messung der Estrichfeuchte mit dem CM-Gerät, Klopfprobe und Überprüfung der Ebenheitstoleranzen vor Ort in ${city}.` },
-    { step: '02', subtitle: 'Vorbereitung', title: 'Ausgleich & Entkopplung', description: `Fräsen, Grundieren, Ausgleichsspachtelung und Verlegung von Entkopplungsmatten für schadensfreie Beläge in ${city}.` },
-    { step: '03', subtitle: 'Abdichtung', title: 'DIN 18534 Norm-Abdichtung', description: `Einbau zugelassener Dichtmanschetten, Dichtbänder und Verbundabdichtungen vor dem Fliesenauftrag in ${city}.` }
-  ]
-};
 
 export function generateStaticParams() {
   const params: { id: string; stadt: string }[] = [];
@@ -155,9 +111,9 @@ export default async function ServiceCityPage({
   const pageUrl = `${SITE_URL}/leistungen/${service.id}/${city.slug}`;
   const { contact, authority } = COMPANY_DATA;
 
-  const subcategoryNames = (service.subcategories ?? [])
-    .map((s) => s.name)
-    .join(', ');
+  // Texte der Leistung (b4); ohne Eintrag gibt es die Seite nicht (generateStaticParams nimmt nur SERVICES)
+  const text = LEISTUNG_ORT[service.id];
+  if (!text) notFound();
   const otherServices = SERVICES.filter((s) => s.id !== service.id);
 
   const breadcrumbs = [
@@ -178,10 +134,10 @@ export default async function ServiceCityPage({
     buildServiceNode({
       name: `${displayName} in ${city.name}`,
       serviceType: displayName,
-      description: `${service.shortDescription} – fachgerecht ausgeführt in ${city.name} und Umgebung.`,
+      description: `${text.vorspann} Für ${city.name} und den ${city.region}.`,
       url: pageUrl,
       areaServedCity: city.name,
-      offers: (service.features || []).map((feat: string) => ({ name: feat })),
+      offers: text.liste.map((punkt) => ({ name: ohneMarken(punkt) })),
       image: service.heroImage ?? undefined,
     }),
   ]);
@@ -195,17 +151,9 @@ export default async function ServiceCityPage({
           ? `Direkt neben unserem Firmensitz in ${COMPANY_DATA.headquarters.city}`
           : 'Entfernung ab Wetzlar',
     },
-    { value: 'DIN 18534', label: 'Normgerechte Verbundabdichtung' },
+    { value: text.kennzahl.wert, label: text.kennzahl.name },
     { value: authority.shortName, label: 'Eingetragener Fachbetrieb' },
   ];
-
-  const currentIntro = (SERVICE_CITY_INTROS[service.id] || SERVICE_CITY_INTROS.bad)(
-    city.name,
-    city.region,
-    authority.name,
-    subcategoryNames
-  );
-  const currentSteps = (SERVICE_CITY_STEPS[service.id] || SERVICE_CITY_STEPS.bad)(city.name);
 
   return (
     <>
@@ -258,8 +206,8 @@ export default async function ServiceCityPage({
         }
         vorspann={
           <p>
-            {COMPANY_DATA.legalName} ist Ihr Fachbetrieb für {displayName} in {city.name} und im {city.region}.{' '}
-            {service.shortDescription}. {distanceSentence(city)}
+            {COMPANY_DATA.legalName} ist Ihr Fachbetrieb für {text.imSatz} in {city.name} und im {city.region}. {text.vorspann}{' '}
+            {distanceSentence(city)}
           </p>
         }
         aktionen={
@@ -273,7 +221,8 @@ export default async function ServiceCityPage({
           </>
         }
         rand={
-          <Planblatt felder={planfelder(displayName, service.id as PlanName)}>
+          // Name im Planblatt ohne Fachwort (b4): „Untergrund & Abdichtung“ stand dort als erstes Vorkommen ohne Erklärung
+          <Planblatt felder={planfelder(text.link, service.id as PlanName)}>
             <Verlegeplan plan={service.id as PlanName} ohneAchse bemassung={false} interaktiv />
           </Planblatt>
         }
@@ -286,14 +235,16 @@ export default async function ServiceCityPage({
           leitachse
           spaet
           flaeche="fliese"
-          etikett={<>HWK Fachbetrieb &middot; {authority.shortName}</>}
-          titel={<>Fachkompetenz &amp; Präzision für {city.name}</>}
+          etikett={<>Fachbetrieb &middot; {authority.shortName}</>}
+          titel={text.titel(city.name)}
         >
-          <div className="grid gap-6 font-text text-fs-3 text-tinte-2 lg:grid-cols-2 lg:gap-x-12">
-            <p>
-              {currentIntro.p1} {city.description}
-            </p>
-            <p>{currentIntro.p2}</p>
+          {/* zwei oder drei Absätze (b4) ab lg in zwei Spalten: ganze Absätze, der Browser gleicht die Spalten aus, Lesefolge wie im DOM */}
+          <div className="space-y-6 font-text text-fs-3 text-tinte-2 lg:columns-2 lg:gap-x-12">
+            {text.absaetze(city.name).map((absatz) => (
+              <p key={absatz.slice(0, 24)} className="break-inside-avoid">
+                <Textmarken text={absatz} />
+              </p>
+            ))}
           </div>
           <Feldraster spalten={3} className="mt-12">
             {stats.map(({ value, label }) => (
@@ -306,22 +257,23 @@ export default async function ServiceCityPage({
         </Abschnitt>
 
         {/* 3. LEISTUNGSSPEKTRUM: Kopf seitlich, rechts die Liste an der Fuge (Fugenkreuz als Marke) */}
-        {service.features && service.features.length > 0 && (
+        {text.liste.length > 0 && (
           <Abschnitt
             titelId="leistungsspektrum"
             leitachse
             spaet
             kopf="seitlich"
-            titel={<>Detailliertes Leistungsspektrum in {city.name}</>}
-            einleitung={<p>Handwerkliche Präzision für dauerhaft schöne, dichte und pflegeleichte Beläge.</p>}
+            titel={<>Das machen wir in {city.name}</>}
           >
             <ul className="border-b border-fuge">
-              {service.features.map((feature: string) => (
-                <li key={feature} className="flex gap-3 border-t border-fuge py-4 font-text text-fs-3 text-tinte">
+              {text.liste.map((punkt) => (
+                <li key={punkt} className="flex gap-3 border-t border-fuge py-4 font-text text-fs-3 text-tinte">
                   <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich">
                     <Fugenkreuz className="size-3" />
                   </span>
-                  <span className="min-w-0">{feature}</span>
+                  <span className="min-w-0">
+                    <Textmarken text={punkt} />
+                  </span>
                 </li>
               ))}
             </ul>
@@ -334,20 +286,20 @@ export default async function ServiceCityPage({
           leitachse
           spaet
           flaeche="fliese"
-          etikett="Transparenter Ablauf"
-          titel={<>Schritt für Schritt zu Ihrem Projekterfolg in {city.name}</>}
-          einleitung={<p>Von der ersten Kontaktaufnahme bis zur Endabnahme transparent und strukturiert.</p>}
+          etikett="Ablauf"
+          titel={<>So läuft es in {city.name} ab</>}
+          einleitung={<p>Drei Schritte vom Termin bei Ihnen bis zur Abnahme.</p>}
         >
           <Schrittfolge
             ausrichtung="waagrecht"
             untertitelOben
             nummerStumm
             titelEbene="div"
-            schritte={currentSteps.map((step) => ({
-              nummer: step.step,
-              untertitel: step.subtitle,
-              titel: step.title,
-              text: step.description,
+            schritte={text.schritte(city.name).map((schritt, i) => ({
+              nummer: String(i + 1).padStart(2, '0'),
+              untertitel: schritt.untertitel,
+              titel: schritt.titel,
+              text: schritt.text,
             }))}
           />
         </Abschnitt>
@@ -358,7 +310,7 @@ export default async function ServiceCityPage({
           leitachse
           spaet
           titel={<>Weitere Leistungen in {city.name}</>}
-          einleitung={<p>Alle Fliesengewerke aus einer Hand – vom Bad bis zur Terrasse.</p>}
+          einleitung={<p>Wir kommen auch für andere Arbeiten zu Ihnen nach {city.name}.</p>}
         >
           <Feldraster spalten={otherServices.length + 1 === 4 ? 4 : 3}>
             {otherServices.map((other) => (
@@ -368,10 +320,10 @@ export default async function ServiceCityPage({
                 </div>
                 <Link
                   href={`/leistungen/${other.id}/${city.slug}`}
-                  aria-label={`${other.name} in ${city.name} ansehen`}
+                  aria-label={`${LEISTUNG_ORT[other.id]?.link ?? other.name} in ${city.name} ansehen`}
                   className={clsx(linkKlassen, 'mt-auto inline-flex items-center gap-2 font-text text-fs-3 text-tinte')}
                 >
-                  {other.name} in {city.name}
+                  {LEISTUNG_ORT[other.id]?.link ?? other.name} in {city.name}
                   <Icon name="pfeil-rechts" groesse={4} />
                 </Link>
               </Feld>
@@ -391,8 +343,8 @@ export default async function ServiceCityPage({
 
       {/* Abschluss mit Schnellanfrage (Quelle je Leistung und Ort unverändert) */}
       <FinalCTA
-        headline={`${displayName} in ${city.name}: Jetzt unverbindlich beraten lassen.`}
-        subtitle={`Kostenfreies Vor-Ort-Aufmaß in ${city.name} • Festpreisangebot • HWK-Fachbetrieb`}
+        headline={text.abschluss(city.name)}
+        subtitle={`Kostenfreier Termin in ${city.name} • Festpreisangebot • Fachbetrieb der ${authority.shortName}`}
         buttonText={`Jetzt Beratung für ${city.name} anfordern`}
         serviceContext={`${displayName} · ${city.name}`}
         showQuickForm={true}
