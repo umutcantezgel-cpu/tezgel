@@ -2,7 +2,8 @@
 
 // Terminkalender (E2-ORCH-09, Arbeitsansicht): Tage und Zeitfenster als Auswahlfelder an der Fuge, Formular mit
 // verknüpften Labels. Logik aus useTerminKalender (F-07, gemeinsam mit der Kern-Ansicht): Tage erst im Browser und je
-// Kalender festgehalten (V-02, P4-05d). Nutzlast und getestete Namen unverändert.
+// Kalender festgehalten (V-02, P4-05d). Getestete Namen unverändert; die Nutzlast trägt seit der SEO-Runde (K01, K02)
+// Wunschtag, Zeitfenster und Thema in den Feldern der API-Prüfung und die Ausfülldauer `_d` (terminNutzlast im Hook).
 import React from 'react';
 import Link from 'next/link';
 import Icon from '@/components/icons/Icon';

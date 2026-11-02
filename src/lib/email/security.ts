@@ -152,11 +152,24 @@ export function checkRecipientRateLimit(
 /**
  * Detects automated fast-bots: A human requires at least 1500ms to interact and submit.
  * Submissions faster than 1500ms from form initialization are treated as bot attempts.
+ *
+ * SEO-Runde K01: Vorrang hat die im Browser gemessene Ausfülldauer (`_d`, performance.now(), siehe
+ * src/lib/formulare/ausfuelldauer.ts); sie hängt nicht an der Uhr des Geräts. Alle Formulare mit Zeitsperre senden `_d`.
+ * Nur Seiten, die noch mit dem Stand vor dieser Änderung geöffnet sind, senden allein `_t`. Für sie gilt als zu schnell
+ * nur noch eine Dauer von 0 bis unter `minDelayMs`; ein Tab, der länger als einen Tag offen stand, oder eine Geräteuhr,
+ * die weiter vorgeht als die Ausfülldauer, verwirft nichts mehr. Ein Rest bleibt für diese alten Seiten: Geht die Uhr
+ * knapp weniger vor, als das Ausfüllen dauerte, kann die Rechnung in 0 bis 1,5 s fallen.
  */
 export function checkFastBot(
   submissionTime: number | string | undefined,
-  minDelayMs = 1500
+  minDelayMs = 1500,
+  fillDurationMs?: unknown
 ): { isBot: boolean; elapsedMs?: number } {
+  const dauer = typeof fillDurationMs === 'string' && fillDurationMs.trim() !== '' ? Number(fillDurationMs) : fillDurationMs;
+  if (typeof dauer === 'number' && Number.isFinite(dauer) && dauer >= 0) {
+    return { isBot: dauer < minDelayMs, elapsedMs: Math.round(dauer) };
+  }
+
   if (!submissionTime) {
     // If no timestamp was supplied, don't hard reject to support legacy forms, but flag
     return { isBot: false };
@@ -168,12 +181,19 @@ export function checkFastBot(
   const now = Date.now();
   const elapsed = now - startTime;
 
-  // Bot submitted too fast (under 1.5s) or timestamp from the distant future/past (>24 hours)
-  if (elapsed < minDelayMs || elapsed > 86_400_000) {
+  // Zu schnell nur bei einer Dauer von 0 bis unter minDelayMs; Uhrabweichung und alte Tabs zählen nicht als Bot (K01).
+  if (elapsed >= 0 && elapsed < minDelayMs) {
     return { isBot: true, elapsedMs: elapsed };
   }
 
   return { isBot: false, elapsedMs: elapsed };
+}
+
+/**
+ * SEO-Runde K01: Zeitsperre für POST /api/anfrage aus dem Rohkörper (`_d` vor `_t`, siehe checkFastBot).
+ */
+export function pruefeZeitsperre(body: Record<string, unknown>, minDelayMs = 1500): { isBot: boolean; elapsedMs?: number } {
+  return checkFastBot(body._t as number | string | undefined, minDelayMs, body._d);
 }
 
 /**

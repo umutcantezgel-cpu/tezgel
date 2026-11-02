@@ -8,6 +8,7 @@ import {
   checkIpRateLimit,
   checkRecipientRateLimit,
   checkFastBot,
+  pruefeZeitsperre,
   isHoneypotTriggered
 } from '../src/lib/email/security.ts';
 
@@ -448,4 +449,65 @@ test('21. Absicherung: /api/anfrage antwortet auf Fehlschlag mit 503 und Hinweis
   const ok = anfrageAntwort({ success: true, referenceId: 'TEZ-26-ABCD', teamSent: true, customerSent: true, message: 'Ihre Anfrage wurde erfolgreich an Fliesenverlegung Tezgel übermittelt.' });
   assert.equal(ok.status, 200);
   assert.deepEqual(ok.body, { success: true, referenceId: 'TEZ-26-ABCD', message: 'Ihre Anfrage wurde erfolgreich an Fliesenverlegung Tezgel übermittelt.' });
+});
+
+// --- SEO-Runde K01 und K02 (docs/seo/KONTEXT.md, Abschnitt 5) ---
+test('22. Zeitsperre (K01): die im Browser gemessene Ausfülldauer geht vor; Uhrabweichung und alte Tabs verwerfen keine Anfrage', () => {
+  const jetzt = Date.now();
+  // Ausfülldauer `_d` aus dem Browser
+  assert.equal(checkFastBot(undefined, 1500, 0).isBot, true);
+  assert.equal(checkFastBot(undefined, 1500, 800).isBot, true);
+  assert.equal(checkFastBot(undefined, 1500, 1500).isBot, false);
+  assert.equal(checkFastBot(undefined, 1500, 42000).isBot, false);
+  assert.equal(checkFastBot(undefined, 1500, '2500').isBot, false);
+  // `_d` geht vor `_t`, in beide Richtungen
+  assert.equal(checkFastBot(jetzt + 60_000, 1500, 9000).isBot, false);
+  assert.equal(checkFastBot(jetzt - 10_000, 1500, 300).isBot, true);
+  // ungültiges oder leeres `_d` fällt auf `_t` zurück
+  assert.equal(checkFastBot(jetzt - 300, 1500, -5).isBot, true);
+  assert.equal(checkFastBot(jetzt - 300, 1500, null).isBot, true);
+  assert.equal(checkFastBot(jetzt - 3500, 1500, '').isBot, false);
+  assert.equal(checkFastBot(jetzt - 3500, 1500, 'abc').isBot, false);
+  // ältere Seiten ohne `_d`: Geräteuhr eine Minute vor und Tab zwei Tage offen gelten nicht mehr als Bot
+  assert.equal(checkFastBot(jetzt + 60_000, 1500).isBot, false);
+  assert.equal(checkFastBot(jetzt - 2 * 86_400_000, 1500).isBot, false);
+  // zu schnell bleibt zu schnell, ohne Angabe gibt es keine Sperre
+  assert.equal(checkFastBot(jetzt - 300, 1500).isBot, true);
+  assert.equal(checkFastBot(undefined, 1500).isBot, false);
+  // die Route liest beide Felder aus dem Rohkörper (pruefeZeitsperre)
+  assert.equal(pruefeZeitsperre({ _d: 4000, _t: jetzt + 60_000 }).isBot, false);
+  assert.equal(pruefeZeitsperre({ _d: 300, _t: jetzt - 10_000 }).isBot, true);
+  assert.equal(pruefeZeitsperre({ _t: jetzt - 2 * 86_400_000 }).isBot, false);
+  assert.equal(pruefeZeitsperre({}).isBot, false);
+});
+
+test('23. Terminkalender (K02): Wunschtag, Zeitfenster und Thema kommen durch die Prüfung und in die Team-Mail', async () => {
+  const { wunschtagText, zeitfensterText, terminNutzlast } = await import('../src/lib/formulare/useTerminKalender.ts');
+  assert.equal(wunschtagText('2026-11-05'), 'Donnerstag, 05.11.2026');
+  assert.equal(zeitfensterText('08:30'), '08:30 bis 10:00 Uhr (Morgens)');
+  assert.equal(zeitfensterText('07:00'), '07:00');
+  // die echte Nutzlast des Kalenders
+  const payload = terminNutzlast({
+    selectedDate: '2026-11-05',
+    selectedTime: '08:30',
+    initialServiceType: 'Kostenfreies Vor-Ort-Aufmaß & Beratung',
+    contactData: { name: ' Erika Musterfrau ', phone: '0160 98765432', email: '', zipCity: '', notes: '', privacyConsent: true, websiteUrl: '' },
+    dauer: 4200,
+  });
+  assert.equal(payload._d, 4200);
+  assert.equal('_t' in payload, false);
+  assert.equal('preferredDate' in payload.terminDetails, false);
+  const validation = validateInquiryPayload(payload);
+  assert.equal(validation.success, true);
+  assert.equal(validation.data?.contact.name, 'Erika Musterfrau');
+  assert.equal(validation.data?.terminDetails?.date, '2026-11-05');
+  assert.equal(validation.data?.terminDetails?.formattedDate, 'Donnerstag, 05.11.2026');
+  assert.equal(validation.data?.terminDetails?.timeSlotLabel, '08:30 bis 10:00 Uhr (Morgens)');
+  assert.equal(validation.data?.terminDetails?.topicLabel, 'Kostenfreies Vor-Ort-Aufmaß & Beratung');
+  const text = generateTeamEmailText(validation.data, 'TEZ-26-TEST');
+  assert.match(text, /Donnerstag, 05\.11\.2026/);
+  assert.match(text, /08:30 bis 10:00 Uhr/);
+  // So ging es bisher verloren: `preferredDate` kennt die Prüfung nicht
+  const alt = validateInquiryPayload({ ...payload, terminDetails: { preferredDate: '2026-11-05', timeSlot: '08:30' } });
+  assert.equal(alt.data?.terminDetails?.date, undefined);
 });

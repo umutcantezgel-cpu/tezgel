@@ -6,7 +6,7 @@ import {
   validateInquiryPayload,
   checkIpRateLimit,
   getClientIp,
-  checkFastBot,
+  pruefeZeitsperre,
   isHoneypotTriggered,
   anfrageAntwort,
   FEHLER_HINWEIS
@@ -63,7 +63,8 @@ export async function POST(request: NextRequest) {
     }
 
     // 3. Multi-stage Bot Detection: Fast-bot timing barrier (<1500ms)
-    const botCheck = checkFastBot(body._t as number | string | undefined, 1500);
+    // SEO-Runde K01: die im Browser gemessene Ausfülldauer `_d` geht vor dem Zeitstempel `_t` (security.ts).
+    const botCheck = pruefeZeitsperre(body, 1500);
     if (botCheck.isBot) {
       return NextResponse.json(
         { success: true, referenceId: 'TEZ-BOT-IGN', message: 'Anfrage erhalten.' },

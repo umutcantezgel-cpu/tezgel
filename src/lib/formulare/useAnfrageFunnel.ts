@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { COMPANY_DATA } from '@/config/company';
 import { openWhatsApp } from '@/lib/whatsapp';
+import { messbeginn, ausfuelldauer } from './ausfuelldauer';
 
 export const PROJECT_TYPES = [
   {
@@ -65,6 +66,7 @@ export function useAnfrageFunnel() {
   const [notes, setNotes] = useState('');
   const [honeypot, setHoneypot] = useState('');
   const [formInitTime] = useState<number>(() => Date.now());
+  const [messStart] = useState<number>(() => messbeginn()); // SEO-Runde K01
   const [status, setStatus] = useState<SubmissionStatus>('idle');
   const [errorMessage, setErrorMessage] = useState('');
   const [referenceId, setReferenceId] = useState('');
@@ -123,7 +125,8 @@ export function useAnfrageFunnel() {
           timing: timing || undefined,
           notes: notes || undefined,
           honeypot: honeypot || undefined,
-          _t: formInitTime
+          _t: formInitTime,
+          _d: ausfuelldauer(messStart)
         })
       });
 

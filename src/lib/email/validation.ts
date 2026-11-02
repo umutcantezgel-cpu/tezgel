@@ -167,6 +167,8 @@ export const InquirySubmissionSchema = z.object({
   _t: z
     .union([z.number(), z.string()])
     .optional(),
+  // SEO-Runde K01: Die im Browser gemessene Ausfülldauer `_d` steht bewusst nicht im Schema. route.ts liest sie aus dem
+  // Rohkörper (pruefeZeitsperre in security.ts); so führt ein ungewohnter Wert nie zu 400.
   // Specific details
   badDetails: BadDetailsSchema,
   fliesenDetails: FliesenDetailsSchema,

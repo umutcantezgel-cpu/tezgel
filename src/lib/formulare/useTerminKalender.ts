@@ -1,8 +1,11 @@
 // Logik des Terminkalenders (F-07, BookingCalendar) – wörtlich aus der Komponente verschoben (P4-05c, Vorbild P4-05a).
-// Ohne Markup; Bestand und Kern-Ansicht nutzen denselben Hook. Keine Logikänderung (G9): auch die bekannten Lücken
-// (Tage aus `new Date()` beim Rendern in der Zeitzone des Rechners, `_t` als feste Vergangenheit, `preferredDate` und
-// `serviceType` verwirft die Prüfung der API; intern I-12, I-18) bleiben, wie sie sind.
+// Ohne Markup; Bestand und Kern-Ansicht nutzen denselben Hook. Bekannte Lücke: Tage aus `new Date()` beim Rendern in der
+// Zeitzone des Rechners (intern I-12). SEO-Runde K01 und K02 (docs/seo/KONTEXT.md, Abschnitt 5): Statt `_t` als feste
+// Vergangenheit (bei vorgehender Geräteuhr galt die Anfrage als Bot und ging verloren) sendet der Kalender die gemessene
+// Ausfülldauer `_d`; Wunschtag, Zeitfenster und Thema gehen in den Feldern, die die Prüfung der API kennt
+// (`date`, `formattedDate`, `timeSlot`, `timeSlotLabel`, `topicLabel`), statt verworfen zu werden.
 import React, { useState, useMemo, useRef, useSyncExternalStore } from 'react';
+import { messbeginn, ausfuelldauer } from './ausfuelldauer';
 
 export const AVAILABLE_SLOTS = [
   { time: '08:30', label: '08:30 – 10:00 Uhr (Morgens)' },
@@ -23,6 +26,51 @@ function tagesKennung(): string {
   return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
 }
 const keinTag = (): null => null;
+
+// SEO-Runde K02: Wunschtag und Zeitfenster als Text für die Mail („Donnerstag, 05.11.2026“, „08:30 bis 10:00 Uhr (Morgens)“).
+export function wunschtagText(dateStr: string): string {
+  const [jahr, monat, tag] = dateStr.split('-').map(Number);
+  if (!jahr || !monat || !tag) return dateStr;
+  return new Date(jahr, monat - 1, tag, 12).toLocaleDateString('de-DE', {
+    weekday: 'long',
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+  });
+}
+export function zeitfensterText(time: string): string {
+  const slot = AVAILABLE_SLOTS.find((s) => s.time === time);
+  return slot ? slot.label.replace(' – ', ' bis ') : time;
+}
+
+export type TerminKontakt = { name: string; phone: string; email: string; zipCity: string; notes: string; privacyConsent: boolean; websiteUrl: string };
+
+// SEO-Runde K01 und K02: Nutzlast für POST /api/anfrage als reine Funktion, damit Test 23 die echte Nutzlast prüft.
+export function terminNutzlast(eingaben: { selectedDate: string; selectedTime: string; initialServiceType: string; contactData: TerminKontakt; dauer: number }) {
+  const { selectedDate, selectedTime, initialServiceType, contactData, dauer } = eingaben;
+  return {
+    inquiryType: 'termin',
+    projectType: 'termin',
+    projectTitle: `Vor-Ort-Termin: ${initialServiceType}`,
+    terminDetails: {
+      date: selectedDate,
+      formattedDate: wunschtagText(selectedDate),
+      timeSlot: selectedTime,
+      timeSlotLabel: zeitfensterText(selectedTime),
+      topicLabel: initialServiceType,
+    },
+    contact: {
+      name: contactData.name.trim(),
+      phone: contactData.phone.trim(),
+      email: contactData.email.trim() || undefined,
+      zipCity: contactData.zipCity.trim() || undefined,
+    },
+    notes: contactData.notes.trim() || undefined,
+    privacyConsent: contactData.privacyConsent,
+    honeypot: contactData.websiteUrl,
+    _d: dauer,
+  };
+}
 const ohneAbo = () => () => {};
 
 export function useTerminKalender({ initialServiceType, onBookingConfirmed }: TerminKalenderEingaben) {
@@ -34,6 +82,7 @@ export function useTerminKalender({ initialServiceType, onBookingConfirmed }: Te
   const [isConfirmed, setIsConfirmed] = useState(false);
   const [referenceId, setReferenceId] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [messStart] = useState<number>(() => messbeginn()); // SEO-Runde K01
 
   const [contactData, setContactData] = useState({
     name: '',
@@ -112,26 +161,9 @@ export function useTerminKalender({ initialServiceType, onBookingConfirmed }: Te
       const res = await fetch('/api/anfrage', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          inquiryType: 'termin',
-          projectType: 'termin',
-          projectTitle: `Vor-Ort-Termin: ${initialServiceType}`,
-          terminDetails: {
-            preferredDate: selectedDate,
-            timeSlot: selectedTime,
-            serviceType: initialServiceType,
-          },
-          contact: {
-            name: contactData.name.trim(),
-            phone: contactData.phone.trim(),
-            email: contactData.email.trim() || undefined,
-            zipCity: contactData.zipCity.trim() || undefined,
-          },
-          notes: contactData.notes.trim() || undefined,
-          privacyConsent: contactData.privacyConsent,
-          honeypot: contactData.websiteUrl,
-          _t: Date.now() - 3000,
-        }),
+        body: JSON.stringify(
+          terminNutzlast({ selectedDate, selectedTime, initialServiceType, contactData, dauer: ausfuelldauer(messStart) })
+        ),
       });
 
       const data = await res.json();

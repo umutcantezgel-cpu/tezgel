@@ -13,6 +13,7 @@ import {
   type RoomSizeType,
 } from "@/components/pricing/pricing.constants";
 import { triggerHaptic } from "@/lib/haptics";
+import { messbeginn, ausfuelldauer } from "./ausfuelldauer";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
@@ -37,6 +38,7 @@ export function usePreisrechner() {
   // 3. Status & Anti-Bot
   const [honeypot, setHoneypot] = useState<string>("");
   const [formInitTime] = useState<number>(() => Date.now());
+  const [messStart] = useState<number>(() => messbeginn()); // SEO-Runde K01
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [referenceId, setReferenceId] = useState<string>("");
@@ -121,6 +123,7 @@ export function usePreisrechner() {
           notes: fullSituationDescription,
           honeypot: honeypot || undefined,
           _t: formInitTime,
+          _d: ausfuelldauer(messStart),
         }),
       });
 

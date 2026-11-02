@@ -2,6 +2,7 @@
 // Ohne Markup; Bestand und Kern-Ansicht nutzen denselben Hook.
 import React, { useState } from 'react';
 import { COMPANY_DATA } from '@/config/company';
+import { messbeginn, ausfuelldauer } from './ausfuelldauer';
 
 export function useSchnellanfrage({ sourceTag, onSuccess }: { sourceTag: string; onSuccess?: () => void }) {
   const [formData, setFormData] = useState({
@@ -15,6 +16,7 @@ export function useSchnellanfrage({ sourceTag, onSuccess }: { sourceTag: string;
   });
 
   const [mountTime] = useState<number>(() => Date.now());
+  const [messStart] = useState<number>(() => messbeginn()); // SEO-Runde K01
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
   const [referenceId, setReferenceId] = useState('');
@@ -56,6 +58,7 @@ export function useSchnellanfrage({ sourceTag, onSuccess }: { sourceTag: string;
           privacyConsent: formData.privacyConsent,
           honeypot: formData.websiteUrl,
           _t: mountTime,
+          _d: ausfuelldauer(messStart),
           source: sourceTag,
         }),
       });

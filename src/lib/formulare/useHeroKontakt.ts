@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { COMPANY_DATA } from '@/config/company';
 import { buildWhatsAppUrl, openWhatsApp, isMobileDevice } from '@/lib/whatsapp';
+import { messbeginn, ausfuelldauer } from './ausfuelldauer';
 
 export const PROJECT_OPTIONS = [
     { id: 'bad', label: 'Badsanierung' },
@@ -21,6 +22,7 @@ export function useHeroKontakt() {
     const [notes, setNotes] = useState('');
     const [honeypot, setHoneypot] = useState('');
     const [formInitTime] = useState<number>(() => Date.now());
+    const [messStart] = useState<number>(() => messbeginn()); // SEO-Runde K01
     const [referenceId, setReferenceId] = useState('');
     const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState('');
@@ -74,7 +76,8 @@ export function useHeroKontakt() {
                     // Fläche und Zeitraum fragt dieses Formular nicht ab; es schickt keine Werte, die niemand gewählt hat (Abnahme E4-W1)
                     notes: notes.trim() || undefined,
                     honeypot: honeypot || undefined,
-                    _t: formInitTime
+                    _t: formInitTime,
+                    _d: ausfuelldauer(messStart)
                 })
             });
 
