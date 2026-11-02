@@ -1,6 +1,8 @@
 export interface CityData {
   slug: string;
   name: string;
+  /** kurze Form für Titel, wenn der volle Name sie über 58 Zeichen bringt (Ortsseite, Leistung × Ort) */
+  kurzname?: string;
   /** Approximate distance from Wetzlar city centre (neighbouring our head office in Aßlar). */
   distanceKm: number;
   region: string;
@@ -36,6 +38,7 @@ export const CITIES: CityData[] = [
   {
     slug: 'limburg',
     name: 'Limburg an der Lahn',
+    kurzname: 'Limburg',
     distanceKm: 35,
     region: 'Landkreis Limburg-Weilburg',
     description: 'In Limburg und dem Landkreis Limburg-Weilburg sanieren wir Bäder, verlegen Wohnraum- und Treppenfliesen und bauen Balkone und Terrassen neu auf – mit transparentem Festpreisangebot.',
@@ -52,6 +55,7 @@ export const CITIES: CityData[] = [
   {
     slug: 'friedberg',
     name: 'Friedberg (Hessen)',
+    kurzname: 'Friedberg',
     distanceKm: 45,
     region: 'Wetteraukreis',
     description: 'In Friedberg und der Wetterau übernehmen wir Badsanierungen, Fliesenarbeiten im Neubau und die Untergrundvorbereitung, sauber abgestimmt.',

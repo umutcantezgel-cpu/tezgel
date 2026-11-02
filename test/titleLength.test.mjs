@@ -1,8 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { generatePageMetadata } from '../src/lib/metadata.ts';
 import { CITIES } from '../src/config/cities.ts';
 import { SERVICES } from '../src/config/services.js';
+import { leistungOrtTitel } from '../src/lib/seo/titel.ts';
 
 test('1. Title Budget: Long raw titles are strictly clamped to <= 58 chars (SERP Budget)', () => {
   const meta = generatePageMetadata({
@@ -87,4 +91,84 @@ test('5. Markenzusatz (SEO-Runde T10): Auffüllung nur mit „| Fliesenverlegung
     assert.doesNotMatch(t, /Fachbetrieb Tezgel|Fliesen Tezgel|Hessen|[–—]/, t);
     if (/Tezgel/.test(t)) assert.match(t, /( \| Fliesenverlegung Tezgel| · Tezgel)$/, t);
   }
+});
+
+const absoluterTitel = (m) => (typeof m.title === 'object' && m.title && 'absolute' in m.title ? String(m.title.absolute) : String(m.title));
+
+test('7. Leistung × Ort (SEO-Runde): alle Leistungen in allen Orten mit Titel von 45 bis 58 Zeichen und „Tezgel“', () => {
+  for (const service of SERVICES) {
+    for (const city of CITIES) {
+      const titel = absoluterTitel(generatePageMetadata({ title: leistungOrtTitel(service, city), description: 'x', path: `/leistungen/${service.id}/${city.slug}` }));
+      assert.ok(titel.length >= 45 && titel.length <= 58 && titel.includes('Tezgel'), `${service.id} × ${city.slug}: „${titel}“ (${titel.length})`);
+    }
+  }
+});
+
+// SEO-Runde (Gesamtprobe, docs/seo/arbeit/plan-p2-bis-p8.md, Abschnitt 7): Die Hausregeln gelten für jede gebaute Seite,
+// auch für Seiten mit noindex. Ausgenommen ist nur die interne Fehlerseite von Next (/_global-error, ohne eigene Adresse).
+// Der Test prüft nur einen Bau, der jünger ist als die Quellen; sonst läuft er beim nächsten npm test nach npm run build.
+// Gezählt werden auch Ordner (gelöschte oder umbenannte Dateien); lstat, damit ein kaputter Link den Lauf nicht abbricht.
+const WURZEL = fileURLToPath(new URL('..', import.meta.url));
+const APP = path.join(WURZEL, '.next/server/app');
+function neuesteAenderung(ordner) {
+  let neueste = fs.lstatSync(ordner).mtimeMs;
+  for (const eintrag of fs.readdirSync(ordner, { withFileTypes: true })) {
+    const voll = path.join(ordner, eintrag.name);
+    neueste = Math.max(neueste, eintrag.isDirectory() ? neuesteAenderung(voll) : fs.lstatSync(voll).mtimeMs);
+  }
+  return neueste;
+}
+const BAU_ID = path.join(WURZEL, '.next/BUILD_ID');
+function bauZustand() {
+  try {
+    if (!fs.existsSync(path.join(APP, 'index.html')) || !fs.existsSync(BAU_ID)) return 'kein Produktionsbau (.next/server/app/index.html fehlt)';
+    const quellen = Math.max(neuesteAenderung(path.join(WURZEL, 'src')), fs.lstatSync(path.join(WURZEL, 'next.config.ts')).mtimeMs);
+    return fs.lstatSync(BAU_ID).mtimeMs >= quellen ? false : 'Produktionsbau älter als src/ (nach npm run build erneut npm test)';
+  } catch (fehler) {
+    return `Alter des Baus nicht feststellbar (${fehler.code ?? fehler.message})`;
+  }
+}
+const ENTITAETEN = { amp: '&', quot: '"', apos: "'", lt: '<', gt: '>', nbsp: ' ' };
+const entschluesseln = (s) => s.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (m, e) => {
+  if (e[0] === '#') return String.fromCodePoint(e[1].toLowerCase() === 'x' ? parseInt(e.slice(2), 16) : Number(e.slice(1)));
+  return ENTITAETEN[e.toLowerCase()] ?? m;
+});
+function htmlDateien(ordner) {
+  const liste = [];
+  for (const eintrag of fs.readdirSync(ordner, { withFileTypes: true })) {
+    const voll = path.join(ordner, eintrag.name);
+    if (eintrag.isDirectory()) liste.push(...htmlDateien(voll));
+    else if (eintrag.name.endsWith('.html')) liste.push(voll);
+  }
+  return liste;
+}
+
+test('6. Gebaute Seiten: Titel 45 bis 58 mit „Tezgel“, Descriptions 120 bis 155 ohne &, ! und …, kein Gedankenstrich, eine H1, Alt-Texte bis 125 Zeichen', {
+  skip: bauZustand(),
+}, () => {
+  const STRICH = /[–—]|\s-\s/;
+  const fehler = [];
+  let seiten = 0;
+  for (const datei of htmlDateien(APP)) {
+    const seite = '/' + path.relative(APP, datei).split(path.sep).join('/').replace(/\.html$/, '').replace(/^index$/, '');
+    if (seite === '/_global-error') continue;
+    seiten += 1;
+    const html = fs.readFileSync(datei, 'utf8');
+    const titel = entschluesseln(html.match(/<title>(.*?)<\/title>/s)?.[1] ?? '').trim();
+    const roh = html.match(/<meta name="description" content="([^"]*)"/)?.[1];
+    const beschreibung = roh === undefined ? null : entschluesseln(roh);
+    if (titel.length < 45 || titel.length > 58 || !titel.includes('Tezgel') || STRICH.test(titel)) fehler.push(`${seite}: Titel „${titel}“ (${titel.length})`);
+    if (beschreibung === null) fehler.push(`${seite}: Description fehlt`);
+    else if (beschreibung.length < 120 || beschreibung.length > 155 || /[&!…]|\.\.\./.test(beschreibung) || STRICH.test(beschreibung)) {
+      fehler.push(`${seite}: Description „${beschreibung}“ (${beschreibung.length})`);
+    }
+    const h1 = (html.match(/<h1[\s>]/g) ?? []).length;
+    if (h1 !== 1) fehler.push(`${seite}: ${h1} H1`);
+    for (const [, alt] of html.matchAll(/<img[^>]*?\salt="([^"]*)"/g)) {
+      const text = entschluesseln(alt);
+      if (text.length > 125 || STRICH.test(text)) fehler.push(`${seite}: Alt-Text „${text}“ (${text.length})`);
+    }
+  }
+  assert.ok(seiten > 100, `nur ${seiten} gebaute Seiten gefunden`);
+  assert.deepEqual(fehler, []);
 });

@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 import { AuthProvider } from '@/contexts/AuthContext';
 
 export const metadata: Metadata = {
-  title: 'Admin Login | Fliesenverlegung Tezgel',
-  description: 'Interner Verwaltungsbereich und administrativer Zugang für Fliesenverlegung Tezgel in Aßlar & Wetzlar. Bitte autorisieren Sie sich mit Ihren Zugangsdaten.',
+  // Die Vorlage im Wurzel-Layout hängt „| Fliesenverlegung Tezgel“ an (SEO-Runde, Gesamtprobe: vorher doppelt)
+  title: 'Anmeldung zum Verwaltungsbereich',
+  description: 'Interner Verwaltungsbereich der Fliesenverlegung Tezgel in Aßlar. Bitte melden Sie sich mit Ihren Zugangsdaten an, um fortzufahren.',
   robots: {
     index: false,
     follow: false,

@@ -13,6 +13,7 @@ import { COMPANY_DATA } from '@/config/company';
 import { notFound } from 'next/navigation';
 import { buildGraph, buildServiceNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
 import { createMetadata } from '@/lib/metadata';
+import { LEISTUNG_ANZEIGE, leistungOrtTitel } from '@/lib/seo/titel';
 import JsonLd from '@/components/seo/JsonLd';
 import QualityPromise from '@/components/sections/QualityPromise';
 import FinalCTA from '@/components/ui/FinalCTA';
@@ -127,16 +128,8 @@ export async function generateMetadata({
   if (!service || !city) return {};
 
   const path = `/leistungen/${service.id}/${city.slug}`;
-  const serviceDisplayNames: Record<string, string> = {
-    untergrund: 'Untergrund & Abdichtung',
-    bad: 'Badsanierung & Bäder',
-    wohnen: 'Fliesenverlegung & Wohnen',
-    aussen: 'Balkon- & Terrassensanierung',
-  };
-  const displayName = serviceDisplayNames[service.id] || service.name;
-  const title = service.id === 'aussen'
-    ? `${displayName} in ${city.name} | Tezgel`
-    : `${displayName} in ${city.name} | Fliesen Tezgel`;
+  // SEO-Runde: Titel aus src/lib/seo/titel.ts (lange Ortsnamen kurz, damit die Marke bleibt; Test 7 in titleLength)
+  const title = leistungOrtTitel(service, city);
   
   const description = metaBeschreibung(service, city.name);
 
@@ -157,13 +150,7 @@ export default async function ServiceCityPage({
   const city = CITIES.find((c) => c.slug === stadt);
   if (!service || !city) notFound();
 
-  const serviceDisplayNames: Record<string, string> = {
-    untergrund: 'Untergrund & Abdichtung',
-    bad: 'Badsanierung & Bäder',
-    wohnen: 'Fliesenverlegung & Wohnen',
-    aussen: 'Balkon- & Terrassensanierung',
-  };
-  const displayName = serviceDisplayNames[service.id] || service.name;
+  const displayName = LEISTUNG_ANZEIGE[service.id] || service.name;
 
   const pageUrl = `${SITE_URL}/leistungen/${service.id}/${city.slug}`;
   const { contact, authority } = COMPANY_DATA;

@@ -31,9 +31,6 @@ const helligkeitsRang = (bild: ArbeitId) => {
 /** Stimmen allgemeinen Inhalts (ohne Ortsbezug), je Ort eine, fest nach Reihenfolge der Orte */
 const STIMMEN = ['c-wolf', 'rabia-oe', 'ute-t', 'peter-p', 'sara-j', 'k-d', 'thorsten-a', 'christian-s', 'elke-s', 'hasan-oe'];
 
-/** Titel höchstens 58 Zeichen (Test titleLength): lange Ortsnamen in der kurzen Form */
-const KURZNAME: Record<string, string> = { limburg: 'Limburg', friedberg: 'Friedberg' };
-
 export interface Ortsinhalt extends ErzaehlInhalt {
   stadt: string;
 }
@@ -42,7 +39,8 @@ export function ortsInhalt(stadt: CityData, kmAbSitz: number, index: number): Or
   const name = stadt.name;
   // SEO-Runde P3: eigene Inhalte, wo es sie gibt (heute Wetzlar, src/inhalte/orte-eigen.ts), sonst die gemeinsame Fassung
   const eigen = EIGENE_ORTSINHALTE[stadt.slug];
-  const kurz = KURZNAME[stadt.slug] ?? name;
+  // Titel höchstens 58 Zeichen (Test titleLength): lange Ortsnamen in der kurzen Form aus den Ortsdaten
+  const kurz = stadt.kurzname ?? name;
   const ort =
     kmAbSitz === 0
       ? 'Fliesenverlegung Tezgel hat seinen Sitz in Aßlar.'
