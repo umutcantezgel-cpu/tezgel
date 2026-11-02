@@ -279,6 +279,32 @@ index fb3fa8f5..2d8d54f3 100644
                                      </li>
                                  ))}
                              </ul>
+diff --git a/src/app/(bestand)/standorte/page.tsx b/src/app/(bestand)/standorte/page.tsx
+index 29e80a8b..e2a554c5 100644
+--- a/src/app/(bestand)/standorte/page.tsx
++++ b/src/app/(bestand)/standorte/page.tsx
+@@ -271,7 +271,7 @@ export default function StandorteOverviewPage() {
+       {/* 8. ABSCHLUSS */}
+       <FinalCTA
+         headline="Planen Sie ein Fliesen- oder Badprojekt in Mittelhessen? Sprechen Sie direkt mit Fachbetriebsleiter Deniz Tezgel."
+-        subtitle="Kostenfreies Vor-Ort-Aufmaß • Feste Terminabsprachen • HWK-Fachbetrieb"
++        subtitle="Kostenfreies Vor-Ort-Aufmaß • Termine nach Absprache • HWK-Fachbetrieb"
+         buttonText="Jetzt Vor-Ort-Termin anfragen"
+       />
+     </>
+diff --git a/src/app/(bestand)/team/page.jsx b/src/app/(bestand)/team/page.jsx
+index e292d938..39e8237c 100644
+--- a/src/app/(bestand)/team/page.jsx
++++ b/src/app/(bestand)/team/page.jsx
+@@ -126,7 +126,7 @@ export default function TeamPage() {
+ 
+             <FinalCTA
+                 headline="Bauen Sie auf ein starkes Team: Jetzt Ihr Fliesen- oder Badprojekt anfragen."
+-                subtitle="Erfahrene Fachkräfte • Inhabergeführte Baustelle • Feste Terminzusagen"
++                subtitle="Erfahrene Fachkräfte • Inhabergeführte Baustelle • Termine nach Absprache"
+                 buttonText="Jetzt Projekt unverbindlich anfragen"
+             />
+         </>
 diff --git a/src/app/llms.txt/route.ts b/src/app/llms.txt/route.ts
 index ccbedb10..2a1445ab 100644
 --- a/src/app/llms.txt/route.ts
@@ -367,7 +393,7 @@ index 96369bbe..1d23b116 100644
  
  // Telefonnummer groß in Mono, als tel:-Link (Farbwechsel der Linie: zustand). Ziel ≥ 44 px (R-01b): min-h-11 mit
 diff --git a/src/config/cities.ts b/src/config/cities.ts
-index cd2be2bd..1eba9f62 100644
+index cd2be2bd..57116ce7 100644
 --- a/src/config/cities.ts
 +++ b/src/config/cities.ts
 @@ -14,7 +14,7 @@ export const CITIES: CityData[] = [
@@ -377,5 +403,14 @@ index cd2be2bd..1eba9f62 100644
 -    description: 'Wetzlar grenzt direkt an unseren Firmensitz in Aßlar. Für Badsanierungen, Großformat-Fliesen und Balkonsanierungen sind wir dadurch schnell beim Aufmaß und jeden Tag pünktlich auf Ihrer Baustelle.',
 +    description: 'Wetzlar grenzt direkt an unseren Firmensitz in Aßlar. Für Badsanierungen, Großformat-Fliesen und Balkonsanierungen sind wir dadurch schnell beim Aufmaß.',
      mapQuery: 'Wetzlar,Hessen,Deutschland',
+   },
+   {
+@@ -54,7 +54,7 @@ export const CITIES: CityData[] = [
+     name: 'Friedberg (Hessen)',
+     distanceKm: 45,
+     region: 'Wetteraukreis',
+-    description: 'In Friedberg und der Wetterau übernehmen wir Badsanierungen, Fliesenarbeiten im Neubau und die Untergrundvorbereitung – sauber abgestimmt und mit festen Terminen.',
++    description: 'In Friedberg und der Wetterau übernehmen wir Badsanierungen, Fliesenarbeiten im Neubau und die Untergrundvorbereitung, sauber abgestimmt.',
+     mapQuery: 'Friedberg,Hessen,Deutschland',
    },
    {

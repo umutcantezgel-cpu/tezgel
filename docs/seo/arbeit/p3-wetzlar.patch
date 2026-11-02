@@ -1,21 +1,21 @@
 diff --git a/src/inhalte/orte-eigen.ts b/src/inhalte/orte-eigen.ts
 new file mode 100644
-index 00000000..282d4791
+index 00000000..f627b49b
 --- /dev/null
 +++ b/src/inhalte/orte-eigen.ts
 @@ -0,0 +1,40 @@
 +// SEO-Runde P3 (docs/seo/arbeit/p3-entwurf-wetzlar.md): eigene Inhalte der Wetzlar-Seite, nur aus dem Faktenblatt
-+// (_werkstatt/KERN.md, Anhang F: F-03 Sitz, F-08 Leistungen, F-09 Entfernung, F-12 Termin kostenfrei, F-13 persönliche
-+// Betreuung, F-25 Pflegekasse) und dem Auftrag („Aßlar, direkt neben Wetzlar“). Baustellen, Stadtteile und Stimmen aus
-+// Wetzlar kommen erst mit der Bestätigung von Deniz dazu (Leitplanke Wahrheit). Die anderen Orte haben keine eigenen
-+// Inhalte; ihre Seiten tragen mit P4 „noindex, follow“ (src/lib/seo/indexierung.ts).
++// (_werkstatt/KERN.md, Anhang F: F-03 Sitz, F-08 Leistungen, F-09 Entfernung, F-25 Pflegekasse, F-26 Landkreis) und dem
++// Auftrag („Aßlar, direkt neben Wetzlar“). Baustellen, Stadtteile und Stimmen aus Wetzlar kommen erst mit der Bestätigung
++// von Deniz dazu (Leitplanke Wahrheit). Fachwörter beim ersten Vorkommen auf der Seite mit Erklärung (K-011): Linknamen
++// der Zeilen zählen zum Fließtext, deshalb stehen dort keine Fachwörter. Zusagen nur sinngleich wie im Bestand.
 +import type { Markentext, Zeile } from '@/components/vorlagen/inhalt';
 +
 +export interface EigenerOrtsinhalt {
 +  vorspann: Markentext;
-+  /** erster Absatz nennt den Landkreis wie bei allen Orten (test/orte.test.mjs, Orte 5) */
++  /** erster Absatz nennt den Landkreis und die Entfernung wie die Daten (test/orte.test.mjs, Orte 5 und 11) */
 +  lage: { titel: string; absaetze: Markentext[] };
-+  /** Wege auf die Fachseiten statt auf die Seiten Leistung × Ort (diese tragen mit P4 noindex) */
++  /** Wege auf die Fachseiten statt auf die Seiten Leistung × Ort */
 +  tun: { titel: string; bereiche: Zeile[] };
 +}
 +
@@ -24,28 +24,28 @@ index 00000000..282d4791
 +  vorspann: 'Wir erneuern Bäder, bauen Duschen ohne Stufe, verlegen Böden und Treppen und machen Balkone dicht.',
 +  lage: {
 +    titel: 'Sie suchen einen Fliesenleger in Wetzlar?',
-+    absaetze: [
-+      'Ja, wir arbeiten in Wetzlar und im Lahn-Dill-Kreis. Unser Betrieb sitzt in Aßlar, bis in die Stadtmitte von Wetzlar sind es etwa 5 km.',
-+      'Deniz Tezgel kommt selbst zu Ihnen, sieht sich den Raum an und prüft den Untergrund. Der Termin bei Ihnen vor Ort ist kostenfrei. Danach bekommen Sie ein Angebot mit festem Preis.',
-+    ],
++    // Termin vor Ort und Angebot stehen im Ablauf derselben Seite; hier nur, was die anderen Orte nicht sagen
++    absaetze: ['Ja, wir arbeiten in Wetzlar und im Lahn-Dill-Kreis. Unser Betrieb sitzt in Aßlar, bis in die Stadtmitte von Wetzlar sind es etwa 5 km.'],
 +  },
 +  tun: {
 +    titel: 'Das machen wir in Wetzlar.',
 +    bereiche: [
 +      { name: 'Bad und Dusche ohne Stufe', satz: 'Wir erneuern Ihr Bad und bauen eine Dusche ohne Stufe ein.', href: '/bad/badsanierung', vignette: 'bad' },
-+      { name: 'Barrierefreies Bad', satz: 'Mit Pflegegrad zahlt die Pflegekasse bis zu 4.180 € je Person dazu.', href: '/bad/barrierefreies-bad', vignette: 'bad' },
-+      { name: 'Böden und Wände', satz: 'Große Fliesen, Feinsteinzeug und Naturstein in Wohnräumen, Küchen und im Neubau.', href: '/leistungen/wohnen', vignette: 'wohnen' },
-+      { name: 'Balkon und Terrasse', satz: 'Gefälle vom Haus weg, Abdichtung und neuer Belag, auch auf Stelzlagern.', href: '/balkon-terrasse', vignette: 'aussen' },
++      // Wortlaut der Förderung wie auf /bad (src/inhalte/bad.ts): „kann … dazugeben“ (F-23, F-25 nur sinngleich); kurze Sätze,
++      // weil Linkname und Erklärung des Fachworts mitzählen (K-010: kein Satz über 25 Wörter)
++      { name: 'Bad ohne Barrieren', satz: 'Haben Sie einen Pflegegrad? Dann kann die Pflegekasse bis zu 4.180 € je Person dazugeben. Das gilt für einen [[barrierefrei|barrierefreien]] Umbau.', href: '/bad/barrierefreies-bad', vignette: 'bad' },
++      { name: 'Böden und Wände', satz: 'Große Fliesen, [[feinsteinzeug|Feinsteinzeug]] und Naturstein in Wohnräumen, Küchen und im Neubau.', href: '/leistungen/wohnen', vignette: 'wohnen' },
++      { name: 'Balkon und Terrasse', satz: '[[gefaelle|Gefälle]] vom Haus weg, Abdichtung und neuer Belag. Wir verlegen Platten auch auf [[stelzlager|Stelzlagern]].', href: '/balkon-terrasse', vignette: 'aussen' },
 +      { name: 'Treppe', satz: 'Innentreppe, Treppenhaus oder Außentreppe mit Fliesen oder Naturstein.', href: '/treppen', vignette: 'treppe' },
 +      { name: 'Reparatur und Fugen', satz: 'Einzelne Fliesen tauschen, Fugen erneuern. Fotos per WhatsApp helfen bei der ersten Einschätzung.', href: '/fliesenreparatur', vignette: 'reparatur' },
 +    ],
 +  },
 +};
 +
-+/** Orte mit eigenem Inhalt; dieselben Orte stehen in ORTE_MIT_EIGENEM_INHALT (src/lib/seo/indexierung.ts) */
-+export const EIGENE_ORTSINHALTE: Readonly<Record<string, EigenerOrtsinhalt>> = { wetzlar: WETZLAR };
++/** Orte mit eigenem Inhalt (heute nur Wetzlar, die Zielseite des Auftrags); alle anderen nutzen die gemeinsame Fassung */
++export const EIGENE_ORTSINHALTE: Readonly<Partial<Record<string, EigenerOrtsinhalt>>> = { wetzlar: WETZLAR };
 diff --git a/src/inhalte/orte.ts b/src/inhalte/orte.ts
-index dce8e3aa..3d05650a 100644
+index dce8e3aa..f4be1262 100644
 --- a/src/inhalte/orte.ts
 +++ b/src/inhalte/orte.ts
 @@ -11,6 +11,7 @@ import type { CityData } from '@/config/cities';
@@ -60,7 +60,7 @@ index dce8e3aa..3d05650a 100644
  
  export function ortsInhalt(stadt: CityData, kmAbSitz: number, index: number): Ortsinhalt {
    const name = stadt.name;
-+  // SEO-Runde P3: eigene Inhalte, wo es sie gibt (heute Wetzlar), sonst die gemeinsame Fassung
++  // SEO-Runde P3: eigene Inhalte, wo es sie gibt (heute Wetzlar, src/inhalte/orte-eigen.ts), sonst die gemeinsame Fassung
 +  const eigen = EIGENE_ORTSINHALTE[stadt.slug];
    const kurz = KURZNAME[stadt.slug] ?? name;
    const ort =
@@ -97,8 +97,18 @@ index dce8e3aa..3d05650a 100644
      },
      ablauf: {
        titel: `So kommen Sie in ${name} zu Ihrem neuen Boden.`,
+@@ -97,7 +100,8 @@ export function ortsInhalt(stadt: CityData, kmAbSitz: number, index: number): Or
+       ],
+     },
+     beleg: {
+-      titel: `So arbeiten wir in ${name} und Umgebung.`,
++      // SEO-Runde P3: ohne Ortsnamen, weil der Ort keines Fotos bestätigt ist (Leitplanke Wahrheit, K-015)
++      titel: 'So arbeiten wir.',
+       fotos,
+       stimmen: [STIMMEN[index % STIMMEN.length]],
+       verweis: { name: 'Alle Arbeiten ansehen', href: '/referenzen' },
 diff --git a/test/orte.test.mjs b/test/orte.test.mjs
-index a5d65bfc..2b230899 100644
+index 5004b5ec..6814d82d 100644
 --- a/test/orte.test.mjs
 +++ b/test/orte.test.mjs
 @@ -62,10 +62,15 @@ test('Orte 5: Entfernung ab Aßlar im Ortssatz, der Sitz selbst ohne Entfernung'
@@ -106,7 +116,7 @@ index a5d65bfc..2b230899 100644
  });
  
 -test('Orte 6: Leistungslinks auf die vier Leistungen im Ort', () => {
-+// SEO-Runde P3: Wetzlar verlinkt die Fachseiten (die Seiten Leistung × Ort tragen mit P4 noindex), alle anderen Orte wie bisher
++// SEO-Runde P3: Wetzlar verlinkt die Fachseiten statt der Seiten Leistung × Ort, alle anderen Orte wie bisher
 +test('Orte 6: Leistungslinks auf die vier Leistungen im Ort, Wetzlar auf die Fachseiten', () => {
    for (const [i, c] of CITIES.entries()) {
      const hrefs = inhalte[i].tun.bereiche.map((b) => b.href);
@@ -119,21 +129,26 @@ index a5d65bfc..2b230899 100644
    }
  });
  
-@@ -133,3 +138,17 @@ test('Orte 10 (SEO-Runde P4, S3): nur Ortsseiten mit eigenem Inhalt und keine Se
-     assert.equal(liste.some((u) => /\/leistungen\/[^/]+\/[^/]+$/.test(u)), false);
-   }
+@@ -112,3 +117,22 @@ test('Orte 9 (SEO-Runde S2): Links auf Aßlar führen zur Startseite, alle ander
+   for (const c of CITIES.filter((s) => s.slug !== SITZ_SLUG)) assert.equal(ortsPfad(c.slug), `/standorte/${c.slug}`, c.slug);
+   assert.ok(CITIES.some((c) => c.slug === SITZ_SLUG), 'Aßlar bleibt in CITIES (Zonen, Karte, Leistung × Ort)');
  });
 +
-+test('Orte 11 (SEO-Runde P3): Wetzlar hat eigene Inhalte, kein anderer Ort übernimmt sie, und die Orte mit eigenem Inhalt sind die indexierten', async () => {
++test('Orte 11 (SEO-Runde P3): eigene Inhalte nur für Wetzlar, Zahlen wie die Daten, Förderung wie im Bestand, Fototitel ohne Ort', async () => {
 +  const { EIGENE_ORTSINHALTE } = await import('../src/inhalte/orte-eigen.ts');
-+  const { ORTE_MIT_EIGENEM_INHALT } = await import('../src/lib/seo/indexierung.ts');
-+  assert.deepEqual(Object.keys(EIGENE_ORTSINHALTE).sort(), [...ORTE_MIT_EIGENEM_INHALT].sort());
-+  const wetzlar = inhalte[CITIES.findIndex((c) => c.slug === 'wetzlar')];
++  assert.deepEqual(Object.keys(EIGENE_ORTSINHALTE), ['wetzlar']);
++  const w = CITIES.findIndex((c) => c.slug === 'wetzlar');
++  const wetzlar = inhalte[w];
 +  assert.match(wetzlar.worum.vorspann, /Duschen ohne Stufe/);
-+  assert.match(wetzlar.lage.absaetze[0], /Stadtmitte von Wetzlar/);
-+  assert.match(wetzlar.lage.absaetze.join(' '), /Termin bei Ihnen vor Ort ist kostenfrei/);
-+  for (const o of inhalte) {
-+    if (o.stadt === 'Wetzlar') continue;
-+    for (const t of texte(o)) assert.doesNotMatch(t, /direkt neben Wetzlar|Stadtmitte von Wetzlar/, `${o.stadt}: ${t}`);
++  assert.match(wetzlar.lage.absaetze[0], re(`Stadtmitte von Wetzlar sind es etwa ${CITY_HUB_DATA.wetzlar.distanceKm}\u00a0km.`));
++  // Förderung nur sinngleich wie auf /bad und /bad/barrierefreies-bad („kann … dazugeben“, F-23, F-25)
++  const saetze = wetzlar.tun.bereiche.map((b) => b.satz ?? '');
++  assert.ok(saetze.some((s) => s.includes('kann die Pflegekasse bis zu 4.180\u00a0€ je Person')));
++  assert.equal(saetze.some((s) => /\bzahlt\b/.test(s)), false);
++  for (const [i, o] of inhalte.entries()) {
++    // kein Foto hat einen bestätigten Ort (Leitplanke Wahrheit): der Titel über den Fotos nennt keinen
++    assert.doesNotMatch(o.beleg.titel, re(o.stadt), `${o.stadt}: ${o.beleg.titel}`);
++    if (i === w) continue;
++    for (const t of texte(o)) assert.doesNotMatch(t, /direkt neben Wetzlar|Stadtmitte von Wetzlar|Duschen ohne Stufe/, `${o.stadt}: ${t}`);
 +  }
 +});

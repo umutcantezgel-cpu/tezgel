@@ -202,7 +202,7 @@ Abgeglichen mit dem SEO-Prompt (Abschnitte 8 bis 12, nur Methodik):
 
 ## 7. Was ich bis zur Freigabe vorbereite (ohne Änderung an der Website)
 
-- Gegenprüfung von P1 durch zwei unabhängige Prüfer (läuft) und gegebenenfalls Nacharbeit.
+- Gegenprüfung von P1 durch zwei unabhängige Prüfer: erledigt, Nacharbeit eingearbeitet (KONTEXT.md Abschnitt 13).
 - Die Liste für P7 (Dokument für Umut): `docs/seo/arbeit/p7-liste-fuer-umut.md`.
 - Der Ablauf für P8, Messen nach dem Live-Gang und Vergleich nach 4 und 8 Wochen: `docs/seo/arbeit/p8-messplan.md`.
 - P5: Auswahl der Fotos aus dem Inventar (Qualität A bis C, ohne offene Freigabe, je Fast-Duplikat eins), die Alt-Entwürfe gegen die Bilder prüfen, Zuordnung zu den Seiten. Nur als Vorschlag, ohne Orte.
@@ -226,35 +226,37 @@ Abgeglichen mit dem SEO-Prompt (Abschnitte 8 bis 12, nur Methodik):
   - Inhalt: `/standorte/asslar` leitet per 308 auf `/`. Aßlar bleibt in `CITIES`. Alle Links auf Aßlar (Einsatzgebiet, Fuß, Einzugsband, Karte, Übersicht, Nachbarorte, Leistung × Ort) führen über `ortsPfad()` in `src/config/cities.ts` auf die Startseite. Sitemap und IndexNow nennen die alte Adresse nicht mehr. Dazu Tests (`wege`, `orte`).
   - Geprüft: Build, 283 von 283 Tests, `qa:graph`. Im gebauten HTML zeigt kein Link mehr auf `/standorte/asslar`, und 188 Links „Aßlar“ führen auf `/`.
   - Er ändert eine bestehende Adresse und braucht deshalb Umuts Entscheidung zu S2 und seine ausdrückliche Freigabe.
-- **P4 (S3, empfohlene Variante) als fertiger Patch:** `docs/seo/arbeit/p4-noindex.patch`, anzuwenden nach `p2`, `zusagen`, `s2-asslar` und `p3-meta`.
+- **P3, Inhalt der Wetzlar-Seite, als fertiger Patch** (Stand 02.11.2026, nach der Gegenprüfung): `docs/seo/arbeit/p3-wetzlar.patch`, anzuwenden nach `p3-meta.patch` und vor `p4-noindex.patch`. Er geht auch ohne P4.
+  - **Inhalt:** neue Datei `src/inhalte/orte-eigen.ts`.
+    - eigener Vorspann mit den Leistungen (F-08);
+    - Abschnitt „Sie suchen einen Fliesenleger in Wetzlar?“: Landkreis (F-26) und Sitz in Aßlar, etwa 5 km bis zur Stadtmitte (F-09, dort als Annahme markiert, M-04). Termin vor Ort und Angebot stehen schon im Ablauf derselben Seite und kommen deshalb nicht doppelt;
+    - Abschnitt „Das machen wir in Wetzlar.“: sechs Leistungen mit je einem kurzen Text und Link auf die Fachseite, statt der vier Links auf Seiten Leistung × Ort;
+    - die Förderung im Wortlaut von `/bad`: „Dann kann die Pflegekasse bis zu 4.180 € je Person dazugeben.“ (F-23, F-25);
+    - Fachwörter (barrierefrei, Feinsteinzeug, Gefälle, Stelzlager) beim ersten Vorkommen mit Erklärung (K-011). Die Zeile zum barrierefreien Bad heißt deshalb „Bad ohne Barrieren“, weil Linknamen zum Fließtext zählen.
+  - **Für alle 13 Ortsseiten:** Die Überschrift über den Fotos heißt „So arbeiten wir.“ statt „So arbeiten wir in <Ort> und Umgebung.“. Der Ort keines Fotos ist bestätigt (Leitplanke Wahrheit).
+  - **Test** Orte 11: eigene Inhalte nur für Wetzlar; Entfernung wie in den Daten; Förderung mit „kann“; kein Fototitel nennt einen Ort; kein anderer Ort übernimmt den Wetzlar-Text.
+  - **Geprüft** im Gesamtstand (unten).
+    - Im gebauten HTML: alle neuen Texte und die sechs Links, kein Link auf `/leistungen/*/wetzlar`, genau eine H1.
+    - Mit dem Lesbarkeitswerkzeug der Werkstatt im Browser: kein Fachwort ohne Erklärung, kein Satz über 25 Wörter, keine Floskel, kein Strich.
+  - **Was noch fehlt** (Baustellen, Stadtteile und Stimmen aus Wetzlar, Fotos, Beratung): `docs/seo/arbeit/p3-entwurf-wetzlar.md`, Abschnitt „Stand der Umsetzung“. Bis dahin unterscheidet sich die Seite vor allem durch die Wege auf die Fachseiten und die Lage; echte Belege aus Wetzlar fehlen noch.
+- **P4 (S3, empfohlene Variante) als fertiger Patch:** `docs/seo/arbeit/p4-noindex.patch`, anzuwenden nach `p3-wetzlar.patch`.
   - **Inhalt:**
     - Die 52 Seiten Leistung × Ort bekommen „noindex, follow“.
-    - Ebenso die Ortsseiten ohne eigenen Inhalt, also alle außer Wetzlar. Die Liste `ORTE_MIT_EIGENEM_INHALT` in `src/lib/seo/indexierung.ts` bestimmt, welche Orte indexiert bleiben.
+    - Ebenso die Ortsseiten ohne eigenen Inhalt, also alle außer Wetzlar. Welche Orte im Index bleiben, folgt aus den eigenen Inhalten in `src/inhalte/orte-eigen.ts` (`ORTE_MIT_EIGENEM_INHALT` in `src/lib/seo/indexierung.ts` wird daraus abgeleitet).
     - Sitemap und IndexNow nennen nur noch Seiten, die in den Index gehören. IndexNow meldet damit auch die Rechtstexte mit noindex nicht mehr (T12).
     - Seit 02.11.2026 auch der Titel von `/standorte` aus Abschnitt 4 (Zeile „P4 (S3)“): „Einsatzgebiet in Mittelhessen | Fliesenverlegung Tezgel“.
   - Geprüft: Build, 284 von 284 Tests, `qa:graph`. Im Bau haben 71 Seiten noindex; die Sitemap hat 100 Adressen ohne noindex-Seite, von den Ortsseiten nur Wetzlar.
-  - Er wartet auf S3 und braucht Umuts ausdrückliche Freigabe, weil noindex bestehende Adressen betrifft. Wer einen Ort behalten will, setzt ihn in die Liste; das ist nur mit echten Angaben zum Ort sinnvoll.
-- **P3, Inhalt der Wetzlar-Seite, als fertiger Patch** (Stand 02.11.2026): `docs/seo/arbeit/p3-wetzlar.patch`, anzuwenden nach `p4-noindex.patch`.
-  - **Inhalt:** neue Datei `src/inhalte/orte-eigen.ts`, die übrigen Ortsseiten bleiben, wie sie sind.
-    - eigener Vorspann mit den Leistungen (F-08);
-    - Abschnitt „Sie suchen einen Fliesenleger in Wetzlar?“: Sitz in Aßlar, etwa 5 km bis zur Stadtmitte (F-09, dort als Annahme markiert, M-04); Deniz Tezgel kommt selbst (F-13), der Termin vor Ort ist kostenfrei (F-12), danach ein Festpreisangebot;
-    - Abschnitt „Das machen wir in Wetzlar.“: sechs Leistungen mit je einem Satz und Link auf die Fachseite, statt der vier Links auf Seiten Leistung × Ort.
-  - **Geprüft:** Typprüfung, Lint, Build, 285 von 285 Tests, `qa:graph`. Im gebauten HTML stehen alle neuen Texte und die sechs Links, es gibt keinen Link auf `/leistungen/*/wetzlar` und genau eine H1. Gießen und Solms übernehmen den Wetzlar-Text nicht.
-  - Der neue Test (Orte 11) nutzt die Liste `ORTE_MIT_EIGENEM_INHALT` aus P4. Ohne P4 braucht er eine kleine Anpassung.
-  - **Was noch fehlt** (Baustellen, Stadtteile und Stimmen aus Wetzlar, Fotos, Beratung): `docs/seo/arbeit/p3-entwurf-wetzlar.md`, Abschnitt „Stand der Umsetzung“.
-- **Alt-Text im Bestand als fertiger Patch:** `docs/seo/arbeit/alt-bestand.patch`. Das Logo in der Autorenkarte der Ratgeber heißt dann wie überall „Fliesenverlegung Tezgel“, ohne Gedankenstrich, Orte und „&“ (`src/components/blog/BlogAuthorCard.jsx:59`).
-  - Geprüft: Typprüfung, Lint, Build, 281 von 281 Tests, `qa:graph`. Im Bau steht der alte Text auf keiner Seite mehr.
-  - Eine Durchsicht aller Alt-Texte im Code (`src/`) fand sonst keinen Verstoß. Das leere Alt am Logo der Übergangsanimation (`src/components/verlegen/Verlegen.tsx:168`) ist richtig, weil es nur Schmuck ist.
+  - Er wartet auf S3 und braucht Umuts ausdrückliche Freigabe, weil noindex bestehende Adressen betrifft. Ein weiterer Ort kommt nur mit echten Angaben in den Index (bestätigte Projekte, Stimmen, Stadtteile), dann mit eigenem Inhalt in `orte-eigen.ts`.
 - **Nacharbeit aus der Gesamtprobe als fertiger Patch:** `docs/seo/arbeit/titel-rest.patch`, zuletzt anzuwenden.
   - `/login` (noindex): Die Vorlage im Wurzel-Layout hängt die Marke selbst an. Der Titel stand deshalb doppelt da („Admin Login | Fliesenverlegung Tezgel | Fliesenverlegung Tezgel“, 63 Zeichen). Neu: „Anmeldung zum Verwaltungsbereich | Fliesenverlegung Tezgel“, die Description ohne „&“ und ohne Wetzlar.
-  - Leistung × Ort: Bei Friedberg und Limburg war der Titel zu lang, und die Kürzung schnitt „Tezgel“ ab (8 Seiten). Bei langen Ortsnamen steht jetzt der kurze Name im Titel, zum Beispiel „Badsanierung & Bäder in Limburg | Fliesen Tezgel“.
+  - Leistung × Ort: Bei Friedberg und Limburg war der Titel zu lang, und die Kürzung schnitt „Tezgel“ ab (8 Seiten). Bei langen Ortsnamen steht jetzt der kurze Name im Titel, zum Beispiel „Badsanierung & Bäder in Limburg | Fliesen Tezgel“. Der Kurzname steht als Feld `kurzname` in `src/config/cities.ts` (bisher eine eigene Liste in `orte.ts`), der Titel kommt aus `src/lib/seo/titel.ts`. Test 7 prüft alle 52 Titel schon vor dem Bau. Der Zusatz „| Fliesen Tezgel“ bleibt auf diesen Seiten, weil sie mit P4 noindex tragen.
   - Neuer Test 6 in `test/titleLength.test.mjs`. Nach dem Bau prüft er jede Seite:
     - Titel mit 45 bis 58 Zeichen und „Tezgel“;
     - Description mit 120 bis 155 Zeichen, ohne „&“, „!“ und „…“;
     - kein Gedankenstrich, genau eine H1;
     - Alt-Texte höchstens 125 Zeichen, ohne Strich.
-  - Gegen den heutigen Bau von `seo/lokal` schlägt der Test an, im Gesamtstand ist er grün.
-- **Gesamtprobe** am 02.11.2026: alle neun Patches zusammen in einer Arbeitskopie. Typprüfung, Lint, Build, 288 von 288 Tests, `qa:graph`. Gezählt im gebauten HTML über alle 171 Seiten, ohne die interne Fehlerseite von Next:
+  - Gegen den heutigen Bau von `seo/lokal` schlägt der Test an, im Gesamtstand ist er grün. Ist der Bau älter als `src/`, überspringt er sich mit Hinweis; er läuft deshalb beim `npm test` nach `npm run build`, wie in der Prüfkette dieser Runde.
+- **Gesamtprobe** am 02.11.2026, zuletzt nach der Gegenprüfung: alle neun Patches frisch auf `seo/lokal` angewandt. Typprüfung, Lint, Build, 289 von 289 Tests, `qa:graph`. Gezählt im gebauten HTML über alle 171 Seiten, ohne die interne Fehlerseite von Next:
 
 | Prüfung | `seo/lokal` heute | mit allen Patches |
 |---|---|---|
@@ -264,15 +266,15 @@ Abgeglichen mit dem SEO-Prompt (Abschnitte 8 bis 12, nur Methodik):
 | Gedankenstrich in Titel oder Description | 1 | 0 |
 | Seiten mit Alt-Text über 125 Zeichen, mit Strich oder „&“ | 13 | 0 |
 | Seiten im Index mit Wetzlar in Titel oder Description | 35 | 4 |
-| Seiten mit Garantie, Zertifikat oder festen Zusagen | 135 (449 Stellen) | 0 |
+| Seiten mit Garantie, Zertifikat oder festen Zusagen (auch „feste Termine“) | 135 (456 Stellen) | 0 |
 | Seiten mit „verbindlich“ vor Festpreis oder Angebot | 137 | 45 (Entscheidung offen) |
 
   - Genau eine H1 je Seite und keine doppelten Titel oder Descriptions: in beiden Ständen erfüllt.
   - Sätze, die ausdrücklich keine Garantie geben, sind nicht gezählt.
   - Wetzlar bleibt auf `/standorte/wetzlar`, auf `/karriere` („bei Wetzlar“), auf `/ausstellung/wetzlar` (hängt an S4) und in der Description von `/standorte`, die die Orte des Einsatzgebiets aufzählt.
-- **Reihenfolge der Patches**, am 02.11.2026 in einer frischen Kopie von `seo/lokal` nacheinander angewandt: `p2`, `zusagen`, `s2-asslar`, `p3-meta`, `p4-noindex`, `p3-wetzlar`, `k01-k02`, `alt-bestand`, `titel-rest`.
+- **Reihenfolge der Patches**, am 02.11.2026 in einer frischen Kopie von `seo/lokal` nacheinander angewandt: `p2`, `zusagen`, `s2-asslar`, `p3-meta`, `p3-wetzlar`, `p4-noindex`, `k01-k02`, `alt-bestand`, `titel-rest`.
   - `s2-asslar.patch` passt nach `p2.patch` an jeder Stelle, `k01-k02.patch` und `alt-bestand.patch` überall.
-  - `zusagen.patch` kommt vor `p3-meta.patch`, `p3-wetzlar.patch` nach `p4-noindex.patch`.
+  - `zusagen.patch` kommt vor `p3-meta.patch`. `p3-wetzlar.patch` kommt vor `p4-noindex.patch`, weil P4 die Orte im Index aus den eigenen Inhalten ableitet; P3 geht damit auch ohne P4.
   - `titel-rest.patch` kommt zuletzt, weil sein Test die Titel und Descriptions aller anderen Patches voraussetzt.
   - Jeder Patch kommt als eigener Commit auf `seo/lokal`, mit voller Prüfkette.
   - Auf `main` geht er erst nach „live“.

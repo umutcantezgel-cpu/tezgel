@@ -4,12 +4,13 @@ Stand 01.11.2026. **Entwurf zur Durchsicht, nicht im Code.** Umgesetzt wird er e
 
 **Warum:** Die Seite ist heute zu 89 bis 95 % gleich wie die anderen Ortsseiten (KONTEXT.md A03). Leitplanke: Ortsseiten unterscheiden sich nur durch echte Angaben, nicht durch getauschte Ortsnamen. Mehr Text allein hilft nicht; es zählen echte Belege aus Wetzlar.
 
-## Stand der Umsetzung (02.11.2026)
+## Stand der Umsetzung (02.11.2026, nach der Gegenprüfung)
 
-**Patch:** `docs/seo/arbeit/p3-wetzlar.patch`, anzuwenden nach den übrigen Patches (Reihenfolge im Plan, Abschnitt 7). Er setzt um, was ohne Deniz belegt ist, über die neue Datei `src/inhalte/orte-eigen.ts`:
+**Patch:** `docs/seo/arbeit/p3-wetzlar.patch`, anzuwenden nach `p3-meta.patch` und vor `p4-noindex.patch` (Reihenfolge im Plan, Abschnitt 7). Er setzt um, was ohne Deniz belegt ist, über die neue Datei `src/inhalte/orte-eigen.ts`:
 - **Vorspann:** Leistungen nach F-08.
-- **„Sie suchen einen Fliesenleger in Wetzlar?“:** Sitz in Aßlar, etwa 5 km bis zur Stadtmitte (F-09). Deniz Tezgel kommt selbst, der Termin vor Ort ist kostenfrei, danach ein Festpreisangebot.
-- **„Das machen wir in Wetzlar.“:** sechs Leistungen mit je einem Satz und Link auf die Fachseite, statt der vier Links auf die Seiten Leistung × Ort.
+- **„Sie suchen einen Fliesenleger in Wetzlar?“:** Landkreis und Sitz in Aßlar, etwa 5 km bis zur Stadtmitte (F-09). Termin vor Ort und Angebot stehen im Ablauf derselben Seite.
+- **„Das machen wir in Wetzlar.“:** sechs Leistungen mit je einem kurzen Text und Link auf die Fachseite, statt der vier Links auf die Seiten Leistung × Ort. Die Förderung steht im Wortlaut von `/bad` („kann … dazugeben“), Fachwörter mit Erklärung.
+- **Alle Ortsseiten:** Über den Fotos steht „So arbeiten wir.“ ohne Ort (Abschnitt 4).
 - **Was fehlt:**
   - Baustellen, Stadtteile und Stimmen aus Wetzlar (Abschnitte 4, 5 und Fragen) warten auf Deniz;
   - die Beratung (Abschnitt 6) wartet auf S4;

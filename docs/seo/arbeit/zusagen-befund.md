@@ -23,9 +23,13 @@ Stand 02.11.2026, Code-Stand `seo/lokal`. **Befund mit Vorschlägen, nichts davo
 | `src/app/(bestand)/leistungen/[id]/page.jsx:68-76` | „garantieren zertifizierten Staubschutz“, „garantieren jahrzehntelange Sicherheit gegen Feuchtigkeit“, „kompromisslosem Staubschutz“, „maßgeschneiderte Wohlfühloasen“ | `/leistungen/bad`, `/wohnen`, `/aussen`, `/untergrund` | Staubschutz wie F-17 (Staubschutzwände oder -türen, Luftreiniger, Schutzabdeckungen, besenreine Übergabe); Abdichtung nach DIN 18534 (F-15) ohne Garantie; Floskeln raus |
 | `src/components/sections/QualityPromise.jsx:22` | „Garantierter Standard“ | `/bad/badanfrage`, `/bad/bad-aus-einer-hand`, `/bad/projekt-check`, `/team`, `/downloads` | „Unser Standard“ |
 | `src/app/llms.txt/route.ts:24`, `:43`, `:47` | „Zertifizierte Abdichtung“, „Vertrauensmerkmale & Garantien“, „Staubschutz-Garantie“ | `/llms.txt` (Text für KI-Dienste) | „Abdichtung nach DIN 18534“, „Vertrauensmerkmale“, „Staubschutz in bewohnten Räumen“ |
+| `src/app/(bestand)/standorte/page.tsx:274` (Abschluss) | „Feste Terminabsprachen“ | `/standorte` | „Termine nach Absprache“ |
+| `src/app/(bestand)/team/page.jsx:129` (Abschluss) | „Feste Terminzusagen“ | `/team` | „Termine nach Absprache“ |
+| `src/config/cities.ts:57` (Text zu Friedberg) | „sauber abgestimmt und mit festen Terminen“ | `/standorte` und die vier Seiten Leistung × Friedberg | „sauber abgestimmt“ |
 | `src/config/company.js:174`, `:191`; `src/lib/config.ts:195` | „Garantierter Staubschutz bei Sanierungen“, „Staubschutz-Garantie“, „Staubschutz-Garantie bei bewohnten Sanierungen“ | Firmendaten und Konfiguration. Die Vorlagen zeigen sie schon ohne Garantie-Wort. | Firmendaten ändern sich nur mit Umuts Freigabe; Vorschlag wie oben |
 
 **Milder, aber zu klären:**
+- **„Termintreue“** steht im Qualitätsversprechen auf 133 Seiten (Punkt 5, „Verlässliche Termintreue und Bauzeitenplan“), auch in der bereinigten Fassung der Vorlagen. Es ist eine allgemeine Aussage und keine feste Zusage für Baustart oder Fertigstellung; Deniz sollte sie trotzdem mit M-07 bestätigen. „Pünktlich“ steht vor allem im Wortlaut einer Kundenstimme, der bleibt.
 - **Das Wort „verbindlich“** vor Festpreis oder Festpreisangebot steht zusätzlich in Descriptions der Werkstatt: `src/inhalte/meta/seiten.ts` (`/bad/musterbaeder`, `/bad/projekt-check`, `/faq`) und in der Antwort `faq/page.jsx:44`.
 - **Einordnung (Vermutung):** Ein Angebot bindet nach dem BGB ohnehin; das Wort ist also weniger heikel als „Garantie“. Solange M-07 offen ist, bleibt der Wortlaut des Faktenblatts trotzdem sicherer: „Festpreisangebot“.
 - **Eigene Vorschläge berichtigt:** Meine Vorschläge für `/preise` und `/bad/badsanierung` nutzen seit dem 02.11.2026 nur noch „Festpreisangebot“ (Plan, Tabelle 4b, und die Patches).
@@ -49,8 +53,9 @@ Stand 02.11.2026, Code-Stand `seo/lokal`. **Befund mit Vorschlägen, nichts davo
   - `QualityPromise.jsx` und `/referenzen/<id>` nutzen die bereinigte Fassung der Vorlagen. Die Firmendaten in `company.js` bleiben unverändert;
   - „mit Festpreisgarantie“ und „Feste Zusagen“ werden zu „Festpreisangebot“ und „abgestimmt“;
   - „Festpreisangebot mit festem Zeitplan“ in den Fragen der vier Leistungsseiten wird zu „Festpreisangebot“;
-  - zu Wetzlar auf `/standorte` fällt „jeden Tag pünktlich auf Ihrer Baustelle“ weg (`src/config/cities.ts`).
-- **Geprüft** in einer Arbeitskopie: Typprüfung, Lint, Build, 282 von 282 Tests, `qa:graph`. Im gebauten HTML stehen danach keine Garantie, kein Zertifikat und keine festen Zusagen mehr, außer den zwei Sätzen, die ausdrücklich keine Garantie geben.
+  - zu Wetzlar auf `/standorte` fällt „jeden Tag pünktlich auf Ihrer Baustelle“ weg (`src/config/cities.ts`);
+  - seit der Gegenprüfung vom 02.11.2026 auch „Feste Terminabsprachen“ (`/standorte`), „Feste Terminzusagen“ (`/team`) und „mit festen Terminen“ im Text zu Friedberg.
+- **Geprüft** in einer Arbeitskopie: Typprüfung, Lint, Build, 282 von 282 Tests, `qa:graph`. Zuletzt im Gesamtstand aller Patches nach der Gegenprüfung (289 von 289 Tests): Im gebauten HTML stehen keine Garantie, kein Zertifikat und keine festen Zusagen oder festen Termine mehr, außer den zwei Sätzen, die ausdrücklich keine Garantie geben.
 - **Bleibt zur Entscheidung:** „verbindlicher Festpreis“ und „verbindliches Festpreisangebot“ auf 44 Seiten (im Bau gezählt), zum Beispiel in den Musterbädern, im Preisrechner („Angebot: Verbindlicher Festpreis“), auf `/fliesen/festpreisangebot` und `/fliesen/konfigurator`. Siehe „Milder, aber zu klären“.
 - **Nicht genutzt:** `src/lib/config.ts:183` und `:195` („Feste Zusagen …“, „Staubschutz-Garantie …“) wird auf keiner Seite angezeigt.
 

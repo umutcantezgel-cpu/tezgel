@@ -83,17 +83,19 @@ index ce131a0d..b334279f 100644
  }
 diff --git a/src/lib/seo/indexierung.ts b/src/lib/seo/indexierung.ts
 new file mode 100644
-index 00000000..d752058b
+index 00000000..7b5a617c
 --- /dev/null
 +++ b/src/lib/seo/indexierung.ts
-@@ -0,0 +1,30 @@
+@@ -0,0 +1,32 @@
 +// SEO-Runde P4 (S3, T12; docs/seo/KONTEXT.md A04): welche Adressen in den Index gehören. Seiten ohne eigenen Inhalt
 +// bekommen „noindex, follow“ (Meta-robots, nicht per robots.txt gesperrt) und stehen weder in der Sitemap noch in IndexNow:
 +// Die 52 Seiten Leistung × Ort und die Ortsseiten ohne eigenen Inhalt sind fast gleich (Googles Beispiel für Brückenseiten).
-+// Ein Ort kommt nur mit echten Angaben in die Liste (bestätigte Projekte, Stimmen, Stadtteile; Leitplanke Wahrheit).
++// Im Index bleiben nur Ortsseiten mit eigenem Inhalt (src/inhalte/orte-eigen.ts): heute Wetzlar, die Zielseite des Auftrags
++// (Ziel 2). Weitere Orte kommen nur mit echten Angaben dazu (bestätigte Projekte, Stimmen, Stadtteile; Leitplanke Wahrheit).
++import { EIGENE_ORTSINHALTE } from '../../inhalte/orte-eigen';
 +
-+/** Ortsseiten mit eigenem Inhalt (Wetzlar mit P3); alle anderen /standorte/<ort> bekommen noindex, follow */
-+export const ORTE_MIT_EIGENEM_INHALT: readonly string[] = ['wetzlar'];
++/** Ortsseiten mit eigenem Inhalt, abgeleitet aus EIGENE_ORTSINHALTE; alle anderen /standorte/<ort> bekommen noindex, follow */
++export const ORTE_MIT_EIGENEM_INHALT: readonly string[] = Object.keys(EIGENE_ORTSINHALTE);
 +
 +/** Rechtstexte mit noindex in ihrem Layout; IndexNow meldet sie nicht */
 +export const RECHTSTEXTE_OHNE_INDEX: readonly string[] = ['/impressum', '/datenschutz', '/agb', '/widerruf', '/cookie-richtlinie'];
@@ -140,14 +142,13 @@ index 3b811e11..a1f67d9c 100644
  
  export interface IndexNowResult {
 diff --git a/test/orte.test.mjs b/test/orte.test.mjs
-index 5004b5ec..a5d65bfc 100644
+index 6814d82d..55b368bf 100644
 --- a/test/orte.test.mjs
 +++ b/test/orte.test.mjs
-@@ -112,3 +112,24 @@ test('Orte 9 (SEO-Runde S2): Links auf Aßlar führen zur Startseite, alle ander
-   for (const c of CITIES.filter((s) => s.slug !== SITZ_SLUG)) assert.equal(ortsPfad(c.slug), `/standorte/${c.slug}`, c.slug);
+@@ -118,6 +118,27 @@ test('Orte 9 (SEO-Runde S2): Links auf Aßlar führen zur Startseite, alle ander
    assert.ok(CITIES.some((c) => c.slug === SITZ_SLUG), 'Aßlar bleibt in CITIES (Zonen, Karte, Leistung × Ort)');
  });
-+
+ 
 +test('Orte 10 (SEO-Runde P4, S3): nur Ortsseiten mit eigenem Inhalt und keine Seite Leistung × Ort in Sitemap und IndexNow', async () => {
 +  const { ORTE_MIT_EIGENEM_INHALT, pfadIndexiert, adresseIndexiert } = await import('../src/lib/seo/indexierung.ts');
 +  const { default: sitemap } = await import('../src/app/sitemap.ts');
@@ -168,3 +169,7 @@ index 5004b5ec..a5d65bfc 100644
 +    assert.equal(liste.some((u) => /\/leistungen\/[^/]+\/[^/]+$/.test(u)), false);
 +  }
 +});
++
+ test('Orte 11 (SEO-Runde P3): eigene Inhalte nur für Wetzlar, Zahlen wie die Daten, Förderung wie im Bestand, Fototitel ohne Ort', async () => {
+   const { EIGENE_ORTSINHALTE } = await import('../src/inhalte/orte-eigen.ts');
+   assert.deepEqual(Object.keys(EIGENE_ORTSINHALTE), ['wetzlar']);

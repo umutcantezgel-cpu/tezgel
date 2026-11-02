@@ -1,24 +1,49 @@
 diff --git a/src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx b/src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx
-index d3c68cd3..9203a941 100644
+index d3c68cd3..56bc3c32 100644
 --- a/src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx
 +++ b/src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx
-@@ -135,9 +135,13 @@ export async function generateMetadata({
-     aussen: 'Balkon- & Terrassensanierung',
-   };
-   const displayName = serviceDisplayNames[service.id] || service.name;
+@@ -29,6 +29,7 @@ import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+ import { linkKlassen } from '@/components/kern/stile';
+ import type { PlanName } from '@/lib/plaene/vorgaben';
+ import { OHNE_INDEX } from '@/lib/seo/indexierung';
++import { LEISTUNG_ANZEIGE, leistungOrtTitel } from '@/lib/seo/titel';
+ 
+ function isHeadquartersCity(city: CityData) {
+   return city.name === COMPANY_DATA.headquarters.city;
+@@ -128,16 +129,8 @@ export async function generateMetadata({
+   if (!service || !city) return {};
+ 
+   const path = `/leistungen/${service.id}/${city.slug}`;
+-  const serviceDisplayNames: Record<string, string> = {
+-    untergrund: 'Untergrund & Abdichtung',
+-    bad: 'Badsanierung & Bäder',
+-    wohnen: 'Fliesenverlegung & Wohnen',
+-    aussen: 'Balkon- & Terrassensanierung',
+-  };
+-  const displayName = serviceDisplayNames[service.id] || service.name;
 -  const title = service.id === 'aussen'
 -    ? `${displayName} in ${city.name} | Tezgel`
 -    : `${displayName} in ${city.name} | Fliesen Tezgel`;
-+  const titelMit = (ort: string) => service.id === 'aussen'
-+    ? `${displayName} in ${ort} | Tezgel`
-+    : `${displayName} in ${ort} | Fliesen Tezgel`;
-+  // SEO-Runde: Titel höchstens 58 Zeichen mit Marke. Bei langen Ortsnamen ohne Zusatz („Limburg an der Lahn“ → „Limburg“,
-+  // „Friedberg (Hessen)“ → „Friedberg“), sonst kürzt sanitizeTitle die Marke weg.
-+  const kurzerOrt = city.name.replace(/\s*\(.*\)$/, '').replace(/\s+an der\s+.*$/, '');
-+  const title = titelMit(city.name).length <= 58 ? titelMit(city.name) : titelMit(kurzerOrt);
++  // SEO-Runde: Titel aus src/lib/seo/titel.ts (lange Ortsnamen kurz, damit die Marke bleibt; Test 7 in titleLength)
++  const title = leistungOrtTitel(service, city);
    
    const description = metaBeschreibung(service, city.name);
  
+@@ -160,13 +153,7 @@ export default async function ServiceCityPage({
+   const city = CITIES.find((c) => c.slug === stadt);
+   if (!service || !city) notFound();
+ 
+-  const serviceDisplayNames: Record<string, string> = {
+-    untergrund: 'Untergrund & Abdichtung',
+-    bad: 'Badsanierung & Bäder',
+-    wohnen: 'Fliesenverlegung & Wohnen',
+-    aussen: 'Balkon- & Terrassensanierung',
+-  };
+-  const displayName = serviceDisplayNames[service.id] || service.name;
++  const displayName = LEISTUNG_ANZEIGE[service.id] || service.name;
+ 
+   const pageUrl = `${SITE_URL}/leistungen/${service.id}/${city.slug}`;
+   const { contact, authority } = COMPANY_DATA;
 diff --git a/src/app/(bestand)/login/layout.tsx b/src/app/(bestand)/login/layout.tsx
 index c37afe5b..ae0d18ff 100644
 --- a/src/app/(bestand)/login/layout.tsx
@@ -35,28 +60,133 @@ index c37afe5b..ae0d18ff 100644
    robots: {
      index: false,
      follow: false,
+diff --git a/src/config/cities.ts b/src/config/cities.ts
+index 35c1f317..3c21b282 100644
+--- a/src/config/cities.ts
++++ b/src/config/cities.ts
+@@ -1,6 +1,8 @@
+ export interface CityData {
+   slug: string;
+   name: string;
++  /** kurze Form für Titel, wenn der volle Name sie über 58 Zeichen bringt (Ortsseite, Leistung × Ort) */
++  kurzname?: string;
+   /** Approximate distance from Wetzlar city centre (neighbouring our head office in Aßlar). */
+   distanceKm: number;
+   region: string;
+@@ -36,6 +38,7 @@ export const CITIES: CityData[] = [
+   {
+     slug: 'limburg',
+     name: 'Limburg an der Lahn',
++    kurzname: 'Limburg',
+     distanceKm: 35,
+     region: 'Landkreis Limburg-Weilburg',
+     description: 'In Limburg und dem Landkreis Limburg-Weilburg sanieren wir Bäder, verlegen Wohnraum- und Treppenfliesen und bauen Balkone und Terrassen neu auf – mit transparentem Festpreisangebot.',
+@@ -52,6 +55,7 @@ export const CITIES: CityData[] = [
+   {
+     slug: 'friedberg',
+     name: 'Friedberg (Hessen)',
++    kurzname: 'Friedberg',
+     distanceKm: 45,
+     region: 'Wetteraukreis',
+     description: 'In Friedberg und der Wetterau übernehmen wir Badsanierungen, Fliesenarbeiten im Neubau und die Untergrundvorbereitung, sauber abgestimmt.',
+diff --git a/src/inhalte/orte.ts b/src/inhalte/orte.ts
+index f4be1262..3fb83b1f 100644
+--- a/src/inhalte/orte.ts
++++ b/src/inhalte/orte.ts
+@@ -31,9 +31,6 @@ const helligkeitsRang = (bild: ArbeitId) => {
+ /** Stimmen allgemeinen Inhalts (ohne Ortsbezug), je Ort eine, fest nach Reihenfolge der Orte */
+ const STIMMEN = ['c-wolf', 'rabia-oe', 'ute-t', 'peter-p', 'sara-j', 'k-d', 'thorsten-a', 'christian-s', 'elke-s', 'hasan-oe'];
+ 
+-/** Titel höchstens 58 Zeichen (Test titleLength): lange Ortsnamen in der kurzen Form */
+-const KURZNAME: Record<string, string> = { limburg: 'Limburg', friedberg: 'Friedberg' };
+-
+ export interface Ortsinhalt extends ErzaehlInhalt {
+   stadt: string;
+ }
+@@ -42,7 +39,8 @@ export function ortsInhalt(stadt: CityData, kmAbSitz: number, index: number): Or
+   const name = stadt.name;
+   // SEO-Runde P3: eigene Inhalte, wo es sie gibt (heute Wetzlar, src/inhalte/orte-eigen.ts), sonst die gemeinsame Fassung
+   const eigen = EIGENE_ORTSINHALTE[stadt.slug];
+-  const kurz = KURZNAME[stadt.slug] ?? name;
++  // Titel höchstens 58 Zeichen (Test titleLength): lange Ortsnamen in der kurzen Form aus den Ortsdaten
++  const kurz = stadt.kurzname ?? name;
+   const ort =
+     kmAbSitz === 0
+       ? 'Fliesenverlegung Tezgel hat seinen Sitz in Aßlar.'
+diff --git a/src/lib/seo/titel.ts b/src/lib/seo/titel.ts
+new file mode 100644
+index 00000000..daac14aa
+--- /dev/null
++++ b/src/lib/seo/titel.ts
+@@ -0,0 +1,18 @@
++// SEO-Runde (Gesamtprobe): Titel der Seiten Leistung × Ort an einer Stelle, damit test/titleLength.test.mjs (Test 7) alle
++// Leistungen und Orte schon vor dem Bau prüfen kann. Lange Ortsnamen stehen in der kurzen Form (CityData.kurzname), sonst
++// kürzt sanitizeTitle (src/lib/metadata.ts) die Marke weg.
++import type { CityData } from '@/config/cities';
++
++/** Anzeigename je Leistung auf den Seiten Leistung × Ort (Titel, Einstieg, Strukturdaten) */
++export const LEISTUNG_ANZEIGE: Readonly<Record<string, string>> = {
++  untergrund: 'Untergrund & Abdichtung',
++  bad: 'Badsanierung & Bäder',
++  wohnen: 'Fliesenverlegung & Wohnen',
++  aussen: 'Balkon- & Terrassensanierung',
++};
++
++export function leistungOrtTitel(service: { id: string; name: string }, city: Pick<CityData, 'name' | 'kurzname'>): string {
++  const anzeige = LEISTUNG_ANZEIGE[service.id] ?? service.name;
++  const ort = city.kurzname ?? city.name;
++  return service.id === 'aussen' ? `${anzeige} in ${ort} | Tezgel` : `${anzeige} in ${ort} | Fliesen Tezgel`;
++}
 diff --git a/test/titleLength.test.mjs b/test/titleLength.test.mjs
-index 6374562d..128229a2 100644
+index 6374562d..1976b8ec 100644
 --- a/test/titleLength.test.mjs
 +++ b/test/titleLength.test.mjs
-@@ -1,5 +1,7 @@
+@@ -1,8 +1,12 @@
  import test from 'node:test';
  import assert from 'node:assert/strict';
 +import fs from 'node:fs';
 +import path from 'node:path';
++import { fileURLToPath } from 'node:url';
  import { generatePageMetadata } from '../src/lib/metadata.ts';
  import { CITIES } from '../src/config/cities.ts';
  import { SERVICES } from '../src/config/services.js';
-@@ -88,3 +90,50 @@ test('5. Markenzusatz (SEO-Runde T10): Auffüllung nur mit „| Fliesenverlegung
++import { leistungOrtTitel } from '../src/lib/seo/titel.ts';
+ 
+ test('1. Title Budget: Long raw titles are strictly clamped to <= 58 chars (SERP Budget)', () => {
+   const meta = generatePageMetadata({
+@@ -88,3 +92,75 @@ test('5. Markenzusatz (SEO-Runde T10): Auffüllung nur mit „| Fliesenverlegung
      if (/Tezgel/.test(t)) assert.match(t, /( \| Fliesenverlegung Tezgel| · Tezgel)$/, t);
    }
  });
 +
++const absoluterTitel = (m) => (typeof m.title === 'object' && m.title && 'absolute' in m.title ? String(m.title.absolute) : String(m.title));
++
++test('7. Leistung × Ort (SEO-Runde): alle Leistungen in allen Orten mit Titel von 45 bis 58 Zeichen und „Tezgel“', () => {
++  for (const service of SERVICES) {
++    for (const city of CITIES) {
++      const titel = absoluterTitel(generatePageMetadata({ title: leistungOrtTitel(service, city), description: 'x', path: `/leistungen/${service.id}/${city.slug}` }));
++      assert.ok(titel.length >= 45 && titel.length <= 58 && titel.includes('Tezgel'), `${service.id} × ${city.slug}: „${titel}“ (${titel.length})`);
++    }
++  }
++});
++
 +// SEO-Runde (Gesamtprobe, docs/seo/arbeit/plan-p2-bis-p8.md, Abschnitt 7): Die Hausregeln gelten für jede gebaute Seite,
 +// auch für Seiten mit noindex. Ausgenommen ist nur die interne Fehlerseite von Next (/_global-error, ohne eigene Adresse).
-+const APP = path.join(new URL('..', import.meta.url).pathname, '.next/server/app');
-+const gebaut = fs.existsSync(path.join(APP, 'index.html'));
-+const ENTITAETEN = { amp: '&', quot: '"', apos: "'", lt: '<', gt: '>', nbsp: '\u00a0' };
++// Der Test prüft nur einen Bau, der jünger ist als die Quellen; sonst läuft er beim nächsten npm test nach npm run build.
++const WURZEL = fileURLToPath(new URL('..', import.meta.url));
++const APP = path.join(WURZEL, '.next/server/app');
++function neuesteAenderung(ordner) {
++  let neueste = 0;
++  for (const eintrag of fs.readdirSync(ordner, { withFileTypes: true })) {
++    const voll = path.join(ordner, eintrag.name);
++    neueste = Math.max(neueste, eintrag.isDirectory() ? neuesteAenderung(voll) : fs.statSync(voll).mtimeMs);
++  }
++  return neueste;
++}
++const BAU_ID = path.join(WURZEL, '.next/BUILD_ID');
++const gebaut = fs.existsSync(path.join(APP, 'index.html')) && fs.existsSync(BAU_ID);
++const bauAktuell = gebaut && fs.statSync(BAU_ID).mtimeMs >= Math.max(neuesteAenderung(path.join(WURZEL, 'src')), fs.statSync(path.join(WURZEL, 'next.config.ts')).mtimeMs);
++const ENTITAETEN = { amp: '&', quot: '"', apos: "'", lt: '<', gt: '>', nbsp: ' ' };
 +const entschluesseln = (s) => s.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (m, e) => {
 +  if (e[0] === '#') return String.fromCodePoint(e[1].toLowerCase() === 'x' ? parseInt(e.slice(2), 16) : Number(e.slice(1)));
 +  return ENTITAETEN[e.toLowerCase()] ?? m;
@@ -71,13 +201,15 @@ index 6374562d..128229a2 100644
 +  return liste;
 +}
 +
-+test('6. Gebaute Seiten: Titel 45 bis 58 mit „Tezgel“, Descriptions 120 bis 155 ohne &, ! und …, kein Gedankenstrich, eine H1, Alt-Texte bis 125 Zeichen', { skip: gebaut ? false : 'kein Produktionsbau (.next/server/app/index.html fehlt)' }, () => {
-+  const STRICH = /[\u2013\u2014]|\s-\s/;
++test('6. Gebaute Seiten: Titel 45 bis 58 mit „Tezgel“, Descriptions 120 bis 155 ohne &, ! und …, kein Gedankenstrich, eine H1, Alt-Texte bis 125 Zeichen', {
++  skip: !gebaut ? 'kein Produktionsbau (.next/server/app/index.html fehlt)' : !bauAktuell ? 'Produktionsbau älter als src/ (nach npm run build erneut npm test)' : false,
++}, () => {
++  const STRICH = /[–—]|\s-\s/;
 +  const fehler = [];
 +  let seiten = 0;
 +  for (const datei of htmlDateien(APP)) {
-+    const seite = '/' + path.relative(APP, datei).replace(/\.html$/, '').replace(/^index$/, '');
-+    if (seite === '/_global-error' || seite.includes('werkstatt')) continue;
++    const seite = '/' + path.relative(APP, datei).split(path.sep).join('/').replace(/\.html$/, '').replace(/^index$/, '');
++    if (seite === '/_global-error') continue;
 +    seiten += 1;
 +    const html = fs.readFileSync(datei, 'utf8');
 +    const titel = entschluesseln(html.match(/<title>(.*?)<\/title>/s)?.[1] ?? '').trim();
