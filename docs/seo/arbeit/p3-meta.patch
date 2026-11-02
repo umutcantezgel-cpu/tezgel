@@ -1,0 +1,615 @@
+diff --git a/src/app/(bestand)/bad/bad-aus-einer-hand/page.jsx b/src/app/(bestand)/bad/bad-aus-einer-hand/page.jsx
+index a78e84d9..10d293b1 100644
+--- a/src/app/(bestand)/bad/bad-aus-einer-hand/page.jsx
++++ b/src/app/(bestand)/bad/bad-aus-einer-hand/page.jsx
+@@ -25,7 +25,7 @@ const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFu
+     loading: () => <FormularPlatzhalter />,
+ });
+ 
+-const TITEL = 'Bad aus einer Hand Wetzlar & Aßlar | Tezgel Badsanierung';
++const TITEL = 'Ihr Bad aus einer Hand | Fliesenverlegung Tezgel';
+ const BESCHREIBUNG = 'Bad aus einer Hand in Wetzlar & Aßlar: Alle Gewerke koordiniert, ein Ansprechpartner & garantierter Festpreis. Jetzt kostenfreies Vor-Ort-Aufmaß sichern!';
+ 
+ const METADATEN = createMetadata({
+diff --git a/src/app/(bestand)/bad/badanfrage/page.jsx b/src/app/(bestand)/bad/badanfrage/page.jsx
+index b2fcd9ee..f813c0e3 100644
+--- a/src/app/(bestand)/bad/badanfrage/page.jsx
++++ b/src/app/(bestand)/bad/badanfrage/page.jsx
+@@ -15,7 +15,7 @@ const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFu
+     loading: () => <FormularPlatzhalter />,
+ });
+ 
+-const TITEL = 'Badsanierung Angebot anfordern | Tezgel Wetzlar';
++const TITEL = 'Angebot für Ihre Badsanierung | Fliesenverlegung Tezgel';
+ const BESCHREIBUNG = 'Unverbindliche Badanfrage an Fliesenverlegung Tezgel: Beschreiben Sie Ihr Projekt für ein individuelles Festpreisangebot in Wetzlar & Aßlar. Jetzt anfragen!';
+ 
+ const METADATEN = createMetadata({
+@@ -36,7 +36,7 @@ export default function BadanfragePage() {
+                 brotkrumen={[
+                     { name: 'Start', href: '/' },
+                     { name: 'Bad', href: '/bad' },
+-                    { name: 'Badsanierung Angebot anfordern bei Tezgel Wetzlar' },
++                    { name: 'Angebot für Ihre Badsanierung anfordern' },
+                 ]}
+             />
+ 
+@@ -46,8 +46,9 @@ export default function BadanfragePage() {
+                 etikett={<>Kostenfrei &amp; unverbindlich</>}
+                 titel={
+                     <>
+-                        Badsanierung Angebot anfordern bei{' '}
+-                        <span>Tezgel Wetzlar</span>
++                        {/* SEO-Runde P3: H1 ohne Ortsnamen, Plan Abschnitt 5 */}
++                        Angebot für Ihre Badsanierung{' '}
++                        <span>anfordern</span>
+                     </>
+                 }
+                 vorspann={
+diff --git a/src/app/(bestand)/bad/musterbaeder/page.jsx b/src/app/(bestand)/bad/musterbaeder/page.jsx
+index 34c21f4f..6ee9cd1e 100644
+--- a/src/app/(bestand)/bad/musterbaeder/page.jsx
++++ b/src/app/(bestand)/bad/musterbaeder/page.jsx
+@@ -19,7 +19,7 @@ import Verlegeplan from '@/components/kern/Verlegeplan';
+ import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+ import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
+ 
+-const TITEL = 'Musterbäder & Badideen Wetzlar | Badsanierung Tezgel';
++const TITEL = 'Musterbäder und Badideen | Fliesenverlegung Tezgel';
+ const BESCHREIBUNG = 'Inspiration für Ihr neues Bad: Musterbäder von 4,6 bis 15,9 m² mit Großformatfliesen, Walk-In Duschen & Markenkomponenten. Fachbetrieb Tezgel in Wetzlar!';
+ 
+ const METADATEN = createMetadata({
+@@ -40,7 +40,7 @@ export default function MusterbaederPage() {
+                 brotkrumen={[
+                     { name: 'Start', href: '/' },
+                     { name: 'Bad', href: '/bad' },
+-                    { name: 'Musterbäder & Badideen Wetzlar: Badsanierung Tezgel' },
++                    { name: 'Musterbäder und Badideen' },
+                 ]}
+             />
+ 
+@@ -51,8 +51,9 @@ export default function MusterbaederPage() {
+                     etikett="Transparente Raumkonzepte"
+                     titel={
+                         <span id="musterbaeder-heading">
+-                            Musterbäder &amp; Badideen Wetzlar:{' '}
+-                            <span>Badsanierung Tezgel</span>
++                            {/* SEO-Runde P3: H1 ohne Ortsnamen, Plan Abschnitt 5 */}
++                            Musterbäder und{' '}
++                            <span>Badideen</span>
+                         </span>
+                     }
+                     vorspann={
+diff --git a/src/app/(bestand)/bad/projekt-check/page.jsx b/src/app/(bestand)/bad/projekt-check/page.jsx
+index a915f747..3d87791b 100644
+--- a/src/app/(bestand)/bad/projekt-check/page.jsx
++++ b/src/app/(bestand)/bad/projekt-check/page.jsx
+@@ -35,7 +35,7 @@ export default function BadProjektCheckPage() {
+                 brotkrumen={[
+                     { name: 'Start', href: '/' },
+                     { name: 'Bad', href: '/bad' },
+-                    { name: 'Bad-Projektcheck: Badsanierung online prüfen bei Tezgel Wetzlar' },
++                    { name: 'Badsanierung online prüfen mit dem Projektcheck' },
+                 ]}
+             />
+ 
+@@ -45,8 +45,9 @@ export default function BadProjektCheckPage() {
+                 etikett={<>Bad-Projektcheck</>}
+                 titel={
+                     <>
+-                        Bad-Projektcheck: Badsanierung online prüfen bei{' '}
+-                        <span>Tezgel Wetzlar</span>
++                        {/* SEO-Runde P3: H1 ohne Ortsnamen, Plan Abschnitt 5 */}
++                        Badsanierung online prüfen{' '}
++                        <span>mit dem Projektcheck</span>
+                     </>
+                 }
+                 vorspann={
+diff --git a/src/app/(bestand)/balkon-terrasse/balkonsanierung/page.jsx b/src/app/(bestand)/balkon-terrasse/balkonsanierung/page.jsx
+index 003ef98f..749c786e 100644
+--- a/src/app/(bestand)/balkon-terrasse/balkonsanierung/page.jsx
++++ b/src/app/(bestand)/balkon-terrasse/balkonsanierung/page.jsx
+@@ -29,7 +29,7 @@ import { linkKlassen } from '@/components/kern/stile';
+ import SeitenDaten from '@/components/seo/SeitenDaten';
+ 
+ export const metadata = createMetadata({
+-    title: 'Balkonsanierung Wetzlar & Aßlar | Abdichtung · Tezgel',
++    title: 'Balkonsanierung mit Abdichtung | Fliesenverlegung Tezgel',
+     description:
+         'Balkonsanierung in Wetzlar & Aßlar: Fachgerechte Abdichtung, Gefälleerstellung & neuer Fliesenbelag vom Fachbetrieb. Jetzt Festpreisangebot anfragen!',
+     path: '/balkon-terrasse/balkonsanierung'
+@@ -124,7 +124,7 @@ export default function BalkonsanierungPage() {
+         <>
+             <SeitenDaten
+                 pfad="/balkon-terrasse/balkonsanierung"
+-                titel="Balkonsanierung Wetzlar & Aßlar | Abdichtung · Tezgel"
++                titel="Balkonsanierung mit Abdichtung | Fliesenverlegung Tezgel"
+                 beschreibung="Balkonsanierung in Wetzlar & Aßlar: Fachgerechte Abdichtung, Gefälleerstellung & neuer Fliesenbelag vom Fachbetrieb. Jetzt Festpreisangebot anfragen!"
+                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Balkon und Terrasse', href: '/balkon-terrasse' }, { name: 'Balkon sanieren: vom undichten Altbelag zur dauerhaften Lösung' }]}
+             />
+diff --git a/src/app/(bestand)/beratung/layout.tsx b/src/app/(bestand)/beratung/layout.tsx
+index b102af99..7b7f6e3c 100644
+--- a/src/app/(bestand)/beratung/layout.tsx
++++ b/src/app/(bestand)/beratung/layout.tsx
+@@ -3,7 +3,7 @@ import { buildGraph, buildServiceNode, buildFaqNode, buildBreadcrumbNode, buildW
+ import JsonLd from '@/components/seo/JsonLd';
+ 
+ export const metadata = createMetadata({
+-  title: 'Kostenlose Fliesenberatung Wetzlar | Fachbetrieb Tezgel',
++  title: 'Kostenlose Fliesenberatung | Fliesenverlegung Tezgel',
+   description: 'Kostenlose Fliesenberatung & Aufmaß: Badsanierung, XXL-Fliesen & Terrassen in Wetzlar & Aßlar. Fliesenleger Tezgel berät persönlich und unverbindlich!',
+   path: '/beratung',
+ });
+diff --git a/src/app/(bestand)/beratung/page.jsx b/src/app/(bestand)/beratung/page.jsx
+index c1d92d63..9a49aba6 100644
+--- a/src/app/(bestand)/beratung/page.jsx
++++ b/src/app/(bestand)/beratung/page.jsx
+@@ -78,7 +78,7 @@ export default function Beratung() {
+             <Einstieg
+                 art="arbeit"
+                 etikett="Kostenlose Erstberatung vom Fliesen-Fachbetrieb"
+-                titel="Kostenlose Fliesenberatung in Wetzlar"
++                titel="Kostenlose Fliesenberatung"
+                 vorspann={
+                     <p>
+                         Jetzt Ihre kostenlose Fliesenberatung in Wetzlar und Aßlar vereinbaren: Ob Badsanierung, XXL-Großformate, Wohnbereich oder Terrasse – Fachbetrieb Tezgel nimmt sich Zeit für Ihre Fragen, prüft den Untergrund und findet mit Ihnen die optimale Lösung.
+diff --git a/src/app/(bestand)/fliesen/kueche/page.jsx b/src/app/(bestand)/fliesen/kueche/page.jsx
+index 366f3708..b2c08ba8 100644
+--- a/src/app/(bestand)/fliesen/kueche/page.jsx
++++ b/src/app/(bestand)/fliesen/kueche/page.jsx
+@@ -29,7 +29,7 @@ const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKo
+ });
+ 
+ export const metadata = createMetadata({
+-    title: 'Küchenfliesen verlegen Wetzlar | Fliesenleger Tezgel',
++    title: 'Küchenfliesen verlegen lassen | Fliesenverlegung Tezgel',
+     description:
+         'Küchenfliesen & Fliesenspiegel verlegen in Wetzlar & Aßlar: strapazierfähige Böden, Großformate & pflegeleichte Fugen. Jetzt unverbindlich beraten lassen!',
+     path: '/fliesen/kueche'
+@@ -88,12 +88,12 @@ export default function KuechePage() {
+         <>
+             <SeitenDaten
+                 pfad="/fliesen/kueche"
+-                titel="Küchenfliesen verlegen Wetzlar | Fliesenleger Tezgel"
++                titel="Küchenfliesen verlegen lassen | Fliesenverlegung Tezgel"
+                 beschreibung="Küchenfliesen & Fliesenspiegel verlegen in Wetzlar & Aßlar: strapazierfähige Böden, Großformate & pflegeleichte Fugen. Jetzt unverbindlich beraten lassen!"
+                 brotkrumen={[
+                     { name: 'Start', href: '/' },
+                     { name: 'Fliesen und Verlegung', href: '/fliesen' },
+-                    { name: 'Küchenfliesen verlegen in Wetzlar mit Fliesenleger Tezgel' },
++                    { name: 'Küchenfliesen und Fliesenspiegel verlegen' },
+                 ]}
+             />
+             {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt mit dem Plan „wohnen“ */}
+@@ -102,8 +102,9 @@ export default function KuechePage() {
+                 etikett={<>Räume &middot; Küche</>}
+                 titel={
+                     <span id="kueche-heading">
+-                        Küchenfliesen verlegen in Wetzlar mit{' '}
+-                        <span>Fliesenleger Tezgel</span>
++                        {/* SEO-Runde P3: H1 ohne Ortsnamen, Plan Abschnitt 5 */}
++                        Küchenfliesen und{' '}
++                        <span>Fliesenspiegel verlegen</span>
+                     </span>
+                 }
+                 vorspann={
+diff --git a/src/app/(bestand)/fliesen/neubau/page.jsx b/src/app/(bestand)/fliesen/neubau/page.jsx
+index 48513a11..ee461822 100644
+--- a/src/app/(bestand)/fliesen/neubau/page.jsx
++++ b/src/app/(bestand)/fliesen/neubau/page.jsx
+@@ -31,7 +31,7 @@ const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKo
+ });
+ 
+ export const metadata = createMetadata({
+-    title: 'Fliesen im Neubau verlegen lassen | Fliesen Tezgel',
++    title: 'Fliesen im Neubau verlegen | Fliesenverlegung Tezgel',
+     description:
+         'Fliesenleger für Neubau-Projekte in Wetzlar & Aßlar: Termintreue, Belegreifeprüfung, Bemusterung & Schnittstellenkoordination. Jetzt Angebot anfragen!',
+     path: '/fliesen/neubau'
+@@ -113,7 +113,7 @@ export default function NeubauPage() {
+         <>
+             <SeitenDaten
+                 pfad="/fliesen/neubau"
+-                titel="Fliesen im Neubau verlegen lassen | Fliesen Tezgel"
++                titel="Fliesen im Neubau verlegen | Fliesenverlegung Tezgel"
+                 beschreibung="Fliesenleger für Neubau-Projekte in Wetzlar & Aßlar: Termintreue, Belegreifeprüfung, Bemusterung & Schnittstellenkoordination. Jetzt Angebot anfragen!"
+                 brotkrumen={[
+                     { name: 'Start', href: '/' },
+diff --git a/src/app/(bestand)/fliesenreparatur/layout.tsx b/src/app/(bestand)/fliesenreparatur/layout.tsx
+index 6d8720d7..a1cc120b 100644
+--- a/src/app/(bestand)/fliesenreparatur/layout.tsx
++++ b/src/app/(bestand)/fliesenreparatur/layout.tsx
+@@ -11,7 +11,7 @@ const breadcrumbs = [
+ const reparaturSchema = buildGraph([
+   buildWebPageNode({
+     url: pageUrl,
+-    name: 'Fliesenreparatur Wetzlar & Aßlar | Fliesen Tezgel',
++    name: 'Fliesenreparatur und Fugen | Fliesenverlegung Tezgel',
+     description:
+       'Professionelle Fliesenreparatur in Wetzlar & Aßlar: einzelne Fliesen austauschen, Bohrlöcher verschließen & Fugen sanieren. Schneller Vor-Ort-Service!',
+     breadcrumbItems: breadcrumbs,
+diff --git a/src/app/(bestand)/fliesenreparatur/page.tsx b/src/app/(bestand)/fliesenreparatur/page.tsx
+index 2a5033a6..0e7bb446 100644
+--- a/src/app/(bestand)/fliesenreparatur/page.tsx
++++ b/src/app/(bestand)/fliesenreparatur/page.tsx
+@@ -28,7 +28,7 @@ import Schrittfolge from '@/components/kern/Schrittfolge';
+ import Verlegeplan from '@/components/kern/Verlegeplan';
+ 
+ export const metadata = createMetadata({
+-    title: 'Fliesenreparatur Wetzlar & Aßlar | Fliesen Tezgel',
++    title: 'Fliesenreparatur und Fugen | Fliesenverlegung Tezgel',
+     description:
+         'Professionelle Fliesenreparatur in Wetzlar & Aßlar: einzelne Fliesen austauschen, Bohrlöcher verschließen & Fugen sanieren. Schneller Vor-Ort-Service!',
+     path: '/fliesenreparatur'
+diff --git a/src/app/(bestand)/karriere/layout.tsx b/src/app/(bestand)/karriere/layout.tsx
+index b6fde2fb..cfd7b18b 100644
+--- a/src/app/(bestand)/karriere/layout.tsx
++++ b/src/app/(bestand)/karriere/layout.tsx
+@@ -4,7 +4,7 @@ import { COMPANY_DATA } from '@/config/company';
+ const { headquarters } = COMPANY_DATA;
+ 
+ export const metadata = createMetadata({
+-  title: 'Fliesenleger Jobs Wetzlar & Aßlar | Karriere Tezgel',
++  title: 'Fliesenleger Jobs bei Wetzlar | Fliesenverlegung Tezgel',
+   description: `Fliesenleger (m/w/d) gesucht! Jobs bei Fliesenverlegung Tezgel in ${headquarters.city} & Wetzlar: faire Bezahlung, modernes Werkzeug & gutes Team. Jetzt bewerben!`,
+   path: '/karriere',
+ });
+diff --git a/src/app/(bestand)/karriere/page.jsx b/src/app/(bestand)/karriere/page.jsx
+index 3cb25113..b020575d 100644
+--- a/src/app/(bestand)/karriere/page.jsx
++++ b/src/app/(bestand)/karriere/page.jsx
+@@ -87,9 +87,9 @@ export default function KarrierePage() {
+         <>
+             <SeitenDaten
+                 pfad="/karriere"
+-                titel="Fliesenleger Jobs Wetzlar & Aßlar | Karriere Tezgel"
++                titel="Fliesenleger Jobs bei Wetzlar | Fliesenverlegung Tezgel"
+                 beschreibung={`Fliesenleger (m/w/d) gesucht! Jobs bei Fliesenverlegung Tezgel in ${headquarters.city} & Wetzlar: faire Bezahlung, modernes Werkzeug & gutes Team. Jetzt bewerben!`}
+-                brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Fliesenleger Jobs & Karriere bei Tezgel in Wetzlar & Aßlar' }]}
++                brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Jobs als Fliesenleger in Aßlar bei Wetzlar' }]}
+                 weitere={[
+                     buildJobPostingNode(KARRIERE_STELLE, `${SITE_URL}/karriere`),
+                     buildFaqNode(
+@@ -107,7 +107,7 @@ export default function KarrierePage() {
+                         Werde Teil unseres Teams
+                     </>
+                 }
+-                titel={<>Fliesenleger Jobs &amp; Karriere bei Tezgel in Wetzlar &amp; Aßlar</>}
++                titel={<>Jobs als Fliesenleger in Aßlar bei Wetzlar</>}
+                 vorspann={
+                     <p>
+                         Fliesenleger Jobs in Wetzlar &amp; Aßlar gesucht: Verstärken Sie das Team von {COMPANY_DATA.legalName} als Geselle oder erfahrene Fachkraft. Bewerben Sie sich direkt bei Inhaber {COMPANY_DATA.owner.fullName} – ein starkes Team von bis zu 12 Handwerkern im Einsatz in Mittelhessen.
+diff --git a/src/app/(bestand)/leistungen/[id]/layout.jsx b/src/app/(bestand)/leistungen/[id]/layout.jsx
+index 8af599fb..a14ba7e3 100644
+--- a/src/app/(bestand)/leistungen/[id]/layout.jsx
++++ b/src/app/(bestand)/leistungen/[id]/layout.jsx
+@@ -8,10 +8,10 @@ export async function generateMetadata({ params }) {
+ 
+   const path = `/leistungen/${service.id}`;
+   const serviceHubTitles = {
+-    bad: 'Badsanierung & Komplettbäder Wetzlar | Tezgel',
+-    wohnen: 'Fliesenverlegung Wohnbereich Wetzlar | Tezgel',
+-    aussen: 'Balkon- & Terrassensanierung Wetzlar | Tezgel',
+-    untergrund: 'DIN 18534 Abdichtung & Untergrund | Fliesen Tezgel',
++    bad: 'Leistungen rund ums Bad | Fliesenverlegung Tezgel',
++    wohnen: 'Böden und Wände im Überblick | Fliesenverlegung Tezgel',
++    aussen: 'Leistungen für draußen | Fliesenverlegung Tezgel',
++    untergrund: 'Leistungen für den Untergrund | Fliesenverlegung Tezgel',
+   };
+   const title = serviceHubTitles[service.id] || `${service.name} Wetzlar | Tezgel`;
+   const description = `${service.shortDescription}. Fachbetrieb für ${service.name} in Aßlar, Wetzlar & Mittelhessen – kostenfreies Vor-Ort-Aufmaß & Festpreisangebot.`;
+diff --git a/src/app/(bestand)/leistungen/[id]/page.jsx b/src/app/(bestand)/leistungen/[id]/page.jsx
+index a7de3295..7dcf474c 100644
+--- a/src/app/(bestand)/leistungen/[id]/page.jsx
++++ b/src/app/(bestand)/leistungen/[id]/page.jsx
+@@ -58,11 +58,12 @@ export default async function ServiceDetailPage({ params }) {
+     notFound();
+   }
+ 
++  // SEO-Runde P3: H1 ohne Ortsnamen (Plan Abschnitt 5); Wetzlar hat die eigene Seite /standorte/wetzlar
+   const serviceH1Titles = {
+-    bad: 'Badsanierung & Komplettbäder: Bäder & Wellness in Wetzlar',
+-    wohnen: 'Fliesenverlegung Wohnbereich & Neubau in Wetzlar',
+-    aussen: 'Balkon- & Terrassensanierung in Wetzlar & Mittelhessen',
+-    untergrund: 'DIN 18534 Abdichtung & Untergrundvorbereitung in Wetzlar',
++    bad: 'Leistungen rund ums Bad',
++    wohnen: 'Böden und Wände im Wohnbereich und Neubau',
++    aussen: 'Leistungen für Balkon, Terrasse und Eingang',
++    untergrund: 'Untergrund vorbereiten und nach DIN 18534 abdichten',
+   };
+   const serviceIntroTexts = {
+     bad: 'Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exklusive Bäder & Wellness in Wetzlar und Mittelhessen realisieren wir maßgeschneiderte Wohlfühloasen. Wir verarbeiten raumhohe Fliesenformate mit minimalen Fugenanteilen, integrieren barrierefreie Walk-In-Bereiche und garantieren zertifizierten Staubschutz für Ihr bewohntes Zuhause.',
+diff --git a/src/app/(bestand)/naturstein/page.jsx b/src/app/(bestand)/naturstein/page.jsx
+index 7b5f6a64..d4b87eef 100644
+--- a/src/app/(bestand)/naturstein/page.jsx
++++ b/src/app/(bestand)/naturstein/page.jsx
+@@ -33,7 +33,7 @@ import SeitenDaten from '@/components/seo/SeitenDaten';
+ import { buildServiceNode, SITE_URL } from '@/lib/schema';
+ 
+ export const metadata = createMetadata({
+-    title: 'Naturstein verlegen Wetzlar & Aßlar | Granit · Tezgel',
++    title: 'Naturstein verlegen lassen | Fliesenverlegung Tezgel',
+     description:
+         'Naturstein fachgerecht verlegen in Wetzlar & Aßlar: Granit, Marmor, Kalkstein, Travertin & Schiefer. Verfärbungsfreie Verklebung. Aufmaß vor Ort kostenfrei!',
+     path: '/naturstein'
+@@ -181,7 +181,7 @@ export default function NatursteinPage() {
+         <>
+             <SeitenDaten
+                 pfad="/naturstein"
+-                titel="Naturstein verlegen Wetzlar & Aßlar | Granit · Tezgel"
++                titel="Naturstein verlegen lassen | Fliesenverlegung Tezgel"
+                 beschreibung="Naturstein fachgerecht verlegen in Wetzlar & Aßlar: Granit, Marmor, Kalkstein, Travertin & Schiefer. Verfärbungsfreie Verklebung. Aufmaß vor Ort kostenfrei!"
+                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Naturstein- und Granitverlegung vom Fachbetrieb' }]}
+                 weitere={[
+diff --git a/src/app/(bestand)/team/page.jsx b/src/app/(bestand)/team/page.jsx
+index e292d938..de9a05a6 100644
+--- a/src/app/(bestand)/team/page.jsx
++++ b/src/app/(bestand)/team/page.jsx
+@@ -22,7 +22,7 @@ import Verlegeplan from '@/components/kern/Verlegeplan';
+ import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
+ import SeitenDaten from '@/components/seo/SeitenDaten';
+ 
+-const TITEL = 'Unser Team | Fachbetrieb für Fliesen Tezgel Aßlar';
++const TITEL = 'Unser Team | Fliesenverlegung Tezgel aus Aßlar';
+ const BESCHREIBUNG = 'Das Team von Fliesenverlegung Tezgel: Inhaber Deniz Tezgel und qualifizierte Fliesenleger für Fliesen- & Badprojekte in Aßlar, Wetzlar & ganz Hessen.';
+ 
+ export const metadata = createMetadata({
+diff --git a/src/app/(bestand)/termin/layout.tsx b/src/app/(bestand)/termin/layout.tsx
+index 76da6551..695e2e42 100644
+--- a/src/app/(bestand)/termin/layout.tsx
++++ b/src/app/(bestand)/termin/layout.tsx
+@@ -4,7 +4,7 @@ import SeitenDaten from '@/components/seo/SeitenDaten';
+ // /termin/page.jsx is a client component, so its metadata lives here – und mit ihr die strukturierten Daten der Seite
+ // (SeitenDaten, E3-SEO-JSONLD-NACH, E-054): als Serverkomponente, damit Schema und Meta-Tabelle nicht ins Client-Bundle
+ // der Seite gelangen. /termin hat keine Unterseiten, die die Daten erben könnten.
+-const TITEL = 'Termin vereinbaren | Fliesenleger Tezgel Wetzlar';
++const TITEL = 'Termin vor Ort vereinbaren | Fliesenverlegung Tezgel';
+ const BESCHREIBUNG =
+   'Termin bei Fliesenleger Tezgel in Aßlar: Wunschthema wählen & Terminanfrage für Vor-Ort-Aufmaß in Wetzlar & Hessen direkt online oder per WhatsApp senden.';
+ 
+diff --git a/src/app/(bestand)/treppen/page.jsx b/src/app/(bestand)/treppen/page.jsx
+index 827a866e..cd802520 100644
+--- a/src/app/(bestand)/treppen/page.jsx
++++ b/src/app/(bestand)/treppen/page.jsx
+@@ -29,7 +29,7 @@ import SeitenDaten from '@/components/seo/SeitenDaten';
+ import { buildServiceNode, SITE_URL } from '@/lib/schema';
+ 
+ export const metadata = createMetadata({
+-    title: 'Treppe fliesen & sanieren Wetzlar | Fachbetrieb Tezgel',
++    title: 'Treppe fliesen und sanieren | Fliesenverlegung Tezgel',
+     description:
+         'Treppe fliesen & sanieren in Wetzlar & Aßlar: Innentreppen, Außentreppen & Treppenhäuser mit Fliesen oder Naturstein belegen. Jetzt Angebot anfragen!',
+     path: '/treppen'
+@@ -131,7 +131,7 @@ export default function TreppenPage() {
+         <>
+             <SeitenDaten
+                 pfad="/treppen"
+-                titel="Treppe fliesen & sanieren Wetzlar | Fachbetrieb Tezgel"
++                titel="Treppe fliesen und sanieren | Fliesenverlegung Tezgel"
+                 beschreibung="Treppe fliesen & sanieren in Wetzlar & Aßlar: Innentreppen, Außentreppen & Treppenhäuser mit Fliesen oder Naturstein belegen. Jetzt Angebot anfragen!"
+                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Treppen neu belegen: Welche Lösung passt zu Ihrer Treppe?' }]}
+                 weitere={[
+diff --git a/src/inhalte/bad-badsanierung.ts b/src/inhalte/bad-badsanierung.ts
+index 9a48f93b..7408294d 100644
+--- a/src/inhalte/bad-badsanierung.ts
++++ b/src/inhalte/bad-badsanierung.ts
+@@ -13,9 +13,9 @@ const VORSPANN =
+ export const BADSANIERUNG: ErzaehlInhalt = {
+   pfad: '/bad/badsanierung',
+   meta: {
+-    titel: 'Badsanierung in Aßlar & Wetzlar | Fliesenverlegung Tezgel',
++    titel: 'Badsanierung zum Festpreis | Fliesenverlegung Tezgel',
+     beschreibung:
+-      'Komplette Badsanierung in Aßlar und Wetzlar mit Walk-in-Dusche. Festpreisangebot von Fliesenverlegung Tezgel, Termin vor Ort kostenfrei.',
++      'Komplette Badsanierung mit Dusche ohne Stufe und großen Fliesen. Sie bekommen ein verbindliches Festpreisangebot, der Termin vor Ort ist kostenfrei.',
+   },
+   worum: {
+     brotkrumen: [{ name: 'Start', href: '/' }, { name: 'Bad', href: '/bad' }, { name: 'Badsanierung' }],
+diff --git a/src/inhalte/bad.ts b/src/inhalte/bad.ts
+index 43b67128..d6ee2f4b 100644
+--- a/src/inhalte/bad.ts
++++ b/src/inhalte/bad.ts
+@@ -10,9 +10,9 @@ const VORSPANN =
+ export const BAD: ErzaehlInhalt = {
+   pfad: '/bad',
+   meta: {
+-    titel: 'Ihr neues Bad in Aßlar & Wetzlar | Fliesenverlegung Tezgel',
++    titel: 'Bad und Dusche erneuern | Fliesenverlegung Tezgel',
+     beschreibung:
+-      'Badsanierung in Aßlar und Wetzlar: altes Bad umbauen, große Fliesen verlegen, Abdichtung nach DIN 18534. Festpreisangebot, Termin vor Ort kostenfrei.',
++      'Ein neues Bad vom Fliesenleger: Wanne raus, Dusche ohne Stufe rein, große Fliesen und Abdichtung nach DIN 18534. Der Termin vor Ort ist kostenfrei.',
+   },
+   worum: {
+     brotkrumen: [{ name: 'Start', href: '/' }, { name: 'Bad' }],
+diff --git a/src/inhalte/balkon-terrasse.ts b/src/inhalte/balkon-terrasse.ts
+index 51e51469..3451b7d3 100644
+--- a/src/inhalte/balkon-terrasse.ts
++++ b/src/inhalte/balkon-terrasse.ts
+@@ -11,9 +11,9 @@ const VORSPANN =
+ export const BALKON_TERRASSE: ErzaehlInhalt = {
+   pfad: '/balkon-terrasse',
+   meta: {
+-    titel: 'Balkon und Terrasse fliesen in Wetzlar und Aßlar | Tezgel',
++    titel: 'Balkon und Terrasse fliesen | Fliesenverlegung Tezgel',
+     beschreibung:
+-      'Balkon und Terrasse fliesen lassen in Wetzlar und Aßlar: Wir verlegen Platten, auch auf Stelzlagern. Der Termin bei Ihnen vor Ort ist kostenfrei.',
++      'Balkon und Terrasse fliesen lassen: Wir verlegen Platten, auch auf Stelzlagern, mit Gefälle vom Haus weg. Der Termin bei Ihnen vor Ort ist kostenfrei.',
+   },
+   worum: {
+     brotkrumen: [{ name: 'Start', href: '/' }, { name: 'Balkon und Terrasse' }],
+diff --git a/src/inhalte/barrierefreies-bad.ts b/src/inhalte/barrierefreies-bad.ts
+index 544b6e2d..e1d985bb 100644
+--- a/src/inhalte/barrierefreies-bad.ts
++++ b/src/inhalte/barrierefreies-bad.ts
+@@ -7,9 +7,9 @@ import type { ErzaehlInhalt } from '@/components/vorlagen/inhalt';
+ export const BARRIEREFREIES_BAD: ErzaehlInhalt = {
+   pfad: '/bad/barrierefreies-bad',
+   meta: {
+-    titel: 'Barrierefreies Bad nach DIN 18040 | Tezgel Aßlar',
++    titel: 'Barrierefreies Bad umbauen | Fliesenverlegung Tezgel',
+     beschreibung:
+-      'Badewanne raus, Dusche ohne Stufe rein: Wir bauen Ihr Bad in Aßlar und Wetzlar barrierefrei um, mit rutschfesten Fliesen und Zuschuss der Pflegekasse.',
++      'Badewanne raus, Dusche ohne Stufe rein: Wir bauen Ihr Bad barrierefrei um. Mit Pflegegrad zahlt die Pflegekasse bis zu 4.180 € je Person dazu.',
+   },
+   worum: {
+     brotkrumen: [{ name: 'Start', href: '/' }, { name: 'Bad', href: '/bad' }, { name: 'Dusche statt Wanne' }],
+diff --git a/src/inhalte/kontakt.ts b/src/inhalte/kontakt.ts
+index 38511961..4bccc209 100644
+--- a/src/inhalte/kontakt.ts
++++ b/src/inhalte/kontakt.ts
+@@ -41,9 +41,9 @@ export interface KontaktInhalt {
+ export const KONTAKT: KontaktInhalt = {
+   pfad: '/kontakt',
+   meta: {
+-    titel: 'Kontakt und Termin vor Ort | Fliesenleger Tezgel Aßlar',
++    titel: 'Kontakt und Termin vor Ort | Fliesenverlegung Tezgel',
+     beschreibung:
+-      'Fliesenleger Tezgel in Aßlar: Anruf, WhatsApp oder Anfrage. Der Termin vor Ort ist kostenfrei. Persönliche Beratung und Festpreis für Wetzlar und Hessen.',
++      'Fliesenverlegung Tezgel in Aßlar: Rufen Sie an, schreiben Sie per WhatsApp oder senden Sie eine Anfrage. Der Termin bei Ihnen vor Ort ist kostenfrei.',
+   },
+   brotkrumen: [{ name: 'Start', href: '/' }, { name: 'Kontakt' }],
+   titel: 'Nehmen Sie Kontakt auf. Wir kommen für einen Termin zu Ihnen.',
+diff --git a/src/inhalte/leistungen.ts b/src/inhalte/leistungen.ts
+index e106f591..3e3f96ea 100644
+--- a/src/inhalte/leistungen.ts
++++ b/src/inhalte/leistungen.ts
+@@ -10,8 +10,8 @@ import type { Leistungsplan } from '@/components/leistungen/Leistungsplaene';
+ export const LEISTUNGEN: ErzaehlInhalt = {
+   pfad: '/leistungen',
+   meta: {
+-    titel: 'Fliesenleger Leistungen Wetzlar | Fliesenverlegung Tezgel',
+-    beschreibung: 'Fliesenleger Leistungen in Aßlar und Wetzlar: Badsanierung, Böden, Balkon, Terrasse, Naturstein und Abdichtung. Der Termin vor Ort ist kostenfrei.',
++    titel: 'Leistungen vom Fliesenleger | Fliesenverlegung Tezgel',
++    beschreibung: 'Alle Leistungen von Fliesenverlegung Tezgel aus Aßlar: Bad und Dusche, Böden und Wände, Balkon und Terrasse, Treppe, Naturstein und Abdichtung.',
+   },
+   worum: {
+     brotkrumen: [{ name: 'Start', href: '/' }, { name: 'Leistungen' }],
+diff --git a/src/inhalte/meta/bauteile.ts b/src/inhalte/meta/bauteile.ts
+index b62eff6c..ed5d7b49 100644
+--- a/src/inhalte/meta/bauteile.ts
++++ b/src/inhalte/meta/bauteile.ts
+@@ -8,14 +8,14 @@ export const META_BAUTEILE: Readonly<Record<string, string>> = {
+   '/untergrund-abdichtung/entkopplung': 'Fliesen auf Holzboden mit Entkopplung: Ist der Boden tragfähig, belegen wir Holzdielen und Mischuntergründe mit Entkopplungsmatten.',
+   '/untergrund-abdichtung/ausgleich-gefaelle': 'Untergrund ausgleichen und Gefälle herstellen: Wir messen die Ebenheit nach DIN 18202. Das Gefälle bilden wir zu Bodenablauf oder Duschrinne aus.',
+   '/balkon-terrasse/stelzlager': 'Terrassenplatten auf Stelzlagern verlegen: 2 cm starke, frostbeständige Platten aus Feinsteinzeug auf höhenverstellbaren Lagern, ganz ohne Mörtel darunter.',
+-  '/balkon-terrasse/balkonsanierung': 'Balkonsanierung in Wetzlar und Aßlar: Wir stellen ein Gefälle vom Gebäude weg her, dann folgen Abdichtung und neuer Belag.',
++  '/balkon-terrasse/balkonsanierung': 'Balkonsanierung vom Fachbetrieb: Wir stellen ein Gefälle vom Gebäude weg her, dann folgen Abdichtung und neuer Belag. Der Termin vor Ort ist kostenfrei.',
+   '/balkon-terrasse/terrassenplatten': 'Terrassenplatten verlegen lassen: Wir beraten Sie zu Material, Stärke und Oberfläche, passend zu Untergrund und Witterung für Terrasse und Balkon.',
+   '/naturstein/granit': 'Granit und Schiefer für Boden, Treppe und Außenbereich verlegen lassen. Wir verwenden Kleber für Naturstein und betten die Platten hohlraumarm ein.',
+   '/naturstein/marmor-kalkstein': 'Marmor und Travertin verlegen lassen: Wir verwenden weiße Kleber, damit Farbe und Zeichnung bleiben, und erklären die Pflege ohne Säure.',
+-  '/treppen': 'Treppe fliesen oder sanieren: Innentreppe, Treppenhaus oder Außentreppe mit Fliesen oder Naturstein neu belegen. Fachbetrieb Tezgel in Wetzlar und Aßlar.',
++  '/treppen': 'Treppe fliesen oder sanieren: Innentreppe, Treppenhaus oder Außentreppe mit Fliesen oder Naturstein neu belegen. Der Termin vor Ort ist kostenfrei.',
+   '/treppen/innentreppe': 'Innentreppe fliesen lassen: Jede Stufe wird einzeln aufgemessen. Für die Kante gibt es mehrere Lösungen, etwa ein Profil oder eine eigene Stufenplatte.',
+   '/treppen/treppenhaus': 'Treppenhaus sanieren im Mehrfamilienhaus: abriebfeste, trittsichere Beläge. Wir arbeiten nach Absprache abschnittsweise im bewohnten Haus.',
+   '/treppen/aussentreppe': 'Außentreppe fliesen und sanieren: Wir verlegen frostbeständige, rutschhemmende Platten mit Gefälle, etwa am Hauseingang oder an der Gartentreppe.',
+   '/schadensanalyse': 'Fliesenschäden analysieren bei Rissen, Hohlstellen oder Feuchte. Wir klären beim kostenfreien Termin vor Ort die Ursache und schlagen eine Lösung vor.',
+-  '/fliesenreparatur': 'Fliesenreparatur in Wetzlar und Aßlar: einzelne Fliesen austauschen, Sockelfliesen reparieren und Fugen erneuern. Wir stimmen den Termin mit Ihnen ab.',
++  '/fliesenreparatur': 'Fliesenreparatur: einzelne Fliesen austauschen, Sockelfliesen reparieren und Fugen erneuern. Den Termin stimmen wir mit Ihnen ab, Fotos helfen vorab.',
+ };
+diff --git a/src/inhalte/meta/fliesen.ts b/src/inhalte/meta/fliesen.ts
+index 6b888ea7..72177d1b 100644
+--- a/src/inhalte/meta/fliesen.ts
++++ b/src/inhalte/meta/fliesen.ts
+@@ -4,13 +4,13 @@ export const META_FLIESEN: Readonly<Record<string, string>> = {
+   '/fliesen/grossformat': 'Großformatfliesen verlegen lassen: Warum der Untergrund sehr eben sein muss und wann große Platten passen. Erklärt vom Fachbetrieb Tezgel aus Aßlar.',
+   '/fliesen/holzoptik': 'Holzoptik in Feinsteinzeug verlegen lassen: Die Fliese verträgt Feuchtigkeit gut und ist kratzfest. Auch für Fußbodenheizung geeignet.',
+   '/fliesen/fliesenarten': 'Fliesenarten im Vergleich: Feinsteinzeug, Steinzeug und Steingut. Wasseraufnahme und Frostbeständigkeit erklärt der Fachbetrieb Tezgel aus Aßlar.',
+-  '/fliesen/kueche': 'Küchenfliesen und Fliesenspiegel verlegt Fachbetrieb Tezgel aus Aßlar in Wetzlar und Umgebung. Dichtes Feinsteinzeug nimmt Öl und Kaffee kaum auf.',
++  '/fliesen/kueche': 'Küchenfliesen und Fliesenspiegel vom Fachbetrieb aus Aßlar. Dichtes Feinsteinzeug nimmt Öl und Kaffee kaum auf und lässt sich leicht sauber halten.',
+   '/fliesen/flur-diele': 'Flur und Diele fliesen lassen: abriebfeste Fliesen, Sauberlaufzone und passende Verlegerichtung. Übergänge zu Parkett oder Teppich planen wir gleich mit.',
+   '/fliesen/verlegemuster': 'Verlegemuster im Überblick: Kreuzfuge, Halbverband, Fischgrät und Diagonal. Wie viel Verschnitt Sie einplanen sollten, erklärt Fachbetrieb Tezgel.',
+   '/fliesen/verlegetechnik': 'Verlegetechnik für Fliesen: Dünnbett, Kleber und Fugenmörtel im Überblick. Was die Kürzel auf dem Klebersack bedeuten, erklärt der Fachbetrieb Tezgel.',
+   '/fliesen/renovierung': 'Alte Fliesen erneuern: Ablauf im bewohnten Haus, Schritt für Schritt und mit staubarmen Verfahren. Überfliesen oder Rückbau klären wir mit Ihnen.',
+-  '/fliesen/neubau': 'Fliesen im Neubau verlegen lassen: Belegreife prüfen, Material festlegen und Termine mit Bauleitung abstimmen. Fachbetrieb Tezgel in Wetzlar und Aßlar.',
+-  '/fliesen/fugensanierung': 'Fugensanierung in Wetzlar und Aßlar: Schimmelige Silikonfugen und bröselnde Zementfugen erneuern. Für eine erste Einschätzung helfen Fotos per WhatsApp.',
++  '/fliesen/neubau': 'Fliesen im Neubau verlegen lassen: Belegreife prüfen, Material festlegen und Termine mit der Bauleitung abstimmen. Fachbetrieb Tezgel aus Aßlar.',
++  '/fliesen/fugensanierung': 'Fugensanierung: schimmelige Silikonfugen und bröselnde Zementfugen erneuern. Für eine erste Einschätzung helfen uns Fotos per WhatsApp.',
+   '/fliesen/abnahme': 'Fliesenarbeiten abnehmen: Checkliste zum Ausdrucken mit Ebenheit nach DIN 18202, Fugenbild und Hohlstellen. Erklärt vom Fachbetrieb Tezgel aus Aßlar.',
+   '/fliesen/festpreisangebot': 'Festpreisangebot für Fliesenarbeiten: Was den Aufwand bestimmt und wie Sie Angebote fair vergleichen. Grundlage ist der kostenfreie Termin vor Ort.',
+   '/fliesen/konfigurator': 'Konfigurator und Bedarfsrechner für Fliesen: Materialbedarf und Verschnitt für Raum, Untergrund und Format. Unverbindlich, kostenfrei und ohne Preis.',
+diff --git a/src/inhalte/meta/leistungen.ts b/src/inhalte/meta/leistungen.ts
+index fdef3f48..5f9c71f6 100644
+--- a/src/inhalte/meta/leistungen.ts
++++ b/src/inhalte/meta/leistungen.ts
+@@ -1,12 +1,12 @@
+ // Meta-Beschreibungen (E3-SEO-META): Leistungen /leistungen/<bereich>[/<ort>], /bad/badanfrage, /foerderung, /fliesen/auf-fussbodenheizung, /naturstein. Je Adresse ein Satz oder zwei, 120 bis 155 Zeichen, Alltagssprache;
+ // Regeln in test/meta.test.mjs. Sichtbare Texte der Seiten bleiben unverändert.
+ export const META_LEISTUNGEN: Readonly<Record<string, string>> = {
+-  '/leistungen/bad': 'Badsanierung in Wetzlar: bodengleiche Dusche, barrierefreies Bad und große Fliesen. Abdichtung nach DIN 18534, der Regel für Bad und Dusche.',
+-  '/leistungen/wohnen': 'Fliesenverlegung im Wohnbereich in Wetzlar: Feinsteinzeug, Naturstein und Treppen für Wohnräume und Küchen. Der Termin bei Ihnen vor Ort ist kostenfrei.',
+-  '/leistungen/aussen': 'Balkon und Terrassensanierung in Wetzlar, auch auf Stelzlagern. Das Gefälle ist mindestens 1,5 bis 2 %, damit Regenwasser abläuft.',
+-  '/leistungen/untergrund': 'Untergrund und Abdichtung in Wetzlar: Wir gleichen Estrich aus, messen die Restfeuchte und dichten unter den Fliesen nach DIN 18534 ab.',
++  '/leistungen/bad': 'Leistungen rund ums Bad: Dusche ohne Stufe, barrierefreies Bad und große Fliesen, abgedichtet nach DIN 18534. Der Termin bei Ihnen vor Ort ist kostenfrei.',
++  '/leistungen/wohnen': 'Fliesen für Wohnräume und Küchen: Feinsteinzeug, Naturstein und Treppen, verlegt vom Fachbetrieb aus Aßlar. Der Termin bei Ihnen vor Ort ist kostenfrei.',
++  '/leistungen/aussen': 'Balkon und Terrasse sanieren, auch auf Stelzlagern. Das Gefälle beträgt mindestens 1,5 bis 2 %, damit Regenwasser vom Haus weg abläuft.',
++  '/leistungen/untergrund': 'Untergrund und Abdichtung: Wir gleichen Estrich aus, messen die Restfeuchte und dichten unter den Fliesen nach DIN 18534 ab. Der Termin ist kostenfrei.',
+   '/bad/badanfrage': 'Für Ihr Angebot zur Badsanierung geben Sie im Formular Raummaße und Wunschausstattung an. Danach folgt der kostenfreie Termin bei Ihnen vor Ort.',
+   '/foerderung': 'Förderung für Ihr barrierefreies Bad: Die Pflegekasse zahlt mit Pflegegrad bis zu 4.180 € je Person dazu. Auch die KfW 159 kann den Umbau fördern.',
+   '/fliesen/auf-fussbodenheizung': 'Fliesen auf Fußbodenheizung verlegen: Wann der Estrich trocken genug ist, welcher Kleber passt und wo die Fugen hinkommen. Ratgeber von Tezgel.',
+-  '/naturstein': 'Naturstein verlegen in Wetzlar und Aßlar: Granit, Marmor, Kalkstein, Travertin und Schiefer. Der Termin bei Ihnen vor Ort ist kostenfrei.',
++  '/naturstein': 'Naturstein verlegen lassen: Granit, Marmor, Kalkstein, Travertin und Schiefer, verlegt vom Fachbetrieb aus Aßlar. Der Termin vor Ort ist kostenfrei.',
+ };
+diff --git a/src/inhalte/meta/seiten.ts b/src/inhalte/meta/seiten.ts
+index 8c359d74..e9d3cbbd 100644
+--- a/src/inhalte/meta/seiten.ts
++++ b/src/inhalte/meta/seiten.ts
+@@ -1,8 +1,8 @@
+ // Meta-Beschreibungen (E3-SEO-META-2): Bad-Unterseiten, /standorte, /ausstellung/*, /faq, /beratung, /downloads, /unternehmen, /team, /partner, /karriere, /termin. Je Adresse ein Satz oder zwei, 120 bis 155 Zeichen, Alltagssprache;
+ // Regeln in test/meta.test.mjs. Sichtbare Texte der Seiten bleiben unverändert.
+ export const META_SEITEN: Readonly<Record<string, string>> = {
+-  '/bad/fliesen': 'Badfliesen in Aßlar und Wetzlar: große Fliesen, Feinsteinzeug, Naturstein und Mosaik, fachgerecht abgedichtet nach DIN 18534. Beratung auf Anfrage.',
+-  '/bad/bad-aus-einer-hand': 'Bad aus einer Hand in Aßlar und Wetzlar: Wir koordinieren Sanitär, Fliesen, Elektrik und Trockenbau. Sie haben einen festen Ansprechpartner.',
++  '/bad/fliesen': 'Badfliesen vom Fachbetrieb: große Fliesen, Feinsteinzeug, Naturstein und Mosaik, abgedichtet nach DIN 18534. Wir beraten Sie beim Termin vor Ort.',
++  '/bad/bad-aus-einer-hand': 'Bad aus einer Hand: Wir koordinieren Sanitär, Fliesen, Elektrik und Trockenbau. Sie haben einen festen Ansprechpartner von der Planung bis zur Abnahme.',
+   '/bad/musterbaeder': 'Musterbäder von 4,6 bis 15,9 m² mit Ausstattungslisten. Die Preise sind Richtwerte, den verbindlichen Festpreis gibt es nach dem Termin vor Ort.',
+   '/bad/badplaner': 'Badplaner: Bad online planen in drei Schritten, von Raummaßen bis Fliesen und Licht. Eine Skizze mit Maßen und ein paar Fotos reichen für den Start.',
+   '/bad/projekt-check': 'Projektcheck fürs Bad: Badsanierung in 2 Minuten online prüfen. Den verbindlichen Festpreis gibt es nach dem kostenfreien Termin vor Ort.',
+@@ -10,13 +10,14 @@ export const META_SEITEN: Readonly<Record<string, string>> = {
+   '/ausstellung/wetzlar': 'Fliesenberatung in Wetzlar nach Vereinbarung: Welche Fliese passt zu Bad, Wohnbereich oder Terrasse? Deniz Tezgel berät Sie zu Formaten und Oberflächen.',
+   '/ausstellung/giessen': 'Fliesenberatung in Gießen: Neues Bad, große Bodenfliesen oder frostsichere Terrasse? Deniz Tezgel berät Sie nach Vereinbarung zu Formaten und Oberflächen.',
+   '/faq': 'Häufige Fragen zu Fliesen, Bad, Kosten und DIN 18534 Abdichtung. Der Termin vor Ort ist kostenfrei, danach folgt ein verbindliches Festpreisangebot.',
+-  '/beratung': 'Kostenlose Fliesenberatung in Wetzlar und Aßlar ohne Verpflichtung. Wir prüfen den Untergrund und beraten Sie zu Formaten, Fugenbild und Rutschhemmung.',
++  '/beratung': 'Kostenlose Fliesenberatung ohne Verpflichtung: Wir prüfen den Untergrund und beraten Sie zu Formaten, Fugenbild und Rutschhemmung für Ihren Raum.',
+   '/downloads': 'Downloads und Infomaterial: Checkliste für den Termin, Infos zu Förderung und Materialien. Weitere Unterlagen senden wir Ihnen auf Anfrage per E-Mail zu.',
+   '/unternehmen': 'Fliesenverlegung Tezgel: 2008 in Aßlar gegründet und bei der Handwerkskammer Wiesbaden eingetragen. Hier lesen Sie die Geschichte des Unternehmens.',
+-  '/team': 'Unser Team: Inhaber Deniz Tezgel und sein Verlegeteam für Fliesen, Platten und Mosaik. Wir arbeiten in Wetzlar, Gießen und ganz Mittelhessen.',
++  '/team': 'Unser Team: Inhaber Deniz Tezgel und sein Verlegeteam für Fliesen, Platten und Mosaik. Wir arbeiten in Aßlar und in ganz Mittelhessen.',
+   '/partner': 'Verlegewerkstoffe und Fliesen: Wir arbeiten unter anderem mit Ardex, Sopro, PCI und Marazzi, für Abdichtung, Kleber und Fliesen in Ihrem Zuhause.',
+-  '/karriere': 'Jobs als Fliesenleger (m/w/d): Wir suchen Gesellen oder erfahrene Fachkräfte in Aßlar, Wetzlar und Mittelhessen. Bewerben Sie sich per E-Mail oder Telefon.',
++  '/karriere': 'Jobs als Fliesenleger (m/w/d) in Aßlar bei Wetzlar: Wir suchen Gesellen oder erfahrene Fachkräfte. Bewerben Sie sich per E-Mail oder Telefon.',
+   '/karriere/ausbildung': 'Ausbildung zum Fliesenleger (m/w/d) in einem eingetragenen Fachbetrieb in Aßlar. Bewerben Sie sich per E-Mail, Telefon oder WhatsApp.',
++  '/standorte/wetzlar': 'Ihr Fliesenleger für Wetzlar aus dem Nachbarort Aßlar: Bad und Dusche ohne Stufe, Böden, Balkon und Treppe. Der Termin bei Ihnen vor Ort ist kostenfrei.', // SEO-Runde P3: eigene Description der Wetzlar-Seite
+   '/preise': 'Was kostet Ihr Vorhaben? Den Preis für Fliesen, große Formate oder die Badsanierung nennen wir nach dem Termin vor Ort als verbindlichen Festpreis.', // SEO-Runde P2
+-  '/termin': 'Termin vereinbaren in Aßlar und Wetzlar: Wählen Sie Ihr Wunschthema und senden Sie die Anfrage online oder per WhatsApp. Der Termin vor Ort ist kostenfrei.',
++  '/termin': 'Termin vereinbaren: Wählen Sie Ihr Thema und senden Sie die Anfrage online oder per WhatsApp. Der Termin bei Ihnen vor Ort ist kostenfrei.',
+ };
+diff --git a/src/inhalte/start.ts b/src/inhalte/start.ts
+index 2e3905de..2d9d1c80 100644
+--- a/src/inhalte/start.ts
++++ b/src/inhalte/start.ts
+@@ -9,8 +9,8 @@ import type { ErzaehlInhalt } from '@/components/vorlagen/inhalt';
+ export const START: ErzaehlInhalt = {
+   pfad: '/',
+   meta: {
+-    titel: 'Fliesenleger Aßlar und Wetzlar | Fliesenverlegung Tezgel',
+-    beschreibung: 'Fliesenverlegung Tezgel aus Aßlar: Badsanierung, Böden, Balkon und Terrasse für Wetzlar und Umgebung. Der Termin bei Ihnen vor Ort ist kostenfrei.',
++    titel: 'Fliesenverlegung Tezgel · Fliesenleger in Aßlar',
++    beschreibung: 'Fliesenverlegung Tezgel aus Aßlar: Bäder, Duschen ohne Stufe, Böden, Balkone und Treppen. Der Termin bei Ihnen vor Ort ist kostenfrei.',
+   },
+   worum: {
+     brotkrumen: [],
+diff --git a/src/inhalte/ueber-uns.ts b/src/inhalte/ueber-uns.ts
+index bd1300e3..4608c987 100644
+--- a/src/inhalte/ueber-uns.ts
++++ b/src/inhalte/ueber-uns.ts
+@@ -15,9 +15,9 @@ const VORSPANN =
+ export const UEBER_UNS: ErzaehlInhalt = {
+   pfad: '/ueber-uns',
+   meta: {
+-    titel: 'Über uns | Fliesenlegerbetrieb Tezgel in Aßlar',
++    titel: 'Über uns, seit 2008 in Aßlar | Fliesenverlegung Tezgel',
+     beschreibung:
+-      'Fliesenverlegung Tezgel in Aßlar seit 2008, eingetragen bei der Handwerkskammer Wiesbaden. Inhaber Deniz Tezgel kommt selbst zu Ihnen, auch nach Wetzlar.',
++      'Fliesenverlegung Tezgel in Aßlar seit 2008, eingetragen bei der Handwerkskammer Wiesbaden. Inhaber Deniz Tezgel kommt selbst zu Ihnen und berät Sie.',
+   },
+   worum: {
+     brotkrumen: [{ name: 'Start', href: '/' }, { name: 'Über uns' }],

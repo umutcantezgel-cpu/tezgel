@@ -215,6 +215,12 @@ Abgeglichen mit dem SEO-Prompt (Abschnitte 8 bis 12, nur Methodik):
   - die Links „Fliesenleger in Wetzlar“ aus dem Einsatzgebiet der Startseite und aus dem Fuß. Einzugsband und Karte zeigen nur Ortsnamen; die Namen in der Karte sind keine Links. Dort bleibt „Wetzlar“, sonst stünde ein Werbetext zwischen Ortsnamen.
   - **Geprüft** in einer Arbeitskopie: Typprüfung, Lint, Build, 282 von 282 Tests, `qa:graph`. Im gebauten HTML stimmen alle 55 Titel, und kein Titel kommt doppelt vor.
   - Titel und Descriptions mit Wetzlar (Spalte „P3“) sind nicht darin; sie kommen mit der Wetzlar-Seite.
+- **P3, Meta-Teil, als fertiger Patch** (Stand 02.11.2026): `docs/seo/arbeit/p3-meta.patch`, anzuwenden nach `p2.patch`.
+  - Inhalt: die 28 Titel und Descriptions mit Paket „P3“ aus Abschnitt 4 (Wetzlar raus, eigene Description für `/standorte/wetzlar`) und die 10 H1 mit „P3“ aus Abschnitt 5.
+  - Geprüft in einer Arbeitskopie: Typprüfung, Lint, Build, 282 von 282 Tests, `qa:graph`. Im gebauten HTML stimmen alle Titel, Descriptions und H1.
+  - Außerhalb der Wetzlar-Seite, der Karriere-Seite und der Seiten, die an S3 und S4 hängen, steht Wetzlar dann in keinem Titel und keiner Description mehr.
+  - Laut Leitplanke geht er nur im selben Push wie die neue Wetzlar-Seite live.
+- **Befund zu Garantien und Zertifikaten in sichtbaren Texten:** `docs/seo/arbeit/zusagen-befund.md`, mit Vorschlägen gleicher Bedeutung aus dem Faktenblatt.
 - **K01 und K02 als fertiger Patch:** `docs/seo/arbeit/k01-k02.patch`, Beschreibung in `docs/seo/arbeit/p6-kurzanfrage.md`. Er wartet auf S10.
 
 ## 8. Offene Fragen
