@@ -232,7 +232,17 @@ Abgeglichen mit dem SEO-Prompt (Abschnitte 8 bis 12, nur Methodik):
     - Sitemap und IndexNow nennen nur noch Seiten, die in den Index gehören. IndexNow meldet damit auch die Rechtstexte mit noindex nicht mehr (T12).
   - Geprüft: Build, 284 von 284 Tests, `qa:graph`. Im Bau haben 71 Seiten noindex; die Sitemap hat 100 Adressen ohne noindex-Seite, von den Ortsseiten nur Wetzlar.
   - Er wartet auf S3 und braucht Umuts ausdrückliche Freigabe, weil noindex bestehende Adressen betrifft. Wer einen Ort behalten will, setzt ihn in die Liste; das ist nur mit echten Angaben zum Ort sinnvoll.
-- **Reihenfolge der Patches:** `p2.patch` zuerst, dann `zusagen.patch` vor `p3-meta.patch`. `s2-asslar.patch` passt nach `p2.patch` an jeder Stelle. `p4-noindex.patch` kommt zuletzt, `k01-k02.patch` passt überall.
+- **P3, Inhalt der Wetzlar-Seite, als fertiger Patch** (Stand 02.11.2026): `docs/seo/arbeit/p3-wetzlar.patch`, anzuwenden nach `p4-noindex.patch`.
+  - **Inhalt:** neue Datei `src/inhalte/orte-eigen.ts`, die übrigen Ortsseiten bleiben, wie sie sind.
+    - eigener Vorspann mit den Leistungen (F-08);
+    - Abschnitt „Sie suchen einen Fliesenleger in Wetzlar?“: Sitz in Aßlar, etwa 5 km bis zur Stadtmitte (F-09, dort als Annahme markiert, M-04); Deniz Tezgel kommt selbst (F-13), der Termin vor Ort ist kostenfrei (F-12), danach ein Festpreisangebot;
+    - Abschnitt „Das machen wir in Wetzlar.“: sechs Leistungen mit je einem Satz und Link auf die Fachseite, statt der vier Links auf Seiten Leistung × Ort.
+  - **Geprüft:** Typprüfung, Lint, Build, 285 von 285 Tests, `qa:graph`. Im gebauten HTML stehen alle neuen Texte und die sechs Links, es gibt keinen Link auf `/leistungen/*/wetzlar` und genau eine H1. Gießen und Solms übernehmen den Wetzlar-Text nicht.
+  - Der neue Test (Orte 11) nutzt die Liste `ORTE_MIT_EIGENEM_INHALT` aus P4. Ohne P4 braucht er eine kleine Anpassung.
+  - **Was noch fehlt** (Baustellen, Stadtteile und Stimmen aus Wetzlar, Fotos, Beratung): `docs/seo/arbeit/p3-entwurf-wetzlar.md`, Abschnitt „Stand der Umsetzung“.
+- **Reihenfolge der Patches**, am 02.11.2026 in einer frischen Kopie von `seo/lokal` nacheinander angewandt: `p2`, `zusagen`, `s2-asslar`, `p3-meta`, `p4-noindex`, `p3-wetzlar`, `k01-k02`.
+  - `s2-asslar.patch` passt nach `p2.patch` an jeder Stelle, `k01-k02.patch` überall.
+  - `zusagen.patch` kommt vor `p3-meta.patch`, `p3-wetzlar.patch` nach `p4-noindex.patch`.
   - Jeder Patch kommt als eigener Commit auf `seo/lokal`, mit voller Prüfkette.
   - Auf `main` geht er erst nach „live“.
 - **K01 und K02 als fertiger Patch:** `docs/seo/arbeit/k01-k02.patch`, Beschreibung in `docs/seo/arbeit/p6-kurzanfrage.md`. Er wartet auf S10.
