@@ -26,7 +26,8 @@ const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFu
 });
 
 const TITEL = 'Bad aus einer Hand Wetzlar & Aßlar | Tezgel Badsanierung';
-const BESCHREIBUNG = 'Bad aus einer Hand in Wetzlar & Aßlar: Alle Gewerke koordiniert, ein Ansprechpartner & garantierter Festpreis. Jetzt kostenfreies Vor-Ort-Aufmaß sichern!';
+// SEO-Runde, Befund Zusagen: ohne Garantie, Wortlaut wie die Description im Plan (Tabelle 4b)
+const BESCHREIBUNG = 'Bad aus einer Hand: Wir koordinieren Sanitär, Fliesen, Elektrik und Trockenbau. Sie haben einen festen Ansprechpartner von der Planung bis zur Abnahme.';
 
 const METADATEN = createMetadata({
     title: TITEL,
@@ -42,8 +43,8 @@ export default function BadAusEinerHandPage() {
 
     const benefits = [
         { title: 'Ein fester Fach-Ansprechpartner', desc: `Sie müssen nicht mit fünf verschiedenen Firmen telefonieren. ${COMPANY_DATA.owner.fullName} betreut Sie persönlich von A bis Z.` },
-        { title: 'Verbindlicher Festpreis', desc: 'Transparente Gesamtkalkulation aller Gewerke ohne versteckte Kosten oder böse Überraschungen.' },
-        { title: 'Verlässlicher Bauzeitplan', desc: 'Feste Zusagen für Baustart und Fertigstellung – damit Ihr Alltag planbar bleibt.' },
+        { title: 'Verbindlicher Festpreis', desc: 'Kalkulation aller Gewerke mit festem Preis.' },
+        { title: 'Abgestimmter Bauzeitplan', desc: 'Baustart und Fertigstellung stimmen wir mit Ihnen ab, damit Ihr Alltag planbar bleibt.' }, // SEO-Runde, Befund Zusagen (M-07)
         { title: 'Staubarme Ausführung', desc: 'Einsatz von Staubschutzwänden, Luftreinigern und Schonabdeckungen für saubere Wohnräume.' }
     ];
 
@@ -73,7 +74,7 @@ export default function BadAusEinerHandPage() {
                     }
                     vorspann={
                         <p>
-                            Ihr schlüsselfertiges Bad aus einer Hand in Aßlar &amp; Wetzlar: Als spezialisierter Fachbetrieb Tezgel garantieren wir Ihnen einen Ansprechpartner, einen Festpreis und termingerechte Fertigstellung mit null Stress. Kein Ärger mit Gewerken – wir koordinieren Sanitär, Fliesen, Elektrik und Trockenbau bis zur schlüsselfertigen Übergabe.
+                            Ihr Bad aus einer Hand: Sie haben einen festen Ansprechpartner von der Planung bis zur Abnahme und bekommen ein Festpreisangebot. Wir koordinieren Sanitär, Fliesen, Elektrik und Trockenbau bis zur Übergabe.
                         </p>
                     }
                     aktionen={
@@ -107,7 +108,7 @@ export default function BadAusEinerHandPage() {
                     }
                     einleitung={
                         <p>
-                            Persönlich, termintreu und sauber – so arbeitet unser Fachbetrieb aus Aßlar in Wetzlar, Gießen und ganz Mittelhessen.
+                            Persönlich und sauber: So arbeitet unser Fachbetrieb aus Aßlar in Wetzlar, Gießen und ganz Mittelhessen.
                         </p>
                     }
                 >

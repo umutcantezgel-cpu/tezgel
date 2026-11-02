@@ -59,14 +59,14 @@ export default function PreisePage() {
             </span>
             <span className="inline-flex items-center gap-2">
               <Fugenkreuz className="size-3 shrink-0 text-strich" />
-              <span>Verbindliche {mitFugen('Festpreisgarantie')}</span>
+              <span>{mitFugen('Festpreisangebot')}</span>
             </span>
           </>
         }
-        titel={<>Kosten &amp; Preise auf Anfrage. Verbindliche Festpreise.</>}
+        titel={<>Preise auf Anfrage, mit Festpreisangebot.</>}
         vorspann={
           <p className="hyphens-auto">
-            Jedes Fliesen- und Badprojekt ist ein Unikat. Es hat eigene <Fachwort id="untergrund">Untergründe</Fachwort>, Raummaße und Gestaltungswünsche. Nach einem kostenfreien Aufmaß vor Ort erhalten Sie bei {siteConfig.company.name} ein detailliertes und verbindliches Festpreisangebot. Das Angebot kommt garantiert ohne versteckte Nebenkosten.
+            Jedes Fliesen- und Badprojekt ist ein Unikat. Es hat eigene <Fachwort id="untergrund">Untergründe</Fachwort>, Raummaße und Gestaltungswünsche. Nach einem kostenfreien Aufmaß vor Ort erhalten Sie bei {siteConfig.company.name} ein ausführliches {mitFugen('Festpreisangebot')}.
           </p>
         }
         aktionen={
@@ -198,17 +198,19 @@ export default function PreisePage() {
           </Feld>
 
           <Feld>
-            {/* trennt an der Fuge „Festpreis-garantie“ statt „Festpreisga-rantie“ (Browserprüfung E4-W1, Runde 4) */}
-            <h3 className="text-fs-4 text-tinte hyphens-auto">Verbindliche {mitFugen('Festpreisgarantie')}</h3>
+            {/* trennt an der Fuge „Festpreis-angebot“ (Browserprüfung E4-W1, Runde 4); Wortlaut des Faktenblatts statt Garantie (SEO-Runde) */}
+            <h3 className="text-fs-4 text-tinte hyphens-auto">{mitFugen('Festpreisangebot')}</h3>
             <p className="mt-2 text-fs-2 text-tinte-2">
-              Der vereinbarte Preis ist garantiert. Es gibt bei uns keine nachträglichen Überraschungen oder unklare Stundenlohnabrechnungen.
+              Nach dem Termin vor Ort bekommen Sie ein Angebot mit festem Preis für den besprochenen Umfang.
             </p>
           </Feld>
 
           <Feld spanne={2} className="lg:col-span-1">
-            <h3 className="text-fs-4 text-tinte hyphens-auto">DIN&nbsp;&amp; Gewährleistung</h3>
+            <h3 className="text-fs-4 text-tinte hyphens-auto">DIN und Gewährleistung</h3>
+            {/* SEO-Runde, Befund Zusagen: vorher „Volle 5 Jahre Gewährleistung nach VOB … Richtlinien der Handwerkskammer“, nicht im
+                Faktenblatt und anders als die AGB (§ 4: gesetzliche Frist nach BGB); Frage an Deniz */}
             <p className="mt-2 text-fs-2 text-tinte-2">
-              Volle 5 Jahre Gewährleistung nach VOB auf alle Verlege- und Abdichtungsarbeiten nach den strengen Richtlinien der Handwerkskammer Wiesbaden.
+              Im Bad dichten wir nach DIN&nbsp;18534 ab. Die Gewährleistung regeln unsere AGB.
             </p>
           </Feld>
         </Feldraster>
@@ -252,8 +254,8 @@ export default function PreisePage() {
         className="[&_h2]:hyphens-auto [&_h2]:trennen-ab-10"
         benefits={[
           "Kostenfreies Aufmaß vor Ort in Aßlar, Wetzlar und Hessen",
-          "Verbindlicher Festpreis ohne versteckte Kosten",
-          "Saubere Baustelle mit garantiertem Staubschutz",
+          "Festpreisangebot nach dem Termin vor Ort",
+          "Staubschutz in bewohnten Räumen und besenreine Übergabe",
         ]}
         subtitle="Schnelle Reaktionszeit • Persönliche Betreuung vor Ort • Fachbetrieb der Handwerkskammer"
         socialProof={`${RATING_SUMMARY.google.displayRating} Bewertung bei Google von ${RATING_SUMMARY.google.count} echten Kundenstimmen`}

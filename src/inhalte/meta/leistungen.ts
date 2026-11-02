@@ -6,7 +6,7 @@ export const META_LEISTUNGEN: Readonly<Record<string, string>> = {
   '/leistungen/aussen': 'Balkon und Terrassensanierung in Wetzlar, auch auf Stelzlagern. Das Gefälle ist mindestens 1,5 bis 2 %, damit Regenwasser abläuft.',
   '/leistungen/untergrund': 'Untergrund und Abdichtung in Wetzlar: Wir gleichen Estrich aus, messen die Restfeuchte und dichten unter den Fliesen nach DIN 18534 ab.',
   '/bad/badanfrage': 'Für Ihr Angebot zur Badsanierung geben Sie im Formular Raummaße und Wunschausstattung an. Danach folgt der kostenfreie Termin bei Ihnen vor Ort.',
-  '/foerderung': 'Förderung für Ihr barrierefreies Bad: Die Pflegekasse zahlt mit Pflegegrad bis zu 4.180 € je Person dazu. Auch die KfW 159 kann den Umbau fördern.',
+  '/foerderung': 'Förderung für Ihr barrierefreies Bad: Mit Pflegegrad kann die Pflegekasse bis zu 4.180 € je Person dazugeben. Auch die KfW 159 kann den Umbau fördern.',
   '/fliesen/auf-fussbodenheizung': 'Fliesen auf Fußbodenheizung verlegen: Wann der Estrich trocken genug ist, welcher Kleber passt und wo die Fugen hinkommen. Ratgeber von Tezgel.',
   '/naturstein': 'Naturstein verlegen in Wetzlar und Aßlar: Granit, Marmor, Kalkstein, Travertin und Schiefer. Der Termin bei Ihnen vor Ort ist kostenfrei.',
 };

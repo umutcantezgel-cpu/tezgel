@@ -35,11 +35,11 @@ const faqs = [
   },
   {
     question: 'Was kostet eine Komplettbadsanierung aus einer Hand?',
-    answer: 'Die Kosten hängen von Raumgröße, Ausstattung und Zustand des Untergrunds ab. Wir erstellen Ihnen nach einem kostenlosen Aufmaß vor Ort ein verbindliches Festpreisangebot.',
+    answer: 'Die Kosten hängen von Raumgröße, Ausstattung und Zustand des Untergrunds ab. Wir erstellen Ihnen nach einem kostenlosen Aufmaß vor Ort ein Festpreisangebot.',
   },
   {
     question: 'Wie lange dauert ein kompletter Badumbau?',
-    answer: 'Die Dauer hängt vom Umfang der Arbeiten ab. Vor Baustart erhalten Sie einen verbindlichen Bauzeitenplan mit festen Zusagen für Baustart und Fertigstellung – damit Ihr Alltag planbar bleibt.',
+    answer: 'Die Dauer hängt vom Umfang der Arbeiten ab. Den Ablauf und die Termine stimmen wir vor Baustart mit Ihnen ab, damit Ihr Alltag planbar bleibt.',
   },
   {
     question: 'Gibt es Zuschüsse für barrierefreie Bäder?',
@@ -62,8 +62,8 @@ const faqs = [
     answer: 'Ja. Für den Zuschuss der Pflegekasse zum barrierefreien Bad erstellen wir den prüffähigen Kostenvoranschlag und begleiten Ihren Antrag von Anfang an.',
   },
   {
-    question: 'Gibt es bei Ihnen eine Festpreisgarantie?',
-    answer: 'Ja! Nach dem kostenfreien Vor-Ort-Aufmaß erhalten Sie ein verbindliches Festpreisangebot ohne versteckte Zusatzkosten.',
+    question: 'Bekomme ich einen festen Preis?',
+    answer: 'Ja. Nach dem kostenfreien Termin vor Ort bekommen Sie ein Festpreisangebot.',
   },
   {
     question: 'In welchem Gebiet sind Sie tätig?',

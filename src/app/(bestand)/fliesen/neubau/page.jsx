@@ -64,7 +64,7 @@ const BUILDING_BLOCKS = [
     },
     {
         title: 'Bauzeitenplan & Festpreis',
-        desc: 'Verbindlicher Festpreis nach Aufmaß und feste Zusagen für Start und Fertigstellung unserer Arbeiten – abgestimmt auf Ihren Bauablauf.'
+        desc: 'Festpreisangebot nach dem Aufmaß, Start und Fertigstellung unserer Arbeiten abgestimmt auf Ihren Bauablauf.' /* SEO-Runde, Befund Zusagen (M-07) */
     },
     {
         title: 'Abnahme & Übergabe',
@@ -236,10 +236,10 @@ export default function NeubauPage() {
                                 </Knopf>
                             </div>
                         </Karte>
-                        <Karte id="festpreis-heading" ebene="h2" titel="Festpreis und verbindlicher Bauzeitenplan">
+                        <Karte id="festpreis-heading" ebene="h2" titel="Festpreisangebot und abgestimmte Termine">
                             <p className={TEXT}>
                                 Nach dem Aufmaß erhalten Sie ein Festpreisangebot für den beschriebenen Leistungsumfang. Start und
-                                Fertigstellung unserer Arbeiten sagen wir verbindlich zu und stimmen sie mit Ihrem Bauzeitenplan ab.
+                                Fertigstellung unserer Arbeiten stimmen wir mit Ihrem Bauzeitenplan ab.
                                 Verschieben sich Vorleistungen, passen wir den Termin gemeinsam mit Ihnen an.
                             </p>
                             <div className="mt-auto pt-6">

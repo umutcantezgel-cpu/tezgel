@@ -3,15 +3,20 @@ import { COMPANY_DATA } from '@/config/company';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Merkliste from '@/components/kern/Merkliste';
 import Knopf from '@/components/kern/Knopf';
+import { PUNKTE } from '@/components/vorlagen/teile/Versprechen';
+import { klartext } from '@/lib/textmarken';
 
 // Qualitätsversprechen (KERN K-009, Merkliste im Halbverband): acht Punkte als Zeilen an der Fuge mit Mono-Nummer,
 // „Garantierter Standard“ einmal im Etikett des Abschnitts, der Abschluss als Zeile ohne Kasten.
 // Überschrift, Texte und Links bleiben wortgleich. `art="arbeit"` auf Arbeitsansichten: Abstände und H2-Stufe der
 // Arbeitsansicht (H2 eine Stufe unter der H1, E3-SICHT-2-ARB Befund 15).
 export default function QualityPromise({ art = 'erzaehl' }) {
-    const punkte = COMPANY_DATA.qualityPromises.map((promise) => ({
-        titel: promise.title,
-        text: promise.description,
+    // SEO-Runde, Befund Zusagen (docs/seo/arbeit/zusagen-befund.md): dieselbe Fassung wie die Vorlagen (PUNKTE in
+    // vorlagen/teile/Versprechen.tsx: ohne „Garantierter“, „Verbindliche“ und „Feste Zusagen“, solange M-07 offen ist; der Bau
+    // bricht dort ab, wenn ein Garantie-Wort auftaucht). Die Firmendaten in company.js bleiben unverändert.
+    const punkte = PUNKTE.map((punkt) => ({
+        titel: punkt.titel,
+        text: klartext(punkt.text),
     }));
 
     return (
@@ -19,9 +24,9 @@ export default function QualityPromise({ art = 'erzaehl' }) {
             id="qualitaet"
             art={art}
             titelId="quality-promise-heading"
-            etikett={<>HWK Fachbetrieb &middot; {COMPANY_DATA.authority.shortName} &middot; Garantierter Standard</>}
+            etikett={<>HWK Fachbetrieb &middot; {COMPANY_DATA.authority.shortName} &middot; Unser Standard</>}
             titel="Unser 8-Punkte-Qualitätsversprechen für Ihr Fliesenprojekt"
-            einleitung="Vom Aufmaß bis zur fertigen Fuge: Wir stehen zu unseren Vereinbarungen, Preisen und Terminen – in Aßlar, Wetzlar und ganz Hessen."
+            einleitung="Vom Aufmaß bis zur fertigen Fuge: So arbeiten wir in Aßlar, Wetzlar und Mittelhessen."
         >
             <Merkliste spalten={2} verband nummeriert eintraege={punkte} />
 

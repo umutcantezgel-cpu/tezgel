@@ -184,7 +184,7 @@ export default async function MusterbadDetailPage({ params }) {
                                 Ihre Sicherheiten bei {COMPANY_DATA.legalName}:
                             </p>
                             <ul className="mt-4 grid gap-3">
-                                {['Festpreisgarantie', 'Verbindlicher Bauzeitplan', 'Staubarme Sanierung'].map((item) => (
+                                {['Festpreisangebot', 'Ablauf vorab abgestimmt', 'Staubarme Sanierung'].map((item) => ( /* SEO-Runde, Befund Zusagen */
                                     <li key={item} className="flex items-center gap-3 font-text text-fs-2 text-tinte">
                                         <Fugenkreuz className="size-3 shrink-0 text-strich" />
                                         {item}

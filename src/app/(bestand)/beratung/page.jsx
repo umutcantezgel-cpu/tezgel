@@ -58,7 +58,7 @@ const beratungSteps = [
   {
     step: '04',
     title: 'Transparenter Kostenvoranschlag',
-    desc: 'Detailliertes Festpreis-Angebot ohne versteckte Kosten mit verlässlichem Zeitplan.'
+    desc: 'Ausführliches Festpreisangebot mit abgestimmtem Zeitplan.'
   }
 ];
 

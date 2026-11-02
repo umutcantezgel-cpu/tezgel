@@ -74,9 +74,9 @@ const ANPASSUNG: ({ quelle: string; grund?: string } & Partial<Punkt>)[] = [
   },
   {
     quelle: 'Verlässliche Termintreue & Bauzeitenplan',
-    titel: 'Verlässliche Termintreue und Bauzeitenplan',
+    titel: 'Abgestimmter Bauzeitenplan',
     text: 'Wir stimmen Baustart und Fertigstellung mit Ihnen ab, damit Ihr Alltag planbar bleibt.',
-    grund: 'M-07: abgestimmt statt „Feste Zusagen für Baustart und Fertigstellung“; K-011 und statt &, ohne Gedankenstrich',
+    grund: 'M-07: abgestimmt statt „Feste Zusagen für Baustart und Fertigstellung“, Titel ohne „Termintreue“ (SEO-Runde, Gegenprüfung); K-011 ohne Gedankenstrich',
   },
   {
     quelle: 'Garantierter Staubschutz bei Sanierungen',

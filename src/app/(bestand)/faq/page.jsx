@@ -41,8 +41,8 @@ const faqData = {
         icon: 'bad',
         title: 'Bad & Walk-In-Dusche',
         questions: [
-            { q: 'Was kostet eine Komplettbadsanierung aus einer Hand?', a: 'Die Kosten hängen von Raumgröße, Ausstattung und Zustand des Untergrunds ab. Wir erstellen Ihnen nach einem kostenlosen Aufmaß vor Ort ein verbindliches Festpreisangebot.' },
-            { q: 'Wie lange dauert ein kompletter Badumbau?', a: 'Die Dauer hängt vom Umfang der Arbeiten ab. Vor Baustart erhalten Sie einen verbindlichen Bauzeitenplan mit festen Zusagen für Baustart und Fertigstellung – damit Ihr Alltag planbar bleibt.' },
+            { q: 'Was kostet eine Komplettbadsanierung aus einer Hand?', a: 'Die Kosten hängen von Raumgröße, Ausstattung und Zustand des Untergrunds ab. Wir erstellen Ihnen nach einem kostenlosen Aufmaß vor Ort ein Festpreisangebot.' },
+            { q: 'Wie lange dauert ein kompletter Badumbau?', a: 'Die Dauer hängt vom Umfang der Arbeiten ab. Den Ablauf und die Termine stimmen wir vor Baustart mit Ihnen ab, damit Ihr Alltag planbar bleibt.' },
             { q: 'Gibt es Zuschüsse für barrierefreie Bäder?', a: 'Ja! Bei Vorliegen eines Pflegegrads (Pflegegrad 1–5) bezuschusst die Pflegekasse den altersgerechten Badumbau mit bis zu 4.180 € pro Person.' },
             { q: 'Wie wird eine bodengleiche Dusche dauerhaft dicht?', a: 'Durch eine normgerechte Verbundabdichtung nach DIN 18534: Lückenlose Abdichtungsbahnen und Dichtmanschetten in Nassräumen sorgen für dauerhafte Dichtigkeit und Schimmelschutz.' }
         ]
@@ -60,7 +60,7 @@ const faqData = {
         title: 'Angebot & Einsatzgebiet',
         questions: [
             { q: 'Unterstützen Sie bei der Beantragung von Zuschüssen?', a: 'Ja. Für den Zuschuss der Pflegekasse zum barrierefreien Bad erstellen wir den prüffähigen Kostenvoranschlag und begleiten Ihren Antrag von Anfang an.' },
-            { q: 'Gibt es bei Ihnen eine Festpreisgarantie?', a: 'Ja! Nach dem kostenfreien Vor-Ort-Aufmaß erhalten Sie ein verbindliches Festpreisangebot ohne versteckte Zusatzkosten.' },
+            { q: 'Bekomme ich einen festen Preis?', a: 'Ja. Nach dem kostenfreien Termin vor Ort bekommen Sie ein Festpreisangebot.' },
             { q: 'In welchem Gebiet sind Sie tätig?', a: `Vom Firmensitz in ${COMPANY_DATA.headquarters.city} aus sind wir in ${COMPANY_DATA.business.serviceArea.slice(0, -1).join(', ')} sowie für Großprojekte in ganz Hessen für Sie im Einsatz.` }
         ]
     }

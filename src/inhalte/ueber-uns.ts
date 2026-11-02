@@ -144,7 +144,7 @@ const WERTE_ANPASSUNG: ({ quelle: string; quelleSatz?: string; name?: string; sa
   {
     quelle: 'Termintreue & Festpreis',
     quelleSatz: 'Verbindliche Zeitpläne und klare Kosten ohne versteckte Aufschläge.',
-    name: 'Termintreue und fester Preis',
+    name: 'Abgestimmte Termine und fester Preis',
     satz: 'Abgestimmte Zeitpläne und klare Kosten.',
     zeichen: 'uhr',
     grund: 'M-07 wie Punkt 4 des Qualitätsversprechens: ohne „verbindlich“, ohne Zusage zu Aufschlägen, fester Preis wie E-027; K-011 und statt &',

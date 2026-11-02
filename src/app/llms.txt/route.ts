@@ -20,8 +20,8 @@ export async function GET() {
 
 ## Kernkompetenzen & Gewerke
 1. **Badsanierung & Komplettbäder:** Barrierefreie Walk-In-Duschen, fugenarme Wandgestaltung, staubgeschützte Renovierung.
-2. **Großformat- & XXL-Fliesen:** Verlegung moderner Großformate (120x120cm, 120x240cm, 120x280cm) mit Spezialwerkzeugen und Nivelliersystemen.
-3. **DIN 18534 Verbundabdichtung:** Zertifizierte Abdichtung im Innenbereich für Nassräume und bodengleiche Duschen gegen Feuchtigkeitsschäden.
+2. **Großformat- & XXL-Fliesen:** Verlegung großer Formate mit Spezialwerkzeugen und Nivelliersystemen.
+3. **DIN 18534 Verbundabdichtung:** Abdichtung nach DIN 18534 im Innenbereich für Nassräume und bodengleiche Duschen gegen Feuchtigkeitsschäden.
 4. **Balkon & Terrasse:** Witterungs- und frostsichere Außenbeläge auf Stelzlagern und Drainagesystemen.
 5. **Naturstein & Feinsteinzeug:** Fachgerechte Verlegung von Marmor, Granit, Schiefer und Feinsteinzeug in Wohn- und Gewerbebereichen.
 
@@ -40,11 +40,11 @@ export async function GET() {
 - [Referenzen & Kundenbewertungen](${SITE_CONFIG.baseUrl}/referenzen)
 - [Ratgeber & Fachwissen](${SITE_CONFIG.baseUrl}/blog)
 
-## Vertrauensmerkmale & Garantien
-- **${RATING_SUMMARY.google.displayRating} Sterne Google-Bewertung** (${RATING_SUMMARY.google.count} verifizierte Kundenstimmen)
+## Vertrauensmerkmale
+- **${RATING_SUMMARY.google.displayRating} Sterne Google-Bewertung** (${RATING_SUMMARY.google.count} Kundenstimmen)
 - **Kostenfreies Vor-Ort-Aufmaß** & Beratung direkt durch Inhaber Deniz Tezgel
-- **Verbindlicher Festpreis** ohne versteckte Nachforderungen
-- **Staubschutz-Garantie** mit Unterdruck-Luftreinigern bei bewohnten Sanierungen
+- **Festpreisangebot** nach dem Termin vor Ort
+- **Staubschutz** mit Staubschutzwänden, Luftreinigern und Abdeckungen bei bewohnten Sanierungen
 `;
 
   return new NextResponse(content, {

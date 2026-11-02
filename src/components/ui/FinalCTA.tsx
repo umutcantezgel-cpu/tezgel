@@ -37,9 +37,10 @@ interface FinalCTAProps {
 }
 
 const defaultBenefits = [
-  "Kostenfreies Vor-Ort-Aufmaß in Aßlar, Wetzlar & Hessen",
-  "Verbindlicher Festpreis ohne versteckte Kosten",
-  "Saubere Baustelle mit Staubschutz-Garantie",
+  "Kostenfreier Termin bei Ihnen vor Ort",
+  // SEO-Runde, Befund Zusagen (docs/seo/arbeit/zusagen-befund.md): Wortlaut des Faktenblatts statt Garantie, M-07 offen
+  "Festpreisangebot nach dem Termin vor Ort",
+  "Staubschutz in bewohnten Räumen und besenreine Übergabe",
 ];
 
 // Telefonnummer groß in Mono, als tel:-Link (Farbwechsel der Linie: zustand). Ziel ≥ 44 px (R-01b): min-h-11 mit

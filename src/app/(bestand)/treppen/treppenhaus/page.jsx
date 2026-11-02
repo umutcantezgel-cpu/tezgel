@@ -130,7 +130,7 @@ export default function TreppenhausPage() {
                         <p>
                             Treppenhaus sanieren: neue Beläge im Mehrfamilienhaus für Trittsicherheit, Schallschutz und repräsentative Optik.
                             Ausgetretene Stufen, gesprungene Platten und unpassend geflickte Podeste erneuern wir für Eigentümer und
-                            Hausverwaltungen termintreu und im bewohnten Bestand.
+                            Hausverwaltungen, auch im bewohnten Bestand.
                         </p>
                     }
                     aktionen={

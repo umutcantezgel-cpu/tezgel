@@ -69,7 +69,7 @@ export default function PartnerPage() {
                 }
                 vorspann={
                     <p>
-                        Als Fachbetrieb Tezgel setzen wir bei Verbundabdichtung, Klebern und Fliesen auf führende Materialpartner und zertifizierte Verlegesysteme renommierter Hersteller.
+                        Als Fachbetrieb Tezgel setzen wir bei Verbundabdichtung, Klebern und Fliesen auf Verlegesysteme bekannter Hersteller.
                     </p>
                 }
                 rand={

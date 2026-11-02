@@ -19,8 +19,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { PORTFOLIO_PROJECTS, categories, isPlaceholderProject } from '@/config/projects';
-import { COMPANY_DATA } from '@/config/company';
 import QualityPromise from '@/components/sections/QualityPromise';
+import { PUNKTE } from '@/components/vorlagen/teile/Versprechen';
 import { createMetadata } from '@/lib/metadata';
 import Icon from '@/components/icons/Icon';
 import Abschnitt from '@/components/kern/Abschnitt';
@@ -211,12 +211,12 @@ export default async function ProjectDetailPage({ params }) {
                         <div className="mt-12">
                             <h3 className={H3}>Unser Qualitätsstandard</h3>
                             <ul className="mt-4 grid border-t border-fuge sm:grid-cols-2 sm:gap-x-8">
-                                {COMPANY_DATA.qualityPromises.slice(0, 4).map((promise) => (
-                                    <li key={promise.title} className={ZEILE}>
+                                {PUNKTE.slice(0, 4).map((promise) => ( /* SEO-Runde, Befund Zusagen: Fassung der Vorlagen ohne Garantie-Wörter */
+                                    <li key={promise.titel} className={ZEILE}>
                                         <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich">
                                             <Icon name="haken" groesse={5} />
                                         </span>
-                                        <span className="min-w-0 font-semibold">{promise.title}</span>
+                                        <span className="min-w-0 font-semibold">{promise.titel}</span>
                                     </li>
                                 ))}
                             </ul>

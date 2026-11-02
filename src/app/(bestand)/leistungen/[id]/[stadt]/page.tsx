@@ -55,8 +55,8 @@ const SERVICE_CITY_INTROS: Record<
     p2: `Im Mittelpunkt stehen kompromisslose Langlebigkeit, absolute Dichtigkeit und saubere Ausführung mit normgerechter Verbundabdichtung nach DIN 18534 überall dort, wo Wasser einwirkt.${subs ? ` Unsere Schwerpunkte in ${city}: ${subs}.` : ''} Nach einem kostenfreien Vor-Ort-Aufmaß erhalten Sie ein transparentes, verbindliches Festpreisangebot.`
   }),
   wohnen: (city, reg, auth, subs) => ({
-    p1: `Für repräsentative Wohnräume, offene Küchen und Flure in ${city} und der Region ${reg} verlegen wir erstklassiges Feinsteinzeug und Natursteinbeläge. Als geprüfter Fachbetrieb der ${auth} schaffen wir schwellenlose Übergänge zwischen Wohnbereichen und ein vollkommen symmetrisches Fugenbild.`,
-    p2: `Wir stimmen den Belagsaufbau exakt auf Ihre Fußbodenheizung und Estrich-Belegreife ab, um optimale Wärmeleitung und rissfreie Beständigkeit zu sichern.${subs ? ` Unsere Fachleistungen für ${city}: ${subs}.` : ''} Nach dem Vor-Ort-Aufmaß in ${city} planen wir Fugenachsen und Verlegemuster im Detail mit Festpreisgarantie.`
+    p1: `Für repräsentative Wohnräume, offene Küchen und Flure in ${city} und der Region ${reg} verlegen wir Feinsteinzeug und Natursteinbeläge. Als eingetragener Fachbetrieb der ${auth} schaffen wir schwellenlose Übergänge zwischen Wohnbereichen und ein vollkommen symmetrisches Fugenbild.`,
+    p2: `Wir stimmen den Belagsaufbau auf Ihre Fußbodenheizung ab und prüfen vorher, ob der Estrich trocken genug ist.${subs ? ` Unsere Fachleistungen für ${city}: ${subs}.` : ''} Nach dem Termin bei Ihnen vor Ort in ${city} planen wir Fugen und Verlegemuster und erstellen ein Festpreisangebot.`
   }),
   aussen: (city, reg, auth, subs) => ({
     p1: `Balkone, Terrassen und Eingangsbereiche in ${city} erfordern höchste Witterungsbeständigkeit. Als Fachbetrieb der ${auth} verlegen wir frostsichere 2-cm-Keramikplatten auf Stelzlagern oder im drainierten Kiesbett für Immobilienbesitzer im gesamten ${reg}.`,

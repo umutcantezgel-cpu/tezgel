@@ -64,17 +64,19 @@ export default async function ServiceDetailPage({ params }) {
     aussen: 'Balkon- & Terrassensanierung in Wetzlar & Mittelhessen',
     untergrund: 'DIN 18534 Abdichtung & Untergrundvorbereitung in Wetzlar',
   };
+  // SEO-Runde, Befund Zusagen (docs/seo/arbeit/zusagen-befund.md): ohne Garantie, Zertifikat und Floskeln; Fakten aus dem
+  // Faktenblatt (F-08, F-15, F-17, F-21) und den Fachseiten
   const serviceIntroTexts = {
-    bad: 'Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exklusive Bäder & Wellness in Wetzlar und Mittelhessen realisieren wir maßgeschneiderte Wohlfühloasen. Wir verarbeiten raumhohe Fliesenformate mit minimalen Fugenanteilen, integrieren barrierefreie Walk-In-Bereiche und garantieren zertifizierten Staubschutz für Ihr bewohntes Zuhause.',
-    wohnen: 'Für anspruchsvolle Fliesenverlegung Wohnbereich & Neubau in Wetzlar verlegen wir exklusives Feinsteinzeug und Naturstein mit perfekter Fluchtung. Wir planen Fugenachsen raumübergreifend, stimmen den Schichtenaufbau exakt auf Ihre Fußbodenheizung ab und schaffen dauerhaft plane, schwellenlose Wohnflächen.',
-    aussen: 'Für die nachhaltige Balkon- & Terrassensanierung in Wetzlar & Mittelhessen ist Fliesenverlegung Tezgel Ihr spezialisierter Fachbetrieb: Mit aufgestelzter 2-cm-Keramik auf verstellbaren Stelzlagern und optimalem Gefälleaufbau verhindern wir stehendes Wasser, Frostausbrüche und unansehnliche Fugenverfärbungen ein für alle Mal.',
-    untergrund: 'Vor jedem Belagsaufbau steht die fachgerechte DIN 18534 Abdichtung & Untergrundvorbereitung in Wetzlar und der gesamten Region. Mit präziser CM-Restfeuchtemessung, Risssanierung und hochelastischen Verbundabdichtungen schützen wir Ihr Bauwerk verlässlich vor Durchfeuchtung und Bauschäden.',
+    bad: 'Wir sanieren Bäder, bauen Duschen ohne Stufe ein und verlegen große Fliesen. Unter die Fliesen kommt eine Abdichtung nach DIN 18534. Wohnen Sie während der Arbeiten im Haus, schützen Staubschutzwände, Luftreiniger und Abdeckungen die anderen Räume.',
+    wohnen: 'Wir verlegen Feinsteinzeug und Naturstein in Wohnräumen, Küchen und im Neubau. Die Fugen planen wir über die Räume hinweg, und den Aufbau stimmen wir auf eine Fußbodenheizung ab.',
+    aussen: 'Wir sanieren Balkone und Terrassen und verlegen Platten, auch auf Stelzlagern. Das Gefälle beträgt mindestens 1,5 bis 2 %, damit Regenwasser vom Haus weg abläuft.',
+    untergrund: 'Vor dem Verlegen prüfen wir den Untergrund: Wir messen die Restfeuchte im Estrich, schließen Risse, gleichen Unebenheiten aus und dichten Nassräume nach DIN 18534 ab.',
   };
   const serviceQualityNotes = {
-    bad: 'Bei der Badsanierung verbinden wir moderne Verlegemethoden mit kompromisslosem Staubschutz: Staubschutztüren, Unterdruckabsaugung und Schonvliese schützen Ihr bewohntes Zuhause. Verbundabdichtungen nach DIN 18534 garantieren jahrzehntelange Sicherheit gegen Feuchtigkeit.',
-    wohnen: 'In Wohnräumen und offenen Küchen sorgen präzise Lasernivellierung und Gehrungsschnitte (Jolly-Kanten) für ein makelloses, ebenes Fugenbild. Wir stimmen den Aufbau exakt auf die Heizkurve Ihrer Fußbodenheizung ab.',
-    aussen: 'Auf Terrassen und Balkonen verhindern entkoppelte Stelzlagersysteme und frostsichere 2-cm-Keramikplatten Ausblühungen und Frostschäden. Wir sorgen für das notwendige 2%-Gefälle zur zuverlässigen Wasserabführung.',
-    untergrund: 'Vom CM-Messgerät bis zur Rissverharzung und Entkopplung: Wir schaffen für jeden Alt- und Neubauuntergrund die normgerechte Ebenheit und Festigkeit, bevor der hochwertige Belag verlegt wird.',
+    bad: 'Bei bewohnten Räumen schützen wir die Wohnung mit Staubschutzwänden oder Staubschutztüren, Luftreinigern und Schutzabdeckungen. Danach übergeben wir den Raum besenrein. Die Abdichtung unter den Fliesen folgt DIN 18534.',
+    wohnen: 'In Wohnräumen und offenen Küchen richten wir die Fliesen genau aus, damit das Fugenbild gerade wird. Den Aufbau stimmen wir auf Ihre Fußbodenheizung ab.',
+    aussen: 'Auf Balkon und Terrasse legen wir ein Gefälle von mindestens 1,5 bis 2 % an. Platten auf Stelzlagern lassen das Wasser darunter ablaufen.',
+    untergrund: 'Wir messen die Restfeuchte, schließen Risse und gleichen den Untergrund aus, bevor der Belag kommt.',
   };
   const serviceSidebarIntros = {
     bad: `Fachbetriebsleiter ${COMPANY_DATA.owner.fullName} berät Sie zur schlüsselfertigen Badsanierung, Walk-In-Duschen und DIN 18534 Abdichtung persönlich bei Ihnen vor Ort in Aßlar, Wetzlar oder Mittelhessen.`,
@@ -86,7 +88,7 @@ export default async function ServiceDetailPage({ params }) {
     bad: [
       {
         q: 'Wie läuft die Badsanierung von der Planung bis zur Übergabe ab?',
-        a: 'Nach Ihrer Anfrage begutachten wir das Bad vor Ort in Aßlar, Wetzlar oder Mittelhessen. Wir prüfen Wand- und Bodenuntergründe, besprechen Sanitärobjekte und Fugenachsen und übergeben Ihnen ein verbindliches Festpreisangebot mit festem Zeitplan.',
+        a: 'Nach Ihrer Anfrage begutachten wir das Bad vor Ort in Aßlar, Wetzlar oder Mittelhessen. Wir prüfen Wand- und Bodenuntergründe, besprechen Sanitärobjekte und Fugenachsen und übergeben Ihnen ein Festpreisangebot.',
       },
       {
         q: 'Welche Abdichtungsnormen gelten für Dusche und Badewanne?',

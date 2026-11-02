@@ -14,7 +14,7 @@ export const CITIES: CityData[] = [
     name: 'Wetzlar',
     distanceKm: 0,
     region: 'Lahn-Dill-Kreis',
-    description: 'Wetzlar grenzt direkt an unseren Firmensitz in Aßlar. Für Badsanierungen, Großformat-Fliesen und Balkonsanierungen sind wir dadurch schnell beim Aufmaß und jeden Tag pünktlich auf Ihrer Baustelle.',
+    description: 'Wetzlar grenzt direkt an unseren Firmensitz in Aßlar. Für Badsanierungen, große Fliesen und Balkonsanierungen sind wir dadurch schnell bei Ihnen vor Ort.',
     mapQuery: 'Wetzlar,Hessen,Deutschland',
   },
   {
@@ -54,7 +54,7 @@ export const CITIES: CityData[] = [
     name: 'Friedberg (Hessen)',
     distanceKm: 45,
     region: 'Wetteraukreis',
-    description: 'In Friedberg und der Wetterau übernehmen wir Badsanierungen, Fliesenarbeiten im Neubau und die Untergrundvorbereitung – sauber abgestimmt und mit festen Terminen.',
+    description: 'In Friedberg und der Wetterau übernehmen wir Badsanierungen, Fliesenarbeiten im Neubau und die Untergrundvorbereitung, sauber abgestimmt.',
     mapQuery: 'Friedberg,Hessen,Deutschland',
   },
   {
