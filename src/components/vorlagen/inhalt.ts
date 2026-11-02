@@ -198,7 +198,8 @@ export interface BelegInhalt {
   satz?: Markentext;
   verweis?: Verweis;
   /** Orte nach Entfernung ab Aßlar mit Maßkette (Startseite, Über uns) */
-  orte?: { titel: string; einleitung: Markentext };
+  // verweis (SEO-Runde P2): ein Link unter der Einleitung, zum Beispiel „Fliesenleger in Wetzlar“ auf der Startseite
+  orte?: { titel: string; einleitung: Markentext; verweis?: { name: string; href: string } };
 }
 
 /** 6 · Nächster Schritt: die eine Hauptaktion (K-004), darunter Hilfen, die nicht konkurrieren (E-012) */

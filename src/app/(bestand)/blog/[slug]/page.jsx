@@ -28,7 +28,7 @@ export async function generateMetadata({ params }) {
   if (!post) return { title: 'Ratgeber Artikel' };
 
   return createMetadata({
-    title: post.title,
+    title: post.seoTitel ?? post.title, // SEO-Runde P2
     description: post.excerpt,
     path: `/blog/${slug}`,
     image: post.image

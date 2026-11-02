@@ -57,7 +57,7 @@ export default function FliesenPage() {
                 brotkrumen={[
                     { name: 'Start', href: '/' },
                     { name: 'Bad', href: '/bad' },
-                    { name: 'Perfekte Fliesenverlegung für Ihr neues Badezimmer' },
+                    { name: 'Fliesen für Ihr neues Badezimmer' },
                 ]}
             />
 
@@ -68,7 +68,8 @@ export default function FliesenPage() {
                     etikett="Fliesen- & Natursteinhandwerk · Aßlar & Wetzlar"
                     titel={
                         <span id="fliesen-heading">
-                            Perfekte Fliesenverlegung{' '}
+                            {/* SEO-Runde P2: H1 ohne „Perfekte“ (Floskelliste), Plan Abschnitt 5 */}
+                            Fliesen{' '}
                             <span>für Ihr neues Badezimmer</span>
                         </span>
                     }

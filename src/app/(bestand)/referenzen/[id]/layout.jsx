@@ -89,7 +89,7 @@ export default async function Layout({ children, params }) {
       { name: 'Referenzen', path: '/referenzen' },
       { name: project.title, path: `/referenzen/${project.id}` },
     ];
-    const seite = createMetadata({ title: project.title, description: project.description, path: `/referenzen/${project.id}` });
+    const seite = createMetadata({ title: project.seoTitle ?? project.title, description: project.description, path: `/referenzen/${project.id}` });
     const primaryImage = project.images?.find((img) => img.type === 'after')?.url || project.images?.[0]?.url;
 
     projectSchemaGraph = buildGraph([

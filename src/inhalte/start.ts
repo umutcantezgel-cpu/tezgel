@@ -108,6 +108,8 @@ export const START: ErzaehlInhalt = {
     orte: {
       titel: 'Hier sind wir für Sie unterwegs.',
       einleitung: 'Unser Betrieb sitzt in Aßlar. Wir arbeiten in Wetzlar, Gießen, Herborn und den Orten rundherum.',
+      // SEO-Runde P2: Link mit dem Text „Fliesenleger in Wetzlar“ auf die Wetzlar-Seite
+      verweis: { name: 'Fliesenleger in Wetzlar', href: '/standorte/wetzlar' },
     },
   },
   schritt: {

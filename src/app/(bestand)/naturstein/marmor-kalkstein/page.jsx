@@ -28,7 +28,7 @@ import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
 import SeitenDaten from '@/components/seo/SeitenDaten';
 
 export const metadata = createMetadata({
-    title: 'Marmor & Travertin verlegen lassen | Fliesen Tezgel',
+    title: 'Marmor und Travertin verlegen | Fliesenverlegung Tezgel',
     description:
         'Marmor, Travertin & Kalkstein fachgerecht verlegen lassen: verfärbungsfreie Kleber, Imprägnierung & Schutz. Fachbetrieb Tezgel in Aßlar & Wetzlar.',
     path: '/naturstein/marmor-kalkstein'
@@ -120,7 +120,7 @@ export default function MarmorKalksteinPage() {
         <>
             <SeitenDaten
                 pfad="/naturstein/marmor-kalkstein"
-                titel="Marmor & Travertin verlegen lassen | Fliesen Tezgel"
+                titel="Marmor und Travertin verlegen | Fliesenverlegung Tezgel"
                 beschreibung="Marmor, Travertin & Kalkstein fachgerecht verlegen lassen: verfärbungsfreie Kleber, Imprägnierung & Schutz. Fachbetrieb Tezgel in Aßlar & Wetzlar."
                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Naturstein', href: '/naturstein' }, { name: 'Marmor, Travertin und Kalkstein: edle Natursteine richtig verlegen' }]}
             />

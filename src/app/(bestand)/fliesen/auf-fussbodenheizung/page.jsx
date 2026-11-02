@@ -30,7 +30,7 @@ const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKo
 });
 
 export const metadata = createMetadata({
-    title: 'Fliesen auf Fußbodenheizung verlegen | Ratgeber Tezgel',
+    title: 'Fliesen auf Fußbodenheizung verlegen · Tezgel',
     description:
         'Fliesen auf Fußbodenheizung fachgerecht verlegen: Belegreife des Heizestrichs, verformbare Kleber & normgerechte Dehnungsfugen. Ratgeber vom Fachbetrieb Tezgel.',
     path: '/fliesen/auf-fussbodenheizung'
@@ -86,7 +86,7 @@ export default function FliesenAufFussbodenheizungPage() {
         <>
             <SeitenDaten
                 pfad="/fliesen/auf-fussbodenheizung"
-                titel="Fliesen auf Fußbodenheizung verlegen | Ratgeber Tezgel"
+                titel="Fliesen auf Fußbodenheizung verlegen · Tezgel"
                 beschreibung="Fliesen auf Fußbodenheizung fachgerecht verlegen: Belegreife des Heizestrichs, verformbare Kleber & normgerechte Dehnungsfugen. Ratgeber vom Fachbetrieb Tezgel."
                 brotkrumen={[
                     { name: 'Start', href: '/' },

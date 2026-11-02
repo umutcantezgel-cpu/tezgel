@@ -25,7 +25,7 @@ import { linkKlassen } from '@/components/kern/stile';
 import SeitenDaten from '@/components/seo/SeitenDaten';
 
 export const metadata = createMetadata({
-    title: 'Untergrund ausgleichen & Gefälle herstellen | Tezgel',
+    title: 'Untergrund ausgleichen und Gefälle herstellen · Tezgel',
     description:
         'Unebene Böden & Wände vor dem Fliesen ausgleichen: Ebenheit nach DIN 18202, Spachtelung & Gefälleausbildung zu Abläufen. Fachbetrieb Tezgel in Hessen.',
     path: '/untergrund-abdichtung/ausgleich-gefaelle'
@@ -116,7 +116,7 @@ export default function AusgleichGefaellePage() {
         <>
             <SeitenDaten
                 pfad="/untergrund-abdichtung/ausgleich-gefaelle"
-                titel="Untergrund ausgleichen & Gefälle herstellen | Tezgel"
+                titel="Untergrund ausgleichen und Gefälle herstellen · Tezgel"
                 beschreibung="Unebene Böden & Wände vor dem Fliesen ausgleichen: Ebenheit nach DIN 18202, Spachtelung & Gefälleausbildung zu Abläufen. Fachbetrieb Tezgel in Hessen."
                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Untergrund und Abdichtung', href: '/untergrund-abdichtung' }, { name: 'Untergrund ausgleichen und Gefälle herstellen: eben verlegen, Wasser gezielt ableiten' }]}
             />

@@ -25,7 +25,7 @@ import { linkKlassen, seitenKlassen } from '@/components/kern/stile';
 import SeitenDaten from '@/components/seo/SeitenDaten';
 
 export const metadata = createMetadata({
-    title: 'Terrassenplatten auf Stelzlagern verlegen | Tezgel',
+    title: 'Terrassenplatten auf Stelzlagern verlegen · Tezgel',
     description:
         'Terrassenplatten auf Stelzlagern verlegen lassen: höhenverstellbar, frostsicher & drainagefähig. Fachbetrieb Tezgel in Wetzlar & Aßlar. Jetzt anfragen!',
     path: '/balkon-terrasse/stelzlager'
@@ -113,7 +113,7 @@ export default function StelzlagerPage() {
         <>
             <SeitenDaten
                 pfad="/balkon-terrasse/stelzlager"
-                titel="Terrassenplatten auf Stelzlagern verlegen | Tezgel"
+                titel="Terrassenplatten auf Stelzlagern verlegen · Tezgel"
                 beschreibung="Terrassenplatten auf Stelzlagern verlegen lassen: höhenverstellbar, frostsicher & drainagefähig. Fachbetrieb Tezgel in Wetzlar & Aßlar. Jetzt anfragen!"
                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Balkon und Terrasse', href: '/balkon-terrasse' }, { name: 'Terrassenplatten auf Stelzlagern verlegen mit Tezgel' }]}
             />

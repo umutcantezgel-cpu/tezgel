@@ -20,7 +20,7 @@ import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import SeitenDaten from '@/components/seo/SeitenDaten';
 
-const TITEL = 'Materialpartner & Verlegesysteme | Tezgel Fachbetrieb';
+const TITEL = 'Materialien und Verlegesysteme | Fliesenverlegung Tezgel';
 const BESCHREIBUNG = 'Hochwertige Verlegewerkstoffe & Fliesenmarken bei Tezgel: Schlüter-Systems, Ardex, Sopro, PCI, Marazzi & Villeroy & Boch. Höchste Qualität für Ihr Projekt!';
 
 export const metadata = createMetadata({

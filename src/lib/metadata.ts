@@ -44,8 +44,14 @@ function sanitizeTitle(raw: string): string {
   if (/Tezgel/i.test(base)) {
     candidate = base;
   } else {
-    if (base.length + 9 <= 58) {
-      candidate = `${base} · Tezgel`;
+    // SEO-Runde T10 (docs/seo/arbeit/plan-p2-bis-p8.md, Abschnitt 3): nur noch zwei Formen des Markenzusatzes,
+    // „| Fliesenverlegung Tezgel“ und kurz „· Tezgel“; Titel werden bewusst gesetzt, die Auffüllung erfindet nichts dazu
+    const voll = `${base} | ${SITE_NAME}`;
+    const kurz = `${base} · Tezgel`;
+    if (voll.length <= 58 && (voll.length >= 45 || kurz.length < 45)) {
+      candidate = voll;
+    } else if (kurz.length <= 58) {
+      candidate = kurz;
     } else if (base.length <= 58 && base.length >= 45) {
       candidate = base;
     } else {
@@ -59,35 +65,8 @@ function sanitizeTitle(raw: string): string {
     }
   }
 
-  // Ensure minimum length of 45 characters for Seobility
-  if (candidate.length < 45) {
-    if (candidate.includes(' · Tezgel')) {
-      const parts = candidate.split(' · Tezgel');
-      const prefix = cleanTrailingWords(parts[0]);
-      if (prefix.length + 21 <= 58) {
-        candidate = `${prefix} · Fachbetrieb Tezgel`;
-      } else if (prefix.length + 18 <= 58) {
-        candidate = `${prefix} · Fliesen Tezgel`;
-      } else if (prefix.length + 16 <= 58) {
-        candidate = `${prefix} – Tezgel Hessen`;
-      }
-    } else if (/Tezgel/i.test(candidate)) {
-      // Already has Tezgel brand - expand regionally, do NOT repeat Tezgel
-      const cleaned = cleanTrailingWords(candidate);
-      if (cleaned.length + 10 <= 58) {
-        candidate = `${cleaned} in Hessen`;
-      } else if (cleaned.length + 7 <= 58) {
-        candidate = `${cleaned} Hessen`;
-      }
-    } else {
-      const cleaned = cleanTrailingWords(candidate);
-      if (cleaned.length + 9 <= 58) {
-        candidate = `${cleaned} · Tezgel`;
-      } else if (cleaned.length + 7 <= 58) {
-        candidate = `${cleaned} Hessen`;
-      }
-    }
-  }
+  // SEO-Runde T10: keine Auffüllung mehr mit „Fachbetrieb Tezgel“, „Fliesen Tezgel“, „– Tezgel Hessen“ oder „in Hessen“.
+  // Kürzere Titel bleiben kurz; die Seiten setzen ihre Titel mit 45 bis 58 Zeichen selbst (test/titleLength.test.mjs).
 
   // Guard: strictly clamp to <= 58 chars (SERP Budget < 580px)
   if (candidate.length > 58) {
@@ -100,8 +79,6 @@ function sanitizeTitle(raw: string): string {
   candidate = candidate
     .replace(/\s*[,:;\-–—/\\|&]+\s*·\s*Tezgel/gi, ' · Tezgel')
     .replace(/\s+(in|und|für|mit|&|oder|der|die|das|wie|darf|kann|soll)\s+·\s+Tezgel/gi, ' · Tezgel')
-    .replace(/\s*[,:;\-–—/\\|&]+\s*·\s*Fachbetrieb Tezgel/gi, ' · Fachbetrieb Tezgel')
-    .replace(/\s*[,:;\-–—/\\|&]+\s*·\s*Fliesen Tezgel/gi, ' · Fliesen Tezgel')
     .replace(/\s+(in|und|für|mit|&|oder|der|die|das|wie|darf|kann|soll)\s*$/gi, '')
     .replace(/[,:;\-–—/\\|&]+\s*$/g, '')
     .trim();

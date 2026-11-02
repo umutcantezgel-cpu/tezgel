@@ -17,5 +17,6 @@ export const META_SEITEN: Readonly<Record<string, string>> = {
   '/partner': 'Verlegewerkstoffe und Fliesen: Wir arbeiten unter anderem mit Ardex, Sopro, PCI und Marazzi, für Abdichtung, Kleber und Fliesen in Ihrem Zuhause.',
   '/karriere': 'Jobs als Fliesenleger (m/w/d): Wir suchen Gesellen oder erfahrene Fachkräfte in Aßlar, Wetzlar und Mittelhessen. Bewerben Sie sich per E-Mail oder Telefon.',
   '/karriere/ausbildung': 'Ausbildung zum Fliesenleger (m/w/d) in einem eingetragenen Fachbetrieb in Aßlar. Bewerben Sie sich per E-Mail, Telefon oder WhatsApp.',
+  '/preise': 'Was kostet Ihr Vorhaben? Den Preis für Fliesen, große Formate oder die Badsanierung nennen wir nach dem Termin vor Ort als Festpreisangebot.', // SEO-Runde P2
   '/termin': 'Termin vereinbaren in Aßlar und Wetzlar: Wählen Sie Ihr Wunschthema und senden Sie die Anfrage online oder per WhatsApp. Der Termin vor Ort ist kostenfrei.',
 };

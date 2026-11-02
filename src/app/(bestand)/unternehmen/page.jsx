@@ -19,7 +19,7 @@ import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import SeitenDaten from '@/components/seo/SeitenDaten';
 
-const TITEL = 'Unternehmen & Qualitätsversprechen | Tezgel Fachbetrieb';
+const TITEL = 'Unternehmen und Geschichte | Fliesenverlegung Tezgel';
 const BESCHREIBUNG = 'Fliesenverlegung Tezgel aus Aßlar: Fachbetrieb der HWK seit 2008. Firmengeschichte, Inhaber Deniz Tezgel & unser Qualitätsversprechen für Hessen.';
 
 export const metadata = createMetadata({

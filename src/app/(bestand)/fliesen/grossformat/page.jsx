@@ -30,7 +30,7 @@ const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKo
 });
 
 export const metadata = createMetadata({
-    title: 'Großformatfliesen verlegen lassen | Fliesen Tezgel',
+    title: 'Großformatfliesen verlegen | Fliesenverlegung Tezgel',
     description:
         'XXL-Großformatfliesen & fugenlose Platten fachgerecht verlegen lassen: perfekte Untergrundvorbereitung & Handling. Fachbetrieb Tezgel in Wetzlar & Aßlar!',
     path: '/fliesen/grossformat'
@@ -121,7 +121,7 @@ export default function GrossformatPage() {
         <>
             <SeitenDaten
                 pfad="/fliesen/grossformat"
-                titel="Großformatfliesen verlegen lassen | Fliesen Tezgel"
+                titel="Großformatfliesen verlegen | Fliesenverlegung Tezgel"
                 beschreibung="XXL-Großformatfliesen & fugenlose Platten fachgerecht verlegen lassen: perfekte Untergrundvorbereitung & Handling. Fachbetrieb Tezgel in Wetzlar & Aßlar!"
                 brotkrumen={[
                     { name: 'Start', href: '/' },

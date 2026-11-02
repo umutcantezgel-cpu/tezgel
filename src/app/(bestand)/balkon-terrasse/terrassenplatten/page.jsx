@@ -28,7 +28,7 @@ import { etikettKlassen, linkKlassen, seitenKlassen } from '@/components/kern/st
 import SeitenDaten from '@/components/seo/SeitenDaten';
 
 export const metadata = createMetadata({
-    title: 'Terrassenplatten verlegen lassen | Fliesen Tezgel',
+    title: 'Terrassenplatten verlegen lassen | Fliesenverlegung Tezgel',
     description:
         'Terrassenplatten aus Keramik oder Naturstein fachgerecht verlegen lassen: frostsicher, rutschfest & langlebig. Fachbetrieb Tezgel – Jetzt Aufmaß anfragen!',
     path: '/balkon-terrasse/terrassenplatten'
@@ -121,7 +121,7 @@ export default function TerrassenplattenPage() {
         <>
             <SeitenDaten
                 pfad="/balkon-terrasse/terrassenplatten"
-                titel="Terrassenplatten verlegen lassen | Fliesen Tezgel"
+                titel="Terrassenplatten verlegen lassen | Fliesenverlegung Tezgel"
                 beschreibung="Terrassenplatten aus Keramik oder Naturstein fachgerecht verlegen lassen: frostsicher, rutschfest & langlebig. Fachbetrieb Tezgel – Jetzt Aufmaß anfragen!"
                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Balkon und Terrasse', href: '/balkon-terrasse' }, { name: 'Terrassenplatten richtig wählen: Material, Stärke und Oberfläche' }]}
             />

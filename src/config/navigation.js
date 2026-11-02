@@ -171,7 +171,8 @@ export const footerGruppen = [
         title: 'Wo wir arbeiten',
         links: [
             { name: 'Alle Orte', path: '/standorte' },
-            ...CITIES.map((city) => ({ name: city.name, path: `/standorte/${city.slug}` })),
+            // SEO-Runde P2: Wetzlar mit sprechendem Linktext „Fliesenleger in Wetzlar“, die anderen Orte mit ihrem Namen
+            ...CITIES.map((city) => ({ name: city.slug === 'wetzlar' ? 'Fliesenleger in Wetzlar' : city.name, path: `/standorte/${city.slug}` })),
             { name: 'Fliesenberatung Wetzlar', path: '/ausstellung/wetzlar' },
             { name: 'Fliesenberatung Gießen', path: '/ausstellung/giessen' },
         ],

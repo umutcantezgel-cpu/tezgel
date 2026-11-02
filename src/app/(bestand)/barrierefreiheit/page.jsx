@@ -11,7 +11,7 @@ import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Icon from '@/components/icons/Icon';
 import { linkKlassen, seitenKlassen } from '@/components/kern/stile';
 
-const TITEL = 'Erklärung zur Barrierefreiheit | Fliesen Tezgel';
+const TITEL = 'Erklärung zur Barrierefreiheit | Fliesenverlegung Tezgel';
 const BESCHREIBUNG = 'Erklärung zur digitalen Barrierefreiheit der Fliesenverlegung Tezgel gemäß Barrierefreiheitsstärkungsgesetz (BFSG) und europäischen Standards EN 301 549.';
 
 export const metadata = createMetadata({

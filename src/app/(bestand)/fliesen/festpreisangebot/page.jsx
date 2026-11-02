@@ -31,7 +31,7 @@ const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKo
 });
 
 export const metadata = createMetadata({
-    title: 'Fliesenleger Festpreisangebot | Fachbetrieb Tezgel',
+    title: 'Fliesenleger Festpreisangebot | Fliesenverlegung Tezgel',
     description:
         'Transparentes Festpreisangebot für Fliesenarbeiten: Aufmaß, Material & Verlegung ohne versteckte Kosten. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!',
     path: '/fliesen/festpreisangebot'
@@ -81,7 +81,7 @@ export default function FestpreisangebotPage() {
         <>
             <SeitenDaten
                 pfad="/fliesen/festpreisangebot"
-                titel="Fliesenleger Festpreisangebot | Fachbetrieb Tezgel"
+                titel="Fliesenleger Festpreisangebot | Fliesenverlegung Tezgel"
                 beschreibung="Transparentes Festpreisangebot für Fliesenarbeiten: Aufmaß, Material & Verlegung ohne versteckte Kosten. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!"
                 brotkrumen={[
                     { name: 'Start', href: '/' },

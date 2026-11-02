@@ -13,7 +13,7 @@ const VORSPANN =
 export const BLOG: WissenInhalt = {
   pfad: '/blog',
   meta: {
-    titel: 'Fliesenratgeber für Badsanierung und Abdichtung | Tezgel',
+    titel: 'Fliesenratgeber für Badsanierung und Abdichtung · Tezgel',
     beschreibung:
       'Ratgeber und Praxiswissen vom Fliesenlegerfachbetrieb Tezgel aus Aßlar: Badsanierung, Fliesenverlegung und Abdichtung gegen Wasser nach DIN 18534.',
   },

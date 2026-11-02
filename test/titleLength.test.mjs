@@ -69,3 +69,22 @@ test('4. Legal Routes: index: false, follow: true is correctly configured', () =
   assert.equal(meta.robots?.index, false);
   assert.equal(meta.robots?.follow, true);
 });
+
+test('5. Markenzusatz (SEO-Runde T10): Auffüllung nur mit „| Fliesenverlegung Tezgel“ oder „· Tezgel“, nichts erfunden', () => {
+  const titel = (t) => {
+    const m = generatePageMetadata({ title: t, description: 'x', path: '/gibt-es-nicht' });
+    return typeof m.title === 'object' && m.title && 'absolute' in m.title ? String(m.title.absolute) : String(m.title);
+  };
+  assert.equal(titel('Sind Fliesen gut für Allergiker?'), 'Sind Fliesen gut für Allergiker? | Fliesenverlegung Tezgel');
+  assert.equal(titel('Fliesen auf Fußbodenheizung verlegen'), 'Fliesen auf Fußbodenheizung verlegen · Tezgel');
+  assert.equal(titel('Impressum'), 'Impressum | Fliesenverlegung Tezgel');
+  // bewusst gesetzte Titel mit Marke und 45 bis 58 Zeichen bleiben, wie sie sind
+  assert.equal(titel('Großformatfliesen verlegen | Fliesenverlegung Tezgel'), 'Großformatfliesen verlegen | Fliesenverlegung Tezgel');
+  const woerter = 'Fliesen Bad Dusche Treppe Balkon Terrasse verlegen sanieren abdichten Naturstein Fugen Küche Flur Wohnraum Neubau'.split(' ');
+  for (let n = 1; n <= 9; n += 1) {
+    const t = titel(woerter.slice(0, n).join(' '));
+    assert.ok(t.length <= 58, `${t} (${t.length})`);
+    assert.doesNotMatch(t, /Fachbetrieb Tezgel|Fliesen Tezgel|Hessen|[–—]/, t);
+    if (/Tezgel/.test(t)) assert.match(t, /( \| Fliesenverlegung Tezgel| · Tezgel)$/, t);
+  }
+});

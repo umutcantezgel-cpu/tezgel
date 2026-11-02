@@ -30,7 +30,7 @@ const VORSPANN =
 export const REFERENZEN: ErzaehlInhalt = {
   pfad: '/referenzen',
   meta: {
-    titel: 'Referenzen und Bewertungen | Fliesenleger Tezgel Aßlar',
+    titel: 'Referenzen und Bewertungen | Fliesenverlegung Tezgel',
     beschreibung:
       'Was unsere Kunden über Fliesenleger Tezgel aus Aßlar sagen, mit 5,0 Sternen bei Google. Dazu Fotos von Bädern, Terrassen und Treppen.',
   },

@@ -26,7 +26,7 @@ import { linkKlassen } from '@/components/kern/stile';
 import SeitenDaten from '@/components/seo/SeitenDaten';
 
 export const metadata = createMetadata({
-    title: 'Innentreppe fliesen lassen | Stufen & Kanten · Tezgel',
+    title: 'Innentreppe fliesen lassen | Fliesenverlegung Tezgel',
     description:
         'Innentreppe im Haus fliesen lassen: Stufen aus Feinsteinzeug oder Naturstein, Gehrungskanten & Sockel. Fachbetrieb Tezgel – Jetzt Angebot anfragen!',
     path: '/treppen/innentreppe'
@@ -114,7 +114,7 @@ export default function InnentreppePage() {
         <>
             <SeitenDaten
                 pfad="/treppen/innentreppe"
-                titel="Innentreppe fliesen lassen | Stufen & Kanten · Tezgel"
+                titel="Innentreppe fliesen lassen | Fliesenverlegung Tezgel"
                 beschreibung="Innentreppe im Haus fliesen lassen: Stufen aus Feinsteinzeug oder Naturstein, Gehrungskanten & Sockel. Fachbetrieb Tezgel – Jetzt Angebot anfragen!"
                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Treppen', href: '/treppen' }, { name: 'Innentreppe fliesen: Stufen, Setzstufen und Sockel aus einem Guss' }]}
             />

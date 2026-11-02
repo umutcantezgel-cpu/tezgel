@@ -61,7 +61,7 @@ export async function generateMetadata({ params }) {
     if (!project) return { title: 'Referenzprojekt' };
 
     return createMetadata({
-        title: project.title,
+        title: project.seoTitle ?? project.title, // SEO-Runde P2
         description: project.description,
         path: `/referenzen/${id}`,
         image: project.image

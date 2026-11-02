@@ -152,7 +152,7 @@ export default function Beleg({ inhalt, pfad, moment, zweiter, stimmenTitel = 'D
           <Stimmen ids={inhalt.stimmen} form={inhalt.stimmenEinzeln || !inhalt.stimmenGross ? 'einzeln' : 'gross'} versatz={inhalt.stimmenEinzeln ? inhalt.stimmenVersatz : !inhalt.stimmenGross} />
         </Abschnitt>
       )}
-      {inhalt.orte && <Einsatzorte titel={inhalt.orte.titel} einleitung={inhalt.orte.einleitung} />}
+      {inhalt.orte && <Einsatzorte titel={inhalt.orte.titel} einleitung={inhalt.orte.einleitung} verweis={inhalt.orte.verweis} />}
     </>
   );
 }

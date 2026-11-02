@@ -27,7 +27,7 @@ import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
 import SeitenDaten from '@/components/seo/SeitenDaten';
 
 export const metadata = createMetadata({
-    title: 'Granit & Schiefer verlegen lassen | Fliesen Tezgel',
+    title: 'Granit und Schiefer verlegen | Fliesenverlegung Tezgel',
     description:
         'Granit- & Schieferbeläge für Boden, Treppe und Außenbereich fachgerecht verlegen lassen: passende Kleber & Imprägnierung. Fachbetrieb Tezgel in Hessen.',
     path: '/naturstein/granit'
@@ -86,7 +86,7 @@ export default function GranitPage() {
         <>
             <SeitenDaten
                 pfad="/naturstein/granit"
-                titel="Granit & Schiefer verlegen lassen | Fliesen Tezgel"
+                titel="Granit und Schiefer verlegen | Fliesenverlegung Tezgel"
                 beschreibung="Granit- & Schieferbeläge für Boden, Treppe und Außenbereich fachgerecht verlegen lassen: passende Kleber & Imprägnierung. Fachbetrieb Tezgel in Hessen."
                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Naturstein', href: '/naturstein' }, { name: 'Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen' }]}
             />

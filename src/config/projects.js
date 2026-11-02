@@ -73,6 +73,7 @@ export const PORTFOLIO_PROJECTS = [
         id: "barrierefreies-duschbad",
         placeholder: true,
         title: "Barrierefreies Duschbad mit bodengleicher Walk-In-Dusche",
+        seoTitle: "Barrierefreies Duschbad mit bodengleicher Dusche · Tezgel", // SEO-Runde P2
         category: "bad",
         serviceLink: "/bad/barrierefreies-bad",
         description: "Ein solches Projekt umfasst den Umbau von der Wanne zur bodengleichen Dusche, die Gefälleausbildung zum Ablauf oder zur Rinne, die Verbundabdichtung nach DIN 18534 und die Verlegung rutschhemmender Fliesen im Duschbereich.",
@@ -89,6 +90,7 @@ export const PORTFOLIO_PROJECTS = [
         id: "balkon-stelzlager",
         placeholder: true,
         title: "Balkonsanierung mit Terrassenplatten auf Stelzlagern",
+        seoTitle: "Balkonsanierung mit Platten auf Stelzlagern · Tezgel", // SEO-Runde P2
         category: "aussen",
         serviceLink: "/balkon-terrasse/stelzlager",
         description: "Ein solches Projekt umfasst den Rückbau des schadhaften Altbelags, die Prüfung von Abdichtung und Gefälle sowie die Verlegung von 2-cm-Feinsteinzeugplatten auf höhenverstellbaren Stelzlagern mit sauberen Randabschlüssen.",

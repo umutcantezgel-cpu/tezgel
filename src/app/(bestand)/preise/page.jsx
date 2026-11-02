@@ -32,9 +32,9 @@ const PricingCalculator = dynamic(() => import('@/components/pricing/PricingCalc
 });
 
 export const metadata = createMetadata({
-  title: "Fliesenleger Preise auf Anfrage | Festpreisangebote · Tezgel",
+  title: "Preise und Festpreisangebot | Fliesenverlegung Tezgel",
   description:
-    "Preise für Fliesenverlegung, große Fliesen & Badsanierung in Wetzlar & Aßlar auf Anfrage. Schildern Sie Ihr Vorhaben für ein verbindliches Festpreisangebot!",
+    "Was kostet Ihr Vorhaben? Den Preis für Fliesen, große Formate oder die Badsanierung nennen wir nach dem Termin vor Ort als Festpreisangebot.",
   path: "/preise"
 });
 

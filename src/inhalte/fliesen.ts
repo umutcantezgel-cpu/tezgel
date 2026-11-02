@@ -15,7 +15,7 @@ const VORSPANN =
 export const FLIESEN: WissenInhalt = {
   pfad: '/fliesen',
   meta: {
-    titel: 'Fliesenverlegung einfach erklärt | Fliesenleger Tezgel',
+    titel: 'Fliesenwissen einfach erklärt | Fliesenverlegung Tezgel',
     beschreibung:
       'Ratgeber und Fachwissen zur Fliesenverlegung: Feinsteinzeug, Großformate, Holzoptik, Verlegetechniken. Fliesenleger Tezgel aus Aßlar in Hessen erklärt es.',
   },

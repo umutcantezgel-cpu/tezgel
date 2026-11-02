@@ -26,7 +26,7 @@ import SeitenDaten from '@/components/seo/SeitenDaten';
 import { buildServiceNode, SITE_URL } from '@/lib/schema';
 
 export const metadata = createMetadata({
-    title: 'Untergrund & Abdichtung für Fliesen | Fachbetrieb Tezgel',
+    title: 'Untergrund und Abdichtung für Fliesen · Tezgel',
     description:
         'Untergrundvorbereitung & DIN 18534 Verbundabdichtung für Fliesen in Wetzlar & Aßlar: Estrichprüfung, Entkopplung & Gefälleausgleich. Jetzt beraten lassen!',
     path: '/untergrund-abdichtung'
@@ -145,7 +145,7 @@ export default function UntergrundAbdichtungPage() {
         <>
             <SeitenDaten
                 pfad="/untergrund-abdichtung"
-                titel="Untergrund & Abdichtung für Fliesen | Fachbetrieb Tezgel"
+                titel="Untergrund und Abdichtung für Fliesen · Tezgel"
                 beschreibung="Untergrundvorbereitung & DIN 18534 Verbundabdichtung für Fliesen in Wetzlar & Aßlar: Estrichprüfung, Entkopplung & Gefälleausgleich. Jetzt beraten lassen!"
                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Untergrund und Abdichtung: das Fundament jedes Fliesenbelags' }]}
                 weitere={[

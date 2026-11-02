@@ -118,7 +118,15 @@ function Ortsgruppe({ g, bereich, mehr = false }: { g: (typeof GRUPPEN)[number];
 // Spalten unter einer Maßkette. Vorher standen ab md links die nahen und mittleren Orte untereinander und rechts die
 // weiteren: Zeilenweise las sich das als 10 km, mehr als 25 km, 25 km, und der rote Abschnitt der Ketten sprang hin und
 // zurück (Sichtabnahme E3 Anlauf 1, t768 und t1024; UM-E3-FIX F9). Jetzt wandert er von links nach rechts.
-export default function Einsatzorte({ titel, einleitung }: { titel: string; einleitung: Markentext }) {
+export default function Einsatzorte({
+  titel,
+  einleitung,
+  verweis,
+}: {
+  titel: string;
+  einleitung: Markentext;
+  verweis?: { name: string; href: string };
+}) {
   return (
     <Abschnitt
       id="einsatzgebiet"
@@ -127,9 +135,17 @@ export default function Einsatzorte({ titel, einleitung }: { titel: string; einl
       spaet
       titel={titel}
       einleitung={
-        <p>
-          <Textmarken text={einleitung} />
-        </p>
+        <>
+          <p>
+            <Textmarken text={einleitung} />
+          </p>
+          {/* SEO-Runde P2: interner Link mit sprechendem Text, zum Beispiel „Fliesenleger in Wetzlar“ (KONTEXT.md, Abschnitt 6) */}
+          {verweis && (
+            <p className="mt-4">
+              <WeiterLink href={verweis.href}>{verweis.name}</WeiterLink>
+            </p>
+          )}
+        </>
       }
     >
       {/* data-kopf-pause (UM-E3-FIX2 N1, bewegung.css „Leitfaden mit Abschnittsmarke“): Der Kopf der Leitachse tritt zurück, bis

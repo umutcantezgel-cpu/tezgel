@@ -28,7 +28,7 @@ import { ORG_ID, SITE_URL } from '@/lib/schema';
 const APPRENTICESHIP_TITLE = 'Fliesen-, Platten- und Mosaikleger (m/w/d)';
 
 export const metadata = createMetadata({
-    title: 'Ausbildung Fliesenleger (m/w/d) | Fachbetrieb Tezgel',
+    title: 'Ausbildung Fliesenleger (m/w/d) | Fliesenverlegung Tezgel',
     description: 'Ausbildung zum Fliesenleger (m/w/d) in Aßlar & Wetzlar bei Tezgel: solides Handwerk, modernste Verlegetechnik & starkes Team. Jetzt unkompliziert bewerben!',
     path: '/karriere/ausbildung'
 });
@@ -70,7 +70,7 @@ export default function AusbildungPage() {
         <>
             <SeitenDaten
                 pfad="/karriere/ausbildung"
-                titel="Ausbildung Fliesenleger (m/w/d) | Fachbetrieb Tezgel"
+                titel="Ausbildung Fliesenleger (m/w/d) | Fliesenverlegung Tezgel"
                 beschreibung="Ausbildung zum Fliesenleger (m/w/d) in Aßlar & Wetzlar bei Tezgel: solides Handwerk, modernste Verlegetechnik & starkes Team. Jetzt unkompliziert bewerben!"
                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Arbeiten bei uns', href: '/karriere' }, { name: 'Ausbildung zum Fliesen-, Platten- und Mosaikleger (m/w/d)' }]}
                 weitere={[stelle]}

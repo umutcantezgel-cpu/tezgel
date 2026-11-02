@@ -31,7 +31,7 @@ const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKo
 });
 
 export const metadata = createMetadata({
-    title: 'Flur & Diele fliesen lassen | Fliesenleger Tezgel',
+    title: 'Flur und Diele fliesen lassen | Fliesenverlegung Tezgel',
     description:
         'Flur & Eingangsbereich fliesen lassen: strapazierfähige Formate, Verlegerichtung, Rutschhemmung & Schmutzfangzonen. Fachbetrieb Tezgel – Jetzt anfragen!',
     path: '/fliesen/flur-diele'
@@ -78,7 +78,7 @@ export default function FlurDielePage() {
         <>
             <SeitenDaten
                 pfad="/fliesen/flur-diele"
-                titel="Flur & Diele fliesen lassen | Fliesenleger Tezgel"
+                titel="Flur und Diele fliesen lassen | Fliesenverlegung Tezgel"
                 beschreibung="Flur & Eingangsbereich fliesen lassen: strapazierfähige Formate, Verlegerichtung, Rutschhemmung & Schmutzfangzonen. Fachbetrieb Tezgel – Jetzt anfragen!"
                 brotkrumen={[
                     { name: 'Start', href: '/' },

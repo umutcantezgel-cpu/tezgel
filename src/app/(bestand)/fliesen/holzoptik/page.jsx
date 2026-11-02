@@ -30,7 +30,7 @@ const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKo
 });
 
 export const metadata = createMetadata({
-    title: 'Fliesen in Holzoptik verlegen | Fliesenleger Tezgel',
+    title: 'Fliesen in Holzoptik verlegen | Fliesenverlegung Tezgel',
     description:
         'Holzoptik-Fliesen aus Feinsteinzeug verlegen lassen: warme Holzoptik, feuchteresistent & ideal für Fußbodenheizung. Fachbetrieb Tezgel – Jetzt anfragen!',
     path: '/fliesen/holzoptik'
@@ -78,7 +78,7 @@ export default function HolzoptikPage() {
         <>
             <SeitenDaten
                 pfad="/fliesen/holzoptik"
-                titel="Fliesen in Holzoptik verlegen | Fliesenleger Tezgel"
+                titel="Fliesen in Holzoptik verlegen | Fliesenverlegung Tezgel"
                 beschreibung="Holzoptik-Fliesen aus Feinsteinzeug verlegen lassen: warme Holzoptik, feuchteresistent & ideal für Fußbodenheizung. Fachbetrieb Tezgel – Jetzt anfragen!"
                 brotkrumen={[
                     { name: 'Start', href: '/' },
