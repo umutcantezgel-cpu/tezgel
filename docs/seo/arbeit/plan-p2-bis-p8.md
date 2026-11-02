@@ -211,7 +211,8 @@ Abgeglichen mit dem SEO-Prompt (Abschnitte 8 bis 12, nur Methodik):
   - den einheitlichen Markenzusatz für 55 Seiten ohne Wetzlar in Titel oder Description, Liste alt und neu in `docs/seo/arbeit/p2-markenzusatz.json`;
   - T10: Die Auffüllung in `src/lib/metadata.ts` nutzt nur noch „| Fliesenverlegung Tezgel“ oder „· Tezgel“, mit Test;
   - Titel und Description von `/preise`;
-  - die Links „Fliesenleger in Wetzlar“ aus dem Einsatzgebiet der Startseite und aus dem Fuß.
+  - die H1 aus Abschnitt 5 mit Paket P2: `/bad/fliesen` „Fliesen für Ihr neues Badezimmer“ und die 12 Musterbäder im Muster „Musterbad Basic mit 7,0 m²“;
+  - die Links „Fliesenleger in Wetzlar“ aus dem Einsatzgebiet der Startseite und aus dem Fuß. Einzugsband und Karte zeigen nur Ortsnamen; die Namen in der Karte sind keine Links. Dort bleibt „Wetzlar“, sonst stünde ein Werbetext zwischen Ortsnamen.
   - **Geprüft** in einer Arbeitskopie: Typprüfung, Lint, Build, 282 von 282 Tests, `qa:graph`. Im gebauten HTML stimmen alle 55 Titel, und kein Titel kommt doppelt vor.
   - Titel und Descriptions mit Wetzlar (Spalte „P3“) sind nicht darin; sie kommen mit der Wetzlar-Seite.
 - **K01 und K02 als fertiger Patch:** `docs/seo/arbeit/k01-k02.patch`, Beschreibung in `docs/seo/arbeit/p6-kurzanfrage.md`. Er wartet auf S10.

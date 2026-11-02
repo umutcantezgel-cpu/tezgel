@@ -24,8 +24,31 @@ index 1409c5f1..e3daf353 100644
  const BESCHREIBUNG = 'Planen Sie Ihr Bad online: Raumgröße, Fliesen & Ausstattung wählen. Fliesenverlegung Tezgel berät Sie mit kostenfreiem Vor-Ort-Aufmaß in Wetzlar & Aßlar!';
  
  const METADATEN = createMetadata({
+diff --git a/src/app/(bestand)/bad/fliesen/page.jsx b/src/app/(bestand)/bad/fliesen/page.jsx
+index ffd79c62..599f3cc0 100644
+--- a/src/app/(bestand)/bad/fliesen/page.jsx
++++ b/src/app/(bestand)/bad/fliesen/page.jsx
+@@ -57,7 +57,7 @@ export default function FliesenPage() {
+                 brotkrumen={[
+                     { name: 'Start', href: '/' },
+                     { name: 'Bad', href: '/bad' },
+-                    { name: 'Perfekte Fliesenverlegung für Ihr neues Badezimmer' },
++                    { name: 'Fliesen für Ihr neues Badezimmer' },
+                 ]}
+             />
+ 
+@@ -68,7 +68,8 @@ export default function FliesenPage() {
+                     etikett="Fliesen- & Natursteinhandwerk · Aßlar & Wetzlar"
+                     titel={
+                         <span id="fliesen-heading">
+-                            Perfekte Fliesenverlegung{' '}
++                            {/* SEO-Runde P2: H1 ohne „Perfekte“ (Floskelliste), Plan Abschnitt 5 */}
++                            Fliesen{' '}
+                             <span>für Ihr neues Badezimmer</span>
+                         </span>
+                     }
 diff --git a/src/app/(bestand)/bad/musterbaeder/[slug]/page.jsx b/src/app/(bestand)/bad/musterbaeder/[slug]/page.jsx
-index 12b42917..34997766 100644
+index 12b42917..dacf36a4 100644
 --- a/src/app/(bestand)/bad/musterbaeder/[slug]/page.jsx
 +++ b/src/app/(bestand)/bad/musterbaeder/[slug]/page.jsx
 @@ -28,7 +28,7 @@ const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFu
@@ -46,6 +69,17 @@ index 12b42917..34997766 100644
                  ]}
              />
  
+@@ -99,8 +99,8 @@ export default async function MusterbadDetailPage({ params }) {
+                     }
+                     titel={
+                         <span id="musterbad-heading">
+-                            Musterbad {bath.title} –{' '}
+-                            <span>Komplettbad &amp; Badsanierung</span>
++                            {/* SEO-Runde P2: H1 ohne Gedankenstrich und „㎡“, gleich dem Titel ohne Marke (Plan Abschnitt 5) */}
++                            {`Musterbad ${bath.title.split('-')[0]} mit ${bath.size.split(' ')[0]} m²`}
+                         </span>
+                     }
+                     vorspann={
 diff --git a/src/app/(bestand)/bad/projekt-check/page.jsx b/src/app/(bestand)/bad/projekt-check/page.jsx
 index 430292bf..a915f747 100644
 --- a/src/app/(bestand)/bad/projekt-check/page.jsx
