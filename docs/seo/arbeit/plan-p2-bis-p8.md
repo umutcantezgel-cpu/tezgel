@@ -297,7 +297,7 @@ Die Patchdateien in diesem Ordner sind die Fassung vor dieser Entscheidung; maß
 
 **Eingespielt am 02.11.2026 (Live 2 und b4):** `main` 645998d0, Umut: „du kannst alles live schalten“ (KONTEXT.md Abschnitt 13).
 
-**Vorbereitet (02.11.2026, wartet auf „live“):** Bestätigungs-Mail, Beschreibung des LocalBusiness, Galerie der Startseite, Google-Profil (es fehlt nur der Link); KONTEXT.md Abschnitt 13, Zeile „Offene Punkte umgesetzt“.
+**Eingespielt am 02.11.2026:** Bestätigungs-Mail, Beschreibung des LocalBusiness, Galerie der Startseite und die Verknüpfung mit dem Google-Profil, `main` d5a2ee2b (KONTEXT.md Abschnitt 13).
 
 ## 8. Offene Fragen
 
