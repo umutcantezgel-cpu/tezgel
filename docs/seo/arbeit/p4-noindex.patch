@@ -42,6 +42,19 @@ index f2f2b57d..ebf20784 100644
    });
  }
  
+diff --git a/src/app/(bestand)/standorte/page.tsx b/src/app/(bestand)/standorte/page.tsx
+index 696dbce9..9ff3889b 100644
+--- a/src/app/(bestand)/standorte/page.tsx
++++ b/src/app/(bestand)/standorte/page.tsx
+@@ -34,7 +34,7 @@ import { linkKlassen } from '@/components/kern/stile';
+ import { seitenBeschreibung } from '@/lib/beschreibung';
+ 
+ export const metadata = createMetadata({
+-  title: 'Fliesenleger Standorte & Einsatzgebiete | Tezgel',
++  title: 'Einsatzgebiet in Mittelhessen | Fliesenverlegung Tezgel',
+   description: 'Fliesenleger-Fachbetrieb Tezgel aus Aßlar: Fliesenverlegung & Badsanierung in Wetzlar, Gießen, Herborn & Lahn-Dill-Kreis. Jetzt Vor-Ort-Aufmaß anfragen!',
+   path: '/standorte',
+ });
 diff --git a/src/app/sitemap.ts b/src/app/sitemap.ts
 index ce131a0d..b334279f 100644
 --- a/src/app/sitemap.ts
