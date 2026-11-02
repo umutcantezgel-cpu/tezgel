@@ -39,8 +39,9 @@ const WEITERE_STIMMEN = ['erik-s', 'hasan-oe', 'elke-s', 'ute-t'];
 
 /** Einleitung von „Was wir tun“ in zwei Sätzen (REF-ort-wetzlar.md, Lehre 2 aus Welle 1: der Glossarsatz war über 25 Wörter);
  *  gleich im Muster der Textdatei. OFFENE FRAGE im Bericht: die Teilung gehört in `orte.ts` für alle 13 Orte. */
+// SEO-Runde P3: DIN 18534 gilt für Innenräume, für Balkone nennt die Website DIN 18531 (/balkon-terrasse/balkonsanierung)
 const TUN_EINLEITUNG =
-  'Wir prüfen zuerst den [[untergrund|Untergrund]]. Im Bad und auf dem Balkon kommt eine [[abdichtung|Abdichtung]]. Sie kommt nach [[din-18534|DIN 18534]] unter die Fliesen.';
+  'Wir prüfen zuerst den [[untergrund|Untergrund]]. Im Bad kommt eine [[abdichtung|Abdichtung]]. Sie kommt nach [[din-18534|DIN 18534]] unter die Fliesen.';
 
 /** Inhalt des Ortes mit Fotos und Stimmen nach Regel 4 und 5 (Texte bleiben wörtlich aus `ortsInhalt`) */
 function inhaltFuer(city: CityData): Ortsinhalt {

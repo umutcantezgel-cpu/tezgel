@@ -11,6 +11,7 @@ import type { CityData } from '@/config/cities';
 import type { ArbeitId } from '@/config/arbeiten';
 import type { ErzaehlInhalt, Zeile } from '@/components/vorlagen/inhalt';
 import { GALERIE_START } from './galerie';
+import { EIGENE_ORTSINHALTE } from './orte-eigen';
 
 /** Aufmacher aller 13 Ortsseiten: die Dusche mit Sitzbank und Mosaik (IMG_2582, Güte A, scharf, ohne ausgefressene Pixel;
  *  UM-E4-SICHT-FIX-2 M2-B1, Sicht Anlauf 2, 4a und 4b: die bisherige Duschtür mit Armatur start-beleg-dusche war weich, dunstig
@@ -39,6 +40,8 @@ export interface Ortsinhalt extends ErzaehlInhalt {
 
 export function ortsInhalt(stadt: CityData, kmAbSitz: number, index: number): Ortsinhalt {
   const name = stadt.name;
+  // SEO-Runde P3: eigene Inhalte, wo es sie gibt (heute Wetzlar, src/inhalte/orte-eigen.ts), sonst die gemeinsame Fassung
+  const eigen = EIGENE_ORTSINHALTE[stadt.slug];
   const kurz = KURZNAME[stadt.slug] ?? name;
   const ort =
     kmAbSitz === 0
@@ -67,26 +70,27 @@ export function ortsInhalt(stadt: CityData, kmAbSitz: number, index: number): Or
       brotkrumen: [{ name: 'Start', href: '/' }, { name: 'Wo wir arbeiten', href: '/standorte' }, { name }],
       titel: `Fliesenleger in ${name}`,
       ort,
-      vorspann: `Wir machen Badsanierung und Fliesenverlegung in ${name}. Balkone machen wir dicht.`,
+      vorspann: eigen?.vorspann ?? `Wir machen Badsanierung und Fliesenverlegung in ${name}. Balkone machen wir dicht.`,
       bild: AUFMACHER,
     },
     lage: {
       // wie auf / (UM-E4-CHOR-FIX): Lage auf Fliese; so wechseln die Flächen ab dem Einstieg. Darin das Einzugsband als
       // Ortsmoment (OrtsSeite, M-C6 Nr. 2)
       aufFliese: true,
-      titel: `Sie suchen einen Fliesenleger in ${name}?`,
-      absaetze: [
+      titel: eigen?.lage.titel ?? `Sie suchen einen Fliesenleger in ${name}?`,
+      absaetze: eigen?.lage.absaetze ?? [
         `Ja, wir arbeiten in ${name} und im ${stadt.region}.`,
         `Haben Sie ein altes Bad, einen neuen Boden oder einen Balkon, der nicht mehr dicht ist? Dann kommen wir zu Ihnen nach ${name} und sehen uns alles an.`,
       ],
     },
     tun: {
       // Kopf mittig, Zeilen breit (M-C6 Nr. 3; vorher an der Linie: Kopf links, Zeilen rechts, zwei Stränge)
-      titel: `Das machen wir in ${name}.`,
-      // Fachwörter in der Einleitung (erstes Vorkommen im Fließtext), die Linknamen der Zeilen bleiben schlicht
+      titel: eigen?.tun.titel ?? `Das machen wir in ${name}.`,
+      // Fachwörter in der Einleitung (erstes Vorkommen im Fließtext), die Linknamen der Zeilen bleiben schlicht. DIN 18534 gilt
+      // für Innenräume; für Balkone nennt die Website DIN 18531 (/balkon-terrasse/balkonsanierung), deshalb hier nur das Bad
       einleitung:
-        'Wir prüfen zuerst den [[untergrund|Untergrund]]. Im Bad und auf dem Balkon kommt eine [[abdichtung|Abdichtung]] nach [[din-18534|DIN 18534]] unter die Fliesen.',
-      bereiche: leistungen,
+        'Wir prüfen zuerst den [[untergrund|Untergrund]]. Im Bad kommt eine [[abdichtung|Abdichtung]]. Sie kommt nach [[din-18534|DIN 18534]] unter die Fliesen.',
+      bereiche: eigen?.tun.bereiche ?? leistungen,
     },
     ablauf: {
       titel: `So kommen Sie in ${name} zu Ihrem neuen Boden.`,
@@ -97,7 +101,8 @@ export function ortsInhalt(stadt: CityData, kmAbSitz: number, index: number): Or
       ],
     },
     beleg: {
-      titel: `So arbeiten wir in ${name} und Umgebung.`,
+      // SEO-Runde P3: ohne Ortsnamen, weil der Ort keines Fotos bestätigt ist (Leitplanke Wahrheit, K-015)
+      titel: 'So arbeiten wir.',
       fotos,
       stimmen: [STIMMEN[index % STIMMEN.length]],
       verweis: { name: 'Alle Arbeiten ansehen', href: '/referenzen' },

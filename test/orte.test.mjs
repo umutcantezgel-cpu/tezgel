@@ -62,10 +62,15 @@ test('Orte 5: Entfernung ab Aßlar im Ortssatz, der Sitz selbst ohne Entfernung'
   }
 });
 
-test('Orte 6: Leistungslinks auf die vier Leistungen im Ort', () => {
+// SEO-Runde P3: Wetzlar verlinkt die vier Seiten Leistung × Wetzlar und dazu drei Fachseiten, alle anderen Orte wie bisher
+test('Orte 6: Leistungslinks auf die vier Leistungen im Ort, Wetzlar zusätzlich auf drei Fachseiten', () => {
   for (const [i, c] of CITIES.entries()) {
     const hrefs = inhalte[i].tun.bereiche.map((b) => b.href);
-    assert.deepEqual(hrefs, ['bad', 'wohnen', 'aussen', 'untergrund'].map((id) => `/leistungen/${id}/${c.slug}`));
+    if (c.slug === 'wetzlar') {
+      assert.deepEqual(hrefs, ['/leistungen/bad/wetzlar', '/bad/barrierefreies-bad', '/leistungen/wohnen/wetzlar', '/leistungen/aussen/wetzlar', '/leistungen/untergrund/wetzlar', '/treppen', '/fliesenreparatur']);
+    } else {
+      assert.deepEqual(hrefs, ['bad', 'wohnen', 'aussen', 'untergrund'].map((id) => `/leistungen/${id}/${c.slug}`));
+    }
   }
 });
 
@@ -103,5 +108,23 @@ test('Orte 8: jeder Ort mit Angaben in HESSEN_GEO_HIERARCHY, Service mit provide
     assert.equal(dienst.areaServed['@id'], ort['@id'], `${c.slug}: areaServed auf den Ort`);
     assert.match(dienst.provider['@id'], /\/#local-business$/, `${c.slug}: provider ist der eine Betrieb`);
     assert.ok(!graph.some((k) => [].concat(k['@type']).includes('LocalBusiness')), `${c.slug}: kein zweites LocalBusiness`);
+  }
+});
+test('Orte 11 (SEO-Runde P3): eigene Inhalte nur für Wetzlar, Zahlen wie die Daten, Förderung wie im Bestand, Fototitel ohne Ort', async () => {
+  const { EIGENE_ORTSINHALTE } = await import('../src/inhalte/orte-eigen.ts');
+  assert.deepEqual(Object.keys(EIGENE_ORTSINHALTE), ['wetzlar']);
+  const w = CITIES.findIndex((c) => c.slug === 'wetzlar');
+  const wetzlar = inhalte[w];
+  assert.match(wetzlar.worum.vorspann, /Duschen ohne Stufe/);
+  assert.match(wetzlar.lage.absaetze[0], re(`Stadtmitte von Wetzlar sind es etwa ${CITY_HUB_DATA.wetzlar.distanceKm}\u00a0km.`));
+  // Förderung nur sinngleich wie auf /bad und /bad/barrierefreies-bad („kann … dazugeben“, F-23, F-25)
+  const saetze = wetzlar.tun.bereiche.map((b) => b.satz ?? '');
+  assert.ok(saetze.some((s) => s.includes('kann die Pflegekasse bis zu 4.180\u00a0€ je Person')));
+  assert.equal(saetze.some((s) => /\bzahlt\b/.test(s)), false);
+  for (const [i, o] of inhalte.entries()) {
+    // kein Foto hat einen bestätigten Ort (Leitplanke Wahrheit): der Titel über den Fotos nennt keinen
+    assert.doesNotMatch(o.beleg.titel, re(o.stadt), `${o.stadt}: ${o.beleg.titel}`);
+    if (i === w) continue;
+    for (const t of texte(o)) assert.doesNotMatch(t, /direkt neben Wetzlar|Stadtmitte von Wetzlar|Duschen ohne Stufe/, `${o.stadt}: ${t}`);
   }
 });
