@@ -24,7 +24,7 @@ Stand 01.11.2026. Gesammelt aus `docs/seo/KONTEXT.md` (Abschnitte 8, 9, 12), `_w
 12. Öffnungszeiten: freitags bis 17 oder bis 18 Uhr? Samstag nur nach Vereinbarung? (M-03)
 13. Empfangen Sie Kunden an der Hohwardstraße 14 zu festen Zeiten mit Personal? (Davon hängt ab, ob das Google-Profil die Adresse zeigt.)
 14. Einsatzgebiet: Wie weit fahren Sie ab Aßlar? In welchen Orten gibt es regelmäßig Aufträge? (M-04, S3)
-15. Zusagen, die auf der Website stehen dürfen: Rückruf innerhalb von 24 Stunden oder 24 bis 48 Stunden? Verbindlicher Festpreis? Staubschutz-Garantie? Feste Zusagen für Baustart und Fertigstellung? (M-07)
+15. Zusagen, die auf der Website stehen dürfen: Rückruf innerhalb von 24 Stunden oder 24 bis 48 Stunden? Verbindlicher Festpreis? Staubschutz-Garantie? Feste Zusagen für Baustart und Fertigstellung oder „Termintreue“? Gewährleistung: Gilt die gesetzliche Frist wie in den AGB (§ 4, nach BGB), oder etwas anderes? Auf `/preise` stand „Volle 5 Jahre Gewährleistung nach VOB“. (M-07)
 16. Gibt es einen Meisterbrief? Bis zum Nachweis steht auf der Website „Fachbetrieb“, nicht „Meisterbetrieb“.
 17. Musterbäder: Heißt die mittlere Linie „Komfort“ oder „Premium“? (Auf der Website stehen beide Namen.)
 

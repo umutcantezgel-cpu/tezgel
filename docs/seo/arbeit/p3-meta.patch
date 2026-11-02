@@ -31,7 +31,7 @@ index 8bbab2a6..5ec94cbe 100644
    },
    robots: {
 diff --git a/src/app/(bestand)/bad/bad-aus-einer-hand/page.jsx b/src/app/(bestand)/bad/bad-aus-einer-hand/page.jsx
-index 53ef8d60..9aa3d8b7 100644
+index 5ecc0d9b..c983db2c 100644
 --- a/src/app/(bestand)/bad/bad-aus-einer-hand/page.jsx
 +++ b/src/app/(bestand)/bad/bad-aus-einer-hand/page.jsx
 @@ -25,7 +25,7 @@ const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFu
@@ -159,7 +159,7 @@ index 003ef98f..749c786e 100644
                  brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Balkon und Terrasse', href: '/balkon-terrasse' }, { name: 'Balkon sanieren: vom undichten Altbelag zur dauerhaften Lösung' }]}
              />
 diff --git a/src/app/(bestand)/beratung/layout.tsx b/src/app/(bestand)/beratung/layout.tsx
-index b102af99..7b7f6e3c 100644
+index b102af99..b71ba97d 100644
 --- a/src/app/(bestand)/beratung/layout.tsx
 +++ b/src/app/(bestand)/beratung/layout.tsx
 @@ -3,7 +3,7 @@ import { buildGraph, buildServiceNode, buildFaqNode, buildBreadcrumbNode, buildW
@@ -171,8 +171,18 @@ index b102af99..7b7f6e3c 100644
    description: 'Kostenlose Fliesenberatung & Aufmaß: Badsanierung, XXL-Fliesen & Terrassen in Wetzlar & Aßlar. Fliesenleger Tezgel berät persönlich und unverbindlich!',
    path: '/beratung',
  });
+@@ -41,7 +41,8 @@ const beratungFaqs = [
+ const beratungGraph = buildGraph([
+   buildWebPageNode({
+     url: pageUrl,
+-    name: 'Kostenlose Fachberatung für Fliesen & Badsanierung in Aßlar & Wetzlar',
++    // SEO-Runde P3: wie der Titel, ohne Wetzlar
++    name: 'Kostenlose Fliesenberatung | Fliesenverlegung Tezgel',
+     description:
+       'Vereinbaren Sie Ihre unverbindliche Beratung und das kostenfreie Vor-Ort-Aufmaß für Badsanierung, Fliesenverlegung, Wohnbereiche und Terrassen.',
+     breadcrumbItems: breadcrumbs,
 diff --git a/src/app/(bestand)/beratung/page.jsx b/src/app/(bestand)/beratung/page.jsx
-index c1d92d63..9a49aba6 100644
+index b91bfbb7..73e1b102 100644
 --- a/src/app/(bestand)/beratung/page.jsx
 +++ b/src/app/(bestand)/beratung/page.jsx
 @@ -78,7 +78,7 @@ export default function Beratung() {
@@ -373,7 +383,7 @@ index 7b5f6a64..d4b87eef 100644
                  brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Naturstein- und Granitverlegung vom Fachbetrieb' }]}
                  weitere={[
 diff --git a/src/app/(bestand)/team/page.jsx b/src/app/(bestand)/team/page.jsx
-index e292d938..de9a05a6 100644
+index 39e8237c..ee4a0f6c 100644
 --- a/src/app/(bestand)/team/page.jsx
 +++ b/src/app/(bestand)/team/page.jsx
 @@ -22,7 +22,7 @@ import Verlegeplan from '@/components/kern/Verlegeplan';
@@ -469,7 +479,7 @@ index 51e51469..3451b7d3 100644
    worum: {
      brotkrumen: [{ name: 'Start', href: '/' }, { name: 'Balkon und Terrasse' }],
 diff --git a/src/inhalte/barrierefreies-bad.ts b/src/inhalte/barrierefreies-bad.ts
-index 544b6e2d..e1d985bb 100644
+index 544b6e2d..f45b7134 100644
 --- a/src/inhalte/barrierefreies-bad.ts
 +++ b/src/inhalte/barrierefreies-bad.ts
 @@ -7,9 +7,9 @@ import type { ErzaehlInhalt } from '@/components/vorlagen/inhalt';
@@ -480,7 +490,7 @@ index 544b6e2d..e1d985bb 100644
 +    titel: 'Barrierefreies Bad umbauen | Fliesenverlegung Tezgel',
      beschreibung:
 -      'Badewanne raus, Dusche ohne Stufe rein: Wir bauen Ihr Bad in Aßlar und Wetzlar barrierefrei um, mit rutschfesten Fliesen und Zuschuss der Pflegekasse.',
-+      'Badewanne raus, Dusche ohne Stufe rein: Wir bauen Ihr Bad barrierefrei um. Mit Pflegegrad zahlt die Pflegekasse bis zu 4.180 € je Person dazu.',
++      'Badewanne raus, Dusche ohne Stufe rein: Wir bauen Ihr Bad barrierefrei um. Mit Pflegegrad kann die Pflegekasse bis zu 4.180 € je Person dazugeben.',
    },
    worum: {
      brotkrumen: [{ name: 'Start', href: '/' }, { name: 'Bad', href: '/bad' }, { name: 'Dusche statt Wanne' }],
@@ -559,7 +569,7 @@ index 6b888ea7..72177d1b 100644
    '/fliesen/festpreisangebot': 'Festpreisangebot für Fliesenarbeiten: Was den Aufwand bestimmt und wie Sie Angebote fair vergleichen. Grundlage ist der kostenfreie Termin vor Ort.',
    '/fliesen/konfigurator': 'Konfigurator und Bedarfsrechner für Fliesen: Materialbedarf und Verschnitt für Raum, Untergrund und Format. Unverbindlich, kostenfrei und ohne Preis.',
 diff --git a/src/inhalte/meta/leistungen.ts b/src/inhalte/meta/leistungen.ts
-index fdef3f48..5f9c71f6 100644
+index 973429f8..03ea2423 100644
 --- a/src/inhalte/meta/leistungen.ts
 +++ b/src/inhalte/meta/leistungen.ts
 @@ -1,12 +1,12 @@
@@ -575,16 +585,16 @@ index fdef3f48..5f9c71f6 100644
 +  '/leistungen/aussen': 'Balkon und Terrasse sanieren, auch auf Stelzlagern. Das Gefälle beträgt mindestens 1,5 bis 2 %, damit Regenwasser vom Haus weg abläuft.',
 +  '/leistungen/untergrund': 'Untergrund und Abdichtung: Wir gleichen Estrich aus, messen die Restfeuchte und dichten unter den Fliesen nach DIN 18534 ab. Der Termin ist kostenfrei.',
    '/bad/badanfrage': 'Für Ihr Angebot zur Badsanierung geben Sie im Formular Raummaße und Wunschausstattung an. Danach folgt der kostenfreie Termin bei Ihnen vor Ort.',
-   '/foerderung': 'Förderung für Ihr barrierefreies Bad: Die Pflegekasse zahlt mit Pflegegrad bis zu 4.180 € je Person dazu. Auch die KfW 159 kann den Umbau fördern.',
+   '/foerderung': 'Förderung für Ihr barrierefreies Bad: Mit Pflegegrad kann die Pflegekasse bis zu 4.180 € je Person dazugeben. Auch die KfW 159 kann den Umbau fördern.',
    '/fliesen/auf-fussbodenheizung': 'Fliesen auf Fußbodenheizung verlegen: Wann der Estrich trocken genug ist, welcher Kleber passt und wo die Fugen hinkommen. Ratgeber von Tezgel.',
 -  '/naturstein': 'Naturstein verlegen in Wetzlar und Aßlar: Granit, Marmor, Kalkstein, Travertin und Schiefer. Der Termin bei Ihnen vor Ort ist kostenfrei.',
 +  '/naturstein': 'Naturstein verlegen lassen: Granit, Marmor, Kalkstein, Travertin und Schiefer, verlegt vom Fachbetrieb aus Aßlar. Der Termin vor Ort ist kostenfrei.',
  };
 diff --git a/src/inhalte/meta/seiten.ts b/src/inhalte/meta/seiten.ts
-index 34a22de6..67fc3710 100644
+index 34a22de6..4931147c 100644
 --- a/src/inhalte/meta/seiten.ts
 +++ b/src/inhalte/meta/seiten.ts
-@@ -1,8 +1,8 @@
+@@ -1,22 +1,23 @@
  // Meta-Beschreibungen (E3-SEO-META-2): Bad-Unterseiten, /standorte, /ausstellung/*, /faq, /beratung, /downloads, /unternehmen, /team, /partner, /karriere, /termin. Je Adresse ein Satz oder zwei, 120 bis 155 Zeichen, Alltagssprache;
  // Regeln in test/meta.test.mjs. Sichtbare Texte der Seiten bleiben unverändert.
  export const META_SEITEN: Readonly<Record<string, string>> = {
@@ -595,7 +605,8 @@ index 34a22de6..67fc3710 100644
    '/bad/musterbaeder': 'Musterbäder von 4,6 bis 15,9 m² mit Ausstattungslisten. Die Preise sind Richtwerte, den verbindlichen Festpreis gibt es nach dem Termin vor Ort.',
    '/bad/badplaner': 'Badplaner: Bad online planen in drei Schritten, von Raummaßen bis Fliesen und Licht. Eine Skizze mit Maßen und ein paar Fotos reichen für den Start.',
    '/bad/projekt-check': 'Projektcheck fürs Bad: Badsanierung in 2 Minuten online prüfen. Den verbindlichen Festpreis gibt es nach dem kostenfreien Termin vor Ort.',
-@@ -10,13 +10,14 @@ export const META_SEITEN: Readonly<Record<string, string>> = {
+-  '/standorte': 'Wir arbeiten in 13 Städten und Gemeinden in Mittelhessen, von Aßlar und Wetzlar bis Marburg und Friedberg. Wählen Sie Ihren Ort für Leistungen und Ablauf.',
++  '/standorte': 'Wir arbeiten in 13 Orten in Mittelhessen und der Wetterau, von Aßlar bis Marburg und Friedberg. Wählen Sie Ihren Ort für Leistungen und Ablauf.',
    '/ausstellung/wetzlar': 'Fliesenberatung in Wetzlar nach Vereinbarung: Welche Fliese passt zu Bad, Wohnbereich oder Terrasse? Deniz Tezgel berät Sie zu Formaten und Oberflächen.',
    '/ausstellung/giessen': 'Fliesenberatung in Gießen: Neues Bad, große Bodenfliesen oder frostsichere Terrasse? Deniz Tezgel berät Sie nach Vereinbarung zu Formaten und Oberflächen.',
    '/faq': 'Häufige Fragen zu Fliesen, Bad, Kosten und DIN 18534 Abdichtung. Der Termin vor Ort ist kostenfrei, danach folgt ein verbindliches Festpreisangebot.',
@@ -630,7 +641,7 @@ index 2e3905de..2d9d1c80 100644
    worum: {
      brotkrumen: [],
 diff --git a/src/inhalte/ueber-uns.ts b/src/inhalte/ueber-uns.ts
-index bd1300e3..4608c987 100644
+index 7b0032b1..3d72db0b 100644
 --- a/src/inhalte/ueber-uns.ts
 +++ b/src/inhalte/ueber-uns.ts
 @@ -15,9 +15,9 @@ const VORSPANN =

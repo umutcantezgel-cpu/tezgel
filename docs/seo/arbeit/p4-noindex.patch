@@ -1,5 +1,41 @@
+diff --git a/scripts/submit-indexnow.mjs b/scripts/submit-indexnow.mjs
+index 7709d554..21158d03 100644
+--- a/scripts/submit-indexnow.mjs
++++ b/scripts/submit-indexnow.mjs
+@@ -10,7 +10,8 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.tezgel.de';
+ const HOST = new URL(SITE_URL).hostname;
+ const KEY_LOCATION = `${SITE_URL}/${INDEXNOW_KEY}.txt`;
+ 
+-// Fallback core routes in case sitemap.xml is unreachable offline
++// Fallback core routes in case sitemap.xml is unreachable offline. SEO-Runde P4: nur Seiten, die in den Index gehören
++// (wie src/lib/seo/indexierung.ts): ohne Ortsseiten ohne eigenen Inhalt und ohne Rechtstexte mit noindex
+ const CORE_ROUTES = [
+   '',
+   '/bad',
+@@ -29,8 +30,6 @@ const CORE_ROUTES = [
+   '/leistungen/untergrund',
+   '/standorte',
+   '/standorte/wetzlar',
+-  '/standorte/giessen',
+-  '/standorte/marburg',
+   '/ausstellung/wetzlar',
+   '/ausstellung/giessen',
+   '/blog',
+@@ -47,11 +46,7 @@ const CORE_ROUTES = [
+   '/karriere/ausbildung',
+   '/kontakt',
+   '/termin',
+-  '/impressum',
+-  '/datenschutz',
+-  '/agb',
+-  '/widerruf',
+-  '/cookie-richtlinie',
++  '/preise',
+   '/barrierefreiheit',
+ ];
+ 
 diff --git a/src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx b/src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx
-index 1c8b950e..d3c68cd3 100644
+index 9da3a36d..13a4e96a 100644
 --- a/src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx
 +++ b/src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx
 @@ -28,6 +28,7 @@ import Verlegeplan from '@/components/kern/Verlegeplan';
@@ -22,7 +58,7 @@ index 1c8b950e..d3c68cd3 100644
  }
  
 diff --git a/src/app/(bestand)/standorte/[stadt]/page.tsx b/src/app/(bestand)/standorte/[stadt]/page.tsx
-index f2f2b57d..ebf20784 100644
+index df5d39f9..fc4ddbd0 100644
 --- a/src/app/(bestand)/standorte/[stadt]/page.tsx
 +++ b/src/app/(bestand)/standorte/[stadt]/page.tsx
 @@ -12,6 +12,7 @@ import LeadQuickForm from '@/components/forms/LeadQuickForm';
@@ -33,7 +69,7 @@ index f2f2b57d..ebf20784 100644
  
  // Standortseite `/standorte/[stadt]` (E3-BAU-10, KERN v3.6, Zusatz E3-BAU-K016): Ortsseite auf der Vorlage `OrtsSeite`.
  // Der Inhalt kommt aus `ortsInhalt()` (`src/inhalte/orte.ts`, Muster `_werkstatt/texte/REF-ort-wetzlar.md`), die Metadaten
-@@ -75,6 +76,8 @@ export async function generateMetadata({
+@@ -76,6 +77,8 @@ export async function generateMetadata({
      title: meta.titel,
      description: meta.beschreibung,
      path: `/standorte/${city.slug}`,
@@ -43,18 +79,40 @@ index f2f2b57d..ebf20784 100644
  }
  
 diff --git a/src/app/(bestand)/standorte/page.tsx b/src/app/(bestand)/standorte/page.tsx
-index 696dbce9..9ff3889b 100644
+index df9ad852..ff82a753 100644
 --- a/src/app/(bestand)/standorte/page.tsx
 +++ b/src/app/(bestand)/standorte/page.tsx
-@@ -34,7 +34,7 @@ import { linkKlassen } from '@/components/kern/stile';
+@@ -34,8 +34,10 @@ import { linkKlassen } from '@/components/kern/stile';
  import { seitenBeschreibung } from '@/lib/beschreibung';
  
  export const metadata = createMetadata({
 -  title: 'Fliesenleger Standorte & Einsatzgebiete | Tezgel',
-+  title: 'Einsatzgebiet in Mittelhessen | Fliesenverlegung Tezgel',
-   description: 'Fliesenleger-Fachbetrieb Tezgel aus Aßlar: Fliesenverlegung & Badsanierung in Wetzlar, Gießen, Herborn & Lahn-Dill-Kreis. Jetzt Vor-Ort-Aufmaß anfragen!',
+-  description: 'Fliesenleger-Fachbetrieb Tezgel aus Aßlar: Fliesenverlegung & Badsanierung in Wetzlar, Gießen, Herborn & Lahn-Dill-Kreis. Jetzt Vor-Ort-Aufmaß anfragen!',
++  // SEO-Runde P4: Friedberg, Bad Nauheim und Butzbach liegen im Wetteraukreis, nicht in Mittelhessen
++  title: 'Einsatzgebiet in Mittelhessen und der Wetterau · Tezgel',
++  // die Description steht in src/inhalte/meta/seiten.ts und gewinnt dort (lib/beschreibung.ts)
++  description: seitenBeschreibung('/standorte', 'Übersicht aller Städte und Gemeinden, in denen Fliesenverlegung Tezgel aus Aßlar Fliesen verlegt und Bäder saniert.'),
    path: '/standorte',
  });
+ 
+@@ -48,7 +50,7 @@ const breadcrumbs = [
+ const standorteGraph = buildGraph([
+   buildWebPageNode({
+     url: pageUrl,
+-    name: 'Standorte & Einsatzgebiete in Mittelhessen | Fliesenverlegung Tezgel',
++    name: 'Einsatzgebiet in Mittelhessen und der Wetterau · Tezgel',
+     description: 'Übersicht aller Städte und Gemeinden, in denen Fliesenverlegung Tezgel aus Aßlar Fliesen verlegt und Bäder saniert.',
+     breadcrumbItems: breadcrumbs,
+   }),
+@@ -56,7 +58,7 @@ const standorteGraph = buildGraph([
+   {
+     '@type': 'CollectionPage',
+     '@id': `${pageUrl}#collection`,
+-    name: 'Fliesenverlegung Tezgel – Standorte & Einsatzgebiete',
++    name: 'Einsatzgebiet in Mittelhessen und der Wetterau',
+     // dieselbe Beschreibung wie Metadaten und WebPage (lib/beschreibung.ts, E-054)
+     description: seitenBeschreibung('/standorte', 'Übersicht aller Städte und Gemeinden, in denen Fliesenverlegung Tezgel aus Aßlar Fliesen verlegt und Bäder saniert.'),
+     publisher: { '@id': ORG_ID },
 diff --git a/src/app/sitemap.ts b/src/app/sitemap.ts
 index ce131a0d..b334279f 100644
 --- a/src/app/sitemap.ts
@@ -120,7 +178,7 @@ index 00000000..7b5a617c
 +  return pfadIndexiert(new URL(adresse).pathname);
 +}
 diff --git a/src/lib/seo/indexnow.ts b/src/lib/seo/indexnow.ts
-index 3b811e11..a1f67d9c 100644
+index 3b811e11..16b00c49 100644
 --- a/src/lib/seo/indexnow.ts
 +++ b/src/lib/seo/indexnow.ts
 @@ -5,6 +5,7 @@ import { TOPIC_PAGES } from '@/config/topics';
@@ -131,7 +189,15 @@ index 3b811e11..a1f67d9c 100644
  
  export const INDEXNOW_KEY = process.env.INDEXNOW_KEY || '4c6796df61f5479387fc4f56b1ed6b19';
  export const INDEXNOW_HOST = new URL(SITE_URL).hostname; // 'www.tezgel.de'
-@@ -65,7 +66,8 @@ export function getAllSiteUrls(): string[] {
+@@ -39,6 +40,7 @@ const STATIC_PATHS = [
+   '/karriere/ausbildung',
+   '/kontakt',
+   '/termin',
++  '/preise',
+   '/impressum',
+   '/datenschutz',
+   '/agb',
+@@ -65,7 +67,8 @@ export function getAllSiteUrls(): string[] {
      ...posts.map((post) => `${SITE_URL}/blog/${post.slug}`),
    ];
  
@@ -142,10 +208,10 @@ index 3b811e11..a1f67d9c 100644
  
  export interface IndexNowResult {
 diff --git a/test/orte.test.mjs b/test/orte.test.mjs
-index 6814d82d..55b368bf 100644
+index 6814d82d..252fd42a 100644
 --- a/test/orte.test.mjs
 +++ b/test/orte.test.mjs
-@@ -118,6 +118,27 @@ test('Orte 9 (SEO-Runde S2): Links auf Aßlar führen zur Startseite, alle ander
+@@ -118,6 +118,29 @@ test('Orte 9 (SEO-Runde S2): Links auf Aßlar führen zur Startseite, alle ander
    assert.ok(CITIES.some((c) => c.slug === SITZ_SLUG), 'Aßlar bleibt in CITIES (Zonen, Karte, Leistung × Ort)');
  });
  
@@ -162,6 +228,8 @@ index 6814d82d..55b368bf 100644
 +  assert.equal(pfadIndexiert('/'), true);
 +  const karte = sitemap().map((e) => e.url);
 +  const melden = getAllSiteUrls();
++  // Sitemap und IndexNow melden dieselben Adressen
++  assert.deepEqual([...melden].sort(), [...karte].sort());
 +  for (const liste of [karte, melden]) {
 +    assert.ok(liste.length > 60, `zu wenige Adressen (${liste.length})`);
 +    assert.deepEqual(liste.filter((u) => !adresseIndexiert(u)), []);

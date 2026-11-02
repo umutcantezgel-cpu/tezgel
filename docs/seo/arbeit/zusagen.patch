@@ -1,5 +1,5 @@
 diff --git a/src/app/(bestand)/bad/bad-aus-einer-hand/page.jsx b/src/app/(bestand)/bad/bad-aus-einer-hand/page.jsx
-index a78e84d9..53ef8d60 100644
+index a78e84d9..5ecc0d9b 100644
 --- a/src/app/(bestand)/bad/bad-aus-einer-hand/page.jsx
 +++ b/src/app/(bestand)/bad/bad-aus-einer-hand/page.jsx
 @@ -26,7 +26,8 @@ const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFu
@@ -12,11 +12,13 @@ index a78e84d9..53ef8d60 100644
  
  const METADATEN = createMetadata({
      title: TITEL,
-@@ -43,7 +44,7 @@ export default function BadAusEinerHandPage() {
+@@ -42,8 +43,8 @@ export default function BadAusEinerHandPage() {
+ 
      const benefits = [
          { title: 'Ein fester Fach-Ansprechpartner', desc: `Sie müssen nicht mit fünf verschiedenen Firmen telefonieren. ${COMPANY_DATA.owner.fullName} betreut Sie persönlich von A bis Z.` },
-         { title: 'Verbindlicher Festpreis', desc: 'Transparente Gesamtkalkulation aller Gewerke ohne versteckte Kosten oder böse Überraschungen.' },
+-        { title: 'Verbindlicher Festpreis', desc: 'Transparente Gesamtkalkulation aller Gewerke ohne versteckte Kosten oder böse Überraschungen.' },
 -        { title: 'Verlässlicher Bauzeitplan', desc: 'Feste Zusagen für Baustart und Fertigstellung – damit Ihr Alltag planbar bleibt.' },
++        { title: 'Verbindlicher Festpreis', desc: 'Kalkulation aller Gewerke mit festem Preis.' },
 +        { title: 'Abgestimmter Bauzeitplan', desc: 'Baustart und Fertigstellung stimmen wir mit Ihnen ab, damit Ihr Alltag planbar bleibt.' }, // SEO-Runde, Befund Zusagen (M-07)
          { title: 'Staubarme Ausführung', desc: 'Einsatz von Staubschutzwänden, Luftreinigern und Schonabdeckungen für saubere Wohnräume.' }
      ];
@@ -30,6 +32,15 @@ index a78e84d9..53ef8d60 100644
                          </p>
                      }
                      aktionen={
+@@ -107,7 +108,7 @@ export default function BadAusEinerHandPage() {
+                     }
+                     einleitung={
+                         <p>
+-                            Persönlich, termintreu und sauber – so arbeitet unser Fachbetrieb aus Aßlar in Wetzlar, Gießen und ganz Mittelhessen.
++                            Persönlich und sauber: So arbeitet unser Fachbetrieb aus Aßlar in Wetzlar, Gießen und ganz Mittelhessen.
+                         </p>
+                     }
+                 >
 diff --git a/src/app/(bestand)/bad/musterbaeder/[slug]/page.jsx b/src/app/(bestand)/bad/musterbaeder/[slug]/page.jsx
 index dacf36a4..9804676e 100644
 --- a/src/app/(bestand)/bad/musterbaeder/[slug]/page.jsx
@@ -43,6 +54,19 @@ index dacf36a4..9804676e 100644
                                      <li key={item} className="flex items-center gap-3 font-text text-fs-2 text-tinte">
                                          <Fugenkreuz className="size-3 shrink-0 text-strich" />
                                          {item}
+diff --git a/src/app/(bestand)/beratung/page.jsx b/src/app/(bestand)/beratung/page.jsx
+index c1d92d63..b91bfbb7 100644
+--- a/src/app/(bestand)/beratung/page.jsx
++++ b/src/app/(bestand)/beratung/page.jsx
+@@ -58,7 +58,7 @@ const beratungSteps = [
+   {
+     step: '04',
+     title: 'Transparenter Kostenvoranschlag',
+-    desc: 'Detailliertes Festpreis-Angebot ohne versteckte Kosten mit verlässlichem Zeitplan.'
++    desc: 'Ausführliches Festpreisangebot mit abgestimmtem Zeitplan.'
+   }
+ ];
+ 
 diff --git a/src/app/(bestand)/faq/layout.tsx b/src/app/(bestand)/faq/layout.tsx
 index 5cf0b9b5..3f51327a 100644
 --- a/src/app/(bestand)/faq/layout.tsx
@@ -97,12 +121,15 @@ index 9f92c2b9..e25126c1 100644
          ]
      }
 diff --git a/src/app/(bestand)/fliesen/festpreisangebot/page.jsx b/src/app/(bestand)/fliesen/festpreisangebot/page.jsx
-index 99ae7486..a8e5b278 100644
+index 99ae7486..52330081 100644
 --- a/src/app/(bestand)/fliesen/festpreisangebot/page.jsx
 +++ b/src/app/(bestand)/fliesen/festpreisangebot/page.jsx
-@@ -41,7 +41,7 @@ const PROMISES = [
+@@ -39,9 +39,9 @@ export const metadata = createMetadata({
+ 
+ const PROMISES = [
      { title: 'Kostenfreies Aufmaß vor Ort', desc: 'Flächen, Untergrund und Details werden vor Ort aufgenommen – die Grundlage für ein belastbares Angebot.' },
-     { title: 'Verbindlicher Festpreis', desc: 'Für den im Angebot beschriebenen Leistungsumfang gilt der vereinbarte Preis – ohne versteckte Zusatzkosten.' },
+-    { title: 'Verbindlicher Festpreis', desc: 'Für den im Angebot beschriebenen Leistungsumfang gilt der vereinbarte Preis – ohne versteckte Zusatzkosten.' },
++    { title: 'Verbindlicher Festpreis', desc: 'Für den im Angebot beschriebenen Leistungsumfang gilt der vereinbarte Preis.' },
      { title: 'Transparente Positionen', desc: 'Jede Leistung steht als eigene Position mit Menge und Einheit im Angebot – nachvollziehbar und vergleichbar.' },
 -    { title: 'Bauzeitenplan & Termintreue', desc: 'Feste Zusagen für Start und Fertigstellung, damit Sie Ihren Alltag und andere Gewerke planen können.' },
 +    { title: 'Abgestimmter Bauzeitenplan', desc: 'Start und Fertigstellung stimmen wir mit Ihnen ab, damit Sie Ihren Alltag und andere Gewerke planen können.' }, // SEO-Runde, Befund Zusagen (M-07)
@@ -136,15 +163,17 @@ index 48513a11..c140e1df 100644
                              </p>
                              <div className="mt-auto pt-6">
 diff --git a/src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx b/src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx
-index fffe2280..29c10fba 100644
+index fffe2280..e1f6762b 100644
 --- a/src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx
 +++ b/src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx
-@@ -56,7 +56,7 @@ const SERVICE_CITY_INTROS: Record<
+@@ -55,8 +55,8 @@ const SERVICE_CITY_INTROS: Record<
+     p2: `Im Mittelpunkt stehen kompromisslose Langlebigkeit, absolute Dichtigkeit und saubere Ausführung mit normgerechter Verbundabdichtung nach DIN 18534 überall dort, wo Wasser einwirkt.${subs ? ` Unsere Schwerpunkte in ${city}: ${subs}.` : ''} Nach einem kostenfreien Vor-Ort-Aufmaß erhalten Sie ein transparentes, verbindliches Festpreisangebot.`
    }),
    wohnen: (city, reg, auth, subs) => ({
-     p1: `Für repräsentative Wohnräume, offene Küchen und Flure in ${city} und der Region ${reg} verlegen wir erstklassiges Feinsteinzeug und Natursteinbeläge. Als geprüfter Fachbetrieb der ${auth} schaffen wir schwellenlose Übergänge zwischen Wohnbereichen und ein vollkommen symmetrisches Fugenbild.`,
+-    p1: `Für repräsentative Wohnräume, offene Küchen und Flure in ${city} und der Region ${reg} verlegen wir erstklassiges Feinsteinzeug und Natursteinbeläge. Als geprüfter Fachbetrieb der ${auth} schaffen wir schwellenlose Übergänge zwischen Wohnbereichen und ein vollkommen symmetrisches Fugenbild.`,
 -    p2: `Wir stimmen den Belagsaufbau exakt auf Ihre Fußbodenheizung und Estrich-Belegreife ab, um optimale Wärmeleitung und rissfreie Beständigkeit zu sichern.${subs ? ` Unsere Fachleistungen für ${city}: ${subs}.` : ''} Nach dem Vor-Ort-Aufmaß in ${city} planen wir Fugenachsen und Verlegemuster im Detail mit Festpreisgarantie.`
-+    p2: `Wir stimmen den Belagsaufbau exakt auf Ihre Fußbodenheizung und Estrich-Belegreife ab, um optimale Wärmeleitung und rissfreie Beständigkeit zu sichern.${subs ? ` Unsere Fachleistungen für ${city}: ${subs}.` : ''} Nach dem Vor-Ort-Aufmaß in ${city} planen wir Fugenachsen und Verlegemuster im Detail und erstellen ein Festpreisangebot.`
++    p1: `Für repräsentative Wohnräume, offene Küchen und Flure in ${city} und der Region ${reg} verlegen wir Feinsteinzeug und Natursteinbeläge. Als eingetragener Fachbetrieb der ${auth} schaffen wir schwellenlose Übergänge zwischen Wohnbereichen und ein vollkommen symmetrisches Fugenbild.`,
++    p2: `Wir stimmen den Belagsaufbau auf Ihre Fußbodenheizung ab und prüfen vorher, ob der Estrich trocken genug ist.${subs ? ` Unsere Fachleistungen für ${city}: ${subs}.` : ''} Nach dem Termin bei Ihnen vor Ort in ${city} planen wir Fugen und Verlegemuster und erstellen ein Festpreisangebot.`
    }),
    aussen: (city, reg, auth, subs) => ({
      p1: `Balkone, Terrassen und Eingangsbereiche in ${city} erfordern höchste Witterungsbeständigkeit. Als Fachbetrieb der ${auth} verlegen wir frostsichere 2-cm-Keramikplatten auf Stelzlagern oder im drainierten Kiesbett für Immobilienbesitzer im gesamten ${reg}.`,
@@ -203,7 +232,7 @@ index 278bce9c..c49a6ee6 100644
                  }
                  rand={
 diff --git a/src/app/(bestand)/preise/page.jsx b/src/app/(bestand)/preise/page.jsx
-index 47ca8178..eb4f2e71 100644
+index 47ca8178..a8310bb9 100644
 --- a/src/app/(bestand)/preise/page.jsx
 +++ b/src/app/(bestand)/preise/page.jsx
 @@ -59,14 +59,14 @@ export default function PreisePage() {
@@ -224,7 +253,7 @@ index 47ca8178..eb4f2e71 100644
            </p>
          }
          aktionen={
-@@ -198,10 +198,10 @@ export default function PreisePage() {
+@@ -198,17 +198,19 @@ export default function PreisePage() {
            </Feld>
  
            <Feld>
@@ -238,7 +267,18 @@ index 47ca8178..eb4f2e71 100644
              </p>
            </Feld>
  
-@@ -252,8 +252,8 @@ export default function PreisePage() {
+           <Feld spanne={2} className="lg:col-span-1">
+-            <h3 className="text-fs-4 text-tinte hyphens-auto">DIN&nbsp;&amp; Gewährleistung</h3>
++            <h3 className="text-fs-4 text-tinte hyphens-auto">DIN und Gewährleistung</h3>
++            {/* SEO-Runde, Befund Zusagen: vorher „Volle 5 Jahre Gewährleistung nach VOB … Richtlinien der Handwerkskammer“, nicht im
++                Faktenblatt und anders als die AGB (§ 4: gesetzliche Frist nach BGB); Frage an Deniz */}
+             <p className="mt-2 text-fs-2 text-tinte-2">
+-              Volle 5 Jahre Gewährleistung nach VOB auf alle Verlege- und Abdichtungsarbeiten nach den strengen Richtlinien der Handwerkskammer Wiesbaden.
++              Im Bad dichten wir nach DIN&nbsp;18534 ab. Die Gewährleistung regeln unsere AGB.
+             </p>
+           </Feld>
+         </Feldraster>
+@@ -252,8 +254,8 @@ export default function PreisePage() {
          className="[&_h2]:hyphens-auto [&_h2]:trennen-ab-10"
          benefits={[
            "Kostenfreies Aufmaß vor Ort in Aßlar, Wetzlar und Hessen",
@@ -280,18 +320,20 @@ index fb3fa8f5..2d8d54f3 100644
                                  ))}
                              </ul>
 diff --git a/src/app/(bestand)/standorte/page.tsx b/src/app/(bestand)/standorte/page.tsx
-index 29e80a8b..e2a554c5 100644
+index 29e80a8b..3ff32312 100644
 --- a/src/app/(bestand)/standorte/page.tsx
 +++ b/src/app/(bestand)/standorte/page.tsx
-@@ -271,7 +271,7 @@ export default function StandorteOverviewPage() {
+@@ -271,8 +271,8 @@ export default function StandorteOverviewPage() {
        {/* 8. ABSCHLUSS */}
        <FinalCTA
          headline="Planen Sie ein Fliesen- oder Badprojekt in Mittelhessen? Sprechen Sie direkt mit Fachbetriebsleiter Deniz Tezgel."
 -        subtitle="Kostenfreies Vor-Ort-Aufmaß • Feste Terminabsprachen • HWK-Fachbetrieb"
-+        subtitle="Kostenfreies Vor-Ort-Aufmaß • Termine nach Absprache • HWK-Fachbetrieb"
-         buttonText="Jetzt Vor-Ort-Termin anfragen"
+-        buttonText="Jetzt Vor-Ort-Termin anfragen"
++        subtitle="Termin vor Ort kostenfrei • Termine nach Absprache • Fachbetrieb der Handwerkskammer"
++        buttonText="Termin vor Ort anfragen"
        />
      </>
+   );
 diff --git a/src/app/(bestand)/team/page.jsx b/src/app/(bestand)/team/page.jsx
 index e292d938..39e8237c 100644
 --- a/src/app/(bestand)/team/page.jsx
@@ -305,6 +347,19 @@ index e292d938..39e8237c 100644
                  buttonText="Jetzt Projekt unverbindlich anfragen"
              />
          </>
+diff --git a/src/app/(bestand)/treppen/treppenhaus/page.jsx b/src/app/(bestand)/treppen/treppenhaus/page.jsx
+index c4124d9b..870e1c99 100644
+--- a/src/app/(bestand)/treppen/treppenhaus/page.jsx
++++ b/src/app/(bestand)/treppen/treppenhaus/page.jsx
+@@ -130,7 +130,7 @@ export default function TreppenhausPage() {
+                         <p>
+                             Treppenhaus sanieren: neue Beläge im Mehrfamilienhaus für Trittsicherheit, Schallschutz und repräsentative Optik.
+                             Ausgetretene Stufen, gesprungene Platten und unpassend geflickte Podeste erneuern wir für Eigentümer und
+-                            Hausverwaltungen termintreu und im bewohnten Bestand.
++                            Hausverwaltungen, auch im bewohnten Bestand.
+                         </p>
+                     }
+                     aktionen={
 diff --git a/src/app/llms.txt/route.ts b/src/app/llms.txt/route.ts
 index ccbedb10..2a1445ab 100644
 --- a/src/app/llms.txt/route.ts
@@ -377,23 +432,41 @@ index 065ace6e..9402239b 100644
              <Merkliste spalten={2} verband nummeriert eintraege={punkte} />
  
 diff --git a/src/components/ui/FinalCTA.tsx b/src/components/ui/FinalCTA.tsx
-index 96369bbe..1d23b116 100644
+index 96369bbe..d5d2e442 100644
 --- a/src/components/ui/FinalCTA.tsx
 +++ b/src/components/ui/FinalCTA.tsx
-@@ -38,8 +38,9 @@ interface FinalCTAProps {
+@@ -37,9 +37,10 @@ interface FinalCTAProps {
+ }
  
  const defaultBenefits = [
-   "Kostenfreies Vor-Ort-Aufmaß in Aßlar, Wetzlar & Hessen",
+-  "Kostenfreies Vor-Ort-Aufmaß in Aßlar, Wetzlar & Hessen",
 -  "Verbindlicher Festpreis ohne versteckte Kosten",
 -  "Saubere Baustelle mit Staubschutz-Garantie",
++  "Kostenfreier Termin bei Ihnen vor Ort",
 +  // SEO-Runde, Befund Zusagen (docs/seo/arbeit/zusagen-befund.md): Wortlaut des Faktenblatts statt Garantie, M-07 offen
 +  "Festpreisangebot nach dem Termin vor Ort",
 +  "Staubschutz in bewohnten Räumen und besenreine Übergabe",
  ];
  
  // Telefonnummer groß in Mono, als tel:-Link (Farbwechsel der Linie: zustand). Ziel ≥ 44 px (R-01b): min-h-11 mit
+diff --git a/src/components/vorlagen/teile/Versprechen.tsx b/src/components/vorlagen/teile/Versprechen.tsx
+index 7a3bed22..fad78ff9 100644
+--- a/src/components/vorlagen/teile/Versprechen.tsx
++++ b/src/components/vorlagen/teile/Versprechen.tsx
+@@ -74,9 +74,9 @@ const ANPASSUNG: ({ quelle: string; grund?: string } & Partial<Punkt>)[] = [
+   },
+   {
+     quelle: 'Verlässliche Termintreue & Bauzeitenplan',
+-    titel: 'Verlässliche Termintreue und Bauzeitenplan',
++    titel: 'Abgestimmter Bauzeitenplan',
+     text: 'Wir stimmen Baustart und Fertigstellung mit Ihnen ab, damit Ihr Alltag planbar bleibt.',
+-    grund: 'M-07: abgestimmt statt „Feste Zusagen für Baustart und Fertigstellung“; K-011 und statt &, ohne Gedankenstrich',
++    grund: 'M-07: abgestimmt statt „Feste Zusagen für Baustart und Fertigstellung“, Titel ohne „Termintreue“ (SEO-Runde, Gegenprüfung); K-011 ohne Gedankenstrich',
+   },
+   {
+     quelle: 'Garantierter Staubschutz bei Sanierungen',
 diff --git a/src/config/cities.ts b/src/config/cities.ts
-index cd2be2bd..57116ce7 100644
+index cd2be2bd..87a0d55e 100644
 --- a/src/config/cities.ts
 +++ b/src/config/cities.ts
 @@ -14,7 +14,7 @@ export const CITIES: CityData[] = [
@@ -401,7 +474,7 @@ index cd2be2bd..57116ce7 100644
      distanceKm: 0,
      region: 'Lahn-Dill-Kreis',
 -    description: 'Wetzlar grenzt direkt an unseren Firmensitz in Aßlar. Für Badsanierungen, Großformat-Fliesen und Balkonsanierungen sind wir dadurch schnell beim Aufmaß und jeden Tag pünktlich auf Ihrer Baustelle.',
-+    description: 'Wetzlar grenzt direkt an unseren Firmensitz in Aßlar. Für Badsanierungen, Großformat-Fliesen und Balkonsanierungen sind wir dadurch schnell beim Aufmaß.',
++    description: 'Wetzlar grenzt direkt an unseren Firmensitz in Aßlar. Für Badsanierungen, große Fliesen und Balkonsanierungen sind wir dadurch schnell bei Ihnen vor Ort.',
      mapQuery: 'Wetzlar,Hessen,Deutschland',
    },
    {
@@ -414,3 +487,29 @@ index cd2be2bd..57116ce7 100644
      mapQuery: 'Friedberg,Hessen,Deutschland',
    },
    {
+diff --git a/src/inhalte/meta/leistungen.ts b/src/inhalte/meta/leistungen.ts
+index fdef3f48..973429f8 100644
+--- a/src/inhalte/meta/leistungen.ts
++++ b/src/inhalte/meta/leistungen.ts
+@@ -6,7 +6,7 @@ export const META_LEISTUNGEN: Readonly<Record<string, string>> = {
+   '/leistungen/aussen': 'Balkon und Terrassensanierung in Wetzlar, auch auf Stelzlagern. Das Gefälle ist mindestens 1,5 bis 2 %, damit Regenwasser abläuft.',
+   '/leistungen/untergrund': 'Untergrund und Abdichtung in Wetzlar: Wir gleichen Estrich aus, messen die Restfeuchte und dichten unter den Fliesen nach DIN 18534 ab.',
+   '/bad/badanfrage': 'Für Ihr Angebot zur Badsanierung geben Sie im Formular Raummaße und Wunschausstattung an. Danach folgt der kostenfreie Termin bei Ihnen vor Ort.',
+-  '/foerderung': 'Förderung für Ihr barrierefreies Bad: Die Pflegekasse zahlt mit Pflegegrad bis zu 4.180 € je Person dazu. Auch die KfW 159 kann den Umbau fördern.',
++  '/foerderung': 'Förderung für Ihr barrierefreies Bad: Mit Pflegegrad kann die Pflegekasse bis zu 4.180 € je Person dazugeben. Auch die KfW 159 kann den Umbau fördern.',
+   '/fliesen/auf-fussbodenheizung': 'Fliesen auf Fußbodenheizung verlegen: Wann der Estrich trocken genug ist, welcher Kleber passt und wo die Fugen hinkommen. Ratgeber von Tezgel.',
+   '/naturstein': 'Naturstein verlegen in Wetzlar und Aßlar: Granit, Marmor, Kalkstein, Travertin und Schiefer. Der Termin bei Ihnen vor Ort ist kostenfrei.',
+ };
+diff --git a/src/inhalte/ueber-uns.ts b/src/inhalte/ueber-uns.ts
+index bd1300e3..7b0032b1 100644
+--- a/src/inhalte/ueber-uns.ts
++++ b/src/inhalte/ueber-uns.ts
+@@ -144,7 +144,7 @@ const WERTE_ANPASSUNG: ({ quelle: string; quelleSatz?: string; name?: string; sa
+   {
+     quelle: 'Termintreue & Festpreis',
+     quelleSatz: 'Verbindliche Zeitpläne und klare Kosten ohne versteckte Aufschläge.',
+-    name: 'Termintreue und fester Preis',
++    name: 'Abgestimmte Termine und fester Preis',
+     satz: 'Abgestimmte Zeitpläne und klare Kosten.',
+     zeichen: 'uhr',
+     grund: 'M-07 wie Punkt 4 des Qualitätsversprechens: ohne „verbindlich“, ohne Zusage zu Aufschlägen, fester Preis wie E-027; K-011 und statt &',

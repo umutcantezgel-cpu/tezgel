@@ -93,7 +93,7 @@ Alle Vorschläge sind maschinell geprüft (`docs/seo/arbeit/pruefe-meta.mjs` mit
 | `/karriere` | P3 | Fliesenleger Jobs Wetzlar & Aßlar \| Karriere Tezgel (51) | Fliesenleger Jobs bei Wetzlar \| Fliesenverlegung Tezgel (55) |
 | `/bad/musterbaeder` | P3 | Musterbäder & Badideen Wetzlar \| Badsanierung Tezgel (52) | Musterbäder und Badideen \| Fliesenverlegung Tezgel (50) |
 | `/bad/badanfrage` | P3 (S6) | Badsanierung Angebot anfordern \| Tezgel Wetzlar (47) | Angebot für Ihre Badsanierung \| Fliesenverlegung Tezgel (55) |
-| `/standorte` | P4 (S3) | Fliesenleger Standorte & Einsatzgebiete \| Tezgel (48) | Einsatzgebiet in Mittelhessen \| Fliesenverlegung Tezgel (55) |
+| `/standorte` | P4 (S3) | Fliesenleger Standorte & Einsatzgebiete \| Tezgel (48) | Einsatzgebiet in Mittelhessen und der Wetterau · Tezgel (55) |
 | `/preise` | P2 | Fliesenleger Preise auf Anfrage \| Festpreisangebote (51) | Preise und Festpreisangebot \| Fliesenverlegung Tezgel (53) |
 | `/faq` | P2 | Häufige Fragen zu Fliesen, Bad & Kosten \| Tezgel (48) | Häufige Fragen und Antworten \| Fliesenverlegung Tezgel (54) |
 | `/referenzen` | P2 | Referenzen und Bewertungen \| Fliesenleger Tezgel Aßlar (54) | Referenzen und Bewertungen \| Fliesenverlegung Tezgel (52) |
@@ -112,7 +112,7 @@ Muster für alle 12 Musterbäder: „Musterbad <Linie> mit <Größe> m² | Flies
 | `/leistungen` | Fliesenleger Leistungen in Aßlar und Wetzlar: Badsanierung, Böden, Balkon, Terrasse, Naturstein und Abdichtung. Der Termin vor Ort ist kostenfrei. (146) | Alle Leistungen von Fliesenverlegung Tezgel aus Aßlar: Bad und Dusche, Böden und Wände, Balkon und Terrasse, Treppe, Naturstein und Abdichtung. (143) |
 | `/bad` | Badsanierung in Aßlar und Wetzlar: altes Bad umbauen, große Fliesen verlegen, Abdichtung nach DIN 18534. Festpreisangebot, Termin vor Ort kostenfrei. (149) | Ein neues Bad vom Fliesenleger: Wanne raus, Dusche ohne Stufe rein, große Fliesen und Abdichtung nach DIN 18534. Der Termin vor Ort ist kostenfrei. (147) |
 | `/bad/badsanierung` | Komplette Badsanierung in Aßlar und Wetzlar mit Walk-in-Dusche. Festpreisangebot von Fliesenverlegung Tezgel, Termin vor Ort kostenfrei. (136) | Komplette Badsanierung mit Dusche ohne Stufe und großen Fliesen. Sie bekommen ein Festpreisangebot, der Termin bei Ihnen vor Ort ist kostenfrei. (144) |
-| `/bad/barrierefreies-bad` | Badewanne raus, Dusche ohne Stufe rein: Wir bauen Ihr Bad in Aßlar und Wetzlar barrierefrei um, mit rutschfesten Fliesen und Zuschuss der Pflegekasse. (150) | Badewanne raus, Dusche ohne Stufe rein: Wir bauen Ihr Bad barrierefrei um. Mit Pflegegrad zahlt die Pflegekasse bis zu 4.180 € je Person dazu. (142) |
+| `/bad/barrierefreies-bad` | Badewanne raus, Dusche ohne Stufe rein: Wir bauen Ihr Bad in Aßlar und Wetzlar barrierefrei um, mit rutschfesten Fliesen und Zuschuss der Pflegekasse. (150) | Badewanne raus, Dusche ohne Stufe rein: Wir bauen Ihr Bad barrierefrei um. Mit Pflegegrad kann die Pflegekasse bis zu 4.180 € je Person dazugeben. (146) |
 | `/bad/fliesen` | Badfliesen in Aßlar und Wetzlar: große Fliesen, Feinsteinzeug, Naturstein und Mosaik, fachgerecht abgedichtet nach DIN 18534. Beratung auf Anfrage. (147) | Badfliesen vom Fachbetrieb: große Fliesen, Feinsteinzeug, Naturstein und Mosaik, abgedichtet nach DIN 18534. Wir beraten Sie beim Termin vor Ort. (145) |
 | `/bad/bad-aus-einer-hand` | Bad aus einer Hand in Aßlar und Wetzlar: Wir koordinieren Sanitär, Fliesen, Elektrik und Trockenbau. Sie haben einen festen Ansprechpartner. (140) | Bad aus einer Hand: Wir koordinieren Sanitär, Fliesen, Elektrik und Trockenbau. Sie haben einen festen Ansprechpartner von der Planung bis zur Abnahme. (151) |
 | `/balkon-terrasse` | Balkon und Terrasse fliesen lassen in Wetzlar und Aßlar: Wir verlegen Platten, auch auf Stelzlagern. Der Termin bei Ihnen vor Ort ist kostenfrei. (145) | Balkon und Terrasse fliesen lassen: Wir verlegen Platten, auch auf Stelzlagern, mit Gefälle vom Haus weg. Der Termin bei Ihnen vor Ort ist kostenfrei. (150) |
@@ -221,7 +221,8 @@ Abgeglichen mit dem SEO-Prompt (Abschnitte 8 bis 12, nur Methodik):
   - Geprüft in einer Arbeitskopie: Typprüfung, Lint, Build, 282 von 282 Tests, `qa:graph`. Im gebauten HTML stimmen alle Titel, Descriptions und H1.
   - Außerhalb der Wetzlar-Seite, der Karriere-Seite und der Seiten, die an S3 und S4 hängen, steht Wetzlar dann in keinem Titel und keiner Description mehr.
   - Laut Leitplanke geht er nur im selben Push wie die neue Wetzlar-Seite live.
-- **Befund zu Garantien und Zertifikaten in sichtbaren Texten:** `docs/seo/arbeit/zusagen-befund.md`; dazu der fertige Patch `docs/seo/arbeit/zusagen.patch` (anzuwenden nach `p2.patch`).
+  - Seit der zweiten Gegenprüfung (02.11.2026): Description von `/bad/barrierefreies-bad` mit „kann … dazugeben“ wie im Seitentext; Description von `/standorte` ohne Wetzlar und mit der Wetterau („Wir arbeiten in 13 Orten in Mittelhessen und der Wetterau, von Aßlar bis Marburg und Friedberg. …“, 143 Zeichen); der Name in den Strukturdaten von `/beratung` wie der neue Titel, ohne Wetzlar.
+- **Befund zu Garantien und Zertifikaten in sichtbaren Texten:** `docs/seo/arbeit/zusagen-befund.md`; dazu der fertige Patch `docs/seo/arbeit/zusagen.patch` (anzuwenden nach `p2.patch`). Nach der zweiten Gegenprüfung auch weiche Zusagen: „Verlässliche Termintreue“ als Titel im Qualitätsversprechen (133 Seiten), „ohne versteckte Kosten“, „verlässlicher Zeitplan“, „geprüfter Fachbetrieb“, „5 Jahre Gewährleistung nach VOB“ auf `/preise` und „zahlt“ in der Description von `/foerderung`; Einzelheiten im Befund.
 - **S2 Variante 1 als fertiger Patch:** `docs/seo/arbeit/s2-asslar.patch`, anzuwenden nach `p2.patch`.
   - Inhalt: `/standorte/asslar` leitet per 308 auf `/`. Aßlar bleibt in `CITIES`. Alle Links auf Aßlar (Einsatzgebiet, Fuß, Einzugsband, Karte, Übersicht, Nachbarorte, Leistung × Ort) führen über `ortsPfad()` in `src/config/cities.ts` auf die Startseite. Sitemap und IndexNow nennen die alte Adresse nicht mehr. Dazu Tests (`wege`, `orte`).
   - Geprüft: Build, 283 von 283 Tests, `qa:graph`. Im gebauten HTML zeigt kein Link mehr auf `/standorte/asslar`, und 188 Links „Aßlar“ führen auf `/`.
@@ -233,7 +234,7 @@ Abgeglichen mit dem SEO-Prompt (Abschnitte 8 bis 12, nur Methodik):
     - Abschnitt „Das machen wir in Wetzlar.“: sechs Leistungen mit je einem kurzen Text und Link auf die Fachseite, statt der vier Links auf Seiten Leistung × Ort;
     - die Förderung im Wortlaut von `/bad`: „Dann kann die Pflegekasse bis zu 4.180 € je Person dazugeben.“ (F-23, F-25);
     - Fachwörter (barrierefrei, Feinsteinzeug, Gefälle, Stelzlager) beim ersten Vorkommen mit Erklärung (K-011). Die Zeile zum barrierefreien Bad heißt deshalb „Bad ohne Barrieren“, weil Linknamen zum Fließtext zählen.
-  - **Für alle 13 Ortsseiten:** Die Überschrift über den Fotos heißt „So arbeiten wir.“ statt „So arbeiten wir in <Ort> und Umgebung.“. Der Ort keines Fotos ist bestätigt (Leitplanke Wahrheit).
+  - **Für alle 13 Ortsseiten:** Die Überschrift über den Fotos heißt „So arbeiten wir.“ statt „So arbeiten wir in <Ort> und Umgebung.“. Der Ort keines Fotos ist bestätigt (Leitplanke Wahrheit). Die Einleitung von „Das machen wir in …“ nennt DIN 18534 nur noch für das Bad; für Balkone nennt die Website DIN 18531 (`/balkon-terrasse/balkonsanierung`).
   - **Test** Orte 11: eigene Inhalte nur für Wetzlar; Entfernung wie in den Daten; Förderung mit „kann“; kein Fototitel nennt einen Ort; kein anderer Ort übernimmt den Wetzlar-Text.
   - **Geprüft** im Gesamtstand (unten).
     - Im gebauten HTML: alle neuen Texte und die sechs Links, kein Link auf `/leistungen/*/wetzlar`, genau eine H1.
@@ -244,7 +245,8 @@ Abgeglichen mit dem SEO-Prompt (Abschnitte 8 bis 12, nur Methodik):
     - Die 52 Seiten Leistung × Ort bekommen „noindex, follow“.
     - Ebenso die Ortsseiten ohne eigenen Inhalt, also alle außer Wetzlar. Welche Orte im Index bleiben, folgt aus den eigenen Inhalten in `src/inhalte/orte-eigen.ts` (`ORTE_MIT_EIGENEM_INHALT` in `src/lib/seo/indexierung.ts` wird daraus abgeleitet).
     - Sitemap und IndexNow nennen nur noch Seiten, die in den Index gehören. IndexNow meldet damit auch die Rechtstexte mit noindex nicht mehr (T12).
-    - Seit 02.11.2026 auch der Titel von `/standorte` aus Abschnitt 4 (Zeile „P4 (S3)“): „Einsatzgebiet in Mittelhessen | Fliesenverlegung Tezgel“.
+    - Seit 02.11.2026 auch der Titel von `/standorte` aus Abschnitt 4 (Zeile „P4 (S3)“): „Einsatzgebiet in Mittelhessen und der Wetterau · Tezgel“. Friedberg, Bad Nauheim und Butzbach liegen im Wetteraukreis. Die Namen in den Strukturdaten der Seite folgen dem Titel.
+    - IndexNow meldet jetzt auch `/preise` wie die Sitemap; ein Test prüft, dass Sitemap und IndexNow dieselben Adressen nennen. Die Rückfall-Liste im Skript `scripts/submit-indexnow.mjs` nennt keine Seiten mit noindex mehr.
   - Geprüft: Build, 284 von 284 Tests, `qa:graph`. Im Bau haben 71 Seiten noindex; die Sitemap hat 100 Adressen ohne noindex-Seite, von den Ortsseiten nur Wetzlar.
   - Er wartet auf S3 und braucht Umuts ausdrückliche Freigabe, weil noindex bestehende Adressen betrifft. Ein weiterer Ort kommt nur mit echten Angaben in den Index (bestätigte Projekte, Stimmen, Stadtteile), dann mit eigenem Inhalt in `orte-eigen.ts`.
 - **Nacharbeit aus der Gesamtprobe als fertiger Patch:** `docs/seo/arbeit/titel-rest.patch`, zuletzt anzuwenden.
@@ -255,8 +257,9 @@ Abgeglichen mit dem SEO-Prompt (Abschnitte 8 bis 12, nur Methodik):
     - Description mit 120 bis 155 Zeichen, ohne „&“, „!“ und „…“;
     - kein Gedankenstrich, genau eine H1;
     - Alt-Texte höchstens 125 Zeichen, ohne Strich.
-  - Gegen den heutigen Bau von `seo/lokal` schlägt der Test an, im Gesamtstand ist er grün. Ist der Bau älter als `src/`, überspringt er sich mit Hinweis; er läuft deshalb beim `npm test` nach `npm run build`, wie in der Prüfkette dieser Runde.
-- **Gesamtprobe** am 02.11.2026, zuletzt nach der Gegenprüfung: alle neun Patches frisch auf `seo/lokal` angewandt. Typprüfung, Lint, Build, 289 von 289 Tests, `qa:graph`. Gezählt im gebauten HTML über alle 171 Seiten, ohne die interne Fehlerseite von Next:
+  - Gegen den heutigen Bau von `seo/lokal` schlägt der Test an, im Gesamtstand ist er grün. Ist der Bau älter als `src/` (Dateien und Ordner), überspringt er sich mit Hinweis; er läuft deshalb beim `npm test` nach `npm run build`, wie in der Prüfkette dieser Runde. Abgeschnittene Descriptions mit „...“ erkennt er auch.
+  - Der Patch geht auch ohne P4. Test 6 setzt die Titel und Descriptions von `p2`, `zusagen` und `p3-meta` und den Alt-Text aus `alt-bestand` voraus.
+- **Gesamtprobe** am 02.11.2026, zuletzt nach der Gegenprüfung: alle neun Patches frisch auf `seo/lokal` angewandt, zuletzt nach der zweiten Gegenprüfung. Typprüfung, Lint, Build, 289 von 289 Tests, `qa:graph`. Gezählt im gebauten HTML über alle 171 Seiten, ohne die interne Fehlerseite von Next:
 
 | Prüfung | `seo/lokal` heute | mit allen Patches |
 |---|---|---|
@@ -264,18 +267,19 @@ Abgeglichen mit dem SEO-Prompt (Abschnitte 8 bis 12, nur Methodik):
 | Titel außerhalb 45 bis 58 Zeichen oder ohne „Tezgel“ | 13 | 0 |
 | Description fehlt, außerhalb 120 bis 155 Zeichen oder mit „&“, „!“, „…“ | 2 | 0 |
 | Gedankenstrich in Titel oder Description | 1 | 0 |
-| Seiten mit Alt-Text über 125 Zeichen, mit Strich oder „&“ | 13 | 0 |
+| Seiten mit Alt-Text über 125 Zeichen oder mit Strich | 13 | 0 |
 | Seiten im Index mit Wetzlar in Titel oder Description | 35 | 4 |
 | Seiten mit Garantie, Zertifikat oder festen Zusagen (auch „feste Termine“) | 135 (456 Stellen) | 0 |
+| Seiten mit weichen Zusagen („Termintreue“, „ohne versteckte Kosten“, „verlässlicher Zeitplan“, „Gewährleistung nach VOB“, „geprüfter Fachbetrieb“) | 142 | 3 (nur „termintreu“ aus den Firmendaten, `company.js`, braucht Umuts Freigabe) |
 | Seiten mit „verbindlich“ vor Festpreis oder Angebot | 137 | 45 (Entscheidung offen) |
 
   - Genau eine H1 je Seite und keine doppelten Titel oder Descriptions: in beiden Ständen erfüllt.
   - Sätze, die ausdrücklich keine Garantie geben, sind nicht gezählt.
   - Wetzlar bleibt auf `/standorte/wetzlar`, auf `/karriere` („bei Wetzlar“), auf `/ausstellung/wetzlar` (hängt an S4) und in der Description von `/standorte`, die die Orte des Einsatzgebiets aufzählt.
 - **Reihenfolge der Patches**, am 02.11.2026 in einer frischen Kopie von `seo/lokal` nacheinander angewandt: `p2`, `zusagen`, `s2-asslar`, `p3-meta`, `p3-wetzlar`, `p4-noindex`, `k01-k02`, `alt-bestand`, `titel-rest`.
-  - `s2-asslar.patch` passt nach `p2.patch` an jeder Stelle, `k01-k02.patch` und `alt-bestand.patch` überall.
+  - `s2-asslar.patch` kommt vor `p3-wetzlar.patch`; ohne S2 schneide ich `p3-wetzlar` und `p4-noindex` neu (mit `git apply` gehen sie dann nicht ohne Anpassung). `k01-k02.patch` und `alt-bestand.patch` passen überall.
   - `zusagen.patch` kommt vor `p3-meta.patch`. `p3-wetzlar.patch` kommt vor `p4-noindex.patch`, weil P4 die Orte im Index aus den eigenen Inhalten ableitet; P3 geht damit auch ohne P4.
-  - `titel-rest.patch` kommt zuletzt, weil sein Test die Titel und Descriptions aller anderen Patches voraussetzt.
+  - `titel-rest.patch` kommt zuletzt und geht auch ohne P4; sein Test 6 setzt die Titel und Descriptions der anderen Patches voraus.
   - Jeder Patch kommt als eigener Commit auf `seo/lokal`, mit voller Prüfkette.
   - Auf `main` geht er erst nach „live“.
 - **K01 und K02 als fertiger Patch:** `docs/seo/arbeit/k01-k02.patch`, Beschreibung in `docs/seo/arbeit/p6-kurzanfrage.md`. Er wartet auf S10.

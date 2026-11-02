@@ -1,6 +1,21 @@
+diff --git a/src/app/(bestand)/standorte/[stadt]/page.tsx b/src/app/(bestand)/standorte/[stadt]/page.tsx
+index f2f2b57d..df5d39f9 100644
+--- a/src/app/(bestand)/standorte/[stadt]/page.tsx
++++ b/src/app/(bestand)/standorte/[stadt]/page.tsx
+@@ -39,8 +39,9 @@ const WEITERE_STIMMEN = ['erik-s', 'hasan-oe', 'elke-s', 'ute-t'];
+ 
+ /** Einleitung von „Was wir tun“ in zwei Sätzen (REF-ort-wetzlar.md, Lehre 2 aus Welle 1: der Glossarsatz war über 25 Wörter);
+  *  gleich im Muster der Textdatei. OFFENE FRAGE im Bericht: die Teilung gehört in `orte.ts` für alle 13 Orte. */
++// SEO-Runde P3: DIN 18534 gilt für Innenräume, für Balkone nennt die Website DIN 18531 (/balkon-terrasse/balkonsanierung)
+ const TUN_EINLEITUNG =
+-  'Wir prüfen zuerst den [[untergrund|Untergrund]]. Im Bad und auf dem Balkon kommt eine [[abdichtung|Abdichtung]]. Sie kommt nach [[din-18534|DIN 18534]] unter die Fliesen.';
++  'Wir prüfen zuerst den [[untergrund|Untergrund]]. Im Bad kommt eine [[abdichtung|Abdichtung]]. Sie kommt nach [[din-18534|DIN 18534]] unter die Fliesen.';
+ 
+ /** Inhalt des Ortes mit Fotos und Stimmen nach Regel 4 und 5 (Texte bleiben wörtlich aus `ortsInhalt`) */
+ function inhaltFuer(city: CityData): Ortsinhalt {
 diff --git a/src/inhalte/orte-eigen.ts b/src/inhalte/orte-eigen.ts
 new file mode 100644
-index 00000000..f627b49b
+index 00000000..8bc1c99a
 --- /dev/null
 +++ b/src/inhalte/orte-eigen.ts
 @@ -0,0 +1,40 @@
@@ -34,7 +49,7 @@ index 00000000..f627b49b
 +      // Wortlaut der Förderung wie auf /bad (src/inhalte/bad.ts): „kann … dazugeben“ (F-23, F-25 nur sinngleich); kurze Sätze,
 +      // weil Linkname und Erklärung des Fachworts mitzählen (K-010: kein Satz über 25 Wörter)
 +      { name: 'Bad ohne Barrieren', satz: 'Haben Sie einen Pflegegrad? Dann kann die Pflegekasse bis zu 4.180 € je Person dazugeben. Das gilt für einen [[barrierefrei|barrierefreien]] Umbau.', href: '/bad/barrierefreies-bad', vignette: 'bad' },
-+      { name: 'Böden und Wände', satz: 'Große Fliesen, [[feinsteinzeug|Feinsteinzeug]] und Naturstein in Wohnräumen, Küchen und im Neubau.', href: '/leistungen/wohnen', vignette: 'wohnen' },
++      { name: 'Böden und Wände', satz: 'Wir verlegen große Fliesen, [[feinsteinzeug|Feinsteinzeug]] und Naturstein. Das geht in Wohnräumen, Küchen und im Neubau.', href: '/leistungen/wohnen', vignette: 'wohnen' },
 +      { name: 'Balkon und Terrasse', satz: '[[gefaelle|Gefälle]] vom Haus weg, Abdichtung und neuer Belag. Wir verlegen Platten auch auf [[stelzlager|Stelzlagern]].', href: '/balkon-terrasse', vignette: 'aussen' },
 +      { name: 'Treppe', satz: 'Innentreppe, Treppenhaus oder Außentreppe mit Fliesen oder Naturstein.', href: '/treppen', vignette: 'treppe' },
 +      { name: 'Reparatur und Fugen', satz: 'Einzelne Fliesen tauschen, Fugen erneuern. Fotos per WhatsApp helfen bei der ersten Einschätzung.', href: '/fliesenreparatur', vignette: 'reparatur' },
@@ -45,7 +60,7 @@ index 00000000..f627b49b
 +/** Orte mit eigenem Inhalt (heute nur Wetzlar, die Zielseite des Auftrags); alle anderen nutzen die gemeinsame Fassung */
 +export const EIGENE_ORTSINHALTE: Readonly<Partial<Record<string, EigenerOrtsinhalt>>> = { wetzlar: WETZLAR };
 diff --git a/src/inhalte/orte.ts b/src/inhalte/orte.ts
-index dce8e3aa..f4be1262 100644
+index dce8e3aa..3e59a45f 100644
 --- a/src/inhalte/orte.ts
 +++ b/src/inhalte/orte.ts
 @@ -11,6 +11,7 @@ import type { CityData } from '@/config/cities';
@@ -65,7 +80,7 @@ index dce8e3aa..f4be1262 100644
    const kurz = KURZNAME[stadt.slug] ?? name;
    const ort =
      kmAbSitz === 0
-@@ -67,26 +70,26 @@ export function ortsInhalt(stadt: CityData, kmAbSitz: number, index: number): Or
+@@ -67,26 +70,27 @@ export function ortsInhalt(stadt: CityData, kmAbSitz: number, index: number): Or
        brotkrumen: [{ name: 'Start', href: '/' }, { name: 'Wo wir arbeiten', href: '/standorte' }, { name }],
        titel: `Fliesenleger in ${name}`,
        ort,
@@ -88,16 +103,19 @@ index dce8e3aa..f4be1262 100644
      tun: {
        // Kopf mittig, Zeilen breit (M-C6 Nr. 3; vorher an der Linie: Kopf links, Zeilen rechts, zwei Stränge)
 -      titel: `Das machen wir in ${name}.`,
+-      // Fachwörter in der Einleitung (erstes Vorkommen im Fließtext), die Linknamen der Zeilen bleiben schlicht
 +      titel: eigen?.tun.titel ?? `Das machen wir in ${name}.`,
-       // Fachwörter in der Einleitung (erstes Vorkommen im Fließtext), die Linknamen der Zeilen bleiben schlicht
++      // Fachwörter in der Einleitung (erstes Vorkommen im Fließtext), die Linknamen der Zeilen bleiben schlicht. DIN 18534 gilt
++      // für Innenräume; für Balkone nennt die Website DIN 18531 (/balkon-terrasse/balkonsanierung), deshalb hier nur das Bad
        einleitung:
-         'Wir prüfen zuerst den [[untergrund|Untergrund]]. Im Bad und auf dem Balkon kommt eine [[abdichtung|Abdichtung]] nach [[din-18534|DIN 18534]] unter die Fliesen.',
+-        'Wir prüfen zuerst den [[untergrund|Untergrund]]. Im Bad und auf dem Balkon kommt eine [[abdichtung|Abdichtung]] nach [[din-18534|DIN 18534]] unter die Fliesen.',
 -      bereiche: leistungen,
++        'Wir prüfen zuerst den [[untergrund|Untergrund]]. Im Bad kommt eine [[abdichtung|Abdichtung]]. Sie kommt nach [[din-18534|DIN 18534]] unter die Fliesen.',
 +      bereiche: eigen?.tun.bereiche ?? leistungen,
      },
      ablauf: {
        titel: `So kommen Sie in ${name} zu Ihrem neuen Boden.`,
-@@ -97,7 +100,8 @@ export function ortsInhalt(stadt: CityData, kmAbSitz: number, index: number): Or
+@@ -97,7 +101,8 @@ export function ortsInhalt(stadt: CityData, kmAbSitz: number, index: number): Or
        ],
      },
      beleg: {
