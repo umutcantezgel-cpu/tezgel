@@ -2,6 +2,8 @@
 
 Stand 01.11.2026. Gesammelt aus `docs/seo/KONTEXT.md` (Abschnitte 8, 9, 12), `_werkstatt/MENSCHEN.md` und den Entwürfen in `docs/seo/arbeit/`. Die Antworten trägt die SEO-Runde mit Datum in KONTEXT.md Abschnitt 13 ein. Orte und Kundendaten, die nicht genannt werden dürfen, bleiben außerhalb des Repos (das Repo ist öffentlich).
 
+**Stand 02.11.2026: Diese Fragen ruhen.** Umut möchte Deniz damit nicht belasten. Baustellen und Projektorte nennt die Website nicht (Entscheidung Umut, KONTEXT.md Abschnitt 13).
+
 ## A. Wetzlar-Seite (wichtigste Fragen)
 
 1. Welche Baustellen lagen in Wetzlar? Je Baustelle: Stadtteil, Leistung, ungefähr das Jahr, welche der neuen Fotos dazugehören, und ob Ort und Projekt auf der Website genannt werden dürfen.

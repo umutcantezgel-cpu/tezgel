@@ -295,6 +295,8 @@ Die Patchdateien in diesem Ordner sind die Fassung vor dieser Entscheidung; maß
 
 **Vorbereitet für Live 3** (02.11.2026 auf `seo/lokal`, wartet auf „live“): b4, die 52 Seiten Leistung × Ort und `/standorte` mit Texten nur aus dem Faktenblatt (KONTEXT.md Abschnitt 13, Zeile „b4 vorbereitet“).
 
+**Eingespielt am 02.11.2026 (Live 2 und b4):** `main` 645998d0, Umut: „du kannst alles live schalten“ (KONTEXT.md Abschnitt 13).
+
 ## 8. Offene Fragen
 
 - Freigabe des Plans, ganz oder mit Änderungen (einzelne Zeilen der Tabellen gern direkt korrigieren).

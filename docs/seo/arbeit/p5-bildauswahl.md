@@ -1,6 +1,6 @@
 # P5 Bilder: Auswahl, Zuschnitte, Alt-Texte und Zuordnung zu den Seiten
 
-Stand 02.11.2026. Umut hat den Plan und „alle Bilder“ freigegeben (KONTEXT.md Abschnitt 13). **Umgesetzt auf `seo/lokal` für Live 2 (wartet auf „live“):** 90 Fotos, Einzelheiten am Ende von Abschnitt 4. Die Tabellen unten sind die Auswahl vor der Umsetzung. Keine Orte an Fotos: Der Ort keiner Baustelle ist bestätigt (KONTEXT.md, Abschnitt 8).
+Stand 02.11.2026. Umut hat den Plan und „alle Bilder“ freigegeben (KONTEXT.md Abschnitt 13). **Live seit dem 02.11.2026 (`main` 645998d0):** 90 Fotos, Einzelheiten am Ende von Abschnitt 4. Die Tabellen unten sind die Auswahl vor der Umsetzung. Keine Orte an Fotos: Der Ort keiner Baustelle ist bestätigt (KONTEXT.md, Abschnitt 8).
 
 ## Kurzfassung
 
