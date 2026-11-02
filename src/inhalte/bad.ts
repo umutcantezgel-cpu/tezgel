@@ -10,9 +10,9 @@ const VORSPANN =
 export const BAD: ErzaehlInhalt = {
   pfad: '/bad',
   meta: {
-    titel: 'Ihr neues Bad in Aßlar & Wetzlar | Fliesenverlegung Tezgel',
+    titel: 'Bad und Dusche erneuern | Fliesenverlegung Tezgel',
     beschreibung:
-      'Badsanierung in Aßlar und Wetzlar: altes Bad umbauen, große Fliesen verlegen, Abdichtung nach DIN 18534. Festpreisangebot, Termin vor Ort kostenfrei.',
+      'Ein neues Bad vom Fliesenleger: Wanne raus, Dusche ohne Stufe rein, große Fliesen und Abdichtung nach DIN 18534. Der Termin vor Ort ist kostenfrei.',
   },
   worum: {
     brotkrumen: [{ name: 'Start', href: '/' }, { name: 'Bad' }],

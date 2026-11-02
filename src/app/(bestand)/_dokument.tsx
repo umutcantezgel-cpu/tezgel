@@ -33,13 +33,15 @@ const SCHRIFTEN =
   `@font-face{font-family:plexMono;src:url(${plexMonoDatei}) format("woff2");font-display:swap;font-weight:400}` +
   ':root{--font-archivo:"archivo";--font-plex-mono:"plexMono"}';
 
+// SEO-Runde P3: Ersatzwerte wie Titel und Description der Startseite (src/inhalte/start.ts). Die Startseite behält Wetzlar
+// (Entscheidung Umut, 02.11.2026: hauptsächlich für Wetzlar ranken)
 export const BESTAND_METADATA: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Fliesenleger Wetzlar & Aßlar | Fliesenverlegung Tezgel',
+    default: 'Fliesenleger Aßlar und Wetzlar | Fliesenverlegung Tezgel',
     template: '%s | Fliesenverlegung Tezgel'
   },
-  description: 'Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenarme Großformate & Terrassen. Abdichtung DIN 18534. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!',
+  description: 'Fliesenverlegung Tezgel aus Aßlar: Badsanierung, Böden, Balkon und Terrasse für Wetzlar und Umgebung. Der Termin bei Ihnen vor Ort ist kostenfrei.',
   keywords: [
     'Fliesenverlegung Tezgel',
     'Deniz Tezgel',
@@ -61,8 +63,8 @@ export const BESTAND_METADATA: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'de_DE',
-    title: 'Fliesenleger Wetzlar & Aßlar | Fliesenverlegung Tezgel',
-    description: 'Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenarme Großformate & Terrassen. Abdichtung DIN 18534. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!',
+    title: 'Fliesenleger Aßlar und Wetzlar | Fliesenverlegung Tezgel',
+    description: 'Fliesenverlegung Tezgel aus Aßlar: Badsanierung, Böden, Balkon und Terrasse für Wetzlar und Umgebung. Der Termin bei Ihnen vor Ort ist kostenfrei.',
     siteName: 'Fliesenverlegung Tezgel',
   },
   robots: {

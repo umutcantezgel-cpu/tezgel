@@ -19,7 +19,7 @@ import Verlegeplan from '@/components/kern/Verlegeplan';
 import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
 
-const TITEL = 'Musterbäder & Badideen Wetzlar | Badsanierung Tezgel';
+const TITEL = 'Musterbäder und Badideen | Fliesenverlegung Tezgel';
 const BESCHREIBUNG = 'Inspiration für Ihr neues Bad: Musterbäder von 4,6 bis 15,9 m² mit Großformatfliesen, Walk-In Duschen & Markenkomponenten. Fachbetrieb Tezgel in Wetzlar!';
 
 const METADATEN = createMetadata({
@@ -40,7 +40,7 @@ export default function MusterbaederPage() {
                 brotkrumen={[
                     { name: 'Start', href: '/' },
                     { name: 'Bad', href: '/bad' },
-                    { name: 'Musterbäder & Badideen Wetzlar: Badsanierung Tezgel' },
+                    { name: 'Musterbäder und Badideen' },
                 ]}
             />
 
@@ -51,8 +51,9 @@ export default function MusterbaederPage() {
                     etikett="Transparente Raumkonzepte"
                     titel={
                         <span id="musterbaeder-heading">
-                            Musterbäder &amp; Badideen Wetzlar:{' '}
-                            <span>Badsanierung Tezgel</span>
+                            {/* SEO-Runde P3: H1 ohne Ortsnamen, Plan Abschnitt 5 */}
+                            Musterbäder und{' '}
+                            <span>Badideen</span>
                         </span>
                     }
                     vorspann={

@@ -13,9 +13,9 @@ const VORSPANN =
 export const BADSANIERUNG: ErzaehlInhalt = {
   pfad: '/bad/badsanierung',
   meta: {
-    titel: 'Badsanierung in Aßlar & Wetzlar | Fliesenverlegung Tezgel',
+    titel: 'Badsanierung zum Festpreis | Fliesenverlegung Tezgel',
     beschreibung:
-      'Komplette Badsanierung in Aßlar und Wetzlar mit Walk-in-Dusche. Festpreisangebot von Fliesenverlegung Tezgel, Termin vor Ort kostenfrei.',
+      'Komplette Badsanierung mit Dusche ohne Stufe und großen Fliesen. Sie bekommen ein Festpreisangebot, der Termin bei Ihnen vor Ort ist kostenfrei.',
   },
   worum: {
     brotkrumen: [{ name: 'Start', href: '/' }, { name: 'Bad', href: '/bad' }, { name: 'Badsanierung' }],

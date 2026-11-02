@@ -8,10 +8,10 @@ export async function generateMetadata({ params }) {
 
   const path = `/leistungen/${service.id}`;
   const serviceHubTitles = {
-    bad: 'Badsanierung & Komplettbäder Wetzlar | Tezgel',
-    wohnen: 'Fliesenverlegung Wohnbereich Wetzlar | Tezgel',
-    aussen: 'Balkon- & Terrassensanierung Wetzlar | Tezgel',
-    untergrund: 'DIN 18534 Abdichtung & Untergrund | Fliesen Tezgel',
+    bad: 'Leistungen rund ums Bad | Fliesenverlegung Tezgel',
+    wohnen: 'Böden und Wände im Überblick | Fliesenverlegung Tezgel',
+    aussen: 'Leistungen für draußen | Fliesenverlegung Tezgel',
+    untergrund: 'Leistungen für den Untergrund | Fliesenverlegung Tezgel',
   };
   const title = serviceHubTitles[service.id] || `${service.name} Wetzlar | Tezgel`;
   const description = `${service.shortDescription}. Fachbetrieb für ${service.name} in Aßlar, Wetzlar & Mittelhessen – kostenfreies Vor-Ort-Aufmaß & Festpreisangebot.`;

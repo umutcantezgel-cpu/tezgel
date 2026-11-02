@@ -29,7 +29,7 @@ const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKo
 });
 
 export const metadata = createMetadata({
-    title: 'Küchenfliesen verlegen Wetzlar | Fliesenleger Tezgel',
+    title: 'Küchenfliesen verlegen lassen | Fliesenverlegung Tezgel',
     description:
         'Küchenfliesen & Fliesenspiegel verlegen in Wetzlar & Aßlar: strapazierfähige Böden, Großformate & pflegeleichte Fugen. Jetzt unverbindlich beraten lassen!',
     path: '/fliesen/kueche'
@@ -88,12 +88,12 @@ export default function KuechePage() {
         <>
             <SeitenDaten
                 pfad="/fliesen/kueche"
-                titel="Küchenfliesen verlegen Wetzlar | Fliesenleger Tezgel"
+                titel="Küchenfliesen verlegen lassen | Fliesenverlegung Tezgel"
                 beschreibung="Küchenfliesen & Fliesenspiegel verlegen in Wetzlar & Aßlar: strapazierfähige Böden, Großformate & pflegeleichte Fugen. Jetzt unverbindlich beraten lassen!"
                 brotkrumen={[
                     { name: 'Start', href: '/' },
                     { name: 'Fliesen und Verlegung', href: '/fliesen' },
-                    { name: 'Küchenfliesen verlegen in Wetzlar mit Fliesenleger Tezgel' },
+                    { name: 'Küchenfliesen und Fliesenspiegel verlegen' },
                 ]}
             />
             {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt mit dem Plan „wohnen“ */}
@@ -102,8 +102,9 @@ export default function KuechePage() {
                 etikett={<>Räume &middot; Küche</>}
                 titel={
                     <span id="kueche-heading">
-                        Küchenfliesen verlegen in Wetzlar mit{' '}
-                        <span>Fliesenleger Tezgel</span>
+                        {/* SEO-Runde P3: H1 ohne Ortsnamen, Plan Abschnitt 5 */}
+                        Küchenfliesen und{' '}
+                        <span>Fliesenspiegel verlegen</span>
                     </span>
                 }
                 vorspann={

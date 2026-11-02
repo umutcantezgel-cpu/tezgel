@@ -41,9 +41,9 @@ export interface KontaktInhalt {
 export const KONTAKT: KontaktInhalt = {
   pfad: '/kontakt',
   meta: {
-    titel: 'Kontakt und Termin vor Ort | Fliesenleger Tezgel Aßlar',
+    titel: 'Kontakt und Termin vor Ort | Fliesenverlegung Tezgel',
     beschreibung:
-      'Fliesenleger Tezgel in Aßlar: Anruf, WhatsApp oder Anfrage. Der Termin vor Ort ist kostenfrei. Persönliche Beratung und Festpreis für Wetzlar und Hessen.',
+      'Fliesenverlegung Tezgel in Aßlar: Rufen Sie an, schreiben Sie per WhatsApp oder senden Sie eine Anfrage. Der Termin bei Ihnen vor Ort ist kostenfrei.',
   },
   brotkrumen: [{ name: 'Start', href: '/' }, { name: 'Kontakt' }],
   titel: 'Nehmen Sie Kontakt auf. Wir kommen für einen Termin zu Ihnen.',

@@ -29,7 +29,7 @@ import { linkKlassen } from '@/components/kern/stile';
 import SeitenDaten from '@/components/seo/SeitenDaten';
 
 export const metadata = createMetadata({
-    title: 'Balkonsanierung Wetzlar & Aßlar | Abdichtung · Tezgel',
+    title: 'Balkonsanierung mit Abdichtung | Fliesenverlegung Tezgel',
     description:
         'Balkonsanierung in Wetzlar & Aßlar: Fachgerechte Abdichtung, Gefälleerstellung & neuer Fliesenbelag vom Fachbetrieb. Jetzt Festpreisangebot anfragen!',
     path: '/balkon-terrasse/balkonsanierung'
@@ -124,7 +124,7 @@ export default function BalkonsanierungPage() {
         <>
             <SeitenDaten
                 pfad="/balkon-terrasse/balkonsanierung"
-                titel="Balkonsanierung Wetzlar & Aßlar | Abdichtung · Tezgel"
+                titel="Balkonsanierung mit Abdichtung | Fliesenverlegung Tezgel"
                 beschreibung="Balkonsanierung in Wetzlar & Aßlar: Fachgerechte Abdichtung, Gefälleerstellung & neuer Fliesenbelag vom Fachbetrieb. Jetzt Festpreisangebot anfragen!"
                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Balkon und Terrasse', href: '/balkon-terrasse' }, { name: 'Balkon sanieren: vom undichten Altbelag zur dauerhaften Lösung' }]}
             />

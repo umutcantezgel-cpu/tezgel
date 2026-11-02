@@ -4,7 +4,7 @@ import SeitenDaten from '@/components/seo/SeitenDaten';
 // /termin/page.jsx is a client component, so its metadata lives here – und mit ihr die strukturierten Daten der Seite
 // (SeitenDaten, E3-SEO-JSONLD-NACH, E-054): als Serverkomponente, damit Schema und Meta-Tabelle nicht ins Client-Bundle
 // der Seite gelangen. /termin hat keine Unterseiten, die die Daten erben könnten.
-const TITEL = 'Termin vereinbaren | Fliesenleger Tezgel Wetzlar';
+const TITEL = 'Termin vor Ort vereinbaren | Fliesenverlegung Tezgel';
 const BESCHREIBUNG =
   'Termin bei Fliesenleger Tezgel in Aßlar: Wunschthema wählen & Terminanfrage für Vor-Ort-Aufmaß in Wetzlar & Hessen direkt online oder per WhatsApp senden.';
 

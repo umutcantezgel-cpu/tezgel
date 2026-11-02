@@ -58,11 +58,12 @@ export default async function ServiceDetailPage({ params }) {
     notFound();
   }
 
+  // SEO-Runde P3: H1 ohne Ortsnamen (Plan Abschnitt 5); Wetzlar hat die eigene Seite /standorte/wetzlar
   const serviceH1Titles = {
-    bad: 'Badsanierung & Komplettbäder: Bäder & Wellness in Wetzlar',
-    wohnen: 'Fliesenverlegung Wohnbereich & Neubau in Wetzlar',
-    aussen: 'Balkon- & Terrassensanierung in Wetzlar & Mittelhessen',
-    untergrund: 'DIN 18534 Abdichtung & Untergrundvorbereitung in Wetzlar',
+    bad: 'Leistungen rund ums Bad',
+    wohnen: 'Böden und Wände im Wohnbereich und Neubau',
+    aussen: 'Leistungen für Balkon, Terrasse und Eingang',
+    untergrund: 'Untergrund vorbereiten und nach DIN 18534 abdichten',
   };
   // SEO-Runde, Befund Zusagen (docs/seo/arbeit/zusagen-befund.md): ohne Garantie, Zertifikat und Floskeln; Fakten aus dem
   // Faktenblatt (F-08, F-15, F-17, F-21) und den Fachseiten

@@ -3,7 +3,7 @@ import { buildGraph, buildServiceNode, buildFaqNode, buildBreadcrumbNode, buildW
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
-  title: 'Kostenlose Fliesenberatung Wetzlar | Fachbetrieb Tezgel',
+  title: 'Kostenlose Fliesenberatung | Fliesenverlegung Tezgel',
   description: 'Kostenlose Fliesenberatung & Aufmaß: Badsanierung, XXL-Fliesen & Terrassen in Wetzlar & Aßlar. Fliesenleger Tezgel berät persönlich und unverbindlich!',
   path: '/beratung',
 });
@@ -41,7 +41,8 @@ const beratungFaqs = [
 const beratungGraph = buildGraph([
   buildWebPageNode({
     url: pageUrl,
-    name: 'Kostenlose Fachberatung für Fliesen & Badsanierung in Aßlar & Wetzlar',
+    // SEO-Runde P3: wie der Titel, ohne Wetzlar
+    name: 'Kostenlose Fliesenberatung | Fliesenverlegung Tezgel',
     description:
       'Vereinbaren Sie Ihre unverbindliche Beratung und das kostenfreie Vor-Ort-Aufmaß für Badsanierung, Fliesenverlegung, Wohnbereiche und Terrassen.',
     breadcrumbItems: breadcrumbs,

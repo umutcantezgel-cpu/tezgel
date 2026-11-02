@@ -33,7 +33,7 @@ import SeitenDaten from '@/components/seo/SeitenDaten';
 import { buildServiceNode, SITE_URL } from '@/lib/schema';
 
 export const metadata = createMetadata({
-    title: 'Naturstein verlegen Wetzlar & Aßlar | Granit · Tezgel',
+    title: 'Naturstein verlegen lassen | Fliesenverlegung Tezgel',
     description:
         'Naturstein fachgerecht verlegen in Wetzlar & Aßlar: Granit, Marmor, Kalkstein, Travertin & Schiefer. Verfärbungsfreie Verklebung. Aufmaß vor Ort kostenfrei!',
     path: '/naturstein'
@@ -181,7 +181,7 @@ export default function NatursteinPage() {
         <>
             <SeitenDaten
                 pfad="/naturstein"
-                titel="Naturstein verlegen Wetzlar & Aßlar | Granit · Tezgel"
+                titel="Naturstein verlegen lassen | Fliesenverlegung Tezgel"
                 beschreibung="Naturstein fachgerecht verlegen in Wetzlar & Aßlar: Granit, Marmor, Kalkstein, Travertin & Schiefer. Verfärbungsfreie Verklebung. Aufmaß vor Ort kostenfrei!"
                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Naturstein- und Granitverlegung vom Fachbetrieb' }]}
                 weitere={[

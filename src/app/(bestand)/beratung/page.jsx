@@ -78,7 +78,7 @@ export default function Beratung() {
             <Einstieg
                 art="arbeit"
                 etikett="Kostenlose Erstberatung vom Fliesen-Fachbetrieb"
-                titel="Kostenlose Fliesenberatung in Wetzlar"
+                titel="Kostenlose Fliesenberatung"
                 vorspann={
                     <p>
                         Jetzt Ihre kostenlose Fliesenberatung in Wetzlar und Aßlar vereinbaren: Ob Badsanierung, XXL-Großformate, Wohnbereich oder Terrasse – Fachbetrieb Tezgel nimmt sich Zeit für Ihre Fragen, prüft den Untergrund und findet mit Ihnen die optimale Lösung.

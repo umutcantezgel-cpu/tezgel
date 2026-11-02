@@ -11,9 +11,9 @@ const VORSPANN =
 export const BALKON_TERRASSE: ErzaehlInhalt = {
   pfad: '/balkon-terrasse',
   meta: {
-    titel: 'Balkon und Terrasse fliesen in Wetzlar und Aßlar | Tezgel',
+    titel: 'Balkon und Terrasse fliesen | Fliesenverlegung Tezgel',
     beschreibung:
-      'Balkon und Terrasse fliesen lassen in Wetzlar und Aßlar: Wir verlegen Platten, auch auf Stelzlagern. Der Termin bei Ihnen vor Ort ist kostenfrei.',
+      'Balkon und Terrasse fliesen lassen: Wir verlegen Platten, auch auf Stelzlagern, mit Gefälle vom Haus weg. Der Termin bei Ihnen vor Ort ist kostenfrei.',
   },
   worum: {
     brotkrumen: [{ name: 'Start', href: '/' }, { name: 'Balkon und Terrasse' }],

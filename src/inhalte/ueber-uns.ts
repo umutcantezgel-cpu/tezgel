@@ -15,9 +15,9 @@ const VORSPANN =
 export const UEBER_UNS: ErzaehlInhalt = {
   pfad: '/ueber-uns',
   meta: {
-    titel: 'Über uns | Fliesenlegerbetrieb Tezgel in Aßlar',
+    titel: 'Über uns, seit 2008 in Aßlar | Fliesenverlegung Tezgel',
     beschreibung:
-      'Fliesenverlegung Tezgel in Aßlar seit 2008, eingetragen bei der Handwerkskammer Wiesbaden. Inhaber Deniz Tezgel kommt selbst zu Ihnen, auch nach Wetzlar.',
+      'Fliesenverlegung Tezgel in Aßlar seit 2008, eingetragen bei der Handwerkskammer Wiesbaden. Inhaber Deniz Tezgel kommt selbst zu Ihnen und berät Sie.',
   },
   worum: {
     brotkrumen: [{ name: 'Start', href: '/' }, { name: 'Über uns' }],

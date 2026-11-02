@@ -25,7 +25,7 @@ const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFu
     loading: () => <FormularPlatzhalter />,
 });
 
-const TITEL = 'Bad aus einer Hand Wetzlar & Aßlar | Tezgel Badsanierung';
+const TITEL = 'Ihr Bad aus einer Hand | Fliesenverlegung Tezgel';
 // SEO-Runde, Befund Zusagen: ohne Garantie, Wortlaut wie die Description im Plan (Tabelle 4b)
 const BESCHREIBUNG = 'Bad aus einer Hand: Wir koordinieren Sanitär, Fliesen, Elektrik und Trockenbau. Sie haben einen festen Ansprechpartner von der Planung bis zur Abnahme.';
 

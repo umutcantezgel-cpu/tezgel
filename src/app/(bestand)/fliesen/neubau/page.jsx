@@ -31,7 +31,7 @@ const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKo
 });
 
 export const metadata = createMetadata({
-    title: 'Fliesen im Neubau verlegen lassen | Fliesen Tezgel',
+    title: 'Fliesen im Neubau verlegen | Fliesenverlegung Tezgel',
     description:
         'Fliesenleger für Neubau-Projekte in Wetzlar & Aßlar: Termintreue, Belegreifeprüfung, Bemusterung & Schnittstellenkoordination. Jetzt Angebot anfragen!',
     path: '/fliesen/neubau'
@@ -113,7 +113,7 @@ export default function NeubauPage() {
         <>
             <SeitenDaten
                 pfad="/fliesen/neubau"
-                titel="Fliesen im Neubau verlegen lassen | Fliesen Tezgel"
+                titel="Fliesen im Neubau verlegen | Fliesenverlegung Tezgel"
                 beschreibung="Fliesenleger für Neubau-Projekte in Wetzlar & Aßlar: Termintreue, Belegreifeprüfung, Bemusterung & Schnittstellenkoordination. Jetzt Angebot anfragen!"
                 brotkrumen={[
                     { name: 'Start', href: '/' },

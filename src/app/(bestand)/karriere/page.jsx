@@ -87,9 +87,9 @@ export default function KarrierePage() {
         <>
             <SeitenDaten
                 pfad="/karriere"
-                titel="Fliesenleger Jobs Wetzlar & Aßlar | Karriere Tezgel"
+                titel="Fliesenleger Jobs bei Wetzlar | Fliesenverlegung Tezgel"
                 beschreibung={`Fliesenleger (m/w/d) gesucht! Jobs bei Fliesenverlegung Tezgel in ${headquarters.city} & Wetzlar: faire Bezahlung, modernes Werkzeug & gutes Team. Jetzt bewerben!`}
-                brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Fliesenleger Jobs & Karriere bei Tezgel in Wetzlar & Aßlar' }]}
+                brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Jobs als Fliesenleger in Aßlar bei Wetzlar' }]}
                 weitere={[
                     buildJobPostingNode(KARRIERE_STELLE, `${SITE_URL}/karriere`),
                     buildFaqNode(
@@ -107,7 +107,7 @@ export default function KarrierePage() {
                         Werde Teil unseres Teams
                     </>
                 }
-                titel={<>Fliesenleger Jobs &amp; Karriere bei Tezgel in Wetzlar &amp; Aßlar</>}
+                titel={<>Jobs als Fliesenleger in Aßlar bei Wetzlar</>}
                 vorspann={
                     <p>
                         Fliesenleger Jobs in Wetzlar &amp; Aßlar gesucht: Verstärken Sie das Team von {COMPANY_DATA.legalName} als Geselle oder erfahrene Fachkraft. Bewerben Sie sich direkt bei Inhaber {COMPANY_DATA.owner.fullName} – ein starkes Team von bis zu 12 Handwerkern im Einsatz in Mittelhessen.

@@ -28,7 +28,7 @@ import Schrittfolge from '@/components/kern/Schrittfolge';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 
 export const metadata = createMetadata({
-    title: 'Fliesenreparatur Wetzlar & Aßlar | Fliesen Tezgel',
+    title: 'Fliesenreparatur und Fugen | Fliesenverlegung Tezgel',
     description:
         'Professionelle Fliesenreparatur in Wetzlar & Aßlar: einzelne Fliesen austauschen, Bohrlöcher verschließen & Fugen sanieren. Schneller Vor-Ort-Service!',
     path: '/fliesenreparatur'

@@ -29,7 +29,7 @@ import SeitenDaten from '@/components/seo/SeitenDaten';
 import { buildServiceNode, SITE_URL } from '@/lib/schema';
 
 export const metadata = createMetadata({
-    title: 'Treppe fliesen & sanieren Wetzlar | Fachbetrieb Tezgel',
+    title: 'Treppe fliesen und sanieren | Fliesenverlegung Tezgel',
     description:
         'Treppe fliesen & sanieren in Wetzlar & Aßlar: Innentreppen, Außentreppen & Treppenhäuser mit Fliesen oder Naturstein belegen. Jetzt Angebot anfragen!',
     path: '/treppen'
@@ -131,7 +131,7 @@ export default function TreppenPage() {
         <>
             <SeitenDaten
                 pfad="/treppen"
-                titel="Treppe fliesen & sanieren Wetzlar | Fachbetrieb Tezgel"
+                titel="Treppe fliesen und sanieren | Fliesenverlegung Tezgel"
                 beschreibung="Treppe fliesen & sanieren in Wetzlar & Aßlar: Innentreppen, Außentreppen & Treppenhäuser mit Fliesen oder Naturstein belegen. Jetzt Angebot anfragen!"
                 brotkrumen={[{ name: 'Start', href: '/' }, { name: 'Treppen neu belegen: Welche Lösung passt zu Ihrer Treppe?' }]}
                 weitere={[

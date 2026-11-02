@@ -15,7 +15,7 @@ const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFu
     loading: () => <FormularPlatzhalter />,
 });
 
-const TITEL = 'Badsanierung Angebot anfordern | Tezgel Wetzlar';
+const TITEL = 'Angebot für Ihre Badsanierung | Fliesenverlegung Tezgel';
 const BESCHREIBUNG = 'Unverbindliche Badanfrage an Fliesenverlegung Tezgel: Beschreiben Sie Ihr Projekt für ein individuelles Festpreisangebot in Wetzlar & Aßlar. Jetzt anfragen!';
 
 const METADATEN = createMetadata({
@@ -36,7 +36,7 @@ export default function BadanfragePage() {
                 brotkrumen={[
                     { name: 'Start', href: '/' },
                     { name: 'Bad', href: '/bad' },
-                    { name: 'Badsanierung Angebot anfordern bei Tezgel Wetzlar' },
+                    { name: 'Angebot für Ihre Badsanierung anfordern' },
                 ]}
             />
 
@@ -46,8 +46,9 @@ export default function BadanfragePage() {
                 etikett={<>Kostenfrei &amp; unverbindlich</>}
                 titel={
                     <>
-                        Badsanierung Angebot anfordern bei{' '}
-                        <span>Tezgel Wetzlar</span>
+                        {/* SEO-Runde P3: H1 ohne Ortsnamen, Plan Abschnitt 5 */}
+                        Angebot für Ihre Badsanierung{' '}
+                        <span>anfordern</span>
                     </>
                 }
                 vorspann={

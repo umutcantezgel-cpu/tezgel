@@ -7,9 +7,9 @@ import type { ErzaehlInhalt } from '@/components/vorlagen/inhalt';
 export const BARRIEREFREIES_BAD: ErzaehlInhalt = {
   pfad: '/bad/barrierefreies-bad',
   meta: {
-    titel: 'Barrierefreies Bad nach DIN 18040 | Tezgel Aßlar',
+    titel: 'Barrierefreies Bad umbauen | Fliesenverlegung Tezgel',
     beschreibung:
-      'Badewanne raus, Dusche ohne Stufe rein: Wir bauen Ihr Bad in Aßlar und Wetzlar barrierefrei um, mit rutschfesten Fliesen und Zuschuss der Pflegekasse.',
+      'Badewanne raus, Dusche ohne Stufe rein: Wir bauen Ihr Bad barrierefrei um. Mit Pflegegrad kann die Pflegekasse bis zu 4.180 € je Person dazugeben.',
   },
   worum: {
     brotkrumen: [{ name: 'Start', href: '/' }, { name: 'Bad', href: '/bad' }, { name: 'Dusche statt Wanne' }],

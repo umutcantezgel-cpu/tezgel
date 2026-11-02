@@ -35,7 +35,7 @@ export default function BadProjektCheckPage() {
                 brotkrumen={[
                     { name: 'Start', href: '/' },
                     { name: 'Bad', href: '/bad' },
-                    { name: 'Bad-Projektcheck: Badsanierung online prüfen bei Tezgel Wetzlar' },
+                    { name: 'Badsanierung online prüfen mit dem Projektcheck' },
                 ]}
             />
 
@@ -45,8 +45,9 @@ export default function BadProjektCheckPage() {
                 etikett={<>Bad-Projektcheck</>}
                 titel={
                     <>
-                        Bad-Projektcheck: Badsanierung online prüfen bei{' '}
-                        <span>Tezgel Wetzlar</span>
+                        {/* SEO-Runde P3: H1 ohne Ortsnamen, Plan Abschnitt 5 */}
+                        Badsanierung online prüfen{' '}
+                        <span>mit dem Projektcheck</span>
                     </>
                 }
                 vorspann={

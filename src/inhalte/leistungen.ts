@@ -10,8 +10,8 @@ import type { Leistungsplan } from '@/components/leistungen/Leistungsplaene';
 export const LEISTUNGEN: ErzaehlInhalt = {
   pfad: '/leistungen',
   meta: {
-    titel: 'Fliesenleger Leistungen Wetzlar | Fliesenverlegung Tezgel',
-    beschreibung: 'Fliesenleger Leistungen in Aßlar und Wetzlar: Badsanierung, Böden, Balkon, Terrasse, Naturstein und Abdichtung. Der Termin vor Ort ist kostenfrei.',
+    titel: 'Leistungen vom Fliesenleger | Fliesenverlegung Tezgel',
+    beschreibung: 'Alle Leistungen von Fliesenverlegung Tezgel aus Aßlar: Bad und Dusche, Böden und Wände, Balkon und Terrasse, Treppe, Naturstein und Abdichtung.',
   },
   worum: {
     brotkrumen: [{ name: 'Start', href: '/' }, { name: 'Leistungen' }],
