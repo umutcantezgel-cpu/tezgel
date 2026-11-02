@@ -1,0 +1,272 @@
+diff --git a/next.config.ts b/next.config.ts
+index 92ad8634..365f10d0 100644
+--- a/next.config.ts
++++ b/next.config.ts
+@@ -16,6 +16,8 @@ const nextConfig: NextConfig = {
+     return [
+       { source: '/bad/budgetkalkulator', destination: '/bad/projekt-check', permanent: true },
+       { source: '/blog/barrierefreies-bad-planung-zuschuesse', destination: '/bad/barrierefreies-bad', permanent: true },
++      // SEO-Runde S2, Variante 1: Für Aßlar (Firmensitz) ist die Startseite die Zielseite (docs/seo/KONTEXT.md, Abschnitt 6)
++      { source: '/standorte/asslar', destination: '/', permanent: true },
+       // Logo-SVGs mit eingebettetem PNG (je 396 KB, nirgends eingebunden) entfernt; die Adressen führen auf dasselbe Bild als PNG (UM-E3-SVG, E-075)
+       { source: '/images/logo/tezgel-logo.svg', destination: '/images/logo/tezgel-logo.png', permanent: true },
+       { source: '/images/logo/tezgel-logo-dark.svg', destination: '/images/logo/tezgel-logo-dark.png', permanent: true },
+diff --git a/src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx b/src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx
+index fffe2280..b4a29ae0 100644
+--- a/src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx
++++ b/src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx
+@@ -7,7 +7,7 @@
+ import type { Metadata } from 'next';
+ import Link from 'next/link';
+ import clsx from 'clsx';
+-import { CITIES, type CityData } from '@/config/cities';
++import { CITIES, ortsPfad, type CityData } from '@/config/cities';
+ import { SERVICES } from '@/config/services';
+ import { COMPANY_DATA } from '@/config/company';
+ import { notFound } from 'next/navigation';
+@@ -391,7 +391,7 @@ export default async function ServiceCityPage({
+             ))}
+             <Feld className="gap-6">
+               <Icon name="ort" groesse={6} className="text-tinte-2" />
+-              <Link href={`/standorte/${city.slug}`} className={clsx(linkKlassen, 'mt-auto inline-flex items-center gap-2 font-text text-fs-3 text-tinte')}>
++              <Link href={ortsPfad(city.slug)} className={clsx(linkKlassen, 'mt-auto inline-flex items-center gap-2 font-text text-fs-3 text-tinte')}>
+                 Standort {city.name}
+                 <Icon name="pfeil-rechts" groesse={4} />
+               </Link>
+diff --git a/src/app/(bestand)/standorte/[stadt]/page.tsx b/src/app/(bestand)/standorte/[stadt]/page.tsx
+index 972e60cd..f2f2b57d 100644
+--- a/src/app/(bestand)/standorte/[stadt]/page.tsx
++++ b/src/app/(bestand)/standorte/[stadt]/page.tsx
+@@ -1,6 +1,6 @@
+ import type { Metadata } from 'next';
+ import { notFound } from 'next/navigation';
+-import { CITIES, type CityData } from '@/config/cities';
++import { CITIES, ortsPfad, type CityData } from '@/config/cities';
+ import { CITY_HUB_DATA } from '@/lib/maps/getMapEmbedUrl';
+ import { findCityConfig, getCityLandingPageSchema } from '@/lib/schemaPyramid';
+ import { createMetadata } from '@/lib/metadata';
+@@ -110,7 +110,7 @@ export default async function StandortPage({
+   const cityTierNodes = getCityLandingPageSchema(cityConfig)['@graph'];
+ 
+ 
+-  const nachbarn = getNearbyCities(city.slug, 5).map((n) => ({ name: n.name, href: `/standorte/${n.slug}` }));
++  const nachbarn = getNearbyCities(city.slug, 5).map((n) => ({ name: n.name, href: ortsPfad(n.slug) }));
+ 
+   return (
+     <>
+diff --git a/src/app/(bestand)/standorte/page.tsx b/src/app/(bestand)/standorte/page.tsx
+index 29e80a8b..696dbce9 100644
+--- a/src/app/(bestand)/standorte/page.tsx
++++ b/src/app/(bestand)/standorte/page.tsx
+@@ -7,7 +7,7 @@
+ // Großer Moment: das Einzugsband im Planblatt des Einstiegs (E3-ORCH-03, E4-NACH-01).
+ import Link from 'next/link';
+ import clsx from 'clsx';
+-import { CITIES, type CityData } from '@/config/cities';
++import { CITIES, ortsPfad, type CityData } from '@/config/cities';
+ import { COMPANY_DATA } from '@/config/company';
+ import { siteConfig } from '@/lib/config';
+ import { createMetadata } from '@/lib/metadata';
+@@ -147,7 +147,7 @@ export default function StandorteOverviewPage() {
+           <ul className="grid grid-cols-1 border-l border-t border-fuge bg-fliese md:grid-cols-2 lg:grid-cols-3">
+             {CITIES.map((city) => (
+               <Feld key={city.slug} className="relative border-b border-r border-fuge">
+-                <Link href={`/standorte/${city.slug}`} className={STADT_LINK}>
++                <Link href={ortsPfad(city.slug)} className={STADT_LINK}>
+                   <div>
+                     <div className="mb-4 flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                       <span className="whitespace-nowrap font-mono text-fs-1 text-tinte-2">{city.region}</span>
+diff --git a/src/app/sitemap.ts b/src/app/sitemap.ts
+index 26cc90d7..ce131a0d 100644
+--- a/src/app/sitemap.ts
++++ b/src/app/sitemap.ts
+@@ -3,7 +3,7 @@ import { posts } from '@/config/posts';
+ import { SERVICES } from '@/config/services';
+ import { PORTFOLIO_PROJECTS } from '@/config/projects';
+ import { TOPIC_PAGES } from '@/config/topics';
+-import { CITIES } from '@/config/cities';
++import { CITIES, SITZ_SLUG } from '@/config/cities';
+ import { MUSTERBAEDER } from '@/config/musterbaeder';
+ import { SITE_URL } from '@/lib/schema';
+ 
+@@ -76,7 +76,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
+     ...SERVICES.flatMap((service) =>
+       CITIES.map((city) => entry(`/leistungen/${service.id}/${city.slug}`, 'monthly', 0.7))
+     ),
+-    ...CITIES.map((city) => entry(`/standorte/${city.slug}`, 'monthly', 0.8)),
++    // SEO-Runde S2: /standorte/asslar leitet auf / (next.config.ts) und steht deshalb nicht in der Sitemap
++    ...CITIES.filter((city) => city.slug !== SITZ_SLUG).map((city) => entry(`/standorte/${city.slug}`, 'monthly', 0.8)),
+     ...MUSTERBAEDER.map((bad) => entry(`/bad/musterbaeder/${bad.slug}`, 'monthly', 0.7)),
+     ...TOPIC_PAGES.map((page) => entry(page.path, 'monthly', page.path.split('/').length === 2 ? 0.8 : 0.7)),
+     ...PORTFOLIO_PROJECTS.map((project) => entry(`/referenzen/${project.id}`, 'monthly', 0.5)),
+diff --git a/src/components/kern/Einzugsband.tsx b/src/components/kern/Einzugsband.tsx
+index 1b5180c4..6bbfd7fc 100644
+--- a/src/components/kern/Einzugsband.tsx
++++ b/src/components/kern/Einzugsband.tsx
+@@ -36,7 +36,7 @@ import Link from 'next/link';
+ import clsx from 'clsx';
+ import Fugenkreuz from './Fugenkreuz';
+ import { etikettKlassen } from './stile';
+-import { CITIES } from '@/config/cities';
++import { CITIES, ortsPfad } from '@/config/cities';
+ import { CITY_HUB_DATA } from '@/lib/maps/getMapEmbedUrl';
+ import { gruppiereNachZone, mitEntfernungAbSitz } from '@/lib/einzugszonen';
+ 
+@@ -155,7 +155,7 @@ export default function Einzugsband({ aktuell, kompakt = false, form = 'band', w
+                     <span className="flex flex-wrap items-center justify-between gap-x-3 font-text text-fs-1 text-tinte @max-3xs:flex-col @max-3xs:items-start">{inhalt}</span>
+                   ) : (
+                     <Link
+-                      href={`/standorte/${o.slug}`}
++                      href={ortsPfad(o.slug)}
+                       aria-current={ist ? 'page' : undefined}
+                       // eigener Ort: Name und „Sie sind hier“ brechen in ihrer Spalte um, die Entfernung bleibt rechts in der
+                       // ersten Zeile (vorher eigene dritte Zeile bei langen Namen)
+diff --git a/src/components/momente/karte/Einsatzkarte.tsx b/src/components/momente/karte/Einsatzkarte.tsx
+index a5bbc91b..06ebb78a 100644
+--- a/src/components/momente/karte/Einsatzkarte.tsx
++++ b/src/components/momente/karte/Einsatzkarte.tsx
+@@ -30,7 +30,7 @@ import Aufklapper from '@/components/vorlagen/teile/Aufklapper';
+ import { linkKlassen } from '@/components/kern/stile';
+ import { zusammen } from '@/components/kern/zusammen';
+ import { Linie, Planrahmen, Punkt } from '@/components/kern/vignetten/zeichnen';
+-import { CITIES } from '@/config/cities';
++import { CITIES, ortsPfad } from '@/config/cities';
+ import { CITY_COORDINATES, CITY_HUB_DATA, TEZGEL_HQ_COORDS } from '@/lib/maps/getMapEmbedUrl';
+ import { gruppiereNachZone, mitEntfernungAbSitz, type Zone } from '@/lib/einzugszonen';
+ import { FUEHRUNG, HALB, LAGE, RINGE_KM, fugenraster, kartenorte, prozent, radius, ringmass, type Ecke, type Lage } from './geometrie';
+@@ -188,7 +188,7 @@ export default function Einsatzkarte({ unterschrift, beschriftet, aktuell, liste
+           return (
+             <li key={o.slug} className="flex flex-wrap items-center justify-between gap-x-3 border-b border-fuge @max-3xs:flex-col @max-3xs:items-start @max-3xs:pb-2">
+               <Link
+-                href={`/standorte/${o.slug}`}
++                href={ortsPfad(o.slug)}
+                 aria-current={ist ? 'page' : undefined}
+                 data-motion="zustand"
+                 className={clsx(linkKlassen, 'flex min-h-11 flex-1 items-center gap-2 font-text text-fs-3 hyphens-none @max-3xs:min-h-0 @max-3xs:pt-2', ist && 'font-semibold')}
+diff --git a/src/components/vorlagen/teile/Einsatzorte.tsx b/src/components/vorlagen/teile/Einsatzorte.tsx
+index 24b248c6..1cdd78e4 100644
+--- a/src/components/vorlagen/teile/Einsatzorte.tsx
++++ b/src/components/vorlagen/teile/Einsatzorte.tsx
+@@ -9,7 +9,7 @@ import Textmarken from '@/components/kern/Textmarken';
+ import { linkKlassen } from '@/components/kern/stile';
+ import WeiterLink from '@/components/kern/WeiterLink';
+ import { zusammen } from '@/components/kern/zusammen';
+-import { CITIES } from '@/config/cities';
++import { CITIES, ortsPfad } from '@/config/cities';
+ import { CITY_HUB_DATA } from '@/lib/maps/getMapEmbedUrl';
+ import { gruppiereNachZone, mitEntfernungAbSitz } from '@/lib/einzugszonen';
+ import type { Markentext } from '../inhalt';
+@@ -91,7 +91,7 @@ function Ortsgruppe({ g, bereich, mehr = false }: { g: (typeof GRUPPEN)[number];
+                   Mindesthöhe wie in der Einsatzkarte (E-065): bei einzeiligen Namen stand der Name sonst mittig in 2,75 rem
+                   (bei 200 % Schrift 88 px) und lag weiter von der Linie darüber entfernt als ein zweizeiliger (Runde 5, Nr. 3);
+                   eine Zeile ist bei großer Schrift mit dem Abstand oben ohnehin höher als 24 px (WCAG 2.5.8) */}
+-              <Link href={`/standorte/${o.slug}`} data-motion="zustand" className={clsx(linkKlassen, 'flex min-h-11 w-full items-center font-text text-fs-3 hyphens-none @max-2xs:min-h-0 @max-2xs:pt-2 @2xs:w-auto @2xs:flex-1')}>
++              <Link href={ortsPfad(o.slug)} data-motion="zustand" className={clsx(linkKlassen, 'flex min-h-11 w-full items-center font-text text-fs-3 hyphens-none @max-2xs:min-h-0 @max-2xs:pt-2 @2xs:w-auto @2xs:flex-1')}>
+                 <span>{o.name}</span>
+               </Link>
+               {o.distanceKm === 0 ? (
+diff --git a/src/config/cities.ts b/src/config/cities.ts
+index cd2be2bd..946546b1 100644
+--- a/src/config/cities.ts
++++ b/src/config/cities.ts
+@@ -114,3 +114,11 @@ export const CITIES: CityData[] = [
+     mapQuery: 'Aßlar,Hessen,Deutschland',
+   },
+ ];
++
++/** Firmensitz: Für Aßlar ist die Startseite die Zielseite (SEO-Runde S2, Variante 1); /standorte/asslar leitet per 308 auf /. */
++export const SITZ_SLUG = 'asslar';
++
++/** Adresse der Seite eines Ortes für Links: Aßlar führt auf die Startseite, alle anderen Orte auf /standorte/<ort>. */
++export function ortsPfad(slug: string): string {
++  return slug === SITZ_SLUG ? '/' : `/standorte/${slug}`;
++}
+diff --git a/src/config/navigation.js b/src/config/navigation.js
+index 837ec63b..132c4a05 100755
+--- a/src/config/navigation.js
++++ b/src/config/navigation.js
+@@ -2,7 +2,7 @@
+ // Aufklappebene, kein Thema doppelt. Fachthemen, Hilfen und Rechtliches stehen nicht im Kopf, aber vollständig im Fuß.
+ // Jeder Pfad verweist auf eine echte Route (Adressen bleiben, Z-14).
+ 
+-import { CITIES } from '@/config/cities';
++import { CITIES, ortsPfad } from '@/config/cities';
+ 
+ /** Hauptnavigation: Kopf (ab xl) und Mobilmenü. `kurz` erklärt den Bereich in einem Satz. */
+ export const navigationLinks = [
+@@ -172,7 +172,7 @@ export const footerGruppen = [
+         links: [
+             { name: 'Alle Orte', path: '/standorte' },
+             // SEO-Runde P2: Wetzlar mit sprechendem Linktext „Fliesenleger in Wetzlar“, die anderen Orte mit ihrem Namen
+-            ...CITIES.map((city) => ({ name: city.slug === 'wetzlar' ? 'Fliesenleger in Wetzlar' : city.name, path: `/standorte/${city.slug}` })),
++            ...CITIES.map((city) => ({ name: city.slug === 'wetzlar' ? 'Fliesenleger in Wetzlar' : city.name, path: ortsPfad(city.slug) })),
+             { name: 'Fliesenberatung Wetzlar', path: '/ausstellung/wetzlar' },
+             { name: 'Fliesenberatung Gießen', path: '/ausstellung/giessen' },
+         ],
+diff --git a/src/lib/seo/indexnow.ts b/src/lib/seo/indexnow.ts
+index 6d896d22..3b811e11 100644
+--- a/src/lib/seo/indexnow.ts
++++ b/src/lib/seo/indexnow.ts
+@@ -2,7 +2,7 @@ import { posts } from '@/config/posts';
+ import { SERVICES } from '@/config/services';
+ import { PORTFOLIO_PROJECTS } from '@/config/projects';
+ import { TOPIC_PAGES } from '@/config/topics';
+-import { CITIES } from '@/config/cities';
++import { CITIES, SITZ_SLUG } from '@/config/cities';
+ import { MUSTERBAEDER } from '@/config/musterbaeder';
+ import { SITE_URL } from '@/lib/schema';
+ 
+@@ -57,7 +57,8 @@ export function getAllSiteUrls(): string[] {
+     ...SERVICES.flatMap((service) =>
+       CITIES.map((city) => `${SITE_URL}/leistungen/${service.id}/${city.slug}`)
+     ),
+-    ...CITIES.map((city) => `${SITE_URL}/standorte/${city.slug}`),
++    // SEO-Runde S2: ohne /standorte/asslar (Weiterleitung auf /)
++    ...CITIES.filter((city) => city.slug !== SITZ_SLUG).map((city) => `${SITE_URL}/standorte/${city.slug}`),
+     ...MUSTERBAEDER.map((bad) => `${SITE_URL}/bad/musterbaeder/${bad.slug}`),
+     ...TOPIC_PAGES.map((page) => `${SITE_URL}${page.path}`),
+     ...PORTFOLIO_PROJECTS.map((project) => `${SITE_URL}/referenzen/${project.id}`),
+diff --git a/test/orte.test.mjs b/test/orte.test.mjs
+index c95c6ee4..5004b5ec 100644
+--- a/test/orte.test.mjs
++++ b/test/orte.test.mjs
+@@ -1,6 +1,6 @@
+ import test from 'node:test';
+ import assert from 'node:assert/strict';
+-import { CITIES } from '../src/config/cities.ts';
++import { CITIES, ortsPfad, SITZ_SLUG } from '../src/config/cities.ts';
+ import { CITY_HUB_DATA } from '../src/lib/maps/getMapEmbedUrl.ts';
+ import { REVIEWS } from '../src/config/reviews.js';
+ import { ARBEITEN } from '../src/config/arbeiten.ts';
+@@ -105,3 +105,10 @@ test('Orte 8: jeder Ort mit Angaben in HESSEN_GEO_HIERARCHY, Service mit provide
+     assert.ok(!graph.some((k) => [].concat(k['@type']).includes('LocalBusiness')), `${c.slug}: kein zweites LocalBusiness`);
+   }
+ });
++
++test('Orte 9 (SEO-Runde S2): Links auf Aßlar führen zur Startseite, alle anderen Orte auf ihre Ortsseite', () => {
++  assert.equal(SITZ_SLUG, 'asslar');
++  assert.equal(ortsPfad('asslar'), '/');
++  for (const c of CITIES.filter((s) => s.slug !== SITZ_SLUG)) assert.equal(ortsPfad(c.slug), `/standorte/${c.slug}`, c.slug);
++  assert.ok(CITIES.some((c) => c.slug === SITZ_SLUG), 'Aßlar bleibt in CITIES (Zonen, Karte, Leistung × Ort)');
++});
+diff --git a/test/wege.test.mjs b/test/wege.test.mjs
+index 884fcef8..32c19869 100644
+--- a/test/wege.test.mjs
++++ b/test/wege.test.mjs
+@@ -70,13 +70,15 @@ test('4. Wege: matcher in src/proxy.ts entspricht genau der Liste', () => {
+   assert.deepEqual([...literale].sort(), [...erwartet].sort());
+ });
+ 
+-test('5. Wege: zwei dauerhafte Weiterleitungen (308) auf bestehende Seiten, zwei auf gleichwertige Logo-Dateien (E-075)', async () => {
++// SEO-Runde S2, Variante 1: /standorte/asslar leitet auf die Startseite (Firmensitz Aßlar, docs/seo/KONTEXT.md Abschnitt 6)
++test('5. Wege: drei dauerhafte Weiterleitungen (308) auf bestehende Seiten, zwei auf gleichwertige Logo-Dateien (E-075)', async () => {
+   const wege = (await nextConfig.redirects()).map(({ source, destination, permanent }) => ({ source, destination, permanent }));
+   const seiten = wege.filter((w) => !w.source.startsWith('/images/'));
+   const dateien = wege.filter((w) => w.source.startsWith('/images/'));
+   assert.deepEqual(seiten, [
+     { source: '/bad/budgetkalkulator', destination: '/bad/projekt-check', permanent: true },
+     { source: '/blog/barrierefreies-bad-planung-zuschuesse', destination: '/bad/barrierefreies-bad', permanent: true },
++    { source: '/standorte/asslar', destination: '/', permanent: true },
+   ]);
+   assert.deepEqual(dateien, [
+     { source: '/images/logo/tezgel-logo.svg', destination: '/images/logo/tezgel-logo.png', permanent: true },

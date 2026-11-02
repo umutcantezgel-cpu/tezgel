@@ -221,7 +221,11 @@ Abgeglichen mit dem SEO-Prompt (Abschnitte 8 bis 12, nur Methodik):
   - Außerhalb der Wetzlar-Seite, der Karriere-Seite und der Seiten, die an S3 und S4 hängen, steht Wetzlar dann in keinem Titel und keiner Description mehr.
   - Laut Leitplanke geht er nur im selben Push wie die neue Wetzlar-Seite live.
 - **Befund zu Garantien und Zertifikaten in sichtbaren Texten:** `docs/seo/arbeit/zusagen-befund.md`; dazu der fertige Patch `docs/seo/arbeit/zusagen.patch` (anzuwenden nach `p2.patch`).
-- **Reihenfolge der Patches:** `p2.patch`, `zusagen.patch`, `p3-meta.patch`. `k01-k02.patch` berührt andere Dateien und passt an jeder Stelle.
+- **S2 Variante 1 als fertiger Patch:** `docs/seo/arbeit/s2-asslar.patch`, anzuwenden nach `p2.patch`.
+  - Inhalt: `/standorte/asslar` leitet per 308 auf `/`. Aßlar bleibt in `CITIES`. Alle Links auf Aßlar (Einsatzgebiet, Fuß, Einzugsband, Karte, Übersicht, Nachbarorte, Leistung × Ort) führen über `ortsPfad()` in `src/config/cities.ts` auf die Startseite. Sitemap und IndexNow nennen die alte Adresse nicht mehr. Dazu Tests (`wege`, `orte`).
+  - Geprüft: Build, 283 von 283 Tests, `qa:graph`. Im gebauten HTML zeigt kein Link mehr auf `/standorte/asslar`, und 188 Links „Aßlar“ führen auf `/`.
+  - Er ändert eine bestehende Adresse und braucht deshalb Umuts Entscheidung zu S2 und seine ausdrückliche Freigabe.
+- **Reihenfolge der Patches:** `p2.patch` zuerst, dann `zusagen.patch` vor `p3-meta.patch`. `s2-asslar.patch` passt nach `p2.patch` an jeder Stelle, `k01-k02.patch` überall.
   - Jeder Patch kommt als eigener Commit auf `seo/lokal`, mit voller Prüfkette.
   - Auf `main` geht er erst nach „live“.
 - **K01 und K02 als fertiger Patch:** `docs/seo/arbeit/k01-k02.patch`, Beschreibung in `docs/seo/arbeit/p6-kurzanfrage.md`. Er wartet auf S10.
