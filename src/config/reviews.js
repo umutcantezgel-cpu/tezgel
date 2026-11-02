@@ -14,7 +14,9 @@ export const RATING_SUMMARY = {
         maxRating: 5,
         count: 27,
         label: 'Google-Rezensionen',
-        // Weg zu den Bewertungen beim Anbieter (ganzer Wortlaut, wo REVIEWS gekürzt ist; UM-E3-FIX F10)
+        // Weg zu den Bewertungen beim Anbieter (ganzer Wortlaut, wo REVIEWS gekürzt ist; UM-E3-FIX F10). Mit dem Link von Umut
+        // führen Stimmen.tsx und GoogleReviewsBadge.tsx auf das Profil (T05, src/config/google-profil.ts). Diese Datei bleibt
+        // ohne Importe: _werkstatt/werkzeuge/tests/funktion-navigation.spec.mjs wertet sie mit new Function aus.
         url: 'https://www.google.com/search?q=Fliesenverlegung+Tezgel+A%C3%9Flar+Bewertungen'
     },
     trustlocal: {

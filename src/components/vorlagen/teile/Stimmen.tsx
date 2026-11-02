@@ -29,6 +29,7 @@ import Icon from '@/components/icons/Icon';
 import Bewertungszeile from '@/components/kern/Bewertungszeile';
 import Karussell from '@/components/kern/Karussell';
 import { RATING_SUMMARY, REVIEWS } from '@/config/reviews';
+import { GOOGLE_PROFIL } from '@/config/google-profil';
 import { linkKlassen } from '@/components/kern/stile';
 import { umbruchNachSatzzeichen } from '@/components/kern/zusammen';
 
@@ -95,7 +96,7 @@ function AlleBewertungen({ stimmen, className }: { stimmen: Bewertung[]; classNa
   return (
     <p className={className}>
       <a
-        href={RATING_SUMMARY.google.url}
+        href={GOOGLE_PROFIL ?? RATING_SUMMARY.google.url}
         target="_blank"
         rel="noopener noreferrer"
         data-motion="zustand"

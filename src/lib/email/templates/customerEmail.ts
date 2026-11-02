@@ -89,7 +89,7 @@ export function generateCustomerEmailHtml(payload: InquiryPayload, referenceId: 
   } else if (inquiryType === 'fliesen') {
     typeBadge = '📐 Fliesen-Konfiguration';
     dynamicTitle = 'Ihre Fliesen-Konfiguration';
-    dynamicSubtitle = 'Ihre Konfigurationsdaten für ein verbindliches Aufmaß';
+    dynamicSubtitle = 'Ihre Konfigurationsdaten für das Aufmaß vor Ort';
   } else if (inquiryType === 'projekt_check') {
     typeBadge = '📋 Bad-Projektcheck';
     dynamicTitle = 'Ihre Bad-Projektcheck Zusammenfassung';
@@ -215,7 +215,7 @@ export function generateCustomerEmailHtml(payload: InquiryPayload, referenceId: 
                       <div style="width:20px;height:20px;border-radius:50%;background-color:#ea580c;color:#ffffff;text-align:center;font-size:11px;font-weight:700;line-height:20px;">3</div>
                     </td>
                     <td style="padding-left:10px;font-size:13px;color:#334155;line-height:1.5;">
-                      <strong style="color:#0f172a;">Kostenfreies Vor-Ort-Aufmaß:</strong> Pünktlicher Termin bei Ihnen vor Ort für millimetergenaues Aufmaß und Ihr verbindliches Festpreisangebot.
+                      <strong style="color:#0f172a;">Kostenfreier Termin vor Ort:</strong> Wir messen bei Ihnen auf. Danach erhalten Sie Ihr Festpreisangebot.
                     </td>
                   </tr>
                 </table>
@@ -359,7 +359,7 @@ ${notes ? `IHRE ANMERKUNG AN UNSER TEAM:\n${stripUrls(notes)}\n` : ''}
 WIE GEHT ES JETZT WEITER?
 1. Persönliche Sichtung: Inhaber Deniz Tezgel prüft Ihre Angaben und den Leistungsumfang.
 2. Telefonische Vorab-Klärung: Wir melden uns zeitnah bei Ihnen zur Abstimmung eines Termins.
-3. Kostenfreies Vor-Ort-Aufmaß: Pünktlicher Termin bei Ihnen vor Ort für millimetergenaues Aufmaß und Ihr verbindliches Festpreisangebot.
+3. Kostenfreier Termin vor Ort: Wir messen bei Ihnen auf. Danach erhalten Sie Ihr Festpreisangebot.
 
 DIREKTER KONTAKT:
 Fliesenverlegung Tezgel

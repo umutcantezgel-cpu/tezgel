@@ -3,6 +3,7 @@
  * Uses interconnected canonical @id URIs and standard @graph notation.
  */
 import { pfadAus, seitenBeschreibung } from '@/lib/beschreibung';
+import { GOOGLE_PROFIL } from '@/config/google-profil';
 
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.tezgel.de';
 export const ORG_ID = `${SITE_URL}/#organization`;
@@ -168,7 +169,9 @@ export function buildLocalBusinessNode(): SchemaNode {
     alternateName: 'Fliesenverlegung Tezgel Aßlar & Wetzlar',
     legalName: 'Fliesenverlegung Tezgel',
     description:
-      'Fachbetrieb für Fliesen-, Platten- und Mosaikverlegung, fugenlose Großformate, schlüsselfertige Badsanierung und DIN 18534 Verbundabdichtung in Aßlar, Wetzlar und Hessen.',
+      // SEO-Runde (Umut, 02.11.2026): nur Angaben aus dem Faktenblatt (F-05, F-08, F-15); vorher „fugenlose Großformate,
+      // schlüsselfertige Badsanierung“ („fugenlos“ widerspricht dem eigenen Satz „Fugenarm heißt nicht fugenlos“)
+      'Fachbetrieb für Fliesen-, Platten- und Mosaikverlegung, große Fliesen, Badsanierung und Abdichtung nach DIN 18534 in Aßlar, Wetzlar und Hessen.',
     url: SITE_URL,
     image: `${SITE_URL}/images/logo/tezgel-logo.png`,
     telephone: '+49 6441 4483567',
@@ -200,6 +203,8 @@ export function buildLocalBusinessNode(): SchemaNode {
       { '@type': 'City', name: 'Hüttenberg' },
       { '@type': 'AdministrativeArea', name: 'Hessen' },
     ],
+    // Google-Unternehmensprofil (T05): nur mit dem Link von Umut, src/config/google-profil.ts
+    ...(GOOGLE_PROFIL ? { sameAs: [GOOGLE_PROFIL], hasMap: GOOGLE_PROFIL } : {}),
     currenciesAccepted: 'EUR',
     paymentAccepted: 'Überweisung, Bar',
     openingHoursSpecification: [

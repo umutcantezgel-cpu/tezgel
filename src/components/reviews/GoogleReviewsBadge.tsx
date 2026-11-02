@@ -2,6 +2,7 @@ import React from "react";
 import GoogleIcon from "@/components/ui/GoogleIcon";
 import Icon from "@/components/icons/Icon";
 import { RATING_SUMMARY } from "@/config/reviews";
+import { GOOGLE_PROFIL } from "@/config/google-profil";
 
 interface GoogleReviewsBadgeProps {
   rating?: number;
@@ -23,7 +24,7 @@ export default function GoogleReviewsBadge({
   const wert = rating.toFixed(1).replace(".", ",");
   return (
     <a
-      href={RATING_SUMMARY.google.url}
+      href={GOOGLE_PROFIL ?? RATING_SUMMARY.google.url}
       target="_blank"
       rel="noopener noreferrer"
       title="Zu den Google Bewertungen von Fliesenverlegung Tezgel"

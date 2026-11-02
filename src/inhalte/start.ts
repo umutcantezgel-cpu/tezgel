@@ -84,14 +84,17 @@ export const START: ErzaehlInhalt = {
   },
   beleg: {
     titel: 'So sieht unsere Arbeit aus.',
-    // fünf echte Fotos fertiger Arbeiten, vollständig, keines auf einer anderen Hauptansicht (E4-W0-BILDER); der Name steht
-    // auf der Glasfläche, sagt nur, was zu sehen ist, und führt zur passenden Leistung (E-047)
+    // echte Fotos fertiger Arbeiten, vollständig, keines auf einer anderen Hauptansicht (E4-W0-BILDER); der Name steht auf der
+    // Glasfläche, sagt nur, was zu sehen ist, und führt zur passenden Leistung (E-047). SEO-Runde (Umut, 02.11.2026: neue Fotos auf
+    // der Startseite, das Foto im Einstieg bleibt): sechs statt fünf, dazwischen vier aus der neuen Serie mit Güte A
+    // (docs/seo/arbeit/p5-bildauswahl.md); die Dusche mit Sitzbank bleibt vorn, die Terrasse zeigt den Außenbereich
     fotos: [
       { bild: 'start-galerie-1', unterschrift: 'Dusche mit Sitzbank und Mosaik', href: '/bad/barrierefreies-bad' },
-      { bild: 'start-beleg-bad', unterschrift: 'Badewanne mit dunklem Mosaik', href: '/bad/badsanierung' },
-      { bild: 'start-beleg-dusche', unterschrift: 'Dusche mit Glastür und Mosaik', href: '/bad' },
+      { bild: 'nb-086', unterschrift: 'Badewanne mit gefliester Verkleidung', href: '/bad/badsanierung' },
+      { bild: 'nb-013', unterschrift: 'Küchenboden mit Ornamentfliesen', href: '/fliesen/kueche' },
+      { bild: 'nb-085', unterschrift: 'Dusche ohne Stufe mit Ablauf', href: '/bad/barrierefreies-bad' },
+      { bild: 'nb-004', unterschrift: 'Treppenhaus mit Ornamentfliesen', href: '/treppen/treppenhaus' },
       { bild: 'start-beleg-terrasse', unterschrift: 'Terrasse mit blaugrauen Fliesen', href: '/balkon-terrasse' },
-      { bild: 'start-beleg-treppe', unterschrift: 'Außentreppe in Anthrazit', href: '/treppen/aussentreppe' },
     ],
     // im Drittelverband: je Bildschirm der Reihe steht ein Foto um ein Drittel tiefer (UM-E3-FIX F4)
     fotosVersatz: true,

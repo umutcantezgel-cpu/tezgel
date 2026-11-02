@@ -152,3 +152,33 @@ test('Fugen 3: das Leerzeichen vor dem Datenschutz-Link steht im Text davor, nic
   assert.ok(satz, 'Einwilligungssatz nicht gefunden oder {\' \'} vor dem Link');
   assert.ok(satz[1].endsWith('Hinweise in der '), 'Satz endet nicht mit Leerzeichen vor dem Link');
 });
+
+// SEO-Runde T05 (Umut, 02.11.2026): Das Google-Unternehmensprofil steht nur mit dem Link von Umut im LocalBusiness, als sameAs und
+// hasMap; ohne Link verweist die Website auf kein Profil (nie selbst ermittelt, zweiter Betrieb „Özcan Tezgel“)
+test('Meta T05: Google-Profil nur als geteilter Profil-Link, im LocalBusiness genau dann sameAs und hasMap', async () => {
+  const { GOOGLE_PROFIL, istGoogleProfilLink } = await import('../src/config/google-profil.ts');
+  const { buildLocalBusinessNode } = await import('../src/lib/schema.ts');
+  const knoten = buildLocalBusinessNode();
+  if (GOOGLE_PROFIL === null) {
+    assert.equal(knoten.sameAs, undefined);
+    assert.equal(knoten.hasMap, undefined);
+  } else {
+    assert.ok(istGoogleProfilLink(GOOGLE_PROFIL), GOOGLE_PROFIL);
+    assert.deepEqual(knoten.sameAs, [GOOGLE_PROFIL]);
+    assert.equal(knoten.hasMap, GOOGLE_PROFIL);
+  }
+  // übliche Formen des Teilen-Links mit Kennung (Gegenprüfung CT-01, CT-02); nie eine Suche, ein Name ohne Kennung oder „Rezension schreiben“
+  for (const u of ['https://maps.app.goo.gl/AbC123xyz', 'https://maps.app.goo.gl/AbC123xyz?g_st=ic', 'https://g.page/r/CbXyZ123AbCdEAE',
+    'https://www.google.com/maps?cid=1234567890', 'https://maps.google.com/?cid=1234567890', 'https://www.google.com/maps/place/?q=place_id:ChIJAbC123xyz',
+    'https://www.google.de/maps/place/Beispiel/@50.5,8.4,17z/data=!4m6!3m5!1s0x47bc1234:0x5678abcd!8m2!3d50.5!4d8.4'])
+    assert.ok(istGoogleProfilLink(u), u);
+  for (const u of ['https://www.google.com/search?q=Fliesenverlegung+Tezgel', 'https://www.google.com/maps/search/Fliesenverlegung+Tezgel',
+    'https://www.google.com/maps/place/?q=Fliesenverlegung+Tezgel', 'https://www.google.de/maps/place/Fliesenverlegung+Tezgel/@50.5,8.4,17z',
+    'https://g.page/r/CbXyZ123AbCdEAE/review', 'https://g.page/beispiel/review', 'https://g.co/kgs/AbCdEfG'])
+    assert.equal(istGoogleProfilLink(u), false, u);
+  assert.doesNotMatch(String(knoten.description), /fugenlos|schlüsselfertig/);
+  // _werkstatt/werkzeuge/tests/funktion-navigation.spec.mjs wertet reviews.js mit new Function aus: keine Importe, keine fremden Namen
+  const reviewsQuelle = fs.readFileSync(new URL('../src/config/reviews.js', import.meta.url), 'utf8');
+  assert.doesNotThrow(() => new Function(`${reviewsQuelle.replace(/^export default .*$/m, '').replace(/^export (const|function) /gm, '$1 ')}\nreturn REVIEWS;`)(),
+    'reviews.js nicht auswertbar wie in funktion-navigation.spec.mjs');
+});
