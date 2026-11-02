@@ -225,7 +225,14 @@ Abgeglichen mit dem SEO-Prompt (Abschnitte 8 bis 12, nur Methodik):
   - Inhalt: `/standorte/asslar` leitet per 308 auf `/`. Aßlar bleibt in `CITIES`. Alle Links auf Aßlar (Einsatzgebiet, Fuß, Einzugsband, Karte, Übersicht, Nachbarorte, Leistung × Ort) führen über `ortsPfad()` in `src/config/cities.ts` auf die Startseite. Sitemap und IndexNow nennen die alte Adresse nicht mehr. Dazu Tests (`wege`, `orte`).
   - Geprüft: Build, 283 von 283 Tests, `qa:graph`. Im gebauten HTML zeigt kein Link mehr auf `/standorte/asslar`, und 188 Links „Aßlar“ führen auf `/`.
   - Er ändert eine bestehende Adresse und braucht deshalb Umuts Entscheidung zu S2 und seine ausdrückliche Freigabe.
-- **Reihenfolge der Patches:** `p2.patch` zuerst, dann `zusagen.patch` vor `p3-meta.patch`. `s2-asslar.patch` passt nach `p2.patch` an jeder Stelle, `k01-k02.patch` überall.
+- **P4 (S3, empfohlene Variante) als fertiger Patch:** `docs/seo/arbeit/p4-noindex.patch`, anzuwenden nach `p2`, `zusagen`, `s2-asslar` und `p3-meta`.
+  - **Inhalt:**
+    - Die 52 Seiten Leistung × Ort bekommen „noindex, follow“.
+    - Ebenso die Ortsseiten ohne eigenen Inhalt, also alle außer Wetzlar. Die Liste `ORTE_MIT_EIGENEM_INHALT` in `src/lib/seo/indexierung.ts` bestimmt, welche Orte indexiert bleiben.
+    - Sitemap und IndexNow nennen nur noch Seiten, die in den Index gehören. IndexNow meldet damit auch die Rechtstexte mit noindex nicht mehr (T12).
+  - Geprüft: Build, 284 von 284 Tests, `qa:graph`. Im Bau haben 71 Seiten noindex; die Sitemap hat 100 Adressen ohne noindex-Seite, von den Ortsseiten nur Wetzlar.
+  - Er wartet auf S3 und braucht Umuts ausdrückliche Freigabe, weil noindex bestehende Adressen betrifft. Wer einen Ort behalten will, setzt ihn in die Liste; das ist nur mit echten Angaben zum Ort sinnvoll.
+- **Reihenfolge der Patches:** `p2.patch` zuerst, dann `zusagen.patch` vor `p3-meta.patch`. `s2-asslar.patch` passt nach `p2.patch` an jeder Stelle. `p4-noindex.patch` kommt zuletzt, `k01-k02.patch` passt überall.
   - Jeder Patch kommt als eigener Commit auf `seo/lokal`, mit voller Prüfkette.
   - Auf `main` geht er erst nach „live“.
 - **K01 und K02 als fertiger Patch:** `docs/seo/arbeit/k01-k02.patch`, Beschreibung in `docs/seo/arbeit/p6-kurzanfrage.md`. Er wartet auf S10.

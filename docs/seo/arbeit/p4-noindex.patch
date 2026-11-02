@@ -1,0 +1,157 @@
+diff --git a/src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx b/src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx
+index 1c8b950e..d3c68cd3 100644
+--- a/src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx
++++ b/src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx
+@@ -28,6 +28,7 @@ import Verlegeplan from '@/components/kern/Verlegeplan';
+ import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+ import { linkKlassen } from '@/components/kern/stile';
+ import type { PlanName } from '@/lib/plaene/vorgaben';
++import { OHNE_INDEX } from '@/lib/seo/indexierung';
+ 
+ function isHeadquartersCity(city: CityData) {
+   return city.name === COMPANY_DATA.headquarters.city;
+@@ -143,7 +144,9 @@ export async function generateMetadata({
+   return createMetadata({
+     title,
+     description,
+-    path
++    path,
++    // SEO-Runde P4 (S3): Leistung × Ort ohne eigenen Inhalt, nicht in den Index (src/lib/seo/indexierung.ts)
++    robots: OHNE_INDEX,
+   });
+ }
+ 
+diff --git a/src/app/(bestand)/standorte/[stadt]/page.tsx b/src/app/(bestand)/standorte/[stadt]/page.tsx
+index f2f2b57d..ebf20784 100644
+--- a/src/app/(bestand)/standorte/[stadt]/page.tsx
++++ b/src/app/(bestand)/standorte/[stadt]/page.tsx
+@@ -12,6 +12,7 @@ import LeadQuickForm from '@/components/forms/LeadQuickForm';
+ import OrtsSeite from '@/components/vorlagen/OrtsSeite';
+ import Aufklapper from '@/components/vorlagen/teile/Aufklapper';
+ import { ortsInhalt, type Ortsinhalt } from '@/inhalte/orte';
++import { OHNE_INDEX, ortsseiteIndexiert } from '@/lib/seo/indexierung';
+ 
+ // Standortseite `/standorte/[stadt]` (E3-BAU-10, KERN v3.6, Zusatz E3-BAU-K016): Ortsseite auf der Vorlage `OrtsSeite`.
+ // Der Inhalt kommt aus `ortsInhalt()` (`src/inhalte/orte.ts`, Muster `_werkstatt/texte/REF-ort-wetzlar.md`), die Metadaten
+@@ -75,6 +76,8 @@ export async function generateMetadata({
+     title: meta.titel,
+     description: meta.beschreibung,
+     path: `/standorte/${city.slug}`,
++    // SEO-Runde P4 (S3): nur Ortsseiten mit eigenem Inhalt in den Index (src/lib/seo/indexierung.ts)
++    robots: ortsseiteIndexiert(city.slug) ? undefined : OHNE_INDEX,
+   });
+ }
+ 
+diff --git a/src/app/sitemap.ts b/src/app/sitemap.ts
+index ce131a0d..b334279f 100644
+--- a/src/app/sitemap.ts
++++ b/src/app/sitemap.ts
+@@ -1,4 +1,4 @@
+-import { MetadataRoute } from 'next';
++import type { MetadataRoute } from 'next';
+ import { posts } from '@/config/posts';
+ import { SERVICES } from '@/config/services';
+ import { PORTFOLIO_PROJECTS } from '@/config/projects';
+@@ -6,6 +6,7 @@ import { TOPIC_PAGES } from '@/config/topics';
+ import { CITIES, SITZ_SLUG } from '@/config/cities';
+ import { MUSTERBAEDER } from '@/config/musterbaeder';
+ import { SITE_URL } from '@/lib/schema';
++import { adresseIndexiert } from '@/lib/seo/indexierung';
+ 
+ export const dynamic = 'force-static';
+ 
+@@ -92,5 +93,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
+     }
+   }
+ 
+-  return Array.from(uniqueMap.values());
++  // SEO-Runde P4 (S3): nur Adressen, die in den Index gehören (src/lib/seo/indexierung.ts)
++  return Array.from(uniqueMap.values()).filter((item) => adresseIndexiert(item.url));
+ }
+diff --git a/src/lib/seo/indexierung.ts b/src/lib/seo/indexierung.ts
+new file mode 100644
+index 00000000..d752058b
+--- /dev/null
++++ b/src/lib/seo/indexierung.ts
+@@ -0,0 +1,30 @@
++// SEO-Runde P4 (S3, T12; docs/seo/KONTEXT.md A04): welche Adressen in den Index gehören. Seiten ohne eigenen Inhalt
++// bekommen „noindex, follow“ (Meta-robots, nicht per robots.txt gesperrt) und stehen weder in der Sitemap noch in IndexNow:
++// Die 52 Seiten Leistung × Ort und die Ortsseiten ohne eigenen Inhalt sind fast gleich (Googles Beispiel für Brückenseiten).
++// Ein Ort kommt nur mit echten Angaben in die Liste (bestätigte Projekte, Stimmen, Stadtteile; Leitplanke Wahrheit).
++
++/** Ortsseiten mit eigenem Inhalt (Wetzlar mit P3); alle anderen /standorte/<ort> bekommen noindex, follow */
++export const ORTE_MIT_EIGENEM_INHALT: readonly string[] = ['wetzlar'];
++
++/** Rechtstexte mit noindex in ihrem Layout; IndexNow meldet sie nicht */
++export const RECHTSTEXTE_OHNE_INDEX: readonly string[] = ['/impressum', '/datenschutz', '/agb', '/widerruf', '/cookie-richtlinie'];
++
++/** robots für Seiten ohne eigenen Inhalt: nicht in den Index, Links aber folgen */
++export const OHNE_INDEX = { index: false, follow: true } as const;
++
++export function ortsseiteIndexiert(slug: string): boolean {
++  return ORTE_MIT_EIGENEM_INHALT.includes(slug);
++}
++
++/** Gehört die Adresse (Pfad ohne Domain) in Sitemap und IndexNow? */
++export function pfadIndexiert(pfad: string): boolean {
++  const ort = /^\/standorte\/([^/]+)\/?$/.exec(pfad);
++  if (ort) return ortsseiteIndexiert(ort[1]);
++  if (/^\/leistungen\/[^/]+\/[^/]+\/?$/.test(pfad)) return false;
++  return !RECHTSTEXTE_OHNE_INDEX.includes(pfad.replace(/\/$/, '') || '/');
++}
++
++/** Wie pfadIndexiert, für eine volle Adresse (https://www.tezgel.de/...) */
++export function adresseIndexiert(adresse: string): boolean {
++  return pfadIndexiert(new URL(adresse).pathname);
++}
+diff --git a/src/lib/seo/indexnow.ts b/src/lib/seo/indexnow.ts
+index 3b811e11..a1f67d9c 100644
+--- a/src/lib/seo/indexnow.ts
++++ b/src/lib/seo/indexnow.ts
+@@ -5,6 +5,7 @@ import { TOPIC_PAGES } from '@/config/topics';
+ import { CITIES, SITZ_SLUG } from '@/config/cities';
+ import { MUSTERBAEDER } from '@/config/musterbaeder';
+ import { SITE_URL } from '@/lib/schema';
++import { adresseIndexiert } from './indexierung';
+ 
+ export const INDEXNOW_KEY = process.env.INDEXNOW_KEY || '4c6796df61f5479387fc4f56b1ed6b19';
+ export const INDEXNOW_HOST = new URL(SITE_URL).hostname; // 'www.tezgel.de'
+@@ -65,7 +66,8 @@ export function getAllSiteUrls(): string[] {
+     ...posts.map((post) => `${SITE_URL}/blog/${post.slug}`),
+   ];
+ 
+-  return Array.from(new Set(urls));
++  // SEO-Runde P4 (S3, T12): keine Seiten mit noindex melden (src/lib/seo/indexierung.ts)
++  return Array.from(new Set(urls)).filter((url) => adresseIndexiert(url));
+ }
+ 
+ export interface IndexNowResult {
+diff --git a/test/orte.test.mjs b/test/orte.test.mjs
+index 5004b5ec..a5d65bfc 100644
+--- a/test/orte.test.mjs
++++ b/test/orte.test.mjs
+@@ -112,3 +112,24 @@ test('Orte 9 (SEO-Runde S2): Links auf Aßlar führen zur Startseite, alle ander
+   for (const c of CITIES.filter((s) => s.slug !== SITZ_SLUG)) assert.equal(ortsPfad(c.slug), `/standorte/${c.slug}`, c.slug);
+   assert.ok(CITIES.some((c) => c.slug === SITZ_SLUG), 'Aßlar bleibt in CITIES (Zonen, Karte, Leistung × Ort)');
+ });
++
++test('Orte 10 (SEO-Runde P4, S3): nur Ortsseiten mit eigenem Inhalt und keine Seite Leistung × Ort in Sitemap und IndexNow', async () => {
++  const { ORTE_MIT_EIGENEM_INHALT, pfadIndexiert, adresseIndexiert } = await import('../src/lib/seo/indexierung.ts');
++  const { default: sitemap } = await import('../src/app/sitemap.ts');
++  const { getAllSiteUrls } = await import('../src/lib/seo/indexnow.ts');
++  assert.deepEqual([...ORTE_MIT_EIGENEM_INHALT], ['wetzlar']);
++  assert.equal(pfadIndexiert('/standorte/wetzlar'), true);
++  assert.equal(pfadIndexiert('/standorte/giessen'), false);
++  assert.equal(pfadIndexiert('/leistungen/bad/wetzlar'), false);
++  assert.equal(pfadIndexiert('/leistungen/bad'), true);
++  assert.equal(pfadIndexiert('/impressum'), false);
++  assert.equal(pfadIndexiert('/'), true);
++  const karte = sitemap().map((e) => e.url);
++  const melden = getAllSiteUrls();
++  for (const liste of [karte, melden]) {
++    assert.ok(liste.length > 60, `zu wenige Adressen (${liste.length})`);
++    assert.deepEqual(liste.filter((u) => !adresseIndexiert(u)), []);
++    assert.ok(liste.some((u) => u.endsWith('/standorte/wetzlar')));
++    assert.equal(liste.some((u) => /\/leistungen\/[^/]+\/[^/]+$/.test(u)), false);
++  }
++});
