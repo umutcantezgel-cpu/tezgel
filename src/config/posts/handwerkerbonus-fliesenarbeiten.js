@@ -9,7 +9,7 @@ const post = {
     "category": "ratgeber",
     "author": "Fliesenverlegung Tezgel",
     "readTime": "5 Min.",
-    "image": "/images/bad/bad-holz-waschtisch.webp",
+    "image": "/images/arbeiten/teilen/bad-dusche-glaswand-beige.jpg",
     "featured": true,
     "tags": [
         "Handwerkerbonus",

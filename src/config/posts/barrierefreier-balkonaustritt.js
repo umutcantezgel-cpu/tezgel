@@ -6,11 +6,11 @@ const post = {
     "title": "Wie niedrig ist ein barrierefreier Balkonaustritt?",
     // SEO-Runde P2: Titel für die Suche (mit Marke höchstens 58 Zeichen); die Überschrift bleibt „title“
     "seoTitel": "Wie niedrig ist ein barrierefreier Balkonaustritt · Tezgel",
-    "excerpt": "Stolperfrei auf den Balkon – und trotzdem dicht? Warum die Schwelle an der Balkontür ein Abdichtungsdetail ist, welche Regeln gelten und wie niedrige Übergänge sauber geplant werden.",
+    "excerpt": "Stolperfrei auf den Balkon und trotzdem dicht? Warum die Schwelle an der Balkontür ein Abdichtungsdetail ist, welche Regeln gelten und wie niedrige Übergänge sauber geplant werden.",
     "category": "aussen",
     "author": "Fliesenverlegung Tezgel",
     "readTime": "4 Min.",
-    "image": "/images/bad/bad-glastuer.webp",
+    "image": "/images/arbeiten/teilen/balkon-beige-fliesen-steinoptik.jpg",
     "featured": false,
     "tags": [
         "Balkon",

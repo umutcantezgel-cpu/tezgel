@@ -8,9 +8,10 @@ import { META_BLOG } from './blog';
 import { META_FLIESEN } from './fliesen';
 import { META_LEISTUNGEN } from './leistungen';
 import { META_SEITEN } from './seiten';
+import { META_SNIPPETS } from './snippets';
 
 /** Teildateien je Gruppe (für die Prüfung auf doppelte Adressen in test/meta.test.mjs) */
-export const META_TEILE = { META_BAUTEILE, META_BEISPIELE, META_BLOG, META_FLIESEN, META_LEISTUNGEN, META_SEITEN };
+export const META_TEILE = { META_BAUTEILE, META_BEISPIELE, META_BLOG, META_FLIESEN, META_LEISTUNGEN, META_SEITEN, META_SNIPPETS };
 
 export const META_BESCHREIBUNGEN: Readonly<Record<string, string>> = {
   ...META_BLOG,
@@ -19,4 +20,5 @@ export const META_BESCHREIBUNGEN: Readonly<Record<string, string>> = {
   ...META_SEITEN,
   ...META_FLIESEN,
   ...META_BAUTEILE,
+  ...META_SNIPPETS,
 };

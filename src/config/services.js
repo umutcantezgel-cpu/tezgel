@@ -5,7 +5,7 @@ export const SERVICES = [
     {
         id: "bad",
         name: "Bäder & Wellness",
-        shortDescription: "Barrierefreie Walk-In-Duschen, fugenarme Großformate & schlüsselfertige Badsanierung",
+        shortDescription: "Duschen ohne Stufe, große Fliesen mit wenigen Fugen und die komplette Badsanierung", // SEO-Runde 03.11.2026: ohne „schlüsselfertig“ und „&“
         icon: "Droplets",
         color: "primary",
         priority: 1,
@@ -29,7 +29,7 @@ export const SERVICES = [
 
         detailText: "Vom ersten Vor-Ort-Aufmaß bis zur fugenarmen Luxusoase: Fliesenverlegung Tezgel verwandelt veraltete Badezimmer in moderne Wellnessräume. Mit innovativen XXL-Großformaten reduzieren wir Fugen auf ein Minimum – für maximale Ästhetik und spielend leichte Pflege.",
         ctaText: "Badprojekt anfragen",
-        heroImage: "/images/bad/bad-beleuchtete-nischen.webp",
+        heroImage: "/images/arbeiten/teilen/bad-dusche-glaswand-beige.jpg",
         gallery: [
             "/images/bad/bad-beleuchtete-nischen.webp",
             "/images/bad/walk-in-dusche.webp",
@@ -64,7 +64,7 @@ export const SERVICES = [
 
         detailText: "Moderne Fliesenbeläge verbinden elegante Architektur mit unübertroffener Robustheit. Wir verlegen hochwertige Feinsteinzeug- und Natursteinbeläge in Neubauten und Bestandsimmobilien – mit präzisem Fugenraster und perfekter Anpassung an Türen, Kamine und bodentiefe Fenster.",
         ctaText: "Wohnbereich anfragen",
-        heroImage: "/images/bad/wandfliesen-gruen.webp",
+        heroImage: "/images/arbeiten/teilen/wohnraum-grosse-helle-bodenfliesen.jpg",
         gallery: [
             "/images/bad/wandfliesen-gruen.webp"
         ]
@@ -96,7 +96,7 @@ export const SERVICES = [
 
         detailText: "Balkone und Terrassen sind extremen Wetterbedingungen ausgesetzt. Fliesenverlegung Tezgel setzt auf innovative Trockenverlegung auf Stelzlagern: Wasser fließt unter dem Belag ab, Spannungen durch Temperaturwechsel werden weitgehend vermieden und einzelne Platten bleiben für Wartung zugänglich.",
         ctaText: "Terrassensanierung anfragen",
-        heroImage: null,
+        heroImage: "/images/arbeiten/teilen/balkon-beige-fliesen-steinoptik.jpg",
         gallery: [
         ]
     },
@@ -128,7 +128,7 @@ export const SERVICES = [
 
         detailText: "Ein hochwertiger Fliesenbelag ist nur so langlebig wie der Untergrund, auf dem er ruht. Wir bereiten Böden und Wände kompromisslos fachgerecht vor. Insbesondere die normgerechte Verbundabdichtung nach DIN 18534 schützt Ihre Bausubstanz verlässlich vor kostspieligen Feuchteschäden.",
         ctaText: "Abdichtungs-Check anfordern",
-        heroImage: null,
+        heroImage: "/images/arbeiten/teilen/untergrund-gewebe-vor-dem-fliesen.jpg",
         gallery: [
         ]
     }

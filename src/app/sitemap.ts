@@ -7,6 +7,19 @@ import { CITIES } from '@/config/cities';
 import { MUSTERBAEDER } from '@/config/musterbaeder';
 import { SITE_URL } from '@/lib/schema';
 import { adresseIndexiert } from '@/lib/seo/indexierung';
+import { ARBEITEN } from '@/config/arbeiten';
+import { GALERIE } from '@/components/momente/galerie-filter/daten';
+import { START } from '@/inhalte/start';
+import { BAD } from '@/inhalte/bad';
+import { BADSANIERUNG } from '@/inhalte/bad-badsanierung';
+import { BARRIEREFREIES_BAD } from '@/inhalte/barrierefreies-bad';
+import { BALKON_TERRASSE } from '@/inhalte/balkon-terrasse';
+import { LEISTUNGEN } from '@/inhalte/leistungen';
+import { REFERENZEN } from '@/inhalte/referenzen';
+import { UEBER_UNS } from '@/inhalte/ueber-uns';
+import { KONTAKT } from '@/inhalte/kontakt';
+import { FLIESEN } from '@/inhalte/fliesen';
+import { ortsInhalt } from '@/inhalte/orte';
 
 export const dynamic = 'force-static';
 
@@ -62,14 +75,59 @@ const STATIC_ROUTES: Array<[path: string, changeFrequency: ChangeFrequency, prio
   ['/barrierefreiheit', 'yearly', 0.2],
 ];
 
+// SEO-Runde (03.11.2026, T13): Bild-Sitemap. Die Fotos liefert next/image mit einer Adresse aus, die sich mit jedem Deploy
+// ändert (dpl=…); hier steht je Seite die feste Datei unter /images/arbeiten/. Gesammelt werden alle Foto-Kennungen aus den
+// Inhalten der Seite (jede Zeichenkette, die eine Kennung aus ARBEITEN ist), auf /referenzen dazu die Galerie, auf den
+// Ortsseiten die Fotos wie in ortsInhalt (B/standorte/[stadt]/page.tsx).
+const ARBEIT_IDS = new Set<string>(Object.keys(ARBEITEN));
+
+function fotoKennungen(wert: unknown, ziel: Set<string> = new Set()): Set<string> {
+  if (typeof wert === 'string') {
+    if (ARBEIT_IDS.has(wert)) ziel.add(wert);
+  } else if (Array.isArray(wert)) {
+    for (const eintrag of wert) fotoKennungen(eintrag, ziel);
+  } else if (wert && typeof wert === 'object') {
+    for (const eintrag of Object.values(wert)) fotoKennungen(eintrag, ziel);
+  }
+  return ziel;
+}
+
+const BILDQUELLEN: ReadonlyArray<readonly [path: string, quelle: unknown]> = [
+  [START.pfad, START],
+  [BAD.pfad, BAD],
+  [BADSANIERUNG.pfad, BADSANIERUNG],
+  [BARRIEREFREIES_BAD.pfad, BARRIEREFREIES_BAD],
+  [BALKON_TERRASSE.pfad, BALKON_TERRASSE],
+  [LEISTUNGEN.pfad, LEISTUNGEN],
+  [REFERENZEN.pfad, [REFERENZEN, GALERIE]],
+  [UEBER_UNS.pfad, UEBER_UNS],
+  [KONTAKT.pfad, KONTAKT],
+  [FLIESEN.pfad, FLIESEN],
+  ...CITIES.map((city, index) => [`/standorte/${city.slug}`, ortsInhalt(city, city.distanceKm, index)] as const),
+  // SEO-Runde T11: Fotos ähnlicher Arbeiten auf den Leistungsbeispielen (beispielFotos in src/config/projects.js)
+  ...PORTFOLIO_PROJECTS.map((project) => [`/referenzen/${project.id}`, project.beispielFotos ?? []] as const),
+];
+
+/** Feste Bildadressen je Seitenpfad („“ für die Startseite wie in STATIC_ROUTES) */
+export const BILDER_JE_SEITE: ReadonlyMap<string, string[]> = new Map(
+  BILDQUELLEN.map(([pfad, quelle]) => [
+    pfad === '/' ? '' : pfad,
+    [...fotoKennungen(quelle)].map((id) => `${SITE_URL}${ARBEITEN[id as keyof typeof ARBEITEN].src}`),
+  ]),
+);
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const entry = (path: string, changeFrequency: ChangeFrequency, priority: number) => ({
-    url: `${SITE_URL}${path}`,
-    lastModified: now,
-    changeFrequency,
-    priority,
-  });
+  const entry = (path: string, changeFrequency: ChangeFrequency, priority: number) => {
+    const images = BILDER_JE_SEITE.get(path);
+    return {
+      url: `${SITE_URL}${path}`,
+      lastModified: now,
+      changeFrequency,
+      priority,
+      ...(images && images.length > 0 ? { images } : {}),
+    };
+  };
 
   const rawEntries: MetadataRoute.Sitemap = [
     ...STATIC_ROUTES.map(([path, changeFrequency, priority]) => entry(path, changeFrequency, priority)),

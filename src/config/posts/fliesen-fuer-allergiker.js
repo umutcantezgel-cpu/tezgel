@@ -8,7 +8,7 @@ const post = {
     "category": "fliesen",
     "author": "Fliesenverlegung Tezgel",
     "readTime": "4 Min.",
-    "image": "/images/bad/bad-glastuer.webp",
+    "image": "/images/arbeiten/teilen/wohnraum-grosse-helle-bodenfliesen.jpg",
     "featured": false,
     "tags": [
         "Allergiker",

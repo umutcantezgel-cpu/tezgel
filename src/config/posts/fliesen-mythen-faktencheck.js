@@ -8,7 +8,7 @@ const post = {
     "category": "ratgeber",
     "author": "Fliesenverlegung Tezgel",
     "readTime": "4 Min.",
-    "image": "/images/bad/bad-freistehende-wanne.webp",
+    "image": "/images/arbeiten/teilen/wohnraum-grosse-helle-bodenfliesen.jpg",
     "featured": true,
     "tags": [
         "Mythen",

@@ -8,7 +8,7 @@ const post = {
     "category": "bad",
     "author": "Fliesenverlegung Tezgel",
     "readTime": "4 Min.",
-    "image": "/images/bad/gaeste-bad.png",
+    "image": "/images/arbeiten/teilen/bad-dusche-glaswand-beige.jpg",
     "featured": false,
     "tags": [
         "Gäste-WC",

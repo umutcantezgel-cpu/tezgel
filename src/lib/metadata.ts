@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/schema';
-import { seitenBeschreibung } from '@/lib/beschreibung';
+import { pfadAus, seitenBeschreibung } from '@/lib/beschreibung';
+import { seitenTitel } from '@/lib/seo/seitentitel';
+import { TEILENBILDER, teilenbild } from '@/lib/seo/teilenbild';
 
 const BASE_URL = SITE_URL;
 const SITE_NAME = 'Fliesenverlegung Tezgel';
@@ -99,17 +101,22 @@ export interface MetadataOptions {
 
 export function generatePageMetadata(options: MetadataOptions): Metadata {
   const canonicalUrl = `${BASE_URL}${options.path === '/' ? '' : options.path}`;
-  const fullTitle = sanitizeTitle(options.title);
+  // eigener Titel zur Adresse vor dem übergebenen (src/inhalte/meta/titel.ts, Snippet-Runde)
+  const fullTitle = sanitizeTitle(seitenTitel(pfadAus(options.path), options.title));
   // eigene Beschreibung zur Adresse vor der übergebenen, auf 120 bis 155 Zeichen gebracht (lib/beschreibung.ts, E3-SEO-META)
   const fullDesc = seitenBeschreibung(options.path, options.description);
 
   const shouldIndex = options.robots?.index !== undefined ? options.robots.index : true;
   const shouldFollow = options.robots?.follow !== undefined ? options.robots.follow : true;
 
-  const defaultOgImage = `${BASE_URL}/images/logo/tezgel-logo.png`;
-  const ogImages = options.image
-    ? [{ url: options.image.startsWith('http') ? options.image : `${BASE_URL}${options.image}`, width: 1200, height: 630 }]
-    : [{ url: defaultOgImage, width: 1200, height: 630 }];
+  // SEO-Runde T08: echtes Foto 1200 × 630 je Adresse (lib/seo/teilenbild.ts) statt des Logos (640 × 200, früher als
+  // 1200 × 630 angegeben). Ein übergebenes Bild gilt nur mit Maßen, wenn es eines der Teilen-Bilder ist.
+  const eigenes = options.image
+    ? TEILENBILDER.find((b) => options.image === b.pfad || options.image === `${BASE_URL}${b.pfad}`)
+    : undefined;
+  const ogImages = options.image && !eigenes
+    ? [{ url: options.image.startsWith('http') ? options.image : `${BASE_URL}${options.image}` }]
+    : [eigenes ? { url: `${BASE_URL}${eigenes.pfad}`, width: 1200, height: 630, alt: eigenes.alt } : teilenbild(options.path, BASE_URL)];
 
   return {
     title: { absolute: fullTitle },

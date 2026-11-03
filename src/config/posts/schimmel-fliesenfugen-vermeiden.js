@@ -8,7 +8,7 @@ const post = {
     "category": "fliesen",
     "author": "Fliesenverlegung Tezgel",
     "readTime": "5 Min.",
-    "image": "/images/bad/bad-holz-dampf.webp",
+    "image": "/images/arbeiten/teilen/bad-dusche-glaswand-beige.jpg",
     "featured": false,
     "tags": [
         "Schimmel",

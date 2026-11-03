@@ -9,7 +9,7 @@ const post = {
     "category": "bad",
     "author": "Fliesenverlegung Tezgel",
     "readTime": "4 Min.",
-    "image": "/images/bad/bad-holz-dampf.webp",
+    "image": "/images/arbeiten/teilen/bad-dusche-glaswand-beige.jpg",
     "featured": false,
     "tags": [
         "Dusche",

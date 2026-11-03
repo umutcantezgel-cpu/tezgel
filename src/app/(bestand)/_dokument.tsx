@@ -11,6 +11,7 @@ import TrackingScripts from '@/components/common/TrackingScripts';
 import SkipNav from '@/components/ui/SkipNav';
 import { ErrorBoundary } from '@/components/providers/ErrorBoundary';
 import { buildRootGraph, SITE_URL } from '@/lib/schema';
+import { teilenbild } from '@/lib/seo/teilenbild';
 import JsonLd from '@/components/seo/JsonLd';
 import BewegungsWaechter from '@/components/kern/BewegungsWaechter';
 import Verlegen from '@/components/verlegen/Verlegen';
@@ -66,6 +67,8 @@ export const BESTAND_METADATA: Metadata = {
     title: 'Fliesenleger Wetzlar und Aßlar | Fliesenverlegung Tezgel',
     description: 'Fliesenverlegung Tezgel für Wetzlar, Aßlar und Umgebung: Badsanierung, Böden, Balkon und Terrasse. Der Termin bei Ihnen vor Ort ist kostenfrei.',
     siteName: 'Fliesenverlegung Tezgel',
+    // SEO-Runde T08: Ersatzwert wie die Startseite, ein echtes Foto 1200 × 630 (lib/seo/teilenbild.ts)
+    images: [teilenbild('/', SITE_URL)],
   },
   robots: {
     index: true,

@@ -11,9 +11,10 @@
 //    (Schriftfeld + zwei Wege, ab lg klebend) · 3. Qualitätsversprechen (geteilter Baustein, Kalk).
 // Keine Leitachse und kein Abschluss wie im Bestand bzw. in der Referenz; kein großer Moment, kein Auftritt, kein `spaet`
 // (der Umfang beginnt im ersten Bildschirm, das Randfeld klebt).
-// Platzhalter-Referenzen zeigen nur, was `src/config/projects.js` belegt: keine Orte, Jahre, Bauzeiten, Fotos oder Stimmen;
-// die Kennzeichnung „Projektdokumentation in Vorbereitung“ bleibt sichtbar und wörtlich. Das Keramik-Panel des Randfelds
-// (dekorativ) entfällt, der Plan steht im Einstieg.
+// Platzhalter-Referenzen zeigen nur, was `src/config/projects.js` belegt: keine Orte, Jahre, Bauzeiten oder Stimmen;
+// die Kennzeichnung „Projektdokumentation in Vorbereitung“ bleibt sichtbar und wörtlich. SEO-Runde T11 (03.11.2026): dazu drei
+// echte Fotos ähnlicher Arbeiten (`beispielFotos`, Bildfeld per Kennung) mit einem Satz, der nur sagt, was sie zeigen.
+// Das Keramik-Panel des Randfelds (dekorativ) entfällt, der Plan steht im Einstieg.
 // Wortlaut, Links, generateStaticParams, generateMetadata und notFound wie im Bestand; JSON-LD im layout.jsx der Route.
 import Link from 'next/link';
 import Image from 'next/image';
@@ -30,6 +31,7 @@ import Knopf from '@/components/kern/Knopf';
 import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import Schriftfeld from '@/components/kern/Schriftfeld';
 import Verlegeplan from '@/components/kern/Verlegeplan';
+import Bildfeld from '@/components/kern/Bildfeld';
 
 // Themenplan je Leistungsbeispiel (wie auf /referenzen): der Plan, dessen Beschreibung zum Projekttyp passt; sonst der
 // Plan der Kategorie
@@ -242,14 +244,31 @@ export default async function ProjectDetailPage({ params }) {
                             </section>
                         )}
 
+                        {/* SEO-Runde T11: Fotos ähnlicher Arbeiten im Feldraster (Bildfeld als Fläche), ohne Ort und Bauherren */}
+                        {placeholder && Array.isArray(project.beispielFotos) && project.beispielFotos.length > 0 && (
+                            <section aria-labelledby="beispiel-fotos" className="mt-16">
+                                <h2 id="beispiel-fotos" className="text-fs-5 text-tinte">Fotos aus unserer Arbeit</h2>
+                                <p className="mt-3 max-w-mass font-text text-fs-2 text-tinte-2">
+                                    {project.fotoSatz} Orte und Namen der Bauherren nennen wir nicht.
+                                </p>
+                                <ul className="mt-6 grid grid-cols-1 gap-px border border-fuge bg-fuge sm:grid-cols-3">
+                                    {project.beispielFotos.map((bild) => (
+                                        <li key={bild} className="bg-fliese">
+                                            <Bildfeld arbeit={bild} spalten="drittel" flaeche />
+                                        </li>
+                                    ))}
+                                </ul>
+                            </section>
+                        )}
+
                         {/* Placeholder note: Vermerk in der Form des Hinweises (Rahmen Strich, Kante links, Info-Zeichen) */}
                         {placeholder && (
                             <div className="mt-16 flex items-start gap-4 border border-l-2 border-strich bg-kalk p-6 lg:p-8">
                                 <Icon name="info" groesse={5} className="mt-2 text-tinte" />
                                 <div className="min-w-0">
-                                    <h2 className="text-fs-5 text-tinte">Fotos und Details folgen</h2>
+                                    <h2 className="text-fs-5 text-tinte">Weitere Details nur mit Freigabe</h2>
                                     <p className="mt-3 max-w-mass font-text text-fs-2 text-tinte-2">
-                                        Detaillierte Baustellenfotos und Kundendokumentationen für {project.title} veröffentlichen wir aus Diskretionsgründen ausschließlich mit ausdrücklicher Freigabe der Bauherren. Authentische Erfahrungsberichte finden Sie in unseren verifizierten Google-Bewertungen.
+                                        Eine ausführliche Dokumentation einzelner Baustellen zeigen wir nur mit Freigabe der Bauherren. Was Kunden über uns sagen, lesen Sie in den Google-Bewertungen.
                                     </p>
                                     <Knopf href="/referenzen#bewertungen" variante="text" iconLinks="stern-voll" className="mt-2">
                                         Echte Kundenbewertungen lesen

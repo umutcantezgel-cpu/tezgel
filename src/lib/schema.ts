@@ -3,6 +3,7 @@
  * Uses interconnected canonical @id URIs and standard @graph notation.
  */
 import { pfadAus, seitenBeschreibung } from '@/lib/beschreibung';
+import { seitenTitel } from '@/lib/seo/seitentitel';
 import { GOOGLE_PROFIL, istKartenLink } from '@/config/google-profil';
 
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.tezgel.de';
@@ -298,7 +299,8 @@ export function buildWebPageNode(options: {
     '@type': 'WebPage',
     '@id': `${options.url}#webpage`,
     url: options.url,
-    name: options.name,
+    // derselbe Titel wie in den Metadaten der Seite (lib/seo/seitentitel.ts, Snippet-Runde)
+    name: seitenTitel(pfadAus(options.url), options.name),
     // dieselbe Beschreibung wie in den Metadaten der Seite (lib/beschreibung.ts, E-053)
     description: seitenBeschreibung(pfadAus(options.url), options.description),
     inLanguage: options.inLanguage || 'de-DE',
@@ -321,7 +323,8 @@ export function buildAboutPageNode(options: {
     '@type': 'AboutPage',
     '@id': `${options.url}#aboutpage`,
     url: options.url,
-    name: options.name,
+    // derselbe Titel wie in den Metadaten der Seite (lib/seo/seitentitel.ts, Snippet-Runde)
+    name: seitenTitel(pfadAus(options.url), options.name),
     // dieselbe Beschreibung wie in den Metadaten der Seite (lib/beschreibung.ts, E-053)
     description: seitenBeschreibung(pfadAus(options.url), options.description),
     isPartOf: { '@id': WEBSITE_ID },
@@ -342,7 +345,8 @@ export function buildContactPageNode(options: {
     '@type': 'ContactPage',
     '@id': `${options.url}#contactpage`,
     url: options.url,
-    name: options.name,
+    // derselbe Titel wie in den Metadaten der Seite (lib/seo/seitentitel.ts, Snippet-Runde)
+    name: seitenTitel(pfadAus(options.url), options.name),
     // dieselbe Beschreibung wie in den Metadaten der Seite (lib/beschreibung.ts, E-053)
     description: seitenBeschreibung(pfadAus(options.url), options.description),
     isPartOf: { '@id': WEBSITE_ID },

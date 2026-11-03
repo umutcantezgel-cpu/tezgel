@@ -7,6 +7,11 @@ import { generatePageMetadata } from '../src/lib/metadata.ts';
 import { CITIES } from '../src/config/cities.ts';
 import { SERVICES } from '../src/config/services.js';
 import { leistungOrtTitel } from '../src/lib/seo/titel.ts';
+import { DESCRIPTION_PX_HOECHSTENS, TITEL_PX_HOECHSTENS, beschreibungBreite, pixelbreite, titelBreite } from '../src/lib/seo/pixelbreite.ts';
+import { TEILENBILDER } from '../src/lib/seo/teilenbild.ts';
+import { SITE_URL } from '../src/lib/schema.ts';
+
+const TEILEN_URLS = new Set(TEILENBILDER.map((b) => `${SITE_URL}${b.pfad}`));
 
 test('1. Title Budget: Long raw titles are strictly clamped to <= 58 chars (SERP Budget)', () => {
   const meta = generatePageMetadata({
@@ -171,4 +176,38 @@ test('6. Gebaute Seiten: Titel 45 bis 58 mit „Tezgel“, Descriptions 120 bis 
   }
   assert.ok(seiten > 100, `nur ${seiten} gebaute Seiten gefunden`);
   assert.deepEqual(fehler, []);
+});
+
+// SEO-Runde T08 (03.11.2026, docs/seo/KONTEXT.md Abschnitt 13): Jede indexierbare Seite teilt ein echtes Foto 1200 × 630 mit
+// Maßen und Alt-Text (src/lib/seo/teilenbild.ts) statt des Logos.
+const seitenpfad = (datei) => '/' + path.relative(APP, datei).split(path.sep).join('/').replace(/\.html$/, '').replace(/^index$/, '');
+const noindex = (html) => /noindex/.test(html.match(/<meta name="robots" content="([^"]*)"/)?.[1] ?? '');
+test('8. Indexierbare Seiten: echtes Teilen-Bild 1200 × 630 mit Alt-Text', {
+  skip: bauZustand(),
+}, () => {
+  const fehler = [];
+  let indexierbar = 0;
+  for (const datei of htmlDateien(APP)) {
+    const seite = seitenpfad(datei);
+    if (seite === '/_global-error') continue;
+    const html = fs.readFileSync(datei, 'utf8');
+    // Seiten mit noindex (Rechtstexte, Login, Fehlerseite) erscheinen nicht im Suchergebnis
+    if (noindex(html)) continue;
+    indexierbar += 1;
+    const og = (feld) => entschluesseln(html.match(new RegExp(`<meta property="og:${feld}" content="([^"]*)"`))?.[1] ?? '');
+    if (!TEILEN_URLS.has(og('image')) || og('image:width') !== '1200' || og('image:height') !== '630' || og('image:alt').length < 20) {
+      fehler.push(`${seite}: Teilen-Bild „${og('image')}“ ${og('image:width')} × ${og('image:height')}`);
+    }
+  }
+  assert.ok(indexierbar > 100, `nur ${indexierbar} indexierbare Seiten gefunden`);
+  assert.deepEqual(fehler, []);
+});
+
+test('9. Pixelbreite: Arial-Maße wie im Suchergebnis (Stichproben)', () => {
+  // Werte aus den Zeichenbreiten von Liberation Sans (2048 Einheiten je Geviert), von Hand nachgerechnet
+  assert.equal(pixelbreite('M', 20), 16.7);
+  assert.equal(pixelbreite('i', 20), 4.4);
+  assert.equal(pixelbreite('Aßlar', 20), 47.8);
+  assert.equal(titelBreite('Fliesenleger Wetzlar und Aßlar | Fliesenverlegung Tezgel'), 508.8);
+  assert.ok(pixelbreite('☃', 20) === pixelbreite('M', 20), 'unbekannte Zeichen zählen wie „M“');
 });

@@ -9,7 +9,7 @@ const post = {
     "category": "fliesen",
     "author": "Fliesenverlegung Tezgel",
     "readTime": "4 Min.",
-    "image": "/images/bad/wandfliesen-gruen.webp",
+    "image": "/images/arbeiten/teilen/wohnraum-grosse-helle-bodenfliesen.jpg",
     "featured": false,
     "tags": [
         "Fliesenpflege",

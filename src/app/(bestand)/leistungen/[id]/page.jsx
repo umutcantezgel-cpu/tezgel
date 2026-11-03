@@ -80,7 +80,8 @@ export default async function ServiceDetailPage({ params }) {
     untergrund: 'Wir messen die Restfeuchte, schließen Risse und gleichen den Untergrund aus, bevor der Belag kommt.',
   };
   const serviceSidebarIntros = {
-    bad: `Fachbetriebsleiter ${COMPANY_DATA.owner.fullName} berät Sie zur schlüsselfertigen Badsanierung, Walk-In-Duschen und DIN 18534 Abdichtung persönlich bei Ihnen vor Ort in Aßlar, Wetzlar oder Mittelhessen.`,
+    // SEO-Runde 03.11.2026: ohne „schlüsselfertig“ (nicht belegt), Satz unter 25 Wörtern
+    bad: `Fachbetriebsleiter ${COMPANY_DATA.owner.fullName} berät Sie bei Ihnen vor Ort zur Badsanierung, zu Duschen ohne Stufe und zur Abdichtung nach DIN 18534.`,
     wohnen: `Fachbetriebsleiter ${COMPANY_DATA.owner.fullName} berät Sie persönlich zu Großformaten, Wohnraumfliesen und Fußbodenheizungs-Belegreife direkt in Ihren Räumlichkeiten.`,
     aussen: `Fachbetriebsleiter ${COMPANY_DATA.owner.fullName} begutachtet Ihren Balkon oder Ihre Terrasse vor Ort: Gefälle, Abdichtungsanschlüsse und Stelzlagersysteme.`,
     untergrund: `Fachbetriebsleiter ${COMPANY_DATA.owner.fullName} prüft Ihren Estrich und Untergrund persönlich: CM-Restfeuchtemessung, Risssanierung und Entkopplungskonzepte.`,

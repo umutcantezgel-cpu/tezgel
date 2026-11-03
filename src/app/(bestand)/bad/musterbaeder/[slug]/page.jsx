@@ -105,7 +105,8 @@ export default async function MusterbadDetailPage({ params }) {
                     }
                     vorspann={
                         <p>
-                            {bath.headline}: Unser Musterbad {bath.title} bietet Ihnen ein schlüsselfertiges Komplettbad und eine professionelle Badsanierung von Fachbetrieb Tezgel in Aßlar und Wetzlar. Entdecken Sie alle Ausstattungsdetails, Sanitärobjekte und Markenkomponenten für Ihre Badplanung.
+                            {/* SEO-Runde 03.11.2026: ohne „schlüsselfertig“ und die Floskel „Entdecken Sie“ */}
+                            {bath.headline}: Das Musterbad {bath.title} zeigt ein komplettes Bad, wie wir es bei einer Badsanierung umsetzen. Die Liste nennt Ausstattung, Sanitärobjekte und Marken einzeln.
                         </p>
                     }
                     merkmale={

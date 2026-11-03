@@ -11,6 +11,10 @@ export const PORTFOLIO_PROJECTS = [
     {
         id: "badsanierung-grossformat",
         placeholder: true,
+        // SEO-Runde T11 (03.11.2026): echte Fotos ähnlicher Arbeiten aus src/config/arbeiten.ts, ohne Ort und ohne Bezug
+        // auf ein bestimmtes Projekt; der Satz sagt nur, was die Fotos zeigen
+        beispielFotos: ["nb-083", "nb-084", "nb-086"],
+        fotoSatz: "Die Fotos zeigen ein fertiges Bad mit großen beigen Fliesen aus unserer Arbeit.",
         title: "Komplette Badsanierung mit Großformatfliesen",
         category: "bad",
         serviceLink: "/bad/badsanierung",
@@ -27,6 +31,10 @@ export const PORTFOLIO_PROJECTS = [
     {
         id: "einfamilienhaus-komplett",
         placeholder: true,
+        // SEO-Runde T11 (03.11.2026): echte Fotos ähnlicher Arbeiten aus src/config/arbeiten.ts, ohne Ort und ohne Bezug
+        // auf ein bestimmtes Projekt; der Satz sagt nur, was die Fotos zeigen
+        beispielFotos: ["nb-058", "nb-056", "nb-064"],
+        fotoSatz: "Die Fotos zeigen Wohnräume, eine Dusche und ein Gäste-WC im Ausbau aus unserer Arbeit.",
         title: "Fliesenarbeiten im kompletten Einfamilienhaus",
         category: "wohnen",
         serviceLink: "/fliesen",
@@ -42,6 +50,10 @@ export const PORTFOLIO_PROJECTS = [
     {
         id: "treppenanlage-wohnhaus",
         placeholder: true,
+        // SEO-Runde T11 (03.11.2026): echte Fotos ähnlicher Arbeiten aus src/config/arbeiten.ts, ohne Ort und ohne Bezug
+        // auf ein bestimmtes Projekt; der Satz sagt nur, was die Fotos zeigen
+        beispielFotos: ["nb-076", "nb-077", "nb-004"],
+        fotoSatz: "Die Fotos zeigen eine Außentreppe und ein Treppenhaus aus unserer Arbeit.",
         title: "Treppenanlage mit Fliesen- oder Natursteinbelag",
         category: "treppen",
         serviceLink: "/treppen/innentreppe",
@@ -57,6 +69,10 @@ export const PORTFOLIO_PROJECTS = [
     {
         id: "wohnbereich-fussbodenheizung",
         placeholder: true,
+        // SEO-Runde T11 (03.11.2026): echte Fotos ähnlicher Arbeiten aus src/config/arbeiten.ts, ohne Ort und ohne Bezug
+        // auf ein bestimmtes Projekt; der Satz sagt nur, was die Fotos zeigen
+        beispielFotos: ["nb-054", "nb-062", "nb-044"],
+        fotoSatz: "Die Fotos zeigen Fliesenböden in Wohnräumen aus unserer Arbeit.",
         title: "Fliesenboden auf Fußbodenheizung im Wohnbereich",
         category: "wohnen",
         serviceLink: "/fliesen/auf-fussbodenheizung",
@@ -72,6 +88,10 @@ export const PORTFOLIO_PROJECTS = [
     {
         id: "barrierefreies-duschbad",
         placeholder: true,
+        // SEO-Runde T11 (03.11.2026): echte Fotos ähnlicher Arbeiten aus src/config/arbeiten.ts, ohne Ort und ohne Bezug
+        // auf ein bestimmtes Projekt; der Satz sagt nur, was die Fotos zeigen
+        beispielFotos: ["nb-085", "nb-019", "nb-060"],
+        fotoSatz: "Die Fotos zeigen Duschen ohne Stufe aus unserer Arbeit.",
         title: "Barrierefreies Duschbad mit bodengleicher Walk-In-Dusche",
         seoTitle: "Barrierefreies Duschbad mit bodengleicher Dusche · Tezgel", // SEO-Runde P2
         category: "bad",
@@ -89,6 +109,10 @@ export const PORTFOLIO_PROJECTS = [
     {
         id: "balkon-stelzlager",
         placeholder: true,
+        // SEO-Runde T11 (03.11.2026): echte Fotos ähnlicher Arbeiten aus src/config/arbeiten.ts, ohne Ort und ohne Bezug
+        // auf ein bestimmtes Projekt; der Satz sagt nur, was die Fotos zeigen
+        beispielFotos: ["nb-074", "nb-088", "nb-089"],
+        fotoSatz: "Die Fotos zeigen einen Balkon und eine Terrasse aus unserer Arbeit.",
         title: "Balkonsanierung mit Terrassenplatten auf Stelzlagern",
         seoTitle: "Balkonsanierung mit Platten auf Stelzlagern · Tezgel", // SEO-Runde P2
         category: "aussen",

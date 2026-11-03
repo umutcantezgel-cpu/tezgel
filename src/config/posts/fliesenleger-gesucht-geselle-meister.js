@@ -13,7 +13,7 @@ const post = {
     "category": "ratgeber",
     "author": "Fliesenverlegung Tezgel",
     "readTime": "2 Min.",
-    "image": "/images/bad/bad-tageslicht.webp",
+    "image": "/images/arbeiten/teilen/untergrund-gewebe-vor-dem-fliesen.jpg",
     "featured": false,
     "tags": [
         "Karriere",

@@ -8,7 +8,7 @@ const post = {
     "category": "fliesen",
     "author": "Fliesenverlegung Tezgel",
     "readTime": "5 Min.",
-    "image": "/images/bad/walk-in-dusche.webp",
+    "image": "/images/arbeiten/teilen/aussentreppe-beige-fliesen-kantenprofile.jpg",
     "featured": false,
     "tags": [
         "Rutschhemmung",

@@ -7,6 +7,8 @@ import { META_BESCHREIBUNGEN, META_TEILE } from '../src/inhalte/meta/index.ts';
 import { generatePageMetadata } from '../src/lib/metadata.ts';
 import { LOCAL_BUSINESS_ID, ORDNER_DIENSTE, SITE_URL, buildOrdnerServiceNode } from '../src/lib/schema.ts';
 import { zeigtOrdnerKnoten } from '../src/lib/ordnerdienst.ts';
+import { META_TITEL } from '../src/inhalte/meta/titel.ts';
+import { TITEL_PX_HOECHSTENS, beschreibungBreite, DESCRIPTION_PX_HOECHSTENS, titelBreite } from '../src/lib/seo/pixelbreite.ts';
 
 // Eigene Meta-Beschreibungen (E3-SEO-META, E-050): vollständig, ohne Kürzung, in Alltagssprache (K-010).
 const eintraege = Object.entries(META_BESCHREIBUNGEN);
@@ -28,6 +30,26 @@ test('Meta 3: generatePageMetadata liefert den Eintrag zur Adresse unverändert,
     const meta = generatePageMetadata({ title: 'Prüfseite Fliesenverlegung Tezgel in Aßlar', description: 'x '.repeat(120), path: pfad });
     assert.equal(meta.description, text, pfad);
     assert.equal(meta.openGraph?.description, text, pfad);
+  }
+});
+
+// Snippet-Runde (03.11.2026, docs/seo/KONTEXT.md Abschnitt 10): Breite im Suchergebnis und eigene Titel je Adresse
+// Die Descriptions der übrigen Seiten folgen mit der Snippet-Runde; bis dahin prüft Test 8b in test/titleLength.test.mjs die
+// fertigen Seiten im Bau, auch die ohne eigenen Titel hier.
+test('Meta 6: eigene Titel mit 50 bis 58 Zeichen, bis 561 px, Markenzusatz, unverändert ausgeliefert; ihre Beschreibungen bis 985 px', () => {
+  for (const [pfad, titel] of Object.entries(META_TITEL)) {
+    assert.match(pfad, /^\/[a-z0-9\-/_]*$/, pfad);
+    assert.ok(titel.length >= 50 && titel.length <= 58, `${pfad}: Titel ${titel.length} Zeichen`);
+    assert.ok(titelBreite(titel) <= TITEL_PX_HOECHSTENS, `${pfad}: Titel ${titelBreite(titel)} px`);
+    assert.match(titel, / \| Fliesenverlegung Tezgel$| · Tezgel$/, pfad);
+    assert.doesNotMatch(titel, /[–—!…]|\s-\s|\.\.\./, pfad);
+    const meta = generatePageMetadata({ title: 'Prüfseite ohne Marke', description: 'x', path: pfad });
+    assert.equal(meta.title.absolute, titel, `${pfad}: Titel wird umgeschrieben`);
+    assert.equal(meta.openGraph?.title, titel, pfad);
+  }
+  assert.equal(new Set(Object.values(META_TITEL)).size, Object.keys(META_TITEL).length, 'Titel doppelt');
+  for (const [pfad, text] of eintraege.filter(([pfad]) => pfad in META_TITEL)) {
+    assert.ok(beschreibungBreite(text) <= DESCRIPTION_PX_HOECHSTENS, `${pfad}: Description ${beschreibungBreite(text)} px`);
   }
 });
 
