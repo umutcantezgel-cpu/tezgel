@@ -10,7 +10,7 @@ export const START: ErzaehlInhalt = {
   pfad: '/',
   meta: {
     titel: 'Fliesenleger Wetzlar und Aßlar | Fliesenverlegung Tezgel',
-    beschreibung: 'Fliesenverlegung Tezgel für Wetzlar, Aßlar und Umgebung: Badsanierung, Böden, Balkon und Terrasse. Der Termin bei Ihnen vor Ort ist kostenfrei.',
+    beschreibung: 'Fliesenverlegung Tezgel, Fliesenleger in Wetzlar und Aßlar: 5,0 von 5 Sternen bei Google, Termin vor Ort kostenfrei. Badsanierung, Böden, Balkon, Treppe.',
   },
   worum: {
     brotkrumen: [],

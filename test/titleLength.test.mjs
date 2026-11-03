@@ -10,6 +10,8 @@ import { leistungOrtTitel } from '../src/lib/seo/titel.ts';
 import { DESCRIPTION_PX_HOECHSTENS, TITEL_PX_HOECHSTENS, beschreibungBreite, pixelbreite, titelBreite } from '../src/lib/seo/pixelbreite.ts';
 import { TEILENBILDER } from '../src/lib/seo/teilenbild.ts';
 import { SITE_URL } from '../src/lib/schema.ts';
+import { RATING_SUMMARY, REVIEWS } from '../src/config/reviews.js';
+import { GALERIE } from '../src/components/momente/galerie-filter/daten.ts';
 
 const TEILEN_URLS = new Set(TEILENBILDER.map((b) => `${SITE_URL}${b.pfad}`));
 
@@ -200,6 +202,74 @@ test('8. Indexierbare Seiten: echtes Teilen-Bild 1200 × 630 mit Alt-Text', {
     }
   }
   assert.ok(indexierbar > 100, `nur ${indexierbar} indexierbare Seiten gefunden`);
+  assert.deepEqual(fehler, []);
+});
+
+// Snippet-Runde (03.11.2026, docs/seo/KONTEXT.md Abschnitt 10): Google kürzt nach Breite. Die Seiten der Runde bleiben unter
+// 561 px im Titel und 985 px in der Description (src/lib/seo/pixelbreite.ts), nutzen den Platz (Titel 50 bis 58 Zeichen,
+// Description 140 bis 155 Zeichen) und tragen den Markenzusatz in einer der zwei Formen (T10). Die Liste wächst mit der
+// Runde, bis sie alle indexierbaren Seiten umfasst; zuerst die 26 Kernseiten (Live 4).
+const SNIPPET_SEITEN = new Set([
+  '/', '/standorte', '/standorte/wetzlar', '/standorte/asslar', '/kontakt', '/termin', '/preise', '/referenzen', '/leistungen',
+  '/leistungen/bad', '/leistungen/wohnen', '/leistungen/aussen', '/leistungen/untergrund', '/ueber-uns', '/unternehmen', '/team',
+  '/beratung', '/faq', '/foerderung', '/ausstellung/wetzlar', '/ausstellung/giessen', '/karriere', '/karriere/ausbildung',
+  '/downloads', '/partner', '/barrierefreiheit',
+]);
+test('8b. Seiten der Snippet-Runde: Titel bis 561 px und ab 50 Zeichen, Description bis 985 px und ab 140 Zeichen, Markenzusatz', {
+  skip: bauZustand(),
+}, () => {
+  const fehler = [];
+  const gefunden = new Set();
+  for (const datei of htmlDateien(APP)) {
+    const seite = seitenpfad(datei);
+    if (!SNIPPET_SEITEN.has(seite)) continue;
+    gefunden.add(seite);
+    const html = fs.readFileSync(datei, 'utf8');
+    const titel = entschluesseln(html.match(/<title>(.*?)<\/title>/s)?.[1] ?? '').trim();
+    const roh = html.match(/<meta name="description" content="([^"]*)"/)?.[1];
+    const beschreibung = roh === undefined ? '' : entschluesseln(roh);
+    if (noindex(html)) fehler.push(`${seite}: noindex`);
+    if (titelBreite(titel) > TITEL_PX_HOECHSTENS) fehler.push(`${seite}: Titel ${titelBreite(titel)} px „${titel}“`);
+    if (beschreibungBreite(beschreibung) > DESCRIPTION_PX_HOECHSTENS) fehler.push(`${seite}: Description ${beschreibungBreite(beschreibung)} px „${beschreibung}“`);
+    if (titel.length < 50) fehler.push(`${seite}: Titel mit ${titel.length} Zeichen „${titel}“`);
+    if (beschreibung.length < 140) fehler.push(`${seite}: Description mit ${beschreibung.length} Zeichen „${beschreibung}“`);
+    if (!/ \| Fliesenverlegung Tezgel$| · Tezgel$/.test(titel)) fehler.push(`${seite}: Markenzusatz „${titel}“`);
+  }
+  assert.deepEqual([...SNIPPET_SEITEN].filter((s) => !gefunden.has(s)), [], 'Seiten fehlen im Bau');
+  assert.deepEqual(fehler, []);
+});
+
+// Snippet-Runde: Zahlen im Suchergebnis folgen ihrer Quelle. Die Bewertung pflegt src/config/reviews.js von Hand (Freigabe
+// nötig), Stimmen und Fotos zählt die Seite selbst. Ändert sich eine Quelle, fällt dieser Test, bis Titel und Description
+// nachgezogen sind; so zeigt das Suchergebnis nie eine andere Zahl als die Seite.
+test('8c. Gebaute Seiten: Bewertung, Zahl der Stimmen und der Fotos in Titel und Description wie in ihrer Quelle', {
+  skip: bauZustand(),
+}, () => {
+  const g = RATING_SUMMARY.google;
+  const fehler = [];
+  let mitBewertung = 0;
+  for (const datei of htmlDateien(APP)) {
+    const seite = seitenpfad(datei);
+    const html = fs.readFileSync(datei, 'utf8');
+    const titel = entschluesseln(html.match(/<title>(.*?)<\/title>/s)?.[1] ?? '').trim();
+    const og = entschluesseln(html.match(/<meta property="og:description" content="([^"]*)"/)?.[1] ?? '');
+    const beschreibung = entschluesseln(html.match(/<meta name="description" content="([^"]*)"/)?.[1] ?? '');
+    for (const [feld, text] of [['Titel', titel], ['Description', beschreibung], ['og:description', og]]) {
+      for (const m of text.matchAll(/(\d,\d)(?: von (\d+))?(?= Sternen| bei Google)/g)) {
+        mitBewertung += 1;
+        if (m[1] !== g.displayRating || (m[2] !== undefined && Number(m[2]) !== g.maxRating)) fehler.push(`${seite} ${feld}: „${m[0]}“ statt ${g.displayRating} von ${g.maxRating}`);
+      }
+      for (const m of text.matchAll(/(\d+) Stimmen/g)) {
+        if (Number(m[1]) !== REVIEWS.length) fehler.push(`${seite} ${feld}: ${m[1]} Stimmen statt ${REVIEWS.length}`);
+      }
+      if (seite === '/referenzen') {
+        for (const m of text.matchAll(/(\d+) Fotos/g)) {
+          if (Number(m[1]) !== GALERIE.length) fehler.push(`${seite} ${feld}: ${m[1]} Fotos statt ${GALERIE.length}`);
+        }
+      }
+    }
+  }
+  assert.ok(mitBewertung > 0, 'keine Bewertung im Suchergebnis gefunden, Muster prüfen');
   assert.deepEqual(fehler, []);
 });
 
