@@ -1,5 +1,6 @@
 // Meta-Beschreibungen der Snippet-Runde (03.11.2026, docs/seo/KONTEXT.md Abschnitt 13) für Seiten, die vorher keinen eigenen
-// Eintrag hatten. Je Adresse 140 bis 155 Zeichen und höchstens 985 px; Regeln in test/meta.test.mjs (Meta 2 und 6).
+// Eintrag hatten. Je Adresse 140 bis 155 Zeichen und höchstens 985 px; Regeln in test/meta.test.mjs (Meta 2) und im Bau
+// test/titleLength.test.mjs (Test 8b).
 export const META_SNIPPETS: Readonly<Record<string, string>> = {
   '/kontakt': 'Kontakt: Telefon 06441 / 44 83 567, WhatsApp 0172 / 67 28 504, E-Mail oder kurze Anfrage. Deniz Tezgel kommt zu Ihnen, der Termin vor Ort ist kostenfrei.',
   '/leistungen': 'Leistungen als Fliesenleger: Bad und Dusche ohne Stufe, Böden und Wände, Balkon, Terrasse, Treppe und Abdichtung. Der Termin vor Ort ist kostenfrei.',

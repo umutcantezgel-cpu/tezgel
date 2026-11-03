@@ -78,7 +78,8 @@ const STATIC_ROUTES: Array<[path: string, changeFrequency: ChangeFrequency, prio
 // SEO-Runde (03.11.2026, T13): Bild-Sitemap. Die Fotos liefert next/image mit einer Adresse aus, die sich mit jedem Deploy
 // ändert (dpl=…); hier steht je Seite die feste Datei unter /images/arbeiten/. Gesammelt werden alle Foto-Kennungen aus den
 // Inhalten der Seite (jede Zeichenkette, die eine Kennung aus ARBEITEN ist), auf /referenzen dazu die Galerie, auf den
-// Ortsseiten die Fotos wie in ortsInhalt (B/standorte/[stadt]/page.tsx).
+// Ortsseiten die Fotos wie in ortsInhalt (src/app/(bestand)/standorte/[stadt]/page.tsx). Nur was die Seite zeigt:
+// test/titleLength.test.mjs (Test 8d) prüft jedes Bild der Sitemap gegen das gebaute HTML.
 const ARBEIT_IDS = new Set<string>(Object.keys(ARBEITEN));
 
 function fotoKennungen(wert: unknown, ziel: Set<string> = new Set()): Set<string> {
@@ -93,13 +94,16 @@ function fotoKennungen(wert: unknown, ziel: Set<string> = new Set()): Set<string
 }
 
 const BILDQUELLEN: ReadonlyArray<readonly [path: string, quelle: unknown]> = [
-  [START.pfad, START],
+  // Startseite: das Einstiegsfoto unter lg ist fest start-bad (src/components/start/Startbild.tsx); die Auswahl der Lage zeigt
+  // nur Zeichnungen, ihre Felder bild ruhen (src/components/vorlagen/teile/Lage.tsx, LageFliesen)
+  [START.pfad, ['start-bad', { ...START, lage: undefined }]],
   [BAD.pfad, BAD],
   [BADSANIERUNG.pfad, BADSANIERUNG],
   [BARRIEREFREIES_BAD.pfad, BARRIEREFREIES_BAD],
   [BALKON_TERRASSE.pfad, BALKON_TERRASSE],
   [LEISTUNGEN.pfad, LEISTUNGEN],
-  [REFERENZEN.pfad, [REFERENZEN, GALERIE]],
+  // /referenzen: dazu Vorher und Nachher der Außentreppe, die die Seite im Vergleich zeigt
+  [REFERENZEN.pfad, [REFERENZEN, GALERIE, 'ref-vorher', 'ref-nachher']],
   [UEBER_UNS.pfad, UEBER_UNS],
   [KONTAKT.pfad, KONTAKT],
   [FLIESEN.pfad, FLIESEN],

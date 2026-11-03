@@ -133,8 +133,9 @@ export default async function BlogPostPage({ params }) {
               <h1 className="text-fs-6 text-tinte">{post.title}</h1>
 
               <p className="mt-8 max-w-mass text-fs-3 text-tinte-2">
-                {/* SEO-Runde (03.11.2026): ohne Gedankenstrich und ohne Wiederholung der H1 */}
-                Fachwissen und Praxistipps für Bauherren und Modernisierer, erklärt vom Fachbetrieb Tezgel.
+                {/* SEO-Runde (03.11.2026): ohne Gedankenstrich und ohne Wiederholung der H1; ein Beitrag kann einen eigenen
+                    Vorspann tragen (post.vorspann), etwa das Stellenangebot */}
+                {post.vorspann ?? 'Fachwissen und Praxistipps für Bauherren und Modernisierer, erklärt vom Fachbetrieb Tezgel.'}
               </p>
 
               <p className={`${etikettKlassen} mt-6 flex-wrap`}>

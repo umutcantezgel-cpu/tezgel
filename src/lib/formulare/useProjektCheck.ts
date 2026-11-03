@@ -7,7 +7,7 @@ import { COMPANY_DATA } from '@/config/company';
 import { openWhatsApp } from '@/lib/whatsapp';
 
 export const SCOPE_OPTIONS = [
-    { id: 'komplett', label: 'Komplettbad', desc: 'Schlüsselfertig' },
+    { id: 'komplett', label: 'Komplettbad', desc: 'Das ganze Bad neu' },
     { id: 'teil', label: 'Teilsanierung', desc: 'Sanitär & Keramik' },
     { id: 'dusche-nur', label: 'Wanne zu Dusche', desc: 'Nur Duschbereich' }
 ];

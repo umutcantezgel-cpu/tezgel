@@ -8,7 +8,7 @@ const post = {
     "category": "bad",
     "author": "Fliesenverlegung Tezgel",
     "readTime": "4 Min.",
-    "image": "/images/arbeiten/teilen/bad-dusche-glaswand-beige.jpg",
+    "image": "/images/arbeiten/teilen/dusche-ohne-stufe-punktablauf-beige.jpg",
     "featured": false,
     "tags": [
         "Walk-In-Dusche",

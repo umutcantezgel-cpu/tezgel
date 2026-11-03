@@ -1,5 +1,5 @@
 // SEO-Runde T08 (03.11.2026, docs/seo/KONTEXT.md Abschnitt 5 und 13): Teilen-Bild jeder Seite aus echten Fotos des
-// Betriebs statt Logo und Generatorbildern. Sechs Zuschnitte 1200 × 630 (bilder.mjs, Format 40:21, ohne Metadaten) unter
+// Betriebs statt Logo und Generatorbildern. Sieben Zuschnitte 1200 × 630 (bilder.mjs, Format 40:21, ohne Metadaten) unter
 // public/images/arbeiten/teilen/. Gewählt nach dem Anfang der Adresse (ganze Abschnitte, „/fliesen“ trifft nicht
 // „/fliesenreparatur“); die längste passende Regel gewinnt, sonst das Bad aus dem Einstieg der Startseite.
 
@@ -15,21 +15,28 @@ const BILDER = {
     pfad: '/images/arbeiten/teilen/bad-dusche-glaswand-beige.jpg',
     alt: 'Bad im Dachgeschoss mit Dusche hinter einer Glaswand und großen beigen Fliesen an Wand und Boden',
   },
+  // Dusche ohne Stufe (nb-085) für die Seiten über bodengleiche Duschen; das Bad oben zeigt eine flache Duschwanne
+  dusche: {
+    pfad: '/images/arbeiten/teilen/dusche-ohne-stufe-punktablauf-beige.jpg',
+    alt: 'Dusche ohne Stufe mit Punktablauf und Diagonalschnitten im Boden, rechts eine Badewanne, große Fliesen in Beige',
+  },
   balkon: {
     pfad: '/images/arbeiten/teilen/balkon-beige-fliesen-steinoptik.jpg',
-    alt: 'Balkon von oben mit neuem Belag aus beigen Fliesen in Steinoptik und Brüstung aus Holz',
+    alt: 'Balkon von oben mit beigen Fliesen in Steinoptik, Sockel aus Fliese und Brüstung aus Holz',
   },
   treppe: {
     pfad: '/images/arbeiten/teilen/aussentreppe-beige-fliesen-kantenprofile.jpg',
-    alt: 'Außentreppe mit beigen Fliesen auf Tritt und Setzstufen und schwarzen Kantenprofilen',
+    alt: 'Außentreppe mit beigen Fliesen, schwarzen Kantenprofilen und Sockel aus Fliese',
   },
   boden: {
     pfad: '/images/arbeiten/teilen/wohnraum-grosse-helle-bodenfliesen.jpg',
-    alt: 'Heller Wohnraum mit großformatigen Bodenfliesen in Steinoptik',
+    alt: 'Heller Raum im Ausbau mit großformatigen Bodenfliesen in Steinoptik',
   },
-  naturstein: {
-    pfad: '/images/arbeiten/teilen/travertin-boden-roemischer-verband.jpg',
-    alt: 'Boden aus Travertin im Römischen Verband mit Steinen in mehreren Formaten',
+  // nb-112: Fliesen in Travertinoptik wie in der Galerie (Material nicht bestätigt, KONTEXT §13); deshalb nicht für die
+  // Natursteinseiten, nur für den Ratgeber „Feinsteinzeug oder Naturstein“
+  travertinoptik: {
+    pfad: '/images/arbeiten/teilen/flur-travertinoptik-roemischer-verband.jpg',
+    alt: 'Flur mit Fliesen in Travertinoptik im Römischen Verband und passendem Sockel, frisch verfugt und noch ungereinigt',
   },
   untergrund: {
     pfad: '/images/arbeiten/teilen/untergrund-gewebe-vor-dem-fliesen.jpg',
@@ -48,8 +55,11 @@ const REGELN: ReadonlyArray<readonly [string, TeilenbildId]> = [
   ['/treppen', 'treppe'],
   ['/referenzen/treppenanlage-wohnhaus', 'treppe'],
   ['/blog/rutschfeste-fliesen-r-klassen', 'treppe'],
-  ['/naturstein', 'naturstein'],
-  ['/blog/feinsteinzeug-oder-naturstein-vergleich', 'naturstein'],
+  ['/blog/feinsteinzeug-oder-naturstein-vergleich', 'travertinoptik'],
+  ['/bad/barrierefreies-bad', 'dusche'],
+  ['/foerderung', 'dusche'],
+  ['/referenzen/barrierefreies-duschbad', 'dusche'],
+  ['/blog/duschrinne-oder-punktablauf', 'dusche'],
   ['/untergrund-abdichtung', 'untergrund'],
   ['/leistungen/untergrund', 'untergrund'],
   ['/schadensanalyse', 'untergrund'],
@@ -83,7 +93,7 @@ export function teilenbild(pfad: string, basis: string): Teilenbild {
   return { url: `${basis}${bild.pfad}`, width: 1200, height: 630, alt: bild.alt };
 }
 
-/** Pfad (ohne Domain) des Teilen-Bilds, etwa für `Article.image` und `Service.image` */
+/** Pfad (ohne Domain) des Teilen-Bilds; test/teilenbild.test.mjs vergleicht damit `image` der Ratgeber (Teilen 4) */
 export function teilenbildPfad(id: TeilenbildId): string {
   return BILDER[id].pfad;
 }

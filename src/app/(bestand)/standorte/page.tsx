@@ -33,6 +33,7 @@ import Einzugsband from '@/components/kern/Einzugsband';
 import Schriftfeld from '@/components/kern/Schriftfeld';
 import { linkKlassen } from '@/components/kern/stile';
 import { seitenBeschreibung } from '@/lib/beschreibung';
+import { seitenTitel } from '@/lib/seo/seitentitel';
 
 export const metadata = createMetadata({
   // SEO-Runde (Plan, Abschnitt 4): Friedberg, Bad Nauheim und Butzbach liegen im Wetteraukreis, nicht in Mittelhessen
@@ -59,7 +60,8 @@ const standorteGraph = buildGraph([
   {
     '@type': 'CollectionPage',
     '@id': `${pageUrl}#collection`,
-    name: 'Einsatzgebiet in Mittelhessen und der Wetterau',
+    // derselbe Titel wie Metadaten und WebPage (src/inhalte/meta/titel.ts)
+    name: seitenTitel('/standorte', 'Einsatzgebiet in Mittelhessen und der Wetterau'),
     // dieselbe Beschreibung wie Metadaten und WebPage (lib/beschreibung.ts, E-054)
     description: seitenBeschreibung('/standorte', 'Übersicht aller Städte und Gemeinden, in denen Fliesenverlegung Tezgel aus Aßlar Fliesen verlegt und Bäder saniert.'),
     publisher: { '@id': ORG_ID },

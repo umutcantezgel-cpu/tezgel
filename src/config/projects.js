@@ -53,7 +53,7 @@ export const PORTFOLIO_PROJECTS = [
         // SEO-Runde T11 (03.11.2026): echte Fotos ähnlicher Arbeiten aus src/config/arbeiten.ts, ohne Ort und ohne Bezug
         // auf ein bestimmtes Projekt; der Satz sagt nur, was die Fotos zeigen
         beispielFotos: ["nb-076", "nb-077", "nb-004"],
-        fotoSatz: "Die Fotos zeigen eine Außentreppe und ein Treppenhaus aus unserer Arbeit.",
+        fotoSatz: "Die Fotos zeigen eine Außentreppe und den Fliesenboden eines Treppenhauses aus unserer Arbeit.",
         title: "Treppenanlage mit Fliesen- oder Natursteinbelag",
         category: "treppen",
         serviceLink: "/treppen/innentreppe",
@@ -112,7 +112,7 @@ export const PORTFOLIO_PROJECTS = [
         // SEO-Runde T11 (03.11.2026): echte Fotos ähnlicher Arbeiten aus src/config/arbeiten.ts, ohne Ort und ohne Bezug
         // auf ein bestimmtes Projekt; der Satz sagt nur, was die Fotos zeigen
         beispielFotos: ["nb-074", "nb-088", "nb-089"],
-        fotoSatz: "Die Fotos zeigen einen Balkon und eine Terrasse aus unserer Arbeit.",
+        fotoSatz: "Die Fotos zeigen einen gefliesten Balkon und eine Terrasse mit Platten in offener Fuge aus unserer Arbeit.",
         title: "Balkonsanierung mit Terrassenplatten auf Stelzlagern",
         seoTitle: "Balkonsanierung mit Platten auf Stelzlagern · Tezgel", // SEO-Runde P2
         category: "aussen",

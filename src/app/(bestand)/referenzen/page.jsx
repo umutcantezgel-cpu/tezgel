@@ -13,6 +13,7 @@ import { createMetadata } from '@/lib/metadata';
 import SeitenDaten from '@/components/seo/SeitenDaten';
 import { ORG_ID, SITE_URL } from '@/lib/schema';
 import { seitenBeschreibung } from '@/lib/beschreibung';
+import { seitenTitel } from '@/lib/seo/seitentitel';
 
 export const metadata = createMetadata({
     title: REFERENZEN.meta.titel,
@@ -33,7 +34,7 @@ export default function ReferenzenPage() {
                         '@type': 'CollectionPage',
                         '@id': `${SITE_URL}/referenzen#collection`,
                         url: `${SITE_URL}/referenzen`,
-                        name: REFERENZEN.meta.titel,
+                        name: seitenTitel('/referenzen', REFERENZEN.meta.titel),
                         // dieselbe Beschreibung wie Metadaten und WebPage (lib/beschreibung.ts, E-053)
                         description: seitenBeschreibung('/referenzen', REFERENZEN.meta.beschreibung),
                         publisher: { '@id': ORG_ID },

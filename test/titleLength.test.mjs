@@ -234,6 +234,18 @@ test('8b. Seiten der Snippet-Runde: Titel bis 561 px und ab 50 Zeichen, Descript
     if (titel.length < 50) fehler.push(`${seite}: Titel mit ${titel.length} Zeichen „${titel}“`);
     if (beschreibung.length < 140) fehler.push(`${seite}: Description mit ${beschreibung.length} Zeichen „${beschreibung}“`);
     if (!/ \| Fliesenverlegung Tezgel$| · Tezgel$/.test(titel)) fehler.push(`${seite}: Markenzusatz „${titel}“`);
+    // Seitenknoten der Strukturdaten mit demselben Titel und derselben Description (lib/seo/seitentitel.ts, lib/beschreibung.ts)
+    const anfang = `${SITE_URL}${seite === '/' ? '/' : seite}#`;
+    for (const block of html.matchAll(/<script type="application\/ld\+json"[^>]*>(.*?)<\/script>/gs)) {
+      const daten = JSON.parse(block[1]);
+      for (const knoten of daten['@graph'] ?? [daten]) {
+        const typen = [knoten['@type']].flat();
+        if (!typen.some((typ) => ['WebPage', 'AboutPage', 'ContactPage', 'CollectionPage'].includes(typ))) continue;
+        if (!String(knoten['@id'] ?? '').startsWith(anfang)) continue;
+        if (knoten.name !== titel) fehler.push(`${seite}: ${typen.join('/')} heißt „${knoten.name}“`);
+        if (knoten.description !== undefined && knoten.description !== beschreibung) fehler.push(`${seite}: ${typen.join('/')} mit anderer Description`);
+      }
+    }
   }
   assert.deepEqual([...SNIPPET_SEITEN].filter((s) => !gefunden.has(s)), [], 'Seiten fehlen im Bau');
   assert.deepEqual(fehler, []);
@@ -271,6 +283,41 @@ test('8c. Gebaute Seiten: Bewertung, Zahl der Stimmen und der Fotos in Titel und
   }
   assert.ok(mitBewertung > 0, 'keine Bewertung im Suchergebnis gefunden, Muster prüfen');
   assert.deepEqual(fehler, []);
+});
+
+// Gegenprüfung Live 4: Die Bild-Sitemap nennt je Seite nur Fotos, die diese Seite zeigt (als src, srcset oder über
+// /_next/image); sonst schickt sie die Bildersuche auf eine Seite ohne das Foto.
+test('8d. Bild-Sitemap: jedes Bild einer Adresse steht im gebauten HTML dieser Seite', {
+  skip: bauZustand(),
+}, () => {
+  const xml = fs.readFileSync(path.join(APP, 'sitemap.xml.body'), 'utf8');
+  const fehler = [];
+  let bilder = 0;
+  for (const eintrag of xml.matchAll(/<url>(.*?)<\/url>/gs)) {
+    const adresse = eintrag[1].match(/<loc>(.*?)<\/loc>/)?.[1] ?? '';
+    const locs = [...eintrag[1].matchAll(/<image:loc>(.*?)<\/image:loc>/g)].map((m) => m[1]);
+    if (!locs.length) continue;
+    const seite = adresse.slice(SITE_URL.length) || '/';
+    const html = entschluesseln(fs.readFileSync(path.join(APP, seite === '/' ? 'index.html' : `${seite.slice(1)}.html`), 'utf8'));
+    for (const loc of locs) {
+      bilder += 1;
+      const pfad = loc.slice(SITE_URL.length);
+      if (!html.includes(pfad) && !html.includes(encodeURIComponent(pfad))) fehler.push(`${seite}: ${pfad} nicht auf der Seite`);
+    }
+  }
+  assert.ok(bilder > 100, `nur ${bilder} Bilder in der Sitemap`);
+  assert.deepEqual(fehler, []);
+});
+
+// „schlüsselfertig“ ist nicht belegt (KONTEXT §13, b4) und steht in keiner Schreibweise auf einer gebauten Seite
+test('8e. Gebaute Seiten: kein „schlüsselfertig“', {
+  skip: bauZustand(),
+}, () => {
+  const treffer = [];
+  for (const datei of htmlDateien(APP)) {
+    if (/schlüsselfertig/i.test(entschluesseln(fs.readFileSync(datei, 'utf8')))) treffer.push(seitenpfad(datei));
+  }
+  assert.deepEqual(treffer, []);
 });
 
 test('9. Pixelbreite: Arial-Maße wie im Suchergebnis (Stichproben)', () => {

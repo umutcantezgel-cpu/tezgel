@@ -141,7 +141,8 @@ export function generatePageMetadata(options: MetadataOptions): Metadata {
       card: 'summary_large_image',
       title: fullTitle,
       description: fullDesc,
-      images: ogImages.map(img => img.url),
+      // mit Alt-Text, wo das Teilen-Bild einen hat (twitter:image:alt)
+      images: ogImages.map((img) => ('alt' in img && img.alt ? { url: img.url, alt: img.alt } : img.url)),
     },
     robots: {
       index: shouldIndex,

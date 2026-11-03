@@ -201,7 +201,7 @@ test('Meta T05: Google-Profil nur als geteilter Profil-Link, im LocalBusiness sa
     'https://www.google.com/maps/place/?q=Fliesenverlegung+Tezgel', 'https://www.google.de/maps/place/Fliesenverlegung+Tezgel/@50.5,8.4,17z',
     'https://g.page/r/CbXyZ123AbCdEAE/review', 'https://g.page/beispiel/review', 'https://g.co/kgs/AbCdEfG'])
     assert.equal(istGoogleProfilLink(u), false, u);
-  assert.doesNotMatch(String(knoten.description), /fugenlos|schlüsselfertig/);
+  assert.doesNotMatch(String(knoten.description), /fugenlos|schlüsselfertig/i);
   // _werkstatt/werkzeuge/tests/funktion-navigation.spec.mjs wertet reviews.js mit new Function aus: keine Importe, keine fremden Namen
   const reviewsQuelle = fs.readFileSync(new URL('../src/config/reviews.js', import.meta.url), 'utf8');
   assert.doesNotThrow(() => new Function(`${reviewsQuelle.replace(/^export default .*$/m, '').replace(/^export (const|function) /gm, '$1 ')}\nreturn REVIEWS;`)(),

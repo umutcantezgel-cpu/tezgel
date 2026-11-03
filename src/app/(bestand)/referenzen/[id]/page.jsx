@@ -7,7 +7,7 @@
 //    alle langen Titel (alle Projekttitel haben ≥ 44 Zeichen; „Großformatfliesen“ liefe in text-fs-7 über die Spalte).
 // 2. Umfang (Fliese): H2 und Satz als Kopf; links Leistungsumfang und Qualitätsstandard als Listen an der Fuge, bei
 //    dokumentierten Projekten Herausforderung/Lösung als Feldpaar, Fotos als Feldraster, der Platzhalter-Vermerk
-//    „Fotos und Details folgen“ (Rahmen Strich, Kante links) bzw. die Kundenstimme; rechts „Auf einen Blick“ als Randfeld
+//    „Weitere Details nur mit Freigabe“ (Rahmen Strich, Kante links) bzw. die Kundenstimme; rechts „Auf einen Blick“ als Randfeld
 //    (Schriftfeld + zwei Wege, ab lg klebend) · 3. Qualitätsversprechen (geteilter Baustein, Kalk).
 // Keine Leitachse und kein Abschluss wie im Bestand bzw. in der Referenz; kein großer Moment, kein Auftritt, kein `spaet`
 // (der Umfang beginnt im ersten Bildschirm, das Randfeld klebt).
@@ -244,17 +244,18 @@ export default async function ProjectDetailPage({ params }) {
                             </section>
                         )}
 
-                        {/* SEO-Runde T11: Fotos ähnlicher Arbeiten im Feldraster (Bildfeld als Fläche), ohne Ort und Bauherren */}
+                        {/* SEO-Runde T11: Fotos ähnlicher Arbeiten an der Fuge (Bildfeld als Fläche), ohne Ort und Bauherren; die Überschrift sagt
+                            „ähnlich“, damit niemand sie für Fotos dieses Projekts hält. sizes nach der Hauptspalte (ab lg 8 von 12 Spalten) */}
                         {placeholder && Array.isArray(project.beispielFotos) && project.beispielFotos.length > 0 && (
                             <section aria-labelledby="beispiel-fotos" className="mt-16">
-                                <h2 id="beispiel-fotos" className="text-fs-5 text-tinte">Fotos aus unserer Arbeit</h2>
+                                <h2 id="beispiel-fotos" className="text-fs-5 text-tinte">Fotos ähnlicher Arbeiten</h2>
                                 <p className="mt-3 max-w-mass font-text text-fs-2 text-tinte-2">
                                     {project.fotoSatz} Orte und Namen der Bauherren nennen wir nicht.
                                 </p>
                                 <ul className="mt-6 grid grid-cols-1 gap-px border border-fuge bg-fuge sm:grid-cols-3">
                                     {project.beispielFotos.map((bild) => (
                                         <li key={bild} className="bg-fliese">
-                                            <Bildfeld arbeit={bild} spalten="drittel" flaeche />
+                                            <Bildfeld arbeit={bild} sizes="(min-width: 1024px) 20vw, (min-width: 640px) 33vw, 100vw" flaeche />
                                         </li>
                                     ))}
                                 </ul>
@@ -268,7 +269,7 @@ export default async function ProjectDetailPage({ params }) {
                                 <div className="min-w-0">
                                     <h2 className="text-fs-5 text-tinte">Weitere Details nur mit Freigabe</h2>
                                     <p className="mt-3 max-w-mass font-text text-fs-2 text-tinte-2">
-                                        Eine ausführliche Dokumentation einzelner Baustellen zeigen wir nur mit Freigabe der Bauherren. Was Kunden über uns sagen, lesen Sie in den Google-Bewertungen.
+                                        Eine ausführliche Dokumentation einzelner Baustellen zeigen wir nur mit Freigabe der Bauherren. Was Kunden über uns sagen, lesen Sie in unseren Bewertungen bei Google.
                                     </p>
                                     <Knopf href="/referenzen#bewertungen" variante="text" iconLinks="stern-voll" className="mt-2">
                                         Echte Kundenbewertungen lesen

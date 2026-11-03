@@ -8,6 +8,7 @@ const { owner, contact, headquarters, authority, business } = COMPANY_DATA;
 const post = {
     "id": "13",
     "slug": "fliesenleger-gesucht-geselle-meister",
+    "vorspann": "Eine offene Stelle im Fachbetrieb Tezgel in Aßlar.",
     "title": "Wir suchen einen Fliesenleger (m/w/d) als Geselle",
     "excerpt": "Fliesenverlegung Tezgel in Aßlar sucht eine Fliesenlegerin oder einen Fliesenleger als Geselle (m/w/d). Hier erfahren Sie kurz, was Sie erwartet und wie Sie sich bei uns melden.",
     "category": "ratgeber",

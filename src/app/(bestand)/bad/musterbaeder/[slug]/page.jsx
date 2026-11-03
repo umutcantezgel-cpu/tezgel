@@ -105,8 +105,9 @@ export default async function MusterbadDetailPage({ params }) {
                     }
                     vorspann={
                         <p>
-                            {/* SEO-Runde 03.11.2026: ohne „schlüsselfertig“ und die Floskel „Entdecken Sie“ */}
-                            {bath.headline}: Das Musterbad {bath.title} zeigt ein komplettes Bad, wie wir es bei einer Badsanierung umsetzen. Die Liste nennt Ausstattung, Sanitärobjekte und Marken einzeln.
+                            {/* SEO-Runde 03.11.2026: ohne „schlüsselfertig“, ohne Floskel und ohne Datenfelder (headline und title tragen „&“,
+                                Bindestrichwörter und „㎡“). Linie und Größe nennt die H1, Marken nennt die Liste nicht. */}
+                            Das Musterbad zeigt ein komplettes Bad, wie wir es bei einer Badsanierung umsetzen. Die Liste nennt Ausstattung und Sanitärobjekte einzeln.
                         </p>
                     }
                     merkmale={

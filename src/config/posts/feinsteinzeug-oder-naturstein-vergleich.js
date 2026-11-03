@@ -9,7 +9,7 @@ const post = {
     "category": "fliesen",
     "author": "Fliesenverlegung Tezgel",
     "readTime": "5 Min.",
-    "image": "/images/arbeiten/teilen/travertin-boden-roemischer-verband.jpg",
+    "image": "/images/arbeiten/teilen/flur-travertinoptik-roemischer-verband.jpg",
     "featured": false,
     "tags": [
         "Feinsteinzeug",
