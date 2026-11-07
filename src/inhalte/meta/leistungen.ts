@@ -5,8 +5,8 @@ export const META_LEISTUNGEN: Readonly<Record<string, string>> = {
   '/leistungen/wohnen': 'Fliesen im Wohnbereich, in Küche und Neubau: Feinsteinzeug und Naturstein, auch auf Fußbodenheizung. Der Termin bei Ihnen vor Ort ist kostenfrei.',
   '/leistungen/aussen': 'Fliesen im Außenbereich: frostsichere Platten für Balkon, Terrasse und Eingang, auch auf Stelzlagern. Regen läuft vom Haus weg ab. Termin kostenfrei.',
   '/leistungen/untergrund': 'Untergrund vorbereiten heißt: Restfeuchte im Estrich messen, Risse schließen, Boden ausgleichen, Bad nach DIN 18534 abdichten. Termin kostenfrei.',
-  '/bad/badanfrage': 'Für Ihr Angebot zur Badsanierung geben Sie im Formular Raummaße und Wunschausstattung an. Danach folgt der kostenfreie Termin bei Ihnen vor Ort.',
+  '/bad/badanfrage': 'Ihr Angebot zur Badsanierung: Nennen Sie in fünf Schritten Umfang, Maße und Ausstattung. Nach dem kostenfreien Termin vor Ort folgt Ihr Festpreisangebot.',
   '/foerderung': 'Zuschuss mit Pflegegrad: Die Pflegekasse kann bis zu 4.180 € je Person für Ihr barrierefreies Bad dazugeben. Auch die KfW 159 kann den Umbau fördern.',
-  '/fliesen/auf-fussbodenheizung': 'Fliesen auf Fußbodenheizung verlegen: Wann der Estrich trocken genug ist, welcher Kleber passt und wo die Fugen hinkommen. Ratgeber von Tezgel.',
-  '/naturstein': 'Naturstein verlegen lassen: Granit, Marmor, Kalkstein, Travertin und Schiefer, verlegt vom Fachbetrieb aus Aßlar. Der Termin vor Ort ist kostenfrei.',
+  '/fliesen/auf-fussbodenheizung': 'Was gilt für Fliesen auf Fußbodenheizung? Wann der Estrich trocken genug ist, welcher flexible Kleber passt, wo Fugen liegen und was bei Heizmatten zählt.',
+  '/naturstein': 'Wir verlegen Naturstein auf Böden und Treppen, im Bad und draußen. Wir erklären, welcher Stein Säure verträgt, und prüfen kostenfrei vor Ort, ob er passt.',
 };

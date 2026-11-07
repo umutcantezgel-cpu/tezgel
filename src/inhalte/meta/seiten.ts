@@ -1,11 +1,11 @@
 // Meta-Beschreibungen (E3-SEO-META-2): Bad-Unterseiten, /standorte, /ausstellung/*, /faq, /beratung, /downloads, /unternehmen, /team, /partner, /karriere, /termin. Je Adresse ein Satz oder zwei, 120 bis 155 Zeichen, Alltagssprache;
 // Regeln in test/meta.test.mjs. Sichtbare Texte der Seiten bleiben unverändert.
 export const META_SEITEN: Readonly<Record<string, string>> = {
-  '/bad/fliesen': 'Badfliesen vom Fachbetrieb: große Fliesen, Feinsteinzeug, Naturstein und Mosaik, abgedichtet nach DIN 18534. Wir beraten Sie beim Termin vor Ort.',
-  '/bad/bad-aus-einer-hand': 'Bad aus einer Hand: Wir koordinieren Sanitär, Fliesen, Elektrik und Trockenbau. Sie haben einen festen Ansprechpartner von der Planung bis zur Abnahme.',
-  '/bad/musterbaeder': 'Musterbäder von 4,6 bis 15,9 m² mit Ausstattungslisten. Die Preise sind Richtwerte, das Festpreisangebot gibt es nach dem Termin vor Ort.',
-  '/bad/badplaner': 'Badplaner: Bad online planen in drei Schritten, von Raummaßen bis Fliesen und Licht. Eine Skizze mit Maßen und ein paar Fotos reichen für den Start.',
-  '/bad/projekt-check': 'Projektcheck fürs Bad: Badsanierung in 2 Minuten online prüfen. Das Festpreisangebot gibt es nach dem kostenfreien Termin vor Ort.',
+  '/bad/fliesen': 'Wir verlegen Badfliesen aus Feinsteinzeug oder Naturstein, am Boden rutschhemmend, und beraten Sie kostenfrei vor Ort zu Format und Fugenbild.',
+  '/bad/bad-aus-einer-hand': 'Bad aus einer Hand: Wir koordinieren Sanitär, Fliesen, Elektrik und Trockenbau. Deniz Tezgel kommt kostenfrei zu Ihnen und bleibt Ihr Ansprechpartner.',
+  '/bad/musterbaeder': 'Zwölf Musterbäder in drei Linien von Basic bis Luxus, jedes mit Ausstattungsliste. Das Festpreisangebot erhalten Sie nach dem kostenfreien Termin vor Ort.',
+  '/bad/badplaner': 'Der Badplaner ist eine Anleitung zum Selbstplanen. Ihre Planung senden Sie uns, Deniz Tezgel prüft sie beim kostenfreien Termin vor Ort mit Ihnen.',
+  '/bad/projekt-check': 'Prüfen Sie Ihre Badsanierung online: Größe, Umfang, Ausstattung und Wünsche in vier Schritten, dazu ein passendes Musterbad. Termin vor Ort kostenfrei.',
   '/standorte': 'Fliesenleger für Mittelhessen und die Wetterau: 13 Orte von Aßlar über Gießen bis Marburg und Friedberg. Wählen Sie Ihren Ort. Der Termin ist kostenfrei.',
   '/ausstellung/wetzlar': 'Fliesenberatung in Wetzlar bei Ihnen vor Ort: Welche Fliese passt zu Bad, Wohnbereich oder Terrasse? Deniz Tezgel berät Sie zu Format und Oberfläche.',
   '/ausstellung/giessen': 'Fliesenberatung in Gießen nach Vereinbarung: Neues Bad, große Bodenfliesen oder frostsichere Terrasse? Deniz Tezgel berät Sie zu Format und Fugen.',

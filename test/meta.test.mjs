@@ -34,9 +34,7 @@ test('Meta 3: generatePageMetadata liefert den Eintrag zur Adresse unverändert,
 });
 
 // Snippet-Runde (03.11.2026, docs/seo/KONTEXT.md Abschnitt 10): Breite im Suchergebnis und eigene Titel je Adresse
-// Die Descriptions der übrigen Seiten folgen mit der Snippet-Runde; bis dahin prüft Test 8b in test/titleLength.test.mjs die
-// fertigen Seiten im Bau, auch die ohne eigenen Titel hier.
-test('Meta 6: eigene Titel mit 50 bis 58 Zeichen, bis 561 px, Markenzusatz, unverändert ausgeliefert; ihre Beschreibungen bis 985 px', () => {
+test('Meta 6: eigene Titel mit 50 bis 58 Zeichen, bis 561 px, Markenzusatz, unverändert ausgeliefert; Beschreibungen bis 985 px', () => {
   for (const [pfad, titel] of Object.entries(META_TITEL)) {
     assert.match(pfad, /^\/[a-z0-9\-/_]*$/, pfad);
     assert.ok(titel.length >= 50 && titel.length <= 58, `${pfad}: Titel ${titel.length} Zeichen`);
@@ -48,7 +46,7 @@ test('Meta 6: eigene Titel mit 50 bis 58 Zeichen, bis 561 px, Markenzusatz, unve
     assert.equal(meta.openGraph?.title, titel, pfad);
   }
   assert.equal(new Set(Object.values(META_TITEL)).size, Object.keys(META_TITEL).length, 'Titel doppelt');
-  for (const [pfad, text] of eintraege.filter(([pfad]) => pfad in META_TITEL)) {
+  for (const [pfad, text] of eintraege) {
     assert.ok(beschreibungBreite(text) <= DESCRIPTION_PX_HOECHSTENS, `${pfad}: Description ${beschreibungBreite(text)} px`);
   }
 });

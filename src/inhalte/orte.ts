@@ -12,6 +12,7 @@ import type { ArbeitId } from '@/config/arbeiten';
 import type { ErzaehlInhalt, Zeile } from '@/components/vorlagen/inhalt';
 import { GALERIE_START } from './galerie';
 import { EIGENE_ORTSINHALTE } from './orte-eigen';
+import { ortsseiteBeschreibung, ortsseiteTitel } from '@/lib/seo/titel';
 
 /** Aufmacher aller 13 Ortsseiten: die Dusche mit Sitzbank und Mosaik (IMG_2582, Güte A, scharf, ohne ausgefressene Pixel;
  *  UM-E4-SICHT-FIX-2 M2-B1, Sicht Anlauf 2, 4a und 4b: die bisherige Duschtür mit Armatur start-beleg-dusche war weich, dunstig
@@ -39,8 +40,6 @@ export function ortsInhalt(stadt: CityData, kmAbSitz: number, index: number): Or
   const name = stadt.name;
   // SEO-Runde P3: eigene Inhalte, wo es sie gibt (heute Wetzlar, src/inhalte/orte-eigen.ts), sonst die gemeinsame Fassung
   const eigen = EIGENE_ORTSINHALTE[stadt.slug];
-  // Titel höchstens 58 Zeichen (Test titleLength): lange Ortsnamen in der kurzen Form aus den Ortsdaten
-  const kurz = stadt.kurzname ?? name;
   const ort =
     kmAbSitz === 0
       ? 'Fliesenverlegung Tezgel hat seinen Sitz in Aßlar.'
@@ -60,9 +59,10 @@ export function ortsInhalt(stadt: CityData, kmAbSitz: number, index: number): Or
   return {
     pfad: `/standorte/${stadt.slug}`,
     stadt: name,
+    // Snippet-Runde: Vorlage in src/lib/seo/titel.ts; Wetzlar und Aßlar haben eigene Einträge in src/inhalte/meta/ (gewinnen)
     meta: {
-      titel: `Fliesenleger in ${kurz} | Fliesenverlegung Tezgel`,
-      beschreibung: `Fliesenleger für ${name}: Wir erneuern Bäder, verlegen Böden und machen Balkone dicht. Der Termin bei Ihnen vor Ort ist kostenfrei.`,
+      titel: ortsseiteTitel(stadt),
+      beschreibung: ortsseiteBeschreibung(stadt),
     },
     worum: {
       brotkrumen: [{ name: 'Start', href: '/' }, { name: 'Wo wir arbeiten', href: '/standorte' }, { name }],

@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { generatePageMetadata } from '../src/lib/metadata.ts';
 import { CITIES } from '../src/config/cities.ts';
 import { SERVICES } from '../src/config/services.js';
-import { leistungOrtTitel } from '../src/lib/seo/titel.ts';
+import { leistungOrtBeschreibung, leistungOrtTitel, ortsseiteBeschreibung, ortsseiteTitel } from '../src/lib/seo/titel.ts';
 import { DESCRIPTION_PX_HOECHSTENS, TITEL_PX_HOECHSTENS, beschreibungBreite, pixelbreite, titelBreite } from '../src/lib/seo/pixelbreite.ts';
 import { TEILENBILDER } from '../src/lib/seo/teilenbild.ts';
 import { SITE_URL } from '../src/lib/schema.ts';
@@ -205,30 +205,26 @@ test('8. Indexierbare Seiten: echtes Teilen-Bild 1200 × 630 mit Alt-Text', {
   assert.deepEqual(fehler, []);
 });
 
-// Snippet-Runde (03.11.2026, docs/seo/KONTEXT.md Abschnitt 10): Google kürzt nach Breite. Die Seiten der Runde bleiben unter
-// 561 px im Titel und 985 px in der Description (src/lib/seo/pixelbreite.ts), nutzen den Platz (Titel 50 bis 58 Zeichen,
-// Description 140 bis 155 Zeichen) und tragen den Markenzusatz in einer der zwei Formen (T10). Die Liste wächst mit der
-// Runde, bis sie alle indexierbaren Seiten umfasst; zuerst die 26 Kernseiten (Live 4).
-const SNIPPET_SEITEN = new Set([
-  '/', '/standorte', '/standorte/wetzlar', '/standorte/asslar', '/kontakt', '/termin', '/preise', '/referenzen', '/leistungen',
-  '/leistungen/bad', '/leistungen/wohnen', '/leistungen/aussen', '/leistungen/untergrund', '/ueber-uns', '/unternehmen', '/team',
-  '/beratung', '/faq', '/foerderung', '/ausstellung/wetzlar', '/ausstellung/giessen', '/karriere', '/karriere/ausbildung',
-  '/downloads', '/partner', '/barrierefreiheit',
-]);
-test('8b. Seiten der Snippet-Runde: Titel bis 561 px und ab 50 Zeichen, Description bis 985 px und ab 140 Zeichen, Markenzusatz', {
+// Snippet-Runde (03.11.2026, docs/seo/KONTEXT.md Abschnitt 10): Google kürzt nach Breite. Jede indexierbare Seite bleibt unter
+// 561 px im Titel und 985 px in der Description (src/lib/seo/pixelbreite.ts), nutzt den Platz (Titel 50 bis 58 Zeichen,
+// Description 140 bis 155 Zeichen) und trägt den Markenzusatz in einer der zwei Formen (T10). Die Seitenknoten der
+// Strukturdaten tragen denselben Titel und dieselbe Description.
+const OHNE_SEITENKNOTEN = new Set(['/preise']);
+test('8b. Indexierbare Seiten: Titel bis 561 px und ab 50 Zeichen, Description bis 985 px und ab 140 Zeichen, Markenzusatz, Seitenknoten', {
   skip: bauZustand(),
 }, () => {
   const fehler = [];
-  const gefunden = new Set();
+  let indexierbar = 0;
   for (const datei of htmlDateien(APP)) {
     const seite = seitenpfad(datei);
-    if (!SNIPPET_SEITEN.has(seite)) continue;
-    gefunden.add(seite);
+    if (seite === '/_global-error') continue;
     const html = fs.readFileSync(datei, 'utf8');
+    // Seiten mit noindex (Rechtstexte, Login, Fehlerseite) erscheinen nicht im Suchergebnis; für sie gilt Test 6
+    if (noindex(html)) continue;
+    indexierbar += 1;
     const titel = entschluesseln(html.match(/<title>(.*?)<\/title>/s)?.[1] ?? '').trim();
     const roh = html.match(/<meta name="description" content="([^"]*)"/)?.[1];
     const beschreibung = roh === undefined ? '' : entschluesseln(roh);
-    if (noindex(html)) fehler.push(`${seite}: noindex`);
     if (titelBreite(titel) > TITEL_PX_HOECHSTENS) fehler.push(`${seite}: Titel ${titelBreite(titel)} px „${titel}“`);
     if (beschreibungBreite(beschreibung) > DESCRIPTION_PX_HOECHSTENS) fehler.push(`${seite}: Description ${beschreibungBreite(beschreibung)} px „${beschreibung}“`);
     if (titel.length < 50) fehler.push(`${seite}: Titel mit ${titel.length} Zeichen „${titel}“`);
@@ -249,10 +245,10 @@ test('8b. Seiten der Snippet-Runde: Titel bis 561 px und ab 50 Zeichen, Descript
         if (knoten.description !== undefined && knoten.description !== beschreibung) fehler.push(`${seite}: ${typen.join('/')} mit anderer Description`);
       }
     }
-    // /preise hat keinen Seitenknoten (Bestand); jede andere Seite der Runde muss mindestens einen haben
-    if (!verglichen && seite !== '/preise') fehler.push(`${seite}: kein Seitenknoten verglichen`);
+    // jede indexierbare Seite außer OHNE_SEITENKNOTEN hat mindestens einen Seitenknoten (Bestand: /preise ohne)
+    if (!verglichen && !OHNE_SEITENKNOTEN.has(seite)) fehler.push(`${seite}: kein Seitenknoten verglichen`);
   }
-  assert.deepEqual([...SNIPPET_SEITEN].filter((s) => !gefunden.has(s)), [], 'Seiten fehlen im Bau');
+  assert.ok(indexierbar > 150, `nur ${indexierbar} indexierbare Seiten gefunden`);
   assert.deepEqual(fehler, []);
 });
 
@@ -334,6 +330,31 @@ test('8e. Gebaute Seiten: kein „schlüsselfertig“', {
     if (/schlüsselfertig/i.test(entschluesseln(fs.readFileSync(datei, 'utf8')))) treffer.push(seitenpfad(datei));
   }
   assert.deepEqual(treffer, []);
+});
+
+// Snippet-Runde (03.11.2026): die Vorlagen der Seiten Leistung × Ort und der Ortsseiten schon vor dem Bau, für alle Orte
+test('10. Vorlagen: Titel 50 bis 58 Zeichen bis 561 px mit „ · Tezgel“, Description 140 bis 155 Zeichen bis 985 px, jede einmalig', () => {
+  const STRICH = /[–—]|\s-\s/;
+  const titel = new Set();
+  const beschreibungen = new Set();
+  const pruefe = (wo, t, d) => {
+    assert.ok(t.length >= 50 && t.length <= 58 && titelBreite(t) <= TITEL_PX_HOECHSTENS && t.endsWith(' · Tezgel') && !STRICH.test(t), `${wo}: „${t}“ (${t.length}, ${titelBreite(t)} px)`);
+    assert.ok(d.length >= 140 && d.length <= 155 && beschreibungBreite(d) <= DESCRIPTION_PX_HOECHSTENS, `${wo}: „${d}“ (${d.length}, ${beschreibungBreite(d)} px)`);
+    assert.doesNotMatch(d, /[&!…]|\.\.\.|[–—]|\s-\s/, wo);
+    assert.ok(!titel.has(t) && !beschreibungen.has(d), `${wo}: doppelt`);
+    titel.add(t);
+    beschreibungen.add(d);
+    // sanitizeTitle und sanitizeDescription lassen die Vorlagen unverändert
+    const meta = generatePageMetadata({ title: t, description: d, path: '/gibt-es-nicht' });
+    assert.equal(absoluterTitel(meta), t, wo);
+    assert.equal(meta.description, d, wo);
+  };
+  for (const service of SERVICES) {
+    for (const city of CITIES) pruefe(`${service.id} × ${city.slug}`, leistungOrtTitel(service, city), leistungOrtBeschreibung(service, city));
+  }
+  for (const city of CITIES.filter((c) => !['wetzlar', 'asslar'].includes(c.slug))) {
+    pruefe(`/standorte/${city.slug}`, ortsseiteTitel(city), ortsseiteBeschreibung(city));
+  }
 });
 
 test('9. Pixelbreite: Arial-Maße wie im Suchergebnis (Stichproben)', () => {

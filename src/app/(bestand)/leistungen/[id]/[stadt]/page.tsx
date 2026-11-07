@@ -15,7 +15,7 @@ import { COMPANY_DATA } from '@/config/company';
 import { notFound } from 'next/navigation';
 import { buildGraph, buildServiceNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
 import { createMetadata } from '@/lib/metadata';
-import { LEISTUNG_ANZEIGE, leistungOrtTitel } from '@/lib/seo/titel';
+import { LEISTUNG_ANZEIGE, leistungOrtBeschreibung, leistungOrtTitel } from '@/lib/seo/titel';
 import JsonLd from '@/components/seo/JsonLd';
 import QualityPromise from '@/components/sections/QualityPromise';
 import FinalCTA from '@/components/ui/FinalCTA';
@@ -61,17 +61,6 @@ export function generateStaticParams() {
   return params;
 }
 
-// Meta-Beschreibung der Ortsseite (E3-SEO-META, E-053): Suchbegriff des Bereichs, Ort, kostenfreier Termin; 120 bis 155
-// Zeichen für alle 13 Orte. Dieselbe Beschreibung trägt die WebPage der strukturierten Daten.
-const KURZNAMEN: Record<string, string> = {
-  bad: 'Badsanierung',
-  wohnen: 'Fliesenverlegung im Wohnraum',
-  aussen: 'Balkonsanierung und Terrassen',
-  untergrund: 'Untergrund und Abdichtung',
-};
-function metaBeschreibung(service: { id: string; name: string }, ort: string): string {
-  return `${KURZNAMEN[service.id] ?? service.name} in ${ort}: Leistungen, Ablauf und Festpreis vom Fachbetrieb Tezgel. Der Termin bei Ihnen vor Ort ist kostenfrei.`;
-}
 
 export async function generateMetadata({
   params,
@@ -87,7 +76,8 @@ export async function generateMetadata({
   // SEO-Runde: Titel aus src/lib/seo/titel.ts (lange Ortsnamen kurz, damit die Marke bleibt; Test 7 in titleLength)
   const title = leistungOrtTitel(service, city);
   
-  const description = metaBeschreibung(service, city.name);
+  // Snippet-Runde: Description aus der Vorlage der Leistung (src/lib/seo/titel.ts), dieselbe in der WebPage
+  const description = leistungOrtBeschreibung(service, city);
 
   return createMetadata({
     title,
@@ -126,8 +116,8 @@ export default async function ServiceCityPage({
   const serviceCityGraph = buildGraph([
     buildWebPageNode({
       url: pageUrl,
-      name: `${displayName} in ${city.name} | Fliesenverlegung Tezgel`,
-      description: metaBeschreibung(service, city.name),
+      name: leistungOrtTitel(service, city),
+      description: leistungOrtBeschreibung(service, city),
       breadcrumbItems: breadcrumbs,
     }),
     buildBreadcrumbNode(breadcrumbs, pageUrl),
