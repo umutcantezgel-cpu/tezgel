@@ -14,6 +14,8 @@ interface LeistungVorlage {
   titelZusatz: string;
   /** Description mit Platzhalter {ort} */
   beschreibung: string;
+  /** Abweichende Fassung je Ort (slug), wo der Suchbegriff der Vorlage einer anderen Zielseite gehört (KONTEXT §6) */
+  orte?: Readonly<Record<string, Omit<LeistungVorlage, 'orte'>>>;
 }
 
 const LEISTUNG_ORT_VORLAGEN: Readonly<Record<string, LeistungVorlage>> = {
@@ -26,6 +28,20 @@ const LEISTUNG_ORT_VORLAGEN: Readonly<Record<string, LeistungVorlage>> = {
     anzeige: 'Fliesen verlegen',
     titelZusatz: ', auch Großformate',
     beschreibung: 'Fliesen verlegen in {ort} für Küche, Flur, Wohnraum und Treppe. Der Termin vor Ort ist kostenfrei, danach erhalten Sie ein Festpreisangebot.',
+    // „Fliesen verlegen Wetzlar“ gehört der Wetzlar-Seite, „Fliesenverlegung Aßlar“ und „Fliesen Aßlar“ der Startseite
+    // (KONTEXT §6, freigegebener Plan); dort zielt die Seite auf ihren Inhalt, Böden und Wände
+    orte: {
+      wetzlar: {
+        anzeige: 'Böden und Wände fliesen',
+        titelZusatz: ', große Fliesen',
+        beschreibung: 'Wir fliesen Böden und Wände in {ort}: Wohnraum, Küche, Flur und Treppe. Der Termin vor Ort ist kostenfrei, danach folgt Ihr Festpreisangebot.',
+      },
+      asslar: {
+        anzeige: 'Böden und Wände fliesen',
+        titelZusatz: ', große Fliesen',
+        beschreibung: 'Wir fliesen Böden und Wände in {ort}: Wohnraum, Küche, Flur und Treppe. Der Termin vor Ort ist kostenfrei, danach folgt Ihr Festpreisangebot.',
+      },
+    },
   },
   aussen: {
     anzeige: 'Balkonsanierung',
@@ -39,21 +55,27 @@ const LEISTUNG_ORT_VORLAGEN: Readonly<Record<string, LeistungVorlage>> = {
   },
 };
 
-/** Anzeigename je Leistung auf den Seiten Leistung × Ort (Titel, Einstieg, Strukturdaten) */
-export const LEISTUNG_ANZEIGE: Readonly<Record<string, string>> = Object.fromEntries(
-  Object.entries(LEISTUNG_ORT_VORLAGEN).map(([id, v]) => [id, v.anzeige]),
-);
+type Ort = Pick<CityData, 'name' | 'kurzname' | 'slug'>;
+const vorlage = (serviceId: string, city: Ort): Omit<LeistungVorlage, 'orte'> | undefined => {
+  const v = LEISTUNG_ORT_VORLAGEN[serviceId];
+  return v ? (v.orte?.[city.slug] ?? v) : undefined;
+};
+
+/** Anzeigename der Leistung auf der Seite Leistung × Ort (H1, Strukturdaten, Zeile über dem Abschlussformular) */
+export function leistungAnzeige(service: { id: string; name: string }, city: Ort): string {
+  return vorlage(service.id, city)?.anzeige ?? service.name;
+}
 
 const ortImTitel = (city: Pick<CityData, 'name' | 'kurzname'>): string => city.kurzname ?? city.name;
-const einsetzen = (vorlage: string, ort: string): string => vorlage.replaceAll('{ort}', ort);
+const einsetzen = (text: string, ort: string): string => text.replaceAll('{ort}', ort);
 
-export function leistungOrtTitel(service: { id: string; name: string }, city: Pick<CityData, 'name' | 'kurzname'>): string {
-  const v = LEISTUNG_ORT_VORLAGEN[service.id];
+export function leistungOrtTitel(service: { id: string; name: string }, city: Ort): string {
+  const v = vorlage(service.id, city);
   return `${v?.anzeige ?? service.name} in ${ortImTitel(city)}${v?.titelZusatz ?? ''} · Tezgel`;
 }
 
-export function leistungOrtBeschreibung(service: { id: string; name: string }, city: Pick<CityData, 'name' | 'kurzname'>): string {
-  const v = LEISTUNG_ORT_VORLAGEN[service.id];
+export function leistungOrtBeschreibung(service: { id: string; name: string }, city: Ort): string {
+  const v = vorlage(service.id, city);
   return einsetzen(v?.beschreibung ?? `${service.name} in {ort}. Der Termin bei Ihnen vor Ort ist kostenfrei, danach erhalten Sie ein Festpreisangebot.`, ortImTitel(city));
 }
 

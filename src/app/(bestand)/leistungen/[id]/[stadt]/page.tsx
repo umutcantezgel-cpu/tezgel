@@ -15,7 +15,7 @@ import { COMPANY_DATA } from '@/config/company';
 import { notFound } from 'next/navigation';
 import { buildGraph, buildServiceNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
 import { createMetadata } from '@/lib/metadata';
-import { LEISTUNG_ANZEIGE, leistungOrtBeschreibung, leistungOrtTitel } from '@/lib/seo/titel';
+import { leistungAnzeige, leistungOrtBeschreibung, leistungOrtTitel } from '@/lib/seo/titel';
 import JsonLd from '@/components/seo/JsonLd';
 import QualityPromise from '@/components/sections/QualityPromise';
 import FinalCTA from '@/components/ui/FinalCTA';
@@ -96,7 +96,7 @@ export default async function ServiceCityPage({
   const city = CITIES.find((c) => c.slug === stadt);
   if (!service || !city) notFound();
 
-  const displayName = LEISTUNG_ANZEIGE[service.id] || service.name;
+  const displayName = leistungAnzeige(service, city);
 
   const pageUrl = `${SITE_URL}/leistungen/${service.id}/${city.slug}`;
   const { contact, authority } = COMPANY_DATA;
