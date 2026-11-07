@@ -235,17 +235,22 @@ test('8b. Seiten der Snippet-Runde: Titel bis 561 px und ab 50 Zeichen, Descript
     if (beschreibung.length < 140) fehler.push(`${seite}: Description mit ${beschreibung.length} Zeichen „${beschreibung}“`);
     if (!/ \| Fliesenverlegung Tezgel$| · Tezgel$/.test(titel)) fehler.push(`${seite}: Markenzusatz „${titel}“`);
     // Seitenknoten der Strukturdaten mit demselben Titel und derselben Description (lib/seo/seitentitel.ts, lib/beschreibung.ts)
-    const anfang = `${SITE_URL}${seite === '/' ? '/' : seite}#`;
+    // die Startseite trägt ihre Knoten unter https://www.tezgel.de#…, ohne Schrägstrich (lib/schema.ts, url = SITE_URL)
+    const anfang = `${SITE_URL}${seite === '/' ? '' : seite}#`;
+    let verglichen = 0;
     for (const block of html.matchAll(/<script type="application\/ld\+json"[^>]*>(.*?)<\/script>/gs)) {
       const daten = JSON.parse(block[1]);
       for (const knoten of daten['@graph'] ?? [daten]) {
         const typen = [knoten['@type']].flat();
         if (!typen.some((typ) => ['WebPage', 'AboutPage', 'ContactPage', 'CollectionPage'].includes(typ))) continue;
         if (!String(knoten['@id'] ?? '').startsWith(anfang)) continue;
+        verglichen += 1;
         if (knoten.name !== titel) fehler.push(`${seite}: ${typen.join('/')} heißt „${knoten.name}“`);
         if (knoten.description !== undefined && knoten.description !== beschreibung) fehler.push(`${seite}: ${typen.join('/')} mit anderer Description`);
       }
     }
+    // /preise hat keinen Seitenknoten (Bestand); jede andere Seite der Runde muss mindestens einen haben
+    if (!verglichen && seite !== '/preise') fehler.push(`${seite}: kein Seitenknoten verglichen`);
   }
   assert.deepEqual([...SNIPPET_SEITEN].filter((s) => !gefunden.has(s)), [], 'Seiten fehlen im Bau');
   assert.deepEqual(fehler, []);
@@ -285,8 +290,8 @@ test('8c. Gebaute Seiten: Bewertung, Zahl der Stimmen und der Fotos in Titel und
   assert.deepEqual(fehler, []);
 });
 
-// Gegenprüfung Live 4: Die Bild-Sitemap nennt je Seite nur Fotos, die diese Seite zeigt (als src, srcset oder über
-// /_next/image); sonst schickt sie die Bildersuche auf eine Seite ohne das Foto.
+// Gegenprüfung Live 4: Die Bild-Sitemap nennt je Seite nur Fotos, die diese Seite als <img> oder <source> zeigt (src oder
+// srcset, auch über /_next/image); sonst schickt sie die Bildersuche auf eine Seite ohne das Foto.
 test('8d. Bild-Sitemap: jedes Bild einer Adresse steht im gebauten HTML dieser Seite', {
   skip: bauZustand(),
 }, () => {
@@ -298,11 +303,22 @@ test('8d. Bild-Sitemap: jedes Bild einer Adresse steht im gebauten HTML dieser S
     const locs = [...eintrag[1].matchAll(/<image:loc>(.*?)<\/image:loc>/g)].map((m) => m[1]);
     if (!locs.length) continue;
     const seite = adresse.slice(SITE_URL.length) || '/';
-    const html = entschluesseln(fs.readFileSync(path.join(APP, seite === '/' ? 'index.html' : `${seite.slice(1)}.html`), 'utf8'));
+    // nur, was als <img> oder <source> gerendert ist (src und srcset), nicht der Datenstrom der Inseln
+    const roh = fs.readFileSync(path.join(APP, seite === '/' ? 'index.html' : `${seite.slice(1)}.html`), 'utf8');
+    const gezeigt = new Set();
+    for (const [tag] of roh.matchAll(/<(?:img|source)\b[^>]*>/g)) {
+      for (const [, wert] of tag.matchAll(/\s(?:src|srcset)="([^"]*)"/gi)) {
+        for (const teil of entschluesseln(wert).split(',')) {
+          const adresse = teil.trim().split(/\s+/)[0];
+          if (!adresse) continue;
+          gezeigt.add(adresse.startsWith('/_next/image') ? new URL(adresse, SITE_URL).searchParams.get('url') : adresse.replace(SITE_URL, ''));
+        }
+      }
+    }
     for (const loc of locs) {
       bilder += 1;
       const pfad = loc.slice(SITE_URL.length);
-      if (!html.includes(pfad) && !html.includes(encodeURIComponent(pfad))) fehler.push(`${seite}: ${pfad} nicht auf der Seite`);
+      if (!gezeigt.has(pfad)) fehler.push(`${seite}: ${pfad} nicht als img oder source auf der Seite`);
     }
   }
   assert.ok(bilder > 100, `nur ${bilder} Bilder in der Sitemap`);

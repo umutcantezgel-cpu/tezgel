@@ -14,7 +14,7 @@ const post = {
     "category": "ratgeber",
     "author": "Fliesenverlegung Tezgel",
     "readTime": "2 Min.",
-    "image": "/images/arbeiten/teilen/untergrund-gewebe-vor-dem-fliesen.jpg",
+    "image": "/images/arbeiten/teilen/untergrund-glasfasergewebe-randstreifen.jpg",
     "featured": false,
     "tags": [
         "Karriere",

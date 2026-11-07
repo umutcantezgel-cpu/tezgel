@@ -128,7 +128,7 @@ export const SERVICES = [
 
         detailText: "Ein hochwertiger Fliesenbelag ist nur so langlebig wie der Untergrund, auf dem er ruht. Wir bereiten Böden und Wände kompromisslos fachgerecht vor. Insbesondere die normgerechte Verbundabdichtung nach DIN 18534 schützt Ihre Bausubstanz verlässlich vor kostspieligen Feuchteschäden.",
         ctaText: "Abdichtungs-Check anfordern",
-        heroImage: "/images/arbeiten/teilen/untergrund-gewebe-vor-dem-fliesen.jpg",
+        heroImage: "/images/arbeiten/teilen/untergrund-glasfasergewebe-randstreifen.jpg",
         gallery: [
         ]
     }

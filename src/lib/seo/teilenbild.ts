@@ -39,8 +39,8 @@ const BILDER = {
     alt: 'Flur mit Fliesen in Travertinoptik im Römischen Verband und passendem Sockel, frisch verfugt und noch ungereinigt',
   },
   untergrund: {
-    pfad: '/images/arbeiten/teilen/untergrund-gewebe-vor-dem-fliesen.jpg',
-    alt: 'Boden in der Renovierung mit Bahnen aus Glasfasergewebe vor dem Fliesen',
+    pfad: '/images/arbeiten/teilen/untergrund-glasfasergewebe-randstreifen.jpg',
+    alt: 'Leerer Raum mit Bahnen aus Glasfasergewebe auf dem Boden und blauen Randstreifen an den Wänden',
   },
 } as const;
 
