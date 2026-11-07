@@ -51,6 +51,18 @@ test('Meta 6: eigene Titel mit 50 bis 58 Zeichen, bis 561 px, Markenzusatz, unve
   }
 });
 
+// Die Titel der Musterbäder stehen fest in META_TITEL, die H1 entsteht aus den Daten (bad/musterbaeder/[slug]/page.jsx);
+// ändern sich Linie oder Größe in musterbaeder.js, muss der Titel mitgehen (Prüfung des Einbaus, 07.11.2026)
+test('Meta 7: Titel jedes Musterbads beginnt mit seiner H1', async () => {
+  const { MUSTERBAEDER } = await import('../src/config/musterbaeder.js');
+  assert.equal(MUSTERBAEDER.length, 12);
+  for (const bath of MUSTERBAEDER) {
+    const h1 = `Musterbad ${bath.title.split('-')[0]} mit ${bath.size.split(' ')[0]} m²`;
+    const titel = META_TITEL[`/bad/musterbaeder/${bath.slug}`];
+    assert.ok(titel?.startsWith(h1), `${bath.slug}: „${titel}“ beginnt nicht mit „${h1}“`);
+  }
+});
+
 test('Meta 4: ohne Eintrag bleibt die übergebene Beschreibung maßgeblich', () => {
   const beschreibung = 'Wir verlegen Fliesen in Bad, Küche und Flur. Der Termin bei Ihnen vor Ort ist kostenfrei, das Angebot bekommen Sie danach schriftlich.';
   assert.equal(generatePageMetadata({ title: 'Prüfseite Fliesenverlegung Tezgel in Aßlar', description: beschreibung, path: '/gibt-es-nicht' }).description, beschreibung);

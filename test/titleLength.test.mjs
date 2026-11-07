@@ -210,18 +210,26 @@ test('8. Indexierbare Seiten: echtes Teilen-Bild 1200 × 630 mit Alt-Text', {
 // Description 140 bis 155 Zeichen) und trägt den Markenzusatz in einer der zwei Formen (T10). Die Seitenknoten der
 // Strukturdaten tragen denselben Titel und dieselbe Description.
 const OHNE_SEITENKNOTEN = new Set(['/preise']);
+// Seiten, die bewusst noindex tragen (Rechtstexte, Login, Fehlerseite); jede andere Seite muss indexierbar sein und in der
+// Sitemap stehen, sonst fällt eine Zielseite still aus dem Index (Prüfung des Einbaus, 07.11.2026)
+const NOINDEX = new Set(['/_not-found', '/agb', '/cookie-richtlinie', '/datenschutz', '/impressum', '/login', '/widerruf']);
 test('8b. Indexierbare Seiten: Titel bis 561 px und ab 50 Zeichen, Description bis 985 px und ab 140 Zeichen, Markenzusatz, Seitenknoten', {
   skip: bauZustand(),
 }, () => {
   const fehler = [];
-  let indexierbar = 0;
+  const indexierbare = [];
+  const titelSeite = new Map();
+  const beschreibungSeite = new Map();
   for (const datei of htmlDateien(APP)) {
     const seite = seitenpfad(datei);
     if (seite === '/_global-error') continue;
     const html = fs.readFileSync(datei, 'utf8');
-    // Seiten mit noindex (Rechtstexte, Login, Fehlerseite) erscheinen nicht im Suchergebnis; für sie gilt Test 6
-    if (noindex(html)) continue;
-    indexierbar += 1;
+    // Seiten mit noindex erscheinen nicht im Suchergebnis; für sie gilt Test 6. Nur die Seiten in NOINDEX dürfen es tragen
+    if (noindex(html)) {
+      if (!NOINDEX.has(seite)) fehler.push(`${seite}: noindex`);
+      continue;
+    }
+    indexierbare.push(seite);
     const titel = entschluesseln(html.match(/<title>(.*?)<\/title>/s)?.[1] ?? '').trim();
     const roh = html.match(/<meta name="description" content="([^"]*)"/)?.[1];
     const beschreibung = roh === undefined ? '' : entschluesseln(roh);
@@ -230,6 +238,11 @@ test('8b. Indexierbare Seiten: Titel bis 561 px und ab 50 Zeichen, Description b
     if (titel.length < 50) fehler.push(`${seite}: Titel mit ${titel.length} Zeichen „${titel}“`);
     if (beschreibung.length < 140) fehler.push(`${seite}: Description mit ${beschreibung.length} Zeichen „${beschreibung}“`);
     if (!/ \| Fliesenverlegung Tezgel$| · Tezgel$/.test(titel)) fehler.push(`${seite}: Markenzusatz „${titel}“`);
+    // jeder Titel und jede Description nur einmal über alle Seiten, gleich aus welcher Quelle (Karte, Vorlage, Seitencode)
+    if (titelSeite.has(titel)) fehler.push(`${seite}: Titel wie ${titelSeite.get(titel)}`);
+    if (beschreibungSeite.has(beschreibung)) fehler.push(`${seite}: Description wie ${beschreibungSeite.get(beschreibung)}`);
+    titelSeite.set(titel, seite);
+    beschreibungSeite.set(beschreibung, seite);
     // Seitenknoten der Strukturdaten mit demselben Titel und derselben Description (lib/seo/seitentitel.ts, lib/beschreibung.ts)
     // die Startseite trägt ihre Knoten unter https://www.tezgel.de#…, ohne Schrägstrich (lib/schema.ts, url = SITE_URL)
     const anfang = `${SITE_URL}${seite === '/' ? '' : seite}#`;
@@ -248,7 +261,9 @@ test('8b. Indexierbare Seiten: Titel bis 561 px und ab 50 Zeichen, Description b
     // jede indexierbare Seite außer OHNE_SEITENKNOTEN hat mindestens einen Seitenknoten (Bestand: /preise ohne)
     if (!verglichen && !OHNE_SEITENKNOTEN.has(seite)) fehler.push(`${seite}: kein Seitenknoten verglichen`);
   }
-  assert.ok(indexierbar > 150, `nur ${indexierbar} indexierbare Seiten gefunden`);
+  // die indexierbaren Seiten sind genau die Adressen der Sitemap: keine Zielseite fehlt im Bau oder fällt auf noindex
+  const karte = [...fs.readFileSync(path.join(APP, 'sitemap.xml.body'), 'utf8').matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1].slice(SITE_URL.length) || '/');
+  assert.deepEqual([...indexierbare].sort(), karte.sort(), 'indexierbare Seiten gleich der Sitemap');
   assert.deepEqual(fehler, []);
 });
 
